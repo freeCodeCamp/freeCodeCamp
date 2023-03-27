@@ -32,6 +32,14 @@ import '../intro.css';
 
 const { curriculumLocale } = envData;
 
+const BlockIntros = ({ str }: { str: string }): JSX.Element => {
+  return (
+    <div className='block-description'>
+      <p dangerouslySetInnerHTML={{ __html: str }} />
+    </div>
+  );
+};
+
 const mapStateToProps = (
   state: unknown,
   ownProps: { blockDashedName: string } & unknown
@@ -82,16 +90,6 @@ class Block extends Component<BlockProps> {
     );
   }
 
-  renderBlockIntros(arr: string[]): JSX.Element {
-    return (
-      <div className='block-description'>
-        {arr.map((str, i) => (
-          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
-        ))}
-      </div>
-    );
-  }
-
   render(): JSX.Element {
     const {
       blockDashedName,
@@ -129,12 +127,10 @@ class Block extends Component<BlockProps> {
       );
     });
 
-    const blockTitle = [
-      t(`intro:${superBlock}.blocks.${blockDashedName}.title`)
-    ];
-    const blockIntroArr = [
-      t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
-    ];
+    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
+    const blockIntroArr = t(
+      `intro:${superBlock}.blocks.${blockDashedName}.intro`
+    );
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
@@ -169,7 +165,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros str={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -226,7 +222,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros str={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -287,13 +283,13 @@ class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && this.renderBlockIntros(blockIntroArr)}
+            {isExpanded && <BlockIntros str={blockIntroArr} />}
             {isExpanded && (
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
                 superBlock={superBlock}
-                blockTitle={blockTitle.join(' ')}
+                blockTitle={blockTitle}
               />
             )}
           </div>
@@ -328,7 +324,7 @@ class Block extends Component<BlockProps> {
               {this.renderCheckMark(isBlockCompleted)}
               <h3 className='block-grid-title'>{blockTitle}</h3>
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros str={blockIntroArr} />
           </Link>
         </div>
       </ScrollableAnchor>
