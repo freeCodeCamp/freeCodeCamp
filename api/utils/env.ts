@@ -30,6 +30,7 @@ assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.SESSION_SECRET);
+assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 
 if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test') {
   assert.ok(process.env.PORT);
@@ -50,3 +51,5 @@ export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
 export const PORT = process.env.PORT || '3000';
 export const API_LOCATION = process.env.API_LOCATION;
 export const SESSION_SECRET = process.env.SESSION_SECRET;
+export const FCC_ENABLE_SWAGGER_UI =
+  process.env.FCC_ENABLE_SWAGGER_UI === 'true';

@@ -723,32 +723,32 @@ const certMap = [
     projects: [
       {
         id: '63d83ff239c73468b059cd3f',
-        title: 'Multi-Function Calculator',
-        link: `${collegeAlgebraPyBase}/multi-function-calculator`,
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d83ffd39c73468b059cd40',
-        title: 'Graphing Calculator',
-        link: `${collegeAlgebraPyBase}/graphing-calculator`,
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401039c73468b059cd41',
-        title: 'Three Math Games',
-        link: `${collegeAlgebraPyBase}/three-math-games`,
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401e39c73468b059cd42',
-        title: 'Financial Calculator',
-        link: `${collegeAlgebraPyBase}/financial-calculator`,
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8402e39c73468b059cd43',
-        title: 'Data Graph Explorer',
-        link: `${collegeAlgebraPyBase}/data-graph-explorer`,
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
         certSlug: 'college-algebra-with-python-v8'
       }
     ]
@@ -757,6 +757,10 @@ const certMap = [
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
 }
 
 function getJavaScriptAlgoPath(project: string) {
@@ -778,7 +782,7 @@ certMap.forEach(cert => {
       legacyProjectMap[cert.title] = cert.projects;
       // temporary hiding of certs from settings page
       // should do suggestion on line 33 and use front matter to hide it
-    } else if (!cert.title.startsWith('College Algebra')) {
+    } else {
       projectMap[cert.title] = cert.projects;
     }
   }

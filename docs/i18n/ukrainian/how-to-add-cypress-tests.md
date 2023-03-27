@@ -54,10 +54,11 @@
 
 Якщо запуск середовища GitPod не розробив середовище автоматично:
 
-- Запустіть базу даних
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Заповніть базу даних
