@@ -141,7 +141,6 @@ class Project extends Component<ProjectProps> {
             description,
             instructions,
             superBlock,
-            certification,
             block,
             translationPending
           }
@@ -196,12 +195,7 @@ class Project extends Component<ProjectProps> {
                 <br />
                 <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -229,7 +223,6 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         translationPending
         fields {
