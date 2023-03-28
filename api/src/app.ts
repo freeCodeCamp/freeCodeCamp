@@ -30,7 +30,8 @@ import {
   MONGOHQ_URL,
   SESSION_SECRET,
   FCC_ENABLE_SWAGGER_UI,
-  API_LOCATION
+  API_LOCATION,
+  FCC_ENABLE_DEV_LOGIN_MODE
 } from './utils/env';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -105,7 +106,7 @@ export const build = async (
 
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth' });
-  if (FREECODECAMP_NODE_ENV === 'development') {
+  if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(testValidatedRoutes);

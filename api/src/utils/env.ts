@@ -29,6 +29,7 @@ assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.SESSION_SECRET);
 assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
+assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
@@ -37,6 +38,10 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     process.env.SESSION_SECRET,
     'a_thirty_two_plus_character_session_secret',
     'The session secret should be changed from the default value.'
+  );
+  assert.ok(
+    process.env.FCC_ENABLE_DEV_LOGIN_MODE !== 'true',
+    'Dev login mode MUST be disabled in production.'
   );
 }
 
@@ -51,3 +56,5 @@ export const API_LOCATION = process.env.API_LOCATION;
 export const SESSION_SECRET = process.env.SESSION_SECRET;
 export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';
+export const FCC_ENABLE_DEV_LOGIN_MODE =
+  process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
