@@ -202,11 +202,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             title,
             description,
             superBlock,
-            certification,
             block,
             videoId,
             videoLocaleIds,
@@ -360,12 +358,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 </Button>
                 <Spacer size='large' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
             </Row>
           </Grid>
         </LearnLayout>
@@ -401,10 +394,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {

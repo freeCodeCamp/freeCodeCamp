@@ -176,11 +176,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             title,
             description,
             superBlock,
-            certification,
             block,
             translationPending,
             videoId,
@@ -298,12 +296,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 </Button>
                 <Spacer size='large' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
             </Row>
           </Grid>
         </LearnLayout>
@@ -339,10 +332,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {

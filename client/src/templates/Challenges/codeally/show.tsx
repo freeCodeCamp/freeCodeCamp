@@ -178,15 +178,12 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       data: {
         challengeNode: {
           challenge: {
-            block,
-            certification,
             challengeType,
             description,
             fields: { blockName },
             id: challengeId,
             instructions,
             notes,
-            superBlock,
             title,
             translationPending,
             url
@@ -351,12 +348,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <br />
                 <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -378,8 +370,6 @@ export const query = graphql`
   query CodeAllyChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
-        block
-        certification
         challengeType
         description
         fields {
@@ -389,7 +379,6 @@ export const query = graphql`
         id
         instructions
         notes
-        superBlock
         title
         translationPending
         url
