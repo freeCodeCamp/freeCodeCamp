@@ -1,4 +1,4 @@
-import { FastifyPluginCallback } from 'fastify';
+import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 
 import { AUTH0_DOMAIN } from '../utils/env';
 
@@ -65,26 +65,27 @@ const defaultUser = {
   username: ''
 };
 
+const getEmailFromAuth0 = async (req: FastifyRequest) => {
+  const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
+    headers: {
+      Authorization: req.headers.authorization ?? ''
+    }
+  });
+
+  if (!auth0Res.ok) {
+    req.log.error(auth0Res);
+    throw new Error('Invalid Auth0 Access Token');
+  }
+
+  const { email } = (await auth0Res.json()) as { email: string };
+  return email;
+};
+
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
   fastify.get('/callback', async (req, _res) => {
-    const auth0Res = await fetch(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      `https://${AUTH0_DOMAIN}/userinfo`,
-      {
-        headers: {
-          Authorization: req.headers.authorization ?? ''
-        }
-      }
-    );
-
-    if (!auth0Res.ok) {
-      fastify.log.error(auth0Res);
-      throw new Error('Invalid Auth0 Access Token');
-    }
-
-    const { email } = (await auth0Res.json()) as { email: string };
+    const email = await getEmailFromAuth0(req);
 
     const existingUser = await fastify.prisma.user.findFirst({
       where: { email }
