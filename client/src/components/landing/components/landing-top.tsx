@@ -28,7 +28,7 @@ function LandingTop({ pageName }: LandingTopProps): JSX.Element {
   return (
     <div className='landing-top'>
       <Row>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1 className='big-heading' data-test-label={`${pageName}-header`}>
             {t('landing.big-heading-1')}
@@ -52,10 +52,10 @@ function LandingTop({ pageName }: LandingTopProps): JSX.Element {
               </>
             )}
           </div>
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <BigCallToAction pageName={pageName} />
           <CampersImage pageName={pageName} />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
         </Col>
       </Row>
     </div>

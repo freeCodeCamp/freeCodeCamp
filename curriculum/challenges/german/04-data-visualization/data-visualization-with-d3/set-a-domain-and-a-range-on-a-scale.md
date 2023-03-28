@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdb
-title: Set a Domain and a Range on a Scale
+title: Domain und Bereich auf Skala festlegen
 challengeType: 6
 forumTopicId: 301491
 dashedName: set-a-domain-and-a-range-on-a-scale
@@ -14,7 +14,7 @@ Angenommen ein Datensatz hat Werte zwischen 50 und 480. Dies ist die Eingangsinf
 
 You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
 
-Die `domain()`- und `range()`-Methoden legen diese Werte für die Skala fest. Both methods take an array of at least two elements as an argument. Hier ist ein Beispiel:
+Die `domain()`- und `range()`-Methoden legen diese Werte für die Skala fest. Beide Methoden nehmen ein Array von mindestens zwei Elementen als Argument. Hier ist ein Beispiel:
 
 ```js
 scale.domain([50, 480]);
@@ -28,13 +28,13 @@ d3.scaleLinear()
 
 Die folgenden Werte werden, in dieser Reihenfolge, in der Konsole angezeigt: `10`, `500`, `323.37`, and `807.67`.
 
-Beachte, dass die Skala die lineare Beziehung zwischen Domäne und Bereichswerten verwendet, um herauszufinden, was die Ausgabe für eine gegebene Zahl sein soll. The minimum value in the domain (50) maps to the minimum value (10) in the range.
+Beachte, dass die Skala die lineare Beziehung zwischen Domäne und Bereichswerten verwendet, um herauszufinden, was die Ausgabe für eine gegebene Zahl sein soll. Der minimale Wert in der Domain (50) wird dem minimalen Wert (10) im Bereich zugeordnet.
 
 # --instructions--
 
 Erstelle eine Skala und setze die Domain auf `[250, 500]` und erweitere auf `[10, 150]`.
 
-**Note:** You can chain the `domain()` and `range()` methods onto the `scale` variable.
+**Hinweis:** Du kannst die `domain()`- und `range()`-Methoden mit der `scale`-Variablen verbinden.
 
 # --hints--
 

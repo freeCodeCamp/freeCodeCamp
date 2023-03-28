@@ -12,39 +12,39 @@ This first video will look at key words that tell you what math operation to use
 
 **Here are links to the textbooks you will need to complete the assignments for this video:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021), de Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry, de Jay Abramson</a>
 
 # --question--
 
 ## --assignment--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+Resolva os problemas das páginas 63, 75, 85 e 118 do livro "Business Math, a Step-by-Step Handbook (2021)".
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+Resolva os problemas das páginas 304, 308 e 321 do livro "Algebra and Trigonometry".
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+Quais das seguintes palavras-chave indicam subtração?
 
 ## --answers--
 
-plus, more, increase, up
+soma, mais, aumento, para cima
 
 ---
 
-difference, less, decrease, down
+diferença, menos, diminuir, para baixo
 
 ---
 
-of, by, factor, area, times
+de, por, fator, área, vezes
 
 ---
 
-out of, per, divided, quotient
+retirado de, por, dividido, quociente
 
 ## --video-solution--
 

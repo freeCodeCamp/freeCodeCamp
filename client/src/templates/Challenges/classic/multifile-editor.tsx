@@ -1,4 +1,4 @@
-import React, { MutableRefObject, RefObject, useRef } from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
@@ -33,11 +33,11 @@ interface MultifileEditorProps {
   data?: { challengeNode: ChallengeNode };
   canFocus?: boolean;
   challengeFiles: ChallengeFile[];
-  containerRef: RefObject<HTMLElement>;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   contents?: string;
   description: string;
   dimensions?: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   ext?: Ext;
   fileKey?: string;
   initialEditorContent?: string;

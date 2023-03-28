@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should check certification button consistency 1`] = `
-Array [
+[
   <div
     className="row"
   >
@@ -11,7 +11,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -151,7 +151,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -291,7 +291,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -431,7 +431,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -571,7 +571,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -711,7 +711,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -851,7 +851,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -991,7 +991,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1131,7 +1131,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1271,7 +1271,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1411,7 +1411,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1542,11 +1542,6 @@ Array [
       </table>
     </div>
   </div>,
-]
-`;
-
-exports[`should check legacy certification button consistency 1`] = `
-Array [
   <div
     className="row"
   >
@@ -1556,7 +1551,152 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <h3
+        className="text-center"
+        id="cert-college-algebra-with-python-v8"
+      >
+        certification.title.College Algebra with Python
+      </h3>
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              settings.labels.project-name
+            </th>
+            <th>
+              settings.labels.solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/college-algebra-with-python/build-a-multi-function-calculator-project/build-a-multi-function-calculator"
+              >
+                certification.project.title.Build a Multi-Function Calculator
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/college-algebra-with-python/build-a-graphing-calculator-project/build-a-graphing-calculator"
+              >
+                certification.project.title.Build a Graphing Calculator
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/college-algebra-with-python/build-three-math-games-project/build-three-math-games"
+              >
+                certification.project.title.Build Three Math Games
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/college-algebra-with-python/build-a-financial-calculator-project/build-a-financial-calculator"
+              >
+                certification.project.title.Build a Financial Calculator
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/college-algebra-with-python/build-a-data-graph-explorer-project/build-a-data-graph-explorer"
+              >
+                certification.project.title.Build a Data Graph Explorer
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr>
+            <td
+              colSpan={2}
+            >
+              <a
+                className="col-xs-12 btn btn-primary btn-block"
+                data-cy="btn-for-college-algebra-with-python-v8"
+                href="/certification/undefined/college-algebra-with-python-v8"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                buttons.claim-cert
+                 
+                <span
+                  className="sr-only"
+                >
+                  College Algebra with Python
+                </span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+]
+`;
+
+exports[`should check legacy certification button consistency 1`] = `
+[
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-8 col-sm-offset-2 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1776,7 +1916,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1996,7 +2136,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -2216,7 +2356,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }

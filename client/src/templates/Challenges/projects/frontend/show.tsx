@@ -141,7 +141,6 @@ class Project extends Component<ProjectProps> {
             description,
             instructions,
             superBlock,
-            certification,
             block,
             translationPending
           }
@@ -172,7 +171,7 @@ class Project extends Component<ProjectProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -194,14 +193,9 @@ class Project extends Component<ProjectProps> {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -229,7 +223,6 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         translationPending
         fields {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
 type ChangibleValues =
   | {
@@ -20,10 +20,10 @@ type ChangibleValues =
     };
 
 export type FormControlProps = React.HTMLAttributes<FormControlElement> & {
-  className?: string;
   id?: string;
+  className?: string;
   testId?: string;
-  componentClass?: typeof React.Component;
+  componentClass?: 'textarea' | 'input';
   placeholder?: string;
   name?: string;
   required?: boolean;
