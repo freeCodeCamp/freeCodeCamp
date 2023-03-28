@@ -105,10 +105,7 @@ export const build = async (
 
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth' });
-  if (
-    FREECODECAMP_NODE_ENV === 'development' ||
-    FREECODECAMP_NODE_ENV === 'test'
-  ) {
+  if (FREECODECAMP_NODE_ENV === 'development') {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(testValidatedRoutes);

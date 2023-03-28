@@ -18,10 +18,8 @@ if (error) {
   `);
 }
 
-function isAllowedEnv(
-  env: string
-): env is 'development' | 'production' | 'test' {
-  return ['development', 'production', 'test'].includes(env);
+function isAllowedEnv(env: string): env is 'development' | 'production' {
+  return ['development', 'production'].includes(env);
 }
 
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
@@ -32,10 +30,7 @@ assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.SESSION_SECRET);
 assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 
-if (
-  process.env.FREECODECAMP_NODE_ENV !== 'development' &&
-  process.env.FREECODECAMP_NODE_ENV !== 'test'
-) {
+if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
   assert.notEqual(
