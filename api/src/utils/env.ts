@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import path from 'node:path';
 import { config } from 'dotenv';
 
-const envPath = path.resolve(__dirname, '../../.env');
+const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
 if (error) {

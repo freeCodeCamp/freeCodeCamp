@@ -50,9 +50,10 @@
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
   },
   "scripts": {
-    "build": "tsc",
-    "develop": "nodemon server.ts",
-    "start": "NODE_ENV=production node server.js",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "develop": "nodemon src/server.ts",
+    "start": "NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
     "prisma": "MONGOHQ_URL=mongodb://localhost:27017/freecodecamp?directConnection=true prisma",
     "postinstall": "prisma generate"
