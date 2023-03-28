@@ -26,7 +26,7 @@ import prismaPlugin from './db/prisma';
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
-  NODE_ENV,
+  FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SESSION_SECRET,
   FCC_ENABLE_SWAGGER_UI,
@@ -60,7 +60,7 @@ export const build = async (
     saveUninitialized: false,
     cookie: {
       maxAge: 1000 * 60 * 60, // 1 hour
-      secure: NODE_ENV !== 'development'
+      secure: FREECODECAMP_NODE_ENV !== 'development'
     },
     store: MongoStore.create({
       mongoUrl: MONGOHQ_URL
@@ -105,7 +105,10 @@ export const build = async (
 
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth' });
-  if (NODE_ENV === 'development' || NODE_ENV === 'test') {
+  if (
+    FREECODECAMP_NODE_ENV === 'development' ||
+    FREECODECAMP_NODE_ENV === 'test'
+  ) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(testValidatedRoutes);
