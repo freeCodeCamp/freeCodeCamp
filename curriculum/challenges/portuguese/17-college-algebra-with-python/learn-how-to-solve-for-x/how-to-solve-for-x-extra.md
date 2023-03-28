@@ -1,6 +1,6 @@
 ---
 id: 6331d233b51aeedd1a2bd645
-title: "How to Solve for X: Extra"
+title: "Como resolver para X: extra"
 challengeType: 15
 videoId: lFTCVUCbNoM
 dashedName: how-to-solve-for-x-extra
@@ -8,23 +8,23 @@ dashedName: how-to-solve-for-x-extra
 
 # --description--
 
-This video will go deeper, with more examples of how to use SymPy solve. It will also explain how the practice functions generate the random problems.
+Este vídeo entrará em mais detalhes, dando exemplos de como usar a solução do SymPy. Ele também explicará como as funções da prática geram problemas aleatórios.
 
-Here is the <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Use it to add more to the algebra Colab notebook that you are building.
+Aqui está o <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a> Adicione-o ao notebook do Colaboratory de álgebra que você está criando.
 
 # --question--
 
 ## --assignment--
 
-Add the code for more ways to solve for x from the video to your algebra Colab notebook.
+Adicione o código para outras formas de resolver para x do vídeo ao seu notebook do Colaboratory de álgebra.
 
 ---
 
-Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one and two-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
+Abra o notebook do Colaboratory a seguir, execute a célula e <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">pratique a resolução de problemas de álgebra de uma e de duas etapas.</a> Como bônus, veja o código que gera os problemas da prática.
 
 ## --text--
 
-If you import sympy and define x as a variable, what would be the output from the following code?
+Se você importar o SymPy e definir x como uma variável, qual seria a saída do seguinte código?
 
 ```py
 example = 3*x - 12

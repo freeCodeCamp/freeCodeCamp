@@ -1,6 +1,6 @@
 ---
 id: 6363d26c9078df117ce4c405
-title: "Simple and Compound Interest"
+title: "Juros simples e compostos"
 challengeType: 15
 videoId: iMPFK7wXNPg
 dashedName: simple-and-compound-interest
@@ -8,33 +8,33 @@ dashedName: simple-and-compound-interest
 
 # --description--
 
-This video will help you understand the equations of simple and compound interest, and what it all means.
+Este vídeo vai ajudá-lo a entender as equações dos juros simples e compostos e o que tudo isso significa.
 
-Here is the <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a>
 
-Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook that shows you one way to put many of these interest and payment forumlas into Python functions.</a> Also you will see an example of using some formulas to output results, notice a trend, and follow up with other formulas to analyze patterns.
+Aqui temos um <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook adicional do Colaboratory que mostra uma maneira de colocar muitas dessas fórmulas de juros e de pagamento em funções em Python.</a> Você também verá um exemplo de uso de algumas fórmulas para exibir os resultados, observar uma tendência e seguir outras fórmulas para analisar padrões.
 
 # --question--
 
 ## --text--
 
-In percent increase formulas, what does the "principle" refer to?
+Em fórmulas de aumento de percentual, a que se refere o "princípio"?
 
 ## --answers--
 
-the main amount
+o valor principal
 
 ---
 
-the ending amount
+o valor final
 
 ---
 
-the starting amount
+o valor inicial
 
 ---
 
-the (1 + rate) multiplier
+o multiplicador de (1 + taxa)
 
 ## --video-solution--
 

@@ -8,7 +8,7 @@ dashedName: send-and-display-chat-messages
 
 # --description--
 
-It's time you start allowing clients to send a chat message to the server to emit to all the clients! In your `client.js` file, you should see there is already a block of code handling when the message form is submitted.
+Es ist an der Zeit, dass du den Clients erlaubst, eine Chatnachricht an den Server zu senden, die er wiederum an alle Clients emittiert! In your `client.js` file, you should see there is already a block of code handling when the message form is submitted.
 
 ```js
 $('form').submit(function() {
