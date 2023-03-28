@@ -10,7 +10,7 @@ dashedName: fractions-and-decimals-extra
 
 The following video will show you one way to set up your Google Colaboratory notebook, so that you can continue to build your personalized algebra calculator.
 
-Here is <a href="https://colab.research.google.com/drive/1ND_gULby6RWU4Zs27Z7V5WK2g7fHPk1b?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
+Here is <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
 
 # --question--
 

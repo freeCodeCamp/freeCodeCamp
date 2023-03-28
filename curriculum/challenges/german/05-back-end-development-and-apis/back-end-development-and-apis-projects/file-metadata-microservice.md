@@ -24,7 +24,7 @@ Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projek
 
 # --instructions--
 
-**HINT:** You can use the `multer` npm package to handle file uploading.
+**HINWEIS:** Du kannst das `multer`-npm-Paket verwenden, um das Hochladen von Dateien zu verwalten.
 
 # --hints--
 

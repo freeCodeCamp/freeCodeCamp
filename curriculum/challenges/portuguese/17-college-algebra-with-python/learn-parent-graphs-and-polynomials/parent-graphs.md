@@ -1,6 +1,6 @@
 ---
 id: 6363d2529078df117ce4c402
-title: "Parent Graphs"
+title: "Gráficos pais"
 challengeType: 15
 videoId: 6S2QhY8rIcw
 dashedName: parent-graphs
@@ -8,15 +8,15 @@ dashedName: parent-graphs
 
 # --description--
 
-In this video, you will see what these parent graphs look like, how to modify them, and how to do this all with Python code.
+Neste vídeo, você verá como são esses gráficos pais, como modificá-los e como fazer tudo isso com código em Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a>
 
 # --question--
 
 ## --text--
 
-In numpy, what is the cube root of x?
+No numpy, qual é a raiz cúbica de x?
 
 ## --answers--
 
