@@ -1,4 +1,3 @@
-import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import {
   FastifyInstance,
   FastifyPluginCallback,
@@ -100,7 +99,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
   );
 };
 
-export const devLogin: FastifyPluginCallbackTypebox = (
+export const devLoginCallback: FastifyPluginCallback = (
   fastify,
   _options,
   done
