@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
@@ -40,7 +40,6 @@ interface LowerJawProps {
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
-  isEditorInFocus?: boolean;
   testsLength?: number;
   attempts: number;
   openResetModal: () => void;
@@ -140,7 +139,6 @@ const LowerJaw = ({
   tryToSubmitChallenge,
   attempts,
   testsLength,
-  isEditorInFocus,
   openResetModal,
   isSignedIn,
   updateContainer
@@ -150,9 +148,22 @@ const LowerJaw = ({
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
+  const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
+  const [focusManagementCompleted, setFocusManagementCompleted] =
+    useState(false);
+
+  const isCheckYourCodeButtonClicked = () => {
+    const activeElement = document.activeElement;
+    // Need to check Submit button as well because if it has focus then it is
+    // implied that Check Your Code button was clicked.
+    return (
+      activeElement === checkYourCodeButtonRef.current ||
+      activeElement === submitButtonRef.current
+    );
+  };
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -162,7 +173,6 @@ const LowerJaw = ({
     if (attempts === 0) {
       setCurrentAttempts(0);
       setRunningTests(false);
-      setTestBtnAriaHidden(false);
       setIsFeedbackHidden(false);
       hintRef.current = '';
     } else if (attempts > 0 && hint) {
@@ -186,15 +196,21 @@ const LowerJaw = ({
 
   useEffect(() => {
     if (challengeIsCompleted) {
+      // If Ctrl + Enter was used then we don't need to worry about setting
+      // focus, just leave it where it is. In NVDA, Ctrl + Enter will trigger
+      // a code check if focus is on a button in the tabs row. So it is not
+      // enough to only check whether the focus is in the editor.
+      if (!isCheckYourCodeButtonClicked()) {
+        setFocusManagementCompleted(true);
+        return;
+      }
+      // Delay focusing Submit button so that screen reader will announce
+      // it after the test results.
       setTimeout(() => {
-        setTestBtnAriaHidden(true);
+        submitButtonRef.current?.focus();
+        setFocusManagementCompleted(true);
       }, 500);
     }
-
-    setTestBtnAriaHidden(challengeIsCompleted);
-    // Since submitButtonRef changes every render, we have to ignore it here or,
-    // once the challenges is completed, every render (including ones triggered
-    // by typing in the editor) will focus the button.
   }, [challengeIsCompleted]);
 
   // ToDo: turn it into a grid to remove the need for useEffect.
@@ -233,7 +249,6 @@ const LowerJaw = ({
     ? t('buttons.check-code')
     : t('buttons.check-code-2');
 
-  const showScreenReadSubmit = challengeIsCompleted && isEditorInFocus;
   const showSignInButton = !isSignedIn && challengeIsCompleted;
 
   return (
@@ -248,28 +263,31 @@ const LowerJaw = ({
           {t('learn.sign-in-save')}
         </Button>
       )}
-      {challengeIsCompleted ? (
-        <button
-          className={lowerJawButtonStyle}
-          data-cy='submit-lowerJaw-button'
-          onClick={tryToSubmitChallenge}
-        >
-          {t('buttons.submit-and-go')}
-        </button>
-      ) : (
-        <button
-          className={lowerJawButtonStyle}
-          data-cy='check-lowerJaw-button'
-          onClick={tryToExecuteChallenge}
-          aria-hidden={testBtnAriaHidden}
-        >
-          {checkButtonText}
-        </button>
-      )}
+      <button
+        className={lowerJawButtonStyle}
+        data-cy='submit-lowerJaw-button'
+        onClick={tryToSubmitChallenge}
+        {...(!challengeIsCompleted && { 'aria-hidden': true })}
+        ref={submitButtonRef}
+      >
+        {t('buttons.submit-and-go')}
+      </button>
+      <button
+        className={lowerJawButtonStyle}
+        data-cy='check-lowerJaw-button'
+        onClick={tryToExecuteChallenge}
+        {...(challengeIsCompleted &&
+          !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
+        {...(focusManagementCompleted && { 'aria-hidden': true })}
+        ref={checkYourCodeButtonRef}
+      >
+        {checkButtonText}
+      </button>
+      {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}
-        aria-live='assertive'
+        aria-live='polite'
         ref={testFeedbackRef}
       >
         {runningTests && (
@@ -281,8 +299,8 @@ const LowerJaw = ({
             showFeedback={isFeedbackHidden}
             congratulationText={t('learn.congratulations')}
           >
-            {showScreenReadSubmit && (
-              <span className='sr-only'>{t('aria.submit')}</span>
+            {!isCheckYourCodeButtonClicked() && (
+              <span className='sr-only'>, {t('aria.submit')}</span>
             )}
           </LowerJawStatus>
         )}
