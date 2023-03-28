@@ -10,7 +10,7 @@ dashedName: add-labels-to-d3-elements
 
 D3 lässt dich Grafikelemente, wie z. B. Balken benennen, indem du das SVG `text`-Element verwendest.
 
-Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG. Es muss auch auf die Daten zugreifen, um diese Werte anzuzeigen.
+Wie beim `rect`-Element benötigt ein `text`-Element `x`- und `y`-Attribute, um auf dem SVG platziert werden zu können. Es muss auch auf die Daten zugreifen, um diese Werte anzuzeigen.
 
 D3 gibt dir ein hohes Maß an Kontrolle darüber, wie du deine Balken kennzeichnen kannst.
 

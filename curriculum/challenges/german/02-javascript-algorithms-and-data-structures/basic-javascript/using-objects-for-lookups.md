@@ -11,7 +11,7 @@ dashedName: using-objects-for-lookups
 
 Objekte kann man sich als Schlüssel/Wert-Speicher vorstellen, wie ein Wörterbuch. Wenn du tabellarische Daten hast, kannst du ein Objekt zum Nachschlagen von Werten verwenden, anstatt eine `switch`-Anweisung oder eine `if/else`-Kette. Das ist besonders nützlich, wenn du weißt, dass deine Eingabedaten auf einen bestimmten Bereich beschränkt sind.
 
-Here is an example of an article object:
+Hier ist ein Beispiel eines Artikelobjekts:
 
 ```js
 const article = {
