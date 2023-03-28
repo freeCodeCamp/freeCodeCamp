@@ -33,8 +33,7 @@ type MultifileEditorProps = Pick<
   | 'containerRef'
   | 'challengeFiles'
   | 'description'
-  // This types aren't passed in show.tsx, properly through redux.
-  // ToDo: find where how they're passed, and remove the props below
+  // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
 > & {
   visibleEditors: {
