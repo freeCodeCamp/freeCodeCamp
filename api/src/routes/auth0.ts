@@ -1,3 +1,4 @@
+import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 
 import { AUTH0_DOMAIN } from '../utils/env';
@@ -79,6 +80,31 @@ const getEmailFromAuth0 = async (req: FastifyRequest) => {
 
   const { email } = (await auth0Res.json()) as { email: string };
   return email;
+};
+
+export const devLogin: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get('/dev-callback', async (req, _res) => {
+    const email = 'foo@bar.com';
+
+    const existingUser = await fastify.prisma.user.findFirst({
+      where: { email }
+    });
+    if (existingUser) {
+      req.session.user = { id: existingUser.id };
+    } else {
+      const newUser = await fastify.prisma.user.create({
+        data: { ...defaultUser, email }
+      });
+      req.session.user = { id: newUser.id };
+    }
+    await req.session.save();
+  });
+
+  done();
 };
 
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
