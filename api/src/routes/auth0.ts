@@ -1,5 +1,9 @@
 import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+import {
+  FastifyInstance,
+  FastifyPluginCallback,
+  FastifyRequest
+} from 'fastify';
 
 import { AUTH0_DOMAIN } from '../utils/env';
 
@@ -82,6 +86,20 @@ const getEmailFromAuth0 = async (req: FastifyRequest) => {
   return email;
 };
 
+const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
+  const existingUser = await fastify.prisma.user.findFirst({
+    where: { email },
+    select: { id: true }
+  });
+  return (
+    existingUser ??
+    (await fastify.prisma.user.create({
+      data: { ...defaultUser, email },
+      select: { id: true }
+    }))
+  );
+};
+
 export const devLogin: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -90,17 +108,8 @@ export const devLogin: FastifyPluginCallbackTypebox = (
   fastify.get('/dev-callback', async (req, _res) => {
     const email = 'foo@bar.com';
 
-    const existingUser = await fastify.prisma.user.findFirst({
-      where: { email }
-    });
-    if (existingUser) {
-      req.session.user = { id: existingUser.id };
-    } else {
-      const newUser = await fastify.prisma.user.create({
-        data: { ...defaultUser, email }
-      });
-      req.session.user = { id: newUser.id };
-    }
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
     await req.session.save();
   });
 
@@ -113,18 +122,10 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.get('/callback', async (req, _res) => {
     const email = await getEmailFromAuth0(req);
 
-    const existingUser = await fastify.prisma.user.findFirst({
-      where: { email }
-    });
-    if (existingUser) {
-      req.session.user = { id: existingUser.id };
-    } else {
-      const newUser = await fastify.prisma.user.create({
-        data: { ...defaultUser, email }
-      });
-      req.session.user = { id: newUser.id };
-    }
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
     await req.session.save();
   });
+
   done();
 };
