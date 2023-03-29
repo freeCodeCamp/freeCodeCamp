@@ -85,7 +85,7 @@ jobs:
   cypress-run:
     name: Test
     runs-on: ubuntu-20.04
-    needs: build-client
+    needs: nx-cloud-main
     strategy:
       fail-fast: false
       matrix:
