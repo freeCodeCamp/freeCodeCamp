@@ -86,6 +86,8 @@ const getEmailFromAuth0 = async (req: FastifyRequest) => {
 };
 
 const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
+  // TODO: handle the case where there are multiple users with the same email.
+  // e.g. use findMany and throw an error if more than one is found.
   const existingUser = await fastify.prisma.user.findFirst({
     where: { email },
     select: { id: true }
