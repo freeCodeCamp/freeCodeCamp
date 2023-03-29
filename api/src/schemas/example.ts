@@ -1,4 +1,4 @@
-import { Static, Type } from '@sinclair/typebox';
+import { Static, Type } from '@fastify/type-provider-typebox';
 
 // The schema that TypeBox generates is compatible with ajv, e.g. the
 // Type.Object call below puts the following object into subSchema.

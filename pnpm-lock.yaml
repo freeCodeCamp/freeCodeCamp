@@ -182,9 +182,6 @@ importers:
       '@prisma/client':
         specifier: 4.11.0
         version: 4.11.0(prisma@4.11.0)
-      '@sinclair/typebox':
-        specifier: 0.25.24
-        version: 0.25.24
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.14.0)
@@ -202,8 +199,8 @@ importers:
         version: 2.0.22
     devDependencies:
       '@fastify/type-provider-typebox':
-        specifier: 2.4.0
-        version: 2.4.0(@sinclair/typebox@0.25.24)(fastify@4.15.0)
+        specifier: 3.0.0
+        version: 3.0.0(fastify@4.15.0)
       '@types/express-session':
         specifier: 1.17.7
         version: 1.17.7
@@ -6186,13 +6183,12 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox@2.4.0(@sinclair/typebox@0.25.24)(fastify@4.15.0):
-    resolution: {integrity: sha512-dP8KnpfyBD1FT1UxNWCRqSpKG69xYAK53q6MqUjuwYL7xvogXBbH/tpAMc1kZkKmgAHPT0migy9DaYtnkTbIIQ==}
+  /@fastify/type-provider-typebox@3.0.0(fastify@4.15.0):
+    resolution: {integrity: sha512-VVYY/ZcPSFElLtRYboA2bmFxoINGDqmmqJ8Ch8+2lvmc+XFCsOJ714SEOpgshC4n52KBclgQxf2O80NeEAN7gQ==}
     peerDependencies:
-      '@sinclair/typebox': ^0.25.9
       fastify: ^4.0.0
     dependencies:
-      '@sinclair/typebox': 0.25.24
+      '@sinclair/typebox': 0.26.8
       fastify: 4.15.0
     dev: true
 
@@ -7769,6 +7765,10 @@ packages:
 
   /@sinclair/typebox@0.25.24:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
+
+  /@sinclair/typebox@0.26.8:
+    resolution: {integrity: sha512-fvAkOrUWndf5vjptkW+4TeTH84/bILWQHgk7rbbzT8trZxW+b84lr8dZQPM/r7cGNRFxDaJYsMjHCikEYyAHaw==}
+    dev: true
 
   /@sindresorhus/is@0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
