@@ -1,0 +1,26 @@
+{
+  "name": "@freecodecamp/utils",
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/block-nameify.js",
+          "{projectRoot}/block-nameify.test.js",
+          "{projectRoot}/slugs.js",
+          "{projectRoot}/slugs.test.js",
+          "{projectRoot}/index.js",
+          "{projectRoot}/get-lines.js",
+          "{projectRoot}/get-lines.test.js",
+          "{projectRoot}/validate.js",
+          "{projectRoot}/validate.test.js"
+        ],
+        "inputs": [
+          "{projectRoot}/**/*.ts"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "build": "nx exec -- tsc -p ."
+  }
+}

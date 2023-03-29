@@ -18,6 +18,19 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/lib"
+        ],
+        "inputs": [
+          "default",
+          "!{projectRoot}/**/*.test.js"
+        ]
+      }
+    }
+  },
   "scripts": {
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
     "build": "babel src --out-dir lib --ignore '/**/*.test.js' --copy-files --no-copy-ignored",

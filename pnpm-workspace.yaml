@@ -4,6 +4,7 @@ packages:
   - 'client'
   - 'client/plugins/fcc-source-challenges'
   - 'client/plugins/gatsby-remark-node-identity'
+  - 'config'
   - 'curriculum'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
@@ -13,3 +14,4 @@ packages:
   - 'tools/scripts/build'
   - 'tools/scripts/seed'
   - 'tools/ui-components'
+  - 'utils'

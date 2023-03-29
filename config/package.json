@@ -1,0 +1,21 @@
+{
+    "name": "@freecodecamp/config",
+    "nx": {
+        "targets": {
+            "build": {
+                "outputs": [
+                    "{projectRoot}/i18n.js",
+                    "{projectRoot}/misc.js",
+                    "{projectRoot}/certification-settings.js",
+                    "{projectRoot}/donation-settings.js",
+                    "{projectRoot}/superblock-order.js",
+                    "{projectRoot}/superblock-order.test.js"
+                ],
+                "inputs": ["{projectRoot}/**/*.ts"]
+            }
+        }
+    },
+    "scripts": {
+        "build": "nx exec -- tsc -p ."
+    }
+}

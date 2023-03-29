@@ -1,0 +1,18 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "build:workers", "prebuild"],
+        "accessToken": "OTc2ODk3YTQtZWVjMy00NTQyLTljMTEtOWI2OWI4NjE0YmI2fHJlYWQtd3JpdGU=",
+        "url": "https://staging.nx.app/"
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["prebuild"]
+    }
+  },
+  "defaultBase": "main"
+}

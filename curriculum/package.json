@@ -17,6 +17,21 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
+  "nx": {
+    "targets": {
+      "build": {
+        "inputs": [
+          "default",
+          "{workspaceRoot}/tools/scripts/build/build-curriculum.ts",
+          "{workspaceRoot}/tools/scripts/build/build-external-curricula-data.ts",
+          "{workspaceRoot}/tsconfig.json"
+        ],
+        "outputs": [
+          "{workspaceRoot}/config/curriculum.json"
+        ]
+      }
+    }
+  },
   "scripts": {
     "build": "ts-node --project ../tsconfig.json ../tools/scripts/build/build-curriculum",
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
