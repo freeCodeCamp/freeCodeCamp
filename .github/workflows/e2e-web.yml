@@ -13,13 +13,7 @@ on:
       - 'next-**'
 
 jobs:
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
-    with:
-    number-of-agents: 3
-
-  build-client:
+  setup:
     name: Build
     runs-on: ubuntu-20.04
     strategy:
@@ -53,36 +47,40 @@ jobs:
       - name: Install and Build
         run: pnpm install
 
-      - name: Nx Cloud - Main Job
-        uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11.3
-        with:
-          main-branch-name: main
-          number-of-agents: 3
-          init-commands: |
-            pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-          parallel-commands: |
-            pnpm exec nx-cloud record -- pnpm exec nx format:check
-          parallel-commands-on-agents: |
-            pnpm exec nx affected --target=build --parallel=3
+  nx-cloud-main:
+    name: Nx Cloud - Main Job
+    needs: setup
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11.3
+    with:
+      main-branch-name: main
+      number-of-agents: 3
+      init-commands: |
+        pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+      parallel-commands: |
+        pnpm exec nx-cloud record -- pnpm exec nx format:check
+      parallel-commands-on-agents: |
+        pnpm exec nx affected --target=build --parallel=3
+      final-commands: |
+        cp client-config/serve.json client/public/serve.json
+        tar -cf client-artifact.tar client/public
 
-      - name: Move serve.json to Public Folder
-        run: cp client-config/serve.json client/public/serve.json
+        # - name: Upload Client Artifact
+        #   uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        #   with:
+        #     name: client-artifact
+        #     path: client-artifact.tar
 
-      # We tar them for performance reasons - uploading a lot of files is slow.
-      - name: Tar Files
-        run: tar -cf client-artifact.tar client/public
+        # - name: Upload Webpack Stats
+        #   uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        #   with:
+        #     name: webpack-stats
+        #     path: client/public/stats.json
 
-      - name: Upload Client Artifact
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: client-artifact
-          path: client-artifact.tar
-
-      - name: Upload Webpack Stats
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: webpack-stats
-          path: client/public/stats.json
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
+    with:
+    number-of-agents: 3
 
   cypress-run:
     name: Test
