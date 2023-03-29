@@ -747,7 +747,7 @@
   "forum-help": {
     "browser-info": "**ブラウザ情報:**",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**チャレンジ:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**チャレンジへのリンク:**",
     "whats-happening": "**何が起きているか説明してください:**",
     "describe": "困っている内容をこちらに詳しく記入してください。",

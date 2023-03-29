@@ -36,7 +36,7 @@ Mit D3 kannst du mithilfe von Punkten mehrere Methoden „verketten“, um versc
 
 # --instructions--
 
-Verwende die `select`-Methode, um das `body`-Tag im Dokument auszuwählen. Then `append` an `h1` tag to it, and add the text `Learning D3` into the `h1` element.
+Verwende die `select`-Methode, um das `body`-Tag im Dokument auszuwählen. Füge anschließend mithilfe von `append` einen `h1`-Tag hinzu und gebe diesem `h1`-Element den Text `Learning D3`.
 
 # --hints--
 

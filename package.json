@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "7"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "challenge-editor:server": "cd ./tools/challenge-editor/api && pnpm start",
     "clean": "npm-run-all -p clean:client clean:server clean:curriculum --serial clean:packages",
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
+    "clean:api": "cd api && pnpm clean",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rm -rf ./config/curriculum.json",
     "clean:packages": "rm -rf ./node_modules ./**/node_modules",
@@ -111,7 +112,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.0",
     "@types/lodash": "4.14.191",
-    "@types/node": "18.15.9",
+    "@types/node": "18.15.10",
     "@types/store": "2.0.2",
     "babel-jest": "29.5.0",
     "babel-plugin-transform-imports": "2.0.0",
@@ -121,7 +122,7 @@
     "cypress-plugin-tab": "1.0.5",
     "docsify-cli": "4.4.4",
     "eslint": "7.32.0",
-    "eslint-config-prettier": "8.7.0",
+    "eslint-config-prettier": "8.8.0",
     "eslint-plugin-filenames-simple": "0.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jest-dom": "3.9.4",

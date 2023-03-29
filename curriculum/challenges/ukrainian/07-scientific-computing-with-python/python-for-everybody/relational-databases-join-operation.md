@@ -26,7 +26,7 @@ dashedName: relational-databases-join-operation
 
 ---
 
-Воно вказує на те, як саме таблиці мають бути об'єднані.
+Воно вказує на те, як саме таблиці мають бути об’єднані.
 
 ## --video-solution--
 

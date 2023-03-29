@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c11
-title: Delete Many Documents with model.remove()
+title: Mehrere Dokumente mit model.remove() löschen
 challengeType: 2
 forumTopicId: 301538
 dashedName: delete-many-documents-with-model-remove
@@ -18,7 +18,7 @@ dashedName: delete-many-documents-with-model-remove
 
 # --hints--
 
-Deleting many items at once should succeed
+Das Löschen vieler Objekte auf einmal sollte funktionieren
 
 ```js
 (getUserInput) =>
