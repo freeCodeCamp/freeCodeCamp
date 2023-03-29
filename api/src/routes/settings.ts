@@ -24,14 +24,16 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             showTimeLine: Type.Boolean()
           })
         }),
-        200: Type.Object({
-          message: Type.String(),
-          type: Type.Literal('success')
-        }),
-        500: Type.Object({
-          message: Type.String(),
-          type: Type.Literal('danger')
-        })
+        response: {
+          200: Type.Object({
+            message: Type.String(),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.String(),
+            type: Type.Literal('danger')
+          })
+        }
       }
     },
     async req => {
