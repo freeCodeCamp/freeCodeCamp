@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Data Structures By Building A Shopping Cart
 block: learn-data-structures-by-building-a-shopping-cart
-superBlock: Responsive Web Design
+superBlock: JavaScript Algorithms and Data Structures
 isBeta: true
 ---
 
