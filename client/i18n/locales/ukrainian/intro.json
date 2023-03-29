@@ -746,135 +746,135 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Алгебра з Python",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "Цей курс розроблений як односеместровий курс коледжу. Він складається з навчальних відео та блокнотів Google Colaboratory, за якими потрібно слідкувати протягом інтерактивів, завдань та проєктів.",
+      "Під час проходження кожної частини курсу ви повністю зрозумієте алгебру та навчитесь писати код Python, який розв’язуватиме приклади.",
+      "Протягом курсу ви також побудуєте блокнот Algebra Colab, який зможете використовувати як власний калькулятор. Цей курс (та код, який ви напишете) надасть вам основу, щоб краще зрозуміти математику та data science."
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "Вивчіть співвідношення та пропорції",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "Тут починається ваша подорож. Ви дізнаєтесь, як налаштувати Colab Notebook, який може запускати код Python. Потім ви використовуватимете блокнот, щоб за допомогою відео вивчити співвідношення та пропорції з Python."
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "Вивчіть, як знайти Х",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "Ця тема фокусуватиметься на знаходженні невідомого числа (часто називається «х»), використовуючи алгебраїчні вирази та код Python."
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "Вивчіть дроби та десяткові числа",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "Ця тема зосереджуватиметься на перетворенні десяткових чисел у дроби та відсотки."
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "Вивчіть функції та графіки",
+        "intro": ["Ця тема навчить вас математичних функцій."]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "Вивчіть лінійні функції",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "Ця тема покаже, як знайти рівняння прямої, що проходить через дві задані точки."
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "Вивчіть спільні множники та квадратні корені",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "У цій темі ви навчитесь знаходити спільні множники та скорочувати їх. Це буде корисно при спрощенні дробів та розкладанні квадратних коренів."
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "Багатофункціональний калькулятор",
         "intro": [
           "Це один з обов'язкових до виконання проєктів для отримання сертифікації.",
-          "For this project, you will build a multi-function calculator."
+          "У цьому проєкті ви побудуєте багатофункціональний калькулятор."
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "Вивчіть, як побудувати графік системи рівнянь",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "Ця тема фокусуватиметься на побудові графіку з двома рівняннями на одній координатній площині, де можна побачити перетин ліній."
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "Вивчіть, як розв’язувати системи рівнянь",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "У цій темі ви навчитесь розв’язувати систему з двох рівнянь (з двома змінними) без графіка. Ви побачите, як можна розкласти рівняння та розв’язати задану змінну в Python. Після цього ви зможете розв’язувати та будувати графік системи за допомогою одного блоку коду."
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "Дізнайтесь про прикладне застосування лінійних систем",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "У цій темі ви побачите, як можна використовувати вивчену алгебру для розв’язку завдань, пов’язаних з реальним світом."
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "Вивчіть квадратні рівняння",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "Ця тема виходить за межі лінійних рівнянь і зосереджується на піднесенні до степеня та побудові параболи. Ви навчитеся знаходити ключові точки на параболах і розв’язувати квадратні рівняння."
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "Графічний калькулятор",
         "intro": [
           "Це один з обов'язкових до виконання проєктів для отримання сертифікації.",
-          "For this project, you will build a graphing calculator."
+          "У цьому проєкті ви побудуєте графічний калькулятор."
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "Вивчіть батьківські графіки та многочлени",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "Ця тема покаже багато різних видів «батьківських» графіків, тобто базових шаблонів, з яких створюються складніші графіки. Многочлени — це математичні вирази з декількома елементами, тобто складнішими членами. Ви побачите, як ці графіки виглядають, як їх змінити та як зробити це за допомогою Python."
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "Три математичні ігри",
         "intro": [
           "Це один з обов'язкових до виконання проєктів для отримання сертифікації.",
-          "For this project, you will build three math games."
+          "У цьому проєкті ви побудуєте три математичні ігри."
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "Дізнайтесь про прикладне застосування алгебри у бізнесі",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "Ця тема покаже, як застосувати навички розв’язання та побудови графіків, щоб знайти витрати, дохід та прибуток. Ви напишете код, який створюватиме криву попиту з двох точок. Ви побачите, як ціна впливає на графік прибутку і те, як взаємодіють усі рівняння."
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "Вивчіть прості та складні відсотки",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "Ця тема покаже, як розрахувати відсотки, сплату позики та прогнозний розрахунок інвестицій. Ви побачите математичні формули та перетворите їх у код. Оскільки ці формули зазвичай складні, корисно мати код і лише змінювати значення."
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "Вивчіть піднесення до степеня та логарифми",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "Ця тема покаже, що піднесення до степеня та логарифми є оберненими функціями, які можна використовувати для різного застосування."
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "Фінансовий калькулятор",
         "intro": [
           "Це один з обов'язкових до виконання проєктів для отримання сертифікації.",
-          "For this project, you will build a financial calculator."
+          "У цьому проєкті ви побудуєте фінансовий калькулятор."
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Алгебра з Python: висновок",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "Це остання тема даного курсу. Поглянемо, як ви можете поєднати знання з математики та Python із зовнішніми даними."
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "Дослідник графіку даних",
         "intro": [
           "Це один з обов'язкових до виконання проєктів для отримання сертифікації.",
-          "For this project, you will build a data graph explorer."
+          "У цьому проєкті ви побудуєте дослідник графіку даних."
         ]
       }
     }
@@ -885,7 +885,7 @@
       "Шукаєте безоплатні вправи з кодування, щоб підготуватися до наступної співбесіди? Ми уже про це подбали.",
       "Цей розділ містить сотні завдань з програмування, які перевіряють ваші знання алгоритмів, структур даних і математики. Тут також є декілька проєктів, які ви можете використати для зміцнення своїх навичок або просто додати до свого портфоліо."
     ],
-    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
+    "note": "Проєкт «Ейлер» переміщено в окремий курс. Поверніться до навчальної програми, щоб побачити перелік всіх курсів.",
     "blocks": {
       "algorithms": {
         "title": "Алгоритми",
@@ -937,40 +937,40 @@
     }
   },
   "project-euler": {
-    "title": "Project Euler",
+    "title": "Проєкт «Ейлер»",
     "intro": [
-      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+      "Виконайте завдання з програмування з архівів проєкту «Ейлер». Вони удосконалять ваші алгоритмічні та математичні знання.",
+      "Тут є завдання різної складності, а для багатьох здобуття досвіду полягає в індуктивному методі навчання. Тобто, вирішення одного завдання прояснить нову концепцію та дозволить вирішити раніше незрозуміле завдання. Чи під силу вам вирішити кожне?"
     ],
     "blocks": {
       "project-euler-problems-1-to-100": {
-        "title": "Project Euler Problems 1 to 100",
+        "title": "Проєкт «Ейлер». Завдання 1-100",
         "intro": [
-          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+          "У першому наборі завдань ви використовуватимете послідовність Фібоначчі, теорему про розподіл простих чисел та комбінаторику, щоб написати алгоритми для розв’язку завдань."
         ]
       },
       "project-euler-problems-101-to-200": {
-        "title": "Project Euler Problems 101 to 200",
+        "title": "Проєкт «Ейлер». Завдання 101-200",
         "intro": [
-          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+          "У цьому наборі завдань ви закріпите знання з першої частини курсу та використовуватимете обчислення вектора, трикутник Паскаля й алгоритм RSA, щоб розв’язати завдання."
         ]
       },
       "project-euler-problems-201-to-300": {
-        "title": "Project Euler Problems 201 to 300",
+        "title": "Проєкт «Ейлер». Завдання 201-300",
         "intro": [
-          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+          "У цьому наборі завдань ви продовжите розвивати навички з попередніх завдань та використовуватимете біном Ньютона, числа Гемінґа й послідовність Коллатца."
         ]
       },
       "project-euler-problems-301-to-400": {
-        "title": "Project Euler Problems 301 to 400",
+        "title": "Проєкт «Ейлер». Завдання 301-400",
         "intro": [
-          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+          "Тут ви продовжите працювати над своїми навичками, використовуючи комбінаторну теорію ігор, бітові операції та послідовність Ґоломба."
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "Проєкт «Ейлер». Завдання 401-480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "У кінцевому наборі завдань ви підкреслите свої знання та використовуватимете унітарні дільники, програму Капрекара та багато іншого, щоб розв’язати складні завдання."
         ]
       }
     }
