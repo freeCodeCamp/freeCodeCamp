@@ -123,7 +123,7 @@ function LearnPage({
             )}
             <h2 className='sr-only'>{t('settings.headings.certs')}</h2>
             <Map />
-            <Spacer paddingSize={30} />
+            <Spacer size='large' />
           </Col>
         </Row>
       </Grid>

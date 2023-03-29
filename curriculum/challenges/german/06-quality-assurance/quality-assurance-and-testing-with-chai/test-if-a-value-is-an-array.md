@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Ändere innerhalb `tests/1_unit-tests.js` mit dem gekennzeichneten Test `#11` in der `Arrays`-Suite, jeden `assert` zu `assert.isArray` oder `assert.isNotArray`, um den Test zu bestehen (sollte `true` ausgeben). Do not alter the arguments passed to the asserts.
 
 # --hints--
 
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isArray` vs. `isNotArray`.
+Du solltest die richtige Methode für die erste Behauptung wählen, `isArray` vs. `isNotArray`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isArray` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isArray` vs. `isNotArray`.
+Du solltest die richtige Methode für die zweite Behauptung wählen, `isArray` vs. `isNotArray`.
 
 ```js
 (getUserInput) =>

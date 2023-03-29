@@ -17,7 +17,7 @@ El sitio web constará de una página de índice principal que tendrá enlaces a
 1. Deberías ver un elemento `h1` que tiene el texto `Creamy Chocolate Fudge`.
 1. You should see an image with the url `*placeholder-fcc-cdn*` with a fitting `alt` text.
 1. There should be an `h2` element with the text `Description` under the image.
-1. You should see a couple of paragraphs under `Description` that describe the recipe.
+1. Debes ver algunos párrafos debajo de,`Description` que describan la receta.
 1. There should be an `h2` element with the text `Ingredients`
 1. Under the `Ingredients` heading there should be an unordered list with the ingredients needed for the recipe.
 1. Under the list of ingredients add another heading called `Steps`.

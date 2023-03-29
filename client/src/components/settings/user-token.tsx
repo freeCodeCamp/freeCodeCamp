@@ -33,10 +33,10 @@ class UserToken extends Component<UserTokenProps> {
         <FullWidthRow>
           <Panel className='user-panel'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <Spacer paddingSize={5} />
+              <Spacer size='small' />
               <Button
                 block={true}
                 bsSize='lg'
@@ -48,7 +48,7 @@ class UserToken extends Component<UserTokenProps> {
               >
                 {t('user-token.delete')}
               </Button>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
             </FullWidthRow>
           </Panel>
         </FullWidthRow>

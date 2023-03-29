@@ -10,17 +10,17 @@ dashedName: build-a-cash-register
 
 Розробіть функцію касового апарату `checkCashRegister()`, яка приймає ціну покупки як перший аргумент (`price`), оплату як другий аргумент (`cash`) та суму готівки в касі як третій аргумент (`cid`).
 
-`cid` – це 2D масив, який містить список доступного обігу.
+`cid` — це 2D масив, який містить список доступного обігу.
 
 Функція `checkCashRegister()` завжди повинна повертати об'єкт з ключем `status` та ключем `change`.
 
 Поверніть `{status: "INSUFFICIENT_FUNDS", change: []}`, якщо сума готівки в касі менша за здачу, або ви не можете віддати здачу.
 
-Поверніть `{status: "CLOSED", change: [...]}` з сумою в касі як значення ключа `change`, якщо вона дорівнює здачі.
+Поверніть `{status: "CLOSED", change: [...]}` з сумою в касі як значення ключа `change`, якщо воно дорівнює здачі.
 
 В іншому випадку, поверніть `{status: "OPEN", change: [...]}` зі здачею в монетах і банкнотах, в порядку від найбільшої до найменшої, як значення ключа `change`.
 
-<table class='table table-striped'><tbody><tr><th>Грошовий обіг</th><th>Сума</th></tr><tr><td>Пенні</td><td>$0.01 (ПЕННІ)</td></tr><tr><td>Нікель</td><td>$0.05 (НІКЕЛЬ)</td></tr><tr><td>Дайм</td><td>$0.1 (ДАЙМ)</td></tr><tr><td>Чверть</td><td>$0.25 (ЧВЕРТЬ)</td></tr><tr><td>Долар</td><td>$1 (ОДИН)</td></tr><tr><td>П'ять доларів</td><td>$5 (П'ЯТЬ)</td></tr><tr><td>Десять доларів</td><td>$10 (ДЕСЯТЬ)</td></tr><tr><td>Двадцять доларів</td><td>$20 (ДВАДЦЯТЬ)</td></tr><tr><td>Сто доларів</td><td>$100 (СТО)</td></tr></tbody></table>
+<table class='table table-striped'><tbody><tr><th>Грошовий обіг</th><th>Сума</th></tr><tr><td>Пенні</td><td>$0.01 (ПЕННІ)</td></tr><tr><td>Нікель</td><td>$0.05 (НІКЕЛЬ)</td></tr><tr><td>Дайм</td><td>$0.1 (ДАЙМ)</td></tr><tr><td>Чверть</td><td>$0.25 (ЧВЕРТЬ)</td></tr><tr><td>Долар</td><td>$1 (ОДИН)</td></tr><tr><td>П’ять доларів</td><td>$5 (П’ЯТЬ)</td></tr><tr><td>Десять доларів</td><td>$10 (ДЕСЯТЬ)</td></tr><tr><td>Двадцять доларів</td><td>$20 (ДВАДЦЯТЬ)</td></tr><tr><td>Сто доларів</td><td>$100 (СТО)</td></tr></tbody></table>
 
 Подивіться нижче на приклад масиву з сумою в касі:
 
@@ -40,7 +40,7 @@ dashedName: build-a-cash-register
 
 # --hints--
 
-`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` повинен повертати об'єкт.
+`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` має повертати об’єкт.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` повинен повертати `{status: "OPEN", change: [["QUARTER", 0.5]]}`.
+`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` має повертати `{status: "OPEN", change: [["QUARTER", 0.5]]}`.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` повинен повертати `{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}`.
+`checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` має повертати `{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}`.
 
 ```js
 assert.deepEqual(
@@ -110,7 +110,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` повинен повертати `{status: "INSUFFICIENT_FUNDS", change: []}`.
+`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` має повертати `{status: "INSUFFICIENT_FUNDS", change: []}`.
 
 ```js
 assert.deepEqual(
@@ -129,7 +129,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` повинен повертати `{status: "INSUFFICIENT_FUNDS", change: []}`.
+`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` має повертати `{status: "INSUFFICIENT_FUNDS", change: []}`.
 
 ```js
 assert.deepEqual(
@@ -148,7 +148,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` повинен повертати `{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}`.
+`checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` має повертати `{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}`.
 
 ```js
 assert.deepEqual(

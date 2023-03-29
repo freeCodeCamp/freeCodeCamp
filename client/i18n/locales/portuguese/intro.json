@@ -788,8 +788,8 @@
           "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
         ]
       },
-      "build-a-multi-function-calculator": {
-        "title": "Crie uma calculadora multifunção",
+      "build-a-multi-function-calculator-project": {
+        "title": "Calculadora multifunção",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora multifunção."
@@ -819,8 +819,8 @@
           "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
         ]
       },
-      "build-a-graphing-calculator": {
-        "title": "Criar uma calculadora gráfica",
+      "build-a-graphing-calculator-project": {
+        "title": "Calculadora gráfica",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora gráfica."
@@ -832,8 +832,8 @@
           "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
         ]
       },
-      "build-three-math-games": {
-        "title": "Crie três jogos de matemática",
+      "build-three-math-games-project": {
+        "title": "Três jogos de matemática",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará três jogos de matemática."
@@ -857,8 +857,8 @@
           "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
         ]
       },
-      "build-a-financial-calculator": {
-        "title": "Criar uma calculadora financeira",
+      "build-a-financial-calculator-project": {
+        "title": "Calculadora financeira",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora financeira."
@@ -870,8 +870,8 @@
           "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
         ]
       },
-      "build-a-data-graph-explorer": {
-        "title": "Crie um explorador de gráfico de dados",
+      "build-a-data-graph-explorer-project": {
+        "title": "Explorador de gráfico de dados",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma explorador de gráfico de dados."
@@ -885,7 +885,7 @@
       "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
       "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
     ],
-    "note": "",
+    "note": "O Projeto Euler foi movido para seu próprio curso. Volte ao currículo para ver a lista dos cursos que oferecemos.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -915,13 +915,6 @@
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
-      },
-      "project-euler": {
-        "title": "Projeto Euler",
-        "intro": [
-          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
-          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
-        ]
       }
     }
   },
@@ -940,6 +933,45 @@
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Projeto Euler",
+    "intro": [
+      "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
+      "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Problemas do Projeto Euler de 1 a 100",
+        "intro": [
+          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas."
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "Problemas do Projeto Euler de 101 a 200",
+        "intro": [
+          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente."
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Problemas do Projeto Euler de 201 a 300",
+        "intro": [
+          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Problemas do Projeto Euler de 301 a 400",
+        "intro": [
+          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Problemas do Projeto Euler de 401 a 480",
+        "intro": [
+          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
+        ]
       }
     }
   },

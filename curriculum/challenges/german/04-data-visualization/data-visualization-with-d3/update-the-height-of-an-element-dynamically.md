@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bc9
-title: Update the Height of an Element Dynamically
+title: Die Höhe eines Elements dynamisch aktualisieren
 challengeType: 6
 forumTopicId: 301493
 dashedName: update-the-height-of-an-element-dynamically
@@ -8,7 +8,7 @@ dashedName: update-the-height-of-an-element-dynamically
 
 # --description--
 
-The previous challenges covered how to display data from an array and how to add CSS classes. Du kannst diese Lektionen kombinieren, um ein einfaches Balkendiagramm zu erstellen. Hierfür gibt es zwei Schritte:
+In den vorherigen Aufgaben ging es um das Darstellen von Array-Daten und um das Hinzufügen von CSS-Klassen. Du kannst diese Lektionen kombinieren, um ein einfaches Balkendiagramm zu erstellen. Hierfür gibt es zwei Schritte:
 
 1) Erstelle einen `div` für jeden Datenpunkt im Array
 
@@ -22,7 +22,7 @@ selection.style("cssProperty", (d) => d)
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `height` property for each element. Verwende eine Callback-Funktion, um den Wert des Datenpunkts sowie den darauffolgenden String `px` zurückzugeben.
+Füge die `style()`-Methode dem Code im Editor hinzu, um die `height`-Eigenschaft für jedes Element zu setzen. Verwende eine Callback-Funktion, um den Wert des Datenpunkts sowie den darauffolgenden String `px` zurückzugeben.
 
 # --hints--
 

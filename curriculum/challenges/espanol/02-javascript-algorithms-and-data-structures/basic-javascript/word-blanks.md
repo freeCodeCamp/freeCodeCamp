@@ -11,7 +11,13 @@ dashedName: word-blanks
 
 Se te proporcionan oraciones con algunas palabras faltantes, como sustantivos, verbos, adjetivos y adverbios. Luego, completa las piezas que faltan con palabras de tu elección de una manera que la oración completa tenga sentido.
 
-Considera esta oración: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Esta oración tiene tres piezas faltantes: un adjetivo, un verbo y un adverbio, y podemos añadir palabras de nuestra elección para completarla. Luego podemos asignar la oración completa a una variable de la siguiente manera:
+Considera esta frase:
+
+```md
+It was really ____, and we ____ ourselves ____.
+```
+
+A esta frase le faltan tres piezas: un adjetivo, un verbo y un adverbio, y podemos añadir las palabras que queramos para completarla. A continuación, podemos asignar la frase completa a una variable de la siguiente manera:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -19,11 +25,11 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-En este desafío, te proporcionamos un sustantivo, un verbo, un adjetivo y un adverbio. Necesitas formar una oración completa usando palabras de tu elección, junto con las palabras que te proporcionamos.
+En este reto, te proporcionamos un sustantivo, un verbo, un adjetivo y un adverbio. Tienes que formar una frase completa utilizando palabras de tu elección, junto con las palabras que te proporcionamos.
 
-Necesitarás usar el operador de concatenación de cadenas `+` para construir una nueva cadena, usando las variables proporcionadas: `myNoun`, `myAdjective`, `myVerb`, y `myAdverb`. A continuación, asignarás la cadena formada a la variable `wordBlanks`. No debes cambiar las palabras asignadas a las variables.
+Debes utilizar el operador de concatenación de cadenas `+` para construir una nueva cadena, utilizando las variables proporcionadas: `myNoun`, `myAdjective`, `myVerb`, y `myAdverb`. A continuación, asigna la cadena formada a la variable `wordBlanks`. No debes cambiar las palabras asignadas a las variables.
 
-También tendrás que tener en cuenta los espacios en tu cadena, para que la frase final tenga espacios entre todas las palabras. El resultado debe ser una oración completa.
+También tendrás que tener en cuenta los espacios en tu cadena, de modo que la frase final tenga espacios entre todas las palabras. El resultado debe ser una frase completa.
 
 # --hints--
 
@@ -56,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` debe contener todas las palabras asignadas a las variables `myNoun`, `myVerb`, `myAdjective` y `myAdverb` separadas por espacios (y cualquier palabra adicional a tu elección).
+`wordBlanks` debes contener todas las palabras asignadas a las variables `myNoun`, `myVerb`, `myAdjective` y `myAdverb` separadas por caracteres no-palabra (y cualquier palabra adicional de su elección).
 
 ```js
 assert(

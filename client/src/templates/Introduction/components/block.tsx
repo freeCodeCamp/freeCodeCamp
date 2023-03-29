@@ -352,7 +352,7 @@ class Block extends Component<BlockProps> {
         {blockrenderer()}
         {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
         !isProjectBlock ? null : (
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
         )}
       </>
     );

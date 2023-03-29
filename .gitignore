@@ -163,6 +163,7 @@ config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
 config/i18n.js
+config/misc.js
 config/certification-settings.js
 config/donation-settings.js
 config/superblock-order.js
@@ -221,6 +222,3 @@ client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist
-
-### API ###
-api/**/*.js

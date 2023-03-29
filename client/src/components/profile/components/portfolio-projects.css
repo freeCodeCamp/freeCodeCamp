@@ -1,0 +1,148 @@
+.portfolio-container {
+  display: grid;
+  position: relative;
+  border: 1px solid var(--secondary-color);
+  gap: 1rem 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.portfolio-screen-shot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+.portfolio-container h3 {
+  grid-column: 1/ -1;
+  grid-row: 2;
+  margin-block: 1em;
+}
+
+#link-icon {
+  margin-inline-start: 1em;
+}
+
+.portfolio-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/ -1;
+  grid-row: 4;
+  font-size: unset;
+  justify-self: end;
+  width: 40%;
+  background-color: var(--primary-color);
+  color: var(--primary-background);
+  padding: 0.5rem;
+  border-radius: 15px;
+  padding-inline: 4rem;
+  margin: 1em;
+  text-decoration: none;
+  /* prevent line breaks in Chinese/Japanese/Korean */
+  word-break: keep-all;
+}
+
+.portfolio-container a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.portfolio-container a:is(:hover, :focus, :focus-visible) {
+  outline-offset: 2px;
+}
+
+.portfolio-container p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  grid-column: 1/ -1;
+  grid-row: 3;
+}
+
+@media (max-width: 994px) {
+  .portfolio-screen-shot {
+    max-height: 300px;
+  }
+
+  .portfolio-container h3 {
+    margin: 0.5rem;
+  }
+
+  .portfolio-container p {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 995px) {
+  .portfolio-container {
+    grid-template-rows: minmax(75px, 1fr) minmax(125px, 1fr) 75px;
+    grid-template-columns: 300px 1.2fr;
+  }
+
+  .portfolio-screen-shot {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+
+  .portfolio-container h3 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .portfolio-container p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .portfolio-container a {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}
+
+.timeline-pagination_list_item > button {
+  outline: none;
+}
+
+/* Timeline table styles */
+.timeline-row {
+  height: 60px;
+}
+
+.timeline-row > td {
+  vertical-align: middle !important;
+}
+
+.timeline-cert-link {
+  margin-inline-end: 20px;
+}
+
+.timeline-cert-link > svg {
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin-inline-start: 10px;
+  position: absolute;
+}

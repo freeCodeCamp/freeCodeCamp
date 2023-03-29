@@ -67,7 +67,7 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Row>
           <>
             <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
@@ -78,7 +78,7 @@ function DonatePage({
                   ) : (
                     <h2>{t('donate.help-more')}</h2>
                   )}
-                  <Spacer paddingSize={15} />
+                  <Spacer size='medium' />
                 </Col>
               </Row>
               {isDonating ? (
@@ -94,12 +94,12 @@ function DonatePage({
                   <DonateForm paymentContext={PaymentContext.DonatePage} />
                 </Col>
               </Row>
-              <Spacer paddingSize={45} />
+              <Spacer size='exLarge' />
               <Row className='donate-support' id='FAQ'>
                 <Col className={'text-center'} xs={12}>
                   <hr />
                   <h2>{t('donate.faq')}</h2>
-                  <Spacer paddingSize={15} />
+                  <Spacer size='medium' />
                 </Col>
                 <Col xs={12}>
                   <DonationFaqText />
@@ -111,7 +111,7 @@ function DonatePage({
             </Col>
           </>
         </Row>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
       </Grid>
     </>
   );

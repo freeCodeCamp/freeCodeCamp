@@ -36,6 +36,7 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.InfoSec, public: false },
   { dashedName: SuperBlocks.MachineLearningPy, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
+  { dashedName: SuperBlocks.ProjectEuler, public: false },
   { dashedName: SuperBlocks.RelationalDb, public: false }
 ];
 

@@ -8,21 +8,28 @@ dashedName: record-collection
 
 # --description--
 
-給定一個對象，用來表示部分音樂專輯收藏。 每張專輯都有幾個屬性和一個唯一的 id 號作爲鍵值。 並非所有專輯都有完整的信息。
+You are creating a function that aids in the maintenance of a musical album collection. The collection is organized as an object that contains multiple albums which are also objects. Each album is represented in the collection with a unique `id` as the property name. Within each album object, there are various properties describing information about the album. Not all albums have complete information.
 
-以 `updateRecords` 函數開始，這個函數需要一個對象 `records`，包含一個音樂專輯集合，一個 `id`，一個 `prop`（如 `artist` 或 `tracks`），和一個 `value`。 使用下面的規則完成函數來修改傳遞給函數的對象。
+The `updateRecords` function takes 4 arguments represented by the following function parameters:
 
--   函數必須始終返回整個音樂專輯集合對象。
--   如果 `prop` 不是 `tracks` 並且 `value` 不是一個空字符串， 將專輯的 `prop` 更新或設置爲 `value`。
--   如果 `prop` 是 `tracks` 但專輯沒有 `tracks` 屬性，則應創建空數組併爲其添加 `value`。
--   如果 `prop` 是 `tracks` 並且 `value` 不是一個空字符串，將 `value` 添加到專輯現有 `tracks` 數組的末尾。
--   如果 `value` 是空字符串，從專輯裏刪除指定的 `prop`。
+-   `records` - an object containing several individual albums
+-   `id` - a number representing a specific album in the `records` object
+-   `prop` - a string representing the name of the album’s property to update
+-   `value` - a string containing the information used to update the album’s property
 
-**注意：** 用 `recordCollection` 對象做爲測試參數對象。
+Complete the function using the rules below to modify the object passed to the function.
+
+-   Your function must always return the entire `records` object.
+-   If `value` is an empty string, delete the given `prop` property from the album.
+-   If `prop` isn’t `"tracks"` and `value` isn't an empty string, assign the `value` to that album’s `prop`.
+-   If `prop` is `"tracks"` and `value` isn’t an empty string, add the `value` to the end of the album’s existing `"tracks"` array.
+-   If the album doesn’t have a `"tracks"` property, create a new array for the album's `"tracks"` property before adding the `value` to it.
+
+**Note:** A copy of the `recordCollection` object is used for the tests. You should not directly modify the `recordCollection` object.
 
 # --hints--
 
-執行 `updateRecords(recordCollection, 5439, "artist", "ABBA")` 後，`artist` 的值應該是字符串 `ABBA`。
+After `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` should be the string `ABBA`
 
 ```js
 assert(
@@ -31,7 +38,7 @@ assert(
 );
 ```
 
-在 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 之後，`tracks` 應該有字符串 `Take a Chance on Me` 作爲最後一個也是唯一的元素。
+After `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have the string `Take a Chance on Me` as the last and only element.
 
 ```js
 assert(
@@ -41,14 +48,14 @@ assert(
 );
 ```
 
-執行 `updateRecords(recordCollection, 2548, "artist", "")` 後， `artist` 不應被設置爲任何值。
+After `updateRecords(recordCollection, 2548, "artist", "")`, `artist` should not be set
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-執行 `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` 後，`tracks` 的最後一個元素應該爲字符串 `Addicted to Love`。
+After `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` should have the string `Addicted to Love` as the last element.
 
 ```js
 assert(
@@ -58,7 +65,7 @@ assert(
 );
 ```
 
-執行 `updateRecords(recordCollection, 2468, "tracks", "Free")` 後，`tracks` 的第一個元素應該爲字符串 `1999`。
+After `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` should have the string `1999` as the first element.
 
 ```js
 assert(
@@ -68,14 +75,14 @@ assert(
 );
 ```
 
-執行 `updateRecords(recordCollection, 2548, "tracks", "")` 後， `tracks` 不應被設置爲任何值。
+After `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` should not be set
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-執行 `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")` 後，`albumTitle` 的值應該是字符串 `Riptide`。
+After `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be the string `Riptide`
 
 ```js
 assert(
