@@ -14,7 +14,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 2) 声明函数参数 - 函数内的任何计算仅取决于参数，而不取决于任何全局对象或变量。
 
-给数字增加 1 不够刺激，我们可以在处理数组或更复杂的对象时应用这些原则。
+给数字增加 1 不够有意思，但是我们可以在处理数组或更复杂的对象时应用这些原则。
 
 # --instructions--
 
@@ -24,7 +24,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --hints--
 
-`bookList` 应等于 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`bookList` 不应该改变，仍然等于 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 add(bookList, "Test");

@@ -16,7 +16,7 @@ dashedName: pass-props-to-a-stateless-functional-component
 </App>
 ```
 
-可以把创建的 React 支持的**自定义 HTML 属性**传递给组件， 在上面的例子里，将创建的属性 `user` 传递给组件 `Welcome`。 由于 `Welcome` 是一个无状态函数组件，它可以像这样访问该值：
+可以把创建的 React 支持的**自定义 HTML 属性**传递给组件。 在上面的例子里，将创建的属性 `user` 传递给组件 `Welcome`。 由于 `Welcome` 是一个无状态函数组件，它可以像这样访问该值：
 
 ```jsx
 const Welcome = (props) => <h1>Hello, {props.user}!</h1>
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-`CurrentDate` 组件应该有一个名为 `date` 的属性。
+`CurrentDate` 组件应该有一个名为 `date` 的 prop。
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-`CurrentDate` 的 `date` 属性应该包含一段文本字符串。
+`CurrentDate` 的 `date` prop 应该包含一段文本字符串。
 
 ```js
 assert(
