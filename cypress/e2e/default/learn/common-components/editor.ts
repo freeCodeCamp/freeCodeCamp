@@ -2,6 +2,7 @@ const editorElement = {
   editor: '.monaco-editor'
 };
 
+
 describe('Editor Shortcuts', () => {
   it('Should handle Alt+Enter', () => {
     cy.visit(
@@ -28,6 +29,8 @@ describe('Editor Shortcuts', () => {
   });
 });
 
+
+
 const visit = (darkAppearance: boolean) =>
   cy.visit(
     'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-23',
@@ -37,10 +40,24 @@ const visit = (darkAppearance: boolean) =>
           .withArgs('(prefers-color-scheme: dark)')
           .returns({
             matches: darkAppearance
-          });
+          })
+          .withArgs('(display-mode: standalone)')
+          .returns(
+            {
+              matches: true
+            }
+        )
+          .withArgs('(forced-colors: active)')
+          .returns(
+            {
+              matches: false
+            }
+          );
+
       }
     }
   );
+
 
 describe('Editor displays light theme', () => {
   beforeEach(() => {
@@ -48,7 +65,11 @@ describe('Editor displays light theme', () => {
   });
 
   it('Displays when signed out', () => {
-    cy.get(editorElement.editor, { timeout: 15000 }).should(
+    cy.get(editorElement.editor, { timeout: 15000 })
+      .first()
+      .click()
+      .focused()
+      .should(
       'have.class',
       'light-palette'
     );
@@ -58,6 +79,8 @@ describe('Editor displays light theme', () => {
     cy.login();
     cy.get(editorElement.editor, { timeout: 15000 })
       .first()
+      .click()
+      .focused()
       .should('have.class', 'light-palette');
   });
 });
@@ -68,16 +91,24 @@ describe('Editor displays dark theme', () => {
   });
 
   it('When signed out', () => {
-    cy.get(editorElement.editor, { timeout: 15000 }).should(
+    cy.get(editorElement.editor, { timeout: 15000 })
+      .first()
+      .click()
+      .focused()
+      .should(
       'have.class',
-      'light-palette'
+        'dark-palette'
     );
   });
+
 
   it('When signed in', () => {
     cy.login();
     cy.get(editorElement.editor, { timeout: 15000 })
       .first()
-      .should('have.class', 'dark-palette');
+      .click()
+      .focused()
+      .should('have.class', 'vs-dark');
   });
+
 });
