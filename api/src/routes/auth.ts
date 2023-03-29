@@ -1,4 +1,8 @@
-import { FastifyPluginCallback } from 'fastify';
+import {
+  FastifyInstance,
+  FastifyPluginCallback,
+  FastifyRequest
+} from 'fastify';
 
 import { AUTH0_DOMAIN } from '../utils/env';
 
@@ -65,39 +69,64 @@ const defaultUser = {
   username: ''
 };
 
+const getEmailFromAuth0 = async (req: FastifyRequest) => {
+  const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
+    headers: {
+      Authorization: req.headers.authorization ?? ''
+    }
+  });
+
+  if (!auth0Res.ok) {
+    req.log.error(auth0Res);
+    throw new Error('Invalid Auth0 Access Token');
+  }
+
+  const { email } = (await auth0Res.json()) as { email: string };
+  return email;
+};
+
+const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
+  // TODO: handle the case where there are multiple users with the same email.
+  // e.g. use findMany and throw an error if more than one is found.
+  const existingUser = await fastify.prisma.user.findFirst({
+    where: { email },
+    select: { id: true }
+  });
+  return (
+    existingUser ??
+    (await fastify.prisma.user.create({
+      data: { ...defaultUser, email },
+      select: { id: true }
+    }))
+  );
+};
+
+export const devLoginCallback: FastifyPluginCallback = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get('/dev-callback', async (req, _res) => {
+    const email = 'foo@bar.com';
+
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
+    await req.session.save();
+  });
+
+  done();
+};
+
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
   fastify.get('/callback', async (req, _res) => {
-    const auth0Res = await fetch(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      `https://${AUTH0_DOMAIN}/userinfo`,
-      {
-        headers: {
-          Authorization: req.headers.authorization ?? ''
-        }
-      }
-    );
+    const email = await getEmailFromAuth0(req);
 
-    if (!auth0Res.ok) {
-      fastify.log.error(auth0Res);
-      throw new Error('Invalid Auth0 Access Token');
-    }
-
-    const { email } = (await auth0Res.json()) as { email: string };
-
-    const existingUser = await fastify.prisma.user.findFirst({
-      where: { email }
-    });
-    if (existingUser) {
-      req.session.user = { id: existingUser.id };
-    } else {
-      const newUser = await fastify.prisma.user.create({
-        data: { ...defaultUser, email }
-      });
-      req.session.user = { id: newUser.id };
-    }
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
     await req.session.save();
   });
+
   done();
 };
