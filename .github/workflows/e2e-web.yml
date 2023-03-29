@@ -13,6 +13,12 @@ on:
       - 'next-**'
 
 jobs:
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
+    with:
+    number-of-agents: 3
+
   build-client:
     name: Build
     runs-on: ubuntu-20.04
@@ -45,9 +51,19 @@ jobs:
         run: cp sample.env .env
 
       - name: Install and Build
-        run: |
-          pnpm install
-          pnpm run build
+        run: pnpm install
+
+      - name: Nx Cloud - Main Job
+        uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11.3
+        with:
+          main-branch-name: main
+          number-of-agents: 3
+          init-commands: |
+            pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+          parallel-commands: |
+            pnpm exec nx-cloud record -- pnpm exec nx format:check
+          parallel-commands-on-agents: |
+            pnpm exec nx affected --target=build --parallel=3
 
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json

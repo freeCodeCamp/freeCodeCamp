@@ -10,6 +10,7 @@ importers:
       '@babel/preset-react': 7.18.6
       '@babel/preset-typescript': 7.21.0
       '@nrwl/nx-cloud': latest
+      '@nrwl/workspace': ^15.8.9
       '@testing-library/cypress': 8.0.7
       '@testing-library/dom': 8.20.0
       '@testing-library/jest-dom': 5.16.5
@@ -69,6 +70,7 @@ importers:
       '@babel/preset-react': 7.18.6_@babel+core@7.21.3
       '@babel/preset-typescript': 7.21.0_@babel+core@7.21.3
       '@nrwl/nx-cloud': 15.3.2
+      '@nrwl/workspace': 15.8.9_dax3msp2vwnqmixufpm3osml2a
       '@testing-library/cypress': 8.0.7_cypress@10.11.0
       '@testing-library/dom': 8.20.0
       '@testing-library/jest-dom': 5.16.5
@@ -4659,7 +4661,6 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /@babel/plugin-transform-shorthand-properties/7.18.6_@babel+core@7.18.0:
     resolution: {integrity: sha512-eCLXXJqv8okzg86ywZJbRn19YJHU4XUa55oz2wbHhaQVn/MM+XhukiT7SYqp/7o00dg52Rj51Ny+Ecw4oyoygw==}
@@ -6864,6 +6865,82 @@ packages:
       - debug
     dev: true
 
+  /@nrwl/devkit/15.8.9_nx@15.8.9+typescript@4.9.5:
+    resolution: {integrity: sha512-/AbdsBJjo4q0ZCLOGEPTcBTOQz/FZqKi9z/VlvUjwGJKwC5B58cb3F3lfiI7agahf3ODy7vrL5marjF5cOnlLQ==}
+    peerDependencies:
+      nx: '>= 14.1 <= 16'
+    dependencies:
+      '@phenomnomnominal/tsquery': 4.1.1_typescript@4.9.5
+      ejs: 3.1.8
+      ignore: 5.2.4
+      nx: 15.8.9
+      semver: 7.3.4
+      tmp: 0.2.1
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
+  /@nrwl/js/15.8.9_7g33bcbrgqzmdcmyewk7je3zge:
+    resolution: {integrity: sha512-pHpKUfM9WNCXHXD0DJKzHHw81JQQmGD3uDbC4M7fNDSq0JYt5ztmG9lEd8MgHDel76YW0fcGR0X/e/KvTJ5UAQ==}
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.21.3
+      '@babel/plugin-proposal-decorators': 7.21.0_@babel+core@7.21.3
+      '@babel/plugin-transform-runtime': 7.21.0_@babel+core@7.21.3
+      '@babel/preset-env': 7.20.2_@babel+core@7.21.3
+      '@babel/preset-typescript': 7.21.0_@babel+core@7.21.3
+      '@babel/runtime': 7.21.0
+      '@nrwl/devkit': 15.8.9_nx@15.8.9+typescript@4.9.5
+      '@nrwl/workspace': 15.8.9_dax3msp2vwnqmixufpm3osml2a
+      '@phenomnomnominal/tsquery': 4.1.1_typescript@4.9.5
+      babel-plugin-const-enum: 1.2.0_@babel+core@7.21.3
+      babel-plugin-macros: 2.8.0
+      babel-plugin-transform-typescript-metadata: 0.3.2
+      chalk: 4.1.2
+      fast-glob: 3.2.7
+      fs-extra: 11.1.1
+      ignore: 5.2.4
+      js-tokens: 4.0.0
+      minimatch: 3.0.5
+      source-map-support: 0.5.19
+      tree-kill: 1.2.2
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - '@swc-node/register'
+      - '@swc/core'
+      - debug
+      - eslint
+      - nx
+      - prettier
+      - supports-color
+      - typescript
+    dev: true
+
+  /@nrwl/linter/15.8.9_7g33bcbrgqzmdcmyewk7je3zge:
+    resolution: {integrity: sha512-cPzUGEUCravAfF5dnmU0nBlTSnY3Zk8jdGiF2EzqPKBLdJ0cIKoQs8iCmXx0VCFoCM9vxs+LbbUflaZP718E1w==}
+    peerDependencies:
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+    dependencies:
+      '@nrwl/devkit': 15.8.9_nx@15.8.9+typescript@4.9.5
+      '@nrwl/js': 15.8.9_7g33bcbrgqzmdcmyewk7je3zge
+      '@phenomnomnominal/tsquery': 4.1.1_typescript@4.9.5
+      eslint: 7.32.0
+      tmp: 0.2.1
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - '@swc-node/register'
+      - '@swc/core'
+      - debug
+      - nx
+      - prettier
+      - supports-color
+      - typescript
+    dev: true
+
   /@nrwl/nx-cloud/15.3.2:
     resolution: {integrity: sha512-fga4duqcrkyT3djQpyRp8god3trb18hb+Tv0CYRrCcdNDHhzb6LOrxnenrFsjPjt38hyCdyu/ZYmHI/lQXyhAw==}
     hasBin: true
@@ -6972,6 +7049,46 @@ packages:
       - debug
     dev: true
 
+  /@nrwl/workspace/15.8.9_dax3msp2vwnqmixufpm3osml2a:
+    resolution: {integrity: sha512-1Xzw+1IVaHFFQtXrG898aqj4q59cBwlmOhsSPV4Wl0h8+XxzUzk2svUhsJ9b18hH1oG4hETRTEslLKYJ+r1Eiw==}
+    peerDependencies:
+      prettier: ^2.6.2
+    peerDependenciesMeta:
+      prettier:
+        optional: true
+    dependencies:
+      '@nrwl/devkit': 15.8.9_nx@15.8.9+typescript@4.9.5
+      '@nrwl/linter': 15.8.9_7g33bcbrgqzmdcmyewk7je3zge
+      '@parcel/watcher': 2.0.4
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      cli-cursor: 3.1.0
+      cli-spinners: 2.6.1
+      dotenv: 10.0.0
+      figures: 3.2.0
+      flat: 5.0.2
+      glob: 7.1.4
+      ignore: 5.2.4
+      minimatch: 3.0.5
+      npm-run-path: 4.0.1
+      nx: 15.8.9
+      open: 8.4.2
+      prettier: 2.8.4
+      rxjs: 6.6.7
+      semver: 7.3.4
+      tmp: 0.2.1
+      tslib: 2.5.0
+      yargs: 17.7.1
+      yargs-parser: 21.1.1
+    transitivePeerDependencies:
+      - '@swc-node/register'
+      - '@swc/core'
+      - debug
+      - eslint
+      - supports-color
+      - typescript
+    dev: true
+
   /@opencensus/core/0.0.8:
     resolution: {integrity: sha512-yUFT59SFhGMYQgX0PhoTR0LBff2BEhPrD9io1jWfF/VDbakRfs6Pq60rjv0Z7iaTav5gQlttJCX2+VPxFWCuoQ==}
     engines: {node: '>=6.0'}
@@ -7009,6 +7126,15 @@ packages:
     dependencies:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
+    dev: true
+
+  /@phenomnomnominal/tsquery/4.1.1_typescript@4.9.5:
+    resolution: {integrity: sha512-jjMmK1tnZbm1Jq5a7fBliM4gQwjxMU7TFoRNwIyzwlO+eHPRCFv/Nv+H/Gi1jc3WR7QURG8D5d0Tn12YGrUqBQ==}
+    peerDependencies:
+      typescript: ^3 || ^4
+    dependencies:
+      esquery: 1.5.0
+      typescript: 4.9.5
     dev: true
 
   /@pm2/agent/2.0.1:
@@ -11640,6 +11766,19 @@ packages:
       babel-runtime: 6.26.0
     dev: true
 
+  /babel-plugin-const-enum/1.2.0_@babel+core@7.21.3:
+    resolution: {integrity: sha512-o1m/6iyyFnp9MRsK1dHF3bneqyf3AlM2q3A/YbgQr2pCat6B6XJVDv2TXqzfY2RYUi4mak6WAksSBPlyYGx9dg==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/plugin-syntax-typescript': 7.20.0_@babel+core@7.21.3
+      '@babel/traverse': 7.21.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /babel-plugin-dynamic-import-node/2.3.3:
     resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
     dependencies:
@@ -12295,6 +12434,12 @@ packages:
     dependencies:
       babel-runtime: 6.26.0
       babel-types: 6.26.0
+    dev: true
+
+  /babel-plugin-transform-typescript-metadata/0.3.2:
+    resolution: {integrity: sha512-mWEvCQTgXQf48yDqgN7CH50waTyYBeP2Lpqx4nNWab9sxEpdXVeKgfj1qYI2/TgUPQtNFZ85i3PemRtnXVYYJg==}
+    dependencies:
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /babel-preset-current-node-syntax/1.0.1_@babel+core@7.21.3:
@@ -15547,7 +15692,6 @@ packages:
     hasBin: true
     dependencies:
       jake: 10.8.5
-    dev: false
 
   /electron-to-chromium/1.4.315:
     resolution: {integrity: sha512-ndBQYz3Eyy3rASjjQ9poMJGoAlsZ/aZnq6GBsGL4w/4sWIAwiUHVSsMuADbxa8WJw7pZ0oxLpGbtoDt4vRTdCg==}
@@ -17392,7 +17536,6 @@ packages:
     resolution: {integrity: sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q==}
     dependencies:
       minimatch: 5.1.6
-    dev: false
 
   /filesize/6.1.0:
     resolution: {integrity: sha512-LpCHtPQ3sFx67z+uh2HnSyWSLLu5Jxo21795uRDuar/EOuYWXib5EmPaGIBuSnRqH2IODiKA2k5re/K9OnN/Yg==}
@@ -20693,7 +20836,6 @@ packages:
       chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
-    dev: false
 
   /jayson/2.1.2:
     resolution: {integrity: sha512-2GejcQnEV35KYTXoBvzALIDdO/1oyEIoJHBnaJFhJhcurv0x2JqUXQW6xlDUhcNOpN9t+d2w+JGA6vOphb+5mg==}
@@ -29672,6 +29814,13 @@ packages:
       source-map: 0.6.1
     dev: true
 
+  /source-map-support/0.5.19:
+    resolution: {integrity: sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: true
+
   /source-map-support/0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
     dependencies:
@@ -31096,6 +31245,11 @@ packages:
   /traverse/0.6.7:
     resolution: {integrity: sha512-/y956gpUo9ZNCb99YjxG7OaslxZWHfCHAUUfshwqOXmxUIvqLjVO581BT+gM59+QV9tFe6/CGG53tsA1Y7RSdg==}
     dev: false
+
+  /tree-kill/1.2.2:
+    resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
+    hasBin: true
+    dev: true
 
   /trim-newlines/1.0.0:
     resolution: {integrity: sha512-Nm4cF79FhSTzrLKGDMi3I4utBtFv8qKy4sq1enftf2gMdpqI8oVQTAfySkTz5r49giVzDj88SVZXP4CeYQwjaw==}
