@@ -18,21 +18,20 @@ if (error) {
   `);
 }
 
-function isAllowedEnv(
-  env: string
-): env is 'development' | 'production' | 'test' {
-  return ['development', 'production', 'test'].includes(env);
+function isAllowedEnv(env: string): env is 'development' | 'production' {
+  return ['development', 'production'].includes(env);
 }
 
-assert.ok(process.env.NODE_ENV);
-assert.ok(isAllowedEnv(process.env.NODE_ENV));
+assert.ok(process.env.FREECODECAMP_NODE_ENV);
+assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
 assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.SESSION_SECRET);
 assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
+assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 
-if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test') {
+if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
   assert.notEqual(
@@ -40,12 +39,16 @@ if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test') {
     'a_thirty_two_plus_character_session_secret',
     'The session secret should be changed from the default value.'
   );
+  assert.ok(
+    process.env.FCC_ENABLE_DEV_LOGIN_MODE !== 'true',
+    'Dev login mode MUST be disabled in production.'
+  );
 }
 
 export const MONGOHQ_URL =
   process.env.MONGOHQ_URL ??
   'mongodb://localhost:27017/freecodecamp?directConnection=true';
-export const NODE_ENV = process.env.NODE_ENV;
+export const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
 export const PORT = process.env.PORT || '3000';
@@ -53,3 +56,5 @@ export const API_LOCATION = process.env.API_LOCATION;
 export const SESSION_SECRET = process.env.SESSION_SECRET;
 export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';
+export const FCC_ENABLE_DEV_LOGIN_MODE =
+  process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';

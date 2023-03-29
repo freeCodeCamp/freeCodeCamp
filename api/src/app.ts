@@ -18,7 +18,7 @@ import fastifySwaggerUI from '@fastify/swagger-ui';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
-import { auth0Routes } from './routes/auth0';
+import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
 import prismaPlugin from './db/prisma';
@@ -26,11 +26,12 @@ import prismaPlugin from './db/prisma';
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
-  NODE_ENV,
+  FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SESSION_SECRET,
   FCC_ENABLE_SWAGGER_UI,
-  API_LOCATION
+  API_LOCATION,
+  FCC_ENABLE_DEV_LOGIN_MODE
 } from './utils/env';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -60,7 +61,7 @@ export const build = async (
     saveUninitialized: false,
     cookie: {
       maxAge: 1000 * 60 * 60, // 1 hour
-      secure: NODE_ENV !== 'development'
+      secure: FREECODECAMP_NODE_ENV !== 'development'
     },
     store: MongoStore.create({
       mongoUrl: MONGOHQ_URL
@@ -104,7 +105,10 @@ export const build = async (
   void fastify.register(prismaPlugin);
 
   void fastify.register(testRoutes);
-  void fastify.register(auth0Routes, { prefix: '/auth0' });
+  void fastify.register(auth0Routes, { prefix: '/auth' });
+  if (FCC_ENABLE_DEV_LOGIN_MODE) {
+    void fastify.register(devLoginCallback, { prefix: '/auth' });
+  }
   void fastify.register(testValidatedRoutes);
   return fastify;
 };
