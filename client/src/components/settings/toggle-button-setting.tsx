@@ -1,16 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import ToggleCheck from '../../assets/icons/toggle-check';
 import '../helpers/toggle-button.css';
+import type { ToggleSettingProps } from './toggle-radio-setting';
 import './toggle-setting.css';
 
-type ToggleButtonSettingProps = {
-  action: string;
-  explain?: string;
-  flag: boolean;
-  flagName: string;
-  toggleFlag: () => void;
-  offLabel: string;
-  onLabel: string;
+const checkIconStyle = {
+  height: '1rem',
+  width: '1.25rem'
 };
 
 export default function ToggleButtonSetting({
@@ -20,26 +16,7 @@ export default function ToggleButtonSetting({
   flagName,
   toggleFlag,
   ...restProps
-}: ToggleButtonSettingProps): JSX.Element {
-  const firstButtonRef = useRef<HTMLButtonElement>(null);
-  const secondButtonRef = useRef<HTMLButtonElement>(null);
-  const checkIconStyle = {
-    height: '1rem',
-    width: '1.25rem'
-  };
-
-  // Make the buttons the same width
-  useEffect(() => {
-    const firstWidth = firstButtonRef?.current?.offsetWidth;
-    const secondWidth = secondButtonRef?.current?.offsetWidth;
-    if (firstWidth && secondWidth) {
-      const width = Math.max(firstWidth, secondWidth);
-      firstButtonRef.current.style.width = `${width}px`;
-      secondButtonRef.current.style.width = `${width}px`;
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+}: ToggleSettingProps): JSX.Element {
   return (
     <div className='toggle-setting-container'>
       <fieldset
@@ -59,7 +36,6 @@ export default function ToggleButtonSetting({
         </div>
         <div className='toggle-button-group'>
           <button
-            ref={firstButtonRef}
             aria-pressed={flag}
             {...(!flag && { onClick: toggleFlag })}
             value={1}
@@ -70,7 +46,6 @@ export default function ToggleButtonSetting({
             </span>
           </button>
           <button
-            ref={secondButtonRef}
             aria-pressed={!flag}
             {...(flag && { onClick: toggleFlag })}
             value={2}

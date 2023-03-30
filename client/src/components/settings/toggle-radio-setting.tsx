@@ -2,7 +2,7 @@ import React from 'react';
 import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
-type ToggleRadioSettingProps = {
+export type ToggleSettingProps = {
   action: string;
   explain?: string;
   flag: boolean;
@@ -19,7 +19,7 @@ export default function ToggleRadioSetting({
   flagName,
   toggleFlag,
   ...restProps
-}: ToggleRadioSettingProps): JSX.Element {
+}: ToggleSettingProps): JSX.Element {
   const firstRadioId = `radioA${flagName}`;
   const secondRadioId = `radioB${flagName}`;
 
