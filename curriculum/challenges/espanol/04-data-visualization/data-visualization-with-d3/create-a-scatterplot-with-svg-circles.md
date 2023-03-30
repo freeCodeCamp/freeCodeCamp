@@ -14,7 +14,7 @@ SVG tiene una etiqueta `circle` para crear la forma de un circulo. Se parece muc
 
 # --instructions--
 
-Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
+Utiliza los métodos `data()`, `enter()` y `append()` para vincular `dataset` a nuevos elementos `circle` que se anexan al SVG.
 
 **Nota:** Los círculos no serán visibles porque aún no establecimos sus atributos. Haremos esto en el siguiente desafío.
 
