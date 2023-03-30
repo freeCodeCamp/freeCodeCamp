@@ -1,21 +1,27 @@
-import Sentry from '@sentry/node';
+import {
+  init,
+  configureScope,
+  addRequestDataToEvent,
+  captureException
+} from '@sentry/node';
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 
 export const fastifySentry = (
   fastify: FastifyInstance,
-  options: FastifyPluginOptions
+  options: FastifyPluginOptions,
+  done: (err?: Error) => void
 ): void => {
-  Sentry.init(options);
+  init(options);
   fastify.addHook('onRequest', (request, _reply, done) => {
-    Sentry.configureScope(({ addEventProcessor }) => {
+    configureScope(({ addEventProcessor }) => {
       addEventProcessor(event => {
-        return Sentry.addRequestDataToEvent(event, request.raw);
+        return addRequestDataToEvent(event, request.raw);
       });
     });
     done();
   });
   fastify.addHook('onError', (_request, _reply, error, done) => {
-    Sentry.captureException(error);
+    captureException(error);
     done();
   });
 
@@ -25,4 +31,5 @@ export const fastifySentry = (
       reply.statusCode = error.statusCode >= 400 ? error.statusCode : 500;
     request.log.error(error);
   });
+  done();
 };
