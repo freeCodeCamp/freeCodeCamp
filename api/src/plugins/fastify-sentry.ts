@@ -1,11 +1,12 @@
 import { init, captureException } from '@sentry/node';
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
+import fp from 'fastify-plugin';
 
-export const fastifySentry = (
+const fastifySentry = (
   fastify: FastifyInstance,
   options: FastifyPluginOptions,
   done: (err?: Error) => void
-): void => {
+) => {
   init(options);
 
   fastify.setErrorHandler((error, request, reply) => {
@@ -17,3 +18,5 @@ export const fastifySentry = (
   });
   done();
 };
+
+export default fp(fastifySentry);

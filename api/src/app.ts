@@ -14,7 +14,7 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
-import { fastifySentry } from './plugins/fastify-sentry';
+import fastifySentry from './plugins/fastify-sentry';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
