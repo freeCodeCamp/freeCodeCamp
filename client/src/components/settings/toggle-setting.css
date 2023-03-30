@@ -37,14 +37,20 @@
 }
 
 .toggle-button-group button {
-  padding: 5px 2rem;
+  padding: 5px 1em;
   border: 3px solid var(--secondary-color);
   white-space: nowrap;
+  display: grid;
+  gap: 0.25em;
+  align-items: baseline;
 }
 
-.toggle-button-group button:focus {
-  position: relative;
-  z-index: 100;
+.toggle-button-group button:first-child {
+  grid-template-columns: 1em 1fr;
+}
+
+.toggle-button-group button:last-child {
+  grid-template-columns: 1fr 1em;
 }
 
 .toggle-button-group button[aria-pressed='true'] {
@@ -52,24 +58,25 @@
   color: var(--secondary-background);
 }
 
-.toggle-button-group button span {
-  position: relative;
-}
-
 .toggle-button-group button span span {
   display: none;
 }
 
-.toggle-button-group button[aria-pressed='true'] span .tick {
+.toggle-button-group button[aria-pressed='true'] span .tick,
+.toggle-button-group button[aria-pressed='true'] span {
   display: inline;
-  position: absolute;
-  right: -1.35rem;
-  top: 0;
 }
 
-.toggle-button-group button[aria-pressed='true']:first-child span .tick {
-  right: unset;
-  left: -1.25rem;
+.toggle-button-group button:first-of-type span {
+  grid-column: 2 / 2;
+}
+
+.toggle-button-group button:first-of-type :is(svg, div) {
+  grid-column: 1 / 1;
+}
+
+.toggle-button-group button:first-of-type :is(span, :is(svg, div)) {
+  grid-row: 1;
 }
 
 .toggle-button-group button[aria-pressed='true']:hover {
@@ -123,10 +130,6 @@
   .toggle-setting-container fieldset {
     flex-direction: column;
     margin-bottom: 1rem;
-  }
-
-  .toggle-setting-container > fieldset > * {
-    flex: 0 1 auto;
   }
 
   .toggle-description {

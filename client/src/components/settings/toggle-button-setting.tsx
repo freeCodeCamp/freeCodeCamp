@@ -1,7 +1,7 @@
 import React from 'react';
 import ToggleCheck from '../../assets/icons/toggle-check';
-import '../helpers/toggle-button.css';
 import type { ToggleSettingProps } from './toggle-radio-setting';
+import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
 const checkIconStyle = {
@@ -38,22 +38,20 @@ export default function ToggleButtonSetting({
           <button
             aria-pressed={flag}
             {...(!flag && { onClick: toggleFlag })}
-            value={1}
+            value='1'
+            className='toggle-button-right'
           >
-            <span>
-              {restProps.onLabel}
-              {flag && <ToggleCheck style={checkIconStyle} />}
-            </span>
+            <span>{restProps.onLabel}</span>
+            {flag ? <ToggleCheck style={checkIconStyle} /> : <div />}
           </button>
           <button
             aria-pressed={!flag}
             {...(flag && { onClick: toggleFlag })}
-            value={2}
+            value='2'
+            className='toggle-button-left'
           >
-            <span>
-              {restProps.offLabel}
-              {!flag && <ToggleCheck style={checkIconStyle} />}
-            </span>
+            <span>{restProps.offLabel}</span>
+            {!flag ? <ToggleCheck style={checkIconStyle} /> : <div />}
           </button>
         </div>
       </fieldset>
