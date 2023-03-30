@@ -747,7 +747,7 @@
   "forum-help": {
     "browser-info": "**Información de tu navegador:**",
     "user-agent": "El agente de usuario es: <code>{{userAgent}}</code>",
-    "challenge": "**Desafío:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**Enlaza al desafío:**",
     "whats-happening": "**Cuéntanos qué está pasando:**",
     "describe": "Describe tu problema en detalle aquí.",
