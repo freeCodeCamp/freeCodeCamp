@@ -48,7 +48,7 @@ export default function ToggleRadioSetting({
               {...(flag && { defaultChecked: true })}
               {...(!flag && { onChange: toggleFlag })}
               name={flagName}
-              value={1}
+              value='1'
             />
             <span>{restProps.onLabel}</span>
           </label>
@@ -59,7 +59,7 @@ export default function ToggleRadioSetting({
               {...(!flag && { defaultChecked: true })}
               {...(flag && { onChange: toggleFlag })}
               name={flagName}
-              value={2}
+              value='2'
             />
             <span>{restProps.offLabel}</span>
           </label>
