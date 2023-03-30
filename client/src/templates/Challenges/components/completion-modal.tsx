@@ -3,7 +3,7 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
