@@ -33,14 +33,8 @@
   -ms-overflow-scrolling: touch;
 }
 
-#universal-nav-logo:focus-visible {
+#universal-nav-logo:focus {
   outline-offset: -3px;
-}
-
-@supports not selector(:focus-visible) {
-  #universal-nav-logo:focus {
-    outline-offset: -3px;
-  }
 }
 
 .universal-nav-right {
