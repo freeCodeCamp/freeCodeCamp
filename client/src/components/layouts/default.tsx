@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -104,7 +104,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   block?: string;
   showCodeAlly: boolean;
   superBlock?: string;
-  t: TFunction;
 }
 
 const getSystemTheme = () =>
@@ -127,13 +126,13 @@ function DefaultLayout({
   isChallenge = false,
   block,
   superBlock,
-  t,
   theme = Themes.Default,
   showCodeAlly,
   user,
   fetchUser,
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
+  const { t } = useTranslation();
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
