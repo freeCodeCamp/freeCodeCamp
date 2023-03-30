@@ -58,15 +58,6 @@
   color: var(--secondary-background);
 }
 
-.toggle-button-group button span span {
-  display: none;
-}
-
-.toggle-button-group button[aria-pressed='true'] span .tick,
-.toggle-button-group button[aria-pressed='true'] span {
-  display: inline;
-}
-
 .toggle-button-group button:first-of-type span {
   grid-column: 2 / 2;
 }
