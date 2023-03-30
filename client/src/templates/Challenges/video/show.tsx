@@ -4,7 +4,8 @@ import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -199,6 +200,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -250,7 +252,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={t('aria.answer')}
+                          aria-label={ariaLabel}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
