@@ -15,6 +15,7 @@ const fastifySentry = (
     if (error.statusCode)
       reply.statusCode = error.statusCode >= 400 ? error.statusCode : 500;
     request.log.error(error);
+    done();
   });
   done();
 };
