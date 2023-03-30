@@ -15,7 +15,7 @@ Otro tipo de datos es el <dfn>Booleano</dfn>. Los booleanos solo pueden ser uno 
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
+Modifica la función `welcomeToBooleans` para que devuelva `true` en lugar de `false`.
 
 # --hints--
 
