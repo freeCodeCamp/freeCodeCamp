@@ -1,4 +1,4 @@
-# How to help with video challenges
+# How to Help with Video Challenges
 
 Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 

@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ```
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
@@ -243,7 +243,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 - Simplify the challenge, or
 - Split the challenge into two challenges.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
 We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
@@ -267,7 +267,7 @@ Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
 
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `\`` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. See example below:
 - Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
 
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
@@ -284,7 +284,7 @@ The following is an example of code:
 
 - Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single-quotes where applicable
+- Use single quotes where applicable
 
 **Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
@@ -306,11 +306,11 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ### Seed code comments
 
-We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev team.
 
 Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-Example of valid single line JavaScript comment:
+Example of a valid single-line JavaScript comment:
 
 ```js
 // Only change code below this line
@@ -388,7 +388,7 @@ If you find a problem with an existing challenge's hints/solutions topic, you ca
 
 ### Adding new Challenge hints/solutions Topics
 
-Take the following steps when adding a new challenge hints/solutions related topic.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Start by following the same steps for creating a new topic but review the next for creating the title.
 2. The title of the topic should start with `freeCodeCamp Challenge Guide: ` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
@@ -397,7 +397,7 @@ Take the following steps when adding a new challenge hints/solutions related top
 
 ### Guidelines for content of hints and solutions topics
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Challenge Name Goes Here

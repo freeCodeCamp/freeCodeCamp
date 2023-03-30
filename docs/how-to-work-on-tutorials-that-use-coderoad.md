@@ -2,7 +2,7 @@ This page describes how to contribute to the freeCodeCamp tutorials and projects
 
 ## How the tutorials work
 
-The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+Each of the freeCodeCamp tutorials that use CodeRoad has its own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
 Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
 
