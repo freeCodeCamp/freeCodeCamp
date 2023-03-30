@@ -54,10 +54,11 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 
 GitPod 環境を起動しても自動的に環境が構築されない場合は、以下を実行します。
 
-- データベースを起動します。
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - データベースをシードします。

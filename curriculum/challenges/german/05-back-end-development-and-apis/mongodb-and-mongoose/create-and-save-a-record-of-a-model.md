@@ -25,7 +25,7 @@ person.save(function(err, data) {
 
 # --hints--
 
-Creating and saving a db item should succeed
+Das Erstellen und Speichern eines Datenbankeintrags sollte funktionieren
 
 ```js
 (getUserInput) =>

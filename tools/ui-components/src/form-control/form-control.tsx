@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FormContext } from '../form-group/form-group';
 
 import { FormControlFeedback as Feedback } from './form-control-feedback';
 import { FormControlStatic as Static } from './form-control-static';
@@ -20,6 +21,8 @@ const FormControl = ({
   type,
   ...restProps
 }: FormControlProps): JSX.Element => {
+  const { controlId } = useContext(FormContext);
+
   const defaultClasses =
     'outline-0 block w-full py-1.5 px-2.5 text-md text-foreground-primary ' +
     'bg-background-primary bg-none rounded-none border-1 border-solid ' +
@@ -34,7 +37,7 @@ const FormControl = ({
 
   return (
     <Component
-      id={id}
+      id={id || controlId}
       data-testid={testId}
       className={classes}
       value={value}
@@ -47,6 +50,7 @@ const FormControl = ({
     />
   );
 };
+
 const MainFormControl = Object.assign(FormControl, { Feedback, Static });
 
 export { MainFormControl as FormControl };

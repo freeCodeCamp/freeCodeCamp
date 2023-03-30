@@ -57,7 +57,6 @@
 }
 
 .portfolio-container a:is(:hover, :focus, :focus-visible) {
-  outline: 2px solid var(--blue-mid);
   outline-offset: 2px;
 }
 

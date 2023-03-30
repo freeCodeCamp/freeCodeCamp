@@ -50,11 +50,6 @@ a.cert-tag:active {
   margin: 0 25px 25px;
 }
 
-.block-grid .challenge-jump-link a:focus {
-  outline: 3px solid var(--blue-mid);
-  outline-offset: 0;
-}
-
 .block-grid .challenge-jump-link a:focus:not(:focus-visible) {
   outline: none;
 }
@@ -259,8 +254,7 @@ button.map-title {
 }
 
 .map-challenges-grid .map-challenge-title a:focus {
-  outline: 3px solid var(--secondary-color);
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {

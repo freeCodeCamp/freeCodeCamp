@@ -2,7 +2,8 @@ import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -141,7 +142,6 @@ class Project extends Component<ProjectProps> {
             description,
             instructions,
             superBlock,
-            certification,
             block,
             translationPending
           }
@@ -196,12 +196,7 @@ class Project extends Component<ProjectProps> {
                 <br />
                 <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -229,7 +224,6 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         translationPending
         fields {

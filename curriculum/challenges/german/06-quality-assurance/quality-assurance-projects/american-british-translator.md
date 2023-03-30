@@ -8,16 +8,16 @@ dashedName: american-british-translator
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
+Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> aufweist. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
 
 -   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Select `Use run command` and click the `Done` button.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
@@ -26,12 +26,12 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 -   All logic can go into `/components/translator.js`
 -   Complete the `/api/translate` route in `/routes/api.js`
--   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
--   See the JavaScript files in `/components` for the different spelling and terms your application should translate
+-   Erstelle alle Unit/Funktionstests in `tests/1_unit-tests.js` und `tests/2_functional-tests.js`
+-   In den JavaScript-Dateien unter `/components` findest du die verschiedenen Schreibweisen und Begriffe, die deine Anwendung übersetzen soll
 -   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Um die Tests in der Konsole auszuführen, verwendest du den Befehl `npm run test`. Um die Replit-Konsole zu öffnen, drückst du Strg+Umschalt+P (Cmd auf einem Mac) und gibst "open shell" ein
 
-Write the following tests in `tests/1_unit-tests.js`:
+Schreibe die folgenden Tests in `tests/1_unit-tests.js`:
 
 -   Translate `Mangoes are my favorite fruit.` to British English
 -   Translate `I ate yogurt for breakfast.` to British English
@@ -109,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
+Die `/api/translate`-Route sollte die Schreibweise der Zeit im amerikanischen und britischen Englisch berücksichtigen. So wird zum Beispiel "10 thirty" im britischen Englisch als "10.30" und im amerikanischen Englisch als "10:30" geschrieben. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -136,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
+The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. Zum Beispiel wird Doktor Wright im britischen Englisch als "Dr Wright" und im amerikanischen Englisch als "Dr. Wright" abgekürzt. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
 async (getUserInput) => {
@@ -163,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
+Umschließe alle übersetzten Schreibweisen oder Begriffe mit `<span class="highlight">...</span>`-Tags, damit sie in grüner Farbe erscheinen.
 
 ```js
 async (getUserInput) => {
@@ -191,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
+Wenn eines oder mehrere der erforderlichen Felder fehlen, wird `{ error: 'Required field(s) missing' }` zurückgegeben.
 
 ```js
 async (getUserInput) => {
@@ -212,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-If `text` is empty, return `{ error: 'No text to translate' }`
+Wenn `text` leer ist, gib `{ error: 'No text to translate' }` zurück
 
 ```js
 async (getUserInput) => {

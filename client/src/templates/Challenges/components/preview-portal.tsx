@@ -1,6 +1,7 @@
 import { Component, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {

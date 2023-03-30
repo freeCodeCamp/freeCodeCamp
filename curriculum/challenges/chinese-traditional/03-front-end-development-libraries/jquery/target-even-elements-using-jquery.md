@@ -13,9 +13,9 @@ dashedName: target-even-elements-using-jquery
 
 也可以用基於位置的奇 `:odd` 和偶 `:even` 選擇器選取標籤。
 
-注意，jQuery 是零索引（zero-indexed）的，這意味着第 1 個標籤的位置編號是 0。 這有點混亂和反常——`:odd` 表示選擇第 2 個標籤（位置編號 1），第 4 個標籤（位置編號 3）……等等，以此類推。
+注意，jQuery 是零索引（zero-indexed）的，這意味着第 1 個標籤的位置編號是 0。 這有點混亂和反常——`:odd` 表示選擇第 2 個標籤（位置編號 1）、第 4 個標籤（位置編號 3）……等等，以此類推。
 
-下面的代碼展示了選取所有 `target` class 元素的奇數元素並設置 sheke 效果：
+下面的代碼展示了選取所有 `target` class 的奇數元素並給它們設置 class：
 
 ```js
 $(".target:odd").addClass("animated shake");
