@@ -75,7 +75,7 @@
   grid-column: 1 / 1;
 }
 
-.toggle-button-group button:first-of-type :is(span, :is(svg, div)) {
+.toggle-button-group button:first-of-type :is(span, svg, div) {
   grid-row: 1;
 }
 
