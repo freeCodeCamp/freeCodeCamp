@@ -1,6 +1,6 @@
 ---
 id: bad87fee1347bd9aedf08845
-title: 用 Bootstrap 來取代我們之前的自定義樣式
+title: 替換自定義的 Bootstrap 樣式
 challengeType: 0
 forumTopicId: 17565
 dashedName: ditch-custom-css-for-bootstrap
@@ -12,7 +12,7 @@ dashedName: ditch-custom-css-for-bootstrap
 
 別擔心——以後會有大把時間來自定義 CSS 樣式的。
 
-刪除 `style` 元素裏的 `.red-text`，`p`，和 `.smaller-image` CSS 定義，使 `style` 元素只留下 `h2` 和 `thick-green-border`。
+刪除 `style` 元素裏的 `.red-text`、`p` 和 `.smaller-image` CSS 聲明，使 `style` 元素只留下 `h2` 和 `thick-green-border`。
 
 刪除包含死鏈接的 `p` 元素。 然後將 `h2` 的 `red-text` class 替換爲 Bootstrap 的 `text-primary` class。
 

@@ -747,7 +747,7 @@
   "forum-help": {
     "browser-info": "**你的浏览器信息：**",
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "**挑战：** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**挑战的链接：**",
     "whats-happening": "**告诉我们发生了什么：**",
     "describe": "在此详细描述你的问题。",

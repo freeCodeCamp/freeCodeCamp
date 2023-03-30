@@ -12,7 +12,7 @@ Du kannst durch das Hinzufügen von Text, Beschriftungen für die Punkte eines S
 
 Ziel ist es, die kommaseparierten Werte des ersten (`x`)- und zweiten (`y`)-Felds eines jeden Elements im `dataset` darzustellen.
 
-The `text` nodes need `x` and `y` attributes to position it on the SVG. In dieser Aufgabe kann der `y`-Wert (der die Höhe bestimmt) denselben Wert verwenden, den der `circle`-Wert für sein `cy`-Attribut verwendet. Der `x`-Wert kann etwas größer sein als der `cx`-Wert des `circle`, damit die Bezeichnungen sichtbar ist. Dadurch wird die Beschriftung nach rechts vom dargestellten Punkt verschoben.
+Die `text`-Knotenpunkte benötigen die Attribute `x` und `y`, um auf dem SVG positioniert zu werden. In dieser Aufgabe kann der `y`-Wert (der die Höhe bestimmt) denselben Wert verwenden, den der `circle`-Wert für sein `cy`-Attribut verwendet. Der `x`-Wert kann etwas größer sein als der `cx`-Wert des `circle`, damit die Bezeichnungen sichtbar ist. Dadurch wird die Beschriftung nach rechts vom dargestellten Punkt verschoben.
 
 # --instructions--
 

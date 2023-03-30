@@ -1,6 +1,6 @@
 ---
 id: 6331d298b51aeedd1a2bd652
-title: "Ratios and Proportions: Extra"
+title: "Razões e proporções: extra"
 challengeType: 15
 videoId: 6o0SsdyUf2U
 dashedName: ratios-and-proportions-extra
@@ -8,25 +8,25 @@ dashedName: ratios-and-proportions-extra
 
 # --description--
 
-The last video in this section will show you how to use proportions in other applications, such as currency exchange rates and unit conversion. It will also show you more about setting up your notebook and working through the practice assignment.
+O último vídeo nesta seção vai mostrar para você como usar proporções em outras aplicações, como taxas de câmbio e conversão de unidades. Ele também mostrará mais sobre a configuração de seu notebook e sobre como realizar as tarefas práticas.
 
 # --question--
 
 ## --assignment--
 
-Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
+Abra o notebook do Colaboratory a seguir, execute a célula e <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">pratique a resolução de problemas de álgebra de uma etapa.</a> Como bônus, veja o código que gera os problemas da prática.
 
 ## --text--
 
-What is another way to write 0.9999... (repeating 9)?
+Que outra maneira temos de escrever 0.9999... (9s repetidos)?
 
 ## --answers--
 
-99 percent
+99 por cento
 
 ---
 
-You can't get an exact answer
+Não é possível obter uma resposta exata
 
 ---
 
@@ -34,7 +34,7 @@ You can't get an exact answer
 
 ---
 
-Almost 1
+Quase 1
 
 ## --video-solution--
 

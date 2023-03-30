@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Об''єкти: приклад класу'
+title: 'Об’єкти: приклад класу'
 challengeType: 11
 videoId: FiABKEuaSJ8
 bilibiliIds:

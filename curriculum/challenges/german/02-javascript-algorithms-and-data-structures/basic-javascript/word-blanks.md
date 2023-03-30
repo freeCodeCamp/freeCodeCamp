@@ -11,13 +11,13 @@ dashedName: word-blanks
 
 Du erhältst Sätze mit einigen fehlenden Wörtern wie Nomen, Verben, Adjektiven und Adverbien. Anschließend ergänzt du die fehlenden Teile mit Wörtern deiner Wahl und so, dass der vollständige Satz einen Sinn ergibt.
 
-Consider this sentence:
+Betrachte diesen Satz:
 
 ```md
 It was really ____, and we ____ ourselves ____.
 ```
 
-This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+In diesem Satz fehlen drei Teile - ein Adjektiv, ein Verb und ein Adverb - und wir können Wörter unserer Wahl hinzufügen, um ihn zu vervollständigen. Anschließend können wir den vervollständigten Satz wie folgt einer Variable zuordnen:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -25,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+Bei dieser Aufgabe stellen wir dir ein Nomen, ein Verb, ein Adjektiv sowie ein Adverb zur Verfügung. Du musst einen vollständigen Satz mit Wörtern deiner Wahl und den von uns vorgegebenen Wörtern bilden.
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+Du musst den String-Verkettungsoperator `+` verwenden, um einen neuen String zu erstellen, indem du die angegebenen Variablen verwendest: `myNoun`, `myAdjective`, `myVerb` und `myAdverb`. Anschließend musst du den erstellten String der Variable `wordBlanks` zuweisen. Du solltest die Wörter, die den Variablen zugeordnet sind, nicht ändern.
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. Das Ergebnis sollte einen vollständigen Satz darstellen.
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` sollte ein String sein.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+Du solltest die Werte von `myNoun`, `myVerb`, `myAdjective` oder `myAdverb` nicht verändern.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
+Du solltest die Werte `dog`, `ran`, `big` oder `quickly` nicht direkt verwenden, um `wordBlanks` zu erstellen.
 
 ```js
 const newCode = removeAssignments(code);
