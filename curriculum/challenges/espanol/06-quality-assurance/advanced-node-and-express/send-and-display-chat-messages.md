@@ -22,9 +22,9 @@ Dentro del código de envío del formulario, debes emitir un evento después de 
 socket.emit('chat message', messageToSend);
 ```
 
-Ahora, en tu servidor, debes estar escuchando el socket para el evento `'chat message'` con los datos que se llaman `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
+Ahora, en tu servidor, debes estar escuchando el socket para el evento `'chat message'` con los datos que se llaman `message`. Una vez recibido el evento, debe emitir el evento `'chat message'` a todos los sockets usando `io.emit`, enviando un objeto de datos que contenga el `username` y el `message`.
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
+En `client.js`, ahora debes escuchar el evento `'chat message'` y, cuando lo recibas, ¡añade un elemento de la lista a `#messages` con el nombre de usuario, dos puntos y el mensaje!
 
 En este punto, ¡el chat debe ser totalmente funcional y enviar mensajes a todos los clientes!
 

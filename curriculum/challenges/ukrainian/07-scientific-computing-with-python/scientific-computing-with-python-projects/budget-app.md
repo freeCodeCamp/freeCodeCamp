@@ -1,6 +1,6 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Додаток для ведення бюджету
+title: Застосунок для ведення бюджету
 challengeType: 10
 forumTopicId: 462361
 dashedName: budget-app
