@@ -54,7 +54,9 @@ export const build = async (
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
-  await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
+  if (SENTRY_DSN !== 'dsn_from_sentry_dashboard') {
+    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
+  }
   await fastify.register(fastifyCookie);
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
