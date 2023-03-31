@@ -68,7 +68,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the changes look good, please ensure to leave an approval with a "LGTM" (Looks Good To Me) comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev team, you can go ahead and merge it.
+   If the changes look good, please ensure to leave an approval with a "LGTM" (Looks Good To Me) comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 2. **Challenge code edits**
 
@@ -80,7 +80,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the changes look good, please ensure to leave an approval with an "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev team, you can go ahead and merge it.
+   If the changes look good, please ensure to leave an approval with an "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 3. **Platform changes**
 
@@ -92,7 +92,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 4. **Automated PRs (Dependabot)**
 
-   Some PRs are automated dependency updates made via an integration. You should not merge or approve these PRs. One of the dev team members will take care of reviewing and merging such automated PRs.
+   Some PRs are automated dependency updates made via an integration. You should not merge or approve these PRs. One of the dev-team members will take care of reviewing and merging such automated PRs.
 
 #### How to review, merge, or close pull requests
 
@@ -107,7 +107,7 @@ Depending on the type of pull request it is, follow the corresponding rules list
 Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the PR is merged? These checks are critical for the stability of the platform.
 
 > [!WARNING]
-> Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev team and contributors.
+> Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
 
 ##### Handling Merge Conflicts:
 
@@ -117,7 +117,7 @@ This means that another pull request has made a change to that same part of that
 
 The pull request's changes will be on top, and the main branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
 
-If you are uncertain, please ask one of the fellow moderators or the dev team for assistance.
+If you are uncertain, please ask one of the fellow moderators or the dev-team for assistance.
 
 ##### Merging a valid pull request:
 
@@ -492,7 +492,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adding comment about newbie mistakes
+### Adding Comment About Newbie Mistakes
 
 ```markdown
 As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).

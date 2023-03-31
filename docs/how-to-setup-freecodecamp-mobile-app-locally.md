@@ -2,7 +2,7 @@ Follow this guide for setting up the freeCodeCamp mobile app locally on your sys
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to prepare your local machine
+### How to Prepare your Local Machine
 
 Start by installing the prerequisite software for your operating system.
 
@@ -42,7 +42,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
    We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
-## Fork the repository on GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
 
@@ -61,7 +61,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp mob
 
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
-## Clone your fork from GitHub
+## Clone your Fork from GitHub
 
 [Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
@@ -81,7 +81,7 @@ This will download the entire freeCodeCamp mobile repository to your projects di
 
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Set up syncing from parent
+## Set up Syncing from Parent
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
@@ -116,7 +116,7 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Running freeCodeCamp mobile app locally
+## Running freeCodeCamp Mobile App Locally
 
 Now that you have a local copy of the mobile app, you can follow these instructions to run it locally.
 
@@ -127,7 +127,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 > [!NOTE]
 > The `mobile` directory contains two folders ie. `mobile-api` and `mobile-app`. `mobile-api` contains the API code used for serving the podcasts. `mobile-app` contains the Flutter app which is where you should be when you follow the below steps.
 
-### Configuring dependencies
+### Configuring Dependencies
 
 #### Step 1: Set up the environment variable file
 
@@ -177,7 +177,7 @@ flutter run
 > [!TIP]
 > If you're using VSCode or Android Studio then you can easily start the app without having to execute any terminal commands. More information [here](https://docs.flutter.dev/get-started/test-drive).
 
-## Making changes locally
+## Making Changes Locally
 
 You can now make changes to files and commit your changes to the local clone of your fork.
 
@@ -398,7 +398,7 @@ If you face issues with the UI, or builds errors a cleanup can be useful:
 flutter clean
 ```
 
-### Issues installing dependencies
+### Issues Installing Dependencies
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 

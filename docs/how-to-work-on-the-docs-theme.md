@@ -46,18 +46,12 @@ Typically you would not need to change any configuration or build the site local
 
 ### Serving the Documentation Site Locally
 
-Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run the command below as needed from the root of the repo:
 
-#### Serve and Launch the Documentation Site Only
+#### Serve and launch the documentation site
 
 ```console
 pnpm run docs:serve
-```
-
-#### Serve the documentation site alongside freeCodeCamp locally:
-
-```console
-pnpm run develop
 ```
 
 > The documentation site should be available at <http://localhost:3400>

@@ -1,6 +1,6 @@
 # How to Translate freeCodeCamp's resources
 
-## Prepare yourself for contributions
+## Prepare yourself for Contributions
 
 > The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
@@ -63,7 +63,7 @@ The translation workflow is split into two main activities:
 > [!WARNING]
 > We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
 
-## Getting started
+## Getting Started
 
 First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
 
@@ -153,7 +153,7 @@ Translating our contributing documentation is a similar flow to translating our 
 > [!NOTE]
 > Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
-### How to translate documentation with internal links
+### How to Translate Documentation with Internal Links
 
 When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
 
