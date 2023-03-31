@@ -75,7 +75,7 @@ Alguns membros da comunidade também desenvolvem no Windows nativamente com o Gi
 | Pré-requisito                                                                                       | Versão  | Observações                                                                                 |
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                        | `18.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
-| [pnpm](https://pnpm.io/installation)                                                                | `7.x`   | -                                                                                           |
+| [pnpm](https://pnpm.io/installation)                                                                | `8.x`   | -                                                                                           |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos dar suporte a problemas de instalação para versões recomendadas. Veja [solução de problemas](#troubleshooting) para detalhes.
