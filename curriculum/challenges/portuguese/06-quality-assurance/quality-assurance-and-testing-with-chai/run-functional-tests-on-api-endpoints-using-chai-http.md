@@ -36,19 +36,19 @@ O primeiro `assert.equal` verifica se o status é igual a `200`. O segundo `asse
 
 Além disso, observe o parâmetro `done` na função de callback do teste. Chamá-la sem um argumento no final de um teste é necessário para sinalizar que a operação assíncrona está completa.
 
-Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+Finalmente, observe o método `keepOpen` logo após o método `request`. Normalmente, você executaria os testes pela linha de comando ou como parte de um processo de integração automatizada. Além disso, você poderia deixar `chai-http` iniciar e parar seu servidor automaticamente.
 
-However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+No entanto, os testes que são executados quando você envia o link para o seu projeto exigem que seu servidor esteja pronto. Então, você precisa usar o método `keepOpen` para impedir que `chai-http` pare seu servidor.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
+Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with no name'` (`// #1`) para afirmar o `status` e o `text` da resposta para fazer o teste passar. Não altere os argumentos passados às afirmações.
 
-There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
+Não deve haver consulta de URL. Não deve haver consulta de name no URL. O endpoint responde com `hello Guest`.
 
 # --hints--
 
-All tests should pass
+Todos os testes devem passar
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+Você deve testar que `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello Guest'`
+Você deve testar se `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

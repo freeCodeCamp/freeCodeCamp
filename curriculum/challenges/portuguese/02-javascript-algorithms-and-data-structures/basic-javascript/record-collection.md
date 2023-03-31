@@ -8,28 +8,28 @@ dashedName: record-collection
 
 # --description--
 
-You are creating a function that aids in the maintenance of a musical album collection. The collection is organized as an object that contains multiple albums which are also objects. Each album is represented in the collection with a unique `id` as the property name. Within each album object, there are various properties describing information about the album. Not all albums have complete information.
+Você está criando uma função que ajuda na manutenção de uma coleção de álbuns musicais. A coleção está organizada como um objeto que contém múltiplos álbuns que também são objetos. Cada álbum é representado na coleção com um `id` único como o nome da propriedade. Dentro de cada objeto de álbum, existem várias propriedades descrevendo informações sobre o álbum. Nem todos os álbuns possuem informações completas.
 
-The `updateRecords` function takes 4 arguments represented by the following function parameters:
+A função `updateRecords` recebe 4 argumentos representados pelos seguintes parâmetros de função:
 
--   `records` - an object containing several individual albums
--   `id` - a number representing a specific album in the `records` object
--   `prop` - a string representing the name of the album’s property to update
--   `value` - a string containing the information used to update the album’s property
+-   `records` – um objeto contendo vários álbuns individuais
+-   `id` – um número que representa um álbum específico no objeto `records`
+-   `prop` – uma string que representa o nome da propriedade do álbum a ser atualizada
+-   `value` – uma string contendo informações usadas para atualizar a propriedade do álbum
 
-Complete the function using the rules below to modify the object passed to the function.
+Complete a função usando as regras abaixo para modificar o objeto passado para a função.
 
--   Your function must always return the entire `records` object.
--   If `value` is an empty string, delete the given `prop` property from the album.
--   If `prop` isn’t `"tracks"` and `value` isn't an empty string, assign the `value` to that album’s `prop`.
--   If `prop` is `"tracks"` and `value` isn’t an empty string, add the `value` to the end of the album’s existing `"tracks"` array.
--   If the album doesn’t have a `"tracks"` property, create a new array for the album's `"tracks"` property before adding the `value` to it.
+-   A função precisa sempre retornar todo o objeto `records`.
+-   Se `value` for uma string vazia, remova a propriedade `prop` recebida do álbum.
+-   Se `prop` não for `"tracks"` e `value` não for uma string vazia, atribua `value` à `prop` daquele álbum.
+-   Se `prop` for `"tracks"` e `value` não for uma string vazia, adicione `value` ao final do array `"tracks"` existente no álbum.
+-   Se o álbum não tiver uma propriedade `"tracks"`, criar um array para as propriedades `"tracks"` do álbum antes de adicionar `value` a ele.
 
-**Note:** A copy of the `recordCollection` object is used for the tests. You should not directly modify the `recordCollection` object.
+**Observação:** uma cópia do objeto `recordCollection` é usada para testes. Você não deve modificar diretamente o objeto `recordCollection`.
 
 # --hints--
 
-After `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` should be the string `ABBA`
+Após `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` deve ter a string `ABBA`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have the string `Take a Chance on Me` as the last and only element.
+Após `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` deve ter a string `Take a Chance on Me` como o último e único elemento.
 
 ```js
 assert(
@@ -48,14 +48,14 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2548, "artist", "")`, `artist` should not be set
+Após `updateRecords(recordCollection, 2548, "artist", "")`, `artist` não deve ser definido.
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-After `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` should have the string `Addicted to Love` as the last element.
+Após `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` deve ter a string `Addicted to Love` como o último elemento.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` should have the string `1999` as the first element.
+Após `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` deve ter a string `1999` como o último elemento.
 
 ```js
 assert(
@@ -75,14 +75,14 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` should not be set
+Após `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` não deve ser definido.
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-After `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be the string `Riptide`
+Após `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` deve ser a string `Riptide`.
 
 ```js
 assert(
