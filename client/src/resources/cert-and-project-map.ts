@@ -291,10 +291,11 @@ const legacyFullStack = {
   id: '561add10cb82ac38a17213bd',
   title: 'Legacy Full Stack',
   certSlug: 'full-stack',
-  flag: 'isFullStackCert'
+  flag: 'isFullStackCert',
+  projects: null
   // Requirements are other certs and is
   // handled elsewhere
-};
+} as const;
 const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
@@ -716,9 +717,7 @@ const certMap = [
         certSlug: 'machine-learning-with-python-v7'
       }
     ]
-  }
-] as const;
-const upcomingCertMap = [
+  },
   {
     id: '61531b20cc9dfa2741a5b800',
     title: 'College Algebra with Python',
@@ -727,40 +726,45 @@ const upcomingCertMap = [
     projects: [
       {
         id: '63d83ff239c73468b059cd3f',
-        title: 'Multi-Function Calculator',
-        link: `${collegeAlgebraPyBase}/multi-function-calculator`,
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d83ffd39c73468b059cd40',
-        title: 'Graphing Calculator',
-        link: `${collegeAlgebraPyBase}/graphing-calculator`,
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401039c73468b059cd41',
-        title: 'Three Math Games',
-        link: `${collegeAlgebraPyBase}/three-math-games`,
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401e39c73468b059cd42',
-        title: 'Financial Calculator',
-        link: `${collegeAlgebraPyBase}/financial-calculator`,
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8402e39c73468b059cd43',
-        title: 'Data Graph Explorer',
-        link: `${collegeAlgebraPyBase}/data-graph-explorer`,
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
         certSlug: 'college-algebra-with-python-v8'
       }
     ]
   }
 ] as const;
+const upcomingCertMap = [] as const;
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
 }
 
 function getJavaScriptAlgoPath(project: string) {
@@ -769,12 +773,15 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const fullCertMap = Array.of(
+const certMapWithoutFullStack = Array.of(
   ...upcomingCertMap,
+  // @ts-expect-error TODO: This did not used to be a type error
   ...legacyCertMap,
-  legacyFullStack,
   ...certMap
 );
+
+// @ts-expect-error TODO: This did not used to be a type error
+const fullCertMap = Array.of(...certMapWithoutFullStack, legacyFullStack);
 
 export type ProjectMap = Record<
   (typeof certMap)[number]['title'],
@@ -806,11 +813,12 @@ const fullProjectMap = {
 };
 
 export {
+  certMap,
+  certMapWithoutFullStack,
   fullCertMap,
   fullProjectMap,
-  certMap,
   legacyCertMap,
-  upcomingCertMap,
+  legacyProjectMap,
   projectMap,
-  legacyProjectMap
+  upcomingCertMap
 };

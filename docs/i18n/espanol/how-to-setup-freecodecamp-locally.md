@@ -75,7 +75,7 @@ Some community members also develop on Windows natively with Git for Windows (Gi
 | Prerrequisito                                                                                         | Versión | Notas                                                                                               |
 | ----------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                          | `18.x`  | Utilizamos la versión "Activos LTS", ejemplo[ LTS Schedule](https://nodejs.org/en/about/releases/). |
-| [pnpm](https://pnpm.io/installation)                                                                  | `7.x`   | -                                                                                                   |
+| [pnpm](https://pnpm.io/installation)                                                                  | `8.x`   | -                                                                                                   |
 | [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                                   |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.

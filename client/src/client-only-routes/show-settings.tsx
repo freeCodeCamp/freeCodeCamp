@@ -198,7 +198,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             website={website}
           />
           <Spacer size='medium' />
-          {/* @ts-expect-error Portfolio types mismatch */}
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />

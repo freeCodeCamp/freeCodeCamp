@@ -10,7 +10,7 @@ dashedName: add-labels-to-d3-elements
 
 D3 ti permette di etichettare un elemento grafico, come una barra, usando l'elemento SVG `text`.
 
-Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG. Deve inoltre accedere ai dati per visualizzare tali valori.
+Come l'elemento `rect`, un elemento `text` deve avere attributi `x` e `y`, per essere posizionato sull'SVG. Deve inoltre accedere ai dati per visualizzare tali valori.
 
 D3 ti dà un alto livello di controllo su come etichettare le tue barre.
 
