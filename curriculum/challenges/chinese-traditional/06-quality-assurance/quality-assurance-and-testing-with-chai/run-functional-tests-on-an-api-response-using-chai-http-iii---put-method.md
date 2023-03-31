@@ -17,6 +17,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 ```js
 chai
   .request(server)
+  .keepOpen()
   .put('/travellers')
   .send({
     "surname": [last name of a traveller of the past]
