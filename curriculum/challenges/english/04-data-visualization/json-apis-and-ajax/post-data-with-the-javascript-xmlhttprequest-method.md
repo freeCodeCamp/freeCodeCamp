@@ -30,9 +30,9 @@ You've seen several of these methods before. Here the `open` method initializes 
 
 The `setRequestHeader` method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the `open` method, but before the `send` method. The two parameters are the name of the header and the value to set as the body of that header.
 
-Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of `4` means the operation is complete, and a `status` of `201` means it was a successful request. Therefore, the document's HTML can be updated now.
+Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of `4` means the operation is complete, and a `status` of `201` means it was a successful request. Therefore, the document's HTML can be updated.
 
-Finally, the `send` method sends the request with the `body` value. The `body` consists of a `userName` and a `suffix` key, where the value of the `userName` key was provided by the user via the `input` field.
+Finally, the `send` method sends the request with the `body` value. The `body` consists of a `userName` and a `suffix` key.
 
 # --instructions--
 
