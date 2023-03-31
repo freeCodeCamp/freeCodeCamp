@@ -20,9 +20,9 @@ Las estrategias con OAuth requieren que tengas al menos un *Client ID* y un *Cli
 
 Sigue <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">estas instrucciones</a> para obtener tu *ID de cliente y secreto* de GitHub. Establece la URL de la página de inicio en tu página de inicio de Replit (**no la URL del código del proyecto**), y establece la URL callback en la misma URL de la página de inicio con `/auth/github/callback` añadido al final. Guarda el ID de cliente y tu secreto de cliente en el archivo `.env` de tu proyecto como `GITHUB_CLIENT_ID` y `GITHUB_CLIENT_SECRET`.
 
-In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+En el archivo `routes.js`, añade `showSocialAuth: true` a la ruta de la página de inicio, después de `showRegistration: true`. Ahora, crea 2 rutas que acepten peticiones GET: `/auth/github` y `/auth/github/callback`. El primero sólo debe llamar a passport para autenticar `'github'`. El segundo debe llamar a passport para autenticar `'github'` con una redirección de fallo a `/`, y luego si eso tiene éxito redirigir a `/profile` (similar a tu último proyecto).
 
-An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
+Un ejemplo de cómo debe verse `/auth/github/callback` es similar a cómo manejas un inicio de sesión normal:
 
 ```js
 app.route('/login')
@@ -31,11 +31,11 @@ app.route('/login')
   });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Envía tu página cuando creas que lo ha hecho bien. Si te encuentras con errores, puedes <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">comprobar el proyecto hasta este punto</a>.
 
 # --hints--
 
-Route `/auth/github` should be correct.
+La ruta `/auth/github` debe ser correcta.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-Route `/auth/github/callback` should be correct.
+La ruta `/auth/github/callback` debe ser correcta.
 
 ```js
 async (getUserInput) => {
