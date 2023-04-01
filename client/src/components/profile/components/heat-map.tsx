@@ -7,7 +7,8 @@ import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
 import startOfDay from 'date-fns/startOfDay';
 import React, { Component } from 'react';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';

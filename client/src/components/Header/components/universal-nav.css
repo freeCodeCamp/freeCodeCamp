@@ -93,7 +93,6 @@
 }
 
 .nav-link:focus {
-  outline: 3px solid var(--blue-mid);
   outline-offset: -4px;
 }
 
@@ -147,7 +146,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 button.nav-link:focus {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
-  outline: 3px solid var(--blue-mid);
   outline-offset: -4px;
 }
 
@@ -462,12 +460,6 @@ button.nav-link[aria-disabled='true'] {
   box-sizing: content-box;
   margin-inline-start: -30px;
   padding-inline: 35px;
-  outline: 3px solid var(--blue-mid);
-}
-
-.ais-SearchBox-submit:focus,
-.ais-SearchBox-reset:focus {
-  outline: 3px solid var(--blue-mid);
 }
 
 .ais-SearchBox-submit:focus:not(:focus-visible) {

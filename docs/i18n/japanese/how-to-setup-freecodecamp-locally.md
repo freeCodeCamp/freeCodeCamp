@@ -75,7 +75,7 @@ Some community members also develop on Windows natively with Git for Windows (Gi
 | 必要条件                                                                                    | バージョン   | 注                                                                                        |
 | --------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                            | `18.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
-| [pnpm](https://pnpm.io/installation)                                                    | `7.x`   | -                                                                                        |
+| [pnpm](https://pnpm.io/installation)                                                    | `8.x`   | -                                                                                        |
 | [MongoDB コミュニティサーバー](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                        |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.

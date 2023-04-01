@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036188
-title: 根據 Props 有條件地渲染
+title: 使用 Props 有條件地渲染
 challengeType: 6
 forumTopicId: 301405
 dashedName: render-conditionally-from-props
@@ -14,11 +14,11 @@ dashedName: render-conditionally-from-props
 
 # --instructions--
 
-代碼編輯器有兩個部分爲你定義的組件：一個名爲 `GameOfChance` 的父組件和一個名爲 `Results` 的子組件。 它們被用來創建一個簡單的遊戲，用戶按下按鈕來看它們是贏還是輸。
+代碼編輯器有兩個部分定義了的組件：一個名爲 `GameOfChance` 的父組件和一個名爲 `Results` 的子組件。 它們被用來創建一個簡單的遊戲，用戶按下按鈕來看它們是贏還是輸。
 
-首先，需要一個簡單的表達式，每次運行時都會隨機返回一個不同的值。 可以使用 `Math.random()`。 每次調用此方法時，此方法返回 `0`（包括）和 `1`（不包括）之間的值。 因此，對於50/50的機率，請在表達式中使用 `Math.random() >= .5`。 從統計學上講，這個表達式有 50％ 的機率返回 `true`，另外 50％ 返回 `false`。 在第 render 方法裏，用此表達式替換 `null` 以完成變量聲明。
+首先，需要一個簡單的表達式，每次運行時都會隨機返回一個不同的值。 可以使用 `Math.random()`。 每次調用此方法時，此方法返回 `0`（包括）和 `1`（不包括）之間的值。 因此，對於 50/50 的機率，請在表達式中使用 `Math.random() >= .5`。 從統計學上講，這個表達式有 50％ 的機率返回 `true`，另外 50％ 返回 `false`。 在 render 方法裏，用此表達式替換 `null` 以完成變量聲明。
 
-現在了一個表達式，可以使用該表達式在代碼中做出隨機決策。 接下來，需要實現此功能。 將 `Results` 組件渲染爲 `GameOfChance` 的子 組件，並將 `expression` 作爲名爲 `fiftyFifty` 的 prop 傳入 。 在 `Results` 組件中，編寫一個三元表達式來渲染 `h1` 元素的文本。`GameOfChance` 傳來的 prop `fiftyFifty` 來決定渲染文本 `You Win!` 還是 `You Lose!`。 最後，確保 `handleClick()` 方法正確計算每個回合，以便用戶知道他們玩過多少次。 這也可以讓用戶知道組件實際上已經更新，以防他們連續贏兩次或輸兩次時自己不知道。
+現在你有了一個表達式，可以使用該表達式在代碼中做出隨機決策。 接下來，需要實現此功能。 將 `Results` 組件渲染爲 `GameOfChance` 的子 組件，並將 `expression` 作爲名爲 `fiftyFifty` 的 prop 傳入 。 在 `Results` 組件中，編寫一個三元表達式來渲染 `h1` 元素的文本。`GameOfChance` 傳來的 prop `fiftyFifty` 來決定渲染文本 `You Win!` 還是 `You Lose!`。 最後，確保 `handleClick()` 方法正確計算每個回合，以便用戶知道他們玩過多少次。 這也可以讓用戶知道組件實際上已經更新，以防他們連續贏兩次或輸兩次時自己不知道。
 
 # --hints--
 

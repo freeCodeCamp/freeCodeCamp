@@ -1,6 +1,6 @@
 ---
 id: 6331d23eb51aeedd1a2bd646
-title: "Solving for X"
+title: "Resolvendo para X"
 challengeType: 15
 videoId: _U9PEFKjyb8
 dashedName: solving-for-x

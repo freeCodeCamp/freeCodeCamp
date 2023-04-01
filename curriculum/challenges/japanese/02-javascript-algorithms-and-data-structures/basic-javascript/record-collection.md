@@ -8,21 +8,28 @@ dashedName: record-collection
 
 # --description--
 
-音楽アルバムのコレクションの一部を表すオブジェクトリテラルが用意されています。 各アルバムには、キーとして一意の ID 番号と、その他のいくつかのプロパティが含まれています。 情報が完全ではないアルバムもあります。
+You are creating a function that aids in the maintenance of a musical album collection. The collection is organized as an object that contains multiple albums which are also objects. Each album is represented in the collection with a unique `id` as the property name. Within each album object, there are various properties describing information about the album. Not all albums have complete information.
 
-まず `updateRecords` 関数から記述を始めてください。この関数はオブジェクトリテラル `records` を受け取ります。これには、音楽アルバムのコレクション、`id`、`prop` (`artist` や `tracks` など)、および `value` が含まれています。 次に示すルールに従って関数を完成させ、関数に渡すオブジェクトを変更してください。
+The `updateRecords` function takes 4 arguments represented by the following function parameters:
 
--   関数は常にレコードコレクションオブジェクト全体を返す必要があります。
--   `prop` が `tracks` ではなく、`value` が空文字列ではない場合は、アルバムの `prop` を `value` に更新または設定します。
--   `prop` が `tracks` であるものの、アルバムに `tracks` プロパティがない場合は、空の配列を作成してそこに `value` を追加します。
--   `prop` が `tracks` であり、`value` が空文字列ではない場合は、`value` をアルバムの既存の `tracks` 配列の末尾に追加します。
--   `value` が空文字列の場合は、指定された `prop` プロパティをアルバムから削除します。
+-   `records` - an object containing several individual albums
+-   `id` - a number representing a specific album in the `records` object
+-   `prop` - a string representing the name of the album’s property to update
+-   `value` - a string containing the information used to update the album’s property
 
-**注:** テストには `recordCollection` オブジェクトのコピーが使用されます。
+Complete the function using the rules below to modify the object passed to the function.
+
+-   Your function must always return the entire `records` object.
+-   If `value` is an empty string, delete the given `prop` property from the album.
+-   If `prop` isn’t `"tracks"` and `value` isn't an empty string, assign the `value` to that album’s `prop`.
+-   If `prop` is `"tracks"` and `value` isn’t an empty string, add the `value` to the end of the album’s existing `"tracks"` array.
+-   If the album doesn’t have a `"tracks"` property, create a new array for the album's `"tracks"` property before adding the `value` to it.
+
+**Note:** A copy of the `recordCollection` object is used for the tests. You should not directly modify the `recordCollection` object.
 
 # --hints--
 
-`updateRecords(recordCollection, 5439, "artist", "ABBA")` の実行後、`artist` は文字列 `ABBA` になる必要があります。
+After `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` should be the string `ABBA`
 
 ```js
 assert(
@@ -31,7 +38,7 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` の実行後、`tracks` 配列は、文字列 `Take a Chance on Me` が末尾かつ唯一の要素になる必要があります。
+After `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have the string `Take a Chance on Me` as the last and only element.
 
 ```js
 assert(
@@ -41,14 +48,14 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 2548, "artist", "")` の実行後、`artist` は未設定であるべきです。
+After `updateRecords(recordCollection, 2548, "artist", "")`, `artist` should not be set
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-`updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` の実行後、`tracks` の末尾の要素は文字列 `Addicted to Love` になる必要があります。
+After `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` should have the string `Addicted to Love` as the last element.
 
 ```js
 assert(
@@ -58,7 +65,7 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 2468, "tracks", "Free")` の実行後、`tracks` の先頭の要素は文字列 `1999` であるべきです。
+After `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` should have the string `1999` as the first element.
 
 ```js
 assert(
@@ -68,14 +75,14 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 2548, "tracks", "")` の実行後、`tracks` は未設定であるべきです。
+After `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` should not be set
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-`updateRecords(recordCollection, 1245, "albumTitle", "Riptide")` の実行後、`albumTitle` は文字列 `Riptide` になる必要があります。
+After `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be the string `Riptide`
 
 ```js
 assert(

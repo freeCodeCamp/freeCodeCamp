@@ -11,7 +11,13 @@ dashedName: word-blanks
 
 Du erhältst Sätze mit einigen fehlenden Wörtern wie Nomen, Verben, Adjektiven und Adverbien. Anschließend ergänzt du die fehlenden Teile mit Wörtern deiner Wahl und so, dass der vollständige Satz einen Sinn ergibt.
 
-Betrachte diesen Satz – Es war wirklich **\_\_\_\_** und wir **\_\_\_\_** uns selbst **\_\_\_\_**. In diesem Satz fehlen drei Teile – ein Adjektiv, ein Verb und ein Adverb. Wir können Wörter unserer Wahl hinzufügen, um ihn zu vervollständigen. Anschließend können wir den vervollständigten Satz wie folgt einer Variable zuordnen:
+Betrachte diesen Satz:
+
+```md
+It was really ____, and we ____ ourselves ____.
+```
+
+In diesem Satz fehlen drei Teile - ein Adjektiv, ein Verb und ein Adverb - und wir können Wörter unserer Wahl hinzufügen, um ihn zu vervollständigen. Anschließend können wir den vervollständigten Satz wie folgt einer Variable zuordnen:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -19,11 +25,11 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-In dieser Aufgabe stellen wir dir jeweils ein Nomen, ein Verb und ein Adjektiv sowie ein Adverb zur Verfügung. Du musst einen vollständigen Satz mit Wörtern deiner Wahl und den von uns vorgegebenen Wörtern bilden.
+Bei dieser Aufgabe stellen wir dir ein Nomen, ein Verb, ein Adjektiv sowie ein Adverb zur Verfügung. Du musst einen vollständigen Satz mit Wörtern deiner Wahl und den von uns vorgegebenen Wörtern bilden.
 
-Du musst den String-Verkettungsoperator `+` verwenden, um einen neuen String mithilfe der vorgegebenen Variablen `myNoun`, `myAdjective`, `myVerb` und `myAdverb` zu kreieren. Anschließend musst du den so gebildeten String der Variable `wordBlanks` zuweisen. Du solltest die Wörter, die den Variablen zugeordnet sind, nicht ändern.
+Du musst den String-Verkettungsoperator `+` verwenden, um einen neuen String zu erstellen, indem du die angegebenen Variablen verwendest: `myNoun`, `myAdjective`, `myVerb` und `myAdverb`. Anschließend musst du den erstellten String der Variable `wordBlanks` zuweisen. Du solltest die Wörter, die den Variablen zugeordnet sind, nicht ändern.
 
-Berücksichtige zudem Leerzeichen in deinem String – die Wörter deines Satzes müssen von Leerzeichen umgeben sein. Das Ergebnis sollte ein vollständiger Satz sein.
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. Das Ergebnis sollte einen vollständigen Satz darstellen.
 
 # --hints--
 
@@ -44,7 +50,7 @@ assert(
 );
 ```
 
-Du solltest nicht ausschließlich die Werte `dog`, `ran`, `big` oder `quickly` zur Erstellung von `wordBlanks` verwenden.
+Du solltest die Werte `dog`, `ran`, `big` oder `quickly` nicht direkt verwenden, um `wordBlanks` zu erstellen.
 
 ```js
 const newCode = removeAssignments(code);
@@ -56,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` sollte alle – durch beliebige Nichtwortzeichen getrennte – Wörter enthalten, die den Variablen `myNoun`, `myVerb`, `myAdjective` und `myAdverb` zugewiesen wurden. Du kannst zudem Wörter deiner Wahl hinzufügen.
+`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
 
 ```js
 assert(

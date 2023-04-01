@@ -24,7 +24,7 @@ Open the following Colab notebook, run the cell, and <a href="https://colab.rese
 
 ## --text--
 
-If you import sympy and define x as a variable, what would be the input from the following code?
+If you import sympy and define x as a variable, what would be the output from the following code?
 
 ```py
 example = 3*x - 12
