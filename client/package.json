@@ -36,7 +36,6 @@
     "@babel/plugin-proposal-export-default-from": "7.18.10",
     "@babel/plugin-proposal-function-bind": "7.18.9",
     "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.21.4",
     "@babel/preset-react": "7.18.6",
     "@babel/runtime": "^7.20.13",
