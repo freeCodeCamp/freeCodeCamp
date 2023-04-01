@@ -41,8 +41,10 @@ export default function ToggleButtonSetting({
             value='1'
             className='toggle-button-right'
           >
-            <span>{restProps.onLabel}</span>
-            {flag ? <ToggleCheck style={checkIconStyle} /> : <div />}
+            <span>
+              {restProps.onLabel}
+              {flag ? <ToggleCheck style={checkIconStyle} /> : null}
+            </span>
           </button>
           <button
             aria-pressed={!flag}
@@ -50,8 +52,10 @@ export default function ToggleButtonSetting({
             value='2'
             className='toggle-button-left'
           >
-            <span>{restProps.offLabel}</span>
-            {!flag ? <ToggleCheck style={checkIconStyle} /> : <div />}
+            <span>
+              {restProps.offLabel}
+              {!flag ? <ToggleCheck style={checkIconStyle} /> : null}
+            </span>
           </button>
         </div>
       </fieldset>
