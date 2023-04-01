@@ -1,6 +1,6 @@
 ---
 id: 6331d23eb51aeedd1a2bd646
-title: "Solving for X"
+title: "Розв’язок рівняння"
 challengeType: 15
 videoId: _U9PEFKjyb8
 dashedName: solving-for-x
@@ -8,19 +8,19 @@ dashedName: solving-for-x
 
 # --description--
 
-This first video will show you the essence of algebra and then how Python code does the same task in a different way.
+Перше відео роз’яснить суть алгебри та покаже, як Python виконує те саме завдання, але по-іншому.
 
-Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Add the code from the video to your algebra Colab notebook to see how to solve for X using Python. Then change the code if you want, test it, and compare it to paper-and-pencil solving. Remember the equation input needs to be in Python syntax.
+Ось <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Додайте код з відео до свого блокноту з алгебри Colab, щоб побачити, як знайти х за допомогою Python. Потім (якщо хочете) змініть код, перевірте його та порівняйте з розв’язком на папері. Пам’ятайте, що рівняння повинне бути у синтаксисі Python.
 
 # --question--
 
 ## --assignment--
 
-Add the code to solve for x from the video to your algebra Colab notebook.
+Додайте код з відео для розв’язку рівняння до свого блокноту Colab.
 
 ## --text--
 
-In Python, what is the library you import to solve algebra problems with variables?
+Яку бібліотеку Python потрібно імпортувати, щоб розв’язати вирази зі змінними?
 
 ## --answers--
 

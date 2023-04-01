@@ -11,13 +11,13 @@ dashedName: word-blanks
 
 Ti vengono date delle frasi con delle parole mancanti, come nomi, verbi, aggettivi e avverbi. Devi quindi riempire le parti mancanti con parole a tua scelta in modo che la frase completata abbia senso.
 
-Consider this sentence:
+Considera questa frase:
 
 ```md
 It was really ____, and we ____ ourselves ____.
 ```
 
-This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -25,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+In questa sfida, ti forniremo un sostantivo, un verbo, un aggettivo e un avverbio. Dovrai formare una frase completa utilizzando parole di tua scelta, insieme con le parole che ti forniremo.
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+Dovrai usare l'operatore di concatenazione delle stringhe `+` per creare una nuova stringa, utilizzando le variabili fornite: `myNoun`, `myAdjective`, `myVerb` e `myAdverb`. Assegnerai quindi la stringa costruita alla variabile `wordBlanks`. Non dovrai cambiare le parole assegnate alle variabili.
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+Nella tua stringa dovrai anche tenere conto degli spazi, in modo che la frase finale abbia degli spazi tra tutte le parole. Il risultato dovrebbe essere una frase completa.
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` dovrebbe essere una stringa.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+Non dovresti modificare i valori assegnati a `myNoun`, `myVerb`, `myAdjective` o `myAdverb`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
+Non dovresti usare direttamente i valori `dog`, `ran`, `big` o `quickly` per creare `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
+`wordBlanks` dovrebbe contenere tutte le parole assegnate alle variabili `myNoun`, `myVerb`, `myAdjective` e `myAdverb` separate da caratteri che non siano parole (e da eventuali parole di tua scelta).
 
 ```js
 assert(

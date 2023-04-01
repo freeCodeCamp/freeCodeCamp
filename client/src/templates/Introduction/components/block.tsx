@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withTranslation, TFunction } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -128,18 +129,12 @@ class Block extends Component<BlockProps> {
       );
     });
 
-    const blockIntroObj: { title?: string; intro: string[] } = t(
-      `intro:${superBlock}.blocks.${blockDashedName}`
-    );
-    const blockTitle = blockIntroObj ? blockIntroObj.title : null;
-    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
-    const {
-      expand: expandText,
-      collapse: collapseText
-    }: {
-      expand: string;
-      collapse: string;
-    } = t('intro:misc-text');
+    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
+    const blockIntroArr = [
+      t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
+    ];
+    const expandText = t('intro:misc-text.expand');
+    const collapseText = t('intro:misc-text.collapse');
 
     const isBlockCompleted = completedCount === challengesWithCompleted.length;
 

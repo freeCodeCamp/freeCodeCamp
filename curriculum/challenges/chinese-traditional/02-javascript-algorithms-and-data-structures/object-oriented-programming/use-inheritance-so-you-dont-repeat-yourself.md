@@ -55,7 +55,7 @@ Dog.prototype = {
 
 # --instructions--
 
-`Cat` 和 `Bear` 重複定義了 `eat` 方法。 本着 DRY 的原則，通過將 `eat` 方法移動到 `Animal``supertype` 中來重寫你的代碼。
+`Cat` 和 `Bear` 重複定義了 `eat` 方法。 本着 DRY 的原則，通過將 `eat` 方法移動到 `Animal` `supertype` 中來重寫你的代碼。
 
 # --hints--
 

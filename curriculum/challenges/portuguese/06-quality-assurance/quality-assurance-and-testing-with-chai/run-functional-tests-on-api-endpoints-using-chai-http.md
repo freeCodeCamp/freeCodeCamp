@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -34,6 +35,10 @@ O teste envia uma solicitação de `GET` para o servidor com um nome (name) como
 O primeiro `assert.equal` verifica se o status é igual a `200`. O segundo `assert.equal` verifica se a string de resposta (`res.text`) é igual a `"hello John"`.
 
 Além disso, observe o parâmetro `done` na função de callback do teste. Chamá-la sem um argumento no final de um teste é necessário para sinalizar que a operação assíncrona está completa.
+
+Finalmente, observe o método `keepOpen` logo após o método `request`. Normalmente, você executaria os testes pela linha de comando ou como parte de um processo de integração automatizada. Além disso, você poderia deixar `chai-http` iniciar e parar seu servidor automaticamente.
+
+No entanto, os testes que são executados quando você envia o link para o seu projeto exigem que seu servidor esteja pronto. Então, você precisa usar o método `keepOpen` para impedir que `chai-http` pare seu servidor.
 
 # --instructions--
 

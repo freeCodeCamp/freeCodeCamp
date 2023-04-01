@@ -1,7 +1,8 @@
 import { graphql } from 'gatsby';
 import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import Media from 'react-responsive';
@@ -167,7 +168,6 @@ function ShowClassic({
         superBlock,
         helpCategory,
         forumTopicId,
-        certification,
         usesMultifileEditor,
         notes,
         videoUrl,
@@ -477,12 +477,7 @@ function ShowClassic({
             windowTitle={windowTitle}
           />
         </Media>
-        <CompletionModal
-          block={block}
-          blockName={blockName}
-          certification={certification}
-          superBlock={superBlock}
-        />
+        <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
@@ -518,7 +513,6 @@ export const query = graphql`
         helpCategory
         videoUrl
         superBlock
-        certification
         translationPending
         forumTopicId
         fields {
