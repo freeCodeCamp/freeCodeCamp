@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
+import { Content } from '@radix-ui/react-tabs';
 
-export interface TabPaneProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface TabPaneProps extends React.HTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
-  eventKey?: React.ReactNode;
-  props?: React.ComponentProps<'a'>;
+  eventKey: string;
+  triggerChildren?: React.ReactNode;
+  props?: ComponentProps<typeof Content>;
 }
