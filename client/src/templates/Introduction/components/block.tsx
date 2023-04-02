@@ -63,15 +63,11 @@ interface BlockProps {
 
 // the real type of TFunction is the type below, because intro can be an array of strings
 // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
-// But changing it will require refactoring that isn't worth it for a wrong type.
-const RenderBlockIntros = ({
-  titleParagraphs
-}: {
-  titleParagraphs: string[];
-}) => {
+// But changing the type will require refactoring that isn't worth it for a wrong type.
+const BlockIntros = ({ intros }: { intros: string[] }) => {
   return (
     <div className='block-description'>
-      {titleParagraphs.map((title, i) => (
+      {intros.map((title, i) => (
         <p key={i}>{title}</p>
       ))}
     </div>
@@ -138,9 +134,11 @@ class Block extends Component<BlockProps> {
     });
 
     const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
-    const blockIntroArr = t(
-      `intro:${superBlock}.blocks.${blockDashedName}.intro`
-    );
+    // the reason we are flating the array, to please TypeScript.
+    // but it isn't needed, because of intro structure as mention in BlockIntos component
+    const blockIntroArr = [
+      t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
+    ].flat();
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
@@ -175,7 +173,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            <RenderBlockIntros titleParagraphs={blockIntroArr} />
+            <BlockIntros intros={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -232,7 +230,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            <RenderBlockIntros titleParagraphs={blockIntroArr} />
+            <BlockIntros intros={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -293,9 +291,7 @@ class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && (
-              <RenderBlockIntros titleParagraphs={blockIntroArr} />
-            )}
+            {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
@@ -336,7 +332,7 @@ class Block extends Component<BlockProps> {
               {this.renderCheckMark(isBlockCompleted)}
               <h3 className='block-grid-title'>{blockTitle}</h3>
             </div>
-            <RenderBlockIntros titles={blockIntroArr} />
+            <BlockIntros intros={blockIntroArr} />
           </Link>
         </div>
       </ScrollableAnchor>
