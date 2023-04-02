@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written as:
+This will only return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written as:
 
 ```js
 if (num > 5 && num < 10) {
