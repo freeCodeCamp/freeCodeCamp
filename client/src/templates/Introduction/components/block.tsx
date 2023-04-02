@@ -64,11 +64,15 @@ interface BlockProps {
 // the real type of TFunction is the type below, because intro can be an array of strings
 // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
 // But changing it will require refactoring that isn't worth it for a wrong type.
-const RenderBlockIntros = ({ str }: { str: string[] }) => {
+const RenderBlockIntros = ({
+  titleParagraphs
+}: {
+  titleParagraphs: string[];
+}) => {
   return (
     <div className='block-description'>
-      {str.map((child, i) => (
-        <p key={i}>{child}</p>
+      {titleParagraphs.map((title, i) => (
+        <p key={i}>{title}</p>
       ))}
     </div>
   );
@@ -171,7 +175,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            <RenderBlockIntros str={blockIntroArr} />
+            <RenderBlockIntros titleParagraphs={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -228,7 +232,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            <RenderBlockIntros str={blockIntroArr} />
+            <RenderBlockIntros titleParagraphs={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -289,7 +293,9 @@ class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && <RenderBlockIntros str={blockIntroArr} />}
+            {isExpanded && (
+              <RenderBlockIntros titleParagraphs={blockIntroArr} />
+            )}
             {isExpanded && (
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
@@ -330,7 +336,7 @@ class Block extends Component<BlockProps> {
               {this.renderCheckMark(isBlockCompleted)}
               <h3 className='block-grid-title'>{blockTitle}</h3>
             </div>
-            <RenderBlockIntros str={blockIntroArr} />
+            <RenderBlockIntros titles={blockIntroArr} />
           </Link>
         </div>
       </ScrollableAnchor>
