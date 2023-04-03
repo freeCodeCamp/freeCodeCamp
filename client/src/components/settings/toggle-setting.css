@@ -63,11 +63,7 @@
   margin-top: 0.1rem;
 }
 
-.toggle-button-group button:first-of-type > span > svg {
-  right: unset;
-  left: -1.25rem;
-}
-
+.toggle-button-group button:first-of-type > span > svg,
 [dir='rtl'] .toggle-button-group button > span > svg {
   right: unset;
   left: -1.25rem;
@@ -94,6 +90,10 @@
   border-radius: 0.25rem;
 }
 
+.toggle-radio-group input:focus {
+  outline: none;
+}
+
 /* for FF since it doesn't support :has yet */
 .toggle-radio-group label:focus-within {
   outline: 3px solid var(--blue-mid);
@@ -117,11 +117,11 @@
 }
 
 .toggle-radio-group label + label {
-  margin-left: 1rem;
+  margin-inline-start: 1.5rem;
 }
 
 .toggle-radio-group input {
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
   accent-color: var(--secondary-color);
 }
 
