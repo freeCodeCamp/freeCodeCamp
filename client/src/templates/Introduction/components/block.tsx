@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import type { TFunction } from 'i18next';
+import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
@@ -61,9 +61,6 @@ interface BlockProps {
   toggleBlock: typeof toggleBlock;
 }
 
-// the real type of TFunction is the type below, because intro can be an array of strings
-// type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
-// But changing the type will require refactoring that isn't worth it for a wrong type.
 export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
   return (
     <div className='block-description'>
@@ -134,11 +131,12 @@ class Block extends Component<BlockProps> {
     });
 
     const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
-    // the reason we are flating the array, to please TypeScript.
-    // but it isn't needed, because of intro structure as mention in BlockIntos component
-    const blockIntroArr = [
-      t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
-    ].flat();
+    // the real type of TFunction is the type below, because intro can be an array of strings
+    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
+    // But changing the type will require refactoring that isn't worth it for a wrong type.
+    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
+      `intro:${superBlock}.blocks.${blockDashedName}.intro`
+    );
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
