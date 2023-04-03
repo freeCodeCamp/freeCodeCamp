@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlockIntros /> matches snapshot 1`] = `
+<div
+  className="block-description"
+>
+  <p>
+    first paragraph
+  </p>
+  <p>
+    second paragraph
+  </p>
+</div>
+`;

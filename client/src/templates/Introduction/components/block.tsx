@@ -64,7 +64,7 @@ interface BlockProps {
 // the real type of TFunction is the type below, because intro can be an array of strings
 // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
 // But changing the type will require refactoring that isn't worth it for a wrong type.
-const BlockIntros = ({ intros }: { intros: string[] }) => {
+export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
   return (
     <div className='block-description'>
       {intros.map((title, i) => (
