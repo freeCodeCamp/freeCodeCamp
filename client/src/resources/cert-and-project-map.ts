@@ -773,15 +773,13 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMapWithoutFullStack = Array.of(
+const certMapWithoutFullStack = [
   ...upcomingCertMap,
-  // @ts-expect-error TODO: This did not used to be a type error
   ...legacyCertMap,
   ...certMap
-);
+] as const;
 
-// @ts-expect-error TODO: This did not used to be a type error
-const fullCertMap = Array.of(...certMapWithoutFullStack, legacyFullStack);
+const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
 export type ProjectMap = Record<
   (typeof certMap)[number]['title'],
