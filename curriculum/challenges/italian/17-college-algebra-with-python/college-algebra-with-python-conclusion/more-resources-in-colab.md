@@ -1,6 +1,6 @@
 ---
 id: 6363d2959078df117ce4c408
-title: "More Resources in Colab"
+title: "Altre Risorse di Colab"
 challengeType: 15
 videoId: HNFrRHqpck4
 dashedName: more-resources-in-colab
@@ -8,13 +8,13 @@ dashedName: more-resources-in-colab
 
 # --description--
 
-One more thing... This brief video will show you some of the resources available to you in Google Colab notebooks.
+Ancora una cosa... Questo breve video ti mostrerà alcune delle risorse disponibili nei notebook Google Colab.
 
 # --question--
 
 ## --text--
 
-Which code snippets are available in the Google Colaboratory?
+Quali snippet di codice sono disponibili in Google Colaboratory?
 
 ## --answers--
 
@@ -30,7 +30,7 @@ Importing data from Google Sheets
 
 ---
 
-All of the above
+Tutti i precedenti
 
 ## --video-solution--
 

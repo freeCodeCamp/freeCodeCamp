@@ -30,7 +30,7 @@ const value = "title";
 const valueLookup = article[value];
 ```
 
-`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
+`articleAuthor` ist `Kaashan Hussain`, `articleLink` ist `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/` und `valueLookup` ist `How to create objects in JavaScript`. Es handelt sich jeweils um Stringwerte.
 
 # --instructions--
 

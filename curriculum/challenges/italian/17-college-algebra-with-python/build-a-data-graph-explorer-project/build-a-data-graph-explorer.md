@@ -15,16 +15,16 @@ After going to that link, create a copy of the notebook either in your own accou
 
 For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
 
-- Get a .csv file in three ways
-  - uploading it from the local computer
-  - getting a url from user input
-  - putting the url in the code
-- Use the Pandas library to save the .csv as a dataframe
-- Print headings and the first two rows
-- Store the column names as a list
-- Choose one or two columns and convert the data to Numpy arrays
-- Display data as a scatter plot or a line graph
-- Be able to do this for different column combinations, and interpret the graphs
+- Ottenere un file .csv in tre modi
+  - caricandolo dal computer locale
+  - ottenendo un url dall'input dell'utente
+  - inserendo l'url nel codice
+- Usare la libreria di Pandas per salvare il .csv come dataframe
+- Stampare le intestazioni e le prime due righe
+- Memorizzare i nomi delle colonne come lista
+- Scegliere una o due colonne e convertire i dati in array Numpy
+- Mostrare i dati come un grafico a dispersione o un grafico a linea
+- Essere in grado di fare tutto ciò per diverse combinazioni di colonne e interpretare i grafici
 
 Once you're done, submit the URL to the public Colab notebook on your Google drive.
 

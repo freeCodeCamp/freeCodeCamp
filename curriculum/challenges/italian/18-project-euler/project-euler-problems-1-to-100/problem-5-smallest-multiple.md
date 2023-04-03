@@ -1,6 +1,6 @@
 ---
 id: 5900f3711000cf542c50fe84
-title: 'Problem 5: Smallest multiple'
+title: 'Problema 5: il multiplo più piccolo'
 challengeType: 1
 forumTopicId: 302160
 dashedName: problem-5-smallest-multiple
@@ -8,43 +8,43 @@ dashedName: problem-5-smallest-multiple
 
 # --description--
 
-2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+2520 è il numero più piccolo divisibile per ciascuno dei numeri da 1 a 10 senza resto.
 
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to `n`?
+Qual è il numero positivo più piccolo che sia uniformemente divisibile per tutti i numeri da 1 a `n`?
 
 # --hints--
 
-`smallestMult(5)` should return a number.
+`smallestMult(5)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof smallestMult(5) === 'number');
 ```
 
-`smallestMult(5)` should return 60.
+`smallestMult(5)` dovrebbe restituire 60.
 
 ```js
 assert.strictEqual(smallestMult(5), 60);
 ```
 
-`smallestMult(7)` should return 420.
+`smallestMult(7)` dovrebbe restituire 420.
 
 ```js
 assert.strictEqual(smallestMult(7), 420);
 ```
 
-`smallestMult(10)` should return 2520.
+`smallestMult(10)` dovrebbe restituire 2520.
 
 ```js
 assert.strictEqual(smallestMult(10), 2520);
 ```
 
-`smallestMult(13)` should return 360360.
+`smallestMult(13)` dovrebbe restituire 360360.
 
 ```js
 assert.strictEqual(smallestMult(13), 360360);
 ```
 
-`smallestMult(20)` should return 232792560.
+`smallestMult(20)` dovrebbe restituire 232792560.
 
 ```js
 assert.strictEqual(smallestMult(20), 232792560);
