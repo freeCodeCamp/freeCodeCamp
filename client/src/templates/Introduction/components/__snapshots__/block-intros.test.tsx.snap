@@ -4,11 +4,19 @@ exports[`<BlockIntros /> matches snapshot 1`] = `
 <div
   className="block-description"
 >
-  <p>
-    first paragraph
-  </p>
-  <p>
-    second paragraph
-  </p>
+  <p
+    dangerouslySetInnerHTML={
+      {
+        "__html": "first paragraph",
+      }
+    }
+  />
+  <p
+    dangerouslySetInnerHTML={
+      {
+        "__html": "second paragraph",
+      }
+    }
+  />
 </div>
 `;
