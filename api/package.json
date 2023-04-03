@@ -10,7 +10,6 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
     "@prisma/client": "4.11.0",
-    "@sinclair/typebox": "0.25.24",
     "connect-mongo": "4.6.0",
     "fastify": "4.15.0",
     "fastify-auth0-verify": "^1.0.0",
@@ -19,7 +18,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "2.4.0",
+    "@fastify/type-provider-typebox": "3.0.0",
     "@types/express-session": "1.17.7",
     "@types/supertest": "2.0.12",
     "jest": "29.5.0",
