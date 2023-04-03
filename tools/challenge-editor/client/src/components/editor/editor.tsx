@@ -21,7 +21,7 @@ const Editor = () => {
     name: '',
     fileData: ''
   });
-  const [input, setInput] = useState('');
+  const [stepContent, setStepContent] = useState('');
   const params = useParams() as {
     superblock: string;
     block: string;
@@ -43,7 +43,7 @@ const Editor = () => {
         content => {
           setLoading(false);
           setItems(content);
-          setInput(content.fileData);
+          setStepContent(content.fileData);
         },
         (error: Error) => {
           setLoading(false);
@@ -53,8 +53,8 @@ const Editor = () => {
   };
 
   const handleChange = (instance: codemirror.Editor) => {
-    const valueInstance = instance.getValue();
-    setInput(valueInstance);
+    const editedContent = instance.getValue();
+    setStepContent(editedContent);
   };
 
   if (error) {
@@ -70,7 +70,7 @@ const Editor = () => {
         {params.superblock} / {params.block}
       </span>
       <CodeMirror
-        value={input}
+        value={stepContent}
         onChange={handleChange}
         options={{
           mode: {
@@ -86,7 +86,7 @@ const Editor = () => {
         superblock={params.superblock}
         block={params.block}
         challenge={params.challenge}
-        content={input}
+        content={stepContent}
       />
       <p>
         <Link to={`/${params.superblock}/${params.block}`}>
