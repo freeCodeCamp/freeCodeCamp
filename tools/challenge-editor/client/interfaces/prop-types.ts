@@ -1,7 +1,7 @@
 export interface ChallengeContentRequiredProps {
-  superblock: string;
-  block: string;
-  challenge: string;
+  superblock?: string;
+  block?: string;
+  challenge?: string;
   content: string;
 }
 

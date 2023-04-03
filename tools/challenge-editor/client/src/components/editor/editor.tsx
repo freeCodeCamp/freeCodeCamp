@@ -22,11 +22,7 @@ const Editor = () => {
     fileData: ''
   });
   const [input, setInput] = useState('');
-  const params = useParams() as {
-    superblock: string;
-    block: string;
-    challenge: string;
-  };
+  const params = useParams();
 
   useEffect(() => {
     fetchData();
