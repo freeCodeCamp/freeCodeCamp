@@ -1,6 +1,6 @@
 ---
 id: 63d83ff239c73468b059cd3f
-title: "Build a Multi-Function Calculator"
+title: "Створіть багатофункціональний калькулятор"
 challengeType: 10
 dashedName: build-a-multi-function-calculator
 ---
@@ -13,14 +13,14 @@ dashedName: build-a-multi-function-calculator
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+У цьому завданні за допомогою Python потрібно створити багатофункціональний калькулятор, який приймає вхідні дані та виконує наступне:
 
-- solve proportions
-- solve for x in equations
-- factor square roots
-- convert decimals to fractions and percents
-- convert fractions to decimals and percents
-- convert percents to decimals and fractions
+- розв’язує пропорції
+- знаходить значення х
+- обчислює квадратний корінь
+- перетворює десяткові числа у дроби та відсотки
+- перетворює дроби у десяткові числа та відсотки
+- перетворює відсотки у десяткові числа та дроби
 
 Якщо вам потрібна допомога, ви можете переглядати <a href="https://www.youtube.com/embed/PdsvcZNPEEs" target="_blank" rel="noopener noreferrer nofollow">відео протягом виконання проєкту.</a>
 

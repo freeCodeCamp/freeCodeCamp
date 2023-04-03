@@ -15,12 +15,12 @@ After going to that link, create a copy of the notebook either in your own accou
 
 For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
 
-- Calculate annuity with monthly or continuous growth
-- Calculate monthly mortgage payment
-- Estimate retirement investment balance
-- Determine how long until an amount doubles, given the rate
-- Solve logarithmic equations
-- Convert to (and from) scientific notation
+- Calcolare la rendita con crescita mensile o continua
+- Calcolare la rata mensile di un mutuo
+- Stimare il saldo del fondo pensione
+- Determinare dopo quanto tempo una somma raddoppia, dato il tasso
+- Risolvere equazioni logaritmiche
+- Convertire in (e da) notazione scientifica
 
 If you are struggling, you can follow the <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
 

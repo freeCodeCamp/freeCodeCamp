@@ -10,29 +10,29 @@ dashedName: factoring
 
 This first video will show you how to find common factors and divide them out - in writing, then in code using loops and modulus operations.
 
-Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
 # --question--
 
 ## --text--
 
-What does the modulus (`%`) operator do in Python?
+Cosa fa l'operatore di modulo (`%`) in Python?
 
 ## --answers--
 
-returns the percent
+restituisce la percentuale
 
 ---
 
-divides
+divide
 
 ---
 
-returns the remainder when dividing
+restituisce il resto della divisione
 
 ---
 
-creates a space
+crea uno spazio
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8d
-title: 'Problem 14: Longest Collatz sequence'
+title: 'Problema 14: la sequenza di Collatz più lunga'
 challengeType: 1
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
@@ -8,61 +8,61 @@ dashedName: problem-14-longest-collatz-sequence
 
 # --description--
 
-The following iterative sequence is defined for the set of positive integers:
+La seguente sequenza iterativa è definita per l'insieme degli interi positivi:
 
-<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>
+<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> è pari)</div>
 
-<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>
+<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> è dispari)</div>
 
-Using the rule above and starting with 13, we generate the following sequence:
+Usando le regole qui sopra e iniziando con 13, generiamo la seguente sequenza:
 
 <div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>
 
-It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+Puoi vedere che questa sequenza (che inizia con 13 e finisce con 1) contiene 10 termini. Anche se non è ancora stato provato (Problema di Collatz), si pensa che con qualsiasi numeri si parta, si finisce a 1.
 
-Which starting number, under the given `limit`, produces the longest chain?
+Quale numero iniziale, sotto il dato limite `limit`, produce la catena più lunga?
 
-**Note:** Once the chain starts the terms are allowed to go above `limit`.
+**Nota:** una volta che la catena inizia i termini possono superare `limit`.
 
 # --hints--
 
-`longestCollatzSequence(14)` should return a number.
+`longestCollatzSequence(14)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof longestCollatzSequence(14) === 'number');
 ```
 
-`longestCollatzSequence(14)` should return 9.
+`longestCollatzSequence(14)` dovrebbe restituire 9.
 
 ```js
 assert.strictEqual(longestCollatzSequence(14), 9);
 ```
 
-`longestCollatzSequence(5847)` should return 3711.
+`longestCollatzSequence(5847)` dovrebbe restituire 3711.
 
 ```js
 assert.strictEqual(longestCollatzSequence(5847), 3711);
 ```
 
-`longestCollatzSequence(46500)` should return 35655.
+`longestCollatzSequence(46500)` dovrebbe restituire 35655.
 
 ```js
 assert.strictEqual(longestCollatzSequence(46500), 35655);
 ```
 
-`longestCollatzSequence(54512)` should return 52527.
+`longestCollatzSequence(54512)` dovrebbe restituire 52527.
 
 ```js
 assert.strictEqual(longestCollatzSequence(54512), 52527);
 ```
 
-`longestCollatzSequence(100000)` should return 77031.
+`longestCollatzSequence(100000)` dovrebbe restituire 77031.
 
 ```js
 assert.strictEqual(longestCollatzSequence(100000), 77031);
 ```
 
-`longestCollatzSequence(1000000)` should return 837799.
+`longestCollatzSequence(1000000)` dovrebbe restituire 837799.
 
 ```js
 assert.strictEqual(longestCollatzSequence(1000000), 837799);

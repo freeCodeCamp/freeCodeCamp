@@ -1,29 +1,29 @@
 ---
 id: 63d8401039c73468b059cd41
-title: "Build Three Math Games"
+title: "Crea Tre Giochi di Matematica"
 challengeType: 10
 dashedName: build-three-math-games
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Lavorerai a <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">questo progetto con Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Dopo aver visitato il link, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso in quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione del link per "anyone with the link"
 
 # --instructions--
 
-For this challenge, you need to create three math games using Python that do the following:
+Per questa sfida, utilizzando Python dovrai creare tre giochi matematici che eseguono le seguenti operazioni:
 
-- Scatter plot game
-  - Randomly generate points on a graph and the player has to input the (x,y) coordinates
-  - For added difficulty, make the graph larger
-- Algebra practice game
-  - Generate one-step and two-step problems with random integer values and the player has to input the answer
-  - Use positive and negative values. For added difficulty, make the numbers larger
-- Projectile game
-  - Display a "wall" with random height and location. Player has to move sliders to adjust a parabolic path to clear the wall
-  - For added difficulty, make a second level where players enter a, b, and c without sliders
+- Gioco del grafico a dispersione
+  - Generare punti su un grafico in modo casuale; il giocatore deve inserire le coordinate (x,y)
+  - Per ulteriori difficoltà, rendere il grafico più grande
+- Gioco di pratica algebrica
+  - Generare problemi di uno e due passaggi con valori interi casuali; il giocatore deve inserire la risposta
+  - Utilizzare valori positivi e negativi. Per ulteriori difficoltà, rendere i numeri più grandi
+- Gioco del proiettile
+  - Mostrare un "muro" con altezza e posizione casuali. Player has to move sliders to adjust a parabolic path to clear the wall
+  - Per ulteriori difficoltà, creare un secondo livello dove i giocatori inseriscono a, b, e c senza cursori
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Quando hai finito, invia l'URL al notebook Colab pubblico sul tuo Google drive.
 

@@ -1,6 +1,6 @@
 ---
 id: 63d83ffd39c73468b059cd40
-title: "Build a Graphing Calculator"
+title: "Створіть графічний калькулятор"
 challengeType: 10
 dashedName: build-a-graphing-calculator
 ---
@@ -13,14 +13,14 @@ dashedName: build-a-graphing-calculator
 
 # --instructions--
 
-For this challenge, you need to create a graphing calculator using Python that can take input and do the following:
+У цьому завданні за допомогою Python потрібно створити графічний калькулятор, який приймає вхідні дані та виконує наступне:
 
-- Graph one or more functions
-- Create a table of (x,y) values
-- Shade above or below the line
-- Solve and graph a system of equations
-- Zoom in or out on a graph
-- Solve quadratic equations
+- будує графік однієї або більше функцій
+- створює таблицю значень (x, y)
+- затінює частину над/під лінією
+- розв’язує системи рівнянь та будує графік
+- збільшує/зменшує масштаб графіку
+- розв’язує квадратні рівняння
 
 Якщо вам потрібна допомога, ви можете переглядати <a href="https://www.youtube.com/embed/EM0yNdZBdfQ" target="_blank" rel="noopener noreferrer nofollow">відео протягом виконання проєкту.</a>
 

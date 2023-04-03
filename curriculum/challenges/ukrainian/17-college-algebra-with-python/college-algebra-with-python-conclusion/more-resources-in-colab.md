@@ -30,7 +30,7 @@ Importing data from Google Sheets
 
 ---
 
-All of the above
+Усе перелічене вище
 
 ## --video-solution--
 

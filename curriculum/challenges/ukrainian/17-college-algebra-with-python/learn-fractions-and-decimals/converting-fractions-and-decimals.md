@@ -1,6 +1,6 @@
 ---
 id: 6331d258b51aeedd1a2bd649
-title: "Converting Fractions and Decimals"
+title: "Перетворення дробів та десяткових чисел"
 challengeType: 15
 videoId: hVHWr4KXZn0
 dashedName: converting-fractions-and-decimals
@@ -8,35 +8,35 @@ dashedName: converting-fractions-and-decimals
 
 # --description--
 
-The first video will show you how to convert between fractions, decimals, and percents on paper. Then, it will show you how to do it with Python code.
+У першому відео покажуть, як перетворювати дроби, десяткові числа та відсотки на папері. Потім ви побачите, як зробити те саме за допомогою Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in the video.</a> Use this code as a model, and write your own code to convert fractions and decimals.
+Ось <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab, використаний у цьому відео.</a> Використайте цей код як модель та напишіть власний код для перетворення дробів та десяткових чисел.
 
 # --question--
 
 ## --assignment--
 
-Add the code to convert fractions and decimals to your algebra Colab notebook.
+Додайте код для перетворення дробів та десяткових чисел до свого блокноту Colab.
 
 ## --text--
 
-Which of the following correctly represents "three hundredths" as a decimal?
+Що з переліченого правильно позначає «три сотні» у вигляді десяткового числа?
 
 ## --answers--
 
-0.3
+0,3
 
 ---
 
-0.03
+0,03
 
 ---
 
-0.003
+0,003
 
 ---
 
-100.3
+100,3
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 6331d27db51aeedd1a2bd64e
-title: "Graphing Systems"
+title: "Grafici di Sistemi"
 challengeType: 15
 videoId: FxSIFR4zsrE
 dashedName: graphing-systems
@@ -8,35 +8,35 @@ dashedName: graphing-systems
 
 # --description--
 
-This first video will show you how to graph systems of equations with with written math, then code.
+Questo primo video ti mostrerà come graficare sistemi di equazioni con la matematica scritta e poi con il codice.
 
-Here is the <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
 # --question--
 
 ## --assignment--
 
-Add code from the video to the algebra notebook you are building, and test it with different functions.
+Aggiungi il codice dal video al notebook di algebra che stai costruendo e testalo con diverse funzioni.
 
 ## --text--
 
-The numpy `linspace()` function takes three arguments to create an array. Which of the following arguments does it not take?
+La funzione `linspace()` di numpy prende tre argomenti per creare un array. Quale dei seguenti argomenti non accetta?
 
 ## --answers--
 
-Minimum value
+Valore minimo
 
 ---
 
-Maximum value
+Valore massimo
 
 ---
 
-Number of items in the array
+Numero di elementi nell'array
 
 ---
 
-Formula to generate each item
+Formula per generare ogni elemento
 
 ## --video-solution--
 
