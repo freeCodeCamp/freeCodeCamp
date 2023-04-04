@@ -34,7 +34,8 @@
   text-decoration: underline;
 }
 
-.site-footer .col-header {
+.site-footer .col-header,
+.trending-guides .col-header {
   text-align: center;
   font-weight: 700;
   font-size: 16px;
@@ -125,6 +126,7 @@ p.footer-donation a:hover {
   }
   .footer-bottom .col-header {
     visibility: hidden;
+    padding: 0px;
   }
   .our-nonprofit {
     margin-top: 20px;
