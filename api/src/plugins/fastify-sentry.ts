@@ -9,13 +9,9 @@ const fastifySentry = (
 ) => {
   init(options);
 
-  fastify.setErrorHandler((error, request, reply) => {
-    reply.log.error(error.message);
+  fastify.setErrorHandler((error, request) => {
     captureException(error);
-    if (error.statusCode)
-      reply.statusCode = error.statusCode >= 400 ? error.statusCode : 500;
     request.log.error(error);
-    done();
   });
   done();
 };

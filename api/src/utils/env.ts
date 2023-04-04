@@ -34,6 +34,7 @@ assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
+  assert.ok(process.env.SENTRY_DSN);
   assert.notEqual(
     process.env.SESSION_SECRET,
     'a_thirty_two_plus_character_session_secret',

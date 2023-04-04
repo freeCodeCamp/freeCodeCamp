@@ -54,7 +54,7 @@ export const build = async (
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
-  if (SENTRY_DSN !== 'dsn_from_sentry_dashboard') {
+  if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
   await fastify.register(fastifyCookie);
