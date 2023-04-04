@@ -43,216 +43,276 @@ exports[`<Footer /> matches snapshot 1`] = `
       <div
         className="trending-guides-articles"
       >
-        <a
-          href="trending:article0link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article0title
-        </a>
-        <a
-          href="trending:article1link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article1title
-        </a>
-        <a
-          href="trending:article2link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article2title
-        </a>
-        <a
-          href="trending:article3link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article3title
-        </a>
-        <a
-          href="trending:article4link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article4title
-        </a>
-        <a
-          href="trending:article5link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article5title
-        </a>
-        <a
-          href="trending:article6link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article6title
-        </a>
-        <a
-          href="trending:article7link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article7title
-        </a>
-        <a
-          href="trending:article8link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article8title
-        </a>
-        <a
-          href="trending:article9link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article9title
-        </a>
-        <a
-          href="trending:article10link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article10title
-        </a>
-        <a
-          href="trending:article11link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article11title
-        </a>
-        <a
-          href="trending:article12link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article12title
-        </a>
-        <a
-          href="trending:article13link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article13title
-        </a>
-        <a
-          href="trending:article14link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article14title
-        </a>
-        <a
-          href="trending:article15link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article15title
-        </a>
-        <a
-          href="trending:article16link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article16title
-        </a>
-        <a
-          href="trending:article17link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article17title
-        </a>
-        <a
-          href="trending:article18link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article18title
-        </a>
-        <a
-          href="trending:article19link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article19title
-        </a>
-        <a
-          href="trending:article20link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article20title
-        </a>
-        <a
-          href="trending:article21link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article21title
-        </a>
-        <a
-          href="trending:article22link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article22title
-        </a>
-        <a
-          href="trending:article23link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article23title
-        </a>
-        <a
-          href="trending:article24link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article24title
-        </a>
-        <a
-          href="trending:article25link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article25title
-        </a>
-        <a
-          href="trending:article26link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article26title
-        </a>
-        <a
-          href="trending:article27link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article27title
-        </a>
-        <a
-          href="trending:article28link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article28title
-        </a>
-        <a
-          href="trending:article29link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          trending:article29title
-        </a>
+        <span>
+          <a
+            href="trending:article0link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article0title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article1link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article1title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article2link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article2title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article3link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article3title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article4link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article4title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article5link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article5title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article6link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article6title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article7link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article7title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article8link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article8title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article9link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article9title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article10link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article10title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article11link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article11title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article12link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article12title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article13link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article13title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article14link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article14title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article15link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article15title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article16link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article16title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article17link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article17title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article18link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article18title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article19link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article19title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article20link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article20title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article21link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article21title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article22link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article22title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article23link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article23title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article24link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article24title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article25link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article25title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article26link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article26title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article27link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article27title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article28link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article28title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article29link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article29title
+          </a>
+        </span>
       </div>
     </div>
   </div>
