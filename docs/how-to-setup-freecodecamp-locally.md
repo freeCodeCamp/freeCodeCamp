@@ -1,12 +1,12 @@
 Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
-## Choose between GitPod or your own machine (local setup)
+## Choose between Gitpod or your own machine (local setup)
 
-If you are looking to make a one-off contribution, you should use GitPod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
 Here are some pros and cons which should help you decide which option is best for you:
 
-| GitPod                               | Your own machine (local setup) |
+| Gitpod                               | Your own machine (local setup) |
 | ------------------------------------ | ---------------- |
 | No minimum hardware requirements     | Specific and minimum requirements |
 | No need to install any software      | Additional software required      |
@@ -18,7 +18,7 @@ Here are some pros and cons which should help you decide which option is best fo
 > [!ATTENTION]
 > **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
-### How to prepare a GitPod workspace
+### How to prepare a Gitpod workspace
 
 We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
