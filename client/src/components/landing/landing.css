@@ -119,7 +119,8 @@ figcaption.caption {
 .testimonial-card {
   display: flex;
   width: min(100%, 1170px);
-  margin: 10px 10px 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
   background-color: var(--primary-background);
   -webkit-box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
   box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
@@ -166,12 +167,6 @@ figcaption.caption {
 
 .map-ui .btn {
   min-height: 80px;
-}
-
-@media (max-width: 376px) {
-  .testimonial-card {
-    margin: 10px 0px 50px;
-  }
 }
 
 @media (min-width: 500px) {
