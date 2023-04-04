@@ -10,13 +10,13 @@ dashedName: parent-graphs
 
 In this video, you will see what these parent graphs look like, how to modify them, and how to do this all with Python code.
 
-Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
 # --question--
 
 ## --text--
 
-In numpy, what is the cube root of x?
+In numpy, qual è la radice cubica di x?
 
 ## --answers--
 

@@ -427,6 +427,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
 
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
+
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
     if (!isMobileLayout || !isUsingKeyboardInTablist) {

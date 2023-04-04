@@ -21,9 +21,8 @@ Complete the function using the rules below to modify the object passed to the f
 
 -   Your function must always return the entire `records` object.
 -   If `value` is an empty string, delete the given `prop` property from the album.
--   If `prop` isn’t `"tracks"` and `value` isn't an empty string, assign the `value` to that album’s `prop`.
--   If `prop` is `"tracks"` and `value` isn’t an empty string, add the `value` to the end of the album’s existing `"tracks"` array.
--   If the album doesn’t have a `"tracks"` property, create a new array for the album's `"tracks"` property before adding the `value` to it.
+-   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
+-   If `prop` is `tracks` and value isn't an empty string, add the `value` to the end of the album's `tracks` array. You need to create this array first if the album does not have a `tracks` property.
 
 **Note:** A copy of the `recordCollection` object is used for the tests. You should not directly modify the `recordCollection` object.
 

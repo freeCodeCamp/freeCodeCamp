@@ -13,7 +13,7 @@ dashedName: build-three-math-games
 
 # --instructions--
 
-For this challenge, you need to create three math games using Python that do the following:
+У цьому завданні за допомогою Python потрібно створити три математичні ігри, які виконують наступне:
 
 - Scatter plot game
   - Randomly generate points on a graph and the player has to input the (x,y) coordinates

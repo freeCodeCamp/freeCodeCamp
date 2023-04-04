@@ -48,7 +48,7 @@ Non ci dovrebbe essere una query URL. Senza un nome nella query URL, l'endpoint 
 
 # --hints--
 
-All tests should pass
+Tutti i test dovrebbero essere superati
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+Dovresti verificare che `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello Guest'`
+Dovresti verificare che `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>
