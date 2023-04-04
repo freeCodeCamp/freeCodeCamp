@@ -98,6 +98,7 @@ figcaption.caption {
 /* testimonials */
 
 .testimonials-row {
+  --image-size: min(320px, 350px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -140,8 +141,8 @@ figcaption.caption {
 
 .testimonial-card-header,
 .testimonial-image {
-  height: min(320px, 350px);
-  width: min(320px, 350px);
+  height: var(--image-size);
+  width: var(--image-size);
 }
 
 .testimonials-footer {
@@ -156,7 +157,11 @@ figcaption.caption {
 .as-seen-in,
 .certification-section,
 .testimonials {
-  padding: 4vw 0;
+  padding-block: 4vw;
+}
+
+.certification-section {
+  padding-inline: 4vw;
 }
 
 .map-ui .btn {
@@ -178,7 +183,7 @@ figcaption.caption {
 @media (max-width: 992px) {
   .testimonial-card {
     flex-direction: column;
-    max-width: 350px;
+    width: var(--image-size);
   }
 }
 
