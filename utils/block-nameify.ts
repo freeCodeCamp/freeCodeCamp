@@ -1,6 +1,7 @@
 import preFormattedBlockNames from './preformatted-block-names.json';
+import preFormattedWords from './preformatted-words.json';
 
-const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with', 'to'];
+const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with', 'to', 'by'];
 
 export function blockNameify(phrase: string): string {
   const preFormatted =
