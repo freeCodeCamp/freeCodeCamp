@@ -83,6 +83,13 @@ p.footer-donation a:hover {
   margin: 0 0 3rem;
 }
 
+.footer-bottom .our-nonprofit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .footer-bottom .our-nonprofit a {
   padding: 5px 10px;
 }
@@ -113,7 +120,8 @@ p.footer-donation a:hover {
     margin-top: 40px;
   }
   .footer-bottom .our-nonprofit {
-    padding: 10px;
+    padding: 0 10px;
+    justify-content: space-between;
   }
   .footer-bottom .col-header {
     visibility: hidden;
