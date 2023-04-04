@@ -17,7 +17,8 @@ export default function sentryErrorHandler() {
         shouldHandleError(err) {
           // CSRF errors have status 403, consider ignoring them once csurf is
           // no longer rejecting people incorrectly.
-          return !isHandledError(err) && (!err.status || err.status >= 500);
+          const isServerError = !err.statusCode || err.statusCode >= 500;
+          return !isHandledError(err) && isServerError;
         }
       });
 }

@@ -10,6 +10,9 @@ export default function setStatusCode() {
       (handled.status || err.statusCode || res.statusCode) ?? 500;
 
     res.status(statusCode);
+    // We overwrite the error's status code, so that Sentry can determine if it
+    // needs to report the error
+    err.statusCode = statusCode;
     next(err);
   };
 }
