@@ -15,8 +15,8 @@ export function blockNameify(phrase: string): string {
       if (noFormatting.indexOf(word) !== -1) {
         return word;
       }
-      if (word === 'javascript') {
-        return 'JavaScript';
+      if ((preFormattedWords as Record<string, string>)[word]) {
+        return (preFormattedWords as Record<string, string>)[word];
       }
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
