@@ -1,5 +1,6 @@
 ### VisualStudioCode ###
 .vscode/*
+.cnv
 
 ### WebStorm ###
 .idea/*
