@@ -1,6 +1,6 @@
 ---
 id: 63dbd1335d93712ff177d96a
-title: "Simple and Compound Interest: Extra"
+title: "Interesse Semplice e Composto: Extra"
 challengeType: 15
 videoId: 2cbrstoKNSc
 dashedName: simple-and-compound-interest-extra
@@ -8,13 +8,13 @@ dashedName: simple-and-compound-interest-extra
 
 # --description--
 
-Here is a detour from the Python code, as this video shows you how to create mortgage payment amortization tables in Google Sheets. You will also learn about how to use a very similar setup to estimate retirement account investment returns. This is the video that shows you where your money is going.
+Ecco una deviazione dal codice Python, in quanto questo video mostra come creare tabelle di ammortamento dei pagamenti ipotecari in Google Sheets. Imparerai anche come utilizzare una configurazione molto simile per stimare i rendimenti degli investimenti del fondo pensione. Questo è il video che ti mostra dove stanno andando i tuoi soldi.
 
 # --question--
 
 ## --text--
 
-What marker do you use to attach a formula to a cell in a spreadsheet?
+Quale indicatore usi per allegare una formula a una cella in un foglio di calcolo?
 
 ## --answers--
 

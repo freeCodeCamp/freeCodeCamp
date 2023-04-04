@@ -21,9 +21,8 @@ Complete a função usando as regras abaixo para modificar o objeto passado para
 
 -   A função precisa sempre retornar todo o objeto `records`.
 -   Se `value` for uma string vazia, remova a propriedade `prop` recebida do álbum.
--   Se `prop` não for `"tracks"` e `value` não for uma string vazia, atribua `value` à `prop` daquele álbum.
--   Se `prop` for `"tracks"` e `value` não for uma string vazia, adicione `value` ao final do array `"tracks"` existente no álbum.
--   Se o álbum não tiver uma propriedade `"tracks"`, criar um array para as propriedades `"tracks"` do álbum antes de adicionar `value` a ele.
+-   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
+-   If `prop` is `tracks` and value isn't an empty string, add the `value` to the end of the album's `tracks` array. You need to create this array first if the album does not have a `tracks` property.
 
 **Observação:** uma cópia do objeto `recordCollection` é usada para testes. Você não deve modificar diretamente o objeto `recordCollection`.
 

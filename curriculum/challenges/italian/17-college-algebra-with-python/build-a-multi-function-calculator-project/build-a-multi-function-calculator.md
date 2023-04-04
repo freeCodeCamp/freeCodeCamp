@@ -17,7 +17,7 @@ Per questa sfida, usando Python devi creare una calcolatrice multifunzione che p
 
 - risolvere proporzioni
 - risolvere equazioni per x
-- factor square roots
+- fattorizzare radici quadrate
 - convertire decimali in frazioni e percentuali
 - convertire le frazioni in decimali e percentuali
 - convertire percentuali in decimali e frazioni

@@ -10,7 +10,7 @@ dashedName: functions
 
 Questo primo video ti mostrerà cos'è una funzione e poi ti mostrerà le somiglianze tra le funzioni matematiche e le funzioni di Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video e nei prossimi.</a>
 
 # --question--
 

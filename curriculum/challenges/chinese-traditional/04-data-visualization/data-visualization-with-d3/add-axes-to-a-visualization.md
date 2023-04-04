@@ -16,7 +16,7 @@ D3 有兩種方法來渲染 y 軸和 x 軸，分別是 `axisLeft()` 和 `axisBot
 const xAxis = d3.axisBottom(xScale);
 ```
 
-The next step is to render the axis on the SVG. 爲此，你可以使用一個 SVG 組件， `g` 元素， `g` 是英文中組（group）的縮寫。 不同於 `rect`、`circle`、`text`，在渲染時，軸只是一條直線。 因爲它是一個簡單的圖形，所以可以用 `g` 。 The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG 支持多種 `transforms`，但是定位軸需要使用 `translate` 屬性。 當它應用在 `g` 元素上時，它根據給出的總量移動整組。 下面是一個例子：
+下一步是在 SVG 上渲染 x 軸。 爲此，你可以使用一個 SVG 組件， `g` 元素， `g` 是英文中組（group）的縮寫。 不同於 `rect`、`circle`、`text`，在渲染時，軸只是一條直線。 因爲它是一個簡單的圖形，所以可以用 `g` 。 最後一步是使用 `transform` 屬性將軸放置在 SVG 的正確位置上。 否則，軸將會沿着 SVG 的邊緣渲染，從而不可見。 SVG 支持多種 `transforms`，但是定位軸需要使用 `translate` 屬性。 當它應用在 `g` 元素上時，它根據給出的總量移動整組。 下面是一個例子：
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-The above code places the x-axis at the bottom of the SVG. 然後 x 軸作爲參數被傳遞給 `call()` 方法。 y 軸的定位也是這樣，只是 `translate` 參數的形式是 `(x, 0)`。 因爲 `translate` 是 `attr()` 方法中的一個字符串，你可以在參數中使用字符串的連接將變量值包括進去。
+上部分代碼將 x 軸放置在 SVG 的底端。 然後 x 軸作爲參數被傳遞給 `call()` 方法。 y 軸的定位也是這樣，只是 `translate` 參數的形式是 `(x, 0)`。 因爲 `translate` 是 `attr()` 方法中的一個字符串，你可以在參數中使用字符串的連接將變量值包括進去。
 
 # --instructions--
 
