@@ -1,14 +1,18 @@
 import {
   faCheckSquare,
-  faHeart,
   faSquare,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment, useRef } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import Media from 'react-responsive';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { clientLocale, radioLocation } from '../../../../../config/env.json';
+import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
 import {
   availableLangs,
   LangNames,
@@ -48,6 +52,62 @@ const mapDispatchToProps = {
   navigate,
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   openSignoutModal
+};
+
+interface DonateButtonProps {
+  isUserDonating: boolean | undefined;
+  handleMenuKeyDown: (event: React.KeyboardEvent<HTMLAnchorElement>) => void;
+  t: TFunction;
+}
+
+type DonateItemProps = Pick<DonateButtonProps, 'handleMenuKeyDown'> & {
+  donateText: string;
+};
+
+const DonateItem = ({ handleMenuKeyDown, donateText }: DonateItemProps) => (
+  <li key='donate'>
+    <Link
+      className='nav-link'
+      onKeyDown={handleMenuKeyDown}
+      sameTab={false}
+      to='/donate'
+      data-test-label='dropdown-donate-button'
+    >
+      {donateText}
+    </Link>
+  </li>
+);
+
+const ThankYouMessage = ({ message }: { message: string }) => (
+  <li className='nav-link nav-link-flex nav-link-header' key='donate'>
+    {message}
+    <FontAwesomeIcon icon={faHeart} />
+  </li>
+);
+
+const DonateButton = ({
+  isUserDonating,
+  handleMenuKeyDown,
+  t
+}: DonateButtonProps) => {
+  const exposeUniversalDonateButton = useFeature('expose_donate_button').on;
+  if (isUserDonating) return <ThankYouMessage message={t('donate.thanks')} />;
+  else if (exposeUniversalDonateButton)
+    return (
+      <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
+        <DonateItem
+          handleMenuKeyDown={handleMenuKeyDown}
+          donateText={t('buttons.donate')}
+        />
+      </Media>
+    );
+  else
+    return (
+      <DonateItem
+        handleMenuKeyDown={handleMenuKeyDown}
+        donateText={t('buttons.donate')}
+      />
+    );
 };
 
 function NavLinks({
@@ -313,7 +373,7 @@ function NavLinks({
     openSignoutModal();
   };
 
-  const currentUserDonating = user?.isDonating;
+  const isUserDonating = user?.isDonating;
   const currentUserName = user?.username;
   const currentUserTheme = user?.theme;
   const { pending } = fetchState;
@@ -327,25 +387,11 @@ function NavLinks({
         isLanguageMenuDisplayed ? ' display-lang-menu' : ''
       }`}
     >
-      {currentUserDonating ? (
-        <li key='donate'>
-          <div className='nav-link nav-link-flex nav-link-header'>
-            <span>{t('donate.thanks')}</span>
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-        </li>
-      ) : (
-        <li key='donate'>
-          <Link
-            className='nav-link'
-            onKeyDown={handleMenuKeyDown}
-            sameTab={false}
-            to='/donate'
-          >
-            {t('buttons.donate')}
-          </Link>
-        </li>
-      )}
+      <DonateButton
+        t={t}
+        isUserDonating={isUserDonating}
+        handleMenuKeyDown={handleMenuKeyDown}
+      />
       <li key='learn'>
         <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/learn'>
           {t('buttons.curriculum')}

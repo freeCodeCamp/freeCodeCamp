@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c0f
-title: Perform New Updates on a Document Using model.findOneAndUpdate()
+title: Neue Aktualisierungen für ein Dokument mit model.findOneAndUpdate() durchführen
 challengeType: 2
 forumTopicId: 301542
 dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
@@ -18,7 +18,7 @@ Neuere Versionen von Mongoose verfügen über Methoden zur Vereinfachung der Akt
 
 # --hints--
 
-findOneAndUpdate an item should succeed
+findOneAndUpdate ein Element sollte funktionieren
 
 ```js
 (getUserInput) =>

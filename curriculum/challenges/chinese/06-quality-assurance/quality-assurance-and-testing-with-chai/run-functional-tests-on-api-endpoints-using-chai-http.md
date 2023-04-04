@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -35,15 +36,19 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
 
 同时，请注意测试的回调函数中的 `done` 参数。 在测试结束时，调用它且不带参数，是发出异步操作完成所必需的信号。
 
+Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+
+However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with no name'` 测试（`// #1`），对响应的 `status` 和 `text` 使用断言来通过测试。 不要改变传递给断言的参数。
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
 
-不应该有任何 URL 查询。 如果没有名称 URL 查询，端点将使用 `hello Guest` 进行响应。
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
-应通过所有测试。
+All tests should pass
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-应该测试 `res.status` 为 200。
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-应该测试 `res.text` == `'hello Guest'`。
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

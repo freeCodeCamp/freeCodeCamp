@@ -8,7 +8,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -136,6 +137,7 @@ function EmailSettings({
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
     isPristine;
+  const ariaLabel = t('settings.email.heading');
   if (!currentEmail) {
     return (
       <div>
@@ -183,7 +185,7 @@ function EmailSettings({
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <div role='group' aria-label={t('settings.email.heading')}>
+          <div role='group' aria-label={ariaLabel}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
@@ -223,7 +225,7 @@ function EmailSettings({
           </BlockSaveButton>
         </form>
       </FullWidthRow>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <FullWidthRow>
         <form id='form-quincy-email' onSubmit={handleSubmit}>
           <ToggleSetting

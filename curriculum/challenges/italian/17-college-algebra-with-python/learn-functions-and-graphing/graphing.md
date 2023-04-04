@@ -1,6 +1,6 @@
 ---
 id: 6331d26fb51aeedd1a2bd64c
-title: "Graphing"
+title: "Grafici"
 challengeType: 15
 videoId: vUefCkh8-wc
 dashedName: graphing
@@ -8,7 +8,7 @@ dashedName: graphing
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+Questo video ti mostrerà la connessione tra le funzioni e i grafici. Nota come il grafico è un modo per rappresentare gli input e gli output di una funzione. Poi il video ti mostrerà come tracciare il grafico di una funzione con Python.
 
 Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos</a> so you can start making your own graphs.
 
@@ -16,15 +16,15 @@ Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9Y
 
 ## --assignemnts--
 
-Add code to your algebra Colab notebook for functions and graphing.
+Aggiungi al tuo notebook Colab del codice per le funzioni e i grafici.
 
 ---
 
-Run the following notebook to see <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">more ways to create graphs using algebra and Python.</a>
+Esegui il seguente notebook per scoprire <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">altri modi per creare grafici usando l'algebra e Python.</a>
 
 ## --text--
 
-Which of the following would put a blue line on a graph?
+Quale delle seguenti righe di codice traccia una retta blu su un grafico?
 
 ## --answers--
 

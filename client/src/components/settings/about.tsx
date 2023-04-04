@@ -7,7 +7,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
@@ -205,14 +206,15 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
+    const ariaLabel = t('settings.headings.personal-info');
     return (
       <>
         <UsernameSettings username={username} />
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={t('settings.headings.personal-info')}>
+            <div role='group' aria-label={ariaLabel}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
                   <strong>{t('settings.labels.name')}</strong>
@@ -271,7 +273,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             </BlockSaveButton>
           </form>
         </FullWidthRow>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <FullWidthRow>
           <ThemeSettings
             currentTheme={currentTheme}

@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "Grafici di Sistemi di Equazioni: Extra"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. Vedrai anche come scaricare il grafico sul tuo computer o su Google Drive.
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
 # --question--
 
 ## --text--
 
-If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
+Se vuoi creare un grafico interattivo con un cursore per zoomare avanti e indietro, dove figura la maggior parte del codice del grafico?
 
 ## --answers--
 
-Within the interactive() function
+All'interno della funzione interactive()
 
 ---
 
-In the slider
+Nel cursore
 
 ---
 
-Within the function that the interactive() calls
+All'interno della funzione che interactive() chiama
 
 ---
 
-Before all of the functions
+Prima di tutte le funzioni
 
 ## --video-solution--
 

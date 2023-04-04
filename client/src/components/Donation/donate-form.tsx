@@ -273,7 +273,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
           {this.getDonationButtonLabel()}:
         </b>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <fieldset className={'donate-btn-group security-legend'}>
           <legend>
             <SecurityLockIcon />

@@ -2,7 +2,7 @@
 id: 6363d2959078df117ce4c408
 title: "More Resources in Colab"
 challengeType: 15
-videoId: L5hh3Og9RCU
+videoId: HNFrRHqpck4
 dashedName: more-resources-in-colab
 ---
 
@@ -30,7 +30,7 @@ Importing data from Google Sheets
 
 ---
 
-All of the above
+Усе перелічене вище
 
 ## --video-solution--
 

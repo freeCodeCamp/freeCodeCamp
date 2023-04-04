@@ -22,11 +22,7 @@ const Editor = () => {
     fileData: ''
   });
   const [input, setInput] = useState('');
-  const params = useParams() as {
-    superblock: string;
-    block: string;
-    challenge: string;
-  };
+  const { superblock, block, challenge } = useParams();
 
   useEffect(() => {
     fetchData();
@@ -35,9 +31,7 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(
-      `${API_LOCATION}/${params.superblock}/${params.block}/${params.challenge}`
-    )
+    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`)
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
@@ -70,7 +64,7 @@ const Editor = () => {
     <div>
       <h1>{items.name}</h1>
       <span className='breadcrumb'>
-        {params.superblock} / {params.block}
+        {superblock} / {block}
       </span>
       <CodeMirror
         value={input}
@@ -86,15 +80,13 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={params.superblock}
-        block={params.block}
-        challenge={params.challenge}
+        superblock={superblock}
+        block={block}
+        challenge={challenge}
         content={input}
       />
       <p>
-        <Link to={`/${params.superblock}/${params.block}`}>
-          Return to Block
-        </Link>
+        <Link to={`/${superblock}/${block}`}>Return to Block</Link>
       </p>
     </div>
   );

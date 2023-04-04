@@ -1,6 +1,6 @@
 ---
 id: 6331d26fb51aeedd1a2bd64c
-title: "Graphing"
+title: "Gráficos"
 challengeType: 15
 videoId: vUefCkh8-wc
 dashedName: graphing
@@ -8,23 +8,23 @@ dashedName: graphing
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+Este próximo vídeo vai mostrar para você a conexão entre funções e gráfico. Observe como o gráfico é uma maneira de representar as entradas e saídas de uma função. Então, o vídeo mostrará como criar o gráfico de uma função com Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos</a> so you can start making your own graphs.
+Aqui está o <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha os dois últimos vídeos</a> para que você possa começar a criar seus próprios gráficos.
 
 # --question--
 
 ## --assignemnts--
 
-Add code to your algebra Colab notebook for functions and graphing.
+Adicione código ao seu notebook do Colaboratory de álgebra para funções e gráficos.
 
 ---
 
-Run the following notebook to see <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">more ways to create graphs using algebra and Python.</a>
+Execute o notebook a sefguir para ver <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">mais maneiras de criar gráficos usando álgebra e Python.</a>
 
 ## --text--
 
-Which of the following would put a blue line on a graph?
+Qual das seguintes opções colocaria uma linha azul em um gráfico?
 
 ## --answers--
 

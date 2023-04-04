@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
 
       - name: Check number of lockfiles
         run: |
@@ -44,7 +44,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -82,12 +82,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -99,6 +99,13 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
 
       - name: Install Dependencies
         run: |
@@ -122,12 +129,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -140,6 +147,13 @@ jobs:
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
 
       - name: Install Dependencies
         run: |
@@ -164,12 +178,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -181,6 +195,13 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
 
       - name: Install Dependencies
         env:
@@ -197,3 +218,29 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: pnpm test
+
+  failure-comment:
+    name: Comment on i18n Failure
+    needs: ['test', 'test-localization']
+    runs-on: ubuntu-20.04
+    if: ${{ always() && needs.test.result == 'success' && needs.test-localization.result == 'failure' }}
+    steps:
+      - uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975 # v6
+        with:
+          github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
+          script: |
+            const isDev = await github.rest.teams.getMembershipForUserInOrg({
+              org: "freeCodeCamp",
+              team_slug: "dev-team",
+              username: context.payload.pull_request.user.login
+            }).catch(() => ({status: 404}));
+            if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "Hi,\n\nIt looks like the localization tests have failed. This is expected when there are significant curriculum changes in the English version.\n\nThis could mean a Crowdin sync is required to address the scenario. Please check with our staff developer team, either on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org). They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
+              })
+            } else if (isDev.status === 200) {
+              core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
+            }

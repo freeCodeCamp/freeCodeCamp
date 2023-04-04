@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -35,15 +36,19 @@ Die erste `assert.equal` überprüft ob der Status gleich `200` ist. Die zweite 
 
 Beachte auch den Parameter `done` in der Callback-Funktion des Tests. Der Aufruf ohne Argument am Ende eines Tests ist notwendig, um zu signalisieren, dass der asynchrone Vorgang abgeschlossen ist.
 
+Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+
+However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+
 # --instructions--
 
-Innerhalb von `tests/2_functional-tests.js`, ändere `'Test GET /hello with no name'` Test (`// #1`) um den `status` und den `text` der Antwort geltend zu machen, um en Test zu bestehen. Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
 
-Es sollte keine URL Query geben. Ohne eine Namens-URL-Abfrage antwortet der Endpunkt mit `hello Guest`.
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
-Alle Tests sollten bestanden werden
+All tests should pass
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ Alle Tests sollten bestanden werden
   );
 ```
 
-Du solltest auf `res.status` == 200 testen
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ Du solltest auf `res.status` == 200 testen
   );
 ```
 
-Du solltest auf `res.text` == `'hello Guest'` testen
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

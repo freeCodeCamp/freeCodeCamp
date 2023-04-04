@@ -12,7 +12,7 @@ Você pode adicionar texto para criar etiquetas para os pontos em um diagrama de
 
 O objetivo é exibir os valores separados por vírgula para o primeiro (`x`) e para o segundo (`y`) campo de cada item do `dataset`.
 
-The `text` nodes need `x` and `y` attributes to position it on the SVG. Neste desafio, o valor de `y` (que determina a altura) pode usar o mesmo valor que `circle` usa para o seu atributo `cy`. O valor de `x` pode ser ligeiramente maior que do que o valor de `cx` de `circle`. Assim, a etiqueta estará visível. Isto empurrará a etiqueta para a direita do ponto traçado.
+Os nós de `text` precisam de atributos `x` e `y` para posicioná-los no SVG. Neste desafio, o valor de `y` (que determina a altura) pode usar o mesmo valor que `circle` usa para o seu atributo `cy`. O valor de `x` pode ser ligeiramente maior que do que o valor de `cx` de `circle`. Assim, a etiqueta estará visível. Isto empurrará a etiqueta para a direita do ponto traçado.
 
 # --instructions--
 

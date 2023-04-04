@@ -1,6 +1,6 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -25,18 +25,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUI) => void;
-  t: TFunction;
   user: {
     profileUI: ProfileUI;
     username: string;
   };
 };
 
-function PrivacySettings({
-  submitProfileUI,
-  t,
-  user
-}: PrivacyProps): JSX.Element {
+function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
+  const { t } = useTranslation();
   const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
 
   const [madeChanges, setMadeChanges] = useState(false);
@@ -161,7 +157,7 @@ function PrivacySettings({
         </Form>
       </FullWidthRow>
       <FullWidthRow>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <p>{t('settings.data')}</p>
         <Button
           block={true}

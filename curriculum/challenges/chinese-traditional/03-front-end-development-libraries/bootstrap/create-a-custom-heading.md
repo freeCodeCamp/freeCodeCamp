@@ -8,9 +8,9 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-爲 Cat Photo App 做一個導航，把標題和愜意的貓咪圖片放在同一行。
+爲 Cat Photo App 做一個簡單的頭部，把標題和愜意的貓咪圖片放在同一行。
 
-記住，由於 Bootstrap 使用了響應式柵格系統，可以很方便的把元素放到一行以及指定元素的相對寬度。 大部分的 Bootstrap 的 class 都能用在 `div` 元素上。
+記住，由於 Bootstrap 使用了響應式柵格系統，可以很方便地把元素放到一行以及指定元素的相對寬度。 大部分的 Bootstrap 的 class 都能被用在 `div` 元素上。
 
 把第一張圖片和 `h2` 元素用一個簡單的 `<div class="row">` 元素包裹起來。 再用 `<div class="col-xs-8">` 包裹 `h2` 元素，用 `<div class="col-xs-4">` 包裹我們的圖片，這樣它們就能位於同一行了。
 
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-確保每一個 `div` 元素都有一個閉合標籤。
+確保每一個 `div` 元素都有一個結束標籤。
 
 ```js
 assert(

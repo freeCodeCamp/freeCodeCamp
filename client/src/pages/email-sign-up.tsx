@@ -1,7 +1,8 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -94,7 +95,7 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.yes-please')}
             </Button>
-            <Spacer paddingSize={5} />
+            <Spacer size='small' />
           </Col>
           <Col md={4} sm={5} xs={12}>
             <Button
@@ -106,14 +107,14 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.no-thanks')}
             </Button>
-            <Spacer paddingSize={5} />
+            <Spacer size='small' />
           </Col>
         </Row>
       );
     } else {
       return (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -123,7 +124,7 @@ function AcceptPrivacyTerms({
           >
             {t('buttons.sign-up-email-list')}
           </Button>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
         </Col>
       );
     }
@@ -139,7 +140,7 @@ function AcceptPrivacyTerms({
       <Grid>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <IntroDescription />
             <hr />
           </Col>
@@ -147,13 +148,13 @@ function AcceptPrivacyTerms({
         <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <strong>{t('misc.quincy')}</strong>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <p>{t('misc.email-blast')}</p>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </Col>
           {renderEmailListOptin(isSignedIn, showLoading)}
           <Col xs={12}>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </Col>
         </Row>
       </Grid>

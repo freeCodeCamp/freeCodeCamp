@@ -1,6 +1,6 @@
 ---
 id: 6331d26fb51aeedd1a2bd64c
-title: "Graphing"
+title: "Побудова графіку"
 challengeType: 15
 videoId: vUefCkh8-wc
 dashedName: graphing
@@ -8,23 +8,23 @@ dashedName: graphing
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+У наступному відео розглядається зв’язок між функціями та графіками. Зверніть увагу, що завдяки графіку можна зобразити вхідні та вихідні дані функції. Потім ви побачите, як побудувати графік функції за допомогою Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos</a> so you can start making your own graphs.
+Ось <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для двох останніх відео</a>, щоб ви могли побудувати власні графіки.
 
 # --question--
 
 ## --assignemnts--
 
-Add code to your algebra Colab notebook for functions and graphing.
+Додайте код до свого блокнота Colab для функцій та графіків.
 
 ---
 
-Run the following notebook to see <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">more ways to create graphs using algebra and Python.</a>
+Запустіть наступний код, щоб побачити <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">більше способів побудови графіків з використанням алгебри та Python.</a>
 
 ## --text--
 
-Which of the following would put a blue line on a graph?
+Що з переліченого додасть синю лінію на графік?
 
 ## --answers--
 

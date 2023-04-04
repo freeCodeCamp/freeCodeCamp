@@ -1,7 +1,8 @@
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
@@ -9,7 +10,7 @@ import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
-import Portfolio from './components/portfolio';
+import { PortfolioProjects } from './components/portfolio-projects';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -29,7 +30,7 @@ function renderMessage(
       <FullWidthRow>
         <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
       </FullWidthRow>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
     </>
   ) : (
     <>
@@ -43,7 +44,7 @@ function renderMessage(
           {t('profile.username-change-privacy', { username: username })}
         </p>
       </FullWidthRow>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
     </>
   );
 }
@@ -61,7 +62,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       showPortfolio = false,
       showTimeLine = false
     },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
     githubProfile,
@@ -96,14 +96,15 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
-      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {showPortfolio ? (
+        <PortfolioProjects portfolioProjects={portfolio} />
+      ) : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
     </>
   );
 }
@@ -120,9 +121,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <Grid>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         {isLocked ? renderMessage(isSessionUser, username, t) : null}
         {!isLocked || isSessionUser ? renderProfile(user) : null}
         {isSessionUser ? null : (
@@ -132,7 +133,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
             </Link>
           </Row>
         )}
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
       </Grid>
     </>
   );

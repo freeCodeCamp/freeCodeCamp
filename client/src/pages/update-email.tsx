@@ -13,7 +13,8 @@ import { isString } from 'lodash-es';
 import React, { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -71,7 +72,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <h2 className='text-center'>{t('misc.update-email-2')}</h2>
       <Grid>
         <Row>

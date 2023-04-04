@@ -4,7 +4,8 @@ import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -202,11 +203,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             title,
             description,
             superBlock,
-            certification,
             block,
             videoId,
             videoLocaleIds,
@@ -226,6 +225,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -243,7 +243,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                  <Spacer paddingSize={15} />
+                  <Spacer size='medium' />
                   <div className='video-wrapper'>
                     {!this.state.videoIsLoaded ? (
                       <div className='video-placeholder-loader'>
@@ -262,10 +262,10 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 </Col>
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -291,11 +291,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                               className={'video-quiz-option'}
                               text={assignment}
                             />
-                            <Spacer paddingSize={15} />
+                            <Spacer size='medium' />
                           </label>
                         ))}
                       </div>{' '}
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                     </>
                   )}
 
@@ -305,7 +305,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     {answers.map((option, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={t('aria.answer')}
+                          aria-label={ariaLabel}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -326,7 +326,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     ))}
                   </div>
                 </ObserveKeys>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <div
                   style={{
                     textAlign: 'center'
@@ -343,7 +343,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                       </>
                     )}
                 </div>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <Button
                   block={true}
                   bsSize='large'
@@ -358,14 +358,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer paddingSize={30} />
+                <Spacer size='large' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
             </Row>
           </Grid>
         </LearnLayout>
@@ -401,10 +396,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {

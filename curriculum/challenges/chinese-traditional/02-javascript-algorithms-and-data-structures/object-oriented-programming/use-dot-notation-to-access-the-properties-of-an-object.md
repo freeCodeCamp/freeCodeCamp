@@ -8,7 +8,7 @@ dashedName: use-dot-notation-to-access-the-properties-of-an-object
 
 # --description--
 
-最後一個挑戰創建了一個具有各種屬性的對象。 現在你會看到如何訪問這些屬性的值。 下面是一個示例：
+上一個挑戰創建了一個具有各種屬性的對象。 現在你會看到如何訪問這些屬性的值。 下面是一個示例：
 
 ```js
 let duck = {

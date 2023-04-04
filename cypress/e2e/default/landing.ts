@@ -21,7 +21,8 @@ const certifications = [
   'Scientific Computing with Python',
   'Data Analysis with Python',
   'Information Security',
-  'Machine Learning with Python'
+  'Machine Learning with Python',
+  'College Algebra with Python'
 ];
 
 describe('Landing page', () => {
@@ -69,7 +70,7 @@ describe('Landing page', () => {
     cy.get(landingPageElements.certifications)
       .children()
       .its('length')
-      .should('eq', 11);
+      .should('eq', 12);
     cy.wrap(certifications).each((cert: LandingPageLogs) => {
       cy.get(landingPageElements.certifications).contains(cert);
     });

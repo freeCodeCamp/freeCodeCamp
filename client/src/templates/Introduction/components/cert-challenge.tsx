@@ -1,7 +1,7 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
 import React, { useState, useEffect, MouseEvent } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -33,7 +33,6 @@ interface CertChallengeProps {
   isSignedIn: boolean;
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
-  t: TFunction;
   title: (typeof certMap)[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
@@ -70,13 +69,13 @@ const CertChallenge = ({
   createFlashMessage,
   currentCerts,
   superBlock,
-  t,
   verifyCert,
   title,
   fetchState,
   isSignedIn,
   user: { isHonest, username }
 }: CertChallengeProps): JSX.Element => {
+  const { t } = useTranslation();
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
