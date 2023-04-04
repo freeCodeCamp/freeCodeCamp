@@ -75,11 +75,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [
-            chrome,
-            # firefox,
-            electron
-          ]
+        browsers: [chrome, firefox, electron]
         node-version: [18.x]
         include:
           - browsers: electron
@@ -116,14 +112,6 @@ jobs:
         run: |
           tar -xf client-artifact.tar
           rm client-artifact.tar
-
-      # - name: Downgrade Firefox
-      #   run: |
-      #     curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
-      #     tar -xjf firefox-101.0.tar.bz2
-      #     sudo mv firefox /opt/
-      #     sudo mv /usr/bin/firefox /usr/bin/firefox_old
-      #     sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
