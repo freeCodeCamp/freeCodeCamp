@@ -6,13 +6,13 @@ If you are looking to make a one-off contribution, you should use Gitpod to make
 
 Here are some pros and cons which should help you decide which option is best for you:
 
-| Gitpod                               | Your own machine (local setup) |
-| ------------------------------------ | ---------------- |
-| No minimum hardware requirements     | Specific and minimum requirements |
-| No need to install any software      | Additional software required      |
-| Always up to date copy of repository | Need to maintain a local copy of the repository |
-| Slower and can take a few minutes to launch | Faster and can be launched in seconds |
-| Need an internet connection to work  | Minimal internet connection required (once setup) |
+| Gitpod                                                            | Your own machine (local setup)                                        |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| No minimum hardware requirements                                  | Specific and minimum requirements                                     |
+| No need to install any software                                   | Additional software required                                          |
+| Always up to date copy of repository                              | Need to maintain a local copy of the repository                       |
+| Slower and can take a few minutes to launch                       | Faster and can be launched in seconds                                 |
+| Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
 | Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
 
 > [!ATTENTION]
