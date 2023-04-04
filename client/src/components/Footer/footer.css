@@ -11,7 +11,12 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+}
+.footer-top,
+.footer-bottom {
+  width: min(100%, 1200px);
+  margin-inline: auto;
 }
 
 .site-footer p {
@@ -30,7 +35,7 @@
 }
 
 .site-footer .col-header {
-  flex: 0 0 100%;
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   padding: 0 15px 15px;
@@ -39,7 +44,7 @@
 
 .trending-guides-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   gap: 0.5rem;
 }
 
