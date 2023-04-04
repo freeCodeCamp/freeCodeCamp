@@ -32,11 +32,10 @@ export default function prodErrorHandler() {
 
     const { origin } = getRedirectParams(req);
     const handled = unwrapHandledError(err);
-    // respect handled error status
-    let status = handled.status || err.status || res.statusCode;
-    if (!handled.status && status < 400) {
-      status = 500;
-    }
+    // respect handled error status, with sensible fallbacks - only fall back to
+    // 500 when something has gone wrong with the error handling
+    let status = (handled.status || err.statusCode || res.statusCode) ?? 500;
+
     res.status(status);
 
     // parse res type
