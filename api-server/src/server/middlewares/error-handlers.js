@@ -24,7 +24,7 @@ const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 
 export default function prodErrorHandler() {
   // error handling in production.
-  return function (err, req, res, _next) {
+  return function (err, req, res, next) {
     // response for when req.body is bigger than body-parser's size limit
     if (err?.type === 'entity.too.large') {
       return res.status('413').send('Request payload is too large');
@@ -53,7 +53,7 @@ export default function prodErrorHandler() {
     }
 
     if (type === 'json') {
-      return res.json({
+      res.json({
         type: handled.type || 'errors',
         message
       });
@@ -61,7 +61,8 @@ export default function prodErrorHandler() {
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);
       }
-      return res.redirectWithFlash(redirectTo);
+      res.redirectWithFlash(redirectTo);
     }
+    next(err);
   };
 }
