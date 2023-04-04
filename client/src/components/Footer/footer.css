@@ -28,6 +28,7 @@
 .site-footer a {
   color: var(--tertiary-color);
   text-decoration: none;
+  padding: 2px;
 }
 
 .site-footer a:hover {
@@ -69,6 +70,7 @@
 
 .footer-desc-col a {
   text-decoration: underline;
+  padding: 2px;
 }
 
 p.footer-donation {
