@@ -9,7 +9,7 @@ describe('blockNameify', () => {
   it('should use preformatted words when they exist', () => {
     const result = blockNameify('html-css-javascript-fcc-freecodecamp');
     expect(result).toBe('HTML CSS JavaScript fCC freeCodeCamp');
-  })
+  });
 
   it('should not format prepositions', () => {
     const result = blockNameify('and-for-of-the-up-with-by');
