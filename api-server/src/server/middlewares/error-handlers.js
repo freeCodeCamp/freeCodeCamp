@@ -24,7 +24,9 @@ const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 
 export default function prodErrorHandler() {
   // error handling in production.
-  return function (err, req, res, next) {
+  // NOTE: _next is not used, but has to be there or the middleware will be
+  // silently ignored
+  return function (err, req, res, _next) {
     // response for when req.body is bigger than body-parser's size limit
     if (err?.type === 'entity.too.large') {
       return res.status('413').send('Request payload is too large');
@@ -32,11 +34,6 @@ export default function prodErrorHandler() {
 
     const { origin } = getRedirectParams(req);
     const handled = unwrapHandledError(err);
-    // respect handled error status, with sensible fallbacks - only fall back to
-    // 500 when something has gone wrong with the error handling
-    let status = (handled.status || err.statusCode || res.statusCode) ?? 500;
-
-    res.status(status);
 
     // parse res type
     const accept = accepts(req);
@@ -63,6 +60,5 @@ export default function prodErrorHandler() {
       }
       res.redirectWithFlash(redirectTo);
     }
-    next(err);
   };
 }

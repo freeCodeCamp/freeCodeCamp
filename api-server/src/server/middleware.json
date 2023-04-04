@@ -45,11 +45,14 @@
     }
   },
   "files": {},
+  "final:before": {
+    "./middlewares/set-statuscode": {}
+  },
   "final": {
     "./middlewares/csurf-error-handler": {},
-    "./middlewares/error-handlers": {}
+    "./middlewares/sentry-error-handler": {}
   },
   "final:after": {
-    "./middlewares/sentry-error-handler": {}
+    "./middlewares/error-handlers": {}
   }
 }
