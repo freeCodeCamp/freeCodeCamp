@@ -8,15 +8,15 @@ dashedName: parent-graphs-and-polynomials-extra
 
 # --description--
 
-This next video will show you how to add sliders to your graphs, to see them change in real time. You will also see ways to use loops to find the roots of a graph, and how this method is different from factoring.
+Questo video ti mostrerà come aggiungere cursori ai grafici, per vederli cambiare in tempo reale. You will also see ways to use loops to find the roots of a graph, and how this method is different from factoring.
 
-Here is the <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
 # --question--
 
 ## --text--
 
-How many sliders would you add to change the coefficients in a quadratic graph?
+Quanti cursori aggiungeresti per cambiare i coefficienti in un grafico quadratico?
 
 ## --answers--
 

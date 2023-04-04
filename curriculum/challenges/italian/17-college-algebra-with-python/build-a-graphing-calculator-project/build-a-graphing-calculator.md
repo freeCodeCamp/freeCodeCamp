@@ -17,7 +17,7 @@ Per questa sfida, usando Python devi creare una calcolatrice grafica che prende 
 
 - Graficare una o più funzioni
 - Creare una tabella di valori (x,y)
-- Shade above or below the line
+- Ombreggiare sopra o sotto la funzione
 - Risolvere e graficare un sistema di equazioni
 - Zoomare avanti o indietro su un grafico
 - Risolvere equazioni quadratiche
