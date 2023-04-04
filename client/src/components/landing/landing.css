@@ -138,10 +138,12 @@ figcaption.caption {
   font-size: 1.2rem;
 }
 
-.testimonial-card-header {
-  height: 350px;
-  min-width: 350px;
+.testimonial-card-header,
+.testimonial-image {
+  height: min(320px, 350px);
+  width: min(320px, 350px);
 }
+
 .testimonials-footer {
   display: flex;
   flex-direction: column;
