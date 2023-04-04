@@ -1,6 +1,6 @@
 ---
 id: 6363d25c9078df117ce4c403
-title: "Parent Graphs and Polynomials: Extra"
+title: "Батьківські графіки та многочлени: додатково"
 challengeType: 15
 videoId: YDlXmmRgQJI
 dashedName: parent-graphs-and-polynomials-extra
@@ -8,15 +8,15 @@ dashedName: parent-graphs-and-polynomials-extra
 
 # --description--
 
-This next video will show you how to add sliders to your graphs, to see them change in real time. You will also see ways to use loops to find the roots of a graph, and how this method is different from factoring.
+Наступне відео покаже, як додати слайдери до графіків, щоб бачити зміни в реальному часі. Ви також побачите способи використання циклів для того, щоб знайти корені графіка та дізнаєтесь, чим цей метод відрізняється від розкладання на множники.
 
-Here is the <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --text--
 
-How many sliders would you add to change the coefficients in a quadratic graph?
+Скільки слайдерів ви б додали, щоб змінити коефіцієнти у графіку квадратичної функції?
 
 ## --answers--
 

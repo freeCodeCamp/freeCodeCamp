@@ -13,7 +13,7 @@ dashedName: build-a-financial-calculator
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+У цьому завданні за допомогою Python потрібно створити багатофункціональний калькулятор, який приймає вхідні дані та виконує наступне:
 
 - Calculate annuity with monthly or continuous growth
 - Calculate monthly mortgage payment
