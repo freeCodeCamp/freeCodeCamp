@@ -50,12 +50,6 @@
     "./middlewares/error-handlers": {}
   },
   "final:after": {
-    "./middlewares/sentry-error-handler": {},
-    "strong-error-handler": {
-      "params": {
-        "debug": false,
-        "log": true
-      }
-    }
+    "./middlewares/sentry-error-handler": {}
   }
 }
