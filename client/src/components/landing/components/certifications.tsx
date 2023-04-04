@@ -5,13 +5,7 @@ import Map from '../../Map/index';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
-interface CertificationProps {
-  pageName: string;
-}
-
-const Certifications = ({
-  pageName = 'landing'
-}: CertificationProps): JSX.Element => {
+const Certifications = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +14,7 @@ const Certifications = ({
         <h1 className='big-heading'>{t('landing.certification-heading')}</h1>
         <Map forLanding={true} />
         <Spacer size='medium' />
-        <BigCallToAction pageName={pageName} />
+        <BigCallToAction />
         <Spacer size='medium' />
       </Col>
     </Row>
