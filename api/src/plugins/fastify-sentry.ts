@@ -1,11 +1,11 @@
 import { init, captureException } from '@sentry/node';
-import { FastifyInstance, FastifyPluginOptions } from 'fastify';
+import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-const fastifySentry = (
-  fastify: FastifyInstance,
-  options: FastifyPluginOptions,
-  done: (err?: Error) => void
+const fastifySentry: FastifyPluginCallback<{ dsn: string }> = (
+  fastify,
+  options,
+  done
 ) => {
   init(options);
 

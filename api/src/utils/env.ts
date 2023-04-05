@@ -36,6 +36,11 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.MONGOHQ_URL);
   assert.ok(process.env.SENTRY_DSN);
   assert.notEqual(
+    process.env.SENTRY_DSN,
+    'dsn_from_sentry_dashboard',
+    `The DSN from Sentry's dashboard should be used.`
+  );
+  assert.notEqual(
     process.env.SESSION_SECRET,
     'a_thirty_two_plus_character_session_secret',
     'The session secret should be changed from the default value.'
