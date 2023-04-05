@@ -17,50 +17,28 @@ interface ProfileProps {
   user: User;
 }
 
-function renderMessage(
-  isSessionUser: boolean,
-  username: string,
-  t: TFunction
-): JSX.Element {
-  return isSessionUser ? (
-    <>
-      <FullWidthRow>
-        <h2 className='text-center'>{t('profile.you-not-public')}</h2>
-      </FullWidthRow>
-      <FullWidthRow>
-        <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
-      </FullWidthRow>
+function Message({ t }: { t: TFunction }): JSX.Element {
+  return (
+    <FullWidthRow>
+      <h2 className='text-center'>{t('profile.you-not-public')}</h2>
+      <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
       <Spacer size='medium' />
-    </>
-  ) : (
-    <>
-      <FullWidthRow>
-        <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
-          {t('profile.username-not-public', { username: username })}
-        </h2>
-      </FullWidthRow>
-      <FullWidthRow>
-        <p className='alert alert-info'>
-          {t('profile.username-change-privacy', { username: username })}
-        </p>
-      </FullWidthRow>
-      <Spacer size='medium' />
-    </>
+    </FullWidthRow>
   );
 }
 
-function renderProfile(user: ProfileProps['user']): JSX.Element {
+function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
   const {
     profileUI: {
-      showAbout = false,
-      showCerts = false,
-      showDonation = false,
-      showHeatMap = false,
-      showLocation = false,
-      showName = false,
-      showPoints = false,
-      showPortfolio = false,
-      showTimeLine = false
+      showAbout,
+      showCerts,
+      showDonation,
+      showHeatMap,
+      showLocation,
+      showName,
+      showPoints,
+      showPortfolio,
+      showTimeLine
     },
     calendar,
     completedChallenges,
@@ -112,7 +90,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
 function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
-    profileUI: { isLocked = true },
+    profileUI: { isLocked },
     username
   } = user;
 
@@ -124,9 +102,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Spacer size='medium' />
       <Grid>
         <Spacer size='medium' />
-        {isLocked ? renderMessage(isSessionUser, username, t) : null}
-        {!isLocked || isSessionUser ? renderProfile(user) : null}
-        {isSessionUser ? null : (
+        {isLocked && <Message t={t} />}
+        {!isLocked || (isSessionUser && <UserProfile user={user} />)}
+        {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
               {t('buttons.flag-user')}

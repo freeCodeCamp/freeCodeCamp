@@ -22,7 +22,7 @@ const { clientLocale } = envData;
 const localeCode = getLangCode(clientLocale);
 
 interface CamperProps {
-  about: string;
+  about?: string;
   githubProfile: string;
   isDonating: boolean;
   joinDate: string;
