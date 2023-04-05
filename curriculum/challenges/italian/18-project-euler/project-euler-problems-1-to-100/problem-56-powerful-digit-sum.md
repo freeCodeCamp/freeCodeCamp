@@ -1,6 +1,6 @@
 ---
 id: 5900f3a41000cf542c50feb7
-title: 'Problem 56: Powerful digit sum'
+title: 'Problema 56: somma delle cifre della potenza'
 challengeType: 1
 forumTopicId: 302167
 dashedName: problem-56-powerful-digit-sum
@@ -8,43 +8,43 @@ dashedName: problem-56-powerful-digit-sum
 
 # --description--
 
-A googol ($10^{100}$) is a massive number: one followed by one-hundred zeros; $100^{100}$ is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1.
+Un googol ($10^{100}$) è un numero enorme: uno seguito da cento zeri; $100^{100}$ è un numero inimmaginabilmente grande: uno seguito da duecento zeri. Nonostante la loro dimensione, la somma delle cifre in ogni numero è solo 1.
 
-Considering natural numbers of the form, $a^b$, where `a`, `b` &lt; `n`, what is the maximum digital sum?
+Considerando numeri naturali nella forma, $a^b$, dove `a`, `b` &lt; `n`, qual è la somma massima delle cifre?
 
 # --hints--
 
-`powerfulDigitSum(3)` should return a number.
+`powerfulDigitSum(3)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof powerfulDigitSum(3) === 'number');
 ```
 
-`powerfulDigitSum(3)` should return `4`.
+`powerfulDigitSum(3)` dovrebbe restituire `4`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(3), 4);
 ```
 
-`powerfulDigitSum(10)` should return `45`.
+`powerfulDigitSum(10)` dovrebbe restituire `45`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(10), 45);
 ```
 
-`powerfulDigitSum(50)` should return `406`.
+`powerfulDigitSum(50)` dovrebbe restituire `406`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(50), 406);
 ```
 
-`powerfulDigitSum(75)` should return `684`.
+`powerfulDigitSum(75)` dovrebbe restituire `684`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(75), 684);
 ```
 
-`powerfulDigitSum(100)` should return `972`.
+`powerfulDigitSum(100)` dovrebbe restituire `972`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(100), 972);

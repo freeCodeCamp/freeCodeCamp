@@ -1,6 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
-title: 'Problem 35: Circular primes'
+title: 'Problema 35: numeri primi circolari'
 challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
@@ -8,55 +8,55 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+Il numero 197 è detto numero primo circolare perché tutte le rotazioni delle cifre: 197, 971 e 719, rappresentano numeri primi.
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+Esistono tredici numeri primi di questo tipo sotto il 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97.
 
-How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
+Quanti primi circolari ci sono sotto `n`, dove 100 ≤ `n` ≤ 1000000?
 
-**Note:**
+**Nota:**
 
-Circular primes individual rotation can exceed `n`.
+La rotazione individuale di primi circolari può superare `n`.
 
 # --hints--
 
-`circularPrimes(100)` should return a number.
+`circularPrimes(100)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof circularPrimes(100) === 'number');
 ```
 
-`circularPrimes(100)` should return 13.
+`circularPrimes(100)` dovrebbe restituire 13.
 
 ```js
 assert(circularPrimes(100) == 13);
 ```
 
-`circularPrimes(100000)` should return 43.
+`circularPrimes(100000)` dovrebbe restituire 43.
 
 ```js
 assert(circularPrimes(100000) == 43);
 ```
 
-`circularPrimes(250000)` should return 45.
+`circularPrimes(250000)` dovrebbe restituire 45.
 
 ```js
 assert(circularPrimes(250000) == 45);
 ```
 
-`circularPrimes(500000)` should return 49.
+`circularPrimes(500000)` dovrebbe restituire 49.
 
 ```js
 assert(circularPrimes(500000) == 49);
 ```
 
-`circularPrimes(750000)` should return 49.
+`circularPrimes(750000)` dovrebbe restituire 49.
 
 ```js
 assert(circularPrimes(750000) == 49);
 ```
 
-`circularPrimes(1000000)` should return 55.
+`circularPrimes(1000000)` dovrebbe restituire 55.
 
 ```js
 assert(circularPrimes(1000000) == 55);
