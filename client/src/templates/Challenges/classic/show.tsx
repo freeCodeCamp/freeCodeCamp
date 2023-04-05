@@ -89,7 +89,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-// Types
 interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
