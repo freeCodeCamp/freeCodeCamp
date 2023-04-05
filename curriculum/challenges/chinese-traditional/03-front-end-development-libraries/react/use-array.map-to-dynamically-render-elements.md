@@ -10,13 +10,13 @@ dashedName: use-array-map-to-dynamically-render-elements
 
 條件渲染很有用，但是可能需要組件來渲染未知數量的元素。 通常在響應式編程中，程序員在應用程序運行時之前無法知道其 state，因爲這在很大程度上取決於用戶與該程序的交互。 程序員需要提前編寫代碼來正確處理未知狀態。 在 React 中使用 `Array.map()` 闡明瞭這個概念。
 
-例如，創建一個簡單的“To Do List”應用程序。 作爲程序員，你無法知道用戶可能在其列表中有多少項。 需要設置組件，以便在使用該程序的人決定今天今日待辦事項之前動態渲染正確數量的列表元素。
+例如，創建一個簡單的 “To Do List” 應用程序。 作爲程序員，你無法知道用戶可能在其列表中有多少項。 需要設置組件，以便在使用該程序的人決定今日待辦事項之前動態渲染列表元素的正確數量。
 
 # --instructions--
 
 代碼編輯器完成了 `MyToDoList` 組件的大部分設置。 如果完成了受控表單挑戰，這些代碼中的一些應該看起來很熟悉。 你會注意到一個 `textarea` 和一個 `button`，以及一些跟蹤它們狀態的方法，但是頁面當前還沒有任何東西被渲染。
 
-在 `constructor` 中，創建一個 `this.state` 對象並定義兩個 state：`userInput` 應該初始化爲空字符串，`toDoList` 應該初始化爲空數組。 接下來，在 `render()` 方法中刪除 `items` 變量的 `null` 值。 取而代之的是，將存儲在組件內部 state 中的 `toDoList` 數組一一遍歷並相應的動態呈現 `li` 元素中。 嘗試在 `textarea` 中輸入 `eat, code, sleep, repeat`，然後點擊按鈕，看看會發生什麼。
+在 `constructor` 中，創建一個 `this.state` 對象並定義兩個 state：`userInput` 應該初始化爲空字符串，`toDoList` 應該初始化爲空數組。 接下來，在 `render()` 方法中刪除 `items` 變量的 `null` 值。 取而代之的是，將存儲在組件內部 state 中的 `toDoList` 數組一一遍歷，並相應地動態呈現在 `li` 元素中。 嘗試在 `textarea` 中輸入 `eat, code, sleep, repeat`，然後點擊按鈕，看看會發生什麼。
 
 **注意：** 像這樣的映射操作創建的所有兄弟子元素都需要提供唯一的 `key` 屬性。 別擔心，這是下一個挑戰的主題。
 

@@ -7,7 +7,8 @@ import {
   ControlLabel
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
 import { maybeUrlRE } from '../../utils';
@@ -179,12 +180,13 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     const { state: websiteValidation, message: websiteValidationMessage } =
       this.getValidationStateFor(website);
     const isDisabled = this.isFormPristine() || !this.isFormValid();
+    const ariaLabel = t('settings.headings.internet');
     return (
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
           <form id='internet-presence' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={t('settings.headings.internet')}>
+            <div role='group' aria-label={ariaLabel}>
               <FormGroup
                 controlId='internet-github'
                 validationState={githubProfileValidation}

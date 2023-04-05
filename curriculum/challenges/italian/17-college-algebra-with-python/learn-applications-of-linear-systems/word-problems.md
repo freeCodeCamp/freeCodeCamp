@@ -8,27 +8,27 @@ dashedName: word-problems
 
 # --description--
 
-This first video will look at key words that tell you what math operation to use. Then you will see how to apply some of your code to different problems.
+Questo primo video tratterà le parole chiave che ti dicono quale operazione matematica usare. Poi vedrai come applicare parte del codice a problemi diversi.
 
-**Here are links to the textbooks you will need to complete the assignments for this video:**
+**Ecco i link ai libri di testo che ti serviranno per completare le attività di questo video:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) di Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry di Jay Abramson</a>
 
 # --question--
 
 ## --assignment--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+Completa i problemi alle pagine 63, 75, 85 e 118 da "Business Math, a Step-by-Step Handbook (2021)".
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+Completa i problemi alle pagine 304, 308 e 321 da "Algebra and Trigonometry".
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+Quale delle seguenti parole chiave indica la sottrazione?
 
 ## --answers--
 

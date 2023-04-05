@@ -1,7 +1,8 @@
 import { graphql } from 'gatsby';
 import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import Media from 'react-responsive';

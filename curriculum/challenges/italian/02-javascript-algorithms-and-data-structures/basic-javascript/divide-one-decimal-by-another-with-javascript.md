@@ -32,7 +32,7 @@ assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
 La variabile quotient deve essere assegnata solo una volta
 
 ```js
-assert(code.match(/quotient/g).length === 1);
+assert(code.match(/quotient\s*=/g).length === 1);
 ```
 
 # --seed--

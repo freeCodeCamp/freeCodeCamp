@@ -28,7 +28,6 @@ import {
 import {
   ChallengeFiles,
   Dimensions,
-  Ext,
   FileKey,
   ResizeProps,
   Test
@@ -68,22 +67,18 @@ import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-interface EditorProps {
+export interface EditorProps {
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef: MutableRefObject<HTMLElement | undefined>;
-  contents: string;
   description: string;
-  dimensions: Dimensions;
+  dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  initialEditorContent: string;
-  initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;
@@ -431,6 +426,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
+
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
 
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.

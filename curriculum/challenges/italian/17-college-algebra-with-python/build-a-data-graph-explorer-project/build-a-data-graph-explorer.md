@@ -7,24 +7,24 @@ dashedName: build-a-data-graph-explorer
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Lavorerai a <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">questo progetto con Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Dopo aver visitato il link, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso in quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione del link per "anyone with the link"
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Per questa sfida, usando Python devi creare una calcolatrice multifunzione che prende un input ed esegue le seguenti operazioni:
 
-- Get a .csv file in three ways
-  - uploading it from the local computer
-  - getting a url from user input
-  - putting the url in the code
-- Use the Pandas library to save the .csv as a dataframe
-- Print headings and the first two rows
-- Store the column names as a list
-- Choose one or two columns and convert the data to Numpy arrays
-- Display data as a scatter plot or a line graph
-- Be able to do this for different column combinations, and interpret the graphs
+- Ottenere un file .csv in tre modi
+  - caricandolo dal computer locale
+  - ottenendo un url dall'input dell'utente
+  - inserendo l'url nel codice
+- Usare la libreria di Pandas per salvare il .csv come dataframe
+- Stampare le intestazioni e le prime due righe
+- Memorizzare i nomi delle colonne come lista
+- Scegliere una o due colonne e convertire i dati in array Numpy
+- Mostrare i dati come un grafico a dispersione o un grafico a linea
+- Essere in grado di fare tutto ciò per diverse combinazioni di colonne e interpretare i grafici
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Quando hai finito, invia l'URL al notebook Colab pubblico sul tuo Google drive.
 
