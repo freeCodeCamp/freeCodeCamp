@@ -286,7 +286,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       vertical: 'visible',
       verticalHasArrows: false,
       useShadows: false,
-      verticalScrollbarSize: 5
+      verticalScrollbarSize: getScrollbarWidth()
     },
     parameterHints: {
       enabled: false
@@ -303,6 +303,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     suggestOnTriggerCharacters: false,
     lineNumbersMinChars: 2
   };
+
+  function getScrollbarWidth() {
+    const storedWidth = parseInt(store.get('monacoScrollbarWidth'));
+    return storedWidth >= 5 || storedWidth <= 25 ? storedWidth : 5;
+  }
 
   const getEditableRegionFromRedux = () => {
     const { challengeFiles, fileKey } = props;
