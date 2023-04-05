@@ -10,13 +10,24 @@ const Padding = Object.freeze({
 type PaddingKeys = keyof typeof Padding;
 interface SpacerProps {
   size: PaddingKeys;
+  children?: JSX.Element;
+  direction?: 'top' | 'bottom';
 }
 
-const Spacer = ({ size }: SpacerProps): JSX.Element => (
+const Spacer = ({ size, children, direction }: SpacerProps): JSX.Element => (
   <div
     className='spacer'
-    style={{ padding: `${Padding[size]}px 0`, height: '1px' }}
-  />
+    style={{
+      padding:
+        direction === 'top'
+          ? `${Padding[size] * 2}px 0 0 0`
+          : direction === 'bottom'
+          ? `0 0 ${Padding[size] * 2}px 0`
+          : `${Padding[size]}px 0`
+    }}
+  >
+    {children}
+  </div>
 );
 
 export default Spacer;
