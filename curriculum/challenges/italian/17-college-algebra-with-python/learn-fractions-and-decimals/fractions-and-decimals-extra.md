@@ -1,6 +1,6 @@
 ---
 id: 6331d260b51aeedd1a2bd64a
-title: "Fractions and Decimals: Extra"
+title: "Frazioni e Decimali: Extra"
 challengeType: 15
 videoId: YHVA6cYIglM
 dashedName: fractions-and-decimals-extra
@@ -8,23 +8,23 @@ dashedName: fractions-and-decimals-extra
 
 # --description--
 
-The following video will show you one way to set up your Google Colaboratory notebook, so that you can continue to build your personalized algebra calculator.
+Il video seguente ti mostrerà un modo per impostare il tuo notebook Google Colaboratory, in modo che tu possa continuare a costruire la tua calcolatrice algebrica personalizzata.
 
-Here is <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
+Ecco il <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video</a> che puoi usare come modello.
 
 # --question--
 
 ## --assignment--
 
-Add the code to factor and solve for a variable to your algebra Colab notebook.
+Aggiungi il codice per fattorizzare e risolvere per una variabile al tuo notebook Colab.
 
 ---
 
-Run the code in the following notebook to get <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">practice converting fractions and decimals.</a> As a bonus, look at the code used to generate the practice problems.
+Esegui il seguente notebook per fare <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">pratica a convertire frazioni e decimali.</a> Inoltre, guarda il codice usato per generare i problemi di pratica.
 
 ## --text--
 
-Which of the following languages can you not use in Google Colaboratory?
+Quale dei seguenti linguaggi non è possibile utilizzare in Google Colaboratory?
 
 ## --answers--
 
@@ -36,11 +36,11 @@ LaTex
 
 ---
 
-English
+Inglese
 
 ---
 
-Sanskrit
+Sanscrito
 
 ## --video-solution--
 
