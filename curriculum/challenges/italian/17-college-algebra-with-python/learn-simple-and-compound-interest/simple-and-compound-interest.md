@@ -1,6 +1,6 @@
 ---
 id: 6363d26c9078df117ce4c405
-title: "Simple and Compound Interest"
+title: "Interesse Semplice e Composto"
 challengeType: 15
 videoId: iMPFK7wXNPg
 dashedName: simple-and-compound-interest
@@ -8,11 +8,11 @@ dashedName: simple-and-compound-interest
 
 # --description--
 
-This video will help you understand the equations of simple and compound interest, and what it all means.
+Questo video ti aiuterà a capire le equazioni dell'interesse semplice e composto, e cosa implicano.
 
 Ecco il <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
-Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook that shows you one way to put many of these interest and payment forumlas into Python functions.</a> Also you will see an example of using some formulas to output results, notice a trend, and follow up with other formulas to analyze patterns.
+Ecco un <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab aggiuntivo che mostra un modo per inserire le formule di interessi e pagamenti in funzioni di Python.</a> Inoltre, vedrai anche un esempio di come usare alcune formule per generare risultati, individuare una tendenza e proseguire con altre formule per analizzare modelli.
 
 # --question--
 
@@ -22,19 +22,19 @@ In percent increase formulas, what does the "principle" refer to?
 
 ## --answers--
 
-the main amount
+la somma principale
 
 ---
 
-the ending amount
+la somma finale
 
 ---
 
-the starting amount
+la somma iniziale
 
 ---
 
-the (1 + rate) multiplier
+il moltiplicatore (1 + tasso)
 
 ## --video-solution--
 
