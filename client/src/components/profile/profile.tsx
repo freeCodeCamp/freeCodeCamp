@@ -94,7 +94,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
     username
   } = user;
 
-  const isPublicProfile = !isLocked || isSessionUser;
+  const showUserProfile = !isLocked || isSessionUser;
 
   return (
     <>
@@ -105,7 +105,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Grid>
         <Spacer size='medium' />
         {isLocked && <Message t={t} />}
-        {isPublicProfile && <UserProfile user={user} />}
+        {showUserProfile && <UserProfile user={user} />}
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
