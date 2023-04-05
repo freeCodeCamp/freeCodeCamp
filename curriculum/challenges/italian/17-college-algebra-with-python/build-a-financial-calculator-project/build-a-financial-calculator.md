@@ -1,19 +1,19 @@
 ---
 id: 63d8401e39c73468b059cd42
-title: "Build a Financial Calculator"
+title: "Crea un Calcolatrice Finanziaria"
 challengeType: 10
 dashedName: build-a-financial-calculator
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/drive/1zUAVAkwyjat4Z-8nfrajM1ut9UcO18We?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Lavorerai a <a href="https://colab.research.google.com/drive/1zUAVAkwyjat4Z-8nfrajM1ut9UcO18We?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">questo progetto con Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Dopo aver visitato il link, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso in quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione del link per "anyone with the link"
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Per questa sfida, usando Python devi creare una calcolatrice multifunzione che prende un input ed esegue le seguenti operazioni:
 
 - Calcolare la rendita con crescita mensile o continua
 - Calcolare la rata mensile di un mutuo
@@ -22,7 +22,7 @@ For this challenge, you need to create a multi-function calculator using Python 
 - Risolvere equazioni logaritmiche
 - Convertire in (e da) notazione scientifica
 
-If you are struggling, you can follow the <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
+Se stai facendo fatica, puoi seguire la <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">guida per questo progetto.</a>
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Quando hai finito, invia l'URL al notebook Colab pubblico sul tuo Google drive.
 

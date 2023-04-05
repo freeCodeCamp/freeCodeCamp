@@ -7,16 +7,16 @@ isPrivate: true
 tests:
   - 
     id: 63d83ff239c73468b059cd3f
-    title: Build a Multi-Function Calculator
+    title: 创建一个多功能计算器
   - 
     id: 63d83ffd39c73468b059cd40
-    title: Build a Graphing Calculator
+    title: 创建一个图形计算器
   - 
     id: 63d8401039c73468b059cd41
-    title: Build Three Math Games
+    title: 创建三个数学游戏
   - 
     id: 63d8401e39c73468b059cd42
-    title: Build a Financial Calculator
+    title: 创建一个财务计算器
   - 
     id: 63d8402e39c73468b059cd43
-    title: Build a Data Graph Explorer
+    title: 创建一个数据图表浏览器

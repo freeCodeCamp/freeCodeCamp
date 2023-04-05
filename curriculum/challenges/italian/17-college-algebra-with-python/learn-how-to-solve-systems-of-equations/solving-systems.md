@@ -8,7 +8,7 @@ dashedName: solving-systems
 
 # --description--
 
-The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
+Il primo video ti mostrerà la matematica necessaria per risolvere un sistema di due equazioni senza grafico, come puoi raccogliere fattori comuni in un'equazione e risolvere per una certa variabile.
 
 Ecco il <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
