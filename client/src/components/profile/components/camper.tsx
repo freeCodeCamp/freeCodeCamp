@@ -76,7 +76,7 @@ function Camper({
   website
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
-
+  const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
   return (
     <div>
       <Row>
@@ -100,26 +100,33 @@ function Camper({
       <h2 className='text-center username'>@{username}</h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
-      {isDonating && (
-        <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
-        </p>
-      )}
       {about && <p className='bio text-center'>{about}</p>}
       {joinDate && (
         <p className='bio text-center'>
           <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
-      {yearsTopContributor.filter(Boolean).length > 0 && (
+      {isDonating && (
+        <dl className='badges'>
+          <FontAwesomeIcon icon={faHeart} />
+          <dt className='supporter'>{t('profile.supporter')}</dt>
+          <dd>{t('donate.supporter')}</dd>
+          {isTopContributor && (
+            <>
+              <FontAwesomeIcon icon={faAward} />
+              <dt className='yearsTopContributor'>
+                <Link to={t('links:top-contributors')}>
+                  {t('profile.contributor')}
+                </Link>
+              </dt>
+              <dd>{t('donate.top-contributor')}</dd>
+            </>
+          )}
+        </dl>
+      )}
+      {isTopContributor && (
         <div>
           <br />
-          <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={t('links:top-contributors')}>
-              {t('profile.contributor')}
-            </Link>
-          </p>
           <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
         </div>
       )}
