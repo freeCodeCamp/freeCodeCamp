@@ -8,11 +8,11 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG. 但是 D3 需要更多关于位置和 `circle` 大小的信息来正确地显示它们。
+上个挑战为 `dataset` 中的每个点都创建了 `circle` 元素，并将它们添加到 SVG 上。 但是 D3 需要更多关于位置和 `circle` 大小的信息来正确地显示它们。
 
-在 SVG 中 `circle` 有三个主要的属性。 `cx` 和 `cy` 属性是坐标。 They tell D3 where to position the *center* of the shape on the SVG. 半径（ `r` 属性）给出 `circle` 的大小。
+在 SVG 中 `circle` 有三个主要的属性。 `cx` 和 `cy` 属性是坐标。 它们告诉 D3 将图形的*中心*放在 SVG 的何处。 半径（ `r` 属性）给出 `circle` 的大小。
 
-Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG, not from the bottom.
+和 `rect` 的 `y` 坐标一样，`circle` 的 `cy` 属性是从 SVG 画布的顶端开始测量的，而不是从底端。
 
 所有的属性都可以用回调函数来动态设值。 记住，所有串联在 `data(dataset)` 后面的方法会为 `dataset` 中的每个对象都运行一次。 回调函数中的 `d` 参数指在 `dataset` 中的当前对象，对每个点来说都是一个数组。 你可以使用方括号的方式，如 `d[0]`，来访问数组中的值。
 

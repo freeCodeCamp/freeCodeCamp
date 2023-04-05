@@ -1,45 +1,23 @@
-Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
-Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
+## Choose between Gitpod or your own machine (local setup)
 
-> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod. We have automated the process of installing all the dependencies & tools you will need.
-> 
-> Continue reading this guide to learn more about using GitPod.
+If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
-## Fork the repository on GitHub
+Here are some pros and cons which should help you decide which option is best for you:
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+| Gitpod                                                            | Your own machine (local setup)                                        |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| No minimum hardware requirements                                  | Specific and minimum requirements                                     |
+| No need to install any software                                   | Additional software required                                          |
+| Always up to date copy of repository                              | Need to maintain a local copy of the repository                       |
+| Slower and can take a few minutes to launch                       | Faster and can be launched in seconds                                 |
+| Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
+| Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+> [!ATTENTION] **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
-> 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
-
-**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
-
-1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
-
-2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-
-3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
-
-<details>
-   <summary>
-      How to fork freeCodeCamp on GitHub (screenshot)
-   </summary>
-
-   <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
-</details>
-
-## Use a Local Machine or GitPod
-
-Once you have forked the repository, you can either use your own local machine or a GitPod-based workspace to work on the codebase.
-
-For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
-
-### How to prepare a GitPod workspace
+### How to prepare a Gitpod workspace
 
 We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
@@ -62,13 +40,16 @@ That's it, you can now skip to the 'syncing up from parent' section after you ha
 
 ### How to prepare your local machine
 
+Here is a minimum system requirement for running freeCodeCamp locally:
+
+- 8 GB RAM
+- Relatively fast CPU (4+ cores)
+- Windows 10 or 11 (with WSL), macOS, or Linux
+
 Start by installing the prerequisite software for your operating system.
 
-We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
-We also support Windows 10 and 11 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
-
-Some community members also develop on Windows natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
 #### Prerequisites:
 
@@ -106,6 +87,33 @@ Once you have the prerequisites installed, you need to prepare your development 
    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
    > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+
+## Fork the repository on GitHub
+
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> 
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
+
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+
+<details>
+   <summary>
+      How to fork freeCodeCamp on GitHub (screenshot)
+   </summary>
+
+   <br>
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+</details>
 
 ## Clone your fork from GitHub
 
