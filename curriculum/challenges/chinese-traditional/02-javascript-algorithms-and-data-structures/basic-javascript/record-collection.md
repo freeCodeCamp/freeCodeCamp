@@ -21,8 +21,8 @@ dashedName: record-collection
 
 -   你的函數必須始終返回整個 `records` 對象。
 -   如果 `value` 是空字符串，從專輯裏刪除指定的 `prop`。
--   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
--   If `prop` is `tracks` and value isn't an empty string, add the `value` to the end of the album's `tracks` array. You need to create this array first if the album does not have a `tracks` property.
+-   如果 `prop` 不是 `tracks`，並且 `value` 不是一個空字符串，將 `value` 賦給那個專輯的 `prop`。
+-   如果 `prop` 是 `tracks`，並且值不是一個空字符串，將 `value` 添加到專輯的 `tracks` 數組的末尾。 如果相冊沒有一個 `tracks` 屬性，你需要先創建此數組。
 
 **注意：** 將 `recordCollection` 對象的副本用於測試。 你不應該直接修改 `recordCollection` 對象。
 
