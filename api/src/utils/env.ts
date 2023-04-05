@@ -61,5 +61,5 @@ export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
-    ? undefined
+    ? ''
     : process.env.SENTRY_DSN;
