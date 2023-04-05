@@ -182,6 +182,9 @@ importers:
       '@prisma/client':
         specifier: 4.11.0
         version: 4.11.0(prisma@4.11.0)
+      '@sentry/node':
+        specifier: 7.37.1
+        version: 7.37.1
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.15.0)
