@@ -1,6 +1,6 @@
 ---
 id: 6331d29fb51aeedd1a2bd653
-title: "Solving Proportions"
+title: "Risolvere le Proporzioni"
 challengeType: 15
 videoId: 61A3PNx1hjY
 dashedName: solving-proportions
@@ -8,23 +8,23 @@ dashedName: solving-proportions
 
 # --description--
 
-Now we get to the math content. This video will show you how to set up and solve proportions and write code to solve for variables.
+E ora passiamo alla matematica. Questo video ti mostrerà come impostare e risolvere le proporzioni e scrivere il codice per risolvere per le variabili.
 
-Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
+Ecco il <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per seguire questo video.</a> Se non lo hai ancora fatto, crea un notebook Colab come spiegato nello scorso video. Poi, aggiungigli il codice da questo video.
 
 # --question--
 
 ## --assignment--
 
-Add the code from the video to the algebra Colab notebook you created in the first step.
+Aggiungi il codice del video al notebook Colab che hai creato nel primo step.
 
 ## --text--
 
-In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
+Nel risolvere una proporzione, se un numeratore è zero, l'altro numeratore deve essere zero perché l'affermazione sia vera?
 
 ## --answers--
 
-Yes
+Sì
 
 ---
 
@@ -32,7 +32,7 @@ No
 
 ---
 
-Sometimes
+A volte
 
 ## --video-solution--
 
