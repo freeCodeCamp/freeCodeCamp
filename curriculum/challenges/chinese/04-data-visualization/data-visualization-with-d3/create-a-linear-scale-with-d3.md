@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bda
-title: 用 D3 创建线性比例
+title: 用 D3 创建线性比例尺
 challengeType: 6
 forumTopicId: 301483
 dashedName: create-a-linear-scale-with-d3
@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-The bar and scatter plot charts both plotted data directly onto the SVG. 但是，如果一组的高或者其中一个数据点比 SVG 的高或宽更大，它将跑到 SVG 区域外。
+条形图和散点图都直接在 SVG 上绘制数据。 但是，如果一组的高或者其中一个数据点比 SVG 的高或宽更大，它将跑到 SVG 区域外。
 
-D3 中，比例尺可帮助布局数据。 `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG.
+在 D3 中，比例尺可帮助布局数据。 `scales` 是函数，它告诉程序如何将一组原始数据点映射到 SVG 上。
 
-For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. 这组数据将在十亿美元或万亿美元的范围内。 你给 D3 提供一种缩放方法，告诉它如何将大的 GDP 值放置在 100x500 大小的区域。
+例如，假设你有一个 100x500 大小的 SVG，你想为许多国家绘制国内生产总值（GDP）的图表。 这组数据将在十亿美元或万亿美元的范围内。 你给 D3 提供一种比例尺，告诉它如何将大的 GDP 值放置在 100x500 大小的区域。
 
-你不太可能按数据原本的大小来绘制图表。 Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
+你不太可能按数据原本的大小来绘制图表。 在绘制之前，你可以设置整个数据集的比例尺，以便 `x` 和 `y` 值适合你的 SVG 的宽度和高度。
 
 D3 有几种缩放类型。 对于线性缩放（通常使用于定量数据），使用 D3 的 `scaleLinear()` 方法：
 

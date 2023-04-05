@@ -1,6 +1,6 @@
 ---
 id: 5900f3a01000cf542c50feb3
-title: 'Problem 52: Permuted multiples'
+title: 'Problema 52: multipli permutati'
 challengeType: 1
 forumTopicId: 302163
 dashedName: problem-52-permuted-multiples
@@ -8,25 +8,25 @@ dashedName: problem-52-permuted-multiples
 
 # --description--
 
-It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
+Si può notare che il numero 125874 e il suo doppio, 251748, contengono esattamente le stesse cifre, ma in un ordine differente.
 
-Find the smallest positive integer, such that multiplied by integers $\\{2, 3, \ldots, n\\}$, contain the same digits.
+Trova il più piccolo numero intero positivo, che moltiplicato per gli interi $\\{2, 3, \ldots, n\\}$, contiene le stesse cifre.
 
 # --hints--
 
-`permutedMultiples(2)` should return a number.
+`permutedMultiples(2)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof permutedMultiples(2) === 'number');
 ```
 
-`permutedMultiples(2)` should return `125874`.
+`permutedMultiples(2)` dovrebbe restituire `125874`.
 
 ```js
 assert.strictEqual(permutedMultiples(2), 125874);
 ```
 
-`permutedMultiples(6)` should return `142857`.
+`permutedMultiples(6)` dovrebbe restituire `142857`.
 
 ```js
 assert.strictEqual(permutedMultiples(6), 142857);

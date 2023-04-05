@@ -10,7 +10,7 @@ dashedName: use-for-to-create-a-sass-loop
 
 可以在 Sass 中使用 `@for` 循环添加样式，它的用法和 JavaScript 中的 `for` 循环类似。
 
-`@for` 以两种方式使用：“开始 through 结束” 或 “开始 to 结束”。 主要区别在于“开始 **to** 结束”*不包括*结束数字，而“开始 **through** 结束”*包括* 结束号码。
+`@for` 以两种方式使用：“开始 through 结束” 或 “开始 to 结束”。 主要区别在于“开始 **to** 结束”*不包括*结束数字，而“开始 **through** 结束”*包括*结束数字。
 
 这是一个开始 **through** 结束的示例：
 
@@ -42,9 +42,9 @@ dashedName: use-for-to-create-a-sass-loop
 
 # --instructions--
 
-编写 `@for` 指令，使 `$j` 的值为从 1 到 **to** 6。
+编写 `@for` 指令，使 `$j` 的值为从 1 **to** 6。
 
-它应该创建 5 个名为 `.text-1` 到 `.text-5` 的 class，其中每个 class 的 `font-size` 设置为 15px 乘以索引。
+它应该创建 5 个名为 `.text-1` to `.text-5` 的 class，其中每个 class 的 `font-size` 设置为 15px 乘以索引。
 
 # --hints--
 

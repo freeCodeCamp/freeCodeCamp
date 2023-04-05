@@ -33,6 +33,10 @@
   -ms-overflow-scrolling: touch;
 }
 
+#universal-nav-logo:focus {
+  outline-offset: -3px;
+}
+
 .universal-nav-right {
   display: flex;
   justify-content: flex-end;
