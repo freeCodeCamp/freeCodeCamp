@@ -182,7 +182,6 @@ function Footer(): JSX.Element {
       </div>
       <div className='footer-bottom'>
         <h2 className='col-header'>{t('footer.our-nonprofit')}</h2>
-        <div className='footer-divder' />
         <div className='our-nonprofit'>
           <Link external={false} to={t('links:footer.about-url')}>
             {t('footer.links.about')}

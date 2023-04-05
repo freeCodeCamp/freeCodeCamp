@@ -325,9 +325,6 @@ exports[`<Footer /> matches snapshot 1`] = `
       footer.our-nonprofit
     </h2>
     <div
-      className="footer-divder"
-    />
-    <div
       className="our-nonprofit"
     >
       <a

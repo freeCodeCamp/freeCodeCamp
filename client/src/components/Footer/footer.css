@@ -11,11 +11,18 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30.5em, 1fr));
 }
+
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
+  }
+}
+
 .footer-top,
 .footer-bottom {
-  width: min(100%, 1200px);
+  width: min(100%, 1170px);
   margin-inline: auto;
 }
 
@@ -66,6 +73,7 @@
 .footer-desc-col {
   padding-inline: 15px;
   margin-bottom: 30px;
+  align-self: center;
 }
 
 .footer-desc-col a {
@@ -123,19 +131,19 @@ p.footer-donation a:hover {
     margin-top: 40px;
   }
   .footer-bottom .our-nonprofit {
-    padding: 0 10px;
+    padding-inline: 10px;
+    padding-top: 1.25rem;
     justify-content: space-between;
   }
   .footer-bottom .col-header {
     visibility: hidden;
     padding: 0px;
+    margin: 0;
+    height: 1px;
   }
   .our-nonprofit {
-    margin-top: 20px;
-  }
-  .footer-divder {
-    height: 2px;
-    margin: 0 15px;
-    background-color: var(--quaternary-background);
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: var(--quaternary-background);
   }
 }
