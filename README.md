@@ -22,7 +22,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
-### Certifications
+### Certifications:
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
@@ -153,7 +153,7 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - Legacy Back End Development Certification
 - Legacy Information Security and Quality Assurance Certification
 
-### The Learning Platform
+### The Learning Platform:
 
 This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
@@ -166,29 +166,29 @@ Our community also has:
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
-### Reporting Bugs and Issues
+### Reporting Bugs and Issues:
 
 If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
-### Reporting Security Issues and Responsible Disclosure
+### Reporting Security Issues and Responsible Disclosure:
 
 We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
-### Contributing
+### Contributing:
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
-### Platform, Build, and Deployment Status
+### Platform, Build, and Deployment Status:
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](https://contribute.freecodecamp.org/#/devops).
 
-### License
+### License:
 
 Copyright © 2023 freeCodeCamp.org
 
