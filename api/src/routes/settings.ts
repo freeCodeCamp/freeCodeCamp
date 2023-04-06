@@ -1,5 +1,7 @@
-import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Type } from '@sinclair/typebox';
+import {
+  Type,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
 
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
