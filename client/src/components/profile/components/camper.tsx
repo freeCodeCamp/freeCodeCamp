@@ -37,25 +37,11 @@ interface CamperProps {
   location: string;
   name: string;
   picture: string;
-  points: number | null;
+  points: number;
   twitter: string;
   username: string;
   website: string;
   yearsTopContributor: string[];
-}
-
-function joinArray(array: string[], t: TFunction): string {
-  return array.reduce((string, item, index, array) => {
-    if (string.length > 0) {
-      if (index === array.length - 1) {
-        return `${string} ${t('misc.and')} ${item}`;
-      } else {
-        return `${string}, ${item}`;
-      }
-    } else {
-      return item;
-    }
-  });
 }
 
 function parseDate(joinDate: string, t: TFunction): string {
@@ -148,18 +134,9 @@ function Camper({
           )}
         </dl>
       )}
-      {isTopContributor && (
-        <div>
-          <br />
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
-        </div>
-      )}
-      <br />
-      {typeof points === 'number' ? (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      ) : null}
+      <p className='text-center points'>
+        {t('profile.total-points', { count: points })}
+      </p>
     </div>
   );
 }

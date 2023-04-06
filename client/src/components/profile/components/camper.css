@@ -29,9 +29,12 @@
   grid-template-columns: repeat(2, auto);
   gap: 1em;
   justify-content: center;
+  margin-top: 1em;
+  border-top: 1px solid var(--quaternary-background);
 }
 
 .badge {
+  margin-block: 1.5em;
   display: grid;
   gap: 0px 8px;
   grid-template-columns: 4em 9em;
@@ -55,5 +58,9 @@
 
 .badge dd {
   font-size: 16px;
+}
+
+.badge dd {
+  font-size: 14px;
   opacity: 0.8;
 }
