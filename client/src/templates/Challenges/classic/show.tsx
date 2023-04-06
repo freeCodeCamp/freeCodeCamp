@@ -158,7 +158,9 @@ const StepPreview = ({
   );
 };
 
-const defaultOutput = `/**
+// The newline is important, because this text ends up in a `pre` element.
+const defaultOutput = `
+/**
 * Your test output will go here
 */`;
 

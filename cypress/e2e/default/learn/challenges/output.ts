@@ -17,7 +17,8 @@ const outputLocations = {
     'comment-your-javascript-code'
 };
 
-const defaultOutput = `/**
+const defaultOutput = `
+/**
 * Your test output will go here
 */`;
 
