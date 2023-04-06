@@ -1,6 +1,33 @@
 import request from 'supertest';
 
 import { build } from '../app';
+
+const baseProfileUI = {
+  isLocked: false,
+  showAbout: false,
+  showCerts: false,
+  showDonation: false,
+  showHeatMap: false,
+  showLocation: false,
+  showName: false,
+  showPoints: false,
+  showPortfolio: false,
+  showTimeLine: false
+};
+
+const profileUI = {
+  isLocked: true,
+  showAbout: true,
+  showCerts: false,
+  showDonation: true,
+  showHeatMap: false,
+  showLocation: true,
+  showName: true,
+  showPoints: false,
+  showPortfolio: true,
+  showTimeLine: false
+};
+
 describe('settingRoutes', () => {
   let fastify: undefined | Awaited<ReturnType<typeof build>>;
 
@@ -21,30 +48,47 @@ describe('settingRoutes', () => {
 
   describe('Authenticated user', () => {
     let cookies: string[];
+
     beforeAll(async () => {
+      await fastify?.prisma.user.updateMany({
+        where: { email: 'foo@bar.com' },
+        data: { profileUI: baseProfileUI }
+      });
       const res = await request(fastify?.server).get('/auth/dev-callback');
       cookies = res.get('Set-Cookie');
     });
+
     test('PUT /update-my-profileui returns 200 status code with "success" message', async () => {
+      const response = await request(fastify?.server)
+        .put('/update-my-profileui')
+        .set('Cookie', cookies)
+        .send({ profileUI });
+
+      const user = await fastify?.prisma.user.findFirst({
+        where: { email: 'foo@bar.com' }
+      });
+
+      expect(response?.statusCode).toEqual(200);
+      expect(user?.profileUI).toEqual(profileUI);
+    });
+
+    test('PUT /update-my-profileui ignores invalid keys', async () => {
       const response = await request(fastify?.server)
         .put('/update-my-profileui')
         .set('Cookie', cookies)
         .send({
           profileUI: {
-            isLocked: true,
-            showAbout: true,
-            showCerts: false,
-            showDonation: true,
-            showHeatMap: false,
-            showLocation: true,
-            showName: true,
-            showPoints: false,
-            showPortfolio: true,
-            showTimeLine: false
+            ...profileUI,
+            invalidKey: 'invalidValue'
           }
         });
 
+      const user = await fastify?.prisma.user.findFirst({
+        where: { email: 'foo@bar.com' }
+      });
+
       expect(response?.statusCode).toEqual(200);
+      expect(user?.profileUI).toEqual(profileUI);
     });
 
     test('PUT /update-my-profileui returns 400 status code with missing keys', async () => {
