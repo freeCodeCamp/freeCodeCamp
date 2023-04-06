@@ -34,6 +34,12 @@ assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
+  assert.ok(process.env.SENTRY_DSN);
+  assert.notEqual(
+    process.env.SENTRY_DSN,
+    'dsn_from_sentry_dashboard',
+    `The DSN from Sentry's dashboard should be used.`
+  );
   assert.notEqual(
     process.env.SESSION_SECRET,
     'a_thirty_two_plus_character_session_secret',
@@ -58,3 +64,7 @@ export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
+export const SENTRY_DSN =
+  process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
+    ? ''
+    : process.env.SENTRY_DSN;

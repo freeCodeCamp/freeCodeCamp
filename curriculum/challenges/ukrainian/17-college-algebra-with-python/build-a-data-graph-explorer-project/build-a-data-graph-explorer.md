@@ -1,6 +1,6 @@
 ---
 id: 63d8402e39c73468b059cd43
-title: "Build a Data Graph Explorer"
+title: "Створіть дослідник графіку даних"
 challengeType: 10
 dashedName: build-a-data-graph-explorer
 ---
@@ -15,16 +15,16 @@ dashedName: build-a-data-graph-explorer
 
 У цьому завданні за допомогою Python потрібно створити багатофункціональний калькулятор, який приймає вхідні дані та виконує наступне:
 
-- Get a .csv file in three ways
-  - uploading it from the local computer
-  - getting a url from user input
-  - putting the url in the code
-- Use the Pandas library to save the .csv as a dataframe
-- Print headings and the first two rows
-- Store the column names as a list
-- Choose one or two columns and convert the data to Numpy arrays
-- Display data as a scatter plot or a line graph
-- Be able to do this for different column combinations, and interpret the graphs
+- може отримати файл .csv трьома способами
+  - завантажити з локального комп’ютера
+  - отримати URL-адресу із вводу користувача
+  - ввести URL-адресу в коді
+- використовує бібліотеку Pandas, щоб зберегти .csv як dataframe
+- друкує заголовки та перші два рядки
+- зберігає назви стовпців як список
+- вибирає один чи два стовпці та перетворює дані у масиви Numpy
+- відображає дані у вигляді точкової або лінійної діаграми
+- може обробляти різні комбінації стовпців та інтерпретувати графіки
 
 Як тільки закінчите, введіть посилання на загальнодоступний блокнот Colab на вашому гугл-диску.
 

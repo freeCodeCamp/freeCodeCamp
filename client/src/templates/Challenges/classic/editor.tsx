@@ -660,7 +660,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
 
     ReactDOM.render(
       <LowerJaw
@@ -672,7 +671,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
         tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
         updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,
