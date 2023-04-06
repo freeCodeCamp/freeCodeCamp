@@ -63,7 +63,6 @@ import MobileLayout from './mobile-layout';
 import './classic.css';
 import '../components/test-frame.css';
 
-// Redux Setup
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   output: consoleOutputSelector,
@@ -163,7 +162,6 @@ const defaultOutput = `/**
 * Your test output will go here
 */`;
 
-// Component
 function ShowClassic({
   challengeFiles: reduxChallengeFiles,
   data: {
@@ -385,7 +383,6 @@ function ShowClassic({
           challengeFiles={reduxChallengeFiles}
           containerRef={containerRef}
           description={description}
-          // Try to remove unknown
           editorRef={editorRef}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
