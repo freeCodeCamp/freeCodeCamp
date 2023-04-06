@@ -23,3 +23,37 @@
 .avatar-camper .avatar-container {
   border-width: 10px;
 }
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1em;
+  justify-content: center;
+}
+
+.badge {
+  display: grid;
+  gap: 0px 8px;
+  grid-template-columns: 4em 9em;
+}
+
+.badge div {
+  background-color: var(--quaternary-background);
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+
+.badge svg {
+  /* need to assign height and width, because browsers don't calculate height and width consistencly between each other */
+  height: 2em;
+  width: 2em;
+}
+
+.badge dd {
+  font-size: 16px;
+  opacity: 0.8;
+}

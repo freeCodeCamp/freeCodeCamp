@@ -1,4 +1,5 @@
 import {
+  type IconDefinition,
   faAward,
   faCalendar,
   faHeart
@@ -20,6 +21,12 @@ import './camper.css';
 const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
+
+interface BadgeProps {
+  title: React.ReactNode;
+  details: string;
+  icon: IconDefinition;
+}
 
 interface CamperProps {
   about: string;
@@ -59,6 +66,18 @@ function parseDate(joinDate: string, t: TFunction): string {
   });
   return t('profile.joined', { date: date });
 }
+
+const Badge = ({ title, details, icon }: BadgeProps) => {
+  return (
+    <section className='badge'>
+      <div>
+        <FontAwesomeIcon icon={icon} />
+      </div>
+      <dt>{title}</dt>
+      <dd>{details}</dd>
+    </section>
+  );
+};
 
 function Camper({
   name,
@@ -110,22 +129,22 @@ function Camper({
       {hasBadge && (
         <dl className='badges'>
           {isDonating && (
-            <>
-              <FontAwesomeIcon icon={faHeart} />
-              <dt className='supporter'>{t('profile.supporter')}</dt>
-              <dd>{t('donate.supporter')}</dd>
-            </>
+            <Badge
+              icon={faHeart}
+              title={t('profile.supporter')}
+              details={t('donate.supporter')}
+            />
           )}
           {isTopContributor && (
-            <>
-              <FontAwesomeIcon icon={faAward} />
-              <dt className='yearsTopContributor'>
+            <Badge
+              icon={faAward}
+              title={
                 <Link to={t('links:top-contributors')}>
                   {t('profile.contributor')}
                 </Link>
-              </dt>
-              <dd>{t('donate.top-contributor')}</dd>
-            </>
+              }
+              details={t('donate.top-contributor')}
+            />
           )}
         </dl>
       )}
