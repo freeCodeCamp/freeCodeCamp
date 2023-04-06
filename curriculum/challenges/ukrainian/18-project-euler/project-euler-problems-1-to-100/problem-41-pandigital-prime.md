@@ -14,19 +14,19 @@ What is the largest `n`-length digit pandigital prime that exists?
 
 # --hints--
 
-`pandigitalPrime(4)` should return a number.
+`pandigitalPrime(4)` має повернути число.
 
 ```js
 assert(typeof pandigitalPrime(4) === 'number');
 ```
 
-`pandigitalPrime(4)` should return 4231.
+`pandigitalPrime(4)` має повернути 4231.
 
 ```js
 assert(pandigitalPrime(4) == 4231);
 ```
 
-`pandigitalPrime(7)` should return 7652413.
+`pandigitalPrime(7)` має повернути 7652413.
 
 ```js
 assert(pandigitalPrime(7) == 7652413);

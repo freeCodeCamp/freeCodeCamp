@@ -29,7 +29,7 @@ Find $\sum I(n)$ for $3 ≤ n ≤ 2 \times {10}^7$
 
 # --hints--
 
-`modularInverses()` should return `153651073760956`.
+`modularInverses()` має повернути `153651073760956`.
 
 ```js
 assert.strictEqual(modularInverses(), 153651073760956);

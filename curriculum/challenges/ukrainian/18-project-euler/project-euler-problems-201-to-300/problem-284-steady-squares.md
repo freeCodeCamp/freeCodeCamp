@@ -18,13 +18,13 @@ Find the sum of the digits of all the $n$-digit steady squares in the base 14 nu
 
 # --hints--
 
-`steadySquares()` should return a string.
+`steadySquares()` має повернути рядок.
 
 ```js
 assert(typeof steadySquares() === 'string');
 ```
 
-`steadySquares()` should return the string `5a411d7b`.
+`steadySquares()` має повернути рядок `5a411d7b`.
 
 ```js
 assert.strictEqual(steadySquares(), '5a411d7b');

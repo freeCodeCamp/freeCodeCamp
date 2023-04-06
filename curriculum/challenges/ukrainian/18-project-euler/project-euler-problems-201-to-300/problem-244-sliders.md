@@ -32,7 +32,7 @@ What is the sum of all checksums for the paths having the minimal length?
 
 # --hints--
 
-`sliders()` should return `96356848`.
+`sliders()` має повернути `96356848`.
 
 ```js
 assert.strictEqual(sliders(), 96356848);

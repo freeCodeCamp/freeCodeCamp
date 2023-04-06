@@ -20,7 +20,7 @@ How many coefficients in the expansion of ${(x + y + z)}^{200000}$ are multiples
 
 # --hints--
 
-`pascalsPyramid()` should return `479742450`.
+`pascalsPyramid()` має повернути `479742450`.
 
 ```js
 assert.strictEqual(pascalsPyramid(), 479742450);

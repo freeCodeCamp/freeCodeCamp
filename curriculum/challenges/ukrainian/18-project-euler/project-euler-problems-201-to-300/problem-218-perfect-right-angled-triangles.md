@@ -30,7 +30,7 @@ How many perfect right-angled triangles with $c ≤ {10}^{16}$ exist that are no
 
 # --hints--
 
-`perfectRightAngledTriangles()` should return `0`.
+`perfectRightAngledTriangles()` має повернути `0`.
 
 ```js
 assert.strictEqual(perfectRightAngledTriangles(), 0);

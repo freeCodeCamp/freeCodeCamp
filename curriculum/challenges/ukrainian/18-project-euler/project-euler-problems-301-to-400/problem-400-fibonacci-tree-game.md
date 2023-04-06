@@ -28,7 +28,7 @@ Find $f(10000)$. Give the last 18 digits of your answer.
 
 # --hints--
 
-`fibonacciTreeGame()` should return `438505383468410600`.
+`fibonacciTreeGame()` має повернути `438505383468410600`.
 
 ```js
 assert.strictEqual(fibonacciTreeGame(), 438505383468410600);

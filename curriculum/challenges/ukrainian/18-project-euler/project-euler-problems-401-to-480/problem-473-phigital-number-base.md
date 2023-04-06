@@ -30,7 +30,7 @@ Find the sum of the positive integers not exceeding $10^{10}$ whose phigital rep
 
 # --hints--
 
-`phigitalNumberBase()` should return `35856681704365`.
+`phigitalNumberBase()` має повернути `35856681704365`.
 
 ```js
 assert.strictEqual(phigitalNumberBase(), 35856681704365);

@@ -22,7 +22,7 @@ Find $\sum S(p)$ for $5 ≤ p &lt; {10}^8$.
 
 # --hints--
 
-`primeKFactorial()` should return `139602943319822`.
+`primeKFactorial()` має повернути `139602943319822`.
 
 ```js
 assert.strictEqual(primeKFactorial(), 139602943319822);

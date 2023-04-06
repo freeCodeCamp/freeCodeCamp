@@ -34,7 +34,7 @@ Find $S(5678027) + S(7208785)$.
 
 # --hints--
 
-`primeTriplets()` should return `322303240771079940`.
+`primeTriplets()` має повернути `322303240771079940`.
 
 ```js
 assert.strictEqual(primeTriplets(), 322303240771079940);

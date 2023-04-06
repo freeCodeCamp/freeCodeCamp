@@ -30,7 +30,7 @@ Find $\displaystyle\sum_{n = 1}^{200\\,000} C(n)$.
 
 # --hints--
 
-`lowestCostSearch()` should return `260511850222`.
+`lowestCostSearch()` має повернути `260511850222`.
 
 ```js
 assert.strictEqual(lowestCostSearch(), 260511850222);

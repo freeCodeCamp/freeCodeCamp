@@ -31,7 +31,7 @@ Find $S(2000)\bmod 987\\,898\\,789$.
 
 # --hints--
 
-`gcdAndTiling()` should return `970746056`.
+`gcdAndTiling()` має повернути `970746056`.
 
 ```js
 assert.strictEqual(gcdAndTiling(), 970746056);

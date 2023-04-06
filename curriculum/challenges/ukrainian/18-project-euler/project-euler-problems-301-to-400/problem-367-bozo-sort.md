@@ -30,7 +30,7 @@ Averaged over all $11!$ input sequences, what is the expected number of shuffles
 
 # --hints--
 
-`bozoSort()` should return `48271207`.
+`bozoSort()` має повернути `48271207`.
 
 ```js
 assert.strictEqual(bozoSort(), 48271207);

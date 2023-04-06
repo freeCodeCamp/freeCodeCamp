@@ -24,7 +24,7 @@ Find $\sum N(n)$ for $1 ≤ n ≤ {10}^8$
 
 # --hints--
 
-`maximumLengthOfAntichain()` should return `528755790`.
+`maximumLengthOfAntichain()` має повернути `528755790`.
 
 ```js
 assert.strictEqual(maximumLengthOfAntichain(), 528755790);

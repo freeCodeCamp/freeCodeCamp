@@ -26,7 +26,7 @@ How many "prize" strings exist over a 30-day period?
 
 # --hints--
 
-`prizeStrings()` should return `1918080160`.
+`prizeStrings()` має повернути `1918080160`.
 
 ```js
 assert.strictEqual(prizeStrings(), 1918080160);

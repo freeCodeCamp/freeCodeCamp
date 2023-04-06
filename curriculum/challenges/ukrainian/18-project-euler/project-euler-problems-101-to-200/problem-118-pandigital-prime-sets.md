@@ -14,7 +14,7 @@ How many distinct sets containing each of the digits one through nine exactly on
 
 # --hints--
 
-`pandigitalPrimeSets()` should return `44680`.
+`pandigitalPrimeSets()` має повернути `44680`.
 
 ```js
 assert.strictEqual(pandigitalPrimeSets(), 44680);

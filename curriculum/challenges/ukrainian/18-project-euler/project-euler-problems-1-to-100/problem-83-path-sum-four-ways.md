@@ -20,19 +20,19 @@ Find the minimal path sum from the top left to the bottom right by moving left, 
 
 # --hints--
 
-`pathSumFourWays(testMatrix1)` should return a number.
+`pathSumFourWays(testMatrix1)` має повернути число.
 
 ```js
 assert(typeof pathSumFourWays(_testMatrix1) === 'number');
 ```
 
-`pathSumFourWays(testMatrix1)` should return `2297`.
+`pathSumFourWays(testMatrix1)` має повернути `2297`.
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix1), 2297);
 ```
 
-`pathSumFourWays(testMatrix2)` should return `425185`.
+`pathSumFourWays(testMatrix2)` має повернути `425185`.
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix2), 425185);

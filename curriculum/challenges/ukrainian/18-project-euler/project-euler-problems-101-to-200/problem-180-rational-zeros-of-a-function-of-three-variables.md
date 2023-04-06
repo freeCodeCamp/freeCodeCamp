@@ -27,7 +27,7 @@ Find $u + v$.
 
 # --hints--
 
-`rationalZeros()` should return `285196020571078980`.
+`rationalZeros()` має повернути `285196020571078980`.
 
 ```js
 assert.strictEqual(rationalZeros(), 285196020571078980);

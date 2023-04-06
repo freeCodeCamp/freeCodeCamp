@@ -68,31 +68,31 @@ How many continued fractions for $N \\le n$ have an odd period?
 
 # --hints--
 
-`oddPeriodSqrts(13)` should return a number.
+`oddPeriodSqrts(13)` має повернути число.
 
 ```js
 assert(typeof oddPeriodSqrts(13) === 'number');
 ```
 
-`oddPeriodSqrts(500)` should return `83`.
+`oddPeriodSqrts(500)` має повернути `83`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(500), 83);
 ```
 
-`oddPeriodSqrts(1000)` should return `152`.
+`oddPeriodSqrts(1000)` має повернути `152`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(1000), 152);
 ```
 
-`oddPeriodSqrts(5000)` should return `690`.
+`oddPeriodSqrts(5000)` має повернути `690`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(5000), 690);
 ```
 
-`oddPeriodSqrts(10000)` should return `1322`.
+`oddPeriodSqrts(10000)` має повернути `1322`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(10000), 1322);

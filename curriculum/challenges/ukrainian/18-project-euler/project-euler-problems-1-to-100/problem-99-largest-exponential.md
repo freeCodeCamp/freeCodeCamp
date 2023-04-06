@@ -16,19 +16,19 @@ Using the 2D `baseExp` array of base/exponent pairs, determine pair with the gre
 
 # --hints--
 
-`largestExponential(testArray1)` should return an array.
+`largestExponential(testArray1)` має повернути масив.
 
 ```js
 assert(Array.isArray(largestExponential(_testArray1)));
 ```
 
-`largestExponential(testArray1)` should return `[840237, 507276]`.
+`largestExponential(testArray1)` має повернути `[840237, 507276]`.
 
 ```js
 assert.deepEqual(largestExponential(_testArray1), [840237, 507276]);
 ```
 
-`largestExponential(testArray2)` should return `[895447, 504922]`.
+`largestExponential(testArray2)` має повернути `[895447, 504922]`.
 
 ```js
 assert.deepEqual(largestExponential(_testArray2), [895447, 504922]);

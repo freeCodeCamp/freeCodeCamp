@@ -40,7 +40,7 @@ Find $S(100)$, give your answer modulo $1\\,000\\,000\\,033$.
 
 # --hints--
 
-`rigidGraphs()` should return `863253606`.
+`rigidGraphs()` має повернути `863253606`.
 
 ```js
 assert.strictEqual(rigidGraphs(), 863253606);

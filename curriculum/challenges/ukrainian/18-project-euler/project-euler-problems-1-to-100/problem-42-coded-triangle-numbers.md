@@ -18,31 +18,31 @@ Using words array of `n`-length, how many are triangle words?
 
 # --hints--
 
-`codedTriangleNumbers(1400)` should return a number.
+`codedTriangleNumbers(1400)` має повернути число.
 
 ```js
 assert(typeof codedTriangleNumbers(1400) === 'number');
 ```
 
-`codedTriangleNumbers(1400)` should return 129.
+`codedTriangleNumbers(1400)` має повернути 129.
 
 ```js
 assert(codedTriangleNumbers(1400) == 129);
 ```
 
-`codedTriangleNumbers(1500)` should return 137.
+`codedTriangleNumbers(1500)` має повернути 137.
 
 ```js
 assert(codedTriangleNumbers(1500) == 137);
 ```
 
-`codedTriangleNumbers(1600)` should return 141.
+`codedTriangleNumbers(1600)` має повернути 141.
 
 ```js
 assert(codedTriangleNumbers(1600) == 141);
 ```
 
-`codedTriangleNumbers(1786)` should return 162.
+`codedTriangleNumbers(1786)` має повернути 162.
 
 ```js
 assert(codedTriangleNumbers(1786) == 162);

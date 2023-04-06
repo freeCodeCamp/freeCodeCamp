@@ -20,7 +20,7 @@ Find how many Cardano Triplets exist such that $a + b + c ≤ 110\\,000\\,000$.
 
 # --hints--
 
-`cardanoTriplets()` should return `18946051`.
+`cardanoTriplets()` має повернути `18946051`.
 
 ```js
 assert.strictEqual(cardanoTriplets(), 18946051);

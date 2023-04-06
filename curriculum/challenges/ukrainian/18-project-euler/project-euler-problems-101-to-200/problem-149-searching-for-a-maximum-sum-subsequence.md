@@ -28,7 +28,7 @@ Finally, find the greatest sum of (any number of) adjacent entries in any direct
 
 # --hints--
 
-`maximumSubSequence()` should return `52852124`.
+`maximumSubSequence()` має повернути `52852124`.
 
 ```js
 assert.strictEqual(maximumSubSequence(), 52852124);

@@ -18,7 +18,7 @@ Find $S(1\\,000\\,000)\bmod {10}^{18}$.
 
 # --hints--
 
-`divisibleByHugeInteger()` should return `278157919195482660`.
+`divisibleByHugeInteger()` має повернути `278157919195482660`.
 
 ```js
 assert.strictEqual(divisibleByHugeInteger(), 278157919195482660);

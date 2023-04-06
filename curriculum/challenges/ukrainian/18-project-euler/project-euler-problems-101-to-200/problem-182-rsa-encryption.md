@@ -30,25 +30,25 @@ For any given `p` and `q`, find the sum of all values of `e`, `1 < e < φ(p,q)` 
 assert(typeof RSAEncryption === 'function')
 ```
 
-`RSAEncryption` should return a number.
+`RSAEncryption` має повернути число.
 
 ```js
 assert.strictEqual(typeof RSAEncryption(19, 37), 'number');
 ```
 
-`RSAEncryption(19, 37)` should return `17766`.
+`RSAEncryption(19, 37)` має повернути `17766`.
 
 ```js
 assert.strictEqual(RSAEncryption(19, 37), 17766);
 ```
 
-`RSAEncryption(283, 409)` should return `466196580`.
+`RSAEncryption(283, 409)` має повернути `466196580`.
 
 ```js
 assert.strictEqual(RSAEncryption(283, 409), 466196580);
 ```
 
-`RSAEncryption(1009, 3643)` should return `399788195976`.
+`RSAEncryption(1009, 3643)` має повернути `399788195976`.
 
 ```js
 assert.strictEqual(RSAEncryption(19, 37), 17766);

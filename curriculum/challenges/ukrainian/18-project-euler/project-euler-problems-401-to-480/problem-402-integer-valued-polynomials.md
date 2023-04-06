@@ -25,7 +25,7 @@ Find the last 9 digits of $\sum S(F_k)$ for $2 ≤ k ≤ 1\\,234\\,567\\,890\\,1
 
 # --hints--
 
-`integerValuedPolynomials()` should return `356019862`.
+`integerValuedPolynomials()` має повернути `356019862`.
 
 ```js
 assert.strictEqual(integerValuedPolynomials(), 356019862);

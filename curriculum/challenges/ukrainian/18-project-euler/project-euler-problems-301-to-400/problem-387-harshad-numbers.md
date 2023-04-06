@@ -32,7 +32,7 @@ Find the sum of the strong, right truncatable Harshad primes less than ${10}^{14
 
 # --hints--
 
-`harshadNumbers()` should return `696067597313468`.
+`harshadNumbers()` має повернути `696067597313468`.
 
 ```js
 assert.strictEqual(harshadNumbers(), 696067597313468);

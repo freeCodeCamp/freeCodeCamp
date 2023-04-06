@@ -36,7 +36,7 @@ Find the last 9 digits of $\sum G(n)$ for $1 ≤ n &lt; 16$.
 
 # --hints--
 
-`weakGoodsteinSequence()` should return `173214653`.
+`weakGoodsteinSequence()` має повернути `173214653`.
 
 ```js
 assert.strictEqual(weakGoodsteinSequence(), 173214653);

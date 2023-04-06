@@ -20,7 +20,7 @@ Find $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Give your answer modulo
 
 # --hints--
 
-`gatheringTheBeans()` should return `5032316`.
+`gatheringTheBeans()` має повернути `5032316`.
 
 ```js
 assert.strictEqual(gatheringTheBeans(), 5032316);

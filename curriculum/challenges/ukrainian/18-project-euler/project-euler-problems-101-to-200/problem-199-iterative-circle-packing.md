@@ -18,19 +18,19 @@ What fraction of the area is not covered by circles after `n` iterations? Give y
 
 # --hints--
 
-`iterativeCirclePacking(10)` should return a number.
+`iterativeCirclePacking(10)` має повернути число.
 
 ```js
 assert(typeof iterativeCirclePacking(10) === 'number');
 ```
 
-`iterativeCirclePacking(10)` should return `0.00396087`.
+`iterativeCirclePacking(10)` має повернути `0.00396087`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(10), 0.00396087);
 ```
 
-`iterativeCirclePacking(3)` should return `0.06790342`.
+`iterativeCirclePacking(3)` має повернути `0.06790342`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(3), 0.06790342);

@@ -20,25 +20,25 @@ d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>
 
 # --hints--
 
-`champernownesConstant(100)` should return a number.
+`champernownesConstant(100)` має повернути число.
 
 ```js
 assert(typeof champernownesConstant(100) === 'number');
 ```
 
-`champernownesConstant(100)` should return 5.
+`champernownesConstant(100)` має повернути 5.
 
 ```js
 assert.strictEqual(champernownesConstant(100), 5);
 ```
 
-`champernownesConstant(1000)` should return 15.
+`champernownesConstant(1000)` має повернути 15.
 
 ```js
 assert.strictEqual(champernownesConstant(1000), 15);
 ```
 
-`champernownesConstant(1000000)` should return 210.
+`champernownesConstant(1000000)` має повернути 210.
 
 ```js
 assert.strictEqual(champernownesConstant(1000000), 210);
