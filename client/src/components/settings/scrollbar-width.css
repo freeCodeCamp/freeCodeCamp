@@ -1,0 +1,58 @@
+input.scrollbar-width[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0.5em;
+  border: 1px solid #8c8c8c;
+}
+
+.dark-palette input.scrollbar-width[type='range'] {
+  border: 1px solid #fff;
+}
+
+input.scrollbar-width[type='range']:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
+input.scrollbar-width[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  background: #fff;
+}
+
+input.scrollbar-width[type='range']::-webkit-slider-thumb {
+  /* box-shadow is needed to allow left hand side of slider track to have 
+     same color as right side. */
+  box-shadow: 1px 1px 1px #3d3d3d;
+  background: #3d3d3d;
+  -webkit-appearance: none;
+  width: 19px;
+  border: 0;
+}
+
+input.scrollbar-width[type='range']::-moz-range-track {
+  width: 100%;
+  height: 25px;
+  background: #fff;
+}
+
+input.scrollbar-width[type='range']::-moz-range-progress {
+  background: #fff;
+  height: 25px;
+}
+
+input.scrollbar-width[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #3d3d3d;
+  border: 0;
+  height: 25px;
+  width: 19px;
+  background: #3d3d3d;
+}
+
+.scrollbar-width + svg {
+  position: relative;
+  top: -5px;
+}
+
+.range__tick {
+  fill: var(--secondary-color);
+}
