@@ -159,6 +159,10 @@ const StepPreview = ({
   );
 };
 
+const defaultOutput = `/**
+* Your test output will go here
+*/`;
+
 // Component
 function ShowClassic({
   challengeFiles: reduxChallengeFiles,
@@ -424,14 +428,7 @@ function ShowClassic({
             notes={<Notes notes={notes} />}
             preview={<StepPreview disableIframe={resizing} />}
             testOutput={
-              <Output
-                defaultOutput={`
-      /**
-      * ${t('learn.test-output')}
-      */
-      `}
-                output={output}
-              />
+              <Output defaultOutput={defaultOutput} output={output} />
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
@@ -458,14 +455,7 @@ function ShowClassic({
             preview={<StepPreview disableIframe={resizing} />}
             resizeProps={resizeProps}
             testOutput={
-              <Output
-                defaultOutput={`
-      /**
-      * ${t('learn.test-output')}
-      */
-      `}
-                output={output}
-              />
+              <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
           />
