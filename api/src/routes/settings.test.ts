@@ -69,6 +69,10 @@ describe('settingRoutes', () => {
       });
 
       expect(response?.statusCode).toEqual(200);
+      expect(response?.body).toEqual({
+        message: 'flash.updated-preferences',
+        type: 'success'
+      });
       expect(user?.profileUI).toEqual(profileUI);
     });
 

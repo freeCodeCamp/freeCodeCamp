@@ -59,8 +59,14 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             }
           }
         });
+
+        return {
+          message: 'flash.updated-preferences',
+          type: 'success'
+        } as const;
       } catch (err) {
         fastify.log.error(err);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
   );
