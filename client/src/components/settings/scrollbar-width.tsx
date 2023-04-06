@@ -8,8 +8,6 @@ import './scrollbar-width.css';
 export default function ScrollbarWidthSettings(): JSX.Element {
   const { t } = useTranslation();
   const [scrollbarWidth, setScrollbarWidth] = useState(getScrollbarWidth());
-  const tickHeight = 10;
-  const tickWidth = 3;
 
   function getScrollbarWidth() {
     const storedWidth = parseInt(store.get('monacoScrollbarWidth'));
@@ -25,8 +23,7 @@ export default function ScrollbarWidthSettings(): JSX.Element {
   return (
     <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
       <label htmlFor='scrollbar-width-slider'>
-        {t('settings.scrollbar-width')}:{' '}
-        <span aria-hidden='true'>{scrollbarWidth}</span>
+        {t('settings.scrollbar-width')}
       </label>
       <input
         type='range'
@@ -38,48 +35,21 @@ export default function ScrollbarWidthSettings(): JSX.Element {
         defaultValue={scrollbarWidth}
         onInput={handleChange}
       />
-      <svg
-        role='presentation'
-        width='100%'
-        height={tickHeight}
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <rect
-          className='range__tick'
-          x='8'
-          y='0'
-          width={tickWidth}
-          height={tickHeight}
-        ></rect>
-        <rect
-          className='range__tick'
-          x='25.6%'
-          y='0'
-          width={tickWidth}
-          height={tickHeight}
-        ></rect>
-        <rect
-          className='range__tick'
-          x='50%'
-          y='0'
-          width={tickWidth}
-          height={tickHeight}
-        ></rect>
-        <rect
-          className='range__tick'
-          x='74%'
-          y='0'
-          width={tickWidth}
-          height={tickHeight}
-        ></rect>
-        <rect
-          className='range__tick'
-          x='98.25%'
-          y='0'
-          width={tickWidth}
-          height={tickHeight}
-        ></rect>
-      </svg>
+      <div className='scrollbar-width-numbers' aria-hidden='true'>
+        <span {...(scrollbarWidth === 5 && { className: 'selected' })}>5</span>
+        <span {...(scrollbarWidth === 10 && { className: 'selected' })}>
+          10
+        </span>
+        <span {...(scrollbarWidth === 15 && { className: 'selected' })}>
+          15
+        </span>
+        <span {...(scrollbarWidth === 20 && { className: 'selected' })}>
+          20
+        </span>
+        <span {...(scrollbarWidth === 25 && { className: 'selected' })}>
+          25
+        </span>
+      </div>
       <Spacer size='medium'></Spacer>
     </Form>
   );

@@ -1,7 +1,7 @@
 input.scrollbar-width[type='range'] {
   -webkit-appearance: none;
   appearance: none;
-  margin-top: 0.5em;
+  margin-top: 1em;
   border: 1px solid #8c8c8c;
 }
 
@@ -11,7 +11,7 @@ input.scrollbar-width[type='range'] {
 
 input.scrollbar-width[type='range']:focus-visible {
   outline: 3px solid var(--focus-outline-color);
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 input.scrollbar-width[type='range']::-webkit-slider-runnable-track {
@@ -48,11 +48,33 @@ input.scrollbar-width[type='range']::-moz-range-thumb {
   background: #3d3d3d;
 }
 
-.scrollbar-width + svg {
-  position: relative;
-  top: -5px;
+.scrollbar-width-numbers {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.range__tick {
-  fill: var(--secondary-color);
+.scrollbar-width-numbers span:nth-child(1) {
+  position: relative;
+  left: 0.3rem;
+}
+
+.scrollbar-width-numbers span:nth-child(2) {
+  position: relative;
+  left: 0.425rem;
+}
+
+.scrollbar-width-numbers span:nth-child(3) {
+  position: relative;
+  left: 0.325rem;
+}
+
+.scrollbar-width-numbers span:nth-child(4) {
+  position: relative;
+  left: 0.175rem;
+}
+
+.scrollbar-width-numbers .selected {
+  font-weight: 900;
+  background-color: transparent;
 }
