@@ -165,75 +165,88 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>
-          <About
-            about={about}
-            currentTheme={theme}
-            location={location}
-            name={name}
-            picture={picture}
-            points={points}
-            sound={sound}
-            keyboardShortcuts={keyboardShortcuts}
-            submitNewAbout={submitNewAbout}
-            toggleNightMode={toggleNightMode}
-            toggleSoundMode={toggleSoundMode}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            username={username}
-          />
-          <Spacer size='medium' />
-          <Privacy />
-          <Spacer size='medium' />
-          <Email
-            email={email}
-            isEmailVerified={isEmailVerified}
-            sendQuincyEmail={sendQuincyEmail}
-            updateQuincyEmail={updateQuincyEmail}
-          />
-          <Spacer size='medium' />
-          <Internet
-            githubProfile={githubProfile}
-            linkedin={linkedin}
-            twitter={twitter}
-            updateSocials={updateSocials}
-            website={website}
-          />
-          <Spacer size='medium' />
-          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer size='medium' />
-          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer size='medium' />
-          <Certification
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            username={username}
-            verifyCert={verifyCert}
-          />
+          <Spacer size='medium'>
+            <About
+              about={about}
+              currentTheme={theme}
+              location={location}
+              name={name}
+              picture={picture}
+              points={points}
+              sound={sound}
+              keyboardShortcuts={keyboardShortcuts}
+              submitNewAbout={submitNewAbout}
+              toggleNightMode={toggleNightMode}
+              toggleSoundMode={toggleSoundMode}
+              toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+              username={username}
+            />
+          </Spacer>
+          <Spacer size='medium'>
+            <Privacy />
+          </Spacer>
+          <Spacer size='medium'>
+            <Email
+              email={email}
+              isEmailVerified={isEmailVerified}
+              sendQuincyEmail={sendQuincyEmail}
+              updateQuincyEmail={updateQuincyEmail}
+            />
+          </Spacer>
+          <Spacer size='medium'>
+            <Internet
+              githubProfile={githubProfile}
+              linkedin={linkedin}
+              twitter={twitter}
+              updateSocials={updateSocials}
+              website={website}
+            />
+          </Spacer>
+          <Spacer size='medium'>
+            <Portfolio
+              portfolio={portfolio}
+              updatePortfolio={updatePortfolio}
+            />
+          </Spacer>
+          <Spacer size='medium'>
+            <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          </Spacer>
+          <Spacer size='medium'>
+            <Certification
+              completedChallenges={completedChallenges}
+              createFlashMessage={createFlashMessage}
+              is2018DataVisCert={is2018DataVisCert}
+              isApisMicroservicesCert={isApisMicroservicesCert}
+              isBackEndCert={isBackEndCert}
+              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+              isDataVisCert={isDataVisCert}
+              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+              isFrontEndCert={isFrontEndCert}
+              isFrontEndLibsCert={isFrontEndLibsCert}
+              isFullStackCert={isFullStackCert}
+              isHonest={isHonest}
+              isInfosecCertV7={isInfosecCertV7}
+              isInfosecQaCert={isInfosecQaCert}
+              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isQaCertV7={isQaCertV7}
+              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRespWebDesignCert={isRespWebDesignCert}
+              isSciCompPyCertV7={isSciCompPyCertV7}
+              username={username}
+              verifyCert={verifyCert}
+            />
+          </Spacer>
           {userToken && (
             <>
-              <Spacer size='medium' />
-              <UserToken />
+              <Spacer size='medium'>
+                <UserToken />
+              </Spacer>
             </>
           )}
-          <Spacer size='medium' />
-          <DangerZone />
+          <Spacer size='medium'>
+            <DangerZone />
+          </Spacer>
         </main>
       </Grid>
     </>
