@@ -77,6 +77,7 @@ function Camper({
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
+  const hasBadge = isDonating || isTopContributor;
   return (
     <div>
       <Row>
@@ -106,11 +107,15 @@ function Camper({
           <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
-      {isDonating && (
+      {hasBadge && (
         <dl className='badges'>
-          <FontAwesomeIcon icon={faHeart} />
-          <dt className='supporter'>{t('profile.supporter')}</dt>
-          <dd>{t('donate.supporter')}</dd>
+          {isDonating && (
+            <>
+              <FontAwesomeIcon icon={faHeart} />
+              <dt className='supporter'>{t('profile.supporter')}</dt>
+              <dd>{t('donate.supporter')}</dd>
+            </>
+          )}
           {isTopContributor && (
             <>
               <FontAwesomeIcon icon={faAward} />
