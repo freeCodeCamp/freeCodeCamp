@@ -6,9 +6,14 @@ describe('blockNameify', () => {
     expect(result).toBe('Back End Development and APIs');
   });
 
+  it('should use preformatted words when they exist', () => {
+    const result = blockNameify('html-css-javascript-fcc-freecodecamp');
+    expect(result).toBe('HTML CSS JavaScript fCC freeCodeCamp');
+  });
+
   it('should not format prepositions', () => {
-    const result = blockNameify('and-for-of-the-up-with');
-    expect(result).toBe('and for of the up with');
+    const result = blockNameify('and-for-of-the-up-with-by-a');
+    expect(result).toBe('and for of the up with by a');
   });
 
   it('should format javascript to JavaScript', () => {
