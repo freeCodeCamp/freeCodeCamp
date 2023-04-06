@@ -69,6 +69,17 @@ jobs:
           flutter pub get
           flutter test test/widget_test.dart
 
+        # This is a workaround for the fact that Cypress does not support
+        # running in a sub-directory.
+        #
+        # In our cypress config, we default to the cypress/e2e/default directory.
+        # We need to change this to cypress/e2e/ for the specific tests we are running
+        # in this workflow.
+        #
+      - name: Adjust the Cypress Config for 3rd party donation tests
+        run: |
+          sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
+
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
