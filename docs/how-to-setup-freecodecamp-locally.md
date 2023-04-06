@@ -25,7 +25,7 @@ We have automated the process of installing all the dependencies & tools you wil
 There are various ways to launch an GitPod workspace:
 
 1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
-   
+
    For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
 
    That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
@@ -81,9 +81,8 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Install a code editor of your choice.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+3. Install a code editor of your choice. If you aren't sure which one to use, we recommend [Visual Studio Code](https://code.visualstudio.com/) — it's free and open source.
 
 4. Set up linting for your code editor.
 
