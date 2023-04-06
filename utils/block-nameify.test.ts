@@ -12,8 +12,8 @@ describe('blockNameify', () => {
   });
 
   it('should not format prepositions', () => {
-    const result = blockNameify('and-for-of-the-up-with-by');
-    expect(result).toBe('and for of the up with by');
+    const result = blockNameify('and-for-of-the-up-with-by-a');
+    expect(result).toBe('and for of the up with by a');
   });
 
   it('should format javascript to JavaScript', () => {
