@@ -35,12 +35,28 @@ const titles = {
 
 describe('The hotkeys should work correctly', () => {
   beforeEach(() => {
+    cy.visit('/');
+    cy.viewport(1200, 660);
+    cy.contains('Learn to code — for free.')
+      .should('exist')
+      .then(() => cy.login())
+      .then(() => cy.visit('/settings'))
+      .then(() =>
+        // enable shortcut
+        cy
+          .get('form[data-testid="fcc-enable-shortcuts-setting"]')
+          .within(() => {
+            cy.contains('On').click();
+          })
+      );
+
+    /*
     cy.login();
-    cy.visit('/settings');
-    // enable shortcuts
+    cy.visit("/settings");
     cy.get('form[data-testid="fcc-enable-shortcuts-setting"]').within(() => {
       cy.contains('On').click();
     });
+    */
   });
   it('should be possible to navigate to the next challenge/projects and previous', () => {
     cy.visit(links.classic1);
