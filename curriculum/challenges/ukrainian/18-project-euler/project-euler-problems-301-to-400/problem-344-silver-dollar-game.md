@@ -30,7 +30,7 @@ Find $W(1\\,000\\,000, 100)$ modulo the semiprime $1000\\,036\\,000\\,099 (= 1\\
 
 # --hints--
 
-`silverDollarGame()` should return `65579304332`.
+`silverDollarGame()` має повернути `65579304332`.
 
 ```js
 assert.strictEqual(silverDollarGame(), 65579304332);

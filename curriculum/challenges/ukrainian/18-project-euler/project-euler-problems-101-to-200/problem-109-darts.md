@@ -31,7 +31,7 @@ Note that D1 D2 is considered different from D2 D1 as they finish on different d
 
 # --hints--
 
-`darts()` should return `38182`.
+`darts()` має повернути `38182`.
 
 ```js
 assert.strictEqual(darts(), 38182);

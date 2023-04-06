@@ -21,7 +21,7 @@ How many solutions has this equation for $1 ≤ n ≤ 9$?
 
 # --hints--
 
-`diophantineEquation()` should return `53490`.
+`diophantineEquation()` має повернути `53490`.
 
 ```js
 assert.strictEqual(diophantineEquation(), 53490);

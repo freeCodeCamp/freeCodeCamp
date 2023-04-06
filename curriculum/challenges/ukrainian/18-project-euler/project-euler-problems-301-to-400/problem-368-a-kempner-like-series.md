@@ -25,7 +25,7 @@ Find the value the series converges to. Give your answer rounded to 10 digits be
 
 # --hints--
 
-`kempnerLikeSeries()` should return `253.6135092068`.
+`kempnerLikeSeries()` має повернути `253.6135092068`.
 
 ```js
 assert.strictEqual(kempnerLikeSeries(), 253.6135092068);

@@ -26,7 +26,7 @@ We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become in
 
 # --hints--
 
-`modifiedGoldenNuggets()` should return `5673835352990`
+`modifiedGoldenNuggets()` має повернути `5673835352990`
 
 ```js
 assert.strictEqual(modifiedGoldenNuggets(), 5673835352990);

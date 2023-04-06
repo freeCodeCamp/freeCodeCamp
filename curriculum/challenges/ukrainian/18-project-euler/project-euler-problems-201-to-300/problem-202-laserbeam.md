@@ -20,7 +20,7 @@ In how many ways can a laser beam enter at vertex $C$, bounce off 12017639147 su
 
 # --hints--
 
-`laserbeam()` should return `1209002624`.
+`laserbeam()` має повернути `1209002624`.
 
 ```js
 assert.strictEqual(laserbeam(), 1209002624);

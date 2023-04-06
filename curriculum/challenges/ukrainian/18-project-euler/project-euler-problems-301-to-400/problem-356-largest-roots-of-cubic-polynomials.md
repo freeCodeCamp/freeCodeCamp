@@ -18,7 +18,7 @@ Find the last eight digits of $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987
 
 # --hints--
 
-`rootsOfCubicPolynomials()` should return `28010159`.
+`rootsOfCubicPolynomials()` має повернути `28010159`.
 
 ```js
 assert.strictEqual(rootsOfCubicPolynomials(), 28010159);

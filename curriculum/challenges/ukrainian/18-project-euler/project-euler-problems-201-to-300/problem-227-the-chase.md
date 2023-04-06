@@ -24,7 +24,7 @@ In a game with 100 players, what is the expected number of turns the game lasts?
 
 # --hints--
 
-`theChase()` should return `3780.618622`.
+`theChase()` має повернути `3780.618622`.
 
 ```js
 assert.strictEqual(theChase(), 3780.618622);

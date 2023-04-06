@@ -16,7 +16,7 @@ Find $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
 
 # --hints--
 
-`totientSum()` should return `754862080`.
+`totientSum()` має повернути `754862080`.
 
 ```js
 assert.strictEqual(totientSum(), 754862080);

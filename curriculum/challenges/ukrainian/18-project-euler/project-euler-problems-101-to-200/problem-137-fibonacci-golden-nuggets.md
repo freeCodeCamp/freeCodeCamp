@@ -33,7 +33,7 @@ Find the 15th golden nugget.
 
 # --hints--
 
-`goldenNugget()` should return `1120149658760`.
+`goldenNugget()` має повернути `1120149658760`.
 
 ```js
 assert.strictEqual(goldenNugget(), 1120149658760);

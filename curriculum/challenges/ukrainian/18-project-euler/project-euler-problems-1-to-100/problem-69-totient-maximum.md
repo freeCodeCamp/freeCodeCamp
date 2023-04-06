@@ -32,31 +32,31 @@ Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ i
 
 # --hints--
 
-`totientMaximum(10)` should return a number.
+`totientMaximum(10)` має повернути число.
 
 ```js
 assert(typeof totientMaximum(10) === 'number');
 ```
 
-`totientMaximum(10)` should return `6`.
+`totientMaximum(10)` має повернути `6`.
 
 ```js
 assert.strictEqual(totientMaximum(10), 6);
 ```
 
-`totientMaximum(10000)` should return `2310`.
+`totientMaximum(10000)` має повернути `2310`.
 
 ```js
 assert.strictEqual(totientMaximum(10000), 2310);
 ```
 
-`totientMaximum(500000)` should return `30030`.
+`totientMaximum(500000)` має повернути `30030`.
 
 ```js
 assert.strictEqual(totientMaximum(500000), 30030);
 ```
 
-`totientMaximum(1000000)` should return `510510`.
+`totientMaximum(1000000)` має повернути `510510`.
 
 ```js
 assert.strictEqual(totientMaximum(1000000), 510510);

@@ -28,7 +28,7 @@ Find $C({10}^{17})$.
 
 # --hints--
 
-`crisscrossEllipses()` should return `1199215615081353`.
+`crisscrossEllipses()` має повернути `1199215615081353`.
 
 ```js
 assert.strictEqual(crisscrossEllipses(), 1199215615081353);

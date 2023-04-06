@@ -39,7 +39,7 @@ Find $\sum GF(t)$ for$ 2 ≤ t ≤ 45$.
 
 # --hints--
 
-`rudinShapiroSequence()` should return `3354706415856333000`.
+`rudinShapiroSequence()` має повернути `3354706415856333000`.
 
 ```js
 assert.strictEqual(rudinShapiroSequence(), 3354706415856333000);

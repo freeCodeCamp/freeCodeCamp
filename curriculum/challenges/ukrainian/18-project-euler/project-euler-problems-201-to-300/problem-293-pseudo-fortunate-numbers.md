@@ -20,7 +20,7 @@ Find the sum of all distinct pseudo-Fortunate numbers for admissible numbers $N$
 
 # --hints--
 
-`pseudoFortunateNumbers()` should return `2209`.
+`pseudoFortunateNumbers()` має повернути `2209`.
 
 ```js
 assert.strictEqual(pseudoFortunateNumbers(), 2209);

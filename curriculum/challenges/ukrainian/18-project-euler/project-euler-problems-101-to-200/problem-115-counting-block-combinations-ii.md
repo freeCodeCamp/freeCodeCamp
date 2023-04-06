@@ -24,7 +24,7 @@ For m = 50, find the least value of `n` for which the fill-count function first 
 
 # --hints--
 
-`countingBlockTwo()` should return `168`.
+`countingBlockTwo()` має повернути `168`.
 
 ```js
 assert.strictEqual(countingBlockTwo(), 168);

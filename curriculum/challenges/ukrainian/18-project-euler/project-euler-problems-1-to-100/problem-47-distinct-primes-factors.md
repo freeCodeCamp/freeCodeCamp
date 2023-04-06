@@ -27,25 +27,25 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 # --hints--
 
-`distinctPrimeFactors(2, 2)` should return a number.
+`distinctPrimeFactors(2, 2)` має повернути число.
 
 ```js
 assert(typeof distinctPrimeFactors(2, 2) === 'number');
 ```
 
-`distinctPrimeFactors(2, 2)` should return 14.
+`distinctPrimeFactors(2, 2)` має повернути 14.
 
 ```js
 assert.strictEqual(distinctPrimeFactors(2, 2), 14);
 ```
 
-`distinctPrimeFactors(3, 3)` should return 644.
+`distinctPrimeFactors(3, 3)` має повернути 644.
 
 ```js
 assert.strictEqual(distinctPrimeFactors(3, 3), 644);
 ```
 
-`distinctPrimeFactors(4, 4)` should return 134043.
+`distinctPrimeFactors(4, 4)` має повернути 134043.
 
 ```js
 assert.strictEqual(distinctPrimeFactors(4, 4), 134043);

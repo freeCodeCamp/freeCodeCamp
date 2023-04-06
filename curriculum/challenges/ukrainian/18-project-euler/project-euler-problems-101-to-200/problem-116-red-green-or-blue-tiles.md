@@ -28,7 +28,7 @@ Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing 
 
 # --hints--
 
-`redGreenBlueOne()` should return `20492570929`.
+`redGreenBlueOne()` має повернути `20492570929`.
 
 ```js
 assert.strictEqual(redGreenBlueOne(), 20492570929);

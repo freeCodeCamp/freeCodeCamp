@@ -21,7 +21,7 @@ Using `sets`, an array with one-hundred sets, containing seven to twelve element
 
 # --hints--
 
-`testingSpecialSubsetSums(testSets)` should return `73702`.
+`testingSpecialSubsetSums(testSets)` має повернути `73702`.
 
 ```js
 assert.strictEqual(testingSpecialSubsetSums(_testSets), 73702);

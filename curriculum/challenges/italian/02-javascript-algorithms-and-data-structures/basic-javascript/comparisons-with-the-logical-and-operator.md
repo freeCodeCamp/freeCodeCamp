@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 A volte dovrai testare più di una cosa alla volta. L'operatore logico <dfn>and</dfn> (`&&`) restituisce `true` se e solo se gli <dfn>operandi</dfn> a sinistra e a destra di esso sono veri.
 
-Lo stesso effetto può essere ottenuto annidando un'istruzione if all'interno di un altro if:
+The same effect could be achieved by nesting an `if` statement inside another `if`.
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-restituirà `Yes` solo se `num` è maggiore di `5` e minore a `10`. La stessa logica può essere scritta come:
+This code will return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written with the <dfn>logical and</dfn> operator.
 
 ```js
 if (num > 5 && num < 10) {

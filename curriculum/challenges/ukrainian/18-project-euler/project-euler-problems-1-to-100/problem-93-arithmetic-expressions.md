@@ -27,13 +27,13 @@ Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which 
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` має повернути число.
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` має повернути 1258.
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

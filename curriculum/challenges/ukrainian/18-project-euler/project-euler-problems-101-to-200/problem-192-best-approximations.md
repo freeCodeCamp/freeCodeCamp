@@ -20,7 +20,7 @@ Find the sum of all denominators of the best approximations to $\sqrt{n}$ for th
 
 # --hints--
 
-`bestApproximations()` should return `57060635927998344`.
+`bestApproximations()` має повернути `57060635927998344`.
 
 ```js
 assert.strictEqual(bestApproximations(), 57060635927998344);

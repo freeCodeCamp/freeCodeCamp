@@ -21,7 +21,7 @@ Find $f(43!)$.
 
 # --hints--
 
-`factorisationTriples()` should return `1177163565297340400`.
+`factorisationTriples()` має повернути `1177163565297340400`.
 
 ```js
 assert.strictEqual(factorisationTriples(), 1177163565297340400);

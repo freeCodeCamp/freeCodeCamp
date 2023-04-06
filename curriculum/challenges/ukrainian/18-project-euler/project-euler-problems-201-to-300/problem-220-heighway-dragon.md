@@ -25,13 +25,13 @@ What is the position of the cursor after ${10}^{12}$ steps in $D_{50}$? Give you
 
 # --hints--
 
-`heighwayDragon()` should return a string.
+`heighwayDragon()` має повернути рядок.
 
 ```js
 assert(typeof heighwayDragon() === 'string');
 ```
 
-`heighwayDragon()` should return the string `139776,963904`.
+`heighwayDragon()` має повернути рядок `139776,963904`.
 
 ```js
 assert.strictEqual(heighwayDragon(), '139776,963904');

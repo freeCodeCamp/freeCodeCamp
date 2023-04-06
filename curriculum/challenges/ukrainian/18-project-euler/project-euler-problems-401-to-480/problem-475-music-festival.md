@@ -22,7 +22,7 @@ Find $f(600)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`musicFestival()` should return `75780067`.
+`musicFestival()` має повернути `75780067`.
 
 ```js
 assert.strictEqual(musicFestival(), 75780067);

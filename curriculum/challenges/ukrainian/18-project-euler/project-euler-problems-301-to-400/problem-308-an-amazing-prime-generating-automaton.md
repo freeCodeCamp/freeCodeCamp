@@ -28,7 +28,7 @@ If someone uses the above Fractran program to solve Project Euler Problem 7 (fin
 
 # --hints--
 
-`primeGeneratingAutomation()` should return `1539669807660924`.
+`primeGeneratingAutomation()` має повернути `1539669807660924`.
 
 ```js
 assert.strictEqual(primeGeneratingAutomation(), 1539669807660924);

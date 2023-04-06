@@ -16,7 +16,7 @@ Find $Co(200\\,000)$.
 
 # --hints--
 
-`maximalCoprimeSubset()` should return `1726545007`.
+`maximalCoprimeSubset()` має повернути `1726545007`.
 
 ```js
 assert.strictEqual(maximalCoprimeSubset(), 1726545007);

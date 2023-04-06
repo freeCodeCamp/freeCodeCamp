@@ -20,7 +20,7 @@ Find the sum of the first twenty-five composite values of $n$ for which $GCD(n, 
 
 # --hints--
 
-`compositeRepunit()` should return `149253`.
+`compositeRepunit()` має повернути `149253`.
 
 ```js
 assert.strictEqual(compositeRepunit(), 149253);

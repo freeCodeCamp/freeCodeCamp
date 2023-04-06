@@ -16,31 +16,31 @@ Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, wh
 
 # --hints--
 
-`doubleBasePalindromes(1000)` should return a number.
+`doubleBasePalindromes(1000)` має повернути число.
 
 ```js
 assert(typeof doubleBasePalindromes(1000) === 'number');
 ```
 
-`doubleBasePalindromes(1000)` should return 1772.
+`doubleBasePalindromes(1000)` має повернути 1772.
 
 ```js
 assert(doubleBasePalindromes(1000) == 1772);
 ```
 
-`doubleBasePalindromes(50000)` should return 105795.
+`doubleBasePalindromes(50000)` має повернути 105795.
 
 ```js
 assert(doubleBasePalindromes(50000) == 105795);
 ```
 
-`doubleBasePalindromes(500000)` should return 286602.
+`doubleBasePalindromes(500000)` має повернути 286602.
 
 ```js
 assert(doubleBasePalindromes(500000) == 286602);
 ```
 
-`doubleBasePalindromes(1000000)` should return 872187.
+`doubleBasePalindromes(1000000)` має повернути 872187.
 
 ```js
 assert(doubleBasePalindromes(1000000) == 872187);

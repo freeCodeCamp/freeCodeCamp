@@ -17,37 +17,37 @@ Find the sum of the digits `n`!
 
 # --hints--
 
-`sumFactorialDigits(10)` should return a number.
+`sumFactorialDigits(10)` має повернути число.
 
 ```js
 assert(typeof sumFactorialDigits(10) === 'number');
 ```
 
-`sumFactorialDigits(10)` should return 27.
+`sumFactorialDigits(10)` має повернути 27.
 
 ```js
 assert.strictEqual(sumFactorialDigits(10), 27);
 ```
 
-`sumFactorialDigits(25)` should return 72.
+`sumFactorialDigits(25)` має повернути 72.
 
 ```js
 assert.strictEqual(sumFactorialDigits(25), 72);
 ```
 
-`sumFactorialDigits(50)` should return 216.
+`sumFactorialDigits(50)` має повернути 216.
 
 ```js
 assert.strictEqual(sumFactorialDigits(50), 216);
 ```
 
-`sumFactorialDigits(75)` should return 432.
+`sumFactorialDigits(75)` має повернути 432.
 
 ```js
 assert.strictEqual(sumFactorialDigits(75), 432);
 ```
 
-`sumFactorialDigits(100)` should return 648.
+`sumFactorialDigits(100)` має повернути 648.
 
 ```js
 assert.strictEqual(sumFactorialDigits(100), 648);

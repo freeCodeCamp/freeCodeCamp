@@ -30,7 +30,7 @@ What is the probability that the second player wins? Give your answer rounded to
 
 # --hints--
 
-`unfairWager()` should return `0.5276662759`.
+`unfairWager()` має повернути `0.5276662759`.
 
 ```js
 assert.strictEqual(unfairWager(), 0.5276662759);

@@ -20,7 +20,7 @@ Find the amount of chocolate in mm<sup>3</sup> required if $a = 3$ mm and $b = 1
 
 # --hints--
 
-`chocolateCoveredCandy()` should return `103.37870096`.
+`chocolateCoveredCandy()` має повернути `103.37870096`.
 
 ```js
 assert.strictEqual(chocolateCoveredCandy(), 103.37870096);

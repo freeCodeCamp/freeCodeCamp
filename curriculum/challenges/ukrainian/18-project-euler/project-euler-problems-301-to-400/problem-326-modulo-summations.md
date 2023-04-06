@@ -24,7 +24,7 @@ Find $f({10}^{12}, {10}^6)$.
 
 # --hints--
 
-`moduloSummations()` should return `1966666166408794400`.
+`moduloSummations()` має повернути `1966666166408794400`.
 
 ```js
 assert.strictEqual(moduloSummations(), 1966666166408794400);

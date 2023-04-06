@@ -20,7 +20,7 @@ Find $P(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`admissiblePaths()` should return `299742733`.
+`admissiblePaths()` має повернути `299742733`.
 
 ```js
 assert.strictEqual(admissiblePaths(), 299742733);

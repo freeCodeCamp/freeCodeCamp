@@ -20,31 +20,31 @@ Given that $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, how many right triangles can be
 
 # --hints--
 
-`rightTrianglesIntCoords(2)` should return a number.
+`rightTrianglesIntCoords(2)` має повернути число.
 
 ```js
 assert(typeof rightTrianglesIntCoords(2) === 'number');
 ```
 
-`rightTrianglesIntCoords(2)` should return `14`.
+`rightTrianglesIntCoords(2)` має повернути `14`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(2), 14);
 ```
 
-`rightTrianglesIntCoords(10)` should return `448`.
+`rightTrianglesIntCoords(10)` має повернути `448`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(10), 448);
 ```
 
-`rightTrianglesIntCoords(25)` should return `3207`.
+`rightTrianglesIntCoords(25)` має повернути `3207`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(25), 3207);
 ```
 
-`rightTrianglesIntCoords(50)` should return `14234`.
+`rightTrianglesIntCoords(50)` має повернути `14234`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(50), 14234);

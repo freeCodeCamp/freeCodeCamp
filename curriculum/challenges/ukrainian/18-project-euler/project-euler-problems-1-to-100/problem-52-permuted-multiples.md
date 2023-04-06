@@ -14,19 +14,19 @@ Find the smallest positive integer, such that multiplied by integers $\\{2, 3, \
 
 # --hints--
 
-`permutedMultiples(2)` should return a number.
+`permutedMultiples(2)` має повернути число.
 
 ```js
 assert(typeof permutedMultiples(2) === 'number');
 ```
 
-`permutedMultiples(2)` should return `125874`.
+`permutedMultiples(2)` має повернути `125874`.
 
 ```js
 assert.strictEqual(permutedMultiples(2), 125874);
 ```
 
-`permutedMultiples(6)` should return `142857`.
+`permutedMultiples(6)` має повернути `142857`.
 
 ```js
 assert.strictEqual(permutedMultiples(6), 142857);

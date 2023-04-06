@@ -33,13 +33,13 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 
 # --hints--
 
-`cubeDigitPairs()` should return a number.
+`cubeDigitPairs()` має повернути число.
 
 ```js
 assert(typeof cubeDigitPairs() === 'number');
 ```
 
-`cubeDigitPairs()` should return 1217.
+`cubeDigitPairs()` має повернути 1217.
 
 ```js
 assert.strictEqual(cubeDigitPairs(), 1217);

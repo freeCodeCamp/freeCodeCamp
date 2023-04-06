@@ -30,13 +30,13 @@ Give your answer as a string with comma separated integers, without any whitespa
 
 # --hints--
 
-`shortenedBinaryExpansionOfNumber()` should return a string.
+`shortenedBinaryExpansionOfNumber()` має повернути рядок.
 
 ```js
 assert(typeof shortenedBinaryExpansionOfNumber() === 'string');
 ```
 
-`shortenedBinaryExpansionOfNumber()` should return the string `1,13717420,8`.
+`shortenedBinaryExpansionOfNumber()` має повернути рядок `1,13717420,8`.
 
 ```js
 assert.strictEqual(shortenedBinaryExpansionOfNumber(), '1,13717420,8');

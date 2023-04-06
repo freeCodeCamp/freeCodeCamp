@@ -20,7 +20,7 @@ Find $T_5({10}^{18})$.
 
 # --hints--
 
-`factorialDivisibilityComparison()` should return `22173624649806`.
+`factorialDivisibilityComparison()` має повернути `22173624649806`.
 
 ```js
 assert.strictEqual(factorialDivisibilityComparison(), 22173624649806);

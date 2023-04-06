@@ -14,31 +14,31 @@ Find the sum of all the primes below `n`.
 
 # --hints--
 
-`primeSummation(17)` should return a number.
+`primeSummation(17)` має повернути число.
 
 ```js
 assert(typeof primeSummation(17) === 'number');
 ```
 
-`primeSummation(17)` should return 41.
+`primeSummation(17)` має повернути 41.
 
 ```js
 assert.strictEqual(primeSummation(17), 41);
 ```
 
-`primeSummation(2001)` should return 277050.
+`primeSummation(2001)` має повернути 277050.
 
 ```js
 assert.strictEqual(primeSummation(2001), 277050);
 ```
 
-`primeSummation(140759)` should return 873608362.
+`primeSummation(140759)` має повернути 873608362.
 
 ```js
 assert.strictEqual(primeSummation(140759), 873608362);
 ```
 
-`primeSummation(2000000)` should return 142913828922.
+`primeSummation(2000000)` має повернути 142913828922.
 
 ```js
 assert.strictEqual(primeSummation(2000000), 142913828922);

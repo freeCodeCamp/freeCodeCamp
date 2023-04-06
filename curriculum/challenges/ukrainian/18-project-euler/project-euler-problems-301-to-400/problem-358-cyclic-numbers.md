@@ -31,7 +31,7 @@ There is only one cyclic number for which, the eleven leftmost digits are 000000
 
 # --hints--
 
-`cyclicNumbers()` should return `3284144505`.
+`cyclicNumbers()` має повернути `3284144505`.
 
 ```js
 assert.strictEqual(cyclicNumbers(), 3284144505);
