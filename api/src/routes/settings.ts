@@ -8,6 +8,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  fastify.addHook('onRequest', fastify.authenticateSession);
+
   fastify.put(
     '/update-my-profileui',
     {
