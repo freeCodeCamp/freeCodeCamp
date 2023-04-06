@@ -14,16 +14,11 @@ dashedName: selecting-from-many-options-with-switch-statements
 这是 `switch` 语句的示例：
 
 ```js
-let eatapple = false;
-let eatorange = false;
-
 switch (fruit) {
   case "apple":
-    eatapple = True;
     console.log("The fruit is an apple");
     break;
   case "orange":
-    eatorange = True
     console.log("The fruit is an orange");
     break;
 }

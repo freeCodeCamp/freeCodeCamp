@@ -14,11 +14,16 @@ If you have many options to choose from, use a <dfn>switch</dfn> statement. A `s
 Here is an example of a `switch` statement:
 
 ```js
+let eatapple = false;
+let eatorange = false;
+
 switch (fruit) {
   case "apple":
+    eatapple = True;
     console.log("The fruit is an apple");
     break;
   case "orange":
+    eatorange = True
     console.log("The fruit is an orange");
     break;
 }
