@@ -1,86 +1,85 @@
-Follow these guidelines for setting up a development environment for freeCodeCamp. Esto es altamente recomendable si desea contribuir regularmente.
+Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCamp. Esto es altamente recomendable si desea contribuir regularmente.
 
-## Choose between Gitpod or your own machine (local setup)
+## Elige entre Gitpod o tu propia máquina (configuración local)
 
-If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
 
-Here are some pros and cons which should help you decide which option is best for you:
+Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
 
-| Gitpod                                                            | Your own machine (local setup)                                        |
-| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
-| No minimum hardware requirements                                  | Specific and minimum requirements                                     |
-| No need to install any software                                   | Additional software required                                          |
-| Always up to date copy of repository                              | Need to maintain a local copy of the repository                       |
-| Slower and can take a few minutes to launch                       | Faster and can be launched in seconds                                 |
-| Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
-| Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
+| Gitpod                                                                      | Su propia máquina (configuración local)                                            |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Sin requisitos mínimos de hardware                                          | Requisitos específicos y mínimos                                                   |
+| No es necesario instalar ningún software                                    | Software adicional necesario                                                       |
+| Copia del repositorio siempre actualizada                                   | Necesidad de mantener una copia local del repositorio                              |
+| Más lento y puede tardar unos minutos en iniciarse                          | Más rápido y puede ponerse en marcha en segundos                                   |
+| Necesita conexión a Internet para funcionar                                 | Requiere una conexión mínima a Internet (una vez configurado)                      |
+| Algunas tareas, como la compilación y las pruebas, pueden llevar más tiempo | Realización más rápida de las tareas (en función de las capacidades de tu máquina) |
 
-> [!ATTENTION] **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+> [!ATTENTION] **Nota:** Si utilizas Windows 10 u 11, tendrás que utilizar WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
 
-### How to prepare a Gitpod workspace
+### Cómo preparar un espacio de trabajo Gitpod
 
-We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. Con GitPod obtienes un entorno gratuito listo para codificar en pocos minutos, y es útil si no tienes acceso a ordenador o quieres hacer cambios puntuales.
 
-There are various ways to launch an GitPod workspace:
+Hay varias formas de lanzar un espacio de trabajo GitPod:
 
-1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
+1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
-   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
+   Por ejemplo, si visitas tu fork en `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, añade `gitpod.io/#` delante de la URL en la barra de direcciones y pulsa enter.
 
-   That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
+   Es decir, puedes navegar a `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` y debes ver un espacio de trabajo creado para ti. Esto funciona para cualquier repositorio o pull-request en GitHub.
 
-2. Alternatively install one of the below extensions for your browser.
+2. También puedes instalar una de las siguientes extensiones para tu navegador.
 
-   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
-   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - funciona con navegadores basados en Chromium como Google Chrome, Brave, Edge, etc.
+   - [Complemento para Firefox](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
-   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+   Una vez instalado, verás un botón 'GitPod' en cada repositorio, pull-request, etc. como un práctico atajo para lanzar un espacio de trabajo desde allí. Consulta la página de la extensión para más detalles, capturas de pantalla, etc.
 
-That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+Spanish Eso es todo, ahora puedes saltar a la sección 'sincronizar desde el padre' después de haber lanzado un espacio de trabajo GitPod. La mayor parte de esta guía se aplica a los espacios de trabajo GitPod, pero ten en cuenta [cómo funcionan las URLs & Puertos dentro de un GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
 
-### How to prepare your local machine
+### Cómo preparar tu máquina local
 
-Here is a minimum system requirement for running freeCodeCamp locally:
+A continuación se indican los requisitos mínimos del sistema para ejecutar freeCodeCamp localmente:
 
 - 8 GB RAM
-- Relatively fast CPU (4+ cores)
-- Windows 10 or 11 (with WSL), macOS, or Linux
+- CPU relativamente rápida (más de 4 núcleos)
+- Windows 10 u 11 (con WSL), macOS o Linux
 
-Start by installing the prerequisite software for your operating system.
+Comienza por instalar el software necesario para tu sistema operativo.
 
-We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+Apoyamos principalmente el desarrollo en Linux y sistemas basados en Unix como Ubuntu y macOS. Puedes desarrollar en Windows 10 u 11 sólo con WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
 
 
 #### Pre-requisitos:
 
-| Prerequisite                                                                                  | Version | Notes                                                                                       |
-| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `18.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                           |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
+| Pre-requisitos                                                                                | Versión | Notas                                                                                         |
+| --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `18.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                             |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                             |
 
-> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. Consulta [solución de problemas](#troubleshooting) para obtener más detalles.
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
+Si Node.js ya está instalado en tu máquina, ejecuta los siguientes comandos para validar las versiones:
 
 ```console
 node -v
 pnpm -v
 ```
 
-> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
+> [!TIP] Recomendamos encarecidamente actualizar a las últimas versiones estables del software mencionado anteriormente, también conocidas como versiones de soporte a largo plazo (LTS).
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Una vez instalados los requisitos previos, debe preparar su entorno de desarrollo. Esto es habitual en muchos flujos de trabajo de desarrollo, y sólo tendrá que hacerlo una vez.
 
 ##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+1. Instala [Git](https://git-scm.com/) o tu cliente Git favorito, si aún no lo has hecho. Actualiza a la última versión; la versión incluida con tu sistema operativo puede estar obsoleta.
 
-2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+2. (Opcional pero recomendado) [Configura una clave SSH](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
 
-3. Install a code editor of your choice.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+3. Install a code editor of your choice. If you aren't sure which one to use, we recommend [Visual Studio Code](https://code.visualstudio.com/) — it's free and open source.
 
 4. Set up linting for your code editor.
 
