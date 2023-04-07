@@ -25,4 +25,16 @@ describe('GET /', () => {
   test('return { "hello": "world"}', () => {
     expect(res?.body).toEqual({ hello: 'world' });
   });
+
+  test('should have OWASP recommended headers', async () => {
+    res = await request(fastify?.server).get('/');
+    expect(res?.headers).toMatchObject({
+      'cache-control': 'no-store',
+      'content-security-policy': "frame-ancestors 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      'strict-transport-security': 'max-age=300; includeSubDomains',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'DENY'
+    });
+  });
 });
