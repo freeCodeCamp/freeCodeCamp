@@ -40,8 +40,6 @@ async function createProject(
 ) {
   if (!title) {
     title = block;
-  } else if (title !== block) {
-    void updateBlockNames(block, title);
   }
   void updateIntroJson(superBlock, block, title);
   void updateHelpCategoryMap(block, helpCategory);
@@ -84,20 +82,6 @@ async function updateHelpCategoryMap(block: string, helpCategory: string) {
     fs.writeFile,
     helpCategoryPath,
     format(JSON.stringify(helpMap), { parser: 'json' })
-  );
-}
-
-async function updateBlockNames(block: string, title: string) {
-  const blockNamesPath = path.resolve(
-    __dirname,
-    '../../utils/preformatted-block-names.json'
-  );
-  const blockNames = await parseJson<Record<string, string>>(blockNamesPath);
-  blockNames[block] = title;
-  void withTrace(
-    fs.writeFile,
-    blockNamesPath,
-    format(JSON.stringify(blockNames), { parser: 'json' })
   );
 }
 
