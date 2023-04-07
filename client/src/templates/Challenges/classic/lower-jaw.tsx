@@ -9,7 +9,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import {
-  ChallengeNode,
+  ChallengeMeta,
   ChallengeWithCompletedNode
 } from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
@@ -18,8 +18,8 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 
 interface LowerJawProps {
+  challengeMeta: ChallengeMeta;
   completedPercent: number;
-  data?: { challengeNode: ChallengeNode };
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -34,8 +34,8 @@ interface LowerJawProps {
 }
 
 const LowerJaw = ({
+  challengeMeta: { id: lastChallengeId, superBlock, block },
   completedPercent,
-  data,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -197,13 +197,10 @@ const LowerJaw = ({
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
     const challengeOrder: ChallengeWithCompletedNode[] = getChallengesList({
-      userInputSuperBlock: data?.challengeNode.challenge.superBlock || '',
-      userInputBlock: data?.challengeNode.challenge.block || ''
+      userInputSuperBlock: superBlock || '',
+      userInputBlock: block || ''
     }) as ChallengeWithCompletedNode[];
-    if (
-      challengeOrder[challengeOrder.length - 1].id ===
-      data?.challengeNode.challenge.id
-    ) {
+    if (challengeOrder[challengeOrder.length - 1].id === lastChallengeId) {
       endOfProject.current = true;
     }
     const showShareButton =
@@ -224,10 +221,7 @@ const LowerJaw = ({
             <Reset />
           </button>
           {showShareButton && (
-            <Share
-              superBlock={data?.challengeNode.challenge.superBlock || ''}
-              block={data?.challengeNode.challenge.block || ''}
-            />
+            <Share superBlock={superBlock || ''} block={block || ''} />
           )}
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button

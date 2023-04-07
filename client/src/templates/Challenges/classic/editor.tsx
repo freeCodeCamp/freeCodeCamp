@@ -27,7 +27,7 @@ import {
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
-  ChallengeNode,
+  ChallengeMeta,
   Dimensions,
   Ext,
   FileKey,
@@ -71,8 +71,8 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
+  challengeMeta: ChallengeMeta;
   completedPercent: number;
-  data?: { challengeNode: ChallengeNode };
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
@@ -135,6 +135,7 @@ interface EditorProperties {
 }
 
 const mapStateToProps = createSelector(
+  challengeMetaSelector,
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
@@ -148,6 +149,7 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   completedPercentageSelector,
   (
+    challengeMeta: ChallengeMeta,
     attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -161,6 +163,7 @@ const mapStateToProps = createSelector(
     isChallengeCompleted: boolean,
     completedPercent: number
   ) => ({
+    challengeMeta,
     attempts,
     canFocus: open ? false : canFocus,
     challengeType,
@@ -672,8 +675,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     ReactDOM.render(
       <LowerJaw
+        challengeMeta={props.challengeMeta}
         completedPercent={props.completedPercent}
-        data={props.data}
         openHelpModal={props.openHelpModal}
         openResetModal={props.openResetModal}
         tryToExecuteChallenge={tryToExecuteChallenge}
