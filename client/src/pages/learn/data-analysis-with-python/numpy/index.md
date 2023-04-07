@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Numpy Lectures
-block: Numpy
+block: numpy
 superBlock: Data Analysis with Python
 ---
 

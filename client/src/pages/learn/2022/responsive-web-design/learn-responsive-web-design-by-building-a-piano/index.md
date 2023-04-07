@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn Responsive Web Design by Building a Piano Project
-block: Learn Responsive Web Design by Building a Piano
+block: learn-responsive-web-design-by-building-a-piano
 superBlock: Responsive Web Design
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to Build a Financial Calculator
-block: Build a Financial Calculator
+block: build-a-financial-calculator
 superBlock: College Algebra with Python
 ---
 

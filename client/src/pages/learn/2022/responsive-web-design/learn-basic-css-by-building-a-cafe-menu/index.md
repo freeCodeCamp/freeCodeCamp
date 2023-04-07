@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn Basic CSS by Building a Cafe Menu Project
-block: Learn Basic CSS by Building a Cafe Menu
+block: learn-basic-css-by-building-a-cafe-menu
 superBlock: Responsive Web Design
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Regular Expression Challenges
-block: Regular Expressions
+block: regular-expressions
 superBlock: JavaScript Algorithms and Data Structures
 ---
 

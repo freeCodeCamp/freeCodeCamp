@@ -1,6 +1,6 @@
 ---
 title: Introduction to Learn Fractions and Decimals
-block: Learn Fractions and Decimals
+block: learn-fractions-and-decimals
 superBlock: College Algebra with Python
 ---
 

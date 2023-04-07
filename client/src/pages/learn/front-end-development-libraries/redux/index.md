@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Redux Challenges
-block: Redux
+block: redux
 superBlock: Front End Development Libraries
 ---
 

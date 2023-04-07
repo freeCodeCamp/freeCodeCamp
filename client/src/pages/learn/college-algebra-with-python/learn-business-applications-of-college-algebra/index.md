@@ -1,6 +1,6 @@
 ---
 title: Introduction to Learn Business Applications of College Algebra
-block: Learn Business Applications of College Algebra
+block: learn-business-applications-of-college-algebra
 superBlock: College Algebra with Python
 ---
 

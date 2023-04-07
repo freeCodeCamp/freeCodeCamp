@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Applied Visual Design Challenges
-block: Applied Visual Design
+block: applied-visual-design
 superBlock: Responsive Web Design
 ---
 

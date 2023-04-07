@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Python for Penetration Testing Lectures
-block: Python for Penetration Testing
+block: python-for-penetration-testing
 superBlock: Information Security
 ---
 

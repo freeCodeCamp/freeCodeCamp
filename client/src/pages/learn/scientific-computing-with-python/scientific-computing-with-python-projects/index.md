@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Scientific Computing with Python Projects
-block: Scientific Computing with Python Projects
+block: scientific-computing-with-python-projects
 superBlock: Scientific Computing with Python
 ---
 

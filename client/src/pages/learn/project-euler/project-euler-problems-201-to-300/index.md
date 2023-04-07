@@ -1,6 +1,6 @@
 ---
 title: Project Euler Problems 201 to 300
-block: Project Euler Problems 201 to 300
+block: project-euler-problems-201-to-300
 superBlock: Project Euler
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Intermediate JavaScript Calorie Counter
-block: Intermediate JavaScript Calorie Counter
+block: intermediate-javascript-calorie-counter
 superBlock: JavaScript Algorithms and Data Structures
 ---
 

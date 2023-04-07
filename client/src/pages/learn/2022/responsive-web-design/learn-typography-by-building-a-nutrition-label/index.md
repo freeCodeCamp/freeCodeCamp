@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn Typography by Building a Nutrition Label Project
-block: Learn Typography by Building a Nutrition Label
+block: learn-typography-by-building-a-nutrition-label
 superBlock: Responsive Web Design
 ---
 

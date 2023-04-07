@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Data Analysis with Python Course Lectures
-block: Data Analysis with Python Course
+block: data-analysis-with-python-course
 superBlock: Data Analysis with Python
 ---
 

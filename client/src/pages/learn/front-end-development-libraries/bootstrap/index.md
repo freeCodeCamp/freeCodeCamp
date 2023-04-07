@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Bootstrap Challenges
-block: Bootstrap
+block: bootstrap
 superBlock: Front End Development Libraries
 ---
 

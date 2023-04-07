@@ -1,6 +1,6 @@
 ---
 title: Introduction to Learn Ratios and Proportions
-block: Learn Ratios and Proportions
+block: learn-ratios-and-proportions
 superBlock: College Algebra with Python
 ---
 

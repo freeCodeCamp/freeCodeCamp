@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Basic JavaScript RPG Game
-block: Basic JavaScript RPG Game
+block: basic-javascript-rpg-game
 superBlock: JavaScript Algorithms and Data Structures
 ---
 

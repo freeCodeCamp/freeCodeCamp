@@ -1,6 +1,6 @@
 ---
 title: Introduction to Learn How to Solve for X
-block: Learn How to Solve for X
+block: learn-how-to-solve-for-x
 superBlock: College Algebra with Python
 ---
 

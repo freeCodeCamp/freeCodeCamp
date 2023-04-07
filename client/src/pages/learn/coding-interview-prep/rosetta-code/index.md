@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Rosetta Code Problems
-block: Rosetta Code
+block: rosetta-code
 superBlock: Coding Interview Prep
 ---
 
