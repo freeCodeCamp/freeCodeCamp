@@ -18,7 +18,7 @@ Find $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
 
 # --hints--
 
-`multiplesWithSmallDigits()` should return `1111981904675169`.
+`multiplesWithSmallDigits()` має повернути `1111981904675169`.
 
 ```js
 assert.strictEqual(multiplesWithSmallDigits(), 1111981904675169);

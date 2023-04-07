@@ -20,7 +20,7 @@ Find the sum of all progressive perfect squares below one trillion (${10}^{12}$)
 
 # --hints--
 
-`progressivePerfectSquares()` should return `878454337159`.
+`progressivePerfectSquares()` має повернути `878454337159`.
 
 ```js
 assert.strictEqual(progressivePerfectSquares(), 878454337159);

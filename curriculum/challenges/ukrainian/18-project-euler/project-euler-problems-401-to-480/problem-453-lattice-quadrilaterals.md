@@ -22,7 +22,7 @@ Find $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
 
 # --hints--
 
-`latticeQuadrilaterals()` should return `104354107`.
+`latticeQuadrilaterals()` має повернути `104354107`.
 
 ```js
 assert.strictEqual(latticeQuadrilaterals(), 104354107);

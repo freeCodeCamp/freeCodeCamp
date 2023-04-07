@@ -30,31 +30,31 @@ How many chains, with a starting number below `n`, contain exactly sixty non-rep
 
 # --hints--
 
-`digitFactorialChains(2000)` should return a number.
+`digitFactorialChains(2000)` має повернути число.
 
 ```js
 assert(typeof digitFactorialChains(2000) === 'number');
 ```
 
-`digitFactorialChains(2000)` should return `6`.
+`digitFactorialChains(2000)` має повернути `6`.
 
 ```js
 assert.strictEqual(digitFactorialChains(2000), 6);
 ```
 
-`digitFactorialChains(100000)` should return `42`.
+`digitFactorialChains(100000)` має повернути `42`.
 
 ```js
 assert.strictEqual(digitFactorialChains(100000), 42);
 ```
 
-`digitFactorialChains(500000)` should return `282`.
+`digitFactorialChains(500000)` має повернути `282`.
 
 ```js
 assert.strictEqual(digitFactorialChains(500000), 282);
 ```
 
-`digitFactorialChains(1000000)` should return `402`.
+`digitFactorialChains(1000000)` має повернути `402`.
 
 ```js
 assert.strictEqual(digitFactorialChains(1000000), 402);

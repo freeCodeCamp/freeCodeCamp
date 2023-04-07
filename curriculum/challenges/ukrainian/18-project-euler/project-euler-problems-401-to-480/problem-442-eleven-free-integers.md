@@ -18,7 +18,7 @@ Find $E({10}^{18})$.
 
 # --hints--
 
-`elevenFreeIntegers()` should return `1295552661530920200`.
+`elevenFreeIntegers()` має повернути `1295552661530920200`.
 
 ```js
 assert.strictEqual(elevenFreeIntegers(), 1295552661530920200);

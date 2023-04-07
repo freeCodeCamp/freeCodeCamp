@@ -50,13 +50,13 @@ Give your answer using lowercase characters (no punctuation or space).
 
 # --hints--
 
-`euler480()` should return a string.
+`euler480()` має повернути рядок.
 
 ```js
 assert(typeof euler480() === 'string');
 ```
 
-`euler480()` should return the string `turnthestarson`.
+`euler480()` має повернути рядок `turnthestarson`.
 
 ```js
 assert.strictEqual(euler480(), 'turnthestarson');

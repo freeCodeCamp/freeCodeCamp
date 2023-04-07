@@ -26,7 +26,7 @@ Find $C(2\\,000\\,000)$.
 
 # --hints--
 
-`trianglesContainingOriginTwo()` should return `333333208685971500`.
+`trianglesContainingOriginTwo()` має повернути `333333208685971500`.
 
 ```js
 assert.strictEqual(trianglesContainingOriginTwo(), 333333208685971500);

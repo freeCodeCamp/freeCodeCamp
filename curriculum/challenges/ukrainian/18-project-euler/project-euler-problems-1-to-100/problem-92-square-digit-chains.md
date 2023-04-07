@@ -21,31 +21,31 @@ How many starting numbers below `limit` will arrive at 89?
 
 # --hints--
 
-`squareDigitChains(100)` should return a number.
+`squareDigitChains(100)` має повернути число.
 
 ```js
 assert(typeof squareDigitChains(100) === 'number');
 ```
 
-`squareDigitChains(100)` should return `80`.
+`squareDigitChains(100)` має повернути `80`.
 
 ```js
 assert.strictEqual(squareDigitChains(100), 80);
 ```
 
-`squareDigitChains(1000)` should return `857`.
+`squareDigitChains(1000)` має повернути `857`.
 
 ```js
 assert.strictEqual(squareDigitChains(1000), 857);
 ```
 
-`squareDigitChains(100000)` should return `85623`.
+`squareDigitChains(100000)` має повернути `85623`.
 
 ```js
 assert.strictEqual(squareDigitChains(100000), 85623);
 ```
 
-`squareDigitChains(10000000)` should return `8581146`.
+`squareDigitChains(10000000)` має повернути `8581146`.
 
 ```js
 assert.strictEqual(squareDigitChains(10000000), 8581146);

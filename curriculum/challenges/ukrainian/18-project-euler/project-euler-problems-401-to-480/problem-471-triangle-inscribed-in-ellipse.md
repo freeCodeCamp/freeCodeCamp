@@ -28,13 +28,13 @@ For $G(10)$ the answer would have been `2.059722222e1`
 
 # --hints--
 
-`triangleInscribedInEllipse()` should return a string.
+`triangleInscribedInEllipse()` має повернути рядок.
 
 ```js
 assert(typeof triangleInscribedInEllipse() === 'string');
 ```
 
-`triangleInscribedInEllipse()` should return the string `1.895093981e31`.
+`triangleInscribedInEllipse()` має повернути рядок `1.895093981e31`.
 
 ```js
 assert.strictEqual(triangleInscribedInEllipse(), '1.895093981e31');

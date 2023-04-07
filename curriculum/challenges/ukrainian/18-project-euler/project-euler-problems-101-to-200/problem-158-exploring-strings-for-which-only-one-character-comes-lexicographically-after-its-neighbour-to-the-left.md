@@ -28,7 +28,7 @@ What is the maximum value of $p(n)$?
 
 # --hints--
 
-`lexicographicNeighbours()` should return `409511334375`.
+`lexicographicNeighbours()` має повернути `409511334375`.
 
 ```js
 assert.strictEqual(lexicographicNeighbours(), 409511334375);

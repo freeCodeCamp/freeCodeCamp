@@ -26,7 +26,7 @@ Find $S(20\\,000\\,000)\bmod {10}^8$.
 
 # --hints--
 
-`totientStairstepSequences()` should return `85068035`.
+`totientStairstepSequences()` має повернути `85068035`.
 
 ```js
 assert.strictEqual(totientStairstepSequences(), 85068035);

@@ -20,7 +20,7 @@ How many numbers below a googol (${10}^{100}$) are not bouncy?
 
 # --hints--
 
-`nonBouncyNumbers()` should return `51161058134250`.
+`nonBouncyNumbers()` має повернути `51161058134250`.
 
 ```js
 assert.strictEqual(nonBouncyNumbers(), 51161058134250);

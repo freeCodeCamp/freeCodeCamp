@@ -16,31 +16,31 @@ Find the last ten digits of that non-Mersenne prime in the form $multiplier × 2
 
 # --hints--
 
-`largeNonMersennePrime(19, 6833086)` should return a string.
+`largeNonMersennePrime(19, 6833086)` має повернути рядок.
 
 ```js
 assert(typeof largeNonMersennePrime(19, 6833086) === 'string');
 ```
 
-`largeNonMersennePrime(19, 6833086)` should return the string `3637590017`.
+`largeNonMersennePrime(19, 6833086)` має повернути рядок `3637590017`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(19, 6833086), '3637590017');
 ```
 
-`largeNonMersennePrime(27, 7046834)` should return the string `0130771969`.
+`largeNonMersennePrime(27, 7046834)` має повернути рядок `0130771969`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(27, 7046834), '0130771969');
 ```
 
-`largeNonMersennePrime(6679881, 6679881)` should return the string `4455386113`.
+`largeNonMersennePrime(6679881, 6679881)` має повернути рядок `4455386113`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(6679881, 6679881), '4455386113');
 ```
 
-`largeNonMersennePrime(28433, 7830457)` should return the string `8739992577`.
+`largeNonMersennePrime(28433, 7830457)` має повернути рядок `8739992577`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(28433, 7830457), '8739992577');

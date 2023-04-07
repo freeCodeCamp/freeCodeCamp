@@ -14,7 +14,7 @@ Give your answer in micrometres (${10}^{-6}$ m) rounded to the nearest integer.
 
 # --hints--
 
-`spherePacking()` should return `1590933`.
+`spherePacking()` має повернути `1590933`.
 
 ```js
 assert.strictEqual(spherePacking(), 1590933);

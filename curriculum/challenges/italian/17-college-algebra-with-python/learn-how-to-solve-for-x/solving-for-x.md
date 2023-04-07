@@ -1,6 +1,6 @@
 ---
 id: 6331d23eb51aeedd1a2bd646
-title: "Solving for X"
+title: "Risolvere per X"
 challengeType: 15
 videoId: _U9PEFKjyb8
 dashedName: solving-for-x
@@ -8,19 +8,19 @@ dashedName: solving-for-x
 
 # --description--
 
-This first video will show you the essence of algebra and then how Python code does the same task in a different way.
+Questo primo video ti mostrerà l'essenza dell'algebra e poi come il codice Python svolge la stessa attività in modo diverso.
 
-Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Add the code from the video to your algebra Colab notebook to see how to solve for X using Python. Then change the code if you want, test it, and compare it to paper-and-pencil solving. Remember the equation input needs to be in Python syntax.
+Ecco il <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per seguire questo video.</a> Aggiungi il codice del video al tuo notebook Colab per vedere come risolvere per X usando Python. Poi cambia il codice se vuoi, testalo e confrontalo con la soluzione ottenuta con carta e penna. Ricorda che l'input dell'equazione deve rispettare la sintassi di Python.
 
 # --question--
 
 ## --assignment--
 
-Add the code to solve for x from the video to your algebra Colab notebook.
+Aggiungi il codice per risolvere per x dal video al tuo notebook Colab.
 
 ## --text--
 
-In Python, what is the library you import to solve algebra problems with variables?
+In Python, qual è la libreria che importi per risolvere i problemi di algebra con le variabili?
 
 ## --answers--
 

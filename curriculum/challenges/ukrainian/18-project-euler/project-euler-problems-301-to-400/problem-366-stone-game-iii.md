@@ -42,7 +42,7 @@ Find $\sum M(n)$ for $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
 
 # --hints--
 
-`stoneGameThree()` should return `88351299`.
+`stoneGameThree()` має повернути `88351299`.
 
 ```js
 assert.strictEqual(stoneGameThree(), 88351299);

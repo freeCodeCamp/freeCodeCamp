@@ -23,31 +23,31 @@ How many different ways can `n` be written as a sum of at least two positive int
 
 # --hints--
 
-`countingSummations(5)` should return a number.
+`countingSummations(5)` має повернути число.
 
 ```js
 assert(typeof countingSummations(5) === 'number');
 ```
 
-`countingSummations(5)` should return `6`.
+`countingSummations(5)` має повернути `6`.
 
 ```js
 assert.strictEqual(countingSummations(5), 6);
 ```
 
-`countingSummations(20)` should return `626`.
+`countingSummations(20)` має повернути `626`.
 
 ```js
 assert.strictEqual(countingSummations(20), 626);
 ```
 
-`countingSummations(50)` should return `204225`.
+`countingSummations(50)` має повернути `204225`.
 
 ```js
 assert.strictEqual(countingSummations(50), 204225);
 ```
 
-`countingSummations(100)` should return `190569291`.
+`countingSummations(100)` має повернути `190569291`.
 
 ```js
 assert.strictEqual(countingSummations(100), 190569291);

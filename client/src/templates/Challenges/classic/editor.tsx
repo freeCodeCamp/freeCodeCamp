@@ -29,7 +29,6 @@ import {
   ChallengeFiles,
   ChallengeMeta,
   Dimensions,
-  Ext,
   FileKey,
   ResizeProps,
   Test
@@ -70,7 +69,7 @@ import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-interface EditorProps {
+export interface EditorProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   attempts: number;
@@ -78,16 +77,12 @@ interface EditorProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef: MutableRefObject<HTMLElement | undefined>;
-  contents: string;
   description: string;
-  dimensions: Dimensions;
+  dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  initialEditorContent: string;
-  initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;
@@ -442,6 +437,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
 
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
+
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
     if (!isMobileLayout || !isUsingKeyboardInTablist) {
@@ -671,7 +670,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
 
     ReactDOM.render(
       <LowerJaw
@@ -685,7 +683,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
         tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
         updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,

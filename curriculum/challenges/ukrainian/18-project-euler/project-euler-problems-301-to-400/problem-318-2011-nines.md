@@ -30,7 +30,7 @@ Find $\sum N(p,q)$ for $p + q ≤ 2011$.
 
 # --hints--
 
-`twoThousandElevenNines()` should return `709313889`.
+`twoThousandElevenNines()` має повернути `709313889`.
 
 ```js
 assert.strictEqual(twoThousandElevenNines(), 709313889);

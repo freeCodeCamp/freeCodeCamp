@@ -10,7 +10,7 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
     "@prisma/client": "4.11.0",
-    "@sinclair/typebox": "0.25.24",
+    "@sentry/node": "7.37.1",
     "connect-mongo": "4.6.0",
     "fastify": "4.15.0",
     "fastify-auth0-verify": "^1.0.0",
@@ -19,7 +19,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "2.4.0",
+    "@fastify/type-provider-typebox": "3.0.0",
     "@types/express-session": "1.17.7",
     "@types/supertest": "2.0.12",
     "jest": "29.5.0",
@@ -38,7 +38,7 @@
   "name": "@freecodecamp/api",
   "nodemonConfig": {
     "env": {
-      "NODE_ENV": "development"
+      "FREECODECAMP_NODE_ENV": "development"
     },
     "ignore": [
       "**/*.js"
@@ -53,7 +53,7 @@
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "develop": "nodemon src/server.ts",
-    "start": "NODE_ENV=production node dist/server.js",
+    "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
     "prisma": "MONGOHQ_URL=mongodb://localhost:27017/freecodecamp?directConnection=true prisma",
     "postinstall": "prisma generate"

@@ -38,7 +38,7 @@ Find the sum of $S(6k + 3)$ for $2 ≤ k ≤ 300$. Give the last 18 digits as yo
 
 # --hints--
 
-`kaprekarConstant()` should return `552506775824935500`.
+`kaprekarConstant()` має повернути `552506775824935500`.
 
 ```js
 assert.strictEqual(kaprekarConstant(), 552506775824935500);

@@ -20,13 +20,13 @@ Your task has been made easy, as the encryption key consists of three lower case
 
 # --hints--
 
-`XORDecryption(cipher)` should return a number.
+`XORDecryption(cipher)` має повернути число.
 
 ```js
 assert(typeof XORDecryption(cipher) === 'number');
 ```
 
-`XORDecryption(cipher)` should return 129448.
+`XORDecryption(cipher)` має повернути 129448.
 
 ```js
 assert.strictEqual(XORDecryption(cipher), 129448);

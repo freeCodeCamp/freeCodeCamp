@@ -41,19 +41,19 @@ Find the maximum total from top to bottom of the triangle below:
 
 # --hints--
 
-`maximumPathSumI(testTriangle)` should return a number.
+`maximumPathSumI(testTriangle)` має повернути число.
 
 ```js
 assert(typeof maximumPathSumI(testTriangle) === 'number');
 ```
 
-`maximumPathSumI(testTriangle)` should return 23.
+`maximumPathSumI(testTriangle)` має повернути 23.
 
 ```js
 assert.strictEqual(maximumPathSumI(testTriangle), 23);
 ```
 
-`maximumPathSumI(numTriangle)` should return 1074.
+`maximumPathSumI(numTriangle)` має повернути 1074.
 
 ```js
 assert.strictEqual(maximumPathSumI(numTriangle), 1074);

@@ -16,13 +16,13 @@ Find the numbers and the sum of the numbers which are equal to the sum of the fa
 
 # --hints--
 
-`digitFactorial()` should return an object.
+`digitFactorial()` має повернути об’єкт.
 
 ```js
 assert.typeOf(digitFactorial(), 'object');
 ```
 
-`digitFactorial()` should return { sum: 40730, numbers: [145, 40585] }.
+`digitFactorial()` має повернути { sum: 40730, numbers: [145, 40585] }.
 
 ```js
 assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });

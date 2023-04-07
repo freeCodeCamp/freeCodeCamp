@@ -29,7 +29,7 @@ $$\\begin{array}{r}     7 &  53 & 183 & 439 & 863 & 497 & 383 & 563 &  79 & 973 
 
 # --hints--
 
-`matrixSum()` should return `13938`.
+`matrixSum()` має повернути `13938`.
 
 ```js
 assert.strictEqual(matrixSum(), 13938);

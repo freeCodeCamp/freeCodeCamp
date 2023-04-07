@@ -18,25 +18,25 @@ There exists exactly one Pythagorean triplet for which `a` + `b` + `c` = 1000. F
 
 # --hints--
 
-`specialPythagoreanTriplet(24)` should return a number.
+`specialPythagoreanTriplet(24)` має повернути число.
 
 ```js
 assert(typeof specialPythagoreanTriplet(24) === 'number');
 ```
 
-`specialPythagoreanTriplet(24)` should return 480.
+`specialPythagoreanTriplet(24)` має повернути 480.
 
 ```js
 assert.strictEqual(specialPythagoreanTriplet(24), 480);
 ```
 
-`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000.
+`specialPythagoreanTriplet(120)` має повернути 49920, 55080 або 60000.
 
 ```js
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
 ```
 
-`specialPythagoreanTriplet(1000)` should return 31875000.
+`specialPythagoreanTriplet(1000)` має повернути 31875000.
 
 ```js
 assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);

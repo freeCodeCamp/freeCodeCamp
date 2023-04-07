@@ -18,7 +18,7 @@ Find $E(10\\,000)$ and give your answer rounded to 6 places behind the decimal p
 
 # --hints--
 
-`peredurFabEfrawg()` should return `19823.542204`.
+`peredurFabEfrawg()` має повернути `19823.542204`.
 
 ```js
 assert.strictEqual(peredurFabEfrawg(), 19823.542204);

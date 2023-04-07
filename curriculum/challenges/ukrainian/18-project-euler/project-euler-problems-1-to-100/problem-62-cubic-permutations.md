@@ -14,31 +14,31 @@ Find the smallest cube for which exactly `n` permutations of its digits are cube
 
 # --hints--
 
-`cubicPermutations(2)` should return a number.
+`cubicPermutations(2)` має повернути число.
 
 ```js
 assert(typeof cubicPermutations(2) === 'number');
 ```
 
-`cubicPermutations(2)` should return `125`.
+`cubicPermutations(2)` має повернути `125`.
 
 ```js
 assert.strictEqual(cubicPermutations(2), 125);
 ```
 
-`cubicPermutations(3)` should return `41063625`.
+`cubicPermutations(3)` має повернути `41063625`.
 
 ```js
 assert.strictEqual(cubicPermutations(3), 41063625);
 ```
 
-`cubicPermutations(4)` should return `1006012008`.
+`cubicPermutations(4)` має повернути `1006012008`.
 
 ```js
 assert.strictEqual(cubicPermutations(4), 1006012008);
 ```
 
-`cubicPermutations(5)` should return `127035954683`.
+`cubicPermutations(5)` має повернути `127035954683`.
 
 ```js
 assert.strictEqual(cubicPermutations(5), 127035954683);

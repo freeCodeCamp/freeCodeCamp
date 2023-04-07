@@ -39,19 +39,19 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 
 # --hints--
 
-`largestGridProduct(testGrid)` should return a number.
+`largestGridProduct(testGrid)` має повернути число.
 
 ```js
 assert(typeof largestGridProduct(testGrid) === 'number');
 ```
 
-`largestGridProduct(testGrid)` should return 14169081.
+`largestGridProduct(testGrid)` має повернути 14169081.
 
 ```js
 assert.strictEqual(largestGridProduct(testGrid), 14169081);
 ```
 
-`largestGridProduct(grid)` should return 70600674.
+`largestGridProduct(grid)` має повернути 70600674.
 
 ```js
 assert.strictEqual(largestGridProduct(grid), 70600674);

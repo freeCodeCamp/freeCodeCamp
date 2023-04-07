@@ -25,7 +25,7 @@ Find $S(5 \times {10}^6)$.
 
 # --hints--
 
-`stepsInEuclidsAlgorithm()` should return `326624372659664`.
+`stepsInEuclidsAlgorithm()` має повернути `326624372659664`.
 
 ```js
 assert.strictEqual(stepsInEuclidsAlgorithm(), 326624372659664);

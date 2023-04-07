@@ -18,7 +18,7 @@ Find $R(2 \times {10}^6, {10}^9)$.
 
 # --hints--
 
-`pencilsOfRays()` should return `301450082318807040`.
+`pencilsOfRays()` має повернути `301450082318807040`.
 
 ```js
 assert.strictEqual(pencilsOfRays(), 301450082318807040);

@@ -31,7 +31,7 @@ Find $C(20\\,000\\,000)$.
 
 # --hints--
 
-`mobiusFunctionAndIntervals()` should return `198775297232878`.
+`mobiusFunctionAndIntervals()` має повернути `198775297232878`.
 
 ```js
 assert.strictEqual(mobiusFunctionAndIntervals(), 198775297232878);

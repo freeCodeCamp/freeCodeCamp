@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withTranslation, TFunction } from 'react-i18next';
+import type { DefaultTFuncReturn, TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -59,6 +60,17 @@ interface BlockProps {
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
+
+export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
+  return (
+    <div className='block-description'>
+      {intros.map((title, i) => (
+        <p dangerouslySetInnerHTML={{ __html: title }} key={i} />
+      ))}
+    </div>
+  );
+};
+
 class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
@@ -78,16 +90,6 @@ class Block extends Component<BlockProps> {
       <GreenPass hushScreenReaderText />
     ) : (
       <GreenNotCompleted hushScreenReaderText />
-    );
-  }
-
-  renderBlockIntros(arr: string[]): JSX.Element {
-    return (
-      <div className='block-description'>
-        {arr.map((str, i) => (
-          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
-        ))}
-      </div>
     );
   }
 
@@ -128,18 +130,15 @@ class Block extends Component<BlockProps> {
       );
     });
 
-    const blockIntroObj: { title?: string; intro: string[] } = t(
-      `intro:${superBlock}.blocks.${blockDashedName}`
+    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
+    // the real type of TFunction is the type below, because intro can be an array of strings
+    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
+    // But changing the type will require refactoring that isn't worth it for a wrong type.
+    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
+      `intro:${superBlock}.blocks.${blockDashedName}.intro`
     );
-    const blockTitle = blockIntroObj ? blockIntroObj.title : null;
-    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
-    const {
-      expand: expandText,
-      collapse: collapseText
-    }: {
-      expand: string;
-      collapse: string;
-    } = t('intro:misc-text');
+    const expandText = t('intro:misc-text.expand');
+    const collapseText = t('intro:misc-text.collapse');
 
     const isBlockCompleted = completedCount === challengesWithCompleted.length;
 
@@ -172,7 +171,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -229,7 +228,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -290,7 +289,7 @@ class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && this.renderBlockIntros(blockIntroArr)}
+            {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
@@ -331,7 +330,7 @@ class Block extends Component<BlockProps> {
               {this.renderCheckMark(isBlockCompleted)}
               <h3 className='block-grid-title'>{blockTitle}</h3>
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
           </Link>
         </div>
       </ScrollableAnchor>

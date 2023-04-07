@@ -1,6 +1,6 @@
 ---
 id: 63dbd0375d93712ff177d969
-title: "Business Applications of College Algebra: Extra"
+title: "Прикладне застосування алгебри у бізнесі: додатково"
 challengeType: 15
 videoId: 9n_ZybF0Phc
 dashedName: business-applications-of-college-algebra-extra
@@ -8,29 +8,29 @@ dashedName: business-applications-of-college-algebra-extra
 
 # --description--
 
-This video is showing you some economics applications, and creating graphs and formulas.
+Це відео показує деякі застосування в економіці, а також створення графіків й формул.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true of supply and demand graphs?
+Яке з перелічених тверджень щодо графіків пропозиції та попиту неправильне?
 
 ## --answers--
 
-The supply curve has a positive slope
+Крива пропозиції має позитивний кутовий коефіцієнт
 
 ---
 
-The demand curve has a negative slope
+Крива пропозиції має негативний кутовий коефіцієнт
 
 ---
 
-The supply curve and demand curve will intersect
+Крива пропозиції та крива попиту будуть перетинатися
 
 ---
 
-The supply curve and demand curve will always be straight lines
+Крива пропозиції та крива попиту завжди будуть прямими лініями
 
 ## --video-solution--
 

@@ -16,7 +16,7 @@ Find the volume (in $\text{m}^3$) of the region through which the fragments move
 
 # --hints--
 
-`firecracker()` should return `1856532.8455`.
+`firecracker()` має повернути `1856532.8455`.
 
 ```js
 assert.strictEqual(firecracker(), 1856532.8455);

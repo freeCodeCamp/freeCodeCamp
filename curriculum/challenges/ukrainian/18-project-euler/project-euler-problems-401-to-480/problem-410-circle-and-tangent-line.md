@@ -20,7 +20,7 @@ Find $F({10}^8, {10}^9) + F({10}^9, {10}^8)$.
 
 # --hints--
 
-`circleAndTangentLine()` should return `799999783589946600`.
+`circleAndTangentLine()` має повернути `799999783589946600`.
 
 ```js
 assert.strictEqual(circleAndTangentLine(), 799999783589946600);

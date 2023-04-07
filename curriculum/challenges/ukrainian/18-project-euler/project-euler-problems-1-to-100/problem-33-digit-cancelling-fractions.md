@@ -18,13 +18,13 @@ If the product of these four fractions is given in its lowest common terms, find
 
 # --hints--
 
-`digitCancellingFractions()` should return a number.
+`digitCancellingFractions()` має повернути число.
 
 ```js
 assert(typeof digitCancellingFractions() === 'number');
 ```
 
-`digitCancellingFractions()` should return 100.
+`digitCancellingFractions()` має повернути 100.
 
 ```js
 assert.strictEqual(digitCancellingFractions(), 100);

@@ -14,25 +14,25 @@ What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
 
 # --hints--
 
-`powerDigitSum(15)` should return a number.
+`powerDigitSum(15)` має повернути число.
 
 ```js
 assert(typeof powerDigitSum(15) === 'number');
 ```
 
-`powerDigitSum(15)` should return 26.
+`powerDigitSum(15)` має повернути 26.
 
 ```js
 assert.strictEqual(powerDigitSum(15), 26);
 ```
 
-`powerDigitSum(128)` should return 166.
+`powerDigitSum(128)` має повернути 166.
 
 ```js
 assert.strictEqual(powerDigitSum(128), 166);
 ```
 
-`powerDigitSum(1000)` should return 1366.
+`powerDigitSum(1000)` має повернути 1366.
 
 ```js
 assert.strictEqual(powerDigitSum(1000), 1366);

@@ -1,6 +1,6 @@
 ---
 id: 6331d2b0b51aeedd1a2bd655
-title: "Solving Systems"
+title: "Розв’язок систем рівнянь"
 challengeType: 15
 videoId: CNGUQzXfC6c
 dashedName: solving-systems
@@ -8,35 +8,35 @@ dashedName: solving-systems
 
 # --description--
 
-The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
+Перше відео покаже, що лежить в основі розв’язку системи двох рівнянь без побудови графіку, як ви можете розкласти рівняння та знайти значення певної змінної.
 
-Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --assignment--
 
-Add code to your notebook to solve and graph systems of equations
+Додайте код для розв’язку та побудови графіка систем рівнянь до свого блокнота.
 
 ## --text--
 
-Which of the following can SymPy do that matplotlib can't do?
+Що з переліченого може виконати SymPy, але не може виконати matplotlib?
 
 ## --answers--
 
-Solve for a variable
+Знайти значення змінної
 
 ---
 
-Display an x-y axis
+Показати вісь x-y
 
 ---
 
-Graph an equation or two
+Побудувати графік одного чи двох рівнянь
 
 ---
 
-Show tic marks on the graph
+Показати позначки на графіку
 
 ## --video-solution--
 

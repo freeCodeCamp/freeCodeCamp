@@ -33,7 +33,7 @@ Find $f(10\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`superinteger()` should return `775181359`.
+`superinteger()` має повернути `775181359`.
 
 ```js
 assert.strictEqual(superinteger(), 775181359);

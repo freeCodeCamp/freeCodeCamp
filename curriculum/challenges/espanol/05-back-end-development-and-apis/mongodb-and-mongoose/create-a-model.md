@@ -28,15 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Create a person schema called `personSchema` with the following shape:
+Crea un esquema de persona llamado `personSchema` con la siguiente forma:
 
-* A required `name` field of type `String`
-* An `age` field of type `Number`
-* A `favoriteFoods` field of type `[String]`
+* Un campo `name` obligatorio de tipo `String`
+* Un campo `age` de tipo `Number`
+* Un campo `favoriteFoods` de tipo `[String]`
 
 Usa los tipos básicos de esquemas de Mongoose. Si quieres también puedes añadir más campos, utilizar validadores sencillos como required o unique, y establecer valores por defecto. Mira nuestro <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">artículo sobre Mongoose </a>.
 
-Now, create a model from the `personSchema` and assign it to the existing variable `Person`.
+Ahora, crea un modelo a partir del `personSchema` y asígnalo a la variable existente `Person`.
 
 # --hints--
 

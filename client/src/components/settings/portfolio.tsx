@@ -9,7 +9,8 @@ import {
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { PortfolioProjectData } from '../../redux/prop-types';
 

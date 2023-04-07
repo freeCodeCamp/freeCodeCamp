@@ -8,13 +8,13 @@ dashedName: pass-a-callback-as-props
 
 # --description--
 
-可以将 `state` 作为 props 传递给子组件，但不仅限于传递数据。 也可以将函数或在 React 组件中定义的任何方法传递给子组件。 这就是子组件与父组件交互的方式。 可以把方法像普通 prop 一样传递给子组件， 它会被分配一个名字，可以在子组件中的 `this.props` 下访问该方法的名字。
+可以将 `state` 作为 props 传递给子组件，但不仅限于传递数据。 你也可以将处理函数或在 React 组件中定义的任何方法传递给子组件。 这就是子组件与父组件交互的方式。 可以把方法像普通 prop 一样传递给子组件， 它会被分配一个名字，可以在子组件中的 `this.props` 下访问该方法的名字。
 
 # --instructions--
 
 代码编辑器中列出了三个组件。 `MyApp` 是父组件，`GetInput` 和`RenderInput` 是它将要渲染的子组件。 将 `GetInput` 组件添加到 `MyApp` 的 render 方法，然后将 `MyApp` 的 `state` 中的 `inputValue` 传入名为 `input` 的 prop。 还要创建一个名为 `handleChange` 的 prop，并将输入处理程序 `handleChange` 传递给它。
 
-接下来，将 `RenderInput` 添加到 `MyApp` 中的 render 方法中，然后创建一个名为 `input` 的 prop，并将 `state` 中的 `inputValue` 传递给它。 完成后，可以在 `GetInput` 组件中的 `input` 字段中键入内容，然后该组件通过 props 调用其父组件中的处理函数方法。 这将更新处于父组件 `state` 中的 input，该 input 将作为 props 传递给两个子组件。 观察数据如何在组件之间流动，以及单一数据源如何保持父组件`state`。 诚然，这个示例有点做作，但是应该能用来说明数据和回调是如何在 React 组件之间传递的。
+接下来，将 `RenderInput` 添加到 `MyApp` 中的 render 方法中，然后创建一个名为 `input` 的 prop，并将 `state` 中的 `inputValue` 传递给它。 完成后，可以在 `GetInput` 组件中的 `input` 字段中键入内容，然后该组件通过 props 调用其父组件中的处理函数方法。 这将更新处于父组件 `state` 中的 input，该 input 将作为 props 传递给两个子组件。 观察数据如何在组件之间流动，以及单一数据源如何保持父组件`state`。 诚然，这个示例有点刻意，但是应该能用来说明数据和回调是如何在 React 组件之间传递的。
 
 # --hints--
 

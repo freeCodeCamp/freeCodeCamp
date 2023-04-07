@@ -12,7 +12,7 @@ Find the smallest $x + y + z$ with integers $x > y > z > 0$ such that $x + y$, $
 
 # --hints--
 
-`perfectSquareCollection()` should return `1006193`.
+`perfectSquareCollection()` має повернути `1006193`.
 
 ```js
 assert.strictEqual(perfectSquareCollection(), 1006193);

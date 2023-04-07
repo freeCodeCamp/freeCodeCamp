@@ -1,6 +1,6 @@
 ---
 id: 6363d2769078df117ce4c406
-title: "Exponents and Logarithms"
+title: "Піднесення до степеня та логарифми"
 challengeType: 15
 videoId: LhzmzugFFu8
 dashedName: exponents-and-logarithms
@@ -8,13 +8,13 @@ dashedName: exponents-and-logarithms
 
 # --description--
 
-Here is the <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV75HzMylj9SHIWH8?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV75HzMylj9SHIWH8?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --text--
 
-What is log<sub>5</sub>(25)?
+Що таке log<sub>5</sub>(25)?
 
 ## --answers--
 

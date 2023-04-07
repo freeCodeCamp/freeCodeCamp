@@ -22,7 +22,7 @@ What is $f({10}^{25})$?
 
 # --hints--
 
-`numberOfWaysToExpress()` should return `178653872807`.
+`numberOfWaysToExpress()` має повернути `178653872807`.
 
 ```js
 assert.strictEqual(numberOfWaysToExpress(), 178653872807);

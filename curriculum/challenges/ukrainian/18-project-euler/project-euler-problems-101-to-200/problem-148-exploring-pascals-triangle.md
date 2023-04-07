@@ -28,7 +28,7 @@ Find the number of entries which are not divisible by 7 in the first one billion
 
 # --hints--
 
-`entriesOfPascalsTriangle()` should return `2129970655314432`.
+`entriesOfPascalsTriangle()` має повернути `2129970655314432`.
 
 ```js
 assert.strictEqual(entriesOfPascalsTriangle(), 2129970655314432);

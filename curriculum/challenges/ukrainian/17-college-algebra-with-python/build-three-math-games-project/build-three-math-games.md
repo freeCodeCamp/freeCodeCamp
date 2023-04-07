@@ -1,29 +1,29 @@
 ---
 id: 63d8401039c73468b059cd41
-title: "Build Three Math Games"
+title: "Створіть три математичні ігри"
 challengeType: 10
 dashedName: build-three-math-games
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Ви будете <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Перейшовши за цим посиланням, створіть копію блокнота у своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тест (доданий до посилання), введіть посилання на свій проєкт. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
 
 # --instructions--
 
-For this challenge, you need to create three math games using Python that do the following:
+У цьому завданні за допомогою Python потрібно створити три математичні ігри, які виконують наступне:
 
-- Scatter plot game
-  - Randomly generate points on a graph and the player has to input the (x,y) coordinates
-  - For added difficulty, make the graph larger
-- Algebra practice game
-  - Generate one-step and two-step problems with random integer values and the player has to input the answer
-  - Use positive and negative values. For added difficulty, make the numbers larger
-- Projectile game
-  - Display a "wall" with random height and location. Player has to move sliders to adjust a parabolic path to clear the wall
-  - For added difficulty, make a second level where players enter a, b, and c without sliders
+- Гра «Точкова діаграма»
+  - Випадково генерує точки на графіку, а гравець повинен ввести координати (x, y)
+  - Щоб гра була складнішою, зробіть графік більшим
+- Гра «Практика алгебри»
+  - Створіть приклади з однією та двома діями, а гравець повинен ввести відповідь
+  - Використайте додатні та від’ємні значення. Щоб гра була складнішою, зробіть числа більшими
+- Гра «Метальний об’єкт»
+  - Зобразіть «стіну» з випадковою висотою та розташуванням. Гравець повинен перетягнути повзунки так, щоб змінити параболічну траєкторію та очистити стіну
+  - Щоб гра була складнішою, створіть другий рівень, де гравець вводить a, b та c без повзунків
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Як тільки закінчите, введіть посилання на загальнодоступний блокнот Colab на вашому гугл-диску.
 

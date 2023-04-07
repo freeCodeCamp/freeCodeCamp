@@ -25,7 +25,7 @@ Find $T(36)$.
 
 # --hints--
 
-`crossHatchedTriangles()` should return `343047`.
+`crossHatchedTriangles()` має повернути `343047`.
 
 ```js
 assert.strictEqual(crossHatchedTriangles(), 343047);
