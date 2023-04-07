@@ -74,7 +74,7 @@ Some of these files are translated on our translation platform (Crowdin) and som
 
   Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
-## Testing the client app in a world language
+## Testing the Client App in a World Language
 
 You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 

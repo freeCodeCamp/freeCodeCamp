@@ -94,15 +94,15 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    Some PRs are automated dependency updates made via an integration. You should not merge or approve these PRs. One of the dev-team members will take care of reviewing and merging such automated PRs.
 
-#### How to review, merge, or close pull requests
+#### How to Review, Merge, or Close Pull Requests
 
-##### Assign yourself to a pull request:
+##### Assign yourself to a Pull Request:
 
 First of all, when you choose a pull request to review, you should assign yourself to it. You can do this by clicking the "assign yourself" link below the "assignees" part on the right-hand column of GitHub's interface.
 
 Depending on the type of pull request it is, follow the corresponding rules listed previously.
 
-##### Ensure the CI checks are passing:
+##### Ensure the CI Checks are Passing:
 
 Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the PR is merged? These checks are critical for the stability of the platform.
 
@@ -119,7 +119,7 @@ The pull request's changes will be on top, and the main branch's changes will be
 
 If you are uncertain, please ask one of the fellow moderators or the dev-team for assistance.
 
-##### Merging a valid pull request:
+##### Merging a Valid Pull Request:
 
 If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, making the Git history much easier to read.
 

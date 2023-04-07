@@ -296,7 +296,7 @@ Our goal is to communicate the single point that the challenge is trying to teac
 
 Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
 
-## Formatting seed code
+## Formatting Seed Code
 
 Here are specific formatting guidelines for the challenge seed code:
 
@@ -304,7 +304,7 @@ Here are specific formatting guidelines for the challenge seed code:
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
 
-### Seed code comments
+### Seed Code Comments
 
 We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
@@ -366,7 +366,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of seed code comments
+### Translation of Seed Code Comments
 
 There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
@@ -395,7 +395,7 @@ Take the following steps when adding a new challenge hints/solutions-related top
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-### Guidelines for content of hints and solutions topics
+### Guidelines for Content of Hints and Solutions Topics
 
 When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 

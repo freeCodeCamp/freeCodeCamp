@@ -1,6 +1,6 @@
 Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
-## Choose between Gitpod or your own machine (local setup)
+## Choose between Gitpod or your Own Machine (local setup)
 
 If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
@@ -18,7 +18,7 @@ Here are some pros and cons which should help you decide which option is best fo
 > [!ATTENTION]
 > **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
-### How to prepare a Gitpod workspace
+### How to Prepare a Gitpod Workspace
 
 We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
@@ -39,7 +39,7 @@ There are various ways to launch an GitPod workspace:
 
 That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
 
-### How to prepare your local machine
+### How to Prepare your Local Machine
 
 Here is a minimum system requirement for running freeCodeCamp locally:
 
@@ -124,7 +124,7 @@ Once you have forked the repository, you can either use your own local machine o
 
 For contributing long-term, we recommend you set up freeCodeCamp on your local machine.
 
-### How to prepare a GitPod workspace
+### How to Prepare a GitPod Workspace
 
 We have automated the process of installing all the dependencies & tools you will need. With GitPod, you get a free ready-to-code environment in a few minutes. It's useful if you do not have access to a computer or you want to make one-time changes.
 
@@ -270,7 +270,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 ### Configuring Dependencies
 
-#### Step 1: Set up the environment variable file
+#### Step 1: Set up the Environment Variable File
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
@@ -300,7 +300,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 > [!TIP]
 > Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Step 2: Install dependencies
+#### Step 2: Install Dependencies
 
 This step will install the dependencies required for the application to run:
 
@@ -308,7 +308,7 @@ This step will install the dependencies required for the application to run:
 pnpm install
 ```
 
-#### Step 3: Start MongoDB and seed the database
+#### Step 3: Start MongoDB and Seed the Database
 
 Before you can run the application locally, you will need to start the MongoDB service.
 
@@ -348,7 +348,7 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
+#### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
 

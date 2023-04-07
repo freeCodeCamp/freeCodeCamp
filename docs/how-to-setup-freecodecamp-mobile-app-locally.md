@@ -129,7 +129,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 ### Configuring Dependencies
 
-#### Step 1: Set up the environment variable file
+#### Step 1: Set Up the Environment Variable File
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
 

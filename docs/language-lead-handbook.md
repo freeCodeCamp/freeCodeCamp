@@ -2,7 +2,7 @@
 
 This handbook will help you set up and use the tools for your localization efforts.
 
-## How to invite new contributors to Ghost
+## How to Invite New Contributors to Ghost
 
 Ghost allows you to set contributors with different levels of authorization.
 
@@ -14,7 +14,7 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
-### How are the articles built
+### How are the Articles Built
 
 We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
 
@@ -24,7 +24,7 @@ This process is automated and runs periodically. If you publish something now, i
 
 You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
 
-## How to mention the original author of a translated article
+## How to Mention the Original Author of a Translated Article
 
 The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on Ghost.
 
@@ -36,7 +36,7 @@ The original author and the original article are linked automatically adding thi
 
 With `link` being the link of the original article.
 
-## How to update trending articles
+## How to Update Trending Articles
 
 > [!TIP]
 > Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
@@ -48,7 +48,7 @@ There are two places in which to change the trending articles.
 
 For each article, you will need to create a shorter title to use in the footer.
 
-### Change trending articles in the curriculum
+### Change Trending Articles in the Curriculum
 
 The trending articles in the curriculum footer can be changed by editing the file at `client/i18n/locales/<language>/trending.json`.
 
@@ -78,7 +78,7 @@ This is an example of how part of the `trending.json` file has to look.
 
 You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
-### How to update the trending articles in the cdn
+### How to Update the Trending Articles in the CDN
 
 The file in the CDN repository is the file `universal/trending/<language>.yaml`.
 
@@ -104,7 +104,7 @@ You can convert from one format to the other carefully changing it manually. Or 
 > [!TIP]
 > A new workflow is being worked on, there will be only one place to change in the future.
 
-## How to translate articles in the footer links
+## How to Translate Articles in the Footer Links
 
 There are some links listed at the bottom of the footer (About, Alumni Network, Open Source, etc.) and some of them can be translated into your language in the same way as other articles.
 
@@ -128,7 +128,7 @@ The following links are pointing to external sites and cannot be translated:
 - Alumni Network
 - Open Source
 
-### Change the footer links in the news
+### Change the Footer Links in the News
 
 Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
 
@@ -149,7 +149,7 @@ Update the following part in the file:
 }
 ```
 
-### Change the footer links in the curriculum
+### Change the Footer Links in the Curriculum
 
 When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
 
@@ -176,7 +176,7 @@ Update the following part in the file:
 }
 ```
 
-## How to translate the info boxes headers in the documentation
+## How to Translate the Info Boxes Headers in the Documentation
 
 You can find these boxes all around the documentation:
 
@@ -256,7 +256,7 @@ flexibleAlerts: {
 }
 ```
 
-## How to translate the motivational quotes
+## How to Translate the Motivational Quotes
 
 The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
 
@@ -308,7 +308,7 @@ The `motivationalQuotes` array is an array of objects, these objects should incl
 > [!TIP]
 > You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reloads the page.
 
-## How to update the common links
+## How to Update the Common Links
 
 We maintain a file of common links used throughout our [curriculum site](https://github.com/freecodecamp/freecodecamp) in the `/client/i18n/locales/<language>/links.json` file.
 
@@ -316,7 +316,7 @@ Some of these links will not change - but you should update the `/news` article 
 
 You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
 
-## How to update the site meta-data
+## How to Update the Site Meta-Data
 
 The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
 
@@ -350,7 +350,7 @@ Then there are three steps to complete:
 
 When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
 
-## How to update Crowdin Glossary
+## How to Update Crowdin Glossary
 
 > [!TIP]
 > An updated glossary helps in having a homogeneous translation of technical terms.

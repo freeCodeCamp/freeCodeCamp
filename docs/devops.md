@@ -45,7 +45,7 @@ Once the changes are pushed to the protected release branches, a build pipeline 
 
 The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
 
-The status of builds and releases are [available here](#build-test-and-deployment-status).
+The statuses of builds and releases are [available here](#build-test-and-deployment-status).
 
 ## Trigger a Build, Test, and Deploy
 
