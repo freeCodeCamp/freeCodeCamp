@@ -79,7 +79,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 2. (Opcional, mas recomendado) [Configure uma chave SSH](https://help.github.com/articles/generating-an-ssh-key/) para o GitHub.
 
 
-3. Install a code editor of your choice. If you aren't sure which one to use, we recommend [Visual Studio Code](https://code.visualstudio.com/) — it's free and open source.
+3. Instale um editor de código de sua escolha. Se você não tem certeza sobre qual editor usar, recomendamos o [Visual Studio Code](https://code.visualstudio.com/) — é gratuito e de código aberto.
 
 4. Configure um linting no seu editor de código.
 
