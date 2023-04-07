@@ -6,7 +6,6 @@ import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
-import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -40,8 +39,8 @@ async function createProject(
   title?: string
 ) {
   if (!title) {
-    title = blockNameify(block);
-  } else if (title !== blockNameify(block)) {
+    title = block;
+  } else if (title !== block) {
     void updateBlockNames(block, title);
   }
   void updateIntroJson(superBlock, block, title);
@@ -133,7 +132,7 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
-superBlock: ${blockNameify(superBlock.replace('2022/', ''))}
+superBlock: ${superBlock.replace('2022/', '')}
 isBeta: true
 ---
 
@@ -227,7 +226,7 @@ void prompt([
   },
   {
     name: 'title',
-    default: ({ block }: { block: string }) => blockNameify(block)
+    default: ({ block }: { block: string }) => block
   },
   {
     name: 'helpCategory',
