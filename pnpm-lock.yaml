@@ -1022,9 +1022,6 @@ importers:
       react:
         specifier: 16.14.0
         version: 16.14.0
-      react-codemirror2:
-        specifier: 7.2.1
-        version: 7.2.1(codemirror@5.65.12)(react@16.14.0)
       react-dom:
         specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
@@ -1047,6 +1044,9 @@ importers:
       '@types/react-dom':
         specifier: ^16.9.17
         version: 16.9.17
+      '@uiw/react-codemirror':
+        specifier: 3.2.7
+        version: 3.2.7(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -10521,6 +10521,20 @@ packages:
       '@typescript-eslint/types': 5.54.0
       eslint-visitor-keys: 3.3.0
 
+  /@uiw/react-codemirror@3.2.7(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-aSQKN76Phj6v0okTs/MRanA9B29yeeemNqBh5pVL7TsSuSsyJS8auhvIDF7PKDxAS/u2I+V13SklA1+yFaiAZg==}
+    peerDependencies:
+      '@babel/runtime': '>=7.11.0'
+      codemirror: '>=5.49.2'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      codemirror: 5.65.12
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
+    dev: true
+
   /@vercel/webpack-asset-relocator-loader@1.7.3:
     resolution: {integrity: sha512-vizrI18v8Lcb1PmNNUBz7yxPxxXoOeuaVEjTG9MjvDrphjiSxFZrRJ5tIghk+qdLFRCXI5HBCshgobftbmrC5g==}
     dependencies:
@@ -13904,7 +13918,6 @@ packages:
 
   /codemirror@5.65.12:
     resolution: {integrity: sha512-z2jlHBocElRnPYysN2HAuhXbO3DNB0bcSKmNz3hcWR2Js2Dkhc1bEOxG93Z3DeUrnm+qx56XOY5wQmbP5KY0sw==}
-    dev: false
 
   /collapse-white-space@1.0.6:
     resolution: {integrity: sha512-jEovNnrhMuqyCcjfEJA56v0Xq8SkIoPKDyaHahwo3POf4qcSXqMYuwNcOTzp74vTsR9Tn08z4MxWqAhcekogkQ==}
@@ -27284,16 +27297,6 @@ packages:
       raf: 3.4.1
       regenerator-runtime: 0.13.11
       whatwg-fetch: 3.6.2
-    dev: false
-
-  /react-codemirror2@7.2.1(codemirror@5.65.12)(react@16.14.0):
-    resolution: {integrity: sha512-t7YFmz1AXdlImgHXA9Ja0T6AWuopilub24jRaQdPVbzUJVNKIYuy3uCFZYa7CE5S3UW6SrSa5nAqVQvtzRF9gw==}
-    peerDependencies:
-      codemirror: 5.x
-      react: '>=15.5 <=16.x'
-    dependencies:
-      codemirror: 5.65.12
-      react: 16.14.0
     dev: false
 
   /react-dev-utils@11.0.4(eslint@7.32.0)(typescript@4.9.5)(webpack@5.76.3):
