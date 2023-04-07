@@ -9,7 +9,7 @@ export interface ButtonProps
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   type?: 'submit' | 'button';
   disabled?: boolean;
   block?: boolean;

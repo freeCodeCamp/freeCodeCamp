@@ -29,8 +29,8 @@ const computeClassNames = ({
   disabled,
   block
 }: {
-  size: ButtonSize;
-  variant: ButtonVariant;
+  size?: ButtonSize;
+  variant?: ButtonVariant;
   disabled?: boolean;
   block?: boolean;
 }) => {
