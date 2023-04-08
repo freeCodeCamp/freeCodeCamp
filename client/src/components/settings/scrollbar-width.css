@@ -107,7 +107,7 @@ input.scrollbar-width[type='range']:focus-visible::-moz-range-thumb {
   border: 2px solid var(--secondary-color);
   background: var(--secondary-background);
   position: absolute;
-  z-index: 200;
+  z-index: 100;
   top: 3px;
   position: absolute;
   display: block;
@@ -140,4 +140,12 @@ input.scrollbar-width[type='range']:focus-visible::-moz-range-thumb {
 .scrollbar-width-ticks .tick:hover,
 .scrollbar-width-numbers span:hover {
   cursor: pointer;
+}
+
+.scrollbar-width-preview {
+  display: inline-block;
+  background: var(--secondary-color);
+  height: 1.5rem;
+  position: absolute;
+  margin: 0 0.5rem;
 }

@@ -41,7 +41,11 @@ export default function ScrollbarWidthSettings(): JSX.Element {
   return (
     <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
       <label htmlFor='scrollbar-width-slider'>
-        {t('settings.scrollbar-width')}
+        {t('settings.scrollbar-width')}:
+        <span
+          className='scrollbar-width-preview'
+          style={{ width: `${scrollbarWidth}px` } as React.CSSProperties}
+        />
       </label>
       <div className='scrollbar-width-container'>
         <div className='scrollbar-width-ticks' aria-hidden='true'>
