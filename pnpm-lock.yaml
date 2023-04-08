@@ -1045,8 +1045,8 @@ importers:
         specifier: ^16.9.17
         version: 16.9.17
       '@uiw/react-codemirror':
-        specifier: 3.2.7
-        version: 3.2.7(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0)
+        specifier: 3.2.9
+        version: 3.2.9(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -10521,8 +10521,8 @@ packages:
       '@typescript-eslint/types': 5.54.0
       eslint-visitor-keys: 3.3.0
 
-  /@uiw/react-codemirror@3.2.7(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-aSQKN76Phj6v0okTs/MRanA9B29yeeemNqBh5pVL7TsSuSsyJS8auhvIDF7PKDxAS/u2I+V13SklA1+yFaiAZg==}
+  /@uiw/react-codemirror@3.2.9(@babel/runtime@7.21.0)(codemirror@5.65.12)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-AKkylbD2oMlHmQk9Snlmbfi/f2i20LjBjDjmr4IpE3YjrFxeUvfh5LLpora93c1GBbZeHmpjDilv4lJ0r+oUeQ==}
     peerDependencies:
       '@babel/runtime': '>=7.11.0'
       codemirror: '>=5.49.2'
