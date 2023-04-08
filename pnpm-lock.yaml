@@ -729,11 +729,11 @@ importers:
         specifier: 7.21.4
         version: 7.21.4
       '@codesee/babel-plugin-instrument':
-        specifier: 0.549.0
-        version: 0.549.0(@babel/core@7.21.4)
+        specifier: 0.551.0
+        version: 0.551.0(@babel/core@7.21.4)
       '@codesee/tracker':
-        specifier: 0.549.0
-        version: 0.549.0
+        specifier: 0.551.0
+        version: 0.551.0
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
@@ -5840,8 +5840,8 @@ packages:
       minimist: 1.2.8
     dev: true
 
-  /@codesee/babel-plugin-instrument@0.549.0(@babel/core@7.21.4):
-    resolution: {integrity: sha512-glI6iabewTbdywfyLyvws1PvYNkssaldSDhbuTv1+t/3wZbgLU0AJ1hEIro7uNs9A5VcOnljM1xPKgNNvkzVKw==}
+  /@codesee/babel-plugin-instrument@0.551.0(@babel/core@7.21.4):
+    resolution: {integrity: sha512-U3Li/qn1VoIBSkXUT3yIiGH/gOPrqPvwwisaqO9WiP+PKYvT7afDSeEFhcQbR6oTo/QJnLy6qyCpUi0wEutoUg==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -5856,8 +5856,8 @@ packages:
       - supports-color
     dev: true
 
-  /@codesee/tracker@0.549.0:
-    resolution: {integrity: sha512-daYY5/2/k+n+S0VwaF+vswyYgWF9jcnIS3u3YwGb+pElcq4bTwZpLRKRUkt8b1p6AlkArsf+2jO/IJeVGysWwQ==}
+  /@codesee/tracker@0.551.0:
+    resolution: {integrity: sha512-u+IF7B6E5Iy6k0VxgR0XKNB2u8OYA5eAIXvSaA4O2/POLZfvl07YIHj4l9/X205AFReG7UdliO5zonHsBlr5fQ==}
     dev: true
 
   /@colors/colors@1.5.0:
