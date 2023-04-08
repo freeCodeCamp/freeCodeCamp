@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   action,
   hastag,
@@ -11,6 +12,7 @@ import {
 test('useShare testing', () => {
   const superBlock = 'testSuperBlock';
   const block = 'testBlock';
+  const { t } = useTranslation();
 
   const { redirectURL } = useShare({
     superBlock: superBlock,
@@ -18,7 +20,8 @@ test('useShare testing', () => {
   });
 
   const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
-  const tweetMessage = `I${space}have${space}completed${space}${block}${space}%23freecodecamp`;
+  const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+  const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}%23freecodecamp`;
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
   expect(redirectURL).toBe(
     `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
