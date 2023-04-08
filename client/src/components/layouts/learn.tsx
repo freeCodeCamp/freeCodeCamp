@@ -12,8 +12,7 @@ import {
 import DonateModal from '../Donation/donation-modal';
 import createRedirect from '../create-redirect';
 
-import './prism.css';
-import './prism-night.css';
+import './prism-themes.css';
 import 'react-reflex/styles.css';
 import './learn.css';
 
