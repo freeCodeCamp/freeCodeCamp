@@ -9,7 +9,6 @@ input.scrollbar-width[type='range'] {
   background: transparent;
   position: relative;
   height: calc(1rem + 6px);
-  background: transparent;
 }
 
 input.scrollbar-width[type='range']::-webkit-slider-runnable-track {
@@ -109,7 +108,6 @@ input.scrollbar-width[type='range']:focus-visible::-moz-range-thumb {
   position: absolute;
   z-index: 100;
   top: 3px;
-  position: absolute;
   display: block;
 }
 
