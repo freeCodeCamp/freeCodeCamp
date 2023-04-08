@@ -114,6 +114,20 @@ type ProgressTimestamp {
   timestamp Float
 }
 
+type SavedChallengeFile {
+  contents String
+  ext      String
+  history  String[]
+  key      String
+  name     String
+}
+
+type SavedChallenge {
+  files         SavedChallengeFile[]
+  id            String
+  lastSavedDate Float
+}
+
 model user {
   id                           String               @id @default(auto()) @map("_id") @db.ObjectId
   about                        String
@@ -160,14 +174,14 @@ model user {
   name                         String? // Null
   needsModeration              Boolean? // Undefined
   newEmail                     String? // Null | Undefined
-  partiallyCompletedChallenges Json? // Undefined | TODO:
+  partiallyCompletedChallenges Json? // Undefined | PartiallyCompletedChallenge[] TODO: The db only has this as an empty array
   password                     String? // Undefined
   picture                      String
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
   progressTimestamps           Json[] // ProgressTimestamp[] | Null[] | Int64[] | Double[]
   rand                         Float? // Undefined
-  savedChallenges              Json? // Undefined | TODO:
+  savedChallenges              Json? // Undefined | SavedChallenges[]
   sendQuincyEmail              Boolean
   sound                        Boolean? // Undefined
   theme                        String? // Undefined
