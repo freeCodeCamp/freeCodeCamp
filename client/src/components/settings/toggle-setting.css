@@ -86,29 +86,30 @@
 .toggle-radio-group label {
   font-weight: normal;
   display: flex;
-  align-items: last baseline;
-  border-radius: 0.25rem;
+  align-items: center;
 }
 
-.toggle-radio-group input:focus {
-  outline: none;
+.toggle-radio-group input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--secondary-color);
+  margin: 0;
 }
 
-/* for FF since it doesn't support :has yet */
-.toggle-radio-group label:focus-within {
-  outline: 3px solid var(--blue-mid);
-  outline-offset: 5px;
+.toggle-radio-group [data-checked='true'] input {
+  background: var(--secondary-color);
 }
 
-@supports (selector(:has(input))) {
-  .toggle-radio-group label:focus-within {
-    outline: none;
-    outline-offset: unset;
-  }
-  .toggle-radio-group label:has(input:focus-visible) {
-    outline: 3px solid var(--blue-mid);
-    outline-offset: 5px;
-  }
+.toggle-radio-group [data-checked='true'] span {
+  font-weight: 700;
+}
+
+.toggle-radio-group input:focus-visible {
+  outline-offset: 1px;
 }
 
 .toggle-radio-group label[data-checked='false']:hover,
@@ -117,11 +118,11 @@
 }
 
 .toggle-radio-group label + label {
-  margin-inline-start: 1.5rem;
+  margin-inline-start: 2rem;
 }
 
 .toggle-radio-group input {
-  margin-inline-end: 0.25rem;
+  margin-inline-end: 0.35rem;
   accent-color: var(--secondary-color);
 }
 
