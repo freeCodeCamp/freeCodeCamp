@@ -15,18 +15,17 @@ import {
 } from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
 import { Share } from '../../../components/share';
+import { ShareProps } from '../../../components/share/types';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
-interface LowerJawPanelProps {
+interface LowerJawPanelProps extends ShareProps {
   resetButtonName: string;
   helpButtonName: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
   showShareButton: boolean;
-  superBlock: string;
-  block: string;
 }
 
 interface LowerJawTipsProps {
@@ -148,6 +147,8 @@ const LowerJawStatus = ({
   );
 };
 
+const isBlockCompleted = 100;
+
 const LowerJaw = ({
   challengeMeta: { id: lastChallengeId, superBlock, block },
   completedPercent,
@@ -170,7 +171,7 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
   const endOfProject = React.useRef<boolean>(false);
-  const isBlockCompleted = 100;
+
   const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [focusManagementCompleted, setFocusManagementCompleted] =

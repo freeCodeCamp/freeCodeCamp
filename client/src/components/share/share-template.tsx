@@ -1,14 +1,11 @@
 import React from 'react';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { ShareRedirectProps } from './types';
 
-export interface ShareTemplateProps {
-  handleRedirectToTwitter: () => void;
-}
-
-export const ShareTemplate: React.FC<ShareTemplateProps> = ({
+export const ShareTemplate = ({
   handleRedirectToTwitter
-}) => {
+}: Pick<ShareRedirectProps, 'handleRedirectToTwitter'>): JSX.Element => {
   return (
     <button
       data-testid='ShareTemplateWrapperTestID'
