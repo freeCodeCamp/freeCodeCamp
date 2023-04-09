@@ -118,5 +118,7 @@ let result = pwRegex.test(sampleWord);
 # --solutions--
 
 ```js
-let pwRegex =  /(?=\w{6})(?=\w*\d{2})/;
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
+let result = pwRegex.test(sampleWord);
 ```
