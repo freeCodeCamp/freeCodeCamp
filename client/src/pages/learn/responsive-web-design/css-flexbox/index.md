@@ -1,7 +1,7 @@
 ---
 title: Introduction to the CSS Flexbox Challenges
 block: css-flexbox
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the CSS Flexbox Challenges

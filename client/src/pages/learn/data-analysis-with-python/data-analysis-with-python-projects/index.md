@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Data Analysis with Python Projects
 block: data-analysis-with-python-projects
-superBlock: Data Analysis with Python
+superBlock: data-analysis-with-python
 ---
 
 ## Introduction to the Data Analysis with Python Projects

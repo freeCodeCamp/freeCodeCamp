@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Coding Interview Take Home Projects
 block: take-home-projects
-superBlock: Coding Interview Prep
+superBlock: coding-interview-prep
 ---
 
 ## Introduction to the Coding Interview Take Home Projects

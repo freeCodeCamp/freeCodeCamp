@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Managing Packages with npm Challenges
 block: managing-packages-with-npm
-superBlock: Back End Development and APIs
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the Managing Packages with npm Challenges

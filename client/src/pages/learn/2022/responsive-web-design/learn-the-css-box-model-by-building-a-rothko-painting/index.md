@@ -1,7 +1,9 @@
 ---
-title: Introduction to the Learn the CSS Box Model by Building a Rothko Painting Project
+title: >-
+  Introduction to the Learn the CSS Box Model by Building a Rothko Painting
+  Project
 block: learn-the-css-box-model-by-building-a-rothko-painting
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the Learn the CSS Box Model by Building a Rothko Painting Project

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Applications of Linear Systems
 block: learn-applications-of-linear-systems
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Applications of Linear Systems

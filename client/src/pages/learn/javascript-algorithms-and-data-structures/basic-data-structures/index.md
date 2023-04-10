@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Basic Data Structure Challenges
 block: basic-data-structures
-superBlock: JavaScript Algorithms and Data Structures
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to the Basic Data Structure Challenges

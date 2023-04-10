@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Quality Assurance with Chai Challenges
 block: quality-assurance-and-testing-with-chai
-superBlock: Quality Assurance
+superBlock: quality-assurance
 ---
 
 ## Introduction to Quality Assurance with Chai Challenges

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Functions and Graphing
 block: learn-functions-and-graphing
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Functions and Graphing

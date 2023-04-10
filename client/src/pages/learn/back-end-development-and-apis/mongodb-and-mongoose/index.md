@@ -1,7 +1,7 @@
 ---
 title: Introduction to the MongoDB and Mongoose Challenges
 block: mongodb-and-mongoose
-superBlock: Back End Development and APIs
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the MongoDB and Mongoose Challenges

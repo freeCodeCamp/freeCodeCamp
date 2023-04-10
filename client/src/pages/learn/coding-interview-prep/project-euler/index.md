@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Project Euler Problems
 block: project-euler
-superBlock: Coding Interview Prep
+superBlock: coding-interview-prep
 ---
 
 ## Introduction to the Project Euler Problems

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JSON APIs and AJAX Challenges
 block: json-apis-and-ajax
-superBlock: Data Visualization
+superBlock: data-visualization
 ---
 
 ## Introduction to the JSON APIs and AJAX Challenges

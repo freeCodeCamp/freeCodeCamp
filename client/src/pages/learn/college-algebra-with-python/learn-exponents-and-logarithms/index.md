@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Exponents and Logarithms
 block: learn-exponents-and-logarithms
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Exponents and Logarithms

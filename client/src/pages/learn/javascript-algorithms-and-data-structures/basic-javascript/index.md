@@ -1,7 +1,7 @@
 ---
 title: Introduction to JavaScript
 block: basic-javascript
-superBlock: JavaScript Algorithms and Data Structures
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to JavaScript

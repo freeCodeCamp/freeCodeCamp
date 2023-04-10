@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Quadratic Equations
 block: learn-quadratic-equations
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Quadratic Equations

@@ -1,7 +1,9 @@
 ---
-title: Introduction to the Learn Intermediate CSS by Building a Picasso Painting Project
+title: >-
+  Introduction to the Learn Intermediate CSS by Building a Picasso Painting
+  Project
 block: learn-intermediate-css-by-building-a-picasso-painting
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the Learn Intermediate CSS by Building a Picasso Painting Project

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the CSS Grid Challenges
 block: css-grid
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the CSS Grid Challenges

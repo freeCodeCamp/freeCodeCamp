@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Coding Interview Algorithms
 block: algorithms
-superBlock: Coding Interview Prep
+superBlock: coding-interview-prep
 ---
 
 ## Introduction to the Coding Interview Prep Algorithms

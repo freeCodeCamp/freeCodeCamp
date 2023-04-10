@@ -1,7 +1,7 @@
 ---
 title: Introduction to Build a Multi-Function Calculator
 block: build-a-multi-function-calculator
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Build a Multi-Function Calculator

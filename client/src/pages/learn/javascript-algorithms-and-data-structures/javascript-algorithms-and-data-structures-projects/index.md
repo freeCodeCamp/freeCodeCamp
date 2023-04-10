@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Algorithms and Data Structures Projects
 block: javascript-algorithms-and-data-structures-projects
-superBlock: JavaScript Algorithms and Data Structures
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to the JavaScript Algorithms and Data Structures Projects

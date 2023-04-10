@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Responsive Web Design Projects
 block: responsive-web-design-projects
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the Responsive Web Design Projects

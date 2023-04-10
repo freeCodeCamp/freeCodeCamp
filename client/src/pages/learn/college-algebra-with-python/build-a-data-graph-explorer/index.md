@@ -1,7 +1,7 @@
 ---
 title: Introduction to Build a Data Graph Explorer
 block: build-a-data-graph-explorer
-superBlock: College Algebra with Python
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Build a Data Graph Explorer
