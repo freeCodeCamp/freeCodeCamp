@@ -85,7 +85,7 @@ When you try to navigate to http://localhost:8000/developmentuser to view the pr
 
 There is a "Preview Custom 404 Page" button, click it to see the profile.
 
-## Issues Installing DDependencies
+## Issues Installing Dependencies
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
