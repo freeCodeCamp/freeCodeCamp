@@ -31,7 +31,7 @@ Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected val
 
 # --hints--
 
-`selectiveAmnesia()` should return `1.76882294`.
+`selectiveAmnesia()` має повернути `1.76882294`.
 
 ```js
 assert.strictEqual(selectiveAmnesia(), 1.76882294);

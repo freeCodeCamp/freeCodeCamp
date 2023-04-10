@@ -22,7 +22,7 @@ What is $\sum sg(i)$ for $1 ≤ i ≤ 150$?
 
 # --hints--
 
-`sumsOfDigitFactorials()` should return `8184523820510`.
+`sumsOfDigitFactorials()` має повернути `8184523820510`.
 
 ```js
 assert.strictEqual(sumsOfDigitFactorials(), 8184523820510);

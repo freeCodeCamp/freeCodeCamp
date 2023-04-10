@@ -23,7 +23,7 @@ Find the 150000th Alexandrian integer.
 
 # --hints--
 
-`alexandrianIntegers()` should return `1884161251122450`.
+`alexandrianIntegers()` має повернути `1884161251122450`.
 
 ```js
 assert.strictEqual(alexandrianIntegers(), 1884161251122450);

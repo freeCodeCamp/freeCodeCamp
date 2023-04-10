@@ -14,37 +14,37 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 # --hints--
 
-`smallestMult(5)` should return a number.
+`smallestMult(5)` має повернути число.
 
 ```js
 assert(typeof smallestMult(5) === 'number');
 ```
 
-`smallestMult(5)` should return 60.
+`smallestMult(5)` має повернути 60.
 
 ```js
 assert.strictEqual(smallestMult(5), 60);
 ```
 
-`smallestMult(7)` should return 420.
+`smallestMult(7)` має повернути 420.
 
 ```js
 assert.strictEqual(smallestMult(7), 420);
 ```
 
-`smallestMult(10)` should return 2520.
+`smallestMult(10)` має повернути 2520.
 
 ```js
 assert.strictEqual(smallestMult(10), 2520);
 ```
 
-`smallestMult(13)` should return 360360.
+`smallestMult(13)` має повернути 360360.
 
 ```js
 assert.strictEqual(smallestMult(13), 360360);
 ```
 
-`smallestMult(20)` should return 232792560.
+`smallestMult(20)` має повернути 232792560.
 
 ```js
 assert.strictEqual(smallestMult(20), 232792560);

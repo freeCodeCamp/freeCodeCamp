@@ -26,7 +26,7 @@ Find $f({10}^k)$ for $k = {10}^{18}$, give your answer modulo ${17}^7$.
 
 # --hints--
 
-`rectangularTiling()` should return `237696125`.
+`rectangularTiling()` має повернути `237696125`.
 
 ```js
 assert.strictEqual(rectangularTiling(), 237696125);

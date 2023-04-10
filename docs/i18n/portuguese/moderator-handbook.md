@@ -18,7 +18,7 @@ O freeCodeCamp é uma comunidade inclusiva e temos de mantê-la assim.
 
 Temos um único [Código de Conduta](https://code-of-conduct.freecodecamp.org), que rege toda a nossa comunidade. Quanto menos regras, mais fáceis elas são de lembrar. Você pode ler essas regras e guardá-las na memória [aqui](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] Como moderador, nós adicionaríamos você a um ou mais times no GitHub, nos nossos fóruns comunitários e nos servidores de chat. Caso você não tenha acesso a uma plataforma que queira moderar,  [entre em contato com um membro da equipe](FAQ.md#additional-assistance).
+> [!NOTE] As a moderator, we would add you to one or more teams on GitHub, our community forums & chat servers. Caso você não tenha acesso a uma plataforma que queira moderar,  [entre em contato com um membro da equipe](FAQ.md#additional-assistance).
 
 ## Moderando no GitHub
 
@@ -77,7 +77,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](moderator-handbook.md#closing-invalid-pull-requests).
 
-   Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
+   If the changes look good, please ensure to leave an approval with an "LGTM" comment. Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
 3. **Mudanças na plataforma**
 
@@ -91,15 +91,15 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns PRs são atualizações de dependência automáticos feitos a partir de uma integração. Você não deve dar merge ou aprovar esses PRs. Um dos membros do time de desenvolvimento cuidará da revisão e irá dar merge em PRs automáticos.
 
-#### Como revisar, dar merge ou fechar pull requests
+#### How to Review, Merge, or Close Pull Requests
 
-##### Seja responsável por um pull request:
+##### Assign yourself to a Pull Request:
 
 Em primeiro lugar, quando você escolhe um pull request para revisar, você deve atribuí-lo a si mesmo. Você pode fazer isso clicando no link "assign yourself" abaixo da parte "assignees" na coluna da direita da interface do GitHub.
 
 Dependendo do tipo de pull request, siga as regras correspondentes listadas anteriormente.
 
-##### Certifique-se de que os testes de CI passaram:
+##### Ensure the CI Checks are Passing:
 
 Antes de dar merge em qualquer pull request, certifique-se de que haja um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
 
@@ -115,7 +115,7 @@ As mudanças do pull request estarão no topo e as mudanças da branch principal
 
 Se não tem certeza, peça ajuda para algum moderador ou para o time de desenvolvimento.
 
-##### Fazendo merge em um pull request válido:
+##### Merging a Valid Pull Request:
 
 Se o pull request parece pronto para merge (e não requer aprovações adicionais - lembre-se, precisamos de pelo menos duas), você pode ir em frente e fazer o merge. Certifique-se de usar a opção padrão **"Squash and Merge"**. Isto vai comprimir todos os commits de pull requests em um único commit, o que deixará o histórico do Git muito mais fácil de ler.
 
@@ -189,7 +189,7 @@ Novamente, se você tiver algum problema ou dúvida, faça uma postagem com suas
 
 Se um usuário responder em uma thread de ajuda para o currículo do freeCodeCamp com uma solução, remova-a e use a resposta pronta **Solution Instead of Help** (ou uma resposta semelhante em suas próprias palavras).
 
-Se o OP (pessoa que publicou o pedido de ajuda original) responder em sua própria thread de ajuda para o currículo do freeCodeCamp com sua solução final, desfoque-a e use a resposta pronta **Blurred Spoiler Solution**.
+If the OP (Original Poster) replies within a freeCodeCamp curriculum help thread with their final solution, blur it, and use the **Blurred Spoiler Solution** canned reply.
 
 Se um usuário criar uma thread pedindo feedback de uma solução, mova o tópico para o subfórum de feedback e desfoque a solução, conforme necessário. Se o usuário estiver apenas publicando a solução para se exibir, reitre o tópico das listas e use a resposta pronta **Solutions Thread**.
 
@@ -207,9 +207,9 @@ Por favor, compareça quando estiver com pelo menos 13 anos de idade.
 Obrigado(a) pela compreensão.
 ```
 
-### Moderando via celular
+### Moderating Via Cell Phone
 
-É possível moderar o fórum por um celular, mas você pode encontrar algumas peculiaridades. Esta não é uma lista exaustiva.
+Moderating the forum is possible via a cell phone but you may encounter some usage quirks. Esta não é uma lista exaustiva.
 
 - Ao tentar incluir uma "Resposta pronta" em uma resposta, se o menu não abrir (após clicar na engrenagem), clique na área de texto primeiro e tente novamente.
 - A 'ferramenta de chave' do moderador está na parte inferior da janela de visualização, mas, se você clicar nela e não puder ver o botão "Select Posts" (Selecionar Posts) pelo fato de ele estar fora de visualização, você pode precisar rolar até ele, embora, às vezes, isso não funcione. Neste caso, pode ser necessário passar para um monitor desktop/laptop.
@@ -231,7 +231,7 @@ Mas se é um delito flagrante, isso não pode razoavelmente ser atribuído a uma
 
 1. **Certifique-se de que o usuário tentou violar o [Código de Conduta](https://code-of-conduct.freecodecamp.org).**
 
-   Nem todas as violações do [Código de Conduta](https://code-of-conduct.freecodecamp.org) têm esse propósito. Um novo usuário do freeCodeCamp pode postar uma grande quantidade de códigos para ajudar, sem notar que isso pode ser disruptivo para a conversa. Nesses casos, você pode simplesmente pedir para que eles coloquem seus códigos em serviços como Codepen ou Pastebin.
+   Nem todas as violações do [Código de Conduta](https://code-of-conduct.freecodecamp.org) têm esse propósito. A new camper might post a large amount of code for help, unaware that this can be disruptive to the conversation. Nesses casos, você pode simplesmente pedir para que eles coloquem seus códigos em serviços como Codepen ou Pastebin.
 
 2. **Se o camper violar clara e intencionalmente o [Código de Conduta](https://code-of-conduct.freecodecamp.org), o moderador procederá da seguinte forma:**
 
@@ -450,7 +450,7 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 ```markdown
 Hey @username
 
-This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
+This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as a duplicate.
 
 If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 
@@ -485,7 +485,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adicionando comentário sobre erros de iniciante
+### Adding Comment About Newbie Mistakes
 
 ```markdown
 Como um novo colaborador, encorajamos você a ler nossas [diretrizes de contribuição](https://contribute.freecodecamp.org).

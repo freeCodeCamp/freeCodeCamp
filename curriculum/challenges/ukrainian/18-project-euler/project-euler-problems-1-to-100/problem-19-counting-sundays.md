@@ -20,25 +20,25 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 
 # --hints--
 
-`countingSundays(1943, 1946)` should return a number.
+`countingSundays(1943, 1946)` має повернути число.
 
 ```js
 assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-`countingSundays(1943, 1946)` should return 6.
+`countingSundays(1943, 1946)` має повернути 6.
 
 ```js
 assert.strictEqual(countingSundays(1943, 1946), 6);
 ```
 
-`countingSundays(1995, 2000)` should return 10.
+`countingSundays(1995, 2000)` має повернути 10.
 
 ```js
 assert.strictEqual(countingSundays(1995, 2000), 10);
 ```
 
-`countingSundays(1901, 2000)` should return 171.
+`countingSundays(1901, 2000)` має повернути 171.
 
 ```js
 assert.strictEqual(countingSundays(1901, 2000), 171);

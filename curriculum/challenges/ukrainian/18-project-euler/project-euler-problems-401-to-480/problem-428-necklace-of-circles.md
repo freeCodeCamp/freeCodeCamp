@@ -33,7 +33,7 @@ Find $T(1\\,000\\,000\\,000)$.
 
 # --hints--
 
-`necklace(1000000000)` should return `747215561862`.
+`necklace(1000000000)` має повернути `747215561862`.
 
 ```js
 assert.strictEqual(necklace(1000000000), 747215561862);

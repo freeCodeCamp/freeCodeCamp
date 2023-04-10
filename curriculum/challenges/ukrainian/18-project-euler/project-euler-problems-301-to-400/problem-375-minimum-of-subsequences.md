@@ -21,7 +21,7 @@ Find $M(2\\,000\\,000\\,000)$.
 
 # --hints--
 
-`minimumOfSubsequences()` should return `7435327983715286000`.
+`minimumOfSubsequences()` має повернути `7435327983715286000`.
 
 ```js
 assert.strictEqual(minimumOfSubsequences(), 7435327983715286000);

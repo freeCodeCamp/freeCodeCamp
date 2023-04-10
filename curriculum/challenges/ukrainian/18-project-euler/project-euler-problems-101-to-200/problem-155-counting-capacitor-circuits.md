@@ -24,7 +24,7 @@ Reminder: When connecting capacitors $C_1$, $C_2$ etc in parallel, the total cap
 
 # --hints--
 
-`capacitanceValues()` should return `3857447`.
+`capacitanceValues()` має повернути `3857447`.
 
 ```js
 assert.strictEqual(capacitanceValues(), 3857447);

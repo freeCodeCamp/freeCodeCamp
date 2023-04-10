@@ -22,7 +22,7 @@ Find the 200th prime-proof sqube containing the contiguous sub-string `200`.
 
 # --hints--
 
-`primeProofSqubeWithSubString()` should return `229161792008`.
+`primeProofSqubeWithSubString()` має повернути `229161792008`.
 
 ```js
 assert.strictEqual(primeProofSqubeWithSubString(), 229161792008);

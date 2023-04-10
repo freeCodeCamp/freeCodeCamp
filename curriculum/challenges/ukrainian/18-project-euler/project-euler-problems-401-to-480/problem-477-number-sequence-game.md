@@ -36,7 +36,7 @@ Find $F({10}^8)$.
 
 # --hints--
 
-`numberSequenceGame()` should return `25044905874565164`.
+`numberSequenceGame()` має повернути `25044905874565164`.
 
 ```js
 assert.strictEqual(numberSequenceGame(), 25044905874565164);

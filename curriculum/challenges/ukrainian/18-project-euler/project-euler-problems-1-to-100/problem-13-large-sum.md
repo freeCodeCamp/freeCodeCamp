@@ -115,19 +115,19 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 # --hints--
 
-`largeSum(testNums)` should return a number.
+`largeSum(testNums)` має повернути число.
 
 ```js
 assert(typeof largeSum(testNums) === 'number');
 ```
 
-`largeSum(testNums)` should return 8348422521.
+`largeSum(testNums)` має повернути 8348422521.
 
 ```js
 assert.strictEqual(largeSum(testNums), 8348422521);
 ```
 
-`largeSum(fiftyDigitNums)` should return 5537376230.
+`largeSum(fiftyDigitNums)` має повернути 5537376230.
 
 ```js
 assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);

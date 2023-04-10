@@ -22,7 +22,7 @@ Find $H(100\\,000\\,000)$.
 
 # --hints--
 
-`hexagonalOrchards()` should return `11762187201804552`.
+`hexagonalOrchards()` має повернути `11762187201804552`.
 
 ```js
 assert.strictEqual(hexagonalOrchards(), 11762187201804552);

@@ -1,12 +1,93 @@
-Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
-Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
+## Choose between Gitpod or your Own Machine (local setup)
 
-> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod. We have automated the process of installing all the dependencies & tools you will need.
-> 
-> Continue reading this guide to learn more about using GitPod.
+If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
-## Fork the repository on GitHub
+Here are some pros and cons which should help you decide which option is best for you:
+
+| Gitpod                                                            | Your own machine (local setup)                                        |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| No minimum hardware requirements                                  | Specific and minimum requirements                                     |
+| No need to install any software                                   | Additional software required                                          |
+| Always up to date copy of repository                              | Need to maintain a local copy of the repository                       |
+| Slower and can take a few minutes to launch                       | Faster and can be launched in seconds                                 |
+| Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
+| Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
+
+> [!ATTENTION] **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+
+### How to Prepare a Gitpod Workspace
+
+We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+
+There are various ways to launch an GitPod workspace:
+
+1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
+
+   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
+
+   That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
+
+2. Alternatively install one of the below extensions for your browser.
+
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
+   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
+
+   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+### How to Prepare your Local Machine
+
+Here is a minimum system requirement for running freeCodeCamp locally:
+
+- 8 GB RAM
+- Relatively fast CPU (4+ cores)
+- Windows 10 or 11 (with WSL), macOS, or Linux
+
+Start by installing the prerequisite software for your operating system.
+
+We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+
+
+#### Prerequisites:
+
+| Prerequisite                                                                                  | Version | Notes                                                                                       |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `18.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                           |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
+
+> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+
+If Node.js is already installed on your machine, run the following commands to validate the versions:
+
+```console
+node -v
+pnpm -v
+```
+
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
+
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+
+##### Follow these steps to get your development environment ready:
+
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+
+
+3. Install a code editor of your choice. If you aren't sure which one to use, we recommend [Visual Studio Code](https://code.visualstudio.com/) — it's free and open source.
+
+4. Set up linting for your code editor.
+
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
@@ -33,81 +114,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Use a Local Machine or GitPod
-
-Once you have forked the repository, you can either use your own local machine or a GitPod-based workspace to work on the codebase.
-
-For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
-
-### How to prepare a GitPod workspace
-
-We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
-
-There are various ways to launch an GitPod workspace:
-
-1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
-
-   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
-
-   That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
-
-2. Alternatively install one of the below extensions for your browser.
-
-   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
-   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
-
-   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
-
-That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
-
-### How to prepare your local machine
-
-Start by installing the prerequisite software for your operating system.
-
-We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
-
-We also support Windows 10 and 11 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
-
-Some community members also develop on Windows natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
-
-#### Prerequisites:
-
-| Prerequisite                                                                                  | Version | Notes                                                                                       |
-| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `18.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| [pnpm](https://pnpm.io/installation)                                                          | `7.x`   | -                                                                                           |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
-
-> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
-
-If Node.js is already installed on your machine, run the following commands to validate the versions:
-
-```console
-node -v
-pnpm -v
-```
-
-> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
-
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
-
-##### Follow these steps to get your development environment ready:
-
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
-
-2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
-
-3. Install a code editor of your choice.
-
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
-
-4. Set up linting for your code editor.
-
-   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
-
-   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
-
-## Clone your fork from GitHub
+## Clone your Fork from GitHub
 
 [Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
@@ -131,7 +138,7 @@ This will download the entire freeCodeCamp repository to your projects directory
 
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Set up syncing from parent
+## Set up Syncing from Parent
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
@@ -166,7 +173,7 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp locally
+## Running freeCodeCamp Locally
 
 Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
@@ -178,9 +185,9 @@ If you do run into issues, first perform a web search for your issue and see if 
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
-### Configuring dependencies
+### Configuring Dependencies
 
-#### Step 1: Set up the environment variable file
+#### Step 1: Set up the Environment Variable File
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
@@ -209,7 +216,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 > [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Step 2: Install dependencies
+#### Step 2: Install Dependencies
 
 This step will install the dependencies required for the application to run:
 
@@ -217,7 +224,7 @@ This step will install the dependencies required for the application to run:
 pnpm install
 ```
 
-#### Step 3: Start MongoDB and seed the database
+#### Step 3: Start MongoDB and Seed the Database
 
 Before you can run the application locally, you will need to start the MongoDB service.
 
@@ -255,7 +262,7 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
+#### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
 
@@ -275,7 +282,7 @@ While you are logged in, if you visit <http://localhost:3000/explorer> you shoul
 
 If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
 
-## Quick commands reference
+## Quick Commands Reference
 
 A quick reference to the commands that you will need when working locally.
 

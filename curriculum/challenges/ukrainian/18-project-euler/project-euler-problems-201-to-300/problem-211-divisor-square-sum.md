@@ -16,7 +16,7 @@ Find the sum of all $n$, $0 &lt; n &lt; 64\\,000\\,000$ such that $σ_2(n)$ is a
 
 # --hints--
 
-`divisorSquareSum()` should return `1922364685`.
+`divisorSquareSum()` має повернути `1922364685`.
 
 ```js
 assert.strictEqual(divisorSquareSum(), 1922364685);

@@ -18,7 +18,7 @@ Find $F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$.
 
 # --hints--
 
-`longProducts()` should return `345558983`.
+`longProducts()` має повернути `345558983`.
 
 ```js
 assert.strictEqual(longProducts(), 345558983);

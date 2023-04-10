@@ -1,6 +1,6 @@
-Se stai avendo problemi, è molto probabile che la soluzione sia in questa documentazione.
+If you are facing an issue, there is a high chance that the resolution is in this documentation.
 
-### Problemi con l'installazione dei prerequisiti raccomandati
+## Issues with Installing the Recommended Prerequisites
 
 Sviluppiamo regolarmente sui sistemi operativi più nuovi o più popolari come macOS 10.15 o successivi, Ubuntu 18.04 e Windows 10 (con WSL2).
 
@@ -12,9 +12,9 @@ Se sei su un sistema operativo diverso o continui ad avere dei problemi, visita 
 > 
 > Per favore, evita di creare issue su GitHub per problemi con i prerequisiti. Sono al di fuori dell'ambito di questo progetto.
 
-### Problemi con UI, caratteri, stringhe di lingua mancanti  o errori di build.
+## Issues with Missing UI, Fonts, Language Strings, or Build Errors
 
-Quando viene fatto il build del client, Gatsby memorizzerà nella cache i font, le stringhe di lingua e l'interfaccia utente. Se uno di loro non è memorizzato nella cache, esegui quanto segue:
+When you build the client, Gatsby will cache the Fonts, language strings, and UI. Se uno di loro non è memorizzato nella cache, esegui quanto segue:
 
 ```console
 pnpm run clean
@@ -48,7 +48,7 @@ git clean -ifdX
    <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Come pulire i file git non tracciati" />
 </details>
 
-### Problemi con API, login, invio delle sfide, ecc.
+## Issues with API, login, Challenge Submissions, etc.
 
 Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che verrà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia utilizzata da un programma diverso.
 
@@ -74,19 +74,19 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ---
 
-### Problemi di disconnessione durante la navigazione
+## Issues Signing Out while Navigating
 
 Durante lo sviluppo, la sessione viene memorizzata come cookie. Cancellarli ti farà uscire dal tuo account di sviluppo.
 
 Ti disconnetterai anche eseguendo `pnpm run seed:certified-user`. Sovrascriverà l'utente di sviluppo nel database locale.
 
-### Ottenere 404 navigando sulla pagina del profilo
+## Issue Getting 404 when Navigating Profile Page
 
 Quando provi a navigare su http://localhost:8000/developmentuser per visualizzare la pagina del profilo, Gatsby prende in consegna le pagine lato client, quindi otterrai una pagina 404 per il profilo utente quando lavori.
 
 C'è un pulsante "Preview Custom 404 Page", cliccalo per vedere il profilo.
 
-### Problemi nell'installazione delle dipendenze
+## Issues Installing DDependencies
 
 Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscano di accedere alle risorse.
 
@@ -94,7 +94,7 @@ La prima configurazione può richiedere un po' di tempo a seconda della larghezz
 
 > [!NOTE] Se stai usando un dispositivo Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
 
-## Ottenere Aiuto
+## Getting Help
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 

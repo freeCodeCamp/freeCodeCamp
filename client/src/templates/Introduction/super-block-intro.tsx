@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
 import React, { Fragment, useEffect, memo } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -53,7 +53,6 @@ type SuperBlockProp = {
   signInLoading: boolean;
   location: WindowLocation<{ breadcrumbBlockClick: string }>;
   resetExpansion: () => void;
-  t: TFunction;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
   user: User;
@@ -95,6 +94,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
+  const { t } = useTranslation();
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
@@ -169,7 +169,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     },
     isSignedIn,
     signInLoading,
-    t,
     user
   } = props;
 

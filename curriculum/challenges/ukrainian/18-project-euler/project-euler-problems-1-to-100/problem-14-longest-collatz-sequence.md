@@ -26,43 +26,43 @@ Which starting number, under the given `limit`, produces the longest chain?
 
 # --hints--
 
-`longestCollatzSequence(14)` should return a number.
+`longestCollatzSequence(14)` має повернути число.
 
 ```js
 assert(typeof longestCollatzSequence(14) === 'number');
 ```
 
-`longestCollatzSequence(14)` should return 9.
+`longestCollatzSequence(14)` має повернути 9.
 
 ```js
 assert.strictEqual(longestCollatzSequence(14), 9);
 ```
 
-`longestCollatzSequence(5847)` should return 3711.
+`longestCollatzSequence(5847)` має повернути 3711.
 
 ```js
 assert.strictEqual(longestCollatzSequence(5847), 3711);
 ```
 
-`longestCollatzSequence(46500)` should return 35655.
+`longestCollatzSequence(46500)` має повернути 35655.
 
 ```js
 assert.strictEqual(longestCollatzSequence(46500), 35655);
 ```
 
-`longestCollatzSequence(54512)` should return 52527.
+`longestCollatzSequence(54512)` має повернути 52527.
 
 ```js
 assert.strictEqual(longestCollatzSequence(54512), 52527);
 ```
 
-`longestCollatzSequence(100000)` should return 77031.
+`longestCollatzSequence(100000)` має повернути 77031.
 
 ```js
 assert.strictEqual(longestCollatzSequence(100000), 77031);
 ```
 
-`longestCollatzSequence(1000000)` should return 837799.
+`longestCollatzSequence(1000000)` має повернути 837799.
 
 ```js
 assert.strictEqual(longestCollatzSequence(1000000), 837799);

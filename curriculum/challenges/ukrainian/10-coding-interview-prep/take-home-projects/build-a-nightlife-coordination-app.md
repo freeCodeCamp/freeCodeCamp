@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdff
-title: Створіть додаток для координації нічного життя
+title: Створіть застосунок для координації нічного життя
 challengeType: 4
 forumTopicId: 302351
 dashedName: build-a-nightlife-coordination-app

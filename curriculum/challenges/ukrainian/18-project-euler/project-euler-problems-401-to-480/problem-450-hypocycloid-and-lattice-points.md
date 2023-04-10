@@ -37,7 +37,7 @@ Find $T({10}^6)$.
 
 # --hints--
 
-`hypocycloidAndLatticePoints()` should return `583333163984220900`.
+`hypocycloidAndLatticePoints()` має повернути `583333163984220900`.
 
 ```js
 assert.strictEqual(hypocycloidAndLatticePoints(), 583333163984220900);

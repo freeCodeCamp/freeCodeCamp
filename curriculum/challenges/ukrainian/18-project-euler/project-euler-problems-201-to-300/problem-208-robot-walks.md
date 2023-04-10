@@ -20,7 +20,7 @@ Given that the robot starts facing North, how many journeys of 70 arcs in length
 
 # --hints--
 
-`robotWalks()` should return `331951449665644800`.
+`robotWalks()` має повернути `331951449665644800`.
 
 ```js
 assert.strictEqual(robotWalks(), 331951449665644800);

@@ -26,7 +26,7 @@ Find $S(10\\,000\\,000\\,000)$.
 
 # --hints--
 
-`squarefreeFactors()` should return `457895958010`.
+`squarefreeFactors()` має повернути `457895958010`.
 
 ```js
 assert.strictEqual(squarefreeFactors(), 457895958010);

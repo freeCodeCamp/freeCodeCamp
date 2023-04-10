@@ -14,31 +14,31 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value `
 
 # --hints--
 
-`multiplesOf3and5(10)` should return a number.
+`multiplesOf3and5(10)` має повернути число.
 
 ```js
 assert(typeof multiplesOf3and5(10) === 'number');
 ```
 
-`multiplesOf3and5(49)` should return 543.
+`multiplesOf3and5(49)` має повернути 543.
 
 ```js
 assert.strictEqual(multiplesOf3and5(49), 543);
 ```
 
-`multiplesOf3and5(1000)` should return 233168.
+`multiplesOf3and5(1000)` має повернути 233168.
 
 ```js
 assert.strictEqual(multiplesOf3and5(1000), 233168);
 ```
 
-`multiplesOf3and5(8456)` should return 16687353.
+`multiplesOf3and5(8456)` має повернути 16687353.
 
 ```js
 assert.strictEqual(multiplesOf3and5(8456), 16687353);
 ```
 
-`multiplesOf3and5(19564)` should return 89301183.
+`multiplesOf3and5(19564)` має повернути 89301183.
 
 ```js
 assert.strictEqual(multiplesOf3and5(19564), 89301183);

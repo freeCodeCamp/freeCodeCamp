@@ -28,31 +28,31 @@ Find the product of the coefficients, $a$ and $b$, for the quadratic expression 
 
 # --hints--
 
-`quadraticPrimes(200)` should return a number.
+`quadraticPrimes(200)` має повернути число.
 
 ```js
 assert(typeof quadraticPrimes(200) === 'number');
 ```
 
-`quadraticPrimes(200)` should return -4925.
+`quadraticPrimes(200)` має повернути -4925.
 
 ```js
 assert(quadraticPrimes(200) == -4925);
 ```
 
-`quadraticPrimes(500)` should return -18901.
+`quadraticPrimes(500)` має повернути -18901.
 
 ```js
 assert(quadraticPrimes(500) == -18901);
 ```
 
-`quadraticPrimes(800)` should return -43835.
+`quadraticPrimes(800)` має повернути -43835.
 
 ```js
 assert(quadraticPrimes(800) == -43835);
 ```
 
-`quadraticPrimes(1000)` should return -59231.
+`quadraticPrimes(1000)` має повернути -59231.
 
 ```js
 assert(quadraticPrimes(1000) == -59231);

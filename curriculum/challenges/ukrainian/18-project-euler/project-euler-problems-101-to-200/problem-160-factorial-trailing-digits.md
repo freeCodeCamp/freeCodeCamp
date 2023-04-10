@@ -19,7 +19,7 @@ Find $f(1,000,000,000,000)$
 
 # --hints--
 
-`factorialTrailingDigits()` should return `16576`.
+`factorialTrailingDigits()` має повернути `16576`.
 
 ```js
 assert.strictEqual(factorialTrailingDigits(), 16576);

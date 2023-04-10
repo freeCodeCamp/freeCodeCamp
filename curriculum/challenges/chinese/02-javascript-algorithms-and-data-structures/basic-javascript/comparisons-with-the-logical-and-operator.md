@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 有时你需要在一次判断中做多个操作。 当且仅当<dfn>运算符</dfn>的左边和右边都是 true，<dfn>逻辑与</dfn>运算符（`&&`）才会返回 `true`。
 
-同样的效果可以通过 if 语句的嵌套来实现：
+The same effect could be achieved by nesting an `if` statement inside another `if`.
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-只有当 `num` 的值大于 `5` 并且小于`10` 时才会返回 `Yes`。 相同的逻辑可被写为：
+This code will return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written with the <dfn>logical and</dfn> operator.
 
 ```js
 if (num > 5 && num < 10) {

@@ -8,7 +8,7 @@ dashedName: define-a-constructor-function
 
 # --description--
 
-<dfn>Constructors</dfn> 是创建对象的函数。 函数给这个新对象定义属性和行为。 可将它们视为创建的新对象的蓝图。
+<dfn>构造函数</dfn>是创建对象的函数。 函数给这个新对象定义属性和行为。 可将它们视为创建的新对象的蓝图。
 
 以下就是一个构造函数的示例：
 

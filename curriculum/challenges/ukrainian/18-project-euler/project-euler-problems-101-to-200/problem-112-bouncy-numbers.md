@@ -22,7 +22,7 @@ Find the least number for which the proportion of bouncy numbers is exactly 99%.
 
 # --hints--
 
-`bouncyNumbers()` should return `1587000`.
+`bouncyNumbers()` має повернути `1587000`.
 
 ```js
 assert.strictEqual(bouncyNumbers(), 1587000);

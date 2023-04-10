@@ -16,25 +16,25 @@ What is the total of all the name scores in the array?
 
 # --hints--
 
-`namesScores(test1)` should return a number.
+`namesScores(test1)` має повернути число.
 
 ```js
 assert(typeof namesScores(test1) === 'number');
 ```
 
-`namesScores(test1)` should return 791.
+`namesScores(test1)` має повернути 791.
 
 ```js
 assert.strictEqual(namesScores(test1), 791);
 ```
 
-`namesScores(test2)` should return 1468.
+`namesScores(test2)` має повернути 1468.
 
 ```js
 assert.strictEqual(namesScores(test2), 1468);
 ```
 
-`namesScores(names)` should return 871198282.
+`namesScores(names)` має повернути 871198282.
 
 ```js
 assert.strictEqual(namesScores(names), 871198282);

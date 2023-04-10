@@ -43,7 +43,7 @@ The most likely value of $M$ for a forty-piece caterpillar is 11; but what is th
 
 # --hints--
 
-`tidyingUp()` should return `11.492847`.
+`tidyingUp()` має повернути `11.492847`.
 
 ```js
 assert.strictEqual(tidyingUp(), 11.492847);

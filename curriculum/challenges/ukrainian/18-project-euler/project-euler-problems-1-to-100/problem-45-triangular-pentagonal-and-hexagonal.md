@@ -20,13 +20,13 @@ Find the next triangle number that is also pentagonal and hexagonal.
 
 # --hints--
 
-`triPentaHexa(40756)` should return a number.
+`triPentaHexa(40756)` має повернути число.
 
 ```js
 assert(typeof triPentaHexa(40756) === 'number');
 ```
 
-`triPentaHexa(40756)` should return 1533776805.
+`triPentaHexa(40756)` має повернути 1533776805.
 
 ```js
 assert.strictEqual(triPentaHexa(40756), 1533776805);

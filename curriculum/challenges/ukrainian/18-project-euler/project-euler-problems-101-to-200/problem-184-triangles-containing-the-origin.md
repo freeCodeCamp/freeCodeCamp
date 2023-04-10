@@ -20,7 +20,7 @@ How many triangles are there containing the origin in the interior and having al
 
 # --hints--
 
-`trianglesContainingOrigin()` should return `1725323624056`.
+`trianglesContainingOrigin()` має повернути `1725323624056`.
 
 ```js
 assert.strictEqual(trianglesContainingOrigin(), 1725323624056);

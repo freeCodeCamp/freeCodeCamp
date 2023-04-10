@@ -1,6 +1,6 @@
 ---
 id: 6363d23a9078df117ce4c3ff
-title: "Applications of Linear Systems: Extra"
+title: "Applicazioni di Sistemi Lineari: Extra"
 challengeType: 15
 videoId: ZtypoUnNdAY
 dashedName: applications-of-linear-systems-extra
@@ -8,29 +8,29 @@ dashedName: applications-of-linear-systems-extra
 
 # --description--
 
-The next video contains more examples of how to set up equations and use your Colab notebook to solve them.
+Il prossimo video contiene altri esempi di come impostare le equazioni e utilizzare il tuo notebook Colab per risolverle.
 
 # --question--
 
 ## --text--
 
-How can you make use of a Colab notebook to solve practical business problems?
+Come puoi usare un notebook Colab per risolvere problemi pratici di economia?
 
 ## --answers--
 
-Modify the equations in the code you already wrote
+Modificando le equazioni nel codice che hai già scritto
 
 ---
 
-Copy your existing code and then modify it as necessary
+Copiando il codice esistente e quindi modificandolo secondo necessità
 
 ---
 
-Write new code based on the functions you already know
+Scrivendo nuovo codice basato sulle funzioni che già conosci
 
 ---
 
-All of the above
+Tutte le precendenti
 
 ## --video-solution--
 

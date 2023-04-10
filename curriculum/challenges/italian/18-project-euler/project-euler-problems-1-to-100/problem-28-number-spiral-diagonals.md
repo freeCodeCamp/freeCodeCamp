@@ -1,6 +1,6 @@
 ---
 id: 5900f3881000cf542c50fe9b
-title: 'Problem 28: Number spiral diagonals'
+title: 'Problema 28: le diagonali della spirale di numeri'
 challengeType: 1
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
@@ -8,7 +8,7 @@ dashedName: problem-28-number-spiral-diagonals
 
 # --description--
 
-Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+Iniziando con il numero 1 e muovendosi a destra in direzione oraria, una spirale 5 per 5 è formata come segue:
 
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
@@ -18,37 +18,37 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-It can be verified that the sum of the numbers on the diagonals is 101.
+Può essere verificato che la somma di tutti i numeri sulle diagonali è 101.
 
-What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+Quale è la somma dei numeri sulle diagonali di una spirale `n` per `n` formata nello stesso modo?
 
 # --hints--
 
-`spiralDiagonals(101)` should return a number.
+`spiralDiagonals(101)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-`spiralDiagonals(101)` should return 692101.
+`spiralDiagonals(101)` dovrebbe restituire 692101.
 
 ```js
 assert(spiralDiagonals(101) == 692101);
 ```
 
-`spiralDiagonals(303)` should return 18591725.
+`spiralDiagonals(303)` dovrebbe restituire 18591725.
 
 ```js
 assert(spiralDiagonals(303) == 18591725);
 ```
 
-`spiralDiagonals(505)` should return 85986601.
+`spiralDiagonals(505)` dovrebbe restituire 85986601.
 
 ```js
 assert(spiralDiagonals(505) == 85986601);
 ```
 
-`spiralDiagonals(1001)` should return 669171001.
+`spiralDiagonals(1001)` dovrebbe restituire 669171001.
 
 ```js
 assert(spiralDiagonals(1001) == 669171001);

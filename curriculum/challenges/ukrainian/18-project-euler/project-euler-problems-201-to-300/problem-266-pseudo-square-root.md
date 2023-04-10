@@ -20,7 +20,7 @@ Let $p$ be the product of the primes below 190. Find $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 
-`pseudoSquareRoot()` should return `1096883702440585`.
+`pseudoSquareRoot()` має повернути `1096883702440585`.
 
 ```js
 assert.strictEqual(pseudoSquareRoot(), 1096883702440585);

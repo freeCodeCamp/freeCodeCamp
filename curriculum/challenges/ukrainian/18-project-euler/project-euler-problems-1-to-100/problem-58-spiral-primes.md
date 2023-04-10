@@ -26,25 +26,25 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` має повернути число.
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` має повернути `11`.
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` має повернути `981`.
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` має повернути `26241`.
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);

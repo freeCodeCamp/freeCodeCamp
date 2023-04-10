@@ -18,25 +18,25 @@ What is the largest square number formed by any member of such a pair?
 
 # --hints--
 
-`anagramicSquares(['CARE', 'RACE'])` should return a number.
+`anagramicSquares(['CARE', 'RACE'])` має повернути число.
 
 ```js
 assert(typeof anagramicSquares(['CARE', 'RACE']) === 'number');
 ```
 
-`anagramicSquares(['CARE', 'RACE'])` should return `9216`.
+`anagramicSquares(['CARE', 'RACE'])` має повернути `9216`.
 
 ```js
 assert.strictEqual(anagramicSquares(['CARE', 'RACE']), 9216);
 ```
 
-`anagramicSquares(testWords1)` should return `4761`.
+`anagramicSquares(testWords1)` має повернути `4761`.
 
 ```js
 assert.strictEqual(anagramicSquares(_testWords1), 4761);
 ```
 
-`anagramicSquares(testWords2)` should return `18769`.
+`anagramicSquares(testWords2)` має повернути `18769`.
 
 ```js
 assert.strictEqual(anagramicSquares(_testWords2), 18769);

@@ -42,7 +42,7 @@ Find $\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$, and gi
 
 # --hints--
 
-`guessingGame()` should return `36813.12757207`.
+`guessingGame()` має повернути `36813.12757207`.
 
 ```js
 assert.strictEqual(guessingGame(), 36813.12757207);

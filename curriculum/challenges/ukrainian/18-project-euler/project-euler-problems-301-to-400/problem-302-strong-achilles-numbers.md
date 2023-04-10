@@ -24,7 +24,7 @@ How many Strong Achilles numbers are there below ${10}^{18}$?
 
 # --hints--
 
-`strongAchillesNumbers()` should return `1170060`.
+`strongAchillesNumbers()` має повернути `1170060`.
 
 ```js
 assert.strictEqual(strongAchillesNumbers(), 1170060);

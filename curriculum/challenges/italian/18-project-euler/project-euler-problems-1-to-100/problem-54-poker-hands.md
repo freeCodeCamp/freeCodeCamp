@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: 'Problema 54: mani di poker'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,54 +8,54 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+Nel gioco di carte del poker, una mano è composta da cinque carte che sono classificate, dalla più bassa alla più alta, nel modo seguente:
 
 <ul>
-  <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
-  <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>Carta alta: carta di valore più alto.</li>
+  <li>Una coppia: due carte dello stesso valore.</li>
+  <li>Due coppie: due coppie diverse.</li>
+  <li>Tris: tre carte dello stesso valore.</li>
+  <li>Scala: tutte le carte hanno valori consecutivi.</li>
+  <li>Colore: tutte le carte dello stesso seme.</li>
+  <li>Full: tris e una coppia.</li>
+  <li>Poker: quattro carte dello stesso valore.</li>
+  <li>Scala colore: tutte le carte sono valori consecutivi dello stesso seme.</li>
+  <li>Scala reale: Dieci, Jack, Regina, Re, Asso, dello stesso seme.</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+Le carte sono valutate nell'ordine: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Regina, Re, Asso.
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Se due giocatori hanno mani dello stesso valore, allora il punto composto dal valore più alto vince; per esempio, un paio di otto batte un paio di cinque (vedi esempio 1 di seguito). Ma se due punti sono pari, per esempio, entrambi i giocatori hanno una coppia di regine, vengono confrontate le carte più alte in ogni mano (vedi esempio 4 in basso); se le carte più alte sono pari allora vengono confrontate le carte più alte successive, e così via.
 
-Consider the following five hands dealt to two players:
+Considera le seguenti cinque mani distribuite a due giocatori:
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
-| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
-| <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
-| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
+| Mano                      | Giocatore 1                                                               | Giocatore 2                                                                | Vincitore   |
+| ------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> Coppia di cinque                                | 2C 3S 8S 8D TD <br> Coppia di otto                                   | Giocatore 2 |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> Carta più alta asso                             | 2C 5C 7D 8S QH <br> Carta più alta regina                            | Giocatore 1 |
+| <strong>3</strong> | 2D 9C AS AH AC <br> Tris d'assi                                     | 3D 6D 7D TD QD <br> Colore di quadri                                 | Giocatore 2 |
+| <strong>4</strong> | 4D 6S 9H QH QC <br> Coppia di regine <br> Carta più alta nove | 3D 6D 7H QD QS <br> Coppia di regine <br> Carta più alta sette | Giocatore 1 |
+| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full <br> con tre quattro                 | 3C 3D 3S 9S 9D <br> Full <br> con tre tre                      | Giocatore 1 |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+L'array globale (`handsArr`) passato alla funzione, contiene mille mani casuali distribuite a due giocatori. Ogni riga del file contiene dieci carte (separate da uno spazio singolo): le prime cinque sono carte del giocatore 1 e le ultime cinque sono carte del giocatore 2. Si può presumere che tutte le mani siano valide (nessun carattere non valido o carte ripetute), la mano di ogni giocatore non è in ordine specifico, e in ogni mano c'è un chiaro vincitore.
 
-How many hands does Player 1 win?
+In quante mani vince Giocatore 1?
 
 # --hints--
 
-`pokerHands(testArr)` should return a number.
+`pokerHands(testArr)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof pokerHands(testArr) === 'number');
 ```
 
-`pokerHands(testArr)` should return 2.
+`pokerHands(testArr)` dovrebbe restituire 2.
 
 ```js
 assert.strictEqual(pokerHands(testArr), 2);
 ```
 
-`pokerHands(handsArr)` should return 376.
+`pokerHands(handsArr)` dovrebbe restituire 376.
 
 ```js
 assert.strictEqual(pokerHands(handsArr), 376);

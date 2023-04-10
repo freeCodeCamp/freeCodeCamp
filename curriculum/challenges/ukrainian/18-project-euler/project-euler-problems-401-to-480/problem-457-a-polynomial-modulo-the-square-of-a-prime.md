@@ -20,7 +20,7 @@ Find $SR({10}^7)$.
 
 # --hints--
 
-`polynomialModuloSquareOfPrime()` should return `2647787126797397000`.
+`polynomialModuloSquareOfPrime()` має повернути `2647787126797397000`.
 
 ```js
 assert.strictEqual(polynomialModuloSquareOfPrime(), 2647787126797397000);

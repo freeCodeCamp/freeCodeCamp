@@ -18,7 +18,7 @@ With one-hundred tiles, and not necessarily using all of the tiles at one time, 
 
 # --hints--
 
-`differentHollowSquareLaminae()` should return `1572729`.
+`differentHollowSquareLaminae()` має повернути `1572729`.
 
 ```js
 assert.strictEqual(differentHollowSquareLaminae(), 1572729);

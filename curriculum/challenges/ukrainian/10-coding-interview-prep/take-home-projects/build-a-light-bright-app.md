@@ -1,6 +1,6 @@
 ---
 id: 5a5d02bd919fcf9ca8cf46cb
-title: Створіть додаток «Light-Bright»
+title: Створіть застосунок «Light-Bright»
 challengeType: 3
 forumTopicId: 302350
 dashedName: build-a-light-bright-app

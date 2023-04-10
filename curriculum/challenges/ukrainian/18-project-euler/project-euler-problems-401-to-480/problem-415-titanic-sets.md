@@ -20,7 +20,7 @@ Find $T({10}^{11})\bmod {10}^8$.
 
 # --hints--
 
-`titanicSets()` should return `55859742`.
+`titanicSets()` має повернути `55859742`.
 
 ```js
 assert.strictEqual(titanicSets(), 55859742);

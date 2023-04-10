@@ -32,7 +32,7 @@ Given that $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\
 
 # --hints--
 
-`numbersInDecimalExpansion()` should return `542934735751917760`.
+`numbersInDecimalExpansion()` має повернути `542934735751917760`.
 
 ```js
 assert.strictEqual(numbersInDecimalExpansion(), 542934735751917760);

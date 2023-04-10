@@ -468,4 +468,40 @@ ToDo: find out why, and remove the need for it */
 
 .grid-project-block {
   margin-bottom: 50px;
+  padding: 18px 15px;
+  position: relative;
+}
+
+.grid-project-block:hover {
+  cursor: pointer;
+  background: var(--tertiary-background);
+}
+
+.grid-project-block a.block-header {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* make entire certification card clickable */
+.grid-project-block a.block-header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.grid-project-block .tags-wrapper a {
+  position: relative;
+  z-index: 100;
+}
+
+.grid-project-block:hover:has(.tags-wrapper a:hover) {
+  background: var(--primary-background);
 }

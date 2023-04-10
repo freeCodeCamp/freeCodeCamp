@@ -20,37 +20,37 @@ By listing the set of reduced proper fractions for `d` ≤ `limit` in ascending 
 
 # --hints--
 
-`orderedFractions(8)` should return a number.
+`orderedFractions(8)` має повернути число.
 
 ```js
 assert(typeof orderedFractions(8) === 'number');
 ```
 
-`orderedFractions(8)` should return `2`.
+`orderedFractions(8)` має повернути `2`.
 
 ```js
 assert.strictEqual(orderedFractions(8), 2);
 ```
 
-`orderedFractions(10)` should return `2`.
+`orderedFractions(10)` має повернути `2`.
 
 ```js
 assert.strictEqual(orderedFractions(10), 2);
 ```
 
-`orderedFractions(9994)` should return `4283`.
+`orderedFractions(9994)` має повернути `4283`.
 
 ```js
 assert.strictEqual(orderedFractions(9994), 4283);
 ```
 
-`orderedFractions(500000)` should return `214283`.
+`orderedFractions(500000)` має повернути `214283`.
 
 ```js
 assert.strictEqual(orderedFractions(500000), 214283);
 ```
 
-`orderedFractions(1000000)` should return `428570`.
+`orderedFractions(1000000)` має повернути `428570`.
 
 ```js
 assert.strictEqual(orderedFractions(1000000), 428570);

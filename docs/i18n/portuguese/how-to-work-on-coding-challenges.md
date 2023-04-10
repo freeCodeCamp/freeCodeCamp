@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-O resultado é um novo id, por exemplo `5a474d78df58bafeb3535d34` acima.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Quando tiver seu id, coloque-o no arquivo markdown como campo `id` no topo, ex.
 
@@ -243,7 +243,7 @@ Se levar mais do que dois minutos para completar um desafio, você tem duas opç
 - Simplifique o desafio, ou
 - Divida o desafio em dois desafios.
 
-A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
 Acompanhamos o tempo que leva para os usuários resolverem os desafios e usamos essa informação para identificar desafios que precisem ser simplificados ou divididos.
 
@@ -267,7 +267,7 @@ Use `parseInt` para converter a variável `realNumber` em um número inteiro.
 ```
 
 - Referências a nomes de arquivos e caminhos (ex. `package.json`, `src/components`) devem estar entre `` \` ``.
-- Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). Para completar o bloco de código, você deve começar uma nova linha que apenas possui três crases e **outra linha vazia**. Veja o exemplo abaixo:
+- Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. Veja o exemplo abaixo:
 - Os espaços importam no Markdown. Então, recomendamos que os mantenham visíveis no seu editor.
 
 **Observação:** se você for usar um exemplo de código em YAML, use `yaml` ao invés de `yml` para a linguagem à direita das crases.
@@ -286,10 +286,10 @@ Exemplo de código:
 `**Observação:** Texto da observação...`
 - Se muitas observações são necessárias, liste todas elas em frases separadas usando o formato:
 `**Observações:** Texto da primeira observação.
- Texto da segunda observação.`
-- Use aspas simples quando necessário
+ Second note text.`
+- Use single quotes where applicable
 
-**Observação:** O _Markdown_ equivalente deve ser usado ao invés de tags _HTML_.
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## Escrevendo testes
 
@@ -299,24 +299,24 @@ Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se
 
 Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
 
-## Formatação do código seed
+## Formatting Seed Code
 
-Aqui vemos diretrizes de formatação específicas para o código seed do desafio:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Use dois espaços para indentação
-- Declarações em JavaScript terminam em ponto-e-vírgula
-- Use aspas duplas onde for aplicável
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Comentários do código seed
+### Seed Code Comments
 
-Temos um [dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
 
 Os comentários usados devem ter um espaço entre os caracteres do comentário e o comentário em si. Geralmente, os comentários devem ser usados com moderação. Sempre considere reescrever a descrição de um desafio ou instrução se for possível evitar usar um comentário de código fornecido.
 
-Exemplo de um comentário de uma linha em JavaScript:
+Example of a valid single-line JavaScript comment:
 
 ```js
-// Mude somente abaixo dessa linha
+// Only change code below this line
 ````
 
 Exemplo de um comentário válido em CSS:
@@ -369,7 +369,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Tradução de comentários de código seed
+### Translation of Seed Code Comments
 
 Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão do dicionário de comentários em chinês (não a versão em inglês) pode ser encontrada em `/curriculum/dictionaries/chinese/comments.json`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
 
@@ -391,16 +391,16 @@ Se você encontrar um problema nas dicas/tópicos de solução de um desafio exi
 
 ### Adicionando um novo tópico de dicas/soluções em um desafio
 
-Faça o passo-a-passo a seguir quando for adicionar novos tópicos de dicas/soluções relacionadas a um desafio.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Comece seguindo os mesmos passos para criar um novo tópico, mas revise o seguinte para criar o título.
 2. O título do tópico deve começar com `freeCodeCamp Challenge Guide:` concatenado com o título atual do desafio de currículo. Por exemplo, se o desafio é chamado "`Chunky Monkey`", o título do tópico seria "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. O `camperbot` deve ser o proprietário destes tópicos/postagens. Então, você precisará solicitar um administrador para alterar a propriedade da postagem principal para `camperbot`.
 4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. Está localizado no final da URL do tópico do fórum. Este id deve ser adicionado ao arquivo de desafio do currículo através do processo normal de pull request para o botão `Get a Hint` para vincular ao tópico.
 
-### Diretrizes para o conteúdo dos tópicos de dicas e soluções
+### Guidelines for Content of Hints and Solutions Topics
 
-Ao propor uma solução para um tópico do guia relacionado a um desafio de currículo, o código completo deve ser adicionado. Isso inclui todo o código seed original, assim como as alterações necessárias para passar em todos os testes do desafio. O modelo a seguir deve ser usado ao criar um novo tópico de dicas/soluções:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. Isso inclui todo o código seed original, assim como as alterações necessárias para passar em todos os testes do desafio. O modelo a seguir deve ser usado ao criar um novo tópico de dicas/soluções:
 
 ````md
 # O nome do desafio fica aqui
