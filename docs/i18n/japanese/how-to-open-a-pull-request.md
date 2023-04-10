@@ -17,7 +17,7 @@ Some examples of this are:
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## 良いPRタイトルを用意する
+## Prepare a Good PR Title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
@@ -93,7 +93,7 @@ Some examples of good PR titles would be:
 
    - PR がページの動作に影響を与える場合は、対応する [Cypress 統合テスト](how-to-add-cypress-tests.md) も追加する必要があります。
 
-## プルリクエストへのフィードバック
+## Feedback on Pull Requests
 
 > :tada: PR の作成おめでとうございます。時間をかけて貢献してくださったことに心から感謝します。
 
@@ -103,13 +103,13 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 > [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#ローカルで変更を行う) のガイドラインをご覧になることを推奨します。
 
-## プルリクエストでの競合
+## Conflicts on a Pull Request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
 More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
-### 通常のバグ修正と機能について
+### For Usual Bug Fixes and Features
 
 When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
@@ -138,7 +138,7 @@ When you are working on regular bugs and features on our development branch `mai
    git push --force origin <pr-branch>
    ```
 
-### 今後のカリキュラムと機能について
+### For Upcoming Curriculum and Features
 
 When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 

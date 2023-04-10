@@ -7,11 +7,11 @@
 
 ## Вступ
 
-Деякі робочі процеси (наприклад, зміна електронної пошти користувача) вимагають сервер api, який надсилатиме вихідні листи. MailHog — це альтернатива провайдерам електронної пошти для надсилання листів. Це інструмент для тестування електронної пошти, на який приходитимуть усі листи, відправлені екземпляром freeCodeCamp.
+Some email workflows, like updating a user's email, require the back-end api-server to send outgoing emails. MailHog — це альтернатива провайдерам електронної пошти для надсилання листів. Це інструмент для тестування електронної пошти, на який приходитимуть усі листи, відправлені екземпляром freeCodeCamp.
 
 ## Встановлення MailHog
 
-MailHog можна встановити на macOS, Windows та Linux або використовувати через Docker
+MailHog can be installed on macOS, Windows, and Linux or used via Docker
 
 <details><summary>Встановлення MailHog за допомогою Docker</summary>
 

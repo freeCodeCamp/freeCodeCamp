@@ -177,7 +177,7 @@ L'ordine dei superblocchi in questo oggetto rispecchia il modo in cui appaiono s
 L'array `CurriculumMaps.Landing` dovrebbe contenere esattamente un superblocco per tutte le nostre certificazioni attuali e l'oggetto `CurriculumMaps.Learn` dovrebbe avere tutti i superblocchi esistenti al suo interno. I superblocchi tradotti vanno in `TranslationStates.Audited` e i superblocchi non tradotti vanno in `TranslationStates.NotAudited`. Ognuno di questi due oggetti ha i quattro stati diversi in cui può essere un superblocco.
 
 - `SuperBlockStates.Current`: Significa che il superblocco è attuale, `(New) Responsive Web Design` ad esempio.
-- `SuperBlockStates.New`: Compare solo quando `SHOW_NEW_CURRICULUM` è impostato su `true` nel file `.env`. È per la visualizzazione di nuovi superblocchi su uno specifico build. Per esempio, quando abbiamo rilasciato il nuovo RWD, lo abbiamo mostrato solo in inglese per iniziare.
+- `SuperBlockStates.New`: Compare solo quando `SHOW_NEW_CURRICULUM` è impostato su `true` nel file `.env`. È per la visualizzazione di nuovi superblocchi su uno specifico build. For example, when we released the new RWD, we only showed it on English to start.
 - `SuperBlockStates.Upcoming`: Compare solo quando `SHOW_UPCOMING_CHANGES` è impostato su `true` nel file `.env`. È per mostrare i superblocchi localmente mentre sono in sviluppo. Oppure, se hai solo bisogno di nascondere un superblocco dalla mappa per qualche altra ragione.
 - `SuperBlockStates.Legacy`: Un superblocco viene spostato qui quando una versione più recente di quel superblocco è stata completamente tradotta e sostituita.
 
@@ -218,7 +218,7 @@ const algoliaIndices = {
 
 ## Attivare video localizzati
 
-Per le sfide video, devi cambiare alcune cose. Come prima cosa aggiungi la nuova lingua alla query per GraphQL nel file `client/src/templates/Challenges/video/Show.tsx`. Per esempio, in questo modo aggiungeresti Dothraki alla query:
+Per le sfide video, devi cambiare alcune cose. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. Per esempio, in questo modo aggiungeresti Dothraki alla query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -256,7 +256,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-Infine aggiorna lo schema delle sfide in `curriculum/schema/challengeSchema.js`.
+And finally, update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
