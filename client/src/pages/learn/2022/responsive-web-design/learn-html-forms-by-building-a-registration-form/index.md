@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn HTML Forms by Building a Registration Form Project
 block: learn-html-forms-by-building-a-registration-form
-superBlock: responsive-web-design
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Registration Form Project

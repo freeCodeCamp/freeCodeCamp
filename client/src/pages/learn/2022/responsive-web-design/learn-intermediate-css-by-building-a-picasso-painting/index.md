@@ -3,7 +3,7 @@ title: >-
   Introduction to the Learn Intermediate CSS by Building a Picasso Painting
   Project
 block: learn-intermediate-css-by-building-a-picasso-painting
-superBlock: responsive-web-design
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Learn Intermediate CSS by Building a Picasso Painting Project
