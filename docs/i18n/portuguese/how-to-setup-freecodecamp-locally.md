@@ -1,6 +1,6 @@
 Siga estas orientações para criar um ambiente de desenvolvimento para o freeCodeCamp. Isso é altamente recomendado se você quer contribuir regularmente.
 
-## Escolha entre o Gitpod ou seu próprio computador (configuração local)
+## Choose between Gitpod or your Own Machine (local setup)
 
 Se você deseja fazer uma contribuição única, use o Gitpod para fazer alterações. A configuração do Gitpod abre um ambiente pronto para código em poucos minutos no seu navegador. Para contribuir a longo prazo, recomendamos que você instale o freeCodeCamp em seu computador.
 
@@ -17,7 +17,7 @@ Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é
 
 > [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente dentro de janelas.
 
-### Como preparar um espaço de trabalho no GitPod
+### How to Prepare a Gitpod Workspace
 
 Nós automatizamos o processo de instalação de todas as dependências e ferramentas de que você precisará. Com o GitPod, você terá um ambiente gratuito e pronto para o código em alguns minutos. Isso é útil caso você não tenha acesso a um computador ou queira fazer alterações únicas.
 
@@ -38,7 +38,7 @@ Existem várias maneiras de se abrir um espaço de trabalho no GitPod:
 
 É isso. Agora, você pode pular para a seção 'sincronizando a partir do pai' depois de ter iniciado um espaço de trabalho no GitPod. A maior parte deste guia se aplica a espaços de trabalho no GitPod, mas preste atenção em [como funcionam os URLs e as portas em um espaço de trabalho do GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
 
-### Como preparar sua máquina local
+### How to Prepare your Local Machine
 
 Aqui está um requisito mínimo de sistema para rodar o freeCodeCamp localmente:
 
@@ -87,7 +87,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
    > [!TIP] Não ignore nenhum erro de linting. Eles têm como objetivo **ajudar** você e garantir uma base de código simples e limpa.
 
-## Faça o fork do repositório no GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) é uma etapa onde você obtém sua própria cópia do repositório principal do freeCodeCamp (vulgo _repo_) no GitHub.
 
@@ -114,7 +114,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia do fre
    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Como criar um fork do freeCodeCamp no GitHub" />
 </details>
 
-## Clonar o seu fork no GitHub
+## Clone your Fork from GitHub
 
 [Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
@@ -138,7 +138,7 @@ Isto vai baixar todo o repositório do freeCodeCamp para seu diretório de proje
 
 Nota: `--depth=1` cria um clone raso do seu fork, apenas com o histórico mais recente.
 
-## Configurar sincronização a partir do pai
+## Set up Syncing from Parent
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
@@ -173,7 +173,7 @@ Agora que você baixou uma cópia do seu fork, será necessário configurar um r
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Executando freeCodeCamp localmente
+## Running freeCodeCamp Locally
 
 Agora que você tem uma cópia local do freeCodeCamp, você pode seguir estas instruções para executá-lo localmente. Isso permitirá que você:
 
@@ -185,9 +185,9 @@ Se você encontrar problemas, primeiro faça uma busca na web e procurar por res
 
 E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colaboradores) do fórum](https://forum.freecodecamp.org/c/contributors) ou [no servidor de chat](https://discord.gg/PRyKn3Vbay).
 
-### Configurar dependências
+### Configuring Dependencies
 
-#### Etapa 1: Configure o arquivo de variável de ambiente
+#### Step 1: Set up the Environment Variable File
 
 As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acessado dinamicamente durante a etapa de instalação.
 
@@ -216,7 +216,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 
 > [!TIP] Lembre-se: se quiser usar serviços como Auth0 ou Algolia, você terá que adquirir suas próprias chaves da API para estes serviços e editar as entradas no arquivo `.env`.
 
-#### Etapa 2: Instalar as dependências
+#### Step 2: Install Dependencies
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
@@ -224,7 +224,7 @@ Esta etapa vai instalar as dependências necessárias para a execução do aplic
 pnpm install
 ```
 
-#### Etapa 3: Iniciar o MongoDB e criar o banco de dados
+#### Step 3: Start MongoDB and Seed the Database
 
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
@@ -262,7 +262,7 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-#### Etapa 4: Iniciar o aplicativo client do freeCodeCamp e o servidor de API
+#### Step 4: Start the freeCodeCamp Client Application and API Server
 
 Agora você pode iniciar o servidor de API e os aplicativos do client.
 
@@ -282,7 +282,7 @@ Quando estiver conectado, se você visitar <http://localhost:3000/explorer> pode
 
 Se você tiver problemas durante a instalação, confira a [seção de solução de problemas](troubleshooting-development-issues.md)
 
-## Referência de comandos rápidos
+## Quick Commands Reference
 
 Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 

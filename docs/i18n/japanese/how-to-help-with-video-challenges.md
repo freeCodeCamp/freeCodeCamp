@@ -1,4 +1,4 @@
-# ビデオチャレンジを支援する方法
+# How to Help with Video Challenges
 
 ビデオチャレンジは、freeCodeCamp カリキュラムの新しいタイプのチャレンジです。
 
@@ -54,18 +54,18 @@ forumTopicId: 12345
 正解の番号をここに記述します。
 ````
 
-## ビデオチャレンジに対する質問を作成する
+## Creating Questions for Video Challenges
 
-### ビデオチャレンジマークダウンファイルにアクセスする
+### Access the Video Challenge Markdown Files
 
-カリキュラム内の以下のロケーションにビデオチャレンジマークダウンファイルがあります。
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Data Analysis with Python コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Numpy コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
-- [How Neural Networks Work コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-上記選択肢からチャレンジマークダウンファイルを選択してください。
+Pick a challenge markdown file from the options above.
 
 ### Skim through the video associated with the challenge and create a multiple-choice question
 
@@ -87,9 +87,9 @@ In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
-### マークダウンファイルに質問を追加してください
+### Add the Question to the Markdown File
 
-ローカルでまたは GitHub インターフェースを使用して質問を追加することができます。 ローカルで質問を追加するには、[freeCodeCamp をローカルに設定する](how-to-setup-freecodecamp-locally.md) 必要があります。 GitHub でファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
+You can add the question locally or using the GitHub interface. ローカルで質問を追加するには、[freeCodeCamp をローカルに設定する](how-to-setup-freecodecamp-locally.md) 必要があります。 GitHub でファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
 
 特定のビデオチャレンジに質問がまだ追加されていない場合は、次のデフォルトの質問があります。
 
@@ -198,6 +198,6 @@ print(height/3)
 
 以下のビデオコースのマークダウンファイルで、その他の例も参照できます。 すべてのチャレンジには既に質問があります: [Python for Everybody コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## プルリクエストをオープンする
+## Open a Pull Request
 
 1 つ以上の質問を作成した後、新しいブランチに変更をコミットすると、[プルリクエストをオープンする](how-to-open-a-pull-request.md) ことができます。

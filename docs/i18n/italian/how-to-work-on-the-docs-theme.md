@@ -1,12 +1,12 @@
-# Come lavorare sulla documentazione
+# How to Work on Documentation
 
-## Lavorare sul contenuto della documentazione
+## Work on the Content of the Docs
 
 Per lavorare sulle linee guida per i contributori, puoi modificare o aggiungere file nella cartella `docs` [disponibile qui](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Quando i tuoi cambiamenti sono accettati, saranno resi disponibili automaticamente nel sito della documentazione.
 
 Quando aggiungi un nuovo file alla cartella `docs`, dovresti valutare se il file dovrebbe essere aggiunto anche alla barra laterale di navigazione. Generalmente creiamo un link nel file [`_sidebar.md`](_sidebar.md) per guide nuove e indipendenti. In alternativa, è possibile seguire le istruzioni qui sotto sulla creazione di un link interno per le guide di supporto.
 
-### Come creare un link interno
+### How to Create an Internal Link
 
 Se vuoi creare un link che punta a una sezione diversa delle linee guida per contribuire, segui questo formato:
 
@@ -25,13 +25,13 @@ Assicurati di includere l'estensione del file (`.md`). Non specificare l'URL com
 
 Quando lavori per tradurre la documentazione su Crowdin, assicurati di sostituire la parte `#target-section-heading-id` con l'id del documento tradotto. [Impara di più su come tradurre la documentazione qui](how-to-translate-files.md#tradurre-la-documentazione).
 
-## Lavorare sul tema della documentazione
+## Work on the Docs Theme
 
 > [!NOTE] Non devi impostare nulla per lavorare sul contenuto della documentazione.
 > 
 > Per lavorare sulle linee guida per la contribuzione, vedi [la sezione su come lavorare sul contenuto della documentazione](#work-on-the-docs-content).
 
-### Struttura del sito di documentazione
+### Structure of the Docs Website
 
 Il sito viene generato utilizzando [`docsify`](https://docsify.js.org) e servito utilizzando le pagine di GitHub.
 
@@ -43,20 +43,14 @@ In genere non è necessario modificare alcuna configurazione o costruire il sito
 - La homepage è generata dal file [`_coverpage.md`](_coverpage.md).
 - La barra laterale di navigazione è generata da [`_sidebar.md`](_sidebar.md).
 
-### Servire localmente il sito di documentazione
+### Serving the Documentation Site Locally
 
-Installa freeCodeCamp localmente ([vedi la guida di installazione locale](how-to-setup-freecodecamp-locally)), impacchettiamo il CLI con gli strumenti di sviluppo in modo da poter eseguire uno qualsiasi dei comandi sottostanti dalla root del repo quando necessario:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run the command below as needed from the root of the repo:
 
-#### Servire e avviare solo il sito di documentazione
+#### Serve and Launch the Documentation Site
 
 ```console
 pnpm run docs:serve
-```
-
-#### Servire il sito di documentazione accanto a freeCodeCamp localmente:
-
-```console
-pnpm run develop
 ```
 
 > Il sito di documentazione dovrebbe essere disponibile su <http://localhost:3400>

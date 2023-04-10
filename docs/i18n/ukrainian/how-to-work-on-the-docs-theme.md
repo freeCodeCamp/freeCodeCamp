@@ -1,12 +1,12 @@
-# Як працювати над документацією
+# How to Work on Documentation
 
-## Робота над вмістом документації
+## Work on the Content of the Docs
 
 Щоб працювати над рекомендаціями щодо внеску, ви можете редагувати або додавати файли в каталозі `docs`, [доступному тут](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Коли ваші зміни об’єднані, вони будуть автоматично доступними на документаційному сайті.
 
 Подумайте, чи потрібно додавати файл до бічної панелі навігації, коли додаєте новий файл до каталогу `docs`. Зазвичай ми створюємо посилання у файлі [`_sidebar.md`](_sidebar.md) для нових та незалежних посібників. Крім того, ви можете дотримуватись наведених нижче інструкцій для створення внутрішнього посилання для допоміжних посібників.
 
-### Як створити внутрішнє посилання
+### How to Create an Internal Link
 
 Якщо ви хочете створити внутрішнє посилання, націлене на інший розділ рекомендацій щодо внеску, використовуйте цей формат:
 
@@ -25,13 +25,13 @@
 
 Коли ви працюєте над перекладом документації на Crowdin, не забудьте змінити `#target-section-heading-id` на ідентифікацію в перекладеному документі. [Дізнатись більше про переклад документації](how-to-translate-files.md#translate-documentation).
 
-## Робота над темою документації
+## Work on the Docs Theme
 
 > [!NOTE] Коротке нагадування, що вам не потрібно нічого налаштовувати для роботи над вмістом документації.
 > 
 > Щоб працювати над рекомендаціями щодо внеску, див. [робота над вмістом документації](#work-on-the-docs-content).
 
-### Структура вебсайту документації
+### Structure of the Docs Website
 
 Сайт створений з використанням [`docsify`](https://docsify.js.org) та обслуговується завдяки GitHub Pages.
 
@@ -43,20 +43,14 @@
 - Домашня сторінка генерується з [`_coverpage.md`](_coverpage.md).
 - Бічна панель навігації генерується з [`_sidebar.md`](_sidebar.md).
 
-### Обслуговування документаційного сайту локально
+### Serving the Documentation Site Locally
 
-Налаштуйте freeCodeCamp локально ([див. посібник з локального налаштування](how-to-setup-freecodecamp-locally)). Ми зібрали CLI з інструментами веброзробки, щоб ви могли запустити будь-яку з наведених нижче команд з кореня репозиторію:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run the command below as needed from the root of the repo:
 
-#### Обслужити та запустити лише документаційний сайт
+#### Serve and Launch the Documentation Site
 
 ```console
 pnpm run docs:serve
-```
-
-#### Обслужити документаційний сайт разом з freeCodeCamp локально:
-
-```console
-pnpm run develop
 ```
 
 > Сайт документації повинен бути доступним на <http://localhost:3400>
