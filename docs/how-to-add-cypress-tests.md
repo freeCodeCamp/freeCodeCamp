@@ -40,7 +40,7 @@ To run tests against production builds, replace `dev` with `prd` below.
   For example:
  
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - To create a development build, start the development server, and run all existing cypress end-to-end tests:
