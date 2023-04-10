@@ -95,6 +95,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block
+        superBlock
       }
       html
     }
