@@ -22,7 +22,7 @@ Per questa sfida, utilizzando Python dovrai creare tre giochi matematici che ese
   - Generare problemi di uno e due passaggi con valori interi casuali; il giocatore deve inserire la risposta
   - Utilizzare valori positivi e negativi. Per ulteriori difficoltà, rendere i numeri più grandi
 - Gioco del proiettile
-  - Mostrare un "muro" con altezza e posizione casuali. Player has to move sliders to adjust a parabolic path to clear the wall
+  - Mostrare un "muro" con altezza e posizione casuali. Il giocatore deve spostare i cursori per impostare un percorso parabolico per superare il muro
   - Per ulteriori difficoltà, creare un secondo livello dove i giocatori inseriscono a, b, e c senza cursori
 
 Quando hai finito, invia l'URL al notebook Colab pubblico sul tuo Google drive.

@@ -11,7 +11,7 @@ dashedName: escape-sequences-in-strings
 
 引號不是字符串中唯一可以被轉義（<dfn>escaped</dfn>）的字符。 轉義字符允許你使用可能無法在字符串中使用的字符。
 
-<table class='table table-striped'><thead><tr><th>代碼</th><th>輸出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>單引號</td></tr><tr><td><code>\"</code></td><td>雙引號</td></tr><tr><td><code>\\</code></td><td>反斜槓</td></tr><tr><td><code>\n</code></td><td>換行符</td></tr><tr><td><code>\t</code></td><td>製表符</td></tr><tr><td><code>\r</code></td><td>回車</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>換頁符</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>代碼</th><th>輸出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>單引號</td></tr><tr><td><code>\"</code></td><td>雙引號</td></tr><tr><td><code>\\</code></td><td>反斜槓</td></tr><tr><td><code>\n</code></td><td>換行符</td></tr><tr><td><code>\t</code></td><td>製表符</td></tr><tr><td><code>\r</code></td><td>回車</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>換頁符</td></tr></tbody></table>
 
 *請注意，反斜線本身必須被轉義，才能顯示爲反斜線。*
 

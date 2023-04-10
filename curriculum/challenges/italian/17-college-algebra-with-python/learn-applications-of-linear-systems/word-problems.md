@@ -1,6 +1,6 @@
 ---
 id: 6363d2019078df117ce4c3fe
-title: "Word Problems"
+title: "Parole nei Problemi"
 challengeType: 15
 videoId: 3ZM3XMn1QYo
 dashedName: word-problems
@@ -28,23 +28,23 @@ Completa i problemi alle pagine 304, 308 e 321 da "Algebra and Trigonometry".
 
 ## --text--
 
-Quale delle seguenti parole chiave indica la sottrazione?
+Quali delle seguenti parole chiave indicano la sottrazione?
 
 ## --answers--
 
-plus, more, increase, up
+più, aggiunta, aumento, somma
 
 ---
 
-difference, less, decrease, down
+differenza, meno, calo, diminuzione
 
 ---
 
-of, by, factor, area, times
+per, prodotto, area, fattore
 
 ---
 
-out of, per, divided, quotient
+diviso, quoziente, rapporto, su
 
 ## --video-solution--
 
