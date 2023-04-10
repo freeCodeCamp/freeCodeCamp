@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
-import { isChallenge } from '../../../utils/path-parsers';
 
 import { userSelector } from '../../../redux/selectors';
 import {
@@ -67,8 +66,8 @@ interface HotkeysProps {
   submitChallenge: () => void;
   innerRef: MutableRefObject<HTMLElement | undefined>;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
-  nextChallengePath: string;
-  prevChallengePath: string;
+  nextChallengePath: string | null;
+  prevChallengePath: string | null;
   setEditorFocusability: (arg0: boolean) => void;
   setIsAdvancing: (arg0: boolean) => void;
   tests: Test[];
@@ -137,14 +136,22 @@ function Hotkeys({
           navigationMode: () => setEditorFocusability(false),
           navigatePrev: () => {
             if (!canFocusEditor) {
-              if (isChallenge(prevChallengePath)) setIsAdvancing(true);
-              void navigate(prevChallengePath);
+              if (prevChallengePath) {
+                setIsAdvancing(true);
+                void navigate(prevChallengePath);
+              } else {
+                void navigate('/learn');
+              }
             }
           },
           navigateNext: () => {
             if (!canFocusEditor) {
-              if (isChallenge(nextChallengePath)) setIsAdvancing(true);
-              void navigate(nextChallengePath);
+              if (nextChallengePath) {
+                setIsAdvancing(true);
+                void navigate(nextChallengePath);
+              } else {
+                void navigate('/learn');
+              }
             }
           },
           showShortcuts: (e: React.KeyboardEvent) => {
