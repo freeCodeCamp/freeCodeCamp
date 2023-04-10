@@ -126,8 +126,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       markdownlint:
-        specifier: 0.28.0
-        version: 0.28.0
+        specifier: 0.28.1
+        version: 0.28.1
       mock-fs:
         specifier: 5.2.0
         version: 5.2.0
@@ -23059,8 +23059,8 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: true
 
-  /markdownlint@0.28.0:
-    resolution: {integrity: sha512-7Gt/SzjE5420Dr93wZgTLlgfcWj5vxAWJtvN7bBfN35ytQwsVDEW46L+NswzeCVhZSFdWRgLdEwQo3lMavUjvQ==}
+  /markdownlint@0.28.1:
+    resolution: {integrity: sha512-8At2DbgGKT/RVBinkqIPqLETopPXyQFGWSiTCJSr9Y6wVVyY70cDJ9dw3FXePn4AkytIUclgrsgI6KVeqeHFoA==}
     engines: {node: '>=14.18.0'}
     dependencies:
       markdown-it: 13.0.1
