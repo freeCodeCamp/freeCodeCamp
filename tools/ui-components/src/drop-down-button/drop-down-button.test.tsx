@@ -15,9 +15,8 @@ describe('<DropDownButton>', () => {
       </DropDownButton>
     );
     const dropdown = screen.getByText('Some Button');
-    const menuItems = screen.getAllByRole('menuitem');
-    const unorderedList = menuItems[0];
     userEvent.click(dropdown);
+    const unorderedList = screen.getByRole('menu');
     const MenuItem = within(unorderedList).getAllByText('Option');
     expect(unorderedList).toBeInTheDocument();
     expect(dropdown).toBeInTheDocument();
@@ -33,9 +32,8 @@ describe('<DropDownButton>', () => {
       </DropDownButton>
     );
     const dropDown = screen.getByText('Some Button');
-    const menuItems = screen.getAllByRole('menuitem');
-    const unorderedList = menuItems[0];
     userEvent.click(dropDown);
+    const unorderedList = screen.getByRole('menu');
     expect(unorderedList).toHaveClass(
       'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute py-1 transform -translate-y-full top-0'
     );

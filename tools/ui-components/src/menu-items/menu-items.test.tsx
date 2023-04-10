@@ -12,9 +12,9 @@ describe('MenuItems', () => {
       </DropDownButton>
     );
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('Hello world');
     expect(MenuItem).toBeInTheDocument();
   });
@@ -29,9 +29,9 @@ describe('MenuItems', () => {
     );
 
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('Hello world');
 
     userEvent.click(MenuItem);
@@ -47,9 +47,9 @@ describe('MenuItems', () => {
     );
 
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('Hello world');
 
     expect(MenuItem).toHaveAttribute('aria-disabled', 'true');
@@ -70,11 +70,10 @@ describe('MenuItems', () => {
     );
 
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('Hello world');
-
     userEvent.click(MenuItem);
 
     expect(onClick).not.toBeCalled();
@@ -88,9 +87,9 @@ describe('MenuItems', () => {
     );
 
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('freeCodeCamp');
 
     expect(MenuItem).toBeInTheDocument();
@@ -107,9 +106,9 @@ describe('MenuItems', () => {
     );
 
     const dropDown = screen.getByText('test');
+    userEvent.click(dropDown);
     const menuItems = screen.getAllByRole('menuitem');
     const unorderedList = menuItems[0];
-    userEvent.click(dropDown);
     const MenuItem = within(unorderedList).getByText('freeCodeCamp');
 
     expect(MenuItem).toBeInTheDocument();
