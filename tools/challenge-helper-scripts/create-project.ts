@@ -116,7 +116,7 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
-superBlock: ${superBlock.replace('2022/', '')}
+superBlock: ${superBlock}
 isBeta: true
 ---
 
