@@ -12,7 +12,14 @@
   padding: 0 15px;
   top: 0;
 }
-
+.logo-responsive {
+  width: 210px;
+}
+@media screen and (max-width: 310px) {
+  .logo-responsive {
+    width: 178px !important;
+  }
+}
 .universal-nav a {
   text-decoration: none;
 }

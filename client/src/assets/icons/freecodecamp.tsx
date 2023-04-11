@@ -3,19 +3,8 @@ import React from 'react';
 function FreeCodeCampLogo(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
-  const css = `
-  .logo-responsive{
-    width:210px
-  }
-  @media screen and (max-width: 310px) {
-    .logo-responsive {
-      width:178px !important
-    }
-  }
-        `;
   return (
     <>
-      <style>{css}</style>
       <svg
         height={24}
         version='1.1'
