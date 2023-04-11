@@ -10,6 +10,21 @@ const isValidChallengeCompletionErrorMsg = {
   message: 'That does not appear to be a valid challenge submission.'
 };
 
+// /save-challenge
+const stepChallenge = {
+  id: 'test',
+  lastSavedDate: '02/05/2023',
+  files: [
+    {
+      key: 'scriptjs',
+      ext: 'js',
+      name: 'test',
+      history: ['script.js'],
+      contents: 'console.log()'
+    }
+  ]
+};
+
 // /project-completed
 const id1 = 'bd7123c8c441eddfaeb5bdef';
 const id2 = 'bd7123c8c441eddfaeb5bdec';
@@ -537,6 +552,46 @@ describe('challengeRoutes', () => {
             resOriginal.body.completedDate
           );
           expect(resUpdate.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/save-challenge', () => {
+      test('POST returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/save-challenge', {
+          method: 'POST',
+          setCookies
+        }).send({
+          savedChallenges: {
+            id: stepChallenge.id,
+            lastSavedDate: stepChallenge.lastSavedDate,
+            files: stepChallenge.files
+          }
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toEqual({
+          type: 'success'
+        });
+        expect(user?.profileUI).toEqual(stepChallenge);
+      });
+
+      test('POST returns 400 status code with missing keys', async () => {
+        const response = await superRequest('/save-challenge', {
+          method: 'POST',
+          setCookies
+        }).send({ savedChallenges: stepChallenge.id });
+
+        expect(response.statusCode).toEqual(400);
+        expect(response.body).toEqual({
+          code: 'FST_ERR_VALIDATION',
+          error: 'Bad Request',
+          message: "body must have required property 'id'",
+          statusCode: 400
         });
       });
     });

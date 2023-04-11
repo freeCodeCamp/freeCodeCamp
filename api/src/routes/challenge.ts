@@ -367,5 +367,58 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/save-challenge',
+    {
+      schema: schemas.saveChallenge,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatValidationError(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.findFirstOrThrow({
+          where: { id: req.session.user.id }
+        });
+        try {
+          const saveChallenge = await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            select: {
+              savedChallenges: true
+            },
+            data: {
+              savedChallenges: {
+                id: req.body.id,
+                lastSavedDate: req.body.lastSavedDate,
+                files: req.body.files
+              }
+            }
+          });
+          return { ...saveChallenge, type: 'danger' } as const;
+        } catch (err) {
+          fastify.log.error(err);
+          void reply.code(500);
+
+          return {
+            type: 'danger'
+          } as const;
+        }
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(403);
+        return {
+          message: 'That challenge type is not savable.',
+          type: 'error'
+        } as const;
+      }
+    }
+  );
+
   done();
 };

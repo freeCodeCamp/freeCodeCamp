@@ -204,3 +204,26 @@ type DonationStartDate {
   date DateTime @map("_date") @db.Date
   when String   @map("_when")
 }
+
+model file {
+  id        String     @id @map("_id")
+  fileKey   String
+  ext       String
+  name      String
+  history   String? // ToDo: History has its own fields, make model and create relation with file model
+  contents  String
+  challenge challenge?
+}
+
+model challenge {
+  id            String         @id @map("_id")
+  files         file           @relation(fields: [id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  saveChallenge saveChallenge?
+}
+
+model saveChallenge {
+  id         String    @id @map("_id")
+  created_at DateTime
+  updated_at DateTime
+  challenge  challenge @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
