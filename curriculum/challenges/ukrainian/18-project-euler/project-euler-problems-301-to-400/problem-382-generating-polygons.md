@@ -39,7 +39,7 @@ Find the last 9 digits of $f({10}^{18})$.
 
 # --hints--
 
-`generatingPolygons()` should return `697003956`.
+`generatingPolygons()` має повернути `697003956`.
 
 ```js
 assert.strictEqual(generatingPolygons(), 697003956);

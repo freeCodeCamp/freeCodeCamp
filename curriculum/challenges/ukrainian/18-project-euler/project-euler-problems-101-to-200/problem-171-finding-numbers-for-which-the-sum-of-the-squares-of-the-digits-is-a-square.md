@@ -20,7 +20,7 @@ Find the last nine digits of the sum of all $n$, $0 &lt; n &lt; {10}^{20}$, such
 
 # --hints--
 
-`lastDigitsSumOfPerfectSquare()` should return `142989277`.
+`lastDigitsSumOfPerfectSquare()` має повернути `142989277`.
 
 ```js
 assert.strictEqual(lastDigitsSumOfPerfectSquare(), 142989277);

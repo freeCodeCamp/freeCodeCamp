@@ -427,6 +427,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
 
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
+
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
     if (!isMobileLayout || !isUsingKeyboardInTablist) {
@@ -656,7 +660,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
 
     ReactDOM.render(
       <LowerJaw
@@ -668,7 +671,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
         tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
         updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,

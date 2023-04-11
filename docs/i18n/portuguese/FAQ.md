@@ -1,6 +1,6 @@
 ### Eu sou novo no GitHub e em código aberto. Por onde devo começar?
 
-Leia nosso ["Guia de como contribuir com código aberto"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). É uma referência ampla para quem contribui com projetos pela primeira vez. E inclui muitas dicas de como contribuir para código aberto.
+Leia nosso ["Guia de como contribuir com código aberto"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). É uma referência ampla para quem contribui com projetos pela primeira vez. And it includes a lot of open-source contribution tips.
 
 ### O que eu preciso saber para contribuir com a base de código?
 

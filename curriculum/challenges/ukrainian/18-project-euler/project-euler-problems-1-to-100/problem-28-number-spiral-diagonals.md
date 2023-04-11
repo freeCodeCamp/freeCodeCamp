@@ -24,31 +24,31 @@ What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed i
 
 # --hints--
 
-`spiralDiagonals(101)` should return a number.
+`spiralDiagonals(101)` має повернути число.
 
 ```js
 assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-`spiralDiagonals(101)` should return 692101.
+`spiralDiagonals(101)` має повернути 692101.
 
 ```js
 assert(spiralDiagonals(101) == 692101);
 ```
 
-`spiralDiagonals(303)` should return 18591725.
+`spiralDiagonals(303)` має повернути 18591725.
 
 ```js
 assert(spiralDiagonals(303) == 18591725);
 ```
 
-`spiralDiagonals(505)` should return 85986601.
+`spiralDiagonals(505)` має повернути 85986601.
 
 ```js
 assert(spiralDiagonals(505) == 85986601);
 ```
 
-`spiralDiagonals(1001)` should return 669171001.
+`spiralDiagonals(1001)` має повернути 669171001.
 
 ```js
 assert(spiralDiagonals(1001) == 669171001);

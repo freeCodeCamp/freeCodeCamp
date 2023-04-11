@@ -30,7 +30,7 @@ By how many percent does the length of the curve differ from the length of the q
 
 # --hints--
 
-`bezierCurves()` should return `0.0000372091`.
+`bezierCurves()` має повернути `0.0000372091`.
 
 ```js
 assert.strictEqual(bezierCurves(), 0.0000372091);

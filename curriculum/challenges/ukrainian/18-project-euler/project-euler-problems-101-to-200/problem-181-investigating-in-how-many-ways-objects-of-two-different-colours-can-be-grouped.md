@@ -18,7 +18,7 @@ In how many ways can sixty black objects $B$ and forty white objects $W$ be thus
 
 # --hints--
 
-`colorsGrouping()` should return `83735848679360670`.
+`colorsGrouping()` має повернути `83735848679360670`.
 
 ```js
 assert.strictEqual(colorsGrouping(), 83735848679360670);

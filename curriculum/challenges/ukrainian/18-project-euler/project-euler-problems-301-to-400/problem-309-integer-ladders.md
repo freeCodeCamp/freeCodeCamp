@@ -20,7 +20,7 @@ For integer values $x$, $y$, $h$ and $0 &lt; x &lt; y &lt; 1\\,000\\,000$, how m
 
 # --hints--
 
-`integerLadders()` should return `210139`.
+`integerLadders()` має повернути `210139`.
 
 ```js
 assert.strictEqual(integerLadders(), 210139);

@@ -20,7 +20,7 @@ Find $S(100\\,000\\,000!)$ modulo $1\\,000\\,000\\,009$.
 
 # --hints--
 
-`sumSquaresOfUnitaryDivisors()` should return `98792821`.
+`sumSquaresOfUnitaryDivisors()` має повернути `98792821`.
 
 ```js
 assert.strictEqual(sumSquaresOfUnitaryDivisors(), 98792821);

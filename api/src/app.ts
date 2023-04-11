@@ -14,6 +14,7 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
+import fastifySentry from './plugins/fastify-sentry';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
@@ -31,7 +32,8 @@ import {
   SESSION_SECRET,
   FCC_ENABLE_SWAGGER_UI,
   API_LOCATION,
-  FCC_ENABLE_DEV_LOGIN_MODE
+  FCC_ENABLE_DEV_LOGIN_MODE,
+  SENTRY_DSN
 } from './utils/env';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -52,6 +54,9 @@ export const build = async (
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
+  if (SENTRY_DSN) {
+    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
+  }
   await fastify.register(fastifyCookie);
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types

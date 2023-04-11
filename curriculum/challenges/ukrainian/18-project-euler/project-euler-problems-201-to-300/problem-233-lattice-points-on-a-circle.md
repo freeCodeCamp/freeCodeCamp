@@ -16,7 +16,7 @@ What is the sum of all positive integers $N ≤ {10}^{11}$ such that $f(N) = 420
 
 # --hints--
 
-`latticePointsOnACircle()` should return `271204031455541300`.
+`latticePointsOnACircle()` має повернути `271204031455541300`.
 
 ```js
 assert.strictEqual(latticePointsOnACircle(), 271204031455541300);

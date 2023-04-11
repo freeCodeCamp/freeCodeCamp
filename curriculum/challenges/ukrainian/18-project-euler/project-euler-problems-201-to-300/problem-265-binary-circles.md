@@ -27,7 +27,7 @@ Find $S(5)$.
 
 # --hints--
 
-`binaryCircles()` should return `209110240768`.
+`binaryCircles()` має повернути `209110240768`.
 
 ```js
 assert.strictEqual(binaryCircles(), 209110240768);

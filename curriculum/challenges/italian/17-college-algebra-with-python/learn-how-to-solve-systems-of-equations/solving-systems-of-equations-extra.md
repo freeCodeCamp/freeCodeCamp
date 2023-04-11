@@ -1,6 +1,6 @@
 ---
 id: 6331d2a9b51aeedd1a2bd654
-title: "Solving Systems of Equations: Extra"
+title: "Risolvere Sistemi di Equazioni: Extra"
 challengeType: 15
 videoId: 856p7t2V9NY
 dashedName: solving-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: solving-systems-of-equations-extra
 
 # --description--
 
-This video will show you one way to create a calculator that solves and graphs. It will also show you how to zoom in or zoom out on the graph and write the code to build that feature.
+Questo video ti mostrerà un modo per creare una calcolatrice che risolve e traccia grafici. Ti mostrerà anche come aumentare o ridurre lo zoom sul grafico e scrivere il codice per costruire questa funzionalità.
 
-Here is the <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a> This will give you an example of what your notebook could look like so far, as you have some functions in there and create headings for the next few functions.
+Ecco il <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab notebook usato in questo video.</a> Ti darà un esempio di come potrebbe essere il tuo notebook, con delle funzioni e delle intestazioni per le prossime funzioni.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true?
+Quale delle seguenti affermazioni non è vera?
 
 ## --answers--
 
-When graphing, you can adjust your tic marks on each axis
+Quando crei un grafico, è possibile regolare i segni di graduazione su ogni asse
 
 ---
 
-The `nonlinsolve()` function can solve linear equations
+La funzione `nonlinsolve()` può risolvere equazioni lineari
 
 ---
 
-The `linsolve()` function can solve nonlinear equations
+La funzione `linsolve()` può risolvere equazioni non lineari
 
 ---
 
-To zoom in or out on a graph, an interactive slider is useful
+Per zoomare avanti e indietro su un grafico, è utile un cursore interattivo
 
 ## --video-solution--
 

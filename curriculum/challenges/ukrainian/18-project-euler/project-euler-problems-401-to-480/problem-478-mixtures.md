@@ -30,7 +30,7 @@ Find $E(10\\,000\\,000)\bmod {11}^8$.
 
 # --hints--
 
-`mixtures()` should return `59510340`.
+`mixtures()` має повернути `59510340`.
 
 ```js
 assert.strictEqual(mixtures(), 59510340);

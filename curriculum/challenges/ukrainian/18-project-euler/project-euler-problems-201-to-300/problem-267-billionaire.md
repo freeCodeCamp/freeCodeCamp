@@ -22,7 +22,7 @@ All computations are assumed to be exact (no rounding), but give your answer rou
 
 # --hints--
 
-`billionaire()` should return `0.999992836187`.
+`billionaire()` має повернути `0.999992836187`.
 
 ```js
 assert.strictEqual(billionaire(), 0.999992836187);

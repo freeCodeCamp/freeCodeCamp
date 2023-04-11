@@ -30,7 +30,7 @@ Find $\sum{c}$ for $c &lt; 120000$.
 
 # --hints--
 
-`abcHits()` should return `18407904`.
+`abcHits()` має повернути `18407904`.
 
 ```js
 assert.strictEqual(abcHits(), 18407904);

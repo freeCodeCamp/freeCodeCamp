@@ -11,7 +11,7 @@ dashedName: escape-sequences-in-strings
 
 الاقتباسات (quotes) ليست الرموز الوحيدة التي يمكن أن تكتب <dfn>مخرَّجة</dfn> (escaped) داخل مقطع نصي (string). تتيح لك escape sequences استخدام الرموز التي لا تمكن استعمالها في مقطع ما بدونهم.
 
-<table class='table table-striped'><thead><tr><th>الكود</th><th>الناتج</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>الكود</th><th>الناتج</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
 
 *لاحظ أن يجب أن يكون الخط المائل (backslash) نفسه يخرَّج (escaped) ليتم عرضه كخط مائل backslash.*
 

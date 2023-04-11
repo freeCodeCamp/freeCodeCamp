@@ -22,19 +22,19 @@ What is the largest 1 to `k` pandigital `k`-digit number that can be formed as t
 
 # --hints--
 
-`pandigitalMultiples(8)` should return a number.
+`pandigitalMultiples(8)` має повернути число.
 
 ```js
 assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples(8)` should return `78156234`.
+`pandigitalMultiples(8)` має повернути `78156234`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(8), 78156234);
 ```
 
-`pandigitalMultiples(9)` should return `932718654`.
+`pandigitalMultiples(9)` має повернути `932718654`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(9), 932718654);

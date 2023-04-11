@@ -14,7 +14,7 @@ Find $u_n + u_{n + 1}$ for $n = {10}^{12}$. Give your answer with 9 digits after
 
 # --hints--
 
-`recursivelyDefinedSequence()` should return `1.710637717`.
+`recursivelyDefinedSequence()` має повернути `1.710637717`.
 
 ```js
 assert.strictEqual(recursivelyDefinedSequence(), 1.710637717);

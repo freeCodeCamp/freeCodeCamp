@@ -26,7 +26,7 @@ Find $\sum z(n)$ for $0 &lt; n &lt; {10}^{17}$.
 
 # --hints--
 
-`zeckendorfRepresentation()` should return `2252639041804718000`.
+`zeckendorfRepresentation()` має повернути `2252639041804718000`.
 
 ```js
 assert.strictEqual(zeckendorfRepresentation(), 2252639041804718000);

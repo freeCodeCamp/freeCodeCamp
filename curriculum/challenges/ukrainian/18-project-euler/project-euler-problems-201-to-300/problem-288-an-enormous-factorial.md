@@ -23,7 +23,7 @@ Find $NF(61,{10}^7)\bmod {61}^{10}$.
 
 # --hints--
 
-`enormousFactorial()` should return `605857431263982000`.
+`enormousFactorial()` має повернути `605857431263982000`.
 
 ```js
 assert.strictEqual(enormousFactorial(), 605857431263982000);

@@ -16,7 +16,7 @@ Enter the rightmost 16 digits as your answer.
 
 # --hints--
 
-`primeSubsetSums()` should return `9275262564250418`.
+`primeSubsetSums()` має повернути `9275262564250418`.
 
 ```js
 assert.strictEqual(primeSubsetSums(), 9275262564250418);

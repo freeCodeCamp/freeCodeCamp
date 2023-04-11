@@ -20,31 +20,31 @@ How many fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set
 
 # --hints--
 
-`countingFractionsInARange(8)` should return a number.
+`countingFractionsInARange(8)` має повернути число.
 
 ```js
 assert(typeof countingFractionsInARange(8) === 'number');
 ```
 
-`countingFractionsInARange(8)` should return `3`.
+`countingFractionsInARange(8)` має повернути `3`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(8), 3);
 ```
 
-`countingFractionsInARange(1000)` should return `50695`.
+`countingFractionsInARange(1000)` має повернути `50695`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(1000), 50695);
 ```
 
-`countingFractionsInARange(6000)` should return `1823861`.
+`countingFractionsInARange(6000)` має повернути `1823861`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(6000), 1823861);
 ```
 
-`countingFractionsInARange(12000)` should return `7295372`.
+`countingFractionsInARange(12000)` має повернути `7295372`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(12000), 7295372);

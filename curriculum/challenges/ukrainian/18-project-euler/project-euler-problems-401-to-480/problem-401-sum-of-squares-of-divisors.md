@@ -20,7 +20,7 @@ Find $\Sigma_2({10}^{15})$ modulo ${10}^9$.
 
 # --hints--
 
-`sumOfSquaresDivisors()` should return `281632621`.
+`sumOfSquaresDivisors()` має повернути `281632621`.
 
 ```js
 assert.strictEqual(sumOfSquaresDivisors(), 281632621);

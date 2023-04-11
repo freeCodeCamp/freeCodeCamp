@@ -16,7 +16,7 @@ For $3 ≤ a ≤ 1000$, find $\sum{r}_{max}$.
 
 # --hints--
 
-`squareRemainders()` should return `333082500`.
+`squareRemainders()` має повернути `333082500`.
 
 ```js
 assert.strictEqual(squareRemainders(), 333082500);

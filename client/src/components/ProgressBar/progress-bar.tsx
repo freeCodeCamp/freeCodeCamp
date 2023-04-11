@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { TFunction, withTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import {
   challengeMetaSelector,
   currentBlockIdsSelector,

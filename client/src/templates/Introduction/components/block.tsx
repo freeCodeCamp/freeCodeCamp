@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import type { TFunction } from 'i18next';
+import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
@@ -60,6 +60,17 @@ interface BlockProps {
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
+
+export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
+  return (
+    <div className='block-description'>
+      {intros.map((title, i) => (
+        <p dangerouslySetInnerHTML={{ __html: title }} key={i} />
+      ))}
+    </div>
+  );
+};
+
 class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
@@ -79,16 +90,6 @@ class Block extends Component<BlockProps> {
       <GreenPass hushScreenReaderText />
     ) : (
       <GreenNotCompleted hushScreenReaderText />
-    );
-  }
-
-  renderBlockIntros(arr: string[]): JSX.Element {
-    return (
-      <div className='block-description'>
-        {arr.map((str, i) => (
-          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
-        ))}
-      </div>
     );
   }
 
@@ -130,9 +131,12 @@ class Block extends Component<BlockProps> {
     });
 
     const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
-    const blockIntroArr = [
-      t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
-    ];
+    // the real type of TFunction is the type below, because intro can be an array of strings
+    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
+    // But changing the type will require refactoring that isn't worth it for a wrong type.
+    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
+      `intro:${superBlock}.blocks.${blockDashedName}.intro`
+    );
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
@@ -167,7 +171,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -224,7 +228,7 @@ class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -285,7 +289,7 @@ class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && this.renderBlockIntros(blockIntroArr)}
+            {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
@@ -302,32 +306,40 @@ class Block extends Component<BlockProps> {
     const GridProjectBlock = (
       <ScrollableAnchor id={blockDashedName}>
         <div className='block block-grid grid-project-block'>
-          <Link
-            className='block-header'
-            onClick={() => {
-              this.handleBlockClick();
-            }}
-            to={challengesWithCompleted[0].fields.slug}
-          >
-            <div className='tags-wrapper'>
-              <span className='cert-tag'>
-                {t('misc.certification-project')}
-              </span>
-              {!isAuditedCert(curriculumLocale, superBlock) && (
-                <Link
-                  className='cert-tag'
-                  to={t('links:help-translate-link-url')}
-                >
-                  {t('misc.translation-pending')}
-                </Link>
-              )}
-            </div>
-            <div className='title-wrapper map-title'>
-              {this.renderCheckMark(isBlockCompleted)}
-              <h3 className='block-grid-title'>{blockTitle}</h3>
-            </div>
-            {this.renderBlockIntros(blockIntroArr)}
-          </Link>
+          <div className='tags-wrapper'>
+            <span className='cert-tag' aria-hidden='true'>
+              {t('misc.certification-project')}
+            </span>
+            {!isAuditedCert(curriculumLocale, superBlock) && (
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}{' '}
+                <span className='sr-only'>
+                  {blockTitle} {t('misc.certification-project')}
+                </span>
+              </Link>
+            )}
+          </div>
+          <div className='title-wrapper map-title'>
+            <h3 className='block-grid-title'>
+              <Link
+                className='block-header'
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+                to={challengesWithCompleted[0].fields.slug}
+              >
+                {this.renderCheckMark(isBlockCompleted)}
+                {blockTitle}{' '}
+                <span className='sr-only'>
+                  {t('misc.certification-project')}
+                </span>
+              </Link>
+            </h3>
+          </div>
+          <BlockIntros intros={blockIntroArr} />
         </div>
       </ScrollableAnchor>
     );

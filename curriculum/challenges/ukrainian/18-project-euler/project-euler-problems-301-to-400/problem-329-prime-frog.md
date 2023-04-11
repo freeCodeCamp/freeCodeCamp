@@ -22,13 +22,13 @@ Give your answer as a string as a fraction `p/q` in reduced form.
 
 # --hints--
 
-`primeFrog()` should return a string.
+`primeFrog()` має повернути рядок.
 
 ```js
 assert(typeof primeFrog() === 'string');
 ```
 
-`primeFrog()` should return the string `199740353/29386561536000`.
+`primeFrog()` має повернути рядок `199740353/29386561536000`.
 
 ```js
 assert.strictEqual(primeFrog(), '199740353/29386561536000');

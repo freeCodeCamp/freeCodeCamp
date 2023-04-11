@@ -38,7 +38,7 @@ How many distinct true intersection points are found among the 5000 line segment
 
 # --hints--
 
-`distinctIntersections()` should return `2868868`.
+`distinctIntersections()` має повернути `2868868`.
 
 ```js
 assert.strictEqual(distinctIntersections(), 2868868);

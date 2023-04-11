@@ -25,7 +25,7 @@ How many balanced sculptures are there of order 18?
 
 # --hints--
 
-`balancedSculptures()` should return `15030564`.
+`balancedSculptures()` має повернути `15030564`.
 
 ```js
 assert.strictEqual(balancedSculptures(), 15030564);

@@ -18,7 +18,7 @@ Find the least value of $n$ for which $A(n)$ first exceeds one-million.
 
 # --hints--
 
-`repunitDivisibility()` should return `1000023`.
+`repunitDivisibility()` має повернути `1000023`.
 
 ```js
 assert.strictEqual(repunitDivisibility(), 1000023);

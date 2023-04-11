@@ -22,25 +22,25 @@ Find the difference between the sum of the squares of the first `n` natural numb
 
 # --hints--
 
-`sumSquareDifference(10)` should return a number.
+`sumSquareDifference(10)` має повернути число.
 
 ```js
 assert(typeof sumSquareDifference(10) === 'number');
 ```
 
-`sumSquareDifference(10)` should return 2640.
+`sumSquareDifference(10)` має повернути 2640.
 
 ```js
 assert.strictEqual(sumSquareDifference(10), 2640);
 ```
 
-`sumSquareDifference(20)` should return 41230.
+`sumSquareDifference(20)` має повернути 41230.
 
 ```js
 assert.strictEqual(sumSquareDifference(20), 41230);
 ```
 
-`sumSquareDifference(100)` should return 25164150.
+`sumSquareDifference(100)` має повернути 25164150.
 
 ```js
 assert.strictEqual(sumSquareDifference(100), 25164150);

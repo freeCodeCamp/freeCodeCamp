@@ -28,7 +28,7 @@ For $1 ≤ n ≤ 1\\,000\\,000$, how many values of $n$ are there for which the 
 
 # --hints--
 
-`paperStripGame()` should return `852938`.
+`paperStripGame()` має повернути `852938`.
 
 ```js
 assert.strictEqual(paperStripGame(), 852938);

@@ -27,7 +27,7 @@ Find $\sum L(n)$ for $3 ≤ n ≤ 100\\,000\\,000$.
 
 # --hints--
 
-`reciprocalCyclesTwo()` should return `446572970925740`.
+`reciprocalCyclesTwo()` має повернути `446572970925740`.
 
 ```js
 assert.strictEqual(reciprocalCyclesTwo(), 446572970925740);

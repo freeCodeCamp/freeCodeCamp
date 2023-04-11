@@ -28,7 +28,7 @@ Find $P(64, {10}^{16})$.
 
 # --hints--
 
-`multiplicationTable()` should return `258381958195474750`.
+`multiplicationTable()` має повернути `258381958195474750`.
 
 ```js
 assert.strictEqual(multiplicationTable(), 258381958195474750);

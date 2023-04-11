@@ -25,13 +25,13 @@ What is the smallest odd composite that cannot be written as the sum of a prime 
 
 # --hints--
 
-`goldbachsOtherConjecture()` should return a number.
+`goldbachsOtherConjecture()` має повернути число.
 
 ```js
 assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-`goldbachsOtherConjecture()` should return 5777.
+`goldbachsOtherConjecture()` має повернути 5777.
 
 ```js
 assert.strictEqual(goldbachsOtherConjecture(), 5777);

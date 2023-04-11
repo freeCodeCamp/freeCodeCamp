@@ -31,7 +31,7 @@ Find $F(10\\,000)$. Give your answer rounded to nine decimal places.
 
 # --hints--
 
-`antOnTheMove()` should return `18.420738199`.
+`antOnTheMove()` має повернути `18.420738199`.
 
 ```js
 assert.strictEqual(antOnTheMove(), 18.420738199);

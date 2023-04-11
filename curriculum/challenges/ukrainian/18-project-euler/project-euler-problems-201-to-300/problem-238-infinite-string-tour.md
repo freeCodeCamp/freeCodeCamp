@@ -33,7 +33,7 @@ Find $\sum p(k)$, for $0 &lt; k ≤ 2 \times {10}^{15}$.
 
 # --hints--
 
-`infiniteStringTour()` should return `9922545104535660`.
+`infiniteStringTour()` має повернути `9922545104535660`.
 
 ```js
 assert.strictEqual(infiniteStringTour(), 9922545104535660);

@@ -18,7 +18,7 @@ Given that $F_k$ is the first Fibonacci number for which the first nine digits A
 
 # --hints--
 
-`pandigitalFibonacciEnds()` should return `329468`.
+`pandigitalFibonacciEnds()` має повернути `329468`.
 
 ```js
 assert.strictEqual(pandigitalFibonacciEnds(), 329468);

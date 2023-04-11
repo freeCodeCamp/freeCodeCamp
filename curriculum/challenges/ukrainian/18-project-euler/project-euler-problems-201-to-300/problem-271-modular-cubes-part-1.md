@@ -16,7 +16,7 @@ Find $S(13\\,082\\,761\\,331\\,670\\,030)$.
 
 # --hints--
 
-`modularCubesOne()` should return `4617456485273130000`.
+`modularCubesOne()` має повернути `4617456485273130000`.
 
 ```js
 assert.strictEqual(modularCubesOne(), 4617456485273130000);

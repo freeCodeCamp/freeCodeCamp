@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Il risultato è un nuovo id, per esempio sopra `5a474d78df58bafeb3535d34`.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Una volta che hai il tuo id, mettilo nel file markdown nel campo `id` in cima, per esempio
 
@@ -243,7 +243,7 @@ Se servono più di due minuti a completare la sfida hai due possibilità:
 - Semplificare la sfida, o
 - Dividere la sfida in due sfide.
 
-La regola dei due minuti obbliga te, designer della sfida, a rendere le tue istruzioni concise, il tuo codice seed chiaro, e i tuoi test diretti.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
 Teniamo traccia di quanto tempo serve agli utenti per risolvere le sfide e usiamo questa informazione per identificare sfide che devono essere semplificate o divise.
 
@@ -267,7 +267,7 @@ Usa `parseInt` per convertire la variabile `realNumber` a un numero intero.
 ```
 
 - I riferimenti a nomi di file o percorsi di cartelle (come `package.json`, `src/components`) dovrebbero essere in `` \` `` backtick.
-- I blocchi di codice multi-riga **devono essere preceduti da una riga vuota**. La riga successiva deve iniziare con tre backticks seguiti immediatamente da uno dei [linguaggi supportati](https://prismjs.com/#supported-languages). Per completare il blocco di codice devi iniziare una nuova riga, scrivere tre backtick e poi **un'altra riga vuota**. Vedi l'esempio seguente:
+- I blocchi di codice multi-riga **devono essere preceduti da una riga vuota**. La riga successiva deve iniziare con tre backticks seguiti immediatamente da uno dei [linguaggi supportati](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. Vedi l'esempio seguente:
 - Gli spazi bianchi hanno significato in Markdown, raccomandiamo di renderli visibili nel tuo editor.
 
 **Nota:** Se devi usare un esempio di codice in YAML, usa `yaml` invece di `yml` per il linguaggio a fianco dei tre backtick.
@@ -283,10 +283,10 @@ Il seguente è un esempio di codice:
 ````
 
 - Informazioni aggiuntive nella forma di una nota dovrebbero essere circondate da linee vuote, e formattate così: `**Note:** Resto del testo della nota...`
-- Se è necessaria più di una nota, elencale in frasi separate usando il formato: `**Notes:** Testo della prima nota. Testo della seconda nota.`
-- Usa virgolette singole dove necessario
+- Se è necessaria più di una nota, elencale in frasi separate usando il formato: `**Notes:** Testo della prima nota. Second note text.`
+- Use single quotes where applicable
 
-**Note:** L'equivalente _Markdown_ dovrebbe essere usato invece di tag _HTML_.
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## Scrivere i test
 
@@ -296,21 +296,21 @@ Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di
 
 I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
 
-## Formattare codice seed
+## Formatting Seed Code
 
-Ecco linee guida specifiche di formattazione per il codice seed delle sfide:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Usa due spazi per indentare
-- Le istruzioni JavaScript finiscono con un punto e virgola
-- Usa virgolette doppie dove possibile
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Commenti del codice seed
+### Seed Code Comments
 
-Abbiamo un [dizionario dei commenti](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) che contiene gli unici commenti che possono essere usati nel codice seed. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
 
 I commenti dovrebbero avere uno spazio tra il carattere del commento e il testo del commento. In generale, i commenti dovrebbero essere usati raramente. Considera sempre la possibilità di riscrivere la descrizione o le istruzioni di una sfida se questo ti permetterebbe di evitare l'uso di un commento nel codice seed.
 
-Esempio di un commento a linea singola in JavaScript:
+Example of a valid single-line JavaScript comment:
 
 ```js
 // Only change code below this line
@@ -366,7 +366,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Traduzione dei commenti nel codice seed
+### Translation of Seed Code Comments
 
 Ci sono directory separate per ogni lingua. La [versione inglese della directory dei commenti](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) è la base per le traduzioni trovate nelle corrispondenti versioni non-inglesi del file. La versione non-inglese della directory dei commenti cinese si trova in `/curriculum/dictionaries/chinese/comments.json`. Ogni directory consiste di un array di oggetti con una proprietà `id` unica e una proprietà `text` che contiene il testo del commento. Solo `text` dovrebbe essere modificato per includere la traduzione del corrispondente commento inglese.
 
@@ -388,16 +388,16 @@ Se trovi un problema con i suggerimenti e le soluzioni delle sfide puoi inviare 
 
 ### Aggiungere nuovi topic per i suggerimenti e le soluzioni delle sfide
 
-Segui i seguenti step quando crei un nuovo topic per le soluzioni e i suggerimenti di una sfida.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Inizia seguendo gli stessi passaggi per creare un nuovo argomento, ma rivedi il successivo per creare il titolo.
 2. Il titolo dell'argomento dovrebbe iniziare con `freeCodeCamp Challenge Guide:` concatenato con il titolo effettivo della sfida del curriculum. Ad esempio, se la sfida è chiamata "`Chunky Monkey`", il titolo dell'argomento sarebbe "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` dovrebbe essere il proprietario di questi argomenti/post, quindi dovrai chiedere a un amministratore di cambiare la proprietà del post principale a `camperbot`.
 4. Una volta creato il nuovo argomento, verrà creato un id del topic nel forum. Esso si trova alla fine dell'URL dell'argomento del forum. Questo id deve essere aggiunto alla parte frontale del file di sfida del curriculum tramite il normale processo di pull request per il pulsante `Ottieni un suggerimento` in modo da collegarlo all'argomento.
 
-### Linee guida per il contenuto dei topic dei suggerimenti e delle soluzioni
+### Guidelines for Content of Hints and Solutions Topics
 
-Quando proponi una soluzione da aggiungere al topic relativo a una sfida, devi includere tutto il codice. Questo include sia il codice seed originale sia i cambiamenti necessari per superare i test. Dovresti usare il seguente template per creare nuovi topic per suggerimenti e soluzioni:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. Questo include sia il codice seed originale sia i cambiamenti necessari per superare i test. Dovresti usare il seguente template per creare nuovi topic per suggerimenti e soluzioni:
 
 ````md
 # [Qui il nome della sfida]

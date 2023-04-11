@@ -16,25 +16,25 @@ How many such routes are there through a given `gridSize`?
 
 # --hints--
 
-`latticePaths(4)` should return a number.
+`latticePaths(4)` має повернути число.
 
 ```js
 assert(typeof latticePaths(4) === 'number');
 ```
 
-`latticePaths(4)` should return 70.
+`latticePaths(4)` має повернути 70.
 
 ```js
 assert.strictEqual(latticePaths(4), 70);
 ```
 
-`latticePaths(9)` should return 48620.
+`latticePaths(9)` має повернути 48620.
 
 ```js
 assert.strictEqual(latticePaths(9), 48620);
 ```
 
-`latticePaths(20)` should return 137846528820.
+`latticePaths(20)` має повернути 137846528820.
 
 ```js
 assert.strictEqual(latticePaths(20), 137846528820);

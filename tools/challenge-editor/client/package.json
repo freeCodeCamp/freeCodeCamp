@@ -8,9 +8,8 @@
     "@testing-library/user-event": "13.5.0",
     "codemirror": "5",
     "react": "16.14.0",
-    "react-codemirror2": "7.2.1",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.9.0",
+    "react-router-dom": "6.10.0",
     "react-scripts": "5.0.1",
     "typescript": "4.9.5"
   },
@@ -42,8 +41,9 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.7",
-    "@types/react": "16.14.35",
+    "@types/react": "16.14.38",
     "@types/react-dom": "^16.9.17",
+    "@uiw/react-codemirror": "3.2.9",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "shx": "0.3.4"

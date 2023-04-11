@@ -16,7 +16,7 @@ Find $T({10}^{18}, {10}^{12} - 10)$.
 
 # --hints--
 
-`binomialCoefficientsDivisibleBy10()` should return `999998760323314000`.
+`binomialCoefficientsDivisibleBy10()` має повернути `999998760323314000`.
 
 ```js
 assert.strictEqual(binomialCoefficientsDivisibleBy10(), 999998760323314000);

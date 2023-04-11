@@ -18,7 +18,7 @@ Find $\sum M(n)$ for $1 ≤ n ≤ {10}^7$.
 
 # --hints--
 
-`idempotents()` should return `39782849136421`.
+`idempotents()` має повернути `39782849136421`.
 
 ```js
 assert.strictEqual(idempotents(), 39782849136421);

@@ -28,37 +28,37 @@ What is the value of the first triangle number to have over `n` divisors?
 
 # --hints--
 
-`divisibleTriangleNumber(5)` should return a number.
+`divisibleTriangleNumber(5)` має повернути число.
 
 ```js
 assert(typeof divisibleTriangleNumber(5) === 'number');
 ```
 
-`divisibleTriangleNumber(5)` should return 28.
+`divisibleTriangleNumber(5)` має повернути 28.
 
 ```js
 assert.strictEqual(divisibleTriangleNumber(5), 28);
 ```
 
-`divisibleTriangleNumber(23)` should return 630.
+`divisibleTriangleNumber(23)` має повернути 630.
 
 ```js
 assert.strictEqual(divisibleTriangleNumber(23), 630);
 ```
 
-`divisibleTriangleNumber(167)` should return 1385280.
+`divisibleTriangleNumber(167)` має повернути 1385280.
 
 ```js
 assert.strictEqual(divisibleTriangleNumber(167), 1385280);
 ```
 
-`divisibleTriangleNumber(374)` should return 17907120.
+`divisibleTriangleNumber(374)` має повернути 17907120.
 
 ```js
 assert.strictEqual(divisibleTriangleNumber(374), 17907120);
 ```
 
-`divisibleTriangleNumber(500)` should return 76576500.
+`divisibleTriangleNumber(500)` має повернути 76576500.
 
 ```js
 assert.strictEqual(divisibleTriangleNumber(500), 76576500);

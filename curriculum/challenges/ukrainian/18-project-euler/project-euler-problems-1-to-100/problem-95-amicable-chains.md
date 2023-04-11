@@ -22,31 +22,31 @@ Find the smallest member of the longest amicable chain with no element exceeding
 
 # --hints--
 
-`amicableChains(300)` should return a number.
+`amicableChains(300)` має повернути число.
 
 ```js
 assert(typeof amicableChains(300) === 'number');
 ```
 
-`amicableChains(300)` should return `220`.
+`amicableChains(300)` має повернути `220`.
 
 ```js
 assert.strictEqual(amicableChains(300), 220);
 ```
 
-`amicableChains(15000)` should return `220`.
+`amicableChains(15000)` має повернути `220`.
 
 ```js
 assert.strictEqual(amicableChains(15000), 220);
 ```
 
-`amicableChains(100000)` should return `12496`.
+`amicableChains(100000)` має повернути `12496`.
 
 ```js
 assert.strictEqual(amicableChains(100000), 12496);
 ```
 
-`amicableChains(1000000)` should return `14316`.
+`amicableChains(1000000)` має повернути `14316`.
 
 ```js
 assert.strictEqual(amicableChains(1000000), 14316);

@@ -22,7 +22,7 @@ Find the sum of all distinct square-pivots $≤ {10}^{10}$.
 
 # --hints--
 
-`pivotalSquareSums()` should return `238890850232021`.
+`pivotalSquareSums()` має повернути `238890850232021`.
 
 ```js
 assert.strictEqual(pivotalSquareSums(), 238890850232021);

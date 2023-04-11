@@ -21,37 +21,37 @@ How many numbers below `n` can be expressed as the sum of a prime square, prime 
 
 # --hints--
 
-`primePowerTriples(50)` should return a number.
+`primePowerTriples(50)` має повернути число.
 
 ```js
 assert(typeof primePowerTriples(50) === 'number');
 ```
 
-`primePowerTriples(50)` should return `4`.
+`primePowerTriples(50)` має повернути `4`.
 
 ```js
 assert.strictEqual(primePowerTriples(50), 4);
 ```
 
-`primePowerTriples(10035)` should return `684`.
+`primePowerTriples(10035)` має повернути `684`.
 
 ```js
 assert.strictEqual(primePowerTriples(10035), 684);
 ```
 
-`primePowerTriples(500000)` should return `18899`.
+`primePowerTriples(500000)` має повернути `18899`.
 
 ```js
 assert.strictEqual(primePowerTriples(500000), 18899);
 ```
 
-`primePowerTriples(5000000)` should return `138932`.
+`primePowerTriples(5000000)` має повернути `138932`.
 
 ```js
 assert.strictEqual(primePowerTriples(5000000), 138932);
 ```
 
-`primePowerTriples(50000000)` should return `1097343`.
+`primePowerTriples(50000000)` має повернути `1097343`.
 
 ```js
 assert.strictEqual(primePowerTriples(50000000), 1097343);

@@ -14,37 +14,37 @@ Considering natural numbers of the form, $a^b$, where `a`, `b` &lt; `n`, what is
 
 # --hints--
 
-`powerfulDigitSum(3)` should return a number.
+`powerfulDigitSum(3)` має повернути число.
 
 ```js
 assert(typeof powerfulDigitSum(3) === 'number');
 ```
 
-`powerfulDigitSum(3)` should return `4`.
+`powerfulDigitSum(3)` має повернути `4`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(3), 4);
 ```
 
-`powerfulDigitSum(10)` should return `45`.
+`powerfulDigitSum(10)` має повернути `45`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(10), 45);
 ```
 
-`powerfulDigitSum(50)` should return `406`.
+`powerfulDigitSum(50)` має повернути `406`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(50), 406);
 ```
 
-`powerfulDigitSum(75)` should return `684`.
+`powerfulDigitSum(75)` має повернути `684`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(75), 684);
 ```
 
-`powerfulDigitSum(100)` should return `972`.
+`powerfulDigitSum(100)` має повернути `972`.
 
 ```js
 assert.strictEqual(powerfulDigitSum(100), 972);
