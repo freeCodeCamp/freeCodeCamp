@@ -9,8 +9,8 @@ const story = {
 
 const DropDownChildren = () => (
   <>
-    <DropDown.Toggle dropup={true}>Options</DropDown.Toggle>
-    <DropDown.Menu dropup={true}>
+    <DropDown.Toggle>Options</DropDown.Toggle>
+    <DropDown.Menu>
       <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 3</MenuItem>
@@ -20,8 +20,8 @@ const DropDownChildren = () => (
 
 const DropUpChildren = () => (
   <>
-    <DropDown.Toggle>Options</DropDown.Toggle>
-    <DropDown.Menu>
+    <DropDown.Toggle dropup={true}>Options</DropDown.Toggle>
+    <DropDown.Menu dropup={true}>
       <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
       <MenuItem href={'https://www.google.com'} disabled>

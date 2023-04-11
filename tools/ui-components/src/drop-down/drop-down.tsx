@@ -8,32 +8,21 @@ type MenuItemsProps = React.ComponentPropsWithoutRef<typeof Menu.Items> & {
 
 export type DropDownProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
-const itemsClassNames = [
-  'shadow-lg',
-  'bg-foreground-primary',
-  'text-background-primary',
-  'text-center',
-  'ring-1',
-  'ring-black',
-  'ring-opacity-5',
-  'focus:outline-transparent',
-  'origin-top-right',
-  'absolute',
-  'py-1'
-];
+const itemsClassNames =
+  'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute py-1';
 
 const getItemsContainerClasses = (dropup?: boolean) => {
   const dropupStyle = dropup ? 'transform -translate-y-full top-0' : '';
-  return itemsClassNames.push(dropupStyle);
+  return [itemsClassNames, dropupStyle].join(' ');
 };
 
 export const MenuItems = React.forwardRef<
   React.ElementRef<typeof Menu.Items>,
   MenuItemsProps
 >(({ children, dropup }, ref) => {
-  const itemsContainer = [getItemsContainerClasses(dropup)].join();
+  const itemsClasses = getItemsContainerClasses(dropup);
   return (
-    <Menu.Items as='ul' className={itemsContainer} ref={ref}>
+    <Menu.Items as='ul' className={itemsClasses} ref={ref}>
       {children}
     </Menu.Items>
   );
