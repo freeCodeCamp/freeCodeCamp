@@ -6,7 +6,6 @@ import { Menu } from '@headlessui/react';
 type MenuProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
 export type DropDownButtonProps = MenuProps & {
-  toggleLabel: React.ReactNode;
   block?: boolean;
   dropup?: boolean;
 };
@@ -34,47 +33,20 @@ const getDefaultClasses = (block?: boolean) => {
   return [...defaultClassNames, blockClass].join(' ');
 };
 
-const itemsClassNames = [
-  'shadow-lg',
-  'bg-foreground-primary',
-  'text-background-primary',
-  'text-center',
-  'ring-1',
-  'ring-black',
-  'ring-opacity-5',
-  'focus:outline-transparent',
-  'origin-top-right',
-  'absolute',
-  'py-1'
-];
-
-const getItemsContainerClasses = (dropup?: boolean) => {
-  const dropupStyle = dropup ? ['transform -translate-y-full', 'top-0'] : [];
-  return [...itemsClassNames, ...dropupStyle].join(' ');
-};
-
 export function DropDownButton({
-  toggleLabel,
   children,
   block,
   dropup,
   ...rest
 }: DropDownButtonProps): JSX.Element {
-  const itemsContainer = [getItemsContainerClasses(dropup)].join();
   return (
-    <Menu className='relative' as='div'>
-      <Menu.Button className={getDefaultClasses(block)} {...rest}>
-        {toggleLabel}
-        <FontAwesomeIcon
-          icon={dropup ? faCaretUp : faCaretDown}
-          className='mt-2 ml-2 -mr-1 h-3 w-3 text-violet-200'
-          aria-hidden='true'
-        />
-      </Menu.Button>
-
-      <Menu.Items as='ul' className={itemsContainer}>
-        {children}
-      </Menu.Items>
-    </Menu>
+    <Menu.Button className={getDefaultClasses(block)} {...rest}>
+      {children}
+      <FontAwesomeIcon
+        icon={dropup ? faCaretUp : faCaretDown}
+        className='mt-2 ml-2 -mr-1 h-3 w-3 text-violet-200'
+        aria-hidden='true'
+      />
+    </Menu.Button>
   );
 }
