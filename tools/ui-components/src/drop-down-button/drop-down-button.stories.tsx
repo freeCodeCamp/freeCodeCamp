@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { MenuItems } from '../menu-items';
+import { MenuItem } from '../menu-item';
 import { DropDownButton, DropDownButtonProps } from './drop-down-button';
 const story = {
   title: 'Example/DropDownButton',
@@ -20,28 +20,26 @@ MenuWithAction.args = {
   toggleLabel: 'Options',
   children: (
     <>
-      <MenuItems onClick={() => console.log('hi')}>Option 1</MenuItems>
-      <MenuItems href={'https://www.google.com'}>Option 2</MenuItems>
-      <MenuItems href='' disabled>
+      <MenuItem onClick={() => console.log('hi')}>Option 1</MenuItem>
+      <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
+      <MenuItem href='' disabled>
         Option 3
-      </MenuItems>
+      </MenuItem>
     </>
   )
 };
 
-const ItemsTemplate: Story = () => {
-  return (
-    <div style={{ width: '220px' }}>
-      <DropDownButton toggleLabel={'Some Menu Items'}>
-        <MenuItems onClick={() => console.log('hi')}>Option 1</MenuItems>
-        <MenuItems href={'https://www.google.com'}>Option 2</MenuItems>
-        <MenuItems href=''>Option 3</MenuItems>
-      </DropDownButton>
-    </div>
-  );
+export const RenderMenuItems = Template.bind({});
+RenderMenuItems.args = {
+  toggleLabel: 'Some Menu Items',
+  children: (
+    <>
+      <MenuItem onClick={() => console.log('hi')}>Option 1</MenuItem>
+      <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
+      <MenuItem href=''>Option 3</MenuItem>
+    </>
+  )
 };
-
-export const MenuItem = ItemsTemplate.bind({});
 
 const UpTemplate: Story<DropDownButtonProps> = args => {
   return (
@@ -65,9 +63,9 @@ DropUp.args = {
   toggleLabel: 'Drop Up',
   children: (
     <>
-      <MenuItems onClick={() => alert('hi')}>Option 1</MenuItems>
-      <MenuItems href={'https://www.google.com'}>Option 2</MenuItems>
-      <MenuItems href={'https://www.google.com'}>Option 3</MenuItems>
+      <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
+      <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
+      <MenuItem href={'https://www.google.com'}>Option 3</MenuItem>
     </>
   ),
   dropup: true

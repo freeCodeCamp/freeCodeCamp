@@ -2,33 +2,33 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
-import { MenuItems } from '../menu-items/menu-items';
+import { MenuItem } from '../menu-item/menu-item';
 import { DropDownButton } from './drop-down-button';
 
 describe('<DropDownButton>', () => {
   it('should render button with text', () => {
     render(
       <DropDownButton toggleLabel='Some Button'>
-        <MenuItems href=''>Option</MenuItems>
-        <MenuItems href=''>Option</MenuItems>
-        <MenuItems href=''>Option</MenuItems>
+        <MenuItem href=''>Option</MenuItem>
+        <MenuItem href=''>Option</MenuItem>
+        <MenuItem href=''>Option</MenuItem>
       </DropDownButton>
     );
     const dropdown = screen.getByText('Some Button');
     userEvent.click(dropdown);
     const unorderedList = screen.getByRole('menu');
-    const MenuItem = within(unorderedList).getAllByText('Option');
+    const item = within(unorderedList).getAllByText('Option');
     expect(unorderedList).toBeInTheDocument();
     expect(dropdown).toBeInTheDocument();
-    expect(MenuItem.length).toBe(3);
+    expect(item.length).toBe(3);
   });
 
   it('should render button with direction to up', () => {
     render(
       <DropDownButton toggleLabel='Some Button' dropup={true}>
-        <MenuItems href=''>Option</MenuItems>
-        <MenuItems href=''>Option</MenuItems>
-        <MenuItems href=''>Option</MenuItems>
+        <MenuItem href=''>Option</MenuItem>
+        <MenuItem href=''>Option</MenuItem>
+        <MenuItem href=''>Option</MenuItem>
       </DropDownButton>
     );
     const dropDown = screen.getByText('Some Button');
