@@ -86,7 +86,7 @@ Ao tentar navegar para http://localhost:8000/developmentuser para ver a página 
 
 Há um botão de "Pré-visualização personalizada da página de 404". Clique nele para ver o perfil.
 
-## Issues Installing DDependencies
+## Issues Installing Dependencies
 
 Se você receber erros durante a instalação das dependências, certifique-se de que você não está em uma rede restrita ou suas configurações de firewall não impedem você de acessar os recursos.
 

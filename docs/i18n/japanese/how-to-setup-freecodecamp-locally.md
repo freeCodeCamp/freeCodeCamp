@@ -272,23 +272,23 @@ pnpm run develop
 
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-The API serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
+The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
 
 While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
 > [!WARNING] Clearing your cookies or running `pnpm run seed:certified-user` will log you out, and you will have to sign in again.
 
-If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
+If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
 
 ## Quick Commands Reference
 
 A quick reference to the commands that you will need when working locally.
 
-| command            | description                                                                   |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `pnpm install`     | Installs / re-install all dependencies and bootstraps the different services. |
-| `pnpm run seed`    | Creates authorized test users and inserts them into mongodb.                  |
-| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
-| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                             |
+| command            | description                                                                    |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
+| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
+| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                    |
+| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                              |

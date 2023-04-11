@@ -1,6 +1,6 @@
 Siga estas orientações para criar um ambiente de desenvolvimento para o freeCodeCamp. Isso é altamente recomendado se você quer contribuir regularmente.
 
-## Choose between Gitpod or your Own Machine (local setup)
+## Escolha entre o Gitpod ou seu próprio computador (configuração local)
 
 Se você deseja fazer uma contribuição única, use o Gitpod para fazer alterações. A configuração do Gitpod abre um ambiente pronto para código em poucos minutos no seu navegador. Para contribuir a longo prazo, recomendamos que você instale o freeCodeCamp em seu computador.
 
@@ -17,7 +17,7 @@ Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é
 
 > [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente dentro de janelas.
 
-### How to Prepare a Gitpod Workspace
+### Como preparar um espaço de trabalho no GitPod
 
 Nós automatizamos o processo de instalação de todas as dependências e ferramentas de que você precisará. Com o GitPod, você terá um ambiente gratuito e pronto para o código em alguns minutos. Isso é útil caso você não tenha acesso a um computador ou queira fazer alterações únicas.
 
@@ -38,7 +38,7 @@ Existem várias maneiras de se abrir um espaço de trabalho no GitPod:
 
 É isso. Agora, você pode pular para a seção 'sincronizando a partir do pai' depois de ter iniciado um espaço de trabalho no GitPod. A maior parte deste guia se aplica a espaços de trabalho no GitPod, mas preste atenção em [como funcionam os URLs e as portas em um espaço de trabalho do GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
 
-### How to Prepare your Local Machine
+### Como preparar sua máquina local
 
 Aqui está um requisito mínimo de sistema para rodar o freeCodeCamp localmente:
 
@@ -87,7 +87,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
    > [!TIP] Não ignore nenhum erro de linting. Eles têm como objetivo **ajudar** você e garantir uma base de código simples e limpa.
 
-## Fork the Repository on GitHub
+## Faça o fork do repositório no GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) é uma etapa onde você obtém sua própria cópia do repositório principal do freeCodeCamp (vulgo _repo_) no GitHub.
 
@@ -114,7 +114,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia do fre
    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Como criar um fork do freeCodeCamp no GitHub" />
 </details>
 
-## Clone your Fork from GitHub
+## Clonar o seu fork no GitHub
 
 [Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
@@ -138,7 +138,7 @@ Isto vai baixar todo o repositório do freeCodeCamp para seu diretório de proje
 
 Nota: `--depth=1` cria um clone raso do seu fork, apenas com o histórico mais recente.
 
-## Set up Syncing from Parent
+## Configurar sincronização a partir do pai
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
@@ -173,7 +173,7 @@ Agora que você baixou uma cópia do seu fork, será necessário configurar um r
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp Locally
+## Executando freeCodeCamp localmente
 
 Agora que você tem uma cópia local do freeCodeCamp, você pode seguir estas instruções para executá-lo localmente. Isso permitirá que você:
 
@@ -185,9 +185,9 @@ Se você encontrar problemas, primeiro faça uma busca na web e procurar por res
 
 E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colaboradores) do fórum](https://forum.freecodecamp.org/c/contributors) ou [no servidor de chat](https://discord.gg/PRyKn3Vbay).
 
-### Configuring Dependencies
+### Configurar dependências
 
-#### Step 1: Set up the Environment Variable File
+#### Passo 1: Configure o arquivo de variável de ambiente
 
 As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acessado dinamicamente durante a etapa de instalação.
 
@@ -216,7 +216,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 
 > [!TIP] Lembre-se: se quiser usar serviços como Auth0 ou Algolia, você terá que adquirir suas próprias chaves da API para estes serviços e editar as entradas no arquivo `.env`.
 
-#### Step 2: Install Dependencies
+#### Passo 2: Instale as dependências
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
@@ -224,7 +224,7 @@ Esta etapa vai instalar as dependências necessárias para a execução do aplic
 pnpm install
 ```
 
-#### Step 3: Start MongoDB and Seed the Database
+#### Passo 3: Inicie o MongoDB e crie o banco de dados
 
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
@@ -262,7 +262,7 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp Client Application and API Server
+#### Passo 4: Inicie o aplicativo de client do freeCodeCamp e o servidor de API
 
 Agora você pode iniciar o servidor de API e os aplicativos do client.
 
@@ -272,23 +272,23 @@ pnpm run develop
 
 Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
-Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
+Once ready, open a web browser and visit <http://localhost:8000>. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
-A API serve os endpoints em `http://localhost:3000`. O aplicativo Gatsby atende o aplicativo cliente em `http://localhost:8000`
+The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
 
 Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
 
 > [!WARNING] Limpar seus cookies ou executar `pnpm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
-Se você tiver problemas durante a instalação, confira a [seção de solução de problemas](troubleshooting-development-issues.md)
+If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
 
-## Quick Commands Reference
+## Referência de comandos rápidos
 
 Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 
-| comando            | descrição                                                                    |
-| ------------------ | ---------------------------------------------------------------------------- |
-| `pnpm install`     | Instala/reinstala todas as dependências e inicializa os diferentes serviços. |
-| `pnpm run seed`    | Cria usuários de testes autorizados e os insere no mongodb.                  |
-| `pnpm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                 |
-| `pnpm run clean`   | Desinstala todas as dependências e limpa os caches.                          |
+| comando            | descrição                                                                      |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
+| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
+| `pnpm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                   |
+| `pnpm run clean`   | Desinstala todas as dependências e limpa os caches.                            |
