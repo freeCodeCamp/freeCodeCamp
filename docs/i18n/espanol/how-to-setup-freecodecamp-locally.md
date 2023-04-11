@@ -1,6 +1,6 @@
 Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCamp. Esto es altamente recomendable si desea contribuir regularmente.
 
-## Elige entre Gitpod o tu propia máquina (configuración local)
+## Choose between Gitpod or your Own Machine (local setup)
 
 Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
 
@@ -17,7 +17,7 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 
 > [!ATTENTION] **Nota:** Si utilizas Windows 10 u 11, tendrás que utilizar WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
 
-### Cómo preparar un espacio de trabajo Gitpod
+### How to Prepare a Gitpod Workspace
 
 Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. Con GitPod obtienes un entorno gratuito listo para codificar en pocos minutos, y es útil si no tienes acceso a ordenador o quieres hacer cambios puntuales.
 
@@ -38,7 +38,7 @@ Hay varias formas de lanzar un espacio de trabajo GitPod:
 
 Spanish Eso es todo, ahora puedes saltar a la sección 'sincronizar desde el padre' después de haber lanzado un espacio de trabajo GitPod. La mayor parte de esta guía se aplica a los espacios de trabajo GitPod, pero ten en cuenta [cómo funcionan las URLs & Puertos dentro de un GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
 
-### Cómo preparar tu máquina local
+### How to Prepare your Local Machine
 
 A continuación se indican los requisitos mínimos del sistema para ejecutar freeCodeCamp localmente:
 
@@ -87,7 +87,7 @@ Una vez instalados los requisitos previos, debe preparar su entorno de desarroll
 
    > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Fork the repository on GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
@@ -114,7 +114,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Clone your fork from GitHub
+## Clone your Fork from GitHub
 
 [Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
@@ -138,7 +138,7 @@ This will download the entire freeCodeCamp repository to your projects directory
 
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Set up syncing from parent
+## Set up Syncing from Parent
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
@@ -173,7 +173,7 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp locally
+## Running freeCodeCamp Locally
 
 Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
@@ -185,9 +185,9 @@ If you do run into issues, first perform a web search for your issue and see if 
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
-### Configuring dependencies
+### Configuring Dependencies
 
-#### Paso 1: Configurar el archivo de variable de entorno
+#### Step 1: Set up the Environment Variable File
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
@@ -216,7 +216,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 > [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Paso 2: Instalar dependencias
+#### Step 2: Install Dependencies
 
 This step will install the dependencies required for the application to run:
 
@@ -224,7 +224,7 @@ This step will install the dependencies required for the application to run:
 pnpm install
 ```
 
-#### Paso 3: Iniciar MongoDB y "sembrar" la base de datos
+#### Step 3: Start MongoDB and Seed the Database
 
 Before you can run the application locally, you will need to start the MongoDB service.
 
@@ -262,7 +262,7 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
-#### Paso 4: Iniciar la aplicación del cliente freeCodeCamp y el servidor de la API
+#### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
 
@@ -282,7 +282,7 @@ While you are logged in, if you visit <http://localhost:3000/explorer> you shoul
 
 If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
 
-## Quick commands reference
+## Quick Commands Reference
 
 A quick reference to the commands that you will need when working locally.
 

@@ -1,6 +1,6 @@
-If you are facing issue, there is a high chance that the resolution is in this documentation.
+If you are facing an issue, there is a high chance that the resolution is in this documentation.
 
-### Issues with installing the recommended prerequisites
+## Issues with Installing the Recommended Prerequisites
 
 We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
 
@@ -12,9 +12,9 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 > 
 > Please avoid creating GitHub issues for problems with the prerequisite technologies. They are out of the scope of this project.
 
-### Issues missing the UI, Fonts, language strings, or build errors.
+## Issues with Missing UI, Fonts, Language Strings, or Build Errors
 
-When you build the client, Gatsby will cache the Fonts, language strings and UI. If one of them isn't cached, run the following:
+When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
 
 ```console
 pnpm run clean
@@ -48,7 +48,7 @@ git clean -ifdX
    <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Issues with API, login, Challenge Submissions, etc.
+## Issues with API, login, Challenge Submissions, etc.
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
@@ -74,19 +74,19 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ---
 
-### Issues signing out while navigating
+## Issues Signing Out while Navigating
 
 While in development, your session is stored as cookies. Clearing them will sign you out of your development account.
 
 Running `pnpm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
 
-### Issue getting 404 when navigating profile page
+## Issue Getting 404 when Navigating Profile Page
 
 When you try to navigate to http://localhost:8000/developmentuser to view the profile page, Gatsby takes over serving the client-side pages and hence you will get a 404 page for the user profile when working.
 
 There is a "Preview Custom 404 Page" button, click it to see the profile.
 
-### Issues installing dependencies
+## Issues Installing DDependencies
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 

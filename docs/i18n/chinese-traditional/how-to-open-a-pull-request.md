@@ -17,7 +17,7 @@ Some examples of this are:
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## Prepare a good PR title
+## Prepare a Good PR Title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
@@ -93,7 +93,7 @@ Some examples of good PR titles would be:
 
    - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
-## Feedback on pull requests
+## Feedback on Pull Requests
 
 > :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
@@ -103,13 +103,13 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 > [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Conflicts on a pull request
+## Conflicts on a Pull Request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
 More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
-### For usual bug fixes and features
+### For Usual Bug Fixes and Features
 
 When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
@@ -138,7 +138,7 @@ When you are working on regular bugs and features on our development branch `mai
    git push --force origin <pr-branch>
    ```
 
-### For upcoming curriculum and features
+### For Upcoming Curriculum and Features
 
 When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 

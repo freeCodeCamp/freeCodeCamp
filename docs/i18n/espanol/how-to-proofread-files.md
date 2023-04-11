@@ -40,7 +40,7 @@ No se requieren acciones adicionales una vez que el archivo ha sido revisado.
 
 > [!NOTE] Aprobar una cadena en la vista de revisión la marcará como completa y se descargará en nuestra próxima extracción de Crowdin a GitHub.
 
-## Llegar hacer un revisor
+## Becoming a Proofreader
 
 Si tiene alguna pregunta o le interesa colaborar en el equipo de revisión, sientase libre de contactarnos en nuestra [sala de chat de contribuidores](https://discord.gg/PRyKn3Vbay). Generalmente, le concederemos acceso a la corrección si ha estado contribuyendo a freeCodeCamp durante un tiempo.
 
@@ -48,7 +48,7 @@ Nuestro equipo de personal y de moderadores de la comunidad buscan constantement
 
 > [!NOTE] Crowdin te permite aprobar tus propias traducciones. Sin embargo, en general suele ser mejor permitir que otro corrector revise tus traducciones propuestas como medida adicional para asegurarse que no hayan errores.
 
-## Creando un canal en Chat para un idioma mundial
+## Creating a Channel on Chat for a World Language
 
 Mayormente, te recomendamos que utilices la sala de chat de [contribuidores](https://discord.gg/PRyKn3Vbay) para toda la correspondencia. Sin embargo, si el equipo de traductores voluntarios crece para un idioma determinado, podemos considerar la creación de un canal de escape adicional para el idioma.
 
