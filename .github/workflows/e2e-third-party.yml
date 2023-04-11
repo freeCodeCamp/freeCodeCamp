@@ -72,7 +72,7 @@ jobs:
         # We need to change this to cypress/e2e/ for the specific tests we are running
         # in this workflow.
         #
-      - name: Adjust the Cypress Config for 3rd party donation tests
+      - name: Adjust the Cypress Config
         run: |
           sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
 
