@@ -1,6 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
-title: 'Problem 92: Square digit chains'
+title: 'Problema 92: catene dei quadrati delle cifre'
 challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
@@ -8,9 +8,9 @@ dashedName: problem-92-square-digit-chains
 
 # --description--
 
-A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+Una catena di numeri è creata sommando in modo continuo i quadrati delle cifre in un numero per formare un nuovo numero fino a che non se ne trova uno già visto.
 
-For example,
+Ad esempio,
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
