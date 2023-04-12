@@ -18,7 +18,7 @@ Find $a_{30}$.
 
 # --hints--
 
-`digitPowerSum()` should return `248155780267521`.
+`digitPowerSum()` має повернути `248155780267521`.
 
 ```js
 assert.strictEqual(digitPowerSum(), 248155780267521);

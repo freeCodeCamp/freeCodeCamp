@@ -22,7 +22,7 @@ Find $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
 
 # --hints--
 
-`averageLCM()` should return `106467648`.
+`averageLCM()` має повернути `106467648`.
 
 ```js
 assert.strictEqual(averageLCM(), 106467648);

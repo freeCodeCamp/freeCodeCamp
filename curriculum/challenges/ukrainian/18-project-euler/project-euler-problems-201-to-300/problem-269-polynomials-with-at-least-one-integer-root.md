@@ -28,7 +28,7 @@ What is $Z({10}^{16})$?
 
 # --hints--
 
-`polynomialsWithOneIntegerRoot()` should return `1311109198529286`.
+`polynomialsWithOneIntegerRoot()` має повернути `1311109198529286`.
 
 ```js
 assert.strictEqual(polynomialsWithOneIntegerRoot(), 1311109198529286);

@@ -20,7 +20,7 @@ Find $T(1053779)$.
 
 # --hints--
 
-`inscribedCirclesOfTriangles()` should return `75085391`.
+`inscribedCirclesOfTriangles()` має повернути `75085391`.
 
 ```js
 assert.strictEqual(inscribedCirclesOfTriangles(), 75085391);

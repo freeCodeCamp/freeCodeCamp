@@ -24,7 +24,7 @@ Find $g({10}^{15})$.
 
 # --hints--
 
-`gcdSequence()` should return `2744233049300770`.
+`gcdSequence()` має повернути `2744233049300770`.
 
 ```js
 assert.strictEqual(gcdSequence(), 2744233049300770);

@@ -26,31 +26,31 @@ Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n -
 
 # --hints--
 
-`substringDivisibility(5)` should return a number.
+`substringDivisibility(5)` має повернути число.
 
 ```js
 assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility(5)` should return `12444480`.
+`substringDivisibility(5)` має повернути `12444480`.
 
 ```js
 assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-`substringDivisibility(7)` should return `1099210170`.
+`substringDivisibility(7)` має повернути `1099210170`.
 
 ```js
 assert.strictEqual(substringDivisibility(7), 1099210170)
 ```
 
-`substringDivisibility(8)` should return `1113342912`.
+`substringDivisibility(8)` має повернути `1113342912`.
 
 ```js
 assert.strictEqual(substringDivisibility(8), 1113342912)
 ```
 
-`substringDivisibility(9)` should return `16695334890`.
+`substringDivisibility(9)` має повернути `16695334890`.
 
 ```js
 assert.strictEqual(substringDivisibility(9), 16695334890)

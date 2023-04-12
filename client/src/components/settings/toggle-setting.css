@@ -1,49 +1,142 @@
+.toggle-setting-container {
+  margin-bottom: 15px;
+}
+
 .toggle-setting-container .form-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.toggle-setting-container .toggle-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.toggle-setting-container .btn-group {
-  padding-inline: 5px;
-}
-
 .toggle-setting-container > .form-group > * {
   flex: 1 1 0;
 }
 
-.toggle-setting-container .btn-group {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+.toggle-description {
+  max-width: 50%;
 }
 
-@media (max-width: 440px) {
-  .toggle-setting-container .form-group {
+.toggle-description > p:first-child {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.toggle-description > p:not(:first-child) {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.toggle-setting-container fieldset {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content;
+  gap: 3px;
+}
+
+.toggle-button-group button {
+  padding: 5px 1.5rem;
+  border: 3px solid var(--secondary-color);
+  white-space: nowrap;
+  display: grid;
+  align-items: baseline;
+  justify-content: center;
+  min-width: 6rem;
+}
+
+.toggle-button-group button[aria-pressed='true'] {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.toggle-button-group button > span {
+  position: relative;
+}
+
+.toggle-button-group button > span > svg {
+  position: absolute;
+  right: -1.5rem;
+  margin-top: 0.1rem;
+}
+
+.toggle-button-group button:first-of-type > span > svg,
+[dir='rtl'] .toggle-button-group button > span > svg {
+  right: unset;
+  left: -1.25rem;
+}
+
+[dir='rtl'] .toggle-button-group button:first-of-type > span > svg {
+  left: unset;
+  right: -1.5rem;
+}
+
+.toggle-button-group button[aria-pressed='true']:hover {
+  cursor: default;
+}
+
+.toggle-radio-group {
+  display: flex;
+  align-items: start;
+}
+
+.toggle-radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-radio-group input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--secondary-color);
+  margin: 0;
+}
+
+.toggle-radio-group [data-checked='true'] input {
+  background: var(--secondary-color);
+}
+
+.toggle-radio-group [data-checked='true'] span {
+  font-weight: 700;
+}
+
+.toggle-radio-group input:focus-visible {
+  outline-offset: 1px;
+}
+
+.toggle-radio-group label[data-checked='false']:hover,
+.toggle-radio-group label[data-checked='false'] input:hover {
+  cursor: pointer;
+}
+
+.toggle-radio-group label + label {
+  margin-inline-start: 2rem;
+}
+
+.toggle-radio-group input {
+  margin-inline-end: 0.35rem;
+  accent-color: var(--secondary-color);
+}
+
+@media (max-width: 35rem) {
+  .toggle-setting-container fieldset {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
-  .toggle-setting-container > .form-group > * {
-    flex: 0 1 auto;
+  .toggle-description {
+    max-width: none;
   }
 
-  .toggle-setting-container .toggle-label {
-    justify-content: flex-start;
-  }
-
-  .toggle-setting-container .help-block {
-    margin-bottom: 0px;
-  }
-
-  .toggle-setting-container .btn-group {
-    justify-content: flex-start;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  .toggle-description > p:not(:first-child) {
+    margin-bottom: 0.5rem;
   }
 }

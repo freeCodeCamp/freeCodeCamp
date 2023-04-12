@@ -16,31 +16,31 @@ Find the value of `n`, 1 &lt; `n` &lt; `limit`, for which ${\phi}(n)$ is a permu
 
 # --hints--
 
-`totientPermutation(10000)` should return a number.
+`totientPermutation(10000)` має повернути число.
 
 ```js
 assert(typeof totientPermutation(10000) === 'number');
 ```
 
-`totientPermutation(10000)` should return `4435`.
+`totientPermutation(10000)` має повернути `4435`.
 
 ```js
 assert.strictEqual(totientPermutation(10000), 4435);
 ```
 
-`totientPermutation(100000)` should return `75841`.
+`totientPermutation(100000)` має повернути `75841`.
 
 ```js
 assert.strictEqual(totientPermutation(100000), 75841);
 ```
 
-`totientPermutation(500000)` should return `474883`.
+`totientPermutation(500000)` має повернути `474883`.
 
 ```js
 assert.strictEqual(totientPermutation(500000), 474883);
 ```
 
-`totientPermutation(10000000)` should return `8319823`.
+`totientPermutation(10000000)` має повернути `8319823`.
 
 ```js
 assert.strictEqual(totientPermutation(10000000), 8319823);

@@ -22,7 +22,7 @@ Find $E({10}^{18})$. Give your answer rounded to fourteen decimal places in the 
 
 # --hints--
 
-`emptyChairs()` should return `0.56766764161831`.
+`emptyChairs()` має повернути `0.56766764161831`.
 
 ```js
 assert.strictEqual(emptyChairs(), 0.56766764161831);

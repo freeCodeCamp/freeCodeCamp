@@ -2,11 +2,11 @@
 
 Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos mantenimiento a nuestras plataformas. Si bien esta guía no contiene detalles exhaustivos de todas las operaciones, esta podría utilizarse como referencia para tu comprensión de los sistemas.
 
-Déjanos saber, si tienes algún comentario o consulta, y la aclararemos con mucho gusto.
+Let us know if you have feedback or queries and we will be happy to clarify.
 
-# Manual de vuelo: Despliegues de código
+## Flight Manual - Code Deployments
 
-Este repositorio se construye, prueba y despliega continuamente para ** separar conjuntos de infraestructura (Servidores, Bases de Datos, CDNs, etc.)**.
+This repository is continuously built, tested, and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
 Esto involucra tres pasos que deben seguirse en secuencia:
 
@@ -14,7 +14,7 @@ Esto involucra tres pasos que deben seguirse en secuencia:
 2. Estos cambios son ejecutados a través de una serie de pruebas automatizadas.
 3. Una vez que las pruebas se completan de forma satisfactoria, publicamos los cambios (o los actualizamos si es necesario) para desplegarlos en nuestra infraestructura.
 
-#### Construyendo la base de código - Mapeando las ramas de Git con los despliegues.
+### Building the codebase - Mapping Git Branches to Deployments
 
 Normalmente, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
 
@@ -26,33 +26,33 @@ Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://gith
 
 Esta es la versión final que despliega los cambios a nuestras plataformas de producción en freeCodeCamp.org.
 
-#### Pruebas de cambios - pruebas de integración y aceptación del usuario.
+### Testing changes - Integration and User Acceptance Testing
 
 Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. Todas nuestras pruebas se realizan a través de software como [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) y [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, las API del servidor y las interfaces de usuario. Estas nos ayudan a probar la integración entre diferentes componentes.
+We have unit tests for testing our challenge solutions, Server APIs, and Client User interfaces. Estas nos ayudan a probar la integración entre diferentes componentes.
 
-> [!NOTE] También estamos en el proceso de redactar pruebas de usuario final que nos ayudarán a replicar escenarios del mundo real, como actualizar un correo electrónico o hacer una llamada a la API o servicios de terceros.
+> [!NOTE] We are also in the process of writing end user tests which will help in replicating real-world scenarios like updating an email or making a call to the API or third-party services.
 
 Juntas, estas pruebas ayudan a evitar que los problemas se repitan y garantizan que no introduzcamos un error mientras trabajamos en otro error o en una funcionalidad.
 
-#### Desplegando los cambios: Enviando los cambios a los servidores.
+### Deploying Changes - Pushing changes to servers
 
 Hemos configurado un software de entrega continua para publicar los cambios en nuestros servidores de desarrollo y producción.
 
 Una vez que los cambios se envían a las ramas de publicación protegidas, se activa automáticamente un flujo de compilación para la rama. Los flujos de compilación son responsables de construir artefactos y mantenerlos en un almacenamiento en frío para su uso posterior.
 
-El flujo de compilación dispara el flujo de publicación correspondiente si este completa una ejecución exitosa. Los flujos de publicación son responsables de recopilar los artefactos de compilación, moverlos a los servidores y ponerlos en funcionamiento.
+El flujo de compilación dispara el flujo de publicación correspondiente si este completa una ejecución exitosa. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
 
-Los estados de las compilaciones y publicaciones están [disponibles aquí](#build-test-and-deployment-status).
+The statuses of builds and releases are [available here](#build-test-and-deployment-status).
 
-## Ejecutar una compilación, prueba y despliegue
+## Trigger a Build, Test, and Deploy
 
-Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambios a las ramas de producción. Los cambios en las ramas de `production-*` sólo pueden llegar a través de una fusión fast-forward al [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
+Currently, only members of the developer team can push to the production branches. Los cambios en las ramas de `production-*` sólo pueden llegar a través de una fusión fast-forward al [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!NOTE] En los próximos días mejoraríamos este flujo a través de la implementación de pull-requests, para una mejor administración de acceso y transparencia.
+> [!NOTE] In the upcoming days, we would improve this flow to be done via pull requests, for better access management and transparency.
 
-### Cargando cambios a las aplicaciones en producción.
+### Pushing changes to Staging Applications
 
 1. Configura tus repositorios remotos correctamente.
 
@@ -102,15 +102,15 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    git push upstream
    ```
 
-   > [!NOTE] No podrás forzar un push y si has reescrito el historial de alguna manera, estos comandos arrojarán errores.
+   > [!NOTE] You will not be able to force push and if you have re-written the history in any way, these commands will error out.
    > 
    > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
 
 Los pasos anteriores activarán automáticamente un flujo de compilación para la rama `prod-staging`. Una vez que se completa la compilación, los artefactos se guardan como archivos `.zip` en un almacenamiento en frío para ser recuperados y usados más adelante.
 
-El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. Para las plataformas de staging, este proceso no implica aprobación manual y los artefactos se envían a los servidores de API y CDN Cliente.
+El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. For staging platforms, this process does not involve manual approval, and the artifacts are pushed to the Client CDN and API servers.
 
-### Publicando cambios a las aplicaciones en producción.
+### Pushing changes to Production Applications
 
 El proceso es prácticamente el mismo que el de las plataformas de staging, con algunas comprobaciones adicionales. Esto es solo para asegurarnos de que no rompemos nada en freeCodeCamp.org, el cual puede tener a cientos de usuarios usándolo en cualquier momento.
 
@@ -134,7 +134,7 @@ El proceso es prácticamente el mismo que el de las plataformas de staging, con 
    git push upstream
    ```
 
-   > [!NOTE] No podrás forzar un push y si has reescrito el historial de alguna manera, estos comandos arrojarán errores.
+   > [!NOTE] You will not be able to force push and if you have re-written the history in any way, these commands will error out.
    > 
    > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
 
@@ -142,7 +142,7 @@ Los pasos anteriores activarán automáticamente un flujo de compilación para l
 
 **Pasos Adicionales para el Staff Action**
 
-Una vez que se activa una ejecución de publicación, los miembros del equipo de desarrollado principal recibirán un correo electrónico automatizado de intervención manual. Pueden _aprobar_ o _rechazar_ la publicación.
+Once a release run is triggered, members of the developer staff team will receive an automated manual intervention email. Pueden _aprobar_ o _rechazar_ la publicación.
 
 Si los cambios funcionan y se han probado en la plataforma de staging, entonces se pueden aprobar. La aprobación debe darse dentro de las 4 horas posteriores a la activación de la publicación antes de sea rechazada automáticamente. Un miembro del personal puede volver a iniciar la ejecución de la publicación de manera manual para publicaciones que fueron rechazados o esperar el siguiente ciclo de publicación.
 
@@ -154,7 +154,7 @@ Para uso del personal:
 
 Una vez que uno de los miembros del personal apruebe una publicación, el flujo enviará los cambios a los servidores de API y CDN de producción de freeCodeCamp.org.
 
-## Estado de la compilación, pruebas y despliegue
+## Build, Test and Deployment Status
 
 Aquí está el estado actual de las pruebas, compilación y despliegue del código base.
 
@@ -165,17 +165,17 @@ Aquí está el estado actual de las pruebas, compilación y despliegue del códi
 | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-current)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-current) | [![Pruebas de Cypress E2E](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-current&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
 | `prod-next` (experimental, próximamente)                                         | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                             | -                                                                                                                                 |
 
-## Acceso anticipado y pruebas beta
+## Early Access and Beta Testing
 
 Te invitamos a probar estas versiones en un modo **"prueba beta pública"** y obtener acceso anticipado a las próximas funciones de las plataformas. A veces, estas funcionalidades/cambios se denominan **next, beta, staging,** etc. indistintamente.
 
-Tus contribuciones a través de comentarios y reporte de errores nos ayudarán a hacer que las plataformas de producción en `freeCodeCamp.org` sean más **resistentes**, **consistentes** y **estables** para todos.
+Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent**, and **stable** for everyone.
 
 Te agradecemos por reportar los errores que encuentres y ayudar a mejorar freeCodeCamp.org. ¡Eres genial!
 
-### Identificando la próxima versión de las plataformas
+### Identifying the Upcoming Version of the Platforms
 
-Actualmente una versión de prueba beta pública está disponible en:
+Currently, a public beta testing version is available at:
 
 | Aplicación | Idioma  | URL                                      |
 |:---------- |:------- |:---------------------------------------- |
@@ -189,27 +189,27 @@ Actualmente una versión de prueba beta pública está disponible en:
 
 > [!NOTE] El nombre de dominio es diferente a **`freeCodeCamp.org`**. Esto es intencional para evitar la indexación de los motores de búsqueda y evitar confusiones para los usuarios habituales de la plataforma.
 > 
-> La lista anterior no es exhaustiva de todas las aplicaciones que proporcionamos. Además, no todas variantes de idiomas se despliegan al mismo tiempo en staging para conservar recursos.
+> The above list is not exhaustive of all the applications that we provision. Also, not all language variants are deployed in staging to conserve resources.
 
-### Identificando la versión actual de las plataformas
+### Identifying the Current Version of the Platforms
 
 **La versión actual de la plataforma siempre está disponible en [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
 El equipo de desarrollo fusiona los cambios de la rama  `prod-staging` a `prod-current` cuando publican los cambios. El commit más reciente debe ser lo que ves en vivo en el sitio.
 
-Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Adicionalmente, también puedes contactarnos en la [sala de chat de contribuyentes](https://discord.gg/PRyKn3Vbay) para obtener una confirmación.
+Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternatively, you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
 
-### Limitaciones Conocidas
+### Known Limitations
 
 Existen algunas limitaciones y problemas conocidos al utilizar la versión beta de la plataforma.
 
-- #### Todos los datos / progreso personal en estas plataformas beta NO se guardarán ni se transferirán a producción.
+- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
 
-  **Los usuarios de la versión beta tendrán una cuenta separada a la de producción.** La versión beta usa una base de datos físicamente separada de la de producción. Esto nos da la capacidad de prevenir cualquier pérdida accidental de datos o modificaciones. El equipo de desarrollo puede purgar la base de datos en esta versión beta según sea necesario.
+  **Los usuarios de la versión beta tendrán una cuenta separada a la de producción.** La versión beta usa una base de datos físicamente separada de la de producción. Esto nos da la capacidad de prevenir cualquier pérdida accidental de datos o modificaciones. The dev-team may purge the database on this beta version as needed.
 
-- #### No hay garantías sobre el tiempo de disponibilidad y confiabilidad de las plataformas beta.
+- #### There are no guarantees on the uptime and reliability of the beta platforms
 
-  Se espera que el despliegue sea frecuente y en iteraciones rápidas, a veces varias veces al día. Como resultado, en ocasiones habrá cierto tiempo de inactividad inesperado o alguna funcionalidad con problemas en la versión beta.
+  Se espera que el despliegue sea frecuente y en iteraciones rápidas, a veces varias veces al día. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
 - #### No envíes a los usuarios habituales a este sitio como una medida para confirmar una solución
 
@@ -219,13 +219,13 @@ Existen algunas limitaciones y problemas conocidos al utilizar la versión beta 
 
   Usamos un entorno de prueba para freeCodeCamp.dev en Auth0 y por lo tanto, no tenemos la capacidad de establecer un dominio personalizado. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a la producción que podemos conseguir.
 
-## Reportando problemas y dejando retroalimentación
+## Reporting issues and leaving feedback
 
 Por favor abre un nuevo reporte (issue) para discusiones e informes de errores.
 
 Puedes enviar un correo electrónico a `dev[at]freecodecamp.org` si tienes alguna consulta. Como siempre, todas las vulnerabilidades de seguridad deben notificarse a `security[at]freecodecamp.org` en lugar del registro público o el foro.
 
-# Manual de vuelo: Mantenimiento del servidor
+## Flight Manual - Server Maintenance
 
 > [!WARNING]
 > 
@@ -236,9 +236,9 @@ Como miembro del equipo interno, es posible que se te haya dado acceso a nuestro
 
 Aquí hay algunos comandos útiles que puedes usar para trabajar en las máquinas virtuales (MV), por ejemplo, realizar actualizaciones de mantenimiento o realizar tareas de limpieza general.
 
-## Obtener una lista de las Máquinas Virtuales
+## Get a list of the VMs
 
-> [!NOTE] Aunque es posible que ya tengas acceso SSH a las máquinas virtuales, esto solamente no te permitirá enumerar las máquinas virtuales a menos que también se te conceda acceso a los portales en la nube.
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you have been granted access to the cloud portals as well.
 
 ### Azure
 
@@ -286,19 +286,19 @@ doctl auth init
 doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
-## Ejecutar nuevos recursos
+## Spin New Resources
 
 Estamos trabajando para crear nuestra configuración de "laC", y mientras esta en proceso, puedes usar el portal de Azure o Azure CLI para poner en marcha nuevas maquinas virtuales y otros recursos.
 
 > [!TIP] Independientemente de tu elección de ejecución de recursos, tenemos algunos [ archivos de configuración de inicio útiles en la nube](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) para ayudarte a realizar parte del aprovisionamiento básico, como instalar docker o agregar claves SSH, etc.
 
-## Mantener las VMs actualizadas
+## Keep VMs Updated
 
-Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
+Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. This will ensure that the virtual machine is patched with the latest security fixes.
 
 > [!WARNING] Antes de ejecutar estos comandos:
 > 
-> - Asegúrate de que la máquina virtual ha sido provisionada completamente y no hay pasos post-instalación ejecutandose.
+> - Make sure that the VM has been provisioned completely and that there are no post-install steps running.
 > - Si estás actualizando paquetes en una máquina virtual que ya está sirviendo una aplicación, asegúrate de que la aplicación se ha detenido / guardado. Las actualizaciones de paquetes causarán que el ancho de banda de la red, la memoria y/o CPU tengan picos que pueden ocasionar interrupciones en aplicaciones en ejecución.
 
 Actualizar la información de paquetes
@@ -319,7 +319,7 @@ Limpieza de paquetes no utilizados
 sudo apt autoremove -y
 ```
 
-## Trabajar en Servidores Web (Proxy)
+## Work on Web Servers (Proxy)
 
 Estamos ejecutando instancias de balanceo de cargas (Azure Load Balancer) para nuestros servidores web. Estos servidores ejecutan NGINX como proxy inverso, enrutando hacia freeCodeCamp.org el tráfico de varias aplicaciones que se ejecutan en sus propias infraestructuras.
 
@@ -370,7 +370,7 @@ Aprovisionamiento de máquinas virtuales con el código
 
    Agrega/actualiza las direcciones IP fuente/origen de la aplicación.
 
-3. Configurar redes y cortafuegos.
+3. Set up networking and firewalls.
 
    Configura los firewalls de Azure y `ufw` según sea necesario para las direcciones de origen de entrada.
 
@@ -378,7 +378,7 @@ Aprovisionamiento de máquinas virtuales con el código
 
    Configura y agrega reglas al balanceador de carga si es necesario. Es posible que también necesites agregar las MVs al grupo de backend del balanceador de carga si es necesario.
 
-### Registro de Eventos y Monitoreo
+### Registro de eventos y monitoreo
 
 1. Compruebe el estado del servicio NGINX utilizando el siguiente comando:
 
@@ -390,7 +390,7 @@ Aprovisionamiento de máquinas virtuales con el código
 
    NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com'), nuestro panel de control básico actual. Estamos trabajando en métricas más granulares para una mejor visibilidad de los datos
 
-### Actualización de las Instancias (Mantenimiento)
+### Actualización de las instancias (mantenimiento)
 
 Los cambios en la configuración de nuestras instancias NGINX son mantenidos en GitHub, y se deben desplegar en cada instancia de la siguiente manera:
 
@@ -415,7 +415,7 @@ nginx -t
 nginx -s reload
 ```
 
-## Trabajar en instancias del API
+## Work on API Instances
 
 1. Instala las herramientas de compilación para archivos binarios de Node (`node-gyp`) etc.
 
@@ -423,7 +423,7 @@ nginx -s reload
 sudo apt install build-essential
 ```
 
-### Primera Instalación
+### Primera instalación
 
 Aprovisionamiento de MVs con el código
 
@@ -435,7 +435,7 @@ Aprovisionamiento de MVs con el código
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, setup env and keys.
+3. Clone freeCodeCamp, set up env, and keys.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -482,11 +482,11 @@ pnpm pm2 monit
 
 ### Actualización de las instancias (mantenimiento)
 
-Los cambios en el código deben desplegarse en las instancias de la API cada tanto. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
+Los cambios en el código deben desplegarse en las instancias de la API cada tanto. Esto puede ser una actualización continua o una actualización manual. The latter is essential when changing dependencies or adding environment variables.
 
 > [!ATTENTIÓN] Los flujos automáticos no están manejando actualizaciones de  dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
 
-#### 1. Actualizaciones Manuales: Utilizadas para actualizar dependencias, variables de entorno.
+#### 1. Manual Updates - Used for updating dependencies, env variables.
 
 1. Stop all instances
 
@@ -512,13 +512,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 pnpm start:server && pnpm pm2 logs
 ```
 
-#### 2. Actualizaciones continuas: Utilizadas para cambios lógicos en el código.
+#### 2. Rolling updates - Used for logical changes to code.
 
 ```console
 pnpm reload:server && pnpm pm2 logs
 ```
 
-> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, mediante flujos (pipelines). No debes tener que ejecutar estos comandos. Estos están aquí para documentación.
+> [!NOTE] We are handling rolling updates to code and logic via pipelines. No debes tener que ejecutar estos comandos. Estos están aquí para documentación.
 
 #### 3. Updating Node
 
@@ -530,7 +530,7 @@ pnpm reload:server && pnpm pm2 logs
 pnpm pm2 update
 ```
 
-## Trabajar en instancias de cliente
+## Work on Client Instances
 
 1. Install build tools for node binaries (`node-gyp`) etc.
 
@@ -538,7 +538,7 @@ pnpm pm2 update
 sudo apt install build-essential
 ```
 
-### Primera instalación
+### Primera Instala
 
 Aprovisionamiento de MVs con el código
 
@@ -592,7 +592,7 @@ Los cambios en el código deben desplegarse en las instancias del API cada ciert
 
 > [!ATTENTION] Los flujos automáticos no están manejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
 
-#### 1. Manual Updates - Used for updating dependencies, env variables.
+#### 1. Actualizaciones Manuales: Utilizadas para actualizar dependencias, variables de entorno.
 
 1. Stop all instances
 
@@ -608,7 +608,7 @@ Los cambios en el código deben desplegarse en las instancias del API cada ciert
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Rolling updates - Used for logical changes to code.
+#### 2. Actualizaciones continuas: Utilizadas para cambios lógicos en el código.
 
 ```console
 pm2 reload all --update-env && pm2 logs
@@ -616,13 +616,13 @@ pm2 reload all --update-env && pm2 logs
 
 > [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, a través de flujos. No necesitarás aplicar estos comandos.  Estos están por la documentación.
 
-## Trabaja en los servidores de Chat
+## Work on Chat Servers
 
 Nuestros servidores de chat están disponibles con una configuración HA [recomendada en la documentación de Rocket.Chat](https://docs.rocket.chat/installation/docker-containers/high-availability-install). El archivo `docker-compose` para esto está [disponible aquí](https://github.com/freeCodeCamp/chat-config).
 
 Aprovisionamos instancias NGINX redundantes que a su vez tienen equilibrio de carga (Azure Load Balancer) frente al clúster Rocket.Chat. El archivo de configuración de NGINX está [disponible aquí](https://github.com/freeCodeCamp/chat-nginx-config).
 
-### Primera Instala
+### First Install
 
 Aprovisionamiento de MVs con el código
 
@@ -669,7 +669,7 @@ Aprovisionamiento de MVs con el código
 
    Add/update the source/origin application IP addresses.
 
-3. Setup networking and firewalls.
+3. Set up networking and firewalls.
 
    Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
@@ -695,7 +695,7 @@ Aprovisionamiento de MVs con el código
    docker-compose up -d
    ```
 
-### Registro de eventos y monitoreo
+### Logging and Monitoring
 
 1. Check status for NGINX service using the below command:
 
@@ -709,7 +709,7 @@ Aprovisionamiento de MVs con el código
    docker ps
    ```
 
-### Actualización de las instancias (mantenimiento)
+### Updating Instances (Maintenance)
 
 **Clúster NGINX:**
 
@@ -790,9 +790,9 @@ Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub
 
    Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
-## Trabajar en las herramientas de los colaboradores
+## Work on Contributor Tools
 
-### Implementar actualizaciones
+### Deploy Updates
 
 ssh en la máquina virtual (alojada en Digital Ocean).
 
@@ -804,7 +804,7 @@ pnpm run build
 pm2 restart contribute-app
 ```
 
-## Actualizar la versión de Node.js en máquinas virtuales
+## Updating Node.js Versions on VMs
 
 Lista las versiones instaladas de node y npm
 
@@ -828,7 +828,7 @@ Verifica los paquetes instalados
 npm ls -g --depth=0
 ```
 
-Alias la versión `default` de Node.js a la LTS actual (fijada a la última versión mayor)
+Alias the `default` Node.js version to the current LTS (pinned to the latest major version)
 
 ```console
 nvm alias default 16
@@ -840,7 +840,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. Esto será mejor cuando pasemos a una configuración basada en Docker.
+> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. This should become nicer when we move to a docker-based setup.
 > 
 > Si utilizas PM2 para procesos, también deberás abrir las aplicaciones y guardar la lista de procesos para la recuperación automática en los reinicios.
 
@@ -874,19 +874,19 @@ pm2 save
 pm2 logs
 ```
 
-## Instalar y actualizar Agentes de Pipeline Azure
+## Installing and Updating Azure Pipeline Agents
 
-Consulta: https://docs.microsoft.com/es-es/azure/devops/pipelines/agents/v2-linux?view=azure-devops y sigue las instrucciones para detener, eliminar y reinstalar agentes. En términos generales, puedes seguir los pasos que se enumeran aquí.
+See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove, and reinstall agents. En términos generales, puedes seguir los pasos que se enumeran aquí.
 
 Necesitarás una PAT, que puedes obtener desde aquí: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Instalación de agentes en objetivos de despliegue
+### Installing Agents on Deployment targets
 
 Navega a [Azure Devops](https://dev.azure.com/freeCodeCamp-org) y registra el agente desde cero en el requisito [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
 > [!NOTE] Debes ejecutar los scripts en el directorio de inicio, y asegurarte de que no existe ningún otro directorio `azagent`.
 
-### Actualizando agentes
+### Updating Agents
 
 Actualmente actualizar los agentes requiere que sean eliminados y reconfigurados. Esto es necesario para que recojan correctamente los valores `PATH` y otras variables de entorno del sistema. Necesitamos hacer esto, por ejemplo, para actualizar Node.js en nuestras MV objetivo de implemetación.
 
@@ -924,7 +924,7 @@ Actualmente actualizar los agentes requiere que sean eliminados y reconfigurados
 
 Una vez que hayas completado los pasos de arriba, puedes repetir los mismos pasos que para instalar el agente.
 
-# Manual de piloto - Correo masivo
+## Flight Manual - Email Blast
 
 Utilizamos [una herramienta CLI](https://github.com/freecodecamp/sendgrid-email-blast) para enviar el boletín semanal. Para actualizar y comenzar el proceso:
 
@@ -955,9 +955,9 @@ Utilizamos [una herramienta CLI](https://github.com/freecodecamp/sendgrid-email-
 
 7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
 
-# Manual de vuelo - Agregando instancias de noticias para nuevos idiomas
+## Flight Manual - Adding news instances for new languages
 
-### Cambios de tema
+### Theme Changes
 
 Utilizamos un [tema](https://github.com/freeCodeCamp/news-theme) personalizado para nuestra publicación de noticias. Los siguientes cambios en el tema permiten añadir nuevos idiomas.
 
@@ -968,6 +968,6 @@ Utilizamos un [tema](https://github.com/freeCodeCamp/news-theme) personalizado p
 5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
 6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
-### Cambios en el Dashboard de Ghost
+### Ghost Dashboard Changes
 
 Actualice los recursos de la publicación yendo al panel de Ghost > ajustes > generales y subiendo el icono [de las publicaciones](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png)y [portada](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

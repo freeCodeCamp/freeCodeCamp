@@ -20,7 +20,7 @@ Calculate $W(32,10)$.
 
 # --hints--
 
-`crackFreeWalls()` should return `806844323190414`.
+`crackFreeWalls()` має повернути `806844323190414`.
 
 ```js
 assert.strictEqual(crackFreeWalls(), 806844323190414);

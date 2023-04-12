@@ -20,7 +20,7 @@ How many ways are there to write the number $\frac{1}{2}$ as a sum of inverse sq
 
 # --hints--
 
-`sumInverseSquares()` should return `301`.
+`sumInverseSquares()` має повернути `301`.
 
 ```js
 assert.strictEqual(sumInverseSquares(), 301);

@@ -29,7 +29,7 @@ Find $\sum f(k^3)$ for $1 ≤ k ≤ 2 × {10}^6$.
 
 # --hints--
 
-`fractionalSequences()` should return `269533451410884200`.
+`fractionalSequences()` має повернути `269533451410884200`.
 
 ```js
 assert.strictEqual(fractionalSequences(), 269533451410884200);

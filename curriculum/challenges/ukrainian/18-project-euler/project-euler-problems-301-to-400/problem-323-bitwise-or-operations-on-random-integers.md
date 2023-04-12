@@ -21,7 +21,7 @@ Find the expected value of $N$. Give your answer rounded to 10 digits after the 
 
 # --hints--
 
-`bitwiseOrOnRandomIntegers()` should return `6.3551758451`.
+`bitwiseOrOnRandomIntegers()` має повернути `6.3551758451`.
 
 ```js
 assert.strictEqual(bitwiseOrOnRandomIntegers(), 6.3551758451);

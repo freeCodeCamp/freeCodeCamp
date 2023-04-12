@@ -1,6 +1,6 @@
 ---
 id: 5900f38e1000cf542c50fea1
-title: 'Problem 34: Digit factorials'
+title: 'Problema 34: fattoriali delle cifre'
 challengeType: 1
 forumTopicId: 301998
 dashedName: problem-34-digit-factorials
@@ -8,15 +8,15 @@ dashedName: problem-34-digit-factorials
 
 # --description--
 
-145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+145 è un numero curioso, visto che 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.
+Trova i numeri e le somme dei numeri che sono uguali alla somma dei fattoriali delle loro cifre.
 
-**Note:** as 1! = 1 and 2! = 2 are not sums they are not included.
+**Nota:** visto che 1! = 1 e 2! = 2 non sono somme non sono inclusi.
 
 # --hints--
 
-`digitFactorial()` should return an object.
+`digitFactorial()` dovrebbe restituire un oggetto.
 
 ```js
 assert.typeOf(digitFactorial(), 'object');

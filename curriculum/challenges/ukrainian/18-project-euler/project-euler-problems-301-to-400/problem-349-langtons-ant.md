@@ -19,7 +19,7 @@ Starting with a grid that is entirely white, how many squares are black after ${
 
 # --hints--
 
-`langtonsAnt()` should return `115384615384614940`.
+`langtonsAnt()` має повернути `115384615384614940`.
 
 ```js
 assert.strictEqual(langtonsAnt(), 115384615384614940);

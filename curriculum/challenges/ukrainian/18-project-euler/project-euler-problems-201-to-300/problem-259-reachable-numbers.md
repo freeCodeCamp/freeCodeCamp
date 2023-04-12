@@ -23,7 +23,7 @@ What is the sum of all positive reachable integers?
 
 # --hints--
 
-`reachableNumbers()` should return `20101196798`.
+`reachableNumbers()` має повернути `20101196798`.
 
 ```js
 assert.strictEqual(reachableNumbers(), 20101196798);

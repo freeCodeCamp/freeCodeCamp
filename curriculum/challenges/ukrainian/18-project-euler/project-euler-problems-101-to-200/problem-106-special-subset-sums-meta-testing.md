@@ -23,7 +23,7 @@ For n = 12, how many of the 261625 subset pairs that can be obtained need to be 
 
 # --hints--
 
-`subsetSumsMetaTesting()` should return `21384`.
+`subsetSumsMetaTesting()` має повернути `21384`.
 
 ```js
 assert.strictEqual(subsetSumsMetaTesting(), 21384);

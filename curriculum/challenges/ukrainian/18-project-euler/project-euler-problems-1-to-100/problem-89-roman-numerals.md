@@ -42,19 +42,19 @@ Find the number of characters saved by writing each of these in their minimal fo
 
 # --hints--
 
-`romanNumerals(testNumerals1)` should return a number.
+`romanNumerals(testNumerals1)` має повернути число.
 
 ```js
 assert(typeof romanNumerals(_testNumerals1) === 'number');
 ```
 
-`romanNumerals(testNumerals1)` should return `19`.
+`romanNumerals(testNumerals1)` має повернути `19`.
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals1), 19);
 ```
 
-`romanNumerals(testNumerals2)` should return `743`.
+`romanNumerals(testNumerals2)` має повернути `743`.
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals2), 743);

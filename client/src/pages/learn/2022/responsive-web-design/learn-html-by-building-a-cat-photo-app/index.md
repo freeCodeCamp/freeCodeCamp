@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn HTML by Building a Cat Photo App Project
-block: Learn HTML by Building a Cat Photo App
-superBlock: Responsive Web Design
+block: learn-html-by-building-a-cat-photo-app
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Learn HTML by Building a Cat Photo App Project

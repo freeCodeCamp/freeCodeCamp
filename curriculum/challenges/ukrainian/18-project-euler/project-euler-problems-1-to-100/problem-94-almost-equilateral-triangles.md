@@ -16,31 +16,31 @@ Find the sum of the perimeters of all almost equilateral triangles with integral
 
 # --hints--
 
-`almostEquilateralTriangles(50)` should return a number.
+`almostEquilateralTriangles(50)` має повернути число.
 
 ```js
 assert(typeof almostEquilateralTriangles(50) === 'number');
 ```
 
-`almostEquilateralTriangles(50)` should return `66`.
+`almostEquilateralTriangles(50)` має повернути `66`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(50), 66);
 ```
 
-`almostEquilateralTriangles(10000)` should return `3688`.
+`almostEquilateralTriangles(10000)` має повернути `3688`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000), 3688);
 ```
 
-`almostEquilateralTriangles(10000000)` should return `9973078`.
+`almostEquilateralTriangles(10000000)` має повернути `9973078`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000000), 9973078);
 ```
 
-`almostEquilateralTriangles(1000000000)` should return `518408346`.
+`almostEquilateralTriangles(1000000000)` має повернути `518408346`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(1000000000), 518408346);

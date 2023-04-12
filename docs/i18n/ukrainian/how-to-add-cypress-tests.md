@@ -4,23 +4,23 @@
 
 Щоб дізнатися, як писати тести Cypress, або «специфікації», будь ласка, зверніться до офіційної [документації Cypress](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
 
-## Куди додати тест
+## Where to Add a Test
 
 - Тести Cypress знаходяться в каталозі `./cypress`.
 
 - Тести Cypress для модуля навчальної програми знаходяться у відповідному каталозі навчальної програми, тобто `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## Як проводити тести
+## How to Run Tests
 
 > [!NOTE] Якщо ви використовуєте GitPod, див. [налаштування Cypress-GitPod](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
-### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
+### 1. Ensure that MongoDB and Client Applications are Running
 
 - [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Запустіть клієнтський додаток freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Запустіть тести cypress
+### 2. Run the Cypress Tests
 
 Щоб запустити тести кінцевої збірки, замініть `dev` на `prd` нижче.
 
@@ -39,7 +39,7 @@
   Наприклад:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:

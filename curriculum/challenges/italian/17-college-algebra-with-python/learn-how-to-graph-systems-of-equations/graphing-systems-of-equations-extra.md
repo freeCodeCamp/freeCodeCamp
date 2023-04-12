@@ -8,7 +8,7 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. Vedrai anche come scaricare il grafico sul tuo computer o su Google Drive.
+Il prossimo video ti offrirà un'analisi più approfondita di quello che puoi fare con i grafici di sistemi di equazioni e disuguaglianze e con l'ombreggiatura sopra o sotto una curva. Vedrai anche come scaricare il grafico sul tuo computer o su Google Drive.
 
 Ecco il <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 

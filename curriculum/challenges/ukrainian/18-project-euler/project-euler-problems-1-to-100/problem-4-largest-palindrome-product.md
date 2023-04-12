@@ -14,19 +14,19 @@ Find the largest palindrome made from the product of two `n`-digit numbers.
 
 # --hints--
 
-`largestPalindromeProduct(2)` should return a number.
+`largestPalindromeProduct(2)` має повернути число.
 
 ```js
 assert(typeof largestPalindromeProduct(2) === 'number');
 ```
 
-`largestPalindromeProduct(2)` should return 9009.
+`largestPalindromeProduct(2)` має повернути 9009.
 
 ```js
 assert.strictEqual(largestPalindromeProduct(2), 9009);
 ```
 
-`largestPalindromeProduct(3)` should return 906609.
+`largestPalindromeProduct(3)` має повернути 906609.
 
 ```js
 assert.strictEqual(largestPalindromeProduct(3), 906609);

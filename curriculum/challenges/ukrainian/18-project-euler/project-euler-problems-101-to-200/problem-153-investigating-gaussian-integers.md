@@ -58,7 +58,7 @@ What is $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
 
 # --hints--
 
-`sumGaussianIntegers()` should return `17971254122360636`.
+`sumGaussianIntegers()` має повернути `17971254122360636`.
 
 ```js
 assert.strictEqual(sumGaussianIntegers(), 17971254122360636);

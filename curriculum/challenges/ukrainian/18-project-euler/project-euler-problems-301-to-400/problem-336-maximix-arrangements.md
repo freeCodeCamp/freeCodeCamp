@@ -26,13 +26,13 @@ Find the ${2011}^{\text{th}}$ lexicographic maximix arrangement for eleven carri
 
 # --hints--
 
-`maximixArrangements()` should return a string.
+`maximixArrangements()` має повернути рядок.
 
 ```js
 assert(typeof maximixArrangements() === 'string');
 ```
 
-`maximixArrangements()` should return the string `CAGBIHEFJDK`.
+`maximixArrangements()` має повернути рядок `CAGBIHEFJDK`.
 
 ```js
 assert.strictEqual(maximixArrangements(), 'CAGBIHEFJDK');

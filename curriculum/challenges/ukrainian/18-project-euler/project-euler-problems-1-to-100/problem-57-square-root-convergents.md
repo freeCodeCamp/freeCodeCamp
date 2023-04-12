@@ -28,25 +28,25 @@ In the first `n` expansions, how many fractions contain a numerator with more di
 
 # --hints--
 
-`squareRootConvergents(10)` should return a number.
+`squareRootConvergents(10)` має повернути число.
 
 ```js
 assert(typeof squareRootConvergents(10) === 'number');
 ```
 
-`squareRootConvergents(10)` should return 1.
+`squareRootConvergents(10)` має повернути 1.
 
 ```js
 assert.strictEqual(squareRootConvergents(10), 1);
 ```
 
-`squareRootConvergents(100)` should return 15.
+`squareRootConvergents(100)` має повернути 15.
 
 ```js
 assert.strictEqual(squareRootConvergents(100), 15);
 ```
 
-`squareRootConvergents(1000)` should return 153.
+`squareRootConvergents(1000)` має повернути 153.
 
 ```js
 assert.strictEqual(squareRootConvergents(1000), 153);

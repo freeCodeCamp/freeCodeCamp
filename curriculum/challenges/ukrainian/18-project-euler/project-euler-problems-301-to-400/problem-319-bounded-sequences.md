@@ -22,7 +22,7 @@ Find $t({10}^{10})$ and give your answer modulo $10^9$.
 
 # --hints--
 
-`boundedSequences()` should return `268457129`.
+`boundedSequences()` має повернути `268457129`.
 
 ```js
 assert.strictEqual(boundedSequences(), 268457129);

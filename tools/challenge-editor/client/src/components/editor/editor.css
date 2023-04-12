@@ -6,12 +6,10 @@ textarea {
   height: 500px;
 }
 
-.react-codemirror2 {
+.CodeMirror {
+  /* need to add important to overwrite the specifity of the classes in the dependecy */
+  height: 70vh !important;
   max-width: 80vw;
   margin: auto;
   text-align: left;
-}
-
-.CodeMirror {
-  height: 70vh;
 }

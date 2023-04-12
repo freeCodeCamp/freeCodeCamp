@@ -18,7 +18,7 @@ Find $S(1803)$ rounded to 5 decimal places behind the decimal point.
 
 # --hints--
 
-`circlePackingTwo()` should return `110242.87794`.
+`circlePackingTwo()` має повернути `110242.87794`.
 
 ```js
 assert.strictEqual(circlePackingTwo(), 110242.87794);

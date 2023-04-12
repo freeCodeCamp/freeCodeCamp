@@ -18,7 +18,7 @@ Find the least value of $n$ for which the remainder first exceeds $10^{10}$.
 
 # --hints--
 
-`primeSquareRemainders()` should return `21035`.
+`primeSquareRemainders()` має повернути `21035`.
 
 ```js
 assert.strictEqual(primeSquareRemainders(), 21035);

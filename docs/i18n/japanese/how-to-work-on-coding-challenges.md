@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-その結果、例えば上記の場合 `5a474d78df58bafeb3535d34` という新しい id が得られます。
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 id を取得したら、上部の `id` フィールドとしてマークダウンファイルに入れてください。例えば、次のようになります。
 
@@ -243,7 +243,7 @@ title: Challenge Title
 - チャレンジを簡素化する
 - チャレンジを 2 つのチャレンジに分ける
 
-2 分ルールにより、命令を簡潔にし、シードコードを明確にし、テストを容易にすることが、チャレンジ設計者に求められます。
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
 We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
@@ -267,7 +267,7 @@ We track how long it takes for campers to solve challenges and use this informat
 ```
 
 - ファイル名とパスディレクトリへの参照 (例: `package.json`、`src/components`) は `` \` `` バックティックで囲みます。
-- 複数行コードブロック **の前に空行** が必要です。 次の行は、3つのバックティックに続いて [対応言語](https://prismjs.com/#supported-languages) の1つで始まります。 コードブロックを完了するには、3 つのバックティックのみの新しい行と **別の空行** が必要です。 下記の例を参照してください。
+- 複数行コードブロック **の前に空行** が必要です。 次の行は、3つのバックティックに続いて [対応言語](https://prismjs.com/#supported-languages) の1つで始まります。 To complete the code block, you must start a new line that only has three backticks and **another empty line**. 下記の例を参照してください。
 - 空白はマークダウンでも重要ですので、エディターで表示させることをお勧めします。
 
 **注:** YMAL のコード例を使用する場合、バックティックの右側に記載する言語は、 `yml` ではなく `yaml` を使用してください。
@@ -284,9 +284,9 @@ We track how long it takes for campers to solve challenges and use this informat
 
 - 注意書き形式の追加情報は空白行で囲みます。例: `**Note:** Rest of note text...`
 - 複数の注意書きが必要な場合は、すべての注意書きを別々の文章でリスト化します。例: `**Notes:** First note text. Second note text.`
-- 可能であれば、一重引用符を使用します。
+- Use single quotes where applicable
 
-**注:** _HTML_ タグの代わりに同等の _マークダウン_ を使用してください。
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## テストの記述
 
@@ -296,7 +296,7 @@ We track how long it takes for campers to solve challenges and use this informat
 
 チャレンジテストでは、Node.js と Chai.js アサーションライブラリを使用できます。 また、必要に応じて、`code` 変数からユーザーが生成したコードにアクセスすることもできます。 さらに、 `__helpers` オブジェクトは、テストを記述するプロセスを簡略化するいくつかの関数を公開します。 利用可能な関数は、_client/src/utils/curriculum-helpers.ts_ に定義されています。
 
-## Formatting seed code
+## Formatting Seed Code
 
 Here are specific formatting guidelines for the challenge seed code:
 
@@ -304,16 +304,16 @@ Here are specific formatting guidelines for the challenge seed code:
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
 
-### Seed code comments
+### Seed Code Comments
 
 We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. 辞書のコメントに記載されている正確な大文字と小文字の区別および語間を使用します。 コメント辞書は、開発チームとの事前議論なしに増やしてはいけません。
 
 使用するコメントは、コメント文字とコメントそのものの間にスペースを入れる必要があります。 一般的に、コメントは控えめに使用します。 シードコードコメントの使用を避けられるのであれば、チャレンジの説明や指示を書き換えることを常に検討してください。
 
-有効な単一行 JavaScript コメントの例は以下のとおりです。
+Example of a valid single-line JavaScript comment:
 
 ```js
-// この行の下のコードのみ変更する
+// Only change code below this line
 ````
 
 有効な CSS コメントの例は次のとおりです。
@@ -366,7 +366,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### シードコードコメントの翻訳
+### Translation of Seed Code Comments
 
 各言語には、個別のコメント辞書があります。 The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
 
@@ -388,16 +388,16 @@ class MyComponent extends React.Component {
 
 ### 新しいチャレンジのヒント / ソリューションの追加
 
-新しいチャレンジのヒント / ソリューション関連トピックを追加する場合は、次の手順を実行します。
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. 新しいトピックの作成と同じ手順からスタートします。タイトルを作成するために以下を確認します。
 2. トピックのタイトルは、`freeCodeCamp チャレンジガイド:` にカリキュラムチャレンジの実際のタイトルを連結します。 例えば、チャレンジに「`Chunky Monkey`」という名前が付けられている場合、トピックのタイトルは、「`freeCodeCamp Challenge Guide: Chunky Monkey`」になります。
 3. `camperbot` はトピック / 投稿のオーナーである必要があるので、管理者に、メイン投稿のオーナーを `camperbot` に変更するようにリクエストします。
 4. 新しいトピックを作成すると、フォーラムのトピック id が作成されます。 これは、フォーラムのトピック URL の末尾にあります。 この id は、トピックにリンクするために、`ヒントを入手` ボタン用の標準プルリクエストプロセスを介して、カリキュラムチャレンジファイルのフロントマターに追加する必要があります。
 
-### ヒントとソリューショントピックの内容に関するガイドライン
+### Guidelines for Content of Hints and Solutions Topics
 
-カリキュラムチャレンジに関連するガイドトピックのソリューションを提案する場合は、完全なコードを追加する必要があります。 これには、すべての元のシードコードと、すべてのチャレンジテストに合格するために必要な変更が含まれています。 次のテンプレートは、新しいヒント / ソリューションのトピックを作成する際に使用する必要があります。
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. これには、すべての元のシードコードと、すべてのチャレンジテストに合格するために必要な変更が含まれています。 次のテンプレートは、新しいヒント / ソリューションのトピックを作成する際に使用する必要があります。
 
 ````md
 # ここにチャレンジ名を記述します。

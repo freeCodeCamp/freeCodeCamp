@@ -20,7 +20,7 @@ If the sum is minimised and a, b, c, p, q and r are all positive integers we sha
 
 # --hints--
 
-`sumTorricelliTriangles()` should return `30758397`.
+`sumTorricelliTriangles()` має повернути `30758397`.
 
 ```js
 assert.strictEqual(sumTorricelliTriangles(), 30758397);

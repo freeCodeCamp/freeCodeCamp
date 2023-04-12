@@ -18,7 +18,7 @@ How many triangles $ABC$ with a perimeter not exceeding $100\\,000$ exist such t
 
 # --hints--
 
-`angularBisectorAndTangent()` should return `1137208419`.
+`angularBisectorAndTangent()` має повернути `1137208419`.
 
 ```js
 assert.strictEqual(angularBisectorAndTangent(), 1137208419);

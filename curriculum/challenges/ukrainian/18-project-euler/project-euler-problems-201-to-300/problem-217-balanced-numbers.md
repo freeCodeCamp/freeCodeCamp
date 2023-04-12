@@ -20,7 +20,7 @@ Find $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 
-`balancedNumbers()` should return `6273134`.
+`balancedNumbers()` має повернути `6273134`.
 
 ```js
 assert.strictEqual(balancedNumbers(), 6273134);

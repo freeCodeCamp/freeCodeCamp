@@ -16,7 +16,7 @@ How many reversible numbers are there below one-billion (${10}^9$)?
 
 # --hints--
 
-`reversibleNumbers()` should return `608720`.
+`reversibleNumbers()` має повернути `608720`.
 
 ```js
 assert.strictEqual(reversibleNumbers(), 608720);

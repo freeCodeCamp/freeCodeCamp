@@ -1,6 +1,6 @@
 ---
 id: 5900f3971000cf542c50feaa
-title: 'Problem 43: Sub-string divisibility'
+title: 'Problema 43: divisibilità in sotto-stringhe'
 challengeType: 1
 forumTopicId: 302100
 dashedName: problem-43-sub-string-divisibility
@@ -8,49 +8,49 @@ dashedName: problem-43-sub-string-divisibility
 
 # --description--
 
-The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
+Il numero 1406357289 è un numero pandigitale da 0 a 9 perché è costituito da ciascuna delle cifre da 0 a 9 in un certo ordine, ma ha anche una proprietà di divisibilità in sotto-stringhe piuttosto interessante.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
+Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In questo modo, notiamo quanto segue:
 
-- ${d_2}{d_3}{d_4} = 406$ is divisible by 2
-- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
-- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
-- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
-- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
-- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
-- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
+- ${d_2}{d_3}{d_4} = 406$ è divisibile per 2
+- ${d_3}{d_4}{d_5} = 063$ è divisibile per 3
+- ${d_4}{d_5}{d_6} = 635$ è divisibile per 5
+- ${d_5}{d_6}{d_7} = 357$ è divisibile per 7
+- ${d_6}{d_7}{d_8} = 572$ è divisibile per 11
+- ${d_7}{d_8}{d_9} = 728$ è divisibile per 13
+- ${d_8}{d_9}{d_{10}} = 289$ è divisibile per 17
 
-Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+Trova la somma di tutti i numeri pandigitali da 0 a `n` con sotto-stringhe che soddisfano `n - 2` di queste proprietà di divisibilità.
 
-**Note:** Pandigital numbers starting with `0` are to be considered in the result.
+**Nota:** i numeri pandigitali che iniziano con `0` devono essere considerati nel risultato.
 
 # --hints--
 
-`substringDivisibility(5)` should return a number.
+`substringDivisibility(5)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility(5)` should return `12444480`.
+`substringDivisibility(5)` dovrebbe restituire `12444480`.
 
 ```js
 assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-`substringDivisibility(7)` should return `1099210170`.
+`substringDivisibility(7)` dovrebbe restituire `1099210170`.
 
 ```js
 assert.strictEqual(substringDivisibility(7), 1099210170)
 ```
 
-`substringDivisibility(8)` should return `1113342912`.
+`substringDivisibility(8)` dovrebbe restituire `1113342912`.
 
 ```js
 assert.strictEqual(substringDivisibility(8), 1113342912)
 ```
 
-`substringDivisibility(9)` should return `16695334890`.
+`substringDivisibility(9)` dovrebbe restituire `16695334890`.
 
 ```js
 assert.strictEqual(substringDivisibility(9), 16695334890)

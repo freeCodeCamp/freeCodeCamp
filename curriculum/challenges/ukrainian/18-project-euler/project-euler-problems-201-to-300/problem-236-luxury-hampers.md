@@ -33,13 +33,13 @@ What's the largest possible value of $m$? Give your answer as a string with frac
 
 # --hints--
 
-`luxuryHampers()` should return a string.
+`luxuryHampers()` має повернути рядок.
 
 ```js
 assert(typeof luxuryHampers() === 'string');
 ```
 
-`luxuryHampers()` should return the string `123/59`.
+`luxuryHampers()` має повернути рядок `123/59`.
 
 ```js
 assert.strictEqual(luxuryHampers(), '123/59');

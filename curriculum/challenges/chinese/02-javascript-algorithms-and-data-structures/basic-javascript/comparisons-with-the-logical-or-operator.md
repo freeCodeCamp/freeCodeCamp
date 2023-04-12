@@ -13,7 +13,7 @@ dashedName: comparisons-with-the-logical-or-operator
 
 <dfn>逻辑或</dfn>运算符由两个竖线（`||`）组成。 这个按键位于退格键和回车键之间。
 
-下面这样的语句你应该很熟悉：
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-只有当 `num` 大于等于 `5` 或小于等于 `10` 时，函数才返回 `Yes`。 相同的逻辑可以简写成：
+This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
 
 ```js
 if (num > 10 || num < 5) {

@@ -20,7 +20,7 @@ Find $\displaystyle\sum_{i=1}^{17} f(13^i)$. Give the last 9 digits as your answ
 
 # --hints--
 
-`experience13()` should return `732385277`.
+`experience13()` має повернути `732385277`.
 
 ```js
 assert.strictEqual(experience13(), 732385277);

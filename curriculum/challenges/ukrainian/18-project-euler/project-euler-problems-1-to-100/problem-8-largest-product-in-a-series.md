@@ -35,19 +35,19 @@ Find the `n` adjacent digits in the 1000-digit number that have the greatest pro
 
 # --hints--
 
-`largestProductinaSeries(4)` should return a number.
+`largestProductinaSeries(4)` має повернути число.
 
 ```js
 assert(typeof largestProductinaSeries(4) === 'number');
 ```
 
-`largestProductinaSeries(4)` should return 5832.
+`largestProductinaSeries(4)` має повернути 5832.
 
 ```js
 assert.strictEqual(largestProductinaSeries(4), 5832);
 ```
 
-`largestProductinaSeries(13)` should return 23514624000.
+`largestProductinaSeries(13)` має повернути 23514624000.
 
 ```js
 assert.strictEqual(largestProductinaSeries(13), 23514624000);

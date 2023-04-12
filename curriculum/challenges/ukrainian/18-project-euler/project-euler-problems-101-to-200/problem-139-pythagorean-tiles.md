@@ -20,7 +20,7 @@ Given that the perimeter of the right triangle is less than one-hundred million,
 
 # --hints--
 
-`pythagoreanTiles()` should return `10057761`.
+`pythagoreanTiles()` має повернути `10057761`.
 
 ```js
 assert.strictEqual(pythagoreanTiles(), 10057761);

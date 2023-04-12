@@ -24,7 +24,7 @@ Give your answer rounded to eight decimal places in the form 0.abcdefgh .
 
 # --hints--
 
-`theRace()` should return `0.83648556`.
+`theRace()` має повернути `0.83648556`.
 
 ```js
 assert.strictEqual(theRace(), 0.83648556);

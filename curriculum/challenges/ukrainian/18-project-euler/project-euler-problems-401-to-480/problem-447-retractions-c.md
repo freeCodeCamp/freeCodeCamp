@@ -24,7 +24,7 @@ Find $F({10}^{14})$. Give your answer modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 
-`retractionsC()` should return `530553372`.
+`retractionsC()` має повернути `530553372`.
 
 ```js
 assert.strictEqual(retractionsC(), 530553372);
