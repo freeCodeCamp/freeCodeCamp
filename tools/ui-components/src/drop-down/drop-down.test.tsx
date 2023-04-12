@@ -2,19 +2,19 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { MenuItem } from './menu-item/menu-item';
-import { DropDown } from './drop-down';
+import { Dropdown } from './drop-down';
 
 describe('<DropDownButton>', () => {
   it('should render button with text', () => {
     render(
-      <DropDown>
-        <DropDown.Toggle>Some Button</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>Some Button</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem onClick={() => alert('hi')}>Option</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
     const dropdownTrigger = screen.getByText('Some Button');
     userEvent.click(dropdownTrigger);
@@ -26,14 +26,14 @@ describe('<DropDownButton>', () => {
   });
   it('should render button with direction to up', () => {
     render(
-      <DropDown>
-        <DropDown.Toggle dropup={true}>Some Button</DropDown.Toggle>
-        <DropDown.Menu dropup={true}>
+      <Dropdown>
+        <Dropdown.Toggle dropup={true}>Some Button</Dropdown.Toggle>
+        <Dropdown.Menu dropup={true}>
           <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option 3</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
     const dropdownTrigger = screen.getByText('Some Button');
     userEvent.click(dropdownTrigger);
@@ -45,12 +45,12 @@ describe('<DropDownButton>', () => {
 
   it("should have the role 'button' and render the correct text", () => {
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem>Hello world</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
     const dropDownTrigger = screen.getByText('test');
     userEvent.click(dropDownTrigger);
@@ -63,12 +63,12 @@ describe('<DropDownButton>', () => {
     const onClick = jest.fn();
 
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem onClick={onClick}>Hello world</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
 
     const dropDownTrigger = screen.getByText('test');
@@ -83,12 +83,12 @@ describe('<DropDownButton>', () => {
 
   it('should reflect the disabled state using the aria-disabled attribute', () => {
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem disabled>Hello world</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
 
     const dropDownTrigger = screen.getByText('test');
@@ -106,14 +106,14 @@ describe('<DropDownButton>', () => {
     const onClick = jest.fn();
 
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem disabled onClick={onClick}>
             Hello world
           </MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
 
     const dropDownTrigger = screen.getByText('test');
@@ -127,12 +127,12 @@ describe('<DropDownButton>', () => {
 
   it('should render an anchor element if the `href` prop is defined', () => {
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem href='https://www.freecodecamp.org'>freeCodeCamp</MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
 
     const dropDownTrigger = screen.getByText('test');
@@ -146,14 +146,14 @@ describe('<DropDownButton>', () => {
 
   it('should render a button element if the `href` and `disabled` props are both defined', () => {
     render(
-      <DropDown>
-        <DropDown.Toggle>test</DropDown.Toggle>
-        <DropDown.Menu>
+      <Dropdown>
+        <Dropdown.Toggle>test</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem href='https://www.freecodecamp.org' disabled>
             freeCodeCamp
           </MenuItem>
-        </DropDown.Menu>
-      </DropDown>
+        </Dropdown.Menu>
+      </Dropdown>
     );
 
     const dropDownTrigger = screen.getByText('test');

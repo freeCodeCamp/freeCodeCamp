@@ -6,7 +6,7 @@ type MenuItemsProps = React.ComponentPropsWithoutRef<typeof Menu.Items> & {
   dropup?: boolean;
 };
 
-export type DropDownProps = React.ComponentPropsWithoutRef<typeof Menu>;
+export type DropdownProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
 const itemsClassNames =
   'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute py-1';
@@ -28,10 +28,10 @@ export const MenuItems = React.forwardRef<
   );
 });
 
-export const DropDown = ({
+export const Dropdown = ({
   children,
   ...props
-}: DropDownProps): JSX.Element => {
+}: DropdownProps): JSX.Element => {
   return (
     <Menu className='relative' as='div' {...props}>
       {children}
@@ -39,8 +39,8 @@ export const DropDown = ({
   );
 };
 
-DropDown.Menu = MenuItems;
-DropDown.Toggle = DropDownButton;
+Dropdown.Menu = MenuItems;
+Dropdown.Toggle = DropDownButton;
 
 MenuItems.displayName = 'MenuItems';
-DropDown.displayName = 'DropDown';
+Dropdown.displayName = 'Dropdown';

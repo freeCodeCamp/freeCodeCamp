@@ -1,38 +1,38 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { MenuItem } from './menu-item/menu-item';
-import { DropDown, DropDownProps } from './drop-down';
+import { Dropdown, DropdownProps } from './drop-down';
 const story = {
-  title: 'Example/DropDown',
-  component: DropDown
+  title: 'Example/Dropdown',
+  component: Dropdown
 };
 
 const DropDownChildren = () => (
   <>
-    <DropDown.Toggle>Options</DropDown.Toggle>
-    <DropDown.Menu>
+    <Dropdown.Toggle>Options</Dropdown.Toggle>
+    <Dropdown.Menu>
       <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 3</MenuItem>
-    </DropDown.Menu>
+    </Dropdown.Menu>
   </>
 );
 
 const DropUpChildren = () => (
   <>
-    <DropDown.Toggle dropup={true}>Options</DropDown.Toggle>
-    <DropDown.Menu dropup={true}>
+    <Dropdown.Toggle dropup={true}>Options</Dropdown.Toggle>
+    <Dropdown.Menu dropup={true}>
       <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
       <MenuItem href={'https://www.google.com'} disabled>
         Option 3
       </MenuItem>
-    </DropDown.Menu>
+    </Dropdown.Menu>
   </>
 );
 
-const Template: Story<DropDownProps> = args => {
-  return <DropDown {...args} />;
+const Template: Story<DropdownProps> = args => {
+  return <Dropdown {...args} />;
 };
 
 export const MenuWithAction = Template.bind({});
@@ -45,7 +45,7 @@ RenderMenuItems.args = {
   children: <DropDownChildren />
 };
 
-const UpTemplate: Story<DropDownProps> = args => {
+const UpTemplate: Story<DropdownProps> = args => {
   return (
     <div
       style={{
@@ -56,7 +56,7 @@ const UpTemplate: Story<DropDownProps> = args => {
       }}
     >
       <div style={{ width: '220px' }}>
-        <DropDown {...args}>{args.children}</DropDown>
+        <Dropdown {...args} />
       </div>
     </div>
   );
