@@ -424,9 +424,6 @@ importers:
       '@babel/plugin-transform-runtime':
         specifier: ^7.19.6
         version: 7.21.0(@babel/core@7.21.4)
-      '@babel/polyfill':
-        specifier: 7.12.1
-        version: 7.12.1
       '@babel/preset-env':
         specifier: 7.21.4
         version: 7.21.4(@babel/core@7.21.4)
@@ -889,9 +886,6 @@ importers:
       '@babel/core':
         specifier: 7.21.4
         version: 7.21.4
-      '@babel/polyfill':
-        specifier: 7.12.1
-        version: 7.12.1
       '@babel/preset-env':
         specifier: 7.21.4
         version: 7.21.4(@babel/core@7.21.4)
@@ -5340,13 +5334,6 @@ packages:
       '@babel/core': 7.21.4
       '@babel/helper-create-regexp-features-plugin': 7.21.0(@babel/core@7.21.4)
       '@babel/helper-plugin-utils': 7.20.2
-
-  /@babel/polyfill@7.12.1:
-    resolution: {integrity: sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==}
-    deprecated: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
-    dependencies:
-      core-js: 2.6.12
-      regenerator-runtime: 0.13.11
 
   /@babel/preset-env@7.18.0(@babel/core@7.18.0):
     resolution: {integrity: sha512-cP74OMs7ECLPeG1reiCQ/D/ypyOxgfm8uR6HRYV23vTJ7Lu1nbgj9DQDo/vH59gnn7GOAwtTDPPYV4aXzsMKHA==}
@@ -14387,6 +14374,7 @@ packages:
     resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
     deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
+    dev: true
 
   /core-js@3.29.0:
     resolution: {integrity: sha512-VG23vuEisJNkGl6XQmFJd3rEG/so/CNatqeE+7uZAwTSwFeB/qaO0be8xZYUNWprJ/GIwL8aMt9cj1kvbpTZhg==}
