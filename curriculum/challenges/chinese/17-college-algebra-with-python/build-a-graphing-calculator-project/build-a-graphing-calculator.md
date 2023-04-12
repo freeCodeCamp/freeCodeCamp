@@ -13,7 +13,7 @@ After going to that link, create a copy of the notebook either in your own accou
 
 # --instructions--
 
-For this challenge, you need to create a graphing calculator using Python that can take input and do the following:
+在这项挑战中，你需要使用 Python 创建一个图形计算器，计算器可以接受输入并实现以下功能：
 
 - Graph one or more functions
 - Create a table of (x,y) values
