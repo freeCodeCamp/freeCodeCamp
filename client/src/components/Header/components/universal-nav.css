@@ -568,3 +568,8 @@ button.nav-link[aria-disabled='true'] {
     display: flex;
   }
 }
+@media screen and (max-width: 310px){
+  #universal-nav-logo {
+    width: 59%;
+  }
+}
