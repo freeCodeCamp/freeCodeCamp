@@ -32,7 +32,7 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
           alt={t('landing.hero-img-description')}
           src={wideImg}
           style={figureSize}
-          data-test-label='landing-page-image'
+          testlabel='landing-page-image'
         />
         <figcaption className='caption'>
           {t('landing.hero-img-description')}
