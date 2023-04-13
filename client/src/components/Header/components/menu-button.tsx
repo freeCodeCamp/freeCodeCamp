@@ -16,27 +16,6 @@ const MenuButton = ({
   innerRef
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
-
-  // Will close the menu if the user Shift+Tabs from the menu button.
-  const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
-    if (
-      event.relatedTarget &&
-      !event.relatedTarget.closest('.nav-list') &&
-      !event.relatedTarget.closest('.fcc_searchBar') &&
-      displayMenu
-    ) {
-      hideMenu();
-    }
-  };
-
-  const handleClick = (): void => {
-    if (displayMenu) {
-      hideMenu();
-      return;
-    }
-    showMenu();
-  };
-
   return (
     <button
       aria-expanded={displayMenu}

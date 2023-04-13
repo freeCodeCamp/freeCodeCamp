@@ -40,7 +40,7 @@ import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
-import Header from '../Header';
+import { Header } from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader } from '../helpers';
 
@@ -222,11 +222,7 @@ function DefaultLayout({
           />
         </Helmet>
         <div className={`default-layout`}>
-          <Header
-            fetchState={fetchState}
-            user={user}
-            skipButtonText={t('learn.skip-to-content')}
-          />
+          <Header fetchState={fetchState} user={user} />
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}
