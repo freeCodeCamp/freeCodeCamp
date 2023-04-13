@@ -339,6 +339,10 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Вивчіть передові методи масиву, створивши статистичний калькулятор",
         "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Learn Data Structures By Building A Shopping Cart",
+        "intro": ["", ""]
       }
     }
   },

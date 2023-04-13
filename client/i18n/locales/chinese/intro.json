@@ -339,6 +339,10 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "通过构建统计计算器学习高级数组方法",
         "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Learn Data Structures By Building A Shopping Cart",
+        "intro": ["", ""]
       }
     }
   },

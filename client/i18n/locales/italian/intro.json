@@ -339,6 +339,10 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Impara metodi per array avanzati costruendo una calcolatrice statistica",
         "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Learn Data Structures By Building A Shopping Cart",
+        "intro": ["", ""]
       }
     }
   },
