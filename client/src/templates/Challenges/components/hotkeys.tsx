@@ -4,7 +4,12 @@ import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
-import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
+import type {
+  ChallengeFiles,
+  Test,
+  User,
+  ChallengeMeta
+} from '../../../redux/prop-types';
 
 import { userSelector } from '../../../redux/selectors';
 import {
@@ -56,7 +61,8 @@ const keyMap = {
   showShortcuts: 'shift+/'
 };
 
-interface HotkeysProps {
+interface HotkeysProps
+  extends Pick<ChallengeMeta, 'nextChallengePath' | 'prevChallengePath'> {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
   challengeType?: number;
@@ -66,8 +72,6 @@ interface HotkeysProps {
   submitChallenge: () => void;
   innerRef: MutableRefObject<HTMLElement | undefined>;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
-  nextChallengePath: string | null;
-  prevChallengePath: string | null;
   setEditorFocusability: (arg0: boolean) => void;
   setIsAdvancing: (arg0: boolean) => void;
   tests: Test[];
