@@ -30,17 +30,17 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.String(),
+            message: Type.Literal('flash.updated-preferences'),
             type: Type.Literal('success')
           }),
           500: Type.Object({
-            message: Type.String(),
+            message: Type.Literal('flash.wrong-updating'),
             type: Type.Literal('danger')
           })
         }
       }
     },
-    async req => {
+    async (req, reply) => {
       try {
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
@@ -65,7 +65,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           type: 'success'
         } as const;
       } catch (err) {
+        // TODO: send to Sentry
         fastify.log.error(err);
+        void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
