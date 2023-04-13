@@ -16,16 +16,13 @@ const baseProfileUI = {
 };
 
 const profileUI = {
+  ...baseProfileUI,
   isLocked: true,
   showAbout: true,
-  showCerts: false,
   showDonation: true,
-  showHeatMap: false,
   showLocation: true,
   showName: true,
-  showPoints: false,
-  showPortfolio: true,
-  showTimeLine: false
+  showPortfolio: true
 };
 
 describe('settingRoutes', () => {
