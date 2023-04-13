@@ -26,14 +26,9 @@ type UniversalNavProps = Omit<
   'toggleNightMode' | 'openSignoutModal'
 > & {
   fetchState: { pending: boolean };
-  searchBarRef?: React.RefObject<HTMLDivElement>;
-};
+  user?: User;
+}
 export const UniversalNav = ({
-  displayMenu,
-  showMenu,
-  hideMenu,
-  menuButtonRef,
-  searchBarRef,
   user,
   fetchState
 }: UniversalNavProps): JSX.Element => {
@@ -44,15 +39,15 @@ export const UniversalNav = ({
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
-      <SearchBarOptimized innerRef={searchBarRef} />
+      <SearchBarOptimized />
     ) : (
-      <SearchBar innerRef={searchBarRef} />
+      <SearchBar />
     );
 
   return (
     <nav
       aria-label={t('aria.primary-nav')}
-      className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
+      className={`universal-nav`}
       id='universal-nav'
     >
       <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>
@@ -88,20 +83,9 @@ export const UniversalNav = ({
             )}
             <LanguageList t={t} />
             <MenuButton
-              displayMenu={displayMenu}
-              hideMenu={hideMenu}
-              innerRef={menuButtonRef}
-              showMenu={showMenu}
-              user={user}
             />
             <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
-            <NavLinks
-              displayMenu={displayMenu}
-              hideMenu={hideMenu}
-              menuButtonRef={menuButtonRef}
-              showMenu={showMenu}
-              user={user}
-            />
+            <NavLinks fetchState={fetchState} user={user} />
             <div className='navatar'>
               <AuthOrProfile user={user} />
             </div>

@@ -8,16 +8,12 @@ interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
-  showMenu: () => void;
-  hideMenu: () => void;
   user?: User;
 }
 
 const MenuButton = ({
   displayMenu,
-  innerRef,
-  showMenu,
-  hideMenu
+  innerRef
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -48,8 +44,6 @@ const MenuButton = ({
         displayMenu ? ' reverse-toggle-color' : ''
       }`}
       id='toggle-button-nav'
-      onBlur={handleBlur}
-      onClick={handleClick}
       ref={innerRef}
     >
       <span className='menu-btn-icon'>

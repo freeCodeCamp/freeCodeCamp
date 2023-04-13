@@ -19,12 +19,7 @@ import { type ThemeProps, Themes } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 
 export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
-  displayMenu: boolean;
-  showMenu: () => void;
-  hideMenu: () => void;
   user?: User;
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
-  openSignoutModal: () => void;
 }
 
 const mapDispatchToProps = {
@@ -97,10 +92,7 @@ const toggleTheme = (
 };
 
 function NavLinks({
-  menuButtonRef,
-  openSignoutModal,
-  hideMenu,
-  displayMenu,
+  t,
   toggleNightMode,
   user
 }: NavLinksProps) {
@@ -143,15 +135,37 @@ function NavLinks({
             closeAndFocus();
           }
         }
-      ],
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
+
+  const handleLanguageButtonKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>
+  ): void => {
+    // the strings in map need to start with a Capital latter, because event.key preduce a string that starts with a capital latter
+    const DoKeyPress = new Map<string, { select: () => void }>([
       [
-        'Tab',
+        'Escape',
         {
           select: () => {
-            const camperPressedTheShiftKey = event.shiftKey;
-            if (!camperPressedTheShiftKey) {
-              hideMenu();
-            }
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            event.preventDefault();
           }
         }
       ]
@@ -159,8 +173,89 @@ function NavLinks({
     DoKeyPress.get(event.key)?.select();
   };
 
+  const handleLanguageMenuKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>
+  ): void => {
+    const focusFirstLanguageMenuItem = () => {
+      firstLangOptionRef.current?.focus();
+      event.preventDefault();
+    };
+    const focusLastLanguageMenuItem = () => {
+      lastLangOptionRef.current?.focus();
+      event.preventDefault();
+    };
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Tab',
+        {
+          select: () => {
+            if (!event.shiftKey) {
+              // Let the Tab work as normal.
+              // Close the menu if focus is now outside of the menu. This will
+              // happen when there is no Sign Out menu item.
+              return;
+            }
+            // Because FF adds an extra Tab stop to the lang menu (because it
+            // is scrollable) we need to manually focus the previous menu item.
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Escape',
+        {
+          select: () => {
+            langButtonRef.current?.focus();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            const isFocusOnLastLanguageOption =
+              event.target === lastLangOptionRef.current;
+            const selectCancelButton = firstLangOptionRef.current?.focus();
+            const selectNextLanguage = (
+              event.currentTarget.parentNode?.nextSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnLastLanguageOption
+              ? selectCancelButton
+              : selectNextLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            const isFocusOnCancelButton =
+              event.target === firstLangOptionRef.current;
+            const selectLastLanguage = lastLangOptionRef.current?.focus();
+            // selectPreviousLanguage is a childNode and doesn't have focus property but it still works somehow,
+            // IDK how it works, and how to please TypeScript, for now I am lying to TypeScript
+            const selectPreviousLanguage = (
+              event.currentTarget.parentNode?.previousSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnCancelButton ? selectLastLanguage : selectPreviousLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      ['Home', { select: focusFirstLanguageMenuItem }],
+      ['PageUp', { select: focusFirstLanguageMenuItem }],
+      ['End', { select: focusLastLanguageMenuItem }],
+      ['PageDown', { select: focusLastLanguageMenuItem }]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
+
+  // Added to the last item in the nav menu. Will close the menu if
+  // the user Tabs out of the menu.
   const handleSignOutClick = (): void => {
-    hideMenu();
     openSignoutModal();
   };
 
@@ -276,6 +371,70 @@ function NavLinks({
             </Fragment>
           )}
         </button>
+      </li>
+      <li key='lang-menu'>
+        {/* 
+           The div existences create edge case in which camper skips the change language,
+           when they press "shift+tab" on signout button whenever signout focus events uses `getPreviousMenuItem`.
+           To fix this we need to remove `div`, but this creates a bug which close the menu when someone interact with it any other way except the keyboard.
+           This is a complexy and footgun that can break the site without notices and we shouldn't carry,
+           to sort this we need to remove the div and make focus events simpler, but that's a ToDo for later.
+          */}
+        <div className='nav-lang' key='language-dropdown'>
+          <button
+            aria-controls='nav-lang-menu'
+            aria-expanded={true}
+            aria-haspopup='true'
+            className='nav-link nav-lang-button'
+            id='nav-lang-button'
+            onKeyDown={handleLanguageButtonKeyDown}
+            ref={langButtonRef}
+          >
+            <span>{t('buttons.change-language')}</span>
+            <LanguageGlobe />
+          </button>
+          <ul
+            aria-labelledby='nav-lang-button'
+            className={'nav-lang-menu' + (currentUserName ? ' logged-in' : '')}
+            id='nav-lang-menu'
+            role='menu'
+          >
+            <li key='lang-menu-exit' role='none'>
+              <button
+                className='nav-link nav-lang-menu-option'
+                data-value='exit-lang-menu'
+                onClick={handleLanguageChange}
+                onKeyDown={handleLanguageMenuKeyDown}
+                ref={firstLangOptionRef}
+                role='menuitem'
+                tabIndex={-1}
+              >
+                {t('buttons.cancel-change')}
+              </button>
+            </li>
+            {locales.map((lang, index) => (
+              <li key={'lang-' + lang} role='none'>
+                <button
+                  {...(clientLocale === lang && { 'aria-current': true })}
+                  className='nav-link nav-lang-menu-option'
+                  data-value={lang}
+                  {...(LangCodes[lang] && {
+                    lang: LangCodes[lang]
+                  })}
+                  onClick={handleLanguageChange}
+                  onKeyDown={handleLanguageMenuKeyDown}
+                  {...(index === locales.length - 1 && {
+                    ref: lastLangOptionRef
+                  })}
+                  role='menuitem'
+                  tabIndex={-1}
+                >
+                  {LangNames[lang]}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </li>
       {currentUserName && (
         <li className='nav-line' key='sign-out'>
