@@ -3,6 +3,9 @@ header {
   position: fixed;
   width: 100%;
   z-index: 200;
+  --header-height: 38px;
+  --search-box-form: 38px;
+  --lang-menu-height: 22.5rem;
 }
 .skip-to-content-button {
   position: absolute;

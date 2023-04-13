@@ -1,6 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-
 import Loadable from '@loadable/component';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
@@ -17,12 +15,12 @@ import NavLinks from './components/nav-links';
 import NavLogo from './components/nav-logo';
 import AuthOrProfile from './components/auth-or-profile';
 
-import './header.css';
-
 const SearchBar = Loadable(() => import('../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../search/searchBar/search-bar-optimized')
 );
+
+import './header.css';
 
 interface HeaderProps {
   fetchState: { pending: boolean };
