@@ -70,7 +70,7 @@ function transScript({ text }, config) {
 }
 
 function transHTML(input, config) {
-  return translateGeneric(input, config, '(<!--\\s*)', '(\\s*-->)');
+  return translateGeneric(input, config, '(<!--\\s*)', '(\\s*--!?>)');
 }
 
 function translateGeneric({ text }, config, regexBefore, regexAfter) {
