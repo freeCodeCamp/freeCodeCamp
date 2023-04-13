@@ -29,6 +29,10 @@
   color: var(--secondary-background);
 }
 
+.light-palette .monaco-editor-tabs [aria-expanded='true'] {
+  background-color: var(--primary-color);
+}
+
 .tabs-row {
   display: flex;
   flex-direction: row;
@@ -47,13 +51,73 @@
   margin-inline-end: auto;
 }
 
-.monaco-editor-tabs button:not(:first-child) {
-  border-left: none;
+.monaco-editor-tabs button:not(:last-of-type) {
+  border-inline-end: 0;
+}
+
+.monaco-editor-tabs button:not(:first-of-type) {
+  border-inline-start: 0;
+}
+
+.monaco-editor-tabs .editor-tab-separator {
+  width: 2px;
+  height: 100%;
+  margin-inline-start: -2px;
+  background-color: var(--secondary-color);
+}
+
+/* Firefox doesn't have :has() yet but this ruleset is not essential */
+.monaco-editor-tabs
+  button[aria-expanded='true']
+  + .editor-tab-separator:has(+ button[aria-expanded='true']) {
+  background-color: var(--secondary-background);
+}
+
+.monaco-editor-tabs button:hover {
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
+}
+
+.monaco-editor-tabs button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+.dark-palette .monaco-editor-tabs button:not([aria-expanded='true']):hover {
+  background-color: var(--primary-background);
+}
+
+.monaco-editor-tabs button:focus-visible {
+  position: relative;
+  z-index: 20;
 }
 
 .panel-display-tabs button:first-child,
 .tabs-row > button:first-child {
   margin: 0 10px 0 0;
+}
+
+.panel-display-tabs button:last-of-type {
+  border-inline-start-width: 1px;
+}
+
+.panel-display-tabs button:nth-last-child(2) {
+  border-inline-end-width: 1px;
+}
+
+.panel-display-tabs button:focus-visible {
+  position: relative;
+  z-index: 10;
+}
+
+.panel-display-tabs button:hover {
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
+}
+
+.panel-display-tabs button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
 }
 
 .restart-step-tab {
@@ -67,8 +131,10 @@
 }
 
 #mobile-layout .nav-tabs {
-  margin-inline-start: 2px;
+  margin: 0 1px;
+  padding: 0;
   display: flex;
+  border-bottom: 1px solid var(--quaternary-color);
 }
 
 #mobile-layout .nav-tabs > li {
@@ -77,13 +143,24 @@
 }
 
 #mobile-layout .nav-tabs > li > a {
+  margin-inline-end: 0;
   padding: 5px 10px;
   text-decoration: none;
   font-size: 0.8em;
 }
 
-#mobile-layout .nav-tabs > li > a:hover {
-  color: var(--gray-85);
+#mobile-layout .nav-tabs > li.active > a {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
+  border: 1px solid var(--secondary-color);
+  border-bottom-color: transparent;
+  font-weight: 900;
+}
+
+#mobile-layout .nav-tabs > li:not(.active) > a:hover {
+  border: 1px solid transparent;
+  background: var(--quaternary-color);
+  color: var(--quaternary-background);
 }
 
 #mobile-layout .tab-content {
@@ -118,11 +195,6 @@
   }
 }
 
-#mobile-layout .nav-tabs > li.active > a {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
 #mobile-layout .monaco-editor-tabs {
   padding: 10px;
   width: 100%;
@@ -135,7 +207,7 @@
 
 /* Focus indicator for tab panel */
 .nav-tabs [role='tab']:focus {
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .nav-tabs [role='tab']:focus:not(:focus-visible) {
