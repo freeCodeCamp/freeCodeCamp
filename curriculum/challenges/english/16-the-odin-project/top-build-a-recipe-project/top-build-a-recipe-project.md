@@ -167,5 +167,41 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
 ## --solutions--
 
 ```html
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Odin Recipes</title>
+  </head>
+  <body>
+    <h1>Creamy Chocolate Fudge</h1>
+    <img src="https://i.imgur.com/p0J5baJ.jpg" alt="A delicious chocolate fudge dessert">
+    <h2>Description</h2>
+    <p>This recipe is for a rich and creamy chocolate fudge that is sure to satisfy your sweet tooth. It's perfect for a special occasion or as a tasty treat for any time of the year.</p>
+    <p>This recipe is easy to follow and only requires a few simple ingredients. With just a few steps, you'll be able to create a delicious dessert that everyone will love.</p>
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 cup sugar</li>
+      <li>1/2 cup unsalted butter</li>
+      <li>1/4 cup milk</li>
+      <li>1/4 cup cocoa powder</li>
+      <li>1/4 cup chocolate chips</li>
+      <li>1/4 tsp salt</li>
+      <li>1 tsp vanilla extract</li>
+    </ul>
+    <h2>Steps</h2>
+    <ol>
+      <li>In a medium saucepan, melt the butter over medium heat.</li>
+      <li>Add the sugar, milk, cocoa powder, and salt to the saucepan and stir until well combined.</li>
+      <li>Bring the mixture to a boil, stirring constantly, and then reduce the heat to low and simmer for 5 minutes.</li>
+      <li>Remove the saucepan from the heat and stir in the chocolate chips and vanilla extract until the chocolate is melted and the mixture is smooth.</li>
+      <li>Pour the fudge into a greased 8-inch square pan and let it cool completely before cutting into squares.</li>
+    </ol>
+    <h2>More Recipes</h2>
+    <ul>
+      <li><a href="#">Peanut Butter Cookies</a></li>
+      <li><a href="#">Lemon Bars</a></li>
+      <li><a href="#">Chocolate Chip Pancakes</a></li>
+    </ul>
+  </body>
+</html>
 ```
