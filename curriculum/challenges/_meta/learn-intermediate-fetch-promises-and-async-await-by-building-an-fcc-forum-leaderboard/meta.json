@@ -1,0 +1,60 @@
+{
+  "name": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "64367cb9facaa32bacfbff2b",
+      "Step 1"
+    ],
+    [
+      "6436810f38ca75013a371cb4",
+      "Step 2"
+    ],
+    [
+      "64368a8e73bb0001b1e856e8",
+      "Step 3"
+    ],
+    [
+      "64368ab6404fe201e3abe8fe",
+      "Step 4"
+    ],
+    [
+      "64368f7d44ecc0023cd0026a",
+      "Step 5"
+    ],
+    [
+      "643690119241c60274a48a5b",
+      "Step 6"
+    ],
+    [
+      "643698c37a381602b2876f7d",
+      "Step 7"
+    ],
+    [
+      "6436b5c2b3d8bf05032daa87",
+      "Step 8"
+    ],
+    [
+      "6436ba8fc66991055c33f897",
+      "Step 9"
+    ],
+    [
+      "643851f146326e0152a69d2c",
+      "Step 10"
+    ],
+    [
+      "64385b3099343c019f813ca9",
+      "Step 11"
+    ]
+  ]
+}
