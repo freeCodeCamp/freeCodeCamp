@@ -20,5 +20,6 @@
   "mongodb-and-mongoose": "MongoDB and Mongoose",
   "scientific-computing-with-python": "Scientific Computing with Python",
   "tensorflow": "TensorFlow",
-  "the-dom": "The DOM"
+  "the-dom": "The DOM",
+  "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard"
 }

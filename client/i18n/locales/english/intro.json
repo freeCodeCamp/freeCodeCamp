@@ -339,6 +339,10 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": ["", ""]
+      },
+      "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard": {
+        "title": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+        "intro": ["", ""]
       }
     }
   },
