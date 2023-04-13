@@ -11,7 +11,6 @@ interface LazyImageProps {
   offsetVertical?: number;
   src?: string;
   style?: React.CSSProperties;
-  testlabel?: string;
   width?: number;
 }
 
@@ -21,7 +20,6 @@ const LazyImage = ({
   loadingClassName = 'img-loading',
   alt,
   src,
-  testlabel,
   style
 }: LazyImageProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
@@ -36,7 +34,6 @@ const LazyImage = ({
       src={src}
       style={style}
       loading='lazy'
-      data-test-label={testlabel}
     />
   );
 };
