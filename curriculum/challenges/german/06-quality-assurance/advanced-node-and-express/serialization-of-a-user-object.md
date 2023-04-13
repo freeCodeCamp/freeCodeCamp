@@ -46,11 +46,11 @@ const { ObjectID } = require('mongodb');
 
 The `deserializeUser` will throw an error until you set up the database connection. So, for now, comment out the `myDatabase.findOne` call, and just call `done(null, null)` in the `deserializeUser` callback function.
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-You should serialize user function correctly.
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-You should deserialize user function correctly.
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {

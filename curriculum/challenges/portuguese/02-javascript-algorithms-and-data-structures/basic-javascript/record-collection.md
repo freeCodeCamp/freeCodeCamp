@@ -8,21 +8,27 @@ dashedName: record-collection
 
 # --description--
 
-Você recebeu um objeto literal representando uma parte da sua coleção de álbuns musicais. Cada álbum possui um número de id único como sua chave e diversas outras propriedades. Nem todos os álbuns possuem informações completas.
+Você está criando uma função que ajuda na manutenção de uma coleção de álbuns musicais. A coleção está organizada como um objeto que contém múltiplos álbuns que também são objetos. Cada álbum é representado na coleção com um `id` único como o nome da propriedade. Dentro de cada objeto de álbum, existem várias propriedades descrevendo informações sobre o álbum. Nem todos os álbuns possuem informações completas.
 
-Você começa com uma função `updateRecords` que recebe um objeto literal, `records`, contendo a coleção de álbuns musicais, um `id`, uma `prop`(like `artist` ou `tracks`) e um `value`. Complete a função usando as regras abaixo para modificar o objeto passado para a função.
+A função `updateRecords` recebe 4 argumentos representados pelos seguintes parâmetros de função:
 
--   A função precisa sempre retornar o objeto de coleção de discos completo.
--   Se `prop` não for `tracks` e `value` não for uma string vazia, atualize ou defina aquela `prop` do álbum como `value`.
--   Se `prop` for `tracks` mas o álbum não tiver uma propriedade `tracks`, crie um array vazio e adicione o `value` nesse array.
--   Se `prop` for `tracks` e `value` não for uma string vazia, adicione `value` ao final do array existente de `tracks` do álbum.
+-   `records` – um objeto contendo vários álbuns individuais
+-   `id` – um número que representa um álbum específico no objeto `records`
+-   `prop` – uma string que representa o nome da propriedade do álbum a ser atualizada
+-   `value` – uma string contendo informações usadas para atualizar a propriedade do álbum
+
+Complete a função usando as regras abaixo para modificar o objeto passado para a função.
+
+-   A função precisa sempre retornar todo o objeto `records`.
 -   Se `value` for uma string vazia, remova a propriedade `prop` recebida do álbum.
+-   Se `prop` não for `tracks` e `value` não for uma string vazia, atribua `value` à `prop` daquele álbum.
+-   Se `prop` for `tracks` e o valor não for uma string vazia, adicione o `value` ao final do array existente de `tracks` do álbum. Você precisa criar esse array primeiro se o álbum não tiver uma propriedade `tracks`.
 
-**Observação:** uma cópia do objeto `recordCollection` é usada para testes.
+**Observação:** uma cópia do objeto `recordCollection` é usada para testes. Você não deve modificar diretamente o objeto `recordCollection`.
 
 # --hints--
 
-Após `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` deve ser a string `ABBA`
+Após `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` deve ter a string `ABBA`.
 
 ```js
 assert(
@@ -41,7 +47,7 @@ assert(
 );
 ```
 
-Após `updateRecords(recordCollection, 2548, "artist", "")`, `artist` não deve ser definido
+Após `updateRecords(recordCollection, 2548, "artist", "")`, `artist` não deve ser definido.
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
@@ -58,7 +64,7 @@ assert(
 );
 ```
 
-Após `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` deve ter a string `1999` como o último elemento. Após.
+Após `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` deve ter a string `1999` como o último elemento.
 
 ```js
 assert(
@@ -68,14 +74,14 @@ assert(
 );
 ```
 
-Após `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` não deve ser definido
+Após `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` não deve ser definido.
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-Após `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` deve ser a string `Riptide`
+Após `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` deve ser a string `Riptide`.
 
 ```js
 assert(

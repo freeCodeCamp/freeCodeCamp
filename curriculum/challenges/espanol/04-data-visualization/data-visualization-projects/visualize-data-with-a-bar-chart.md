@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 
-Puedes utilizar HTML, JavaScript, CSS y la librería D3 de visualización basada en svg. Las pruebas requieren que los ejes se generen utilizando la propiedad de eje D3, que genera automáticamente marcas a lo largo del eje. Estas marcas son necesarias para pasar las pruebas D3, ya que sus posiciones se utilizan para determinar la alineación de los elementos gráficos. Encontrarás información sobre cómo generar ejes en <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Los elementos DOM obligatorios (no virtuales) son consultados en el momento de cada prueba. Si usas un framework frontend (como por ejemplo Vue), los resultados de la prueba pueden ser inexactos para el contenido dinámico. Esperamos poder adaptarlos eventualmente, pero por ahora estos frameworks no son soportados por los proyectos con D3.
+Puedes utilizar HTML, JavaScript, CSS y la librería D3 de visualización basada en svg. Las pruebas requieren que los ejes se generen utilizando la propiedad de eje D3, que genera automáticamente marcas a lo largo del eje. Estas marcas son necesarias para pasar las pruebas D3, ya que sus posiciones se utilizan para determinar la alineación de los elementos gráficos. Encontrarás información sobre cómo generar ejes en <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Los elementos DOM necesarios se consultan en el momento de cada prueba. Si usas un framework frontend (como por ejemplo Vue), los resultados de la prueba pueden ser inexactos para el contenido dinámico. Esperamos poder adaptarlos eventualmente, pero por ahora estos frameworks no son soportados por los proyectos con D3.
 
 **Historia de usuario #1:** Mi gráfica debe tener un título con su correspondiente `id="title"`.
 
@@ -24,17 +24,17 @@ Puedes utilizar HTML, JavaScript, CSS y la librería D3 de visualización basada
 
 **Historia de usuario #5:** Mi gráfica debe tener un elemento `rect` por cada punto de datos con su correspondiente `class="bar"` mostrando los datos.
 
-**Historia de usuario #6:** Cada barra debe tener la propiedad `data-date` y `data-gdp` conteniendo los valores `date` y `GDP`.
+**Historia de usuario nº 6:** Cada `.bar` debe tener las propiedades `data-date` y `data-gdp` que contienen los valores `date` y `GDP`.
 
-**Historia de usuario #7:** Las propiedades `data-date` de los elementos de la barra deben coincidir con el orden de los datos proporcionados.
+**Historia de usuario nº 7:** Las propiedades `.bar` de los elementos `data-date` deben coincidir con el orden de los datos proporcionados.
 
-**Historia de usuario #8:** Las propiedades `data-gdp` de los elementos de la barra deben coincidir con el orden de los datos proporcionados.
+**Historia de usuario nº 8:** Las propiedades `.bar` de los elementos `data-gdp` deben coincidir con el orden de los datos proporcionados.
 
-**Historia de usuario #9:** La altura de cada elemento de barra debe representar con exactitud el `GDP` correspondiente a los datos.
+**Historia de usuario nº 9:** La altura de cada elemento `.bar` debe representar con exactitud el `GDP` correspondiente a los datos.
 
-**Historia de usuario #10:** El atributo `data-date` y su correspondiente elemento de barra deben alinearse con el valor correspondiente en el eje-x.
+**Historia de usuario nº 10:** El atributo `data-date` y su correspondiente elemento `.bar` deben alinearse con el valor correspondiente en el eje x.
 
-**Historia de usuario #11:** El atributo `data-gdp` y su correspondiente elemento de barra deben alinearse con el valor correspondiente en el eje-y.
+**Historia de usuario nº 11:** El atributo `data-gdp` y su correspondiente elemento `.bar` deben alinearse con el valor correspondiente en el eje y.
 
 **Historia de usuario #12:** Puedo pasar el ratón por encima de un área y ver un cuadro emergente con su correspondiente `id="tooltip"` que muestra más información acerca del área.
 

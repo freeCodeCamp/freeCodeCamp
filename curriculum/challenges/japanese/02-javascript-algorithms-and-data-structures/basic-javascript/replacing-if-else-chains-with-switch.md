@@ -60,43 +60,43 @@ assert(!/if/g.test(code));
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` は文字列 `Marley` になる必要があります。
+`chainToSwitch("bob")` は文字列 `Marley` を返す必要があります。
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` は文字列 `The Answer` になる必要があります。
+`chainToSwitch(42)` は文字列 `The Answer` を返す必要があります。
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` は文字列 `There is no #1` になる必要があります。
+`chainToSwitch(1)` は文字列 `There is no #1` を返す必要があります。
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` は文字列 `Missed me by this much!` になる必要があります。
+`chainToSwitch(99)` は文字列 `Missed me by this much!` を返す必要があります。
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` は文字列 `Ate Nine` になる必要があります。
+`chainToSwitch(7)` は文字列 `Ate Nine` を返す必要があります。
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` は `""` (空文字列) になる必要があります。
+`chainToSwitch("John")` は `""` (空文字列) を返す必要があります。
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` は `""` (空文字列) になる必要があります。
+`chainToSwitch(156)` は `""` (空文字列) を返す必要があります。
 
 ```js
 assert(chainToSwitch(156) === '');

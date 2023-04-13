@@ -7,6 +7,7 @@ curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
 config/i18n.js
+config/misc.js
 config/certification-settings.js
 config/donation-settings.js
 config/superblock-order.js
@@ -20,7 +21,7 @@ utils/get-lines.js
 utils/get-lines.test.js
 utils/validate.js
 utils/validate.test.js
-**/package-lock.json
+pnpm-lock.yaml
 web/.next
 curriculum-server/data/curriculum.json
 docs/**/*.md

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d9
-title: المقارنات باستخدام مشغل إي من المنطقي
+title: المقارنات باستخدام مشغل إي من (or) المنطقي (||)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
@@ -9,11 +9,11 @@ dashedName: comparisons-with-the-logical-or-operator
 
 # --description--
 
-يرجع مشغل <dfn>إي من</dfn> الآتي (`||`) القيمة `true` إذا كان أي من <dfn>المعاملتين</dfn> هما `true`. خلاف ذلك، فإنه يرجع `false`.
+يرجع مشغل <dfn>إي من</dfn> (logical or) الآتي (`||`) القيمة `true` إذا كان أي من <dfn>المعاملتين</dfn> هما `true`. خلاف ذلك، فإنه يرجع `false`.
 
-يتكون مشغل <dfn>المعاملات</dfn> من رمزين و هما خطين مستقيمين ألآتيه: (`||`). يمكن العثور على هذا الرمز عادة بين مفاتيح Backspace و Enter.
+يتكون مشغل <dfn>إي من</dfn> من رمزين و هما خطين مستقيمين كالآتي: (`||`). يمكن العثور على هذا الرمز عادة بين مفاتيح Backspace و Enter.
 
-يجب أن يبدو النمط أدناه مألوفًا من الدروس السابقة:
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-سوف يعيد `Yes` فقط إذا كان `num` بين `5` و `10` (5 و 10 مشمولين). ويمكن كتابة نفس المنطق كما يلي:
+This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
 
 ```js
 if (num > 10 || num < 5) {
@@ -36,7 +36,7 @@ return "Yes";
 
 # --instructions--
 
-قم بدمج تعبيرات `if` في تعبير واحدة تعيد المقطع `Outside` إذا كان `val` ليس بين `10` و `20` بشمول 10 و 20. خلاف ذلك، ارجع المقطع `Inside`.
+قم بدمج تعبيرات `if` في تعبير واحد ينتج المقطع `Outside` إذا كان `val` ليس بين `10` و `20` بشمول 10 و 20. خلاف ذلك، ارجع المقطع `Inside`.
 
 # --hints--
 

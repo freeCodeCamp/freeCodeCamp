@@ -20,7 +20,7 @@ Es gibt eine Regel, die bei der Verlegung von Tatami befolgt werden muss: Es dar
 
 Das linke Arrangement ist akzeptabel, das auf der rechten Seite hingegen nicht: Ein rotes <strong><span style="color: red;">X</span></strong> in der Mitte markiert den Punkt, an dem sich vier Tatamis treffen.
 
-Aufgrund dieser Regel können bestimmte Zimmer nicht mit Tatami bedeckt werden: wir nennen sie Tatami-freie Räume. Weiterhin definieren wir $T(s)$ als die Anzahl der Tatami-freien Räume der Größe $s$.
+Because of this rule, certain even-sized rooms cannot be covered with tatami: we call them tatami-free rooms. Weiterhin definieren wir $T(s)$ als die Anzahl der Tatami-freien Räume der Größe $s$.
 
 Der kleinste Tatami-freie Raum hat die Größe $s = 70$ und die Maße 7×10. Alle anderen Räume mit der Größe $s = 70$ können mit Tatami bedeckt werden. Sie haben Maße von 1x70, 2x35 und 5x14. Folglich: $T(70) = 1$.
 

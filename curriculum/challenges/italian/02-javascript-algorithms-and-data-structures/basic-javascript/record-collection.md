@@ -8,17 +8,23 @@ dashedName: record-collection
 
 # --description--
 
-Ti viene dato un oggetto letterale che rappresenta una parte della tua collezione di album musicali. Ogni album ha un id numerico unico come chiave, e diverse altre proprietà. Non tutti gli album hanno informazioni complete.
+Stai creando una funzione che facilita la manutenzione di una collezione di album musicali. La collezione è organizzata come un oggetto che contiene più album i quali sono anch'essi oggetti. Ogni album è rappresentato nella collezione con un `id` unico come nome della proprietà. All'interno di ogni oggetto dell'album, ci sono varie proprietà che danno informazioni sull'album. Non tutti gli album hanno informazioni complete.
 
-Partirai con una funzione `updateRecords` che prende un oggetto letterale, `records`, contenente la collezione di album musicali, un `id`, una proprietà `prop` (come `artist` o `tracks`), e un valore `value`. Completa la funzione usando le regole sottostanti per modificare l'oggetto passato alla funzione.
+La funzione `updateRecords` prende 4 argomenti rappresentati dai seguenti parametri di funzione:
 
--   La tua funzione deve sempre restituire l'intero oggetto della raccolta di dischi.
--   Se `prop` non è `tracks` e `value` non è una stringa vuota, aggiorna o imposta la `prop` di quell'album a `value`.
--   Se `prop` è `tracks` ma l'album non ha una proprietà `tracks`, crea un array vuoto e aggiungi `value` ad esso.
--   Se `prop` è `tracks` e `value` non è una stringa vuota, aggiungi `value` alla fine dell'array `tracks` già esistente.
--   Se il valore `value` è una stringa vuota, elimina la proprietà `prop` dall'album.
+-   `records` - un oggetto contenente diversi album
+-   `id` - un numero che rappresenta un album specifico nell'oggetto `records`
+-   `prop` - una stringa che rappresenta il nome della proprietà dell'album da aggiornare
+-   `value` - una stringa contenente le informazioni usate per aggiornare la proprietà dell'album
 
-**Nota:** Una copia dell'oggetto `recordCollection` viene utilizzata per i test.
+Completa la funzione usando le regole sottostanti per modificare l'oggetto passato alla funzione.
+
+-   La funzione deve sempre restituire l'intero oggetto `records`.
+-   Se `value` è una stringa vuota, elimina la proprietà `prop` dall'album.
+-   Se `prop` non è `tracks` e `value` non è una stringa vuota, assegna `value` alla `prop` di quell'album.
+-   Se `prop` è `tracks` e il valore non è una stringa vuota, aggiungi `value` alla fine dell'array `tracks`. Devi prima creare questo array se l'album non ha una proprietà `tracks`.
+
+**Nota:** una copia dell'oggetto `recordCollection` viene utilizzata per i test. Non dovresti modificare direttamente l'oggetto `recordCollection`.
 
 # --hints--
 
@@ -48,7 +54,7 @@ updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-Dopo `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` dovrebbero avere la stringa `Addicted to Love` come ultimo elemento.
+Dopo `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` dovrebbe avere la stringa `Addicted to Love` come ultimo elemento.
 
 ```js
 assert(
@@ -58,7 +64,7 @@ assert(
 );
 ```
 
-Dopo `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` dovrebbero avere la stringa `1999` come primo elemento.
+Dopo `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` dovrebbe avere la stringa `1999` come primo elemento.
 
 ```js
 assert(

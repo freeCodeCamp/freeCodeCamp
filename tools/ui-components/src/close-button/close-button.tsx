@@ -11,7 +11,7 @@ export interface CloseButtonProps {
  */
 export function CloseButton({
   className,
-  label = 'Close',
+  label,
   onClick
 }: CloseButtonProps): JSX.Element {
   const classes = [
@@ -21,7 +21,7 @@ export function CloseButton({
   ].join(' ');
   return (
     <button
-      aria-label={label}
+      aria-label={label ?? 'Close'}
       className={classes}
       onClick={onClick}
       type='button'

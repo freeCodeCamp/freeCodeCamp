@@ -15,71 +15,71 @@ dashedName: golf-code
 
 <table class='table table-striped'><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
-يكونان `par` و `strokes` دائما من نوع رَقْم أيحابى. لقد أضفنا القائمة من جميع الأسماء لمساعدتك.
+يكونان `par` و `strokes` دائما من نوع رَقم إيجابي. لقد أضفنا القائمة من جميع الأسماء لمساعدتك.
 
 # --hints--
 
-يجب أن ينتج `golfScore(4, 1)` المقطع `Hole-in-one!`
+يجب أن ينتج `golfScore(4, 1)` المقطع النصي `Hole-in-one!`
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-يجب أن ينتج `golfScore(4, 2)` المقطع `Eagle`
+يجب أن ينتج `golfScore(4, 2)` المقطع النصي `Eagle`
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-يجب أن ينتج `golfScore(5, 2)` المقطع `Eagle`
+يجب أن ينتج `golfScore(5, 2)` المقطع النصي `Eagle`
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-يجب أن ينشئ `golfScore(4, 3)` المقطع `Birdie`
+يجب أن ينتج `golfScore(4, 3)` المقطع النصي `Birdie`
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-يجب أن ينشئ `golfScore(4, 4)` المقطع `Par`
+يجب أن ينتج `golfScore(4, 4)` المقطع النصي `Par`
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-يجب أن ينشئ `golfScore(1, 1)` المقطع `Hole-in-one!`
+يجب أن ينتج `golfScore(1, 1)` المقطع النصي `Hole-in-one!`
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-يجب أن ينشئ `golfScore(5, 5)` المقطع `Par`
+يجب أن ينتج `golfScore(5, 5)` المقطع النصي `Par`
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-يجب أن ينشئ `golfScore(4, 5)` المقطع `Bogey`
+يجب أن ينتج `golfScore(4, 5)` المقطع النصي `Bogey`
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-يجب أن ينشئ `golfScore(4, 6)` المقطع `Double Bogey`
+يجب أن ينتج `golfScore(4, 6)` المقطع النصي`Double Bogey`
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-يجب أن ينشئ `golfScore(4, 7)` المقطع `Go Home!`
+يجب أن ينتج `golfScore(4, 7)` المقطع النصي`Go Home!`
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-يجب أن ينشئ `golfScore(5, 9)` المقطع `Go Home!`
+يجب أن ينتج `golfScore(5, 9)` المقطع النصي`Go Home!`
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');

@@ -1,9 +1,5 @@
 {
   "include": [
-    "client/i18n/**/*",
-    "client/plugins/**/*",
-    "client/src/**/*",
-    "client/utils/**/*",
     "curriculum/*.test.ts",
     "tools/challenge-auditor/index.ts",
     "tools/challenge-editor/**/*",

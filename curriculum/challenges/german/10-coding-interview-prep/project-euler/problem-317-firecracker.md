@@ -1,6 +1,6 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
-title: 'Problem 317: Firecracker'
+title: 'Problem 317: Feuerwerkskörper'
 challengeType: 1
 forumTopicId: 301973
 dashedName: problem-317-firecracker
@@ -8,15 +8,15 @@ dashedName: problem-317-firecracker
 
 # --description--
 
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 $\frac{\text{m}}{\text{s}}$.
+Ein Feuerwerkskörper explodiert in einer Höhe von 100 m über dem Boden. Es zerbricht in eine große Anzahl sehr kleiner Fragmente, die sich in alle Richtungen bewegen; alle haben die gleiche Anfangsgeschwindigkeit von 20 $\frac{\text{m}}{\text{s}}$.
 
-We assume that the fragments move without air resistance, in a uniform gravitational field with $g=9.81 \frac{\text{m}}{\text{s}^2}$.
+Wir nehmen an, dass sich die Fragmente ohne Luftwiderstand in einem einheitlichen Gravitationsfeld mit $g=9,81 \frac{\text{m}}{\text{s}^2}$ bewegen.
 
-Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
+Bestimme das Volumen (in $\text{m}^3$) der Region, durch die sich die Bruchstücke bewegen, bevor sie den Boden erreichen. Gib deine Antwort auf vier Dezimalstellen gerundet an.
 
 # --hints--
 
-`firecracker()` should return `1856532.8455`.
+`firecracker()` sollte `1856532.8455` zurückgeben.
 
 ```js
 assert.strictEqual(firecracker(), 1856532.8455);

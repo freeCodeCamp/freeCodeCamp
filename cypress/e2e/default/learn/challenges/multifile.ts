@@ -2,10 +2,10 @@ import translations from '../../../../../client/i18n/locales/english/translation
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {
-  testButton: '[data-cy=run-tests-button]',
   monacoTabs: '.monaco-editor-tabs',
-  signInButton: '#action-buttons-container a[href$="/signin"]',
-  submitButton: '[data-cy=submit-button]',
+  signInButton: '[data-cy=sign-in-button]',
+  submitLowerJawButton: '[data-cy=submit-lowerJaw-button]',
+  checkLowerJawButton: '[data-cy=check-lowerJaw-button]',
   resetCodeButton: '[data-cy=reset-code-button]',
   instructionContainer: '.action-row-container'
 };
@@ -22,10 +22,12 @@ describe('Challenge with multifile editor', () => {
 
   it('checks for correct text at different widths', () => {
     cy.viewport(768, 660);
-    cy.get(selectors.testButton).contains('Check Your Code (Ctrl + Enter)');
+    cy.get(selectors.checkLowerJawButton).contains(
+      'Check Your Code (Ctrl + Enter)'
+    );
 
     cy.viewport(767, 660);
-    cy.get(selectors.testButton)
+    cy.get(selectors.checkLowerJawButton)
       .should('not.contain.text', '(Ctrl + Enter)')
       .contains('Check Your Code');
   });
@@ -56,9 +58,9 @@ describe('Challenge with multifile editor', () => {
   it('focuses the submit button after testing a valid solution', () => {
     cy.visit(location);
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
-    cy.get(selectors.submitButton).should('not.be.focused');
-    cy.get(selectors.testButton).click();
-    cy.get(selectors.submitButton).should('be.focused');
+    cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+    cy.get(selectors.checkLowerJawButton).click();
+    cy.get(selectors.submitLowerJawButton).should('be.focused');
   });
 
   it('checks hotkeys when instruction is focused', () => {
@@ -67,6 +69,6 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.instructionContainer)
       .click('topRight')
       .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
-    cy.get(selectors.submitButton).should('be.focused');
+    cy.get(selectors.submitLowerJawButton).should('not.be.focused');
   });
 });

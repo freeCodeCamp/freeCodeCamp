@@ -13,7 +13,7 @@ El operador <dfn>lógico or</dfn> (`||`) devuelve `true` si cualquiera de los <d
 
 El operador <dfn>lógico or</dfn> se compone de dos símbolos de barra vertical: (`||`). Este se puede encontrar normalmente entre las teclas de tabulación y escape.
 
-El patrón de abajo debería parecer familiar desde los puntos de referencia anteriores:
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-devolverá `Yes` sólo si `num` está entre `5` y `10` (5 y 10 incluidos). La misma lógica se puede escribir como:
+This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
 
 ```js
 if (num > 10 || num < 5) {

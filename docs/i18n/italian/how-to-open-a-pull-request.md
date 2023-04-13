@@ -17,7 +17,7 @@ Alcuni esempi di ciò sono:
 
 > [!NOTE] La tua PR dovrebbe essere rivolta a modifiche del solo curriculum inglese. Per contribuire alle traduzioni invece, leggi [questa guida](index.md#traduzioni).
 
-## Preparare un buon titolo PR
+## Prepare a Good PR Title
 
 Si consiglia di utilizzare [Titolo e messaggi convenzionali](https://www.conventionalcommits.org/) per i commit e le pull request. La convenzione ha il seguente formato:
 
@@ -93,7 +93,7 @@ Alcuni esempi di buoni titoli di PR sono:
 
    - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](how-to-add-cypress-tests.md).
 
-## Feedback sulle pull request
+## Feedback on Pull Requests
 
 > :tada: Congratulazioni per avere creato un PR e grazie mille per aver dedicato il tuo tempo a contribuire.
 
@@ -103,13 +103,13 @@ E come sempre, poni liberamente le tue domande [nella categoria 'Contributors' s
 
 > [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](how-to-setup-freecodecamp-locally.md#making-changes-locally) per evitare di dover cancellare il tuo fork.
 
-## Conflitti su una pull request
+## Conflicts on a Pull Request
 
 I conflitti possono sorgere perché molti contributori lavorano sul repository e le modifiche possono interrompere la tua PR in attesa di una revisione e di un merge.
 
 Spesso potresti non aver bisogno di un rebase, perché schiacciamo tutti i commit, tuttavia se è richiesto un rebase, ecco quello che dovresti fare.
 
-### Per le solite correzioni di bug e funzionalità
+### For Usual Bug Fixes and Features
 
 Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo `main`, puoi fare un semplice rebase:
 
@@ -138,7 +138,7 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
    git push --force origin <pr-branch>
    ```
 
-### Per il curriculum e le caratteristiche future
+### For Upcoming Curriculum and Features
 
 Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, devi fare un cherry pick:
 
@@ -188,14 +188,14 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 4. Risolvi eventuali conflitti, fai pulizia, installa le dipendenze ed esegui i test
 
    ```console
-   npm run clean
+   pnpm run clean
 
-   npm ci
-   npm run test:curriculum --superblock=<superblock-name>
+   pnpm install
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
-   # example:
+   # esempio:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 

@@ -1,33 +1,33 @@
-# How to work on coding challenges
+# Як працювати над завданнями з програмуванням
 
-Our goal is to develop a fun and clear interactive learning experience.
+Нашою метою є розробити веселе та зрозуміле інтерактивне навчання.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Розробити інтерактивні завдання для програмування — важко. Було б набагато простіше написати довге пояснення чи створити відеоурок. Але для нашої основної навчальної програми ми використовуємо те, що найкраще працює для більшості людей — інтерактив, схожий на відеогру.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Ми хочемо, щоб кемпери досягли стану потоку. Ми хочемо, щоб вони наростили темп та пройшли навчальну програму з мінімальною кількістю помилок. Ми хочемо, щоб вони впевнено виконували проєкти та ознайомились з багатьма поняттями програмування.
 
-Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+Зауважте, що для версії 7.0 навчальної програми freeCodeCamp ми переходимо до [проєктноорієнтованої моделі з багатьма повтореннями](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+Ці завдання вимагають креативності та уваги до деталей. Ви не залишитесь без допомоги. Вас підтримуватиме ціла команда помічників, з якими можна поділитись власними ідеями та завданнями.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+Завдяки вашій допомозі ми створюємо інтерактивну навчальну програму для програмування, що допоможе мільйонам людей навчитися писати код.
 
-The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+Вміст кожного завдання зберігається у файлі markdown. Потім, щоб створити інтерактивну вебсторінку, цей файл конвертується у HTML за допомогою наших інструментів.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+Ви можете знайти весь навчальний матеріал freeCodeCamp.org у каталозі [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
-## Set up the tooling for the curriculum
+## Налаштування інструментів для навчальної програми
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Перш ніж працювати над навчальною програмою, потрібно налаштувати деякі інструменти, які допоможуть перевіряти ваші зміни. Ви можете використовувати будь-який варіант нижче:
 
-- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+- Ви можете [налаштувати freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Це **рекомендовано** для регулярних/повторних внесків. Це налаштування дозволяє працювати над змінами та перевіряти їх.
+- Використовуйте безоплатне онлайн середовище Gitpod. Натисніть на кнопку нижче, щоб запустити готове середовище розробки для freeCodeCamp у своєму браузері. Це займе лише кілька хвилин.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Редагуйте файли на GitHub, натиснувши на значок олівця для відповідного файлу. Хоча це найшвидший спосіб, він **нерекомендований**, оскільки ви не можете перевірити свої зміни на GitHub. Якщо технічна підтримка вирішить, що ваші зміни потрібно перевірити локально, вам потрібно буде дотримуватись методів, описаних вище.
 
 ### How to work on practice projects
 
@@ -146,15 +146,15 @@ The question text goes here.
 
 ## --answers--
 
-Answer 1
+Відповідь 1
 
 ---
 
-Answer 2
+Відповідь 2
 
 ---
 
-More answers
+Інші відповіді
 
 ## --video-solution--
 
@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
@@ -214,11 +214,11 @@ Here are some example challenge names:
 - Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
-## Challenge descriptions/instructions
+## Опис/інструкції завдань
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+Речення повинні бути зрозумілими і стислими, з мінімальною кількістю жаргону. Якщо жаргон все-таки був використаний, то його потрібно пояснити звичайною мовою.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
@@ -243,7 +243,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 - Simplify the challenge, or
 - Split the challenge into two challenges.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
 We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
@@ -267,7 +267,7 @@ Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
 
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. See example below:
 - Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
 
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
@@ -284,7 +284,7 @@ The following is an example of code:
 
 - Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single-quotes where applicable
+- Use single quotes where applicable
 
 **Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
@@ -296,7 +296,7 @@ Our goal is to communicate the single point that the challenge is trying to teac
 
 Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
 
-## Formatting seed code
+## Formatting Seed Code
 
 Here are specific formatting guidelines for the challenge seed code:
 
@@ -304,13 +304,13 @@ Here are specific formatting guidelines for the challenge seed code:
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
 
-### Seed code comments
+### Seed Code Comments
 
 We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
 Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-Example of valid single line JavaScript comment:
+Example of a valid single-line JavaScript comment:
 
 ```js
 // Only change code below this line
@@ -366,7 +366,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of seed code comments
+### Translation of Seed Code Comments
 
 There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
@@ -388,16 +388,16 @@ If you find a problem with an existing challenge's hints/solutions topic, you ca
 
 ### Adding new Challenge hints/solutions Topics
 
-Take the following steps when adding a new challenge hints/solutions related topic.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Start by following the same steps for creating a new topic but review the next for creating the title.
 2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-### Guidelines for content of hints and solutions topics
+### Guidelines for Content of Hints and Solutions Topics
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Challenge Name Goes Here
@@ -457,17 +457,17 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 1. To test all challenges run the below command from the root directory
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 You are also able to test one challenge individually by performing the following steps:
@@ -481,7 +481,7 @@ You are also able to test one challenge individually by performing the following
 2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   npm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).
 
@@ -489,7 +489,7 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-### Useful Links
+### Корисні посилання
 
 Creating and Editing Challenges:
 

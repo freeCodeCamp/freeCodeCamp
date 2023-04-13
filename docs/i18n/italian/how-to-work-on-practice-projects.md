@@ -10,7 +10,7 @@ Queste istruzioni ti diranno come utilizzare il nostro strumento editor per le s
 
 ### Avviare l'editor
 
-Per avviare l'editor, assicurati di essere nella cartella principale freeCodeCamp. Poi esegui `npm run challenge-editor` per avviare sia il client che l'API di cui fa uso l'editor.
+To start the editor, make sure you are in the root freeCodeCamp directory. Poi esegui `pnpm run challenge-editor` per avviare sia il client che l'API di cui fa uso l'editor.
 
 Il client verrà avviato sulla porta `3300`, così puoi accedervi su `http://localhost:3300`. L'API gira sulla porta `3200`, per evitare conflitti con il client learn e con il server. Questo ti permetterà di eseguire l'applicazione freeCodeCamp contemporaneamente all'editor, in modo che tu possa testare le tue modifiche localmente.
 
@@ -58,9 +58,9 @@ Se desideri lavorare sugli step manualmente, nel tuo IDE locale, puoi eseguire d
 
 La cartella `tools/challenge-helper-scripts` contiene strumenti per aiutare a facilitare la creazione e il mantenimento del curriculum basato su progetti di freeCodeCamp.
 
-### Creare un nuovo progetto
+### Create a New Project
 
-Esegui `npm run create-project` dalla cartella root. Questo apre un'interfaccia utente a linea di comando che ti guida attraverso il processo. Una volta finito, dovrebbe esserci una nuova sfida nel curriculum inglese che puoi usare come primo passo del progetto. Ad esempio, se hai creato un progetto chiamato `test-project` nella certificazione Web Design Responsivo, sarebbe in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Change directory to `tools/challenge-helper-scripts` and run `pnpm run create-project`. This opens up a command line UI that guides you through the process. Una volta finito, dovrebbe esserci una nuova sfida nel curriculum inglese che puoi usare come primo passo del progetto. Ad esempio, se hai creato un progetto chiamato `test-project` nella certificazione Web Design Responsivo, sarebbe in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 Se vuoi creare nuovi step, i seguenti strumenti semplificano il processo.
 
@@ -68,13 +68,13 @@ Se vuoi creare nuovi step, i seguenti strumenti semplificano il processo.
 
 Uno script una tantum che aggiungerà automaticamente lo step successivo in base all'ultimo step del progetto. Il codice seed della sfida userà il codice seed di quella precedente.
 
-#### Come eseguire lo script:
+#### How to Run the Script
 
 1. Vai alla directory del progetto.
-2. Esegui il seguente comando npm:
+2. Esegui il seguente comando:
 
 ```bash
-npm run create-next-step
+pnpm run create-next-step
 ```
 
 ### create-empty-steps
@@ -83,13 +83,13 @@ Uno script eseguito una sola volta che aggiunge automaticamente un determinato n
 
 **Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
-#### Come eseguire lo script:
+#### How to Run the Script
 
 1. Vai alla directory del progetto.
-2. Esegui il seguente comando npm:
+2. Esegui il seguente comando:
 
 ```bash
-npm run create-empty-steps X # dove X è il numero di step da creare.
+pnpm run create-empty-steps X # dove X è il numero di step da creare.
 ```
 
 ### insert-step
@@ -98,13 +98,13 @@ Uno script una tantum che aggiunge automaticamente un nuovo step in una posizion
 
 **Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
-#### Come eseguire lo script:
+#### How to Run the Script
 
 1. Vai alla directory del progetto.
-2. Esegui il seguente comando npm:
+2. Esegui il seguente comando:
 
 ```bash
-npm run insert-step X # dove X è la posizione in cui inserire il nuovo step.
+pnpm run insert-step X # dove X è la posizione in cui inserire il nuovo step.
 ```
 
 ### delete-step
@@ -113,24 +113,24 @@ Uno script una tantum che rimuove uno step esistente, decrementando tutti gli st
 
 **Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
-#### Come eseguire lo script
+#### How to Run the Script
 
 1. Vai alla directory del progetto.
-2. Esegui il seguente comando npm:
+2. Esegui il seguente comando:
 
 ```bash
-npm run delete-step num=x # dove x è il numero dello step da eliminare.
+pnpm run delete-step X # dove X è il numero dello step da eliminare.
 ```
 
 ### update-step-titles
 
 Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. Fa in modo che il titolo di ogni step (e dashedName) corrisponda al challengeOrder in meta.
 
-#### Come eseguire lo script
+#### How to Run the Script
 
 1. Vai alla directory del progetto.
-2. Esegui il seguente comando npm:
+2. Esegui il seguente comando:
 
 ```bash
-npm run update-step-titles
+pnpm run update-step-titles
 ```

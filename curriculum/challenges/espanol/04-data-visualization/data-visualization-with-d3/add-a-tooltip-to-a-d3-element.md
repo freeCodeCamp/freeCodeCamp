@@ -8,7 +8,7 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-Un cuadro emergente muestra más información acerca de un elemento en la página cuando el usuario se coloca sobre ese elemento. Hay varias formas de agregar un cuadro emergente a una visualización, este desafío usa el elemento SVG `title`.
+Un cuadro emergente muestra más información acerca de un elemento en la página cuando el usuario se coloca sobre ese elemento. Hay varias formas de añadir una información sobre herramientas a una visualización. Este reto utiliza el elemento SVG `title`.
 
 `title` se empareja con el método `text()` para agregar datos dinámicamente a las barras.
 

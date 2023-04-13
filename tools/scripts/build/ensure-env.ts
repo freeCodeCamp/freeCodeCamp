@@ -57,13 +57,15 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
   const loggingKeys = ['sentryClientDSN'];
   const abTestingKeys = ['growthbookUri'];
+  const diagnosticKeys = ['gitHash'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,
     searchKeys,
     donationKeys,
     loggingKeys,
-    abTestingKeys
+    abTestingKeys,
+    diagnosticKeys
   );
   const actualVariables = Object.keys(env as Record<string, unknown>);
   if (expectedVariables.length !== actualVariables.length) {
@@ -131,7 +133,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     ) {
       /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('npm', ['run', 'clean:client']);
+      const child = spawn('pnpm', ['run', 'clean:client']);
       child.stdout.setEncoding('utf8');
       child.stdout.on('data', function (data) {
         console.log(data);

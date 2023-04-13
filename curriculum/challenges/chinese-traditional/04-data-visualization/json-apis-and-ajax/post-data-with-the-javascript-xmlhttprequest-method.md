@@ -10,7 +10,7 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 在前面的示例中，你通過外部資源獲取數據。 此外，你也可以將數據發送到外部資源，只要該資源支持 AJAX 請求並且你知道 URL。
 
-JavaScript 的`XMLHttpRequest`方法也用於將數據發佈到服務器。 這是一個示例：
+JavaScript 的 `XMLHttpRequest` 方法也用於將數據發佈到服務器。 這是一個示例：
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -26,27 +26,33 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-你之前已經見過這些方法。 `open` 方法將對外部資源的給定 URL 的請求初始化爲 `POST`，並使用 `true` 布爾值使其變成異步的。 `setRequestHeader` 方法設置了 HTTP 請求標頭的值，該標頭包含有關發送人和請求的信息。 它必須在 `open` 方法之後、`send` 方法之前調用。 它的兩個參數表示標頭的內容類型和標頭數據將被設置成什麼值。 接下來，`onreadystatechange` 事件監聽器監聽請求狀態的更改。 `readyState` 爲 `4`，表示操作已完成。`status` 爲 `201`，表示請求成功。 文檔的 HTML 可以更新。 最後，`send` 方法發送帶有 `body` 值的請求，其中 `userName` 的值由用戶在 `input` 字段中輸入。
+你之前已經見過這些方法。 在這裏，`open` 方法將請求初始化爲對外部資源的給定 URL 的 `POST`，並傳遞 `true` 作爲第三個參數——表示以異步方式執行該操作。
+
+`setRequestHeader` 方法設置了 HTTP 請求標頭的值，包含有關發送人和請求的信息。 它必須在 `open` 方法之後、`send` 方法之前調用。 這兩個參數是標頭的名稱和要設置爲該標頭正文的值。
+
+接下來，`onreadystatechange` 事件監聽器監聽請求狀態的更改。 `readyState` 爲 `4`，表示操作已完成。`status` 爲 `201`，表示請求成功。 因此，文檔的 HTML 可以更新。
+
+最後， `send` 方法發送帶有 `body` 值的請求。 `body` 包含一個 `userName` 和一個 `suffix` 鍵。
 
 # --instructions--
 
-更新代碼，創建並向 API 發送 `POST` 請求。 然後在輸入框中輸入你的姓名，並點擊 `Send Message`。 你的 AJAX 函數會用服務器返回的數據替換 `Reply from Server will be here.`。 修改返回的請求結果，在你的名字後面添加 `loves cats`。
+更新代碼，向 API 端點發送 `POST` 請求。 然後在輸入框中輸入你的姓名，並點擊 `Send Message`。 你的 AJAX 函數會用服務器返回的數據替換 `Reply from Server will be here.`。 修改返回的請求結果，在你的名字後面添加 `loves cats`。
 
 # --hints--
 
-應該創建一個新的 `XMLHttpRequest`。
+你的代碼應該創建一個新的 `XMLHttpRequest`。
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-應該使用 `open` 方法初始化一個發送給服務器的 `POST` 請求。
+你的代碼應該使用 `open` 方法初始化一個發送給服務器的 `POST` 請求。
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
 ```
 
-應該使用 `setRequestHeader` 方法。
+你的代碼應該使用 `setRequestHeader` 方法。
 
 ```js
 assert(
@@ -56,13 +62,13 @@ assert(
 );
 ```
 
-應該有一個 `onreadystatechange` 的事件監聽器。
+你的代碼應該有一個設置爲函數的 `onreadystatechange` 事件處理程序。
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
 ```
 
-應該獲取 class 爲 `message` 的元素，並將它的 `textContent` 更改爲 `userName loves cats`。
+你的代碼應該獲取 class 爲 `message` 的元素，並將它的 `textContent` 更改爲 `userName loves cats`。
 
 ```js
 assert(
@@ -72,7 +78,7 @@ assert(
 );
 ```
 
-應該使用 `send` 方法。
+你的代碼應該使用 `send` 方法。
 
 ```js
 assert(code.match(/\.send\(\s*?body\s*?\)/g));

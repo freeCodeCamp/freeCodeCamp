@@ -10,7 +10,7 @@ import type {
   User
 } from '../redux/prop-types';
 
-const { apiLocation } = envData;
+const { apiLocation, gitHash } = envData;
 
 const base = apiLocation;
 
@@ -136,6 +136,8 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   };
 }
 
+// TODO: this at least needs a few aliases so it's human readable
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function mapFilesToChallengeFiles<File, Rest>(
   fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
 ) {
@@ -177,7 +179,7 @@ export function getUserProfile(
   username: string
 ): Promise<ResponseWithData<UserProfileResponse>> {
   const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}`
+    `/api/users/get-public-profile?username=${username}&githash=${gitHash}`
   );
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser({

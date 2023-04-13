@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510053
-title: 'Problem 469: Empty chairs'
+title: 'Problem 469: Freie Stühle'
 challengeType: 1
 forumTopicId: 302144
 dashedName: problem-469-empty-chairs
@@ -8,21 +8,21 @@ dashedName: problem-469-empty-chairs
 
 # --description--
 
-In a room $N$ chairs are placed around a round table.
+In einem Raum sind $N$ Stühle um einen runden Tisch herum aufgestellt.
 
-Knights enter the room one by one and choose at random an available empty chair.
+Die Ritter betreten nacheinander den Raum und wählen nach dem Zufallsprinzip einen freien Stuhl aus.
 
-To have enough elbow room the knights always leave at least one empty chair between each other.
+Um genügend Bewegungsfreiheit zu haben, lassen die Ritter immer mindestens einen Stuhl zwischen sich frei.
 
-When there aren't any suitable chairs left, the fraction $C$ of empty chairs is determined. We also define $E(N)$ as the expected value of $C$.
+Wenn es keine geeigneten Stühle mehr gibt, wird der Anteil $C$ der leeren Stühle bestimmt. Wir definieren auch $E(N)$ als den Erwartungswert von $C$.
 
-We can verify that $E(4) = \frac{1}{2}$ and $E(6) = \frac{5}{9}$.
+Wir können überprüfen, dass $E(4) = \frac{1}{2}$ und $E(6) = \frac{5}{9}$.
 
-Find $E({10}^{18})$. Give your answer rounded to fourteen decimal places in the form 0.abcdefghijklmn.
+Finde $E({10}^{18})$. Gebe deine Antwort auf vierzehn Dezimalstellen gerundet in der Form 0.abcdefghijklmn an.
 
 # --hints--
 
-`emptyChairs()` should return `0.56766764161831`.
+`emptyChairs()` sollte `0.56766764161831` zurückgeben.
 
 ```js
 assert.strictEqual(emptyChairs(), 0.56766764161831);

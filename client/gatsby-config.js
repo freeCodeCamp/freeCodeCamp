@@ -22,6 +22,7 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    'gatsby-plugin-pnpm',
     {
       resolve: '@sentry/gatsby',
       options: {
@@ -94,20 +95,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-advanced-sitemap`,
-    //   options: {
-    //     exclude: [
-    //       `/dev-404-page`,
-    //       `/404`,
-    //       `/404.html`,
-    //       `/offline-plugin-app-shell-fallback`,
-    //       `/learn`,
-    //       /(\/)learn(\/)\S*/
-    //     ],
-    //     addUncaughtPages: true
-    //   }
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

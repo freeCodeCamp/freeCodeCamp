@@ -7,7 +7,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
@@ -48,6 +49,18 @@ type AboutState = {
   isPictureUrlValid: boolean;
 };
 
+const ShowImageValidationWarning = ({
+  alertContent
+}: {
+  alertContent: string;
+}) => {
+  return (
+    <HelpBlock>
+      <Alert bsStyle='info'>{alertContent}</Alert>
+    </HelpBlock>
+  );
+};
+
 class AboutSettings extends Component<AboutProps, AboutState> {
   validationImage: HTMLImageElement;
   static displayName: string;
@@ -79,7 +92,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -107,7 +119,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    if (this.state.isPictureUrlValid === true) {
+    if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
@@ -170,21 +182,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  showImageValidationWarning = () => {
-    const { t } = this.props;
-    if (this.state.isPictureUrlValid === false) {
-      return (
-        <HelpBlock>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('validation.url-not-image')}
-          </Alert>
-        </HelpBlock>
-      );
-    } else {
-      return true;
-    }
-  };
-
   handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
@@ -209,14 +206,15 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
+    const ariaLabel = t('settings.headings.personal-info');
     return (
-      <div className='about-settings'>
+      <>
         <UsernameSettings username={username} />
-        <br />
+        <Spacer size='medium' />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={t('settings.headings.personal-info')}>
+            <div role='group' aria-label={ariaLabel}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
                   <strong>{t('settings.labels.name')}</strong>
@@ -246,7 +244,11 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                   type='url'
                   value={picture}
                 />
-                {this.showImageValidationWarning()}
+                {!this.state.isPictureUrlValid && (
+                  <ShowImageValidationWarning
+                    alertContent={t('validation.url-not-image')}
+                  />
+                )}
               </FormGroup>
               <FormGroup controlId='about-about'>
                 <ControlLabel>
@@ -259,7 +261,11 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 />
               </FormGroup>
             </div>
-            <BlockSaveButton disabled={this.isFormPristine()}>
+            <BlockSaveButton
+              aria-disabled={this.isFormPristine()}
+              bgSize='lg'
+              {...(this.isFormPristine() && { tabIndex: -1 })}
+            >
               {t('buttons.save')}{' '}
               <span className='sr-only'>
                 {t('settings.headings.personal-info')}
@@ -267,7 +273,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             </BlockSaveButton>
           </form>
         </FullWidthRow>
-        <Spacer />
+        <Spacer size='medium' />
         <FullWidthRow>
           <ThemeSettings
             currentTheme={currentTheme}
@@ -279,7 +285,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
           />
         </FullWidthRow>
-      </div>
+      </>
     );
   }
 }

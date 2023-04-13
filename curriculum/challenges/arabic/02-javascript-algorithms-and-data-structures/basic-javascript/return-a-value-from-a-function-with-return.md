@@ -23,11 +23,11 @@ const answer = plusThree(5);
 
 يحتوي `answer` على قيمة `8`.
 
-تأخذ `plusThree` قيمة <dfn>معطى</dfn> من `num` وتنتج قيمة تساوي `num + 3`.
+تأخذ `plusThree` قيمة من <dfn>المعطى</dfn> `num` وتنتج قيمة تساوي `num + 3`.
 
 # --instructions--
 
-أنشئ الوظيفة `timesFive` التي تقبل معطى واحد، وتضربه في `5`، وتنتج قيمة جديدة.
+أنشئ الوظيفة `timesFive` التي تقبل معطى واحد، وتضربه في `5`، وتنتج (returns) قيمة جديدة.
 
 # --hints--
 

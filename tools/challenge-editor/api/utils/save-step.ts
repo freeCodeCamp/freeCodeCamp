@@ -7,7 +7,7 @@ export const saveStep = async (
   block: string,
   step: string,
   content: string
-) => {
+): Promise<boolean> => {
   try {
     const filePath = join(CHALLENGE_DIR, sup, block, step);
 

@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from '../../redux/createStore';
+import { createStore } from '../../redux/create-store';
 
 import { CertificationSettings } from './certification';
 
@@ -244,6 +244,7 @@ const defaultTestProps = {
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isCollegeAlgebraPyCertV8: false,
   username: 'developmentuser',
   verifyCert: () => {},
   errors: {},

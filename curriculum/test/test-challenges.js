@@ -1,9 +1,8 @@
-/* eslint-disable no-loop-func */
 const path = require('path');
 const vm = require('vm');
 const { assert, AssertionError } = require('chai');
 const jsdom = require('jsdom');
-const liveServer = require('live-server');
+const liveServer = require('@compodoc/live-server');
 const lodash = require('lodash');
 const Mocha = require('mocha');
 const mockRequire = require('mock-require');
@@ -16,7 +15,6 @@ const stringSimilarity = require('string-similarity');
 mockRequire('lodash-es', lodash);
 
 const clientPath = path.resolve(__dirname, '../../client');
-require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
@@ -34,18 +32,16 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../client/utils/challenge-types');
 // the config files are created during the build, but not before linting
-/* eslint-disable import/no-unresolved */
 const testEvaluator =
   require('../../config/client/test-evaluator.json').filename;
-/* eslint-enable import/no-unresolved */
 
 const { getLines } = require('../../utils/get-lines');
 
-const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
-const { challengeSchemaValidator } = require('../schema/challengeSchema');
+const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
+const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
-const ChallengeTitles = require('./utils/challengeTitles');
-const MongoIds = require('./utils/mongoIds');
+const ChallengeTitles = require('./utils/challenge-titles');
+const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');
@@ -110,7 +106,7 @@ setup()
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+  if (process.env.FCC_SUPERBLOCK && process.env.FCC_BLOCK) {
     throw new Error(`Please do not use both a block and superblock as input.`);
   }
 
@@ -152,9 +148,9 @@ async function setup() {
   ];
 
   // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_superblock) {
+  if (process.env.FCC_SUPERBLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_superblock,
+      process.env.FCC_SUPERBLOCK,
       targetSuperBlockStrings
     ).bestMatch.target;
 
@@ -168,9 +164,9 @@ async function setup() {
     }
   }
 
-  if (process.env.npm_config_block) {
+  if (process.env.FCC_BLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_block,
+      process.env.FCC_BLOCK,
       targetBlockStrings
     ).bestMatch.target;
 
@@ -241,7 +237,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.npm_config_block) {
+  if (!process.env.FCC_BLOCK) {
     describe('Assert meta order', function () {
       /** This array can be used to skip a superblock - we'll use this
        * when we are working on the new project-based curriculum for

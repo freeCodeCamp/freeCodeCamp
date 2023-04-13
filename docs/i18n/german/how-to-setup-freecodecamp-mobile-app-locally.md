@@ -1,12 +1,12 @@
 Folge dieser Anleitung, um die freeCodeCamp mobile App lokal auf deinem System einzurichten. Dies ist sehr empfehlenswert, wenn du regelmäßig einen Beitrag leisten willst.
 
-Für einige der Arbeitsabläufe - wie das Beheben von Fehlern in der Codebasis - musst du die freeCodeCamp-App lokal ausführen.
+Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### Wie du deinen lokalen Rechner vorbereitest
+### How to Prepare your Local Machine
 
 Installiere zunächst die erforderliche Software für dein Betriebssystem.
 
-#### Voraussetzungen:
+#### Prerequisites
 
 | Voraussetzung                                 | Version | Notizen                                                       |
 | --------------------------------------------- | ------- | ------------------------------------------------------------- |
@@ -30,9 +30,9 @@ Sobald du die notwendigen Ressourcen installiert hast, musst du deine Entwicklun
 
 1. Installiere [Git](https://git-scm.com/) oder deinen bevorzugten Git-Client, falls du das nicht schon getan hast. Aktualisiere die neueste Version; die Version, die mit deinem Betriebssystem mitgeliefert wurde, ist möglicherweise veraltet.
 
-2. Richte [Android Studio](https://developer.android.com/studio) und [Android Emulatoren](https://developer.android.com/studio/run/managing-avds) mit der neuesten Android-Version ein. Wir empfehlen die Verwendung des Pixel 3a XL und Nexus One (für die Emulation kleinerer Bildschirme).
+2. Set up [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. Wir empfehlen die Verwendung des Pixel 3a XL und Nexus One (für die Emulation kleinerer Bildschirme).
 
-3. (Optional für MacOS) Richte Xcode und den iOS-Simulator mit der neuesten veröffentlichten iOS-Version ein.
+3. (Optional for MacOS) Set up Xcode and iOS Simulator with the latest released iOS version.
 
 4. (Optional, aber empfohlen) [Richte einen SSH-Schlüssel](https://help.github.com/articles/generating-an-ssh-key/) für GitHub ein.
 
@@ -40,7 +40,7 @@ Sobald du die notwendigen Ressourcen installiert hast, musst du deine Entwicklun
 
    Wir empfehlen dringend die Verwendung von [Visual Studio Code](https://code.visualstudio.com/) oder Android Studio. Wir empfehlen auch die Installation der offiziellen [Erweiterungen](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
-## Forke das Repository auf GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) ist ein Schritt, bei dem du deine eigene Kopie des Repositorys (auch bekannt als _Repo_) auf GitHub erhältst.
 
@@ -58,9 +58,9 @@ Dies ist wichtig, da es dir ermöglicht, an deiner eigenen Kopie der freeCodeCam
 
 3. Nachdem das Repository geforkt wurde, gelangst du zu deiner Kopie des Repositorys unter `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` würde durch deinen GitHub-Benutzernamen ersetzt werden)
 
-## Klone deinen Fork von GitHub
+## Clone your Fork from GitHub
 
-Beim [Klonen](https://help.github.com/articles/cloning-a-repository/) **downloadest ** du eine Kopie eines Repositorys von einem `remote`- Ort, der entweder dir oder einer anderen Person gehört. In deinem Fall ist dieser Remote-Speicherort dein `Fork` des freeCodeCamp-Repositorys, das unter `https://github.com/YOUR_USER_NAME/mobile` verfügbar sein sollte. (`YOUR_USER_NAME` wird durch deinen GitHub-Benutzernamen ersetzt.)
+Beim [Klonen](https://help.github.com/articles/cloning-a-repository/) **downloadest ** du eine Kopie eines Repositorys von einem `remote`- Ort, der entweder dir oder einer anderen Person gehört. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` wird durch deinen GitHub-Benutzernamen ersetzt.)
 
 Führe diese Befehle auf deinem lokalen Rechner aus:
 
@@ -78,11 +78,11 @@ Dadurch wird das gesamte freeCodeCamp mobile Repository in dein Projektverzeichn
 
 Hinweis: `--depth=1` erstellt einen oberflächlichen Klon deines Forks, der nur den jüngsten Verlauf/Commit enthält.
 
-## Synchronisierung vom übergeordneten System konfigurieren
+## Set up Syncing from Parent
 
 Jetzt, wo du eine Kopie deines Forks heruntergeladen hast, musst du einen `upstream` zum übergeordneten Repository einrichten.
 
-[Wie bereits erwähnt](#fork-the-repository-on-github), wird das Haupt-Repository als `upstream`-Repository bezeichnet. Dein Fork wird als `origin`-Repository bezeichnet.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 Du benötigst eine Referenz von deinem lokalen Klon auf das `upstream`-Repository zusätzlich zum `origin`-Repository. Auf diese Weise kannst du Änderungen aus dem Haupt-Repository synchronisieren, ohne dass du wiederholt forken und klonen musst.
 
@@ -113,7 +113,7 @@ Du benötigst eine Referenz von deinem lokalen Klon auf das `upstream`-Repositor
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## freeCodeCamp mobile App lokal ausführen
+## Running freeCodeCamp Mobile App Locally
 
 Jetzt, da du eine lokale Kopie der mobilen Anwendung hast, kannst du die folgenden Anweisungen befolgen, um sie lokal auszuführen.
 
@@ -123,11 +123,11 @@ Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum
 
 > [!NOTE] Das Verzeichnis `mobile` enthält zwei Ordner, nämlich `mobile-api` und `mobile-app`. `mobile-api` enthält den API-Code, der für die Bereitstellung der Podcasts verwendet wird. `mobile-app` enthält die Flutter-App. Dort solltest du dich befinden, wenn du die folgenden Schritte befolgst.
 
-### Konfigurieren der Abhängigkeiten
+### Configuring Dependencies
 
-#### Schritt 1: Einrichten der Umgebungsvariablendatei
+#### Step 1: Set Up the Environment Variable File
 
-Die Standard-API-Schlüssel und Umgebungsvariablen sind in der Datei `sample.env` gespeichert. Diese Datei muss in eine neue Datei namens `.env` kopiert werden, auf die während des Installationsschritts dynamisch zugegriffen wird. Denke daran, das Verzeichnis in `mobile-app` zu ändern, bevor du die folgenden Befehle ausführst.
+Die Standard-API-Schlüssel und Umgebungsvariablen sind in der Datei `sample.env` gespeichert. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Denke daran, das Verzeichnis in `mobile-app` zu ändern, bevor du die folgenden Befehle ausführst.
 
 ```console
 # Erstelle eine Kopie der "sample.env" und benenne sie ".env".
@@ -172,9 +172,9 @@ flutter run
 
 > [!TIP] Wenn du VSCode oder Android Studio verwendest, kannst du die App ganz einfach starten, ohne Terminalbefehle ausführen zu müssen. Mehr Informationen dazu [hier](https://docs.flutter.dev/get-started/test-drive).
 
-## Änderungen lokal vornehmen
+## Making Changes Locally
 
-Du kannst jetzt Änderungen an Dateien vornehmen und deine Änderungen an deinen lokalen Klon deines Forks übertragen.
+You can now make changes to files and commit your changes to the local clone of your fork.
 
 Folge diesen Schritten:
 
@@ -225,7 +225,7 @@ Folge diesen Schritten:
    git push origin main --force
    ```
 
-   Du kannst überprüfen, ob dein aktueller main mit dem upstream/main übereinstimmt, indem du einen diff durchführst:
+   You can validate that your current main matches the upstream/main by performing a diff:
 
    ```console
    git diff upstream/main
@@ -243,7 +243,7 @@ Folge diesen Schritten:
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Dein Zweigname sollte mit `fix/`, `feat/`, `docs/` usw. beginnen. Vermeide die Verwendung von Issue-Nummern in Zweigen. Halte sie kurz, aussagekräftig und einzigartig.
+   Dein Zweigname sollte mit `fix/`, `feat/`, `docs/` usw. beginnen. Vermeide die Verwendung von Issue-Nummern in Zweigen. Keep them short, meaningful, and unique.
 
    Einige Beispiele für gute Zweignamen sind:
 
@@ -392,11 +392,11 @@ Wenn du Probleme mit der Benutzeroberfläche oder Build-Fehler hast, kann eine B
 flutter clean
 ```
 
-### Probleme bei der Installation von Abhängigkeiten
+### Issues Installing Dependencies
 
 Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere dich bitte, dass du dich nicht in einem eingeschränkten Netzwerk befindest oder dass deine Firewall-Einstellungen den Zugriff auf die Ressourcen nicht verhindern.
 
-Sei geduldig, denn die Ersteinrichtung kann je nach Netzwerkbandbreite eine Weile dauern.
+Be patient as the first-time setup can take a while depending on your network bandwidth.
 
 ## Hilfe bekommen
 

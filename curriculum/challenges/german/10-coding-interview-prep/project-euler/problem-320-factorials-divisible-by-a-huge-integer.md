@@ -8,17 +8,17 @@ dashedName: problem-320-factorials-divisible-by-a-huge-integer
 
 # --description--
 
-Let $N(i)$ be the smallest integer $n$ such that $n!$ is divisible by $(i!)^{1234567890}$
+Lasse $N(i)$ die kleinste ganze Zahl $n$ sein, sodass $n!$ durch $(i!)^{1234567890}$ teilbar ist
 
-Let $S(u) = \sum N(i)$ for $10 ≤ i ≤ u$.
+Lasse $S(u) = \sum N(i)$ für $10 ≤ i ≤ u$ sein.
 
 $S(1000)=614\\,538\\,266\\,565\\,663$.
 
-Find $S(1\\,000\\,000)\bmod {10}^{18}$.
+Finde $S(1\\,000\\,000)\bmod {10}^{18}$.
 
 # --hints--
 
-`divisibleByHugeInteger()` should return `278157919195482660`.
+`divisibleByHugeInteger()` sollte `278157919195482660` zurückgeben.
 
 ```js
 assert.strictEqual(divisibleByHugeInteger(), 278157919195482660);

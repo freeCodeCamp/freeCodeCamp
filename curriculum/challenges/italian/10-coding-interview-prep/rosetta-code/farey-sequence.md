@@ -47,19 +47,19 @@ assert(typeof farey === 'function');
 assert(Array.isArray(farey(3)));
 ```
 
-`farey(3)` should return `['0/1','1/3','1/2','2/3','1/1']`
+`farey(3)` dovrebbe restituire `['0/1','1/3','1/2','2/3','1/1']`
 
 ```js
 assert.deepEqual(farey(3),['0/1', '1/3', '1/2', '2/3', '1/1']);
 ```
 
-`farey(4)` should return `['0/1','1/4','1/3','1/2','2/3','3/4','1/1']`
+`farey(4)` dovrebbe restituire `['0/1','1/4','1/3','1/2','2/3','3/4','1/1']`
 
 ```js
 assert.deepEqual(farey(4), ['0/1', '1/4', '1/3', '1/2', '2/3', '3/4', '1/1']);
 ```
 
-`farey(5)` should return `['0/1','1/5','1/4','1/3','2/5','1/2','3/5','2/3','3/4','4/5','1/1']`
+`farey(5)` dovrebbe restituire `['0/1','1/5','1/4','1/3','2/5','1/2','3/5','2/3','3/4','4/5','1/1']`
 
 ```js
 assert.deepEqual(farey(5), [

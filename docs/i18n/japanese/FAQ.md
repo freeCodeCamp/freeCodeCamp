@@ -1,6 +1,6 @@
 ### GitHub とオープンソースは初めてです。 どこから始めればいいですか？
 
-[「オープンソースに貢献する方法ガイド」](https://github.com/freeCodeCamp/how-to-contribute-to-open-source) をご覧ください。 これは、初心者にも優しいプロジェクトのための包括的な参照です。 オープンソースへの貢献に関するヒントを多く含んでいます。
+[「オープンソースに貢献する方法ガイド」](https://github.com/freeCodeCamp/how-to-contribute-to-open-source) をご覧ください。 これは、初心者にも優しいプロジェクトのための包括的な参照です。 And it includes a lot of open-source contribution tips.
 
 ### コードベースに貢献するために知っておくべきことは何ですか？
 

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ba
-title: فهم عدم قابلية المقطع على التغيير (Understand String Immutability)
+title: فهم عدم قابلية المقطع على التغيير (String Immutability)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
@@ -9,16 +9,16 @@ dashedName: understand-string-immutability
 
 # --description--
 
-في JavaScript، قيم `String` هي قيم <dfn>قابلة للتغيير</dfn>، مما يعني أنه لا يمكن تغييرها بمجرد إنشائها.
+في JavaScript، قيم `String` هي قيم <dfn>غير قابلة للتغيير</dfn>، (immutable) مما يعني أنه لا يمكن تغييرها بعد إنشائها.
 
-على سبيل المثال الكود التالي سيحدث خطأ لأن الحرف `B` في المقطع `Bob` لا يمكن تغييره إلى الحرف `J`:
+على سبيل المثال الكود التالي سينتج خطأ لأن الحرف `B` في المقطع النصي `Bob` لا يمكن تغييره إلى حرف `J`:
 
 ```js
 let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-لاحظ أن هذا *لا* يعني أنه لا يمكن إعادة تعيين `myStr`. الطريقة الوحيدة لتغيير `myStr` هي تعيينه بمقطع جديدة، هكذا:
+لاحظ أن هذا *لا* يعني أنه لا يمكن إعادة تعيين `myStr`. الطريقة الوحيدة لتغيير `myStr` هي تعيينه بمقطع جديد، هكذا:
 
 ```js
 let myStr = "Bob";
@@ -27,7 +27,7 @@ myStr = "Job";
 
 # --instructions--
 
-صحّ تعيين `myStr` بحيث يحتوي على قيمة المقطع `Hello World` باستخدام النهج الموضح في المثال أعلاه.
+صحّح تعيين `myStr` بحيث يحتوي على قيمة المقطع النصي `Hello World` باستخدام الطريقة الموضحة في المثال أعلاه.
 
 # --hints--
 

@@ -16,7 +16,7 @@
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
     "accepted-honesty": "Hai accettato la nostra Politica di Onestà Accademica.",
-    "agree": "Accetta",
+    "agree-honesty": "Accetto la Politica di Onestà Accademica di freeCodeCamp.",
     "save-portfolio": "Salva questo elemento del portfolio",
     "remove-portfolio": "Rimuovi questo elemento del portfolio",
     "add-portfolio": "Aggiungi un nuovo elemento nel portfolio",
@@ -159,7 +159,7 @@
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
       "privacy": "Impostazioni Privacy",
-      "personal-info": "Personal Information"
+      "personal-info": "Informazioni personali"
     },
     "danger": {
       "heading": "Zona di Pericolo",
@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} punti totali",
     "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
-    "screen-shot": "Uno screenshot di {{title}}",
     "page-number": "{{pageNumber}} di {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Benvenuti nel curriculum di freeCodeCamp.",
+    "skip-to-content": "Vai al contenuto",
     "welcome-1": "Bentornato, {{name}}.",
     "welcome-2": "Benvenuto su freeCodeCamp.org",
     "start-at-beginning": "Se sei nuovo alla programmazione, ti consigliamo di <0>iniziare dall'inizio</0>.",
@@ -274,9 +274,9 @@
     "add-subtitles": "Aiuta a migliorare o aggiungi sottotitoli",
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
-    "assignment-not-complete": "Please finish the assignments",
-    "assignments": "Assignments",
-    "question": "Question",
+    "assignment-not-complete": "Per favore completa le attività",
+    "assignments": "Attività",
+    "question": "Domande",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
@@ -302,7 +302,6 @@
       "certs": "Certificazione {{title}}"
     },
     "editor-tabs": {
-      "info": "Informazioni",
       "code": "Codice",
       "tests": "Test",
       "restart": "Inizia da capo",
@@ -528,6 +527,13 @@
     "could-not-find": "Non siamo riusciti a trovare quello che stavi cercando. Ti preghiamo di controllare e riprovare",
     "wrong-updating": "Qualcosa è andato storto nell'aggiornamento del tuo account. Ti preghiamo di controllare e riprovare",
     "updated-preferences": "Abbiamo aggiornato le tue preferenze",
+    "updated-about-me": "Abbiamo aggiornato le tue informazioni personali",
+    "updated-socials": "Abbiamo aggiornato i tuoi link social",
+    "updated-sound": "Abbiamo aggiornato le tue impostazioni audio",
+    "updated-themes": "Abbiamo aggiornato il tuo tema",
+    "keyboard-shortcut-updated": "Abbiamo aggiornato le impostazioni delle scorciatoie da tastiera",
+    "subscribe-to-quincy-updated": "Abbiamo aggiornato la tua iscrizione all'email di Quincy",
+    "portfolio-item-updated": "Abbiamo aggiornato il tuo portfolio",
     "email-invalid": "Formato email non valido",
     "email-valid": "La tua email è stata modificata con successo, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
@@ -537,6 +543,7 @@
     "username-used": "Il nome utente è già associato a questo account",
     "username-taken": "Il nome utente è già associato a un altro account",
     "username-updated": "Abbiamo aggiornato il tuo nome utente a {{username}}",
+    "privacy-updated": "Abbiamo aggiornato le impostazioni sulla privacy",
     "could-not-logout": "Non è stato possibile effettuare il logout, riprova tra un attimo",
     "email-encoded-wrong": "L'email codificata nel link è formattata in modo errato",
     "oops-not-right": "Oops, qualcosa non va bene, ti preghiamo di richiedere un nuovo link per accedere / iscriverti",
@@ -597,7 +604,8 @@
     "editor-url": "Ricordati di inviare l'URL della Live App.",
     "http-url": "Non è possibile utilizzare un URL non sicuro (http).",
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
-    "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente."
+    "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
+    "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
@@ -711,6 +719,8 @@
       "information-security-v7": "Certificazione Sicurezza dell'Informazione",
       "Machine Learning with Python": "Machine Learning con Python",
       "machine-learning-with-python-v7": "Certificazione Machine Learning con Python",
+      "College Algebra with Python": "Algebra Universitaria con Python",
+      "college-algebra-with-python-v8": "Certificazione di Algebra Universitaria con Python",
       "Legacy Front End": "Front End Legacy",
       "legacy-front-end": "Certificazione Front End",
       "Legacy Back End": "Back End Legacy",
@@ -737,7 +747,7 @@
   "forum-help": {
     "browser-info": "**Informazioni del tuo browser:**",
     "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
-    "challenge": "**Sfida:** {{challengeTitle}}",
+    "challenge": "**Sfida:**",
     "challenge-link": "**Link alla sfida:**",
     "whats-happening": "**Dicci cosa sta succedendo**",
     "describe": "Descrivi qui il tuo problema in dettaglio.",

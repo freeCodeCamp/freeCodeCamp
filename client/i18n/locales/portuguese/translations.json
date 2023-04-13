@@ -15,8 +15,8 @@
     "show-cert": "Exibir certificado",
     "claim-cert": "Solicitar certificação",
     "save-progress": "Salvar progresso",
-    "accepted-honesty": "Você aceitou nossa política de honestidade acadêmica.",
-    "agree": "Aceitar",
+    "accepted-honesty": "Você concordou com nossa política de honestidade acadêmica.",
+    "agree-honesty": "Concordo com a Política de Honestidade Acadêmica do FreeCodeCamp.",
     "save-portfolio": "Salvar esse item de portfólio",
     "remove-portfolio": "Remover este item de portfólio",
     "add-portfolio": "Adicionar um novo item de portfólio",
@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} pontos no total",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "screen-shot": "Uma captura de tela de {{title}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Boas-vindas ao currículo do freeCodeCamp.",
+    "skip-to-content": "Ir para o conteúdo",
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
@@ -302,7 +302,6 @@
       "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
-      "info": "Informações",
       "code": "Código",
       "tests": "Testes",
       "restart": "Reiniciar",
@@ -518,7 +517,7 @@
     "opens-new-window": "Abre em uma nova janela"
   },
   "flash": {
-    "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
+    "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Algo não está certo. Um relatório foi gerado e a equipe do freeCodeCamp.org foi notificada",
     "went-wrong": "Algo deu errado. Verifique e tente novamente",
@@ -528,6 +527,13 @@
     "could-not-find": "Não conseguimos encontrar o que você estava procurando. Verifique e tente novamente",
     "wrong-updating": "Algo deu errado ao atualizar sua conta. Verifique e tente novamente",
     "updated-preferences": "Atualizamos as suas preferências",
+    "updated-about-me": "Atualizamos suas informações pessoais",
+    "updated-socials": "Atualizamos seus links das redes sociais",
+    "updated-sound": "Atualizamos suas configurações de som",
+    "updated-themes": "Atualizamos seu tema",
+    "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
+    "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
+    "portfolio-item-updated": "Atualizamos seu portfólio",
     "email-invalid": "Formato de e-mail inválido",
     "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
@@ -537,6 +543,7 @@
     "username-used": "Este nome de usuário já está associado a esta conta",
     "username-taken": "Este nome de usuário já está associado a uma conta diferente",
     "username-updated": "Atualizamos seu nome de usuário para {{username}}",
+    "privacy-updated": "Atualizamos suas configurações de privacidade",
     "could-not-logout": "Não foi possível sair. Tente novamente em alguns instantes",
     "email-encoded-wrong": "O e-mail codificado no link está formatado incorretamente",
     "oops-not-right": "Ops, algo não está correto. Solicite um novo link para entrar ou se cadastrar",
@@ -597,7 +604,8 @@
     "editor-url": "Lembre-se de enviar o URL do aplicativo em produção.",
     "http-url": "Não é possível usar um URL (http) inseguro.",
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
-    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível."
+    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
@@ -711,6 +719,8 @@
       "information-security-v7": "Certificação de segurança da informação",
       "Machine Learning with Python": "Aprendizado de máquina com Python",
       "machine-learning-with-python-v7": "Certificação de aprendizagem de máquina com Python",
+      "College Algebra with Python": "Álgebra para o ensino superior com Python",
+      "college-algebra-with-python-v8": "Certificação de Álgebra do ensino superior com Python",
       "Legacy Front End": "Front-end legado",
       "legacy-front-end": "Certificação de front-end",
       "Legacy Back End": "Back-end legado",
@@ -737,7 +747,7 @@
   "forum-help": {
     "browser-info": "**Informações de seu navegador:**",
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
-    "challenge": "**Desafio:** {{challengeTitle}}",
+    "challenge": "**Desafio:**",
     "challenge-link": "**Link para o desafio:**",
     "whats-happening": "**Conte-nos o que está acontecendo:**",
     "describe": "Descreva detalhadamente o problema aqui.",

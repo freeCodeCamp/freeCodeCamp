@@ -8,9 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 se trata de la visualización y presentación de datos. Probablemente vayas a querer estilizar los elementos con base en los datos. Puedes usar una función callback en el método `style()` para cambiar el estilo a diferentes elementos.
-
-Por ejemplo, podrías querer colorear un punto de dato a azul si tiene un valor menor a 20, y a rojo en caso contrario. Puedes usar una función callback en el método `style()` e incluir la lógica condicional. La función callback usa el parámetro `d` para representar el punto de dato:
+D3 se trata de la visualización y presentación de datos. Probablemente vayas a querer estilizar los elementos con base en los datos. Por ejemplo, puede que desas colorear un punto de datos en azul si tiene un valor inferior a 20, y en rojo en caso contrario. Puedes utilizar una función callback en el método `style()` e incluir la lógica condicional. La función callback utiliza el parámetro `d` para representar el punto de datos:
 
 ```js
 selection.style("color", (d) => {
@@ -18,13 +16,13 @@ selection.style("color", (d) => {
 });
 ```
 
-El método `style()` no está limitado a configurar el `color` puede ser usado también con otras propiedades CSS.
+El método `style()` no se limita a establecer el `color` - también se puede utilizar con otras propiedades CSS.
 
 # --instructions--
 
-Agrega el método `style()` al código en el editor para establecer el `color` de los elementos `h2` de manera condicional. Escribe la función callback para que si el valor del dato es menor a 20, retorne rojo, de lo contrario, retorna verde.
+Agrega el método `style()` al código del editor para establecer el `color` de los elementos `h2` de forma condicional. Escribe la función callback de forma que si el valor de los datos es inferior a 20, devuelva rojo, en caso contrario devuelva verde.
 
-**Nota:** Puedes usar lógica if-else, o el operador ternario.
+**Nota:** Puedes utilizar la lógica if-else, o el operador ternario.
 
 # --hints--
 

@@ -14,7 +14,7 @@ import {
 
 const { forumLocation } = envData;
 
-function filesToMarkdown(challengeFiles = {}) {
+function filesToMarkdown(challengeFiles = []) {
   const moreThanOneFile = challengeFiles?.length > 1;
   return challengeFiles.reduce((fileString, challengeFile) => {
     if (!challengeFile) {

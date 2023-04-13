@@ -21,7 +21,7 @@ After confirming the above guidelines, please feel free to send an email to `pos
 
 Once you report a vulnerability, we will look into it and ensure that it is not a false positive. If we need to clarify any details, we will get back to you. You can submit separate reports for each issue you find. Please note that we will not be able to respond to any issues that we think are outside the guidelines.
 
-## Platforms & Codebases
+## Platforms and Codebases
 
 Here is a list of the platforms and codebases we are accepting reports for:
 

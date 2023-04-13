@@ -17,7 +17,7 @@
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
-  "plugins": ["no-only-tests"],
+  "plugins": ["no-only-tests", "filenames-simple"],
   "globals": {
     "Promise": true,
     "window": true,
@@ -47,7 +47,8 @@
         "varsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "filenames-simple/naming-convention": ["warn"]
   },
   "overrides": [
     {
@@ -55,7 +56,9 @@
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": [
+          "./client/tsconfig.json",
           "./tsconfig.json",
+          "./api/tsconfig.json",
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
           "./utils/tsconfig.json",
@@ -148,6 +151,12 @@
     {
       "files": ["web/**/*.tsx"],
       "extends": ["plugin:react/jsx-runtime"]
+    },
+    {
+      "files": ["**/api-server/**/*", "**/404.*"],
+      "rules": {
+        "filenames-simple/naming-convention": "off"
+      }
     }
   ]
 }

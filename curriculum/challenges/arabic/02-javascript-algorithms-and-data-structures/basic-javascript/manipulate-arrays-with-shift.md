@@ -9,9 +9,9 @@ dashedName: manipulate-arrays-with-shift
 
 # --description--
 
-يزيل `pop()` العنصر الأخير من القائمة دائما. ماذا لو كنت تريد إزالة الأول؟
+يزيل `pop()` العنصر الأخير من القائمة دائما. ولكن ماذا لو كنت تريد إزالة الأول؟
 
-هنا يأتي دور `.shift()`. يعمل تماما مثل `.pop()`، ولكنه يزيل العنصر الأول بدلا من العنصر الأخير.
+هنا يأتي دور `.shift()`. يعمل تماما مثل `.pop()`، ولكنه يزيل (أو يزيح - shift) العنصر الأول بدلا من العنصر الأخير.
 
 مثال:
 
@@ -20,11 +20,11 @@ const ourArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 ```
 
-سيحتوي `removedFromOurArray` قيمة المقطع `Stimpson`، وسيحتوي `ourArray` على `["J", ["cat"]]`.
+ستحتوي `removedFromOurArray` قيمة المقطع `Stimpson`، وستحتوي `ourArray` على `["J", ["cat"]]`.
 
 # --instructions--
 
-استخدم الوظيفة `.shift()` لإزالة العنصر الأول من `myArray` وعيّن القيمة التي "تم نقلها" إلى متغير جديد `removedFromMyArray`.
+استخدم الوظيفة `.shift()` لإزالة العنصر الأول من `myArray` وعيّن القيمة التي "أزيحت للخارج" إلى متغير جديد `removedFromMyArray`.
 
 # --hints--
 

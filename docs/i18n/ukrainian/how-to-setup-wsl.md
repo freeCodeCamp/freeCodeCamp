@@ -91,7 +91,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
 
-## Installing Node.js and npm
+## Installing Node.js and pnpm
 
 We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -111,23 +111,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
+Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
 ```console
-npm install -g npm@latest
+npm install -g pnpm
 ```
 
-## Встановити freeCodeCamp локально
+## Set up freeCodeCamp Locally
 
-Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and setup freeCodeCamp locally on your machine.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
-## Useful Links
+## Корисні посилання
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Поширені питання щодо:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

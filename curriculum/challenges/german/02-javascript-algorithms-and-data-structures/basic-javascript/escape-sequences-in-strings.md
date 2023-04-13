@@ -9,22 +9,21 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Anführungszeichen sind nicht die einzigen Zeichen, die innerhalb eines Strings <dfn>ausgelassen</dfn> werden können. Es gibt zwei Gründe für die Verwendung von Escape-Zeichen:
+Anführungszeichen sind nicht die einzigen Zeichen, die innerhalb eines Strings <dfn>ausgelassen</dfn> werden können. Escape-Sequenzen ermöglichen es dir, Zeichen zu verwenden, die du sonst nicht in einem String verwenden könntest.
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
-2.  Damit kannst du mehrere Anführungszeichen in einem String darstellen, ohne dass JavaScript fehlinterpretiert, was du meinst.
+<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>Einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>Doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\t</code></td><td>Tabulator</td></tr><tr><td><code>\r</code></td><td>Wagenrücklauf (Carriage Return)</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
 
-Das haben wir in der letzten Herausforderung gelernt.
-
-<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>Backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
-
-*Bitte beachte, dass das Backslash selbst mit einem Escape-Zeichen versehen werden muss, um als Backslash angezeigt zu werden.*
+*Note that the backslash itself must be escaped in order to display as a backslash.*
 
 # --instructions--
 
-Weise die folgenden drei Textzeilen der einzelnen Variablen `myStr` mit Hilfe von Escape-Sequenzen zu.
+Assign the following three lines of text into the single variable `myStr` using escape sequences.
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+  \SecondLine
+ThirdLine
+</pre>
 
 Um Sonderzeichen korrekt einzufügen, musst du Escape-Sequenzen verwenden. Du musst auch die Abstände so einhalten, wie sie oben aussehen, ohne Leerzeichen zwischen Escape-Sequenzen oder Wörtern.
 
@@ -38,7 +37,7 @@ Um Sonderzeichen korrekt einzufügen, musst du Escape-Sequenzen verwenden. Du mu
 assert(!/ /.test(myStr));
 ```
 
-`myStr` sollte die Strings `FirstLine`, `SecondLine` und `ThirdLine` enthalten (Groß- und Kleinschreibung beachten)
+`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
 
 ```js
 assert(
@@ -46,31 +45,31 @@ assert(
 );
 ```
 
-`FirstLine` sollte von einem Zeilenumbruchzeichen `\n` gefolgt werden.
+`FirstLine` should be followed by the newline character `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` sollte ein Tabulatorzeichen `\t` enthalten, das auf ein Zeilenumbruchzeichen folgt
+`myStr` should contain a tab character `\t` which follows a newline character
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` sollte das Backslash-Zeichen `\` vorangestellt werden.
+`SecondLine` should be preceded by the backslash character `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-Zwischen `SecondLine` und `ThirdLine` sollte ein Zeilenumbruch stehen.
+There should be a newline character between `SecondLine` and `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` sollte nur die in den Anweisungen angegebenen Zeichen enthalten.
+`myStr` sollte nur die in der Anleitung angegebenen Zeichen enthalten
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

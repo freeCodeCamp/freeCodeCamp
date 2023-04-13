@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 Die Methoden `console.log()` und `typeof` sind die beiden wichtigsten Methoden, um Zwischenwerte und Typen von Programmausgaben zu überprüfen. Jetzt ist es an der Zeit, sich mit den häufigsten Formen von Bugs zu beschäftigen. Ein Problem auf der Ebene der Syntax, mit dem schnelle Tipper mitfühlen können, ist der einfache Rechtschreibfehler.
 
-Vertauschte, fehlende oder falsch großgeschriebene Zeichen in einem Variablen- oder Funktionsnamen führen dazu, dass der Browser nach einem Objekt sucht, das nicht existiert - und sich in Form eines Referenzfehlers beschwert. Bei JavaScript-Variablen- und Funktionsnamen wird zwischen Groß- und Kleinschreibung unterschieden.
+Vertauschte, fehlende oder falsch großgeschriebene Zeichen in einem Variablen- oder Funktionsnamen führen dazu, dass der Browser nach einem Objekt sucht, das nicht existiert – und sich in Form eines Referenzfehlers beschwert. Bei JavaScript-Variablen- und Funktionsnamen wird zwischen Groß- und Kleinschreibung unterschieden.
 
 # --instructions--
 
@@ -24,7 +24,7 @@ Korrigiere die beiden Rechtschreibfehler im Code, damit die Berechnung des `netW
 assert(netWorkingCapital === 2);
 ```
 
-There should be no instances of misspelled variables in the code.
+Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ Die Variable `receivables` sollte im Code richtig deklariert und verwendet werde
 assert(code.match(/receivables/g).length == 2);
 ```
 
-There should be no instances of misspelled variables in the code.
+Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
 assert(!code.match(/payable;/g));

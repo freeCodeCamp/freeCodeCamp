@@ -65,6 +65,6 @@ const schema = Joi.object().keys({
 
 export const trendingSchemaValidator = (
   trendingObj: Record<string, string>
-) => {
+): Joi.ValidationResult => {
   return schema.validate(trendingObj);
 };
