@@ -57,3 +57,35 @@ goldenNugget();
 ```js
 // solution required
 ```
+
+public final class TruncatablePrimes implements EulerSolution {
+    public static void main(String[] args) {
+        System.out.println(new TruncatablePrimes().run());
+    }
+    
+    public String run() {
+        long sum = 0;
+        for (int count = 0, n = 10; count < 11; n++) {
+            if (isTruncatablePrime(n)) {
+                sum += n;
+                count++;
+            }
+        }
+        return Long.toString(sum);
+    }
+    
+    private static boolean isTruncatablePrime(int n) {
+        for (long i = 10; i <= n; i *= 10) {
+            if (!Library.isPrime(n % (int)i)) {
+                return false;
+            }
+        }
+        for (; n != 0; n /= 10) {
+            if (!Library.isPrime(n)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
