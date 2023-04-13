@@ -6,6 +6,9 @@ dashedName: css-foundations-exercise-e
 ---
 
 # --description--
+
+description
+
 # --hints--
 
 Test 1

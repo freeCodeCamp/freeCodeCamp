@@ -7,6 +7,8 @@ dashedName: css-foundations-exercise-d
 
 # --description--
 
+description
+
 # --hints--
 
 Test 1
