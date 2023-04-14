@@ -341,7 +341,7 @@
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Learn Data Structures By Building A Shopping Cart",
+        "title": "通过创建购物车学习数据结构",
         "intro": ["", ""]
       }
     }
@@ -719,7 +719,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "Python 与机器学习",
+    "title": "Python 和机器学习",
     "intro": [
       "机器学习有许多实际应用程序，你可以在项目中或工作中使用它们。",
       "在这个认证中，你将使用 TensorFlow 框架构建多个神经网络，同时，你将探索更先进的技术，例如自然语言处理和强化学习。",
@@ -750,135 +750,131 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Python 和大学数学",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "本课程设计为一个学期的大学课程。它包含教学视频、用于交互式跟进的 Google Colaboratory 笔记本、任务和具有挑战性的项目。",
+      "当你按顺序学习本课程的每个部分时，你将全面了解代数以及如何编写 Python 代码来解决代数问题。",
+      "在整个课程中，你还将创建自己的代数 Colab 笔记本，你将能够用作自定义计算器。 这门课程（以及你在这里写的代码）将为你理解深度数学和数据科学打下基础。"
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "学习比率和比例",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "你的旅程从学习如何创建一个可以运行 Python 代码的 Colab 笔记本开始，然后你使用笔记本和视频学习通过 Python 解决比率和比例问题。"
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "学习如何求解 X",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "这个单元将着重运用书面代数和 Python 代码求解一个未知数（通常被称为 “x”）。"
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
-        "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
-        ]
+        "title": "学习分数和小数",
+        "intro": ["这个学习单元将侧重于将小数转换为分数和百分比。"]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "学习函数和图像",
+        "intro": ["这个单元将会教你数学函数。"]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
-        "intro": [
-          "This unit will show you how to develop linear equations from two points."
-        ]
+        "title": "学习线性函数",
+        "intro": ["这个单元将向你展示如何从两个点来构建线性方程。"]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "学习公因数和平方根",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "在这个单元中，你将学习如何找到公因数和分解公因数。这将有助于简化分数和简化平方根式。"
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "多功能计算器",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建一个多功能计算器。"
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "学习如何绘制方程组对应的图像",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "这个单位将侧重于绘制同一坐标平面上的两个方程式的图像，以便你可以看到线条相交的地方。"
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "学习如何解方程组",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "在这个单元中，你将学习如何求解一个由两个方程式（两个变量）组成的方程组，而无需图像。 你将会看到如何用 Python 分解因式和求解某个变量。 学完这个单元，你将能用一个代码块来求解方程组并绘制图像。"
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "学习线性方程组的应用",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "在这个单元中，你将看到如何使用你目前学到的代数来解决真实世界中的问题。"
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "学习二次方程",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "这个单元将在线性方程的基础上，结合指数和抛物线图像。 你将学习如何在抛物线中找到关键点，以及如何解二次方程。"
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "图形计算器",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建一个图形计算器。"
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "学习父图像和多项式",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "这个单元将显示许多不同类型的“父”图像，即构成更复杂图像的基本模式。多项式是带有“多件事”的数学表达式，是由基本模式构建的更复杂的方程式。你会看到这些图像是什么样的、如何修改它们，以及如何使用 Python 代码来做这一切。"
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "三个数学游戏",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建三个数学游戏。"
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "学习大学代数的商业应用",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "这个单元将向你展示如何应用你的解答和绘图技能来求解成本、收入和利润。你将从两个点写代码来开发一个需求函数。你将看到价格如何影响利润图，以及所有这些方程如何相互关联。"
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "学习单利和复利",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "这个单位将向你展示如何计算利息、贷款支付和投资的估值。你将看到数学公式，并将其变成代码。由于这些公式往往很复杂，因此你只需要修改一部分值的代码。"
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "学习指数和对数",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "这个单元将向你展示指数和对数是反函数，以及你如何在各种应用程序中使用这些函数。"
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "金融计算器",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "这是你获得认证必做的项目之一。",
+          "对于这个项目，你将创建一个财务计算器。"
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Python 和大学代数：总结",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "这将是本课程的最后一个单元。让我们看看如何能够将你的数学和 Python 知识与外部数据连接起来。"
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "数据图表浏览器",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "这是你获得认证必做的项目之一。",
+          "对于这个项目，你将创建一个数据图表浏览器。"
         ]
       }
     }
@@ -889,7 +885,7 @@
       "如果你正在寻找免费的编程训练来帮你为下一个工作面试做准备，我们已经帮你准备好了。",
       "这一部分包含了大量编程挑战，可以测试你的算法、数据结构和数学知识。这里还有一些你可以在家慢慢做的项目，用于提升你的技术，或者丰富你的作品集。"
     ],
-    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
+    "note": "欧拉项目已经转移到单独的课程。返回课程选择界面以查看我们提供的课程列表。",
     "blocks": {
       "algorithms": {
         "title": "算法",
@@ -941,40 +937,40 @@
     }
   },
   "project-euler": {
-    "title": "Project Euler",
+    "title": "欧拉计划",
     "intro": [
-      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+      "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
+      "这些问题的难度各不相同，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
     ],
     "blocks": {
       "project-euler-problems-1-to-100": {
-        "title": "Project Euler Problems 1 to 100",
+        "title": "欧拉计划问题 1 - 100",
         "intro": [
-          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+          "在这第一组挑战中，你将使用斐波那契数列、素数定理和离散数学这样的数学概念编写算法来解决这些问题。"
         ]
       },
       "project-euler-problems-101-to-200": {
-        "title": "Project Euler Problems 101 to 200",
+        "title": "欧拉计划问题 101 - 200",
         "intro": [
-          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+          "在这一系列的挑战中，你将在课程第一部分的基础上，结合更高级的概念，如矢量计算方法、杨辉三角（帕斯卡三角）和 RSA 算法来有效地解决这些问题。"
         ]
       },
       "project-euler-problems-201-to-300": {
-        "title": "Project Euler Problems 201 to 300",
+        "title": "欧拉计划问题 201 - 300",
         "intro": [
-          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+          "在这组挑战中，你将继续利用你之前学到的技能，并使用二项式定理、汉明和考拉兹序列等概念来进一步提升你的数学和解决问题的技能。"
         ]
       },
       "project-euler-problems-301-to-400": {
-        "title": "Project Euler Problems 301 to 400",
+        "title": "欧拉计划问题 301 - 400",
         "intro": [
-          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+          "在这里，你将继续发挥你的数学和算法技能，使用组合博弈论、位运算和 Golomb 的自描述序列等概念来开发这些问题的有效解决方案。"
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "欧拉计划问题 401 - 480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "在这最后一组挑战中，你将需要使用你目前所学到的一切，并使用像元因数、卡普雷卡尔算法等等高级概念来解决这些复杂问题。"
         ]
       }
     }
