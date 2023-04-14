@@ -22,15 +22,10 @@
   border-bottom: 1px solid var(--quaternary-background);
 }
 
-.monaco-editor-tabs [aria-expanded='true'],
 .action-row [aria-expanded='true'] {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
-.light-palette .monaco-editor-tabs [aria-expanded='true'] {
+  border-color: var(--primary-color);
   background-color: var(--primary-color);
+  color: var(--secondary-background);
 }
 
 .tabs-row {
@@ -63,7 +58,7 @@
   width: 2px;
   height: 100%;
   margin-inline-start: -2px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 /* Firefox doesn't have :has() yet but this ruleset is not essential */
@@ -83,7 +78,7 @@
   color: var(--secondary-background);
 }
 
-.dark-palette .monaco-editor-tabs button:not([aria-expanded='true']):hover {
+.monaco-editor-tabs button:not([aria-expanded='true']):hover {
   background-color: var(--primary-background);
 }
 
