@@ -3,6 +3,7 @@ import React, { ChangeEvent, useState, useRef } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
+import { getScrollbarWidth } from '../../utils/scrollbar-width';
 import './scrollbar-width.css';
 
 const ticks = [5, 10, 15, 20, 25];
@@ -11,11 +12,6 @@ export default function ScrollbarWidthSettings(): JSX.Element {
   const { t } = useTranslation();
   const [scrollbarWidth, setScrollbarWidth] = useState(getScrollbarWidth());
   const rangeRef = useRef<HTMLInputElement>(null);
-
-  function getScrollbarWidth() {
-    const storedWidth = parseInt(store.get('monacoScrollbarWidth'));
-    return storedWidth >= 5 || storedWidth <= 25 ? storedWidth : 5;
-  }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);

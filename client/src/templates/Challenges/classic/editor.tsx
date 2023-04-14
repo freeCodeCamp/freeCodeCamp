@@ -61,6 +61,7 @@ import {
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
+import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -303,11 +304,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     suggestOnTriggerCharacters: false,
     lineNumbersMinChars: 2
   };
-
-  function getScrollbarWidth() {
-    const storedWidth = parseInt(store.get('monacoScrollbarWidth'));
-    return storedWidth >= 5 || storedWidth <= 25 ? storedWidth : 5;
-  }
 
   const getEditableRegionFromRedux = () => {
     const { challengeFiles, fileKey } = props;
