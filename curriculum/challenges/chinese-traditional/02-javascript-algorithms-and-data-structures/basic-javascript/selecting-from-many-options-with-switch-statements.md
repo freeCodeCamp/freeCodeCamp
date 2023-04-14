@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
+如果你需要將一個值與許多選項匹配，你可以使用 <dfn>switch</dfn> 語句。 `switch` 語句將值與定義各種可能的值的 <dfn>case</dfn> 語句比較。 任何有效的 JavaScript 語句都可以在 <dfn>case</dfn> 塊中執行，並且將從第一個匹配的 `case` 的值開始運行，直到遇到 `break`。
 
 這是 `switch` 語句的示例：
 
