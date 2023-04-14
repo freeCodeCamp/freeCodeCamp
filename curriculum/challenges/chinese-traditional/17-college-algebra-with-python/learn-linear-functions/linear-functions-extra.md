@@ -1,6 +1,6 @@
 ---
 id: 6331d283b51aeedd1a2bd64f
-title: "Linear Functions: Extra"
+title: "線性函數：補充"
 challengeType: 15
 videoId: Emeex5gi5uA
 dashedName: linear-functions-extra
@@ -8,15 +8,15 @@ dashedName: linear-functions-extra
 
 # --description--
 
-This video will give you a deeper look into developing equations from word problems (so then you can write the code to solve or graph those equations). The video will also begin to look at data points as (x,y) coordinates. With this, you will begin to see the connection between Algebra and data science.
+這個視頻將讓你更深入地瞭解如何從文字問題寫出方程（然後你可以編寫代碼來求解這些方程或繪製方程的圖像）。 視頻也將開始把數據點看成 (x,y) 座標。 通過這些，你將開始看到代數和數據科學之間的聯繫。
 
-Here is the <a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziNeG2IJhbXm88-XK?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+這是<a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziNeG2IJhbXm88-XK?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>。
 
 # --question--
 
 ## --text--
 
-Which of the following would you not use when displaying a graph?
+在顯示圖像時，你不會使用以下哪種方法？
 
 ## --answers--
 

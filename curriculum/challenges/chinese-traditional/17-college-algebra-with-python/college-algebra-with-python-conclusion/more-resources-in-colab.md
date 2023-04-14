@@ -1,6 +1,6 @@
 ---
 id: 6363d2959078df117ce4c408
-title: "More Resources in Colab"
+title: "Colab 中的更多資源"
 challengeType: 15
 videoId: HNFrRHqpck4
 dashedName: more-resources-in-colab
@@ -8,29 +8,29 @@ dashedName: more-resources-in-colab
 
 # --description--
 
-One more thing... This brief video will show you some of the resources available to you in Google Colab notebooks.
+還有一件事...... 這個簡短的視頻將介紹 Google Colab 筆記本中的一些可用的資源。
 
 # --question--
 
 ## --text--
 
-Which code snippets are available in the Google Colaboratory?
+Google Colaboratory 中有哪些代碼片段可用？
 
 ## --answers--
 
-Camera capture
+相機拍攝
 
 ---
 
-Adding form fields
+添加表單字段
 
 ---
 
-Importing data from Google Sheets
+從 Google Sheets 導入數據
 
 ---
 
-All of the above
+以上全部內容
 
 ## --video-solution--
 
