@@ -28,6 +28,21 @@
   color: var(--secondary-background);
 }
 
+.action-row button:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-background);
+}
+
+.action-row button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+.action-row button:focus-visible {
+  position: relative;
+  z-index: 20;
+}
+
 .tabs-row {
   display: flex;
   flex-direction: row;
@@ -68,25 +83,6 @@
   background-color: var(--secondary-background);
 }
 
-.monaco-editor-tabs button:hover {
-  color: var(--secondary-color);
-  background-color: var(--secondary-background);
-}
-
-.monaco-editor-tabs button[aria-expanded='true']:hover {
-  background-color: var(--quaternary-color);
-  color: var(--secondary-background);
-}
-
-.monaco-editor-tabs button:not([aria-expanded='true']):hover {
-  background-color: var(--primary-background);
-}
-
-.monaco-editor-tabs button:focus-visible {
-  position: relative;
-  z-index: 20;
-}
-
 .panel-display-tabs button:first-child,
 .tabs-row > button:first-child {
   margin: 0 10px 0 0;
@@ -98,21 +94,6 @@
 
 .panel-display-tabs button:nth-last-child(2) {
   border-inline-end-width: 1px;
-}
-
-.panel-display-tabs button:focus-visible {
-  position: relative;
-  z-index: 10;
-}
-
-.panel-display-tabs button:hover {
-  color: var(--secondary-color);
-  background-color: var(--secondary-background);
-}
-
-.panel-display-tabs button[aria-expanded='true']:hover {
-  background-color: var(--quaternary-color);
-  color: var(--secondary-background);
 }
 
 .restart-step-tab {
