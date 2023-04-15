@@ -624,7 +624,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // make sure the overlayWidget has resized before using it to set the height
 
-    domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the content widget (i.e. trigger it via onDomNodeTop). If
@@ -694,7 +694,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor
   ) => {
     // make sure the overlayWidget has resized before using it to set the height
-    outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -754,7 +754,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.userSelect = 'text';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
 
     domNode.style.top = getDescriptionZoneTop();
     dataRef.current.descriptionNode = domNode;
