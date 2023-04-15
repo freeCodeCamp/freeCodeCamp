@@ -183,8 +183,8 @@ importers:
         specifier: 4.12.0
         version: 4.12.0(prisma@4.12.0)
       '@sentry/node':
-        specifier: 7.47.0
-        version: 7.47.0
+        specifier: 7.48.0
+        version: 7.48.0
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.15.0)
@@ -7639,13 +7639,13 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: false
 
-  /@sentry-internal/tracing@7.47.0:
-    resolution: {integrity: sha512-udpHnCzF8DQsWf0gQwd0XFGp6Y8MOiwnl8vGt2ohqZGS3m1+IxoRLXsSkD8qmvN6KKDnwbaAvYnK0z0L+AW95g==}
+  /@sentry-internal/tracing@7.48.0:
+    resolution: {integrity: sha512-MFAPDTrvCtfSm0/Zbmx7HA0Q5uCfRadOUpN8Y8rP1ndz+329h2kA3mZRCuC+3/aXL11zs2CHUhcAkGjwH2vogg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.47.0
-      '@sentry/types': 7.47.0
-      '@sentry/utils': 7.47.0
+      '@sentry/core': 7.48.0
+      '@sentry/types': 7.48.0
+      '@sentry/utils': 7.48.0
       tslib: 1.14.1
     dev: false
 
@@ -7696,12 +7696,12 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@sentry/core@7.47.0:
-    resolution: {integrity: sha512-EFhZhKdMu7wKmWYZwbgTi8FNZ7Fq+HdlXiZWNz51Bqe3pHmfAkdHtAEs0Buo0v623MKA0CA4EjXIazGUM34XTg==}
+  /@sentry/core@7.48.0:
+    resolution: {integrity: sha512-8FYuJTMpyuxRZvlen3gQ3rpOtVInSDmSyXqWEhCLuG/w34AtWoTiW7G516rsAAh6Hy1TP91GooMWbonP3XQNTQ==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.47.0
-      '@sentry/utils': 7.47.0
+      '@sentry/types': 7.48.0
+      '@sentry/utils': 7.48.0
       tslib: 1.14.1
     dev: false
 
@@ -7755,14 +7755,14 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/node@7.47.0:
-    resolution: {integrity: sha512-LTg2r5EV9yh4GLYDF+ViSltR9LLj/pcvk8YhANJcMO3Fp//xh8njcdU0FC2yNthUREawYDzAsVzLyCYJfV0H1A==}
+  /@sentry/node@7.48.0:
+    resolution: {integrity: sha512-DJyyZaVhv/pUzJPof7es6zYDHeWbNqE0T3tQfLCkShdyfR+Ew8In8W/x2s7S8vq0cfRq0rqv1E6B2/HpVdYO7g==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.47.0
-      '@sentry/core': 7.47.0
-      '@sentry/types': 7.47.0
-      '@sentry/utils': 7.47.0
+      '@sentry-internal/tracing': 7.48.0
+      '@sentry/core': 7.48.0
+      '@sentry/types': 7.48.0
+      '@sentry/utils': 7.48.0
       cookie: 0.4.2
       https-proxy-agent: 5.0.1
       lru_map: 0.3.3
@@ -7817,8 +7817,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/types@7.47.0:
-    resolution: {integrity: sha512-GxXocplN0j1+uczovHrfkykl9wvkamDtWxlPUQgyGlbLGZn+UH1Y79D4D58COaFWGEZdSNKr62gZAjfEYu9nQA==}
+  /@sentry/types@7.48.0:
+    resolution: {integrity: sha512-kkAszZwQ5/v4n7Yyw/DPNRWx7h724mVNRGZIJa9ggUMvTgMe7UKCZZ5wfQmYiKVlGbwd9pxXAcP8Oq15EbByFQ==}
     engines: {node: '>=8'}
     dev: false
 
@@ -7838,11 +7838,11 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@sentry/utils@7.47.0:
-    resolution: {integrity: sha512-A89SaOLp6XeZfByeYo2C8Ecye/YAtk/gENuyOUhQEdMulI6mZdjqtHAp7pTMVgkBc/YNARVuoa+kR/IdRrTPkQ==}
+  /@sentry/utils@7.48.0:
+    resolution: {integrity: sha512-d977sghkFVMfld0LrEyyY2gYrfayLPdDEpUDT+hg5y79r7zZDCFyHtdB86699E5K89MwDZahW7Erk+a1nk4x5w==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.47.0
+      '@sentry/types': 7.48.0
       tslib: 1.14.1
     dev: false
 
