@@ -55,7 +55,7 @@
     "@redux-saga/core": "^1.2.2",
     "@sentry/gatsby": "6.19.7",
     "@stripe/react-stripe-js": "1.16.5",
-    "@stripe/stripe-js": "1.52.0",
+    "@stripe/stripe-js": "1.52.1",
     "@testing-library/jest-dom": "5.16.5",
     "algoliasearch": "4.17.0",
     "assert": "2.0.0",
