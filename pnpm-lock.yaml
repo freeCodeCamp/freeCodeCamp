@@ -480,10 +480,10 @@ importers:
         version: 6.19.7(gatsby@3.15.0)(react@16.14.0)
       '@stripe/react-stripe-js':
         specifier: 1.16.5
-        version: 1.16.5(@stripe/stripe-js@1.52.0)(react-dom@16.14.0)(react@16.14.0)
+        version: 1.16.5(@stripe/stripe-js@1.52.1)(react-dom@16.14.0)(react@16.14.0)
       '@stripe/stripe-js':
-        specifier: 1.52.0
-        version: 1.52.0
+        specifier: 1.52.1
+        version: 1.52.1
       '@testing-library/jest-dom':
         specifier: 5.16.5
         version: 5.16.5
@@ -9330,21 +9330,21 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.52.0)(react-dom@16.14.0)(react@16.14.0):
+  /@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.52.1)(react-dom@16.14.0)(react@16.14.0):
     resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
     peerDependencies:
       '@stripe/stripe-js': ^1.44.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@stripe/stripe-js': 1.52.0
+      '@stripe/stripe-js': 1.52.1
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
     dev: false
 
-  /@stripe/stripe-js@1.52.0:
-    resolution: {integrity: sha512-Ja2VlaTf3kM5tN4Y0sC8T3ibZAnfGUU/QzMAlk/G+Adz2fF1ycTabtSkdSuVP4/adXox8NkPPV4Xndx/EP4fMg==}
+  /@stripe/stripe-js@1.52.1:
+    resolution: {integrity: sha512-fza40OPSpGQlFxc5TZWiYC/6Lk89Sep1fLuv9ss33YS6lCAF8UZbfA1E6W+lwO4c7WRKZIZumHIEbPJfP/O9uw==}
     dev: false
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
