@@ -761,13 +761,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
+  // Take the current scrollbar width into account
+  function getEditorContentWidth(editor: editor.IStandaloneCodeEditor) {
+    return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
+  }
+
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.setAttribute('id', 'editor-lower-jaw');
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     outputNode.style.top = getOutputZoneTop();
     dataRef.current.outputNode = outputNode;
     return outputNode;
@@ -975,7 +980,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const getDomNode = () => domNode;
     const getPosition = () => {
       if (getTop) {
-        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+        domNode.style.width = `${getEditorContentWidth(editor)}px`;
         domNode.style.top = getTop();
       }
       // must return null, so that Monaco knows the widget will position
