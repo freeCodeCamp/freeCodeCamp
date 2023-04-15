@@ -642,7 +642,7 @@ importers:
         version: 6.39.1(algoliasearch@4.17.0)(react-dom@16.14.0)(react@16.14.0)
       react-monaco-editor:
         specifier: 0.40.0
-        version: 0.40.0(@types/react@16.14.38)(react@16.14.0)
+        version: 0.40.0(@types/react@16.14.40)(react@16.14.0)
       react-redux:
         specifier: 5.1.2
         version: 5.1.2(react@16.14.0)(redux@4.2.1)
@@ -765,8 +765,8 @@ importers:
         specifier: 1.3.11
         version: 1.3.11
       '@types/react':
-        specifier: 16.14.38
-        version: 16.14.38
+        specifier: 16.14.40
+        version: 16.14.40
       '@types/react-dom':
         specifier: 16.9.18
         version: 16.9.18
@@ -1033,8 +1033,8 @@ importers:
         specifier: 5.60.7
         version: 5.60.7
       '@types/react':
-        specifier: 16.14.38
-        version: 16.14.38
+        specifier: 16.14.40
+        version: 16.14.40
       '@types/react-dom':
         specifier: ^16.9.17
         version: 16.9.17
@@ -1296,8 +1296,8 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
       '@types/react':
-        specifier: 16.14.38
-        version: 16.14.38
+        specifier: 16.14.40
+        version: 16.14.40
       '@types/react-dom':
         specifier: ^16.9.17
         version: 16.9.17
@@ -9716,7 +9716,7 @@ packages:
     resolution: {integrity: sha512-xryQlOEIe1TduDWAOphR0ihfebKFSWOXpIsk+70JskCfRfW+xALdnJ0r1ZOTo85F9Qsjk6vtlU7edTYHbls9tA==}
     dependencies:
       '@types/cheerio': 0.22.31
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/eslint-scope@3.7.4:
@@ -9806,7 +9806,7 @@ packages:
   /@types/hoist-non-react-statics@3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -9896,7 +9896,7 @@ packages:
   /@types/loadable__component@5.13.4:
     resolution: {integrity: sha512-YhoCCxyuvP2XeZNbHbi8Wb9EMaUJuA2VGHxJffcQYrJKIKSkymJrhbzsf9y4zpTmr5pExAAEh5hbF628PAZ8Dg==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/lodash-es@4.17.6:
@@ -10020,18 +10020,18 @@ packages:
   /@types/reach__router@1.3.11:
     resolution: {integrity: sha512-j23ChnIEiW8aAP4KT8OVyTXOFr+Ri65BDnwzmfHFO9WHypXYevHFjeil1Cj7YH3emfCE924BwAmgW4hOv7Wg3g==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
 
   /@types/react-dom@16.9.17:
     resolution: {integrity: sha512-qSRyxEsrm5btPXnowDOs5jSkgT8ldAA0j6Qp+otHUh+xHzy3sXmgNfyhucZjAjkgpdAUw9rJe0QRtX/l+yaS4g==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-dom@16.9.18:
     resolution: {integrity: sha512-lmNARUX3+rNF/nmoAFqasG0jAA7q6MeGZK/fdeLwY3kAA4NPgHHrG5bNQe2B5xmD4B+x6Z6h0rEJQ7MEEgQxsw==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
 
   /@types/react-gtm-module@2.0.1:
     resolution: {integrity: sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg==}
@@ -10040,13 +10040,13 @@ packages:
   /@types/react-helmet@6.1.6:
     resolution: {integrity: sha512-ZKcoOdW/Tg+kiUbkFCBtvDw0k3nD4HJ/h/B9yWxN4uDO8OkRksWTO+EL+z/Qu3aHTeTll3Ro0Cc/8UhwBCMG5A==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-instantsearch-core@6.26.3:
     resolution: {integrity: sha512-dBq/K1NQFBgLmCdiLYaC15KjXdjZk8UTQBhumSg+fAHgpW3ai5fu5BbzAKzSCkqYwbgqvhCQ1EZ9PLvPvOfqwQ==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
       algoliasearch: 4.17.0
       algoliasearch-helper: 3.11.3(algoliasearch@4.17.0)
     dev: true
@@ -10054,7 +10054,7 @@ packages:
   /@types/react-instantsearch-dom@6.12.3:
     resolution: {integrity: sha512-HAQG74v7OzsUhdjNermd0A8c7LWRLsrMCsFCY6+7HEXK1hikeCs/Hmy6xjFhZVfFEWvpvX78vxJELafoAnuv8Q==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
       '@types/react-instantsearch-core': 6.26.3
     dev: true
 
@@ -10062,7 +10062,7 @@ packages:
     resolution: {integrity: sha512-bAGh4e+w5D8dajd6InASVIyCo4pZLJ66oLb80F9OBLO1gKESbZcRCJpTT6uLXX+HAB57zw1WTdwJdAsewuTweg==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
       hoist-non-react-statics: 3.3.2
       redux: 4.2.1
     dev: true
@@ -10070,35 +10070,35 @@ packages:
   /@types/react-responsive@8.0.5:
     resolution: {integrity: sha512-k3gQJgI87oP5IrVZe//3LKJFnAeFaqqWmmtl5eoYL2H3HqFcIhUaE30kRK1CsW3DHdojZxcVj4ZNc2ClsEu2PA==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-scrollable-anchor@0.6.1:
     resolution: {integrity: sha512-ExstDPDHD0oC8WxHErnZhtdaCmGncBxRu24yRk8BNym7tCoR9BEpDACVp2SWPMttIAfUTv1/5yk3hsIL5R5VCQ==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-spinkit@3.0.7:
     resolution: {integrity: sha512-y/Jnzx/WCJ8QpkL4hJ0umfhApV9tEmuiN4XKentBCBhAkxERD7hNACJaH7VUzCyhE7LkVYTq8l1vmlK1o+PhuA==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-test-renderer@16.9.5:
     resolution: {integrity: sha512-C4cN7C2uSSGOYelp2XfdtJb5TsCP+QiZ+0Bm4U3ZfUswN8oN9O/l86XO/OvBSFCmWY7w75fzsQvZ50eGkFN34A==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
   /@types/react-transition-group@4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
     dev: true
 
-  /@types/react@16.14.38:
-    resolution: {integrity: sha512-PbEjuhwkdH6IB5Sak6BFAqpVMHY/wJxa0EG3bKkr0vWA2hSDIq3iEMhHyqjXrDFMqRzkiQkdyNXOnoELrh/9aQ==}
+  /@types/react@16.14.40:
+    resolution: {integrity: sha512-elQj2VQHDuJ5xuEcn5Wxh/YQFNbEuPJFRKSdyG866awDm5dmtoqsMmuAJWb/l/qd2kDkZMfOTKygVfMIdBBPKg==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -27609,13 +27609,13 @@ packages:
       resize-observer-polyfill: 1.5.1
     dev: false
 
-  /react-monaco-editor@0.40.0(@types/react@16.14.38)(react@16.14.0):
+  /react-monaco-editor@0.40.0(@types/react@16.14.40)(react@16.14.0):
     resolution: {integrity: sha512-IG322vOwKc/yjhn91xbqHONyAVxjv5L0YOUBU+hDwfswlglm/sGsqGhK9n1lD5d3l3kegMO/ZeZaMHC2LGgNRw==}
     peerDependencies:
       '@types/react': ^16.x
       react: ^16.x
     dependencies:
-      '@types/react': 16.14.38
+      '@types/react': 16.14.40
       monaco-editor: 0.28.1
       prop-types: 15.8.1
       react: 16.14.0
