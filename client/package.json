@@ -138,8 +138,8 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/types": "7.21.4",
-    "@codesee/babel-plugin-instrument": "0.551.0",
-    "@codesee/tracker": "0.551.0",
+    "@codesee/babel-plugin-instrument": "0.558.0",
+    "@codesee/tracker": "0.558.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@total-typescript/ts-reset": "^0.4.0",
