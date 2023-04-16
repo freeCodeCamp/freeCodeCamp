@@ -1,6 +1,6 @@
 ---
 id: 6331d27db51aeedd1a2bd64e
-title: "Graphing Systems"
+title: "繪製方程組的圖像"
 challengeType: 15
 videoId: FxSIFR4zsrE
 dashedName: graphing-systems
@@ -8,35 +8,35 @@ dashedName: graphing-systems
 
 # --description--
 
-This first video will show you how to graph systems of equations with with written math, then code.
+這第一個視頻將向你展示如何用書面數學繪製方程組的圖像，然後是代碼。
 
-Here is the <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+這是<a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>。
 
 # --question--
 
-## --assignment--
+## --任務--
 
-Add code from the video to the algebra notebook you are building, and test it with different functions.
+將視頻中的代碼添加到你正在創建的代數筆記本中，並使用不同的函數進行測試。
 
 ## --text--
 
-The numpy `linspace()` function takes three arguments to create an array. Which of the following arguments does it not take?
+numpy `linspace()` 函數需要三個參數來創建一個數組。 它不採用以下哪個參數？
 
 ## --answers--
 
-Minimum value
+最小值
 
 ---
 
-Maximum value
+最大值
 
 ---
 
-Number of items in the array
+數組中的項目數量
 
 ---
 
-Formula to generate each item
+生成每個項目的公式：
 
 ## --video-solution--
 
