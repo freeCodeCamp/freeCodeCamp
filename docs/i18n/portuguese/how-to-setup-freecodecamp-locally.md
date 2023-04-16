@@ -187,7 +187,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 ### Configurar dependências
 
-#### Etapa 1: Configure o arquivo de variável de ambiente
+#### Passo 1: Configure o arquivo de variável de ambiente
 
 As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acessado dinamicamente durante a etapa de instalação.
 
@@ -216,7 +216,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 
 > [!TIP] Lembre-se: se quiser usar serviços como Auth0 ou Algolia, você terá que adquirir suas próprias chaves da API para estes serviços e editar as entradas no arquivo `.env`.
 
-#### Etapa 2: Instalar as dependências
+#### Passo 2: Instale as dependências
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
@@ -224,7 +224,7 @@ Esta etapa vai instalar as dependências necessárias para a execução do aplic
 pnpm install
 ```
 
-#### Etapa 3: Iniciar o MongoDB e criar o banco de dados
+#### Passo 3: Inicie o MongoDB e crie o banco de dados
 
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
@@ -262,7 +262,7 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-#### Etapa 4: Iniciar o aplicativo client do freeCodeCamp e o servidor de API
+#### Passo 4: Inicie o aplicativo de client do freeCodeCamp e o servidor de API
 
 Agora você pode iniciar o servidor de API e os aplicativos do client.
 
@@ -272,23 +272,23 @@ pnpm run develop
 
 Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
-Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
+Once ready, open a web browser and visit <http://localhost:8000>. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
-A API serve os endpoints em `http://localhost:3000`. O aplicativo Gatsby atende o aplicativo cliente em `http://localhost:8000`
+The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
 
 Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
 
 > [!WARNING] Limpar seus cookies ou executar `pnpm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
-Se você tiver problemas durante a instalação, confira a [seção de solução de problemas](troubleshooting-development-issues.md)
+If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
 
 ## Referência de comandos rápidos
 
 Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 
-| comando            | descrição                                                                    |
-| ------------------ | ---------------------------------------------------------------------------- |
-| `pnpm install`     | Instala/reinstala todas as dependências e inicializa os diferentes serviços. |
-| `pnpm run seed`    | Cria usuários de testes autorizados e os insere no mongodb.                  |
-| `pnpm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                 |
-| `pnpm run clean`   | Desinstala todas as dependências e limpa os caches.                          |
+| comando            | descrição                                                                      |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
+| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
+| `pnpm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                   |
+| `pnpm run clean`   | Desinstala todas as dependências e limpa os caches.                            |

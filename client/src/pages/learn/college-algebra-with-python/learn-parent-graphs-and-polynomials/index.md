@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Parent Graphs and Polynomials
-block: Learn Parent Graphs and Polynomials
-superBlock: College Algebra with Python
+block: learn-parent-graphs-and-polynomials
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Parent Graphs and Polynomials

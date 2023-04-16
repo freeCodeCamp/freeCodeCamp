@@ -10,7 +10,6 @@ import {
   tap,
   mergeMap
 } from 'rxjs/operators';
-import { isChallenge } from '../../../utils/path-parsers';
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
@@ -184,16 +183,19 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = () => {
-        return findPathToNavigateTo(nextChallengePath, superBlock);
-      };
+      const isNextChallengeInSameSuperBlock =
+        nextChallengePath.includes(superBlock);
+
+      const pathToNavigateTo = isNextChallengeInSameSuperBlock
+        ? nextChallengePath
+        : `/learn/${superBlock}/#${superBlock}-projects`;
 
       const canAllowDonationRequest = (state, action) =>
         isBlockNewlyCompletedSelector(state) &&
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(isChallenge(pathToNavigateTo())))),
+        concat(of(setIsAdvancing(isNextChallengeInSameSuperBlock))),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))
@@ -201,19 +203,11 @@ export default function completionEpic(action$, state$) {
         ),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
-            navigate(pathToNavigateTo());
+            navigate(pathToNavigateTo);
           }
         }),
         concat(of(closeModal('completion')))
       );
     })
   );
-}
-
-function findPathToNavigateTo(nextChallengePath, superBlock) {
-  if (nextChallengePath.includes(superBlock)) {
-    return nextChallengePath;
-  } else {
-    return `/learn/${superBlock}/#${superBlock}-projects`;
-  }
 }

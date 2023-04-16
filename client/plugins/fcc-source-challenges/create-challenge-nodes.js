@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const { blockNameify } = require('../../../utils/block-nameify');
 
 const createdIds = new Set();
 
@@ -44,7 +43,7 @@ function createChallengeNode(
 
     challenge.fields = {
       slug,
-      blockName: blockNameify(block),
+      blockName: block,
       tests
     };
   }

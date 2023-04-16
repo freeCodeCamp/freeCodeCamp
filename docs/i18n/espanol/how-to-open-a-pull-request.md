@@ -17,7 +17,7 @@ Some examples of this are:
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## Prepara un buen título para tu PR
+## Prepare a Good PR Title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
@@ -93,7 +93,7 @@ Some examples of good PR titles would be:
 
    - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 
-## Comentarios sobre pull requests
+## Feedback on Pull Requests
 
 > :tada: Enhorabuena por hacer una PR y muchas gracias por tomarse el tiempo para contribuir.
 
@@ -103,13 +103,13 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 > [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 
-## Conflicto en un pull request
+## Conflicts on a Pull Request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
 More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
-### Para arreglos de errores y características habituales
+### For Usual Bug Fixes and Features
 
 When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
@@ -138,7 +138,7 @@ When you are working on regular bugs and features on our development branch `mai
    git push --force origin <pr-branch>
    ```
 
-### Para los próximos planes de estudios y características
+### For Upcoming Curriculum and Features
 
 When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 
