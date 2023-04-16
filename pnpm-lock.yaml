@@ -13,6 +13,9 @@ importers:
       pm2:
         specifier: ^5.2.2
         version: 5.2.2
+      stripe:
+        specifier: ^12.1.1
+        version: 12.1.1
     devDependencies:
       '@babel/eslint-parser':
         specifier: 7.21.3
@@ -9298,7 +9301,7 @@ packages:
       '@storybook/client-logger': 6.5.16
       core-js: 3.29.0
       memoizerific: 1.11.3
-      qs: 6.11.0
+      qs: 6.11.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
       regenerator-runtime: 0.13.11
@@ -18064,7 +18067,7 @@ packages:
       dezalgo: 1.0.4
       hexoid: 1.0.0
       once: 1.4.0
-      qs: 6.11.0
+      qs: 6.11.1
     dev: true
 
   /formidable@2.1.2:
@@ -30357,6 +30360,14 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
+  /stripe@12.1.1:
+    resolution: {integrity: sha512-vn74vXtZeJx18oGzA0AhL818euhLF/juCgkKrJfAS1Y0bp5/EzQKPuc/75qQUvY43nNGIkgOVb3kUBuyoeqEkA==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 18.15.11
+      qs: 6.11.1
+    dev: false
+
   /stripe@8.205.0:
     resolution: {integrity: sha512-hmYnc7je6j0n9GlkUpc8USsUquLzSxmWj78g9NKFokCtSybNy7y9fYS+VB5AuZUwmIkzhTczgf+TaSmI4kbk9A==}
     engines: {node: ^8.1 || >=10.*}
@@ -30579,7 +30590,7 @@ packages:
       formidable: 2.1.1
       methods: 1.1.2
       mime: 2.6.0
-      qs: 6.11.0
+      qs: 6.11.1
       readable-stream: 3.6.1
       semver: 7.3.8
     transitivePeerDependencies:
