@@ -11,13 +11,13 @@ describe('multifileCertProjects', function () {
   before(() => {
     cy.exec('npm run seed');
     cy.login();
-    cy.visit(
-      'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
-    );
   });
 
   beforeEach(() => {
     cy.preserveSession();
+    cy.visit(
+      'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
+    );
   });
 
   it('should save and reload user code', function () {
