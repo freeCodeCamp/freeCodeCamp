@@ -1,29 +1,40 @@
-import React, { RefObject } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { User } from '../../../redux/prop-types';
 
-interface MenuButtonProps {
-  className?: string;
-  displayMenu?: boolean;
-  innerRef?: RefObject<HTMLButtonElement>;
-  user?: User;
-}
-
-const MenuButton = ({
-  displayMenu,
-  innerRef
-}: MenuButtonProps): JSX.Element => {
+export const MenuButton = (): JSX.Element => {
   const { t } = useTranslation();
+  const [showMenu, setShowMenu] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
+    if (
+      event.relatedTarget &&
+      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.fcc_searchBar') &&
+      showMenu
+    ) {
+      setShowMenu(false);
+    }
+  };
+
+  const handleClick = (): void => {
+    if (showMenu) {
+      setShowMenu(false);
+      return;
+    }
+    setShowMenu(true);
+  };
+
   return (
     <button
-      aria-expanded={displayMenu}
-      className={`exposed-button-nav${
-        displayMenu ? ' reverse-toggle-color' : ''
-      }`}
+      aria-expanded={showMenu}
+      className={`exposed-button-nav${showMenu ? ' reverse-toggle-color' : ''}`}
       id='toggle-button-nav'
-      ref={innerRef}
+      onBlur={handleBlur}
+      onClick={handleClick}
+      ref={menuButtonRef}
     >
       <span className='menu-btn-icon'>
         <FontAwesomeIcon icon={faBars} />
@@ -33,7 +44,3 @@ const MenuButton = ({
     </button>
   );
 };
-
-MenuButton.displayName = 'MenuButton';
-
-export default MenuButton;

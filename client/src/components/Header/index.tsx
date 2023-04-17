@@ -10,7 +10,7 @@ import {
   DONATE_NAV_EXPOSED_WIDTH
 } from '../../../../config/misc';
 import type { User } from '../../redux/prop-types';
-import MenuButton from './components/menu-button';
+import { MenuButton } from './components/menu-button';
 import NavLinks from './components/nav-links';
 import NavLogo from './components/nav-logo';
 import AuthOrProfile from './components/auth-or-profile';
