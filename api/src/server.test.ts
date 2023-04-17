@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import request from 'supertest';
 
 describe('GET /', () => {
@@ -12,7 +13,7 @@ describe('GET /', () => {
   });
 
   test('should have OWASP recommended headers', async () => {
-    res = await request(fastify?.server).get('/');
+    const res = await request(fastifyTestInstance?.server).get('/');
     // We also set Strict-Transport-Security, but only in production.
     expect(res?.headers).toMatchObject({
       'cache-control': 'no-store',
