@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c48
-title: Use Assert.isOK and Assert.isNotOK
+title: Verwende Assert.isOK und Assert.isNotOK
 challengeType: 2
 forumTopicId: 301607
 dashedName: use-assert-isok-and-assert-isnotok
@@ -34,7 +34,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isOk` vs. `isNotOk`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `isOk` vs. `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isOk` vs. `isNot
   );
 ```
 
-You should choose the correct method for the second assertion - `isOk` vs. `isNotOk`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `isOk` vs. `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ You should choose the correct method for the second assertion - `isOk` vs. `isNo
   );
 ```
 
-You should choose the correct method for the third assertion - `isOk` vs. `isNotOk`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `isOk` vs. `isNotOk`.
 
 ```js
 (getUserInput) =>

@@ -22,7 +22,7 @@ import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
-import ToggleSetting from './toggle-setting';
+import ToggleButtonSetting from './toggle-button-setting';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -228,7 +228,7 @@ function EmailSettings({
       <Spacer size='medium' />
       <FullWidthRow>
         <form id='form-quincy-email' onSubmit={handleSubmit}>
-          <ToggleSetting
+          <ToggleButtonSetting
             action={t('settings.email.weekly')}
             flag={sendQuincyEmail}
             flagName='sendQuincyEmail'

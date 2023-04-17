@@ -1,6 +1,6 @@
 # Come tradurre le risorse di freeCodeCamp
 
-## Preparati a contribuire
+## Prepare yourself for Contributions
 
 > Il piano d'azione per la localizzazione di freeCodeCamp – Non ci sono limiti di velocità
 
@@ -44,7 +44,7 @@ Ti chiediamo soltanto di comprendere che:
 
 ## Panoramica di Crowdin
 
-Il nostro sogno è fornirti le risorse per imparare, indipendentemente dalla lingua che parli. Per aiutarci con questo enorme sforzo, abbiamo integrato i nostri codebase & curriculum open source con [Crowdin](https://crowdin.com/) - Uno strumento che ci supporta nella localizzazione del codebase.
+Il nostro sogno è fornirti le risorse per imparare, indipendentemente dalla lingua che parli. To help us with this massive effort, we have integrated our open-source codebase & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
 
 > [!NOTE] Utilizziamo uno strumento e una procedura differenti per la traduzione degli [articoli](https://www.freecodecamp.org/news). Se sei davvero interessato a tradurre articoli, leggi [questo articolo](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) e rivolgiti al leader della tua lingua.
 
@@ -60,7 +60,7 @@ La procedura di traduzione è divisa in due attività principali:
 
 > [!WARNING] Se hai contribuito in passato e non conosci le novità, sappi che non stiamo utilizzando più GitHub per tradurre file direttamente, quindi dirigiti alla nostra [piattaforma di traduzione](https://translate.freecodecamp.org/).
 
-## Per iniziare
+## Getting Started
 
 Prima di tutto, passa a salutarci sul nostro [Discord](https://discord.gg/PRyKn3Vbay). Lì postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande.
 
@@ -145,7 +145,7 @@ La traduzione della documentazione per la contribuzione si svolge in modo simile
 
 > [!NOTE] La nostra documentazione per la contribuzione sfrutta `docsify` e abbiamo delle regole particolari per riquadri informativi come questo. Se vedi stringhe che iniziano con `[!NOTE]`, `[!WARNING]` o `[!TIP]`, queste parole NON devono essere tradotte.
 
-### Come tradurre la documentazione con link esterni
+### How to Translate Documentation with Internal Links
 
 Quando lavori sulla traduzione della documentazione per la contribuzione, stai attento ai link esterni che rimandano a sezioni diverse della documentazione.
 

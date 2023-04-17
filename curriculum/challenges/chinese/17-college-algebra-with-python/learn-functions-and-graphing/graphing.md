@@ -1,6 +1,6 @@
 ---
 id: 6331d26fb51aeedd1a2bd64c
-title: "Graphing"
+title: "图像"
 challengeType: 15
 videoId: vUefCkh8-wc
 dashedName: graphing
@@ -8,23 +8,23 @@ dashedName: graphing
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+下一个视频将向你展示函数和图像之间的联系。 注意图像是怎样一种表示函数的输入和输出的方式。 然后视频将向你展示如何用 Python 绘制一个函数的图像。
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos</a> so you can start making your own graphs.
+这是<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">和上两个视频配套的 Colab 笔记本</a>，这样你可以开始制作你自己的图像。
 
 # --question--
 
-## --assignemnts--
+## --任务--
 
-Add code to your algebra Colab notebook for functions and graphing.
+在你的代数 Colab 笔记本上添加代码，用于函数和图像。
 
 ---
 
-Run the following notebook to see <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">more ways to create graphs using algebra and Python.</a>
+运行下面的笔记本看看<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">使用代数和 Python 创建图像的更多方法</a>。
 
 ## --text--
 
-Which of the following would put a blue line on a graph?
+以下哪种情况会在图像上画出一条蓝线？
 
 ## --answers--
 

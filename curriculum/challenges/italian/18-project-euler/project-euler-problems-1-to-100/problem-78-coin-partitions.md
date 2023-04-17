@@ -1,6 +1,6 @@
 ---
 id: 5900f3ba1000cf542c50fecd
-title: 'Problem 78: Coin partitions'
+title: 'Problema 78: spartizioni di monete'
 challengeType: 1
 forumTopicId: 302191
 dashedName: problem-78-coin-partitions
@@ -8,11 +8,11 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Let ${p}(n)$ represent the number of different ways in which `n` coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so ${p}(5) = 7$.
+${p}(n)$ rappresenta il numero di modi differenti nei quali `n` monete possono essere separate in pile. Ad esempio, cinque monete possono essere separate in pile esattamente in sette modi diversi, quindi ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 
-| Coin piles        |
+| Pile di monete    |
 | ----------------- |
 | OOOOO             |
 | OOOO   O          |
@@ -24,35 +24,35 @@ Let ${p}(n)$ represent the number of different ways in which `n` coins can be se
 
 </div><br>
 
-Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
+Trova il valore minimo di `n` per il quale ${p}(n)$ è divisibile per `divisor`.
 
 # --hints--
 
-`coinPartitions(7)` should return a number.
+`coinPartitions(7)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions(7)` should return `5`.
+`coinPartitions(7)` dovrebbe restituire `5`.
 
 ```js
 assert.strictEqual(coinPartitions(7), 5);
 ```
 
-`coinPartitions(10000)` should return `599`.
+`coinPartitions(10000)` dovrebbe restituire `599`.
 
 ```js
 assert.strictEqual(coinPartitions(10000), 599);
 ```
 
-`coinPartitions(100000)` should return `11224`.
+`coinPartitions(100000)` dovrebbe restituire `11224`.
 
 ```js
 assert.strictEqual(coinPartitions(100000), 11224);
 ```
 
-`coinPartitions(1000000)` should return `55374`.
+`coinPartitions(1000000)` dovrebbe restituire `55374`.
 
 ```js
 assert.strictEqual(coinPartitions(1000000), 55374);

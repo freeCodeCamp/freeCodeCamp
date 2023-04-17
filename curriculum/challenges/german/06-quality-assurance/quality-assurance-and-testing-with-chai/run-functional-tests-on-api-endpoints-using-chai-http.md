@@ -62,7 +62,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+Du solltest `res.status` == 200 testen
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello Guest'`
+Du solltest `res.text` == `'hello Guest'` testen
 
 ```js
 (getUserInput) =>

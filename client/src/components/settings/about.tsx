@@ -12,6 +12,7 @@ import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import type { CamperProps } from '../profile/components/camper';
 import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
@@ -25,13 +26,17 @@ type FormValues = {
   about: string;
 };
 
-type AboutProps = {
-  about: string;
+type AboutProps = Omit<
+  CamperProps,
+  | 'linkedin'
+  | 'joinDate'
+  | 'isDonating'
+  | 'githubProfile'
+  | 'twitter'
+  | 'website'
+  | 'yearsTopContributor'
+> & {
   currentTheme: Themes;
-  location: string;
-  name: string;
-  picture: string;
-  points: number;
   sound: boolean;
   keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
@@ -39,7 +44,6 @@ type AboutProps = {
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  username: string;
 };
 
 type AboutState = {

@@ -53,7 +53,7 @@ Os artigos em destaque no rodapé do currículo podem ser alterados, editando o 
 
 Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
 
-Cada número apresenta um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
+Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
 
 Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
 
@@ -77,11 +77,11 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 
 Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
-### Como atualizar os artigos em destaque no cdn
+### Como atualizar os artigos em destaque no CDN
 
-O arquivo no repositório cdn é o arquivo `universal/trending/<language>.yaml`.
+O arquivo no repositório CDN é o arquivo `universal/trending/<language>.yaml`.
 
-Este arquivo é formatado de modo diferente. Por exemplo, aqui vemos o conteúdo do arquivo para os primeiros 6 artigos:
+Este arquivo está em formato diferente. Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
 
 ```yaml
 article0title: 'Nova aba em HTML'
@@ -265,7 +265,7 @@ Os elogios são as frases curtas que aparecem na conclusão de um desafio.
 
 Você não precisa traduzir diretamente as frases usadas em inglês. Você pode escrever um conjunto de frases curtas que sejam apropriadas para mostrar na conclusão de um desafio.
 
-O array `compliments` (de elogios) é um array de strings. Então, por exemplo, você escreveria:
+O array `compliments` é um array de strings. Então, por exemplo, você escreveria:
 
 ```json
 {
@@ -329,7 +329,7 @@ Você pode escolher "From Machine Translation" (da tradução de máquina) ou "F
 
 Depois, há três etapas a concluir:
 
-1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todo o projeto, pastas ou arquivos específicos.
+1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todos os projetos ou pastas e arquivos específicos.
 2. Idiomas. Defina o seu idioma aqui.
 3. Traduções existentes. A melhor combinação aqui é "100% match" (100% correspondente) e "Apply to untranslated strings only" (aplicar apenas a frases não traduzidas). Não aprove automaticamente, já que é sempre melhor que um olho humano revise tudo.
 

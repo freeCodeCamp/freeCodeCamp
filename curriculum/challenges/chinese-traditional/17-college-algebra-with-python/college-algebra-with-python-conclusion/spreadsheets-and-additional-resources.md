@@ -1,6 +1,6 @@
 ---
 id: 6363d2899078df117ce4c407
-title: "Spreadsheets and Additional Resources"
+title: "電子表格和其他資源"
 challengeType: 15
 videoId: JH9Uk2mi3Dc
 dashedName: spreadsheets-and-additional-resources
@@ -8,13 +8,13 @@ dashedName: spreadsheets-and-additional-resources
 
 # --description--
 
-Let's look at how you can connect your Math and Python knowledge with external data. This video will show you how to get data from other sources, then transform it so that you can graph it and interpret it.
+讓我們來看看如何將你的數學和 Python 知識與外部數據聯繫起來。 本視頻將向你展示如何從其他來源獲得數據，然後對其進行轉換，以便你能對其進行繪圖和解釋。
 
 # --question--
 
 ## --text--
 
-What library helps you to read data from a .csv and store it as a dataframe where you can select columns?
+哪個庫可以幫助你從 .csv 中讀取數據，並將其存儲爲一個可以選擇列的 dataframe？
 
 ## --answers--
 

@@ -1,4 +1,4 @@
-# Wie du bei Videoaufgaben helfen kannst
+# How to Help with Video Challenges
 
 Videoaufgaben sind eine neue Art von Aufgaben im freeCodeCamp-Studienplan.
 
@@ -54,18 +54,18 @@ Mehr Antworten
 Die Anzahl der richtigen Antworten gehört hierher.
 ````
 
-## Erstelle Fragen für Videoaufgaben
+## Creating Questions for Video Challenges
 
-### Zugriff auf die Markdown-Dateien der Videoaufgaben
+### Access the Video Challenge Markdown Files
 
-Du findest die Markdown-Dateien für die Videoaufgaben auf den folgenden Seiten im Studienplan:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
 - [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
 - [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Wähle eine Aufgaben-Markdown-Datei aus den obigen Optionen aus.
+Pick a challenge markdown file from the options above.
 
 ### Überfliege das Video, das mit der Aufgabe verbunden ist, und erstelle eine Multiple-Choice-Frage.
 
@@ -87,9 +87,9 @@ Im obigen Beispiel lautet die URL https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Überfliege das YouTube-Video mit dieser `videoId` und überlege dir eine Multiple-Choice-Frage, die auf dem Inhalt des Videos basiert.
 
-### Füge die Frage zur Markdown-Datei hinzu.
+### Add the Question to the Markdown File
 
-Du kannst die Frage lokal oder über die Benutzeroberfläche von GitHub hinzufügen. Um die Frage lokal hinzuzufügen, musst du [freeCodeCamp lokal einrichten](how-to-setup-freecodecamp-locally.md). Du kannst die Datei auch auf GitHub finden und auf den Button "Bearbeiten" klicken, um die Frage direkt in deinem Browser hinzuzufügen.
+You can add the question locally or using the GitHub interface. Um die Frage lokal hinzuzufügen, musst du [freeCodeCamp lokal einrichten](how-to-setup-freecodecamp-locally.md). Du kannst die Datei auch auf GitHub finden und auf den Button "Bearbeiten" klicken, um die Frage direkt in deinem Browser hinzuzufügen.
 
 Wenn eine Frage noch nicht zu einer bestimmten Videoaufgabe hinzugefügt wurde, wird sie mit der folgenden Standardfrage versehen:
 
@@ -193,6 +193,6 @@ print(height/3)
 
 Für weitere Beispiele kannst du dir die Markdown-Dateien für den folgenden Videokurs ansehen. Zu allen Aufgaben gibt es bereits Fragen: [Python für Jedermann Kurs](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Öffne einen Pull-Request
+## Open a Pull Request
 
 Nachdem du eine oder mehrere Fragen erstellt hast, kannst du die Änderungen in einem neuen Branch übertragen und [einen Pull-Request](how-to-open-a-pull-request.md) öffnen.
