@@ -13,7 +13,7 @@ São recomendados os seguintes passos ao trabalhar em um novo componente:
 - Exibir os casos de uso no Storybook
 - Escrever testes unitários
 
-## Researching and Planning
+## Pesquisar e planejar
 
 Antes de construir um componente, você precisa pesquisar e documentar como a versão existente se comporta e qual é sua aparência, para garantir que o novo tenha estilos correspondentes e suporte todos os usos atuais. Para atender aos requisitos de acessibilidade da web, você também deve prestar atenção ao aspecto de acessibilidade do componente, ver quais elementos HTML e atributos ARIA são usados por baixo dos panos.
 
@@ -23,7 +23,7 @@ Preferimos pull requests menores do que grandes, porque eles aceleram o tempo de
 
 Recomendamos abrir uma issue separada no GitHub para cada componente e incluir todas as observações na descrição da issue. Ela pode ser usada como um lugar para hospedar todas as suas notas de trabalho, assim como uma maneira de comunicar a abordagem aos revisores. Utilizaremos o tópico da issue para continuar a discussão, se necessário. [A issue sobre o componente Button](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) pode ser usada como uma referência.
 
-## Implementing the Component
+## Implementar o componente
 
 Um novo componente pode ser criado usando o seguinte comando a partir do diretório raiz:
 
@@ -43,25 +43,25 @@ O comando gerará uma nova pasta dentro do diretório `ui-components`, com os se
 | `my-component.tsx`         | É onde implementamos o componente.                                |
 | `types.ts`                 | É onde localizamos a interface e os tipos do componente.          |
 
-Each component is different, but in general, a component should:
+Cada componente é diferente, mas, em geral, os componentes devem:
 
 - Dar suporte à ref de encaminhamento
 - Ser estilizados para temas claros e escuros
 - Ser estilizados internamente com base em suas propriedades (os consumidores não devem precisar reestilizar o componente com a propriedade `className`)
 - Usar o sistema de estilo integrado do Tailwind ao invés de ter estilos personalizados
 
-### Using Colors
+### Uso de cores
 
 Existem duas "camadas" de cores na biblioteca de componentes:
 
 - A camada de base, onde os nomes das cores descrevem o que são as cores, por exemplo, `gray00`, `blue50`
 - A camada semântica, onde os nomes das cores descrevem para que servem as cores, por exemplo, `foreground-primary`, `background-danger`
 
-Generally, when using colors in a component, you should choose semantic variables over the base ones. No entanto, há exceções, especificamente quando você está estilizando os estados do componente como hover, active, disabled etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for its states.
+Geralmente, ao usar cores em um componente, você deve preferir as variáveis semânticas às de base. No entanto, há exceções, especificamente quando você está estilizando os estados do componente como hover, active, disabled etc. Nestes casos, recomendamos o uso das variáveis de base diretamente em vez de criar variáveis semânticas, já que cada componente pode ter estilos diferentes para seus estados.
 
 > [!NOTE] A definição de cor pode ser encontrada no arquivo [`colors.css`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). Uma cor só estará disponível para uso se for adicionada ao arquivo [`tailwind.config.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) abaixo da propriedade `colors`.
 
-### Useful Links
+### Links úteis
 
 - [Configuração do Tailwind CSS](https://tailwindcss.com/docs/configuration)
 - [Documentação do React Bootstrap v0.33](https://react-bootstrap-v3.netlify.app)
@@ -69,7 +69,7 @@ Generally, when using colors in a component, you should choose semantic variable
 - [Implementação atual do React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
 - [Testes atuais do React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
-## Displaying the Use Cases on Storybook
+## Exibir os casos de uso no Storybook
 
 Os casos de uso do componente devem ser adicionados ao arquivo Storybook (`.stories.tsx`).
 
@@ -81,7 +81,7 @@ pnpm run storybook
 
 A página do Storybook está disponível em [http://localhost:6006](http://localhost:6006).
 
-## Writing Unit Tests
+## Escrever testes unitários
 
 Usamos a [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (biblioteca de testes do React) para escrever testes unitários. Os testes devem investigar se os componentes se comportam como esperados e se estão acessíveis.
 
@@ -91,7 +91,7 @@ Para executar testes contra a biblioteca de componentes, execute o seguinte coma
 pnpm run test-ui-components
 ```
 
-## Adding Packages to the UI-Component Library
+## Adicionar pacotes à biblioteca de componentes da UI
 
 Restringimos a adição de novos pacotes aos componentes da UI para ajudar com a manutenção do projeto. Na hipótese de você achar que uma dependência é necessária, consulte os gestores primeiro e use o seguinte comando para adicionar um pacote:
 
@@ -100,7 +100,7 @@ cd tools/ui-components
 pnpm add package_name
 ```
 
-### Useful Links
+### Links úteis
 
 - [Testes de acessibilidade](https://testing-library.com/docs/dom-testing-library/api-accessibility)
 - [Ordem de prioridade das consultas da biblioteca de testes do React](https://testing-library.com/docs/queries/about/#priority)
