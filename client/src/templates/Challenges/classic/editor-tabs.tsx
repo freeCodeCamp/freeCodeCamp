@@ -40,25 +40,16 @@ class EditorTabs extends Component<EditorTabsProps> {
       <div className='monaco-editor-tabs'>
         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
         {sortChallengeFiles(challengeFiles).map(
-          (
-            challengeFile: ChallengeFile,
-            index: number,
-            array: ChallengeFile[]
-          ) => (
-            <>
-              <button
-                aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
-                key={challengeFile.fileKey}
-                data-cy={`editor-tab-${challengeFile.fileKey}`}
-                onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
-              >
-                <span>{`${challengeFile.name}.${challengeFile.ext}`}</span>{' '}
-                <span className='sr-only'>editor</span>
-              </button>
-              {index !== array.length - 1 && (
-                <div className='editor-tab-separator' />
-              )}
-            </>
+          (challengeFile: ChallengeFile) => (
+            <button
+              aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
+              key={challengeFile.fileKey}
+              data-cy={`editor-tab-${challengeFile.fileKey}`}
+              onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
+            >
+              <span>{`${challengeFile.name}.${challengeFile.ext}`}</span>{' '}
+              <span className='sr-only'>editor</span>
+            </button>
           )
         )}
       </div>
