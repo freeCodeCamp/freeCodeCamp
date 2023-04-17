@@ -8,6 +8,7 @@ type MenuProps = React.ComponentPropsWithoutRef<typeof Menu>;
 export type DropDownButtonProps = MenuProps & {
   block?: boolean;
   dropup?: boolean;
+  bsStyle?: 'primary';
 };
 
 const defaultClassNames = [
@@ -15,12 +16,10 @@ const defaultClassNames = [
   'border-3',
   'text-center',
   'touch-manipulation',
-  'border-foreground-primary',
   'bg-background-quaternary',
   'text-foreground-secondary',
   'px-3',
   'py-1.5',
-  'focus:outline-transparent',
   'relative',
   'hover:bg-foreground-primary',
   'hover:text-background-primary'

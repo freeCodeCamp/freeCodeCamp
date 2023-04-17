@@ -37,10 +37,10 @@ const Link = React.forwardRef<React.ElementRef<'a'>, ButtonProps>(
     return (
       <a
         className={className}
-        href={href}
         download={download}
         target={target}
         ref={ref}
+        href={href ?? undefined}
         {...rest}
       >
         {children}
@@ -87,7 +87,7 @@ export const HeadlessButton = React.forwardRef<
 );
 
 const defaultClass =
-  'block text-start no-underline px-[20px] py-[3px] bg-foreground-primary text-background-primary bg-foreground-primary text-background-primary hover:text-foreground-primary hover:bg-background-primary';
+  'block text-start no-underline px-[20px] py-[3px] bg-foreground-primary text-background-primary bg-foreground-primary text-background-primary focus:bg-background-primary focus:text-foreground-primary hover:text-foreground-primary hover:bg-background-primary';
 
 export const MenuItem = ({
   children,
