@@ -35,10 +35,16 @@ const Template: Story<DropdownProps> = args => {
   return <Dropdown {...args} />;
 };
 
-export const MenuWithAction = Template.bind({});
-MenuWithAction.args = {
-  children: <DropDownChildren />
-};
+export const MenuWithAction = (): JSX.Element => (
+  <>
+    <Dropdown>
+      <DropDownChildren />
+    </Dropdown>
+    <Dropdown>
+      <DropDownChildren />
+    </Dropdown>
+  </>
+);
 
 export const RenderMenuItems = Template.bind({});
 RenderMenuItems.args = {

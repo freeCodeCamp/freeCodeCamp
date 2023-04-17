@@ -8,21 +8,30 @@ type MenuItemsProps = React.ComponentPropsWithoutRef<typeof Menu.Items> & {
 
 export type DropdownProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
-const itemsClassNames =
-  'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute py-1';
-
-const getItemsContainerClasses = (dropup?: boolean) => {
-  const dropupStyle = dropup ? 'transform -translate-y-full top-0' : '';
-  return [itemsClassNames, dropupStyle].join(' ');
-};
+const itemsClassNames = [
+  'shadow-lg',
+  'bg-foreground-primary',
+  'text-background-primary',
+  'text-center',
+  'ring-1',
+  'ring-black',
+  'ring-opacity-5',
+  'focus:outline-transparent',
+  'origin-top-right',
+  'absolute',
+  'py-1',
+  'z-10'
+];
 
 export const MenuItems = React.forwardRef<
   React.ElementRef<typeof Menu.Items>,
   MenuItemsProps
->(({ children, dropup }, ref) => {
-  const itemsClasses = getItemsContainerClasses(dropup);
+>(({ children, dropup, className }, ref) => {
+  if (dropup) itemsClassNames.push('transform -translate-y-full top-0');
+  const itemsClasses = itemsClassNames.join(' ');
   return (
-    <Menu.Items as='ul' className={itemsClasses} ref={ref}>
+    // The actual type of className is any, I think this type is false positive.
+    <Menu.Items as='ul' className={[className, itemsClasses]} ref={ref}>
       {children}
     </Menu.Items>
   );

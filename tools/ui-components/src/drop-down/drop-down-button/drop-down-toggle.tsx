@@ -21,26 +21,20 @@ const defaultClassNames = [
   'px-3',
   'py-1.5',
   'focus:outline-transparent',
-  'focus:bg-foreground-primary',
-  'z-10',
   'relative',
-  'focus:text-background-primary',
   'hover:bg-foreground-primary',
   'hover:text-background-primary'
 ];
-const getDefaultClasses = (block?: boolean) => {
-  const blockClass = block ? 'btn-block' : '';
-  return [...defaultClassNames, blockClass].join(' ');
-};
 
 export function DropDownButton({
   children,
-  block,
+  className,
   dropup,
   ...rest
 }: DropDownButtonProps): JSX.Element {
+  const classes = [className, defaultClassNames].join(' ');
   return (
-    <Menu.Button className={getDefaultClasses(block)} {...rest}>
+    <Menu.Button className={classes} {...rest}>
       {children}
       <FontAwesomeIcon
         icon={dropup ? faCaretUp : faCaretDown}
