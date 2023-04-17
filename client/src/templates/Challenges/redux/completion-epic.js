@@ -10,6 +10,8 @@ import {
   tap,
   mergeMap
 } from 'rxjs/operators';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import standardErrorMessage from '../../../utils/standard-error-message';
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
@@ -204,6 +206,8 @@ export default function completionEpic(action$, state$) {
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
             navigate(pathToNavigateTo);
+          } else {
+            createFlashMessage(standardErrorMessage);
           }
         }),
         concat(of(closeModal('completion')))
