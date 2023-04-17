@@ -1,6 +1,6 @@
 ---
 id: 58966a17f9fc0f352b528e6d
-title: Registration of New Users
+title: Registrierung neuer Nutzer
 challengeType: 2
 forumTopicId: 301561
 dashedName: registration-of-new-users
