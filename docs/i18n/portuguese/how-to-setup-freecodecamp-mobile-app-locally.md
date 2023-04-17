@@ -1,12 +1,12 @@
 Siga este guia para configurar a aplicação para dispositivos móveis do freeCodeCamp localmente no seu sistema. Isso é altamente recomendado se você quer contribuir regularmente.
 
-Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
+Alguns dos fluxos de trabalho de contribuição — como a correção de erros na base de código — necessitam que você execute a aplicação do freeCodeCamp localmente.
 
-### How to Prepare your Local Machine
+### Como preparar sua máquina local
 
 Comece instalando o software pré-requisito para seu sistema operacional.
 
-#### Prerequisites
+#### Pré-requisitos
 
 | Pré-requisito                   | Versão | Observações                                  |
 | ------------------------------- | ------ | -------------------------------------------- |
@@ -30,9 +30,9 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
 1. Instale o [Git](https://git-scm.com/) ou seu cliente Git favorito, se você ainda não fez isso. Atualize para a versão mais recente. A versão que veio com seu SO pode estar desatualizada.
 
-2. Set up [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. Recomendamos usar a Pixel 3a XL e a Nexus One (para emulação de telas menores).
+2. Configure o [Android Studio](https://developer.android.com/studio) e os [emuladores do Android](https://developer.android.com/studio/run/managing-avds) com a versão mais recente do Android. Recomendamos usar a Pixel 3a XL e a Nexus One (para emulação de telas menores).
 
-3. (Optional for MacOS) Set up Xcode and iOS Simulator with the latest released iOS version.
+3. (Opcional para MacOS) Configuração do Xcode e do iOS Simulator com a versão mais recente do iOS lançada.
 
 4. (Opcional, mas recomendado) [Configure uma chave SSH](https://help.github.com/articles/generating-an-ssh-key/) para o GitHub.
 
@@ -40,7 +40,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
    Nós recomendamos muito usar o [Visual Studio Code](https://code.visualstudio.com/) ou o Android Studio. Também recomendamos instalar as [extensões](https://docs.flutter.dev/get-started/editor?tab=vscode) oficiais.
 
-## Fork the Repository on GitHub
+## Faça o fork do repositório no GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) é uma etapa onde você obtém sua própria cópia do repositório (vulgo _repo_) no GitHub.
 
@@ -58,9 +58,9 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia da apl
 
 3. Depois que o repositório recebeu um fork, você será redirecionado para a cópia do repositório em `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub).
 
-## Clone your Fork from GitHub
+## Clonar o seu fork no GitHub
 
-[Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
+[Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
 Execute esses comandos em sua máquina local:
 
@@ -78,11 +78,11 @@ Isto vai baixar todo o repositório da aplicação do freeCodeCamp para disposit
 
 Nota: `--depth=1` cria um clone raso do seu fork, com apenas o histórico mais recente.
 
-## Set up Syncing from Parent
+## Configurar sincronização a partir do pai
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
+[Como mencionado anteriormente](#fork-the-repository-on-github), o repositório principal é referenciado como repositório `upstream`. Seu fork é referenciado como repositório `origin`.
 
 É necessária uma referência do seu clone local para o repositório `upstream` além do repositório `origin`. Isso é para que você possa sincronizar alterações do repositório principal sem a exigência de fazer fork e clone várias vezes.
 
@@ -113,7 +113,7 @@ Agora que você baixou uma cópia do seu fork, será necessário configurar um r
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Running freeCodeCamp Mobile App Locally
+## Executar a aplicação do freeCodeCamp para dispositivos móveis localmente
 
 Agora que você tem uma cópia local da aplicação do freeCodeCamp para dispositivos móveis, você pode seguir estas instruções para executá-la localmente.
 
@@ -123,11 +123,11 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 > [!NOTE] O diretório `mobile` contém duas pastas, `mobile-api` e `mobile-app`. `mobile-api` contém o código da API usada para servir os podcasts. `mobile-app` contém a aplicação em Flutter, que é onde você deve estar quando seguir os passos abaixo.
 
-### Configuring Dependencies
+### Configurar dependências
 
-#### Step 1: Set Up the Environment Variable File
+#### Passo 1: Configure o arquivo de variável de ambiente
 
-As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Lembre-se de mudar o diretório para `mobile-app` antes de executar os comandos a seguir.
+As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acessado dinamicamente durante a etapa de instalação. Lembre-se de mudar o diretório para `mobile-app` antes de executar os comandos a seguir.
 
 ```console
 # Crie uma cópia da "sample.env" e a nomeie como ".env".
@@ -172,9 +172,9 @@ flutter run
 
 > [!TIP] Se estiver usando o VSCode ou o Android Studio, poderá iniciar a aplicação facilmente sem ter de executar os comandos no terminal. Mais informações [aqui](https://docs.flutter.dev/get-started/test-drive).
 
-## Making Changes Locally
+## Fazer alterações localmente
 
-You can now make changes to files and commit your changes to the local clone of your fork.
+Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no clone local do seu fork.
 
 Siga estes passos:
 
@@ -225,7 +225,7 @@ Siga estes passos:
    git push origin main --force
    ```
 
-   You can validate that your current main matches the upstream/main by performing a diff:
+   Você pode validar se sua main atual combina com upstream/main fazendo um diff:
 
    ```console
    git diff upstream/main
@@ -243,7 +243,7 @@ Siga estes passos:
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Seu nome de branch deve começar com `fix/`, `feat/`, `docs/`, etc. Evite usar números de issues em branches. Keep them short, meaningful, and unique.
+   Seu nome de branch deve começar com `fix/`, `feat/`, `docs/`, etc. Evite usar números de issues em branches. Mantenha-os curtos, significativos e únicos.
 
    Alguns exemplos de bons nomes para branches são:
 
@@ -392,11 +392,11 @@ Se você enfrenta problemas com a interface do usuário ou erros de build, uma l
 flutter clean
 ```
 
-### Issues Installing Dependencies
+### Problemas ao instalar dependências
 
 Se você receber erros durante a instalação das dependências, certifique-se de que você não está em uma rede restrita ou suas configurações de firewall não impedem você de acessar os recursos.
 
-Be patient as the first-time setup can take a while depending on your network bandwidth.
+Seja paciente, pois a primeira configuração pode demorar um pouco, dependendo da largura de banda da sua rede.
 
 ## Obter ajuda
 

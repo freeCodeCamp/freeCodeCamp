@@ -20,7 +20,7 @@ Depois de confirmar as diretrizes acima, fique à vontade para enviar um e-mail 
 
 Ao reportar uma vulnerabilidade, vamos analisá-la e garantir que ela não é um falso positivo. Se precisarmos esclarecer alguns pormenores, entraremos em contato com você. Você pode enviar relatórios separados para cada issue que encontrar. Lembre-se de que não poderemos responder a issues que entendermos que se encontram fora das diretrizes.
 
-## Platforms and Codebases
+## Plataformas e bases de código
 
 Aqui está uma lista das plataformas e bases de código para as quais estamos aceitando relatórios:
 

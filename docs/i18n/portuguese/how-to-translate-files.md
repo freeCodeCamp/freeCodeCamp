@@ -1,6 +1,6 @@
 # Como traduzir arquivos do freeCodeCamp
 
-## Prepare yourself for Contributions
+## Prepare-se para as contribuições
 
 > O roadmap de localização do freeCodeCamp - não há limites de velocidade
 
@@ -44,7 +44,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
 ## Visão geral do Crowdin
 
-É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. To help us with this massive effort, we have integrated our open-source codebase & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
 
 > [!NOTE] Usamos uma ferramenta e um fluxo de trabalho diferentes para traduzir os [artigos do editorial](https://www.freecodecamp.org/news). Se você estiver interessado em traduzir artigos, leia [este anúncio](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/) e entre em contato com o líder das traduções para o seu idioma.
 
@@ -60,7 +60,7 @@ O fluxo de tradução é dividido em duas atividades principais:
 
 > [!WARNING] Não usamos mais o GitHub para traduzir arquivos diretamente. Se você está voltando a contribuir, vá para nossa [plataforma de tradução](https://translate.freecodecamp.org/).
 
-## Getting Started
+## Primeiros passos
 
 Primeiro, não se esqueça de vir dar um "Oi" no nosso [servidor do Discord](https://discord.gg/PRyKn3Vbay). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
 
@@ -145,7 +145,7 @@ Traduzir nossa documentação de contribuição é similar a traduzir nossos arq
 
 > [!NOTE] Nossa documentação de contribuição utiliza`docsify`, e nós temos  uma análise especial para caixas de mensagem como essa.  Caso veja strings iniciadas com `[!NOTE]`, `[!WARNING]`, ou `[!TIP]`, essas palavras NÃO devem ser traduzidas.
 
-### How to Translate Documentation with Internal Links
+### Como traduzir a documentação com links internos
 
 Quando você trabalha na tradução da documentação de contribuição, fique atento aos links internos direcionados a uma seção diferente da documentação.
 

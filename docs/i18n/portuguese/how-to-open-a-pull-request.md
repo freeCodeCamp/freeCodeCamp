@@ -17,7 +17,7 @@ Alguns exemplos disso são:
 
 > [!NOTE] Seu PR deve se destinar apenas a alterações no currículo em inglês. Veja [este guia](index.md#translations) para contribuir com traduções.
 
-## Prepare a Good PR Title
+## Prepare um bom título para o PR
 
 Recomendamos usar [título e mensagens convencionais](https://www.conventionalcommits.org/) para commits e pull request. A convenção tem o seguinte formato:
 
@@ -93,7 +93,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Se seu PR afeta o comportamento de uma página ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
 
-## Feedback on Pull Requests
+## Comentários nos pull requests
 
 > :tada: Parabéns por fazer um PR e muito obrigado(a) por contribuir.
 
@@ -103,13 +103,13 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 > [!TIP] Se você vai contribuir com mais pull requests, recomendamos ler as diretrizes sobre [fazer mudanças e sincronizá-las](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar o apagamento de seu fork.
 
-## Conflicts on a Pull Request
+## Conflitos em um pull request
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e mesclagem.
 
 Na maioria das vezes, você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
 
-### For Usual Bug Fixes and Features
+### Para funcionalidades e correções de erros comuns
 
 Quando se está trabalhando em erros normais e funcionalidades no seu branch `main` de desenvolvimento, você pode fazer um simples ajuste:
 
@@ -138,7 +138,7 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
    git push --force origin <pr-branch>
    ```
 
-### For Upcoming Curriculum and Features
+### Para o próximo currículo e próximas funcionalidades
 
 Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um cherry pick:
 
