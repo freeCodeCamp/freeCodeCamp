@@ -23,12 +23,10 @@ describe('multifileCertProjects', function () {
 
   it('should save and reload user code', function () {
     // save to database (savedChallenges) when clicking save code button
-    cy.get(editorElements.container)
-      .find(editorElements.editor)
-      .click()
-      .focused()
-      .clear()
-      .type(save1text);
+    cy.get(editorElements.container).find(editorElements.editor).click();
+    // Firefox somehow can lose focus after the .clear()
+    cy.focused().clear().click().type(save1text);
+    cy.get(editorElements.editor).contains(save1text);
     cy.get(editorElements.saveCodeBtn).click();
     cy.contains('Your code was saved to the database.');
     // load saved code on a hard refresh
@@ -44,12 +42,9 @@ describe('multifileCertProjects', function () {
     cy.exec('npm run seed');
     // and the redux store:
     cy.reload();
-    cy.get(editorElements.container)
-      .find(editorElements.editor)
-      .click()
-      .focused()
-      .clear()
-      .type(`${save2text}{ctrl+s}`);
+    cy.get(editorElements.container).find(editorElements.editor).click();
+    cy.focused().clear().click().type(`${save2text}{ctrl+s}`);
+    cy.get(editorElements.editor).contains(save2text);
     cy.contains('Your code was saved to the database.');
     cy.get(editorElements.closeFlash).click();
     // load saved code when navigating site (no hard refresh)'
