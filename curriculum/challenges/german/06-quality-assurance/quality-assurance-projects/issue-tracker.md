@@ -38,14 +38,14 @@ Write the following tests in `tests/2_functional-tests.js`:
 -   View issues on a project: GET request to `/api/issues/{project}`
 -   View issues on a project with one filter: GET request to `/api/issues/{project}`
 -   View issues on a project with multiple filters: GET request to `/api/issues/{project}`
--   Update one field on an issue: PUT request to `/api/issues/{project}`
--   Update multiple fields on an issue: PUT request to `/api/issues/{project}`
--   Update an issue with missing `_id`: PUT request to `/api/issues/{project}`
--   Update an issue with no fields to update: PUT request to `/api/issues/{project}`
--   Update an issue with an invalid `_id`: PUT request to `/api/issues/{project}`
--   Delete an issue: DELETE request to `/api/issues/{project}`
--   Delete an issue with an invalid `_id`: DELETE request to `/api/issues/{project}`
--   Delete an issue with missing `_id`: DELETE request to `/api/issues/{project}`
+-   Aktualisiere ein Feld mit einem Issue: PUT-Anfrage an `/api/issues/{project}`
+-   Aktualisiere mehrere Felder mit einem Issue: PUT-Anfrage an `/api/issues/{project}`
+-   Aktualisiere ein Issue mit fehlender `_id`: PUT-Anfrage an `/api/issues/{project}`
+-   Aktualisiere ein Issue, das keine Felder zum Aktualisieren besitzt: PUT-Anfrage an `/api/issues/{project}`
+-   Aktualisiere ein Issue mit einer ungültigen `_id`: PUT-Anfrage an `/api/issues/{project}`
+-   Lösche ein Issue: DELETE-Anfrage an `/api/issues/{project}`
+-   Lösche ein Issue mit einer ungültigen `_id`: DELETE-Anfrage an `/api/issues/{project}`
+-   Lösche ein Issue mit fehlender `_id`: DELETE-Anfrage an `/api/issues/{project}`
 
 # --hints--
 
@@ -79,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Excluded optional fields will be returned as empty strings. Additionally, include `created_on` (date/time), `updated_on` (date/time), `open` (boolean, `true` for open - default value, `false` for closed), and `_id`.
+The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Excluded optional fields will be returned as empty strings. Füge außerdem `created_on` (Datum/Uhrzeit), `updated_on` (Datum/Uhrzeit), `open` (Boolean, `true` für offen - Standardwert, `false` für geschlossen) sowie `_id` hinzu.
 
 ```js
 async (getUserInput) => {
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, the return value is `{ error: 'could not update', '_id': _id }`.
+When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. Bei jedem anderen Fehler entspricht der Rückgabewert `{ error: 'could not update', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -300,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `DELETE` request to `/api/issues/{projectname}` with an `_id` to delete an issue. If no `_id` is sent, the return value is `{ error: 'missing _id' }`. On success, the return value is `{ result: 'successfully deleted', '_id': _id }`. On failure, the return value is `{ error: 'could not delete', '_id': _id }`.
+You can send a `DELETE` request to `/api/issues/{projectname}` with an `_id` to delete an issue. If no `_id` is sent, the return value is `{ error: 'missing _id' }`. Beim Erfolgsfall entspricht der Rückgabewert `{ result: 'successfully deleted', '_id': _id }`. Bei einem Fehler entspricht der Rückgabewert `{ error: 'could not delete', '_id': _id }`.
 
 ```js
 async (getUserInput) => {

@@ -2,9 +2,9 @@
 
 Este manual o ajudará a configurar e utilizar as ferramentas para seus esforços de localização.
 
-## How to Invite New Contributors to Ghost
+## Como convidar novos colaboradores para o Ghost
 
-Ghost allows you to set contributors with different levels of authorization.
+O Ghost permite que você defina colaboradores com diferentes níveis de autorização.
 
 A maioria de seus convites será para o nível "Contributor" (Colaborador). Esse nível permite que o usuário crie rascunhos. Selecione esta função ao convidar um novo tradutor.
 
@@ -14,7 +14,7 @@ O nível "Editor" permite ao usuário acessar todos os rascunhos e publicá-los.
 
 O nível "Administrator" (Administrador) é reservado para funcionários e líderes de idiomas do freeCodeCamp.
 
-### How are the Articles Built
+### Como são feitos os artigos
 
 Usamos uma abordagem baseada em [JAMStack](https://www.google.com/search?q=what+is+jamstack) para criar e implementar os artigos. Esta estratégia faz com que um site estático seja armazenado em cache e servido a partir de uma CDN rapidamente.
 
@@ -24,9 +24,9 @@ Esse processo é automatizado e executado periodicamente. Se você publicar algo
 
 Você pode encontrar as agendas de compilação e o status atualizado aqui: https://github.com/freeCodeCamp/news#build
 
-## How to Mention the Original Author of a Translated Article
+## Como mencionar o autor original de um artigo traduzido
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on Ghost.
+O autor original e o artigo original são vinculados automaticamente, adicionando este código à seção de cabeçalho Code Injection -> em Draft Setiings (Configurações de rascunho) no Ghost.
 
 ```html
 <script>
@@ -36,24 +36,24 @@ The original author and the original article are linked automatically adding thi
 
 Sendo `link` o link do artigo original.
 
-## How to Update Trending Articles
+## Como atualizar os artigos em destaque
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
+> [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
 Mudamos os artigos em destaque em dois lugares diferentes.
 
 - [O repositório do currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
 - [O repositório do CDN](https://github.com/freeCodeCamp/cdn)
 
-For each article, you will need to create a shorter title to use in the footer.
+Para cada artigo, você precisará criar um título menor para usar no rodapé.
 
-### Change Trending Articles in the Curriculum
+### Alterar artigos em destaque no currículo
 
 Os artigos em destaque no rodapé do currículo podem ser alterados, editando o arquivo em `client/i18n/locales/<language>/trending.json`.
 
 Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
 
-Each number represents one of the 30 articles in the footer. Veriifique se a correspondência entre o título e o link está correta.
+Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
 
 Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
 
@@ -77,11 +77,11 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 
 Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
-### How to Update the Trending Articles in the CDN
+### Como atualizar os artigos em destaque no CDN
 
-The file in the CDN repository is the file `universal/trending/<language>.yaml`.
+O arquivo no repositório CDN é o arquivo `universal/trending/<language>.yaml`.
 
-This file is shaped differently. For example, here is the file content for the first 6 articles:
+Este arquivo está em formato diferente. Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
 
 ```yaml
 article0title: 'Nova aba em HTML'
@@ -102,9 +102,9 @@ Você pode converter de um formato para o outro cuidadosamente, alterando-o manu
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
 
-## How to Translate Articles in the Footer Links
+## Como traduzir os artigos dos links de rodapé
 
-There are some links listed at the bottom of the footer (About, Alumni Network, Open Source, etc.) and some of them can be translated into your language in the same way as other articles.
+Existem alguns links listados no final do rodapé (Sobre, Rede de ex-alunos, Código aberto etc.) e alguns deles podem ser traduzidos para seu idioma do mesmo modo que os outros artigos.
 
 Artigos que podem ser traduzidos:
 
@@ -126,7 +126,7 @@ Os links a seguir estão apontando para sites externos e não podem ser traduzid
 - Rede de ex-alunos
 - Código aberto
 
-### Change the Footer Links in the News
+### Alterações nos links de rodapé do editorial
 
 Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima, você poderá atualizar os links no rodapé de `/news` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/news](https://github.com/freeCodeCamp/news).
 
@@ -146,7 +146,7 @@ Atualize a seguinte parte do arquivo:
 }
 ```
 
-### Change the Footer Links in the Curriculum
+### Alterações nos links de rodapé do curr[iculo
 
 Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima e quando o curr[iculo em seu idioma estiver pronto para o lançamento, você poderá atualizar os links no rodapé de `/learn` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp).
 
@@ -172,7 +172,7 @@ Atualize a seguinte parte do arquivo:
 }
 ```
 
-## How to Translate the Info Boxes Headers in the Documentation
+## Como traduzir os cabeçalhos das caixas informativas na documentação
 
 Você pode encontrar essas caixas por toda a documentação:
 
@@ -248,7 +248,7 @@ flexibleAlerts: {
 }
 ```
 
-## How to Translate the Motivational Quotes
+## Como traduzir as citações motivacionais
 
 As citações motivacionais podem ser encontradas no [repositório de currículos](https://github.com/freeCodeCamp/freeCodeCamp/), no arquivo `/client/i18n/locales/<language>/motivation.json`.
 
@@ -265,7 +265,7 @@ Os elogios são as frases curtas que aparecem na conclusão de um desafio.
 
 Você não precisa traduzir diretamente as frases usadas em inglês. Você pode escrever um conjunto de frases curtas que sejam apropriadas para mostrar na conclusão de um desafio.
 
-The `compliments` array is an array of strings. So, for example, you would write:
+O array `compliments` é um array de strings. Então, por exemplo, você escreveria:
 
 ```json
 {
@@ -295,9 +295,9 @@ O array `motivationalQuotes` é um array de objetos. Esses objetos devem incluir
 }
 ```
 
-> [!TIP] Você deve começar com pelo menos uma dúzia de citações para ter alguma variedade. A new quote is shown every time the user reloads the page.
+> [!TIP] Você deve começar com pelo menos uma dúzia de citações para ter alguma variedade. Uma nova citação é mostrada toda vez que o usuário recarrega a página.
 
-## How to Update the Common Links
+## Como atualizar os links comuns
 
 Mantemos um arquivo de links comuns usados por todo o nosso [site do currículo](https://github.com/freecodecamp/freecodecamp) no arquivo `/client/i18n/locales/<language>/links.json`.
 
@@ -305,7 +305,7 @@ Alguns desses links não mudarão - mas você deve atualizar os links dos artigo
 
 Você também deve atualizar as categorias de `help` para que apontem para o sub-fórum do seu idioma (geralmente `language/category`, como, por exemplo, `portuguese/HTML-CSS`). Isto permitirá que os campers criem "posts de ajuda" no local correto do fórum.
 
-## How to Update the Site Meta-Data
+## Como atualizar os metadados do site
 
 Os metadados do site estão no arquivo `/client/i18n/locales/<language>/meta-tags.json`. Este arquivo tem cinco chaves: `title`, `description`, `social-description`, `keywords` e `youre-unsubscribed`.
 
@@ -329,7 +329,7 @@ Você pode escolher "From Machine Translation" (da tradução de máquina) ou "F
 
 Depois, há três etapas a concluir:
 
-1. Arquivos. Choose which files to translate, you can do all the projects, or specific folders or files.
+1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todos os projetos ou pastas e arquivos específicos.
 2. Idiomas. Defina o seu idioma aqui.
 3. Traduções existentes. A melhor combinação aqui é "100% match" (100% correspondente) e "Apply to untranslated strings only" (aplicar apenas a frases não traduzidas). Não aprove automaticamente, já que é sempre melhor que um olho humano revise tudo.
 
@@ -337,35 +337,35 @@ Depois, há três etapas a concluir:
 
 Quando você tiver terminado de fazer essa configuração, pressione o botão Pre-Translate e aguarde. Ele alertará você quando terminar. O tempo que leva depende de quantas frases não traduzidas existem nos arquivos escolhidos.
 
-## How to Update Crowdin Glossary
+## Como atualizar o glossário do Crowdin
 
-> [!TIP] An updated glossary helps in having a homogeneous translation of technical terms.
+> [!TIP] Um glossário atualizado ajuda a ter uma tradução dos termos técnicos mais homogênea.
 
 O glossário do Crowdin é mantido no repositório [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries).
 
-In the `glossaries` folder, there are various `*.csv` (comma,separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
+Na pasta `glossaries` há vários arquivos `*.csv` (valores separados por vírgulas, um para cada um dos projetos no Crowdin que têm um glossário que pode ser atualizado a partir deste fluxo de trabalho.
 
 O arquivo `client.csv` é para o projeto "Learn User Interface" (Interface de aprendizagem do usuário), `curriculum.csv` é para o projeto "Coding Curriculum" (Currículo de programação) e o arquivo `docs.csv` é para o projeto "Contributing Documentation" (Documentação colaborativa).
 
-To update the Crowdin Glossaries, you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example, Microsoft Excel.
+Para atualizar os glossários do Crowdin você precisa clonar este repositório localmente. Abra o arquivo `.csv` com um programa apropriado - por exemplo, o Microsoft Excel.
 
 No arquivo `.csv`, que você verá que a língua inglesa ocupa as primeiras três colunas, `Term:English` é a coluna para o termo em inglês, `Description:English` é a coluna para a descrição em inglês e `Part:English` é para a classe gramatical (por exemplo, substantivo, verbo etc.) do termo.
 
 Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothraki, estará interessado nas colunas `Term:Dothraki` e `Description:Dothraki`. A coluna `Term:Dothraki` é para a tradução do termo em Dothraki, enquanto a coluna `Description:Dothraki` é para uma descrição do termo em Dothraki.
 
-> [!TIP] In programs like Microsoft Excel, you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
+> [!TIP] Em programas como o Microsoft Excel, você pode ocultar as colunas dos outros idiomas para liberar espaço em tela e ver as colunas em inglês e as colunas do idioma de destino ao lado umas das outras.
 
 Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
 
 ## Como promover um colaborador a revisor
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them this way:
+Se você considerar que um colaborador pode se tornar um revisor de Crowdin, você pode dar a ele a função de revisor deste modo:
 
-In Crowdin, individuate the `User management` on the left-hand side menu.
+No Crowdin, você individualiza `User management` (gerenciamento do usuário) no menu do lado esquerdo.
 
 Isto abrirá as ferramentas de gerenciamento de usuário, você será capaz de ver a lista de todos os usuários.
 
-Search for the user that will become a proofreader. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
+Procure pelo usuário que se tornará um revisor. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
 
 O usuário agora é um revisor.
 

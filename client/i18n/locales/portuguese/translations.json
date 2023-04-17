@@ -443,7 +443,7 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Buscar entre os mais de 350 tutoriais",
+    "placeholder": "Buscar entre os mais de 500 tutoriais",
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",

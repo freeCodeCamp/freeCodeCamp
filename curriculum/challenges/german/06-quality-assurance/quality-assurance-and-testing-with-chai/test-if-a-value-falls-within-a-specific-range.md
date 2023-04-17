@@ -20,7 +20,7 @@ Asserts that the `actual` is equal to `expected`, to within a +/- `delta` range.
 
 Within `tests/1_unit-tests.js` under the test labelled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
-Wählen den Minimalbereich (3. Parameter) aus, damit der Test immer bestanden wird. It should be less than 1.
+Wählen den Minimalbereich (3. Parameter) aus, damit der Test immer bestanden wird. Es sollte weniger als 1 sein.
 
 # --hints--
 
