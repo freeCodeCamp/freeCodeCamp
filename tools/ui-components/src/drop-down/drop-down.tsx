@@ -29,9 +29,9 @@ export const MenuItems = React.forwardRef<
 >(({ children, dropup, className }, ref) => {
   if (dropup) itemsClassNames.push('transform -translate-y-full top-0');
   const itemsClasses = itemsClassNames.join(' ');
+  const buttonClass: string = [className, itemsClasses].join(' ');
   return (
-    // The actual type of className is any, I think this type is false positive.
-    <Menu.Items as='ul' className={[className, itemsClasses]} ref={ref}>
+    <Menu.Items as='ul' className={buttonClass} ref={ref}>
       {children}
     </Menu.Items>
   );

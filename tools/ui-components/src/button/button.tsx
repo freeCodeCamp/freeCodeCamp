@@ -166,7 +166,7 @@ export const Button = React.forwardRef<
         <a
           ref={ref as React.ForwardedRef<HTMLAnchorElement>}
           className={classes}
-          href={href}
+          href={href ?? undefined}
           download={download}
           target={target}
         >
