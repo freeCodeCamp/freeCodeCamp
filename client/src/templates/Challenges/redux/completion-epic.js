@@ -187,8 +187,13 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
 
-      const { nextChallengePath, challengeType, superBlock, block } =
-        challengeMetaSelector(state);
+      const {
+        nextChallengePath,
+        challengeType,
+        superBlock,
+        block,
+        prevChallengePath
+      } = challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -208,8 +213,18 @@ export default function completionEpic(action$, state$) {
       const isNextChallengeInSameSuperBlock =
         nextChallengePath.includes(superBlock);
 
+      const nextPathParts = nextChallengePath.split('/');
+      const prevPathParts = prevChallengePath.split('/');
+
+      const nextStep = nextPathParts[nextPathParts.length - 2];
+      const prevStep = prevPathParts[prevPathParts.length - 2];
+
       const pathToNavigateTo = isNextChallengeInSameSuperBlock
-        ? nextChallengePath
+        ? nextChallengePath.includes(superBlock) &&
+          (nextStep === prevStep ||
+            nextPathParts[nextPathParts.length - 1] === 'step-2')
+          ? nextChallengePath
+          : `/learn/${superBlock}/#${nextStep}`
         : `/learn/${superBlock}/#${superBlock}-projects`;
 
       const canAllowDonationRequest = (state, action) =>
