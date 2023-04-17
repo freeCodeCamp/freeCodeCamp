@@ -10,8 +10,7 @@ import {
   DONATE_NAV_EXPOSED_WIDTH
 } from '../../../../config/misc';
 import type { User } from '../../redux/prop-types';
-import { MenuButton } from './components/menu-button';
-import NavLinks from './components/nav-links';
+import Menu from './components/menu';
 import NavLogo from './components/nav-logo';
 import AuthOrProfile from './components/auth-or-profile';
 
@@ -21,6 +20,7 @@ const SearchBarOptimized = Loadable(
 );
 
 import './header.css';
+import LanguageList from './components/language-list';
 
 interface HeaderProps {
   fetchState: { pending: boolean };
@@ -73,9 +73,9 @@ export const Header = ({ fetchState, user }: HeaderProps): JSX.Element => {
                     </Link>
                   </Media>
                 )}
-                <MenuButton user={user} />
+                <LanguageList />
                 <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
-                <NavLinks fetchState={fetchState} user={user} />
+                <Menu fetchState={fetchState} user={user} />
                 <div className='navatar'>
                   <AuthOrProfile user={user} />
                 </div>
