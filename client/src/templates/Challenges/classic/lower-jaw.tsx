@@ -57,7 +57,7 @@ const LowerButtonsPanel = ({
   return (
     <>
       <hr />
-      <div className='lower-jaw-icon-bar'>
+      <div className='reset-help-icon-bar'>
         <button
           className='btn fade-in'
           title={resetButtonName}
