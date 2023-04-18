@@ -16,8 +16,13 @@ interface ProfileProps {
   isSessionUser: boolean;
   user: User;
 }
+interface MessageProps {
+  isSessionUser: boolean;
+  t: TFunction;
+  username: string;
+}
 
-function Message({ t }: { t: TFunction }): JSX.Element {
+const UserPrivateProfileMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
       <h2 className='text-center'>{t('profile.you-not-public')}</h2>
@@ -25,7 +30,31 @@ function Message({ t }: { t: TFunction }): JSX.Element {
       <Spacer size='medium' />
     </FullWidthRow>
   );
-}
+};
+
+const VisterPriveProfileMessage = ({
+  t,
+  username
+}: Omit<MessageProps, 'isSessionUser'>) => {
+  return (
+    <FullWidthRow>
+      <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
+        {t('profile.username-not-public', { username: username })}
+      </h2>
+      <p className='alert alert-info'>
+        {t('profile.username-change-privacy', { username: username })}
+      </p>
+      <Spacer size='medium' />
+    </FullWidthRow>
+  );
+};
+
+const Message = ({ isSessionUser, t, username }: MessageProps) => {
+  if (isSessionUser) {
+    return <UserPrivateProfileMessage t={t} />;
+  }
+  return <VisterPriveProfileMessage t={t} username={username} />;
+};
 
 function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
   const {
@@ -104,7 +133,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Spacer size='medium' />
       <Grid>
         <Spacer size='medium' />
-        {isLocked && <Message t={t} />}
+        {isLocked && (
+          <Message username={username} isSessionUser={isSessionUser} t={t} />
+        )}
         {showUserProfile && <UserProfile user={user} />}
         {!isSessionUser && (
           <Row className='text-center'>
