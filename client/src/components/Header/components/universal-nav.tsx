@@ -9,9 +9,8 @@ import {
   SEARCH_EXPOSED_WIDTH,
   DONATE_NAV_EXPOSED_WIDTH
 } from '../../../../../config/misc';
-import { User } from '../../../redux/prop-types';
 import MenuButton from './menu-button';
-import NavLinks from './nav-links';
+import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
@@ -21,18 +20,12 @@ const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-interface UniversalNavProps {
-  displayMenu: boolean;
-  isLanguageMenuDisplayed: boolean;
-  fetchState: { pending: boolean };
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
+type UniversalNavProps = Omit<
+  NavLinksProps,
+  'navigate' | 'toggleNightMode' | 'openSignoutModal'
+> & {
   searchBarRef?: React.RefObject<HTMLDivElement>;
-  showMenu: () => void;
-  hideMenu: () => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
-  hideLanguageMenu: () => void;
-  user?: User;
-}
+};
 export const UniversalNav = ({
   displayMenu,
   isLanguageMenuDisplayed,
