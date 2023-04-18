@@ -20,30 +20,26 @@ import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import SectionHeader from './section-header';
 import ScrollbarWidthSettings from './scrollbar-width';
 
-type FormValues = {
-  name: string;
-  location: string;
-  picture: string;
-  about: string;
-};
+type AboutProps = ThemeProps &
+  Omit<
+    CamperProps,
+    | 'linkedin'
+    | 'joinDate'
+    | 'isDonating'
+    | 'githubProfile'
+    | 'twitter'
+    | 'website'
+    | 'yearsTopContributor'
+  > & {
+    sound: boolean;
+    keyboardShortcuts: boolean;
+    submitNewAbout: (formValues: FormValues) => void;
+    t: TFunction;
+    toggleSoundMode: (sound: boolean) => void;
+    toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  };
 
-type AboutProps = ThemeProps & Omit<
-  CamperProps,
-  | 'linkedin'
-  | 'joinDate'
-  | 'isDonating'
-  | 'githubProfile'
-  | 'twitter'
-  | 'website'
-  | 'yearsTopContributor'
-> & {
-  sound: boolean;
-  keyboardShortcuts: boolean;
-  submitNewAbout: (formValues: FormValues) => void;
-  t: TFunction;
-  toggleSoundMode: (sound: boolean) => void;
-  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-};
+type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
 
 type AboutState = {
   formValues: FormValues;
