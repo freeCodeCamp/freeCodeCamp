@@ -20,7 +20,7 @@ What is the sum of all semidivisible numbers not exceeding 999966663333?
 
 # --hints--
 
-`semidivisibleNumbers()` should return `1259187438574927000`.
+`semidivisibleNumbers()` має повернути `1259187438574927000`.
 
 ```js
 assert.strictEqual(semidivisibleNumbers(), 1259187438574927000);

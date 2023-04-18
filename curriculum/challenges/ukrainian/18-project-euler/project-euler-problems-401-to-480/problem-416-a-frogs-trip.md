@@ -18,7 +18,7 @@ Find the last 9 digits of $F(10, {10}^{12})$.
 
 # --hints--
 
-`frogsTrip()` should return `898082747`.
+`frogsTrip()` має повернути `898082747`.
 
 ```js
 assert.strictEqual(frogsTrip(), 898082747);

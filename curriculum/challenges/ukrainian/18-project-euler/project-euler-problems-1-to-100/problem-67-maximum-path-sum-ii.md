@@ -25,19 +25,19 @@ Find the maximum total from top to bottom in `numTriangle`, a 2D array defined i
 
 # --hints--
 
-`maximumPathSumII(testTriangle)` should return a number.
+`maximumPathSumII(testTriangle)` має повернути число.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII(testTriangle)` should return 23.
+`maximumPathSumII(testTriangle)` має повернути 23.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
 ```
 
-`maximumPathSumII(numTriangle)` should return 7273.
+`maximumPathSumII(numTriangle)` має повернути 7273.
 
 ```js
 assert.strictEqual(maximumPathSumII(_numTriangle), 7273);

@@ -7,8 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment, useRef } from 'react';
 import Media from 'react-responsive';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { clientLocale, radioLocation } from '../../../../../config/env.json';
@@ -31,12 +30,10 @@ const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
 );
 
-interface NavLinksProps {
+export interface NavLinksProps {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
   fetchState: { pending: boolean };
-  i18n: Record<string, unknown>;
-  t: TFunction;
   showMenu: () => void;
   hideMenu: () => void;
   toggleNightMode: (theme: Themes) => Themes;
@@ -57,7 +54,6 @@ const mapDispatchToProps = {
 interface DonateButtonProps {
   isUserDonating: boolean | undefined;
   handleMenuKeyDown: (event: React.KeyboardEvent<HTMLAnchorElement>) => void;
-  t: TFunction;
 }
 
 type DonateItemProps = Pick<DonateButtonProps, 'handleMenuKeyDown'> & {
@@ -87,9 +83,9 @@ const ThankYouMessage = ({ message }: { message: string }) => (
 
 const DonateButton = ({
   isUserDonating,
-  handleMenuKeyDown,
-  t
+  handleMenuKeyDown
 }: DonateButtonProps) => {
+  const { t } = useTranslation();
   const exposeUniversalDonateButton = useFeature('expose_donate_button').on;
   if (isUserDonating) return <ThankYouMessage message={t('donate.thanks')} />;
   else if (exposeUniversalDonateButton)
@@ -110,6 +106,15 @@ const DonateButton = ({
     );
 };
 
+const toggleTheme = (
+  currentTheme = Themes.Default,
+  toggleNightMode: (theme: Themes) => Themes
+) => {
+  toggleNightMode(
+    currentTheme === Themes.Night ? Themes.Default : Themes.Night
+  );
+};
+
 function NavLinks({
   menuButtonRef,
   hideLanguageMenu,
@@ -119,23 +124,19 @@ function NavLinks({
   isLanguageMenuDisplayed,
   displayMenu,
   fetchState,
-  t,
   toggleNightMode,
   user,
   navigate
 }: NavLinksProps) {
+  const { t } = useTranslation();
   const langButtonRef = useRef<HTMLButtonElement>(null);
   const firstLangOptionRef = useRef<HTMLButtonElement>(null);
   const lastLangOptionRef = useRef<HTMLButtonElement>(null);
+  const { pending } = fetchState;
 
-  const toggleTheme = (
-    currentTheme = Themes.Default,
-    toggleNightMode: (theme: Themes) => Themes
-  ) => {
-    toggleNightMode(
-      currentTheme === Themes.Night ? Themes.Default : Themes.Night
-    );
-  };
+  const isUserDonating = user?.isDonating;
+  const currentUserName = user?.username;
+  const currentUserTheme = user?.theme;
 
   const getPreviousMenuItem = (target: HTMLButtonElement | null) => {
     const previousSibling =
@@ -151,7 +152,7 @@ function NavLinks({
   ): void => {
     event.preventDefault();
 
-    const newLanguage = event.currentTarget.dataset.value as string;
+    const newLanguage = event.currentTarget.dataset.value;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
@@ -168,12 +169,14 @@ function NavLinks({
     if (newLanguage === clientLocale) {
       return;
     }
-    const path = createLanguageRedirect({
-      clientLocale,
-      lang: newLanguage
-    });
-    if (typeof navigate !== 'undefined') {
-      return navigate(path);
+    if (newLanguage !== undefined) {
+      const path = createLanguageRedirect({
+        clientLocale,
+        lang: newLanguage
+      });
+      if (typeof navigate !== 'undefined') {
+        return navigate(path);
+      }
     }
   };
 
@@ -373,11 +376,6 @@ function NavLinks({
     openSignoutModal();
   };
 
-  const isUserDonating = user?.isDonating;
-  const currentUserName = user?.username;
-  const currentUserTheme = user?.theme;
-  const { pending } = fetchState;
-
   return pending ? (
     <div className='nav-skeleton' />
   ) : (
@@ -388,7 +386,6 @@ function NavLinks({
       }`}
     >
       <DonateButton
-        t={t}
         isUserDonating={isUserDonating}
         handleMenuKeyDown={handleMenuKeyDown}
       />

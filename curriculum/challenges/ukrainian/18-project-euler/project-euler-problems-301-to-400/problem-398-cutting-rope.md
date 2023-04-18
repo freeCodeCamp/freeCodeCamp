@@ -16,7 +16,7 @@ Find $E({10}^7, 100)$. Give your answer rounded to 5 decimal places behind the d
 
 # --hints--
 
-`cuttingRope()` should return `2010.59096`.
+`cuttingRope()` має повернути `2010.59096`.
 
 ```js
 assert.strictEqual(cuttingRope(), 2010.59096);

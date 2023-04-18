@@ -33,7 +33,7 @@ Using `network`, an 2D array representing network in matrix form, find the maxim
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` має повернути `259679`.
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

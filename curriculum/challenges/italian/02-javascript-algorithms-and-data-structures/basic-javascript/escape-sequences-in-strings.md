@@ -11,7 +11,7 @@ dashedName: escape-sequences-in-strings
 
 Le virgolette non sono gli unici caratteri dei quali si può fare l'<dfn>escaping</dfn> all'interno di una stringa. Le sequenze di escape ti permettono di usare caratteri che altrimenti non saresti in grado di usare in una stringa.
 
-<table class='table table-striped'><thead><tr><th>Codice</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>virgoletta singola</td></tr><tr><td><code>\"</code></td><td>doppia citazione</td></tr><tr><td><code>\\</code></td><td>barra rovesciata</td></tr><tr><td><code>\n</code></td><td>nuova riga</td></tr><tr><td><code>\t</code></td><td>tabulazione</td></tr><tr><td><code>\r</code></td><td>ritorno a capo</td></tr><tr><td><code>\b</code></td><td>delimitatore di parola</td></tr><tr><td><code>\f</code></td><td>avanzamento carta (form feed)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Codice</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>virgoletta singola</td></tr><tr><td><code>\"</code></td><td>doppia citazione</td></tr><tr><td><code>\\</code></td><td>barra rovesciata</td></tr><tr><td><code>\n</code></td><td>nuova riga</td></tr><tr><td><code>\t</code></td><td>tabulazione</td></tr><tr><td><code>\r</code></td><td>ritorno a capo</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>avanzamento carta (form feed)</td></tr></tbody></table>
 
 *Nota che la barra rovesciata necessita di escaping perché appaia come una barra rovesciata.*
 

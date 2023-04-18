@@ -8,19 +8,19 @@ dashedName: solving-for-x
 
 # --description--
 
-This first video will show you the essence of algebra and then how Python code does the same task in a different way.
+Este primeiro vídeo mostrará a essência da álgebra e, em seguida, como o código em Python faz a mesma tarefa de uma maneira diferente.
 
-Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Add the code from the video to your algebra Colab notebook to see how to solve for X using Python. Then change the code if you want, test it, and compare it to paper-and-pencil solving. Remember the equation input needs to be in Python syntax.
+Aqui está o <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a> Adicione o código do vídeo ao notebook do Colaboratory de álgebra para ver como resolver para X usando o Python. Em seguida, mude o código se você quiser, teste-o e compare-o à resolução com lápis e papel. Lembre-se de que a entrada da equação precisa estar na sintaxe do Python.
 
 # --question--
 
 ## --assignment--
 
-Add the code to solve for x from the video to your algebra Colab notebook.
+Adicione o código para resolver para x do vídeo ao seu notebook do Colaboratory de álgebra.
 
 ## --text--
 
-In Python, what is the library you import to solve algebra problems with variables?
+Em Python, qual é a biblioteca que você importa para resolver problemas de álgebra com variáveis?
 
 ## --answers--
 

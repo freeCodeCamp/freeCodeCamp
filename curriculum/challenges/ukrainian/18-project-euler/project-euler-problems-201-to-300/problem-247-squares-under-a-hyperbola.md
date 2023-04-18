@@ -30,7 +30,7 @@ What is the largest $n$ for which the index of $S_n$ is (3, 3)?
 
 # --hints--
 
-`squaresUnderAHyperbola()` should return `782252`.
+`squaresUnderAHyperbola()` має повернути `782252`.
 
 ```js
 assert.strictEqual(squaresUnderAHyperbola(), 782252);

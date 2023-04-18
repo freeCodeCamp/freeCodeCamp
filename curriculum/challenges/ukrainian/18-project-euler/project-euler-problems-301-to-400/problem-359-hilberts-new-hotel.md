@@ -36,7 +36,7 @@ Find the sum of all $P(f, r)$ for all positive $f$ and $r$ such that $f × r = 7
 
 # --hints--
 
-`hilbertsNewHotel()` should return `40632119`.
+`hilbertsNewHotel()` має повернути `40632119`.
 
 ```js
 assert.strictEqual(hilbertsNewHotel(), 40632119);

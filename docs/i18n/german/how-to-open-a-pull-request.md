@@ -17,7 +17,7 @@ Einige Beispiele hierfür sind:
 
 > [!NOTE] Deine Öffentlichkeitsarbeit sollte sich nur auf Änderungen des englischen Lehrplans beziehen. Lese stattdessen [diesen Leitfaden](index.md#translations), um zu Übersetzungen beizutragen.
 
-## Bereite einen guten PR-Titel vor
+## Prepare a Good PR Title
 
 Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalcommits.org/) für Commits und Pull Requests zu verwenden. Die Konvention hat das folgende Format:
 
@@ -93,7 +93,7 @@ Einige Beispiele für gute PR-Titel wären:
 
    - Wenn dein PR das Verhalten einer Seite beeinflusst, sollte er von entsprechenden [Cypress Integrationstests](how-to-add-cypress-tests.md) begleitet werden.
 
-## Feedback zu Pull-Requests
+## Feedback on Pull Requests
 
 > :tada: für die Erstellung eines PR und vielen Dank, dass du dir die Zeit genommen haben, einen Beitrag zu leisten.
 
@@ -103,13 +103,13 @@ Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem
 
 > [!TIP] Wenn du mehr Pull-Requests beisteuern willst, empfehlen wir dir, die [Richtlinien für Änderungen und Synchronisierung](how-to-setup-freecodecamp-locally.md#making-changes-locally) zu lesen, damit du deinen Fork nicht löschen musst.
 
-## Konflikte bei Pull-Requests
+## Conflicts on a Pull Request
 
 Es kann zu Konflikten kommen, weil viele Mitwirkende an dem Repository arbeiten und Änderungen deinen PR zerstören können, der noch auf eine Überprüfung und Zusammenführung wartet.
 
 In den meisten Fällen brauchst du keinen Rebase, da wir alle Commits vernichten. Wenn jedoch ein Rebase verlangt wird, solltest du wie folgt vorgehen.
 
-### Für die üblichen Fehlerbehebungen und Funktionen
+### For Usual Bug Fixes and Features
 
 Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arbeitest, kannst du einen einfachen Rebase durchführen:
 
@@ -138,7 +138,7 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
    git push --force origin <pr-branch>
    ```
 
-### Für anstehende Studienpläne und Features
+### For Upcoming Curriculum and Features
 
 Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du Rosinenpickerei betreiben:
 

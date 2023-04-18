@@ -20,7 +20,7 @@ How many generalised Hamming numbers of type 100 are there which don't exceed ${
 
 # --hints--
 
-`generalisedHammingNumbers()` should return `2944730`.
+`generalisedHammingNumbers()` має повернути `2944730`.
 
 ```js
 assert.strictEqual(generalisedHammingNumbers(), 2944730);

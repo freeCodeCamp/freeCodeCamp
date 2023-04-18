@@ -28,7 +28,7 @@ Find $A({10}^9)$ + $B({10}^9)$ and give your answer $\bmod 77\\,777\\,777$.
 
 # --hints--
 
-`eulersNumber()` should return `15955822`.
+`eulersNumber()` має повернути `15955822`.
 
 ```js
 assert.strictEqual(eulersNumber(), 15955822);

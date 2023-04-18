@@ -36,7 +36,7 @@ Graficare un'equazione o due
 
 ---
 
-Show tic marks on the graph
+Mostrare i segni di graduazione nel grafico
 
 ## --video-solution--
 

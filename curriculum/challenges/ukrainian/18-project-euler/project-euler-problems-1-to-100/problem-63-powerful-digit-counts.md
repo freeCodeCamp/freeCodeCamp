@@ -14,67 +14,67 @@ Complete the function so that it returns how many positive integers are of lengt
 
 # --hints--
 
-`powerfulDigitCounts(1)` should return a number.
+`powerfulDigitCounts(1)` має повернути число.
 
 ```js
 assert(typeof powerfulDigitCounts(1) === 'number');
 ```
 
-`powerfulDigitCounts(1)` should return `9`.
+`powerfulDigitCounts(1)` має повернути `9`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(1), 9);
 ```
 
-`powerfulDigitCounts(2)` should return `6`.
+`powerfulDigitCounts(2)` має повернути `6`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(2), 6);
 ```
 
-`powerfulDigitCounts(3)` should return `5`.
+`powerfulDigitCounts(3)` має повернути `5`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(3), 5);
 ```
 
-`powerfulDigitCounts(4)` should return `4`.
+`powerfulDigitCounts(4)` має повернути `4`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(4), 4);
 ```
 
-`powerfulDigitCounts(5)` should return `3`.
+`powerfulDigitCounts(5)` має повернути `3`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(5), 3);
 ```
 
-`powerfulDigitCounts(6)` should return `3`.
+`powerfulDigitCounts(6)` має повернути `3`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(6), 3);
 ```
 
-`powerfulDigitCounts(7)` should return `2`.
+`powerfulDigitCounts(7)` має повернути `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(7), 2);
 ```
 
-`powerfulDigitCounts(8)` should return `2`.
+`powerfulDigitCounts(8)` має повернути `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(8), 2);
 ```
 
-`powerfulDigitCounts(10)` should return `2`.
+`powerfulDigitCounts(10)` має повернути `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(10), 2);
 ```
 
-`powerfulDigitCounts(21)` should return `1`.
+`powerfulDigitCounts(21)` має повернути `1`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(21), 1);

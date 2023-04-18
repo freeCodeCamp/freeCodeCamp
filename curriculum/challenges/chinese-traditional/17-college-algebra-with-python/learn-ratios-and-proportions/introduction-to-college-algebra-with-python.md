@@ -1,6 +1,6 @@
 ---
 id: 6331caa1b51aeedd1a2bd644
-title: "Introduction to College Algebra with Python"
+title: "大學代數和 Python 課程簡介"
 challengeType: 15
 videoId: bO3Sn10-XNw
 dashedName: introduction-to-college-algebra-with-python
@@ -8,23 +8,23 @@ dashedName: introduction-to-college-algebra-with-python
 
 # --description--
 
-This first video includes an introduction to the course, how it will work, and how to use Google Colaboratory. Follow along to create your first Colab notebook.
+這第一個視頻包括對課程的介紹、它將如何運行，以及如何使用 Google Colaboratory。 請跟着課程創建你的第一個 Colab 筆記本。
 
-**Videos throughout these courses will reference problems from these two textbooks:**
+**貫穿這些課程的視頻將參考這兩本教科書中的問題：**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">《商業數學分步手冊（2021）》，作者 Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">《代數與三角學》，作者 Jay Abramson</a>
 
 # --question--
 
-## --assignment--
+## --任務--
 
-Create an algebra <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">Colab notebook on your google drive</a> so you can follow along with the videos.
+<a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">在你的 Google Drive 上創建一個 Colab 筆記本</a>，這樣你可以跟着視頻一起學習。
 
 ## --text--
 
-When adding text in Google Colab, what symbol would you use to create a heading that will appear in the table of contents?
+在 Google Colab 中添加文本時，你會用什麼符號來創建一個將出現在目錄中的標題？
 
 ## --answers--
 

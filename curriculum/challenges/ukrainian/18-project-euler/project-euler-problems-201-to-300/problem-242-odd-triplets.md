@@ -18,7 +18,7 @@ How many odd-triplets are there with $n ≤ {10}^{12}$?
 
 # --hints--
 
-`oddTriplets()` should return `997104142249036700`.
+`oddTriplets()` має повернути `997104142249036700`.
 
 ```js
 assert.strictEqual(oddTriplets(), 997104142249036700);

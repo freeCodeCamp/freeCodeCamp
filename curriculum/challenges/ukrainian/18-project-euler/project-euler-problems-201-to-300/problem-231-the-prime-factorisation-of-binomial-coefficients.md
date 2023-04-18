@@ -18,7 +18,7 @@ Find the sum of the terms in the prime factorisation of $\binom{20\\,000\\,000}{
 
 # --hints--
 
-`primeFactorisation()` should return `7526965179680`.
+`primeFactorisation()` має повернути `7526965179680`.
 
 ```js
 assert.strictEqual(primeFactorisation(), 7526965179680);

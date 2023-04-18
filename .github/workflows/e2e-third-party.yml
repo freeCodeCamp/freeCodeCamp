@@ -8,6 +8,8 @@ on:
       - 'prod-**'
     paths-ignore:
       - 'docs/**'
+  # to test this ad-hoc
+  workflow_dispatch:
 
 jobs:
   do-everything:
@@ -29,10 +31,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Checkout client-config
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -66,6 +68,14 @@ jobs:
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
+        # In our cypress config, we default to the cypress/e2e/default directory.
+        # We need to change this to cypress/e2e/ for the specific tests we are running
+        # in this workflow.
+        #
+      - name: Adjust the Cypress Config
+        run: |
+          sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
+
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
@@ -75,5 +85,4 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: chrome
-
-          spec: cypress/e2e/third-party/*.{js,ts}
+          spec: 'cypress/e2e/third-party/donate-page.ts'

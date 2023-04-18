@@ -1,6 +1,6 @@
 ---
 id: 6331d27db51aeedd1a2bd64e
-title: "Graphing Systems"
+title: "Побудова графіку систем рівнянь"
 challengeType: 15
 videoId: FxSIFR4zsrE
 dashedName: graphing-systems
@@ -8,35 +8,35 @@ dashedName: graphing-systems
 
 # --description--
 
-This first video will show you how to graph systems of equations with with written math, then code.
+Перше відео покаже, як побудувати графік системи рівнянь письмово, а потім за допомогою коду.
 
-Here is the <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --assignment--
 
-Add code from the video to the algebra notebook you are building, and test it with different functions.
+Додайте код з відео до свого блокнота та проведіть над ним тести з різними функціями.
 
 ## --text--
 
-The numpy `linspace()` function takes three arguments to create an array. Which of the following arguments does it not take?
+Функція `linspace()` у numpy приймає три аргументи для створення масиву. Який з перелічених аргументів вона не приймає?
 
 ## --answers--
 
-Minimum value
+Мінімальне значення
 
 ---
 
-Maximum value
+Максимальне значення
 
 ---
 
-Number of items in the array
+Кількість елементів у масиві
 
 ---
 
-Formula to generate each item
+Формула для генерації кожного елемента
 
 ## --video-solution--
 

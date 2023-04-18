@@ -1,6 +1,6 @@
 # So übersetzt du die Ressourcen von freeCodeCamp
 
-## Bereite dich auf die Teilnahme vor
+## Prepare yourself for Contributions
 
 > Die freeCodeCamp Lokalisierungs-Roadmap - Es gibt keine Geschwindigkeitsbegrenzungen
 
@@ -44,7 +44,7 @@ Wir bitten dich nur um Verständnis für die folgenden Punkte:
 
 ## Überblick über Crowdin
 
-Unser Traum ist es, dich mit den nötigen Ressourcen auszustatten, damit du lernen kannst, egal welche Weltsprache du sprichst. Um uns bei diesem enormen Aufwand zu helfen, haben wir unsere Open-Source-Code-Basis & Lehrplan mit [Crowdin](https://crowdin.com/) integriert - ein Tool, das uns bei der Lokalisierung unserer Code-Basis hilft.
+Unser Traum ist es, dich mit den nötigen Ressourcen auszustatten, damit du lernen kannst, egal welche Weltsprache du sprichst. To help us with this massive effort, we have integrated our open-source codebase & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
 
 > [!NOTE] Wir verwenden ein anderes Tool und einen anderen Arbeitsablauf für die Übersetzung von [Nachrichtenartikeln](https://www.freecodecamp.org/news). Wenn du an der Übersetzung von Artikeln interessiert bist, lese [diese Ankündigung](https://www.freecodecamp.org/german/news/freecodecamp-in-deine-muttersprache-uebersetzen/) und wende dich an deinen Language Lead.
 
@@ -60,7 +60,7 @@ Der Übersetzungsworkflow ist in zwei Hauptaktivitäten unterteilt:
 
 > [!WARNING] Wir verwenden GitHub nicht mehr, um Dateien direkt zu übersetzen. Wenn du wieder mitarbeiten möchtest, gehe stattdessen zu unserer [Übersetzungsplattform](https://translate.freecodecamp.org/).
 
-## Erste Schritte
+## Getting Started
 
 Zuerst solltest du in unserem [Diskord](https://discord.gg/PRyKn3Vbay) "Hallo" sagen. Wir posten regelmäßig Updates über Übersetzungsressourcen und beantworten dort deine Fragen.
 
@@ -145,7 +145,7 @@ Die Übersetzung der Dokumentation für die Mitarbeit ist ein ähnlicher Prozess
 
 > [!NOTE] Unsere Dokumentation wird von `docsify` unterstützt, und wir haben ein spezielles Parsing für Nachrichtenboxen wie diese hier. Wenn du Strings siehst, die mit `[!NOTE]`, `[!WARNING]` oder `[!TIP]` beginnen, solltest du diese Wörter NICHT übersetzen.
 
-### Wie man Dokumentation mit internen Links übersetzt
+### How to Translate Documentation with Internal Links
 
 Wenn du an der Übersetzung der Dokumentation arbeitest, achte auf interne Links, die auf einen anderen Teil der Dokumentation verweisen.
 

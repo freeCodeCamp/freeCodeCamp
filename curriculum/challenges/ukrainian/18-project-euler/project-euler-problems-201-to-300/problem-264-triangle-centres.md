@@ -45,7 +45,7 @@ Find all such triangles with a $\text{perimeter} ≤ {10}^5$. Enter as your answ
 
 # --hints--
 
-`triangleCentres()` should return `2816417.1055`.
+`triangleCentres()` має повернути `2816417.1055`.
 
 ```js
 assert.strictEqual(triangleCentres(), 2816417.1055);

@@ -22,31 +22,31 @@ What is the first value which can be written as the sum of primes in over `n` wa
 
 # --hints--
 
-`primeSummations(5)` should return a number.
+`primeSummations(5)` має повернути число.
 
 ```js
 assert(typeof primeSummations(5) === 'number');
 ```
 
-`primeSummations(5)` should return `11`.
+`primeSummations(5)` має повернути `11`.
 
 ```js
 assert.strictEqual(primeSummations(5), 11);
 ```
 
-`primeSummations(100)` should return `31`.
+`primeSummations(100)` має повернути `31`.
 
 ```js
 assert.strictEqual(primeSummations(100), 31);
 ```
 
-`primeSummations(1000)` should return `53`.
+`primeSummations(1000)` має повернути `53`.
 
 ```js
 assert.strictEqual(primeSummations(1000), 53);
 ```
 
-`primeSummations(5000)` should return `71`.
+`primeSummations(5000)` має повернути `71`.
 
 ```js
 assert.strictEqual(primeSummations(5000), 71);

@@ -35,7 +35,7 @@ Give as your answer the sum of the squares of the elements of the final state. F
 
 # --hints--
 
-`boxBallSystem()` should return `31591886008`.
+`boxBallSystem()` має повернути `31591886008`.
 
 ```js
 assert.strictEqual(boxBallSystem(), 31591886008);

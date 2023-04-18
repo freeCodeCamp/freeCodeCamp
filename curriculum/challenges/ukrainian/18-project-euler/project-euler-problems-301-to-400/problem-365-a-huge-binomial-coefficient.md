@@ -16,7 +16,7 @@ Calculate $\sum M({10}^{18}, {10}^9, p \times q \times r)$ for $1000 &lt; p &lt;
 
 # --hints--
 
-`hugeBinomialCoefficient()` should return `162619462356610300`.
+`hugeBinomialCoefficient()` має повернути `162619462356610300`.
 
 ```js
 assert.strictEqual(hugeBinomialCoefficient(), 162619462356610300);

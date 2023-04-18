@@ -1,6 +1,6 @@
 ---
 id: 63d8401039c73468b059cd41
-title: "Build Three Math Games"
+title: "Створіть три математичні ігри"
 challengeType: 10
 dashedName: build-three-math-games
 ---
@@ -15,15 +15,15 @@ dashedName: build-three-math-games
 
 У цьому завданні за допомогою Python потрібно створити три математичні ігри, які виконують наступне:
 
-- Scatter plot game
-  - Randomly generate points on a graph and the player has to input the (x,y) coordinates
-  - For added difficulty, make the graph larger
-- Algebra practice game
-  - Generate one-step and two-step problems with random integer values and the player has to input the answer
-  - Use positive and negative values. For added difficulty, make the numbers larger
-- Projectile game
-  - Display a "wall" with random height and location. Player has to move sliders to adjust a parabolic path to clear the wall
-  - For added difficulty, make a second level where players enter a, b, and c without sliders
+- Гра «Точкова діаграма»
+  - Випадково генерує точки на графіку, а гравець повинен ввести координати (x, y)
+  - Щоб гра була складнішою, зробіть графік більшим
+- Гра «Практика алгебри»
+  - Створіть приклади з однією та двома діями, а гравець повинен ввести відповідь
+  - Використайте додатні та від’ємні значення. Щоб гра була складнішою, зробіть числа більшими
+- Гра «Метальний об’єкт»
+  - Зобразіть «стіну» з випадковою висотою та розташуванням. Гравець повинен перетягнути повзунки так, щоб змінити параболічну траєкторію та очистити стіну
+  - Щоб гра була складнішою, створіть другий рівень, де гравець вводить a, b та c без повзунків
 
 Як тільки закінчите, введіть посилання на загальнодоступний блокнот Colab на вашому гугл-диску.
 

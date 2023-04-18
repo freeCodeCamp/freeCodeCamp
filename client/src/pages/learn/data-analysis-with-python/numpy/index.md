@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Numpy Lectures
-block: Numpy
-superBlock: Data Analysis with Python
+block: numpy
+superBlock: data-analysis-with-python
 ---
 
 ## Introduction to the Numpy Challenges

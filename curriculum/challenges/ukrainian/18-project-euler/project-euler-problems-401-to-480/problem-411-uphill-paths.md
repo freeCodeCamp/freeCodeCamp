@@ -24,7 +24,7 @@ Find $\sum S(k^5)$ for $1 ≤ k ≤ 30$.
 
 # --hints--
 
-`uphillPaths()` should return `9936352`.
+`uphillPaths()` має повернути `9936352`.
 
 ```js
 assert.strictEqual(uphillPaths(), 9936352);

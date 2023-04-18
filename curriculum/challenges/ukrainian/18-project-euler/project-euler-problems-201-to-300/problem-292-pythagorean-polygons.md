@@ -25,7 +25,7 @@ Find $P(120)$.
 
 # --hints--
 
-`pythagoreanPolygons()` should return `3600060866`.
+`pythagoreanPolygons()` має повернути `3600060866`.
 
 ```js
 assert.strictEqual(pythagoreanPolygons(), 3600060866);

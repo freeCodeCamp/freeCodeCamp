@@ -31,7 +31,7 @@ Find the sum of the first four engineers’ paradises.
 
 # --hints--
 
-`engineersDreamComeTrue()` should return `2039506520`.
+`engineersDreamComeTrue()` має повернути `2039506520`.
 
 ```js
 assert.strictEqual(engineersDreamComeTrue(), 2039506520);

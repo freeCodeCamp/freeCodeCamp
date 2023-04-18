@@ -1,6 +1,6 @@
 ---
 id: 6363d2019078df117ce4c3fe
-title: "Word Problems"
+title: "词语问题"
 challengeType: 15
 videoId: 3ZM3XMn1QYo
 dashedName: word-problems
@@ -8,43 +8,43 @@ dashedName: word-problems
 
 # --description--
 
-This first video will look at key words that tell you what math operation to use. Then you will see how to apply some of your code to different problems.
+这第一个视频将展示告诉你要使用什么数学运算的关键词。 然后你将看到如何将你的一些代码应用于不同的问题。
 
-**Here are links to the textbooks you will need to complete the assignments for this video:**
+**以下是你完成本视频的任务所需的教科书链接：**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">《商业数学分步手册（2021）》，作者 Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">《代数与三角学》，作者 Jay Abramson</a>
 
 # --question--
 
-## --assignment--
+## --任务--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+完成《商业数学分步手册（2021）》第 63、75、85 和 118 页的问题。
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+完成《代数与三角学》第 304、308 和 321 页的问题。
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+以下哪些关键词表示减法？
 
 ## --answers--
 
-plus, more, increase, up
+加上、更多、增加、提高（plus, more, increase, up）
 
 ---
 
-difference, less, decrease, down
+相差、较少、减少、下降（difference, less, decrease, down）
 
 ---
 
-of, by, factor, area, times
+的、按、因式、面积、倍（of, by, factor, area, times）
 
 ---
 
-out of, per, divided, quotient
+其中、每、分成、商数（out of, per, divided, quotient）
 
 ## --video-solution--
 

@@ -22,7 +22,7 @@ Find the expected number of plates he needs to see for a win. Give your answer r
 
 # --hints--
 
-`licensePlates()` should return `40.66368097`.
+`licensePlates()` має повернути `40.66368097`.
 
 ```js
 assert.strictEqual(licensePlates(), 40.66368097);

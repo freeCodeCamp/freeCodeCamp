@@ -18,7 +18,7 @@ Find the sum of all positive integers $n ≤ {10}^{18}$ for which $p(n)$ has the
 
 # --hints--
 
-`perfectionQuotients()` should return `482316491800641150`.
+`perfectionQuotients()` має повернути `482316491800641150`.
 
 ```js
 assert.strictEqual(perfectionQuotients(), 482316491800641150);

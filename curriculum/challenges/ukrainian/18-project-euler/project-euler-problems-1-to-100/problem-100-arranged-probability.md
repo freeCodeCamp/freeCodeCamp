@@ -18,37 +18,37 @@ By finding the first arrangement to contain over `limit` discs in total, determi
 
 # --hints--
 
-`arrangedProbability(20)` should return a number.
+`arrangedProbability(20)` має повернути число.
 
 ```js
 assert(typeof arrangedProbability(10) === 'number');
 ```
 
-`arrangedProbability(20)` should return `15`.
+`arrangedProbability(20)` має повернути `15`.
 
 ```js
 assert.strictEqual(arrangedProbability(20), 15);
 ```
 
-`arrangedProbability(100)` should return `85`.
+`arrangedProbability(100)` має повернути `85`.
 
 ```js
 assert.strictEqual(arrangedProbability(100), 85);
 ```
 
-`arrangedProbability(100000)` should return `97513`.
+`arrangedProbability(100000)` має повернути `97513`.
 
 ```js
 assert.strictEqual(arrangedProbability(100000), 97513);
 ```
 
-`arrangedProbability(1000000000)` should return `3822685023`.
+`arrangedProbability(1000000000)` має повернути `3822685023`.
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000), 3822685023);
 ```
 
-`arrangedProbability(1000000000000)` should return `756872327473`.
+`arrangedProbability(1000000000000)` має повернути `756872327473`.
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000000), 756872327473);

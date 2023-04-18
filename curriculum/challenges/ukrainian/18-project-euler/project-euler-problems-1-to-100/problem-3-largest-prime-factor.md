@@ -14,49 +14,49 @@ What is the largest prime factor of the given `number`?
 
 # --hints--
 
-`largestPrimeFactor(2)` should return a number.
+`largestPrimeFactor(2)` має повернути число.
 
 ```js
 assert(typeof largestPrimeFactor(2) === 'number');
 ```
 
-`largestPrimeFactor(2)` should return 2.
+`largestPrimeFactor(2)` має повернути 2.
 
 ```js
 assert.strictEqual(largestPrimeFactor(2), 2);
 ```
 
-`largestPrimeFactor(3)` should return 3.
+`largestPrimeFactor(3)` має повернути 3.
 
 ```js
 assert.strictEqual(largestPrimeFactor(3), 3);
 ```
 
-`largestPrimeFactor(5)` should return 5.
+`largestPrimeFactor(5)` має повернути 5.
 
 ```js
 assert.strictEqual(largestPrimeFactor(5), 5);
 ```
 
-`largestPrimeFactor(7)` should return 7.
+`largestPrimeFactor(7)` має повернути 7.
 
 ```js
 assert.strictEqual(largestPrimeFactor(7), 7);
 ```
 
-`largestPrimeFactor(8)` should return 2.
+`largestPrimeFactor(8)` має повернути 2.
 
 ```js
 assert.strictEqual(largestPrimeFactor(8), 2);
 ```
 
-`largestPrimeFactor(13195)` should return 29.
+`largestPrimeFactor(13195)` має повернути 29.
 
 ```js
 assert.strictEqual(largestPrimeFactor(13195), 29);
 ```
 
-`largestPrimeFactor(600851475143)` should return 6857.
+`largestPrimeFactor(600851475143)` має повернути 6857.
 
 ```js
 assert.strictEqual(largestPrimeFactor(600851475143), 6857);

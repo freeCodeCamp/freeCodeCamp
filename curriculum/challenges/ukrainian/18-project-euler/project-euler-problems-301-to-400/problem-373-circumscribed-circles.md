@@ -18,7 +18,7 @@ Find $S({10}^7)$.
 
 # --hints--
 
-`circumscribedCircles()` should return `727227472448913`.
+`circumscribedCircles()` має повернути `727227472448913`.
 
 ```js
 assert.strictEqual(circumscribedCircles(), 727227472448913);

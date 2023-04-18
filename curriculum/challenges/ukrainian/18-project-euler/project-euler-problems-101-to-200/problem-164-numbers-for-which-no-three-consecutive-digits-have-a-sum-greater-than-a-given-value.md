@@ -14,7 +14,7 @@ How many 20 digit numbers $n$ (without any leading zero) exist such that no thre
 
 # --hints--
 
-`consecutiveDigitsSum()` should return `378158756814587`.
+`consecutiveDigitsSum()` має повернути `378158756814587`.
 
 ```js
 assert.strictEqual(consecutiveDigitsSum(), 378158756814587);

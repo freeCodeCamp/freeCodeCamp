@@ -16,31 +16,31 @@ For which value of `p` ≤ `n`, is the number of solutions maximized?
 
 # --hints--
 
-`intRightTriangles(500)` should return a number.
+`intRightTriangles(500)` має повернути число.
 
 ```js
 assert(typeof intRightTriangles(500) === 'number');
 ```
 
-`intRightTriangles(500)` should return 420.
+`intRightTriangles(500)` має повернути 420.
 
 ```js
 assert(intRightTriangles(500) == 420);
 ```
 
-`intRightTriangles(800)` should return 720.
+`intRightTriangles(800)` має повернути 720.
 
 ```js
 assert(intRightTriangles(800) == 720);
 ```
 
-`intRightTriangles(900)` should return 840.
+`intRightTriangles(900)` має повернути 840.
 
 ```js
 assert(intRightTriangles(900) == 840);
 ```
 
-`intRightTriangles(1000)` should return 840.
+`intRightTriangles(1000)` має повернути 840.
 
 ```js
 assert(intRightTriangles(1000) == 840);

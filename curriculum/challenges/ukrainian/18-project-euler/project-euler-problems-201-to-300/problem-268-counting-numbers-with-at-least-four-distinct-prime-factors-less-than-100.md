@@ -16,7 +16,7 @@ Find how many positive integers less than ${10}^{16}$ are divisible by at least 
 
 # --hints--
 
-`fourDistinctPrimeFactors()` should return `785478606870985`.
+`fourDistinctPrimeFactors()` має повернути `785478606870985`.
 
 ```js
 assert.strictEqual(fourDistinctPrimeFactors(), 785478606870985);

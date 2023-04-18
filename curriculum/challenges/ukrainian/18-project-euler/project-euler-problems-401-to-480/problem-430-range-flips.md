@@ -24,7 +24,7 @@ Find $E({10}^{10}, 4000)$. Give your answer rounded to 2 decimal places behind t
 
 # --hints--
 
-`rangeFlips()` should return `5000624921.38`.
+`rangeFlips()` має повернути `5000624921.38`.
 
 ```js
 assert.strictEqual(rangeFlips(), 5000624921.38);

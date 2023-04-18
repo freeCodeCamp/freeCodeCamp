@@ -8,23 +8,23 @@ dashedName: problem-33-digit-cancelling-fractions
 
 # --description--
 
-The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.
+La frazione <sup>49</sup>/<sub>98</sub> è una frazione peculiare, poiché un matematico senza esperienza tentando di semplificarla potrebbe credere incorrettamente che la semplificazione <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, che è corretta, è ottenuta cancellando i 9.
 
-We shall consider fractions like, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, to be trivial examples.
+Possiamo considerare frazioni come <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub> un esempio triviale.
 
-There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+Ci sono esattamente quattro esempi non triviali di questo tipo di frazioni, con valore minore di 1, e contenenti due cifre al numeratore e denominatore.
 
-If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+Se il prodotto di queste quattro frazioni è dato nel formato semplificato, trova il valore del denominatore.
 
 # --hints--
 
-`digitCancellingFractions()` should return a number.
+`digitCancellingFractions()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof digitCancellingFractions() === 'number');
 ```
 
-`digitCancellingFractions()` should return 100.
+`digitCancellingFractions()` dovrebbe restituire 100.
 
 ```js
 assert.strictEqual(digitCancellingFractions(), 100);

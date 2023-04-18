@@ -20,7 +20,7 @@ Find $f({10}^{10000})\bmod 100\\,000\\,007$.
 
 # --hints--
 
-`buildingTower()` should return `96972774`.
+`buildingTower()` має повернути `96972774`.
 
 ```js
 assert.strictEqual(buildingTower(), 96972774);

@@ -22,7 +22,7 @@ Find the variance of $I$, and give your answer rounded to 4 decimal places.
 
 # --hints--
 
-`platonicDice()` should return `2406376.3623`.
+`platonicDice()` має повернути `2406376.3623`.
 
 ```js
 assert.strictEqual(platonicDice(), 2406376.3623);

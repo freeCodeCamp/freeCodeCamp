@@ -22,7 +22,7 @@ Find the sum of the five smallest such palindromic numbers.
 
 # --hints--
 
-`sumOfSquareAndCube()` should return `1004195061`.
+`sumOfSquareAndCube()` має повернути `1004195061`.
 
 ```js
 assert.strictEqual(sumOfSquareAndCube(), 1004195061);

@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
@@ -33,7 +32,7 @@ import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
-import Preview from '../components/preview';
+import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
@@ -64,7 +63,6 @@ import MobileLayout from './mobile-layout';
 import './classic.css';
 import '../components/test-frame.css';
 
-// Redux Setup
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   output: consoleOutputSelector,
@@ -90,8 +88,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-// Types
-interface ShowClassicProps {
+interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
@@ -113,7 +110,6 @@ interface ShowClassicProps {
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
-  previewMounted: () => void;
   savedChallenges: CompletedChallenge[];
 }
 
@@ -150,7 +146,24 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
   }
 };
 
-// Component
+const StepPreview = ({
+  disableIframe
+}: Pick<PreviewProps, 'disableIframe'>) => {
+  return (
+    <Preview
+      className='full-height'
+      disableIframe={disableIframe}
+      previewMounted={previewMounted}
+    />
+  );
+};
+
+// The newline is important, because this text ends up in a `pre` element.
+const defaultOutput = `
+/**
+* Your test output will go here
+*/`;
+
 function ShowClassic({
   challengeFiles: reduxChallengeFiles,
   data: {
@@ -194,6 +207,41 @@ function ShowClassic({
   executeChallenge
 }: ShowClassicProps) {
   const { t } = useTranslation();
+  const [resizing, setResizing] = useState(false);
+  const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
+  const containerRef = useRef<HTMLElement>();
+  const editorRef = useRef<editor.IStandaloneCodeEditor>();
+  const instructionsPanelRef = useRef<HTMLDivElement>(null);
+
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )}: ${title}`;
+  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const showPreview =
+    challengeType === challengeTypes.html ||
+    challengeType === challengeTypes.modern ||
+    challengeType === challengeTypes.multifileCertProject;
+
+  const getLayoutState = () => {
+    const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
+
+    // Validate if user has not done any resize of the panes
+    if (!reflexLayout) return BASE_LAYOUT;
+
+    // Check that the layout values stored are valid (exist in base layout). If
+    // not valid, it will fallback to the base layout values and be set on next
+    // user resize.
+    const isValidLayout = isContained(
+      Object.keys(BASE_LAYOUT),
+      Object.keys(reflexLayout)
+    );
+
+    return isValidLayout ? reflexLayout : BASE_LAYOUT;
+  };
+
+  // layout: Holds the information of the panes sizes for desktop view
+  const [layout, setLayout] = useState(getLayoutState());
+
   const onStopResize = (event: HandlerProps) => {
     const { name, flex } = event.component.props;
 
@@ -222,33 +270,6 @@ function ShowClassic({
     onResize,
     onStopResize
   };
-
-  const getLayoutState = (): ReflexLayout => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const reflexLayout: ReflexLayout = store.get(REFLEX_LAYOUT);
-
-    // Validate if user has not done any resize of the panes
-    if (!reflexLayout) return BASE_LAYOUT;
-
-    // Check that the layout values stored are valid (exist in base layout). If
-    // not valid, it will fallback to the base layout values and be set on next
-    // user resize.
-    const isValidLayout = isContained(
-      Object.keys(BASE_LAYOUT),
-      Object.keys(reflexLayout)
-    );
-
-    return isValidLayout ? reflexLayout : BASE_LAYOUT;
-  };
-
-  // layout: Holds the information of the panes sizes for desktop view
-  const [layout, setLayout] = useState(getLayoutState());
-  const [resizing, setResizing] = useState(false);
-  const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
-
-  const containerRef = useRef<HTMLElement>();
-  const editorRef = useRef<editor.IStandaloneCodeEditor>();
-  const instructionsPanelRef = useRef<HTMLDivElement>(null);
 
   const updateUsingKeyboardInTablist = (
     usingKeyboardInTablist: boolean
@@ -321,18 +342,6 @@ function ShowClassic({
     setIsAdvancing(false);
   };
 
-  const getBlockNameTitle = (t: TFunction): string => {
-    return `${t(`intro:${superBlock}.blocks.${block}.title`)}: ${title}`;
-  };
-
-  const hasPreview = () => {
-    return (
-      challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern ||
-      challengeType === challengeTypes.multifileCertProject
-    );
-  };
-
   const renderInstructionsPanel = ({
     showToolPanel
   }: {
@@ -376,7 +385,6 @@ function ShowClassic({
           challengeFiles={reduxChallengeFiles}
           containerRef={containerRef}
           description={description}
-          // Try to remove unknown
           editorRef={editorRef}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
@@ -389,36 +397,6 @@ function ShowClassic({
       )
     );
   };
-
-  const renderTestOutput = () => {
-    return (
-      <Output
-        defaultOutput={`
-/**
-* ${t('learn.test-output')}
-*/
-`}
-        output={output}
-      />
-    );
-  };
-
-  const renderNotes = (notes?: string) => {
-    return <Notes notes={notes} />;
-  };
-
-  const renderPreview = () => {
-    return (
-      <Preview
-        className='full-height'
-        disableIframe={resizing}
-        previewMounted={previewMounted}
-      />
-    );
-  };
-
-  const blockNameTitle = getBlockNameTitle(t);
-  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   return (
     <Hotkeys
@@ -442,13 +420,15 @@ function ShowClassic({
             guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasNotes={!!notes}
-            hasPreview={hasPreview()}
+            hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: false
             })}
-            notes={renderNotes(notes)}
-            preview={renderPreview()}
-            testOutput={renderTestOutput()}
+            notes={<Notes notes={notes} />}
+            preview={<StepPreview disableIframe={resizing} />}
+            testOutput={
+              <Output defaultOutput={defaultOutput} output={output} />
+            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
             videoUrl={videoUrl}
@@ -464,16 +444,18 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasNotes={!!notes}
-            hasPreview={hasPreview()}
+            hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: true
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
-            notes={renderNotes(notes)}
-            preview={renderPreview()}
+            notes={<Notes notes={notes} />}
+            preview={<StepPreview disableIframe={resizing} />}
             resizeProps={resizeProps}
-            testOutput={renderTestOutput()}
+            testOutput={
+              <Output defaultOutput={defaultOutput} output={output} />
+            }
             windowTitle={windowTitle}
           />
         </Media>

@@ -18,31 +18,31 @@ Find the value of `d` &lt; `n` for which <sup>1</sup>/<sub>d</sub> contains the 
 
 # --hints--
 
-`reciprocalCycles(700)` should return a number.
+`reciprocalCycles(700)` має повернути число.
 
 ```js
 assert(typeof reciprocalCycles(700) === 'number');
 ```
 
-`reciprocalCycles(700)` should return 659.
+`reciprocalCycles(700)` має повернути 659.
 
 ```js
 assert(reciprocalCycles(700) == 659);
 ```
 
-`reciprocalCycles(800)` should return 743.
+`reciprocalCycles(800)` має повернути 743.
 
 ```js
 assert(reciprocalCycles(800) == 743);
 ```
 
-`reciprocalCycles(900)` should return 887.
+`reciprocalCycles(900)` має повернути 887.
 
 ```js
 assert(reciprocalCycles(900) == 887);
 ```
 
-`reciprocalCycles(1000)` should return 983.
+`reciprocalCycles(1000)` має повернути 983.
 
 ```js
 assert(reciprocalCycles(1000) == 983);
