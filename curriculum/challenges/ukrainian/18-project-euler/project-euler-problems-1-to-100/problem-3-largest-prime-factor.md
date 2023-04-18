@@ -1,6 +1,6 @@
 ---
 id: 5900f36f1000cf542c50fe82
-title: 'Problem 3: Largest prime factor'
+title: 'Завдання 3: найбільший простий множник'
 challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
@@ -8,9 +8,9 @@ dashedName: problem-3-largest-prime-factor
 
 # --description--
 
-The prime factors of 13195 are 5, 7, 13 and 29.
+Простими множниками числа 13195 є 5, 7, 13 та 29.
 
-What is the largest prime factor of the given `number`?
+Який найбільший простий множник заданого числа (`number`)?
 
 # --hints--
 
