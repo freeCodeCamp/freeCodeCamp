@@ -4,10 +4,10 @@ import { handleActions } from 'redux-actions';
 import { getLines } from '../../../../../utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
-import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
+import { watchCodeLock } from './code-lock-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
@@ -49,16 +49,12 @@ const initialState = {
   isAdvancing: false
 };
 
-export const epics = [
-  codeLockEpic,
-  completionEpic,
-  createQuestionEpic,
-  codeStorageEpic
-];
+export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes),
+  ...watchCodeLock(actionTypes)
 ];
 
 export const reducer = handleActions(
