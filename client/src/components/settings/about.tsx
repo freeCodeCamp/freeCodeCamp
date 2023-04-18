@@ -18,6 +18,7 @@ import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import SectionHeader from './section-header';
+import ScrollbarWidthSettings from './scrollbar-width';
 
 type FormValues = {
   name: string;
@@ -288,6 +289,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             keyboardShortcuts={keyboardShortcuts}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
           />
+          <ScrollbarWidthSettings />
         </FullWidthRow>
       </>
     );
