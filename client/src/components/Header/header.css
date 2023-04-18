@@ -3,13 +3,12 @@ header {
   position: fixed;
   width: 100%;
   z-index: 200;
-  --header-height: 38px;
   --search-box-form: 38px;
   --lang-menu-height: 22.5rem;
 }
 .skip-to-content-button {
   position: absolute;
-  top: var(--header-height);
+  top: var(--header-height, 38px);
   border-radius: 15px;
   font-weight: 600;
   padding-block: 1em;

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   font-size: 18px;
-  height: var(--header-height);
+  height: var(--header-height, 38px);
   background: var(--theme-color);
   position: fixed;
   z-index: 1000;
@@ -43,7 +43,7 @@
   align-items: center;
   gap: 10px;
   flex: 1 0 33%;
-  height: var(--header-height);
+  height: var(--header-height, 38px);
 }
 
 #universal-nav-logo:hover,
@@ -59,7 +59,7 @@
   display: none;
   position: absolute;
   background-color: var(--theme-color);
-  top: calc(var(--header-height) * 2);
+  top: calc(var(--header-height, 38px) * 2);
   right: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -84,7 +84,7 @@
   background-color: var(--gray-90);
   opacity: 1;
   white-space: normal;
-  min-height: var(--header-height);
+  min-height: var(--header-height, 38px);
   width: 100%;
   border: none;
   height: 100%;
@@ -199,22 +199,28 @@ button.nav-link[aria-disabled='true'] {
 
   /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility).*/
   height: min(
-    var(--lang-menu-height),
-    calc(100vh - var(--search-box-form) - var(--header-height))
+    var(--lang-menu-height, 22.5rem),
+    calc(100vh - var(--search-box-form, 38px) - var(--header-height, 38px))
   );
 }
 
 @media (min-width: 601px) {
   /* Search form is no longer between header and main menu. */
   .nav-lang-menu {
-    height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
+    height: min(
+      var(--lang-menu-height, 22.5rem),
+      calc(100vh - var(--header-height, 38px))
+    );
   }
 }
 
 /* main menu must be at least as tall as lang menu (when displayed)
    unless there isn't enough view port height */
 .nav-list.display-lang-menu {
-  min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
+  min-height: min(
+    var(--lang-menu-height, 22.5rem),
+    calc(100vh - var(--header-height, 38px))
+  );
 }
 
 .nav-lang-menu > button:hover {
@@ -292,7 +298,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .nav-skeleton {
-  height: var(--header-height);
+  height: var(--header-height, 38px);
   margin-inline-end: 15px;
   width: 350px;
 }
@@ -310,7 +316,7 @@ button.nav-link[aria-disabled='true'] {
   color: var(--gray-00);
   background-color: var(--theme-color);
   cursor: pointer;
-  max-height: calc(var(--header-height) - 8px);
+  max-height: calc(var(--header-height, 38px) - 8px);
   display: flex;
   align-items: center;
 }
@@ -372,14 +378,14 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .expand-nav {
-  height: var(--header-height);
+  height: var(--header-height, 38px);
 }
 
 .display-menu {
   display: inherit;
   text-align: left;
-  margin-top: calc(-1 * var(--header-height));
-  max-height: calc(100vh - var(--header-height));
+  margin-top: calc(-1 * var(--header-height, 38px));
+  max-height: calc(100vh - var(--header-height, 38px));
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -415,7 +421,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .signup-btn {
-  max-height: calc(var(--header-height) - 6px);
+  max-height: calc(var(--header-height, 38px) - 6px);
   padding: 4px 12px;
   margin-inline-start: 2px;
   display: flex;
@@ -425,7 +431,7 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .fcc_searchBar {
   position: absolute;
-  top: var(--header-height);
+  top: var(--header-height, 38px);
   left: 0;
 }
 
@@ -510,14 +516,14 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .expand-nav {
-    min-height: calc(2 * var(--header-height));
+    min-height: calc(2 * var(--header-height, 38px));
   }
 }
 
 @media (max-width: 600px) {
   .nav-list {
     min-width: 100%;
-    top: calc(var(--header-height) * 2);
+    top: calc(var(--header-height, 38px) * 2);
     margin-top: 0;
   }
 
@@ -531,7 +537,7 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .display-menu {
-    max-height: calc(100vh - var(--header-height) * 2);
+    max-height: calc(100vh - var(--header-height, 38px) * 2);
   }
 
   .universal-nav-right .fcc_searchBar .ais-Hits {
