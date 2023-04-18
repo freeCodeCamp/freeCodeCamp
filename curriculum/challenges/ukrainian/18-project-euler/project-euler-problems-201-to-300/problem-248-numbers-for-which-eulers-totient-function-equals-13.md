@@ -14,7 +14,7 @@ Find the ${150\\,000}^{\text{th}}$ such number.
 
 # --hints--
 
-`eulersTotientFunctionEquals()` should return `23507044290`.
+`eulersTotientFunctionEquals()` має повернути `23507044290`.
 
 ```js
 assert.strictEqual(eulersTotientFunctionEquals(), 23507044290);

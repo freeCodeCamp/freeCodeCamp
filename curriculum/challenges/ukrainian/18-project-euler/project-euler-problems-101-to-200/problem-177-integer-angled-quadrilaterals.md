@@ -22,7 +22,7 @@ What is the total number of non-similar integer angled quadrilaterals?
 
 # --hints--
 
-`integerAngledQuadrilaterals()` should return `129325`.
+`integerAngledQuadrilaterals()` має повернути `129325`.
 
 ```js
 assert.strictEqual(integerAngledQuadrilaterals(), 129325);

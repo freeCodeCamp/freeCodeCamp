@@ -1,6 +1,6 @@
 ---
 id: 5900f39a1000cf542c50fead
-title: 'Problem 46: Goldbach''s other conjecture'
+title: 'Problema 46: l''altra congettura di Goldbach'
 challengeType: 1
 forumTopicId: 302134
 dashedName: problem-46-goldbachs-other-conjecture
@@ -8,7 +8,7 @@ dashedName: problem-46-goldbachs-other-conjecture
 
 # --description--
 
-It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
+È stato proposto da Christian Goldbach che ogni numero dispari composito può essere scritto come la somma di un primo e due volte un quadrato.
 
 <div style='margin-left: 2em;'>
   9 = 7 + 2×1<sup>2</sup><br>
@@ -19,19 +19,19 @@ It was proposed by Christian Goldbach that every odd composite number can be wri
   33 = 31 + 2×1<sup>2</sup>
 </div>
 
-It turns out that the conjecture was false.
+Si scoprì che la congettura era falsa.
 
-What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+Qual è il più piccolo composito dispari che non può essere scritto come la somma di un primo e due volte un quadrato?
 
 # --hints--
 
-`goldbachsOtherConjecture()` should return a number.
+`goldbachsOtherConjecture()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-`goldbachsOtherConjecture()` should return 5777.
+`goldbachsOtherConjecture()` dovrebbe restituire 5777.
 
 ```js
 assert.strictEqual(goldbachsOtherConjecture(), 5777);

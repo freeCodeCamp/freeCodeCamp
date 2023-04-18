@@ -30,7 +30,7 @@ Given that A is an optimum special sum set for $n = 7$, find its set string.
 
 # --hints--
 
-`optimumSpecialSumSet()` should return the string `20313839404245`.
+`optimumSpecialSumSet()` має повернути рядок `20313839404245`.
 
 ```js
 assert.strictEqual(optimumSpecialSumSet(), '20313839404245');

@@ -7,15 +7,18 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import type { CamperProps } from '../profile/components/camper';
 import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import SectionHeader from './section-header';
+import ScrollbarWidthSettings from './scrollbar-width';
 
 type FormValues = {
   name: string;
@@ -24,13 +27,17 @@ type FormValues = {
   about: string;
 };
 
-type AboutProps = {
-  about: string;
+type AboutProps = Omit<
+  CamperProps,
+  | 'linkedin'
+  | 'joinDate'
+  | 'isDonating'
+  | 'githubProfile'
+  | 'twitter'
+  | 'website'
+  | 'yearsTopContributor'
+> & {
   currentTheme: Themes;
-  location: string;
-  name: string;
-  picture: string;
-  points: number;
   sound: boolean;
   keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
@@ -38,7 +45,6 @@ type AboutProps = {
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  username: string;
 };
 
 type AboutState = {
@@ -205,6 +211,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
+    const ariaLabel = t('settings.headings.personal-info');
     return (
       <>
         <UsernameSettings username={username} />
@@ -212,7 +219,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={t('settings.headings.personal-info')}>
+            <div role='group' aria-label={ariaLabel}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
                   <strong>{t('settings.labels.name')}</strong>
@@ -282,6 +289,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             keyboardShortcuts={keyboardShortcuts}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
           />
+          <ScrollbarWidthSettings />
         </FullWidthRow>
       </>
     );

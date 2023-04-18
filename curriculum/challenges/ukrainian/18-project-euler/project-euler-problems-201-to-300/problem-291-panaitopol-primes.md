@@ -14,7 +14,7 @@ Find how many Panaitopol primes are less than $5 × {10}^{15}$.
 
 # --hints--
 
-`panaitopolPrimes()` should return `4037526`.
+`panaitopolPrimes()` має повернути `4037526`.
 
 ```js
 assert.strictEqual(panaitopolPrimes(), 4037526);

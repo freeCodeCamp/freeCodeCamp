@@ -40,7 +40,7 @@ Find the unique 16-digit secret sequence.
 
 # --hints--
 
-`numberMind()` should return `4640261571849533`.
+`numberMind()` має повернути `4640261571849533`.
 
 ```js
 assert.strictEqual(numberMind(), 4640261571849533);

@@ -28,7 +28,7 @@ Find $F(11\\,111\\,111)\bmod 1\\,000\\,000\\,993$.
 
 # --hints--
 
-`smoothDivisorsOfBinomialCoefficients()` should return `852950321`.
+`smoothDivisorsOfBinomialCoefficients()` має повернути `852950321`.
 
 ```js
 assert.strictEqual(smoothDivisorsOfBinomialCoefficients(), 852950321);

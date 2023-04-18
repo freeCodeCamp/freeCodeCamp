@@ -17,6 +17,7 @@ Per inviare una richiesta `PUT` e un oggetto JSON all'endpoint `'/travellers'`, 
 ```js
 chai
   .request(server)
+  .keepOpen()
   .put('/travellers')
   .send({
     "surname": [last name of a traveller of the past]

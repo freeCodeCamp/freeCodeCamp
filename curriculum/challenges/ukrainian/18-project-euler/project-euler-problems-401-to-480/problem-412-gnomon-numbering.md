@@ -26,7 +26,7 @@ Find $LC(10\\,000, 5\\,000)\bmod 76\\,543\\,217$.
 
 # --hints--
 
-`gnomonNumbering()` should return `38788800`.
+`gnomonNumbering()` має повернути `38788800`.
 
 ```js
 assert.strictEqual(gnomonNumbering(), 38788800);

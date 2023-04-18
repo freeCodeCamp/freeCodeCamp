@@ -20,31 +20,31 @@ Find the least value of M such that the number of solutions first exceeds `n`.
 
 # --hints--
 
-`cuboidRoute(2000)` should return a number.
+`cuboidRoute(2000)` має повернути число.
 
 ```js
 assert(typeof cuboidRoute(2000) === 'number');
 ```
 
-`cuboidRoute(2000)` should return `100`.
+`cuboidRoute(2000)` має повернути `100`.
 
 ```js
 assert.strictEqual(cuboidRoute(2000), 100);
 ```
 
-`cuboidRoute(25000)` should return `320`.
+`cuboidRoute(25000)` має повернути `320`.
 
 ```js
 assert.strictEqual(cuboidRoute(25000), 320);
 ```
 
-`cuboidRoute(500000)` should return `1309`.
+`cuboidRoute(500000)` має повернути `1309`.
 
 ```js
 assert.strictEqual(cuboidRoute(500000), 1309);
 ```
 
-`cuboidRoute(1000000)` should return `1818`.
+`cuboidRoute(1000000)` має повернути `1818`.
 
 ```js
 assert.strictEqual(cuboidRoute(1000000), 1818);

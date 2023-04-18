@@ -68,7 +68,6 @@ const DonateItem = ({ handleMenuKeyDown, donateText }: DonateItemProps) => (
       sameTab={false}
       to='/donate'
       data-test-label='dropdown-donate-button'
-      nav-donate-button
     >
       {donateText}
     </Link>

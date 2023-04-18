@@ -20,7 +20,7 @@ Find the sum of all $f(m,n)$ such that $f(m,n) ≤ {10}^{15}$.
 
 # --hints--
 
-`pizzaToppings()` should return `1485776387445623`.
+`pizzaToppings()` має повернути `1485776387445623`.
 
 ```js
 assert.strictEqual(pizzaToppings(), 1485776387445623);

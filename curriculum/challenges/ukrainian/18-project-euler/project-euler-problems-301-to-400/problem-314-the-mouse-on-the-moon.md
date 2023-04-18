@@ -24,7 +24,7 @@ Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Give y
 
 # --hints--
 
-`theMouseOnTheMoon()` should return `132.52756426`.
+`theMouseOnTheMoon()` має повернути `132.52756426`.
 
 ```js
 assert.strictEqual(theMouseOnTheMoon(), 132.52756426);

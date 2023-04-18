@@ -24,7 +24,7 @@ Find $\sum s(n, {10}^8)$ for $1 ≤ n ≤ {10}^{11}$.
 
 # --hints--
 
-`primeFactorsOfN15Plus1()` should return `2304215802083466200`.
+`primeFactorsOfN15Plus1()` має повернути `2304215802083466200`.
 
 ```js
 assert.strictEqual(primeFactorsOfN15Plus1(), 2304215802083466200);

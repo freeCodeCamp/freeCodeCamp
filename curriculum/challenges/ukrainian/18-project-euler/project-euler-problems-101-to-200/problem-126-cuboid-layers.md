@@ -24,7 +24,7 @@ Find the least value of $n$ for which $C(n) = 1000$.
 
 # --hints--
 
-`cuboidLayers()` should return `18522`.
+`cuboidLayers()` має повернути `18522`.
 
 ```js
 assert.strictEqual(cuboidLayers(), 18522);

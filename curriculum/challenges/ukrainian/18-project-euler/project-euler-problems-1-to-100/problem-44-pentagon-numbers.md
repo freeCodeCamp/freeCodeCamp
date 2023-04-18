@@ -18,13 +18,13 @@ Find the pair of pentagonal numbers, P<sub>j</sub> and P<sub>k</sub>, for which 
 
 # --hints--
 
-`pentagonNumbers()` should return a number.
+`pentagonNumbers()` має повернути число.
 
 ```js
 assert(typeof pentagonNumbers() === 'number');
 ```
 
-`pentagonNumbers()` should return 5482660.
+`pentagonNumbers()` має повернути 5482660.
 
 ```js
 assert.strictEqual(pentagonNumbers(), 5482660);

@@ -8,9 +8,9 @@ dashedName: clean-up-your-project-with-modules
 
 # --description--
 
-Right now, everything you have is in your `server.js` file. This can lead to hard to manage code that isn't very expandable. Create 2 new files: `routes.js` and `auth.js`
+Right now, everything you have is in your `server.js` file. This can lead to hard to manage code that isn't very expandable. Erstelle 2 neue Dateien: `routes.js` und `auth.js`
 
-Both should start with the following code:
+Beide sollten mit folgendem Code beginnen:
 
 ```js
 module.exports = function (app, myDataBase) {

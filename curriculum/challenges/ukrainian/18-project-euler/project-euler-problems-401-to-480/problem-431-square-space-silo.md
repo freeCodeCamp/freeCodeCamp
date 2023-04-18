@@ -22,7 +22,7 @@ If Quick thinking Quentin is to satisfy frustratingly fussy Fred the farmer's ap
 
 # --hints--
 
-`squareSpaceSilo()` should return `23.386029052`.
+`squareSpaceSilo()` має повернути `23.386029052`.
 
 ```js
 assert.strictEqual(squareSpaceSilo(), 23.386029052);

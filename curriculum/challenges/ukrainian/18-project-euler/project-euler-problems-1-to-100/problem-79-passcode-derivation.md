@@ -16,25 +16,25 @@ Given that the three characters are always asked for in order, analyze the array
 
 # --hints--
 
-`passcodeDerivation(keylog1)` should return a number.
+`passcodeDerivation(keylog1)` має повернути число.
 
 ```js
 assert(typeof passcodeDerivation(_keylog1) === 'number');
 ```
 
-`passcodeDerivation(keylog1)` should return `531278`.
+`passcodeDerivation(keylog1)` має повернути `531278`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog1), 531278);
 ```
 
-`passcodeDerivation(keylog2)` should return `1230567`.
+`passcodeDerivation(keylog2)` має повернути `1230567`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog2), 1230567);
 ```
 
-`passcodeDerivation(keylog3)` should return `73162890`.
+`passcodeDerivation(keylog3)` має повернути `73162890`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog3), 73162890);

@@ -15,9 +15,9 @@ const preserveSession = () => {
 
 const setPrivacyTogglesToPublic = () => {
   cy.get('#privacy-settings')
-    .find('.toggle-not-active')
+    .find('[type=radio][value=2]')
     .each(element => {
-      cy.wrap(element).click().should('have.class', 'toggle-active');
+      cy.wrap(element).click().should('be.checked');
     });
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();

@@ -39,13 +39,13 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 
 # --hints--
 
-`magic5GonRing()` should return a number.
+`magic5GonRing()` має повернути число.
 
 ```js
 assert(typeof magic5GonRing() === 'number');
 ```
 
-`magic5GonRing()` should return 6531031914842725.
+`magic5GonRing()` має повернути 6531031914842725.
 
 ```js
 assert.strictEqual(magic5GonRing(), 6531031914842725);

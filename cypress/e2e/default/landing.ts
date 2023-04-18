@@ -3,7 +3,7 @@ const landingPageElements = {
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
   testimonials: "[data-test-label='testimonial-cards']",
-  landingPageImage: '.landing-page-image'
+  landingPageImage: "[data-test-label='landing-page-figure']"
 } as const;
 
 type LandingPageTypes<T> = T[keyof T];

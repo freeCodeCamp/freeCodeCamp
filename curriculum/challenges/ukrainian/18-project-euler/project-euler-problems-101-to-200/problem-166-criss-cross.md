@@ -22,7 +22,7 @@ In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so
 
 # --hints--
 
-`crissCross()` should return `7130034`.
+`crissCross()` має повернути `7130034`.
 
 ```js
 assert.strictEqual(crissCross(), 7130034);

@@ -32,7 +32,7 @@ For how many positive integers $n ≤ 2^{30}$ does $X(n, 2n, 3n) = 0$?
 
 # --hints--
 
-`nim()` should return `2178309`.
+`nim()` має повернути `2178309`.
 
 ```js
 assert.strictEqual(nim(), 2178309);

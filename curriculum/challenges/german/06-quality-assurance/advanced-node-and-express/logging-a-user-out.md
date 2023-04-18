@@ -1,6 +1,6 @@
 ---
 id: 58965611f9fc0f352b528e6c
-title: Logging a User Out
+title: Einen Nutzer abmelden
 challengeType: 2
 forumTopicId: 301560
 dashedName: logging-a-user-out

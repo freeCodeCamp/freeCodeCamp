@@ -1,6 +1,6 @@
 ---
 id: 5900f3c31000cf542c50fed5
-title: 'Problem 86: Cuboid route'
+title: 'Problema 86: percorso cuboide'
 challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
@@ -8,43 +8,43 @@ dashedName: problem-86-cuboid-route
 
 # --description--
 
-A spider, S, sits in one corner of a cuboid room, measuring 6 by 5 by 3, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is 10 and the path is shown on the diagram.
+Un ragno, S, si trova in un angolo di una stanza cuboide, che misura 6 x 5 x 3, e una mosca, F, si trova nell'angolo opposto. Muovendosi sulla superficie della stanza, la distanza più corta in "linea retta" da S a F è 10 e il percorso è mostrato nel diagramma.
 
-<img class="img-responsive center-block" alt="a diagram of a spider and fly's path from one corner of a cuboid room to the opposite corner" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un diagramma del percorso di un ragno e una mosca da un vertice di una stanza cuboidale al vertice opposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 
-However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
+Invece, ci sono fino a tre candidati come percorso "più corto" per ogni dato cuboide e il percorso non ha sempre una lunghezza intera.
 
-It can be shown that there are exactly `2060` distinct cuboids, ignoring rotations, with integer dimensions, up to a maximum size of M by M by M, for which the shortest route has integer length when M = 100. This is the least value of M for which the number of solutions first exceeds two thousand; the number of solutions when M = 99 is `1975`.
+Si può dimostrare che ci sono esattamente `2060` cuboidi distinti, ignorando le rotazioni, con lati interi, fino a una dimensione massima di M per M per M, per cui il percorso più corto ha una lunghezza intera per M = 100. Questo è il valore più piccolo di M per cui il numero delle soluzioni eccede per la prima volta il duemila; il numero delle soluzioni per M = 99 è `1975`.
 
-Find the least value of M such that the number of solutions first exceeds `n`.
+Trova l'ultimo valore di M per cui il numero delle soluzioni eccede per primo `n`.
 
 # --hints--
 
-`cuboidRoute(2000)` should return a number.
+`cuboidRoute(2000)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof cuboidRoute(2000) === 'number');
 ```
 
-`cuboidRoute(2000)` should return `100`.
+`cuboidRoute(2000)` dovrebbe restituire `100`.
 
 ```js
 assert.strictEqual(cuboidRoute(2000), 100);
 ```
 
-`cuboidRoute(25000)` should return `320`.
+`cuboidRoute(25000)` dovrebbe restituire `320`.
 
 ```js
 assert.strictEqual(cuboidRoute(25000), 320);
 ```
 
-`cuboidRoute(500000)` should return `1309`.
+`cuboidRoute(500000)` dovrebbe restituire `1309`.
 
 ```js
 assert.strictEqual(cuboidRoute(500000), 1309);
 ```
 
-`cuboidRoute(1000000)` should return `1818`.
+`cuboidRoute(1000000)` dovrebbe restituire `1818`.
 
 ```js
 assert.strictEqual(cuboidRoute(1000000), 1818);

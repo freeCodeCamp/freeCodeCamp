@@ -15,7 +15,7 @@ There are exactly eleven palindromes below one-thousand that can be written as c
 Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
 
 # --hints--
-`palindromicSums(100000000)` should return `2906969179`.
+`palindromicSums(100000000)` має повернути `2906969179`.
 
 ```js
 
@@ -23,13 +23,13 @@ assert.strictEqual(palindromicSums(100000000), 2906969179);
 
 ```
 
-`palindromicSums(100)` should return `137`.
+`palindromicSums(100)` має повернути `137`.
 
 ```js
 assert.strictEqual(palindromicSums(100), 137);
 ```
 
-`palindromicSums(1000)` should return `4164`.
+`palindromicSums(1000)` має повернути `4164`.
 
 ```js
 assert.strictEqual(palindromicSums(1000),4164);

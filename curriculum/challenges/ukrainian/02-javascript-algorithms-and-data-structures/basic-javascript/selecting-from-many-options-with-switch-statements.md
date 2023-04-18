@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-Якщо ви маєте багато варіантів для вибору, використовуйте інструкцію <dfn>switch</dfn>. Інструкція `switch` тестує значення та може мати багато інструкцій <dfn>case</dfn>, які визначають можливі значення. Інструкції виконуються від першого відповідного значення `case` до тих пір, поки не зіткнуться із `break`.
+If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
 
 Ось приклад інструкції `switch`:
 

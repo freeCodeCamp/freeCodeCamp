@@ -1,6 +1,6 @@
 ---
 id: 6331d2b0b51aeedd1a2bd655
-title: "Solving Systems"
+title: "求解方程组"
 challengeType: 15
 videoId: CNGUQzXfC6c
 dashedName: solving-systems
@@ -8,35 +8,35 @@ dashedName: solving-systems
 
 # --description--
 
-The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
+第一个视频将向你展示在不画图的情况下求解两个方程组背后的数学问题，你如何能将一个方程分解成因子，并求解某个变量。
 
-Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+这是<a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">这个视频中用到的 Colab 笔记本</a>。
 
 # --question--
 
-## --assignment--
+## --任务--
 
-Add code to your notebook to solve and graph systems of equations
+在你的笔记本上添加代码，以求解方程组和绘制图像。
 
 ## --text--
 
-Which of the following can SymPy do that matplotlib can't do?
+下面哪一项是 SymPy 能做而 matplotlib 不能做的？
 
 ## --answers--
 
-Solve for a variable
+求解变量
 
 ---
 
-Display an x-y axis
+显示 x-y 轴
 
 ---
 
-Graph an equation or two
+绘制一个或两个方程的图像
 
 ---
 
-Show tic marks on the graph
+在图像上显示刻度线
 
 ## --video-solution--
 

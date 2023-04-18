@@ -24,7 +24,7 @@ How many distinct valid colourings are there for the above configuration?
 
 # --hints--
 
-`triangularGridColoring()` should return `10834893628237824`.
+`triangularGridColoring()` має повернути `10834893628237824`.
 
 ```js
 assert.strictEqual(triangularGridColoring(), 10834893628237824);

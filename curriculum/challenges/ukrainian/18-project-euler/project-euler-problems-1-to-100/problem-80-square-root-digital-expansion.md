@@ -16,25 +16,25 @@ For the first `n` natural numbers, find the total of the digital sums of the fir
 
 # --hints--
 
-`sqrtDigitalExpansion(2)` should return a number.
+`sqrtDigitalExpansion(2)` має повернути число.
 
 ```js
 assert(typeof sqrtDigitalExpansion(2) === 'number');
 ```
 
-`sqrtDigitalExpansion(2)` should return `475`.
+`sqrtDigitalExpansion(2)` має повернути `475`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(2), 475);
 ```
 
-`sqrtDigitalExpansion(50)` should return `19543`.
+`sqrtDigitalExpansion(50)` має повернути `19543`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(50), 19543);
 ```
 
-`sqrtDigitalExpansion(100)` should return `40886`.
+`sqrtDigitalExpansion(100)` має повернути `40886`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(100), 40886);

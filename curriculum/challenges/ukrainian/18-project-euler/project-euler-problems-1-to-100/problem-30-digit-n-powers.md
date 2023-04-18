@@ -24,31 +24,31 @@ Find the sum of all the numbers that can be written as the sum of `n` powers of 
 
 # --hints--
 
-`digitnPowers(2)` should return a number.
+`digitnPowers(2)` має повернути число.
 
 ```js
 assert(typeof digitnPowers(2) === 'number');
 ```
 
-`digitnPowers(2)` should return 0.
+`digitnPowers(2)` має повернути 0.
 
 ```js
 assert(digitnPowers(2) == 0);
 ```
 
-`digitnPowers(3)` should return 1301.
+`digitnPowers(3)` має повернути 1301.
 
 ```js
 assert(digitnPowers(3) == 1301);
 ```
 
-`digitnPowers(4)` should return 19316.
+`digitnPowers(4)` має повернути 19316.
 
 ```js
 assert(digitnPowers(4) == 19316);
 ```
 
-`digitnPowers(5)` should return 443839.
+`digitnPowers(5)` має повернути 443839.
 
 ```js
 assert(digitnPowers(5) == 443839);

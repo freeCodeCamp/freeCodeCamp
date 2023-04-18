@@ -16,7 +16,7 @@ Find the sum of all positive integers $n$ not exceeding $100\\,000\\,000$ such t
 
 # --hints--
 
-`primeGeneratingIntegers()` should return `1739023853137`.
+`primeGeneratingIntegers()` має повернути `1739023853137`.
 
 ```js
 assert.strictEqual(primeGeneratingIntegers(), 1739023853137);

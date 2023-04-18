@@ -35,7 +35,7 @@ How many times does the beam hit the internal surface of the white cell before e
 
 # --hints--
 
-`laserBeamReflections()` should return `354`.
+`laserBeamReflections()` має повернути `354`.
 
 ```js
 assert.strictEqual(laserBeamReflections(), 354);

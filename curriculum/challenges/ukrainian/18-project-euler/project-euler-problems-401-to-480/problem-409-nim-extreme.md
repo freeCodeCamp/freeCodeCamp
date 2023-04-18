@@ -22,7 +22,7 @@ Find $W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`nimExtreme()` should return `253223948`.
+`nimExtreme()` має повернути `253223948`.
 
 ```js
 assert.strictEqual(nimExtreme(), 253223948);

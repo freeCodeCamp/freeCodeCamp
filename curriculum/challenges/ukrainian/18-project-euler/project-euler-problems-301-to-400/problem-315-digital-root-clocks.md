@@ -46,7 +46,7 @@ Of course, Max's clock consumes less power than Sam's one. The two clocks are fe
 
 # --hints--
 
-`digitalRootClocks()` should return `13625242`.
+`digitalRootClocks()` має повернути `13625242`.
 
 ```js
 assert.strictEqual(digitalRootClocks(), 13625242);

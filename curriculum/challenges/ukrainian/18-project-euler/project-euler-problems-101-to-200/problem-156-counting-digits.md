@@ -42,7 +42,7 @@ Note: if, for some $n$, $f(n, d) = n$ for more than one value of $d$ this value 
 
 # --hints--
 
-`countingDigits()` should return `21295121502550`.
+`countingDigits()` має повернути `21295121502550`.
 
 ```js
 assert.strictEqual(countingDigits(), 21295121502550);

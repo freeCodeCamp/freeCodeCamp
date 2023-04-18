@@ -18,7 +18,7 @@ Find the ${124}^{\text{th}}$ odd number that does not divide any terms of the ab
 
 # --hints--
 
-`tribonacciNonDivisors()` should return `2009`.
+`tribonacciNonDivisors()` має повернути `2009`.
 
 ```js
 assert.strictEqual(tribonacciNonDivisors(), 2009);

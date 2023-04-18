@@ -18,7 +18,7 @@ Let $n = {10}^{15}$. Find the sum $\displaystyle\sum_{x = 0}^{100} F_n(x)$ and g
 
 # --hints--
 
-`polynomialsOfFibonacciNumbers()` should return `252541322550`.
+`polynomialsOfFibonacciNumbers()` має повернути `252541322550`.
 
 ```js
 assert.strictEqual(polynomialsOfFibonacciNumbers(), 252541322550);

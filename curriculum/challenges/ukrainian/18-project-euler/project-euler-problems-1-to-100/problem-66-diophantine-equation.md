@@ -32,37 +32,37 @@ Find the value of D ≤ `n` in minimal solutions of `x` for which the largest va
 
 # --hints--
 
-`diophantineEquation(7)` should return a number.
+`diophantineEquation(7)` має повернути число.
 
 ```js
 assert(typeof diophantineEquation(7) === 'number');
 ```
 
-`diophantineEquation(7)` should return `5`.
+`diophantineEquation(7)` має повернути `5`.
 
 ```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
-`diophantineEquation(100)` should return `61`.
+`diophantineEquation(100)` має повернути `61`.
 
 ```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
-`diophantineEquation(409)` should return `409`.
+`diophantineEquation(409)` має повернути `409`.
 
 ```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
-`diophantineEquation(500)` should return `421`.
+`diophantineEquation(500)` має повернути `421`.
 
 ```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 
-`diophantineEquation(1000)` should return `661`.
+`diophantineEquation(1000)` має повернути `661`.
 
 ```js
 assert.strictEqual(diophantineEquation(1000), 661);

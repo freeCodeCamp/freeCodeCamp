@@ -32,7 +32,7 @@ For how many lattice points $P$ is angle $RPS$ greater than 45°?
 
 # --hints--
 
-`tangentsToAnEllipse()` should return `810834388`.
+`tangentsToAnEllipse()` має повернути `810834388`.
 
 ```js
 assert.strictEqual(tangentsToAnEllipse(), 810834388);

@@ -18,7 +18,7 @@ How many ways can a row measuring fifty units in length be tiled?
 
 # --hints--
 
-`redGreenBlueTilesTwo()` should return `100808458960497`.
+`redGreenBlueTilesTwo()` має повернути `100808458960497`.
 
 ```js
 assert.strictEqual(redGreenBlueTilesTwo(), 100808458960497);
