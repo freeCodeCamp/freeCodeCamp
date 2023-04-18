@@ -41,7 +41,7 @@ Using the procedure described above, what is the average number of iterations re
 
 # --hints--
 
-`roundedSquareRoots()` should return `4.447401118`.
+`roundedSquareRoots()` має повернути `4.447401118`.
 
 ```js
 assert.strictEqual(roundedSquareRoots(), 4.447401118);

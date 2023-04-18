@@ -117,7 +117,7 @@ O Node.js vem com o `npm`, que você pode usar para instalar o `pnpm`:
 npm install -g pnpm
 ```
 
-## Configure localmente o freeCodeCamp
+## Configure o freeCodeCamp localmente
 
 Agora que você instalou os pré-requisitos, siga [nosso guia de instalação local](how-to-setup-freecodecamp-locally.md) para clonar, instalar e configurar o freeCodeCamp em sua máquina.
 

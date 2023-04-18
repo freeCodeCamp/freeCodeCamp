@@ -38,7 +38,7 @@ Find the sum of the answers for `puzzles` array.
 
 # --hints--
 
-`kakuro(testPuzzles)` should return `1059760019628`.
+`kakuro(testPuzzles)` має повернути `1059760019628`.
 
 ```js
 assert.strictEqual(kakuro(_testPuzzles), 1059760019628);

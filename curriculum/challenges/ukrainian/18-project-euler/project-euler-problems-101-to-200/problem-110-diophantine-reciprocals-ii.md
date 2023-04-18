@@ -20,7 +20,7 @@ What is the least value of `n` for which the number of distinct solutions exceed
 
 # --hints--
 
-`diophantineTwo()` should return `9350130049860600`.
+`diophantineTwo()` має повернути `9350130049860600`.
 
 ```js
 assert.strictEqual(diophantineTwo(), 9350130049860600);

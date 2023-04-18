@@ -28,31 +28,31 @@ Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
 
 # --hints--
 
-`coinPartitions(7)` should return a number.
+`coinPartitions(7)` має повернути число.
 
 ```js
 assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions(7)` should return `5`.
+`coinPartitions(7)` має повернути `5`.
 
 ```js
 assert.strictEqual(coinPartitions(7), 5);
 ```
 
-`coinPartitions(10000)` should return `599`.
+`coinPartitions(10000)` має повернути `599`.
 
 ```js
 assert.strictEqual(coinPartitions(10000), 599);
 ```
 
-`coinPartitions(100000)` should return `11224`.
+`coinPartitions(100000)` має повернути `11224`.
 
 ```js
 assert.strictEqual(coinPartitions(100000), 11224);
 ```
 
-`coinPartitions(1000000)` should return `55374`.
+`coinPartitions(1000000)` має повернути `55374`.
 
 ```js
 assert.strictEqual(coinPartitions(1000000), 55374);

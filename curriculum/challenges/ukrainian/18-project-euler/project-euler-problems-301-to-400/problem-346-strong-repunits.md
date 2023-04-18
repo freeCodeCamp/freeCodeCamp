@@ -16,7 +16,7 @@ Find the sum of all strong repunits below ${10}^{12}$.
 
 # --hints--
 
-`strongRepunits()` should return `336108797689259260`.
+`strongRepunits()` має повернути `336108797689259260`.
 
 ```js
 assert.strictEqual(strongRepunits(), 336108797689259260);

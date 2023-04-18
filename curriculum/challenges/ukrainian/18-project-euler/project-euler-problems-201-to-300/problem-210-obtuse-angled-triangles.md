@@ -20,7 +20,7 @@ What is $N(1\\,000\\,000\\,000)$?
 
 # --hints--
 
-`obtuseAngledTriangles()` should return `1598174770174689500`.
+`obtuseAngledTriangles()` має повернути `1598174770174689500`.
 
 ```js
 assert.strictEqual(obtuseAngledTriangles(), 1598174770174689500);

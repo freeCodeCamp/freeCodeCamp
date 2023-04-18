@@ -16,7 +16,7 @@ Find $q$ and give your answer rounded to 10 decimal places.
 
 # --hints--
 
-`scoringProbabilities()` should return `52.6494571953`.
+`scoringProbabilities()` має повернути `52.6494571953`.
 
 ```js
 assert.strictEqual(scoringProbabilities(), 52.6494571953);

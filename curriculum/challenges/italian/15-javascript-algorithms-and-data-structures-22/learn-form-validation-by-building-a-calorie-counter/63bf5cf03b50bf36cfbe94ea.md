@@ -7,23 +7,23 @@ dashedName: step-36
 
 # --description--
 
-Your next step is to allow users to add entries to the calorie counter. Declare an empty function `addEntry`. This function should not take any parameters.
+Il prossimo passo è consentire agli utenti di aggiungere delle voci al contatore di calorie. Dichiara una funzione vuota `addEntry`. La funzione non dovrebbe accettare parametri.
 
 # --hints--
 
-You should declare an `addEntry` variable.
+Dovresti dichiarare una variabile `addEntry`.
 
 ```js
 assert.isDefined(addEntry);
 ```
 
-Your `addEntry` variable should be a function.
+La variabile `addEntry` dovrebbe essere una funzione.
 
 ```js
 assert.isFunction(addEntry);
 ```
 
-Your `addEntry` function should not take any parameters.
+La funzione `addEntry` non dovrebbe prendere alcun parametro.
 
 ```js
 assert.match(addEntry?.toString(), /\(\s*\)/);

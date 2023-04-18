@@ -16,7 +16,7 @@ How many primitive integer sided triangles exist with a perimeter not exceeding 
 
 # --hints--
 
-`primitiveTriangles()` should return `5777137137739633000`.
+`primitiveTriangles()` має повернути `5777137137739633000`.
 
 ```js
 assert.strictEqual(primitiveTriangles(), 5777137137739633000);

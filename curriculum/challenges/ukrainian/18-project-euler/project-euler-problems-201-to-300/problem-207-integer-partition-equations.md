@@ -30,7 +30,7 @@ Find the smallest $m$ for which $P(m) &lt; \frac{1}{12\\,345}$
 
 # --hints--
 
-`integerPartitionEquations()` should return `44043947822`.
+`integerPartitionEquations()` має повернути `44043947822`.
 
 ```js
 assert.strictEqual(integerPartitionEquations(), 44043947822);

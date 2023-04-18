@@ -30,7 +30,7 @@ What is the smallest $a_1 > {10}^{15}$ that begins with the sequence "UDDDUdddDD
 
 # --hints--
 
-`modifiedCollatzSequence()` should return `1125977393124310`.
+`modifiedCollatzSequence()` має повернути `1125977393124310`.
 
 ```js
 assert.strictEqual(modifiedCollatzSequence(), 1125977393124310);

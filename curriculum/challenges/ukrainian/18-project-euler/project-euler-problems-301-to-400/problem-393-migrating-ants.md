@@ -20,7 +20,7 @@ Find $f(10)$.
 
 # --hints--
 
-`migratingAnts()` should return `112398351350823100`.
+`migratingAnts()` має повернути `112398351350823100`.
 
 ```js
 assert.strictEqual(migratingAnts(), 112398351350823100);

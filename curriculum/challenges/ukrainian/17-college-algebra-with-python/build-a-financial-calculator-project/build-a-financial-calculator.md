@@ -1,6 +1,6 @@
 ---
 id: 63d8401e39c73468b059cd42
-title: "Build a Financial Calculator"
+title: "Створіть фінансовий калькулятор"
 challengeType: 10
 dashedName: build-a-financial-calculator
 ---
@@ -15,12 +15,12 @@ dashedName: build-a-financial-calculator
 
 У цьому завданні за допомогою Python потрібно створити багатофункціональний калькулятор, який приймає вхідні дані та виконує наступне:
 
-- Calculate annuity with monthly or continuous growth
-- Calculate monthly mortgage payment
-- Estimate retirement investment balance
-- Determine how long until an amount doubles, given the rate
-- Solve logarithmic equations
-- Convert to (and from) scientific notation
+- розраховує ануїтет за місячним або постійним зростанням
+- розраховує щомісячну іпотечну оплату
+- розраховує пенсійні нарахування
+- визначає, скільки часу потрібно, щоб сума подвоїлася, враховуючи ставку
+- розв’язує логарифмічні рівняння
+- виконує перетворення експоненційного запису
 
 Якщо вам потрібна допомога, ви можете переглядати <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">відео протягом виконання проєкту.</a>
 

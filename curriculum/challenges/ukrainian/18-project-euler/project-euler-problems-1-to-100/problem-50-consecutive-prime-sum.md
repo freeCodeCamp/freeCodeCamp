@@ -20,19 +20,19 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 
 # --hints--
 
-`consecutivePrimeSum(1000)` should return a number.
+`consecutivePrimeSum(1000)` має повернути число.
 
 ```js
 assert(typeof consecutivePrimeSum(1000) === 'number');
 ```
 
-`consecutivePrimeSum(1000)` should return 953.
+`consecutivePrimeSum(1000)` має повернути 953.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000), 953);
 ```
 
-`consecutivePrimeSum(1000000)` should return 997651.
+`consecutivePrimeSum(1000000)` має повернути 997651.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000000), 997651);

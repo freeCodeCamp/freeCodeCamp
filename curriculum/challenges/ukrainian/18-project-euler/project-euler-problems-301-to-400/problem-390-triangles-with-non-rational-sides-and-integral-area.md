@@ -20,7 +20,7 @@ Find $S({10}^{10})$.
 
 # --hints--
 
-`nonRationalSidesAndIntegralArea()` should return `2919133642971`.
+`nonRationalSidesAndIntegralArea()` має повернути `2919133642971`.
 
 ```js
 assert.strictEqual(nonRationalSidesAndIntegralArea(), 2919133642971);

@@ -91,7 +91,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns PRs são atualizações de dependência automáticos feitos a partir de uma integração. Você não deve dar merge ou aprovar esses PRs. Um dos membros do time de desenvolvimento cuidará da revisão e irá dar merge em PRs automáticos.
 
-#### Como revisar, dar merge ou fechar pull requests
+#### Como revisar, fazer o merge ou fechar pull requests
 
 ##### Seja responsável por um pull request:
 
@@ -99,7 +99,7 @@ Em primeiro lugar, quando você escolhe um pull request para revisar, você deve
 
 Dependendo do tipo de pull request, siga as regras correspondentes listadas anteriormente.
 
-##### Certifique-se de que os testes de CI passaram:
+##### Certifique-se de que as verificações de CI passaram:
 
 Antes de dar merge em qualquer pull request, certifique-se de que haja um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
 
@@ -450,7 +450,7 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 ```markdown
 Hey @username
 
-This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
+This PR seems to make similar changes as the existing PR <#number>. Assim, vamos fechar esse por ser uma duplicata.
 
 If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 

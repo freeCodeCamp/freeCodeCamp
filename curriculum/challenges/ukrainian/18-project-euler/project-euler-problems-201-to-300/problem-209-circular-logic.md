@@ -32,7 +32,7 @@ for all $6$-bit inputs ($a$, $b$, $c$, $d$, $e$, $f$)?
 
 # --hints--
 
-`circularLogic()` should return `15964587728784`.
+`circularLogic()` має повернути `15964587728784`.
 
 ```js
 assert.strictEqual(circularLogic(), 15964587728784);

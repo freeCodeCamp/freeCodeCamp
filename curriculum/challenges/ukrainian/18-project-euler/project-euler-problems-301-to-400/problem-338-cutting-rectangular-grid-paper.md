@@ -26,7 +26,7 @@ Find $G({10}^{12})$. Give your answer modulo ${10}^8$.
 
 # --hints--
 
-`cuttingRectangularGridPaper()` should return `15614292`.
+`cuttingRectangularGridPaper()` має повернути `15614292`.
 
 ```js
 assert.strictEqual(cuttingRectangularGridPaper(), 15614292);

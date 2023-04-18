@@ -117,17 +117,17 @@ Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 npm install -g pnpm
 ```
 
-## freeCodeCamp をローカルで設定する
+## Set up freeCodeCamp Locally
 
-前提条件のインストールが完了したら、[ ローカルセットアップガイド](how-to-setup-freecodecamp-locally.md) に従って、マシンに freeCodeCamp をローカルにクローンし、インストールし、セットアップしてください。
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> 現在、Cypress テストのセットアップ (および関連するGUIのニーズ) 作業が進行中です。 それでも、ほとんどのコードベースで作業できるはずです。
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. それでも、ほとんどのコードベースで作業できるはずです。
 
 ## 有用なリンク
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - よくある質問:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

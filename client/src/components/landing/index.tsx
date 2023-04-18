@@ -18,14 +18,14 @@ function Landing(): ReactElement {
       <SEO title={t('metaTags:title')} />
       <main className='landing-page'>
         <Grid>
-          <LandingTop pageName={'landing'} />
+          <LandingTop />
         </Grid>
         <Grid fluid={true}>
           <AsSeenIn />
         </Grid>
         <Grid>
           <Testimonials />
-          <Certifications pageName={'landing'} />
+          <Certifications />
         </Grid>
       </main>
     </>

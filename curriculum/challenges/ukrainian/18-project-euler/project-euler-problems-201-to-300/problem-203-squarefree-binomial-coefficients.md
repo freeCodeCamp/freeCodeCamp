@@ -24,7 +24,7 @@ Find the sum of the distinct squarefree numbers in the first 51 rows of Pascal's
 
 # --hints--
 
-`squarefreeBinomialCoefficients()` should return `34029210557338`.
+`squarefreeBinomialCoefficients()` має повернути `34029210557338`.
 
 ```js
 assert.strictEqual(squarefreeBinomialCoefficients(), 34029210557338);

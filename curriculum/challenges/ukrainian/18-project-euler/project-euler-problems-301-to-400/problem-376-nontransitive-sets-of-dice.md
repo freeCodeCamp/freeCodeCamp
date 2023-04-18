@@ -43,7 +43,7 @@ How many are there for $N = 30$?
 
 # --hints--
 
-`nontransitiveSetsOfDice()` should return `973059630185670`.
+`nontransitiveSetsOfDice()` має повернути `973059630185670`.
 
 ```js
 assert.strictEqual(nontransitiveSetsOfDice(), 973059630185670);

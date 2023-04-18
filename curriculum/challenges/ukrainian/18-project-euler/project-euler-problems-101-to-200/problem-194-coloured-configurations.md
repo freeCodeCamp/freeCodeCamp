@@ -20,7 +20,7 @@ Find the last 8 digits of $N(25,75,1984)$.
 
 # --hints--
 
-`coloredConfigurations()` should return `61190912`.
+`coloredConfigurations()` має повернути `61190912`.
 
 ```js
 assert.strictEqual(coloredConfigurations(), 61190912);

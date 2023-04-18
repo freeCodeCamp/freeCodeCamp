@@ -30,7 +30,7 @@ Find the sum of the primes less than $100\\,000\\,000$ with at least one Fibonac
 
 # --hints--
 
-`fibonacciPrimitiveRoots()` should return `74204709657207`.
+`fibonacciPrimitiveRoots()` має повернути `74204709657207`.
 
 ```js
 assert.strictEqual(fibonacciPrimitiveRoots(), 74204709657207);

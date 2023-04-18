@@ -29,31 +29,31 @@ Find the sum of all numbers in ordered sets of `n` cyclic 4-digit numbers for wh
 
 # --hints--
 
-`cyclicalFigurateNums(3)` should return a number.
+`cyclicalFigurateNums(3)` має повернути число.
 
 ```js
 assert(typeof cyclicalFigurateNums(3) === 'number');
 ```
 
-`cyclicalFigurateNums(3)` should return `19291`.
+`cyclicalFigurateNums(3)` має повернути `19291`.
 
 ```js
 assert.strictEqual(cyclicalFigurateNums(3), 19291);
 ```
 
-`cyclicalFigurateNums(4)` should return `28684`.
+`cyclicalFigurateNums(4)` має повернути `28684`.
 
 ```js
 assert.strictEqual(cyclicalFigurateNums(4), 28684);
 ```
 
-`cyclicalFigurateNums(5)` should return `76255`.
+`cyclicalFigurateNums(5)` має повернути `76255`.
 
 ```js
 assert.strictEqual(cyclicalFigurateNums(5), 76255);
 ```
 
-`cyclicalFigurateNums(6)` should return `28684`.
+`cyclicalFigurateNums(6)` має повернути `28684`.
 
 ```js
 assert.strictEqual(cyclicalFigurateNums(6), 28684);

@@ -14,7 +14,7 @@ How many barely obtuse triangles are there with perimeter $≤ 75\\,000\\,000$?
 
 # --hints--
 
-`almostRightAngledTrianglesTwo()` should return `4137330`.
+`almostRightAngledTrianglesTwo()` має повернути `4137330`.
 
 ```js
 assert.strictEqual(almostRightAngledTrianglesTwo(), 4137330);

@@ -21,7 +21,7 @@ Find $\sum G(n^3)$ for $1 ≤ n &lt; {10}^6$.
 
 # --hints--
 
-`golombsSequence()` should return `56098610614277016`.
+`golombsSequence()` має повернути `56098610614277016`.
 
 ```js
 assert.strictEqual(golombsSequence(), 56098610614277016);

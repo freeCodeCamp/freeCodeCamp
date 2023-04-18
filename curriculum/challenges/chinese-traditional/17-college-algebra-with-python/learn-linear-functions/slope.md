@@ -1,6 +1,6 @@
 ---
 id: 6331d291b51aeedd1a2bd651
-title: "Slope"
+title: "斜率"
 challengeType: 15
 videoId: nURsz7SR5aM
 dashedName: slope
@@ -8,15 +8,15 @@ dashedName: slope
 
 # --description--
 
-This first video will focus on the slope of a line and how to calculate it.
+這第一個視頻將重點介紹直線的斜率和如何計算斜率。
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+這是<a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個和下一個視頻中用到的 Colab 筆記本</a>。
 
 # --question--
 
 ## --text--
 
-If you have already defined these variables, which of the following is the correct slope formula?
+如果你已經定義了這些變量，下面哪一個是正確的斜率公式？
 
 ## --answers--
 

@@ -25,7 +25,7 @@ How many sides does $S_{1864} + S_{1865} + \ldots + S_{1909}$ have?
 
 # --hints--
 
-`minkowskiSums()` should return `86226`.
+`minkowskiSums()` має повернути `86226`.
 
 ```js
 assert.strictEqual(minkowskiSums(), 86226);

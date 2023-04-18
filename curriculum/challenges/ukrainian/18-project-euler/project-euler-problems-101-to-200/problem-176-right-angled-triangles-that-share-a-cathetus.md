@@ -14,7 +14,7 @@ Find the smallest integer that can be the length of a cathetus of exactly 47547 
 
 # --hints--
 
-`trianglesSharingCathetus()` should return `96818198400000`.
+`trianglesSharingCathetus()` має повернути `96818198400000`.
 
 ```js
 assert.strictEqual(trianglesSharingCathetus(), 96818198400000);

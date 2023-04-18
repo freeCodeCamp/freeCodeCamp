@@ -18,7 +18,7 @@ Thus we have e.g. $3↑↑2 = 3^3 = 27$, hence $3↑↑3 = 3^{27} = 762559748498
 
 # --hints--
 
-`hyperexponentation()` should return `95962097`.
+`hyperexponentation()` має повернути `95962097`.
 
 ```js
 assert.strictEqual(hyperexponentation(), 95962097);

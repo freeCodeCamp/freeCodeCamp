@@ -26,13 +26,13 @@ Give your answer with hexadecimal number as a string.
 
 # --hints--
 
-`hexadecimalNumbers()` should return a string.
+`hexadecimalNumbers()` має повернути рядок.
 
 ```js
 assert(typeof hexadecimalNumbers() === 'string');
 ```
 
-`hexadecimalNumbers()` should return the string `3D58725572C62302`.
+`hexadecimalNumbers()` має повернути рядок `3D58725572C62302`.
 
 ```js
 assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');

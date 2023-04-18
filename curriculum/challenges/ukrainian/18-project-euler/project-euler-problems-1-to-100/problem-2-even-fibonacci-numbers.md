@@ -16,7 +16,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed `n
 
 # --hints--
 
-`fiboEvenSum(10)` should return a number.
+`fiboEvenSum(10)` має повернути число.
 
 ```js
 assert(typeof fiboEvenSum(10) === 'number');
@@ -34,37 +34,37 @@ Your function should sum the even-valued Fibonacci numbers: `fiboEvenSum(8)` sho
 assert.strictEqual(fiboEvenSum(8), 10);
 ```
 
-`fiboEvenSum(10)` should return 10.
+`fiboEvenSum(10)` має повернути 10.
 
 ```js
 assert.strictEqual(fiboEvenSum(10), 10);
 ```
 
-`fiboEvenSum(34)` should return 44.
+`fiboEvenSum(34)` має повернути 44.
 
 ```js
 assert.strictEqual(fiboEvenSum(34), 44);
 ```
 
-`fiboEvenSum(60)` should return 44.
+`fiboEvenSum(60)` має повернути 44.
 
 ```js
 assert.strictEqual(fiboEvenSum(60), 44);
 ```
 
-`fiboEvenSum(1000)` should return 798.
+`fiboEvenSum(1000)` має повернути 798.
 
 ```js
 assert.strictEqual(fiboEvenSum(1000), 798);
 ```
 
-`fiboEvenSum(100000)` should return 60696.
+`fiboEvenSum(100000)` має повернути 60696.
 
 ```js
 assert.strictEqual(fiboEvenSum(100000), 60696);
 ```
 
-`fiboEvenSum(4000000)` should return 4613732.
+`fiboEvenSum(4000000)` має повернути 4613732.
 
 ```js
 assert.strictEqual(fiboEvenSum(4000000), 4613732);

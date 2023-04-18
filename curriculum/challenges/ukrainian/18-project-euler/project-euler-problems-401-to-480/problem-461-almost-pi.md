@@ -26,25 +26,25 @@ You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> 
 assert(typeof almostPi === 'function')
 ```
 
-`almostPi` should return a number.
+`almostPi` має повернути число.
 
 ```js
 assert.strictEqual(typeof almostPi(10), 'number');
 ```
 
-`almostPi(29)` should return `1208`.
+`almostPi(29)` має повернути `1208`.
 
 ```js
 assert.strictEqual(almostPi(29), 1208);
 ```
 
-`almostPi(50)` should return `4152`.
+`almostPi(50)` має повернути `4152`.
 
 ```js
 assert.strictEqual(almostPi(50), 4152);
 ```
 
-`almostPi(200)` should return `64658`.
+`almostPi(200)` має повернути `64658`.
 
 ```js
 assert.strictEqual(almostPi(200), 64658);

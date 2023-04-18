@@ -27,7 +27,7 @@ Find $F({10}^7)$.
 
 # --hints--
 
-`primeConnection()` should return `46479497324`.
+`primeConnection()` має повернути `46479497324`.
 
 ```js
 assert.strictEqual(primeConnection(), 46479497324);

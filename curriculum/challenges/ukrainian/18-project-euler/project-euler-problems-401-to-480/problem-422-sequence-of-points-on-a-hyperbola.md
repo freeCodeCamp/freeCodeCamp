@@ -28,7 +28,7 @@ For $n = 7$, the answer would have been: $806\\,236\\,837$.
 
 # --hints--
 
-`sequenceOfPointsOnHyperbola()` should return `92060460`.
+`sequenceOfPointsOnHyperbola()` має повернути `92060460`.
 
 ```js
 assert.strictEqual(sequenceOfPointsOnHyperbola(), 92060460);

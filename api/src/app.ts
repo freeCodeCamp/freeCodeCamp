@@ -17,6 +17,7 @@ import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifySentry from './plugins/fastify-sentry';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { settingRoutes } from './routes/settings';
@@ -49,6 +50,8 @@ export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
+
+  void fastify.register(security);
 
   fastify.get('/', async (_request, _reply) => {
     return { hello: 'world' };
@@ -117,5 +120,6 @@ export const build = async (
   }
   void fastify.register(settingRoutes);
   void fastify.register(testValidatedRoutes);
+
   return fastify;
 };

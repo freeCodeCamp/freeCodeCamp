@@ -22,7 +22,7 @@ Find $f(7\\,500\\,000)\bmod 1\\,000\\,000\\,009$.
 
 # --hints--
 
-`nSequences()` should return `97138867`.
+`nSequences()` має повернути `97138867`.
 
 ```js
 assert.strictEqual(nSequences(), 97138867);

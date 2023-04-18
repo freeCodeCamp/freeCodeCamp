@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 Іноді потрібно перевірити декілька речей одночасно. <dfn>Логічний оператор and</dfn> (`&&`) повертає `true` лише за умови, що <dfn>операнди</dfn> зліва та справа істинні.
 
-Такого ж результату можна досягнути, вклавши одну інструкцію if в іншу:
+The same effect could be achieved by nesting an `if` statement inside another `if`.
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-поверне `Yes`, якщо `num` більше ніж `5` та менше ніж `10`. Цю саму логіку можна записати як:
+This code will return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written with the <dfn>logical and</dfn> operator.
 
 ```js
 if (num > 5 && num < 10) {

@@ -22,7 +22,7 @@ Find $S(10\\,000\\,000)$.
 
 # --hints--
 
-`integerDivisibleByTwoPrimes()` should return `11109800204052`.
+`integerDivisibleByTwoPrimes()` має повернути `11109800204052`.
 
 ```js
 assert.strictEqual(integerDivisibleByTwoPrimes(), 11109800204052);

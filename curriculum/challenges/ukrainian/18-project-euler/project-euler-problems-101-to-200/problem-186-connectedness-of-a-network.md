@@ -31,7 +31,7 @@ The Prime Minister's phone number is 524287. After how many successful calls, no
 
 # --hints--
 
-`connectednessOfANetwork()` should return `2325629`.
+`connectednessOfANetwork()` має повернути `2325629`.
 
 ```js
 assert.strictEqual(connectednessOfANetwork(), 2325629);

@@ -28,13 +28,13 @@ Find the 2000th tile in this sequence.
 
 # --hints--
 
-`hexagonalTile(10)` should return `271`.
+`hexagonalTile(10)` має повернути `271`.
 
 ```js
 assert.strictEqual(hexagonalTile(10), 271);
 ```
 
-`hexagonalTile(2000)` should return `14516824220`.
+`hexagonalTile(2000)` має повернути `14516824220`.
 
 ```js
 assert.strictEqual(hexagonalTile(2000), 14516824220);

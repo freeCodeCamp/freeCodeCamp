@@ -33,7 +33,7 @@ Find $L(100\\,000)$.
 
 # --hints--
 
-`lenticularHoles()` should return `4884650818`.
+`lenticularHoles()` має повернути `4884650818`.
 
 ```js
 assert.strictEqual(lenticularHoles(), 4884650818);
