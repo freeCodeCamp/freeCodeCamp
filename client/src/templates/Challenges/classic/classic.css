@@ -68,13 +68,6 @@
   margin-inline-end: auto;
 }
 
-.monaco-editor-tabs .editor-tab-separator {
-  width: 2px;
-  height: 100%;
-  margin-inline-start: -2px;
-  background-color: var(--primary-color);
-}
-
 .panel-display-tabs button:first-child,
 .tabs-row > button:first-child {
   margin: 0 10px 0 0;
