@@ -503,7 +503,6 @@ button.nav-link[aria-disabled='true'] {
   }
 
   #universal-nav-logo {
-    display: flex;
     padding-top: 0.2em;
   }
 
