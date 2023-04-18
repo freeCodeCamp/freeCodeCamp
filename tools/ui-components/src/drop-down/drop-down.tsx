@@ -19,6 +19,7 @@ const itemsClassNames = [
   'focus:outline-transparent',
   'origin-top-right',
   'absolute',
+  'min-w-full',
   'py-1',
   'z-10'
 ];

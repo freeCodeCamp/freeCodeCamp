@@ -6,24 +6,11 @@ import { Menu } from '@headlessui/react';
 type MenuProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
 export type DropDownButtonProps = MenuProps & {
-  block?: boolean;
   dropup?: boolean;
-  bsStyle?: 'primary';
 };
 
-const defaultClassNames = [
-  'cursor-pointer',
-  'border-3',
-  'text-center',
-  'touch-manipulation',
-  'bg-background-quaternary',
-  'text-foreground-secondary',
-  'px-3',
-  'py-1.5',
-  'relative',
-  'hover:bg-foreground-primary',
-  'hover:text-background-primary'
-];
+const defaultClassNames =
+  'cursor-pointer border-3 text-center touch-manipulation bg-background-quaternary text-foreground-secondary px-3 py-1.5 relative hover:bg-foreground-primary hover:text-background-primary btn-block border-foreground-primary';
 
 export function DropDownButton({
   children,
