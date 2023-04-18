@@ -22,23 +22,26 @@
   border-bottom: 1px solid var(--quaternary-background);
 }
 
-.action-row [aria-expanded='true'] {
+.monaco-editor-tabs button[aria-expanded='true'],
+.panel-display-tabs button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
   color: var(--secondary-background);
 }
 
-.action-row button:hover {
+.monaco-editor-tabs button:hover,
+.panel-display-tabs button:hover {
   color: var(--secondary-color);
   background-color: var(--primary-background);
 }
 
-.action-row button[aria-expanded='true']:hover {
+.monaco-editor-tabs button[aria-expanded='true']:hover,
+.panel-display-tabs button[aria-expanded='true']:hover {
   background-color: var(--quaternary-color);
   color: var(--secondary-background);
 }
 
-.action-row button:focus-visible {
+.panel-display-tabs button:focus-visible {
   position: relative;
   z-index: 20;
 }
@@ -52,8 +55,12 @@
 .tabs-row button,
 .monaco-editor-tabs button {
   padding: 6px 12px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
+}
+
+.monaco-editor-tabs button + button {
+  margin-inline-start: 3px;
 }
 
 .monaco-editor-tabs {
@@ -61,26 +68,11 @@
   margin-inline-end: auto;
 }
 
-.monaco-editor-tabs button:not(:last-of-type) {
-  border-inline-end: 0;
-}
-
-.monaco-editor-tabs button:not(:first-of-type) {
-  border-inline-start: 0;
-}
-
 .monaco-editor-tabs .editor-tab-separator {
   width: 2px;
   height: 100%;
   margin-inline-start: -2px;
   background-color: var(--primary-color);
-}
-
-/* Firefox doesn't have :has() yet but this ruleset is not essential */
-.monaco-editor-tabs
-  button[aria-expanded='true']
-  + .editor-tab-separator:has(+ button[aria-expanded='true']) {
-  background-color: var(--secondary-background);
 }
 
 .panel-display-tabs button:first-child,
