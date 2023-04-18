@@ -19,6 +19,7 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
+import './portfolio.css';
 
 type PortfolioProps = {
   picture?: string;
@@ -286,6 +287,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               value={image}
             />
             {imageMessage ? <HelpBlock>{imageMessage}</HelpBlock> : null}
+            {image && <img src={image} className='preview-image' alt='' />}
           </FormGroup>
           <FormGroup
             controlId={`${id}-description`}
