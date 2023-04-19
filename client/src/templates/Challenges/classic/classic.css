@@ -87,11 +87,11 @@
 }
 
 #mobile-layout .tab-content {
-  position: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   overflow-y: hidden;
+  padding-block-end: 37px;
 }
 
 #mobile-layout-pane-editor {
