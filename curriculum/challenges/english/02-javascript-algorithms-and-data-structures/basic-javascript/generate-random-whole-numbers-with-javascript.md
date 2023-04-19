@@ -78,9 +78,6 @@ assert(code.match(/Math.floor/g).length >= 1);
 
 ```js
 function randomWholeNum() {
-
-  // Only change code below this line
-
   return Math.random();
 }
 ```
