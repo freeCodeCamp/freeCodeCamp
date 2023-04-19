@@ -36,7 +36,7 @@ Find $\sum M(C, 30)$ for $3 ≤ C ≤ 40$.
 
 # --hints--
 
-`roomsOfDoom()` should return `34315549139516`.
+`roomsOfDoom()` має повернути `34315549139516`.
 
 ```js
 assert.strictEqual(roomsOfDoom(), 34315549139516);

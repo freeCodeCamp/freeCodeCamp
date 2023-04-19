@@ -29,7 +29,7 @@ Find $A(1\\,000\\,000\\,000)$.
 
 # --hints--
 
-`ellipsesInsideTriangles()` should return `3776957309612154000`.
+`ellipsesInsideTriangles()` має повернути `3776957309612154000`.
 
 ```js
 assert.strictEqual(ellipsesInsideTriangles(), 3776957309612154000);

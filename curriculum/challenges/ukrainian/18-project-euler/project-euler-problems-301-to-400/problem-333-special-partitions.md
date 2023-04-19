@@ -27,7 +27,7 @@ Find the sum of the primes $q &lt; 1\\,000\\,000$ such that $P(q) = 1$.
 
 # --hints--
 
-`specialPartitions()` should return `3053105`.
+`specialPartitions()` має повернути `3053105`.
 
 ```js
 assert.strictEqual(specialPartitions(), 3053105);

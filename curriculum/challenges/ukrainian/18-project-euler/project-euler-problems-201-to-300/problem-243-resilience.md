@@ -24,7 +24,7 @@ Find the smallest denominator $d$, having a resilience $R(d) &lt; \frac{15\\,499
 
 # --hints--
 
-`resilience()` should return `892371480`.
+`resilience()` має повернути `892371480`.
 
 ```js
 assert.strictEqual(resilience(), 892371480);

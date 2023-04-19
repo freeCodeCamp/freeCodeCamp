@@ -24,7 +24,7 @@ What is $Cost(10^9)$?
 
 # --hints--
 
-`skewCostCoding()` should return `64564225042`.
+`skewCostCoding()` має повернути `64564225042`.
 
 ```js
 assert.strictEqual(skewCostCoding(), 64564225042);

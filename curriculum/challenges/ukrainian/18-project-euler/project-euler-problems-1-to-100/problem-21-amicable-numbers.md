@@ -18,31 +18,31 @@ Evaluate the sum of all the amicable numbers under `n`.
 
 # --hints--
 
-`sumAmicableNum(1000)` should return a number.
+`sumAmicableNum(1000)` має повернути число.
 
 ```js
 assert(typeof sumAmicableNum(1000) === 'number');
 ```
 
-`sumAmicableNum(1000)` should return 504.
+`sumAmicableNum(1000)` має повернути 504.
 
 ```js
 assert.strictEqual(sumAmicableNum(1000), 504);
 ```
 
-`sumAmicableNum(2000)` should return 2898.
+`sumAmicableNum(2000)` має повернути 2898.
 
 ```js
 assert.strictEqual(sumAmicableNum(2000), 2898);
 ```
 
-`sumAmicableNum(5000)` should return 8442.
+`sumAmicableNum(5000)` має повернути 8442.
 
 ```js
 assert.strictEqual(sumAmicableNum(5000), 8442);
 ```
 
-`sumAmicableNum(10000)` should return 31626.
+`sumAmicableNum(10000)` має повернути 31626.
 
 ```js
 assert.strictEqual(sumAmicableNum(10000), 31626);

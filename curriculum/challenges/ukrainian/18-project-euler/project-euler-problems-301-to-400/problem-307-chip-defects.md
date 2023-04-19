@@ -16,7 +16,7 @@ Find $p(20\\,000, 1\\,000\\,000)$ and give your answer rounded to 10 decimal pla
 
 # --hints--
 
-`chipDefects()` should return `0.7311720251`.
+`chipDefects()` має повернути `0.7311720251`.
 
 ```js
 assert.strictEqual(chipDefects(), 0.7311720251);

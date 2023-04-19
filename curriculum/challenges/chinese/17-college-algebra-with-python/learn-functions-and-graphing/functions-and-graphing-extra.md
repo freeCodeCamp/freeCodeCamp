@@ -1,6 +1,6 @@
 ---
 id: 63e1798f811fda1bc546bba0
-title: "Functions and Graphing: Extra"
+title: "函数和图像：补充"
 challengeType: 15
 videoId: N7Fh1xKrIM4
 dashedName: functions-and-graphing-extra
@@ -8,19 +8,19 @@ dashedName: functions-and-graphing-extra
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+下一个视频将向你展示函数和图像之间的联系。 注意图像是怎样一种表示函数的输入和输出的方式。 然后视频将向你展示如何用 Python 绘制一个函数的图像。
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with this video.</a>
+这是<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">和视频配套的 Colab 笔记本</a>。
 
 # --question--
 
-## --assignemnts--
+## --任务--
 
-Add code to your algebra Colab notebook for functions and graphing.
+在你的代数 Colab 笔记本上添加代码，用于函数和图像。
 
 ## --text--
 
-What Python library would you import to create arrays that you can graph?
+你会导入哪个 Python 库来创建可以绘图的数组？
 
 ## --answers--
 

@@ -26,7 +26,7 @@ The sum of the divisibility multipliers for the primes that are coprime to 10 an
 
 # --hints--
 
-`divisibilityMultipliers()` should return `1601912348822`.
+`divisibilityMultipliers()` має повернути `1601912348822`.
 
 ```js
 assert.strictEqual(divisibilityMultipliers(), 1601912348822);

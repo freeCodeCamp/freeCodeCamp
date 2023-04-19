@@ -27,7 +27,7 @@ Find $C(C(C(10\\,000)))\bmod {13}^8$.
 
 # --hints--
 
-`pathsOnSierpinskiGraphs()` should return `324681947`.
+`pathsOnSierpinskiGraphs()` має повернути `324681947`.
 
 ```js
 assert.strictEqual(pathsOnSierpinskiGraphs(), 324681947);

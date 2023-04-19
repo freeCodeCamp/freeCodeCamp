@@ -18,7 +18,7 @@ Find $\sum f(pq,pr,qr)$, where $p$, $q$ and $r$ are prime numbers and $p &lt; q 
 
 # --hints--
 
-`linearCombinationOfSemiprimes()` should return `1228215747273908500`.
+`linearCombinationOfSemiprimes()` має повернути `1228215747273908500`.
 
 ```js
 assert.strictEqual(linearCombinationOfSemiprimes(), 1228215747273908500);

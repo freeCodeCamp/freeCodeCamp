@@ -22,7 +22,7 @@ Find $S({10}^7)$. Give your answer rounded to four decimal places.
 
 # --hints--
 
-`inverseSummationCoprimeCouples()` should return `5000088.8395`.
+`inverseSummationCoprimeCouples()` має повернути `5000088.8395`.
 
 ```js
 assert.strictEqual(inverseSummationCoprimeCouples(), 5000088.8395);

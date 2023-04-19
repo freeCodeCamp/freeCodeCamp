@@ -126,31 +126,31 @@ If, instead of using two 6-sided dice, two `n`-sided dice are used, find the six
 
 # --hints--
 
-`monopolyOdds(8)` should return a string.
+`monopolyOdds(8)` має повернути рядок.
 
 ```js
 assert(typeof monopolyOdds(8) === 'string');
 ```
 
-`monopolyOdds(8)` should return string `102400`.
+`monopolyOdds(8)` має повернути рядок `102400`.
 
 ```js
 assert.strictEqual(monopolyOdds(8), '102400');
 ```
 
-`monopolyOdds(10)` should return string `100024`.
+`monopolyOdds(10)` має повернути рядок `100024`.
 
 ```js
 assert.strictEqual(monopolyOdds(10), '100024');
 ```
 
-`monopolyOdds(20)` should return string `100005`.
+`monopolyOdds(20)` має повернути рядок `100005`.
 
 ```js
 assert.strictEqual(monopolyOdds(20), '100005');
 ```
 
-`monopolyOdds(4)` should return string `101524`.
+`monopolyOdds(4)` має повернути рядок `101524`.
 
 ```js
 assert.strictEqual(monopolyOdds(4), '101524');

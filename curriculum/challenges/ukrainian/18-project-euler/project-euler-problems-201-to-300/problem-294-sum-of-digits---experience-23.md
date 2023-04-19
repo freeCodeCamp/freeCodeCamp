@@ -21,7 +21,7 @@ Find $S({11}^{12})$ and give your answer $\bmod {10}^9$.
 
 # --hints--
 
-`experience23()` should return `789184709`.
+`experience23()` має повернути `789184709`.
 
 ```js
 assert.strictEqual(experience23(), 789184709);

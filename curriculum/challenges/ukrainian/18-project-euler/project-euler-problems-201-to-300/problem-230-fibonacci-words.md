@@ -38,7 +38,7 @@ Find $\sum_{n = 0, 1, \ldots, 17} {10}^n × D_{A,B}((127 + 19n) × 7^n)$.
 
 # --hints--
 
-`fibonacciWords()` should return `850481152593119200`.
+`fibonacciWords()` має повернути `850481152593119200`.
 
 ```js
 assert.strictEqual(fibonacciWords(), 850481152593119200);

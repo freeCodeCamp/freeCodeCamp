@@ -29,31 +29,31 @@ Given that L is the length of the wire, for how many values of L ≤ `n` can exa
 
 # --hints--
 
-`singularIntRightTriangles(48)` should return a number.
+`singularIntRightTriangles(48)` має повернути число.
 
 ```js
 assert(typeof singularIntRightTriangles(48) === 'number');
 ```
 
-`singularIntRightTriangles(48)` should return `6`.
+`singularIntRightTriangles(48)` має повернути `6`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(48), 6);
 ```
 
-`singularIntRightTriangles(700000)` should return `75783`.
+`singularIntRightTriangles(700000)` має повернути `75783`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(700000), 75783);
 ```
 
-`singularIntRightTriangles(1000000)` should return `107876`.
+`singularIntRightTriangles(1000000)` має повернути `107876`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1000000), 107876);
 ```
 
-`singularIntRightTriangles(1500000)` should return `161667`.
+`singularIntRightTriangles(1500000)` має повернути `161667`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1500000), 161667);

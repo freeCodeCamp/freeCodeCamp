@@ -30,37 +30,37 @@ What is the sum of all the minimal product-sum numbers for 2 ≤ `k` ≤ `limit`
 
 # --hints--
 
-`productSumNumbers(6)` should return a number.
+`productSumNumbers(6)` має повернути число.
 
 ```js
 assert(typeof productSumNumbers(6) === 'number');
 ```
 
-`productSumNumbers(6)` should return `30`.
+`productSumNumbers(6)` має повернути `30`.
 
 ```js
 assert.strictEqual(productSumNumbers(6), 30);
 ```
 
-`productSumNumbers(12)` should return `61`.
+`productSumNumbers(12)` має повернути `61`.
 
 ```js
 assert.strictEqual(productSumNumbers(12), 61);
 ```
 
-`productSumNumbers(300)` should return `12686`.
+`productSumNumbers(300)` має повернути `12686`.
 
 ```js
 assert.strictEqual(productSumNumbers(300), 12686);
 ```
 
-`productSumNumbers(6000)` should return `2125990`.
+`productSumNumbers(6000)` має повернути `2125990`.
 
 ```js
 assert.strictEqual(productSumNumbers(6000), 2125990);
 ```
 
-`productSumNumbers(12000)` should return `7587457`.
+`productSumNumbers(12000)` має повернути `7587457`.
 
 ```js
 assert.strictEqual(productSumNumbers(12000), 7587457);

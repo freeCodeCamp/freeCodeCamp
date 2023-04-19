@@ -28,7 +28,7 @@ Find $P(7^{13})\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`polarPolygons()` should return `585965659`.
+`polarPolygons()` має повернути `585965659`.
 
 ```js
 assert.strictEqual(polarPolygons(), 585965659);

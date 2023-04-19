@@ -23,7 +23,7 @@ $T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
 
 # --hints--
 
-`toursOnPlayingBoard()` should return `15836928`.
+`toursOnPlayingBoard()` має повернути `15836928`.
 
 ```js
 assert.strictEqual(toursOnPlayingBoard(), 15836928);

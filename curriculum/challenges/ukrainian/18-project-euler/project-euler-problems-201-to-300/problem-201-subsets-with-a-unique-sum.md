@@ -32,7 +32,7 @@ Determine the sum of all integers which are the sum of exactly one of the $50$-e
 
 # --hints--
 
-`uniqueSubsetsSum()` should return `115039000`.
+`uniqueSubsetsSum()` має повернути `115039000`.
 
 ```js
 assert.strictEqual(uniqueSubsetsSum(), 115039000);

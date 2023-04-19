@@ -28,7 +28,7 @@ Find $\sum f(n) \times m(n)$ for $1 ≤ n ≤ {10}^{14}$. Give your answer modul
 
 # --hints--
 
-`maximumIntegerPartitionProduct()` should return `334420941`.
+`maximumIntegerPartitionProduct()` має повернути `334420941`.
 
 ```js
 assert.strictEqual(maximumIntegerPartitionProduct(), 334420941);

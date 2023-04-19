@@ -19,7 +19,7 @@ Find the sum of all numbers $n$, $1 &lt; n &lt; {10}^{10}$ such that $φ(n^2)$ i
 
 # --hints--
 
-`totientOfSquare()` should return `5943040885644`.
+`totientOfSquare()` має повернути `5943040885644`.
 
 ```js
 assert.strictEqual(totientOfSquare(), 5943040885644);

@@ -21,7 +21,7 @@ Find the last 9 digits of $S({21}^7, 7^{21}, {12}^7)$.
 
 # --hints--
 
-`crazyFunction()` should return `291504964`.
+`crazyFunction()` має повернути `291504964`.
 
 ```js
 assert.strictEqual(crazyFunction(), 291504964);

@@ -18,7 +18,7 @@ Find $T({10}^{12})$. Give the last 9 digits of your answer.
 
 # --hints--
 
-`permutationsOfProject()` should return `423341841`.
+`permutationsOfProject()` має повернути `423341841`.
 
 ```js
 assert.strictEqual(permutationsOfProject(), 423341841);

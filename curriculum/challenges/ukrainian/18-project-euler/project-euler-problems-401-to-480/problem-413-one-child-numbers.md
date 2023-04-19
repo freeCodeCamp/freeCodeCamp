@@ -20,7 +20,7 @@ Find $F({10}^{19})$.
 
 # --hints--
 
-`oneChildNumbers()` should return `3079418648040719`.
+`oneChildNumbers()` має повернути `3079418648040719`.
 
 ```js
 assert.strictEqual(oneChildNumbers(), 3079418648040719);

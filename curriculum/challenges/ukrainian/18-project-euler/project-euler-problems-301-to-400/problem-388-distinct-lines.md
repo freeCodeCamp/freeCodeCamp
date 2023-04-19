@@ -18,7 +18,7 @@ Find $D({10}^{10})$. Give as your answer the first nine digits followed by the l
 
 # --hints--
 
-`distinctLines()` should return `831907372805130000`.
+`distinctLines()` має повернути `831907372805130000`.
 
 ```js
 assert.strictEqual(distinctLines(), 831907372805130000);

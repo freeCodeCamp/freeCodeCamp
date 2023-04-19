@@ -27,7 +27,7 @@ Find $E(40)$ rounded to 10 decimal places behind the decimal point.
 
 # --hints--
 
-`eatingPie()` should return `3.2370342194`.
+`eatingPie()` має повернути `3.2370342194`.
 
 ```js
 assert.strictEqual(eatingPie(), 3.2370342194);

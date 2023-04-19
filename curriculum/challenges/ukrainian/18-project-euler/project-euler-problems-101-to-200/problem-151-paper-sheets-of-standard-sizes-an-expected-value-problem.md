@@ -26,7 +26,7 @@ Give your answer rounded to six decimal places using the format `x.xxxxxx`.
 
 # --hints--
 
-`expectedValueProblem()` should return `0.464399`.
+`expectedValueProblem()` має повернути `0.464399`.
 
 ```js
 assert.strictEqual(expectedValueProblem(), 0.464399);

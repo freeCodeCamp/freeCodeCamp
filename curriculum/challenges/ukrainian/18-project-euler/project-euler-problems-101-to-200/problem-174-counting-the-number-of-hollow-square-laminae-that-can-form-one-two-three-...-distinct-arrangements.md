@@ -24,7 +24,7 @@ What is $\sum N(n)$ for $1 ≤ n ≤ 10$?
 
 # --hints--
 
-`hollowSquareLaminaeDistinctArrangements()` should return `209566`.
+`hollowSquareLaminaeDistinctArrangements()` має повернути `209566`.
 
 ```js
 assert.strictEqual(hollowSquareLaminaeDistinctArrangements(), 209566);

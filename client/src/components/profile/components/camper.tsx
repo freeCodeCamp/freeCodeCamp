@@ -9,6 +9,7 @@ import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import type { User } from '../../../redux/prop-types';
 
 import envData from '../../../../../config/env.json';
 import { getLangCode } from '../../../../../config/i18n';
@@ -22,27 +23,31 @@ const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
 
+
 interface BadgeProps {
   title: React.ReactNode;
   details: string;
   icon: IconDefinition;
 }
 
-interface CamperProps {
-  about: string;
-  githubProfile: string;
-  isDonating: boolean;
-  joinDate: string;
-  linkedin: string;
-  location: string;
-  name: string;
-  picture: string;
-  points: number;
-  twitter: string;
-  username: string;
-  website: string;
-  yearsTopContributor: string[];
-}
+export type CamperProps = Pick<
+  User,
+  | 'about'
+  | 'githubProfile'
+  | 'isDonating'
+  | 'linkedin'
+  | 'points'
+  | 'username'
+  | 'twitter'
+  | 'yearsTopContributor'
+  | 'location'
+  | 'website'
+  | 'picture'
+  | 'name'
+  | 'joinDate'
+  | 'twitter'
+>;
+
 
 function parseDate(joinDate: string, t: TFunction): string {
   const convertedJoinDate = new Date(joinDate);

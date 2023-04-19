@@ -32,7 +32,7 @@ Find the sum of FITs for the BOPs.
 
 # --hints--
 
-`optimumPolynomial()` should return `37076114526`.
+`optimumPolynomial()` має повернути `37076114526`.
 
 ```js
 assert.strictEqual(optimumPolynomial(), 37076114526);

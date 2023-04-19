@@ -22,31 +22,31 @@ How many, not necessarily distinct, values of $\\displaystyle \\binom n r$ for $
 
 # --hints--
 
-`combinatoricSelections(1000)` should return a number.
+`combinatoricSelections(1000)` має повернути число.
 
 ```js
 assert(typeof combinatoricSelections(1000) === 'number');
 ```
 
-`combinatoricSelections(1000)` should return 4626.
+`combinatoricSelections(1000)` має повернути 4626.
 
 ```js
 assert.strictEqual(combinatoricSelections(1000), 4626);
 ```
 
-`combinatoricSelections(10000)` should return 4431.
+`combinatoricSelections(10000)` має повернути 4431.
 
 ```js
 assert.strictEqual(combinatoricSelections(10000), 4431);
 ```
 
-`combinatoricSelections(100000)` should return 4255.
+`combinatoricSelections(100000)` має повернути 4255.
 
 ```js
 assert.strictEqual(combinatoricSelections(100000), 4255);
 ```
 
-`combinatoricSelections(1000000)` should return 4075.
+`combinatoricSelections(1000000)` має повернути 4075.
 
 ```js
 assert.strictEqual(combinatoricSelections(1000000), 4075);

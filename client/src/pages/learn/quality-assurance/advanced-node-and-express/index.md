@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Advanced Node and Express Challenges
-block: Advanced Node and Express
-superBlock: Quality Assurance
+block: advanced-node-and-express
+superBlock: quality-assurance
 ---
 
 ## Introduction to Advanced Node and Express Challenges

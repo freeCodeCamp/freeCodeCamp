@@ -16,7 +16,7 @@ What's the expected number of steps until all seeds have been dropped in the top
 
 # --hints--
 
-`antAndSeeds()` should return `430.088247`.
+`antAndSeeds()` має повернути `430.088247`.
 
 ```js
 assert.strictEqual(antAndSeeds(), 430.088247);

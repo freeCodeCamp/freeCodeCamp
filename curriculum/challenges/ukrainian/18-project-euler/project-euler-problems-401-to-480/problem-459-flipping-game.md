@@ -36,7 +36,7 @@ Find $W({10}^6)$.
 
 # --hints--
 
-`flippingGame()` should return `3996390106631`.
+`flippingGame()` має повернути `3996390106631`.
 
 ```js
 assert.strictEqual(flippingGame(), 3996390106631);

@@ -28,7 +28,7 @@ Give your answer rounded to 10 digits behind the decimal point in the form a.bcd
 
 # --hints--
 
-`riskyMoon()` should return `1.2759860331`.
+`riskyMoon()` має повернути `1.2759860331`.
 
 ```js
 assert.strictEqual(riskyMoon(), 1.2759860331);

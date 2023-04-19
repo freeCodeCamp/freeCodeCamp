@@ -26,7 +26,7 @@ Find $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 
 # --hints--
 
-`crossFlips()` should return `467178235146843500`.
+`crossFlips()` має повернути `467178235146843500`.
 
 ```js
 assert.strictEqual(crossFlips(), 467178235146843500);

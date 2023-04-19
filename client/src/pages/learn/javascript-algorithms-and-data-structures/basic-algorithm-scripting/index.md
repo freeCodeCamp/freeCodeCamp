@@ -1,7 +1,7 @@
 ---
 title: Introduction to Basic Algorithm Scripting
-block: Basic Algorithm Scripting
-superBlock: JavaScript Algorithms and Data Structures
+block: basic-algorithm-scripting
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to Basic Algorithm Scripting

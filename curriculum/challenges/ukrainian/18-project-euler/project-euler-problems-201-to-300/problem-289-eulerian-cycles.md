@@ -24,7 +24,7 @@ Find $L(6,10)\bmod {10}^{10}$.
 
 # --hints--
 
-`eulerianCycles()` should return `6567944538`.
+`eulerianCycles()` має повернути `6567944538`.
 
 ```js
 assert.strictEqual(eulerianCycles(), 6567944538);

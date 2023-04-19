@@ -20,7 +20,7 @@ Find $F({10}^{12})$.
 
 # --hints--
 
-`diophantineReciprocalsThree()` should return `5435004633092`.
+`diophantineReciprocalsThree()` має повернути `5435004633092`.
 
 ```js
 assert.strictEqual(diophantineReciprocalsThree(), 5435004633092);

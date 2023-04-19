@@ -18,15 +18,15 @@ Quali snippet di codice sono disponibili in Google Colaboratory?
 
 ## --answers--
 
-Camera capture
+Cattura da fotocamera
 
 ---
 
-Adding form fields
+Aggiunta campi di modulo
 
 ---
 
-Importing data from Google Sheets
+Importazione dati da Google Sheets
 
 ---
 

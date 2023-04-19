@@ -20,7 +20,7 @@ If he plays ${10}^5$ turns with $k = 1, k = 2, k = 3, \ldots, k = {10}^5$, what 
 
 # --hints--
 
-`pythagoreanOdds()` should return `157055.80999`.
+`pythagoreanOdds()` має повернути `157055.80999`.
 
 ```js
 assert.strictEqual(pythagoreanOdds(), 157055.80999);

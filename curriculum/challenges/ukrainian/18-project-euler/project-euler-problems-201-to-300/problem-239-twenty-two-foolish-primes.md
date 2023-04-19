@@ -16,7 +16,7 @@ Give your answer rounded to 12 places behind the decimal point in the form 0.abc
 
 # --hints--
 
-`twentyTwoFoolishPrimes()` should return `0.001887854841`.
+`twentyTwoFoolishPrimes()` має повернути `0.001887854841`.
 
 ```js
 assert.strictEqual(twentyTwoFoolishPrimes(), 0.001887854841);

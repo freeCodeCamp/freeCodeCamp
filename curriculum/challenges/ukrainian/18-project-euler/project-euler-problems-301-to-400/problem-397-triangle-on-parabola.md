@@ -18,7 +18,7 @@ Find $F({10}^6, {10}^9)$.
 
 # --hints--
 
-`triangleOnParabola()` should return `141630459461893730`.
+`triangleOnParabola()` має повернути `141630459461893730`.
 
 ```js
 assert.strictEqual(triangleOnParabola(), 141630459461893730);

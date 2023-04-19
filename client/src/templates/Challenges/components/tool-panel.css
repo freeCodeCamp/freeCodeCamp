@@ -11,12 +11,17 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
+  width: 100%;
+  background-color: var(--tertiary-background);
+  position: absolute;
+  bottom: 0;
 }
 
 .tool-panel-group-mobile > .btn-block,
 .tool-panel-group-mobile > .dropdown > .btn-block {
   margin: 0 2px 0 0;
   padding: 5px 0;
+  height: 37px;
 }
 
 .tool-panel-group .btn-group {

@@ -20,7 +20,7 @@ How many triangles $ABC$ with perimeter $≤ 100\\,000\\,000$ exist so that the 
 
 # --hints--
 
-`angularBisectors()` should return `139012411`.
+`angularBisectors()` має повернути `139012411`.
 
 ```js
 assert.strictEqual(angularBisectors(), 139012411);

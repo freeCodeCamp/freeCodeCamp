@@ -30,7 +30,7 @@ Find $\sum f(N)$ for $1 ≤ N ≤ {10}^{12}$. Give the last 8 digits of your ans
 
 # --hints--
 
-`comfortableDistanceTwo()` should return `73811586`.
+`comfortableDistanceTwo()` має повернути `73811586`.
 
 ```js
 assert.strictEqual(comfortableDistanceTwo(), 73811586);

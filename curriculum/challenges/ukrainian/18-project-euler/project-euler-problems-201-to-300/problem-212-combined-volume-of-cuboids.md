@@ -31,7 +31,7 @@ What is the combined volume of all 50000 cuboids, $C_1, \ldots, C_{50000}$?
 
 # --hints--
 
-`combinedValueOfCuboids()` should return `328968937309`.
+`combinedValueOfCuboids()` має повернути `328968937309`.
 
 ```js
 assert.strictEqual(combinedValueOfCuboids(), 328968937309);

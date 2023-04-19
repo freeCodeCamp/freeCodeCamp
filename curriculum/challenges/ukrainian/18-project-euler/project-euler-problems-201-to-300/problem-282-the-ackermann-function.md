@@ -19,7 +19,7 @@ Find $\displaystyle\sum_{n = 0}^6 A(n, n)$ and give your answer mod ${14}^8$.
 
 # --hints--
 
-`ackermanFunction()` should return `1098988351`.
+`ackermanFunction()` має повернути `1098988351`.
 
 ```js
 assert.strictEqual(ackermanFunction(), 1098988351);

@@ -16,7 +16,7 @@ Find the sum of the positive numbers $n ≤ {10}^{11}$ for which $C(n)=242$.
 
 # --hints--
 
-`modularCubesTwo()` should return `8495585919506151000`.
+`modularCubesTwo()` має повернути `8495585919506151000`.
 
 ```js
 assert.strictEqual(modularCubesTwo(), 8495585919506151000);

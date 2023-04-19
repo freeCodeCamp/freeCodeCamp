@@ -24,7 +24,7 @@ Find $$\sum_{k = 1}^{9\\,999\\,999} R(\displaystyle\binom{10\\,000\\,000}{k})$$ 
 
 # --hints--
 
-`retractionsA()` should return `659104042`.
+`retractionsA()` має повернути `659104042`.
 
 ```js
 assert.strictEqual(retractionsA(), 659104042);
