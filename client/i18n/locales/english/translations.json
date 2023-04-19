@@ -310,7 +310,8 @@
       "console": "Console",
       "instructions": "Instructions",
       "notes": "Notes",
-      "preview": "Preview"
+      "preview": "Preview",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",

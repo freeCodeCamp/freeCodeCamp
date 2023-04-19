@@ -22,11 +22,28 @@
   border-bottom: 1px solid var(--quaternary-background);
 }
 
-.monaco-editor-tabs [aria-expanded='true'],
-.action-row [aria-expanded='true'] {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
+.monaco-editor-tabs button[aria-expanded='true'],
+.panel-display-tabs button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
   color: var(--secondary-background);
+}
+
+.monaco-editor-tabs button:hover,
+.panel-display-tabs button:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-background);
+}
+
+.monaco-editor-tabs button[aria-expanded='true']:hover,
+.panel-display-tabs button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+.panel-display-tabs button:focus-visible {
+  position: relative;
+  z-index: 20;
 }
 
 .tabs-row {
@@ -38,8 +55,12 @@
 .tabs-row button,
 .monaco-editor-tabs button {
   padding: 6px 12px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
+}
+
+.monaco-editor-tabs button + button {
+  margin-inline-start: 3px;
 }
 
 .monaco-editor-tabs {
@@ -47,13 +68,17 @@
   margin-inline-end: auto;
 }
 
-.monaco-editor-tabs button:not(:first-child) {
-  border-left: none;
-}
-
 .panel-display-tabs button:first-child,
 .tabs-row > button:first-child {
   margin: 0 10px 0 0;
+}
+
+.panel-display-tabs button:last-of-type {
+  border-inline-start-width: 1px;
+}
+
+.panel-display-tabs button:nth-last-child(2) {
+  border-inline-end-width: 1px;
 }
 
 .restart-step-tab {
@@ -67,23 +92,36 @@
 }
 
 #mobile-layout .nav-tabs {
-  margin-inline-start: 2px;
+  margin: 0 1px;
+  padding: 0;
   display: flex;
+  border-bottom: 1px solid var(--quaternary-color);
 }
 
 #mobile-layout .nav-tabs > li {
   flex: 1;
   text-align: center;
+  margin-bottom: 0;
 }
 
 #mobile-layout .nav-tabs > li > a {
+  margin-inline-end: 0;
   padding: 5px 10px;
   text-decoration: none;
   font-size: 0.8em;
+  border: 0;
 }
 
-#mobile-layout .nav-tabs > li > a:hover {
-  color: var(--gray-85);
+#mobile-layout .nav-tabs > li.active > a {
+  color: var(--secondary-background);
+  background-color: var(--quaternary-color);
+  border: 0;
+  font-weight: 900;
+}
+
+#mobile-layout .nav-tabs > li:not(.active) > a:hover {
+  background: var(--quaternary-background);
+  color: var(--secondary-color);
 }
 
 #mobile-layout .tab-content {
@@ -118,11 +156,6 @@
   }
 }
 
-#mobile-layout .nav-tabs > li.active > a {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
 #mobile-layout .monaco-editor-tabs {
   padding: 10px;
   width: 100%;
@@ -135,7 +168,7 @@
 
 /* Focus indicator for tab panel */
 .nav-tabs [role='tab']:focus {
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .nav-tabs [role='tab']:focus:not(:focus-visible) {
