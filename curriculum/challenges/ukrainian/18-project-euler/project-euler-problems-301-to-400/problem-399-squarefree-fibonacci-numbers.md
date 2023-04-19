@@ -28,13 +28,13 @@ If it happens that the conjecture is false, then the accepted answer to this pro
 
 # --hints--
 
-`squarefreeFibonacciNumbers()` should return a string.
+`squarefreeFibonacciNumbers()` має повернути рядок.
 
 ```js
 assert(typeof squarefreeFibonacciNumbers() === 'string');
 ```
 
-`squarefreeFibonacciNumbers()` should return the string `1508395636674243,6.5e27330467`.
+`squarefreeFibonacciNumbers()` має повернути рядок `1508395636674243,6.5e27330467`.
 
 ```js
 assert.strictEqual(squarefreeFibonacciNumbers(), '1508395636674243,6.5e27330467');

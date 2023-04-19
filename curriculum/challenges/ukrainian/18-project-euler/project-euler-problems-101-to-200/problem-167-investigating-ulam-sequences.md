@@ -20,7 +20,7 @@ Find $\sum {U(2, 2n + 1)_k}$ for $2 ≤ n ≤ 10$, where $k = {10}^{11}$.
 
 # --hints--
 
-`ulamSequences()` should return `3916160068885`.
+`ulamSequences()` має повернути `3916160068885`.
 
 ```js
 assert.strictEqual(ulamSequences(), 3916160068885);

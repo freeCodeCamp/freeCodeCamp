@@ -18,7 +18,7 @@ Ecco un <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525
 
 ## --text--
 
-In percent increase formulas, what does the "principle" refer to?
+Nella formula dell'aumento percentuale, a cosa si riferisce "capitale"?
 
 ## --answers--
 

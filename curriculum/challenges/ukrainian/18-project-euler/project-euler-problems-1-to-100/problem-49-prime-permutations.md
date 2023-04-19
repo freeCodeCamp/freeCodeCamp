@@ -16,13 +16,13 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 
 # --hints--
 
-`primePermutations()` should return a number.
+`primePermutations()` має повернути число.
 
 ```js
 assert(typeof primePermutations() === 'number');
 ```
 
-`primePermutations()` should return 296962999629.
+`primePermutations()` має повернути 296962999629.
 
 ```js
 assert.strictEqual(primePermutations(), 296962999629);

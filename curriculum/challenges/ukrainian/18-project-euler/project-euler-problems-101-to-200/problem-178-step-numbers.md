@@ -20,7 +20,7 @@ How many pandigital step numbers less than ${10}^{40}$ are there?
 
 # --hints--
 
-`stepNumbers()` should return `126461847755`.
+`stepNumbers()` має повернути `126461847755`.
 
 ```js
 assert.strictEqual(stepNumbers(), 126461847755);

@@ -20,31 +20,31 @@ How many elements would be contained in the set of reduced proper fractions for 
 
 # --hints--
 
-`countingFractions(8)` should return a number.
+`countingFractions(8)` має повернути число.
 
 ```js
 assert(typeof countingFractions(8) === 'number');
 ```
 
-`countingFractions(8)` should return `21`.
+`countingFractions(8)` має повернути `21`.
 
 ```js
 assert.strictEqual(countingFractions(8), 21);
 ```
 
-`countingFractions(20000)` should return `121590395`.
+`countingFractions(20000)` має повернути `121590395`.
 
 ```js
 assert.strictEqual(countingFractions(20000), 121590395);
 ```
 
-`countingFractions(500000)` should return `75991039675`.
+`countingFractions(500000)` має повернути `75991039675`.
 
 ```js
 assert.strictEqual(countingFractions(500000), 75991039675);
 ```
 
-`countingFractions(1000000)` should return `303963552391`.
+`countingFractions(1000000)` має повернути `303963552391`.
 
 ```js
 assert.strictEqual(countingFractions(1000000), 303963552391);

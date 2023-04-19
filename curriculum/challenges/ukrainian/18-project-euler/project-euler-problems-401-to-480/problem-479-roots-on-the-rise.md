@@ -20,7 +20,7 @@ Find $S({10}^6) \text{ modulo } 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`rootsOnTheRise()` should return `191541795`.
+`rootsOnTheRise()` має повернути `191541795`.
 
 ```js
 assert.strictEqual(rootsOnTheRise(), 191541795);

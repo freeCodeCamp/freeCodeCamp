@@ -24,7 +24,7 @@ Give that length as your answer, rounded to three decimal places.
 
 # --hints--
 
-`mountainRange()` should return `2531.205`.
+`mountainRange()` має повернути `2531.205`.
 
 ```js
 assert.strictEqual(mountainRange(), 2531.205);

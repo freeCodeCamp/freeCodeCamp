@@ -22,7 +22,7 @@ How many different rectangles could be situated within 47x43 and smaller grids?
 
 # --hints--
 
-`crossHatchedRectangles()` should return `846910284`.
+`crossHatchedRectangles()` має повернути `846910284`.
 
 ```js
 assert.strictEqual(crossHatchedRectangles(), 846910284);

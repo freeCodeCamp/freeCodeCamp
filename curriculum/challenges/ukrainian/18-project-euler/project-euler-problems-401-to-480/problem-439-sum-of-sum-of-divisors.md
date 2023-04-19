@@ -20,7 +20,7 @@ Find $S({10}^{11})\bmod {10}^9$.
 
 # --hints--
 
-`sumOfSumOfDivisors()` should return `968697378`.
+`sumOfSumOfDivisors()` має повернути `968697378`.
 
 ```js
 assert.strictEqual(sumOfSumOfDivisors(), 968697378);

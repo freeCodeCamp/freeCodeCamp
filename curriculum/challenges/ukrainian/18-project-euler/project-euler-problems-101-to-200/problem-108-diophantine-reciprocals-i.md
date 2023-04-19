@@ -22,7 +22,7 @@ What is the least value of `n` for which the number of distinct solutions exceed
 
 # --hints--
 
-`diophantineOne()` should return `180180`.
+`diophantineOne()` має повернути `180180`.
 
 ```js
 assert.strictEqual(diophantineOne(), 180180);

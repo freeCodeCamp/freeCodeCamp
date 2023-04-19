@@ -1,6 +1,6 @@
 ---
 id: 5900f39f1000cf542c50feb2
-title: 'Problem 51: Prime digit replacements'
+title: 'Problema 51: sostituzioni di cifre in numeri primi'
 challengeType: 1
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
@@ -8,33 +8,33 @@ dashedName: problem-51-prime-digit-replacements
 
 # --description--
 
-By replacing the 1st digit of the 2-digit number \*3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+Sostituendo la prima cifra del numero a 2 cifre \*3, si scopre che sei dei nove valori possibili: 13, 23, 43, 53, 73 e 83, sono tutti primi.
 
-By replacing the 3rd and 4th digits of 56\*\*3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+Sostituendo la terza e la quarta cifra di 56\*\*3 con la stessa cifra, questo numero a 5 cifre è il primo esempio con sette primi tra i dieci numeri generati, della famiglia: 56003, 56113, 56333, 56443, 56663, 56773 e 56993. Di conseguenza, 56003, essendo il primo membro di questa famiglia, è il più piccolo primo con questa proprietà.
 
-Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an `n` prime value family.
+Trova il numero primo più piccolo che, sostituendo parte del numero (non necessariamente cifre adiacenti) con la stessa cifra, fa parte di una famiglia di `n` valori primi.
 
 # --hints--
 
-`primeDigitReplacements(6)` should return a number.
+`primeDigitReplacements(6)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof primeDigitReplacements(6) === 'number');
 ```
 
-`primeDigitReplacements(6)` should return `13`.
+`primeDigitReplacements(6)` dovrebbe restituire `13`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(6), 13);
 ```
 
-`primeDigitReplacements(7)` should return `56003`.
+`primeDigitReplacements(7)` dovrebbe restituire `56003`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(7), 56003);
 ```
 
-`primeDigitReplacements(8)` should return `121313`.
+`primeDigitReplacements(8)` dovrebbe restituire `121313`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(8), 121313);

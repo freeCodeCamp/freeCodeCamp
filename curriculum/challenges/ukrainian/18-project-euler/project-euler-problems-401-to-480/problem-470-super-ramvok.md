@@ -24,7 +24,7 @@ Calculate $F(20)$, rounded to the nearest integer.
 
 # --hints--
 
-`superRamvok()` should return `147668794`.
+`superRamvok()` має повернути `147668794`.
 
 ```js
 assert.strictEqual(superRamvok(), 147668794);

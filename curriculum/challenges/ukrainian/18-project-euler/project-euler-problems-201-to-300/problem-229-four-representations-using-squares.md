@@ -30,7 +30,7 @@ How many such numbers are there that do not exceed $2 × {10}^9$?
 
 # --hints--
 
-`representationsUsingSquares()` should return `11325263`.
+`representationsUsingSquares()` має повернути `11325263`.
 
 ```js
 assert.strictEqual(representationsUsingSquares(), 11325263);

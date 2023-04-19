@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import CodeMirror from '@uiw/react-codemirror';
 import * as codemirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -21,7 +21,7 @@ const Editor = () => {
     name: '',
     fileData: ''
   });
-  const [input, setInput] = useState('');
+  const [stepContent, setStepContent] = useState('');
   const { superblock, block, challenge } = useParams();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Editor = () => {
         content => {
           setLoading(false);
           setItems(content);
-          setInput(content.fileData);
+          setStepContent(content.fileData);
         },
         (error: Error) => {
           setLoading(false);
@@ -46,12 +46,9 @@ const Editor = () => {
       );
   };
 
-  const handleChange = (
-    editor: codemirror.Editor,
-    data: codemirror.EditorChange,
-    value: string
-  ) => {
-    setInput(value);
+  const handleChange = (instance: codemirror.Editor) => {
+    const editedContent = instance.getValue();
+    setStepContent(editedContent);
   };
 
   if (error) {
@@ -67,8 +64,8 @@ const Editor = () => {
         {superblock} / {block}
       </span>
       <CodeMirror
-        value={input}
-        onBeforeChange={handleChange}
+        value={stepContent}
+        onChange={handleChange}
         options={{
           mode: {
             name: 'markdown',
@@ -83,7 +80,7 @@ const Editor = () => {
         superblock={superblock}
         block={block}
         challenge={challenge}
-        content={input}
+        content={stepContent}
       />
       <p>
         <Link to={`/${superblock}/${block}`}>Return to Block</Link>

@@ -23,7 +23,7 @@ What is the largest 0 to 9 pandigital 10-digit concatenated product of an intege
 
 # --hints--
 
-`largestPandigital()` should return `9857164023`.
+`largestPandigital()` має повернути `9857164023`.
 
 ```js
 assert.strictEqual(largestPandigital(), 9857164023);

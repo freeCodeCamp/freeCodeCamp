@@ -18,7 +18,7 @@ Find $F({10}^6!, 65\\,432) \text{ modulo } ({10}^{16} + 61)$.
 
 # --hints--
 
-`lastDigitsOfDivisors()` should return `9690646731515010`.
+`lastDigitsOfDivisors()` має повернути `9690646731515010`.
 
 ```js
 assert.strictEqual(lastDigitsOfDivisors(), 9690646731515010);

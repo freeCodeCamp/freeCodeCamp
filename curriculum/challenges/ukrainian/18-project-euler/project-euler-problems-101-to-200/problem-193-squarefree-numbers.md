@@ -14,7 +14,7 @@ How many squarefree numbers are there below $2^{50}$?
 
 # --hints--
 
-`squarefreeNumbers()` should return `684465067343069`.
+`squarefreeNumbers()` має повернути `684465067343069`.
 
 ```js
 assert.strictEqual(squarefreeNumbers(), 684465067343069);

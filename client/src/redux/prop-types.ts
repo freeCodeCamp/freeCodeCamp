@@ -292,8 +292,8 @@ export type ChallengeMeta = {
   id: string;
   introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string;
-  prevChallengePath: string;
+  nextChallengePath: string | null;
+  prevChallengePath: string | null;
   removeComments: boolean;
   superBlock: SuperBlocks;
   title?: string;

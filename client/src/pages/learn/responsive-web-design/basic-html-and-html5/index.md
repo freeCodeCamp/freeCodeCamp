@@ -1,7 +1,7 @@
 ---
 title: Introduction to Basic HTML and HTML5
-block: Basic HTML and HTML5
-superBlock: Responsive Web Design
+block: basic-html-and-html5
+superBlock: responsive-web-design
 ---
 
 ## Introduction to Basic HTML & HTML5

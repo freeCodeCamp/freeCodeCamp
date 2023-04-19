@@ -22,7 +22,7 @@ What is $C(30)\bmod {10}^8$ ?
 
 # --hints--
 
-`cuttingSquares()` should return `82282080`.
+`cuttingSquares()` має повернути `82282080`.
 
 ```js
 assert.strictEqual(cuttingSquares(), 82282080);

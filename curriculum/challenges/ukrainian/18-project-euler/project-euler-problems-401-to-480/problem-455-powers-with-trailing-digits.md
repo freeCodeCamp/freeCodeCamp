@@ -20,7 +20,7 @@ Find $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 
 # --hints--
 
-`powersWithTrailingDigits()` should return `450186511399999`.
+`powersWithTrailingDigits()` має повернути `450186511399999`.
 
 ```js
 assert.strictEqual(powersWithTrailingDigits(), 450186511399999);

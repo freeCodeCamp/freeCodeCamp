@@ -18,37 +18,37 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 # --hints--
 
-`pandigitalProducts(4)` should return a number.
+`pandigitalProducts(4)` має повернути число.
 
 ```js
 assert(typeof pandigitalProducts(4) === 'number');
 ```
 
-`pandigitalProducts(4)` should return `12`.
+`pandigitalProducts(4)` має повернути `12`.
 
 ```js
 assert.strictEqual(pandigitalProducts(4), 12);
 ```
 
-`pandigitalProducts(6)` should return `162`.
+`pandigitalProducts(6)` має повернути `162`.
 
 ```js
 assert.strictEqual(pandigitalProducts(6), 162);
 ```
 
-`pandigitalProducts(7)` should return `0`.
+`pandigitalProducts(7)` має повернути `0`.
 
 ```js
 assert.strictEqual(pandigitalProducts(7), 0);
 ```
 
-`pandigitalProducts(8)` should return `13458`.
+`pandigitalProducts(8)` має повернути `13458`.
 
 ```js
 assert.strictEqual(pandigitalProducts(8), 13458);
 ```
 
-`pandigitalProducts(9)` should return `45228`.
+`pandigitalProducts(9)` має повернути `45228`.
 
 ```js
 assert.strictEqual(pandigitalProducts(9), 45228);

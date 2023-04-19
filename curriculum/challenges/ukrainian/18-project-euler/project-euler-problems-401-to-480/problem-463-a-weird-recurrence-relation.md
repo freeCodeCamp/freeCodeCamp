@@ -22,7 +22,7 @@ Find $S(3^{37})$. Give the last 9 digits of your answer.
 
 # --hints--
 
-`weirdRecurrenceRelation()` should return `808981553`.
+`weirdRecurrenceRelation()` має повернути `808981553`.
 
 ```js
 assert.strictEqual(weirdRecurrenceRelation(), 808981553);

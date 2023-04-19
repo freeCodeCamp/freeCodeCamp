@@ -14,7 +14,7 @@ What is the sum of all such integers $n$ below 150 million?
 
 # --hints--
 
-`primePattern()` should return `676333270`.
+`primePattern()` має повернути `676333270`.
 
 ```js
 assert.strictEqual(primePattern(), 676333270);

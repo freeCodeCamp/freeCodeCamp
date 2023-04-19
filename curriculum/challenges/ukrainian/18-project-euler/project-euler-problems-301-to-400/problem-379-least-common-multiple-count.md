@@ -18,7 +18,7 @@ Find $g({10}^{12})$.
 
 # --hints--
 
-`leastCommonMultipleCount()` should return `132314136838185`.
+`leastCommonMultipleCount()` має повернути `132314136838185`.
 
 ```js
 assert.strictEqual(leastCommonMultipleCount(), 132314136838185);

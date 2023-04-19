@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `instanceOf` vs. 
   );
 ```
 
-You should choose the correct method for the fourth assertion - `instanceOf` vs. `notInstanceOf`.
+Du solltest die richtige Methode für die vierte Behauptung wählen - `instanceOf` vs. `notInstanceOf`.
 
 ```js
 (getUserInput) =>

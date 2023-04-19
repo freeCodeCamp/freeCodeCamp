@@ -25,7 +25,7 @@ Find $\sum S(t)$ for $n = 7$.
 
 # --hints--
 
-`polynomialIntegerPart()` should return `2046409616809`.
+`polynomialIntegerPart()` має повернути `2046409616809`.
 
 ```js
 assert.strictEqual(polynomialIntegerPart(), 2046409616809);

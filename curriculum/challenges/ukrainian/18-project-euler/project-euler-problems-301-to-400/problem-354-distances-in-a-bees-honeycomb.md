@@ -20,7 +20,7 @@ Find the number of $L ≤ 5 \times {10}^{11}$ such that $B(L) = 450$.
 
 # --hints--
 
-`distancesInHoneycomb()` should return `58065134`.
+`distancesInHoneycomb()` має повернути `58065134`.
 
 ```js
 assert.strictEqual(distancesInHoneycomb(), 58065134);

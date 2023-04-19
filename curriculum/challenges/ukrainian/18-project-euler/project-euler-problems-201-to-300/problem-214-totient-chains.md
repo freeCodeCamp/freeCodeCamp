@@ -24,7 +24,7 @@ What is the sum of all primes less than $40\\,000\\,000$ which generate a chain 
 
 # --hints--
 
-`totientChains()` should return `1677366278943`.
+`totientChains()` має повернути `1677366278943`.
 
 ```js
 assert.strictEqual(totientChains(), 1677366278943);

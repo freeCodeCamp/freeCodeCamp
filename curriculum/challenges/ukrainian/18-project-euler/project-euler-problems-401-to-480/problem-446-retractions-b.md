@@ -24,7 +24,7 @@ Find $F({10}^7)$. Give your answer modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 
-`retractionsB()` should return `907803852`.
+`retractionsB()` має повернути `907803852`.
 
 ```js
 assert.strictEqual(retractionsB(), 907803852);

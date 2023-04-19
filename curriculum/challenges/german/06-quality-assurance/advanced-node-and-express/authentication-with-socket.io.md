@@ -114,7 +114,7 @@ async (getUserInput) => {
 }
 ```
 
-passportSocketIo should be properly setup.
+passportSocketIo sollte ordnungsgemäß eingestellt werden.
 
 ```js
 async (getUserInput) => {

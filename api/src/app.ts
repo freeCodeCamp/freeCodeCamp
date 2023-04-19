@@ -14,10 +14,13 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
+import fastifySentry from './plugins/fastify-sentry';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
+import { settingRoutes } from './routes/settings';
 import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
@@ -31,7 +34,8 @@ import {
   SESSION_SECRET,
   FCC_ENABLE_SWAGGER_UI,
   API_LOCATION,
-  FCC_ENABLE_DEV_LOGIN_MODE
+  FCC_ENABLE_DEV_LOGIN_MODE,
+  SENTRY_DSN
 } from './utils/env';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -47,11 +51,16 @@ export const build = async (
 ): Promise<FastifyInstanceWithTypeProvider> => {
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
+  void fastify.register(security);
+
   fastify.get('/', async (_request, _reply) => {
     return { hello: 'world' };
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
+  if (SENTRY_DSN) {
+    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
+  }
   await fastify.register(fastifyCookie);
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
@@ -109,6 +118,8 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(settingRoutes);
   void fastify.register(testValidatedRoutes);
+
   return fastify;
 };

@@ -1,6 +1,6 @@
 ---
 id: 6363d2649078df117ce4c404
-title: "Demand and Revenue"
+title: "Domanda e Ricavo"
 challengeType: 15
 videoId: 8PIZmiMFmfk
 dashedName: demand-and-revenue
@@ -8,11 +8,11 @@ dashedName: demand-and-revenue
 
 # --description--
 
-In this video, you will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other.
+In questo video, scriverai il codice per sviluppare una funzione di domanda da due punti. Vedrai come il prezzo influenza il grafico del profitto e come tutte queste equazioni sono collegate l'una con l'altra.
 
 Ecco il <a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY6NFAEnMfH0nNwXe?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
-**Here is a link to the textbook you will need to complete the assignment for this video:**
+**Ed ecco il link al libro di testo che ti servirà per completare le attività di questo video:**
 
 \- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) di Jean-Paul Oliver</a>
 
@@ -20,27 +20,27 @@ Ecco il <a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY6NFAE
 
 ## --assignment--
 
-Complete the problems on pages 155 and 163 from "Business Math, a Step-by-Step Handbook (2021)".
+Completa i problemi alle pagine 155 e 163 da "Business Math, a Step-by-Step Handbook (2021)".
 
 ## --text--
 
-Which of the following business equations is not correct?
+Quale delle seguenti equazioni di bilancio non è corretta?
 
 ## --answers--
 
-Profit = Revenue - Cost
+Profitto = Ricavo - Costo
 
 ---
 
-Revenue = Price * Demand
+Ricavo = Prezzo * Domanda
 
 ---
 
-Cost = Fixed Expenses + Variable Expenses
+Costo = Spese Fisse + Spese Variabili
 
 ---
 
-Marginal Revenue = Margins + Revenue
+Ricavo Marginale = Margini + Ricavo
 
 ## --video-solution--
 

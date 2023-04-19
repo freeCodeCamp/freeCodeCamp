@@ -33,7 +33,7 @@ What is the length of the minimal sequence describing $D_{24}$?
 
 # --hints--
 
-`quadtreeEncoding()` should return `313135496`.
+`quadtreeEncoding()` має повернути `313135496`.
 
 ```js
 assert.strictEqual(quadtreeEncoding(), 313135496);

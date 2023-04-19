@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
-title: 'Problem 59: XOR decryption'
+title: 'Problema 59: decifrazione di XOR'
 challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
@@ -8,25 +8,25 @@ dashedName: problem-59-xor-decryption
 
 # --description--
 
-Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (\*) = 42, and lowercase k = 107.
+Ogni carattere in un computer ha assegnato un unico codice e lo standard preferito è ASCII (American Standard Code for Information Interchange - Codice standard americano per l'interscambio delle informazioni). Per esempio, A maiuscola = 65, asterisco (\*) = 42, e k minuscola = 107.
 
-A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+Un metodo moderno di codifica è prendere un file di testo, convertire i byte in ASCII, e poi usare l'operatore XOR su ogni byte con un valore dato, preso da una chiave segreta. Il vantaggio della funzione XOR è che usare la stessa chiave di codifica sul testo cifrato, rigenera il testo iniziale; per esempio, 65 XOR 42 = 107, e 107 XOR 42 = 65.
 
-For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+Per una codifica non decodificabile, la chiave è della stessa lunghezza del messaggio e la chiave è fatta di byte random. L'utente deve tenere il messaggio cifrato e la chiave di codifica in due posti diversi, e senza le due "metà", è impossibile decifrare il messaggio.
 
-Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+Sfortunatamente, questo metodo non è pratico per la maggior parte degli utenti, quindi il metodo modificato è usare una password come chiave. Se la password è più corta del messaggio, cosa che è probabile, allora la chiave è ripetuta ciclicamente lungo il messaggio. L'equilibrio per questo metodo è usare una password sufficientemente lunga per questioni di sicurezza, ma abbastanza corta da essere memorizzabile.
 
-Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+Il tuo compito è stato reso facile, la chiave di sicurezza consiste di tre lettere minuscole. Usando `cipher`, un array contenente i codici ASCII cifrati, e sapendo che il messaggio deve contenere parole comuni inglesi, decifra il messaggio e fai la somma dei valori ASCII del messaggio originale.
 
 # --hints--
 
-`XORDecryption(cipher)` should return a number.
+`XORDecryption(cipher)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof XORDecryption(cipher) === 'number');
 ```
 
-`XORDecryption(cipher)` should return 129448.
+`XORDecryption(cipher)` dovrebbe restituire 129448.
 
 ```js
 assert.strictEqual(XORDecryption(cipher), 129448);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: 'Problema 79: derivazione di codice chiave'
 challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -8,33 +8,33 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+Un comune metodo sicuro usato per banking online è di chiedere a un utente tre caratteri random da un codice chiave. Per esempio se il codice è `531278`, potrebbero chiedere il secondo, terzo e quinto carattere; la risposta attesa sarebbe: `317`.
 
-The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
+Gli array, `keylog1`, `keylog2` e `keylog3`, contengono cinquanta tentativi di login che hanno avuto successo.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+Dato che i tre caratteri sono sempre in ordine, analizza l'array così da determinare il codice più corto possibile di lunghezza sconosciuta.
 
 # --hints--
 
-`passcodeDerivation(keylog1)` should return a number.
+`passcodeDerivation(keylog1)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof passcodeDerivation(_keylog1) === 'number');
 ```
 
-`passcodeDerivation(keylog1)` should return `531278`.
+`passcodeDerivation(keylog1)` dovrebbe restituire `531278`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog1), 531278);
 ```
 
-`passcodeDerivation(keylog2)` should return `1230567`.
+`passcodeDerivation(keylog2)` dovrebbe restituire `1230567`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog2), 1230567);
 ```
 
-`passcodeDerivation(keylog3)` should return `73162890`.
+`passcodeDerivation(keylog3)` dovrebbe restituire `73162890`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog3), 73162890);

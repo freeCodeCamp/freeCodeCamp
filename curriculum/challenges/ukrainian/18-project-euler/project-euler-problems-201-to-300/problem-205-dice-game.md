@@ -18,7 +18,7 @@ What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer 
 
 # --hints--
 
-`diceGame()` should return `0.5731441`.
+`diceGame()` має повернути `0.5731441`.
 
 ```js
 assert.strictEqual(diceGame(), 0.5731441);

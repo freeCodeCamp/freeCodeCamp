@@ -30,37 +30,37 @@ How many Lychrel numbers are there below `num`?
 
 # --hints--
 
-`countLychrelNumbers(1000)` should return a number.
+`countLychrelNumbers(1000)` має повернути число.
 
 ```js
 assert(typeof countLychrelNumbers(1000) === 'number');
 ```
 
-`countLychrelNumbers(1000)` should return 13.
+`countLychrelNumbers(1000)` має повернути 13.
 
 ```js
 assert.strictEqual(countLychrelNumbers(1000), 13);
 ```
 
-`countLychrelNumbers(3243)` should return 39.
+`countLychrelNumbers(3243)` має повернути 39.
 
 ```js
 assert.strictEqual(countLychrelNumbers(3243), 39);
 ```
 
-`countLychrelNumbers(5000)` should return 76.
+`countLychrelNumbers(5000)` має повернути 76.
 
 ```js
 assert.strictEqual(countLychrelNumbers(5000), 76);
 ```
 
-`countLychrelNumbers(7654)` should return 140.
+`countLychrelNumbers(7654)` має повернути 140.
 
 ```js
 assert.strictEqual(countLychrelNumbers(7654), 140);
 ```
 
-`countLychrelNumbers(10000)` should return 249.
+`countLychrelNumbers(10000)` має повернути 249.
 
 ```js
 assert.strictEqual(countLychrelNumbers(10000), 249);

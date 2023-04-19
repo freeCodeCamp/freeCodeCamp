@@ -44,7 +44,7 @@ Find $\sum T(10\\,000, p)$ for $p = 0.01, 0.02, 0.03, \ldots 0.50$. Give your an
 
 # --hints--
 
-`bloodTests()` should return `378563.260589`.
+`bloodTests()` має повернути `378563.260589`.
 
 ```js
 assert.strictEqual(bloodTests(), 378563.260589);

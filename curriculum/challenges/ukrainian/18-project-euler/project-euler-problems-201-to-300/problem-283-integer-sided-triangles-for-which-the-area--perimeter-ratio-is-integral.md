@@ -22,7 +22,7 @@ Find the sum of the perimeters of all integer sided triangles for which the area
 
 # --hints--
 
-`integralAreaPerimeterRatio()` should return `28038042525570324`.
+`integralAreaPerimeterRatio()` має повернути `28038042525570324`.
 
 ```js
 assert.strictEqual(integralAreaPerimeterRatio(), 28038042525570324);

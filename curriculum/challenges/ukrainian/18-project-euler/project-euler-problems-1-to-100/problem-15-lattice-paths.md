@@ -1,6 +1,6 @@
 ---
 id: 5900f37b1000cf542c50fe8e
-title: 'Problem 15: Lattice paths'
+title: 'Завдання 15: доріжки на сітці'
 challengeType: 1
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
@@ -8,33 +8,33 @@ dashedName: problem-15-lattice-paths
 
 # --description--
 
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+Починаючи з верхнього лівого кутка сітки 2×2 та маючи право рухатися лише вправо чи вниз, дійти до нижнього правого кутка можна 6 шляхами.
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="зображення з шістьма сітками 2 на 2, що показує усі шляхи до нижнього правого кутка" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
 
-How many such routes are there through a given `gridSize`?
+Скільки таких шляхів можна прокласти для наданої `gridSize`?
 
 # --hints--
 
-`latticePaths(4)` should return a number.
+`latticePaths(4)` має повернути число.
 
 ```js
 assert(typeof latticePaths(4) === 'number');
 ```
 
-`latticePaths(4)` should return 70.
+`latticePaths(4)` має повернути 70.
 
 ```js
 assert.strictEqual(latticePaths(4), 70);
 ```
 
-`latticePaths(9)` should return 48620.
+`latticePaths(9)` має повернути 48620.
 
 ```js
 assert.strictEqual(latticePaths(9), 48620);
 ```
 
-`latticePaths(20)` should return 137846528820.
+`latticePaths(20)` має повернути 137846528820.
 
 ```js
 assert.strictEqual(latticePaths(20), 137846528820);

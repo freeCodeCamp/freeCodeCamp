@@ -22,7 +22,7 @@ Find the sum of all composite integers $1 &lt; n ≤ 2 × {10}^{11}$, for which 
 
 # --hints--
 
-`coresilience()` should return `288084712410001`.
+`coresilience()` має повернути `288084712410001`.
 
 ```js
 assert.strictEqual(coresilience(), 288084712410001);

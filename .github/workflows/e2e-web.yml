@@ -22,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Checkout client-config
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -75,19 +75,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [
-            chrome,
-            # firefox,
-            electron
-          ]
+        browsers: [chrome, firefox, electron]
         node-version: [18.x]
         include:
           - browsers: electron
             spec: cypress/e2e/default/learn/challenges/projects.ts
-          - browsers: chrome
-            spec: cypress/e2e/default/**/*.{js,ts}
-          # - browsers: firefox
-          #   spec: cypress/e2e/default/**/*.{js,ts}
+
     services:
       mongodb:
         image: mongo:4.4
@@ -106,7 +99,7 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
@@ -116,14 +109,6 @@ jobs:
         run: |
           tar -xf client-artifact.tar
           rm client-artifact.tar
-
-      # - name: Downgrade Firefox
-      #   run: |
-      #     curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
-      #     tar -xjf firefox-101.0.tar.bz2
-      #     sudo mv firefox /opt/
-      #     sudo mv /usr/bin/firefox /usr/bin/firefox_old
-      #     sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -159,5 +144,4 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-
           spec: ${{ matrix.spec }}
