@@ -114,7 +114,7 @@
   margin-inline-end: 0.35rem;
 }
 
-.toggle-radio-group label .custom-label span.ball {
+.toggle-radio-group label .custom-label span.inner-circle {
   display: inline-block;
   width: calc(100% - 8px);
   height: calc(100% - 8px);
@@ -124,7 +124,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.toggle-radio-group input:checked + span.ball {
+.toggle-radio-group input:checked + span.inner-circle {
   opacity: 1;
 }
 

@@ -56,7 +56,7 @@ export default function ToggleRadioSetting({
                 value='1'
                 checked
               />
-              <span className='ball'></span>
+              <span className='inner-circle'></span>
             </label>
             <span id='text-span'>{restProps.onLabel}</span>
           </label>
@@ -74,7 +74,7 @@ export default function ToggleRadioSetting({
                 name={flagName}
                 value='2'
               />
-              <span className='ball'></span>
+              <span className='inner-circle'></span>
             </label>
             <span id='text-span'>{restProps.offLabel}</span>
           </label>
