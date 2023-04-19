@@ -114,6 +114,7 @@
     "for": "Impostazioni Account per {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -309,7 +310,8 @@
       "console": "Console",
       "instructions": "Istruzioni",
       "notes": "Note",
-      "preview": "Anteprima"
+      "preview": "Anteprima",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Premendo tab ora potrai inserire il carattere tab",

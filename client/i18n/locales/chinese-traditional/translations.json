@@ -114,6 +114,7 @@
     "for": "{{username}} 賬號設置",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -309,7 +310,8 @@
       "console": "控制檯",
       "instructions": "說明",
       "notes": "注意",
-      "preview": "預覽"
+      "preview": "預覽",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
