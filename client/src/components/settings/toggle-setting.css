@@ -80,28 +80,52 @@
 
 .toggle-radio-group {
   display: flex;
-  align-items: start;
 }
 
-.toggle-radio-group label {
-  font-weight: normal;
+.toggle-radio-group .outer-label {
   display: flex;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 1rem;
+  height: 25%;
+}
+
+#text-span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.toggle-radio-group label .custom-label {
+  display: flex;
+  justify-content: center;
   align-items: center;
-}
-
-.toggle-radio-group input {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 0.8rem;
-  width: 0.8rem;
-  border-radius: 50%;
-  background: transparent;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
   border: 2px solid var(--secondary-color);
-  margin: 0;
+  border-radius: 50%;
+  margin: 5px;
+  top: -1px;
+  position: relative;
 }
 
-.toggle-radio-group [data-checked='true'] input {
+.toggle-radio-group label .custom-label input {
+  display: none;
+  margin-inline-end: 0.35rem;
+}
+
+.toggle-radio-group label .custom-label span.ball {
+  display: inline-block;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
   background: var(--secondary-color);
+  opacity: 0;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.toggle-radio-group input:checked + span.ball {
+  opacity: 1;
 }
 
 .toggle-radio-group [data-checked='true'] span {
@@ -115,15 +139,6 @@
 .toggle-radio-group label[data-checked='false']:hover,
 .toggle-radio-group label[data-checked='false'] input:hover {
   cursor: pointer;
-}
-
-.toggle-radio-group label + label {
-  margin-inline-start: 2rem;
-}
-
-.toggle-radio-group input {
-  margin-inline-end: 0.35rem;
-  accent-color: var(--secondary-color);
 }
 
 @media (max-width: 35rem) {

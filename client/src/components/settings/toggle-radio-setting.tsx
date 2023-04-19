@@ -41,27 +41,42 @@ export default function ToggleRadioSetting({
           {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
         </div>
         <div className='toggle-radio-group'>
-          <label htmlFor={firstRadioId} data-checked={flag}>
-            <input
-              id={firstRadioId}
-              type='radio'
-              {...(flag && { defaultChecked: true })}
-              {...(!flag && { onChange: toggleFlag })}
-              name={flagName}
-              value='1'
-            />
-            <span>{restProps.onLabel}</span>
+          <label
+            className='outer-label'
+            htmlFor={firstRadioId}
+            data-checked={flag}
+          >
+            <label className='custom-label'>
+              <input
+                id={firstRadioId}
+                type='radio'
+                {...(flag && { defaultChecked: true })}
+                {...(!flag && { onChange: toggleFlag })}
+                name={flagName}
+                value='1'
+                checked
+              />
+              <span className='ball'></span>
+            </label>
+            <span id='text-span'>{restProps.onLabel}</span>
           </label>
-          <label htmlFor={secondRadioId} data-checked={!flag}>
-            <input
-              id={secondRadioId}
-              type='radio'
-              {...(!flag && { defaultChecked: true })}
-              {...(flag && { onChange: toggleFlag })}
-              name={flagName}
-              value='2'
-            />
-            <span>{restProps.offLabel}</span>
+          <label
+            className='outer-label'
+            htmlFor={secondRadioId}
+            data-checked={!flag}
+          >
+            <label className='custom-label'>
+              <input
+                id={secondRadioId}
+                type='radio'
+                {...(!flag && { defaultChecked: true })}
+                {...(flag && { onChange: toggleFlag })}
+                name={flagName}
+                value='2'
+              />
+              <span className='ball'></span>
+            </label>
+            <span id='text-span'>{restProps.offLabel}</span>
           </label>
         </div>
       </fieldset>
