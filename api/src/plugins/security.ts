@@ -4,7 +4,7 @@ import fp from 'fastify-plugin';
 
 import { FREECODECAMP_NODE_ENV } from '../utils/env';
 
-const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
+const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
   // OWASP recommended headers
   fastify.addHook('onSend', async (_request, reply, payload) => {
     void reply
@@ -27,4 +27,4 @@ const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(fastifySentry);
+export default fp(securityHeaders);
