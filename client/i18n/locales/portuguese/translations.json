@@ -114,6 +114,7 @@
     "for": "Configurações de conta para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -309,7 +310,8 @@
       "console": "Console",
       "instructions": "Instruções",
       "notes": "Observações",
-      "preview": "Pré-visualizar"
+      "preview": "Pré-visualizar",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",

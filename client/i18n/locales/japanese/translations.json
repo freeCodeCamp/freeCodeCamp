@@ -114,6 +114,7 @@
     "for": "{{username}} さんのアカウント設定",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
       "is too short": "ユーザー名 \"{{username}}\" は短すぎます",
@@ -309,7 +310,8 @@
       "console": "コンソール",
       "instructions": "手順書",
       "notes": "ノート",
-      "preview": "プレビュー"
+      "preview": "プレビュー",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "タブキーを押すとタブ文字が入力されます",
