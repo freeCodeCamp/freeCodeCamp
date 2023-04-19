@@ -126,5 +126,6 @@
   "learn-quadratic-equations": "Python",
   "learn-simple-and-compound-interest": "Python",
   "college-algebra-with-python-conclusion": "Python",
-  "learn-data-structures-by-building-a-shopping-cart": "JavaScript"
+  "learn-data-structures-by-building-a-shopping-cart": "JavaScript",
+  "learn-regular-expressions-by-building-a-spam-filter": "JavaScript"
 }
