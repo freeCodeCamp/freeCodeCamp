@@ -23,7 +23,6 @@ const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
 
-
 interface BadgeProps {
   title: React.ReactNode;
   details: string;
@@ -47,7 +46,6 @@ export type CamperProps = Pick<
   | 'joinDate'
   | 'twitter'
 >;
-
 
 function parseDate(joinDate: string, t: TFunction): string {
   const convertedJoinDate = new Date(joinDate);
