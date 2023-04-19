@@ -41,41 +41,34 @@ export default function ToggleRadioSetting({
           {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
         </div>
         <div className='toggle-radio-group'>
-          <label
-            className='outer-label'
-            htmlFor={firstRadioId}
-            data-checked={flag}
-          >
-            <div className='custom-radio'>
-              <input
-                id={firstRadioId}
-                type='radio'
-                {...(flag && { defaultChecked: true })}
-                {...(!flag && { onChange: toggleFlag })}
-                name={flagName}
-                value='1'
-              />
-              <span className='inner-circle'></span>
-            </div>
-            <span id='text-span'>{restProps.onLabel}</span>
+          <label htmlFor={firstRadioId} data-checked={flag}>
+            <input
+              id={firstRadioId}
+              type='radio'
+              {...(flag && { defaultChecked: true })}
+              {...(!flag && { onChange: toggleFlag })}
+              name={flagName}
+              value='1'
+            />
+            <span className='custom-circle'>
+              {flag ? <span className='selected-inner-circle' /> : null}
+            </span>
+            <span>{restProps.onLabel}</span>
           </label>
-          <label
-            className='outer-label'
-            htmlFor={secondRadioId}
-            data-checked={!flag}
-          >
-            <div className='custom-radio'>
-              <input
-                id={secondRadioId}
-                type='radio'
-                {...(!flag && { defaultChecked: true })}
-                {...(flag && { onChange: toggleFlag })}
-                name={flagName}
-                value='2'
-              />
-              <span className='inner-circle'></span>
-            </div>
-            <span id='text-span'>{restProps.offLabel}</span>
+
+          <label htmlFor={secondRadioId} data-checked={!flag}>
+            <input
+              id={secondRadioId}
+              {...(!flag && { defaultChecked: true })}
+              {...(flag && { onChange: toggleFlag })}
+              name={flagName}
+              type='radio'
+              value='2'
+            />{' '}
+            <span className='custom-circle'>
+              {!flag ? <span className='selected-inner-circle' /> : null}
+            </span>
+            <span>{restProps.offLabel}</span>
           </label>
         </div>
       </fieldset>

@@ -80,6 +80,39 @@
 
 .toggle-radio-group {
   display: flex;
+  background-color: var(--primary-background);
+}
+
+.toggle-radio-group {
+  background-color: var(--primary-background);
+  display: flex;
+}
+
+.toggle-radio-group
+  label[data-checked='true']
+  input
+  span
+  span.video-quiz-selected-input {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-radio-group
+  label
+  [data-checked='false']
+  span
+  .video-quiz-selected-input {
+  display: none;
+}
+
+/* .toggle-radio-group {
+  display: flex;
 }
 
 .toggle-radio-group .outer-label {
@@ -137,7 +170,7 @@
 .toggle-radio-group label[data-checked='false']:hover,
 .toggle-radio-group label[data-checked='false']:hover .custom-radio {
   cursor: pointer;
-}
+} */
 
 /* checkIconStyle css */
 .checkIcon {

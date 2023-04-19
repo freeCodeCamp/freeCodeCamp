@@ -72,11 +72,6 @@
   border-bottom: 4px solid var(--tertiary-background);
 }
 
-.video-quiz-input-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
 .video-quiz-input-visible {
   margin-inline-end: 15px;
   position: relative;
