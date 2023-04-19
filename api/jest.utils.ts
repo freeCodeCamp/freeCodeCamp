@@ -2,7 +2,7 @@ import { build } from './src/app';
 
 declare global {
   // eslint-disable-next-line no-var
-  var fastifyTestInstance: Awaited<ReturnType<typeof build>>;
+  var fastifyTestInstance: Awaited<ReturnType<typeof build>> | undefined;
 }
 
 export function setupServer(): void {
