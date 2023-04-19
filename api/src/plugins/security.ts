@@ -13,7 +13,8 @@ const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
       .header('Content-Type', 'application/json; charset=utf-8')
       .header('X-Content-Type-Options', 'nosniff')
       .header('X-Frame-Options', 'DENY');
-    // TODO: Increase this gradually to 2 years.
+    // TODO: Increase this gradually to 2 years. Include preload once it is
+    // at least 1 year.
     if (FREECODECAMP_NODE_ENV === 'production') {
       void reply.header(
         'Strict-Transport-Security',
