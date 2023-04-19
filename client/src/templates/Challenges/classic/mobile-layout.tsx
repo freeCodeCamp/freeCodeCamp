@@ -73,7 +73,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
   componentDidMount(): void {
     const toolPanelGroup = this.getToolPanelGroup();
-    if (navigator.userAgent.includes('iPhone' || 'Android.+Mobile')) {
+    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
       toolPanelGroup.style.top =
         String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
@@ -81,7 +81,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   }
 
   componentWillUnmount(): void {
-    if (navigator.userAgent.includes('iPhone' || 'Android.+Mobile')) {
+    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
       document.documentElement.style.height = '100%';
     }
