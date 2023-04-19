@@ -9,9 +9,9 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-We can generate a random whole number in the range from zero to a given number. We can also pick a different lower number for this range.
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-We'll call our minimum number `min` and our maximum number `max`.
+You'll call your minimum number `min` and your maximum number `max`.
 
 This formula gives a random whole number in the range from `min` to `max`. Take a moment to read it and try to understand what this code is doing:
 
