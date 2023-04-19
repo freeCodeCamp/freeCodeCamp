@@ -22,7 +22,7 @@ interface MessageProps {
   username: string;
 }
 
-const UserPrivateProfileMessage = ({ t }: Pick<MessageProps, 't'>) => {
+const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
       <h2 className='text-center'>{t('profile.you-not-public')}</h2>
@@ -32,7 +32,7 @@ const UserPrivateProfileMessage = ({ t }: Pick<MessageProps, 't'>) => {
   );
 };
 
-const VisterPriveProfileMessage = ({
+const VistorMessage = ({
   t,
   username
 }: Omit<MessageProps, 'isSessionUser'>) => {
@@ -51,9 +51,9 @@ const VisterPriveProfileMessage = ({
 
 const Message = ({ isSessionUser, t, username }: MessageProps) => {
   if (isSessionUser) {
-    return <UserPrivateProfileMessage t={t} />;
+    return <UserMessage t={t} />;
   }
-  return <VisterPriveProfileMessage t={t} username={username} />;
+  return <VistorMessage t={t} username={username} />;
 };
 
 function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
