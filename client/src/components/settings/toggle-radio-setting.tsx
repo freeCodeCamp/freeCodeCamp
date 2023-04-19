@@ -46,7 +46,7 @@ export default function ToggleRadioSetting({
             htmlFor={firstRadioId}
             data-checked={flag}
           >
-            <label className='custom-label'>
+            <div className='custom-radio'>
               <input
                 id={firstRadioId}
                 type='radio'
@@ -56,7 +56,7 @@ export default function ToggleRadioSetting({
                 value='1'
               />
               <span className='inner-circle'></span>
-            </label>
+            </div>
             <span id='text-span'>{restProps.onLabel}</span>
           </label>
           <label
@@ -64,7 +64,7 @@ export default function ToggleRadioSetting({
             htmlFor={secondRadioId}
             data-checked={!flag}
           >
-            <label className='custom-label'>
+            <div className='custom-radio'>
               <input
                 id={secondRadioId}
                 type='radio'
@@ -74,7 +74,7 @@ export default function ToggleRadioSetting({
                 value='2'
               />
               <span className='inner-circle'></span>
-            </label>
+            </div>
             <span id='text-span'>{restProps.offLabel}</span>
           </label>
         </div>
