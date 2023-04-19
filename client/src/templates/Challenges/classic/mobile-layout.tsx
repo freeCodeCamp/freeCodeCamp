@@ -71,17 +71,17 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     }
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     const toolPanelGroup = this.getToolPanelGroup();
-    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    if (navigator.userAgent.includes('iPhone' || 'Android.+Mobile')) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
       toolPanelGroup.style.top =
         String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
     }
   }
 
-  componentWillUnmount() {
-    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+  componentWillUnmount(): void {
+    if (navigator.userAgent.includes('iPhone' || 'Android.+Mobile')) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
       document.documentElement.style.height = '100%';
     }
