@@ -84,7 +84,6 @@
 
 .toggle-radio-group .outer-label {
   display: flex;
-  cursor: pointer;
   margin: 5px;
   margin-left: 1rem;
   height: 25%;
@@ -100,7 +99,6 @@
   justify-content: center;
   align-items: center;
   width: 20px;
-  cursor: pointer;
   height: 20px;
   border: 2px solid var(--secondary-color);
   border-radius: 50%;
@@ -137,7 +135,7 @@
 }
 
 .toggle-radio-group label[data-checked='false']:hover,
-.toggle-radio-group label[data-checked='false'] input:hover {
+.toggle-radio-group label[data-checked='false']:hover .custom-label {
   cursor: pointer;
 }
 
