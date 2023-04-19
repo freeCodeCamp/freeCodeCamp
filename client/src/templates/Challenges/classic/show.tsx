@@ -263,7 +263,7 @@ function ShowClassic({
 
     store.set(REFLEX_LAYOUT, layout);
   };
-  
+
   const setHtmlHeight = () => {
     const vh = String(window.innerHeight - 1);
     document.documentElement.style.height = vh + 'px';
@@ -292,7 +292,6 @@ function ShowClassic({
     document.addEventListener('touchmove', handleContentWidgetEvents, true);
     document.addEventListener('touchend', handleContentWidgetEvents, true);
 
-    
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
 
@@ -320,7 +319,7 @@ function ShowClassic({
         true
       );
       document.removeEventListener('touchend', handleContentWidgetEvents, true);
-      window.removeEventListener('resize',setHtmlHeight);
+      window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
