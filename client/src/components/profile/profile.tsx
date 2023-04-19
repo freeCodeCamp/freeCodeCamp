@@ -32,7 +32,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   );
 };
 
-const VistorMessage = ({
+const VisitorMessage = ({
   t,
   username
 }: Omit<MessageProps, 'isSessionUser'>) => {
@@ -53,7 +53,7 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   if (isSessionUser) {
     return <UserMessage t={t} />;
   }
-  return <VistorMessage t={t} username={username} />;
+  return <VisitorMessage t={t} username={username} />;
 };
 
 function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
