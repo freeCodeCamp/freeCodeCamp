@@ -54,7 +54,6 @@ export default function ToggleRadioSetting({
                 {...(!flag && { onChange: toggleFlag })}
                 name={flagName}
                 value='1'
-                checked
               />
               <span className='inner-circle'></span>
             </label>

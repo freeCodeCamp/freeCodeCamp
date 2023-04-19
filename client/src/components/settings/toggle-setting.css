@@ -122,12 +122,12 @@
   transition: 0.3s ease-in-out;
 }
 
-.toggle-radio-group input:checked + span.inner-circle {
+.toggle-radio-group [data-checked='true'] .custom-label span.inner-circle {
   opacity: 1;
 }
 
-.toggle-radio-group [data-checked='true'] span {
-  font-weight: 700;
+.toggle-radio-group [data-checked='true'] span#text-span {
+  font-weight: 900;
 }
 
 .toggle-radio-group input:focus-visible {
