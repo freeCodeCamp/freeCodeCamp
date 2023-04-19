@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
+We can generate a random whole number in the range from zero to a given number. We can also pick a different lower number for this range.
 
-To do this, we'll define a minimum number `min` and a maximum number `max`.
+We'll call our minimum number `min` and our maximum number `max`.
 
-Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
+This formula gives a random whole number in the range from `min` to `max`. Take a moment to read it and try to understand what this code is doing:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin`, and is less than or equal to `myMax`, inclusive.
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
