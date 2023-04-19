@@ -141,6 +141,12 @@
   cursor: pointer;
 }
 
+/* checkIconStyle css */
+.checkIcon {
+  height: '1rem';
+  width: '1.25rem';
+}
+
 @media (max-width: 35rem) {
   .toggle-setting-container fieldset {
     flex-direction: column;
