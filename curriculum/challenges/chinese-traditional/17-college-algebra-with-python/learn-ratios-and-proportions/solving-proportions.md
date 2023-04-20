@@ -1,6 +1,6 @@
 ---
 id: 6331d29fb51aeedd1a2bd653
-title: "Solving Proportions"
+title: "求解比例"
 challengeType: 15
 videoId: 61A3PNx1hjY
 dashedName: solving-proportions
@@ -8,31 +8,31 @@ dashedName: solving-proportions
 
 # --description--
 
-Now we get to the math content. This video will show you how to set up and solve proportions and write code to solve for variables.
+現在我們開始討論數學內容。 本視頻將告訴你如何設置和求解比例問題，並編寫代碼來解決變量問題。
 
-Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
+這是<a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和視頻配套的 Colab 筆記本</a>。如果你還沒有這樣做，請設置好上一個視頻中你的代數 Colab 筆記本。 然後，將本視頻中的代碼添加到其中。
 
 # --question--
 
-## --assignment--
+## --任務--
 
-Add the code from the video to the algebra Colab notebook you created in the first step.
+將視頻中的代碼添加到你在第一步創建的代數 Colab 筆記本中。
 
 ## --text--
 
-In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
+在求解一個比例時，如果一個分子是零，另一個分子必須是零，該語句才成立嗎？
 
 ## --answers--
 
-Yes
+是
 
 ---
 
-No
+否
 
 ---
 
-Sometimes
+有時是
 
 ## --video-solution--
 

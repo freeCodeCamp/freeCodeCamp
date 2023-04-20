@@ -4,23 +4,23 @@ Quando estiver realizando alterações em JavaScript, CSS ou HTML que podem muda
 
 Para aprender como escrever testes Cypress ou 'specs', por favor confira a [documentação](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) oficial do Cypress.
 
-## Where to Add a Test
+## Onde adicionar um teste
 
 - Testes Cypress estão no diretório `./cypress`.
 
 - Testes do Cypress para um módulo do currículo estão no diretório do currículo correspondente, ou seja, `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## How to Run Tests
+## Como executar testes
 
 > [!NOTE] Se estiver usando GitPod, por favor veja essa [configuração sobre Cypress-GitPod](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
-### 1. Ensure that MongoDB and Client Applications are Running
+### 1. Veja se as aplicações de cliente e MongoDB estão executando
 
 - [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Inicie também a aplicação de cliente freeCodeCamp e o servidor API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Run the Cypress Tests
+### 2. Execute os testes do Cypress
 
 Para executar testes usando compilações de produção, substitua `dev` por `prd` abaixo.
 

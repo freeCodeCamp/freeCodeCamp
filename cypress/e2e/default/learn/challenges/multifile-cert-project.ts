@@ -9,7 +9,7 @@ const editorElements = {
 
 describe('multifileCertProjects', function () {
   before(() => {
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     cy.login();
     cy.visit(
       'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
@@ -33,7 +33,7 @@ describe('multifileCertProjects', function () {
   it('should save using ctrl+s hotkey and persist through navigation', function () {
     // since rapid clicks will cause the save requests to be ignored, we have to
     // purge the db:
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     // and the redux store:
     cy.reload();
     cy.get(editorElements.editor)

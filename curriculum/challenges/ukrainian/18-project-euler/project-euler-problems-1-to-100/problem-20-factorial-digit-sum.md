@@ -1,6 +1,6 @@
 ---
 id: 5900f3801000cf542c50fe93
-title: 'Problem 20: Factorial digit sum'
+title: 'Завдання 20: сума цифр факторіала'
 challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
@@ -8,12 +8,12 @@ dashedName: problem-20-factorial-digit-sum
 
 # --description--
 
-`n`! means `n` × (`n` − 1) × ... × 3 × 2 × 1
+`n`! означає `n` × (`n` − 1) × ... × 3 × 2 × 1
 
-For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
-and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+Наприклад, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
+і сума цифр у числі 10! дорівнює 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
-Find the sum of the digits `n`!
+Знайдіть суму цифр у `n`!
 
 # --hints--
 

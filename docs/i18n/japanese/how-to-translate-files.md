@@ -1,6 +1,6 @@
 # freeCodeCamp のリソースを翻訳する方法
 
-## Prepare yourself for Contributions
+## コントリビューションの心構え
 
 > freeCodeCamp ローカリゼーションのロードマップ – 進められるだけ進めてください。
 
@@ -44,7 +44,7 @@
 
 ## Crowdin の概要
 
-あなたが何語を話すかに関わらず、学習リソースを提供することが私達の夢です。 To help us with this massive effort, we have integrated our open-source codebase & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+あなたが何語を話すかに関わらず、学習リソースを提供することが私達の夢です。 この大規模な取り組みのため、私達はオープンソースのコードおよびカリキュラムを、ローカライズ支援ツール [Crowdin](https://crowdin.com/) と一体化しました。
 
 > [!NOTE] [ニュース記事](https://www.freecodecamp.org/news) の翻訳には別のツールとワークフローを使用します。 記事の翻訳に関心がある場合には、[こちらのお知らせ](https://www.freecodecamp.org/japanese/news/help-translate-freecodecamp-language/)をお読みいただき、各言語の担当者 (ランゲージリード) までご連絡ください。
 
@@ -60,7 +60,7 @@
 
 > [!WARNING] 現在、GitHub を使用してファイルを直接翻訳することはなくなりました。以前コントリビューターだった方は、代わりに[翻訳プラットフォーム](https://translate.freecodecamp.org/)を使用してください。
 
-## Getting Started
+## はじめに
 
 まず、[Discord](https://discord.gg/PRyKn3Vbay)で挨拶をしましょう。 私達はここでリソースの翻訳に関する最新情報を投稿したり、多くの質問に答えたりしています。
 
@@ -129,7 +129,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 ### Crowdin 上の作業
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [!ATTENTION] 以下のファイルは GitHub のプルリクエストで変更しないでください。
 
 `intro.json` と `translations.json` のファイルはどちらもCrowdin 上の Learn User Interface プロジェクトで翻訳します。 この作業では JSON の個々の値がその部分だけで文字列として表示され、文脈が分からないことが多いため、翻訳が難しい場合があります。
 
@@ -145,7 +145,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 > [!NOTE] コントリビューションドキュメントは `docsify` によって提供されており、このようなメッセージボックス用に特別な構文解析機能があります。 `[!NOTE]`、`[!WARNING]` または `[!TIP]` などで始まる文字列を見かけたら、これらの単語は翻訳しないようにしてください。
 
-### How to Translate Documentation with Internal Links
+### 内部リンクのあるドキュメントの翻訳方法
 
 コントリビューションドキュメントを翻訳する際には、ドキュメント内の別のセクションをリンク先とする内部リンクに注意してください。
 
