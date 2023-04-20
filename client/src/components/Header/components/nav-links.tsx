@@ -15,15 +15,14 @@ import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
 import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import { Link } from '../../helpers';
-import { Themes } from '../../settings/theme';
+import { type ThemeProps, Themes } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 
-export interface NavLinksProps {
+export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
   displayMenu: boolean;
   fetchState: { pending: boolean };
   showMenu: () => void;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => Themes;
   user?: User;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
@@ -91,7 +90,7 @@ const DonateButton = ({
 
 const toggleTheme = (
   currentTheme = Themes.Default,
-  toggleNightMode: (theme: Themes) => Themes
+  toggleNightMode: typeof updateMyTheme
 ) => {
   toggleNightMode(
     currentTheme === Themes.Night ? Themes.Default : Themes.Night
@@ -292,7 +291,4 @@ function NavLinks({
 
 NavLinks.displayName = 'NavLinks';
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-//@ts-ignore
-// to please TypeScript, action.js needs to be migrated to TypeScript
 export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));
