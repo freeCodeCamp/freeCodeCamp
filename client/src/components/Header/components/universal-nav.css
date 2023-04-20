@@ -11,6 +11,8 @@
   width: 100%;
   padding: 0 15px;
   top: 0;
+  --search-box-form: 38px;
+  --lang-menu-height: 22.5rem;
 }
 
 .universal-nav a {
