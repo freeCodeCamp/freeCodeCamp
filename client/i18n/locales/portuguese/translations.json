@@ -114,7 +114,7 @@
     "for": "Configurações de conta para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
-    "scrollbar-width": "Editor Scrollbar Width",
+    "scrollbar-width": "Largura da barra de rolagem do editor",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",

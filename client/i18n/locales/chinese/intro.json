@@ -343,6 +343,10 @@
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "通过创建购物车学习数据结构",
         "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
       }
     }
   },
