@@ -41,10 +41,15 @@ export default function ToggleRadioSetting({
           {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
         </div>
         <div className='toggle-radio-group'>
-          <label htmlFor={firstRadioId} data-checked={flag}>
+          <label
+            htmlFor={firstRadioId}
+            className='toggle-radio-label'
+            data-checked={flag}
+          >
             <input
               id={firstRadioId}
               type='radio'
+              className='hide-default-radio'
               {...(flag && { defaultChecked: true })}
               {...(!flag && { onChange: toggleFlag })}
               name={flagName}
@@ -56,12 +61,17 @@ export default function ToggleRadioSetting({
             <span>{restProps.onLabel}</span>
           </label>
 
-          <label htmlFor={secondRadioId} data-checked={!flag}>
+          <label
+            htmlFor={secondRadioId}
+            className='toggle-radio-label'
+            data-checked={!flag}
+          >
             <input
               id={secondRadioId}
               {...(!flag && { defaultChecked: true })}
               {...(flag && { onChange: toggleFlag })}
               name={flagName}
+              className='hide-default-radio'
               type='radio'
               value='2'
             />{' '}

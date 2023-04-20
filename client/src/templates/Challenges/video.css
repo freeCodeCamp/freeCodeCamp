@@ -86,6 +86,11 @@
   border: 2px solid var(--primary-color);
 }
 
+.video-quiz-input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
 .video-quiz-selected-input {
   width: 10px;
   height: 10px;
