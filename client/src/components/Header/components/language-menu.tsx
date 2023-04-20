@@ -76,14 +76,14 @@ export const LanguageMenu = ({
     menuButtonRef.current?.focus();
     setShowMenu(false);
     // If user selected the current language then we just close the menu
-    if (newLanguage === clientLocale) {
+    if (newLanguage === clientLocale || newLanguage === undefined) {
       return;
     }
     const path = createLanguageRedirect({
       clientLocale,
       lang: newLanguage
     });
-    if (typeof navigate !== 'undefined') {
+    if (navigate) {
       return navigate(path);
     }
   };

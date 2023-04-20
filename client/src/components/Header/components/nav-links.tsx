@@ -25,7 +25,6 @@ export interface NavLinksProps {
   hideMenu: () => void;
   toggleNightMode: (theme: Themes) => Themes;
   user?: User;
-  navigate?: (location: string) => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
 }
@@ -110,10 +109,11 @@ function NavLinks({
 }: NavLinksProps) {
   const { t } = useTranslation();
   const { pending } = fetchState;
-
-  const isUserDonating = user?.isDonating;
-  const currentUserName = user?.username;
-  const currentUserTheme = user?.theme;
+  const {
+    isDonating: isUserDonating,
+    username: currentUserName,
+    theme: currentUserTheme
+  } = user || {};
 
   const handleMenuKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
