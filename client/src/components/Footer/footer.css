@@ -22,7 +22,7 @@
 
 .footer-top,
 .footer-bottom {
-  width: min(100%, 1170px);
+  width: min(100%, 1300px);
   margin-inline: auto;
 }
 
@@ -53,8 +53,12 @@
 
 .trending-guides-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
   gap: 0.5rem;
+}
+
+.trending-guides-articles {
+  white-space: pre;
 }
 
 .footer-row {
