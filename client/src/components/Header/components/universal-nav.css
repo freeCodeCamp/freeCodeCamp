@@ -110,7 +110,7 @@
   text-decoration: none;
   background-color: var(--gray-10);
   cursor: pointer;
-  outline: none !important;
+  outline-color: transparent !important;
 }
 
 li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
@@ -147,16 +147,10 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   border-bottom: 0.1rem solid var(--gray-45) !important;
 }
 
-button.nav-link:focus {
+button.nav-link:focus-visible {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
   outline-offset: -4px;
-}
-
-button.nav-link:focus:not(:focus-visible) {
-  background-color: inherit;
-  color: #fff;
-  outline: none;
 }
 
 button.nav-link:not([aria-disabled='true']):hover {
@@ -323,14 +317,8 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .exposed-button-nav:focus {
-  outline: 3px solid var(--blue-mid);
-  outline-offset: 0;
   background-color: var(--gray-90);
   color: var(--gray-00);
-}
-
-.exposed-button-nav:focus:not(:focus-visible) {
-  outline: none;
 }
 
 .avatar-nav-link {
@@ -464,10 +452,6 @@ button.nav-link[aria-disabled='true'] {
   box-sizing: content-box;
   margin-inline-start: -30px;
   padding-inline: 35px;
-}
-
-.ais-SearchBox-submit:focus:not(:focus-visible) {
-  outline: none;
 }
 
 #toggle-button-nav .menu-btn-text,

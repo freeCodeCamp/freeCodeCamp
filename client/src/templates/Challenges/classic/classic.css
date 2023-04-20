@@ -170,7 +170,3 @@
 .nav-tabs [role='tab']:focus {
   outline-offset: -3px;
 }
-
-.nav-tabs [role='tab']:focus:not(:focus-visible) {
-  outline: none;
-}
