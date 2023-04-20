@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed4
-title: 'Problem 85: Counting rectangles'
+title: 'Problema 85: contare i rettangoli'
 challengeType: 1
 forumTopicId: 302199
 dashedName: problem-85-counting-rectangles
@@ -8,45 +8,45 @@ dashedName: problem-85-counting-rectangles
 
 # --description--
 
-By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
+Contando con attenzione si può vedere che una griglia rettangolare che misura 3 per 2 contiene 18 rettangoli:
 
-<img class="img-responsive center-block" alt="a diagram of the different rectangles found within a 3 by 2 rectangular grid" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un diagramma dei differenti rettangoli trovati dentro una griglia rettangolare 3 per 2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
 
-Although there may not exists a rectangular grid that contains exactly `n` rectangles, find the area of the grid with the nearest solution.
+Anche se potrebbe esistere una griglia rettangolare che contiene esattamente `n` rettangoli, trova l'area della griglia con la soluzione più vicina.
 
 # --hints--
 
-`countingRectangles(18)` should return a number.
+`countingRectangles(18)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof countingRectangles(18) === 'number');
 ```
 
-`countingRectangles(18)` should return `6`.
+`countingRectangles(18)` dovrebbe restituire `6`.
 
 ```js
 assert.strictEqual(countingRectangles(18), 6);
 ```
 
-`countingRectangles(250)` should return `22`.
+`countingRectangles(250)` dovrebbe restituire `22`.
 
 ```js
 assert.strictEqual(countingRectangles(250), 22);
 ```
 
-`countingRectangles(50000)` should return `364`.
+`countingRectangles(50000)` dovrebbe restituire `364`.
 
 ```js
 assert.strictEqual(countingRectangles(50000), 364);
 ```
 
-`countingRectangles(1000000)` should return `1632`.
+`countingRectangles(1000000)` dovrebbe restituire `1632`.
 
 ```js
 assert.strictEqual(countingRectangles(1000000), 1632);
 ```
 
-`countingRectangles(2000000)` should return `2772`.
+`countingRectangles(2000000)` dovrebbe restituire `2772`.
 
 ```js
 assert.strictEqual(countingRectangles(2000000), 2772);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3761000cf542c50fe89
-title: 'Problem 10: Summation of primes'
+title: 'Завдання 10: сума простих чисел'
 challengeType: 1
 forumTopicId: 301723
 dashedName: problem-10-summation-of-primes
@@ -8,9 +8,9 @@ dashedName: problem-10-summation-of-primes
 
 # --description--
 
-The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+Сумою простих чисел, менших за 10, є 2 + 3 + 5 + 7 = 17.
 
-Find the sum of all the primes below `n`.
+Знайдіть суму всіх простих чисел, які менші `n`.
 
 # --hints--
 

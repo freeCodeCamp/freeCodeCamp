@@ -1,6 +1,6 @@
 ---
 id: 5900f3731000cf542c50fe86
-title: 'Problem 7: 10001st prime'
+title: 'Завдання 7: 10001-е просте число'
 challengeType: 1
 forumTopicId: 302182
 dashedName: problem-7-10001st-prime
@@ -8,9 +8,9 @@ dashedName: problem-7-10001st-prime
 
 # --description--
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+Перерахувавши перші шість простих чисел: 2, 3, 5, 7, 11 та 13, ми бачимо, що шостим простим числом є 13.
 
-What is the `n`th prime number?
+Яким буде `n`-не просте число?
 
 # --hints--
 

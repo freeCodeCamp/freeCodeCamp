@@ -25,7 +25,7 @@ Isso é necessário para que esses links funcionem para a versão traduzida do d
 
 Ao trabalhar na tradução da documentação no Crowdin, certifique-se de substituir o `#target-section-heading-id` (id do cabeçalho da seção de destino) pelo id no documento traduzido. [Saiba mais sobre como traduzir a documentação aqui](how-to-translate-files.md#translate-documentation).
 
-## Trabalhe no tema da documentação
+## Trabalhar no tema da documentação
 
 > [!NOTE] Um lembrete rápido de que você não precisa configurar nada para ajudar no conteúdo da documentação do site.
 > 
@@ -45,18 +45,12 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 ### Veiculando localmente o site da documentação
 
-Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
+Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar o comando abaixo, conforme necessário, a partir da raiz do repositório:
 
-#### Veicule e inicie apenas o site da documentação
+#### Veicular e iniciar apenas o site da documentação
 
 ```console
 pnpm run docs:serve
-```
-
-#### Veicule localmente o site da documentação juntamente com o freeCodeCamp:
-
-```console
-pnpm run develop
 ```
 
 > O site da documentação deve estar disponível em <http://localhost:3400>

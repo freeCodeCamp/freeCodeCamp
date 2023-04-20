@@ -1,7 +1,7 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
-
+import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import EditorTabs from './editor-tabs';
 
@@ -44,6 +44,48 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       currentTab: tab
     });
   };
+
+  getToolPanelGroup = () =>
+    (
+      document.getElementsByClassName(
+        'tool-panel-group-mobile'
+      ) as HTMLCollectionOf<HTMLElement>
+    )[0];
+
+  // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
+  setToolPanelPosition = () => {
+    const toolPanelGroup = this.getToolPanelGroup();
+    // Detect the appearance of the mobile virtual keyboard.
+    if (visualViewport?.height && window.innerHeight > visualViewport.height) {
+      setTimeout(() => {
+        if (visualViewport?.height !== undefined) {
+          toolPanelGroup.style.top =
+            String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
+        }
+      }, 200);
+    } else {
+      if (visualViewport?.height !== undefined) {
+        toolPanelGroup.style.top =
+          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+      }
+    }
+  };
+
+  componentDidMount(): void {
+    const toolPanelGroup = this.getToolPanelGroup();
+    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
+      visualViewport?.addEventListener('resize', this.setToolPanelPosition);
+      toolPanelGroup.style.top =
+        String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+    }
+  }
+
+  componentWillUnmount(): void {
+    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
+      visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
+      document.documentElement.style.height = '100%';
+    }
+  }
 
   handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 

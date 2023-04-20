@@ -1,6 +1,6 @@
 ---
 id: 5900f3701000cf542c50fe83
-title: 'Problem 4: Largest palindrome product'
+title: 'Завдання 4: найбільший паліндромний добуток'
 challengeType: 1
 forumTopicId: 302065
 dashedName: problem-4-largest-palindrome-product
@@ -8,9 +8,9 @@ dashedName: problem-4-largest-palindrome-product
 
 # --description--
 
-A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+Паліндромне число читається однаково в обох напрямках. Найбільшим паліндромом, який утворений добутком двох двоцифрових чисел, є 9009 = 91 × 99.
 
-Find the largest palindrome made from the product of two `n`-digit numbers.
+Знайдіть найбільший паліндром, утворений добутком двох `n`-значних чисел.
 
 # --hints--
 

@@ -111,7 +111,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.0",
-    "@types/lodash": "4.14.192",
+    "@types/lodash": "4.14.194",
     "@types/node": "18.15.11",
     "@types/store": "2.0.2",
     "babel-jest": "29.5.0",

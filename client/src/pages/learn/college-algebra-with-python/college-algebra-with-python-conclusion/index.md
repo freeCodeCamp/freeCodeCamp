@@ -1,7 +1,7 @@
 ---
 title: Introduction to College Algebra with Python Conclusion
-block: College Algebra with Python Conclusion
-superBlock: College Algebra with Python
+block: college-algebra-with-python-conclusion
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to College Algebra with Python Conclusion

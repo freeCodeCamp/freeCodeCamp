@@ -339,6 +339,14 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
         "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Aprenda estruturas de dados criando um carrinho de compras",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Aprenda expressões regulares criando um filtro de spam",
+        "intro": ["", ""]
       }
     }
   },

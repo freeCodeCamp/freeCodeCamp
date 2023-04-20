@@ -8,9 +8,9 @@ dashedName: problem-102-triangle-containment
 
 # --description--
 
-Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+Tre punti distinti sono tracciati a caso su un piano cartesiano, per il quale -1000 ≤ x, y ≤ 1000, in modo che si formi un triangolo.
 
-Consider the following two triangles:
+Considera i due triangoli seguenti:
 
 ```js
 const exampleTriangles = [
@@ -19,31 +19,31 @@ const exampleTriangles = [
 ];
 ```
 
-It can be verified that first triangle contains the origin, whereas second triangle does not.
+Si può verificare che il primo triangolo contiene l'origine, mentre il secondo triangolo no.
 
-Using the `triangles` array containing coordinates of triangles, find the number of triangles for which the interior contains the origin.
+Utilizzando l'array `triangles` contenente coordinate di triangoli, trova il numero di triangoli che contengono l'origine al loro interno.
 
 # --hints--
 
-`triangleContainment(exampleTriangles)` should return a number.
+`triangleContainment(exampleTriangles)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof triangleContainment(_exampleTriangles) === 'number');
 ```
 
-`triangleContainment(exampleTriangles)` should return `1`.
+`triangleContainment(exampleTriangles)` dovrebbe restituire `1`.
 
 ```js
 assert.strictEqual(triangleContainment(_exampleTriangles), 1);
 ```
 
-`triangleContainment(testTriangles1)` should return `19`.
+`triangleContainment(testTriangles1)` dovrebbe restituire `19`.
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles1), 19);
 ```
 
-`triangleContainment(testTriangles2)` should return `228`.
+`triangleContainment(testTriangles2)` dovrebbe restituire `228`.
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles2), 228);

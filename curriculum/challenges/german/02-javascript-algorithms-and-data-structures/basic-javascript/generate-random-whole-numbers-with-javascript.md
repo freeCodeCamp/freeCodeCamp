@@ -9,23 +9,25 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-Es ist großartig, dass wir zufällige Dezimalzahlen generieren können, aber es ist noch nützlicher, wenn wir es nutzen, um zufällige ganze Zahlen zu generieren.
+You can generate random decimal numbers with `Math.random()`, but sometimes you need to generate random whole numbers. The following process will give you a random whole number less than `20`:
 
-<ol><li>Verwende <code>Math.random()</code>, um eine zufällige Dezimalzahl zu erzeugen.</li><li>Multipliziere diese zufällige Dezimalzahl mit <code>20</code>.</li><li>Verwende eine andere Funktion, <code>Math.floor()</code>, um die Zahl auf die nächste ganze Zahl abzurunden.</li></ol>
+1. Use `Math.random()` to generate a random decimal number.
+2. Multiply that random decimal number by `20`.
+3. Use `Math.floor()` to round this number down to its nearest whole number.
 
-Denke daran, dass `Math.random()` niemals eine `1` zurückgeben kann und weil wir abrunden, ist es unmöglich, tatsächlich `20` zu erhalten. Diese Technik liefert uns eine ganze Zahl zwischen `0` und `19`.
+Remember that `Math.random()` can never quite return a `1`, so it's impossible to actually get `20` since you are rounding down with `Math.floor()`. This process will give you a random whole number in the range from `0` to `19`.
 
-Alles zusammengenommen sieht unser Code folgendermaßen aus:
+Putting everything together, this is what your code looks like:
 
 ```js
 Math.floor(Math.random() * 20);
 ```
 
-Wir rufen `Math.random()` auf, multiplizieren das Ergebnis mit 20 und übergeben den Wert dann an die Funktion `Math.floor()`, um den Wert auf die nächste ganze Zahl abzurunden.
+You are calling `Math.random()`, multiplying the result by 20, then passing the value to `Math.floor()` to round the value down to the nearest whole number.
 
 # --instructions--
 
-Verwende diese Technik, um eine zufällige ganze Zahl zwischen `0` und `9` zu erzeugen und zurückzugeben.
+Use this technique to generate and return a random whole number in the range from `0` to `9`.
 
 # --hints--
 
@@ -47,7 +49,7 @@ Du solltest `Math.random` verwenden, um eine Zufallszahl zu erzeugen.
 assert(code.match(/Math.random/g).length >= 1);
 ```
 
-Du solltest das Ergebnis von `Math.random` mit 10 multiplizieren, damit es eine Zahl zwischen null und neun ergibt.
+You should have multiplied the result of `Math.random` by 10 to make it a number in the range from zero to nine.
 
 ```js
 assert(
@@ -74,9 +76,6 @@ assert(code.match(/Math.floor/g).length >= 1);
 
 ```js
 function randomWholeNum() {
-
-  // Only change code below this line
-
   return Math.random();
 }
 ```

@@ -1,6 +1,6 @@
 ---
 id: 6363d2899078df117ce4c407
-title: "Spreadsheets and Additional Resources"
+title: "Fogli di Calcolo e Altre Risorse"
 challengeType: 15
 videoId: JH9Uk2mi3Dc
 dashedName: spreadsheets-and-additional-resources

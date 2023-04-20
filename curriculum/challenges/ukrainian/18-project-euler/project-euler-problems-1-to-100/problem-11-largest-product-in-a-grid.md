@@ -1,6 +1,6 @@
 ---
 id: 5900f3781000cf542c50fe8a
-title: 'Problem 11: Largest product in a grid'
+title: 'Завдання 11: найбільший добуток у таблиці'
 challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
@@ -8,7 +8,7 @@ dashedName: problem-11-largest-product-in-a-grid
 
 # --description--
 
-In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+Нижче зображена таблиця розміром 20х20, у якій 4 числа, розташованих по діагоналі, позначені червоним.
 
 <div style='text-align: center;'>
   08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08<br>
@@ -33,9 +33,9 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
   01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48<br>
 </div>
 
-The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+Добутком цих чисел є 26 × 63 × 78 × 14 = 1788696.
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given `arr` grid?
+Який найбільший добуток чотирьох чисел, розташованих в одному напрямку (зверху-вниз, знизу-вверх, справа-наліво, зліва-направо, діагонально) у наданій таблиці `arr`?
 
 # --hints--
 

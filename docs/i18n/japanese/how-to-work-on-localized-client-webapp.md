@@ -1,10 +1,10 @@
-# ローカライズされたクライアント Web アプリに貢献する方法
+# How to Work on Localized Client Webapp
 
-学習プラットフォームを動かす React ベースのクライアント Web アプリは、Gatsby を使用して構築されています。 [react-i18next](https://react.i18next.com/) と [i18next](https://www.i18next.com/) を使用して、様々な世界の言語に翻訳されています。
+The React-based client web app that powers our learning platform is built using Gatsby. [react-i18next](https://react.i18next.com/) と [i18next](https://www.i18next.com/) を使用して、様々な世界の言語に翻訳されています。
 
-開発用クライアントアプリケーションのローカル設定については、こちらの [ローカル設定ガイド](how-to-setup-freecodecamp-locally.md)をご覧ください。 デフォルトでは、アプリケーションは英語でのみ使用できます。
+開発用クライアントアプリケーションのローカル設定については、こちらの [ローカル設定ガイド](how-to-setup-freecodecamp-locally.md)をご覧ください。 By default, the application is available only in English.
 
-ローカルでプロジェクトを設定したら、利用可能な言語リストから選択した言語でクライアントを実行するために、このドキュメントに従ってください。
+Once you have set up the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 これは、ローカライゼーションを含むものを対象にし、例えば別の言語でボタンラベルを検証する必要がある機能に関して作業している場合に役立ちます。
 
@@ -14,7 +14,7 @@ i18n フレームワークとツールがどのように機能するかを理解
 
 ## ファイル構成
 
-プラットフォームを翻訳するために必要なファイルの多くは、[`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) フォルダに入っています。 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
 
 ```console
   config
@@ -55,11 +55,11 @@ i18n フレームワークとツールがどのように機能するかを理解
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin), some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
 
 **翻訳プラットフォーム上で翻訳されたファイル:**
 
-- `translations.json` ファイルは、ユーザーインターフェース要素に表示されるテキストの大部分を含んでいます。 キーは、設定されるすべての言語で正しいテキストが取得できるように、コードベースで使用されます。 このファイルでは、すべての言語で同じキーが必要です。
+- `translations.json` ファイルは、ユーザーインターフェース要素に表示されるテキストの大部分を含んでいます。 キーは、設定されるすべての言語で正しいテキストが取得できるように、コードベースで使用されます。 This file needs to have the same keys in all languages.
 
 - `intro.json` ファイルには、認定講座ページの紹介テキスト用に、キーと値のペアが含まれています。
 
@@ -73,7 +73,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
   Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
-## 世界の言語でクライアントアプリをテストする
+## Testing the Client App in a World Language
 
 You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
@@ -198,7 +198,7 @@ import { Trans } from 'react-i18next'
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-上記の例のように、テキストが属性のない「単純な」タグを含む場合、キーをコンポーネントタグの中に置くことができます。 `br`、`strong`、`i`、および `p` がデフォルトですが、そのリストは、i18n config で拡張できます。
+You can place the key inside the component tags like in the above example if the text contains "simple" tags with no attributes. `br`、`strong`、`i`、および `p` がデフォルトですが、そのリストは、i18n config で拡張できます。
 
 ### ネストされた複雑な要素
 
@@ -264,7 +264,7 @@ const email = 'team@freecodecamp.org';
 
 すべてのファイルで、キーを同じ順序に保つことをお勧めします。 また、コンポーネントやサーバーファイルではなくJSON ファイルに、すべての句読点、スペース、引用符などを 入れるようにしてください。
 
-> [!NOTE] アンダースコア (`_`) は、クライアント側ファイルのキー用予約文字です。 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
+> [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
 
 ## 参考ドキュメント
 

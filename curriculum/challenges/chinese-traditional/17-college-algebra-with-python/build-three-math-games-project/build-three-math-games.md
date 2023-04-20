@@ -1,29 +1,29 @@
 ---
 id: 63d8401039c73468b059cd41
-title: "Build Three Math Games"
+title: "創建三個數學遊戲"
 challengeType: 10
 dashedName: build-three-math-games
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+你將<a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">使用 Google Colaboratory 來完成這個項目</a>。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+點擊鏈接後，在自己的賬戶中或在本地創建一個筆記本的副本。 完成項目並通過測試（在那個鏈接中）後，請在下面提交你的項目鏈接。 如果你提交的是 Google Colaboratory 的鏈接，請確保鏈接分享選項爲 “anyone with the link”。
 
 # --instructions--
 
-For this challenge, you need to create three math games using Python that do the following:
+對於這個挑戰，你需要使用 Python 創建三個數學遊戲，實現以下功能：
 
-- Scatter plot game
-  - Randomly generate points on a graph and the player has to input the (x,y) coordinates
-  - For added difficulty, make the graph larger
-- Algebra practice game
-  - Generate one-step and two-step problems with random integer values and the player has to input the answer
-  - Use positive and negative values. For added difficulty, make the numbers larger
-- Projectile game
-  - Display a "wall" with random height and location. Player has to move sliders to adjust a parabolic path to clear the wall
-  - For added difficulty, make a second level where players enter a, b, and c without sliders
+- 散點圖遊戲
+  - 隨機生成圖像上的點數，玩家必須輸入 (x,y) 座標
+  - 增加難度，使圖像變得更大
+- 代數練習遊戲
+  - 用隨機的整數值生成一步和兩步的問題，玩家必須輸入答案。
+  - 使用正值和負值。 增加難度，使數字更大。
+- 彈射遊戲
+  - 顯示具有隨機高度和位置的“牆”， 玩家必須移動滑塊來調整拋物線路徑以清除牆
+  - 增加難度，製作第二個關卡，讓玩家在沒有滑塊的情況下輸入 a、b 和 c
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+完成後，在 Google drive 上向公開的 Colab 筆記本提交 URL 。
 

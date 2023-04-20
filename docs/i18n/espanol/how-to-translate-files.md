@@ -1,6 +1,6 @@
 # Cómo traducir recursos de freeCodeCamp
 
-## Prepárate para las contribuciones
+## Prepare yourself for Contributions
 
 > Guía de orientación de freeCodeCamp - Sin límites de velocidad
 
@@ -44,7 +44,7 @@ solo queremos que entiendas lo siguiente:
 
 ## Vista previa de Crowdin
 
-Nuestro sueño es brindate los recursos para aprender, sin importar el idioma que hables. Para que nos ayuden con este gran esfuerzo, hemos integrado nuestro código-báse de código-abierto y nuestro currículo con [Crowdin](https://crowdin.com/) - Una herramienta que nos ayuda a localizar nuestro código-base.
+Nuestro sueño es brindate los recursos para aprender, sin importar el idioma que hables. To help us with this massive effort, we have integrated our open-source codebase & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
 
 > [!NOTE] Utilizamos una herramienta y un flujo de trabajo diferentes para traducir [artículos de noticias](https://www.freecodecamp.org/news). Si te interesa traducir artículos, lee [este anuncio](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) y contacta al traductor lider de tu idioma.
 
@@ -60,7 +60,7 @@ El flujo de trabajo de traducción se divide en dos actividades principales:
 
 > [!WARNING] Ya no estamos usando GitHub para traducir archivos directamente. Si fuiste colaborador y estás regresando, entonces dirígete a nuestra [plataforma de traducción](https://translate.freecodecamp.org/).
 
-## Comenzando
+## Getting Started
 
 Primero, asegúrate de decir "Hola" en nuestro [Discord](https://discord.gg/PRyKn3Vbay). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
 
@@ -145,7 +145,7 @@ Traducir nuestra documentación de contribución es un flujo similar a la traduc
 
 > [!NOTE] Nuestra documentación de contribución esta basada en `docsify`, y tenemos una  forma especial de procesar los cuadros de mensaje como este. Si ves cadenas que comiencen con `[!NOTE]`, `[!WARNING]` o ` [!TIP]`, estas palabras NO deben traducirse.
 
-### Cómo traducir la documentación con enlaces internos
+### How to Translate Documentation with Internal Links
 
 Cuando trabajes en la traducción de la documentación, ten en cuenta los enlaces internos que apuntan a una sección diferente de la documentación.
 
