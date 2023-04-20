@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: inherit;
+}
+
+.speechBubbleIcon {
+  position: absolute;
+  width: 4vh;
+  height: 60vh;
+  left: 1%;
+}
+
+.questionMarkIcon {
+  position: absolute;
+  bottom: 8%;
+  left: 1.55vh;
+  width: 1.4vh;
+}

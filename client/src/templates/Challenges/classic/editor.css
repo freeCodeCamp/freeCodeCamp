@@ -174,28 +174,16 @@ textarea.inputarea {
   }
 }
 
-.reset-help-icon-bar {
-  display: flex;
-  gap: 10px;
-  flex-direction: row;
+.lower-utility-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 3vh;
+  align-items: center;
 }
 
-.reset-help-icon-bar > button {
-  line-height: 0;
-  width: 100px;
+.lower-utility-bar > button {
   height: 42px;
-}
-
-.reset-help-icon-bar > button:last-child {
-  margin-inline-end: 0;
-}
-
-@media screen and (max-width: 414px) {
-  .reset-help-icon-bar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 100%;
 }
 
 .progress-bar-container {

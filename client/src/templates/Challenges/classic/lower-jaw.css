@@ -1,0 +1,10 @@
+.lower-utility-bar .btn {
+  position: relative;
+}
+
+.lower-utility-bar .btn span {
+  position: absolute;
+  top: 50%;
+  right: 12%;
+  transform: translateY(-50%);
+}
