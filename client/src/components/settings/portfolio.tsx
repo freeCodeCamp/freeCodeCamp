@@ -81,10 +81,19 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   updateItem = (id: string) => {
     const { portfolio, unsavedItemId } = this.state;
+    const updatingPortfolio = [...portfolio];
+
     if (unsavedItemId === id) {
       this.setState({ unsavedItemId: null });
+    } else {
+      if (unsavedItemId) {
+        const unsavedItemIndex = updatingPortfolio.findIndex(
+          item => item.id === unsavedItemId
+        );
+        updatingPortfolio.splice(unsavedItemIndex, 1);
+      }
     }
-    this.props.updatePortfolio({ portfolio });
+    this.props.updatePortfolio({ portfolio: updatingPortfolio });
   };
 
   handleAdd = () => {
