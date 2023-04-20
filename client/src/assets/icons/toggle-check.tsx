@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../components/settings/toggle-setting.css';
+
 function ToggleCheck(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
