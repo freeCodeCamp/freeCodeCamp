@@ -123,7 +123,7 @@
 }
 
 .timeline-pagination_list_item > button {
-  outline: none;
+  outline-color: transparent;
 }
 
 /* Timeline table styles */
