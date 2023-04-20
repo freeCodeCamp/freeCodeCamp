@@ -8,14 +8,14 @@
 
 .speechBubbleIcon {
   position: absolute;
-  width: 4vh;
-  height: 60vh;
+  width: 1.4rem;
+  height: 60rem;
   left: 1%;
 }
 
 .questionMarkIcon {
   position: absolute;
   bottom: 8%;
-  left: 1.55vh;
-  width: 1.4vh;
+  left: 0.51rem;
+  width: 0.47rem;
 }

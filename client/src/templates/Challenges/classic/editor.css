@@ -177,12 +177,12 @@ textarea.inputarea {
 .lower-utility-bar {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
-  gap: 3vh;
+  gap: 1.3rem;
   align-items: center;
 }
 
 .lower-utility-bar > button {
-  height: 42px;
+  height: 2.3rem;
   width: 100%;
 }
 
