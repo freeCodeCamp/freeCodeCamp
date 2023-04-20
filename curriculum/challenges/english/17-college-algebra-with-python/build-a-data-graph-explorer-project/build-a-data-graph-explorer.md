@@ -26,5 +26,6 @@ For this challenge, you need to create a multi-function calculator using Python 
 - Display data as a scatter plot or a line graph
 - Be able to do this for different column combinations, and interpret the graphs
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Once you complete the project, submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+
 

@@ -25,5 +25,5 @@ For this challenge, you need to create three math games using Python that do the
   - Display a "wall" with random height and location. Player has to move sliders to adjust a parabolic path to clear the wall
   - For added difficulty, make a second level where players enter a, b, and c without sliders
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Once you complete the project, submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 
