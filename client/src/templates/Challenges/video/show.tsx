@@ -200,7 +200,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -243,36 +242,39 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-                <PrismFormatted className={'line-numbers'} text={text} />
-                <Spacer size='medium' />
-                <ObserveKeys>
-                  <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
-                      // answers are static and have no natural id property, so
-                      // index should be fine as a key:
-                      <label className='video-quiz-option-label' key={index}>
-                        <input
-                          aria-label={ariaLabel}
-                          checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
-                          name='quiz'
-                          onChange={this.handleOptionChange}
-                          type='radio'
-                          value={index}
-                        />{' '}
-                        <span className='video-quiz-input-visible'>
-                          {this.state.selectedOption === index ? (
-                            <span className='video-quiz-selected-input' />
-                          ) : null}
-                        </span>
-                        <PrismFormatted
-                          className={'video-quiz-option'}
-                          text={option}
-                        />
-                      </label>
-                    ))}
-                  </div>
-                </ObserveKeys>
+                <h2>Exercise</h2>
+                <fieldset>
+                  <legend>
+                    <PrismFormatted className={'line-numbers'} text={text} />
+                  </legend>
+                  <ObserveKeys>
+                    <div className='video-quiz-options'>
+                      {answers.map((option, index) => (
+                        // answers are static and have no natural id property, so
+                        // index should be fine as a key:
+                        <label className='video-quiz-option-label' key={index}>
+                          <input
+                            checked={this.state.selectedOption === index}
+                            className='video-quiz-input-hidden'
+                            name='quiz'
+                            onChange={this.handleOptionChange}
+                            type='radio'
+                            value={index}
+                          />{' '}
+                          <span className='video-quiz-input-visible'>
+                            {this.state.selectedOption === index ? (
+                              <span className='video-quiz-selected-input' />
+                            ) : null}
+                          </span>
+                          <PrismFormatted
+                            className={'video-quiz-option'}
+                            text={option}
+                          />
+                        </label>
+                      ))}
+                    </div>
+                  </ObserveKeys>
+                </fieldset>
                 <Spacer size='medium' />
                 <div
                   style={{
