@@ -305,59 +305,49 @@ Moderating the forum is possible via a cell phone but you may encounter some usa
 > 
 > Це необхідно для того, щоб ми могли надати вам дозвіл робити записи у наших репозиторіях.
 
-## Як ми звільняємо неактивних модераторів
+## How Our Contributors Room Works
 
-Зверніть увагу, що ми часто видаляємо модераторів, яких вважаємо неактивними. Коли ми так робимо, то надсилаємо наступне повідомлення:
+Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. We deeply appreciate your help in the past.
+We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
-If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
-```
+## Dealing with Solicitors
 
-## Як працює кімната помічників
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-Ми вітаємо кожного у [кімнаті помічників на нашому чат-сервері](https://discord.gg/PRyKn3Vbay). Ми створили її для модераторів та інших кемперів, які роблять внесок до нашої спільноти будь-яким чином, включно з навчальними групами.
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-Ми прискаємо, що помічники читають всі повідомлення, у яких вони згадуються через **@username**. Все інше за бажанням, однак не соромтесь читати інші дописи та взаємодіяти з ними.
+## Dealing with (Mental) Health Inquiries
 
-## Комунікація із посередниками
+You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
-До вас можуть звернутися організації, які хочуть стати партнерами або співвласниками бренду freeCodeCamp. Як тільки ви зрозумієте їхні наміри, **закінчуйте діалог** та направте їх на пошту `team[at]freecodecamp.org`.
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
 
-Нам часто надходять такі пропозиції, тому вигоду співпраці для нашої спільноти краще вирішувати персоналу (зазвичай воно того не варте).
+As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
 
-## Як діяти при зверненнях щодо (психічного) здоров'я
-
-Іноді трапляються ситуації, коли користувачам потрібна медична допомога, або у них наявні ментальні порушення та вони шукають підтримки.
-
-Згідно з нашою політикою вам варто уникати приватних розмов щодо таких речей. Якщо ситуація напряму стосується freeCodeCamp, потрібно мати запис розмови. Дайте зрозуміти, що ми не медичні працівники та заохотьте користувача звернутись по медичну допомогу.
-
-Попри те, що іноді це важко, уникайте підказок чи порад, а радше направте користувача на пошук професійної допомоги!
-
-Якщо таке трапилося у чаті, створіть приватний канал для користувача та команди модераторів. Це можна зробити за допомогою команди `private`.
+If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
 
 - Користувачу гарантована конфіденційність.
 - У публічному чаті більше немає порушень.
 - Інші учасники команди можуть втрутитися, якщо вам некомфортно справлятися із ситуацією самостійно.
 
-Корисні посилання:
+Helpful URLs:
 
 http://suicide.org/international-suicide-hotlines.html
 
-## Примітка щодо свободи слова
+## A Note on Free Speech
 
-Інколи люди захищатимуть щось образливе або провокативне, обґрунтовуючи це «свободою слова».
+Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-Цей вебкомікс від XKCD ідеально підсумовує думки більшості спільнот стосовно свободи слова.
+This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-Дякуємо за увагу та допомогу спільноті розробників!
+Thanks for reading this, and thanks for helping the developer community!
 
-## Зразки відповідей
+## Reply Templates
 
-Це зразки відповідей, які можна використовувати під час розгляду запитів на злиття та їх сортування.
+These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
 > Ви можете створити власний список збережених відповідей за допомогою вбудованої функції [збережені відповіді](https://github.com/settings/replies/) на GitHub або використовувати подані нижче.
 
@@ -414,7 +404,7 @@ git fetch upstream
 git pull upstream main
 ````
 
-Якщо ви використовуєте графічний інтерфейс користувача, просто виконайте команду `Add a new remote...` та використайте посилання `git://github.com/freeCodeCamp/freeCodeCamp.git`.
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
 Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
@@ -441,7 +431,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ Якщо у новачка виникає конфлікт злиття, то спеціалісти розв’яжуть цю проблему замість нього.
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
 
 ### Дублікат
 
@@ -488,19 +478,38 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ### Adding Comment About Newbie Mistakes
 
 ```markdown
-As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+Hi there, 
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Thanks for creating this pull request.
 
-Some examples of this are:
+Please ensure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously. Respect the requirements to earn the respect of your fellow maintainers. You will also save everyone time :)
 
-1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+Since you are new here, please slow down and read our [contributing guidelines](https://contribute.freecodecamp.org), as we see that you may still need to catch up on a few things.
 
-We appreciate you taking the time to help us, and we hope to see more contributions from you.
+<details>
+<summary>Here are some examples (expand)</summary>
+
+1. Do not edit files directly on GitHub – while you can, it's not a good idea. 
+
+   Typos and formatting errors can break the tests.
+
+2. Use the correct way to link issues. 
+
+   Add the issue number only in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+
+4. Keep mentions and review requests to a minimum. 
+
+   We understand you are excited about contributing, and our maintainers will get back to you when they can.
+
+5. Do not work directly off your `main` branch. 
+
+   You can always create a new branch for the changes you are working on. That way, you can sync change to your PR branch as the main repository moves ahead while your PR is waiting in the merge queue.
+
+</details>
+
+Don't worry. You don't have to close this PR. Feel free to ask specific queries on improving your PR here; someone will guide you.
+
+We are happy you are excited to contribute and appreciate you taking the time to help us. Looking forward to more contributions!
 
 Happy Contributing.
 ```
