@@ -120,7 +120,7 @@ export const LanguageMenu = ({
       <button
         aria-controls='nav-lang-menu'
         aria-haspopup='true'
-        className='nav-link nav-lang-button'
+        className='lang-button-nav'
         id='nav-lang-button'
         onClick={handleClick}
         onBlur={handleBlur}
@@ -129,44 +129,29 @@ export const LanguageMenu = ({
         <span>{t('buttons.change-language')}</span>
         <LanguageGlobe />
       </button>
-
       <ul
         aria-labelledby='toggle-button-nav'
-        className={`nav-list${showMenu ? ' display-menu' : ''} `}
+        id='nav-lang-menu'
+        role='menu'
+        className={`nav-list${showMenu ? ' nav-lang-menu' : ''} `}
       >
-        <li key='lang-menu' className='nav-lang'>
-          {/* 
-           The div existences create edge case in which camper skips the change language,
-           when they press "shift+tab" on signout button whenever signout focus events uses `getPreviousMenuItem`.
-           To fix this we need to remove `div`, but this creates a bug which close the menu when someone interact with it any other way except the keyboard.
-           This is a complexy and footgun that can break the site without notices and we shouldn't carry,
-           to sort this we need to remove the div and make focus events simpler, but that's a ToDo for later.
-          */}
-          <ul
-            aria-labelledby='nav-lang-button'
-            className={'nav-lang-menu'}
-            id='nav-lang-menu'
-            role='menu'
-          >
-            {locales.map(lang => (
-              <li key={'lang-' + lang} role='none'>
-                <button
-                  {...(clientLocale === lang && { 'aria-current': true })}
-                  className='nav-link nav-lang-menu-option'
-                  data-value={lang}
-                  {...(LangCodes[lang] && {
-                    lang: LangCodes[lang]
-                  })}
-                  onClick={handleLanguageChange}
-                  role='menuitem'
-                  tabIndex={-1}
-                >
-                  {LangNames[lang]}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </li>
+        {locales.map(lang => (
+          <li key={'lang-' + lang} role='none'>
+            <button
+              {...(clientLocale === lang && { 'aria-current': true })}
+              className='nav-link nav-lang-menu-option'
+              data-value={lang}
+              {...(LangCodes[lang] && {
+                lang: LangCodes[lang]
+              })}
+              onClick={handleLanguageChange}
+              role='menuitem'
+              tabIndex={-1}
+            >
+              {LangNames[lang]}
+            </button>
+          </li>
+        ))}
       </ul>
     </>
   );

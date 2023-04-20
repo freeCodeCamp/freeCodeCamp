@@ -59,7 +59,7 @@
   display: none;
   position: absolute;
   background-color: var(--theme-color);
-  top: calc(var(--header-height) * 2);
+  top: 100%;
   right: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -87,12 +87,6 @@
   min-height: var(--header-height);
   width: 100%;
   border: none;
-  height: 100%;
-}
-
-.nav-lang {
-  padding: 0;
-  width: 100%;
   height: 100%;
 }
 
@@ -136,17 +130,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   height: auto !important;
 }
 
-.nav-link:hover .nav-lang-menu,
-.nav-link:active .nav-lang-menu {
-  background-color: var(--gray-00);
-  color: var(--gray-90);
-  cursor: pointer;
-}
-
-#nav-lang-menu li:first-child {
-  border-bottom: 0.1rem solid var(--gray-45) !important;
-}
-
 button.nav-link:focus-visible {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -163,62 +146,9 @@ button.nav-link[aria-disabled='true'] {
   background-color: inherit;
 }
 
-.display-menu .theme-disabled {
-  height: 4.2rem;
-}
-
 .nav-link-header label {
   font-weight: normal;
   margin-bottom: 0;
-}
-
-.nav-lang-menu {
-  display: none;
-  padding: 0;
-  color: var(--gray-90);
-  background-color: var(--gray-80);
-  width: 100%;
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  list-style-type: none;
-  margin: 0;
-  border: 2px solid var(--gray-90);
-  border-top: 0;
-  border-bottom: 0;
-  top: 0;
-  overflow-y: auto;
-  scrollbar-width: auto;
-
-  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility).*/
-  height: min(
-    var(--lang-menu-height),
-    calc(100vh - var(--search-box-form) - var(--header-height))
-  );
-}
-
-@media (min-width: 601px) {
-  /* Search form is no longer between header and main menu. */
-  .nav-lang-menu {
-    height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
-  }
-}
-
-/* main menu must be at least as tall as lang menu (when displayed)
-   unless there isn't enough view port height */
-.nav-list.display-lang-menu {
-  min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
-}
-
-.nav-lang-menu > button:hover {
-  background-image: none !important;
-}
-
-.nav-lang-menu .nav-link {
-  color: #fff;
-  background-color: inherit;
-  padding-top: 0;
 }
 
 .nav-lang-button {
@@ -227,17 +157,8 @@ button.nav-link[aria-disabled='true'] {
   background-image: none;
 }
 
-.nav-lang-button:hover svg,
-.nav-lang-button:focus {
-  fill: var(--gray-10);
-}
-
 .nav-lang-button:focus:not(:focus-visible) {
   fill: revert;
-}
-
-.nav-lang-button[aria-expanded='true'] + .nav-lang-menu {
-  display: block;
 }
 
 .nav-lang-button svg {
@@ -247,6 +168,10 @@ button.nav-link[aria-disabled='true'] {
 
 .dark-palette .nav-lang-button:focus {
   fill: revert;
+}
+
+.nav-lang-menu {
+  display: block;
 }
 
 .nav-lang-menu-option[aria-current='true'] {
@@ -297,7 +222,8 @@ button.nav-link[aria-disabled='true'] {
   margin-inline-end: 25px;
 }
 
-.exposed-button-nav {
+.exposed-button-nav,
+.lang-button-nav {
   padding: 2px 14px;
   border: 1px solid var(--gray-00);
   font-size: 18px;
@@ -319,6 +245,15 @@ button.nav-link[aria-disabled='true'] {
 .exposed-button-nav:focus {
   background-color: var(--gray-90);
   color: var(--gray-00);
+}
+
+.lang-button-nav:hover,
+.lang-button-nav:focus,
+.lang-button-nav:hover:focus {
+  background-color: var(--gray-10);
+  color: var(--theme-color);
+  border: 1px solid var(--gray-00);
+  fill: var(--gray-10);
 }
 
 .avatar-nav-link {
@@ -366,15 +301,10 @@ button.nav-link[aria-disabled='true'] {
 .display-menu {
   display: inherit;
   text-align: left;
-  margin-top: calc(-1 * var(--header-height));
   max-height: calc(100vh - var(--header-height));
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.expand-lang-menu .display-menu {
-  overflow-y: unset;
 }
 
 .display-menu::-webkit-scrollbar {
