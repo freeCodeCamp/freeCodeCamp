@@ -163,9 +163,10 @@ export const LanguageMenu = ({
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleMenuKeyDown}
+        title={t('buttons.change-language')}
+        aria-label={t('buttons.change-language')}
         ref={menuButtonRef}
       >
-        <span>{t('buttons.change-language')}</span>
         <LanguageGlobe />
       </button>
       <ul
