@@ -9,6 +9,7 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
+  --header-height: 38px;
 }
 
 #___gatsby {
@@ -28,7 +29,7 @@ body {
 
 .codeally-frame {
   display: block;
-  height: calc(100vh - var(--header-height, 0px));
+  height: calc(100vh - var(--header-height));
   width: 100%;
   border: 0;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 .default-layout {
-  margin-top: var(--header-height, 0);
+  margin-top: var(--header-height);
   background: var(--secondary-background);
 }
 
