@@ -1,30 +1,30 @@
 ---
 id: 63d8402e39c73468b059cd43
-title: "Build a Data Graph Explorer"
+title: "Crie um explorador de gráfico de dados"
 challengeType: 10
 dashedName: build-a-data-graph-explorer
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Você vai <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">trabalhar neste projeto com o Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Once you complete the project, submit your project link below. Se você estiver enviando um link do Google Colaboratory, certifique-se de ativar o compartilhamento de links para "qualquer um com o link".
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Para este desafio, você precisará criar uma calculadora multifuncional usando Python que receberá entradas e fará o seguinte:
 
-- Get a .csv file in three ways
-  - uploading it from the local computer
-  - getting a url from user input
-  - putting the url in the code
-- Use the Pandas library to save the .csv as a dataframe
-- Print headings and the first two rows
-- Store the column names as a list
-- Choose one or two columns and convert the data to Numpy arrays
-- Display data as a scatter plot or a line graph
-- Be able to do this for different column combinations, and interpret the graphs
+- Obter um arquivo .csv de três maneiras
+  - enviando pelo computador local
+  - obtendo um URL a partir da entrada do usuário
+  - colocando o URL no código
+- Use a biblioteca do Pandas para salvar o .csv como um dataframe
+- Imprima os cabeçalhos e as duas primeiras linhas
+- Armazene os nomes das colunas como uma lista
+- Escolha uma ou duas colunas e converta os dados em arrays do Numpy
+- Exiba os dados como um gráfico de dispersão ou um gráfico linear
+- Seja capaz de fazer isso para diferentes combinações de colunas e interprete os gráficos
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Assim que terminar, envie o URL para o notebook público do Colaboratory no seu Google Drive.
 
