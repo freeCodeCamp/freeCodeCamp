@@ -1,4 +1,5 @@
 import { setupServer, superGet } from '../jest.utils';
+import { HOME_LOCATION } from './utils/env';
 
 jest.mock('./utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -32,6 +33,39 @@ describe('production', () => {
         'x-content-type-options': 'nosniff',
         'x-frame-options': 'DENY',
         'strict-transport-security': 'max-age=300; includeSubDomains'
+      });
+    });
+
+    test.each([
+      'https://www.freecodecamp.org',
+      'https://www.freecodecamp.dev',
+      'https://beta.freecodecamp.org',
+      'https://beta.freecodecamp.dev',
+      'https://chinese.freecodecamp.org',
+      'https://chinese.freecodecamp.dev'
+    ])(
+      'should have Access-Control-Allow-Origin header for %s',
+      async origin => {
+        const res = await superGet('/').set('origin', origin);
+        expect(res.headers).toMatchObject({
+          'access-control-allow-origin': origin
+        });
+      }
+    );
+
+    test('should have HOME_LOCATION Access-Control-Allow-Origin header for other origins', async () => {
+      const res = await superGet('/').set('origin', 'https://www.google.com');
+      expect(res.headers).toMatchObject({
+        'access-control-allow-origin': HOME_LOCATION
+      });
+    });
+
+    test('should have Access-Control-Allow-(Headers+Credentials) headers', async () => {
+      const res = await superGet('/');
+      expect(res.headers).toMatchObject({
+        'access-control-allow-headers':
+          'Origin, X-Requested-With, Content-Type, Accept',
+        'access-control-allow-credentials': 'true'
       });
     });
   });
