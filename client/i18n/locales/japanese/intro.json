@@ -754,11 +754,11 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Python を用いた代数学",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "このコースは 1 学期の大学講座として作成されました。講義動画、インタラクティブに手を動かしながら学べる Google Colaboratory ノートブック、課題、そして挑戦しがいのあるプロジェクトで構成されています。",
+      "コースの各パートを順に進めていく中で、代数学、そして Python のコードを書いて代数の問題を解く方法がしっかりと理解できます。",
+      "また、コース全体を通して、カスタム計算機として使える Algebra Colab ノートブックを作り上げます。この講座 (およびこれからあなたが書くコード) が、数学とデータサイエンスをより深く理解するための基礎となるでしょう。"
     ],
     "note": "",
     "blocks": {

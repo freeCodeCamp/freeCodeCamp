@@ -165,10 +165,6 @@ button.nav-link[aria-disabled='true'] {
   background-color: inherit;
 }
 
-.display-menu .theme-disabled {
-  height: 4.2rem;
-}
-
 .nav-link-header label {
   font-weight: normal;
   margin-bottom: 0;
