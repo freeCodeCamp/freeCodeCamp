@@ -20,6 +20,10 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
     if (origin && allowedOrigins.includes(origin)) {
       void reply.header('Access-Control-Allow-Origin', origin);
     } else {
+      // TODO: Discuss if this is the correct approach. Standard practice is to
+      // reflect one of a list of allowed origins and handle development
+      // separately. If we switch to that approach we can replace use
+      // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
     }
 
