@@ -35,18 +35,6 @@ export const LanguageMenu = ({
   const [showMenu, setShowMenu] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  // const handleMenuButtonBlue = (
-  //   event: React.FocusEvent<HTMLButtonElement>
-  // ): void => {
-  //   if (
-  //     event.relatedTarget &&
-  //     !event.relatedTarget.closest('.universal-nav-right') &&
-  //     showMenu
-  //   ) {
-  //     setShowMenu(false);
-  //   }
-  // };
-
   const handleClick = (): void => {
     if (showMenu) {
       setShowMenu(false);
@@ -55,27 +43,15 @@ export const LanguageMenu = ({
     setShowMenu(true);
   };
 
-  // const getPreviousMenuItem = (target: HTMLButtonElement | null) => {
-  //   const previousSibling =
-  //     target?.closest('.nav-list > li')?.previousElementSibling;
-  //   const previousButton = previousSibling?.querySelector<
-  //     HTMLButtonElement | HTMLAnchorElement
-  //   >('a, button');
-  //   return previousButton ?? menuButtonRef.current;
-  // };
-
   const handleLanguageChange = (
     event: React.MouseEvent<HTMLButtonElement>
   ): void => {
     event.preventDefault();
 
-    const newLanguage = event.currentTarget.dataset.value as string;
-    // If user selected cancel then close menu and put focus on button
-    // Put focus on menu button first so we don't lose focus
-    // for screen readers.
+    const newLanguage = event.currentTarget.dataset.value;
     menuButtonRef.current?.focus();
-    setShowMenu(false);
     // If user selected the current language then we just close the menu
+    setShowMenu(false);
     if (newLanguage === clientLocale || newLanguage === undefined) {
       return;
     }
@@ -98,9 +74,6 @@ export const LanguageMenu = ({
     }
   };
 
-  // ToDo: make sure that it focus on the menu button when the language menu is closed (didn't test yet)
-  // Added to the last item in the nav menu. Will close the menu if
-  // the user Tabs out of the menu.
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>) => {
     if (
       event.relatedTarget &&
@@ -111,7 +84,73 @@ export const LanguageMenu = ({
     }
   };
 
+  const handleLastLangaugeKeys = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            setShowMenu(false);
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Tab',
+        {
+          select: () => {
+            const camperPressedTheShiftKey = event.shiftKey;
+            if (!camperPressedTheShiftKey) {
+              setShowMenu(false);
+            }
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
+
+  const handleFirstLangaugeKeys = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            setShowMenu(false);
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Tab',
+        {
+          select: () => {
+            const camperPressedTheShiftKey = event.shiftKey;
+            if (camperPressedTheShiftKey) {
+              setShowMenu(false);
+            }
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
+
   const { pending } = fetchState;
+
+  const getHandleLanguageKeys = (length: number) => {
+    if (length === 0) {
+      return handleFirstLangaugeKeys;
+    } else if (length === locales.length - 1) {
+      return handleLastLangaugeKeys;
+    } else handleMenuKeyDown;
+  };
 
   return pending ? (
     <div className='nav-skeleton' />
@@ -121,10 +160,10 @@ export const LanguageMenu = ({
         aria-controls='nav-lang-menu'
         aria-haspopup='true'
         className='lang-button-nav'
-        id='nav-lang-button'
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleMenuKeyDown}
+        ref={menuButtonRef}
       >
         <span>{t('buttons.change-language')}</span>
         <LanguageGlobe />
@@ -135,7 +174,7 @@ export const LanguageMenu = ({
         role='menu'
         className={`nav-list${showMenu ? ' nav-lang-menu' : ''} `}
       >
-        {locales.map(lang => (
+        {locales.map((lang, index) => (
           <li key={'lang-' + lang} role='none'>
             <button
               {...(clientLocale === lang && { 'aria-current': true })}
@@ -145,8 +184,8 @@ export const LanguageMenu = ({
                 lang: LangCodes[lang]
               })}
               onClick={handleLanguageChange}
+              onKeyDown={getHandleLanguageKeys(index)}
               role='menuitem'
-              tabIndex={-1}
             >
               {LangNames[lang]}
             </button>

@@ -124,6 +124,35 @@ function NavLinks({
     }
   };
 
+  const handleDonationKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            hideMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Tab',
+        {
+          select: () => {
+            const camperPressedTheShiftKey = event.shiftKey;
+            if (camperPressedTheShiftKey) {
+              hideMenu();
+            }
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
+
   const handleSignOutKeys = (
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
@@ -167,7 +196,7 @@ function NavLinks({
     >
       <DonateButton
         isUserDonating={isUserDonating}
-        handleMenuKeyDown={handleMenuKeyDown}
+        handleMenuKeyDown={handleDonationKeyDown}
       />
       <li key='learn'>
         <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/learn'>
@@ -248,7 +277,7 @@ function NavLinks({
               toggleTheme(currentUserTheme, toggleNightMode);
             }
           }}
-          onKeyDown={handleMenuKeyDown}
+          onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
         >
           {currentUserName ? (
             <>

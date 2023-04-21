@@ -151,25 +151,6 @@ button.nav-link[aria-disabled='true'] {
   margin-bottom: 0;
 }
 
-.nav-lang-button {
-  display: flex;
-  justify-content: space-between;
-  background-image: none;
-}
-
-.nav-lang-button:focus:not(:focus-visible) {
-  fill: revert;
-}
-
-.nav-lang-button svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.dark-palette .nav-lang-button:focus {
-  fill: revert;
-}
-
 .nav-lang-menu {
   display: block;
 }
