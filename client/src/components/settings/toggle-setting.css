@@ -77,13 +77,17 @@
   display: flex;
 }
 
-.toggle-radio-label {
+.toggle-radio-group label {
   margin: 8px;
 }
 
-.hide-default-radio {
+.toggle-radio-group input {
   position: absolute;
   left: -9999px;
+}
+
+.toggle-radio-group input:focus-visible {
+  border: 10px solid blue;
 }
 
 .custom-circle {
