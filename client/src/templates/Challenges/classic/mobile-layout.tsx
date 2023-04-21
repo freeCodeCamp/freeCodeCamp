@@ -39,49 +39,55 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
+  // The Help, Reset, and Run buttons at the bottom of the Instructions.
+  // These will not exist in the Steps, only in the older challenges.
+  toolPanelGroup = (
+    document.getElementsByClassName(
+      'tool-panel-group-mobile'
+    ) as HTMLCollectionOf<HTMLElement>
+  )[0];
+
   switchTab = (tab: Tab): void => {
     this.setState({
       currentTab: tab
     });
   };
 
-  getToolPanelGroup = () =>
-    (
-      document.getElementsByClassName(
-        'tool-panel-group-mobile'
-      ) as HTMLCollectionOf<HTMLElement>
-    )[0];
-
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
   setToolPanelPosition = () => {
-    const toolPanelGroup = this.getToolPanelGroup();
+    if (!this.toolPanelGroup) return;
     // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
       setTimeout(() => {
         if (visualViewport?.height !== undefined) {
-          toolPanelGroup.style.top =
+          this.toolPanelGroup.style.top =
             String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
         }
       }, 200);
     } else {
       if (visualViewport?.height !== undefined) {
-        toolPanelGroup.style.top =
+        this.toolPanelGroup.style.top =
           String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
       }
     }
   };
 
   componentDidMount(): void {
-    const toolPanelGroup = this.getToolPanelGroup();
-    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
+    if (
+      this.toolPanelGroup &&
+      /iPhone|Android.+Mobile/.exec(navigator.userAgent)
+    ) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-      toolPanelGroup.style.top =
+      this.toolPanelGroup.style.top =
         String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
     }
   }
 
   componentWillUnmount(): void {
-    if (/iPhone|Android.+Mobile/.exec(navigator.userAgent)) {
+    if (
+      this.toolPanelGroup &&
+      /iPhone|Android.+Mobile/.exec(navigator.userAgent)
+    ) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
       document.documentElement.style.height = '100%';
     }
