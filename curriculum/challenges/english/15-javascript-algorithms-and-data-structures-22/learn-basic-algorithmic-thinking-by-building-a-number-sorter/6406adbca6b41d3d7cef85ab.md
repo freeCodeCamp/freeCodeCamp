@@ -52,7 +52,11 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
         <fieldset>
           <span class="bracket">[</span>
           <div>
-            <select name="values" class="values-dropdown">
+            <select
+              name="values"
+              class="values-dropdown"
+              aria-label="first number"
+            >
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -67,7 +71,11 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
             <span class="comma">,</span>
           </div>
           <div>
-            <select name="values" class="values-dropdown">
+            <select
+              name="values"
+              class="values-dropdown"
+              aria-label="second number"
+            >
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2" selected>2</option>
@@ -82,7 +90,11 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
             <span class="comma">,</span>
           </div>
           <div>
-            <select name="values" class="values-dropdown">
+            <select
+              name="values"
+              class="values-dropdown"
+              aria-label="third number"
+            >
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -97,7 +109,11 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
             <span class="comma">,</span>
           </div>
           <div>
-            <select name="values" class="values-dropdown">
+            <select
+              name="values"
+              class="values-dropdown"
+              aria-label="fourth number"
+            >
               <option value="0">0</option>
               <option value="1" selected>1</option>
               <option value="2">2</option>
@@ -112,7 +128,11 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
             <span class="comma">,</span>
           </div>
           <div>
-            <select name="values" class="values-dropdown">
+            <select
+              name="values"
+              class="values-dropdown"
+              aria-label="fifth number"
+            >
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
