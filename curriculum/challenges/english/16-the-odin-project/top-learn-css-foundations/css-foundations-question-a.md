@@ -36,11 +36,11 @@ Which of the following best describes the CSS code given above?
 
 ## --answers--
 
-The code applies a white color to all elements in the `HTML` file.
+The code applies a `white` color to all elements in the HTML file.
 
 ---
 
-The code applies a white `color` to all div elements in the `HTML` file.
+The code applies a `white` `color` to all `div` elements in the HTML file.
 
 ---
 

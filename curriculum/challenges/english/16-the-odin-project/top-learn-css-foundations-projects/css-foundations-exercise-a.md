@@ -12,13 +12,13 @@ In this exercise, you're going to practice adding CSS to an HTML file using all 
 
 ## User Stories
 
-1. You should see a `div` element with a red background, white text, a font size of `32px`, center aligned, and bold.
+1. You should see a `div` element with a `red` background, `white` text, a font size of `32px`, center aligned, and `bold`.
 
-1. The CSS of the `div` element should be added externaly by using a type selector.
+1. The CSS of the `div` element should be added externally by using a type selector.
 
-1. You should see a `p` element with a green background, white text, and a font size of `18px`.
+1. You should see a `p` element with a `green` background, `white` text, and a font size of `18px`.
 
-1. The CSS of the `p` element should be added internaly by using a type selector.
+1. The CSS of the `p` element should be added internally by using a type selector.
 
 1. You should see a `button` element with an orange background and a font size of `18px`.
 

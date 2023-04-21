@@ -16,7 +16,7 @@ Another way to use selectors is to chain them as a list without any separation. 
 </div>
 ```
 
-We have two elements with the `subsection` class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has `header` as a second class? Well, we could chain both the `class` selectors together in our `CSS` like so:
+We have two elements with the `subsection` class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has `header` as a second class? Well, we could chain both the `class` selectors together in our CSS like so:
 
 ```css
 .subsection.header {

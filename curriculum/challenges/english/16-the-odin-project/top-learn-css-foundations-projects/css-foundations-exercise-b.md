@@ -11,19 +11,19 @@ dashedName: css-foundations-exercise-b
 
 ## User Stories
 
-1. You should see a yellow background for all odd numbered elements in the list.
+1. You should see a `yellow` background for all odd numbered elements in the list.
 
-1. You should have a class selector used for all odd numbered elements in the list.
+1. You should have a `class` selector used for all odd numbered elements in the list.
 
-1. You should see that the second element in the list has blue text and a `font-size` of `36px`.
+1. You should see that the second element in the list has `blue` text and a `font-size` of `36px`.
 
 1. The `font-size` and text color on the second element should be set by using an `id` attribute.
 
 1. You should see that the third element in the list has a `font-size` of `24px`.
 
-1. The font-size on the third element should be set by using a `class` attribute.
+1. The `font-size` on the third element should be set by using a `class` attribute.
 
-1. You should see that the fourth element in the list has a red background, a `font-size` of `24px`, and a `font-weight` of `bold`.
+1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
 
 1. The `font-size` of the fourth element should be set with a `class` attribute the `font-weight`  and the color should be set with an `id` attribute.
 

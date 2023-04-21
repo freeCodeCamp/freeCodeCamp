@@ -7,7 +7,7 @@ dashedName: css-foundations-question-b
 ---
 # --description--
 
-Class selectors will select all elements with the given `class`, which is just an attribute you place on an `HTML` element. Here’s how you add a class to an `HTML` tag and select it in `CSS`:
+Class selectors will select all elements with the given `class`, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:
 
 ```html
 <!-- index.html -->
@@ -30,7 +30,7 @@ Note the syntax for `class` selectors: a period immediately followed by the case
 Another thing you can do with the `class` attribute is to add multiple classes to a single element as a space-separated list, such as `class="alert-text severe-alert"`. Since whitespace is used to separate `class` names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
 
 ## ID Selectors
-`Id` selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an `HTML` element:
+`Id` selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an HTML element:
 
 ```html
 <!-- index.html -->
