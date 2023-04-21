@@ -10,5 +10,4 @@ const fastifySentry: FastifyPluginCallback<SentryPluginOptions> = async (
 
   fastify.log.info('Sentry plugin registered');
 };
-
 export default fp(fastifySentry);
