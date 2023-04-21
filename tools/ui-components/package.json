@@ -4,8 +4,13 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
   "description": "The freeCodeCamp.org open-source UI components",
-  "main": "index.js",
-  "private": true,
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.es.js",
+  "style": "dist/base.css",
+  "files": [
+    "dist"
+  ],
+  "private": false,
   "engines": {
     "node": ">=16",
     "pnpm": "8"
@@ -61,7 +66,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "pnpm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
-    "build": "cross-env NODE_ENV=production rollup -c",
+    "build": "pnpm run build:css && pnpm run build:js",
+    "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
     "clean": "rm -rf dist/*",

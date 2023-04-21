@@ -305,29 +305,19 @@ If you are approved, we will add you to our moderator teams on [GitHub](https://
 > 
 > This is required for us to be able to give you write access to some of our repositories.
 
-## How We Retire Inactive Moderators
-
-Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
-
-```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. Agradecemos profundamente tu ayuda en el pasado.
-
-If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
-```
-
 ## How Our Contributors Room Works
 
 Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
 We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
-## Lidiando con solicitantes
+## Dealing with Solicitors
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
 We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-## Tratamiento de consultas (mentales) de salud
+## Dealing with (Mental) Health Inquiries
 
 You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
@@ -345,7 +335,7 @@ Helpful URLs:
 
 http://suicide.org/international-suicide-hotlines.html
 
-## Una nota sobre la libertad de expresión
+## A Note on Free Speech
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
@@ -355,7 +345,7 @@ This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 Thanks for reading this, and thanks for helping the developer community!
 
-## Plantillas de Respuesta
+## Reply Templates
 
 These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
@@ -364,8 +354,8 @@ These are some of the standard reply templates that you may use while reviewing 
 ### Thank You
 
 ```markdown
-Gracias por su contribución a la página! 👍
-Estamos felices de aceptar estos cambios y esperamos futuras contribuciones. 🎉
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
 ### Thank you and congrats
@@ -373,18 +363,24 @@ Estamos felices de aceptar estos cambios y esperamos futuras contribuciones. �
 > Por dar las gracias y animar a los que han contribuido por primera vez.
 
 ```markdown
-Hola @nombre de usuario. ¡Felicidades por tu primer pull request (PR)! 🎉
+Hi @username. Congrats on your first pull request (PR)! 🎉
 
-¡Gracias por tu contribución a la página! : Techns_up:
-Estamos encantados de aceptar estos cambios y esperamos futuras contribuciones. 📝
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
 ### Build Error
 
 ```markdown
-Hola @username
+Hey @username
 
-Nos encantaría poder combinar tus cambios, pero parece que hay un error con la construcción de Travis CI. Una vez resueltos estos problemas, revisaremos tu PR para hacer un Merge. No dude en consultar las [pautas de contribución] (how-to-work-on-coding-challenges.md#testing-challenges) para obtener instrucciones sobre cómo ejecutar la compilación de CI localmente. ✅
+We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
+
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
+
+---
+
+Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### Syncing Fork
@@ -394,9 +390,11 @@ Nos encantaría poder combinar tus cambios, pero parece que hay un error con la 
 ````markdown
 Hey @username
 
-Nos encantaría hacer Merge a los cambios realizados, pero parece que la rama aún no se encuentra actualizada.  ⚠️Para pasar la compilación, tendrás que sincronizar los últimos cambios desde la rama master del repositorio freeCodeCamp/freeCodeCamp.
+We would love to be able to merge your changes, but it looks like the branch is not up to date. ⚠️
 
-Usando la línea de comando, puede hacer esto en tres sencillos pasos:
+To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
+
+Using the command line, you can do this in three easy steps:
 
 ```bash
 git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
@@ -415,18 +413,22 @@ Once you sync your fork and pass the build, we will be able to review your PR an
 Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
-### Fusionar conflictos
+### Merge Conflicts
 
-> Cuando las PR tienen conflictos que necesitan ser resueltos.1
+> When PR has merge conflicts that need to be resolved.¹
 
+```markdown
+Hey @username
 
-Nos encantaría poder fusionar sus cambios, pero parece que tiene algunos conflictos de fusion. Una vez que resuelva estos conflictos, podremos revisar su RP y fusionarlo. 😊
+We would love to be able to merge your changes, but it looks like you have some merge conflicts. ⚠️
+
+Once you resolve these conflicts, we will be able to review your PR and merge it. 😊
 
 ---
 
- Si no estás familiarizado con el proceso de fusión de conflictos, no dudes en echar un vistazo a la guía de GitHub en ["Resolviendo un conflicto de fusiones"](https://help. ithub.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
 
- Además, es buena práctica en GitHub escribir una breve descripción de los cambios al crear un PR. 📝
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
 ¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
@@ -436,19 +438,17 @@ Nos encantaría poder fusionar sus cambios, pero parece que tiene algunos confli
 > When PR is repetitive or a duplicate.
 
 ```markdown
-Hola @nombredeusuario
+Hey @username
 
-Este RP parece realizar cambios similares a los del RP existente & lt; # number & gt .
+This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as a duplicate.
 
- As such, we are going to close this as a duplicate.
+If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 
-Si cree que tiene cambios adicionales para expandir este PR, no dude en presionar sus confirmaciones y solicitar que este PR se vuelva a abrir.
-
-¡Gracias de nuevo! 😊
+Thanks again! 😊
 
 ---
 
-Si tienes alguna pregunta, no dudes en hacer preguntas en la categoría ["Colaboradores" en nuestro foro](https://forum.freecodecamp.org/c/contributors) o [la sala de chat de colaboradores](https://discord.gg/PRyKn3Vbay).
+If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
 ### Closing Invalid Pull Requests
@@ -456,41 +456,60 @@ Si tienes alguna pregunta, no dudes en hacer preguntas en la categoría ["Colabo
 > When PR is invalid.
 
 ```markdown
-Hola @username
+Hey @username
 
-Gracias por abrir este pull request.
+Thank you for opening this pull request.
 
-Este es un mensaje estándar notificándole que hemos revisado su pull request y hemos decidido no fusionarlo. Damos la bienvenida a tus futuras pull request.
+This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
 
-Gracias y ten un feliz día programando.
+Thank you and happy coding.
 ```
 
 > When PR adds links to external resources.
 
 ```markdown
-Gracias por abrir esta solicitud de extracción.
+Thank you for your pull request.
 
-Cerramos esta solicitud de extracción. Sugiera enlaces y otros detalles para agregar la publicación de la guía correspondiente al desafío a través de [un tema del foro] (https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is% 20su% 20sugestión% 20o% 20solución% 20sugerencia% 3F **% 0A% 0A% 0A% 0A% 0A ** Desafío% 3A **% 0A% 0A% 0A ** Vínculo% 20a% 20el% 20 desafío% 3A **) en lugar de.
+We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
 
-Si consideras que nos hemos equivocado cerrando esta incidencia, por favor solicita su reapertura y añade más aclaraciones. Thank you and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 ### Adding Comment About Newbie Mistakes
 
 ```markdown
-As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+Hi there, 
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Thanks for creating this pull request.
 
-Some examples of this are:
+Please ensure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously. Respect the requirements to earn the respect of your fellow maintainers. You will also save everyone time :)
 
-1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+Since you are new here, please slow down and read our [contributing guidelines](https://contribute.freecodecamp.org), as we see that you may still need to catch up on a few things.
 
-We appreciate you taking the time to help us, and we hope to see more contributions from you.
+<details>
+<summary>Here are some examples (expand)</summary>
+
+1. Do not edit files directly on GitHub – while you can, it's not a good idea. 
+
+   Typos and formatting errors can break the tests.
+
+2. Use the correct way to link issues. 
+
+   Add the issue number only in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+
+4. Keep mentions and review requests to a minimum. 
+
+   We understand you are excited about contributing, and our maintainers will get back to you when they can.
+
+5. Do not work directly off your `main` branch. 
+
+   You can always create a new branch for the changes you are working on. That way, you can sync change to your PR branch as the main repository moves ahead while your PR is waiting in the merge queue.
+
+</details>
+
+Don't worry. You don't have to close this PR. Feel free to ask specific queries on improving your PR here; someone will guide you.
+
+We are happy you are excited to contribute and appreciate you taking the time to help us. Looking forward to more contributions!
 
 Happy Contributing.
 ```
@@ -500,7 +519,7 @@ Happy Contributing.
 > When an issue relates to the camper's code.
 
 ```markdown
-Gracias por reportar este problema. 
+Thank you for reporting this issue.
 
 This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
 
@@ -512,7 +531,7 @@ Thank you and happy coding.
 > When an issue is duplicate of an earlier issue.
 
 ```markdown
-Gracias por reportar elproblema. 
+Gracias por reportar este problema. 
 
 This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
@@ -522,7 +541,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 > When an issue is fixed in staging.
 
 ```markdown
-Thank you for reporting this issue.
+Gracias por reportar elproblema. 
 
 This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 

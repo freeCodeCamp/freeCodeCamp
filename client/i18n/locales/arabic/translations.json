@@ -114,6 +114,7 @@
     "for": "إعدادات الحساب لـ {{username}}",
     "sound-mode": "هذا يضيف صوت قيتارة ممتع في جميع أنحاء الموقع. سوف تحصل على تنبيهات موسيقية عند الكتابة على المحرر وإكمال التحديات وعند المطالبة بالشهادات وغير ذلك.",
     "sound-volume": "مستوي صوت Campfire:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "اسم المستخدم\"{{username}}\" يحتوي على أحرف غير صالحة",
       "is too short": "اسم المستخدم \"{{username}}\" قصير جداً",
@@ -309,7 +310,8 @@
       "console": "وحدة تحكم",
       "instructions": "تعليمات",
       "notes": "ملاحظات",
-      "preview": "معاينة"
+      "preview": "معاينة",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "الضغط على زر tab سيدرج الآن رمز التباعد",

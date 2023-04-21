@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
-import Helmet from 'react-helmet';
 import { User } from '../../redux/prop-types';
 
 import UniversalNav from './components/universal-nav';
@@ -86,32 +85,23 @@ export class Header extends React.Component<
     const { displayMenu, isLanguageMenuDisplayed } = this.state;
     const { fetchState, user, skipButtonText } = this.props;
     return (
-      <>
-        <Helmet>
-          <style>
-            {
-              ':root{--header-height: 38px; --search-box-form: 38px; --lang-menu-height: 22.5rem;}'
-            }
-          </style>
-        </Helmet>
-        <header>
-          <a href='#content-start' className='skip-to-content-button'>
-            {skipButtonText}
-          </a>
-          <UniversalNav
-            displayMenu={displayMenu}
-            fetchState={fetchState}
-            isLanguageMenuDisplayed={isLanguageMenuDisplayed}
-            hideLanguageMenu={this.hideLanguageMenu}
-            hideMenu={this.hideMenu}
-            menuButtonRef={this.menuButtonRef}
-            searchBarRef={this.searchBarRef}
-            showMenu={this.showMenu}
-            showLanguageMenu={this.showLanguageMenu}
-            user={user}
-          />
-        </header>
-      </>
+      <header>
+        <a href='#content-start' className='skip-to-content-button'>
+          {skipButtonText}
+        </a>
+        <UniversalNav
+          displayMenu={displayMenu}
+          fetchState={fetchState}
+          isLanguageMenuDisplayed={isLanguageMenuDisplayed}
+          hideLanguageMenu={this.hideLanguageMenu}
+          hideMenu={this.hideMenu}
+          menuButtonRef={this.menuButtonRef}
+          searchBarRef={this.searchBarRef}
+          showMenu={this.showMenu}
+          showLanguageMenu={this.showLanguageMenu}
+          user={user}
+        />
+      </header>
     );
   }
 }
