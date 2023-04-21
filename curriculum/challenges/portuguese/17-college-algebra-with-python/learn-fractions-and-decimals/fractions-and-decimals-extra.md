@@ -1,6 +1,6 @@
 ---
 id: 6331d260b51aeedd1a2bd64a
-title: "Fractions and Decimals: Extra"
+title: "Frações e decimais: extra"
 challengeType: 15
 videoId: YHVA6cYIglM
 dashedName: fractions-and-decimals-extra
@@ -8,23 +8,23 @@ dashedName: fractions-and-decimals-extra
 
 # --description--
 
-The following video will show you one way to set up your Google Colaboratory notebook, so that you can continue to build your personalized algebra calculator.
+O vídeo a seguir mostrará a você uma maneira de configurar o notebook do Google Colaboratory para que você possa continuar a construir a calculadora de álgebra personalizada.
 
-Here is <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
+Aqui está o <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste vídeo</a> para que você possa usá-lo como modelo.
 
 # --question--
 
 ## --assignment--
 
-Add the code to factor and solve for a variable to your algebra Colab notebook.
+Adicione o código para fatorar e resolva para uma variável em seu notebook de álgebra do Colaboratory.
 
 ---
 
-Run the code in the following notebook to get <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">practice converting fractions and decimals.</a> As a bonus, look at the code used to generate the practice problems.
+Execute o código do notebook para <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">praticar a conversão de frações em decimais.</a> Além disso, observe o código usado para gerar os problemas práticos.
 
 ## --text--
 
-Which of the following languages can you not use in Google Colaboratory?
+Qual das linguagens a seguir você não pode usar no Google Colaboratory?
 
 ## --answers--
 
@@ -36,11 +36,11 @@ LaTex
 
 ---
 
-English
+Inglês
 
 ---
 
-Sanskrit
+Sânscrito
 
 ## --video-solution--
 

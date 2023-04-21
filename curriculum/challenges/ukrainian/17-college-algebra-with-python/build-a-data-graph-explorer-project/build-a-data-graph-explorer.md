@@ -9,7 +9,7 @@ dashedName: build-a-data-graph-explorer
 
 Ви будете <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Перейшовши за цим посиланням, створіть копію блокнота у своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тест (доданий до посилання), введіть посилання на свій проєкт. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
+Once you complete the project, submit your project link below. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
 
 # --instructions--
 
