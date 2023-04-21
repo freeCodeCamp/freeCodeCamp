@@ -166,7 +166,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {preview}
             </TabPane>
           )}
-          <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
+          {!hasEditableBoundaries && (
+            <ToolPanel
+              guideUrl={guideUrl}
+              isMobile={true}
+              videoUrl={videoUrl}
+            />
+          )}
         </Tabs>
       </>
     );
