@@ -112,7 +112,7 @@ assert(style?.fontWeight === 'bold');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class and ID Selectors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <p>Number 1 - I'm a class!</p>
@@ -138,7 +138,7 @@ assert(style?.fontWeight === 'bold');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class and ID Selectors</title>
-    <link rel="stylesheet" href="solution.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <p class="odd">Number 1 - I'm a class!</p>
@@ -166,7 +166,7 @@ assert(style?.fontWeight === 'bold');
 }
 
 #four {
-  background-color: hsl(120, 100%, 75%);
+  background-color: red;
   font-weight: bold;
 }
 ```
