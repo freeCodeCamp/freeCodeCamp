@@ -1,8 +1,16 @@
+import request from 'supertest';
+
 import { build } from './src/app';
 
 declare global {
   // eslint-disable-next-line no-var
   var fastifyTestInstance: Awaited<ReturnType<typeof build>> | undefined;
+}
+
+export function superGet(endpoint: string): request.Test {
+  return request(fastifyTestInstance?.server)
+    .get(endpoint)
+    .set('Origin', 'https://www.freecodecamp.org');
 }
 
 export function setupServer(): void {

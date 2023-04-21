@@ -1,5 +1,4 @@
-import request from 'supertest';
-import { setupServer } from '../jest.utils';
+import { setupServer, superGet } from '../jest.utils';
 
 jest.mock('./utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -15,18 +14,18 @@ describe('production', () => {
     setupServer();
 
     test('have a 200 response', async () => {
-      const res = await request(fastifyTestInstance?.server).get('/');
-      expect(res?.statusCode).toBe(200);
+      const res = await superGet('/');
+      expect(res.statusCode).toBe(200);
     });
 
     test('return { "hello": "world"}', async () => {
-      const res = await request(fastifyTestInstance?.server).get('/');
-      expect(res?.body).toEqual({ hello: 'world' });
+      const res = await superGet('/');
+      expect(res.body).toEqual({ hello: 'world' });
     });
 
     test('should have OWASP recommended headers', async () => {
-      const res = await request(fastifyTestInstance?.server).get('/');
-      expect(res?.headers).toMatchObject({
+      const res = await superGet('/');
+      expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
         'content-security-policy': "frame-ancestors 'none'",
         'content-type': 'application/json; charset=utf-8',
