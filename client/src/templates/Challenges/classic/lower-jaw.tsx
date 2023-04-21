@@ -9,11 +9,7 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-import {
-  ChallengeMeta,
-  ChallengeWithCompletedNode
-} from '../../../redux/prop-types';
-import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
+import { ChallengeMeta } from '../../../redux/prop-types';
 import { Share } from '../../../components/share';
 import { ShareProps } from '../../../components/share/types';
 
@@ -150,7 +146,7 @@ const LowerJawStatus = ({
 const isBlockCompleted = 100;
 
 const LowerJaw = ({
-  challengeMeta: { id: lastChallengeId, superBlock, block },
+  challengeMeta: { superBlock, block },
   completedPercent,
   openHelpModal,
   challengeIsCompleted,
@@ -170,7 +166,6 @@ const LowerJaw = ({
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
-  const endOfProject = React.useRef<boolean>(false);
 
   const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
@@ -187,17 +182,8 @@ const LowerJaw = ({
     );
   };
 
-  const challengeOrder: ChallengeWithCompletedNode[] = getChallengesList({
-    userInputSuperBlock: superBlock || '',
-    userInputBlock: block || ''
-  }) as ChallengeWithCompletedNode[];
-  if (challengeOrder[challengeOrder.length - 1].id === lastChallengeId) {
-    endOfProject.current = true;
-  }
   const showShareButton =
-    challengeIsCompleted &&
-    endOfProject.current &&
-    completedPercent === isBlockCompleted;
+    challengeIsCompleted && completedPercent === isBlockCompleted;
 
   useEffect(() => {
     // prevent unnecessary updates:

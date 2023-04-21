@@ -47,10 +47,6 @@
   margin-inline-end: auto;
 }
 
-.m15 {
-  margin: '15px 0px';
-}
-
 .monaco-editor-tabs button:not(:first-child) {
   border-left: none;
 }
