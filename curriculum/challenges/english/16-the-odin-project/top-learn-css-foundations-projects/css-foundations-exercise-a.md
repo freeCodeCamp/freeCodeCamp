@@ -29,11 +29,11 @@ In this exercise, you're going to practice adding CSS to an HTML file using all 
 There should be one `div` element and should contains some text and be aligned in the center.
 
 ```js
-const algined = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
+const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
 
-assert(algined === 'center');
-assert(document.getElementsByTagName('DIV').length == 1);
-assert(document.getElementsByTagName('DIV')[0].innerText.length > 0)
+assert(aligned === 'center');
+assert(document.getElementsByTagName('DIV')?.length == 1);
+assert(document.getElementsByTagName('DIV')?.[0]?.innerText.length > 0)
 ```
 
 The `div` element should have a `background-color` of `red` and a text color of `white`.
@@ -46,7 +46,6 @@ const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue(
 
 assert(bgc === 'red');
 assert(color === 'white');
-
 ```
 
 The `div` element should have a `font-weight` of bold and a `font-size` of `32px`.
@@ -62,15 +61,15 @@ assert(fontWeight === 'bold');
 The `div` element should have its CSS added externally.
 
 ```js
-assert(!document.getElementsByTagName('style')[0].innerText.includes('div'));
-assert(!document.getElementsByTagName('div')[0].hasAttribute('style'));
+assert(!document.getElementsByTagName('style')?.[0]?.innerText.includes('div'));
+assert(!document.getElementsByTagName('div')?.[0]?.hasAttribute('style'));
 ```
 
 There should be one `p` element and it should contain some text.
 
 ```js
-assert(document.getElementsByTagName('P').length == 1);
-assert(document.getElementsByTagName('P')[0].innerText.length > 0)
+assert(document.getElementsByTagName('P')?.length == 1);
+assert(document.getElementsByTagName('P')?.[0]?.innerText.length > 0)
 ```
 
 The `p` element should have its `color` set to `white`.
@@ -84,15 +83,17 @@ assert(color == 'white');
 The `p` element should have a `font-size` of `18px`.
 
 ```js
-const styleTag = document.getElementsByTagName('style')[0];
+const styleTag = document.getElementsByTagName('style')?.[0];
 let pHasFontSize18 = false;
 
-const rules = styleTag.sheet.cssRules || styleTag.sheet.rules;
-for (let j = 0; j < rules.length; j++) {
-  const rule = rules[j];
-  if (rule.selectorText === 'p' && rule.style.fontSize === '18px') {
-    pHasFontSize18 = true;
-    break;
+const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
+if (rules) {
+  for (let j = 0; j < rules.length; j++) {
+    const rule = rules[j];
+    if (rule.selectorText === 'p' && rule.style.fontSize === '18px') {
+      pHasFontSize18 = true;
+      break;
+    }
   }
 }
 
@@ -103,16 +104,18 @@ The `p` element should have its style added internally.
 
 ```js
 
-const styleTag = document.getElementsByTagName('style')[0];
+const styleTag = document.getElementsByTagName('style')?.[0];
 let pIsStyled = false;
 
 
-const rules = styleTag.sheet.cssRules || styleTag.sheet.rules;
-for (let j = 0; j < rules.length; j++) {
-  const rule = rules[j];
-  if (rule.selectorText === 'p') {
-    pIsStyled = true;
-    break;
+const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
+if (rules) {
+  for (let j = 0; j < rules.length; j++) {
+    const rule = rules[j];
+    if (rule.selectorText === 'p') {
+      pIsStyled = true;
+      break;
+    }
   }
 }
 
@@ -122,19 +125,19 @@ assert(pIsStyled);
 The `button` element should have its `background-color` set to `orange`.
 
 ```js
-assert(document.getElementsByTagName('button')[0].style.backgroundColor === 'orange')
+assert(document.getElementsByTagName('button')?.[0]?.style.backgroundColor === 'orange')
 ```
 
 The `button` element should have its `font-size` set to `18px`.
 
 ```js
-assert(document.getElementsByTagName('button')[0].style.fontSize === '18px')
+assert(document.getElementsByTagName('button')?.[0]?.style.fontSize === '18px')
 ```
 
 The `button` element should have an inline style.
 
 ```js
-assert(document.getElementsByTagName('button')[0].hasAttribute('style'));
+assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));
 ```
 
 # --seed--
@@ -163,30 +166,30 @@ assert(document.getElementsByTagName('button')[0].hasAttribute('style'));
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Styling Example</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<style>
-		p {
-			background-color: green;
-			color: white;
-			font-size: 18px;
-		}
-	</style>
+  <title>My Styling Example</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    p {
+      background-color: green;
+      color: white;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-	<div>Hello World!</div>
-	<p>This is a paragraph.</p>
-	<button style="background-color: orange; font-size: 18px;">Click Me</button>
+  <div>Hello World!</div>
+  <p>This is a paragraph.</p>
+  <button style="background-color: orange; font-size: 18px;">Click Me</button>
 </body>
 </html>
 ```
 
 ```css
 div {
-	background-color: red;
-	color: white;
-	font-size: 32px;
-	text-align: center;
-	font-weight: bold;
+  background-color: red;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
 }
 ```

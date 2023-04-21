@@ -34,7 +34,7 @@ Every odd element should have a `class` attribute.
 ```js
 const p = Array.from(document.querySelectorAll('P'));
 
-const everyPHasClass = p.every((paragraph) => paragraph.classList.length > 0);
+const everyPHasClass = p?.every((paragraph) => paragraph.classList.length > 0);
 
 assert(everyPHasClass);
 ```
@@ -44,60 +44,60 @@ Your odd elements should have a `background-color` of `yellow`.
 ```js
 const p = Array.from(document.querySelectorAll('P'));
 
-const everyPhasBackgroundColor = p.every((paragraph) => {
+const everyPhasBackgroundColor = p?.every((paragraph) => {
 
   const style = getComputedStyle(paragraph);
   
-  return style.backgroundColor === 'rgb(255, 255, 0)';
+  return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
 ```
 
 Your second element should have blue text and a `font-size` of `36px`.
 
 ```js
-const secondElementId = document.querySelectorAll('div')[0].id;
+const secondElementId = document.querySelectorAll('div')?.[0]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${secondElementId}`);
 
-assert.equal(style.color, 'rgb(0, 0, 255)')
-assert.equal(style.fontSize, '36px');
+assert.equal(style?.color, 'rgb(0, 0, 255)')
+assert.equal(style?.fontSize, '36px');
 ```
 
 Your third element should have text and a `font-size` of `24px`.
 
 ```js
-const thirdElement = document.querySelectorAll('p')[1].classList;
+const thirdElement = document.querySelectorAll('p')?.[1]?.classList;
 
 ``` 
 
 The fourth element should have a `font-size` of `24px`.
 
 ```js
-const fourthElementClass = document.querySelectorAll('div')[1].classList[0];
+const fourthElementClass = document.querySelectorAll('div')?.[1]?.classList[0];
 
 const style = new __helpers.CSSHelp(document).getStyle(`.${fourthElementClass}`);
 
-assert(style.fontSize === '24px');
+assert(style?.fontSize === '24px');
 ```
 
 The fourth element should have a red `background-color`.
 
 ```js
-const fourthElement = document.querySelectorAll('div')[1].id;
+const fourthElement = document.querySelectorAll('div')?.[1]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 
-assert(style.backgroundColor === 'red');
+assert(style?.backgroundColor === 'red');
 ```
 
 The fourth element should have a `font-weight` of `bold`.
 
 ```js
-const fourthElement = document.querySelectorAll('div')[1].id;
+const fourthElement = document.querySelectorAll('div')?.[1]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 
-assert(style.fontWeight === 'bold');
+assert(style?.fontWeight === 'bold');
 ```
 
 # --seed--
