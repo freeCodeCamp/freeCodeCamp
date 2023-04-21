@@ -61,7 +61,6 @@
   display: none;
   position: absolute;
   background-color: var(--theme-color);
-  top: 100%;
   right: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -155,6 +154,7 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-lang-menu {
   display: block;
+  top: 100%;
 }
 
 .nav-lang-menu-option[aria-current='true'] {
@@ -284,6 +284,7 @@ button.nav-link[aria-disabled='true'] {
 .display-menu {
   display: inherit;
   text-align: left;
+  top: var(--header-height);
   max-height: calc(100vh - var(--header-height));
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -306,13 +307,6 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-line {
   border-top: 0.1rem solid var(--gray-45);
-}
-
-.nav-line-2 {
-  border-color: var(--gray-45);
-  width: 100%;
-  margin: 0;
-  border-top-width: 2px;
 }
 
 .signup-btn {
@@ -411,8 +405,11 @@ button.nav-link[aria-disabled='true'] {
 @media (max-width: 600px) {
   .nav-list {
     min-width: 100%;
-    top: calc(var(--header-height) * 2);
     margin-top: 0;
+  }
+
+  .display-menu {
+    top: calc(var(--header-height) * 2);
   }
 
   .fcc_searchBar,
