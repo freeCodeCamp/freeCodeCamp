@@ -343,6 +343,10 @@
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "Learn Data Structures By Building A Shopping Cart",
         "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
       }
     }
   },
@@ -889,7 +893,7 @@
       "次回の就職面接に備えて無料のコーディング演習をお探しでしたら、こちらにご用意しています。",
       "このセクションはアルゴリズム、データ構造、および数学の知識をテストする何百ものコーディングチャレンジを含んでいます。技能を向上させ、またはポートフォリオに加えるために活用できる多くの宿題プロジェクトもあります。"
     ],
-    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
+    "note": "プロジェクト・オイラーのプロジェクトは独立したコースに移動しました。カリキュラムに戻ってコース一覧を確認してください。",
     "blocks": {
       "algorithms": {
         "title": "アルゴリズム",
@@ -941,40 +945,40 @@
     }
   },
   "project-euler": {
-    "title": "Project Euler",
+    "title": "プロジェクト・オイラー",
     "intro": [
-      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+      "かの偉大なプロジェクト・オイラー・アーカイブを元にした、以下のプログラミングチャレンジを完成させてください。これらの問題でアルゴリズムと数学の知識が強化できるでしょう。",
+      "問題は易しい物から難しい物まであり、その多くで帰納的連鎖学習のような体験ができます。つまり、ある問題を解くことによって新しい概念を学ぶことができ、以前はとっつきにくかった問題に取り組めるようになるでしょう。すべての問題を解けるでしょうか？"
     ],
     "blocks": {
       "project-euler-problems-1-to-100": {
-        "title": "Project Euler Problems 1 to 100",
+        "title": "プロジェクト・オイラー: 問題 1～100",
         "intro": [
-          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+          "最初の問題セットでは、効率的なアルゴリズムを書くためにフィボナッチ数列、素数理論、組合せ理論のような数学的概念を利用して問題を解いていきます。"
         ]
       },
       "project-euler-problems-101-to-200": {
-        "title": "Project Euler Problems 101 to 200",
+        "title": "プロジェクト・オイラー: 問題 101～200",
         "intro": [
-          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+          "この問題セットでは最初のパートで学んだスキルを踏まえて、ベクトル計算、パスカルの三角錐、RSA アルゴリズムなどの高度な概念を利用して効率的に問題を解いていきます。"
         ]
       },
       "project-euler-problems-201-to-300": {
-        "title": "Project Euler Problems 201 to 300",
+        "title": "プロジェクト・オイラー: 問題 201～300",
         "intro": [
-          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+          "この問題セットでは、引き続きここまで学んできたスキルを基に、二項定理、ハミング数、コラッツ数列などの概念を利用して、数学と問題解決のスキルを磨いていきます。"
         ]
       },
       "project-euler-problems-301-to-400": {
-        "title": "Project Euler Problems 301 to 400",
+        "title": "プロジェクト・オイラー: 問題 301～400",
         "intro": [
-          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+          "このパートでは、組合せゲーム理論、ビット演算、ゴロムの自己記述的数列などの概念を利用して効率的な解法を作成しながら、引き続き数学とアルゴリズムのスキルを活用します。"
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "プロジェクト・オイラー: 問題 401～480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "最後の問題セットでは、ここまで学んだすべてのことを活用して、単約数、カプレカ操作などの高度な概念を使って複雑な問題を解いていきます。"
         ]
       }
     }

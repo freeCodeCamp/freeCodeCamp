@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-En lugar de generar un número entero aleatorio entre cero y un número dado como lo hicimos anteriormente, podemos generar un número entero aleatorio que se encuentre dentro de un rango de dos números específicos.
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-Para ello, definiremos un número mínimo `min` y un número máximo `max`.
+You'll call your minimum number `min` and your maximum number `max`.
 
-Esta es la fórmula que utilizaremos. Tómate un momento para leerla e intenta entender lo que este código está haciendo:
+This formula gives a random whole number in the range from `min` to `max`. Tómate un momento para leerla e intenta entender lo que este código está haciendo:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Crea una función llamada `randomRange` que tenga un rango `myMin` y `myMax` y devuelva un número entero aleatorio mayor o igual a `myMin`, y es menor o igual a `myMax`, inclusivo.
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

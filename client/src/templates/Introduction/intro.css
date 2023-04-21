@@ -50,10 +50,6 @@ a.cert-tag:active {
   margin: 0 25px 25px;
 }
 
-.block-grid .challenge-jump-link a:focus:not(:focus-visible) {
-  outline: none;
-}
-
 .block-title-translation-cta {
   white-space: nowrap;
   padding: 0.2em 0.5em;
@@ -255,10 +251,6 @@ button.map-title {
 
 .map-challenges-grid .map-challenge-title a:focus {
   outline-offset: -2px;
-}
-
-.map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {
-  outline: none;
 }
 
 .map-challenges-grid {
