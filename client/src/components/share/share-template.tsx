@@ -17,6 +17,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
       target='_blank'
       rel='noreferrer'
     >
+      <span className='sr-only'>opens in new window</span>
       <span className='sr-only'>{t('share-on-twitter')}</span>
       <FontAwesomeIcon
         icon={faTwitter}
