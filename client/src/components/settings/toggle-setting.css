@@ -86,10 +86,6 @@
   left: -9999px;
 }
 
-.toggle-radio-group input:focus-visible {
-  border: 10px solid blue;
-}
-
 .custom-circle {
   margin-inline-end: 15px;
   position: relative;
