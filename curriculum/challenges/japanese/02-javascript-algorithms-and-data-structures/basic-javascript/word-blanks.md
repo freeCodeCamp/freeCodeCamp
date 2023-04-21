@@ -17,7 +17,7 @@ Consider this sentence:
 It was really ____, and we ____ ourselves ____.
 ```
 
-This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+この文章は形容詞、動詞、副詞の 3 つが空欄になっており、好きな単語を入れて文章を完成させることができます。 そして、次のように完成した文章を変数に代入します。
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -25,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+このチャレンジでは、名詞、動詞、形容詞、副詞が提示されます。 提示された単語と、自分の選んだ言葉を使用して文章を完成させてください。
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+用意された変数 (`myNoun`、`myAdjective`、`myVerb`、`myAdverb`) を使用して新しい文字列を作成するために、文字列連結演算子 `+` を使用する必要があります。 そして、作成した文字列を `wordBlanks` 変数に代入します。 あらかじめ変数に代入されている単語を変更してはいけません。
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+文字列内のスペースにも気を付ける必要があります。最終的な文章ではすべての単語間にスペースが含まれるようにします。 結果が完全な文章になるようにしてください。
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` は文字列である必要があります。
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+`myNoun`、`myVerb`、`myAdjective`、`myAdverb` に割り当てられた値を変更しないでください。
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
+`wordBlanks` を作成するために、`dog`、`ran`、`big`、`quickly` の値を直接使用しないでください。
 
 ```js
 const newCode = removeAssignments(code);
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
+`wordBlanks` には変数の `myNoun`、`myVerb`、`myAdjective`、`myAdverb` に割り当てられた単語がすべて含まれている必要があり、それらの間は単語以外の文字 (および、あなたが追加した単語) で区切られる必要があります。
 
 ```js
 assert(

@@ -1,4 +1,4 @@
-# How to Help with Video Challenges
+# Як допомогти з відеозавданнями
 
 Відеозавдання — це новий вид завдань у навчальній програмі freeCodeCamp.
 
@@ -54,18 +54,18 @@ forumTopicId: 12345
 Номер правильної відповіді повинен бути тут.
 ````
 
-## Creating Questions for Video Challenges
+## Створення запитань для відеозавдань
 
-### Access the Video Challenge Markdown Files
+### Отримання доступу до markdown-файлів відеозавдань
 
-You can find the markdown files for video challenges at the following locations in the curriculum:
+Markdow-файли до відеозавдань можна знайти у наступних локаціях навчальної програми:
 
 - [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
 - [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Pick a challenge markdown file from the options above.
+Оберіть markdown-файл завдання із поданих нижче.
 
 ### Ознайомтеся із відео, пов’язаним із завданням, та створіть запитання із декількома варіантами відповіді
 
@@ -87,9 +87,9 @@ https://www.youtube.com/watch?v=[videoId] (замініть `videoId` у пос�
 
 Перегляньте відео із цим `videoId` та на його основі придумайте запитання із декількома варіантами відповіді.
 
-### Add the Question to the Markdown File
+### Додайте запитання до markdown-файлу
 
-You can add the question locally or using the GitHub interface. Щоб додати запитання локально, вам потрібно [налаштувати freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Ви також можете знайти файл на GitHub та клацнути кнопку редагування, щоб додати запитання прямо у своєму браузері.
+Ви можете додати запитання локально або скориставшись інтерфейсом GitHub. Щоб додати запитання локально, вам потрібно [налаштувати freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Ви також можете знайти файл на GitHub та клацнути кнопку редагування, щоб додати запитання прямо у своєму браузері.
 
 Якщо запитання ще не додано до певного відеозавдання, воно матиме наступне запитання за замовчуванням:
 
@@ -198,6 +198,6 @@ print(height/3)
 
 Більше прикладів ви можете побачити в markdown-файлах даного відеокурсу. Всі завдання вже мають запитання: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open a Pull Request
+## Відкрийте PR
 
 Після створення одного чи більше запитань, ви можете зафіксувати зміни в новій гілці та [відкрити запит на злиття](how-to-open-a-pull-request.md).

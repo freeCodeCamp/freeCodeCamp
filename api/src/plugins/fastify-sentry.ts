@@ -1,19 +1,14 @@
-import { init, captureException } from '@sentry/node';
+import Sentry, { SentryPluginOptions } from '@immobiliarelabs/fastify-sentry';
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-const fastifySentry: FastifyPluginCallback<{ dsn: string }> = (
+const fastifySentry: FastifyPluginCallback<SentryPluginOptions> = async (
   fastify,
-  options,
-  done
+  options
 ) => {
-  init(options);
+  await fastify.register(Sentry, options);
 
-  fastify.setErrorHandler((error, request) => {
-    captureException(error);
-    request.log.error(error);
-  });
-  done();
+  fastify.log.info('Sentry plugin registered');
 };
 
 export default fp(fastifySentry);

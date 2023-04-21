@@ -39,10 +39,6 @@
   background-color: inherit;
 }
 
-.challenge-title-breadcrumbs ol a:focus:not(:focus-visible) {
-  outline: none;
-}
-
 .challenge-title-breadcrumbs ol a:hover {
   background-color: inherit;
   text-decoration: underline;

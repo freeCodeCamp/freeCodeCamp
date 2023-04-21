@@ -1,6 +1,6 @@
 ---
 id: 5900f3811000cf542c50fe94
-title: 'Problem 21: Amicable numbers'
+title: 'Завдання 21: дружні числа'
 challengeType: 1
 forumTopicId: 301851
 dashedName: problem-21-amicable-numbers
@@ -8,13 +8,13 @@ dashedName: problem-21-amicable-numbers
 
 # --description--
 
-Let d(`n`) be defined as the sum of proper divisors of `n` (numbers less than `n` which divide evenly into `n`).
+Визначимо d(`n`) як суму власних дільників числа `n` (числа менші за `n`, які діляться на `n` без остачі).
 
-If d(`a`) = `b` and d(`b`) = `a`, where `a` ≠ `b`, then `a` and `b` are an amicable pair and each of `a` and `b` are called amicable numbers.
+Якщо d(`a`) = `b` й d(`b`) = `a`, де `a` ≠ `b`, тоді `a` та `b` є дружньою парою і кожен з `a` та `b` називаються дружніми числами.
 
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+Наприклад, власними дільниками числа 220 є 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 та 110; тому d(220) = 284. Власними дільниками числа 284 є 1, 2, 4, 71 та 142; отже, d(284) = 220.
 
-Evaluate the sum of all the amicable numbers under `n`.
+Обчисліть суму всіх дружніх чисел, менших за `n`.
 
 # --hints--
 

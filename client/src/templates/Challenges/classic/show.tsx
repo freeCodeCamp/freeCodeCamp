@@ -147,8 +147,9 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
-  disableIframe
-}: Pick<PreviewProps, 'disableIframe'>) => {
+  disableIframe,
+  previewMounted
+}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'>) => {
   return (
     <Preview
       className='full-height'
@@ -204,7 +205,8 @@ function ShowClassic({
   savedChallenges,
   isChallengeCompleted,
   output,
-  executeChallenge
+  executeChallenge,
+  previewMounted
 }: ShowClassicProps) {
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
@@ -263,6 +265,11 @@ function ShowClassic({
 
     store.set(REFLEX_LAYOUT, layout);
   };
+
+  const setHtmlHeight = () => {
+    const vh = String(window.innerHeight - 1);
+    document.documentElement.style.height = vh + 'px';
+  };
   const onResize = () => {
     setResizing(true);
   };
@@ -286,6 +293,9 @@ function ShowClassic({
     document.addEventListener('touchstart', handleContentWidgetEvents, true);
     document.addEventListener('touchmove', handleContentWidgetEvents, true);
     document.addEventListener('touchend', handleContentWidgetEvents, true);
+
+    window.addEventListener('resize', setHtmlHeight);
+    setHtmlHeight();
 
     return () => {
       createFiles([]);
@@ -311,6 +321,7 @@ function ShowClassic({
         true
       );
       document.removeEventListener('touchend', handleContentWidgetEvents, true);
+      window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -425,7 +436,12 @@ function ShowClassic({
               showToolPanel: false
             })}
             notes={<Notes notes={notes} />}
-            preview={<StepPreview disableIframe={resizing} />}
+            preview={
+              <StepPreview
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+              />
+            }
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
@@ -451,7 +467,12 @@ function ShowClassic({
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={<Notes notes={notes} />}
-            preview={<StepPreview disableIframe={resizing} />}
+            preview={
+              <StepPreview
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+              />
+            }
             resizeProps={resizeProps}
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />

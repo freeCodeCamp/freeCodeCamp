@@ -1,4 +1,4 @@
-# How to Help with Video Challenges
+# Como ajudar com os desafios em vídeo
 
 Os desafios em vídeo são um novo tipo de desafio no currículo freeCodeCamp.
 
@@ -54,18 +54,18 @@ Mais respostas
 O número da resposta correta fica aqui.
 ````
 
-## Creating Questions for Video Challenges
+## Criando perguntas para desafios em video
 
-### Access the Video Challenge Markdown Files
+### Acessar os arquivos markdown do desafio em vídeo
 
-You can find the markdown files for video challenges at the following locations in the curriculum:
+Os arquivos markdown dos desafios estão localizadas no currículo em:
 
 - [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
 - [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Pick a challenge markdown file from the options above.
+Escolha um arquivo dentre as opções acima.
 
 ### Explore o vídeo associado ao desafio e crie uma questão de múltipla escolha
 
@@ -87,9 +87,9 @@ No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Assista ao vídeo no YouTube daquele `videoId` e pense em uma questão de múltipla escolha baseada em seu conteúdo.
 
-### Add the Question to the Markdown File
+### Adicione a pergunta ao arquivo markdown
 
-You can add the question locally or using the GitHub interface. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Você também pode encontrar o arquivo no GitHub e clicar no botão editar para adicionar a pergunta diretamente em seu navegador.
+Você pode adicionar a pergunta localmente ou utilizando a interface do Github. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Você também pode encontrar o arquivo no GitHub e clicar no botão editar para adicionar a pergunta diretamente em seu navegador.
 
 Se uma pergunta não tiver sido adicionada a um desafio de vídeo ainda, ela terá a seguinte forma padrão:
 
@@ -198,6 +198,6 @@ print(height/3)
 
 Para mais exemplos, você pode ver os arquivos markdown para o seguinte curso em vídeo. Todos os desafios já possuem perguntas: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open a Pull Request
+## Abrir um pull request
 
 Depois de criar uma ou mais perguntas, você pode confirmar as mudanças em uma nova branch e [abrir um pull request](how-to-open-a-pull-request.md).
