@@ -14,7 +14,7 @@ test('useShare testing', () => {
   const block = 'testBlock';
   const { t } = useTranslation();
 
-  const { redirectURL } = useShare({
+  const redirectURL = useShare({
     superBlock: superBlock,
     block: block
   });

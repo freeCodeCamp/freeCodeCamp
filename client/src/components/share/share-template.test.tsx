@@ -1,18 +1,16 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ShareTemplate } from './share-template';
 
-const handleRedirectToTwitter = jest.fn();
+const redirectURL = 'string';
 
 describe('Share Template Testing', () => {
   beforeEach(() => {
-    render(<ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />);
+    render(<ShareTemplate redirectURL={redirectURL} />);
   });
 
   test('Testing share templete Click Redirect Event', () => {
-    const hasTwitterComponent = screen.getByTitle('twitterIcon');
+    const hasTwitterComponent = screen.getByText('share-on-twitter');
     expect(hasTwitterComponent).toBeInTheDocument();
-    fireEvent.click(hasTwitterComponent);
-    expect(handleRedirectToTwitter).toBeCalledTimes(1);
   });
 });

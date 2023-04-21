@@ -4,9 +4,9 @@ import { ShareProps } from './types';
 import { useShare } from './use-share';
 
 export const Share = ({ superBlock, block }: ShareProps): JSX.Element => {
-  const { handleRedirectToTwitter } = useShare({
+  const redirectURL = useShare({
     superBlock,
     block
   });
-  return <ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />;
+  return <ShareTemplate redirectURL={redirectURL} />;
 };

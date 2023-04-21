@@ -4,6 +4,5 @@ export interface ShareProps {
 }
 
 export interface ShareRedirectProps {
-  handleRedirectToTwitter: () => void;
   redirectURL: string;
 }

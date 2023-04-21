@@ -2,18 +2,20 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type { ShareRedirectProps } from './types';
+import { ShareRedirectProps } from './types';
 
-export const ShareTemplate = ({
-  handleRedirectToTwitter
-}: Pick<ShareRedirectProps, 'handleRedirectToTwitter'>): JSX.Element => {
+export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
+  redirectURL
+}) => {
   const { t } = useTranslation();
   return (
-    <button
+    <a
       title='Share on Twitter'
       data-testid='ShareTemplateWrapperTestID'
       className='btn fade-in'
-      onClick={handleRedirectToTwitter}
+      href={redirectURL}
+      target='_blank'
+      rel='noreferrer'
     >
       <span className='sr-only'>{t('share-on-twitter')}</span>
       <FontAwesomeIcon
@@ -22,6 +24,6 @@ export const ShareTemplate = ({
         aria-label='twitterIcon'
         aria-hidden='true'
       />
-    </button>
+    </a>
   );
 };

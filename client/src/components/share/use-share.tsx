@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ShareProps, ShareRedirectProps } from './types';
+import { ShareProps } from './types';
 
 export const space = '%20';
 export const hastag = '%23';
@@ -9,10 +9,7 @@ export const twitterDomain = 'twitter.com';
 export const freecodecampLearnDomainURL = 'www.freecodecamp.org/learn';
 export const twitterDevelpoerDomainURL = 'https://developer.twitter.com';
 
-export const useShare = ({
-  superBlock,
-  block
-}: ShareProps): ShareRedirectProps => {
+export const useShare = ({ superBlock, block }: ShareProps): string => {
   const { t } = useTranslation();
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${hastag}${block}`;
 
@@ -21,8 +18,5 @@ export const useShare = ({
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
   const redirectURL = `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
-  const handleRedirectToTwitter = () => {
-    window.open(redirectURL, '_blank');
-  };
-  return { handleRedirectToTwitter, redirectURL };
+  return redirectURL;
 };
