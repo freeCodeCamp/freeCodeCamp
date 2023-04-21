@@ -202,15 +202,16 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 A quick reference to the commands that you will need when working.
 
-| command                                                        | description                                                                         |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `pnpm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `pnpm run test-client`                                          | Run the client test suite.                                                          |
-| `pnpm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| command                                                           | description                                                                         |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `pnpm test`                                                       | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `pnpm run test-client`                                            | Run the client test suite.                                                          |
+| `pnpm run test-client -u`                                         | Run the client test suite, updating the Jest snapshots that are out of sync.        |
+| `pnpm run test:curriculum`                                        | Run the curriculum test suite.                                                      |
 | `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                              |
 | `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Test a specific SuperBlock.                                                         |
-| `pnpm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `pnpm run test-server`                                          | Run the server test suite.                                                          |
-| `pnpm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
-| `pnpm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
-| `pnpm run storybook`                                            | Starts Storybook for component library development.                                 |
+| `pnpm run test-curriculum-full-output`                            | Run the curriculum test suite, without bailing after the first error                |
+| `pnpm run test-server`                                            | Run the server test suite.                                                          |
+| `pnpm run e2e`                                                    | Run the Cypress end to end tests.                                                   |
+| `pnpm run clean`                                                  | Uninstalls all dependencies and cleans up caches.                                   |
+| `pnpm run storybook`                                              | Starts Storybook for component library development.                                 |
