@@ -1,6 +1,6 @@
 ---
 id: 6331d2b0b51aeedd1a2bd655
-title: "Solving Systems"
+title: "Resolução de sistemas"
 challengeType: 15
 videoId: CNGUQzXfC6c
 dashedName: solving-systems
@@ -8,35 +8,35 @@ dashedName: solving-systems
 
 # --description--
 
-The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
+O primeiro vídeo mostrará a matemática por trás da resolução de um sistema de duas equações sem gráfico, como você pode fatorar uma equação e como resolver para uma determinada variável.
 
-Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste vídeo.</a>
 
 # --question--
 
 ## --assignment--
 
-Add code to your notebook to solve and graph systems of equations
+Adicione o código ao notebook para resolver e criar os gráficos dos sistemas de equações
 
 ## --text--
 
-Which of the following can SymPy do that matplotlib can't do?
+Qual das seguintes opções o SymPy consegue fazer e o matplotlib não consegue?
 
 ## --answers--
 
-Solve for a variable
+Resolver para uma variável
 
 ---
 
-Display an x-y axis
+Exibir um eixo x-y
 
 ---
 
-Graph an equation or two
+Criar o gráfico de uma ou de duas equações
 
 ---
 
-Show tic marks on the graph
+Mostrar marcas no gráfico
 
 ## --video-solution--
 
