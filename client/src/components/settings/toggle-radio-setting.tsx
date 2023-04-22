@@ -5,7 +5,9 @@ import './toggle-setting.css';
 export type ToggleSettingProps = {
   action: string;
   explain?: string;
+  flag: boolean;
   flagName: string;
+  toggleFlag: () => void;
   offLabel: string;
   onLabel: string;
 };
@@ -13,7 +15,9 @@ export type ToggleSettingProps = {
 export default function ToggleRadioSetting({
   action,
   explain,
+  flag,
   flagName,
+  toggleFlag,
   ...restProps
 }: ToggleSettingProps): JSX.Element {
   const firstRadioId = `radioA${flagName}`;
@@ -41,6 +45,8 @@ export default function ToggleRadioSetting({
             <input
               id={firstRadioId}
               type='radio'
+              {...(flag && { defaultChecked: true })}
+              {...(!flag && { onChange: toggleFlag })}
               name={flagName}
               value='1'
               checked
@@ -50,7 +56,14 @@ export default function ToggleRadioSetting({
           </label>
 
           <label htmlFor={secondRadioId}>
-            <input id={secondRadioId} type='radio' name={flagName} value='2' />{' '}
+            <input
+              id={secondRadioId}
+              type='radio'
+              {...(!flag && { defaultChecked: true })}
+              {...(flag && { onChange: toggleFlag })}
+              name={flagName}
+              value='2'
+            />{' '}
             <span className='custom-circle'></span>
             <span>{restProps.offLabel}</span>
           </label>
