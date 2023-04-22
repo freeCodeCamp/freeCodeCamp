@@ -12,7 +12,7 @@ How many 18-digit numbers $n$ (without leading zeros) are there such that no dig
 
 # --hints--
 
-`numbersWithRepeatedDigits()` should return `227485267000992000`.
+`numbersWithRepeatedDigits()` має повернути `227485267000992000`.
 
 ```js
 assert.strictEqual(numbersWithRepeatedDigits(), 227485267000992000);

@@ -12,7 +12,7 @@ How many triangles are there with integral sides, at least one integral angle (m
 
 # --hints--
 
-`trianglesWithIntegralSidesAndAngle()` should return `416577688`.
+`trianglesWithIntegralSidesAndAngle()` має повернути `416577688`.
 
 ```js
 assert.strictEqual(trianglesWithIntegralSidesAndAngle(), 416577688);

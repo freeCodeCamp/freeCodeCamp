@@ -12,7 +12,7 @@ Find the number of integers $1 &lt; n &lt; {10}^7$, for which $n$ and $n + 1$ ha
 
 # --hints--
 
-`consecutivePositiveDivisors()` should return `986262`.
+`consecutivePositiveDivisors()` має повернути `986262`.
 
 ```js
 assert.strictEqual(consecutivePositiveDivisors(), 986262);

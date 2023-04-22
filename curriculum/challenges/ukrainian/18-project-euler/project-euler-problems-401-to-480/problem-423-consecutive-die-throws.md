@@ -33,7 +33,7 @@ Find $S(50\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`consecutiveDieThrows()` should return `653972374`.
+`consecutiveDieThrows()` має повернути `653972374`.
 
 ```js
 assert.strictEqual(consecutiveDieThrows(), 653972374);

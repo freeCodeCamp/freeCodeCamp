@@ -20,19 +20,19 @@ Find the minimal path sum from the left column to the right column in `matrix`, 
 
 # --hints--
 
-`pathSumThreeWays(testMatrix1)` should return a number.
+`pathSumThreeWays(testMatrix1)` має повернути число.
 
 ```js
 assert(typeof pathSumThreeWays(_testMatrix1) === 'number');
 ```
 
-`pathSumThreeWays(testMatrix1)` should return `994`.
+`pathSumThreeWays(testMatrix1)` має повернути `994`.
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix1), 994);
 ```
 
-`pathSumThreeWays(testMatrix2)` should return `260324`.
+`pathSumThreeWays(testMatrix2)` має повернути `260324`.
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix2), 260324);

@@ -8,7 +8,7 @@ dashedName: understand-own-properties
 
 # --description--
 
-请看下面的实例，`Bird` 构造函数定义了两个属性：`name` 和 `numLegs`：
+请看下面的实例，`Bird` 构造函数定义了两个属性：`name` 和 `numLegs`。
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` 和 `numLegs` 被叫做 <dfn>自身属性</dfn>，因为它们是直接在实例对象上定义的。 这就意味着 `duck` 和 `canary` 这两个对象分别拥有这些属性的独立副本。 事实上，`Bird` 的所有实例都将拥有这些属性的独立副本。 下面的代码将 `duck` 的所有自身属性都存到一个叫作 `ownProps` 的数组里面：
+`name` 和 `numLegs` 被叫作<dfn>自身属性</dfn>，因为它们是直接在实例对象上定义的。 这就意味着 `duck` 和 `canary` 这两个对象分别拥有这些属性的独立副本。 事实上，`Bird` 的所有实例都将拥有这些属性的独立副本。 下面的代码将 `duck` 的所有自身属性都存到一个叫作 `ownProps` 的数组里面：
 
 ```js
 let ownProps = [];

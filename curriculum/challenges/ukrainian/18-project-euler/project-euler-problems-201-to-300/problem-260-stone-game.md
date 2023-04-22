@@ -34,7 +34,7 @@ Find $\sum (x_i + y_i + z_i)$ where ($x_i$,$y_i$,$z_i$) ranges over the losing c
 
 # --hints--
 
-`stoneGame()` should return `167542057`.
+`stoneGame()` має повернути `167542057`.
 
 ```js
 assert.strictEqual(stoneGame(), 167542057);

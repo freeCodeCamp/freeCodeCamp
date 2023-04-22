@@ -12,7 +12,7 @@ How many integers $0 ≤ n &lt; {10}^{18}$ have the property that the sum of the
 
 # --hints--
 
-`digitalSignature()` should return `20444710234716470`.
+`digitalSignature()` має повернути `20444710234716470`.
 
 ```js
 assert.strictEqual(digitalSignature(), 20444710234716470);

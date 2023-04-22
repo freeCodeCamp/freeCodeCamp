@@ -1,10 +1,10 @@
-# Cómo trabajar en una aplicación web de cliente localizada
+# How to Work on Localized Client Webapp
 
-La aplicación web de cliente basada en react que impulsa nuestra plataforma de aprendizaje se construyo utilizando Gatsby. Se traduce a varios idiomas utilizando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
+The React-based client web app that powers our learning platform is built using Gatsby. Se traduce a varios idiomas utilizando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
 
-Puedes obtener más información sobre cómo configurar la aplicación cliente localmente para su desarrollo siguiendo [nuestra guía de configuración local aquí](how-to-setup-freecodecamp-locally.md). Por defecto, la aplicación solo está disponible en inglés.
+Puedes obtener más información sobre cómo configurar la aplicación cliente localmente para su desarrollo siguiendo [nuestra guía de configuración local aquí](how-to-setup-freecodecamp-locally.md). By default, the application is available only in English.
 
-Una vez que hayas configurado el proyecto localmente, deberías poder seguir esta documentación para ejecutar el cliente en el idioma de tu elección de la lista de idiomas disponibles.
+Once you have set up the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 Esto podría ser útil cuando se está trabajando en una función que se dirige específicamente a algo que implica la localización, y requiere que valides, por ejemplo, la etiqueta de un botón en un idioma diferente.
 
@@ -14,7 +14,7 @@ Veamos cómo funcionan los marcos de trabajo y las herramientas de i18n.
 
 ## Estructura de archivos
 
-La mayoría de los archivos para traducir la plataforma se encuentran en la carpeta [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
 
 ```console
   config
@@ -55,11 +55,11 @@ La mayoría de los archivos para traducir la plataforma se encuentran en la carp
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin), some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
 
 **Archivos traducidos en nuestra plataforma de traducción:**
 
-- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
+- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. This file needs to have the same keys in all languages.
 
 - El archivo `intro.json` contiene los pares clave-valor para el texto de introducción en las páginas de certificación.
 
@@ -73,7 +73,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
   Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
-## Probando la app cliente en un idioma mundial
+## Testing the Client App in a World Language
 
 You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
@@ -198,7 +198,7 @@ import { Trans } from 'react-i18next'
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-Puedes colocar la clave dentro de la etiqueta del componente como en el ejemplo de arriba, si el texto contiene etiquetas "simples" sin atributos. `br`, `strong`, `i`, and `p` están por defecto, pero esa lista puede ser extendida en la configuración i18n.
+You can place the key inside the component tags like in the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` están por defecto, pero esa lista puede ser extendida en la configuración i18n.
 
 ### Elementos complejos anidados
 
@@ -264,7 +264,7 @@ El archivo English es la "fuente de la verdad" para todos los archivos `.json` q
 
 Sería bueno mantener la clave en el mismo orden en todos los archivos también. Además, intenta poner todos los signos de puntuación, el espaciado, las comillas, etc. en los archivos JSON y no en los componentes o archivos del servidor.
 
-> [!NOTE] El guion bajo (`_`) es un caracter especial para las claves en los archivos del lado del cliente. Vea  [the documentation](https://www.i18next.com/translation-function/plurals) de como debe ser usado.
+> [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vea  [the documentation](https://www.i18next.com/translation-function/plurals) de como debe ser usado.
 
 ## Documentación útil
 

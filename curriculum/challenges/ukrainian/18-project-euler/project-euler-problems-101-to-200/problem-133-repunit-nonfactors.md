@@ -18,7 +18,7 @@ Find the sum of all the primes below one-hundred thousand that will never be a f
 
 # --hints--
 
-`repunitNonfactors()` should return `453647705`.
+`repunitNonfactors()` має повернути `453647705`.
 
 ```js
 assert.strictEqual(repunitNonfactors(), 453647705);

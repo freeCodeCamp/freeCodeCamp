@@ -43,19 +43,19 @@ How many hands does Player 1 win?
 
 # --hints--
 
-`pokerHands(testArr)` should return a number.
+`pokerHands(testArr)` має повернути число.
 
 ```js
 assert(typeof pokerHands(testArr) === 'number');
 ```
 
-`pokerHands(testArr)` should return 2.
+`pokerHands(testArr)` має повернути 2.
 
 ```js
 assert.strictEqual(pokerHands(testArr), 2);
 ```
 
-`pokerHands(handsArr)` should return 376.
+`pokerHands(handsArr)` має повернути 376.
 
 ```js
 assert.strictEqual(pokerHands(handsArr), 376);

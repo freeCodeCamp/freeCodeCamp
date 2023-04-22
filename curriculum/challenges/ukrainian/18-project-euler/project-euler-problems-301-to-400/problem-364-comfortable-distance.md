@@ -24,7 +24,7 @@ Find $T(1\\,000\\,000)\bmod 100\\,000\\,007$.
 
 # --hints--
 
-`comfortableDistance()` should return `44855254`.
+`comfortableDistance()` має повернути `44855254`.
 
 ```js
 assert.strictEqual(comfortableDistance(), 44855254);

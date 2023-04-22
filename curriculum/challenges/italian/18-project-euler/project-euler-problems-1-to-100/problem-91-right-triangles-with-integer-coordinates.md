@@ -1,6 +1,6 @@
 ---
 id: 5900f3c71000cf542c50feda
-title: 'Problem 91: Right triangles with integer coordinates'
+title: 'Problema 91: triangoli rettangoli con coordinate intere'
 challengeType: 1
 forumTopicId: 302208
 dashedName: problem-91-right-triangles-with-integer-coordinates
@@ -8,43 +8,43 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 # --description--
 
-The points ${P}(x_1, y_1)$ and ${Q}(x_2, y_2)$ are plotted at integer co-ordinates and are joined to the origin, ${O}(0, 0)$, to form ${\Delta}OPQ$.
+I punti ${P}(x_1, y_1)$ e ${Q}(x_2, y_2)$ sono tracciati con coordinate intere e sono uniti all'origine, ${O}(0, 0)$, per formare ${\Delta}OPQ$.
 
-<img class="img-responsive center-block" alt="a graph plotting points P (x_1, y_1) and Q(x_2, y_2) at integer coordinates that are joined to the origin O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un grafico con punti P (x_1, y_1) e Q(x_2, y_2) di coordinate intere unite all'origine O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
 
-There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between 0 and 2 inclusive; that is, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
+Ci sono esattamente quattordici triangoli aventi un angolo retto che possono essere formati con coordinate comprese tra 0 e 2 inclusi; cioè, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
-<img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un diagramma che mostra i 14 triangoli contenenti un angolo retto che possono essere formati quando ciascuna coordinata è compresa tra 0 e 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
 
-Given that $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, how many right triangles can be formed?
+Dato che $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, quanti triangoli rettangoli possono essere formati?
 
 # --hints--
 
-`rightTrianglesIntCoords(2)` should return a number.
+`rightTrianglesIntCoords(2)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof rightTrianglesIntCoords(2) === 'number');
 ```
 
-`rightTrianglesIntCoords(2)` should return `14`.
+`rightTrianglesIntCoords(2)` dovrebbe restituire `14`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(2), 14);
 ```
 
-`rightTrianglesIntCoords(10)` should return `448`.
+`rightTrianglesIntCoords(10)` dovrebbe restituire `448`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(10), 448);
 ```
 
-`rightTrianglesIntCoords(25)` should return `3207`.
+`rightTrianglesIntCoords(25)` dovrebbe restituire `3207`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(25), 3207);
 ```
 
-`rightTrianglesIntCoords(50)` should return `14234`.
+`rightTrianglesIntCoords(50)` dovrebbe restituire `14234`.
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(50), 14234);

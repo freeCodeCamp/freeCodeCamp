@@ -1,6 +1,6 @@
 ---
 id: 6363d23a9078df117ce4c3ff
-title: "Applications of Linear Systems: Extra"
+title: "線性方程組的應用：補充"
 challengeType: 15
 videoId: ZtypoUnNdAY
 dashedName: applications-of-linear-systems-extra
@@ -8,29 +8,29 @@ dashedName: applications-of-linear-systems-extra
 
 # --description--
 
-The next video contains more examples of how to set up equations and use your Colab notebook to solve them.
+下一個視頻包含了更多關於如何設置方程和使用 Colab 筆記本來解決這些問題的例子。
 
 # --question--
 
 ## --text--
 
-How can you make use of a Colab notebook to solve practical business problems?
+你如何利用 Colab 筆記本來解決實際業務問題？
 
 ## --answers--
 
-Modify the equations in the code you already wrote
+修改你已經寫好的代碼中的方程式
 
 ---
 
-Copy your existing code and then modify it as necessary
+複製你現有的代碼，然後根據需要修改它
 
 ---
 
-Write new code based on the functions you already know
+在你已經知道的功能基礎上編寫新的代碼
 
 ---
 
-All of the above
+以上都是
 
 ## --video-solution--
 

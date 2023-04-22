@@ -142,10 +142,10 @@ textarea.inputarea {
 
 .test-feedback .test-status,
 .test-feedback .hint-status {
-  margin-top: 1rem;
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
+  margin-top: 1rem;
 }
 
 .test-status-description,
@@ -185,4 +185,21 @@ textarea.inputarea {
 
 .lower-jaw-icon-bar > button:last-child {
   margin-inline-end: 0;
+}
+
+.progress-bar-container {
+  text-align: center;
+}
+
+.editor-lower-jaw .progress-bar-wrap-container {
+  width: 100% !important;
+  margin: 32px 0px;
+}
+
+.editor-lower-jaw .progress-bar-background-container {
+  width: 100% !important;
+}
+
+.hint-status {
+  margin-bottom: 18px;
 }

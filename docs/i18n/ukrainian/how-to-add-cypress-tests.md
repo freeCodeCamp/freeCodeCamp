@@ -20,7 +20,7 @@
 
 - [Запустіть клієнтський додаток freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Запустіть тести cypress
+### 2. Запустіть тести Cypress
 
 Щоб запустити тести кінцевої збірки, замініть `dev` на `prd` нижче.
 
@@ -39,7 +39,7 @@
   Наприклад:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
@@ -54,8 +54,8 @@
 
 Якщо запуск середовища GitPod не розробив середовище автоматично:
 
-- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
-- Create a config file.
+- Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
+- Створіть конфігураційний файл.
 
 ```console
 pnpm run create:config

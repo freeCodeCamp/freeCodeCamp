@@ -20,31 +20,31 @@ How many different ways can `n` pence be made using any number of coins?
 
 # --hints--
 
-`coinSums(50)` should return a number.
+`coinSums(50)` має повернути число.
 
 ```js
 assert(typeof coinSums(50) === 'number');
 ```
 
-`coinSums(50)` should return 451.
+`coinSums(50)` має повернути 451.
 
 ```js
 assert(coinSums(50) == 451);
 ```
 
-`coinSums(100)` should return 4563.
+`coinSums(100)` має повернути 4563.
 
 ```js
 assert(coinSums(100) == 4563);
 ```
 
-`coinSums(150)` should return 21873.
+`coinSums(150)` має повернути 21873.
 
 ```js
 assert(coinSums(150) == 21873);
 ```
 
-`coinSums(200)` should return 73682.
+`coinSums(200)` має повернути 73682.
 
 ```js
 assert(coinSums(200) == 73682);

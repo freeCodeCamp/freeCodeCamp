@@ -16,31 +16,31 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
 # --hints--
 
-`truncatablePrimes(8)` should return a number.
+`truncatablePrimes(8)` має повернути число.
 
 ```js
 assert(typeof truncatablePrimes(8) === 'number');
 ```
 
-`truncatablePrimes(8)` should return 1986.
+`truncatablePrimes(8)` має повернути 1986.
 
 ```js
 assert(truncatablePrimes(8) == 1986);
 ```
 
-`truncatablePrimes(9)` should return 5123.
+`truncatablePrimes(9)` має повернути 5123.
 
 ```js
 assert(truncatablePrimes(9) == 5123);
 ```
 
-`truncatablePrimes(10)` should return 8920.
+`truncatablePrimes(10)` має повернути 8920.
 
 ```js
 assert(truncatablePrimes(10) == 8920);
 ```
 
-`truncatablePrimes(11)` should return 748317.
+`truncatablePrimes(11)` має повернути 748317.
 
 ```js
 assert(truncatablePrimes(11) == 748317);

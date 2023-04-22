@@ -18,7 +18,7 @@ In the good old days, this was what you needed to do if you wanted to edit a doc
 
 # --hints--
 
-Find-edit-update an item should succeed
+Das Suchen-Bearbeiten-Aktualisieren eines Artikels sollte funktionieren
 
 ```js
 (getUserInput) =>

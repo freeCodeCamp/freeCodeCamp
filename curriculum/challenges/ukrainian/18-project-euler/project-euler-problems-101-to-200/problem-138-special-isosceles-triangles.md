@@ -20,7 +20,7 @@ Find $\sum{L}$ for the twelve smallest isosceles triangles for which $h = b ± 1
 
 # --hints--
 
-`isoscelesTriangles()` should return `1118049290473932`.
+`isoscelesTriangles()` має повернути `1118049290473932`.
 
 ```js
 assert.strictEqual(isoscelesTriangles(), 1118049290473932);

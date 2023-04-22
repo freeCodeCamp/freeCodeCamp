@@ -14,7 +14,7 @@ How many barely acute triangles are there with perimeter $≤ 25\\,000\\,000$?
 
 # --hints--
 
-`almostRightAngledTrianglesOne()` should return `61614848`.
+`almostRightAngledTrianglesOne()` має повернути `61614848`.
 
 ```js
 assert.strictEqual(almostRightAngledTrianglesOne(), 61614848);

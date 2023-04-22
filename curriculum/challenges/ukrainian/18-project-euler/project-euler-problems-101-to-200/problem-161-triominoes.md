@@ -26,7 +26,7 @@ In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
 
 # --hints--
 
-`triominoes()` should return `20574308184277972`.
+`triominoes()` має повернути `20574308184277972`.
 
 ```js
 assert.strictEqual(triominoes(), 20574308184277972);

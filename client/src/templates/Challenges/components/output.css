@@ -14,10 +14,12 @@ pre.output-text code {
   padding: 2px 4px;
 }
 
-.output-text:focus {
+.output-text:focus-visible {
   outline-offset: -2px;
 }
 
-.output-text:focus:not(:focus-visible) {
-  outline: none;
+@supports not selector(:focus-visible) {
+  .output-text:focus {
+    outline-offset: -2px;
+  }
 }

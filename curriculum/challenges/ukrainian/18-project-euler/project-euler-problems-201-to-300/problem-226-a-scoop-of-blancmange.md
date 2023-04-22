@@ -20,7 +20,7 @@ What area under the blancmange curve is enclosed by $C$? Give your answer rounde
 
 # --hints--
 
-`scoopOfBlancmange()` should return `0.11316017`.
+`scoopOfBlancmange()` має повернути `0.11316017`.
 
 ```js
 assert.strictEqual(scoopOfBlancmange(), 0.11316017);

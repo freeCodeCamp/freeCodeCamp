@@ -16,7 +16,7 @@ Find $\sum{S}$ for every pair of consecutive primes with $5 ≤ p_1 ≤ 1000000$
 
 # --hints--
 
-`primePairConnection()` should return `18613426663617120`.
+`primePairConnection()` має повернути `18613426663617120`.
 
 ```js
 assert.strictEqual(primePairConnection(), 18613426663617120);

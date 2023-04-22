@@ -20,7 +20,7 @@ Find the number of losing positions for the next player if $0 ≤ a ≤ b ≤ c 
 
 # --hints--
 
-`nimSquare()` should return `2586528661783`.
+`nimSquare()` має повернути `2586528661783`.
 
 ```js
 assert.strictEqual(nimSquare(), 2586528661783);

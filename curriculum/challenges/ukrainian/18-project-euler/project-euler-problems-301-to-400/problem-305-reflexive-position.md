@@ -20,7 +20,7 @@ Find $\sum f(3^k) for 1 ≤ k ≤ 13$.
 
 # --hints--
 
-`reflexivePosition()` should return `18174995535140`.
+`reflexivePosition()` має повернути `18174995535140`.
 
 ```js
 assert.strictEqual(reflexivePosition(), 18174995535140);

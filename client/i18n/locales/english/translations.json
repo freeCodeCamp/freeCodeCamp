@@ -114,6 +114,7 @@
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -309,7 +310,8 @@
       "console": "Console",
       "instructions": "Instructions",
       "notes": "Notes",
-      "preview": "Preview"
+      "preview": "Preview",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -747,7 +749,7 @@
   "forum-help": {
     "browser-info": "**Your browser information:**",
     "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**Link to the challenge:**",
     "whats-happening": "**Tell us what's happening:**",
     "describe": "Describe your issue in detail here.",

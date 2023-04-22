@@ -20,7 +20,7 @@ Find $\sum b(n)$ for $1≤n≤100\\,000$. Give your answer $\bmod 1\\,234\\,567\
 
 # --hints--
 
-`primonacci()` should return `283988410192`.
+`primonacci()` має повернути `283988410192`.
 
 ```js
 assert.strictEqual(primonacci(), 283988410192);

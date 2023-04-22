@@ -24,7 +24,7 @@ Find $B(10\\,000\\,000\\,000)$.
 
 # --hints--
 
-`biclinicIntegralQuadrilaterals()` should return `2466018557`.
+`biclinicIntegralQuadrilaterals()` має повернути `2466018557`.
 
 ```js
 assert.strictEqual(biclinicIntegralQuadrilaterals(), 2466018557);

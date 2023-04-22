@@ -1,6 +1,6 @@
 ---
 id: 6331d2a9b51aeedd1a2bd654
-title: "Solving Systems of Equations: Extra"
+title: "Розв’язок систем рівнянь: додатково"
 challengeType: 15
 videoId: 856p7t2V9NY
 dashedName: solving-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: solving-systems-of-equations-extra
 
 # --description--
 
-This video will show you one way to create a calculator that solves and graphs. It will also show you how to zoom in or zoom out on the graph and write the code to build that feature.
+У цьому відео показано один зі способів створення калькулятора, який виконує розв’язок та будує графік. Ви також побачите, як зменшити/збільшити масштаб графіку та як написати код для цієї функціональності.
 
-Here is the <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a> This will give you an example of what your notebook could look like so far, as you have some functions in there and create headings for the next few functions.
+Ось <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Це приклад того, яким повинен бути ваш блокнот наразі, оскільки у вас вже є декілька функцій та ви створили пару заголовків.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true?
+Яке з тверджень неправильне?
 
 ## --answers--
 
-When graphing, you can adjust your tic marks on each axis
+При побудові графіку ви можете корегувати свої позначки на кожній осі
 
 ---
 
-The `nonlinsolve()` function can solve linear equations
+Функція `nonlinsolve()` може розв’язувати лінійні рівняння
 
 ---
 
-The `linsolve()` function can solve nonlinear equations
+Функція `linsolve()` може розв’язувати нелінійні рівняння
 
 ---
 
-To zoom in or out on a graph, an interactive slider is useful
+Інтерактивний повзунок корисний, щоб зменшити/збільшити масштаб графіка
 
 ## --video-solution--
 

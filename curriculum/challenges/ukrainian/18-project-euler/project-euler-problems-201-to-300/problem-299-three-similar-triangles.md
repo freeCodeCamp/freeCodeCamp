@@ -30,7 +30,7 @@ If $b + d &lt; 100\\,000\\,000$, how many distinct triplets ($a$, $b$, $d$) are 
 
 # --hints--
 
-`threeSimilarTriangles()` should return `549936643`.
+`threeSimilarTriangles()` має повернути `549936643`.
 
 ```js
 assert.strictEqual(threeSimilarTriangles(), 549936643);

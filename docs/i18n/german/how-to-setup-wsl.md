@@ -117,17 +117,17 @@ Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 npm install -g pnpm
 ```
 
-## FreeCodeCamp lokal einrichten
+## Set up freeCodeCamp Locally
 
-Nachdem du nun die Voraussetzungen erfüllt hast, folge [unserem Leitfaden zur lokalen Einrichtung](how-to-setup-freecodecamp-locally.md), um freeCodeCamp zu klonen, zu installieren und lokal auf deinem Rechner einzurichten.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> Bitte beachte, dass die Einrichtung der Cypress-Tests (und die damit verbundenen Anforderungen an die Benutzeroberfläche) derzeit noch nicht abgeschlossen ist. Du solltest immer noch in der Lage sein, an den meisten Teilen der Codebasis zu arbeiten.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. Du solltest immer noch in der Lage sein, an den meisten Teilen der Codebasis zu arbeiten.
 
 ## Nützliche Links
 
-- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Staff Developer bei freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Häufig gestellte Fragen zu:
   - [Windows Subsystem für Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop für Windows](https://docs.docker.com/docker-for-windows/faqs)

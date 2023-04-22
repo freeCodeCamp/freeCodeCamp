@@ -8,10 +8,10 @@ dashedName: problem-103-special-subset-sums-optimum
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Sia $S(A)$ la somma degli elementi in un insieme A di dimensione n. Lo chiamiamo un insieme di somma speciale se per ogni due sottoinsiemi non vuoti e distinti, B e C, le seguenti proprietà sono vere:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$, cioè le somme dei sottoinsiemi non possono essere uguali.
+2. Se B contiene più elementi di C allora $S(B) > S(C)$.
 
 If $S(A)$ is minimised for a given n, we shall call it an optimum special sum set. The first five optimum special sum sets are given below.
 

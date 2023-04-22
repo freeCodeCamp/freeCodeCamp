@@ -17,7 +17,7 @@ Find $g_k$ mod 20092010 for $k = {10}^{18}$.
 
 # --hints--
 
-`laggedFibonacciSequence()` should return `12747994`.
+`laggedFibonacciSequence()` має повернути `12747994`.
 
 ```js
 assert.strictEqual(laggedFibonacciSequence(), 12747994);

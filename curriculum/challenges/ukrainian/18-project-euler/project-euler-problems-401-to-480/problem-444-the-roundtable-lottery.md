@@ -29,13 +29,13 @@ Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation
 
 # --hints--
 
-`roundtableLottery()` should return a string.
+`roundtableLottery()` має повернути рядок.
 
 ```js
 assert(typeof roundtableLottery() === 'string');
 ```
 
-`roundtableLottery()` should return the string `1.200856722e263`.
+`roundtableLottery()` має повернути рядок `1.200856722e263`.
 
 ```js
 assert.strictEqual(roundtableLottery(), '1.200856722e263');

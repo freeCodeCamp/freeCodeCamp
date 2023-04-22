@@ -18,7 +18,7 @@ How many values of $n$ less than one million have exactly ten distinct solutions
 
 # --hints--
 
-`sameDifferences()` should return `4989`.
+`sameDifferences()` має повернути `4989`.
 
 ```js
 assert.strictEqual(sameDifferences(), 4989);

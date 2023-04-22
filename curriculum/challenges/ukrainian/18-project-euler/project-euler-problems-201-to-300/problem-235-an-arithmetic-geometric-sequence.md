@@ -18,7 +18,7 @@ Give your answer rounded to 12 places behind the decimal point.
 
 # --hints--
 
-`arithmeticGeometricSequence()` should return `1.002322108633`.
+`arithmeticGeometricSequence()` має повернути `1.002322108633`.
 
 ```js
 assert.strictEqual(arithmeticGeometricSequence(), 1.002322108633);

@@ -29,7 +29,7 @@ Find $F({10}^7)$.
 
 # --hints--
 
-`positiveIntegerMatrix()` should return `145159332`.
+`positiveIntegerMatrix()` має повернути `145159332`.
 
 ```js
 assert.strictEqual(positiveIntegerMatrix(), 145159332);

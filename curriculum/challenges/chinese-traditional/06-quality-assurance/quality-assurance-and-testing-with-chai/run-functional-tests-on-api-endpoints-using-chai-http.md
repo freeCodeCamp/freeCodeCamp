@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -34,6 +35,10 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
 第一個 `assert.equal` 檢查狀態是否爲 `200`。 第二個 `assert.equal` 檢查響應字符串（`res.text`）是否爲 `"hello John"`。
 
 同時，請注意測試的回調函數中的 `done` 參數。 在測試結束時，調用它且不帶參數，是發出異步操作完成所必需的信號。
+
+最後，請注意 `request` 方法後面的 `keepOpen` 方法。 通常，你會從命令行中運行你的測試，或者作爲自動集成過程的一部分，你可以讓 `chai-http` 自動啓動和停止你的服務器。
+
+然而，當你提交項目鏈接時運行的測試需要你的服務器是正常的，所以你需要使用 `keepOpen` 方法來防止 `chai-http` 停止你的服務器。
 
 # --instructions--
 
@@ -57,7 +62,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-應該測試 `res.status` 爲 200。
+你應該測試 `res.status` == 200。
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-應該測試 `res.text` == `'hello Guest'`。
+你應該測試 `res.text` == `'hello Guest'`。
 
 ```js
 (getUserInput) =>

@@ -61,17 +61,27 @@ const standardErrorMessage = {
   message: 'flash.wrong-updating'
 };
 
-const standardSuccessMessage = {
-  type: 'success',
-  message: 'flash.updated-preferences'
-};
-
-const createStandardHandler = (req, res, next) => err => {
+const createStandardHandler = (req, res, next, alertMessage) => err => {
   if (err) {
     res.status(500).json(standardErrorMessage);
     return next(err);
   }
-  return res.status(200).json(standardSuccessMessage);
+  return res.status(200).json({ type: 'success', message: alertMessage });
+};
+
+const createUpdateUserProperties = (buildUpdate, validate, successMessage) => {
+  return (req, res, next) => {
+    const { user, body } = req;
+    const update = buildUpdate(body);
+    if (validate(update)) {
+      user.updateAttributes(
+        update,
+        createStandardHandler(req, res, next, successMessage)
+      );
+    } else {
+      handleInvalidUpdate(res);
+    }
+  };
 };
 
 const updateMyEmailValidators = [
@@ -123,9 +133,14 @@ function updateMyPortfolio(...args) {
   const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);
   const isPortfolioElement = elem =>
     Object.values(elem).every(val => typeof val == 'string');
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.portfolio-item-updated'
+  )(...args);
 }
 
+// This API is reponsible for what campers decide to make public in their porfoile, and what is private.
 function updateMyProfileUI(req, res, next) {
   const {
     user,
@@ -134,7 +149,7 @@ function updateMyProfileUI(req, res, next) {
   user.updateAttribute(
     'profileUI',
     profileUI,
-    createStandardHandler(req, res, next)
+    createStandardHandler(req, res, next, 'flash.privacy-updated')
   );
 }
 
@@ -148,7 +163,10 @@ function updateMyAbout(req, res, next) {
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
-  return user.updateAttributes(update, createStandardHandler(req, res, next));
+  return user.updateAttributes(
+    update,
+    createStandardHandler(req, res, next, 'flash.updated-about-me')
+  );
 }
 
 function createUpdateMyUsername(app) {
@@ -210,13 +228,10 @@ const updatePrivacyTerms = (req, res, next) => {
     acceptedPrivacyTerms: true,
     sendQuincyEmail: !!quincyEmails
   };
-  return user.updateAttributes(update, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res.status(200).json(standardSuccessMessage);
-  });
+  return user.updateAttributes(
+    update,
+    createStandardHandler(req, res, next, 'flash.privacy-updated')
+  );
 };
 
 function updateMySocials(...args) {
@@ -224,51 +239,63 @@ function updateMySocials(...args) {
     _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
   const validate = update =>
     Object.values(update).every(x => typeof x === 'string');
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-socials'
+  )(...args);
 }
 
 function updateMyTheme(...args) {
   const buildUpdate = body => _.pick(body, 'theme');
   const validate = ({ theme }) => theme == 'default' || theme == 'night';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-themes'
+  )(...args);
 }
 
 function updateMySound(...args) {
   const buildUpdate = body => _.pick(body, 'sound');
   const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-sound'
+  )(...args);
 }
 
 function updateMyKeyboardShortcuts(...args) {
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
     typeof keyboardShortcuts === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.keyboard-shortcut-updated'
+  )(...args);
 }
 
 function updateMyHonesty(...args) {
   const buildUpdate = body => _.pick(body, 'isHonest');
   const validate = ({ isHonest }) => isHonest === true;
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'buttons.accepted-honesty'
+  )(...args);
 }
 
 function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
-}
-
-function createUpdateUserProperties(buildUpdate, validate) {
-  return (req, res, next) => {
-    const { user, body } = req;
-    const update = buildUpdate(body);
-    if (validate(update)) {
-      user.updateAttributes(update, createStandardHandler(req, res, next));
-    } else {
-      handleInvalidUpdate(res);
-    }
-  };
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.subscribe-to-quincy-updated'
+  )(...args);
 }
 
 function handleInvalidUpdate(res) {
@@ -291,7 +318,10 @@ function updateUserFlag(req, res, next) {
     'website'
   ];
   if (Object.keys(update).every(key => allowedKeys.includes(key))) {
-    return user.updateAttributes(update, createStandardHandler(req, res, next));
+    return user.updateAttributes(
+      update,
+      createStandardHandler(req, res, next, 'flash.updated-socials')
+    );
   }
   return res.status(403).json({
     type: 'danger',

@@ -32,7 +32,7 @@ Find the positions for $N = 400$. Give as your answer the area occupied by the r
 
 # --hints--
 
-`enmeshedUnitCircle()` should return `3.1486734435`.
+`enmeshedUnitCircle()` має повернути `3.1486734435`.
 
 ```js
 assert.strictEqual(enmeshedUnitCircle(), 3.1486734435);

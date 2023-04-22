@@ -1,7 +1,8 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';

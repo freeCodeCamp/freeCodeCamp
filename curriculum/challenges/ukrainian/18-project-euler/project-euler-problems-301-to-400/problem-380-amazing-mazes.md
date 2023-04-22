@@ -22,13 +22,13 @@ When giving your answer, use a lowercase e to separate mantissa and exponent. E.
 
 # --hints--
 
-`amazingMazes()` should return a string.
+`amazingMazes()` має повернути рядок.
 
 ```js
 assert(typeof amazingMazes() === 'string');
 ```
 
-`amazingMazes()` should return the string `6.3202e25093`.
+`amazingMazes()` має повернути рядок `6.3202e25093`.
 
 ```js
 assert.strictEqual(amazingMazes(), '6.3202e25093');

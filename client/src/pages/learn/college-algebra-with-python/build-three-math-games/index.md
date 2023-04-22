@@ -1,7 +1,7 @@
 ---
 title: Introduction to Build Three Math Games
-block: Build Three Math Games
-superBlock: College Algebra with Python
+block: build-three-math-games
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Build Three Math Games

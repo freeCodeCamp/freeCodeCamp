@@ -6,7 +6,7 @@ Alguns dos fluxos de trabalho de contribuição — como a correção de erros n
 
 Comece instalando o software pré-requisito para seu sistema operacional.
 
-#### Pré-requisitos:
+#### Pré-requisitos
 
 | Pré-requisito                   | Versão | Observações                                  |
 | ------------------------------- | ------ | -------------------------------------------- |
@@ -174,7 +174,7 @@ flutter run
 
 ## Fazer alterações localmente
 
-Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no seu clone local do seu fork.
+Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no clone local do seu fork.
 
 Siga estes passos:
 

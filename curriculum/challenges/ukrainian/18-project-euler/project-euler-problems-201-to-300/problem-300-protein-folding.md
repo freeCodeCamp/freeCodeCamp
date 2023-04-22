@@ -30,7 +30,7 @@ What is the average number of H-H contact points in an optimal folding of a rand
 
 # --hints--
 
-`proteinFolding()` should return `8.0540771484375`.
+`proteinFolding()` має повернути `8.0540771484375`.
 
 ```js
 assert.strictEqual(proteinFolding(), 8.0540771484375);

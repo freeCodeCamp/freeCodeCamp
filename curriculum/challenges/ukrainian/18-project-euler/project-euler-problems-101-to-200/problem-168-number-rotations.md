@@ -18,13 +18,13 @@ For integer number of digits $a$ and $b$, find the last 5 digits of the sum of a
 
 # --hints--
 
-`numberRotations(2, 10)` should return `98311`.
+`numberRotations(2, 10)` має повернути `98311`.
 
 ```js
 assert.strictEqual(numberRotations(2, 10), 98311);
 ```
 
-`numberRotations(2, 100)` should return `59206`.
+`numberRotations(2, 100)` має повернути `59206`.
 
 ```js
 assert.strictEqual(numberRotations(2, 100), 59206);

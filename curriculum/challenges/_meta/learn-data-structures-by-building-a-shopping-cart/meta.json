@@ -1,0 +1,256 @@
+{
+  "name": "Learn Data Structures By Building A Shopping Cart",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-data-structures-by-building-a-shopping-cart",
+  "order": 13,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "63ec14d1c216aa063f0be4af",
+      "Step 1"
+    ],
+    [
+      "63ec19978a066607e23439f8",
+      "Step 2"
+    ],
+    [
+      "63ec1a16f930b108b8a76806",
+      "Step 3"
+    ],
+    [
+      "63ec1bbf5584390a7d08d41f",
+      "Step 4"
+    ],
+    [
+      "63ec1cb59f2a4c0be5b6dfa0",
+      "Step 5"
+    ],
+    [
+      "63ec20a06fff670d37befbd9",
+      "Step 6"
+    ],
+    [
+      "63ec3287b182ec0efe8a3135",
+      "Step 7"
+    ],
+    [
+      "63ec3427fc3e9214c9ed2a14",
+      "Step 8"
+    ],
+    [
+      "63ec36f6133df7160be3ec66",
+      "Step 9"
+    ],
+    [
+      "63ec47b454495519739486a7",
+      "Step 10"
+    ],
+    [
+      "63ee5d38a5d29d0696f8d820",
+      "Step 11"
+    ],
+    [
+      "63ee5d8f9e7168076e932fe2",
+      "Step 12"
+    ],
+    [
+      "63ee5e0f08e82208364c4128",
+      "Step 13"
+    ],
+    [
+      "63ee5ea8be892e0955ab346c",
+      "Step 14"
+    ],
+    [
+      "63ee5fc113bcb20a5db9214b",
+      "Step 15"
+    ],
+    [
+      "63ee611d478dca0b77f6a393",
+      "Step 16"
+    ],
+    [
+      "63ee7c664f9b65137d925c8a",
+      "Step 17"
+    ],
+    [
+      "63eea5cea403a81a68ae493c",
+      "Step 18"
+    ],
+    [
+      "63eea817673c8e1c22927fa6",
+      "Step 19"
+    ],
+    [
+      "63eea8e1e143ae1d098c8c9d",
+      "Step 20"
+    ],
+    [
+      "63eeb8e86becbf1e75c2cb0d",
+      "Step 21"
+    ],
+    [
+      "63eedebb0ec0231ff1cede1a",
+      "Step 22"
+    ],
+    [
+      "63efdbc22a0c56070beabed7",
+      "Step 23"
+    ],
+    [
+      "63efe370bbfc4a08d500118e",
+      "Step 24"
+    ],
+    [
+      "63eff02f00e69a0b2ac10b43",
+      "Step 25"
+    ],
+    [
+      "63eff98ffb1d5a0d24ec79cb",
+      "Step 26"
+    ],
+    [
+      "63effe558c87a70e7072e447",
+      "Step 27"
+    ],
+    [
+      "63f0165121a9181342d5bc66",
+      "Step 28"
+    ],
+    [
+      "63f017b4ad028a148eb713c0",
+      "Step 29"
+    ],
+    [
+      "63f01861f813e01564c95315",
+      "Step 30"
+    ],
+    [
+      "63f018f04e487e164dc27bd9",
+      "Step 31"
+    ],
+    [
+      "63f01c9791a0aa1751c73760",
+      "Step 32"
+    ],
+    [
+      "63f0224ceb16dc196d2c860a",
+      "Step 33"
+    ],
+    [
+      "63f026d041bc6c1a3d5cba0f",
+      "Step 34"
+    ],
+    [
+      "63f0284532742c1b26c7a052",
+      "Step 35"
+    ],
+    [
+      "63f0289df84a581bbdbd29b7",
+      "Step 36"
+    ],
+    [
+      "63f033fdb1fbcc254999fcc3",
+      "Step 37"
+    ],
+    [
+      "63f03446c2ed3e264be6c7fc",
+      "Step 38"
+    ],
+    [
+      "63f0348a54a177272071a595",
+      "Step 39"
+    ],
+    [
+      "63f034d012f74627ce538d3a",
+      "Step 40"
+    ],
+    [
+      "63f0295e673b661ccb299e8a",
+      "Step 41"
+    ],
+    [
+      "63f029b96b9e9e1df93be951",
+      "Step 42"
+    ],
+    [
+      "63f02a4ef92d711ec1ff618c",
+      "Step 43"
+    ],
+    [
+      "63f02b22cce1c11fe9604381",
+      "Step 44"
+    ],
+    [
+      "63f02bdeb9b428208b97eb6b",
+      "Step 45"
+    ],
+    [
+      "63f02c6e18773921ba50aa53",
+      "Step 46"
+    ],
+    [
+      "63f0311f5ea9382388d6124f",
+      "Step 47"
+    ],
+    [
+      "63f03686c5ea863533ec71f4",
+      "Step 48"
+    ],
+    [
+      "63f036ec91fdf238c90665f5",
+      "Step 49"
+    ],
+    [
+      "63f0370b340915399d31e5eb",
+      "Step 50"
+    ],
+    [
+      "63f0374d5351223a747c301d",
+      "Step 51"
+    ],
+    [
+      "63f0378e173e3c3b7638b528",
+      "Step 52"
+    ],
+    [
+      "63f6721d5110af243ef8f3d9",
+      "Step 53"
+    ],
+    [
+      "63f038a0ae041d3c5b0cdf23",
+      "Step 54"
+    ],
+    [
+      "63f038e671d3f73d5a041973",
+      "Step 55"
+    ],
+    [
+      "63f039dbcef7673e4e758fa3",
+      "Step 56"
+    ],
+    [
+      "63f03a7143a6ef3f7f3344f0",
+      "Step 57"
+    ],
+    [
+      "63f03ac2b428b2404a5a7518",
+      "Step 58"
+    ],
+    [
+      "63f03af535682e4138fdb915",
+      "Step 59"
+    ],
+    [
+      "63f03b1ed5ab15420c057463",
+      "Step 60"
+    ]
+  ]
+}
