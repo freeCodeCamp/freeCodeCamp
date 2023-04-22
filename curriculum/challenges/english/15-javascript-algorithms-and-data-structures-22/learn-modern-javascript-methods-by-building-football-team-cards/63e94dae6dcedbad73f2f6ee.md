@@ -23,7 +23,7 @@ Inside the parameter list in the callback function for the `map` method, list ou
 
 # --hints--
 
-You will need to add all five object properties from the `arr` using object destructuring.
+You should unpack all 5 object properties from objects in `arr` using object destructuring.
 
 ```js
 
