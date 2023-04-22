@@ -146,7 +146,7 @@
     "@types/chai": "^4.3.4",
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.6",
-    "@types/jest": "29.5.0",
+    "@types/jest": "29.5.1",
     "@types/jquery": "^3.5.16",
     "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "^4.17.6",
