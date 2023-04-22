@@ -12,10 +12,6 @@
   contain: none !important;
 }
 
-.editor-upper-jaw {
-  pointer-events: none;
-}
-
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
