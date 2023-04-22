@@ -1,14 +1,17 @@
 import React from 'react';
-import './reset.css';
+
+const wrapper = {
+  display: 'flex',
+  alignItems: 'center'
+} as React.CSSProperties;
 
 function Reset(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
     <>
-      <div className='wrapper-reset'>
+      <div style={wrapper}>
         <svg
-          className='svg-reset'
           fill='currentColor'
           xmlns='http://www.w3.org/2000/svg'
           height='24'
