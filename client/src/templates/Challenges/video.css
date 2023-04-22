@@ -72,6 +72,11 @@
   border-bottom: 4px solid var(--tertiary-background);
 }
 
+.video-quiz-input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
 .video-quiz-input-visible {
   margin-inline-end: 15px;
   position: relative;
@@ -84,11 +89,6 @@
   border-radius: 50%;
   background-color: var(--secondary-background);
   border: 2px solid var(--primary-color);
-}
-
-.video-quiz-input-hidden {
-  position: absolute;
-  left: -9999px;
 }
 
 .video-quiz-selected-input {

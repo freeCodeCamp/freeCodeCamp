@@ -31,11 +31,20 @@
   justify-content: space-between;
 }
 
+.toggle-radio-group input:focus-visible + .custom-circle {
+  outline: 3px solid var(--focus-outline-color);
+}
+
 .toggle-button-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content;
   gap: 3px;
+}
+
+.toggle-button-group button[aria-pressed='true'] {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
 }
 
 .toggle-button-group button {
@@ -100,7 +109,8 @@
   border: 2px solid var(--primary-color);
 }
 
-.selected-inner-circle {
+.toggle-radio-group input:checked + .custom-circle:after {
+  content: '';
   width: 10px;
   height: 10px;
   position: absolute;
