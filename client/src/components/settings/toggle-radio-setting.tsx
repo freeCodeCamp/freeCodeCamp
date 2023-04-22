@@ -49,7 +49,6 @@ export default function ToggleRadioSetting({
               {...(!flag && { onChange: toggleFlag })}
               name={flagName}
               value='1'
-              checked
             />
             <span className='custom-circle'></span>
             <span>{restProps.onLabel}</span>
