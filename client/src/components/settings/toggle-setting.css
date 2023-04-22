@@ -121,6 +121,14 @@
   transform: translate(-50%, -50%);
 }
 
+.toggle-radio-group span{
+  font-weight: 500;
+}
+
+.toggle-radio-group input:checked ~ span{
+  font-weight: 700;
+}
+
 /* checkIconStyle css */
 .checkIcon {
   height: 1rem;
