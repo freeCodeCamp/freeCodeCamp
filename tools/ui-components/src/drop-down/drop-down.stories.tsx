@@ -31,11 +31,7 @@ const DropUpChildren = () => (
   </>
 );
 
-const Template: Story<DropdownProps> = args => {
-  return <Dropdown {...args} />;
-};
-
-export const MenuWithAction = (): JSX.Element => (
+export const Menus = (): JSX.Element => (
   <>
     <Dropdown>
       <DropDownChildren />
@@ -45,11 +41,6 @@ export const MenuWithAction = (): JSX.Element => (
     </Dropdown>
   </>
 );
-
-export const RenderMenuItems = Template.bind({});
-RenderMenuItems.args = {
-  children: <DropDownChildren />
-};
 
 const UpTemplate: Story<DropdownProps> = args => {
   return (
