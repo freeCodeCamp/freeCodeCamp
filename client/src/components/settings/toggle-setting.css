@@ -82,10 +82,6 @@
   cursor: default;
 }
 
-.toggle-radio-group {
-  display: flex;
-}
-
 .toggle-radio-group label {
   margin: 8px;
 }
@@ -121,11 +117,11 @@
   transform: translate(-50%, -50%);
 }
 
-.toggle-radio-group span{
+.toggle-radio-group span {
   font-weight: 500;
 }
 
-.toggle-radio-group input:checked ~ span{
+.toggle-radio-group input:checked ~ span {
   font-weight: 700;
 }
 

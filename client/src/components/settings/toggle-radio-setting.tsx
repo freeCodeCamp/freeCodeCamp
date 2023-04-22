@@ -53,7 +53,6 @@ export default function ToggleRadioSetting({
             <span className='custom-circle'></span>
             <span>{restProps.onLabel}</span>
           </label>
-
           <label htmlFor={secondRadioId}>
             <input
               id={secondRadioId}
@@ -62,8 +61,8 @@ export default function ToggleRadioSetting({
               {...(flag && { onChange: toggleFlag })}
               name={flagName}
               value='2'
-            />{' '}
-            <span className='custom-circle'></span>
+            />
+            <span className='custom-circle' />
             <span>{restProps.offLabel}</span>
           </label>
         </div>
