@@ -71,8 +71,6 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 export interface EditorProps {
-  challengeMeta: ChallengeMeta;
-  completedPercent: number;
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
