@@ -7,6 +7,7 @@
 }
 
 .instructions-panel {
+  position: relative;
   padding: 0 10px;
   overflow-y: scroll;
   height: 100%;

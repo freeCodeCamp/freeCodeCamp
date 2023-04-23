@@ -1,6 +1,6 @@
 ---
 id: 5900f3761000cf542c50fe88
-title: 'Problem 9: Special Pythagorean triplet'
+title: 'Завдання 9: особлива Піфагорова трійка'
 challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
@@ -8,13 +8,13 @@ dashedName: problem-9-special-pythagorean-triplet
 
 # --description--
 
-A Pythagorean triplet is a set of three natural numbers, `a` &lt; `b` &lt; `c`, for which,
+Піфагорова трійка — це набір з трьох натуральних чисел `a` &lt; `b` &lt; `c`, для яких
 
 <div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
 
-For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+Наприклад, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
 
-There exists exactly one Pythagorean triplet for which `a` + `b` + `c` = 1000. Find the product `abc` such that `a` + `b` + `c` = `n`.
+Існує лише одна Піфагорова трійка, для якої `a` + `b` + `c` = 1000. Знайдіть такий добуток `abc`, щоб `a` + `b` + `c` = `n`.
 
 # --hints--
 

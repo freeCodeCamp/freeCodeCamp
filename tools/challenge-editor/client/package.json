@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.7",
-    "@types/react": "16.14.38",
+    "@types/react": "16.14.40",
     "@types/react-dom": "^16.9.17",
     "@uiw/react-codemirror": "3.2.9",
     "cross-env": "7.0.3",

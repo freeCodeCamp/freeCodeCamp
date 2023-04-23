@@ -98,6 +98,7 @@ figcaption.caption {
 /* testimonials */
 
 .testimonials-row {
+  --image-size: min(320px, 350px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -117,7 +118,9 @@ figcaption.caption {
 
 .testimonial-card {
   display: flex;
-  margin: 10px 10px 50px;
+  width: min(100%, 1170px);
+  margin-top: 10px;
+  margin-bottom: 50px;
   background-color: var(--primary-background);
   -webkit-box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
   box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
@@ -137,10 +140,12 @@ figcaption.caption {
   font-size: 1.2rem;
 }
 
-.testimonial-card-header {
-  height: 350px;
-  min-width: 350px;
+.testimonial-card-header,
+.testimonial-image {
+  height: var(--image-size);
+  width: var(--image-size);
 }
+
 .testimonials-footer {
   display: flex;
   flex-direction: column;
@@ -153,7 +158,11 @@ figcaption.caption {
 .as-seen-in,
 .certification-section,
 .testimonials {
-  padding: 4vw 0;
+  padding-block: 4vw;
+}
+
+.certification-section {
+  padding-inline: 4vw;
 }
 
 .map-ui .btn {
@@ -169,7 +178,7 @@ figcaption.caption {
 @media (max-width: 992px) {
   .testimonial-card {
     flex-direction: column;
-    max-width: 350px;
+    width: var(--image-size);
   }
 }
 

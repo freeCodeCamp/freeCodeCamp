@@ -1,6 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
-title: 'Problem 19: Counting Sundays'
+title: 'Завдання 19: підрахунок неділь'
 challengeType: 1
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
@@ -8,15 +8,15 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-You are given the following information, but you may prefer to do some research for yourself.
+Нижче наведена певна інформація, але ви можете зробити дослідження самостійно.
 
 <ul>
-  <li>1 Jan 1900 was a Monday.</li>
-  <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
-  <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+  <li>1 січня 1900 року було понеділком.</li>
+  <li>По 30 днів налічують вересень,<br>квітень, червень та листопад.<br>Усі інші — по 31 дню,<br>не враховуючи лютий,<br>який зазвичай має 28 днів.<br>А у високосні роки — 29 днів.</li>
+  <li>Високосний рік випадає на рік, який рівно ділиться на 4, але це не стосується сторіччя, хіба що воно кратне 400.</li>
 </ul>
 
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+Скільки неділь випало на перше число місяця протягом двадцятого сторіччя (від 1 січня 1901 по 31 грудня 2000)?
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedd
-title: 'Problem 94: Almost equilateral triangles'
+title: 'Problema 94: triangoli quasi equilateri'
 challengeType: 1
 forumTopicId: 302211
 dashedName: problem-94-almost-equilateral-triangles
@@ -8,39 +8,39 @@ dashedName: problem-94-almost-equilateral-triangles
 
 # --description--
 
-It is easily proved that no equilateral triangle exists with integral length sides and integral area. However, the almost equilateral triangle 5-5-6 has an area of 12 square units.
+È facilmente dimostrabile che non esiste un triangolo equilatero con i lati di lunghezza intera e l'area intera. Tuttavia, il triangolo quasi equilatero 5-5-6 ha una superficie di 12 unità quadrate.
 
-We shall define an <dfn>almost equilateral triangle</dfn> to be a triangle for which two sides are equal and the third differs by no more than one unit.
+Definiremo un <dfn>triangolo quasi equilatero</dfn> come un triangolo per il quale due latri sono uguali e il terzo differisce per non più di un'unità.
 
-Find the sum of the perimeters of all almost equilateral triangles with integral side lengths and area and whose perimeters do not exceed `limit`.
+Trova la somma dei perimetri di tutti i triangoli quasi equilateri con lunghezze dei lati e area interi e i cui perimetri non superano `limit`.
 
 # --hints--
 
-`almostEquilateralTriangles(50)` should return a number.
+`almostEquilateralTriangles(50)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof almostEquilateralTriangles(50) === 'number');
 ```
 
-`almostEquilateralTriangles(50)` should return `66`.
+`almostEquilateralTriangles(50)` dovrebbe restituire `66`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(50), 66);
 ```
 
-`almostEquilateralTriangles(10000)` should return `3688`.
+`almostEquilateralTriangles(10000)` dovrebbe restituire `3688`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000), 3688);
 ```
 
-`almostEquilateralTriangles(10000000)` should return `9973078`.
+`almostEquilateralTriangles(10000000)` dovrebbe restituire `9973078`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000000), 9973078);
 ```
 
-`almostEquilateralTriangles(1000000000)` should return `518408346`.
+`almostEquilateralTriangles(1000000000)` dovrebbe restituire `518408346`.
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(1000000000), 518408346);

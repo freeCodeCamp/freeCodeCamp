@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8d
-title: 'Problem 14: Longest Collatz sequence'
+title: 'Завдання 14: найдовша послідовність Коллатца'
 challengeType: 1
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
@@ -8,21 +8,21 @@ dashedName: problem-14-longest-collatz-sequence
 
 # --description--
 
-The following iterative sequence is defined for the set of positive integers:
+Наступна ітераційна послідовність визначена для набору додатних цілих чисел:
 
-<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>
+<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> є парним)</div>
 
-<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>
+<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> є непарним)</div>
 
-Using the rule above and starting with 13, we generate the following sequence:
+Використовуючи правило вище та починаючи з 13, ми згенеруємо наступну послідовність:
 
 <div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>
 
-It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+Можна побачити, що ця послідовність (починається з 13 та закінчується 1) містить 10 членів. Хоча гіпотеза Коллатца ще не доведена, вважається, що кожне початкове число також закінчиться 1.
 
-Which starting number, under the given `limit`, produces the longest chain?
+Яке початкове число (менше заданого `limit`) створює найдовшу послідовність?
 
-**Note:** Once the chain starts the terms are allowed to go above `limit`.
+**Примітка:** як тільки послідовність запуститься, значення можуть бути перевищувати `limit`.
 
 # --hints--
 

@@ -99,11 +99,6 @@ New RWD project challenge
   gap: 10px;
 }
 
-[dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
-  border-left: 2px solid;
-  border-right: none;
-}
-
 /* Align the the Arabic head with the corresponding English word */
 
 [dir='rtl'] .table thead:first-child tr:first-child th {
