@@ -202,8 +202,8 @@ importers:
         version: 2.0.22
     devDependencies:
       '@fastify/type-provider-typebox':
-        specifier: 3.0.0
-        version: 3.0.0(fastify@4.15.0)
+        specifier: 3.1.0
+        version: 3.1.0(fastify@4.15.0)
       '@types/express-session':
         specifier: 1.17.7
         version: 1.17.7
@@ -1078,8 +1078,8 @@ importers:
         specifier: 8.2.5
         version: 8.2.5
       prettier:
-        specifier: 2.8.7
-        version: 2.8.7
+        specifier: 2.8.8
+        version: 2.8.8
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@18.15.13)(typescript@4.9.5)
@@ -6241,12 +6241,12 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox@3.0.0(fastify@4.15.0):
-    resolution: {integrity: sha512-VVYY/ZcPSFElLtRYboA2bmFxoINGDqmmqJ8Ch8+2lvmc+XFCsOJ714SEOpgshC4n52KBclgQxf2O80NeEAN7gQ==}
+  /@fastify/type-provider-typebox@3.1.0(fastify@4.15.0):
+    resolution: {integrity: sha512-gR1ZYaFbnPd5U24OblcvFJsqcwb2U9oXnmeSEL3FQakgoQ2J5lPluUMU/Rmq9LOy6DMUILuyj+uwXTYh7PNqpQ==}
     peerDependencies:
       fastify: ^4.0.0
     dependencies:
-      '@sinclair/typebox': 0.26.8
+      '@sinclair/typebox': 0.27.8
       fastify: 4.15.0
     dev: true
 
@@ -7886,8 +7886,8 @@ packages:
   /@sinclair/typebox@0.25.24:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
 
-  /@sinclair/typebox@0.26.8:
-    resolution: {integrity: sha512-fvAkOrUWndf5vjptkW+4TeTH84/bILWQHgk7rbbzT8trZxW+b84lr8dZQPM/r7cGNRFxDaJYsMjHCikEYyAHaw==}
+  /@sinclair/typebox@0.27.8:
+    resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
   /@sindresorhus/is@0.14.0:
@@ -18432,7 +18432,7 @@ packages:
       mkdirp: 0.5.6
       node-fetch: 2.6.9
       pkg-dir: 4.2.0
-      prettier: 2.8.7
+      prettier: 2.8.8
       prop-types: 15.8.1
       remark-mdx: 2.3.0
       remark-mdxjs: 2.0.0-next.8
@@ -26793,8 +26793,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@2.8.7:
-    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
