@@ -22,19 +22,16 @@ const mapDispatchToProps = {
 };
 
 interface LanguageListProps {
-  fetchState: { pending: boolean };
   t: TFunction;
   navigate?: (location: string) => void;
 }
 
 export const LanguageList = ({
-  fetchState,
   t,
   navigate
 }: LanguageListProps): JSX.Element => {
   const [showList, setShowList] = useState(false);
   const listButtonRef = useRef<HTMLButtonElement>(null);
-  const { pending } = fetchState;
 
   const handleClick = (): void => {
     if (showList) {
@@ -153,40 +150,38 @@ export const LanguageList = ({
       return handleLastLangaugeKeys;
     } else handleMenuKeyDown;
   };
-
-  return pending ? (
-    <div className='nav-skeleton' />
-  ) : (
+  return (
     <>
       <button
-        aria-controls='nav-lang-list'
-        aria-expanded='true'
+        id='toggle-button-nav'
         className='lang-button-nav'
-        onClick={handleClick}
-        onBlur={handleBlur}
-        onKeyDown={handleMenuKeyDown}
         title={t('buttons.change-language')}
         aria-label={t('buttons.change-language')}
+        aria-controls='nav-lang-list'
+        aria-expanded={!showList}
         ref={listButtonRef}
+        onBlur={handleBlur}
+        onClick={handleClick}
+        onKeyDown={handleMenuKeyDown}
       >
         <LanguageGlobe />
       </button>
       <ul
-        aria-labelledby='toggle-button-nav'
         id='nav-lang-list'
-        className={`nav-list${showList ? ' nav-lang-list' : ''} `}
+        className='nav-list'
+        aria-labelledby='toggle-button-nav'
       >
         {locales.map((lang, index) => (
-          <li key={'lang-' + lang} role='none'>
+          <li key={'lang-' + lang}>
             <button
-              {...(clientLocale === lang && { 'aria-current': true })}
               className='nav-link nav-lang-list-option'
               data-value={lang}
+              onClick={handleLanguageChange}
+              onKeyDown={getHandleLanguageKeys(index)}
+              {...(clientLocale === lang && { 'aria-current': true })}
               {...(LangCodes[lang] && {
                 lang: LangCodes[lang]
               })}
-              onClick={handleLanguageChange}
-              onKeyDown={getHandleLanguageKeys(index)}
             >
               {LangNames[lang]}
             </button>

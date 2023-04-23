@@ -71,6 +71,11 @@
   max-width: 15rem;
 }
 
+button[aria-expanded='true'] + .nav-list {
+  display: block;
+  top: 100%;
+}
+
 .nav-list li {
   width: 100%;
   height: 2.5rem;
@@ -150,11 +155,6 @@ button.nav-link[aria-disabled='true'] {
 .nav-link-header label {
   font-weight: normal;
   margin-bottom: 0;
-}
-
-.nav-lang-list {
-  display: block;
-  top: 100%;
 }
 
 .nav-lang-list-option[aria-current='true'] {

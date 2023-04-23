@@ -85,7 +85,7 @@ export const UniversalNav = ({
                 </Link>
               </Media>
             )}
-            <LanguageList t={t} fetchState={fetchState} />
+            <LanguageList t={t} />
             <MenuButton
               displayMenu={displayMenu}
               hideMenu={hideMenu}
