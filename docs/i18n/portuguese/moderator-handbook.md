@@ -305,16 +305,6 @@ Se for aprovado, nós adicionaremos você ao nosso time de moderadores no [GitHu
 > 
 > Isso é necessário para nós podermos dar a você acesso de escrita em alguns de nossos repositórios.
 
-## Como nós retiramos moderadores inativos
-
-Observe que, frequentemente, removeremos moderadores que pensamos estarem inativos. Quando fizermos isso, enviaremos a seguinte mensagem:
-
-```markdown
-Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de moderadores. Nós agradecemos profundamente sua ajuda no passado.
-
-Se acha que fizemos isso por engano ou quando você estiver pronto para voltar e contribuir mais, apenas responda essa mensagem nos avisando.
-```
-
 ## Como funciona nossa sala de Colaboradores
 
 Todos são bem-vindos no [chat de colaboradores do nosso servidor](https://discord.gg/PRyKn3Vbay). Esse é o chat destinado aos moderadores e outros usuários do freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
@@ -331,17 +321,17 @@ Recebemos propostas como essa com frequência. A equipe está em melhor posiçã
 
 Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
 
-Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
+Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir de volta para o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que nós não somos profissionais da saúde e que você encoraja o usuário a buscar ajuda profissional.
 
 Apesar de ser difícil às vezes, evite dar quaisquer dicas ou conselhos que não sejam indicar ao usuário buscar ajuda profissional!
 
-Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando `private` do bot.
+Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando`private` do bot.
 
 - O usuário tem a privacidade garantida.
 - O chat público não será mais perturbado.
 - Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho.
 
-URLs úteis:
+Links úteis:
 
 http://suicide.org/international-suicide-hotlines.html
 
@@ -386,7 +376,7 @@ Hey @username
 
 We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
 
-Assim que você resolver essas issues, nós poderemos rever seu PR e fazer o merge. 😊
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
@@ -414,18 +404,18 @@ git fetch upstream
 git pull upstream main
 ````
 
-Se você estiver usando uma GUI, basta clicar em `Add a new remote...` e usar o link `git://github.com/freeCodeCamp/freeCodeCamp.git` de cima.
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
-Após sincronizar seu fork e passar no build, poderemos revisar seu PR e fazer o merge. 😊
+Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
 ---
 
-Fique à vontade para recorrer ao artigo [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) no GitHub para mais ideias de como manter seu fork atualizado com o repositório upstream. 🔄
+Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
-### Merge Conflicts
+### Conflitos de merge
 
-> When PR has merge conflicts that need to be resolved.¹
+> Quando um PR tem conflitos de merge isso precisa ser resolvido.¹
 
 ```markdown
 Hey @username
@@ -450,7 +440,7 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 ```markdown
 Hey @username
 
-This PR seems to make similar changes as the existing PR <#number>. Assim, vamos fechar esse por ser uma duplicata.
+This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as a duplicate.
 
 If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 
@@ -488,21 +478,40 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ### Adicionando comentário sobre erros de iniciante
 
 ```markdown
-Como um novo colaborador, encorajamos você a ler nossas [diretrizes de contribuição](https://contribute.freecodecamp.org).
+Hi there, 
 
-Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você ganha o respeito de outros mantenedores e poupa tempo a todos.
+Thanks for creating this pull request.
 
-Alguns exemplos disso são:
+Please ensure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously. Respect the requirements to earn the respect of your fellow maintainers. You will also save everyone time :)
 
-1. Não edite arquivos diretamente no GitHub – apesar de você poder, não é uma boa ideia.
-2. Certifique-se de seguir a lista de verificação de PRs e não apenas saia marcando as coisas; caso contrário, não levaremos você a sério.
-3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
-4. Mantenha as menções e pedidos de revisão no mínimo. Compreendemos que você está entusiasmado em contribuir, e os nossos mantenedores retornarão você assim que tiverem uma chance.
-5. Não trabalhe diretamente no seu branch `main` - crie um novo branch para as alterações em que está trabalhando.
+Since you are new here, please slow down and read our [contributing guidelines](https://contribute.freecodecamp.org), as we see that you may still need to catch up on a few things.
 
-Agradecemos por você usar seu tempo para nos ajudar, e esperamos ver mais contribuições de você.
+<details>
+<summary>Here are some examples (expand)</summary>
 
-Boas contribuições.
+1. Do not edit files directly on GitHub – while you can, it's not a good idea. 
+
+   Typos and formatting errors can break the tests.
+
+2. Use the correct way to link issues. 
+
+   Add the issue number only in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+
+4. Keep mentions and review requests to a minimum. 
+
+   We understand you are excited about contributing, and our maintainers will get back to you when they can.
+
+5. Do not work directly off your `main` branch. 
+
+   You can always create a new branch for the changes you are working on. That way, you can sync change to your PR branch as the main repository moves ahead while your PR is waiting in the merge queue.
+
+</details>
+
+Don't worry. You don't have to close this PR. Feel free to ask specific queries on improving your PR here; someone will guide you.
+
+We are happy you are excited to contribute and appreciate you taking the time to help us. Looking forward to more contributions!
+
+Happy Contributing.
 ```
 
 ### Fechando issues inválidas
@@ -564,9 +573,9 @@ Happy contributing.
 ### Solicitações de atribuição
 
 ```md
-Normalmente, não atribuímos issues. Em vez disso, aceitamos o primeiro pull request que resolve o problema como um todo.
+We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.
 
-Issues rotuladas com `help wanted` ou `first timers only` estão abertas para contribuições.
+Issues labelled with `help wanted` or `first timers only` are open for contributions.
 
-Certifique-se de ler [nossas diretrizes para contribuição](https://contribute.freecodecamp.org/#/). Priorizamos os colaboradores de acordo com as instruções em nosso guia. Faça parte de [nossa sala de bate-papo](https://discord.gg/PRyKn3Vbay) ou [do fórum](https://forum.freecodecamp.org/c/contributors/3) caso precise de ajuda com suas contribuições. Nossos moderadores orientarão você pelo processo.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/). We prioritize contributors following the instructions in our guide. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing - our community will be happy to assist you.
 ```

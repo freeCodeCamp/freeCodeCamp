@@ -147,8 +147,9 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
-  disableIframe
-}: Pick<PreviewProps, 'disableIframe'>) => {
+  disableIframe,
+  previewMounted
+}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'>) => {
   return (
     <Preview
       className='full-height'
@@ -204,7 +205,8 @@ function ShowClassic({
   savedChallenges,
   isChallengeCompleted,
   output,
-  executeChallenge
+  executeChallenge,
+  previewMounted
 }: ShowClassicProps) {
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
@@ -434,7 +436,12 @@ function ShowClassic({
               showToolPanel: false
             })}
             notes={<Notes notes={notes} />}
-            preview={<StepPreview disableIframe={resizing} />}
+            preview={
+              <StepPreview
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+              />
+            }
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
@@ -460,7 +467,12 @@ function ShowClassic({
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={<Notes notes={notes} />}
-            preview={<StepPreview disableIframe={resizing} />}
+            preview={
+              <StepPreview
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+              />
+            }
             resizeProps={resizeProps}
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />

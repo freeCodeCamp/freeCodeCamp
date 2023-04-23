@@ -312,16 +312,6 @@ If you are approved, we will add you to our moderator teams on [GitHub](https://
 >
 > This is required for us to be able to give you write access to some of our repositories.
 
-## How We Retire Inactive Moderators
-
-Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
-
-```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. We deeply appreciate your help in the past.
-
-If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
-```
-
 ## How Our Contributors Room Works
 
 Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
