@@ -572,8 +572,8 @@ importers:
         specifier: 4.12.0
         version: 4.12.0(gatsby@3.15.0)
       i18next:
-        specifier: 22.4.14
-        version: 22.4.14
+        specifier: 22.4.15
+        version: 22.4.15
       jquery:
         specifier: 3.6.4
         version: 3.6.4
@@ -633,7 +633,7 @@ importers:
         version: 2.0.0(react@16.14.0)
       react-i18next:
         specifier: 12.2.0
-        version: 12.2.0(i18next@22.4.14)(react-dom@16.14.0)(react@16.14.0)
+        version: 12.2.0(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0)
       react-instantsearch-core:
         specifier: 6.39.1
         version: 6.39.1(algoliasearch@4.17.0)(react@16.14.0)
@@ -19934,8 +19934,8 @@ packages:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
     dev: false
 
-  /i18next@22.4.14:
-    resolution: {integrity: sha512-VtLPtbdwGn0+DAeE00YkiKKXadkwg+rBUV+0v8v0ikEjwdiJ0gmYChVE4GIa9HXymY6wKapkL93vGT7xpq6aTw==}
+  /i18next@22.4.15:
+    resolution: {integrity: sha512-yYudtbFrrmWKLEhl6jvKUYyYunj4bTBCe2qIUYAxbXoPusY7YmdwPvOE6fx6UIfWvmlbCWDItr7wIs8KEBZ5Zg==}
     dependencies:
       '@babel/runtime': 7.21.0
     dev: false
@@ -27533,7 +27533,7 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-i18next@12.2.0(i18next@22.4.14)(react-dom@16.14.0)(react@16.14.0):
+  /react-i18next@12.2.0(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0):
     resolution: {integrity: sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -27548,7 +27548,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       html-parse-stringify: 3.0.1
-      i18next: 22.4.14
+      i18next: 22.4.15
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
     dev: false
