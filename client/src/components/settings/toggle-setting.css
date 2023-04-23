@@ -82,8 +82,8 @@
   cursor: default;
 }
 
-.toggle-radio-group label {
-  margin: 0px 8px 8px 0;
+.toggle-radio-group label + label {
+  margin-inline-start: 2rem;
 }
 
 .toggle-radio-group input {
@@ -92,7 +92,7 @@
 }
 
 .custom-circle {
-  margin-inline-end: 15px;
+  margin-inline-end: 8px;
   position: relative;
   top: 2px;
   display: inline-block;
