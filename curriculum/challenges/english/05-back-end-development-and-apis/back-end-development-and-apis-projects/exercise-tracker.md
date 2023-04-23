@@ -521,7 +521,7 @@ async(getUserInput) => {
       _id,
       date: new Date().toLocaleDateString("en-US", {
         timeZone: "UTC", weekday: "short", month: "short",
-        day: "2-digit", year: "numeric"
+        day: "2-digit", year: "numeric"})
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
