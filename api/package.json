@@ -19,7 +19,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "3.0.0",
+    "@fastify/type-provider-typebox": "3.1.0",
     "@types/express-session": "1.17.7",
     "@types/supertest": "2.0.12",
     "jest": "29.5.0",
