@@ -1078,8 +1078,8 @@ importers:
         specifier: 8.2.5
         version: 8.2.5
       prettier:
-        specifier: 2.8.7
-        version: 2.8.7
+        specifier: 2.8.8
+        version: 2.8.8
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@18.15.13)(typescript@4.9.5)
@@ -18432,7 +18432,7 @@ packages:
       mkdirp: 0.5.6
       node-fetch: 2.6.9
       pkg-dir: 4.2.0
-      prettier: 2.8.7
+      prettier: 2.8.8
       prop-types: 15.8.1
       remark-mdx: 2.3.0
       remark-mdxjs: 2.0.0-next.8
@@ -26793,8 +26793,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@2.8.7:
-    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
