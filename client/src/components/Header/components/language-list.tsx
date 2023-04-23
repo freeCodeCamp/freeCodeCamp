@@ -112,41 +112,9 @@ export const LanguageList = ({
     DoKeyPress.get(event.key)?.select();
   };
 
-  const handleFirstLangaugeKeys = (
-    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => {
-    const DoKeyPress = new Map<string, { select: () => void }>([
-      [
-        'Escape',
-        {
-          select: () => {
-            listButtonRef.current?.focus();
-            setShowList(false);
-            event.preventDefault();
-          }
-        }
-      ],
-      [
-        'Tab',
-        {
-          select: () => {
-            const camperPressedTheShiftKey = event.shiftKey;
-            if (camperPressedTheShiftKey) {
-              setShowList(false);
-            }
-          }
-        }
-      ]
-    ]);
-    DoKeyPress.get(event.key)?.select();
-  };
-
   const getHandleLanguageKeys = (languagePosition: number) => {
     const lastLanguage = locales.length - 1;
-
-    if (languagePosition === 0) {
-      return handleFirstLangaugeKeys;
-    } else if (languagePosition === lastLanguage) {
+    if (languagePosition === lastLanguage) {
       return handleLastLangaugeKeys;
     } else handleMenuKeyDown;
   };
@@ -158,7 +126,7 @@ export const LanguageList = ({
         title={t('buttons.change-language')}
         aria-label={t('buttons.change-language')}
         aria-controls='nav-lang-list'
-        aria-expanded={!showList}
+        aria-expanded={showList}
         ref={listButtonRef}
         onBlur={handleBlur}
         onClick={handleClick}
