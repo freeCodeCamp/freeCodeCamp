@@ -21,43 +21,45 @@ const mapDispatchToProps = {
   navigate
 };
 
-interface LanguageMenuProps {
+interface LanguageListProps {
   fetchState: { pending: boolean };
   t: TFunction;
   navigate?: (location: string) => void;
 }
 
-export const LanguageMenu = ({
+export const LanguageList = ({
   fetchState,
   t,
   navigate
-}: LanguageMenuProps): JSX.Element => {
-  const [showMenu, setShowMenu] = useState(false);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
+}: LanguageListProps): JSX.Element => {
+  const [showList, setShowList] = useState(false);
+  const listButtonRef = useRef<HTMLButtonElement>(null);
+  const { pending } = fetchState;
 
   const handleClick = (): void => {
-    if (showMenu) {
-      setShowMenu(false);
+    if (showList) {
+      setShowList(false);
       return;
     }
-    setShowMenu(true);
+    setShowList(true);
   };
 
   const handleLanguageChange = (
     event: React.MouseEvent<HTMLButtonElement>
   ): void => {
-    event.preventDefault();
+    const selectedLanguage = event.currentTarget.dataset.value;
+    const isSelecetedCurrentLanguage =
+      selectedLanguage === clientLocale || selectedLanguage === undefined;
 
-    const newLanguage = event.currentTarget.dataset.value;
-    menuButtonRef.current?.focus();
-    // If user selected the current language then we just close the menu
-    setShowMenu(false);
-    if (newLanguage === clientLocale || newLanguage === undefined) {
+    event.preventDefault();
+    listButtonRef.current?.focus();
+    setShowList(false);
+    if (isSelecetedCurrentLanguage) {
       return;
     }
     const path = createLanguageRedirect({
       clientLocale,
-      lang: newLanguage
+      lang: selectedLanguage
     });
     if (navigate) {
       return navigate(path);
@@ -68,8 +70,8 @@ export const LanguageMenu = ({
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
     if (event.key === 'Escape') {
-      menuButtonRef.current?.focus();
-      setShowMenu(false);
+      listButtonRef.current?.focus();
+      setShowList(false);
       event.preventDefault();
     }
   };
@@ -78,9 +80,9 @@ export const LanguageMenu = ({
     if (
       event.relatedTarget &&
       !event.relatedTarget.closest('.nav-list') &&
-      event.relatedTarget !== menuButtonRef.current
+      event.relatedTarget !== listButtonRef.current
     ) {
-      setShowMenu(false);
+      setShowList(false);
     }
   };
 
@@ -92,8 +94,8 @@ export const LanguageMenu = ({
         'Escape',
         {
           select: () => {
-            menuButtonRef.current?.focus();
-            setShowMenu(false);
+            listButtonRef.current?.focus();
+            setShowList(false);
             event.preventDefault();
           }
         }
@@ -104,7 +106,7 @@ export const LanguageMenu = ({
           select: () => {
             const camperPressedTheShiftKey = event.shiftKey;
             if (!camperPressedTheShiftKey) {
-              setShowMenu(false);
+              setShowList(false);
             }
           }
         }
@@ -121,8 +123,8 @@ export const LanguageMenu = ({
         'Escape',
         {
           select: () => {
-            menuButtonRef.current?.focus();
-            setShowMenu(false);
+            listButtonRef.current?.focus();
+            setShowList(false);
             event.preventDefault();
           }
         }
@@ -133,7 +135,7 @@ export const LanguageMenu = ({
           select: () => {
             const camperPressedTheShiftKey = event.shiftKey;
             if (camperPressedTheShiftKey) {
-              setShowMenu(false);
+              setShowList(false);
             }
           }
         }
@@ -142,12 +144,12 @@ export const LanguageMenu = ({
     DoKeyPress.get(event.key)?.select();
   };
 
-  const { pending } = fetchState;
+  const getHandleLanguageKeys = (languagePosition: number) => {
+    const lastLanguage = locales.length - 1;
 
-  const getHandleLanguageKeys = (length: number) => {
-    if (length === 0) {
+    if (languagePosition === 0) {
       return handleFirstLangaugeKeys;
-    } else if (length === locales.length - 1) {
+    } else if (languagePosition === lastLanguage) {
       return handleLastLangaugeKeys;
     } else handleMenuKeyDown;
   };
@@ -157,36 +159,34 @@ export const LanguageMenu = ({
   ) : (
     <>
       <button
-        aria-controls='nav-lang-menu'
-        aria-haspopup='true'
+        aria-controls='nav-lang-list'
+        aria-expanded='true'
         className='lang-button-nav'
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleMenuKeyDown}
         title={t('buttons.change-language')}
         aria-label={t('buttons.change-language')}
-        ref={menuButtonRef}
+        ref={listButtonRef}
       >
         <LanguageGlobe />
       </button>
       <ul
         aria-labelledby='toggle-button-nav'
-        id='nav-lang-menu'
-        role='menu'
-        className={`nav-list${showMenu ? ' nav-lang-menu' : ''} `}
+        id='nav-lang-list'
+        className={`nav-list${showList ? ' nav-lang-list' : ''} `}
       >
         {locales.map((lang, index) => (
           <li key={'lang-' + lang} role='none'>
             <button
               {...(clientLocale === lang && { 'aria-current': true })}
-              className='nav-link nav-lang-menu-option'
+              className='nav-link nav-lang-list-option'
               data-value={lang}
               {...(LangCodes[lang] && {
                 lang: LangCodes[lang]
               })}
               onClick={handleLanguageChange}
               onKeyDown={getHandleLanguageKeys(index)}
-              role='menuitem'
             >
               {LangNames[lang]}
             </button>
@@ -200,4 +200,4 @@ export const LanguageMenu = ({
 export default connect(
   null,
   mapDispatchToProps
-)(withTranslation()(LanguageMenu));
+)(withTranslation()(LanguageList));
