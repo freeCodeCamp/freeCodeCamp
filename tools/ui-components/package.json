@@ -55,7 +55,7 @@
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
-    "postcss": "8.4.22",
+    "postcss": "8.4.23",
     "postcss-import": "14.1.0",
     "rollup": "2.79.1",
     "rollup-plugin-postcss": "4.0.2",
