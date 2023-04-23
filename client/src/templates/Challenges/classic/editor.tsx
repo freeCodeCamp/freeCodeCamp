@@ -64,13 +64,14 @@ import {
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import LowerJaw from './lower-jaw';
+import LowerJaw, { LowerJawProps } from './lower-jaw';
 
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-export interface EditorProps {
+export interface EditorProps
+  extends Pick<LowerJawProps, 'challengeMeta' | 'completedPercent'> {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   attempts: number;

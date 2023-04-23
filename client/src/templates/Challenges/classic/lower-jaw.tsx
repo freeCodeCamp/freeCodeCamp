@@ -38,7 +38,7 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
-interface LowerJawProps {
+export interface LowerJawProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   hint?: string;
