@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Combinator Y
 challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
@@ -8,47 +8,47 @@ dashedName: y-combinator
 
 # --description--
 
-In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
+En estricta <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> y el cálculo lambda, funciones (expresiones lambda) no tiene estados y son solo permitidos a referirse a argumentos que encierran funciones. Estas reglas excluyen la definición de una función recursiva donde una función es asociada con el estado de una variable y estos estados de variables son usados en el cuerpo de la función.
 
-The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
+El combinador Y es pos sí mismo una función sin estado que, cuando se aplica a otra función, devuelve una versión recursiva de la función. El combinador Y es el más simple de la clase de tales funciones, llamados combinadores de punto fijo.
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you.
+Define la función Y combinador sin estado y la usa para computar los factoriales. La función `factorial(N)` ya se te fue dada.
 
 # --hints--
 
-Y should return a function.
+Y debe devolver una función.
 
 ```js
 assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-factorial(1) should return 1.
+factorial(1) debe devolver 1.
 
 ```js
 assert.equal(factorial(1), 1);
 ```
 
-factorial(2) should return 2.
+factorial(2) debe devolver 2.
 
 ```js
 assert.equal(factorial(2), 2);
 ```
 
-factorial(3) should return 6.
+factorial(3) debe devolver 6.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-factorial(4) should return 24.
+factorial(4) debe devolver 24.
 
 ```js
 assert.equal(factorial(4), 24);
 ```
 
-factorial(10) should return 3628800.
+factorial(10) debe devolver 3628800.
 
 ```js
 assert.equal(factorial(10), 3628800);

@@ -150,18 +150,18 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 
 ## API
 
-### Testing
+### Тестування
 
-The `api/` tests are split into two parts:
+Тести `api/` розділені на дві частини:
 
-1. Unit tests
-2. Integration tests
+1. Модульні тести
+2. Інтеграційні тести
 
-#### Unit Tests
+#### Модульні тести
 
-Unit tests isolate a single function or component. The tests do not need mocking, but will require fixtures.
+Модульні тести виокремлюють певну функцію чи компонент. Тестам не потрібне мокування, але вони вимагають фікстури.
 
-The unit tests are located in a new file adjacent the file exporting that being tested:
+Модульні тести розміщені у новому файлі поруч з експортованим файлом, який тестується:
 
 ```text
 api/
@@ -170,11 +170,11 @@ api/
 │   ├── utils.test.ts
 ```
 
-#### Integration Tests
+#### Інтеграційні тести
 
-Integration tests test the API as a whole. The tests will require mocking, and should not require fixtures beyond the database seeding data, and a method to authenticate.
+Інтеграційні тести тестують API загалом. Тести вимагатимуть мокування та не повинні вимагати фікстур, окрім даних заповнення бази даних і методу автентифікації.
 
-Typically, each integration test file will be directly related to a route. The integration tests are located in the `api/tests/` directory:
+Зазвичай кожен файл інтеграційного тесту пов’язаний з маршрутом. Інтеграційні тести розміщені у каталозі `api/tests/`:
 
 ```text
 api/
@@ -182,7 +182,7 @@ api/
 │   ├── settings.ts
 ```
 
-## Further Literature
+## Додаткова література
 
 - [Документація TypeScript](https://www.typescriptlang.org/docs/)
 - [Шпаргалка для TypeScript із React](https://github.com/typescript-cheatsheets/react#readme)

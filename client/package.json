@@ -85,7 +85,7 @@
     "gatsby-remark-prismjs": "5.12.0",
     "gatsby-source-filesystem": "3.15.0",
     "gatsby-transformer-remark": "4.12.0",
-    "i18next": "22.4.14",
+    "i18next": "22.4.15",
     "jquery": "3.6.4",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
@@ -93,7 +93,7 @@
     "nanoid": "3.3.6",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
-    "postcss": "8.4.22",
+    "postcss": "8.4.23",
     "prismjs": "1.29.0",
     "process": "0.11.10",
     "prop-types": "15.8.1",
@@ -138,8 +138,8 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/types": "7.21.4",
-    "@codesee/babel-plugin-instrument": "0.558.0",
-    "@codesee/tracker": "0.558.0",
+    "@codesee/babel-plugin-instrument": "0.566.0",
+    "@codesee/tracker": "0.566.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@total-typescript/ts-reset": "^0.4.0",
@@ -185,7 +185,7 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "ts-node": "10.9.1",
-    "webpack": "5.79.0",
+    "webpack": "5.80.0",
     "webpack-cli": "4.10.0"
   }
 }
