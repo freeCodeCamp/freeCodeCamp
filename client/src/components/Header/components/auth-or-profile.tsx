@@ -5,7 +5,7 @@ import { Link, AvatarRenderer } from '../../helpers';
 import Login from './login';
 
 interface AuthOrProfileProps {
-  user: User;
+  user?: User;
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
