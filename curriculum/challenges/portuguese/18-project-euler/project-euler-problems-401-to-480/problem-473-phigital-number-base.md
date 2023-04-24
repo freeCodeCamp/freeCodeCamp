@@ -1,6 +1,6 @@
 ---
 id: 5900f5461000cf542c510058
-title: 'Problem 473: Phigital number base'
+title: 'Problema 473: Base de números phigitais'
 challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
@@ -8,29 +8,29 @@ dashedName: problem-473-phigital-number-base
 
 # --description--
 
-Let $\varphi$ be the golden ratio: $\varphi = \frac{1+\sqrt{5}}{2}.$
+Considere $\varphi$ como a razão de ouro: $\varphi = \frac{1+\sqrt{5}}{2}.$
 
-Remarkably it is possible to write every positive integer as a sum of powers of $\varphi$ even if we require that every power of $\varphi$ is used at most once in this sum.
+Notadamente, é possível escrever cada número inteiro positivo como uma soma de potências de $\varphi$, mesmo se precisarmos que todas as potências de $\varphi$ sejam usadas no máximo uma vez nessa soma.
 
-Even then this representation is not unique.
+Mesmo assim, essa representação não é única.
 
-We can make it unique by requiring that no powers with consecutive exponents are used and that the representation is finite.
+Podemos torná-la única exigindo que nenhuma potência com expoentes consecutivos seja utilizada e que a representação seja finita.
 
-E.g:
+Ex:
 
-$2 = \varphi + \varphi^{-2}$ and $3 = \varphi^{2} + \varphi^{-2}$
+$2 = \varphi + \varphi^{-2}$ e $3 = \varphi^{2} + \varphi^{-2}$
 
-To represent this sum of powers of $\varphi$ we use a string of 0's and 1's with a point to indicate where the negative exponents start. We call this the representation in the phigital numberbase.
+Para representar essa soma de potências de $\varphi$, usamos uma string de 0s e 1s com um ponto para indicar onde começam os expoentes negativos. Chamamos isto de representação na base numérica phigital.
 
-So $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ and $14 = 100100.001001_{\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not (the phigital point is not the middle character).
+Assim, $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. As strings representando 1, 2 e 14 na base numérica phigital são palindrômicas, enquanto a string representando 3 não é (o ponto phigital não é o caractere do meio).
 
-The sum of the positive integers not exceeding 1000 whose phigital representation is palindromic is 4345.
+A soma de números inteiros positivos não excedendo 1000 cuja representação phigital é palindrômica é 4345.
 
-Find the sum of the positive integers not exceeding $10^{10}$ whose phigital representation is palindromic.
+Encontre a soma de números inteiros positivos não excedendo $10^{10}$ cuja representação phigital é palindrômica.
 
 # --hints--
 
-`phigitalNumberBase()` should return `35856681704365`.
+`phigitalNumberBase()` deve retornar `35856681704365`.
 
 ```js
 assert.strictEqual(phigitalNumberBase(), 35856681704365);
