@@ -1,22 +1,22 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Reset from '../../../../assets/icons/reset';
 import Help from '../../../../assets/icons/help';
 
 interface LowerJawPanelProps {
-  resetButtonName: string;
-  helpButtonName: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
 }
 
 const LowerButtonsPanel: React.FC<LowerJawPanelProps> = ({
-  resetButtonName,
-  helpButtonName,
   resetButtonEvent,
   hideHelpButton,
   helpButtonEvent
 }: LowerJawPanelProps) => {
+  const { t } = useTranslation();
+  const resetButtonName = t('buttons.reset-step');
+  const helpButtonName = t('buttons.get-help');
   return (
     <>
       <hr />

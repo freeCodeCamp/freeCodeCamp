@@ -34,17 +34,19 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
-  const hintRef = React.useRef('');
+  const { t } = useTranslation();
+
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const { t } = useTranslation();
+  const [focusManagementCompleted, setFocusManagementCompleted] =
+    useState(false);
+
+  const hintRef = React.useRef('');
   const testFeedbackRef = React.createRef<HTMLDivElement>();
   const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
-  const [focusManagementCompleted, setFocusManagementCompleted] =
-    useState(false);
 
   const isCheckYourCodeButtonClicked = () => {
     const activeElement = document.activeElement;
@@ -118,6 +120,7 @@ const LowerJaw = ({
   const currentText = `<h2 className="hint">${t('learn.hint')}</h2> ${
     hintRef.current
   }`;
+
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -198,19 +201,16 @@ const LowerJaw = ({
         {hintRef.current && !challengeIsCompleted && (
           <LowerJawTips
             showFeedback={isFeedbackHidden}
-            testText={t('learn.test')}
             htmlDescription={currentText}
             learnEncouragementText={t(sentencePicker())}
           />
         )}
       </div>
       <LowerButtonsPanel
-        resetButtonName={t('buttons.reset-step')}
         resetButtonEvent={openResetModal}
         hideHelpButton={Boolean(
           isAttemptsLargerThanTest && !challengeIsCompleted
         )}
-        helpButtonName={t('buttons.get-help')}
         helpButtonEvent={openHelpModal}
       />
     </div>
