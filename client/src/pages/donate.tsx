@@ -67,7 +67,7 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        <Spacer size='medium'>
+        <Spacer size='large'>
           <Row>
             <>
               <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
