@@ -276,10 +276,7 @@ const LowerJaw = ({
         <>
           <hr></hr>
           <div className='progress-bar-container'>
-            <ProgressBar
-              completedPercent={completedPercent}
-              blockName={blockName}
-            />
+            <ProgressBar/>
           </div>
         </>
       )}
