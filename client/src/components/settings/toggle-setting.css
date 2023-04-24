@@ -121,10 +121,6 @@
   font-weight: 500;
 }
 
-.toggle-radio-group input:checked ~ span {
-  font-weight: 700;
-}
-
 /* checkIconStyle css */
 .checkIcon {
   height: 1rem;
