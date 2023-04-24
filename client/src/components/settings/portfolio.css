@@ -6,26 +6,5 @@
   object-fit: cover;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-radius: 5px;
-}
-
-.preview-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.preview-image::before {
-  content: '';
-  display: block;
-  padding-top: 100%;
-}
-
-.preview-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border-radius: 5px;
 }
