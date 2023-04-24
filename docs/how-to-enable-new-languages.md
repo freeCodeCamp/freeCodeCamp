@@ -4,7 +4,7 @@ Before you can release a new language, you will need to allow the languages to d
 
 ## Updating Crowdin Settings
 
-In the `Curriculum` and `Learn UI` Projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
 
 ## Updating Workflows
 
@@ -278,7 +278,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 You will need to take an additional step to handle the client UI translations.
 
-The Crowdin Workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
+The Crowdin workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
 
 You will want to copy the following files from `/client/i18n/locales/english` to `/client/i18n/locales/<your-language>`, and apply translations as needed:
 
@@ -377,18 +377,18 @@ Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
 
 ## Prep the News Repo for the New Language
 
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost Instance, the files you added to the CDN, builds News, and deploys it.
+The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
 
 > [!WARN]
 > Pull requests to the News repo _must_ come from the same repo. You should not work off of a fork for this step.
 
 ### Modify the Main Config File
 
-Clone the News Repo and create a new branch.
+Clone the News repo and create a new branch.
 
 Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
 
-- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost Instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
+- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
 - `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
 - `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
 
