@@ -41,27 +41,22 @@ export const LanguageList = ({
     setShowList(true);
   };
 
-const closeAndFocus = () => {
+  const closeAndFocus = () => {
     listButtonRef.current?.classList.add('force-show');
     setShowList(false);
     setTimeout(() => {
       listButtonRef.current?.focus();
       listButtonRef.current?.classList.remove('force-show');
     }, 100);
-  }
+  };
 
   const handleLanguageChange = (
     event: React.MouseEvent<HTMLButtonElement>
   ): void => {
     const selectedLanguage = event.currentTarget.dataset.value;
-    const isSelectedCurrentLanguage =
-      selectedLanguage === clientLocale || selectedLanguage === undefined;
 
     event.preventDefault();
-    if (isSelectedCurrentLanguage) {
-      closeAndFocus();
-      return;
-    }
+    if (selectedLanguage === undefined) return;
     const path = createLanguageRedirect({
       clientLocale,
       lang: selectedLanguage

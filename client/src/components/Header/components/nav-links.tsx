@@ -111,13 +111,21 @@ function NavLinks({
     theme: currentUserTheme
   } = user || {};
 
+  const closeAndFocus = () => {
+    menuButtonRef.current?.classList.add('force-show');
+    hideMenu();
+    setTimeout(() => {
+      menuButtonRef.current?.focus();
+      menuButtonRef.current?.classList.remove('force-show');
+    }, 100);
+  };
+
   const handleMenuKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
     if (event.key === 'Escape') {
-      menuButtonRef.current?.focus();
-      hideMenu();
       event.preventDefault();
+      closeAndFocus();
     }
   };
 
@@ -129,9 +137,8 @@ function NavLinks({
         'Escape',
         {
           select: () => {
-            menuButtonRef.current?.focus();
-            hideMenu();
             event.preventDefault();
+            closeAndFocus();
           }
         }
       ],
