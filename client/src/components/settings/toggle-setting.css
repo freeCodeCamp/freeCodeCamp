@@ -82,6 +82,11 @@
   cursor: default;
 }
 
+.toggle-radio-group label {
+  display: inline-flex;
+  align-items: center;
+}
+
 .toggle-radio-group label + label {
   margin-inline-start: 2rem;
 }
@@ -94,12 +99,11 @@
 .custom-circle {
   margin-inline-end: 8px;
   position: relative;
-  top: 2px;
   display: inline-block;
-  min-width: 20px;
-  min-height: 20px;
-  max-width: 20px;
-  max-height: 20px;
+  min-width: calc(0.889em + 4px);
+  min-height: calc(0.889em + 4px);
+  max-width: calc(0.889em + 4px);
+  max-height: calc(0.889em + 4px);
   border-radius: 50%;
   background-color: var(--secondary-background);
   border: 2px solid var(--primary-color);
@@ -107,8 +111,8 @@
 
 .toggle-radio-group input:checked + .custom-circle:after {
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 0.556rem;
+  height: 0.556rem;
   position: absolute;
   top: 50%;
   left: 50%;
