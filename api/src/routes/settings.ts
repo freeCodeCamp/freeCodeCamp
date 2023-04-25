@@ -73,5 +73,45 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.put(
+    '/settings/update-my-theme',
+    {
+      schema: {
+        body: Type.Object({
+          theme: Type.String()
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.updated-preferences'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      // TODO: Validate req.body.theme is 'night' or 'default'
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            theme: req.body.theme
+          }
+        });
+
+        return {
+          message: 'flash.updated-preferences',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
   done();
 };
