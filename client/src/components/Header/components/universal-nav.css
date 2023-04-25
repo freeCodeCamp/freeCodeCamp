@@ -71,7 +71,8 @@
   max-width: 15rem;
 }
 
-button[aria-expanded='true'] + .nav-list {
+button[aria-expanded='true'] + .nav-list,
+button[aria-expanded='false'].force-show + .nav-list {
   display: block;
   top: 100%;
 }
@@ -230,9 +231,7 @@ button.nav-link[aria-disabled='true'] {
   color: var(--gray-00);
 }
 
-.lang-button-nav:hover,
-.lang-button-nav:focus,
-.lang-button-nav:hover:focus {
+.lang-button-nav:is(:hover, :active, :hover:focus) {
   background-color: var(--gray-10);
   color: var(--theme-color);
   border: 1px solid var(--gray-00);
