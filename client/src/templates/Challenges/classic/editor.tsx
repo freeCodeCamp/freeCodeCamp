@@ -57,7 +57,10 @@ import {
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
-  isChallengeCompletedSelector
+  currentBlockIdsSelector,
+  completedChallengesInBlockSelector,
+  isChallengeCompletedSelector,
+  completedPercentageSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
@@ -108,6 +111,12 @@ export interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
+  currentBlockIds: string[];
+  completedChallengesInBlock: number;
+  completedPercent: number;
+  id: string;
+  block: string;
+  superBlock: string;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -138,6 +147,10 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
+  currentBlockIdsSelector,
+  completedChallengesInBlockSelector,
+  completedPercentageSelector,
+  challengeMetaSelector,
   (
     attempts: number,
     canFocus: boolean,
@@ -149,7 +162,19 @@ const mapStateToProps = createSelector(
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
-    isChallengeCompleted: boolean
+    isChallengeCompleted: boolean,
+    currentBlockIds: string[],
+    completedChallengesInBlock: number,
+    completedPercent,
+    {
+      id,
+      block,
+      superBlock
+    }: {
+      id: string;
+      block: string;
+      superBlock: string;
+    }
   ) => ({
     attempts,
     canFocus: open ? false : canFocus,
@@ -160,7 +185,13 @@ const mapStateToProps = createSelector(
     output,
     theme,
     tests,
-    isChallengeCompleted
+    isChallengeCompleted,
+    currentBlockIds,
+    completedChallengesInBlock,
+    completedPercent,
+    id,
+    block,
+    superBlock
   })
 );
 
@@ -674,6 +705,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToSubmitChallenge={tryToSubmitChallenge}
         isSignedIn={props.isSignedIn}
         updateContainer={() => updateOutputViewZone(outputNode, editor)}
+        currentBlockIds={props.currentBlockIds}
+        completedChallengesInBlock={props.completedChallengesInBlock}
+        completedPercent={props.completedPercent}
+        id={props.id}
+        block={props.block}
+        superBlock={props.superBlock}
       />,
       outputNode
     );
