@@ -74,7 +74,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.put(
-    '/settings/update-my-theme',
+    '/update-my-theme',
     {
       schema: {
         body: Type.Object({
