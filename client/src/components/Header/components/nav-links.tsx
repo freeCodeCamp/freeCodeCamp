@@ -111,16 +111,6 @@ function NavLinks({
     theme: currentUserTheme
   } = user || {};
 
-  const getPreviousMenuItem = (target: HTMLButtonElement | null) => {
-    const previousSibling =
-      target?.closest('.nav-list > li')?.previousElementSibling;
-    const previousButton = previousSibling?.querySelector<
-      HTMLButtonElement | HTMLAnchorElement
-    >('a, button');
-    return previousButton ?? menuButtonRef.current;
-  };
-
-
   const handleMenuKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {

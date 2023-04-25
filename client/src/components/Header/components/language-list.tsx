@@ -110,11 +110,14 @@ export const LanguageList = ({
     DoKeyPress.get(event.key)?.select();
   };
 
-  const getHandleLanguageKeys = (languagePosition: number) => {
+  const getHandleLanguageKeys = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    languagePosition: number
+  ) => {
     const lastLanguage = locales.length - 1;
     if (languagePosition === lastLanguage) {
-      return handleLastLangaugeKeys;
-    } else handleMenuKeyDown;
+      return handleLastLangaugeKeys(event);
+    } else handleMenuKeyDown(event);
   };
   return (
     <>
@@ -143,7 +146,7 @@ export const LanguageList = ({
               className='nav-link nav-lang-list-option'
               data-value={lang}
               onClick={handleLanguageChange}
-              onKeyDown={getHandleLanguageKeys(index)}
+              onKeyDown={event => getHandleLanguageKeys(event, index)}
               {...(clientLocale === lang && { 'aria-current': true })}
               {...(LangCodes[lang] && {
                 lang: LangCodes[lang]
