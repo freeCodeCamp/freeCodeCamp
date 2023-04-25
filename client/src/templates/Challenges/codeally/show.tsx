@@ -44,6 +44,8 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { SuperBlocks } from '../../../../../config/certification-settings';
+import { CODEALLY_DOWN } from '../../../../../config/misc';
 
 import './codeally.css';
 
@@ -185,6 +187,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
             id: challengeId,
             instructions,
             notes,
+            superBlock,
             title,
             translationPending,
             url
@@ -250,6 +253,28 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <LearnLayout>
           <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
           <Grid>
+            {CODEALLY_DOWN && superBlock === SuperBlocks.RelationalDb && (
+              <Row>
+                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                  <Spacer size='medium' />
+                  <Alert bsStyle='danger'>
+                    <p>
+                      <Trans i18nKey='intro:misc-text.course-maintenance'>
+                        <a
+                          href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
+                          rel='noreferrer'
+                          target='_blank'
+                        >
+                          placeholder
+                        </a>
+                      </Trans>
+                    </p>
+                    <Spacer size='small' />
+                    <p>{t('intro:misc-text.progress-wont-save')}</p>
+                  </Alert>
+                </Col>
+              </Row>
+            )}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -381,6 +406,7 @@ export const query = graphql`
         id
         instructions
         notes
+        superBlock
         title
         translationPending
         url

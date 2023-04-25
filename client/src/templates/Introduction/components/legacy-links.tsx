@@ -1,13 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import {
-  isNewRespCert,
-  isOldRespCert,
-  isRelationalDbCert
-} from '../../../utils/is-a-cert';
+import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
+import { CODEALLY_DOWN } from '../../../../../config/misc';
+import Spacer from '../../../components/helpers/spacer';
+
 import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
@@ -32,28 +31,26 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         </Alert>
       </>
     );
-  else if (isNewRespCert(superBlock))
-    return (
-      <>
-        <Alert bsStyle='info'>
-          <p>
-            {t('intro:misc-text.new-rwd-desc')}{' '}
-            <Link
-              sameTab={false}
-              external={true}
-              to={
-                'https://forum.freecodecamp.org/t/responsive-web-design-updates/508345'
-              }
-            >
-              {t('intro:misc-text.new-rwd-article')}
-            </Link>
-          </p>
-        </Alert>
-      </>
-    );
   else if (isRelationalDbCert(superBlock))
     return (
       <>
+        {CODEALLY_DOWN && (
+          <Alert bsStyle='danger'>
+            <p>
+              <Trans i18nKey='intro:misc-text.course-maintenance'>
+                <a
+                  href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
+                  rel='noreferrer'
+                  target='_blank'
+                >
+                  placeholder
+                </a>
+              </Trans>
+            </p>
+            <Spacer size='small' />
+            <p>{t('intro:misc-text.progress-wont-save')}</p>
+          </Alert>
+        )}
         {clientLocale != 'english' && (
           <Alert bsStyle='info'>
             <p>{t('intro:misc-text.english-only')}</p>
@@ -61,7 +58,6 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         )}
         <Alert bsStyle='info'>
           <p>
-            {t('intro:misc-text.viewing-upcoming-change')}{' '}
             <Link
               external={true}
               sameTab={false}
