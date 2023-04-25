@@ -252,7 +252,7 @@ function updateMyTheme(...args) {
   createUpdateUserProperties(
     buildUpdate,
     validate,
-    'flash.updated-themes' // shaun was right
+    'flash.updated-themes'
   )(...args);
 }
 
