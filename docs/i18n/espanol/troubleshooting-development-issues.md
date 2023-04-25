@@ -2,19 +2,19 @@ If you are facing an issue, there is a high chance that the resolution is in thi
 
 ## Issues with Installing the Recommended Prerequisites
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Regularmente desarrollamos en los últimos o más populares sistemas operativos como macOS 10.15 o posterior, Ubuntu 18.04 o posterior, y Windows 10 (con WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Se recomienda buscar tu problema específico en recursos como Google, Stack Overflow y Stack Exchange. Existe la posibilidad de que alguien haya enfrentado el mismo problema y que ya exista una respuesta a tu pregunta específica.
 
-If you are on a different OS or are still facing issues, see [getting help](#getting-help).
+Si estás en un sistema operativo diferente o todavía estas encontrandote con problemas, consulta [obtener ayuda](#getting-help).
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for problems with the prerequisite technologies. They are out of the scope of this project.
+> Por favor, evite crear asuntos de GitHub para problemas con las tecnologías previas. Están fuera del alcance de este proyecto.
 
 ## Issues with Missing UI, Fonts, Language Strings, or Build Errors
 
-When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
+When you build the client, Gatsby will cache the Fonts, language strings, and UI. Si uno de ellos no fue almacenado en caché, ejecute lo siguiente:
 
 ```console
 pnpm run clean
@@ -23,17 +23,17 @@ pnpm run seed
 pnpm run develop
 ```
 
-OR
+O
 
-Use the shortcut
+Use el atajo
 
 ```
 pnpm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+Si continúa enfrentándose a problemas con la construcción, se recomienda limpiar el espacio de trabajo.
 
-Use `git clean` in interactive mode:
+Use `git clean` en modo interactivo:
 
 ```
 git clean -ifdX
@@ -41,20 +41,20 @@ git clean -ifdX
 
 <details>
    <summary>
-      How to clean git untracked files (screenshot)
+      Cómo limpiar archivos sin el seguimiento de git (captura de pantalla)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Cómo limpiar archivos sin el seguimiento de git" />
 </details>
 
 ## Issues with API, login, Challenge Submissions, etc.
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+Si no puedes iniciar sesión, y en cambio ves un banner con un mensaje de error de que será reportado a freeCodeCamp, por favor, verifique otra vez de que tu puerto local `3000` no esté en uso por un programa diferente.
 
 <!-- tabs:start -->
 
-#### **macOS/Linux/WSL on Windows - From Terminal:**
+#### **macOS/Linux/WSL en Windows - Desde la terminal:**
 
 ```console
 netstat -a | grep "3000"
@@ -62,7 +62,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
+#### **En Windows - Desde PowerShell con permisos de administrador:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -76,26 +76,26 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ## Issues Signing Out while Navigating
 
-While in development, your session is stored as cookies. Clearing them will sign you out of your development account.
+Mientras estás en desarrollo, tu sesión es almacenado como cookies. Limpiarlos cerrará la sesión de tu cuenta de desarrollo.
 
-Running `pnpm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
+Running `pnpm run seed:certified-user` will log you out, too. Pero sobrescribirá al usuario de desarrollo en tu base de datos local.
 
 ## Issue Getting 404 when Navigating Profile Page
 
-When you try to navigate to http://localhost:8000/developmentuser to view the profile page, Gatsby takes over serving the client-side pages and hence you will get a 404 page for the user profile when working.
+Cuando intenta navegar a http://localhost:8000/developmentuser para ver la página de perfil, Gatsby se encarga de servir las páginas del lado del cliente y por lo tanto obtendrá una página 404 para el perfil de usuario cuando este trabajando.
 
-There is a "Preview Custom 404 Page" button, click it to see the profile.
+Hay un botón de "Vista previa de página 404 personalizada", haga clic en él para ver el perfil.
 
 ## Issues Installing Dependencies
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Si tienes errores mientras instalas dependencias, por favor asegúrate de que no estes en una red restringida o tu configuración de firewall no te impida acceder a los recursos.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+La primera configuración puede tardar un rato dependiendo del ancho de banda de tu red. Ten paciencia, y si todavía estás atascado recomendamos usar GitPod en lugar de una configuración sin conexión.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Si estás utilizando dispositivos de Apple con el chip M1 para iniciar la aplicación localmente, es sugerido usar Node v14.7 or superior. De lo contrario, podrías tener problemas con dependencias como Sharp.
 
 ## Getting Help
 
-If you are stuck and need help, feel free to ask questions in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Si estás atascado y necesitas ayuda, sientete libre de hacer preguntas en ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) o [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+Puede haber un error en la consola de tu navegador o en el Bash / Terminal / Línea de comandos que te ayudará a identificar el problema. Proporciona este mensaje de error en la descripción de tu problema para que otros puedan identificar el problema fácilmente y ayudarte a encontrar una solución.

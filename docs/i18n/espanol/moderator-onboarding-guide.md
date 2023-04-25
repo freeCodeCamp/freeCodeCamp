@@ -1,28 +1,28 @@
-# The Official freeCodeCamp Moderator Onboarding Guide
+# Guía oficial de incorporación de moderadores de freeCodeCamp
 
-This guide will help new moderators get up and running with the processes and procedures followed by experienced moderators on the freeCodeCamp community forum and other official communities that we foster.
+Esta guía ayudará a los nuevos moderadores a ponerse en marcha con los procesos y procedimientos que siguen los moderadores experimentados en el foro de la comunidad freeCodeCamp y otras comunidades oficiales que fomentamos.
 
-> [!NOTE] If you haven't read [The Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook) yet, you should start there first.
+> [!NOTE] Si aún no ha leído el [Manual del moderador](https://contribute.freecodecamp.org/#/moderator-handbook), deberia empezar por ahí primero.
 
-## The Forum
+## Nuestro foro
 
-### First Steps
+### Primeros pasos
 
-The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different, with new admin tools to explore and access to the Mod-Team subforum.
+Lo primero que puede notar después de recibir el estado de moderador en el foro, es que su interfaz se verá algo diferente, con nuevas herramientas de administración para explorar y, acceder al subforo Mod-Team.
 
-Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons, or even new enabled options within the forum menus.
+Algunas de las nuevas herramientas aparecerán dentro de un nuevo elemento de menú que parece una llave inglesa. Algunos aparecerán como nuevas pestañas o botones, o incluso nuevas opciones habilitadas dentro de los menús del foro.
 
-To get familiar with the new tools and powers, you can combine one or more of the following methods during your first week with this elevated role:
+Para familiarizarse con las nuevas herramientas y poderes, puede combinar uno o más de los siguientes métodos durante su primera semana con este rol elevado:
 
-> [!TIP] The first two are the most important.
+> [!TIP] Los dos primeros son los más importantes.
 
-### Become Familiar with the Discourse Admin Tools
+### Familiarícese con las herramientas de administración de discord
 
-The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) and Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
+El foro freeCodeCamp es en realidad un foro de Discord y sigue muchas de las mismas pautas de otros foros creados en Discord. Para comenzar a familiarizarse con Discord y la función de moderación, comience leyendo la [nueva guía del usuario](https://meta.discourse.org/t/discourse-new-user-guide/96331) de Discord y la [nueva guía del moderador](https://meta.discourse.org/t/discourse-moderation-guide/63116) de Discord.
 
 ### Shadow a Mod
 
-All moderator actions can be followed by reviewing the [action logs](https://forum.freecodecamp.org/admin/logs/staff_action_logs). The actions taken by automated tools like `akistmet` or `system` can mostly be ignored until they result in a post that needs to be reviewed. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
+Todas las acciones del moderador se pueden seguir revisando los [registros de acciones](https://forum.freecodecamp.org/admin/logs/staff_action_logs). Las acciones realizadas por herramientas automatizadas como `akistmet` o `system` pueden ignorarse en su mayoría hasta que dan como resultado una publicación que debe revisarse. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
 
 For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed, and compare that to the actions being taken upon the flagged posts. You may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
 

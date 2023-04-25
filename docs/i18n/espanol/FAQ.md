@@ -63,7 +63,7 @@ Por lo general, no asignamos los temas a nadie más que a los colaboradores con 
 1. Lo más probable es que fusionemos el primer pull request que aborde el tema o problema.
 2. En el caso de múltiples colaboradores abriendo un pull request para el mismo problema más o menos al mismo tiempo, daremos prioridad al pull request que aborde mejor la cuestión. Algunas de las cosas que consideramos:
    - ¿Has incluido pruebas?
-   - Did you catch all use cases?
+   - ¿Entendiste todos los casos de uso?
    - ¿Te aseguraste de que pasaran todas las pruebas, y confirmaste que todo funciona localmente?
 3. Por último, damos prioridad a los pull requests que siguen nuestras directrices recomendadas.
    - ¿Has seguido la lista de verificación de pull request?
@@ -71,9 +71,9 @@ Por lo general, no asignamos los temas a nadie más que a los colaboradores con 
 
 ### Estoy interesado en ser moderador en freeCodeCamp. ¿Dónde debería empezar?
 
-Los moderadores de la comunidad son nuestros héroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+Los moderadores de la comunidad son nuestros héroes. Su contribución voluntaria hace de freeCodeCamp una comunidad segura y acogedora.
 
-First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
+Primero y principal, necesitaremos que seas un participante activo en la comunidad y vivas de acuerdo a nuestro [código de conducta](https://www.freecodecamp.org/news/code-of-conduct/) (no sólo hacerlo cumplir).
 
 Aquí hay algunas rutas para algunas de nuestras plataformas:
 
@@ -81,7 +81,7 @@ Aquí hay algunas rutas para algunas de nuestras plataformas:
 - To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-En total, sé respetuoso con los demás. We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+En total, sé respetuoso con los demás. Somos humanos alreder del mundo. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
 If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. Reconocemos que esto probablemente también sea cierto en su caso. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
@@ -104,6 +104,6 @@ nuestro servidor de chat<1>.</li> </ul>
 
 ### Asistencia adicional
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+Si tiene preguntas sobre el stack, arquitectura del código fuente, traducciones, o cualquier otra cosa, no dudes en contactar con nuestro equipo de trabajo [en el foro](https://forum.freecodecamp.org/g/team).
 
 **Puedes enviar un correo a nuestro grupo de desarrolladores en: `dev[at]freecodecamp.org`**

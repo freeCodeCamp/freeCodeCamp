@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff82
-title: 'Problem 259: Reachable Numbers'
+title: 'Problema 259: Números acessíveis'
 challengeType: 1
 forumTopicId: 301907
 dashedName: problem-259-reachable-numbers
@@ -8,22 +8,22 @@ dashedName: problem-259-reachable-numbers
 
 # --description--
 
-A positive integer will be called reachable if it can result from an arithmetic expression obeying the following rules:
+Um número inteiro positivo será chamado de acessível se puder resultar de uma expressão aritmética obedecendo às seguintes regras:
 
-- Uses the digits 1 through 9, in that order and exactly once each.
-- Any successive digits can be concatenated (for example, using the digits 2, 3 and 4 we obtain the number 234).
-- Only the four usual binary arithmetic operations (addition, subtraction, multiplication and division) are allowed.
-- Each operation can be used any number of times, or not at all.
-- Unary minus is not allowed.
-- Any number of (possibly nested) parentheses may be used to define the order of operations.
+- Usa os algarismos de 1 a 9, nessa ordem e exatamente uma vez cada.
+- Quaisquer algarismos sucessivos podem ser concatenados (por exemplo, usando os algarismos 2, 3 e 4 obtemos o número 234).
+- Apenas as quatro operações aritméticas binárias habituais (adição, subtração, multiplicação e divisão) são permitidas.
+- Cada operação pode ser usada qualquer número de vezes, ou mesmo não usada.
+- Não é permitido o menos unário.
+- Qualquer número de parênteses (possivelmente aninhados) pode ser usado para definir a ordem das operações.
 
-For example, 42 is reachable, since $\frac{1}{23} \times ((4 \times 5) - 6) \times (78 - 9) = 42$.
+Por exemplo, 42 é acessível, já que $\frac{1}{23} \times ((4 \times 5) - 6) \times (78 - 9) = 42$.
 
-What is the sum of all positive reachable integers?
+Qual é a soma de todos os números inteiros positivos acessíveis?
 
 # --hints--
 
-`reachableNumbers()` should return `20101196798`.
+`reachableNumbers()` deve retornar `20101196798`.
 
 ```js
 assert.strictEqual(reachableNumbers(), 20101196798);

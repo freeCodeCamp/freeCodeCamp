@@ -10,7 +10,7 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 Кожен HTML елемент має елемент `parent`, із якого він (успадковує) властивості `inherits`.
 
-Наприклад, ваш елемент `jQuery Playground` `h3` має батьківський елемент `<div class="container-fluid">`, який так само має батьківський елемент `body`.
+For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
 
 jQuery має функцію, що називається `parent()`, яка надає доступ до батьківського елементу будь-якого вибраного елементу.
 

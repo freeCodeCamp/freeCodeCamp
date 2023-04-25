@@ -24,6 +24,7 @@ type UniversalNavProps = Omit<
   NavLinksProps,
   'navigate' | 'toggleNightMode' | 'openSignoutModal'
 > & {
+  fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
 };
 export const UniversalNav = ({
@@ -97,7 +98,6 @@ export const UniversalNav = ({
             <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
             <NavLinks
               displayMenu={displayMenu}
-              fetchState={fetchState}
               isLanguageMenuDisplayed={isLanguageMenuDisplayed}
               hideLanguageMenu={hideLanguageMenu}
               hideMenu={hideMenu}
