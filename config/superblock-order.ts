@@ -242,7 +242,7 @@ export const superBlockOrder: SuperBlockOrder = {
       }
     }
   },
-  [Languages.ChineseTrandational]: {
+  [Languages.ChineseTraditional]: {
     [CurriculumMaps.Landing]: [
       SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
