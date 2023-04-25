@@ -1,0 +1,208 @@
+{
+  "name": "Learn Modern JavaScript Methods By Building Football Team Cards",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-modern-javascript-methods-by-building-football-team-cards",
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "63c620161fc2b49ac340ffc4",
+      "Step 1"
+    ],
+    [
+      "63cf7e324c1831f8d936b3ae",
+      "Step 2"
+    ],
+    [
+      "63cf7f97e7f99af9348f5068",
+      "Step 3"
+    ],
+    [
+      "63cf812bb8ecd4f9cf749b8f",
+      "Step 4"
+    ],
+    [
+      "63cf83fdbb51d9fa54654ae6",
+      "Step 5"
+    ],
+    [
+      "63cf8ec006a776ff5f6e3c68",
+      "Step 6"
+    ],
+    [
+      "63cf90d4696d8f00851873a4",
+      "Step 7"
+    ],
+    [
+      "63cf91b0ff6e9300ead140cc",
+      "Step 8"
+    ],
+    [
+      "63cf920228531a0145abd0b3",
+      "Step 9"
+    ],
+    [
+      "63cf93472de77d01bf8474bf",
+      "Step 10"
+    ],
+    [
+      "63d120a05ee93f38353b84c0",
+      "Step 11"
+    ],
+    [
+      "63d1214a0ac7a9389793269b",
+      "Step 12"
+    ],
+    [
+      "63d128eaedcc773d2ded2128",
+      "Step 13"
+    ],
+    [
+      "63d12b9c7aaee43de1ba265d",
+      "Step 14"
+    ],
+    [
+      "63d12fe2a595263e8f5084f7",
+      "Step 15"
+    ],
+    [
+      "63e02a333354343b595d64ca",
+      "Step 16"
+    ],
+    [
+      "63e0334b7a24bd3c96aca4de",
+      "Step 17"
+    ],
+    [
+      "63e036373fc9173d284e165a",
+      "Step 18"
+    ],
+    [
+      "63e03b86008bbb3e1c3de846",
+      "Step 19"
+    ],
+    [
+      "63e042661ad2663f0d468740",
+      "Step 20"
+    ],
+    [
+      "63e050bf935ac341b88326d6",
+      "Step 21"
+    ],
+    [
+      "63e05557016dfd45ea49152c",
+      "Step 22"
+    ],
+    [
+      "63e05c00b615bb46ac87273a",
+      "Step 23"
+    ],
+    [
+      "63e060df21bca347b2d2b374",
+      "Step 24"
+    ],
+    [
+      "63e062d6090ebb486a4eda3a",
+      "Step 25"
+    ],
+    [
+      "63e949b8327aa2aca2ca8eac",
+      "Step 26"
+    ],
+    [
+      "63e94dae6dcedbad73f2f6ee",
+      "Step 27"
+    ],
+    [
+      "63e954321b0a77ae4f6d9650",
+      "Step 28"
+    ],
+    [
+      "63e95a45dce95baf41dd4f78",
+      "Step 29"
+    ],
+    [
+      "63e95e39860dc5b01ebe9be0",
+      "Step 30"
+    ],
+    [
+      "63e9667c881b61b1e338d276",
+      "Step 31"
+    ],
+    [
+      "63e96938d2a347b2734a1587",
+      "Step 32"
+    ],
+    [
+      "63e96eb94c97b6b31ee50f63",
+      "Step 33"
+    ],
+    [
+      "63e9718d7d490bb3940d5a0a",
+      "Step 34"
+    ],
+    [
+      "63e9737f686c76b4078a60f4",
+      "Step 35"
+    ],
+    [
+      "63f28972973504e7bb58b0b3",
+      "Step 36"
+    ],
+    [
+      "63f28ef082d771e8bf71f94a",
+      "Step 37"
+    ],
+    [
+      "63f293c804d6f9e9a83ca4c5",
+      "Step 38"
+    ],
+    [
+      "63f29804e3ec00ea6fab1ec4",
+      "Step 39"
+    ],
+    [
+      "63f29ce62aea65eb041758c8",
+      "Step 40"
+    ],
+    [
+      "63f2a0a860790eebe61bf908",
+      "Step 41"
+    ],
+    [
+      "641fc88d8fa7127f76e0324f",
+      "Step 42"
+    ],
+    [
+      "641fcfd468185384ac218b7d",
+      "Step 43"
+    ],
+    [
+      "63f2a4a8087e6dec8ec47f16",
+      "Step 44"
+    ],
+    [
+      "63f2a5f09a785aed155c0a56",
+      "Step 45"
+    ],
+    [
+      "63f2a8e14fb388edd3242527",
+      "Step 46"
+    ],
+    [
+      "63f2aa36fcdc63ee4e18fc37",
+      "Step 47"
+    ],
+    [
+      "63f2ab4f6c52c5eec6d68de4",
+      "Step 48"
+    ]
+  ]
+}

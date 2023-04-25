@@ -8,7 +8,7 @@ dashedName: record-collection
 
 # --description--
 
-あなたは音楽アルバムコレクションのメンテナンスに役立つ関数を作成しています。 コレクションは、オブジェクトである複数のアルバムを含むオブジェクトとして構成されています。 各アルバムはコレクション内で一意の `id` をプロパティ名として保有し表されます。 Within each album object, there are various properties describing information about the album. Not all albums have complete information.
+あなたは音楽アルバムコレクションのメンテナンスに役立つ関数を作成しています。 コレクションは、オブジェクトである複数のアルバムを含むオブジェクトとして構成されています。 各アルバムはコレクション内で一意の `id` をプロパティ名として保有し表されます。 Within each album object, there are various properties describing information about the album. 情報が完全ではないアルバムもあります。
 
 The `updateRecords` function takes 4 arguments represented by the following function parameters:
 
@@ -17,18 +17,18 @@ The `updateRecords` function takes 4 arguments represented by the following func
 -   `prop` - a string representing the name of the album’s property to update
 -   `value` - a string containing the information used to update the album’s property
 
-Complete the function using the rules below to modify the object passed to the function.
+次に示すルールに従って、渡されたオブジェクトを変更する関数を完成させてください。
 
 -   Your function must always return the entire `records` object.
--   If `value` is an empty string, delete the given `prop` property from the album.
+-   `value` が空文字列の場合は、指定された `prop` プロパティをアルバムから削除します。
 -   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
 -   If `prop` is `tracks` and value isn't an empty string, add the `value` to the end of the album's `tracks` array. You need to create this array first if the album does not have a `tracks` property.
 
-**Note:** A copy of the `recordCollection` object is used for the tests. You should not directly modify the `recordCollection` object.
+**注:** テストには `recordCollection` オブジェクトのコピーが使用されます。 You should not directly modify the `recordCollection` object.
 
 # --hints--
 
-After `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` should be the string `ABBA`
+`updateRecords(recordCollection, 5439, "artist", "ABBA")` の実行後、`artist` は文字列 `ABBA` になる必要があります。
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have the string `Take a Chance on Me` as the last and only element.
+`updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` の実行後、`tracks` 配列は、文字列 `Take a Chance on Me` が末尾かつ唯一の要素になる必要があります。
 
 ```js
 assert(
@@ -47,14 +47,14 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2548, "artist", "")`, `artist` should not be set
+`updateRecords(recordCollection, 2548, "artist", "")` の実行後、`artist` は未設定であるべきです。
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-After `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` should have the string `Addicted to Love` as the last element.
+`updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` の実行後、`tracks` の末尾の要素は文字列 `Addicted to Love` になる必要があります。
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` should have the string `1999` as the first element.
+`updateRecords(recordCollection, 2468, "tracks", "Free")` の実行後、`tracks` の先頭の要素は文字列 `1999` であるべきです。
 
 ```js
 assert(
@@ -74,14 +74,14 @@ assert(
 );
 ```
 
-After `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` should not be set
+`updateRecords(recordCollection, 2548, "tracks", "")` の実行後、`tracks` は未設定であるべきです。
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-After `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be the string `Riptide`
+`updateRecords(recordCollection, 1245, "albumTitle", "Riptide")` の実行後、`albumTitle` は文字列 `Riptide` になる必要があります。
 
 ```js
 assert(

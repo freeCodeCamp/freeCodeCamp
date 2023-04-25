@@ -7,7 +7,7 @@ dashedName: step-21
 
 # --description--
 
-You now need a total count of each product that the user has in the cart. Dichiara una variabile `totalCountPerProduct` e assegnale un oggetto vuoto.
+Ora hai bisogno del totale di ogni prodotto che l'utente ha nel carrello. Dichiara una variabile `totalCountPerProduct` e assegnale un oggetto vuoto.
 
 # --hints--
 

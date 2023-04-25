@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7d
-title: Hash and Compare Passwords Asynchronously
+title: Hash y comparación de contraseñas asíncronicamente
 challengeType: 2
 forumTopicId: 301578
 dashedName: hash-and-compare-passwords-asynchronously
@@ -8,9 +8,9 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Como recordatorio, este proyecto se ha construído en base al el siguiente proyecto en <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
+Como el As hashing esta diseñado para ser computacionalmente intensivo, es recomendado hacerlo de manera asyncrona en tu servidor para evitar conexiones entrantes mientras se efectúa el hash. Todo lo que debes hacer para hash una contraseña asíncrona es llamar
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -20,9 +20,9 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-Add this hashing function to your server (we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.
+Agrega esta función hashing a tu servidor (ya hemos definido las variables usadas en la función para tu uso) y registra en la consola para que las veas! En este punto tu normalmente guardarías el hash para tu base de datos.
 
-Now when you need to figure out if a new input is the same data as the hash you would just use the compare function.
+Ahora cuando tu necesites descubrir si una nueva entrada es la misma información que el hash simplemente usa la función de comparación.
 
 ```js
 bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Add this into your existing hash function (since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
+Añade esto dentro de tu función hash existente (ya que necesitas esperar por el hash se complete antes de llamar a la función compación) luego de registrar el hash completado y registrar 'res' a la consola dentro de la comparación. Deberías ver en la consola un hash, y luego se imprime 'true'! Si cambias 'myPlaintextPassword' en la función de comparación a 'someOtherPlaintextPassword', entonces este debería decir false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
@@ -47,7 +47,7 @@ Envía tu página cuando creas que está correcto.
 
 # --hints--
 
-Async hash should be generated and correctly compared.
+Hash asíncrono debería generarse y compararse correctamente.
 
 ```js
 (getUserInput) =>

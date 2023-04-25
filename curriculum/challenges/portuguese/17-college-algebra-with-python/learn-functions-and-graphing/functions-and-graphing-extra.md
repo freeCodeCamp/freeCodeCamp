@@ -1,6 +1,6 @@
 ---
 id: 63e1798f811fda1bc546bba0
-title: "Functions and Graphing: Extra"
+title: "Funções e gráficos: extra"
 challengeType: 15
 videoId: N7Fh1xKrIM4
 dashedName: functions-and-graphing-extra
@@ -8,19 +8,19 @@ dashedName: functions-and-graphing-extra
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+Este próximo vídeo mostrará a você a conexão entre funções e gráficos. Observe como o gráfico é uma maneira de representar as entradas e saídas de uma função. Então, o vídeo mostrará como criar o gráfico de uma função com Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with this video.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a>
 
 # --question--
 
-## --assignemnts--
+## --assignments--
 
-Add code to your algebra Colab notebook for functions and graphing.
+Adicione código ao seu notebook do Colaboratory de álgebra para funções e gráficos.
 
 ## --text--
 
-What Python library would you import to create arrays that you can graph?
+Qual biblioteca do Python você importaria para criar arrays que você pode colocar em gráficos?
 
 ## --answers--
 

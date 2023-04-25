@@ -20,7 +20,6 @@ import { User } from '../../../redux/prop-types';
 
 export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
   displayMenu: boolean;
-  fetchState: { pending: boolean };
   showMenu: () => void;
   hideMenu: () => void;
   user?: User;
@@ -102,17 +101,25 @@ function NavLinks({
   openSignoutModal,
   hideMenu,
   displayMenu,
-  fetchState,
   toggleNightMode,
   user
 }: NavLinksProps) {
   const { t } = useTranslation();
-  const { pending } = fetchState;
   const {
     isDonating: isUserDonating,
     username: currentUserName,
     theme: currentUserTheme
   } = user || {};
+
+  const getPreviousMenuItem = (target: HTMLButtonElement | null) => {
+    const previousSibling =
+      target?.closest('.nav-list > li')?.previousElementSibling;
+    const previousButton = previousSibling?.querySelector<
+      HTMLButtonElement | HTMLAnchorElement
+    >('a, button');
+    return previousButton ?? menuButtonRef.current;
+  };
+
 
   const handleMenuKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
@@ -158,9 +165,7 @@ function NavLinks({
     openSignoutModal();
   };
 
-  return pending ? (
-    <div className='nav-skeleton' />
-  ) : (
+  return (
     <ul
       aria-labelledby='toggle-button-nav'
       className={`nav-list${displayMenu ? ' display-menu' : ''}`}

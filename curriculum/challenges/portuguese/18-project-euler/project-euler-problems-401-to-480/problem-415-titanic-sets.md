@@ -1,6 +1,6 @@
 ---
 id: 5900f50c1000cf542c51001e
-title: 'Problem 415: Titanic sets'
+title: 'Problema 415: Conjuntos titânicos'
 challengeType: 1
 forumTopicId: 302084
 dashedName: problem-415-titanic-sets
@@ -8,19 +8,19 @@ dashedName: problem-415-titanic-sets
 
 # --description--
 
-A set of lattice points $S$ is called a titanic set if there exists a line passing through exactly two points in $S$.
+Um conjunto de pontos de uma rede diagonal $S$ é chamado de conjunto titânico se existir uma linha que passe por exatamente dois pontos em $S$.
 
-An example of a titanic set is $S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)\\}$, where the line passing through (0, 1) and (2, 0) does not pass through any other point in $S$.
+Um exemplo de um conjunto titânico é $S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)\\}$, onde a linha passando por (0, 1) e (2, 0) não passa por nenhum outro ponto em $S$.
 
-On the other hand, the set {(0, 0), (1, 1), (2, 2), (4, 4)} is not a titanic set since the line passing through any two points in the set also passes through the other two.
+Por outro lado, o conjunto {(0, 0), (1, 1), (2, 2), (4, 4)} não é um conjunto titânico, já que a linha que passa por dois pontos quaisquer no conjunto também passa pelos outros dois.
 
-For any positive integer $N$, let $T(N)$ be the number of titanic sets $S$ whose every point ($x$, $y$) satisfies $0 ≤ x$, $y ≤ N$. It can be verified that $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$ and $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$.
+Para qualquer inteiro positivo $N$, consideremos que $T(N)$ é o número de conjuntos titânicos $S$ em que cada ponto ($x$, $y$) satisfaz $0 ≤ x$, $y ≤ N$. Pode-se verificar que $T(1) = 11$, $T(2) = 494$, $T(4) = 33.554.178$, $T(111)\bmod {10}^8 = 13.500.401$ e $T({10}^5)\bmod {10}^8 = 63.259.062$.
 
-Find $T({10}^{11})\bmod {10}^8$.
+Encontre $T({10}^{11})\bmod {10}^8$.
 
 # --hints--
 
-`titanicSets()` should return `55859742`.
+`titanicSets()` deve retornar `55859742`.
 
 ```js
 assert.strictEqual(titanicSets(), 55859742);
