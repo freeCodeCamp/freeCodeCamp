@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
@@ -40,6 +40,17 @@ export const LanguageList = ({
     }
     setShowList(true);
   };
+
+  const handleClickOutside = () => {
+    if (showList) setShowList(false);
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showList]);
 
   // the accessibility tree just needs a little more time to pick up the change.
   // This function allows us to set aria-expanded to false and then delay just a bit before setting focus on the button

@@ -45,8 +45,6 @@ export class Header extends React.Component<
       !this.searchBarRef.current.contains(eventTarget) &&
       // don't count clicks on searcn bar inputs reset button
       !eventTarget.closest('.ais-SearchBox-reset') &&
-      // don't count clicks on language button/menu
-      !eventTarget.closest('.nav-lang') &&
       // don't count clicks on disabled elements
       !eventTarget.closest('[aria-disabled="true"]')
     ) {
