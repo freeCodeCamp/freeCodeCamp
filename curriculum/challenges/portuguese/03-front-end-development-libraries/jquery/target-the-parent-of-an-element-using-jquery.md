@@ -10,9 +10,9 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 Todo elemento HTML possui um elemento `parent` do qual `inherits` (herda) propriedades.
 
-For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
+Por exemplo, o elemento `h3` do `jQuery Playground` tem o elemento pai `<div class="container-fluid">`, que, por sua vez, tem `body` como seu elemento pai.
 
-O jQuery possui uma função chamada `parent()` que o permite acessar o parente de qualquer elemento que você selecionou.
+O jQuery possui uma função chamada `parent()` que o permite acessar o elemento pai de qualquer elemento que você selecionou.
 
 Aqui está um exemplo de como você usaria a função `parent()` se você quisesse dar ao elemento pai do elemento `left-well` uma cor de fundo azul:
 
@@ -20,7 +20,7 @@ Aqui está um exemplo de como você usaria a função `parent()` se você quises
 $("#left-well").parent().css("background-color", "blue")
 ```
 
-Dê ao parente do elemento `#target1` uma cor de fundo (background-color) vermelha.
+Dê ao elemento pai do elemento `#target1` uma cor de fundo (background-color) vermelha.
 
 # --hints--
 
