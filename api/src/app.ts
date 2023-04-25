@@ -49,6 +49,8 @@ export type FastifyInstanceWithTypeProvider = FastifyInstance<
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
+  // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
+  // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   void fastify.register(security);

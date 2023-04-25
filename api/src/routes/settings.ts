@@ -78,11 +78,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: {
         body: Type.Object({
-          theme: Type.String()
+          theme: Type.Union([Type.Literal('default'), Type.Literal('night')])
         }),
         response: {
           200: Type.Object({
-            message: Type.Literal('flash.updated-preferences'),
+            message: Type.Literal('flash.updated-themes'),
             type: Type.Literal('success')
           }),
           500: Type.Object({
@@ -93,7 +93,6 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      // TODO: Validate req.body.theme is 'night' or 'default'
       try {
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
@@ -103,7 +102,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
-          message: 'flash.updated-preferences',
+          message: 'flash.updated-themes',
           type: 'success'
         } as const;
       } catch (err) {
