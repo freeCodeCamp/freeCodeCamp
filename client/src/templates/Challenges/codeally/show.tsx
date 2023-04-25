@@ -45,7 +45,7 @@ import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import { codeAllyDown } from '../../../../../config/misc';
+import { CODEALLY_DOWN } from '../../../../../config/misc';
 
 import './codeally.css';
 
@@ -253,7 +253,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <LearnLayout>
           <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
           <Grid>
-            {codeAllyDown && superBlock === SuperBlocks.RelationalDb && (
+            {CODEALLY_DOWN && superBlock === SuperBlocks.RelationalDb && (
               <Row>
                 <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                   <Spacer size='medium' />

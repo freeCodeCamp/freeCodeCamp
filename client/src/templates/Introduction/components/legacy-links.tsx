@@ -4,7 +4,7 @@ import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
-import { codeAllyDown } from '../../../../../config/misc';
+import { CODEALLY_DOWN } from '../../../../../config/misc';
 import Spacer from '../../../components/helpers/spacer';
 
 import envData from '../../../../../config/env.json';
@@ -34,7 +34,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   else if (isRelationalDbCert(superBlock))
     return (
       <>
-        {codeAllyDown && (
+        {CODEALLY_DOWN && (
           <Alert bsStyle='danger'>
             <p>
               <Trans i18nKey='intro:misc-text.course-maintenance'>
