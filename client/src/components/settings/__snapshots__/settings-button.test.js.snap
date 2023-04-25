@@ -12,7 +12,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -151,7 +152,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -290,7 +292,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -429,7 +432,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -568,7 +572,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -707,7 +712,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -846,7 +852,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -985,7 +992,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1124,7 +1132,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1263,7 +1272,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1402,7 +1412,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1541,7 +1552,8 @@ exports[`should check certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1685,7 +1697,8 @@ exports[`should check legacy certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -1904,7 +1917,8 @@ exports[`should check legacy certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -2123,7 +2137,8 @@ exports[`should check legacy certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />
@@ -2342,7 +2357,8 @@ exports[`should check legacy certification button consistency 1`] = `
         className="spacer"
         style={
           {
-            "paddingBlock": "15px",
+            "height": "1px",
+            "padding": "15px 0",
           }
         }
       />

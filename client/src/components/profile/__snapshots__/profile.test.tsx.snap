@@ -4,14 +4,14 @@ exports[`<Profile/> renders correctly 1`] = `
 <div>
   <div
     class="spacer"
-    style="padding-block: 15px;"
+    style="padding: 15px 0px; height: 1px;"
   />
   <div
     class="container"
   >
     <div
       class="spacer"
-      style="padding-block: 15px;"
+      style="padding: 15px 0px; height: 1px;"
     />
     <div>
       <div
@@ -281,7 +281,7 @@ exports[`<Profile/> renders correctly 1`] = `
     </div>
     <div
       class="spacer"
-      style="padding-block: 15px;"
+      style="padding: 15px 0px; height: 1px;"
     />
     <div
       class="text-center row"
@@ -294,7 +294,7 @@ exports[`<Profile/> renders correctly 1`] = `
     </div>
     <div
       class="spacer"
-      style="padding-block: 15px;"
+      style="padding: 15px 0px; height: 1px;"
     />
   </div>
 </div>
