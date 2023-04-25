@@ -371,7 +371,7 @@ Quindi apri una PR al repo CDN per aggiungere i file YAML e Day.js per la revisi
 
 Il [repo News](https://github.com/freeCodeCamp/news) prende i dati da un'istanza di Ghost, i file che hai aggiunto al CDN, fa il build di News e il deployment.
 
-> [!WARN] Le pull request al repo news _devono_ provenire dallo stesso repo. Non dovresti lavorare da un fork per questo passaggio.
+> [!WARN] Pull requests to the News repo _must_ come from the same repo. Non dovresti lavorare da un fork per questo passaggio.
 
 ### Modificare il file di configurazione principale
 
