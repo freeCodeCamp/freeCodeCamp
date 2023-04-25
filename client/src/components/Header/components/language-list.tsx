@@ -63,9 +63,7 @@ export const LanguageList = ({
     }
   };
 
-  const handleMenuKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => {
+  const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === 'Escape') {
       listButtonRef.current?.focus();
       setShowList(false);
@@ -84,7 +82,7 @@ export const LanguageList = ({
   };
 
   const handleLastLangaugeKeys = (
-    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+    event: React.KeyboardEvent<HTMLButtonElement>
   ) => {
     const DoKeyPress = new Map<string, { select: () => void }>([
       [
@@ -121,7 +119,7 @@ export const LanguageList = ({
   return (
     <>
       <button
-        id='toggle-button-nav'
+        id='toggle-lang-button'
         className='lang-button-nav'
         title={t('buttons.change-language')}
         aria-label={t('buttons.change-language')}
@@ -137,7 +135,7 @@ export const LanguageList = ({
       <ul
         id='nav-lang-list'
         className='nav-list'
-        aria-labelledby='toggle-button-nav'
+        aria-labelledby='toggle-lang-button'
       >
         {locales.map((lang, index) => (
           <li key={'lang-' + lang}>
