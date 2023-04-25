@@ -1,6 +1,6 @@
 ---
 id: 594ecc0d9a8cf816e3340187
-title: Taxicab numbers
+title: Números taxicab
 challengeType: 1
 forumTopicId: 302337
 dashedName: taxicab-numbers
@@ -8,60 +8,60 @@ dashedName: taxicab-numbers
 
 # --description--
 
-A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+Un número taxicab (la definición que está utilizándose aquí) es un entero positivo que puede estar expresado como la suma de dos cubos positivos en más de una manera.
 
-The first taxicab number is `1729`, which is:
+El primer número taxicab es `1729`, el cuál es:
 
-1<sup>3</sup> + 12<sup>3</sup> and
+1<sup>3</sup> + 12<sup>3</sup> y
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
-Taxicab numbers are also known as:
+Números Taxicabs son también conocidos como:
 
 <ul>
-  <li>taxi numbers</li>
-  <li>taxi-cab numbers</li>
-  <li>taxi cab numbers</li>
-  <li>Hardy-Ramanujan numbers</li>
+  <li>números taxi</li>
+  <li>números taxi-cab</li>
+  <li>números taxi cab</li>
+  <li>Números Hardy-Ramanujan</li>
 </ul>
 
 # --instructions--
 
-Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
+Escribe una funció que devuelve el número más bajo `n` de taxicab. Por cada uno de los números taxicab, mostrar el número así como sus cubos constituyentes.
 
 # --hints--
 
-`taxicabNumbers` should be a function.
+`taxicabNumbers` debería devolver una función.
 
 ```js
 assert(typeof taxicabNumbers === 'function');
 ```
 
-`taxicabNumbers` should return an array.
+`taxicabNumbers` debería devolver un arreglo.
 
 ```js
 assert(typeof taxicabNumbers(2) === 'object');
 ```
 
-`taxicabNumbers` should return an array of numbers.
+`taxicabNumbers` debería devolver un arreglo de números.
 
 ```js
 assert(typeof taxicabNumbers(100)[0] === 'number');
 ```
 
-`taxicabNumbers(4)` should return [1729, 4104, 13832, 20683].
+`taxicabNumbers(4)` debería devolver [1729, 4104, 13832, 20683].
 
 ```js
 assert.deepEqual(taxicabNumbers(4), res4);
 ```
 
-`taxicabNumbers(25)` should return [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
+`taxicabNumbers(25)` debería devolver [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
 
 ```js
 assert.deepEqual(taxicabNumbers(25), res25);
 ```
 
-`taxicabNumbers(39)` resulting numbers from 20 - 29 should be [314496,320264,327763,373464,402597,439101,443889,513000,513856].
+`taxicabNumbers(39)` los números resultantes desde 20 - 29 deberían ser [314496,320264,327763,373464,402597,439101,443889,513000,513856].
 
 ```js
 assert.deepEqual(taxicabNumbers(39).slice(20, 29), res39From20To29);

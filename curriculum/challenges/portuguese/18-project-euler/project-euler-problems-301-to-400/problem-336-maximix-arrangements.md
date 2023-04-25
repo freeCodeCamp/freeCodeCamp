@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
-title: 'Problem 336: Maximix Arrangements'
+title: 'Problema 336: Arranjos maximix'
 challengeType: 1
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements
@@ -8,31 +8,31 @@ dashedName: problem-336-maximix-arrangements
 
 # --description--
 
-A train is used to transport four carriages in the order: $ABCD$. However, sometimes when the train arrives to collect the carriages they are not in the correct order.
+Um trem é usado para transportar quatro vagões na ordem: $ABCD$. No entanto, por vezes, quando o trem chega para coletar os vagões, eles não estão na ordem certa.
 
-To rearrange the carriages, they are all shunted onto a large rotating turntable. After the carriages are uncoupled at a specific point, the train moves off the turntable pulling the carriages still attached with it. The remaining carriages are rotated 180°. All of the carriages are then rejoined and this process is repeated as often as necessary in order to obtain the least number of uses of the turntable.
+Para reorganizar os vagões, todos eles são empurrados para um grande prato giratório. Depois de os vagões serem separados em um ponto específico, o trem sai do prato tirando os vagões que ainda estão presos a ele. Os vagões restantes são girados 180°. Todos os vagões são depois reagrupados e este processo é repetido sempre que necessário para obter o menor número de utilizações do prato.
 
-Some arrangements, such as $ADCB$, can be solved easily: the carriages are separated between $A$ and $D$, and after $DCB$ are rotated the correct order has been achieved.
+Alguns arranjos, como $ADCB$, podem ser resolvidos facilmente: os vagões são separados entre $A$ e $D$, e depois de $DCB$ ser girado, a ordem correta é alcançada.
 
-However, Simple Simon, the train driver, is not known for his efficiency, so he always solves the problem by initially getting carriage $A$ in the correct place, then carriage $B$, and so on.
+No entanto, Simon Simples, o motorista do trem, não é conhecido pela sua eficiência. Então, ele sempre resolve o problema ao receber inicialmente o vagão $A$ no lugar correto, depois o vagão $B$ e assim por diante.
 
-Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring him five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process he uses for $DACB$ is shown below.
+Usando quatro vagões, o pior arranjo possível para Simon, que chamaremos de arranjo máximo, é $DACB$ e $DBAC$; cada um deles exigindo cinco rotações (embora, usando a abordagem mais eficiente, eles possam ser reagrupados usando apenas três rotações). O processo que ele usa para $DACB$ é mostrado abaixo.
 
-<img class="img-responsive center-block" alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="cinco rotações para o arranjo maximix DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
 
-It can be verified that there are 24 maximix arrangements for six carriages, of which the tenth lexicographic maximix arrangement is $DFAECB$.
+É possível verificar que há 24 arranjos maximix para seis vagões, dos quais $DFAECB$ é o décimo arranjo maximix lexicográfico.
 
-Find the ${2011}^{\text{th}}$ lexicographic maximix arrangement for eleven carriages.
+Encontre o ${2011}^{\text{o}}$ arranjo maximix lexicográfico para onze vagões.
 
 # --hints--
 
-`maximixArrangements()` should return a string.
+`maximixArrangements()` deve retornar uma string.
 
 ```js
 assert(typeof maximixArrangements() === 'string');
 ```
 
-`maximixArrangements()` should return the string `CAGBIHEFJDK`.
+`maximixArrangements()` deve retornar a string `CAGBIHEFJDK`.
 
 ```js
 assert.strictEqual(maximixArrangements(), 'CAGBIHEFJDK');

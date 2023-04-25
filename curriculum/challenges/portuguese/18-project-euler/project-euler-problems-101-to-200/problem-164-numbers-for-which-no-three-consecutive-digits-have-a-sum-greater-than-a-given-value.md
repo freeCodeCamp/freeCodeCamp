@@ -1,7 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff23
 title: >-
-  Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value
+  Problema 164: Números para os quais nenhuma sequência de três algarismos consecutivos têm uma soma maior que um determinado valor
 challengeType: 1
 forumTopicId: 301798
 dashedName: >-
@@ -10,11 +10,11 @@ dashedName: >-
 
 # --description--
 
-How many 20 digit numbers $n$ (without any leading zero) exist such that no three consecutive digits of $n$ have a sum greater than 9?
+Quantos números de 20 algarismos $n$ (sem zeros à esquerda) existem, de modo que não haja três algarismos consecutivos de $n$ com uma soma maior que 9?
 
 # --hints--
 
-`consecutiveDigitsSum()` should return `378158756814587`.
+`consecutiveDigitsSum()` deve retornar `378158756814587`.
 
 ```js
 assert.strictEqual(consecutiveDigitsSum(), 378158756814587);

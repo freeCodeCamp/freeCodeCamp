@@ -4,11 +4,11 @@
 
 Para trabajar en las pautas de contribución, puedes editar o agregar archivos al directorio `docs`, [disponible aquí](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Cuando tus cambios se fusionen, automáticamente estarán disponibles en el sitio de documentación.
 
-When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+Cuando se agrega un nuevo archivo al directorio `docs`, deberías evaluar si el archivo también debe ser agregado a la barra lateral de navegación. Normalmente creamos un enlace en el archivo [`_sidebar.md`](_sidebar.md) para guías nuevas e independientes. Alternativamente, puede seguir las instrucciones de abajo en crear un link interno para guías de soporte.
 
 ### How to Create an Internal Link
 
-If you want to create a link targeting a different section of the contributing guidelines, follow this format:
+Si quieres crear un link dirigido a una sección diferente a las pautas de contribución, sigue este formato:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
@@ -17,13 +17,13 @@ If you want to create a link targeting a different section of the contributing g
 [Link text](#target-section-heading-id)
 ```
 
-Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
+Asegurate de incluir la extensión del archivo (`.md`). Don't specify the full URL or append `/` before the file name.
 
-This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
+Esto es necesario para hacer que estos enlaces fucionen para la versión traducida del ducumento. Otherwise, they will redirect to the English version of the page regardless of the language.
 
 #### Traduciendo archivos con enlaces internos
 
-When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
+Cuando estas traduciendo documentos en Crowdin, asegurate de reemplazar el `#target-section-heading-id` con el id en el documento traducido. [Aprende mas sobre como traducir documentos aqui](how-to-translate-files.md#translate-documentation).
 
 ## Work on the Docs Theme
 
@@ -33,9 +33,9 @@ When you work on translating docs on Crowdin, make sure to replace the `#target-
 
 ### Structure of the Docs Website
 
-The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
+El sitio esta generado usando [`docsify`](https://docsify.js.org) y se esta ejecutado usando Github pages.
 
-Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
+Normalmente no vas a necesitar cambiar ninguna configuración o compliar el sitio localmente. En caso de que te interese, asi es como funciona:
 
 - El código de la página de inicio para este sitio está disponible en [`docs/index.html`](index.html).
 - Servimos este archivo como SPA utilizando `docsify` y GitHub Pages.

@@ -336,8 +336,12 @@
         "title": "Aprende programación funcional construyendo una hoja de cálculo",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "Aprende los Métodos de Arreglo Avanzados construyendo una Calculadora de Estadísticas",
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
@@ -565,7 +569,7 @@
     "intro": [
       "Hasta este punto, solo has usado JavaScript en la parte de front-end para agregar interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back-end, o servidor, para construir aplicaciones web completas.",
       "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "En la Certificación Desarrollo de Back End y APIs, aprenderás cómo escribir aplicaciones de back-end con Node.js y npm (Node Package Manager). También construirás aplicaciones web con el framework Express, y un microservicio \"People Finder\" con MongoDB y la biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -754,135 +758,135 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Algebra universitaria con Python",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "Este curso está diseñado como un semestre de academia. Consiste de videos intructivos, con Google Colaboratory para seguir interactivamente, asignaturas y proyectos competitivos.",
+      "A medida que pasas por cada parte de este curso en secuencia, ganarás una comprensión completa de Álgebra y cómo escribir código de Python para resolver problemas de Álgebra.",
+      "A lo largo de este curso, también construirá su propio Algebra Colab que podrá utilizar como su calculadora personalizada. Este curso (y el código que escribas aquí) te dará la base para una comprensión más profunda de matemáticas y ciencias de datos."
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "Aprender ratios y porciones",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "Tu viaje comienza aquí a medida que aprendes cómo configurar un libro de notas Colab que puede ejecutar código Python. Luego, utilice el cuaderno para seguir junto con los videos para aprender ratios y proporciones usando Python."
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "Aprende cómo resolver X",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "Esta unidad se centrará en cómo resolver un número desconocido (a menudo llamado \"x\") usando el código escrito de Álgebra y Python."
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "Aprende Fracciones y Decimales",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "Esta unidad se centrará en convertir decimales a fracciones y porcentajes."
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "Aprende Funciones y Gráficos",
+        "intro": ["Esta unidad te enseñará sobre las funciones matemáticas."]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "Aprende funciones lineales",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "Esta unidad le mostrará cómo desarrollar ecuaciones lineales desde dos puntos."
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "Aprende Factores Comunes y Raíces Cuadrados",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "En esta unidad, aprenderás a encontrar factores comunes y dividirlos. Esto será útil para simplificar fracciones y factorizar raíces cuadradas."
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "Calculador de múltiples funciones",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirá una calculadora multifuncional."
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "Aprende cómo graficar los sistemas de ecuaciones",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "Esta unidad se centrará en graficar dos ecuaciones en el mismo plano de coordenadas, para que se pueda ver donde se intersectan las líneas."
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "Aprende a resolver los sistemas de ecuaciones",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "En esta unidad, aprenderás a resolver un sistema de dos ecuaciones (con dos variables) sin gráfico. Verás cómo puedes factorizar una ecuación y resolver una determinada variable en Python. Al final de esta unidad, usted será capaz de resolver y graficar el sistema con un bloque de código."
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "Aprender Aplicaciones de Sistemas Lineales",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "En esta unidad, verá cómo puede utilizar el algoritmo que aprendió hasta ahora para resolver problemas del mundo real."
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "Aprende ecuaciones cuadráticas",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "Esta unidad irá más allá de las ecuaciones lineales, para trabajar con exponentes y gráficas parabolas. Aprenderás cómo encontrar puntos clave en las parabolas y cómo resolver ecuaciones cuadráticas."
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "Calculadora de gráficos",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, se construirá una calculadora de gráficos."
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "Aprende Gráficos y Polinomios de Padres",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "Esta unidad le mostrará muchos tipos diferentes de gráficos \"padres\", los patrones básicos que componen gráficos más complicados. Los polinomios son expresiones matemáticas con \"múltiples cosas\" - las ecuaciones más complicadas que se construyen con patrones básicos. Verás cómo se ven estos gráficos, cómo modificarlos y cómo hacerlo todo con código Python."
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "Tres juegos de matemáticas",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirás tres juegos de matemática."
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "Aprender aplicaciones de negocios de la álgebra universitaria",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "Esta unidad le mostrará cómo aplicar sus habilidades de resolución y gráfica para encontrar costos, ingresos y ganancias. Escribirás código para desarrollar una función de demanda desde dos puntos. Verán cómo el precio afecta al gráfico de beneficios y cómo todas estas ecuaciones se relacionan entre sí."
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "Aprende Interés Simple y Compuesto",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "Esta unidad le mostrará cómo calcular los intereses, los pagos de préstamos y el valor estimado de las inversiones. Verás la fórmula matemática y convertirla en código. Debido a que estas fórmulas tienden a ser complicadas, apreciarás tener el código donde puedes modificar unos pocos valores."
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "Aprender Exponentes y Logaritmos",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "Esta unidad le mostrará cómo los exponentes y logaritmos son funciones inversas, y cómo puede utilizar estas funciones en varias aplicaciones."
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "Calculador Financiero",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirá una calculadora financiera."
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Algebra universitaria con Python: Conclusión",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "Esta será la última unidad en este curso. Veamos cómo puedes conectar tu conocimiento de matemáticas y Python con datos externos."
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "Explorador gráfico de datos",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirá una calculadora financiera."
         ]
       }
     }
@@ -893,7 +897,7 @@
       "Si está buscando ejercicios gratuitos de programación para prepararse para tu próxima entrevista de trabajo, aquí los tenemos.",
       "Esta sección contiene cientos de desafíos de programación que prueban su conocimiento de algoritmos, estructuras de datos y matemáticas. También tiene una serie de proyectos para llevarse a casa que puede utilizar para fortalecer sus habilidades, o añadir a su portafolio."
     ],
-    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
+    "note": "El proyecto Euler se ha movido a su propio curso. Vuelve al plan de estudios para ver la lista de cursos que ofrecemos.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -927,52 +931,52 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "El proyecto Odin",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "El Proyecto Odin es uno de esos recursos \"Lo que me gustado tener cuando estaba aprendiendo\". ",
+      "No todo el mundo tiene acceso a una educación en Ciencias de la Computación o a los fondos para asistir a una escuela intensiva de programación y ninguno de esos fondos es adecuado para todos.",
+      "Este proyecto está diseñado para llenar el vacío para las personas que intentan hackear por sí solas pero que todavía quieren una educación de alta calidad."
     ],
     "blocks": {
       "top-learn-html-foundations": {
-        "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Aprender fundamentos de HTML",
+        "intro": ["Una descripción debe ser determinada"]
       },
       "top-build-a-recipe-project": {
-        "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "title": "Aprende fundaciones HTML construyendo una página de receta",
+        "intro": ["Una descripción debe ser determinada"]
       }
     }
   },
   "project-euler": {
-    "title": "Project Euler",
+    "title": "Proyecto Euler",
     "intro": [
-      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+      "Completa los siguientes desafíos de programación de los masivos archivos del Project Euler. Estos fortalecerán tus conocimientos de algoritmos y matemáticas.",
+      "Estos problemas varían en dificultad y, para muchos, la experiencia es el aprendizaje inductivo en cadena. Es decir, resolviendo un problema, le expondrá a un nuevo concepto que le permitirá emprender un problema previamente inaccesible. ¿Pueden terminar todos?"
     ],
     "blocks": {
       "project-euler-problems-1-to-100": {
-        "title": "Project Euler Problems 1 to 100",
+        "title": "Proyectos Euler del 1 a 100",
         "intro": [
-          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+          "En este primer conjunto de desafíos, utilizarás conceptos matemáticos como la secuencia de Fibonacci, teoría de números primos, y combinatorios para escribir algoritmos eficientes para resolver estos problemas."
         ]
       },
       "project-euler-problems-101-to-200": {
-        "title": "Project Euler Problems 101 to 200",
+        "title": "Proyectos Euler del 101 a 200",
         "intro": [
-          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+          "En este conjunto de desafíos, basarás las habilidades que aprendiste en la primera parte del curso y usarás conceptos más avanzados como el cálculo del vector, La pirámide, y el algoritmo RSA para resolver estos problemas de forma eficiente."
         ]
       },
       "project-euler-problems-201-to-300": {
-        "title": "Project Euler Problems 201 to 300",
+        "title": "Proyectos Euler del 201 a 300",
         "intro": [
-          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+          "En este conjunto de desafíos, continuarás construyendo sobre las habilidades que aprendiste anteriormente y usarás conceptos como el teorema binomial, Números de estancamiento, y la secuencia de Collatz para desarrollar aún más tus habilidades de matemáticas y resolución de problemas."
         ]
       },
       "project-euler-problems-301-to-400": {
-        "title": "Project Euler Problems 301 to 400",
+        "title": "Proyectos Euler del 301 a 400",
         "intro": [
-          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+          "Aquí continuarás exprimiendo tus habilidades matemáticas y algorítmicas mientras usas conceptos como teoría de juegos combinatorios, las operaciones bitwise y la secuencia autodescriptiva de Golomb para desarrollar soluciones eficientes a estos problemas."
         ]
       },
       "project-euler-problems-401-to-480": {
