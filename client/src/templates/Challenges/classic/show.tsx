@@ -43,7 +43,7 @@ import {
   executeChallenge,
   initConsole,
   initTests,
-  previewMounted,
+  previewMounted as updatePreview,
   updateChallengeMeta,
   openModal,
   setEditorFocusability,
@@ -80,7 +80,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       challengeMounted,
       executeChallenge,
       cancelTests,
-      previewMounted,
+      updatePreview,
       openModal,
       setEditorFocusability,
       setIsAdvancing
