@@ -644,8 +644,8 @@ importers:
         specifier: 0.40.0
         version: 0.40.0(@types/react@16.14.40)(react@16.14.0)
       react-redux:
-        specifier: 5.1.2
-        version: 5.1.2(react@16.14.0)(redux@4.2.1)
+        specifier: 7.2.9
+        version: 7.2.9(react-dom@16.14.0)(react@16.14.0)
       react-reflex:
         specifier: 4.0.12
         version: 4.0.12(react-dom@16.14.0)(react@16.14.0)
@@ -9842,7 +9842,6 @@ packages:
     dependencies:
       '@types/react': 16.14.40
       hoist-non-react-statics: 3.3.2
-    dev: true
 
   /@types/html-minifier-terser@5.1.2:
     resolution: {integrity: sha512-h4lTMgMJctJybDp8CQrxTUiiYmedihHWkjnF/8Pxseu2S6Nlfcy8kwboQ8yejh456rP2yWoEVm1sS/FVsfM48w==}
@@ -10099,7 +10098,6 @@ packages:
       '@types/react': 16.14.40
       hoist-non-react-statics: 3.3.2
       redux: 4.2.1
-    dev: true
 
   /@types/react-responsive@8.0.5:
     resolution: {integrity: sha512-k3gQJgI87oP5IrVZe//3LKJFnAeFaqqWmmtl5eoYL2H3HqFcIhUaE30kRK1CsW3DHdojZxcVj4ZNc2ClsEu2PA==}
@@ -18100,7 +18098,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -27685,21 +27683,26 @@ packages:
       warning: 3.0.0
     dev: false
 
-  /react-redux@5.1.2(react@16.14.0)(redux@4.2.1):
-    resolution: {integrity: sha512-Ns1G0XXc8hDyH/OcBHOxNgQx9ayH3SPxBnFCOidGKSle8pKihysQw2rG/PmciUQRoclhVBO8HMhiRmGXnDja9Q==}
+  /react-redux@7.2.9(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==}
     peerDependencies:
-      react: ^0.14.0 || ^15.0.0-0 || ^16.0.0-0
-      redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+      react: ^16.8.3 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
     dependencies:
       '@babel/runtime': 7.21.0
+      '@types/react-redux': 7.1.25
       hoist-non-react-statics: 3.3.2
-      invariant: 2.2.4
       loose-envify: 1.4.0
       prop-types: 15.8.1
       react: 16.14.0
-      react-is: 16.13.1
-      react-lifecycles-compat: 3.0.4
-      redux: 4.2.1
+      react-dom: 16.14.0(react@16.14.0)
+      react-is: 17.0.2
     dev: false
 
   /react-reflex@4.0.12(react-dom@16.14.0)(react@16.14.0):
