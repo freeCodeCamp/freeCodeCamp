@@ -1,12 +1,13 @@
 import fs from 'fs';
 import { setup } from 'jest-json-schema-extended';
 import { availableLangs, LangNames, LangCodes } from '../../config/i18n';
+import { SuperBlocks } from '../../config/certification-settings';
 import intro from './locales/english/intro.json';
 
 setup();
 
 interface Intro {
-  [superBlock: string]: {
+  [key: string]: {
     title: string;
     intro: string[];
     blocks: {
@@ -70,10 +71,8 @@ describe('Locale tests:', () => {
 
 describe('Intro file structure tests:', () => {
   const typedIntro = intro as unknown as Intro;
-  const superblocks = Object.keys(typedIntro).filter(
-    key => key !== 'misc-text'
-  );
-  superblocks.forEach(superBlock => {
+  const superblocks = Object.values(SuperBlocks);
+  for (const superBlock of superblocks) {
     expect(typeof typedIntro[superBlock].title).toBe('string');
     expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
     expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
@@ -82,5 +81,5 @@ describe('Intro file structure tests:', () => {
       expect(typeof typedIntro[superBlock].blocks[block].title).toBe('string');
       expect(typedIntro[superBlock].blocks[block].intro).toBeInstanceOf(Array);
     });
-  });
+  }
 });
