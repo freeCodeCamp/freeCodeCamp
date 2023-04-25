@@ -73,5 +73,44 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.put(
+    '/update-my-theme',
+    {
+      schema: {
+        body: Type.Object({
+          theme: Type.Union([Type.Literal('default'), Type.Literal('night')])
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.updated-themes'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            theme: req.body.theme
+          }
+        });
+
+        return {
+          message: 'flash.updated-themes',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
   done();
 };
