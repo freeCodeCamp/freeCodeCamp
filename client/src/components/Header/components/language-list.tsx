@@ -41,17 +41,25 @@ export const LanguageList = ({
     setShowList(true);
   };
 
+const closeAndFocus = () => {
+    listButtonRef.current?.classList.add('force-show');
+    setShowList(false);
+    setTimeout(() => {
+      listButtonRef.current?.focus();
+      listButtonRef.current?.classList.remove('force-show');
+    }, 100);
+  }
+
   const handleLanguageChange = (
     event: React.MouseEvent<HTMLButtonElement>
   ): void => {
     const selectedLanguage = event.currentTarget.dataset.value;
-    const isSelecetedCurrentLanguage =
+    const isSelectedCurrentLanguage =
       selectedLanguage === clientLocale || selectedLanguage === undefined;
 
     event.preventDefault();
-    listButtonRef.current?.focus();
-    setShowList(false);
-    if (isSelecetedCurrentLanguage) {
+    if (isSelectedCurrentLanguage) {
+      closeAndFocus();
       return;
     }
     const path = createLanguageRedirect({
@@ -61,13 +69,13 @@ export const LanguageList = ({
     if (navigate) {
       return navigate(path);
     }
+    closeAndFocus();
   };
 
   const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === 'Escape') {
-      listButtonRef.current?.focus();
-      setShowList(false);
       event.preventDefault();
+      closeAndFocus();
     }
   };
 
@@ -89,9 +97,8 @@ export const LanguageList = ({
         'Escape',
         {
           select: () => {
-            listButtonRef.current?.focus();
-            setShowList(false);
             event.preventDefault();
+            closeAndFocus();
           }
         }
       ],
@@ -131,7 +138,6 @@ export const LanguageList = ({
         ref={listButtonRef}
         onBlur={handleBlur}
         onClick={handleClick}
-        onKeyDown={handleMenuKeyDown}
       >
         <LanguageGlobe />
       </button>
