@@ -33,7 +33,6 @@ const locales = availableLangs.client.filter(
 export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
-  fetchState: { pending: boolean };
   showMenu: () => void;
   hideMenu: () => void;
   user?: User;
@@ -122,7 +121,6 @@ function NavLinks({
   showLanguageMenu,
   isLanguageMenuDisplayed,
   displayMenu,
-  fetchState,
   toggleNightMode,
   user,
   navigate
@@ -131,7 +129,6 @@ function NavLinks({
   const langButtonRef = useRef<HTMLButtonElement>(null);
   const firstLangOptionRef = useRef<HTMLButtonElement>(null);
   const lastLangOptionRef = useRef<HTMLButtonElement>(null);
-  const { pending } = fetchState;
 
   const isUserDonating = user?.isDonating;
   const currentUserName = user?.username;
@@ -375,9 +372,7 @@ function NavLinks({
     openSignoutModal();
   };
 
-  return pending ? (
-    <div className='nav-skeleton' />
-  ) : (
+  return (
     <ul
       aria-labelledby='toggle-button-nav'
       className={`nav-list${displayMenu ? ' display-menu' : ''}${

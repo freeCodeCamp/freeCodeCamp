@@ -12,9 +12,9 @@ Volviendo a la sección de seguridad de la información, puedes recordar que alm
 
 `bcrypt@~5.0.0` Ha sido agregado como una dependencia, así que requiérelo en tu servidor. Necesitarás manejar el hashing en 2 áreas clave: donde manejas el registro/guardado de una nueva cuenta, y cuando compruebas que una contraseña es correcta al iniciar sesión.
 
-Currently on your registration route, you insert a user's plaintext password into the database like so: `password: req.body.password`. Hash the passwords instead by adding the following before your database logic: `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
+Actualmente, en la ruta de registro estás insertando en la base de datos contraseñas de usuario en texto plano: `password: req.body.password`. En su lugar, haz un hashing de las contraseñas añadiendo lo siguiente antes de la lógica de la base de datos: `const hash = bcrypt.hashSync(req.body.password, 12);` y reemplazando `req.body.password` en el guardado en la base da datos por simplemente lo siguiente: `password: hash`.
 
-On your authentication strategy, you check for the following in your code before completing the process: `if (password !== user.password) return done(null, false);`. Después de realizar los cambios anteriores, ahora `user.password` es un hash. Antes de hacer un cambio en el código existente, nota que la sentencia está comprobando si la contraseña **no** es igual entonces devuelve no autenticado. With this in mind, change that code to look as follows to properly check the password entered against the hash:
+En la estrategia de autenticación, comprobamos lo siguiente antes de completar el proceso: `if (password !== user.password) return done(null, false);`. Después de realizar los cambios anteriores, ahora `user.password` es un hash. Antes de hacer un cambio en el código existente, nota que la sentencia está comprobando si la contraseña **no** es igual entonces devuelve no autenticado. Con esto en mente, cambia el código según el siguiente fragmento para constrastar la contraseña introducida frente al hash:
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,9 +22,9 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-That is all it takes to implement one of the most important security features when you have to store passwords.
+Esto es todo lo necesario para implementar una de las características de seguridad más importantes cuando se almacenan contraseñas.
 
-Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando creas que lo has hecho bien. Si tienes problemas, <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow"> aquí puedes echar un vistazo al proyecto completado hasta este punto</a>.
 
 # --hints--
 

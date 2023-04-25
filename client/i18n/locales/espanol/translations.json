@@ -470,7 +470,7 @@
     "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
     "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
     "document-notfound": "documento no encontrado",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página."
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -530,10 +530,10 @@
     "wrong-updating": "Se produjo un error al actualizar tu cuenta. Por favor revisa e intenta de nuevo",
     "updated-preferences": "Hemos actualizado tus preferencias",
     "updated-about-me": "We have updated your personal information",
-    "updated-socials": "We have updated your social links",
-    "updated-sound": "We have updated your sound settings",
-    "updated-themes": "We have updated your theme",
-    "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
+    "updated-socials": "Hemos actualizado tus enlaces sociales",
+    "updated-sound": "Hemos actualizado tus ajustes de sonido",
+    "updated-themes": "Hemos actualizado su tema",
+    "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
     "portfolio-item-updated": "We have updated your portfolio",
     "email-invalid": "El formato del correo electrónico no es válido",

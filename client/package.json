@@ -185,7 +185,7 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "ts-node": "10.9.1",
-    "webpack": "5.79.0",
+    "webpack": "5.80.0",
     "webpack-cli": "4.10.0"
   }
 }

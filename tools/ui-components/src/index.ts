@@ -4,3 +4,5 @@ export { Alert } from './alert';
 export { Image } from './image';
 export { Table } from './table';
 export { ToggleButton } from './toggle-button';
+export { Dropdown } from './drop-down';
+export { MenuItem } from './drop-down/menu-item';

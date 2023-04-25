@@ -205,6 +205,7 @@ Uma rápida referência aos comandos que você precisará ao trabalhar.
 | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `pnpm test`                                                       | Executa todos os testes JS no sistema, incluindo cliente, servidor, lint e testes dos desafios. |
 | `pnpm run test-client`                                            | Executa o conjunto de testes do cliente.                                                        |
+| `pnpm run test-client -u`                                         | Run the client test suite, updating the Jest snapshots that are out of sync.                    |
 | `pnpm run test:curriculum`                                        | Executa o conjunto de teste de currículo.                                                       |
 | `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Testa um bloco específico.                                                                      |
 | `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Testa um super bloco específico.                                                                |

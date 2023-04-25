@@ -15,26 +15,26 @@ El sitio web constará de una página de índice principal que tendrá enlaces a
 1. Tu página de receta debe incluir un elemento `html` con un elemento `head` y `body` como hijos.
 1. Debes tener un elemento `title` dentro del elemento `head` con el texto <codeThe Odin Recipes</code>.
 1. Deberías ver un elemento `h1` que tiene el texto `Creamy Chocolate Fudge`.
-1. You should see an image with the url `*placeholder-fcc-cdn*` with a fitting `alt` text.
-1. There should be an `h2` element with the text `Description` under the image.
+1. Deberías ver una imagen con la url `*placeholder-fcc-cdn*` con un texto `alt` apropiado.
+1. Debes tener un elemento `h2` con el texto `Description` debajo de la imagen.
 1. Debes ver algunos párrafos debajo de,`Description` que describan la receta.
-1. There should be an `h2` element with the text `Ingredients`
-1. Under the `Ingredients` heading there should be an unordered list with the ingredients needed for the recipe.
-1. Under the list of ingredients add another heading called `Steps`.
-1. You should see an ordered list with a couple of steps needed to complete the recipe.
-1. Under the steps there should be an `h2` element with the text `More Recipes`
-1. You should see a couple of links to other recipes inside an unordered list which has a couple of list items with anchor elements within.
-1. These anchor elements should have `href` attribute with the value set to `#`
+1. Debes tener un elemento `h2` con el texto `Ingredients`
+1. Debajo del título `Ingredients` debe haber una lista desordenada con los ingredientes necesarios para la receta.
+1. Debajo de la lista de ingredientes añade otro título llamado `Steps`.
+1. Deberías ver una lista ordenada con algunos de los pasos necesarios para completar la receta.
+1. Debajo de los pasos, debería haber un elemento `h2` con el texto `More Recipes`
+1. Deberías ver algunos enlaces a otras recetas, dentro de una lista desordenada que con elementos anchor dentro de los elementos de lista.
+1. Estos elementos anchor deberían tener un atributo `href` con el valor`#`
 
 # --hints--
 
-You should have a `DOCTYPE` tag.
+Deberías tener una etiqueta `DOCTYPE`.
 
 ```js
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-You should have a `html` element with `head` and `body` element.
+Deberías tener un elemento `html` con los elementos `head` y `body`.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -44,19 +44,19 @@ const body = document.querySelectorAll('html > body')[0];
 assert(html && head && body);
 ```
 
-You should have a `title` element within the `head` element that contains the text `The Odin Recipes`.
+Deberías tener un elemento `title` dentro del elemento `head` con el texto `The Odin Recipes`.
 
 ```js
 assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recipes');
 ```
 
-You should have a `h1` element within your `body` element that contains the text `Creamy Chocolate Fudge`.
+Deberías tener un elemento `h1` dentro del elemento `body` con el texto `Creamy Chocolate Fudge`.
 
 ```js
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-You should have an image with the url `*placeholder-fcc-cdn*` with an `alt` attribute that has a fitting text.
+Deberías tener una imagen con la url `*placeholder-fcc-cdn*` con un atributo `alt` y un texto apropiado.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
