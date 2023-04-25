@@ -111,6 +111,8 @@ function NavLinks({
     theme: currentUserTheme
   } = user || {};
 
+  // the accessibility tree just needs a little more time to pick up the change.
+  // This function allows us to set aria-expanded to false and then delay just a bit before setting focus on the button
   const closeAndFocus = () => {
     menuButtonRef.current?.classList.add('force-show');
     hideMenu();
