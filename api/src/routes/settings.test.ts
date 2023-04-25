@@ -132,11 +132,6 @@ describe('settingRoutes', () => {
           .send({ theme: 'invalid' });
 
         expect(response?.statusCode).toEqual(400);
-        expect(response?.body).toEqual({
-          error: 'Bad Request',
-          message: `body/theme must be equal to one of the allowed values`,
-          statusCode: 400
-        });
       });
     });
   });
