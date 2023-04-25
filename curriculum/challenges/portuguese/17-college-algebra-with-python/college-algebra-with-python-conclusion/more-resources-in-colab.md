@@ -1,6 +1,6 @@
 ---
 id: 6363d2959078df117ce4c408
-title: "More Resources in Colab"
+title: "Mais recursos do Colaboratory"
 challengeType: 15
 videoId: HNFrRHqpck4
 dashedName: more-resources-in-colab
@@ -8,29 +8,29 @@ dashedName: more-resources-in-colab
 
 # --description--
 
-One more thing... This brief video will show you some of the resources available to you in Google Colab notebooks.
+Mais uma coisa... Este vídeo curto mostrará a você alguns dos recursos disponíveis nos notebooks do Google Colaboratory.
 
 # --question--
 
 ## --text--
 
-Which code snippets are available in the Google Colaboratory?
+Que trechos de código estão disponíveis no Google Colaboratory?
 
 ## --answers--
 
-Camera capture
+Captura de câmera
 
 ---
 
-Adding form fields
+Adição de campos de formulário
 
 ---
 
-Importing data from Google Sheets
+Importação de dados das Planilhas do Google
 
 ---
 
-All of the above
+Todas as anteriores
 
 ## --video-solution--
 

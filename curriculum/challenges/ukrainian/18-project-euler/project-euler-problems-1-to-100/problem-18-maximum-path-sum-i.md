@@ -1,6 +1,6 @@
 ---
 id: 5900f37e1000cf542c50fe91
-title: 'Problem 18: Maximum path sum I'
+title: 'Завдання 18: максимальна сума шляху I'
 challengeType: 1
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
@@ -8,7 +8,7 @@ dashedName: problem-18-maximum-path-sum-i
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+Якщо почати з вершини трикутника, зображеного нижче, і рухатись до суміжних чисел у нижньому рядку, максимальною сумою зверху вниз буде 23.
 
 <span style='display: block; text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,9 +17,9 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </span>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Тобто 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom of the triangle below:
+Знайдіть максимальну суму шляху від вершини до основи у трикутнику, зображеному нижче:
 
 75  
 95 64  
@@ -37,7 +37,7 @@ Find the maximum total from top to bottom of the triangle below:
 63 66 04 68 89 53 67 30 73 16 69 87 40 31  
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-**NOTE:** As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+**Примітка:** оскільки у цьому разі є лише 16384 шляхи, то дане завдання можна розв’язати, перевіривши кожен маршрут. Однак завдання №67 містить таку ж саму задачу із трикутником, що має 100 рядків і яку потрібно розв’язати не силою, а розумом! ;o)
 
 # --hints--
 

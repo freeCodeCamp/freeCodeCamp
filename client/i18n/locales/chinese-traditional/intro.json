@@ -336,12 +336,20 @@
         "title": "通過構建電子表格學習函數式編程",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "通過構建統計計算器學習高級數組方法",
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "通過創建購物車學習數據結構",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": ["", ""]
       }
     }

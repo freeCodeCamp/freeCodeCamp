@@ -105,6 +105,7 @@
   "build-a-palindrome-checker-project": "JavaScript",
   "build-a-roman-numeral-converter-project": "JavaScript",
   "build-a-telephone-number-validator-project": "JavaScript",
+  "learn-modern-javascript-methods-by-building-football-team-cards": "JavaScript",
   "learn-advanced-array-methods-by-building-a-statistics-calculator": "JavaScript",
   "build-a-multi-function-calculator-project": "Python",
   "build-a-graphing-calculator-project": "Python",
@@ -126,5 +127,6 @@
   "learn-quadratic-equations": "Python",
   "learn-simple-and-compound-interest": "Python",
   "college-algebra-with-python-conclusion": "Python",
-  "learn-data-structures-by-building-a-shopping-cart": "JavaScript"
+  "learn-data-structures-by-building-a-shopping-cart": "JavaScript",
+  "learn-regular-expressions-by-building-a-spam-filter": "JavaScript"
 }

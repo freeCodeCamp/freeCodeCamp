@@ -336,12 +336,20 @@
         "title": "通过构建电子表格学习函数式编程",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "通过构建统计计算器学习高级数组方法",
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "通过创建购物车学习数据结构",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": ["", ""]
       }
     }

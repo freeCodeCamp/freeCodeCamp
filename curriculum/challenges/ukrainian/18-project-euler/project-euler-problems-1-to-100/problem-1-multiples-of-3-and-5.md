@@ -1,6 +1,6 @@
 ---
 id: 5900f36e1000cf542c50fe80
-title: 'Problem 1: Multiples of 3 and 5'
+title: 'Завдання 1: числа кратні 3 та 5'
 challengeType: 1
 forumTopicId: 301722
 dashedName: problem-1-multiples-of-3-and-5
@@ -8,9 +8,9 @@ dashedName: problem-1-multiples-of-3-and-5
 
 # --description--
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Якщо ми запишемо усі натуральні числа до 10, кратних 3 та 5, то отримаємо 3, 5, 6 та 9. Сумою цих кратних є 23.
 
-Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
+Знайдіть суму всіх чисел кратних 3 та 5, які менші певного заданого значення `number`.
 
 # --hints--
 

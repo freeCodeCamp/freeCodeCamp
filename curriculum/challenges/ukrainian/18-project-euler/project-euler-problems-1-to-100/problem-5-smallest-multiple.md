@@ -1,6 +1,6 @@
 ---
 id: 5900f3711000cf542c50fe84
-title: 'Problem 5: Smallest multiple'
+title: 'Завдання 5: найменше кратне'
 challengeType: 1
 forumTopicId: 302160
 dashedName: problem-5-smallest-multiple
@@ -8,9 +8,9 @@ dashedName: problem-5-smallest-multiple
 
 # --description--
 
-2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+2520 є найменшим числом, яке можна поділити на кожне число від 1 до 10 без остачі.
 
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to `n`?
+Яке найменше додатне число ділиться на кожне число від 1 до `n` без остачі?
 
 # --hints--
 

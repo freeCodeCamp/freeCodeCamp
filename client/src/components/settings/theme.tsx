@@ -1,6 +1,7 @@
 import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import type { updateMyTheme } from '../../redux/settings/actions';
 
 import ToggleButtonSetting from './toggle-button-setting';
 
@@ -9,9 +10,9 @@ export enum Themes {
   Default = 'default'
 }
 
-type ThemeProps = {
+export type ThemeProps = {
   currentTheme: Themes;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: typeof updateMyTheme;
 };
 
 export default function ThemeSettings({
