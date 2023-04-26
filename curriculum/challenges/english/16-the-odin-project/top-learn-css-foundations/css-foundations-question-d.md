@@ -7,7 +7,7 @@ dashedName: css-foundations-question-d
 ---
 # --description--
 
-Another way to use selectors is to chain them as a list without any separation. Let’s say we had the following HTML:
+Another way to use selectors is to chain them as a list without any separation. Let’s say you had the following HTML:
 
 ```html
 <div>
@@ -16,7 +16,7 @@ Another way to use selectors is to chain them as a list without any separation. 
 </div>
 ```
 
-We have two elements with the `subsection` class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has `header` as a second class? Well, we could chain both the `class` selectors together in our CSS like so:
+You have two elements with the `subsection` class that have some sort of unique styles, but what if you only want to apply a separate rule to the element that also has `header` as a second class? Well, you could chain both the `class` selectors together in your CSS like so:
 
 ```css
 .subsection.header {
@@ -53,7 +53,7 @@ In general, you can’t chain more than one type selector since an element can�
 
 ## --text--
 
-Given an element that has an ID of `title` and a class of `primary`, how would you use both attributes for a single rule?
+Given an element that has an `id` of `title` and a `class` of `primary`, how would you use both attributes for a single rule?
 
 ## --answers--
 

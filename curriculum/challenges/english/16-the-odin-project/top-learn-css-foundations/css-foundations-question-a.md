@@ -40,11 +40,11 @@ The code applies a `white` color to all elements in the HTML file.
 
 ---
 
-The code applies a `white` `color` to all `div` elements in the HTML file.
+The code applies a `white` color to all `div` elements in the HTML file.
 
 ---
 
-The code applies a white color to all `p` elements in the HTML file.
+The code applies a `white` color to all `p` elements in the HTML file.
 
 
 ## --video-solution--

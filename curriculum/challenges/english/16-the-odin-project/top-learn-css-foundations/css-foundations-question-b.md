@@ -30,7 +30,7 @@ Note the syntax for `class` selectors: a period immediately followed by the case
 Another thing you can do with the `class` attribute is to add multiple classes to a single element as a space-separated list, such as `class="alert-text severe-alert"`. Since whitespace is used to separate `class` names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
 
 ## ID Selectors
-`Id` selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an HTML element:
+ID selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an HTML element:
 
 ```html
 <!-- index.html -->
@@ -46,9 +46,9 @@ Another thing you can do with the `class` attribute is to add multiple classes t
 }
 ```
 
-Instead of a period, we use a hashtag immediately followed by the case-sensitive value of the `id` attribute. A common pitfall is people overusing the `id` attribute when they don’t necessarily need to, and when classes will suffice. While there are cases where using an `id` makes sense or is needed, such as taking advantage of specificity or having links redirect to a section on the current page, you should use Ids sparingly (if at all).
+Instead of a period, you use a hashtag immediately followed by the case-sensitive value of the `id` attribute. A common pitfall is people overusing the `id` attribute when they don’t necessarily need to, and when classes will suffice. While there are cases where using an `id` makes sense or is needed, such as taking advantage of specificity or having links redirect to a section on the current page, you should use `id`s sparingly (if at all).
 
-The major difference between classes and Ids is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
+The major difference between classes and IDs is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
 
 # --question--    
 
