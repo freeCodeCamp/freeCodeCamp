@@ -17,7 +17,10 @@ const setPrivacyTogglesToPublic = () => {
   cy.get('#privacy-settings')
     .find('[type=radio][value=2]')
     .each(element => {
-      cy.wrap(element).click().should('be.checked');
+      // Need to click on the label for the radio input since the input
+      // is now moved off the page.
+      cy.wrap(element).parent().click();
+      cy.wrap(element).should('be.checked');
     });
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();
