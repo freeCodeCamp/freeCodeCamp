@@ -26,6 +26,7 @@ const MenuButton = ({
     if (
       event.relatedTarget &&
       !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.fcc_searchBar') &&
       displayMenu
     ) {
       hideMenu();
