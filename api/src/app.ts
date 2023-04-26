@@ -16,6 +16,7 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifySentry from './plugins/fastify-sentry';
 
+import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
@@ -63,6 +64,8 @@ export const build = async (
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
+
+  await fastify.register(cors);
   await fastify.register(fastifyCookie);
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
