@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "（新版）響應式網頁設計",
+    "title": "Responsive Web Design",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用來學習 HTML 和 CSS 的基本知識。 然後，通過構建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過搭建網頁表單來學習無障礙的最佳實踐。",
@@ -457,7 +457,7 @@
     }
   },
   "relational-database": {
-    "title": "關係數據庫（Beta）",
+    "title": "Relational Database",
     "intro": [
       "對於這些課程，你將使用真正的開發人員工具和軟件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行來完成交互式教程和構建項目。",
       "這些課程從基本的 Bash 命令開始。使用終端，你將學習從導航和操作文件系統、在 Bash 中編寫腳本到高級用法的所有內容。",
@@ -993,9 +993,8 @@
     "legacy-header": "舊版課程",
     "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
     "legacy-go-back": "進入當前版本的課程。",
-    "new-rwd-desc": "我們更新了響應式網頁設計課程。 如果你之前正在使用該課程，你的進度仍然可以保存！你可以在舊版響應式網頁設計課程裏找到你的進度。",
-    "new-rwd-article": "我們希望你閱讀我們所作的修改，並能考慮探索新課程。",
-    "viewing-upcoming-change": "你正在查看Beta頁面。 ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "回到正式版課程",
     "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",
     "enable-cookies": "你必須在開始之前啓用第三方 cookies。",
