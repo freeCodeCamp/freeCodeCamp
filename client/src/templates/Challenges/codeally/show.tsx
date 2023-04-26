@@ -1,7 +1,7 @@
 // Package Utilities
 import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
@@ -45,7 +45,7 @@ import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import { CODEALLY_DOWN } from '../../../../../config/misc';
+import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
 
@@ -110,10 +110,9 @@ interface ShowCodeAllyProps {
   userToken: string | null;
 }
 
-// Component
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private _container: RefObject<HTMLElement> | undefined;
 
   componentDidMount(): void {
     const {
@@ -133,7 +132,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+
+    this._container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -246,35 +246,14 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        innerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
           <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
           <Grid>
-            {CODEALLY_DOWN && superBlock === SuperBlocks.RelationalDb && (
-              <Row>
-                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                  <Spacer size='medium' />
-                  <Alert bsStyle='danger'>
-                    <p>
-                      <Trans i18nKey='intro:misc-text.course-maintenance'>
-                        <a
-                          href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
-                          rel='noreferrer'
-                          target='_blank'
-                        >
-                          placeholder
-                        </a>
-                      </Trans>
-                    </p>
-                    <Spacer size='small' />
-                    <p>{t('intro:misc-text.progress-wont-save')}</p>
-                  </Alert>
-                </Col>
-              </Row>
-            )}
+            {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
