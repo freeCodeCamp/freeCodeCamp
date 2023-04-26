@@ -54,6 +54,10 @@ universal-nav-bar
 and menu secion
 */
 
+[dir='rtl'] .nav-lang-list-option[aria-current='true'] {
+  background-position: 10px center;
+}
+
 @media (min-width: 601px) {
   [dir='rtl'] .nav-list {
     right: auto;
