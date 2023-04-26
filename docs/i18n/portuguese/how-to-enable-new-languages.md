@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -176,7 +176,7 @@ A ordem dos superblocos neste objeto é como eles aparecem na página inicial e 
 
 O array `CurriculumMaps.Landing` deve conter exatamente um superbloco para todas as nossas certificações atuais. O objeto `CurriculumMaps.Learn` deve ter em si todos os superblocos existentes. Os superblocos traduzidos vão em `TranslationStates.Audited` e os superblocos não traduzidos vão em `TranslationStates.NotAudited`. Esses dois objetos têm, cada um, quatro estados diferentes nos quais um superbloco pode estar.
 
-- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como `(New) Responsive Web Design`, por exemplo.
+- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
 - `SuperBlockStates.New`: esses aparecem apenas quando `SHOW_NEW_CURRICULUM` estiver definido como `true` no arquivo `.env`. Ele serve para exibir novos superblocos em uma build específica. Por exemplo, quando lançamos a nova certificação de Design responsivo para a web, nós a mostramos apenas em inglês para começar.
 - `SuperBlockStates.Upcoming`: esses aparecem apenas quando `SHOW_UPCOMING_CHANGES` estiver definido como `true` no arquivo `.env`. Eles servem para mostrar os superblocos em nível local enquanto eles estão em desenvolvimento. Como alternativa, podem ser usados quando precisamos ocultar um superbloco do mapa por alguma outra razão.
 - `SuperBlockStates.Legacy`: um superbloco é movido para cá quando uma nova versão daquele superbloco já está totalmente traduzida e pronta para substituí-lo.
@@ -371,7 +371,7 @@ Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAM
 
 O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 
-> [!WARN] Pull requests to the News repo _must_ come from the same repo. Você não deve trabalhar a partir de um fork nesse passo.
+> [!WARN] Pull requests para o repositório News _precisam_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
 
 ### Modificar o arquivo de configuração principal
 
