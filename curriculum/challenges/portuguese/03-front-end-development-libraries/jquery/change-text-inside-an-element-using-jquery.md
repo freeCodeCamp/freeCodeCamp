@@ -18,7 +18,7 @@ Aqui está como você rescreveria e enfatizaria o texto do nosso cabeçalho:
 $("h3").html("<em>jQuery Playground</em>");
 ```
 
-O jQuery também possui uma função similar chamada `.text()` que altera apenas texto sem adicionar tags. Em outras palavras, essa função não irá avaliar nenhuma tag HTML passada a ela, mas ao invés disso irá tratá-la como o texto que você quer substituir o conteúdo atual existente.
+O jQuery também possui uma função similar chamada `.text()` que altera apenas texto sem adicionar tags. Em outras palavras, essa função não irá avaliar nenhuma tag HTML passada a ela, mas, ao invés disso, a tratará como o texto que você quer substituir o conteúdo atual existente.
 
 Modifique o botão com id `target4` enfatizando seu texto.
 

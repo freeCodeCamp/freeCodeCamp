@@ -12,7 +12,7 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles irão assumir o tamanho de fonte de seus elementos HTML parentes.
+Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles assumirão o tamanho de fonte de seus elementos pais no HTML.
 
 Você pode incluir o Font Awesome em qualquer aplicativo, adicionando o seguinte código ao topo do seu HTML:
 

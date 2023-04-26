@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+title: Evitar que IE abra HTML no confiable con helmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -8,17 +8,17 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Como recordatorio, este proyecto está siendo construido a la base del proyecto iniciado con <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Github</a>.
 
-Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context.
+Algunas aplicaciones web servirán HTML no confiable en la descarga. Algunas versiones de Internet Explorer por defecto abren estos archivos HTML en el contexto de tu sitio web. Esto significa que una página HTML no confiable podría haber empezado a hacer cosas malas en el contenido de tus páginas. Este middleware ajusta la cabecera X-Download-Options en noopen. Esto evitará que los usuarios IE ejecuten descargas en el contenido seguro del sitio web.
 
 # --instructions--
 
-Use the `helmet.ieNoOpen()` method on your server.
+Usa el método `helmet.ieNoOpen()` en tu servidor.
 
 # --hints--
 
-helmet.ieNoOpen() middleware should be mounted correctly
+helmet.ieNoOpen() middleware debería montarse correctamente
 
 ```js
 (getUserInput) =>

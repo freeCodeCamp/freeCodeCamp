@@ -16,11 +16,11 @@ El nivel "Administrador" está reservado para el personal de freeCodeCamp y los 
 
 ### How are the Articles Built
 
-We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+Utilizamos un método basado en [JAMStack](https://www.google.com/search?q=what+is+jamstack) para construir y desplegar los artículos. Esta estrategia permite que el sitio se almacene rápidamente en caché y se sirva desde un CDN.
 
-[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+[Ghost](https://ghost.org) actúa como nuestra plataforma de gestión de contenidos, y [11](https://11ty.dev) incorpora los artículos en activos estáticos - HTML, JavaScript y CSS. Sólo estos activos estáticos están desplegados en nuestros servidores.
 
-This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+Este proceso es automatizado y se ejecuta periódicamente. Si usted publica algo ahora, estará disponible en el sitio de noticias dentro de unas pocas horas.
 
 You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
 

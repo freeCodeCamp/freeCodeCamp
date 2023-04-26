@@ -1,6 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
-title: 'Problem 296: Angular Bisector and Tangent'
+title: 'Problema 296: Bissetor angular e tangente'
 challengeType: 1
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent
@@ -8,17 +8,17 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with $BC ≤ AC ≤ AB$. $k$ is the angular bisector of angle $ACB$. $m$ is the tangent at $C$ to the circumscribed circle of $ABC$. $n$ is a line parallel to $m$ through $B$.
+Você recebe um triângulo com o comprimento dos lados de números inteiros $ABC$ com os lados $BC ≤ AC ≤ AB$. $k$ é o bissetor angular do ângulo $ACB$. $m$ é a tangente em $C$ ao círculo circunscrito de $ABC$. $n$ é uma linha paralela a $m$ através de $B$.
 
-The intersection of $n$ and $k$ is called $E$.
+A interseção entre $n$ e $k$ é chamada de $E$.
 
-<img class="img-responsive center-block" alt="triangle ABC, with k - the angular bisector of angle ACB, m - tangent at point C, n - line parallel to m through B, and point E - intersection of k and n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="triângulo ABC, com k - bissetor angular do ângulo ACB, m - tangente no ponto C, n - linha paralela a m através do ponto B e do ponto E - interseção entre k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
 
-How many triangles $ABC$ with a perimeter not exceeding $100\\,000$ exist such that $BE$ has integral length?
+Quantos triângulos $ABC$ com um perímetro não excedendo $100.000$ existem de tal forma que $BE$ tem como comprimento um número inteiro?
 
 # --hints--
 
-`angularBisectorAndTangent()` should return `1137208419`.
+`angularBisectorAndTangent()` deve retornar `1137208419`.
 
 ```js
 assert.strictEqual(angularBisectorAndTangent(), 1137208419);

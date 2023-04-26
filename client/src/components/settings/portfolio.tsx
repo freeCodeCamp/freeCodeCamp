@@ -337,11 +337,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
         <FullWidthRow>
-          <div className='portfolio-settings-intro'>
-            <p className='p-intro'>{t('settings.share-projects')}</p>
-          </div>
-        </FullWidthRow>
-        <FullWidthRow>
+          <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
             block={true}
