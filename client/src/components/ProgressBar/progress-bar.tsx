@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import {
   challengeMetaSelector,
   currentBlockIdsSelector,
@@ -82,4 +84,4 @@ function ProgressBar({
 
 ProgressBar.displayName = 'ProgressBar';
 
-export default ProgressBar;
+export default connect(mapStateToProps)(withTranslation()(ProgressBar));

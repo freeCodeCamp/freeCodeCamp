@@ -37,12 +37,6 @@ interface LowerJawStatusProps {
 interface LowerJawProps {
   hint?: string;
   challengeIsCompleted: boolean;
-  currentBlockIds: string[];
-  completedChallengesInBlock: number;
-  completedPercent: number;
-  id: string;
-  block: string;
-  superBlock: string;
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
@@ -147,13 +141,7 @@ const LowerJaw = ({
   testsLength,
   openResetModal,
   isSignedIn,
-  updateContainer,
-  currentBlockIds,
-  completedChallengesInBlock,
-  completedPercent,
-  id,
-  block,
-  superBlock
+  updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
@@ -329,15 +317,7 @@ const LowerJaw = ({
         <>
           <hr></hr>
           <div className='progress-bar-container'>
-            <ProgressBar
-              t={t}
-              currentBlockIds={currentBlockIds}
-              id={id}
-              block={block}
-              superBlock={superBlock}
-              completedChallengesInBlock={completedChallengesInBlock}
-              completedPercent={completedPercent}
-            />
+            <ProgressBar />
           </div>
         </>
       )}
