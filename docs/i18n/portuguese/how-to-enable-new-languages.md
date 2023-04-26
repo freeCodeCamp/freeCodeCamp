@@ -371,7 +371,7 @@ Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAM
 
 O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 
-> [!WARN] Pull requests para o repositório de News _devem_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
+> [!WARN] Pull requests to the News repo _must_ come from the same repo. Você não deve trabalhar a partir de um fork nesse passo.
 
 ### Modificar o arquivo de configuração principal
 

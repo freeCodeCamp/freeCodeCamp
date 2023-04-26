@@ -109,7 +109,7 @@
     "react-instantsearch-core": "6.39.1",
     "react-instantsearch-dom": "6.39.1",
     "react-monaco-editor": "0.40.0",
-    "react-redux": "5.1.2",
+    "react-redux": "7.2.9",
     "react-reflex": "4.0.12",
     "react-responsive": "6.1.2",
     "react-scrollable-anchor": "0.6.1",

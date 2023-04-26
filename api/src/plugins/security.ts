@@ -4,7 +4,7 @@ import fp from 'fastify-plugin';
 
 import { FREECODECAMP_NODE_ENV } from '../utils/env';
 
-const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
+const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
   // OWASP recommended headers
   fastify.addHook('onRequest', async (_request, reply) => {
     void reply
@@ -13,7 +13,8 @@ const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
       .header('Content-Type', 'application/json; charset=utf-8')
       .header('X-Content-Type-Options', 'nosniff')
       .header('X-Frame-Options', 'DENY');
-    // TODO: Increase this gradually to 2 years.
+    // TODO: Increase this gradually to 2 years. Include preload once it is
+    // at least 1 year.
     if (FREECODECAMP_NODE_ENV === 'production') {
       void reply.header(
         'Strict-Transport-Security',
@@ -25,4 +26,4 @@ const fastifySentry: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(fastifySentry);
+export default fp(securityHeaders);
