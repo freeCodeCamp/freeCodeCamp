@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(Nuovo) Web Design Responsivo",
+    "title": "Responsive Web Design",
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app con foto di gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un quiz.",
@@ -457,7 +457,7 @@
     }
   },
   "relational-database": {
-    "title": "Database Relazionale (Beta)",
+    "title": "Relational Database",
     "intro": [
       "Per questi corsi, userai veri strumenti e software da sviluppatori inclusi VSCode, PostgreSQL, e la riga di comando Linux / Unix per completare i tutorial interattivi e creare progetti.",
       "Questi corsi iniziano con comandi Bash di base. Usando il terminale imparerai tutto da navigare e manipolare il sistema dei file, creare script in bash, tutto quanto fino all'uso avanzato.",
@@ -997,9 +997,8 @@
     "legacy-header": "Vecchi corsi",
     "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
     "legacy-go-back": "Vai alla versione corrente del curriculum.",
-    "new-rwd-desc": "Abbiamo aggiornato il curriculum Web Design Responsivo. Se stavi lavorando su questo curriculum, i tuoi progressi sono ancora salvati! Puoi trovarli nella sezione Web Design Responsivo Legacy.",
-    "new-rwd-article": "Ti incoraggiamo a leggere circa i cambiamenti che abbiamo fatto e considerare di esplorare il curriculum aggiornato.",
-    "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
     "enable-cookies": "Devi abilitare i cookie di terze parti prima di iniziare.",
