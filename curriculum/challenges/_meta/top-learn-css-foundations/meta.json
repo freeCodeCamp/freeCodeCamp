@@ -1,0 +1,43 @@
+{
+    "name": "TOP Learn CSS Foundations",
+    "isUpcomingChange": true,
+    "order": 2,
+    "time": "",
+    "template": "",
+    "required": [],
+    "superBlock": "the-odin-project",
+    "challengeOrder": [
+        [
+            "63ee351d0d8d4841c3a7091a",
+            "CSS Foundations Question A"
+        ],
+        [
+            "63ee35240d8d4841c3a7091b",
+            "CSS Foundations Question B"
+        ],
+        [
+            "63ee352b0d8d4841c3a7091c",
+            "CSS Foundations Question C"
+        ],
+        [
+            "63ee35300d8d4841c3a7091d",
+            "CSS Foundations Question D"
+        ],
+        [
+            "63ee35370d8d4841c3a7091e",
+            "CSS Foundations Question E"
+        ],
+        [
+            "63ee353e0d8d4841c3a7091f",
+            "CSS Foundations Question F"
+        ],
+        [
+            "63ee35450d8d4841c3a70920",
+            "CSS Foundations Question G"
+        ],
+        [
+            "63ee354c0d8d4841c3a70921",
+            "CSS Foundations Question H"
+        ]
+    ]
+}

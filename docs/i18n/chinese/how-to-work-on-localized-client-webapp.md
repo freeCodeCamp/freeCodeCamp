@@ -83,7 +83,7 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Italian,
     Languages.Portuguese,
     Languages.Ukrainian,

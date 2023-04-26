@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -176,7 +176,7 @@ L'ordine dei superblocchi in questo oggetto rispecchia il modo in cui appaiono s
 
 L'array `CurriculumMaps.Landing` dovrebbe contenere esattamente un superblocco per tutte le nostre certificazioni attuali e l'oggetto `CurriculumMaps.Learn` dovrebbe avere tutti i superblocchi esistenti al suo interno. I superblocchi tradotti vanno in `TranslationStates.Audited` e i superblocchi non tradotti vanno in `TranslationStates.NotAudited`. Ognuno di questi due oggetti ha i quattro stati diversi in cui può essere un superblocco.
 
-- `SuperBlockStates.Current`: Significa che il superblocco è attuale, `(New) Responsive Web Design` ad esempio.
+- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
 - `SuperBlockStates.New`: Compare solo quando `SHOW_NEW_CURRICULUM` è impostato su `true` nel file `.env`. È per la visualizzazione di nuovi superblocchi su uno specifico build. For example, when we released the new RWD, we only showed it on English to start.
 - `SuperBlockStates.Upcoming`: Compare solo quando `SHOW_UPCOMING_CHANGES` è impostato su `true` nel file `.env`. È per mostrare i superblocchi localmente mentre sono in sviluppo. Oppure, se hai solo bisogno di nascondere un superblocco dalla mappa per qualche altra ragione.
 - `SuperBlockStates.Legacy`: Un superblocco viene spostato qui quando una versione più recente di quel superblocco è stata completamente tradotta e sostituita.
