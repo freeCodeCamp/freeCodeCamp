@@ -348,6 +348,10 @@
         "title": "Learn Data Structures By Building A Shopping Cart",
         "intro": ["", ""]
       },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": ["", ""]
+      },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": ["", ""]
