@@ -253,7 +253,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <LearnLayout>
           <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
           <Grid>
-            {superBlock === SuperBlocks.RelationalDb && CodeAllyDown()}
+            {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />

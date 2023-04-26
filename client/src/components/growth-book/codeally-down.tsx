@@ -8,11 +8,7 @@ export function CodeAllyDown(): JSX.Element | null {
   const codeAllyDownFeature = useFeature('codeally_down');
   const { t } = useTranslation();
 
-  if (!codeAllyDownFeature.on) {
-    return null;
-  }
-
-  return (
+  return codeAllyDownFeature.on ? (
     <Alert bsStyle='danger'>
       <p>
         <Trans i18nKey='intro:misc-text.course-maintenance'>
@@ -28,5 +24,5 @@ export function CodeAllyDown(): JSX.Element | null {
       <Spacer size='small' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
     </Alert>
-  );
+  ) : null;
 }

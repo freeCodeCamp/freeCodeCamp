@@ -104,7 +104,7 @@ function Hotkeys({
       // needs to be prevented.
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
       // should not be prevented in that case.
-      if (e) e.preventDefault();
+      e?.preventDefault();
 
       if (!executeChallenge) return;
 
@@ -127,7 +127,7 @@ function Hotkeys({
     ...(keyboardShortcuts
       ? {
           focusEditor: (e?: KeyboardEvent) => {
-            if (e) e.preventDefault();
+            e?.preventDefault();
             if (editorRef && editorRef.current) {
               editorRef.current.focus();
             }

@@ -33,7 +33,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   else if (isRelationalDbCert(superBlock))
     return (
       <>
-        {CodeAllyDown()}
+        <CodeAllyDown />
         {clientLocale != 'english' && (
           <Alert bsStyle='info'>
             <p>{t('intro:misc-text.english-only')}</p>
