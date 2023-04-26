@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(Neu) Responsives Webdesign",
+    "title": "Responsive Web Design",
     "intro": [
       "In dieser Zertifizierung für responsives Webdesign lernst du die Sprachen, die Entwickler/innen zum Erstellen von Webseiten verwenden: HTML (Hypertext Markup Language) für den Inhalt und CSS (Cascading Style Sheets) für das Design.",
       "Zunächst baust du eine Katzenfoto-App, um die Grundlagen von HTML und CSS zu erlernen. Später lernst du moderne Techniken wie CSS-Variablen, indem du einen Pinguin baust, und bewährte Praktiken für Barrierefreiheit, indem du eine Quiz-Site erstellst.",
@@ -457,7 +457,7 @@
     }
   },
   "relational-database": {
-    "title": "Relationale Datenbanken (Beta)",
+    "title": "Relational Database",
     "intro": [
       "In diesen Kursen verwendest du echte Entwickler-Tools und Software wie VS Code, PostgreSQL und die Linux/Unix-Kommandozeile, um interaktive Tutorials zu absolvieren und Projekte zu erstellen.",
       "Diese Kurse beginnen mit den grundlegenden Bash-Befehlen. Über das Terminal lernst du alles von der Navigation und dem Umgang mit dem Dateisystem über das Skripting in der Bash bis hin zur fortgeschrittenen Nutzung.",
@@ -997,9 +997,8 @@
     "legacy-header": "Alte Kurse",
     "legacy-desc": "Diese Kurse sind nicht mehr Teil des Zertifizierungsprogramms, stehen dir aber weiterhin zur Verfügung, um dich weiterzubilden.",
     "legacy-go-back": "Rufe die aktuelle Version des Lehrplans auf.",
-    "new-rwd-desc": "Wir haben unseren Responsives Webdesign Studienplan aktualisiert. Wenn du bereits mit dem RWD-Studienplan gearbeitet hast, ist dein Fortschritt noch gespeichert! Du findest ihn unter dem Abschnitt Altes Responsives Webdesign.",
-    "new-rwd-article": "Wir möchten dich dazu ermutigen, dich über die vorgenommenen Änderungen zu informieren und dich mit dem aktualisierten Studienplan auseinanderzusetzen.",
-    "viewing-upcoming-change": "Du siehst eine Beta-Seite. ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "Gehe zurück zur stabilen Version des Lehrplans.",
     "read-database-cert-article": "Bitte lies diesen Forenbeitrag, bevor du fortfährst.",
     "enable-cookies": "Bevor du startest, muss du die Cookies von Drittanbietern aktivieren.",

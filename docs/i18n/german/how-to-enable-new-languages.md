@@ -371,7 +371,7 @@ Erstelle dann einen PR für das CDN-Repository, um sowohl die YAML- als auch die
 
 Das [News Repo](https://github.com/freeCodeCamp/news) zieht die Daten von einer Ghost-Instanz, die Dateien, die du dem CDN hinzugefügt hast, erstellt die News und stellt sie bereit.
 
-> [!WARN] Pull Requests für das News-Repos _müssen_ aus demselben Repo kommen. Du solltest bei diesem Schritt nicht von einem Fork aus arbeiten.
+> [!WARN] Pull requests to the News repo _must_ come from the same repo. Du solltest bei diesem Schritt nicht von einem Fork aus arbeiten.
 
 ### Anpassung der Hauptkonfigurationsdatei (Main Config)
 

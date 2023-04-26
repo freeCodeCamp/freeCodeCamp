@@ -11,7 +11,7 @@ import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
+import { Provider, connect, useStore } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -234,6 +234,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const reduxStore = useStore();
   const { t } = useTranslation();
   const { editorRef, initTests, resetAttempts } = props;
   // These refs are used during initialisation of the editor as well as by
@@ -663,18 +664,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     const isChallengeComplete = challengeIsComplete();
 
     ReactDOM.render(
-      <LowerJaw
-        openHelpModal={props.openHelpModal}
-        openResetModal={props.openResetModal}
-        tryToExecuteChallenge={tryToExecuteChallenge}
-        hint={output[1]}
-        testsLength={props.tests.length}
-        attempts={attemptsRef.current}
-        challengeIsCompleted={isChallengeComplete}
-        tryToSubmitChallenge={tryToSubmitChallenge}
-        isSignedIn={props.isSignedIn}
-        updateContainer={() => updateOutputViewZone(outputNode, editor)}
-      />,
+      <Provider store={reduxStore}>
+        <LowerJaw
+          openHelpModal={props.openHelpModal}
+          openResetModal={props.openResetModal}
+          tryToExecuteChallenge={tryToExecuteChallenge}
+          hint={output[1]}
+          testsLength={props.tests.length}
+          attempts={attemptsRef.current}
+          challengeIsCompleted={isChallengeComplete}
+          tryToSubmitChallenge={tryToSubmitChallenge}
+          isSignedIn={props.isSignedIn}
+          updateContainer={() => updateOutputViewZone(outputNode, editor)}
+        />
+      </Provider>,
       outputNode
     );
   }

@@ -13,6 +13,11 @@ jest.mock('../../src/analytics');
 
 const store = createStore();
 
+// TODO: rather than testing which props passed from layoutSelector to the
+// component it renders, test that the rendered component has the expected
+// features (i.e. has a footer or not, etc.). That should be possible in
+// react-testing-library.
+
 interface NameAndProps {
   props: Record<string, unknown>;
   name: string;
@@ -36,11 +41,11 @@ function getComponentNameAndProps(
   shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
   const view = shallow.getRenderOutput();
   return {
-    props: view.props as Record<string, unknown>,
+    props: view.props.children.props as Record<string, unknown>,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    name: view.type.WrappedComponent.displayName
+    name: view.props.children.type.WrappedComponent.displayName
     // TODO: Revisit this when react-test-renderer is replaced with
     // react-testing-library
   };

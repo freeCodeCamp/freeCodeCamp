@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "تصميم مواقع الويب المتجاوبة (جديد)",
+    "title": "Responsive Web Design",
     "intro": [
       "في شهادة تصميم الويب المستجيب هذه، ستتعلم اللغات التي يستخدمها المطورين لبناء صفحات الويب: HTML (Hypertext Markup Language) للمحتوى، و CSS (Cascading Style Sheets) للتصميم.",
       "أولاً، سوف تبني تطبيق صور لقطط لتتعلم أساسيات HTML وCSS. لاحقاً، سوف تتعلم التقنيات الحديثة مثل متغيرات CSS عن طريق بناء بِطْرِيق، وأفضل الممارسات في أمكانية الوصول عن طريق بناء اختبار فس موقع.",
@@ -457,7 +457,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (قيد الأنشاء)",
+    "title": "Relational Database",
     "intro": [
       "في هذه الدورات، سوف تستخدم أدوات وبرامج المطورين الحقيقية، بما في ذلك VS Code، و PostgreSQL، و Command Line باستخدام Linux/Unix لإكمال الدروس التفاعلية وبناء المشروعات.",
       "تبدأ هذه الدورات بأوامر Bash الأساسية. باستخدام Terminal، ستتعلم كل شيء بدءًا من التنقل في نظام الملفات ومعالجته، والبرمجة في Bash, وصولاً إلى الاستخدام المتقدم.",
@@ -997,9 +997,8 @@
     "legacy-header": "الدورات القديمة",
     "legacy-desc": "لم تعد هذه الدورات التدريبية جزءًا من مسار الشهادة ، ولكنها لا تزال متاحة لك لتعزيز تعلمك.",
     "legacy-go-back": "الذَّهاب إلى النسخة الحالية من المنهج الدراسي.",
-    "new-rwd-desc": "لقد حدثنا منهج Responsive Web Design. أذا كنت تعمل على منهج RWD السابق, يذل ما فعلته محفوظ! يمكنك العثور عليه في قسم تسميم الويب المتجاوب التراثي.",
-    "new-rwd-article": "ونحن نشجعكم على قراءة التغييرات التي أجريناها والنظر في استكشاف المنهج المستكملة.",
-    "viewing-upcoming-change": "أنت تنظر إلى صفحة تجريبية. ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "العودة إلى النسخة المستقرة من المنهج الدراسي.",
     "read-database-cert-article": "الرجاء قراءة هذا الموضوع قبل المتابعة.",
     "enable-cookies": "يجب عليك السماح باستخدام third-party cookies قبل البَدْء.",
