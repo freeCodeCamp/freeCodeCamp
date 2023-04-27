@@ -19,6 +19,7 @@ const defaultUser = {
   completedChallenges: [],
   currentChallengeId: '',
   emailVerified: false,
+  externalId: 'hi',
   is2018DataVisCert: false,
   is2018FullStackCert: false,
   isApisMicroservicesCert: false,
@@ -43,6 +44,7 @@ const defaultUser = {
   keyboardShortcuts: false,
   location: '',
   name: '',
+  unsubscribeId: '',
   picture: '',
   profileUI: {
     isLocked: false,
@@ -60,6 +62,7 @@ const defaultUser = {
   // TODO: check what this is used for in api-server and if we need it
   rand: 0,
   sendQuincyEmail: false,
+  subscribeId: 'hello',
   theme: 'default',
   // TODO: generate a UUID like in api-server
   username: ''
