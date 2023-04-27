@@ -2,13 +2,13 @@
 
 Before you can release a new language, you will need to allow the languages to download from Crowdin.
 
-## Updating Crowdin Settings
+## Оновлення налаштувань Crowdin
 
-In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+На бічній панелі проєктів `Curriculum` та `Learn UI` вам потрібно обрати `Project Settings`. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. Якщо ви не впевнені, що вводити, ми допоможемо у нашому чаті помічників.
 
-## Updating Workflows
+## Оновлення потоку робіт
 
-You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+Вам потрібно буде додати крок до `crowdin-download.client-ui.yml` та `crowdin-download.curriculum.yml`. Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
 
 ```yml
 ##### Download Dothraki #####
@@ -41,7 +41,7 @@ You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin
     # dryrun_action: true
 ```
 
-Note that the `download_language` key needs to be set to the language code displayed on Crowdin.
+Зауважте, що ключ `download_language` потрібно встановити на код мови, вказаний на Crowdin.
 
 ## Enabling a Language
 
