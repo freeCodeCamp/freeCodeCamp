@@ -20,8 +20,8 @@ const DropDownChildren = () => (
 
 const DropUpChildren = () => (
   <>
-    <Dropdown.Toggle dropup={true}>Options</Dropdown.Toggle>
-    <Dropdown.Menu dropup={true}>
+    <Dropdown.Toggle>Options</Dropdown.Toggle>
+    <Dropdown.Menu>
       <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
       <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
       <MenuItem href={'https://www.google.com'} disabled>
@@ -61,6 +61,7 @@ const UpTemplate: Story<DropdownProps> = args => {
 
 export const DropUp = UpTemplate.bind({});
 DropUp.args = {
-  children: <DropUpChildren />
+  children: <DropUpChildren />,
+  dropup: true
 };
 export default story;
