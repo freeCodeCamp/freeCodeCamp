@@ -22,6 +22,7 @@
     "@fastify/type-provider-typebox": "3.1.0",
     "@types/express-session": "1.17.7",
     "@types/supertest": "2.0.12",
+    "dotenv-cli": "7.2.1",
     "jest": "29.5.0",
     "pino-pretty": "10.0.0",
     "prisma": "4.13.0",
@@ -55,7 +56,7 @@
     "develop": "nodemon src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
-    "prisma": "MONGOHQ_URL=mongodb://localhost:27017/freecodecamp?directConnection=true prisma",
+    "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate"
   },
   "version": "0.0.1"
