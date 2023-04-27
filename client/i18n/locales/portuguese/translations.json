@@ -73,7 +73,6 @@
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
     "change-language": "Alterar idioma",
-    "cancel-change": "Cancelar alteração",
     "resume-project": "Retomar projeto",
     "start-project": "Iniciar o projeto"
   },
@@ -221,8 +220,7 @@
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
-    "total-points": "{{count}} ponto no total",
-    "total-points_plural": "{{count}} pontos no total",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
