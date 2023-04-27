@@ -44,7 +44,7 @@ function* sendRenderTimeSaga({ payload }) {
     yield put(
       executeGA({
         event: 'render_time',
-        render_time_msec: challengeRenderTime
+        challengeRenderTime
       })
     );
   }

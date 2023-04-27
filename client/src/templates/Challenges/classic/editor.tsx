@@ -1156,7 +1156,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.challengeFiles, props.isResetting]);
 
   useEffect(() => {
-    props.sendRenderTime(new Date().getTime());
+    props.sendRenderTime(Date.now());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.description]);
 

@@ -2,7 +2,7 @@ import { all, call, takeEvery } from 'redux-saga/effects';
 import TagManager from '../analytics';
 
 function* callGaType({
-  payload: { action, duration, amount, event, pagePath, render_time_msec }
+  payload: { action, duration, amount, event, pagePath, challengeRenderTime }
 }) {
   if (event === 'page_view') {
     yield call(TagManager.dataLayer, {
@@ -22,7 +22,7 @@ function* callGaType({
     yield call(TagManager.dataLayer, {
       dataLayer: {
         event,
-        render_time_msec
+        render_time_msec: challengeRenderTime
       }
     });
   } else {
