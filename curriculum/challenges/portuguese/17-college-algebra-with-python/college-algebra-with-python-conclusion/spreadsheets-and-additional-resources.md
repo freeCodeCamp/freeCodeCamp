@@ -1,6 +1,6 @@
 ---
 id: 6363d2899078df117ce4c407
-title: "Spreadsheets and Additional Resources"
+title: "Planilhas e recursos adicionais"
 challengeType: 15
 videoId: JH9Uk2mi3Dc
 dashedName: spreadsheets-and-additional-resources
@@ -8,13 +8,13 @@ dashedName: spreadsheets-and-additional-resources
 
 # --description--
 
-Let's look at how you can connect your Math and Python knowledge with external data. This video will show you how to get data from other sources, then transform it so that you can graph it and interpret it.
+Vamos ver como você pode conectar seus conhecimentos matemáticos e de Python a dados externos. Este vídeo mostrará a você como obter dados de outras fontes e, depois, transformar esses dados para que você possa construir o gráfico e interpretá-los.
 
 # --question--
 
 ## --text--
 
-What library helps you to read data from a .csv and store it as a dataframe where you can select columns?
+Qual biblioteca ajuda você a ler os dados de um .csv e armazená-los como um dataframe onde você pode selecionar colunas?
 
 ## --answers--
 

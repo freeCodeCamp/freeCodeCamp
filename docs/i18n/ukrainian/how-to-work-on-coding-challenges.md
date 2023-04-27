@@ -1,6 +1,6 @@
 # Як працювати над завданнями з програмуванням
 
-Нашою метою є розробити веселе та зрозуміле інтерактивне навчання.
+Наша мета — розробити веселе та зрозуміле інтерактивне навчання.
 
 Розробити інтерактивні завдання для програмування — важко. Було б набагато простіше написати довге пояснення чи створити відеоурок. Але для нашої основної навчальної програми ми використовуємо те, що найкраще працює для більшості людей — інтерактив, схожий на відеогру.
 
@@ -220,11 +220,11 @@ Here are some example challenge names:
 
 Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+У тексті завдання потрібно використовувати 2-гу особу множини («ви»). У такий спосіб текст та інструкції будуть звернені напряму до учня, який виконує завдання. Намагайтеся уникати звертань у 1-й особі, як-от «я», «ми», «нам».
 
-Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+Не використовуйте зовнішні посилання. Вони переривають робочий процес. Учні не повинні використовувати гугл під час виконання завдань. Якщо є ресурси, які, на вашу думку, допоможуть учням, додайте їх до статті, пов’язаної з керівництвом до завдання.
 
-You can add diagrams if necessary.
+В разі потреби можна додати діаграми.
 
 Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
@@ -234,18 +234,18 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - Node.js
 - Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
 
-### The 2-minute rule
+### Правило двох хвилин
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
+Кожне завдання повинне бути вирішене протягом 120 секунд носієм англійської мови, який виконав попередні завдання. У цей час входять прочитання вказівок/інструкцій для розуміння початкового коду, написання власного коду і проходження всіх тестів.
 
-If it takes longer than two minutes to complete the challenge, you have two options:
+Якщо виконання завдання займає більше двох хвилин, у вас є два шляхи:
 
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+- Спростіть завдання, або
+- Розділіть завдання на два кроки.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
+Завдяки правилу двох хвилин ви зробите лаконічні вказівки, зрозумілий початковий код та прості тести.
 
-We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
+Ми відстежуємо скільки часу займає розв’язок завдань та використовуємо цю інформацію, щоб виявити завдання, які потрібно спростити чи розділити.
 
 ### Modularity
 

@@ -43,6 +43,8 @@
   "data-structures": "JavaScript",
   "take-home-projects": "JavaScript",
   "top-learn-html-foundations": "HTML-CSS",
+  "top-learn-css-foundations": "HTML-CSS",
+  "top-learn-css-foundations-projects": "HTML-CSS",
   "top-build-a-recipe-project": "HTML-CSS",
   "rosetta-code": "JavaScript",
   "project-euler-problems-1-to-100": "JavaScript",
@@ -105,6 +107,7 @@
   "build-a-palindrome-checker-project": "JavaScript",
   "build-a-roman-numeral-converter-project": "JavaScript",
   "build-a-telephone-number-validator-project": "JavaScript",
+  "learn-modern-javascript-methods-by-building-football-team-cards": "JavaScript",
   "learn-advanced-array-methods-by-building-a-statistics-calculator": "JavaScript",
   "build-a-multi-function-calculator-project": "Python",
   "build-a-graphing-calculator-project": "Python",
@@ -128,5 +131,6 @@
   "college-algebra-with-python-conclusion": "Python",
   "learn-data-structures-by-building-a-shopping-cart": "JavaScript",
   "learn-regular-expressions-by-building-a-spam-filter": "JavaScript",
-  "learn-basic-algorithmic-thinking-by-building-a-number-sorter": "JavaScript"
+  "learn-basic-algorithmic-thinking-by-building-a-number-sorter": "JavaScript",
+  "learn-fetch-and-promises-by-building-an-fcc-authors-page": "JavaScript",
 }

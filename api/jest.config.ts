@@ -5,8 +5,7 @@ const config: Config = {
   testRegex: '\\.test\\.ts$',
   transform: {
     '^.+\\.ts$': 'ts-jest'
-  },
-  setupFilesAfterEnv: ['<rootDir>/jest.start-server.ts']
+  }
 };
 
 export default config;

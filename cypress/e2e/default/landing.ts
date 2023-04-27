@@ -11,11 +11,11 @@ type LandingPageTypes<T> = T[keyof T];
 type LandingPageLogs = LandingPageTypes<typeof landingPageElements>;
 
 const certifications = [
-  '(New) Responsive Web Design',
+  'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
-  'Relational Database (Beta)',
+  'Relational Database',
   'Back End Development and APIs',
   'Quality Assurance',
   'Scientific Computing with Python',

@@ -14,38 +14,32 @@ import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import type { CamperProps } from '../profile/components/camper';
 import SoundSettings from './sound';
-import ThemeSettings, { Themes } from './theme';
+import ThemeSettings, { type ThemeProps } from './theme';
 import UsernameSettings from './username';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import SectionHeader from './section-header';
 import ScrollbarWidthSettings from './scrollbar-width';
 
-type FormValues = {
-  name: string;
-  location: string;
-  picture: string;
-  about: string;
-};
+type AboutProps = ThemeProps &
+  Omit<
+    CamperProps,
+    | 'linkedin'
+    | 'joinDate'
+    | 'isDonating'
+    | 'githubProfile'
+    | 'twitter'
+    | 'website'
+    | 'yearsTopContributor'
+  > & {
+    sound: boolean;
+    keyboardShortcuts: boolean;
+    submitNewAbout: (formValues: FormValues) => void;
+    t: TFunction;
+    toggleSoundMode: (sound: boolean) => void;
+    toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  };
 
-type AboutProps = Omit<
-  CamperProps,
-  | 'linkedin'
-  | 'joinDate'
-  | 'isDonating'
-  | 'githubProfile'
-  | 'twitter'
-  | 'website'
-  | 'yearsTopContributor'
-> & {
-  currentTheme: Themes;
-  sound: boolean;
-  keyboardShortcuts: boolean;
-  submitNewAbout: (formValues: FormValues) => void;
-  t: TFunction;
-  toggleNightMode: (theme: Themes) => void;
-  toggleSoundMode: (sound: boolean) => void;
-  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-};
+type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
 
 type AboutState = {
   formValues: FormValues;

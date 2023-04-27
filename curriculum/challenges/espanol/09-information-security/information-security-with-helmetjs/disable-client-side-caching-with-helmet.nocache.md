@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Disable Client-Side Caching with helmet.noCache()
+title: Desactiva el cache del lado del cliente con helmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -8,17 +8,17 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Como recordatorio, este proyecto está siendo construído en base al siguiente proyecto iniciado en <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need.
+Si esta lanzando una actualización para su sitio web, y quiere que los usuarios siempre descarguen la versión más reciente, puede (intentar) desactivar la cache en el navegador del cliente. Puede ser útil también en desarrollo. El almacenamiento de cache tiene beneficios de rendimiento, los cuales perderás, así que solo usa está opción cuando haya una necesidad real.
 
 # --instructions--
 
-Use the `helmet.noCache()` method on your server.
+Usa el método `helmet.noCache()` en tu servidor.
 
 # --hints--
 
-helmet.noCache() middleware should be mounted correctly
+helmet.noCache() middleware debe ser montado correctamente
 
 ```js
 (getUserInput) =>

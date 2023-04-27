@@ -23,10 +23,8 @@ function Landing(): ReactElement {
         <Grid fluid={true}>
           <AsSeenIn />
         </Grid>
-        <Grid>
-          <Testimonials />
-          <Certifications />
-        </Grid>
+        <Testimonials />
+        <Certifications />
       </main>
     </>
   );

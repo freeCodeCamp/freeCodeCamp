@@ -14,6 +14,7 @@ import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
+import { LanguageList } from './language-list';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
@@ -22,17 +23,15 @@ const SearchBarOptimized = Loadable(
 
 type UniversalNavProps = Omit<
   NavLinksProps,
-  'navigate' | 'toggleNightMode' | 'openSignoutModal'
+  'toggleNightMode' | 'openSignoutModal'
 > & {
+  fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
 };
 export const UniversalNav = ({
   displayMenu,
-  isLanguageMenuDisplayed,
   showMenu,
   hideMenu,
-  showLanguageMenu,
-  hideLanguageMenu,
   menuButtonRef,
   searchBarRef,
   user,
@@ -87,6 +86,7 @@ export const UniversalNav = ({
                 </Link>
               </Media>
             )}
+            <LanguageList t={t} />
             <MenuButton
               displayMenu={displayMenu}
               hideMenu={hideMenu}
@@ -97,12 +97,8 @@ export const UniversalNav = ({
             <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
             <NavLinks
               displayMenu={displayMenu}
-              fetchState={fetchState}
-              isLanguageMenuDisplayed={isLanguageMenuDisplayed}
-              hideLanguageMenu={hideLanguageMenu}
               hideMenu={hideMenu}
               menuButtonRef={menuButtonRef}
-              showLanguageMenu={showLanguageMenu}
               showMenu={showMenu}
               user={user}
             />
