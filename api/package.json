@@ -10,7 +10,7 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
     "@immobiliarelabs/fastify-sentry": "^5.0.2",
-    "@prisma/client": "4.12.0",
+    "@prisma/client": "4.13.0",
     "connect-mongo": "4.6.0",
     "fastify": "4.15.0",
     "fastify-auth0-verify": "^1.0.0",
@@ -24,7 +24,7 @@
     "@types/supertest": "2.0.12",
     "jest": "29.5.0",
     "pino-pretty": "10.0.0",
-    "prisma": "4.12.0",
+    "prisma": "4.13.0",
     "supertest": "6.3.3",
     "ts-jest": "29.1.0"
   },
