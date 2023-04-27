@@ -41,7 +41,7 @@ type CompletedChallengeData {
   challengeType Int? // Null | Undefined
   completedDate Float
   id            String
-  solution      Json? // Null | Undefined
+  solution      String? // Null | Undefined
 
   // Nonesense
   dataSource Json?   @map("__dataSource") // Null
@@ -50,7 +50,7 @@ type CompletedChallengeData {
 }
 
 type CompletedChallenge {
-  challengeType      Int? // Null | Undefined
+  challengeType      String? // Null | Undefined
   completedDate      Float
   files              File[]
   githubLink         String? // Undefined
@@ -135,13 +135,13 @@ model user {
   badges                       Json? // Undefined | { coreTeam [][] }
   completedChallenges          CompletedChallenge[]
   currentChallengeId           String?
-  donationEmails               Json? // Undefined | String[]
+  donationEmails               String[]             @default([]) // Undefined | String[]
   email                        String
   emailAuthLinkTTL             DateTime? // Null | Undefined
   emailVerified                Boolean
   emailVerifyTTL               DateTime? // Null | Undefined
-  externalId                   String
-  github                       Json? // Only Null | Undefined
+  externalId                   String?
+  github                       String? // Only Null | Undefined
   githubProfile                String? // Undefined
   isApisMicroservicesCert      Boolean? // Undefined
   isBackEndCert                Boolean? // Undefined
@@ -179,20 +179,21 @@ model user {
   picture                      String
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
-  progressTimestamps           Json[] // ProgressTimestamp[] | Null[] | Int64[] | Double[]
+  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[]
   rand                         Float? // Undefined
-  savedChallenges              Json? // Undefined | SavedChallenges[]
+  savedChallenges              Json? // Undefined | SavedChallenge[]
   sendQuincyEmail              Boolean
   sound                        Boolean? // Undefined
   theme                        String? // Undefined
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
-  unsubscribeId                String
+  unsubscribeId                String?
   username                     String
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
   website                      String? // Undefined
-  yearsTopContributor          Json? // Undefined | String[]
+  yearsTopContributor          String[]             @default([]) // Undefined | String[] 
+  a                            String?
 }
 
 // -----------------------------------
