@@ -1,4 +1,5 @@
 import React from 'react';
+
 function ToggleCheck(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
