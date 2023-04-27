@@ -73,7 +73,6 @@
     "click-start-course": "Розпочати курс",
     "click-start-project": "Розпочати проєкт",
     "change-language": "Змінити мову",
-    "cancel-change": "Скасувати зміни",
     "resume-project": "Продовжити проєкт",
     "start-project": "Розпочати проєкт"
   },
@@ -221,8 +220,7 @@
     "tweet": "Я щойно отримав(-ла) сертифікацію {{certTitle}} від @freeCodeCamp! Перегляньте її тут: {{certURL}}",
     "avatar": "Аватар {{username}}",
     "joined": "Приєднався(-лась) {{date}}",
-    "total-points": "Всього балів: {{count}}",
-    "total-points_plural": "Всього балів: {{count}}",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}}х балів станом на {{date}}",
     "points_plural": "{{count}}х балів станом на {{date}}",
     "page-number": "{{pageNumber}} з {{totalPages}}"

@@ -73,7 +73,6 @@
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
     "change-language": "言語変更",
-    "cancel-change": "変更キャンセル",
     "resume-project": "プロジェクト再開",
     "start-project": "プロジェクト開始"
   },
@@ -221,8 +220,7 @@
     "tweet": "{{certTitle}} の認定証を @freeCodeCamp で取得しました！確認はこちら: {{certURL}}",
     "avatar": "{{username}} のアバター",
     "joined": "{{date}} に加入",
-    "total-points": "合計 {{count}} ポイント",
-    "total-points_plural": "合計 {{count}} ポイント",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}"
