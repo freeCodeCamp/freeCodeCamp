@@ -32,7 +32,6 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/core": "7.21.4",
     "@babel/preset-env": "7.21.4",
     "@babel/preset-typescript": "7.21.4",
     "@rollup/plugin-babel": "5.3.1",

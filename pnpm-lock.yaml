@@ -373,9 +373,6 @@ importers:
       '@babel/cli':
         specifier: 7.17.10
         version: 7.17.10(@babel/core@7.18.0)
-      '@babel/core':
-        specifier: 7.18.0
-        version: 7.18.0
       '@babel/node':
         specifier: 7.17.10
         version: 7.17.10(@babel/core@7.18.0)
@@ -1247,9 +1244,6 @@ importers:
         specifier: 4.9.5
         version: 4.9.5
     devDependencies:
-      '@babel/core':
-        specifier: 7.21.4
-        version: 7.21.4
       '@babel/preset-env':
         specifier: 7.21.4
         version: 7.21.4(@babel/core@7.21.4)
