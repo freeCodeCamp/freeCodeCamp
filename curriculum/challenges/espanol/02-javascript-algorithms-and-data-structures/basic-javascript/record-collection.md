@@ -21,8 +21,8 @@ Completa la función utilizando las reglas siguientes para modificar el objeto p
 
 -   Tu función debe devolver siempre el objeto `records` completo.
 -   Si `value` es una cadena vacía, elimina la propiedad `prop` dada del álbum.
--   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
--   If `prop` is `tracks` and value isn't an empty string, add the `value` to the end of the album's `tracks` array. You need to create this array first if the album does not have a `tracks` property.
+-   Si `prop` no es `tracks` y `value` no es una cadena vacía, asigna el `value` a la `prop` de ese álbum.
+-   Si `prop` es `tracks` y value no es una cadena vacía, añade el `value` al final del arreglo `tracks` del álbum. Necesitas crear este arreglo primero si el álbum no tiene una propiedad `tracks`.
 
 **Nota:** Para las pruebas se utiliza una copia del objeto `recordCollection`. No debes modificar directamente el objeto `recordCollection`.
 
