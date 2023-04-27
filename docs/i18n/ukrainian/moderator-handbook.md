@@ -18,7 +18,7 @@
 
 У нас є [Кодекс поведінки](https://code-of-conduct.freecodecamp.org), який керує нашою спільнотою. Чим менше правил, тим легше їх запам’ятати. Ви можете прочитати ці правила та закріпити їх у пам’яті [тут](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] As a moderator, we would add you to one or more teams on GitHub, our community forums & chat servers. Якщо у вас немає дозволу до платформи, яку хочете модерувати, [зверніться до персоналу](FAQ.md#additional-assistance).
+> [!NOTE] Ми додамо вас до однієї або більше команд на GitHub, форумі нашої спільноти та чат-серверах. Якщо у вас немає дозволу до платформи, яку хочете модерувати, [зверніться до персоналу](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
@@ -152,15 +152,15 @@ Also, you should never accept your own PRs. They must be reviewed by another mod
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
-## Moderating the Forum
+## Модерація форуму
 
-As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
+Як модератор, ви допомагаєте нашій спільноті бути приємним місцем для всіх, хто бажає навчатися чи отримати допомогу. Ви матимете справу із позначеними дописами та оброблятимете спам, повідомлення поза темою та інші недоречні розмови.
 
-Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
+Зверніть увагу на те, що як тільки ви станете модератором на форумі, то почнете бачити сині підказки щодо користувачів форуму. Наприклад, «[person] вперше публікує повідомлення. Привітайте нового користувача у нашій спільноті!» або «[person] публікує повідомлення за довгий час. Привітайте користувача з поверненням у спільноту!»
 
-![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
+![Блакитне повідомлення «[person] вперше публікує повідомлення. Привітайте нового користувача у нашій спільноті!»](https://i.imgur.com/mPmVgzK.png)
 
-These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
+Це надасть шанс привітати користувачів та змусити їх почуватись особливими. Можливо, хтось з нових учасників стане майбутнім помічником, який допомагатиме безлічі людей вивчати програмування. Навіть найменший вияв доброти може спонукати до низки добрих справ.
 
 ### Видалення повідомлень на форумі
 
@@ -171,11 +171,11 @@ These are opportunities for you to welcome them and make them feel extra special
 3. Користувач заповнив тред величезною кількістю спаму.
 4. Обліковий запис був створений, без сумніву, для спаму.
 
-### Dealing with Spam
+### Що робити зі спамом
 
-For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
+Якщо допис зі спамом опублікував легітимний користувач (тобто він хотів не спамити, а навчатись/зробити внесок), надішліть йому повідомлення щодо проблеми та видаліть посилання чи допис, якщо потрібно. Залиште примітку у профілі користувача, де пояснюєте причини вжитих заходів. Якщо проблема не зникає, то заблокуйте можливість користувача публікувати дописи (для цього використайте опцію тиші на панелі адміністратора). Надішліть користувачу попередження із [Кодексом поведінки](https://code-of-conduct.freecodecamp.org). У приватному повідомленні встановіть прапорець, який вказує на те, що ваше повідомлення є «офіційним попередженням».
 
-As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
+Як модератор, ви можете ставити запитання і звітувати про порушення на [форумі у розділі mod-team](https://forum.freecodecamp.org/c/mod-team/4).
 
 ### Що робити із розмовами поза темою
 
@@ -185,13 +185,13 @@ As a moderator, you can ask questions and report incidents in the [mod-team foru
 
 Знову ж таки, якщо у вас виникають проблеми чи запитання, напишіть у категорії `«Staff»` та позначте іншого модератора, аби він переглянув ваші дії.
 
-### Що робити з опублікованим розв'язком
+### Що робити з опублікованим розв’язком
 
-Якщо у своїй відповіді користувач надсилає розв'язок до навчальної програми freeCodeCamp, видаліть її та використайте відповідь **Solution Instead of Help** (або іншу своїми словами).
+Якщо у своїй відповіді користувач надсилає розв’язок до навчальної програми freeCodeCamp, видаліть її та використайте відповідь **Solution Instead of Help** (або іншу своїми словами).
 
-If the OP (Original Poster) replies within a freeCodeCamp curriculum help thread with their final solution, blur it, and use the **Blurred Spoiler Solution** canned reply.
+Якщо у своїй відповіді користувач надсилає кінцевий розв’язок до навчальної програми freeCodeCamp, розмийте її та використайте відповідь **Blurred Spoiler Solution**.
 
-Якщо користувач просить відгук щодо розв'язку, перемістіть тред до підфоруму зворотного зв'язку та розмийте розв'язок за потреби. Якщо користувач публікує розв'язок для того, щоб похвастатися, вилучіть тред зі списку та використайте відповідь **Solutions Thread**.
+Якщо користувач просить відгук щодо розв’язку, перемістіть тред до підфоруму зворотного зв’язку та розмийте розв’язок за потреби. Якщо користувач публікує розв’язок для того, щоб похвастатися, вилучіть тред зі списку та використайте відповідь **Solutions Thread**.
 
 ### Користувачі, які не досягнули відповідного віку
 
@@ -207,13 +207,13 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
-### Moderating Via Cell Phone
+### Модерація через мобільний телефон
 
-Moderating the forum is possible via a cell phone but you may encounter some usage quirks. This is not an exhaustive list.
+Форум можливо модерувати через мобільний телефон, але ви можете зіткнутися з певними проблемами. У списку перелічено не всі проблеми.
 
-- When trying to include a "Canned reply" in a response, if the menu doesn't open (after clicking on the gear), click on the text area first then try it again.
-- The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
-- Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
+- Якщо при спробі «заготовленої відповіді» не відкривається меню (після натискання на зубчасте колесо), натисніть на текстове поле та спробуйте ще раз.
+- Модераторський «гайковий ключ» знаходиться в нижній частині вікна попереднього перегляду, але якщо ви натиснете на нього, і не бачите кнопку «Select Posts», тому що вона поза полем зору, вам доведеться прокрутити екран, хоча іноді це не працює. У такому випадку вам потрібно перейти на монітор комп’ютера/ноутбука.
+- Іноді значок відповіді може приховатись, якщо натиснути на меню з трьома крапками під публікацією. Перезавантажте сторінку, щоб повернути його.
 
 ## Модерація фейсбуку
 
@@ -231,7 +231,7 @@ Moderating the forum is possible via a cell phone but you may encounter some usa
 
 1. **Переконайтеся, що користувач навмисно порушив [Кодекс поведінки](https://code-of-conduct.freecodecamp.org).**
 
-   Не всі порушення [Кодексу поведінки](https://code-of-conduct.freecodecamp.org) є навмисними. A new camper might post a large amount of code for help, unaware that this can be disruptive to the conversation. У таких випадках ви можете просто попросити їх скористатися такими сервісами, як CodePen чи Pastebin.
+   Не всі порушення [Кодексу поведінки](https://code-of-conduct.freecodecamp.org) є навмисними. Нові користувачі можуть публікувати велику кількість коду для допомоги, не знаючи, що це може заважати розмові. У таких випадках ви можете просто попросити їх скористатися такими сервісами, як CodePen чи Pastebin.
 
 2. **Якщо користувач безсумнівно та навмисно порушує [Кодекс поведінки](https://code-of-conduct.freecodecamp.org), модератор робить наступне:**
 
@@ -305,49 +305,49 @@ Moderating the forum is possible via a cell phone but you may encounter some usa
 > 
 > Це необхідно для того, щоб ми могли надати вам дозвіл робити записи у наших репозиторіях.
 
-## How Our Contributors Room Works
+## Як працює кімната помічників
 
-Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
+Ми вітаємо кожного у [кімнаті помічників на нашому чат-сервері](https://discord.gg/PRyKn3Vbay). Ми створили її для модераторів та інших кемперів, які роблять внесок до нашої спільноти будь-яким чином, включно з навчальними групами.
 
-We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
+Ми прискаємо, що помічники читають всі повідомлення, у яких вони згадуються через **@username**. Все інше за бажанням, однак не соромтесь читати інші дописи та взаємодіяти з ними.
 
-## Dealing with Solicitors
+## Комунікація із посередниками
 
-You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
+До вас можуть звернутися організації, які хочуть стати партнерами або співвласниками бренду freeCodeCamp. Як тільки ви зрозумієте їхні наміри, **закінчуйте діалог** та направте їх на пошту `team[at]freecodecamp.org`.
 
-We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+Нам часто надходять такі пропозиції, тому вигоду співпраці для нашої спільноти краще вирішувати персоналу (зазвичай воно того не варте).
 
-## Dealing with (Mental) Health Inquiries
+## Як діяти при зверненнях щодо (психічного) здоров’я
 
-You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
+Іноді трапляються ситуації, коли користувачам потрібна медична допомога, або у них наявні ментальні порушення та вони шукають підтримки.
 
-As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
+Згідно з нашою політикою вам варто уникати приватних розмов на такі теми. Якщо ситуація напряму стосується freeCodeCamp, потрібно мати запис розмови. Наголосіть, що ми не медичні працівники та заохотьте користувача звернутись по медичну допомогу.
 
-As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
+Попри те, що іноді це важко, уникайте порад, а радше направте користувача на пошук професійної допомоги!
 
-If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
+Якщо таке трапилося у чаті, створіть приватний канал для користувача та команди модераторів. Це можна зробити за допомогою команди `private`.
 
 - Користувачу гарантована конфіденційність.
 - У публічному чаті більше немає порушень.
 - Інші учасники команди можуть втрутитися, якщо вам некомфортно справлятися із ситуацією самостійно.
 
-Helpful URLs:
+Корисні посилання:
 
 http://suicide.org/international-suicide-hotlines.html
 
-## A Note on Free Speech
+## Примітка щодо свободи слова
 
-Sometimes people will defend something offensive or incendiary that they said as "free speech."
+Інколи люди захищатимуть щось образливе або провокативне, обґрунтовуючи це «свободою слова».
 
-This XKCD comic summarizes perfectly most communities' thoughts on free speech.
+Цей вебкомікс від XKCD ідеально підсумовує думки більшості спільнот стосовно свободи слова.
 
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-Thanks for reading this, and thanks for helping the developer community!
+Дякуємо за увагу та допомогу спільноті розробників!
 
-## Reply Templates
+## Зразки відповідей
 
-These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
+Це зразки відповідей, які можна використовувати під час розгляду PR та їх сортування.
 
 > Ви можете створити власний список збережених відповідей за допомогою вбудованої функції [збережені відповіді](https://github.com/settings/replies/) на GitHub або використовувати подані нижче.
 
@@ -404,9 +404,9 @@ git fetch upstream
 git pull upstream main
 ````
 
-If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
+Якщо ви використовуєте графічний інтерфейс користувача, просто виконайте команду `Add a new remote...` та використайте посилання `git://github.com/freeCodeCamp/freeCodeCamp.git`.
 
-Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
+Як тільки ви синхронізували розгалуження і звірили всі файли, ми зможемо переглянути ваш PR і прийняти його. 😊
 
 ---
 
@@ -431,7 +431,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+¹ Якщо у новачка виникає конфлікт злиття, то спеціалісти розв’яжуть цю проблему замість нього.
 
 ### Дублікат
 
@@ -475,7 +475,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adding Comment About Newbie Mistakes
+### Додавання коментарів про помилки новачків
 
 ```markdown
 Hi there, 

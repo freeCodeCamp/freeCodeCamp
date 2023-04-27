@@ -176,7 +176,7 @@ A ordem dos superblocos neste objeto é como eles aparecem na página inicial e 
 
 O array `CurriculumMaps.Landing` deve conter exatamente um superbloco para todas as nossas certificações atuais. O objeto `CurriculumMaps.Learn` deve ter em si todos os superblocos existentes. Os superblocos traduzidos vão em `TranslationStates.Audited` e os superblocos não traduzidos vão em `TranslationStates.NotAudited`. Esses dois objetos têm, cada um, quatro estados diferentes nos quais um superbloco pode estar.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
+- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como o `Responsive Web Design`, por exemplo.
 - `SuperBlockStates.New`: esses aparecem apenas quando `SHOW_NEW_CURRICULUM` estiver definido como `true` no arquivo `.env`. Ele serve para exibir novos superblocos em uma build específica. Por exemplo, quando lançamos a nova certificação de Design responsivo para a web, nós a mostramos apenas em inglês para começar.
 - `SuperBlockStates.Upcoming`: esses aparecem apenas quando `SHOW_UPCOMING_CHANGES` estiver definido como `true` no arquivo `.env`. Eles servem para mostrar os superblocos em nível local enquanto eles estão em desenvolvimento. Como alternativa, podem ser usados quando precisamos ocultar um superbloco do mapa por alguma outra razão.
 - `SuperBlockStates.Legacy`: um superbloco é movido para cá quando uma nova versão daquele superbloco já está totalmente traduzida e pronta para substituí-lo.
