@@ -1,0 +1,184 @@
+{
+  "name": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-basic-algorithmic-thinking-by-building-a-number-sorter",
+  "order": 9,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "64061a98f704a014b44afdb2",
+      "Step 1"
+    ],
+    [
+      "64067c1041a80c366b852407",
+      "Step 2"
+    ],
+    [
+      "6406a71d2b35103a340dba06",
+      "Step 3"
+    ],
+    [
+      "6406a9945fa5d23c225d31cc",
+      "Step 4"
+    ],
+    [
+      "6406adbca6b41d3d7cef85ab",
+      "Step 5"
+    ],
+    [
+      "6406bb32f9ed593f26c33b2b",
+      "Step 6"
+    ],
+    [
+      "6407b940b8983005578d0824",
+      "Step 7"
+    ],
+    [
+      "6407c303b4272606c019f338",
+      "Step 8"
+    ],
+    [
+      "6407c4abf5be6d07d8c12ade",
+      "Step 9"
+    ],
+    [
+      "6407c627ddc93708c8dee796",
+      "Step 10"
+    ],
+    [
+      "6407c6a2c2159309994779a5",
+      "Step 11"
+    ],
+    [
+      "6407c6d3f19c4e0a7ba320bb",
+      "Step 12"
+    ],
+    [
+      "6407c722498bc80b76d29073",
+      "Step 13"
+    ],
+    [
+      "6410da6df463a606dfade96f",
+      "Step 14"
+    ],
+    [
+      "6410dfb965c72108196ef24a",
+      "Step 15"
+    ],
+    [
+      "6410e1b58efc2c091a13bcd9",
+      "Step 16"
+    ],
+    [
+      "6410e3c19c21cd09c32dc7c6",
+      "Step 17"
+    ],
+    [
+      "6410e70c84bb660b4d2a5ea1",
+      "Step 18"
+    ],
+    [
+      "6410edb33eeaf50dd9a22ab4",
+      "Step 19"
+    ],
+    [
+      "6410efff0ae97c0f06856511",
+      "Step 20"
+    ],
+    [
+      "6410f9a443d57414ee50fada",
+      "Step 21"
+    ],
+    [
+      "6410f149110ec60fd40fcfe1",
+      "Step 22"
+    ],
+    [
+      "64110377201e7b1a0de0d558",
+      "Step 23"
+    ],
+    [
+      "6410f97a721cd1144804b7a8",
+      "Step 24"
+    ],
+    [
+      "6410fb3b68429716a810ea4b",
+      "Step 25"
+    ],
+    [
+      "6410fcd1f731fd17cdb101a7",
+      "Step 26"
+    ],
+    [
+      "6411024727181d190ef03166",
+      "Step 27"
+    ],
+    [
+      "64110727cefd3d1d9bdb0128",
+      "Step 28"
+    ],
+    [
+      "6411083020a3101e9514a0f5",
+      "Step 29"
+    ],
+    [
+      "64110998bc00321fd8052ab5",
+      "Step 30"
+    ],
+    [
+      "64110a03f6a450209b01f45c",
+      "Step 31"
+    ],
+    [
+      "64110b1849454521871243ca",
+      "Step 32"
+    ],
+    [
+      "6411108bc8b9c324f66aab4c",
+      "Step 33"
+    ],
+    [
+      "641110e4fb696b259dbf0bcf",
+      "Step 34"
+    ],
+    [
+      "6411135e9ee2fa26c882eb02",
+      "Step 35"
+    ],
+    [
+      "64112c9cf53d632910ea2f9b",
+      "Step 36"
+    ],
+    [
+      "64112cea9e6ac22a314628b0",
+      "Step 37"
+    ],
+    [
+      "64112d0943e1bb2aef11e2d1",
+      "Step 38"
+    ],
+    [
+      "64112fa63a0f812c66499a54",
+      "Step 39"
+    ],
+    [
+      "641130423e5f512d8972dae1",
+      "Step 40"
+    ],
+    [
+      "64113124efd2852edafaf25f",
+      "Step 41"
+    ],
+    [
+      "64113249bab9952fb2ce4469",
+      "Step 42"
+    ]
+  ]
+}

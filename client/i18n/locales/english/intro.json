@@ -355,6 +355,10 @@
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "intro": ["", ""]
       }
     }
   },
