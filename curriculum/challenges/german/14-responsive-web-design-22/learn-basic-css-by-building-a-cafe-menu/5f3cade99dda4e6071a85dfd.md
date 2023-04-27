@@ -11,7 +11,7 @@ Du wirst in ein paar Schritten auf die Gestaltung der Speisekarte zurückkommen,
 
 # --hints--
 
-You should have an opening `section` tag.
+Du solltest ein öffnendes `section`-Tag haben.
 
 ```js
 assert(code.match(/<section>/ig).length === 2);

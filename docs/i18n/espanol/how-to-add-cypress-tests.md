@@ -4,23 +4,23 @@ Al realizar cambios en JavaScript, CSS o HTML que podrían cambiar la funcionali
 
 Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [documentación](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) oficial de Cypress.
 
-## Donde agregar una prueba
+## Where to Add a Test
 
 - Las pruebas de Cypress están en el directorio `./cypress`.
 
 - Las pruebas de Cypress para un módulo curricular están en el directorio curricular correspondiente, por ejemplo: `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## Como ejecutar pruebas
+## How to Run Tests
 
 > [!NOTE] Si utilizas GitPod, por favor mira [Cypress-GitPod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
-### 1. Asegúrate de que MongoDB y la aplicación de cliente se estén ejecutando
+### 1. Ensure that MongoDB and Client Applications are Running
 
 - [Inicia MongoDB y propaga la base de Datos](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Inicia la aplicación de cliente de freeCodeCamp y el servidor API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Ejecuta las pruebas de Cypress
+### 2. Run the Cypress Tests
 
 Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `prd` abajo.
 
@@ -39,7 +39,7 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Para crear una compilación de desarrollo, inicia el servidor de desarrollo y ejecuta todas las pruebas de cypress existentes de extremo a extremo:
@@ -54,10 +54,11 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
 
 Si al iniciar el entorno de GitPod no se creó automáticamente el ambiente:
 
-- Inicia la base de datos
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Propaga la base de datos

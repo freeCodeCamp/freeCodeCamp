@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
 type ChangibleValues =
   | {
@@ -9,31 +9,26 @@ type ChangibleValues =
       readonly?: never;
     }
   | {
-      value: string;
+      value?: string;
       onChange?: never;
       readonly: boolean;
     }
   | {
-      value: string;
+      value?: string;
       onChange: (event: React.ChangeEvent<FormControlElement>) => void;
       readonly?: never;
     };
 
 export type FormControlProps = React.HTMLAttributes<FormControlElement> & {
-  className?: string;
-  id?: string;
   testId?: string;
-  componentClass?: typeof React.Component;
-  placeholder?: string;
+  componentClass?: 'textarea' | 'input';
   name?: string;
   required?: boolean;
   rows?: number;
   type?: 'text' | 'email' | 'url';
 } & ChangibleValues;
 
-export interface FormControlVariationProps {
-  className?: string;
-  children?: React.ReactNode;
-  id?: string;
-  testId?: string;
-}
+export type FormControlVariationProps = Pick<
+  FormControlProps,
+  'className' | 'children' | 'id' | 'testId'
+>;

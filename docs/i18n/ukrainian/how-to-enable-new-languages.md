@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -176,20 +176,20 @@ The order of the superblocks in this object is how they appear on the "Landing" 
 
 The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `(New) Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
+- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
+- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed it on English to start.
 - `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
 - `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
 
-### Configure Search
+### Налаштування пошуку
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Потім відкрийте файл `client/src/utils/algolia-locale-setup.ts`. Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
 
-Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Додайте об’єкт своєї мови до об’єкта `algoliaIndices`. Використовуйте значення об’єкта `english` для локального тестування, замінивши ключ `english` на значення своєї мови `availableLangs`.
 
-> [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
+> [!NOTE] Якщо ви вже розгорнули екземпляр новин потрібною мовою, ви можете оновити значення, щоб зобразити активний екземпляр. В іншому випадку використовуйте значення англійської мови.
 
-If you were to add Dothraki:
+Якби ви додали дотракійську:
 
 ```js
 const algoliaIndices = {
@@ -216,9 +216,9 @@ const algoliaIndices = {
 };
 ```
 
-## Enabling Localized Videos
+## Додавання локалізованих відео
 
-For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі `client/src/templates/Challenges/video/Show.tsx`. Ось так додається дотракійська мова:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -233,7 +233,7 @@ For the video challenges, you need to change a few things. First add the new loc
       ...
 ```
 
-Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `i18n.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+Потім додайте ідентифікатор нової мови до будь-якого відеозавдання в перевіреному блоці. Наприклад, якщо `auditedCerts` у `i18n.ts` містить `scientific-computing-with-python` для `dothraki`, тоді ви повинні додати запис `dothraki` в `videoLocaleIds`. Тоді вступна частина має виглядати так:
 
 ```yml
 videoLocaleIds:
@@ -245,7 +245,7 @@ dashedName: introduction-why-program
 ---
 ```
 
-Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
+Оновіть інтерфейс `VideoLocaleIds` у `client/src/redux/prop-types`, додавши нову мову.
 
 ```ts
 export interface VideoLocaleIds {
@@ -256,7 +256,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+Вкінці оновіть схему завдань у `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -371,7 +371,7 @@ Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
 
 The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
 
-> [!WARN] Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] Pull requests to the News repo _must_ come from the same repo. You should not work off of a fork for this step.
 
 ### Modify the Main Config File
 

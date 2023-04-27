@@ -8,9 +8,9 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-上个挑战为 `dataset` 中的每个点都创建了 `circle` 元素，并将它们添加到 SVG 画布上。 但是 D3 需要更多关于位置和 `circle` 大小的信息来正确地显示它们。
+上个挑战为 `dataset` 中的每个点都创建了 `circle` 元素，并将它们添加到 SVG 上。 但是 D3 需要更多关于位置和 `circle` 大小的信息来正确地显示它们。
 
-在 SVG 中 `circle` 有三个主要的属性。 `cx` 和 `cy` 属性是坐标。 它们告诉 D3 将图形的*中心*放在 SVG 画布的何处。 半径（ `r` 属性）给出 `circle` 的大小。
+在 SVG 中 `circle` 有三个主要的属性。 `cx` 和 `cy` 属性是坐标。 它们告诉 D3 将图形的*中心*放在 SVG 的何处。 半径（ `r` 属性）给出 `circle` 的大小。
 
 和 `rect` 的 `y` 坐标一样，`circle` 的 `cy` 属性是从 SVG 画布的顶端开始测量的，而不是从底端。
 

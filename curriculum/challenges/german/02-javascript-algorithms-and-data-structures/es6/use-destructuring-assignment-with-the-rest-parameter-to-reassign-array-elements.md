@@ -22,11 +22,11 @@ console.log(arr);
 
 Die Konsole würde die Werte `1, 2` und `[3, 4, 5, 7]` anzeigen.
 
-Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. Danach erhält `arr` aufgrund des Vorhandenseins der Rest-Syntax die restlichen Werte in Form eines Arrays. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. Danach erhält `arr` aufgrund des Vorhandenseins der Rest-Syntax die restlichen Werte in Form eines Arrays. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. Das bedeutet, dass du die Rest-Syntax nicht verwenden kannst, um ein Subarray zu erfassen, das das letzte Element des ursprünglichen Arrays auslässt.
 
 # --instructions--
 
-Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+Verwende eine Destrukturierungszuweisung mit der Rest-Syntax, um das Verhalten von `Array.prototype.slice()` zu emulieren. `removeFirstTwo()` sollte ein Subarray des ursprünglichen Arrays `list` zurückgeben, wobei die ersten beiden Elemente weggelassen werden.
 
 # --hints--
 

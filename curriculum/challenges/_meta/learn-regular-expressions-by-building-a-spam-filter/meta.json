@@ -1,0 +1,156 @@
+{
+  "name": "Learn Regular Expressions by Building a Spam Filter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-regular-expressions-by-building-a-spam-filter",
+  "order": 12,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "641cd18eb67c661d8a9e11f3",
+      "Step 1"
+    ],
+    [
+      "641cd91d28bebe226f765d86",
+      "Step 2"
+    ],
+    [
+      "641cdebe67ec0f25a4798356",
+      "Step 3"
+    ],
+    [
+      "641cdefa704f232675ed98aa",
+      "Step 4"
+    ],
+    [
+      "641cdf57c3f7ee276e1d9b32",
+      "Step 5"
+    ],
+    [
+      "641ce03dfeca10293e05dad7",
+      "Step 6"
+    ],
+    [
+      "641ce3065c50e62f97406973",
+      "Step 7"
+    ],
+    [
+      "641ce3dcd0aec8309fbc9971",
+      "Step 8"
+    ],
+    [
+      "641ceed81533263283835c3d",
+      "Step 9"
+    ],
+    [
+      "641cf198ec366c33d6504854",
+      "Step 10"
+    ],
+    [
+      "6421f6f59d665615c9e94d8a",
+      "Step 11"
+    ],
+    [
+      "6421f98f4999d1179ce37cb4",
+      "Step 12"
+    ],
+    [
+      "642205fa6376c818f78bb24e",
+      "Step 13"
+    ],
+    [
+      "642206618bdd611a0c4e90f3",
+      "Step 14"
+    ],
+    [
+      "642206e054eef81b5e3092ed",
+      "Step 15"
+    ],
+    [
+      "642208bc4d44701c6fd6f65e",
+      "Step 16"
+    ],
+    [
+      "64220e8cb589f61e625bf453",
+      "Step 17"
+    ],
+    [
+      "64220f22dff8151f751a53a7",
+      "Step 18"
+    ],
+    [
+      "64220fb017c57d20612de8b8",
+      "Step 19"
+    ],
+    [
+      "64221007887f38213fa57827",
+      "Step 20"
+    ],
+    [
+      "642213bf8d38b0227ed6ab0b",
+      "Step 21"
+    ],
+    [
+      "64233060735ddf06451c5c8c",
+      "Step 22"
+    ],
+    [
+      "64233094a1293c079b5b0996",
+      "Step 23"
+    ],
+    [
+      "6423322e71f8d108608005cb",
+      "Step 24"
+    ],
+    [
+      "6423331f0527840934183aba",
+      "Step 25"
+    ],
+    [
+      "642335220b7d830a69eb59fb",
+      "Step 26"
+    ],
+    [
+      "642335d232d7690b2d67dbaf",
+      "Step 27"
+    ],
+    [
+      "64233d08f234a310e73f9496",
+      "Step 28"
+    ],
+    [
+      "642344dc9390c712080432c7",
+      "Step 29"
+    ],
+    [
+      "64234598ef08dd13114edae5",
+      "Step 30"
+    ],
+    [
+      "6423462975f33b14056583de",
+      "Step 31"
+    ],
+    [
+      "6423472aeed932150e8984b6",
+      "Step 32"
+    ],
+    [
+      "64234797d84734163088961a",
+      "Step 33"
+    ],
+    [
+      "6423491485db5e1786dd6434",
+      "Step 34"
+    ],
+    [
+      "642349b5b7bae31af21cd5f8",
+      "Step 35"
+    ]
+  ]
+}

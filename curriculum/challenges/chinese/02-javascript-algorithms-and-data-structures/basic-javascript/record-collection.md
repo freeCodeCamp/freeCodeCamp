@@ -8,17 +8,23 @@ dashedName: record-collection
 
 # --description--
 
-给定一个对象，用来表示部分音乐专辑收藏。 每张专辑都有几个属性和一个唯一的 id 号作为键值。 并非所有专辑都有完整的信息。
+你将创建一个帮助维护音乐专辑集的函数。 这个集合是一个包含多个相册的对象，这些相册也是对象。 每张专辑在集合中以唯一的 `id` 作为属性名来表示。 在每个专辑对象中，有各种描述专辑信息的属性。 并非所有专辑都有完整的信息。
 
-以 `updateRecords` 函数开始，这个函数需要一个对象 `records`，包含一个音乐专辑集合，一个 `id`，一个 `prop`（如 `artist` 或 `tracks`），和一个 `value`。 使用下面的规则完成函数来修改传递给函数的对象。
+`updateRecords` 函数有 4 个参数，即以下参数：
 
--   函数必须始终返回整个音乐专辑集合对象。
--   如果 `prop` 不是 `tracks` 并且 `value` 不是一个空字符串， 将专辑的 `prop` 更新或设置为 `value`。
--   如果 `prop` 是 `tracks` 但专辑没有 `tracks` 属性，则应创建空数组并为其添加 `value`。
--   如果 `prop` 是 `tracks` 并且 `value` 不是一个空字符串，将 `value` 添加到专辑现有 `tracks` 数组的末尾。
+-   `records` - 一个包含多个专辑的对象
+-   `id` - 一个数字，代表 `records` 对象中特定的专辑
+-   `prop` - 一个字符串，代表相册属性名称
+-   `value` - 一个字符串，包含用来更新相册属性的信息
+
+使用下面的规则完成函数来修改传递给函数的对象。
+
+-   你的函数必须始终返回整个 `records` 对象。
 -   如果 `value` 是空字符串，从专辑里删除指定的 `prop`。
+-   如果 `prop` 不是 `tracks`，并且 `value` 不是一个空字符串，将 `value` 赋给那个专辑的 `prop`。
+-   如果 `prop` 是 `tracks`，并且值不是一个空字符串，将 `value` 添加到专辑的 `tracks` 数组的末尾。 如果相册没有一个 `tracks` 属性，你需要先创建此数组。
 
-**注意：** 用 `recordCollection` 对象做为测试参数对象。
+**注意：** 将 `recordCollection` 对象的副本用于测试。 你不应该直接修改 `recordCollection` 对象。
 
 # --hints--
 
@@ -31,7 +37,7 @@ assert(
 );
 ```
 
-在 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 之后，`tracks` 应该有字符串 `Take a Chance on Me` 作为最后一个也是唯一的元素。
+执行 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 后，`tracks` 的最后一个和唯一一个元素应该为字符串 `Take a Chance on Me`。
 
 ```js
 assert(
@@ -41,7 +47,7 @@ assert(
 );
 ```
 
-执行 `updateRecords(recordCollection, 2548, "artist", "")` 后， `artist` 不应被设置为任何值。
+执行 `updateRecords(recordCollection, 2548, "artist", "")` 后，`artist` 不应被设置为任何值。
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
@@ -68,7 +74,7 @@ assert(
 );
 ```
 
-执行 `updateRecords(recordCollection, 2548, "tracks", "")` 后， `tracks` 不应被设置为任何值。
+执行 `updateRecords(recordCollection, 2548, "tracks", "")` 后，`tracks` 不应被设置为任何值。
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');

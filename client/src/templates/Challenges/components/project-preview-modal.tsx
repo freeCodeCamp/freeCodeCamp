@@ -71,9 +71,8 @@ function ProjectPreviewModal({
         <Modal.Title className='text-center'>{previewTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body className='project-preview-modal-body text-center'>
-        {/* remove type assertion once frame.js has been migrated to TS */}
         <Preview
-          previewId={projectPreviewId as string}
+          previewId={projectPreviewId}
           previewMounted={() =>
             projectPreviewMounted({ challengeData, showProjectPreview })
           }

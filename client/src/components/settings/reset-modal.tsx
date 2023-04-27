@@ -43,7 +43,7 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind-2')}
         </Button>
-        <Spacer paddingSize={5} />
+        <Spacer size='small' />
         <Button
           block={true}
           bsSize='lg'

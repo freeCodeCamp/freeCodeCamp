@@ -245,7 +245,7 @@ a[class^='ais-'] {
   border-radius: 0px;
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  outline: none;
+  outline-color: transparent;
 }
 .ais-ClearRefinements-button:hover,
 .ais-ClearRefinements-button:focus,
@@ -485,7 +485,7 @@ a[class^='ais-'] {
   border-radius: 0px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  outline: none;
+  outline-color: transparent;
 }
 .ais-RangeInput-submit:hover,
 .ais-RangeInput-submit:focus {

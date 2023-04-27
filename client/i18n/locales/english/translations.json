@@ -73,7 +73,6 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change",
     "resume-project": "Resume project",
     "start-project": "Start project"
   },
@@ -114,6 +113,7 @@
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -220,8 +220,7 @@
     "tweet": "I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}",
     "avatar": "{{username}}'s avatar",
     "joined": "Joined {{date}}",
-    "total-points": "{{count}} total point",
-    "total-points_plural": "{{count}} total points",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
     "page-number": "{{pageNumber}} of {{totalPages}}"
@@ -309,7 +308,8 @@
       "console": "Console",
       "instructions": "Instructions",
       "notes": "Notes",
-      "preview": "Preview"
+      "preview": "Preview",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -527,6 +527,13 @@
     "could-not-find": "We couldn't find what you were looking for. Please check and try again",
     "wrong-updating": "Something went wrong updating your account. Please check and try again",
     "updated-preferences": "We have updated your preferences",
+    "updated-about-me": "We have updated your personal information",
+    "updated-socials": "We have updated your social links",
+    "updated-sound": "We have updated your sound settings",
+    "updated-themes": "We have updated your theme",
+    "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
+    "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "portfolio-item-updated": "We have updated your portfolio",
     "email-invalid": "Email format is invalid",
     "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId is not a valid challenge ID",
@@ -536,6 +543,7 @@
     "username-used": "Username is already associated with this account",
     "username-taken": "Username is already associated with a different account",
     "username-updated": "We have updated your username to {{username}}",
+    "privacy-updated": "We have updated your privacy settings",
     "could-not-logout": "We could not log you out, please try again in a moment",
     "email-encoded-wrong": "The email encoded in the link is incorrectly formatted",
     "oops-not-right": "Oops, something is not right, please request a fresh link to sign in / sign up",
@@ -739,7 +747,7 @@
   "forum-help": {
     "browser-info": "**Your browser information:**",
     "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**Link to the challenge:**",
     "whats-happening": "**Tell us what's happening:**",
     "describe": "Describe your issue in detail here.",

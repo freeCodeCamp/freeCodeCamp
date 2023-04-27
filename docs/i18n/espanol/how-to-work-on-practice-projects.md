@@ -10,7 +10,7 @@ Estas instrucciones le indicarán cómo utilizar nuestra herramienta de edición
 
 ### Iniciar el Editor
 
-Para iniciar el editor, asegúrese de estar en el directorio raíz de freecodecamp. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
+To start the editor, make sure you are in the root freeCodeCamp directory. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
 
 El cliente se ejecutará en el puerto `3300`, por lo que puede acceder a él en `http://localhost:3300`. La API se ejecuta en el puerto `3200` para evitar conflictos con el cliente y el servidor de aprendizaje. Esto le permitirá ejecutar la aplicación freeCodeCamp al mismo tiempo que el editor, para que pueda probar sus cambios localmente.
 
@@ -58,9 +58,9 @@ If you want to work on the steps manually, in your local IDE, you can run the st
 
 The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
 
-### Create a new project
+### Create a New Project
 
-Run `pnpm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Change directory to `tools/challenge-helper-scripts` and run `pnpm run create-project`. This opens up a command line UI that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 If you want to create new steps, the following tools simplify that process.
 
@@ -68,7 +68,7 @@ If you want to create new steps, the following tools simplify that process.
 
 A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
 
-#### How to run script:
+#### How to Run the Script
 
 1. Redirígete al directorio del proyecto.
 2. Run the following command:
@@ -83,7 +83,7 @@ A one-off script that automatically adds a specified number of steps. The challe
 
 **Note:** This script also runs [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### How to Run the Script
 
 1. Redirígete al directorio del proyecto.
 2. Run the following command:
@@ -98,7 +98,7 @@ A one-off script that automatically adds a new step at a specified position, inc
 
 **Note:** This script also runs [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### How to Run the Script
 
 1. Redirígete al directorio principal del proyecto.
 2. Run the following command:
@@ -113,7 +113,7 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 
 **Note:** This script also runs [update-step-titles](#update-step-titles).
 
-#### How to run script
+#### How to Run the Script
 
 1. Redirígete al directorio principal del proyecto.
 2. Run the following command:
@@ -126,7 +126,7 @@ pnpm run delete-step X # where X is the step number to be deleted.
 
 A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
 
-#### Como ejecutar un script
+#### How to Run the Script
 
 1. Redirígete al directorio del proyecto.
 2. Run the following command:

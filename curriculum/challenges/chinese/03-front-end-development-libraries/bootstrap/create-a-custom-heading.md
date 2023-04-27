@@ -8,9 +8,9 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-为 Cat Photo App 做一个导航，把标题和惬意的猫咪图片放在同一行。
+为 Cat Photo App 做一个简单的头部，把标题和惬意的猫咪图片放在同一行。
 
-记住，由于 Bootstrap 使用了响应式栅格系统，可以很方便的把元素放到一行以及指定元素的相对宽度。 大部分的 Bootstrap 的 class 都能用在 `div` 元素上。
+记住，由于 Bootstrap 使用了响应式栅格系统，可以很方便地把元素放到一行以及指定元素的相对宽度。 大部分的 Bootstrap 的 class 都能被用在 `div` 元素上。
 
 把第一张图片和 `h2` 元素用一个简单的 `<div class="row">` 元素包裹起来。 再用 `<div class="col-xs-8">` 包裹 `h2` 元素，用 `<div class="col-xs-4">` 包裹我们的图片，这样它们就能位于同一行了。
 
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-确保每一个 `div` 元素都有一个闭合标签。
+确保每一个 `div` 元素都有一个结束标签。
 
 ```js
 assert(

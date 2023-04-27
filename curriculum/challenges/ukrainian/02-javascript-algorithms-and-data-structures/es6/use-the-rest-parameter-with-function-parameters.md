@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 Консоль показуватиме рядки `You have passed 3 arguments.` та `You have passed 4 arguments.`.
 
-The rest parameter eliminates the need to use the `arguments` object and allows us to use array methods on the array of parameters passed to the function `howMany`.
+Залишковий параметр усуває потребу використовувати об’єкт `arguments` та дозволяє нам використовувати методи масиву на масиві параметрів, переданих до функції `howMany`.
 
 # --instructions--
 

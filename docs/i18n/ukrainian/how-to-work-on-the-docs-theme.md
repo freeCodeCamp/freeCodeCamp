@@ -53,10 +53,4 @@
 pnpm run docs:serve
 ```
 
-#### Обслужити документаційний сайт разом з freeCodeCamp локально:
-
-```console
-pnpm run develop
-```
-
 > Сайт документації повинен бути доступним на <http://localhost:3400>

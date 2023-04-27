@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Invece di generare un numero intero casuale tra zero e un dato numero come abbiamo fatto prima, possiamo generare un numero intero casuale che rientri in un intervallo tra due numeri specifici.
+Puoi generare un numero intero casuale nell'intervallo da zero a un dato numero. Puoi anche scegliere un numero inferiore diverso per questo intervallo.
 
-Per fare questo, definiremo un numero minimo `min` e un numero massimo `max`.
+Chiamerai il numero minimo `min` e il numero massimo `max`.
 
-Ecco la formula che useremo. Prenditi un momento per leggerlo e prova a capire cosa sta facendo questo codice:
+Questa formula dà un numero intero casuale nell'intervallo da `min` a `max`. Prenditi un momento per leggerlo e prova a capire cosa sta facendo questo codice:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Crea una funzione `randomRange` che prende un intervallo `myMin` e `myMax` e restituisce un numero intero casuale maggiore o uguale di `myMin`, e minore o uguale di `myMax`.
+Crea una funzione `randomRange` che prende un intervallo `myMin` e `myMax` e restituisce un numero intero casuale maggiore o uguale di `myMin` e minore o uguale di `myMax`.
 
 # --hints--
 
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

@@ -9,15 +9,9 @@ import type {
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
-import React, {
-  useEffect,
-  Suspense,
-  RefObject,
-  MutableRefObject,
-  useRef
-} from 'react';
+import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
+import { Provider, connect, useStore } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -34,7 +28,6 @@ import {
 import {
   ChallengeFiles,
   Dimensions,
-  Ext,
   FileKey,
   ResizeProps,
   Test
@@ -68,28 +61,25 @@ import {
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
+import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-interface EditorProps {
+export interface EditorProps {
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: RefObject<HTMLElement>;
-  contents: string;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   description: string;
-  dimensions: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  dimensions?: Dimensions;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  initialEditorContent: string;
-  initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;
@@ -244,6 +234,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const reduxStore = useStore();
   const { t } = useTranslation();
   const { editorRef, initTests, resetAttempts } = props;
   // These refs are used during initialisation of the editor as well as by
@@ -297,7 +288,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       vertical: 'visible',
       verticalHasArrows: false,
       useShadows: false,
-      verticalScrollbarSize: 5
+      verticalScrollbarSize: getScrollbarWidth()
     },
     parameterHints: {
       enabled: false
@@ -437,6 +428,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
+
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
 
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
@@ -630,7 +625,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // make sure the overlayWidget has resized before using it to set the height
 
-    domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the content widget (i.e. trigger it via onDomNodeTop). If
@@ -667,22 +662,22 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
 
     ReactDOM.render(
-      <LowerJaw
-        openHelpModal={props.openHelpModal}
-        openResetModal={props.openResetModal}
-        tryToExecuteChallenge={tryToExecuteChallenge}
-        hint={output[1]}
-        testsLength={props.tests.length}
-        attempts={attemptsRef.current}
-        challengeIsCompleted={isChallengeComplete}
-        tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus}
-        isSignedIn={props.isSignedIn}
-        updateContainer={() => updateOutputViewZone(outputNode, editor)}
-      />,
+      <Provider store={reduxStore}>
+        <LowerJaw
+          openHelpModal={props.openHelpModal}
+          openResetModal={props.openResetModal}
+          tryToExecuteChallenge={tryToExecuteChallenge}
+          hint={output[1]}
+          testsLength={props.tests.length}
+          attempts={attemptsRef.current}
+          challengeIsCompleted={isChallengeComplete}
+          tryToSubmitChallenge={tryToSubmitChallenge}
+          isSignedIn={props.isSignedIn}
+          updateContainer={() => updateOutputViewZone(outputNode, editor)}
+        />
+      </Provider>,
       outputNode
     );
   }
@@ -702,7 +697,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor
   ) => {
     // make sure the overlayWidget has resized before using it to set the height
-    outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -762,11 +757,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.userSelect = 'text';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
 
     domNode.style.top = getDescriptionZoneTop();
     dataRef.current.descriptionNode = domNode;
     return domNode;
+  }
+
+  // Take the current scrollbar width into account
+  function getEditorContentWidth(editor: editor.IStandaloneCodeEditor) {
+    return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
@@ -775,7 +775,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     outputNode.classList.add('editor-lower-jaw');
     outputNode.setAttribute('id', 'editor-lower-jaw');
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     outputNode.style.top = getOutputZoneTop();
     dataRef.current.outputNode = outputNode;
     return outputNode;
@@ -983,7 +983,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const getDomNode = () => domNode;
     const getPosition = () => {
       if (getTop) {
-        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+        domNode.style.width = `${getEditorContentWidth(editor)}px`;
         domNode.style.top = getTop();
       }
       // must return null, so that Monaco knows the widget will position
