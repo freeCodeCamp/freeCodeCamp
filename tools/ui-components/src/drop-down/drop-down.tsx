@@ -11,7 +11,7 @@ export type DropdownProps = React.ComponentPropsWithoutRef<typeof Menu> & {
 
 type DropDownButtonProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
-export const DropDownContext = createContext<DropdownProps>({});
+const DropDownContext = createContext<DropdownProps>({});
 
 const dropDownItems =
   'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute min-w-full py-1 z-10';
