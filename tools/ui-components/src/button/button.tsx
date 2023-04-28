@@ -20,6 +20,7 @@ const defaultClassNames = [
   'aria-disabled:opacity-50',
   'focus:outline-none', // Hide the default browser outline
   'focus:ring',
+  'mt-[5px]',
   'focus:ring-focus-outline-color'
 ];
 
