@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005f
-title: 'Problem 480: The Last Question'
+title: 'Problema 480: A última pergunta'
 challengeType: 1
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
@@ -8,13 +8,13 @@ dashedName: problem-480-the-last-question
 
 # --description--
 
-Consider all the words which can be formed by selecting letters, in any order, from the phrase:
+Considere todas as palavras que podem ser formadas selecionando letras, em qualquer ordem, a partir da frase:
 
 $$\mathbf{\text{thereisasyetinsufficientdataforameaningfulanswer}}$$
 
-Suppose those with 15 letters or less are listed in alphabetical order and numbered sequentially starting at 1.
+Suponha que aquelas com 15 letras ou menos estão listadas em ordem alfabética e numeradas sequencialmente a partir de 1.
 
-The list would include:
+A lista incluiria:
 
 $$\begin{align}   & 1: \text{a} \\\\
   & 2: \text{aa} \\\\   & 3: \text{aaa} \\\\
@@ -32,31 +32,31 @@ $$\begin{align}   & 1: \text{a} \\\\
   & ... \\\\   & 525069350231428029: \text{ywuuttttssssrrr} \\\\
 \end{align}$$
 
-Define $P(w)$ as the position of the word $w$.
+Defina $P(w)$ como a posição da palavra $w$.
 
-Define $W(p)$ as the word in position $p$.
+Defina $W(p)$ como a palavra na posição $p$.
 
-We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
+Podemos ver que $P(w)$ e $W(p)$ são inversos: $P(W(p)) = p$ e $W(P(w)) = w$.
 
-Examples:
+Exemplos:
 
 $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
   & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\
   & P(\text{euler}) = 115246685191495243 \\\\ \end{align}$$
 
-Find $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
+Encontre $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
-Give your answer using lowercase characters (no punctuation or space).
+Dê sua resposta usando caracteres em minúsculas (sem pontuação nem espaço).
 
 # --hints--
 
-`euler480()` should return a string.
+`euler480()` deve retornar uma string.
 
 ```js
 assert(typeof euler480() === 'string');
 ```
 
-`euler480()` should return the string `turnthestarson`.
+`euler480()` deve retornar a string `turnthestarson`.
 
 ```js
 assert.strictEqual(euler480(), 'turnthestarson');

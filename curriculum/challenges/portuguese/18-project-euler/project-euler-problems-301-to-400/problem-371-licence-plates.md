@@ -8,21 +8,21 @@ dashedName: problem-371-licence-plates
 
 # --description--
 
-Oregon licence plates consist of three letters followed by a three digit number (each digit can be from [0...9]).
+As placas de carro do Oregon consistem em três letras seguidas por um número de três algarismos (cada algarismo podendo estar entre [0...9]).
 
-While driving to work Seth plays the following game:
+Enquanto conduz para o trabalho, Seth joga o seguinte jogo:
 
-Whenever the numbers of two licence plates seen on his trip add to 1000 that's a win.
+Sempre que o número de duas placas de carro que ele vê na viagem somar 1000, é uma vitória.
 
-E.g. `MIC-012` and `HAN-988` is a win and `RYU-500` and `SET-500` too (as long as he sees them in the same trip).
+Ex: `MIC-012` e `HAN-988` é uma vitória e `RYU-500` e `SET-500` também (contanto que os veja na mesma viagem).
 
-Find the expected number of plates he needs to see for a win. Give your answer rounded to 8 decimal places behind the decimal point.
+Encontre o número esperado de licenças que ele precisa ver para a vitória. Dê sua resposta arredondada para 8 casas depois da vírgula.
 
-**Note:** We assume that each licence plate seen is equally likely to have any three digit number on it.
+**Observação:** consideramos que cada placa de carro vista tem igual probabilidade de ter um número de três algarismos nela.
 
 # --hints--
 
-`licensePlates()` should return `40.66368097`.
+`licensePlates()` deve retornar `40.66368097`.
 
 ```js
 assert.strictEqual(licensePlates(), 40.66368097);

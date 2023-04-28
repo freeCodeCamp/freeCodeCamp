@@ -22,7 +22,7 @@ Completa la funzione usando le regole sottostanti per modificare l'oggetto passa
 -   La funzione deve sempre restituire l'intero oggetto `records`.
 -   Se `value` è una stringa vuota, elimina la proprietà `prop` dall'album.
 -   Se `prop` non è `tracks` e `value` non è una stringa vuota, assegna `value` alla `prop` di quell'album.
--   Se `prop` è `tracks` e il valore non è una stringa vuota, aggiungi `value` alla fine dell'array `tracks`. Devi prima creare questo array se l'album non ha una proprietà `tracks`.
+-   If `prop` is `tracks` and `value` isn't an empty string, you need to update the album's `tracks` array. First, if the album does not have a `tracks` property, assign it an empty array. Then add the `value` as the last item in the album's `tracks` array.
 
 **Nota:** una copia dell'oggetto `recordCollection` viene utilizzata per i test. Non dovresti modificare direttamente l'oggetto `recordCollection`.
 

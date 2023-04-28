@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510054
-title: 'Problem 468: Smooth divisors of binomial coefficients'
+title: 'Problema 468: Divisores harmonizados de coeficientes binomiais'
 challengeType: 1
 forumTopicId: 302143
 dashedName: problem-468-smooth-divisors-of-binomial-coefficients
@@ -8,27 +8,27 @@ dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 
 # --description--
 
-An integer is called B-smooth if none of its prime factors is greater than $B$.
+Um inteiro é chamado de harmonizado de B se nenhum de seus fatores primos é maior que $B$.
 
-Let $SB(n)$ be the largest B-smooth divisor of $n$.
+Considere $SB(n)$ como o maior divisor harmonizado de B de $n$.
 
-Examples:
+Exemplos:
 
 $$\begin{align}   & S_1(10) = 1 \\\\
-  & S_4(2\\,100) = 12 \\\\ & S_{17}(2\\,496\\,144) = 5\\,712 \end{align}$$
+  & S_4(2.100) = 12 \\\\ & S_{17}(2.496.144) = 5.712 \end{align}$$
 
-Define $F(n) = \displaystyle\sum_{B = 1}^n \sum_{r = 0}^n S_B(\displaystyle\binom{n}{r})$. Here, $\displaystyle\binom{n}{r}$ denotes the binomial coefficient.
+Defina $F(n) = \displaystyle\sum_{B = 1}^n \sum_{r = 0}^n S_B(\displaystyle\binom{n}{r})$. Aqui, $\displaystyle\binom{n}{r}$ denota o coeficiente binomial.
 
-Examples:
+Exemplos:
 
 $$\begin{align}   & F(11) = 3132 \\\\
-  & F(1\\,111)\bmod 1\\,000\\,000\\,993 = 706\\,036\\,312 \\\\ & F(111\\,111)\bmod 1\\,000\\,000\\,993 = 22\\,156\\,169 \end{align}$$
+  & F(1.111)\bmod 1.000.000.993 = 706.036.312 \\\\ & F(111.111)\bmod 1.000.000.993 = 22.156.169 \end{align}$$
 
-Find $F(11\\,111\\,111)\bmod 1\\,000\\,000\\,993$.
+Encontre $F(11.111.111)\bmod 1.000.000.993$.
 
 # --hints--
 
-`smoothDivisorsOfBinomialCoefficients()` should return `852950321`.
+`smoothDivisorsOfBinomialCoefficients()` deve retornar `852950321`.
 
 ```js
 assert.strictEqual(smoothDivisorsOfBinomialCoefficients(), 852950321);
