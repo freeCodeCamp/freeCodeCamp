@@ -1,6 +1,6 @@
 ---
 id: 5900f3831000cf542c50fe96
-title: 'Problem 23: Non-abundant sums'
+title: 'Problema 23: Soma dos números não abundantes'
 challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
@@ -8,41 +8,41 @@ dashedName: problem-23-non-abundant-sums
 
 # --description--
 
-A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+Um número perfeito é aquele igual à soma de seus divisores próprios. Por exemplo, a soma dos divisores próprios de 28 é 1 + 2 + 4 + 7 + 14 = 28. Isso significa que 28 é um número perfeito.
 
-A number `n` is called deficient if the sum of its proper divisors is less than `n` and it is called abundant if this sum exceeds `n`.
+Um número `n` é chamado de deficiente se a soma de seus divisores próprios for menor que `n`. Se a soma dos divisores próprios for maior que `n`, esse número é chamado de abundante.
 
-As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
+Como 12 é o menor número abundante, 1 + 2 + 3 + 4 + 6 = 16, o menor número que pode ser escrito como a soma de dois números abundantes é 24. Usando análise matemática, podemos comprovar que todos os números inteiros maiores que 28123 podem ser escritos como a soma de dois números abundantes. No entanto, este limite máximo não pode ser reduzido através de uma análise, embora se saiba que o maior número que não pode ser expresso como a soma de dois números abundantes é inferior a este limite.
 
-Find the sum of all positive integers &lt;= `n` which cannot be written as the sum of two abundant numbers.
+Calcule a soma de todos os números inteiros positivos &lt;= `n` que não podem ser escritos como a soma de dois números abundantes.
 
 # --hints--
 
-`sumOfNonAbundantNumbers(10000)` should return a number.
+`sumOfNonAbundantNumbers(10000)` deve retornar um número.
 
 ```js
 assert(typeof sumOfNonAbundantNumbers(10000) === 'number');
 ```
 
-`sumOfNonAbundantNumbers(10000)` should return 3731004.
+`sumOfNonAbundantNumbers(10000)` deve retornar 3731004.
 
 ```js
 assert(sumOfNonAbundantNumbers(10000) === 3731004);
 ```
 
-`sumOfNonAbundantNumbers(15000)` should return 4039939.
+`sumOfNonAbundantNumbers(15000)` deve retornar 4039939.
 
 ```js
 assert(sumOfNonAbundantNumbers(15000) === 4039939);
 ```
 
-`sumOfNonAbundantNumbers(20000)` should return 4159710.
+`sumOfNonAbundantNumbers(20000)` deve retornar 4159710.
 
 ```js
 assert(sumOfNonAbundantNumbers(20000) === 4159710);
 ```
 
-`sumOfNonAbundantNumbers(28123)` should return 4179871.
+`sumOfNonAbundantNumbers(28123)` deve retornar 4179871.
 
 ```js
 assert(sumOfNonAbundantNumbers(28123) === 4179871);

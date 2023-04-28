@@ -7,25 +7,25 @@ dashedName: step-5
 
 # --description--
 
-Back in your `sortInputArray` function, you need to get the values from your `select` elements. Since they all have the class `values-dropdown`, you can query them all at once.
+Tornando alla funzione `sortInputArray`, devi ottenere i valori dagli elementi `select`. Dal momento che hanno tutti la classe `values-dropdown`, puoi ottenerli tutti contemporaneamente.
 
-Use `document.getElementsByClassName()` to get all the elements with the class `values-dropdown`. Assign that to an `inputValues` variable.
+Usa `document.getElementsByClassName()` per ottenere tutti gli elementi con la classe `values-dropdown`. Assegnalo a una variabile `inputValues`.
 
 # --hints--
 
-You should use `document.getElementsByClassName()` to get all the elements with the class `values-dropdown`.
+Dovresti usare `document.getElementsByClassName()` per ottenere tutti gli elementi con la classe `values-dropdown`.
 
 ```js
 assert.match(sortInputArray.toString(), /document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should assign the result of `document.getElementsByClassName()` to a variable named `inputValues`.
+Dovresti assegnare il risultato di `document.getElementsByClassName()` a una variabile chiamata `inputValues`.
 
 ```js
 assert.match(sortInputArray.toString(), /inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should use `const` to declare `inputValues`.
+Dovresti usare `const` per dichiarare `inputValues`.
 
 ```js
 assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);

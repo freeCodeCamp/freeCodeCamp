@@ -1,6 +1,6 @@
 ---
 id: 5900f48d1000cf542c50ff9f
-title: 'Problem 288: An enormous factorial'
+title: 'Problema 288: Um fatorial enorme'
 challengeType: 1
 forumTopicId: 301939
 dashedName: problem-288-an-enormous-factorial
