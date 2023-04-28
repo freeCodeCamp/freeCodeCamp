@@ -29,9 +29,9 @@
 
 - Редагуйте файли на GitHub, натиснувши на значок олівця для відповідного файлу. Хоча це найшвидший спосіб, він **нерекомендований**, оскільки ви не можете перевірити свої зміни на GitHub. Якщо технічна підтримка вирішить, що ваші зміни потрібно перевірити локально, вам потрібно буде дотримуватись методів, описаних вище.
 
-### How to work on practice projects
+### Як працювати над практичними проєктами
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+Практичні проєкти мають деякі додаткові інструменти, які допомагають створити нові проєкти та кроки. Щоб дізнатися більше, див. [документацію](how-to-work-on-practice-projects.md).
 
 ## Challenge Template
 
@@ -226,13 +226,13 @@ Here are some example challenge names:
 
 В разі потреби можна додати діаграми.
 
-Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+Не використовуйте емоджі в завданнях. freeCodeCamp — глобальна спільнота, а значення емоджі може відрізнятись в різних частинах світу. Крім цього, емоджі можуть по-різному зображатися у різних системах.
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+Власні іменники потрібно писати з великої літери, коли це можливо. Нижче поданий список, у якому показано, як повинні писатись слова в завданнях.
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- JavaScript (великі літери «J» і «S», без скорочень)
 - Node.js
-- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
+- Іноді потрібно вживати деякі неточні форми, як-от «back end» і «front end» без дефіса, оскільки таке вживання більш поширене.
 
 ### Правило двох хвилин
 
@@ -247,13 +247,13 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 Ми відстежуємо скільки часу займає розв’язок завдань та використовуємо цю інформацію, щоб виявити завдання, які потрібно спростити чи розділити.
 
-### Modularity
+### Модульність
 
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+Кожне завдання повинне навчати лише одному поняттю, і це поняття повинне бути очевидним з назви завдання.
 
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+Ми можемо закріпити раніше вивчені поняття за допомогою повторення та варіацій. Наприклад, ознайомити користувача з елементами h1 в одному завданні, а пізніше з елементами h3.
 
-Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+Наша мета — розробити тисячі двохвилинних завдань. Вони можуть йти нарівні, а також нагадувати про раніше вивчені поняття.
 
 ### Formatting challenge text
 

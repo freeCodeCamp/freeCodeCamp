@@ -20,16 +20,16 @@
 
 > [!NOTE] Ми додамо вас до однієї або більше команд на GitHub, форумі нашої спільноти та чат-серверах. Якщо у вас немає дозволу до платформи, яку хочете модерувати, [зверніться до персоналу](FAQ.md#additional-assistance).
 
-## Moderating GitHub
+## Mодерація GitHub
 
-Moderators have two primary responsibilities on GitHub:
+Модератори мають два головних обов’язки на GitHub:
 
-1. Triaging and responding to issues.
-2. Reviewing and merging pull requests (aka QA).
+1. Сортувати завдання та відповідати на них.
+2. Переглядати та сортувати запити на злиття (тобто QA).
 
-### Moderating GitHub Issues
+### Модерація завдань на GitHub
 
-We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. This is also a great place to start helping with open-source codebase contributions.
+Ми використовуємо головний репозиторій [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues), щоб відстежувати завдання всіх репозиторіїв. Щодня ми отримуємо завдання, які потрібно відсортувати, позначити та вирішити. Це також чудове місце, щоб почати робити внески до відкритої кодової бази.
 
 #### Issue Triage
 
