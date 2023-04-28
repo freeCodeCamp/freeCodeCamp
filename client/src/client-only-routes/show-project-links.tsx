@@ -1,5 +1,5 @@
 import { Table } from '@freecodecamp/react-bootstrap';
-import { find, first } from 'lodash-es';
+import { find } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -7,10 +7,7 @@ import { connect } from 'react-redux';
 import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
-import {
-  legacyProjectMap,
-  projectMap
-} from '../resources/cert-and-project-map';
+import { fullProjectMap } from '../resources/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
@@ -91,9 +88,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const renderProjectsFor = (certName: string) => {
+  const renderProjectsFor = (
+    certName: keyof typeof fullProjectMap | 'Legacy Full Stack'
+  ) => {
     if (certName === 'Legacy Full Stack') {
-      const legacyCerts = [
+      const certs = [
         { title: 'Responsive Web Design' },
         { title: 'JavaScript Algorithms and Data Structures' },
         { title: 'Front End Development Libraries' },
@@ -101,10 +100,10 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { title: 'Back End Development and APIs' },
         { title: 'Legacy Information Security and Quality Assurance' }
       ] as const;
-      return legacyCerts.map((cert, ind) => {
-        const mapToUse = (projectMap[cert.title] ||
-          legacyProjectMap[cert.title]) as { certSlug: string }[];
-        const { certSlug } = first(mapToUse) as { certSlug: string };
+
+      return certs.map((cert, ind) => {
+        const projects = fullProjectMap[cert.title];
+        const { certSlug } = projects[0];
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
           <tr key={ind}>
@@ -117,12 +116,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         );
       });
     }
-    // @ts-expect-error Error expected until projectMap is typed
-    const project = (projectMap[certName] || legacyProjectMap[certName]) as {
-      link: string;
-      title: string;
-      id: string;
-    }[];
+
+    const project = fullProjectMap[certName];
     return project.map(({ link, title, id }) => (
       <tr key={id}>
         <td>
@@ -151,6 +146,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           null
       }
     : null;
+
+  const isCertName = (
+    maybeCertName: string
+  ): maybeCertName is keyof typeof fullProjectMap | 'Legacy Full Stack' => {
+    if (maybeCertName === 'Legacy Full Stack') return true;
+    return maybeCertName in fullProjectMap;
+  };
+  if (!isCertName(certName)) return <div> Unknown Certification</div>;
 
   return (
     <div>

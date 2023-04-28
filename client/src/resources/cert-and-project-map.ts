@@ -811,12 +811,9 @@ const fullProjectMap = {
 };
 
 export {
-  certMap,
   certMapWithoutFullStack,
   fullCertMap,
   fullProjectMap,
-  legacyCertMap,
   legacyProjectMap,
-  projectMap,
-  upcomingCertMap
+  projectMap
 };
