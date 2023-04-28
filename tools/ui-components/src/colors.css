@@ -89,8 +89,7 @@
   --red90: var(--red90);
 }
 
-html,
-div.light {
+.light-palette {
   --foreground-primary: var(--gray90);
   --foreground-secondary: var(--gray85);
   --foreground-tertiary: var(--gray80);
@@ -109,8 +108,7 @@ div.light {
   --focus-outline-color: var(--blue50);
 }
 
-html.dark,
-div.dark {
+.dark-palette {
   --foreground-primary: var(--gray00);
   --foreground-secondary: var(--gray05);
   --foreground-tertiary: var(--gray10);
