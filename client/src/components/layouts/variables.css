@@ -33,7 +33,7 @@
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
 }
 
-.dark {
+.dark-palette {
   --primary-color: var(--gray-00);
   --secondary-color: var(--gray-05);
   --tertiary-color: var(--gray-10);
@@ -53,7 +53,7 @@
   --editor-background: var(--editor-background-dark);
 }
 
-.light {
+.light-palette {
   --primary-color: var(--gray-90);
   --secondary-color: var(--gray-85);
   --tertiary-color: var(--gray-80);

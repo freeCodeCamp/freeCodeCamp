@@ -441,16 +441,16 @@ a.patreon-button:hover {
   background-color: #e13d47;
 }
 
-.dark a.patreon-button {
+.dark-palette a.patreon-button {
   background-color: white;
 }
 
-.dark a.patreon-button svg {
+.dark-palette a.patreon-button svg {
   fill: #ff424d;
 }
-.dark a.patreon-button:active,
-.dark a.patreon-button:active:focus,
-.dark a.patreon-button:hover {
+.dark-palette a.patreon-button:active,
+.dark-palette a.patreon-button:active:focus,
+.dark-palette a.patreon-button:hover {
   background-color: #efefef;
 }
 
