@@ -349,7 +349,7 @@
         "intro": ["", ""]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
         "intro": ["", ""]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
@@ -357,7 +357,7 @@
         "intro": ["", ""]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
         "intro": ["", ""]
       }
     }
@@ -955,12 +955,12 @@
         "intro": ["Uma descrição deve ser determinada"]
       },
       "top-learn-css-foundations": {
-        "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Aprenda o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
       },
       "top-learn-css-foundations-projects": {
-        "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
       }
     }
   },

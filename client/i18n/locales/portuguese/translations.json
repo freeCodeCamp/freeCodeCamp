@@ -220,7 +220,7 @@
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "Número de pontos: {{count}}",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
