@@ -1,9 +1,9 @@
 import { Table, Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
-import { find, first } from 'lodash-es';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { find } from 'lodash-es';
+import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
@@ -13,60 +13,41 @@ import ProjectPreviewModal from '../../templates/Challenges/components/project-p
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   projectMap,
-  legacyProjectMap
+  legacyProjectMap,
+  fullProjectMap,
+  ProjectMap,
+  LegacyProjectMap
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
-import SectionHeader from './section-header';
+import { certSlugTypeMap } from '../../../../config/certification-settings';
 
 import './certification.css';
+import {
+  ClaimedCertifications,
+  CompletedChallenge,
+  User
+} from '../../redux/prop-types';
+import { createFlashMessage } from '../Flash/redux';
+import { verifyCert } from '../../redux/settings/actions';
+import SectionHeader from './section-header';
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
-
-const propTypes = {
-  completedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      solution: PropTypes.string,
-      githubLink: PropTypes.string,
-      challengeType: PropTypes.number,
-      completedDate: PropTypes.number,
-      challengeFiles: PropTypes.array
-    })
-  ),
-  createFlashMessage: PropTypes.func.isRequired,
-  is2018DataVisCert: PropTypes.bool,
-  isApisMicroservicesCert: PropTypes.bool,
-  isBackEndCert: PropTypes.bool,
-  isDataAnalysisPyCertV7: PropTypes.bool,
-  isDataVisCert: PropTypes.bool,
-  isCollegeAlgebraPyCertV8: PropTypes.bool,
-  isFrontEndCert: PropTypes.bool,
-  isFrontEndLibsCert: PropTypes.bool,
-  isFullStackCert: PropTypes.bool,
-  isHonest: PropTypes.bool,
-  isInfosecCertV7: PropTypes.bool,
-  isInfosecQaCert: PropTypes.bool,
-  isJsAlgoDataStructCert: PropTypes.bool,
-  isMachineLearningPyCertV7: PropTypes.bool,
-  isQaCertV7: PropTypes.bool,
-  isRelationalDatabaseCertV8: PropTypes.bool,
-  isRespWebDesignCert: PropTypes.bool,
-  isSciCompPyCertV7: PropTypes.bool,
-  openModal: PropTypes.func,
-  t: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  verifyCert: PropTypes.func.isRequired
-};
 
 const mapDispatchToProps = {
   openModal
 };
 
-const certifications = Object.keys(projectMap);
-const legacyCertifications = Object.keys(legacyProjectMap);
+// Safety: projectMap definitely has projectMap keys,
+// and we are only interested in these keys
+const certifications = Object.keys(projectMap) as Array<keyof ProjectMap>;
+// Safety: legacyProjectMap definitely has legacyProjectMap keys,
+// and we are only interested in these keys
+const legacyCertifications = Object.keys(legacyProjectMap) as Array<
+  keyof LegacyProjectMap
+>;
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -85,7 +66,7 @@ const isCertSelector = ({
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
   isCollegeAlgebraPyCertV8
-}) => ({
+}: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
   isJsAlgoDataStructCert,
@@ -149,33 +130,37 @@ const honestyInfoMessage = {
   message: FlashMessages.HonestFirst
 };
 
-const initialState = {
-  solutionViewer: {
-    projectTitle: '',
-    challengeFiles: null,
-    solution: null,
-    isOpen: false
+type CertificationSettingsProps = {
+  createFlashMessage: typeof createFlashMessage;
+  t: TFunction;
+  verifyCert: typeof verifyCert;
+  openModal: typeof openModal;
+} & ClaimedCertifications &
+  Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
+
+function CertificationSettings(props: CertificationSettingsProps) {
+  const [projectTitle, setProjectTitle] = useState('');
+  const [challengeFiles, setChallengeFiles] = useState<
+    CompletedChallenge['challengeFiles'] | null
+  >(null);
+  const [challengeData, setChallengeData] = useState<CompletedChallenge | null>(
+    null
+  );
+  const [solution, setSolution] = useState<string | null>();
+  const [isOpen, setIsOpen] = useState(false);
+  function initialiseState() {
+    setProjectTitle('');
+    setChallengeFiles(null);
+    setSolution(null);
+    setIsOpen(false);
   }
-};
 
-export class CertificationSettings extends Component {
-  constructor(props) {
-    super(props);
+  const handleSolutionModalHide = () => initialiseState();
 
-    this.state = { ...initialState };
-  }
+  const getUserIsCertMap = () => isCertMapSelector(props);
 
-  createHandleLinkButtonClick = to => e => {
-    e.preventDefault();
-    return navigate(to);
-  };
-
-  handleSolutionModalHide = () => this.setState({ ...initialState });
-
-  getUserIsCertMap = () => isCertMapSelector(this.props);
-
-  getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges, openModal } = this.props;
+  const getProjectSolution = (projectId: string, projectTitle: string) => {
+    const { completedChallenges, openModal } = props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -185,16 +170,14 @@ export class CertificationSettings extends Component {
     }
 
     const { solution, challengeFiles } = completedProject;
-    const showUserCode = () =>
-      this.setState({
-        solutionViewer: {
-          projectTitle,
-          challengeFiles,
-          solution,
-          isOpen: true
-        }
-      });
+    const showUserCode = () => {
+      setProjectTitle(projectTitle);
+      setChallengeFiles(challengeFiles);
+      setSolution(solution);
+      setIsOpen(true);
+    };
 
+    // Type == ChallengeFile or CompletedChallenge?
     const challengeData = completedProject
       ? {
           ...completedProject,
@@ -205,12 +188,8 @@ export class CertificationSettings extends Component {
       : null;
 
     const showProjectPreview = () => {
-      this.setState({
-        projectViewer: {
-          previewTitle: projectTitle,
-          challengeData
-        }
-      });
+      setProjectTitle(projectTitle);
+      setChallengeData(challengeData);
       openModal('projectPreview');
     };
 
@@ -226,9 +205,10 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderCertifications = (certName, projectsMap) => {
-    const { t } = this.props;
-    const { certSlug } = first(projectsMap[certName]);
+  type CertName = keyof ProjectMap | keyof LegacyProjectMap;
+  function renderCertifications(certName: CertName) {
+    const { t } = props;
+    const { certSlug } = fullProjectMap[certName][0];
     return (
       <FullWidthRow key={certName}>
         <Spacer size='medium' />
@@ -243,22 +223,26 @@ export class CertificationSettings extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.renderProjectsFor(
+            {renderProjectsFor({
               certName,
-              this.getUserIsCertMap()[certName],
-              projectsMap
-            )}
+              isCert: getUserIsCertMap()[certName]
+            })}
           </tbody>
         </Table>
       </FullWidthRow>
     );
-  };
-  renderProjectsFor = (certName, isCert, projectsMap) => {
-    const { username, isHonest, createFlashMessage, t, verifyCert } =
-      this.props;
-    const { certSlug } = first(projectsMap[certName]);
+  }
+  function renderProjectsFor({
+    certName,
+    isCert
+  }: {
+    certName: CertName;
+    isCert: boolean;
+  }) {
+    const { username, isHonest, createFlashMessage, t, verifyCert } = props;
+    const { certSlug } = fullProjectMap[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
-    const createClickHandler = certSlug => e => {
+    const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       if (isCert) {
         return navigate(certLocation);
@@ -267,7 +251,7 @@ export class CertificationSettings extends Component {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return projectsMap[certName]
+    return fullProjectMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
@@ -276,7 +260,7 @@ export class CertificationSettings extends Component {
             </Link>
           </td>
           <td className='project-solution col-sm-4 col-xs-4'>
-            {this.getProjectSolution(id, title)}
+            {getProjectSolution(id, title)}
           </td>
         </tr>
       ))
@@ -289,7 +273,7 @@ export class CertificationSettings extends Component {
               className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
-              onClick={createClickHandler(certSlug)}
+              onClick={clickHandler}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
               <span className='sr-only'>{certName}</span>
@@ -297,9 +281,9 @@ export class CertificationSettings extends Component {
           </td>
         </tr>
       ]);
-  };
+  }
 
-  renderLegacyFullStack = () => {
+  const renderLegacyFullStack = () => {
     const {
       isFullStackCert,
       username,
@@ -313,7 +297,7 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert,
       isRespWebDesignCert,
       t
-    } = this.props;
+    } = props;
 
     const fullStackClaimable =
       is2018DataVisCert &&
@@ -334,15 +318,17 @@ export class CertificationSettings extends Component {
       fontSize: '18px'
     };
 
-    const createClickHandler = certSlug => e => {
-      e.preventDefault();
-      if (isFullStackCert) {
-        return navigate(certLocation);
-      }
-      return isHonest
-        ? verifyCert(certSlug)
-        : createFlashMessage(honestyInfoMessage);
-    };
+    const createClickHandler =
+      (certSlug: keyof typeof certSlugTypeMap) =>
+      (e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (isFullStackCert) {
+          return navigate(certLocation);
+        }
+        return isHonest
+          ? verifyCert(certSlug)
+          : createFlashMessage(honestyInfoMessage);
+      };
     return (
       <FullWidthRow key={certSlug}>
         <Spacer size='medium' />
@@ -408,39 +394,37 @@ export class CertificationSettings extends Component {
     );
   };
 
-  render() {
-    const { solutionViewer, projectViewer } = this.state;
-    const { t } = this.props;
+  const { t } = props;
 
-    return (
-      <ScrollableAnchor id='certification-settings'>
-        <section className='certification-settings'>
-          <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-          {certifications.map(certName =>
-            this.renderCertifications(certName, projectMap)
-          )}
-          <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
-          {this.renderLegacyFullStack()}
-          {legacyCertifications.map(certName =>
-            this.renderCertifications(certName, legacyProjectMap)
-          )}
-          <ProjectModal
-            {...solutionViewer}
-            handleSolutionModalHide={this.handleSolutionModalHide}
-          />
-          <ProjectPreviewModal
-            {...projectViewer}
-            closeText={t('buttons.close')}
-            showProjectPreview={true}
-          />
-        </section>
-      </ScrollableAnchor>
-    );
-  }
+  return (
+    <ScrollableAnchor id='certification-settings'>
+      <section className='certification-settings'>
+        <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
+        {certifications.map(certName => renderCertifications(certName))}
+        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+        {renderLegacyFullStack()}
+        {legacyCertifications.map(certName => renderCertifications(certName))}
+        <ProjectModal
+          {...{
+            projectTitle,
+            challengeFiles,
+            solution: solution ?? undefined,
+            isOpen
+          }}
+          handleSolutionModalHide={handleSolutionModalHide}
+        />
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          previewTitle={projectTitle}
+          closeText={t('buttons.close')}
+          showProjectPreview={true}
+        />
+      </section>
+    </ScrollableAnchor>
+  );
 }
 
 CertificationSettings.displayName = 'CertificationSettings';
-CertificationSettings.propTypes = propTypes;
 
 export default connect(
   null,
