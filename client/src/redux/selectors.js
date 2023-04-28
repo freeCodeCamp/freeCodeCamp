@@ -219,3 +219,5 @@ export const userSelector = state => {
 
   return state[MainApp].user[username] || {};
 };
+
+export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

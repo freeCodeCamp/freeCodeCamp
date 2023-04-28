@@ -47,7 +47,8 @@ import {
   initTests,
   stopResetting,
   openModal,
-  resetAttempts
+  resetAttempts,
+  sendRenderTime
 } from '../redux/actions';
 import {
   attemptsSelector,
@@ -91,6 +92,7 @@ export interface EditorProps {
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
+  sendRenderTime: (renderTime: number) => void;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -176,6 +178,7 @@ const mapDispatchToProps = {
   initTests,
   stopResetting,
   resetAttempts,
+  sendRenderTime,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
@@ -1154,6 +1157,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
+
+  useEffect(() => {
+    props.sendRenderTime(Date.now());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.description]);
 
   useEffect(() => {
     const { showProjectPreview, previewOpen } = props;
