@@ -48,6 +48,7 @@ import { Loader } from '../helpers';
 import './fonts.css';
 import './global.css';
 import './variables.css';
+import './base.css';
 import './rtl-layout.css';
 import { Themes } from '../settings/theme';
 

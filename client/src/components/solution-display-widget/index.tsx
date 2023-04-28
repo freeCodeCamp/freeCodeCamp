@@ -1,6 +1,6 @@
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Dropdown, MenuItem } from '@freecodecamp/react-bootstrap';
+import { Button, Dropdown, MenuItem } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';

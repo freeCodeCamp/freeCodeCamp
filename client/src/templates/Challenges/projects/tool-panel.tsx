@@ -1,4 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/ui';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToggleButton } from '@freecodecamp/react-bootstrap';
 import ToggleCheck from '../../assets/icons/toggle-check';
 import type { ToggleSettingProps } from './toggle-radio-setting';
 import '../helpers/toggle-button.css';
@@ -30,7 +31,7 @@ export default function ToggleButtonSetting({
           {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
         </div>
         <div className='toggle-button-group'>
-          <button
+          <ToggleButton
             aria-pressed={flag}
             {...(!flag && { onClick: toggleFlag })}
             value='1'
@@ -40,8 +41,8 @@ export default function ToggleButtonSetting({
               {restProps.onLabel}
               {flag ? <ToggleCheck className='checkIcon' /> : null}
             </span>
-          </button>
-          <button
+          </ToggleButton>
+          <ToggleButton
             aria-pressed={!flag}
             {...(flag && { onClick: toggleFlag })}
             value='2'
@@ -51,7 +52,7 @@ export default function ToggleButtonSetting({
               {restProps.offLabel}
               {!flag ? <ToggleCheck className='checkIcon' /> : null}
             </span>
-          </button>
+          </ToggleButton>
         </div>
       </fieldset>
     </div>

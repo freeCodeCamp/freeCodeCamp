@@ -1,4 +1,5 @@
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/ui';
+import '@freecodecamp/ui/dist/bundle';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
