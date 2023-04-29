@@ -935,8 +935,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       joi:
-        specifier: 17.9.1
-        version: 17.9.1
+        specifier: 17.9.2
+        version: 17.9.2
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1202,8 +1202,8 @@ importers:
         specifier: 16.0.3
         version: 16.0.3
       joi:
-        specifier: 17.9.1
-        version: 17.9.1
+        specifier: 17.9.2
+        version: 17.9.2
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -18469,7 +18469,7 @@ packages:
       fastq: 1.15.0
       gatsby: 3.15.0(@types/node@18.16.0)(babel-eslint@10.1.0)(eslint-plugin-testing-library@4.12.4)(react-dom@16.14.0)(react@16.14.0)(typescript@4.9.5)(webpack-cli@4.10.0)
       graphql: 15.8.0
-      joi: 17.9.1
+      joi: 17.9.2
 
   /gatsby-plugin-webpack-bundle-analyser-v2@1.1.30(gatsby@3.15.0):
     resolution: {integrity: sha512-dvUA1O9mPWO4stZFaTv+gn9JvGEach3Mzg6NL7UzYTrEnXtc/utdO1z/DAPNZTUBQ7Tvm+I0eHwvOaHJDQHTLA==}
@@ -22077,8 +22077,8 @@ packages:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  /joi@17.9.1:
-    resolution: {integrity: sha512-FariIi9j6QODKATGBrEX7HZcja8Bsh3rfdGYy/Sb65sGlZWK/QWesU1ghk7aJWDj95knjXlQfSmzFSPPkLVsfw==}
+  /joi@17.9.2:
+    resolution: {integrity: sha512-Itk/r+V4Dx0V3c7RLFdRh12IOjySm2/WGPMubBT92cQvRfYZhPM2W0hZlctjj72iES8jsRCwp7S/cRmWBnJ4nw==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -32287,7 +32287,7 @@ packages:
     hasBin: true
     dependencies:
       axios: 0.27.2(debug@4.3.4)
-      joi: 17.9.1
+      joi: 17.9.2
       lodash: 4.17.21
       minimist: 1.2.8
       rxjs: 7.8.0
