@@ -73,7 +73,6 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "change-language": "修改語言",
-    "cancel-change": "撤銷修改",
     "resume-project": "繼續項目",
     "start-project": "開始項目"
   },
@@ -221,8 +220,7 @@
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
-    "total-points": "{{count}} 總分",
-    "total-points_plural": "{{count}} 總分",
+    "total-points": "Number of points: {{count}}",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"

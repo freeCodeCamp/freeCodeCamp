@@ -4,11 +4,6 @@ import type { ToggleSettingProps } from './toggle-radio-setting';
 import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
-const checkIconStyle = {
-  height: '1rem',
-  width: '1.25rem'
-};
-
 export default function ToggleButtonSetting({
   action,
   explain,
@@ -43,7 +38,7 @@ export default function ToggleButtonSetting({
           >
             <span>
               {restProps.onLabel}
-              {flag ? <ToggleCheck style={checkIconStyle} /> : null}
+              {flag ? <ToggleCheck className='checkIcon' /> : null}
             </span>
           </button>
           <button
@@ -54,7 +49,7 @@ export default function ToggleButtonSetting({
           >
             <span>
               {restProps.offLabel}
-              {!flag ? <ToggleCheck style={checkIconStyle} /> : null}
+              {!flag ? <ToggleCheck className='checkIcon' /> : null}
             </span>
           </button>
         </div>

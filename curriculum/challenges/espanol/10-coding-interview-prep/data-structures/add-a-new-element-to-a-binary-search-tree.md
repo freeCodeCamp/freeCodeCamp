@@ -74,6 +74,7 @@ assert(
     }
     test.add(4);
     test.add(1);
+    test.add(1);
     test.add(7);
     test.add(87);
     test.add(34);

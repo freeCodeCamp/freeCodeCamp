@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: 'Problema 253: Organização'
 challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -8,42 +8,42 @@ dashedName: problem-253-tidying-up
 
 # --description--
 
-A small child has a "number caterpillar" consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+Uma criança tem uma "lagarta numérica", composta por quarenta pedaços de quebra-cabeça, cada um com um número, que, quando ligados em uma linha, revelam os números de 1 a 40 em ordem.
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order.
+Todas as noites, o pai da criança tem de pegar os pedaços da lagarta que estão espalhados pela sala. Ele pega as peças aleatoriamente e as coloca na ordem correta.
 
-As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+Ao ser construída desta forma, a lagarta forma segmentos distintos que gradualmente se fundem juntos. O número de segmentos começa em zero (sem pedaços colocados), e vai aumentando até cerca de onze ou doze, então tende a diminuir novamente antes de terminar em um único segmento (todas as partes colocadas).
 
-For example:
+Por exemplo:
 
-| Piece Placed | Segments So Far |
-| ------------ | --------------- |
-| 12           | 1               |
-| 4            | 2               |
-| 29           | 3               |
-| 6            | 4               |
-| 34           | 5               |
-| 5            | 4               |
-| 35           | 4               |
-| …            | …               |
+| Peça colocada | Segmentos até então |
+| ------------- | ------------------- |
+| 12            | 1                   |
+| 4             | 2                   |
+| 29            | 3                   |
+| 6             | 4                   |
+| 34            | 5                   |
+| 5             | 4                   |
+| 35            | 4                   |
+| …             | …                   |
 
-Let $M$ be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each $M$ is
+Considere $M$ como o número máximo de segmentos encontrados durante uma organização aleatória da lagarta. Para uma lagarta de dez peças, o número de possibilidades para cada $M$ é
 
-| M | Possibilities |
-| - | ------------- |
-| 1 | 512           |
-| 2 | 250912        |
-| 3 | 1815264       |
-| 4 | 1418112       |
-| 5 | 144000        |
+| M | Possibilidades |
+| - | -------------- |
+| 1 | 512            |
+| 2 | 250912         |
+| 3 | 1815264        |
+| 4 | 1418112        |
+| 5 | 144000         |
 
-so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
+então o valor mais provável de $M$ é 3 e o valor médio é $\frac{385.643}{113.400} = 3,400732$, arredondado para seis casas decimais.
 
-The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Give your answer rounded to six decimal places.
+O valor mais provável de $M$ para uma lagarta de quarenta peças é de 11, mas qual é o valor médio de $M$? Dê sua resposta arredondada para seis casas decimais.
 
 # --hints--
 
-`tidyingUp()` should return `11.492847`.
+`tidyingUp()` deve retornar `11.492847`.
 
 ```js
 assert.strictEqual(tidyingUp(), 11.492847);

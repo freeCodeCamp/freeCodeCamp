@@ -25,7 +25,8 @@ const MenuButton = ({
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (
       event.relatedTarget &&
-      !event.relatedTarget.closest('.universal-nav-right') &&
+      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.fcc_searchBar') &&
       displayMenu
     ) {
       hideMenu();

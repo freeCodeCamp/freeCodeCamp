@@ -16,6 +16,7 @@ import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
+  setRenderStartTime,
   submitComplete,
   updateComplete,
   updateFailed
@@ -203,6 +204,7 @@ export default function completionEpic(action$, state$) {
             ? of(x, allowBlockDonationRequests({ superBlock, block }))
             : of(x)
         ),
+        mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
             navigate(pathToNavigateTo);

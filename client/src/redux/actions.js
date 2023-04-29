@@ -13,6 +13,7 @@ export const executeGA = createAction(actionTypes.executeGA);
 export const allowBlockDonationRequests = createAction(
   actionTypes.allowBlockDonationRequests
 );
+export const setRenderStartTime = createAction(actionTypes.setRenderStartTime);
 export const closeDonationModal = createAction(actionTypes.closeDonationModal);
 export const openDonationModal = createAction(actionTypes.openDonationModal);
 export const preventBlockDonationRequests = createAction(

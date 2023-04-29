@@ -33,19 +33,18 @@ export const actionTypes = createTypes(
     'closeModal',
     'openModal',
     'setIsAdvancing',
-
     'previewMounted',
     'projectPreviewMounted',
     'storePortalWindow',
     'removePortalWindow',
     'challengeMounted',
+    'sendRenderTime',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
     'stopResetting',
     'submitChallenge',
     'resetAttempts',
-
     'setEditorFocusability',
     'toggleVisibleEditor'
   ],

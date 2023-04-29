@@ -67,51 +67,51 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        <Spacer size='medium' />
-        <Row>
-          <>
-            <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-              <Row>
-                <Col className={'text-center'} xs={12}>
-                  {isDonating ? (
-                    <h2>{t('donate.thank-you')}</h2>
-                  ) : (
-                    <h2>{t('donate.help-more')}</h2>
-                  )}
-                  <Spacer size='medium' />
-                </Col>
-              </Row>
-              {isDonating ? (
-                <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
-                  <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
-                  <br />
-                  <DonationOptionsAlertText />
-                </Alert>
-              ) : null}
-              <DonationText />
-              <Row>
-                <Col xs={12}>
-                  <DonateForm paymentContext={PaymentContext.DonatePage} />
-                </Col>
-              </Row>
-              <Spacer size='exLarge' />
-              <Row className='donate-support' id='FAQ'>
-                <Col className={'text-center'} xs={12}>
-                  <hr />
-                  <h2>{t('donate.faq')}</h2>
-                  <Spacer size='medium' />
-                </Col>
-                <Col xs={12}>
-                  <DonationFaqText />
-                </Col>
-              </Row>
-            </Col>
-            <Col lg={6}>
-              <CampersImage pageName='donate' />
-            </Col>
-          </>
-        </Row>
-        <Spacer size='medium' />
+        <Spacer size='large'>
+          <Row>
+            <>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+                <Row>
+                  <Col className={'text-center'} xs={12}>
+                    {isDonating ? (
+                      <h2>{t('donate.thank-you')}</h2>
+                    ) : (
+                      <h2>{t('donate.help-more')}</h2>
+                    )}
+                    <Spacer size='medium' />
+                  </Col>
+                </Row>
+                {isDonating ? (
+                  <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
+                    <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
+                    <br />
+                    <DonationOptionsAlertText />
+                  </Alert>
+                ) : null}
+                <DonationText />
+                <Row>
+                  <Col xs={12}>
+                    <DonateForm paymentContext={PaymentContext.DonatePage} />
+                  </Col>
+                </Row>
+                <Spacer size='exLarge' />
+                <Row className='donate-support' id='FAQ'>
+                  <Col className={'text-center'} xs={12}>
+                    <hr />
+                    <h2>{t('donate.faq')}</h2>
+                    <Spacer size='medium' />
+                  </Col>
+                  <Col xs={12}>
+                    <DonationFaqText />
+                  </Col>
+                </Row>
+              </Col>
+              <Col lg={6}>
+                <CampersImage pageName='donate' />
+              </Col>
+            </>
+          </Row>
+        </Spacer>
       </Grid>
     </>
   );

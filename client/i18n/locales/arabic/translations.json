@@ -73,7 +73,6 @@
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
     "change-language": "تغيير اللغة",
-    "cancel-change": "إلغاء التغيير",
     "resume-project": "أستكمال المشروع",
     "start-project": "إبدأ المشروع"
   },
@@ -221,8 +220,7 @@
     "tweet": "لقد حصلت للتو على شهادة {{certTitle}} @freeCodeCamp! تحقق منها هنا: {{certURL}}",
     "avatar": "صورة {{username}}",
     "joined": "تاريخ الانضمام {{date}}",
-    "total-points": "مجموع النقاط {{count}}",
-    "total-points_plural": "مُجمل النقاط {{count}}",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
