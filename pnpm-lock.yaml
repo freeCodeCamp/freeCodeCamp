@@ -437,8 +437,8 @@ importers:
         specifier: ^7.20.13
         version: 7.21.0
       '@babel/standalone':
-        specifier: 7.21.6
-        version: 7.21.6
+        specifier: 7.21.7
+        version: 7.21.7
       '@fortawesome/fontawesome-svg-core':
         specifier: 6.4.0
         version: 6.4.0
@@ -5834,8 +5834,8 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
 
-  /@babel/standalone@7.21.6:
-    resolution: {integrity: sha512-F8vMWdYmO6I4HeOALCfVujOY8vX5UYPFkO2oxJ8qDxxVfMYShvOHgl0E+60VTccNickoQBv+mD/dd/rQeigWoQ==}
+  /@babel/standalone@7.21.7:
+    resolution: {integrity: sha512-0SINMPlXMqJVZuJmookfaNr5NQiW5+vkHJfnEf+5+2vSf5PxuFAwnjOnRGgLcW9wVv4xUBQvKeKBtYv/lqC/xA==}
     engines: {node: '>=6.9.0'}
 
   /@babel/template@7.20.7:
@@ -18512,7 +18512,7 @@ packages:
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.21.5)
       '@babel/plugin-transform-react-jsx': 7.21.0(@babel/core@7.21.5)
       '@babel/runtime': 7.21.0
-      '@babel/standalone': 7.21.6
+      '@babel/standalone': 7.21.7
       '@babel/template': 7.20.7
       '@babel/types': 7.21.5
       '@graphql-tools/schema': 7.1.5(graphql@15.8.0)
