@@ -138,7 +138,7 @@
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
     "lodash": "4.17.21",
-    "markdownlint": "0.28.1",
+    "markdownlint": "0.28.2",
     "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
     "prettier": "^2.8.0",
