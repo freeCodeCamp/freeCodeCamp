@@ -47,7 +47,7 @@ export default function prodErrorHandler() {
     const redirectTo = handled.redirectTo || `${origin}/`;
     const message =
       handled.message ||
-      'Oops! Something went wrong. Please try again in a moment.';
+      'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.';
 
     if (isDev) {
       console.error(errTemplate(err, req));
