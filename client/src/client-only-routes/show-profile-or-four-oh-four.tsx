@@ -81,7 +81,9 @@ function ShowProfileOrFourOhFour({
       <FourOhFour />
     </Suspense>
   ) : (
-    <Profile isSessionUser={isSessionUser} user={requestedUser} />
+    <Suspense fallback={<Loader fullScreen={true} />}>
+      <Profile isSessionUser={isSessionUser} user={requestedUser} />
+    </Suspense>
   );
 }
 
