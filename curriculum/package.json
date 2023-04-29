@@ -29,9 +29,9 @@
     "test:full-output": "cross-env FULL_OUTPUT=true ts-node ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.21.4",
-    "@babel/preset-env": "7.21.4",
-    "@babel/preset-typescript": "7.21.4",
+    "@babel/core": "7.21.5",
+    "@babel/preset-env": "7.21.5",
+    "@babel/preset-typescript": "7.21.5",
     "@babel/register": "7.21.0",
     "@compodoc/live-server": "^1.2.3",
     "babel-plugin-dynamic-import-node": "2.3.3",
