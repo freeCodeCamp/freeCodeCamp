@@ -67,7 +67,7 @@
     "buffer": "6.0.3",
     "chai": "4.3.7",
     "crypto-browserify": "3.12.0",
-    "date-fns": "2.29.3",
+    "date-fns": "2.30.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
     "eslint": "7",
