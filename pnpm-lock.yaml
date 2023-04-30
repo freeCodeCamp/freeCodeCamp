@@ -635,8 +635,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@16.14.0)
       react-i18next:
-        specifier: 12.2.0
-        version: 12.2.0(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0)
+        specifier: 12.2.2
+        version: 12.2.2(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0)
       react-instantsearch-core:
         specifier: 6.39.1
         version: 6.39.1(algoliasearch@4.17.0)(react@16.14.0)
@@ -27694,8 +27694,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-i18next@12.2.0(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==}
+  /react-i18next@12.2.2(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-KBB6buBmVKXUWNxXHdnthp+38gPyBT46hJCAIQ8rX19NFL/m2ahte2KARfIDf2tMnSAL7wwck6eDOd/9zn6aFg==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
