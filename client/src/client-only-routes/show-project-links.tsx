@@ -165,7 +165,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         <thead>
           <tr>
             <th>
-              <span className='sr-only'>Certification</span>
+              <span className='sr-only'>{t('settings.headings.certs')}</span>
             </th>
           </tr>
         </thead>
