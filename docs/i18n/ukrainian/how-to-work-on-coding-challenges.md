@@ -1,6 +1,6 @@
 # Як працювати над завданнями з програмуванням
 
-Нашою метою є розробити веселе та зрозуміле інтерактивне навчання.
+Наша мета — розробити веселе та зрозуміле інтерактивне навчання.
 
 Розробити інтерактивні завдання для програмування — важко. Було б набагато простіше написати довге пояснення чи створити відеоурок. Але для нашої основної навчальної програми ми використовуємо те, що найкраще працює для більшості людей — інтерактив, схожий на відеогру.
 
@@ -29,9 +29,9 @@
 
 - Редагуйте файли на GitHub, натиснувши на значок олівця для відповідного файлу. Хоча це найшвидший спосіб, він **нерекомендований**, оскільки ви не можете перевірити свої зміни на GitHub. Якщо технічна підтримка вирішить, що ваші зміни потрібно перевірити локально, вам потрібно буде дотримуватись методів, описаних вище.
 
-### How to work on practice projects
+### Як працювати над практичними проєктами
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+Практичні проєкти мають деякі додаткові інструменти, які допомагають створити нові проєкти та кроки. Щоб дізнатися більше, див. [документацію](how-to-work-on-practice-projects.md).
 
 ## Challenge Template
 
@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
@@ -220,40 +220,40 @@ Here are some example challenge names:
 
 Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+У тексті завдання потрібно використовувати 2-гу особу множини («ви»). У такий спосіб текст та інструкції будуть звернені напряму до учня, який виконує завдання. Намагайтеся уникати звертань у 1-й особі, як-от «я», «ми», «нам».
 
-Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+Не використовуйте зовнішні посилання. Вони переривають робочий процес. Учні не повинні використовувати гугл під час виконання завдань. Якщо є ресурси, які, на вашу думку, допоможуть учням, додайте їх до статті, пов’язаної з керівництвом до завдання.
 
-You can add diagrams if necessary.
+В разі потреби можна додати діаграми.
 
-Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+Не використовуйте емоджі в завданнях. freeCodeCamp — глобальна спільнота, а значення емоджі може відрізнятись в різних частинах світу. Крім цього, емоджі можуть по-різному зображатися у різних системах.
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+Власні іменники потрібно писати з великої літери, коли це можливо. Нижче поданий список, у якому показано, як повинні писатись слова в завданнях.
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- JavaScript (великі літери «J» і «S», без скорочень)
 - Node.js
-- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
+- Іноді потрібно вживати деякі неточні форми, як-от «back end» і «front end» без дефіса, оскільки таке вживання більш поширене.
 
-### The 2-minute rule
+### Правило двох хвилин
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
+Кожне завдання повинне бути вирішене протягом 120 секунд носієм англійської мови, який виконав попередні завдання. У цей час входять прочитання вказівок/інструкцій для розуміння початкового коду, написання власного коду і проходження всіх тестів.
 
-If it takes longer than two minutes to complete the challenge, you have two options:
+Якщо виконання завдання займає більше двох хвилин, у вас є два шляхи:
 
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+- Спростіть завдання, або
+- Розділіть завдання на два кроки.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+Завдяки правилу двох хвилин ви зробите лаконічні вказівки, зрозумілий початковий код та прості тести.
 
-We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
+Ми відстежуємо скільки часу займає розв’язок завдань та використовуємо цю інформацію, щоб виявити завдання, які потрібно спростити чи розділити.
 
-### Modularity
+### Модульність
 
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+Кожне завдання повинне навчати лише одному поняттю, і це поняття повинне бути очевидним з назви завдання.
 
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+Ми можемо закріпити раніше вивчені поняття за допомогою повторення та варіацій. Наприклад, ознайомити користувача з елементами h1 в одному завданні, а пізніше з елементами h3.
 
-Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+Наша мета — розробити тисячі двохвилинних завдань. Вони можуть йти нарівні, а також нагадувати про раніше вивчені поняття.
 
 ### Formatting challenge text
 
@@ -267,7 +267,7 @@ Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
 
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. See example below:
 - Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
 
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
@@ -284,7 +284,7 @@ The following is an example of code:
 
 - Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single-quotes where applicable
+- Use single quotes where applicable
 
 **Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
@@ -296,7 +296,7 @@ Our goal is to communicate the single point that the challenge is trying to teac
 
 Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
 
-## Formatting seed code
+## Formatting Seed Code
 
 Here are specific formatting guidelines for the challenge seed code:
 
@@ -304,13 +304,13 @@ Here are specific formatting guidelines for the challenge seed code:
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
 
-### Seed code comments
+### Seed Code Comments
 
 We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
 Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-Example of valid single line JavaScript comment:
+Example of a valid single-line JavaScript comment:
 
 ```js
 // Only change code below this line
@@ -366,7 +366,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of seed code comments
+### Translation of Seed Code Comments
 
 There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
@@ -388,16 +388,16 @@ If you find a problem with an existing challenge's hints/solutions topic, you ca
 
 ### Adding new Challenge hints/solutions Topics
 
-Take the following steps when adding a new challenge hints/solutions related topic.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Start by following the same steps for creating a new topic but review the next for creating the title.
 2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-### Guidelines for content of hints and solutions topics
+### Guidelines for Content of Hints and Solutions Topics
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Challenge Name Goes Here

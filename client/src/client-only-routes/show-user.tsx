@@ -9,7 +9,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -83,7 +84,7 @@ function ShowUser({
     return (
       <main>
         <FullWidthRow>
-          <Spacer paddingSize={30} />
+          <Spacer size='large' />
           <Panel bsStyle='info' className='text-center'>
             <Panel.Heading>
               <Panel.Title componentClass='h3'>
@@ -91,11 +92,11 @@ function ShowUser({
               </Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                 <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
-              <Spacer paddingSize={45} />
+              <Spacer size='exLarge' />
             </Panel.Body>
           </Panel>
         </FullWidthRow>
@@ -108,7 +109,7 @@ function ShowUser({
       <Helmet>
         <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
           <h2>{t('report.portfolio-2', { username: username })}</h2>
@@ -135,7 +136,7 @@ function ShowUser({
             <Button block={true} bsStyle='primary' type='submit'>
               {t('report.submit')}
             </Button>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </form>
         </Col>
       </Row>

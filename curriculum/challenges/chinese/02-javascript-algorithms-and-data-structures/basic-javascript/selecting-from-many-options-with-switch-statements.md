@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-如果你有非常多的选项需要选择，可以使用 <dfn>switch</dfn> 语句。 `switch` 评估一个表达式，将表达式的值与 <dfn>case</dfn> 子句匹配。 从第一个匹配的 `case` 值执行语句，直到遇到 `break`。
+如果你需要将一个值与许多选项匹配，你可以使用 <dfn>switch</dfn> 语句。 `switch` 语句将值与定义各种可能的值的 <dfn>case</dfn> 语句比较。 任何有效的 JavaScript 语句都可以在 <dfn>case</dfn> 块中执行，并且将从第一个匹配的 `case` 的值开始运行，直到遇到 `break`。
 
 这是 `switch` 语句的示例：
 

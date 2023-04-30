@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import jQuery from 'jquery';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 

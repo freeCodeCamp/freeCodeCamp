@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Ao invés de gerar um número inteiro aleatório entre 0 e um número especificado, como fizemos anteriormente, nós podemos gerar um número inteiro aleatório que fica em um intervalo entre dois números especificados.
+Você pode gerar um número natural aleatório no intervalo entre zero e um número dado. Você também pode escolher um número diferente para este intervalo.
 
-Para isso, definiremos um número mínimo `min` e um número máximo`max`.
+Chamaremos o número mínimo de `min` e o número máximo de `max`.
 
-Aqui está a fórmula que usaremos. Leve um momento para ler e entender o que esse código está fazendo:
+Essa fórmula fornece um número natural aleatório no intervalo de `min` até `max`. Leve um momento para ler e entender o que esse código está fazendo:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Crie uma função chamada `randomRange` que recebe um intervalo de `myMin` e `myMax` e retorne um número inteiro aleatório que é maior ou igual a `myMin`, e é menor ou igual a `myMax`.
+Crie uma função chamada `randomRange` que recebe um intervalo de `myMin` a `myMax` e retorne um número natural aleatório que é maior ou igual a `myMin` e menor ou igual a `myMax`.
 
 # --hints--
 
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

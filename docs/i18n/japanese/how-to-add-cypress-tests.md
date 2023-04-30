@@ -4,23 +4,23 @@
 
 Cypress テストもしくは「specs」の書き方については、Cypress の公式 [ドキュメント](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) をご覧ください。
 
-## テストを追加する場所
+## Where to Add a Test
 
 - Cypress テストは `./cypress` ディレクトリにあります。
 
 - カリキュラムモジュールの Cypress テストは、対応するカリキュラムディレクトリ、すなわち `cypress/integration/learn/responsive-web-design/basic-css/index.js` にあります。
 
-## テストを実行する方法
+## How to Run Tests
 
 > [!NOTE] GitPod を使用している場合は、[Cypress と GitPod の設定](how-to-add-cypress-tests.md#cypress-と-gitpod-の設定) を参照してください。
 
-### 1. MongoDB とクライアントアプリケーションが動作していることを確認する
+### 1. Ensure that MongoDB and Client Applications are Running
 
 - [MongoDB を起動し、データベースをシードします。](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [freeCodeCamp クライアントアプリケーションと API サーバーを起動します。](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Cypress テストを実行する
+### 2. Run the Cypress Tests
 
 `dev` を `prd` に置き換えて本番ビルドに対するテストを実行します。
 
@@ -39,7 +39,7 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。
@@ -54,10 +54,11 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 
 GitPod 環境を起動しても自動的に環境が構築されない場合は、以下を実行します。
 
-- データベースを起動します。
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - データベースをシードします。

@@ -1,9 +1,10 @@
 // Package Utilities
 import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -43,6 +44,8 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { SuperBlocks } from '../../../../../config/certification-settings';
+import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
 
@@ -107,10 +110,9 @@ interface ShowCodeAllyProps {
   userToken: string | null;
 }
 
-// Component
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private _container: RefObject<HTMLElement> | undefined;
 
   componentDidMount(): void {
     const {
@@ -130,7 +132,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+
+    this._container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -178,8 +181,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       data: {
         challengeNode: {
           challenge: {
-            block,
-            certification,
             challengeType,
             description,
             fields: { blockName },
@@ -229,6 +230,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
+    const titleContext = t('learn.github-link');
 
     return showCodeAlly ? (
       <LearnLayout>
@@ -244,38 +246,39 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        innerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
           <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
           <Grid>
+            {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
                 >
                   {title}
                 </ChallengeTitle>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <PrismFormatted text={description} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <div className='ca-description'>
                   <Trans i18nKey='learn.github-required'>
                     <a
                       href='https://github.com/join'
                       rel='noopener noreferrer'
                       target='_blank'
-                      title={t('learn.github-link')}
+                      title={titleContext}
                     >
                       placeholder
                     </a>
                   </Trans>
                 </div>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
@@ -283,7 +286,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                         {t('learn.complete-both-steps')}
                       </div>
                       <hr />
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <b>{t('learn.step-1')}</b>
                       {(isPartiallyCompleted || isCompleted) && (
                         <GreenPass
@@ -294,13 +297,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <div className='ca-description'>
                         {t('learn.runs-in-vm')}
                       </div>
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <PrismFormatted text={instructions} />
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                     </>
                   )}
                 <Alert id='codeally-cookie-warning' bsStyle='info'>
@@ -321,7 +324,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
                       <hr />
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <b>{t('learn.step-2')}</b>
                       {isCompleted && (
                         <GreenPass
@@ -332,13 +335,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <div className='ca-description'>
                         {t('learn.submit-public-url')}
                       </div>
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <PrismFormatted text={notes} />
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                       <SolutionForm
                         challengeType={challengeType}
                         description={description}
@@ -349,14 +352,9 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   )}
                 <ProjectToolPanel />
                 <br />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -378,8 +376,6 @@ export const query = graphql`
   query CodeAllyChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
-        block
-        certification
         challengeType
         description
         fields {

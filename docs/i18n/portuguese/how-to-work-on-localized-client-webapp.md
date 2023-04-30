@@ -1,4 +1,4 @@
-# Como trabalhar em um cliente webapp traduzido
+# Como trabalhar em um client webapp traduzido
 
 O nosso cliente web app com base em React que alimenta nossa plataforma de aprendizado foi criado usando o Gatsby. Ele é traduzido em vários idiomas do mundo todo usando [react-i18next](https://react.i18next.com/) e  [i18next](https://www.i18next.com/).
 
@@ -59,7 +59,7 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 **Arquivos traduzidos na nossa plataforma de tradução:**
 
-- O arquivo `translations.json` contém a maioria do texto que aparece nos elementos de interface de usuário. As chaves são usadas na base de código para obter o texto correto para qualquer idioma definido. Este arquivo precisa ter exatamente as mesmas chaves em todos os idiomas.
+- O arquivo `translations.json` contém a maioria do texto que aparece nos elementos de interface de usuário. As chaves são usadas na base de código para obter o texto correto para qualquer idioma definido. Este arquivo precisa ter as mesmas chaves em todos os idiomas.
 
 - O arquivo `intro.json` contém os pares chave-valor para o texto de introdução nas páginas de certificação.
 
@@ -83,7 +83,7 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Italian,
     Languages.Portuguese,
     Languages.Ukrainian,
@@ -264,7 +264,7 @@ O arquivo em inglês é a "fonte da verdade" para todos os arquivos `.json` que 
 
 Seria bom manter as chaves na mesma ordem entre todos os arquivos também. Além disso, tente colocar toda a pontuação, espaçamento, citações e tudo mais nos arquivos JSON, não nos componentes ou arquivos de servidor.
 
-> [!NOTE] O underscore (`_`) é um caractere reservado para chaves dos arquivos que ficam do lado do cliente. Veja [a documentação](https://www.i18next.com/translation-function/plurals) para saber como são usados.
+> [!NOTE] O underscore (`_`) é um caractere reservado para chaves dos arquivos que ficam do lado do client. Veja [a documentação](https://www.i18next.com/translation-function/plurals) para saber como são usados.
 
 ## Documentação útil
 

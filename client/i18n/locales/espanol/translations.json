@@ -73,7 +73,6 @@
     "click-start-course": "Comienza el curso",
     "click-start-project": "Comienza el proyecto",
     "change-language": "Cambiar Idioma",
-    "cancel-change": "Cancelar Cambio",
     "resume-project": "Reanudar proyecto",
     "start-project": "Iniciar proyecto"
   },
@@ -114,6 +113,7 @@
     "for": "Ajustes de cuenta de {{username}}",
     "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "sound-volume": "Volumen de fogata:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -220,8 +220,7 @@
     "tweet": "¡Acabo de obtener la certificación {{certTitle}} @freeCodeCamp! Compruébalo aquí: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Se unió {{date}}",
-    "total-points": "{{count}} punto en total",
-    "total-points_plural": "{{count}} puntos en total",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} punto en {{date}}",
     "points_plural": "{{count}} puntos en {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
@@ -309,7 +308,8 @@
       "console": "Consola",
       "instructions": "Instrucciones",
       "notes": "Notas",
-      "preview": "Vista"
+      "preview": "Vista",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Presionando la pestaña insertará el carácter de la pestaña",
@@ -468,7 +468,7 @@
     "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
     "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
     "document-notfound": "documento no encontrado",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página."
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -527,6 +527,13 @@
     "could-not-find": "No pudimos encontrar lo que buscabas. Por favor revisa e intenta de nuevo",
     "wrong-updating": "Se produjo un error al actualizar tu cuenta. Por favor revisa e intenta de nuevo",
     "updated-preferences": "Hemos actualizado tus preferencias",
+    "updated-about-me": "We have updated your personal information",
+    "updated-socials": "Hemos actualizado tus enlaces sociales",
+    "updated-sound": "Hemos actualizado tus ajustes de sonido",
+    "updated-themes": "Hemos actualizado su tema",
+    "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
+    "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "portfolio-item-updated": "We have updated your portfolio",
     "email-invalid": "El formato del correo electrónico no es válido",
     "email-valid": "Tu correo electrónico fue cambiado con éxito, ¡feliz día programando!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
@@ -536,6 +543,7 @@
     "username-used": "El nombre de usuario ya está asociado con esta cuenta",
     "username-taken": "El nombre de usuario ya está asociado con una cuenta diferente",
     "username-updated": "Hemos actualizado tu nombre de usuario a {{username}}",
+    "privacy-updated": "We have updated your privacy settings",
     "could-not-logout": "No pudimos cerrar la sesión. Vuelve a intentarlo en un momento.",
     "email-encoded-wrong": "El correo electrónico codificado en el enlace tiene un formato incorrecto",
     "oops-not-right": "¡Uy!, algo no está bien, solicita un enlace nuevo para iniciar sesión / registrarse",
@@ -739,7 +747,7 @@
   "forum-help": {
     "browser-info": "**Información de tu navegador:**",
     "user-agent": "El agente de usuario es: <code>{{userAgent}}</code>",
-    "challenge": "**Desafío:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**Enlaza al desafío:**",
     "whats-happening": "**Cuéntanos qué está pasando:**",
     "describe": "Describe tu problema en detalle aquí.",

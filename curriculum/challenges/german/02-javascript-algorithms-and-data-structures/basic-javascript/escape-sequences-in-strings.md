@@ -9,9 +9,9 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Anführungszeichen sind nicht die einzigen Zeichen, die innerhalb eines Strings <dfn>ausgelassen</dfn> werden können. Escape sequences allow you to use characters you may not otherwise be able to use in a string.
+Anführungszeichen sind nicht die einzigen Zeichen, die innerhalb eines Strings <dfn>ausgelassen</dfn> werden können. Escape-Sequenzen ermöglichen es dir, Zeichen zu verwenden, die du sonst nicht in einem String verwenden könntest.
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>Einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>Doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\t</code></td><td>Tabulator</td></tr><tr><td><code>\r</code></td><td>Wagenrücklauf (Carriage Return)</td></tr><tr><td><code>\b</code></td><td>Backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>Einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>Doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\t</code></td><td>Tabulator</td></tr><tr><td><code>\r</code></td><td>Wagenrücklauf (Carriage Return)</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
 
 *Note that the backslash itself must be escaped in order to display as a backslash.*
 
@@ -25,13 +25,13 @@ FirstLine
 ThirdLine
 </pre>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+Um Sonderzeichen korrekt einzufügen, musst du Escape-Sequenzen verwenden. Du musst auch die Abstände so einhalten, wie sie oben aussehen, ohne Leerzeichen zwischen Escape-Sequenzen oder Wörtern.
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**Hinweis:** Die Einrückung für `SecondLine` wird mit dem Tabulator-Escape-Zeichen erreicht, nicht mit Leerzeichen.
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` sollte keine Leerzeichen enthalten
 
 ```js
 assert(!/ /.test(myStr));
@@ -69,7 +69,7 @@ There should be a newline character between `SecondLine` and `ThirdLine`
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` sollte nur die in der Anleitung angegebenen Zeichen enthalten
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

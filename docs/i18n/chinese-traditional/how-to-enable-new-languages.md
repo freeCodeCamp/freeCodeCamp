@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（簡體字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -176,8 +176,8 @@ The order of the superblocks in this object is how they appear on the "Landing" 
 
 The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `(New) Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
+- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
+- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed it on English to start.
 - `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
 - `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
 
@@ -218,7 +218,7 @@ const algoliaIndices = {
 
 ## Enabling Localized Videos
 
-For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+For the video challenges, you need to change a few things. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -256,7 +256,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+And finally, update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -371,7 +371,7 @@ Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
 
 The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
 
-> [!WARN] Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] Pull requests to the News repo _must_ come from the same repo. You should not work off of a fork for this step.
 
 ### Modify the Main Config File
 

@@ -29,17 +29,10 @@
   text-align: left;
 }
 
-.quote-wrapper span {
-  font-size: 50px;
+.quote-wrapper .quote::before {
+  content: open-quote;
+  font-size: 25px;
   font-weight: 700;
-  color: var(--tertiary-color);
-  font-style: normal;
-  padding-inline-start: 15px;
-  padding-top: 5px;
-  position: absolute;
-  border-radius: 0;
-  top: 0;
-  left: 0;
 }
 
 .quote-wrapper .author {

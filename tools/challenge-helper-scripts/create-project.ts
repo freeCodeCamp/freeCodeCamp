@@ -6,7 +6,6 @@ import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
-import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -40,9 +39,7 @@ async function createProject(
   title?: string
 ) {
   if (!title) {
-    title = blockNameify(block);
-  } else if (title !== blockNameify(block)) {
-    void updateBlockNames(block, title);
+    title = block;
   }
   void updateIntroJson(superBlock, block, title);
   void updateHelpCategoryMap(block, helpCategory);
@@ -88,20 +85,6 @@ async function updateHelpCategoryMap(block: string, helpCategory: string) {
   );
 }
 
-async function updateBlockNames(block: string, title: string) {
-  const blockNamesPath = path.resolve(
-    __dirname,
-    '../../utils/preformatted-block-names.json'
-  );
-  const blockNames = await parseJson<Record<string, string>>(blockNamesPath);
-  blockNames[block] = title;
-  void withTrace(
-    fs.writeFile,
-    blockNamesPath,
-    format(JSON.stringify(blockNames), { parser: 'json' })
-  );
-}
-
 async function createMetaJson(
   superBlock: SuperBlocks,
   block: string,
@@ -133,7 +116,7 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
-superBlock: Responsive Web Design
+superBlock: ${superBlock}
 isBeta: true
 ---
 
@@ -227,7 +210,7 @@ void prompt([
   },
   {
     name: 'title',
-    default: ({ block }: { block: string }) => blockNameify(block)
+    default: ({ block }: { block: string }) => block
   },
   {
     name: 'helpCategory',

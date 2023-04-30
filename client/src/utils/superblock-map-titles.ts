@@ -11,7 +11,8 @@ enum SuperBlockI18nKeys {
 // Certification
 const superBlocksWithoutLastWord = [
   SuperBlocks.CodingInterviewPrep,
-  SuperBlocks.TheOdinProject
+  SuperBlocks.TheOdinProject,
+  SuperBlocks.ProjectEuler
 ];
 
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks): string {

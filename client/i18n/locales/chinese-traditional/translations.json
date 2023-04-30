@@ -73,7 +73,6 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "change-language": "修改語言",
-    "cancel-change": "撤銷修改",
     "resume-project": "繼續項目",
     "start-project": "開始項目"
   },
@@ -114,6 +113,7 @@
     "for": "{{username}} 賬號設置",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -220,8 +220,7 @@
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
-    "total-points": "{{count}} 總分",
-    "total-points_plural": "{{count}} 總分",
+    "total-points": "Number of points: {{count}}",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
@@ -309,7 +308,8 @@
       "console": "控制檯",
       "instructions": "說明",
       "notes": "注意",
-      "preview": "預覽"
+      "preview": "預覽",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -527,6 +527,13 @@
     "could-not-find": "我們未找到你搜索的信息。請檢查並重試。",
     "wrong-updating": "更新你的賬號出了點問題。請檢查並重試。",
     "updated-preferences": "我們已更新你的偏好設置。",
+    "updated-about-me": "我們已更新你的個人信息",
+    "updated-socials": "我們已更新你的社交鏈接",
+    "updated-sound": "我們已更新你的聲音設置",
+    "updated-themes": "我們已更新你的主題",
+    "keyboard-shortcut-updated": "我們已更新你的鍵盤快捷鍵設置",
+    "subscribe-to-quincy-updated": "我們已更新你對 Quincy 的電子郵件的訂閱",
+    "portfolio-item-updated": "我們已更新你的作品集",
     "email-invalid": "郵箱格式無效",
     "email-valid": "你的電子郵件已成功更改，編碼愉快！",
     "bad-challengeId": "currentChallengeId 是無效的挑戰 ID",
@@ -536,6 +543,7 @@
     "username-used": "用戶名已和此賬號關聯",
     "username-taken": "用戶名已和別的賬號關聯",
     "username-updated": "我們已更新你的用戶名爲 {{username}}",
+    "privacy-updated": "我們已更新你的隱私設置",
     "could-not-logout": "你的賬號未退出，請稍後重試。",
     "email-encoded-wrong": "鏈接中的郵箱格式不正確",
     "oops-not-right": "有點不對勁。請刷新鏈接再登錄/註冊",
@@ -711,8 +719,8 @@
       "information-security-v7": "信息安全認證",
       "Machine Learning with Python": "機器學習與Python",
       "machine-learning-with-python-v7": "Python 和機器學習認證",
-      "College Algebra with Python": "College Algebra with Python",
-      "college-algebra-with-python-v8": "College Algebra with Python Certification",
+      "College Algebra with Python": "Python 和大學代數",
+      "college-algebra-with-python-v8": "Python 和大學代數認證",
       "Legacy Front End": "舊版前端",
       "legacy-front-end": "前端認證",
       "Legacy Back End": "舊版後端",
@@ -739,7 +747,7 @@
   "forum-help": {
     "browser-info": "**你的瀏覽器信息：**",
     "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
-    "challenge": "**挑戰：** {{challengeTitle}}",
+    "challenge": "**挑戰：**",
     "challenge-link": "**挑戰的鏈接：**",
     "whats-happening": "**告訴我們發生了什麼：**",
     "describe": "在此詳細描述你的問題。",

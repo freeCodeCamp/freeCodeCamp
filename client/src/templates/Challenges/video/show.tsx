@@ -4,7 +4,8 @@ import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -176,11 +177,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             title,
             description,
             superBlock,
-            certification,
             block,
             translationPending,
             videoId,
@@ -201,6 +200,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -216,7 +216,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           />
           <Grid>
             <Row>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <ChallengeTitle
                 isCompleted={isChallengeCompleted}
                 translationPending={translationPending}
@@ -244,7 +244,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
@@ -252,7 +252,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={t('aria.answer')}
+                          aria-label={ariaLabel}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -273,7 +273,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     ))}
                   </div>
                 </ObserveKeys>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <div
                   style={{
                     textAlign: 'center'
@@ -285,7 +285,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <Button
                   block={true}
                   bsSize='large'
@@ -296,14 +296,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer paddingSize={30} />
+                <Spacer size='large' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
             </Row>
           </Grid>
         </LearnLayout>
@@ -339,10 +334,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {

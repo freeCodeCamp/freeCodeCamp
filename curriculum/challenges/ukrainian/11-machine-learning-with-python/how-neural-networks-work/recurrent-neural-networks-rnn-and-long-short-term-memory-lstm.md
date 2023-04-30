@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cb
-title: Рекурентні нейронні мережі (RNN) і довга короткочасна пам'ять (LSTM)
+title: Рекурентні нейронні мережі (RNN) і довга короткочасна пам’ять (LSTM)
 challengeType: 11
 videoId: UVimlsy9eW0
 dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
@@ -10,7 +10,7 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ## --text--
 
-Якими є основні компоненти нейронної мережі, що утворюють мережу довгої короткочасної пам'яті?
+Якими є основні компоненти нейронної мережі, що утворюють мережу довгої короткочасної пам’яті?
 
 ## --answers--
 

@@ -25,7 +25,8 @@ const MenuButton = ({
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (
       event.relatedTarget &&
-      !event.relatedTarget.closest('.universal-nav-right') &&
+      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.fcc_searchBar') &&
       displayMenu
     ) {
       hideMenu();
@@ -43,7 +44,7 @@ const MenuButton = ({
   return (
     <button
       aria-expanded={displayMenu}
-      className={`toggle-button-nav${
+      className={`exposed-button-nav${
         displayMenu ? ' reverse-toggle-color' : ''
       }`}
       id='toggle-button-nav'

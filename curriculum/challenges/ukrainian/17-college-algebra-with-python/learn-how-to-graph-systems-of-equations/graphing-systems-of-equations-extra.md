@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "Побудова графіку систем рівнянь: додатково"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+Наступне відео детальніше пояснить те, що ви можете робити з графічними системами рівнянь, графічними нерівностями та затіненням над/під лінією. Ви також побачите, як завантажити графік на свій комп’ютер чи гугл-диск.
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --text--
 
-If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
+Ви хочете створити інтерактивний графік з повзунком для збільшення/зменшення масштабу. Де розміститься більша частина коду графіку?
 
 ## --answers--
 
-Within the interactive() function
+У межах функції interactive()
 
 ---
 
-In the slider
+У повзунці
 
 ---
 
-Within the function that the interactive() calls
+У межах функції, яку викликає interactive()
 
 ---
 
-Before all of the functions
+Перед усіма функціями
 
 ## --video-solution--
 

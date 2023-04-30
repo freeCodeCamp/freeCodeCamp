@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { Themes } from '../components/settings/theme';
-import { certMap } from '../resources/cert-and-project-map';
+import { fullCertMap } from '../resources/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: (typeof certMap)[number]['title'];
+    title: (typeof fullCertMap)[number]['title'];
   };
   headings: [
     {
@@ -207,7 +207,7 @@ export type User = {
   name: string;
   picture: string;
   points: number;
-  portfolio: Portfolio[];
+  portfolio: PortfolioProjectData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -235,7 +235,7 @@ export type ProfileUI = {
   showTimeLine: boolean;
 };
 
-type ClaimedCertifications = {
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
@@ -292,8 +292,8 @@ export type ChallengeMeta = {
   id: string;
   introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string;
-  prevChallengePath: string;
+  nextChallengePath: string | null;
+  prevChallengePath: string | null;
   removeComments: boolean;
   superBlock: SuperBlocks;
   title?: string;
@@ -301,12 +301,12 @@ export type ChallengeMeta = {
   helpCategory: string;
 };
 
-export type Portfolio = {
+export type PortfolioProjectData = {
   id: string;
-  title?: string;
-  url?: string;
-  image?: string;
-  description?: string;
+  title: string;
+  url: string;
+  image: string;
+  description: string;
 };
 
 type FileKeyChallenge = {

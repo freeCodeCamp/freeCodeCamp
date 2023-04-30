@@ -64,6 +64,7 @@ export const storePortalWindow = createAction(actionTypes.storePortalWindow);
 export const removePortalWindow = createAction(actionTypes.removePortalWindow);
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);
+export const sendRenderTime = createAction(actionTypes.sendRenderTime);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);

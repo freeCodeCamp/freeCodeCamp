@@ -76,7 +76,7 @@ assert(beagle instanceof Animal);
 assert(beagle.constructor === Dog);
 ```
 
-`beagle.eat()` 应该记录字符串 `nom nom nom`
+`beagle.eat()` 应该将字符串 `nom nom nom` 打印到控制台。
 
 ```js
 capture();
