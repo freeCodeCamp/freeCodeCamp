@@ -2,7 +2,11 @@ import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import ToolPanel from '../components/tool-panel';
+import { showPreviewPortalSelector } from '../redux/selectors';
+import PreviewPortal from '../components/preview-portal';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
@@ -17,8 +21,19 @@ interface MobileLayoutProps {
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
+  title: string;
   usesMultifileEditor: boolean;
+  showPreviewPortal: boolean;
 }
+
+const mapDispatchToProps = {};
+
+const mapStateToProps = createSelector(
+  showPreviewPortalSelector,
+  (showPreviewPortal: boolean) => ({
+    showPreviewPortal
+  })
+);
 
 enum Tab {
   Editor = 'editor',
@@ -62,8 +77,12 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       preview,
       guideUrl,
       videoUrl,
-      usesMultifileEditor
+      title,
+      usesMultifileEditor,
+      showPreviewPortal
     } = this.props;
+
+    const displayPreviewPortal = hasPreview && showPreviewPortal;
 
     const editorTabPaneProps = {
       mountOnEnter: true,
@@ -124,6 +143,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {preview}
             </TabPane>
           )}
+          {displayPreviewPortal && (
+            <PreviewPortal windowTitle={title}>{preview}</PreviewPortal>
+          )}
           <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
         </Tabs>
       </>
@@ -133,4 +155,4 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
 MobileLayout.displayName = 'MobileLayout';
 
-export default MobileLayout;
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);

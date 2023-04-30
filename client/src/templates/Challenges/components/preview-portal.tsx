@@ -10,9 +10,11 @@ import {
   setIsAdvancing
 } from '../redux/actions';
 import {
+  showPreviewPortalSelector,
   portalWindowSelector,
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface PreviewPortalProps {
   children: ReactElement | null;
@@ -24,6 +26,7 @@ interface PreviewPortalProps {
   setShowPreviewPortal: (arg: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   isAdvancing: boolean;
+  showPreviewPortal: boolean;
 }
 
 const mapDispatchToProps = {
@@ -36,9 +39,15 @@ const mapDispatchToProps = {
 const mapStateToProps = createSelector(
   isAdvancingToChallengeSelector,
   portalWindowSelector,
-  (isAdvancing: boolean, portalWindow: null | Window) => ({
+  showPreviewPortalSelector,
+  (
+    isAdvancing: boolean,
+    portalWindow: null | Window,
+    showPreviewPortal: boolean
+  ) => ({
     isAdvancing,
-    portalWindow
+    portalWindow,
+    showPreviewPortal
   })
 );
 
@@ -103,18 +112,16 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     });
 
     this.props.storePortalWindow(this.externalWindow);
-
-    // close the portal if the main window closes
-    this.mainWindow?.addEventListener('beforeunload', () => {
-      this.externalWindow?.close();
-    });
   }
 
   componentWillUnmount() {
-    if (!this.props.isAdvancing) {
+    if (
+      !this.props.showPreviewPortal ||
+      this.mainWindow.innerWidth >= MAX_MOBILE_WIDTH
+    ) {
       this.externalWindow?.close();
+      this.props.removePortalWindow();
     }
-    this.props.removePortalWindow();
     this.props.setIsAdvancing(false);
   }
 
