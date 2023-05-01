@@ -10,7 +10,7 @@ import {
   DONATE_NAV_EXPOSED_WIDTH
 } from '../../../../config/misc';
 import type { User } from '../../redux/prop-types';
-import Menu from './components/menu';
+import NavigationList from './components/navigation-list';
 import NavLogo from './components/nav-logo';
 import AuthOrProfile from './components/auth-or-profile';
 
@@ -39,54 +39,53 @@ export const Header = ({ fetchState, user }: HeaderProps): JSX.Element => {
       <SearchBar />
     );
   return (
-      <header>
-        <a href='#content-start' className='skip-to-content-button'>
-          {t('learn.skip-to-content')}
-        </a>
-        <nav
-          aria-label={t('aria.primary-nav')}
-          className={`universal-nav`}
-          id='universal-nav'
-        >
-          <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}><div className={`universal-nav-left`}>
-            {search}
-          </div></Media>
-          <Link id='universal-nav-logo' to='/learn'>
-            <NavLogo />
-          </Link>
-          <div className='universal-nav-right main-nav'>
-            {pending ? (
-              <div className='nav-skeleton'>
-                <SkeletonSprite />
+    <header>
+      <a href='#content-start' className='skip-to-content-button'>
+        {t('learn.skip-to-content')}
+      </a>
+      <nav
+        aria-label={t('aria.primary-nav')}
+        className={`universal-nav`}
+        id='universal-nav'
+      >
+        <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>
+          <div className={`universal-nav-left`}>{search}</div>
+        </Media>
+        <Link id='universal-nav-logo' to='/learn'>
+          <NavLogo />
+        </Link>
+        <div className='universal-nav-right main-nav'>
+          {pending ? (
+            <div className='nav-skeleton'>
+              <SkeletonSprite />
+            </div>
+          ) : (
+            <>
+              {!user?.isDonating && exposeDonateButton && (
+                <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
+                  <Link
+                    sameTab={false}
+                    to='/donate'
+                    data-test-label='nav-donate-button'
+                    className='exposed-button-nav'
+                  >
+                    {t('buttons.donate')}
+                  </Link>
+                </Media>
+              )}
+              <LanguageList />
+              <NavigationList user={user} />
+              <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
+              <div className='navatar'>
+                <AuthOrProfile user={user} />
               </div>
-            ) : (
-              <>
-                {!user?.isDonating && exposeDonateButton && (
-                  <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
-                    <Link
-                      sameTab={false}
-                      to='/donate'
-                      data-test-label='nav-donate-button'
-                      className='exposed-button-nav'
-                    >
-                      {t('buttons.donate')}
-                    </Link>
-                  </Media>
-                )}
-                <LanguageList />
-                <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
-                <Menu fetchState={fetchState} user={user} />
-                <div className='navatar'>
-                  <AuthOrProfile user={user} />
-                </div>
-              </>
-            )}
-          </div>
-        </nav>
-      </header>
-    );
-  }
-
+            </>
+          )}
+        </div>
+      </nav>
+    </header>
+  );
+};
 
 Header.displayName = 'Header';
 
