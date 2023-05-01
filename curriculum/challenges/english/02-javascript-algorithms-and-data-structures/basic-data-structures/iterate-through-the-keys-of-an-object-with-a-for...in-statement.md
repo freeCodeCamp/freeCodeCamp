@@ -146,12 +146,12 @@ console.log(countOnline(users));
 
 ```js
 function countOnline(allUsers) {
-  let online = 0;
+  let numOnline = 0;
   for(const user in allUsers){
-    if(usersObj[user].online) {
-      online++;
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```
