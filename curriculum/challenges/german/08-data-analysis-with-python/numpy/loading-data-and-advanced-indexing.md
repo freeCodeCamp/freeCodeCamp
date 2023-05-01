@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600eda
-title: Loading Data and Advanced Indexing
+title: Laden von Daten und erweiterte Indizierung
 challengeType: 11
 videoId: tUdBZ7pF8Jg
 bilibiliIds:
@@ -21,7 +21,7 @@ Given a file named `data.txt` with these contents:
 15,88,5,75,22
 </pre>
 
-What code would produce the following array?
+Welcher Code würde das folgende Array erstellen?
 
 ```py
 [29. 32. 45. 15.  5. 22.]

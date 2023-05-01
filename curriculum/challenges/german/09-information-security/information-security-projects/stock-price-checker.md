@@ -12,10 +12,10 @@ Erstelle eine vollständige JavaScript Anwendung, die eine ähnliche Funktionali
 
 Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 
-Working on this project will involve you writing your code using one of the following methods:
+Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Methoden schreiben:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Benutze unser Replit Starter Projekt <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow"></a> um dein Projekt fertigzustellen.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 If you use Replit, follow these steps to set up the project:
@@ -31,7 +31,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 1.  SET `NODE_ENV` to `test` without quotes and set `DB` to your MongoDB connection string
 2.  Complete the project in `routes/api.js` or by creating a handler/controller
 3.  You will add any security features to `server.js`
-4.  You will create all of the functional tests in `tests/2_functional-tests.js`
+4.  Du wirst alle funktionalen Tests in `tests/2_functional-tests.js` erstellen
 
 **Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
@@ -97,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Nur 1 "Like" pro IP sollte akzeptiert werden.
 
 ```js
 
 ```
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
+Wenn du 2 Aktien übergibst, ist der Rückgabewert eine Anordnung mit Informationen über beide Aktien. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
 async (getUserInput) => {

@@ -40,7 +40,7 @@ Add your name as the `author` of the project in the `package.json` file.
 
 # --hints--
 
-`package.json` should have a valid "author" key
+`package.json` sollte über einen gültigen "Autor"-Schlüssel verfügen
 
 ```js
 (getUserInput) =>

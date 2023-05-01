@@ -1,14 +1,14 @@
 ---
 id: 63ee35240d8d4841c3a7091b
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question B
+title: Questão B sobre a Introdução ao CSS
 challengeType: 15
 dashedName: css-foundations-question-b
 ---
 
 # --description--
 
-Class selectors will select all elements with the given `class`, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:
+Seletores de classe selecionarão todos os elementos com a `class`, que é apenas um atributo que você coloca em um elemento do HTML. Veja como adicionar uma classe a uma tag do HTML e selecioná-la no CSS:
 
 ```html
 <!-- index.html -->
@@ -26,12 +26,12 @@ Class selectors will select all elements with the given `class`, which is just a
 }
 ```
 
-Note the syntax for `class` selectors: a period immediately followed by the case-sensitive value of the class attribute. Classes aren’t required to be unique, so you can use the same `class` on as many elements as you want.
+Observe a sintaxe para seletores `class`: um ponto seguido imediatamente pelo valor do atributo de class, diferenciando maiúsculas de minúsculas. As classes não precisam ser exclusivas. Então, você pode usar a mesma `class` em quantos elementos quiser.
 
-Another thing you can do with the `class` attribute is to add multiple classes to a single element as a space-separated list, such as `class="alert-text severe-alert"`. Since whitespace is used to separate `class` names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
+Outra coisa que você pode fazer com o atributo `class` é adicionar várias classes a um único elemento como uma lista separada por espaços, como, por exemplo, `class="alert-text severe-alert"`. Como um espaço em branco é usado para separar os nomes das classes em `class`, como no exemplo, você nunca deve usar espaços para nomes com várias palavras. Em vez disso, use um hífen.
 
-## ID Selectors
-ID selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an HTML element:
+## Seletores de ID
+Os seletores de ID são semelhantes aos seletores `class`. Eles selecionarão um elemento com o `id` fornecido, que é outro atributo que você coloca em um elemento do HTML:
 
 ```html
 <!-- index.html -->
@@ -47,27 +47,27 @@ ID selectors are similar to `class` selectors. They select an element with the g
 }
 ```
 
-Instead of a period, you use a hashtag immediately followed by the case-sensitive value of the `id` attribute. A common pitfall is people overusing the `id` attribute when they don’t necessarily need to, and when classes will suffice. While there are cases where using an `id` makes sense or is needed, such as taking advantage of specificity or having links redirect to a section on the current page, you should use `id`s sparingly (if at all).
+Em vez de um ponto, você usa uma hashtag imediatamente seguida do valor do atributo `id`, diferenciando maiúsculas de minúsculas. Uma armadilha comum é o uso em excesso do atributo `id` quando ele não é, de fato, necessário. Há casos onde as classes bastarão. Embora haja casos onde usar `id` faz sentido ou é necessário, como para tirar vantagem de uma especificidade ou fazer com que links redirecionem para uma seção na página atual, você deve usar o `id` com moderação (se precisar usar).
 
-The major difference between classes and IDs is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
+A maior diferença entre classes e IDs é o fato de que um elemento pode ter apenas um `id`. Um `id` não pode ser repetido na mesma página. O atributo `id` também não deve conter espaços em branco.
 
 # --question--
 
 ## --text--
 
-What is the syntax for class and ID selectors?
+Qual é a sintaxe para seletores de class e id?
 
 ## --answers--
 
-To select a `class` you use `$` and to select an `id` you use `#`
+Para selecionar uma `class`, você usa `$`. Para selecionar um `id`, você usa `#`.
 
 ---
 
-To select a `class` you use `.` and to select an `id` you use `*`
+Para selecionar uma `class`, você usa `.`. Para selecionar um `id`, você usa `$`. `*`
 
 ---
 
-To select a `class` you use `.` and to select an `id` you use `#`
+Para selecionar uma `class`, você usa `.`. Para selecionar um `id`, você usa `#`.
 
 
 ## --video-solution--

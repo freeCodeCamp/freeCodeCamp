@@ -26,7 +26,7 @@ Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. For 
 
 # --instructions--
 
-Create a port scanner using Python.
+Erstelle einen Portscanner mit Python.
 
 Erstelle eine Funktion in der `port_scanner.py`-Datei namens `get_open_ports`, die ein `target` Argument und ein `port_range` Argument verwendet. `target` kann eine URL oder IP-Adresse sein. `port_range` ist eine Liste von zwei Zahlen, die die erste und letzte Zahl des zu überprüfenden Ports angeben.
 
@@ -67,7 +67,7 @@ PORT     SERVICE
 80       http
 ```
 
-Make sure to include proper spacing and new line characters.
+Achte auf einen korrekten Zeilenabstand und neue Zeilenzeichen.
 
 If the URL passed into the `get_open_ports` function is invalid, the function should return the string: "Error: Invalid hostname".
 
@@ -75,19 +75,19 @@ If the IP address passed into the `get_open_ports` function is invalid, the func
 
 ## Entwicklung
 
-Write your code in `port_scanner.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
+Schreibe deinen Code in `port_scanner.py`. Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Klicke den "Run"-Button und `main.py` wird ausgeführt.
 
-## Testing
+## Testen
 
 The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
 ## Submitting
 
-Copy your project's URL and submit it to freeCodeCamp.
+Kopiere die URL deines Projekts und übermittle sie an freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Es sollte alle Python-Tests bestehen.
 
 ```js
 

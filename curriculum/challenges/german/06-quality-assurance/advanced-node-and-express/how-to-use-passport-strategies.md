@@ -10,7 +10,7 @@ dashedName: how-to-use-passport-strategies
 
 In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
-In the `res.render` for that page, add a new variable to the object, `showLogin: true`. Wenn du deine Seite aktualisierst, solltest du das Formular sehen! Das Formular übermittelt **POST**-Anfragen an `/login`. Hier solltest du also die POST-Anfrage annehmen und den Nutzer authentifizieren.
+Füge innerhalb des `res.render` dieser Seite dem Objekt eine neue Variable hinzu, `showLogin: true`. Wenn du deine Seite aktualisierst, solltest du das Formular sehen! Das Formular übermittelt **POST**-Anfragen an `/login`. Hier solltest du also die POST-Anfrage annehmen und den Nutzer authentifizieren.
 
 In dieser Aufgabe erstellst du die Route `/login`, um eine POST-Anfrage anzunehmen. Um mithilfe dieser Route Nutzer zu authentifizieren, benötigst du eine Middleware, die das vor Beantwortung der Anfrage tut. Dazu wird einfach ein weiteres Argument an die Middleware übergeben, bevor die Antwort kommt. The middleware to use is `passport.authenticate('local')`.
 
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-A POST request to `/login` should correctly redirect to `/`.
+Eine POST-Anfrage an `/login` sollte korrekt zu `/` weiterleiten.
 
 ```js
 async (getUserInput) => {

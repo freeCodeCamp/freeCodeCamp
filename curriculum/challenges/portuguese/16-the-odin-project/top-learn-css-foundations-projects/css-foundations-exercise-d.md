@@ -1,6 +1,6 @@
 ---
 id: 63ee3ff1381756f9716727f2
-title: CSS Foundations Exercise D
+title: Exercício D sobre a Introdução ao CSS
 challengeType: 14
 dashedName: css-foundations-exercise-d
 ---
@@ -11,19 +11,19 @@ description
 
 # --hints--
 
-Test 1
+Teste 1
 
 ```js
 
 ```
 
-Test 2
+Teste 2
 
 ```js
 
 ```
 
-Test 3
+Teste 3
 
 ```js
 

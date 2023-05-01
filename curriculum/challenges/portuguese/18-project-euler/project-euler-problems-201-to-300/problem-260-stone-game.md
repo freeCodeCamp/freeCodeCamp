@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
-title: 'Problem 260: Stone Game'
+title: 'Problema 260: Jogo da pedra'
 challengeType: 1
 forumTopicId: 301909
 dashedName: problem-260-stone-game
@@ -8,11 +8,11 @@ dashedName: problem-260-stone-game
 
 # --description--
 
-A game is played with three piles of stones and two players.
+Uma partida é jogada com três pilhas de pedras e dois jogadores.
 
-On each player's turn, the player removes one or more stones from the piles. However, if the player takes stones from more than one pile, the same number of stones must be removed from each of the selected piles.
+No turno de cada jogador, ele remove uma ou mais pedras das pilhas. No entanto, se o jogador recebe pedras de mais de uma pilha, o mesmo número de pedras deve ser removido de cada uma das pilhas selecionadas.
 
-In other words, the player chooses some $N > 0$ and removes:
+Em outras palavras, o jogador escolhe algumas $N > 0$ e as remove:
 
 - $N$ stones from any single pile; or
 - $N$ stones from each of any two piles ($2N$ total); or

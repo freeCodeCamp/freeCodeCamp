@@ -10,7 +10,7 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`app.use(helmet())` will automatically include all the middleware introduced above, except `noCache()`, and `contentSecurityPolicy()`, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
+`app.use(helmet())` will automatically include all the middleware introduced above, except `noCache()`, and `contentSecurityPolicy()`, but these can be enabled if necessary. Du kannst auch jede andere Middleware einzeln deaktivieren oder konfigurieren, indem du ein Konfigurationsobjekt verwendest.
 
 **Example:**
 
@@ -29,7 +29,7 @@ app.use(helmet({
 }))
 ```
 
-We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ `helmet()` middleware is easy to implement in a real project.
+Wir haben jede Middleware einzeln vorgestellt - zum einen für Schulungszwecke und zum anderen zur Vereinfachung der Tests. Using the ‘parent’ `helmet()` middleware is easy to implement in a real project.
 
 # --hints--
 

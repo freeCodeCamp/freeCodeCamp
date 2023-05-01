@@ -57,7 +57,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You can send a `POST` request to `/api/issues/{projectname}` with form data containing the required fields `issue_title`, `issue_text`, `created_by`, and optionally `assigned_to` and `status_text`.
+Du kannst eine `POST`-Anfrage mit Formulardaten an `/api/issues/{projectname}` senden. Die Formulardaten benötigen die Felder `issue_title`, `issue_text`, `created_by` und optional `assigned_to` sowie `status_text`.
 
 ```js
 async (getUserInput) => {
@@ -219,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `PUT` request to `/api/issues/{projectname}` with an `_id` and one or more fields to update. On success, the `updated_on` field should be updated, and returned should be `{  result: 'successfully updated', '_id': _id }`.
+Du kannst eine `PUT`-Anfrage an `/api/issues/{projectname}` mit einer `_id` und mindestens einem Feld zum Aktualisieren senden. Im Erfolgsfall sollte das Feld `updated_on` aktualisiert werden und `{  result: 'successfully updated', '_id': _id }` zurückgeben.
 
 ```js
 async (getUserInput) => {
@@ -254,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-When the `PUT` request sent to `/api/issues/{projectname}` does not include an `_id`, the return value is `{ error: 'missing _id' }`.
+Wenn die `PUT`-Anfrage, die an `/api/issues/{projectname}` übermittelt wird, keine `_id` enthält, entspricht der Rückgabewert `{ error: 'missing _id' }`.
 
 ```js
 async (getUserInput) => {
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. Bei jedem anderen Fehler entspricht der Rückgabewert `{ error: 'could not update', '_id': _id }`.
+Wenn die `PUT`-Anfrage, die an `/api/issues/{projectname}` übermittelt wird, keine Aktualisierungsfelder enthält, entspricht der Rückgabewert `{ error: 'no update field(s) sent', '_id': _id }`. Bei jedem anderen Fehler entspricht der Rückgabewert `{ error: 'could not update', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
