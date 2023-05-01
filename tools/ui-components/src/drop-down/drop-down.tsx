@@ -34,11 +34,11 @@ export const MenuItems = React.forwardRef<
   );
 });
 
-export function DropDownButton({
+const DropDownButton = ({
   children,
   className,
   ...rest
-}: DropDownButtonProps): JSX.Element {
+}: DropDownButtonProps) => {
   const { dropup } = useContext(DropDownContext);
 
   const classes = [className, toggleClassNames].join(' ');
@@ -52,7 +52,7 @@ export function DropDownButton({
       />
     </Menu.Button>
   );
-}
+};
 
 export const Dropdown = ({
   children,
