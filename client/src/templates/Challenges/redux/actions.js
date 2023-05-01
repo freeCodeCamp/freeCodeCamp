@@ -43,8 +43,6 @@ export const setShowPreviewPane = createAction(actionTypes.setShowPreviewPane);
 
 export const logsToConsole = createAction(actionTypes.logsToConsole);
 
-export const lockCode = createAction(actionTypes.lockCode);
-export const unlockCode = createAction(actionTypes.unlockCode);
 export const disableBuildOnError = createAction(
   actionTypes.disableBuildOnError
 );

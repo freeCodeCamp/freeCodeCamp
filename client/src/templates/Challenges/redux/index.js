@@ -7,7 +7,6 @@ import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
-import { watchCodeLock } from './code-lock-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
@@ -29,7 +28,6 @@ const initialState = {
   challengeTests: [],
   consoleOut: [],
   hasCompletedBlock: false,
-  isCodeLocked: false,
   isBuildEnabled: true,
   isResetting: false,
   logsOut: [],
@@ -53,8 +51,7 @@ export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes),
-  ...watchCodeLock(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes)
 ];
 
 export const reducer = handleActions(
@@ -162,16 +159,6 @@ export const reducer = handleActions(
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
-    }),
-
-    [actionTypes.lockCode]: state => ({
-      ...state,
-      isCodeLocked: true
-    }),
-    [actionTypes.unlockCode]: state => ({
-      ...state,
-      isBuildEnabled: true,
-      isCodeLocked: false
     }),
     [actionTypes.disableBuildOnError]: state => ({
       ...state,
