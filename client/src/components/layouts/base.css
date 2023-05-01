@@ -316,6 +316,13 @@ video {
 a {
   text-decoration-line: underline;
 }
+h2 {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
 *,
 ::backdrop,
 :after,
@@ -432,6 +439,9 @@ a {
 }
 .mt-2 {
   margin-top: 0.5rem;
+}
+.mt-\[5px\] {
+  margin-top: 5px;
 }
 .block {
   display: block;

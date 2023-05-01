@@ -1,5 +1,4 @@
 import React from 'react';
-import { ToggleButton } from '@freecodecamp/react-bootstrap';
 import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
@@ -42,17 +41,18 @@ export default function ToggleRadioSetting({
           {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
         </div>
         <div className='toggle-radio-group'>
-          <ToggleButton
-            id={firstRadioId}
-            type='radio'
-            {...(flag && { defaultChecked: true })}
-            {...(!flag && { onChange: toggleFlag })}
-            name={flagName}
-            value='1'
-          >
+          <label htmlFor={firstRadioId}>
+            <input
+              id={firstRadioId}
+              type='radio'
+              {...(!flag && { defaultChecked: true })}
+              {...(flag && { onChange: toggleFlag })}
+              name={flagName}
+              value='1'
+            />
             <span className='custom-circle'></span>
             <span>{restProps.onLabel}</span>
-          </ToggleButton>
+          </label>
           <label htmlFor={secondRadioId}>
             <input
               id={secondRadioId}
