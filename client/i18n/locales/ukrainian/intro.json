@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Адаптивний вебдизайн",
     "intro": [
       "В сертифікації «Адаптивний вебдизайн» ви вивчите мови, які розробники використовують для створення вебсторінок: HTML (мова розмітки гіпертексту) для вмісту та CSS (каскадні таблиці стилів) для дизайну.",
       "Спочатку ви створите застосунок із фотографіями котів, аби вивчити основи HTML та CSS. Пізніше ви опануєте сучасні методи, такі як змінні CSS, завдяки створенню пінгвіна, а також створите вікторину, щоб опанувати доступність.",
@@ -349,7 +349,7 @@
         "intro": ["", ""]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Вивчіть fetch та promises, побудувавши сторінку автора fCC",
         "intro": ["", ""]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
@@ -357,7 +357,7 @@
         "intro": ["", ""]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Вивчіть базове алгоритмічне мислення, побудувавши сортувальник чисел",
         "intro": ["", ""]
       }
     }
@@ -465,7 +465,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "Реляційна база даних",
     "intro": [
       "У цих курсах ви використовуватимете реальні інструменти розробника та програмне забезпечення, включно з VS Code, PostgreSQL та командним рядком Linux / Unix для завершення інтерактивних уроків і створення проєктів.",
       "Ці курси починаються з основних команд Bash. За допомогою терміналу ви навчитеся усього необхідного (від навігації та маніпуляції файловою системою, написання скрипту в Bash до просунутого використання).",
@@ -955,12 +955,12 @@
         "intro": ["Опис буде надано пізніше"]
       },
       "top-learn-css-foundations": {
-        "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Вивчіть основи CSS",
+        "intro": ["Опис буде надано пізніше"]
       },
       "top-learn-css-foundations-projects": {
-        "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "title": "Проєкти «Вивчіть основи CSS»",
+        "intro": ["Опис буде надано пізніше"]
       }
     }
   },
@@ -1013,8 +1013,8 @@
     "legacy-header": "Застарілі курси",
     "legacy-desc": "Ці курси більше не входять до сертифікацій, але вони все ще доступні для навчання.",
     "legacy-go-back": "Перейти до поточної версії навчальної програми.",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
+    "course-maintenance": "Ці курси знаходяться на технічному обслуговуванні. Якщо вони не працюють, див. як запустити їх локально на <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Ваш прогрес не буде збережений в обліковому записі freeCodeCamp при локальному запуску.",
     "go-back-to-learn": "Поверніться до стабільної версії навчальної програми.",
     "read-database-cert-article": "Будь ласка, прочитайте повідомлення на форумі, перш ніж продовжити.",
     "enable-cookies": "Ви повинні ввімкнути сторонні файли cookie перед початком роботи.",
