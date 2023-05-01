@@ -51,21 +51,21 @@ A `"first timers only"` label should be applied to a trivial issue (ie a typo fi
 
 > [!TIP] We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
-### Moderating Pull Requests
+### Модерація запитів на злиття
 
-Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
+Помічники вносять зміни до репозиторію freeCodeCamp завдяки запитам на злиття (PR). Нам потрібно перевірити запит на злиття на забезпечення якості (QA) перед тим, як злити чи закрити його.
 
 #### Types of Pull Requests
 
-1. **Challenge instruction edits**
+1. **Редагування інструкції завдань**
 
-   These are changes to the text of challenges - the description, instructions, or test text.
+   Ці зміни стосуються тексту завдань (опису, інструкції або тесту).
 
-   You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
+   Це можна зробити одразу на GitHub та вирішити, чи потрібно їх зливати. Нам потрібно подбати про мільйони людей, які працюють з цим текстом під час навчання на freeCodeCamp. Чи дійсно текст буде зрозумілішим, але не стане більшим? Чи доречні ці зміни? Пам’ятайте, що наша ціль — зробити завдання зрозумілими та короткими. Зайві деталі лише відволікають. Можна додати посилання на ресурс, який стосується теми завдання.
 
-   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
+   Ви можете закрити недійсний PR та відповісти на нього за допомогою [зразків відповідей](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the changes look good, please ensure to leave an approval with a "LGTM" (Looks Good To Me) comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   Якщо змінні позитивні, залиште коментар «LGTM» (Looks Good To Me). Як тільки запит отримає принаймні два схвалення від модераторів чи розробників (включно з вашим), ви можете злити його.
 
 2. **Challenge code edits**
 

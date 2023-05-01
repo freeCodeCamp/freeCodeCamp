@@ -1,6 +1,6 @@
-# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
+# Налаштування freeCodeCamp на Windows Subsystem for Linux (WSL)
 
-> [!NOTE] Before you follow these instructions make sure your system meets the requirements
+> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам
 > 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 > 
@@ -100,12 +100,12 @@ Once installed use these commands to install and use the Node.js version as need
 ```console
 nvm install --lts
 
-# OR
+# АБО
 # nvm install <version>
 
 nvm install 14
 
-# Usage
+# Використання
 # nvm use <version>
 
 nvm use 12

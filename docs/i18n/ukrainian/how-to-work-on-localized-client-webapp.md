@@ -1,20 +1,20 @@
-# How to Work on Localized Client Webapp
+# Як працювати над локалізованим клієнтським вебзастосунком
 
-The React-based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
+Клієнтський вебзастосунок на основі React, який забезпечує роботу нашої навчальної платформи, побудований за допомогою Gatsby. Він перекладений різними мовами світу, використовуючи [react-i18next](https://react.i18next.com/) та [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default, the application is available only in English.
+Ви можете дізнатись більше про локальне налаштування клієнтського застосунку, дотримуючись [цього посібника](how-to-setup-freecodecamp-locally.md). Застосунок доступний лише англійською за замовчуванням.
 
-Once you have set up the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
+Як тільки ви налаштували проєкт локально, дотримуйтесь цієї документації, щоб запустити клієнта потрібною мовою зі списку доступних мов.
 
-This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
+Це може бути корисно, якщо ви працюєте над функціональністю, яка конкретно націлена на щось, що передбачає локалізацію та вимагає, наприклад, підтвердження кнопки з надписом іншою мовою.
 
-> [!TIP] You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
+> [!TIP] Вам не потрібно дотримуватись цього документу для перекладу навчальної програми чи документації freeCodeCamp. Натомість див. [цей посібник](how-to-translate-files.md).
 
-Let's understand how the i18n frameworks and tooling work.
+З’ясуємо, як працюють фреймворки та інструменти i18n.
 
-## File Structure
+## Структура файлів
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory within that containing JSON files with the translations.
+Більшість файлів для перекладу платформи розташовані у папці [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Для кожної мови є каталог, що містить файли JSON з перекладами.
 
 ```console
   config
@@ -55,27 +55,27 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Деякі з цих файлів перекладаються на нашій перекладацькій платформі (Crowdin), а інші перекладені чи створені через PR на GitHub.
 
-**Files translated on our translation platform:**
+**Файли, перекладені на нашій перекладацькій платформі:**
 
-- The `translations.json` file contains the majority of the text that appears on the user interface elements. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the same keys in all languages.
+- Файл `translations.json` містить більшу частину тексту, який з’являється на елементах інтерфейсу користувача. Для отримання потрібного тексту встановленої мови у кодовій базі використовуються ключі. Цей файл повинен містити одинакові ключі в усіх мовах.
 
-- The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
+- Файл `intro.json` містить пари ключ-значення для вступного тексту на сторінках сертифікації.
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  Якщо ви хочете додати/оновити переклад для ключів, див. [цей посібник](how-to-translate-files.md).
 
-**Files NOT translated on our translations platform:**
+**Файли, НЕ перекладені на нашій перекладацькій платформі:**
 
-- The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
+- У файлах `motivation.json` не обов’язково повинні бути однакові цитати, вербальне оцінювання чи довжина масивів. Лише однакова структура JSON.
 
-- The `meta-tags.json` file contains the information for our website's meta tag information.
+- Файл `meta-tags.json` містить інформацію про наш вебсайт для метатегів.
 
-  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
+  Зазвичай ці файли змінює персонал. Якщо ви помітили щось незвичне, ми радимо зв’язатися з нами у [чаті](https://discord.gg/PRyKn3Vbay).
 
-## Testing the Client App in a World Language
+## Тестування клієнтського застосунку світовою мовою
 
-You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Ви можете протестувати клієнтський застосунок будь-якою мовою [ зі списку `availableLangs`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -95,138 +95,138 @@ export const availableLangs = {
 };
 ```
 
-If you are testing a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
+Якщо ви тестуєте нову мову, створіть папку під назвою мови поряд з іншими мовами та скопіюйте файли JSON з іншої мови до нової папки.
 
-Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
+Додайте нову мову до запису `Languages` та масиву `client` зверху файлу [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
-Next, follow the instructions in the comments in the same file to add/update the rest of the variables as needed.
+Потім дотримуйтесь інструкцій з коментарів того ж файлу, щоб при потребі додати/оновити решту змінних.
 
-Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Languages` enum in the above file.
+Вкінці налаштуйте змінну `CLIENT_LOCALE` у файлі `.env` на рядок потрібної локалі із запису `Languages` у файлі вище.
 
-## How to Structure Components
+## Як структурувати компоненти
 
-If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
+Дотримуйтесь нижчеподаних вказівок, якщо працюєте над функціональністю чи помилкою клієнтського вебзастосунку (наприклад, додаєте елементи інтерфейсу користувача на сторінці налаштувань). Вони допоможуть підготувати компоненти для локалізації усіма підтримуваними мовами світу.
 
-### Functional Component
+### Функціональний компонент
 
 ```js
 import { useTranslation } from 'react-i18next';
 
-// in the render method:
+// у методі render:
 const { t } = useTranslation();
 
-// call the "t" function with a key from the JSON file:
-<p>{t('key')}</p>; // more details below
+// виклик функції «t» з ключем із файлу JSON:
+<p>{t('key')}</p>; // детальніше нижче
 ```
 
-### Class Component
+### Класовий компонент
 
 ```js
 import { withTranslation } from 'react-i18next';
 
-// withTranslation adds the "t" function to props:
+// withTranslation додає функцію «t» до пропсів:
 const { t } = this.props;
 
-// call the "t" function with a key from the JSON file:
-<h1>{t('key')}</h1> // more details below
+// виклик функції «t» з ключем із файлу JSON:
+<h1>{t('key')}</h1> // детальніше нижче
 
-// export without redux:
+// експорт без redux:
 export default withTranslation()(Component);
 
-// or with redux:
+// або з redux:
 export default connect(...)(withTranslation()(Component));
 ```
 
-## Translate Using the "t" Function
+## Переклад із використанням функції «t»
 
-### Basic Translation
+### Звичайний переклад
 
 ```js
-// in the component:
+// у компоненті:
 <p>{t('p1')}</p>
 
-// in the JSON file:
+// у файлі JSON:
 {
   "p1": "My paragraph"
 }
 
-// output:
+// вивід:
 <p>My paragraph</p>
 ```
 
-### With Dynamic Data
+### З динамічними даними
 
 ```js
-// in the component:
+// у компоненті:
 const username = 'moT';
 
 <p>{t('welcome', { username: username })}</p>
 
-// in the JSON file:
+// у файлі JSON:
 {
   "welcome": "Welcome {{username}}"
 }
 
-// output:
+// вивід:
 <p>Welcome moT</p>
 ```
 
-The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
+Приклад вище передає об’єкт до функції `t` зі змінною `username`. Змінна буде використана у значенні JSON, де є `{{username}}`.
 
-## Translate with the `Trans` Component
+## Переклад із компонентом `Trans`
 
-The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
+Загальне правило: використовуйте функцію «t», коли можете. Якщо того недостатньо, існує компонент `Trans` (зазвичай потрібен тоді, коли у тексті наявні вбудовані елементи). Ви можете використовувати компонент `Trans` з будь-яким типом компонента react.
 
-### Basic Elements Nested
+### Звичайні вкладені елементи
 
 ```js
-// in the component:
+// у компоненті:
 import { Trans } from 'react-i18next'
 
 <p>
   <Trans>fcc.greeting</Trans>
 </p>
 
-// in the JSON file:
+// у файлі JSON:
 {
   "fcc": {
     "greeting": "Welcome to <strong>freeCodeCamp</strong>"
   }
 }
 
-// output:
+// вивід:
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-You can place the key inside the component tags like in the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` are the default, but that list can be expanded in the i18n config.
+Ви можете розміщувати ключі всередині тегів компоненту, як у прикладі вище, якщо текст містить «прості» теги без атрибутів. До тегів за замовчуванням належать `br`, `strong`, `i` та `p`, але цей список може бути більшим у конфігурації і18n.
 
-### Complex Elements Nested
+### Складні вкладені елементи
 
-Other times, you will want to have certain text inside another element, an anchor tag is a good example:
+В інших випадках ви захочете розмістити певний текст всередині іншого елемента. Тег посилання є хорошим прикладом:
 
 ```js
-// in the component:
+// у компоненті:
 <p>
   <Trans i18nKey='check-forum'>
     <a href='https://forum.freecodecamp.org/'>placeholder</a>
   </Trans>
 </p>
 
-// in the JSON file:
+// у файлі JSON:
 {
   "check-forum": "Check out <0>our forum</0>."
 }
 
-// output:
+// вивід:
 <p>Check out <a href='https://forum.freecodecamp.org/'>our forum</a></p>
 ```
 
-In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter complains about empty `<a>` elements.
+У прикладі вище ключ розміщений в атрибутах компонента `Trans`. `<0>` та `</0>` у JSON представляють перший дочірній елемент компонента (у цьому разі елемент посилання). Якщо існує більше дочірніх елементів, то вони просто перераховуються, використовуючи такий самий синтаксис. Ви можете знайти дочірні елементи компонента в інструментах розробки react. `placeholder` наявний лише через те, що лінтер жалівся щодо порожніх елементів `<a>`.
 
-### With a Variable
+### Зі змінною
 
 ```js
-// in the component:
+// у компоненті:
 const email = 'team@freecodecamp.org';
 
 <p>
@@ -237,36 +237,36 @@ const email = 'team@freecodecamp.org';
   </Trans>
 </p>
 
-// in the JSON file:
+// у файлі JSON:
 {
   "fcc": {
     "email": "Send us an email at: <0>{{email}}</0>"
   }
 }
 
-// output:
+// вивід:
 <p>Send us an email at: <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a><p>
 ```
 
-In the above example, the key and a variable are set in the attributes of the `Trans` component. `{{ email }}` needs to be somewhere in the `Trans` component as well, it doesn't matter where.
+У прикладі вище ключ та змінна розміщені в атрибутах компонента `Trans`. `{{ email }}` також повинен знаходитись у компоненті `Trans`, незалежно де саме.
 
-## Changing Text
+## Зміна тексту
 
-To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
+Щоб змінити текст клієнтської частини, перейдіть до відповідного файлу `.json`, знайдіть ключ, який використовується у компоненті React, та змініть його значення на новий текст. Шукайте цей ключ у кодовій базі, щоб переконатися, що він не використовується в іншому місці. Якщо використовується, переконайтесь, чи є сенс застосовувати зміни.
 
-## Adding Text
+## Додавання тексту
 
-If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
+Якщо текст, який ви хочете додати до клієнта, існує у відповідному файлі `.json`, використовуйте наявний ключ. В іншому випадку створіть новий ключ.
 
-The English file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
+Файл англійською мовою є «джерелом правди» для всіх файлів `.json` з однаковою назвою. Якщо вам потрібно додати новий ключ, додайте його там. Потім додайте цей ключ до **усіх** файлів `translations.json`.
 
-> [!NOTE] Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
+> [!NOTE] Використовуйте англомовний текст для усіх мов, якщо файл перекладається на Crowdin. Якщо ви цього не зробите, тести не пройдуть.
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
+Також було б добре тримати усі ключі в одному порядку для усіх файлів. Спробуйте розставити всю пунктуацію, інтервали, лапки тощо у файлах JSON, а не у файлах компонента чи сервера.
 
-> [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+> [!NOTE] Підкреслення (`_`) є зарезервованим знаком для ключів у файлах клієнтської частини. Див. [документацію](https://www.i18next.com/translation-function/plurals) про те, як вони використовуються.
 
-## Helpful Documentation
+## Корисна документація
 
-- [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
-- [i18next docs](https://www.i18next.com/translation-function/essentials)
+- [Документація react-i18next](https://react.i18next.com/latest/usetranslation-hook)
+- [Документація i18next](https://www.i18next.com/translation-function/essentials)
