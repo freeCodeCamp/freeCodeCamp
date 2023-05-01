@@ -1,14 +1,14 @@
 ---
 id: 63ee351d0d8d4841c3a7091a
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question A
+title: Questão A sobre a Introdução ao CSS
 challengeType: 15
 dashedName: css-foundations-question-a
 ---
 
 # --description--
 
-A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element:
+Um seletor de tipo (ou seletor de elemento) selecionará todos os elementos do tipo de elemento dado. A sintaxe é apenas o nome do elemento:
 
 ```html
 <!-- index.html -->
@@ -27,25 +27,25 @@ div {
 }
 ```
 
-Here, all three `<div>` elements would be selected, while the `<p>` element wouldn’t be.
+Aqui, todos os três elementos `<div>` seriam selecionados, enquanto o elemento `<p>` não seria.
 
 # --question--
 
 ## --text--
 
-Which of the following best describes the CSS code given above?
+Qual das seguintes opções melhor descreve o código CSS fornecido acima?
 
 ## --answers--
 
-The code applies a `white` color to all elements in the HTML file.
+O código aplica uma cor `white` a todos os elementos do arquivo HTML.
 
 ---
 
-The code applies a `white` color to all `div` elements in the HTML file.
+O código aplica uma cor `white` a todos os elementos `div` do arquivo HTML.
 
 ---
 
-The code applies a `white` color to all `p` elements in the HTML file.
+O código aplica uma cor `white` a todos os elementos `p` do arquivo HTML.
 
 
 ## --video-solution--

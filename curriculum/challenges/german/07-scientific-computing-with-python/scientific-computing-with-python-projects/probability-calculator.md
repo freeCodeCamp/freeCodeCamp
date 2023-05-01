@@ -38,7 +38,7 @@ Erstelle nun eine `experiment`-Funktion in `prob_calculator.py` (nicht innerhalb
 - `hat`: Ein Hut-Objekt, das Bälle enthält, das innerhalb der Funktion kopiert werden soll.
 - `expected_balls`: Ein Objekt, das die genaue Gruppe von Bällen angibt, die für das Experiment aus dem Hut gezogen werden sollen. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
 - `num_balls_drawn`: Die Anzahl der Bälle, die in jedem Experiment aus dem Hut gezogen werden sollen.
-- `num_experiments`: Die Anzahl der durchzuführenden Experimente. (The more experiments performed, the more accurate the approximate probability will be.)
+- `num_experiments`: Die Anzahl der durchzuführenden Experimente. (Je mehr Experimente durchgeführt werden, desto genauer wird die ungefähre Wahrscheinlichkeit sein.)
 
 Die `experiment`-Funktion sollte eine Wahrscheinlichkeit zurückgeben.
 

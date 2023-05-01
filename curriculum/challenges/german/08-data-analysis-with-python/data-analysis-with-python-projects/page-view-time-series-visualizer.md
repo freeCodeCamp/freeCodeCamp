@@ -10,8 +10,8 @@ dashedName: page-view-time-series-visualizer
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode</a> an diesem Projekt arbeiten.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Als nächstes wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 

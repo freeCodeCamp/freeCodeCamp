@@ -1,6 +1,6 @@
 ---
 id: 5895f70ef9fc0f352b528e6b
-title: How to Put a Profile Together
+title: Wie man ein Profil zusammenstellt
 challengeType: 2
 forumTopicId: 301554
 dashedName: how-to-put-a-profile-together
@@ -8,7 +8,7 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
+Da du nun sicherstellen kannst, dass der Nutzer, der auf `/profile` zugreift, authentifiziert ist, kannst du die in `req.user` enthaltenen Informationen auf deiner Seite verwenden.
 
 Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
 

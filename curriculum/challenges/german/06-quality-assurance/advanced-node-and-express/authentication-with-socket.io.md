@@ -18,7 +18,7 @@ const URI = process.env.MONGO_URI;
 const store = new MongoStore({ url: URI });
 ```
 
-Jetzt müssen wir Socket.IO nur noch mitteilen, diesen zu verwenden und Optionen festlegen. Be sure this is added before the existing socket code and not in the existing connection listener. Für deinen Server sollte das so aussehen:
+Jetzt müssen wir Socket.IO nur noch mitteilen, diesen zu verwenden und Optionen festlegen. Stelle sicher, dass dies vor dem bestehenden Socket-Code hinzugefügt wird und nicht in den bestehenden Verbindungs-Listener. Für deinen Server sollte das so aussehen:
 
 ```js
 io.use(
@@ -35,7 +35,7 @@ io.use(
 
 Die Konfiguration einer Passport-Authentifizierung für Socket.IO ähnelt der Art, wie wir die `session`-Middleware für die API konfiguriert haben, übrigens sehr. This is because they are meant to use the same authentication method — get the session id from a cookie and validate it.
 
-Zuvor haben wir bei der Konfiguration der `session`-Middleware den Cookie-Namen für die Sitzung (`key`) nicht explizit festgelegt. This is because the `session` package was using the default value. Nun, da wir ein weiteres Paket hinzugefügt haben, welches Zugriff auf denselben Wert der Cookies benötigt, müssen wir explizit den `key`-Wert in beiden Konfigurationsobjekten setzen.
+Zuvor haben wir bei der Konfiguration der `session`-Middleware den Cookie-Namen für die Sitzung (`key`) nicht explizit festgelegt. Schlicht, weil das `session`-Paket den Standardwert nutzte. Nun, da wir ein weiteres Paket hinzugefügt haben, welches Zugriff auf denselben Wert der Cookies benötigt, müssen wir explizit den `key`-Wert in beiden Konfigurationsobjekten setzen.
 
 Achte darauf, den `key` mit dem Cookie-Namen zur `session`-Middleware hinzuzufügen, die zum Socket.IO-Schlüssel passt. Also, add the `store` reference to the options, near where we set `saveUninitialized: true`. Das ist notwendig, um Socket.IO mitzuteilen, auf welche Sitzung es sich zu beziehen hat.
 
