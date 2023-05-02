@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: 'Problema 96: Sudoku'
 challengeType: 1
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Sudoku (do japonês, *lugar do número*) é o nome dado a um conceito de desafio popular. A sua origem não é clara, mas o mérito deve ser atribuído a Leonhard Euler, que inventou uma ideia de quebra-cabeça semelhante e muito mais difícil, chamada de Quadrados Latinos. No entanto, o objetivo dos quebra-cabeças de sudoku é substituir as lacunas (ou zeros) em um tabuleiro de 9 por 9, de tal forma que cada linha, coluna e caixa de 3 por 3 contenha cada um dos algarismos de 1 a 9. Below is an example of a typical starting puzzle grid and its solution grid.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
