@@ -61,13 +61,7 @@ const demoUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
-  completedChallenges: [
-    {
-      challengeType: null,
-      completedDate: Date.now(),
-      id: '100'
-    }
-  ],
+  completedChallenges: [],
   portfolio: [],
   yearsTopContributor: envVariables.includes('--top-contributor')
     ? ['2017', '2018', '2019']

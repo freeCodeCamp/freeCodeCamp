@@ -19,7 +19,7 @@ type FileData {
   // Nonesense
   dataSource Json?    @map("__dataSource") // Null only | Undefined
   persisted  Boolean? @map("__persisted") // Undefined
-  strict     Boolean  @map("__strict") // Undefined
+  strict     Boolean?  @map("__strict") // Undefined
 }
 
 type File {
@@ -50,7 +50,7 @@ type CompletedChallengeData {
 }
 
 type CompletedChallenge {
-  challengeType      String? // Null | Undefined
+  challengeType      Int? // Null | Undefined
   completedDate      Float
   files              File[]
   githubLink         String? // Undefined
@@ -60,7 +60,7 @@ type CompletedChallenge {
 
   // Nonsense
   cachedRelations Json?                   @map("__cachedRelations")
-  data            CompletedChallengeData?
+  data            CompletedChallengeData? @map("__data") // Undefined
   dataSource      Json?                   @map("__dataSource") // Null only
   persisted       Boolean?                @map("__persisted") // Undefined
   strict          Boolean?                @map("__strict") // Undefined
@@ -135,12 +135,12 @@ model user {
   badges                       Json? // Undefined | { coreTeam [][] }
   completedChallenges          CompletedChallenge[]
   currentChallengeId           String?
-  donationEmails               String[]             @default([]) // Undefined | String[]
+  donationEmails               String[]             @default([]) // Undefined | String[] (only possible for built in Types like String)
   email                        String
   emailAuthLinkTTL             DateTime? // Null | Undefined
   emailVerified                Boolean
   emailVerifyTTL               DateTime? // Null | Undefined
-  externalId                   String?
+  externalId                   String
   github                       String? // Only Null | Undefined
   githubProfile                String? // Undefined
   isApisMicroservicesCert      Boolean? // Undefined
@@ -161,8 +161,8 @@ model user {
   isLinkedIn                   Boolean? // Undefined
   isMachineLearningPyCertV7    Boolean? // Undefined
   isQaCertV7                   Boolean? // Undefined
-  isRelationalDatabaseCertV7   Boolean? // Undefined
-  isRespWebDesignCert          Boolean?
+  isRelationalDatabaseCertV8   Boolean? // Undefined
+  isRespWebDesignCert          Boolean? // Undefined
   isSciCompPyCertV7            Boolean? // Undefined
   isTwitter                    Boolean? // Undefined
   isWebsite                    Boolean? // Undefined
@@ -187,13 +187,12 @@ model user {
   theme                        String? // Undefined
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
-  unsubscribeId                String?
+  unsubscribeId                String
   username                     String
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
   website                      String? // Undefined
   yearsTopContributor          String[]             @default([]) // Undefined | String[] 
-  a                            String?
 }
 
 // -----------------------------------
