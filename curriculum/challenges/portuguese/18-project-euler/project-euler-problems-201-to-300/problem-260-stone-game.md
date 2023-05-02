@@ -14,27 +14,27 @@ No turno de cada jogador, ele remove uma ou mais pedras das pilhas. No entanto, 
 
 Em outras palavras, o jogador escolhe algumas $N > 0$ e as remove:
 
-- $N$ stones from any single pile; or
-- $N$ stones from each of any two piles ($2N$ total); or
-- $N$ stones from each of the three piles ($3N$ total).
+- $N$ pedras de qualquer pilha; ou
+- $N$ pedras de duas pilhas (total de $2N$); ou
+- $N$ pedras de três pilhas (total de $3N$).
 
-The player taking the last stone(s) wins the game.
+O jogador que ficar com a(s) última(s) pedra(s) ganha o jogo.
 
-A winning configuration is one where the first player can force a win.
+Uma configuração vencedora é aquela onde o primeiro jogador pode forçar uma vitória.
 
-For example, (0,0,13), (0,11,11) and (5,5,5) are winning configurations because the first player can immediately remove all stones.
+Por exemplo, (0,0,13), (0,11,11) e (5,5,5) são configurações vencedoras porque o primeiro jogador pode remover imediatamente todas as pedras.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does.
+Uma configuração perdedora é aquela onde o segundo jogador pode forçar uma vitória, não importa o que o primeiro jogador faça.
 
-For example, (0,1,2) and (1,3,3) are losing configurations: any legal move leaves a winning configuration for the second player.
+Por exemplo, (0,1,2) e (1,3,3) são configurações perdedoras: qualquer movimento legal deixa uma configuração vencedora para o segundo jogador.
 
-Consider all losing configurations ($x_i$,$y_i$,$z_i$) where $x_i ≤ y_i ≤ z_i ≤ 100$. We can verify that $\sum (x_i + y_i + z_i) = 173\\,895$ for these.
+Considere todas as configurações perdedoras ($x_i$,$y_i$,$z_i$) onde $x_i ≤ y_i ≤ z_i ≤ 100$. Podemos verificar que $\sum (x_i + y_i + z_i) = 173.895$ para elas.
 
-Find $\sum (x_i + y_i + z_i)$ where ($x_i$,$y_i$,$z_i$) ranges over the losing configurations with $x_i ≤ y_i ≤ z_i ≤ 1000$.
+Encontre $\sum (x_i + y_i + z_i)$ onde ($x_i$,$y_i$,$z_i$) passa pelas configurações perdedoras com $x_i ≤ y_i ≤ z_i ≤ 1000$.
 
 # --hints--
 
-`stoneGame()` should return `167542057`.
+`stoneGame()` deve retornar `167542057`.
 
 ```js
 assert.strictEqual(stoneGame(), 167542057);
