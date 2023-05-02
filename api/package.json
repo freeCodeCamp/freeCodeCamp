@@ -53,6 +53,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
+    "dev": "pnpm develop",
     "develop": "nodemon src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
