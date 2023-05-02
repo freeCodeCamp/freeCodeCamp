@@ -34,7 +34,7 @@ describe('Landing page', () => {
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
     cy.contains(landingPageElements.callToAction, "Get started (it's free)");
-    cy.get(landingPageElements.callToAction).should('have.length', 3);
+    cy.get(landingPageElements.callToAction).should('have.length', 4);
   });
 
   it('Has visible header and sub-header', () => {
