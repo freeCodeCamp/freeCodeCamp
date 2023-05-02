@@ -5,6 +5,7 @@ import emmaImg from '../../../assets/images/landing/Emma.png';
 import sarahImg from '../../../assets/images/landing/Sarah.png';
 import shawnImg from '../../../assets/images/landing/Shawn.png';
 import { LazyImage } from '../../helpers';
+import BigCallToAction from './big-call-to-action';
 
 const Testimonials = (): JSX.Element => {
   const { t } = useTranslation();
@@ -96,6 +97,7 @@ const Testimonials = (): JSX.Element => {
           </div>
         </div>
       </div>
+      <BigCallToAction />
     </div>
   );
 };
