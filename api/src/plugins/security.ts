@@ -10,7 +10,6 @@ const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
     void reply
       .header('Cache-Control', 'no-store')
       .header('Content-Security-Policy', "frame-ancestors 'none'")
-      .header('Content-Type', 'application/json; charset=utf-8')
       .header('X-Content-Type-Options', 'nosniff')
       .header('X-Frame-Options', 'DENY');
     // TODO: Increase this gradually to 2 years. Include preload once it is
