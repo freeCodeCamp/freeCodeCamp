@@ -11,6 +11,9 @@
   h2 {
     @apply font-bold text-[1.25rem] leading-7 my-2.5;
   }
+  button {
+    @apply bg-background-quaternary;
+  }
 }
 
 @tailwind components;
