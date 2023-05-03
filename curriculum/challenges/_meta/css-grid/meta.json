@@ -2,6 +2,7 @@
   "name": "CSS Grid",
   "isUpcomingChange": false,
   "dashedName": "css-grid",
+  "helpCategory": "HTML-CSS",
   "order": 6,
   "time": "5 hours",
   "template": "",
@@ -96,4 +97,5 @@
       "5a94fe8569fb03452672e464",
       "Create Grids within Grids"
     ]
-  ]}
+  ]
+}

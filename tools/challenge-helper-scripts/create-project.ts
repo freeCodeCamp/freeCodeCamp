@@ -10,7 +10,12 @@ import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
-const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
+const helpCategories = [
+  'HTML-CSS',
+  'JavaScript',
+  'Backend Development',
+  'Python'
+] as const;
 
 type BlockInfo = {
   title: string;
@@ -42,10 +47,16 @@ async function createProject(
     title = block;
   }
   void updateIntroJson(superBlock, block, title);
-  void updateHelpCategoryMap(block, helpCategory);
 
   const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(superBlock, block, title, order, challengeId);
+  void createMetaJson(
+    superBlock,
+    block,
+    title,
+    helpCategory,
+    order,
+    challengeId
+  );
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
@@ -71,24 +82,11 @@ async function updateIntroJson(
   );
 }
 
-async function updateHelpCategoryMap(block: string, helpCategory: string) {
-  const helpCategoryPath = path.resolve(
-    __dirname,
-    '../../client/utils/help-category-map.json'
-  );
-  const helpMap = await parseJson<Record<string, string>>(helpCategoryPath);
-  helpMap[block] = helpCategory;
-  void withTrace(
-    fs.writeFile,
-    helpCategoryPath,
-    format(JSON.stringify(helpMap), { parser: 'json' })
-  );
-}
-
 async function createMetaJson(
   superBlock: SuperBlocks,
   block: string,
   title: string,
+  helpCategory: string,
   order: number,
   challengeId: ObjectID
 ) {
@@ -96,6 +94,7 @@ async function createMetaJson(
   const newMeta = await parseJson<Meta>('./base-meta.json');
   newMeta.name = title;
   newMeta.dashedName = block;
+  newMeta.helpCategory = helpCategory;
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;

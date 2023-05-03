@@ -2,6 +2,7 @@
   "name": "Rosetta Code",
   "isUpcomingChange": false,
   "dashedName": "rosetta-code",
+  "helpCategory": "JavaScript",
   "order": 3,
   "time": "",
   "template": "",
@@ -648,4 +649,5 @@
       "594810f028c0303b75339ad8",
       "Zig-zag matrix"
     ]
-  ]}
+  ]
+}

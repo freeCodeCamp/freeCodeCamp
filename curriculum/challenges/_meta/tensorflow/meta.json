@@ -2,6 +2,7 @@
   "name": "TensorFlow",
   "isUpcomingChange": false,
   "dashedName": "tensorflow",
+  "helpCategory": "Python",
   "order": 0,
   "time": "15 hours",
   "superBlock": "machine-learning-with-python",
@@ -134,4 +135,5 @@
       "5e8f2f13c4cdbe86b5c72da6",
       "Conclusion"
     ]
-  ]}
+  ]
+}

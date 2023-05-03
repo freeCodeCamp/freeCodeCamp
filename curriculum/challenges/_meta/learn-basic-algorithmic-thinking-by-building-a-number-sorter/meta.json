@@ -4,6 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-basic-algorithmic-thinking-by-building-a-number-sorter",
+  "helpCategory": "JavaScript",
   "order": 9,
   "time": "5 hours",
   "template": "",

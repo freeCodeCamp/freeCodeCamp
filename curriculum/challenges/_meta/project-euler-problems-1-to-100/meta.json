@@ -1,6 +1,7 @@
 {
     "name": "project euler problems 1 to 100",
     "isUpcomingChange": false,
+    "helpCategory": "JavaScript",
     "order": 0,
     "time": "",
     "template": "",

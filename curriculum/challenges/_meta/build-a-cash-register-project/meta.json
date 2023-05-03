@@ -1,15 +1,17 @@
 {
-    "name": "Build a Cash Register Project",
-    "isUpcomingChange": true,
-    "usesMultifileEditor": false,
-    "order": 14,
-    "time": "30 hours",
-    "template": "",
-    "required": [],
-    "superBlock": "2022/javascript-algorithms-and-data-structures",
-    "challengeOrder": [
-        [
-            "aa2e6f85cab2ab736c9a9b24",
-            "Build a Cash Register"
-          ]
-    ]}
+  "name": "Build a Cash Register Project",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "helpCategory": "JavaScript",
+  "order": 14,
+  "time": "30 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    [
+      "aa2e6f85cab2ab736c9a9b24",
+      "Build a Cash Register"
+    ]
+  ]
+}

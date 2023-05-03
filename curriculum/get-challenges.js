@@ -4,7 +4,6 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
   require('../config/i18n').availableLangs;
@@ -173,12 +172,16 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
   } else {
     const blockMeta = JSON.parse(fs.readFileSync(metaPath));
 
-    const { isUpcomingChange } = blockMeta;
+    const { isUpcomingChange, helpCategory } = blockMeta;
 
     if (typeof isUpcomingChange !== 'boolean') {
       throw Error(
         `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
       );
+    }
+
+    if (!helpCategory) {
+      throw Error(`meta file at ${metaPath} is missing 'helpCategory'`);
     }
 
     if (!isUpcomingChange || showUpcomingChanges) {
@@ -323,8 +326,7 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
     challenge.time = meta.time;
-    challenge.helpCategory =
-      challenge.helpCategory || helpCategoryMap[challenge.block];
+    challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
       lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
