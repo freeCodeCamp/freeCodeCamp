@@ -1,6 +1,7 @@
 import request from 'supertest';
 
 import { build } from './src/app';
+import { getCsrfToken } from './src/utils/cookies';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -66,6 +67,31 @@ export function superRequest(
 
   const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';
   if (sendCSRFToken) {
+    void req.set('CSRF-Token', csrfToken);
+  }
+  return req;
+}
+
+type Options = {
+  sendCSRFToken: boolean;
+};
+
+// TODO: DRY out the superXs into a single superRequest function
+export function superPut(
+  endpoint: string,
+  cookies: string[],
+  opts?: Options
+): request.Test {
+  const { sendCSRFToken = true } = opts ?? {};
+
+  const req = request(fastifyTestInstance?.server)
+    .put(endpoint)
+    .set('Origin', 'https://www.freecodecamp.org')
+    .set('Cookie', cookies);
+
+  const csrfToken = getCsrfToken(cookies);
+
+  if (sendCSRFToken && csrfToken) {
     void req.set('CSRF-Token', csrfToken);
   }
   return req;

@@ -1,6 +1,7 @@
 import {
   FastifyInstance,
   FastifyPluginCallback,
+  FastifyReply,
   FastifyRequest
 } from 'fastify';
 
@@ -103,12 +104,20 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
   );
 };
 
+const setCSRFCookie = (res: FastifyReply) => {
+  const token = res.generateCsrf();
+  void res.setCookie('csrf_token', token, {
+    path: '/'
+  });
+};
+
 export const devLoginCallback: FastifyPluginCallback = (
   fastify,
   _options,
   done
 ) => {
-  fastify.get('/dev-callback', async (req, _res) => {
+  fastify.get('/dev-callback', async (req, res) => {
+    setCSRFCookie(res);
     const email = 'foo@bar.com';
 
     const { id } = await findOrCreateUser(fastify, email);
@@ -122,7 +131,8 @@ export const devLoginCallback: FastifyPluginCallback = (
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
-  fastify.get('/callback', async (req, _res) => {
+  fastify.get('/callback', async (req, res) => {
+    setCSRFCookie(res);
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

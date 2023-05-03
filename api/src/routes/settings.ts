@@ -9,6 +9,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.addHook('onRequest', fastify.authenticateSession);
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
 
   fastify.put(
     '/update-my-profileui',

@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { build } from '../app';
+import { setupServer, superPut } from '../../jest.utils';
 
 const baseProfileUI = {
   isLocked: false,
@@ -26,37 +26,46 @@ const profileUI = {
 };
 
 describe('settingRoutes', () => {
-  let fastify: undefined | Awaited<ReturnType<typeof build>>;
-
-  beforeAll(async () => {
-    fastify = await build();
-    await fastify.ready();
-  }, 20000);
-
-  afterAll(async () => {
-    await fastify?.close();
-  });
+  setupServer();
 
   describe('Authenticated user', () => {
     let cookies: string[];
 
     beforeAll(async () => {
-      await fastify?.prisma.user.updateMany({
+      await fastifyTestInstance?.prisma.user.updateMany({
         where: { email: 'foo@bar.com' },
         data: { profileUI: baseProfileUI }
       });
-      const res = await request(fastify?.server).get('/auth/dev-callback');
+      const res = await request(fastifyTestInstance?.server).get(
+        '/auth/dev-callback'
+      );
       cookies = res.get('Set-Cookie');
     });
 
-    describe('/update-my-profileui', () => {
-      test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
+    describe('CSRF protection', () => {
+      it('should return 403 if no CSRF token is provided', async () => {
+        const response = await request(fastifyTestInstance?.server)
           .put('/update-my-profileui')
           .set('Cookie', cookies)
           .send({ profileUI });
 
-        const user = await fastify?.prisma.user.findFirst({
+        expect(response?.statusCode).toEqual(403);
+        expect(response?.body).toEqual({
+          code: 'FST_CSRF_INVALID_TOKEN',
+          error: 'Forbidden',
+          message: 'Invalid csrf token',
+          statusCode: 403
+        });
+      });
+    });
+
+    describe('/update-my-profileui', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superPut('/update-my-profileui', cookies).send({
+          profileUI
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
@@ -69,17 +78,14 @@ describe('settingRoutes', () => {
       });
 
       test('PUT ignores invalid keys', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-profileui')
-          .set('Cookie', cookies)
-          .send({
-            profileUI: {
-              ...profileUI,
-              invalidKey: 'invalidValue'
-            }
-          });
+        const response = await superPut('/update-my-profileui', cookies).send({
+          profileUI: {
+            ...profileUI,
+            invalidKey: 'invalidValue'
+          }
+        });
 
-        const user = await fastify?.prisma.user.findFirst({
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
@@ -88,18 +94,15 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with missing keys', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-profileui')
-          .set('Cookie', cookies)
-          .send({
-            profileUI: {
-              isLocked: true,
-              showName: true,
-              showPoints: false,
-              showPortfolio: true,
-              showTimeLine: false
-            }
-          });
+        const response = await superPut('/update-my-profileui', cookies).send({
+          profileUI: {
+            isLocked: true,
+            showName: true,
+            showPoints: false,
+            showPortfolio: true,
+            showTimeLine: false
+          }
+        });
 
         expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
@@ -113,10 +116,9 @@ describe('settingRoutes', () => {
 
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-theme')
-          .set('Cookie', cookies)
-          .send({ theme: 'night' });
+        const response = await superPut('/update-my-theme', cookies).send({
+          theme: 'night'
+        });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -127,10 +129,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-theme')
-          .set('Cookie', cookies)
-          .send({ theme: 'invalid' });
+        const response = await superPut('/update-my-theme', cookies).send({
+          theme: 'invalid'
+        });
 
         expect(response?.statusCode).toEqual(400);
       });
@@ -245,7 +246,7 @@ describe('settingRoutes', () => {
 
   describe('Unauthenticated User', () => {
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastify?.server).put(
+      const response = await request(fastifyTestInstance?.server).put(
         '/update-my-profileui'
       );
 
@@ -253,7 +254,9 @@ describe('settingRoutes', () => {
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastify?.server).put('/update-my-theme');
+      const response = await request(fastifyTestInstance?.server).put(
+        '/update-my-theme'
+      );
 
       expect(response?.statusCode).toEqual(401);
     });
