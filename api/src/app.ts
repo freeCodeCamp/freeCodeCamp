@@ -14,8 +14,9 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
-import fastifySentry from './plugins/fastify-sentry';
+import fastifyCsrfProtection from '@fastify/csrf-protection';
 
+import fastifySentry from './plugins/fastify-sentry';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
@@ -65,6 +66,14 @@ export const build = async (
 
   await fastify.register(cors);
   await fastify.register(fastifyCookie);
+  // TODO: consider signing cookies. We don't on the api-server, but we could as
+  // an extra layer of security.
+  void fastify.register(fastifyCsrfProtection, {
+    // Ignore all other possible sources of CSRF tokens since we know we can
+    // provide this one
+    getToken: req => req.headers['csrf-token'] as string
+  });
+
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
   await fastify.register(fastifySession, {
