@@ -26,9 +26,9 @@ describe('<DropDownButton>', () => {
   });
   it('should render button with direction to up', () => {
     render(
-      <Dropdown>
-        <Dropdown.Toggle dropup={true}>Some Button</Dropdown.Toggle>
-        <Dropdown.Menu dropup={true}>
+      <Dropdown dropup={true}>
+        <Dropdown.Toggle>Some Button</Dropdown.Toggle>
+        <Dropdown.Menu>
           <MenuItem onClick={() => alert('hi')}>Option 1</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option 2</MenuItem>
           <MenuItem href={'https://www.google.com'}>Option 3</MenuItem>
