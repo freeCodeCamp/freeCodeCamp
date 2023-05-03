@@ -20,12 +20,12 @@ More resources:
 
 ## --text--
 
-What is the value of i in the following code?
-
 ```python
 word = "bananana"
 i = word.find("na")
 ```
+
+What is the value of i in the preceding code?
 
 ## --answers--
 

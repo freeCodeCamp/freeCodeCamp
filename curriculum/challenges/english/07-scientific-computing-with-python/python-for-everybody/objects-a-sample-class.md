@@ -14,8 +14,6 @@ dashedName: objects-a-sample-class
 
 ## --text--
 
-What will the following program print?:
-
 ```python
 class PartyAnimal:
     x = 0
@@ -27,6 +25,8 @@ an = PartyAnimal()
 an.party()
 an.party()
 ```
+
+What will the preceding program print?
 
 ## --answers--
 

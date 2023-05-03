@@ -29,8 +29,9 @@
   display: none;
 }
 
-.video-quiz-options {
+legend.sr-only + div > .video-quiz-options {
   background-color: var(--primary-background);
+  margin-top: 1rem;
 }
 
 /* remove bootstrap margin and center the radio buttons */
@@ -113,4 +114,9 @@
   margin: 0;
   /* remove default prism background */
   background: none;
+}
+
+.video-question legend {
+  font-size: 1rem;
+  margin-top: 1rem;
 }

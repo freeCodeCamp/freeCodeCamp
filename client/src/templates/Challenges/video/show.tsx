@@ -197,6 +197,27 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       isChallengeCompleted
     } = this.props;
 
+    const parser = new DOMParser();
+    const parsedHTML = parser.parseFromString(text, 'text/html');
+    const lastP = parsedHTML.querySelector('p:last-of-type');
+    let legend;
+    let challengeText;
+
+    if (lastP) {
+      legend = lastP.innerHTML;
+      lastP.remove();
+      challengeText = parsedHTML.querySelector('body')?.innerHTML || '';
+    } else {
+      challengeText = text;
+      legend = '';
+    }
+
+    let hiddenLegend = false;
+    if (/\[hidden\]/.test(legend)) {
+      hiddenLegend = true;
+      legend = legend.replace(/\[hidden\]/, '');
+    }
+
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
@@ -243,10 +264,15 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <h2>Exercise</h2>
-                <fieldset>
-                  <legend>
-                    <PrismFormatted className={'line-numbers'} text={text} />
-                  </legend>
+                <PrismFormatted
+                  className={'line-numbers'}
+                  text={challengeText}
+                />
+                <fieldset className='video-question'>
+                  <legend
+                    dangerouslySetInnerHTML={{ __html: legend }}
+                    {...(hiddenLegend && { className: 'sr-only' })}
+                  />
                   <ObserveKeys>
                     <div className='video-quiz-options'>
                       {answers.map((option, index) => (
@@ -280,12 +306,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   style={{
                     textAlign: 'center'
                   }}
+                  aria-live='polite'
                 >
-                  {this.state.showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
-                  ) : (
-                    <span>{t('learn.check-answer')}</span>
-                  )}
+                  {this.state.showWrong && `${t('learn.wrong-answer')}`}
                 </div>
                 <Spacer size='medium' />
                 <Button

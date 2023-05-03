@@ -22,13 +22,14 @@ More resources:
 
 ## --text--
 
-What will print out after running this code:
 
 ```python
 width = 15
 height = 12.0
 print(height/3)
 ```
+
+What will print out after running the preceding code?
 
 ## --answers--
 

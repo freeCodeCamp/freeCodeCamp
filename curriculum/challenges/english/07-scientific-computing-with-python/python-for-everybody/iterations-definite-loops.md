@@ -14,12 +14,13 @@ dashedName: iterations-definite-loops
 
 ## --text--
 
-How many lines will the following code print?:
 
 ```python
 for i in [2,1,5]:
     print(i)
 ```
+
+How many lines will the preceding code print?
 
 ## --answers--
 

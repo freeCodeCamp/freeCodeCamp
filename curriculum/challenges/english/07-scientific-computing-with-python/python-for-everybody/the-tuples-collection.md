@@ -14,8 +14,6 @@ dashedName: the-tuples-collection
 
 ## --text--
 
-What will the following code print?:
-
 ```python
 d = dict()
 d['quincy'] = 1
@@ -24,6 +22,8 @@ d['kris'] = 9
 for (k,i) in d.items():
     print(k, i)
 ```
+
+What will the preceding code print?:
 
 ## --answers--
 

@@ -20,14 +20,14 @@ More resources:
 
 ## --text--
 
-What will the following code print?:
-
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 for key in counts:
     if counts[key] > 10:
         print(key, counts[key])
 ```
+
+What will the preceding code print?
 
 ## --answers--
 

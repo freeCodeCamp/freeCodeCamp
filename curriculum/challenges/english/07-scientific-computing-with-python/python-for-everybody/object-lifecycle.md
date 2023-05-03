@@ -14,8 +14,6 @@ dashedName: object-lifecycle
 
 ## --text--
 
-What will the following program print?:
-
 ```python
 class PartyAnimal:
     x = 0
@@ -34,6 +32,8 @@ q.party()
 m.party()
 q.party()
 ```
+
+What will the preceding program print?
 
 ## --answers--
 

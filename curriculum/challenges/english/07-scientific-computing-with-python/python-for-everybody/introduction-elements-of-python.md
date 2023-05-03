@@ -14,13 +14,14 @@ dashedName: introduction-elements-of-python
 
 ## --text--
 
-What will the following program print out:
 
 ```python
 x = 43
 x = x + 1
 print(x)
 ```
+
+What will the preceding program print out?
 
 ## --answers--
 

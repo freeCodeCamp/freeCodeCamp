@@ -14,12 +14,12 @@ dashedName: introduction-python-as-a-language
 
 ## --text--
 
-What will print out after running these two lines of code:
-
 ```python
 x = 6
 print(x)
 ```
+
+What will print out after running the preceding two lines of code?
 
 ## --answers--
 

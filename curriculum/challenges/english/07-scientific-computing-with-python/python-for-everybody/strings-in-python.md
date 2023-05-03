@@ -14,12 +14,12 @@ dashedName: strings-in-python
 
 ## --text--
 
-What will the following code print?:
-
 ```python
 for n in "banana":
     print(n)
 ```
+
+What will the preceding code print?
 
 ## --answers--
 

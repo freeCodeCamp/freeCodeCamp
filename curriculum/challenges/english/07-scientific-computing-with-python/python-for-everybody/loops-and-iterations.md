@@ -14,7 +14,6 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
 
 ```python
 n = 0
@@ -24,6 +23,8 @@ while True:
     print(n)
     n = n + 1
 ```
+
+What will the preceding code print out?
 
 ## --answers--
 

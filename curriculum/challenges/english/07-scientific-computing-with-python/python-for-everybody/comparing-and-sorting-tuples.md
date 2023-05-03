@@ -20,8 +20,6 @@ More resources:
 
 ## --text--
 
-Which does the same thing as the following code?:
-
 ```python
 lst = []
 for key, val in counts.items():
@@ -30,6 +28,8 @@ for key, val in counts.items():
 lst = sorted(lst, reverse=True)
 print(lst)
 ```
+
+Which does the same thing as the preceding code?
 
 ## --answers--
 

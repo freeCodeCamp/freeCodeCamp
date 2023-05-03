@@ -14,14 +14,14 @@ dashedName: networking-using-urllib-in-python
 
 ## --text--
 
-What will the output of the following code be like?:
-
 ```python
 import urllib.request
 fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
 for line in fhand:
     print(line.decode().strip())
 ```
+
+What will the output of the preceding code be like?:
 
 ## --answers--
 

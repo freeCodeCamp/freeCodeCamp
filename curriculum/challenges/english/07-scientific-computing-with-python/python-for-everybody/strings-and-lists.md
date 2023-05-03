@@ -20,14 +20,14 @@ More resources:
 
 ## --text--
 
-What does n equal in this code?
-
 ```python
 words = 'His e-mail is q-lar@freecodecamp.org'
 pieces = words.split()
 parts = pieces[3].split('-')
 n = parts[1]
 ```
+
+What does n equal in the preceding code?
 
 ## --answers--
 

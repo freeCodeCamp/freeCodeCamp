@@ -14,8 +14,6 @@ dashedName: web-services-json
 
 ## --text--
 
-What will the following code print?:
-
 ```python
 import json
 data = '''
@@ -33,6 +31,8 @@ data = '''
 info = json.loads(data)
 print(info[1]['name'])
 ```
+
+What will the preceding code print?
 
 ## --answers--
 

@@ -14,12 +14,12 @@ dashedName: python-lists
 
 ## --text--
 
-What is the value of x after running this code:
-
 ```python
 fruit = "banana"
 x = fruit[1]
 ```
+
+What is the value of x after running the preceding code?
 
 ## --answers--
 

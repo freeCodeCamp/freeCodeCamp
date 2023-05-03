@@ -14,8 +14,6 @@ dashedName: web-services-xml
 
 ## --text--
 
-What is wrong with the following XML?:
-
 ```xml
 <person>
   <name>Chuck</name>
@@ -24,6 +22,8 @@ What is wrong with the following XML?:
   <email hide="yes" />
 </person>
 ```
+
+What is wrong with the preceding XML?
 
 ## --answers--
 
