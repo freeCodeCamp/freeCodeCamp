@@ -99,7 +99,7 @@
     [aria-expanded='true'],
     [aria-expanded='false'].force-show
   ) {
-  fill: var(--gray-10);
+  fill: var(--gray-00);
 }
 
 .nav-list li {
