@@ -2,6 +2,7 @@
   "name": "Build a Multi-Function Calculator Project",
   "isUpcomingChange": false,
   "order": 6,
+  "helpCategory": "Python",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +12,5 @@
       "63d83ff239c73468b059cd3f",
       "Build a Multi-Function Calculator"
     ]
-  ]}
+  ]
+}

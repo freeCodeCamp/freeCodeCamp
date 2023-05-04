@@ -1,329 +1,332 @@
 {
-    "name": "project euler problems 401 to 480",
-    "isUpcomingChange": false,
-    "order": 4,
-    "time": "",
-    "template": "",
-    "required": [],
-    "superBlock": "project-euler",
-    "challengeOrder": [    [
-        "5900f4fd1000cf542c51000f",
-        "Problem 401: Sum of squares of divisors"
-      ],
-      [
-        "5900f4ff1000cf542c510011",
-        "Problem 402: Integer-valued polynomials"
-      ],
-      [
-        "5900f5001000cf542c510013",
-        "Problem 403: Lattice points enclosed by parabola and line"
-      ],
-      [
-        "5900f5001000cf542c510012",
-        "Problem 404: Crisscross Ellipses"
-      ],
-      [
-        "5900f5021000cf542c510014",
-        "Problem 405: A rectangular tiling"
-      ],
-      [
-        "5900f5021000cf542c510015",
-        "Problem 406: Guessing Game"
-      ],
-      [
-        "5900f5041000cf542c510016",
-        "Problem 407: Idempotents"
-      ],
-      [
-        "5900f5091000cf542c51001b",
-        "Problem 408: Admissible paths through a grid"
-      ],
-      [
-        "5900f5061000cf542c510017",
-        "Problem 409: Nim Extreme"
-      ],
-      [
-        "5900f5071000cf542c510018",
-        "Problem 410: Circle and tangent line"
-      ],
-      [
-        "5900f5081000cf542c510019",
-        "Problem 411: Uphill paths"
-      ],
-      [
-        "5900f5081000cf542c51001a",
-        "Problem 412: Gnomon numbering"
-      ],
-      [
-        "5900f50a1000cf542c51001c",
-        "Problem 413: One-child Numbers"
-      ],
-      [
-        "5900f50b1000cf542c51001d",
-        "Problem 414: Kaprekar constant"
-      ],
-      [
-        "5900f50c1000cf542c51001e",
-        "Problem 415: Titanic sets"
-      ],
-      [
-        "5900f50e1000cf542c510020",
-        "Problem 416: A frog's trip"
-      ],
-      [
-        "5900f50d1000cf542c51001f",
-        "Problem 417: Reciprocal cycles II"
-      ],
-      [
-        "5900f50f1000cf542c510021",
-        "Problem 418: Factorisation triples"
-      ],
-      [
-        "5900f5101000cf542c510022",
-        "Problem 419: Look and say sequence"
-      ],
-      [
-        "5900f5111000cf542c510023",
-        "Problem 420: 2x2 positive integer matrix"
-      ],
-      [
-        "5900f5131000cf542c510024",
-        "Problem 421: Prime factors of n15+1"
-      ],
-      [
-        "5900f5131000cf542c510025",
-        "Problem 422: Sequence of points on a hyperbola"
-      ],
-      [
-        "5900f5141000cf542c510027",
-        "Problem 423: Consecutive die throws"
-      ],
-      [
-        "5900f5141000cf542c510026",
-        "Problem 424: Kakuro"
-      ],
-      [
-        "5900f5151000cf542c510028",
-        "Problem 425: Prime connection"
-      ],
-      [
-        "5900f5171000cf542c510029",
-        "Problem 426: Box-ball system"
-      ],
-      [
-        "5900f5181000cf542c51002a",
-        "Problem 427: n-sequences"
-      ],
-      [
-        "5900f5191000cf542c51002b",
-        "Problem 428: Necklace of Circles"
-      ],
-      [
-        "5900f5191000cf542c51002c",
-        "Problem 429: Sum of squares of unitary divisors"
-      ],
-      [
-        "5900f51a1000cf542c51002d",
-        "Problem 430: Range flips"
-      ],
-      [
-        "5900f51b1000cf542c51002e",
-        "Problem 431: Square Space Silo"
-      ],
-      [
-        "5900f51e1000cf542c510030",
-        "Problem 432: Totient sum"
-      ],
-      [
-        "5900f51d1000cf542c51002f",
-        "Problem 433: Steps in Euclid's algorithm"
-      ],
-      [
-        "5900f51f1000cf542c510031",
-        "Problem 434: Rigid graphs"
-      ],
-      [
-        "5900f5201000cf542c510032",
-        "Problem 435: Polynomials of Fibonacci numbers"
-      ],
-      [
-        "5900f5221000cf542c510033",
-        "Problem 436: Unfair wager"
-      ],
-      [
-        "5900f5241000cf542c510036",
-        "Problem 437: Fibonacci primitive roots"
-      ],
-      [
-        "5900f5231000cf542c510034",
-        "Problem 438: Integer part of polynomial equation's solutions"
-      ],
-      [
-        "5900f5231000cf542c510035",
-        "Problem 439: Sum of sum of divisors"
-      ],
-      [
-        "5900f5241000cf542c510037",
-        "Problem 440: GCD and Tiling"
-      ],
-      [
-        "5900f5261000cf542c510038",
-        "Problem 441: The inverse summation of coprime couples"
-      ],
-      [
-        "5900f5271000cf542c510039",
-        "Problem 442: Eleven-free integers"
-      ],
-      [
-        "5900f5271000cf542c51003a",
-        "Problem 443: GCD sequence"
-      ],
-      [
-        "5900f52a1000cf542c51003b",
-        "Problem 444: The Roundtable Lottery"
-      ],
-      [
-        "5900f52a1000cf542c51003c",
-        "Problem 445: Retractions A"
-      ],
-      [
-        "5900f52c1000cf542c51003d",
-        "Problem 446: Retractions B"
-      ],
-      [
-        "5900f52c1000cf542c51003e",
-        "Problem 447: Retractions C"
-      ],
-      [
-        "5900f52c1000cf542c51003f",
-        "Problem 448: Average least common multiple"
-      ],
-      [
-        "5900f52d1000cf542c510040",
-        "Problem 449: Chocolate covered candy"
-      ],
-      [
-        "5900f52e1000cf542c510041",
-        "Problem 450: Hypocycloid and Lattice points"
-      ],
-      [
-        "5900f5311000cf542c510042",
-        "Problem 451: Modular inverses"
-      ],
-      [
-        "5900f5311000cf542c510043",
-        "Problem 452: Long Products"
-      ],
-      [
-        "5900f5311000cf542c510044",
-        "Problem 453: Lattice Quadrilaterals"
-      ],
-      [
-        "5900f5331000cf542c510045",
-        "Problem 454: Diophantine reciprocals III"
-      ],
-      [
-        "5900f5331000cf542c510046",
-        "Problem 455: Powers With Trailing Digits"
-      ],
-      [
-        "5900f5351000cf542c510047",
-        "Problem 456: Triangles containing the origin II"
-      ],
-      [
-        "5900f5361000cf542c510048",
-        "Problem 457: A polynomial modulo the square of a prime"
-      ],
-      [
-        "5900f5361000cf542c510049",
-        "Problem 458: Permutations of Project"
-      ],
-      [
-        "5900f5371000cf542c51004a",
-        "Problem 459: Flipping game"
-      ],
-      [
-        "5900f5381000cf542c51004b",
-        "Problem 460: An ant on the move"
-      ],
-      [
-        "5900f53a1000cf542c51004c",
-        "Problem 461: Almost Pi"
-      ],
-      [
-        "5900f53b1000cf542c51004d",
-        "Problem 462: Permutation of 3-smooth numbers"
-      ],
-      [
-        "5900f53c1000cf542c51004e",
-        "Problem 463: A weird recurrence relation"
-      ],
-      [
-        "5900f53d1000cf542c51004f",
-        "Problem 464: Möbius function and intervals"
-      ],
-      [
-        "5900f53d1000cf542c510050",
-        "Problem 465: Polar polygons"
-      ],
-      [
-        "5900f53e1000cf542c510051",
-        "Problem 466: Distinct terms in a multiplication table"
-      ],
-      [
-        "5900f5411000cf542c510052",
-        "Problem 467: Superinteger"
-      ],
-      [
-        "5900f5411000cf542c510054",
-        "Problem 468: Smooth divisors of binomial coefficients"
-      ],
-      [
-        "5900f5411000cf542c510053",
-        "Problem 469: Empty chairs"
-      ],
-      [
-        "5900f5431000cf542c510055",
-        "Problem 470: Super Ramvok"
-      ],
-      [
-        "5900f5431000cf542c510056",
-        "Problem 471: Triangle inscribed in ellipse"
-      ],
-      [
-        "5900f5451000cf542c510057",
-        "Problem 472: Comfortable Distance II"
-      ],
-      [
-        "5900f5461000cf542c510058",
-        "Problem 473: Phigital number base"
-      ],
-      [
-        "5900f5471000cf542c510059",
-        "Problem 474: Last digits of divisors"
-      ],
-      [
-        "5900f5481000cf542c51005a",
-        "Problem 475: Music festival"
-      ],
-      [
-        "5900f5481000cf542c51005b",
-        "Problem 476: Circle Packing II"
-      ],
-      [
-        "5900f54a1000cf542c51005c",
-        "Problem 477: Number Sequence Game"
-      ],
-      [
-        "5900f54c1000cf542c51005e",
-        "Problem 478: Mixtures"
-      ],
-      [
-        "5900f54b1000cf542c51005d",
-        "Problem 479: Roots on the Rise"
-      ],
-      [
-        "5900f54c1000cf542c51005f",
-        "Problem 480: The Last Question"
-      ]]
+  "name": "project euler problems 401 to 480",
+  "isUpcomingChange": false,
+  "helpCategory": "JavaScript",
+  "order": 4,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "project-euler",
+  "challengeOrder": [
+    [
+      "5900f4fd1000cf542c51000f",
+      "Problem 401: Sum of squares of divisors"
+    ],
+    [
+      "5900f4ff1000cf542c510011",
+      "Problem 402: Integer-valued polynomials"
+    ],
+    [
+      "5900f5001000cf542c510013",
+      "Problem 403: Lattice points enclosed by parabola and line"
+    ],
+    [
+      "5900f5001000cf542c510012",
+      "Problem 404: Crisscross Ellipses"
+    ],
+    [
+      "5900f5021000cf542c510014",
+      "Problem 405: A rectangular tiling"
+    ],
+    [
+      "5900f5021000cf542c510015",
+      "Problem 406: Guessing Game"
+    ],
+    [
+      "5900f5041000cf542c510016",
+      "Problem 407: Idempotents"
+    ],
+    [
+      "5900f5091000cf542c51001b",
+      "Problem 408: Admissible paths through a grid"
+    ],
+    [
+      "5900f5061000cf542c510017",
+      "Problem 409: Nim Extreme"
+    ],
+    [
+      "5900f5071000cf542c510018",
+      "Problem 410: Circle and tangent line"
+    ],
+    [
+      "5900f5081000cf542c510019",
+      "Problem 411: Uphill paths"
+    ],
+    [
+      "5900f5081000cf542c51001a",
+      "Problem 412: Gnomon numbering"
+    ],
+    [
+      "5900f50a1000cf542c51001c",
+      "Problem 413: One-child Numbers"
+    ],
+    [
+      "5900f50b1000cf542c51001d",
+      "Problem 414: Kaprekar constant"
+    ],
+    [
+      "5900f50c1000cf542c51001e",
+      "Problem 415: Titanic sets"
+    ],
+    [
+      "5900f50e1000cf542c510020",
+      "Problem 416: A frog's trip"
+    ],
+    [
+      "5900f50d1000cf542c51001f",
+      "Problem 417: Reciprocal cycles II"
+    ],
+    [
+      "5900f50f1000cf542c510021",
+      "Problem 418: Factorisation triples"
+    ],
+    [
+      "5900f5101000cf542c510022",
+      "Problem 419: Look and say sequence"
+    ],
+    [
+      "5900f5111000cf542c510023",
+      "Problem 420: 2x2 positive integer matrix"
+    ],
+    [
+      "5900f5131000cf542c510024",
+      "Problem 421: Prime factors of n15+1"
+    ],
+    [
+      "5900f5131000cf542c510025",
+      "Problem 422: Sequence of points on a hyperbola"
+    ],
+    [
+      "5900f5141000cf542c510027",
+      "Problem 423: Consecutive die throws"
+    ],
+    [
+      "5900f5141000cf542c510026",
+      "Problem 424: Kakuro"
+    ],
+    [
+      "5900f5151000cf542c510028",
+      "Problem 425: Prime connection"
+    ],
+    [
+      "5900f5171000cf542c510029",
+      "Problem 426: Box-ball system"
+    ],
+    [
+      "5900f5181000cf542c51002a",
+      "Problem 427: n-sequences"
+    ],
+    [
+      "5900f5191000cf542c51002b",
+      "Problem 428: Necklace of Circles"
+    ],
+    [
+      "5900f5191000cf542c51002c",
+      "Problem 429: Sum of squares of unitary divisors"
+    ],
+    [
+      "5900f51a1000cf542c51002d",
+      "Problem 430: Range flips"
+    ],
+    [
+      "5900f51b1000cf542c51002e",
+      "Problem 431: Square Space Silo"
+    ],
+    [
+      "5900f51e1000cf542c510030",
+      "Problem 432: Totient sum"
+    ],
+    [
+      "5900f51d1000cf542c51002f",
+      "Problem 433: Steps in Euclid's algorithm"
+    ],
+    [
+      "5900f51f1000cf542c510031",
+      "Problem 434: Rigid graphs"
+    ],
+    [
+      "5900f5201000cf542c510032",
+      "Problem 435: Polynomials of Fibonacci numbers"
+    ],
+    [
+      "5900f5221000cf542c510033",
+      "Problem 436: Unfair wager"
+    ],
+    [
+      "5900f5241000cf542c510036",
+      "Problem 437: Fibonacci primitive roots"
+    ],
+    [
+      "5900f5231000cf542c510034",
+      "Problem 438: Integer part of polynomial equation's solutions"
+    ],
+    [
+      "5900f5231000cf542c510035",
+      "Problem 439: Sum of sum of divisors"
+    ],
+    [
+      "5900f5241000cf542c510037",
+      "Problem 440: GCD and Tiling"
+    ],
+    [
+      "5900f5261000cf542c510038",
+      "Problem 441: The inverse summation of coprime couples"
+    ],
+    [
+      "5900f5271000cf542c510039",
+      "Problem 442: Eleven-free integers"
+    ],
+    [
+      "5900f5271000cf542c51003a",
+      "Problem 443: GCD sequence"
+    ],
+    [
+      "5900f52a1000cf542c51003b",
+      "Problem 444: The Roundtable Lottery"
+    ],
+    [
+      "5900f52a1000cf542c51003c",
+      "Problem 445: Retractions A"
+    ],
+    [
+      "5900f52c1000cf542c51003d",
+      "Problem 446: Retractions B"
+    ],
+    [
+      "5900f52c1000cf542c51003e",
+      "Problem 447: Retractions C"
+    ],
+    [
+      "5900f52c1000cf542c51003f",
+      "Problem 448: Average least common multiple"
+    ],
+    [
+      "5900f52d1000cf542c510040",
+      "Problem 449: Chocolate covered candy"
+    ],
+    [
+      "5900f52e1000cf542c510041",
+      "Problem 450: Hypocycloid and Lattice points"
+    ],
+    [
+      "5900f5311000cf542c510042",
+      "Problem 451: Modular inverses"
+    ],
+    [
+      "5900f5311000cf542c510043",
+      "Problem 452: Long Products"
+    ],
+    [
+      "5900f5311000cf542c510044",
+      "Problem 453: Lattice Quadrilaterals"
+    ],
+    [
+      "5900f5331000cf542c510045",
+      "Problem 454: Diophantine reciprocals III"
+    ],
+    [
+      "5900f5331000cf542c510046",
+      "Problem 455: Powers With Trailing Digits"
+    ],
+    [
+      "5900f5351000cf542c510047",
+      "Problem 456: Triangles containing the origin II"
+    ],
+    [
+      "5900f5361000cf542c510048",
+      "Problem 457: A polynomial modulo the square of a prime"
+    ],
+    [
+      "5900f5361000cf542c510049",
+      "Problem 458: Permutations of Project"
+    ],
+    [
+      "5900f5371000cf542c51004a",
+      "Problem 459: Flipping game"
+    ],
+    [
+      "5900f5381000cf542c51004b",
+      "Problem 460: An ant on the move"
+    ],
+    [
+      "5900f53a1000cf542c51004c",
+      "Problem 461: Almost Pi"
+    ],
+    [
+      "5900f53b1000cf542c51004d",
+      "Problem 462: Permutation of 3-smooth numbers"
+    ],
+    [
+      "5900f53c1000cf542c51004e",
+      "Problem 463: A weird recurrence relation"
+    ],
+    [
+      "5900f53d1000cf542c51004f",
+      "Problem 464: Möbius function and intervals"
+    ],
+    [
+      "5900f53d1000cf542c510050",
+      "Problem 465: Polar polygons"
+    ],
+    [
+      "5900f53e1000cf542c510051",
+      "Problem 466: Distinct terms in a multiplication table"
+    ],
+    [
+      "5900f5411000cf542c510052",
+      "Problem 467: Superinteger"
+    ],
+    [
+      "5900f5411000cf542c510054",
+      "Problem 468: Smooth divisors of binomial coefficients"
+    ],
+    [
+      "5900f5411000cf542c510053",
+      "Problem 469: Empty chairs"
+    ],
+    [
+      "5900f5431000cf542c510055",
+      "Problem 470: Super Ramvok"
+    ],
+    [
+      "5900f5431000cf542c510056",
+      "Problem 471: Triangle inscribed in ellipse"
+    ],
+    [
+      "5900f5451000cf542c510057",
+      "Problem 472: Comfortable Distance II"
+    ],
+    [
+      "5900f5461000cf542c510058",
+      "Problem 473: Phigital number base"
+    ],
+    [
+      "5900f5471000cf542c510059",
+      "Problem 474: Last digits of divisors"
+    ],
+    [
+      "5900f5481000cf542c51005a",
+      "Problem 475: Music festival"
+    ],
+    [
+      "5900f5481000cf542c51005b",
+      "Problem 476: Circle Packing II"
+    ],
+    [
+      "5900f54a1000cf542c51005c",
+      "Problem 477: Number Sequence Game"
+    ],
+    [
+      "5900f54c1000cf542c51005e",
+      "Problem 478: Mixtures"
+    ],
+    [
+      "5900f54b1000cf542c51005d",
+      "Problem 479: Roots on the Rise"
+    ],
+    [
+      "5900f54c1000cf542c51005f",
+      "Problem 480: The Last Question"
+    ]
+  ]
 }

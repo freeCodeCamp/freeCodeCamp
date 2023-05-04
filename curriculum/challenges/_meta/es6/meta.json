@@ -2,6 +2,7 @@
   "name": "ES6",
   "isUpcomingChange": false,
   "dashedName": "es6",
+  "helpCategory": "JavaScript",
   "order": 1,
   "time": "5 hours",
   "template": "",
@@ -124,4 +125,5 @@
       "5cdafbe72913098997531682",
       "Handle a Rejected Promise with catch"
     ]
-  ]}
+  ]
+}

@@ -2,6 +2,7 @@
   "name": "Regular Expressions",
   "isUpcomingChange": false,
   "dashedName": "regular-expressions",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "5 hours",
   "template": "",
@@ -140,4 +141,5 @@
       "587d7dbb367417b2b2512bac",
       "Remove Whitespace from Start and End"
     ]
-  ]}
+  ]
+}

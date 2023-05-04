@@ -4,6 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-variables-by-building-a-city-skyline",
+  "helpCategory": "HTML-CSS",
   "order": 14,
   "time": "5 hours",
   "template": "",
@@ -482,4 +483,5 @@
       "5d822fd413a79914d39e993e",
       "Step 118"
     ]
-  ]}
+  ]
+}
