@@ -8,38 +8,38 @@ dashedName: css-foundations-question-f
 
 # --description--
 
-Okay, you went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to your HTML. There are three methods to do so.
+Ok, hai visto parecchie cose finora. The only thing left for now is to go over how to add all this CSS to your HTML. There are three methods to do so.
 
-External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing `<head>` tags with a self-closing `<link>` element:
+Il CSS esterno è il metodo più comune che incontrerai, e prevede la creazione di un file separato per il CSS e il collegamento nell'HTML all'interno dei tag `<head>` di apertura e chiusura tramite un elemento `<link>` a chiusura automatica:
 
-First, you add a self-closing `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In the example above, you are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the HTML file and the linked file.
+Innanzitutto, aggiungi un elemento `<link>` a chiusura automatica all'interno dei tag `<head>` del file HTML. The `href` attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. Nell'esempio precedente, si suppone che entrambi i file si trovino nella stessa directory. L'attributo `rel` è obbligatorio e specifica la relazione tra il file HTML e il file collegato.
 
-Then inside of the newly created `styles.css` file, you have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, you place any declarations inside of the declaration block. `color: white;` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
+All'interno del file `styles.css` appena creato, c'è il selettore (`div` e `p`), seguito da un paio di parentesi graffe, che creano un “blocco di dichiarazione”. Infine, all'interno del blocco di dichiarazione ci sono le dichiarazioni. `color: white;` è una dichiarazione, dove `color` è la proprietà e `white` è il valore, e `background-color: black;` è un'altra dichiarazione.
 
-A note on file names: `styles.css` is just what you went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though “style” or “styles” is most commonly used.
+Una nota sui nomi dei file: `styles.css` è proprio quello che hai usato come nome del file. Puoi chiamare un file come desideri, finché la sua estensione è `.css`, anche se “style” o “styles” sono i nomi più usati.
 
-A couple of the pros to this method are:
+Un paio di pro di questo metodo sono:
 
-1. It keeps your HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
-2. You only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
+1. Mantiene HTML e CSS separati, il che comporta che il file HTML sia più piccolo e che le cose siano più ordinate.
+2. Devi modificare il CSS in un unico posto, il che è particolarmente comodo per siti web con molte pagine che condividono stili simili.
 
 # --question--
 
 ## --text--
 
-Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external CSS file to an HTML file?
+Quale delle seguente risposte descrive meglio lo scopo dell'attributo `rel` di un elemento `<link>` nel collegamento di un file CSS esterno a un file HTML?
 
 ## --answers--
 
-It specifies the location of the CSS file relative to the location of the HTML file.
+Specifica la posizione del file CSS rispetto alla posizione del file HTML.
 
 ---
 
-It specifies the relationship between the HTML file and the linked file.
+Specifica la relazione tra il file HTML e il file collegato.
 
 ---
 
-It specifies the type of file being linked (e.g. "stylesheet").
+Specifica il tipo di file collegato (ad esempio "stylesheet").
 
 
 ## --video-solution--
