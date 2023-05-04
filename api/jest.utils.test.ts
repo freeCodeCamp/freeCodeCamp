@@ -1,4 +1,4 @@
-import { getCsrfToken } from './cookies';
+import { getCsrfToken } from './jest.utils';
 
 const fakeCookies = [
   '_csrf=123; Path=/; HttpOnly; SameSite=Strict',
