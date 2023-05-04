@@ -118,7 +118,21 @@ export const build = async (
         security: [{ session: [] }]
       }
     });
-    void fastify.register(fastifySwaggerUI);
+    void fastify.register(fastifySwaggerUI, {
+      uiConfig: {
+        // Convert csrf_token cookie to csrf-token header
+        requestInterceptor: req => {
+          const csrfTokenCookie = document.cookie
+            .split(';')
+            .filter(str => str.includes('csrf_token'))[0];
+          const csrfToken = csrfTokenCookie.split('=')[1].trim();
+
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          if (csrfToken) req.headers['csrf-token'] = csrfToken;
+          return req;
+        }
+      }
+    });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
