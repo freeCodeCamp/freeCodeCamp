@@ -156,6 +156,31 @@ describe('settingRoutes', () => {
       });
     });
 
+    describe('/update-my-email', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: 'foo@foo.com' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with invalid email', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: 'invalid' });
+
+        expect(response?.statusCode).toEqual(400);
+      });
+    });
+
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superRequest('/update-my-theme', {
