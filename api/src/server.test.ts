@@ -6,12 +6,34 @@ jest.mock('./utils/env', () => {
   return {
     ...jest.requireActual('./utils/env'),
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    FREECODECAMP_NODE_ENV: 'production'
+    FREECODECAMP_NODE_ENV: 'production',
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    COOKIE_DOMAIN: '.freecodecamp.org'
   };
 });
 
 describe('production', () => {
   setupServer();
+
+  describe('CSRF protection', () => {
+    it('should receive a new CSRF token with the expected properties', async () => {
+      const response = await superRequest('/', { method: 'GET' });
+      const newCookies = response.get('Set-Cookie');
+      const csrfTokenCookie = newCookies.find(cookie =>
+        cookie.includes('csrf_token')
+      );
+
+      expect(csrfTokenCookie).toEqual(
+        expect.stringContaining('SameSite=Strict')
+      );
+      expect(csrfTokenCookie).toEqual(
+        expect.stringContaining(`Domain=.freecodecamp.org`)
+      );
+      expect(csrfTokenCookie).toEqual(expect.stringContaining('Path=/'));
+      expect(csrfTokenCookie).toEqual(expect.stringContaining('Secure;'));
+    });
+  });
+
   describe('GET /', () => {
     test('have a 200 response', async () => {
       const res = await superRequest('/', { method: 'GET' });

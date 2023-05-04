@@ -29,6 +29,7 @@ import prismaPlugin from './db/prisma';
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
+  COOKIE_DOMAIN,
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SESSION_SECRET,
@@ -85,7 +86,10 @@ export const build = async (
     // Path is necessary to ensure that only one cookie is set and it is valid
     // for all routes.
     void reply.setCookie('csrf_token', token, {
-      path: '/'
+      path: '/',
+      sameSite: 'strict',
+      domain: COOKIE_DOMAIN,
+      secure: FREECODECAMP_NODE_ENV === 'production'
     });
     done();
   });
