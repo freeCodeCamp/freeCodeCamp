@@ -134,6 +134,31 @@ describe('settingRoutes', () => {
         expect(response?.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-username', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'foobar' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-updated',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with invalid username', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'thisusernameiswaytolongforuse' });
+
+        expect(response?.statusCode).toEqual(400);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
@@ -147,6 +172,14 @@ describe('settingRoutes', () => {
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
       const response = await request(fastify?.server).put('/update-my-theme');
+
+      expect(response?.statusCode).toEqual(401);
+    });
+
+    test('PUT /update-my-username returns 401 status code for un-authenticated users', async () => {
+      const response = await request(fastify?.server).put(
+        '/update-my-username'
+      );
 
       expect(response?.statusCode).toEqual(401);
     });
