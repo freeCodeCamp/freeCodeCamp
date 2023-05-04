@@ -74,6 +74,15 @@ export const build = async (
     getToken: req => req.headers['csrf-token'] as string
   });
 
+  // All routes should add a CSRF token to the response
+  fastify.addHook('onRequest', (_req, reply, done) => {
+    const token = reply.generateCsrf();
+    void reply.setCookie('csrf_token', token, {
+      path: '/'
+    });
+    done();
+  });
+
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
   await fastify.register(fastifySession, {

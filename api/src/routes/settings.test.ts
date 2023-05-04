@@ -28,9 +28,58 @@ const profileUI = {
 describe('settingRoutes', () => {
   setupServer();
 
+  // This only tests one route, but all of the routes in the settings plugin add
+  // the same hooks. So if this suite passes, the other routes should be
+  // protected.
+  describe('CSRF protection', () => {
+    it('should return 403 if the _csrf secret is missing', async () => {
+      const response = await request(fastifyTestInstance?.server)
+        .put('/update-my-profileui')
+        .send({ profileUI });
+
+      expect(response?.statusCode).toEqual(403);
+      expect(response?.body).toEqual({
+        code: 'FST_CSRF_MISSING_SECRET',
+        error: 'Forbidden',
+        message: 'Missing csrf secret',
+        statusCode: 403
+      });
+    });
+
+    it('should return 403 if the csrf_token is invalid', async () => {
+      const response = await request(fastifyTestInstance?.server)
+        .put('/update-my-profileui')
+        .set('Cookie', ['_csrf=foo', 'csrf-token=bar'])
+        .send({ profileUI });
+
+      expect(response?.statusCode).toEqual(403);
+      expect(response?.body).toEqual({
+        code: 'FST_CSRF_INVALID_TOKEN',
+        error: 'Forbidden',
+        message: 'Invalid csrf token',
+        statusCode: 403
+      });
+    });
+
+    it('should receive a new CSRF token + secret in the response', async () => {
+      const response = await request(fastifyTestInstance?.server)
+        .put('/update-my-profileui')
+        .send({ profileUI });
+
+      const newCookies = response?.get('Set-Cookie');
+      expect(newCookies).toEqual(
+        expect.arrayContaining([
+          expect.stringContaining('_csrf'),
+          expect.stringContaining('csrf_token')
+        ])
+      );
+    });
+  });
+
   describe('Authenticated user', () => {
     let cookies: string[];
 
+    // Authenticate user
     beforeAll(async () => {
       await fastifyTestInstance?.prisma.user.updateMany({
         where: { email: 'foo@bar.com' },
@@ -40,23 +89,6 @@ describe('settingRoutes', () => {
         '/auth/dev-callback'
       );
       cookies = res.get('Set-Cookie');
-    });
-
-    describe('CSRF protection', () => {
-      it('should return 403 if no CSRF token is provided', async () => {
-        const response = await request(fastifyTestInstance?.server)
-          .put('/update-my-profileui')
-          .set('Cookie', cookies)
-          .send({ profileUI });
-
-        expect(response?.statusCode).toEqual(403);
-        expect(response?.body).toEqual({
-          code: 'FST_CSRF_INVALID_TOKEN',
-          error: 'Forbidden',
-          message: 'Invalid csrf token',
-          statusCode: 403
-        });
-      });
     });
 
     describe('/update-my-profileui', () => {
@@ -245,10 +277,16 @@ describe('settingRoutes', () => {
   });
 
   describe('Unauthenticated User', () => {
+    let cookies: string[];
+
+    // Get the CSRF cookies from an unprotected route
+    beforeAll(async () => {
+      const res = await request(fastifyTestInstance?.server).get('/');
+      cookies = res.get('Set-Cookie');
+    });
+
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastifyTestInstance?.server).put(
-        '/update-my-profileui'
-      );
+      const response = await superPut('/update-my-profileui', cookies);
 
       expect(response?.statusCode).toEqual(401);
     });
