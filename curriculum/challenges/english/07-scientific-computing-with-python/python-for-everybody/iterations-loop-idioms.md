@@ -14,6 +14,8 @@ dashedName: iterations-loop-idioms
 
 ## --text--
 
+Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?
+
 ```python
 smallest = None
 print("Before:", smallest)
@@ -25,7 +27,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print("Smallest:", smallest)
 ```
 
-Above is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
+[hidden]Above is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?
 
 ## --answers--
 

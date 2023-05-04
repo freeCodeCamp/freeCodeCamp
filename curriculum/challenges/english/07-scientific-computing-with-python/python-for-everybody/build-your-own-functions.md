@@ -20,6 +20,8 @@ More resources:
 
 ## --text--
 
+What will the following Python program print out?
+
 ```python
 def fred():
     print("Zap")
@@ -31,7 +33,7 @@ fred()
 jane()
 ```
 
-What will the preceding Python program print out?
+[hidden]What will the preceding Python program print out?
 
 ## --answers--
 

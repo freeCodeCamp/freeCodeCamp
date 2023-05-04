@@ -22,6 +22,8 @@ More resources:
 
 ## --text--
 
+Which line/lines in the following code should be surrounded by `try` block?
+
 ```python
 temp = "5 degrees"
 cel = 0
@@ -30,7 +32,7 @@ cel = (fahr - 32.0) * 5.0 / 9.0
 print(cel)
 ```
 
-Which line/lines in the preceding code should be surrounded by `try` block?
+[hidden]Which line/lines in the preceding code should be surrounded by `try` block?
 
 ## --answers--
 
