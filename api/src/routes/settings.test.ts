@@ -33,9 +33,9 @@ describe('settingRoutes', () => {
   // protected.
   describe('CSRF protection', () => {
     it('should return 403 if the _csrf secret is missing', async () => {
-      const response = await request(fastifyTestInstance?.server)
-        .put('/update-my-profileui')
-        .send({ profileUI });
+      const response = await request(fastifyTestInstance?.server).put(
+        '/update-my-profileui'
+      );
 
       expect(response?.statusCode).toEqual(403);
       expect(response?.body).toEqual({
@@ -49,8 +49,7 @@ describe('settingRoutes', () => {
     it('should return 403 if the csrf_token is invalid', async () => {
       const response = await request(fastifyTestInstance?.server)
         .put('/update-my-profileui')
-        .set('Cookie', ['_csrf=foo', 'csrf-token=bar'])
-        .send({ profileUI });
+        .set('Cookie', ['_csrf=foo', 'csrf-token=bar']);
 
       expect(response?.statusCode).toEqual(403);
       expect(response?.body).toEqual({
@@ -62,9 +61,9 @@ describe('settingRoutes', () => {
     });
 
     it('should receive a new CSRF token + secret in the response', async () => {
-      const response = await request(fastifyTestInstance?.server)
-        .put('/update-my-profileui')
-        .send({ profileUI });
+      const response = await request(fastifyTestInstance?.server).put(
+        '/update-my-profileui'
+      );
 
       const newCookies = response?.get('Set-Cookie');
       expect(newCookies).toEqual(
