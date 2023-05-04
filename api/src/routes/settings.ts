@@ -112,5 +112,41 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+
+  fastify.put(
+    '/update-my-username',
+    {
+      schema: {
+        body: Type.Object({
+          username: Type.String({ minLength: 3, maxLength: 20 })
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.username-updated'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            username: req.body.username
+          }
+        });
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };
