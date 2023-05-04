@@ -292,9 +292,7 @@ describe('settingRoutes', () => {
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastifyTestInstance?.server).put(
-        '/update-my-theme'
-      );
+      const response = await superPut('/update-my-theme', cookies);
 
       expect(response?.statusCode).toEqual(401);
     });
