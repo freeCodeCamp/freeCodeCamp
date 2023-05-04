@@ -263,7 +263,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-                <h2>Exercise</h2>
+                <h2 className='video-question-heading'>Exercise</h2>
                 <PrismFormatted
                   className={'line-numbers'}
                   text={challengeText}

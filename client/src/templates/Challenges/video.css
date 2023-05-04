@@ -116,6 +116,11 @@ legend.sr-only + div > .video-quiz-options {
   background: none;
 }
 
+.video-question-heading {
+  font-size: 1rem;
+  margin: 0;
+}
+
 .video-question legend {
   font-size: 1rem;
   margin-top: 1rem;
