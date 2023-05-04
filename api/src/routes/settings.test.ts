@@ -28,6 +28,9 @@ const profileUI = {
 describe('settingRoutes', () => {
   setupServer();
 
+  // TODO: rather than testing every single route, create a single test for the
+  // rest api plugin that checks that the appropriate hooks are added to all
+
   // This only tests one route, but all of the routes in the settings plugin add
   // the same hooks. So if this suite passes, the other routes should be
   // protected.
