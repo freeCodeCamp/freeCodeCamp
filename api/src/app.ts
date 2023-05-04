@@ -77,6 +77,8 @@ export const build = async (
   // All routes should add a CSRF token to the response
   fastify.addHook('onRequest', (_req, reply, done) => {
     const token = reply.generateCsrf();
+    // Path is necessary to ensure that only one cookie is set and it is valid
+    // for all routes.
     void reply.setCookie('csrf_token', token, {
       path: '/'
     });
@@ -124,11 +126,11 @@ export const build = async (
         requestInterceptor: req => {
           const csrfTokenCookie = document.cookie
             .split(';')
-            .filter(str => str.includes('csrf_token'))[0];
-          const csrfToken = csrfTokenCookie.split('=')[1].trim();
+            .find(str => str.includes('csrf_token'));
+          const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (csrfToken) req.headers['csrf-token'] = csrfToken;
+          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
           return req;
         }
       }

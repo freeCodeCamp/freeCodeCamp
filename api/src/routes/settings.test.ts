@@ -77,7 +77,7 @@ describe('settingRoutes', () => {
   });
 
   describe('Authenticated user', () => {
-    let cookies: string[];
+    let setCookies: string[];
 
     // Authenticate user
     beforeAll(async () => {
@@ -88,12 +88,15 @@ describe('settingRoutes', () => {
       const res = await request(fastifyTestInstance?.server).get(
         '/auth/dev-callback'
       );
-      cookies = res.get('Set-Cookie');
+      setCookies = res.get('Set-Cookie');
     });
 
     describe('/update-my-profileui', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superPut('/update-my-profileui', cookies).send({
+        const response = await superPut(
+          '/update-my-profileui',
+          setCookies
+        ).send({
           profileUI
         });
 
@@ -110,7 +113,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT ignores invalid keys', async () => {
-        const response = await superPut('/update-my-profileui', cookies).send({
+        const response = await superPut(
+          '/update-my-profileui',
+          setCookies
+        ).send({
           profileUI: {
             ...profileUI,
             invalidKey: 'invalidValue'
@@ -126,7 +132,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with missing keys', async () => {
-        const response = await superPut('/update-my-profileui', cookies).send({
+        const response = await superPut(
+          '/update-my-profileui',
+          setCookies
+        ).send({
           profileUI: {
             isLocked: true,
             showName: true,
@@ -148,7 +157,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superPut('/update-my-theme', cookies).send({
+        const response = await superPut('/update-my-theme', setCookies).send({
           theme: 'night'
         });
 
@@ -161,7 +170,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
-        const response = await superPut('/update-my-theme', cookies).send({
+        const response = await superPut('/update-my-theme', setCookies).send({
           theme: 'invalid'
         });
 
@@ -277,22 +286,22 @@ describe('settingRoutes', () => {
   });
 
   describe('Unauthenticated User', () => {
-    let cookies: string[];
+    let setCookies: string[];
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await request(fastifyTestInstance?.server).get('/');
-      cookies = res.get('Set-Cookie');
+      setCookies = res.get('Set-Cookie');
     });
 
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await superPut('/update-my-profileui', cookies);
+      const response = await superPut('/update-my-profileui', setCookies);
 
       expect(response?.statusCode).toEqual(401);
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await superPut('/update-my-theme', cookies);
+      const response = await superPut('/update-my-theme', setCookies);
 
       expect(response?.statusCode).toEqual(401);
     });
