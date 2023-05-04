@@ -118,10 +118,15 @@ legend.sr-only + div > .video-quiz-options {
 
 .video-question-heading {
   font-size: 1rem;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 .video-question legend {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.line-numbers h3 {
   font-size: 1rem;
   margin-top: 1rem;
 }
