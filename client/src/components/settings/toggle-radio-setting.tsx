@@ -45,8 +45,8 @@ export default function ToggleRadioSetting({
             <input
               id={firstRadioId}
               type='radio'
-              {...(!flag && { defaultChecked: true })}
-              {...(flag && { onChange: toggleFlag })}
+              {...(flag && { defaultChecked: true })}
+              {...(!flag && { onChange: toggleFlag })}
               name={flagName}
               value='1'
             />
