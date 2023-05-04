@@ -134,6 +134,31 @@ describe('settingRoutes', () => {
         expect(response?.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-keyboard-shortcuts', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-keyboard-shortcuts')
+          .set('Cookie', cookies)
+          .send({ keyboardShortcuts: true });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.keyboard-shortcut-updated',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with invalid shortcuts setting', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-keyboard-shortcuts')
+          .set('Cookie', cookies)
+          .send({ keyboardShortcuts: 'invalid' });
+
+        expect(response?.statusCode).toEqual(400);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
