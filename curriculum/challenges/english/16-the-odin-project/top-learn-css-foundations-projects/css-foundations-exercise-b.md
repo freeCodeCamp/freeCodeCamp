@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-b
 
 1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
 
-1. The `font-size` of the fourth element should be set with a `class` attribute and the `font-weight`  and the color should be set with an `id` attribute.
+1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight`  and the color should be set with an `id` attribute.
 
 # --hints--
 
@@ -70,11 +70,15 @@ const thirdElement = document.querySelectorAll('p')?.[1];
 
 assert(thirdElement?.innerText?.length > 0);
 
-const thirdElementClass = thirdElement?.classList?.[0];
+const thirdElementClasses = Array.from(thirdElement?.classList?.values());
 
-const style = new __helpers.CSSHelp(document).getStyle(`.${thirdElementClass}`);
+assert(thirdElementClasses.some(thirdElementClass => {
 
-assert.equal(style?.fontSize, '24px');
+  const style = new __helpers.CSSHelp(document).getStyle(`.${thirdElementClass}`);
+
+  return style?.fontSize === '24px';
+
+}))
 
 ``` 
 
