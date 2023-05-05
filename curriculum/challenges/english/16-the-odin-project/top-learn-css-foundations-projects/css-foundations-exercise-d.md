@@ -62,6 +62,10 @@ assert(style?.height === '400px');
 
 ## --seed-contents--
 
+```css
+
+```
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -72,13 +76,13 @@ assert(style?.height === '400px');
   <body>
     <!-- Use the classes BELOW this line -->
     <div>
-      <img class="avatar proportioned" src="./pexels-katho-mutodo-8434791.jpg" alt="Woman with glasses">
-      <img class="avatar distorted" src="./pexels-andrea-piacquadio-3777931.jpg" alt="Man with surprised expression">
+      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
+      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg" alt="Man with surprised expression">
     </div>
     <!-- Use the classes ABOVE this line -->
     <div>
-      <img class="original proportioned" src="./pexels-katho-mutodo-8434791.jpg" alt="Woman with glasses">
-      <img class="original distorted" src="./pexels-andrea-piacquadio-3777931.jpg" alt="Man with surprised expression">
+      <img class="original proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
+      <img class="original distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg">
     </div>
   </body>
 </html>
@@ -94,20 +98,19 @@ assert(style?.height === '400px');
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaining Selectors</title>
-    <link rel="stylesheet" href="solution.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <!-- Use the classes BELOW this line -->
     <div>
-      <img class="avatar proportioned" src="../pexels-katho-mutodo-8434791.jpg" alt="Woman with glasses">
-      <img class="avatar distorted" src="../pexels-andrea-piacquadio-3777931.jpg" alt="Man with surprised expression">
+      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
+      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg" alt="Man with surprised expression">
     </div>
+    <!-- Use the classes ABOVE this line -->
     <div>
-      <img class="original proportioned" src="../pexels-katho-mutodo-8434791.jpg" alt="Woman with glasses">
-      <img class="original distorted" src="../pexels-andrea-piacquadio-3777931.jpg" alt="Man with surprised expression">
+      <img class="original proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
+      <img class="original distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg">
     </div>
   </body>
 </html>
