@@ -1,3 +1,8 @@
+// FOR REFERENCE ONLY.
+// This contains all the fields that we know to exist in the database. It is not
+// necessary to use them all, since Prisma will ignore (and remove) any fields
+// that are not in the schema.
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,12 +14,44 @@ datasource db {
 
 // USER COLLECTION ---------------------
 
+type FileData {
+  contents String
+  ext      String
+  key      String
+  name     String
+  path     String?
+
+  // Nonesense
+  dataSource Json?    @map("__dataSource") // Null only | Undefined
+  persisted  Boolean? @map("__persisted") // Undefined
+  strict     Boolean?  @map("__strict") // Undefined
+}
+
 type File {
   contents String
   ext      String
   key      String
   name     String
   path     String? // Undefined | Null
+
+  // Nonesense
+  cachedRelations Json?     @map("__cachedRelations") // Undefined
+  data            FileData? @map("__data") // Undefined
+  dataSource      Json?     @map("__dataSource") // Null | Undefined
+  persisted       Boolean?  @map("__persisted") // Undefined
+  strict          Boolean?  @map("__strict") // Undefined
+}
+
+type CompletedChallengeData {
+  challengeType Int? // Null | Undefined
+  completedDate Float
+  id            String
+  solution      String? // Null | Undefined
+
+  // Nonesense
+  dataSource Json?   @map("__dataSource") // Null
+  persisted  Boolean @map("__persisted")
+  strict     Boolean @map("__strict")
 }
 
 type CompletedChallenge {
@@ -25,6 +62,13 @@ type CompletedChallenge {
   id                 String
   isManuallyApproved Boolean? // Undefined
   solution           String? // Undefined
+
+  // Nonsense
+  cachedRelations Json?                   @map("__cachedRelations")
+  data            CompletedChallengeData? @map("__data") // Undefined
+  dataSource      Json?                   @map("__dataSource") // Null only
+  persisted       Boolean?                @map("__persisted") // Undefined
+  strict          Boolean?                @map("__strict") // Undefined
 }
 
 type Portfolio {
@@ -33,6 +77,23 @@ type Portfolio {
   image       String
   title       String
   url         String
+}
+
+type ProfileUIData {
+  isLocked      Boolean
+  showAbout     Boolean
+  showCerts     Boolean
+  showDonation  Boolean? // Undefined
+  showHeatMap   Boolean
+  showLocation  Boolean
+  showName      Boolean
+  showPoints    Boolean
+  showPortfolio Boolean
+  showTimeLine  Boolean
+
+  // Nonesense
+  persisted Boolean? @map("__persisted") // Undefined
+  strict    Boolean? @map("__strict") // Undefined
 }
 
 type ProfileUI {
@@ -46,6 +107,12 @@ type ProfileUI {
   showPoints    Boolean? // Undefined
   showPortfolio Boolean? // Undefined
   showTimeLine  Boolean? // Undefined
+
+  // Nonesense
+  cachedRelations Json?          @map("__cachedRelations") // Undefined | {}
+  data            ProfileUIData? @map("__data") // Undefined
+  persisted       Boolean?       @map("__persisted") // Undefined
+  strict          Boolean?       @map("__strict") // Undefined
 }
 
 type ProgressTimestamp {
