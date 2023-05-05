@@ -14,7 +14,7 @@ dashedName: visualizing-data-with-python
 
 ## --text--
 
-Most data needs to be \_\_\_\_\_\_ before using it.
+<span class="sr-only">Fill in the blank:</span> Most data needs to be <span class="sr-only">blank</span> \_\_\_\_\_\_ before using it.
 
 ## --answers--
 

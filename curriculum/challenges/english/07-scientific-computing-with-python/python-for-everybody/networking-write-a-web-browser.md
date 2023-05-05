@@ -14,6 +14,8 @@ dashedName: networking-write-a-web-browser
 
 ## --text--
 
+What does the following code create?
+
 ```py
 import socket
 
@@ -30,7 +32,7 @@ while True:
 mysock.close()
 ```
 
-What does the preceding code create?
+[hidden]What does the preceding code create?
 
 ## --answers--
 

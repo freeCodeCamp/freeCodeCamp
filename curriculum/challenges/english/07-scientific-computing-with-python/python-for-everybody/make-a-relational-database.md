@@ -18,33 +18,24 @@ What SQL command would you use to retrieve all users that have the email address
 
 ## --answers--
 
-```sql
-SELECT Users WHERE email="quincy@freecodecamp.org"
-```
+`SELECT Users WHERE email="quincy@freecodecamp.org"`
 
 ---
 
-```sql
-SELECT Users WHERE email IS "quincy@freecodecamp.org"
-```
+
+`SELECT Users WHERE email IS "quincy@freecodecamp.org"`
 
 ---
 
-```sql
-SELECT ALL Users WHERE email="quincy@freecodecamp.org"
-```
+`SELECT ALL Users WHERE email="quincy@freecodecamp.org"`
 
 ---
 
-```sql
-SELECT * FROM Users WHERE email IS "quincy@freecodecamp.org"
-```
+`SELECT * FROM Users WHERE email IS "quincy@freecodecamp.org"`
 
 ---
 
-```sql
-SELECT * FROM Users WHERE email="quincy@freecodecamp.org"
-```
+`SELECT * FROM Users WHERE email="quincy@freecodecamp.org"`
 
 ## --video-solution--
 

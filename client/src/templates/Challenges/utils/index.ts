@@ -52,20 +52,22 @@ export function enhancePrismAccessibility(
     pug: 'pug'
   };
   const parent = prismEnv?.element?.parentElement;
-  if (parent && parent.nodeName === 'PRE' && parent.tabIndex === 0) {
+  if (
+    parent &&
+    parent.nodeName === 'PRE' &&
+    parent.tabIndex === 0 &&
+    !prismEnv?.element.closest('label')
+  ) {
     parent.setAttribute('role', 'region');
     const codeType = prismEnv.element?.className
       .replace(/language-(.*)/, '$1')
       .toLowerCase();
-    // Don't give an accessible name if inside a label
-    if (!prismEnv?.element.closest('label')) {
-      const codeName = langs[codeType] || '';
-      parent.setAttribute(
-        'aria-label',
-        i18next.t('aria.code-example', {
-          codeName
-        })
-      );
-    }
+    const codeName = langs[codeType] || '';
+    parent.setAttribute(
+      'aria-label',
+      i18next.t('aria.code-example', {
+        codeName
+      })
+    );
   }
 }

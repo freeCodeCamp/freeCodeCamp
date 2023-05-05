@@ -287,11 +287,13 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                             type='radio'
                             value={index}
                           />{' '}
-                          <span className='video-quiz-input-visible'>
-                            {this.state.selectedOption === index ? (
-                              <span className='video-quiz-selected-input' />
-                            ) : null}
-                          </span>
+                          <div className='video-quiz-input-visible-wrapper'>
+                            <span className='video-quiz-input-visible'>
+                              {this.state.selectedOption === index ? (
+                                <span className='video-quiz-selected-input' />
+                              ) : null}
+                            </span>
+                          </div>
                           <PrismFormatted
                             className={'video-quiz-option'}
                             text={option}

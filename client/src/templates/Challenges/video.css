@@ -38,9 +38,11 @@ legend.sr-only + div > .video-quiz-options {
 .video-quiz-options > label {
   margin: 0;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: none;
   scrollbar-width: thin;
   scrollbar-color: var(--quaternary-background) var(--secondary-background);
+  position: relative;
+  background-color: var(--primary-background);
 }
 
 .video-quiz-options > label::-webkit-scrollbar {
@@ -55,7 +57,7 @@ legend.sr-only + div > .video-quiz-options {
 }
 
 .video-quiz-option-label {
-  padding: 20px;
+  /*padding: 20px;*/
   cursor: pointer;
   display: flex;
   font-weight: normal;
@@ -79,9 +81,6 @@ legend.sr-only + div > .video-quiz-options {
 }
 
 .video-quiz-input-visible {
-  margin-inline-end: 15px;
-  position: relative;
-  top: 2px;
   display: inline-block;
   min-width: 20px;
   min-height: 20px;
@@ -116,6 +115,10 @@ legend.sr-only + div > .video-quiz-options {
   background: none;
 }
 
+.video-quiz-option code {
+  background: none;
+}
+
 .video-question-heading {
   font-size: 1rem;
   margin: 0 0 1rem;
@@ -124,6 +127,8 @@ legend.sr-only + div > .video-quiz-options {
 .video-question legend {
   font-size: 1rem;
   margin-top: 1rem;
+  color: var(--secondary-color);
+  border-bottom: 0;
 }
 
 .line-numbers h3 {
@@ -131,6 +136,31 @@ legend.sr-only + div > .video-quiz-options {
   margin-top: 1rem;
 }
 
-.video-quiz-options input:focus-visible + .video-quiz-input-visible {
+.video-quiz-input-visible-wrapper {
+  min-width: 3rem;
+  height: 4rem;
+  background-color: var(--primary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+}
+
+.video-quiz-options
+  input:focus-visible
+  + .video-quiz-input-visible-wrapper
+  > .video-quiz-input-visible {
   outline: 3px solid var(--focus-outline-color);
+}
+
+.video-quiz-options .video-quiz-option {
+  width: calc(100% - 4rem);
+}
+
+.video-quiz-options .video-quiz-option pre {
+  padding: 0.5rem 0;
+  margin-inline-start: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--quaternary-background) var(--secondary-background);
 }
