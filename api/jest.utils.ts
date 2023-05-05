@@ -7,15 +7,6 @@ declare global {
   var fastifyTestInstance: Awaited<ReturnType<typeof build>> | undefined;
 }
 
-// TODO: remove this function and use superRequest instead
-export function superGet(endpoint: string): request.Test {
-  return superRequest({
-    method: 'GET',
-    endpoint,
-    setCookies: []
-  });
-}
-
 type Options = {
   sendCSRFToken: boolean;
 };
@@ -57,19 +48,24 @@ export function superRequest(
   config: {
     method: 'GET' | 'POST' | 'PUT';
     endpoint: string;
-    setCookies: string[];
+    setCookies?: string[];
   },
   options?: Options
 ): request.Test {
   const { method, endpoint, setCookies } = config;
   const { sendCSRFToken = true } = options ?? {};
 
-  const req = requests[method](endpoint)
-    .set('Origin', 'https://www.freecodecamp.org')
-    .set('Cookie', setCookies);
+  const req = requests[method](endpoint).set(
+    'Origin',
+    'https://www.freecodecamp.org'
+  );
 
-  const csrfToken = getCsrfToken(setCookies);
-  if (sendCSRFToken && csrfToken) {
+  if (setCookies) {
+    void req.set('Cookie', setCookies);
+  }
+
+  const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';
+  if (sendCSRFToken) {
     void req.set('CSRF-Token', csrfToken);
   }
   return req;
