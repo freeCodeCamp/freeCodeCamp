@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-オブジェクト内のすべてのキーの繰り返し処理を必要とする場合があります。 これには、<dfn>for...in</dfn> ステートメントと呼ばれる JavaScript 固有の構文が必要になります。 `users` オブジェクトの場合は次のように記述できます。
+Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-これは `Alan`、`Jeff`、`Sarah` の値を、それぞれ別の行に出力します。
+This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
 
-このステートメントでは変数 `user` を定義しました。ご覧のように、for...in ステートメントでオブジェクトがループ処理されるとき、この変数は繰り返し処理ごとにオブジェクトの各キーにリセットされ、それぞれのユーザー名がコンソールに出力されます。
+We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
 **注:** オブジェクトも配列の場合と同じように、格納されているキーの順序は維持されません。つまり、キーを参照したりキーにアクセスしたりするときは、そのキーのオブジェクト内での位置や、表示される相対的な順序は無関係になります。
 
 # --instructions--
 
-関数 `countOnline` を定義しました。この関数は 1 つの引数 (ユーザーオブジェクト) を受け取ります。 この関数の中で <dfn>for...in</dfn> ステートメントを使用して、関数に渡されたユーザーオブジェクトをループ処理し、`online` プロパティが `true` に設定されているユーザーの数を返してください。 たとえば、`countOnline` には次のようなユーザーオブジェクトが渡されます。 各ユーザーは `true` または `false` のいずれかの値を持つ `online` プロパティを持ちます。
+We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```
