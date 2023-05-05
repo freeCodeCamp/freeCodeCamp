@@ -7,10 +7,72 @@ declare global {
   var fastifyTestInstance: Awaited<ReturnType<typeof build>> | undefined;
 }
 
+// TODO: remove this function and use superRequest instead
 export function superGet(endpoint: string): request.Test {
-  return request(fastifyTestInstance?.server)
-    .get(endpoint)
-    .set('Origin', 'https://www.freecodecamp.org');
+  return superRequest({
+    method: 'GET',
+    endpoint,
+    setCookies: []
+  });
+}
+
+type Options = {
+  sendCSRFToken: boolean;
+};
+
+// TODO: remove this function and use superRequest instead
+export function superPut(
+  endpoint: string,
+  setCookies: string[],
+  opts?: Options
+): request.Test {
+  return superRequest(
+    {
+      method: 'PUT',
+      endpoint,
+      setCookies
+    },
+    opts
+  );
+}
+
+/* eslint-disable @typescript-eslint/naming-convention */
+const requests = {
+  GET: (endpoint: string) => request(fastifyTestInstance?.server).get(endpoint),
+  POST: (endpoint: string) =>
+    request(fastifyTestInstance?.server).post(endpoint),
+  PUT: (endpoint: string) => request(fastifyTestInstance?.server).put(endpoint)
+};
+/* eslint-enable @typescript-eslint/naming-convention */
+
+export const getCsrfToken = (setCookies: string[]): string | undefined => {
+  const csrfSetCookie = setCookies.find(str => str.includes('csrf_token'));
+  const [csrfCookie] = csrfSetCookie?.split(';') ?? [];
+  const [_key, csrfToken] = csrfCookie?.split('=') ?? [];
+
+  return csrfToken;
+};
+
+export function superRequest(
+  config: {
+    method: 'GET' | 'POST' | 'PUT';
+    endpoint: string;
+    setCookies: string[];
+  },
+  options?: Options
+): request.Test {
+  const { method, endpoint, setCookies } = config;
+  const { sendCSRFToken = true } = options ?? {};
+
+  const req = requests[method](endpoint)
+    .set('Origin', 'https://www.freecodecamp.org')
+    .set('Cookie', setCookies);
+
+  const csrfToken = getCsrfToken(setCookies);
+  if (sendCSRFToken && csrfToken) {
+    void req.set('CSRF-Token', csrfToken);
+  }
+  return req;
 }
 
 export function setupServer(): void {
