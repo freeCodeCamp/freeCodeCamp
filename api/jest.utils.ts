@@ -13,14 +13,14 @@ type Options = {
 
 // TODO: remove this function and use superRequest instead
 export function superPut(
-  endpoint: string,
+  resource: string,
   setCookies: string[],
   opts?: Options
 ): request.Test {
   return superRequest(
+    resource,
     {
       method: 'PUT',
-      endpoint,
       setCookies
     },
     opts
@@ -29,10 +29,10 @@ export function superPut(
 
 /* eslint-disable @typescript-eslint/naming-convention */
 const requests = {
-  GET: (endpoint: string) => request(fastifyTestInstance?.server).get(endpoint),
-  POST: (endpoint: string) =>
-    request(fastifyTestInstance?.server).post(endpoint),
-  PUT: (endpoint: string) => request(fastifyTestInstance?.server).put(endpoint)
+  GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
+  POST: (resource: string) =>
+    request(fastifyTestInstance?.server).post(resource),
+  PUT: (resource: string) => request(fastifyTestInstance?.server).put(resource)
 };
 /* eslint-enable @typescript-eslint/naming-convention */
 
@@ -45,17 +45,17 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
 };
 
 export function superRequest(
+  resource: string,
   config: {
     method: 'GET' | 'POST' | 'PUT';
-    endpoint: string;
     setCookies?: string[];
   },
   options?: Options
 ): request.Test {
-  const { method, endpoint, setCookies } = config;
+  const { method, setCookies } = config;
   const { sendCSRFToken = true } = options ?? {};
 
-  const req = requests[method](endpoint).set(
+  const req = requests[method](resource).set(
     'Origin',
     'https://www.freecodecamp.org'
   );

@@ -14,17 +14,17 @@ describe('production', () => {
   setupServer();
   describe('GET /', () => {
     test('have a 200 response', async () => {
-      const res = await superRequest({ method: 'GET', endpoint: '/' });
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.statusCode).toBe(200);
     });
 
     test('return { "hello": "world"}', async () => {
-      const res = await superRequest({ method: 'GET', endpoint: '/' });
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.body).toEqual({ hello: 'world' });
     });
 
     test('should have OWASP recommended headers', async () => {
-      const res = await superRequest({ method: 'GET', endpoint: '/' });
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
         'content-security-policy': "frame-ancestors 'none'",
@@ -45,7 +45,7 @@ describe('production', () => {
     ])(
       'should have Access-Control-Allow-Origin header for %s',
       async origin => {
-        const res = await superRequest({ method: 'GET', endpoint: '/' }).set(
+        const res = await superRequest('/', { method: 'GET' }).set(
           'origin',
           origin
         );
@@ -56,7 +56,7 @@ describe('production', () => {
     );
 
     test('should have HOME_LOCATION Access-Control-Allow-Origin header for other origins', async () => {
-      const res = await superRequest({ method: 'GET', endpoint: '/' }).set(
+      const res = await superRequest('/', { method: 'GET' }).set(
         'origin',
         'https://www.google.com'
       );
@@ -66,7 +66,7 @@ describe('production', () => {
     });
 
     test('should have Access-Control-Allow-(Headers+Credentials) headers', async () => {
-      const res = await superRequest({ method: 'GET', endpoint: '/' });
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
           'Origin, X-Requested-With, Content-Type, Accept',
@@ -77,9 +77,8 @@ describe('production', () => {
 
   describe('GET /documentation', () => {
     test('should have OWASP recommended headers, except content-type', async () => {
-      const res = await superRequest({
-        method: 'GET',
-        endpoint: '/documentation/static/index.html'
+      const res = await superRequest('/documentation/static/index.html', {
+        method: 'GET'
       });
       expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
