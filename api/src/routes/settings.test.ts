@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { setupServer, superPut } from '../../jest.utils';
+import { setupServer, superPut, superRequest } from '../../jest.utils';
 
 const baseProfileUI = {
   isLocked: false,
@@ -36,12 +36,12 @@ describe('settingRoutes', () => {
   // protected.
   describe('CSRF protection', () => {
     it('should return 403 if the _csrf secret is missing', async () => {
-      const response = await request(fastifyTestInstance?.server).put(
+      const response = await request(fastifyTestInstance.server).put(
         '/update-my-profileui'
       );
 
-      expect(response?.statusCode).toEqual(403);
-      expect(response?.body).toEqual({
+      expect(response.statusCode).toEqual(403);
+      expect(response.body).toEqual({
         code: 'FST_CSRF_MISSING_SECRET',
         error: 'Forbidden',
         message: 'Missing csrf secret',
@@ -50,12 +50,12 @@ describe('settingRoutes', () => {
     });
 
     it('should return 403 if the csrf_token is invalid', async () => {
-      const response = await request(fastifyTestInstance?.server)
+      const response = await request(fastifyTestInstance.server)
         .put('/update-my-profileui')
         .set('Cookie', ['_csrf=foo', 'csrf-token=bar']);
 
-      expect(response?.statusCode).toEqual(403);
-      expect(response?.body).toEqual({
+      expect(response.statusCode).toEqual(403);
+      expect(response.body).toEqual({
         code: 'FST_CSRF_INVALID_TOKEN',
         error: 'Forbidden',
         message: 'Invalid csrf token',
@@ -64,11 +64,11 @@ describe('settingRoutes', () => {
     });
 
     it('should receive a new CSRF token + secret in the response', async () => {
-      const response = await request(fastifyTestInstance?.server).put(
+      const response = await request(fastifyTestInstance.server).put(
         '/update-my-profileui'
       );
 
-      const newCookies = response?.get('Set-Cookie');
+      const newCookies = response.get('Set-Cookie');
       expect(newCookies).toEqual(
         expect.arrayContaining([
           expect.stringContaining('_csrf'),
@@ -83,11 +83,11 @@ describe('settingRoutes', () => {
 
     // Authenticate user
     beforeAll(async () => {
-      await fastifyTestInstance?.prisma.user.updateMany({
+      await fastifyTestInstance.prisma.user.updateMany({
         where: { email: 'foo@bar.com' },
         data: { profileUI: baseProfileUI }
       });
-      const res = await request(fastifyTestInstance?.server).get(
+      const res = await request(fastifyTestInstance.server).get(
         '/auth/dev-callback'
       );
       setCookies = res.get('Set-Cookie');
@@ -102,12 +102,12 @@ describe('settingRoutes', () => {
           profileUI
         });
 
-        const user = await fastifyTestInstance?.prisma.user.findFirst({
+        const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response?.statusCode).toEqual(200);
-        expect(response?.body).toEqual({
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toEqual({
           message: 'flash.privacy-updated',
           type: 'success'
         });
@@ -125,11 +125,11 @@ describe('settingRoutes', () => {
           }
         });
 
-        const user = await fastifyTestInstance?.prisma.user.findFirst({
+        const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
         expect(user?.profileUI).toEqual(profileUI);
       });
 
@@ -147,8 +147,8 @@ describe('settingRoutes', () => {
           }
         });
 
-        expect(response?.statusCode).toEqual(400);
-        expect(response?.body).toEqual({
+        expect(response.statusCode).toEqual(400);
+        expect(response.body).toEqual({
           code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: `body/profileUI must have required property 'showAbout'`,
@@ -163,9 +163,9 @@ describe('settingRoutes', () => {
           theme: 'night'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.updated-themes',
           type: 'success'
         });
@@ -176,16 +176,16 @@ describe('settingRoutes', () => {
           theme: 'invalid'
         });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
     describe('/update-my-keyboard-shortcuts', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-keyboard-shortcuts')
-          .set('Cookie', cookies)
-          .send({ keyboardShortcuts: true });
+        const response = await superRequest('/update-my-keyboard-shortcuts', {
+          method: 'PUT',
+          setCookies
+        }).send({ keyboardShortcuts: true });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -196,10 +196,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid shortcuts setting', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-keyboard-shortcuts')
-          .set('Cookie', cookies)
-          .send({ keyboardShortcuts: 'invalid' });
+        const response = await superRequest('/update-my-keyboard-shortcuts', {
+          method: 'PUT',
+          setCookies
+        }).send({ keyboardShortcuts: 'invalid' });
 
         expect(response?.statusCode).toEqual(400);
       });
@@ -207,10 +207,10 @@ describe('settingRoutes', () => {
 
     describe('/update-my-quincy-email', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-quincy-email')
-          .set('Cookie', cookies)
-          .send({ sendQuincyEmail: true });
+        const response = await superRequest('/update-my-quincy-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ sendQuincyEmail: true });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -221,10 +221,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid sendQuincyEmail', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-quincy-email')
-          .set('Cookie', cookies)
-          .send({ sendQuincyEmail: 'invalid' });
+        const response = await superRequest('/update-my-quincy-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ sendQuincyEmail: 'invalid' });
 
         expect(response?.statusCode).toEqual(400);
       });
@@ -232,10 +232,10 @@ describe('settingRoutes', () => {
 
     describe('/update-my-honesty', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-honesty')
-          .set('Cookie', cookies)
-          .send({ isHonest: true });
+        const response = await superRequest('/update-my-honesty', {
+          method: 'PUT',
+          setCookies
+        }).send({ isHonest: true });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -246,10 +246,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid honesty', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-honesty')
-          .set('Cookie', cookies)
-          .send({ isHonest: false });
+        const response = await superRequest('/update-my-honesty', {
+          method: 'PUT',
+          setCookies
+        }).send({ isHonest: false });
 
         expect(response?.statusCode).toEqual(400);
       });
@@ -257,10 +257,10 @@ describe('settingRoutes', () => {
 
     describe('/update-privacy-terms', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-privacy-terms')
-          .set('Cookie', cookies)
-          .send({ quincyEmails: true });
+        const response = await superRequest('/update-privacy-terms', {
+          method: 'PUT',
+          setCookies
+        }).send({ quincyEmails: true });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -271,10 +271,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with non-boolean data', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-privacy-terms')
-          .set('Cookie', cookies)
-          .send({ quincyEmails: '123' });
+        const response = await superRequest('/update-privacy-terms', {
+          method: 'PUT',
+          setCookies
+        }).send({ quincyEmails: '123' });
 
         expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
@@ -292,26 +292,26 @@ describe('settingRoutes', () => {
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await request(fastifyTestInstance?.server).get('/');
+      const res = await request(fastifyTestInstance.server).get('/');
       setCookies = res.get('Set-Cookie');
     });
 
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
       const response = await superPut('/update-my-profileui', setCookies);
 
-      expect(response?.statusCode).toEqual(401);
+      expect(response.statusCode).toEqual(401);
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
       const response = await superPut('/update-my-theme', setCookies);
 
-      expect(response?.statusCode).toEqual(401);
+      expect(response.statusCode).toEqual(401);
     });
 
     test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastify?.server).put(
-        '/update-privacy-terms'
-      );
+      const response = await superRequest('/update-privacy-terms', {
+        method: 'PUT'
+      });
 
       expect(response?.statusCode).toEqual(401);
     });
