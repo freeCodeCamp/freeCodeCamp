@@ -420,7 +420,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       {...(editorRef && { editorRef: editorRef })}
     >
-      <LearnLayout>
+      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />
         <Media maxWidth={MAX_MOBILE_WIDTH}>
           <MobileLayout

@@ -137,6 +137,10 @@
   flex-direction: column;
 }
 
+[data-has-editable-boundaries='true'] #mobile-layout .tab-content {
+  padding-block-end: 0;
+}
+
 #mobile-layout .tab-pane {
   height: 100%;
   overflow: hidden;
