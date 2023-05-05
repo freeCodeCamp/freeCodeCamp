@@ -130,3 +130,7 @@ legend.sr-only + div > .video-quiz-options {
   font-size: 1rem;
   margin-top: 1rem;
 }
+
+.video-quiz-options input:focus-visible + .video-quiz-input-visible {
+  outline: 3px solid var(--focus-outline-color);
+}

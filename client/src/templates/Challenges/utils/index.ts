@@ -57,12 +57,15 @@ export function enhancePrismAccessibility(
     const codeType = prismEnv.element?.className
       .replace(/language-(.*)/, '$1')
       .toLowerCase();
-    const codeName = langs[codeType] || '';
-    parent.setAttribute(
-      'aria-label',
-      i18next.t('aria.code-example', {
-        codeName
-      })
-    );
+    // Don't give an accessible name if inside a label
+    if (!prismEnv?.element.closest('label')) {
+      const codeName = langs[codeType] || '';
+      parent.setAttribute(
+        'aria-label',
+        i18next.t('aria.code-example', {
+          codeName
+        })
+      );
+    }
   }
 }

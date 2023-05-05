@@ -20,6 +20,8 @@ More resources:
 
 ## --text--
 
+What will the following code print?
+
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 for key in counts:
@@ -27,7 +29,7 @@ for key in counts:
         print(key, counts[key])
 ```
 
-What will the preceding code print?
+[hidden]What will the preceding code print?
 
 ## --answers--
 

@@ -20,6 +20,8 @@ More resources:
 
 ## --text--
 
+### Original Code
+
 ```python
 lst = []
 for key, val in counts.items():
@@ -29,31 +31,49 @@ lst = sorted(lst, reverse=True)
 print(lst)
 ```
 
-Which does the same thing as the preceding code?
+Which of the following code examples does the same thing as the original code above?
 
-## --answers--
+### Example A
 
 ```python
 print( sorted( [ (v,k) for k,v in counts.items() ], reverse=True ) )
 ```
 
----
+### Example B
 
 ```python
 print( [ (k,v) for k,v in counts.items().sorted() ] )
 ```
 
----
+### Example C
 
 ```python
 print( sorted( [ (v,k) for k,v in counts.keys() ] ) )
 ```
 
----
+### Example D
 
 ```python
 print( [ (k,v) for k,v in counts.values().sort() ] )
 ```
+
+[hidden]Which of the preceding code example does the same thing as the original code above?
+
+## --answers--
+
+Example A
+
+---
+
+Example B
+
+---
+
+Example C
+
+---
+
+Example D
 
 ## --video-solution--
 
