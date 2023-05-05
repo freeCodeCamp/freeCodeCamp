@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-b
 
 1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
 
-1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight`  and the color should be set with an `id` attribute.
+1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight` and the color should be set with an `id` attribute.
 
 # --hints--
 
