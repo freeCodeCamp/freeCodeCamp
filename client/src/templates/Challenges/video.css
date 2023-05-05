@@ -116,7 +116,8 @@ legend.sr-only + div > .video-quiz-options {
 }
 
 .video-quiz-option code {
-  background: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 .video-question-heading {
