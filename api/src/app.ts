@@ -37,6 +37,7 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN
 } from './utils/env';
+import { userRoutes } from './routes/user';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -123,6 +124,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
+  void fastify.register(userRoutes, { prefix: '/user' });
 
   return fastify;
 };
