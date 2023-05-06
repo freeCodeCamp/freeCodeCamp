@@ -176,7 +176,7 @@
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
     "dotenv": "16.0.3",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.30",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.5.0",
     "jest-json-schema-extended": "1.0.1",
     "monaco-editor-webpack-plugin": "4.2.0",
