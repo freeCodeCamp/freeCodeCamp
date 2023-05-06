@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Design responsivo para a web (novo)",
+    "title": "Design responsivo para a web",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um site de questionário.",
@@ -336,6 +336,10 @@
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
         "intro": ["", ""]
@@ -344,8 +348,16 @@
         "title": "Aprenda estruturas de dados criando um carrinho de compras",
         "intro": ["", ""]
       },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
+        "intro": ["", ""]
+      },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Aprenda expressões regulares criando um filtro de spam",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
         "intro": ["", ""]
       }
     }
@@ -453,7 +465,7 @@
     }
   },
   "relational-database": {
-    "title": "Banco de dados relacional (Beta)",
+    "title": "Bancos de dados relacionais",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
       "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
@@ -941,6 +953,14 @@
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Aprenda o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
       }
     }
   },
@@ -993,9 +1013,8 @@
     "legacy-header": "Cursos anteriores",
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
-    "new-rwd-desc": "Atualizamos nosso currículo de Design responsivo para a web. Se você estava fazendo o currículo anterior, seu progresso ainda está salvo! Você pode encontrá-lo na seção Design responsivo para a web legado.",
-    "new-rwd-article": "Encorajamos você a ler sobre as mudanças que fizemos e a explorar o currículo atualizado.",
-    "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
+    "course-maintenance": "Estes cursos estão passando por manutenção. Se eles não estiverem funcionando, você pode aprender como executá-los localmente em <0>https://www.freecodecamp.org/portuguese/news/curso-de-bancos-de-dados-relacionais-como-aprender-sql-no-vscode-usando-o-docker-e-o-freecodecamp/</0>.",
+    "progress-wont-save": "O progresso não será salvo em sua conta do freeCodeCamp quando executá-los localmente.",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",
     "enable-cookies": "Você deve habilitar cookies de terceiros antes de iniciar.",

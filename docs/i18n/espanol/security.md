@@ -20,7 +20,7 @@ Después de confirmar las directrices anteriores, no dude en enviar un correo el
 
 Una vez que nos informe de una vulnerabilidad, la investigaremos y nos aseguraremos de que no sea un falso positivo. Si necesitamos aclarar algún detalle, nos pondremos en contacto con usted. Puede enviar informes separados para cada problema que encuentre. Tenga en cuenta que no podremos responder a las cuestiones que consideremos que están fuera de las directrices.
 
-## Platforms and Codebases
+## Plataformas y Bases de Código
 
 Esta es una lista de las plataformas y bases de código para las que aceptamos informes:
 

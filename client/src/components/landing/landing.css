@@ -66,6 +66,11 @@ figcaption.caption {
   height: 40px;
 }
 
+.faq-question {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 @media (min-width: 370px) {
   .logo-row svg {
     margin: 5px 15px;

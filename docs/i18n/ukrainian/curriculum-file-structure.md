@@ -83,11 +83,10 @@ curriculum/
 1. Змінити назву тієї ж самої теки блоку в _усіх_ іншомовних каталогах, аби вони збігалися. Вони повинні бути такі ж самі як і в англійській теці, інакше буде помилка збірки.
 1. Змінити назву теки блоку в каталозі `_meta`.
 1. Оновити властивості `name` та `dashedName`  для файлу `meta.json` цього блоку.
-1. Оновити `client/utils/help-category-map.json`, щоб використати нову назву блоку як основну.
-1. Оновити теку блоку в `client/src/pages/learn/{superBlock}`.
-1. Оновити значення `block` в титульному елементі в файлі `index.md` з вищезгаданої теки.
-1. У файлах `client/i18n/locales/{language}/intro.json` оновіть назву блоку до нової для всіх мов. В англійському файлі `intro.json` також оновіть `title`.
-1. Оновити головний файл `README.md` до нового імені.
+1. Update the block folder in `client/src/pages/learn/{superBlock}`.
+1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Update the main `README.md` file to the new name.
 
 ### Перейменування завдання
 

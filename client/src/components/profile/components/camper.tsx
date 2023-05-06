@@ -28,7 +28,6 @@ export type CamperProps = Pick<
   | 'githubProfile'
   | 'isDonating'
   | 'linkedin'
-  | 'points'
   | 'username'
   | 'twitter'
   | 'yearsTopContributor'
@@ -67,7 +66,6 @@ function Camper({
   name,
   username,
   location,
-  points,
   picture,
   about,
   yearsTopContributor,
@@ -127,9 +125,6 @@ function Camper({
         </div>
       )}
       <br />
-      <p className='text-center points'>
-        {t('profile.total-points', { count: points })}
-      </p>
     </div>
   );
 }

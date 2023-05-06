@@ -108,6 +108,3 @@ exports.submitTypes = {
   [theOdinProject]: 'tests',
   [colab]: 'project.backEnd'
 };
-
-// determine which help forum questions should be posted to
-exports.helpCategoryMap = require('./help-category-map.json');

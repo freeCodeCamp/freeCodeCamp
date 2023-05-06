@@ -9,7 +9,7 @@ dashedName: build-a-data-graph-explorer
 
 Lavorerai a <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">questo progetto con Google Colaboratory</a>.
 
-Once you complete the project, submit your project link below. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione del link per "anyone with the link"
+Una volta completato il progetto, invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione del link per "anyone with the link"
 
 # --instructions--
 

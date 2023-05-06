@@ -68,6 +68,7 @@ const initialState = {
   showSignoutModal: false,
   isOnline: true,
   isServerOnline: true,
+  renderStartTime: null,
   donationFormState: {
     ...defaultDonationFormState
   }
@@ -128,6 +129,12 @@ export const reducer = handleActions(
       return {
         ...state,
         recentlyClaimedBlock: payload
+      };
+    },
+    [actionTypes.setRenderStartTime]: (state, { payload }) => {
+      return {
+        ...state,
+        renderStartTime: payload
       };
     },
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({

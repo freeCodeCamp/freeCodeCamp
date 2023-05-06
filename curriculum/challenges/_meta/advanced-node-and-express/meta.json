@@ -2,6 +2,7 @@
   "name": "Advanced Node and Express",
   "isUpcomingChange": false,
   "dashedName": "advanced-node-and-express",
+  "helpCategory": "JavaScript",
   "order": 1,
   "time": "5 hours",
   "template": "",
@@ -96,4 +97,5 @@
       "589fc832f9fc0f352b528e79",
       "Send and Display Chat Messages"
     ]
-  ]}
+  ]
+}

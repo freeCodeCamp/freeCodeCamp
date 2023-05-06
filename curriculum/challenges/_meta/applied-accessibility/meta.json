@@ -2,6 +2,7 @@
   "name": "Applied Accessibility",
   "isUpcomingChange": false,
   "dashedName": "applied-accessibility",
+  "helpCategory": "HTML-CSS",
   "order": 3,
   "time": "5 hours",
   "template": "",
@@ -96,4 +97,5 @@
       "587d7790367417b2b2512ab1",
       "Use tabindex to Specify the Order of Keyboard Focus for Several Elements"
     ]
-  ]}
+  ]
+}

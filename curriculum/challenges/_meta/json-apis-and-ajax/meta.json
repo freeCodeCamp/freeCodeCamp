@@ -2,6 +2,7 @@
   "name": "JSON APIs and AJAX",
   "isUpcomingChange": false,
   "dashedName": "json-apis-and-ajax",
+  "helpCategory": "JavaScript",
   "order": 1,
   "time": "2 hours",
   "template": "",
@@ -52,4 +53,5 @@
       "587d7faf367417b2b2512be9",
       "Post Data with the JavaScript XMLHttpRequest Method"
     ]
-  ]}
+  ]
+}

@@ -16,13 +16,13 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifySentry from './plugins/fastify-sentry';
 
+import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { settingRoutes } from './routes/settings';
 import { auth0Routes, devLoginCallback } from './routes/auth';
-import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
 import prismaPlugin from './db/prisma';
 
@@ -49,6 +49,8 @@ export type FastifyInstanceWithTypeProvider = FastifyInstance<
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
+  // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
+  // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   void fastify.register(security);
@@ -61,6 +63,8 @@ export const build = async (
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
+
+  await fastify.register(cors);
   await fastify.register(fastifyCookie);
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
@@ -119,7 +123,6 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
-  void fastify.register(testValidatedRoutes);
 
   return fastify;
 };

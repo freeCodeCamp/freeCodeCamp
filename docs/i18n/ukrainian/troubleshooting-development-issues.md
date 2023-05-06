@@ -1,20 +1,20 @@
-If you are facing an issue, there is a high chance that the resolution is in this documentation.
+Якщо ви зіткнулися з проблемою, найімовірніше, у цій документації написано її вирішення.
 
-## Issues with Installing the Recommended Prerequisites
+## Проблеми з встановленням рекомендованих попередніх умов
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Ми регулярно використовуємо найновіші та найпопулярніші операційні системи, як-от macOS 10.15 і вище, Ubuntu 18.04 і вище та Windows 10 (із WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Рекомендовано шукати розв’язок певної проблеми у Google, Stack Overflow та Stack Exchange. Ймовірно, хтось вже стикався із тією ж проблемою і на ваш запит вже є відповідь.
 
-If you are on a different OS or are still facing issues, see [getting help](#getting-help).
+Якщо ви використовуєте іншу ОС або досі стикаєтесь із проблемами, див. [отримання допомоги](#getting-help).
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for problems with the prerequisite technologies. They are out of the scope of this project.
+> Будь ласка, уникайте створення проблем на GitHub щодо попередніх умов. Вони не входять у межі проєкту.
 
-## Issues with Missing UI, Fonts, Language Strings, or Build Errors
+## Проблеми відсутніх UI, шрифтів, мовних рядків чи помилки збірки
 
-When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
+Коли ви будуєте клієнта, Gatsby кешує шрифти, мовні рядки та UI. Якщо щось з переліченого не кешоване, виконайте наступне:
 
 ```console
 pnpm run clean
@@ -23,17 +23,17 @@ pnpm run seed
 pnpm run develop
 ```
 
-OR
+АБО
 
-Use the shortcut
+Скористайтеся скороченням
 
 ```
 pnpm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+Якщо ви надалі стикаєтесь з помилками збірки, рекомендовано очистити робоче середовище.
 
-Use `git clean` in interactive mode:
+Використайте `git clean` в інтерактивному режимі:
 
 ```
 git clean -ifdX
@@ -41,20 +41,20 @@ git clean -ifdX
 
 <details>
    <summary>
-      How to clean git untracked files (screenshot)
+      Як очистити файли git, які не відстежуються (знімок екрану)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Як очистити файли git, які не відстежуються" />
 </details>
 
-## Issues with API, login, Challenge Submissions, etc.
+## Проблеми з API, входом, здачею завдань тощо
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+Якщо ви не можете увійти, а замість цього бачите банер з повідомленням про помилку, яка буде відправлена до freeCodeCamp, будь ласка, перевірте, чи не використовується ваш локальний порт `3000` іншою програмою.
 
 <!-- tabs:start -->
 
-#### **macOS/Linux/WSL on Windows - From Terminal:**
+#### **macOS/Linux/WSL на Windows — у терміналі:**
 
 ```console
 netstat -a | grep "3000"
@@ -62,7 +62,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
+#### **На Windows — у PowerShell із привілеями:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -74,28 +74,28 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ---
 
-## Issues Signing Out while Navigating
+## Проблеми з виходом під час перегляду
 
-While in development, your session is stored as cookies. Clearing them will sign you out of your development account.
+Ваш сеанс зберігається як файли cookies під час розробки. Якщо їх видалити, ви вийдете з облікового запису розробки.
 
-Running `pnpm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
+Якщо запустити `pnpm run seed:certified-user`, ви також вийдете з облікового запису. Це замінить користувача розробки у вашій локальній базі даних.
 
-## Issue Getting 404 when Navigating Profile Page
+## Проблема отримання 404 під час перегляду облікового запису
 
-When you try to navigate to http://localhost:8000/developmentuser to view the profile page, Gatsby takes over serving the client-side pages and hence you will get a 404 page for the user profile when working.
+Коли ви намагаєтесь перейти до http://localhost:8000/developmentuser, щоб переглянути обліковий запис, Gatsby піклується про обслуговування сторінок на стороні клієнта, тому під час роботи ви отримаєте сторінку з помилкою 404.
 
-There is a "Preview Custom 404 Page" button, click it to see the profile.
+Натисніть на кнопку «Preview Custom 404 Page», щоб переглянути обліковий запис.
 
-## Issues Installing Dependencies
+## Проблеми при встановленні залежностей
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Якщо при встановленні залежностей виникають помилки, переконайтеся, що ви не перебуваєте в мережі з обмеженнями або налаштування мережевого екрана не перешкоджають доступу до ресурсів.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+Перше налаштування може зайняти деякий час (залежно від пропускної здатності вашої мережі). Будьте терплячими. Якщо ви досі не знайшли рішення, ми рекомендуємо використати GitPod замість автономної роботи.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Якщо ви використовуєте пристрої Apple із чипом M1 для локального запуску застосунку, рекомендовано використовувати Node v14.7 і вище. В іншому випадку ви можете натрапити на проблеми із залежностями, як-от Sharp.
 
-## Getting Help
+## Отримання допомоги
 
-If you are stuck and need help, feel free to ask questions in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Якщо вам потрібна допомога, не соромтесь ставити питання [на нашому форумі у розділі «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+У консолі вашого браузера або в Bash / терміналі / командному рядку може з’явитися помилка, яка допоможе визначити проблему. Поділіться цим повідомленням про помилку в описі проблеми, щоб іншим було легше визначити проблему і знайти рішення.

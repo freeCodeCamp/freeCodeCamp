@@ -103,16 +103,16 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.21.3",
     "@babel/plugin-proposal-function-bind": "7.18.9",
-    "@babel/preset-env": "7.21.4",
+    "@babel/preset-env": "7.21.5",
     "@babel/preset-react": "7.18.6",
-    "@babel/preset-typescript": "7.21.4",
+    "@babel/preset-typescript": "7.21.5",
     "@testing-library/cypress": "8.0.7",
     "@testing-library/dom": "8.20.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.1",
     "@types/lodash": "4.14.194",
-    "@types/node": "18.15.13",
+    "@types/node": "18.16.0",
     "@types/store": "2.0.2",
     "babel-jest": "29.5.0",
     "babel-plugin-transform-imports": "2.0.0",
@@ -138,7 +138,7 @@
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
     "lodash": "4.17.21",
-    "markdownlint": "0.28.1",
+    "markdownlint": "0.28.2",
     "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
     "prettier": "^2.8.0",
@@ -149,6 +149,6 @@
     "ts-node": "10.9.1",
     "typescript": "4.9.5",
     "webpack-bundle-analyzer": "4.8.0",
-    "yargs": "17.7.1"
+    "yargs": "17.7.2"
   }
 }

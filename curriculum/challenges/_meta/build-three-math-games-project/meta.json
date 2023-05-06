@@ -1,6 +1,7 @@
 {
   "name": "Build Three Math Games Project",
   "isUpcomingChange": false,
+  "helpCategory": "Python",
   "order": 13,
   "time": "30 hours",
   "template": "",
@@ -11,4 +12,5 @@
       "63d8401039c73468b059cd41",
       "Build Three Math Games"
     ]
-  ]}
+  ]
+}

@@ -16,7 +16,7 @@ describe('Certification intro page', () => {
     cy.visit('/learn/2022/responsive-web-design');
     cy.title().should(
       'eq',
-      '(New) Responsive Web Design Certification | freeCodeCamp.org'
+      'Responsive Web Design Certification | freeCodeCamp.org'
     );
     cy.contains(
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages"

@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { Themes } from '../components/settings/theme';
-import { certMap } from '../resources/cert-and-project-map';
+import { fullCertMap } from '../resources/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: (typeof certMap)[number]['title'];
+    title: (typeof fullCertMap)[number]['title'];
   };
   headings: [
     {
@@ -235,7 +235,7 @@ export type ProfileUI = {
   showTimeLine: boolean;
 };
 
-type ClaimedCertifications = {
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;

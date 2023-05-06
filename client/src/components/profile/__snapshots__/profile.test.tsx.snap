@@ -273,11 +273,6 @@ exports[`<Profile/> renders correctly 1`] = `
       
       
       <br />
-      <p
-        class="text-center points"
-      >
-        profile.total-points
-      </p>
     </div>
     <div
       class="spacer"

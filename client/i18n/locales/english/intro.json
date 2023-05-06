@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(New) Responsive Web Design",
+    "title": "Responsive Web Design",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
@@ -336,6 +336,10 @@
         "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": ["", ""]
@@ -344,8 +348,16 @@
         "title": "Learn Data Structures By Building A Shopping Cart",
         "intro": ["", ""]
       },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": ["", ""]
+      },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
       }
     }
@@ -450,7 +462,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (Beta)",
+    "title": "Relational Database",
     "intro": [
       "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
       "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
@@ -938,6 +950,14 @@
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Learn CSS Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Learn CSS Foundations Projects",
+        "intro": ["A description is to be determined"]
       }
     }
   },
@@ -990,9 +1010,8 @@
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
     "legacy-go-back": "Go to the current version of the curriculum.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
-    "viewing-upcoming-change": "You are looking at a beta page. ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "Go back to the stable version of the curriculum.",
     "read-database-cert-article": "Please read this forum post before proceeding.",
     "enable-cookies": "You must enable third-party cookies before starting.",

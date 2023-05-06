@@ -2,6 +2,7 @@
   "name": "Build a Survey Form Project",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
   "order": 4,
   "time": "30 hours",
   "template": "",
@@ -12,4 +13,5 @@
       "587d78af367417b2b2512b03",
       "Build a Survey Form"
     ]
-  ]}
+  ]
+}

@@ -2,6 +2,7 @@
   "name": "Numpy",
   "isUpcomingChange": false,
   "dashedName": "numpy",
+  "helpCategory": "Python",
   "order": 1,
   "time": "5 hours",
   "template": "",
@@ -44,4 +45,5 @@
       "5e9a0a8e09c5df3cc3600eda",
       "Loading Data and Advanced Indexing"
     ]
-  ]}
+  ]
+}

@@ -22,6 +22,7 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
+assert.ok(process.env.HOME_LOCATION);
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
 assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
 assert.ok(process.env.AUTH0_DOMAIN);
@@ -51,6 +52,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
+export const HOME_LOCATION = process.env.HOME_LOCATION;
 export const MONGOHQ_URL =
   process.env.MONGOHQ_URL ??
   'mongodb://localhost:27017/freecodecamp?directConnection=true';

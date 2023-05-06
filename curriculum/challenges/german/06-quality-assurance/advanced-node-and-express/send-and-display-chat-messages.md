@@ -8,7 +8,7 @@ dashedName: send-and-display-chat-messages
 
 # --description--
 
-Es ist an der Zeit, dass du den Clients erlaubst, eine Chatnachricht an den Server zu senden, die er wiederum an alle Clients emittiert! In your `client.js` file, you should see there is already a block of code handling when the message form is submitted.
+Es ist an der Zeit, dass du den Clients erlaubst, eine Chatnachricht an den Server zu senden, die er wiederum an alle Clients emittiert! In der Datei `client.js` solltest du sehen, dass es bereits einen Codeblock gibt, der das Absenden des Nachrichtenformulars verarbeitet.
 
 ```js
 $('form').submit(function() {
@@ -26,7 +26,7 @@ Now, on your server, you should be listening to the socket for the event `'chat 
 
 In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
 
-At this point, the chat should be fully functional and sending messages across all clients!
+Nun sollte der Chat voll funktionsfähig sein und Nachrichten an alle Clients verschicken!
 
 Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 

@@ -7,6 +7,7 @@ import AsSeenIn from './components/as-seen-in';
 import Certifications from './components/certifications';
 import LandingTop from './components/landing-top';
 import Testimonials from './components/testimonials';
+import Faq from './components/faq';
 
 import './landing.css';
 
@@ -25,6 +26,7 @@ function Landing(): ReactElement {
         </Grid>
         <Testimonials />
         <Certifications />
+        <Faq />
       </main>
     </>
   );

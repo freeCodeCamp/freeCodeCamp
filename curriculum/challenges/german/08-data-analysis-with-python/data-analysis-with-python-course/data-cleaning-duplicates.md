@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15f
-title: Data Cleaning Duplicates
+title: Datenbereinigung der Duplikate
 challengeType: 11
 videoId: kj7QqjXhH6A
 bilibiliIds:
@@ -12,30 +12,30 @@ dashedName: data-cleaning-duplicates
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Wie man Notebooks von GitHub unter Verwendung von Google Colab öffnet.</a>
 
 # --question--
 
 ## --text--
 
-The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
+Die Python Methode `.duplicated()` gibt eine boolesche Serie für einen DataFrame zurück. `True` ist der Rückgabewert für Zeilen, die:
 
 ## --answers--
 
-contain a duplicate, where the value for the row contains the first occurrence of that value.
+ein Duplikat beinhalten, wobei der Wert für die Zeile zum ersten Mal vorkommt.
 
 ---
 
-contain a duplicate, where the value for the row is at least the second occurrence of that value.
+ein Duplikat beinhalten, wobei der Wert für die Zeile zumindest zum zweiten Mal vorkommt.
 
 ---
 
-contain a duplicate, where the value for the row contains either the first or second occurrence.
+ein Duplikat beinhalten, wobei der Wert für die Zeile entweder zum ersten oder zweiten Mal vorkommt.
 
 ## --video-solution--
 

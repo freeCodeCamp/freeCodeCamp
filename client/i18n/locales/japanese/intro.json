@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(新) レスポンシブウェブデザイン",
+    "title": "Responsive Web Design",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてクイズサイトを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -336,6 +336,10 @@
         "title": "関数型プログラミングの学習: スプレッドシートを作る",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": ["", ""]
@@ -344,8 +348,16 @@
         "title": "Learn Data Structures By Building A Shopping Cart",
         "intro": ["", ""]
       },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": ["", ""]
+      },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
       }
     }
@@ -453,7 +465,7 @@
     }
   },
   "relational-database": {
-    "title": "リレーショナルデータベース (ベータ版)",
+    "title": "Relational Database",
     "intro": [
       "このコースでは、VS Code、PostgreSQL、そして Linux / Unix コマンドラインを含む本格的な開発者ツールとソフトウェアを使用して、インタラクティブなチュートリアルを完了し、プロジェクトを構築します。",
       "これらのコースは基本的な Bash コマンドから始まります。ターミナルを使用して、ファイルシステムの移動や操作から、Bash 内でのスクリプト、幅広い高度な使用法まで、すべてを学習します。",
@@ -941,6 +953,14 @@
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Learn CSS Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Learn CSS Foundations Projects",
+        "intro": ["A description is to be determined"]
       }
     }
   },
@@ -993,9 +1013,8 @@
     "legacy-header": "レガシーコース",
     "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
     "legacy-go-back": "カリキュラムの最新版へ移動",
-    "new-rwd-desc": "レスポンシブウェブデザインのカリキュラムが更新されました。以前のカリキュラムに取り組まれていた場合も、進捗状況は保存されておりますのでご安心ください。以前の進捗状況は「レスポンシブウェブデザイン (レガシー)」セクションでご確認いただけます。",
-    "new-rwd-article": "更新のお知らせをご確認いただき、新カリキュラムのご利用をご検討ください。",
-    "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
     "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",

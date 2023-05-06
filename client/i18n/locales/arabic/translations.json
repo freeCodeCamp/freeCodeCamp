@@ -73,7 +73,6 @@
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
     "change-language": "تغيير اللغة",
-    "cancel-change": "إلغاء التغيير",
     "resume-project": "أستكمال المشروع",
     "start-project": "إبدأ المشروع"
   },
@@ -102,7 +101,65 @@
         "testimony": "\"لقد ناضلت دائمًا لتعلم JavaScript. لقد أخذت العديد من الدورات ولكن دورة freeCodeCamp التي دامت. إن دراسة JavaScript وكذلك هياكل البيانات والخوارزميات على <strong>freeCodeCamp أعطتني المهارات</strong> والثقة التي كنت بحاجة إليها لإبراز عملي كمهندس برمجيات في Spotify.\""
       }
     },
-    "certification-heading": "احصل على شهادات معتمدة مجانية في:"
+    "certification-heading": "احصل على شهادات معتمدة مجانية في:",
+    "faq": "Frequently asked questions:",
+    "faqs": [
+      {
+        "question": "What exactly is freeCodeCamp?",
+        "answer": [
+          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+        ]
+      },
+      {
+        "question": "How will freeCodeCamp help me learn to code?",
+        "answer": [
+          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
+          "You will also earn free verified certifications along the way."
+        ]
+      },
+      {
+        "question": "Is freeCodeCamp really free?",
+        "answer": [
+          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+        ]
+      },
+      {
+        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "answer": [
+          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+        ]
+      },
+      {
+        "question": "What skills will I learn?",
+        "answer": [
+          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+        ]
+      },
+      {
+        "question": "How long does it take to learn all this?",
+        "answer": [
+          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+        ]
+      },
+      {
+        "question": "How do I get started?",
+        "answer": [
+          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+        ]
+      },
+      {
+        "question": "How do I earn the free verified certifications?",
+        "answer": [
+          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+        ]
+      },
+      {
+        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "answer": [
+          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "شارك مشاريعك غير التي بـ freeCodeCamp أو مقالاتك أو الـ pull requests الخاصه بك.",
@@ -221,8 +278,7 @@
     "tweet": "لقد حصلت للتو على شهادة {{certTitle}} @freeCodeCamp! تحقق منها هنا: {{certURL}}",
     "avatar": "صورة {{username}}",
     "joined": "تاريخ الانضمام {{date}}",
-    "total-points": "مجموع النقاط {{count}}",
-    "total-points_plural": "مُجمل النقاط {{count}}",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
@@ -368,6 +424,16 @@
     "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
     "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
     "duration-4": "كن داعماً لمنظمتنا الخيرية",
+    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
+    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
+    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
+    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
+    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
+    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
+    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
+    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
+    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
+    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "nicely-done": "ممتاز، لقد انتهيت لتوك من {{block}}.",
     "credit-card": "بطاقة ائتمان",
     "credit-card-2": "أو التبرع ببطاقة ائتمانية:",

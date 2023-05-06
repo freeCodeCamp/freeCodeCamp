@@ -38,7 +38,7 @@ Alle Tests sollten bestanden werden.
   );
 ```
 
-You should choose the correct range for the first assertion - `approximately(actual, expected, range)`.
+Du solltest den richtigen Bereich für die erste Behauptung wählen - `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ You should choose the correct range for the first assertion - `approximately(act
   );
 ```
 
-You should choose the correct range for the second assertion - `approximately(actual, expected, range)`.
+Du solltest den richtigen Bereich für die zweite Behauptung wählen - `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>

@@ -56,7 +56,13 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
+function UserProfile({
+  user,
+  t
+}: {
+  user: ProfileProps['user'];
+  t: TFunction;
+}): JSX.Element {
   const {
     profileUI: {
       showAbout,
@@ -97,12 +103,16 @@ function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
         location={showLocation ? location : ''}
         name={showName ? name : ''}
         picture={picture}
-        points={showPoints ? points : null}
         twitter={twitter}
         username={username}
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
+      {showPoints && (
+        <p className='text-center points'>
+          {t('profile.total-points', { count: points })}
+        </p>
+      )}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? (
@@ -136,7 +146,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
-        {showUserProfile && <UserProfile user={user} />}
+        {showUserProfile && <UserProfile user={user} t={t} />}
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>

@@ -2,6 +2,7 @@
   "name": "Basic Algorithm Scripting",
   "isUpcomingChange": false,
   "dashedName": "basic-algorithm-scripting",
+  "helpCategory": "JavaScript",
   "order": 5,
   "time": "50 hours",
   "template": "",
@@ -72,4 +73,5 @@
       "a9bd25c716030ec90084d8a1",
       "Chunky Monkey"
     ]
-  ]}
+  ]
+}
