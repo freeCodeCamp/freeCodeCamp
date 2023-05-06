@@ -10,7 +10,10 @@ describe('Share Template Testing', () => {
   });
 
   test('Testing share templete Click Redirect Event', () => {
-    const hasTwitterComponent = screen.getByText('share-on-twitter');
-    expect(hasTwitterComponent).toBeInTheDocument();
+    const link = screen.getByRole('link', {
+      name: 'buttons.share-on-twitter, aria.opens-new-window'
+    });
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', 'string');
   });
 });
