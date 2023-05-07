@@ -19,7 +19,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "3.1.0",
+    "@fastify/type-provider-typebox": "3.2.0",
     "@types/express-session": "1.17.7",
     "@types/supertest": "2.0.12",
     "dotenv-cli": "7.2.1",
