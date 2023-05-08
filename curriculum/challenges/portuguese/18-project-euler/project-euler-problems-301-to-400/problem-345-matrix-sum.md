@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffda
-title: 'Problem 345: Matrix Sum'
+title: 'Problema 345: Soma interna da matriz'
 challengeType: 1
 forumTopicId: 302004
 dashedName: problem-345-matrix-sum
@@ -8,15 +8,15 @@ dashedName: problem-345-matrix-sum
 
 # --description--
 
-We define the Matrix Sum of a matrix as the maximum sum of matrix elements with each element being the only one in his row and column.
+Definimos a soma interna da matriz como a soma máxima dos elementos da matriz com cada elemento sendo o único em sua linha e coluna.
 
-For example, the Matrix Sum of the matrix below equals $3315 ( = 863 + 383 + 343 + 959 + 767)$:
+Por exemplo, a soma interna da matriz abaixo é igual a $3315 ( = 863 + 383 + 343 + 959 + 767)$:
 
 $$\begin{array}{rrrrr}     7                &  53                & 183                & 439                & \color{lime}{863} \\\\
   497                & \color{lime}{383} & 563                &  79                & 973 \\\\   287                &  63                & \color{lime}{343} & 169                & 583 \\\\
   627                & 343                & 773                & \color{lime}{959} & 943 \\\\ \color{lime}{767} & 473                & 103                & 699                & 303 \end{array}$$
 
-Find the Matrix Sum of:
+Encontre a soma interna da matriz de:
 
 $$\\begin{array}{r}     7 &  53 & 183 & 439 & 863 & 497 & 383 & 563 &  79 & 973 & 287 &  63 & 343 & 169 & 583 \\\\
   627 & 343 & 773 & 959 & 943 & 767 & 473 & 103 & 699 & 303 & 957 & 703 & 583 & 639 & 913 \\\\   447 & 283 & 463 &  29 &  23 & 487 & 463 & 993 & 119 & 883 & 327 & 493 & 423 & 159 & 743 \\\\
@@ -29,7 +29,7 @@ $$\\begin{array}{r}     7 &  53 & 183 & 439 & 863 & 497 & 383 & 563 &  79 & 973 
 
 # --hints--
 
-`matrixSum()` should return `13938`.
+`matrixSum()` deve retornar `13938`.
 
 ```js
 assert.strictEqual(matrixSum(), 13938);

@@ -1,18 +1,18 @@
 ---
 id: 63ee353e0d8d4841c3a7091f
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question F
+title: Fondamenti di CSS Domanda F
 challengeType: 15
 dashedName: css-foundations-question-f
 ---
 
 # --description--
 
-Ok, hai visto parecchie cose finora. The only thing left for now is to go over how to add all this CSS to your HTML. There are three methods to do so.
+Ok, hai visto parecchie cose finora. L'unica cosa rimasta da fare ora è vedere come aggiungere tutto il CSS al tuo HTML. Ci sono tre metodi per farlo.
 
 Il CSS esterno è il metodo più comune che incontrerai, e prevede la creazione di un file separato per il CSS e il collegamento nell'HTML all'interno dei tag `<head>` di apertura e chiusura tramite un elemento `<link>` a chiusura automatica:
 
-Innanzitutto, aggiungi un elemento `<link>` a chiusura automatica all'interno dei tag `<head>` del file HTML. The `href` attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. Nell'esempio precedente, si suppone che entrambi i file si trovino nella stessa directory. L'attributo `rel` è obbligatorio e specifica la relazione tra il file HTML e il file collegato.
+Innanzitutto, aggiungi un elemento `<link>` a chiusura automatica all'interno dei tag `<head>` del file HTML. L'attributo `href` è la posizione del file CSS, sia un URL assoluto o, quello che utilizzerai, un URL relativo alla posizione del file HTML. Nell'esempio precedente, si suppone che entrambi i file si trovino nella stessa directory. L'attributo `rel` è obbligatorio e specifica la relazione tra il file HTML e il file collegato.
 
 All'interno del file `styles.css` appena creato, c'è il selettore (`div` e `p`), seguito da un paio di parentesi graffe, che creano un “blocco di dichiarazione”. Infine, all'interno del blocco di dichiarazione ci sono le dichiarazioni. `color: white;` è una dichiarazione, dove `color` è la proprietà e `white` è il valore, e `background-color: black;` è un'altra dichiarazione.
 

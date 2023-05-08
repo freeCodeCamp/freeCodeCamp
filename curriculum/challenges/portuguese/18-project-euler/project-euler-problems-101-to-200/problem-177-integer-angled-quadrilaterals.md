@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff30
-title: 'Problem 177: Integer angled Quadrilaterals'
+title: 'Problema 177: Quadriláteros de ângulos inteiros'
 challengeType: 1
 forumTopicId: 301812
 dashedName: problem-177-integer-angled-quadrilaterals
@@ -8,21 +8,21 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 # --description--
 
-Let ABCD be a convex quadrilateral, with diagonals AC and BD. At each vertex the diagonal makes an angle with each of the two sides, creating eight corner angles.
+Considere ABCD um quadrilátero convexo, com suas diagonais AC e BD. Em cada vértice, a diagonal faz um ângulo com cada um dos dois lados, criando oito ângulos de canto.
 
-<img class="img-responsive center-block" alt="convex quadrilateral ABCD, with diagonals AC and BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="quadrilátero convexo ABCD com diagonais AC e BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
 
-For example, at vertex A, the two angles are CAD, CAB.
+Por exemplo, no vértice A, os dois ângulos são CAD e CAB.
 
-We call such a quadrilateral for which all eight corner angles have integer values when measured in degrees an "integer angled quadrilateral". An example of an integer angled quadrilateral is a square, where all eight corner angles are 45°. Another example is given by DAC = 20°, BAC = 60°, ABD = 50°, CBD = 30°, BCA = 40°, DCA = 30°, CDB = 80°, ADB = 50°.
+Chamamos um quadrilátero como esse, para o qual todos os oito ângulos têm valores em números inteiros quando medidos em graus um "quadrilátero de ângulos inteiros". Um exemplo de um quadrilátero de ângulos inteiros é um quadrado, onde todos os oito ângulos são de 45°. Outro exemplo é dado por DAC = 20°, BAC = 60°, ABD = 50°, CBD = 30°, BCA = 40°, DCA = 30°, CDB = 80°, ADB = 50°.
 
-What is the total number of non-similar integer angled quadrilaterals?
+Qual é o número total de quadriláteros de ângulos inteiros não semelhantes?
 
-**Note:** In your calculations you may assume that a calculated angle is integral if it is within a tolerance of ${10}^{-9}$ of an integer value.
+**Observação:** nos seus cálculos, você pode supor que um ângulo calculado é inteiro se estiver dentro de uma tolerância de ${10}^{-9}$ de um valor inteiro.
 
 # --hints--
 
-`integerAngledQuadrilaterals()` should return `129325`.
+`integerAngledQuadrilaterals()` deve retornar `129325`.
 
 ```js
 assert.strictEqual(integerAngledQuadrilaterals(), 129325);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ee1000cf542c50ff00
-title: 'Problem 130: Composites with prime repunit property'
+title: 'Problema 130: Compostos com propriedade de primo repunit'
 challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
@@ -8,19 +8,19 @@ dashedName: problem-130-composites-with-prime-repunit-property
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Em inglês, um número que consiste apenas de 1s é chamado de repunit. Definiremos $R(k)$ como sendo um repunit de comprimento $k$. Por exemplo, $R(6) = 111111$.
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+Dado que $n$ é um número inteiro positivo e que o máximo divisor comum $GCD(n, 10) = 1$, pode-se mostrar que sempre existe um valor, $k$, para o qual $R(k)$ é divisível por $n$. Além disso, consideremos $A(n)$ o menor dos valores de $k$ (por exemplo, $A(7) = 6$ e $A(41) = 5$).
 
-You are given that for all primes, $p > 5$, that $p − 1$ is divisible by $A(p)$. For example, when $p = 41, A(41) = 5$, and 40 is divisible by 5.
+Você é informado, para todos os números primos, $p > 5$, que $p − 1$ é divisível por $A(p)$. Por exemplo, quando $p = 41, A(41) = 5$ e 40 é divisível por 5.
 
-However, there are rare composite values for which this is also true; the first five examples being 91, 259, 451, 481, and 703.
+No entanto, há valores compostos raros para os quais isto também é verdadeiro. Os cinco primeiros exemplos são 91, 259, 451, 481 e 703.
 
-Find the sum of the first twenty-five composite values of $n$ for which $GCD(n, 10) = 1$ and $n − 1$ is divisible by $A(n)$.
+Encontre a soma dos primeiros vinte e cinco valores compostos de $n$ para os quais o máximo divisor comum, $GCD(n, 10) = 1$, e $n - 1$ é divisível por $A(n)$.
 
 # --hints--
 
-`compositeRepunit()` should return `149253`.
+`compositeRepunit()` deve retornar `149253`.
 
 ```js
 assert.strictEqual(compositeRepunit(), 149253);

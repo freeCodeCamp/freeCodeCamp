@@ -1,6 +1,6 @@
 ---
 id: 5900f4f91000cf542c51000c
-title: 'Problem 397: Triangle on parabola'
+title: 'Problema 397: Triângulo na parábola'
 challengeType: 1
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
@@ -8,17 +8,17 @@ dashedName: problem-397-triangle-on-parabola
 
 # --description--
 
-On the parabola $y = \frac{x^2}{k}$, three points $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ and $C(c, \frac{c^2}{k})$ are chosen.
+Na parábola $y = \frac{x^2}{k}$, três pontos $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ e $C(c, \frac{c^2}{k})$ são escolhidos.
 
-Let $F(K, X)$ be the number of the integer quadruplets $(k, a, b, c)$ such that at least one angle of the triangle $ABC$ is 45°, with $1 ≤ k ≤ K$ and $-X ≤ a &lt; b &lt; c ≤ X$.
+Considere que $F(K, X)$ é o número de quadras de inteiros $(k, a, b, c)$, de tal forma que pelo menos um ângulo do triângulo $ABC$ é 45°, com $1 ≤ k ≤ K$ e $-X ≤ a &lt; b &lt; c ≤ X$.
 
-For example, $F(1, 10) = 41$ and $F(10, 100) = 12\\,492$.
+Por exemplo, $F(1, 10) = 41$ e $F(10, 100) = 12.492$.
 
-Find $F({10}^6, {10}^9)$.
+Encontre $F({10}^6, {10}^9)$.
 
 # --hints--
 
-`triangleOnParabola()` should return `141630459461893730`.
+`triangleOnParabola()` deve retornar `141630459461893730`.
 
 ```js
 assert.strictEqual(triangleOnParabola(), 141630459461893730);
