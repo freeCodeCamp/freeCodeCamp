@@ -77,16 +77,29 @@
   top: 100%;
 }
 
+.exposed-button-nav:is(
+    :hover,
+    :hover:focus,
+    [aria-expanded='true'],
+    [aria-expanded='true']:hover
+  ),
 .lang-button-nav:is(
     :hover,
     :hover:focus,
     [aria-expanded='true'],
     [aria-expanded='false'].force-show
   ) {
-  background-color: var(--gray-10);
+  background-color: var(--gray-00);
   color: var(--theme-color);
-  border: 1px solid var(--gray-00);
-  fill: var(--gray-10);
+}
+
+.lang-button-nav:is(
+    :hover,
+    :hover:focus,
+    [aria-expanded='true'],
+    [aria-expanded='false'].force-show
+  ) {
+  fill: var(--gray-00);
 }
 
 .nav-list li {
@@ -173,10 +186,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   justify-content: space-between;
 }
 
-.nav-link-sign-in {
-  display: none;
-}
-
 .nav-link-dull {
   color: var(--gray-45);
 }
@@ -195,7 +204,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .exposed-button-nav,
 .lang-button-nav {
-  padding: 2px 14px;
   border: 1px solid var(--gray-00);
   font-size: 18px;
   color: var(--gray-00);
@@ -206,10 +214,16 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   align-items: center;
 }
 
+.exposed-button-nav {
+  padding: 2px 14px;
+}
+
+.lang-button-nav {
+  padding: 5px;
+}
+
 .exposed-button-nav:hover,
 .exposed-button-nav:hover:focus {
-  background-color: var(--gray-00);
-  color: var(--gray-90);
   border: 1px solid var(--gray-00);
 }
 
@@ -272,16 +286,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .display-menu::-webkit-scrollbar {
   display: none;
-}
-
-.exposed-button-nav.reverse-toggle-color {
-  background-color: var(--gray-00);
-  color: var(--theme-color);
-}
-
-.exposed-button-nav.reverse-toggle-color:hover {
-  background-color: var(--gray-00);
-  color: var(--theme-color);
 }
 
 .nav-line {
@@ -433,8 +437,5 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   }
   .universal-nav {
     padding: 0 5px;
-  }
-  .nav-link-sign-in {
-    display: flex;
   }
 }
