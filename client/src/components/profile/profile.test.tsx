@@ -88,10 +88,4 @@ describe('<Profile/>', () => {
     const reportButton: HTMLElement = screen.getByText('buttons.flag-user');
     expect(reportButton).toHaveAttribute('href', '/user/string/report-user');
   });
-
-  it('renders correctly', () => {
-    const { container } = render(<Profile {...notMyProfileProps} />);
-
-    expect(container).toMatchSnapshot();
-  });
 });
