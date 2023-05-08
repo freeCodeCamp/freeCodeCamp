@@ -27,7 +27,6 @@ import {
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
-  ChallengeMeta,
   Dimensions,
   FileKey,
   ResizeProps,
@@ -54,27 +53,23 @@ import {
 import {
   attemptsSelector,
   canFocusEditorSelector,
-  challengeMetaSelector,
   consoleOutputSelector,
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
   isChallengeCompletedSelector,
-  completedPercentageSelector
+  challengeMetaSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import LowerJaw, { LowerJawProps } from './lower-jaw';
+import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-export interface EditorProps
-  extends Pick<LowerJawProps, 'challengeMeta' | 'completedPercent'> {
-  challengeMeta: ChallengeMeta;
-  completedPercent: number;
+export interface EditorProps {
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
@@ -137,7 +132,6 @@ const mapStateToProps = createSelector(
   challengeMetaSelector,
   attemptsSelector,
   canFocusEditorSelector,
-  challengeMetaSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
@@ -146,9 +140,7 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
-  completedPercentageSelector,
   (
-    challengeMeta: ChallengeMeta,
     attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -159,10 +151,8 @@ const mapStateToProps = createSelector(
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
-    isChallengeCompleted: boolean,
-    completedPercent: number
+    isChallengeCompleted: boolean
   ) => ({
-    challengeMeta,
     attempts,
     canFocus: open ? false : canFocus,
     challengeType,
@@ -172,8 +162,7 @@ const mapStateToProps = createSelector(
     output,
     theme,
     tests,
-    isChallengeCompleted,
-    completedPercent
+    isChallengeCompleted
   })
 );
 
@@ -680,8 +669,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     ReactDOM.render(
       <Provider store={reduxStore}>
         <LowerJaw
-          challengeMeta={props.challengeMeta}
-          completedPercent={props.completedPercent}
           openHelpModal={props.openHelpModal}
           openResetModal={props.openResetModal}
           tryToExecuteChallenge={tryToExecuteChallenge}

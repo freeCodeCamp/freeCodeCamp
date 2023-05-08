@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -12,6 +14,10 @@ import { apiLocation } from '../../../../../config/env.json';
 import { ChallengeMeta } from '../../../redux/prop-types';
 import { Share } from '../../../components/share';
 import { ShareProps } from '../../../components/share/types';
+import {
+  challengeMetaSelector,
+  completedPercentageSelector
+} from '../redux/selectors';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
@@ -52,6 +58,15 @@ export interface LowerJawProps {
   isSignedIn: boolean;
   updateContainer: () => void;
 }
+
+const mapStateToProps = createSelector(
+  challengeMetaSelector,
+  completedPercentageSelector,
+  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
+    challengeMeta,
+    completedPercent
+  })
+);
 
 const LowerButtonsPanel = ({
   resetButtonName,
@@ -351,4 +366,4 @@ const LowerJaw = ({
 
 LowerJaw.displayName = 'LowerJaw';
 
-export default LowerJaw;
+export default connect(mapStateToProps)(LowerJaw);
