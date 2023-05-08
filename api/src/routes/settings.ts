@@ -30,7 +30,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.Literal('flash.updated-preferences'),
+            message: Type.Literal('flash.privacy-updated'),
             type: Type.Literal('success')
           }),
           500: Type.Object({
@@ -61,7 +61,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
-          message: 'flash.updated-preferences',
+          message: 'flash.privacy-updated',
           type: 'success'
         } as const;
       } catch (err) {
