@@ -139,7 +139,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
         // Create challenge pages.
         result.data.allChallengeNode.edges.forEach(
-          createChallengePages(createPage)
+          Make changes(createPage)
         );
 
         const blocks = uniq(
