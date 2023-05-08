@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedc
-title: 'Problem 93: Arithmetic expressions'
+title: 'Problema 93: Expressões aritméticas'
 challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
@@ -8,32 +8,32 @@ dashedName: problem-93-arithmetic-expressions
 
 # --description--
 
-By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
+Usando cada um dos algarismos do conjunto {1, 2, 3, 4} exatamente uma vez e fazendo uso das quatro operações aritméticas (+, –, \*, /) e parênteses, é possível formar resultados inteiros positivos diferentes.
 
-For example,
+Por exemplo:
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
-  14 = 4 * (3 + 1 / 2)<br>
-  19 = 4 * (2 + 3) − 1<br>
-  36 = 3 * 4 * (2 + 1)
+  14 = 4 (3 + 1 / 2)<br>
+  19 = 4 * (2 + 3) - 1<br>
+  36 = 3 * 4 (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+Observe que as concatenações de algarismos, como 12 + 34, não são permitidas.
 
-Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
+Usando o conjunto {1, 2, 3, 4}, é possível obter trinta e um resultados numéricos diferentes, dos quais 36 é o máximo. Cada um dos números, de 1 a 28, pode ser obtido antes de encontrar o primeiro número não expressivo.
 
-Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which the longest set of consecutive positive integers, 1 to `n`, can be obtained, giving your answer as a string: `abcd`.
+Encontre o conjunto de quatro algarismos distintos, `a` &lt; `b` &lt; `c` &lt; `d`, para os quais o maior conjunto de inteiros positivos consecutivos, de 1 a `n`, pode ser obtido, dando sua resposta como uma string: `abcd`.
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` deve retornar um número.
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` deve retornar 1258.
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

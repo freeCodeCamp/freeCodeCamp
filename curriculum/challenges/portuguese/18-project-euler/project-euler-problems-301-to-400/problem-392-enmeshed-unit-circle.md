@@ -1,6 +1,6 @@
 ---
 id: 5900f4f41000cf542c510007
-title: 'Problem 392: Enmeshed unit circle'
+title: 'Problema 392: Círculo unitário em malha'
 challengeType: 1
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
@@ -8,31 +8,31 @@ dashedName: problem-392-enmeshed-unit-circle
 
 # --description--
 
-A rectilinear grid is an orthogonal grid where the spacing between the gridlines does not have to be equidistant.
+Uma grade retilinear é uma grade ortogonal onde o espaçamento entre as linhas da grade não precisa ser equidistante.
 
-An example of such grid is logarithmic graph paper.
+Um exemplo desse tipo de grade é o papel gráfico logarítmico.
 
-Consider rectilinear grids in the Cartesian coordinate system with the following properties:
+Considere as grades retilineares no sistema de coordenadas cartesiano com as seguintes propriedades:
 
-- The gridlines are parallel to the axes of the Cartesian coordinate system.
-- There are $N + 2$ vertical and $N + 2$ horizontal gridlines. Hence there are $(N + 1) \times (N + 1)$ rectangular cells.
-- The equations of the two outer vertical gridlines are $x = -1$ and $x = 1$.
-- The equations of the two outer horizontal gridlines are $y = -1$ and $y = 1$.
-- The grid cells are colored red if they overlap with the unit circle, black otherwise.
+- As linhas da grade são paralelas aos eixos do sistema de coordenadas cartesiano.
+- Existem $N + 2$ linhas de grade verticais e $N + 2$ linhas de grade horizontais. Portanto, existem $(N + 1) \times (N + 1)$ células retangulares.
+- As equações das duas linhas da grade verticais externas são $x = -1$ e $x = 1$.
+- As equações das duas linhas da grade horizontais externas são $y = -1$ e $y = 1$.
+- As células da grade são coloridas de vermelho se elas estiveres sobre o círculo unitário. Do contrário, elas serão pretas.
 
-For this problem we would like you to find the positions of the remaining $N$ inner horizontal and $N$ inner vertical gridlines so that the area occupied by the red cells is minimized.
+Para esse problema, gostaríamos que você encontrasse as posições das $N$ linhas de grade internas horizontais e das $N$ linhas de grade internas verticais restantes, de modo que a área ocupada pelas células vermelhas seja minimizada.
 
-E.g. here is a picture of the solution for $N = 10$:
+Ex: aqui vemos uma imagem da solução para $N = 10$:
 
-<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="solução para N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
 
-The area occupied by the red cells for $N = 10$ rounded to 10 digits behind the decimal point is 3.3469640797.
+A área ocupada pelas células vermelhas para $N = 10$, arredondada para 10 casas depois da vírgula, é de 3,3469640797.
 
-Find the positions for $N = 400$. Give as your answer the area occupied by the red cells rounded to 10 digits behind the decimal point.
+Encontre as posições para $N = 400$. Dê sua resposta como a área ocupada pelas células vermelhas arredondada para 10 casas depois da vírgula.
 
 # --hints--
 
-`enmeshedUnitCircle()` should return `3.1486734435`.
+`enmeshedUnitCircle()` deve retornar `3.1486734435`.
 
 ```js
 assert.strictEqual(enmeshedUnitCircle(), 3.1486734435);

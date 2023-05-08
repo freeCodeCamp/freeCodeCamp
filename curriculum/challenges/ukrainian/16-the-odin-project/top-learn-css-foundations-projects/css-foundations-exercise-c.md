@@ -1,29 +1,29 @@
 ---
 id: 63ee3fe9381756f9716727f1
-title: CSS Foundations Exercise C
+title: Основи CSS. Вправа C
 challengeType: 14
 dashedName: css-foundations-exercise-c
 ---
 
 # --description--
 
-description
+опис
 
 # --hints--
 
-Test 1
+Тест 1
 
 ```js
 
 ```
 
-Test 2
+Тест 2
 
 ```js
 
 ```
 
-Test 3
+Тест 3
 
 ```js
 

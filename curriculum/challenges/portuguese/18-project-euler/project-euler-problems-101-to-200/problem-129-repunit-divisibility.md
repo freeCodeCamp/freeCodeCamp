@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff01
-title: 'Problem 129: Repunit divisibility'
+title: 'Problema 129: Divisibilidade de repunits'
 challengeType: 1
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
@@ -8,17 +8,17 @@ dashedName: problem-129-repunit-divisibility
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Em inglês, um número que consiste apenas de 1s é chamado de repunit. Definiremos $R(k)$ como sendo um repunit de comprimento $k$. Por exemplo, $R(6) = 111111$.
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+Dado que $n$ é um número inteiro positivo e que o máximo divisor comum $GCD(n, 10) = 1$, pode-se mostrar que sempre existe um valor, $k$, para o qual $R(k)$ é divisível por $n$. Além disso, consideremos $A(n)$ o menor dos valores de $k$ (por exemplo, $A(7) = 6$ e $A(41) = 5$).
 
-The least value of $n$ for which $A(n)$ first exceeds ten is 17.
+O menor valor de $n$ para o qual o $A(n)$ excede dez é 17.
 
-Find the least value of $n$ for which $A(n)$ first exceeds one-million.
+Encontre o menor valor de $n$ para o qual $A(n)$ excede um milhão.
 
 # --hints--
 
-`repunitDivisibility()` should return `1000023`.
+`repunitDivisibility()` deve retornar `1000023`.
 
 ```js
 assert.strictEqual(repunitDivisibility(), 1000023);

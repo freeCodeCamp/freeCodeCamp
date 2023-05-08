@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510042
-title: 'Problem 451: Modular inverses'
+title: 'Problema 451: Inversas modulares'
 challengeType: 1
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
@@ -8,28 +8,28 @@ dashedName: problem-451-modular-inverses
 
 # --description--
 
-Consider the number 15.
+Considere o número 15.
 
-There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
+Há oito números positivos inferiores a 15 que são coprimos para 15: 1, 2, 4, 7, 8, 11, 13, 14.
 
-The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14 because
+As inversas modulares desses números modulo 15 são: 1, 8, 4, 13, 2, 11, 7, 14, porque
 
 $$\begin{align}   & 1  \times 1\bmod 15 = 1 \\\\
   & 2  \times 8  = 16\bmod 15 = 1 \\\\   & 4  \times 4  = 16\bmod 15 = 1 \\\\
   & 7  \times 13 = 91\bmod 15 = 1 \\\\   & 11 \times 11 = 121\bmod 15 = 1 \\\\
   & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
-Let $I(n)$ be the largest positive number $m$ smaller than $n - 1$ such that the modular inverse of $m$ modulo $n$ equals $m$ itself.
+Considere $I(n)$ como o maior número positivo $m$ menor que $n - 1$, tal que a inversa modular de $m$ modulo $n$ é igual ao próprio $m$.
 
-So $I(15) = 11$.
+Portanto, $I(15) = 11$.
 
-Also $I(100) = 51$ and $I(7) = 1$.
+Além disso, $I(100) = 51$ e $I(7) = 1$.
 
-Find $\sum I(n)$ for $3 ≤ n ≤ 2 \times {10}^7$
+Encontre $\sum I(n)$ para $3 ≤ n ≤ 2 \times {10}^7$
 
 # --hints--
 
-`modularInverses()` should return `153651073760956`.
+`modularInverses()` deve retornar `153651073760956`.
 
 ```js
 assert.strictEqual(modularInverses(), 153651073760956);

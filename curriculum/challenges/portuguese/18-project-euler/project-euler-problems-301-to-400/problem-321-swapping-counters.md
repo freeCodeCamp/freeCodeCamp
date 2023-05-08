@@ -1,6 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffc0
-title: 'Problem 321: Swapping Counters'
+title: 'Problema 321: Trocando contadores'
 challengeType: 1
 forumTopicId: 301978
 dashedName: problem-321-swapping-counters
@@ -8,25 +8,25 @@ dashedName: problem-321-swapping-counters
 
 # --description--
 
-A horizontal row comprising of $2n + 1$ squares has $n$ red counters placed at one end and $n$ blue counters at the other end, being separated by a single empty square in the center. For example, when $n = 3$.
+Uma linha horizontal que compreende $2n + 1$ quadrados tem $n$ contadores vermelhos colocados em uma extremidade e $n$ contadores azuis na outra extremidade, estando separados por um único quadrado vazio no centro. Por exemplo, para $n = 3$.
 
-<img class="img-responsive center-block" alt="three squares with red and blue counters placed on opposite ends of the row, separated by one empty square" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="três quadrados com contadores vermelhos e azuis colocados em pontas opostas da linha, separados por um quadrado vazio" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
 
-A counter can move from one square to the next (slide) or can jump over another counter (hop) as long as the square next to that counter is unoccupied.
+Um contador pode se mover de um quadrado para o próximo (deslizando) ou pular sobre outro contador (salto) desde que o quadrado ao lado desse contador esteja desocupado.
 
-<img class="img-responsive center-block" alt="allowed moves of the counter" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="movimentos permitidos do contador" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
 
-Let $M(n)$ represent the minimum number of moves/actions to completely reverse the positions of the colored counters; that is, move all the red counters to the right and all the blue counters to the left.
+Considere $M(n)$ como representando o número mínimo de movimentos/ações para reverter completamente as posições dos contadores coloridos; ou seja, mover todos os contadores vermelhos para a direita e todos os contadores azuis para a esquerda.
 
-It can be verified $M(3) = 15$, which also happens to be a triangle number.
+Pode-se verificar que $M(3) = 15$, que também é um número triangular.
 
-If we create a sequence based on the values of n for which $M(n)$ is a triangle number then the first five terms would be: 1, 3, 10, 22, and 63, and their sum would be 99.
+Se criarmos uma sequência baseada nos valores de n para os quais $M(n)$ é um número triangular, então os primeiros cinco termos seriam: 1, 3, 10, 22 e 63, a soma destes sendo 99.
 
-Find the sum of the first forty terms of this sequence.
+Encontre a soma dos primeiros quarenta termos desta sequência.
 
 # --hints--
 
-`swappingCounters()` should return `2470433131948040`.
+`swappingCounters()` deve retornar `2470433131948040`.
 
 ```js
 assert.strictEqual(swappingCounters(), 2470433131948040);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea5
-title: 'Problem 38: Pandigital multiples'
+title: 'Problema 38: Múltiplos pandigitais'
 challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
@@ -8,33 +8,33 @@ dashedName: problem-38-pandigital-multiples
 
 # --description--
 
-Take the number 192 and multiply it by each of 1, 2, and 3:
+Pegue o número 192 e multiplique-o por cada um entre 1, 2 e 3:
 
 $$\begin{align}   192 × 1 = 192\\\\
   192 × 2 = 384\\\\   192 × 3 = 576\\\\
 \end{align}$$
 
-By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).
+Ao concatenar cada produto, chegamos ao total 192384576. Esse resultado possui 9 algarismos e usa todos os números de 1 a 9 pelo menos uma vez. Chamaremos 192384576 o produto concatenado de 192 e (1, 2, 3).
 
-The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
+O mesmo pode ser alcançado começando por 9 e multiplicando por 1, 2, 3, 4 e 5. O resultado é o pandigital 918273645, que é o produto concatenado de 9 e (1, 2, 3, 4, 5).
 
-What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
+Qual é o maior número pandigital de 1 a `k` com `k` algarismos que pode ser formado como o produto concatenado de um inteiro com (1, 2, ..., `n`) onde `n` > 1?
 
 # --hints--
 
-`pandigitalMultiples(8)` should return a number.
+`pandigitalMultiples(8)` deve retornar um número.
 
 ```js
 assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples(8)` should return `78156234`.
+`pandigitalMultiples(8)` deve retornar `78156234`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(8), 78156234);
 ```
 
-`pandigitalMultiples(9)` should return `932718654`.
+`pandigitalMultiples(9)` deve retornar `932718654`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(9), 932718654);

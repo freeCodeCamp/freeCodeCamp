@@ -1,6 +1,6 @@
 ---
 id: 5900f5371000cf542c51004a
-title: 'Problem 459: Flipping game'
+title: 'Problema 459: Jogo de viradas'
 challengeType: 1
 forumTopicId: 302133
 dashedName: problem-459-flipping-game
@@ -8,35 +8,35 @@ dashedName: problem-459-flipping-game
 
 # --description--
 
-The flipping game is a two player game played on a $N$ by $N$ square board.
+O jogo de viradas é um jogo de dois jogadores jogado em um tabuleiro quadrado de $N$ por $N$.
 
-Each square contains a disk with one side white and one side black.
+Cada quadrado contém um disco com um lado branco e um lado preto.
 
-The game starts with all disks showing their white side.
+O jogo termina quando todos os discos mostrarem seu lado branco.
 
-A turn consists of flipping all disks in a rectangle with the following properties:
+Um movimento consiste em virar todos os discos em um retângulo com as seguintes propriedades:
 
-- the upper right corner of the rectangle contains a white disk
-- the rectangle width is a perfect square (1, 4, 9, 16, ...)
-- the rectangle height is a triangular number (1, 3, 6, 10, ...)
+- o canto superior direito do retângulo consiste em um disco branco
+- a largura do retângulo é um quadrado perfeito (1, 4, 9, 16, ...)
+- a altura do retângulo é um número triangular (1, 3, 6, 10, ...)
 
-<img class="img-responsive center-block" alt="flipping all disks in a 4x3 rectangle on a 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="virando todos os discos em um retângulo de 4x3 em um tabuleiro de 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
 
-Players alternate turns. A player wins by turning the grid all black.
+Os jogadores alternam a vez. Um jogador ganha ao tornar a grade toda preta.
 
-Let $W(N)$ be the number of winning moves for the first player on a $N$ by $N$ board with all disks white, assuming perfect play.
+Considere $W(N)$ como o número de movimentos vencedores para o primeiro jogador em um tabuleiro $N$ por $N$ com todos os discos brancos, assumindo uma jogada perfeita.
 
-$W(1) = 1$, $W(2) = 0$, $W(5) = 8$ and $W({10}^2) = 31\\,395$.
+$W(1) = 1$, $W(2) = 0$, $W(5) = 8$ e $W({10}^2) = 31.395$.
 
-For $N = 5$, the first player's eight winning first moves are:
+Para $N = 5$, os oito primeiros movimentos vencedores do primeiro jogador são:
 
-<img class="img-responsive center-block" alt="eight winning first moves for N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="oito primeiros movimentos vencedores para N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
 
-Find $W({10}^6)$.
+Encontre $W({10}^6)$.
 
 # --hints--
 
-`flippingGame()` should return `3996390106631`.
+`flippingGame()` deve retornar `3996390106631`.
 
 ```js
 assert.strictEqual(flippingGame(), 3996390106631);

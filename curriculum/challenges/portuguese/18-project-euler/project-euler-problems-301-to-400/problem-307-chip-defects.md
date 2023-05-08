@@ -1,6 +1,6 @@
 ---
 id: 5900f4a01000cf542c50ffb2
-title: 'Problem 307: Chip Defects'
+title: 'Problema 307: Defeitos do chip'
 challengeType: 1
 forumTopicId: 301961
 dashedName: problem-307-chip-defects
@@ -8,15 +8,15 @@ dashedName: problem-307-chip-defects
 
 # --description--
 
-$k$ defects are randomly distributed amongst $n$ integrated-circuit chips produced by a factory (any number of defects may be found on a chip and each defect is independent of the other defects).
+$k$ defeitos são distribuídos aleatoriamente entre $n$ chips de circuito integrado produzidos por uma fábrica (qualquer número de defeitos pode ser encontrado em um chip e cada defeito é independente dos outros defeitos).
 
-Let $p(k,n)$ represent the probability that there is a chip with at least 3 defects. For instance $p(3,7) ≈ 0.0204081633$.
+Considere $p(k,n)$ como representando a probabilidade de haver um chip com pelo menos 3 defeitos. Por exemplo, $p(3,7) ≈ 0.0204081633$.
 
-Find $p(20\\,000, 1\\,000\\,000)$ and give your answer rounded to 10 decimal places in the form 0.abcdefghij
+Encontre $p(20.000, 1.000.000)$ e dê a sua resposta arredondada para 10 casas decimais na forma 0.abcdefghij
 
 # --hints--
 
-`chipDefects()` should return `0.7311720251`.
+`chipDefects()` deve retornar `0.7311720251`.
 
 ```js
 assert.strictEqual(chipDefects(), 0.7311720251);

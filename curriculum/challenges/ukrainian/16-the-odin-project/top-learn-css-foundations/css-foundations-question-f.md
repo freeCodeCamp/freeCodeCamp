@@ -1,45 +1,45 @@
 ---
 id: 63ee353e0d8d4841c3a7091f
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question F
+title: Основи CSS. Запитання F
 challengeType: 15
 dashedName: css-foundations-question-f
 ---
 
 # --description--
 
-Okay, you went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to your HTML. There are three methods to do so.
+Ви вже багато чого навчились. Лишилось дізнатись, як додати CSS до HTML. Для цього існує три методи.
 
-External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing `<head>` tags with a self-closing `<link>` element:
+Зовнішній CSS — найпопулярніший метод, який передбачає створення окремого файлу для CSS, який розміщується всередині початкового та кінцевого тегів `<head>` із самозакривним елементом `<link>`:
 
-First, you add a self-closing `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In the example above, you are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the HTML file and the linked file.
+Спочатку додайте самозакривний елемент `<link>` всередині початкового та кінцевого тегів `<head>` файлу HTML. Атрибут `href` — це розташування файлу CSS: абсолютна URL-адреса або URL-адреса відносно розташування файлу HTML (залежно від того, що ви використовуєте). У прикладі вище ми припускаємо, що обидва файли розміщені в одному каталозі. Атрибут `rel` є обов’язковим, оскільки він вказує зв’язок між файлом HTML та пов’язаним файлом.
 
-Then inside of the newly created `styles.css` file, you have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, you place any declarations inside of the declaration block. `color: white;` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
+Всередині щойно створеного файлу `styles.css` наявний селектор (`div` та `p`), після якого розташовані початкові та кінцеві фігурні дужки, що створює «блок оголошення». Будь-які оголошення потрібно розміщувати всередині блоку оголошень. Першим оголошенням є `color: white;` (властивість `color` та значення `white`), а іншим оголошенням є `background-color: black;`.
 
-A note on file names: `styles.css` is just what you went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though “style” or “styles” is most commonly used.
+Примітка щодо назви файлів: для цього файлу ви обрали звичайну назву `styles.css`. Ви можете називати файл по-різному, але його розширенням має бути `.css`, хоча найчастіше використовують «style» чи «styles».
 
-A couple of the pros to this method are:
+Декілька переваг цього методу:
 
-1. It keeps your HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
-2. You only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
+1. HTML та CSS зберігаються окремо, тому файл HTML стає меншим і все виглядає акуратніше.
+2. Вам потрібно редагувати CSS в одному місці, що особливо зручно для вебсайтів, де багато сторінок мають подібні стилі.
 
 # --question--
 
 ## --text--
 
-Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external CSS file to an HTML file?
+Що з переліченого найкраще описує суть атрибута `rel` в елементі `<link>` при з’єднанні зовнішнього файлу CSS до файлу HTML?
 
 ## --answers--
 
-It specifies the location of the CSS file relative to the location of the HTML file.
+Він вказує розташування файлу CSS відносно розташування файлу HTML.
 
 ---
 
-It specifies the relationship between the HTML file and the linked file.
+Він вказує зв’язок між файлом HTML та пов’язаним файлом.
 
 ---
 
-It specifies the type of file being linked (e.g. "stylesheet").
+Він вказує тип пов’язаного файлу (наприклад, «stylesheet»).
 
 
 ## --video-solution--

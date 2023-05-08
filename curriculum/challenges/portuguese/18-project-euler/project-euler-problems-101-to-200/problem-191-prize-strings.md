@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3e
-title: 'Problem 191: Prize Strings'
+title: 'Problema 191: Strings de prêmios'
 challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
@@ -8,11 +8,11 @@ dashedName: problem-191-prize-strings
 
 # --description--
 
-A particular school offers cash rewards to children with good attendance and punctuality. If they are absent for three consecutive days or late on more than one occasion then they forfeit their prize.
+Uma determinada escola oferece recompensas em dinheiro para crianças com boa frequência e pontualidade. Se não estiverem presentes por três dias consecutivos ou atrasadas mais de uma vez, então perdem o seu prêmio.
 
-During an n-day period a trinary string is formed for each child consisting of L's (late), O's (on time), and A's (absent).
+Durante um período de n dias, uma string ternária é formada para cada criança consistindo em L's (dias atrasado), O's (dias chegando na hora) e A's (dias ausente).
 
-Although there are eighty-one trinary strings for a 4-day period that can be formed, exactly forty-three strings would lead to a prize:
+Embora existam oitenta e uma strings ternárias para um período de 4 dias que possam ser formadas, exatamente quarenta e três strings levariam a um prêmio:
 
 ```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
@@ -22,11 +22,11 @@ AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
 LAOO LAOA LAAO
 ```
 
-How many "prize" strings exist over a 30-day period?
+Quantas strings de "prêmio" existem em um período de 30 dias?
 
 # --hints--
 
-`prizeStrings()` should return `1918080160`.
+`prizeStrings()` deve retornar `1918080160`.
 
 ```js
 assert.strictEqual(prizeStrings(), 1918080160);
