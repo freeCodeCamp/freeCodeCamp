@@ -3,6 +3,7 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "responsive-web-design-projects",
+  "helpCategory": "HTML-CSS",
   "order": 7,
   "time": "150 hours",
   "template": "",
@@ -29,4 +30,5 @@
       "bd7158d8c242eddfaeb5bd13",
       "Build a Personal Portfolio Webpage"
     ]
-  ]}
+  ]
+}

@@ -3,6 +3,7 @@ import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
@@ -52,6 +53,30 @@ type DonateModalProps = {
   show: boolean;
 };
 
+const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
+  const { t } = useTranslation();
+  // const useFeature;
+  const rotateProgressModalCta = useFeature('progress-modal-cta-rotation').on;
+  if (rotateProgressModalCta)
+    return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
+
+  const donationDuration = modalDefaultDonation.donationDuration;
+  switch (donationDuration) {
+    case 'one-time':
+      return <b>{t('donate.duration')}</b>;
+    case 'month':
+      return <b>{t('donate.duration-2')}</b>;
+    default:
+      return <b>{t('donate.duration-4')}</b>;
+  }
+};
+
+function getctaNumberBetween1To10() {
+  const min = 1;
+  const max = 10;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function DonateModal({
   show,
   closeDonationModal,
@@ -60,6 +85,7 @@ function DonateModal({
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
+  const [ctaNumber, setCtaNumber] = React.useState(0);
   const { t } = useTranslation();
   const handleProcessing = () => {
     setCloseLabel(true);
@@ -78,17 +104,9 @@ function DonateModal({
     }
   }, [show, recentlyClaimedBlock, executeGA]);
 
-  const getCommonDonationText = () => {
-    const donationDuration = modalDefaultDonation.donationDuration;
-    switch (donationDuration) {
-      case 'one-time':
-        return <b>{t('donate.duration')}</b>;
-      case 'month':
-        return <b>{t('donate.duration-2')}</b>;
-      default:
-        return <b>{t('donate.duration-4')}</b>;
-    }
-  };
+  useEffect(() => {
+    if (show) setCtaNumber(getctaNumberBetween1To10());
+  }, [show]);
 
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
@@ -118,7 +136,7 @@ function DonateModal({
                 })}
               </b>
             )}
-            {getCommonDonationText()}
+            <GetCommonDonationText ctaNumber={ctaNumber} />
           </Col>
         )}
       </Row>

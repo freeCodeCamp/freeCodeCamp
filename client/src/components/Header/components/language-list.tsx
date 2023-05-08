@@ -26,10 +26,7 @@ interface LanguageListProps {
   navigate?: (location: string) => void;
 }
 
-export const LanguageList = ({
-  t,
-  navigate
-}: LanguageListProps): JSX.Element => {
+const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   const [showList, setShowList] = useState(false);
   const listButtonRef = useRef<HTMLButtonElement>(null);
 

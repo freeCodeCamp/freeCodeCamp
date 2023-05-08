@@ -1,14 +1,14 @@
 ---
 id: 63ee35300d8d4841c3a7091d
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question D
+title: Questão D sobre a Introdução ao CSS
 challengeType: 15
 dashedName: css-foundations-question-d
 ---
 
 # --description--
 
-Another way to use selectors is to chain them as a list without any separation. Let’s say you had the following HTML:
+Outra forma de usar seletores é encadeá-los como uma lista sem separação. Vamos dizer que você tem o seguinte HTML:
 
 ```html
 <div>
@@ -17,7 +17,7 @@ Another way to use selectors is to chain them as a list without any separation. 
 </div>
 ```
 
-You have two elements with the `subsection` class that have some sort of unique styles, but what if you only want to apply a separate rule to the element that also has `header` as a second class? Well, you could chain both the `class` selectors together in your CSS like so:
+Você tem dois elementos com a classe `subsection` que tem algum tipo de estilo único, mas se você quiser apenas aplicar uma regra separada para o elemento que também tem `header` como uma segunda classe, o que pode fazer? Bem, você pode encadear ambos os seletores `class` no CSS assim:
 
 ```css
 .subsection.header {
@@ -25,9 +25,9 @@ You have two elements with the `subsection` class that have some sort of unique 
 }
 ```
 
-What `.subsection.header` does is it selects any element that has both the `subsection` and `header` classes. Notice how there isn’t any space between the `.subsection` and `.header` `class` selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
+O que `.subsection.header` faz é selecionar qualquer elemento que tenha as classes `subsection` e `header`. Observe como não há espaço entre os seletores `class` `.subsection` e `.header`. Esta sintaxe basicamente funciona para encadear qualquer combinação de seletores, exceto para encadear mais de um seletor de tipos.
 
-This can also be used to chain a class and an ID, as shown below:
+Isso também pode ser usado para encadear uma classe e um id, como mostrado abaixo:
 
 ```html
 <div>
@@ -36,7 +36,7 @@ This can also be used to chain a class and an ID, as shown below:
 </div>
 ```
 
-You can take the two elements above and combine them with the following:
+Você pode pegar os dois elementos acima e combiná-los assim:
 
 ```css
 .subsection.header {
@@ -48,13 +48,13 @@ You can take the two elements above and combine them with the following:
 }
 ```
 
-In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
+Geralmente, você não pode encadear mais de um tipo de seletor, já que um elemento não pode ter dois tipos diferentes de uma vez. Por exemplo, encadear dois seletores de tipo como `div` e `p` nos daria o seletor `divp`, que não funcionaria porque o seletor tentaria encontrar um elemento literal, `<divp>`, que não existe.
 
 # --question--
 
 ## --text--
 
-Given an element that has an `id` of `title` and a `class` of `primary`, how would you use both attributes for a single rule?
+Dado o elemento que tem um `id` `title` e uma `class` `primary`, como você usaria os dois atributos em uma única regra?
 
 ## --answers--
 

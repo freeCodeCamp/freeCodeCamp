@@ -101,7 +101,65 @@
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
       }
     },
-    "certification-heading": "Ganhe certificações verificadas gratuitas em:"
+    "certification-heading": "Ganhe certificações verificadas gratuitas em:",
+    "faq": "Perguntas frequentes:",
+    "faqs": [
+      {
+        "question": "O que é exatamente o freeCodeCamp?",
+        "answer": [
+          "O freeCodeCamp é uma comunidade de pessoas de todo o mundo que estão aprendendo a programar juntas. Somos uma instituição pública beneficente aos moldes da legislação tributária americana, seção 501(c)(3)."
+        ]
+      },
+      {
+        "question": "Como o freeCodeCamp vai me ajudar a aprender a programar?",
+        "answer": [
+          "Você aprenderá a programar construindo dezenas de projetos, passo a passo, no seu navegador, editor de código ou aplicação para dispositivos móveis.",
+          "Você também receberá certificados verificados gratuitamente ao longo do caminho."
+        ]
+      },
+      {
+        "question": "O freeCodeCamp é realmente gratuito?",
+        "answer": [
+          "Sim. Todos os aspectos do freeCodeCamp são 100% gratuitos: os cursos, os projetos e até mesmo as certificações."
+        ]
+      },
+      {
+        "question": "O freeCodeCamp pode me ajudar a obter um trabalho como desenvolvedor de software?",
+        "answer": [
+          "Sim. Todos os anos, várias pessoas que se juntam à comunidade do freeCodeCamp conseguem seu primeiro emprego em desenvolvimento de software."
+        ]
+      },
+      {
+        "question": "Que competências eu aprenderei?",
+        "answer": [
+          "Você aprenderá as habilidades que os desenvolvedores mais usam no trabalho: HTML, CSS, JavaScript, Python, Linux, Git, SQL e muito mais. Você também aprenderá a usar bibliotecas poderosas para desenvolvimento para a web, desenvolvimento de aplicações para dispositivos móveis, ciência de dados e inteligência artificial."
+        ]
+      },
+      {
+        "question": "Quanto tempo leva para aprender tudo isso?",
+        "answer": [
+          "O freeCodeCamp segue seu próprio ritmo. Adotando uma perspectiva realista, pode levar vários anos de prática em programação para aprender essas habilidades o suficiente para conseguir um emprego como engenheiro de software. Não deixe de estudar ou trabalhar no seu emprego regular até que você se sinta pronto."
+        ]
+      },
+      {
+        "question": "Como eu começo?",
+        "answer": [
+          "Se você é um iniciante, deve começar no início do currículo principal do freeCodeCamp. Se estiver mais avançado, nós ainda recomendamos começar no início, mas você pode pular para qualquer área que desejar."
+        ]
+      },
+      {
+        "question": "Como eu ganho as certificações verificadas gratuitamente?",
+        "answer": [
+          "Você precisa construir 5 projetos de certificação para cada uma delas e fazer com que todos os testes do projeto passem para poder solicitar a certificação."
+        ]
+      },
+      {
+        "question": "Não vejo [nome da ferramenta] no currículo principal do freeCodeCamp.",
+        "answer": [
+          "Além do currículo principal do freeCodeCamp, temos diversos livros, cursos e tutoriais de programação completos e gratuitos. Provavelmente ensinamos qualquer uma das ferramentas de programação que você queira aprender. Basta usar a barra de pesquisa."
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
@@ -366,6 +424,16 @@
     "duration": "Torne-se um apoiador com uma doação única para nossa organização beneficente.",
     "duration-2": "Torne-se um apoiador mensal da nossa organização beneficente.",
     "duration-4": "Torne-se um apoiador da nossa organização beneficente",
+    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
+    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
+    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
+    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
+    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
+    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
+    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
+    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
+    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
+    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
     "credit-card-2": "Ou doe com um cartão de crédito:",

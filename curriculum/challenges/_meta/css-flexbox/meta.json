@@ -2,6 +2,7 @@
   "name": "CSS Flexbox",
   "isUpcomingChange": false,
   "dashedName": "css-flexbox",
+  "helpCategory": "HTML-CSS",
   "order": 5,
   "time": "5 hours",
   "template": "",
@@ -76,4 +77,5 @@
       "587d78af367417b2b2512b00",
       "Use the align-self Property"
     ]
-  ]}
+  ]
+}

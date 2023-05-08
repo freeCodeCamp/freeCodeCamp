@@ -8,7 +8,7 @@ dashedName: authentication-strategies
 
 # --description--
 
-Eine Strategie ist eine Möglichkeit, einen Benutzer zu authentifizieren. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project, we will use Passport middleware. Passport provides a comprehensive set of strategies that support authentication using a username and password, GitHub, Google, and more.
+Eine Strategie ist eine Möglichkeit, einen Benutzer zu authentifizieren. Du kannst eine Strategie anwenden, die es Nutzern ermöglicht, sich entweder auf Grundlage lokal gespeicherter Informationen zu authentifizieren (sofern sie sich zuerst registrieren) oder mithilfe verschiedener Anbieter wie Google oder GitHub. Für dieses Projekt werden wir die Passport-Middleware verwenden. Passport provides a comprehensive set of strategies that support authentication using a username and password, GitHub, Google, and more.
 
 `passport-local@~1.0.0` has already been added as a dependency. Add it to your server as follows:
 

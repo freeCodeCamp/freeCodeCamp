@@ -101,7 +101,65 @@
         "testimony": "«У мене завжди виникали труднощі при вивченні JavaScript. Я проходила багато курсів, але з курсом freeCodeCamp я залишилася надовго. Вивчення JavaScript, а також структур даних та алгоритмів у <strong>freeCodeCamp дало мені необхідні навички</strong> та впевненість, щоб знайти роботу моєї мрії: інженерка програмного забезпечення у Spotify.»"
       }
     },
-    "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:"
+    "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
+    "faq": "Часті питання:",
+    "faqs": [
+      {
+        "question": "Що таке freeCodeCamp?",
+        "answer": [
+          "freeCodeCamp — це спільнота з мільйонів людей у всьому світі, які разом навчаються програмувати. Ми є громадською благодійною організацією 501(c)(3)."
+        ]
+      },
+      {
+        "question": "Як freeCodeCamp допоможе мені навчитись програмувати?",
+        "answer": [
+          "Ви навчитесь програмувати завдяки проєктам, які створюватимете покроково у браузері, редакторі коду чи мобільному застосунку.",
+          "Ви також отримаєте підтверджені сертифікації."
+        ]
+      },
+      {
+        "question": "Чи дійсно freeCodeCamp безоплатний?",
+        "answer": [
+          "Так. Кожна частинка freeCodeCamp — 100% безоплатна. Курси, проєкти та навіть сертифікації."
+        ]
+      },
+      {
+        "question": "Чи може freeCodeCamp допомогти мені отримати роботу розробника програмного забезпечення?",
+        "answer": [
+          "Так. Щороку тисячі людей, які приєднуються до спільноти freeCodeCamp, отримують свою першу роботу розробника програмного забезпечення."
+        ]
+      },
+      {
+        "question": "Яких навичок я навчусь?",
+        "answer": [
+          "Ви набудете навички, потрібні для роботи розробника: HTML, CSS, JavaScript, Python, Linux, Git, SQL та багато інших. Ви також дізнаєтесь, як використовувати потужні бібліотеки для веброзробки, розробки мобільних застосунків, науки про дані та штучного інтелекту."
+        ]
+      },
+      {
+        "question": "Скільки часу потрібно, щоб вивчити все?",
+        "answer": [
+          "freeCodeCamp на самостійному вивченні. Можливо, вам знадобиться декілька років практики, щоб набути потрібні навички та отримати роботу розробника програмного забезпечення. Не залишайте навчальний заклад чи роботу, поки не будете готовими."
+        ]
+      },
+      {
+        "question": "З чого розпочати?",
+        "answer": [
+          "Якщо ви початківець, потрібно розпочати з початку навчальної програми freeCodeCamp. Якщо у вас вже є певний досвід, ми рекомендуємо розпочати також з початку, але пропускати певні теми."
+        ]
+      },
+      {
+        "question": "Як отримати безоплатні підтверджені сертифікації?",
+        "answer": [
+          "Щоб отримати сертифікацію, потрібно побудувати 5 сертифікаційних проєктів та пройти всі тести."
+        ]
+      },
+      {
+        "question": "Я не бачу [назва інструменту] у навчальній програмі freeCodeCamp.",
+        "answer": [
+          "Окрім основної навчальної програми freeCodeCamp, у нас є тисячі безоплатних книг, курсів та підручників з програмування. Ми більш ніж впевнені, що навчаємо потрібні вам інструменти. Просто використайте пошукову панель."
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "Діліться своїми проєктами, статтями або прийнятими пул реквестами, які не відносяться до freeCodeCamp.",
@@ -220,7 +278,7 @@
     "tweet": "Я щойно отримав(-ла) сертифікацію {{certTitle}} від @freeCodeCamp! Перегляньте її тут: {{certURL}}",
     "avatar": "Аватар {{username}}",
     "joined": "Приєднався(-лась) {{date}}",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "Кількість балів: {{count}}",
     "points": "{{count}}х балів станом на {{date}}",
     "points_plural": "{{count}}х балів станом на {{date}}",
     "page-number": "{{pageNumber}} з {{totalPages}}"
@@ -366,6 +424,16 @@
     "duration": "Станьте одноразовим спонсором нашої некомерційної організації.",
     "duration-2": "Станьте спонсором нашої некомерційної організації (щомісячний внесок).",
     "duration-4": "Станьте спонсором нашої некомерційної організації",
+    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
+    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
+    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
+    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
+    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
+    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
+    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
+    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
+    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
+    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "nicely-done": "Чудово. Ви щойно завершили {{block}}.",
     "credit-card": "Кредитна картка",
     "credit-card-2": "Або здійснити внесок за допомогою кредитної картки:",

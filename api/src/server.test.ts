@@ -11,9 +11,8 @@ jest.mock('./utils/env', () => {
 });
 
 describe('production', () => {
+  setupServer();
   describe('GET /', () => {
-    setupServer();
-
     test('have a 200 response', async () => {
       const res = await superGet('/');
       expect(res.statusCode).toBe(200);
@@ -66,6 +65,20 @@ describe('production', () => {
         'access-control-allow-headers':
           'Origin, X-Requested-With, Content-Type, Accept',
         'access-control-allow-credentials': 'true'
+      });
+    });
+  });
+
+  describe('GET /documentation', () => {
+    test('should have OWASP recommended headers, except content-type', async () => {
+      const res = await superGet('/documentation/static/index.html');
+      expect(res.headers).toMatchObject({
+        'cache-control': 'no-store',
+        'content-security-policy': "frame-ancestors 'none'",
+        'content-type': 'text/html; charset=utf-8',
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'DENY',
+        'strict-transport-security': 'max-age=300; includeSubDomains'
       });
     });
   });

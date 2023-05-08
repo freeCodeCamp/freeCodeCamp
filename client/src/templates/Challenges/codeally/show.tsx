@@ -207,6 +207,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       userToken = null
     } = this.props;
 
+    const blockNameTitle = `${t(
+      `intro:${superBlock}.blocks.${blockName}.title`
+    )}: ${title}`;
+    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+
     // Initial CodeAlly login includes a tempToken in redirect URL
     const queryParams = new URLSearchParams(window.location.search);
     const codeAllyTempToken: string | null = queryParams.get('tempToken');
@@ -234,7 +239,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
 
     return showCodeAlly ? (
       <LearnLayout>
-        <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
+        <Helmet title={windowTitle} />
         <iframe
           className='codeally-frame'
           data-cy='codeally-frame'
@@ -251,7 +256,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
+          <Helmet title={windowTitle} />
           <Grid>
             {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>

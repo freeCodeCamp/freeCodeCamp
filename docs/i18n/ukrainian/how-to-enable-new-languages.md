@@ -1,6 +1,6 @@
-# Deploying New Languages on `/learn`
+# Додавання нових мов для `/learn`
 
-Before you can release a new language, you will need to allow the languages to download from Crowdin.
+Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin.
 
 ## Оновлення налаштувань Crowdin
 
@@ -118,9 +118,9 @@ export const rtlLangs = [''];
 
 > [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
 
-### Configure the Language Superblock Order
+### Налаштуйте порядок суперблоків мови
 
-In the [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object (or wherever), and change the key to your new language from the `Languages` enum.
+У файлі [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) потрібно встановити порядок та стан усіх суперблоків нової мови з об’єкту `superBlockOrder`. Скопіюйте один з мовних ключів і всі його значення, вставте їх знизу об’єкта та змініть ключ на нову мову з переліку `Languages`.
 
 ```js
 export const superBlockOrder: SuperBlockOrder = {
@@ -170,16 +170,16 @@ export const superBlockOrder: SuperBlockOrder = {
 }
 ```
 
-The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file so you know how you are allowed to order the superblocks, then move them to their proper places for the new language.
+У такому порядку суперблоки з’являються на цільовій сторінці та навчальних картах. Дотримуйтесь коментарів у цьому файлі, щоб розмістити суперблоки у правильному порядку, а потім перемістіть їх до потрібних місць нової мови.
 
-> [!ATTENTION] Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
+> [!ATTENTION] Не змінюйте порядок ключів у об‘єкті, а просто перемістіть суперблоки в інші масиви
 
-The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+Масив `CurriculumMaps.Landing` повинен містити один суперблок для всіх актуальних сертифікацій, а об’єкт `CurriculumMaps.Learn` повинен містити всі наявні суперблоки. Перекладені суперблоки розміщуються у `TranslationStates.Audited`, а неперекладені — у `TranslationStates.NotAudited`. Суперблоки цих двох об’єктів можуть перебувати у чотирьох станах.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed it on English to start.
-- `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
-- `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+- `SuperBlockStates.Current`: означає, що суперблок є актуальним (наприклад, `Responsive Web Design`).
+- `SuperBlockStates.New`: з’являється лише тоді, коли `SHOW_NEW_CURRICULUM` налаштовано на `true` у файлі `.env`. Використовується для показу нових суперблоків певної збірки. Наприклад, коли ми опублікували новий адаптивний вебдизайн, він був доступний лише на англійській версії.
+- `SuperBlockStates.Upcoming`: з’являється лише тоді, коли `SHOW_UPCOMING_CHANGES` налаштовано на `true` у файлі `.env`. Використовується для локального показу суперблоків у розробці. Або у випадку, якщо потрібно приховати суперблок з карти.
+- `SuperBlockStates.Legacy`: суперблок переміщено сюди, коли його новіша версія була повністю перекладена та замінила стару.
 
 ### Налаштування пошуку
 
@@ -299,13 +299,13 @@ videoLocaleIds: Joi.when('challengeType', {
 
 > [!ATTENTION] Ви можете працювати з перекладами локально, щоб провести тестування. Ми нагадуємо, що переклади _не_ потрібно надсилати через GitHub, а лише через Crowdin. Не забудьте скинути локальну кодову базу після закінчення тестування.
 
-# Deploying New Languages on `/news`
+# Додавання нових мов для `/news`
 
-To deploy News for a new language, you'll need to create two PRs. One PR will be to the [CDN repo](https://github.com/freeCodeCamp/cdn), and the other will be to the [News repo](https://github.com/freeCodeCamp/news).
+Щоб започаткувати новини новою мовою, потрібно створити два PR. Один PR буде для [репозиторію CDN](https://github.com/freeCodeCamp/cdn), а інший — для [репозиторію News](https://github.com/freeCodeCamp/news).
 
-## Prep the CDN Repo for the New Language
+## Приготуйте репозиторій CDN для нової мови
 
-News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches Day.js files from the CDN during the build to localize dates and times for each language.
+News отримує популярні посилання й назви статей із нашого CDN під час збірки та додає їх у нижній колонтитул. News також отримує файли Day.js із CDN під час збірки, щоб локалізувати дати та час кожної мови.
 
 ### Додайте файл YAML для популярних статей
 
@@ -367,25 +367,25 @@ Day.js містить лише англійську локаль за замов
 
 Потім відкрийте PR до репозиторію CDN, щоб додати файли YAML та Day.js для перегляду.
 
-## Prep the News Repo for the New Language
+## Приготуйте репозиторій News для нової мови
 
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
+[Репозиторій News](https://github.com/freeCodeCamp/news) отримує дані з екземпляра Ghost, файли, додані до CDN, будує News та розробляє їх.
 
-> [!WARN] Pull requests to the News repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] PR для репозиторію News _повинні_ надходити з одного репозиторію. Не працюйте над цим кроком з форку.
 
-### Modify the Main Config File
+### Змініть головний файл конфігурації
 
-Clone the News repo and create a new branch.
+Клонуйте репозиторій News та створіть нову гілку.
 
-Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+Відкрийте файл `config/index.js`, щоб додати нову мову та налаштувати потрібні значення. Потрібно змінити декілька об’єктів та масивів:
 
-- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
-- `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
-- `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+- `locales`: масив, який містить активні та майбутні мови для новин. Це значення, які використовуються у файлі `.env`, щоб обрати екземпляр та інтерфейс Ghost для кожної збірки. Додайте назву нової мови в нижньому регістрі до цього масиву.
+- `localeCodes`: цей об’єкт є картою кодів ISO для кожної мови, який використовують, щоб налаштувати i18next перед побудовою інтерфейсу. Щоб додати нову мову, використайте назву мови в нижньому регістрі як _ключ_ та код мови ISO 639-1 як _значення_.
+- `algoliaIndices`: цей об’єкт є картою індексів Algolia для кожної мови. Щоб додати нову мову, використайте назву мови в нижньому регістрі як _ключ_ та `news-` із кодом мови ISO 639-1 у нижньому регістрі як _значення_.
 
-> [!NOTE] If you are unsure about the string to use while setting `algoliaIndices`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> [!NOTE] Якщо ви невпевнені, який рядок потрібно використовувати при налаштуванні `algoliaIndices`, напишіть Крісу (@scissorsneedfoodtoo) або комусь іншому з доступом до Algolia.
 
-For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
+Наприклад, якщо ви запускаєте новини дотракійською мовою, об’єкти/масиви повинні виглядати ось так:
 
 ```js
 const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
@@ -421,12 +421,12 @@ const algoliaIndices = {
 }
 ```
 
-Then commit and push your branch directly to the News repo.
+Потім зафіксуйте та відправте гілку до репозиторію News.
 
-> [!NOTE] You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
+> [!NOTE] Ви повинні знаходитись в одній з команд з доступом до репозиторію News, щоб відправити гілки одразу до News. Наразі такий доступ мають лише dev, i18n та staff.
 
-Finally, open a PR for review.
+Вкінці відкрийте PR для розгляду.
 
-Once both your PRs to the CDN and News repo have been approved, they can be merged.
+Як тільки ваші PR для CDN та News затверджені, їх можна об’єднати.
 
-> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).
+> [!NOTE] Розгортання оброблятиме робочий персонал. Ось зразок PR [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) з прикладом. Для детальнішої інформації див. [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

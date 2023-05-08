@@ -3,7 +3,8 @@ const landingPageElements = {
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
   testimonials: "[data-test-label='testimonial-cards']",
-  landingPageImage: "[data-test-label='landing-page-figure']"
+  landingPageImage: "[data-test-label='landing-page-figure']",
+  faq: "[data-test-label='landing-page-faq']"
 } as const;
 
 type LandingPageTypes<T> = T[keyof T];
@@ -33,7 +34,7 @@ describe('Landing page', () => {
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
     cy.contains(landingPageElements.callToAction, "Get started (it's free)");
-    cy.get(landingPageElements.callToAction).should('have.length', 2);
+    cy.get(landingPageElements.callToAction).should('have.length', 4);
   });
 
   it('Has visible header and sub-header', () => {
@@ -81,5 +82,9 @@ describe('Landing page', () => {
       .children()
       .its('length')
       .should('eq', 3);
+  });
+
+  it('Has FAQ section', function () {
+    cy.get(landingPageElements.faq).its('length').should('eq', 9);
   });
 });

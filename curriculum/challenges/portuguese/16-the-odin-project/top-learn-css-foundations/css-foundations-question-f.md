@@ -1,45 +1,45 @@
 ---
 id: 63ee353e0d8d4841c3a7091f
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question F
+title: Questão F sobre a Introdução ao CSS
 challengeType: 15
 dashedName: css-foundations-question-f
 ---
 
 # --description--
 
-Okay, you went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to your HTML. There are three methods to do so.
+Tudo bem, você já passou por um bocado até aqui. A única coisa que falta por enquanto é ver como adicionar esse CSS ao HTML. Existem três métodos para fazer isso.
 
-External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing `<head>` tags with a self-closing `<link>` element:
+O CSS externo é o método mais comum que você encontrará. Ele envolve a criação de um arquivo separado para o CSS e a vinculação desse arquivo dentro das tags de abertura e fechamento de um elemento `<head>` do HTML na forma de um elemento `<link>` de fechamento próprio:
 
-First, you add a self-closing `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In the example above, you are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the HTML file and the linked file.
+Primeiro, você adiciona um elemento `<link>` de fechamento próprio dentro das tags de abertura e fechamento de `<head>` do arquivo HTML. O atributo `href` é o local do arquivo CSS, que pode ser um URL absoluto ou um URL relativo à localização do arquivo HTML (você usará essa última opção). No exemplo acima, você está assumindo que ambos os arquivos estão localizados no mesmo diretório. O atributo `rel` é necessário e especifica a relação entre o arquivo HTML e o arquivo vinculado.
 
-Then inside of the newly created `styles.css` file, you have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, you place any declarations inside of the declaration block. `color: white;` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
+Então, dentro do arquivo de estilos recém-criado `styles.css`, você tem o seletor (`div` e `p`), seguido por um par de chaves de abertura e de fechamento, que criam um "bloco de declaração". Por fim, colocamos as declarações dentro do bloco da declaração. `color: white;` é uma declaração, com `color` sendo a propriedade e `white` o valor. `background-color: black;` é outra declaração.
 
-A note on file names: `styles.css` is just what you went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though “style” or “styles” is most commonly used.
+Uma observação sobre os nomes dos arquivos: `styles.css` é simplesmente um nome escolhido como nome do arquivo aqui. Você pode nomear o arquivo como quiser, desde que o tipo de arquivo seja `.css`. No entanto, "style" ou "styles" é o nome mais comumente usado.
 
-A couple of the pros to this method are:
+Algumas das vantagens desse método são:
 
-1. It keeps your HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
-2. You only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
+1. Ele mantém o HTML e o CSS separados, fazendo com que o arquivo HTML seja menor e mais limpo.
+2. Você só precisa editar o CSS em um lugar, o que é especialmente útil para sites com muitas páginas e que compartilham estilos semelhantes.
 
 # --question--
 
 ## --text--
 
-Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external CSS file to an HTML file?
+Qual das opções a seguir melhor descreve a finalidade do atributo `rel` no elemento `<link>` ao vincular um arquivo CSS externo a um arquivo HTML?
 
 ## --answers--
 
-It specifies the location of the CSS file relative to the location of the HTML file.
+Ele especifica o local do arquivo CSS com relação ao local do arquivo HTML.
 
 ---
 
-It specifies the relationship between the HTML file and the linked file.
+Ele mostra a relação entre o arquivo HTML e o documento vinculado.
 
 ---
 
-It specifies the type of file being linked (e.g. "stylesheet").
+Ele especifica o tipo de arquivo que está sendo vinculado (por exemplo, "stylesheet" – ou folha de estilos).
 
 
 ## --video-solution--

@@ -1,35 +1,35 @@
 ---
 id: 63ee3fe4381756f9716727f0
-title: CSS Foundations Exercise B
+title: Fondamenti di CSS Esercizio B
 challengeType: 14
 dashedName: css-foundations-exercise-b
 ---
 
 # --description--
 
-**Objective:** There are several elements in the HTML file provided, which you will have to add either class or ID attributes to. You will then have to add rules in the CSS file provided using the correct selector syntax.
+**Obiettivo:** ci sono diversi elementi nel file HTML fornito a cui dovrai aggiungere attributi di classe o ID. Quindi dovrai aggiungere regole al file CSS fornito usando la corretta sintassi dei selettori.
 
-## User Stories
+## User story
 
-1. You should see a `yellow` background for all odd numbered elements in the list.
+1. Dovresti vedere uno sfondo `yellow` per tutti gli elementi della lista con numeri dispari.
 
-1. You should have a `class` selector used for all odd numbered elements in the list.
+1. Dovresti avere un selettore di `class` usato per tutti gli elementi dispari della lista.
 
-1. You should see that the second element in the list has `blue` text and a `font-size` of `36px`.
+1. Dovresti vedere che il secondo elemento nella lista ha il testo di colore `blue` e `font-size` con valore `36px`.
 
-1. The `font-size` and text color on the second element should be set by using an `id` attribute.
+1. `font-size` e il colore del testo del secondo elemento dovrebbero essere impostati utilizzando un attributo `id`.
 
-1. You should see that the third element in the list has a `font-size` of `24px`.
+1. Dovresti vedere che il terzo elemento nella lista ha `font-size` con valore `24px`.
 
-1. The `font-size` on the third element should be set by using a `class` attribute.
+1. Per il terzo elemento, `font-size` dovrebbe essere impostato usando l'attributo `class`.
 
-1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
+1. Dovresti vedere che il quarto elemento della lista ha uno sfondo `red`, `font-size` con valore `24px` e `font-weight` con valore `bold`.
 
 1. The `font-size` of the fourth element should be set with a `class` attribute the `font-weight`  and the color should be set with an `id` attribute.
 
 # --hints--
 
-Every odd element should have a `class` attribute.
+Ogni elemento dispari dovrebbe avere un attributo `class`.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
@@ -39,7 +39,7 @@ const everyPHasClass = p?.every((paragraph) => paragraph.classList.length > 0);
 assert(everyPHasClass);
 ```
 
-Your odd elements should have a `background-color` of `yellow`.
+Gli elementi dispari dovrebbero avere `background-color` con valore `yellow`.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
@@ -70,7 +70,7 @@ const thirdElement = document.querySelectorAll('p')?.[1]?.classList;
 
 ```
 
-The fourth element should have a `font-size` of `24px`.
+Il quarto elemento dovrebbe avere `font-size` con valore `24px`.
 
 ```js
 const fourthElementClass = document.querySelectorAll('div')?.[1]?.classList[0];
@@ -90,7 +90,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 assert(style?.backgroundColor === 'red');
 ```
 
-The fourth element should have a `font-weight` of `bold`.
+Il quarto elemento dovrebbe avere `font-weight` con valore `bold`.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;

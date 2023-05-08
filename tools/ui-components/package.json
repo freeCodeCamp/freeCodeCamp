@@ -32,7 +32,7 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/core": "7.21.5",
+    "@babel/core": "7.21.8",
     "@babel/preset-env": "7.21.5",
     "@babel/preset-typescript": "7.21.5",
     "@rollup/plugin-babel": "5.3.1",
@@ -51,7 +51,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/jest": "29.5.1",
-    "@types/react": "16.14.40",
+    "@types/react": "16.14.41",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
     "autoprefixer": "10.4.14",

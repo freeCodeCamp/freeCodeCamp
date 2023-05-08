@@ -2,6 +2,7 @@
   "name": "Front End Development Libraries Projects",
   "isUpcomingChange": false,
   "dashedName": "front-end-development-libraries-projects",
+  "helpCategory": "JavaScript",
   "order": 6,
   "time": "150 hours",
   "template": "",
@@ -28,4 +29,5 @@
       "bd7158d8c442eddfaeb5bd0f",
       "Build a 25 + 5 Clock"
     ]
-  ]}
+  ]
+}

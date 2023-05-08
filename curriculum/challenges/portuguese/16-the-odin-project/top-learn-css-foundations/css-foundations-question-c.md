@@ -1,14 +1,14 @@
 ---
 id: 63ee352b0d8d4841c3a7091c
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question C
+title: Questão C sobre a Introdução ao CSS
 challengeType: 15
 dashedName: css-foundations-question-c
 ---
 
 # --description--
 
-What if you have two groups of elements that share some of their style declarations?
+O que faríamos se dois grupos de elementos compartilhassem algumas de suas declarações de estilo?
 
 ```css
 .read {
@@ -24,7 +24,7 @@ What if you have two groups of elements that share some of their style declarati
 }
 ```
 
-Both our `.read` and `.unread` selectors share the `color: white;` and `background-color: black;` declarations, but otherwise have several of their own unique declarations. To cut down on the repetition, you can group these two selectors together as a comma-separated list:
+Nossos seletores `.read` e `.unread` compartilham as declarações `color: white;` e `background-color: black;`, mas têm várias declarações exclusivas. Para reduzir a repetição, você pode agrupar esses dois seletores como uma lista separada por vírgulas:
 
 ```css
 .read,
@@ -42,13 +42,13 @@ Both our `.read` and `.unread` selectors share the `color: white;` and `backgrou
 }
 ```
 
-Both of the examples above (with and without grouping) will have the same result, but the second example reduces the repetition of declarations and makes it easier to edit either the `color` or `background-color` for both classes at once.
+Os dois exemplos acima (com e sem agrupamento) terão o mesmo resultado, mas o segundo exemplo reduz a repetição de declarações e torna mais fácil editar `color` ou `background-color` para as duas classes de uma vez.
 
 # --question--
 
 ## --text--
 
-How would you apply a single rule to two different selectors, `.red-box` and `.yellow-box`?
+Como você aplicaria uma única regra a dois seletores diferentes, `.red-box` e `.yellow-box`?
 
 ## --answers--
 

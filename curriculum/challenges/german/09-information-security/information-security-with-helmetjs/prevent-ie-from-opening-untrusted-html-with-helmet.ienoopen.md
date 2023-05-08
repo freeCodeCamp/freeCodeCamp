@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+title: Verhindern, dass IE nicht vertrauenswürdigen HTML-Code mit helmet.ieNoOpen() öffnet
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -14,7 +14,7 @@ Some web applications will serve untrusted HTML for download. Some versions of I
 
 # --instructions--
 
-Use the `helmet.ieNoOpen()` method on your server.
+Verwende die `helmet.ieNoOpen()`-Methode auf deinem Server.
 
 # --hints--
 

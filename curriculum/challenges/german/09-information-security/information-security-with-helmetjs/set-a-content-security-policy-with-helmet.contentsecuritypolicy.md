@@ -16,7 +16,7 @@ By default, directives are wide open, so it’s important to set the defaultSrc 
 
 # --instructions--
 
-In this exercise, use `helmet.contentSecurityPolicy()`. Configure it by adding a `directives` object. In the object, set the `defaultSrc` to `["'self'"]` (the list of allowed sources must be in an array), in order to trust only your website address by default. Also set the `scriptSrc` directive so that you only allow scripts to be downloaded from your website (`'self'`), and from the domain `'trusted-cdn.com'`.
+Verwende in dieser Übung `helmet.contentSecurityPolicy()`. Konfiguriere es, indem du ein `directives`-Element hinzufügst. In the object, set the `defaultSrc` to `["'self'"]` (the list of allowed sources must be in an array), in order to trust only your website address by default. Also set the `scriptSrc` directive so that you only allow scripts to be downloaded from your website (`'self'`), and from the domain `'trusted-cdn.com'`.
 
 Hint: in the `'self'` keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
 
@@ -36,7 +36,7 @@ helmet.contentSecurityPolicy() middleware should be mounted correctly
   );
 ```
 
-Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc should be ["'self'", 'trusted-cdn.com']
+Your csp config is not correct. defaultSrc sollte ["self'"] und scriptSrc sollte ["'self'", 'trusted-cdn.com'] sein
 
 ```js
 (getUserInput) =>
