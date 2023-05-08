@@ -1,2 +1,1 @@
-export { Tabs } from './tabs';
-export type { TabsProps } from './types';
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';

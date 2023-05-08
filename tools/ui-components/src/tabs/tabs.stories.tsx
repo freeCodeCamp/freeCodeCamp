@@ -1,25 +1,23 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { TabPane } from '../tab-pane';
-import { Tabs, TabsProps } from '.';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '.';
 
 const story = {
   title: 'Example/Tabs',
   component: Tabs
 };
 
-const Template: Story<TabsProps> = args => {
+const Template: Story<React.ComponentProps<typeof Tabs>> = args => {
   return (
     <Tabs {...args}>
-      <TabPane eventKey='Code' title='Code'>
-        <div>Code Content</div>
-      </TabPane>
-      <TabPane eventKey='Tests' title='Tests'>
-        Tests Content
-      </TabPane>
-      <TabPane eventKey='Preview' title='Preview'>
-        Preview Content
-      </TabPane>
+      <TabsList>
+        <TabsTrigger value='Code'>Code</TabsTrigger>
+        <TabsTrigger value='Tests'>Tests</TabsTrigger>
+      </TabsList>
+      <TabsContent value='Code'>
+        <code>here is a code element.</code>
+      </TabsContent>
+      <TabsContent value='Tests'>Here is the test for the code.</TabsContent>
     </Tabs>
   );
 };
@@ -27,7 +25,7 @@ const Template: Story<TabsProps> = args => {
 export const Default = Template.bind({});
 Default.args = {
   id: 'uncontrolled-tab-example',
-  defaultActiveKey: 'Tests',
+  defaultValue: 'Code',
   onSelect: () => {
     console.log('onSelect');
   }
