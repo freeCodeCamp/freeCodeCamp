@@ -353,7 +353,9 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
       SuperBlocks.MachineLearningPy,
-      SuperBlocks.CollegeAlgebraPy
+      SuperBlocks.CodingInterviewPrep,
+      SuperBlocks.CollegeAlgebraPy,
+      SuperBlocks.ProjectEuler
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
