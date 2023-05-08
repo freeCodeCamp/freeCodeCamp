@@ -4,7 +4,6 @@ import { handleActions } from 'redux-actions';
 import { getLines } from '../../../../../utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
-import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
@@ -29,7 +28,6 @@ const initialState = {
   challengeTests: [],
   consoleOut: [],
   hasCompletedBlock: false,
-  isCodeLocked: false,
   isBuildEnabled: true,
   isResetting: false,
   logsOut: [],
@@ -49,12 +47,7 @@ const initialState = {
   isAdvancing: false
 };
 
-export const epics = [
-  codeLockEpic,
-  completionEpic,
-  createQuestionEpic,
-  codeStorageEpic
-];
+export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
@@ -166,16 +159,6 @@ export const reducer = handleActions(
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
-    }),
-
-    [actionTypes.lockCode]: state => ({
-      ...state,
-      isCodeLocked: true
-    }),
-    [actionTypes.unlockCode]: state => ({
-      ...state,
-      isBuildEnabled: true,
-      isCodeLocked: false
     }),
     [actionTypes.disableBuildOnError]: state => ({
       ...state,
