@@ -1,38 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`challenge parser it should not parse directives we do not use 1`] = `
-Object {
-  "assignments": Array [],
-  "description": "<section id=\\"description\\">
+{
+  "assignments": [],
+  "description": "<section id="description">
 <p>:root appears, :import appears</p>
 <p>the next paragraph should appear</p>
 ::import
-<p>even though it's an import directive, but if we use the full syntax <code>::directive-name{attr=\\"name\\" attr2=\\"a/path\\"}</code></p>
+<p>even though it's an import directive, but if we use the full syntax <code>::directive-name{attr="name" attr2="a/path"}</code></p>
 <p>it goes.</p>
 <p>::: name [inline-content] {key=val}
 a container directive
 :::</p>
 </section>",
-  "solutions": Array [],
-  "tests": Array [],
+  "solutions": [],
+  "tests": [],
 }
 `;
 
 exports[`challenge parser it should parse video questions 1`] = `
-Object {
-  "assignments": Array [],
-  "description": "<section id=\\"description\\">
+{
+  "assignments": [],
+  "description": "<section id="description">
 <p>Paragraph 1</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Paragraph 0</p>
-<pre><code class=\\"language-html\\">code example 0
+<pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "question": Object {
-    "answers": Array [
+  "question": {
+    "answers": [
       "<p>Some inline <code>code</code></p>",
       "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
@@ -40,48 +40,48 @@ Object {
     ],
     "solution": 3,
     "text": "<p>Question line 1</p>
-<pre><code class=\\"language-js\\">  var x = 'y';
+<pre><code class="language-js">  var x = 'y';
 </code></pre>",
   },
-  "solutions": Array [],
-  "tests": Array [],
+  "solutions": [],
+  "tests": [],
 }
 `;
 
 exports[`challenge parser should import md from other files 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "html",
       "head": "",
       "id": "",
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: green;
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';
 for (let index = 0; index < array.length; index++) {
   const element = array[index];
   // imported from script.md
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "",
       "id": "custom-name",
@@ -89,23 +89,23 @@ for (let index = 0; index < array.length; index++) {
       "tail": "",
     },
   ],
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>Paragraph 1</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Paragraph 0</p>
-<pre><code class=\\"language-html\\">code example 0
+<pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [],
-  "tests": Array [
-    Object {
+  "solutions": [],
+  "tests": [
+    {
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
-    Object {
+    {
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
@@ -114,35 +114,35 @@ for (let index = 0; index < array.length; index++) {
 `;
 
 exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "html",
       "head": "",
       "id": "",
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: green;
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "",
       "id": "",
@@ -150,27 +150,27 @@ Object {
       "tail": "",
     },
   ],
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>Paragraph 1</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
-<pre><code class=\\"language-yaml\\">key:
+<pre><code class="language-yaml">key:
   - subkey: value
     anothersubkey: another value
 </code></pre>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Paragraph 0</p>
-<pre><code class=\\"language-html\\">code example 0
+<pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [],
-  "tests": Array [
-    Object {
+  "solutions": [],
+  "tests": [
+    {
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
-    Object {
+    {
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
@@ -179,10 +179,10 @@ Object {
 `;
 
 exports[`challenge parser should parse a more realistic md file 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
     <h1>CatPhotoApp</h1>
@@ -192,14 +192,14 @@ Object {
         <!-- TODO: Add link to cat photos -->
         <p>
           Click here to view more
-          <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
+          <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
             >cat photos</a
           >.
         </p>
-        <a href=\\"https://www.freecodecamp.org/cat-photos\\"
+        <a href="https://www.freecodecamp.org/cat-photos"
           ><img
-            src=\\"https://bit.ly/fcc-relaxing-cat\\"
-            alt=\\"A cute orange cat lying on its back.\\"
+            src="https://bit.ly/fcc-relaxing-cat"
+            alt="A cute orange cat lying on its back."
         /></a>
       </section>
       <section>
@@ -208,7 +208,7 @@ Object {
     </main>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [
+      "editableRegionBoundaries": [
         19,
         23,
       ],
@@ -218,7 +218,7 @@ Object {
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: white;
 }
@@ -231,7 +231,7 @@ h1 {
 a {
   color: green;
 }",
-      "editableRegionBoundaries": Array [
+      "editableRegionBoundaries": [
         7,
         9,
       ],
@@ -241,9 +241,9 @@ a {
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "  // this runs before the user's code is evaluated.",
       "id": "final-key",
@@ -251,7 +251,7 @@ a {
       "tail": "",
     },
   ],
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.</p>
 <p>After the last <code>h2</code> element of the second <code>section</code> element, add an <code>h3</code> element with the text <code>Things cats love:</code>.</p>
 <blockquote>
@@ -261,14 +261,14 @@ a {
   </p>
 </blockquote>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Do something with the <code>code</code>.</p>
 <p>To test that adjacent tags are handled correctly:</p>
 <p>a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em></p>
 </section>",
-  "solutions": Array [
-    Array [
-      Object {
+  "solutions": [
+    [
+      {
         "contents": "<html>
   <body>
     <h1>CatPhotoApp</h1>
@@ -278,14 +278,14 @@ a {
         <!-- TODO: Add link to cat photos -->
         <p>
           Click here to view more
-          <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
+          <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
             >cat photos</a
           >.
         </p>
-        <a href=\\"https://www.freecodecamp.org/cat-photos\\"
+        <a href="https://www.freecodecamp.org/cat-photos"
           ><img
-            src=\\"https://bit.ly/fcc-relaxing-cat\\"
-            alt=\\"A cute orange cat lying on its back.\\"
+            src="https://bit.ly/fcc-relaxing-cat"
+            alt="A cute orange cat lying on its back."
         /></a>
       </section>
       <section>
@@ -300,7 +300,7 @@ a {
         "name": "index",
         "tail": "",
       },
-      Object {
+      {
         "contents": "body {
   background: white;
 }
@@ -319,7 +319,7 @@ a {
         "name": "styles",
         "tail": "",
       },
-      Object {
+      {
         "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
@@ -329,38 +329,38 @@ a {
       },
     ],
   ],
-  "tests": Array [
-    Object {
+  "tests": [
+    {
       "testString": "assert(
   document.querySelectorAll('main > section')[1] &&
-    code.match(/\\\\<\\\\/section>/g).length == 2
+    code.match(/\\<\\/section>/g).length == 2
 );",
       "text": "<p>The second <code>section</code> element appears to be missing or does not have both an opening and closing tag.</p>",
     },
-    Object {
+    {
       "testString": "assert(
   document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
     'H3'
 );",
       "text": "<p>There should be an <code>h3</code> element right above the second <code>section</code> element's closing tag.</p>",
     },
-    Object {
+    {
       "testString": "assert(
   document
     .querySelectorAll('main > section')[1]
     .lastElementChild.innerText.toLowerCase()
-    .replace(/\\\\s+/g, ' ') === 'things cats love:'
+    .replace(/\\s+/g, ' ') === 'things cats love:'
 );",
       "text": "<p>The <code>h3</code> element right above the second <code>section</code> element's closing tag should have the text <code>Things cats love:</code>. Make sure to include the colon at the end of the text.</p>",
     },
-    Object {
+    {
       "testString": "const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
   .lastElementChild;
 assert(
   secondSectionLastElemNode.nodeName === 'H3' &&
     secondSectionLastElemNode.previousElementSibling.innerText
       .toLowerCase()
-      .replace(/\\\\s+/g, ' ') === 'cat lists'
+      .replace(/\\s+/g, ' ') === 'cat lists'
 );",
       "text": "<p>There should be an <code>h2</code> element with the text <code>Cat Lists</code> above the last <code>h3</code> element that is nested in the last <code>section</code> element'. You may have accidentally deleted the <code>h2</code> element.</p>",
     },
@@ -369,35 +369,35 @@ assert(
 `;
 
 exports[`challenge parser should parse a simple md file 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "html",
       "head": "",
       "id": "",
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: green;
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "",
       "id": "",
@@ -405,19 +405,19 @@ Object {
       "tail": "",
     },
   ],
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>Paragraph 1</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Paragraph 0</p>
-<pre><code class=\\"language-html\\">code example 0
+<pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [
-    Array [
-      Object {
+  "solutions": [
+    [
+      {
         "contents": "<html>
   <body>
   </body>
@@ -428,7 +428,7 @@ Object {
         "name": "index",
         "tail": "",
       },
-      Object {
+      {
         "contents": "body {
   background: white;
 }",
@@ -438,7 +438,7 @@ Object {
         "name": "styles",
         "tail": "",
       },
-      Object {
+      {
         "contents": "var x = 'y';
 \`\`",
         "ext": "js",
@@ -449,16 +449,16 @@ Object {
       },
     ],
   ],
-  "tests": Array [
-    Object {
+  "tests": [
+    {
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
-    Object {
+    {
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
-    Object {
+    {
       "testString": "// more test code
 if(let x of xs) {
   console.log(x);
@@ -470,35 +470,35 @@ if(let x of xs) {
 `;
 
 exports[`challenge parser should parse frontmatter 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "html",
       "head": "",
       "id": "",
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: green;
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "",
       "id": "",
@@ -507,21 +507,21 @@ Object {
     },
   ],
   "challengeType": 0,
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>Paragraph 1</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
 </section>",
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
-  "solutions": Array [],
-  "tests": Array [
-    Object {
+  "solutions": [],
+  "tests": [
+    {
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
-    Object {
+    {
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
@@ -532,35 +532,35 @@ Object {
 `;
 
 exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
-Object {
-  "assignments": Array [],
-  "challengeFiles": Array [
-    Object {
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
       "contents": "<html>
   <body>
   </body>
 </html>",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "html",
       "head": "",
       "id": "",
       "name": "index",
       "tail": "",
     },
-    Object {
+    {
       "contents": "body {
   background: green;
 }",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
       "name": "styles",
       "tail": "",
     },
-    Object {
+    {
       "contents": "var x = 'y';",
-      "editableRegionBoundaries": Array [],
+      "editableRegionBoundaries": [],
       "ext": "js",
       "head": "",
       "id": "",
@@ -568,9 +568,9 @@ Object {
       "tail": "",
     },
   ],
-  "description": "<section id=\\"description\\">
+  "description": "<section id="description">
 <p>Paragraph 1 <del>Strikethrough text</del>. https://should.not.be.autolinked</p>
-<pre><code class=\\"language-html\\">code example
+<pre><code class="language-html">code example
 </code></pre>
 <table>
 <thead>
@@ -587,14 +587,14 @@ Object {
 </tbody>
 </table>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
+  "instructions": "<section id="instructions">
 <p>Paragraph 0</p>
-<pre><code class=\\"language-html\\">code example 0
+<pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [
-    Array [
-      Object {
+  "solutions": [
+    [
+      {
         "contents": "<html>
   <body>
   </body>
@@ -605,7 +605,7 @@ Object {
         "name": "index",
         "tail": "",
       },
-      Object {
+      {
         "contents": "body {
   background: white;
 }",
@@ -615,7 +615,7 @@ Object {
         "name": "styles",
         "tail": "",
       },
-      Object {
+      {
         "contents": "var x = 'y';
 \`\`",
         "ext": "js",
@@ -626,16 +626,16 @@ Object {
       },
     ],
   ],
-  "tests": Array [
-    Object {
+  "tests": [
+    {
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
-    Object {
+    {
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
-    Object {
+    {
       "testString": "// more test code
 if(let x of xs) {
   console.log(x);

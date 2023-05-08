@@ -1,7 +1,8 @@
 {
   "name": "Learn Functions and Graphing",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-functions-and-graphing",
+  "helpCategory": "Python",
   "order": 3,
   "time": "",
   "template": "",

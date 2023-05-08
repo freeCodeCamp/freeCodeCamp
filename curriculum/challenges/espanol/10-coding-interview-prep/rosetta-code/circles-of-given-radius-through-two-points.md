@@ -1,6 +1,6 @@
 ---
 id: 5951815dd895584b06884620
-title: Circles of given radius through two points
+title: Círculos del radio dado a través de dos puntos
 challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
@@ -8,30 +8,30 @@ dashedName: circles-of-given-radius-through-two-points
 
 # --description--
 
-Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+Dados dos puntos sobre un plano y un radio, usualmente dos círculos de un radio dado pueden ser dibujados a través de puntos.
 
-**Exceptions:**
+**Excepciones:**
 
 <ul>
-  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
-  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
-  <li>If the points form a diameter then return a single circle.</li>
-  <li>If the points are too far apart then no circles can be drawn.</li>
+  <li>Un radio de cero debería ser tratado como como jamás describiendo círculos (excepto en el caso donde los puntos son coincidentes).</li>
+  <li>Si los puntos son coincidentes entonces un infinito número de círculos con el punto sobre su circunferencia puede ser dibujado, a menos que el radio sea igual a cero lo que tambíen luego colapsa los círculos a un punto.</li>
+  <li>Si los puntos forman un diámetro entonces devuelve un solo círculo.</li>
+  <li>Si los puntos están demasiado lejos entonces no se pueden dibujar círculos.</li>
 </ul>
 
 # --instructions--
 
-Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
+Implementa una función que toma dos puntos y un radio y devuelve los dos círculos a través de dichos puntos. Para cada círculo resultante, proporciona las coordenadas para el centro de cada círculo redondeado a cuatro dígitos decimales. Devuelve cada coordenada como un arreglo, y coordenadas como un arreglo de arreglos.
 
-**For edge cases, return the following:**
+**Para casos de bordes, devuelve lo siguiente:**
 
 <ul>
-  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
-  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>Si los puntos están en el diámetro, devuelve un punto. Sin embargo si el radio también es cero, devuelve <code>"Radius Zero"</code>.</li>
+  <li>Si los puntos son coincidentes, devuelve <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>Si los puntos estan demasiados separados que el diámetro, devuelve <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
-**Sample inputs:**
+**Entradas de muestra:**
 
 <pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -43,37 +43,37 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` debería ser una función.
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` debería devolver `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` debería devolver `[0, 1]`
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` debería devolver `Coincident point. Infinite solutions`
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` debería devolver `No intersection. Points further apart than circle diameter`
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` debería devolver `Radius Zero`
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

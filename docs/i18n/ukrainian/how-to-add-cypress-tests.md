@@ -1,6 +1,6 @@
 # Як додати тести Cypress
 
-При внесенні змін до JavaScript, CSS або HTML, які можуть змінити функціональність або макет сторінки, важливо додати відповідні інтеграційні тести  [Cypress](https://docs.cypress.io).
+При внесенні змін до JavaScript, CSS або HTML, які можуть змінити функціональність або макет сторінки, важливо додати відповідні інтеграційні тести [Cypress](https://docs.cypress.io).
 
 Щоб дізнатися, як писати тести Cypress, або «специфікації», будь ласка, зверніться до офіційної [документації Cypress](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
 
@@ -18,9 +18,9 @@
 
 - [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [Запустіть клієнтський додаток freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Запустіть тести cypress
+### 2. Запустіть тести Cypress
 
 Щоб запустити тести кінцевої збірки, замініть `dev` на `prd` нижче.
 
@@ -39,7 +39,7 @@
   Наприклад:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
@@ -54,10 +54,11 @@
 
 Якщо запуск середовища GitPod не розробив середовище автоматично:
 
-- Запустіть базу даних
+- Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
+- Створіть конфігураційний файл.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Заповніть базу даних

@@ -4,6 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
+  "helpCategory": "JavaScript",
   "order": 8,
   "time": "2 hours",
   "template": "",
@@ -575,4 +576,5 @@
       "5dc10b8b93704f41d279eb5b",
       "Step 141"
     ]
-  ]}
+  ]
+}

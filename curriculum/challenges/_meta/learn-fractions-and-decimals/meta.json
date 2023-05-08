@@ -1,7 +1,8 @@
 {
   "name": "Learn Fractions and Decimals",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-fractions-and-decimals",
+  "helpCategory": "Python",
   "order": 2,
   "time": "",
   "template": "",

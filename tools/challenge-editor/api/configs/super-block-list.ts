@@ -48,7 +48,7 @@ export const superBlockList = [
     path: '13-relational-databases'
   },
   {
-    name: '(New) Responsive Web Design',
+    name: 'Responsive Web Design',
     path: '14-responsive-web-design-22'
   },
   {
@@ -62,5 +62,9 @@ export const superBlockList = [
   {
     name: 'College Algebra with Python',
     path: '17-college-algebra-with-python'
+  },
+  {
+    name: 'Project Euler',
+    path: '18-project-euler'
   }
 ];

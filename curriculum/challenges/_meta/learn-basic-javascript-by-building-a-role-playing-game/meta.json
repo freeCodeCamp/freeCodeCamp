@@ -4,6 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-basic-javascript-by-building-a-role-playing-game",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "2 hours",
   "template": "",

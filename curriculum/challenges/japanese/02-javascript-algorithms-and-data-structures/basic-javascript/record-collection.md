@@ -8,17 +8,23 @@ dashedName: record-collection
 
 # --description--
 
-音楽アルバムのコレクションの一部を表すオブジェクトリテラルが用意されています。 各アルバムには、キーとして一意の ID 番号と、その他のいくつかのプロパティが含まれています。 情報が完全ではないアルバムもあります。
+あなたは音楽アルバムコレクションのメンテナンスに役立つ関数を作成しています。 コレクションは、オブジェクトである複数のアルバムを含むオブジェクトとして構成されています。 各アルバムはコレクション内で一意の `id` をプロパティ名として保有し表されます。 Within each album object, there are various properties describing information about the album. 情報が完全ではないアルバムもあります。
 
-まず `updateRecords` 関数から記述を始めてください。この関数はオブジェクトリテラル `records` を受け取ります。これには、音楽アルバムのコレクション、`id`、`prop` (`artist` や `tracks` など)、および `value` が含まれています。 次に示すルールに従って関数を完成させ、関数に渡すオブジェクトを変更してください。
+The `updateRecords` function takes 4 arguments represented by the following function parameters:
 
--   関数は常にレコードコレクションオブジェクト全体を返す必要があります。
--   `prop` が `tracks` ではなく、`value` が空文字列ではない場合は、アルバムの `prop` を `value` に更新または設定します。
--   `prop` が `tracks` であるものの、アルバムに `tracks` プロパティがない場合は、空の配列を作成してそこに `value` を追加します。
--   `prop` が `tracks` であり、`value` が空文字列ではない場合は、`value` をアルバムの既存の `tracks` 配列の末尾に追加します。
+-   `records` - an object containing several individual albums
+-   `id` - a number representing a specific album in the `records` object
+-   `prop` - a string representing the name of the album’s property to update
+-   `value` - a string containing the information used to update the album’s property
+
+次に示すルールに従って、渡されたオブジェクトを変更する関数を完成させてください。
+
+-   Your function must always return the entire `records` object.
 -   `value` が空文字列の場合は、指定された `prop` プロパティをアルバムから削除します。
+-   If `prop` isn't `tracks` and `value` isn't an empty string, assign the `value` to that album's `prop`.
+-   If `prop` is `tracks` and `value` isn't an empty string, you need to update the album's `tracks` array. First, if the album does not have a `tracks` property, assign it an empty array. Then add the `value` as the last item in the album's `tracks` array.
 
-**注:** テストには `recordCollection` オブジェクトのコピーが使用されます。
+**注:** テストには `recordCollection` オブジェクトのコピーが使用されます。 You should not directly modify the `recordCollection` object.
 
 # --hints--
 

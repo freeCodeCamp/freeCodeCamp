@@ -2,6 +2,7 @@
   "name": "Algorithms",
   "isUpcomingChange": false,
   "dashedName": "algorithms",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "",
   "template": "",
@@ -48,4 +49,5 @@
       "61abc7ebf3029b56226de5b6",
       "Implement Binary Search"
     ]
-  ]}
+  ]
+}

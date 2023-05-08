@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isBelow` vs. `isAtLeast`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `isBelow` vs. `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isBelow` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isBelow` vs. `isAtLeast`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `isBelow` vs. `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ You should choose the correct method for the second assertion - `isBelow` vs. `i
   );
 ```
 
-You should choose the correct method for the third assertion - `isBelow` vs. `isAtLeast`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `isBelow` vs. `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ You should choose the correct method for the third assertion - `isBelow` vs. `is
   );
 ```
 
-You should choose the correct method for the fourth assertion - `isBelow` vs. `isAtLeast`.
+Du solltest die richtige Methode für die vierte Behauptung wählen - `isBelow` vs. `isAtLeast`.
 
 ```js
 (getUserInput) =>

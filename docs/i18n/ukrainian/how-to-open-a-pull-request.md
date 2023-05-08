@@ -8,7 +8,7 @@
 
 1. Не редагуйте файли напряму через GitHub, це не дуже хороша ідея.
 2. Переконайтесь, що дотримуєтесь контрольного списку PR, а не просто ставите галочки. В такому випадку ми не сприйматимемо вас серйозно.
-3. Використайте правильний спосіб пов’язати завдання в описі PR, оновивши `XXXXXX`. Не додавайте номери завдань будь-де.
+3. Використовуйте правильний спосіб пов’язати завдання в описі PR, оновивши `XXXXXX`. Не додавайте номери завдань будь-де.
 4. Не «@згадуйте» чи запитуйте відгук кілька разів.
 
    Ми розуміємо, що ви раді зробити свій внесок. Модераторам подобається відповідати кожному, однак пам’ятайте: вони зайняті люди, які розглядають сотні запитів. Рано чи пізно, хтось дійде і до вашого запиту.
@@ -19,7 +19,7 @@
 
 ## Підготуйте хороший заголовок для PR
 
-Ми рекомендуємо використовувати [ загальноприйняті заголовки та повідомлення](https://www.conventionalcommits.org/) для комітів і запитів на пул. Конвенція вимагає наступного формату:
+Ми рекомендуємо використовувати [ загальноприйняті заголовки та повідомлення](https://www.conventionalcommits.org/) для комітів і запитів на злиття. Конвенція вимагає наступного формату:
 
 > `<тип>([область (необов’язково)]): <опис>`
 > 
@@ -27,7 +27,7 @@
 > 
 > `fix(learn): тести для завдання з циклу do...while`
 
-Щоразу, коли ви відкриваєте запит на пул (PR), використовуйте нижчеподану інформацію, щоб визначити тип, область та опис.
+Щоразу, коли ви відкриваєте запит на злиття (PR), використовуйте нижчеподану інформацію, щоб визначити тип, область та опис.
 
 **Тип:**
 
@@ -36,7 +36,7 @@
 | fix   | Змінені або оновлені/вдосконалені функції, тести, формулювання уроку тощо. |
 | feat  | Лише при додаванні нової функції, тестів тощо.                             |
 | chore | Зміни, які не повʼязані з кодом, тестами або формулюванням уроку.          |
-| docs  | Зміни до директорії `/docs` чи настанов щодо внесків тощо.                 |
+| docs  | Зміни до каталогу `/docs` чи настанов щодо внесків тощо.                   |
 
 **Область:**
 
@@ -60,7 +60,7 @@
    <details>
    <summary>Переглянути знімок екрану</summary>
 
-   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Зображення - Порівняння та підказки PR на GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
    </details>
 
@@ -71,7 +71,7 @@
    <details>
    <summary>Переглянути знімок екрану</summary>
 
-   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   ![Зображення - Порівняння форків під час створення PR](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
    </details>
 
@@ -81,46 +81,46 @@
 
    - Вам буде надано шаблон PR. Це список, якого потрібно дотримуватись перед відкриттям PR.
 
-   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
+   - Заповніть деталі, які ви вважаєте за потрібне. Ця інформація буде розглянута, а модератори вирішать, чи ваш PR буде прийнятий.
 
-   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - Якщо PR призначений для вирішення наявного завдання на GitHub, то використайте ключове слово _Closes_ та номер завдання в кінці опису, щоб [автоматично закрити цю проблему, якщо PR прийнятий та об’єднаний](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Example: `Closes #123` will close issue 123
+     > Наприклад: `Closes#123` закриватиме завдання 123
 
-5. Indicate if you have tested on a local copy of the site or not.
+5. Вкажіть, чи ви проводили тести на локальній копії сайту.
 
-   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   - Це надзвичайно важливо при внесенні змін, які не стосуються зміни тексту (наприклад, документації чи опису завдань). До змін, яким потрібне локальне тестування, входять JavaScript, CSS або HTML (тобто ті, які можуть змінити функціональність чи макет сторінки).
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - Якщо ваш PR впливає на поведінку сторінки, він повинен супроводжуватися [інтеграційними тестами Cypress](how-to-add-cypress-tests.md).
 
 ## Зворотний зв’язок по PR
 
 > :tada: Вітаємо зі створенням PR та дуже дякуємо, що знайшли час зробити свій внесок.
 
-Наші модератори все переглянуть та залишать свій відгук. Будь ласка, наберіться терпіння та поважайте їхній час. Усі запити на пул розглядаються за усталеним порядком.
+Наші модератори все переглянуть та залишать свій відгук. Будь ласка, наберіться терпіння та поважайте їхній час. Усі запити на злиття розглядаються за усталеним порядком.
 
-І як завжди, не соромтеся ставити питання [на нашому форумі в категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чат-кімнаті «contributors»](https://discord.gg/PRyKn3Vbay).
+І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] Якщо ви хочете внести ще більше PR, ми рекомендуємо прочитати про [внесення змін та синхронізацію](how-to-setup-freecodecamp-locally.md#making-changes-locally), щоб уникнути видалення вашого форку.
 
-## Conflicts on a pull request
+## Конфлікти PR
 
-Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+Конфлікти можуть виникнути, якщо над репозиторієм працює багато помічників. Зміни можуть вплинути на PR, який очікує на перегляд та злиття.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+Зазвичай у перебазовуванні немає потреби, оскільки ми стискаємо всі коміти. Однак, якщо перебазовування потрібне, ось що потрібно робити.
 
-### For usual bug fixes and features
+### Звичайні помилки та функціональності
 
-When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
+Коли ви працюєте над звичайними помилками та функціональностями на нашій гілці розробки `main`, ви можете виконати просте перебазовування:
 
-1. Rebase your local copy:
+1. Перебазуйте свою локальну копію:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
-2. Resolve any conflicts and add / edit commits
+2. Вирішіть будь-які конфлікти та додайте/редагуйте коміти
 
    ```console
    # Або
@@ -132,17 +132,17 @@ When you are working on regular bugs and features on our development branch `mai
    git commit --amend --no-edit
    ```
 
-3. Push back your changes to the PR
+3. Відправте зміни до PR
 
    ```console
    git push --force origin <pr-branch>
    ```
 
-### For upcoming curriculum and features
+### Майбутня навчальна програма та функціональності
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
+Коли ви працюєте над функціональностями для майбутньої навчальної програми на гілках `next-*`, потрібно виконати команду cherry pick:
 
-1. Make sure your upstream comes in sync with your local:
+1. Переконайтесь, що віддалена гілка синхронізована з локальною:
 
    ```console
    git checkout main
@@ -151,9 +151,9 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. Зробіть резервну копію
 
-   a. Either delete your local branch after taking a backup (if you still have it locally):
+   a. Або видаліть локальну гілку після створення резервної копії (якщо вона досі існує локально):
 
    ```console
    git checkout <pr-branch-name>
@@ -169,7 +169,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git branch -D <pr-branch-name>
    ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. Або зробіть резервну копію гілки PR (якщо вона не існує локально):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
@@ -178,14 +178,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
-3. Start off with a clean slate:
+3. Розпочніть з нуля:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Resolve any conflicts, cleanup, install dependencies and run tests
+4. Розв’яжіть будь-які конфлікти, поприбирайте, встановіть залежності та запустіть тести
 
    ```console
    pnpm run clean
@@ -193,13 +193,13 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    pnpm install
    FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
-   # example:
+   # приклад:
 
    # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 
-5. If everything looks good push back to the PR
+5. Якщо все виглядає добре, передайте до PR
 
    ```console
    git push --force origin <pr-branch-name>

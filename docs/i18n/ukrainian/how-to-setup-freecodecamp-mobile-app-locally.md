@@ -1,12 +1,12 @@
 Follow this guide for setting up the freeCodeCamp mobile app locally on your system. This is highly recommended if you want to contribute regularly.
 
-Some of the contribution workflows – like fixing bugs in the codebase – need you to run freeCodeCamp app locally.
+Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to prepare your local machine
+### How to Prepare your Local Machine
 
 Start by installing the prerequisite software for your operating system.
 
-#### Prerequisites:
+#### Prerequisites
 
 | Prerequisite                      | Version | Notes                                    |
 | --------------------------------- | ------- | ---------------------------------------- |
@@ -30,9 +30,9 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. Setup [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. We recommend using the Pixel 3a XL and Nexus One(for emulating smaller screens).
+2. Set up [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. We recommend using the Pixel 3a XL and Nexus One(for emulating smaller screens).
 
-3. (Optional for MacOS) Setup Xcode and iOS Simulator with the latest released iOS version.
+3. (Optional for MacOS) Set up Xcode and iOS Simulator with the latest released iOS version.
 
 4. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
@@ -40,7 +40,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
    We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
-## Fork the repository on GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
 
@@ -58,9 +58,9 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp mob
 
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
-## Clone your fork from GitHub
+## Clone your Fork from GitHub
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
 Run these commands on your local machine:
 
@@ -78,11 +78,11 @@ This will download the entire freeCodeCamp mobile repository to your projects di
 
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Set up syncing from parent
+## Set up Syncing from Parent
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
@@ -113,21 +113,21 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Running freeCodeCamp mobile app locally
+## Running freeCodeCamp Mobile App Locally
 
 Now that you have a local copy of the mobile app, you can follow these instructions to run it locally.
 
 If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/mobile/issues) page for a solution and report the issue if it has not yet been reported.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
+І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
 > [!NOTE] The `mobile` directory contains two folders ie. `mobile-api` and `mobile-app`. `mobile-api` contains the API code used for serving the podcasts. `mobile-app` contains the Flutter app which is where you should be when you follow the below steps.
 
-### Configuring dependencies
+### Configuring Dependencies
 
-#### Step 1: Set up the environment variable file
+#### Step 1: Set Up the Environment Variable File
 
-The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
 
 ```console
 # Create a copy of the "sample.env" and name it ".env".
@@ -172,9 +172,9 @@ flutter run
 
 > [!TIP] If you're using VSCode or Android Studio then you can easily start the app without having to execute any terminal commands. More information [here](https://docs.flutter.dev/get-started/test-drive).
 
-## Making changes locally
+## Making Changes Locally
 
-You can now make changes to files and commit your changes to your local clone of your fork.
+You can now make changes to files and commit your changes to the local clone of your fork.
 
 Follow these steps:
 
@@ -225,7 +225,7 @@ Follow these steps:
    git push origin main --force
    ```
 
-   You can validate your current main matches the upstream/main by performing a diff:
+   You can validate that your current main matches the upstream/main by performing a diff:
 
    ```console
    git diff upstream/main
@@ -243,7 +243,7 @@ Follow these steps:
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful, and unique.
 
    Some examples of good branch names are:
 
@@ -392,11 +392,11 @@ If you face issues with the UI, or builds errors a cleanup can be useful:
 flutter clean
 ```
 
-### Issues installing dependencies
+### Issues Installing Dependencies
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-Be patient as the first time setup can take a while depending on your network bandwidth.
+Be patient as the first-time setup can take a while depending on your network bandwidth.
 
 ## Getting Help
 

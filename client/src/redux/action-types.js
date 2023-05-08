@@ -7,6 +7,7 @@ export const actionTypes = createTypes(
     'appMount',
     'hardGoTo',
     'allowBlockDonationRequests',
+    'setRenderStartTime',
     'hideCodeAlly',
     'preventBlockDonationRequests',
     'preventProgressDonationRequests',

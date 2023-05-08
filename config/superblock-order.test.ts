@@ -148,9 +148,10 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
       SuperBlocks.MachineLearningPy,
-      SuperBlocks.CodingInterviewPrep,
-      SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.CollegeAlgebraPy,
+      SuperBlocks.CodingInterviewPrep,
+      SuperBlocks.ProjectEuler,
+      SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.TheOdinProject,
       SuperBlocks.RespWebDesign
     ];
@@ -189,9 +190,10 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
       SuperBlocks.MachineLearningPy,
-      SuperBlocks.CodingInterviewPrep,
-      SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.CollegeAlgebraPy,
+      SuperBlocks.CodingInterviewPrep,
+      SuperBlocks.ProjectEuler,
+      SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.TheOdinProject
     ];
     expect(notAuditedSuperBlocks).toStrictEqual(test);

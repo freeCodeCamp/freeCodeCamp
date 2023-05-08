@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`add solution plugin should have an output to match the snapshot 1`] = `
-Object {
-  "solutions": Array [
-    Array [
-      Object {
+{
+  "solutions": [
+    [
+      {
         "contents": "<html>
   <body>
   </body>
@@ -15,7 +15,7 @@ Object {
         "name": "index",
         "tail": "",
       },
-      Object {
+      {
         "contents": "body {
   background: white;
 }",
@@ -25,7 +25,7 @@ Object {
         "name": "styles",
         "tail": "",
       },
-      Object {
+      {
         "contents": "var x = 'y';
 \`\`",
         "ext": "js",

@@ -1,16 +1,16 @@
 # Las mejores prácticas de la base de código
 
-## Styling a component
+## Dándole estilo a un componentes
 
-We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/).
+Recomendamos dar estilo a los componentes usando nuestra [guía de estilo de diseño](https://design-style-guide.freecodecamp.org/).
 
-The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
+Los colores están definidos en [`variable.css`](/client/src/components/layouts/variables.css)y las fuentes están en [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
+Somos muy obstinados sobre la adición de nuevas variables/tokens a los colores. Después de una cuidadosa investigación, los colores han sido elegidos para respetar la identidad de la marca freeCodeCamp y la experiencia del desarrollador y accesibilidad.
 
-The `!important` keyword may be used to override values in some cases (e.g. accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+La palabra clave `!important` puede utilizarse para sobrescribir valores en algunos casos (por ejemplo, problemas de accesibilidad). Debería añadir un comentario describiendo el problema, para que no se elimine en futuras refactorizaciones.
 
-### RTL support
+### Soporte RTL
 
 We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are some quick rules of thumb to follow:
 
@@ -147,6 +147,40 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
+
+## API
+
+### Testing
+
+The `api/` tests are split into two parts:
+
+1. Unit tests
+2. Integration tests
+
+#### Unit Tests
+
+Unit tests isolate a single function or component. The tests do not need mocking, but will require fixtures.
+
+The unit tests are located in a new file adjacent the file exporting that being tested:
+
+```text
+api/
+├── src/
+│   ├── utils.ts
+│   ├── utils.test.ts
+```
+
+#### Integration Tests
+
+Integration tests test the API as a whole. The tests will require mocking, and should not require fixtures beyond the database seeding data, and a method to authenticate.
+
+Typically, each integration test file will be directly related to a route. The integration tests are located in the `api/tests/` directory:
+
+```text
+api/
+├── tests/
+│   ├── settings.ts
+```
 
 ## Further Literature
 

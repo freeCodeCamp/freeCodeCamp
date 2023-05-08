@@ -7,6 +7,7 @@ export type Meta = {
   name: string;
   isUpcomingChange: boolean;
   dashedName: string;
+  helpCategory: string;
   order: number;
   time: string;
   template: string;

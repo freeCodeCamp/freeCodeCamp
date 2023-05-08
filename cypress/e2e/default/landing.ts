@@ -3,7 +3,8 @@ const landingPageElements = {
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
   testimonials: "[data-test-label='testimonial-cards']",
-  landingPageImage: '.landing-page-image'
+  landingPageImage: "[data-test-label='landing-page-figure']",
+  faq: "[data-test-label='landing-page-faq']"
 } as const;
 
 type LandingPageTypes<T> = T[keyof T];
@@ -11,17 +12,18 @@ type LandingPageTypes<T> = T[keyof T];
 type LandingPageLogs = LandingPageTypes<typeof landingPageElements>;
 
 const certifications = [
-  '(New) Responsive Web Design',
+  'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
-  'Relational Database (Beta)',
+  'Relational Database',
   'Back End Development and APIs',
   'Quality Assurance',
   'Scientific Computing with Python',
   'Data Analysis with Python',
   'Information Security',
-  'Machine Learning with Python'
+  'Machine Learning with Python',
+  'College Algebra with Python'
 ];
 
 describe('Landing page', () => {
@@ -32,7 +34,7 @@ describe('Landing page', () => {
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
     cy.contains(landingPageElements.callToAction, "Get started (it's free)");
-    cy.get(landingPageElements.callToAction).should('have.length', 2);
+    cy.get(landingPageElements.callToAction).should('have.length', 4);
   });
 
   it('Has visible header and sub-header', () => {
@@ -69,7 +71,7 @@ describe('Landing page', () => {
     cy.get(landingPageElements.certifications)
       .children()
       .its('length')
-      .should('eq', 11);
+      .should('eq', 12);
     cy.wrap(certifications).each((cert: LandingPageLogs) => {
       cy.get(landingPageElements.certifications).contains(cert);
     });
@@ -80,5 +82,9 @@ describe('Landing page', () => {
       .children()
       .its('length')
       .should('eq', 3);
+  });
+
+  it('Has FAQ section', function () {
+    cy.get(landingPageElements.faq).its('length').should('eq', 9);
   });
 });

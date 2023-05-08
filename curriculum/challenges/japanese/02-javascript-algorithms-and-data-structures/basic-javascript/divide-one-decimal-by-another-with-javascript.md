@@ -32,7 +32,7 @@ assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
 変数 quotient には一度だけ代入してください。
 
 ```js
-assert(code.match(/quotient/g).length === 1);
+assert(code.match(/quotient\s*=/g).length === 1);
 ```
 
 # --seed--

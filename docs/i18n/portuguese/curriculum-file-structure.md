@@ -83,7 +83,6 @@ Faça o seguinte para renomear um bloco do currículo:
 1. Mude o nome da mesma pasta do bloco em _todos_ os outros diretórios de idioma para que correspondam. Eles devem ter a mesma estrutura que a do inglês ou haverá um erro na build.
 1. Mude o nome da pasta do bloco no diretório `_meta`.
 1. Atualize as propriedades `name` e `dashedName` para aquele arquivo `meta.json` do bloco.
-1. Atualize `client/utils/help-category-map.json` para que use o novo nome do bloco como chave.
 1. Atualize a pasta do bloco em `client/src/pages/learn/{superBlock}`.
 1. No arquivo `index.md` da pasta acima, atualize o valor de `block` no frontmatter.
 1. Nos arquivos `client/i18n/locales/{language}/intro.json`, atualize o nome do bloco com o novo nome para todos os idiomas. No arquivo `intro.json` do inglês, atualize também o `title`.

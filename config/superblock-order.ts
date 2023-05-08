@@ -55,7 +55,7 @@ type SuperBlockOrder = {
 };
 
 // all languages should have this many, one for each current cert
-export const numberOfSuperBlocksOnLanding = 11;
+export const numberOfSuperBlocksOnLanding = 12;
 
 /*
  * This is the used for tests to make sure a superBlock isn't out of order
@@ -80,6 +80,7 @@ export const defaultSuperBlockOrder: SuperBlocks[] = [
   SuperBlocks.MachineLearningPy,
   SuperBlocks.CollegeAlgebraPy,
   SuperBlocks.CodingInterviewPrep,
+  SuperBlocks.ProjectEuler,
   SuperBlocks.TheOdinProject
 ];
 
@@ -107,7 +108,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -123,12 +125,13 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
@@ -153,7 +156,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -162,6 +166,7 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
           SuperBlocks.DataVis,
+          SuperBlocks.RelationalDb,
           SuperBlocks.BackEndDevApis,
           SuperBlocks.QualityAssurance,
           SuperBlocks.SciCompPy,
@@ -173,15 +178,15 @@ export const superBlockOrder: SuperBlockOrder = {
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RelationalDb,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -200,7 +205,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -209,6 +215,7 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
           SuperBlocks.DataVis,
+          SuperBlocks.RelationalDb,
           SuperBlocks.BackEndDevApis,
           SuperBlocks.QualityAssurance,
           SuperBlocks.SciCompPy,
@@ -222,20 +229,20 @@ export const superBlockOrder: SuperBlockOrder = {
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RelationalDb,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
       }
     }
   },
-  [Languages.ChineseTrandational]: {
+  [Languages.ChineseTraditional]: {
     [CurriculumMaps.Landing]: [
       SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
@@ -247,7 +254,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -256,6 +264,7 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
           SuperBlocks.DataVis,
+          SuperBlocks.RelationalDb,
           SuperBlocks.BackEndDevApis,
           SuperBlocks.QualityAssurance,
           SuperBlocks.SciCompPy,
@@ -269,13 +278,13 @@ export const superBlockOrder: SuperBlockOrder = {
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RelationalDb,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -294,7 +303,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -317,11 +327,13 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -340,7 +352,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -359,17 +372,16 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
+        [SuperBlockStates.Upcoming]: [SuperBlocks.TheOdinProject],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [
-          SuperBlocks.JsAlgoDataStructNew,
+        [SuperBlockStates.Current]: [
           SuperBlocks.CollegeAlgebraPy,
-          SuperBlocks.TheOdinProject
+          SuperBlocks.ProjectEuler
         ],
+        [SuperBlockStates.New]: [],
+        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -386,7 +398,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -401,20 +414,20 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.SciCompPy,
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy
+          SuperBlocks.MachineLearningPy,
+          SuperBlocks.CollegeAlgebraPy
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
+        [SuperBlockStates.Upcoming]: [SuperBlocks.TheOdinProject],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.CodingInterviewPrep],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [
-          SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
-          SuperBlocks.TheOdinProject
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
+        [SuperBlockStates.New]: [],
+        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -431,7 +444,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -455,11 +469,13 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -478,7 +494,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -502,12 +519,13 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -526,7 +544,8 @@ export const superBlockOrder: SuperBlockOrder = {
       SuperBlocks.SciCompPy,
       SuperBlocks.DataAnalysisPy,
       SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
+      SuperBlocks.MachineLearningPy,
+      SuperBlocks.CollegeAlgebraPy
     ],
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
@@ -549,12 +568,13 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
-          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]

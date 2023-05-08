@@ -8,7 +8,7 @@ dashedName: define-a-constructor-function
 
 # --description--
 
-<dfn>Constructors</dfn> 是創建對象的函數。 函數給這個新對象定義屬性和行爲。 可將它們視爲創建的新對象的藍圖。
+<dfn>構造函數</dfn>是創建對象的函數。 函數給這個新對象定義屬性和行爲。 可將它們視爲創建的新對象的藍圖。
 
 以下就是一個構造函數的示例：
 

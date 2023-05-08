@@ -1,12 +1,12 @@
-# ドキュメントに貢献する方法
+# How to Work on Documentation
 
-## Work on the content of the docs
+## Work on the Content of the Docs
 
 コントリビューションガイドラインを編集するには、`docs` [ディレクトリ](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs) のファイルを編集または追加します。 When your changes are merged, they will be made available automatically at the documentation site.
 
 When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
 
-### 内部リンクを作成する
+### How to Create an Internal Link
 
 If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
@@ -25,13 +25,13 @@ This is necessary to make these links work for the translated version of the doc
 
 When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
-## ドキュメントのテーマに貢献する
+## Work on the Docs Theme
 
 > [!NOTE] A quick reminder that you do not need to set up anything for working on the content for the documentation site.
 > 
 > コントリビューションガイドラインを編集するには、[ドキュメントの内容に貢献する](#ドキュメントの内容に貢献する) セクションを参照してください。
 
-### ドキュメント Web サイトの構造
+### Structure of the Docs Website
 
 The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
@@ -43,20 +43,14 @@ Typically you would not need to change any configuration or build the site local
 - ホームページは [`_coverpage.md`](_coverpage.md) から生成されます。
 - The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-### ローカルでドキュメントサイトを提供する
+### Serving the Documentation Site Locally
 
-Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run the command below as needed from the root of the repo:
 
-#### ドキュメントサイトのみを提供して起動する
+#### Serve and Launch the Documentation Site
 
 ```console
 pnpm run docs:serve
-```
-
-#### freeCodeCamp と一緒にドキュメントサイトをローカルで提供する
-
-```console
-pnpm run develop
 ```
 
 > The documentation site should be available at <http://localhost:3400>

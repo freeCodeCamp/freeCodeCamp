@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Manchmal musst du alle Schlüssel innerhalb eines Objekts durchlaufen. Das erfordert eine spezielle Syntax in JavaScript, die <dfn>for...in</dfn>-Anweisung genannt wird. Für unser `users` Objekt könnte es so aussehen:
+Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-Das würde `Alan`, `Jeff` und `Sarah` protokollieren - jeder Wert in einer eigenen Zeile.
+This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
 
-In dieser Anweisung haben wir eine Variable `user` definiert, und wie du sehen kannst, wurde diese Variable bei jeder Iteration auf jeden der Schlüssel des Objekts zurückgesetzt, während die Anweisung das Objekt in einer Schleife durchlief, was dazu führte, dass der Name jedes Benutzers auf der Konsole ausgegeben wurde.
+We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
 **HINWEIS:** Objekte behalten keine Reihenfolge der gespeicherten Schlüssel bei, wie es bei Arrays der Fall ist; daher ist die Position eines Schlüssels auf einem Objekt oder die relative Reihenfolge, in der er erscheint, irrelevant, wenn auf diesen Schlüssel verwiesen oder zugegriffen wird.
 
 # --instructions--
 
-Wir haben eine Funktion `countOnline` definiert, die ein Argument (ein Nutzer-Objekt) akzeptiert. Nutze eine <dfn>for...in</dfn> Anweisung innerhalb dieser Funktion, um eine Schleife durch das an die Funktion übergebene Benutzerobjekt zu durchlaufen und die Anzahl der Nutzer zurückzugeben, deren `online` Eigenschaft auf `true` festgesetzt ist. Ein Beispiel für ein Benutzerobjekt, das an `countOnline` übergeben werden könnte, wird unten gezeigt. Jeder Nutzer wird eine `online` Eigenschaft mit entweder einem `true` oder `false` Wert besitzen.
+We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

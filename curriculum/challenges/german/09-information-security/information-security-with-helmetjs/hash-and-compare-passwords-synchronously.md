@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7e
-title: Hash and Compare Passwords Synchronously
+title: Passwörter synchron hashen und vergleichen
 challengeType: 2
 forumTopicId: 301579
 dashedName: hash-and-compare-passwords-synchronously
@@ -10,7 +10,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 Zur Erinnerung: Dieses Projekt baut auf dem folgenden Starterprojekt auf: <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> oder geklont von <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling
+Das synchrone Hashing ist ebenso einfach, kann aber zu Verzögerungen führen, wenn es auf der Serverseite mit hohen Kosten verwendet wird oder wenn das Hashing sehr oft durchgeführt wird. Das Hashing mit dieser Methode ist so einfach wie der Aufruf
 
 ```js
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);

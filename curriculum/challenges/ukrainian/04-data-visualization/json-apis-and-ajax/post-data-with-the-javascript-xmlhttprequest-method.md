@@ -26,27 +26,33 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Вам вже зустрічались ці методи. Ось метод `open`, який надсилає запит `POST` на URL-адресу зовнішнього ресурсу та робить його асинхронним за допомогою булевого `true`. Метод `setRequestHeader` встановлює значення заголовка запиту HTTP, в якому присутня інформація про відправника та сам запит. Використовуйте цей метод після `open`, але перед `send`. Два параметри - це назва заголовка і значення, що задається як тіло цього заголовка. Далі, за допомогою слухача подій `onreadystatechange`, змінюється стан запиту. `readyState` з `4` означає завершення операції, а `status` з `201` - успішно виконаний запит. HTML документа можна оновити. І нарешті, метод `send` надсилає запит для значення `body`. Ключ `userName` надає користувач у полі `input`.
+Вам вже зустрічались ці методи. Here the `open` method initializes the request as a `POST` to the given URL of the external resource, and passes `true` as the third parameter - indicating to perform the operation asynchronously.
+
+The `setRequestHeader` method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the `open` method, but before the `send` method. The two parameters are the name of the header and the value to set as the body of that header.
+
+Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of `4` means the operation is complete, and a `status` of `201` means it was a successful request. Therefore, the document's HTML can be updated.
+
+Finally, the `send` method sends the request with the `body` value. The `body` consists of a `userName` and a `suffix` key.
 
 # --instructions--
 
-Оновіть код, щоб надіслати запит `POST` до кінцевої точки API. Потім напишіть своє ім'я у полі вводу та натисніть кнопку `Send Message`. Функція AJAX замінить `Reply from Server will be here.` даними із сервера. Додайте до вашого імені у полі вводу текст `loves cats`.
+Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text `loves cats`.
 
 # --hints--
 
-Створіть новий `XMLHttpRequest` у коді.
+Your code should create a new `XMLHttpRequest`.
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Щоб створити запит `POST` на сервер, використайте метод `open`.
+Your code should use the `open` method to initialize a `POST` request to the server.
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
 ```
 
-Використовуйте метод `setRequestHeader` у коді.
+Your code should use the `setRequestHeader` method.
 
 ```js
 assert(
@@ -56,13 +62,13 @@ assert(
 );
 ```
 
-Для того, щоб код працював, вам потрібен сет обробника подій `onreadystatechange`.
+Your code should have an `onreadystatechange` event handler set to a function.
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
 ```
 
-У коді має бути елемент `message`, текст якого зміниться з `textContent` на `userName loves cats`
+Your code should get the element with class `message` and change its `textContent` to `userName loves cats`
 
 ```js
 assert(
@@ -72,7 +78,7 @@ assert(
 );
 ```
 
-Використовуйте метод `send` у вашому коді.
+Your code should use the `send` method.
 
 ```js
 assert(code.match(/\.send\(\s*?body\s*?\)/g));

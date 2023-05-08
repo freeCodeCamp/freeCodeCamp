@@ -1,4 +1,4 @@
-# Como ajudar com desafios em vídeo
+# Como ajudar com os desafios em vídeo
 
 Os desafios em vídeo são um novo tipo de desafio no currículo freeCodeCamp.
 
@@ -56,7 +56,7 @@ O número da resposta correta fica aqui.
 
 ## Criando perguntas para desafios em video
 
-### Acessar o arquivo markdown do desafio em vídeo
+### Acessar os arquivos markdown do desafio em vídeo
 
 Os arquivos markdown dos desafios estão localizadas no currículo em:
 
@@ -65,7 +65,7 @@ Os arquivos markdown dos desafios estão localizadas no currículo em:
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Escolha um arquivo dentre as opções acima. 
+Escolha um arquivo dentre as opções acima.
 
 ### Explore o vídeo associado ao desafio e crie uma questão de múltipla escolha
 
@@ -198,6 +198,6 @@ print(height/3)
 
 Para mais exemplos, você pode ver os arquivos markdown para o seguinte curso em vídeo. Todos os desafios já possuem perguntas: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Abra um pull request
+## Abrir um pull request
 
 Depois de criar uma ou mais perguntas, você pode confirmar as mudanças em uma nova branch e [abrir um pull request](how-to-open-a-pull-request.md).

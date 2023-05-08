@@ -40,7 +40,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap = [
+const legacyCertMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -177,14 +177,7 @@ const certMap = [
       }
     ]
   },
-  {
-    id: '561add10cb82ac38a17213bd',
-    title: 'Legacy Full Stack',
-    certSlug: 'full-stack',
-    flag: 'isFullStackCert'
-    // Requirements are other certs and is
-    // handled elsewhere
-  },
+
   {
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
@@ -292,7 +285,18 @@ const certMap = [
         certSlug: 'information-security-and-quality-assurance'
       }
     ]
-  },
+  }
+] as const;
+const legacyFullStack = {
+  id: '561add10cb82ac38a17213bd',
+  title: 'Legacy Full Stack',
+  certSlug: 'full-stack',
+  flag: 'isFullStackCert',
+  projects: null
+  // Requirements are other certs and is
+  // handled elsewhere
+} as const;
+const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -333,7 +337,6 @@ const certMap = [
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -723,40 +726,45 @@ const certMap = [
     projects: [
       {
         id: '63d83ff239c73468b059cd3f',
-        title: 'Multi-Function Calculator',
-        link: `${collegeAlgebraPyBase}/multi-function-calculator`,
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d83ffd39c73468b059cd40',
-        title: 'Graphing Calculator',
-        link: `${collegeAlgebraPyBase}/graphing-calculator`,
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401039c73468b059cd41',
-        title: 'Three Math Games',
-        link: `${collegeAlgebraPyBase}/three-math-games`,
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401e39c73468b059cd42',
-        title: 'Financial Calculator',
-        link: `${collegeAlgebraPyBase}/financial-calculator`,
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8402e39c73468b059cd43',
-        title: 'Data Graph Explorer',
-        link: `${collegeAlgebraPyBase}/data-graph-explorer`,
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
         certSlug: 'college-algebra-with-python-v8'
       }
     ]
   }
 ] as const;
+const upcomingCertMap = [] as const;
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
 }
 
 function getJavaScriptAlgoPath(project: string) {
@@ -765,23 +773,47 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const titles = certMap.map(({ title }) => title);
-type Title = (typeof titles)[number];
-const legacyProjectMap: Partial<Record<Title, unknown>> = {};
-const projectMap: Partial<Record<Title, unknown>> = {};
+const certMapWithoutFullStack = [
+  ...upcomingCertMap,
+  ...legacyCertMap,
+  ...certMap
+] as const;
 
-certMap.forEach(cert => {
-  // Filter out Legacy Full Stack so inputs for project
-  // URLs aren't rendered on the settings page
-  if (cert.title !== 'Legacy Full Stack') {
-    if (cert.title.startsWith('Legacy')) {
-      legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of certs from settings page
-      // should do suggestion on line 33 and use front matter to hide it
-    } else if (!cert.title.startsWith('College Algebra')) {
-      projectMap[cert.title] = cert.projects;
-    }
-  }
-});
+const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
-export { certMap, legacyProjectMap, projectMap };
+export type ProjectMap = Record<
+  (typeof certMap)[number]['title'],
+  (typeof certMap)[number]['projects']
+>;
+
+const projectMap = certMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as ProjectMap);
+
+export type LegacyProjectMap = Record<
+  (typeof legacyCertMap)[number]['title'],
+  (typeof legacyCertMap)[number]['projects']
+>;
+
+const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as LegacyProjectMap);
+
+const fullProjectMap = {
+  ...legacyProjectMap,
+  ...projectMap
+};
+
+export {
+  certMapWithoutFullStack,
+  fullCertMap,
+  fullProjectMap,
+  legacyProjectMap,
+  projectMap
+};

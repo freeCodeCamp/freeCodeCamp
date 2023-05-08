@@ -32,7 +32,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
 
 First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. `fill` returns a promise, so `then` is chained off of it.
 
-Within the `then` callback, the `pressButton` method of the `browser` object is used to invoke the form's `submit` event listener. The `pressButton` method is asynchronous.
+Within the `then` callback, the `pressButton` method of the `browser` object is used to invoke the form's `submit` event listener. Die `pressButton`-Methode ist asynchron.
 
 Then, once a response is received from the AJAX request, a few assertions are made confirming:
 

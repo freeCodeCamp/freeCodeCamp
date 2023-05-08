@@ -39,7 +39,7 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
   Por exemplo:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Para criar uma versão de compilação, inicie o servidor de desenvolvimento e execute todos os testes cypress contínuos e funcionais existentes:
@@ -54,10 +54,11 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
 
 Se o ambiente GitPod não foi criado automaticamente:
 
-- Inicie a base de dados
+- Siga o [guia de instalação do MongoDB](https://www.mongodb.com/basics/get-started).
+- Crie um arquivo de configuração.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Crie a base de dados

@@ -1,7 +1,8 @@
 {
   "name": "Learn Exponents and Logarithms",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-exponents-and-logarithms",
+  "helpCategory": "Python",
   "order": 16,
   "time": "",
   "template": "",
