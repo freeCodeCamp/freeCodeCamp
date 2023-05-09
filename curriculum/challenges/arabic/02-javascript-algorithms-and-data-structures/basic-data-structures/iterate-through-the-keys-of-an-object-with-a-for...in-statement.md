@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-في بعض الأحيان قد تحتاج إلى المرور علي جميع keys داخل object. يتطلب هذه صياغة محددة في JavaScript تسمى <dfn>for...in</dfn>. بالنسبة إلى object باسم `users`، يمكن أن يبدو هذا كالتالي:
+Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-سيؤدي هذا إلى تسجيل `Alan`, و `Jeff`, و `Sarah` - كل قيمة على سطرها الخاص.
+This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
 
-في هذه العبارة حددت متغيرًا `user`، وكما ترى, تمت إعادة تعيين هذا المتغير خلال كل دورة لكل key من keys في object، مما أدى إلى ظهور اسم كل مستخدم مطبوع في وحدة التحكم.
+We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
 **ملاحظة:** لا تحتفظ كائن (objects) بترتيب هُوِيَّات (keys) المخزنة مثل قوائم (arrays)؛ لذا فإنّ مكان الهُوِيَّة (key) على كائن (object) ما، أو الترتيب النسبي الذي يظهر به، لا يهم عند الإشارة إلى تلك الهُوِيَّة (key) أو الوصول إليه.
 
 # --instructions--
 
-لقد حددنا وظيفة `countOnline` التي تقبل حجة (argument) واحدة (وهي users object). استخدم <dfn>for...in</dfn> داخل هذه الوظيفة (function) للمرور بتكرار علي users object الذي تم تمريره في (function) وإنتاج عدد المستخدمين الذين تم تعيين خاصية `online` الخاصة بهم إلى `true`. مثال على users object الذي يمكن تمريره إلى `countOnline` يظهر أدناه. سيكون لكل مستخدم خاصية `online` بقيمة `true` أو `false`.
+We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

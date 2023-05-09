@@ -63,7 +63,7 @@ Per selezionare una `class` si usa `$` e per selezionare un `id` si usa `#`
 
 ---
 
-To select a `class` you use `.` and to select an `id` you use `*`
+Per selezionare una `class` si usa `.` e per selezionare un `id` si usa `*`
 
 ---
 

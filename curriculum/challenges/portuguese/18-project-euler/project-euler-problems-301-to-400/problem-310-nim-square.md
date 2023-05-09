@@ -1,6 +1,6 @@
 ---
 id: 5900f4a21000cf542c50ffb5
-title: 'Problem 310: Nim Square'
+title: 'Problema 310: Nim quadrado'
 challengeType: 1
 forumTopicId: 301966
 dashedName: problem-310-nim-square
@@ -8,19 +8,19 @@ dashedName: problem-310-nim-square
 
 # --description--
 
-Alice and Bob play the game Nim Square.
+Alice e Bob jogam o jogo Nim quadrado.
 
-Nim Square is just like ordinary three-heap normal play Nim, but the players may only remove a square number of stones from a heap.
+Nim quadrado é como o jogo de três pilhas de pedras comum (o Nim), mas os jogadores só podem remover um número quadrado de pedras de um pilha.
 
-The number of stones in the three heaps is represented by the ordered triple ($a$, $b$, $c$).
+O número de pedras nas três pilhas é representado pelo trio ordenado ($a$, $b$, $c$).
 
-If $0 ≤ a ≤ b ≤ c ≤ 29$ then the number of losing positions for the next player is 1160.
+Se $0 ≤ a ≤ b ≤ c ≤ 29$, o número de posições de derrota para o segundo jogador é 1160.
 
-Find the number of losing positions for the next player if $0 ≤ a ≤ b ≤ c ≤ 100\\,000$.
+Encontre o número de posições de derrota para o segundo jogador se $0 ≤ a ≤ b ≤ c ≤ 100.000$.
 
 # --hints--
 
-`nimSquare()` should return `2586528661783`.
+`nimSquare()` deve retornar `2586528661783`.
 
 ```js
 assert.strictEqual(nimSquare(), 2586528661783);

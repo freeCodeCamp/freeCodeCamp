@@ -1,35 +1,35 @@
 ---
 id: 63ee3fe4381756f9716727f0
-title: CSS Foundations Exercise B
+title: Основи CSS. Вправа B
 challengeType: 14
 dashedName: css-foundations-exercise-b
 ---
 
 # --description--
 
-**Objective:** There are several elements in the HTML file provided, which you will have to add either class or ID attributes to. You will then have to add rules in the CSS file provided using the correct selector syntax.
+**Мета:** у файлі HTML надано декілька елементів, до яких потрібно додати атрибути класу чи ID. Потім вам потрібно додати правила до наданого файлу CSS, використовуючи правильний синтаксис селектора.
 
-## User Stories
+## Історія користувача
 
-1. You should see a `yellow` background for all odd numbered elements in the list.
+1. Ви повинні бачити фон `yellow` для всіх непарних елементів у списку.
 
-1. You should have a `class` selector used for all odd numbered elements in the list.
+1. Ви повинні мати селектор `class`, який використовується для всіх непарних елементів у списку.
 
-1. You should see that the second element in the list has `blue` text and a `font-size` of `36px`.
+1. Ви повинні бачити другий елемент списку із текстом `blue` та `font-size` зі значенням `36px`.
 
-1. The `font-size` and text color on the second element should be set by using an `id` attribute.
+1. Використайте атрибут `id`, щоб налаштувати `font-size` та колір тексту другого елемента.
 
-1. You should see that the third element in the list has a `font-size` of `24px`.
+1. Ви повинні бачити третій елемент списку із `font-size` зі значенням `24px`.
 
-1. The `font-size` on the third element should be set by using a `class` attribute.
+1. Використайте атрибут `class`, щоб налаштувати `font-size` третього елемента.
 
-1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
+1. Ви повинні бачити четвертий елемент списку із фоном `red`, `font-size` зі значенням `24px` та `font-weight` зі значенням `bold`.
 
-1. The `font-size` of the fourth element should be set with a `class` attribute the `font-weight`  and the color should be set with an `id` attribute.
+1. Використайте атрибут `class`, щоб налаштувати `font-size` четвертого елемента. Використайте атрибут `id`, щоб налаштувати `font-weight` та колір четвертого елемента.
 
 # --hints--
 
-Every odd element should have a `class` attribute.
+Кожен непарний елемент повинен мати атрибут `class`.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
@@ -39,7 +39,7 @@ const everyPHasClass = p?.every((paragraph) => paragraph.classList.length > 0);
 assert(everyPHasClass);
 ```
 
-Your odd elements should have a `background-color` of `yellow`.
+Непарні елементи повинні мати `background-color` зі значенням `yellow`.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
@@ -52,7 +52,7 @@ const everyPhasBackgroundColor = p?.every((paragraph) => {
 })
 ```
 
-Your second element should have blue text and a `font-size` of `36px`.
+Другий елемент повинен мати синій текст та `font-size` зі значенням `36px`.
 
 ```js
 const secondElementId = document.querySelectorAll('div')?.[0]?.id;
@@ -63,14 +63,14 @@ assert.equal(style?.color, 'rgb(0, 0, 255)')
 assert.equal(style?.fontSize, '36px');
 ```
 
-Your third element should have text and a `font-size` of `24px`.
+Третій елемент повинен мати текст та `font-size` зі значенням `24px`.
 
 ```js
 const thirdElement = document.querySelectorAll('p')?.[1]?.classList;
 
 ```
 
-The fourth element should have a `font-size` of `24px`.
+Четвертий елемент повинен мати `font-size` зі значенням `24px`.
 
 ```js
 const fourthElementClass = document.querySelectorAll('div')?.[1]?.classList[0];
@@ -80,7 +80,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`.${fourthElementClass}`)
 assert(style?.fontSize === '24px');
 ```
 
-The fourth element should have a red `background-color`.
+Четвертий елемент повинен мати `background-color` зі значенням `red`.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;
@@ -90,7 +90,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 assert(style?.backgroundColor === 'red');
 ```
 
-The fourth element should have a `font-weight` of `bold`.
+Четвертий елемент повинен мати `font-weight` зі значенням `bold`.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;

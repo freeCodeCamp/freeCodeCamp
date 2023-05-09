@@ -102,61 +102,61 @@
       }
     },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
-    "faq": "Frequently asked questions:",
+    "faq": "Domande frequenti:",
     "faqs": [
       {
-        "question": "What exactly is freeCodeCamp?",
+        "question": "Cos'è esattamente freeCodeCamp?",
         "answer": [
-          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+          "freeCodeCamp è una comunità di persone provenienti da tutto il mondo che imparano a programmare insieme. Siamo un'organizzazione pubblica non profit 501(c)(3)."
         ]
       },
       {
-        "question": "How will freeCodeCamp help me learn to code?",
+        "question": "Come mi aiuterà freeCodeCamp a imparare a programmare?",
         "answer": [
-          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
-          "You will also earn free verified certifications along the way."
+          "Imparerai a programmare costruendo dozzine di progetti, passo dopo passo, direttamente dal tuo browser, editor di codice o app mobile.",
+          "Inoltre, otterrai anche delle certificazioni verificate gratuite lungo il tuo percorso."
         ]
       },
       {
-        "question": "Is freeCodeCamp really free?",
+        "question": "freeCodeCamp è davvero gratuito?",
         "answer": [
-          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+          "Sì. Ogni aspetto di freeCodeCamp è gratuito al 100%. I corsi, i progetti e persino le certificazioni."
         ]
       },
       {
-        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "question": "freeCodeCamp può aiutarmi a trovare un lavoro come sviluppatore di software?",
         "answer": [
-          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+          "Sì. Ogni anno, migliaia di persone che si uniscono alla comunità di freeCodeCamp ottengono il loro primo lavoro come sviluppatori software."
         ]
       },
       {
-        "question": "What skills will I learn?",
+        "question": "Quali competenze otterrò?",
         "answer": [
-          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+          "Acquisirai le abilità che la maggior parte degli sviluppatori utilizza sul lavoro: HTML, CSS, JavaScript, Python, Linux, Git e SQL e altro ancora. Imparerai anche come utilizzare potenti librerie per lo sviluppo web, lo sviluppo di app mobile, la scienza dei dati e le intelligenze artificiali."
         ]
       },
       {
-        "question": "How long does it take to learn all this?",
+        "question": "Quanto tempo ci vuole per imparare tutto questo?",
         "answer": [
-          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+          "freeCodeCamp è autogestito. Realisticamente, imparare abbastanza bene queste abilità per ottenere un lavoro come ingegnere del software potrebbe richiedere diversi anni di pratica. Non rinunciare alla scuola o al tuo lavoro quotidiano finché non ti senti pronto."
         ]
       },
       {
-        "question": "How do I get started?",
+        "question": "Come faccio a iniziare?",
         "answer": [
-          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+          "Se sei un principiante, dovresti partire dall'inizio del curriculum base di freeCodeCamp. Se sei più esperto, ti consigliamo comunque di partire dall'inizio, ma puoi saltare alla sezione che preferisci."
         ]
       },
       {
-        "question": "How do I earn the free verified certifications?",
+        "question": "Come posso ottenere le certificazioni gratuite verificate?",
         "answer": [
-          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+          "Per ogni certificazione, è necessario completare 5 progetti e superare tutti i test di ogni progetto per poter ottenere la certificazione."
         ]
       },
       {
-        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "question": "Non vedo [nome dello strumento] nel curriculum base di freeCodeCamp.",
         "answer": [
-          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+          "Oltre al curriculum base di freeCodeCamp, abbiamo migliaia di altri libri, corsi e tutorial di programmazione gratuiti e completi. Quasi certamente troverai gli strumenti di programmazione che vuoi imparare a utilizzare. Basta usare la barra di ricerca."
         ]
       }
     ]
@@ -171,7 +171,7 @@
     "for": "Impostazioni Account per {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
-    "scrollbar-width": "Editor Scrollbar Width",
+    "scrollbar-width": "Larghezza barra di scorrimento editor",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -278,7 +278,7 @@
     "tweet": "Ho appena ottenuto la {{certTitle}} @freeCodeCamp! Guarda qui: {{certURL}}",
     "avatar": "avatar di {{username}}",
     "joined": "Iscritto da {{date}}",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "Numero di punti: {{count}}",
     "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
     "page-number": "{{pageNumber}} di {{totalPages}}"
@@ -424,6 +424,16 @@
     "duration": "Diventa un sostenitore una tantum del nostro ente di beneficenza.",
     "duration-2": "Diventa un sostenitore mensile del nostro ente di beneficenza.",
     "duration-4": "Diventa un sostenitore del nostro ente di beneficenza",
+    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
+    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
+    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
+    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
+    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
+    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
+    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
+    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
+    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
+    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
     "credit-card-2": "O dona con una carta di credito:",

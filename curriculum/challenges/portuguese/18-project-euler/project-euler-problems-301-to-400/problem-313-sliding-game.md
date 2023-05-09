@@ -1,6 +1,6 @@
 ---
 id: 5900f4a61000cf542c50ffb8
-title: 'Problem 313: Sliding game'
+title: 'Problema 313: Jogo de deslizar'
 challengeType: 1
 forumTopicId: 301969
 dashedName: problem-313-sliding-game
@@ -8,21 +8,21 @@ dashedName: problem-313-sliding-game
 
 # --description--
 
-In a sliding game a counter may slide horizontally or vertically into an empty space. The objective of the game is to move the red counter from the top left corner of a grid to the bottom right corner; the space always starts in the bottom right corner. For example, the following sequence of pictures show how the game can be completed in five moves on a 2 by 2 grid.
+Em um jogo de deslizar, um contador pode deslizar horizontalmente ou verticalmente para um espaço vazio. O objetivo do jogo é mover o contador vermelho do canto superior esquerdo de uma grade para o canto inferior direito; o espaço sempre começa no canto inferior direito. Por exemplo, a sequência de imagens a seguir mostra como o jogo pode ser concluído em cinco movimentos em uma grade de 2 em 2.
 
-<img class="img-responsive center-block" alt="completing game in five moves on grid 2x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="completando o jogo em cinco movimentos na grade 2x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-1.gif" style="background-color: white; padding: 10px;" />
 
-Let $S(m, n)$ represent the minimum number of moves to complete the game on an $m$ by $n$ grid. For example, it can be verified that $S(5, 4) = 25$.
+Considere $S(m, n)$ como representante do número mínimo de movimentos para completar o jogo em uma grade de $m$ por $n$. Por exemplo, pode-se verificar que $S(5, 4) = 25$.
 
-<img class="img-responsive center-block" alt="initial grid state and final grid state for game on grid 5x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="estado inicial da grade e estado final da grade para um jogo na grade 5x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-2.gif" style="background-color: white; padding: 10px;" />
 
-There are exactly 5482 grids for which $S(m, n) = p^2$, where $p &lt; 100$ is prime.
+Há exatamente 5482 grades quadriculadas, para as quais $S(m, n) = p^2$, em que $p &lt; 100$ é um número primo.
 
-How many grids does $S(m, n) = p^2$, where $p &lt; {10}^6$ is prime?
+Em quantas grades $S(m, n) = p^2$, onde $p &lt; {10}^6$ é um número primo?
 
 # --hints--
 
-`slidingGame()` should return `2057774861813004`.
+`slidingGame()` deve retornar `2057774861813004`.
 
 ```js
 assert.strictEqual(slidingGame(), 2057774861813004);

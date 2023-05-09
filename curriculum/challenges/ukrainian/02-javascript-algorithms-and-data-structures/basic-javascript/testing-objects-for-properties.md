@@ -8,25 +8,24 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-Іноді потрібно перевіряти, чи об'єкт має певну властивість. Ми можемо використати метод об'єктів `.hasOwnProperty(propname)`, щоб визначити, чи має цей об’єкт задану назву властивості. `.hasOwnProperty()` повертає `true` або `false`, якщо властивість знайдена чи не знайдена.
+To check if a property on a given object exists or not, you can use the `.hasOwnProperty()` method. `someObject.hasOwnProperty(someProperty)` returns `true` or `false` depending on if the property is found on the object or not.
 
 **Приклад**
 
 ```js
-const myObj = {
-  top: "hat",
-  bottom: "pants"
-};
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
 
-myObj.hasOwnProperty("top");
-myObj.hasOwnProperty("middle");
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
 ```
 
-Перший `hasOwnProperty` повертає `true`, а другий повертає `false`.
+The first `checkForProperty` function call returns `true`, while the second returns `false`.
 
 # --instructions--
 
-Змініть функцію `checkObj` так, щоб вона перевіряла, чи переданий до функції об’єкт (`obj`) містить певну властивість (`checkProp`). Якщо властивість знайдена, поверніть значення властивості. Якщо ні, поверніть `"Not Found"`.
+Modify the function `checkObj` to test if the object passed to the function parameter `obj` contains the specific property passed to the function parameter `checkProp`. If the property passed to `checkProp` is found on `obj`, return that property's value. If not, return `Not Found`.
 
 # --hints--
 

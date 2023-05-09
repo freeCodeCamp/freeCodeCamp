@@ -30,7 +30,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.Literal('flash.updated-preferences'),
+            message: Type.Literal('flash.privacy-updated'),
             type: Type.Literal('success')
           }),
           500: Type.Object({
@@ -61,7 +61,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
-          message: 'flash.updated-preferences',
+          message: 'flash.privacy-updated',
           type: 'success'
         } as const;
       } catch (err) {
@@ -112,5 +112,86 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+
+  fastify.put(
+    '/update-my-keyboard-shortcuts',
+    {
+      schema: {
+        body: Type.Object({
+          keyboardShortcuts: Type.Boolean()
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.keyboard-shortcut-updated'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            keyboardShortcuts: req.body.keyboardShortcuts
+          }
+        });
+
+        return {
+          message: 'flash.keyboard-shortcut-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-quincy-email',
+    {
+      schema: {
+        body: Type.Object({
+          sendQuincyEmail: Type.Boolean()
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.subscribe-to-quincy-updated'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            sendQuincyEmail: req.body.sendQuincyEmail
+          }
+        });
+
+        return {
+          message: 'flash.subscribe-to-quincy-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };

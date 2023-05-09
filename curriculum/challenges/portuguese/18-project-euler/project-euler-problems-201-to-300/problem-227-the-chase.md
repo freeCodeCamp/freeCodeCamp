@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: 'Problema 227: A caçada'
 challengeType: 1
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -8,23 +8,23 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+"A caçada" é um jogo que consiste em dois dados e um número par de jogadores.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+Os jogadores sentam-se ao redor de uma mesa. O jogo começa com dois jogadores opostos tendo um dado cada. A cada turno, os dois jogadores que têm o dado o rolam.
 
-If the player rolls a 1, he passes the die to his neighbour on the left.
+Se o jogador rolar um 1, ele passa o dado ao vizinho à esquerda.
 
-If the player rolls a 6, he passes the die to his neighbour on the right.
+Se o jogador rolar um 6, ele passa o dado ao vizinho à direita.
 
-Otherwise, he keeps the die for the next turn.
+Caso contrário, ele mantém o dado no próximo turno.
 
-The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+O jogo termina quando um jogador tem os dois dados depois que eles forem rolados e passados. Aquele jogador perdeu.
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+Em um jogo com 100 jogadores, qual é o número esperado de turnos que dure o jogo? Dê sua resposta arredondada para dez algarismos significativos (total de casas somando antes e depois da vírgula).
 
 # --hints--
 
-`theChase()` should return `3780.618622`.
+`theChase()` deve retornar `3780.618622`.
 
 ```js
 assert.strictEqual(theChase(), 3780.618622);

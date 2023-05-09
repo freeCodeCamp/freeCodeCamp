@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec2
-title: 'Problem 67: Maximum path sum II'
+title: 'Problema 67: Soma do caminho máximo II'
 challengeType: 1
 forumTopicId: 302179
 dashedName: problem-67-maximum-path-sum-ii
@@ -8,7 +8,7 @@ dashedName: problem-67-maximum-path-sum-ii
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+Começando no topo do triângulo abaixo e movendo-se para os números adjacentes na linha abaixo, o total máximo de cima para baixo é 23.
 
 <div style='text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,27 +17,27 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Ou seja, 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom in `numTriangle`, a 2D array defined in the background containing a triangle with one-hundred rows.
+Calcule o total máximo de cima para baixo em `numTriangle`, um array 2D definido em segundo plano contendo um triângulo com cem linhas.
 
-**Note:** This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2<sup>99</sup> altogether! If you could check one trillion (10<sup>12</sup>) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+**Observação:** esta é uma versão muito mais difícil do Problema 18. Não é possível tentar todas as rotas para resolver este problema, pois há 2<sup>99</sup> rotas no total! Se você pudesse verificar um trilhão (10<sup>12</sup>) de rotas por segundo, levaria mais de vinte bilhões de anos para verificar todas elas. Existe um algoritmo eficaz para resolver esse problema. ;)
 
 # --hints--
 
-`maximumPathSumII(testTriangle)` should return a number.
+`maximumPathSumII(testTriangle)` deve retornar um número.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII(testTriangle)` should return 23.
+`maximumPathSumII(testTriangle)` deve retornar 23.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
 ```
 
-`maximumPathSumII(numTriangle)` should return 7273.
+`maximumPathSumII(numTriangle)` deve retornar 7273.
 
 ```js
 assert.strictEqual(maximumPathSumII(_numTriangle), 7273);

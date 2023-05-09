@@ -33,7 +33,7 @@
 
 Практичні проєкти мають деякі додаткові інструменти, які допомагають створити нові проєкти та кроки. Щоб дізнатися більше, див. [документацію](how-to-work-on-practice-projects.md).
 
-## Challenge Template
+## Шаблон завдання
 
 ````md
 ---
@@ -54,7 +54,7 @@ Challenge description text, in markdown
 
 # --instructions--
 
-Challenge instruction text, in markdown
+Текст інструкції тестів у markdown
 
 # --hints--
 
@@ -178,7 +178,7 @@ To generate a new one in a shell (assuming MongoDB is running separately):
 1. Run `mongo` command.
 2. Run `ObjectId()` command.
 
-For example:
+Наприклад:
 
 ```bash
 $ mongo
@@ -200,19 +200,19 @@ id: 5a474d78df58bafeb3535d34
 title: Challenge Title
 ```
 
-## Naming challenges
+## Найменування завдань
 
-Naming things is hard. We've made it easier by imposing some constraints.
+Давати назву — важко. Проте ми полегшили цей процес, впровадивши деякі обмеження.
 
-All challenge titles should be explicit and should follow this pattern:
+Усі назви завдань повинні бути чіткими та дотримуватись цього шаблону:
 
-\[verb\]\[object clause\]
+\[дієслово\]\[підрядна частина\]
 
-Here are some example challenge names:
+Нижче подано декілька прикладів назв завдань:
 
-- Use Clockwise Notation to Specify the Padding of an Element
-- Condense arrays with .reduce
-- Use Bracket Notation to Find the First Character in a String
+- Використайте запис за годинниковою стрілкою, щоб визначити відступ елемента
+- Стисніть масиви за допомогою .reduce
+- Використайте дужкову нотацію, щоб знайти перший символ у рядку
 
 ## Опис/інструкції завдань
 
@@ -277,7 +277,7 @@ The following is an example of code:
 ````md
 ```{language}
 
-[YOUR CODE HERE]
+[ТУТ МІСЦЕ ДЛЯ ВАШОГО КОДУ]
 
 ````
 ````

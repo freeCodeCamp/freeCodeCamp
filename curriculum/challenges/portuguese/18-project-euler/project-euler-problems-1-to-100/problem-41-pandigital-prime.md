@@ -1,6 +1,6 @@
 ---
 id: 5900f3951000cf542c50fea8
-title: 'Problem 41: Pandigital prime'
+title: 'Problema 41: Número primo pandigital'
 challengeType: 1
 forumTopicId: 302078
 dashedName: problem-41-pandigital-prime
@@ -8,25 +8,25 @@ dashedName: problem-41-pandigital-prime
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+Dizemos que um número de `n` algarismos é pandigital se ele usar todos os algarismos de 1 a `n` exatamente uma vez. Por exemplo, 2143 é um número pandigital de 4 algarismos e também é um número primo.
 
-What is the largest `n`-length digit pandigital prime that exists?
+Qual é o maior número primo pandigital de comprimento `n` que existe?
 
 # --hints--
 
-`pandigitalPrime(4)` should return a number.
+`pandigitalPrime(4)` deve retornar um número.
 
 ```js
 assert(typeof pandigitalPrime(4) === 'number');
 ```
 
-`pandigitalPrime(4)` should return 4231.
+`pandigitalPrime(4)` deve retornar 4231.
 
 ```js
 assert(pandigitalPrime(4) == 4231);
 ```
 
-`pandigitalPrime(7)` should return 7652413.
+`pandigitalPrime(7)` deve retornar 7652413.
 
 ```js
 assert(pandigitalPrime(7) == 7652413);
