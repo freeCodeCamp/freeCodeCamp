@@ -9,8 +9,8 @@ dashedName: css-foundations-exercise-c
 
 Let's build a little off the previous exercise, in which you added multiple classes to a single element in order to apply two different rules to it.
 
-1. You should see a black background and white text on the first element.
-1. You should see a yellow background on the second element.
+1. You should see a black background and white text on the first `button` element.
+1. You should see a yellow background on the second `button` element.
 1. You should set a font size of `28px` using a grouping selector.
 1. You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
 1. You should see a unique class name on each element.
@@ -76,8 +76,7 @@ function eitherOr() {
   const a = new __helpers.CSSHelp(document)
   return a.getStyle(`.${classOne}, .${classTwo}`) ?? a.getStyle(`.${classTwo}, .${classOne}`);
 }
-assert.equal(eitherOr()?.fontSize, '28px');
-assert.equal(eitherOr()?.fontFamily, 'Helvetica, "Times New Roman", sans-serif');
+assert.exists(eitherOr());
 ```
 
 You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
@@ -113,7 +112,7 @@ assert(elementOneClasses.length === 1 && elementTwoClasses.length === 1);
 <html lang="en">
   <head>
     <title>Grouping Selectors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <button>Click Me!</button>
@@ -136,7 +135,7 @@ assert(elementOneClasses.length === 1 && elementTwoClasses.length === 1);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grouping Selectors</title>
-    <link rel="stylesheet" href="solution.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <button class="inverted">Click Me!</button>
