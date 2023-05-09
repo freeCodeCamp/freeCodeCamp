@@ -1,8 +1,8 @@
 # Cómo abrir una Pull Request (PR)
 
-Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-Esperamos que nuestros colaboradores conozcan el proceso específico de este proyecto. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Esperamos que nuestros colaboradores conozcan el proceso específico de este proyecto. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Algunos ejemplos de ello son:
 
@@ -33,7 +33,7 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 | Tipo  | Cuándo seleccionar                                                                         |
 |:----- |:------------------------------------------------------------------------------------------ |
-| fix   | Funcionalidades actualizadas o mejoradas, pruebas, redacción de la lección, etc.           |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc.            |
 | feat  | Sólo si está añadiendo nuevas funcionalidades, pruebas, etc.                               |
 | chore | Cambios que no están relacionados con el código, las pruebas o la redacción de la lección. |
 | docs  | Cambios al directorio `/docs` o a las pautas de contribución, etc.                         |
@@ -89,7 +89,7 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Ejemplos de los cambios que necesitan pruebas en el entorno local incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
+   - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 

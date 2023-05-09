@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  Problema 158: esplorare le stringhe per le quali un solo carattere viene lessicograficamente dopo il suo vicino a sinistra
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-
@@ -10,25 +10,25 @@ dashedName: >-
 
 # --description--
 
-Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
+Prendendo tre lettere diverse dalle 26 lettere dell'alfabeto, si possono formare stringhe di caratteri di lunghezza tre.
 
-Examples are 'abc', 'hat' and 'zyx'.
+Degli esempi sono 'abc', 'hat' e 'zyx'.
 
-When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+Quando studiamo questi tre esempi vediamo che per 'abc' due caratteri vengono lessicograficamente dopo il loro vicino a sinistra.
 
-For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+Per 'hat' c'è esattamente un carattere che viene lessicograficamente dopo il suo vicino a sinistra. Per 'zyx' ci sono zero caratteri che vengono lessicograficamente dopo il loro vicino a sinistra.
 
-In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+In tutto ci sono 10400 stringhe di lunghezza 3 per le quali esattamente un carattere viene lessicograficamente dopo il suo vicino a sinistra.
 
-We now consider strings of $n ≤ 26$ different characters from the alphabet.
+Ora consideriamo stringhe di $n ≤ 26$ caratteri diversi dell'alfabeto.
 
-For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
+Per ogni $n$, $p(n)$ è il numero di stringhe di lunghezza $n$ per cui esattamente un carattere viene lessicograficamente dopo il suo vicino a sinistra.
 
-What is the maximum value of $p(n)$?
+Qual è il valore massimo di $p(n)$?
 
 # --hints--
 
-`lexicographicNeighbours()` should return `409511334375`.
+`lexicographicNeighbours()` dovrebbe restituire `409511334375`.
 
 ```js
 assert.strictEqual(lexicographicNeighbours(), 409511334375);

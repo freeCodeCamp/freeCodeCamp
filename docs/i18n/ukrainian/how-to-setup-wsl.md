@@ -2,25 +2,25 @@
 
 > [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам
 > 
-> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 чи вище) — доступно для всіх дистрибутивів, включно з Windows 10 Home.
 > 
-> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop для Windows**: див. відповідні вимоги для [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) та [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow [this local setup guide](how-to-setup-freecodecamp-locally.md) to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
+Цей посібник охоплює деякі загальні кроки з налаштуванням WSL2. Як тільки загальні питання з WSL2 вирішено, ви зможете використовувати [цей посібник з локального налаштування](how-to-setup-freecodecamp-locally.md), щоб працювати з freeCodeCamp на Windows, запускаючи дистрибутив WSL як Ubuntu.
 
-## Enable WSL
+## Активуйте WSL
 
-Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
+Дотримуйтесь інструкцій з [офіційної документації](https://docs.microsoft.com/en-us/windows/wsl/install-win10), щоб встановити WSL1 та оновити його до WSL2.
 
-## Install Ubuntu
+## Встановіть Ubuntu
 
-1. We recommended using Ubuntu-18.04 or above with WSL2.
+1. Рекомендуємо використовувати Ubuntu-18.04 або вище з WSL2.
 
    > [!NOTE]
    > 
-   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
+   > Ви можете використовувати інші дистрибутиви, основою яких не є Debian, але у них наявні певні недоліки та вони виходять за рамки цього посібника.
 
-2. Update the dependencies for the OS
+2. Оновіть залежності ОС
 
    ```console
    sudo apt update
@@ -30,9 +30,9 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
    sudo apt autoremove -y
    ```
 
-## Set up Git
+## Налаштуйте Git
 
-Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --version`.
+Git попередньо встановлений в Ubuntu 18.04. Перевірте версію Git за допомогою команди `git --version`.
 
 ```output
 ~
@@ -40,17 +40,17 @@ Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --v
 git version 2.25.1
 ```
 
-(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
+(Необов’язково, але рекомендовано) Тепер ви можете перейти до [налаштування ключів ssh](https://help.github.com/articles/generating-an-ssh-key) на GitHub.
 
-## Installing a Code Editor
+## Встановіть редактор коду
 
-We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
+Ми наполегливо рекомендуємо встановити [Visual Studio Code](https://code.visualstudio.com) на Windows 10. Цей редактор підтримує WSL та автоматично встановлює всі необхідні розширення на вашому дистрибутиві WSL.
 
-Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
+По суті, ви змінюватимете та зберігатимете свій код на Ubuntu-18.04 із VS Code, встановленим на Windows.
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками Npm до версії, налаштованої у вашому дистрибутиві WSL.
 
-You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
+Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and NPM.
 
 ## Installing Docker Desktop
 
