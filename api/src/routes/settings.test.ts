@@ -52,7 +52,7 @@ describe('settingRoutes', () => {
     describe('/update-my-profileui', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-my-profileui')
+          .put('/update-my-profileui')
           .set('Cookie', cookies)
           .send({ profileUI });
 
@@ -70,7 +70,7 @@ describe('settingRoutes', () => {
 
       test('PUT ignores invalid keys', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-my-profileui')
+          .put('/update-my-profileui')
           .set('Cookie', cookies)
           .send({
             profileUI: {
@@ -89,7 +89,7 @@ describe('settingRoutes', () => {
 
       test('PUT returns 400 status code with missing keys', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-my-profileui')
+          .put('/update-my-profileui')
           .set('Cookie', cookies)
           .send({
             profileUI: {
@@ -113,7 +113,7 @@ describe('settingRoutes', () => {
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-my-theme')
+          .put('/update-my-theme')
           .set('Cookie', cookies)
           .send({ theme: 'night' });
 
@@ -127,7 +127,7 @@ describe('settingRoutes', () => {
 
       test('PUT returns 400 status code with invalid theme', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-my-theme')
+          .put('/update-my-theme')
           .set('Cookie', cookies)
           .send({ theme: 'invalid' });
 
@@ -188,7 +188,7 @@ describe('settingRoutes', () => {
     describe('/update-privacy-terms', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-privacy-terms')
+          .put('/update-privacy-terms')
           .set('Cookie', cookies)
           .send({ quincyEmails: true });
 
@@ -202,7 +202,7 @@ describe('settingRoutes', () => {
 
       test('PUT returns 400 status code with non-boolean data', async () => {
         const response = await request(fastify?.server)
-          .put('/settings/update-privacy-terms')
+          .put('/update-privacy-terms')
           .set('Cookie', cookies)
           .send({ quincyEmails: '123' });
 
@@ -219,23 +219,21 @@ describe('settingRoutes', () => {
   describe('Unauthenticated User', () => {
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
       const response = await request(fastify?.server).put(
-        '/settings/update-my-profileui'
+        '/update-my-profileui'
       );
 
       expect(response?.statusCode).toEqual(401);
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await request(fastify?.server).put(
-        '/settings/update-my-theme'
-      );
+      const response = await request(fastify?.server).put('/update-my-theme');
 
       expect(response?.statusCode).toEqual(401);
     });
 
     test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
       const response = await request(fastify?.server).put(
-        '/settings/update-privacy-terms'
+        '/update-privacy-terms'
       );
 
       expect(response?.statusCode).toEqual(401);
