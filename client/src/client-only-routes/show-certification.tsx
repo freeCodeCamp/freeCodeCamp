@@ -1,4 +1,5 @@
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { toPng } from 'html-to-image';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -267,6 +268,23 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </div>
   );
 
+  const downloadImage = async () => {
+    const element = document.querySelector<HTMLElement>('.certificate-wrapper');
+    const sig = element?.querySelector(`img[alt="Quincy Larson's Signature"]`);
+    sig?.remove();
+    if (!element) {
+      return;
+    }
+    const img = await toPng(element);
+    console.log(img);
+    const link = document.createElement('a');
+    link.download = `${username}-${certTitle}.png`;
+    link.href = img;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
   const shareCertBtns = (
     <Row className='text-center'>
       <Col xs={12}>
@@ -293,6 +311,18 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           target='_blank'
         >
           {t('profile.add-twitter')}
+        </Button>
+        <Spacer size='medium' />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          onClick={async () => {
+            await downloadImage();
+            return false;
+          }}
+        >
+          Download Cert
         </Button>
       </Col>
       <Spacer size='large' />
