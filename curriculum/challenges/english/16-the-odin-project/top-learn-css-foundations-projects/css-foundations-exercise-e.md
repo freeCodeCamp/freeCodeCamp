@@ -16,8 +16,6 @@ The goal of this exercise is to apply styles to elements that are descendants of
 1. You should see a font size of `20px` elements that are descendants of the `div` element.
 1. You should text that is center aligned for elements that are descendants of the `div` element.
 
-
-red text, a font size of 20px, and center aligned.
 # --hints--
 
 You should have a background color of `yellow` on your decendants.
@@ -61,8 +59,6 @@ function getCorrectStyle(){
 }
 
 assert(getCorrectStyle()?.color === 'red');
-
-console.log(getCorrectStyle()?.color)
 
 ```
 
