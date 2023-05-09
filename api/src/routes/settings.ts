@@ -198,10 +198,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: {
         body: Type.Object({
-          isHonest: Type.Optional(Type.Boolean())
+          isHonest: Type.Literal(true)
         }),
         response: {
           200: Type.Object({
+            message: Type.Literal('buttons.accepted-honesty'),
             type: Type.Literal('success')
           }),
           500: Type.Object({
@@ -221,6 +222,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
+          message: 'buttons.accepted-honesty',
           type: 'success'
         } as const;
       } catch (err) {
