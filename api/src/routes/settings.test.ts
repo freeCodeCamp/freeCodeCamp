@@ -190,7 +190,7 @@ describe('settingRoutes', () => {
         const response = await request(fastify?.server)
           .put('/update-my-honesty')
           .set('Cookie', cookies)
-          .send({ honesty: true });
+          .send({ isHonest: true });
 
         expect(response?.statusCode).toEqual(200);
 
@@ -203,7 +203,7 @@ describe('settingRoutes', () => {
         const response = await request(fastify?.server)
           .put('/update-my-honesty')
           .set('Cookie', cookies)
-          .send({ honesty: 'invalid' });
+          .send({ isHonest: 'invalid' });
 
         expect(response?.statusCode).toEqual(400);
       });
