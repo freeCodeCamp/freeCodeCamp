@@ -1,4 +1,4 @@
-import { setupServer, superGet } from '../jest.utils';
+import { setupServer, superRequest } from '../jest.utils';
 import { HOME_LOCATION } from './utils/env';
 
 jest.mock('./utils/env', () => {
@@ -14,17 +14,17 @@ describe('production', () => {
   setupServer();
   describe('GET /', () => {
     test('have a 200 response', async () => {
-      const res = await superGet('/');
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.statusCode).toBe(200);
     });
 
     test('return { "hello": "world"}', async () => {
-      const res = await superGet('/');
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.body).toEqual({ hello: 'world' });
     });
 
     test('should have OWASP recommended headers', async () => {
-      const res = await superGet('/');
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
         'content-security-policy': "frame-ancestors 'none'",
@@ -45,7 +45,10 @@ describe('production', () => {
     ])(
       'should have Access-Control-Allow-Origin header for %s',
       async origin => {
-        const res = await superGet('/').set('origin', origin);
+        const res = await superRequest('/', { method: 'GET' }).set(
+          'origin',
+          origin
+        );
         expect(res.headers).toMatchObject({
           'access-control-allow-origin': origin
         });
@@ -53,14 +56,17 @@ describe('production', () => {
     );
 
     test('should have HOME_LOCATION Access-Control-Allow-Origin header for other origins', async () => {
-      const res = await superGet('/').set('origin', 'https://www.google.com');
+      const res = await superRequest('/', { method: 'GET' }).set(
+        'origin',
+        'https://www.google.com'
+      );
       expect(res.headers).toMatchObject({
         'access-control-allow-origin': HOME_LOCATION
       });
     });
 
     test('should have Access-Control-Allow-(Headers+Credentials) headers', async () => {
-      const res = await superGet('/');
+      const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
           'Origin, X-Requested-With, Content-Type, Accept',
@@ -71,7 +77,9 @@ describe('production', () => {
 
   describe('GET /documentation', () => {
     test('should have OWASP recommended headers, except content-type', async () => {
-      const res = await superGet('/documentation/static/index.html');
+      const res = await superRequest('/documentation/static/index.html', {
+        method: 'GET'
+      });
       expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
         'content-security-policy': "frame-ancestors 'none'",
