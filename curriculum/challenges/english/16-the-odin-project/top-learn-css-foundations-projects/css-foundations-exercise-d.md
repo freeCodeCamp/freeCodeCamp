@@ -19,42 +19,42 @@ With this exercise, we've provided you a completed HTML file, so you will only h
 You should have a `width` of `300px` on the `avatar` and `proportioned` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`);
 assert(style?.width === '300px');
 ```
 
 You should have a height of `auto` on the `avatar` and `proportioned` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`)
 assert(style?.height === 'auto');
 ```
 
 You should use a chaining selector on the `avatar` and `proportioned` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`);
 assert(style);
 ```
 
 You should have a `width` of `200px` on the `avatar` and `distorted` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
 assert(style?.width === '200px');
 ```
 
 You should use a chaining selector on the `avatar` and `distorted` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
 assert(style);
 ```
 
 You should have a `height` two times the width on the `avatar` and `distorted` class.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`);
+const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
 assert(style?.height === '400px');
 ```
 
