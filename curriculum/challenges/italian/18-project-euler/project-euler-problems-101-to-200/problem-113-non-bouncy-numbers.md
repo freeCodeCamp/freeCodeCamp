@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
-title: 'Problem 113: Non-bouncy numbers'
+title: 'Problema 113: numeri non dinamici'
 challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers
@@ -8,19 +8,19 @@ dashedName: problem-113-non-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Andando da sinistra a destra, se nessuna cifra viene superata dalla cifra alla sua sinistra, il numero viene detto crescente; ad esempio, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Allo stesso modo, se ogni cifra non viene superata dalla cifra alla sua destra il numero è detto decrescente; per esempio, 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+Chiameremo dinamico un numero intero positivo che non sia né crescente né decrescente; per esempio, 155349.
 
-As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
+All'aumentare di n, la proporzione di numeri dinamici sotto n aumenta in modo che ci sono solo 12951 numeri sotto un milione che non sono dinamici e solo 277032 numeri non dinamici sotto ${10}^{10}$.
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+Quanti numeri sotto un googol (${10}^{100}$) non sono dinamici?
 
 # --hints--
 
-`nonBouncyNumbers()` should return `51161058134250`.
+`nonBouncyNumbers()` dovrebbe restituire `51161058134250`.
 
 ```js
 assert.strictEqual(nonBouncyNumbers(), 51161058134250);

@@ -1,31 +1,31 @@
 ---
 id: 63ee3f71381756f9716727ef
-title: CSS Foundations Exercise A
+title: Основи CSS. Вправа A
 challengeType: 14
 dashedName: css-foundations-exercise-a
 ---
 
 # --description--
 
-**Objective:** In this exercise, you're going to practice adding CSS to an HTML file using all three methods: external CSS, internal CSS, and inline CSS. You should only be using type selectors for this exercise when adding styles via the external and internal methods. You should also use keywords for colors (e.g. "blue") instead of using `RGB` or `HEX` values.
+**Мета:** у цій вправі ви практикуватиметесь додавати CSS до файлу HTML, використовуючи всі три методи: зовнішній CSS, внутрішній CSS та вбудований CSS. У цій вправі ви повинні використовувати селектори типу лише під час додавання стилів зовнішнім та внутрішнім методами. Ви також повинні використовувати ключові слова для кольорів (наприклад, «blue»), а не значення `RGB` чи `HEX`.
 
-## User Stories
+## Історія користувача
 
-1. You should see a `div` element with a `red` background, `white` text, a font size of `32px`, center aligned, and `bold`.
+1. Ви повинні бачити елемент `div` із фоном `red`, текстом `white`, розміром шрифту `32px`, вирівняним за центром та `bold`.
 
-1. The CSS of the `div` element should be added externally by using a type selector.
+1. Використайте селектор типу, щоб зовнішньо додати CSS елемента `div`.
 
-1. You should see a `p` element with a `green` background, `white` text, and a font size of `18px`.
+1. Ви повинні бачити елемент `p` із фоном `green`, текстом `white` та розміром шрифту `18px`.
 
-1. The CSS of the `p` element should be added internally by using a type selector.
+1. Використайте селектор типу, щоб внутрішньо додати CSS елемента `p`.
 
-1. You should see a `button` element with an orange background and a font size of `18px`.
+1. Ви повинні бачити елемент `button` із фоном `orange` та розміром шрифту `18px`.
 
-1. The CSS of the `button` element should have an inline style.
+1. CSS елемента `button` повинен мати вбудований стиль.
 
 # --hints--
 
-There should be one `div` element and should contains some text and be aligned in the center.
+Ви повинні мати один елемент `div`, який містить текст та вирівняний за центром.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
@@ -35,7 +35,7 @@ assert(document.getElementsByTagName('DIV')?.length == 1);
 assert(document.getElementsByTagName('DIV')?.[0]?.innerText.length > 0)
 ```
 
-The `div` element should have a `background-color` of `red` and a text color of `white`.
+Елемент `div` повинен мати `background-color` зі значенням `red` та колір тексту зі значенням `white`.
 
 ```js
 
@@ -47,7 +47,7 @@ assert(bgc === 'red');
 assert(color === 'white');
 ```
 
-The `div` element should have a `font-weight` of bold and a `font-size` of `32px`.
+Елемент `div` повинен мати `font-weight` зі значенням `bold` та `font-size` зі значенням `32px`.
 
 ```js
 const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');
@@ -57,21 +57,21 @@ assert(fontSize === '32px');
 assert(fontWeight === 'bold');
 ```
 
-The `div` element should have its CSS added externally.
+CSS елемента `div` потрібно додати зовнішньо.
 
 ```js
 assert(!document.getElementsByTagName('style')?.[0]?.innerText.includes('div'));
 assert(!document.getElementsByTagName('div')?.[0]?.hasAttribute('style'));
 ```
 
-There should be one `p` element and it should contain some text.
+Ви повинні мати один елемент `p`, який містить текст.
 
 ```js
 assert(document.getElementsByTagName('P')?.length == 1);
 assert(document.getElementsByTagName('P')?.[0]?.innerText.length > 0)
 ```
 
-The `p` element should have its `color` set to `white`.
+Елемент `p` повинен мати `color` зі значенням `white`.
 
 ```js
 const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
@@ -79,7 +79,7 @@ const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue(
 assert(color == 'white');
 ```
 
-The `p` element should have a `font-size` of `18px`.
+Елемент `p` повинен мати `font-size` зі значенням `18px`.
 
 ```js
 const styleTag = document.getElementsByTagName('style')?.[0];
@@ -99,7 +99,7 @@ if (rules) {
 assert(pHasFontSize18);
 ```
 
-The `p` element should have its style added internally.
+Стиль елемента `p` потрібно додати внутрішньо.
 
 ```js
 
@@ -121,19 +121,19 @@ if (rules) {
 assert(pIsStyled);
 ```
 
-The `button` element should have its `background-color` set to `orange`.
+Елемент `button` повинен мати `background-color` зі значенням `orange`.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.style.backgroundColor === 'orange')
 ```
 
-The `button` element should have its `font-size` set to `18px`.
+Елемент `button` повинен мати `font-size` зі значенням `18px`.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.style.fontSize === '18px')
 ```
 
-The `button` element should have an inline style.
+Елемент `button` повинен мати вбудований стиль.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));

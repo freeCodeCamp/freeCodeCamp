@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffae
-title: 'Problem 303: Multiples with small digits'
+title: 'Problema 303: Múltiplos com algarismos pequenos'
 challengeType: 1
 forumTopicId: 301957
 dashedName: problem-303-multiples-with-small-digits
@@ -8,17 +8,17 @@ dashedName: problem-303-multiples-with-small-digits
 
 # --description--
 
-For a positive integer $n$, define $f(n)$ as the least positive multiple of $n$ that, written in base 10, uses only digits $≤ 2$.
+Para um número inteiro positivo $n$, defina $f(n)$ como o menor múltiplo positivo de $n$ que, escrito na base 10, usa apenas algarismos $≤ 2$.
 
-Thus $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\\,121\\,222$.
+Assim $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1.121.222$.
 
-Also, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
+Além disso, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11.363.107$.
 
-Find $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
+Encontre $\displaystyle\sum_{n = 1}^{10.000} \frac{f(n)}{n}$.
 
 # --hints--
 
-`multiplesWithSmallDigits()` should return `1111981904675169`.
+`multiplesWithSmallDigits()` deve retornar `1111981904675169`.
 
 ```js
 assert.strictEqual(multiplesWithSmallDigits(), 1111981904675169);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
-title: 'Problem 389: Platonic Dice'
+title: 'Problema 389: Dados platônicos'
 challengeType: 1
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice
@@ -8,21 +8,21 @@ dashedName: problem-389-platonic-dice
 
 # --description--
 
-An unbiased single 4-sided die is thrown and its value, $T$, is noted.
+Um único dado de 4 lados sem viés é lançado e seu valor, $T$, é registrado.
 
-$T$ unbiased 6-sided dice are thrown and their scores are added together. The sum, $C$, is noted.
+$T$ dados de 6 lados sem viés são lançados e sua pontuação é somada. A soma, $C$, é registrada.
 
-$C$ unbiased 8-sided dice are thrown and their scores are added together. The sum, $O$, is noted.
+$C$ dados de 8 lados sem viés são lançados e sua pontuação é somada. A soma, $O$, é registrada.
 
-$O$ unbiased 12-sided dice are thrown and their scores are added together. The sum, $D$, is noted.
+$O$ dados de 12 lados sem viés são lançados e sua pontuação é somada. A soma, $D$, é registrada.
 
-$D$ unbiased 20-sided dice are thrown and their scores are added together. The sum, $I$, is noted.
+$D$ dados de 20 lados sem viés são lançados e sua pontuação é somada. A soma, $I$, é registrada.
 
-Find the variance of $I$, and give your answer rounded to 4 decimal places.
+Encontre a variância de $I$ e dê sua resposta arredondada para 4 casas decimais.
 
 # --hints--
 
-`platonicDice()` should return `2406376.3623`.
+`platonicDice()` deve retornar `2406376.3623`.
 
 ```js
 assert.strictEqual(platonicDice(), 2406376.3623);

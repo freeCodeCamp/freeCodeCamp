@@ -1,6 +1,6 @@
 ---
 id: 5900f4b41000cf542c50ffc7
-title: 'Problem 328: Lowest-cost Search'
+title: 'Problema 328: Pesquisa pelo menor custo'
 challengeType: 1
 forumTopicId: 301985
 dashedName: problem-328-lowest-cost-search
@@ -8,29 +8,29 @@ dashedName: problem-328-lowest-cost-search
 
 # --description--
 
-We are trying to find a hidden number selected from the set of integers {1, 2, ..., $n$} by asking questions. Each number (question) we ask, has a <u>cost equal to the number asked</u> and we get one of three possible answers:
+Estamos tentando encontrar um número oculto selecionado de um conjunto de números inteiros {1, 2, ..., $n$} fazendo perguntas. Cada número (pergunta) que perguntamos, tem um <u>custo igual ao número solicitado</u> e nós recebemos uma de três respostas possíveis:
 
-- "Your guess is lower than the hidden number", or
-- "Yes, that's it!", or
-- "Your guess is higher than the hidden number".
+- "Seu palpite é menor que o número oculto", ou
+- "Sim, é isso!", ou
+- "Seu palpite é maior que o número oculto".
 
-Given the value of $n$, an optimal strategy minimizes the total cost (i.e. the sum of all the questions asked) <u>for the worst possible case</u>. E.g.
+Dado o valor de $n$, uma estratégia ideal minimiza o custo total (ou seja, a soma de todas as perguntas feitas) <u>para o pior caso possível</u>. Ex:
 
-If $n = 3$, the best we can do is obviously to ask the number "<strong>2</strong>". The answer will immediately lead us to find the hidden number (at a total cost = 2).
+Se $n = 3$, o melhor que podemos fazer é obviamente perguntar o número "<strong>2</strong>". A resposta nos levará imediatamente a encontrar o número oculto (a um custo total de 2).
 
-If $n = 8$, we might decide to use a "binary search" type of strategy: Our first question would be "<strong>4</strong>" and if the hidden number is higher than 4 we will need one or two additional questions. Let our second question be "<strong>6</strong>". If the hidden number is still higher than 6, we will need a third question in order to discriminate between 7 and 8. Thus, our third question will be "<strong>7</strong>" and the total cost for this worst-case scenario will be $4 + 6 + 7 = \mathbf{\color{red}{17}}$.
+Se $n = 8$, nós podemos decidir usar um tipo de estratégia com "busca binária": nossa primeira questão seria "<strong>4</strong>" e se o número oculto for maior que 4, precisaremos de uma ou duas questões adicionais. Considere que nossa segunda pergunta seja "<strong>6</strong>". Se o número oculto ainda for superior a 6, necessitaremos de uma terceira pergunta para discriminar entre 7 e 8. Assim, nossa terceira pergunta será "<strong>7</strong>" e o custo total para este cenário pior, será $4 + 6 + 7 = \mathbf{\color{red}{17}}$.
 
-We can improve considerably the worst-case cost for $n = 8$, by asking "<strong>5</strong>" as our first question. If we are told that the hidden number is higher than 5, our second question will be "<strong>7</strong>", then we'll know for certain what the hidden number is (for a total cost of $5 + 7 = \mathbf{\color{blue}{12}}$). If we are told that the hidden number is lower than 5, our second question will be "<strong>3</strong>" and if the hidden number is lower than 3 our third question will be "<strong>1</strong>", giving a total cost of $5 + 3 + 1 = \mathbf{\color{blue}{9}}$. Since $\mathbf{\color{blue}{12 > 9}}$, the worst-case cost for this strategy is <strong><span style="color: red;">12</span></strong>. That's better than what we achieved previously with the "binary search" strategy; it is also better than or equal to any other strategy. So, in fact, we have just described an optimal strategy for $n = 8$.
+Podemos melhorar consideravelmente o pior custo para $n = 8$, tendo "<strong>5</strong>" como nossa primeira pergunta. Se nos disserem que o número oculto é maior que 5, a nossa segunda pergunta será "<strong>7</strong>", então saberemos com certeza qual é o número oculto (para um custo total de $5 + 7 = \mathbf{\color{blue}{12}}$). Se nos disserem que o número oculto é menor que 5, nossa segunda pergunta será "<strong>3</strong>". Se for menor que 3, nossa terceira pergunta será "<strong>1</strong>", dando um custo total de $5 + 3 + 1 = \mathbf{\color{blue}{9}}$. Como $\mathbf{\color{blue}{12 > 9}}$, o pior caso de custo para esta estratégia é <strong><span style="color: red;">12</span></strong>. Isso é melhor do que o que alcançamos anteriormente com a estratégia de "busca binária"; também é melhor ou igual a qualquer outra estratégia. Então, de fato, acabamos de descrever uma estratégia ideal para $n = 8$.
 
-Let $C(n)$ be the worst-case cost achieved by an optimal strategy for $n$, as described above. Thus $C(1) = 0$, $C(2) = 1$, $C(3) = 2$ and $C(8) = 12$.
+Considere $C(n)$ como o pior caso de custo alcançado com uma estratégia ideal para $n$, como descrito acima. Assim, $C(1) = 0$, $C(2) = 1$, $C(3) = 2$ e $C(8) = 12$.
 
-Similarly, $C(100) = 400$ and $\displaystyle\sum_{n = 1}^{100} C(n) = 17575$.
+Da mesma forma, $C(100) = 400$ e $\displaystyle\sum_{n = 1}^{100} C(n) = 17575$.
 
-Find $\displaystyle\sum_{n = 1}^{200\\,000} C(n)$.
+Encontre $\displaystyle\sum_{n = 1}^{200.000} C(n)$.
 
 # --hints--
 
-`lowestCostSearch()` should return `260511850222`.
+`lowestCostSearch()` deve retornar `260511850222`.
 
 ```js
 assert.strictEqual(lowestCostSearch(), 260511850222);

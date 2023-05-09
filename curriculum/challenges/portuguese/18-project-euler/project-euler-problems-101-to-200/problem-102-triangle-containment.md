@@ -1,6 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee5
-title: 'Problem 102: Triangle containment'
+title: 'Problema 102: Contenção triangular'
 challengeType: 1
 forumTopicId: 301726
 dashedName: problem-102-triangle-containment
@@ -8,9 +8,9 @@ dashedName: problem-102-triangle-containment
 
 # --description--
 
-Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+Três pontos distintos são colocados aleatoriamente em um plano cartesiano, para o qual -1000 ≤ x, y ≤ 1000, de modo que um triângulo seja formado.
 
-Consider the following two triangles:
+Considere o seguinte exemplo com dois triângulos:
 
 ```js
 const exampleTriangles = [
@@ -19,31 +19,31 @@ const exampleTriangles = [
 ];
 ```
 
-It can be verified that first triangle contains the origin, whereas second triangle does not.
+É possível verificar que o primeiro triângulo contém a origem, ao passo que o segundo triângulo não.
 
-Using the `triangles` array containing coordinates of triangles, find the number of triangles for which the interior contains the origin.
+Usando o array `triangles` contendo coordenadas de triângulos, descubra o número de triângulos para os quais o interior contém a origem.
 
 # --hints--
 
-`triangleContainment(exampleTriangles)` should return a number.
+`triangleContainment(exampleTriangles)` deve retornar um número.
 
 ```js
 assert(typeof triangleContainment(_exampleTriangles) === 'number');
 ```
 
-`triangleContainment(exampleTriangles)` should return `1`.
+`triangleContainment(exampleTriangles)` deve retornar `1`.
 
 ```js
 assert.strictEqual(triangleContainment(_exampleTriangles), 1);
 ```
 
-`triangleContainment(testTriangles1)` should return `19`.
+`triangleContainment(testTriangles1)` deve retornar `19`.
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles1), 19);
 ```
 
-`triangleContainment(testTriangles2)` should return `228`.
+`triangleContainment(testTriangles2)` deve retornar `228`.
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles2), 228);

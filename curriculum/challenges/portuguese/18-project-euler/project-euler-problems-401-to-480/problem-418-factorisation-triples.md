@@ -1,6 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
-title: 'Problem 418: Factorisation triples'
+title: 'Problema 418: Trios de fatoração'
 challengeType: 1
 forumTopicId: 302087
 dashedName: problem-418-factorisation-triples
@@ -8,20 +8,20 @@ dashedName: problem-418-factorisation-triples
 
 # --description--
 
-Let $n$ be a positive integer. An integer triple ($a$, $b$, $c$) is called a factorisation triple of $n$ if:
+Considere $n$ um inteiro positivo. Um trio de números inteiros ($a$, $b$, $c$) é chamado de trio de fatoração de $n$ se:
 
 - $1 ≤ a ≤ b ≤ c$
 - $a \times b \times c = n$.
 
-Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of $n$ which minimises $\frac{c}{a}$. One can show that this triple is unique.
+Defina $f(n)$ como $a + b + c$ para o trio da fatoração ($a$, $b$, $c$) de $n$ que minimiza $\frac{c}{a}$. Podemos mostrar que esse trio é único.
 
-For example, $f(165) = 19$, $f(100\\,100) = 142$ and $f(20!) = 4\\,034\\,872$.
+Por exemplo, $f(165) = 19$, $f(100.100) = 142$ e $f(20!) = 4.034.872$.
 
-Find $f(43!)$.
+Encontre $f(43!)$.
 
 # --hints--
 
-`factorisationTriples()` should return `1177163565297340400`.
+`factorisationTriples()` deve retornar `1177163565297340400`.
 
 ```js
 assert.strictEqual(factorisationTriples(), 1177163565297340400);

@@ -1,16 +1,16 @@
 ---
 id: 63ee35450d8d4841c3a70920
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question G
+title: Основи CSS. Запитання G
 challengeType: 15
 dashedName: css-foundations-question-g
 ---
 
 # --description--
 
-Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing `<style>` tags, which are then placed inside of the opening and closing `<head>` tags of your HTML file. Since the styles are being placed directly inside of the `<head>` tags, you no longer need a `<link>` element that the external method requires.
+Внутрішній CSS передбачає додавання CSS у файл HTML, а не створення окремого файлу. У цьому файлі ви розміщуєте всі правила всередині початкового та кінцевого тегів `<style>`, які потім розташовуються всередині початкового та кінцевого тегів `<head>` файлу HTML. Оскільки стилі розташовуються всередині тегів `<head>`, вам більше не потрібен елемент `<link>`, якого вимагає зовнішній метод.
 
-Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
+Окрім цих відмінностей, синтаксис повністю такий самий (селектор, фігурні дужки, оголошення):
 
 ```html
 <head>
@@ -28,25 +28,25 @@ Besides these differences, the syntax is exactly the same as the external method
 <body>...</body>
 ```
 
-This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
+Цей метод може бути корисним для додавання унікальних стилів до сторінки вебсайту, але він не утримує файли окремо, на відміну від зовнішнього методу. Залежно від кількості правил і декларацій це може зробити файл HTML дуже великим.
 
 # --question--
 
 ## --text--
 
-Which of the following is a difference between internal and external CSS methods?
+Що з переліченого є різницею між внутрішнім та зовнішнім методами CSS?
 
 ## --answers--
 
-The external method places CSS rules in a separate file, while the internal method places CSS rules within the HTML file itself.
+Зовнішній метод розміщує правила CSS в окремому файлі, а внутрішній метод розміщує правила CSS в межах файлу HTML.
 
 ---
 
-The internal method keeps CSS separate from HTML, while the external method embeds CSS directly in HTML.
+Внутрішній метод зберігає CSS окремо від HTML, а зовнішній метод вбудовує CSS одразу в HTML.
 
 ---
 
-The internal method uses `<link>` element to link CSS to HTML, while the external method embeds CSS directly in HTML.
+Внутрішній метод використовує елемент `<link>`, щоб з’єднати CSS з HTML, а зовнішній метод вбудовує CSS одразу в HTML.
 
 
 ## --video-solution--

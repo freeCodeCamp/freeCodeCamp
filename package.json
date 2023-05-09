@@ -101,7 +101,7 @@
     "pm2": "^5.2.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.21.3",
+    "@babel/eslint-parser": "7.21.8",
     "@babel/plugin-proposal-function-bind": "7.18.9",
     "@babel/preset-env": "7.21.5",
     "@babel/preset-react": "7.18.6",

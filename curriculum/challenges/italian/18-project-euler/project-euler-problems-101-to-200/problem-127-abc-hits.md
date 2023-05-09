@@ -1,6 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50fefe
-title: 'Problem 127: abc-hits'
+title: 'Problema 127: abc-hit'
 challengeType: 1
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
@@ -8,7 +8,7 @@ dashedName: problem-127-abc-hits
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+Il radicale di $n$, $rad(n)$, è il prodotto dei fattori primi distinti di $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
 
 We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
 

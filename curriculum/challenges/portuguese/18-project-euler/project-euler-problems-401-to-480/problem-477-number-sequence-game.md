@@ -1,6 +1,6 @@
 ---
 id: 5900f54a1000cf542c51005c
-title: 'Problem 477: Number Sequence Game'
+title: 'Problema 477: Jogo de sequência de números'
 challengeType: 1
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
@@ -8,35 +8,35 @@ dashedName: problem-477-number-sequence-game
 
 # --description--
 
-The number sequence game starts with a sequence $S$ of $N$ numbers written on a line.
+O jogo de sequência de números começa com uma sequência $S$ de $N$ números escritos em uma linha.
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+Dois jogadores alternam sua vez. Na sua vez, um jogador deve selecionar e remover o primeiro ou o último número restante na sequência.
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+A pontuação do jogador é a soma de todos os números que ele recebeu. Cada jogador tenta maximizar sua própria soma.
 
-If $N = 4$ and $S = \\{1, 2, 10, 3\\}$, then each player maximizes his score as follows:
+Se $N = 4$ e $S = \\{1, 2, 10, 3\\}$, então cada jogador maximiza sua pontuação da seguinte forma:
 
-- Player 1: removes the first number (1)
-- Player 2: removes the last number from the remaining sequence (3)
-- Player 1: removes the last number from the remaining sequence (10)
-- Player 2: removes the remaining number (2)
+- Jogador 1: remove o primeiro número (1)
+- Jogador 2: remove o último número da sequência restante (3)
+- Jogador 1: remove o último número da sequência restante (10)
+- Jogador 2: remove o número restante (2)
 
-Player 1 score is $1 + 10 = 11$.
+A pontuação do jogador 1 é $1 + 10 = 11$.
 
-Let $F(N)$ be the score of player 1 if both players follow the optimal strategy for the sequence $S = \\{s_1, s_2, \ldots, s_N\\}$ defined as:
+Considere $F(N)$ como a pontuação do jogador 1 se ambos os jogadores seguirem a estratégia ideal para a sequência $S = \\{s_1, s_2, \ldots, s_N\\}$, definida como:
 
 - $s_1 = 0$
-- $s_{i + 1} = ({s_i}^2 + 45)$ modulo $1\\,000\\,000\\,007$
+- $s_{i + 1} = ({s_i}^2 + 45)$ modulo $1.000.000.007$
 
-The sequence begins with $S = \\{0, 45, 2\\,070, 4\\,284\\,945, 753\\,524\\,550, 478\\,107\\,844, 894\\,218\\,625, \ldots\\}$.
+A sequência começa com $S = \\{0, 45, 2.070, 4.284.945, 753.524.550, 478.107.844, 894.218.625, \ldots\\}$.
 
-You are given $F(2) = 45$, $F(4) = 4\\,284\\,990$, $F(100) = 26\\,365\\,463\\,243$, $F(104) = 2\\,495\\,838\\,522\\,951$.
+Você é informado de que $F(2) = 45$, $F(4) = 4.284.990$, $F(100) = 26.365.463.243$, $F(104) = 2.495.838.522.951$.
 
-Find $F({10}^8)$.
+Encontre $F({10}^8)$.
 
 # --hints--
 
-`numberSequenceGame()` should return `25044905874565164`.
+`numberSequenceGame()` deve retornar `25044905874565164`.
 
 ```js
 assert.strictEqual(numberSequenceGame(), 25044905874565164);

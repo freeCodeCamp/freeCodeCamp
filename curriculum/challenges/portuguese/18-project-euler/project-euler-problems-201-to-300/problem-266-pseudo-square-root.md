@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
-title: 'Problem 266: Pseudo Square Root'
+title: 'Problema 266: Pseudorraiz quadrada'
 challengeType: 1
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
@@ -8,19 +8,19 @@ dashedName: problem-266-pseudo-square-root
 
 # --description--
 
-The divisors of 12 are: 1,2,3,4,6 and 12.
+Os divisores de 12 são: 1, 2, 3, 4, 6 e 12.
 
-The largest divisor of 12 that does not exceed the square root of 12 is 3.
+O maior divisor de 12 que não excede a raiz quadrada de 12 é 3.
 
-We shall call the largest divisor of an integer $n$ that does not exceed the square root of $n$ the pseudo square root ($PSR$) of $n$.
+Vamos chamar o maior divisor de um inteiro $n$ que não excede a raiz quadrada de $n$ como a pseudorraiz quadrada ($PSR$) de $n$.
 
-It can be seen that $PSR(3102) = 47$.
+Podemos ver que $PSR(3102) = 47$.
 
-Let $p$ be the product of the primes below 190. Find $PSR(p)\bmod {10}^{16}$.
+Considere $p$ como o produto dos números primos abaixo de 190. Encontre $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 
-`pseudoSquareRoot()` should return `1096883702440585`.
+`pseudoSquareRoot()` deve retornar `1096883702440585`.
 
 ```js
 assert.strictEqual(pseudoSquareRoot(), 1096883702440585);

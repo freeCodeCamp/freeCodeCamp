@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: 'Problema 196: Trios de números primos'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -8,7 +8,7 @@ dashedName: problem-196-prime-triplets
 
 # --description--
 
-Build a triangle from all positive integers in the following way:
+Construa um triângulo com todos os números inteiros positivos da seguinte maneira:
 
 $$\begin{array}{rrr}   &  1 \\\\
   &  \color{red}{2} &  \color{red}{3} \\\\   &  4 & \color{red}{5} &  6 \\\\
@@ -18,23 +18,23 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+Cada número inteiro positivo tem até oito vizinhos no triângulo.
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+Um conjunto de três números primos é chamado de trio de números primos se um dos três primos tiver outros dois números primos como vizinhos do triângulo.
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+Por exemplo, na segunda linha, os números primos 2 e 3 são elementos de um trio de números primos.
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+Se considerarmos a linha 8, ela contém dois primos, que são elementos de algum trio de números primos, 29 e 31. Se considerarmos a linha 9, ela contém apenas um número primo que é elemento de um trio de números primos: 37.
 
-Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
+Defina $S(n)$ como a soma de números primos em uma linha $n$ que são elementos de qualquer trio de números primos. Então, $S(8) = 60$ e $S(9) = 37$.
 
-You are given that $S(10000) = 950007619$.
+Você é informado de que $S(10000) = 950007619$.
 
-Find $S(5678027) + S(7208785)$.
+Encontre $S(5678027) + S(7208785)$.
 
 # --hints--
 
-`primeTriplets()` should return `322303240771079940`.
+`primeTriplets()` deve retornar `322303240771079940`.
 
 ```js
 assert.strictEqual(primeTriplets(), 322303240771079940);

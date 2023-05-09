@@ -8,25 +8,24 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-A volte è utile verificare se la proprietà di un dato oggetto esiste o meno. Possiamo usare il metodo `.hasOwnProperty(propname)` degli oggetti per determinare se quell'oggetto ha una proprietà con quel nome. `.hasOwnProperty()` restituisce `true` o `false` se la proprietà viene trovata o meno.
+Per verificare se una proprietà di un dato oggetto esista o meno, puoi utilizzare il metodo `.hasOwnProperty()`. `someObject.hasOwnProperty(someProperty)` restituisce `true` o `false` a seconda che la proprietà sia trovata sull'oggetto oppure no.
 
 **Esempio**
 
 ```js
-const myObj = {
-  top: "hat",
-  bottom: "pants"
-};
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
 
-myObj.hasOwnProperty("top");
-myObj.hasOwnProperty("middle");
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
 ```
 
-Il primo `hasOwnProperty` restituisce `true`, mentre il secondo restituisce `false`.
+La prima chiamata della funzione `checkForProperty` restituisce `true`, mentre la seconda restituisce `false`.
 
 # --instructions--
 
-Modifica la funzione `checkObj` per verificare se un oggetto passato alla funzione (`obj`) contiene una proprietà specifica (`checkProp`). Se la proprietà viene trovata, restituisci il valore di quella proprietà. In caso contrario, restituisci `"Not Found"`.
+Modifica la funzione `checkObj` per verificare se un oggetto passato al parametro di funzione `obj` contiene la specifica proprietà passata al parametro di funzione `checkProp`. Se la proprietà passata a `checkProp` si trova su `obj`, restituisci il valore di quella proprietà. In caso contrario, restituisci `Not Found`.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
-title: 'Problem 325: Stone Game II'
+title: 'Problema 325: Jogo da pedra II'
 challengeType: 1
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
@@ -8,23 +8,23 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. On each player's turn, the player may remove a number of stones from the larger pile. The number of stones removes must be a positive multiple of the number of stones in the smaller pile.
+Uma partida é jogada com duas pilhas de pedras e dois jogadores. No turno de cada jogador, ele pode remover um número de pedras da pilha maior. O número de pedras removidas deve ser um múltiplo positivo do número de pedras na pilha menor.
 
-E.g., let the ordered pair (6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
+Exemplo: considere o par ordenado (6,14) como capaz de descrever uma configuração com 6 pedras na pilha menor e 14 pedras na pilha maior. Então, o primeiro jogador pode remover 6 ou 12 pedras da pilha maior.
 
-The player taking all the stones from a pile wins the game.
+O jogador que pegar todas as pedras de uma pilha ganha o jogo.
 
-A winning configuration is one where the first player can force a win. For example, (1,5), (2,6) and (3,12) are winning configurations because the first player can immediately remove all stones in the second pile.
+Uma configuração vencedora é aquela onde o primeiro jogador pode forçar uma vitória. Por exemplo, (1,5), (2,6) e (3,12) são configurações vencedores porque o primeiro jogador pode remover imediatamente todas as pedras na segunda pilha.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (2,3) and (3,4) are losing configurations: any legal move leaves a winning configuration for the second player.
+Uma configuração perdedora é aquela onde o segundo jogador pode forçar uma vitória, não importando o que o primeiro jogador faça. Por exemplo, (2,3) e (3,4) são configurações perdedoras: qualquer movimento legal deixa uma configuração vencedora para o segundo jogador.
 
-Define $S(N)$ as the sum of ($x_i + y_i$) for all losing configurations ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. We can verify that $S(10) = 211$ and $S({10}^4) = 230\\,312\\,207\\,313$.
+Defina $S(N)$ como a soma de ($x_i + y_i$) para todas as configurações perdedoras ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. Podemos verificar que $S(10) = 211$ e $S({10}^4) = 230.312.207.313$.
 
-Find $S({10}^{16})\bmod 7^{10}$.
+Encontre $S({10}^{16})\bmod 7^{10}$.
 
 # --hints--
 
-`stoneGameTwo()` should return `54672965`.
+`stoneGameTwo()` deve retornar `54672965`.
 
 ```js
 assert.strictEqual(stoneGameTwo(), 54672965);

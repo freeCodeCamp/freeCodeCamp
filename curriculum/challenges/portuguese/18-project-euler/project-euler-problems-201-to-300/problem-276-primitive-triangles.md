@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff93
-title: 'Problem 276: Primitive Triangles'
+title: 'Problema 276: Triângulos primitivos'
 challengeType: 1
 forumTopicId: 301926
 dashedName: problem-276-primitive-triangles
@@ -8,15 +8,15 @@ dashedName: problem-276-primitive-triangles
 
 # --description--
 
-Consider the triangles with integer sides $a$, $b$ and $c$ with $a ≤ b ≤ c$.
+Considere os triângulos com os lados inteiros $a$, $b$ e $c$ com $a ≤ b ≤ c$.
 
-An integer sided triangle $(a,b,c)$ is called primitive if $gcd(a,b,c) = 1$.
+Um triângulo que tem seus lados sendo números inteiros $(a,b,c)$ é chamado primitivo se $gcd(a,b,c) = 1$.
 
-How many primitive integer sided triangles exist with a perimeter not exceeding $10\\,000\\,000$?
+Quantos triângulos primitivos (com os lados sendo números inteiros) existem com um perímetro que não excede $10.000.000$?
 
 # --hints--
 
-`primitiveTriangles()` should return `5777137137739633000`.
+`primitiveTriangles()` deve retornar `5777137137739633000`.
 
 ```js
 assert.strictEqual(primitiveTriangles(), 5777137137739633000);
