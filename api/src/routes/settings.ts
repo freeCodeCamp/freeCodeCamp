@@ -193,5 +193,44 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.put(
+    '/update-my-honesty',
+    {
+      schema: {
+        body: Type.Object({
+          isHonest: Type.Literal(true)
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('buttons.accepted-honesty'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            isHonest: req.body.isHonest
+          }
+        });
+
+        return {
+          message: 'buttons.accepted-honesty',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
   done();
 };

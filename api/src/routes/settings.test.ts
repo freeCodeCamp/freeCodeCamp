@@ -184,6 +184,31 @@ describe('settingRoutes', () => {
         expect(response?.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-honesty', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-honesty')
+          .set('Cookie', cookies)
+          .send({ isHonest: true });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'buttons.accepted-honesty',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with invalid honesty', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-honesty')
+          .set('Cookie', cookies)
+          .send({ isHonest: false });
+
+        expect(response?.statusCode).toEqual(400);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
