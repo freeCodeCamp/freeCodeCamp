@@ -594,7 +594,6 @@
     "not-authorized": "このルートへのアクセス権限がありません",
     "could-not-find": "お探しのページが見つかりませんでした。ご確認の上もう一度お試しください。",
     "wrong-updating": "アカウント情報の更新中に問題が発生しました。ご確認の上もう一度お試しください。",
-    "updated-preferences": "設定を更新しました",
     "updated-about-me": "個人情報を更新しました",
     "updated-socials": "他サービスのリンクを更新しました",
     "updated-sound": "サウンド設定を更新しました",
