@@ -204,7 +204,7 @@ describe('settingRoutes', () => {
         const response = await request(fastify?.server)
           .put('/update-my-honesty')
           .set('Cookie', cookies)
-          .send({ isHonest: 'invalid' });
+          .send({ isHonest: false });
 
         expect(response?.statusCode).toEqual(400);
       });
