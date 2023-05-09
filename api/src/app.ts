@@ -120,7 +120,7 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
-  void fastify.register(settingRoutes, { prefix: '/settings' });
+  void fastify.register(settingRoutes);
 
   return fastify;
 };
