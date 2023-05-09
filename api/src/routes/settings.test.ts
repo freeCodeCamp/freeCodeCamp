@@ -464,6 +464,40 @@ describe('settingRoutes', () => {
       });
     });
 
+    describe('/update-my-about', () => {
+      test('PUT updates the values in about settings', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-about')
+          .set('Cookie', cookies)
+          .send({
+            about: 'Teacher at freeCodeCamp',
+            name: 'Quincy Larson',
+            location: 'USA',
+            picture:
+              'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.eL2QwHH67XasjwwbkaUtVgHaHa%26pid%3DApi&f=1&ipt=498bbdee8dcdfc71d325b1751c901e4d8b5978b202c556b06f635d79ae1951b4&ipo=images'
+          });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'buttons.accepted-honesty',
+          type: 'success'
+        });
+
+        const user = await fastify?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture:
+            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.eL2QwHH67XasjwwbkaUtVgHaHa%26pid%3DApi&f=1&ipt=498bbdee8dcdfc71d325b1751c901e4d8b5978b202c556b06f635d79ae1951b4&ipo=images'
+        });
+      });
+    });
+
     describe('/update-my-honesty', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superRequest('/update-my-honesty', {

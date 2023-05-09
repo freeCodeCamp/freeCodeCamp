@@ -165,8 +165,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           newUsername === oldUsername
             ? false
             : await fastify.prisma.user.count({
-                where: { username: newUsername }
-              });
+              where: { username: newUsername }
+            });
 
         if (usernameTaken || isProfane || onBlocklist) {
           void reply.code(400);
@@ -175,27 +175,57 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             type: 'info'
           } as const;
         }
-
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
             username: newUsername,
             usernameDisplay: newUsernameDisplay
           }
-        });
-
+        })
         return {
           message: 'flash.username-updated',
           type: 'success',
           username: newUsernameDisplay
-        } as const;
+        } as const
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
-  );
+  ),
+
+
+    fastify.put(
+      '/update-my-about',
+      {
+        schema: schemas.updateMyAbout
+      },
+      async (req, reply) => {
+        const pictureUrl = new URL(req.body.picture || '');
+        const hasProtocol = !!pictureUrl.protocol;
+        try {
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              about: req.body.about,
+              name: req.body.name,
+              location: req.body.location,
+              ...(hasProtocol && { picture: req.body.picture })
+            }
+          });
+
+          return {
+            message: 'flash.updated-about-me',
+            type: 'success'
+          } as const;
+        } catch (err) {
+          fastify.log.error(err);
+          void reply.code(500);
+          return { message: 'flash.wrong-updating', type: 'danger' } as const;
+        }
+      }
+    );
 
   fastify.put(
     '/update-my-keyboard-shortcuts',
