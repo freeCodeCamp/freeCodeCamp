@@ -142,7 +142,7 @@ Nota: `--depth=1` cria um clone raso do seu fork, apenas com o histórico mais r
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
-[Como mencionado anteriormente](#fork-the-repository-on-github), o repositório principal é referenciado como repositório `upstream`. Seu fork é referenciado como repositório `origin`.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 É necessária uma referência do seu clone local para o repositório `upstream` além do repositório `origin`. Isso é para que você possa sincronizar alterações do repositório principal sem a exigência de fazer fork e clone várias vezes.
 
