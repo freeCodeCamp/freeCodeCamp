@@ -2,20 +2,20 @@ Follow this guide for setting up the freeCodeCamp mobile app locally on your sys
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+### Як підготувати локальну машину
 
-Start by installing the prerequisite software for your operating system.
+Для початку встановіть передумовне програмне забезпечення для своєї операційної системи.
 
-#### Prerequisites
+#### Передумови
 
-| Prerequisite                      | Version | Notes                                    |
-| --------------------------------- | ------- | ---------------------------------------- |
-| [Flutter](https://flutter.dev/)   | `3.x`   | -                                        |
-| Dart (comes bundled with Flutter) | `2.x`   | We use the version bundled with Flutter. |
+| Передумова                      | Версія | Примітки                                      |
+| ------------------------------- | ------ | --------------------------------------------- |
+| [Flutter](https://flutter.dev/) | `3.x`  | -                                             |
+| Dart (разом із Flutter)         | `2.x`  | Ми використовуємо версію, з’єднану з Flutter. |
 
-> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
+> [!ATTENTION] Якщо у вас інша версія, встановіть рекомендовану версію. Ми можемо розв’язати проблеми зі встановленням лише для рекомендованих версій.
 
-If Flutter is already installed on your machine, run the following commands to validate the versions:
+Якщо на вашій машині вже встановлено Flutter, запустіть наступні команди для перевірки версій:
 
 ```console
 flutter --version
@@ -374,32 +374,32 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Troubleshooting
+## Розв’язання проблем розробки
 
-### Issues with installing the recommended prerequisites
+### Проблеми з встановленням рекомендованих попередніх умов
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Ми регулярно використовуємо найновіші та найпопулярніші операційні системи, як-от macOS 10.15 і вище, Ubuntu 18.04 і вище та Windows 10 (із WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Рекомендовано шукати розв’язок певної проблеми у Google, Stack Overflow та Stack Exchange. Ймовірно, хтось вже стикався із тією ж проблемою і на ваш запит вже є відповідь.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+Якщо ви використовуєте іншу ОС та/або досі стикаєтесь із проблемами, див. [отримання допомоги](#getting-help).
 
-### Issues with the UI, build errors, etc.
+### Проблеми з UI, помилки збірки тощо
 
-If you face issues with the UI, or builds errors a cleanup can be useful:
+Якщо у вас виникли проблеми з інтерфейсом чи збіркою, може допомогти очищення:
 
 ```console
 flutter clean
 ```
 
-### Issues Installing Dependencies
+### Проблеми при встановленні залежностей
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Якщо при встановленні залежностей виникають помилки, переконайтеся, що ви не перебуваєте в мережі з обмеженнями або налаштування мережевого екрана не перешкоджають доступу до ресурсів.
 
-Be patient as the first-time setup can take a while depending on your network bandwidth.
+Перше налаштування може зайняти деякий час (залежно від пропускної здатності вашої мережі).
 
-## Getting Help
+## Отримання допомоги
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Якщо вам потрібна допомога, не соромтесь ставити питання [на нашому форумі у розділі «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+У консолі вашого браузера або в Bash / терміналі / командному рядку може з’явитися помилка, яка допоможе визначити проблему. Поділіться цим повідомленням про помилку в описі проблеми, щоб іншим було легше визначити проблему і знайти рішення.

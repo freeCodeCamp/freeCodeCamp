@@ -284,13 +284,16 @@ li.disabled > a {
   font-weight: 600;
   font-size: 1.2rem;
 }
-.donation-label-modal,
+
 .donation-modal p,
 .donation-modal b {
   text-align: center;
   font-size: 1rem;
   width: 100%;
   display: inline-block;
+}
+.donation-label-modal {
+  font-weight: normal;
 }
 
 .donation-icon-container {

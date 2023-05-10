@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fede
-title: 'Problem 95: Amicable chains'
+title: 'Problema 95: Cadeias amigáveis'
 challengeType: 1
 forumTopicId: 302212
 dashedName: problem-95-amicable-chains
@@ -8,45 +8,45 @@ dashedName: problem-95-amicable-chains
 
 # --description--
 
-The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
+Os divisores apropriados de um número são todos os seus divisores excetuando o número em si. Por exemplo, os divisores adequados de 28 são 1, 2, 4, 7 e 14. Como a soma desses divisores é igual a 28, chamamos esse número de um número perfeito.
 
-Interestingly the sum of the proper divisors of 220 is 284 and the sum of the proper divisors of 284 is 220, forming a chain of two numbers. For this reason, 220 and 284 are called an amicable pair.
+Curiosamente, a soma dos divisores adequados de 220 é 284 e a soma dos divisores adequados de 284 é 220, formando uma cadeia de dois números. Por esta razão, 220 e 284 são chamados de par amigável.
 
-Perhaps less well known are longer chains. For example, starting with 12496, we form a chain of five numbers:
+Talvez menos conhecidas sejam as cadeias mais longas. Por exemplo, começando com 12496, formamos uma cadeia de cinco números:
 
 $$ 12496 → 14288 → 15472 → 14536 → 14264 \\,(→ 12496 → \cdots) $$
 
-Since this chain returns to its starting point, it is called an amicable chain.
+Como essa cadeia retorna ao seu ponto de partida, ela é chamada de uma cadeia amigável.
 
-Find the smallest member of the longest amicable chain with no element exceeding `limit`.
+Encontre o menor membro da maior cadeia amigável sem elementos que excedam o `limit`.
 
 # --hints--
 
-`amicableChains(300)` should return a number.
+`amicableChains(300)` deve retornar um número.
 
 ```js
 assert(typeof amicableChains(300) === 'number');
 ```
 
-`amicableChains(300)` should return `220`.
+`amicableChains(300)` deve retornar `220`.
 
 ```js
 assert.strictEqual(amicableChains(300), 220);
 ```
 
-`amicableChains(15000)` should return `220`.
+`amicableChains(15000)` deve retornar `220`.
 
 ```js
 assert.strictEqual(amicableChains(15000), 220);
 ```
 
-`amicableChains(100000)` should return `12496`.
+`amicableChains(100000)` deve retornar `12496`.
 
 ```js
 assert.strictEqual(amicableChains(100000), 12496);
 ```
 
-`amicableChains(1000000)` should return `14316`.
+`amicableChains(1000000)` deve retornar `14316`.
 
 ```js
 assert.strictEqual(amicableChains(1000000), 14316);

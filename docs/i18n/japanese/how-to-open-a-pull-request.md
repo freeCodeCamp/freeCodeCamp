@@ -1,8 +1,8 @@
 # プルリクエストを開く方法 (PR)
 
-プルリクエスト (PR) を使用すると、GitHubのフォークから freeCodeCamp.org のメインリポジトリに変更を送信できます。 コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+We expect our contributors to be aware of the process specific to this project. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Some examples of this are:
 
@@ -31,12 +31,12 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 **Type:**
 
-| 種類    | 選択するタイミング                        |
-|:----- |:-------------------------------- |
-| fix   | 機能、テスト、レッスン等の変更または更新 / 改善時       |
-| feat  | 新しい機能、テストなどの追加時のみ                |
-| chore | レッスンのコード、テスト、または検証に関連しない変更時      |
-| docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時 |
+| 種類    | 選択するタイミング                                                                       |
+|:----- |:------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
+| feat  | 新しい機能、テストなどの追加時のみ                                                               |
+| chore | レッスンのコード、テスト、または検証に関連しない変更時                                                     |
+| docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時                                                |
 
 **Scope:**
 
@@ -89,7 +89,7 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 ローカルテストを必要とする変更の例としては、ページの機能やレイアウトを変更する可能性のある JavaScript、CSS、または HTML などが挙げられます。
+   - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - PR がページの動作に影響を与える場合は、対応する [Cypress 統合テスト](how-to-add-cypress-tests.md) も追加する必要があります。
 

@@ -1,16 +1,16 @@
 ---
 id: 63ee35450d8d4841c3a70920
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question G
+title: Fondamenti di CSS domanda G
 challengeType: 15
 dashedName: css-foundations-question-g
 ---
 
 # --description--
 
-Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing `<style>` tags, which are then placed inside of the opening and closing `<head>` tags of your HTML file. Since the styles are being placed directly inside of the `<head>` tags, you no longer need a `<link>` element that the external method requires.
+Il CSS interno (o CSS incorporato) comporta l'aggiunta del CSS all'interno del file HTML stesso invece di creare un file completamente separato. Con il metodo interno, si posizionano tutte le regole all'interno di un paio di tag `<style>` di apertura e chiusura, che vengono poi posizionati all'interno dei tag `<head>` di apertura e chiusura del file HTML. Poiché gli stili sono stati posizionati direttamente all'interno dei tag `<head>`, non hai più bisogno dell'elemento `<link>` richiesto dal metodo esterno.
 
-Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
+Oltre a queste differenze, la sintassi è esattamente la stessa del metodo esterno (selettore, parentesi graffe, dichiarazioni):
 
 ```html
 <head>
@@ -28,25 +28,25 @@ Besides these differences, the syntax is exactly the same as the external method
 <body>...</body>
 ```
 
-This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
+Questo metodo può essere utile per aggiungere stili unici a una singola pagina di un sito web, ma non tiene le cose separate come il metodo esterno e, a seconda di quante regole e dichiarazioni ci sono, può far sì che il file HTML diventi piuttosto grande.
 
 # --question--
 
 ## --text--
 
-Which of the following is a difference between internal and external CSS methods?
+Quale delle seguenti è una differenza tra i metodi CSS interno ed esterno?
 
 ## --answers--
 
-The external method places CSS rules in a separate file, while the internal method places CSS rules within the HTML file itself.
+Il metodo esterno posiziona le regole CSS in un file separato, mentre il metodo interno posiziona le regole CSS all'interno del file HTML stesso.
 
 ---
 
-The internal method keeps CSS separate from HTML, while the external method embeds CSS directly in HTML.
+Il metodo interno mantiene il CSS separato dall'HTML, mentre il metodo esterno incorpora il CSS direttamente nell'HTML.
 
 ---
 
-The internal method uses `<link>` element to link CSS to HTML, while the external method embeds CSS directly in HTML.
+Il metodo interno utilizza l'elemento `<link>` per collegare CSS e HTML, mentre il metodo esterno incorpora il CSS direttamente nell'HTML.
 
 
 ## --video-solution--

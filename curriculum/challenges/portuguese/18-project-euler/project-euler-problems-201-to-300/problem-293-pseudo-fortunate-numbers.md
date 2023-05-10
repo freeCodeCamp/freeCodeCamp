@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa4
-title: 'Problem 293: Pseudo-Fortunate Numbers'
+title: 'Problema 293: Pseudonúmeros da sorte'
 challengeType: 1
 forumTopicId: 301945
 dashedName: problem-293-pseudo-fortunate-numbers
@@ -8,19 +8,19 @@ dashedName: problem-293-pseudo-fortunate-numbers
 
 # --description--
 
-An even positive integer $N$ will be called admissible, if it is a power of 2 or its distinct prime factors are consecutive primes.
+Um número inteiro positivo e par $N$ será chamado de admissível se for uma potência de 2 ou seus fatores primos distintos forem números primos consecutivos.
 
-The first twelve admissible numbers are 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 48.
+Os primeiros doze números admissíveis são 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36 e 48.
 
-If $N$ is admissible, the smallest integer $M > 1$ such that $N + M$ is prime, will be called the pseudo-Fortunate number for $N$.
+Se $N$ for admissível, o menor inteiro $M > 1$ tal que $N + M$ é um número primo, será chamado de pseudonúmero da sorte para $N$.
 
-For example, $N = 630$ is admissible since it is even and its distinct prime factors are the consecutive primes 2, 3, 5 and 7. The next prime number after 631 is 641; hence, the pseudo-Fortunate number for 630 is $M = 11$. It can also be seen that the pseudo-Fortunate number for 16 is 3.
+Por exemplo, $N = 630$ é admissível, pois é par e seus fatores primos distintos são os números primos consecutivos 2, 3, 5 e 7. O próximo número primo depois de 631 é 641; portanto, o pseudonúmero da sorte para 630 é $M = 11$. Também se pode ver que o pseudonúmero da sorte para 16 é 3.
 
-Find the sum of all distinct pseudo-Fortunate numbers for admissible numbers $N$ less than ${10}^9$.
+Encontre a soma de todos os pseudonúmeros da sorte distintos para números admissíveis $N$ inferiores a ${10}^9$.
 
 # --hints--
 
-`pseudoFortunateNumbers()` should return `2209`.
+`pseudoFortunateNumbers()` deve retornar `2209`.
 
 ```js
 assert.strictEqual(pseudoFortunateNumbers(), 2209);

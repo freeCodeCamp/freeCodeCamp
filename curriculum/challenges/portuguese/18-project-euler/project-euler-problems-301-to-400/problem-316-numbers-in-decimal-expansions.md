@@ -1,6 +1,6 @@
 ---
 id: 5900f4a81000cf542c50ffbb
-title: 'Problem 316: Numbers in decimal expansions'
+title: 'Problema 316: Números em expansões decimais'
 challengeType: 1
 forumTopicId: 301972
 dashedName: problem-316-numbers-in-decimal-expansions
@@ -8,31 +8,31 @@ dashedName: problem-316-numbers-in-decimal-expansions
 
 # --description--
 
-Let $p = p_1 p_2 p_3 \ldots$ be an infinite sequence of random digits, selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.
+Considere $p = p_1 p_2 p_3 \ldots$ como uma sequência infinita de algarismos aleatórios, selecionada a partir de {0,1,2,3,4,5, 6.7.7.8,9} com igual probabilidade.
 
-It can be seen that $p$ corresponds to the real number $0.p_1 p_2 p_3 \ldots$.
+Pode-se ver que $p$ corresponde ao número real $0.p_1 p_2 p_3 \ldots$.
 
-It can also be seen that choosing a random real number from the interval [0,1) is equivalent to choosing an infinite sequence of random digits selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.
+Também pode-se ver que escolher um número aleatório real no intervalo [0, 1) equivale a escolher uma sequência infinita de algarismos aleatórios selecionados a partir de {0,1, 2, 3,4,5, 6,7,8,9} com igual probabilidade.
 
-For any positive integer $n$ with $d$ decimal digits, let $k$ be the smallest index such that $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ are the decimal digits of $n$, in the same order.
+Para qualquer número inteiro positivo $n$ com $d$ algarismos decimais, considere $k$ como o menor índice de tal forma que $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ são os algarismos decimais de $n$, na mesma ordem.
 
-Also, let $g(n)$ be the expected value of $k$; it can be proven that $g(n)$ is always finite and, interestingly, always an integer number.
+Além disso, considere $g(n)$ como o valor esperado de $k$; pode-se provar que $g(n)$ é sempre finito e, curiosamente, sempre um número inteiro.
 
-For example, if $n = 535$, then
+Por exemplo, se $n = 535$, então
 
-for $p = 31415926\mathbf{535}897\ldots$, we get $k = 9$
+para $p = 31415926\mathbf{535}897\ldots$, temos que $k = 9$
 
-for $p = 35528714365004956000049084876408468\mathbf{535}4\ldots$, we get $k = 36$
+para $p = 35528714365004956000049084876408468\mathbf{535}4\ldots$, temos que $k = 36$
 
-etc and we find that $g(535) = 1008$.
+etc. e vemos que $g(535) = 1008$.
 
-Given that $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$, find $\displaystyle\sum_{n = 2}^{999\\,999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
+Dado que $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$, find $\displaystyle\sum_{n = 2}^{999.999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
 
-**Note:** $\lfloor x\rfloor$ represents the floor function.
+**Observação:** $\lfloor x\rfloor$ representa a função piso.
 
 # --hints--
 
-`numbersInDecimalExpansion()` should return `542934735751917760`.
+`numbersInDecimalExpansion()` deve retornar `542934735751917760`.
 
 ```js
 assert.strictEqual(numbersInDecimalExpansion(), 542934735751917760);

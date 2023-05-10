@@ -20,13 +20,13 @@ In this exercise, you're going to practice adding CSS to an HTML file using all 
 
 1. The CSS of the `p` element should be added internally by using a type selector.
 
-1. You should see a `button` element with an orange background and a font size of `18px`.
+1. You should see a `button` element with an `orange` background and a font size of `18px`.
 
 1. The CSS of the `button` element should have an inline style.
 
 # --hints--
 
-There should be one `div` element and should contains some text and be aligned in the center.
+There should be one `div` element. It should contain some text and be aligned in the center.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
@@ -48,7 +48,7 @@ assert(bgc === 'red');
 assert(color === 'white');
 ```
 
-The `div` element should have a `font-weight` of bold and a `font-size` of `32px`.
+The `div` element should have a `font-weight` of `bold` and a `font-size` of `32px`.
 
 ```js
 const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');

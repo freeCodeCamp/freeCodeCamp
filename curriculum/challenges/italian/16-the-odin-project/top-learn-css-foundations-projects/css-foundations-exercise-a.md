@@ -1,27 +1,27 @@
 ---
 id: 63ee3f71381756f9716727ef
-title: CSS Foundations Exercise A
+title: Fondamenti di CSS Esercizio A
 challengeType: 14
 dashedName: css-foundations-exercise-a
 ---
 
 # --description--
 
-**Objective:** In this exercise, you're going to practice adding CSS to an HTML file using all three methods: external CSS, internal CSS, and inline CSS. You should only be using type selectors for this exercise when adding styles via the external and internal methods. You should also use keywords for colors (e.g. "blue") instead of using `RGB` or `HEX` values.
+**Obiettivo:** in questo esercizio, farai pratica con l'aggiunta di CSS a un file HTML utilizzando tutti e tre i metodi: CSS esterno, CSS interno e CSS in linea. Dovresti usare i selettori di tipo in questo esercizio solo per aggiungere stili tramite i metodi esterno e interno. Dovresti anche usare parole chiave per i colori (ad esempio "blue") invece di usare i valori `RGB` o `HEX`.
 
-## User Stories
+## User story
 
-1. You should see a `div` element with a `red` background, `white` text, a font size of `32px`, center aligned, and `bold`.
+1. Dovresti vedere un elemento `div` con uno sfondo `red`, testo `white`, dimensione del testo di `32px`, centrato e `bold`.
 
-1. The CSS of the `div` element should be added externally by using a type selector.
+1. Il CSS dell'elemento `div` dovrebbe essere aggiunto esternamente utilizzando un selettore di tipo.
 
-1. You should see a `p` element with a `green` background, `white` text, and a font size of `18px`.
+1. Dovresti vedere un elemento `p` con sfondo `green`, testo `white` e dimensione del testo di `18px`.
 
-1. The CSS of the `p` element should be added internally by using a type selector.
+1. Il CSS dell'elemento `p` dovrebbe essere aggiunto internamente utilizzando un selettore di tipo.
 
 1. You should see a `button` element with an orange background and a font size of `18px`.
 
-1. The CSS of the `button` element should have an inline style.
+1. Il CSS dell'elemento `button` dovrebbe avere uno stile in linea.
 
 # --hints--
 
@@ -35,7 +35,7 @@ assert(document.getElementsByTagName('DIV')?.length == 1);
 assert(document.getElementsByTagName('DIV')?.[0]?.innerText.length > 0)
 ```
 
-The `div` element should have a `background-color` of `red` and a text color of `white`.
+L'elemento `div` dovrebbe avere un `background-color` con il valore `red` e il testo di colore `white`.
 
 ```js
 
@@ -57,21 +57,21 @@ assert(fontSize === '32px');
 assert(fontWeight === 'bold');
 ```
 
-The `div` element should have its CSS added externally.
+L'elemento `div` dovrebbe avere il CSS aggiunto esternamente.
 
 ```js
 assert(!document.getElementsByTagName('style')?.[0]?.innerText.includes('div'));
 assert(!document.getElementsByTagName('div')?.[0]?.hasAttribute('style'));
 ```
 
-There should be one `p` element and it should contain some text.
+Dovrebbe esserci un elemento `p` e dovrebbe contenere del testo.
 
 ```js
 assert(document.getElementsByTagName('P')?.length == 1);
 assert(document.getElementsByTagName('P')?.[0]?.innerText.length > 0)
 ```
 
-The `p` element should have its `color` set to `white`.
+L'elemento `p` dovrebbe avere `color` impostato su `white`.
 
 ```js
 const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
@@ -79,7 +79,7 @@ const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue(
 assert(color == 'white');
 ```
 
-The `p` element should have a `font-size` of `18px`.
+L'elemento `p` dovrebbe avere `font-size` con il valore `18px`.
 
 ```js
 const styleTag = document.getElementsByTagName('style')?.[0];
@@ -99,7 +99,7 @@ if (rules) {
 assert(pHasFontSize18);
 ```
 
-The `p` element should have its style added internally.
+L'elemento `p` dovrebbe avere lo stile aggiunto internamente.
 
 ```js
 
@@ -121,19 +121,19 @@ if (rules) {
 assert(pIsStyled);
 ```
 
-The `button` element should have its `background-color` set to `orange`.
+L'elemento `button` dovrebbe avere `background-color` impostato su `orange`.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.style.backgroundColor === 'orange')
 ```
 
-The `button` element should have its `font-size` set to `18px`.
+L'elemento `button` dovrebbe avere `font-size` con il valore `18px`.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.style.fontSize === '18px')
 ```
 
-The `button` element should have an inline style.
+L'elemento `button` dovrebbe avere uno stile in linea.
 
 ```js
 assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));

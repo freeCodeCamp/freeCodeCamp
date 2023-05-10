@@ -22,8 +22,6 @@ export const actionTypes = createTypes(
 
     'logsToConsole',
 
-    'lockCode',
-    'unlockCode',
     'disableBuildOnError',
     'storedCodeFound',
     'noStoredCodeFound',

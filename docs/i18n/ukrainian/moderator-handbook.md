@@ -31,15 +31,15 @@
 
 Ми використовуємо головний репозиторій [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues), щоб відстежувати завдання всіх репозиторіїв. Щодня ми отримуємо завдання, які потрібно відсортувати, позначити та вирішити. Це також чудове місце, щоб почати робити внески до відкритої кодової бази.
 
-#### Issue Triage
+#### Сортування завдань
 
-[Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
+[Сортування](https://en.wikipedia.org/wiki/Triage) — це процес визначення пріоритету кожного нового завдання. У нас є список позначок, які ми використовуємо для визначення пріоритету, категорії, статусу та масштабу завдання.
 
-You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
+Ви можете допомогти нам організовувати та сортувати завдання, використовуючи позначки з [цього списку](https://github.com/freeCodeCamp/freeCodeCamp/labels). Зазвичай поруч біля кожної позначки описано її значення.
 
-Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
+Зверніть увагу на позначки `"help wanted"` та `"first timers only"`. Їх потрібно додавати до тредів, які підійдуть потенційним помічникам для створення запиту на злиття.
 
-A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
+Використовуйте позначку `"first timers only"` для простих завдань (наприклад, граматичної помилки) та вказуйте додаткову інформацію. Ви можете використовувати [цей шаблон відповіді](moderator-handbook.md#first-timer-only-issues) для сортування.
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
