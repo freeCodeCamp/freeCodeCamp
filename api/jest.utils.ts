@@ -13,22 +13,6 @@ type Options = {
   sendCSRFToken: boolean;
 };
 
-// TODO: remove this function and use superRequest instead
-export function superPut(
-  resource: string,
-  setCookies: string[],
-  opts?: Options
-): request.Test {
-  return superRequest(
-    resource,
-    {
-      method: 'PUT',
-      setCookies
-    },
-    opts
-  );
-}
-
 /* eslint-disable @typescript-eslint/naming-convention */
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),

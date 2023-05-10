@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { setupServer, superPut, superRequest } from '../../jest.utils';
+import { setupServer, superRequest } from '../../jest.utils';
 
 const baseProfileUI = {
   isLocked: false,
@@ -95,10 +95,10 @@ describe('settingRoutes', () => {
 
     describe('/update-my-profileui', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superPut(
-          '/update-my-profileui',
+        const response = await superRequest('/update-my-profileui', {
+          method: 'PUT',
           setCookies
-        ).send({
+        }).send({
           profileUI
         });
 
@@ -115,10 +115,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT ignores invalid keys', async () => {
-        const response = await superPut(
-          '/update-my-profileui',
+        const response = await superRequest('/update-my-profileui', {
+          method: 'PUT',
           setCookies
-        ).send({
+        }).send({
           profileUI: {
             ...profileUI,
             invalidKey: 'invalidValue'
@@ -134,10 +134,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with missing keys', async () => {
-        const response = await superPut(
-          '/update-my-profileui',
+        const response = await superRequest('/update-my-profileui', {
+          method: 'PUT',
           setCookies
-        ).send({
+        }).send({
           profileUI: {
             isLocked: true,
             showName: true,
@@ -159,7 +159,10 @@ describe('settingRoutes', () => {
 
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superPut('/update-my-theme', setCookies).send({
+        const response = await superRequest('/update-my-theme', {
+          method: 'PUT',
+          setCookies
+        }).send({
           theme: 'night'
         });
 
@@ -172,7 +175,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
-        const response = await superPut('/update-my-theme', setCookies).send({
+        const response = await superRequest('/update-my-theme', {
+          method: 'PUT',
+          setCookies
+        }).send({
           theme: 'invalid'
         });
 
@@ -201,7 +207,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ keyboardShortcuts: 'invalid' });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
@@ -297,13 +303,19 @@ describe('settingRoutes', () => {
     });
 
     test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await superPut('/update-my-profileui', setCookies);
+      const response = await superRequest('/update-my-profileui', {
+        method: 'PUT',
+        setCookies
+      });
 
       expect(response.statusCode).toEqual(401);
     });
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await superPut('/update-my-theme', setCookies);
+      const response = await superRequest('/update-my-theme', {
+        method: 'PUT',
+        setCookies
+      });
 
       expect(response.statusCode).toEqual(401);
     });
