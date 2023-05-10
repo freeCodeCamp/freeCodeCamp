@@ -11,14 +11,14 @@ Understanding how combinators work can become a lot easier when you start playin
 
 The goal of this exercise is to apply styles to elements that are descendants of another element, while leaving elements that aren't descendants of that element unstyled.
 
-1. You should see a `yellow` background, `p` elements that are descendants of the `div` element.
-1. You should see a text color of `red` elements that are descendants of the `div` element.
-1. You should see a font size of `20px` elements that are descendants of the `div` element.
-1. You should text that is center aligned for elements that are descendants of the `div` element.
+1. You should see a `yellow` background for `p` elements that are descendants of the `div` element.
+1. You should see a text color of `red` for elements that are descendants of the `div` element.
+1. You should see a font size of `20px` for elements that are descendants of the `div` element.
+1. You should center align text for elements that are descendants of the `div` element.
 
 # --hints--
 
-You should have a background color of `yellow` on your decendants.
+You should have a background color of `yellow` on your descendants.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
@@ -40,7 +40,7 @@ assert(getCorrectStyle()?.backgroundColor === 'yellow');
 
 ```
 
-You should have a text color of `red` on your decendants.
+You should have a text color of `red` on your descendants.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
@@ -62,7 +62,7 @@ assert(getCorrectStyle()?.color === 'red');
 
 ```
 
-You should have a font size of `20px` on your decendants.
+You should have a font size of `20px` on your descendants.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
@@ -84,7 +84,7 @@ assert(getCorrectStyle()?.fontSize === '20px');
 
 ```
 
-You should center align the text on your decendants.
+You should center align the text on your descendants.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
