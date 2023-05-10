@@ -371,3 +371,7 @@ Search for the user that will become a proofreader. Utilizzare il menu a tre pun
 L'utente ora è un revisore.
 
 > [!TIP] I revisori appena promossi possono trarre vantaggio dalla lettura della documentazione [Come revisionare le traduzioni](how-to-proofread-files.md).
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.

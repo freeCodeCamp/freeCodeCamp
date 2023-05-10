@@ -371,3 +371,7 @@ flexibleAlerts: {
 Тепер користувач є редактором.
 
 > [!TIP] Новий редактор може багато чого дізнатись, прочитавши [як редагувати файли](how-to-proofread-files.md).
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.

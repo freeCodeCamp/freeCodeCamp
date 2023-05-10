@@ -371,3 +371,7 @@ Search for the user that will become a proofreader. Use the three dots menu on t
 The user is now a proofreader.
 
 > [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.

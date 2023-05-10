@@ -370,3 +370,7 @@ Procure pelo usuário que se tornará um revisor. Use o menu de três pontos na 
 O usuário agora é um revisor.
 
 > [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.
