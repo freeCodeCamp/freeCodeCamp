@@ -255,10 +255,10 @@ mongod
 - On Windows, you must specify the full path to the `mongod` binary
 
 ```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+"C:\Program Files\MongoDB\Server\6.0\bin\mongod"
 ```
 
-Make sure to replace `3.6` with the version you have installed
+Make sure to replace `6.0` with the version you have installed
 
   <!-- tabs:end -->
 
