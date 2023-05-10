@@ -140,12 +140,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            portfolio: {
-              website: req.body.website,
-              twitter: req.body.twitter,
-              githubProfile: req.body.githubProfile,
-              linkedin: req.body.linkedin
-            }
+            website: req.body.website,
+            twitter: req.body.twitter,
+            githubProfile: req.body.githubProfile,
+            linkedin: req.body.linkedin
           }
         });
 
