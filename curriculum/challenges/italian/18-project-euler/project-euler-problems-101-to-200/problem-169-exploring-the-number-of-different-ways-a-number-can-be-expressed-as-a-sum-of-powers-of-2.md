@@ -1,7 +1,7 @@
 ---
 id: 5900f4151000cf542c50ff28
 title: >-
-  Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2
+  Problema 169: esplorare i diversi modi in cui un numero può essere espresso come somma delle potenze di 2
 challengeType: 1
 forumTopicId: 301803
 dashedName: >-
@@ -10,19 +10,19 @@ dashedName: >-
 
 # --description--
 
-Define $f(0)=1$ and $f(n)$ to be the number of different ways $n$ can be expressed as a sum of integer powers of 2 using each power no more than twice.
+Sia $f(0) = 1$ e sia $f(n)$ il numero di modi diversi in cui $n$ può essere espresso come numero di potenze intere di 2 usando ogni potenza non più di due volte.
 
-For example, $f(10)=5$ since there are five different ways to express 10:
+Per esempio, $f(10)=5$ visto che ci sono cinque modi diversi di esprimere 10:
 
 $$\begin{align}   & 1 + 1 + 8 \\\\
   & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
   & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
-What is $f({10}^{25})$?
+Qual è il valore di $f({10}^{25})$?
 
 # --hints--
 
-`numberOfWaysToExpress()` should return `178653872807`.
+`numberOfWaysToExpress()` dovrebbe restituire `178653872807`.
 
 ```js
 assert.strictEqual(numberOfWaysToExpress(), 178653872807);

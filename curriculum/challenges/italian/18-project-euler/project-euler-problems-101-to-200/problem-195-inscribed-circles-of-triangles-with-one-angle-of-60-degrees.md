@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+title: 'Problema 195: cerchi inscritti in triangoli con un angolo di 60 gradi'
 challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
@@ -8,19 +8,19 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 # --description--
 
-Let's call an integer sided triangle with exactly one angle of 60° a 60° triangle.
+Chiamiamo un triangolo a lati interi con esattamente un angolo di 60° un triangolo a 60°.
 
-Let $r$ be the radius of the inscribed circle of such a 60° triangle.
+Sia $r$ il raggio del cerchio inscritto di un triangolo a 60°.
 
-There are 1234 60° triangles for which $r ≤ 100$.
+Ci sono 1234 triangoli a 60° per i quali $r ≤ 100$.
 
-Let $T(n)$ be the number of 60° triangles for which $r ≤ n$, so $T(100) = 1234$, $T(1000) = 22767$, and $T(10000) = 359912$.
+Sia $T(n)$ il numero di triangoli a 60° per i quali $r ≤ n$, quindi $T(100) = 1234$, $T(1000) = 22767$, e $T(10000) = 359912$.
 
-Find $T(1053779)$.
+Trova $T(1053779)$.
 
 # --hints--
 
-`inscribedCirclesOfTriangles()` should return `75085391`.
+`inscribedCirclesOfTriangles()` dovrebbe restituire `75085391`.
 
 ```js
 assert.strictEqual(inscribedCirclesOfTriangles(), 75085391);
