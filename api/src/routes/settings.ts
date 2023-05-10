@@ -140,6 +140,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             username: req.body.username
           }
         });
+        return {
+          message: 'flash.username-updated',
+          type: 'success'
+        } as const;
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
