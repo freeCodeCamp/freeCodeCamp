@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-b
 
 1. Você deve ver que o quarto elemento da lista tem um fundo na cor `red`, um `font-size` de `24px` e um `font-weight` com o valor `bold`.
 
-1. O `font-size` do quarto elemento deve ser definido com um atributo `class`, enquanto `font-weight` e a cor devem ser definidos com um atributo `id`.
+1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight` and the color should be set with an `id` attribute.
 
 # --hints--
 
@@ -52,7 +52,7 @@ const everyPhasBackgroundColor = p?.every((paragraph) => {
 })
 ```
 
-O segundo elemento deve ter um texto azul e um `font-size` de `36px`.
+Your second element should have `blue` text and a `font-size` of `36px`.
 
 ```js
 const secondElementId = document.querySelectorAll('div')?.[0]?.id;
@@ -66,7 +66,19 @@ assert.equal(style?.fontSize, '36px');
 O terceiro elemento deve ter o texto e o `font-size` com o valor de `24px`.
 
 ```js
-const thirdElement = document.querySelectorAll('p')?.[1]?.classList;
+const thirdElement = document.querySelectorAll('p')?.[1];
+
+assert(thirdElement?.innerText?.length > 0);
+
+const thirdElementClasses = Array.from(thirdElement?.classList?.values());
+
+assert(thirdElementClasses.some(thirdElementClass => {
+
+  const style = new __helpers.CSSHelp(document).getStyle(`.${thirdElementClass}`);
+
+  return style?.fontSize === '24px';
+
+}))
 
 ```
 
@@ -80,7 +92,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`.${fourthElementClass}`)
 assert(style?.fontSize === '24px');
 ```
 
-O quarto elemento deve ter o `background-color` definido como `red`.
+The fourth element should have a `red` `background-color`.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;

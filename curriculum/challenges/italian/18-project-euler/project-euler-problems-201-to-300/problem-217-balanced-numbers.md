@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff58
-title: 'Problem 217: Balanced Numbers'
+title: 'Problema 217: numeri bilanciati'
 challengeType: 1
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers
@@ -8,19 +8,19 @@ dashedName: problem-217-balanced-numbers
 
 # --description--
 
-A positive integer with $k$ (decimal) digits is called balanced if its first $⌈\frac{k}{2}⌉$ digits sum to the same value as its last $⌈\frac{k}{2}⌉$ digits, where $⌈x⌉$, pronounced ceiling of $x$, is the smallest integer $≥ x$, thus $⌈π⌉ = 4$ and $⌈5⌉ = 5$.
+Un numero intero positivo con $k$ cifre decimali è detto bilanciato se la somma delle sue prime $⌈\frac{k}{2}⌉$ cifre è pari a quella delle sue ultime $⌈\frac{k}{2}⌉$ dove $⌈x⌉$, detto ceiling di $x$, è il più piccolo intero $≥ x$, quindi $⌈π⌉ = 4$ e $⌈5⌉ = 5$.
 
-So, for example, all palindromes are balanced, as is 13722.
+Così, per esempio, tutti i palindromi sono bilanciati, come lo è 13722.
 
-Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
+Sia $T(n)$ la somma di tutti i numeri bilanciati minori di $10^n$.
 
-Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
+Così: $T(1) = 45$, $T(2) = 540$ e $T(5) = 334\\,795\\,890$.
 
-Find $T(47)\\,mod\\,3^{15}$
+Trova $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 
-`balancedNumbers()` should return `6273134`.
+`balancedNumbers()` dovrebbe restituire `6273134`.
 
 ```js
 assert.strictEqual(balancedNumbers(), 6273134);

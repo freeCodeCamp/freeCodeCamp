@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
-title: 'Problem 237: Tours on a 4 x n playing board'
+title: 'Problema 237: percorsi su un tabellone 4 x n'
 challengeType: 1
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board
@@ -8,22 +8,22 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 # --description--
 
-Let $T(n)$ be the number of tours over a 4 × $n$ playing board such that:
+Sia $T(n)$ il numero di percorsi su un tabellone da gioco 4 × $n$ tale che:
 
-- The tour starts in the top left corner.
-- The tour consists of moves that are up, down, left, or right one square.
-- The tour visits each square exactly once.
-- The tour ends in the bottom left corner.
+- Il percorso inizia nell'angolo in alto a sinistra.
+- Il percorso consiste in mosse in alto, in giù, a sinistra o a destra di un quadrato.
+- Il percorso visita ogni quadrato esattamente una volta.
+- Il percorso termina nell'angolo in basso a sinistra.
 
-The diagram shows one tour over a 4 × 10 board:
+Il diagramma mostra un percorso su un tabellone 4 × 10:
 
-<img class="img-responsive center-block" alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un percorso su un tabellone 4 x 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
 
-$T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
+$T(10)$ è 2329. Quanto vale $T({10}^{12})$ modulo ${10}^8$?
 
 # --hints--
 
-`toursOnPlayingBoard()` should return `15836928`.
+`toursOnPlayingBoard()` dovrebbe restituire `15836928`.
 
 ```js
 assert.strictEqual(toursOnPlayingBoard(), 15836928);

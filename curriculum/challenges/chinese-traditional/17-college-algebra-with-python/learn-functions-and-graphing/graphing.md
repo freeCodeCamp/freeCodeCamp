@@ -14,7 +14,7 @@ dashedName: graphing
 
 # --question--
 
-## --任務--
+## --assignment--
 
 在你的代數 Colab 筆記本上添加代碼，用於函數和圖像。
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5a
-title: 'Problem 219: Skew-cost coding'
+title: 'Problema 219: codifica skew-cost'
 challengeType: 1
 forumTopicId: 301861
 dashedName: problem-219-skew-cost-coding
@@ -8,23 +8,23 @@ dashedName: problem-219-skew-cost-coding
 
 # --description--
 
-Let $A$ and $B$ be bit strings (sequences of 0's and 1's).
+Siano $A$ e $B$ stringhe di bit (sequenze di 0 e 1).
 
 If $A$ is equal to the <u>left</u>most length($A$) bits of $B$, then $A$ is said to be a prefix of $B$.
 
-For example, 00110 is a prefix of <u>00110</u>1001, but not of 00111 or 100110.
+Ad esempio, 00110 è un prefisso di <u>00110</u>1001, ma non di 00111 o 100110.
 
-A prefix-free code of size $n$ is a collection of $n$ distinct bit strings such that no string is a prefix of any other. For example, this is a prefix-free code of size 6:
+Un codice privo di prefisso di dimensione $n$ è una raccolta di $n$ stringhe di bit distinte in modo che nessuna stringa sia un prefisso di qualunque altra. Ad esempio, questo è un codice privo di prefisso di dimensione 6:
 
 $$0000, 0001, 001, 01, 10, 11$$
 
-Now suppose that it costs one penny to transmit a '0' bit, but four pence to transmit a '1'. Then the total cost of the prefix-free code shown above is 35 pence, which happens to be the cheapest possible for the skewed pricing scheme in question. In short, we write $Cost(6) = 35$.
+Ora supponiamo che costi un centesimo trasmettere un bit '0', ma quattro centesimi trasmettere un '1'. Quindi il costo totale del codice privo di prefisso mostrato sopra è 35 centesimi, che risulta essere il più economico possibile per il regime di prezzi non lineare in questione. In breve, scriviamo $Cost(6) = 35$.
 
-What is $Cost(10^9)$?
+Quanto vale $Cost(10^9)$?
 
 # --hints--
 
-`skewCostCoding()` should return `64564225042`.
+`skewCostCoding()` dovrebbe restituire `64564225042`.
 
 ```js
 assert.strictEqual(skewCostCoding(), 64564225042);

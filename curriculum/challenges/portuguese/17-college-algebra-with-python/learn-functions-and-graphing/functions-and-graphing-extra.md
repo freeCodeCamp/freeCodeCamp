@@ -14,7 +14,7 @@ Aqui está o <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9
 
 # --question--
 
-## --assignments--
+## --assignment--
 
 Adicione código ao seu notebook do Colaboratory de álgebra para funções e gráficos.
 

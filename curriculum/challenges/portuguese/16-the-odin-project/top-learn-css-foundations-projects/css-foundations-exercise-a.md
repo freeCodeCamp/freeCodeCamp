@@ -19,13 +19,13 @@ dashedName: css-foundations-exercise-a
 
 1. O CSS do elemento `p` deve ser adicionado internamente usando um seletor de tipo.
 
-1. Você deve ver um elemento `button` com um fundo da cor `orange` e um tamanho de fonte de `18px`.
+1. You should see a `button` element with an `orange` background and a font size of `18px`.
 
 1. O CSS do elemento `button` deve estar em um estilo em linha.
 
 # --hints--
 
-Deve haver um elemento `div` e ele deve conter algum texto e estar alinhado no centro.
+There should be one `div` element. It should contain some text and be aligned in the center.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
@@ -47,7 +47,7 @@ assert(bgc === 'red');
 assert(color === 'white');
 ```
 
-O elemento `div` deve ter a propriedade `font-weight` definida como `bold` e um `font-size` de `32px`.
+The `div` element should have a `font-weight` of `bold` and a `font-size` of `32px`.
 
 ```js
 const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');
