@@ -15,7 +15,7 @@ import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
 
-import blocklist from '../../../../config/constants';
+import { blocklistedUsernames } from '../../../../config/constants';
 import { apiLocation } from '../../../../config/env.json';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -167,7 +167,7 @@ export default function initializeUser(User) {
 
   // username should not be in blocklist
   User.validatesExclusionOf('username', {
-    in: blocklist,
+    in: blocklistedUsernames,
     message: 'is not available'
   });
 
@@ -372,7 +372,8 @@ export default function initializeUser(User) {
     const usernameFilter = new badwordFilter();
     if (
       username &&
-      (blocklist.includes(username) || usernameFilter.isProfane(username))
+      (blocklistedUsernames.includes(username) ||
+        usernameFilter.isProfane(username))
     ) {
       return Promise.resolve(true);
     }
@@ -814,10 +815,6 @@ export default function initializeUser(User) {
           user;
         const allUser = {
           ..._.pick(user, publicUserProps),
-          isGithub: !!user.githubProfile,
-          isLinkedIn: !!user.linkedin,
-          isTwitter: !!user.twitter,
-          isWebsite: !!user.website,
           points: progressTimestamps.length,
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),

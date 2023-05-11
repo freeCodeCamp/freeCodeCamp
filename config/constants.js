@@ -1,9 +1,9 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
 let alphabet = '';
+
 for (let i = 0; i < 26; i++) {
   alphabet = alphabet.concat(String.fromCharCode(97 + i));
 }
+
 const i18nConstants = [
   // reserved paths for localizations
   'afrikaans',
@@ -38,7 +38,8 @@ const i18nConstants = [
   'ukrainian',
   'vietnamese'
 ];
-const blocklist = [
+
+let blocklist = [
   ...alphabet.split(''),
   ...i18nConstants,
   'about',
@@ -656,4 +657,6 @@ const blocklist = [
   'yourusername',
   'zlib'
 ];
-exports.default = blocklist;
+
+exports.blocklistedUsernames = [...new Set(blocklist)];
+exports.i18nConstants = i18nConstants;

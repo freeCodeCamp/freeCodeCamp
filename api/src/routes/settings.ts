@@ -4,7 +4,7 @@ import {
 } from '@fastify/type-provider-typebox';
 import badWordsFilter from 'bad-words';
 import { isValidUsername } from '../../../utils/validate';
-import blocklist from '../../../config/constants';
+import blocklist from '../../../config/api/constants';
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
