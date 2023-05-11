@@ -140,7 +140,7 @@ describe('settingRoutes', () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')
           .set('Cookie', cookies)
-          .send({ username: 'twaha' });
+          .send({ username: 'developmentuser' });
 
         expect(response?.statusCode).toEqual(200);
 
