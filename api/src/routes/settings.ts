@@ -2,7 +2,9 @@ import {
   Type,
   type FastifyPluginCallbackTypebox
 } from '@fastify/type-provider-typebox';
+import badWordsFilter from 'bad-words';
 import { isValidUsername } from '../../../utils/validate';
+import blocklist from '../../../config/constants';
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -126,7 +128,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             type: Type.Union([Type.Literal('success'), Type.Literal('info')])
           }),
           500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
+            message: Type.String(),
             type: Type.Literal('danger')
           })
         }
@@ -138,8 +140,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           where: { id: req.session.user.id }
         });
 
-        const newUsername = req.body.username;
-        const oldUsername = user?.username;
+        const newUsername = req.body.username.toLocaleLowerCase();
+        const oldUsername = user?.username.toLocaleLowerCase();
 
         if (newUsername == oldUsername) {
           return { message: 'flash.username-used', type: 'info' } as const;
@@ -154,11 +156,13 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
+        const hasProfanity = new badWordsFilter().isProfane(newUsername);
+        const preserved = blocklist.includes(newUsername);
         const exists = await fastify.prisma.user.findFirst({
           where: { username: newUsername }
         });
 
-        if (exists) {
+        if (exists || hasProfanity || preserved) {
           return { message: 'flash.username-taken', type: 'info' } as const;
         }
 
@@ -176,7 +180,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return { message: `${err} e`, type: 'danger' } as const;
       }
     }
   );

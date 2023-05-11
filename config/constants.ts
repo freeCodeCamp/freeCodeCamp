@@ -39,7 +39,7 @@ const i18nConstants = [
   'vietnamese'
 ];
 
-let blocklist = [
+const blocklist = [
   ...alphabet.split(''),
   ...i18nConstants,
   'about',
@@ -658,5 +658,4 @@ let blocklist = [
   'zlib'
 ];
 
-exports.blocklistedUsernames = [...new Set(blocklist)];
-exports.i18nConstants = i18nConstants;
+export default blocklist;

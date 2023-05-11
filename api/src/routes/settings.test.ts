@@ -164,6 +164,36 @@ describe('settingRoutes', () => {
         });
       });
 
+      test('PUT returns an error when the username is an endpoint', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'german' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+      });
+
+      // errors because it uses a bad word like ass
+
+      test('PUT returns an error when the username is a bad word', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'ass' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+      });
+
       test('PUT returns an error when the username is a https status code', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')

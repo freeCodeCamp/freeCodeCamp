@@ -15,7 +15,7 @@ import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
 
-import { blocklistedUsernames } from '../../../../config/constants';
+import blocklist from '../../../../config/constants';
 import { apiLocation } from '../../../../config/env.json';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -167,7 +167,7 @@ export default function initializeUser(User) {
 
   // username should not be in blocklist
   User.validatesExclusionOf('username', {
-    in: blocklistedUsernames,
+    in: blocklist,
     message: 'is not available'
   });
 
@@ -372,8 +372,7 @@ export default function initializeUser(User) {
     const usernameFilter = new badwordFilter();
     if (
       username &&
-      (blocklistedUsernames.includes(username) ||
-        usernameFilter.isProfane(username))
+      (blocklist.includes(username) || usernameFilter.isProfane(username))
     ) {
       return Promise.resolve(true);
     }
