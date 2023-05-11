@@ -225,7 +225,7 @@ describe('settingRoutes', () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')
           .set('Cookie', cookies)
-          .send({ username: (Math.random() + 1).toString(36).substring(7) });
+          .send({ username: 'twaha1' });
 
         expect(response?.statusCode).toEqual(200);
 
