@@ -4,7 +4,8 @@ import {
 } from '@fastify/type-provider-typebox';
 import badWordsFilter from 'bad-words';
 import { isValidUsername } from '../../../utils/validate';
-import blocklist from '../../../config/api/constants';
+// we have to use this file as JavaScript because it is used by the old api.
+import { blocklistedUsernames } from '../../../config/constants.js';
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -157,7 +158,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const hasProfanity = new badWordsFilter().isProfane(newUsername);
-        const preserved = blocklist.includes(newUsername);
+        const preserved = blocklistedUsernames.includes(newUsername);
         const exists = await fastify.prisma.user.findFirst({
           where: { username: newUsername }
         });
