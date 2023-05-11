@@ -5,9 +5,7 @@ import { Tabs } from '.';
 
 describe('<Tabs />', () => {
   it('should render tabs component correctly', () => {
-    render(
-      <Tabs id={'uncontrolled-tab-example'} defaultActiveKey={'Test'}></Tabs>
-    );
+    render(<Tabs id={'uncontrolled-tab-example'} defaultValue={'Test'}></Tabs>);
     expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
 });
