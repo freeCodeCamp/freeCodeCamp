@@ -217,6 +217,7 @@ export const query = graphql`
   query ProjectChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
+        id
         forumTopicId
         title
         description
