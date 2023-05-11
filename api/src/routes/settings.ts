@@ -2,7 +2,7 @@ import {
   Type,
   type FastifyPluginCallbackTypebox
 } from '@fastify/type-provider-typebox';
-
+import { isValidUsername } from '../../../utils/validate';
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -122,8 +122,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.Literal('flash.username-updated'),
-            type: Type.Literal('success')
+            message: Type.String(),
+            type: Type.Union([Type.Literal('success'), Type.Literal('info')])
           }),
           500: Type.Object({
             message: Type.Literal('flash.wrong-updating'),
@@ -134,12 +134,41 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        const user = await fastify.prisma.user.findFirst({
+          where: { id: req.session.user.id }
+        });
+
+        const newUsername = req.body.username;
+        const oldUsername = user?.username;
+
+        if (newUsername == oldUsername) {
+          return { message: 'flash.username-used', type: 'info' } as const;
+        }
+
+        const validation = isValidUsername(newUsername);
+
+        if (!validation.valid) {
+          return {
+            message: `Username ${newUsername} ${validation.error}`,
+            type: 'info'
+          } as const;
+        }
+
+        const exists = await fastify.prisma.user.findFirst({
+          where: { username: newUsername }
+        });
+
+        if (exists) {
+          return { message: 'flash.username-taken', type: 'info' } as const;
+        }
+
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
             username: req.body.username
           }
         });
+
         return {
           message: 'flash.username-updated',
           type: 'success'
