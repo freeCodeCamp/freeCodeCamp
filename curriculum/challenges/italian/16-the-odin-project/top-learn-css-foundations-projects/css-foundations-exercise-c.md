@@ -12,13 +12,13 @@ Partiamo dall'esercizio precedente, in cui hai aggiunto più classi a un singolo
 1. Dovresti vedere uno sfondo nero con del testo bianco nel primo elemento `button`.
 1. Dovresti vedere uno sfondo giallo nel secondo elemento `button`.
 1. Dovresti impostare la dimensione del carattere a `28px` usando un selettore di raggruppamento.
-1. Dovresti vedere una lista di caratteri contenenti `Helvetica` e `Times New Roman` con `sans-serif` come valore di ripiego.
+1. Dovresti vedere una lista di caratteri contenente `Helvetica` e `Times New Roman` con `sans-serif` come valore di ripiego.
 1. Dovresti vedere un nome di classe unico per ogni elemento.
-1. You should have a grouping selector for styles that both elements share.
+1. Dovresti avere un selettore di raggruppamento per gli stili condivisi da entrambi gli elementi.
 
 # --hints--
 
-You should have a `black` background on the first element.
+Dovresti avere uno sfondo di colore `black` per il primo elemento.
 
 ```js
 const classes = document.querySelectorAll('button')?.[0].classList;
@@ -29,7 +29,7 @@ assert.equal(style?.backgroundColor, 'black');
 
 ```
 
-Your first element should have a text color of `white`.
+Il primo elemento dovrebbe avere il testo di colore `white`.
 
 ```js
 
@@ -41,7 +41,7 @@ assert.equal(style?.color, 'white');
 
 ```
 
-You should set the `font-size` for both elements to `28px` using a grouping selector.
+Dovresti impostare `font-size` per entrambi gli elementi su `28px` usando un selettore di raggruppamento.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -54,7 +54,7 @@ function eitherOr() {
 assert.equal(eitherOr()?.fontSize, '28px');
 ```
 
-You have a unique class name on each element.
+Dovresti avere un nome di classe univoco per ogni elemento.
 
 ```js
 const elementOneClasses = document.querySelectorAll('button')?.[0].classList;
@@ -66,7 +66,7 @@ for(let i = 0; i < elementOneClasses.length; i++){
 
 ```
 
-You should have a grouping selector for styles that both elements share.
+Dovresti avere un selettore di raggruppamento per gli stili condivisi da entrambi gli elementi.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -79,7 +79,7 @@ function eitherOr() {
 assert.exists(eitherOr());
 ```
 
-You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
+Dovresti vedere una lista di caratteri contenente `Helvetica` e `Times New Roman` con `sans-serif` come valore di ripiego.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -93,7 +93,7 @@ function eitherOr() {
 assert.equal(eitherOr()?.fontFamily, 'Helvetica, "Times New Roman", sans-serif');
 ```
 
-Each element should only have one class.
+Ogni elemento dovrebbe avere solo una classe.
 
 ```js
 const elementOneClasses = document.querySelectorAll('button')?.[0].classList;

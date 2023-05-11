@@ -1,6 +1,6 @@
 ---
 id: 5900f4601000cf542c50ff72
-title: 'Problem 244: Sliders'
+title: 'Problema 244: sliders'
 challengeType: 1
 forumTopicId: 301891
 dashedName: problem-244-sliders
@@ -8,7 +8,7 @@ dashedName: problem-244-sliders
 
 # --description--
 
-You probably know the game Fifteen Puzzle. Here, instead of numbered tiles, we have seven red tiles and eight blue tiles.
+Probabilmente conosci il gioco Fifteen Puzzle. Qui, invece di piastrelle numerate, abbiamo sette piastrelle rosse e otto piastrelle blu.
 
 A move is denoted by the uppercase initial of the direction (Left, Right, Up, Down) in which the tile is slid, e.g. starting from configuration ($S$), by the sequence $LULUR$ we reach the configuration ($E$):
 

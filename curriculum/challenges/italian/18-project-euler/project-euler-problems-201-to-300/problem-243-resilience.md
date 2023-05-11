@@ -1,6 +1,6 @@
 ---
 id: 5900f4601000cf542c50ff73
-title: 'Problem 243: Resilience'
+title: 'Problema 243: resilienza'
 challengeType: 1
 forumTopicId: 301890
 dashedName: problem-243-resilience
@@ -8,23 +8,23 @@ dashedName: problem-243-resilience
 
 # --description--
 
-A positive fraction whose numerator is less than its denominator is called a proper fraction.
+Una frazione positiva il cui numeratore è inferiore al denominatore è detta frazione propria.
 
-For any denominator, $d$, there will be $d−1$ proper fractions; for example, with $d = 12$:
+Per qualsiasi denominatore, $d$, ci saranno $d−1$ frazioni proprie; per esempio, con $d = 12$:
 
 $$\frac{1}{12}, \frac{2}{12}, \frac{3}{12}, \frac{4}{12}, \frac{5}{12}, \frac{6}{12}, \frac{7}{12}, \frac{8}{12}, \frac{9}{12}, \frac{10}{12}, \frac{11}{12}$$
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+Chiameremo frazione resiliente una frazione che non può essere semplificata.
 
-Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
+Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che sono resilienti; per esempio, $R(12) = \frac{4}{11}$.
 
-In fact, $d = 12$ is the smallest denominator having a resilience $R(d) &lt; \frac{4}{10}$.
+Infatti, $d = 12$ è il più piccolo denominatore con una resilienza $R(d) &lt; \frac{4}{10}$.
 
-Find the smallest denominator $d$, having a resilience $R(d) &lt; \frac{15\\,499}{94\\,744}$.
+Trova il più piccolo denominatore $d$, avente una resilienza $R(d) &lt; \frac{15\\,499}{94\\,744}$.
 
 # --hints--
 
-`resilience()` should return `892371480`.
+`resilience()` dovrebbe restituire `892371480`.
 
 ```js
 assert.strictEqual(resilience(), 892371480);

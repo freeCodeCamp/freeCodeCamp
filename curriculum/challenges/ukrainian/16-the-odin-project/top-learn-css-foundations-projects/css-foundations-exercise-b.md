@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-b
 
 1. Ви повинні бачити четвертий елемент списку із фоном `red`, `font-size` зі значенням `24px` та `font-weight` зі значенням `bold`.
 
-1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight` and the color should be set with an `id` attribute.
+1. Використайте атрибут `class`, щоб налаштувати `font-size` четвертого елемента. Використайте атрибут `id`, щоб налаштувати `font-weight` та колір.
 
 # --hints--
 
@@ -52,7 +52,7 @@ const everyPhasBackgroundColor = p?.every((paragraph) => {
 })
 ```
 
-Your second element should have `blue` text and a `font-size` of `36px`.
+Другий елемент повинен мати текст зі значенням `blue` та `font-size` зі значенням `36px`.
 
 ```js
 const secondElementId = document.querySelectorAll('div')?.[0]?.id;
@@ -92,7 +92,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`.${fourthElementClass}`)
 assert(style?.fontSize === '24px');
 ```
 
-The fourth element should have a `red` `background-color`.
+Четвертий елемент повинен мати `background-color` зі значенням `red`.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;

@@ -7,18 +7,18 @@ dashedName: css-foundations-exercise-c
 
 # --description--
 
-Let's build a little off the previous exercise, in which you added multiple classes to a single element in order to apply two different rules to it.
+Попрацюємо з попередньою вправою, у якій ви додали декілька класів до одного елемента, щоб застосувати до нього два різні правила.
 
-1. You should see a black background and white text on the first `button` element.
-1. You should see a yellow background on the second `button` element.
-1. You should set a font size of `28px` using a grouping selector.
-1. You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
-1. You should see a unique class name on each element.
-1. You should have a grouping selector for styles that both elements share.
+1. Ви повинні бачити чорний фон та білий текст на першому елементі `button`.
+1. Ви повинні бачити жовтий фон на другому елементі `button`.
+1. Використайте селектор групування, щоб налаштувати розмір шрифту на `28px`.
+1. Ви повинні мати список шрифтів, який містить `Helvetica` та `Times New Roman`, а також `sans-serif` як запасний.
+1. Ви повинні бачити унікальну назву класу для кожного елемента.
+1. Ви повинні мати селектор групування для стилів, які мають обидва елементи.
 
 # --hints--
 
-You should have a `black` background on the first element.
+Перший елемент повинен мати фон зі значенням `black`.
 
 ```js
 const classes = document.querySelectorAll('button')?.[0].classList;
@@ -29,7 +29,7 @@ assert.equal(style?.backgroundColor, 'black');
 
 ```
 
-Your first element should have a text color of `white`.
+Перший елемент повинен мати колір тексту зі значенням `white`.
 
 ```js
 
@@ -41,7 +41,7 @@ assert.equal(style?.color, 'white');
 
 ```
 
-You should set the `font-size` for both elements to `28px` using a grouping selector.
+Використайте селектор групування, щоб налаштувати `font-size` обох елементів на `28px`.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -54,7 +54,7 @@ function eitherOr() {
 assert.equal(eitherOr()?.fontSize, '28px');
 ```
 
-You have a unique class name on each element.
+Кожен елемент повинен мати унікальний клас.
 
 ```js
 const elementOneClasses = document.querySelectorAll('button')?.[0].classList;
@@ -66,7 +66,7 @@ for(let i = 0; i < elementOneClasses.length; i++){
 
 ```
 
-You should have a grouping selector for styles that both elements share.
+Ви повинні мати селектор групування для стилів, які мають обидва елементи.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -79,7 +79,7 @@ function eitherOr() {
 assert.exists(eitherOr());
 ```
 
-You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
+Ви повинні мати список шрифтів, який містить `Helvetica` та `Times New Roman`, а також `sans-serif` як запасний.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -93,7 +93,7 @@ function eitherOr() {
 assert.equal(eitherOr()?.fontFamily, 'Helvetica, "Times New Roman", sans-serif');
 ```
 
-Each element should only have one class.
+Кожен елемент повинен мати лише один клас.
 
 ```js
 const elementOneClasses = document.querySelectorAll('button')?.[0].classList;
