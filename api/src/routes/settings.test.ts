@@ -136,11 +136,68 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-username', () => {
+      test('PUT returns an error when the username is already used', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'twaha' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username uses special characters', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'twaha@' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'Username twaha@ contains invalid characters',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is a https status code', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: '404' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'Username 404 is a reserved error code',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is shorter than 3 characters', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'fo' });
+
+        expect(response?.statusCode).toEqual(400);
+
+        expect(response?.body).toEqual({
+          error: 'Bad Request',
+          message: 'body/username must NOT have fewer than 3 characters',
+          statusCode: 400
+        });
+      });
+
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')
           .set('Cookie', cookies)
-          .send({ username: 'foobar' });
+          .send({ username: (Math.random() + 1).toString(36).substring(7) });
 
         expect(response?.statusCode).toEqual(200);
 
