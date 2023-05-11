@@ -19,13 +19,13 @@ dashedName: css-foundations-exercise-a
 
 1. Використайте селектор типу, щоб внутрішньо додати CSS елемента `p`.
 
-1. You should see a `button` element with an `orange` background and a font size of `18px`.
+1. Ви повинні бачити елемент `button` із фоном `orange` та розміром шрифту `18px`.
 
 1. CSS елемента `button` повинен мати вбудований стиль.
 
 # --hints--
 
-There should be one `div` element. It should contain some text and be aligned in the center.
+Має бути один елемент `div`. Він повинен містити вирівняний за центром текст.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
@@ -47,7 +47,7 @@ assert(bgc === 'red');
 assert(color === 'white');
 ```
 
-The `div` element should have a `font-weight` of `bold` and a `font-size` of `32px`.
+Елемент `div` повинен мати `font-weight` зі значенням `bold` та `font-size` зі значенням `32px`.
 
 ```js
 const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');
