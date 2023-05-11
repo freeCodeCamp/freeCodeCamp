@@ -24,6 +24,11 @@ const profileUI = {
   showPortfolio: true
 };
 
+const developerUserEmail = 'foo@bar.com';
+const otherDeveloperUserEmail = 'bar@bar.com';
+const unusedEmailOne = 'nobody@would.com';
+const unusedEmailTwo = 'would@they.com';
+
 const updateErrorResponse = {
   type: 'danger',
   message: 'flash.wrong-updating'
@@ -92,7 +97,7 @@ describe('settingRoutes', () => {
       // profileUI, but we're interested in how the profileUI is updated. As
       // such, setting this explicitly isolates these tests.
       await fastifyTestInstance.prisma.user.updateMany({
-        where: { email: 'foo@bar.com' },
+        where: { email: developerUserEmail },
         data: { profileUI: baseProfileUI }
       });
     });
@@ -107,7 +112,7 @@ describe('settingRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(response.body).toEqual({
@@ -130,7 +135,7 @@ describe('settingRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(user?.profileUI).toEqual(profileUI);
@@ -171,14 +176,115 @@ describe('settingRoutes', () => {
         });
       });
 
-      test('PUT returns 400 status code with invalid email', async () => {
+      // TODO: finish this test once the prisma schema is updated.
+      // test("PUT adds emailAuthLinkTTL with the current time to the user's record", async () => {
+      //   const response = await request(fastify?.server)
+      //     .put('/update-my-email')
+      //     .set('Cookie', cookies)
+      //     .send({ email: 'foo@foo.com' });
+
+      //   const user = await fastify?.prisma.user.findFirstOrThrow({
+      //     where: { email: developerUserEmail },
+      //     select: { emailAuthLinkTTL: true }
+      //   });
+      //   const emailAuthLinkTTL = user?.emailAuthLinkTTL;
+      //   expect(emailAuthLinkTTL).toBeTruthy();
+
+      //   expect(response?.statusCode).toEqual(200);
+
+      //   expect(emailAuthLinkTTL).toBeInstanceOf(Date);
+
+      // });
+
+      test('PUT rejects invalid email addresses', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-email')
           .set('Cookie', cookies)
           .send({ email: 'invalid' });
 
         expect(response?.statusCode).toEqual(400);
+        // We cannot use fastify's default validation failure response here
+        // because the client consumes the response and displays it to the user.
+        expect(response?.body).toEqual({
+          type: 'danger',
+          message: 'Email format is invalid'
+        });
       });
+
+      test('PUT rejects a request to update to the existing email (ignoring case) address', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: developerUserEmail.toUpperCase() });
+
+        expect(response?.statusCode).toEqual(400);
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${developerUserEmail} is already associated with this account.
+            You can update a new email address instead.`
+        });
+      });
+
+      test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
+        const successResponse = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: unusedEmailOne });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: unusedEmailOne.toUpperCase() });
+
+        expect(successResponse?.statusCode).toEqual(400);
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `We have already sent an email confirmation request to ${unusedEmailOne}.
+          Please wait 5 minutes to resend an authentication link.`
+        });
+      });
+
+      test('PUT rejects a request if the new email is already in use', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: otherDeveloperUserEmail });
+
+        expect(response?.statusCode).toEqual(400);
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${otherDeveloperUserEmail} is already associated with another account.
+          `
+        });
+      });
+
+      test('PUT rejects the second request if is immediately after the first', async () => {
+        // message Please wait 5 minutes to resend an authentication link.
+
+        const successResponse = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: unusedEmailOne });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: unusedEmailTwo });
+
+        expect(failResponse?.statusCode).toEqual(400);
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `Please wait 5 minutes to resend an authentication link.`
+        });
+      });
+
+      // TODO: test that the correct email gets sent
     });
 
     describe('/update-my-theme', () => {
