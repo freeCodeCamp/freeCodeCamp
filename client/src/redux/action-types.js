@@ -22,6 +22,8 @@ export const actionTypes = createTypes(
     'tryToShowDonationModal',
     'executeGA',
     'showCodeAlly',
+    'startExam',
+    'stopExam',
     'submitComplete',
     'updateComplete',
     'updateFailed',
