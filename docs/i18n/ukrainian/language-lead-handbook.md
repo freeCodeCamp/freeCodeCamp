@@ -372,6 +372,6 @@ flexibleAlerts: {
 
 > [!TIP] Новий редактор може багато чого дізнатись, прочитавши [як редагувати файли](how-to-proofread-files.md).
 
-## How to Add or Update a Language
+## Як додати чи оновити мову
 
-Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.
+Перейдіть до документації з [додавання нової мови](how-to-enable-new-languages.md). Якщо ви оновлюєте мову, див. розділ з [налаштування порядку суперблоків мови](how-to-enable-new-languages.md#configure-the-language-superblock-order).

@@ -371,6 +371,6 @@ O usuário agora é um revisor.
 
 > [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).
 
-## How to Add or Update a Language
+## Como adicionar ou atualizar um idioma
 
-Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.
+Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). Se você estiver atualizando um idioma, a seção sobre a [configuração da ordem dos superblocos de idioma](how-to-enable-new-languages.md#configure-the-language-superblock-order) deve ser útil.
