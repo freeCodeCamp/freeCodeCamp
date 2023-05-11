@@ -318,6 +318,7 @@ export const query = graphql`
   query VideoChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
+        id
         videoId
         videoLocaleIds {
           espanol
