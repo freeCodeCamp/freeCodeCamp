@@ -178,8 +178,6 @@ describe('settingRoutes', () => {
         });
       });
 
-      // errors because it uses a bad word like ass
-
       test('PUT returns an error when the username is a bad word', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')
