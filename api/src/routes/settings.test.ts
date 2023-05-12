@@ -136,16 +136,6 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-username', () => {
-      // After running the test more than once the username will be taken
-      // so we need to update the username to something else
-
-      beforeAll(async () => {
-        await request(fastify?.server)
-          .put('/update-my-username')
-          .set('Cookie', cookies)
-          .send({ username: 'developmentuser' });
-      });
-
       test('PUT returns an error when the username uses special characters', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-username')
@@ -232,10 +222,15 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is already used', async () => {
+        await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'twaha2' });
+
         const response = await request(fastify?.server)
           .put('/update-my-username')
           .set('Cookie', cookies)
-          .send({ username: 'twaha1' });
+          .send({ username: 'twaha2' });
 
         expect(response?.statusCode).toEqual(200);
 
