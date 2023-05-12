@@ -49,7 +49,7 @@ If the service is not coming up on `port:8000`, you can troubleshoot using these
 
 - **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
 
-This should make the `port:8000` avaialable and you can preview the rendered pages in a new tab.
+This should make port `8000` available.
 
 ### How to Prepare your Local Machine
 
