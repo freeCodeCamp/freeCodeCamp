@@ -756,7 +756,10 @@ const certMap = [
         certSlug: 'college-algebra-with-python-v8'
       }
     ]
-  },
+  }
+] as const;
+
+const upcomingCertMap = [
   {
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',
@@ -772,7 +775,6 @@ const certMap = [
     ]
   }
 ] as const;
-const upcomingCertMap = [] as const;
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
@@ -788,11 +790,9 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMapWithoutFullStack = [
-  ...upcomingCertMap,
-  ...legacyCertMap,
-  ...certMap
-] as const;
+const certMapWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
+  : ([...legacyCertMap, ...certMap] as const);
 
 const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
