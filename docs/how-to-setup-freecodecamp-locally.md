@@ -1,5 +1,8 @@
 Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
+> [!ATTENTION]
+> **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2.
+
 ## Choose between Gitpod or your Own Machine (local setup)
 
 If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
