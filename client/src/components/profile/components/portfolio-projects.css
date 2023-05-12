@@ -99,8 +99,8 @@
 
 @media (min-width: 995px) {
   .portfolio-container {
-    grid-template-rows: minmax(75px, 1fr) minmax(125px, 1fr) 75px;
-    grid-template-columns: 300px 1.2fr;
+    grid-template-columns: 450px 1.2fr;
+    grid-template-rows: minmax(65px, 0.1fr) minmax(125px, 1fr) 75px;
   }
 
   .portfolio-screen-shot {
