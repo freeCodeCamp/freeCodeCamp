@@ -136,18 +136,14 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-username', () => {
-      test('PUT returns an error when the username is already used', async () => {
-        const response = await request(fastify?.server)
+      // After running the test more than once the username will be taken
+      // so we need to update the username to something else
+
+      beforeAll(async () => {
+        await request(fastify?.server)
           .put('/update-my-username')
           .set('Cookie', cookies)
           .send({ username: 'developmentuser' });
-
-        expect(response?.statusCode).toEqual(200);
-
-        expect(response?.body).toEqual({
-          message: 'flash.username-taken',
-          type: 'info'
-        });
       });
 
       test('PUT returns an error when the username uses special characters', async () => {
@@ -232,6 +228,20 @@ describe('settingRoutes', () => {
         expect(response?.body).toEqual({
           message: 'flash.username-updated',
           type: 'success'
+        });
+      });
+
+      test('PUT returns an error when the username is already used', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-username')
+          .set('Cookie', cookies)
+          .send({ username: 'twaha1' });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-used',
+          type: 'info'
         });
       });
 

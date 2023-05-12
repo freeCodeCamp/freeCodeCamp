@@ -181,8 +181,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        return { message: `${err} e`, type: 'danger' } as const;
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
   );
