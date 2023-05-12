@@ -39,6 +39,18 @@ There are various ways to launch an GitPod workspace:
 
 That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
 
+**Note: Troubleshooting port issues on GitPod**
+
+Sometimes the service on `port:8000` doesn't go live. This is common when you are restarting an inactive workspace.
+
+If the service is not coming up on `port:8000`, you can troubleshoot using these steps:
+
+- **Start the server**: Run `pnpm run develop:server` in one terminal window from the root project directory (`/workspace/freeCodeCamp`) to start the server.
+
+- **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
+
+This should make port `8000` available.
+
 ### How to Prepare your Local Machine
 
 Here is a minimum system requirement for running freeCodeCamp locally:
