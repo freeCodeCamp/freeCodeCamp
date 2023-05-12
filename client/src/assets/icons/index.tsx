@@ -33,7 +33,8 @@ const iconMap = {
   [SuperBlocks.CodingInterviewPrep]: Algorithm,
   [SuperBlocks.TheOdinProject]: VikingHelmet,
   [SuperBlocks.ProjectEuler]: Graduation,
-  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra
+  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
+  [SuperBlocks.ExampleCertification]: ResponsiveDesign
 };
 
 const generateIconComponent = (
