@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../client/utils/challenge-types';
+import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
@@ -89,6 +90,18 @@ export function buildExtCurriculumData(
 
         superBlock[superBlockKey]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
+
+        const blockChallenges = curriculum[superBlockKey]['blocks'][
+          blockNames[j]
+        ]['challenges'] as unknown as ChallengeNode['challenge'][];
+
+        for (let k = 0; k < blockChallenges.length; k++) {
+          const challenge = blockChallenges[k];
+          const challengeId = challenge['id'];
+          const challengePath = `${superBlockKey}/${blockNames[j]}/${challengeId}`;
+
+          writeToFile(challengePath, challenge);
+        }
       }
 
       writeToFile(superBlockKey, superBlock);
