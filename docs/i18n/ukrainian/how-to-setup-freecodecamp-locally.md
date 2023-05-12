@@ -1,40 +1,40 @@
-Follow these guidelines for setting up a development environment for freeCodeCamp. This is highly recommended if you want to contribute regularly.
+Дотримуйтесь цих рекомендацій, щоб налаштувати середовище розробки freeCodeCamp. Особливо рекомендовано, якщо ви хочете робити внески регулярно.
 
-## Choose between Gitpod or your Own Machine (local setup)
+## Оберіть між Gitpod чи власною машиною (локальне налаштування)
 
-If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+Якщо ви бажаєте зробити одноразовий внесок, використовуйте Gitpod. Налаштування Gitpod надає готове середовище у вашому браузері за декілька хвилин. Для тривалих внесків ми рекомендуємо налаштувати freeCodeCamp на локальній машині.
 
-Here are some pros and cons which should help you decide which option is best for you:
+Ось деякі плюси та мінуси, які допоможуть із вибором:
 
-| Gitpod                                                            | Your own machine (local setup)                                        |
-| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
-| No minimum hardware requirements                                  | Specific and minimum requirements                                     |
-| No need to install any software                                   | Additional software required                                          |
-| Always up to date copy of repository                              | Need to maintain a local copy of the repository                       |
-| Slower and can take a few minutes to launch                       | Faster and can be launched in seconds                                 |
-| Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
-| Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
+| Gitpod                                                                    | Власна машина (локальне налаштування)                           |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Відсутність мінімальних вимог обладнання                                  | Специфічні та мінімальні вимоги                                 |
+| Не потрібно встановлювати програмне забезпечення                          | Потрібне додаткове програмне забезпечення                       |
+| Копія сховища завжди актуальна                                            | Потрібно підтримувати локальну копію репозиторію                |
+| Повільніший та може займати декілька хвилин для запуску                   | Швидший та займає декілька секунд для запуску                   |
+| Потрібне інтернет-з’єднання                                               | Мінімальне інтернет-з’єднання (після налаштування)              |
+| Деякі завдання (наприклад, компіляція та тестування) можуть тривати довше | Швидше виконання завдань (залежно від можливостей вашої машини) |
 
-> [!ATTENTION] **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+> [!ATTENTION] **Примітка:** якщо ви використовуєте Windows 10 або 11, вам знадобиться WSL2. Використовуйте [цей посібник](how-to-setup-wsl.md), щоб налаштувати WSL2. Ви не можете використовувати командний рядок, Git Bash або PowerShell для запуску freeCodeCamp на Windows.
 
-### How to Prepare a Gitpod Workspace
+### Як підготувати робоче середовище Gitpod
 
-We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Ми автоматизували процес встановлення усіх необхідних залежностей та інструментів. Завдяки GitPod ви отримаєте готове середовище за декілька хвилин, яке буде корисним, якщо ви не маєте доступу до комп’ютера чи хочете зробити одноразові зміни.
 
-There are various ways to launch an GitPod workspace:
+Існує декілька способів запустити робоче середовище GitPod:
 
-1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
+1. **(Найшвидший спосіб)** Додайте `gitpod.io/#` на початку будь-якого URL з GitHub.
 
-   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
+   Наприклад, якщо ви відвідуєте форк на `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, додайте `gitpod.io/#` на початку URL-адреси та натисніть клавішу enter.
 
-   That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
+   Ви перейдете на `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` та побачите робоче середовище, створене для вас. Це працює для будь-якого репозиторію чи PR на GitHub.
 
-2. Alternatively install one of the below extensions for your browser.
+2. В іншому випадку встановіть одне з нижчеподаних розширень браузера.
 
-   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
-   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) — працює з браузерами на основі Chromium (Google Chrome, Brave, Edge тощо)
+   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) — Firefox
 
-   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+   Як тільки розширення встановлено, ви побачите кнопку «GitPod» на кожному репозиторії, PR тощо, що дозволить запустити робоче середовище. Перегляньте сторінку розширень для детальнішої інформації, знімків екрану тощо.
 
 That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
 
