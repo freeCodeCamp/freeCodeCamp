@@ -75,8 +75,9 @@ function ShowProfileOrFourOhFour({
   if (!isBrowser()) {
     return null;
   }
+  const hasPorfile = isEmpty(requestedUser) || isEmpty(maybeUser);
 
-  return isEmpty(requestedUser) ? (
+  return hasPorfile ? (
     <Suspense fallback={<Loader fullScreen={true} />}>
       <FourOhFour />
     </Suspense>
