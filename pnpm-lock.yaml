@@ -1208,8 +1208,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       node-fetch:
-        specifier: 2.6.9
-        version: 2.6.9
+        specifier: 2.6.11
+        version: 2.6.11
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
@@ -7759,7 +7759,7 @@ packages:
     dependencies:
       https-proxy-agent: 5.0.1
       mkdirp: 0.5.6
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       progress: 2.0.3
       proxy-from-env: 1.1.0
       which: 2.0.2
@@ -8894,7 +8894,7 @@ packages:
       globby: 11.1.0
       ip: 2.0.0
       lodash: 4.17.21
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       open: 8.4.2
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
@@ -9041,7 +9041,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 4.5.2(webpack@4.46.0)
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       pnp-webpack-plugin: 1.6.4(typescript@4.9.5)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
@@ -9097,7 +9097,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 5.5.0(webpack@5.80.0)
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       process: 0.11.10
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
@@ -9684,13 +9684,13 @@ packages:
   /@tsconfig/node16@1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
 
-  /@turist/fetch@7.2.0(node-fetch@2.6.9):
+  /@turist/fetch@7.2.0(node-fetch@2.6.11):
     resolution: {integrity: sha512-2x7EGw+6OJ29phunsbGvtxlNmSfcuPcyYudkMbi8gARCP9eJ1CtuMvnVUHL//O9Ixi9SJiug8wNt6lj86pN8XQ==}
     peerDependencies:
       node-fetch: '2'
     dependencies:
       '@types/node-fetch': 2.6.3
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
 
   /@turist/time@0.0.2:
     resolution: {integrity: sha512-qLOvfmlG2vCVw5fo/oz8WAZYlpe5a5OurgTj3diIxJCdjRHpapC+vQCz3er9LV79Vcat+DifBjeAhOAdmndtDQ==}
@@ -15667,7 +15667,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       docsify: 4.13.0
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       resolve-pathname: 3.0.0
     transitivePeerDependencies:
       - encoding
@@ -18545,7 +18545,7 @@ packages:
       lodash: 4.17.21
       mitt: 1.2.0
       mkdirp: 0.5.6
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       pkg-dir: 4.2.0
       prettier: 2.8.8
       prop-types: 15.8.1
@@ -18614,7 +18614,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.21.4
       '@babel/runtime': 7.21.5
-      '@turist/fetch': 7.2.0(node-fetch@2.6.9)
+      '@turist/fetch': 7.2.0(node-fetch@2.6.11)
       '@turist/time': 0.0.2
       async-retry-ng: 2.0.1
       boxen: 4.2.0
@@ -18624,7 +18624,7 @@ packages:
       git-up: 4.0.5
       is-docker: 2.2.1
       lodash: 4.17.21
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       uuid: 3.4.0
     transitivePeerDependencies:
       - encoding
@@ -20890,7 +20890,7 @@ packages:
   /isomorphic-unfetch@3.1.0:
     resolution: {integrity: sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==}
     dependencies:
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       unfetch: 4.2.0
     transitivePeerDependencies:
       - encoding
@@ -24677,6 +24677,17 @@ packages:
   /node-fetch@2.6.1:
     resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
     engines: {node: 4.x || >=6.0.0}
+
+  /node-fetch@2.6.11:
+    resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
 
   /node-fetch@2.6.9:
     resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
@@ -30739,7 +30750,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       buffer: 5.7.1
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
     transitivePeerDependencies:
       - encoding
 
