@@ -555,7 +555,9 @@
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
-    "magnifier": "Submit search terms"
+    "magnifier": "Submit search terms",
+    "bear-progress": "A cute teddy bear holding a donation jar",
+    "bear-block-completion": "A cute teddy bear holding a gold cup"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp Curriculum",
