@@ -105,6 +105,7 @@
 }
 
 #mobile-layout .nav-tabs > li > a {
+  position: relative;
   margin-inline-end: 0;
   padding: 5px 10px;
   text-decoration: none;
@@ -122,6 +123,20 @@
 #mobile-layout .nav-tabs > li:not(.active) > a:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
+}
+
+#mobile-layout .nav-tabs > li > a > .button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border: none;
+}
+
+#mobile-layout .nav-tabs > li > a > .button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-background);
 }
 
 #mobile-layout .tab-content {

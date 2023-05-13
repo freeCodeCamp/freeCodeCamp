@@ -8,12 +8,15 @@ import {
   storePortalWindow,
   removePortalWindow,
   setShowPreviewPortal,
+  setShowPreviewPane,
   setIsAdvancing
 } from '../redux/actions';
 import {
+  showPreviewPortalSelector,
   portalWindowSelector,
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface PreviewPortalProps {
   children: ReactElement | null;
@@ -21,8 +24,10 @@ interface PreviewPortalProps {
   t: TFunction;
   storePortalWindow: (window: Window | null) => void;
   removePortalWindow: () => void;
+  showPreviewPortal: boolean;
   portalWindow: null | Window;
   setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   isAdvancing: boolean;
 }
@@ -31,14 +36,21 @@ const mapDispatchToProps = {
   storePortalWindow,
   removePortalWindow,
   setShowPreviewPortal,
+  setShowPreviewPane,
   setIsAdvancing
 };
 
 const mapStateToProps = createSelector(
   isAdvancingToChallengeSelector,
+  showPreviewPortalSelector,
   portalWindowSelector,
-  (isAdvancing: boolean, portalWindow: null | Window) => ({
+  (
+    isAdvancing: boolean,
+    showPreviewPortal: boolean,
+    portalWindow: null | Window
+  ) => ({
     isAdvancing,
+    showPreviewPortal,
     portalWindow
   })
 );
@@ -101,6 +113,10 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.externalWindow?.document.body.appendChild(this.containerEl);
     this.externalWindow?.addEventListener('beforeunload', () => {
       this.props.setShowPreviewPortal(false);
+      if (this.mainWindow.innerWidth < MAX_MOBILE_WIDTH) {
+        this.props.setShowPreviewPane(true);
+      }
+      this.props.removePortalWindow();
     });
 
     this.props.storePortalWindow(this.externalWindow);
@@ -112,10 +128,6 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentWillUnmount() {
-    if (!this.props.isAdvancing) {
-      this.externalWindow?.close();
-    }
-    this.props.removePortalWindow();
     this.props.setIsAdvancing(false);
   }
 

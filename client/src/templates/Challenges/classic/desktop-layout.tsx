@@ -10,7 +10,11 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
-import { setShowPreviewPortal, setShowPreviewPane } from '../redux/actions';
+import {
+  removePortalWindow,
+  setShowPreviewPortal,
+  setShowPreviewPane
+} from '../redux/actions';
 import {
   portalWindowSelector,
   showPreviewPortalSelector,
@@ -47,6 +51,7 @@ interface DesktopLayoutProps {
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
+  removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
@@ -57,6 +62,7 @@ const reflexProps = {
 };
 
 const mapDispatchToProps = {
+  removePortalWindow,
   setShowPreviewPortal,
   setShowPreviewPane
 };
@@ -84,6 +90,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const {
     showPreviewPane,
     showPreviewPortal,
+    removePortalWindow,
     setShowPreviewPane,
     setShowPreviewPortal,
     portalWindow
@@ -99,11 +106,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
         setShowPreviewPane(!showPreviewPane);
         portalWindow?.close();
+        removePortalWindow();
         break;
       case 'showPreviewPortal':
         if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
         setShowPreviewPortal(!showPreviewPortal);
-        if (showPreviewPortal) portalWindow?.close();
+        if (showPreviewPortal) {
+          portalWindow?.close();
+          removePortalWindow();
+        }
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -147,9 +158,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   // on mount
   useEffect(() => {
-    if (isFirstStep) {
-      setShowPreviewPortal(false);
-      portalWindow?.close();
+    if (isFirstStep && !showPreviewPortal) {
       setShowPreviewPane(true);
     } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
       togglePane('showPreviewPane');
