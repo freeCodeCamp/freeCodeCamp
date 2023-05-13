@@ -57,7 +57,7 @@ type DonateModalProps = {
 
 const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
   const { t } = useTranslation();
-  const rotateProgressModalCta = useFeature('rotate-progress-modal-cta').on;
+  const rotateProgressModalCta = useFeature('progress-modal-cta-rotation').on;
   if (rotateProgressModalCta)
     return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
 
