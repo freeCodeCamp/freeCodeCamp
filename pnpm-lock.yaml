@@ -650,8 +650,8 @@ importers:
         specifier: 7.2.9
         version: 7.2.9(react-dom@16.14.0)(react@16.14.0)
       react-reflex:
-        specifier: 4.0.12
-        version: 4.0.12(react-dom@16.14.0)(react@16.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(react-dom@16.14.0)(react@16.14.0)
       react-responsive:
         specifier: 6.1.2
         version: 6.1.2(react@16.14.0)
@@ -27858,12 +27858,12 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /react-reflex@4.0.12(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-sYgX0rW7xuGcs99WwXB/fPlPLzr3kiZhlTF+5Oijz+e2Hh64WlxIJdbrXMr4yA+vtn9Zi4vN/jF2CP7drWAAAQ==}
+  /react-reflex@4.1.0(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-HA+JFDBxRqGgo2oz2qv+3Rf3ZjWCCjdjNOMYFzQ37jwCLfIAfnjBVcYEMtjGRFcFphC38s424D+Fh3ZL19apow==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       lodash.throttle: 4.1.1
       prop-types: 15.8.1
       react: 16.14.0
