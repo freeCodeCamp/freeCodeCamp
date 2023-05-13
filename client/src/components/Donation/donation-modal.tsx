@@ -77,7 +77,7 @@ const RenderIlustration = ({
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
 }) => {
-  const showModalBears = useFeature('show-modal-bear').on;
+  const showModalBears = useFeature('show-modal-bears').on;
   if (showModalBears && recentlyClaimedBlock !== null) {
     if (recentlyClaimedBlock !== null) return <BearBlockCompletion />;
     else return <BearProgressModal />;
