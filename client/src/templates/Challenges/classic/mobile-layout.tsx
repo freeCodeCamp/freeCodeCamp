@@ -193,27 +193,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     };
 
     // sets screen reader text for the two preview buttons
-    function getPreviewBtnsSrText() {
-      // no preview open
-      const previewBtnsSrText = {
-        pane: i18next.t('aria.show-preview'),
-        portal: i18next.t('aria.open-preview-in-new-window')
-      };
-
+    function getPortalBtnSrText() {
       // preview open in main window
-      if (showPreviewPane && !showPreviewPortal) {
-        previewBtnsSrText.pane = i18next.t('aria.hide-preview');
-        previewBtnsSrText.portal = i18next.t('aria.move-preview-to-new-window');
+      let portalBtnSrText = i18next.t('aria.move-preview-to-new-window');
 
-        // preview open in external window
-      } else if (showPreviewPortal && !showPreviewPane) {
-        previewBtnsSrText.pane = i18next.t('aria.move-preview-to-main-window');
-        previewBtnsSrText.portal = i18next.t(
-          'aria.close-external-preview-window'
-        );
+      // preview open in external window
+      if (showPreviewPortal && !showPreviewPane) {
+        portalBtnSrText = i18next.t('aria.close-external-preview-window');
       }
 
-      return previewBtnsSrText;
+      return portalBtnSrText;
     }
 
     // Unlike the desktop layout the mobile version does not have an ActionRow,
@@ -273,9 +262,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                     aria-expanded={!!showPreviewPortal}
                     onClick={() => togglePane('showPreviewPortal')}
                   >
-                    <span className='sr-only'>
-                      {getPreviewBtnsSrText().portal}
-                    </span>
+                    <span className='sr-only'>{getPortalBtnSrText()}</span>
                     <FontAwesomeIcon icon={faWindowRestore} />
                   </button>
                 </>
