@@ -192,7 +192,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       }
     };
 
-    // sets screen reader text for the two preview buttons
+    // sets screen reader text for the portal button
     function getPortalBtnSrText() {
       // preview open in main window
       let portalBtnSrText = i18next.t('aria.move-preview-to-new-window');
