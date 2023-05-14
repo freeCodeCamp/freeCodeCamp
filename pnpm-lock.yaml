@@ -13,6 +13,9 @@ importers:
       pm2:
         specifier: ^5.2.2
         version: 5.2.2
+      pnpm:
+        specifier: ^8.5.0
+        version: 8.5.0
     devDependencies:
       '@babel/eslint-parser':
         specifier: 7.21.8
@@ -4070,7 +4073,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-plugin-utils': 7.21.5
     dev: true
 
   /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.20.12):
@@ -4120,7 +4123,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-plugin-utils': 7.21.5
     dev: true
 
   /@babel/plugin-syntax-optional-chaining@7.8.3(@babel/core@7.20.12):
@@ -26019,6 +26022,12 @@ packages:
     transitivePeerDependencies:
       - typescript
     dev: true
+
+  /pnpm@8.5.0:
+    resolution: {integrity: sha512-eGki4/2GIMFivfbKHIDo1mP1vFvMi39Mh9TxcBHZcFWj09zGzCYD04e05j/60sUkJ1yyzSAszkchBxp9PSL7Ew==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    dev: false
 
   /polished@4.2.2:
     resolution: {integrity: sha512-Sz2Lkdxz6F2Pgnpi9U5Ng/WdWAUZxmHrNPoVlm3aAemxoy2Qy7LGjQg4uf8qKelDAUW94F4np3iH2YPf2qefcQ==}

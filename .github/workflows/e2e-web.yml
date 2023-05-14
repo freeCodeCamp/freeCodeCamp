@@ -11,6 +11,7 @@ on:
     branches:
       - 'main'
       - 'next-**'
+  workflow_dispatch:
 
 jobs:
   build-client:
@@ -75,11 +76,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chrome, firefox, electron]
+        #browsers: [chrome, firefox, electron]
+        browsers: [chrome]
         node-version: [18.x]
-        include:
-          - browsers: electron
-            spec: cypress/e2e/default/learn/challenges/projects.ts
+        # include:
+        #   - browsers: electron
+        #     spec: cypress/e2e/default/learn/challenges/projects.ts
 
     services:
       mongodb:

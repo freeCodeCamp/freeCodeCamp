@@ -98,7 +98,8 @@
   "dependencies": {
     "dotenv": "16.0.3",
     "invariant": "2.2.4",
-    "pm2": "^5.2.2"
+    "pm2": "^5.2.2",
+    "pnpm": "^8.5.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.21.8",
