@@ -269,7 +269,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 <>
                   {i18next.t('learn.editor-tabs.preview')}
                   <button
-                    className='button'
+                    className='portal-button'
                     aria-expanded={!!showPreviewPortal}
                     onClick={() => togglePane('showPreviewPortal')}
                   >
