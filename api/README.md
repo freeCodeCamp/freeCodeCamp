@@ -11,12 +11,18 @@ If you use MongoDB Atlas, the set is managed for you.
 ### Local
 
 The simplest way to run a replica set locally is to use the docker-compose file
-in /tools. First disable any running MongoDB instance on your machine, then run
-the docker-compose file.
+in /tools. Once that's running, update the connection string in .env to use port 27018.
 
 ```bash
 cd tools
 docker compose up -d
+```
+
+The new db will be empty, so you can run the seed script to populate it.
+
+```bash
+cd ../.. # back to the root of the repo
+pnpm seed
 ```
 
 ## Login in development/testing
