@@ -168,8 +168,8 @@ importers:
         specifier: ^8.3.0
         version: 8.3.0
       '@fastify/middie':
-        specifier: '8.2'
-        version: 8.2.0
+        specifier: '8.3'
+        version: 8.3.0
       '@fastify/session':
         specifier: ^10.1.1
         version: 10.1.1
@@ -6260,9 +6260,10 @@ packages:
       steed: 1.1.3
     dev: false
 
-  /@fastify/middie@8.2.0:
-    resolution: {integrity: sha512-E+FVK9GfAe3w64HvI2JuMHbJwUj2r+JRjOlCo5enANNW3EJD5SQZKvhGl3KO1DnnPLoOPO9vNWyl/ivu8n652g==}
+  /@fastify/middie@8.3.0:
+    resolution: {integrity: sha512-h+zBxCzMlkEkh4fM7pZaSGzqS7P9M0Z6rXnWPdUEPfe7x1BCj++wEk/pQ5jpyYY4pF8AknFqb77n7uwh8HdxEA==}
     dependencies:
+      '@fastify/error': 3.2.0
       fastify-plugin: 4.5.0
       path-to-regexp: 6.2.1
       reusify: 1.0.4
