@@ -359,6 +359,10 @@
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "learn-intermediate-oop-by-building-a-platformer-game",
+        "intro": ["", ""]
       }
     }
   },
