@@ -70,7 +70,7 @@
     "date-fns": "2.30.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
-    "eslint": "7",
+    "eslint": "8",
     "final-form": "4.20.9",
     "gatsby": "3.15.0",
     "gatsby-cli": "3.15.0",
