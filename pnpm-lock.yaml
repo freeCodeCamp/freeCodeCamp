@@ -681,7 +681,7 @@ importers:
         version: 2.13.9(redux@4.2.1)
       redux-observable:
         specifier: 1.2.0
-        version: 1.2.0(redux@4.2.1)(rxjs@6.6.7)
+        version: 1.2.0(redux@4.2.1)(rxjs@7.8.1)
       redux-saga:
         specifier: 1.2.3
         version: 1.2.3
@@ -689,8 +689,8 @@ importers:
         specifier: 4.1.8
         version: 4.1.8
       rxjs:
-        specifier: 6.6.7
-        version: 6.6.7
+        specifier: 7.8.1
+        version: 7.8.1
       sanitize-html:
         specifier: 2.10.0
         version: 2.10.0
@@ -9931,7 +9931,7 @@ packages:
     resolution: {integrity: sha512-3uT88kxg8lNzY8ay2ZjP44DKcRaTGztqeIvN2zHvhzIBH/uAPaL75aBtdNRKbA7xXoMbBt5kX0M00VKAnfOYlA==}
     dependencies:
       '@types/through': 0.0.30
-      rxjs: 7.8.0
+      rxjs: 7.8.1
     dev: true
 
   /@types/is-function@1.0.1:
@@ -20251,7 +20251,7 @@ packages:
       mute-stream: 0.0.8
       ora: 5.4.1
       run-async: 2.4.1
-      rxjs: 7.8.0
+      rxjs: 7.8.1
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
@@ -22592,7 +22592,7 @@ packages:
       log-update: 4.0.0
       p-map: 4.0.0
       rfdc: 1.3.0
-      rxjs: 7.8.0
+      rxjs: 7.8.1
       through: 2.3.8
       wrap-ansi: 7.0.0
     dev: true
@@ -22611,7 +22611,7 @@ packages:
       log-update: 4.0.0
       p-map: 4.0.0
       rfdc: 1.3.0
-      rxjs: 7.8.0
+      rxjs: 7.8.1
       through: 2.3.8
       wrap-ansi: 7.0.0
     dev: true
@@ -28326,14 +28326,14 @@ packages:
       lodash.isplainobject: 4.0.6
     dev: true
 
-  /redux-observable@1.2.0(redux@4.2.1)(rxjs@6.6.7):
+  /redux-observable@1.2.0(redux@4.2.1)(rxjs@7.8.1):
     resolution: {integrity: sha512-yeR90RP2WzZzCxxnQPlh2uFzyfFLsfXu8ROh53jGDPXVqj71uNDMmvi/YKQkd9ofiVoO4OYb1snbowO49tCEMg==}
     peerDependencies:
       redux: '>=4 <5'
       rxjs: '>=6.0.0-beta.0 <7'
     dependencies:
       redux: 4.2.1
-      rxjs: 6.6.7
+      rxjs: 7.8.1
     dev: false
 
   /redux-saga-test-plan@4.0.6(@redux-saga/is@1.1.3)(@redux-saga/symbols@1.1.3)(redux-saga@1.2.3):
@@ -29045,11 +29045,10 @@ packages:
     dependencies:
       tslib: 1.14.1
 
-  /rxjs@7.8.0:
-    resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
+  /rxjs@7.8.1:
+    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
       tslib: 2.5.0
-    dev: true
 
   /sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -32372,7 +32371,7 @@ packages:
       joi: 17.9.2
       lodash: 4.17.21
       minimist: 1.2.8
-      rxjs: 7.8.0
+      rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
     dev: true

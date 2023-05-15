@@ -123,7 +123,7 @@
     "redux-observable": "1.2.0",
     "redux-saga": "1.2.3",
     "reselect": "4.1.8",
-    "rxjs": "6.6.7",
+    "rxjs": "7.8.1",
     "sanitize-html": "2.10.0",
     "sass.js": "0.11.1",
     "sha-1": "1.0.0",
