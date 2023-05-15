@@ -578,8 +578,8 @@ importers:
         specifier: 22.4.15
         version: 22.4.15
       jquery:
-        specifier: 3.6.4
-        version: 3.6.4
+        specifier: 3.7.0
+        version: 3.7.0
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -650,8 +650,8 @@ importers:
         specifier: 7.2.9
         version: 7.2.9(react-dom@16.14.0)(react@16.14.0)
       react-reflex:
-        specifier: 4.0.12
-        version: 4.0.12(react-dom@16.14.0)(react@16.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(react-dom@16.14.0)(react@16.14.0)
       react-responsive:
         specifier: 6.1.2
         version: 6.1.2(react@16.14.0)
@@ -729,11 +729,11 @@ importers:
         specifier: 7.21.5
         version: 7.21.5
       '@codesee/babel-plugin-instrument':
-        specifier: 0.582.0
-        version: 0.582.0(@babel/core@7.21.8)
+        specifier: 0.587.0
+        version: 0.587.0(@babel/core@7.21.8)
       '@codesee/tracker':
-        specifier: 0.582.0
-        version: 0.582.0
+        specifier: 0.587.0
+        version: 0.587.0
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
@@ -5901,8 +5901,8 @@ packages:
       minimist: 1.2.8
     dev: true
 
-  /@codesee/babel-plugin-instrument@0.582.0(@babel/core@7.21.8):
-    resolution: {integrity: sha512-xWZn/T7rTYoLo7vw+ARcX5XzG519qqPeX6EJknsb1J8onQnm91X8LmrlsjvHnmO15U4zRl5Zt+TcTnnqp3BQRQ==}
+  /@codesee/babel-plugin-instrument@0.587.0(@babel/core@7.21.8):
+    resolution: {integrity: sha512-kay2VYlVFUugILxnzNdeExTSGYDYgtpSuvevgVk6nIDSaZUVq8YisesePwro/Mo+op7mMMdXpaRvj5d2yncfBQ==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -5917,8 +5917,8 @@ packages:
       - supports-color
     dev: true
 
-  /@codesee/tracker@0.582.0:
-    resolution: {integrity: sha512-xL5pdcsw+taj0o15bD7asHNuwgeCl4tMX+7pJM7m1lW9OimuXX3TnwK7LO2q0FttH1w56SbjNYTAkL+2k2yXow==}
+  /@codesee/tracker@0.587.0:
+    resolution: {integrity: sha512-qCz4rA53Yy+u22N+ypMD4O4jPQmc/+/n2e6CV54z9SxAb7eN5DQyuckVF5JUOrW4yjU/n7UdFKsyaCJ9S0BDJw==}
     dev: true
 
   /@colors/colors@1.5.0:
@@ -22096,8 +22096,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /jquery@3.6.4:
-    resolution: {integrity: sha512-v28EW9DWDFpzcD9O5iyJXg3R3+q+mET5JhnjJzQUZMHOv67bpSIHq81GEYpPNZHG+XXHsfSme3nxp/hndKEcsQ==}
+  /jquery@3.7.0:
+    resolution: {integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==}
     dev: false
 
   /js-git@0.7.8:
@@ -27858,12 +27858,12 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /react-reflex@4.0.12(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-sYgX0rW7xuGcs99WwXB/fPlPLzr3kiZhlTF+5Oijz+e2Hh64WlxIJdbrXMr4yA+vtn9Zi4vN/jF2CP7drWAAAQ==}
+  /react-reflex@4.1.0(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-HA+JFDBxRqGgo2oz2qv+3Rf3ZjWCCjdjNOMYFzQ37jwCLfIAfnjBVcYEMtjGRFcFphC38s424D+Fh3ZL19apow==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       lodash.throttle: 4.1.1
       prop-types: 15.8.1
       react: 16.14.0
