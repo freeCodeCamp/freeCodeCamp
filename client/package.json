@@ -174,7 +174,7 @@
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.3",
     "copy-webpack-plugin": "9.1.0",
-    "core-js": "2.6.12",
+    "core-js": "3.30.2",
     "dotenv": "16.0.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.5.0",
