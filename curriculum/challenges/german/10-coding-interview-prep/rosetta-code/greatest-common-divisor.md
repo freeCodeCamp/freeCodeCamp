@@ -12,49 +12,49 @@ Write a function that returns the greatest common divisor of two integers.
 
 # --hints--
 
-`gcd` should be a function.
+`gcd` sollte eine Funktion sein.
 
 ```js
 assert(typeof gcd == 'function');
 ```
 
-`gcd(24,36)` should return a number.
+`gcd(24,36)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof gcd(24, 36) == 'number');
 ```
 
-`gcd(24,36)` should return `12`.
+`gcd(24,36)` sollte `12` zurückgeben.
 
 ```js
 assert.equal(gcd(24, 36), 12);
 ```
 
-`gcd(30,48)` should return `6`.
+`gcd(30,48)` sollte `6` zurückgeben.
 
 ```js
 assert.equal(gcd(30, 48), 6);
 ```
 
-`gcd(10,15)` should return `5`.
+`gcd(10,15)` sollte `5` zurückgeben.
 
 ```js
 assert.equal(gcd(10, 15), 5);
 ```
 
-`gcd(100,25)` should return `25`.
+`gcd(100,25)` sollte `25` zurückgeben.
 
 ```js
 assert.equal(gcd(100, 25), 25);
 ```
 
-`gcd(13,250)` should return `1`.
+`gcd(13,250)` sollte `1` zurückgeben.
 
 ```js
 assert.equal(gcd(13, 250), 1);
 ```
 
-`gcd(1300,250)` should return `50`.
+`gcd(1300,250)` sollte `50` zurückgeben.
 
 ```js
 assert.equal(gcd(1300, 250), 50);

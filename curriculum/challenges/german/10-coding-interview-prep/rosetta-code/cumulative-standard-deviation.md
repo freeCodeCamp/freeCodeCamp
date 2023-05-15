@@ -37,37 +37,37 @@ Write a function that takes an array of numbers as parameter and returns the <a 
 
 # --hints--
 
-`standardDeviation` should be a function.
+`standardDeviation` sollte eine Funktion sein.
 
 ```js
 assert(typeof standardDeviation == 'function');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return a number.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return `2`.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` sollte `2` zurückgeben.
 
 ```js
 assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
 ```
 
-`standardDeviation([600, 470, 170, 430, 300])` should return `147.323`.
+`standardDeviation([600, 470, 170, 430, 300])` sollte `147.323` zurückgeben.
 
 ```js
 assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
 ```
 
-`standardDeviation([75, 83, 96, 100, 121, 125])` should return `18.239`.
+`standardDeviation([75, 83, 96, 100, 121, 125])` sollte `18.239`.
 
 ```js
 assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
 ```
 
-`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` should return `16.87`.
+`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` sollte `16.87` zurückgeben.
 
 ```js
 assert.equal(
@@ -76,7 +76,7 @@ assert.equal(
 );
 ```
 
-`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` should return `22.631`.
+`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` sollte `22.631` zurückgeben.
 
 ```js
 assert.equal(

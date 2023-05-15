@@ -25,31 +25,31 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` sollte eine Funktion sein.
 
 ```js
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence(30)` should return an array.
+`hailstoneSequence(30)` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` should return `[27, 112]`.
+`hailstoneSequence(30)` sollte `[27, 112]` zurückgeben.
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` should return `[35655, 324]`.
+`hailstoneSequence(50000)` sollte `[35655, 324]` zurückgeben.
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` should return `[77031, 351]`.
+`hailstoneSequence(100000)` sollte `[77031, 351]` zurückgeben.
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

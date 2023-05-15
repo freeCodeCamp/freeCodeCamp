@@ -16,19 +16,19 @@ Write a function that takes two vectors (arrays) as input and computes their cro
 
 # --hints--
 
-`crossProduct` should be a function.
+`crossProduct` sollte eine Funktion sein.
 
 ```js
 assert.equal(typeof crossProduct, 'function');
 ```
 
-`crossProduct()` should return null.
+`crossProduct()` sollte null zurückgeben.
 
 ```js
 assert.equal(crossProduct(), null);
 ```
 
-`crossProduct([1, 2, 3], [4, 5, 6])` should return `[-3, 6, -3]`.
+`crossProduct([1, 2, 3], [4, 5, 6])` sollte `[-3, 6, -3]` zurückgeben.
 
 ```js
 assert.deepEqual(res12, exp12);

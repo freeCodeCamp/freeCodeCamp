@@ -34,7 +34,7 @@ SparseTensor
 
 ---
 
-Constant
+Konstante
 
 ## --video-solution--
 

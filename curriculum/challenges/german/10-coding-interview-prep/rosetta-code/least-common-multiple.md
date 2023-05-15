@@ -18,43 +18,43 @@ Compute the least common multiple of an array of integers. Given *m* and *n*, th
 
 # --hints--
 
-`LCM` should be a function.
+`LCM` sollte eine Funktion sein.
 
 ```js
 assert(typeof LCM == 'function');
 ```
 
-`LCM([2, 4, 8])` should return a number.
+`LCM([2, 4, 8])` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof LCM([2, 4, 8]) == 'number');
 ```
 
-`LCM([2, 4, 8])` should return `8`.
+`LCM([2, 4, 8])` sollte `8` zurückgeben.
 
 ```js
 assert.equal(LCM([2, 4, 8]), 8);
 ```
 
-`LCM([4, 8, 12])` should return `24`.
+`LCM([4, 8, 12])` sollte `24` zurückgeben.
 
 ```js
 assert.equal(LCM([4, 8, 12]), 24);
 ```
 
-`LCM([3, 4, 5, 12, 40])` should return `120`.
+`LCM([3, 4, 5, 12, 40])` sollte `120` zurückgeben.
 
 ```js
 assert.equal(LCM([3, 4, 5, 12, 40]), 120);
 ```
 
-`LCM([11, 33, 90])` should return `990`.
+`LCM([11, 33, 90])` sollte `990` zurückgeben.
 
 ```js
 assert.equal(LCM([11, 33, 90]), 990);
 ```
 
-`LCM([-50, 25, -45, -18, 90, 447])` should return `67050`.
+`LCM([-50, 25, -45, -18, 90, 447])` sollte `67050` zurückgeben.
 
 ```js
 assert.equal(LCM([-50, 25, -45, -18, 90, 447]), 67050);

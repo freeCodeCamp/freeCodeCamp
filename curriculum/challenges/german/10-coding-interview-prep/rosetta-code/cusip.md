@@ -8,7 +8,7 @@ dashedName: cusip
 
 # --description--
 
-A **CUSIP** is a nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
+Eine **CUSIP** ist ein neunstelliger alphanumerischer Code, der ein nordamerikanisches Finanzpapier zum Zwecke der Erleichterung des Clearings und der Abwicklung von Geschäften identifiziert. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
 
 # --instructions--
 
@@ -16,61 +16,61 @@ Write a function that takes a string as a parameter and checks if the string is 
 
 # --hints--
 
-`isCusip` should be a function.
+`isCusip` sollte eine Funktion sein.
 
 ```js
 assert(typeof isCusip == 'function');
 ```
 
-`isCusip("037833100")` should return a boolean.
+`isCusip("037833100")` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof isCusip('037833100') == 'boolean');
 ```
 
-`isCusip("037833100")` should return `true`.
+`isCusip("037833100")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isCusip('037833100'), true);
 ```
 
-`isCusip("17275R102")` should return `true`.
+`isCusip("17275R102")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isCusip('17275R102'), true);
 ```
 
-`isCusip("38259P50a")` should return `false`.
+`isCusip("38259P50a")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isCusip('38259P50a'), false);
 ```
 
-`isCusip("38259P508")` should return `true`.
+`isCusip("38259P508")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isCusip('38259P508'), true);
 ```
 
-`isCusip("38259P50#")` should return `false`.
+`isCusip("38259P50#")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isCusip('38259P50#'), false);
 ```
 
-`isCusip("68389X105")` should return `true`.
+`isCusip("68389X105")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isCusip('68389X105'), true);
 ```
 
-`isCusip("68389X106")` should return `false`.
+`isCusip("68389X106")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isCusip('68389X106'), false);
 ```
 
-`isCusip("5949181")` should return `false`.
+`isCusip("5949181")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isCusip('5949181'), false);

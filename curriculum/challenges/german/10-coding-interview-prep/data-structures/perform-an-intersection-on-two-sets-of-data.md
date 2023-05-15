@@ -14,7 +14,7 @@ For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the 
 
 # --hints--
 
-Your `Set` class should have a `intersection` method.
+Deine `Set`-Klasse sollte eine `intersection`-Methode haben.
 
 ```js
 assert(

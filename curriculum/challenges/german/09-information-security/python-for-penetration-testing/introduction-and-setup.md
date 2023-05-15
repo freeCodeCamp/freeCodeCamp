@@ -22,7 +22,7 @@ Atom and the atom-python-run extension.
 
 ---
 
-VSCode and Microsoft's Python extension.
+VSCode und Microsofts Python-Erweiterung.
 
 ---
 
