@@ -103,6 +103,7 @@ describe('settingRoutes', () => {
 
         expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
+          code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: `body/profileUI must have required property 'showAbout'`,
           statusCode: 400
