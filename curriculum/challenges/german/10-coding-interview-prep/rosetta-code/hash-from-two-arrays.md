@@ -10,7 +10,7 @@ dashedName: hash-from-two-arrays
 
 Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
-Example:
+Beispiel:
 
 ```js
 const firstArr = [1, 2, 3];
@@ -22,43 +22,43 @@ The hash object created from the arrays above will be `{1: "a", 2: "b", 3: "c"}`
 
 # --hints--
 
-`arrToObj` should be a function.
+`arrToObj` sollte eine Funktion sein.
 
 ```js
 assert(typeof arrToObj === 'function');
 ```
 
-`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])` should return `{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }`
+`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])` sollte `{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[0]), res[0]);
 ```
 
-`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])` should return `{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }`
+`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])` sollte `{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[1]), res[1]);
 ```
 
-`arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])` should return `{ 1: "a", 2: "b", 3: "c" }`
+`arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])` sollte `{ 1: "a", 2: "b", 3: "c" }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[2]), res[2]);
 ```
 
-`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])` should return `{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }`
+`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])` sollte `{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[3]), res[3]);
 ```
 
-`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4])` should return `{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": undefined }`
+`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4])` sollte `{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": undefined }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[4]), res[4]);
 ```
 
-`arrToObj(["a", "b", "c"], [1, 2, 3, 4, 5])` should return `{ "a": 1, "b": 2, "c": 3 }`
+`arrToObj(["a", "b", "c"], [1, 2, 3, 4, 5])` sollte `{ "a": 1, "b": 2, "c": 3 }` zurückgeben
 
 ```js
 assert.deepEqual(arrToObj(...testCases[5]), res[5]);

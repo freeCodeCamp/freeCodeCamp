@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9d
-title: 'Problem 286: Scoring probabilities'
+title: 'Problema 286: dare punteggi alle probabilità'
 challengeType: 1
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities
@@ -8,15 +8,15 @@ dashedName: problem-286-scoring-probabilities
 
 # --description--
 
-Barbara is a mathematician and a basketball player. She has found that the probability of scoring a point when shooting from a distance $x$ is exactly ($1 - \frac{x}{q}$), where $q$ is a real constant greater than 50.
+Barbara è una matematica e una giocatrice di basket. Ha trovato che la probabilità di segnare un punto lanciando da una distanza $x$ è esattamente ($1 - \frac{x}{q}$), dove $q$ è una costante reale maggiore di 50.
 
-During each practice run, she takes shots from distances $x = 1, x = 2, \ldots, x = 50$ and, according to her records, she has precisely a 2 % chance to score a total of exactly 20 points.
+Durante ogni allenamento, lancia la palla da distanze $x = 1, x = 2, \ldots, x = 50$ e, secondo le sue registrazioni, ha precisamente un 2 % di possibilità di segnare esattamente 20 punti.
 
-Find $q$ and give your answer rounded to 10 decimal places.
+Trova $q$ e dai la tua risposta arrotondata a 10 cifre decimali.
 
 # --hints--
 
-`scoringProbabilities()` should return `52.6494571953`.
+`scoringProbabilities()` dovrebbe restituire `52.6494571953`.
 
 ```js
 assert.strictEqual(scoringProbabilities(), 52.6494571953);

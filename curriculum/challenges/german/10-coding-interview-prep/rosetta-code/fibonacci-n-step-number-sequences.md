@@ -41,49 +41,49 @@ Write a function to generate Fibonacci $n$-step number sequences and Lucas seque
 
 # --hints--
 
-`fib_luc` should be a function.
+`fib_luc` sollte eine Funktion sein.
 
 ```js
 assert(typeof fib_luc === 'function');
 ```
 
-`fib_luc(2,10,"f")` should return `[1,1,2,3,5,8,13,21,34,55]`.
+`fib_luc(2,10,"f")` sollte `[1,1,2,3,5,8,13,21,34,55]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(2, 10, 'f'), ans[0]);
 ```
 
-`fib_luc(3,15,"f")` should return `[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136]`.
+`fib_luc(3,15,"f")` sollte `[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(3, 15, 'f'), ans[1]);
 ```
 
-`fib_luc(4,15,"f")` should return `[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536]`.
+`fib_luc(4,15,"f")` sollte `[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(4, 15, 'f'), ans[2]);
 ```
 
-`fib_luc(2,10,"l")` should return `[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76]`.
+`fib_luc(2,10,"l")` sollte `[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(2, 10, 'l'), ans[3]);
 ```
 
-`fib_luc(3,15,"l")` should return `[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ]`.
+`fib_luc(3,15,"l")` sollte `[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(3, 15, 'l'), ans[4]);
 ```
 
-`fib_luc(4,15,"l")` should return `[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ]`.
+`fib_luc(4,15,"l")` sollte `[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(4, 15, 'l'), ans[5]);
 ```
 
-`fib_luc(5,15,"l")` should return `[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]`.
+`fib_luc(5,15,"l")` sollte `[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fib_luc(5, 15, 'l'), ans[6]);
