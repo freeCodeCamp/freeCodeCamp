@@ -26,8 +26,12 @@ function AvatarRenderer({
 
   useEffect(() => {
     const validationImage = document.createElement('img');
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    if (isURL(picture, { require_protocol: true })) {
+    if (
+      // we probably have loads of records in the database with this default avatar URL set. To prevent making a request to the image we know will 404.
+      !/freecodecamp\.com\/sample-image/.test(picture) &&
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      isURL(picture, { require_protocol: true })
+    ) {
       validationImage.src = picture;
       validationImage.onload = onImageLoad;
       validationImage.onerror = onImageError;
