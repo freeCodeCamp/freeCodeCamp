@@ -202,7 +202,19 @@ function NavLinks({
           </li>
         </>
       )}
-      <li key='forum' className='nav-line'>
+      <li key='contribute' className='nav-line'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.contribute')}
+        >
+          <span>{t('buttons.contribute')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
+      <li key='forum'>
         <Link
           className='nav-link nav-link-flex'
           external={true}
