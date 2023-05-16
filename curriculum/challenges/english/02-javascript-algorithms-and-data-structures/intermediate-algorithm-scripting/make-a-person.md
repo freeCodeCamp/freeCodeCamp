@@ -147,8 +147,6 @@ const _test_bob = new Person('Bob Ross');
 
 ```js
 const Person = function(firstAndLast) {
-  // Only change code below this line
-  // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
   };
