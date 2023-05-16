@@ -101,36 +101,34 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showInstructions, setShowInstuctions] = useState(true);
 
   const togglePane = (pane: string): void => {
-    switch (pane) {
-      case 'showPreviewPane':
-        if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
-        setShowPreviewPane(!showPreviewPane);
+    if (pane === 'showPreviewPane') {
+      if (!showPreviewPane && showPreviewPortal) {
+        setShowPreviewPortal(false);
+      }
+      setShowPreviewPane(!showPreviewPane);
+      portalWindow?.close();
+      removePortalWindow();
+    } else if (pane === 'showPreviewPortal') {
+      if (!showPreviewPortal && showPreviewPane) {
+        setShowPreviewPane(false);
+      }
+      setShowPreviewPortal(!showPreviewPortal);
+      if (showPreviewPortal) {
         portalWindow?.close();
         removePortalWindow();
-        break;
-      case 'showPreviewPortal':
-        if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
-        setShowPreviewPortal(!showPreviewPortal);
-        if (showPreviewPortal) {
-          portalWindow?.close();
-          removePortalWindow();
-        }
-        break;
-      case 'showConsole':
-        setShowConsole(!showConsole);
-        break;
-      case 'showNotes':
-        setShowNotes(!showNotes);
-        break;
-      case 'showInstructions':
-        setShowInstuctions(!showInstructions);
-        break;
-      default:
-        setShowInstuctions(true);
-        setShowConsole(false);
-        setShowPreviewPane(true);
-        setShowPreviewPortal(false);
-        setShowNotes(false);
+      }
+    } else if (pane === 'showConsole') {
+      setShowConsole(!showConsole);
+    } else if (pane === 'showNotes') {
+      setShowNotes(!showNotes);
+    } else if (pane === 'showInstructions') {
+      setShowInstuctions(!showInstructions);
+    } else {
+      setShowInstuctions(true);
+      setShowConsole(false);
+      setShowPreviewPane(true);
+      setShowPreviewPortal(false);
+      setShowNotes(false);
     }
   };
 

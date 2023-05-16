@@ -170,25 +170,25 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     const displayPreviewPortal = hasPreview && showPreviewPortal;
 
     const togglePane = (pane: string): void => {
-      switch (pane) {
-        case 'showPreviewPane':
-          if (!showPreviewPane && showPreviewPortal)
-            setShowPreviewPortal(false);
-          setShowPreviewPane(!showPreviewPane);
+      if (pane === 'showPreviewPane') {
+        if (!showPreviewPane && showPreviewPortal) {
+          setShowPreviewPortal(false);
+        }
+        setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
+        removePortalWindow();
+      } else if (pane === 'showPreviewPortal') {
+        if (!showPreviewPortal && showPreviewPane) {
+          setShowPreviewPane(false);
+        }
+        setShowPreviewPortal(!showPreviewPortal);
+        if (showPreviewPortal) {
           portalWindow?.close();
           removePortalWindow();
-          break;
-        case 'showPreviewPortal':
-          if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
-          setShowPreviewPortal(!showPreviewPortal);
-          if (showPreviewPortal) {
-            portalWindow?.close();
-            removePortalWindow();
-          }
-          break;
-        default:
-          setShowPreviewPane(true);
-          setShowPreviewPortal(false);
+        }
+      } else {
+        setShowPreviewPane(true);
+        setShowPreviewPortal(false);
       }
     };
 
