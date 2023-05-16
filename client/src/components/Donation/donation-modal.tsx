@@ -78,10 +78,10 @@ const RenderIlustration = ({
   recentlyClaimedBlock: RecentlyClaimedBlock;
 }) => {
   const showModalBears = useFeature('show-modal-bears').on;
-  if (showModalBears && recentlyClaimedBlock !== null) {
+  if (showModalBears) {
     if (recentlyClaimedBlock !== null) return <BearBlockCompletion />;
     else return <BearProgressModal />;
-  } else if (recentlyClaimedBlock) {
+  } else if (recentlyClaimedBlock !== null) {
     return <Cup className='donation-icon' />;
   } else {
     return <Heart className='donation-icon' />;
