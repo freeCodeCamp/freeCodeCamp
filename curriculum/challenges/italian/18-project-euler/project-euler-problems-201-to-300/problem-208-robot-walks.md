@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff51
-title: 'Problem 208: Robot Walks'
+title: 'Problema 208: passi da robot'
 challengeType: 1
 forumTopicId: 301849
 dashedName: problem-208-robot-walks
@@ -8,19 +8,19 @@ dashedName: problem-208-robot-walks
 
 # --description--
 
-A robot moves in a series of one-fifth circular arcs (72°), with a free choice of a clockwise or an anticlockwise arc for each step, but no turning on the spot.
+Un robot si muove in una serie di archi di un quinto di cerchio (72°), con la scelta libera di fare l'arco in senso orario o antiorario per ogni passo, ma senza potersi girare sul posto.
 
-One of 70932 possible closed paths of 25 arcs starting northward is
+Uno dei possibili 70932 percorsi chiusi di 25 archi iniziando verso nord è
 
-<img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="percorso chiuso di 25 archi, iniziando verso nord" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
 
-Given that the robot starts facing North, how many journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
+Dato che il robot inizia guardando verso nord, quanti viaggi di 70 archi di lunghezza può fare per tornare, dopo l'arco finale, alla sua posizione di partenza?
 
-**Note:** Any arc may be traversed multiple times.
+**Nota:** qualsiasi arco può essere attraversato più volte.
 
 # --hints--
 
-`robotWalks()` should return `331951449665644800`.
+`robotWalks()` dovrebbe restituire `331951449665644800`.
 
 ```js
 assert.strictEqual(robotWalks(), 331951449665644800);

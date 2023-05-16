@@ -1,6 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff41
-title: 'Problem 193: Squarefree Numbers'
+title: 'Problema 193: numeri senza quadrati'
 challengeType: 1
 forumTopicId: 301831
 dashedName: problem-193-squarefree-numbers
@@ -8,13 +8,13 @@ dashedName: problem-193-squarefree-numbers
 
 # --description--
 
-A positive integer $n$ is called squarefree, if no square of a prime divides $n$, thus 1, 2, 3, 5, 6, 7, 10, 11 are squarefree, but not 4, 8, 9, 12.
+Un numero intero positivo $n$ è detto senza quadrati se nessun quadrato di un numero primo divide $n$, così 1, 2, 3, 5, 6, 7, 10, 11 sono senza quadrati, ma non 4, 8, 9, 12.
 
-How many squarefree numbers are there below $2^{50}$?
+Quanti numeri senza quadrati ci sono sotto $2^{50}$?
 
 # --hints--
 
-`squarefreeNumbers()` should return `684465067343069`.
+`squarefreeNumbers()` dovrebbe restituire `684465067343069`.
 
 ```js
 assert.strictEqual(squarefreeNumbers(), 684465067343069);

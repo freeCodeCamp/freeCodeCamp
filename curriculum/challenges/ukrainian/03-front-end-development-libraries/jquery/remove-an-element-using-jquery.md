@@ -10,7 +10,7 @@ dashedName: remove-an-element-using-jquery
 
 Видалимо елемент у форматі HTML із вашої сторінки за допомогою jQuery.
 
-jQuery має функцію під назвою `.remove()`, яка повністю видалить HTML-елемент
+jQuery has a function called `.remove()` that will remove an HTML element entirely.
 
 Видаліть зі сторінки елемент `#target4` за допомогою функції `.remove()`.
 

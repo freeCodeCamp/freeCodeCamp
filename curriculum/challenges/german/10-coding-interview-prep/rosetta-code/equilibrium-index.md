@@ -46,43 +46,43 @@ Assume that the sequence may be very long.
 
 # --hints--
 
-`equilibrium` should be a function.
+`equilibrium` sollte eine Funktion sein.
 
 ```js
 assert(typeof equilibrium === 'function');
 ```
 
-`equilibrium([-7, 1, 5, 2, -4, 3, 0])` should return `[3,6]`.
+`equilibrium([-7, 1, 5, 2, -4, 3, 0])` sollte `[3,6]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);
 ```
 
-`equilibrium([2, 4, 6])` should return `[]`.
+`equilibrium([2, 4, 6])` sollte `[]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[1]), ans[1]);
 ```
 
-`equilibrium([2, 9, 2])` should return `[1]`.
+`equilibrium([2, 9, 2])` sollte `[1]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[2]), ans[2]);
 ```
 
-`equilibrium([1, -1, 1, -1, 1, -1, 1])` should return `[0,1,2,3,4,5,6]`.
+`equilibrium([1, -1, 1, -1, 1, -1, 1])` sollte `[0,1,2,3,4,5,6]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[3]), ans[3]);
 ```
 
-`equilibrium([1])` should return `[0]`.
+`equilibrium([1])` sollte `[0]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
 ```
 
-`equilibrium([])` should return `[]`.
+`equilibrium([])` sollte `[]` zurückgeben.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);

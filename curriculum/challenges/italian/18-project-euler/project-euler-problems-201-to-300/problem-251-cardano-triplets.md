@@ -1,6 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff7a
-title: 'Problem 251: Cardano Triplets'
+title: 'Problema 251: terne di Cardano'
 challengeType: 1
 forumTopicId: 301899
 dashedName: problem-251-cardano-triplets
@@ -8,19 +8,19 @@ dashedName: problem-251-cardano-triplets
 
 # --description--
 
-A triplet of positive integers ($a$,$b$,$c$) is called a Cardano Triplet if it satisfies the condition:
+Una terna di numeri interi positivi ($a$,$b$,$c$) è chiamata terna di Cardano se soddisfa la condizione:
 
 $$\sqrt[3]{a + b \sqrt{c}} + \sqrt[3]{a - b \sqrt{c}} = 1$$
 
-For example, (2,1,5) is a Cardano Triplet.
+Per esempio, (2,1,5) è una terna di Cardano.
 
-There exist 149 Cardano Triplets for which $a + b + c ≤ 1000$.
+Esistono 149 terne di Cardano per cui $a + b + c ≤ 1000$.
 
-Find how many Cardano Triplets exist such that $a + b + c ≤ 110\\,000\\,000$.
+Trova quante terne di Cardano esistono tali che $a + b + c ≤ 110\\,000\\,000$.
 
 # --hints--
 
-`cardanoTriplets()` should return `18946051`.
+`cardanoTriplets()` dovrebbe restituire `18946051`.
 
 ```js
 assert.strictEqual(cardanoTriplets(), 18946051);

@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
+title: Ausblenden potenziell gefährlicher Informationen mit helmet.hidePoweredBy()
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
@@ -10,7 +10,7 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express. `X-Powered-By: Express` is sent in every request coming from Express by default. Use the `helmet.hidePoweredBy()` middleware to remove the X-Powered-By header.
+Hacker können bekannte Schwachstellen in Express/Node ausnutzen, wenn sie sehen, dass deine Website von Express betrieben wird. `X-Powered-By: Express` wird standardmäßig in jeder Anfrage von Express gesendet. Verwende die `helmet.hidePoweredBy()`-Middleware, um den X-Powered-By-Header zu entfernen.
 
 # --hints--
 

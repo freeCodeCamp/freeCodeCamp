@@ -14,7 +14,7 @@ dashedName: functions-and-graphing-extra
 
 # --question--
 
-## --assignemnts--
+## --assignment--
 
 Додайте код для функцій та графіків до свого блокнота Colab.
 

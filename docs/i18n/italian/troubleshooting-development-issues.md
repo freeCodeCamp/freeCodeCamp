@@ -90,7 +90,7 @@ C'è un pulsante "Preview Custom 404 Page", cliccalo per vedere il profilo.
 
 Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscano di accedere alle risorse.
 
-La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
+La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Be patient, and if you are still stuck we recommend using Gitpod instead of an offline setup.
 
 > [!NOTE] Se stai usando un dispositivo Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
 

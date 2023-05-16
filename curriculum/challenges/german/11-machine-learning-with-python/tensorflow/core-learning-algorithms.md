@@ -24,7 +24,7 @@ Multiple regression
 
 ---
 
-Correlation
+Korrelation
 
 ---
 
@@ -32,7 +32,7 @@ Decision tree
 
 ---
 
-Linear regression
+Lineare Regression
 
 ## --video-solution--
 

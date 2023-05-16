@@ -20,7 +20,7 @@ Write a function that takes a number `n` as a parameter and returns the identity
 
 # --hints--
 
-`idMatrix` should be a function.
+`idMatrix` sollte eine Funktion sein.
 
 ```js
 assert(typeof idMatrix == 'function');
@@ -32,25 +32,25 @@ assert(typeof idMatrix == 'function');
 assert(Array.isArray(idMatrix(1)));
 ```
 
-`idMatrix(1)` should return `[ [ 1 ] ]`.
+`idMatrix(1)` sollte `[ [ 1 ] ]` zurückgeben.
 
 ```js
 assert.deepEqual(idMatrix(1), results[0]);
 ```
 
-`idMatrix(2)` should return `[ [ 1, 0 ], [ 0, 1 ] ]`.
+`idMatrix(2)` sollte `[ [ 1, 0 ], [ 0, 1 ] ]` zurückgeben.
 
 ```js
 assert.deepEqual(idMatrix(2), results[1]);
 ```
 
-`idMatrix(3)` should return `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]`.
+`idMatrix(3)` sollte `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]` zurückgeben.
 
 ```js
 assert.deepEqual(idMatrix(3), results[2]);
 ```
 
-`idMatrix(4)` should return `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]`.
+`idMatrix(4)` sollte `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]` zurückgeben.
 
 ```js
 assert.deepEqual(idMatrix(4), results[3]);

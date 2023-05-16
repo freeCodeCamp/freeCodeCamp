@@ -40,7 +40,7 @@ For the answer, please output an object in the following format:
 
 # --hints--
 
-`pythagoreanMeans` should be a function.
+`pythagoreanMeans` sollte eine Funktion sein.
 
 ```js
 assert(typeof pythagoreanMeans === 'function');

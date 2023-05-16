@@ -1,8 +1,9 @@
+import { selectors } from '../../../support/selectors';
+
 const hotKeySelectors = {
   instructions: '.challenge-instructions',
   instructionsPanel: '.instructions-panel',
-  editorContainer: '.monaco-editor',
-  console: '.output-text'
+  editorContainer: '.monaco-editor'
 };
 
 const links = {
@@ -87,7 +88,7 @@ describe('The hotkeys should work correctly', () => {
   it('should be possible to press ctrl enter to run the test', () => {
     cy.visit(links.classic1);
     cy.get(hotKeySelectors.instructions).click().type('{ctrl}{enter}');
-    cy.get(hotKeySelectors.console).contains('// running tests');
+    cy.get(selectors.dataCy.outputText).contains('// running tests');
   });
 
   it('should be possible to go to navigation view by pressing escape', () => {
@@ -100,7 +101,7 @@ describe('The hotkeys should work correctly', () => {
   it('it should be possible to focus on the instructions by pressing r', () => {
     cy.visit(links.classic1);
     cy.get(hotKeySelectors.editorContainer).type('{esc}');
-    cy.get(hotKeySelectors.console).click().type('r');
+    cy.get(selectors.dataCy.outputText).click().type('r');
     cy.get(hotKeySelectors.instructionsPanel).should('have.focus');
   });
 });

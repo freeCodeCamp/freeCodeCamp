@@ -1,6 +1,6 @@
 ---
 id: 5900f4621000cf542c50ff74
-title: 'Problem 245: Coresilience'
+title: 'Problema 245: coresilienza'
 challengeType: 1
 forumTopicId: 301892
 dashedName: problem-245-coresilience
@@ -8,21 +8,21 @@ dashedName: problem-245-coresilience
 
 # --description--
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+Chiameremo frazione resiliente una frazione che non può essere semplificata.
 
-Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
+Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che sono resilienti; per esempio, $R(12) = \frac{4}{11}$.
 
-The resilience of a number $d > 1$ is then $\frac{φ(d)}{d − 1}$ , where $φ$ is Euler's totient function.
+La resilienza di un numero $d > 1$ è allora $\frac{φ(d)}{d − 1}$ , dove $φ$ è la funzione toziente di Eulero.
 
-We further define the coresilience of a number $n > 1$ as $C(n) = \frac{n − φ(n)}{n − 1}$.
+Definiamo inoltre la coresilienza di un numero $n > 1$ come $C(n) = \frac{n − φ(n)}{n − 1}$.
 
-The coresilience of a prime $p$ is $C(p) = \frac{1}{p − 1}$.
+La coresilienza di un primo $p$ è $C(p) = \frac{1}{p − 1}$.
 
-Find the sum of all composite integers $1 &lt; n ≤ 2 × {10}^{11}$, for which $C(n)$ is a unit fraction.
+Trova la somma di tutti i numeri interi $1 &lt; n ≤ 2 × {10}^{11}$, per cui $C(n)$ è una frazione unitaria.
 
 # --hints--
 
-`coresilience()` should return `288084712410001`.
+`coresilience()` dovrebbe restituire `288084712410001`.
 
 ```js
 assert.strictEqual(coresilience(), 288084712410001);
