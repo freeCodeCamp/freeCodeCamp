@@ -157,40 +157,60 @@ bob.getFullName();
 
 ```js
 const Person = function(firstAndLast) {
-
-  let firstName, lastName;
-
-  function updateName(str) {
-    firstName = str.split(" ")[0];
-    lastName = str.split(" ")[1];
-  }
-
-  updateName(firstAndLast);
-
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  var firstName;
+  var lastName;
+  var fullName;
   this.getFirstName = function(){
-    return firstName;
-  };
-
+    if(firstName !== undefined){
+      return firstName
+    }
+    else{
+       firstName =  firstAndLast.split(" ")[0] ;
+       return firstName;
+    }
+     
+  }
   this.getLastName = function(){
-    return lastName;
-  };
-
-  this.getFullName = function(){
-    return firstName + " " + lastName;
-  };
+     if(lastName !== undefined){
+      return lastName
+    }
+    else{
+       lastName =  firstAndLast.split(" ")[1] ;
+       return lastName;
+    }
+  }
 
   this.setFirstName = function(str){
     firstName = str;
-  };
-
+    lastName = firstAndLast.split(" ")[1]
+    // return firstName +" "+ lastName;
+  }
 
   this.setLastName = function(str){
+    firstName = firstAndLast.split(" ")[0] 
     lastName = str;
+    // return firstName +" "+ lastName;
+  }
+  
+  this.getFullName = function() {
+     if(firstName !== undefined || lastName !== undefined){
+          
+          fullName = firstName +" "+ lastName;
+      }
+      else{
+          fullName= firstAndLast
+      }
+    
+    return fullName;
   };
 
   this.setFullName = function(str){
-    updateName(str);
-  };
+    firstName = str.split(" ")[0];
+    lastName = str.split(" ")[1];
+  }
+  return firstAndLast;
 };
 
 const bob = new Person('Bob Ross');
