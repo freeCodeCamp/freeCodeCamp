@@ -16,7 +16,7 @@ The aim of the game is to arrange four numbers in a way that when evaluated, the
 
 Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
 
-**Rules:**
+**Regeln:**
 <ul>
   <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
   <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
@@ -33,7 +33,7 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` solllte eine Funktion sein.
 
 ```js
 assert(typeof solve24 === 'function');

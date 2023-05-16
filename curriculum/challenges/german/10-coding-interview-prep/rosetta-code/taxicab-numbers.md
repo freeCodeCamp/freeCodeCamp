@@ -12,7 +12,7 @@ A taxicab number (the definition that is being used here) is a positive integer 
 
 The first taxicab number is `1729`, which is:
 
-1<sup>3</sup> + 12<sup>3</sup> and
+1<sup>3</sup> + 12<sup>3</sup> und
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
@@ -31,13 +31,13 @@ Write a function that returns the lowest `n` taxicab numbers. For each of the ta
 
 # --hints--
 
-`taxicabNumbers` should be a function.
+`taxicabNumbers` sollte eine Funktion sein.
 
 ```js
 assert(typeof taxicabNumbers === 'function');
 ```
 
-`taxicabNumbers` should return an array.
+`taxicabNumbers` sollte ein Array zurückgeben.
 
 ```js
 assert(typeof taxicabNumbers(2) === 'object');
@@ -49,13 +49,13 @@ assert(typeof taxicabNumbers(2) === 'object');
 assert(typeof taxicabNumbers(100)[0] === 'number');
 ```
 
-`taxicabNumbers(4)` should return [1729, 4104, 13832, 20683].
+`taxicabNumbers(4)` sollte [1729, 4104, 13832, 20683] zurückgeben.
 
 ```js
 assert.deepEqual(taxicabNumbers(4), res4);
 ```
 
-`taxicabNumbers(25)` should return [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
+`taxicabNumbers(25)` sollte [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597] zurückgeben
 
 ```js
 assert.deepEqual(taxicabNumbers(25), res25);

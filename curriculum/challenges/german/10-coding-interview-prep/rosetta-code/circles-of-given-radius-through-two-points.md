@@ -10,7 +10,7 @@ dashedName: circles-of-given-radius-through-two-points
 
 Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
 
-**Exceptions:**
+**Ausnahmen:**
 
 <ul>
   <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
@@ -43,37 +43,37 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` sollte eine Funktion sein.
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` sollte `[[1.8631, 1.9742], [-0.8632, -0.7521]]` zurückgeben.
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` sollte `[0, 1]` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` sollte `Coincident point. Infinite solutions` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` sollte `No intersection. Points further apart than circle diameter` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` sollte `Radius Zero` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

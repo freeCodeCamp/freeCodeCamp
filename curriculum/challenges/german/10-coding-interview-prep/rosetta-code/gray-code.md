@@ -32,7 +32,7 @@ else
   g[i] = b[i]
 </pre>
 
-Or:
+Oder:
 
 <pre>g = b xor (b logically right shifted 1 time)
 </pre>
@@ -40,55 +40,55 @@ Or:
 Decoding (MSB is bit 0, b is binary, g is Gray code):
 
 <pre>b[0] = g[0]<br>
-for other bits:
+für andere Bits:
 b[i] = g[i] xor b[i-1]
 </pre>
 
 # --hints--
 
-`gray` should be a function.
+`gray` sollte eine Funktion sein.
 
 ```js
 assert(typeof gray == 'function');
 ```
 
-`gray(true,177)` should return a number.
+`gray(true,177)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof gray(true, 177) == 'number');
 ```
 
-`gray(true,177)` should return `233`.
+`gray(true,177)` sollte `233` zurückgeben.
 
 ```js
 assert.equal(gray(true, 177), 233);
 ```
 
-`gray(true,425)` should return `381`.
+`gray(true,425)` sollte `381` zurückgeben.
 
 ```js
 assert.equal(gray(true, 425), 381);
 ```
 
-`gray(true,870)` should return `725`.
+`gray(true,870)` sollte `725` zurückgeben.
 
 ```js
 assert.equal(gray(true, 870), 725);
 ```
 
-`gray(false,233)` should return `177`.
+`gray(false,233)` sollte `177` zurückgeben.
 
 ```js
 assert.equal(gray(false, 233), 177);
 ```
 
-`gray(false,381)` should return `425`.
+`gray(false,381)` sollte `425` zurückgeben.
 
 ```js
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)` sollte `870` zurückgeben.
 
 ```js
 assert.equal(gray(false, 725), 870);

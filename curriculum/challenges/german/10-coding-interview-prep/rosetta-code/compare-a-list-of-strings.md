@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A list is an ordered set of values that may contain duplicates. Here is an example:
+A list is an ordered set of values that may contain duplicates. Hier ist ein Beispiel:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
@@ -23,73 +23,73 @@ Given a list of arbitrarily many strings, implement a function for each of the f
 
 # --hints--
 
-`allEqual` should be a function.
+`allEqual` sollte eine Funktion sein.
 
 ```js
 assert(typeof allEqual === 'function');
 ```
 
-`azSorted` should be a function.
+`azSorted` sollte eine Funktion sein.
 
 ```js
 assert(typeof azSorted === 'function');
 ```
 
-`allEqual(["AA", "AA", "AA", "AA"])` should return true.
+`allEqual(["AA", "AA", "AA", "AA"])` sollte true zurückgeben.
 
 ```js
 assert(allEqual(testCases[0]));
 ```
 
-`azSorted(["AA", "AA", "AA", "AA"])` should return false.
+`azSorted(["AA", "AA", "AA", "AA"])` sollte false zurückgeben.
 
 ```js
 assert(!azSorted(testCases[0]));
 ```
 
-`allEqual(["AA", "ACB", "BB", "CC"])` should return false.
+`allEqual(["AA", "ACB", "BB", "CC"])` sollte false zurückgeben.
 
 ```js
 assert(!allEqual(testCases[1]));
 ```
 
-`azSorted(["AA", "ACB", "BB", "CC"])` should return true.
+`azSorted(["AA", "ACB", "BB", "CC"])` sollte true zurückgeben.
 
 ```js
 assert(azSorted(testCases[1]));
 ```
 
-`allEqual([])` should return true.
+`allEqual([])` sollte true zurückgeben.
 
 ```js
 assert(allEqual(testCases[2]));
 ```
 
-`azSorted([])` should return true.
+`azSorted([])` sollte true zurückgeben.
 
 ```js
 assert(azSorted(testCases[2]));
 ```
 
-`allEqual(["AA"])` should return true.
+`allEqual(["AA"])` sollte true zurückgeben.
 
 ```js
 assert(allEqual(testCases[3]));
 ```
 
-`azSorted(["AA"])` should return true.
+`azSorted(["AA"])` sollte true zurückgeben.
 
 ```js
 assert(azSorted(testCases[3]));
 ```
 
-`allEqual(["BB", "AA"])` should return false.
+`allEqual(["BB", "AA"])` sollte false zurückgeben.
 
 ```js
 assert(!allEqual(testCases[4]));
 ```
 
-`azSorted(["BB", "AA"])` should return false.
+`azSorted(["BB", "AA"])` sollte false zurückgeben.
 
 ```js
 assert(!azSorted(testCases[4]));

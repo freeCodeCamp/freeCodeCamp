@@ -20,7 +20,6 @@ import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
-import { testRoutes } from './routes/test';
 import { settingRoutes } from './routes/settings';
 import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testMiddleware } from './middleware';
@@ -117,7 +116,6 @@ export const build = async (
 
   void fastify.register(prismaPlugin);
 
-  void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth' });
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
