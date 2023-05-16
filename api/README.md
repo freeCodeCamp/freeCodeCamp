@@ -22,7 +22,7 @@ Once that's running, update the connection string in the `.env` file to use port
 
 ```txt
 # Database
-MONGOHQ_URL=mongodb://127.0.0.1:27017/freecodecamp?directConnection=true
+MONGOHQ_URL=mongodb://127.0.0.1:27018/freecodecamp?directConnection=true
 ```
 
 The new db will be empty, so you can run the seed script to populate it.
