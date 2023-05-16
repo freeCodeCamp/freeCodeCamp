@@ -1,14 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 function BearProgressModal(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
-  const { t } = useTranslation();
-
   return (
     <>
-      <span className='sr-only'>{t('icons.bear-progress')}</span>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 187 175'
