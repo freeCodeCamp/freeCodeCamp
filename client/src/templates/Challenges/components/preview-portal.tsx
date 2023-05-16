@@ -9,12 +9,14 @@ import {
   removePortalWindow,
   setShowPreviewPortal,
   setShowPreviewPane,
-  setIsAdvancing
+  setIsAdvancing,
+  setChapterSlug
 } from '../redux/actions';
 import {
   showPreviewPortalSelector,
   portalWindowSelector,
-  isAdvancingToChallengeSelector
+  isAdvancingToChallengeSelector,
+  chapterSlugSelector
 } from '../redux/selectors';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -30,6 +32,8 @@ interface PreviewPortalProps {
   setShowPreviewPane: (arg: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   isAdvancing: boolean;
+  setChapterSlug: (arg: string) => void;
+  chapterSlug: string;
 }
 
 const mapDispatchToProps = {
@@ -37,29 +41,40 @@ const mapDispatchToProps = {
   removePortalWindow,
   setShowPreviewPortal,
   setShowPreviewPane,
-  setIsAdvancing
+  setIsAdvancing,
+  setChapterSlug
 };
 
 const mapStateToProps = createSelector(
   isAdvancingToChallengeSelector,
+  chapterSlugSelector,
   showPreviewPortalSelector,
   portalWindowSelector,
   (
     isAdvancing: boolean,
+    chapterSlug: string,
     showPreviewPortal: boolean,
     portalWindow: null | Window
   ) => ({
     isAdvancing,
+    chapterSlug,
     showPreviewPortal,
     portalWindow
   })
 );
+
+const getChapterSlug = (w: Window): string => {
+  const urlSegments = w.location.href.split('/');
+  // minus two to account for starting at zero and skipping the "step" number segment
+  return urlSegments[urlSegments.length - 2];
+};
 
 class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   mainWindow: Window;
   externalWindow: Window | null = null;
   isAdvancing: boolean;
+  chapterSlug: string;
   containerEl;
   titleEl;
   styleEl;
@@ -69,6 +84,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.mainWindow = window;
     this.externalWindow = this.props.portalWindow;
     this.isAdvancing = this.props.isAdvancing;
+    this.chapterSlug = this.props.chapterSlug;
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
@@ -83,6 +99,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
         '',
         'width=960,height=540,left=100,top=100'
       );
+      this.props.setChapterSlug(getChapterSlug(this.mainWindow));
     } else {
       this.externalWindow.document.head.innerHTML = '';
       this.externalWindow.document.body.innerHTML = '';
@@ -128,6 +145,13 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentWillUnmount() {
+    if (!this.props.isAdvancing) {
+      if (getChapterSlug(this.mainWindow) !== this.props.chapterSlug) {
+        this.props.setChapterSlug('');
+        this.externalWindow?.close();
+        this.props.removePortalWindow();
+      }
+    }
     this.props.setIsAdvancing(false);
   }
 
