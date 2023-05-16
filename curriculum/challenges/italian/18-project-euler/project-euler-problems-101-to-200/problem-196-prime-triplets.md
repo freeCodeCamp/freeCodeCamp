@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: 'Problema 196: terne di numeri primi'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -8,7 +8,7 @@ dashedName: problem-196-prime-triplets
 
 # --description--
 
-Build a triangle from all positive integers in the following way:
+Costruisci un triangolo da tutti gli interi positivi nel modo seguente:
 
 $$\begin{array}{rrr}   &  1 \\\\
   &  \color{red}{2} &  \color{red}{3} \\\\   &  4 & \color{red}{5} &  6 \\\\
@@ -18,23 +18,23 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+Ogni numero intero positivo ha fino a otto vicini nel triangolo.
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+Un insieme di tre primi è detto terna prima se uno dei tre primi ha gli altri due come vicini nel triangolo.
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+Ad esempio, nella seconda fila, i numeri primi 2 e 3 sono elementi di una terna prima.
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+Se si considera la riga 8, essa contiene due primi che sono elementi di una terna prima, cioè 29 e 31. Se consideriamo la riga 9, essa contiene solo un primo che è un elemento di una terna prima: 37.
 
-Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
+Definisci $S(n)$ come somma dei numeri primi nella riga $n$ che sono elementi di qualsiasi terna prima. Poi $S(8) = 60$ e $S(9) = 37$.
 
-You are given that $S(10000) = 950007619$.
+Dato $S(10000) = 950007619$.
 
-Find $S(5678027) + S(7208785)$.
+Trova $S(5678027) + S(7208785)$.
 
 # --hints--
 
-`primeTriplets()` should return `322303240771079940`.
+`primeTriplets()` dovrebbe restituire `322303240771079940`.
 
 ```js
 assert.strictEqual(primeTriplets(), 322303240771079940);

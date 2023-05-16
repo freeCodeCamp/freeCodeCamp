@@ -1,6 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
-title: 'Problem 199: Iterative Circle Packing'
+title: 'Problema 199: impaccamento iterativo dei cerchi'
 challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
@@ -8,29 +8,29 @@ dashedName: problem-199-iterative-circle-packing
 
 # --description--
 
-Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
+Tre cerchi di raggio uguale sono posizionati all'interno di un cerchio più grande in modo che in ogni coppia i cerchi siano tangenti l'uno all'altro e i cerchi interni non si sovrappongono. Ci sono quattro "lacune" scoperte che devono essere riempite iterativamente con più cerchi tangenti.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un diagramma con cerchi non sovrapposti" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+A ogni iterazione, un cerchio di dimensioni massime viene posto in ogni lacuna, creando ulteriori vuoti per l'iterazione successiva. Dopo 3 iterazioni (foto), ci sono 108 vuoti e la frazione della zona che non è coperta da cerchi è 0.06790342, arrotondata all’ottavo decimale.
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Quale frazione della zona non è coperta da cerchi dopo `n` iterazioni? Dai il tuo risultato arrotondato a otto cifre decimali usando il formato x.xxxxxxxx .
 
 # --hints--
 
-`iterativeCirclePacking(10)` should return a number.
+`iterativeCirclePacking(10)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof iterativeCirclePacking(10) === 'number');
 ```
 
-`iterativeCirclePacking(10)` should return `0.00396087`.
+`iterativeCirclePacking(10)` dovrebbe restituire `0.00396087`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(10), 0.00396087);
 ```
 
-`iterativeCirclePacking(3)` should return `0.06790342`.
+`iterativeCirclePacking(3)` dovrebbe restituire `0.06790342`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(3), 0.06790342);

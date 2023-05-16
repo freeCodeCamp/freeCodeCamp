@@ -1,6 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
-title: 'Problem 138: Special isosceles triangles'
+title: 'Problema 138: triangoli isosceli speciali'
 challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
@@ -8,19 +8,19 @@ dashedName: problem-138-special-isosceles-triangles
 
 # --description--
 
-Consider the isosceles triangle with base length, $b = 16$, and legs, $L = 17$.
+Considera il triangolo isoscele con lunghezza di base $b = 16$, e lati $L = 17$.
 
-<img class="img-responsive center-block" alt="isosceles triangle with edges named as L - two edges with the same length and base of the triangle as b; and height of the triangle - h from the base of the triangle to the angle between L edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Un triangolo isoscele con lati denominati L - due lati con la stessa lunghezza e base del triangolo b; e altezza del triangolo - h dalla base del triangolo al vertice tra i lati L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
 
-By using the Pythagorean theorem, it can be seen that the height of the triangle, $h = \sqrt{{17}^2 − 8^2} = 15$, which is one less than the base length.
+Utilizzando il teorema di Pitagora, si può vedere che l'altezza del triangolo è $h = \sqrt{{17}^2 − 8^2} = 15$, che è di una lunghezza inferiore alla base.
 
-With $b = 272$ and $L = 305$, we get $h = 273$, which is one more than the base length, and this is the second smallest isosceles triangle with the property that $h = b ± 1$.
+Con $b = 272$ e $L = 305$, otteniamo $h = 273$, che è uno in più della lunghezza di base, e questo è il secondo triangolo isoscele più piccolo con la proprietà che $h = b ± 1$.
 
-Find $\sum{L}$ for the twelve smallest isosceles triangles for which $h = b ± 1$ and $b$, $L$ are positive integers.
+Trova $\sum{L}$ per i dodici triangoli isosceli più piccoli per i quali $h = b ± 1$ e $b$, $L$ sono interi positivi.
 
 # --hints--
 
-`isoscelesTriangles()` should return `1118049290473932`.
+`isoscelesTriangles()` dovrebbe restituire `1118049290473932`.
 
 ```js
 assert.strictEqual(isoscelesTriangles(), 1118049290473932);

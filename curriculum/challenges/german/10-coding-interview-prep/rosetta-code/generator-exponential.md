@@ -24,43 +24,43 @@ For example for \\(n=7\\), the function should return 81 as the sequence would b
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` sollte eine Funktion sein.
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` sollte `144` zurückgeben.
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` sollte `196` zurückgeben.
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` sollte `256` zurückgeben.
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` sollte `484` zurückgeben.
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` sollte `784` zurückgeben.
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

@@ -82,7 +82,8 @@ export const reducer = handleActions(
           challengeFile.fileKey === fileKey
             ? { ...challengeFile, ...updates }
             : { ...challengeFile }
-        )
+        ),
+        isBuildEnabled: true
       };
     },
     [actionTypes.storedCodeFound]: (state, { payload }) => ({

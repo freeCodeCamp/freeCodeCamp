@@ -1,6 +1,6 @@
 ---
 id: 5900f4741000cf542c50ff86
-title: 'Problem 263: An engineers'' dream come true'
+title: 'Problema 263: un sogno da ingegneri diventa realtà'
 challengeType: 1
 forumTopicId: 301912
 dashedName: problem-263-an-engineers-dream-come-true
@@ -8,30 +8,30 @@ dashedName: problem-263-an-engineers-dream-come-true
 
 # --description--
 
-Consider the number 6. The divisors of 6 are: 1,2,3 and 6.
+Considera il numero 6. I divisori di 6 sono: 1,2,3 e 6.
 
-Every number from 1 up to and including 6 can be written as a sum of distinct divisors of 6:
+Ogni numero da 1 fino a 6 può essere scritto come una somma di divisori distinti di 6:
 
 $1 = 1$, $2 = 2$, $3 = 1 + 2$, $4 = 1 + 3$, $5 = 2 + 3$, $6 = 6$.
 
-A number $n$ is called a practical number if every number from 1 up to and including $n$ can be expressed as a sum of distinct divisors of $n$.
+Un numero $n$ è chiamato numero pratico se ogni numero da 1 a $n$ può essere espresso come una somma di divisori distinti di $n$.
 
-A pair of consecutive prime numbers with a difference of six is called a sexy pair (since "sex" is the Latin word for "six"). The first sexy pair is (23, 29).
+Una coppia di numeri primi consecutivi con una differenza di sei è detta coppia sexy (dal momento che "sex" è la parola latina per "sei"). La prima coppia sexy è (23, 29).
 
-We may occasionally find a triple-pair, which means three consecutive sexy prime pairs, such that the second member of each pair is the first member of the next pair.
+Potremmo occasionalmente trovare una tripla-coppia, che significa tre coppie sexy consecutive, tali che il secondo membro di ogni coppia sia il primo membro della coppia successiva.
 
-We shall call a number $n$ such that:
+Sia $n$ un numero che:
 
-- ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) form a triple-pair, and
-- the numbers $n - 8$, $n - 4$, $n$, $n + 4$ and $n + 8$ are all practical,
+- ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) formano una coppia tripla, e
+- i numeri $n - 8$, $n - 4$, $n$, $n + 4$ e $n + 8$ sono tutti pratici,
 
-an engineers’ paradise.
+un paradiso degli ingegneri.
 
-Find the sum of the first four engineers’ paradises.
+Trova la somma dei primi quattro paradisi degli ingegneri.
 
 # --hints--
 
-`engineersDreamComeTrue()` should return `2039506520`.
+`engineersDreamComeTrue()` dovrebbe restituire `2039506520`.
 
 ```js
 assert.strictEqual(engineersDreamComeTrue(), 2039506520);

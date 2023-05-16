@@ -12,7 +12,7 @@ Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [
 
 ## How to Run Tests
 
-> [!NOTE] Si utilizas GitPod, por favor mira [Cypress-GitPod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
+> [!NOTE] If using Gitpod, please see [Cypress-Gitpod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
 ### 1. Ensure that MongoDB and Client Applications are Running
 
@@ -48,11 +48,11 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
   pnpm run e2e:dev:run
   ```
 
-## Configuración de Cypress-GitPod
+## Cypress-Gitpod Setup
 
 ### 1. Asegúrate de que el entorno de desarrollo se esté ejecutando
 
-Si al iniciar el entorno de GitPod no se creó automáticamente el ambiente:
+If starting the Gitpod environment did not automatically develop the environment:
 
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.

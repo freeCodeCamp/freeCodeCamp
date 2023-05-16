@@ -1,6 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0c
-title: 'Problem 140: Modified Fibonacci golden nuggets'
+title: 'Problema 140: pepite d''oro di Fibonacci modificato'
 challengeType: 1
 forumTopicId: 301769
 dashedName: problem-140-modified-fibonacci-golden-nuggets
@@ -8,11 +8,11 @@ dashedName: problem-140-modified-fibonacci-golden-nuggets
 
 # --description--
 
-Consider the infinite polynomial series $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, where $G_k$ is the $k$th term of the second order recurrence relation $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ and $G_2 = 4$; that is, $1, 4, 5, 9, 14, 23, \ldots$.
+Considera la serie polinomiale infinita $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, dove $G_k$ è il $k$-esimo termine della relazione di ricorrenza del secondo ordine $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ e $G_2 = 4$; cioè, $1, 4, 5, 9, 14, 23, \ldots$.
 
-For this problem we shall be concerned with values of $x$ for which $A_G(x)$ is a positive integer.
+Per questo problema ci occuperemo dei valori di $x$ per i quali $A_G(x)$ è un numero intero positivo.
 
-The corresponding values of $x$ for the first five natural numbers are shown below.
+I valori corrispondenti di $x$ per i primi cinque numeri naturali sono mostrati di seguito.
 
 | $x$                           | $A_G(x)$ |
 | ----------------------------- | -------- |
@@ -22,11 +22,11 @@ The corresponding values of $x$ for the first five natural numbers are shown bel
 | $\frac{\sqrt{137} − 5}{14}$ | $4$      |
 | $\frac{1}{2}$                | $5$      |
 
-We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become increasingly rarer; for example, the 20th golden nugget is 211345365. Find the sum of the first thirty golden nuggets.
+Chiamiamo $A_G(x)$ una pepita d'oro se $x$ è razionale, perché diventano sempre più rari; per esempio, la ventesima pepita d'oro è 211345365. Trova la somma delle prime trenta pepite d'oro.
 
 # --hints--
 
-`modifiedGoldenNuggets()` should return `5673835352990`
+`modifiedGoldenNuggets()` dovrebbe restituire `5673835352990`
 
 ```js
 assert.strictEqual(modifiedGoldenNuggets(), 5673835352990);

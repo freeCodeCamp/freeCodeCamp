@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Set a Content Security Policy with helmet.contentSecurityPolicy()
+title: Festlegen einer Inhaltssicherheitsrichtlinie mit helmet.contentSecurityPolicy()
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -10,9 +10,9 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining an allowed list of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP is unsupported by older browsers.
+Diese Aufgabe hebt eine vielversprechende neue Verteidigung hervor, die das Risiko und die Auswirkungen vieler Arten von Angriffen in modernen Browsern erheblich reduzieren kann. Durch das Einrichten und Konfigurieren einer Inhaltssicherheitsrichtlinie kannst du verhindern, dass etwas Unerwünschtes in deine Seite eingefügt wird. Dadurch wird deine App vor XSS-Schwachstellen, unerwünschtem Tracking, bösartigen Frames und vielem mehr geschützt. CSP funktioniert durch die Festlegung einer Liste zulässiger Inhaltsquellen, die als vertrauenswürdig gelten. Du kannst sie für jede Art von Ressource, die eine Webseite benötigt, konfigurieren (Skripte, Stylesheets, Schriftarten, Frames, Medien usw...). There are multiple directives available, so a website owner can have a granular control. Siehe HTML 5 Rocks, KeyCDN für weitere Details. Unfortunately CSP is unsupported by older browsers.
 
-By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives.
+By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet unterstützt sowohl defaultSrc- als auch default-src-Benennungsstile. Der Fallback gilt für die meisten nicht spezifizierten Richtlinien.
 
 # --instructions--
 
@@ -22,7 +22,7 @@ Hint: in the `'self'` keyword, the single quotes are part of the keyword itself,
 
 # --hints--
 
-helmet.contentSecurityPolicy() middleware should be mounted correctly
+Die helmet.contentSecurityPolicy()-Middleware sollte korrekt eingebaut werden
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ helmet.contentSecurityPolicy() middleware should be mounted correctly
   );
 ```
 
-Your csp config is not correct. defaultSrc sollte ["self'"] und scriptSrc sollte ["'self'", 'trusted-cdn.com'] sein
+Deine csp-Konfiguration ist nicht korrekt. defaultSrc sollte ["self'"] und scriptSrc sollte ["'self'", 'trusted-cdn.com'] sein
 
 ```js
 (getUserInput) =>

@@ -103,6 +103,7 @@ describe('settingRoutes', () => {
 
         expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
+          code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: `body/profileUI must have required property 'showAbout'`,
           statusCode: 400
@@ -219,6 +220,62 @@ describe('settingRoutes', () => {
         expect(response?.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-honesty', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-honesty')
+          .set('Cookie', cookies)
+          .send({ isHonest: true });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'buttons.accepted-honesty',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with invalid honesty', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-honesty')
+          .set('Cookie', cookies)
+          .send({ isHonest: false });
+
+        expect(response?.statusCode).toEqual(400);
+      });
+    });
+
+    describe('/update-privacy-terms', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-privacy-terms')
+          .set('Cookie', cookies)
+          .send({ quincyEmails: true });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.privacy-updated',
+          type: 'success'
+        });
+      });
+
+      test('PUT returns 400 status code with non-boolean data', async () => {
+        const response = await request(fastify?.server)
+          .put('/update-privacy-terms')
+          .set('Cookie', cookies)
+          .send({ quincyEmails: '123' });
+
+        expect(response?.statusCode).toEqual(400);
+        expect(response?.body).toEqual({
+          code: 'FST_ERR_VALIDATION',
+          error: 'Bad Request',
+          message: 'body/quincyEmails must be boolean',
+          statusCode: 400
+        });
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
@@ -232,6 +289,14 @@ describe('settingRoutes', () => {
 
     test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
       const response = await request(fastify?.server).put('/update-my-theme');
+
+      expect(response?.statusCode).toEqual(401);
+    });
+
+    test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
+      const response = await request(fastify?.server).put(
+        '/update-privacy-terms'
+      );
 
       expect(response?.statusCode).toEqual(401);
     });

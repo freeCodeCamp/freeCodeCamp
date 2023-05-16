@@ -14,7 +14,7 @@ Here is the <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV7
 
 ## --text--
 
-What is log<sub>5</sub>(25)?
+Was ist Log<sub>5</sub>(25)?
 
 ## --answers--
 

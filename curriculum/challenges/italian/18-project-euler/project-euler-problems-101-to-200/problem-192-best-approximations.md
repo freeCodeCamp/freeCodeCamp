@@ -1,6 +1,6 @@
 ---
 id: 5900f42c1000cf542c50ff3f
-title: 'Problem 192: Best Approximations'
+title: 'Problema 192: migliori approssimazioni'
 challengeType: 1
 forumTopicId: 301830
 dashedName: problem-192-best-approximations
@@ -8,19 +8,19 @@ dashedName: problem-192-best-approximations
 
 # --description--
 
-Let $x$ be a real number.
+Sia $x$ un numero reale.
 
-A best approximation to $x$ for the denominator bound $d$ is a rational number $\frac{r}{s}$ in reduced form, with $s ≤ d$, such that any rational number which is closer to $x$ than $\frac{r}{s}$ has a denominator larger than $d$:
+Una migliore approssimazione a $x$ per limite del denominatore $d$ è un numero razionale $\frac{r}{s}$ in forma ridotta, con $s ≤ d$, tale che qualsiasi numero razionale più vicino a $x$ rispetto a $\frac{r}{s}$ abbia un denominatore più grande di $d$:
 
 $$|\frac{p}{q} - x| &lt; |\frac{r}{s} - x| ⇒ q > d$$
 
-For example, the best approximation to $\sqrt{13}$ for the denominator bound $20$ is $\frac{18}{5}$ and the best approximation to $\sqrt{13}$ for the denominator bound $30$ is $\frac{101}{28}$.
+Ad esempio, la migliore approssimazione a $\sqrt{13}$ per limite del denominatore $20$ è $\frac{18}{5}$ e la migliore approssimazione a $\sqrt{13}$ per limite del denominatore $30$ è $\frac{101}{28}$.
 
-Find the sum of all denominators of the best approximations to $\sqrt{n}$ for the denominator bound ${10}^{12}$, where $n$ is not a perfect square and $1 &lt; n ≤ 100000$.
+Trova la somma di tutti i denominatori delle migliori approssimazioni a $\sqrt{n}$ per limite del denominatore ${10}^{12}$, dove $n$ non è un quadrato perfetto e $1 &lt; n ≤ 100000$.
 
 # --hints--
 
-`bestApproximations()` should return `57060635927998344`.
+`bestApproximations()` dovrebbe restituire `57060635927998344`.
 
 ```js
 assert.strictEqual(bestApproximations(), 57060635927998344);

@@ -31,7 +31,7 @@ plt.subplot(1, 2, 1)
 
 ## --answers--
 
-My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
+Meine Abbildung wird eine Spalte und zwei Zeilen haben, und ich beginne in dem ersten ("linken") Plot zu zeichnen.
 
 ---
 
@@ -39,7 +39,7 @@ I am going to start drawing in the first (left) plot, my figure will have two ro
 
 ---
 
-My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
+Meine Abbildung wird eine Spalte und zwei Zeilen haben, und ich beginne in dem ersten ("linken") Plot zu zeichnen.
 
 ## --video-solution--
 

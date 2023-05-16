@@ -48,7 +48,7 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` sollte eine Funktion sein.
 
 ```js
 assert(typeof formatText === 'function');

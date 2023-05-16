@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-a
 
 # --hints--
 
-Deve haver um elemento `div` e ele deve conter algum texto e estar alinhado no centro.
+Deve haver um elemento `div`. Ele deve conter algum texto e estar alinhado no centro.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');

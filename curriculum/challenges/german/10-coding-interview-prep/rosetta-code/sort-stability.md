@@ -26,13 +26,13 @@ Write a function that takes a 2D array as a parameter. Each element has 2 elemen
 
 # --hints--
 
-`stableSort` should be a function.
+`stableSort` sollte eine Funktion sein.
 
 ```js
 assert(typeof stableSort == 'function');
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return an array.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` sollte `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` should return `[[2, 2], [1, 2], [1, 4], [1, 5]]`.
+`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` sollte `[[2, 2], [1, 2], [1, 4], [1, 5]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -85,7 +85,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` should return `[[12, 45], [11, 45], [32, 45], [11, 55]]`.
+`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` sollte `[[12, 45], [11, 45], [32, 45], [11, 55]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -104,7 +104,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` should return `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`.
+`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` sollte `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -125,7 +125,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` should return `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`.
+`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` sollte `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]` zurückgeben.
 
 ```js
 assert.deepEqual(

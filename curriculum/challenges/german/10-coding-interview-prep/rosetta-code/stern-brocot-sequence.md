@@ -40,43 +40,43 @@ Create a function that returns the position in the Stern-Brocot sequence at whic
 
 # --hints--
 
-`sternBrocot` should be a function.
+`sternBrocot` sollte eine Funktion sein.
 
 ```js
 assert(typeof sternBrocot == 'function');
 ```
 
-`sternBrocot(2)` should return a number.
+`sternBrocot(2)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof sternBrocot(2) == 'number');
 ```
 
-`sternBrocot(2)` should return `3`.
+`sternBrocot(2)` sollte `3` zurückgeben.
 
 ```js
 assert.equal(sternBrocot(2), 3);
 ```
 
-`sternBrocot(3)` should return `5`.
+`sternBrocot(3)` sollte `5` zurückgeben.
 
 ```js
 assert.equal(sternBrocot(3), 5);
 ```
 
-`sternBrocot(5)` should return `11`.
+`sternBrocot(5)` sollte `11` zurückgeben.
 
 ```js
 assert.equal(sternBrocot(5), 11);
 ```
 
-`sternBrocot(7)` should return `19`.
+`sternBrocot(7)` sollte `19` zurückgeben.
 
 ```js
 assert.equal(sternBrocot(7), 19);
 ```
 
-`sternBrocot(10)` should return `39`.
+`sternBrocot(10)` sollte `39` zurückgeben.
 
 ```js
 assert.equal(sternBrocot(10), 39);

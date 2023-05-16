@@ -18,7 +18,7 @@ Those companies using credit card numbers that can be validated by the Luhn test
   <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
     <ol>
       <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
-      <li>Sum the partial sums of the even digits to form s2.</li>
+      <li>Addiere die Teilsummen der geraden Ziffern, um s2 zu bilden.</li>
     </ol>
   <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
 </ol>
@@ -48,49 +48,49 @@ Write a function that will validate a number with the Luhn test. Return true if 
 
 # --hints--
 
-`luhnTest` should be a function.
+`luhnTest` sollte eine Funktion sein.
 
 ```js
 assert(typeof luhnTest === 'function');
 ```
 
-`luhnTest("4111111111111111")` should return a boolean.
+`luhnTest("4111111111111111")` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof luhnTest('4111111111111111') === 'boolean');
 ```
 
-`luhnTest("4111111111111111")` should return `true`.
+`luhnTest("4111111111111111")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(luhnTest('4111111111111111'), true);
 ```
 
-`luhnTest("4111111111111112")` should return `false`.
+`luhnTest("4111111111111112")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(luhnTest('4111111111111112'), false);
 ```
 
-`luhnTest("49927398716")` should return `true`.
+`luhnTest("49927398716")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(luhnTest('49927398716'), true);
 ```
 
-`luhnTest("49927398717")` should return `false`.
+`luhnTest("49927398717")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(luhnTest('49927398717'), false);
 ```
 
-`luhnTest("1234567812345678")` should return `false`.
+`luhnTest("1234567812345678")` sollte `false` zurückgeben.
 
 ```js
 assert.equal(luhnTest('1234567812345678'), false);
 ```
 
-`luhnTest("1234567812345670")` should return `true`.
+`luhnTest("1234567812345670")` sollte `true` zurückgeben.
 
 ```js
 assert.equal(luhnTest('1234567812345670'), true);

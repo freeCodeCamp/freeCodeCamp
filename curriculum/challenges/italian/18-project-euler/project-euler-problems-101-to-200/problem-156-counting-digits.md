@@ -1,6 +1,6 @@
 ---
 id: 5900f4091000cf542c50ff1b
-title: 'Problem 156: Counting Digits'
+title: 'Problema 156: contare le cifre'
 challengeType: 1
 forumTopicId: 301787
 dashedName: problem-156-counting-digits
@@ -8,11 +8,11 @@ dashedName: problem-156-counting-digits
 
 # --description--
 
-Starting from zero the natural numbers are written down in base 10 like this:
+A partire da zero i numeri naturali sono scritti in base 10 in questo modo:
 
 0 1 2 3 4 5 6 7 8 9 10 11 12....
 
-Consider the digit $d = 1$. After we write down each number n, we will update the number of ones that have occurred and call this number $f(n, 1)$. The first values for $f(n, 1)$, then, are as follows:
+Considera la cifra $d = 1$. Dopo aver annotato ogni numero n, aggiorneremo il numero di uno che si sono verificati e chiameremo questo numero $f(n, 1)$. I primi valori per $f(n, 1)$, quindi, sono i seguenti:
 
 | $n$ | $f(n, 1)$ |
 | --- | --------- |
@@ -30,19 +30,19 @@ Consider the digit $d = 1$. After we write down each number n, we will update th
 | 11  | 4         |
 | 12  | 5         |
 
-Note that $f(n, 1)$ never equals 3.
+Nota che $f(n, 1)$ non è mai uguale a 3.
 
-So the first two solutions of the equation $f(n, 1) = n$ are $n = 0$ and $n = 1$. The next solution is $n = 199981$. In the same manner the function $f(n, d)$ gives the total number of digits d that have been written down after the number $n$ has been written.
+Quindi le prime due soluzioni dell'equazione $f(n, 1) = n$ sono $n = 0$ e $n = 1$. La soluzione successiva è $n = 199981$. Allo stesso modo la funzione $f(n, d)$ dà il numero totale di cifre d che sono state scritte dopo che il numero $n$ è stato scritto.
 
-In fact, for every digit $d ≠ 0$, 0 is the first solution of the equation $f(n, d) = n$. Let $s(d)$ be the sum of all the solutions for which $f(n, d) = n$.
+Infatti, per ogni cifra $d =0$, 0 è la prima soluzione dell'equazione $f(n, d) = n$. Sia $s(d)$ sia la somma di tutte le soluzioni per le quali $f(n, d) = n$.
 
-You are given that $s(1) = 22786974071$. Find $\sum{s(d)}$ for $1 ≤ d ≤ 9$.
+Dato $s(1) = 22786974071$. Trova $\sum{s(d)}$ per $1 ≤ d ≤ 9$.
 
 Note: if, for some $n$, $f(n, d) = n$ for more than one value of $d$ this value of $n$ is counted again for every value of $d$ for which $f(n, d) = n$.
 
 # --hints--
 
-`countingDigits()` should return `21295121502550`.
+`countingDigits()` dovrebbe restituire `21295121502550`.
 
 ```js
 assert.strictEqual(countingDigits(), 21295121502550);

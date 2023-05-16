@@ -1,5 +1,6 @@
+import { selectors } from '../../../../support/selectors';
+
 const outputSelectors = {
-  defaultOutput: '.output-text',
   editor: 'div.monaco-editor',
   hotkeys: '.default-layout > div',
   runTestsButton: 'button:contains("Run the Tests")'
@@ -35,7 +36,7 @@ describe('Classic challenge', function () {
       'eq',
       'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
-    cy.get(outputSelectors.defaultOutput).contains(defaultOutput);
+    cy.get(selectors.dataCy.outputText).contains(defaultOutput);
   });
 
   it('shows test output when the tests are run', () => {
@@ -44,7 +45,7 @@ describe('Classic challenge', function () {
     cy.get(outputSelectors.runTestsButton)
       .click()
       .then(() => {
-        cy.get(outputSelectors.defaultOutput)
+        cy.get(selectors.dataCy.outputText)
           .contains(runningOutput)
           .contains(finishedOutput);
       });
@@ -54,7 +55,7 @@ describe('Classic challenge', function () {
     focusEditor()
       .type('{ctrl}{enter}')
       .then(() => {
-        cy.get(outputSelectors.defaultOutput)
+        cy.get(selectors.dataCy.outputText)
           .contains(runningOutput)
           .contains(finishedOutput);
       });
@@ -71,12 +72,12 @@ describe('jQuery challenge', function () {
       'eq',
       'jQuery: Target HTML Elements with Selectors Using jQuery | freeCodeCamp.org'
     );
-    cy.get(outputSelectors.defaultOutput).contains(defaultOutput);
+    cy.get(selectors.dataCy.outputText).contains(defaultOutput);
   });
 
   it('should not show a reference error', () => {
     cy.wait(5000);
-    cy.get(outputSelectors.defaultOutput).should(
+    cy.get(selectors.dataCy.outputText).should(
       'not.contain',
       'ReferenceError: $ is not defined'
     );
@@ -93,7 +94,7 @@ describe('Custom output for JavaScript objects', function () {
     focusEditor().type(
       'const set = new Set();{enter}set.add(1);{enter}set.add("set");{enter}set.add(10);{enter}console.log(set);'
     );
-    cy.get(outputSelectors.defaultOutput).should(
+    cy.get(selectors.dataCy.outputText).should(
       'contain',
       'Set(3) {1, set, 10}'
     );
@@ -103,7 +104,7 @@ describe('Custom output for JavaScript objects', function () {
     focusEditor().type(
       'const map = new Map();{enter}map.set("first", 1);{enter}map.set("second", 2);{enter}map.set("other", "map");{enter}console.log(map);'
     );
-    cy.get(outputSelectors.defaultOutput).should(
+    cy.get(selectors.dataCy.outputText).should(
       'contain',
       'Map(3) {first => 1, second => 2, other => map})'
     );

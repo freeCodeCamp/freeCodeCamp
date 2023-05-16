@@ -4,7 +4,7 @@
 
 ## Внесок до кодової бази
 
-Тепер ви можете робити зміни у файлах та затверджувати їх, прочитавши [як налаштувати freeCodeCamp](how-to-setup-freecodecamp-locally.md).
+Тепер ви можете робити зміни у файлах та затверджувати їх у розгалуженнях, прочитавши [як налаштувати freeCodeCamp](how-to-setup-freecodecamp-locally.md).
 
 Дотримуйтеся цих вказівок:
 
@@ -197,20 +197,20 @@
 
 After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Quick commands reference
+## Коротко про команди
 
-A quick reference to the commands that you will need when working.
+Короткий довідник команд, які знадобляться при роботі.
 
-| команда                                                           | опис                                                                                |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `pnpm test`                                                       | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `pnpm run test-client`                                            | Run the client test suite.                                                          |
-| `pnpm run test-client -u`                                         | Run the client test suite, updating the Jest snapshots that are out of sync.        |
-| `pnpm run test:curriculum`                                        | Run the curriculum test suite.                                                      |
-| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                              |
-| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Test a specific SuperBlock.                                                         |
-| `pnpm run test-curriculum-full-output`                            | Run the curriculum test suite, without bailing after the first error                |
-| `pnpm run test-server`                                            | Run the server test suite.                                                          |
-| `pnpm run e2e`                                                    | Run the Cypress end to end tests.                                                   |
-| `pnpm run clean`                                                  | Uninstalls all dependencies and cleans up caches.                                   |
-| `pnpm run storybook`                                              | Starts Storybook for component library development.                                 |
+| команда                                                           | опис                                                                                       |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `pnpm test`                                                       | Запускає всі тести JS у системі, включно з клієнтом, сервером, лінтером і тестами завдань. |
+| `pnpm run test-client`                                            | Запускає набір тестів клієнта.                                                             |
+| `pnpm run test-client -u`                                         | Запускає набір тестів клієнта, оновлюючи несинхронізовані знімки Jest.                     |
+| `pnpm run test:curriculum`                                        | Запускає набір тестів навчальної програми.                                                 |
+| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                                     |
+| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Test a specific SuperBlock.                                                                |
+| `pnpm run test-curriculum-full-output`                            | Run the curriculum test suite, without bailing after the first error                       |
+| `pnpm run test-server`                                            | Run the server test suite.                                                                 |
+| `pnpm run e2e`                                                    | Run the Cypress end to end tests.                                                          |
+| `pnpm run clean`                                                  | Uninstalls all dependencies and cleans up caches.                                          |
+| `pnpm run storybook`                                              | Starts Storybook for component library development.                                        |
