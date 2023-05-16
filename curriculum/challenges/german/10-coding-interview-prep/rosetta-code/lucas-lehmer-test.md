@@ -16,49 +16,49 @@ Write a function that returns whether the given Mersenne number is prime or not.
 
 # --hints--
 
-`lucasLehmer` should be a function.
+`lucasLehmer` sollte eine Funktion sein.
 
 ```js
 assert(typeof lucasLehmer == 'function');
 ```
 
-`lucasLehmer(11)` should return a boolean.
+`lucasLehmer(11)` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof lucasLehmer(11) == 'boolean');
 ```
 
-`lucasLehmer(11)` should return `false`.
+`lucasLehmer(11)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(11), false);
 ```
 
-`lucasLehmer(15)` should return `false`.
+`lucasLehmer(15)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(15), false);
 ```
 
-`lucasLehmer(13)` should return `true`.
+`lucasLehmer(13)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(13), true);
 ```
 
-`lucasLehmer(17)` should return `true`.
+`lucasLehmer(17)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(17), true);
 ```
 
-`lucasLehmer(19)` should return `true`.
+`lucasLehmer(19)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(19), true);
 ```
 
-`lucasLehmer(21)` should return `false`.
+`lucasLehmer(21)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(lucasLehmer(21), false);

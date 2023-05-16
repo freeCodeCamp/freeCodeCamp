@@ -23,6 +23,7 @@ const defaultUser = {
   completedChallenges: [],
   currentChallengeId: '',
   emailVerified: false,
+  externalId: '',
   is2018DataVisCert: false,
   is2018FullStackCert: false,
   isApisMicroservicesCert: false,
@@ -47,6 +48,7 @@ const defaultUser = {
   keyboardShortcuts: false,
   location: '',
   name: '',
+  unsubscribeId: '',
   picture: '',
   profileUI: {
     isLocked: false,
