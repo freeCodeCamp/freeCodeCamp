@@ -1,6 +1,6 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
-import React, { Component, ReactElement } from 'react';
+import React, { Component, ReactElement, SyntheticEvent } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
@@ -85,7 +85,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab): void => {
+  switchTab = (tab: Tab, e: SyntheticEvent): void => {
+    const portalButton = document.getElementById('portal-button');
+    // prevent switching to preview tab if pressing portal button
+    if (portalButton?.contains(e.target as Node)) {
+      e.preventDefault();
+      return;
+    }
+
     this.setState({
       currentTab: tab
     });
@@ -258,7 +265,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 <>
                   {i18next.t('learn.editor-tabs.preview')}
                   <button
-                    className='portal-button'
+                    id='portal-button'
                     aria-expanded={!!showPreviewPortal}
                     onClick={() => togglePane('showPreviewPortal')}
                   >
