@@ -176,25 +176,35 @@ describe('settingRoutes', () => {
         });
       });
 
-      // TODO: finish this test once the prisma schema is updated.
-      // test("PUT adds emailAuthLinkTTL with the current time to the user's record", async () => {
-      //   const response = await request(fastify?.server)
-      //     .put('/update-my-email')
-      //     .set('Cookie', cookies)
-      //     .send({ email: 'foo@foo.com' });
+      test("PUT adds emailAuthLinkTTL with the current time to the user's record", async () => {
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: unusedEmailOne });
 
-      //   const user = await fastify?.prisma.user.findFirstOrThrow({
-      //     where: { email: developerUserEmail },
-      //     select: { emailAuthLinkTTL: true }
-      //   });
-      //   const emailAuthLinkTTL = user?.emailAuthLinkTTL;
-      //   expect(emailAuthLinkTTL).toBeTruthy();
+        const user = await fastify?.prisma.user.findFirstOrThrow({
+          where: { email: developerUserEmail },
+          select: { emailAuthLinkTTL: true }
+        });
+        const emailAuthLinkTTL = user?.emailAuthLinkTTL;
+        expect(emailAuthLinkTTL).toBeTruthy();
+        // This throw is to mollify TS (if this is necessary a lot, create a
+        // helper)
+        if (!emailAuthLinkTTL) {
+          throw new Error('emailAuthLinkTTL is not defined');
+        }
 
-      //   expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(200);
 
-      //   expect(emailAuthLinkTTL).toBeInstanceOf(Date);
-
-      // });
+        // expect the emailAuthLinkTTL to be within 10 seconds of the current time
+        const tenSeconds = 10 * 1000;
+        expect(emailAuthLinkTTL.getTime()).toBeGreaterThan(
+          Date.now() - tenSeconds
+        );
+        expect(emailAuthLinkTTL.getTime()).toBeLessThan(
+          Date.now() + tenSeconds
+        );
+      });
 
       test('PUT rejects invalid email addresses', async () => {
         const response = await request(fastify?.server)
