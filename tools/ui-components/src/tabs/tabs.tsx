@@ -8,7 +8,7 @@ const buttonClassNames =
 // The aria-selected selector isn't working, so I am importing css file for now
 // [aria-selected="true"]:border-0  [aria-selected="true"]:font-black  [aria-selected="true"]:bg-foreground-quaternary [aria-selected="true"]:text-background-secondary'
 const listClassNames =
-  'flex mb-0 pl-0 mt-0 border-b border-solid border-background-quaternary list-none hover:bg-background-quaternary hover:text-foreground-secondary';
+  'flex mb-0 pl-0 mt-0 border-b-[1px] border-solid border-background-quaternary hover:bg-background-quaternary hover:text-foreground-secondary';
 
 export const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof Trigger>,
