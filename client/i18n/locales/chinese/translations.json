@@ -102,61 +102,61 @@
       }
     },
     "certification-heading": "获得以下免费认证：",
-    "faq": "Frequently asked questions:",
+    "faq": "常见问题：",
     "faqs": [
       {
-        "question": "What exactly is freeCodeCamp?",
+        "question": "什么是 freeCodeCamp？",
         "answer": [
-          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+          "freeCodeCamp 是一个由来自世界各地学习编程的人们组成的社区。这是一个 501(c)(3) 公共慈善组织。"
         ]
       },
       {
-        "question": "How will freeCodeCamp help me learn to code?",
+        "question": "freeCodeCamp 如何帮助我学习编程？",
         "answer": [
-          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
-          "You will also earn free verified certifications along the way."
+          "你将通过在浏览器、代码编辑器或移动应用中一步步地创建数十个项目来学习编程。",
+          "你还将获得免费的认证。"
         ]
       },
       {
-        "question": "Is freeCodeCamp really free?",
+        "question": "freeCodeCamp 真的免费吗？",
         "answer": [
-          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+          "是的，freeCodeCamp 100% 免费！无论是课程、项目甚至认证，都是免费的。"
         ]
       },
       {
-        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "question": "freeCodeCamp 能帮助我获得软件开发者的工作吗？",
         "answer": [
-          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+          "是的。每一年，freeCodeCamp 社区中成千上万的人们找到了他们的第一份软件开发工作。"
         ]
       },
       {
-        "question": "What skills will I learn?",
+        "question": "我将学到什么技能？",
         "answer": [
-          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+          "你将学习大多数开发者在工作中使用的技能：HTML、CSS、JavaScript、Python、Linux、Git 和 SQL 等等。 你还将学习如何使用 web 开发的强大的库、移动应用开发、数据科学和人工智能等。"
         ]
       },
       {
-        "question": "How long does it take to learn all this?",
+        "question": "学习所有这些知识需要多长时间？",
         "answer": [
-          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+          "你在 freeCodeCamp 学习可以自定义进度。 实际上，要学好这些技能并获得一份软件工程师工作，可能需要几年时间来持续练习编程。在你准备好之前，不要退学或辞职。"
         ]
       },
       {
-        "question": "How do I get started?",
+        "question": "我如何开始？",
         "answer": [
-          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+          "如果你是初学者，你应该从 freeCodeCamp 核心课程开始。 如果你有经验，我们仍然建议从最初的课程开始，但你可以跳到任何你想要学习的领域。"
         ]
       },
       {
-        "question": "How do I earn the free verified certifications?",
+        "question": "我如何获取免费的认证？",
         "answer": [
-          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+          "对于每个认证，你需要构建 5 个认证项目，通过所有的项目测试，以获得认证。"
         ]
       },
       {
-        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "question": "我在 freeCodeCamp 核心课程中看不到[工具名称]。",
         "answer": [
-          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+          "除了 freeCodeCamp 提供的核心课程外，我们还有数千份免费的完整的书、课程和编程教程。我们几乎教授你想学习的任何编程工具。你只需通过使用搜索栏来搜索它们。"
         ]
       }
     ]
@@ -171,7 +171,7 @@
     "for": "{{username}} 账号设置",
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
-    "scrollbar-width": "Editor Scrollbar Width",
+    "scrollbar-width": "编辑器滚动条宽度",
     "username": {
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
       "is too short": "用户名 \"{{username}}\" 太短",
@@ -278,7 +278,7 @@
     "tweet": "我获得了 {{certTitle}} 认证 @freeCodeCamp！在这里查看：{{certURL}}",
     "avatar": "{{username}} 的头像",
     "joined": "于 {{date}} 加入",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "点数： {{count}}",
     "points": "{{date}} 获得 {{count}} 分",
     "points_plural": "{{date}} 获得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
@@ -367,7 +367,7 @@
       "instructions": "说明",
       "notes": "注意",
       "preview": "预览",
-      "editor": "Editor"
+      "editor": "编辑器"
     },
     "editor-alerts": {
       "tab-trapped": "按下选项卡将插入选项卡字符",
@@ -424,16 +424,16 @@
     "duration": "成为我们的慈善组织的一次性支持者",
     "duration-2": "成为我们的慈善组织的每月定期支持者",
     "duration-4": "成为我们的慈善组织的支持者",
-    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
-    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
-    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
-    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
-    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
-    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
-    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
-    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
-    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
-    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "progress-modal-cta-1": "现在捐赠以帮助我们的慈善组织为所有人创建免费的认证计算机科学学位课程。",
+    "progress-modal-cta-2": "现在捐赠以为我们的慈善组织的网站赞助 53 小时服务器时间。",
+    "progress-modal-cta-3": "现在捐赠以帮助我们的慈善组织为全世界的学习者将课程翻译成 32 种语言。",
+    "progress-modal-cta-4": "现在捐赠以支持我们的慈善组织开发新的 Python 课程。",
+    "progress-modal-cta-5": "现在捐赠以帮助我们的慈善组织为新的编程工具设计课程。",
+    "progress-modal-cta-6": "现在捐赠以支持我们的慈善组织的开源项目。",
+    "progress-modal-cta-7": "现在捐赠以帮助我们的慈善组织雇用更多老师。",
+    "progress-modal-cta-8": "现在捐赠以帮助我们为不断涌现的工具和编程概念开发新课程。",
+    "progress-modal-cta-9": "现在捐赠以支持我们的面向开发者的数学课程。",
+    "progress-modal-cta-10": "现在捐赠以帮助我们为所有人开发免费的专业编程认证。",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
