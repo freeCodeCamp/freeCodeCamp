@@ -46,7 +46,8 @@ assert.deepEqual(typeof(addTogether(5)), 'function');
 `addTogether(5)` should return another function then return sum if the other function has a parameter. should return 12.
 
 ```js
-assert.deepEqual(addTogether(5), (7) => 12);
+const addFunction = addTogether(5);
+assert.strictEqual(addFunction(7), 12);
 ```
 
 `addTogether(2, "3")` should return `undefined`.
