@@ -185,9 +185,6 @@ importers:
       '@prisma/client':
         specifier: 4.14.0
         version: 4.14.0(prisma@4.14.0)
-      ajv:
-        specifier: 8.12.0
-        version: 8.12.0
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.15.0)
@@ -213,6 +210,9 @@ importers:
       '@types/supertest':
         specifier: 2.0.12
         version: 2.0.12
+      ajv:
+        specifier: 8.12.0
+        version: 8.12.0
       dotenv-cli:
         specifier: 7.2.1
         version: 7.2.1
