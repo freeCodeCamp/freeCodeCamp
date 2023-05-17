@@ -6,13 +6,11 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1em;
   margin-bottom: 3em;
-  transition: border-radius 200ms;
-  /* Prevent image overflow while hover */
-  overflow: hidden;
+  transition: box-shadow 200ms;
 }
 
 .portfolio-container:hover {
-  border-radius: 20px;
+  box-shadow: 0 0 0 3px var(--secondary-color);
 }
 
 .portfolio-screen-shot {
