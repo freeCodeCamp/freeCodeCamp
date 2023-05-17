@@ -12,7 +12,7 @@
 
 ## Як проводити тести
 
-> [!NOTE] If using Gitpod, please see [Cypress-Gitpod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
+> [!NOTE] Якщо ви використовуєте Gitpod, див. [налаштування Cypress-Gitpod](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
@@ -48,11 +48,11 @@
   pnpm run e2e:dev:run
   ```
 
-## Cypress-Gitpod Setup
+## Налаштування Cypress-Gitpod
 
 ### 1. Переконайтеся, що середовище розробки запущене
 
-If starting the Gitpod environment did not automatically develop the environment:
+Якщо запуск середовища Gitpod не розробив середовище автоматично:
 
 - Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
 - Створіть конфігураційний файл.
