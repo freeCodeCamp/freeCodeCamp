@@ -4729,5 +4729,6 @@ module.exports = {
   },
   isDonating: false,
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  externalId: ''
 };
