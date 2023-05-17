@@ -19,9 +19,9 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 
 ### How to Prepare a Gitpod Workspace
 
-Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. Con GitPod obtienes un entorno gratuito listo para codificar en pocos minutos, y es útil si no tienes acceso a ordenador o quieres hacer cambios puntuales.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
-Hay varias formas de lanzar un espacio de trabajo GitPod:
+There are various ways to launch an Gitpod workspace:
 
 1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
@@ -34,21 +34,33 @@ Hay varias formas de lanzar un espacio de trabajo GitPod:
    - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - funciona con navegadores basados en Chromium como Google Chrome, Brave, Edge, etc.
    - [Complemento para Firefox](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
-   Una vez instalado, verás un botón 'GitPod' en cada repositorio, pull-request, etc. como un práctico atajo para lanzar un espacio de trabajo desde allí. Consulta la página de la extensión para más detalles, capturas de pantalla, etc.
+   Once installed you will see a 'Gitpod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. Consulta la página de la extensión para más detalles, capturas de pantalla, etc.
 
-Spanish Eso es todo, ahora puedes saltar a la sección 'sincronizar desde el padre' después de haber lanzado un espacio de trabajo GitPod. La mayor parte de esta guía se aplica a los espacios de trabajo GitPod, pero ten en cuenta [cómo funcionan las URLs & Puertos dentro de un GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a Gitpod workspace. Most parts of this guide applies to Gitpod workspaces, but be mindful of [how the URLs & Ports work within a Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+**Note: Troubleshooting port issues on Gitpod**
+
+Sometimes the service on port `8000` doesn't go live. This is common when you are restarting an inactive workspace.
+
+If the service is not coming up on port `8000`, you can troubleshoot using these steps:
+
+- **Start the server**: Run `pnpm run develop:server` in one terminal window from the root project directory (`/workspace/freeCodeCamp`) to start the server.
+
+- **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
+
+This should make port `8000` available.
 
 ### How to Prepare your Local Machine
 
-A continuación se indican los requisitos mínimos del sistema para ejecutar freeCodeCamp localmente:
+Here is a minimum system requirement for running freeCodeCamp locally:
 
 - 8 GB RAM
-- CPU relativamente rápida (más de 4 núcleos)
-- Windows 10 u 11 (con WSL), macOS o Linux
+- Relatively fast CPU (4+ cores)
+- Windows 10 or 11 (with WSL), macOS, or Linux
 
-Comienza por instalar el software necesario para tu sistema operativo.
+Start by installing the prerequisite software for your operating system.
 
-Apoyamos principalmente el desarrollo en Linux y sistemas basados en Unix como Ubuntu y macOS. Puedes desarrollar en Windows 10 u 11 sólo con WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
 
 #### Pre-requisitos:
@@ -61,7 +73,7 @@ Apoyamos principalmente el desarrollo en Linux y sistemas basados en Unix como U
 
 > [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. Consulta [solución de problemas](#troubleshooting) para obtener más detalles.
 
-Si Node.js ya está instalado en tu máquina, ejecuta los siguientes comandos para validar las versiones:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
@@ -70,7 +82,7 @@ pnpm -v
 
 > [!TIP] Recomendamos encarecidamente actualizar a las últimas versiones estables del software mencionado anteriormente, también conocidas como versiones de soporte a largo plazo (LTS).
 
-Una vez instalados los requisitos previos, debe preparar su entorno de desarrollo. Esto es habitual en muchos flujos de trabajo de desarrollo, y sólo tendrá que hacerlo una vez.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
 ##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 

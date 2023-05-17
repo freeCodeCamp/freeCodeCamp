@@ -42,7 +42,7 @@ Implement a function that returns the sum of the $n$-th row.
 
 # --hints--
 
-`numberOfNames` should be function.
+`numberOfNames` sollte eine Funktion sein.
 
 ```js
 assert(typeof numberOfNames === 'function');

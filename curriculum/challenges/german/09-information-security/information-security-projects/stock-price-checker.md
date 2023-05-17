@@ -82,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
+Die `stockData`-Eigenschaft enthält das `stock`-Symbol als ein String, den `price` als eine Zahl und `likes` als eine Zahl.
 
 ```js
 async (getUserInput) => {

@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 const ObjectId = require('mongodb').ObjectID;
-const defaultUserImage = require('../../../config/misc').defaultUserImage;
 
 module.exports = {
   _id: ObjectId('5fa2db00a25c1c1fa49ce067'),
@@ -13,7 +12,7 @@ module.exports = {
   about: '',
   name: 'Full Stack User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
   currentChallengeId: '',

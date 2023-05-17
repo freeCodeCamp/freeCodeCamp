@@ -39,7 +39,7 @@ Write a function that takes a fractran program as a string parameter and returns
 
 # --hints--
 
-`fractran` should be a function.
+`fractran` sollte eine Funktion sein.
 
 ```js
 assert(typeof fractran == 'function');
@@ -51,31 +51,31 @@ assert(typeof fractran == 'function');
 assert(Array.isArray(fractran('3/2, 1/3')));
 ```
 
-`fractran("3/2, 1/3")` should return `[ 2, 3, 1 ]`.
+`fractran("3/2, 1/3")` sollte `[ 2, 3, 1 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fractran('3/2, 1/3'), [2, 3, 1]);
 ```
 
-`fractran("3/2, 5/3, 1/5")` should return `[ 2, 3, 5, 1 ]`.
+`fractran("3/2, 5/3, 1/5")` sollte `[ 2, 3, 5, 1 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fractran('3/2, 5/3, 1/5'), [2, 3, 5, 1]);
 ```
 
-`fractran("3/2, 6/3")` should return `[ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]`.
+`fractran("3/2, 6/3")` sollte `[ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fractran('3/2, 6/3'), [2, 3, 6, 9, 18, 27, 54, 81, 162, 243]);
 ```
 
-`fractran("2/7, 7/2")` should return `[ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]`.
+`fractran("2/7, 7/2")` sollte `[ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]` zurückgeben.
 
 ```js
 assert.deepEqual(fractran('2/7, 7/2'), [2, 7, 2, 7, 2, 7, 2, 7, 2, 7]);
 ```
 
-`fractran("17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1")` should return `[ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]`.
+`fractran("17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1")` sollte `[ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]` zurückgeben.
 
 ```js
 assert.deepEqual(

@@ -29,13 +29,13 @@ Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day Janua
 
 # --hints--
 
-`discordianDate` should be a function.
+`discordianDate` sollte eine Funktion sein.
 
 ```js
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` sollte `"Pungenday, the 57th day of Confusion in the YOLD 3176"` zurückgeben.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` sollte `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"` zurückgeben.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 29))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
+`discordianDate(new Date(2012, 1, 29))` sollte `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"` zurückgeben.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` sollte `"Setting Orange, the 60th day of Chaos in the YOLD 3178"` zurückgeben.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2010, 0, 5))` should return `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
+`discordianDate(new Date(2010, 0, 5))` sollte `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"` zurückgeben.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2011, 4, 3))` should return `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
+`discordianDate(new Date(2011, 4, 3))` sollte `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"` zurückgeben.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` sollte `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"` zurückgeben.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Averages/Root mean square
+title: Durchschnitte/Quadratisches Mittel
 challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
@@ -16,7 +16,7 @@ $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}
 
 # --hints--
 
-`rms` should be a function.
+`rms` sollte eine Funktion sein.
 
 ```js
 assert(typeof rms === 'function');

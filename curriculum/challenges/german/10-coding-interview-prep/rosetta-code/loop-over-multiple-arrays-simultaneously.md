@@ -16,7 +16,7 @@ For this example, if you are given this array of arrays:
 [ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]
 ```
 
-the output should be:
+die Ausgabe sollte sein:
 
 ```js
 ["aA1","bB2","cC3"]
@@ -28,13 +28,13 @@ Write a function that takes an array of arrays as a parameter and returns an arr
 
 # --hints--
 
-`loopSimult` should be a function.
+`loopSimult` sollte eine Funktion sein.
 
 ```js
 assert(typeof loopSimult == 'function');
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return a array.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return `["aA1", "bB2", "cC3"]`.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` sollte `["aA1", "bB2", "cC3"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` should return `["c47", "b57", "cC3"]`.
+`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` sollte `["c47", "b57", "cC3"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -74,7 +74,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` should return `["aA1", "bB2", "cC3", "dd4"]`.
+`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` sollte `["aA1", "bB2", "cC3", "dd4"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -87,7 +87,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` should return `["aA1", "bB2"]`.
+`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` sollte `["aA1", "bB2"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` should return `["bB2", "cC3"]`.
+`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` sollte `["bB2", "cC3"]` zurückgeben.
 
 ```js
 assert.deepEqual(

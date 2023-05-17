@@ -39,7 +39,7 @@ You can tweak epochs and batch size if you like, but it is not required.
 
 The following instructions correspond to specific cell numbers, indicated with a comment at the top of the cell (such as `# 3`).
 
-## Cell 3
+## Zelle 3
 
 Now it is your turn! Set each of the variables in this cell correctly. (They should no longer equal `None`.)
 
@@ -56,11 +56,11 @@ Found 1000 images belonging to 2 classes.
 Found 50 images belonging to 1 class.
 ```
 
-## Cell 4
+## Zelle 4
 
 The `plotImages` function will be used a few times to plot images. It takes an array of images and a probabilities list, although the probabilities list is optional. This code is given to you. If you created the `train_data_gen` variable correctly, then running this cell will plot five random training images.
 
-## Cell 5
+## Zelle 5
 
 Recreate the `train_image_generator` using `ImageDataGenerator`.
 
@@ -68,25 +68,25 @@ Since there are a small number of training examples, there is a risk of overfitt
 
 Add 4-6 random transformations as arguments to `ImageDataGenerator`. Make sure to rescale the same as before.
 
-## Cell 6
+## Zelle 6
 
 You don't have to do anything for this cell. `train_data_gen` is created just like before but with the new `train_image_generator`. Then, a single image is plotted five different times using different variations.
 
-## Cell 7
+## Zelle 7
 
 In this cell, create a model for the neural network that outputs class probabilities. It should use the Keras Sequential model. It will probably involve a stack of Conv2D and MaxPooling2D layers and then a fully connected layer on top that is activated by a ReLU activation function.
 
 Compile the model passing the arguments to set the optimizer and loss. Also pass in `metrics=['accuracy']` to view training and validation accuracy for each training epoch.
 
-## Cell 8
+## Zelle 8
 
 Use the `fit` method on your `model` to train the network. Make sure to pass in arguments for `x`, `steps_per_epoch`, `epochs`, `validation_data`, and `validation_steps`.
 
-## Cell 9
+## Zelle 9
 
 Run this cell to visualize the accuracy and loss of the model.
 
-## Cell 10
+## Zelle 10
 
 Now it is time to use your model to predict whether a brand new image is a cat or a dog.
 
@@ -96,7 +96,7 @@ Call the `plotImages` function and pass in the test images and the probabilities
 
 After you run the cell, you should see all 50 test images with a label showing the percentage of "sure" that the image is a cat or a dog. The accuracy will correspond to the accuracy shown in the graph above (after running the previous cell). More training images could lead to a higher accuracy.
 
-## Cell 11
+## Zelle 11
 
 Run this final cell to see if you passed the challenge or if you need to keep trying.
 
