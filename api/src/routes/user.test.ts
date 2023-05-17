@@ -1,34 +1,28 @@
 import request from 'supertest';
 
-import { build } from '../app';
+import { setupServer, superRequest } from '../../jest.utils';
 
 describe('userRoutes', () => {
-  let fastify: undefined | Awaited<ReturnType<typeof build>>;
-
-  beforeAll(async () => {
-    fastify = await build();
-    await fastify.ready();
-  }, 20000);
-
-  afterAll(async () => {
-    await fastify?.close();
-  });
+  setupServer();
 
   describe('Authenticated user', () => {
-    let cookies: string[];
+    let setCookies: string[];
 
     beforeAll(async () => {
-      const res = await request(fastify?.server).get('/auth/dev-callback');
-      cookies = res.get('Set-Cookie');
+      const res = await request(fastifyTestInstance?.server).get(
+        '/auth/dev-callback'
+      );
+      setCookies = res.get('Set-Cookie');
     });
 
     describe('/account', () => {
       test('DELETE returns 200 status code with empty object', async () => {
-        const response = await request(fastify?.server)
-          .delete('/user/account')
-          .set('Cookie', cookies);
+        const response = await superRequest('/user/account', {
+          method: 'DELETE',
+          setCookies
+        });
 
-        const userCount = await fastify?.prisma.user.count({
+        const userCount = await fastifyTestInstance?.prisma.user.count({
           where: { email: 'foo@bar.com' }
         });
 
@@ -40,9 +34,12 @@ describe('userRoutes', () => {
   });
 
   describe('Unauthenticated user', () => {
+    // TODO: get CSRF cookies when that PR is in.
     describe('/account', () => {
       test('DELETE returns 401 status code with error message', async () => {
-        const response = await request(fastify?.server).delete('/user/account');
+        const response = await superRequest('/user/account', {
+          method: 'DELETE'
+        });
 
         expect(response?.statusCode).toBe(401);
       });
