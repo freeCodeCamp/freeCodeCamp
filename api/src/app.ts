@@ -21,6 +21,7 @@ import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { settingRoutes } from './routes/settings';
+import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testMiddleware } from './middleware';
 import prismaPlugin from './db/prisma';
@@ -121,6 +122,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
+  void fastify.register(deprecatedEndpoints);
 
   return fastify;
 };
