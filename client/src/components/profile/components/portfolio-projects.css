@@ -6,11 +6,6 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1em;
   margin-bottom: 3em;
-  transition: box-shadow 200ms;
-}
-
-.portfolio-container:hover {
-  box-shadow: 0 0 0 3px var(--secondary-color);
 }
 
 .portfolio-screen-shot {
@@ -42,22 +37,20 @@
   justify-self: end;
   width: 40%;
   height: 40px; /* Set a fixed height value */
-  background-color: var(--primary-color);
-  color: var(--primary-background);
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
   padding: 0.5rem;
-  border-radius: 15px;
+  border: 3px solid var(--secondary-color);
   padding-inline: 4rem;
   margin: 1em;
   text-decoration: none;
   /* prevent line breaks in Chinese/Japanese/Korean */
   word-break: keep-all;
-  transition: background-color 200ms, color 200ms;
 }
 
 .portfolio-container:hover a {
-  background-color: var(--quaternary-background);
-  border: 3px solid var(--secondary-color);
-  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--primary-background);
 }
 
 .portfolio-container a::after {
