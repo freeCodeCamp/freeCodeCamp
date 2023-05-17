@@ -24,6 +24,49 @@ If either argument isn't a valid number, return undefined.
 
 # --hints--
 
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
+```
+
+`addTogether("2", 3)` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether('2', 3));
+```
+
+`addTogether(5)` should return another function.
+
+```js
+assert.deepEqual(typeof(addTogether(5)), 'function');
+```
+
+
+`addTogether(5)` should return another function then return sum if the other function has a parameter. should return 12.
+
+```js
+assert.deepEqual(addTogether(5), (7) => 12);
+```
+
+`addTogether(2, "3")` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether(2, '3'));
+```
+
+`addTogether(2)([3])` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether(2)([3]));
+```
+
+`addTogether(5, undefined)` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether(5, undefined));
+```
+
 `addTogether(2, 3)` should return 5.
 
 ```js
@@ -40,36 +83,6 @@ assert.deepEqual(addTogether(23, 30), 53);
 
 ```js
 assert.deepEqual(addTogether(5)(7), 12);
-```
-
-`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` should return `undefined`.
-
-```js
-assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
-```
-
-`addTogether(2, "3")` should return `undefined`.
-
-```js
-assert.isUndefined(addTogether(2, '3'));
-```
-
-`addTogether(2)([3])` should return `undefined`.
-
-```js
-assert.isUndefined(addTogether(2)([3]));
-```
-
-`addTogether("2", 3)` should return `undefined`.
-
-```js
-assert.isUndefined(addTogether('2', 3));
-```
-
-`addTogether(5, undefined)` should return `undefined`.
-
-```js
-assert.isUndefined(addTogether(5, undefined));
 ```
 
 # --seed--
