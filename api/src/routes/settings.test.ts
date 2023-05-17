@@ -322,7 +322,8 @@ describe('settingRoutes', () => {
 
     test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
       const response = await superRequest('/update-privacy-terms', {
-        method: 'PUT'
+        method: 'PUT',
+        setCookies
       });
 
       expect(response?.statusCode).toEqual(401);
