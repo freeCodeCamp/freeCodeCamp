@@ -159,13 +159,15 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         select: {
           email: true,
           emailVerifyTTL: true,
-          newEmail: true
+          newEmail: true,
+          emailVerified: true
         }
       });
       const newEmail = req.body.email.toLowerCase();
       const currentEmailFormated = user.email.toLowerCase();
-      const isSameEmail = newEmail === currentEmailFormated;
-      if (isSameEmail) {
+      const isVerifiedEmail = user.emailVerified;
+      const isOwnEmail = newEmail === currentEmailFormated;
+      if (isOwnEmail && isVerifiedEmail) {
         void reply.code(400);
         return {
           type: 'info',

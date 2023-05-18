@@ -229,6 +229,23 @@ describe('settingRoutes', () => {
         });
       });
 
+      test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
+        await fastify?.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: { emailVerified: false }
+        });
+        const response = await request(fastify?.server)
+          .put('/update-my-email')
+          .set('Cookie', cookies)
+          .send({ email: developerUserEmail.toUpperCase() });
+
+        expect(response?.statusCode).toEqual(200);
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+      });
+
       test('PUT rejects a request to update to the existing email (ignoring case) address', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-email')
