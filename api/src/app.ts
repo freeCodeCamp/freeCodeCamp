@@ -14,8 +14,9 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
-import fastifySentry from './plugins/fastify-sentry';
+import fastifyCsrfProtection from '@fastify/csrf-protection';
 
+import fastifySentry from './plugins/fastify-sentry';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
@@ -29,6 +30,7 @@ import prismaPlugin from './db/prisma';
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
+  COOKIE_DOMAIN,
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SESSION_SECRET,
@@ -66,6 +68,33 @@ export const build = async (
 
   await fastify.register(cors);
   await fastify.register(fastifyCookie);
+
+  // @ts-expect-error @fastify/csrf-protection is overly restrictive, here. It
+  // requires an hmacKey if getToken is provided, but that should only be a
+  // requirement if the getUserInfo function is provided.
+  void fastify.register(fastifyCsrfProtection, {
+    // TODO: consider signing cookies. We don't on the api-server, but we could
+    // as an extra layer of security.
+
+    ///Ignore all other possible sources of CSRF
+    // tokens since we know we can provide this one
+    getToken: req => req.headers['csrf-token'] as string
+  });
+
+  // All routes should add a CSRF token to the response
+  fastify.addHook('onRequest', (_req, reply, done) => {
+    const token = reply.generateCsrf();
+    // Path is necessary to ensure that only one cookie is set and it is valid
+    // for all routes.
+    void reply.setCookie('csrf_token', token, {
+      path: '/',
+      sameSite: 'strict',
+      domain: COOKIE_DOMAIN,
+      secure: FREECODECAMP_NODE_ENV === 'production'
+    });
+    done();
+  });
+
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
   await fastify.register(fastifySession, {
@@ -101,7 +130,21 @@ export const build = async (
         security: [{ session: [] }]
       }
     });
-    void fastify.register(fastifySwaggerUI);
+    void fastify.register(fastifySwaggerUI, {
+      uiConfig: {
+        // Convert csrf_token cookie to csrf-token header
+        requestInterceptor: req => {
+          const csrfTokenCookie = document.cookie
+            .split(';')
+            .find(str => str.includes('csrf_token'));
+          const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
+
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
+          return req;
+        }
+      }
+    });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 

@@ -2,30 +2,16 @@ import request from 'supertest';
 
 import { build } from './src/app';
 
+type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
+
 declare global {
   // eslint-disable-next-line no-var
-  var fastifyTestInstance: Awaited<ReturnType<typeof build>> | undefined;
+  var fastifyTestInstance: FastifyTestInstance;
 }
 
 type Options = {
   sendCSRFToken: boolean;
 };
-
-// TODO: remove this function and use superRequest instead
-export function superPut(
-  resource: string,
-  setCookies: string[],
-  opts?: Options
-): request.Test {
-  return superRequest(
-    resource,
-    {
-      method: 'PUT',
-      setCookies
-    },
-    opts
-  );
-}
 
 /* eslint-disable @typescript-eslint/naming-convention */
 const requests = {
@@ -72,7 +58,7 @@ export function superRequest(
 }
 
 export function setupServer(): void {
-  let fastify: Awaited<ReturnType<typeof build>> | undefined;
+  let fastify: FastifyTestInstance;
   beforeAll(async () => {
     fastify = await build();
     await fastify.ready();
@@ -83,6 +69,6 @@ export function setupServer(): void {
   afterAll(async () => {
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
     // https://github.com/prisma/prisma/issues/18146
-    await fastifyTestInstance?.close();
+    await fastifyTestInstance.close();
   });
 }

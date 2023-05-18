@@ -8,6 +8,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  // The order matters here, since we want to reject invalid cross site requests
+  // before checking if the user is authenticated.
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.put(
