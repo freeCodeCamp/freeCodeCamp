@@ -36,19 +36,19 @@ solve for $w$, $x$, $y$ and $z$, using Cramer's rule.
 
 # --hints--
 
-`cramersRule` should be a function.
+`cramersRule` sollte eine Funktion sein.
 
 ```js
 assert(typeof cramersRule === 'function');
 ```
 
-`cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])` should return `[2, -12, -4, 1]`.
+`cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])` sollte `[2, -12, -4, 1]` zurückgeben.
 
 ```js
 assert.deepEqual(cramersRule(matrices[0], freeTerms[0]), answers[0]);
 ```
 
-`cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])` should return `[1, 1, -1]`.
+`cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])` sollte `[1, 1, -1]` zurückgeben.
 
 ```js
 assert.deepEqual(cramersRule(matrices[1], freeTerms[1]), answers[1]);

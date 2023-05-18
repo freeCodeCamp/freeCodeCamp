@@ -24,13 +24,13 @@ After importing and cleaning the data, use `NearestNeighbors` from `sklearn.neig
 
 Create a function named `get_recommends` that takes a book title (from the dataset) as an argument and returns a list of 5 similar books with their distances from the book argument.
 
-This code:
+Dieser Code:
 
 ```py
 get_recommends("The Queen of the Damned (Vampire Chronicles (Paperback))")
 ```
 
-should return:
+sollte zurückgeben:
 
 ```py
 [

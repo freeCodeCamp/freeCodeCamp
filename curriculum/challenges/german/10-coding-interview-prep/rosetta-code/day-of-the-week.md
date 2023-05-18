@@ -16,25 +16,25 @@ Write a function that takes a start year and an end year and return an array of 
 
 # --hints--
 
-`findXmasSunday` should be a function.
+`findXmasSunday` sollte eine Funktion sein.
 
 ```js
 assert(typeof findXmasSunday === 'function');
 ```
 
-`findXmasSunday(2000, 2100)` should return an array.
+`findXmasSunday(2000, 2100)` sollte ein Array zurückgeben.
 
 ```js
 assert(typeof findXmasSunday(2000, 2100) === 'object');
 ```
 
-`findXmasSunday(1970, 2017)` should return `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
+`findXmasSunday(1970, 2017)` sollte `[1977, 1983, 1988, 1994, 2005, 2011, 2016]` zurückgeben
 
 ```js
 assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
 ```
 
-`findXmasSunday(2008, 2121)` should return `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
+`findXmasSunday(2008, 2121)` sollte `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]` zurückgeben
 
 ```js
 assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);

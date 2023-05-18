@@ -26,7 +26,7 @@
     "dotenv": "16.0.3",
     "joi": "17.9.2",
     "js-yaml": "4.1.0",
-    "node-fetch": "2.6.9",
+    "node-fetch": "2.6.11",
     "readdirp": "3.6.0"
   }
 }
