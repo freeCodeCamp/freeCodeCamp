@@ -374,7 +374,7 @@ describe('settingRoutes', () => {
           githubProfile: 'invalid'
         });
 
-        expect(response?.statusCode).toEqual(404);
+        expect(response?.statusCode).toEqual(400);
       });
     });
 
