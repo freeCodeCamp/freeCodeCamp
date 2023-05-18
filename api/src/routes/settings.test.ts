@@ -213,36 +213,36 @@ describe('settingRoutes', () => {
 
     describe('/update-my-socials', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-socials')
-          .set('Cookie', cookies)
-          .send({
-            website: 'https://www.freecodecamp.org/',
-            twitter: 'https://twitter.com/ossia',
-            linkedin: 'https://www.linkedin.com/in/quincylarson',
-            githubProfile: 'https://github.com/QuincyLarson'
-          });
+        const response = await superRequest('/update-my-socials', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          website: 'https://www.freecodecamp.org/',
+          twitter: 'https://twitter.com/ossia',
+          linkedin: 'https://www.linkedin.com/in/quincylarson',
+          githubProfile: 'https://github.com/QuincyLarson'
+        });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.updated-socials',
           type: 'success'
         });
       });
 
       test('PUT returns 400 status code with invalid socials setting', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-socials')
-          .set('Cookie', cookies)
-          .send({
-            website: 'invalid',
-            twitter: 'invalid',
-            linkedin: 'invalid',
-            githubProfile: 'invalid'
-          });
+        const response = await superRequest('/update-my-socials', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          website: 'invalid',
+          twitter: 'invalid',
+          linkedin: 'invalid',
+          githubProfile: 'invalid'
+        });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
