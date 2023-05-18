@@ -176,7 +176,8 @@ describe('settingRoutes', () => {
         });
       });
 
-      test("PUT adds emailAuthLinkTTL with the current time to the user's record", async () => {
+      test("PUT updates the user's record in preparation for receiving auth email", async () => {
+        expect.assertions(6);
         const response = await request(fastify?.server)
           .put('/update-my-email')
           .set('Cookie', cookies)
@@ -184,26 +185,27 @@ describe('settingRoutes', () => {
 
         const user = await fastify?.prisma.user.findFirstOrThrow({
           where: { email: developerUserEmail },
-          select: { emailAuthLinkTTL: true }
+          select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
         });
-        const emailAuthLinkTTL = user?.emailAuthLinkTTL;
-        expect(emailAuthLinkTTL).toBeTruthy();
+        const emailVerifyTTL = user?.emailVerifyTTL;
+        expect(emailVerifyTTL).toBeTruthy();
         // This throw is to mollify TS (if this is necessary a lot, create a
         // helper)
-        if (!emailAuthLinkTTL) {
-          throw new Error('emailAuthLinkTTL is not defined');
+        if (!emailVerifyTTL) {
+          throw new Error('emailVerifyTTL is not defined');
         }
 
         expect(response?.statusCode).toEqual(200);
 
-        // expect the emailAuthLinkTTL to be within 10 seconds of the current time
+        // expect the emailVerifyTTL to be within 10 seconds of the current time
         const tenSeconds = 10 * 1000;
-        expect(emailAuthLinkTTL.getTime()).toBeGreaterThan(
+        expect(emailVerifyTTL.getTime()).toBeGreaterThan(
           Date.now() - tenSeconds
         );
-        expect(emailAuthLinkTTL.getTime()).toBeLessThan(
-          Date.now() + tenSeconds
-        );
+        expect(emailVerifyTTL.getTime()).toBeLessThan(Date.now() + tenSeconds);
+
+        expect(user?.emailVerified).toEqual(false);
+        expect(user?.newEmail).toEqual(unusedEmailOne);
       });
 
       test('PUT rejects invalid email addresses', async () => {
