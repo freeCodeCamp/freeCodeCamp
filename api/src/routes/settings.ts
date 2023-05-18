@@ -8,6 +8,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  // The order matters here, since we want to reject invalid cross site requests
+  // before checking if the user is authenticated.
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.put(
@@ -103,6 +107,52 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 
         return {
           message: 'flash.updated-themes',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-socials',
+    {
+      schema: {
+        body: Type.Object({
+          website: Type.Optional(Type.String({ format: 'url' })),
+          twitter: Type.Optional(Type.String({ format: 'url' })),
+          githubProfile: Type.Optional(Type.String({ format: 'url' })),
+          linkedin: Type.Optional(Type.String({ format: 'url' }))
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.updated-socials'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            website: req.body.website,
+            twitter: req.body.twitter,
+            githubProfile: req.body.githubProfile,
+            linkedin: req.body.linkedin
+          }
+        });
+
+        return {
+          message: 'flash.updated-socials',
           type: 'success'
         } as const;
       } catch (err) {

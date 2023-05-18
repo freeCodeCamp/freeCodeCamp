@@ -37,6 +37,11 @@ const odin = path.resolve(
   '../../src/templates/Challenges/odin/show.tsx'
 );
 
+const exam = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/exam/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -44,7 +49,8 @@ const views = {
   frontend,
   video,
   codeAlly,
-  odin
+  odin,
+  exam
   // quiz: Quiz
 };
 

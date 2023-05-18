@@ -7,6 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true
   }
 }
