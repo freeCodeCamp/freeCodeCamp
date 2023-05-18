@@ -145,14 +145,19 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentWillUnmount() {
-    if (!this.props.isAdvancing) {
-      if (getChapterSlug(this.mainWindow) !== this.props.chapterSlug) {
-        this.props.setChapterSlug('');
-        this.externalWindow?.close();
-        this.props.removePortalWindow();
+    const currentSlug = getChapterSlug(this.mainWindow);
+
+    if (!this.props.isAdvancing && currentSlug !== this.props.chapterSlug) {
+      this.props.setChapterSlug('');
+      this.externalWindow?.close();
+      this.props.removePortalWindow();
+    } else if (this.props.isAdvancing) {
+      if (currentSlug !== this.props.chapterSlug) {
+        this.props.setChapterSlug(currentSlug);
       }
+
+      this.props.setIsAdvancing(false);
     }
-    this.props.setIsAdvancing(false);
   }
 
   render() {
