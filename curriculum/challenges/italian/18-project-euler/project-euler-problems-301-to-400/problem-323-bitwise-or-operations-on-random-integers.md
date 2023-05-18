@@ -17,11 +17,11 @@ Per la successione $x_i$ viene data la seguente ricorsione:
 
 It can be seen that eventually there will be an index $N$ such that $x_i = 2^{32} - 1$ (a bit-pattern of all ones) for all $i ≥ N$.
 
-Trova il valore atteso di $N$. Give your answer rounded to 10 digits after the decimal point.
+Trova il valore atteso di $N$. Dai la tua risposta arrotondata a 10 cifre dopo il punto decimale.
 
 # --hints--
 
-`bitwiseOrOnRandomIntegers()` should return `6.3551758451`.
+`bitwiseOrOnRandomIntegers()` dovrebbe restituire `6.3551758451`.
 
 ```js
 assert.strictEqual(bitwiseOrOnRandomIntegers(), 6.3551758451);

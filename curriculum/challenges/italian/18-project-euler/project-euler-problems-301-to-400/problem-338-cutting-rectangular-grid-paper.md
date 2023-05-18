@@ -1,6 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd1
-title: 'Problem 338: Cutting Rectangular Grid Paper'
+title: 'Problema 338: tagliare carta a quadretti rettangolari'
 challengeType: 1
 forumTopicId: 301996
 dashedName: problem-338-cutting-rectangular-grid-paper
@@ -8,25 +8,25 @@ dashedName: problem-338-cutting-rectangular-grid-paper
 
 # --description--
 
-A rectangular sheet of grid paper with integer dimensions $w$ × $h$ is given. Its grid spacing is 1.
+Viene fornito un foglio rettangolare di carta a quadretti con dimensioni intere $w$ × $h$. La spaziatura della griglia è 1.
 
-When we cut the sheet along the grid lines into two pieces and rearrange those pieces without overlap, we can make new rectangles with different dimensions.
+Quando tagliamo il foglio lungo le linee della griglia in due pezzi e riordiniamo quei pezzi senza sovrapposizioni, possiamo creare nuovi rettangoli con dimensioni diverse.
 
-For example, from a sheet with dimensions 9 × 4, we can make rectangles with dimensions 18 × 2, 12 × 3 and 6 × 6 by cutting and rearranging as below:
+Ad esempio, da un foglio con dimensioni 9 × 4, possiamo realizzare rettangoli con dimensioni 18 × 2, 12 × 3 e 6 × 6 mediante taglio e riarrangiamento come segue:
 
-<img class="img-responsive center-block" alt="sheet with 9 x 4 dimensions cut in three different ways to make rectangles with 18 x 2, 12 x 3 and 6 x 6 dimensions" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="foglio con 9 x 4 dimensioni tagliato in tre modi diversi per realizzare rettangoli con dimensioni 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
 
-Similarly, from a sheet with dimensions 9 × 8, we can make rectangles with dimensions 18 × 4 and 12 × 6.
+Allo stesso modo, da un foglio con dimensioni 9 × 8, possiamo realizzare rettangoli con dimensioni 18 × 4 e 12 × 6.
 
-For a pair $w$ and $h$, let $F(w, h)$ be the number of distinct rectangles that can be made from a sheet with dimensions $w$ × $h$. For example, $F(2, 1) = 0$, $F(2, 2) = 1$, $F(9, 4) = 3$ and $F(9, 8) = 2$. Note that rectangles congruent to the initial one are not counted in $F(w, h)$. Note also that rectangles with dimensions $w$ × $h$ and dimensions $h$ × $w$ are not considered distinct.
+Per una coppia $w$ e $h$, sia $F(w, h)$ il numero di rettangoli distinti che possono essere fatti da un foglio con dimensioni $w$ × $h$. Per esempio, $F(2, 1) = 0$, $F(2, 2) = 1$, $F(9, 4) = 3$ e $F(9, 8) = 2$. Nota che i rettangoli congruenti a quello iniziale non sono contati in $F(w, h)$. Nota anche che i rettangoli con dimensioni $w$ × $h$ e le dimensioni $h$ × $w$ non sono considerati distinti.
 
-For an integer $N$, let $G(N)$ be the sum of $F(w, h)$ for all pairs $w$ and $h$ which satisfy $0 &lt; h ≤ w ≤ N$. We can verify that $G(10) = 55$, $G({10}^3) = 971\\,745$ and $G({10}^5) = 9\\,992\\,617\\,687$.
+Per un intero $N$, sia $G(N)$ la somma di $F(w, h)$ per tutte le coppie $w$ e $h$ che soddisfano $0 &lt; h ≤ w ≤ N$. Possiamo verificare che $G(10) = 55$, $G({10}^3) = 971\\,745$ e $G({10}^5) = 9\\,992\\,617\\,687$.
 
-Find $G({10}^{12})$. Give your answer modulo ${10}^8$.
+Trova $G({10}^{12})$. Give your answer modulo ${10}^8$.
 
 # --hints--
 
-`cuttingRectangularGridPaper()` should return `15614292`.
+`cuttingRectangularGridPaper()` dovrebbe restituire `15614292`.
 
 ```js
 assert.strictEqual(cuttingRectangularGridPaper(), 15614292);
