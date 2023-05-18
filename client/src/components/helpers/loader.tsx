@@ -16,8 +16,8 @@ function Loader({
 }: LoaderProps): JSX.Element {
   const { t } = useTranslation();
 
-  const [showSpinner, setShowSpinner] = useState(!loaderDelay);
-  const [showMessage, setShowMessage] = useState(!messageDelay);
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   useEffect(() => {
     if (loaderDelay) {
       const timerId = setTimeout(() => setShowSpinner(true), loaderDelay);
@@ -32,18 +32,14 @@ function Loader({
     }
   }, [messageDelay]);
 
+  const loadingIsSlow = showMessage && fullScreen;
   return (
     <div
       className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
       data-testid='fcc-loader'
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}
-      {showMessage && fullScreen && (
-        <>
-          <br />
-          <p className='text-center'>{t('misc.slow-load-msg')}</p>
-        </>
-      )}
+      {loadingIsSlow && <p>{t('misc.slow-load-msg')}</p>}
     </div>
   );
 }
