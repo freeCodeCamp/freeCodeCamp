@@ -163,7 +163,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-email', () => {
       beforeEach(async () => {
-        await fastify?.prisma.user.updateMany({
+        await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
           data: {
             newEmail: null,
@@ -174,10 +174,10 @@ describe('settingRoutes', () => {
         });
       });
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: 'foo@foo.com' });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: 'foo@foo.com' });
 
         expect(response?.body).toEqual({
           message: 'flash.email-valid',
@@ -188,12 +188,12 @@ describe('settingRoutes', () => {
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
         expect.assertions(6);
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: unusedEmailOne });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
 
-        const user = await fastify?.prisma.user.findFirstOrThrow({
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
           where: { email: developerUserEmail },
           select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
         });
@@ -219,10 +219,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT rejects invalid email addresses', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: 'invalid' });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: 'invalid' });
 
         // We cannot use fastify's default validation failure response here
         // because the client consumes the response and displays it to the user.
@@ -234,14 +234,14 @@ describe('settingRoutes', () => {
       });
 
       test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
-        await fastify?.prisma.user.updateMany({
+        await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
           data: { emailVerified: false }
         });
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: developerUserEmail.toUpperCase() });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: developerUserEmail.toUpperCase() });
 
         expect(response?.statusCode).toEqual(200);
         expect(response?.body).toEqual({
@@ -251,10 +251,10 @@ describe('settingRoutes', () => {
       });
 
       test('PUT rejects a request to update to the existing email (ignoring case) address', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: developerUserEmail.toUpperCase() });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: developerUserEmail.toUpperCase() });
 
         expect(response?.body).toEqual({
           type: 'info',
@@ -267,17 +267,17 @@ You can update a new email address instead.`
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
         expect.assertions(3);
 
-        const successResponse = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: unusedEmailOne });
+        const successResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
 
         expect(successResponse?.statusCode).toEqual(200);
 
-        const failResponse = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: unusedEmailOne.toUpperCase() });
+        const failResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne.toUpperCase() });
 
         expect(failResponse?.body).toEqual({
           type: 'info',
@@ -288,10 +288,10 @@ Please wait 5 minutes to resend an authentication link.`
       });
 
       test('PUT rejects a request if the new email is already in use', async () => {
-        const response = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: otherDeveloperUserEmail });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: otherDeveloperUserEmail });
 
         expect(response?.body).toEqual({
           type: 'info',
@@ -303,17 +303,17 @@ Please wait 5 minutes to resend an authentication link.`
       test('PUT rejects the second request if is immediately after the first', async () => {
         // message Please wait 5 minutes to resend an authentication link.
 
-        const successResponse = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: unusedEmailOne });
+        const successResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
 
         expect(successResponse?.statusCode).toEqual(200);
 
-        const failResponse = await request(fastify?.server)
-          .put('/update-my-email')
-          .set('Cookie', cookies)
-          .send({ email: unusedEmailTwo });
+        const failResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailTwo });
 
         expect(failResponse?.statusCode).toEqual(400);
 
