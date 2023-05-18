@@ -24,6 +24,14 @@ const nanoid = customAlphabet(
   64
 );
 
+/**
+ * Wrapper for endpoints related to user account management,
+ * such as account deletion.
+ *
+ * @param {FastifyInstance} fastify The Fastify instance.
+ * @param {unknown} _options Fastify options I guess?
+ * @param {Function} done Callback to signal that the logic has completed.
+ */
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,

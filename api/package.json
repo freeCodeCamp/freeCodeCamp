@@ -69,7 +69,8 @@
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
     "prisma": "dotenv -e ../.env prisma",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "lint": "cd .. && eslint api/src --max-warnings 0"
   },
   "version": "0.0.1"
 }

@@ -1,5 +1,11 @@
 import { randomBytes, createHash } from 'crypto';
 
+/**
+ * Utility to encode a buffer to a base64 URI.
+ *
+ * @param {Buffer} buf The buffer to encode.
+ * @returns {string} The encoded string.
+ */
 export function base64URLEncode(buf: Buffer): string {
   return buf
     .toString('base64')

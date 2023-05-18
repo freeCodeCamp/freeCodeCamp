@@ -189,7 +189,16 @@
             "publicOnly": true
           }
         ],
-        "jsdoc/require-description-complete-sentence": "warn"
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/no-undefined-types": "off",
+        "jsdoc/tag-lines": [
+          "warn",
+          "always",
+          {
+            "startLines": 1,
+            "count": 0
+          }
+        ]
       }
     }
   ]
