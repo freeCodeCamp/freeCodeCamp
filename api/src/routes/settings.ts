@@ -160,7 +160,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           email: true,
           emailVerifyTTL: true,
           newEmail: true,
-          emailVerified: true
+          emailVerified: true,
+          emailAuthLinkTTL: true
         }
       });
       const newEmail = req.body.email.toLowerCase();
@@ -209,6 +210,28 @@ ${isLinkSentWithinLimit}`
             emailVerifyTTL: new Date()
           }
         });
+
+        // TODO: combine emailVerifyTTL and emailAuthLinkTTL? I'm not sure why
+        // we need emailVeriftyTTL given that the main thing we want is to
+        // restrict the rate of attempts and the emailAuthLinkTTL already does
+        // that.
+        const tooManyRequestsMessage = getWaitMessage(user.emailAuthLinkTTL);
+
+        if (tooManyRequestsMessage) {
+          void reply.code(400);
+          return {
+            type: 'info',
+            message: tooManyRequestsMessage
+          } as const;
+        }
+
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            emailAuthLinkTTL: new Date()
+          }
+        });
+
         return { message: 'flash.email-valid', type: 'success' } as const;
       } catch (err) {
         fastify.log.error(err);
