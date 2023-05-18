@@ -147,15 +147,21 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   componentWillUnmount() {
     const currentSlug = getChapterSlug(this.mainWindow);
 
+    // if not moving between pages in chapters and chapter slug changes
     if (!this.props.isAdvancing && currentSlug !== this.props.chapterSlug) {
+      // means we navigated away from current chapter so close preview window
       this.props.setChapterSlug('');
       this.externalWindow?.close();
       this.props.removePortalWindow();
+      // else if moving between pages in chapters
     } else if (this.props.isAdvancing) {
+      // if moving from one chapter to the next
       if (currentSlug !== this.props.chapterSlug) {
+        // update chapter slug
         this.props.setChapterSlug(currentSlug);
       }
 
+      // set moving chapter state to false now
       this.props.setIsAdvancing(false);
     }
   }

@@ -105,7 +105,6 @@
 }
 
 #mobile-layout .nav-tabs > li > a {
-  position: relative;
   margin-inline-end: 0;
   text-decoration: none;
   font-size: 0.8em;
@@ -129,6 +128,7 @@
 }
 
 #mobile-layout-tab-preview {
+  position: relative;
   padding: 8px 46px 8px 10px;
 }
 
