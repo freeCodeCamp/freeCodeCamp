@@ -21,6 +21,7 @@ import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { settingRoutes } from './routes/settings';
+import { accountRoutes } from './account/route';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testMiddleware } from './middleware';
@@ -121,6 +122,7 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(accountRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(deprecatedEndpoints);
 
