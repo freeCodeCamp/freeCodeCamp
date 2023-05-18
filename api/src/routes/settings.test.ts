@@ -289,12 +289,11 @@ Please wait 5 minutes to resend an authentication link.`
           .set('Cookie', cookies)
           .send({ email: otherDeveloperUserEmail });
 
-        expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
           type: 'info',
-          message: `${otherDeveloperUserEmail} is already associated with another account.
-          `
+          message: `${otherDeveloperUserEmail} is already associated with another account.`
         });
+        expect(response?.statusCode).toEqual(400);
       });
 
       test('PUT rejects the second request if is immediately after the first', async () => {

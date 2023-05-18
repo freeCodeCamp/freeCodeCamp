@@ -188,6 +188,18 @@ You can update a new email address instead.`
 ${isLinkSentWithinLimit}`
         } as const;
       }
+
+      const isEmailAlreadyTaken =
+        (await fastify.prisma.user.count({ where: { email: newEmail } })) > 0;
+
+      if (isEmailAlreadyTaken && !isOwnEmail) {
+        void reply.code(400);
+        return {
+          type: 'info',
+          message: `${newEmail} is already associated with another account.`
+        } as const;
+      }
+
       try {
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
