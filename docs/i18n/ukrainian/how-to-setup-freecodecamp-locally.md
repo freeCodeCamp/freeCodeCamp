@@ -19,9 +19,9 @@
 
 ### Як підготувати робоче середовище Gitpod
 
-Ми автоматизували процес встановлення усіх необхідних залежностей та інструментів. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Ми автоматизували процес встановлення усіх необхідних залежностей та інструментів. Завдяки Gitpod ви отримаєте готове середовище за декілька хвилин, яке буде корисним, якщо ви не маєте доступу до комп’ютера чи хочете зробити одноразові зміни.
 
-There are various ways to launch an Gitpod workspace:
+Існує декілька способів запустити робоче середовище Gitpod:
 
 1. **(Найшвидший спосіб)** Додайте `gitpod.io/#` на початку будь-якого URL з GitHub.
 
@@ -34,33 +34,33 @@ There are various ways to launch an Gitpod workspace:
    - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) — працює з браузерами на основі Chromium (Google Chrome, Brave, Edge тощо)
    - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) — Firefox
 
-   Once installed you will see a 'Gitpod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. Перегляньте сторінку розширень для детальнішої інформації, знімків екрану тощо.
+   Як тільки розширення встановлено, ви побачите кнопку «Gitpod» на кожному репозиторії, PR тощо, що дозволить запустити робоче середовище. Перегляньте сторінку розширень для детальнішої інформації, знімків екрану тощо.
 
-That's it, you can now skip to the 'syncing up from parent' section after you have launched a Gitpod workspace. Most parts of this guide applies to Gitpod workspaces, but be mindful of [how the URLs & Ports work within a Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+Ви можете пропустити розділ «Налаштуйте синхронізацію з батьківського елемента», як тільки запустите робоче середовище Gitpod. Більша частина цього посібника стосується робочих середовищ Gitpod, однак потрібно пам’ятати [як працюють URL-адреси та порти в межах робочого середовища Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports).
 
-**Note: Troubleshooting port issues on Gitpod**
+**Примітка: розв’язок проблем з портом на Gitpod**
 
-Sometimes the service on port `8000` doesn't go live. This is common when you are restarting an inactive workspace.
+Служба на порті `8000` іноді не працює. Це типово, якщо ви перезапускаєте неактивне робоче середовище.
 
-If the service is not coming up on port `8000`, you can troubleshoot using these steps:
+Якщо служба не з’являється на порті `8000`, розв’яжіть проблему за допомогою наступних кроків:
 
-- **Start the server**: Run `pnpm run develop:server` in one terminal window from the root project directory (`/workspace/freeCodeCamp`) to start the server.
+- **Запустіть сервер**: виконайте `pnpm run develop:server` у вікні терміналу з кореневого каталогу проєкту (`/workspace/freeCodeCamp`), щоб запустити сервер.
 
-- **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
+- **Запустіть клієнта**: в іншому вікні терміналу виконайте `pnpm run develop -- -H '0.0.0.0'` з каталогу клієнта (`/workspace/freeCodeCamp/client`), щоб запустити клієнта.
 
-This should make port `8000` available.
+Це має зробити порт `8000` доступним.
 
 ### Як підготувати локальну машину
 
-Here is a minimum system requirement for running freeCodeCamp locally:
+Мінімальні вимоги для локального запуску freeCodeCamp:
 
-- 8 GB RAM
-- Relatively fast CPU (4+ cores)
-- Windows 10 or 11 (with WSL), macOS, or Linux
+- 8 ГБ оперативної пам’яті
+- Відносно швидкий процесор (4+ ядер)
+- Windows 10 чи 11 (з WSL), macOS або Linux
 
-Start by installing the prerequisite software for your operating system.
+Для початку встановіть передумовне програмне забезпечення для своєї операційної системи.
 
-We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+Здебільшого ми підтримуємо розробку на системах, які базуються на Linux та Unix (наприклад, Ubuntu та macOS). На Windows 10 чи 11 можна працювати лише з WSL2. Використовуйте [цей посібник](how-to-setup-wsl.md), щоб налаштувати WSL2. Ви не можете використовувати командний рядок, Git Bash або PowerShell для запуску freeCodeCamp на Windows.
 
 
 #### Передумови:
@@ -73,7 +73,7 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 
 > [!ATTENTION] Якщо у вас інша версія, встановіть рекомендовану версію. Ми можемо вирішити проблеми зі встановленням лише для рекомендованих версій. Див. [розв’язання проблем розробки](#troubleshooting) для деталей.
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
+Якщо на вашій машині вже встановлено Node.js, запустіть наступні команди для перевірки версій:
 
 ```console
 node -v
@@ -82,7 +82,7 @@ pnpm -v
 
 > [!TIP] Ми наполегливо рекомендуємо оновити вищевказані програмні забезпечення до останнього стабільного випуску, також відомого як довгострокова підтримка (LTS).
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Як тільки ви встановили передумови, потрібно підготувати середовище розробки. Це характерно для багатьох робочих процесів розробки, і це потрібно зробити лише один раз.
 
 ##### Виконайте наступні дії, щоб підготувати середовище розробки:
 
@@ -101,15 +101,15 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 ## Розгалужте репозиторій на GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+[Розгалуження](https://help.github.com/articles/about-forks/) — це етап, на якому ви отримаєте власну копію головного репозиторію freeCodeCamp на GitHub.
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+Це дуже важливо, оскільки ви зможете працювати над власною копією freeCodeCamp на GitHub або завантажити (клонувати) репозиторій для локальної роботи. Пізніше ви зможете запропонувати внести зміни до головного репозиторію зі свого розгалуження за допомогою запиту на злиття (PR).
 
 > [!TIP] Головний репозиторій на `https://github.com/freeCodeCamp/freeCodeCamp` часто називають репозиторієм `upstream`.
 > 
 > Ваше розгалуження на `https://github.com/YOUR_USER_NAME/freeCodeCamp` часто називають репозиторієм `origin`. `YOUR_USER_NAME` буде змінено на ваше ім’я користувача GitHub.
 
-**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
+**Виконайте наступні кроки, щоб розгалужити репозиторій `https://github.com/freeCodeCamp/freeCodeCamp`:**
 
 1. Перейдіть до репозиторію freeCodeCamp на GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
@@ -119,22 +119,22 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
 
 <details>
    <summary>
-      How to fork freeCodeCamp on GitHub (screenshot)
+      Як розгалужити freeCodeCamp на GitHub (знімок екрана)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Як розгалужити freeCodeCamp на GitHub" />
 </details>
 
 ## Клонуйте розгалуження з GitHub
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+[Клонування](https://help.github.com/articles/cloning-a-repository/) — це **завантаження** копії репозиторію з `віддаленого` розташування, що належить вам або комусь іншому. У цьому випадку віддаленим розташуванням є ваш `fork` репозиторію freeCodeCamp, який доступний на `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` буде змінено на ваше ім’я користувача GitHub.)
 
 > [!WARNING] Якщо ви використовуєте дистрибутив WSL2 Linux, у вас можуть виникнути проблеми, пов’язані з продуктивністю та стабільністю під час запуску цього проєкту в папці, спільній між Windows і WSL2 (наприклад, `/mnt/c/Users/`). Ми рекомендуємо клонувати цей репозиторій до папки, яка в основному використовується дистрибутивом WSL2 Linux і не має прямого доступу до Windows (наприклад, `~/PROJECTS/`).
 > 
 > Див. [завдання на GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) для детальнішої інформації щодо цієї проблеми.
 
-Run these commands on your local machine:
+Запустіть ці команди на своїй локальній машині:
 
 1. Відкрийте термінал / командний рядок / оболонку в каталозі проєктів
 
@@ -146,17 +146,17 @@ Run these commands on your local machine:
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-This will download the entire freeCodeCamp repository to your projects directory.
+Це завантажить весь репозиторій freeCodeCamp у ваш каталог проєктів.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+Зверніть увагу: `--depth=1` створює поверхневий клон вашого розгалуження, використовуючи лише останню історію/затвердження.
 
 ## Налаштуйте синхронізацію з батьківського репозиторію
 
-Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+Ви завантажили копію розгалуження, а отже вам потрібно налаштувати `upstream` віддалено від батьківського репозиторію.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
+[Як згадувалось раніше](#fork-the-repository-on-github), головний репозиторій має назву `upstream`. Розгалуження називають репозиторієм `origin`.
 
-You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+Вам потрібне посилання від локального клону на репозиторій `upstream` на додаток до репозиторію `origin`. Це необхідно для того, щоб ви могли синхронізувати зміни з головного репозиторію без багаторазового розгалуження і клонування.
 
 1. Змініть каталог на новий каталог freeCodeCamp:
 
@@ -187,21 +187,21 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 ## Локальний запуск freeCodeCamp
 
-Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
+Тепер у вас є локальна копія freeCodeCamp, тому дотримуйтесь цих інструкцій для локального запуску. Це дозволить вам:
 
-- Preview edits to pages as they would appear on the learning platform.
-- Work on UI related issues and enhancements.
-- Debug and fix issues with the application servers and client apps.
+- Переглядати як виглядатиме навчальна платформа з внесеними змінами.
+- Працювати над завданнями та покращеннями UI.
+- Виправляти помилки серверів застосунків та клієнтських застосунків.
 
-If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
+Якщо у вас виникли проблеми, спочатку спробуйте знайти розв’язок в інтернеті. Якщо розв’язку немає, пошукайте його на нашій сторінці [завдань GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) та повідомте про проблему, якщо про неї ще не повідомляли.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
+І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
 ### Налаштування залежностей
 
 #### Крок 1: налаштуйте файл змінних середовища
 
-The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
+Ключі API та змінні середовища за замовчуванням зберігаються у файлі `sample.env`. Цей файл потрібно скопіювати в новий файл під назвою `.env`, доступ до якого відкривається динамічно на кроці встановлення.
 
 ```console
 # Створіть копію «sample.env» та назвіть її «.env».
@@ -224,13 +224,13 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
 > [!TIP] Майте на увазі, якщо ви використовуватимете Auth0 або Algolia, вам потрібно отримати власні ключі API для цих служб та відредагувати введені дані у файлі `.env`.
 
 #### Крок 2: встановіть залежності
 
-This step will install the dependencies required for the application to run:
+У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
 ```console
 pnpm install && pnpm run create:config
@@ -238,13 +238,13 @@ pnpm install && pnpm run create:config
 
 #### Крок 3: запустіть MongoDB та додайте базу даних
 
-Before you can run the application locally, you will need to start the MongoDB service.
+Перш ніж локально запустити застосунок, потрібно запустити службу MongoDB.
 
 > [!NOTE] Якщо MongoDB працює за замовчуванням, то URL-адреса, збережена як значення `MONGOHQ_URL` у файлі `.env`, має працювати. Якщо ви використовуєте власне налаштування, змініть значення за потреби.
 > 
 > Якщо ви дотримувались [посібника з налаштування Windows 10 з WSL2](how-to-setup-wsl.md), ви можете пропустити цей крок за умови, що сервер MongoDB вже працює. Це можна перевірити, зв’язавшись із `http://localhost:27017` на локальній машині.
 
-Start the MongoDB server in a separate terminal:
+Запустіть сервер MongoDB в окремому терміналі:
 
   <!-- tabs:start -->
 
@@ -256,19 +256,19 @@ mongod
 
 #### **Windows**
 
-- On Windows, you must specify the full path to the `mongod` binary
+- На Windows ви повинні вказати повний шлях до двійкового файлу `mongod`
 
 ```console
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-Make sure to replace `3.6` with the version you have installed
+Не забудьте змінити `3.6` на свою версію
 
   <!-- tabs:end -->
 
 > [!TIP] Ви можете не запускати MongoDB кожного разу, встановивши його як фонову службу. Для детальнішої інформації див. [документацію MongoDB для вашої ОС](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
+Тепер додамо базу даних. На цьому кроці ми запускаємо нижченаведену команду, яка заповнює сервер MongoDB деякими початковими наборами даних, потрібних службам. До них належать деякі схеми та інше.
 
 ```console
 pnpm run seed
@@ -276,27 +276,27 @@ pnpm run seed
 
 #### Крок 4: запустіть клієнтську програму freeCodeCamp та сервер API
 
-You can now start up the API server and the client applications.
+Тепер ви можете запустити сервер API та клієнтську програму.
 
 ```console
 pnpm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+Ця команда запустить всі служби, включно з сервером API та клієнтською програмою, з якими ви можете працювати.
 
-Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+Після цього відкрийте веббраузер та відвідайте <http://localhost:8000>. Якщо застосунок завантажується, увійдіть в систему. Вітання — все готово! Тепер ви маєте копію повної навчальної платформи freeCodeCamp на своїй локальній машині.
 
-The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
+Сервер API обслуговує кінцеві точки на `http://localhost:3000`. Gatsby обслуговує клієнтську програму на `http://localhost:8000`.
 
-While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+Якщо ви увійшли в систему, відвідайте <http://localhost:3000/explorer> і побачите доступні API.
 
 > [!WARNING] Якщо очистити cookies чи запустити `pnpm run seed:certified-user`, ви вийдете з системи та вам доведеться увійти знову.
 
-If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
+Якщо у вас виникли проблеми, див. розділ з [розв’язання проблем розробки](troubleshooting-development-issues.md).
 
 ## Коротко про команди
 
-A quick reference to the commands that you will need when working locally.
+Короткий довідник команд, які знадобляться при локальній роботі.
 
 | команда            | опис                                                                 |
 | ------------------ | -------------------------------------------------------------------- |

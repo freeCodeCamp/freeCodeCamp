@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "響應式網頁設計",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用來學習 HTML 和 CSS 的基本知識。 然後，通過構建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過搭建網頁表單來學習無障礙的最佳實踐。",
@@ -337,7 +337,7 @@
         "intro": ["", ""]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "通過創建足球隊卡學習現代 JavaScript 方法",
         "intro": ["", ""]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -349,15 +349,15 @@
         "intro": ["", ""]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "通過創建 fCC 作者頁面學習 Fetch 和 Promises",
         "intro": ["", ""]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "通過創建垃圾郵件過濾器學習正則表達式",
         "intro": ["", ""]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "通過創建數字排序器學習基本算法思維",
         "intro": ["", ""]
       }
     }
@@ -465,7 +465,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "關係數據庫",
     "intro": [
       "對於這些課程，你將使用真正的開發人員工具和軟件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行來完成交互式教程和構建項目。",
       "這些課程從基本的 Bash 命令開始。使用終端，你將學習從導航和操作文件系統、在 Bash 中編寫腳本到高級用法的所有內容。",
@@ -951,12 +951,12 @@
         "intro": ["詳細描述待確定"]
       },
       "top-learn-css-foundations": {
-        "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "學習 CSS 基礎",
+        "intro": ["描述待定"]
       },
       "top-learn-css-foundations-projects": {
-        "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "title": "學習 CSS 基礎項目",
+        "intro": ["描述待定"]
       }
     }
   },
@@ -1009,8 +1009,8 @@
     "legacy-header": "舊版課程",
     "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
     "legacy-go-back": "進入當前版本的課程。",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
+    "course-maintenance": "這些課程正在維護中。如果它們不可用，你可以學習如何在本地運行這些課程 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>。",
+    "progress-wont-save": "當你在本地運行它們時，你的進度不會被保存到你的 freeCodeCamp 賬戶。",
     "go-back-to-learn": "回到正式版課程",
     "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",
     "enable-cookies": "你必須在開始之前啓用第三方 cookies。",
