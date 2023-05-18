@@ -1,18 +1,7 @@
 import { setupServer, superRequest } from '../jest.utils';
 import { HOME_LOCATION } from './utils/env';
 
-jest.mock('./utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return {
-    ...jest.requireActual('./utils/env'),
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    FREECODECAMP_NODE_ENV: 'production',
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    COOKIE_DOMAIN: '.freecodecamp.org'
-  };
-});
-
-describe('production', () => {
+describe('server', () => {
   setupServer();
 
   describe('CSRF protection', () => {
@@ -52,8 +41,11 @@ describe('production', () => {
         'content-security-policy': "frame-ancestors 'none'",
         'content-type': 'application/json; charset=utf-8',
         'x-content-type-options': 'nosniff',
-        'x-frame-options': 'DENY',
-        'strict-transport-security': 'max-age=300; includeSubDomains'
+        'x-frame-options': 'DENY'
+        // In production we also set strict-transport-security, but in order to
+        // test this we would need to mock FREECODECAMP_NODE_ENV to production.
+        // This is possible, but has side effects (like using the normal
+        // database instead of the test ones). On balance it's not worth it.
       });
     });
 
@@ -107,8 +99,7 @@ describe('production', () => {
         'content-security-policy': "frame-ancestors 'none'",
         'content-type': 'text/html; charset=utf-8',
         'x-content-type-options': 'nosniff',
-        'x-frame-options': 'DENY',
-        'strict-transport-security': 'max-age=300; includeSubDomains'
+        'x-frame-options': 'DENY'
       });
     });
   });
