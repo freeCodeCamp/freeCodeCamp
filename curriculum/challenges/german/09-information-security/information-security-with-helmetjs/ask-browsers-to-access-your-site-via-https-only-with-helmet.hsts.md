@@ -14,7 +14,7 @@ HTTP Strict Transport Security (HSTS) ist eine Web-Sicherheitsrichtlinie, die da
 
 # --instructions--
 
-Konfiguriere `helmet.hsts()`, um HTTPS für die nächsten 90 Tage zu verwenden. Übergib das Konfigurations-Objekt `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Replit hat bereits Hsts aktiviert. Um seine Einstellungen zu überschreiben, musst du das Feld "force" auf true im Konfigurations-Objekt setzen. We will intercept and restore the Replit header, after inspecting it for testing.
+Konfiguriere `helmet.hsts()`, um HTTPS für die nächsten 90 Tage zu verwenden. Übergib das Konfigurations-Objekt `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Replit hat bereits Hsts aktiviert. Um seine Einstellungen zu überschreiben, musst du das Feld "force" auf true im Konfigurations-Objekt setzen. Wir werden den Replit-Header abfangen und wiederherstellen, nachdem wir ihn zu Testzwecken genauer überprüft haben.
 
 Hinweis: Die Konfiguration von HTTPS auf einer benutzerdefinierten Website erfordert den Erwerb einer Domain und eines SSL/TLS-Zertifikats.
 

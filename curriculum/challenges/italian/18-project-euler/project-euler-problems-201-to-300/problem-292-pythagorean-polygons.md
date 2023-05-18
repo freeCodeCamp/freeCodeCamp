@@ -1,6 +1,6 @@
 ---
 id: 5900f4911000cf542c50ffa3
-title: 'Problem 292: Pythagorean Polygons'
+title: 'Problema 292: poligoni pitagorici'
 challengeType: 1
 forumTopicId: 301944
 dashedName: problem-292-pythagorean-polygons
@@ -8,24 +8,24 @@ dashedName: problem-292-pythagorean-polygons
 
 # --description--
 
-We shall define a pythagorean polygon to be a convex polygon with the following properties:
+Definiremo un poligono pitagorico come poligono convesso con le seguenti proprietà:
 
-- there are at least three vertices,
-- no three vertices are aligned,
-- each vertex has integer coordinates,
-- each edge has integer length.
+- ci sono almeno tre vertici,
+- non ci sono tre vertici allineati,
+- ogni vertice ha coordinate intere,
+- ogni lato ha lunghezza intera.
 
-For a given integer $n$, define $P(n)$ as the number of distinct pythagorean polygons for which the perimeter is $≤ n$.
+Per un dato numero intero $n$, si definisce $P(n)$ come il numero di poligoni pitagorici distinti per i quali il perimetro è $≤ n$.
 
-Pythagorean polygons should be considered distinct as long as none is a translation of another.
+I poligoni pitagorici dovrebbero essere considerati distinti purché nessuno sia la traslazione di un altro.
 
-You are given that $P(4) = 1$, $P(30) = 3655$ and $P(60) = 891045$.
+Ti viene dato che $P(4) = 1$, $P(30) = 3655$ e $P(60) = 891045$.
 
-Find $P(120)$.
+Trova $P(120)$.
 
 # --hints--
 
-`pythagoreanPolygons()` should return `3600060866`.
+`pythagoreanPolygons()` dovrebbe restituire `3600060866`.
 
 ```js
 assert.strictEqual(pythagoreanPolygons(), 3600060866);

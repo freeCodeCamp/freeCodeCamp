@@ -1,6 +1,6 @@
-Follow this guide for setting up the freeCodeCamp mobile app locally on your system. This is highly recommended if you want to contribute regularly.
+Дотримуйтесь цього посібника, щоб локально налаштувати мобільний застосунок freeCodeCamp на своїй системі. Особливо рекомендовано, якщо ви хочете робити внески регулярно.
 
-Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
+Деякі з робочих процесів (наприклад, виправлення помилок у кодовій базі) вимагають локального запуску freeCodeCamp.
 
 ### Як підготувати локальну машину
 
@@ -22,89 +22,89 @@ flutter --version
 dart --version
 ```
 
-> [!TIP] We highly recommend updating to the latest stable releases of the software listed above.
+> [!TIP] Ми наполегливо рекомендуємо оновити вищевказані програмні забезпечення до останнього стабільного випуску.
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Як тільки ви встановили передумови, потрібно підготувати середовище розробки. Це характерно для багатьох робочих процесів розробки, і це потрібно зробити лише один раз.
 
-##### Follow these steps to get your development environment ready:
+##### Виконайте наступні дії, щоб підготувати середовище розробки:
 
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+1. Встановіть [Git](https://git-scm.com/) або інший клієнт Git, якщо ви досі цього не зробили. Оновіть його до останньої версії; версія, яка пов’язана з вашою ОС, може бути застарілою.
 
-2. Set up [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. We recommend using the Pixel 3a XL and Nexus One(for emulating smaller screens).
+2. Встановіть [Android Studio](https://developer.android.com/studio) та [емулятори Android](https://developer.android.com/studio/run/managing-avds) з останньою випущеною версією Android. Ми рекомендуємо використовувати Pixel 3a XL та Nexus One (для емуляції менших екранів).
 
-3. (Optional for MacOS) Set up Xcode and iOS Simulator with the latest released iOS version.
+3. (Додатково для MacOS) Встановіть Xcode та симулятор iOS з останньою випущеною версією iOS.
 
-4. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+4. (Необов’язково, але рекомендовано) [Налаштуйте ключ SSH](https://help.github.com/articles/generating-an-ssh-key/) для GitHub.
 
-5. Install a code editor of your choice.
+5. Встановіть редактор коду на свій вибір.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode).
+   Ми наполегливо рекомендуємо використовувати [Visual Studio Code](https://code.visualstudio.com/) або Android Studio. Ми також рекомендуємо встановити офіційні [розширення](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
-## Fork the Repository on GitHub
+## Розгалужте репозиторій на GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
+[Розгалуження](https://help.github.com/articles/about-forks/) — це етап, на якому ви отримаєте власну копію репозиторію на GitHub.
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+Це дуже важливо, оскільки ви зможете працювати над власною копією мобільного застосунку freeCodeCamp на GitHub або завантажити (клонувати) репозиторій для локальної роботи. Пізніше ви зможете запропонувати внести зміни до головного репозиторію зі свого розгалуження за допомогою запиту на злиття (PR).
 
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/mobile` is often referred to as the `upstream` repository.
+> [!TIP] Головний репозиторій на `https://github.com/freeCodeCamp/mobile` часто називають репозиторієм `upstream`.
 > 
-> Your fork at `https://github.com/YOUR_USER_NAME/mobile` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+> Ваше розгалуження на `https://github.com/YOUR_USER_NAME/mobile` часто називають репозиторієм `origin`. `YOUR_USER_NAME` буде змінено на ваше ім’я користувача GitHub.
 
-**Follow these steps to fork the `https://github.com/freeCodeCamp/mobile` repository:**
+**Виконайте наступні кроки, щоб розгалужити репозиторій `https://github.com/freeCodeCamp/mobile`:**
 
-1. Go to the freeCodeCamp mobile repository on GitHub: <https://github.com/freeCodeCamp/mobile>
+1. Перейдіть до мобільного репозиторію freeCodeCamp на GitHub: <https://github.com/freeCodeCamp/mobile>
 
-2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+2. Натисніть кнопку «Fork» у верхньому правому куті інтерфейсу ([детальніша інформація тут](https://help.github.com/articles/fork-a-repo/))
 
-3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+3. Як тільки репозиторій розгалужено, вас буде переміщено до копії репозиторію на `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` буде змінено на ваше ім’я користувача GitHub.)
 
-## Clone your Fork from GitHub
+## Клонуйте розгалуження з GitHub
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+[Клонування](https://help.github.com/articles/cloning-a-repository/) — це **завантаження** копії репозиторію з `віддаленого` розташування, що належить вам або комусь іншому. У цьому випадку віддаленим розташуванням є ваш `fork` репозиторію freeCodeCamp, який доступний на `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` буде змінено на ваше ім’я користувача GitHub.)
 
-Run these commands on your local machine:
+Запустіть ці команди на своїй локальній машині:
 
-1. Open a Terminal / Command Prompt / Shell in your projects directory
+1. Відкрийте термінал / командний рядок / оболонку в каталозі проєктів
 
-   _i.e.: `/yourprojectsdirectory/`_
+   _тобто `/yourprojectsdirectory/`_
 
-2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
+2. Клонуйте своє розгалуження freeCodeCamp, замінивши `YOUR_USER_NAME` на ім’я користувача GitHub
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
    ```
 
-This will download the entire freeCodeCamp mobile repository to your projects directory.
+Це завантажить весь мобільний репозиторій freeCodeCamp у ваш каталог проєктів.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+Зверніть увагу: `--depth=1` створює поверхневий клон вашого розгалуження, використовуючи лише останню історію/затвердження.
 
-## Set up Syncing from Parent
+## Налаштуйте синхронізацію з батьківського репозиторію
 
-Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+Ви завантажили копію розгалуження, а отже вам потрібно налаштувати `upstream` віддалено від батьківського репозиторію.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
+[Як згадувалось раніше](#fork-the-repository-on-github), головний репозиторій має назву `upstream`. Розгалуження називають репозиторієм `origin`.
 
-You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+Вам потрібне посилання від локального клону на репозиторій `upstream` на додаток до репозиторію `origin`. Це необхідно для того, щоб ви могли синхронізувати зміни з головного репозиторію без багаторазового розгалуження і клонування.
 
-1. Change directory to the new `mobile` directory:
+1. Змініть каталог на новий каталог `mobile`:
 
    ```console
    cd mobile
    ```
 
-2. Add a remote reference to the main freeCodeCamp mobile repository:
+2. Додайте віддалене посилання на головний репозиторій мобільного застосунку freeCodeCamp:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
-3. Ensure the configuration looks correct:
+3. Переконайтеся, що конфігурація правильна:
 
    ```console
    git remote -v
    ```
 
-   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
+   Вивід повинен бути схожим на нижчеподаний приклад (замініть `YOUR_USER_NAME` на своє ім’я користувача GitHub):
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
@@ -113,25 +113,25 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Running freeCodeCamp Mobile App Locally
+## Локальний запуск мобільного застосунку freeCodeCamp
 
-Now that you have a local copy of the mobile app, you can follow these instructions to run it locally.
+Тепер у вас є локальна копія мобільного застосунку, тому дотримуйтесь цих інструкцій для локального запуску.
 
-If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/mobile/issues) page for a solution and report the issue if it has not yet been reported.
+Якщо у вас виникли проблеми, спочатку спробуйте знайти розв’язок в інтернеті. Якщо розв’язку немає, пошукайте його на нашій сторінці [завдань GitHub](https://github.com/freeCodeCamp/mobile/issues) та повідомте про проблему, якщо про неї ще не повідомляли.
 
 І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-> [!NOTE] The `mobile` directory contains two folders ie. `mobile-api` and `mobile-app`. `mobile-api` contains the API code used for serving the podcasts. `mobile-app` contains the Flutter app which is where you should be when you follow the below steps.
+> [!NOTE] Каталог `mobile` містить дві папки, тобто `mobile-api` та `mobile-app`. `mobile-api` містить код API, який використовується для обслуговування подкастів. `mobile-app` містить застосунок Flutter, у якому ви повинні знаходитись під час виконання нижчеподаних кроків.
 
-### Configuring Dependencies
+### Налаштування залежностей
 
-#### Step 1: Set Up the Environment Variable File
+#### Крок 1: налаштуйте файл змінних середовища
 
-The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
+Ключі API та змінні середовища за замовчуванням зберігаються у файлі `sample.env`. Цей файл потрібно скопіювати в новий файл під назвою `.env`, доступ до якого відкривається динамічно на кроці встановлення. Не забудьте змінити каталог на `mobile-app` перед виконанням наступних команд.
 
 ```console
-# Create a copy of the "sample.env" and name it ".env".
-# Populate it with the necessary API keys and secrets:
+# Створіть копію «sample.env» та назвіть її «.env».
+# Заповніть її необхідними ключами та секретами API:
 ```
 
 <!-- tabs:start -->
@@ -150,41 +150,41 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
-#### Step 2: Install dependencies
+#### Крок 2: встановіть залежності
 
-This step will install the dependencies required for the application to run:
+У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
 ```console
 flutter pub get
 ```
 
-#### Step 3: Start the freeCodeCamp mobile app
+#### Крок 3: запустіть мобільний застосунок freeCodeCamp
 
-Start the emulator of your choice(Android or iOS) and wait for the bootup process to complete.
+Запустіть емулятор (Android або iOS) та зачекайте, поки не завершиться завантаження.
 
-You can now start the app by running the following command:
+Тепер ви можете запустити застосунок, виконавши наступну команду:
 
 ```console
 flutter run
 ```
 
-> [!TIP] If you're using VSCode or Android Studio then you can easily start the app without having to execute any terminal commands. More information [here](https://docs.flutter.dev/get-started/test-drive).
+> [!TIP] Якщо ви використовуєте VSCode або Android Studio, ви можете запустити застосунок, не виконуючи жодних термінальних команд. Більше інформації [тут](https://docs.flutter.dev/get-started/test-drive).
 
-## Making Changes Locally
+## Введення змін локально
 
-You can now make changes to files and commit your changes to the local clone of your fork.
+Тепер ви можете вносити зміни до файлів та затверджувати їх у локальному клоні розгалуження.
 
-Follow these steps:
+Дотримуйтеся цих вказівок:
 
-1. Validate that you are on the `main` branch:
+1. Переконайтесь, що знаходитесь на гілці `main`:
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   Ви повинні отримати такий вивід:
 
    ```console
    On branch main
@@ -193,59 +193,59 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
+   Якщо ви не перебуваєте на головній гілці (main) або ваш робочий каталог не чистий, розв’яжіть будь-які невиконані файли/затвердження та перевірте `main`:
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the upstream `main` branch to your local main branch:
+2. Синхронізуйте останні зміни віддаленої гілки `main` зі своєю локальною гілкою main:
 
-   > [!WARNING] If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > [!WARNING] Якщо у вас є невиконані запити на злиття, зроблені з гілки `main` свого розгалуження, ви втратите їх під кінець цього кроку.
    > 
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
+   > Перед виконанням цього кроку потрібно переконатись, що ваш запит на злиття об’єднав модератор. Щоб уникнути цього, **ніколи** не працюйте на гілці `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp mobile. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   Цей крок **синхронізує останні зміни** з головного репозиторію мобільного застосунку freeCodeCamp. Важливо якомога частіше перебазовувати свою гілку на останню версію `upstream/main`, щоб уникнути конфліктів пізніше.
 
-   Update your local copy of the freeCodeCamp mobile upstream repository:
+   Оновіть свою локальну копію віддаленого репозиторію мобільного застосунку freeCodeCamp:
 
    ```console
    git fetch upstream
    ```
 
-   Hard reset your main branch with the freeCodeCamp mobile main:
+   Скиньте свою головну гілку з головною гілкою мобільного застосунку freeCodeCamp:
 
    ```console
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Перемістіть свою головну гілку до джерела, щоб мати чисту історію розгалуження на GitHub:
 
    ```console
    git push origin main --force
    ```
 
-   You can validate that your current main matches the upstream/main by performing a diff:
+   Ви можете переконатись, що ваша поточна головна гілка відповідає upstream/main, виконавши diff:
 
    ```console
    git diff upstream/main
    ```
 
-   The resulting output should be empty.
+   Отриманий вивід має бути порожнім.
 
-3. Create a fresh new branch:
+3. Створіть нову гілку:
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp mobile and you may have to start over with a fresh clone or fork.
+   Ваша локальна робоча копія буде чистою, якщо ви працюватимете на окремій гілці для кожного завдання. Ніколи не працюйте на `main`. Це забруднить вашу копію мобільного застосунку freeCodeCamp, через що, можливо, доведеться починати з нового клону чи розгалуження.
 
-   Check that you are on `main` as explained previously, and branch off from there:
+   Переконайтесь, що знаходитесь на `main` та починайте розгалуження звідси:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful, and unique.
+   Назва вашої гілки повинна починатись з `fix/`, `feat/`, `docs/` тощо. Не використовуйте номери завдань у гілках. Вони мають бути короткими, змістовними та унікальними.
 
-   Some examples of good branch names are:
+   Декілька прикладів хороших назв гілок:
 
    ```md
    fix/update-challenges-for-react
@@ -255,19 +255,19 @@ Follow these steps:
    translate/add-spanish-basic-html
    ```
 
-4. Edit pages and work on code in your favorite text editor.
+4. Відредагуйте сторінки та працюйте над кодом у своєму улюбленому текстовому редакторі.
 
-5. Once you are happy with the changes you should optionally run the mobile app locally to preview the changes.
+5. Як тільки ви задоволені змінами, за бажанням запустіть мобільний додаток локально для перегляду змін.
 
-6. Make sure you fix any errors and check the formatting of your changes.
+6. Переконайтеся, що виправили помилки та перевірте форматування своїх змін.
 
-7. Check and confirm the files you are updating:
+7. Перевірте та підтвердьте файли, які оновлюєте:
 
    ```console
    git status
    ```
 
-   This should show a list of `unstaged` files that you have edited.
+   Має з’явитись список файлів `unstaged`, які ви відредагували.
 
    ```console
    On branch feat/documentation
@@ -282,27 +282,27 @@ Follow these steps:
    ...
    ```
 
-8. Stage the changes and make a commit:
+8. Проіндексуйте зміни та зробіть затвердження:
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   У цьому кроці потрібно позначити лише ті файли, які редагували чи додавали самостійно. Якщо необхідно, ви можете виконати скидання та виправити файли, які не збираєтеся змінювати.
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Or you can add all the `unstaged` files to the staging area:
+   Або ви можете додати всі файли `unstaged` до області тимчасового зберігання:
 
    ```console
    git add .
    ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+   Лише ті файли, які було переміщено до області тимчасового зберігання, будуть додані під час затвердження.
 
    ```console
    git status
    ```
 
-   Output:
+   Вивід:
 
    ```console
    On branch feat/documentation
@@ -315,24 +315,24 @@ Follow these steps:
        modified:   mobile-app/lib/main.dart
    ```
 
-   Now, you can commit your changes with a short message like so:
+   Тепер ви можете затвердити свої зміни, використовуючи коротке повідомлення:
 
    ```console
    git commit -m "fix: my short commit message"
    ```
 
-   Some examples:
+   Декілька прикладів:
 
    ```md
    fix: update guide article for Java - for loop
    feat: add guide article for alexa skills
    ```
 
-   Optional:
+   Додатково:
 
-   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+   Ми наполегливо рекомендуємо створювати загальноприйняті повідомлення затверджень. Це хороша практика, яку можна помітити на деяких популярних репозиторіях з відкритим кодом. Це спонукає дотримуватись стандартних практик.
 
-   Some examples of conventional commit messages are:
+   Декілька прикладів хороших повідомлень затверджень:
 
    ```md
    fix: update HTML guide article
@@ -341,29 +341,29 @@ Follow these steps:
    docs: update contributing guidelines
    ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+   Пишіть їх короткими, не більше 50 символів. Додаткову інформацію можна додати в описі затвердження.
 
-   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
+   Це не займе більше часу ніж нестандартне повідомлення (наприклад, «update file» чи «add index.md»)
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   Ви можете дізнатись більше, чому потрібно використовувати загальноприйнятні затвердження, [тут](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. Якщо вам потрібно відредагувати файл або оновити повідомлення після створення затвердження, це можна зробити після редагування файлів за допомогою:
 
    ```console
    git commit --amend
    ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   Це відкриє текстовий редактор за замовчуванням (наприклад, `nano` або `vi`), де можна редагувати заголовок повідомлення та додавати/редагувати опис.
 
-10. Next, you can push your changes to your fork:
+10. Тепер надішліть свої зміни до розгалуження:
 
     ```console
     git push origin branch/name-here
     ```
 
-## Proposing a Pull Request (PR)
+## Запропонуйте запит на злиття (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
 
 <!-- ## Quick commands reference - NEED TO DISCUSS ABOUT THIS
 

@@ -16,7 +16,7 @@ Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanne
 -   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 
-Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
@@ -79,7 +79,7 @@ Schreibe deinen Code in `port_scanner.py`. Für die Entwicklung kannst du `main.
 
 ## Testen
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Die Tests werden automatisch ausgeführt, wenn du auf den "Run"-Button klickst.
 
 ## Submitting
 

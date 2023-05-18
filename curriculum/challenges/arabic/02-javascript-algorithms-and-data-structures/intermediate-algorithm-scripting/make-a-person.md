@@ -41,37 +41,37 @@ assert.strictEqual(
 `bob instanceof Person` يجب أن يرجع `true`.
 
 ```js
-assert.deepEqual(bob instanceof Person, true);
+assert.deepEqual(_test_bob instanceof Person, true);
 ```
 
 `bob.firstName` يجب أن يرجع `undefined`.
 
 ```js
-assert.deepEqual(bob.firstName, undefined);
+assert.deepEqual(_test_bob.firstName, undefined);
 ```
 
 `bob.lastName` يجب أن يرجع `undefined`.
 
 ```js
-assert.deepEqual(bob.lastName, undefined);
+assert.deepEqual(_test_bob.lastName, undefined);
 ```
 
 `bob.getFirstName()` يجب أن يرجع السلسلة `Bob`.
 
 ```js
-assert.deepEqual(bob.getFirstName(), 'Bob');
+assert.deepEqual(_test_bob.getFirstName(), 'Bob');
 ```
 
 `bob.getLastName()` يجب أن يعيد السلسلة `Ross`.
 
 ```js
-assert.deepEqual(bob.getLastName(), 'Ross');
+assert.deepEqual(_test_bob.getLastName(), 'Ross');
 ```
 
 `bob.getFullName()` يجب أن يعيد السلسلة `Bob Ross`.
 
 ```js
-assert.deepEqual(bob.getFullName(), 'Bob Ross');
+assert.deepEqual(_test_bob.getFullName(), 'Bob Ross');
 ```
 
 `bob.getFullName()` يجب أن يعيد السلسلة `Haskell Ross` بعد `bob.setFirstName("Haskell")`.
@@ -79,8 +79,8 @@ assert.deepEqual(bob.getFullName(), 'Bob Ross');
 ```js
 assert.strictEqual(
   (function () {
-    bob.setFirstName('Haskell');
-    return bob.getFullName();
+    _test_bob.setFirstName('Haskell');
+    return _test_bob.getFullName();
   })(),
   'Haskell Ross'
 );
@@ -104,8 +104,8 @@ assert.strictEqual(
 ```js
 assert.strictEqual(
   (function () {
-    bob.setFullName('Haskell Curry');
-    return bob.getFullName();
+    _test_bob.setFullName('Haskell Curry');
+    return _test_bob.getFullName();
   })(),
   'Haskell Curry'
 );
@@ -116,8 +116,8 @@ assert.strictEqual(
 ```js
 assert.strictEqual(
   (function () {
-    bob.setFullName('Haskell Curry');
-    return bob.getFirstName();
+    _test_bob.setFullName('Haskell Curry');
+    return _test_bob.getFirstName();
   })(),
   'Haskell'
 );
@@ -128,8 +128,8 @@ assert.strictEqual(
 ```js
 assert.strictEqual(
   (function () {
-    bob.setFullName('Haskell Curry');
-    return bob.getLastName();
+    _test_bob.setFullName('Haskell Curry');
+    return _test_bob.getLastName();
   })(),
   'Curry'
 );
@@ -137,12 +137,16 @@ assert.strictEqual(
 
 # --seed--
 
+## --after-user-code--
+
+```js
+const _test_bob = new Person('Bob Ross');
+```
+
 ## --seed-contents--
 
 ```js
 const Person = function(firstAndLast) {
-  // Only change code below this line
-  // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
   };

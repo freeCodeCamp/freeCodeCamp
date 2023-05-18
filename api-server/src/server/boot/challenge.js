@@ -64,6 +64,13 @@ export default async function bootChallenge(app, done) {
   );
 
   api.post(
+    '/exam-challenge-completed',
+    send200toNonUser,
+    isValidChallengeCompletion,
+    examChallengeCompleted
+  );
+
+  api.post(
     '/save-challenge',
     send200toNonUser,
     isValidChallengeCompletion,
@@ -396,6 +403,37 @@ async function backendChallengeCompleted(req, res, next) {
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
+  completedChallenge.completedDate = Date.now();
+
+  try {
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
+
+  const { alreadyCompleted, updateData } = buildUserUpdate(
+    user,
+    completedChallenge.id,
+    completedChallenge
+  );
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return next(err);
+    }
+
+    return res.json({
+      alreadyCompleted,
+      points: alreadyCompleted ? user.points : user.points + 1,
+      completedDate: completedChallenge.completedDate
+    });
+  });
+}
+
+async function examChallengeCompleted(req, res, next) {
+  // TODO: verify shape of exam results
+  const { user, body = {} } = req;
+  const completedChallenge = pick(body, ['id', 'examResults']);
   completedChallenge.completedDate = Date.now();
 
   try {

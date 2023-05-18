@@ -30,55 +30,55 @@ Write a function that takes a number $n$, a base $bs$, and returns true if the n
 
 # --hints--
 
-`isKaprekar` should be a function.
+`isKaprekar` sollte eine Funktion sein.
 
 ```js
 assert(typeof isKaprekar == 'function');
 ```
 
-`isKaprekar(1, 10)` should return a boolean.
+`isKaprekar(1, 10)` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof isKaprekar(1, 10) == 'boolean');
 ```
 
-`isKaprekar(1, 10)` should return `true`.
+`isKaprekar(1, 10)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(1, 10), true);
 ```
 
-`isKaprekar(9, 10)` should return `true`.
+`isKaprekar(9, 10)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(9, 10), true);
 ```
 
-`isKaprekar(2223, 10)` should return `true`.
+`isKaprekar(2223, 10)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(2223, 10), true);
 ```
 
-`isKaprekar(22823, 10)` should return `false`.
+`isKaprekar(22823, 10)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(22823, 10), false);
 ```
 
-`isKaprekar(9, 17)` should return `false`.
+`isKaprekar(9, 17)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(9, 17), false);
 ```
 
-`isKaprekar(225, 17)` should return `true`.
+`isKaprekar(225, 17)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(225, 17), true);
 ```
 
-`isKaprekar(999, 17)` should return `false`.
+`isKaprekar(999, 17)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isKaprekar(999, 17), false);

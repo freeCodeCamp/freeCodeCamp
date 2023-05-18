@@ -145,7 +145,7 @@
 }
 
 .certificate-outer-wrapper {
-  margin-top: calc(-1 * var(--header-height));
+  margin-top: var(--header-height);
 }
 
 .qr-wrap {

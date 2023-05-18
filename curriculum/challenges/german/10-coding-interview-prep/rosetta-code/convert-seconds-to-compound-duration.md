@@ -52,25 +52,25 @@ Demonstrate that it passes the following three test-cases:
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` sollte eine Funktion sein.
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` sollte `2 hr, 59 sec` zurückgeben.
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` sollte `1 d` zurückgeben.
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` sollte `9 wk, 6 d, 10 hr, 40 min` zurückgeben.
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

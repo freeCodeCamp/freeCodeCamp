@@ -14,7 +14,7 @@ Ecco il <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04
 
 # --question--
 
-## --assigment--
+## --assignment--
 
 Aggiungi al tuo notebook Colab del codice che crea funzioni Python per le conversioni da decimali a frazioni
 

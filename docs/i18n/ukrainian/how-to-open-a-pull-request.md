@@ -1,8 +1,8 @@
 # Як відкрити запит на злиття (PR)
 
-A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Як тільки ви закінчите вносити зміни до коду, дотримуйтесь цих рекомендацій, щоб відкрити PR.
+Запит на злиття (PR) дозволяє надсилати зміни зі свого форку на GitHub до головного репозиторію freeCodeCamp.org. Як тільки ви закінчите вносити зміни до коду, дотримуйтесь цих рекомендацій, щоб відкрити PR.
 
-Ми очікуємо, що наші помічники обізнані щодо процесу проєкту. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
+Ми очікуємо, що наші помічники обізнані щодо процесу проєкту. Ви заощадите час та отримаєте повагу тих, хто відповідає за технічне обслуговування, дотримуючись цих вказівок.
 
 Деякі приклади:
 
@@ -31,12 +31,12 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
 
 **Тип:**
 
-| Тип   | Коли обирати                                                                    |
-|:----- |:------------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
-| feat  | Лише при додаванні нової функції, тестів тощо.                                  |
-| chore | Зміни, які не повʼязані з кодом, тестами або формулюванням уроку.               |
-| docs  | Зміни до каталогу `/docs` чи настанов щодо внесків тощо.                        |
+| Тип   | Коли обирати                                                               |
+|:----- |:-------------------------------------------------------------------------- |
+| fix   | Змінені або оновлені/вдосконалені функції, тести, формулювання уроку тощо. |
+| feat  | Лише при додаванні нової функції, тестів тощо.                             |
+| chore | Зміни, які не повʼязані з кодом, тестами або формулюванням уроку.          |
+| docs  | Зміни до каталогу `/docs` чи настанов щодо внесків тощо.                   |
 
 **Область:**
 
@@ -55,7 +55,7 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
 
 ## Запропонуйте PR
 
-1. Як тільки зміни будуть збережені, вам буде запропоновано створити PR на сторінці вашої гілки GitHub.
+1. Як тільки зміни будуть збережені, вам буде запропоновано створити PR на сторінці вашого розгалуження GitHub.
 
    <details>
    <summary>Переглянути знімок екрану</summary>
@@ -71,7 +71,7 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
    <details>
    <summary>Переглянути знімок екрану</summary>
 
-   ![Зображення - Порівняння форків під час створення PR](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   ![Зображення - Порівняння розгалужень під час створення PR](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
    </details>
 
@@ -89,7 +89,7 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
 
 5. Вкажіть, чи ви проводили тести на локальній копії сайту.
 
-   - Це надзвичайно важливо при внесенні змін, які не стосуються зміни тексту (наприклад, документації чи опису завдань). Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
+   - Це надзвичайно важливо при внесенні змін, які не стосуються зміни тексту (наприклад, документації чи опису завдань). До змін, яким потрібне локальне тестування, входять JavaScript, CSS або HTML (тобто ті, які можуть змінити функціональність чи макет сторінки).
 
    - Якщо ваш PR впливає на поведінку сторінки, він повинен супроводжуватися [інтеграційними тестами Cypress](how-to-add-cypress-tests.md).
 
@@ -101,7 +101,7 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
 
 І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-> [!TIP] Якщо ви хочете внести ще більше PR, ми рекомендуємо прочитати про [внесення змін та синхронізацію](how-to-setup-freecodecamp-locally.md#making-changes-locally), щоб уникнути видалення вашого форку.
+> [!TIP] Якщо ви хочете внести ще більше PR, ми рекомендуємо прочитати про [внесення змін та синхронізацію](how-to-setup-freecodecamp-locally.md#making-changes-locally), щоб уникнути видалення вашого розгалуження.
 
 ## Конфлікти PR
 
@@ -142,7 +142,7 @@ A pull request (PR), enables you to send changes from your fork on GitHub to fre
 
 Коли ви працюєте над функціональностями для майбутньої навчальної програми на гілках `next-*`, потрібно виконати команду cherry pick:
 
-1. Переконайтесь, що віддалена гілка синхронізована з локальною:
+1. Переконайтесь, що upstream синхронізовано з локальною гілкою:
 
    ```console
    git checkout main

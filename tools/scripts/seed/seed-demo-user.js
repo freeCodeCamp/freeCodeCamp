@@ -2,7 +2,6 @@ const path = require('path');
 const debug = require('debug');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectId } = require('mongodb');
-const defaultUserImage = require('../../../config/misc').defaultUserImage;
 const fullyCertifiedUser = require('./certified-user-data');
 
 const envVariables = process.argv;
@@ -36,7 +35,7 @@ const demoUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: envVariables.includes('--unset-privacy-terms')
     ? null
     : true,
@@ -86,7 +85,8 @@ const demoUser = {
   isDonating: envVariables.includes('--donor'),
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
-  keyboardShortcuts: true
+  keyboardShortcuts: true,
+  externalId: ''
 };
 
 const blankUser = {
@@ -100,7 +100,7 @@ const blankUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
   currentChallengeId: '',
@@ -145,7 +145,8 @@ const blankUser = {
   },
   isDonating: false,
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  externalId: ''
 };
 
 MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {

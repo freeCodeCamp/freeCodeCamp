@@ -47,6 +47,7 @@ const initialState = {
   canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
+  examInProgress: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -361,6 +362,18 @@ export const reducer = handleActions(
       return {
         ...state,
         showCodeAlly: true
+      };
+    },
+    [actionTypes.startExam]: state => {
+      return {
+        ...state,
+        examInProgress: true
+      };
+    },
+    [actionTypes.stopExam]: state => {
+      return {
+        ...state,
+        examInProgress: false
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

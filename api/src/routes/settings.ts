@@ -11,6 +11,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  // The order matters here, since we want to reject invalid cross site requests
+  // before checking if the user is authenticated.
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.put(
@@ -305,5 +309,47 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+
+  fastify.put(
+    '/update-privacy-terms',
+    {
+      schema: {
+        body: Type.Object({
+          quincyEmails: Type.Boolean()
+        }),
+        response: {
+          200: Type.Object({
+            message: Type.Literal('flash.privacy-updated'),
+            type: Type.Literal('success')
+          }),
+          500: Type.Object({
+            message: Type.Literal('flash.wrong-updating'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            acceptedPrivacyTerms: true,
+            sendQuincyEmail: req.body.quincyEmails
+          }
+        });
+
+        return {
+          message: 'flash.privacy-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };
