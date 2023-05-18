@@ -165,7 +165,12 @@ describe('settingRoutes', () => {
       beforeEach(async () => {
         await fastify?.prisma.user.updateMany({
           where: { email: developerUserEmail },
-          data: { newEmail: null, emailVerified: true, emailVerifyTTL: null }
+          data: {
+            newEmail: null,
+            emailVerified: true,
+            emailVerifyTTL: null,
+            emailAuthLinkTTL: null
+          }
         });
       });
       test('PUT returns 200 status code with "success" message', async () => {
@@ -174,12 +179,11 @@ describe('settingRoutes', () => {
           .set('Cookie', cookies)
           .send({ email: 'foo@foo.com' });
 
-        expect(response?.statusCode).toEqual(200);
-
         expect(response?.body).toEqual({
           message: 'flash.email-valid',
           type: 'success'
         });
+        expect(response?.statusCode).toEqual(200);
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
@@ -220,13 +224,13 @@ describe('settingRoutes', () => {
           .set('Cookie', cookies)
           .send({ email: 'invalid' });
 
-        expect(response?.statusCode).toEqual(400);
         // We cannot use fastify's default validation failure response here
         // because the client consumes the response and displays it to the user.
         expect(response?.body).toEqual({
           type: 'danger',
           message: 'Email format is invalid'
         });
+        expect(response?.statusCode).toEqual(400);
       });
 
       test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
@@ -252,12 +256,12 @@ describe('settingRoutes', () => {
           .set('Cookie', cookies)
           .send({ email: developerUserEmail.toUpperCase() });
 
-        expect(response?.statusCode).toEqual(400);
         expect(response?.body).toEqual({
           type: 'info',
           message: `${developerUserEmail} is already associated with this account.
-You can update a new email address instead.`
+            You can update a new email address instead.`
         });
+        expect(response?.statusCode).toEqual(400);
       });
 
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
