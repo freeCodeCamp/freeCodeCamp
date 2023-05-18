@@ -111,14 +111,25 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             message: Type.String(),
             type: Type.Literal('info')
           }),
+          400: Type.Object({
+            message: Type.String(),
+            type: Type.Union([Type.Literal('danger'), Type.Literal('info')])
+          }),
           500: Type.Object({
             message: Type.Literal('flash.wrong-updating'),
             type: Type.Literal('danger')
           })
         }
-      }
+      },
+      // We need to customize the responses to validation failures:
+      attachValidation: true
     },
     async (req, reply) => {
+      if (req.validationError) {
+        void reply.code(400);
+        return { message: 'Email format is invalid', type: 'danger' } as const;
+      }
+
       const userEmail = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.session.user.id },
         select: {
@@ -129,11 +140,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       const currentEmailFormated = userEmail.email.toLowerCase();
       const isSameEmail = newEmail === currentEmailFormated;
       if (isSameEmail) {
+        void reply.code(400);
         return {
           type: 'info',
-          message: `
-              ${newEmail} is already associated with this account.
-              You can update a new email address instead.`
+          message: `${newEmail} is already associated with this account.
+You can update a new email address instead.`
         } as const;
       }
 

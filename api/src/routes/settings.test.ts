@@ -231,7 +231,7 @@ describe('settingRoutes', () => {
         expect(response?.body).toEqual({
           type: 'info',
           message: `${developerUserEmail} is already associated with this account.
-            You can update a new email address instead.`
+You can update a new email address instead.`
         });
       });
 
