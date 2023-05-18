@@ -346,7 +346,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-socials', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-username', {
+        const response = await superRequest('/update-my-socials', {
           method: 'PUT',
           setCookies
         }).send({
@@ -365,7 +365,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid socials setting', async () => {
-        const response = await superRequest('/update-my-username', {
+        const response = await superRequest('/update-my-socials', {
           method: 'PUT',
           setCookies
         }).send({
