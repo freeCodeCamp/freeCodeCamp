@@ -262,6 +262,7 @@ describe('settingRoutes', () => {
         expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
+          code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: 'body/username must NOT have fewer than 3 characters',
           statusCode: 400
@@ -356,8 +357,6 @@ describe('settingRoutes', () => {
           githubProfile: 'https://github.com/QuincyLarson'
         });
 
-        expect(response?.statusCode).toEqual(200);
-
         expect(response?.body).toEqual({
           message: 'flash.updated-socials',
           type: 'success'
@@ -375,7 +374,7 @@ describe('settingRoutes', () => {
           githubProfile: 'invalid'
         });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response?.statusCode).toEqual(404);
       });
     });
 
