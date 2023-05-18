@@ -18,7 +18,9 @@ const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
   POST: (resource: string) =>
     request(fastifyTestInstance?.server).post(resource),
-  PUT: (resource: string) => request(fastifyTestInstance?.server).put(resource)
+  PUT: (resource: string) => request(fastifyTestInstance?.server).put(resource),
+  DELETE: (resource: string) =>
+    request(fastifyTestInstance?.server).delete(resource)
 };
 /* eslint-enable @typescript-eslint/naming-convention */
 
@@ -33,7 +35,7 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
 export function superRequest(
   resource: string,
   config: {
-    method: 'GET' | 'POST' | 'PUT';
+    method: 'GET' | 'POST' | 'PUT' | 'DELETE';
     setCookies?: string[];
   },
   options?: Options
