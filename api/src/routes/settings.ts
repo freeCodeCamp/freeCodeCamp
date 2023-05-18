@@ -1,13 +1,37 @@
 import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { isPast } from 'date-fns';
+import { getMinutes, isBefore, sub } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
 import { isValidUsername } from '../../../shared/utils/validate';
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { schemas } from '../schemas';
 
-let fiveMinuteLimit: Date;
+// TODO: move getWaitMessage and getWaitPeriod to own module and add tests
+function getWaitMessage(lastEmailSentAt: Date | null) {
+  const minutesLeft = getWaitPeriod(lastEmailSentAt);
+  if (minutesLeft <= 0) {
+    return null;
+  }
+
+  const timeToWait = minutesLeft
+    ? `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`
+    : 'a few seconds';
+
+  return `Please wait ${timeToWait} to resend an authentication link.`;
+}
+
+function getWaitPeriod(lastEmailSentAt: Date | null) {
+  if (!lastEmailSentAt) return 0;
+
+  const now = new Date();
+  const fiveMinutesAgo = sub(now, { minutes: 5 });
+  const isWaitPeriodOver = isBefore(lastEmailSentAt, fiveMinutesAgo);
+
+  return isWaitPeriodOver
+    ? 0
+    : 5 - (getMinutes(now) - getMinutes(lastEmailSentAt));
+}
 
 /**
  * Validate an image url.
@@ -130,14 +154,16 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         return { message: 'Email format is invalid', type: 'danger' } as const;
       }
 
-      const userEmail = await fastify.prisma.user.findUniqueOrThrow({
+      const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.session.user.id },
         select: {
-          email: true
+          email: true,
+          emailVerifyTTL: true,
+          newEmail: true
         }
       });
       const newEmail = req.body.email.toLowerCase();
-      const currentEmailFormated = userEmail.email.toLowerCase();
+      const currentEmailFormated = user.email.toLowerCase();
       const isSameEmail = newEmail === currentEmailFormated;
       if (isSameEmail) {
         void reply.code(400);
@@ -148,23 +174,25 @@ You can update a new email address instead.`
         } as const;
       }
 
-      if (!isPast(fiveMinuteLimit)) {
-        const formattedLimitedTime = new Intl.DateTimeFormat('en-US', {
-          dateStyle: 'full',
-          timeStyle: 'long'
-        }).format(fiveMinuteLimit);
+      const isResendUpdateToSameEmail =
+        newEmail === user.newEmail?.toLowerCase();
+      const isLinkSentWithinLimit = getWaitMessage(user.emailVerifyTTL);
+
+      if (isResendUpdateToSameEmail && isLinkSentWithinLimit) {
+        void reply.code(400);
         return {
           type: 'info',
-          message: `
-        We have already sent an email confirmation request to ${newEmail}.
-        ${formattedLimitedTime}`
+          message: `We have already sent an email confirmation request to ${newEmail}.
+${isLinkSentWithinLimit}`
         } as const;
       }
       try {
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            email: newEmail
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date()
           }
         });
         return { message: 'flash.email-valid', type: 'success' } as const;

@@ -162,6 +162,12 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-email', () => {
+      beforeEach(async () => {
+        await fastify?.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: { newEmail: null, emailVerified: false, emailVerifyTTL: null }
+        });
+      });
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await request(fastify?.server)
           .put('/update-my-email')
@@ -238,6 +244,8 @@ You can update a new email address instead.`
       });
 
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
+        expect.assertions(3);
+
         const successResponse = await request(fastify?.server)
           .put('/update-my-email')
           .set('Cookie', cookies)
@@ -250,13 +258,12 @@ You can update a new email address instead.`
           .set('Cookie', cookies)
           .send({ email: unusedEmailOne.toUpperCase() });
 
-        expect(successResponse?.statusCode).toEqual(400);
-
         expect(failResponse?.body).toEqual({
           type: 'info',
           message: `We have already sent an email confirmation request to ${unusedEmailOne}.
-          Please wait 5 minutes to resend an authentication link.`
+Please wait 5 minutes to resend an authentication link.`
         });
+        expect(failResponse?.statusCode).toEqual(400);
       });
 
       test('PUT rejects a request if the new email is already in use', async () => {
