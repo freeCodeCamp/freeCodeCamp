@@ -108,7 +108,7 @@ export function buildExtCurriculumData(
         for (let k = 0; k < blockChallenges.length; k++) {
           const challenge = blockChallenges[k];
           const challengeId = challenge['id'];
-          const challengePath = `${superBlockKey}/${blockNames[j]}/${challengeId}`;
+          const challengePath = `challenges/${superBlockKey}/${blockNames[j]}/${challengeId}`;
 
           writeToFile(challengePath, challenge);
         }
