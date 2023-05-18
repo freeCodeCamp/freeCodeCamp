@@ -165,7 +165,7 @@ describe('settingRoutes', () => {
       beforeEach(async () => {
         await fastify?.prisma.user.updateMany({
           where: { email: developerUserEmail },
-          data: { newEmail: null, emailVerified: false, emailVerifyTTL: null }
+          data: { newEmail: null, emailVerified: true, emailVerifyTTL: null }
         });
       });
       test('PUT returns 200 status code with "success" message', async () => {
