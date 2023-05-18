@@ -153,6 +153,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.ProjectEuler,
       SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.TheOdinProject,
+      SuperBlocks.ExampleCertification,
       SuperBlocks.RespWebDesign
     ];
     expect(learnSuperBlocks).toStrictEqual(test);
@@ -180,6 +181,7 @@ describe("'superBlockOrder' helper functions", () => {
       showNewCurriculum: 'true',
       showUpcomingChanges: 'true'
     });
+    console.log(notAuditedSuperBlocks);
     const test = [
       SuperBlocks.RespWebDesignNew,
       SuperBlocks.DataVis,
@@ -194,7 +196,8 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.CodingInterviewPrep,
       SuperBlocks.ProjectEuler,
       SuperBlocks.JsAlgoDataStructNew,
-      SuperBlocks.TheOdinProject
+      SuperBlocks.TheOdinProject,
+      SuperBlocks.ExampleCertification
     ];
     expect(notAuditedSuperBlocks).toStrictEqual(test);
     expect(notAuditedSuperBlocks.length).toEqual(test.length);
