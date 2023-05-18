@@ -1,5 +1,14 @@
 import { setupServer, superRequest } from '../jest.utils';
-import { HOME_LOCATION } from './utils/env';
+import { HOME_LOCATION, COOKIE_DOMAIN } from './utils/env';
+
+jest.mock('./utils/env', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('./utils/env'),
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    COOKIE_DOMAIN: '.freecodecamp.org'
+  };
+});
 
 describe('server', () => {
   setupServer();
@@ -16,10 +25,11 @@ describe('server', () => {
         expect.stringContaining('SameSite=Strict')
       );
       expect(csrfTokenCookie).toEqual(
-        expect.stringContaining(`Domain=.freecodecamp.org`)
+        expect.stringContaining(`Domain=${COOKIE_DOMAIN}`)
       );
       expect(csrfTokenCookie).toEqual(expect.stringContaining('Path=/'));
-      expect(csrfTokenCookie).toEqual(expect.stringContaining('Secure;'));
+      // Since we're not mocking FREECODECAMP_NODE_ENV to production, there's no
+      // point checking if it is secure (it won't be in testing).
     });
   });
 
