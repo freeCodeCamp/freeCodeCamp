@@ -1,4 +1,6 @@
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import { defaultUser } from '../utils/default-user';
+
 import { isPictureWithProtocol } from './settings';
 
 const baseProfileUI = {
@@ -100,6 +102,19 @@ describe('settingRoutes', () => {
         where: { email: developerUserEmail },
         data: { profileUI: baseProfileUI }
       });
+
+      const otherUser = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: otherDeveloperUserEmail }
+      });
+
+      if (!otherUser) {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...defaultUser,
+            email: otherDeveloperUserEmail
+          }
+        });
+      }
     });
 
     describe('/update-my-profileui', () => {
@@ -187,7 +202,6 @@ describe('settingRoutes', () => {
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
-        expect.assertions(6);
         const response = await superRequest('/update-my-email', {
           method: 'PUT',
           setCookies
@@ -265,8 +279,6 @@ You can update a new email address instead.`
       });
 
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
-        expect.assertions(3);
-
         const successResponse = await superRequest('/update-my-email', {
           method: 'PUT',
           setCookies
@@ -284,7 +296,7 @@ You can update a new email address instead.`
           message: `We have already sent an email confirmation request to ${unusedEmailOne}.
 Please wait 5 minutes to resend an authentication link.`
         });
-        expect(failResponse?.statusCode).toEqual(400);
+        expect(failResponse?.statusCode).toEqual(429);
       });
 
       test('PUT rejects a request if the new email is already in use', async () => {
@@ -301,8 +313,6 @@ Please wait 5 minutes to resend an authentication link.`
       });
 
       test('PUT rejects the second request if is immediately after the first', async () => {
-        // message Please wait 5 minutes to resend an authentication link.
-
         const successResponse = await superRequest('/update-my-email', {
           method: 'PUT',
           setCookies
@@ -315,7 +325,7 @@ Please wait 5 minutes to resend an authentication link.`
           setCookies
         }).send({ email: unusedEmailTwo });
 
-        expect(failResponse?.statusCode).toEqual(400);
+        expect(failResponse?.statusCode).toEqual(429);
 
         expect(failResponse?.body).toEqual({
           type: 'info',

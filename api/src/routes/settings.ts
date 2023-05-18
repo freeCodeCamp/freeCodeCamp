@@ -122,29 +122,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-email',
     {
-      schema: {
-        body: Type.Object({
-          email: Type.String({ format: 'email' })
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.email-valid'),
-            type: Type.Literal('success')
-          }),
-          204: Type.Object({
-            message: Type.String(),
-            type: Type.Literal('info')
-          }),
-          400: Type.Object({
-            message: Type.String(),
-            type: Type.Union([Type.Literal('danger'), Type.Literal('info')])
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      },
+      schema: schemas.updateMyEmail,
       // We need to customize the responses to validation failures:
       attachValidation: true
     },
@@ -179,14 +157,14 @@ You can update a new email address instead.`
 
       const isResendUpdateToSameEmail =
         newEmail === user.newEmail?.toLowerCase();
-      const isLinkSentWithinLimit = getWaitMessage(user.emailVerifyTTL);
+      const isLinkSentWithinLimitTTL = getWaitMessage(user.emailVerifyTTL);
 
-      if (isResendUpdateToSameEmail && isLinkSentWithinLimit) {
-        void reply.code(400);
+      if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
+        void reply.code(429);
         return {
           type: 'info',
           message: `We have already sent an email confirmation request to ${newEmail}.
-${isLinkSentWithinLimit}`
+${isLinkSentWithinLimitTTL}`
         } as const;
       }
 
@@ -218,7 +196,7 @@ ${isLinkSentWithinLimit}`
         const tooManyRequestsMessage = getWaitMessage(user.emailAuthLinkTTL);
 
         if (tooManyRequestsMessage) {
-          void reply.code(400);
+          void reply.code(429);
           return {
             type: 'info',
             message: tooManyRequestsMessage
