@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: 'Problema 379: conteggio del minimo comune multiplo'
 challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
@@ -8,17 +8,17 @@ dashedName: problem-379-least-common-multiple-count
 
 # --description--
 
-Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integers, $x ≤ y$ and the least common multiple of $x$ and $y$ equal to $n$.
+Sia $f(n)$ il numero di coppie ($x$, $y$) con $x$ e $y$ numeri interi positivi, per cui $x ≤ y$ e il minimo comune multiplo di $x$ e $y$ è uguale a $n$.
 
-Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
+Sia $g$ la funzione sommatoria di $f$, cioè $g(n) = \sum f(i)$ per $1 ≤ i ≤ n$.
 
-You are given that $g({10}^6) = 37\\,429\\,395$.
+Ti è dato che $g({10}^6) = 37\\,429\\,395$.
 
-Find $g({10}^{12})$.
+Trova $g({10}^{12})$.
 
 # --hints--
 
-`leastCommonMultipleCount()` should return `132314136838185`.
+`leastCommonMultipleCount()` dovrebbe restituire `132314136838185`.
 
 ```js
 assert.strictEqual(leastCommonMultipleCount(), 132314136838185);

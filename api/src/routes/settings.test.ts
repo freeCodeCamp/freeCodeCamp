@@ -357,7 +357,9 @@ describe('settingRoutes', () => {
           githubProfile: 'https://github.com/QuincyLarson'
         });
 
-        expect(response?.body).toEqual({
+        expect(response.statusCode).toEqual(200);
+
+        expect(response.body).toEqual({
           message: 'flash.updated-socials',
           type: 'success'
         });
@@ -374,7 +376,7 @@ describe('settingRoutes', () => {
           githubProfile: 'invalid'
         });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
