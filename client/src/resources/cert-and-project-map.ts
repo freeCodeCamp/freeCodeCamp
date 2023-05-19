@@ -27,6 +27,7 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -757,7 +758,23 @@ const certMap = [
     ]
   }
 ] as const;
-const upcomingCertMap = [] as const;
+
+const upcomingCertMap = [
+  {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Example Certification',
+    certSlug: 'example-certification-v8',
+    flag: 'isExampleCertV8',
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certification Exam',
+        link: `${exampleCertBase}/example-certification-exam`,
+        certSlug: 'example-certification-v8'
+      }
+    ]
+  }
+] as const;
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
@@ -773,11 +790,9 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMapWithoutFullStack = [
-  ...upcomingCertMap,
-  ...legacyCertMap,
-  ...certMap
-] as const;
+const certMapWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
+  : ([...legacyCertMap, ...certMap] as const);
 
 const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 

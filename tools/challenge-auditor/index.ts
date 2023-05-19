@@ -45,7 +45,8 @@ const superBlockFolderMap = {
     '15-javascript-algorithms-and-data-structures-22',
   'the-odin-project': '16-the-odin-project',
   'college-algebra-with-python': '17-college-algebra-with-python',
-  'project-euler': '18-project-euler'
+  'project-euler': '18-project-euler',
+  'example-certification': '99-example-certification'
 };
 
 // These blocks are in the incorrect superblock. They should be moved but, for

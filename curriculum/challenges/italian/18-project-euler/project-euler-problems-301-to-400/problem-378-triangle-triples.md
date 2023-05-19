@@ -8,17 +8,17 @@ dashedName: problem-378-triangle-triples
 
 # --description--
 
-Let $T(n)$ be the $n^{\text{th}}$ triangle number, so $T(n) = \frac{n(n + 1)}{2}$.
+Sia $T(n)$ l'$n$-simo numero triangolare, quindi $T(n) = \frac{n(n + 1)}{2}$.
 
-Let $dT(n)$ be the number of divisors of $T(n)$. E.g.: $T(7) = 28$ and $dT(7) = 6$.
+Sia $dT(n)$ il numero di divisori di $T(n)$. Esempio: $T(7) = 28$ e $dT(7) = 6$.
 
-Let $Tr(n)$ be the number of triples ($i$, $j$, $k$) such that $1 ≤ i &lt; j &lt; k ≤ n$ and $dT(i) > dT(j) > dT(k)$. $Tr(20) = 14$, $Tr(100) = 5\\,772$ and $Tr(1000) = 11\\,174\\,776$.
+Sia $Tr(n)$ il numero di terne ($i$, $j$, $k$) per cui $1 ≤ i &lt; j &lt; k ≤ n$ e $dT(i) > dT(j) > dT(k)$. $Tr(20) = 14$, $Tr(100) = 5\\,772$ e $Tr(1000) = 11\\,174\\,776$.
 
-Find $Tr(60\\,000\\,000)$. Give the last 18 digits of your answer.
+Trova $Tr(60\\,000\\,000)$. Dai le ultime 18 cifre della tua risposta.
 
 # --hints--
 
-`triangleTriples()` should return `147534623725724700`.
+`triangleTriples()` dovrebbe restituire `147534623725724700`.
 
 ```js
 assert.strictEqual(triangleTriples(), 147534623725724700);

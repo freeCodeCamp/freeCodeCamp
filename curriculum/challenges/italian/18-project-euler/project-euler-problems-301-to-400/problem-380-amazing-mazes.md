@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffb
-title: 'Problem 380: Amazing Mazes!'
+title: 'Problema 380: labirinti fantastici!'
 challengeType: 1
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
@@ -8,27 +8,27 @@ dashedName: problem-380-amazing-mazes
 
 # --description--
 
-An $m×n$ maze is an $m×n$ rectangular grid with walls placed between grid cells such that there is exactly one path from the top-left square to any other square. The following are examples of a 9×12 maze and a 15×20 maze:
+Un labirinto $m×n$ è una griglia rettangolare $m×n$ con muri piazzati tra celle della griglia in modo tale che c'è un unico percorso dal quadrato in alto a sinistra a qualsiasi altro quadrato. I seguenti sono esempi di labirinti 9×12 e 15×20:
 
-<img class="img-responsive center-block" alt="9x12 maze and 15x20 maze" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="labirinto 9×12 e labirinto 15×20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
 
-Let $C(m, n)$ be the number of distinct $m×n$ mazes. Mazes which can be formed by rotation and reflection from another maze are considered distinct.
+Sia $C(m, n)$ il numero di labirinti distinti $m×n$. I labirinti che possono essere formati per rotazione e riflessione da un altro labirinto sono considerati distinti.
 
-It can be verified that $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, and $C(9, 12) = 2.5720\mathrm{e}\\,46$ (in scientific notation rounded to 5 significant digits).
+Si può verificare che $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, e $C(9, 12) = 2.5720\mathrm{e}\\,46$ (in notazione scientifica arrotondato a 5 cifre significative).
 
-Find $C(100, 500)$ and write your answer as a string in scientific notation rounded to 5 significant digits.
+Trova $C(100, 500)$ e scrivi la tua risposta come una stringa in notazione scientifica arrotondato a 5 cifre significative.
 
-When giving your answer, use a lowercase e to separate mantissa and exponent. E.g. if the answer is 1234567891011 then the answer format would be the string `1.2346e12`.
+Quando dai la tua risposta, usa una e minuscola per separare la mantissa e l'esponente. Ad es. se la risposta è 1234567891011 allora la risposta formattata sarebbe la stringa `1.2346e12`.
 
 # --hints--
 
-`amazingMazes()` should return a string.
+`amazingMazes()` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof amazingMazes() === 'string');
 ```
 
-`amazingMazes()` should return the string `6.3202e25093`.
+`amazingMazes()` dovrebbe restituire la stringa `6.3202e25093`.
 
 ```js
 assert.strictEqual(amazingMazes(), '6.3202e25093');
