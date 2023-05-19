@@ -32,6 +32,7 @@ import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
 import { PaymentContext } from '../../../config/donation-settings';
+import ribbon from '../assets/images/ribbon.svg';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -208,13 +209,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const {
-    date,
-    name: userFullName = null,
-    username,
-    certTitle,
-    completionTime
-  } = cert;
+  const { date, name: userFullName = null, username, certTitle } = cert;
 
   const { user } = props;
 
@@ -304,25 +299,12 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <Row className='certificate-wrapper certification-namespace'>
         <header>
-          <Col md={5} sm={12}>
+          <Col sm={12}>
             <div className='logo'>
               <FreeCodeCampLogo aria-hidden='true' />
             </div>
           </Col>
-          <Col md={7} sm={12}>
-            <div className='issue-date' data-cy='issue-date'>
-              {t('certification.issued')}&nbsp;
-              <strong>
-                {certDate.toLocaleString([localeCode, 'en-US'], {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </strong>
-            </div>
-          </Col>
         </header>
-
         <main className='information'>
           <div className='information-container'>
             <Trans i18nKey='certification.fulltext' title={certTitle}>
@@ -336,7 +318,15 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   {{ title: t(`certification.title.${certTitle}`, certTitle) }}
                 </strong>
               </h1>
-              <h4>{{ time: completionTime }}</h4>
+              <h4>
+                {{
+                  time: certDate.toLocaleString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })
+                }}
+              </h4>
             </Trans>
           </div>
         </main>
@@ -354,12 +344,17 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </p>
             <p>{t('certification.executive')}</p>
           </div>
+          <span className='ribbon-wrap'>
+            <Image className='ribbon' src={ribbon} />
+          </span>
           <span className='qr-wrap'>
             <QRCodeSVG className='qr-code' value={certURL} />
           </span>
           <Row>
             <p className='verify'>
-              {t('certification.verify', { certURL: certURL })}
+              {t('certification.verify')}
+              <br />
+              {certURL}
             </p>
           </Row>
         </footer>
