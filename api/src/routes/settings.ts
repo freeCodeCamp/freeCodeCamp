@@ -222,6 +222,10 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 
         const hasProfanity = new badWordsFilter().isProfane(newUsername);
         const preserved = blocklistedUsernames.includes(newUsername);
+
+        // Checks for both username and usernameDisplay because users
+        // can have the same username but with differnt casing
+
         const exists = await fastify.prisma.user.findFirst({
           where: { username: newUsername, usernameDisplay: newUsernameDisplay }
         });
