@@ -206,7 +206,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           return {
             message: 'flash.username-used',
             type: 'info',
-            username: newUsername
+            username: newUsernameDisplay
           } as const;
         }
 
@@ -216,7 +216,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           return {
             message: `Username ${newUsername} ${validation.error}`,
             type: 'info',
-            username: newUsername
+            username: newUsernameDisplay
           } as const;
         }
 
@@ -234,7 +234,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           return {
             message: 'flash.username-taken',
             type: 'info',
-            username: newUsername
+            username: newUsernameDisplay
           } as const;
         }
 
@@ -249,7 +249,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         return {
           message: 'flash.username-updated',
           type: 'success',
-          username: newUsername
+          username: newUsernameDisplay
         } as const;
       } catch (err) {
         fastify.log.error(err);

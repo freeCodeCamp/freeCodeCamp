@@ -331,13 +331,10 @@ describe('settingRoutes', () => {
 
         expect(response?.statusCode).toEqual(200);
 
-        // username and username display are different thus username will
-        // be lowercase and username display will include the casing
-
         expect(response?.body).toEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'twaha3'
+          username: 'TWaha3'
         });
       });
 
