@@ -176,7 +176,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         response: {
           200: Type.Object({
             message: Type.String(),
-            type: Type.Union([Type.Literal('success'), Type.Literal('info')])
+            type: Type.Union([Type.Literal('success'), Type.Literal('info')]),
+            username: Type.String()
           }),
           500: Type.Object({
             message: Type.String(),
@@ -194,8 +195,12 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         const newUsername = req.body.username.toLocaleLowerCase();
         const oldUsername = user?.username.toLocaleLowerCase();
 
-        if (newUsername == oldUsername) {
-          return { message: 'flash.username-used', type: 'info' } as const;
+        if (newUsername === oldUsername) {
+          return {
+            message: 'flash.username-used',
+            type: 'info',
+            username: newUsername
+          } as const;
         }
 
         const validation = isValidUsername(newUsername);
@@ -203,7 +208,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         if (!validation.valid) {
           return {
             message: `Username ${newUsername} ${validation.error}`,
-            type: 'info'
+            type: 'info',
+            username: newUsername
           } as const;
         }
 
@@ -214,7 +220,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (exists || hasProfanity || preserved) {
-          return { message: 'flash.username-taken', type: 'info' } as const;
+          return {
+            message: 'flash.username-taken',
+            type: 'info',
+            username: newUsername
+          } as const;
         }
 
         await fastify.prisma.user.update({
@@ -226,7 +236,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 
         return {
           message: 'flash.username-updated',
-          type: 'success'
+          type: 'success',
+          username: newUsername
         } as const;
       } catch (err) {
         fastify.log.error(err);
