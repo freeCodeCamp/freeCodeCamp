@@ -8,23 +8,23 @@ dashedName: problem-443-gcd-sequence
 
 # --description--
 
-Let $g(n)$ be a sequence defined as follows:
+Sia $g(n)$ una sequenza definita come segue:
 
 $$\begin{align}   & g(4) = 13, \\\\
   & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ for } n > 4. \end{align}$$
 
-The first few values are:
+I primi valori sono:
 
 $$\begin{array}{l}   n    & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \ldots \\\\
   g(n) & 13 & 14 & 16 & 17 & 18 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 51 & 54 & 55 & 60 & \ldots \end{array}$$
 
-You are given that $g(1\\,000) = 2\\,524$ and $g(1\\,000\\,000) = 2\\,624\\,152$.
+Ti viene dato che $g(1\\,000) = 2\\,524$ and $g(1\\,000\\,000) = 2\\,624\\,152$.
 
-Find $g({10}^{15})$.
+Trova $g({10}^{15})$.
 
 # --hints--
 
-`gcdSequence()` should return `2744233049300770`.
+`gcdSequence()` dovrebbe restituire `2744233049300770`.
 
 ```js
 assert.strictEqual(gcdSequence(), 2744233049300770);
