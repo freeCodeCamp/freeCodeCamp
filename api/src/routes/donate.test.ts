@@ -2,19 +2,6 @@ import request from 'supertest';
 
 import { setupServer, superRequest } from '../../jest.utils';
 
-const baseProfileUI = {
-  isLocked: false,
-  showAbout: false,
-  showCerts: false,
-  showDonation: false,
-  showHeatMap: false,
-  showLocation: false,
-  showName: false,
-  showPoints: false,
-  showPortfolio: false,
-  showTimeLine: false
-};
-
 describe('Donate', () => {
   setupServer();
 
@@ -23,10 +10,6 @@ describe('Donate', () => {
 
     // Authenticate user
     beforeAll(async () => {
-      await fastifyTestInstance.prisma.user.updateMany({
-        where: { email: 'foo@bar.com' },
-        data: { profileUI: baseProfileUI }
-      });
       const res = await request(fastifyTestInstance.server).get(
         '/auth/dev-callback'
       );
