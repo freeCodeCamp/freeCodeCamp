@@ -8,7 +8,7 @@
 
 Дотримуйтеся цих вказівок:
 
-1. Переконайтесь, що ви на гілці `main`:
+1. Переконайтесь, що знаходитесь на гілці `main`:
 
    ```console
    git status
@@ -23,59 +23,59 @@
    nothing to commit, working directory clean
    ```
 
-   Якщо ви отримали інше повідомлення, значить ви працюєте десь інше або робочий каталог не очищений. Розв’яжіть питання щодо файлів/комітів та перевірте `main`:
+   Якщо ви отримали інше повідомлення, значить ви не перебуваєте на головній гілці (main) або ваш робочий каталог не чистий. Розв’яжіть будь-які невиконані файли/затвердження та перевірте `main`:
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your `main` fork branch:
+2. Синхронізуйте останні зміни віддаленої гілки `main` зі своєю розгалуженою гілкою `main`:
 
-   > [!WARNING] If you have any outstanding pull requests that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > [!WARNING] Якщо у вас є невиконані запити на злиття, зроблені з гілки `main` свого розгалуження, ви втратите їх під кінець цього кроку.
    > 
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
+   > Перед виконанням цього кроку потрібно переконатись, що ваш запит на злиття об’єднав модератор. Щоб уникнути цього, **ніколи** не працюйте на гілці `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp.
+   Цей крок **синхронізує останні зміни** з головного репозиторію freeCodeCamp.
 
-   Update your copy of the freeCodeCamp upstream repository:
+   Оновіть свою копію віддаленого репозиторію freeCodeCamp:
 
    ```console
    git fetch upstream
    ```
 
-   Hard reset your main branch with the freeCodeCamp main:
+   Скиньте свою головну гілку з головною гілкою freeCodeCamp:
 
    ```console
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Перемістіть свою головну гілку до джерела, щоб мати чисту історію розгалуження на GitHub:
 
    ```console
    git push origin main --force
    ```
 
-   You can validate your current main matches the upstream/main by performing a diff:
+   Ви можете переконатись, що ваша поточна головна гілка відповідає upstream/main, виконавши diff:
 
    ```console
    git diff upstream/main
    ```
 
-   The resulting output should be empty. This process is important, because you will be rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   Отриманий вивід має бути порожнім. Важливо якомога частіше перебазовувати свою гілку на останню версію `upstream/main`, щоб уникнути конфліктів пізніше.
 
-3. Create a fresh new branch:
+3. Створіть нову гілку:
 
-   Working on a separate branch for each issue helps you keep your work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   Ваша робоча копія буде чистою, якщо ви працюватимете на окремій гілці для кожного завдання. Ніколи не працюйте на `main`. Це забруднить вашу копію freeCodeCamp, через що, можливо, доведеться починати з нового клону чи розгалуження.
 
-   Check that you are on `main` as explained previously, and branch off from there:
+   Переконайтесь, що знаходитесь на `main` та починайте розгалуження звідси:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   Назва вашої гілки повинна починатись з `fix/`, `feat/`, `docs/` тощо. Не використовуйте номери завдань у гілках. Вони мають бути короткими, змістовними та унікальними.
 
-   Some examples of good branch names are:
+   Декілька прикладів хороших назв гілок:
 
    ```md
    fix/update-challenges-for-react
@@ -85,19 +85,19 @@
    translate/add-spanish-basic-html
    ```
 
-4. Edit pages and work on code in your favorite text editor.
+4. Відредагуйте сторінки та працюйте над кодом у своєму улюбленому текстовому редакторі.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp to preview the changes.
+5. Як тільки ви задоволені змінами, за бажанням запустіть freeCodeCamp для перегляду змін.
 
-6. Make sure you fix any errors and check the formatting of your changes.
+6. Переконайтеся, що виправили помилки та перевірте форматування своїх змін.
 
-7. Check and confirm the files you are updating:
+7. Перевірте та підтвердьте файли, які оновлюєте:
 
    ```console
    git status
    ```
 
-   This should show a list of `unstaged` files that you have edited.
+   Має з’явитись список файлів `unstaged`, які ви відредагували.
 
    ```console
    On branch feat/documentation
@@ -114,21 +114,21 @@
    ...
    ```
 
-8. Stage the changes and make a commit:
+8. Проіндексуйте зміни та зробіть затвердження:
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   У цьому кроці потрібно позначити лише ті файли, які редагували чи додавали самостійно. Якщо необхідно, ви можете виконати скидання та виправити файли, які не збираєтеся змінювати.
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Or you can add all the `unstaged` files to the staging area:
+   Або ви можете додати всі файли `unstaged` до області тимчасового зберігання:
 
    ```console
    git add .
    ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+   Лише ті файли, які було переміщено до області тимчасового зберігання, будуть додані під час затвердження.
 
    ```console
    git status
@@ -149,7 +149,7 @@
        modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Now, you can commit your changes with a short message like so:
+   Тепер ви можете затвердити свої зміни, використовуючи коротке повідомлення:
 
    ```console
    git commit -m "fix: my short commit message"
@@ -162,9 +162,9 @@
    feat: add link for article for alexa skills
    ```
 
-   Make a conventional commit message. This is a good practice as a developer, and you will be following standard practices.
+   Створюйте загальноприйняті повідомлення затверджень. Це хороша практика, яка спонукає дотримуватись стандартів.
 
-   Some examples of conventional commit messages are:
+   Декілька прикладів хороших повідомлень затверджень:
 
    ```md
    fix: improve HTML step
@@ -173,29 +173,29 @@
    docs: update contributing guidelines
    ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+   Пишіть їх короткими, не більше 50 символів. Додаткову інформацію можна додати в описі затвердження.
 
-   This does not take any more time than an unconventional message like 'update file' or 'add index.md'
+   Це не займе більше часу ніж нестандартне повідомлення (наприклад, «update file» чи «add index.md»)
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   Ви можете дізнатись більше, чому потрібно використовувати загальноприйнятні затвердження, [тут](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. Якщо ви усвідомили, що вам потрібно відредагувати файл або оновити повідомлення коміту, після того, як зробили  коміт, ви можете зробити так після редагування файлів:
 
    ```console
    git commit --amend
    ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   Це відкриє текстовий редактор за замовчуванням (наприклад, `nano` або `vi`), де можна редагувати заголовок повідомлення та додавати/редагувати опис.
 
-10. Next, you can push your changes to your fork:
+10. Тепер надішліть свої зміни до розгалуження:
 
     ```console
     git push origin branch/name-here
     ```
 
-## Proposing a Pull Request (PR)
+## Запропонуйте запит на злиття (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
 
 ## Коротко про команди
 
@@ -207,10 +207,10 @@ After you've committed your changes, check here for [how to open a Pull Request]
 | `pnpm run test-client`                                            | Запускає набір тестів клієнта.                                                             |
 | `pnpm run test-client -u`                                         | Запускає набір тестів клієнта, оновлюючи несинхронізовані знімки Jest.                     |
 | `pnpm run test:curriculum`                                        | Запускає набір тестів навчальної програми.                                                 |
-| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                                     |
-| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Test a specific SuperBlock.                                                                |
-| `pnpm run test-curriculum-full-output`                            | Run the curriculum test suite, without bailing after the first error                       |
-| `pnpm run test-server`                                            | Run the server test suite.                                                                 |
-| `pnpm run e2e`                                                    | Run the Cypress end to end tests.                                                          |
-| `pnpm run clean`                                                  | Uninstalls all dependencies and cleans up caches.                                          |
-| `pnpm run storybook`                                              | Starts Storybook for component library development.                                        |
+| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Тестує конкретний блок.                                                                    |
+| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Тестує конкретний суперблок.                                                               |
+| `pnpm run test-curriculum-full-output`                            | Запускає набір тестів навчальної програми без збоїв після першої помилки                   |
+| `pnpm run test-server`                                            | Запускає набір тестів сервера.                                                             |
+| `pnpm run e2e`                                                    | Запускає наскрізне тестування Cypress.                                                     |
+| `pnpm run clean`                                                  | Видаляє всі залежності й очищає кеш.                                                       |
+| `pnpm run storybook`                                              | Запускає Storybook для розробки бібліотеки компонентів.                                    |

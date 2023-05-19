@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
-title: 'Problem 389: Platonic Dice'
+title: 'Problema 389: dadi platonici'
 challengeType: 1
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice
@@ -8,21 +8,21 @@ dashedName: problem-389-platonic-dice
 
 # --description--
 
-An unbiased single 4-sided die is thrown and its value, $T$, is noted.
+Un dado non truccato a quattro facce è tirato e il suo valore $T$ è segnato.
 
-$T$ unbiased 6-sided dice are thrown and their scores are added together. The sum, $C$, is noted.
+$T$ dadi a sei facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $C$, è annotata.
 
-$C$ unbiased 8-sided dice are thrown and their scores are added together. The sum, $O$, is noted.
+$C$ dadi a otto facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $O$, è annotata.
 
-$O$ unbiased 12-sided dice are thrown and their scores are added together. The sum, $D$, is noted.
+$O$ dadi a dodici facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $D$, è annotata.
 
-$D$ unbiased 20-sided dice are thrown and their scores are added together. The sum, $I$, is noted.
+$D$ dadi a venti facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $I$, è annotata.
 
-Find the variance of $I$, and give your answer rounded to 4 decimal places.
+Trova la varianza di $I$, e dai il tuo risultato arrotondato a 4 cifre decimali.
 
 # --hints--
 
-`platonicDice()` should return `2406376.3623`.
+`platonicDice()` dovrebbe restituire `2406376.3623`.
 
 ```js
 assert.strictEqual(platonicDice(), 2406376.3623);
