@@ -7,9 +7,7 @@ dashedName: step-56
 
 # --description--
 
-Then the function `b()` executes and evaluates to `"is " + "awesome!"`.
-
-Update your mock call to `b()` so it looks like this: `- b(): "is " + "awesome!"`.
+Now that `b()` has executed, pop it off the call stack. Then, update your mock call to `a()` to the following: `a(): returns "freeCodeCamp " + "is awesome!"`.
 
 # --hints--
 
@@ -124,6 +122,13 @@ h1 {
 ```
 
 ```js
+--fcc-editable-region--
+const callStack = [
+  'a(): returns "freeCodeCamp " + b()',
+  'b(): returns "is " + "awesome!"'
+];
+--fcc-editable-region--
+
 const a = () => {
   return "freeCodeCamp " + b();
 };
@@ -138,16 +143,7 @@ const c = () => {
 
 console.log(a());
 
-/*
-  Call stack:
-
---fcc-editable-region--
-  - b(): "is " + c()
-  - a(): "freeCodeCamp " + b()
---fcc-editable-region--
-*/
-
-/* const numberInput = document.getElementById("number");
+const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
 const result = document.getElementById("result");
 
@@ -183,5 +179,5 @@ numberInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     checkUserInput();
   }
-}); */
+});
 ```
