@@ -1,8 +1,8 @@
 ---
 id: 644b6ad4fa8dfd600a9dff2c
-title: Step 28
+title: Step 27
 challengeType: 0
-dashedName: step-28
+dashedName: step-27
 ---
 
 # --description--
@@ -151,7 +151,7 @@ const decimalToBinary = (input) => {
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
     alert("Please provide a number");
-    return; // Return early if the user input is invalid
+    return;
   }
 
   decimalToBinary(parseInt(numberInput.value));
