@@ -9,21 +9,6 @@ const envVariables = process.argv;
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
 
-function handleError(err, client) {
-  if (err) {
-    console.error('Oh noes!! Error seeding local auth user.');
-    console.error(err);
-    try {
-      client.close();
-    } catch (e) {
-      // no-op
-    } finally {
-      /* eslint-disable-next-line no-process-exit */
-      process.exit(1);
-    }
-  }
-}
-
 const demoUser = {
   _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
   email: 'foo@bar.com',
@@ -149,30 +134,33 @@ const blankUser = {
   externalId: ''
 };
 
-MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
-  handleError(err, client);
+const client = new MongoClient(MONGOHQ_URL);
 
-  log('Connected successfully to mongo');
+async function run() {
+  try {
+    await client.connect();
 
-  const db = client.db('freecodecamp');
-  const user = db.collection('user');
+    log('Connected successfully to mongo');
 
-  const dropUserTokens = async function () {
-    await db.collection('UserToken').deleteMany({
-      userId: {
-        $in: [
-          ObjectId('5fa2db00a25c1c1fa49ce067'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb9')
-        ]
-      }
-    });
-  };
+    const db = client.db('freecodecamp');
+    const user = db.collection('user');
 
-  if (process.argv[2] === 'certified-user') {
-    dropUserTokens();
-    user.deleteMany(
-      {
+    const dropUserTokens = async function () {
+      await db.collection('UserToken').deleteMany({
+        userId: {
+          $in: [
+            ObjectId('5fa2db00a25c1c1fa49ce067'),
+            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+            ObjectId('5bd30e0f1caf6ac3ddddddb9')
+          ]
+        }
+      });
+    };
+
+    if (process.argv[2] === 'certified-user') {
+      dropUserTokens();
+
+      await user.deleteMany({
         _id: {
           $in: [
             ObjectId('5fa2db00a25c1c1fa49ce067'),
@@ -180,25 +168,13 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
             ObjectId('5bd30e0f1caf6ac3ddddddb9')
           ]
         }
-      },
-      err => {
-        handleError(err, client);
-
-        try {
-          user.insertOne(fullyCertifiedUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
-  } else {
-    dropUserTokens();
-    user.deleteMany(
-      {
+      });
+      await user.insertOne(fullyCertifiedUser);
+      await user.insertOne(blankUser);
+      log('local auth user seed complete');
+    } else {
+      dropUserTokens();
+      const _res = await user.deleteMany({
         _id: {
           $in: [
             ObjectId('5fa2db00a25c1c1fa49ce067'),
@@ -206,20 +182,17 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
             ObjectId('5bd30e0f1caf6ac3ddddddb9')
           ]
         }
-      },
-      err => {
-        handleError(err, client);
-
-        try {
-          user.insertOne(demoUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
+      });
+      await user.insertOne(demoUser);
+      await user.insertOne(blankUser);
+      log('local auth user seed complete');
+    }
+  } catch (err) {
+    console.error('Oh noes!! Error seeding local auth user.');
+    console.error(err);
+  } finally {
+    await client.close();
   }
-});
+}
+
+run();
