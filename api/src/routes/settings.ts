@@ -192,10 +192,17 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           where: { id: req.session.user.id }
         });
 
-        const newUsername = req.body.username.toLocaleLowerCase();
-        const oldUsername = user?.username.toLocaleLowerCase();
+        const newUsername = req.body.username.toLowerCase();
+        const oldUsername = user?.username.toLowerCase();
 
-        if (newUsername === oldUsername) {
+        const newUsernameDisplay = req.body.username.trim();
+        const oldUsernameDisplay = user?.usernameDisplay?.trim();
+
+        const alreadyUsername =
+          newUsername === oldUsername &&
+          newUsernameDisplay === oldUsernameDisplay;
+
+        if (alreadyUsername && oldUsernameDisplay) {
           return {
             message: 'flash.username-used',
             type: 'info',
@@ -216,7 +223,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         const hasProfanity = new badWordsFilter().isProfane(newUsername);
         const preserved = blocklistedUsernames.includes(newUsername);
         const exists = await fastify.prisma.user.findFirst({
-          where: { username: newUsername }
+          where: { username: newUsername, usernameDisplay: newUsernameDisplay }
         });
 
         if (exists || hasProfanity || preserved) {
@@ -230,7 +237,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            username: req.body.username
+            username: req.body.username,
+            usernameDisplay: newUsernameDisplay
           }
         });
 

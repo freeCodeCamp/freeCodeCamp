@@ -199,7 +199,8 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'Username twaha@ contains invalid characters',
-          type: 'info'
+          type: 'info',
+          username: 'twaha@'
         });
       });
 
@@ -215,7 +216,8 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
-          type: 'info'
+          type: 'info',
+          username: 'german'
         });
       });
 
@@ -231,7 +233,8 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
-          type: 'info'
+          type: 'info',
+          username: 'ass'
         });
       });
 
@@ -247,7 +250,8 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'Username 404 is a reserved error code',
-          type: 'info'
+          type: 'info',
+          username: '404'
         });
       });
 
@@ -281,7 +285,8 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-updated',
-          type: 'success'
+          type: 'success',
+          username: 'twaha1'
         });
       });
 
@@ -304,7 +309,35 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-used',
-          type: 'info'
+          type: 'info',
+          username: 'twaha2'
+        });
+      });
+
+      test('PUT returns 200 status code with "success" message', async () => {
+        await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'twaha3'
+        });
+
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'TWaha3'
+        });
+
+        expect(response?.statusCode).toEqual(200);
+
+        // username and username display are different thus username will
+        // be lowercase and username display will include the casing
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          username: 'twaha3'
         });
       });
 
