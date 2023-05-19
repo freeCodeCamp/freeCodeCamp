@@ -60,4 +60,18 @@ describe('Donate', () => {
       });
     });
   });
+
+  describe('Unauthenticated User', () => {
+    describe('POST /add-donation', () => {
+      it('should return 401', async () => {
+        const response = await superRequest('/add-donation', {
+          method: 'POST'
+        }).send({
+          isDonating: true
+        });
+
+        expect(response.status).toBe(403);
+      });
+    });
+  });
 });
