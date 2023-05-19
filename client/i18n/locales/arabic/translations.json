@@ -72,9 +72,14 @@
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
+    "click-start-exam": "Start the exam",
     "change-language": "تغيير اللغة",
     "resume-project": "أستكمال المشروع",
-    "start-project": "إبدأ المشروع"
+    "start-project": "إبدأ المشروع",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",

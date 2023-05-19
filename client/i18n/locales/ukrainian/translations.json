@@ -72,9 +72,14 @@
     "go-to-settings": "Перейдіть до налаштувань, щоб отримати сертифікацію",
     "click-start-course": "Розпочати курс",
     "click-start-project": "Розпочати проєкт",
+    "click-start-exam": "Start the exam",
     "change-language": "Змінити мову",
     "resume-project": "Продовжити проєкт",
-    "start-project": "Розпочати проєкт"
+    "start-project": "Розпочати проєкт",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",

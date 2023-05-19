@@ -72,9 +72,14 @@
     "go-to-settings": "转到设置以领取你的认证",
     "click-start-course": "开始课程",
     "click-start-project": "启动项目",
+    "click-start-exam": "Start the exam",
     "change-language": "修改语言",
     "resume-project": "继续项目",
-    "start-project": "开始项目"
+    "start-project": "开始项目",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "免费学习编程",

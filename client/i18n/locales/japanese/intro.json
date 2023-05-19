@@ -1003,6 +1003,16 @@
       }
     }
   },
+  "example-certification": {
+    "title": "Example Certification",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Example Certification Exam",
+        "intro": ["placeholder"]
+      }
+    }
+  },
   "misc-text": {
     "certification": "{{cert}} 認定",
     "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",

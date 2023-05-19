@@ -1003,6 +1003,16 @@
       }
     }
   },
+  "example-certification": {
+    "title": "Example Certification",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Example Certification Exam",
+        "intro": ["placeholder"]
+      }
+    }
+  },
   "misc-text": {
     "certification": "Certificación de {{cert}}",
     "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
