@@ -21,7 +21,7 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav li {
   display: inline-block;
 }
 ```
@@ -34,11 +34,10 @@ nav {
 
   ul {
     list-style: none;
-
+}
     li {
       display: inline-block;
     }
-  }
 }
 
 ```
