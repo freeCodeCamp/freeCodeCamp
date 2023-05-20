@@ -12,13 +12,13 @@ export const accountRoutes: FastifyPluginCallbackTypebox = (
     '/user/account',
     {
       schema: {
-        body: Type.Object({
+        params: Type.Object({
           username: Type.String()
         })
       }
     },
     async (req, reply) => {
-      const username = req.body.username;
+      const username = req.params.username;
       void reply.redirect('/' + username);
     }
   );
