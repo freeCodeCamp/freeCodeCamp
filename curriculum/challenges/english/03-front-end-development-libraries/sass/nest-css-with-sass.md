@@ -91,10 +91,11 @@ assert(
     h1 {
       text-align: center;
       color: blue;
-    }
+    
     p {
       font-size: 20px;
     }
+  }
   }
 </style>
 
