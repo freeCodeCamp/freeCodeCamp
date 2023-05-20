@@ -344,8 +344,20 @@
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": ["", ""]
       },
-      "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard": {
-        "title": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Learn Data Structures By Building A Shopping Cart",
+        "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
       }
     }
