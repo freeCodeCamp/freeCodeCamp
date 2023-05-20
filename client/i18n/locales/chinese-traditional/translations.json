@@ -72,9 +72,14 @@
     "go-to-settings": "轉到設置以領取你的認證",
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
+    "click-start-exam": "Start the exam",
     "change-language": "修改語言",
     "resume-project": "繼續項目",
-    "start-project": "開始項目"
+    "start-project": "開始項目",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "免費學習編程",

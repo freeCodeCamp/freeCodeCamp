@@ -72,9 +72,14 @@
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
     "click-start-course": "Inizia il corso",
     "click-start-project": "Inizia il progetto",
+    "click-start-exam": "Start the exam",
     "change-language": "Cambia lingua",
     "resume-project": "Riprendi progetto",
-    "start-project": "Avvia il progetto"
+    "start-project": "Avvia il progetto",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",

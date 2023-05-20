@@ -72,9 +72,14 @@
     "go-to-settings": "設定へ移動して認定証を取得",
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
+    "click-start-exam": "Start the exam",
     "change-language": "言語変更",
     "resume-project": "プロジェクト再開",
-    "start-project": "プロジェクト開始"
+    "start-project": "プロジェクト開始",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
