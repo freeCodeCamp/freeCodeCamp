@@ -356,6 +356,10 @@
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
+      },
+      "learn-the-date-object-by-building-a-date-formatter": {
+        "title": "Learn the Date Object By Building a Date Formatter",
+        "intro": ["", ""]
       }
     }
   },
