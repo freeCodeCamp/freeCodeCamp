@@ -43,7 +43,7 @@ if y == 10:
 ---
 
 ```python
-if 0 == x:
+if x == 0:
     if y == 10:
         print("Yes")
 ```
