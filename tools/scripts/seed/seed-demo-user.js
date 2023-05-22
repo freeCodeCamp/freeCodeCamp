@@ -86,7 +86,8 @@ const demoUser = {
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
   keyboardShortcuts: true,
-  externalId: ''
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
 const blankUser = {
@@ -146,7 +147,8 @@ const blankUser = {
   isDonating: false,
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
-  externalId: ''
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
 MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
