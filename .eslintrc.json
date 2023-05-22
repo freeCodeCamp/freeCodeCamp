@@ -172,11 +172,11 @@
     },
     {
       "files": ["**/api/src/**/*.ts"],
-      "plugins": ["eslint-plugin-jsdoc"],
-      "extends": ["plugin:jsdoc/recommended"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
       "rules": {
         "jsdoc/require-jsdoc": [
-          "warn",
+          "error",
           {
             "require": {
               "ArrowFunctionExpression": true,
@@ -190,15 +190,6 @@
           }
         ],
         "jsdoc/require-description-complete-sentence": "warn",
-        "jsdoc/no-undefined-types": "off",
-        "jsdoc/tag-lines": [
-          "warn",
-          "always",
-          {
-            "startLines": 1,
-            "count": 0
-          }
-        ]
       }
     }
   ]
