@@ -29,6 +29,7 @@
     "sign-up-email-list": "Inscreva-se para receber o e-mail semanal do Quincy",
     "sign-out": "Encerrar sessão",
     "curriculum": "Currículo",
+    "contribute": "Contribute",
     "forum": "Fórum",
     "radio": "Rádio",
     "profile": "Perfil",
@@ -72,14 +73,14 @@
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
-    "click-start-exam": "Start the exam",
+    "click-start-exam": "Iniciar o exame",
     "change-language": "Alterar idioma",
     "resume-project": "Retomar projeto",
     "start-project": "Iniciar o projeto",
-    "previous-question": "Previous question",
-    "next-question": "Next question",
-    "finish-exam": "Finish the exam",
-    "submit-exam-results": "Submit my results"
+    "previous-question": "Questão anterior",
+    "next-question": "Próxima questão",
+    "finish-exam": "Finalizar o exame",
+    "submit-exam-results": "Enviar meus resultados"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
