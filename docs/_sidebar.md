@@ -8,7 +8,6 @@
 - **Code Contribution**
   - [Set up freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Follow best-practices](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on Codebase](how-to-contribute-to-the-codebase.md)
   - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
   - [Work on Component Library](how-to-work-on-the-component-library.md)
@@ -19,6 +18,7 @@
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on Video Challenges](how-to-help-with-video-challenges.md)
   - [Work on Documentation](how-to-work-on-the-docs-theme.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
 - **Additional Guides**
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)

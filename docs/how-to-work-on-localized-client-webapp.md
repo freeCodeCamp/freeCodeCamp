@@ -1,5 +1,3 @@
-# How to Work on Localized Client Webapp
-
 The React-based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
 You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default, the application is available only in English.
@@ -268,6 +266,10 @@ It would be nice to keep the keys in the same order across all the files as well
 
 > [!NOTE]
 > The underscore (`_`) is a reserved character for keys in the client-side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Helpful Documentation
 
