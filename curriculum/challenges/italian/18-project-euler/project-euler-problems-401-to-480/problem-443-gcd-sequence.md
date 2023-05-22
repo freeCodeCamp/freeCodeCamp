@@ -1,6 +1,6 @@
 ---
 id: 5900f5271000cf542c51003a
-title: 'Problem 443: GCD sequence'
+title: 'Problema 443: sequenza MCD'
 challengeType: 1
 forumTopicId: 302115
 dashedName: problem-443-gcd-sequence
@@ -11,7 +11,7 @@ dashedName: problem-443-gcd-sequence
 Sia $g(n)$ una sequenza definita come segue:
 
 $$\begin{align}   & g(4) = 13, \\\\
-  & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ for } n > 4. \end{align}$$
+  & g(n) = g(n-1) + mcd(n, g(n - 1)) \text{ per } n > 4. \end{align}$$
 
 I primi valori sono:
 

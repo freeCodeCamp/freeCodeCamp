@@ -28,7 +28,7 @@ Farlo ad alta voce aiuta:
 
 Definisci $A(n)$, $B(n)$ e $C(n)$ rispettivamente come il numero di uno, due e tre nell'elemento $n$-esimo della sequenza. Si può verificare che $A(40) = 31\\,254$, $B(40) = 20\\,259$ e $C(40) = 11\\,625$.
 
-Trova $A(n)$, $B(n)$ e $C(n)$ per $n = {10}^{12}$. Give your answer modulo $2^{30}$ as a string and separate your values for $A$, $B$ and $C$ by a comma. Ad es. per $n = 40$ la risposta sarebbe `31254,20259,11625`.
+Trova $A(n)$, $B(n)$ e $C(n)$ per $n = {10}^{12}$. Dai la tua risposta modulo $2^{30}$ come stringa e separa i tuoi valori per $A$, $B$ e $C$ con una virgola. Ad es. per $n = 40$ la risposta sarebbe `31254,20259,11625`.
 
 # --hints--
 

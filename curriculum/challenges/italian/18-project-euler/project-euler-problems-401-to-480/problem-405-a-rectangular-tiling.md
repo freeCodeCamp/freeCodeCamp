@@ -22,7 +22,7 @@ La seguente animazione mostra la piastrellatura $T(n)$ per $n$ da 0 a 5:
 
 Sia $f(n)$ il numero di punti in cui quattro piastrelle si incontrano in $T(n)$. Per esempio, $f(1) = 0$, $f(4) = 82$ e $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
 
-Find $f({10}^k)$ for $k = {10}^{18}$, give your answer modulo ${17}^7$.
+Trova $f({10}^k)$ per $k = {10}^{18}$, dai la tua risposta modulo ${17}^7$.
 
 # --hints--
 

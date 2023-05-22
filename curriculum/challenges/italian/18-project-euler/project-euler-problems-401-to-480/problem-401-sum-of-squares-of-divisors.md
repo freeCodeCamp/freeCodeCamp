@@ -16,7 +16,7 @@ Sia $\sigma_2(n)$ la somma dei quadrati dei divisori di $n$. Quindi $\sigma_2(6)
 
 Sia $\Sigma_2$ la sommatoria di $\sigma_2$, cioè $\Sigma_2(n) = \sum \sigma_2(i)$ per $i=1$ fino a $n$. I primi 6 valori di $\Sigma_2$ sono: 1, 6, 16, 37, 63 e 113.
 
-Find $\Sigma_2({10}^{15})$ modulo ${10}^9$.
+Trova \Sigma_2({10}^{15})$ modulo ${10}^9$.
 
 # --hints--
 
