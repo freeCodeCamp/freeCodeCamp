@@ -1,6 +1,10 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
+  mode: 'jit',
+  corePlugins: {
+    preflight: false
+  },
   content: [
     './src/**/*.html',
     './src/**/*.js',

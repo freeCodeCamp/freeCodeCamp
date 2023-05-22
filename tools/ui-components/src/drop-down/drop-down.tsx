@@ -14,11 +14,10 @@ type DropDownButtonProps = React.ComponentPropsWithoutRef<typeof Menu>;
 const DropDownContext = createContext<DropdownProps>({});
 
 const dropDownItems =
-  'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute min-w-full py-1 z-10';
+  'list-none bg-foreground-secondary text-center border-1 border-solid border-background-quaternary focus:outline-transparent origin-top-right absolute w-full min-w-max py-1 px-0 z-10';
 const dropUpItems = dropDownItems + ' transform -translate-y-full top-0';
-const toggleClassNames =
-  'cursor-pointer border-3 text-center touch-manipulation bg-background-quaternary text-foreground-secondary px-3 py-1.5 relative hover:bg-foreground-primary hover:text-background-primary btn-block border-foreground-primary';
-
+const toggleClassNames = 'cursor-pointer border-3 border-solid w-full block text-center touch-manipulation bg-background-quaternary text-foreground-secondary px-3 py-1.5 relative hover:bg-foreground-secondary hover:text-background-secondary btn-block border-foreground-secondary';
+  
 export const MenuItems = React.forwardRef<
   React.ElementRef<typeof Menu.Items>,
   MenuItemsProps
@@ -61,7 +60,7 @@ export const Dropdown = ({
 }: DropdownProps): JSX.Element => {
   return (
     <DropDownContext.Provider value={{ dropup }}>
-      <Menu className='relative' as='div' {...props}>
+      <Menu className='relative w-full' as='div' {...props}>
         {children}
       </Menu>
     </DropDownContext.Provider>

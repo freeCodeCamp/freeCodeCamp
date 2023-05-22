@@ -87,7 +87,7 @@ export const HeadlessButton = React.forwardRef<
 );
 
 const defaultClass =
-  'block text-center no-underline px-[20px] py-[3px] bg-foreground-primary text-background-primary bg-foreground-primary text-background-primary focus:bg-background-primary focus:text-foreground-primary hover:text-foreground-primary hover:bg-background-primary w-full';
+  'block text-center no-underline border-none px-4 py-1.5 text-background-secondary bg-foreground-secondary focus:bg-background-secondary focus:text-foreground-secondary hover:text-foreground-secondary hover:bg-background-secondary w-full';
 
 export const MenuItem = ({
   children,

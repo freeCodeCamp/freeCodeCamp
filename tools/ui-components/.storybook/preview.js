@@ -1,3 +1,6 @@
+/* the styled-elements and normalized are included here to replicate the presets that exist in the learn app */
+import '../src/normalize.css';
+import '../src/global-element-styles.css';
 import '../src/base.css';
 
 export const parameters = {

@@ -469,6 +469,9 @@ importers:
       '@freecodecamp/strip-comments':
         specifier: 3.0.1
         version: 3.0.1
+      '@freecodecamp/ui':
+        specifier: ^0.0.1
+        version: link:../tools/ui-components
       '@growthbook/growthbook-react':
         specifier: 0.16.0
         version: 0.16.0(react@16.14.0)
@@ -1331,6 +1334,9 @@ importers:
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
+      npm-run-all:
+        specifier: 4.1.5
+        version: 4.1.5
       postcss:
         specifier: 8.4.23
         version: 8.4.23
