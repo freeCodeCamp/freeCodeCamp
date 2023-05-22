@@ -1,6 +1,6 @@
-Welcome to freeCodeCamp's `ui-components` library. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/).
-
 # How to Work on the Component Library
+
+Welcome to freeCodeCamp's `ui-components` libdrary. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/).
 
 > [!NOTE]
 >
