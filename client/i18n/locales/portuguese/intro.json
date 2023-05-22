@@ -1004,11 +1004,11 @@
     }
   },
   "example-certification": {
-    "title": "Example Certification",
+    "title": "Certificação de exemplo",
     "intro": ["placeholder"],
     "blocks": {
       "example-certification-exam": {
-        "title": "Example Certification Exam",
+        "title": "Exame da certificação de exemplo",
         "intro": ["placeholder"]
       }
     }
