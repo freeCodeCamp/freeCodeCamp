@@ -1,4 +1,4 @@
-# Як працювати над завданнями з програмуванням
+# Як працювати над завданнями з кодом
 
 Наша мета — розробити веселе та зрозуміле інтерактивне навчання.
 
@@ -14,7 +14,7 @@
 
 Завдяки вашій допомозі ми створюємо інтерактивну навчальну програму для програмування, що допоможе мільйонам людей навчитися писати код.
 
-Вміст кожного завдання зберігається у файлі markdown. Потім, щоб створити інтерактивну вебсторінку, цей файл конвертується у HTML за допомогою наших інструментів.
+Вміст кожного завдання зберігається у відповідному файлі markdown. Потім, щоб створити інтерактивну вебсторінку, цей файл конвертується у HTML за допомогою наших інструментів.
 
 Ви можете знайти весь навчальний матеріал freeCodeCamp.org у каталозі [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
@@ -58,13 +58,13 @@ Challenge description text, in markdown
 
 # --hints--
 
-Tests to run against user code, in pairs of markdown text and code block test code.
+Тести для запуску коду користувача в поєднанні з текстом markdown та тестовим блоком коду.
 
 ```js
-Code for test one
+Код для першого тесту
 ```
 
-If you want dynamic output based on the user's code, --fcc-expected-- and --fcc-actual-- will be replaced with the expected and actual values of the test's assertion. Take care if you have multiple assertions since the first failing assertion will determine the values of --fcc-expected-- and --fcc-actual--.
+Якщо вам потрібен динамічний вивід на основі коду користувача, --fcc-expected-- та --fcc-actual-- будуть змінені на очікувані та фактичні значення тестового припущення. Будьте обережними, якщо у вас є декілька припущень, оскільки перше невдале припущення визначить значення --fcc-expected-- та --fcc-actual--.
 
 ```js
 assert.equal(
@@ -75,25 +75,25 @@ assert.equal(
 
 # --notes--
 
-Extra information for a challenge, in markdown
+Додаткова інформація щодо завдання у markdown
 
 # --seed--
 
 ## --before-user-code--
 
 ```lang
-Code evaluated before the user’s code.
+Код, перевірений перед кодом користувача.
 ```
 
 ## --after-user-code--
 
 ```lang
-Code evaluated after the user’s code, and just before the tests
+Код, перевірений після коду користувача і перед тестами.
 ```
 
 ## --seed-contents--
 
-Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+Шаблонний код для відображення у редакторі. Цей розділ повинен містити код лише у зворотних лапках:
 
 ```html
 <body>
@@ -118,31 +118,31 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+Розв’язки використовуються для тестів CI, щоб переконатись, що зміни до підказок працюватимуть як потрібно
 
 ```js
-// first solution - the language(s) should match the seed.
+// перший розв’язок - мова має відповідати джерелу.
 ```
 
 ---
 
 ```js
-// second solution - so if the seed is written in HTML...
+// другий розв’язок - тобто, якщо джерело написане на HTML...
 ```
 
 ---
 
 ```js
-// third solution etc. - Your solutions should be in HTML.
+// третій розв’язок і т. д. - ваш розв’язок має бути на HTML.
 ```
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+Наразі ці поля використовуються для завдань з Python з декількома варіантами відповіді.
 
 ## --text--
 
-The question text goes here.
+Текст запитання знаходиться тут.
 
 ## --answers--
 
@@ -158,25 +158,25 @@ The question text goes here.
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+Номер правильної відповіді знаходиться тут.
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `lang` are:
+> 1. Прикладами `lang` у прикладах вище є:
 >
 > - `html` - HTML/CSS
 > - `js` - JavaScript
 > - `jsx` - JSX
 
-## Numbering Challenges
+## Нумерація завдань
 
-Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
+Кожне завдання вимагає `id`. Якщо ви не вкажете його, то MongoDB створить випадкове id, коли зберігатиме дані. Нам цього непотрібно, оскільки id завдань повинні бути послідовними у всіх середовищах (проміжному, робочому, розробницькому тощо).
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+Щоб згенерувати id в оболонці (припускаючи, що MongoDB запущене окремо):
 
-1. Run `mongo` command.
-2. Run `ObjectId()` command.
+1. Запустіть команду `mongo`.
+2. Запустіть команду `ObjectId()`.
 
 Наприклад:
 
@@ -190,9 +190,9 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
+Результатом є новий id (наприклад, `5a474d78df58bafeb3535d34` вище).
 
-Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
+Як тільки ви отримали id, розмістіть його у файлі markdown як поле `id` зверху, тобто
 
 ```yml
 ---
@@ -255,24 +255,24 @@ title: Challenge Title
 
 Наша мета — розробити тисячі двохвилинних завдань. Вони можуть йти нарівні, а також нагадувати про раніше вивчені поняття.
 
-### Formatting challenge text
+### Форматування тексту завдання
 
-Here are specific formatting guidelines for challenge text and examples:
+Тут подано конкретні рекомендації щодо форматування тексту завдання та приклади:
 
-- Language keywords go in `` \` `` backticks. For example, HTML tag names or CSS property names.
-- References to code parts (i.e. function, method, or variable names) should be wrapped in `` \` `` backticks. See example below:
+- Ключові слова мови знаходяться у зворотних лапках `` \` ``. Наприклад, назви тегів HTML чи назви властивостей CSS.
+- Посилання на частини коду (тобто назви функцій, методів чи змінних) потрібно брати у зворотні лапки ``  \ ` ``. Розгляньте приклад нижче:
 
 ```md
-Use `parseInt` to convert the variable `realNumber` into an integer.
+Використовуйте `parseInt`, щоб перетворити змінну `realNumber` в ціле число.
 ```
 
-- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. See example below:
-- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
+- Посилання на назви файлів чи шляхи директорій (тобто `package.json`, `src/components`) потрібно брати у зворотні лапки `` \` ``.
+- Перед блоками багаторядкового коду **має бути порожній рядок**. Наступний рядок повинен починатись з трьох зворотних лапок, після яких йде одна з [підтримуваних мов](https://prismjs.com/#supported-languages). Щоб закінчити блок коду, потрібно почати новий рядок, який має лише три зворотні лапки та **ще один порожній рядок**. Розгляньте приклад нижче:
+- Пробіл має значення у markdown, тому ми рекомендуємо зробити його видимим у редакторі.
 
-**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+**Примітка:** якщо ви збираєтесь використовувати код прикладу в YAML, використовуйте `yaml` замість `yml` для мови справа від зворотних лапок.
 
-The following is an example of code:
+Нижче поданий приклад коду:
 
 ````md
 ```{language}
@@ -282,47 +282,47 @@ The following is an example of code:
 ````
 ````
 
-- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single quotes where applicable
+- Додаткова інформація у нотатках повинна бути оточена порожніми рядками та відформатована: `**Примітка:** Решта тексту примітки...`
+- Якщо потрібно написати декілька приміток, перерахуйте всі примітки в окремих реченнях, використовуючи такий формат: `**Примітки:** Текст першої примітки. Текст другої примітки.`
+- Використовуйте одинарні лапки там, де потрібно
 
-**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
+**Примітка:** Еквівалент _Markdown_ потрібно використовувати на місці тегів _HTML_.
 
-## Writing tests
+## Написання тестів
 
-Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
+Завдання повинні мати мінімальну кількість тестів, необхідних для підтвердження знань кемпера щодо певного поняття.
 
-Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
+Наша мета — пояснити поняття, описане в завданні, та перевірити, що його зрозуміли.
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
+Тести завдань можуть використовувати бібліотеки Node.js та Chai.js. Якщо необхідно, у змінній `code` можна отримати доступ до коду, створеного користувачами. Крім того, об’єкт `__helpers` надає декілька функцій, які полегшують процес написання тестів. Доступні функції визначені у _client/src/utils/curriculum-helpers.ts_.
 
-## Formatting Seed Code
+## Форматування вихідного коду
 
-Here are specific formatting guidelines for the challenge seed code:
+Ось вказівки для форматування вихідного коду завдань:
 
-- Use two spaces to indent
-- JavaScript statements end with a semicolon
-- Use double quotes where applicable
+- Використовуйте два пробіли для відступу
+- Інструкції JavaScript закінчуються крапкою з комою
+- Використовуйте подвійні лапки там, де потрібно
 
-### Seed Code Comments
+### Коментарі вихідного коду
 
-We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+У нас є [словник з коментарями](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json), який містить лише ті коментарі, які можна використовувати у вихідному коді. Використовуйте той самий регістр та інтервал, що в словнику коментарів. Не доповнюйте словник коментарів, не обговоривши з командою розробників.
 
-Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+Використані коментарі повинні мати пробіл між символами коментаря та самим коментарем. Коментарі потрібно використовувати в міру. Намагайтесь писати опис чи інструкції завдання так, щоб уникнути використання коментаря у вихідному коді.
 
-Example of a valid single-line JavaScript comment:
+Приклад дійсного однорядкового коментаря JavaScript:
 
 ```js
-// Only change code below this line
+// Змініть код під цим рядком
 ````
 
-Example of a valid CSS comment:
+Приклад дійсного коментаря CSS:
 
 ```css
 /* Only change code above this line */
 ```
 
-If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+Якщо завдання має лише одне місце, де потрібно змінити код, будь ласка, використайте коментарі з наступного прикладу, щоб проінформувати користувача, де потрібно внести зміни.
 
 ```js
 var a = 3;
@@ -335,7 +335,7 @@ b = 9 + b;
 c = c + 7;
 ```
 
-If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+Якщо завдання має декілька місць, де користувач повинен змінити код (наприклад, завдання з React)
 
 ```jsx
 class MyComponent extends React.Component {
@@ -344,9 +344,9 @@ class MyComponent extends React.Component {
     this.state = {
       text: 'Hello'
     };
-    // Change code below this line
+    // Змініть код під цим рядком
 
-    // Change code above this line
+    // Змініть код над цим рядком
   }
   handleClick() {
     this.setState({
@@ -356,9 +356,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        {/* Change code below this line */}
+        {/* Змініть код під цим рядком */}
         <button>Click Me</button>
-        {/* Change code above this line */}
+        {/* змініть код над цим рядком */}
         <h1>{this.state.text}</h1>
       </div>
     );
@@ -366,68 +366,68 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of Seed Code Comments
+### Переклад коментарів початкового коду
 
-There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
+Існують окремі словники з коментарями для кожної мови. [Англійська версія словника з коментарями](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) є основою для перекладів іншомовних версій файлів. Китайська версія словника з коментарями буде розташована на `/curriculum/dictionaries/chinese/comments.json`. Кожен словник складається з масиву об’єктів з унікальною властивістю `id` та властивістю `text`. Щоб охопити переклад англійського коментаря, потрібно змінювати лише `text`.
 
-Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
+Деякі коментарі можуть містити слова чи фрази, які не потрібно перекладати. Наприклад, назви змінних або власні назви бібліотек (як-от «React») не потрібно перекладати. Розгляньте приклад нижче. Слово `myGlobal` не потрібно перекладати.
 
 ```text
-Declare the myGlobal variable below this line
+Оголосіть змінну myGlobal під цим рядком
 ```
 
 > [!NOTE]
 > 
-> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+> Ми працюємо над інтеграцією, щоб дозволити працювати над словником коментарів для i18n.
 
-## Hints and Solutions
+## Підказки та розв’язки
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+Кожне завдання має кнопку `Get a Hint` для того, щоб користувач отримав доступ до будь-яких підказок/розв’язків, які були створені для цього завдання. Підказки та розв’язки навчальної програми розташовані на [нашому форумі](https://forum.freecodecamp.org/c/guide) у категорії `Guide`.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+Якщо ви виявили помилку в наявних підказках чи розв’язках, повідомте про це на форумі [у розділі «Contributors»](https://forum.freecodecamp.org/c/contributors). Модератори й користувачі з 3-м рівнем довіри розглянуть коментарі та приймуть рішення щодо наданих вами змін.
 
-### Adding new Challenge hints/solutions Topics
+### Додавання нових тем для підказок чи розв’язків завдань
 
-Take the following steps when adding a new challenge hints/solutions-related topic.
+Виконайте наступні кроки, щоб додати нову тему для підказок чи розв’язків завдань.
 
-1. Start by following the same steps for creating a new topic but review the next for creating the title.
-2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
-4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+1. Розпочніть з тих самих кроків для створення нової теми, але зверніть увагу на наступні щодо заголовка.
+2. Заголовок теми повинен починатись з `freeCodeCamp Challenge Guide:`, з’єднаного з назвою завдання навчальної програми. Наприклад, якщо завдання має назву `Chunky Monkey`, заголовком теми буде `freeCodeCamp Challenge Guide: Chunky Monkey`.
+3. `camperbot` повинен бути власником цих тем/дописів, тому попросіть адміністратора змінити власника головного допису на `camperbot`.
+4. Після створення нової теми створюється id теми форуму. Він розташований в кінці URL-адреси теми форуму. Цей id потрібно додати до передмови файлу завдання за допомогою звичайного запиту на злиття, щоб кнопка `Get a Hint` посилалась на тему.
 
-### Guidelines for Content of Hints and Solutions Topics
+### Вказівки щодо змісту тем підказок і розв’язків
 
-When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+Пропонуючи розв’язок до теми завдання навчальної програми, потрібно додати повний код. Сюди входить весь вихідний код та будь-які зміни, необхідні для проходження тестів. Використовуйте цей шаблон для створення нових тем підказок/розв’язків:
 
 ````md
-# Challenge Name Goes Here
+# Тут назва завдання
 
 ---
 
-## Problem Explanation
+## Пояснення проблеми
 
-This summarizes what needs to be done without just restating the challenge description and/or instructions. This is an optional section
+Тут узагальнюється те, що потрібно зробити (без повторення опису та/або інструкцій). Це додатковий розділ
 
-#### Relevant Links
+#### Релевантні посилання
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
-
----
-
-## Hints
-
-### Hint 1
-
-Hint goes here
-
-### Hint 2
-
-Hint goes here
+- [Текст посилання](link_url_goes_here)
+- [Текст посилання](link_url_goes_here)
 
 ---
 
-## Solutions
+## Підказки
+
+### Підказка 1
+
+Тут підказка
+
+### Підказка 2
+
+Тут підказка
+
+---
+
+## Розв’язок
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 
@@ -437,30 +437,30 @@ function myFunc() {
 }
 ````
 
-#### Code Explanation
+#### Пояснення коду
 
-- Code explanation goes here
-- Code explanation goes here
+- Тут пояснення коду
+- Тут пояснення коду
 
-#### Relevant Links
+#### Релевантні посилання
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
+- [Текст посилання](link_url_goes_here)
+- [Текст посилання](link_url_goes_here)
 
 </details>
 ````
 
-## Testing Challenges
+## Тестування завдань
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.
+Перш ніж [створити запит на злиття](how-to-open-a-pull-request.md) для своїх змін, вам потрібно переконатись, що зроблені зміни не призводять до проблем у завданні.
 
-1. To test all challenges run the below command from the root directory
+1. Запустіть нижчеподану команду з кореневого каталогу для того, щоб перевірити всі завдання
 
 ````
 pnpm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. Ви можете перевірити блок або суперблок завдань за допомогою цих команд
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,29 +470,29 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+Ви також можете перевірити окремо одне завдання, виконавши наступні дії:
 
-1. Switch to the `curriculum` directory:
+1. Перейдіть до каталогу `curriculum`:
 
    ```
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
+2. Виконайте цю команду для кожного файлу завдання, до якого ви внесли зміни (замінивши `challenge-title-goes-here` на повну назву завдання):
 
    ```
    pnpm run test -- -g challenge-title-goes-here ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).
+Як тільки ви переконались, що кожне змінене завдання проходить тести, [відкрийте запит на злиття](how-to-open-a-pull-request.md).
 
-> [!TIP] You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> [!TIP] Ви можете встановити змінну середовища ` LOCALE ` у `.env ` на мову завдань, які потрібно перевірити.
 > 
-> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+> Наразі прийнятними значеннями є `english` та `chinese` (`english` за замовчуванням).
 
 ### Корисні посилання
 
-Creating and Editing Challenges:
+Створення і редагування завдань:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Типи завдань](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) — що означають числові значення завдань (перелік).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Внесок до FreeCodeCamp: написання тестів завдань ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) — відео [Ітана Арровуда](https://twitter.com/ArrowoodTech) про його внесок до старої версії навчальної програми.
