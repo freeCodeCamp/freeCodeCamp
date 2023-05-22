@@ -10,11 +10,11 @@ dashedName: problem-429-sum-of-squares-of-unitary-divisors
 
 Un divisore unitario $d$ di un numero $n$ è un divisore di $n$ che ha la proprietà $MCD(d, \frac{n}{d}) = 1$.
 
-The unitary divisors of $4! = 24$ are 1, 3, 8 and 24.
+I divisori unitari di $4! = 24$ sono 1, 3, 8 e 24.
 
 La somma dei loro quadrati è $12 + 32 + 82 + 242 = 650$.
 
-Sia $S(n)$ la rappresentazione della somma dei quadrati dei divisori unitari di $n$. Thus $S(4!) = 650$.
+Sia $S(n)$ la rappresentazione della somma dei quadrati dei divisori unitari di $n$. Quindi $S(4!) = 650$.
 
 Trova $S(100\\,000\\,000!)$ modulo $1\\,000\\,000\\,009$.
 

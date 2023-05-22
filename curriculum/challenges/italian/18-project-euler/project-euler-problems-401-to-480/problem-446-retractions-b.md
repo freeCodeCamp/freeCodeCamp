@@ -20,7 +20,7 @@ $F(N) = \displaystyle\sum_{n = 1}^N R(n^4 + 4)$.
 
 $F(1024) = 77\\,532\\,377\\,300\\,600$.
 
-Trova $F({10}^7)$. Give your answer modulo $1\\,000\\,000\\,007$.
+Trova $F({10}^7)$. Dai la tua risposta modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 
