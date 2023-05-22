@@ -638,8 +638,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@16.14.0)
       react-i18next:
-        specifier: 12.2.2
-        version: 12.2.2(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0)
+        specifier: 12.3.1
+        version: 12.3.1(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0)
       react-instantsearch-core:
         specifier: 6.40.0
         version: 6.40.0(algoliasearch@4.17.0)(react@16.14.0)
@@ -27742,8 +27742,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-i18next@12.2.2(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-KBB6buBmVKXUWNxXHdnthp+38gPyBT46hJCAIQ8rX19NFL/m2ahte2KARfIDf2tMnSAL7wwck6eDOd/9zn6aFg==}
+  /react-i18next@12.3.1(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -27755,7 +27755,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       html-parse-stringify: 3.0.1
       i18next: 22.5.0
       react: 16.14.0
