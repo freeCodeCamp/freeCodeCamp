@@ -11,6 +11,23 @@
   "superBlock": "2022/javascript-algorithms-and-data-structures",
   "superOrder": 4,
   "isBeta": true,
-  "challengeOrder": [["646a422b36a6c506d4220c2b", "Step 1"]],
+  "challengeOrder": [
+    [
+      "646a422b36a6c506d4220c2b",
+      "Step 1"
+    ],
+    [
+      "646ad836ae56d30140a7b4eb",
+      "Step 2"
+    ],
+    [
+      "646adc0e1c347a017b89942c",
+      "Step 3"
+    ],
+    [
+      "646add141ce9f901b37f6d2b",
+      "Step 4"
+    ]
+  ],
   "helpCategory": "JavaScript"
 }
