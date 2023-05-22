@@ -134,3 +134,16 @@ A one-off script that automatically updates the frontmatter in a project's markd
 ```bash
 pnpm run update-step-titles
 ```
+
+### repair-meta
+
+One-off script to parse the step names from the project and update the meta.json order to reflect those steps. Useful if you've accidentally lost the changes to the meta.json file when adding/removing steps.
+
+#### How to Run the Script
+
+1. Change to the directory of the project.
+2. Run the following command:
+
+```bash
+pnpm run repair-meta
+```
