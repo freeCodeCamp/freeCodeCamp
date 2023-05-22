@@ -190,6 +190,7 @@
           }
         ],
         "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
       }
     }
   ]
