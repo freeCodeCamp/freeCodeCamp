@@ -23,6 +23,7 @@
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
   - [User Token Workflow](user-token-workflow.md)
   - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
   - [Authors Analytics Manual](authors-analytics-manual.md)
