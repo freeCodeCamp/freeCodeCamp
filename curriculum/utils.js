@@ -123,7 +123,8 @@ const directoryToSuperblock = {
     '2022/javascript-algorithms-and-data-structures',
   '16-the-odin-project': 'the-odin-project',
   '17-college-algebra-with-python': 'college-algebra-with-python',
-  '18-project-euler': 'project-euler'
+  '18-project-euler': 'project-euler',
+  '99-example-certification': 'example-certification'
 };
 
 function getSuperBlockFromDir(dir) {

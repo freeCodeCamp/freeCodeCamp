@@ -108,7 +108,7 @@ export const devLoginCallback: FastifyPluginCallback = (
   _options,
   done
 ) => {
-  fastify.get('/dev-callback', async (req, _res) => {
+  fastify.get('/dev-callback', async req => {
     const email = 'foo@bar.com';
 
     const { id } = await findOrCreateUser(fastify, email);
@@ -122,7 +122,7 @@ export const devLoginCallback: FastifyPluginCallback = (
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
-  fastify.get('/callback', async (req, _res) => {
+  fastify.get('/callback', async req => {
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

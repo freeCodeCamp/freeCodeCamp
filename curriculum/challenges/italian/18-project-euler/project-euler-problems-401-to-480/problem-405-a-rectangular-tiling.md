@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510014
-title: 'Problem 405: A rectangular tiling'
+title: 'Problema 405: una piastrellatura rettangolare'
 challengeType: 1
 forumTopicId: 302073
 dashedName: problem-405-a-rectangular-tiling
@@ -8,25 +8,25 @@ dashedName: problem-405-a-rectangular-tiling
 
 # --description--
 
-We wish to tile a rectangle whose length is twice its width.
+Vogliamo piastrellare un rettangolo la cui lunghezza è il doppio della larghezza.
 
-Let $T(0)$ be the tiling consisting of a single rectangle.
+Sia $T(0)$ la piastrellatura composta da un singolo rettangolo.
 
-For $n > 0$, let $T(n)$ be obtained from $T( n- 1)$ by replacing all tiles in the following manner:
+Per $n > 0$, sia $T(n)$ ottenuto da $T( n- 1)$ sostituendo tutte le piastrelle nel modo seguente:
 
-<img class="img-responsive center-block" alt="obtaining T(n) from T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ottenere T(n) da T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
 
-The following animation demonstrates the tilings $T(n)$ for $n$ from 0 to 5:
+La seguente animazione mostra la piastrellatura $T(n)$ per $n$ da 0 a 5:
 
-<img class="img-responsive center-block" alt="animation with tilings T(n) for n from 0 to 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animazione con piastrelle T(n) per n da 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
 
-Let $f(n)$ be the number of points where four tiles meet in $T(n)$. For example, $f(1) = 0$, $f(4) = 82$ and $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
+Sia $f(n)$ il numero di punti in cui quattro piastrelle si incontrano in $T(n)$. Per esempio, $f(1) = 0$, $f(4) = 82$ e $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
 
 Find $f({10}^k)$ for $k = {10}^{18}$, give your answer modulo ${17}^7$.
 
 # --hints--
 
-`rectangularTiling()` should return `237696125`.
+`rectangularTiling()` dovrebbe restituire `237696125`.
 
 ```js
 assert.strictEqual(rectangularTiling(), 237696125);

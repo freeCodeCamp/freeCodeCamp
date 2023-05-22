@@ -167,6 +167,9 @@ importers:
       '@fastify/cookie':
         specifier: ^8.3.0
         version: 8.3.0
+      '@fastify/csrf-protection':
+        specifier: 6.3.0
+        version: 6.3.0
       '@fastify/middie':
         specifier: '8.3'
         version: 8.3.0
@@ -183,8 +186,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.1
       '@prisma/client':
-        specifier: 4.14.0
-        version: 4.14.0(prisma@4.14.0)
+        specifier: 4.14.1
+        version: 4.14.1(prisma@4.14.1)
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.15.0)
@@ -220,8 +223,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       prisma:
-        specifier: 4.14.0
-        version: 4.14.0
+        specifier: 4.14.1
+        version: 4.14.1
       supertest:
         specifier: 6.3.3
         version: 6.3.3
@@ -575,8 +578,8 @@ importers:
         specifier: 4.12.0
         version: 4.12.0(gatsby@3.15.0)
       i18next:
-        specifier: 22.4.15
-        version: 22.4.15
+        specifier: 22.5.0
+        version: 22.5.0
       jquery:
         specifier: 3.7.0
         version: 3.7.0
@@ -635,14 +638,14 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@16.14.0)
       react-i18next:
-        specifier: 12.2.2
-        version: 12.2.2(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0)
+        specifier: 12.3.1
+        version: 12.3.1(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0)
       react-instantsearch-core:
-        specifier: 6.39.1
-        version: 6.39.1(algoliasearch@4.17.0)(react@16.14.0)
+        specifier: 6.40.0
+        version: 6.40.0(algoliasearch@4.17.0)(react@16.14.0)
       react-instantsearch-dom:
-        specifier: 6.39.1
-        version: 6.39.1(algoliasearch@4.17.0)(react-dom@16.14.0)(react@16.14.0)
+        specifier: 6.40.0
+        version: 6.40.0(algoliasearch@4.17.0)(react-dom@16.14.0)(react@16.14.0)
       react-monaco-editor:
         specifier: 0.40.0
         version: 0.40.0(@types/react@16.14.41)(react@16.14.0)
@@ -1023,8 +1026,8 @@ importers:
         specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
       react-router-dom:
-        specifier: 6.11.1
-        version: 6.11.1(react-dom@16.14.0)(react@16.14.0)
+        specifier: 6.11.2
+        version: 6.11.2(react-dom@16.14.0)(react@16.14.0)
       react-scripts:
         specifier: 5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.21.0)(eslint@8.37.0)(react@16.14.0)(ts-node@10.9.1)(typescript@4.9.5)
@@ -1190,8 +1193,8 @@ importers:
         specifier: 4.0.5
         version: 4.0.5
       '@types/node-fetch':
-        specifier: 2.6.3
-        version: 2.6.3
+        specifier: 2.6.4
+        version: 2.6.4
       chai:
         specifier: 4.3.7
         version: 4.3.7
@@ -6236,6 +6239,18 @@ packages:
       fastify-plugin: 4.5.0
     dev: false
 
+  /@fastify/csrf-protection@6.3.0:
+    resolution: {integrity: sha512-RktewyPbVMSbKrRKmn0VzKfqtRp+0mYodAz7tbJMmz1QJFWFeP5F5mS8Ym1djaM0EFqCBItIceJizeLOD+UILA==}
+    dependencies:
+      '@fastify/csrf': 6.2.0
+      '@fastify/error': 3.2.0
+      fastify-plugin: 4.5.0
+    dev: false
+
+  /@fastify/csrf@6.2.0:
+    resolution: {integrity: sha512-DvBvhhAjTh4JxH7u/HAaXY6uawrEA3lGrJNTDF2R0sojwXdmFF50an2nnnHMBIsABRyNh9TueZjzgznRCe74yA==}
+    dev: false
+
   /@fastify/deepmerge@1.3.0:
     resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
     dev: false
@@ -7552,8 +7567,8 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
 
-  /@prisma/client@4.14.0(prisma@4.14.0):
-    resolution: {integrity: sha512-MK/XaA2sFdfaOa7I9MjNKz6dxeIEdeZlnpNRoF2w3JuRLlFJLkpp6cD3yaqw2nUUhbrn3Iqe3ZpVV+VuGGil7Q==}
+  /@prisma/client@4.14.1(prisma@4.14.1):
+    resolution: {integrity: sha512-TZIswkeX1ccsHG/eN2kICzg/csXll0osK3EHu1QKd8VJ3XLcXozbNELKkCNfsCUvKJAwPdDtFCzF+O+raIVldw==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -7563,15 +7578,15 @@ packages:
         optional: true
     dependencies:
       '@prisma/engines-version': 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
-      prisma: 4.14.0
+      prisma: 4.14.1
     dev: false
 
   /@prisma/engines-version@4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c:
     resolution: {integrity: sha512-3jum8/YSudeSN0zGW5qkpz+wAN2V/NYCQ+BPjvHYDfWatLWlQkqy99toX0GysDeaUoBIJg1vaz2yKqiA3CFcQw==}
     dev: false
 
-  /@prisma/engines@4.14.0:
-    resolution: {integrity: sha512-PDNlhP/1vyTgmNyiucGqGCdXIp7HIkkvKO50si3y3PcceeHvqtiKPaH1iJdz63jCWMVMbj2MElSxXPOeBvEVIQ==}
+  /@prisma/engines@4.14.1:
+    resolution: {integrity: sha512-APqFddPVHYmWNKqc+5J5SqrLFfOghKOLZxobmguDUacxOwdEutLsbXPVhNnpFDmuQWQFbXmrTTPoRrrF6B1MWA==}
     requiresBuild: true
 
   /@reach/router@1.3.4(react-dom@16.14.0)(react@16.14.0):
@@ -7633,8 +7648,8 @@ packages:
   /@redux-saga/types@1.2.1:
     resolution: {integrity: sha512-1dgmkh+3so0+LlBWRhGA33ua4MYr7tUOj+a9Si28vUi0IUFNbff1T3sgpeDJI/LaC75bBYnQ0A3wXjn0OrRNBA==}
 
-  /@remix-run/router@1.6.1:
-    resolution: {integrity: sha512-YUkWj+xs0oOzBe74OgErsuR3wVn+efrFhXBWrit50kOiED+pvQe2r6MWY0iJMQU/mSVKxvNzL4ZaYvjdX+G7ZA==}
+  /@remix-run/router@1.6.2:
+    resolution: {integrity: sha512-LzqpSrMK/3JBAVBI9u3NWtOhWNw5AMQfrUFYB0+bDHTSw17z++WJLsPsxAuK+oSddsxk4d7F/JcdDPM1M5YAhA==}
     engines: {node: '>=14'}
     dev: false
 
@@ -8885,7 +8900,7 @@ packages:
       '@storybook/store': 6.5.16(react-dom@16.14.0)(react@16.14.0)
       '@storybook/telemetry': 6.5.16(eslint@7.32.0)(react-dom@16.14.0)(react@16.14.0)(typescript@4.9.5)
       '@types/node': 16.18.23
-      '@types/node-fetch': 2.6.3
+      '@types/node-fetch': 2.6.4
       '@types/pretty-hrtime': 1.0.1
       '@types/webpack': 4.41.33
       better-opn: 2.1.1
@@ -9698,7 +9713,7 @@ packages:
     peerDependencies:
       node-fetch: '2'
     dependencies:
-      '@types/node-fetch': 2.6.3
+      '@types/node-fetch': 2.6.4
       node-fetch: 2.6.11
 
   /@turist/time@0.0.2:
@@ -10047,10 +10062,10 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node-fetch@2.6.3:
-    resolution: {integrity: sha512-ETTL1mOEdq/sxUtgtOhKjyB2Irra4cjxksvcMUR5Zr4n+PxVhsCD9WS46oPbHL3et9Zde7CNRr+WUNlcHvsX+w==}
+  /@types/node-fetch@2.6.4:
+    resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
     dependencies:
-      '@types/node': 18.15.10
+      '@types/node': 18.16.0
       form-data: 3.0.1
 
   /@types/node@10.17.60:
@@ -10070,9 +10085,6 @@ packages:
 
   /@types/node@18.14.2:
     resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==}
-
-  /@types/node@18.15.10:
-    resolution: {integrity: sha512-9avDaQJczATcXgfmMAW3MIWArOO7A+m90vuCFLr8AotWf8igO/mRoYukrk2cqZVtv38tHs33retzHEilM7FpeQ==}
 
   /@types/node@18.15.3:
     resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
@@ -11172,6 +11184,16 @@ packages:
     dependencies:
       '@algolia/events': 4.0.1
       algoliasearch: 4.17.0
+    dev: true
+
+  /algoliasearch-helper@3.13.0(algoliasearch@4.17.0):
+    resolution: {integrity: sha512-kV3c1jMQCvkARtGsSDvAwuht4PAMSsQILqPiH4WFiARoa3jXJ/r1TQoBWAjWyWF48rsNYCv7kzxgB4LTxrvvuw==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
+    dependencies:
+      '@algolia/events': 4.0.1
+      algoliasearch: 4.17.0
+    dev: false
 
   /algoliasearch@4.17.0:
     resolution: {integrity: sha512-JMRh2Mw6sEnVMiz6+APsi7lx9a2jiDFF+WUtANaUVCv6uSU9UOLdo5h9K3pdP6frRRybaM2fX8b1u0nqICS9aA==}
@@ -20059,10 +20081,10 @@ packages:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
     dev: false
 
-  /i18next@22.4.15:
-    resolution: {integrity: sha512-yYudtbFrrmWKLEhl6jvKUYyYunj4bTBCe2qIUYAxbXoPusY7YmdwPvOE6fx6UIfWvmlbCWDItr7wIs8KEBZ5Zg==}
+  /i18next@22.5.0:
+    resolution: {integrity: sha512-sqWuJFj+wJAKQP2qBQ+b7STzxZNUmnSxrehBCCj9vDOW9RDYPfqCaK1Hbh2frNYQuPziz6O2CGoJPwtzY3vAYA==}
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
     dev: false
 
   /iconv-lite@0.4.24:
@@ -27049,13 +27071,13 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /prisma@4.14.0:
-    resolution: {integrity: sha512-+5dMl1uxMQb4RepndY6AwR9xi1cDcaGFICu+ws6/Nmgt93mFPNj8tYxSfTdmfg+rkNrUId9rk/Ac2vTgLe/oXA==}
+  /prisma@4.14.1:
+    resolution: {integrity: sha512-z6hxzTMYqT9SIKlzD08dhzsLUpxjFKKsLpp5/kBDnSqiOjtUyyl/dC5tzxLcOa3jkEHQ8+RpB/fE3w8bgNP51g==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.14.0
+      '@prisma/engines': 4.14.1
 
   /prismjs@1.29.0:
     resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
@@ -27720,8 +27742,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-i18next@12.2.2(i18next@22.4.15)(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-KBB6buBmVKXUWNxXHdnthp+38gPyBT46hJCAIQ8rX19NFL/m2ahte2KARfIDf2tMnSAL7wwck6eDOd/9zn6aFg==}
+  /react-i18next@12.3.1(i18next@22.5.0)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -27733,9 +27755,9 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       html-parse-stringify: 3.0.1
-      i18next: 22.4.15
+      i18next: 22.5.0
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
     dev: false
@@ -27751,36 +27773,36 @@ packages:
       react: 16.14.0
     dev: true
 
-  /react-instantsearch-core@6.39.1(algoliasearch@4.17.0)(react@16.14.0):
-    resolution: {integrity: sha512-rvzOoNGBT2O28mmcpXfcN4pVF+p07jlDMbEKB1TRdW3jE9dm8U6uCS/X6DWqigYLr8svVRcG/Ez+wzYK+yuPZw==}
+  /react-instantsearch-core@6.40.0(algoliasearch@4.17.0)(react@16.14.0):
+    resolution: {integrity: sha512-YCLEtW5ar+h6fQbo03KYUJq/G2BFIuwvD482JqqZ3FhSDzQSgM0ShsfrPgU3AotfZvml4rePyBKyJw6U/O0MIQ==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       algoliasearch: 4.17.0
-      algoliasearch-helper: 3.11.3(algoliasearch@4.17.0)
+      algoliasearch-helper: 3.13.0(algoliasearch@4.17.0)
       prop-types: 15.8.1
       react: 16.14.0
       react-fast-compare: 3.2.0
     dev: false
 
-  /react-instantsearch-dom@6.39.1(algoliasearch@4.17.0)(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-lfTHQZ3ILwlQeDsd+GqvVCVLyOzK8FYMtICJvc0PXANhcXXMM+7WvqJGlDclcnujPPSDuQl6MmKTHcTNVapQoA==}
+  /react-instantsearch-dom@6.40.0(algoliasearch@4.17.0)(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-bD+xIi05DeQ47svD4bMgv7rKpl2eKoDOjBU2rcQNBz9N9ryE1IOe6NWAHaDZWBd99eWX9Opwa1JHr3KtNtv2yA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
       react-dom: '>= 16.3.0 < 19'
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.21.5
       algoliasearch: 4.17.0
-      algoliasearch-helper: 3.11.3(algoliasearch@4.17.0)
+      algoliasearch-helper: 3.13.0(algoliasearch@4.17.0)
       classnames: 2.3.2
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.39.1(algoliasearch@4.17.0)(react@16.14.0)
+      react-instantsearch-core: 6.40.0(algoliasearch@4.17.0)(react@16.14.0)
     dev: false
 
   /react-is@16.13.1:
@@ -27902,26 +27924,26 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-router-dom@6.11.1(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-dPC2MhoPeTQ1YUOt5uIK376SMNWbwUxYRWk2ZmTT4fZfwlOvabF8uduRKKJIyfkCZvMgiF0GSCQckmkGGijIrg==}
+  /react-router-dom@6.11.2(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-JNbKtAeh1VSJQnH6RvBDNhxNwemRj7KxCzc5jb7zvDSKRnPWIFj9pO+eXqjM69gQJ0r46hSz1x4l9y0651DKWw==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.6.1
+      '@remix-run/router': 1.6.2
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
-      react-router: 6.11.1(react@16.14.0)
+      react-router: 6.11.2(react@16.14.0)
     dev: false
 
-  /react-router@6.11.1(react@16.14.0):
-    resolution: {integrity: sha512-OZINSdjJ2WgvAi7hgNLazrEV8SGn6xrKA+MkJe9wVDMZ3zQ6fdJocUjpCUCI0cNrelWjcvon0S/QK/j0NzL3KA==}
+  /react-router@6.11.2(react@16.14.0):
+    resolution: {integrity: sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.6.1
+      '@remix-run/router': 1.6.2
       react: 16.14.0
     dev: false
 

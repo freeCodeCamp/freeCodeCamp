@@ -36,15 +36,21 @@
   font-size: unset;
   justify-self: end;
   width: 40%;
-  background-color: var(--primary-color);
-  color: var(--primary-background);
+  height: 40px; /* Set a fixed height value */
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
   padding: 0.5rem;
-  border-radius: 15px;
+  border: 3px solid var(--secondary-color);
   padding-inline: 4rem;
   margin: 1em;
   text-decoration: none;
   /* prevent line breaks in Chinese/Japanese/Korean */
   word-break: keep-all;
+}
+
+.portfolio-container:hover a {
+  background-color: var(--primary-color);
+  color: var(--primary-background);
 }
 
 .portfolio-container a::after {
@@ -84,8 +90,8 @@
 
 @media (min-width: 995px) {
   .portfolio-container {
-    grid-template-rows: minmax(75px, 1fr) minmax(125px, 1fr) 75px;
-    grid-template-columns: 300px 1.2fr;
+    grid-template-columns: 450px 1.2fr;
+    grid-template-rows: minmax(65px, 0.1fr) minmax(125px, 1fr) 75px;
   }
 
   .portfolio-screen-shot {

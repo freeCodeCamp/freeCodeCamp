@@ -87,7 +87,8 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       const isUpcoming = [
         '2022/javascript-algorithms-and-data-structures',
         'college-algebra-with-python',
-        'the-odin-project'
+        'the-odin-project',
+        'example-certification'
       ];
 
       // TODO: this is a hack, we should have a single source of truth for the

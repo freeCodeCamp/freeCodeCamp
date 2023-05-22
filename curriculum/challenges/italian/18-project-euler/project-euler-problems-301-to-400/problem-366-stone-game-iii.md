@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffed
-title: 'Problem 366: Stone Game III'
+title: 'Problema 366: gioco delle pietre III'
 challengeType: 1
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
@@ -8,41 +8,41 @@ dashedName: problem-366-stone-game-iii
 
 # --description--
 
-Two players, Anton and Bernhard, are playing the following game.
+Due giocatori, Anton e Bernhard, stanno facendo il seguente gioco.
 
-There is one pile of $n$ stones.
+C'è una pila di $n$ pietre.
 
-The first player may remove any positive number of stones, but not the whole pile.
+Il primo giocatore può rimuovere qualsiasi numero positivo di pietre, ma non l'intera pila.
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+Successivamente, ogni giocatore può rimuovere al massimo il doppio del numero di pietre che il suo avversario ha preso nella mossa precedente.
 
-The player who removes the last stone wins.
+Il giocatore che rimuove l'ultima pietra vince.
 
-E.g. $n = 5$
+Ad es. $n = 5$
 
-If the first player takes anything more than one stone the next player will be able to take all remaining stones.
+Se il primo giocatore prende più di una pietra il giocatore successivo sarà in grado di prendere tutte le pietre rimaste.
 
-If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
+Se il primo giocatore prende una pietra, lasciandone quattro, anche il suo avversario prenderà una pietra, lasciando tre pietre.
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
+Il primo giocatore non può prenderle tutte e tre perché può prendere al massimo $2 \times 1 = 2$ pietre. Quindi diciamo che anche lui prende una pietra, lasciandone 2.
 
-The second player can take the two remaining stones and wins.
+Il secondo giocatore può prendere le due pietre rimanenti e vincere.
 
-So 5 is a losing position for the first player.
+Quindi 5 è una posizione perdente per il primo giocatore.
 
-For some winning positions there is more than one possible move for the first player.
+Per alcune posizioni vincenti c'è più di una possibile mossa per il primo giocatore.
 
-E.g. when $n = 17$ the first player can remove one or four stones.
+Ad es. quando $n = 17$ il primo giocatore può rimuovere una o quattro pietre.
 
-Let $M(n)$ be the maximum number of stones the first player can take from a winning position at his first turn and $M(n) = 0$ for any other position.
+Sia $M(n)$ il numero massimo di pietre che il primo giocatore può prendere da una posizione vincente al suo primo turno e $M(n) = 0$ per qualsiasi altra posizione.
 
-$\sum M(n)$ for $n ≤ 100$ is 728.
+$\sum M(n)$ per $n ≤ 100$ è 728.
 
-Find $\sum M(n)$ for $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+Trova $\sum M(n)$ per $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
 
 # --hints--
 
-`stoneGameThree()` should return `88351299`.
+`stoneGameThree()` dovrebbe restituire `88351299`.
 
 ```js
 assert.strictEqual(stoneGameThree(), 88351299);

@@ -8,23 +8,23 @@ dashedName: problem-430-range-flips
 
 # --description--
 
-$N$ disks are placed in a row, indexed 1 to $N$ from left to right.
+$N$ dischi sono posizionati in una riga, indicizzati da 1 a $N$ da sinistra a destra.
 
-Each disk has a black side and white side. Initially all disks show their white side.
+Ogni disco ha un lato nero e un lato bianco. All'inizio tutti i dischi mostrano il lato bianco.
 
-At each turn, two, not necessarily distinct, integers $A$ and $B$ between 1 and $N$ (inclusive) are chosen uniformly at random. All disks with an index from $A$ to $B$ (inclusive) are flipped.
+In ogni turno, due, non necessariamente distinti, numeri interi $A$ e $B$ tra 1 e $N$ (inclusi) sono scelti uniformemente a caso. Tutti i dischi con un indice da $A$ e $B$ (inclusi) sono rovesciati.
 
-The following example shows the case $N = 8$. At the first turn $A = 5$ and $B = 2$, and at the second turn $A = 4$ and $B = 6$.
+Il seguente esempio mostra il caso per $N = 8$. Al primo turno $A = 5$ e $B = 2$, e al secondo turno $A = 4$ e $B = 6$.
 
-<img class="img-responsive center-block" alt="example for N = 8, with first turn A = 5 and B = 2, and second turn A = 4 and B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="esempio per N = 8, con il primo turno A = 5 e B = 2, e il secondo turno A = 4 e B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
 
-Let $E(N, M)$ be the expected number of disks that show their white side after $M$ turns. We can verify that $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ and $E(100, 10) ≈ 51.893$.
+Sia $E(N, M)$ il valore di aspettativa del numero di dischi che mostrano il loro lato bianco dopo $M$ turni. Possiamo verificare che $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ e $E(100, 10) ≈ 51.893$.
 
-Find $E({10}^{10}, 4000)$. Give your answer rounded to 2 decimal places behind the decimal point.
+Trova $E({10}^{10}, 4000)$. Dai la tua risposta approssimata a 2 cifre dopo il punto decimale.
 
 # --hints--
 
-`rangeFlips()` should return `5000624921.38`.
+`rangeFlips()` dovrebbe restituire `5000624921.38`.
 
 ```js
 assert.strictEqual(rangeFlips(), 5000624921.38);
