@@ -52,9 +52,9 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
  * development, and bypasses Auth0, authenticating as the development
  * user.
  *
- * @param {FastifyInstance} fastify The Fastify instance.
- * @param {unknown} _options Fastify options I guess?
- * @param {Function} done Callback to signal that the logic has completed.
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
  */
 export const devLoginCallback: FastifyPluginCallback = (
   fastify,
@@ -76,9 +76,9 @@ export const devLoginCallback: FastifyPluginCallback = (
 /**
  * Route handler for Auth0 authentication.
  *
- * @param {FastifyInstance} fastify The Fastify instance.
- * @param {unknown} _options Fastify options I guess?
- * @param {Function} done Callback to signal that the logic has completed.
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
  */
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);

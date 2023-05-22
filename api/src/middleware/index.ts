@@ -6,9 +6,9 @@ type MiddieResponse = Parameters<NextHandleFunction>[1];
 /**
  * Test middleware used to log request and response data?
  *
- * @param {MiddieRequest} req The request payload.
- * @param {MiddieRequest} res The response to be sent back to the request.
- * @param {NextFunction} next Callback function to indicate that the middleware logic is complete.
+ * @param req The request payload.
+ * @param res The response to be sent back to the request.
+ * @param next Callback function to indicate that the middleware logic is complete.
  */
 export function testMiddleware(
   req: MiddieRequest,
