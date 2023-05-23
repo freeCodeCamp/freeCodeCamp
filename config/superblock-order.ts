@@ -325,17 +325,16 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.CollegeAlgebraPy,
-          SuperBlocks.ProjectEuler
-        ],
+        [SuperBlockStates.Current]: [],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
