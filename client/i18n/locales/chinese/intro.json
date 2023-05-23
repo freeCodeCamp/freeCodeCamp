@@ -1000,12 +1000,12 @@
     }
   },
   "example-certification": {
-    "title": "Example Certification",
-    "intro": ["placeholder"],
+    "title": "示例认证",
+    "intro": ["占位符"],
     "blocks": {
       "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+        "title": "示例认证测验",
+        "intro": ["占位符"]
       }
     }
   },

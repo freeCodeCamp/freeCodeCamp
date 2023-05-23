@@ -29,6 +29,7 @@
     "sign-up-email-list": "Підписатись на щотижневу розсилку від Квінсі",
     "sign-out": "Вийти",
     "curriculum": "Навчальна програма",
+    "contribute": "Contribute",
     "forum": "Форум",
     "radio": "Радіо",
     "profile": "Профіль",
@@ -72,14 +73,14 @@
     "go-to-settings": "Перейдіть до налаштувань, щоб отримати сертифікацію",
     "click-start-course": "Розпочати курс",
     "click-start-project": "Розпочати проєкт",
-    "click-start-exam": "Start the exam",
+    "click-start-exam": "Розпочати екзамен",
     "change-language": "Змінити мову",
     "resume-project": "Продовжити проєкт",
     "start-project": "Розпочати проєкт",
-    "previous-question": "Previous question",
-    "next-question": "Next question",
-    "finish-exam": "Finish the exam",
-    "submit-exam-results": "Submit my results"
+    "previous-question": "Попереднє запитання",
+    "next-question": "Наступне запитання",
+    "finish-exam": "Завершити екзамен",
+    "submit-exam-results": "Здати результати"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",

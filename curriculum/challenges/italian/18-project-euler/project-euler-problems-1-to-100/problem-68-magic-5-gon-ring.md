@@ -18,7 +18,7 @@ Lavorando in **senso orario** e iniziando dal gruppo di tre con il nodo esterno 
 
 <div style='text-align: center;'>
 
-| <div style='width: 100px;'>Total</div> | <div style='width: 250px;'>Solution Set</div> |
+| <div style='width: 100px;'>Totale</div> | <div style='width: 250px;'>Set di soluzioni</div> |
 | -------------------------------------- | --------------------------------------------- |
 | 9                                      | 4,2,3; 5,3,1; 6,1,2                           |
 | 9                                      | 4,3,2; 6,2,1; 5,1,3                           |

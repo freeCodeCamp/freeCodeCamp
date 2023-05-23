@@ -20,7 +20,7 @@
   "main": "none",
   "devDependencies": {
     "@types/js-yaml": "4.0.5",
-    "@types/node-fetch": "2.6.3",
+    "@types/node-fetch": "2.6.4",
     "chai": "4.3.7",
     "debug": "4.3.4",
     "dotenv": "16.0.3",

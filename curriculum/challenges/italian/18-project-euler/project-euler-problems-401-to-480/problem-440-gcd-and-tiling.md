@@ -1,6 +1,6 @@
 ---
 id: 5900f5241000cf542c510037
-title: 'Problem 440: GCD and Tiling'
+title: 'Problema 440: MCD e piastrelle'
 challengeType: 1
 forumTopicId: 302112
 dashedName: problem-440-gcd-and-tiling
@@ -20,7 +20,7 @@ Sia $T(n)$ il numero di modi per piastrellare una tavola di lunghezza $n$ come d
 
 Per esempio, $T(1) = 10$ e $T(2) = 101$.
 
-Let $S(L)$ be the triple sum $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ for $1 ≤ a, b, c ≤ L$.
+Sia $S(L)$ la tripla somma $\sum_{a, b, c} mcd(T(c^a), T(c^b)$ per $1 ≤ a, b, c ≤ L$.
 
 Per esempio:
 
