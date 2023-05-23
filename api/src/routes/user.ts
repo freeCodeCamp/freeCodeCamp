@@ -122,7 +122,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           user: {
             [user.username]: {
               ...user,
-              joinDate: new ObjectId(user.id).getTimestamp()
+              joinDate: new ObjectId(user.id).getTimestamp(),
+              username: user.usernameDisplay || user.username
             }
           },
           result: user.username

@@ -226,7 +226,8 @@ describe('userRoutes', () => {
           where: { email: testUserData.email }
         });
         const publicUser = {
-          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
+          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString(),
+          username: testUserData.usernameDisplay
         };
 
         const response = await superRequest('/user/get-session-user', {
