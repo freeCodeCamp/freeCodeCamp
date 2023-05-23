@@ -504,15 +504,17 @@ describe('settingRoutes', () => {
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
-          // `new URL` throws if the image is an empty string, this checks if it doesn't throw if it is empty.
-          picture: ''
+          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
+          picture: 'invalid'
         });
 
-        expect(response.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(400);
 
         expect(response.body).toEqual({
-          message: 'flash.updated-about-me',
-          type: 'success'
+          statusCode: 400,
+          code: 'FST_ERR_VALIDATION',
+          error: 'Bad Request',
+          message: 'body/picture must match format "uri"'
         });
       });
     });

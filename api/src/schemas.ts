@@ -132,8 +132,7 @@ export const schemas = {
     body: Type.Object({
       about: Type.Optional(Type.String()),
       name: Type.Optional(Type.String()),
-      // can't we have type URL?
-      picture: Type.Optional(Type.String({ format: 'url' })),
+      picture: Type.Optional(Type.String()),
       location: Type.Optional(Type.String())
     }),
     response: {
