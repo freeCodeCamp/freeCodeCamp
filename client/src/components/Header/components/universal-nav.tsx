@@ -28,7 +28,7 @@ type UniversalNavProps = Omit<
   fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
 };
-export const UniversalNav = ({
+const UniversalNav = ({
   displayMenu,
   showMenu,
   hideMenu,

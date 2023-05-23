@@ -100,7 +100,7 @@ SEO.displayName = 'SEO';
 
 export default SEO;
 
-export const query = graphql`
+const query = graphql`
   query SEO {
     site {
       siteMetadata {

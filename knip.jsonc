@@ -27,8 +27,29 @@
     },
     // "tools/ui-components": {},
     "tools/scripts/build": {
-      "entry": ["*.ts"]
+      "entry": ["*.{js,ts}"]
     }
   },
-  "ignoreDependencies": ["eslint", "gatsby-cli", "sass.js"]
+  "ignoreWorkspaces": [
+    "api",
+    "curriculum",
+    "tools/ui-components",
+    "tools/challenge-editor/api",
+    "tools/challenge-editor/client",
+    "tools/challenge-parser",
+    "tools/challenge-helper-scripts",
+    "tools/scripts/lint",
+    "api/server"
+  ],
+  "ignoreDependencies": [
+    "gatsby-cli",
+    "sass.js",
+    "markdownlint",
+    "util",
+    "fcc-source-challenges",
+    "eslint",
+    "invariant",
+    "execa",
+    "dotenv"
+  ]
 }
