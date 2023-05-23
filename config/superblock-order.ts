@@ -325,8 +325,8 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep,
           SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.CodingInterviewPrep,
           SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
