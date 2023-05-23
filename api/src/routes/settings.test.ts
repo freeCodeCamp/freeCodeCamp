@@ -504,7 +504,6 @@ describe('settingRoutes', () => {
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
-          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
           picture: 'invalid'
         });
 
