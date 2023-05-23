@@ -27,7 +27,12 @@ export default function prodErrorHandler() {
   return function (err, req, res, _next) {
     // response for when req.body is bigger than body-parser's size limit
     if (err?.type === 'entity.too.large') {
-      return res.status('413').send('Request payload is too large');
+      return res.status(413).json({
+        code: 'FCC_ERR_PAYLOAD_TOO_LARGE',
+        error: 'Payload Too Large',
+        message: 'Request payload is too large',
+        statusCode: 413
+      });
     }
 
     const { origin } = getRedirectParams(req);
@@ -56,8 +61,12 @@ export default function prodErrorHandler() {
     if (type === 'json') {
       return res.json({
         type: handled.type || 'danger',
-        message
+        code: handled.code || 'FCC_ERR_UNKNOWN',
+        error: handled.error || 'Internal Server Error',
+        message,
+        statusCode: status
       });
+
     } else {
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);
