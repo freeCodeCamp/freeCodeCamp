@@ -211,7 +211,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               about: req.body.about,
               name: req.body.name,
               location: req.body.location,
-              picture: hasProtocol ? req.body.picture : ''
+              ...(hasProtocol && { picture: req.body.picture })
             }
           });
 
