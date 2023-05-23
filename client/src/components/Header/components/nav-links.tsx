@@ -238,6 +238,18 @@ function NavLinks({
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
+      <li key='contribute'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.contribute')}
+        >
+          <span>{t('buttons.contribute')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
       <li className='nav-line' key='theme'>
         <button
           {...(!currentUserName && { 'aria-describedby': 'theme-sign-in' })}

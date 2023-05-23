@@ -10,7 +10,7 @@ dashedName: problem-43-sub-string-divisibility
 
 Il numero 1406357289 è un numero pandigitale da 0 a 9 perché è costituito da ciascuna delle cifre da 0 a 9 in un certo ordine, ma ha anche una proprietà di divisibilità in sotto-stringhe piuttosto interessante.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In questo modo, notiamo quanto segue:
+Sia $d_1$ la $1^{a}$ cifra, $d_2$ la $2^{a}$ cifra, e così via. In questo modo, notiamo quanto segue:
 
 - ${d_2}{d_3}{d_4} = 406$ è divisibile per 2
 - ${d_3}{d_4}{d_5} = 063$ è divisibile per 3

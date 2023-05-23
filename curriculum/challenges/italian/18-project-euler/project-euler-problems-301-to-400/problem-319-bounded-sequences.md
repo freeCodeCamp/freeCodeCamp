@@ -18,7 +18,7 @@ Ci sono solo cinque di tali sequenze di lunghezza 2: {2,4}, {2,5}, {2,6}, {2,7} 
 
 Sia $t(n)$ il numero di tali sequenze di lunghezza $n$. Ti viene dato che $t(10) = 86195$ e $t(20) = 5227991891$.
 
-Find $t({10}^{10})$ and give your answer modulo $10^9$.
+Trova $t({10}^{10})$ e dai la tua risposta modulo $10^9$.
 
 # --hints--
 
