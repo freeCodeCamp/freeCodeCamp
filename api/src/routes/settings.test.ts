@@ -496,7 +496,7 @@ describe('settingRoutes', () => {
         );
       });
 
-      test('PUT throw if the image is invalid URL', async () => {
+      test('PUT updates the values in about settings without image', async () => {
         const response = await superRequest('/update-my-about', {
           method: 'PUT',
           setCookies
@@ -504,16 +504,15 @@ describe('settingRoutes', () => {
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
+          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
           picture: 'invalid'
         });
 
-        expect(response.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(200);
 
         expect(response.body).toEqual({
-          statusCode: 400,
-          code: 'FST_ERR_VALIDATION',
-          error: 'Bad Request',
-          message: 'body/picture must match format "uri"'
+          message: 'flash.updated-about-me',
+          type: 'success'
         });
       });
     });
