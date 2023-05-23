@@ -114,7 +114,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         void res.code(500);
         return { user: {}, result: '' };
       }
-      return { user: {} };
+      return { user: {}, result: user.username };
     }
   );
 

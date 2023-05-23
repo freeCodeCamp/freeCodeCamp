@@ -203,6 +203,18 @@ describe('userRoutes', () => {
         expect(response.body).toStrictEqual({ user: {}, result: '' });
         expect(response.statusCode).toBe(500);
       });
+
+      test('GET returns username as the result property', async () => {
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.body).toMatchObject({
+          result: testUser.username
+        });
+        expect(response.statusCode).toBe(200);
+      });
     });
   });
 
