@@ -18,8 +18,13 @@ export const accountRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const username = req.params.username;
-      void reply.redirect('/' + username);
+      const camper = await fastify.prisma.user.findFirst({
+        where: { username: req.params.username },
+        select: {
+          username: true
+        }
+      });
+      if (camper) void reply.redirect(`/${camper.username}`);
     }
   );
 
