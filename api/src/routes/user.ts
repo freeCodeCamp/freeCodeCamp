@@ -101,6 +101,15 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+  fastify.get(
+    '/user/get-session-user',
+    {
+      schema: schemas.getSessionUser
+    },
+    async (_req, _res) => {
+      return { user: {} };
+    }
+  );
 
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async req => {

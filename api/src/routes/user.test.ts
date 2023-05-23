@@ -201,6 +201,16 @@ describe('userRoutes', () => {
         const response = await superRequest('/account/reset-progress', {
           method: 'POST',
           setCookies
+        })
+
+        expect(response?.statusCode).toBe(401);
+      });
+    });
+    describe('/user/get-user-session', () => {
+      test('GET returns 401 status code with error message', async () => {
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
         });
 
         expect(response?.statusCode).toBe(401);
