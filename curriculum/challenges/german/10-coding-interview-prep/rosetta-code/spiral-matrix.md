@@ -20,19 +20,19 @@ Produce a spiral array. A *spiral array* is a square arrangement of the first N<
 
 # --hints--
 
-`spiralArray` should be a function.
+`spiralArray` sollte eine Funktion sein.
 
 ```js
 assert(typeof spiralArray == 'function');
 ```
 
-`spiralArray(3)` should return an array.
+`spiralArray(3)` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(spiralArray(3)));
 ```
 
-`spiralArray(3)` should return `[[0, 1, 2],[7, 8, 3],[6, 5, 4]]`.
+`spiralArray(3)` sollte `[[0, 1, 2],[7, 8, 3],[6, 5, 4]]` zurückgeben.
 
 ```js
 assert.deepEqual(spiralArray(3), [
@@ -42,7 +42,7 @@ assert.deepEqual(spiralArray(3), [
 ]);
 ```
 
-`spiralArray(4)` should return `[[0, 1, 2, 3],[11, 12, 13, 4],[10, 15, 14, 5],[9, 8, 7, 6]]`.
+`spiralArray(4)` sollte `[[0, 1, 2, 3],[11, 12, 13, 4],[10, 15, 14, 5],[9, 8, 7, 6]]` zurückgeben.
 
 ```js
 assert.deepEqual(spiralArray(4), [
@@ -53,7 +53,7 @@ assert.deepEqual(spiralArray(4), [
 ]);
 ```
 
-`spiralArray(5)` should return `[[0, 1, 2, 3, 4],[15, 16, 17, 18, 5],[14, 23, 24, 19, 6],[13, 22, 21, 20, 7],[12, 11, 10, 9, 8]]`.
+`spiralArray(5)` sollte `[[0, 1, 2, 3, 4],[15, 16, 17, 18, 5],[14, 23, 24, 19, 6],[13, 22, 21, 20, 7],[12, 11, 10, 9, 8]]` zurückgeben.
 
 ```js
 assert.deepEqual(spiralArray(5), [

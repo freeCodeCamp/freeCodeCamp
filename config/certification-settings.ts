@@ -35,7 +35,8 @@ export enum SuperBlocks {
   CodingInterviewPrep = 'coding-interview-prep',
   TheOdinProject = 'the-odin-project',
   ProjectEuler = 'project-euler',
-  CollegeAlgebraPy = 'college-algebra-with-python'
+  CollegeAlgebraPy = 'college-algebra-with-python',
+  ExampleCertification = 'example-certification'
 }
 
 export const certIds = {

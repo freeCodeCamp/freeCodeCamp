@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da1
-title: 'Natural Language Processing With RNNs: Building the Model'
+title: 'Verarbeitung natürlicher Sprache mit RNNs: Aufbau des Modells'
 challengeType: 11
 videoId: 32WBFS7lfsw
 bilibiliIds:

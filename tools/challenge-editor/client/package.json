@@ -9,7 +9,7 @@
     "codemirror": "5",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.10.0",
+    "react-router-dom": "6.11.2",
     "react-scripts": "5.0.1",
     "typescript": "4.9.5"
   },
@@ -41,9 +41,9 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.7",
-    "@types/react": "16.14.38",
+    "@types/react": "16.14.41",
     "@types/react-dom": "^16.9.17",
-    "@uiw/react-codemirror": "3.2.9",
+    "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "shx": "0.3.4"

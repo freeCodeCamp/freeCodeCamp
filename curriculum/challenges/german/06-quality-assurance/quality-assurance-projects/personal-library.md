@@ -26,8 +26,8 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 1.  Add your MongoDB connection string to `.env` without quotes as `DB` Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
 2.  In your `.env` file set `NODE_ENV` to `test`, without quotes
-3.  You need to create all routes within `routes/api.js`
-4.  You will create all functional tests in `tests/2_functional-tests.js`
+3.  Alle Pfade müssen innerhalb von `routes/api.js` erstellt werden
+4.  Du wirst alle funktionalen Tests in `tests/2_functional-tests.js` erstellen
 
 # --hints--
 
@@ -114,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
+You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. Wenn `comment` nicht in der Anfrage enthalten ist, wird der String `missing required field comment` zurückgegeben. Wenn kein Buch gefunden wurde, wird der String `no book exists` zurückgegeben.
 
 ```js
 async (getUserInput) => {

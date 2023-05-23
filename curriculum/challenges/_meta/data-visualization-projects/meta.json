@@ -2,6 +2,7 @@
   "name": "Data Visualization Projects",
   "isUpcomingChange": false,
   "dashedName": "data-visualization-projects",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "150 hours",
   "template": "",
@@ -28,4 +29,5 @@
       "587d7fa6367417b2b2512bc0",
       "Visualize Data with a Treemap Diagram"
     ]
-  ]}
+  ]
+}

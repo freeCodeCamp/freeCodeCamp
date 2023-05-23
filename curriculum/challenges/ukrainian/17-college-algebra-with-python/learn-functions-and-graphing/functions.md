@@ -14,7 +14,7 @@ dashedName: functions
 
 # --question--
 
-## --assigment--
+## --assignment--
 
 Додайте код до свого блокнота Colab, який створює функції для перетворення десяткових чисел у дроби у Python.
 

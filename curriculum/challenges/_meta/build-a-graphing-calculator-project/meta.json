@@ -2,6 +2,7 @@
   "name": "Build a Graphing Calculator Project",
   "isUpcomingChange": false,
   "order": 11,
+  "helpCategory": "Python",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +12,5 @@
       "63d83ffd39c73468b059cd40",
       "Build a Graphing Calculator"
     ]
-  ]}
+  ]
+}

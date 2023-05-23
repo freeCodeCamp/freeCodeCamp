@@ -37,6 +37,11 @@ const odin = path.resolve(
   '../../src/templates/Challenges/odin/show.tsx'
 );
 
+const exam = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/exam/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -44,7 +49,8 @@ const views = {
   frontend,
   video,
   codeAlly,
-  odin
+  odin,
+  exam
   // quiz: Quiz
 };
 
@@ -58,12 +64,12 @@ function getIsFirstStep(_node, index, nodeArray) {
 
 function getNextChallengePath(_node, index, nodeArray) {
   const next = nodeArray[index + 1];
-  return next ? next.node.challenge.fields.slug : '/learn';
+  return next ? next.node.challenge.fields.slug : null;
 }
 
 function getPrevChallengePath(_node, index, nodeArray) {
   const prev = nodeArray[index - 1];
-  return prev ? prev.node.challenge.fields.slug : '/learn';
+  return prev ? prev.node.challenge.fields.slug : null;
 }
 
 function getTemplateComponent(challengeType) {

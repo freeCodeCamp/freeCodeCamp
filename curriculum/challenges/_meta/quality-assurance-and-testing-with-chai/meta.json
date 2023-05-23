@@ -2,6 +2,7 @@
   "name": "Quality Assurance and Testing with Chai",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-and-testing-with-chai",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "5 hours",
   "template": "",
@@ -108,4 +109,5 @@
       "5f8884f4c46685731aabfc41",
       "Run Functional Tests Using a Headless Browser II"
     ]
-  ]}
+  ]
+}

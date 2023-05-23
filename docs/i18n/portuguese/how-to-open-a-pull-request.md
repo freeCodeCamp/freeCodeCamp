@@ -2,7 +2,7 @@
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
-Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações cuidadosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
 
 Alguns exemplos disso são:
 
@@ -17,7 +17,7 @@ Alguns exemplos disso são:
 
 > [!NOTE] Seu PR deve se destinar apenas a alterações no currículo em inglês. Veja [este guia](index.md#translations) para contribuir com traduções.
 
-## Prepare a Good PR Title
+## Prepare um bom título para o PR
 
 Recomendamos usar [título e mensagens convencionais](https://www.conventionalcommits.org/) para commits e pull request. A convenção tem o seguinte formato:
 
@@ -31,12 +31,12 @@ Sempre que abrir um Pull Request (PR), você pode usar a referência abaixo para
 
 **Tipo:**
 
-| Tipo  | Quando selecionar                                                                      |
-|:----- |:-------------------------------------------------------------------------------------- |
-| fix   | Funcionalidade mudada ou atualizada/melhorada, testes, a explicação de uma lição, etc. |
-| feat  | Somente se você estiver adicionando novas funcionalidades, testes, etc.                |
-| chore | Mudanças não relacionadas ao código, testes ou explicação de uma lição.                |
-| docs  | Mudanças no diretório `/docs` ou nas diretrizes de contribuição, etc.                  |
+| Tipo  | Quando selecionar                                                                     |
+|:----- |:------------------------------------------------------------------------------------- |
+| fix   | Funcionalidade mudada ou atualizada/melhorada, testes, a explicação de uma lição etc. |
+| feat  | Somente se você estiver adicionando novas funcionalidades, testes, etc.               |
+| chore | Mudanças não relacionadas ao código, testes ou explicação de uma lição.               |
+| docs  | Mudanças no diretório `/docs` ou nas diretrizes de contribuição, etc.                 |
 
 **Escopo:**
 
@@ -93,7 +93,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Se seu PR afeta o comportamento de uma página ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
 
-## Feedback on Pull Requests
+## Comentários nos pull requests
 
 > :tada: Parabéns por fazer um PR e muito obrigado(a) por contribuir.
 
@@ -103,13 +103,13 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 > [!TIP] Se você vai contribuir com mais pull requests, recomendamos ler as diretrizes sobre [fazer mudanças e sincronizá-las](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar o apagamento de seu fork.
 
-## Conflicts on a Pull Request
+## Conflitos em um pull request
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e mesclagem.
 
 Na maioria das vezes, você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
 
-### For Usual Bug Fixes and Features
+### Para funcionalidades e correções de erros comuns
 
 Quando se está trabalhando em erros normais e funcionalidades no seu branch `main` de desenvolvimento, você pode fazer um simples ajuste:
 
@@ -138,7 +138,7 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
    git push --force origin <pr-branch>
    ```
 
-### For Upcoming Curriculum and Features
+### Para o próximo currículo e próximas funcionalidades
 
 Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um cherry pick:
 

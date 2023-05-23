@@ -1,6 +1,6 @@
 ---
 id: 5900f3fe1000cf542c50ff11
-title: 'Problem 146: Investigating a Prime Pattern'
+title: 'Problema 146: Investigação de um padrão em números primos'
 challengeType: 1
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
@@ -8,13 +8,13 @@ dashedName: problem-146-investigating-a-prime-pattern
 
 # --description--
 
-The smallest positive integer $n$ for which the numbers $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, and $n^2 + 27$ are consecutive primes is 10. The sum of all such integers $n$ below one-million is 1242490.
+O menor número inteiro positivo $n$ para o qual os números $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, e $n^2 + 27$ são 10 números primos consecutivos. A soma de todos esses números inteiros $n$ abaixo de um milhão é 1242490.
 
-What is the sum of all such integers $n$ below 150 million?
+Qual é a soma de todos esses números inteiros $n$ abaixo dos 150 milhões?
 
 # --hints--
 
-`primePattern()` should return `676333270`.
+`primePattern()` deve retornar `676333270`.
 
 ```js
 assert.strictEqual(primePattern(), 676333270);

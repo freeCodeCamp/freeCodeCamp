@@ -47,6 +47,7 @@ const initialState = {
   canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
+  examInProgress: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -68,6 +69,7 @@ const initialState = {
   showSignoutModal: false,
   isOnline: true,
   isServerOnline: true,
+  renderStartTime: null,
   donationFormState: {
     ...defaultDonationFormState
   }
@@ -128,6 +130,12 @@ export const reducer = handleActions(
       return {
         ...state,
         recentlyClaimedBlock: payload
+      };
+    },
+    [actionTypes.setRenderStartTime]: (state, { payload }) => {
+      return {
+        ...state,
+        renderStartTime: payload
       };
     },
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({
@@ -354,6 +362,18 @@ export const reducer = handleActions(
       return {
         ...state,
         showCodeAlly: true
+      };
+    },
+    [actionTypes.startExam]: state => {
+      return {
+        ...state,
+        examInProgress: true
+      };
+    },
+    [actionTypes.stopExam]: state => {
+      return {
+        ...state,
+        examInProgress: false
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

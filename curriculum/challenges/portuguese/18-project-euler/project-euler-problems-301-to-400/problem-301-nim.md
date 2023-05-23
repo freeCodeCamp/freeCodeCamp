@@ -1,6 +1,6 @@
 ---
 id: 5900f4991000cf542c50ffab
-title: 'Problem 301: Nim'
+title: 'Problema 301: Nim'
 challengeType: 1
 forumTopicId: 301955
 dashedName: problem-301-nim
@@ -8,31 +8,31 @@ dashedName: problem-301-nim
 
 # --description--
 
-Nim is a game played with heaps of stones, where two players take it in turn to remove any number of stones from any heap until no stones remain.
+Nim é um jogo jogado com pilhas de pedras, onde dois jogadores, cada um em seu turno, removem um número de pedras qualquer de alguma das pilhas até que nenhuma pedra permaneça.
 
-We'll consider the three-heap normal-play version of Nim, which works as follows:
+Vamos considerar a versão normal de jogo do Nim, com três pilhas, que funciona da seguinte forma:
 
-- At the start of the game there are three heaps of stones.
-- On his turn the player removes any positive number of stones from any single heap.
-- The first player unable to move (because no stones remain) loses.
+- No início do jogo, há três pilhas de pedras.
+- Em sua vez, o jogador remove qualquer número positivo de pedras de qualquer pilha.
+- O primeiro jogador que não puder fazer movimentos (por não haver pedras sobrando) perde.
 
-If ($n_1$, $n_2$, $n_3$) indicates a Nim position consisting of heaps of size $n_1$, $n_2$ and $n_3$ then there is a simple function $X(n_1,n_2,n_3)$ — that you may look up or attempt to deduce for yourself — that returns:
+Se ($n_1$, $n_2$, $n_3$) indica uma posição do Nim composta por pilhas de tamanho $n_1$, $n_2$ e $n_3$, há uma função simples $X(n_1,n_2, _3)$ — que você pode procurar ou tentar deduzir por conta própria — que retorna:
 
-- zero if, with perfect strategy, the player about to move will eventually lose; or
-- non-zero if, with perfect strategy, the player about to move will eventually win.
+- zero se, com estratégia perfeita, o jogador que está prestes a fazer seu movimento perder; ou
+- diferente de zero se, com a estratégia perfeita, o jogador que está prestes a fazer seu movimento vencer.
 
-For example $X(1, 2, 3) = 0$ because, no matter what the current player does, his opponent can respond with a move that leaves two heaps of equal size, at which point every move by the current player can be mirrored by his opponent until no stones remain; so the current player loses. To illustrate:
+Por exemplo $X(1, 2, 3) = 0$ porque, independentemente do jogador atual, o oponente dele pode responder com um movimento que deixa duas pilhas de tamanho igual, ponto em que qualquer movimento do jogador atual pode ser espelhado por seu oponente até que nenhuma pedra permaneça e o jogador atual perca. Para ilustrar:
 
-- current player moves to (1,2,1)
-- opponent moves to (1,0,1)
-- current player moves to (0,0,1)
-- opponent moves to (0,0,0), and so wins.
+- o jogador atual deixa (1,2,1) nas pilhas
+- oponente deixa (1,0,1)
+- o jogador atual deixa (0,0,1) nas pilhas
+- o oponente deixa (0,0,0) e ganha.
 
-For how many positive integers $n ≤ 2^{30}$ does $X(n, 2n, 3n) = 0$?
+Para quantos números inteiros positivos $n ≤ 2^{30}$ temos que $X(n, 2n, 3n) = 0$?
 
 # --hints--
 
-`nim()` should return `2178309`.
+`nim()` deve retornar `2178309`.
 
 ```js
 assert.strictEqual(nim(), 2178309);

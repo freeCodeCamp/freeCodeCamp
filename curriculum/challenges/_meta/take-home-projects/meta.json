@@ -2,6 +2,7 @@
   "name": "Take Home Projects",
   "isUpcomingChange": false,
   "dashedName": "take-home-projects",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "",
   "template": "",
@@ -88,4 +89,5 @@
       "5a5d02bd919fcf9ca8cf46cb",
       "Build a Light-Bright App"
     ]
-  ]}
+  ]
+}

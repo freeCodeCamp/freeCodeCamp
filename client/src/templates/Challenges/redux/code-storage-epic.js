@@ -10,11 +10,7 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
 import { actionTypes } from './action-types';
 import { noStoredCodeFound, storedCodeFound } from './actions';
-import {
-  challengeFilesSelector,
-  challengeMetaSelector,
-  isCodeLockedSelector
-} from './selectors';
+import { challengeFilesSelector, challengeMetaSelector } from './selectors';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -86,7 +82,6 @@ function saveCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.executeChallenge, actionTypes.saveEditorContent),
     // do not save challenge if code is locked
-    filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);

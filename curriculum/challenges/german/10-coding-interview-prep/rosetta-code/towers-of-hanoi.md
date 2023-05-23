@@ -18,7 +18,7 @@ Write a function that returns the moves to stack the objects in a nested array.
 
 # --hints--
 
-`towerOfHanoi` should be a function.
+`towerOfHanoi` sollte eine Funktion sein.
 
 ```js
 assert(typeof towerOfHanoi === 'function');
@@ -30,7 +30,7 @@ assert(typeof towerOfHanoi === 'function');
 assert(res3.length === 7);
 ```
 
-`towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
+`towerOfHanoi(3, 'A', 'B', 'C')` sollte `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]` zurückgeben.
 
 ```js
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);

@@ -10,7 +10,7 @@ Essas instruções informarão como usar a nossa ferramenta de edição de desaf
 
 ### Iniciando o editor
 
-To start the editor, make sure you are in the root freeCodeCamp directory. Em seguida, execute `pnpm run challenge-editor` para iniciar tanto o client quanto a API que alimenta o editor.
+Para iniciar o editor, certifique-se de estar no diretório raiz do freecodecamp. Em seguida, execute `pnpm run challenge-editor` para iniciar tanto o client quanto a API que alimenta o editor.
 
 O client será executado na porta `3300`, então você pode acessá-la em `http://localhost:3300`. A API é executada na porta `3200`, para evitar conflitos com o client de aprendizagem e com o servidor. Isso permitirá que você execute o aplicativo do freeCodeCamp ao mesmo tempo que o editor, para poder testar as alterações localmente.
 
@@ -58,9 +58,9 @@ Se quiser trabalhar nos passos manualmente, em seu IDE local, você pode executa
 
 A pasta `tools/challenge-helper-scripts` contém ferramentas para ajudar a facilitar a criação e a manutenção dos projetos baseados no currículo do freeCodeCamp.
 
-### Create a New Project
+### Criando um projeto
 
-Change directory to `tools/challenge-helper-scripts` and run `pnpm run create-project`. This opens up a command line UI that guides you through the process. Uma vez que tiver terminado, deverá aparecer um novo desafio no currículo em inglês que você pode usar para começar o projeto. Por exemplo, se você tiver criado um projeto chamado `test-project` na certificação de Design responsivo para a web, ele estará em `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Mude o diretório para `tools/challenge-helper-scripts` e execute `pnpm run create-project`. Esse comando abrirá uma interface de linha de comando que vai guiar você através do processo. Uma vez que tiver terminado, deverá aparecer um novo desafio no currículo em inglês que você pode usar para começar o projeto. Por exemplo, se você tiver criado um projeto chamado `test-project` na certificação de Design responsivo para a web, ele estará em `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 Se você quer criar outros passos, as ferramentas a seguir vão simplificar o processo.
 
@@ -68,7 +68,7 @@ Se você quer criar outros passos, as ferramentas a seguir vão simplificar o pr
 
 Um script único que adicionará automaticamente o próximo passo com base no último passo do projeto. O código seed do desafio usará o código do desafio do passo anterior.
 
-#### How to Run the Script
+#### Como executar o script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando a seguir:
@@ -83,7 +83,7 @@ Um script único que adiciona automaticamente um número específico de passos. 
 
 **Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to Run the Script
+#### Como executar o script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando a seguir:
@@ -98,7 +98,7 @@ Um script único que adiciona automaticamente um novo passo em uma posição esp
 
 **Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to Run the Script
+#### Como executar o script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando a seguir:
@@ -113,7 +113,7 @@ Um script único que exclui um passo existente e decrementa todos os passos post
 
 **Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to Run the Script
+#### Como executar o script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando a seguir:
@@ -126,7 +126,7 @@ pnpm run delete-step X #, onde X é o número do passo a ser excluído.
 
 Um script único que atualiza automaticamente a frontmatter nos arquivos markdown de um projeto para que eles sejam consistentes com o meta.json do projeto. Garante que o título de cada passo (e seu dashedName) correspondam ao challengeOrder do arquivo meta.
 
-#### How to Run the Script
+#### Como executar o script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando a seguir:

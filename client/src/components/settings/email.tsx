@@ -227,7 +227,7 @@ function EmailSettings({
       </FullWidthRow>
       <Spacer size='medium' />
       <FullWidthRow>
-        <form id='form-quincy-email' onSubmit={handleSubmit}>
+        <form id='form-quincy-email' onSubmit={e => e.preventDefault()}>
           <ToggleButtonSetting
             action={t('settings.email.weekly')}
             flag={sendQuincyEmail}

@@ -36,9 +36,9 @@ Die erste `assert.equal` überprüft ob der Status gleich `200` ist. Die zweite 
 
 Beachte auch den Parameter `done` in der Callback-Funktion des Tests. Der Aufruf ohne Argument am Ende eines Tests ist notwendig, um zu signalisieren, dass der asynchrone Vorgang abgeschlossen ist.
 
-Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+Schaue dir dann die `keepOpen`-Methode kurz nach der `request`-Methode an. Normalerweise führst du deine Tests über die Kommandozeile oder als Teil eines automatisierten Integrationsprozesses aus und du könntest `chai-http` deinen Server automatisch starten und stoppen lassen.
 
-However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+Die Tests, die ausgeführt werden, sobald du den Link zu deinem Projekt einreichst, erfordern jedoch, dass dein Server aktiv ist, weshalb du die `keepOpen`-Methode verwenden musst, um `chai-http` daran zu hindern, deinen Server zu stoppen.
 
 # --instructions--
 
@@ -62,7 +62,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+Du solltest `res.status` == 200 testen
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello Guest'`
+Du solltest `res.text` == `'hello Guest'` testen
 
 ```js
 (getUserInput) =>

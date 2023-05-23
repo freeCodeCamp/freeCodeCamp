@@ -16,7 +16,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "15px 0",
           }
         }
@@ -31,7 +30,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
           className="spacer"
           style={
             {
-              "height": "1px",
               "padding": "15px 0",
             }
           }
@@ -100,7 +98,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "15px 0",
           }
         }
@@ -112,7 +109,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "15px 0",
           }
         }
@@ -125,7 +121,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "5px 0",
           }
         }
@@ -142,7 +137,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "5px 0",
           }
         }
@@ -155,7 +149,6 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "height": "1px",
             "padding": "15px 0",
           }
         }

@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff04
-title: 'Problem 133: Repunit nonfactors'
+title: 'Problema 133: non-fattori di numeri repunit'
 challengeType: 1
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
@@ -8,17 +8,17 @@ dashedName: problem-133-repunit-nonfactors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Un numero costituito interamente da uno è chiamato un repunit (ripetizione di uno). Definiamo $R(k)$ come repunit di lunghezza $k$, per esempio $R(6) = 111111$.
 
-Let us consider repunits of the form $R({10}^n)$.
+Consideriamo repunit della forma $R({10}^n)$.
 
-Although $R(10)$, $R(100)$, or $R(1000)$ are not divisible by 17, $R(10000)$ is divisible by 17. Yet there is no value of n for which $R({10}^n)$ will divide by 19. Remarkably, 11, 17, 41, and 73 are the only four primes below one-hundred that can be a factor of $R({10}^n)$.
+Anche se $R(10)$, $R(100)$ o $R(1000)$ non sono divisibili per 17, $R(10000)$ è divisibile per 17. Però non c'è alcun valore di n per cui $R({10}^n)$ è divisibile per 19. Notevolmente, 11, 17, 41 e 73 sono i soli quattro numeri primi sotto cento che possono essere fattori di $R({10}^n)$.
 
-Find the sum of all the primes below one-hundred thousand that will never be a factor of $R({10}^n)$.
+Trova la somma di tutti i primi sotto centomila che non saranno mai un fattore di $R({10}^n)$.
 
 # --hints--
 
-`repunitNonfactors()` should return `453647705`.
+`repunitNonfactors()` dovrebbe restituire `453647705`.
 
 ```js
 assert.strictEqual(repunitNonfactors(), 453647705);

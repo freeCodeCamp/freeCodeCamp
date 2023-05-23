@@ -14,19 +14,23 @@ import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
-import fastifySentry from './plugins/fastify-sentry';
+import fastifyCsrfProtection from '@fastify/csrf-protection';
 
+import fastifySentry from './plugins/fastify-sentry';
+import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
-import { testRoutes } from './routes/test';
+import { settingRoutes } from './routes/settings';
+import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
-import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
 import prismaPlugin from './db/prisma';
 
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
+  COOKIE_DOMAIN,
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SESSION_SECRET,
@@ -35,6 +39,7 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN
 } from './utils/env';
+import { userRoutes } from './routes/user';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -47,7 +52,11 @@ export type FastifyInstanceWithTypeProvider = FastifyInstance<
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
+  // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
+  // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
+
+  void fastify.register(security);
 
   fastify.get('/', async (_request, _reply) => {
     return { hello: 'world' };
@@ -57,7 +66,36 @@ export const build = async (
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
+
+  await fastify.register(cors);
   await fastify.register(fastifyCookie);
+
+  // @ts-expect-error @fastify/csrf-protection is overly restrictive, here. It
+  // requires an hmacKey if getToken is provided, but that should only be a
+  // requirement if the getUserInfo function is provided.
+  void fastify.register(fastifyCsrfProtection, {
+    // TODO: consider signing cookies. We don't on the api-server, but we could
+    // as an extra layer of security.
+
+    ///Ignore all other possible sources of CSRF
+    // tokens since we know we can provide this one
+    getToken: req => req.headers['csrf-token'] as string
+  });
+
+  // All routes should add a CSRF token to the response
+  fastify.addHook('onRequest', (_req, reply, done) => {
+    const token = reply.generateCsrf();
+    // Path is necessary to ensure that only one cookie is set and it is valid
+    // for all routes.
+    void reply.setCookie('csrf_token', token, {
+      path: '/',
+      sameSite: 'strict',
+      domain: COOKIE_DOMAIN,
+      secure: FREECODECAMP_NODE_ENV === 'production'
+    });
+    done();
+  });
+
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
   await fastify.register(fastifySession, {
@@ -93,7 +131,21 @@ export const build = async (
         security: [{ session: [] }]
       }
     });
-    void fastify.register(fastifySwaggerUI);
+    void fastify.register(fastifySwaggerUI, {
+      uiConfig: {
+        // Convert csrf_token cookie to csrf-token header
+        requestInterceptor: req => {
+          const csrfTokenCookie = document.cookie
+            .split(';')
+            .find(str => str.includes('csrf_token'));
+          const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
+
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
+          return req;
+        }
+      }
+    });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
@@ -109,11 +161,13 @@ export const build = async (
 
   void fastify.register(prismaPlugin);
 
-  void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth' });
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
-  void fastify.register(testValidatedRoutes);
+  void fastify.register(settingRoutes);
+  void fastify.register(userRoutes, { prefix: '/user' });
+  void fastify.register(deprecatedEndpoints);
+
   return fastify;
 };

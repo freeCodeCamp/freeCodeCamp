@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510034
-title: 'Problem 438: Integer part of polynomial equation''s solutions'
+title: 'Problema 438: Parte inteira das soluções da equação polinomial'
 challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
@@ -8,24 +8,24 @@ dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 
 # --description--
 
-For an $n$-tuple of integers $t = (a_1, \ldots, a_n)$, let $(x_1, \ldots, x_n)$ be the solutions of the polynomial equation $x^n + a_1x^{n - 1} + a_2x^{n - 2} + \ldots + a_{n - 1}x + a_n = 0$.
+Para uma tupla $n$ de números inteiros $t = (a_1, \ldots, a_n)$, considere $(x_1, \ldots, x_n)$ como as soluções da equação polinomial $x^n + a_1x^{n - 1} + a_2x^{n - 2} + \ldots + a_{n - 1}x + a_n = 0$.
 
-Consider the following two conditions:
+Considere as duas condições a seguir:
 
-- $x_1, \ldots, x_n$ are all real.
-- If $x_1, ..., x_n$ are sorted, $⌊x_i⌋ = i$ for $1 ≤ i ≤ n$. ($⌊·⌋:$ floor function.)
+- $x_1, \ldots, x_n$ são todos reais.
+- Se $x_1, ..., x_n$ estiverem ordenados, $⌊x_i⌋ = i$ para $1 ≤ i ≤ n$. ($⌊·⌋:$ função de piso.)
 
-In the case of $n = 4$, there are 12 $n$-tuples of integers which satisfy both conditions.
+No caso de $n = 4$, há 12 tuplas $n$ de números inteiros que satisfazem ambas as condições.
 
-We define $S(t)$ as the sum of the absolute values of the integers in $t$.
+Definimos $S(t)$ como a soma de valores absolutos dos números inteiros em $t$.
 
-For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
+Para $n = 4$ podemos verificar que $\sum S(t) = 2087$ para todas as tuplas $n$ $t$ que satisfazem ambas as condições.
 
-Find $\sum S(t)$ for $n = 7$.
+Encontre a $\sum S(t)$ para $n = 7$.
 
 # --hints--
 
-`polynomialIntegerPart()` should return `2046409616809`.
+`polynomialIntegerPart()` deve retornar `2046409616809`.
 
 ```js
 assert.strictEqual(polynomialIntegerPart(), 2046409616809);

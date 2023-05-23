@@ -65,6 +65,10 @@ export const showCodeAllySelector = state => {
   return state[MainApp].showCodeAlly;
 };
 
+export const examInProgressSelector = state => {
+  return state[MainApp].examInProgress;
+};
+
 export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
@@ -219,3 +223,5 @@ export const userSelector = state => {
 
   return state[MainApp].user[username] || {};
 };
+
+export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

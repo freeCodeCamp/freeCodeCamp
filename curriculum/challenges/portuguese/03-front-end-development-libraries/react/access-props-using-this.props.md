@@ -14,7 +14,7 @@ Sempre que você se refere a um componente de classe dentro dele mesmo, você us
 
 # --instructions--
 
-Renderize uma instância do componente `Welcome` no componente parente `App`. Aqui, dê a `Welcome` uma "prop" `name` e atribua a ela um valor de uma string. Dentro do elemento filho, `Welcome`, acesse a propriedade `name` dentro das tags `strong`.
+Renderize uma instância do componente `Welcome` no componente pai `App`. Aqui, dê a `Welcome` uma "prop" `name` e atribua a ela um valor de uma string. Dentro do elemento filho, `Welcome`, acesse a propriedade `name` dentro das tags `strong`.
 
 # --hints--
 

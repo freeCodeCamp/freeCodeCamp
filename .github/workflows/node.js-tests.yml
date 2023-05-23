@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Check number of lockfiles
         run: |
@@ -82,7 +82,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -129,7 +129,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -178,7 +178,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -225,7 +225,7 @@ jobs:
     runs-on: ubuntu-20.04
     if: ${{ always() && needs.test.result == 'success' && needs.test-localization.result == 'failure' }}
     steps:
-      - uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975 # v6
+      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
           script: |

@@ -1,17 +1,17 @@
 # Cómo abrir una Pull Request (PR)
 
-Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Esperamos que nuestros colaboradores conozcan el proceso específico de este proyecto. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
-Some examples of this are:
+Algunos ejemplos de ello son:
 
-1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Do not "@mention" or request someone for reviews too many times.
+1. No edite archivos directamente a través de GitHub – mientras pueda, no es una buena idea.
+2. Asegúrate de seguir la lista de PR y no solo marcar las cosas; de lo contrario, no te tomaremos en serio.
+3. Utilice la forma correcta de vincular problemas en la descripción del PR actualizando el `XXXXX`. No solo añada números de emisión en cualquier lugar y donde le plazca.
+4. No usar "@mention" o solicitar comentarios demasiadas veces.
 
-   We understand you are excited about contributing. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
+   Entendemos que está emocionado por contribuir. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
 
 5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
@@ -33,7 +33,7 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 | Tipo  | Cuándo seleccionar                                                                         |
 |:----- |:------------------------------------------------------------------------------------------ |
-| fix   | Funcionalidades actualizadas o mejoradas, pruebas, redacción de la lección, etc.           |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc.            |
 | feat  | Sólo si está añadiendo nuevas funcionalidades, pruebas, etc.                               |
 | chore | Cambios que no están relacionados con el código, las pruebas o la redacción de la lección. |
 | docs  | Cambios al directorio `/docs` o a las pautas de contribución, etc.                         |
@@ -89,7 +89,7 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Ejemplos de los cambios que necesitan pruebas en el entorno local incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
+   - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 

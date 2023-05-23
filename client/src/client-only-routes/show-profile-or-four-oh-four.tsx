@@ -1,9 +1,8 @@
 import { isEmpty } from 'lodash-es';
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
 
 import { isBrowser } from '../../utils/index';
-import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
 import Profile from '../components/profile/profile';
 import { fetchProfileForUser } from '../redux/actions';
@@ -13,6 +12,8 @@ import {
   userProfileFetchStateSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
+
+const FourOhFour = lazy(() => import('../components/FourOhFour'));
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
@@ -24,7 +25,6 @@ interface ShowProfileOrFourOhFourProps {
   isSessionUser: boolean;
   maybeUser?: string;
   requestedUser: User;
-  showLoading: boolean;
 }
 
 const createRequestedUserSelector =
@@ -46,7 +46,6 @@ const makeMapStateToProps =
     return {
       requestedUser: requestedUserSelector(state, props),
       isSessionUser: isSessionUserSelector(state, props),
-      showLoading: fetchState.pending,
       fetchState
     };
   };
@@ -61,8 +60,7 @@ function ShowProfileOrFourOhFour({
   requestedUser,
   maybeUser,
   fetchProfileForUser,
-  isSessionUser,
-  showLoading
+  isSessionUser
 }: ShowProfileOrFourOhFourProps) {
   useEffect(() => {
     // If the user is not already in the store, fetch it
@@ -79,13 +77,13 @@ function ShowProfileOrFourOhFour({
   }
 
   return isEmpty(requestedUser) ? (
-    showLoading ? (
-      <Loader fullScreen={true} />
-    ) : (
+    <Suspense fallback={<Loader fullScreen={true} />}>
       <FourOhFour />
-    )
+    </Suspense>
   ) : (
-    <Profile isSessionUser={isSessionUser} user={requestedUser} />
+    <Suspense fallback={<Loader fullScreen={true} />}>
+      <Profile isSessionUser={isSessionUser} user={requestedUser} />
+    </Suspense>
   );
 }
 

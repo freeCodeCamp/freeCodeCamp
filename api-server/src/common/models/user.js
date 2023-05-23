@@ -815,10 +815,6 @@ export default function initializeUser(User) {
           user;
         const allUser = {
           ..._.pick(user, publicUserProps),
-          isGithub: !!user.githubProfile,
-          isLinkedIn: !!user.linkedin,
-          isTwitter: !!user.twitter,
-          isWebsite: !!user.website,
           points: progressTimestamps.length,
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),

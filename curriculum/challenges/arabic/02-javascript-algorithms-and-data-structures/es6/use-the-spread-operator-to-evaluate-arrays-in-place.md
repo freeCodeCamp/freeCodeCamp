@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` ستكون لة القيمة `89`.
 
-`...arr` يعيد array غير معبأ. بعبارة أخرى، إنه يقوم بـ *spread* للـ array. ومع ذلك، فإن spread operator يعمل في مكانه فقط، كما هو الحال في argument لـ functiom أو في array. الكود التالي لن يعمل:
+`...arr` يعيد array غير معبأ. In other words, it spreads the array. ومع ذلك، فإن spread operator يعمل في مكانه فقط، كما هو الحال في argument لـ functiom أو في array. For example:
+
+```js
+const spreaded = [...arr];
+```
+
+However, the following code will not work:
 
 ```js
 const spreaded = ...arr;
@@ -36,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-انسخ جميع محتويات `arr1` إلى array أخرى `arr2` باستخدام spread operator.
+Copy all contents of `arr1` into another array `arr2` using the spread operator.
 
 # --hints--
 
-`arr2` يجب أن تكون نسخة صحيحة من `arr1`.
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` يجب استخدام spread operator لتكرار `arr1`.
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` يجب أن يبقى دون تغيير عندما يتم تغيير `arr1`.
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {

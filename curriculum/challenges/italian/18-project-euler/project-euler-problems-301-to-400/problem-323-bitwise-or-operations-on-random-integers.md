@@ -1,6 +1,6 @@
 ---
 id: 5900f4b01000cf542c50ffc2
-title: 'Problem 323: Bitwise-OR operations on random integers'
+title: 'Problema 323: operazioni sui bit di interi casuali'
 challengeType: 1
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers
@@ -8,20 +8,20 @@ dashedName: problem-323-bitwise-or-operations-on-random-integers
 
 # --description--
 
-Let $y_0, y_1, y_2, \ldots$ be a sequence of random unsigned 32 bit integers (i.e. $0 ≤ y_i &lt; 2^{32}$, every value equally likely).
+Sia $y_0, y_1, y_2, \ldots$ una successione casuale di numeri interi senza segno a 32 bit (cioè $0 ≤ y_i &lt; 2^{32}$, ogni valore altrettanto probabile).
 
-For the sequence $x_i$ the following recursion is given:
+Per la successione $x_i$ viene data la seguente ricorsione:
 
-- $x_0 = 0$ and
-- $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, for $i > 0$. ($\mathbf{|}$ is the bitwise-OR operator)
+- $x_0 = 0$ e
+- $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, per $i > 0$. ($\mathbf{|}$ è l'operatore bitwise-OR)
 
-It can be seen that eventually there will be an index $N$ such that $x_i = 2^{32} - 1$ (a bit-pattern of all ones) for all $i ≥ N$.
+Si può vedere che alla fine ci sarà un indice $N$ tale che $x_i = 2^{32} - 1$ (un pattern con tutti i bit a uno) per tutti gli i $i ≥ N$.
 
-Find the expected value of $N$. Give your answer rounded to 10 digits after the decimal point.
+Trova il valore atteso di $N$. Dai la tua risposta arrotondata a 10 cifre dopo il punto decimale.
 
 # --hints--
 
-`bitwiseOrOnRandomIntegers()` should return `6.3551758451`.
+`bitwiseOrOnRandomIntegers()` dovrebbe restituire `6.3551758451`.
 
 ```js
 assert.strictEqual(bitwiseOrOnRandomIntegers(), 6.3551758451);

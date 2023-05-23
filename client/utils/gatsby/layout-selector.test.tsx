@@ -13,13 +13,19 @@ jest.mock('../../src/analytics');
 
 const store = createStore();
 
+// TODO: rather than testing which props passed from layoutSelector to the
+// component it renders, test that the rendered component has the expected
+// features (i.e. has a footer or not, etc.). That should be possible in
+// react-testing-library.
+
 interface NameAndProps {
   props: Record<string, unknown>;
   name: string;
 }
 function getComponentNameAndProps(
   elementType: React.JSXElementConstructor<never>,
-  pathname: string
+  pathname: string,
+  pageContext?: { challengeMeta?: { block?: string; superBlock?: string } }
 ): NameAndProps {
   // eslint-disable-next-line testing-library/render-result-naming-convention
   const shallow = ShallowRenderer.createRenderer();
@@ -28,26 +34,38 @@ function getComponentNameAndProps(
     props: {
       location: {
         pathname
-      }
+      },
+      pageContext
     }
   });
   shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
   const view = shallow.getRenderOutput();
   return {
-    props: view.props as Record<string, unknown>,
+    props: view.props.children.props as Record<string, unknown>,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    name: view.type.WrappedComponent.displayName
+    name: view.props.children.type.WrappedComponent.displayName
     // TODO: Revisit this when react-test-renderer is replaced with
     // react-testing-library
   };
 }
 
-test('Challenge path should have DefaultLayout and no footer', () => {
+const challengePageContext = {
+  challengeMeta: {
+    block: 'Basic HTML and HTML5',
+    superBlock: 'responsive-web-design'
+  }
+};
+
+test('Challenges should have DefaultLayout and no footer', () => {
   const challengePath =
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements';
-  const compnentObj = getComponentNameAndProps(Learn, challengePath);
+  const compnentObj = getComponentNameAndProps(
+    Learn,
+    challengePath,
+    challengePageContext
+  );
   expect(compnentObj.name).toEqual('DefaultLayout');
   expect(compnentObj.props.showFooter).toEqual(false);
 });
@@ -59,15 +77,19 @@ test('SuperBlock path should have DefaultLayout and footer', () => {
   expect(compnentObj.props.showFooter).toEqual(true);
 });
 
-test('i18l challenge path should have DefaultLayout and no footer', () => {
+test('i18n challenge path should have DefaultLayout and no footer', () => {
   const challengePath =
     'espanol/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements/';
-  const compnentObj = getComponentNameAndProps(Learn, challengePath);
+  const compnentObj = getComponentNameAndProps(
+    Learn,
+    challengePath,
+    challengePageContext
+  );
   expect(compnentObj.name).toEqual('DefaultLayout');
   expect(compnentObj.props.showFooter).toEqual(false);
 });
 
-test('i18l superBlock path should have DefaultLayout and footer', () => {
+test('i18n superBlock path should have DefaultLayout and footer', () => {
   const superBlockPath = '/learn/responsive-web-design/';
   const compnentObj = getComponentNameAndProps(Learn, superBlockPath);
   expect(compnentObj.name).toEqual('DefaultLayout');

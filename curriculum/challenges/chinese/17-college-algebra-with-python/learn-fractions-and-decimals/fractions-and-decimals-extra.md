@@ -1,6 +1,6 @@
 ---
 id: 6331d260b51aeedd1a2bd64a
-title: "Fractions and Decimals: Extra"
+title: "分数和小数：补充"
 challengeType: 15
 videoId: YHVA6cYIglM
 dashedName: fractions-and-decimals-extra
@@ -8,23 +8,23 @@ dashedName: fractions-and-decimals-extra
 
 # --description--
 
-The following video will show you one way to set up your Google Colaboratory notebook, so that you can continue to build your personalized algebra calculator.
+下面的视频将向你展示设置 Google Colaboratory 笔记本的一种方法，这样你就可以继续创建你的个性化代数计算器。
 
-Here is <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
+这是<a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">这个视频中用到的 Colab 笔记本</a>，你可以把它作为一个模型。
 
 # --question--
 
-## --assignment--
+## --任务--
 
-Add the code to factor and solve for a variable to your algebra Colab notebook.
+在你的代数 Colab 笔记本上添加因数和求解变量的代码。
 
 ---
 
-Run the code in the following notebook to get <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">practice converting fractions and decimals.</a> As a bonus, look at the code used to generate the practice problems.
+在下面的笔记本中运行代码以<a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">练习转换分数和小数</a>。作为奖励，看看用来产生练习问题的代码。
 
 ## --text--
 
-Which of the following languages can you not use in Google Colaboratory?
+你不能在 Google Colaboratory 中使用以下哪种语言？
 
 ## --answers--
 
@@ -36,11 +36,11 @@ LaTex
 
 ---
 
-English
+英语
 
 ---
 
-Sanskrit
+梵语
 
 ## --video-solution--
 

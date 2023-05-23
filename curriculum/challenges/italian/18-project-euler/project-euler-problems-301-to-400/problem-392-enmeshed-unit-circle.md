@@ -1,6 +1,6 @@
 ---
 id: 5900f4f41000cf542c510007
-title: 'Problem 392: Enmeshed unit circle'
+title: 'Problema 392: cerchio unitario a griglia'
 challengeType: 1
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
@@ -8,31 +8,31 @@ dashedName: problem-392-enmeshed-unit-circle
 
 # --description--
 
-A rectilinear grid is an orthogonal grid where the spacing between the gridlines does not have to be equidistant.
+Una griglia rettilinea è una griglia ortogonale in cui la spaziatura tra le linee della griglia non deve essere equidistante.
 
-An example of such grid is logarithmic graph paper.
+Un esempio di tale griglia è la carta grafica logaritmica.
 
-Consider rectilinear grids in the Cartesian coordinate system with the following properties:
+Considera le griglie rettilinee nel sistema di coordinate cartesiane con le seguenti proprietà:
 
-- The gridlines are parallel to the axes of the Cartesian coordinate system.
-- There are $N + 2$ vertical and $N + 2$ horizontal gridlines. Hence there are $(N + 1) \times (N + 1)$ rectangular cells.
-- The equations of the two outer vertical gridlines are $x = -1$ and $x = 1$.
-- The equations of the two outer horizontal gridlines are $y = -1$ and $y = 1$.
-- The grid cells are colored red if they overlap with the unit circle, black otherwise.
+- Le linee della griglia sono parallele agli assi del sistema di coordinate cartesiane.
+- Ci sono $N + 2$ linee verticali e $N + 2$ linee orizzontali. Quindi ci sono $(N + 1) \times (N + 1) $ celle rettangolari.
+- Le equazioni delle due linee verticali esterne sono $x = -1$ e $x = 1$.
+- Le equazioni delle due linee orizzontali esterne sono $y = -1$ e $y = 1$.
+- Le celle della griglia sono colorate di rosso se si sovrappongono con il cerchio dell'unità, di nero in caso contrario.
 
-For this problem we would like you to find the positions of the remaining $N$ inner horizontal and $N$ inner vertical gridlines so that the area occupied by the red cells is minimized.
+Per questo problema vorremmo che tu trovi le posizioni delle rimanenti $N$ linee orizzontali interne e $N$ linee verticali interne in modo che l'area occupata dalle celle rosse sia ridotta al minimo.
 
-E.g. here is a picture of the solution for $N = 10$:
+Ad es. ecco una immagine della soluzione per $N = 10$:
 
-<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="soluzione per N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
 
-The area occupied by the red cells for $N = 10$ rounded to 10 digits behind the decimal point is 3.3469640797.
+L'area occupata dalle celle rosse per $N = 10$ arrotondata a 10 cifre dopo il punto decimale è 3.3469640797.
 
-Find the positions for $N = 400$. Give as your answer the area occupied by the red cells rounded to 10 digits behind the decimal point.
+Trova le posizioni per $N = 400$. Dai come risposta l'area occupata dalle celle rosse arrotondata a 10 cifre dopo il punto decimale.
 
 # --hints--
 
-`enmeshedUnitCircle()` should return `3.1486734435`.
+`enmeshedUnitCircle()` dovrebbe restituire `3.1486734435`.
 
 ```js
 assert.strictEqual(enmeshedUnitCircle(), 3.1486734435);

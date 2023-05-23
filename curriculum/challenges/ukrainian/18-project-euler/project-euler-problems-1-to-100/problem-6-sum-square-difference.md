@@ -1,6 +1,6 @@
 ---
 id: 5900f3721000cf542c50fe85
-title: 'Problem 6: Sum square difference'
+title: 'Завдання 6: різниця суми квадратів'
 challengeType: 1
 forumTopicId: 302171
 dashedName: problem-6-sum-square-difference
@@ -8,17 +8,17 @@ dashedName: problem-6-sum-square-difference
 
 # --description--
 
-The sum of the squares of the first ten natural numbers is,
+Сумою квадратів перших десяти натуральних чисел є
 
 <div style='text-align: center;'>1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</div>
 
-The square of the sum of the first ten natural numbers is,
+Квадратом суми перших десяти натуральних чисел є
 
 <div style='text-align: center;'>(1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</div>
 
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+Отже, різницею суми квадратів та квадрату суми перших десяти натуральних чисел є 3025 − 385 = 2640.
 
-Find the difference between the sum of the squares of the first `n` natural numbers and the square of the sum.
+Знайдіть різницю суми квадратів та квадрату суми перших `n` натуральних чисел.
 
 # --hints--
 

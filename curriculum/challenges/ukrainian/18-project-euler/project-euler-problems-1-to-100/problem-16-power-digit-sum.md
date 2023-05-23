@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe8f
-title: 'Problem 16: Power digit sum'
+title: 'Завдання 16: сума цифр степеня'
 challengeType: 1
 forumTopicId: 301791
 dashedName: problem-16-power-digit-sum
@@ -8,9 +8,9 @@ dashedName: problem-16-power-digit-sum
 
 # --description--
 
-2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+2<sup>15</sup> = 32768, а сума цифр цього числа дорівнює 3 + 2 + 7 + 6 + 8 = 26.
 
-What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
+Якою буде сума цифр степеня 2<sup><code>exponent</code></sup>?
 
 # --hints--
 

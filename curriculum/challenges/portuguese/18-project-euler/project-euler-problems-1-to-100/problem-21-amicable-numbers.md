@@ -1,6 +1,6 @@
 ---
 id: 5900f3811000cf542c50fe94
-title: 'Problem 21: Amicable numbers'
+title: 'Problema 21: Números amigos'
 challengeType: 1
 forumTopicId: 301851
 dashedName: problem-21-amicable-numbers
@@ -8,41 +8,41 @@ dashedName: problem-21-amicable-numbers
 
 # --description--
 
-Let d(`n`) be defined as the sum of proper divisors of `n` (numbers less than `n` which divide evenly into `n`).
+Considere d(`n`) sendo igual à soma dos divisores próprios de `n` (divisores próprios de um número positivo `n` são todos os divisores inteiros positivos exceto o próprio `n`).
 
-If d(`a`) = `b` and d(`b`) = `a`, where `a` ≠ `b`, then `a` and `b` are an amicable pair and each of `a` and `b` are called amicable numbers.
+Se d(`a`) = `b` e d(`b`) = `a`, onde `a` ≠ `b`, então, `a` e `b` são um par amigável e tanto `a` quanto `b` são chamados de números amigos.
 
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+Por exemplo, os divisores próprios de 220 são 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 e 110. Portanto, d(220) = 284. Os divisores próprios de 284 são 1, 2, 4, 71 e 142. Então d(284) = 220.
 
-Evaluate the sum of all the amicable numbers under `n`.
+Calcule a soma de todos os números amigos abaixo de `n`.
 
 # --hints--
 
-`sumAmicableNum(1000)` should return a number.
+`sumAmicableNum(1000)` deve retornar um número.
 
 ```js
 assert(typeof sumAmicableNum(1000) === 'number');
 ```
 
-`sumAmicableNum(1000)` should return 504.
+`sumAmicableNum(1000)` deve retornar 504.
 
 ```js
 assert.strictEqual(sumAmicableNum(1000), 504);
 ```
 
-`sumAmicableNum(2000)` should return 2898.
+`sumAmicableNum(2000)` deve retornar 2898.
 
 ```js
 assert.strictEqual(sumAmicableNum(2000), 2898);
 ```
 
-`sumAmicableNum(5000)` should return 8442.
+`sumAmicableNum(5000)` deve retornar 8442.
 
 ```js
 assert.strictEqual(sumAmicableNum(5000), 8442);
 ```
 
-`sumAmicableNum(10000)` should return 31626.
+`sumAmicableNum(10000)` deve retornar 31626.
 
 ```js
 assert.strictEqual(sumAmicableNum(10000), 31626);

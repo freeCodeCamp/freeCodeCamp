@@ -1,6 +1,7 @@
 {
   "name": "Build a World Cup Database Project",
   "isUpcomingChange": false,
+  "helpCategory": "Backend Development",
   "order": 6,
   "time": "30 hours",
   "template": "",
@@ -11,4 +12,5 @@
       "5f9771307d4d22b9d2b75a94",
       "Build a World Cup Database"
     ]
-  ]}
+  ]
+}

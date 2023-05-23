@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Часом вам треба буде ітерувати всі ключі всередині об'єкта. У JavaScript це вимагає певного синтаксису, що називається <dfn>for...in</dfn> циклом. Для нашого `users` об'єкту, це може виглядати так:
+Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-Це б зазначило, що `Alan`, `Jeff` та `Sarah` мають кожне значення у власному рядку.
+This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
 
-У цьому циклі ми визначили змінну `user` і, як ви можете побачити, цю змінну скидували під час кожної ітерації ключів об'єкта, в міру зациклювання через об’єкт, що призводить до того, що кожне ім'я користувача друкується на консолі.
+We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
 **ПРИМІТКА:** об'єкти не зберігають впорядкування ключів так, як це роблять масиви. Таким чином, позиція ключа в об'єкті або відносний його порядок є недоречним, коли ми його відсилаємо або отримуємо до нього доступ.
 
 # --instructions--
 
-Ми визначили функцію `countOnline`, яка приймає один аргумент (користувацький об'єкт). Використовуйте <dfn>for...in</dfn> цикл у межах цієї функції, щоб обробити користувацький об'єкт, який перейшов у функцію, і повернути кількість користувачів, чия `online` властивість установлена на `true`. Приклад користувацького об'єкту, який можна передати до `countOnline`, показано нижче. Кожен користувач матиме `online` властивість з обома `true` або `false` значеннями.
+We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

@@ -1,6 +1,7 @@
 {
     "name": "TOP Learn HTML Foundations",
     "isUpcomingChange": true,
+    "helpCategory": "HTML-CSS",
     "order": 0,
     "time": "",
     "template": "",
@@ -103,16 +104,20 @@
             "637f702872c65bc8e73dfe33",
             "Links and Images Question D"
         ],
-        [   "637f702372c65bc8e73dfe32",
+        [
+            "637f702372c65bc8e73dfe32",
             "Links and Images Question E"
         ],
-        [   "637f701c72c65bc8e73dfe31",
+        [
+            "637f701c72c65bc8e73dfe31",
             "Links and Images Question F"
         ],
-        [   "637f701572c65bc8e73dfe30",
+        [
+            "637f701572c65bc8e73dfe30",
             "Links and Images Question G"
         ],
-        [   "637f700b72c65bc8e73dfe2f",
+        [
+            "637f700b72c65bc8e73dfe2f",
             "Links and Images Question D"
         ]
     ]

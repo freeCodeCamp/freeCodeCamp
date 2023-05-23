@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff8
-title: 'Problem 377: Sum of digits, experience 13'
+title: 'Problema 377: Soma dos algarismos, experiência nº 13'
 challengeType: 1
 forumTopicId: 302039
 dashedName: problem-377-sum-of-digits-experience-13
@@ -8,19 +8,19 @@ dashedName: problem-377-sum-of-digits-experience-13
 
 # --description--
 
-There are 16 positive integers that do not have a zero in their digits and that have a digital sum equal to 5, namely:
+Existem 16 números inteiros positivos que não têm zero nos seus algarismos e que têm uma soma de algarismos igual a 5. São eles:
 
-5, 14, 23, 32, 41, 113, 122, 131, 212, 221, 311, 1112, 1121, 1211, 2111 and 11111.
+5, 14, 23, 32, 41, 113, 122, 131, 212, 221, 311, 1112, 1121, 1211, 2111 e 11111.
 
-Their sum is 17891.
+A soma deles é de 17891.
 
-Let $f(n)$ be the sum of all positive integers that do not have a zero in their digits and have a digital sum equal to $n$.
+Considere $f(n)$ como a soma de todos os números inteiros positivos que não têm zero nos seus algarismos e que têm uma soma dos algarismos igual a $n$.
 
-Find $\displaystyle\sum_{i=1}^{17} f(13^i)$. Give the last 9 digits as your answer.
+Encontre $\displaystyle\sum_{i=1}^{17} f(13^i)$. Dê os últimos 9 algarismos da sua resposta.
 
 # --hints--
 
-`experience13()` should return `732385277`.
+`experience13()` deve retornar `732385277`.
 
 ```js
 assert.strictEqual(experience13(), 732385277);

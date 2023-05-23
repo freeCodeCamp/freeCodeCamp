@@ -2,6 +2,7 @@
   "name": "jQuery",
   "isUpcomingChange": false,
   "dashedName": "jquery",
+  "helpCategory": "JavaScript",
   "order": 1,
   "time": "3 hours",
   "template": "",
@@ -87,4 +88,5 @@
       "bad87fee1348bd9aecb08826",
       "Use jQuery to Modify the Entire Page"
     ]
-  ]}
+  ]
+}

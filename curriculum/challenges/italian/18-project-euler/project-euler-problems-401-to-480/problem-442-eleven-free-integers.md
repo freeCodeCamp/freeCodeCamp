@@ -1,6 +1,6 @@
 ---
 id: 5900f5271000cf542c510039
-title: 'Problem 442: Eleven-free integers'
+title: 'Problema 442: interi senza undici'
 challengeType: 1
 forumTopicId: 302114
 dashedName: problem-442-eleven-free-integers
@@ -8,17 +8,17 @@ dashedName: problem-442-eleven-free-integers
 
 # --description--
 
-An integer is called eleven-free if its decimal expansion does not contain any substring representing a power of 11 except 1.
+Un numero intero è detto senza undici se la sua espansione decimale non contiene alcuna sottostringa che rappresenti una potenza di 11 eccetto 1.
 
-For example, 2404 and 13431 are eleven-free, while 911 and 4121331 are not.
+Ad esempio, 2404 e 13431 sono senza undici, mentre 911 e 4121331 no.
 
-Let $E(n)$ be the $n$th positive eleven-free integer. For example, $E(3) = 3$, $E(200) = 213$ and $E(500\\,000) = 531\\,563$.
+Sia $E(n)$ l'$n$-esimo numero intero positivo senza undici. Per esempio, $E(3) = 3$, $E(200) = 213$ e $E(500\\,000) = 531\\,563$.
 
-Find $E({10}^{18})$.
+Trova $E({10}^{18})$.
 
 # --hints--
 
-`elevenFreeIntegers()` should return `1295552661530920200`.
+`elevenFreeIntegers()` dovrebbe restituire `1295552661530920200`.
 
 ```js
 assert.strictEqual(elevenFreeIntegers(), 1295552661530920200);

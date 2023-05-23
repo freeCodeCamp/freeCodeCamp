@@ -22,6 +22,7 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
+assert.ok(process.env.HOME_LOCATION);
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
 assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
 assert.ok(process.env.AUTH0_DOMAIN);
@@ -32,6 +33,7 @@ assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
+  assert.ok(process.env.COOKIE_DOMAIN);
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
   assert.ok(process.env.SENTRY_DSN);
@@ -51,6 +53,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
+export const HOME_LOCATION = process.env.HOME_LOCATION;
 export const MONGOHQ_URL =
   process.env.MONGOHQ_URL ??
   'mongodb://localhost:27017/freecodecamp?directConnection=true';
@@ -68,3 +71,4 @@ export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
     : process.env.SENTRY_DSN;
+export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';

@@ -2,6 +2,7 @@
   "name": "Applied Visual Design",
   "isUpcomingChange": false,
   "dashedName": "applied-visual-design",
+  "helpCategory": "HTML-CSS",
   "order": 2,
   "time": "5 hours",
   "template": "",
@@ -216,4 +217,5 @@
       "587d78a9367417b2b2512aea",
       "Make Motion More Natural Using a Bezier Curve"
     ]
-  ]}
+  ]
+}

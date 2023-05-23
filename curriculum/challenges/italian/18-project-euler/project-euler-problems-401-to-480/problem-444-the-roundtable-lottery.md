@@ -1,6 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003b
-title: 'Problem 444: The Roundtable Lottery'
+title: 'Problema 444: la lotteria della tavola rotonda'
 challengeType: 1
 forumTopicId: 302116
 dashedName: problem-444-the-roundtable-lottery
@@ -8,34 +8,34 @@ dashedName: problem-444-the-roundtable-lottery
 
 # --description--
 
-A group of $p$ people decide to sit down at a round table and play a lottery-ticket trading game. Each person starts off with a randomly-assigned, unscratched lottery ticket. Each ticket, when scratched, reveals a whole-pound prize ranging anywhere from £1 to £$p$, with no two tickets alike. The goal of the game is for each person to maximize his ticket winnings upon leaving the game.
+Un gruppo di $p$ persone decide di sedersi a una tavola rotonda e fare un gioco di scambi di biglietti della lotteria. Ogni persona inizia con un biglietto della lotteria, non grattato, assegnato in maniera casuale. Ogni biglietto, quando grattato, rivela un premio intero in sterline che va da £1 a £$p$, con nessun biglietto uguale. L'obbiettivo del gioco è avere alla fine la vincita più alta.
 
-An arbitrary person is chosen to be the first player. Going around the table, each player has only one of two options:
+Inizia un giocatore qualsiasi. A questo tavolo, ogni giocatore avrà una di due opzioni:
 
-1.  The player can scratch his ticket and reveal its worth to everyone at the table.
-2.  The player can trade his unscratched ticket for a previous player's scratched ticket, and then leave the game with that ticket. The previous player then scratches his newly-acquired ticket and reveals its worth to everyone at the table.
+1.  Il giocatore può grattare il proprio biglietto e rivelare a tutti gli altri la propria vincita.
+2.  Il giocatore può scambiare il proprio biglietto non ancora grattato per un biglietto già grattato di un altro giocatore, e quindi finire il gioco con quel biglietto. L'altro giocatore gratterà quindi il suo biglietto appena acquisito, rivelando la vincita al resto del tavolo.
 
-The game ends once all tickets have been scratched. All players still remaining at the table must leave with their currently-held tickets.
+Il gioco termina una volta che tutti i biglietti sono stati grattati. Tutti i giocatori che rimangono ancora al tavolo devono lasciare con il biglietto attualmente in loro possesso.
 
-Assume that each player uses the optimal strategy for maximizing the expected value of his ticket winnings.
+Supponiamo che ogni giocatore usi la strategia ottimale per ottimizzare il valore previsto delle vincite del proprio biglietto.
 
-Let $E(p)$ represent the expected number of players left at the table when the game ends in a game consisting of $p$ players (e.g. $E(111) = 5.2912$ when rounded to 5 significant digits).
+Sia $E(p)$ il numero previsto di giocatori rimasti al tavolo quando il gioco finisce in una partita di $p$ giocatori (e.g. $E(111)=5,2912$ quando arrotondato a 5 cifre significative.
 
-Let $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
+Sia $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
 
-Let $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ for $k > 1$.
+Sia $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ per $k > 1$.
 
-Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate mantissa and exponent. For example, the answer for $S_3(100)$ would be `5.983679014e5`.
+Trova $S_{20}({10}^{14})$ e scrivi la risposta come una stringa in notazione scientifica arrotondata a 10 cifre significative. Usa una `e` minuscola per separare mantissa ed esponente. Per esempio, la risposta per $S_3(100)$ sarebbe `5.983679014e5`.
 
 # --hints--
 
-`roundtableLottery()` should return a string.
+`roundtableLottery()` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof roundtableLottery() === 'string');
 ```
 
-`roundtableLottery()` should return the string `1.200856722e263`.
+`roundtableLottery()` dovrebbe restituire la stringa `1.200856722e263`.
 
 ```js
 assert.strictEqual(roundtableLottery(), '1.200856722e263');
