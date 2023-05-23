@@ -213,6 +213,9 @@ importers:
       jsonwebtoken:
         specifier: 9.0.0
         version: 9.0.0
+      mongodb:
+        specifier: '4'
+        version: 4.16.0
       nanoid:
         specifier: '3'
         version: 3.3.4
@@ -15051,7 +15054,7 @@ packages:
       express-session: ^1.17.1
     dependencies:
       express-session: 1.17.3
-      mongodb: 3.7.3
+      mongodb: 3.6.9
     transitivePeerDependencies:
       - aws4
       - bson-ext
@@ -23647,7 +23650,7 @@ packages:
       bson: 1.1.6
       debug: 3.2.7(supports-color@8.1.1)
       loopback-connector: 4.11.1
-      mongodb: 3.7.3
+      mongodb: 3.6.9
       strong-globalize: 4.1.3
     transitivePeerDependencies:
       - aws4
@@ -25064,39 +25067,6 @@ packages:
 
   /mongodb@3.6.9:
     resolution: {integrity: sha512-1nSCKgSunzn/CXwgOWgbPHUWOO5OfERcuOWISmqd610jn0s8BU9K4879iJVabqgpPPbA6hO7rG48eq+fGED3Mg==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      aws4: '*'
-      bson-ext: '*'
-      kerberos: '*'
-      mongodb-client-encryption: '*'
-      mongodb-extjson: '*'
-      snappy: '*'
-    peerDependenciesMeta:
-      aws4:
-        optional: true
-      bson-ext:
-        optional: true
-      kerberos:
-        optional: true
-      mongodb-client-encryption:
-        optional: true
-      mongodb-extjson:
-        optional: true
-      snappy:
-        optional: true
-    dependencies:
-      bl: 2.2.1
-      bson: 1.1.6
-      denque: 1.5.1
-      optional-require: 1.1.8
-      safe-buffer: 5.2.1
-    optionalDependencies:
-      saslprep: 1.0.3
-    dev: false
-
-  /mongodb@3.7.3:
-    resolution: {integrity: sha512-Psm+g3/wHXhjBEktkxXsFMZvd3nemI0r3IPsE0bU+4//PnvNWKkzhZcEsbPcYiWqe8XqXJJEg4Tgtr7Raw67Yw==}
     engines: {node: '>=4'}
     peerDependencies:
       aws4: '*'
@@ -28223,7 +28193,7 @@ packages:
   /rate-limit-mongo@2.3.2:
     resolution: {integrity: sha512-dLck0j5N/AX9ycVHn5lX9Ti2Wrrwi1LfbXitu/mMBZOo2nC26RgYKJVbcb2mYgb9VMaPI2IwJVzIa2hAQrMaDA==}
     dependencies:
-      mongodb: 3.7.3
+      mongodb: 3.6.9
       twostep: 0.4.2
       underscore: 1.12.1
     transitivePeerDependencies:
