@@ -2,15 +2,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { ObjectId } from 'mongodb';
 
 import { defaultUser } from '../utils/default-user';
 import { setupServer, superRequest } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
 
-const testUser = {
+const testUserData = {
   ...defaultUser,
   email: 'foo@bar.com',
-  username: 'foobar'
+  username: 'foobar',
+  usernameDisplay: 'Foo Bar'
 };
 
 const baseProgressData = {
@@ -185,14 +187,14 @@ describe('userRoutes', () => {
     describe('user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance?.prisma.user.updateMany({
-          where: { email: testUser.email },
-          data: testUser
+          where: { email: testUserData.email },
+          data: testUserData
         });
       });
 
       test('GET rejects with 500 status code if the username is missing', async () => {
         await fastifyTestInstance?.prisma.user.updateMany({
-          where: { email: testUser.email },
+          where: { email: testUserData.email },
           data: { username: '' }
         });
 
@@ -212,9 +214,31 @@ describe('userRoutes', () => {
         });
 
         expect(response.body).toMatchObject({
-          result: testUser.username
+          result: testUserData.username
         });
         expect(response.statusCode).toBe(200);
+      });
+
+      test('GET returns the public user object', async () => {
+        // TODO: This gets the user from the database so that we can verify the
+        // joinDate. It feels like there should be a better way to do this.
+        const testUser = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+        const publicUser = {
+          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
+        };
+
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.body).toMatchObject({
+          user: {
+            [testUserData.username]: publicUser
+          }
+        });
       });
     });
   });

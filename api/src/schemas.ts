@@ -187,7 +187,9 @@ export const schemas = {
   getSessionUser: {
     response: {
       200: Type.Object({
-        user: Type.Object({}),
+        // Unfortunately, it's not possible to set a real schema for this
+        // object, since the username is dynamic and used as a key.
+        user: Type.Any(),
         result: Type.String()
       }),
       // TODO: is there a better status code? Is it really a server error?

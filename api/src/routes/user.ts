@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { customAlphabet } from 'nanoid';
 
@@ -117,7 +118,15 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
-        return { user: {}, result: user.username };
+        return {
+          user: {
+            [user.username]: {
+              ...user,
+              joinDate: new ObjectId(user.id).getTimestamp()
+            }
+          },
+          result: user.username
+        };
       } catch (err) {
         fastify.log.error(err);
         void res.code(500);
