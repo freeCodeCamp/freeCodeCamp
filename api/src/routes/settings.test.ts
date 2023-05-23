@@ -496,7 +496,7 @@ describe('settingRoutes', () => {
         );
       });
 
-      test('PUT updates the values in about settings without image', async () => {
+      test('PUT throw if the image isn't valid URL', async () => {
         const response = await superRequest('/update-my-about', {
           method: 'PUT',
           setCookies
