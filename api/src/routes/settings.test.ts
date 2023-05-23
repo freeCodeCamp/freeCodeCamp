@@ -496,7 +496,7 @@ describe('settingRoutes', () => {
         );
       });
 
-      test('PUT throw if the image isn't valid URL', async () => {
+      test('PUT throw if the image is invalid URL', async () => {
         const response = await superRequest('/update-my-about', {
           method: 'PUT',
           setCookies
