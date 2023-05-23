@@ -107,14 +107,22 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.getSessionUser
     },
     async (req, res) => {
-      const user = await fastify.prisma.user.findUnique({
-        where: { id: req.session.user.id }
-      });
-      if (!user?.username) {
+      try {
+        const user = await fastify.prisma.user.findUnique({
+          where: { id: req.session.user.id }
+        });
+
+        if (!user?.username) {
+          void res.code(500);
+          return { user: {}, result: '' };
+        }
+
+        return { user: {}, result: user.username };
+      } catch (err) {
+        fastify.log.error(err);
         void res.code(500);
         return { user: {}, result: '' };
       }
-      return { user: {}, result: user.username };
     }
   );
 

@@ -187,7 +187,8 @@ export const schemas = {
   getSessionUser: {
     response: {
       200: Type.Object({
-        user: Type.Object({})
+        user: Type.Object({}),
+        result: Type.String()
       }),
       // TODO: is there a better status code? Is it really a server error?
       500: Type.Object({

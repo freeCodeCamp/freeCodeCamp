@@ -9,7 +9,8 @@ import { JWT_SECRET } from '../utils/env';
 
 const testUser = {
   ...defaultUser,
-  email: 'foo@bar.com'
+  email: 'foo@bar.com',
+  username: 'foobar'
 };
 
 const baseProgressData = {
