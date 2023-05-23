@@ -19,7 +19,6 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "chokidar": "3.5.3",
     "readdirp": "3.6.0"
   }
 }

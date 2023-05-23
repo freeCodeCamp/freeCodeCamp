@@ -29,5 +29,6 @@
     "tools/scripts/build": {
       "entry": ["*.ts"]
     }
-  }
+  },
+  "ignoreDependencies": ["eslint", "gatsby-cli", "sass.js"]
 }
