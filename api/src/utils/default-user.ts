@@ -4,7 +4,6 @@ import { type Prisma } from '@prisma/client';
 export const defaultUser: Omit<Prisma.userCreateInput, 'email'> = {
   about: '',
   acceptedPrivacyTerms: false,
-  badges: {},
   completedChallenges: [],
   currentChallengeId: '',
   emailVerified: true,
@@ -48,8 +47,6 @@ export const defaultUser: Omit<Prisma.userCreateInput, 'email'> = {
     showTimeLine: false
   },
   progressTimestamps: [],
-  // TODO: check what this is used for in api-server and if we need it
-  rand: 0,
   sendQuincyEmail: false,
   theme: 'default',
   // TODO: generate a UUID like in api-server

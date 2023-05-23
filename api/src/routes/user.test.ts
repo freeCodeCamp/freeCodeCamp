@@ -3,8 +3,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
+import { defaultUser } from '../utils/default-user';
 import { setupServer, superRequest } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+
+const testUser = {
+  ...defaultUser,
+  email: 'foo@bar.com'
+};
 
 const baseProgressData = {
   currentChallengeId: '',
@@ -175,6 +181,29 @@ describe('userRoutes', () => {
         expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
       });
     });
+    describe('user/get-user-session', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance?.prisma.user.updateMany({
+          where: { email: testUser.email },
+          data: testUser
+        });
+      });
+
+      test('GET rejects with 500 status code if the username is missing', async () => {
+        await fastifyTestInstance?.prisma.user.updateMany({
+          where: { email: testUser.email },
+          data: { username: '' }
+        });
+
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.body).toStrictEqual({ user: {}, result: '' });
+        expect(response.statusCode).toBe(500);
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -201,11 +230,12 @@ describe('userRoutes', () => {
         const response = await superRequest('/account/reset-progress', {
           method: 'POST',
           setCookies
-        })
+        });
 
         expect(response?.statusCode).toBe(401);
       });
     });
+
     describe('/user/get-user-session', () => {
       test('GET returns 401 status code with error message', async () => {
         const response = await superRequest('/user/get-session-user', {
