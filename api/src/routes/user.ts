@@ -110,7 +110,54 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, res) => {
       try {
         const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
+          where: { id: req.session.user.id },
+          select: {
+            about: true,
+            acceptedPrivacyTerms: true,
+            completedChallenges: true,
+            currentChallengeId: true,
+            donationEmails: true,
+            email: true,
+            emailVerified: true,
+            githubProfile: true,
+            id: true,
+            is2018DataVisCert: true,
+            isApisMicroservicesCert: true,
+            isBackEndCert: true,
+            isCheater: true,
+            isDataAnalysisPyCertV7: true,
+            isDataVisCert: true,
+            isDonating: true,
+            isFrontEndCert: true,
+            isFrontEndLibsCert: true,
+            isFullStackCert: true,
+            isHonest: true,
+            isInfosecCertV7: true,
+            isInfosecQaCert: true,
+            isJsAlgoDataStructCert: true,
+            isMachineLearningPyCertV7: true,
+            isQaCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isRespWebDesignCert: true,
+            isSciCompPyCertV7: true,
+            keyboardShortcuts: true,
+            linkedin: true,
+            location: true,
+            name: true,
+            partiallyCompletedChallenges: true,
+            picture: true,
+            portfolio: true,
+            profileUI: true,
+            savedChallenges: true,
+            sendQuincyEmail: true,
+            sound: true,
+            theme: true,
+            twitter: true,
+            username: true,
+            usernameDisplay: true,
+            website: true,
+            yearsTopContributor: true
+          }
         });
 
         if (!user?.username) {
@@ -118,12 +165,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
+        const { usernameDisplay, ...publicProperties } = user;
+
         return {
           user: {
             [user.username]: {
-              ...user,
+              ...publicProperties,
               joinDate: new ObjectId(user.id).getTimestamp(),
-              username: user.usernameDisplay || user.username
+              username: usernameDisplay || user.username
             }
           },
           result: user.username
