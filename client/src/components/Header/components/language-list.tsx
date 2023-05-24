@@ -94,7 +94,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
     }
   };
 
-  const handleLastLangaugeKeys = (
+  const handleLastLanguageKeys = (
     event: React.KeyboardEvent<HTMLButtonElement>
   ) => {
     const DoKeyPress = new Map<string, { select: () => void }>([
@@ -128,7 +128,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   ) => {
     const lastLanguage = locales.length - 1;
     if (languagePosition === lastLanguage) {
-      return handleLastLangaugeKeys(event);
+      return handleLastLanguageKeys(event);
     } else handleMenuKeyDown(event);
   };
   return (

@@ -19,6 +19,7 @@
     "one-time-url": "https://paypal.me/freecodecamp"
   },
   "nav": {
+    "contribute": "https://contribute.freecodecamp.org/#/",
     "forum": "https://forum.freecodecamp.org/",
     "news": "https://freecodecamp.org/news/"
   },

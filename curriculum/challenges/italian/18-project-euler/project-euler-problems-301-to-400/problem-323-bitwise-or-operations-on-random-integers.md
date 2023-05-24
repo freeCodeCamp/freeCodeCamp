@@ -15,7 +15,7 @@ Per la successione $x_i$ viene data la seguente ricorsione:
 - $x_0 = 0$ e
 - $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, per $i > 0$. ($\mathbf{|}$ è l'operatore bitwise-OR)
 
-It can be seen that eventually there will be an index $N$ such that $x_i = 2^{32} - 1$ (a bit-pattern of all ones) for all $i ≥ N$.
+Si può vedere che alla fine ci sarà un indice $N$ tale che $x_i = 2^{32} - 1$ (un pattern con tutti i bit a uno) per tutti gli i $i ≥ N$.
 
 Trova il valore atteso di $N$. Dai la tua risposta arrotondata a 10 cifre dopo il punto decimale.
 

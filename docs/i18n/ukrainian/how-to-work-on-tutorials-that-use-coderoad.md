@@ -1,60 +1,60 @@
-This page describes how to contribute to the freeCodeCamp tutorials and projects that are completed using the CodeRoad VS Code extension.
+На цій сторінці описано, як зробити внесок до матеріалів та проєктів freeCodeCamp, які використовують розширення CodeRoad VS Code.
 
-## How the Tutorials Work
+## Як працюють матеріали
 
-Each of the freeCodeCamp tutorials that use CodeRoad has its own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+Кожен матеріал freeCodeCamp, який використовує CodeRoad, має власний репозиторій в рамках організації freeCodeCamp GitHub. Всі вони починаються з `learn-`. Наприклад, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
-Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
+Кожен репозиторій матеріалу має гілку `main` та гілку «версії», тобто `v1.0.0`.
 
-The two main files on the `main` branch are `TUTORIAL.md` and `coderoad.yaml`. `TUTORIAL.md` contains all the instructions, hints, titles, and so on, for the tutorial. `coderoad.yaml` contains instructions for CodeRoad, such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps.
+Двома основними файлами на гілці `main` є `TUTORIAL.md` та `coderoad.yaml`. `TUTORIAL.md` містить усі інструкції, підказки, заголовки і т. д. для даного матеріалу. `coderoad.yaml` містить інструкції для CodeRoad, наприклад, які команди виконувати й коли, у яких файлах відстежувати зміни, і яку гілку версії використовувати для кроків.
 
-The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson.
+Гілка «версії» містить затвердження, які будуть завантажені на кожному кроці матеріалу. Повідомлення затверджень у цій гілці повинні бути особливими. Перше затвердження має складатися з текстового повідомлення `INIT` та містити всі файли, які необхідно завантажити перед першим уроком.
 
-Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit with the message `10.1` will be loaded when a user goes to step `10.1`.
+Послідовні повідомлення затверджень мають відповідати номеру кроку в `TUTORIAL.md` з гілки `main`. Наприклад, затвердження з повідомленням `10.1` буде завантажено тоді, коли користувач перейде до кроку `10.1`.
 
-In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git history, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
+Щоб внести зміни до затверджень на гілці версії, потрібно перебазувати та відредагувати ті затвердження, які хочете змінити. Це перепише історію Git, тому ми не можемо приймати PR до гілок цього типу. Гілку версії не можна змінювати, як тільки вона з’явиться на репозиторії freeCodeCamp.
 
 > [!WARNING]
 > 
-> Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Ніколи не вносьте чи затверджуйте зміни до гілки версії, яка розташована на одному з репозиторіїв freeCodeCamp. Завжди створюйте нову
 
-## How to Contribute
+## Як зробити внесок
 
-### Prerequisites
+### Передумови
 
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`.
+Встановіть [інструменти CodeRoad CLI](https://www.npmjs.com/package/@coderoad/cli) за допомогою `npm install -g @coderoad/cli`.
 
-There have been some issues with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`.
+З останньою версією виникали деякі проблеми. Якщо `coderoad --version` не працює після налаштування, перейдіть на версію `0.7.0` за допомогою `npm install -g @coderoad/cli@0.7.0`.
 
-### Working on `main`
+### Робота на `main`
 
-This set of instructions is for PRs that only make minor changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instructional changes or fixes in the `TUTORIAL.md` file.
+Ці інструкції призначені для PR, які вносять незначні зміни на `main` до **наявних уроків**. Зазвичай це друкарські й граматичні помилки, підказки, інструкції та виправлення у файлі `TUTORIAL.md`.
 
-For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this - you can create a PR following the instructions below.
+Для всього іншого, включно з додаванням чи видаленням уроків, див. [інструкцію з роботи над гілкою версії](#working-on-version-branch). Вам не потрібно створювати нову гілку версії — просто створіть PR, дотримуючись інструкцій нижче.
 
 > [!NOTE]
 > 
-> These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
+> Ці зміни використовуватимуть наявну гілку версії. Якщо це значні зміни, їх можна додати до `CHANGELOG.md`. У більшості випадків достатньо хорошого повідомлення затвердження
 
-You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
+Ніколи не змінюйте файл `tutorial.json` напряму. Це виконується за допомогою інструментів CLI.
 
-If you are only making minor changes like fixing a typo or grammatical error, you don't have to test your changes.
+Якщо ви вносите незначні зміни (наприклад, виправляєте друкарську чи граматичну помилку), їх необов’язково перевіряти.
 
-Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context:
+Дотримуйтесь цих інструкцій, щоб створити PR (пам’ятайте, що зазвичай інструкції використовують уроки навколо себе для контексту):
 
-- Create a copy of the latest version branch with `git branch vX.X.X upstream/vX.X.X` - you do not need to check this branch out, it just needs to exist.
-- Create and checkout a new branch off of `main`
-- Make **and commit** your changes. Reminder: You don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
-- Run `coderoad build` to recreate the `tutorial.json` file
-- Commit the changes with `update json` as the message
-- Make a PR
+- Створіть копію останньої гілки версії за допомогою `git branch vX.X.X upstream/vX.X.X`. Цю гілку не потрібно перевіряти, вона має існувати.
+- Створіть та перевірте нову гілку від `main`
+- Внесіть **та затвердьте** зміни. Нагадування: нічого не змінюйте у файлі `tutorial.json`. Найімовірніше, вам потрібно внести зміни лише до `TUTORIAL.md`
+- Запустіть `coderoad build`, щоб повторно створити файл `tutorial.json`
+- Затвердьте зміни з `update json` як повідомленням
+- Створіть PR
 
-### Testing Changes on `main`
+### Тестування змін на `main`
 
-If you want to test your changes to `main` after using the above instructions, follow these instructions:
+Якщо після інструкцій вище ви хочете перевірити зміни, внесені до `main`, дотримуйтесь цього:
 
-- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on the new branch
+- Виконайте інструкції з [репозиторію rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha), щоб запустити контейнер
+- Запустіть матеріал, використовуючи файл `tutorial.json` на новій гілці
 
 ### Reviewing PR's to `main`
 

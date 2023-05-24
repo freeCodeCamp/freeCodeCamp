@@ -10,8 +10,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   fastify.addHook('onRequest', fastify.authenticateSession);
 
-  fastify.delete(
-    '/account',
+  fastify.post(
+    '/account/delete',
     {
       schema: {
         response: {
