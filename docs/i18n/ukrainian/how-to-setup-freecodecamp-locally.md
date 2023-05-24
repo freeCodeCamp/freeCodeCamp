@@ -69,7 +69,7 @@
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | Ми використовуємо версію «Active LTS», див. [розклад LTS](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                                 |
-| [Сервер спільноти MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                                 |
+| [Сервер спільноти MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                                 |
 
 > [!ATTENTION] Якщо у вас інша версія, встановіть рекомендовану версію. Ми можемо вирішити проблеми зі встановленням лише для рекомендованих версій. Див. [розв’язання проблем розробки](#troubleshooting) для деталей.
 

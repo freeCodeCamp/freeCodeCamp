@@ -64,67 +64,67 @@ The `tutorial.json` file should not have changes to commit hashes, or step/level
 
 Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
 
-### Working on Version Branch
+### Робота над гілкою версії
 
 > [!WARNING]
 > 
-> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Нагадування: ніколи не вносьте чи затверджуйте зміни до гілки версії, яка розташована на одному з репозиторіїв freeCodeCamp. Завжди створюйте нову
 
-There's no easy way to see exactly what changed between version branches since the Git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing.
+Ви не зможете побачити зміни між гілками версій, оскільки історія Git буде переписана. Ретельно розглядайте та тестуйте нові гілки версій перед їх прийняттям для використання.
 
-These instructions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things.
+Ці інструкції призначені для змін на гілці версії, тобто тестів, тексту тестів, скидання файлів, додавання та видалення кроків тощо.
 
-Follow these instructions to create a new version:
+Дотримуйтесь цих інструкцій, щоб створити нову версію:
 
-- Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
-- Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
-- Make your changes to the version branch. See more info in the [CodeRoad Documentation](https://coderoad.github.io/docs/edit-tutorial) for how to work with tutorials
-- Push the new branch to your fork with `git push -u origin vX.X.Y`
-- Checkout the `main` branch
-- Create a new branch off `main`. e.g. `feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing it to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Make any other changes you need.
-- Commit your changes with the message `feat: release version X.X.Y - <optional description>`
-- Run `coderoad build` to create a new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork
-- Test your changes following the [testing instructions below](#testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
-- Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
-- Leave it here for reviewers
+- Перевірте **останню** гілку версії за допомогою `git checkout -b vX.X.X upstream/vX.X.X`
+- Створіть нову гілку від тієї, збільшивши версію за допомогою `git checkout -b vX.X.Y`
+- Внесіть зміни до гілки версії. Для детальнішої інформації щодо роботи з матеріалами див. [документацію CodeRoad](https://coderoad.github.io/docs/edit-tutorial)
+- Надішліть нову гілку до розгалуження за допомогою `git push -u origin vX.X.Y`
+- Перевірте гілку `main`
+- Створіть нову гілку від `main`. Наприклад, `feat/version-X.X.Y`
+- Змініть `uri` у `coderoad.yaml` на своє розгалуження репозиторію. Таким чином ви та рецензент зможете провести тестування перед тим, як надіслати зміни до репозиторію freeCodeCamp. Змініть версію на нову гілку у двох місцях цього файлу. Додайте зміни нової версії до `CHANGELOG.md`. Внесіть будь-які інші потрібні зміни.
+- Затвердьте зміни за допомогою повідомлення `feat: release version X.X.Y - <optional description>`
+- Запустіть `coderoad build`, щоб створити новий файл `tutorial.json`
+- Додайте та затвердьте файл
+- Надішліть зміни до розгалуження
+- Протестуйте зміни, дотримуючись [інструкцій нижче](#testing-changes-to-a-version-branch). Внесіть нові зміни та затвердьте їх так само, або, якщо ви задоволені, дотримуйтесь решти інструкцій
+- Створіть PR до `main`, використовуючи нову гілку `feat/version-X.X.Y`. Назвіть його `version X.X.Y ready for review`. Їх не буде об’єднано, але таким чином рецензенти знатимуть про готову нову версію
+- Залиште решту для рецензентів
 
-### Testing Changes to a Version Branch
+### Тестування змін на гілці версії
 
-- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
+- Виконайте інструкції з [репозиторію rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha), щоб запустити контейнер
+- Запустіть матеріал, використовуючи файл `tutorial.json` на розгалуженні зі змінами. Переконайтесь, що використовуєте файл на гілці `feat: version-X.X.Y`, а не `main`
 
-### Pushing a New Version
+### Надсилання нової версії
 
-Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
+Перед надсиланням нової версії перегляньте нову гілку `feat/version-vX.X.Y` (буде об’єднана до `main`) на розгалуженні користувача. Переконайтесь, що у файлі `CHANGELOG.md` є додатки, які містять нові зміни, та версія у двох місцях `coderoad.yaml` відповідає новій гілці версії.
 
-If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
+Якщо ви маєте письмовий доступ до репозиторію freeCodeCamp, підтвердили файли `CHANGELOG` та `coderoad.yaml`, протестували зміни, використовуючи інструкції вище, та хочете надіслати нову версію матеріалу:
 
 > [!WARNING]
 > 
-> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Нагадування: ніколи не вносьте чи затверджуйте зміни до гілки версії, яка розташована на одному з репозиторіїв freeCodeCamp. Завжди створюйте нову
 
-- If you don't have a remote to where the new changes exist, create a remote to the user's fork with `git remote add <users_fork>`
-- Delete any **local** branches that share a name with the new branches. Likely named either `vX.X.Y` or `feat/version-X.X.Y`
-- Checkout the new version branch with `git checkout -b vX.X.Y <remote>/vX.X.Y`
-- Push the new version branch to the freeCodeCamp repo with `git push -u upstream/vX.X.Y`. You need to push the new branch before you update `main` with the new `tutorial.json` file
-- Checkout the users branch that will be merged into `main` with `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` back to the freeCodeCamp repo
-- Add and commit the changes
-- Run `coderoad build` to create the new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork with `git push -u origin/feat/version-X.X.Y`
-- Make a PR to `main` on the freeCodeCamp repo
-- If you are satisfied, merge it or leave it and ask for a review from someone
-- After the PR is merged, open the tutorial by following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to make sure it's loading properly, and that you can get through a few steps
-- Finally, if any PRs for this version exists, close them
+- Якщо у вас немає віддаленого доступу до місця, де наявні нові зміни, створіть віддалений доступ до розгалуження користувача за допомогою `git remote add <users_fork>`
+- Видаліть будь-які **локальні** гілки, назва яких збігається з новими гілками. Скоріш за все `vX.X.Y` або `feat/version-X.X.Y`
+- Перевірте гілку нової версії за допомогою `git checkout -b vX.X.Y <remote>/vX.X.Y`
+- Надішліть гілку нової версії до репозиторію freeCodeCamp за допомогою `git push -u upstream/vX.X.Y`. Вам потрібно надіслати нову гілку перед тим, як оновити `main` з новим файлом `tutorial.json`
+- Перевірте гілку користувача, яка буде об’єднана до `main`, за допомогою `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
+- Змініть `uri` у `coderoad.yaml` на репозиторій freeCodeCamp
+- Додайте та затвердьте зміни
+- Запустіть `coderoad build`, щоб створити новий файл `tutorial.json`
+- Додайте та затвердьте файл
+- Надішліть зміни до розгалуження за допомогою `git push -u origin/feat/version-X.X.Y`
+- Створіть PR до `main` на репозиторії freeCodeCamp
+- Якщо ви задоволені, об’єднайте його або залиште й попросіть когось іншого перевірити
+- Як тільки PR об’єднано, відкрийте матеріал, дотримуючись інструкцій з [репозиторію rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha), щоб переконатись, що все завантажується правильно та ви можете пройти декілька кроків
+- Якщо будь-який PR для цієї версії існує, закрийте його
 
-### How to Revert to a Previous Version
+### Як повернутися до попередньої версії
 
-- Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
-- Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
+- Створіть нову гілку від останньої `main` за допомогою `git checkout -b revert/to-version-X.X.X`
+- Скасуйте всі затвердження гілки до потрібної вам версії. Наприклад, у вас є такі затвердження:
 
 ```
 fix: typo
@@ -133,6 +133,6 @@ fix: typo
 release: version 1.0.0
 ```
 
-If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
+Якщо ви хочете повернутись до v1.0.0, скасуйте всі затвердження від `release: version 1.0.1` та пізніше
 
-- Create a PR. Give it a title of `revert: to version X.X.X`
+- Створіть PR. Назвіть його `revert: to version X.X.X`
