@@ -10,30 +10,35 @@ declare module 'fastify' {
   }
 }
 
-function createTestConnectionURL(url: string, dbId: string) {
-  return url.replace(/(.*\/)(.*)(\?.*)/, `$1$2${dbId}$3`);
-}
+// Appends the dbId to the existing database name
+const createTestConnectionURL = (url: string, dbId: string) =>
+  url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
+
+const isTest = (workerId: string | undefined): workerId is string =>
+  !!workerId && FREECODECAMP_NODE_ENV === 'development';
 
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
-  const prisma =
-    process.env.JEST_WORKER_ID && FREECODECAMP_NODE_ENV === 'development'
-      ? new PrismaClient({
-          datasources: {
-            db: {
-              url: createTestConnectionURL(
-                MONGOHQ_URL,
-                process.env.JEST_WORKER_ID
-              )
-            }
+  const prisma = isTest(process.env.JEST_WORKER_ID)
+    ? new PrismaClient({
+        datasources: {
+          db: {
+            url: createTestConnectionURL(
+              MONGOHQ_URL,
+              process.env.JEST_WORKER_ID
+            )
           }
-        })
-      : new PrismaClient();
+        }
+      })
+    : new PrismaClient();
 
   await prisma.$connect();
 
   server.decorate('prisma', prisma);
 
   server.addHook('onClose', async server => {
+    if (isTest(process.env.JEST_WORKER_ID)) {
+      await server.prisma.$runCommandRaw({ dropDatabase: 1 });
+    }
     await server.prisma.$disconnect();
   });
 });
