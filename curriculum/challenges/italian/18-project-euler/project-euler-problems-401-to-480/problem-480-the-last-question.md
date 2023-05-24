@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005f
-title: 'Problem 480: The Last Question'
+title: 'Problema 480: l''ultima domanda'
 challengeType: 1
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
@@ -8,13 +8,13 @@ dashedName: problem-480-the-last-question
 
 # --description--
 
-Consider all the words which can be formed by selecting letters, in any order, from the phrase:
+Considera tutte le parole che possono essere formate selezionando lettere, in qualsiasi ordine, dalla frase:
 
 $$\mathbf{\text{thereisasyetinsufficientdataforameaningfulanswer}}$$
 
-Suppose those with 15 letters or less are listed in alphabetical order and numbered sequentially starting at 1.
+Supponi che quelle con 15 lettere o meno siano elencate in ordine alfabetico e numerate sequenzialmente iniziando da 1.
 
-The list would include:
+La lista includerebbe:
 
 $$\begin{align}   & 1: \text{a} \\\\
   & 2: \text{aa} \\\\   & 3: \text{aaa} \\\\
@@ -32,31 +32,31 @@ $$\begin{align}   & 1: \text{a} \\\\
   & ... \\\\   & 525069350231428029: \text{ywuuttttssssrrr} \\\\
 \end{align}$$
 
-Define $P(w)$ as the position of the word $w$.
+Sia $P(w)$ la posizione della parola $w$.
 
-Define $W(p)$ as the word in position $p$.
+Sia $W(p)$ la parola in posizione $p$.
 
-We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
+Possiamo vedere che $P(w)$ e $W(p)$ sono operazioni inverse: $P(W(p)) = p$ e $W(P(w)) = w$.
 
-Examples:
+Esempi:
 
 $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
   & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\
   & P(\text{euler}) = 115246685191495243 \\\\ \end{align}$$
 
-Find $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
+Trova $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
-Give your answer using lowercase characters (no punctuation or space).
+Dai la tua risposta usando caratteri minuscoli (senza punteggiatura o spazi).
 
 # --hints--
 
-`euler480()` should return a string.
+`euler480()` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof euler480() === 'string');
 ```
 
-`euler480()` should return the string `turnthestarson`.
+`euler480()` dovrebbe restituire la stringa `turnthestarson`.
 
 ```js
 assert.strictEqual(euler480(), 'turnthestarson');

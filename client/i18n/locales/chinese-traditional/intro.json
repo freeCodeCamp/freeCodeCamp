@@ -999,6 +999,16 @@
       }
     }
   },
+  "example-certification": {
+    "title": "示例認證",
+    "intro": ["佔位符"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "示例認證測驗",
+        "intro": ["佔位符"]
+      }
+    }
+  },
   "misc-text": {
     "certification": "{{cert}} 認證",
     "browse-other": "瀏覽我們的其他免費認證\n（我們建議你按順序學習）",

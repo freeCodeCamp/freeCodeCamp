@@ -253,9 +253,9 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ sendQuincyEmail: true });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.subscribe-to-quincy-updated',
           type: 'success'
         });
@@ -267,7 +267,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ sendQuincyEmail: 'invalid' });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
