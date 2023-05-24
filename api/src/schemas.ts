@@ -45,10 +45,12 @@ export const schemas = {
   },
   updateMySocials: {
     body: Type.Object({
-      website: Type.Optional(Type.String({ format: 'url' })),
-      twitter: Type.Optional(Type.String({ format: 'url' })),
-      githubProfile: Type.Optional(Type.String({ format: 'url' })),
-      linkedin: Type.Optional(Type.String({ format: 'url' }))
+      website: Type.Optional(Type.String({ format: 'url', maxLength: 1024 })),
+      twitter: Type.Optional(Type.String({ format: 'url', maxLength: 1024 })),
+      githubProfile: Type.Optional(
+        Type.String({ format: 'url', maxLength: 1024 })
+      ),
+      linkedin: Type.Optional(Type.String({ format: 'url', maxLength: 1024 }))
     }),
     response: {
       200: Type.Object({
