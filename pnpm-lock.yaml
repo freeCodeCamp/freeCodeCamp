@@ -101,6 +101,9 @@ importers:
       jest-environment-jsdom:
         specifier: 29.5.0
         version: 29.5.0
+      js-yaml:
+        specifier: 3.14.1
+        version: 3.14.1
       knip:
         specifier: 2.12.2
         version: 2.12.2
@@ -764,6 +767,9 @@ importers:
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.80.0)
+      core-js:
+        specifier: 2.6.12
+        version: 2.6.12
       dotenv:
         specifier: 16.0.3
         version: 16.0.3

@@ -50,6 +50,9 @@
     "eslint",
     "invariant",
     "execa",
-    "dotenv"
+    "dotenv",
+    "core-js",
+    "@babel/runtime",
+    "js-yaml"
   ]
 }
