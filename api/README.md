@@ -35,3 +35,5 @@ pnpm seed
 ## Login in development/testing
 
 During development and testing, the api exposes the endpoint GET auth/dev-callback. Calling this will log you in as the user with the email `foo@bar.com` by setting the session cookie for that user.
+
+pnpm install && npm i --prefix=curriculum-server && npm i --prefix=web && pnpm run lint
