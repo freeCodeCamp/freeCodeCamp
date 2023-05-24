@@ -23,7 +23,9 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.String(),
+            message: Type.Object({
+              isDonating: Type.Boolean()
+            }),
             type: Type.Literal('success')
           }),
           500: Type.Object({
@@ -43,7 +45,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
-          message: 'success',
+          message: { isDonating: true },
           type: 'success'
         } as const;
       } catch (error) {

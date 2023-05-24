@@ -27,12 +27,11 @@ describe('Donate', () => {
 
         expect(response.status).toBe(200);
         expect(response.body).toEqual({
-          message: 'success',
+          message: { isDonating: true },
           type: 'success'
         });
       });
 
-      // it should error if the body is empty
       it('should return 400 if the body is empty', async () => {
         const response = await superRequest('/add-donation', {
           method: 'POST',
