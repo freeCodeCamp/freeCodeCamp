@@ -18,7 +18,7 @@ Font Awesome è una comoda libreria di icone. Queste icone possono essere font w
 
 Usa Font Awesome per aggiungere un'icona `info-circle` al tuo pulsante info e un'icona `trash` al tuo pulsante di eliminazione.
 
-**Nota:** L'elemento `span` è un'alternativa accettabile all'elemento `i` per le istruzioni sottostanti.
+**Note:** You can use either `i` or `span` elements to complete this challenge.
 
 # --hints--
 
