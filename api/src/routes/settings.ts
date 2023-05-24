@@ -80,24 +80,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-socials',
     {
-      schema: {
-        body: Type.Object({
-          website: Type.Optional(Type.String({ format: 'url' })),
-          twitter: Type.Optional(Type.String({ format: 'url' })),
-          githubProfile: Type.Optional(Type.String({ format: 'url' })),
-          linkedin: Type.Optional(Type.String({ format: 'url' }))
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.updated-socials'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMySocials
     },
     async (req, reply) => {
       try {

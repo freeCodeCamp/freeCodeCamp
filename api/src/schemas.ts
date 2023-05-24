@@ -103,6 +103,24 @@ export const schemas = {
       })
     }
   },
+  updateMySocials: {
+    body: Type.Object({
+      website: Type.Optional(Type.String({ format: 'url' })),
+      twitter: Type.Optional(Type.String({ format: 'url' })),
+      githubProfile: Type.Optional(Type.String({ format: 'url' })),
+      linkedin: Type.Optional(Type.String({ format: 'url' }))
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.updated-socials'),
+        type: Type.Literal('success')
+      }),
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {
