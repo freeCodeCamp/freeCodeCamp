@@ -5,6 +5,7 @@ import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
 import { encodeUserToken } from '../utils/user-token';
+import { ProgressTimestamp, getCalendar } from '../utils/progress';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -152,6 +153,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             picture: true,
             portfolio: true,
             profileUI: true,
+            progressTimestamps: true,
             savedChallenges: true,
             sendQuincyEmail: true,
             sound: true,
@@ -169,13 +171,20 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
-        const { usernameDisplay, completedChallenges, ...publicUser } = user;
+        const {
+          usernameDisplay,
+          completedChallenges,
+          progressTimestamps,
+          ...publicUser
+        } = user;
 
         return {
           user: {
             [user.username]: {
               ...removeNulls(publicUser),
               completedChallenges: completedChallenges.map(removeNulls),
+              // This assertion is necessary until the database is normalized.
+              calendar: getCalendar(progressTimestamps as ProgressTimestamp[]),
               joinDate: new ObjectId(user.id).getTimestamp(),
               username: usernameDisplay || user.username
             }

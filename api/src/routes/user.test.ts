@@ -60,7 +60,7 @@ const testUserData = {
 // not return those.
 const publicUserData = {
   about: testUserData.about,
-  // calendar: { 152000297: 1, 152044032: 1 },
+  calendar: { 1520002973: 1, 1520440323: 1 },
   // testUserData.completedChallenges, with nulls removed
   completedChallenges: [
     {
