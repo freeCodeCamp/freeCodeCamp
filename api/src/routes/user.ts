@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { ObjectId } from 'mongodb';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { customAlphabet } from 'nanoid';
@@ -165,12 +166,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
-        const { usernameDisplay, ...publicProperties } = user;
+        const { usernameDisplay, ...publicUser } = user;
+        const filteredPublicUser = _.pickBy(
+          publicUser,
+          property => property !== null
+        );
 
         return {
           user: {
             [user.username]: {
-              ...publicProperties,
+              ...filteredPublicUser,
               joinDate: new ObjectId(user.id).getTimestamp(),
               username: usernameDisplay || user.username
             }
