@@ -15,7 +15,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.post(
-    '/add-donation',
+    '/donate/add-donation',
     {
       schema: {
         body: Type.Object({
@@ -23,10 +23,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({
-            message: Type.Object({
-              isDonating: Type.Boolean()
-            }),
-            type: Type.Literal('success')
+            isDonating: Type.Boolean()
           }),
           500: Type.Object({
             message: Type.Literal('Something went wrong.'),
@@ -45,8 +42,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
-          message: { isDonating: true },
-          type: 'success'
+          isDonating: true
         } as const;
       } catch (error) {
         fastify.log.error(error);

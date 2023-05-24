@@ -16,9 +16,9 @@ describe('Donate', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    describe('POST /add-donation', () => {
+    describe('POST /donate/add-donation', () => {
       it('should return 200 and update the user', async () => {
-        const response = await superRequest('/add-donation', {
+        const response = await superRequest('/donate/add-donation', {
           method: 'POST',
           setCookies
         }).send({
@@ -27,13 +27,12 @@ describe('Donate', () => {
 
         expect(response.status).toBe(200);
         expect(response.body).toEqual({
-          message: { isDonating: true },
-          type: 'success'
+          isDonating: true
         });
       });
 
       it('should return 400 if the body is empty', async () => {
-        const response = await superRequest('/add-donation', {
+        const response = await superRequest('/donate/add-donation', {
           method: 'POST',
           setCookies
         }).send({});
@@ -44,9 +43,9 @@ describe('Donate', () => {
   });
 
   describe('Unauthenticated User', () => {
-    describe('POST /add-donation', () => {
-      it('should return 401', async () => {
-        const response = await superRequest('/add-donation', {
+    describe('POST /donate/add-donation', () => {
+      it('should return 403', async () => {
+        const response = await superRequest('/donate/add-donation', {
           method: 'POST'
         }).send({
           isDonating: true
