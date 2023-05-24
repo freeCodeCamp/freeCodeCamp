@@ -51,6 +51,12 @@ Your code should use dot and bracket notation to access `myStorage`.
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+You should not change or remove the `gloveBoxContents` declaration.
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/)
+```
+
 # --seed--
 
 ## --after-user-code--
