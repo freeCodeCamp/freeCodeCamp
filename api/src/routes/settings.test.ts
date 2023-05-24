@@ -513,25 +513,6 @@ describe('settingRoutes', () => {
         });
         expect(response.statusCode).toEqual(200);
       });
-
-      test('PUT throw 500 if the image is invalid', async () => {
-        const response = await superRequest('/update-my-about', {
-          method: 'PUT',
-          setCookies
-        }).send({
-          about: 'Teacher at freeCodeCamp',
-          name: 'Quincy Larson',
-          location: 'USA',
-          picture: 'invaild'
-        });
-
-        expect(response.body).toEqual({
-          message:
-            'Failed to serialize an error. Error: "type" is required!. Original error: cb is not a function',
-          code: 'FST_ERR_FAILED_ERROR_SERIALIZATION',
-          statusCode: 500
-        });
-      });
     });
 
     describe('/update-my-honesty', () => {

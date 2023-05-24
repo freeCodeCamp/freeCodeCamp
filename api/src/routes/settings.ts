@@ -202,8 +202,14 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         schema: schemas.updateMyAbout
       },
       async (req, reply) => {
-        const pictureUrl = new URL(req.body.picture || '');
-        const hasProtocol = !!pictureUrl.protocol;
+        let hasProtocol = true;
+        try {
+          const url = req.body.picture ? new URL(req.body.picture) : null;
+          hasProtocol =
+            !!url && (url.protocol == 'http:' || url.protocol == 'https:');
+        } catch {
+          hasProtocol = false;
+        }
         try {
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },
