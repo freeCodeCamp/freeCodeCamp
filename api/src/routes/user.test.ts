@@ -15,10 +15,10 @@ describe('userRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    describe('/account', () => {
-      test('DELETE returns 200 status code with empty object', async () => {
-        const response = await superRequest('/user/account', {
-          method: 'DELETE',
+    describe('/account/delete', () => {
+      test('POST returns 200 status code with empty object', async () => {
+        const response = await superRequest('/account/delete', {
+          method: 'POST',
           setCookies
         });
 
@@ -35,10 +35,10 @@ describe('userRoutes', () => {
 
   describe('Unauthenticated user', () => {
     // TODO: get CSRF cookies when that PR is in.
-    describe('/account', () => {
-      test('DELETE returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/account', {
-          method: 'DELETE'
+    describe('/account/delete', () => {
+      test('POST returns 401 status code with error message', async () => {
+        const response = await superRequest('/account/delete', {
+          method: 'POST'
         });
 
         expect(response?.statusCode).toBe(401);
