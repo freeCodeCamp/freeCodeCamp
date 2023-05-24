@@ -114,7 +114,7 @@
     "@types/lodash": "4.14.194",
     "@types/node": "18.16.0",
     "@types/store": "2.0.2",
-    "babel-eslint": "^10.1.0",
+    "babel-jest": "29.5.0",
     "@babel/runtime": "^7.20.13",
     "cross-env": "7.0.3",
     "cypress": "11.2.0",
