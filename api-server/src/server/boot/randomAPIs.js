@@ -71,7 +71,7 @@ module.exports = function (app) {
     if (!unsubscribeId) {
       req.flash(
         'info',
-        'We we unable to process this request, please check and try againÍ'
+        'We we unable to process this request, please check and try again'
       );
       res.redirect(origin);
     }
@@ -98,8 +98,7 @@ module.exports = function (app) {
         .then(() => {
           req.flash(
             'success',
-            "We've successfully updated your email preferences. Thank you " +
-              'for resubscribing.'
+            "We've successfully updated your email preferences. Thank you for resubscribing."
           );
           return res.redirectWithFlash(origin);
         })
