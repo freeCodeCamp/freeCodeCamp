@@ -103,12 +103,13 @@
   "devDependencies": {
     "@babel/preset-typescript": "7.21.5",
     "@testing-library/cypress": "8.0.7",
+    "@testing-library/dom": "8.20.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.1",
     "@types/lodash": "4.14.194",
     "@types/node": "18.16.0",
     "@types/store": "2.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "@typescript-eslint/parser": "^5.54.0",
     "babel-eslint": "^10.1.0",
     "@babel/runtime": "^7.20.13",
     "cross-env": "7.0.3",
@@ -132,6 +133,7 @@
     "jest-environment-jsdom": "29.5.0",
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
+    "lodash": "4.17.21",
     "markdownlint": "0.28.2",
     "npm-run-all": "4.1.5",
     "prettier": "^2.8.0",
@@ -140,7 +142,6 @@
     "store": "2.0.12",
     "ts-node": "10.9.1",
     "typescript": "4.9.5",
-    "webpack-bundle-analyzer": "4.8.0",
-    "knip": "2.12.2"
+    "webpack-bundle-analyzer": "4.8.0"
   }
 }

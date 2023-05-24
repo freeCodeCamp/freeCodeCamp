@@ -12,7 +12,6 @@ If you use MongoDB Atlas, the set is managed for you.
 
 The simplest way to run a replica set locally is to use the docker-compose file
 in /tools.
-first install [docker desktop](https://www.docker.com/products/docker-desktop/)
 
 ```bash
 cd tools

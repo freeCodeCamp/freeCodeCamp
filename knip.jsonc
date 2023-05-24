@@ -30,29 +30,23 @@
       "entry": ["*.{js,ts}"]
     }
   },
-  "ignoreWorkspaces": [
-    "api",
-    "curriculum",
-    "tools/ui-components",
-    "tools/challenge-editor/api",
-    "tools/challenge-editor/client",
-    "tools/challenge-parser",
-    "tools/challenge-helper-scripts",
-    "tools/scripts/lint",
-    "api/server"
-  ],
   "ignoreDependencies": [
     "gatsby-cli",
     "sass.js",
     "markdownlint",
     "util",
-    "fcc-source-challenges",
     "eslint",
     "invariant",
     "execa",
     "dotenv",
     "core-js",
     "@babel/runtime",
-    "js-yaml"
+    "js-yaml",
+    "@testing-library/dom",
+    "@testing-library/jest-dom",
+    "@testing-library/user-event",
+    "@redux-saga/core",
+    "@total-typescript/ts-reset",
+    "lodash"
   ]
 }
