@@ -62,14 +62,14 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('/account/reset', () => {
+    describe('/account/reset-progress', () => {
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: 'foo@bar.com' },
           data: modifiedProgressData
         });
 
-        const response = await superRequest('/user/account/reset', {
+        const response = await superRequest('/account/reset-progress', {
           method: 'POST',
           setCookies
         });
@@ -102,9 +102,9 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('/account/reset', () => {
+    describe('/account/reset-progress', () => {
       test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/account/reset', {
+        const response = await superRequest('/account/reset-progress', {
           method: 'POST'
         });
 

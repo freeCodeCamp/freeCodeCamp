@@ -50,7 +50,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.post(
-    '/account/reset',
+    '/account/reset-progress',
     {
       schema: {
         response: {
