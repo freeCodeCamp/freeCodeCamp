@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["jsonProtocol"]
 }
 
@@ -103,6 +103,7 @@ model user {
   isSciCompPyCertV7            Boolean? // Undefined
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
+  isCollegeAlgebraPyCertV8     Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
