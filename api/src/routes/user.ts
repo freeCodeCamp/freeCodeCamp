@@ -13,6 +13,9 @@ const nanoid = customAlphabet(
   64
 );
 
+const removeNulls = (obj: Record<string, unknown>) =>
+  _.pickBy(obj, value => value !== null);
+
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -166,16 +169,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
-        const { usernameDisplay, ...publicUser } = user;
-        const filteredPublicUser = _.pickBy(
-          publicUser,
-          property => property !== null
-        );
+        const { usernameDisplay, completedChallenges, ...publicUser } = user;
 
         return {
           user: {
             [user.username]: {
-              ...filteredPublicUser,
+              ...removeNulls(publicUser),
+              completedChallenges: completedChallenges.map(removeNulls),
               joinDate: new ObjectId(user.id).getTimestamp(),
               username: usernameDisplay || user.username
             }

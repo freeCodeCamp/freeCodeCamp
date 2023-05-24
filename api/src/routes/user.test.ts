@@ -61,7 +61,21 @@ const testUserData = {
 const publicUserData = {
   about: testUserData.about,
   // calendar: { 152000297: 1, 152044032: 1 },
-  completedChallenges: testUserData.completedChallenges,
+  // testUserData.completedChallenges, with nulls removed
+  completedChallenges: [
+    {
+      id: 'a6b0bb188d873cb2c8729495',
+      completedDate: 1520002973119,
+      challengeType: 5,
+      files: []
+    },
+    {
+      id: 'a5229172f011153519423690',
+      completedDate: 1520440323273,
+      challengeType: 5,
+      files: []
+    }
+  ],
   githubProfile: testUserData.githubProfile,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
@@ -319,10 +333,6 @@ describe('userRoutes', () => {
         const testUser = await fastifyTestInstance?.prisma.user.findFirst({
           where: { email: testUserData.email }
         });
-
-        expect(testUser).not.toBeNull();
-        expect(testUser?.id).not.toBeNull();
-
         const publicUser = {
           ...publicUserData,
           id: testUser?.id,
@@ -333,12 +343,14 @@ describe('userRoutes', () => {
           method: 'GET',
           setCookies
         });
-
         const {
           user: { foobar }
         } = response.body as unknown as {
           user: { foobar: typeof publicUser };
         };
+
+        expect(testUser).not.toBeNull();
+        expect(testUser?.id).not.toBeNull();
         expect(foobar).toEqual(publicUser);
       });
     });
