@@ -213,6 +213,9 @@ importers:
       '@types/supertest':
         specifier: 2.0.12
         version: 2.0.12
+      ajv:
+        specifier: 8.12.0
+        version: 8.12.0
       dotenv-cli:
         specifier: 7.2.1
         version: 7.2.1
@@ -486,10 +489,10 @@ importers:
         version: 6.19.7(gatsby@3.15.0)(react@16.14.0)
       '@stripe/react-stripe-js':
         specifier: 1.16.5
-        version: 1.16.5(@stripe/stripe-js@1.52.1)(react-dom@16.14.0)(react@16.14.0)
+        version: 1.16.5(@stripe/stripe-js@1.53.0)(react-dom@16.14.0)(react@16.14.0)
       '@stripe/stripe-js':
-        specifier: 1.52.1
-        version: 1.52.1
+        specifier: 1.53.0
+        version: 1.53.0
       '@testing-library/jest-dom':
         specifier: 5.16.5
         version: 5.16.5
@@ -4056,7 +4059,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.10.5
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.12.9):
     resolution: {integrity: sha512-XoqMijGZb9y3y2XskN+P1wUGiVwWZ5JmoDRwx5+3GmEplNyVM2s2Dg8ILFQm8rWM48orGy5YpI5Bl8U1y7ydlA==}
@@ -4064,7 +4067,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.18.0):
@@ -4082,7 +4085,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.21.8):
     resolution: {integrity: sha512-XoqMijGZb9y3y2XskN+P1wUGiVwWZ5JmoDRwx5+3GmEplNyVM2s2Dg8ILFQm8rWM48orGy5YpI5Bl8U1y7ydlA==}
@@ -4090,7 +4093,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.21.8
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-optional-catch-binding@7.8.3(@babel/core@7.18.0):
     resolution: {integrity: sha512-6VPD0Pc1lpTqw0aKoeRTMiB+kWhAoT24PA+ksWSBrFtl5SIRVpZlwN3NNPQjehA2E/91FV3RjLWoVTglWcSV3Q==}
@@ -4132,7 +4135,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-optional-chaining@7.8.3(@babel/core@7.21.8):
     resolution: {integrity: sha512-KoK9ErH1MBlCPxV0VANkXW2/dw4vlbGDrFgz8bmUsBGYkFRcbRwMh6cIJubdPrkxRwuGdtCk0v/wPTKbQgBjkg==}
@@ -4140,7 +4143,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.21.8
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-private-property-in-object@7.14.5(@babel/core@7.18.0):
     resolution: {integrity: sha512-0wVnp9dxJ72ZUJDV27ZfbSj6iHLoytYZmh3rFcxNnvsJF3ktkzLDZPy/mA17HGsaQT3/DQsWYX1f1QGWkCoVUg==}
@@ -9455,21 +9458,21 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.52.1)(react-dom@16.14.0)(react@16.14.0):
+  /@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.53.0)(react-dom@16.14.0)(react@16.14.0):
     resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
     peerDependencies:
       '@stripe/stripe-js': ^1.44.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@stripe/stripe-js': 1.52.1
+      '@stripe/stripe-js': 1.53.0
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
     dev: false
 
-  /@stripe/stripe-js@1.52.1:
-    resolution: {integrity: sha512-fza40OPSpGQlFxc5TZWiYC/6Lk89Sep1fLuv9ss33YS6lCAF8UZbfA1E6W+lwO4c7WRKZIZumHIEbPJfP/O9uw==}
+  /@stripe/stripe-js@1.53.0:
+    resolution: {integrity: sha512-qhhAa5WxlgVqh1J41ppyqqQVu6S1T1Q9lDAk2Ho9eI/GjrkMvAHcJpKqhekJRsZ1vjsK4P68PYOcXBXPyNCpnQ==}
     dev: false
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
