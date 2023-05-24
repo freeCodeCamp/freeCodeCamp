@@ -1,7 +1,6 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+
+import { schemas } from '../schemas';
 
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -17,32 +16,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-profileui',
     {
-      schema: {
-        body: Type.Object({
-          profileUI: Type.Object({
-            isLocked: Type.Boolean(),
-            showAbout: Type.Boolean(),
-            showCerts: Type.Boolean(),
-            showDonation: Type.Boolean(),
-            showHeatMap: Type.Boolean(),
-            showLocation: Type.Boolean(),
-            showName: Type.Boolean(),
-            showPoints: Type.Boolean(),
-            showPortfolio: Type.Boolean(),
-            showTimeLine: Type.Boolean()
-          })
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.privacy-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
       try {
@@ -80,21 +54,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-theme',
     {
-      schema: {
-        body: Type.Object({
-          theme: Type.Union([Type.Literal('default'), Type.Literal('night')])
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.updated-themes'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyTheme
     },
     async (req, reply) => {
       try {
@@ -166,21 +126,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: {
-        body: Type.Object({
-          keyboardShortcuts: Type.Boolean()
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.keyboard-shortcut-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
       try {
@@ -206,21 +152,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: {
-        body: Type.Object({
-          sendQuincyEmail: Type.Boolean()
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.subscribe-to-quincy-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
       try {
@@ -246,21 +178,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-honesty',
     {
-      schema: {
-        body: Type.Object({
-          isHonest: Type.Literal(true)
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('buttons.accepted-honesty'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
       try {
@@ -286,21 +204,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-privacy-terms',
     {
-      schema: {
-        body: Type.Object({
-          quincyEmails: Type.Boolean()
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.privacy-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyPrivacyTerms
     },
     async (req, reply) => {
       try {
