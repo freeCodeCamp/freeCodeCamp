@@ -73,7 +73,7 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                           |
 
 > [!ATTENTION]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting section](troubleshooting-development-issues.md) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
