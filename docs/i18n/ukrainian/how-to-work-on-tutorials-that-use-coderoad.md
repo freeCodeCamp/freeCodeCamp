@@ -56,13 +56,13 @@
 - Виконайте інструкції з [репозиторію rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha), щоб запустити контейнер
 - Запустіть матеріал, використовуючи файл `tutorial.json` на новій гілці
 
-### Reviewing PR's to `main`
+### Перевірка PR до `main`
 
-If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`.
+Якщо ви переглядаєте PR, який містить граматичні чи інструкційні зміни до `main`, як описано вище, зміни у `TUTORIAL.md` мають відповідати змінам у `tutorial.json`.
 
-The `tutorial.json` file should not have changes to commit hashes, or step/level ids. Startup or level commands or file watchers likely should not be changed either. There are exceptions if there's an issue with a step, but they should be treated with more caution.
+Файл `tutorial.json` не повинен містити змін хешів затвердження чи ідентифікаторів кроків/рівнів. Також не варто змінювати команди запуску/рівня або наглядачів за файлами. Бувають винятки, якщо наявні проблеми з кроком, але до них потрібно ставитись обережно.
 
-Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
+Також майте на увазі, що інструкції часто використовують уроки навколо себе для контексту, тому переконайтеся, що вони зрозумілі.
 
 ### Робота над гілкою версії
 
@@ -88,7 +88,7 @@ Also, keep in mind that instructions usually use the lessons around them for con
 - Додайте та затвердьте файл
 - Надішліть зміни до розгалуження
 - Протестуйте зміни, дотримуючись [інструкцій нижче](#testing-changes-to-a-version-branch). Внесіть нові зміни та затвердьте їх так само, або, якщо ви задоволені, дотримуйтесь решти інструкцій
-- Створіть PR до `main`, використовуючи нову гілку `feat/version-X.X.Y`. Назвіть його `version X.X.Y ready for review`. Їх не буде об’єднано, але таким чином рецензенти знатимуть про готову нову версію
+- Створіть PR до `main`, використовуючи нову гілку `feat/version-X.X.Y`. Назвіть його `version X.X.Y ready for review`. Його не буде об’єднано, але таким чином рецензенти знатимуть про готову нову версію
 - Залиште решту для рецензентів
 
 ### Тестування змін на гілці версії
