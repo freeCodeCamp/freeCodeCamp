@@ -31,13 +31,20 @@ describe('Donate', () => {
         });
       });
 
-      it('should return 400 if the body is empty', async () => {
-        const response = await superRequest('/donate/add-donation', {
+      it('should return 400 if the user is already donating', async () => {
+        const successResponse = await superRequest('/donate/add-donation', {
           method: 'POST',
           setCookies
         }).send({});
-
-        expect(response.status).toBe(400);
+        
+        expect(successResponse.status).toBe(200);       
+        
+        const failResponse = await superRequest('/donate/add-donation', {
+          method: 'POST',
+          setCookies
+        }).send({});
+    
+        expect(failResponse.status).toBe(400);
       });
     });
   });
