@@ -76,6 +76,19 @@ export default class PayPalButtonScriptLoader extends Component<
     isSubscription: true
   };
 
+  static displayName = 'PayPalButtonScriptLoader';
+
+  static getDerivedStateFromProps(
+    props: PayPalButtonScriptLoaderProps,
+    state: PayPalButtonScriptLoaderState
+  ): { isSubscription: boolean } | null {
+    const { isSubscription } = props;
+    if (isSubscription !== state.isSubscription) {
+      return { isSubscription: isSubscription };
+    }
+    return null;
+  }
+
   componentDidMount(): void {
     this.loadScript(this.props.isSubscription, true);
   }
