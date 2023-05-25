@@ -25,6 +25,7 @@ exports.backEndProject = backEndProject;
 exports.pythonProject = pythonProject;
 exports.codeAllyCert = codeAllyCert;
 exports.colab = colab;
+exports.exam = exam;
 
 exports.challengeTypes = {
   html,

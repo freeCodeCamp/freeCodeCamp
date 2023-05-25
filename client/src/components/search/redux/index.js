@@ -12,12 +12,7 @@ const initialState = {
 };
 
 const types = createTypes(
-  [
-    'toggleSearchDropdown',
-    'toggleSearchFocused',
-    'updateSearchIndexName',
-    'updateSearchQuery'
-  ],
+  ['toggleSearchDropdown', 'toggleSearchFocused', 'updateSearchQuery'],
   ns
 );
 
@@ -40,10 +35,6 @@ export const reducer = handleActions(
     [types.toggleSearchFocused]: (state, { payload }) => ({
       ...state,
       isSearchBarFocused: payload
-    }),
-    [types.updateSearchIndexName]: (state, { payload }) => ({
-      ...state,
-      indexName: payload
     }),
     [types.updateSearchQuery]: (state, { payload }) => {
       return {
