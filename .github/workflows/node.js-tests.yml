@@ -165,6 +165,55 @@ jobs:
       - name: Run Tests
         run: pnpm test
 
+  test-new:
+    name: Test New Curriculum
+    needs: lint
+    runs-on: ubuntu-20.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
+      - name: Install Dependencies
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+
+      - name: Run Tests
+        run: pnpm test
+
   test-localization:
     name: Localize
     needs: lint
