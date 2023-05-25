@@ -44,11 +44,11 @@ const testUserData = {
     }
   ],
   sound: true,
-  yearsTopContributor: ['2018']
+  yearsTopContributor: ['2018'],
+  twitter: '@foobar'
   // The following can exist in the db, but we're leaving them unset so we can
   // test how that's handled.
   // linkedin: null,
-  // twitter: null,
   // savedChallenges: null,
   // partiallyCompletedChallenges: null,
   // TODO: create test with all of these
@@ -111,6 +111,7 @@ const publicUserData = {
   emailVerified: testUserData.emailVerified,
   sendQuincyEmail: testUserData.sendQuincyEmail,
   theme: testUserData.theme,
+  twitter: 'https://twitter.com/foobar',
   sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: testUserData.completedChallenges.length,

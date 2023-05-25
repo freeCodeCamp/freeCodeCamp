@@ -10,6 +10,7 @@ import {
   getCalendar,
   getPoints
 } from '../utils/progress';
+import { normalizeTwitter } from '../utils/normalize';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -180,6 +181,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           usernameDisplay,
           completedChallenges,
           progressTimestamps,
+          twitter,
           ...publicUser
         } = user;
 
@@ -198,6 +200,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),
               joinDate: new ObjectId(user.id).getTimestamp(),
+              ...normalizeTwitter(twitter),
               username: usernameDisplay || user.username
             }
           },
