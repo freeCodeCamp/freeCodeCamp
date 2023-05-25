@@ -103,8 +103,6 @@ const publicUserData = {
   points: testUserData.progressTimestamps,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  // projects: testUserData.projects,
-  // streak: testUserData.streak,
   username: testUserData.usernameDisplay, // It defaults to usernameDisplay
   website: testUserData.website,
   yearsTopContributor: testUserData.yearsTopContributor,
