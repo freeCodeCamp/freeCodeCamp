@@ -23,6 +23,10 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           200: Type.Object({
             isDonating: Type.Boolean()
           }),
+          400: Type.Object({
+            message: Type.Literal('User is already donating.'),
+            type: Type.Literal('info')
+          }),
           500: Type.Object({
             message: Type.Literal('Something went wrong.'),
             type: Type.Literal('danger')
@@ -37,7 +41,11 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (user?.isDonating) {
-          throw new Error('User is already donating.');
+          void reply.code(400);
+          return {
+            type: 'info',
+            message: 'User is already donating.'
+          } as const;
         }
 
         await fastify.prisma.user.update({
@@ -52,7 +60,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (error) {
         fastify.log.error(error);
-        void reply.code(400);
+        void reply.code(500);
         return {
           type: 'danger',
           message: 'Something went wrong.'
