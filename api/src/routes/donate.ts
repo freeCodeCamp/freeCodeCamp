@@ -18,9 +18,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     '/donate/add-donation',
     {
       schema: {
-        body: Type.Object({
-          isDonating: Type.Boolean()
-        }),
+        body: Type.Object({}),
         response: {
           200: Type.Object({
             isDonating: Type.Boolean()
@@ -34,10 +32,18 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        const user = await fastify.prisma.user.findUnique({
+          where: { id: req.session.user.id }
+        });
+
+        if (user?.isDonating) {
+          throw new Error('User is already donating.');
+        }
+
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            isDonating: req.body.isDonating
+            isDonating: true
           }
         });
 
@@ -46,7 +52,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (error) {
         fastify.log.error(error);
-        void reply.code(500);
+        void reply.code(400);
         return {
           type: 'danger',
           message: 'Something went wrong.'

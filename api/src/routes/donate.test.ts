@@ -8,8 +8,11 @@ describe('Donate', () => {
   describe('Authenticated User', () => {
     let setCookies: string[];
 
-    // Authenticate user
-    beforeAll(async () => {
+    beforeEach(async () => {
+      await fastifyTestInstance.prisma.user.updateMany({
+        where: { email: 'foo@bar.com' },
+        data: { isDonating: false }
+      });
       const res = await request(fastifyTestInstance.server).get(
         '/auth/dev-callback'
       );
@@ -37,14 +40,14 @@ describe('Donate', () => {
           method: 'POST',
           setCookies
         }).send({});
-        
-        expect(successResponse.status).toBe(200);       
-        
+
+        expect(successResponse.status).toBe(200);
+
         const failResponse = await superRequest('/donate/add-donation', {
           method: 'POST',
           setCookies
         }).send({});
-    
+
         expect(failResponse.status).toBe(400);
       });
     });
