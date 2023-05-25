@@ -97,12 +97,12 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
     throw new Error('Multiple users found with the same email address');
   }
 
-  return existingUsers.length > 0
-    ? { id: existingUsers[0].id }
-    : await fastify.prisma.user.create({
+  return !existingUsers.length
+    ? await fastify.prisma.user.create({
         data: { ...defaultUser, email },
         select: { id: true }
-      });
+      })
+    : { id: existingUsers[0].id };
 };
 
 export const devLoginCallback: FastifyPluginCallback = (
