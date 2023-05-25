@@ -100,9 +100,9 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
   return existingUsers.length
     ? existingUsers[0]
     : await fastify.prisma.user.create({
-      data: { ...defaultUser, email },
-      select: { id: true }
-    });
+        data: { ...defaultUser, email },
+        select: { id: true }
+      });
 };
 
 export const devLoginCallback: FastifyPluginCallback = (
