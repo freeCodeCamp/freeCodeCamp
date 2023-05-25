@@ -22,7 +22,8 @@ describe('Donate', () => {
           method: 'POST',
           setCookies
         }).send({
-          isDonating: true
+          anything: true,
+          itIs: 'ignored'
         });
 
         expect(response.status).toBe(200);
