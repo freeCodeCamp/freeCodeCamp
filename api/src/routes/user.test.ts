@@ -100,7 +100,7 @@ const publicUserData = {
   location: testUserData.location,
   name: testUserData.name,
   picture: testUserData.picture,
-  // points: testUserData.points,
+  points: testUserData.progressTimestamps,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   // projects: testUserData.projects,

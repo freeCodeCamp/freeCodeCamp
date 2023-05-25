@@ -130,6 +130,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             isApisMicroservicesCert: true,
             isBackEndCert: true,
             isCheater: true,
+            isCollegeAlgebraPyCertV8: true,
             isDataAnalysisPyCertV7: true,
             isDataVisCert: true,
             isDonating: true,
@@ -185,6 +186,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               completedChallenges: completedChallenges.map(removeNulls),
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(progressTimestamps as ProgressTimestamp[]),
+              points: progressTimestamps,
               joinDate: new ObjectId(user.id).getTimestamp(),
               username: usernameDisplay || user.username
             }
