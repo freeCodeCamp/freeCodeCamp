@@ -188,10 +188,12 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             [user.username]: {
               ...removeNulls(publicUser),
               completedChallenges: completedChallenges.map(removeNulls),
+              completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),
+              // This assertion is necessary until the database is normalized.
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),

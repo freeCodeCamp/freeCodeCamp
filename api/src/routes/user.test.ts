@@ -113,10 +113,7 @@ const publicUserData = {
   theme: testUserData.theme,
   sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
-  // completedChallengeCount: testUserData.completedChallengeCount,
-  // completedProjectCount: testUserData.completedProjectCount,
-  // completedCertCount: testUserData.completedCertCount,
-  // completedLegacyCertCount: testUserData.completedLegacyCertCount,
+  completedChallengeCount: testUserData.completedChallenges.length,
   acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
   donationEmails: testUserData.donationEmails
 };
