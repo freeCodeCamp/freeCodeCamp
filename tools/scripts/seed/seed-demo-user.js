@@ -158,14 +158,16 @@ log('Connected successfully to mongo');
 const db = client.db('freecodecamp');
 const user = db.collection('user');
 
+const userIds = [
+  new ObjectId('5fa2db00a25c1c1fa49ce067'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb9')
+];
+
 const dropUserTokens = async function () {
   await db.collection('UserToken').deleteMany({
     userId: {
-      $in: [
-        new ObjectId('5fa2db00a25c1c1fa49ce067'),
-        new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-        new ObjectId('5bd30e0f1caf6ac3ddddddb9')
-      ]
+      $in: userIds
     }
   });
 };
@@ -173,11 +175,7 @@ const dropUserTokens = async function () {
 const dropUsers = async function () {
   await db.collection('user').deleteMany({
     _id: {
-      $in: [
-        new ObjectId('5fa2db00a25c1c1fa49ce067'),
-        new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-        new ObjectId('5bd30e0f1caf6ac3ddddddb9')
-      ]
+      $in: userIds
     }
   });
 };
