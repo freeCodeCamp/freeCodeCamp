@@ -21,7 +21,7 @@ window.$ = jQuery;
 
 document.__initTestFrame = initTestFrame;
 
-export interface InitTestFrameArg {
+interface InitTestFrameArg {
   code: {
     contents?: string;
     editableContents?: string;
