@@ -184,8 +184,8 @@ const run = async () => {
   await dropUserTokens();
   await dropUsers();
   if (process.argv[2] === 'certified-user') {
-    user.insertOne(fullyCertifiedUser);
-    user.insertOne(blankUser);
+    await user.insertOne(fullyCertifiedUser);
+    await user.insertOne(blankUser);
   } else {
     await user.insertOne(demoUser);
     await user.insertOne(blankUser);
