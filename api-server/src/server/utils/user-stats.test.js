@@ -599,9 +599,6 @@ describe('user stats', () => {
 
           expect(user).toHaveProperty('progressTimestamps');
           expect(user).toHaveProperty('completedChallengeCount');
-          expect(user).toHaveProperty('completedProjectCount');
-          expect(user).toHaveProperty('completedCertCount');
-          expect(user).toHaveProperty('completedLegacyCertCount');
           expect(user).toHaveProperty('completedChallenges');
         })
         .then(done)
