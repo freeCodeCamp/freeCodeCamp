@@ -16,3 +16,7 @@ export const getCalendar = (
 
   return calendar;
 };
+
+export const getPoints = (progressTimestamps?: ProgressTimestamp[]): number => {
+  return progressTimestamps?.length ?? 1;
+};

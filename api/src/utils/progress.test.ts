@@ -1,4 +1,4 @@
-import { getCalendar } from './progress';
+import { getCalendar, getPoints } from './progress';
 
 describe('utils/progress', () => {
   describe('getCalendar', () => {
@@ -25,6 +25,15 @@ describe('utils/progress', () => {
         1111: 1,
         1113: 1
       });
+    });
+  });
+
+  describe('getPoints', () => {
+    it('should return 1 if there are no progressTimestamps', () => {
+      expect(getPoints(undefined)).toEqual(1);
+    });
+    it('should return then number of progressTimestamps if there are any', () => {
+      expect(getPoints([0, 1, 2])).toEqual(3);
     });
   });
 });
