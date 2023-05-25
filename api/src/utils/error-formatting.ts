@@ -1,4 +1,7 @@
 import { ErrorObject } from 'ajv';
+import { certTypes } from '../../../shared/config/certification-settings';
+
+type CertLogs = (typeof certTypes)[keyof typeof certTypes];
 
 type FormattedError = {
   type: 'error';
@@ -44,6 +47,30 @@ export const formatProjectCompletedValidation = (
     : {
         type: 'error',
         message: 'That does not appear to be a valid challenge submission.'
+      };
+};
+
+/**
+ * Format validation errors for /project-completed.
+ *
+ * @param errors An array of validation errors.
+ * @returns Formatted errors that can be used in the response.
+ */
+export const formatCertificationValidation = (
+  errors: ErrorObject[]
+): FormattedError => {
+  const error = getError(errors);
+
+  return error.instancePath === '' &&
+    Object.hasOwn(certTypes, error.params.missingProperty as CertLogs)
+    ? {
+        type: 'error',
+        message:
+          'You have not provided the valid param for us to display the certification.'
+      }
+    : {
+        type: 'error',
+        message: 'That does not appear to be a valid certification request.'
       };
 };
 

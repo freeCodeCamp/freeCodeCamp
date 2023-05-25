@@ -1,4 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
+// import type { certTypes } from '../../shared/config/certification-settings';
+
+// type CertTypes = keyof typeof certTypes;
 
 const generic500 = Type.Object({
   message: Type.Literal(
@@ -507,6 +510,47 @@ export const schemas = {
         message: Type.Literal(
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         )
+      })
+    }
+  },
+  // certification
+  certSlug: {
+    params: Type.Object({
+      // certSlug: Type.Literal(CertTypes),
+      certSlug: Type.Union([
+        Type.Literal('legacy-front-end'),
+        Type.Literal('responsive-web-design'),
+        Type.Literal('javascript-algorithms-and-data-structures'),
+        Type.Literal('front-end-development-libraries'),
+        Type.Literal('data-visualization'),
+        Type.Literal('relational-database-v8'),
+        Type.Literal('back-end-development-and-apis'),
+        Type.Literal('quality-assurance-v7'),
+        Type.Literal('scientific-computing-with-python-v7'),
+        Type.Literal('data-analysis-with-python-v7'),
+        Type.Literal('information-security-v7'),
+        Type.Literal('machine-learning-with-python-v7'),
+        Type.Literal('college-algebra-with-python-v8'),
+        // Type.Literal('foundational-c-sharp-with-microsoft'),
+        Type.Literal('legacy-back-end'),
+        Type.Literal('legacy-data-visualization'),
+        Type.Literal('information-security-and-quality-assurance'),
+        Type.Literal('full-stack')
+      ]),
+      username: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        certSlug: Type.String(),
+        username: Type.String(),
+        name: Type.Optional(Type.String()),
+        certTitle: Type.String(),
+        date: Type.Number(),
+        completionTime: Type.Number()
+      }),
+      400: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('info')
       })
     }
   }
