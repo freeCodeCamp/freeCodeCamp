@@ -1,6 +1,13 @@
 class WorkerExecutor {
+  _workerPool: Worker[];
+  _terminateWorker: boolean;
+  _maxWorkers: number;
+  _workersInUse: number;
+  _scriptURL: string;
+  _taskQueue: Task[];
+
   constructor(
-    workerName,
+    workerName: string,
     { location = '/js/', maxWorkers = 2, terminateWorker = false } = {}
   ) {
     this._workerPool = [];
@@ -14,9 +21,16 @@ class WorkerExecutor {
   }
 
   async _getWorker() {
-    return this._workerPool.length
-      ? this._workerPool.shift()
-      : this._createWorker();
+    if (this._workerPool.length) {
+      return this._workerPool.shift();
+    }
+    try {
+      return await this._createWorker();
+    }
+    catch (err) {
+      this._workersInUse--;
+      throw err;
+    }
   }
 
   _createWorker() {
@@ -26,12 +40,13 @@ class WorkerExecutor {
         if (e.data?.type === 'contentLoaded') {
           resolve(newWorker);
         }
+        // do something else if not contentLoaded?
       };
       newWorker.onerror = err => reject(err);
     });
   }
 
-  _handleTaskEnd(task) {
+  _handleTaskEnd(task: Task) {
     return () => {
       this._workersInUse--;
       const worker = task._worker;
@@ -51,45 +66,63 @@ class WorkerExecutor {
   _processQueue() {
     while (this._workersInUse < this._maxWorkers && this._taskQueue.length) {
       const task = this._taskQueue.shift();
+      if (!task) {
+        break;
+      }
       const handleTaskEnd = this._handleTaskEnd(task);
-      task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd);
-      this._workersInUse++;
+      try {
+        task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd)
+
+        this._workersInUse++;
+      }
+      catch (err) {
+        //do something
+      }
+
     }
   }
 
   execute(data, timeout = 1000) {
-    const task = eventify({});
-    task._execute = function (getWorker) {
-      getWorker().then(
-        worker => {
-          task._worker = worker;
-          const timeoutId = setTimeout(() => {
-            task._worker.terminate();
-            task._worker = null;
-            this.emit('error', { message: 'timeout' });
-          }, timeout);
+    // make a new task
+    const task = eventify();
+    // give the task a worker
+    task._execute = async function (getWorker) {
+      try {
+        const worker = await getWorker();
+        task._worker = worker;
+        const timeoutId = setTimeout(() => {
+          task._worker?.terminate();
+          task._worker = null;
+          this.emit('error', { message: 'timeout' });
+        }, timeout);
 
-          worker.onmessage = e => {
-            clearTimeout(timeoutId);
-            // data.type is undefined when the message has been processed
-            // successfully and defined when something else has happened (e.g.
-            // an error occurred)
-            if (e.data?.type) {
-              this.emit(e.data.type, e.data.data);
-            } else {
-              this.emit('done', e.data);
-            }
-          };
+        worker.onmessage = (e: {
+          data: {
+            type?: string,
+            data?: any
+          }
+        }) => {
+          clearTimeout(timeoutId);
+          // data.type is undefined when the message has been processed
+          // successfully and defined when something else has happened (e.g.
+          // an error occurred)
+          if (e.data?.type) {
+            this.emit(e.data.type, e.data.data);
+          } else {
+            this.emit('done', e.data);
+          }
+        };
 
-          worker.onerror = e => {
-            clearTimeout(timeoutId);
-            this.emit('error', { message: e.message });
-          };
+        worker.onerror = (e: { message: string }) => {
+          clearTimeout(timeoutId);
+          this.emit('error', { message: e.message });
+        };
 
-          worker.postMessage(data);
-        },
-        err => this.emit('error', err)
-      );
+        worker.postMessage(data);
+      }
+      catch (err) {
+        this.emit('error', err)
+      }
       return this;
     };
 
@@ -104,41 +137,44 @@ class WorkerExecutor {
     return task;
   }
 }
-
+type Listeners = Set<Function>;
+type Events = Map<string, Listeners>;
+type Task = {
+  _events: Events;
+  on: (event: string, listener: Function) => Task;
+  removeListener: (event: string, listener: Function) => Task;
+  emit: (event: string, ...args: any[]) => Task;
+  once: (event: string, listener: Function) => void;
+  _worker?: Worker | null;
+  _execute: (getWorker: () => Promise<Worker>) => Promise<Task>;
+}
 // Error and completion handling
-const eventify = self => {
-  self._events = {};
+const eventify = (): Task => {
+  const self = {} as Task;
+  self._events = new Map() as Events;
 
-  self.on = (event, listener) => {
-    if (typeof self._events[event] === 'undefined') {
-      self._events[event] = [];
-    }
-    self._events[event].push(listener);
+  self.on = (event: string, listener: Function) => {
+    const currentListeners = self._events.get(event) || new Set();
+    self._events.set(event, currentListeners.add(listener));
     return self;
   };
 
-  self.removeListener = (event, listener) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const index = self._events[event].indexOf(listener);
-      if (index !== -1) {
-        self._events[event].splice(index, 1);
-      }
-    }
+  self.removeListener = (event: string, listener: Function) => {
+    const currentListeners = self._events.get(event) || new Set();
+    currentListeners.delete(listener);
     return self;
   };
 
   self.emit = (event, ...args) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const listeners = self._events[event].slice();
-      for (let listener of listeners) {
-        listener.apply(self, args);
-      }
+    const listeners = self._events.get(event) || new Set();
+    for (let listener of listeners) {
+      listener.apply(self, args);
     }
     return self;
   };
 
   self.once = (event, listener) => {
-    self.on(event, function handler(...args) {
+    self.on(event, function handler(...args: any[]) {
       self.removeListener(event, handler);
       listener.apply(self, args);
     });
@@ -147,7 +183,11 @@ const eventify = self => {
 
   return self;
 };
-
-export default function createWorkerExecutor(workerName, options) {
+type CreateWorkerOptions = {
+  location?: string,
+  maxWorkers?: number,
+  terminateWorker?: boolean
+}
+export default function createWorkerExecutor(workerName: string, options: CreateWorkerOptions) {
   return new WorkerExecutor(workerName, options);
 }
