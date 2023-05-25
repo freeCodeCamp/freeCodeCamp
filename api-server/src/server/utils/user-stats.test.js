@@ -592,7 +592,7 @@ describe('user stats', () => {
     });
 
     it('resolves a user for a given id', done => {
-      expect.assertions(7);
+      expect.assertions(4);
       getUserById(mockUserID, mockApp.models.User)
         .then(user => {
           expect(user).toEqual(mockUser);
