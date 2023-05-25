@@ -22,9 +22,6 @@ export interface State {
     user: Record<string, unknown>;
     userFetchState: DefaultFetchState;
     userProfileFetchState: DefaultFetchState;
-    sessionMeta: {
-      activeDonations: number;
-    };
     showDonationModal: boolean;
     showSignoutModal: boolean;
     isOnline: boolean;

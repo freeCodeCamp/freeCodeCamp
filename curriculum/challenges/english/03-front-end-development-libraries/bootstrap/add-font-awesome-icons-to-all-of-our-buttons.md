@@ -17,7 +17,7 @@ Font Awesome is a convenient library of icons. These icons can be web fonts or v
 
 Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
 
-**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
+**Note:** You can use either `i` or `span` elements to complete this challenge.
 
 # --hints--
 

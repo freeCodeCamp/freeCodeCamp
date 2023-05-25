@@ -88,7 +88,6 @@ async function request<T>(
 
 interface SessionUser {
   user?: { [username: string]: User };
-  sessionMeta: { activeDonations: number };
 }
 
 type CompleteChallengeFromApi = {
@@ -163,7 +162,6 @@ export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
     return {
       response,
       data: {
-        sessionMeta: data.sessionMeta,
         result,
         user
       }
