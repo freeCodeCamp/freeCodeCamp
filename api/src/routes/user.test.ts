@@ -96,7 +96,7 @@ const publicUserData = {
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
   isDataAnalysisPyCertV7: testUserData.isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7: testUserData.isMachineLearningPyCertV7,
-  // isCollegeAlgebraPyCertV8: testUserData.isCollegeAlgebraPyCertV8, // TODO: update schema
+  isCollegeAlgebraPyCertV8: testUserData.isCollegeAlgebraPyCertV8,
   location: testUserData.location,
   name: testUserData.name,
   picture: testUserData.picture,

@@ -27,6 +27,7 @@ export const defaultUser: Omit<Prisma.userCreateInput, 'email'> = {
   isMachineLearningPyCertV7: false,
   isQaCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isCollegeAlgebraPyCertV8: false,
   isRespWebDesignCert: false,
   isSciCompPyCertV7: false,
   keyboardShortcuts: false,
