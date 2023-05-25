@@ -100,7 +100,7 @@ const publicUserData = {
   location: testUserData.location,
   name: testUserData.name,
   picture: testUserData.picture,
-  points: testUserData.progressTimestamps,
+  points: testUserData.progressTimestamps.length,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   username: testUserData.usernameDisplay, // It defaults to usernameDisplay
