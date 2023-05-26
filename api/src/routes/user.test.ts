@@ -7,6 +7,7 @@ import { ObjectId } from 'mongodb';
 import { defaultUser } from '../utils/default-user';
 import { setupServer, superRequest } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+import { encodeUserToken } from '../utils/user-token';
 
 // This is used to build a test user.
 const testUserData = {
@@ -295,9 +296,15 @@ describe('userRoutes', () => {
     });
     describe('user/get-user-session', () => {
       beforeEach(async () => {
-        await fastifyTestInstance?.prisma.user.updateMany({
+        await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
           data: testUserData
+        });
+      });
+
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.userToken.delete({
+          where: { id: 'dummy-id' }
         });
       });
 
@@ -353,6 +360,39 @@ describe('userRoutes', () => {
         expect(testUser).not.toBeNull();
         expect(testUser?.id).not.toBeNull();
         expect(foobar).toEqual(publicUser);
+      });
+
+      test('GET returns the userToken if it exists', async () => {
+        const testUser =
+          await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: testUserData.email }
+          });
+
+        const tokenData = {
+          userId: testUser.id,
+          ttl: 123,
+          id: 'dummy-id',
+          created: new Date()
+        };
+
+        const encodedToken = encodeUserToken(tokenData.id);
+
+        await fastifyTestInstance.prisma.userToken.create({
+          data: tokenData
+        });
+
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        const {
+          user: { foobar }
+        } = response.body as unknown as {
+          user: { foobar: unknown };
+        };
+
+        expect(foobar).toMatchObject({ userToken: encodedToken });
       });
     });
   });

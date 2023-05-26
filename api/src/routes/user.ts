@@ -119,6 +119,17 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, res) => {
       try {
+        // TODO: promise all to fetch both
+        const userToken = await fastify.prisma.userToken.findFirst({
+          where: { userId: req.session.user.id }
+        });
+
+        const encodedToken = userToken
+          ? encodeUserToken(userToken.id)
+          : undefined;
+
+        console.log('encodedToken', encodedToken);
+
         const user = await fastify.prisma.user.findUnique({
           where: { id: req.session.user.id },
           select: {
@@ -201,7 +212,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               ),
               joinDate: new ObjectId(user.id).getTimestamp(),
               ...normalizeTwitter(twitter),
-              username: usernameDisplay || user.username
+              username: usernameDisplay || user.username,
+              userToken: encodedToken
             }
           },
           result: user.username
