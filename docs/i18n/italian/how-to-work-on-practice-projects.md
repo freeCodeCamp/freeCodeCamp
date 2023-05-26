@@ -134,3 +134,7 @@ Uno script una tantum che aggiorna automaticamente il frontmatter nei file di ma
 ```bash
 pnpm run update-step-titles
 ```
+
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).

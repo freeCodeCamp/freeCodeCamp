@@ -8,4 +8,4 @@ Anche se al momento non offriamo ricomplete, siamo grati a queste fantastiche pe
 - Peter Samir https://www.linkedin.com/in/peter-samir/
 - Laurence Tennant ([@hyperreality](https://github.com/hyperreality)) lavorando con IncludeSecurity.com - [GHSA-cc3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Grazie per i vostri contributi :pray:
+> **Thank you for your contributions :pray:**

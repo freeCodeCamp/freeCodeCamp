@@ -216,7 +216,7 @@ const algoliaIndices = {
 };
 ```
 
-## Attivare video localizzati
+### Enabling Localized Videos
 
 Per le sfide video, devi cambiare alcune cose. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. Per esempio, in questo modo aggiungeresti Dothraki alla query:
 
@@ -270,7 +270,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Interfaccia utente client
+## Client UI
 
 Dovrai fare un ulteriore passo per gestire le traduzioni dell'interfaccia utente client.
 
@@ -283,7 +283,7 @@ Dovrai copiare i seguenti file da `/client/i18n/locales/english` a `/client/i18n
 - `motivation.json`
 - `trending.json`
 
-## Testare traduzioni in locale
+## Testing Translations Locally
 
 Se desideri testare le traduzioni localmente, prima di aggiungerle al nostro repository principale - salta i cambiamenti delle procedure di Crowdin. Segui i passaggi per abilitare una lingua, quindi scarica le traduzioni da Crowdin e caricale nel tuo codice locale.
 
@@ -303,11 +303,11 @@ Una volta che questi saranno in posizione, dovresti essere in grado di eseguire 
 
 Per distribuire News per una nuova lingua, dovrai creare due PR. Una Pr sarà al [repo CDN](https://github.com/freeCodeCamp/cdn), e l'altra sarà al [repo News](https://github.com/freeCodeCamp/news).
 
-## Preparare il Repo CDN per la nuova lingua
+## Prep the CDN Repo for the New Language
 
 News ottiene i link di tendenza e i titoli degli articoli dal nostro CDN durante il build e li aggiunge al piè di pagina. News recupera anche i file Day.js dal CDN durante il build per localizzare date e orari per ogni lingua.
 
-### Aggiungere un file YAML per gli articoli di tendenza
+### Add a YAML File for Trending Articles
 
 Clona il [repo CDN](https://github.com/freeCodeCamp/cdn) e crea un nuovo branch.
 
@@ -329,7 +329,7 @@ article3link: ...
   ...
 ```
 
-### Aggiungere un file Day.js locale per la nuova lingua
+### Add a Day.js Locale File for the New Language
 
 Per impostazione predefinita, Day.js include solo l'inglese come locale. Per abilitarlo a lavorare con altre lingue, è necessario aggiungere un nuovo file locale Day.js al CDN.
 
@@ -367,13 +367,13 @@ Copia il codice locale Day.js dalla nuova scheda nel nuovo file che hai creato. 
 
 Quindi apri una PR al repo CDN per aggiungere i file YAML e Day.js per la revisione.
 
-## Preparare il Repo News per la nuova lingua
+## Prep the News Repo for the New Language
 
 Il [repo News](https://github.com/freeCodeCamp/news) prende i dati da un'istanza di Ghost, i file che hai aggiunto al CDN, fa il build di News e il deployment.
 
 > [!WARN] Pull requests to the News repo _must_ come from the same repo. Non dovresti lavorare da un fork per questo passaggio.
 
-### Modificare il file di configurazione principale
+### Modify the Main Config File
 
 Clona il repo News e crea un nuovo branch.
 
@@ -407,7 +407,7 @@ const algoliaIndices = {
 };
 ```
 
-### Aggiungere il file JSON i18next per la nuova lingua
+### Add the i18next JSON Files for the New Language
 
 Successivamente, vai nella cartella `config/i18n/locales`, crea una nuova cartella e dalle il nome della nuova lingua che stai aggiungendo. Ad esempio, se stai lanciando le News in Dothraki, crea una nuova cartella chiamata `dothraki`.
 
