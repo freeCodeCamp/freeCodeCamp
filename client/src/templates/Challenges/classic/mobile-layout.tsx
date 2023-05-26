@@ -48,7 +48,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   };
 
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
-  setToolPanelPosition = () => {
+  setToolPanelPosition = (): void => {
     if (!this.#toolPanelGroup) return;
     // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
@@ -66,7 +66,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     }
   };
 
-  isMobileDeviceWithToolPanel = () =>
+  isMobileDeviceWithToolPanel = (): RegExpExecArray | null =>
     this.#toolPanelGroup && /iPhone|Android.+Mobile/.exec(navigator.userAgent);
 
   componentDidMount(): void {
