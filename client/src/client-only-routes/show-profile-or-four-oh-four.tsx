@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { isBrowser } from '../../utils/index';
 import Loader from '../components/helpers/loader';
+import Profile from '../components/profile/profile';
 import { fetchProfileForUser } from '../redux/actions';
 import {
   usernameSelector,
@@ -12,7 +13,6 @@ import {
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
 
-const Profile = lazy(() => import('../components/profile/profile'));
 const FourOhFour = lazy(() => import('../components/FourOhFour'));
 
 interface ShowProfileOrFourOhFourProps {
@@ -56,32 +56,6 @@ const mapDispatchToProps: {
   fetchProfileForUser
 };
 
-type ErrorBoundaryProps = {
-  fallback: React.ReactNode;
-};
-
-class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  { hasError: boolean }
-> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
-
 function ShowProfileOrFourOhFour({
   requestedUser,
   maybeUser,
@@ -101,11 +75,14 @@ function ShowProfileOrFourOhFour({
   if (!isBrowser()) {
     return null;
   }
-  return (
+
+  return isEmpty(requestedUser) ? (
     <Suspense fallback={<Loader fullScreen={true} />}>
-      <ErrorBoundary fallback={<FourOhFour />}>
-        <Profile isSessionUser={isSessionUser} user={requestedUser} />
-      </ErrorBoundary>
+      <FourOhFour />
+    </Suspense>
+  ) : (
+    <Suspense fallback={<Loader fullScreen={true} />}>
+      <Profile isSessionUser={isSessionUser} user={requestedUser} />
     </Suspense>
   );
 }
