@@ -10,15 +10,15 @@ This repository is continuously built, tested, and deployed to **separate sets o
 
 This involves three steps to be followed in sequence:
 
-1. Нові зміни (виправлення і функціонал) зливаються у нашу основну гілку розробки (`main`) через pull запити.
-2. Ці зміни проходять через ряд автоматизованих тестів.
+1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
+2. These changes are run through a series of automated tests.
 3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
 ### Building the codebase - Mapping Git Branches to Deployments
 
 Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
 
-This is an intermediate release for our developers and volunteer contributors. Він також відомий як наш "staging" або "бета" реліз.
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
 It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
@@ -28,7 +28,7 @@ This is the final release that moves changes to our production platforms on free
 
 ### Testing changes - Integration and User Acceptance Testing
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. Всі наші тести виконуються за допомогою таких програм, як [Github Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 We have unit tests for testing our challenge solutions, Server APIs, and Client User interfaces. These help us test the integration between different components.
 
@@ -38,9 +38,9 @@ Together these tests help in preventing issues from repeating themselves and ens
 
 ### Deploying Changes - Pushing changes to servers
 
-Ми налаштували безперервне програмне забезпечення доставки для внесення змін до наших серверів розробки і виробництва.
+We have configured continuous delivery software to push changes to our development and production servers.
 
-Після того, як зміни будуть відправлені в захищені гілки релізу, конвеєр збірки автоматично запускається для гілки. Гарбопроводи відповідають за будівництво артефактів та збереження їх у холодному сховищі для подальшого використання.
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
 The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
 
@@ -154,68 +154,68 @@ For staff use:
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
 
-## Build, Test and Deployment Status
+## Збірка, тест та статус розгортання
 
-Here is the current test, build and deployment status of the codebase.
+Ось поточний тест, збірка та статус розгортання кодової бази.
 
-| Branch                                                                           | Unit Tests                                                                                                                                                                                                                       | Integration Tests                                                                                                                                                                                                        | Builds & Deployments                                                                                                              |
+| Гілка                                                                            | Модульні тести                                                                                                                                                                                                                   | Інтеграційні тести                                                                                                                                                                                                       | Збірки та розгортання                                                                                                             |
 |:-------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------- |
 | [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main)                 | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=main)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22)                               | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time)         | -                                                                                                                                 |
 | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-staging)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-staging) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-staging&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
 | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-current)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-current) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-current&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
-| `prod-next` (experimental, upcoming)                                             | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                        | -                                                                                                                                 |
+| `prod-next` (експериментальне, майбутнє)                                         | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                        | -                                                                                                                                 |
 
-## Early Access and Beta Testing
+## Ранній доступ та бета-тестування
 
-We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
+Ми вітаємо вас протестувати ці випуски в режимі **публічного бета-тестування** та отримати ранній доступ до майбутніх функціональностей платформи. Іноді ці функціональності/зміни також називають **наступними, бета, проміжними** тощо.
 
-Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent**, and **stable** for everyone.
+Ваші внески у вигляді зворотного зв’язку та повідомлень про проблеми допоможуть нам зробити платформу `freeCodeCamp.org` більш **стійкою**, **послідовною** та **стабільною** для кожного.
 
-We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
+Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org. Ви круті!
 
-### Identifying the Upcoming Version of the Platforms
+### Ідентифікація майбутньої версії платформ
 
-Currently, a public beta testing version is available at:
+Наразі публічне бета-тестування доступне на:
 
-| Application | Language | URL                                      |
-|:----------- |:-------- |:---------------------------------------- |
-| Learn       | English  | <https://www.freecodecamp.dev>           |
-|             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
-|             | Chinese  | <https://www.freecodecamp.dev/chinese>   |
-| News        | English  | <https://www.freecodecamp.dev/news>      |
-| Forum       | English  | <https://forum.freecodecamp.dev>         |
-|             | Chinese  | <https://freecodecamp.dev/chinese/forum> |
-| API         | -        | `https://api.freecodecamp.dev`           |
+| Програма | Мова       | URL                                      |
+|:-------- |:---------- |:---------------------------------------- |
+| Навчання | Англійська | <https://www.freecodecamp.dev>           |
+|          | Іспанська  | <https://www.freecodecamp.dev/espanol>   |
+|          | Китайська  | <https://www.freecodecamp.dev/chinese>   |
+| Новини   | Англійська | <https://www.freecodecamp.dev/news>      |
+| Форум    | Англійська | <https://forum.freecodecamp.dev>         |
+|          | Китайська  | <https://freecodecamp.dev/chinese/forum> |
+| API      | -          | `https://api.freecodecamp.dev`           |
 
-> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> [!NOTE] Назва домену відрізняється від **`freeCodeCamp.org`**. Це є навмисним, щоб відвернути індексацію пошукової системи і запобігти непорозумінь для користувачів платформи.
 > 
-> The above list is not exhaustive of all the applications that we provision. Also, not all language variants are deployed in staging to conserve resources.
+> Наведений вище список не є повним списком усіх програм, які ми забезпечуємо. Також не всі мовні варіанти розгорнуті у проміжній версії, щоб зберегти ресурси.
 
-### Identifying the Current Version of the Platforms
+### Ідентифікація поточної версії платформ
 
-**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+**Поточна версія платформи завжди доступна на [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-The dev-team merges changes from the `prod-staging` branch to `prod-current` when they release changes. The top commit should be what you see live on the site.
+Команда розробників об’єднує зміни з гілки `prod-staging` до `prod-current`, коли вони випускають зміни. Верхнім затвердженням має бути те, що ви побачите на сайті.
 
-You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively, you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
+Ви можете ідентифікувати точну розгорнуту версію, відвідавши збірку та журнали розгортання, доступні в розділі статусу. Або ж ви можете написати нам у [чаті](https://discord.gg/PRyKn3Vbay) для підтвердження.
 
 ### Known Limitations
 
 There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Do not send regular users to this site as a measure of confirming a fix
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign in page may look different than production
+- **Sign in page may look different than production**
 
   We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
@@ -736,7 +736,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    nginx -s reload
    ```
 
-**Docker Cluster:**
+**Кластер Docker:**
 
 1. SSH into the instance and navigate to the chat config path
 

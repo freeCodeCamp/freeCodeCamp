@@ -1,6 +1,6 @@
-# Courses VSCode Extension
+# Розширення VSCode Courses
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+Тут детально описано інструкції з обслуговування репозиторію [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension), який містить вихідний код для розширення [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses).
 
 ## Публікування розширення
 
@@ -21,21 +21,21 @@ git commit -am "<tag_type>(<version>): <description>"
 git push
 ```
 
-Optionally, you can push directly to `upstream/main`, but opening a new PR is recommended for a sanity check.
+За бажанням, ви можете надіслати її одразу до `upstream/main`, але ми рекомендуємо створити новий PR для перевірки працездатності.
 
-3. Create a new GitHub Release using the GitHub UI:
+3. Створіть новий GitHub Release, використовуючи GitHub UI:
 
-- Correctly increment the version number, when creating a new tag.
-- Upload the `.vsix` file with the release.
-- Publish the release, and confirm the action succeeded.
+- Правильно збільште номер версії під час створення нового тегу.
+- Завантажте файл `.vsix` із випуском.
+- Опублікуйте випуск та підтвердьте успішність дії.
 
-> [!NOTE] Creating a release requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+> [!NOTE] Для створення випуску потрібен письмовий доступ до репозиторію `freeCodeCamp/courses-vscode-extension`.
 
-## Manually Publishing the Extension
+## Публікування розширення вручну
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
+Завантаження до Visual Studio Marketplace можна здійснити вручну, дотримуючись таких дій:
 
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. Відвідайте https://marketplace.visualstudio.com/ та увійдіть
+2. Перейдіть на [сторінку freeCodeCamp Publisher](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Виберіть відповідне розширення та оберіть `Update`
+4. Завантажте файл зі своїх локальних файлів

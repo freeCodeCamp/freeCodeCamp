@@ -266,7 +266,11 @@ Seria bom manter as chaves na mesma ordem entre todos os arquivos também. Além
 
 > [!NOTE] O underscore (`_`) é um caractere reservado para chaves dos arquivos que ficam do lado do client. Veja [a documentação](https://www.i18next.com/translation-function/plurals) para saber como são usados.
 
-## Documentação útil
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [documentação react-i18next](https://react.i18next.com/latest/usetranslation-hook)
 - [documentação i18next](https://www.i18next.com/translation-function/essentials)

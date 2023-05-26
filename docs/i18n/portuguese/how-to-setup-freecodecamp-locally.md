@@ -71,7 +71,7 @@ Apoiamos principalmente o desenvolvimento em sistemas Linux e Unix, como o Ubunt
 | [pnpm](https://pnpm.io/installation)                                                                | `8.x`   | -                                                                                           |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                           |
 
-> [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. See [troubleshooting section](troubleshooting-development-issues.md) for details.
+> [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. Veja [a seção de solução de problemas](troubleshooting-development-issues.md) para detalhes.
 
 Se o Node.js já estiver instalado em sua máquina, execute os seguintes comandos para validar as versões:
 

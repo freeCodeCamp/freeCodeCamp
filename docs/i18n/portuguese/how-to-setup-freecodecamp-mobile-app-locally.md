@@ -2,11 +2,11 @@ Siga este guia para configurar a aplicação para dispositivos móveis do freeCo
 
 Alguns dos fluxos de trabalho de contribuição — como a correção de erros na base de código — necessitam que você execute a aplicação do freeCodeCamp localmente.
 
-### Como preparar sua máquina local
+## How to Prepare your Local Machine
 
 Comece instalando o software pré-requisito para seu sistema operacional.
 
-#### Pré-requisitos
+### Prerequisites
 
 | Pré-requisito                   | Versão | Observações                                  |
 | ------------------------------- | ------ | -------------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente de desenvolvimento. Isto é comum para muitos fluxos de trabalho de desenvolvimento, e você só precisará fazer isso uma vez.
 
-##### Siga estas etapas para deixar seu ambiente de desenvolvimento pronto:
+#### Follow these steps to get your development environment ready:
 
 1. Instale o [Git](https://git-scm.com/) ou seu cliente Git favorito, se você ainda não fez isso. Atualize para a versão mais recente. A versão que veio com seu SO pode estar desatualizada.
 
@@ -40,7 +40,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
    Nós recomendamos muito usar o [Visual Studio Code](https://code.visualstudio.com/) ou o Android Studio. Também recomendamos instalar as [extensões](https://docs.flutter.dev/get-started/editor?tab=vscode) oficiais.
 
-## Faça o fork do repositório no GitHub
+## Fork the Repository on GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) é uma etapa onde você obtém sua própria cópia do repositório (vulgo _repo_) no GitHub.
 
@@ -58,7 +58,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia da apl
 
 3. Depois que o repositório recebeu um fork, você será redirecionado para a cópia do repositório em `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub).
 
-## Clonar o seu fork no GitHub
+## Clone your Fork from GitHub
 
 [Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
@@ -78,7 +78,7 @@ Isto vai baixar todo o repositório da aplicação do freeCodeCamp para disposit
 
 Nota: `--depth=1` cria um clone raso do seu fork, com apenas o histórico mais recente.
 
-## Configurar sincronização a partir do pai
+## Set up Syncing from Parent
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
@@ -113,7 +113,7 @@ Agora que você baixou uma cópia do seu fork, será necessário configurar um r
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Executar a aplicação do freeCodeCamp para dispositivos móveis localmente
+## Running freeCodeCamp Mobile App Locally
 
 Agora que você tem uma cópia local da aplicação do freeCodeCamp para dispositivos móveis, você pode seguir estas instruções para executá-la localmente.
 
@@ -172,7 +172,7 @@ flutter run
 
 > [!TIP] Se estiver usando o VSCode ou o Android Studio, poderá iniciar a aplicação facilmente sem ter de executar os comandos no terminal. Mais informações [aqui](https://docs.flutter.dev/get-started/test-drive).
 
-## Fazer alterações localmente
+## Making Changes Locally
 
 Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no clone local do seu fork.
 
@@ -361,7 +361,7 @@ Siga estes passos:
     git push origin branch/nome-aqui
     ```
 
-## Propondo um Pull Request (PR)
+## Proposing a Pull Request (PR)
 
 Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
@@ -374,7 +374,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Solução de problemas
+## Troubleshooting
 
 ### Problemas com a instalação dos pré-requisitos recomendados
 
@@ -398,7 +398,7 @@ Se você receber erros durante a instalação das dependências, certifique-se d
 
 Seja paciente, pois a primeira configuração pode demorar um pouco, dependendo da largura de banda da sua rede.
 
-## Obter ajuda
+## Getting Help
 
 Se você está com dificuldades e precisa de ajuda, fique à vontade em perguntar na categoria ['Contributors' (colaboradores) em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou [na sala de bate-papo dos colaboradores](https://discord.gg/PRyKn3Vbay).
 

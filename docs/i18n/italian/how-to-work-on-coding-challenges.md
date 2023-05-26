@@ -483,13 +483,15 @@ Puoi anche testare una sfida singola con i seguenti step:
    ```
    pnpm run test -- -g titolo-sfida-qui ```
 
-Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](how-to-open-a-pull-request.md).
-
 > [!TIP] Puoi impostare la variabile d'ambiente  `LOCALE` nel file `.env` alla lingua usata nelle sfide che devi testare.
 > 
 > I valori attualmente accettati sono `english` (inglese) e `chinese` (cinese), con `english` come valore di default.
 
-### Link utili
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 Creare e modificare sfide:
 

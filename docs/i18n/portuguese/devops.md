@@ -203,19 +203,19 @@ Você pode identificar a versão exata implantada visitando os registros de comp
 
 Existem algumas limitações e desvantagens conhecidas ao usar a versão beta da plataforma.
 
-- #### Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Os usuários na versão beta terão uma conta separada da produção.** A versão beta usa um banco de dados fisicamente separado da produção. Isso nos dá a capacidade de evitar qualquer perda acidental de dados ou modificações. A equipe de desenvolvimento pode limpar o banco de dados nesta versão beta conforme necessário.
 
-- #### Não há garantias na disponibilidade e confiabilidade das plataformas beta
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Espera-se que a implantação seja frequente e em iterações rápidas, às vezes várias vezes ao dia. Como resultado, haverá tempos de inatividade inesperados ou funcionalidades quebradas na versão beta.
 
-- #### Não envie usuários regulares para este site como uma medida de confirmar uma correção
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   O site beta é e sempre foi para melhorar o desenvolvimento e os testes locais, nada mais. Não é uma promessa do que está por vir, mas um vislumbre do que está sendo trabalhado.
 
-- #### O login na página pode parecer diferente da produção
+- **Sign in page may look different than production**
 
   Nós utilizamos um locatário de teste para o freeCodeCamp.dev no Auth 0 e, portanto, não temos a capacidade de definir um domínio personalizado. Isso faz com que todas as callbacks de redirecionamento e a página de login apareçam em um domínio padrão como: `https://freecodecamp-dev.auth0.com/`. Isso não afeta a funcionalidade e é o mais próximo da produção que conseguimos.
 
