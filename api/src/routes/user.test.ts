@@ -184,6 +184,11 @@ describe('userRoutes', () => {
     });
 
     describe('/account/reset-progress', () => {
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: { email: 'foo@bar.com' }
+        });
+      });
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: 'foo@bar.com' },
