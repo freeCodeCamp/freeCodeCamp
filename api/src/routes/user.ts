@@ -1,7 +1,6 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+
+import { schemas } from '../schemas';
 
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -13,17 +12,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/account/delete',
     {
-      schema: {
-        response: {
-          200: Type.Object({}),
-          500: Type.Object({
-            message: Type.Literal(
-              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-            ),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
       try {
@@ -52,17 +41,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/account/reset-progress',
     {
-      schema: {
-        response: {
-          200: Type.Object({}),
-          500: Type.Object({
-            message: Type.Literal(
-              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-            ),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.resetMyProgress
     },
     async (req, reply) => {
       try {

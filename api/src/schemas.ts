@@ -123,6 +123,29 @@ export const schemas = {
       })
     }
   },
+  // User:
+  deleteMyAccount: {
+    response: {
+      200: Type.Object({}),
+      500: Type.Object({
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        ),
+        type: Type.Literal('danger')
+      })
+    }
+  },
+  resetMyProgress: {
+    response: {
+      200: Type.Object({}),
+      500: Type.Object({
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        ),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {
