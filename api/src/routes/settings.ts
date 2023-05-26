@@ -177,8 +177,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           newUsername === oldUsername
             ? false
             : await fastify.prisma.user.count({
-              where: { username: newUsername }
-            });
+                where: { username: newUsername }
+              });
 
         if (usernameTaken || isProfane || onBlocklist) {
           void reply.code(400);
@@ -193,12 +193,12 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             username: newUsername,
             usernameDisplay: newUsernameDisplay
           }
-        })
+        });
         return {
           message: 'flash.username-updated',
           type: 'success',
           username: newUsernameDisplay
-        } as const
+        } as const;
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
@@ -206,8 +206,6 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   ),
-
-
     fastify.put(
       '/update-my-about',
       {
@@ -215,7 +213,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       },
       async (req, reply) => {
         const hasProtocol = isURL(req.body.picture);
-        
+
         try {
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },
