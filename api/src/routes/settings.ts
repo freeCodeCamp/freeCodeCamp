@@ -177,7 +177,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           200: Type.Object({
             message: Type.String(),
             type: Type.Union([Type.Literal('success'), Type.Literal('info')]),
-            username: Type.String()
+            username: Type.Optional(
+              Type.Union([Type.String(), Type.Undefined()])
+            )
           }),
           500: Type.Object({
             message: Type.String(),
@@ -205,8 +207,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         if (alreadyUsername && oldUsernameDisplay) {
           return {
             message: 'flash.username-used',
-            type: 'info',
-            username: newUsernameDisplay
+            type: 'info'
           } as const;
         }
 
@@ -215,8 +216,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         if (!validation.valid) {
           return {
             message: `Username ${newUsername} ${validation.error}`,
-            type: 'info',
-            username: newUsernameDisplay
+            type: 'info'
           } as const;
         }
 
@@ -224,7 +224,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         const preserved = blocklistedUsernames.includes(newUsername);
 
         // Checks for both username and usernameDisplay because users
-        // can have the same username but with differnt casing
+        // can have the same username but with different casing
 
         const exists = await fastify.prisma.user.findFirst({
           where: { username: newUsername, usernameDisplay: newUsernameDisplay }
@@ -233,8 +233,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         if (exists || hasProfanity || preserved) {
           return {
             message: 'flash.username-taken',
-            type: 'info',
-            username: newUsernameDisplay
+            type: 'info'
           } as const;
         }
 

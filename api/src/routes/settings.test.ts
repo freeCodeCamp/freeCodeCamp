@@ -199,8 +199,7 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'Username twaha@ contains invalid characters',
-          type: 'info',
-          username: 'twaha@'
+          type: 'info'
         });
       });
 
@@ -216,8 +215,7 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
-          type: 'info',
-          username: 'german'
+          type: 'info'
         });
       });
 
@@ -233,8 +231,7 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
-          type: 'info',
-          username: 'ass'
+          type: 'info'
         });
       });
 
@@ -250,8 +247,7 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'Username 404 is a reserved error code',
-          type: 'info',
-          username: '404'
+          type: 'info'
         });
       });
 
@@ -309,8 +305,7 @@ describe('settingRoutes', () => {
 
         expect(response?.body).toEqual({
           message: 'flash.username-used',
-          type: 'info',
-          username: 'twaha2'
+          type: 'info'
         });
       });
 
