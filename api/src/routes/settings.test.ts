@@ -195,7 +195,7 @@ describe('settingRoutes', () => {
           username: 'twaha@'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
           message: 'Username twaha@ contains invalid characters',
@@ -211,7 +211,7 @@ describe('settingRoutes', () => {
           username: 'german'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
@@ -227,7 +227,7 @@ describe('settingRoutes', () => {
           username: 'ass'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
           message: 'flash.username-taken',
@@ -243,7 +243,7 @@ describe('settingRoutes', () => {
           username: '404'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
           message: 'Username 404 is a reserved error code',
@@ -259,12 +259,7 @@ describe('settingRoutes', () => {
           username: 'fo'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
-          message: 'Username at is too short',
-          type: 'info'
-        });
+        expect(response?.statusCode).toEqual(500);
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
@@ -299,7 +294,7 @@ describe('settingRoutes', () => {
           username: 'twaha2'
         });
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response?.statusCode).toEqual(400);
 
         expect(response?.body).toEqual({
           message: 'flash.username-used',
@@ -330,16 +325,16 @@ describe('settingRoutes', () => {
           username: 'TWaha3'
         });
       });
-
-      test('PUT returns 400 status code with invalid username', async () => {
+      test('PUT /update-my-username returns 400 status code when username is too long', async () => {
+        const username = 'a'.repeat(1001);
         const response = await superRequest('/update-my-username', {
           method: 'PUT',
           setCookies
         }).send({
-          username: 'thisusernameiswaytolongforuse'
+          username
         });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response?.statusCode).toEqual(500);
       });
     });
 

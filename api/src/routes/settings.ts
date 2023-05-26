@@ -131,6 +131,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           newUsernameDisplay === oldUsernameDisplay;
 
         if (alreadyUsername && oldUsernameDisplay) {
+          void reply.code(400);
           return {
             message: 'flash.username-used',
             type: 'info'
@@ -140,6 +141,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         const validation = isValidUsername(newUsername);
 
         if (!validation.valid) {
+          void reply.code(400);
           return {
             message: `Username ${newUsername} ${validation.error}`,
             type: 'info'
@@ -157,6 +159,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (exists || hasProfanity || preserved) {
+          void reply.code(400);
           return {
             message: 'flash.username-taken',
             type: 'info'
