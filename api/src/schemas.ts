@@ -45,13 +45,13 @@ export const schemas = {
   },
   updateMyUsername: {
     body: Type.Object({
-      username: Type.String({ minLength: 3, maxLength: 20 })
+      username: Type.String({ minLength: 3, maxLength: 1000 })
     }),
     response: {
       200: Type.Object({
         message: Type.String(),
         type: Type.Union([Type.Literal('success'), Type.Literal('info')]),
-        username: Type.Optional(Type.Union([Type.String(), Type.Undefined()]))
+        username: Type.Optional(Type.String())
       }),
       500: Type.Object({
         message: Type.String(),

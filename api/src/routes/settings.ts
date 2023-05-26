@@ -116,15 +116,15 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const user = await fastify.prisma.user.findFirst({
+        const user = await fastify.prisma.user.findFirstOrThrow({
           where: { id: req.session.user.id }
         });
 
         const newUsername = req.body.username.toLowerCase();
-        const oldUsername = user?.username.toLowerCase();
+        const oldUsername = user.username.toLowerCase();
 
         const newUsernameDisplay = req.body.username.trim();
-        const oldUsernameDisplay = user?.usernameDisplay?.trim();
+        const oldUsernameDisplay = user.usernameDisplay?.trim();
 
         const alreadyUsername =
           newUsername === oldUsername &&
