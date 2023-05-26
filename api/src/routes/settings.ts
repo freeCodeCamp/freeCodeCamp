@@ -5,6 +5,18 @@ import { isValidUsername } from '../../../utils/validate';
 import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
 
+export const isURL = (picture?: string): boolean => {
+  let hasURLProtocol = true;
+  try {
+    const url = picture ? new URL(picture) : null;
+    return (hasURLProtocol =
+      !!url && (url.protocol == 'http:' || url.protocol == 'https:'));
+  } catch {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    return (hasURLProtocol = false);
+  }
+};
+
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -202,14 +214,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         schema: schemas.updateMyAbout
       },
       async (req, reply) => {
-        let hasProtocol = true;
-        try {
-          const url = req.body.picture ? new URL(req.body.picture) : null;
-          hasProtocol =
-            !!url && (url.protocol == 'http:' || url.protocol == 'https:');
-        } catch {
-          hasProtocol = false;
-        }
+        const hasProtocol = isURL(req.body.picture);
+        
         try {
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },

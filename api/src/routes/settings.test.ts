@@ -504,7 +504,7 @@ describe('settingRoutes', () => {
           name: 'Quincy Larson',
           location: 'USA',
           // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
-          picture: ''
+          picture: 'invalid'
         });
 
         expect(response.body).toEqual({
