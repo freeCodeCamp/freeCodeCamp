@@ -69,9 +69,9 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 | --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                             |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                             |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                             |
 
-> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. Consulta [solución de problemas](#troubleshooting) para obtener más detalles.
+> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. See [troubleshooting section](troubleshooting-development-issues.md) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 

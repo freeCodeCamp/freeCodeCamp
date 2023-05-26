@@ -64,7 +64,6 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
-  sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   showSignoutModal: false,
   isOnline: true,
@@ -179,7 +178,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.fetchUserComplete]: (
       state,
-      { payload: { user, username, sessionMeta } }
+      { payload: { user, username } }
     ) => ({
       ...state,
       user: {
@@ -193,10 +192,6 @@ export const reducer = handleActions(
         complete: true,
         errored: false,
         error: null
-      },
-      sessionMeta: {
-        ...state.sessionMeta,
-        ...sessionMeta
       }
     }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({

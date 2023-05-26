@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["jsonProtocol"]
 }
 
@@ -25,7 +25,7 @@ type CompletedChallenge {
   githubLink         String? // Undefined
   id                 String
   isManuallyApproved Boolean? // Undefined
-  solution           String? // Undefined
+  solution           String? // Null | Undefined
 }
 
 type Portfolio {
@@ -92,21 +92,18 @@ model user {
   isFrontEndCert               Boolean? // Undefined
   isFrontEndLibsCert           Boolean? // Undefined
   isFullStackCert              Boolean? // Undefined
-  isGithub                     Boolean? // Undefined
   isHonest                     Boolean?
   isInfosecCertV7              Boolean? // Undefined
   isInfosecQaCert              Boolean? // Undefined
   isJsAlgoDataStructCert       Boolean? // Undefined
-  isLinkedIn                   Boolean? // Undefined
   isMachineLearningPyCertV7    Boolean? // Undefined
   isQaCertV7                   Boolean? // Undefined
   isRelationalDatabaseCertV8   Boolean? // Undefined
   isRespWebDesignCert          Boolean? // Undefined
   isSciCompPyCertV7            Boolean? // Undefined
-  isTwitter                    Boolean? // Undefined
-  isWebsite                    Boolean? // Undefined
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
+  isCollegeAlgebraPyCertV8     Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
