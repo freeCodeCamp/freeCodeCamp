@@ -11,11 +11,9 @@ import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 
 const lowerJawButtonStyle = 'btn-block btn';
-// const { t } = useTranslation();
 
 interface LowerJawPanelProps {
   resetButtonText: string;
-
   helpButtonText: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
@@ -51,7 +49,6 @@ interface LowerJawProps {
 
 const LowerButtonsPanel = ({
   resetButtonText,
-
   helpButtonText,
   resetButtonEvent,
   hideHelpButton,
@@ -60,42 +57,24 @@ const LowerButtonsPanel = ({
   return (
     <>
       <hr />
-      <div className='lower-utility-bar'>
+      <div className='utility-bar'>
         <button
           className='btn fade-in'
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row-reverse',
-            justifyContent: 'space-between',
-            paddingRight: '0.5rem'
-          }}
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
-          <span style={{ margin: 'auto', paddingLeft: '0.3rem' }}>
-            {resetButtonText}
-          </span>
           <Reset />
+          {resetButtonText}
         </button>
         {hideHelpButton && (
           <button
             className='btn fade-in'
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              flexDirection: 'row-reverse',
-              justifyContent: 'space-between',
-              paddingRight: '0.5rem'
-            }}
             id='get-help-button'
             data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
-            <span style={{ margin: 'auto', paddingLeft: '0.4rem' }}>
-              {helpButtonText}
-            </span>
             <Help />
+            {helpButtonText}
           </button>
         )}
       </div>

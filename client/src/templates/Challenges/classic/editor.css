@@ -174,17 +174,18 @@ textarea.inputarea {
   }
 }
 
-.lower-utility-bar {
+.utility-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(5em, 0.7fr));
+  gap: 1.25rem;
   align-items: center;
   justify-content: center;
 }
 
-.lower-utility-bar > button {
-  height: 2.3rem;
-  width: 5 rem;
+.utility-bar > button {
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
 }
 
 .progress-bar-container {
