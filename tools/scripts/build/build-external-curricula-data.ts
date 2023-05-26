@@ -1,25 +1,35 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../client/utils/challenge-types';
+import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
-export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
+export type Curriculum<T> = {
+  [keyValue in SuperBlocks]: T extends CurriculumProps
+    ? CurriculumProps
+    : GeneratedCurriculumProps;
+};
 
 interface IntroProps extends CurriculumProps {
   title: string;
   intro: string[];
 }
 
-interface CurriculumProps {
+export interface CurriculumProps {
   intro: string[];
-  blocks: Record<string, Block>;
+  blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
 }
 
-interface Block {
+interface GeneratedCurriculumProps {
+  intro: string[];
+  blocks: Record<string, Block<Record<string, unknown>>>;
+}
+
+interface Block<T> {
   desc: string[];
   intro: string[];
-  challenges: Record<string, unknown>;
+  challenges: T;
   meta: Record<string, unknown>;
 }
 
@@ -44,7 +54,7 @@ const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
 export function buildExtCurriculumData(
   ver: string,
-  curriculum: Curriculum
+  curriculum: Curriculum<CurriculumProps>
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');
   const dataPath = `${staticFolderPath}/curriculum-data/`;
@@ -71,24 +81,37 @@ export function buildExtCurriculumData(
     });
 
     for (const superBlockKey of superBlockKeys) {
-      const superBlock = <Curriculum>{};
+      const superBlock = <Curriculum<GeneratedCurriculumProps>>{};
       const blockNames = Object.keys(curriculum[superBlockKey].blocks);
 
       if (blockNames.length === 0) continue;
 
-      superBlock[superBlockKey] = <CurriculumProps>{};
+      superBlock[superBlockKey] = <GeneratedCurriculumProps>{};
       superBlock[superBlockKey]['intro'] =
         getSuperBlockDescription(superBlockKey);
       superBlock[superBlockKey]['blocks'] = {};
 
       for (let j = 0; j < blockNames.length; j++) {
-        superBlock[superBlockKey]['blocks'][blockNames[j]] = <Block>{};
+        superBlock[superBlockKey]['blocks'][blockNames[j]] = <
+          Block<Record<string, unknown>>
+        >{};
 
         superBlock[superBlockKey]['blocks'][blockNames[j]]['desc'] =
           getBlockDescription(superBlockKey, blockNames[j]);
 
         superBlock[superBlockKey]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
+
+        const blockChallenges =
+          curriculum[superBlockKey]['blocks'][blockNames[j]]['challenges'];
+
+        for (let k = 0; k < blockChallenges.length; k++) {
+          const challenge = blockChallenges[k];
+          const challengeId = challenge['id'];
+          const challengePath = `challenges/${superBlockKey}/${blockNames[j]}/${challengeId}`;
+
+          writeToFile(challengePath, challenge);
+        }
       }
 
       writeToFile(superBlockKey, superBlock);

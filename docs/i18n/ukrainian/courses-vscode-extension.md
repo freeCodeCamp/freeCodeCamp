@@ -2,19 +2,19 @@
 
 This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
 
-## Publishing the Extension
+## Публікування розширення
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
+GitHub Action автоматично публікує розширення для Visual Studio Marketplace після випуску нового GitHub Release.
 
-1. Package a new version of the extension:
+1. Запакуйте нову версію розширення:
 
 ```bash
 npm run pack -- <tag_type>
 ```
 
-Where `<tag_type>` is one of: `major`, `minor`, `patch`.
+Де `<tag_type>` є одним із: `major`, `minor`, `patch`.
 
-2. Push the new version to `main`:
+2. Надішліть нову версію до `main`:
 
 ```bash
 git commit -am "<tag_type>(<version>): <description>"

@@ -1,6 +1,6 @@
 ---
 id: 5900f3861000cf542c50fe99
-title: 'Problem 26: Reciprocal cycles'
+title: 'Problema 26: cicli reciproci'
 challengeType: 1
 forumTopicId: 301908
 dashedName: problem-26-reciprocal-cycles

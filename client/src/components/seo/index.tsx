@@ -48,7 +48,16 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
     site: {
       siteMetadata: { title: defaultTitle, siteUrl }
     }
-  }: SiteData = useStaticQuery(query);
+  }: SiteData = useStaticQuery(graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          title
+          siteUrl
+        }
+      }
+    }
+  `);
 
   const seo = {
     title: title || defaultTitle
@@ -99,14 +108,3 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
 SEO.displayName = 'SEO';
 
 export default SEO;
-
-export const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-      }
-    }
-  }
-`;

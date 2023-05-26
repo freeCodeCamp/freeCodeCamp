@@ -133,10 +133,10 @@ function createReadSessionUser(app) {
         ].map(obs => obs.toPromise())
       );
 
-      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const { calendar } = getProgress(progressTimestamps);
       const user = {
         ...queryUser.toJSON(),
-        ...progress,
+        calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem

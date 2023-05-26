@@ -7,11 +7,9 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
-export const completionCountSelector = state => state[MainApp].completionCount;
+const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-
-export const emailSelector = state => userSelector(state).email;
 
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;

@@ -1003,6 +1003,16 @@
       }
     }
   },
+  "example-certification": {
+    "title": "Example Certification",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Example Certification Exam",
+        "intro": ["placeholder"]
+      }
+    }
+  },
   "misc-text": {
     "certification": "Сертифікація «{{cert}}»",
     "browse-other": "Перегляньте інші безоплатні сертифікації\n(ми рекомендуємо виконувати їх послідовно)",

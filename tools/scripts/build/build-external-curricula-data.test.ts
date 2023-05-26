@@ -57,7 +57,10 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
     test('the files generated should have the correct schema', async () => {
       const fileArray = (
-        await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`)
+        await readdirp.promise(
+          `${clientStaticPath}/curriculum-data/${VERSION}`,
+          { directoryFilter: ['!challenges'] }
+        )
       ).map(file => file.path);
 
       fileArray

@@ -10,7 +10,7 @@ dashedName: problem-219-skew-cost-coding
 
 Siano $A$ e $B$ stringhe di bit (sequenze di 0 e 1).
 
-If $A$ is equal to the <u>left</u>most length($A$) bits of $B$, then $A$ is said to be a prefix of $B$.
+Se $A$ è uguale ai ($A$)<u>bit di sinistra</u> di $B$, $A$ si dice un prefisso di $B$.
 
 Ad esempio, 00110 è un prefisso di <u>00110</u>1001, ma non di 00111 o 100110.
 

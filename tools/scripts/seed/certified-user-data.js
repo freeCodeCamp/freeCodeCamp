@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-const ObjectId = require('mongodb').ObjectID;
+const { ObjectId } = require('mongodb');
 
 module.exports = {
-  _id: ObjectId('5fa2db00a25c1c1fa49ce067'),
+  _id: new ObjectId('5fa2db00a25c1c1fa49ce067'),
   email: 'foo@bar.com',
   emailVerified: true,
   progressTimestamps: [],
@@ -4730,5 +4730,6 @@ module.exports = {
   isDonating: false,
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
-  externalId: ''
+  externalId: '',
+  unsubscribeId: 'tBX8stC5jiustPBteF2mV'
 };
