@@ -51,7 +51,11 @@ export const schemas = {
       200: Type.Object({
         message: Type.String(),
         type: Type.Union([Type.Literal('success'), Type.Literal('info')]),
-        username: Type.Optional(Type.String())
+        username: Type.String()
+      }),
+      400: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('info'),
       }),
       500: Type.Object({
         message: Type.String(),
