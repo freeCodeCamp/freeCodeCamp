@@ -9,6 +9,10 @@ async function setupServer() {
   return fastify;
 }
 
+const isString = (value: unknown): value is string => {
+  return typeof value === 'string';
+};
+
 describe('redirectWithMessage plugin', () => {
   it('should decorate reply object with redirectWithMessage method', async () => {
     expect.assertions(3);
@@ -80,10 +84,6 @@ describe('redirectWithMessage plugin', () => {
         method: 'GET',
         url: '/'
       });
-
-      const isString = (value: unknown): value is string => {
-        return typeof value === 'string';
-      };
       if (!isString(res.headers.location))
         throw new Error('Location is not a string');
       const { search } = new URL(res.headers.location, 'http://localhost');
