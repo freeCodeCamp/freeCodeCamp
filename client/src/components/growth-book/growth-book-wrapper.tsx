@@ -11,6 +11,7 @@ import { createSelector } from 'reselect';
 import { isSignedInSelector, userSelector } from '../../redux/selectors';
 import envData from '../../../../config/env.json';
 import { User } from '../../redux/prop-types';
+import GrowthBookReduxConnector from './growth-book-redux-connector';
 
 const { clientLocale, growthbookUri } = envData as {
   clientLocale: string;
@@ -85,7 +86,9 @@ const GrowthBookWrapper = ({
   }, [isSignedIn, user.email, user.joinDate, user.completedChallenges]);
 
   return (
-    <GrowthBookProvider growthbook={growthbook}>{children}</GrowthBookProvider>
+    <GrowthBookProvider growthbook={growthbook}>
+      <GrowthBookReduxConnector>{children}</GrowthBookReduxConnector>
+    </GrowthBookProvider>
   );
 };
 

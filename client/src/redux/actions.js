@@ -19,8 +19,11 @@ export const openDonationModal = createAction(actionTypes.openDonationModal);
 export const preventBlockDonationRequests = createAction(
   actionTypes.preventBlockDonationRequests
 );
-export const preventProgressDonationRequests = createAction(
-  actionTypes.preventProgressDonationRequests
+export const setSessionChallNumProgressModalShown = createAction(
+  actionTypes.setSessionChallNumProgressModalShown
+);
+export const setShowMultipleProgressModals = createAction(
+  actionTypes.setShowMultipleProgressModals
 );
 export const updateDonationFormState = createAction(
   actionTypes.updateDonationFormState
