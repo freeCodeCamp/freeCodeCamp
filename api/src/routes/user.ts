@@ -91,8 +91,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             isDataAnalysisPyCertV7: false,
             isMachineLearningPyCertV7: false,
             isRelationalDatabaseCertV8: false,
-            // TODO: check if schema should be updated with below field
-            // isCollegeAlgebraPyCertV8: false
+            isCollegeAlgebraPyCertV8: false,
             completedChallenges: [],
             savedChallenges: [],
             partiallyCompletedChallenges: [],
