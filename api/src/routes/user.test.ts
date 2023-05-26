@@ -82,11 +82,8 @@ describe('userRoutes', () => {
         expect(response.status).toBe(200);
         expect(response.body).toStrictEqual({});
 
-        let key: keyof typeof baseProgressData;
         expect(user?.progressTimestamps).toHaveLength(1);
-        for (key in baseProgressData) {
-          expect(user?.[key]).toStrictEqual(baseProgressData[key]);
-        }
+        expect(user).toMatchObject(baseProgressData);
       });
     });
   });
