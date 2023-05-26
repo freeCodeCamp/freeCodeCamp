@@ -55,7 +55,7 @@ export const schemas = {
       }),
       400: Type.Object({
         message: Type.String(),
-        type: Type.Literal('info'),
+        type: Type.Literal('info')
       }),
       500: Type.Object({
         message: Type.String(),
