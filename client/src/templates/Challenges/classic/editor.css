@@ -182,6 +182,10 @@ textarea.inputarea {
   justify-content: center;
 }
 
+[lang='es'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+}
+
 .utility-bar > button {
   display: flex;
   align-items: center;
