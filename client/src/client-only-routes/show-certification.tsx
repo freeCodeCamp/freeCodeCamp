@@ -297,67 +297,73 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   return (
     <Grid className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <Row className='certificate-wrapper certification-namespace'>
-        <header>
-          <Col sm={12}>
-            <div className='logo'>
-              <FreeCodeCampLogo aria-hidden='true' />
-            </div>
-          </Col>
-        </header>
-        <main className='information'>
-          <div className='information-container'>
-            <Trans i18nKey='certification.fulltext' title={certTitle}>
-              <h3>placeholder</h3>
-              <h1>
-                <strong>{{ user: displayName }}</strong>
-              </h1>
-              <h3>placeholder</h3>
-              <h1>
-                <strong>
-                  {{ title: t(`certification.title.${certTitle}`, certTitle) }}
-                </strong>
-              </h1>
-              <h4>
-                {{
-                  time: certDate.toLocaleString([localeCode, 'en-US'], {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })
-                }}
-              </h4>
-            </Trans>
-          </div>
-        </main>
-        <footer>
-          <div className='row signatures'>
-            <Image
-              alt="Quincy Larson's Signature"
-              src={
-                'https://cdn.freecodecamp.org' +
-                '/platform/english/images/quincy-larson-signature.svg'
-              }
-            />
-            <p>
-              <strong>Quincy Larson</strong>
-            </p>
-            <p>{t('certification.executive')}</p>
-          </div>
-          <span className='ribbon-wrap'>
-            <Image className='ribbon' src={ribbon} />
-          </span>
-          <span className='qr-wrap'>
-            <QRCodeSVG className='qr-code' value={certURL} />
-          </span>
-          <Row>
-            <p className='verify'>
-              {t('certification.verify')}
-              <br />
-              {certURL}
-            </p>
+      <Row className='certificate-inner-wrapper'>
+        <Row className='certificate-second-inner-wrapper'>
+          <Row className='certificate-wrapper certification-namespace'>
+            <header>
+              <Col sm={12}>
+                <div className='logo'>
+                  <FreeCodeCampLogo aria-hidden='true' />
+                </div>
+              </Col>
+            </header>
+            <main className='information'>
+              <div className='information-container'>
+                <Trans i18nKey='certification.fulltext' title={certTitle}>
+                  <h3>placeholder</h3>
+                  <h1>
+                    <strong>{{ user: displayName }}</strong>
+                  </h1>
+                  <h3>placeholder</h3>
+                  <h1>
+                    <strong>
+                      {{
+                        title: t(`certification.title.${certTitle}`, certTitle)
+                      }}
+                    </strong>
+                  </h1>
+                  <h4>
+                    {{
+                      time: certDate.toLocaleString([localeCode, 'en-US'], {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })
+                    }}
+                  </h4>
+                </Trans>
+              </div>
+            </main>
+            <footer>
+              <div className='row signatures'>
+                <Image
+                  alt="Quincy Larson's Signature"
+                  src={
+                    'https://cdn.freecodecamp.org' +
+                    '/platform/english/images/quincy-larson-signature.svg'
+                  }
+                />
+                <p>
+                  <strong>Quincy Larson</strong>
+                </p>
+                <p>{t('certification.executive')}</p>
+              </div>
+              <span className='ribbon-wrap'>
+                <Image className='ribbon' src={ribbon} />
+              </span>
+              <span className='qr-wrap'>
+                <QRCodeSVG className='qr-code' value={certURL} />
+              </span>
+              <Row>
+                <p className='verify'>
+                  {t('certification.verify')}
+                  <br />
+                  {certURL}
+                </p>
+              </Row>
+            </footer>
           </Row>
-        </footer>
+        </Row>
       </Row>
       <div className='row certificate-links'>
         <Spacer size='large' />
