@@ -176,7 +176,7 @@ textarea.inputarea {
 
 .utility-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5.5em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(5.75em, 1fr));
   gap: 0.75rem;
   align-items: center;
   justify-content: center;
