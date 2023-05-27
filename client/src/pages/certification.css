@@ -154,8 +154,15 @@
 }
 
 .certification-namespace .signatures p {
-  font-size: 18px;
-  padding-top: 10px;
+  padding-top: 1px;
+}
+
+.certification-namespace .quincy-name {
+  font-size: 20px;
+}
+
+.certification-namespace .quincy-role {
+  font-size: 17px;
 }
 
 .certification-namespace .verify {
@@ -182,7 +189,7 @@
   width: 150px;
   height: 150px;
   top: -120px;
-  left: 60px;
+  left: 35px;
 }
 
 .ribbon {
@@ -269,6 +276,11 @@
     top: -80px;
     left: 20px;
   }
+
+  .qr-code,
+  .ribbon {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 675px) {
@@ -288,11 +300,6 @@
 
   .certification-namespace h1 {
     font-size: 25px;
-  }
-
-  .qr-code,
-  .ribbon {
-    display: none;
   }
 }
 

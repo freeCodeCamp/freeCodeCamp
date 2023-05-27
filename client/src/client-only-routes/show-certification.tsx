@@ -343,10 +343,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     '/platform/english/images/quincy-larson-signature.svg'
                   }
                 />
-                <p>
+                <p className='quincy-name'>
                   <strong>Quincy Larson</strong>
                 </p>
-                <p>{t('certification.executive')}</p>
+                <p className='quincy-role'>{t('certification.executive')}</p>
               </div>
               <span className='ribbon-wrap'>
                 <Image className='ribbon' src={ribbon} />
