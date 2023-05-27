@@ -176,7 +176,7 @@ textarea.inputarea {
 
 .utility-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5em, 0.7fr));
+  grid-template-columns: repeat(auto-fill, minmax(5.5em, 1fr));
   gap: 1.25rem;
   align-items: center;
   justify-content: center;
@@ -185,7 +185,8 @@ textarea.inputarea {
 .utility-bar > button {
   display: flex;
   align-items: center;
-  padding-right: 0.5rem;
+  justify-content: center;
+  gap: 0.25rem;
 }
 
 .progress-bar-container {
