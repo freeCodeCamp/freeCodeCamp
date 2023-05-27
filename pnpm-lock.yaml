@@ -188,6 +188,9 @@ importers:
       '@prisma/client':
         specifier: 4.14.1
         version: 4.14.1(prisma@4.14.1)
+      bson:
+        specifier: ^5.3.0
+        version: 5.3.0
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.15.0)
@@ -13474,7 +13477,6 @@ packages:
   /bson@5.3.0:
     resolution: {integrity: sha512-ukmCZMneMlaC5ebPHXIkP8YJzNl5DC41N5MAIvKDqLggdao342t4McltoJBQfQya/nHBWAcSsYRqlXPoQkTJag==}
     engines: {node: '>=14.20.1'}
-    dev: true
 
   /buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
