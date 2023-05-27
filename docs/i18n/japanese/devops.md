@@ -203,19 +203,19 @@ Currently, a public beta testing version is available at:
 
 プラットフォームのベータ版を使用する場合、いくつかの既知の制限とトレードオフがあります。
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **ベータ版のユーザーは本番とは異なるアカウントを持つことになります。** ベータ版は本番と物理的に分離されたデータベースを使用します。 これにより、偶発的なデータ損失や変更を防ぐことができます。 The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   デプロイは頻繁に行われ、時には非常に速いペースで 1 日に複数回行われることになります。 As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### 修正を確認する手段として、このサイトに一般ユーザーを送らないでください。
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   ベータサイトは、ローカルの開発とテストを強化するためのものでしたし、今もそうです。 それはこれから起こることを約束するものではありませんが、取り組まれていることを垣間見るものです。
 
-- #### サインインページが本番環境とは異なる場合があります。
+- **Sign in page may look different than production**
 
   Auth0 上で freeCodeCamp.dev にはテストテナントを使用しているため、カスタムドメインを設定することはできません。 そのため、すべてのリダイレクトコールバックとログインページが `https://freecodecamp-dev.auth0.com/` のようなデフォルトドメインに表示されます。 これが機能に影響を与えることはありませんし、本番環境に近いものです。
 

@@ -8,4 +8,4 @@
 - Пітер Самір https://www.linkedin.com/in/peter-samir/
 - Лоуренс Теннант ([@hyperreality](https://github.com/hyperreality)) працює з IncludeSecurity.com — [GHSA-c3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Дякуємо за ваш вклад :pray:
+> **Дякуємо за ваш вклад :pray:**

@@ -18,7 +18,7 @@ Font Awesome - це зручна бібліотека іконок. Іконки
 
 Використовуйте Font Awesome, щоб додати іконку `info-circle` до кнопки "Інформація" та іконку `trash` до кнопки "Видалити".
 
-**Примітка:** Елемент `span` є допустимою альтернативою елемента `i` для вказівок нижче.
+**Note:** You can use either `i` or `span` elements to complete this challenge.
 
 # --hints--
 

@@ -220,7 +220,7 @@ const algoliaIndices = {
 };
 ```
 
-## Enabling Localized Videos
+### Enabling Localized Videos
 
 For the video challenges, you need to change a few things. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 

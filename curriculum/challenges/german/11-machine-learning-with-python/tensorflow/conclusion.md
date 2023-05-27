@@ -18,11 +18,11 @@ Most people that are experts in AI or machine learning usually...:
 
 ## --answers--
 
-have one specialization.
+sind auf eine Sache spezialisiert.
 
 ---
 
-have many specializations.
+sind auf mehrere Sachen spezialisiert.
 
 ---
 

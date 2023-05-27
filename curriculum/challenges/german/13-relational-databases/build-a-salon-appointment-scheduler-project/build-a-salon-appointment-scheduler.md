@@ -9,15 +9,15 @@ dashedName: build-a-salon-appointment-scheduler
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon.
+Dies ist eines der Projekte, die für den Erhalt der Zertifizierung erforderlich sind. In diesem Projekt erstellst du ein interaktives Bash-Programm, das PostgreSQL nutzt, um die Kunden und Termine für dein Salon zu verwalten.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `salon.sql` file, as well as your `salon.sh` file, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Wichtig:** Nachdem du alle Projekttests bestanden hast, speichere einen Dump deiner Datenbank in einer `salon.sql` Datei, sowie deine `salon.sh` Datei, damit du Schritt 2 abschließen kannst. There will be instructions how to do that within the virtual machine.
 
 # --notes--
 
-Required files: `salon.sql`, `salon.sh`
+Erforderliche Dateien: `salon.sql`, `salon.sh`
 
 # --hints--
 

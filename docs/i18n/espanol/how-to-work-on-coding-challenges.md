@@ -487,13 +487,15 @@ También puedes probar un desafío individualmente realizando los siguientes pas
    ```
    pnpm run test -- -g challenge-title-goes-here ```
 
-Una vez que haya verificado que cada desafío en el que ha trabajado supera las pruebas, [cree una solicitud de extracción](how-to-open-a-pull-request.md).
-
 > [!TIP] Puede establecer la variable de entorno `LOCALE` en `.env` en el idioma de los retos que necesita probar.
 > 
 > Los valores aceptados actualmente son `english` y `chinese`, con `english` configurado de manera predeterminada.
 
-### Enlaces útiles
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 Creación y edición de desafíos:
 

@@ -266,7 +266,11 @@ Sarebbe utile anche tenere tutte le chiavi nello stesso ordine in tutti i file. 
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vedi [la documentazione](https://www.i18next.com/translation-function/plurals) per il suo utilizzo.
 
-## Documentazione utile
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [Documentazione react-i18next ](https://react.i18next.com/latest/usetranslation-hook)
 - [Documentazione i18next](https://www.i18next.com/translation-function/essentials)

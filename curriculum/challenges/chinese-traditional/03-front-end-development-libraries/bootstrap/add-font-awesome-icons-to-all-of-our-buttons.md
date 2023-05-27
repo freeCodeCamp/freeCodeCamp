@@ -18,7 +18,7 @@ Font Awesome 是一個非常便利的圖標庫。 這些圖標可以是網絡字
 
 爲 info 按鈕添加 Font Awesome `info-circle` 圖標，delete 按鈕添加 `trash` 圖標。
 
-**注意：** 下述要求中的 `i` 元素也可以用 `span` 元素代替。
+**Note:** You can use either `i` or `span` elements to complete this challenge.
 
 # --hints--
 

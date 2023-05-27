@@ -266,6 +266,10 @@ const email = 'team@freecodecamp.org';
 
 > [!NOTE] Підкреслення (`_`) є зарезервованим знаком для ключів у файлах клієнтської частини. Див. [документацію](https://www.i18next.com/translation-function/plurals) про те, як вони використовуються.
 
+## Запропонуйте запит на злиття (PR)
+
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
+
 ## Корисна документація
 
 - [Документація react-i18next](https://react.i18next.com/latest/usetranslation-hook)
