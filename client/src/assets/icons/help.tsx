@@ -10,8 +10,8 @@ const wrapper = {
 
 const questionMarkIcon = {
   position: 'absolute',
-  top: 'calc(50% - 0.5rem)',
-  left: 'calc(50% - 0.225rem)'
+  top: 'calc(50% - 0.475rem)',
+  left: 'calc(50% - 0.21rem)'
 } as React.CSSProperties;
 
 function Help(
