@@ -1,3 +1,7 @@
 button[aria-described-by='codeally-cookie-warning'] {
   font-size: 1.1rem;
 }
+
+.margin-top{
+  margin-top: 25px;
+}
