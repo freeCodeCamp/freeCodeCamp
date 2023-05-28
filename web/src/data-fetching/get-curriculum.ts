@@ -8,7 +8,6 @@
     a. If the latest version is not cached, query the API for the latest version
     b. Otherwise use the cached value.
   3. If the API does not respond, use the cached value and log an error.
-
 */
 
 // TODO: this should be { [superblock: string]: Superblock }
