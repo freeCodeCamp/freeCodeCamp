@@ -260,6 +260,10 @@ describe('settingRoutes', () => {
         });
 
         expect(response?.statusCode).toEqual(400);
+        expect(response.body).toEqual({
+          message: 'body/username must NOT have fewer than 3 characters',
+          type: 'info'
+        });
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
@@ -335,6 +339,10 @@ describe('settingRoutes', () => {
         });
 
         expect(response?.statusCode).toEqual(400);
+        expect(response.body).toEqual({
+          message: 'body/username must NOT have more than 1000 characters',
+          type: 'info'
+        });
       });
     });
 
