@@ -47,10 +47,12 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar o comando abaixo, conforme necessário, a partir da raiz do repositório:
 
-#### Veicular e iniciar apenas o site da documentação
-
 ```console
 pnpm run docs:serve
 ```
 
 > O site da documentação deve estar disponível em <http://localhost:3400>
+
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).

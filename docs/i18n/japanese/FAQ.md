@@ -1,64 +1,68 @@
-### GitHub とオープンソースは初めてです。 どこから始めればいいですか？
+# Frequently Asked Questions
 
-[「オープンソースに貢献する方法ガイド」](https://github.com/freeCodeCamp/how-to-contribute-to-open-source) をご覧ください。 これは、初心者にも優しいプロジェクトのための包括的な参照です。 And it includes a lot of open-source contribution tips.
+Answers to common questions.
 
-### コードベースに貢献するために知っておくべきことは何ですか？
+## I am new to GitHub and Open Source. Where should I start?
 
-freeCodeCamp は、モダンな JavaScript スタック上で動作します。 コードベースで貢献することにご興味がある場合は、JavaScript および Node.js、MongoDB、OAuth 2.0、React、Gatsby、Webpack のようなテクノロジーに精通している必要があります。
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open-source contribution tips.
 
-### freeCodeCamp のリソースを翻訳できますか？
+## What do I need to know to contribute to the codebase?
 
-はい。翻訳プラットフォームで有効になっている 30 以上の言語を貢献できます。
+freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
 
-ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
+## Can I translate freeCodeCamp's resources?
+
+Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
+
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
-### freeCodeCamp ニュースの記事や、freeCodeCamp YouTube チャンネルの動画に貢献することはできますか？
+## Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
 
-はい。ニュースブログや YouTube チャンネルに貢献することができます。
+Yes - you can contribute to our publication blog and YouTube channel.
 
-freeCodeCamp ニュースの記事を書くことにご興味がありましたら、[執筆ガイド](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/) をご覧ください。 より力強い、より効果的な記事を書くために、[スタイルガイド](https://www.freecodecamp.org/news/developer-news-style-guide/) をお読みください。
+If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
 
-YouTube チャンネル用の動画講座を作成するには、[YouTube チャンネルガイド](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/) をお読みください。
+To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
-### 新しいバグはどのように報告すればいいですか？
+## How can I report a new bug?
 
 If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
-新しいバグだという確信がある場合は、GitHub Issue を作成してください。 バグを再現できるように、できるだけ多くの情報を含めるようにしてください。 これをサポートするために、事前に定義された Issue 用テンプレートがあります。
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-これらの GitHub Issue は、コードベース関連の問題や議論のためのものであり、コードを学習するための助けを得るためのものではありません。 疑わしい場合は GitHub Issue を作成する前に、[フォーラム](https://forum.freecodecamp.org) で支援を求めます。
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-### セキュリティ問題はどのように報告すればいいですか？
+## How can I report a security issue?
 
-セキュリティ問題のために GitHub Issue を作成しないでください。 代わりに、[こちらのセキュリティポリシー](https://contribute.freecodecamp.org/#/security)に従ってください。
+Please don't create GitHub issues for security issues. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
 
-### 私は学生です。 単位取得を目的として、機能に関して貢献することはできますか？
+## I am a student. Can I work on a feature for academic credits?
 
-はい。 ただし、大学での要件となるような時間軸や書類に関与することはできませんのでご注意ください。 私たちはボランティア開発者から多くのプルリクエストやコードの貢献を受けており、皆さんの時間と努力を尊重しています。 すべての貢献者に対して敬意を払っているため、学校関連だからと言って PR 特別優先事項を与えることはありません。
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-これを念頭におき、事前にご自身で計画を立てたうえで、コードの貢献に取り組むようお願いいたします。
+We request you to plan ahead and work on code contributions with this in mind.
 
-### GitHub Issue にタグ付けされた様々なラベルはどのような意味ですか？
+## What do these different labels that are tagged on issues mean?
 
-コードメンテナーは、優先度、重大度、およびその他の要因に基づいて、Issue とプルリクエストを [トリアージ](https://en.wikipedia.org/wiki/Software_bug#Bug_management) します。 [ラベルの意味の用語集](https://github.com/freecodecamp/freecodecamp/labels) をご覧ください。
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-### Issue の作業に貢献するには、何から始めたらいいですか？
+## Where do I start if I want to work on an issue?
 
-貢献可能な作業にどのようなものがあるか把握するため、まずは [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) または [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) のラベルが付いた Issue を確認してください。
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
 > [!TIP] **`help wanted`** の Issue は誰でも作業が可能であり、作業前に許可を求める必要はありません。 ただし、 **`first timers only`** ラベルが付けられた Issue は、初めて freeCodeCamp コードベースに貢献する人用の特別な Issue です。
 
-### タイプミスを見つけました。 プルリクエストを行う前に Issue を作成すべきですか？
+## I found a typo. Should I report an issue before I can make a pull request?
 
-タイプミスや文言変更の場合、Issue を作成せずに、直接プルリクエストをオープンして構いません。 些細な変更であっても、プルリクエストの説明には詳しい情報を記載してください。皆様の貢献を理解しレビューする際に役立ちます。
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-コードベースやカリキュラムの大きな側面について議論したい場合は、Issue を作成してください。
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-### Issue を割り当て (アサイン) してもらうにはどうすればいいですか？
+## How can I get an issue assigned to me?
 
-通常、長期的なコントリビューター以外には Issue を割り当てません。 その代わりに、以下の方針に従い、すべての人対して公平であるようにしています。
+We typically do not assign issues to anyone other than long-time contributors. Instead, we follow the below policy to be fair to everyone:
 
 1. Issue に対処する最初のプルリクエストをマージする可能性が最も高いです。
 2. 複数のコントリビューターが同じ Issue に対してプルリクエストを同時にオープンした場合、 最善の対処をするプルリクエストを優先します。 考慮事項:
@@ -69,37 +73,37 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
    - プルリクエストのチェックリストに従って確認しましたか？
    - プルリクエストに意味のあるタイトルを付けましたか？
 
-### freeCodeCamp のモデレーターになりたいです。 何から始めればいいですか？
+## I am interested in being a moderator at freeCodeCamp. Where should I start?
 
-コミュニティモデレーターは、私たちのヒーローです。 Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+Our community moderators are our heroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
 First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
-いくつかのプラットフォームで推奨されるパスを以下に示します。
+Here are some recommended paths for some of our platforms:
 
 - To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
 - To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-つまり、他の人に敬意を払ってください。 We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+Altogether, be respectful to others. We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 So we emphasize being **consistent** rather than engaging in the community 24/7.
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
 Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
-### このドキュメントに記載されていない問題で困っています。
+## I am stuck on something that is not included in this documentation.
 
-**以下に、お気軽にお問い合わせください。**
+**Feel free to ask for help in:**
 
 - [コミュニティフォーラム](https://forum.freecodecamp.org/c/contributors) の `Contributors` カテゴリ
 - [チャットサーバーの ](https://discord.gg/PRyKn3Vbay) `#Contributors` チャンネル
 
-取り組みたいトピックに貢献するお手伝いをさせていただけることを嬉しく思います。 関連する問題のスレッドについて質問をいただいた場合は、喜んで明確にします。 新しい質問を投稿する前に、必ずその質問を検索してください。
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-礼儀正しく忍耐強い対応を、お願いいたします。 このコミュニティは主にボランティアによって運営されていることをご理解ください。
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-### その他の支援
+## Additional Assistance
 
 If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
-**`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

@@ -1,9 +1,11 @@
 import { isEmpty } from 'lodash-es';
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { isBrowser } from '../../utils/index';
+import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
+import Profile from '../components/profile/profile';
 import { fetchProfileForUser } from '../redux/actions';
 import {
   usernameSelector,
@@ -11,9 +13,6 @@ import {
   userProfileFetchStateSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
-
-const Profile = lazy(() => import('../components/profile/profile'));
-const FourOhFour = lazy(() => import('../components/FourOhFour'));
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
@@ -25,6 +24,7 @@ interface ShowProfileOrFourOhFourProps {
   isSessionUser: boolean;
   maybeUser?: string;
   requestedUser: User;
+  showLoading: boolean;
 }
 
 const createRequestedUserSelector =
@@ -46,6 +46,7 @@ const makeMapStateToProps =
     return {
       requestedUser: requestedUserSelector(state, props),
       isSessionUser: isSessionUserSelector(state, props),
+      showLoading: fetchState.pending,
       fetchState
     };
   };
@@ -56,37 +57,12 @@ const mapDispatchToProps: {
   fetchProfileForUser
 };
 
-type ErrorBoundaryProps = {
-  fallback: React.ReactNode;
-};
-
-class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  { hasError: boolean }
-> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
-
 function ShowProfileOrFourOhFour({
   requestedUser,
   maybeUser,
   fetchProfileForUser,
-  isSessionUser
+  isSessionUser,
+  showLoading
 }: ShowProfileOrFourOhFourProps) {
   useEffect(() => {
     // If the user is not already in the store, fetch it
@@ -101,12 +77,15 @@ function ShowProfileOrFourOhFour({
   if (!isBrowser()) {
     return null;
   }
-  return (
-    <Suspense fallback={<Loader fullScreen={true} />}>
-      <ErrorBoundary fallback={<FourOhFour />}>
-        <Profile isSessionUser={isSessionUser} user={requestedUser} />
-      </ErrorBoundary>
-    </Suspense>
+
+  return isEmpty(requestedUser) ? (
+    showLoading ? (
+      <Loader fullScreen={true} />
+    ) : (
+      <FourOhFour />
+    )
+  ) : (
+    <Profile isSessionUser={isSessionUser} user={requestedUser} />
   );
 }
 
