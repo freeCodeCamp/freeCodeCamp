@@ -259,7 +259,7 @@ describe('settingRoutes', () => {
           username: 'fo'
         });
 
-        expect(response?.statusCode).toEqual(500);
+        expect(response?.statusCode).toEqual(400);
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
@@ -334,7 +334,7 @@ describe('settingRoutes', () => {
           username
         });
 
-        expect(response?.statusCode).toEqual(500);
+        expect(response?.statusCode).toEqual(400);
       });
     });
 

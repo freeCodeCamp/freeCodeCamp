@@ -112,7 +112,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-username',
     {
-      schema: schemas.updateMyUsername
+      schema: schemas.updateMyUsername,
+      attachValidation: true
     },
     async (req, reply) => {
       try {
@@ -134,6 +135,14 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           void reply.code(400);
           return {
             message: 'flash.username-used',
+            type: 'info'
+          } as const;
+        }
+
+        if (req.validationError) {
+          void reply.code(400);
+          return {
+            message: req.validationError.message,
             type: 'info'
           } as const;
         }
