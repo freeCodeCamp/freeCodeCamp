@@ -58,31 +58,31 @@ Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
 
 # --hints--
 
-`check_mersenne` should be a function.
+`check_mersenne` sollte eine Funktion sein.
 
 ```js
 assert(typeof check_mersenne === 'function');
 ```
 
-`check_mersenne(3)` should return a string.
+`check_mersenne(3)` sollte einen String zurückgeben.
 
 ```js
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
+`check_mersenne(3)` sollte den String `M3 = 2^3-1 is prime` zurückgeben.
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
+`check_mersenne(23)` sollte den String `M23 = 2^23-1 is composite with factor 47` zurückgeben.
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
+`check_mersenne(929)` sollte den String `M929 = 2^929-1 is composite with factor 13007` zurückgeben.
 
 ```js
 assert.equal(

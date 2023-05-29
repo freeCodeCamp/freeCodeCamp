@@ -16,25 +16,25 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 
 # --hints--
 
-`primeDigitReplacements(6)` should return a number.
+`primeDigitReplacements(6)` має повернути число.
 
 ```js
 assert(typeof primeDigitReplacements(6) === 'number');
 ```
 
-`primeDigitReplacements(6)` should return `13`.
+`primeDigitReplacements(6)` має повернути `13`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(6), 13);
 ```
 
-`primeDigitReplacements(7)` should return `56003`.
+`primeDigitReplacements(7)` має повернути `56003`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(7), 56003);
 ```
 
-`primeDigitReplacements(8)` should return `121313`.
+`primeDigitReplacements(8)` має повернути `121313`.
 
 ```js
 assert.strictEqual(primeDigitReplacements(8), 121313);

@@ -1,28 +1,28 @@
 ---
 id: 63d8401e39c73468b059cd42
-title: "Build a Financial Calculator"
+title: "Crie uma calculadora financeira"
 challengeType: 10
 dashedName: build-a-financial-calculator
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/drive/1zUAVAkwyjat4Z-8nfrajM1ut9UcO18We?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Você vai <a href="https://colab.research.google.com/drive/1zUAVAkwyjat4Z-8nfrajM1ut9UcO18We?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">trabalhar neste projeto com o Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Depois de acessar o link, crie uma cópia do notebook em sua conta pessoal ou localmente. Depois que você completar o projeto e ele passar no teste (incluído naquele link), envie o link do seu projeto abaixo. Se você estiver enviando um link do Google Colaboratory, certifique-se de ativar o compartilhamento de links para "qualquer um com o link".
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Para este desafio, você precisará criar uma calculadora multifuncional usando Python que receberá entradas e fará o seguinte:
 
-- Calculate annuity with monthly or continuous growth
-- Calculate monthly mortgage payment
-- Estimate retirement investment balance
-- Determine how long until an amount doubles, given the rate
-- Solve logarithmic equations
-- Convert to (and from) scientific notation
+- Calcular a anuidade com crescimento mensal ou contínuo
+- Calcular o pagamento mensal de hipoteca
+- Estimar saldo de investimentos de aposentadoria
+- Determinar quanto tempo leva até um valor duplicar em função da taxa
+- Resolver equações logarítmicas
+- Converter de e para a notação científica
 
-If you are struggling, you can follow the <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
+Se estiver com dificuldades, pode seguir o <a href="https://www.youtube.com/embed/c2AhGd6srJ0" target="_blank" rel="noopener noreferrer nofollow">vídeo com o roteiro deste projeto.</a>
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Assim que terminar, envie o URL para o notebook público do Colaboratory no seu Google Drive.
 

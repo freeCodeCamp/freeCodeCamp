@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: 'Problema 202: raggio laser'
 challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
@@ -8,19 +8,19 @@ dashedName: problem-202-laserbeam
 
 # --description--
 
-Three mirrors are arranged in the shape of an equilateral triangle, with their reflective surfaces pointing inwards. There is an infinitesimal gap at each vertex of the triangle through which a laser beam may pass.
+Tre specchi sono disposti a forma di triangolo equilatero, con le loro superfici riflettenti orientate verso l'interno. C'è uno spazio infinitesimale in ogni vertice del triangolo attraverso il quale un raggio laser può passare.
 
-Label the vertices $A$, $B$ and $C$. There are 2 ways in which a laser beam may enter vertex $C$, bounce off 11 surfaces, then exit through the same vertex: one way is shown below; the other is the reverse of that.
+Etichetta i vertici $A$, $B$ e $C$. Ci sono due modi in cui un raggio laser può entrare nel vertice $C$, rimbalzare su 11 superfici, e quindi uscire attraverso lo stesso vertice: uno di questi è mostrato qua sotto; l'altro è l'inverso di quello mostrato.
 
-<img class="img-responsive center-block" alt="one way in which laser beam may enter vertex C, bounce off 11 surfaces and exit through the same vertex" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="un modo in cui il raggio laser può entrare nel vertice C, rimbalzare su 11 superfici e uscire attraverso lo stesso vertice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
 
-There are 80840 ways in which a laser beam may enter vertex $C$, bounce off 1000001 surfaces, then exit through the same vertex.
+Ci sono 80840 modi in cui un raggio laser può entrare attraverso il vertice $C$, rimbalzare su 100000 superfici, e uscire attraverso lo stesso vertice.
 
-In how many ways can a laser beam enter at vertex $C$, bounce off 12017639147 surfaces, then exit through the same vertex?
+In quanti modi può un raggio laser entrare nel vertice $C$, rimbalzare su 12017639147 superfici, e poi uscire attraverso lo stesso vertice?
 
 # --hints--
 
-`laserbeam()` should return `1209002624`.
+`laserbeam()` dovrebbe restituire `1209002624`.
 
 ```js
 assert.strictEqual(laserbeam(), 1209002624);

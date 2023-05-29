@@ -22,7 +22,7 @@ How many grids does $S(m, n) = p^2$, where $p &lt; {10}^6$ is prime?
 
 # --hints--
 
-`slidingGame()` should return `2057774861813004`.
+`slidingGame()` має повернути `2057774861813004`.
 
 ```js
 assert.strictEqual(slidingGame(), 2057774861813004);

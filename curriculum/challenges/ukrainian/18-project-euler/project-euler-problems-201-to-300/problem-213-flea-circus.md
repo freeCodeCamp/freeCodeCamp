@@ -16,7 +16,7 @@ What is the expected number of unoccupied squares after 50 rings of the bell? Gi
 
 # --hints--
 
-`fleaCircus()` should return `330.721154`.
+`fleaCircus()` має повернути `330.721154`.
 
 ```js
 assert.strictEqual(fleaCircus(), 330.721154);

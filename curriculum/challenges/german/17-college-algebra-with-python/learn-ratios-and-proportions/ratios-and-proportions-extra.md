@@ -22,7 +22,7 @@ What is another way to write 0.9999... (repeating 9)?
 
 ## --answers--
 
-99 percent
+99 Prozent
 
 ---
 

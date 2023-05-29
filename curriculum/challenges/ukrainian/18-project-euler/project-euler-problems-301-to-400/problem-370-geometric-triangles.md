@@ -18,7 +18,7 @@ How many geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{1
 
 # --hints--
 
-`geometricTriangles()` should return `41791929448408`.
+`geometricTriangles()` має повернути `41791929448408`.
 
 ```js
 assert.strictEqual(geometricTriangles(), 41791929448408);

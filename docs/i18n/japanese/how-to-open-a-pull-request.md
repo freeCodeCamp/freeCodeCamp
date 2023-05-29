@@ -1,8 +1,8 @@
 # プルリクエストを開く方法 (PR)
 
-プルリクエスト (PR) を使用すると、GitHubのフォークから freeCodeCamp.org のメインリポジトリに変更を送信できます。 コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+We expect our contributors to be aware of the process specific to this project. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Some examples of this are:
 
@@ -17,7 +17,7 @@ Some examples of this are:
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## 良いPRタイトルを用意する
+## Prepare a Good PR Title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
@@ -31,12 +31,12 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 **Type:**
 
-| 種類    | 選択するタイミング                        |
-|:----- |:-------------------------------- |
-| fix   | 機能、テスト、レッスン等の変更または更新 / 改善時       |
-| feat  | 新しい機能、テストなどの追加時のみ                |
-| chore | レッスンのコード、テスト、または検証に関連しない変更時      |
-| docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時 |
+| 種類    | 選択するタイミング                                                                       |
+|:----- |:------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
+| feat  | 新しい機能、テストなどの追加時のみ                                                               |
+| chore | レッスンのコード、テスト、または検証に関連しない変更時                                                     |
+| docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時                                                |
 
 **Scope:**
 
@@ -89,11 +89,11 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 ローカルテストを必要とする変更の例としては、ページの機能やレイアウトを変更する可能性のある JavaScript、CSS、または HTML などが挙げられます。
+   - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - PR がページの動作に影響を与える場合は、対応する [Cypress 統合テスト](how-to-add-cypress-tests.md) も追加する必要があります。
 
-## プルリクエストへのフィードバック
+## Feedback on Pull Requests
 
 > :tada: PR の作成おめでとうございます。時間をかけて貢献してくださったことに心から感謝します。
 
@@ -103,13 +103,13 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 > [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#ローカルで変更を行う) のガイドラインをご覧になることを推奨します。
 
-## プルリクエストでの競合
+## Conflicts on a Pull Request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
 More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
-### 通常のバグ修正と機能について
+### For Usual Bug Fixes and Features
 
 When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
@@ -138,7 +138,7 @@ When you are working on regular bugs and features on our development branch `mai
    git push --force origin <pr-branch>
    ```
 
-### 今後のカリキュラムと機能について
+### For Upcoming Curriculum and Features
 
 When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 

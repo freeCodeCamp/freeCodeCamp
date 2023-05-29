@@ -3,6 +3,7 @@ import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
@@ -12,6 +13,8 @@ import {
 } from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
+import BearProgressModal from '../../assets/images/components/bear-progress-modal';
+import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
 
 import { closeDonationModal, executeGA } from '../../redux/actions';
 import {
@@ -52,6 +55,45 @@ type DonateModalProps = {
   show: boolean;
 };
 
+const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
+  const { t } = useTranslation();
+  const rotateProgressModalCta = useFeature('progress-modal-cta-rotation').on;
+  if (rotateProgressModalCta)
+    return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
+
+  const donationDuration = modalDefaultDonation.donationDuration;
+  switch (donationDuration) {
+    case 'one-time':
+      return <b>{t('donate.duration')}</b>;
+    case 'month':
+      return <b>{t('donate.duration-2')}</b>;
+    default:
+      return <b>{t('donate.duration-4')}</b>;
+  }
+};
+
+const RenderIlustration = ({
+  recentlyClaimedBlock
+}: {
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+}) => {
+  const showModalBears = useFeature('show-modal-bears').on;
+  if (showModalBears) {
+    if (recentlyClaimedBlock !== null) return <BearBlockCompletion />;
+    else return <BearProgressModal />;
+  } else if (recentlyClaimedBlock !== null) {
+    return <Cup className='donation-icon' />;
+  } else {
+    return <Heart className='donation-icon' />;
+  }
+};
+
+function getctaNumberBetween1To10() {
+  const min = 1;
+  const max = 10;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function DonateModal({
   show,
   closeDonationModal,
@@ -60,6 +102,7 @@ function DonateModal({
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
+  const [ctaNumber, setCtaNumber] = React.useState(0);
   const { t } = useTranslation();
   const handleProcessing = () => {
     setCloseLabel(true);
@@ -78,17 +121,9 @@ function DonateModal({
     }
   }, [show, recentlyClaimedBlock, executeGA]);
 
-  const getCommonDonationText = () => {
-    const donationDuration = modalDefaultDonation.donationDuration;
-    switch (donationDuration) {
-      case 'one-time':
-        return <b>{t('donate.duration')}</b>;
-      case 'month':
-        return <b>{t('donate.duration-2')}</b>;
-      default:
-        return <b>{t('donate.duration-4')}</b>;
-    }
-  };
+  useEffect(() => {
+    if (show) setCtaNumber(getctaNumberBetween1To10());
+  }, [show]);
 
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
@@ -100,11 +135,7 @@ function DonateModal({
   const donationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        {recentlyClaimedBlock !== null ? (
-          <Cup className='donation-icon' />
-        ) : (
-          <Heart className='donation-icon' />
-        )}
+        <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
       </div>
       <Row>
         {!closeLabel && (
@@ -118,7 +149,7 @@ function DonateModal({
                 })}
               </b>
             )}
-            {getCommonDonationText()}
+            <GetCommonDonationText ctaNumber={ctaNumber} />
           </Col>
         )}
       </Row>

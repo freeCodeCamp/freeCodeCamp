@@ -1,6 +1,6 @@
 ---
 id: 5900f3b81000cf542c50fecb
-title: 'Problem 76: Counting summations'
+title: 'Problema 76: contare le somme'
 challengeType: 1
 forumTopicId: 302189
 dashedName: problem-76-counting-summations
@@ -8,7 +8,7 @@ dashedName: problem-76-counting-summations
 
 # --description--
 
-It is possible to write five as a sum in exactly six different ways:
+È possibile scrivere 5 come somma in esattamente sei modi diversi:
 
 <div style='margin-left: 4em;'>
   4 + 1<br>
@@ -19,35 +19,35 @@ It is possible to write five as a sum in exactly six different ways:
   1 + 1 + 1 + 1 + 1<br><br>
 </div>
 
-How many different ways can `n` be written as a sum of at least two positive integers?
+In quanti modi diversi puoi scrivere `n` come somma di almeno due numeri interi positivi?
 
 # --hints--
 
-`countingSummations(5)` should return a number.
+`countingSummations(5)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof countingSummations(5) === 'number');
 ```
 
-`countingSummations(5)` should return `6`.
+`countingSummations(5)` dovrebbe restituire `6`.
 
 ```js
 assert.strictEqual(countingSummations(5), 6);
 ```
 
-`countingSummations(20)` should return `626`.
+`countingSummations(20)` dovrebbe restituire `626`.
 
 ```js
 assert.strictEqual(countingSummations(20), 626);
 ```
 
-`countingSummations(50)` should return `204225`.
+`countingSummations(50)` dovrebbe restituire `204225`.
 
 ```js
 assert.strictEqual(countingSummations(50), 204225);
 ```
 
-`countingSummations(100)` should return `190569291`.
+`countingSummations(100)` dovrebbe restituire `190569291`.
 
 ```js
 assert.strictEqual(countingSummations(100), 190569291);

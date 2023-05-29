@@ -22,7 +22,7 @@ Find $S({10}^{10})$.
 
 # --hints--
 
-`scarySphere()` should return `878825614395267100`.
+`scarySphere()` має повернути `878825614395267100`.
 
 ```js
 assert.strictEqual(scarySphere(), 878825614395267100);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
-title: 'Problem 317: Firecracker'
+title: 'Problema 317: petardo'
 challengeType: 1
 forumTopicId: 301973
 dashedName: problem-317-firecracker
@@ -8,15 +8,15 @@ dashedName: problem-317-firecracker
 
 # --description--
 
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 $\frac{\text{m}}{\text{s}}$.
+Un petardo esplode a un'altezza di 100 m dal livello del suolo. Si rompe in un gran numero di frammenti molto piccoli, che si muovono in ogni direzione; tutti hanno la stessa velocità iniziale di 20 $\frac{\text{m}}{\text{s}}$.
 
-We assume that the fragments move without air resistance, in a uniform gravitational field with $g=9.81 \frac{\text{m}}{\text{s}^2}$.
+Supponiamo che i frammenti si muovano senza resistenza all'aria, in un campo gravitazionale uniforme con $g=9.81 \frac{\text{m}}{\text{s}^2}$.
 
-Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
+Trova il volume (in $\text{m}^3$) della regione attraverso la quale i frammenti si muovono prima di raggiungere il suolo. Dai la risposta arrotondata a quattro decimali.
 
 # --hints--
 
-`firecracker()` should return `1856532.8455`.
+`firecracker()` dovrebbe restituire `1856532.8455`.
 
 ```js
 assert.strictEqual(firecracker(), 1856532.8455);

@@ -26,7 +26,7 @@ Find the smallest area possible for such a bounding rectangle, and give your ans
 
 # --hints--
 
-`pythagoreanTree()` should return `28.2453753155`.
+`pythagoreanTree()` має повернути `28.2453753155`.
 
 ```js
 assert.strictEqual(pythagoreanTree(), 28.2453753155);

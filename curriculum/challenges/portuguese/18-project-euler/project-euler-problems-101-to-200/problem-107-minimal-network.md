@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: 'Problema 107: Rede mínima'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -8,11 +8,11 @@ dashedName: problem-107-minimal-network
 
 # --description--
 
-The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
+A rede não direcionada a seguir consiste em sete vértices e doze arestas com um peso total de 243.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Rede com sete vértices e doze arestas" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
-The same network can be represented by the matrix below.
+A mesma rede pode ser representada pela matriz abaixo.
 
 |   | A  | B  | C  | D  | E  | F  | G  |
 | - | -- | -- | -- | -- | -- | -- | -- |
@@ -25,15 +25,15 @@ The same network can be represented by the matrix below.
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+No entanto, é possível otimizar a rede removendo algumas arestas e ainda garantindo que todos os pontos na rede permaneçam ligados. A rede que alcança o máximo de economia é mostrada abaixo. Tem um peso de 93, representando uma economia de 243 - 93 = 150 da rede original.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="A rede possui sete vértices e seis arestas: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+Usando `network` (rede), um array 2D representando a rede em forma de matriz, encontre a economia máxima que pode ser alcançada removendo as arestas redundantes, assegurando simultaneamente que a rede permaneça ligada. Vértices que não tiverem conexão serão representados com `-1`.
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` deve retornar `259679`.
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

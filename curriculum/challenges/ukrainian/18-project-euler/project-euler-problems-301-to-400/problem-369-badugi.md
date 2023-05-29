@@ -16,7 +16,7 @@ Find $\sum f(n)$ for $4 ≤ n ≤ 13$.
 
 # --hints--
 
-`badugi()` should return `862400558448`.
+`badugi()` має повернути `862400558448`.
 
 ```js
 assert.strictEqual(badugi(), 862400558448);

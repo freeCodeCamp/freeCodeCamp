@@ -19,37 +19,37 @@ Pseudocode:
 
 # --hints--
 
-`permutationSort` should be a function.
+`permutationSort` sollte eine Funktion sein.
 
 ```js
 assert(typeof permutationSort == 'function');
 ```
 
-`permutationSort([25, 32, 12, 7, 20])` should return an array.
+`permutationSort([25, 32, 12, 7, 20])` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])));
 ```
 
-`permutationSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`permutationSort([25, 32, 12, 7, 20])` sollte `[7, 12, 20, 25, 32]` zurückgeben.
 
 ```js
 assert.deepEqual(permutationSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`permutationSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`permutationSort([38, 45, 35, 8, 13])` sollte `[8, 13, 35, 38, 45]` zurückgeben.
 
 ```js
 assert.deepEqual(permutationSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`permutationSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`permutationSort([43, 36, 20, 34, 24])` sollte `[20, 24, 34, 36, 43]` zurückgeben.
 
 ```js
 assert.deepEqual(permutationSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`permutationSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`permutationSort([12, 33, 26, 18, 1, 16, 38])` sollte `[1, 12, 16, 18, 26, 33, 38]` zurückgeben.
 
 ```js
 assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -63,7 +63,7 @@ assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`permutationSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`permutationSort([3, 39, 48, 16, 1, 4, 29])` sollte `[1, 3, 4, 16, 29, 39, 48]` zurückgeben.
 
 ```js
 assert.deepEqual(permutationSort([3, 39, 48, 16, 1, 4, 29]), [

@@ -33,7 +33,7 @@ Find $\sum M{(n)}^3$ for $1 ≤ n ≤ 1000$.
 
 # --hints--
 
-`hoppingGame()` should return `61029882288`.
+`hoppingGame()` має повернути `61029882288`.
 
 ```js
 assert.strictEqual(hoppingGame(), 61029882288);

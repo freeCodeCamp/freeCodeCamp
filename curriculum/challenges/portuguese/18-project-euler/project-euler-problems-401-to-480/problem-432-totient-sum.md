@@ -1,6 +1,6 @@
 ---
 id: 5900f51e1000cf542c510030
-title: 'Problem 432: Totient sum'
+title: 'Problema 432: Soma de totientes'
 challengeType: 1
 forumTopicId: 302103
 dashedName: problem-432-totient-sum
@@ -8,15 +8,15 @@ dashedName: problem-432-totient-sum
 
 # --description--
 
-Let $S(n, m) = \sum φ(n × i)$ for $1 ≤ i ≤ m$. ($φ$ is Euler's totient function)
+Considere $S(n, m) = \sum φ(n × i)$ para $1 ≤ i ≤ m$. ($φ$ é a função totiente de Euler)
 
-You are given that $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
+Você é informado de que $S(510.510,{10}^6) = 45.480.596.821.125.120$.
 
-Find $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
+Encontre $S(510.510, {10}^{11})$. Dê os últimos 9 algarismos da sua resposta.
 
 # --hints--
 
-`totientSum()` should return `754862080`.
+`totientSum()` deve retornar `754862080`.
 
 ```js
 assert.strictEqual(totientSum(), 754862080);

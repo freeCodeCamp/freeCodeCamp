@@ -18,7 +18,7 @@ dashedName: use-if-and-else-to-add-logic-to-your-styles
 }
 ```
 
-ومثلها تماما في JavaScript، يختبرا `@else if` و `@else` المزيد من الشروط:
+And just like in JavaScript, the `@else if` and `@else` directives test for more conditions:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ dashedName: use-if-and-else-to-add-logic-to-your-styles
 
 # --instructions--
 
-إنشاء mixin يسمى `border-stroke` التي تأخذ وسيط `$val`. يجب على mixin التحقق من الشروط التالية باستخدام `@if`، و `@else if`، و `@else`:
+إنشاء mixin يسمى `border-stroke` التي تأخذ وسيط `$val`. The mixin should check for the following conditions using `@if`, `@else if`, and `@else` directives:
 
 ```scss
 light - 1px solid black
@@ -47,7 +47,7 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-إذا كان `$val` ليس `light`، أو `medium`، أو `heavy`، ينبغي تعيين border إلى `none`.
+If the `$val` parameter value is not `light`, `medium`, or `heavy`, then the `border` property should be set to `none`.
 
 # --hints--
 

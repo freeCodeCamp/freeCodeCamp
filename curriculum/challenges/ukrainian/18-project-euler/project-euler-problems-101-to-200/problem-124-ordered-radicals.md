@@ -116,7 +116,7 @@ Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8
 
 # --hints--
 
-`orderedRadicals()` should return `21417`.
+`orderedRadicals()` має повернути `21417`.
 
 ```js
 assert.strictEqual(orderedRadicals(), 21417);

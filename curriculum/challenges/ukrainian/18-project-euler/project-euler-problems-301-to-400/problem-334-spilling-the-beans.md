@@ -27,7 +27,7 @@ Consider now 1500 adjacent bowls containing $b_1, b_2, \ldots, b_{1500}$ beans r
 
 # --hints--
 
-`spillingTheBeans()` should return `150320021261690850`.
+`spillingTheBeans()` має повернути `150320021261690850`.
 
 ```js
 assert.strictEqual(spillingTheBeans(), 150320021261690850);

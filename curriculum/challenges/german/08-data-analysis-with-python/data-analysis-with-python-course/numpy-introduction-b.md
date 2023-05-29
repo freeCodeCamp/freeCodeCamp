@@ -23,7 +23,7 @@ Weitere Ressourcen:
 
 ## --text--
 
-About how much memory does the integer `5` consume in plain Python?
+Wieviel Speicherplatz benötigt der Integer `5` in Python?
 
 ## --answers--
 

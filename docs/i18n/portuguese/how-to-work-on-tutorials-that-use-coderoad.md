@@ -2,7 +2,7 @@ Esta página descreve como contribuir para os tutoriais e projetos do freeCodeCa
 
 ## Como funcionam os tutoriais
 
-Os tutoriais do freeCodeCamp que usam o CodeRoad têm seu próprio repositório na organização do GitHub do freeCodeCamp. Todos eles começam com `learn-`. Por exemplo, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+Cada um dos tutoriais do freeCodeCamp que usa o CodeRoad tem seu próprio repositório na organização do GitHub do freeCodeCamp. Todos eles começam com `learn-`. Por exemplo, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
 Cada repositório de tutorial tem um branch `main` e um branch de "versão", como `v1.0.0`, por exemplo.
 
@@ -49,7 +49,7 @@ Siga essas instruções para fazer um PR, tendo em conta que as instruções ger
 - Faça o commit das mudanças, com `update json` como mensagem.
 - Faça um pull request.
 
-### Testando as mudanças no branch `main`
+### Testando as mudanças na branch `main`
 
 Se você quer testar suas alterações na `main` depois de usar as instruções acima, siga essas:
 
@@ -64,7 +64,7 @@ O arquivo `tutorial.json` não deverá conter alterações para fazer o commit d
 
 Também tenha em mente  que instruções geralmente usam as lições ao seu redor para contextualizar, então garanta que elas façam sentido.
 
-### Trabalhando no branch de versão
+### Trabalhando na branch de versão
 
 > [!WARNING]
 > 
@@ -91,7 +91,7 @@ Siga as próximas instruções para criar uma nova versão:
 - Faça um PR para a `main` usando seu novo branch `feat/version-X.X.Y`. Dê o título de `version X.X.Y ready for review`. Não acontecerá o merge disso, é apenas para quem for revisar saiba que existe uma nova versão pronta
 - Após isso, suas mudanças serão revisadas
 
-### Testando alterações em um branch de versão
+### Testando alterações em uma branch de versão
 
 - Siga as instruções no [repositório rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para rodar um contêiner
 - Comece o tutorial usando o arquivo `tutorial.json` em qualquer fork onde as alterações estejam presentes. Tenha certeza de usar o arquivo no `feat: version-X.X.Y` branch e não no  `main` branch

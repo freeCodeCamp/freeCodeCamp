@@ -2,6 +2,7 @@
   "name": "Basic Data Structures",
   "isUpcomingChange": false,
   "dashedName": "basic-data-structures",
+  "helpCategory": "JavaScript",
   "order": 4,
   "time": "1 hour",
   "template": "",
@@ -88,4 +89,5 @@
       "587d7b7d367417b2b2512b1f",
       "Modify an Array Stored in an Object"
     ]
-  ]}
+  ]
+}

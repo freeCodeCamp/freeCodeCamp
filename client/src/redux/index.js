@@ -47,6 +47,7 @@ const initialState = {
   canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
+  examInProgress: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -63,11 +64,11 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
-  sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   showSignoutModal: false,
   isOnline: true,
   isServerOnline: true,
+  renderStartTime: null,
   donationFormState: {
     ...defaultDonationFormState
   }
@@ -130,6 +131,12 @@ export const reducer = handleActions(
         recentlyClaimedBlock: payload
       };
     },
+    [actionTypes.setRenderStartTime]: (state, { payload }) => {
+      return {
+        ...state,
+        renderStartTime: payload
+      };
+    },
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
@@ -171,7 +178,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.fetchUserComplete]: (
       state,
-      { payload: { user, username, sessionMeta } }
+      { payload: { user, username } }
     ) => ({
       ...state,
       user: {
@@ -185,10 +192,6 @@ export const reducer = handleActions(
         complete: true,
         errored: false,
         error: null
-      },
-      sessionMeta: {
-        ...state.sessionMeta,
-        ...sessionMeta
       }
     }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({
@@ -354,6 +357,18 @@ export const reducer = handleActions(
       return {
         ...state,
         showCodeAlly: true
+      };
+    },
+    [actionTypes.startExam]: state => {
+      return {
+        ...state,
+        examInProgress: true
+      };
+    },
+    [actionTypes.stopExam]: state => {
+      return {
+        ...state,
+        examInProgress: false
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

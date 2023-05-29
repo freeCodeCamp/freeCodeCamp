@@ -8,7 +8,6 @@
 - **Code Contribution**
   - [Set up freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Follow best-practices](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on Codebase](how-to-contribute-to-the-codebase.md)
   - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
   - [Work on Component Library](how-to-work-on-the-component-library.md)
@@ -19,10 +18,12 @@
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on Video Challenges](how-to-help-with-video-challenges.md)
   - [Work on Documentation](how-to-work-on-the-docs-theme.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
 - **Additional Guides**
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
   - [User Token Workflow](user-token-workflow.md)
   - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
   - [Authors Analytics Manual](authors-analytics-manual.md)
@@ -31,6 +32,7 @@
 
 - **飞行手册**（针对员工  &  维护人员）
   - [维护人员手册](moderator-handbook.md)
+  - [Reply Templates](reply-templates.md)
   - [Language Lead Handbook](language-lead-handbook.md)
   - [DevOps Handbook](devops.md)
   - [Courses VSCode Extension](courses-vscode-extension.md)

@@ -26,7 +26,13 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Ya has visto varios de estos métodos anteriormente. Aquí el método `open` inicializa la solicitud como un `POST` a la URL dada del recurso externo, y utiliza el `true` booleano para hacerlo asincrónico. El método `setRequestHeader` establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe ser llamado después del método `open`, pero antes del método `send`. Los dos parámetros son el nombre de encabezado y el valor a establecer como el cuerpo de ese encabezado. A continuación, el detector de eventos `onreadystatechange` maneja un cambio en el estado de la solicitud. Un `readyState` de `4` significa que la operación está completa, y un `status` de `201` significa que fue una solicitud exitosa. El HTML del documento puede ser actualizado. Finalmente, el método `send` envía la solicitud con el valor `body`. que la clave `userName` fue dada por el usuario en el campo `input`.
+Ya has visto varios de estos métodos anteriormente. Aquí el método `open` inicializa la solicitud como un `POST` a la URL dada del recurso externo, y para `true` como tercer parámetro, lo que indica que realizar la operación de forma asíncrona.
+
+El método `setRequestHeader` establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe ser llamado después del método `open`, pero antes del método `send`. Los dos parámetros son el nombre de encabezado y el valor a establecer como el cuerpo de ese encabezado.
+
+A continuación, el detector de eventos `onreadystatechange` maneja un cambio en el estado de la solicitud. Un `readyState` de `4` significa que la operación está completa, y un `status` de `201` significa que fue una solicitud exitosa. Por lo tanto, el HTML del documento puede ser actualizado.
+
+Finalmente, el método `send` envía la solicitud con el valor `body`. El `body` consiste en un `userName` y una clave `suffix`.
 
 # --instructions--
 
@@ -40,7 +46,7 @@ Tu código debe crear un nuevo `XMLHttpRequest`.
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Tu código debe utilizar el método `open` para inicializar una solicitud `POST` a la API de foto del gato de freeCodeCamp.
+Tu código debe utilizar el método `open` para inicializar una solicitud `POST` a al servidor.
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));

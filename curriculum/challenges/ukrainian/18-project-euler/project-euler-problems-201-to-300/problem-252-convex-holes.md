@@ -25,7 +25,7 @@ What is the maximum area for a convex hole on the set containing the first 500 p
 
 # --hints--
 
-`convexHoles()` should return `104924`.
+`convexHoles()` має повернути `104924`.
 
 ```js
 assert.strictEqual(convexHoles(), 104924);

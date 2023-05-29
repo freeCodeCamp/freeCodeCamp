@@ -18,7 +18,7 @@ Find the maximum prize fund that should be allocated to a single game in which f
 
 # --hints--
 
-`discGamePrize()` should return `2269`.
+`discGamePrize()` має повернути `2269`.
 
 ```js
 assert.strictEqual(discGamePrize(), 2269);

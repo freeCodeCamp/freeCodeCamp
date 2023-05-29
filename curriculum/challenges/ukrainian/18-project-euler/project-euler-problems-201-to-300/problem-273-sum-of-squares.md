@@ -22,7 +22,7 @@ Find $\sum S(N)$, for all squarefree $N$ only divisible by primes of the form $4
 
 # --hints--
 
-`sumOfSquares()` should return `2032447591196869000`.
+`sumOfSquares()` має повернути `2032447591196869000`.
 
 ```js
 assert.strictEqual(sumOfSquares(), 2032447591196869000);

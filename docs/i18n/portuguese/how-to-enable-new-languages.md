@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -176,7 +176,7 @@ A ordem dos superblocos neste objeto é como eles aparecem na página inicial e 
 
 O array `CurriculumMaps.Landing` deve conter exatamente um superbloco para todas as nossas certificações atuais. O objeto `CurriculumMaps.Learn` deve ter em si todos os superblocos existentes. Os superblocos traduzidos vão em `TranslationStates.Audited` e os superblocos não traduzidos vão em `TranslationStates.NotAudited`. Esses dois objetos têm, cada um, quatro estados diferentes nos quais um superbloco pode estar.
 
-- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como `(New) Responsive Web Design`, por exemplo.
+- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como o `Responsive Web Design`, por exemplo.
 - `SuperBlockStates.New`: esses aparecem apenas quando `SHOW_NEW_CURRICULUM` estiver definido como `true` no arquivo `.env`. Ele serve para exibir novos superblocos em uma build específica. Por exemplo, quando lançamos a nova certificação de Design responsivo para a web, nós a mostramos apenas em inglês para começar.
 - `SuperBlockStates.Upcoming`: esses aparecem apenas quando `SHOW_UPCOMING_CHANGES` estiver definido como `true` no arquivo `.env`. Eles servem para mostrar os superblocos em nível local enquanto eles estão em desenvolvimento. Como alternativa, podem ser usados quando precisamos ocultar um superbloco do mapa por alguma outra razão.
 - `SuperBlockStates.Legacy`: um superbloco é movido para cá quando uma nova versão daquele superbloco já está totalmente traduzida e pronta para substituí-lo.
@@ -216,7 +216,7 @@ const algoliaIndices = {
 };
 ```
 
-## Ativando vídeos localizados
+### Enabling Localized Videos
 
 Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
@@ -270,7 +270,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Interface do client
+## Client UI
 
 Você precisará dar um passo adicional para lidar com as traduções da interface do client.
 
@@ -283,7 +283,7 @@ Você vai querer copiar os seguintes arquivos de `/client/i18n/locales/english` 
 - `motivation.json`
 - `trending.json`
 
-## Testar traduções localmente
+## Testing Translations Locally
 
 Se quiser testar as traduções localmente, antes de adicioná-las ao nosso repositório principal - pule as alterações de fluxo de trabalho do Crowdin. Siga as etapas para habilitar um idioma e, em seguida, baixe as traduções do Crowdin e as carregue em seu código local.
 
@@ -303,11 +303,11 @@ Quando estes arquivos estiverem no local certo, você deve poder usar `pnpm run 
 
 Para implantar novos idiomas em News, você precisa criar dois PRs. Um PR será para o [repositório do CDN](https://github.com/freeCodeCamp/cdn), enquanto o outro será para o [repositório News](https://github.com/freeCodeCamp/news).
 
-## Preparação do repositório do CDN para o novo idioma
+## Prep the CDN Repo for the New Language
 
 News busca os links de tendências e títulos de artigos do nosso CDN durante a build e adiciona-os ao rodapé. News também busca os arquivos Day.js do CDN durante a build para fazer a localização das datas e horários para cada idioma.
 
-### Adicionar um Arquivo YAML para os artigos populares
+### Add a YAML File for Trending Articles
 
 Faça a clonagem do repositório [CDN](https://github.com/freeCodeCamp/cdn) e crie um branch.
 
@@ -329,7 +329,7 @@ article3link: ...
   ...
 ```
 
-### Adicionar um arquivo de localização Day.js para o novo idioma
+### Add a Day.js Locale File for the New Language
 
 Por padrão, Day.js só inclui inglês como local. Para habilitá-lo para funcionar com outros idiomas, você precisa adicionar um novo arquivo de locale Day.js ao CDN.
 
@@ -367,13 +367,13 @@ Copie o código de local de Day.js da nova aba para o novo arquivo que você cri
 
 Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAML e Day.js para revisão.
 
-## Preparação do repositório do CDN para o novo idioma
+## Prep the News Repo for the New Language
 
 O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 
-> [!WARN] Pull requests para o repositório de News _devem_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
+> [!WARN] Pull requests para o repositório News _precisam_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
 
-### Modificar o arquivo de configuração principal
+### Modify the Main Config File
 
 Clonar o repositório News e criar uma branch.
 
@@ -407,7 +407,7 @@ const algoliaIndices = {
 };
 ```
 
-### Adicionar os arquivos em JSON do i18next para o novo idioma
+### Add the i18next JSON Files for the New Language
 
 Em seguida, vá para o diretório `config/i18n/locales`, crie uma pasta e informe o nome do novo idioma que você está adicionando. Por exemplo, se você estiver lançando News em dothraki, crie uma pasta chamada `dothraki`.
 

@@ -26,7 +26,7 @@ Find the sum of the first forty terms of this sequence.
 
 # --hints--
 
-`swappingCounters()` should return `2470433131948040`.
+`swappingCounters()` має повернути `2470433131948040`.
 
 ```js
 assert.strictEqual(swappingCounters(), 2470433131948040);

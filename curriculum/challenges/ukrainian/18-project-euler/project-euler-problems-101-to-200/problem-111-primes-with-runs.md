@@ -35,7 +35,7 @@ For d = 0 to 9, the sum of all $S(4, d)$ is 273700. Find the sum of all $S(10, d
 
 # --hints--
 
-`primesWithRuns()` should return `612407567715`.
+`primesWithRuns()` має повернути `612407567715`.
 
 ```js
 assert.strictEqual(primesWithRuns(), 612407567715);

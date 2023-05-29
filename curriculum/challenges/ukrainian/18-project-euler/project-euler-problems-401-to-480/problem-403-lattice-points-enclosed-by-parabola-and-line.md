@@ -20,7 +20,7 @@ Find $S({10}^{12})$. Give your answer $\bmod {10}^8$.
 
 # --hints--
 
-`latticePoints()` should return `18224771`.
+`latticePoints()` має повернути `18224771`.
 
 ```js
 assert.strictEqual(latticePoints(), 18224771);

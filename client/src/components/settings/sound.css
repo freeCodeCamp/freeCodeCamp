@@ -11,7 +11,7 @@ input[type='range'] {
 }
 
 input[type='range']:focus {
-  outline: none;
+  outline-color: transparent;
 }
 /* Special styling for WebKit/Blink */
 input[type='range']::-webkit-slider-thumb {

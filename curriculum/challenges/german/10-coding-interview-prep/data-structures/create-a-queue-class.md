@@ -20,7 +20,7 @@ Write an `enqueue` method that pushes an element to the tail of the queue, a `de
 
 # --hints--
 
-Your `Queue` class should have a `enqueue` method.
+Deine `Queue`-Klasse sollte eine `enqueue`-Methode haben.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `dequeue` method.
+Deine `Queue`-Klasse sollte eine `dequeue`-Methode haben.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `front` method.
+Deine `Queue`-Klasse sollte eine `front`-Methode haben.
 
 ```js
 assert(

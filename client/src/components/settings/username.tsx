@@ -6,7 +6,8 @@ import {
   FormGroup
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';

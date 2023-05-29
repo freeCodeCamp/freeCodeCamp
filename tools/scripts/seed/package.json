@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "7"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
     "debug": "4.3.4",
     "dotenv": "16.0.3",
     "lodash": "4.17.21",
-    "mongodb": "3.7.3"
+    "mongodb": "5.5.0"
   }
 }

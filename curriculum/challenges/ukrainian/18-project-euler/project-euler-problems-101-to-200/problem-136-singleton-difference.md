@@ -18,7 +18,7 @@ How many values of $n$ less than fifty million have exactly one solution?
 
 # --hints--
 
-`singletonDifference()` should return `2544559`.
+`singletonDifference()` має повернути `2544559`.
 
 ```js
 assert.strictEqual(singletonDifference(), 2544559);

@@ -44,7 +44,8 @@ const upcomingTest = {
   [SuperBlocks.ProjectEuler]: 13,
   [SuperBlocks.JsAlgoDataStructNew]: 14,
   [SuperBlocks.TheOdinProject]: 15,
-  [SuperBlocks.RespWebDesign]: 16
+  [SuperBlocks.ExampleCertification]: 16,
+  [SuperBlocks.RespWebDesign]: 17
 };
 
 const espanolTest = {
@@ -52,12 +53,12 @@ const espanolTest = {
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
   [SuperBlocks.DataVis]: 3,
-  [SuperBlocks.BackEndDevApis]: 4,
-  [SuperBlocks.QualityAssurance]: 5,
-  [SuperBlocks.SciCompPy]: 6,
-  [SuperBlocks.DataAnalysisPy]: 7,
-  [SuperBlocks.RespWebDesign]: 8,
-  [SuperBlocks.RelationalDb]: 9,
+  [SuperBlocks.RelationalDb]: 4,
+  [SuperBlocks.BackEndDevApis]: 5,
+  [SuperBlocks.QualityAssurance]: 6,
+  [SuperBlocks.SciCompPy]: 7,
+  [SuperBlocks.DataAnalysisPy]: 8,
+  [SuperBlocks.RespWebDesign]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,
   [SuperBlocks.CollegeAlgebraPy]: 12,
@@ -70,14 +71,14 @@ const chineseTest = {
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
   [SuperBlocks.DataVis]: 3,
-  [SuperBlocks.BackEndDevApis]: 4,
-  [SuperBlocks.QualityAssurance]: 5,
-  [SuperBlocks.SciCompPy]: 6,
-  [SuperBlocks.DataAnalysisPy]: 7,
-  [SuperBlocks.InfoSec]: 8,
-  [SuperBlocks.MachineLearningPy]: 9,
-  [SuperBlocks.RespWebDesign]: 10,
-  [SuperBlocks.RelationalDb]: 11,
+  [SuperBlocks.RelationalDb]: 4,
+  [SuperBlocks.BackEndDevApis]: 5,
+  [SuperBlocks.QualityAssurance]: 6,
+  [SuperBlocks.SciCompPy]: 7,
+  [SuperBlocks.DataAnalysisPy]: 8,
+  [SuperBlocks.InfoSec]: 9,
+  [SuperBlocks.MachineLearningPy]: 10,
+  [SuperBlocks.RespWebDesign]: 11,
   [SuperBlocks.CollegeAlgebraPy]: 12,
   [SuperBlocks.CodingInterviewPrep]: 13,
   [SuperBlocks.ProjectEuler]: 14
@@ -153,7 +154,7 @@ describe('getSuperOrder', () => {
     if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(15);
     } else {
-      expect.assertions(17);
+      expect.assertions(18);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
@@ -174,7 +175,8 @@ describe('getSuperOrder', () => {
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(14);
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(15);
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(17);
     } else {
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
     }
@@ -187,7 +189,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(18);
+    expect.assertions(19);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -195,7 +197,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(18);
+    expect.assertions(19);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

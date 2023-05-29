@@ -18,7 +18,7 @@ Find $Tr(60\\,000\\,000)$. Give the last 18 digits of your answer.
 
 # --hints--
 
-`triangleTriples()` should return `147534623725724700`.
+`triangleTriples()` має повернути `147534623725724700`.
 
 ```js
 assert.strictEqual(triangleTriples(), 147534623725724700);

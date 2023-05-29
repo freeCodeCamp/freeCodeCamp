@@ -24,7 +24,7 @@ Find $f({10}^6, {10}^{12}, {10}^{18})\bmod {101}^4$.
 
 # --hints--
 
-`leastGreatestAndGreatestLeast()` should return `84664213`.
+`leastGreatestAndGreatestLeast()` має повернути `84664213`.
 
 ```js
 assert.strictEqual(leastGreatestAndGreatestLeast(), 84664213);

@@ -9,37 +9,29 @@ import {
   SEARCH_EXPOSED_WIDTH,
   DONATE_NAV_EXPOSED_WIDTH
 } from '../../../../../config/misc';
-import { User } from '../../../redux/prop-types';
 import MenuButton from './menu-button';
-import NavLinks from './nav-links';
+import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
+import LanguageList from './language-list';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-interface UniversalNavProps {
-  displayMenu: boolean;
-  isLanguageMenuDisplayed: boolean;
+type UniversalNavProps = Omit<
+  NavLinksProps,
+  'toggleNightMode' | 'openSignoutModal'
+> & {
   fetchState: { pending: boolean };
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef?: React.RefObject<HTMLDivElement>;
-  showMenu: () => void;
-  hideMenu: () => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
-  hideLanguageMenu: () => void;
-  user?: User;
-}
-export const UniversalNav = ({
+};
+const UniversalNav = ({
   displayMenu,
-  isLanguageMenuDisplayed,
   showMenu,
   hideMenu,
-  showLanguageMenu,
-  hideLanguageMenu,
   menuButtonRef,
   searchBarRef,
   user,
@@ -63,11 +55,15 @@ export const UniversalNav = ({
       className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
       id='universal-nav'
     >
-      <div
-        className={`universal-nav-left${displayMenu ? ' display-search' : ''}`}
-      >
-        <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>{search}</Media>
-      </div>
+      <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>
+        <div
+          className={`universal-nav-left${
+            displayMenu ? ' display-search' : ''
+          }`}
+        >
+          {search}
+        </div>
+      </Media>
       <Link id='universal-nav-logo' to='/learn'>
         <NavLogo />
       </Link>
@@ -90,6 +86,7 @@ export const UniversalNav = ({
                 </Link>
               </Media>
             )}
+            <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
               hideMenu={hideMenu}
@@ -100,12 +97,8 @@ export const UniversalNav = ({
             <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
             <NavLinks
               displayMenu={displayMenu}
-              fetchState={fetchState}
-              isLanguageMenuDisplayed={isLanguageMenuDisplayed}
-              hideLanguageMenu={hideLanguageMenu}
               hideMenu={hideMenu}
               menuButtonRef={menuButtonRef}
-              showLanguageMenu={showLanguageMenu}
               showMenu={showMenu}
               user={user}
             />

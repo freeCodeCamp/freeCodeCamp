@@ -1,11 +1,15 @@
 import { navigate } from 'gatsby';
-import React, { MutableRefObject } from 'react';
+import React, { MutableRefObject, RefObject } from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
-import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
-import { isChallenge } from '../../../utils/path-parsers';
+import type {
+  ChallengeFiles,
+  Test,
+  User,
+  ChallengeMeta
+} from '../../../redux/prop-types';
 
 import { userSelector } from '../../../redux/selectors';
 import {
@@ -57,18 +61,17 @@ const keyMap = {
   showShortcuts: 'shift+/'
 };
 
-interface HotkeysProps {
+interface HotkeysProps
+  extends Pick<ChallengeMeta, 'nextChallengePath' | 'prevChallengePath'> {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
   challengeType?: number;
   children: React.ReactElement;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
+  editorRef?: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
-  innerRef: MutableRefObject<HTMLElement | undefined>;
+  innerRef: RefObject<HTMLElement> | undefined;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
-  nextChallengePath: string;
-  prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
   setIsAdvancing: (arg0: boolean) => void;
   tests: Test[];
@@ -96,12 +99,12 @@ function Hotkeys({
   user: { keyboardShortcuts }
 }: HotkeysProps): JSX.Element {
   const handlers = {
-    executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    executeChallenge: (e?: KeyboardEvent) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
       // needs to be prevented.
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
       // should not be prevented in that case.
-      e.preventDefault();
+      e?.preventDefault();
 
       if (!executeChallenge) return;
 
@@ -123,8 +126,8 @@ function Hotkeys({
     },
     ...(keyboardShortcuts
       ? {
-          focusEditor: (e: React.KeyboardEvent) => {
-            e.preventDefault();
+          focusEditor: (e?: KeyboardEvent) => {
+            e?.preventDefault();
             if (editorRef && editorRef.current) {
               editorRef.current.focus();
             }
@@ -137,18 +140,26 @@ function Hotkeys({
           navigationMode: () => setEditorFocusability(false),
           navigatePrev: () => {
             if (!canFocusEditor) {
-              if (isChallenge(prevChallengePath)) setIsAdvancing(true);
-              void navigate(prevChallengePath);
+              if (prevChallengePath) {
+                setIsAdvancing(true);
+                void navigate(prevChallengePath);
+              } else {
+                void navigate('/learn');
+              }
             }
           },
           navigateNext: () => {
             if (!canFocusEditor) {
-              if (isChallenge(nextChallengePath)) setIsAdvancing(true);
-              void navigate(nextChallengePath);
+              if (nextChallengePath) {
+                setIsAdvancing(true);
+                void navigate(nextChallengePath);
+              } else {
+                void navigate('/learn');
+              }
             }
           },
-          showShortcuts: (e: React.KeyboardEvent) => {
-            if (!canFocusEditor && e.shiftKey && e.key === '?') {
+          showShortcuts: (e?: KeyboardEvent) => {
+            if (!canFocusEditor && e?.shiftKey && e.key === '?') {
               openShortcutsModal();
             }
           }
@@ -162,8 +173,6 @@ function Hotkeys({
   // canFocusEditor)
   return (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
       <HotKeys
         allowChanges={true}
         handlers={handlers}

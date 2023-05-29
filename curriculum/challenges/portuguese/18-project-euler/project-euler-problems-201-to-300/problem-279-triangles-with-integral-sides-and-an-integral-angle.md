@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff96
-title: 'Problem 279: Triangles with integral sides and an integral angle'
+title: 'Problema 279: Triângulos com lados e ângulo em números inteiros'
 challengeType: 1
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
@@ -8,11 +8,11 @@ dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 
 # --description--
 
-How many triangles are there with integral sides, at least one integral angle (measured in degrees), and a perimeter that does not exceed ${10}^8$?
+Quantos triângulos existem com lados compostos de números inteiros, ao menos um ângulo em número inteiro (medido em graus) e com um perímetro que não exceda ${10}^8$?
 
 # --hints--
 
-`trianglesWithIntegralSidesAndAngle()` should return `416577688`.
+`trianglesWithIntegralSidesAndAngle()` deve retornar `416577688`.
 
 ```js
 assert.strictEqual(trianglesWithIntegralSidesAndAngle(), 416577688);

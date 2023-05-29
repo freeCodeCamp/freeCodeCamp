@@ -26,7 +26,7 @@ Find $\displaystyle \sum_{r = 1}^{50} A(r)$. Give your answer rounded to six dec
 
 # --hints--
 
-`sphericalTriangles()` should return `2717.751525`.
+`sphericalTriangles()` має повернути `2717.751525`.
 
 ```js
 assert.strictEqual(sphericalTriangles(), 2717.751525);

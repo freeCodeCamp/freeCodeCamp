@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff59
-title: 'Problem 218: Perfect right-angled triangles'
+title: 'Problema 218: Triângulos retos perfeitos'
 challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
@@ -8,29 +8,29 @@ dashedName: problem-218-perfect-right-angled-triangles
 
 # --description--
 
-Consider the right-angled triangle with sides $a=7$, $b=24$ and $c=25$.
+Considere o triângulo reto com lados $a=7$, $b=24$ e $c=25$.
 
-The area of this triangle is 84, which is divisible by the perfect numbers 6 and 28.
+A área deste triângulo é 84, que é divisível pelos números perfeitos 6 e 28.
 
-Moreover it is a primitive right-angled triangle as $gcd(a,b) = 1$ and $gcd(b,c) = 1$.
+Além disso, ele é um triângulo reto primitivo, já que tem os maiores divisores comuns $gcd(a,b) = 1$ e $gcd(b,c) = 1$.
 
-Also $c$ is a perfect square.
+Por fim, $c$ é um quadrado perfeito.
 
-We will call a right-angled triangle perfect if:
+Chamaremos um triângulo de triângulo reto perfeito se:
 
-- it is a primitive right-angled triangle
-- its hypotenuse is a perfect square
+- for um triângulo reto primitivo
+- sua hipotenusa for um quadrado perfeito
 
-We will call a right-angled triangle super-perfect if:
+Chamaremos um triângulo de triângulo reto superperfeito se:
 
-- it is a perfect right-angled triangle
-- its area is a multiple of the perfect numbers 6 and 28.
+- for um triângulo reto perfeito
+- sua área for um múltiplo dos números perfeitos 6 e 28.
 
-How many perfect right-angled triangles with $c ≤ {10}^{16}$ exist that are not super-perfect?
+Quantos triângulos retos perfeitos com $c ≤ {10}^{16}$ existem que não são superperfeitos?
 
 # --hints--
 
-`perfectRightAngledTriangles()` should return `0`.
+`perfectRightAngledTriangles()` deve retornar `0`.
 
 ```js
 assert.strictEqual(perfectRightAngledTriangles(), 0);

@@ -16,7 +16,7 @@ Find $\sum {[P_m]}$ for $2 ≤ m ≤ 15$.
 
 # --hints--
 
-`maximisingWeightedProduct()` should return `371048281`.
+`maximisingWeightedProduct()` має повернути `371048281`.
 
 ```js
 assert.strictEqual(maximisingWeightedProduct(), 371048281);

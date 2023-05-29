@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-如果我们想要遍历对象中的所有属性， 只需要使用 JavaScript 中的 <dfn>for...in</dfn> 语句即可。 以遍历 `users` 对象的属性为例：
+Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-这将记录 `Alan`、`Jeff` 和 `Sarah` - 每个值都在自己的行中。
+This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
 
-在上面的代码中，我们定义了一个 `user` 变量。 可以观察到，这个变量在遍历对象的语句执行过程中会一直被重置并赋予新值，结果就是不同的用户名打印到了 console 中。
+We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
 **注意：**对象中的键是无序的，这与数组不同。 因此，一个对象中某个属性的位置，或者说它出现的相对顺序，在引用或访问该属性时是不确定的。
 
 # --instructions--
 
-我们已经定义了一个 `countOnline` 函数，它接收一个 users 对象参数。 请在其中使用 <dfn>for...in</dfn> 语句来遍历传入函数的 users 对象中的用户，并返回 `online` 属性为 `true` 的用户数量。 以下是一个传入 `countOnline` 函数的对象示例， 注意每个用户都有 `online` 属性，其属性值为 `true` 或 `false`：
+We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

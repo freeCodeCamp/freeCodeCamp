@@ -27,6 +27,7 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -40,7 +41,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap = [
+const legacyCertMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -177,14 +178,7 @@ const certMap = [
       }
     ]
   },
-  {
-    id: '561add10cb82ac38a17213bd',
-    title: 'Legacy Full Stack',
-    certSlug: 'full-stack',
-    flag: 'isFullStackCert'
-    // Requirements are other certs and is
-    // handled elsewhere
-  },
+
   {
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
@@ -292,7 +286,18 @@ const certMap = [
         certSlug: 'information-security-and-quality-assurance'
       }
     ]
-  },
+  }
+] as const;
+const legacyFullStack = {
+  id: '561add10cb82ac38a17213bd',
+  title: 'Legacy Full Stack',
+  certSlug: 'full-stack',
+  flag: 'isFullStackCert',
+  projects: null
+  // Requirements are other certs and is
+  // handled elsewhere
+} as const;
+const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -333,7 +338,6 @@ const certMap = [
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -755,6 +759,23 @@ const certMap = [
   }
 ] as const;
 
+const upcomingCertMap = [
+  {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Example Certification',
+    certSlug: 'example-certification-v8',
+    flag: 'isExampleCertV8',
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certification Exam',
+        link: `${exampleCertBase}/example-certification-exam`,
+        certSlug: 'example-certification-v8'
+      }
+    ]
+  }
+] as const;
+
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
 }
@@ -769,23 +790,45 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const titles = certMap.map(({ title }) => title);
-type Title = (typeof titles)[number];
-const legacyProjectMap: Partial<Record<Title, unknown>> = {};
-const projectMap: Partial<Record<Title, unknown>> = {};
+const certMapWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
+  : ([...legacyCertMap, ...certMap] as const);
 
-certMap.forEach(cert => {
-  // Filter out Legacy Full Stack so inputs for project
-  // URLs aren't rendered on the settings page
-  if (cert.title !== 'Legacy Full Stack') {
-    if (cert.title.startsWith('Legacy')) {
-      legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of certs from settings page
-      // should do suggestion on line 33 and use front matter to hide it
-    } else {
-      projectMap[cert.title] = cert.projects;
-    }
-  }
-});
+const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
-export { certMap, legacyProjectMap, projectMap };
+export type ProjectMap = Record<
+  (typeof certMap)[number]['title'],
+  (typeof certMap)[number]['projects']
+>;
+
+const projectMap = certMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as ProjectMap);
+
+export type LegacyProjectMap = Record<
+  (typeof legacyCertMap)[number]['title'],
+  (typeof legacyCertMap)[number]['projects']
+>;
+
+const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as LegacyProjectMap);
+
+const fullProjectMap = {
+  ...legacyProjectMap,
+  ...projectMap
+};
+
+export {
+  certMapWithoutFullStack,
+  fullCertMap,
+  fullProjectMap,
+  legacyProjectMap,
+  projectMap
+};

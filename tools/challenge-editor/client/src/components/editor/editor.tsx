@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import CodeMirror from '@uiw/react-codemirror';
 import * as codemirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -21,12 +21,8 @@ const Editor = () => {
     name: '',
     fileData: ''
   });
-  const [input, setInput] = useState('');
-  const params = useParams() as {
-    superblock: string;
-    block: string;
-    challenge: string;
-  };
+  const [stepContent, setStepContent] = useState('');
+  const { superblock, block, challenge } = useParams();
 
   useEffect(() => {
     fetchData();
@@ -35,15 +31,13 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(
-      `${API_LOCATION}/${params.superblock}/${params.block}/${params.challenge}`
-    )
+    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`)
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
           setLoading(false);
           setItems(content);
-          setInput(content.fileData);
+          setStepContent(content.fileData);
         },
         (error: Error) => {
           setLoading(false);
@@ -52,12 +46,9 @@ const Editor = () => {
       );
   };
 
-  const handleChange = (
-    editor: codemirror.Editor,
-    data: codemirror.EditorChange,
-    value: string
-  ) => {
-    setInput(value);
+  const handleChange = (instance: codemirror.Editor) => {
+    const editedContent = instance.getValue();
+    setStepContent(editedContent);
   };
 
   if (error) {
@@ -70,11 +61,11 @@ const Editor = () => {
     <div>
       <h1>{items.name}</h1>
       <span className='breadcrumb'>
-        {params.superblock} / {params.block}
+        {superblock} / {block}
       </span>
       <CodeMirror
-        value={input}
-        onBeforeChange={handleChange}
+        value={stepContent}
+        onChange={handleChange}
         options={{
           mode: {
             name: 'markdown',
@@ -86,15 +77,13 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={params.superblock}
-        block={params.block}
-        challenge={params.challenge}
-        content={input}
+        superblock={superblock}
+        block={block}
+        challenge={challenge}
+        content={stepContent}
       />
       <p>
-        <Link to={`/${params.superblock}/${params.block}`}>
-          Return to Block
-        </Link>
+        <Link to={`/${superblock}/${block}`}>Return to Block</Link>
       </p>
     </div>
   );

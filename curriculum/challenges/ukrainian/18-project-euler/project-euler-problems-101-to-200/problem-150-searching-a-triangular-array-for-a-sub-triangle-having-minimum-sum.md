@@ -37,7 +37,7 @@ Find the smallest possible sub-triangle sum.
 
 # --hints--
 
-`smallestSubTriangleSum()` should return `-271248680`.
+`smallestSubTriangleSum()` має повернути `-271248680`.
 
 ```js
 assert.strictEqual(smallestSubTriangleSum(), -271248680);

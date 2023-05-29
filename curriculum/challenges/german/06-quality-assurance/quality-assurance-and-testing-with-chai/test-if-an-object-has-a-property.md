@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `property` vs. `notProperty`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `property` vs. `notProperty`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `property` vs. `n
   );
 ```
 
-You should choose the correct method for the second assertion - `property` vs. `notProperty`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `property` vs. `notProperty`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `property` vs. `
   );
 ```
 
-You should choose the correct method for the third assertion - `property` vs. `notProperty`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `property` vs. `notProperty`.
 
 ```js
 (getUserInput) =>

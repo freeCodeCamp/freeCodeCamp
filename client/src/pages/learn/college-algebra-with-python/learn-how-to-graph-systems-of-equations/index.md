@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn How to Graph Systems of Equations
-block: Learn How to Graph Systems of Equations
-superBlock: College Algebra with Python
+block: learn-how-to-graph-systems-of-equations
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn How to Graph Systems of Equations

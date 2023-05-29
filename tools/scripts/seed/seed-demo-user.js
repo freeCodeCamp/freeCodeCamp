@@ -2,7 +2,6 @@ const path = require('path');
 const debug = require('debug');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectId } = require('mongodb');
-const defaultUserImage = require('../../../config/misc').defaultUserImage;
 const fullyCertifiedUser = require('./certified-user-data');
 
 const envVariables = process.argv;
@@ -26,7 +25,7 @@ function handleError(err, client) {
 }
 
 const demoUser = {
-  _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  _id: new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
   email: 'foo@bar.com',
   emailVerified: true,
   progressTimestamps: [],
@@ -36,7 +35,7 @@ const demoUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: envVariables.includes('--unset-privacy-terms')
     ? null
     : true,
@@ -86,11 +85,13 @@ const demoUser = {
   isDonating: envVariables.includes('--donor'),
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
-  keyboardShortcuts: true
+  keyboardShortcuts: true,
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
 const blankUser = {
-  _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
+  _id: new ObjectId('5bd30e0f1caf6ac3ddddddb9'),
   email: 'bar@bar.com',
   emailVerified: true,
   progressTimestamps: [],
@@ -100,7 +101,7 @@ const blankUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
   currentChallengeId: '',
@@ -145,80 +146,53 @@ const blankUser = {
   },
   isDonating: false,
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
-MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
-  handleError(err, client);
+const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-  log('Connected successfully to mongo');
+log('Connected successfully to mongo');
 
-  const db = client.db('freecodecamp');
-  const user = db.collection('user');
+const db = client.db('freecodecamp');
+const user = db.collection('user');
 
-  const dropUserTokens = async function () {
-    await db.collection('UserToken').deleteMany({
-      userId: {
-        $in: [
-          ObjectId('5fa2db00a25c1c1fa49ce067'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb9')
-        ]
-      }
-    });
-  };
+const userIds = [
+  new ObjectId('5fa2db00a25c1c1fa49ce067'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb9')
+];
 
+const dropUserTokens = async function () {
+  await db.collection('UserToken').deleteMany({
+    userId: {
+      $in: userIds
+    }
+  });
+};
+
+const dropUsers = async function () {
+  await db.collection('user').deleteMany({
+    _id: {
+      $in: userIds
+    }
+  });
+};
+
+const run = async () => {
+  await dropUserTokens();
+  await dropUsers();
   if (process.argv[2] === 'certified-user') {
-    dropUserTokens();
-    user.deleteMany(
-      {
-        _id: {
-          $in: [
-            ObjectId('5fa2db00a25c1c1fa49ce067'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb9')
-          ]
-        }
-      },
-      err => {
-        handleError(err, client);
-
-        try {
-          user.insertOne(fullyCertifiedUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
+    await user.insertOne(fullyCertifiedUser);
+    await user.insertOne(blankUser);
   } else {
-    dropUserTokens();
-    user.deleteMany(
-      {
-        _id: {
-          $in: [
-            ObjectId('5fa2db00a25c1c1fa49ce067'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb9')
-          ]
-        }
-      },
-      err => {
-        handleError(err, client);
-
-        try {
-          user.insertOne(demoUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
+    await user.insertOne(demoUser);
+    await user.insertOne(blankUser);
   }
-});
+  log('local auth user seed complete');
+};
+
+run()
+  .then(() => client.close())
+  .catch(err => handleError(err, client));

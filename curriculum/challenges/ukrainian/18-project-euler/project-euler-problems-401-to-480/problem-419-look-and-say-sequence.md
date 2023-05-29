@@ -32,14 +32,14 @@ Find $A(n)$, $B(n)$ and $C(n)$ for $n = {10}^{12}$. Give your answer modulo $2^{
 
 # --hints--
 
-`lookAndSaySequence()` should return a string.
+`lookAndSaySequence()` має повернути рядок.
 
 ```js
 assert(typeof lookAndSaySequence() === 'string');
 ```
 
 
-`lookAndSaySequence()` should return the string `998567458,1046245404,43363922`.
+`lookAndSaySequence()` має повернути рядок `998567458,1046245404,43363922`.
 
 ```js
 assert.strictEqual(lookAndSaySequence(), '998567458,1046245404,43363922');

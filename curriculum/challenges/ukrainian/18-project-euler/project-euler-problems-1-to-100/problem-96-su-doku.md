@@ -108,19 +108,19 @@ By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers foun
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` має повернути число.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` має повернути `1190`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` має повернути `24702`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

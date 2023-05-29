@@ -2,6 +2,7 @@
   "name": "Build a Data Graph Explorer Project",
   "isUpcomingChange": false,
   "order": 19,
+  "helpCategory": "Python",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +12,5 @@
       "63d8402e39c73468b059cd43",
       "Build a Data Graph Explorer"
     ]
-  ]}
+  ]
+}

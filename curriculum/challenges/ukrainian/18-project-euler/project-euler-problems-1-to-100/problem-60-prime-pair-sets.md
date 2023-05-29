@@ -14,13 +14,13 @@ Find the lowest sum for a set of five primes for which any two primes concatenat
 
 # --hints--
 
-`primePairSets()` should return a number.
+`primePairSets()` має повернути число.
 
 ```js
 assert(typeof primePairSets() === 'number');
 ```
 
-`primePairSets()` should return 26033.
+`primePairSets()` має повернути 26033.
 
 ```js
 assert.strictEqual(primePairSets(), 26033);

@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `typeOf` vs. `notTypeOf`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `typeOf` vs. `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `typeOf` vs. `not
   );
 ```
 
-You should choose the correct method for the second assertion - `typeOf` vs. `notTypeOf`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `typeOf` vs. `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `typeOf` vs. `no
   );
 ```
 
-You should choose the correct method for the third assertion - `typeOf` vs. `notTypeOf`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `typeOf` vs. `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `typeOf` vs. `not
   );
 ```
 
-You should choose the correct method for the fourth assertion - `typeOf` vs. `notTypeOf`.
+Du solltest die richtige Methode für die vierte Behauptung wählen - `typeOf` vs. `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -104,7 +104,7 @@ You should choose the correct method for the fourth assertion - `typeOf` vs. `no
   );
 ```
 
-You should choose the correct method for the fifth assertion - `typeOf` vs. `notTypeOf`.
+Du solltest die richtige Methode für die fünfte Behauptung wählen - `typeOf` vs. `notTypeOf`.
 
 ```js
 (getUserInput) =>

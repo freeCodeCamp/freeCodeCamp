@@ -1,6 +1,6 @@
 ---
 id: 5900f4811000cf542c50ff94
-title: 'Problem 277: A Modified Collatz sequence'
+title: 'Problema 277: una sequenza di Collatz modificata'
 challengeType: 1
 forumTopicId: 301927
 dashedName: problem-277-a-modified-collatz-sequence
@@ -8,29 +8,29 @@ dashedName: problem-277-a-modified-collatz-sequence
 
 # --description--
 
-A modified Collatz sequence of integers is obtained from a starting value $a_1$ in the following way:
+Una sequenza di numeri interi modificata è ottenuta da un valore iniziale $a_1$ nel seguente modo:
 
-$a_{n + 1} = \frac{a_n}{3}$ if $a_n$ is divisible by 3. We shall denote this as a large downward step, "D".
+$a_{n + 1} = \frac{a_n}{3}$ se $a_n$ è divisibile per 3. Lo indicheremo come un passo grande verso il basso, "D".
 
-$a_{n + 1} = \frac{4a_n + 2}{3}$ if $a_n$ divided by 3 gives a remainder of 1. We shall denote this as an upward step, "U".
+$a_{n + 1} = \frac{4a_n + 2}{3}$ se $a_n$ diviso per 3 dà un resto di 1. Lo indicheremo come un passo verso l'alto, "U".
 
-$a_{n + 1} = \frac{2a_n - 1}{3}$ if $a_n$ divided by 3 gives a remainder of 2. We shall denote this as a small downward step, "d".
+$a_{n + 1} = \frac{2a_n - 1}{3}$ se $a_n$ diviso per 3 dà un resto di 2. Lo indicheremo come un piccolo passo verso il basso, "d".
 
-The sequence terminates when some $a_n = 1$.
+La sequenza termina quando qualche $a_n = 1$.
 
-Given any integer, we can list out the sequence of steps. For instance if $a_1 = 231$, then the sequence $\\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ corresponds to the steps "DdDddUUdDD".
+Dato qualsiasi numero intero, possiamo elencare la sequenza dei passaggi. Per esempio se $a_1 = 231$, allora la sequenza \\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ corrisponde ai passi "DdDddUUdDD".
 
-Of course, there are other sequences that begin with that same sequence "DdDddUUdDD....".
+Naturalmente, ci sono altre sequenze che iniziano con quella stessa sequenza "DdDddUUdDD...".
 
-For instance, if $a_1 = 1004064$, then the sequence is DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
+Per esempio, se $a_1 = 1004064$, allora la sequenza è DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
 
-In fact, 1004064 is the smallest possible $a_1 > {10}^6$ that begins with the sequence DdDddUUdDD.
+Infatti, 1004064 è il più piccolo possibile $a_1 > {10}^6$ che inizia con la sequenza DdDddUUdDD.
 
-What is the smallest $a_1 > {10}^{15}$ that begins with the sequence "UDDDUdddDDUDDddDdDddDDUDDdUUDd"?
+Qual è il più piccolo $a_1 > {10}^{15}$ che inizia con la sequenza "UDDDUdddDDUDDddDdDddDDUDDdUUDd"?
 
 # --hints--
 
-`modifiedCollatzSequence()` should return `1125977393124310`.
+`modifiedCollatzSequence()` dovrebbe restituire `1125977393124310`.
 
 ```js
 assert.strictEqual(modifiedCollatzSequence(), 1125977393124310);

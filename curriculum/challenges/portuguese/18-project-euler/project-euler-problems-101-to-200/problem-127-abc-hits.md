@@ -1,6 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50fefe
-title: 'Problem 127: abc-hits'
+title: 'Problema 127: Trio abc'
 challengeType: 1
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
@@ -8,29 +8,29 @@ dashedName: problem-127-abc-hits
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+O radical de $n$, $rad(n)$, é o produto dos fatores primos distintos de $n$. Por exemplo, $504 = 2^3 × 3^2 × 7$, então $rad(504) = 2 × 3 × 7 = 42$.
 
-We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
+Definiremos o trio de números inteiros positivos (a, b, c) como sendo um trio abc se:
 
 1. $GCD(a, b) = GCD(a, c) = GCD(b, c) = 1$
 2. $a &lt; b$
 3. $a + b = c$
 4. $rad(abc) &lt; c$
 
-For example, (5, 27, 32) is an abc-hit, because:
+Por exemplo, (5, 27, 32) é um trio abc, pois:
 
 1. $GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1$
 2. $5 &lt; 27$
 3. $5 + 27 = 32$
 4. $rad(4320) = 30 &lt; 32$
 
-It turns out that abc-hits are quite rare and there are only thirty-one abc-hits for $c &lt; 1000$, with $\sum{c} = 12523$.
+Ocorre que os trios abc são bastante raros e há somente 31 deles para $c &lt; 1000$, com a $\sum{c} = 12523$.
 
-Find $\sum{c}$ for $c &lt; 120000$.
+Encontre a $\sum{c}$ para $c &lt; 120000$.
 
 # --hints--
 
-`abcHits()` should return `18407904`.
+`abcHits()` deve retornar `18407904`.
 
 ```js
 assert.strictEqual(abcHits(), 18407904);

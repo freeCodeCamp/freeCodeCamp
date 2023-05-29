@@ -31,7 +31,7 @@ For $1 ≤ k ≤ 200$, find $\sum{m(k)}$.
 
 # --hints--
 
-`efficientExponentation()` should return `1582`.
+`efficientExponentation()` має повернути `1582`.
 
 ```js
 assert.strictEqual(efficientExponentation(), 1582);

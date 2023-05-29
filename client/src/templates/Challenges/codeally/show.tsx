@@ -1,9 +1,10 @@
 // Package Utilities
 import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -43,6 +44,8 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { SuperBlocks } from '../../../../../config/certification-settings';
+import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
 
@@ -107,10 +110,9 @@ interface ShowCodeAllyProps {
   userToken: string | null;
 }
 
-// Component
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private _container: RefObject<HTMLElement> | undefined;
 
   componentDidMount(): void {
     const {
@@ -130,7 +132,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+
+    this._container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -184,6 +187,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
             id: challengeId,
             instructions,
             notes,
+            superBlock,
             title,
             translationPending,
             url
@@ -202,6 +206,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       updateSolutionFormValues,
       userToken = null
     } = this.props;
+
+    const blockNameTitle = `${t(
+      `intro:${superBlock}.blocks.${blockName}.title`
+    )}: ${title}`;
+    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
     // Initial CodeAlly login includes a tempToken in redirect URL
     const queryParams = new URLSearchParams(window.location.search);
@@ -226,10 +235,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
+    const titleContext = t('learn.github-link');
 
     return showCodeAlly ? (
       <LearnLayout>
-        <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
+        <Helmet title={windowTitle} />
         <iframe
           className='codeally-frame'
           data-cy='codeally-frame'
@@ -241,13 +251,14 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        innerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
+          <Helmet title={windowTitle} />
           <Grid>
+            {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -266,7 +277,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       href='https://github.com/join'
                       rel='noopener noreferrer'
                       target='_blank'
-                      title={t('learn.github-link')}
+                      title={titleContext}
                     >
                       placeholder
                     </a>
@@ -379,6 +390,7 @@ export const query = graphql`
         id
         instructions
         notes
+        superBlock
         title
         translationPending
         url

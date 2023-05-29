@@ -133,10 +133,10 @@ function createReadSessionUser(app) {
         ].map(obs => obs.toPromise())
       );
 
-      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const { calendar } = getProgress(progressTimestamps);
       const user = {
         ...queryUser.toJSON(),
-        ...progress,
+        calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem
@@ -149,10 +149,6 @@ function createReadSessionUser(app) {
             ...pick(user, userPropsForSession),
             username: user.usernameDisplay || user.username,
             isEmailVerified: !!user.emailVerified,
-            isGithub: !!user.githubProfile,
-            isLinkedIn: !!user.linkedin,
-            isTwitter: !!user.twitter,
-            isWebsite: !!user.website,
             ...normaliseUserFields(user),
             joinDate: user.id.getTimestamp(),
             userToken: encodedUserToken

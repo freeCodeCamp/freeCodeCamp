@@ -1,10 +1,9 @@
 export const selectors = {
   class: {
-    outputText: '.output-text',
     reactMonacoEditor: '.react-monaco-editor-container'
   },
   id: {},
-  data: {},
+  dataCy: { outputText: '[data-cy="output-text"]' },
   tag: {
     inputSolution: 'input[name="solution"]'
   }

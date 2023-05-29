@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { TFunction, withTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import {
   challengeMetaSelector,
   currentBlockIdsSelector,
   completedChallengesInBlockSelector,
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
-import { certMap } from '../../resources/cert-and-project-map';
+import { certMapWithoutFullStack } from '../../resources/cert-and-project-map';
 import ProgressBarInner from './progress-bar-inner';
 
 const mapStateToProps = createSelector(
@@ -54,10 +55,8 @@ function ProgressBar({
   t
 }: ProgressBarProps): JSX.Element {
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-  const isCertificationProject = certMap.some(cert => {
-    if ('projects' in cert) {
-      return cert.projects.some((project: { id: string }) => project.id === id);
-    }
+  const isCertificationProject = certMapWithoutFullStack.some(cert => {
+    return cert.projects.some((project: { id: string }) => project.id === id);
   });
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;

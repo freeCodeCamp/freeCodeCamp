@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import jQuery from 'jquery';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 
@@ -22,7 +21,7 @@ window.$ = jQuery;
 
 document.__initTestFrame = initTestFrame;
 
-export interface InitTestFrameArg {
+interface InitTestFrameArg {
   code: {
     contents?: string;
     editableContents?: string;

@@ -18,7 +18,7 @@ How many ways can a row measuring fifty units in length be filled?
 
 # --hints--
 
-`countingBlockOne()` should return `16475640049`.
+`countingBlockOne()` має повернути `16475640049`.
 
 ```js
 assert.strictEqual(countingBlockOne(), 16475640049);

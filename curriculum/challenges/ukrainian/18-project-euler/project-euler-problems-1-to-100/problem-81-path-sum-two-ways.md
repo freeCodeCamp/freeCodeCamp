@@ -18,19 +18,19 @@ Find the minimal path sum from the top left to the bottom right by only moving r
 
 # --hints--
 
-`pathSumTwoWays(testMatrix1)` should return a number.
+`pathSumTwoWays(testMatrix1)` має повернути число.
 
 ```js
 assert(typeof pathSumTwoWays(_testMatrix1) === 'number');
 ```
 
-`pathSumTwoWays(testMatrix1)` should return `2427`.
+`pathSumTwoWays(testMatrix1)` має повернути `2427`.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix1), 2427);
 ```
 
-`pathSumTwoWays(testMatrix2)` should return `427337`.
+`pathSumTwoWays(testMatrix2)` має повернути `427337`.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix2), 427337);

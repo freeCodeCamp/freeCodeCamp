@@ -24,7 +24,7 @@ Find $S({10}^{16})\bmod 7^{10}$.
 
 # --hints--
 
-`stoneGameTwo()` should return `54672965`.
+`stoneGameTwo()` має повернути `54672965`.
 
 ```js
 assert.strictEqual(stoneGameTwo(), 54672965);

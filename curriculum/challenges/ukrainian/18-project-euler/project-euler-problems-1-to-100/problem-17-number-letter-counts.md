@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
-title: 'Problem 17: Number letter counts'
+title: 'Завдання 17: підрахунок букв у числах'
 challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
@@ -8,33 +8,33 @@ dashedName: problem-17-number-letter-counts
 
 # --description--
 
-If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+Якщо числа від 1 до 5 записати словами (one, two, three, four, five), то загалом буде використано 3 + 3 + 5 + 4 + 4 = 10 букв.
 
-If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+Якщо числа від 1 до заданого `limit` включно записати словами, скільки букв потрібно було б використати?
 
-**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+**Примітка:** не враховуйте пробіли чи дефіси. Наприклад, 342 (three hundred and forty-two) складається з 23 букв, а 115 (one hundred and fifteen) — з 20. Використання «and» при написанні чисел відповідає правилам Британської англійської.
 
 # --hints--
 
-`numberLetterCounts(5)` should return a number.
+`numberLetterCounts(5)` має повернути число.
 
 ```js
 assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-`numberLetterCounts(5)` should return 19.
+`numberLetterCounts(5)` має повернути 19.
 
 ```js
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` має повернути 1903.
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` має повернути 21124.
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

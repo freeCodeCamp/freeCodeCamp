@@ -26,7 +26,7 @@ Implement a function that calculates how many of the integers from `1` to `num` 
 
 # --hints--
 
-`getDPA` should be a function.
+`getDPA` sollte eine Funktion sein.
 
 ```js
 assert(typeof getDPA === 'function');
@@ -44,19 +44,19 @@ assert(Array.isArray(getDPA(5000)));
 assert(getDPA(5000).length === 3);
 ```
 
-`getDPA(5000)` should return `[3758, 3, 1239]`.
+`getDPA(5000)` sollte `[3758, 3, 1239]` zurückgeben.
 
 ```js
 assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
 ```
 
-`getDPA(10000)` should return `[7508, 4, 2488]`.
+`getDPA(10000)` sollte `[7508, 4, 2488]` zurückgeben.
 
 ```js
 assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
 ```
 
-`getDPA(20000)` should return `[15043, 4, 4953]`.
+`getDPA(20000)` sollte `[15043, 4, 4953]` zurückgeben.
 
 ```js
 assert.deepEqual(getDPA(20000), [15043, 4, 4953]);

@@ -1,6 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
-title: 'Problem 19: Counting Sundays'
+title: 'Problema 19: contare le domeniche'
 challengeType: 1
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
@@ -8,37 +8,37 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-You are given the following information, but you may prefer to do some research for yourself.
+Ti sono fornite le seguenti informazioni, ma potresti voler fare un po' di ricerca per conto tuo.
 
 <ul>
-  <li>1 Jan 1900 was a Monday.</li>
-  <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
-  <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+  <li>Il 1 Gennaio 1900 era un lunedì.</li>
+  <li>Trenta giorni a novembre,<br>con april, giugno e settembre,<br>di ventotto ce n'è uno,<br>tutti gli altri ne han trentuno.</li>
+  <li>Un anno bisestile si verifica in qualsiasi anno divisibile per 4, ma non in un anno divisibile per 100 a meno che non sia divisibile per 400.</li>
 </ul>
 
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+Quante domeniche sono cadute il primo del mese durante il ventesimo secolo (dal 1 Gen 1901 al 31 Dic 2000)?
 
 # --hints--
 
-`countingSundays(1943, 1946)` should return a number.
+`countingSundays(1943, 1946)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-`countingSundays(1943, 1946)` should return 6.
+`countingSundays(1943, 1946)` dovrebbe restituire 6.
 
 ```js
 assert.strictEqual(countingSundays(1943, 1946), 6);
 ```
 
-`countingSundays(1995, 2000)` should return 10.
+`countingSundays(1995, 2000)` dovrebbe restituire 10.
 
 ```js
 assert.strictEqual(countingSundays(1995, 2000), 10);
 ```
 
-`countingSundays(1901, 2000)` should return 171.
+`countingSundays(1901, 2000)` dovrebbe restituire 171.
 
 ```js
 assert.strictEqual(countingSundays(1901, 2000), 171);

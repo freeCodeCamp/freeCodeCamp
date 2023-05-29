@@ -22,31 +22,31 @@ What is the index of the first term in the Fibonacci sequence to contain `n` dig
 
 # --hints--
 
-`digitFibonacci(5)` should return a number.
+`digitFibonacci(5)` має повернути число.
 
 ```js
 assert(typeof digitFibonacci(5) === 'number');
 ```
 
-`digitFibonacci(5)` should return 21.
+`digitFibonacci(5)` має повернути 21.
 
 ```js
 assert.strictEqual(digitFibonacci(5), 21);
 ```
 
-`digitFibonacci(10)` should return 45.
+`digitFibonacci(10)` має повернути 45.
 
 ```js
 assert.strictEqual(digitFibonacci(10), 45);
 ```
 
-`digitFibonacci(15)` should return 69.
+`digitFibonacci(15)` має повернути 69.
 
 ```js
 assert.strictEqual(digitFibonacci(15), 69);
 ```
 
-`digitFibonacci(20)` should return 93.
+`digitFibonacci(20)` має повернути 93.
 
 ```js
 assert.strictEqual(digitFibonacci(20), 93);

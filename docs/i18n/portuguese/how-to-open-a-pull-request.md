@@ -2,7 +2,7 @@
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
-Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações cuidadosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
 
 Alguns exemplos disso são:
 
@@ -31,12 +31,12 @@ Sempre que abrir um Pull Request (PR), você pode usar a referência abaixo para
 
 **Tipo:**
 
-| Tipo  | Quando selecionar                                                                      |
-|:----- |:-------------------------------------------------------------------------------------- |
-| fix   | Funcionalidade mudada ou atualizada/melhorada, testes, a explicação de uma lição, etc. |
-| feat  | Somente se você estiver adicionando novas funcionalidades, testes, etc.                |
-| chore | Mudanças não relacionadas ao código, testes ou explicação de uma lição.                |
-| docs  | Mudanças no diretório `/docs` ou nas diretrizes de contribuição, etc.                  |
+| Tipo  | Quando selecionar                                                                     |
+|:----- |:------------------------------------------------------------------------------------- |
+| fix   | Funcionalidade mudada ou atualizada/melhorada, testes, a explicação de uma lição etc. |
+| feat  | Somente se você estiver adicionando novas funcionalidades, testes, etc.               |
+| chore | Mudanças não relacionadas ao código, testes ou explicação de uma lição.               |
+| docs  | Mudanças no diretório `/docs` ou nas diretrizes de contribuição, etc.                 |
 
 **Escopo:**
 

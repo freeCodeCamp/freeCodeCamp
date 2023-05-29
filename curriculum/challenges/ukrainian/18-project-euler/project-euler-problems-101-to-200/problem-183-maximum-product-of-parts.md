@@ -28,7 +28,7 @@ Find $\sum D(N)$ for $5 ≤ N ≤ 10000$.
 
 # --hints--
 
-`maximumProductOfParts()` should return `48861552`.
+`maximumProductOfParts()` має повернути `48861552`.
 
 ```js
 assert.strictEqual(maximumProductOfParts(), 48861552);

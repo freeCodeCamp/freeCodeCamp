@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff02
-title: 'Problem 131: Prime cube partnership'
+title: 'Problema 131: Associação dos cubos primos'
 challengeType: 1
 forumTopicId: 301759
 dashedName: problem-131-prime-cube-partnership
@@ -8,17 +8,17 @@ dashedName: problem-131-prime-cube-partnership
 
 # --description--
 
-There are some prime values, $p$, for which there exists a positive integer, $n$, such that the expression $n^3 + n^{2}p$ is a perfect cube.
+Existem alguns valores primos, $p$, para os quais também existe um número inteiro positivo, $n$, tal que a expressão $n^3 + n^{2}p$ é um cubo perfeito.
 
-For example, when $p = 19,\\ 8^3 + 8^2 × 19 = {12}^3$.
+Por exemplo, quando $p = 19,\\ 8^3 + 8^2 x 19 = {12}^3$.
 
-What is perhaps most surprising is that the value of $n$ is unique for each prime with this property, and there are only four such primes below one hundred.
+O que é talvez mais surpreendente é que o valor de $n$ é único para cada primo com essa propriedade, e só existem 4 primos com essa propriedade abaixo de 100.
 
-How many primes below one million have this remarkable property?
+Quantos primos abaixo de 1 milhão possuem essa propriedade notável?
 
 # --hints--
 
-`primeCubePartnership()` should return `173`.
+`primeCubePartnership()` deve retornar `173`.
 
 ```js
 assert.strictEqual(primeCubePartnership(), 173);

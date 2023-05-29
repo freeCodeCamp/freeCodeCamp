@@ -1,6 +1,6 @@
 ---
 id: 5900f4251000cf542c50ff38
-title: 'Problem 185: Number Mind'
+title: 'Problema 185: Number Mind'
 challengeType: 1
 forumTopicId: 301821
 dashedName: problem-185-number-mind
@@ -8,20 +8,20 @@ dashedName: problem-185-number-mind
 
 # --description--
 
-The game Number Mind is a variant of the well known game Master Mind.
+Il gioco Number Mind è una variante del ben noto gioco Master Mind.
 
-Instead of coloured pegs, you have to guess a secret sequence of digits. After each guess you're only told in how many places you've guessed the correct digit. So, if the sequence was 1234 and you guessed 2036, you'd be told that you have one correct digit; however, you would NOT be told that you also have another digit in the wrong place.
+Invece di chiodini colorati, devi indovinare una sequenza segreta di cifre. Dopo ogni ipotesi ti viene detto solo in quanti posti hai indovinato la cifra corretta. Quindi, se la sequenza fosse 1234, tentando 2036 ti verrebbe detto che c'è una cifra corretta; tuttavia, NON sapresti di avere anche un'altra cifra ma nel posto sbagliato.
 
-For instance, given the following guesses for a 5-digit secret sequence,
+Per esempio, date le seguenti ipotesi per una sequenza segreta di 5 cifre,
 
 $$\begin{align}   & 90342 ;2\\;\text{correct}\\\\
   & 70794 ;0\\;\text{correct}\\\\   & 39458 ;2\\;\text{correct}\\\\
   & 34109 ;1\\;\text{correct}\\\\   & 51545 ;2\\;\text{correct}\\\\
   & 12531 ;1\\;\text{correct} \end{align}$$
 
-The correct sequence 39542 is unique.
+La sequenza corretta 39542 è unica.
 
-Based on the following guesses,
+Sulla base delle ipotesi seguenti,
 
 $$\begin{align}   & 5616185650518293 ;2\\;\text{correct}\\\\
   & 3847439647293047 ;1\\;\text{correct}\\\\   & 5855462940810587 ;3\\;\text{correct}\\\\
@@ -36,11 +36,11 @@ $$\begin{align}   & 5616185650518293 ;2\\;\text{correct}\\\\
   & 3041631117224635 ;3\\;\text{correct}\\\\   & 1841236454324589 ;3\\;\text{correct}\\\\
   & 2659862637316867 ;2\\;\text{correct} \end{align}$$
 
-Find the unique 16-digit secret sequence.
+Trova la sequenza segreta unica a 16 cifre.
 
 # --hints--
 
-`numberMind()` should return `4640261571849533`.
+`numberMind()` dovrebbe restituire `4640261571849533`.
 
 ```js
 assert.strictEqual(numberMind(), 4640261571849533);

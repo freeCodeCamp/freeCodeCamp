@@ -26,13 +26,13 @@ Find $F({10}^{18})$. Give as your answer as a string in its scientific notation 
 
 # --hints--
 
-`permutationOf3SmoothNumbers()` should return a string.
+`permutationOf3SmoothNumbers()` має повернути рядок.
 
 ```js
 assert.strictEqual(typeof permutationOf3SmoothNumbers() === 'string');
 ```
 
-`permutationOf3SmoothNumbers()` should return the string `5.5350769703e1512`.
+`permutationOf3SmoothNumbers()` має повернути рядок `5.5350769703e1512`.
 
 ```js
 assert.strictEqual(permutationOf3SmoothNumbers(), '5.5350769703e1512');

@@ -30,7 +30,7 @@ Find the smallest room-size $s$ for which $T(s) = 200$.
 
 # --hints--
 
-`tatamiFreeRooms()` should return `85765680`.
+`tatamiFreeRooms()` має повернути `85765680`.
 
 ```js
 assert.strictEqual(tatamiFreeRooms(), 85765680);

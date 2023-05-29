@@ -1,6 +1,6 @@
 import { build } from './app';
 
-import { NODE_ENV, PORT } from './utils/env';
+import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';
 
 const envToLogger = {
   development: {
@@ -19,7 +19,7 @@ const envToLogger = {
 };
 
 const start = async () => {
-  const fastify = await build({ logger: envToLogger[NODE_ENV] });
+  const fastify = await build({ logger: envToLogger[FREECODECAMP_NODE_ENV] });
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);

@@ -18,7 +18,7 @@ How many primes below one million have this remarkable property?
 
 # --hints--
 
-`primeCubePartnership()` should return `173`.
+`primeCubePartnership()` має повернути `173`.
 
 ```js
 assert.strictEqual(primeCubePartnership(), 173);
