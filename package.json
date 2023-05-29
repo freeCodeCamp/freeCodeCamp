@@ -121,7 +121,7 @@
     "cypress-plugin-stripe-elements": "1.0.2",
     "cypress-plugin-tab": "1.0.5",
     "docsify-cli": "4.4.4",
-    "eslint": "7.32.0",
+    "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-filenames-simple": "0.8.0",
     "eslint-plugin-import": "2.27.5",
