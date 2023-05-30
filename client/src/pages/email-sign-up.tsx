@@ -26,6 +26,7 @@ interface AcceptPrivacyTermsProps {
   isSignedIn: boolean;
   t: TFunction;
   showLoading: boolean;
+  completedChallengeCount?: number;
 }
 
 const mapStateToProps = createSelector(
@@ -33,13 +34,17 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   signInLoadingSelector,
   (
-    { acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean },
+    {
+      acceptedPrivacyTerms,
+      completedChallengeCount
+    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
     isSignedIn: boolean,
     showLoading: boolean
   ) => ({
     acceptedPrivacyTerms,
     isSignedIn,
-    showLoading
+    showLoading,
+    completedChallengeCount
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -51,7 +56,8 @@ function AcceptPrivacyTerms({
   acceptedPrivacyTerms,
   isSignedIn,
   t,
-  showLoading
+  showLoading,
+  completedChallengeCount = 0
 }: AcceptPrivacyTermsProps) {
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
@@ -125,7 +131,7 @@ function AcceptPrivacyTerms({
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
-        {isSignedIn ? (
+        {isSignedIn && completedChallengeCount < 2 ? (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='large' />
