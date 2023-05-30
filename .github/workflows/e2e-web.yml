@@ -136,7 +136,8 @@ jobs:
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
-          pip install redefine --index-url https://redefine.dev/pip/
+          # pip install redefine --index-url https://redefine.dev/pip/
+          pip install ${GITHUB_WORKSPACE}/redefine-0.14.12.post1-py3-none-manylinux1_x86_64.whl
           redefine config set environment=staging
           redefine config set redefine_address=dune-tf-staging.redefine.dev
           redefine config set stable_branch=main
