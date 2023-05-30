@@ -39,7 +39,7 @@
 
 Зверніть увагу на позначки `"help wanted"` та `"first timers only"`. Їх потрібно додавати до тредів, які підійдуть потенційним помічникам для створення запиту на злиття.
 
-For triaging a trivial issue such as a typo fix, it is recommended to apply a "first timers only" label along with additional information. You can utilize the [reply template](reply-templates.md#first-timer-only-issues) provided for this purpose.
+Для розв’язання незначної проблеми, як-от друкарської помилки, рекомендовано застосувати позначку «first timers only» разом із додатковою інформацією. Для цього ви можете використати [шаблони відповідей](reply-templates.md#first-timer-only-issues).
 
 #### Закриті, застарілі, неактивні завдання та запити на злиття
 
@@ -49,7 +49,7 @@ For triaging a trivial issue such as a typo fix, it is recommended to apply a "f
 
 - Якщо помічнику потрібні допомога або час, ми повернемося до нього після отримання відповіді. У будь-якому випадку, модератори повинні розсудливо вирішувати спірні статуси запитів.
 
-> [!TIP] We recommend you use this list of standard [reply templates](reply-templates.md) while triaging issues.
+> [!TIP] Рекомендуємо використовувати список стандартних [шаблонів відповідей](reply-templates.md) під час сортування завдань.
 
 ### Модерація запитів на злиття
 
@@ -63,7 +63,7 @@ For triaging a trivial issue such as a typo fix, it is recommended to apply a "f
 
    Це можна зробити одразу на GitHub та вирішити, чи потрібно їх об’єднувати. Нам потрібно подбати про мільйони людей, які працюють з цим текстом під час навчання на freeCodeCamp. Чи дійсно текст буде зрозумілішим, але не стане більшим? Чи доречні ці зміни? Пам’ятайте, що наша ціль — зробити завдання зрозумілими та короткими. Зайві деталі лише відволікають. Можна додати посилання на ресурс, який стосується теми завдання.
 
-   You can close invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+   Ви можете закрити недійсний PR та відповісти на нього за допомогою [шаблона](reply-templates.md#closing-invalid-pull-requests).
 
    Якщо зміни позитивні, залиште коментар «LGTM» (Looks Good To Me). Як тільки запит отримає принаймні два схвалення від модераторів чи розробників (включно з вашим), ви можете об’єднати його.
 
@@ -75,7 +75,7 @@ For triaging a trivial issue such as a typo fix, it is recommended to apply a "f
 
    Деякі помічники можуть спробувати додати додаткові тести, щоб покрити всі можливі випадки. Важливо, аби завдання не виявилось занадто складним. Завдання та їх тести повинні бути максимально простими для розуміння. Окрім алгоритмічних завдань та розділу з інтерв’ю, учні повинні вирішити кожне завдання протягом двох хвилин.
 
-   You can close invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+   Ви можете закрити недійсний PR та відповісти на нього за допомогою [шаблона](reply-templates.md#closing-invalid-pull-requests).
 
    Якщо зміни позитивні, залиште коментар «LGTM». Як тільки запит отримає принаймні два схвалення від модераторів чи розробників (включно з вашим), ви можете об’єднати його.
 
@@ -142,7 +142,7 @@ For triaging a trivial issue such as a typo fix, it is recommended to apply a "f
 
 Бувають і ситуації, коли помічник додає посилання на свій вебсайт, включно зі створеною ним бібліотекою, або вносить поверхневі зміни, які на користь лише йому.
 
-You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+Ви можете закрити недійсні PR та відповісти на них за допомогою [шаблона](reply-templates.md#closing-invalid-pull-requests).
 
 #### Інші вказівки для модераторів на GitHub
 

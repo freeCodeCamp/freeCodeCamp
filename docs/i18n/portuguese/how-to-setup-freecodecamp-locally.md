@@ -15,7 +15,7 @@ Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é
 | Precisa de uma conexão com a internet para funcionar                                  | Conexão com a internet mínima necessária (uma vez configurada)                   |
 | Algumas tarefas, como a compilação e testes, podem demorar mais para serem concluídas | Completa as tarefas mais rapidamente (dependendo das capacidades da sua máquina) |
 
-> [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente dentro de janelas.
+> [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente no Windows.
 
 ### Como preparar um espaço de trabalho no GitPod
 
