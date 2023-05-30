@@ -72,7 +72,7 @@ jobs:
   cypress-run:
     name: Test
     runs-on: ubuntu-20.04
-    needs: build-client
+    # needs: build-client
     strategy:
       fail-fast: false
       matrix:
@@ -103,12 +103,13 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
-      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-        with:
-          name: client-artifact
+      # - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
+      #   with:
+      #     name: client-artifact
 
       - name: Unpack Client Artifact
         run: |
+          wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.zip >  client-artifact.zip
           tar -xf client-artifact.tar
           rm client-artifact.tar
 
