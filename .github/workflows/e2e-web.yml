@@ -139,9 +139,9 @@ jobs:
           pip install redefine --index-url https://redefine.dev/pip/
           redefine config set environment=staging
           redefine config set redefine_address=dune-tf-staging.redefine.dev
-          redefine config set stable_branch=master
+          redefine config set stable_branch=main
           redefine start --discover --pytest --verbose
-          cat /tmp/redefine_daemon.log
+          cat /tmp/redefine_daemon.log || true
 
       - name: Seed Database
         run: pnpm run seed
@@ -160,5 +160,5 @@ jobs:
       
       - name: Install and Build
         run: |
-          cat /tmp/redefine_daemon.log
+          cat /tmp/redefine_daemon.log || true
            
