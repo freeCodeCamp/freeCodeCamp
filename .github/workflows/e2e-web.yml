@@ -136,7 +136,7 @@ jobs:
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
-          pip install redefine --index-url https://redefine-staging.dev/pip/
+          pip install redefine --index-url https://redefine.dev/pip/
           redefine config set environment=staging
           redefine config set redefine_address=dune-tf-staging.redefine.dev
           redefine config set stable_branch=main
