@@ -42,7 +42,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  // TODO: PUT /account/reset-progress
+  // TODO (PMVP): PUT /account/reset-progress
   fastify.post(
     '/account/reset-progress',
     {
@@ -96,14 +96,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  // TODO: GET /user/session-user
+  // TODO (PMVP): GET /user/session-user
   fastify.get('/user/get-session-user', async (_req, _reply) => {
     let encodedUserToken;
 
     // NOTE: LB API tested truthiness of `username` here.
     //       This appeared to be entirely LB-related, so it is not done here.
     if (!_req.session.user) {
-      // TODO: Return error
+      // TODO (PMVP): Return error
       return {
         user: {},
         result: ''
@@ -127,24 +127,12 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
 
     try {
-      const allDonations = await fastify.prisma.donation.findMany({
-        where: {
-          endDate: undefined
-        },
-        select: {
-          id: true
-        }
-      });
-
-      // TODO: Double-check this is correct - LB's impl was convoluted
-      const activeDonations = allDonations.length;
-
       const users = await fastify.prisma.user.findMany({
         where: { id: _req.session.user.id }
       });
 
       if (users.length > 1) {
-        // TODO: Send email to Kris
+        // TODO (PMVP): Send email to Kris
         return {
           message: 'flash.duplicate-account',
           type: 'danger'
@@ -152,7 +140,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (isEmpty(users)) {
-        // TODO: Return error
+        // TODO (PMVP): Return error
         return {
           user: {},
           result: ''
@@ -289,9 +277,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             username: usernameDisplay || username,
             userToken: encodedUserToken
           }
-        },
-        sessionMeta: {
-          activeDonations
         },
         result: username
       };
