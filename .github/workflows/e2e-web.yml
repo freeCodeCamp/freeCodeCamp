@@ -45,29 +45,29 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm run build
+      # - name: Install and Build
+      #   run: |
+      #     pnpm install
+      #     pnpm run build
 
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
-      # We tar them for performance reasons - uploading a lot of files is slow.
-      - name: Tar Files
-        run: tar -cf client-artifact.tar client/public
+      # # We tar them for performance reasons - uploading a lot of files is slow.
+      # - name: Tar Files
+      #   run: tar -cf client-artifact.tar client/public
 
-      - name: Upload Client Artifact
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: client-artifact
-          path: client-artifact.tar
+      # - name: Upload Client Artifact
+      #   uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+      #   with:
+      #     name: client-artifact
+      #     path: client-artifact.tar
 
-      - name: Upload Webpack Stats
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: webpack-stats
-          path: client/public/stats.json
+      # - name: Upload Webpack Stats
+      #   uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+      #   with:
+      #     name: webpack-stats
+      #     path: client/public/stats.json
 
   cypress-run:
     name: Test
@@ -109,7 +109,7 @@ jobs:
 
       - name: Unpack Client Artifact
         run: |
-          wget wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.tar
+          wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.tar
           tar -xf client-artifact.tar
           rm client-artifact.tar
 
