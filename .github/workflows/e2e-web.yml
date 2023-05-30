@@ -109,9 +109,9 @@ jobs:
 
       - name: Unpack Client Artifact
         run: |
-          wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.zip >  client-artifact.zip
-          tar -xf client-artifact.tar
-          rm client-artifact.tar
+          wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.zip > client-artifact_from_s3.tar
+          tar -xf client-artifact_from_s3.tar
+          rm client-artifact_from_s3.tar
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
