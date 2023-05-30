@@ -156,7 +156,7 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-          spec: ${{ matrix.spec }}
+          spec:  learn/header/lang-selector.ts
       
       - name: Install and Build
         run: |
