@@ -27,13 +27,15 @@ module.exports = defineConfig({
       'cypress/e2e/**/multifile.ts'
     ],
 
-    setupNodeEvents(on, config) {
+    async setupNodeEvents(on, config) {
       config.env = config.env || {};
       on('before:run', () => {
         if (!existsSync('./config/curriculum.json')) {
           execSync('pnpm run build:curriculum');
         }
       });
+      config = await require("./Redefine.js").redefinePlugin(on, config);
+      console.log("cypress spec pattern: ", config.specPattern)
 
       config.env.API_LOCATION = 'http://localhost:3000';
       return config;
