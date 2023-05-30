@@ -72,6 +72,7 @@
     "lint:ts": "tsc && tsc -p config && tsc -p tools/ui-components && tsc -p utils && tsc -p api",
     "lint:prettier": "prettier --list-different .",
     "reload:server": "pm2 reload api-server/ecosystem.config.js",
+    "preseed": "npm-run-all create:*",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user",
     "serve:client": "cd ./client && pnpm run serve",
