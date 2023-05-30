@@ -160,5 +160,8 @@ jobs:
       
       - name: Install and Build
         run: |
+          echo "Redefine Daemon Log"
           cat /tmp/redefine_daemon.log || true
+          echo "Redefine plugin Log"
+          cat "/tmp/redefine_plugin.log" || true
            
