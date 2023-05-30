@@ -109,7 +109,7 @@ jobs:
 
       - name: Unpack Client Artifact
         run: |
-          wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.zip > client-artifact_from_s3.tar
+          wget wget https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.tar > client-artifact_from_s3.tar
           tar -xf client-artifact_from_s3.tar
           rm client-artifact_from_s3.tar
 
