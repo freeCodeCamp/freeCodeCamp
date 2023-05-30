@@ -133,6 +133,9 @@ jobs:
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
+          pip install redefine --index-url https://redefine.dev/pip/
+          redefine config set stable_branch=master
+          redefine start --pytest
 
       - name: Seed Database
         run: pnpm run seed
