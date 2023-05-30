@@ -97,199 +97,207 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
 
   // TODO (PMVP): GET /user/session-user
-  fastify.get('/user/get-session-user', async (_req, _reply) => {
-    let encodedUserToken;
+  fastify.get(
+    '/user/get-session-user',
+    { schema: schemas.getSessionUser },
+    async (_req, _reply) => {
+      let encodedUserToken;
 
-    // NOTE: LB API tested truthiness of `username` here.
-    //       This appeared to be entirely LB-related, so it is not done here.
-    if (!_req.session.user) {
-      // TODO (PMVP): Return error
-      return {
-        user: {},
-        result: ''
-      };
-    }
-
-    try {
-      const userToken = await fastify.prisma.userToken.findFirst({
-        where: { userId: _req.session.user.id }
-      });
-      if (userToken) {
-        encodedUserToken = userToken.id;
-      }
-    } catch (e) {
-      fastify.log.error(e);
-      void _reply.code(500);
-      return {
-        message: 'flash.unexpected-error',
-        type: 'danger'
-      } as const;
-    }
-
-    try {
-      const users = await fastify.prisma.user.findMany({
-        where: { id: _req.session.user.id }
-      });
-
-      if (users.length > 1) {
-        // TODO (PMVP): Send email to Kris
-        return {
-          message: 'flash.duplicate-account',
-          type: 'danger'
-        } as const;
-      }
-
-      if (isEmpty(users)) {
+      // NOTE: LB API tested truthiness of `username` here.
+      //       This appeared to be entirely LB-related, so it is not done here.
+      if (!_req.session.user) {
         // TODO (PMVP): Return error
         return {
           user: {},
           result: ''
+        };
+      }
+
+      try {
+        const userToken = await fastify.prisma.userToken.findFirst({
+          where: { userId: _req.session.user.id }
+        });
+        if (userToken) {
+          encodedUserToken = userToken.id;
+        }
+      } catch (e) {
+        fastify.log.error(e);
+        void _reply.code(500);
+        return {
+          // TODO (PMVP): Decouple error from client
+          message: 'flash.unexpected-error',
+          type: 'danger'
         } as const;
       }
 
-      // Safety: `users` is not empty, therefore `users[0]` is not undefined.
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const user = users[0]!;
+      try {
+        const users = await fastify.prisma.user.findMany({
+          where: { id: _req.session.user.id }
+        });
 
-      // NOTE: LB API also had: conpletedChallengeCount, completedProjectCount, completedCertCount, completedLegacyCertCount - which do not exist on current user, and are not used on the client
-      const {
-        username,
-        progressTimestamps,
-        usernameDisplay,
-        emailVerified,
-        id,
-        currentChallengeId,
-        email,
-        sendQuincyEmail,
-        theme,
-        sound,
-        keyboardShortcuts,
-        acceptedPrivacyTerms,
-        donationEmails,
-        about,
-        completedChallenges,
-        githubProfile,
-        isApisMicroservicesCert,
-        isBackEndCert,
-        isCheater,
-        isDonating,
-        is2018DataVisCert,
-        isDataVisCert,
-        isFrontEndCert,
-        isFullStackCert,
-        isFrontEndLibsCert,
-        isHonest,
-        isInfosecCertV7,
-        isInfosecQaCert,
-        isQaCertV7,
-        isJsAlgoDataStructCert,
-        isRelationalDatabaseCertV8,
-        isRespWebDesignCert,
-        isSciCompPyCertV7,
-        isDataAnalysisPyCertV7,
-        isMachineLearningPyCertV7,
-        isCollegeAlgebraPyCertV8,
-        linkedin,
-        location,
-        name,
-        partiallyCompletedChallenges,
-        portfolio,
-        profileUI,
-        savedChallenges,
-        twitter,
-        website,
-        yearsTopContributor
-      } = user;
+        if (users.length > 1) {
+          // TODO (PMVP): Send email to Kris
+          void _reply.code(500);
+          return {
+            // TODO (PMVP): Decouple error from client
+            message: 'flash.duplicate-account',
+            type: 'danger'
+          } as const;
+        }
 
-      const calendar = timestampsToCalendar(progressTimestamps);
-      const points =
-        isArray(progressTimestamps) && !isEmpty(progressTimestamps)
-          ? progressTimestamps
-          : [];
+        if (isEmpty(users)) {
+          // TODO (PMVP): Return error
+          return {
+            user: {},
+            result: ''
+          } as const;
+        }
 
-      const normalizedPartiallyCompletedChallenges =
-        normalizePartiallyCompletedChallenges(partiallyCompletedChallenges);
+        // Safety: `users` is not empty, therefore `users[0]` is not undefined.
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const user = users[0]!;
 
-      const normalizedSavedChallenges =
-        normalizeSavedChallenges(savedChallenges);
-      const response = {
-        user: {
-          [username]: {
-            about,
-            acceptedPrivacyTerms,
-            // TODO: Once DB is normalized, this can be removed
-            completedChallenges: completedChallenges.map(obj =>
-              pick(obj, [
-                'id',
-                'completedDate',
-                'solution',
-                'githubLink',
-                'challengeType',
-                'files',
-                'isManuallyApproved'
-              ])
-            ),
-            currentChallengeId,
-            donationEmails,
-            email,
-            emailVerified,
-            githubProfile,
-            isApisMicroservicesCert,
-            isBackEndCert,
-            isCheater,
-            isDonating,
-            is2018DataVisCert,
-            isDataVisCert,
-            isFrontEndCert,
-            isFullStackCert,
-            isFrontEndLibsCert,
-            isHonest,
-            isInfosecCertV7,
-            isInfosecQaCert,
-            isQaCertV7,
-            isJsAlgoDataStructCert,
-            isRelationalDatabaseCertV8,
-            isRespWebDesignCert,
-            isSciCompPyCertV7,
-            isDataAnalysisPyCertV7,
-            isMachineLearningPyCertV7,
-            isCollegeAlgebraPyCertV8,
-            keyboardShortcuts,
-            linkedin,
-            location,
-            name,
-            partiallyCompletedChallenges:
-              normalizedPartiallyCompletedChallenges,
-            portfolio,
-            profileUI,
-            sendQuincyEmail,
-            theme,
-            twitter,
-            website,
-            yearsTopContributor,
-            sound,
+        // NOTE: LB API also had: conpletedChallengeCount, completedProjectCount, completedCertCount, completedLegacyCertCount - which do not exist on current user, and are not used on the client
+        const {
+          username,
+          progressTimestamps,
+          usernameDisplay,
+          emailVerified,
+          id,
+          currentChallengeId,
+          email,
+          sendQuincyEmail,
+          theme,
+          sound,
+          keyboardShortcuts,
+          acceptedPrivacyTerms,
+          donationEmails,
+          about,
+          completedChallenges,
+          githubProfile,
+          isApisMicroservicesCert,
+          isBackEndCert,
+          isCheater,
+          isDonating,
+          is2018DataVisCert,
+          isDataVisCert,
+          isFrontEndCert,
+          isFullStackCert,
+          isFrontEndLibsCert,
+          isHonest,
+          isInfosecCertV7,
+          isInfosecQaCert,
+          isQaCertV7,
+          isJsAlgoDataStructCert,
+          isRelationalDatabaseCertV8,
+          isRespWebDesignCert,
+          isSciCompPyCertV7,
+          isDataAnalysisPyCertV7,
+          isMachineLearningPyCertV7,
+          isCollegeAlgebraPyCertV8,
+          linkedin,
+          location,
+          name,
+          partiallyCompletedChallenges,
+          portfolio,
+          profileUI,
+          savedChallenges,
+          twitter,
+          website,
+          yearsTopContributor
+        } = user;
 
-            calendar,
-            isEmailVerified: !!emailVerified,
-            joinDate: new ObjectId(id).getTimestamp(),
-            points,
-            savedChallenges: normalizedSavedChallenges,
-            username: usernameDisplay || username,
-            userToken: encodedUserToken
-          }
-        },
-        result: username
-      };
-      return response;
-    } catch (e) {
-      fastify.log.error(e);
-      void _reply.code(500);
-      return {
-        message: 'flash.unexpected-error',
-        type: 'danger'
-      } as const;
+        const calendar = timestampsToCalendar(progressTimestamps);
+        const points =
+          isArray(progressTimestamps) && !isEmpty(progressTimestamps)
+            ? progressTimestamps
+            : [];
+
+        const normalizedPartiallyCompletedChallenges =
+          normalizePartiallyCompletedChallenges(partiallyCompletedChallenges);
+
+        const normalizedSavedChallenges =
+          normalizeSavedChallenges(savedChallenges);
+        const response = {
+          user: {
+            [username]: {
+              about,
+              acceptedPrivacyTerms,
+              // TODO: Once DB is normalized, this can be removed
+              completedChallenges: completedChallenges.map(obj =>
+                pick(obj, [
+                  'id',
+                  'completedDate',
+                  'solution',
+                  'githubLink',
+                  'challengeType',
+                  'files',
+                  'isManuallyApproved'
+                ])
+              ),
+              currentChallengeId,
+              donationEmails,
+              email,
+              emailVerified,
+              githubProfile,
+              isApisMicroservicesCert,
+              isBackEndCert,
+              isCheater,
+              isDonating,
+              is2018DataVisCert,
+              isDataVisCert,
+              isFrontEndCert,
+              isFullStackCert,
+              isFrontEndLibsCert,
+              isHonest,
+              isInfosecCertV7,
+              isInfosecQaCert,
+              isQaCertV7,
+              isJsAlgoDataStructCert,
+              isRelationalDatabaseCertV8,
+              isRespWebDesignCert,
+              isSciCompPyCertV7,
+              isDataAnalysisPyCertV7,
+              isMachineLearningPyCertV7,
+              isCollegeAlgebraPyCertV8,
+              keyboardShortcuts,
+              linkedin,
+              location,
+              name,
+              partiallyCompletedChallenges:
+                normalizedPartiallyCompletedChallenges,
+              portfolio,
+              profileUI,
+              sendQuincyEmail,
+              theme,
+              twitter,
+              website,
+              yearsTopContributor,
+              sound,
+
+              calendar,
+              isEmailVerified: !!emailVerified,
+              joinDate: new ObjectId(id).getTimestamp(),
+              points,
+              savedChallenges: normalizedSavedChallenges,
+              username: usernameDisplay || username,
+              userToken: encodedUserToken
+            }
+          },
+          result: username
+        };
+        return response;
+      } catch (e) {
+        fastify.log.error(e);
+        void _reply.code(500);
+        return {
+          // TODO (PMVP): Decouple error from client
+          message: 'flash.unexpected-error',
+          type: 'danger'
+        } as const;
+      }
     }
-  });
+  );
 
   done();
 };
