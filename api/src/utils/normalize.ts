@@ -1,7 +1,7 @@
 export const normalizeTwitter = (
   handleOrUrl: string | null
-): { twitter?: string } => {
-  if (!handleOrUrl) return {};
+): string | undefined => {
+  if (!handleOrUrl) return undefined;
 
   let url;
   try {
@@ -9,5 +9,5 @@ export const normalizeTwitter = (
   } catch {
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
   }
-  return { twitter: url ?? handleOrUrl };
+  return url ?? handleOrUrl;
 };

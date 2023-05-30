@@ -211,7 +211,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),
               joinDate: new ObjectId(user.id).getTimestamp(),
-              ...normalizeTwitter(twitter),
+              twitter: normalizeTwitter(twitter),
               username: usernameDisplay || user.username,
               userToken: encodedToken
             }
