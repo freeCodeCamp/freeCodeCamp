@@ -51,9 +51,6 @@ export const userPropsForSession = [
   'sound',
   'keyboardShortcuts',
   'completedChallengeCount',
-  'completedProjectCount',
-  'completedCertCount',
-  'completedLegacyCertCount',
   'acceptedPrivacyTerms',
   'donationEmails'
 ];
