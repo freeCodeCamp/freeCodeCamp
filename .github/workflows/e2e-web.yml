@@ -151,3 +151,8 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           spec: ${{ matrix.spec }}
+      
+      - name: Install and Build
+        run: |
+          cat /tmp/redefine_daemon.log
+           
