@@ -189,7 +189,7 @@ importers:
         specifier: 4.14.1
         version: 4.14.1(prisma@4.14.1)
       bson:
-        specifier: ^5.3.0
+        specifier: 5.3.0
         version: 5.3.0
       connect-mongo:
         specifier: 4.6.0
