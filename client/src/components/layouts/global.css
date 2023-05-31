@@ -690,3 +690,13 @@ blockquote .small {
   color: white;
   background-color: black;
 }
+
+a {
+  text-underline-position: under;
+}
+
+@supports not (text-underline-position: under) {
+  a {
+    text-underline-offset: 1em;
+  }
+}
