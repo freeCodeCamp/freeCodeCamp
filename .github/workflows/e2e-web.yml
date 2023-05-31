@@ -14,65 +14,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-client:
-    name: Build
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
-
-      - name: Checkout client-config
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
-        with:
-          repository: freeCodeCamp/client-config
-          path: client-config
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-
-      - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
-
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm run build
-
-      - name: Move serve.json to Public Folder
-        run: cp client-config/serve.json client/public/serve.json
-
-      # We tar them for performance reasons - uploading a lot of files is slow.
-      - name: Tar Files
-        run: tar -cf client-artifact.tar client/public
-
-      - name: Upload Client Artifact
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: client-artifact
-          path: client-artifact.tar
-
-      - name: Upload Webpack Stats
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: webpack-stats
-          path: client/public/stats.json
-
   cypress-run:
     name: Test
     runs-on: ubuntu-20.04
-    needs: build-client
     strategy:
       fail-fast: false
       matrix:
@@ -103,12 +47,9 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
-      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-        with:
-          name: client-artifact
-
       - name: Unpack Client Artifact
         run: |
+          wget -q https://freecodecamp-bucket-testing.s3.eu-west-1.amazonaws.com/client-artifact.tar
           tar -xf client-artifact.tar
           rm client-artifact.tar
 
@@ -128,11 +69,21 @@ jobs:
         run: cp sample.env .env
 
       - name: Install and Build
+        env:
+          REDEFINE_AUTH: "e88afb65-65ef-4798-bc9d-db4c5342f7f3::163bf879-4060-4636-9fb6-49161e68095a"
         run: |
           pnpm install
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
+          # we can't use the regular pip since we want to send to staging so we need a staging cert
+          # pip install redefine --index-url https://redefine.dev/pip/
+          pip install ${GITHUB_WORKSPACE}/redefine-0.14.12.post1-py3-none-manylinux1_x86_64.whl
+          redefine config set environment=staging
+          redefine config set redefine_address=dune-tf-staging.redefine.dev
+          redefine config set stable_branch=main
+          redefine start --discover --pytest --verbose
+          cat /tmp/redefine_daemon.log || true
 
       - name: Seed Database
         run: pnpm run seed
@@ -141,9 +92,18 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          env:  REDEFINE_AUTH=e88afb65-65ef-4798-bc9d-db4c5342f7f3::163bf879-4060-4636-9fb6-49161e68095a
           start: pnpm run start-ci
           wait-on: http://localhost:8000
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-          spec: ${{ matrix.spec }}
+          # spec:  cypress/e2e/default/learn/challenges/code-storage.ts
+      
+      - name: Install and Build
+        run: |
+          echo "Redefine Daemon Log"
+          cat /tmp/redefine_daemon.log || true
+          echo "Redefine plugin Log"
+          cat "/tmp/redefine_plugin.log" || true
+           
