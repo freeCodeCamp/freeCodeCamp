@@ -886,11 +886,11 @@ Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register 
 
 > [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
 
-### Updating Agents
+### Оновлення агентів
 
 Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
-1. Navigate and check status of the service
+1. Перейдіть та перевірте статус служби
 
    ```console
    cd ~/azagent
@@ -924,36 +924,36 @@ Currently updating agents requires them to be removed and reconfigured. This is 
 
 Once You have completed the steps above, you can repeat the same steps as installing the agent.
 
-## Flight Manual - Email Blast
+## Керівництво з розсилки листів
 
-We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+Ми використовуємо [інструмент CLI](https://github.com/freecodecamp/sendgrid-email-blast) для наших тижневих листів. Щоб підготувати та почати цей процес потрібно:
 
-1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+1. Увійдіть до DigitalOcean та почніть використовувати нові краплі в межах проєкту `Sendgrid`. Використайте знімок Ubuntu Sendgrid з найновішою датою. Він попередньо завантажений з інструментом CLI та сценарієм для отримання електронних пошт з бази даних. Зважаючи на поточний обсяг, трьох крапель достатньо для своєчасного надсилання листів.
 
-2. Set up the script to fetch the email list.
+2. Налаштуйте сценарій, щоб отримати віддалений доступ до списку електронних пошт.
 
    ```console
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
 
-   You will need to replace the placeholder values in the `.env` file with your credentials.
+   Вам потрібно буде замінити значення заповнювачів у файлі `.env` на свої облікові дані.
 
-3. Run the script.
+3. Запустіть сценарій.
 
    ```console
    node get-emails.js emails.csv
    ```
 
-   This will save the email list in an `emails.csv` file.
+   Це збереже список електронних пошт у файлі `emails.csv`.
 
-4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+4. Розділіть електронні пошти на декілька файлів, залежно від кількості потрібних крапель. Це найлегше зробити за допомогою `scp`, щоб локально отримати список електронних пошт та, використовуючи свій улюблений текстовий редактор, розділити їх на декілька файлів. Кожен файл потребує заголовку `email,unsubscribeId`.
 
-5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+5. Перейдіть до каталогу CLI за допомогою `cd /home/sendgrid-email-blast` та налаштуйте інструмент [згідно документації](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Запустіть інструмент, щоб надіслати листи, дотримуючись [документації з користування](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
-7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
+7. Як тільки розсилка листів завершиться, переконайтеся, що усі повідомлення доставлено успішно, перш ніж знищити краплі.
 
 ## Керівництво з додавання екземплярів новин нових мов
 
