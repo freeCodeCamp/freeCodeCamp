@@ -118,6 +118,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.getSessionUser
     },
+    // @ts-expect-error There will be errors until the types are updated
     async (req, res) => {
       try {
         // TODO: promise all to fetch both
@@ -189,17 +190,40 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           return { user: {}, result: '' };
         }
 
+        // Primatives that are not null. These can be returned as is.
+        const {
+          id,
+          about,
+          acceptedPrivacyTerms,
+          email,
+          emailVerified,
+          isDonating,
+          picture,
+          sendQuincyEmail,
+          username,
+          ...userWithNullableProperties
+        } = user;
+
         const {
           usernameDisplay,
           completedChallenges,
           progressTimestamps,
           twitter,
           ...publicUser
-        } = user;
+        } = userWithNullableProperties;
 
         return {
           user: {
             [user.username]: {
+              // Properties that are definitely not null:
+              id,
+              about,
+              acceptedPrivacyTerms,
+              email,
+              emailVerified,
+              isDonating,
+              picture,
+              sendQuincyEmail,
               ...removeNulls(publicUser),
               completedChallenges: completedChallenges.map(removeNulls),
               completedChallengeCount: completedChallenges.length,
@@ -211,9 +235,11 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),
+              // TODO(Post-MVP) remove this and just use emailVerified
+              isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp(),
               twitter: normalizeTwitter(twitter),
-              username: usernameDisplay || user.username,
+              username: usernameDisplay || username,
               userToken: encodedToken
             }
           },

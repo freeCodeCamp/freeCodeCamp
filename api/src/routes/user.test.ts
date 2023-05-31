@@ -82,6 +82,7 @@ const publicUserData = {
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
   isDonating: testUserData.isDonating,
+  isEmailVerified: testUserData.emailVerified,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   isDataVisCert: testUserData.isDataVisCert,
   isFrontEndCert: testUserData.isFrontEndCert,

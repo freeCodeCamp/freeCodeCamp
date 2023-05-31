@@ -189,14 +189,78 @@ export const schemas = {
       200: Type.Object({
         // Unfortunately, it's not possible to set a real schema for this
         // object, since the username is dynamic and used as a key.
-        user: Type.Any(),
+        user: Type.Record(
+          Type.String(),
+          Type.Object({
+            about: Type.String(),
+            acceptedPrivacyTerms: Type.Boolean(),
+            completedChallenges: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                solution: Type.String(),
+                githubLink: Type.String(),
+                challengeType: Type.Number(),
+                files: Type.Array(Type.Object({})),
+                isManuallyApproved: Type.Boolean()
+              })
+            ),
+            currentChallengeId: Type.String(),
+            donationEmails: Type.Array(Type.String()),
+            email: Type.String(),
+            emailVerified: Type.Boolean(),
+            githubProfile: Type.String(),
+            isApisMicroservicesCert: Type.Boolean(),
+            isBackEndCert: Type.Boolean(),
+            isCheater: Type.Boolean(),
+            isDonating: Type.Boolean(),
+            is2018DataVisCert: Type.Boolean(),
+            isDataVisCert: Type.Boolean(),
+            isFrontEndCert: Type.Boolean(),
+            isFullStackCert: Type.Boolean(),
+            isFrontEndLibsCert: Type.Boolean(),
+            isHonest: Type.Boolean(),
+            isInfosecCertV7: Type.Boolean(),
+            isInfosecQaCert: Type.Boolean(),
+            isQaCertV7: Type.Boolean(),
+            isJsAlgoDataStructCert: Type.Boolean(),
+            isRelationalDatabaseCertV8: Type.Boolean(),
+            isRespWebDesignCert: Type.Boolean(),
+            isSciCompPyCertV7: Type.Boolean(),
+            isDataAnalysisPyCertV7: Type.Boolean(),
+            isMachineLearningPyCertV7: Type.Boolean(),
+            isCollegeAlgebraPyCertV8: Type.Boolean(),
+            keyboardShortcuts: Type.Boolean(),
+            linkedin: Type.String(),
+            location: Type.String(),
+            name: Type.String(),
+            partiallyCompletedChallenges: Type.Array(Type.Object({})),
+            portfolio: Type.Array(Type.Object({})),
+            profileUI: Type.Object({}),
+            sendQuincyEmail: Type.Boolean(),
+            theme: Type.String(),
+            twitter: Type.String(),
+            website: Type.String(),
+            yearsTopContributor: Type.Array(Type.Number()),
+            sound: Type.Boolean(), // TODO: Handle `null` on server?
+
+            calendar: Type.Record(Type.Number(), Type.Number()),
+            isEmailVerified: Type.Boolean(),
+            joinDate: Type.Number(),
+            points: Type.Array(Type.Object({})),
+            savedChallenges: Type.Object({}),
+            username: Type.String(),
+            userToken: Type.String()
+          })
+        ),
         result: Type.String()
-      }),
-      // TODO: is there a better status code? Is it really a server error?
-      500: Type.Object({
-        user: Type.Object({}),
-        result: Type.Literal('')
       })
+      // TODO: is there a better status code? Is it really a server error?
+      // TODO: add this back in once the success response is typed.
+      // 500: Type.Object({
+      //   user: Type.Object({}),
+      //   result: Type.Literal('')
+      // })
     }
   },
   // Deprecated endpoints:
