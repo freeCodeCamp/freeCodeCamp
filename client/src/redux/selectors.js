@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
