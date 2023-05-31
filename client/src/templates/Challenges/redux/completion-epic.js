@@ -221,7 +221,7 @@ export default function completionEpic(action$, state$) {
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(lastChallengeInBlock))),
+        concat(of(setIsAdvancing(!lastChallengeInBlock))),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))
