@@ -19,7 +19,8 @@ const nanoid = customAlphabet(
   64
 );
 
-const removeNulls = (obj: Record<string, unknown>) =>
+// eslint-disable-next-line @typescript-eslint/ban-types
+const removeNulls = <T extends object>(obj: T) =>
   _.pickBy(obj, value => value !== null);
 
 export const userRoutes: FastifyPluginCallbackTypebox = (
