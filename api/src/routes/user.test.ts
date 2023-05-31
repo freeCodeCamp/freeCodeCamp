@@ -2,7 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
+import _ from 'lodash';
 
 import { defaultUser } from '../utils/default-user';
 import { setupServer, superRequest } from '../../jest.utils';
@@ -53,6 +55,32 @@ const testUserData = {
   // savedChallenges: null,
   // partiallyCompletedChallenges: null,
   // TODO: create test with all of these
+};
+
+const minimalUserData: Prisma.userCreateInput = {
+  about: 'I am a test user',
+  acceptedPrivacyTerms: true,
+  email: testUserData.email,
+  emailVerified: true,
+  externalId: '1234567890',
+  isDonating: false,
+  picture: 'https://www.freecodecamp.org/cat.png',
+  sendQuincyEmail: true,
+  username: 'testuser',
+  unsubscribeId: '1234567890'
+};
+
+// These are not part of the schema, but are added to the user object by
+// get-session-user's handler
+const computedProperties = {
+  calendar: {},
+  completedChallengeCount: 0,
+  completedChallenges: [], // we don't need to provide an empty array, prisma will create it
+  isEmailVerified: minimalUserData.emailVerified,
+  points: 1,
+  portfolio: [],
+  yearsTopContributor: [],
+  donationEmails: [] // TODO: drop this from api-server and then from here.
 };
 
 // This is (most of) what we expect to get back from the API. The one remaining
@@ -364,10 +392,11 @@ describe('userRoutes', () => {
       });
 
       test('GET returns the userToken if it exists', async () => {
-        const testUser =
-          await fastifyTestInstance.prisma.user.findFirstOrThrow({
+        const testUser = await fastifyTestInstance.prisma.user.findFirstOrThrow(
+          {
             where: { email: testUserData.email }
-          });
+          }
+        );
 
         const tokenData = {
           userId: testUser.id,
@@ -394,6 +423,43 @@ describe('userRoutes', () => {
         };
 
         expect(foobar).toMatchObject({ userToken: encodedToken });
+      });
+      test('GET returns a minimal user when all optional properties are missing', async () => {
+        // To get a minimal test user we first delete the existing one...
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: {
+            email: minimalUserData.email
+          }
+        });
+        // ...then recreate it using only the properties that the schema
+        // requires. The alternative is to update, but that would require
+        // a lot of unsets (this is neater)
+        const testUser = await fastifyTestInstance.prisma.user.create({
+          data: minimalUserData
+        });
+
+        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+        setCookies = res.get('Set-Cookie');
+
+        const publicUser = {
+          ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
+          ...computedProperties,
+          id: testUser?.id,
+          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
+        };
+
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        const {
+          user: { testuser }
+        } = response.body as unknown as {
+          user: { testuser: typeof publicUser };
+        };
+
+        expect(testuser).toStrictEqual(publicUser);
       });
     });
   });
