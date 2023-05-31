@@ -131,7 +131,7 @@ function AcceptPrivacyTerms({
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
-        {isSignedIn && completedChallengeCount < 2 ? (
+        {isSignedIn && completedChallengeCount < 1 ? (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='large' />
