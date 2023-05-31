@@ -45,7 +45,8 @@ const initialState = {
   appUsername: '',
   showMultipleProgressModals: false,
   recentlyClaimedBlock: null,
-  sessionChallNumProgressModalShown: null,
+  completionCountWhenShownProgressModal: null,
+  progressDonationModalShown: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
@@ -252,9 +253,10 @@ export const reducer = handleActions(
       ...state,
       recentlyClaimedBlock: null
     }),
-    [actionTypes.setSessionChallNumProgressModalShown]: state => ({
+    [actionTypes.setCompletionCountWhenShownProgressModal]: state => ({
       ...state,
-      sessionChallNumProgressModalShown: completionCountSelector({
+      progressDonationModalShown: true,
+      completionCountWhenShownProgressModal: completionCountSelector({
         [MainApp]: state
       })
     }),

@@ -12,8 +12,10 @@ export const currentChallengeIdSelector = state =>
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const showMultipleProgressModalsSelector = state =>
   state[MainApp].showMultipleProgressModals;
-export const sessionChallNumProgressModalShownSelector = state =>
-  state[MainApp].sessionChallNumProgressModalShown;
+export const completionCountWhenShownProgressModalSelector = state =>
+  state[MainApp].completionCountWhenShownProgressModal;
+export const progressDonationModalShownSelector = state =>
+  state[MainApp].progressDonationModalShown;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -34,8 +36,9 @@ export const showCertFetchStateSelector = state =>
 export const shouldRequestDonationSelector = state => {
   const completedChallengesLength = completedChallengesSelector(state).length;
   const completionCount = completionCountSelector(state);
-  const sessionChallNumProgressModalShown =
-    sessionChallNumProgressModalShownSelector(state);
+  const lastCompletionCount =
+    completionCountWhenShownProgressModalSelector(state);
+  const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
   const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
@@ -52,14 +55,14 @@ export const shouldRequestDonationSelector = state => {
    */
   if (
     showMultipleProgressModals &&
-    sessionChallNumProgressModalShown !== null &&
+    progressDonationModalShown &&
     completedChallengesLength > 50 &&
-    sessionChallNumProgressModalShown + 20 >= completionCount
+    completionCount - lastCompletionCount >= 30
   )
     return true;
 
   // a donation has already been requested
-  if (sessionChallNumProgressModalShown !== null) return false;
+  if (progressDonationModalShown) return false;
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)

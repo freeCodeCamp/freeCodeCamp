@@ -14,7 +14,7 @@ export interface State {
   [MainApp]: {
     appUsername: string;
     recentlyClaimedBlock: null | string;
-    sessionChallNumProgressModalShown: number | null;
+    completionCountWhenShownProgressModal: number | null;
     showMultipleProgressModals: boolean;
     completionCount: number;
     currentChallengId: string;
