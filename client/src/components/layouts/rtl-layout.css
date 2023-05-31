@@ -1,4 +1,4 @@
-/* 
+/*
 Increase the spacing in paragraphs
 */
 
@@ -6,8 +6,8 @@ Increase the spacing in paragraphs
   line-height: 2rem;
 }
 
-/* 
-Intro project buttons and headings 
+/*
+Intro project buttons and headings
 */
 
 [dir='rtl'] .monaco-editor-tabs {
@@ -19,7 +19,7 @@ Intro project buttons and headings
   transform: rotate(180deg);
 }
 
-/* 
+/*
  intro to courses section
 */
 
@@ -27,7 +27,7 @@ Intro project buttons and headings
   transform: rotate(180deg);
 }
 
-/* 
+/*
 this is used to rotate arrow mark in certification block and donation
 the "not" and "is" selector is used to stop it from affecting other section and pages
 */
@@ -40,7 +40,7 @@ the "not" and "is" selector is used to stop it from affecting other section and 
   transform: rotate(180deg);
 }
 
-/* 
+/*
 external fontawesome link icon
 */
 
@@ -49,9 +49,9 @@ external fontawesome link icon
   transform: rotate(270deg);
 }
 
-/* 
+/*
 universal-nav-bar
-and menu secion
+and menu section
 */
 
 [dir='rtl'] .nav-lang-list-option[aria-current='true'] {
@@ -87,15 +87,15 @@ and menu secion
   overflow-x: inherit;
 }
 
-/* 
-dropdown links 
+/*
+dropdown links
 */
 
 [dir='rtl'] .dropdown-menu {
   text-decoration-skip-ink: all;
 }
 
-/* 
+/*
 New RWD project challenge
 */
 
@@ -109,7 +109,7 @@ New RWD project challenge
   text-align: right;
 }
 
-/* 
+/*
 sections that need to stay left to right
 */
 
@@ -125,6 +125,16 @@ sections that need to stay left to right
 /* timeline*/
 [dir='rtl'] .timeline-pagination_list {
   direction: ltr;
+}
+
+/* underline offset */
+
+@supports (text-underline-offset) [dir= 'rtl'] a {
+  text-underline-offset: 1em;
+}
+
+[dir='rtl'] a {
+  text-underline-position: under;
 }
 
 [dir='rtl'] code {
