@@ -79,13 +79,17 @@ const RenderIlustration = ({
 }) => {
   const showModalBears = useFeature('show-modal-bears').on;
   if (showModalBears) {
-    if (recentlyClaimedBlock !== null)
-      return <BearBlockCompletion className='donation-icon' />;
-    else return <BearProgressModal className='donation-icon' />;
-  } else if (recentlyClaimedBlock !== null) {
-    return <Cup className='donation-icon' />;
+    return recentlyClaimedBlock ? (
+      <BearBlockCompletion className='donation-icon' />
+    ) : (
+      <BearProgressModal className='donation-icon' />
+    );
   } else {
-    return <Heart className='donation-icon' />;
+    return recentlyClaimedBlock ? (
+      <Cup className='donation-icon' />
+    ) : (
+      <Heart className='donation-icon' />
+    );
   }
 };
 
@@ -186,7 +190,7 @@ function DonateModal({
         <Row>
           <Col
             xs={12}
-            className={loadElementsIdividually && 'two-seconds-delay-fade-in'}
+            className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
           >
             <DonateForm
               handleProcessing={handleProcessing}
