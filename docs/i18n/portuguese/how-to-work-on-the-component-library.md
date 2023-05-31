@@ -91,20 +91,20 @@ Para executar testes contra a biblioteca de componentes, execute o seguinte coma
 pnpm run test-ui-components
 ```
 
-## Proposing a Pull Request (PR)
+## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
-## Adding Packages to the UI-Component Library
+## Adicionando pacotes à biblioteca de componentes da UI
 
-We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
+Restringimos a adição de novos pacotes aos componentes da UI para ajudar com a manutenção do projeto. Na hipótese de você achar que uma dependência é necessária, consulte os gestores primeiro e use o seguinte comando para adicionar um pacote:
 
 ```bash
 cd tools/ui-components 
 pnpm add package_name
 ```
 
-## Useful Links
+## Links úteis
 
 - [Testes de acessibilidade](https://testing-library.com/docs/dom-testing-library/api-accessibility)
 - [Ordem de prioridade das consultas da biblioteca de testes do React](https://testing-library.com/docs/queries/about/#priority)

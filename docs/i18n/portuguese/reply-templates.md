@@ -1,19 +1,19 @@
-# Reply Templates
+# Modelos de resposta
 
-These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
+Esses são alguns dos modelos de resposta que você talvez use enquanto estiver revisando issues/pull requests.
 
-> You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
+> Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub chamada [saved replies](https://github.com/settings/replies/) ou usar as citadas abaixo.
 
-## Thank You
+## Obrigado
 
 ```markdown
 Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-## Thank you and congrats
+## Obrigado e parabéns
 
-> For thanking and encouraging first-time contributors.
+> Para agradecer e encorajar colaboradores de primeira viagem.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -22,7 +22,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
-## Build Error
+## Erro de compilação
 
 ```markdown
 Hey @username
@@ -36,9 +36,9 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-## Syncing Fork
+## Sincronização de forks
 
-> When PR is not up to date with the `main` branch.
+> Quando um PR não está atualizado com a branch `main`.
 
 ````markdown
 Hey @username
@@ -65,8 +65,8 @@ Once you sync your fork and pass the build, we will be able to review your PR an
 
 Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
-## Merge Conflicts
-> When PR has merge conflicts that need to be resolved.¹
+## Conflitos ao fazer o merge
+> Quando um PR tem conflitos de merge isso precisa ser resolvido.¹
 
 ```markdown
 Hey @username
@@ -82,11 +82,11 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ```
 
-¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+¹ Se é a primeira vez de um colaborador e se ele tem um conflito de merge, os mantenedores resolverão o conflito para ele.
 
-## Duplicate
+## Duplicado
 
-> When PR is repetitive or a duplicate.
+> Quando um PR é duplo ou repetitivo.
 
 ```markdown
 Hey @username
@@ -102,9 +102,9 @@ Thanks again! 😊
 If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
-## Closing Invalid Pull Requests
+## Fechando pull requests inválidos
 
-> When PR is invalid.
+> Quando um PR é inválido.
 
 ```markdown
 Hey @username
@@ -116,7 +116,7 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> When PR adds links to external resources.
+> Quando o PR adiciona links para recursos externos.
 
 ```markdown
 Thank you for your pull request.
@@ -126,7 +126,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-## Adding Comment About Newbie Mistakes
+## Adicionando comentário sobre erros de iniciante
 
 ```markdown
 Hi there, 
@@ -165,9 +165,9 @@ We are happy you are excited to contribute and appreciate you taking the time to
 Happy Contributing.
 ```
 
-## Closing Invalid Issues
+## Fechando issues inválidas
 
-> When an issue relates to the camper's code.
+> Quando uma issue se refere ao código do usuário do freeCodeCamp.
 
 ```markdown
 Thank you for reporting this issue.
@@ -179,7 +179,7 @@ If the forum members determine there is nothing wrong with your code, you can re
 Thank you and happy coding.
 ```
 
-> When an issue is duplicate of an earlier issue.
+> Quando uma issue é a mesma que uma issue anterior.
 
 ```markdown
 Thank you for reporting this issue.
@@ -189,7 +189,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> When an issue is fixed in staging.
+> Quando uma issue foi resolvida na fase de preparo.
 
 ```markdown
 Thank you for reporting this issue.
@@ -199,9 +199,9 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-## `first timer only` Issues
+## Issues de `first timer only`
 
-> When an issue is deemed to be eligible for first-time code contributors.
+> Quando uma issue é considerada eligível pela primeira vez como contribuição ao código.
 
 ```markdown
 Thanks for opening this issue.
@@ -221,7 +221,7 @@ Sometimes we may get more than one pull request. We typically accept the most qu
 Happy contributing.
 ```
 
-## Requests for Assignment
+## Solicitações de atribuição
 
 ```md
 We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.

@@ -39,7 +39,7 @@ Você pode nos ajudar a organizar e moderar issues usando etiquetas [dessa lista
 
 Preste atenção especial às etiquetas `"help wanted"` e `"first timers only"`. Elas devem ser adicionadas aos tópicos que você considere que possam ser abertos aos potenciais contribuidores para realizar um "pull request".
 
-For triaging a trivial issue such as a typo fix, it is recommended to apply a "first timers only" label along with additional information. You can utilize the [reply template](reply-templates.md#first-timer-only-issues) provided for this purpose.
+Para a triagem de uma issue trivial como uma correção de ortografia, é recomendado aplicar uma etiqueta "first timers only" juntamente com informações adicionais. Você pode usar o [modelo de resposta](reply-templates.md#first-timer-only-issues) fornecido para esta finalidade.
 
 #### Fechando issues e pull requests parados, desatualizados ou inativos
 
@@ -49,7 +49,7 @@ For triaging a trivial issue such as a typo fix, it is recommended to apply a "f
 
 - Se o criador do PR pedir assistência adicional ou mais tempo, as regras acima podem ser revistas após uma resposta. Em todo caso, os moderadores devem usar o melhor julgamento para resolverem o estado do PR.
 
-> [!TIP] We recommend you use this list of standard [reply templates](reply-templates.md) while triaging issues.
+> [!TIP] Recomendamos usar essa lista de [modelos de resposta](reply-templates.md) padrão enquanto estiver monitorando issues.
 
 ### Moderando pull requests
 
@@ -63,7 +63,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Você também pode revisar isso diretamente no GitHub e decidir fazer merge ou não. Precisamos ter um pouco mais de cuidado com relação a isso, pois milhões de pessoas encontrarão este texto enquanto usam o currículo do freeCodeCamp. O pull request deixa o texto mais claro sem deixá-lo muito mais longo? As edições são relevantes e não são excessivamente pedantes? Lembre-se que nosso objetivo é que os desafios sejam mais claros e curtos dentro do possível. Não são o lugar para detalhes obscuros. Os contribuidores talvez tentem adicionar links para recursos dos desafios.
 
-   You can close invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM" (Looks Good To Me - me parece bom, em inglês). Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -75,7 +75,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns contribuidores podem tentar adicionar mais testes para cobrir casos confusos pedantes. Precisamos ter cuidado para não deixarmos o desafio muito complicado. Esses desafios e seus testes devem ser simples e intuitivos na medida do possível. Além dos desafios de algoritmo e a seção de preparação para entrevistas, os estudantes devem ser capazes de resolver cada desafio em aproximadamente 2 minutos.
 
-   You can close invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -142,7 +142,7 @@ Muitas vezes, um pull request será obviamente de baixo esforço. Muitas vezes, 
 
 Há também situações em que o colaborador está tentando adicionar um link para o seu próprio site, incluir uma biblioteca que criou, ou tem uma edição frívola que não serve para ajudar ninguém, exceto a si mesmo.
 
-You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
+Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
 #### Outras diretrizes para moderadores no GitHub
 
