@@ -255,6 +255,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer size='medium' />
                 {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
                 <Spacer size='medium' />
                 <ChallengeTitle
