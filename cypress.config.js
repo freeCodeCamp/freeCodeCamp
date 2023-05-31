@@ -19,7 +19,7 @@ module.exports = defineConfig({
     //
     // and so on.
     //
-    specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
+    // specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
 
     // Temporary disable these until we can address the flakiness
     excludeSpecPattern: [
@@ -35,7 +35,7 @@ module.exports = defineConfig({
         }
       });
       // config = await require("./Redefine.js").redefinePlugin(on, config);
-      console.log("cypress spec pattern: ", config.specPattern)
+      // console.log("cypress spec pattern: ", config.specPattern)
 
       config.env.API_LOCATION = 'http://localhost:3000';
       return config;
