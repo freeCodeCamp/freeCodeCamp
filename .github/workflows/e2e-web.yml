@@ -77,7 +77,7 @@ jobs:
           redefine config set environment=staging
           redefine config set redefine_address=dune-tf-staging.redefine.dev
           redefine config set stable_branch=main
-          # redefine config set dry_run=true
+          redefine config set dry_run=true
           redefine start --discover --cypress --verbose
           cat /tmp/redefine_daemon.log || true
 
