@@ -79,7 +79,7 @@ jobs:
           redefine config set stable_branch=main
           redefine config set dry_run=true
           redefine start --discover --cypress --verbose
-          cat /tmp/redefine_daemon.log || true
+          cypress run
 
       - name: Seed Database
         run: pnpm run seed
