@@ -9,13 +9,7 @@ describe('Challenge with editor', function () {
   });
 
   it('renders seed code without localStorage', () => {
-    const editorContents = `<h1>Hello</h1>`;
-    cy.get(selectors.class.reactMonacoEditor)
-      .as('editor')
-      .contains(editorContents);
-    cy.get('@editor').click().focused().type(`{movetoend}<h1>Hello World</h1>`);
-    cy.reload();
-    cy.get('@editor', { timeout: 10000 }).contains(editorContents);
+    throw new Error("test fails here")
   });
 
   it('renders code from localStorage after "Ctrl + S"', () => {
