@@ -106,24 +106,24 @@ function DonateModal({
   const [ctaNumber, setCtaNumber] = useState(0);
   const [isDisabled, setIsDisabled] = useState(true);
   const [showSkipButton, setShowSkipButton] = useState(false);
-  const loadElementsIdividually = useFeature('load_elements_individually').on;
+  const loadElementsIndividually = useFeature('load_elements_individually').on;
   const { t } = useTranslation();
   const handleProcessing = () => {
     setCloseLabel(true);
   };
 
   useEffect(() => {
-    if (!loadElementsIdividually) {
+    if (loadElementsIndividually) {
+      const timer = setTimeout(() => {
+        setIsDisabled(false);
+        setShowSkipButton(true);
+      }, 4000);
+      return () => clearTimeout(timer);
+    } else {
       setIsDisabled(false);
       setShowSkipButton(true);
-      return;
     }
-    const timer = setTimeout(() => {
-      setIsDisabled(false);
-      setShowSkipButton(true);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, [loadElementsIdividually]);
+  }, [loadElementsIndividually]);
 
   useEffect(() => {
     if (show) {
