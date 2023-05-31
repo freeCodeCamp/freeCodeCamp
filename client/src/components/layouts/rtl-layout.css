@@ -129,12 +129,14 @@ sections that need to stay left to right
 
 /* underline offset */
 
-@supports (text-underline-offset) [dir= 'rtl'] a {
-  text-underline-offset: 1em;
+@supports (text-underline-position: under) {
+  [dir='rtl'] a {
+    text-underline-position: under;
+  }
 }
 
 [dir='rtl'] a {
-  text-underline-position: under;
+  text-underline-offset: 0.5em;
 }
 
 [dir='rtl'] code {
