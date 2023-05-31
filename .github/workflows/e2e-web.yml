@@ -1,10 +1,5 @@
 name: CI - E2E - Web browser
 on:
-  push:
-    paths-ignore:
-      - 'docs/**'
-    branches:
-      - 'main'
   pull_request:
     paths-ignore:
       - 'docs/**'
