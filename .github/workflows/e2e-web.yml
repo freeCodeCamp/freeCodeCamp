@@ -76,6 +76,7 @@ jobs:
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
+          # we can't use the regular pip since we want to send to staging so we need a staging cert
           # pip install redefine --index-url https://redefine.dev/pip/
           pip install ${GITHUB_WORKSPACE}/redefine-0.14.12.post1-py3-none-manylinux1_x86_64.whl
           redefine config set environment=staging
