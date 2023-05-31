@@ -188,11 +188,12 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
 
       const {
+        nextChallengeMeta: { block: nextBlock },
         nextChallengePath,
         challengeType,
         superBlock,
         block,
-        prevChallengePath
+        blockHashSlug
       } = challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -210,29 +211,17 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const isNextChallengeInSameSuperBlock =
-        nextChallengePath.includes(superBlock);
-
-      const nextPathParts = nextChallengePath.split('/');
-      const prevPathParts = prevChallengePath.split('/');
-
-      const nextStep = nextPathParts[nextPathParts.length - 2];
-      const prevStep = prevPathParts[prevPathParts.length - 2];
-
-      const pathToNavigateTo = isNextChallengeInSameSuperBlock
-        ? nextChallengePath.includes(superBlock) &&
-          (nextStep === prevStep ||
-            nextPathParts[nextPathParts.length - 1] === 'step-2')
-          ? nextChallengePath
-          : `/learn/${superBlock}/#${nextStep}`
-        : `/learn/${superBlock}/#${superBlock}-projects`;
+      const lastChallengeInBlock = block !== nextBlock;
+      let pathToNavigateTo = lastChallengeInBlock
+        ? blockHashSlug
+        : nextChallengePath;
 
       const canAllowDonationRequest = (state, action) =>
         isBlockNewlyCompletedSelector(state) &&
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(isNextChallengeInSameSuperBlock))),
+        concat(of(setIsAdvancing(lastChallengeInBlock))),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))
