@@ -34,7 +34,7 @@ module.exports = defineConfig({
           execSync('pnpm run build:curriculum');
         }
       });
-      config = await require("./Redefine.js").redefinePlugin(on, config);
+      // config = await require("./Redefine.js").redefinePlugin(on, config);
       console.log("cypress spec pattern: ", config.specPattern)
 
       config.env.API_LOCATION = 'http://localhost:3000';
