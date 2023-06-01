@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import config from '../../../config/env.json';
 
 const { showUpcomingChanges } = config;
