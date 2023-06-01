@@ -14,17 +14,17 @@
 2. Ці зміни проходять через ряд автоматизованих тестів.
 3. Після проходження тестів ми випускаємо зміни (або оновлюємо їх, якщо потрібно) для розгортання у нашій інфраструктурі.
 
-### Building the codebase - Mapping Git Branches to Deployments
+### Побудова бази коду: відображення гілок Git для розгортання
 
-Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
+[`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (гілка розробки за замовчуванням) зазвичай об’єднується до гілки [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) раз на день та випускається в ізольовану інфраструктуру.
 
-This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
+Це проміжний випуск для наших розробників і волонтерів. Він також відомий як «staging» або «beta».
 
-It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
+Він ідентичний нашому робочому середовищу на `freeCodeCamp.org`, а також використовує окремі набори баз даних, сервери, вебпроксі тощо. Ця ізоляція дозволяє нам протестувати поточну розробку та функції у «виробничому» сценарії, не впливаючи на звичайних користувачів основних платформ freeCodeCamp.org.
 
-Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) branch.
+Як тільки команда [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) задоволена змінами на проміжній платформі, ці зміни переносяться кожні декілька днів до гілки [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
 
-This is the final release that moves changes to our production platforms on freeCodeCamp.org.
+Це кінцевий випуск, який переносить зміни до наших виробничих платформ на freeCodeCamp.org.
 
 ### Тестування змін: інтеграція та приймальне користувацьке тестування
 
@@ -36,31 +36,31 @@ This is the final release that moves changes to our production platforms on free
 
 Ці тести допомагають запобігти повторенню проблем і гарантують, що ми не вводимо нову помилку під час роботи над іншою помилкою або функцією.
 
-### Deploying Changes - Pushing changes to servers
+### Розгортання змін: надсилання змін до серверів
 
 Ми налаштували безперервне програмне забезпечення доставки для надсилання змін до наших серверів розробки та виробництва.
 
-Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
+Як тільки зміни відправлені в захищені гілки випуску, для гілки автоматично запускається конвеєр збірки. Конвеєри збірки відповідають за створення артефактів та їх зберігання в холодному сховищі для подальшого використання.
 
-The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
+Конвеєр збірки працює для запуску відповідного конвеєра випуску, якщо він завершить успішний запуск. Конвеєри випуску відповідають за збір артефактів збірки, їх переміщення на сервери та запуск в експлуатацію.
 
 Статуси збірок та випуски [доступні тут](#build-test-and-deployment-status).
 
-## Trigger a Build, Test, and Deploy
+## Запуск збірки, тесту та розгортання
 
-Currently, only members of the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
+Наразі лише команда розробників може надсилати зміни до виробничих гілок. Зміни до гілок `production-*` можна внести лише через швидке об’єднання до [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!NOTE] In the upcoming days, we would improve this flow to be done via pull requests, for better access management and transparency.
+> [!NOTE] Найближчими днями ми вдосконалимо цей потік для кращого керування доступом і прозорості, щоб він здійснювався за допомогою запитів на злиття.
 
-### Pushing changes to Staging Applications
+### Надсилання змін до проміжних застосунків
 
-1. Configure your remotes correctly.
+1. Налаштуйте віддалені гілки правильно.
 
    ```sh
    git remote -v
    ```
 
-   **Results:**
+   **Результат:**
 
    ```
    origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
@@ -69,7 +69,7 @@ Currently, only members of the developer team can push to the production branche
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `main` branch is pristine and in sync with the upstream.
+2. Переконайтеся, що гілка `main` чиста та синхронізована з головною гілкою.
 
    ```sh
    git checkout main
@@ -77,24 +77,24 @@ Currently, only members of the developer team can push to the production branche
    git reset --hard upstream/main
    ```
 
-3. Check that the GitHub CI is passing on the `main` branch for upstream.
+3. Переконайтеся, що GitHub CI передає гілку `main` до головної гілки.
 
-   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
+   Тести [безперервної інтеграції](https://github.com/freeCodeCamp/freeCodeCamp/actions) повинні бути зеленими та проходити УСПІШНО для гілки `main`. Натисніть зелений прапорець біля хешу затвердження при перегляді коду гілки `main`.
 
-    <details> <summary> Checking status on GitHub Actions (screenshot) </summary>
+    <details> <summary> Перевірка статусу на GitHub Actions (знімок екрана) </summary>
       <br>
-      ![Check build status on GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
+      ![Перевірте статус збірки на GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
     </details>
 
-   If this is failing you should stop and investigate the errors.
+   Якщо у вас виникають проблеми, вам потрібно зупинитись і дослідити помилки.
 
-4. Confirm that you are able to build the repository locally.
+4. Підтвердьте, що ви можете побудувати репозиторій локально.
 
    ```
    pnpm run clean-and-develop
    ```
 
-5. Move changes from `main` to `prod-staging` via a fast-forward merge
+5. Перенесіть зміни з `main` до `prod-staging` через швидке об’єднання
 
    ```
    git checkout prod-staging
@@ -102,23 +102,23 @@ Currently, only members of the developer team can push to the production branche
    git push upstream
    ```
 
-   > [!NOTE] You will not be able to force push and if you have re-written the history in any way, these commands will error out.
+   > [!NOTE] Ви не зможете примусово надсилати зміни і якщо ви переписали історію, ці команди призведуть до помилки.
    > 
-   > If they do, you may have done something incorrectly and you should just start over.
+   > В такому випадку ви, можливо, зробили щось неправильно та повинні просто почати спочатку.
 
-The above steps will automatically trigger a run on the build pipeline for the `prod-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
+Попередні кроки автоматично запустять конвеєр збірки для гілки `prod-staging`. Як тільки збірка завершиться, артефакти будуть збережені як файли `.zip` в холодному сховищі для використання пізніше.
 
-The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval, and the artifacts are pushed to the Client CDN and API servers.
+Конвеєр випуску запускається автоматично, коли новий артефакт доступний з підключеного конвеєра збірки. Для проміжних платформ цей процес не передбачає затвердження вручну, а артефакти надсилаються до клієнтських CDN та серверів API.
 
-### Pushing changes to Production Applications
+### Надсилання змін до виробничих застосунків
 
-The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
+Процес здебільшого такий самий, як і для проміжних платформ, але містить декілька додаткових пунктів. Це потрібно, щоб переконатися, що ми нічого не порушуємо на freeCodeCamp.org, що можуть побачити сотні користувачів, які використовують його.
 
-| Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|                                                                                                                                                                                            |
+| НЕ виконуйте ці команди, якщо не переконались, що все працює на проміжній платформі. Не пропускайте жодних тестів, перш ніж продовжити процес. |
+|:---------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                |
 
-1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
+1. Переконайтеся, що гілка `prod-staging` чиста та синхронізована з головною гілкою.
 
    ```sh
    git checkout prod-staging
@@ -126,7 +126,7 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git reset --hard upstream/prod-staging
    ```
 
-2. Move changes from `prod-staging` to `prod-current` via a fast-forward merge
+2. Перенесіть зміни з `prod-staging` до `prod-current` через швидке об’єднання
 
    ```
    git checkout prod-current
@@ -134,25 +134,25 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git push upstream
    ```
 
-   > [!NOTE] You will not be able to force push and if you have re-written the history in any way, these commands will error out.
+   > [!NOTE] Ви не зможете примусово надсилати зміни і якщо ви переписали історію, ці команди призведуть до помилки.
    > 
-   > If they do, you may have done something incorrectly and you should just start over.
+   > В такому випадку ви, можливо, зробили щось неправильно та повинні просто почати спочатку.
 
-The above steps will automatically trigger a run on the build pipeline for the `prod-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
+Попередні кроки автоматично запустять конвеєр збірки для гілки `prod-current`. Як тільки артефакт збірки готовий, він запустить конвеєр випуску.
 
-**Additional Steps for Staff Action**
+**Додаткові кроки для персоналу**
 
-Once a release run is triggered, members of the developer staff team will receive an automated manual intervention email. They can either _approve_ or _reject_ the release run.
+Як тільки запуск випуску ініційовано, команда розробників отримає автоматизований лист про ручне втручання. Вони можуть _затвердити_ або _відхилити_ запуск випуску.
 
-If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run manually for rejected runs, or wait for the next cycle of release.
+Якщо зміни працюють і вони протестовані на проміжній платформі, їх можна затвердити. Підтвердження потрібно надати протягом 4 годин після активації релізу перед автоматичним відхиленням. Персонал може повторно запустити відхилені запуски або чекати наступного циклу.
 
-For staff use:
+Для персоналу:
 
-| Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|                                                                                                                                                                    |
+| Перевірте свою електронну пошту для прямого посилання або [перейдіть до панелі випусків](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) після того, як завершиться збірка. |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                           |
 
-Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
+Як тільки хтось з персоналу затвердить випуск, конвеєр відправить зміни до виробничої CDN та серверів API freeCodeCamp.org.
 
 ## Збірка, тест та статус розгортання
 
@@ -232,13 +232,13 @@ Once one of the staff members approves a release, the pipeline will push the cha
 > 1. Це керівництво стосується **лише персоналу freeCodeCamp**.
 > 2. У цих інструкціях вказано не всю інформацію, тому будьте обережними.
 
-As a member of the staff, you may have been given access to our cloud service providers like Azure, Digital Ocean, etc.
+Можливо, як персоналу вам надано доступ до наших хмарних провайдерів (Azure, Digital Ocean тощо).
 
-Here are some handy commands that you can use to work on the Virtual Machines (VM), for instance performing maintenance updates or doing general housekeeping.
+Ось кілька зручних команд, які можна використовувати для роботи на віртуальних машинах (VM), наприклад, для оновлення технічного обслуговування або для загального ведення.
 
-## Get a list of the VMs
+## Отримайте список віртуальних машин
 
-> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you have been granted access to the cloud portals as well.
+> [!NOTE] Ви можете мати SSH-доступ до віртуальних машин, однак його недостатньо для отримання списку віртуальних машин. Вам також потрібен доступ до хмарних порталів.
 
 ### Azure
 
@@ -274,7 +274,7 @@ brew install doctl
 
 > **(Одноразовий) Вхід:**
 
-Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
+Автентифікація та зміна контексту: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
 
 ```
 doctl auth init
@@ -292,28 +292,28 @@ We are working on creating our IaC setup, and while that is in works you can use
 
 > [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do some of the basic provisioning like installing docker or adding SSH keys, etc.
 
-## Keep VMs Updated
+## Зберігайте віртуальні машини в актуальному стані
 
-You should keep the VMs up to date by performing updates and upgrades. This will ensure that the virtual machine is patched with the latest security fixes.
+Ви повинні встановлювати на віртуальну машину останні оновлення. Це гарантує, що віртуальна машина залатана найновішими виправленнями безпеки.
 
-> [!WARNING] Before you run these commands:
+> [!WARNING] Перед запуском цих команд:
 > 
-> - Make sure that the VM has been provisioned completely and that there are no post-install steps running.
-> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
+> - Переконайтеся, що віртуальну машину повністю підготовлено та не виконується жодних кроків після встановлення.
+> - Якщо ви оновлюєте пакети на віртуальній машині, яка вже обслуговує програму, переконайтеся, що програма зупинена/збережена. Оновлення пакетів спричинить стрибки у навантаженні мережі, памʼяті та/або центрального процесора, що призведе до відключення запущених програм.
 
-Update package information
+Оновіть інформацію пакетів
 
 ```console
 sudo apt update
 ```
 
-Upgrade installed packages
+Оновіть встановлені пакети
 
 ```console
 sudo apt upgrade -y
 ```
 
-Cleanup unused packages
+Очистьте невикористані пакети
 
 ```console
 sudo apt autoremove -y
@@ -321,15 +321,15 @@ sudo apt autoremove -y
 
 ## Працюйте над вебсерверами (проксі)
 
-Ми запускаємо збалансовані екземпляри (Azure Load Balancer) для наших вебсерверів. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
+Ми запускаємо збалансовані екземпляри (Azure Load Balancer) для наших вебсерверів. На цих серверах працює NGINX, який перенаправляє весь трафік до freeCodeCamp.org із різних застосунків, що працюють на власних інфраструктурах.
 
-The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
+Конфігурація NGINX доступна у [цьому репозиторію](https://github.com/freeCodeCamp/nginx-config).
 
-### First Install
+### Перше завантаження
 
-Provisioning VMs with the Code
+Підготовка віртуальних машин за допомогою коду
 
-1. Install NGINX and configure from repository.
+1. Завантажте і налаштуйте NGINX з репозиторію.
 
    ```console
    sudo su
@@ -344,13 +344,13 @@ Provisioning VMs with the Code
    cd /etc/nginx
    ```
 
-2. Install Cloudflare origin certificates and upstream application config.
+2. Встановіть сертифікати Cloudflare і конфігурацію головної програми.
 
-   Get the Cloudflare origin certificates from the secure storage and install at required locations.
+   Отримайте оригінальні сертифікати зі сховища безпеки та встановіть їх в потрібних місцях.
 
-   **OR**
+   **АБО**
 
-   Move over existing certificates:
+   Перемістіть наявні сертифікати:
 
    ```console
    # Local
@@ -362,21 +362,21 @@ Provisioning VMs with the Code
    mv /tmp/ssl ./
    ```
 
-   Update Upstream Configurations:
+   Оновіть головні конфігурації:
 
    ```console
    vi configs/upstreams.conf
    ```
 
-   Add/update the source/origin application IP addresses.
+   Додайте/оновіть вихідні IP-адреси програми.
 
 3. Налаштуйте мережу та брандмауери.
 
-   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+   Налаштуйте брандмауери Azure та `ufw` відповідно до доступу до вихідних адрес.
 
-4. Add the VM to the load balancer backend pool.
+4. Додайте віртуальну машину до балансувальника навантаження.
 
-   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+   За потреби налаштуйте та додайте правила до балансувальника навантаження. Можливо, також знадобиться додати віртуальну машину до пулу балансувальника навантаження.
 
 ### Журналювання та моніторинг
 
@@ -390,17 +390,17 @@ Provisioning VMs with the Code
 
    NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com') — наша поточна базова панель моніторингу. Ми працюємо над детальнішими показниками для кращого спостереження
 
-### Updating Instances (Maintenance)
+### Оновлення екземплярів (обслуговування)
 
-Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+Налаштуйте зміни в екземплярах NGINX, які зберігаються на GitHub. Їх потрібно розгорнути в кожному екземплярі:
 
-1. SSH into the instance and enter sudo
+1. SSH в екземпляр і введіть sudo
 
 ```console
 sudo su
 ```
 
-2. Get the latest config code.
+2. Отримайте останній код конфігурації.
 
 ```console
 cd /etc/nginx
@@ -408,24 +408,24 @@ git fetch --all --prune
 git reset --hard origin/main
 ```
 
-3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+3. Протестуйте та повторно завантажте конфігурації [з Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
 ```console
 nginx -t
 nginx -s reload
 ```
 
-## Work on API Instances
+## Робота на екземплярах API
 
-1. Install build tools for node binaries (`node-gyp`) etc.
+1. Встановіть інструменти збірки для бінарних файлів node (`node-gyp`) тощо.
 
 ```console
 sudo apt install build-essential
 ```
 
-### First Install
+### Перше завантаження
 
-Provisioning VMs with the Code
+Підготовка віртуальних машин за допомогою коду
 
 1. Встановіть Node LTS.
 
@@ -443,7 +443,7 @@ cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Create the `.env` from the secure credentials storage.
+4. Створіть `.env` із безпечного сховища облікових даних.
 
 5. Встановіть залежності
 
@@ -451,7 +451,7 @@ git checkout prod-current # or any other branch to be deployed
 pnpm install
 ```
 
-6. Setup pm2 `logrotate` and startup on boot
+6. Налаштуйте pm2 `logrotate` та запустіть під час завантаження
 
 ```console
 pnpm pm2 install pm2-logrotate
@@ -470,7 +470,7 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 pnpm start:server
 ```
 
-### Logging and Monitoring
+### Журналювання та моніторинг
 
 ```console
 pnpm pm2 logs
@@ -480,13 +480,13 @@ pnpm pm2 logs
 pnpm pm2 monit
 ```
 
-### Updating Instances (Maintenance)
+### Оновлення екземплярів (обслуговування)
 
-Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The latter is essential when changing dependencies or adding environment variables.
+Зміни коду потрібно час від часу вносити в екземпляри API. Це може бути постійним оновленням або оновленням вручну. Останнє є обов’язковим при зміні залежностей або додаванні змінних середовища.
 
-> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] Наразі автоматизовані конвеєри не обробляють оновлення залежностей. Перед запуском будь-якого конвеєра розгортання нам потрібно виконати оновлення вручну.
 
-#### 1. Manual Updates - Used for updating dependencies, env variables.
+#### 1. Оновлення вручну: використовується для оновлення залежностей, змінних середовища.
 
 1. Зупиніть всі екземпляри
 
@@ -512,39 +512,39 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 pnpm start:server && pnpm pm2 logs
 ```
 
-#### 2. Rolling updates - Used for logical changes to code.
+#### 2. Постійне оновлення: використовується для логічних змін коду.
 
 ```console
 pnpm reload:server && pnpm pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code and logic via pipelines. You should not need to run these commands. These are here for documentation.
+> [!NOTE] Ми обробляємо постійні оновлення коду та логіки через конвеєри. Вам не потрібно запускати ці команди. Вони тут для документації.
 
-#### 3. Updating Node
+#### 3. Оновлення Node
 
-1. Install new Node version
+1. Встановіть нову версію Node
 
-2. Update pm2 to use the new version
+2. Оновіть pm2 для використання нової версії
 
 ```console
 pnpm pm2 update
 ```
 
-## Work on Client Instances
+## Робота над екземплярами клієнта
 
-1. Install build tools for node binaries (`node-gyp`) etc.
+1. Встановіть інструменти збірки для бінарних файлів node (`node-gyp`) тощо.
 
 ```console
 sudo apt install build-essential
 ```
 
-### First Install
+### Перше завантаження
 
-Provisioning VMs with the Code
+Підготовка віртуальних машин за допомогою коду
 
 1. Встановіть Node LTS.
 
-2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
+2. Оновіть `npm`, встановіть PM2, налаштуйте `logrotate` та запустіть під час завантаження
 
    ```console
    npm i -g npm@8
@@ -554,16 +554,16 @@ Provisioning VMs with the Code
    pm2 startup
    ```
 
-3. Clone client config, setup env and keys.
+3. Клонуйте конфігурацію клієнта, налаштування середовища та ключі.
 
    ```console
    git clone https://github.com/freeCodeCamp/client-config.git client
    cd client
    ```
 
-   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
+   Запустіть екземпляри заповнювачів для вебклієнта, вони будуть оновлені артефактами з конвеєра Azure.
 
-   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > Завдання: це налаштування потрібно перемістити в сховище S3 або Azure Blob 
    > 
    > ```console
    >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
@@ -576,7 +576,7 @@ Provisioning VMs with the Code
    >    pm2 start  ./client-start-secondary.sh --name client-secondary
    > ```
 
-### Logging and Monitoring
+### Журналювання та моніторинг
 
 ```console
 pm2 logs
@@ -586,13 +586,13 @@ pm2 logs
 pm2 monit
 ```
 
-### Updating Instances (Maintenance)
+### Оновлення екземплярів (обслуговування)
 
-Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
+Зміни коду потрібно час від часу вносити в екземпляри API. Це може бути постійним оновленням або оновленням вручну. Останнє є обов’язковим при зміні залежностей або додаванні змінних середовища.
 
-> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] Наразі автоматизовані конвеєри не обробляють оновлення залежностей. Перед запуском будь-якого конвеєра розгортання нам потрібно виконати оновлення вручну.
 
-#### 1. Manual Updates - Used for updating dependencies, env variables.
+#### 1. Оновлення вручну: використовується для оновлення залежностей, змінних середовища.
 
 1. Зупиніть всі екземпляри
 
@@ -608,27 +608,27 @@ Code changes need to be deployed to the API instances from time to time. It can 
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Rolling updates - Used for logical changes to code.
+#### 2. Постійне оновлення: використовується для логічних змін коду.
 
 ```console
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+> [!NOTE] Ми обробляємо постійні оновлення коду та логіки через конвеєри. Вам не потрібно запускати ці команди. Вони тут для документації.
 
-## Work on Chat Servers
+## Робота над чат-серверами
 
-Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
+Наші чат-сервери доступні з конфігурацією високої доступності, [рекомендованою в документації Rocket.Chat](https://docs.rocket.chat/installation/docker-containers/high-availability-install). Файл `docker-compose` можна знайти [тут](https://github.com/freeCodeCamp/chat-config).
 
-We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
+Ми пропонуємо надлишкові екземпляри NGINX, які самі збалансовують навантаження (Azure Load Balancer) перед кластером Rocket.Chat. Файл конфігурації NGINX [доступний тут](https://github.com/freeCodeCamp/chat-nginx-config).
 
-### First Install
+### Перше завантаження
 
-Provisioning VMs with the Code
+Підготовка віртуальних машин за допомогою коду
 
-**NGINX Cluster:**
+**Кластер NGINX:**
 
-1. Install NGINX and configure from repository.
+1. Завантажте і налаштуйте NGINX з репозиторію.
 
    ```console
    sudo su
@@ -643,13 +643,13 @@ Provisioning VMs with the Code
    cd /etc/nginx
    ```
 
-2. Install Cloudflare origin certificates and upstream application config.
+2. Встановіть сертифікати Cloudflare і конфігурацію головної програми.
 
-   Get the Cloudflare origin certificates from the secure storage and install at required locations.
+   Отримайте оригінальні сертифікати зі сховища безпеки та встановіть їх в потрібних місцях.
 
-   **OR**
+   **АБО**
 
-   Move over existing certificates:
+   Перемістіть наявні сертифікати:
 
    ```console
    # Local
@@ -661,67 +661,67 @@ Provisioning VMs with the Code
    mv /tmp/ssl ./
    ```
 
-   Update Upstream Configurations:
+   Оновіть головні конфігурації:
 
    ```console
    vi configs/upstreams.conf
    ```
 
-   Add/update the source/origin application IP addresses.
+   Додайте/оновіть вихідні IP-адреси програми.
 
 3. Налаштуйте мережу та брандмауери.
 
-   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+   Налаштуйте брандмауери Azure та `ufw` відповідно до доступу до вихідних адрес.
 
-4. Add the VM to the load balancer backend pool.
+4. Додайте віртуальну машину до балансувальника навантаження.
 
-   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+   За потреби налаштуйте та додайте правила до балансувальника навантаження. Можливо, також знадобиться додати віртуальну машину до пулу балансувальника навантаження.
 
-**Docker Cluster:**
+**Кластер Docker:**
 
-1. Install Docker and configure from the repository
+1. Завантажте і налаштуйте Docker з репозиторію
 
    ```console
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
 
-2. Configure the required environment variables and instance IP addresses.
+2. Налаштуйте необхідні змінні середовища та IP-адреси екземплярів.
 
-3. Run rocket-chat server
+3. Запустіть сервер rocket-chat
 
    ```console
    docker-compose config
    docker-compose up -d
    ```
 
-### Logging and Monitoring
+### Журналювання та моніторинг
 
-1. Check status for NGINX service using the below command:
+1. Перевірте стан служби NGINX за допомогою наступної команди:
 
    ```console
    sudo systemctl status nginx
    ```
 
-2. Check status for running docker instances with:
+2. Перевірте стан запущених екземплярів docker за допомогою:
 
    ```console
    docker ps
    ```
 
-### Updating Instances (Maintenance)
+### Оновлення екземплярів (обслуговування)
 
-**NGINX Cluster:**
+**Кластер NGINX:**
 
-Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+Налаштуйте зміни в екземплярах NGINX, які зберігаються на GitHub. Їх потрібно розгорнути в кожному екземплярі:
 
-1. SSH into the instance and enter sudo
+1. SSH в екземпляр і введіть sudo
 
    ```console
    sudo su
    ```
 
-2. Get the latest config code.
+2. Отримайте останній код конфігурації.
 
    ```console
    cd /etc/nginx
@@ -729,7 +729,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    git reset --hard origin/main
    ```
 
-3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+3. Протестуйте та повторно завантажте конфігурації [з Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
    ```console
    nginx -t
@@ -738,44 +738,44 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 **Кластер Docker:**
 
-1. SSH into the instance and navigate to the chat config path
+1. SSH в екземпляр та перейдіть до шляху налаштування чату
 
    ```console
    cd ~/chat
    ```
 
-2. Get the latest config code.
+2. Отримайте останній код конфігурації.
 
    ```console
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
-3. Pull down the latest docker image for Rocket.Chat
+3. Отримайте останній образ docker для Rocket.Chat
 
    ```console
    docker-compose pull
    ```
 
-4. Update the running instances
+4. Оновіть запущені екземпляри
 
    ```console
    docker-compose up -d
    ```
 
-5. Validate the instances are up
+5. Переконайтесь, що екземпляри запущені
 
    ```console
    docker ps
    ```
 
-6. Cleanup extraneous resources
+6. Вилучіть зайві ресурси
 
    ```console
    docker system prune --volumes
    ```
 
-   Output:
+   Вивід:
 
    ```console
    WARNING! This will remove:
@@ -788,7 +788,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    Are you sure you want to continue? [y/N] y
    ```
 
-   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
+   Виберіть «так» (y), щоб видалити все, що не використовується. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
 ## Work on Contributor Tools
 
@@ -804,9 +804,9 @@ pnpm run build
 pm2 restart contribute-app
 ```
 
-## Updating Node.js Versions on VMs
+## Оновлення версій Node.js на віртуальних машинах
 
-List currently installed node & npm versions
+Отримайте список наразі встановлених версій node та npm
 
 ```console
 nvm -v
@@ -816,25 +816,25 @@ npm -v
 nvm ls
 ```
 
-Install the latest Node.js LTS, and reinstall any global packages
+Встановіть останню версію Node.js LTS і перевстановіть всі глобальні пакети
 
 ```console
 nvm install --lts --reinstall-packages-from=default
 ```
 
-Verify installed packages
+Перевірте встановлені пакети
 
 ```console
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS (pinned to the latest major version)
+Зробіть псевдонім версії Node.js `default` для поточної LTS (закріплена до останньої основної версії)
 
 ```console
 nvm alias default 16
 ```
 
-(Optional) Uninstall old versions
+(Необов’язково) Видаліть старі версії
 
 ```console
 nvm uninstall <version>
@@ -844,19 +844,19 @@ nvm uninstall <version>
 > 
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
-Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+Отримайте інструкції/команди видалення за допомогою команди `unstartup` та використайте вивід, щоб видалити служби systemctl
 
 ```console
 pm2 unstartup
 ```
 
-Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+Отримайте інструкції/команди встановлення за допомогою команди `startup` та використайте вивід, щоб додати служби systemctl
 
 ```console
 pm2 startup
 ```
 
-Quick commands for PM2 to list, resurrect saved processes, etc.
+Швидкі команди для PM2 для перерахування, відновлення збережених процесів і т. д.
 
 ```console
 pm2 ls
@@ -880,15 +880,15 @@ pm2 logs
 
 Вам знадобиться PAT, який можна взяти тут: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Installing Agents on Deployment targets
+### Встановлення агентів на цілях розгортання
 
-Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
+Перейдіть до [Azure Devops](https://dev.azure.com/freeCodeCamp-org) та зареєструйте агента з нуля у необхідних [групах розгортання](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
-> [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
+> [!NOTE] Вам потрібно запустити сценарії в основному каталозі та переконатись, що не існує іншого каталогу `azagent`.
 
 ### Оновлення агентів
 
-Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
+Наразі оновлення агентів вимагає їхнього видалення та переналаштування. Це необхідно для того, щоб вони правильно підбирали значення `PATH` та інші змінні оточення системи. Нам потрібно зробити це, щоб оновити Node.js на цільових віртуальних машинах розгортання.
 
 1. Перейдіть та перевірте статус служби
 
@@ -897,32 +897,32 @@ Currently updating agents requires them to be removed and reconfigured. This is 
    sudo ./svc.sh status
    ```
 
-2. Stop the service
+2. Зупиніть службу
 
    ```console
    sudo ./svc.sh stop
    ```
 
-3. Uninstall the service
+3. Видаліть службу
 
    ```console
    sudo ./svc.sh uninstall
    ```
 
-4. Remove the agent from the pipeline pool
+4. Видаліть агента з pipeline pool
 
    ```console
    ./config.sh remove
    ```
 
-5. Remove the config files
+5. Видаліть файли конфігурації
 
    ```console
    cd ~
    rm -rf ~/azagent
    ```
 
-Once You have completed the steps above, you can repeat the same steps as installing the agent.
+Як тільки ви виконали вищевказані кроки, ви можете повторити ті самі кроки, що й при встановленні агента.
 
 ## Керівництво з розсилки листів
 

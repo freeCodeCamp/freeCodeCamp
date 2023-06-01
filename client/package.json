@@ -70,7 +70,6 @@
     "date-fns": "2.30.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
-    "eslint": "7",
     "final-form": "4.20.9",
     "gatsby": "3.15.0",
     "gatsby-cli": "3.15.0",
@@ -137,7 +136,6 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/types": "7.22.3",
     "@codesee/babel-plugin-instrument": "0.587.0",
     "@codesee/tracker": "0.587.0",
     "@testing-library/jest-dom": "5.16.5",
@@ -176,6 +174,7 @@
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
     "dotenv": "16.0.3",
+    "eslint-plugin-testing-library": "^3.9.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.5.0",
     "jest-json-schema-extended": "1.0.1",

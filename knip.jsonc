@@ -29,5 +29,9 @@
     "tools/scripts/build": {
       "entry": ["*.ts"]
     }
-  }
+  },
+  "ignoreDependencies": [
+    // framerunner throws error if removed
+    "@babel/runtime"
+  ]
 }

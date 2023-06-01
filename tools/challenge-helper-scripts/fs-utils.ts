@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../config/certification-settings';
+import { SuperBlocks } from '../../config/superblocks';
 
 export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
   const pathMap = {
