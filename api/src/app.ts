@@ -166,7 +166,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
-  void fastify.register(userRoutes, { prefix: '/user' });
+  void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
 
   return fastify;

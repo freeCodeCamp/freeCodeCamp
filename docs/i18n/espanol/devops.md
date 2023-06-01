@@ -203,19 +203,19 @@ Puedes identificar la versión exacta desplegada visitando los registros de comp
 
 Existen algunas limitaciones y problemas conocidos al utilizar la versión beta de la plataforma.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Los usuarios de la versión beta tendrán una cuenta separada a la de producción.** La versión beta usa una base de datos físicamente separada de la de producción. Esto nos da la capacidad de prevenir cualquier pérdida accidental de datos o modificaciones. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Se espera que el despliegue sea frecuente y en iteraciones rápidas, a veces varias veces al día. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### No envíes a los usuarios habituales a este sitio como una medida para confirmar una solución
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   El sitio beta es y siempre ha sido para aumentar el desarrollo y las pruebas locales, nada más. No es una promesa de lo que se avecina, sino un vistazo de lo que se está trabajando.
 
-- #### La página de inicio de sesión puede verse diferente a la de producción
+- **Sign in page may look different than production**
 
   Usamos un entorno de prueba para freeCodeCamp.dev en Auth0 y por lo tanto, no tenemos la capacidad de establecer un dominio personalizado. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a la producción que podemos conseguir.
 

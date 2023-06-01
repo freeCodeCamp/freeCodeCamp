@@ -8,7 +8,7 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+Für diese Aufgabe wirst du ein Programm zum Spielen von Schere, Stein, Papier erstellen. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 

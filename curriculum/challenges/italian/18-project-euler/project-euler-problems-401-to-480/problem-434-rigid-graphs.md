@@ -36,7 +36,7 @@ Definisci $S(N)$ come $\sum R(i, j)$ per $1 ≤ i$, $j ≤ N$.
 
 Ad es. $S(5) = 25\\,021\\,721$.
 
-Find $S(100)$, give your answer modulo $1\\,000\\,000\\,033$.
+Trova $S(100)$, dai la tua risposta modulo $1\\,000\\,000\\,033$.
 
 # --hints--
 

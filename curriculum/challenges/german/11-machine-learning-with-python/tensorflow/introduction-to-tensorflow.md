@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d88
-title: Introduction to TensorFlow
+title: Einführung in TensorFlow
 challengeType: 11
 videoId: r9hRyGGjOgQ
 bilibiliIds:

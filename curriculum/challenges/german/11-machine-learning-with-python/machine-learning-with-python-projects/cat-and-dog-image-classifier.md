@@ -20,7 +20,7 @@ For this challenge, you will complete the code  to classify images of dogs and c
 
 Some of the code is given to you but some code you must fill in to complete this challenge. Read the instruction in each text cell so you will know what you have to do in each code cell.
 
-The first code cell imports the required libraries. The second code cell downloads the data and sets key variables. The third cell is the first place you will write your own code.
+The first code cell imports the required libraries. The second code cell downloads the data and sets key variables. Die dritte Zelle ist der erste Ort, an dem du deinen eigenen Code schreiben wirst.
 
 The structure of the dataset files that are downloaded looks like this (You will notice that the test directory has no subdirectories and the images are not labeled):
 

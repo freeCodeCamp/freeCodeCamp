@@ -14,7 +14,7 @@ Definisci i polinomi $\\{F_n, n ≥ 0\\}$ come $F_n(x) = \displaystyle\sum_{i = 
 
 Per esempio, $F_7(x) = x + x^2 + 2x^3 + 3x^4 + 5x^5 + 8x^6 + 13x^7$, e $F_7(11) = 268\\,357\\,683$.
 
-Sia $n = {10}^{15}$. Find the sum $\displaystyle\sum_{x = 0}^{100} F_n(x)$ and give your answer modulo $1\\,307\\,674\\,368\\,000 \\, (= 15!)$.
+Sia $n = {10}^{15}$. Trova la somma $\displaystyle\sum_{x = 0}^{100} F_n(x)$ e dai la tua risposta come modulo $1\\,307\\,674\\,368\\,000 \\, (= 15!)$.
 
 # --hints--
 

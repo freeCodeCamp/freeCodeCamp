@@ -216,7 +216,7 @@ const algoliaIndices = {
 };
 ```
 
-## Ativando vídeos localizados
+### Ativar os vídeos localizados
 
 Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
@@ -303,11 +303,11 @@ Quando estes arquivos estiverem no local certo, você deve poder usar `pnpm run 
 
 Para implantar novos idiomas em News, você precisa criar dois PRs. Um PR será para o [repositório do CDN](https://github.com/freeCodeCamp/cdn), enquanto o outro será para o [repositório News](https://github.com/freeCodeCamp/news).
 
-## Preparação do repositório do CDN para o novo idioma
+## Preparar o repositório do CDN para o novo idioma
 
 News busca os links de tendências e títulos de artigos do nosso CDN durante a build e adiciona-os ao rodapé. News também busca os arquivos Day.js do CDN durante a build para fazer a localização das datas e horários para cada idioma.
 
-### Adicionar um Arquivo YAML para os artigos populares
+### Adicionar um arquivo YAML para os artigos populares
 
 Faça a clonagem do repositório [CDN](https://github.com/freeCodeCamp/cdn) e crie um branch.
 
@@ -367,7 +367,7 @@ Copie o código de local de Day.js da nova aba para o novo arquivo que você cri
 
 Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAML e Day.js para revisão.
 
-## Preparação do repositório do CDN para o novo idioma
+## Preparar o repositório do editorial para o novo idioma
 
 O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 

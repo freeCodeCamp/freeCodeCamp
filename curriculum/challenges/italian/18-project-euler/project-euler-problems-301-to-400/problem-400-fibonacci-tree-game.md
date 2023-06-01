@@ -14,7 +14,7 @@ Un albero di Fibonacci è un albero binario definito ricorsivamente come:
 - $T(1)$ è l'albero binario con un solo nodo.
 - $T(k)$ consiste in un nodo radice che ha $T(k - 1)$ e $T(k - 2)$ come figli.
 
-On such a tree two players play a take-away game. A ogni giro, un giocatore seleziona un nodo e lo rimuove insieme al sottoalbero radicato in quel nodo. Il giocatore che è costretto a prendere il nodo radice dell'intero albero perde.
+Su un tale albero due giocatori fanno un gioco take-away. A ogni giro, un giocatore seleziona un nodo e lo rimuove insieme al sottoalbero radicato in quel nodo. Il giocatore che è costretto a prendere il nodo radice dell'intero albero perde.
 
 Ecco le mosse vincenti del primo giocatore al primo turno per $T(k)$ da $k = 1$ a $k = 6$.
 

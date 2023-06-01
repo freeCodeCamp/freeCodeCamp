@@ -483,13 +483,15 @@ FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
    ```
    pnpm run test -- -g challenge-title-goes-here ```
 
-各チャレンジがテストに合格したことを確認したら、[プルリクエストを作成](how-to-open-a-pull-request.md) してください。
-
 > [!TIP] `.env` にある環境変数 `LOCALE` で、テストするチャレンジの言語を設定できます。
 > 
 > 現在受け入れられている値は、`english` と `chinese`で、デフォルトは `english` です。
 
-### 役立つリンク
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 チャレンジの作成および編集
 

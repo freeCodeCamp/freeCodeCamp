@@ -1,6 +1,6 @@
 ---
 id: 5900f4dd1000cf542c50ffef
-title: 'Problem 368: A Kempner-like series'
+title: 'Problema 368: una serie di Kempner'
 challengeType: 1
 forumTopicId: 302029
 dashedName: problem-368-a-kempner-like-series

@@ -1,24 +1,24 @@
 # Довідник DevOps
 
-This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
+Цей посібник допоможе вам зрозуміти наш стек інфраструктури і те, як ми підтримуємо наші платформи. Хоча цей посібник не має вичерпних подробиць всіх операцій, його можна використовувати як довідник для розуміння систем.
 
-Let us know if you have feedback or queries and we will be happy to clarify.
+Зв’яжіться з нами, якщо у вас виникнуть запитання, і ми з радістю роз’яснимо всі деталі.
 
-## Flight Manual - Code Deployments
+## Керівництво з розгортання коду
 
-This repository is continuously built, tested, and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
+Цей репозиторій постійно будується, тестується та розробляється на **окремих наборах інфраструктури (серверах, базах даних, CDN тощо)**.
 
-This involves three steps to be followed in sequence:
+Це передбачає три кроки, які потрібно виконувати послідовно:
 
-1. Нові зміни (виправлення і функціонал) зливаються у нашу основну гілку розробки (`main`) через pull запити.
+1. Нові зміни (виправлення та функціональності) об’єднуються до нашої основної гілки (`main`) через запити на злиття.
 2. Ці зміни проходять через ряд автоматизованих тестів.
-3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
+3. Після проходження тестів ми випускаємо зміни (або оновлюємо їх, якщо потрібно) для розгортання у нашій інфраструктурі.
 
 ### Building the codebase - Mapping Git Branches to Deployments
 
 Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
 
-This is an intermediate release for our developers and volunteer contributors. Він також відомий як наш "staging" або "бета" реліз.
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
 It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
@@ -26,25 +26,25 @@ Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeC
 
 This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
-### Testing changes - Integration and User Acceptance Testing
+### Тестування змін: інтеграція та приймальне користувацьке тестування
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. Всі наші тести виконуються за допомогою таких програм, як [Github Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+Ми використовуємо різні рівні інтеграції та приймального тестування, щоб перевірити якість коду. Всі наші тести виконуються за допомогою такого програмного забезпечення, як [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-We have unit tests for testing our challenge solutions, Server APIs, and Client User interfaces. These help us test the integration between different components.
+Ми маємо модульні тести для тестування розв’язків завдань, API серверів та інтерфейсів користувача. Це допомагає протестувати інтеграцію різних компонентів.
 
-> [!NOTE] We are also in the process of writing end user tests which will help in replicating real-world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE] Ми також в процесі написання тестів кінцевого користувача, що допоможе відтворити реальні сценарії, як-от оновлення електронної пошти або дзвінок до API чи сторонніх служб.
 
-Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
+Ці тести допомагають запобігти повторенню проблем і гарантують, що ми не вводимо нову помилку під час роботи над іншою помилкою або функцією.
 
 ### Deploying Changes - Pushing changes to servers
 
-Ми налаштували безперервне програмне забезпечення доставки для внесення змін до наших серверів розробки і виробництва.
+Ми налаштували безперервне програмне забезпечення доставки для надсилання змін до наших серверів розробки та виробництва.
 
-Після того, як зміни будуть відправлені в захищені гілки релізу, конвеєр збірки автоматично запускається для гілки. Гарбопроводи відповідають за будівництво артефактів та збереження їх у холодному сховищі для подальшого використання.
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
 The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
 
-The statuses of builds and releases are [available here](#build-test-and-deployment-status).
+Статуси збірок та випуски [доступні тут](#build-test-and-deployment-status).
 
 ## Trigger a Build, Test, and Deploy
 
@@ -154,83 +154,83 @@ For staff use:
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
 
-## Build, Test and Deployment Status
+## Збірка, тест та статус розгортання
 
-Here is the current test, build and deployment status of the codebase.
+Ось поточний тест, збірка та статус розгортання кодової бази.
 
-| Branch                                                                           | Unit Tests                                                                                                                                                                                                                       | Integration Tests                                                                                                                                                                                                        | Builds & Deployments                                                                                                              |
+| Гілка                                                                            | Модульні тести                                                                                                                                                                                                                   | Інтеграційні тести                                                                                                                                                                                                       | Збірки та розгортання                                                                                                             |
 |:-------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------- |
 | [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main)                 | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=main)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22)                               | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time)         | -                                                                                                                                 |
 | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-staging)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-staging) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-staging&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
 | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-current)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-current) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-current&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
-| `prod-next` (experimental, upcoming)                                             | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                        | -                                                                                                                                 |
+| `prod-next` (експериментальне, майбутнє)                                         | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                        | -                                                                                                                                 |
 
-## Early Access and Beta Testing
+## Ранній доступ та бета-тестування
 
-We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
+Ми вітаємо вас протестувати ці випуски в режимі **публічного бета-тестування** та отримати ранній доступ до майбутніх функціональностей платформи. Іноді ці функціональності/зміни також називають **наступними, бета, проміжними** тощо.
 
-Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent**, and **stable** for everyone.
+Ваші внески у вигляді зворотного зв’язку та повідомлень про проблеми допоможуть нам зробити платформу `freeCodeCamp.org` більш **стійкою**, **послідовною** та **стабільною** для кожного.
 
-We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
+Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org. Ви круті!
 
-### Identifying the Upcoming Version of the Platforms
+### Ідентифікація майбутньої версії платформ
 
-Currently, a public beta testing version is available at:
+Наразі публічне бета-тестування доступне на:
 
-| Application | Language | URL                                      |
-|:----------- |:-------- |:---------------------------------------- |
-| Learn       | English  | <https://www.freecodecamp.dev>           |
-|             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
-|             | Chinese  | <https://www.freecodecamp.dev/chinese>   |
-| News        | English  | <https://www.freecodecamp.dev/news>      |
-| Forum       | English  | <https://forum.freecodecamp.dev>         |
-|             | Chinese  | <https://freecodecamp.dev/chinese/forum> |
-| API         | -        | `https://api.freecodecamp.dev`           |
+| Програма | Мова       | URL                                      |
+|:-------- |:---------- |:---------------------------------------- |
+| Навчання | Англійська | <https://www.freecodecamp.dev>           |
+|          | Іспанська  | <https://www.freecodecamp.dev/espanol>   |
+|          | Китайська  | <https://www.freecodecamp.dev/chinese>   |
+| Новини   | Англійська | <https://www.freecodecamp.dev/news>      |
+| Форум    | Англійська | <https://forum.freecodecamp.dev>         |
+|          | Китайська  | <https://freecodecamp.dev/chinese/forum> |
+| API      | -          | `https://api.freecodecamp.dev`           |
 
-> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> [!NOTE] Назва домену відрізняється від **`freeCodeCamp.org`**. Це є навмисним, щоб відвернути індексацію пошукової системи і запобігти непорозумінь для користувачів платформи.
 > 
-> The above list is not exhaustive of all the applications that we provision. Also, not all language variants are deployed in staging to conserve resources.
+> Наведений вище список не є повним списком усіх програм, які ми забезпечуємо. Також не всі мовні варіанти розгорнуті у проміжній версії, щоб зберегти ресурси.
 
-### Identifying the Current Version of the Platforms
+### Ідентифікація поточної версії платформ
 
-**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+**Поточна версія платформи завжди доступна на [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-The dev-team merges changes from the `prod-staging` branch to `prod-current` when they release changes. The top commit should be what you see live on the site.
+Команда розробників об’єднує зміни з гілки `prod-staging` до `prod-current`, коли вони випускають зміни. Верхнім затвердженням має бути те, що ви побачите на сайті.
 
-You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively, you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
+Ви можете ідентифікувати точну розгорнуту версію, відвідавши збірку та журнали розгортання, доступні в розділі статусу. Або ж ви можете написати нам у [чаті](https://discord.gg/PRyKn3Vbay) для підтвердження.
 
-### Known Limitations
+### Відомі обмеження
 
-There are some known limitations and tradeoffs when using the beta version of the platform.
+Існують деякі відомі обмеження і компроміси при використанні бета-версії платформи.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **Всі дані та особистий прогрес на бета-платформі НЕ будуть збережені чи перенесені до робочої версії**
 
-  **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev-team may purge the database on this beta version as needed.
+  **Користувачі бета-версії матимуть окремий обліковий запис.** Бета-версія використовує іншу фізичну базу даних. Це дає можливість запобігти випадковій втраті даних чи змін. В разі потреби команда розробників може очистити базу даних цієї бета-версії.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **Бета-платформи не надають жодних гарантій щодо працездатності та надійності**
 
-  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
+  Очікується, що розгортання відбуватиметься часто та у швидких ітераціях, іноді декілька разів на день. В результаті іноді в бета-версії будуть неочікувані простої чи неробочі функціональності.
 
-- #### Do not send regular users to this site as a measure of confirming a fix
+- **Щоб забезпечити ефективність виправлення, радимо не надсилати регулярних користувачів на цей вебсайт з метою перевірки.**
 
-  The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
+  Метою бета-сайту завжди було вдосконалити локальну розробку та тестування, нічого іншого. Це не майбутня версія платформи, а звичайний перегляд того, над чим ми працюємо.
 
-- #### Sign in page may look different than production
+- **Сторінка входу може відрізнятись від робочої версії**
 
-  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
+  Ми використовуємо тестовий клієнт для freeCodeCamp.dev на Auth0, тому не можемо встановити власний домен. Це дозволяє зробити так, що всі зворотні виклики й сторінки авторизації з’являтимуться на домені за замовчуванням: `https://freecodecamp-dev.auth0.com/`. Це не впливає на функціональність та є максимально приближеним до робочої версії.
 
-## Reporting issues and leaving feedback
+## Повідомлення про проблеми та зворотний зв’язок
 
-Please open fresh issues for discussions and reporting bugs.
+Будь ласка, створюйте нові завдання для обговорення чи повідомлення про помилки.
 
-You may send an email to `dev[at]freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security[at]freecodecamp.org` instead of the public tracker and forum.
+Ви можете надіслати електронний лист на `dev[at]freecodecamp.org` у разі виникнення будь-яких запитів. Про вразливість безпеки потрібно повідомляти на `security[at]freecodecamp.org`, а не публічному журналі чи форумі.
 
-## Flight Manual - Server Maintenance
+## Керівництво з обслуговування сервера
 
 > [!WARNING]
 > 
-> 1. The guide applies to the **freeCodeCamp Staff members only**.
-> 2. These instructions should not be considered exhaustive, please use caution.
+> 1. Це керівництво стосується **лише персоналу freeCodeCamp**.
+> 2. У цих інструкціях вказано не всю інформацію, тому будьте обережними.
 
 As a member of the staff, you may have been given access to our cloud service providers like Azure, Digital Ocean, etc.
 
@@ -242,21 +242,21 @@ Here are some handy commands that you can use to work on the Virtual Machines (V
 
 ### Azure
 
-Install Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+Встановіть Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
-> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+> **(Одноразово) Встановіть на macOS за допомогою [`homebrew`](https://brew.sh):**
 
 ```
 brew install azure-cli
 ```
 
-> **(One-time) Login:**
+> **(Одноразовий) Вхід:**
 
 ```
 az login
 ```
 
-> **Get the list of VM names and IP addresses:**
+> **Отримайте список назв віртуальних машин та IP-адрес:**
 
 ```
 az vm list-ip-addresses --output table
@@ -264,15 +264,15 @@ az vm list-ip-addresses --output table
 
 ### Digital Ocean
 
-Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
+Встановіть Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
 
-> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+> **(Одноразово) Встановіть на macOS за допомогою [`homebrew`](https://brew.sh):**
 
 ```
 brew install doctl
 ```
 
-> **(One-time) Login:**
+> **(Одноразовий) Вхід:**
 
 Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
 
@@ -280,7 +280,7 @@ Authentication and context switching: https://github.com/digitalocean/doctl#auth
 doctl auth init
 ```
 
-> **Get the list of VM names and IP addresses:**
+> **Отримайте список назв віртуальних машин та IP-адрес:**
 
 ```
 doctl compute droplet list --format "ID,Name,PublicIPv4"
@@ -319,9 +319,9 @@ Cleanup unused packages
 sudo apt autoremove -y
 ```
 
-## Work on Web Servers (Proxy)
+## Працюйте над вебсерверами (проксі)
 
-We are running load balanced (Azure Load Balancer) instances for our web servers. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
+Ми запускаємо збалансовані екземпляри (Azure Load Balancer) для наших вебсерверів. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
 
 The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
 
@@ -370,7 +370,7 @@ Provisioning VMs with the Code
 
    Add/update the source/origin application IP addresses.
 
-3. Set up networking and firewalls.
+3. Налаштуйте мережу та брандмауери.
 
    Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
@@ -378,17 +378,17 @@ Provisioning VMs with the Code
 
    Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
 
-### Logging and Monitoring
+### Журналювання та моніторинг
 
-1. Check status for NGINX service using the below command:
+1. Перевірте стан служби NGINX за допомогою наступної команди:
 
    ```console
    sudo systemctl status nginx
    ```
 
-2. Logging and monitoring for the servers are available at:
+2. Журналювання та моніторинг служб доступні на:
 
-   NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com'), our current basic monitoring dashboard. We are working on more granular metrics for better observability
+   NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com') — наша поточна базова панель моніторингу. Ми працюємо над детальнішими показниками для кращого спостереження
 
 ### Updating Instances (Maintenance)
 
@@ -427,15 +427,15 @@ sudo apt install build-essential
 
 Provisioning VMs with the Code
 
-1. Install Node LTS.
+1. Встановіть Node LTS.
 
-2. Install pnpm globally.
+2. Встановіть pnpm глобально.
 
 ```console
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, set up env, and keys.
+3. Клонуйте freeCodeCamp, налаштуйте середовище та ключі.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -445,7 +445,7 @@ git checkout prod-current # or any other branch to be deployed
 
 4. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+5. Встановіть залежності
 
 ```console
 pnpm install
@@ -458,13 +458,13 @@ pnpm pm2 install pm2-logrotate
 pnpm pm2 startup
 ```
 
-7. Build the server
+7. Побудуйте сервер
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Start Instances
+8.  Запустіть екземпляри
 
 ```console
 pnpm start:server
@@ -488,25 +488,25 @@ Code changes need to be deployed to the API instances from time to time. It can 
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
-1. Stop all instances
+1. Зупиніть всі екземпляри
 
 ```console
 pnpm pm2 stop all
 ```
 
-2. Install dependencies
+2. Встановіть залежності
 
 ```console
 pnpm install
 ```
 
-3. Build the server
+3. Побудуйте сервер
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-4. Start Instances
+4. Запустіть екземпляри
 
 ```console
 pnpm start:server && pnpm pm2 logs
@@ -542,7 +542,7 @@ sudo apt install build-essential
 
 Provisioning VMs with the Code
 
-1. Install Node LTS.
+1. Встановіть Node LTS.
 
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
@@ -594,15 +594,15 @@ Code changes need to be deployed to the API instances from time to time. It can 
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
-1. Stop all instances
+1. Зупиніть всі екземпляри
 
    ```console
    pm2 stop all
    ```
 
-2. Install or update dependencies
+2. Встановіть чи оновіть залежності
 
-3. Start Instances
+3. Запустіть екземпляри
 
    ```console
    pm2 start all --update-env && pm2 logs
@@ -669,7 +669,7 @@ Provisioning VMs with the Code
 
    Add/update the source/origin application IP addresses.
 
-3. Set up networking and firewalls.
+3. Налаштуйте мережу та брандмауери.
 
    Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
@@ -736,7 +736,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    nginx -s reload
    ```
 
-**Docker Cluster:**
+**Кластер Docker:**
 
 1. SSH into the instance and navigate to the chat config path
 
@@ -874,11 +874,11 @@ pm2 save
 pm2 logs
 ```
 
-## Installing and Updating Azure Pipeline Agents
+## Встановлення та оновлення агентів Azure Pipeline
 
-See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove, and reinstall agents. Broadly you can follow the steps listed here.
+Див. https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops та дотримуйтесь інструкцій, щоб зупинити, видалити та перевстановити агентів. Загалом ви можете дотримуватись кроків, наведених нижче.
 
-You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+Вам знадобиться PAT, який можна взяти тут: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
 ### Installing Agents on Deployment targets
 
@@ -886,11 +886,11 @@ Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register 
 
 > [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
 
-### Updating Agents
+### Оновлення агентів
 
 Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
-1. Navigate and check status of the service
+1. Перейдіть та перевірте статус служби
 
    ```console
    cd ~/azagent
@@ -924,50 +924,50 @@ Currently updating agents requires them to be removed and reconfigured. This is 
 
 Once You have completed the steps above, you can repeat the same steps as installing the agent.
 
-## Flight Manual - Email Blast
+## Керівництво з розсилки листів
 
-We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+Ми використовуємо [інструмент CLI](https://github.com/freecodecamp/sendgrid-email-blast) для наших тижневих листів. Щоб підготувати та почати цей процес потрібно:
 
-1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+1. Увійдіть до DigitalOcean та почніть використовувати нові краплі в межах проєкту `Sendgrid`. Використайте знімок Ubuntu Sendgrid з найновішою датою. Він попередньо завантажений з інструментом CLI та сценарієм для отримання електронних пошт з бази даних. Зважаючи на поточний обсяг, трьох крапель достатньо для своєчасного надсилання листів.
 
-2. Set up the script to fetch the email list.
+2. Налаштуйте сценарій, щоб отримати віддалений доступ до списку електронних пошт.
 
    ```console
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
 
-   You will need to replace the placeholder values in the `.env` file with your credentials.
+   Вам потрібно буде замінити значення заповнювачів у файлі `.env` на свої облікові дані.
 
-3. Run the script.
+3. Запустіть сценарій.
 
    ```console
    node get-emails.js emails.csv
    ```
 
-   This will save the email list in an `emails.csv` file.
+   Це збереже список електронних пошт у файлі `emails.csv`.
 
-4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+4. Розділіть електронні пошти на декілька файлів, залежно від кількості потрібних крапель. Це найлегше зробити за допомогою `scp`, щоб локально отримати список електронних пошт та, використовуючи свій улюблений текстовий редактор, розділити їх на декілька файлів. Кожен файл потребує заголовку `email,unsubscribeId`.
 
-5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+5. Перейдіть до каталогу CLI за допомогою `cd /home/sendgrid-email-blast` та налаштуйте інструмент [згідно документації](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Запустіть інструмент, щоб надіслати листи, дотримуючись [документації з користування](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
-7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
+7. Як тільки розсилка листів завершиться, переконайтеся, що усі повідомлення доставлено успішно, перш ніж знищити краплі.
 
-## Flight Manual - Adding news instances for new languages
+## Керівництво з додавання екземплярів новин нових мов
 
-### Theme Changes
+### Зміни теми
 
-We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
+Ми використовуємо власну [тему](https://github.com/freeCodeCamp/news-theme) для публікацій новин. Виконавши наступні зміни теми, можна додати нову мову.
 
-1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
-2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
-3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
-4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
-5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
-6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+1. Врахуйте інструкцію `else if` до [коду ISO нової мови](https://www.loc.gov/standards/iso639-2/php/code_list.php) у [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Створіть початкову папку конфігурації, створивши копію папки [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) та змінивши її назву на код нової мови. (`en` —> `es` для іспанської)
+3. Всередині папки нової мови змініть назви змінних у `main.js` та `footer.js` на відповідні скорочені коди мови (`enMain` —> `esMain` для іспанської)
+4. Створіть копію [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) та змініть її назву на код нової мови.
+5. Додайте сценарії для щойно створених файлів конфігурації до [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs).
+6. Додайте сценарій відповідної мови `day.js` з [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) до [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
-### Ghost Dashboard Changes
+### Зміни інформаційної панелі Ghost
 
-Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).
+Оновіть активи публікацій, перейшовши на Ghost Dashboard > Settings > General та завантаживши [піктограму](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [логотип](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png) та [зображення](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

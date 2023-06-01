@@ -36,13 +36,13 @@ La primera `assert.equal` comprueba si el estado es igual a `200`. El segundo `a
 
 También, ten en cuenta el parámetro `done` en la función callback de la prueba. Llamarlo sin un argumento al final de una prueba es necesario para indicar que la operación asíncrona está completa.
 
-Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+Finalmente, notese que método `keepOpen` va justo luego del método `request`. Normalmente podrías ejecutar tus pruebas desde la línea de comandos, o como parte de un proceso de integración automatizado, y puedes dejar que `chai-http` inicie y detenga tu servidor automáticamente.
 
-However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+Sin embargo, las pruebas que se ejecutan cuando envía el enlace para tu proyecto requieren que tu servidor este levantado, entonces necesitas usar el método `keepOpen` para prevenir que `chai-http` de detenga tu servidor.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
+Dentro de `tests/2_functional-tests.js`, altera la prueba `'Test GET /hello with no name'` (`// #1`) para afirmar el `status` y el `text` de la respuesta para hacer que la prueba pase. Do not alter the arguments passed to the asserts.
 
 There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 

@@ -216,7 +216,7 @@ const algoliaIndices = {
 };
 ```
 
-## Habilitar Videos Localizados
+### Enabling Localized Videos
 
 Para los desafìos de video, debe cambiar algunas cosas. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. Por ejemplo, agregando a Dothraki para la consulta:
 
@@ -270,7 +270,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## IU del cliente
+## Client UI
 
 Necesitará dar un paso adicional para manejar las traducciones de la interfaz de usuario del cliente.
 
@@ -283,7 +283,7 @@ Usted quedrá copiar los siguientes archivos desde `/client/i18n/locales/english
 - `motivation.json`
 - `trending.json`
 
-## Pevisualiza las traducciones localmente
+## Testing Translations Locally
 
 Si desea probar las traducciones localmente, antes de añadirlas a nuestro repositorio principal, salte los cambios del flujo de trabajo de Crowdin. Siga los pasos para activar un idioma, luego descargue las traducciones de Crowdin y cargue las traducciones en su código local.
 

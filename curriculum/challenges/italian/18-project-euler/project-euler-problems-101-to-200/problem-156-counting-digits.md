@@ -38,7 +38,7 @@ Infatti, per ogni cifra $d =0$, 0 è la prima soluzione dell'equazione $f(n, d) 
 
 Dato $s(1) = 22786974071$. Trova $\sum{s(d)}$ per $1 ≤ d ≤ 9$.
 
-Note: if, for some $n$, $f(n, d) = n$ for more than one value of $d$ this value of $n$ is counted again for every value of $d$ for which $f(n, d) = n$.
+Nota: se, per alcuni $n$, $f(n, d) = n$ per più di un valore di $d$ questo valore di $n$ è contato di nuovo per ogni valore di $d$ per il quale $f(n, d) = n$.
 
 # --hints--
 
