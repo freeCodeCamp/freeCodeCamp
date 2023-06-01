@@ -49,7 +49,8 @@ const initialState = {
   showPreviewPane: true,
   projectFormValues: {},
   successMessage: 'Happy Coding!',
-  isAdvancing: false
+  isAdvancing: false,
+  chapterSlug: ''
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -193,6 +194,10 @@ export const reducer = handleActions(
     [actionTypes.setIsAdvancing]: (state, { payload }) => ({
       ...state,
       isAdvancing: payload
+    }),
+    [actionTypes.setChapterSlug]: (state, { payload }) => ({
+      ...state,
+      chapterSlug: payload
     }),
     [actionTypes.setExamResults]: (state, { payload }) => ({
       ...state,

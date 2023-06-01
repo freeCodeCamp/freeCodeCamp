@@ -4,12 +4,33 @@
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../config/certification-settings';
+import { SuperBlocks } from '../config/superblocks';
 import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
-const englishTest = {
+const mockSuperBlocks = [
+  SuperBlocks.RespWebDesignNew,
+  SuperBlocks.JsAlgoDataStruct,
+  SuperBlocks.FrontEndDevLibs,
+  SuperBlocks.DataVis,
+  SuperBlocks.RelationalDb,
+  SuperBlocks.BackEndDevApis,
+  SuperBlocks.QualityAssurance,
+  SuperBlocks.SciCompPy,
+  SuperBlocks.DataAnalysisPy,
+  SuperBlocks.InfoSec,
+  SuperBlocks.MachineLearningPy,
+  SuperBlocks.CollegeAlgebraPy,
+  SuperBlocks.CodingInterviewPrep,
+  SuperBlocks.ProjectEuler,
+  SuperBlocks.RespWebDesign,
+  SuperBlocks.JsAlgoDataStructNew,
+  SuperBlocks.TheOdinProject,
+  SuperBlocks.ExampleCertification
+];
+
+const fullSuperOrder = {
   [SuperBlocks.RespWebDesignNew]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
@@ -24,105 +45,25 @@ const englishTest = {
   [SuperBlocks.CollegeAlgebraPy]: 11,
   [SuperBlocks.CodingInterviewPrep]: 12,
   [SuperBlocks.ProjectEuler]: 13,
-  [SuperBlocks.RespWebDesign]: 14
-};
-
-const upcomingTest = {
-  [SuperBlocks.RespWebDesignNew]: 0,
-  [SuperBlocks.JsAlgoDataStruct]: 1,
-  [SuperBlocks.FrontEndDevLibs]: 2,
-  [SuperBlocks.DataVis]: 3,
-  [SuperBlocks.RelationalDb]: 4,
-  [SuperBlocks.BackEndDevApis]: 5,
-  [SuperBlocks.QualityAssurance]: 6,
-  [SuperBlocks.SciCompPy]: 7,
-  [SuperBlocks.DataAnalysisPy]: 8,
-  [SuperBlocks.InfoSec]: 9,
-  [SuperBlocks.MachineLearningPy]: 10,
-  [SuperBlocks.CollegeAlgebraPy]: 11,
-  [SuperBlocks.CodingInterviewPrep]: 12,
-  [SuperBlocks.ProjectEuler]: 13,
-  [SuperBlocks.JsAlgoDataStructNew]: 14,
-  [SuperBlocks.TheOdinProject]: 15,
-  [SuperBlocks.ExampleCertification]: 16,
-  [SuperBlocks.RespWebDesign]: 17
-};
-
-const espanolTest = {
-  [SuperBlocks.RespWebDesignNew]: 0,
-  [SuperBlocks.JsAlgoDataStruct]: 1,
-  [SuperBlocks.FrontEndDevLibs]: 2,
-  [SuperBlocks.DataVis]: 3,
-  [SuperBlocks.RelationalDb]: 4,
-  [SuperBlocks.BackEndDevApis]: 5,
-  [SuperBlocks.QualityAssurance]: 6,
-  [SuperBlocks.SciCompPy]: 7,
-  [SuperBlocks.DataAnalysisPy]: 8,
-  [SuperBlocks.RespWebDesign]: 9,
-  [SuperBlocks.InfoSec]: 10,
-  [SuperBlocks.MachineLearningPy]: 11,
-  [SuperBlocks.CollegeAlgebraPy]: 12,
-  [SuperBlocks.CodingInterviewPrep]: 13,
-  [SuperBlocks.ProjectEuler]: 14
-};
-
-const chineseTest = {
-  [SuperBlocks.RespWebDesignNew]: 0,
-  [SuperBlocks.JsAlgoDataStruct]: 1,
-  [SuperBlocks.FrontEndDevLibs]: 2,
-  [SuperBlocks.DataVis]: 3,
-  [SuperBlocks.RelationalDb]: 4,
-  [SuperBlocks.BackEndDevApis]: 5,
-  [SuperBlocks.QualityAssurance]: 6,
-  [SuperBlocks.SciCompPy]: 7,
-  [SuperBlocks.DataAnalysisPy]: 8,
-  [SuperBlocks.InfoSec]: 9,
-  [SuperBlocks.MachineLearningPy]: 10,
-  [SuperBlocks.RespWebDesign]: 11,
-  [SuperBlocks.CollegeAlgebraPy]: 12,
-  [SuperBlocks.CodingInterviewPrep]: 13,
-  [SuperBlocks.ProjectEuler]: 14
+  [SuperBlocks.RespWebDesign]: 14,
+  [SuperBlocks.JsAlgoDataStructNew]: 15,
+  [SuperBlocks.TheOdinProject]: 16,
+  [SuperBlocks.ExampleCertification]: 17
 };
 
 describe('createSuperOrder', () => {
-  const englishSuperOrder = createSuperOrder({
-    language: 'english',
-    showNewCurriculum: 'false',
-    showUpcomingChanges: 'false'
+  const superOrder = createSuperOrder(mockSuperBlocks);
+
+  it('should create the correct object given an array of SuperBlocks', () => {
+    expect(superOrder).toStrictEqual(fullSuperOrder);
   });
 
-  const upcomingSuperOrder = createSuperOrder({
-    language: 'english',
-    showNewCurriculum: 'false',
-    showUpcomingChanges: 'true'
-  });
-
-  const espanolSuperOrder = createSuperOrder({
-    language: 'espanol',
-    showNewCurriculum: 'false',
-    showUpcomingChanges: 'false'
-  });
-
-  const chineseSuperOrder = createSuperOrder({
-    language: 'chinese',
-    showNewCurriculum: 'false',
-    showUpcomingChanges: 'false'
-  });
-
-  it("should create the correct object for 'english'", () => {
-    expect(englishSuperOrder).toStrictEqual(englishTest);
-  });
-
-  it('should create the correct object with upcoming changes shown', () => {
-    expect(upcomingSuperOrder).toStrictEqual(upcomingTest);
-  });
-
-  it("should create the correct object for 'espanol'", () => {
-    expect(espanolSuperOrder).toStrictEqual(espanolTest);
-  });
-
-  it("should create the correct object for 'chinese'", () => {
-    expect(chineseSuperOrder).toStrictEqual(chineseTest);
+  it('throws when not given an array of SuperBlocks', () => {
+    expect.assertions(4);
+    expect(() => getSuperOrder()).toThrow();
+    expect(() => getSuperOrder(null)).toThrow();
+    expect(() => getSuperOrder('')).toThrow();
+    expect(() => getSuperOrder(['respansive-wib-desoin'])).toThrow();
   });
 });
 
@@ -146,12 +87,14 @@ describe('getSuperOrder', () => {
   });
 
   it('returns unique numbers for all current superblocks', () => {
-    // Skip non-english tests
-    if (process.env.CURRICULUM_LOCALE !== 'english') {
-      return;
-    }
-
-    if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
+    if (
+      process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+      process.env.SHOW_UPCOMING_CHANGES !== 'true'
+    ) {
+      expect.assertions(15);
+    } else if (process.env.SHOW_NEW_CURRICULUM !== 'true') {
+      expect.assertions(15);
+    } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(15);
     } else {
       expect.assertions(18);
@@ -171,14 +114,21 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(11);
     expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(12);
     expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(13);
+    expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
 
-    if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(14);
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(15);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(17);
-    } else {
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
+    if (
+      process.env.SHOW_NEW_CURRICULUM === 'true' &&
+      process.env.SHOW_UPCOMING_CHANGES === 'true'
+    ) {
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(17);
+    } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
+      return;
+    } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(17);
     }
   });
 });

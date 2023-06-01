@@ -8,4 +8,4 @@
 - Peter Samir https://www.linkedin.com/in/peter-samir/
 - Laurence Tennant ([@hyperreality](https://github.com/hyperreality)) working with IncludeSecurity.com - [GHSA-cc3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Thank you for your contributions :pray:
+> **Thank you for your contributions :pray:**

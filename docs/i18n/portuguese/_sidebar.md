@@ -8,7 +8,6 @@
 - **Contribuição de código**
   - [Configurar o freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Seguir as melhores práticas](codebase-best-practices.md)
-  - [Abrir um pull request](how-to-open-a-pull-request.md)
   - [Trabalhar na base de código](how-to-contribute-to-the-codebase.md)
   - [Trabalhar em desafios de programação](how-to-work-on-coding-challenges.md)
   - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
@@ -19,10 +18,12 @@
   - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
   - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
   - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
+  - [Abrir um pull request](how-to-open-a-pull-request.md)
 - **Guias adicionais**
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
   - [Depurar e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
   - [Configurar freeCodeCamp no Windows (WSL)](how-to-setup-wsl.md)
+  - [Usar o Docker no Windows Home](how-to-use-docker-on-windows-home.md)
   - [Fluxo de trabalho do token de usuário](user-token-workflow.md)
   - [Solucionar problemas de desenvolvimento](troubleshooting-development-issues.md)
   - [Manual de análise dos autores](authors-analytics-manual.md)
@@ -31,6 +32,7 @@
 
 - **Manuais de Voo** (para Equipe & Moderadores)
   - [Manual do Moderador](moderator-handbook.md)
+  - [Modelos de resposta](reply-templates.md)
   - [Manual do líder do idioma](language-lead-handbook.md)
   - [Manual do DevOps](devops.md)
   - [Extensão do VSCode Courses](courses-vscode-extension.md)

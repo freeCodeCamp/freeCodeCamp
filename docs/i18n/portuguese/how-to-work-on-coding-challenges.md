@@ -486,13 +486,15 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
    ```
    pnpm run test -- -g challenge-title-goes-here ```
 
-Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](how-to-open-a-pull-request.md).
-
 > [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
 > 
 > Os valores atualmente aceitos são `english` e `chinese`, com `english` sendo o padrão.
 
-### Links úteis
+## Propondo um Pull Request (PR)
+
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
+
+## Links úteis
 
 Criação e edição de desafios:
 

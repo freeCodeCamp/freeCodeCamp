@@ -1,3 +1,5 @@
+import { SuperBlocks } from './superblocks';
+
 export const certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
@@ -17,27 +19,6 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8'
 } as const;
-
-export enum SuperBlocks {
-  RespWebDesignNew = '2022/responsive-web-design',
-  RespWebDesign = 'responsive-web-design',
-  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
-  JsAlgoDataStructNew = '2022/javascript-algorithms-and-data-structures',
-  FrontEndDevLibs = 'front-end-development-libraries',
-  DataVis = 'data-visualization',
-  RelationalDb = 'relational-database',
-  BackEndDevApis = 'back-end-development-and-apis',
-  QualityAssurance = 'quality-assurance',
-  SciCompPy = 'scientific-computing-with-python',
-  DataAnalysisPy = 'data-analysis-with-python',
-  InfoSec = 'information-security',
-  MachineLearningPy = 'machine-learning-with-python',
-  CodingInterviewPrep = 'coding-interview-prep',
-  TheOdinProject = 'the-odin-project',
-  ProjectEuler = 'project-euler',
-  CollegeAlgebraPy = 'college-algebra-with-python',
-  ExampleCertification = 'example-certification'
-}
 
 export const certIds = {
   legacyFrontEndChallengeId: '561add10cb82ac38a17513be',

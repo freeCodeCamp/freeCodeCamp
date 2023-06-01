@@ -10,8 +10,8 @@ config/i18n.js
 config/misc.js
 config/certification-settings.js
 config/donation-settings.js
-config/superblock-order.js
-config/superblock-order.test.js
+config/superblocks.js
+config/superblocks.test.js
 utils/block-nameify.js
 utils/block-nameify.test.js
 utils/slugs.js

@@ -285,9 +285,13 @@ button.map-title {
   position: relative;
 }
 
+.challenge-completed:focus-visible {
+  outline-color: var(--secondary-color);
+}
+
 .challenge-completed span {
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-weight: 900;
+  font-size: 1.5rem;
   margin-top: -0.05rem;
 }
 

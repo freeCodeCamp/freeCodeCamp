@@ -2,11 +2,11 @@ Siga esta guía para establecer la aplicación móvil FreeCodeCamp en su sistema
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+## How to Prepare your Local Machine
 
 Empezar instalando el software requerido previamente para su sistema operativo.
 
-#### Prerequisites
+### Prerequisites
 
 | Requisito                       | Versión | Notas                                    |
 | ------------------------------- | ------- | ---------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Una vez que estén instalados los requisitos previos, hay que preparar el entorno de desarrollo. Es muy común para muchos equipos de trabajo, y solo hace falta hacerlo una vez.
 
-##### Seguir estos pasos para tener listo el entorno de desrrollo:
+#### Follow these steps to get your development environment ready:
 
 1. Instalar [Git](https://git-scm.com/) u otro cliente Git, si todavía no hay ningumo. Acualizar a la versión más reciente. La que viene con el sistema operativo puede estar desactualizada.
 
@@ -361,7 +361,7 @@ Sigue estos pasos:
     git push origin nombre/rama-aqui
     ```
 
-## Proponer una Pull Request (PR)
+## Proposing a Pull Request (PR)
 
 Después de que hayas hecho commit de tus cambios, consulta aquí [cómo abrir una Pull Request](how-to-open-a-pull-request.md).
 
@@ -374,7 +374,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Solución de problemas
+## Troubleshooting
 
 ### Problemas con la instalación de los prerrequisitos recomendados
 
@@ -398,7 +398,7 @@ Si obtienes errores al instalar las dependencias, por favor asegúrate de que no
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 
-## Obtener ayuda
+## Getting Help
 
 Si estás atascado y necesitas ayuda, siéntete libre de hacer preguntas en la categoría de ['Contribuyentes' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [la sala de chat de contribuyentes](https://discord.gg/PRyKn3Vbay).
 

@@ -2,6 +2,7 @@ const landingPageElements = {
   heading: "[data-test-label='landing-header']",
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
+  curriculumBtns: "[data-test-label='curriculum-map-button']",
   testimonials: "[data-test-label='testimonial-cards']",
   landingPageImage: "[data-test-label='landing-page-figure']",
   faq: "[data-test-label='landing-page-faq']"
@@ -11,7 +12,7 @@ type LandingPageTypes<T> = T[keyof T];
 
 type LandingPageLogs = LandingPageTypes<typeof landingPageElements>;
 
-const certifications = [
+const superBlocks = [
   'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
@@ -23,7 +24,10 @@ const certifications = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'College Algebra with Python'
+  'College Algebra with Python',
+  'Coding Interview Prep',
+  'Project Euler',
+  'Legacy Responsive Web Design'
 ];
 
 describe('Landing page', () => {
@@ -67,13 +71,10 @@ describe('Landing page', () => {
       .should('not.exist');
   });
 
-  it('Has links to all the certifications', function () {
-    cy.get(landingPageElements.certifications)
-      .children()
-      .its('length')
-      .should('eq', 12);
-    cy.wrap(certifications).each((cert: LandingPageLogs) => {
-      cy.get(landingPageElements.certifications).contains(cert);
+  it('Has links to all superblocks', function () {
+    cy.get(landingPageElements.curriculumBtns).its('length').should('eq', 15);
+    cy.wrap(superBlocks).each((cert: LandingPageLogs) => {
+      cy.get(landingPageElements.curriculumBtns).contains(cert);
     });
   });
 

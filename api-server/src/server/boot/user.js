@@ -92,7 +92,7 @@ function deleteUserTokenResponse(req, res) {
 }
 
 function createReadSessionUser(app) {
-  const { Donation, UserToken } = app.models;
+  const { UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
@@ -118,14 +118,12 @@ function createReadSessionUser(app) {
 
     try {
       const [
-        activeDonations,
         completedChallenges,
         partiallyCompletedChallenges,
         progressTimestamps,
         savedChallenges
       ] = await Promise.all(
         [
-          Donation.getCurrentActiveDonationCount$(),
           queryUser.getCompletedChallenges$(),
           queryUser.getPartiallyCompletedChallenges$(),
           queryUser.getPoints$(),
@@ -133,10 +131,10 @@ function createReadSessionUser(app) {
         ].map(obs => obs.toPromise())
       );
 
-      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const { calendar } = getProgress(progressTimestamps);
       const user = {
         ...queryUser.toJSON(),
-        ...progress,
+        calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem
@@ -153,9 +151,6 @@ function createReadSessionUser(app) {
             joinDate: user.id.getTimestamp(),
             userToken: encodedUserToken
           }
-        },
-        sessionMeta: {
-          activeDonations
         },
         result: user.username
       };

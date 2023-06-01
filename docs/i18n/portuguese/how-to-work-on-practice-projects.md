@@ -134,3 +134,7 @@ Um script único que atualiza automaticamente a frontmatter nos arquivos markdow
 ```bash
 pnpm run update-step-titles
 ```
+
+## Propondo um Pull Request (PR)
+
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).

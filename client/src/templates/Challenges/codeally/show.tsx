@@ -44,7 +44,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
@@ -258,9 +258,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <LearnLayout>
           <Helmet title={windowTitle} />
           <Grid>
-            {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer size='medium' />
+                {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
                 <Spacer size='medium' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}

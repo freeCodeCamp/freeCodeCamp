@@ -8,4 +8,4 @@ Si bien no ofrecemos ninguna recompensa o botín en este momento, estamos agrade
 - Peter Samir https://www.linkedin.com/in/peter-samir/
 - Laurence Tennant ([@hyperreality](https://github.com/hyperreality)) trabajando con IncludeSecurity.com - [GHSA-cc3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Gracias por sus contribuciones  :pray:
+> **Thank you for your contributions :pray:**

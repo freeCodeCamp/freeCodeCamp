@@ -1,6 +1,6 @@
-Bem-vindo à biblioteca `ui-components` do freeCodeCamp. Os componentes são construídos, em grande parte, do zero, com elementos HTML básicos e [Tailwind CSS](https://tailwindcss.com/).
-
 # Como trabalhar na biblioteca de componentes
+
+Bem-vindo à biblioteca `ui-components` do freeCodeCamp. Os componentes são construídos, em grande parte, do zero, com elementos HTML básicos e [Tailwind CSS](https://tailwindcss.com/).
 
 > [!NOTE]
 > 
@@ -91,7 +91,11 @@ Para executar testes contra a biblioteca de componentes, execute o seguinte coma
 pnpm run test-ui-components
 ```
 
-## Adicionar pacotes à biblioteca de componentes da UI
+## Propondo um Pull Request (PR)
+
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
+
+## Adicionando pacotes à biblioteca de componentes da UI
 
 Restringimos a adição de novos pacotes aos componentes da UI para ajudar com a manutenção do projeto. Na hipótese de você achar que uma dependência é necessária, consulte os gestores primeiro e use o seguinte comando para adicionar um pacote:
 
@@ -100,7 +104,7 @@ cd tools/ui-components
 pnpm add package_name
 ```
 
-### Links úteis
+## Links úteis
 
 - [Testes de acessibilidade](https://testing-library.com/docs/dom-testing-library/api-accessibility)
 - [Ordem de prioridade das consultas da biblioteca de testes do React](https://testing-library.com/docs/queries/about/#priority)
