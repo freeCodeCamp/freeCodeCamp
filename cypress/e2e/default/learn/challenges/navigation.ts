@@ -7,8 +7,8 @@ const challenge1 = {
 
 // last in block
 const challenge2 = {
-  url: '/learn/data-analysis-with-python/numpy/loading-data-and-advanced-indexing',
-  nextUrl: '/learn/data-analysis-with-python/#numpy'
+  url: '/learn/project-euler/project-euler-problems-301-to-400/problem-400-fibonacci-tree-game',
+  nextUrl: '/learn/project-euler/#project-euler-problems-301-to-400'
 };
 
 // last in superblock
@@ -36,10 +36,18 @@ describe('submitting a challenge', () => {
   });
 
   it('at the end of a block should take you to the superblock page with the current block hash', () => {
+    const solution =
+      'function fibonacciTreeGame() {{}return 438505383468410600{}}';
     cy.visit(challenge2.url);
-    cy.get('.video-quiz-option-label')
-      .filter(':eq(2)') // Select the third item (index starts at 0)
-      .click()
+    const selectAllKeys = Cypress.platform == 'darwin' ? '{cmd}a' : '{ctrl}a';
+    cy.get(`${'.react-monaco-editor-container'} textarea:first`, {
+      timeout: 16000
+    }).as('editor');
+
+    cy.get('@editor')
+      .type(selectAllKeys)
+      .type('{backspace}')
+      .type(solution)
       .type('{ctrl}{enter}');
     cy.contains('Submit and go to next challenge').click();
     cy.url().should('include', challenge2.nextUrl);
