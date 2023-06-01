@@ -19,7 +19,7 @@ module.exports = defineConfig({
     //
     // and so on.
     //
-    // specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
+    specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
 
     // Temporary disable these until we can address the flakiness
     excludeSpecPattern: [
