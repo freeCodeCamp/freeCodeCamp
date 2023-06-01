@@ -36,11 +36,11 @@ should return:
 [
   'The Queen of the Damned (Vampire Chronicles (Paperback))',
   [
-    ['Catch 22', 0.793983519077301], 
-    ['The Witching Hour (Lives of the Mayfair Witches)', 0.7448656558990479], 
-    ['Interview with the Vampire', 0.7345068454742432],
-    ['The Tale of the Body Thief (Vampire Chronicles (Paperback))', 0.5376338362693787],
-    ['The Vampire Lestat (Vampire Chronicles, Book II)', 0.5178412199020386]
+    ['The Lovely Bones: A Novel', '0.715856671333313'],
+    ['The Notebook', ' 0.8009312152862549'],
+    ['The Joy Luck Club', '0.8086661100387573'],
+    ['Bel Canto: A Novel', '0.8146533370018005'],
+    ["The Pilot's Wife : A Novel",  '0.8168827891349792'],
   ]
 ]
 ```

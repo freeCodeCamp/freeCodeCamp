@@ -36,11 +36,11 @@ should return:
 [
   'The Queen of the Damned (Vampire Chronicles (Paperback))',
   [
-    ['The Lovely Bones: A Novel', '0.715856671333313']
-    ['The Notebook', ' 0.8009312152862549']
-    ['The Joy Luck Club', '0.8086661100387573']
-    ['Bel Canto: A Novel', '0.8146533370018005']
-    ["The Pilot's Wife : A Novel",  '0.8168827891349792']
+    ['The Lovely Bones: A Novel', '0.715856671333313'],
+    ['The Notebook', ' 0.8009312152862549'],
+    ['The Joy Luck Club', '0.8086661100387573'],
+    ['Bel Canto: A Novel', '0.8146533370018005'],
+    ["The Pilot's Wife : A Novel",  '0.8168827891349792'],
   ]
 ]
 ```
