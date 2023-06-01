@@ -254,23 +254,31 @@ li.disabled > a {
 }
 
 .donation-icon {
-  width: 150px;
-  height: auto;
-  transform: scale(1.5);
-  opacity: 0;
-  animation: donation-icon-animation 1s linear 100ms forwards;
+  height: 150px;
+  width: auto;
 }
 
-@keyframes donation-icon-animation {
-  33% {
-    transform: scale(1.2);
-  }
-  66% {
-    transform: scale(1.25);
+.two-seconds-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+  animation-delay: 2s;
+}
+
+.no-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+}
+
+@keyframes opacity-animation {
+  0% {
+    pointer-events: none;
+    opacity: 0;
   }
   100% {
+    pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -459,6 +467,11 @@ a.patreon-button:hover {
 
 .hide {
   display: none;
+}
+
+.donation-modal .btn-link:disabled {
+  opacity: 0;
+  cursor: default;
 }
 
 .donate-btn-group {
