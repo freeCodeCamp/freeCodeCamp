@@ -87,6 +87,8 @@ jobs:
       - name: Seed Database
         run: pnpm run seed
 
+
+        
       - name: Cypress run dry run
         uses: cypress-io/github-action@v4
         with:
