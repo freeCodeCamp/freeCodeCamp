@@ -271,7 +271,7 @@ describe('settingRoutes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          username: 'twaha1'
+          username: 'TwaHa1'
         });
 
         expect(response?.statusCode).toEqual(200);
@@ -279,8 +279,14 @@ describe('settingRoutes', () => {
         expect(response?.body).toEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'twaha1'
+          username: 'TwaHa1'
         });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.username).toEqual('twaha1');
       });
 
       test('PUT returns an error when the username is already used', async () => {

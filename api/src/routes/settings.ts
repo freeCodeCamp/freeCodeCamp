@@ -121,11 +121,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           where: { id: req.session.user.id }
         });
 
-        const newUsername = req.body.username.toLowerCase();
-        const oldUsername = user.username.toLowerCase();
-
         const newUsernameDisplay = req.body.username.trim();
         const oldUsernameDisplay = user.usernameDisplay?.trim();
+
+        const newUsername = newUsernameDisplay.toLowerCase();
+        const oldUsername = user.username.toLowerCase();
 
         const usernameUnchanged =
           newUsername === oldUsername &&
@@ -152,6 +152,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         if (!validation.valid) {
           void reply.code(400);
           return {
+            // TODO(Post-MVP): custom validation errors.
             message: `Username ${newUsername} ${validation.error}`,
             type: 'info'
           } as const;
@@ -178,7 +179,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            username: req.body.username,
+            username: newUsername,
             usernameDisplay: newUsernameDisplay
           }
         });
