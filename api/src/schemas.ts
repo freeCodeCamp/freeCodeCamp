@@ -241,7 +241,20 @@ export const schemas = {
             picture: Type.String(), // TODO(Post-MVP): format as url/uri?
             points: Type.Number(),
             portfolio: Type.Array(Type.Object({})), // TODO: add shape
-            profileUI: Type.Optional(Type.Object({})), // TODO: add shape
+            profileUI: Type.Optional(
+              Type.Object({
+                isLocked: Type.Optional(Type.Boolean()),
+                showAbout: Type.Optional(Type.Boolean()),
+                showCerts: Type.Optional(Type.Boolean()),
+                showDonation: Type.Optional(Type.Boolean()),
+                showHeatMap: Type.Optional(Type.Boolean()),
+                showLocation: Type.Optional(Type.Boolean()),
+                showName: Type.Optional(Type.Boolean()),
+                showPoints: Type.Optional(Type.Boolean()),
+                showPortfolio: Type.Optional(Type.Boolean()),
+                showTimeLine: Type.Optional(Type.Boolean())
+              })
+            ),
             sendQuincyEmail: Type.Boolean(),
             theme: Type.Optional(Type.String()),
             twitter: Type.Optional(Type.String()),

@@ -80,6 +80,20 @@ const computedProperties = {
   points: 1,
   portfolio: [],
   yearsTopContributor: [],
+  // This is the default value if profileUI is missing. If individual properties
+  // are missing from the db, they will be omitted from the response.
+  profileUI: {
+    isLocked: true,
+    showAbout: false,
+    showCerts: false,
+    showDonation: false,
+    showHeatMap: false,
+    showLocation: false,
+    showName: false,
+    showPoints: false,
+    showPortfolio: false,
+    showTimeLine: false
+  },
   donationEmails: [] // TODO: drop this from api-server and then from here.
 };
 

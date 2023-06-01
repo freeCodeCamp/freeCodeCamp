@@ -4,13 +4,17 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
-import { encodeUserToken } from '../utils/user-token';
 import {
   type ProgressTimestamp,
   getCalendar,
   getPoints
 } from '../utils/progress';
-import { normalizeTwitter } from '../utils/normalize';
+import {
+  normalizeTwitter,
+  removeNulls,
+  normalizeProfileUI
+} from '../utils/normalize';
+import { encodeUserToken } from '../utils/user-token';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -18,10 +22,6 @@ const nanoid = customAlphabet(
   '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
   64
 );
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-const removeNulls = <T extends object>(obj: T) =>
-  _.pickBy(obj, value => value !== null);
 
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -207,6 +207,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           completedChallenges,
           progressTimestamps,
           twitter,
+          profileUI,
           ...publicUser
         } = userWithNullableProperties;
 
@@ -233,6 +234,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | undefined
               ),
+              profileUI: normalizeProfileUI(profileUI),
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp(),
