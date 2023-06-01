@@ -27,8 +27,8 @@ const runningOutput = '// running tests';
 const finishedOutput = '// tests completed';
 
 describe('Classic challenge', function () {
-  before(() => {
-    cy.visit(outputLocations.index);
+  after(() => {
+    throw new Error('Parameter is not a number!');
   });
 
   it('renders the default output text', () => {
