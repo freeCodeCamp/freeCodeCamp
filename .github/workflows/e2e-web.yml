@@ -109,8 +109,9 @@ jobs:
           # redefine config set environment=staging
           # redefine config set redefine_address=dune-tf-staging.redefine.dev
           # redefine config set stable_branch=main
-          # redefine start --discover --cypress --verbose
           redefine config set dry_run=false
+          # need to run redefine after re-setting config
+          redefine start --discover --cypress --verbose
 
       - name: Cypress run tests
         uses: cypress-io/github-action@v4
@@ -125,7 +126,7 @@ jobs:
           # spec:  cypress/e2e/default/learn/challenges/code-storage.ts
     
 
-      - name: Install and Build
+      - name: print redefine logs
         run: |
           echo "Redefine Daemon Log"
           cat /tmp/redefine_daemon.log || true
