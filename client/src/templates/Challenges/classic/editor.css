@@ -182,8 +182,30 @@ textarea.inputarea {
   justify-content: center;
 }
 
+/* Customize button size for each supported language */
+
 [lang='es'] .utility-bar {
   grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+}
+
+[lang='it'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(6.25em, 1fr));
+}
+
+[lang='pt-BR'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
+}
+
+[lang='uk'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(8.25em, 1fr));
+}
+
+[lang='ja'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
+}
+
+[lang='de'] .utility-bar {
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
 }
 
 .utility-bar > button {
