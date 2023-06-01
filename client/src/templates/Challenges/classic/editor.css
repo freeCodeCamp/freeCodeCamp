@@ -174,38 +174,34 @@ textarea.inputarea {
   }
 }
 
+#editor-lower-jaw {
+  container-type: inline-size;
+}
+
 .utility-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5.75em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
   gap: 0.75rem;
   align-items: center;
   justify-content: center;
 }
 
-/* Customize button size for each supported language */
-
-[lang='es'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+@container (min-width: 9rem) {
+  .utility-bar {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
-[lang='it'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(6.25em, 1fr));
+@container (min-width: 20rem) {
+  .utility-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-[lang='pt-BR'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
-}
-
-[lang='uk'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(8.25em, 1fr));
-}
-
-[lang='ja'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
-}
-
-[lang='de'] .utility-bar {
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+@container (min-width: 29rem) {
+  .utility-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .utility-bar > button {
@@ -213,6 +209,7 @@ textarea.inputarea {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  padding: 6px 0;
 }
 
 .progress-bar-container {
