@@ -130,8 +130,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           ? encodeUserToken(userToken.id)
           : undefined;
 
-        console.log('encodedToken', encodedToken);
-
         const user = await fastify.prisma.user.findUnique({
           where: { id: req.session.user.id },
           select: {
