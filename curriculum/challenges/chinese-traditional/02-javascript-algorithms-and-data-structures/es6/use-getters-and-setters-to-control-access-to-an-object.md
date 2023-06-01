@@ -61,80 +61,53 @@ console.log(novel.writer);
 `Thermostat` 應該是一個具有 `constructor` 方法的 `class`。
 
 ```js
-assert(
-  typeof Thermostat === 'function' &&
-    typeof Thermostat.constructor === 'function'
-);
+assert.isFunction(Thermostat);
+assert.isFunction(Thermostat?.constructor);
 ```
 
-應該使用 `class` 關鍵詞。
+The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /class/);
 ```
 
 `Thermostat` 應該可以被實例化。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return typeof t === 'object';
-  })()
-);
+const _t = new Thermostat(122);
+assert.isObject(_t);
 ```
 
 當實例化華氏溫度值時，`Thermostat` 應該被設置爲正確的 `temperature`。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return t.temperature === 50;
-  })()
-);
+const _t = new Thermostat(122);
+assert.strictEqual(_t?.temperature, 50);
 ```
 
 應該定義一個 `getter`。
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.get === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.get);
 ```
 
 應該定義一個 `setter`。
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.set === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.set);
 ```
 
 調用帶有攝氏溫度值的 `setter` 應該設置 `temperature`。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(32);
-    t.temperature = 26;
-    const u = new Thermostat(32);
-    u.temperature = 50;
-    return t.temperature === 26 && u.temperature === 50;
-  })()
-);
+const _t = new Thermostat(32);
+_t.temperature = 26;
+const _u = new Thermostat(32);
+_u.temperature = 50;
+assert.approximately(_t.temperature, 26, 0.1);
+assert.approximately(_u.temperature, 50, 0.1);
 ```
 
 # --seed--
