@@ -187,70 +187,72 @@ export const schemas = {
   getSessionUser: {
     response: {
       200: Type.Object({
-        // Unfortunately, it's not possible to set a real schema for this
-        // object, since the username is dynamic and used as a key.
         user: Type.Record(
           Type.String(),
           Type.Object({
             about: Type.String(),
             acceptedPrivacyTerms: Type.Boolean(),
+            calendar: Type.Record(Type.Number(), Type.Literal(1)),
             completedChallenges: Type.Array(
               Type.Object({
                 id: Type.String(),
                 completedDate: Type.Number(),
-                solution: Type.String(),
-                githubLink: Type.String(),
+                solution: Type.Optional(Type.String()),
+                githubLink: Type.Optional(Type.String()),
                 challengeType: Type.Number(),
                 files: Type.Array(Type.Object({})),
-                isManuallyApproved: Type.Boolean()
+                isManuallyApproved: Type.Optional(Type.Boolean())
               })
-            ),
-            currentChallengeId: Type.String(),
-            donationEmails: Type.Array(Type.String()),
+            ), // TODO: provide shape for files
+            completedChallengeCount: Type.Number(),
+            currentChallengeId: Type.Optional(Type.String()),
+            donationEmails: Type.Array(Type.String()), // TODO: remove once it's gone from api-server
             email: Type.String(),
             emailVerified: Type.Boolean(),
-            githubProfile: Type.String(),
-            isApisMicroservicesCert: Type.Boolean(),
-            isBackEndCert: Type.Boolean(),
-            isCheater: Type.Boolean(),
+            githubProfile: Type.Optional(Type.String()),
+            id: Type.String(),
+            isApisMicroservicesCert: Type.Optional(Type.Boolean()),
+            isBackEndCert: Type.Optional(Type.Boolean()),
+            isCheater: Type.Optional(Type.Boolean()),
             isDonating: Type.Boolean(),
-            is2018DataVisCert: Type.Boolean(),
-            isDataVisCert: Type.Boolean(),
-            isFrontEndCert: Type.Boolean(),
-            isFullStackCert: Type.Boolean(),
-            isFrontEndLibsCert: Type.Boolean(),
-            isHonest: Type.Boolean(),
-            isInfosecCertV7: Type.Boolean(),
-            isInfosecQaCert: Type.Boolean(),
-            isQaCertV7: Type.Boolean(),
-            isJsAlgoDataStructCert: Type.Boolean(),
-            isRelationalDatabaseCertV8: Type.Boolean(),
-            isRespWebDesignCert: Type.Boolean(),
-            isSciCompPyCertV7: Type.Boolean(),
-            isDataAnalysisPyCertV7: Type.Boolean(),
-            isMachineLearningPyCertV7: Type.Boolean(),
-            isCollegeAlgebraPyCertV8: Type.Boolean(),
-            keyboardShortcuts: Type.Boolean(),
-            linkedin: Type.String(),
-            location: Type.String(),
-            name: Type.String(),
-            partiallyCompletedChallenges: Type.Array(Type.Object({})),
-            portfolio: Type.Array(Type.Object({})),
-            profileUI: Type.Object({}),
+            is2018DataVisCert: Type.Optional(Type.Boolean()),
+            isDataVisCert: Type.Optional(Type.Boolean()),
+            isFrontEndCert: Type.Optional(Type.Boolean()),
+            isFullStackCert: Type.Optional(Type.Boolean()),
+            isFrontEndLibsCert: Type.Optional(Type.Boolean()),
+            isHonest: Type.Optional(Type.Boolean()),
+            isInfosecCertV7: Type.Optional(Type.Boolean()),
+            isInfosecQaCert: Type.Optional(Type.Boolean()),
+            isQaCertV7: Type.Optional(Type.Boolean()),
+            isJsAlgoDataStructCert: Type.Optional(Type.Boolean()),
+            isRelationalDatabaseCertV8: Type.Optional(Type.Boolean()),
+            isRespWebDesignCert: Type.Optional(Type.Boolean()),
+            isSciCompPyCertV7: Type.Optional(Type.Boolean()),
+            isDataAnalysisPyCertV7: Type.Optional(Type.Boolean()),
+            isMachineLearningPyCertV7: Type.Optional(Type.Boolean()),
+            isCollegeAlgebraPyCertV8: Type.Optional(Type.Boolean()),
+            keyboardShortcuts: Type.Optional(Type.Boolean()),
+            linkedin: Type.Optional(Type.String()),
+            location: Type.Optional(Type.String()),
+            name: Type.Optional(Type.String()),
+            partiallyCompletedChallenges: Type.Optional(
+              Type.Array(Type.Object({}))
+            ), // TODO: add shape
+            picture: Type.String(), // TODO(Post-MVP): format as url/uri?
+            points: Type.Number(),
+            portfolio: Type.Array(Type.Object({})), // TODO: add shape
+            profileUI: Type.Optional(Type.Object({})), // TODO: add shape
             sendQuincyEmail: Type.Boolean(),
-            theme: Type.String(),
-            twitter: Type.String(),
-            website: Type.String(),
-            yearsTopContributor: Type.Array(Type.Number()),
-            sound: Type.Boolean(), // TODO: Handle `null` on server?
-
-            calendar: Type.Record(Type.Number(), Type.Number()),
+            theme: Type.Optional(Type.String()),
+            twitter: Type.Optional(Type.String()),
+            website: Type.Optional(Type.String()),
+            yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
+            sound: Type.Optional(Type.Boolean()),
             isEmailVerified: Type.Boolean(),
-            joinDate: Type.Number(),
-            points: Type.Array(Type.Object({})),
-            savedChallenges: Type.Object({}),
+            joinDate: Type.String(),
+            savedChallenges: Type.Optional(Type.Object({})), // TODO: add shape
             username: Type.String(),
-            userToken: Type.String()
+            userToken: Type.Optional(Type.String())
           })
         ),
         result: Type.String()
