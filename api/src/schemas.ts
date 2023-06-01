@@ -240,7 +240,15 @@ export const schemas = {
             ), // TODO: add shape
             picture: Type.String(), // TODO(Post-MVP): format as url/uri?
             points: Type.Number(),
-            portfolio: Type.Array(Type.Object({})), // TODO: add shape
+            portfolio: Type.Array(
+              Type.Object({
+                description: Type.String(),
+                id: Type.String(),
+                image: Type.String(),
+                title: Type.String(),
+                url: Type.String()
+              })
+            ),
             profileUI: Type.Optional(
               Type.Object({
                 isLocked: Type.Optional(Type.Boolean()),
