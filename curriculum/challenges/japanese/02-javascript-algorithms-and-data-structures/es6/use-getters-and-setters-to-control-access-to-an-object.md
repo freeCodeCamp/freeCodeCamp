@@ -61,80 +61,53 @@ getter と setter を使用することで、 プログラマーが API の作�
 `Thermostat` は、`constructor` メソッドを定義した `class` である必要があります。
 
 ```js
-assert(
-  typeof Thermostat === 'function' &&
-    typeof Thermostat.constructor === 'function'
-);
+assert.isFunction(Thermostat);
+assert.isFunction(Thermostat?.constructor);
 ```
 
-`class` キーワードを使用する必要があります。
+The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /class/);
 ```
 
 `Thermostat` をインスタンス化できるようにする必要があります。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return typeof t === 'object';
-  })()
-);
+const _t = new Thermostat(122);
+assert.isObject(_t);
 ```
 
 華氏値でインスタンス化された場合、`Thermostat` は正しい `temperature` を設定する必要があります。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return t.temperature === 50;
-  })()
-);
+const _t = new Thermostat(122);
+assert.strictEqual(_t?.temperature, 50);
 ```
 
 `getter` を定義する必要があります。
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.get === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.get);
 ```
 
 `setter` を定義する必要があります。
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.set === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.set);
 ```
 
 `setter` が摂氏値で呼び出されたとき、`temperature` を設定する必要があります。
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(32);
-    t.temperature = 26;
-    const u = new Thermostat(32);
-    u.temperature = 50;
-    return t.temperature === 26 && u.temperature === 50;
-  })()
-);
+const _t = new Thermostat(32);
+_t.temperature = 26;
+const _u = new Thermostat(32);
+_u.temperature = 50;
+assert.approximately(_t.temperature, 26, 0.1);
+assert.approximately(_u.temperature, 50, 0.1);
 ```
 
 # --seed--
