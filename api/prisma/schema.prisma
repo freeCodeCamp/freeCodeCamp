@@ -124,7 +124,7 @@ model user {
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
   unsubscribeId                String
-  username                     String
+  username                     String  // TODO(Post-MVP): make this unique
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
   website                      String? // Undefined

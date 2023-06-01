@@ -127,11 +127,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         const newUsernameDisplay = req.body.username.trim();
         const oldUsernameDisplay = user.usernameDisplay?.trim();
 
-        const alreadyUsername =
+        const usernameUnchanged =
           newUsername === oldUsername &&
           newUsernameDisplay === oldUsernameDisplay;
 
-        if (alreadyUsername && oldUsernameDisplay) {
+        if (usernameUnchanged) {
           void reply.code(400);
           return {
             message: 'flash.username-used',
@@ -157,17 +157,17 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        const hasProfanity = new badWordsFilter().isProfane(newUsername);
-        const preserved = blocklistedUsernames.includes(newUsername);
+        const isProfane = new badWordsFilter().isProfane(newUsername);
+        const onBlocklist = blocklistedUsernames.includes(newUsername);
 
-        // Checks for both username and usernameDisplay because users
-        // can have the same username but with different casing
+        const usernameTaken =
+          newUsername === oldUsername
+            ? false
+            : await fastify.prisma.user.count({
+                where: { username: newUsername }
+              });
 
-        const exists = await fastify.prisma.user.findFirst({
-          where: { username: newUsername, usernameDisplay: newUsernameDisplay }
-        });
-
-        if (exists || hasProfanity || preserved) {
+        if (usernameTaken || isProfane || onBlocklist) {
           void reply.code(400);
           return {
             message: 'flash.username-taken',

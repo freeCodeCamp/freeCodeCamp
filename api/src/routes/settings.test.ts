@@ -284,6 +284,20 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is already used', async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            email: 'an@ran.dom',
+            username: 'sembauke',
+            about: 'about',
+            acceptedPrivacyTerms: true,
+            emailVerified: true,
+            externalId: 'externalId',
+            isDonating: true,
+            picture: 'picture',
+            sendQuincyEmail: true,
+            unsubscribeId: 'unsubscribeId'
+          }
+        });
         await superRequest('/update-my-username', {
           method: 'PUT',
           setCookies
@@ -291,19 +305,33 @@ describe('settingRoutes', () => {
           username: 'twaha2'
         });
 
-        const response = await superRequest('/update-my-username', {
+        const secondUpdate = await superRequest('/update-my-username', {
           method: 'PUT',
           setCookies
         }).send({
           username: 'twaha2'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
+        expect(secondUpdate.body).toEqual({
           message: 'flash.username-used',
           type: 'info'
         });
+        expect(secondUpdate.statusCode).toEqual(400);
+
+        // Not allowed because, while the usernameDisplay is different, the
+        // username is not
+        const existingUser = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'SemBauke'
+        });
+
+        expect(existingUser.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+        expect(existingUser.statusCode).toEqual(400);
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
@@ -321,13 +349,12 @@ describe('settingRoutes', () => {
           username: 'TWaha3'
         });
 
-        expect(response?.statusCode).toEqual(200);
-
         expect(response?.body).toEqual({
           message: 'flash.username-updated',
           type: 'success',
           username: 'TWaha3'
         });
+        expect(response?.statusCode).toEqual(200);
       });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
