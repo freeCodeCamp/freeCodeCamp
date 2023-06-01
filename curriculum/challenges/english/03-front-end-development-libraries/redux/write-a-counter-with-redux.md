@@ -28,7 +28,7 @@ The action creator `decAction` should return an action object with `type` equal 
 assert(decAction().type === DECREMENT);
 ```
 
-The Redux store should exist and always return a number.
+Running store.getState() should return a number
 
 ```js
 assert(typeof store.getState() === 'number');
