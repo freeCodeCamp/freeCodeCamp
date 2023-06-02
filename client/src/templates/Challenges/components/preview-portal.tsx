@@ -8,12 +8,17 @@ import {
   storePortalWindow,
   removePortalWindow,
   setShowPreviewPortal,
-  setIsAdvancing
+  setShowPreviewPane,
+  setIsAdvancing,
+  setChapterSlug
 } from '../redux/actions';
 import {
+  showPreviewPortalSelector,
   portalWindowSelector,
-  isAdvancingToChallengeSelector
+  isAdvancingToChallengeSelector,
+  chapterSlugSelector
 } from '../redux/selectors';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface PreviewPortalProps {
   children: ReactElement | null;
@@ -21,33 +26,55 @@ interface PreviewPortalProps {
   t: TFunction;
   storePortalWindow: (window: Window | null) => void;
   removePortalWindow: () => void;
+  showPreviewPortal: boolean;
   portalWindow: null | Window;
   setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   isAdvancing: boolean;
+  setChapterSlug: (arg: string) => void;
+  chapterSlug: string;
 }
 
 const mapDispatchToProps = {
   storePortalWindow,
   removePortalWindow,
   setShowPreviewPortal,
-  setIsAdvancing
+  setShowPreviewPane,
+  setIsAdvancing,
+  setChapterSlug
 };
 
 const mapStateToProps = createSelector(
   isAdvancingToChallengeSelector,
+  chapterSlugSelector,
+  showPreviewPortalSelector,
   portalWindowSelector,
-  (isAdvancing: boolean, portalWindow: null | Window) => ({
+  (
+    isAdvancing: boolean,
+    chapterSlug: string,
+    showPreviewPortal: boolean,
+    portalWindow: null | Window
+  ) => ({
     isAdvancing,
+    chapterSlug,
+    showPreviewPortal,
     portalWindow
   })
 );
+
+const getChapterSlug = (w: Window): string => {
+  const urlSegments = w.location.href.split('/');
+  // minus two to account for starting at zero and skipping the "step" number segment
+  return urlSegments[urlSegments.length - 2];
+};
 
 class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   mainWindow: Window;
   externalWindow: Window | null = null;
   isAdvancing: boolean;
+  chapterSlug: string;
   containerEl;
   titleEl;
   styleEl;
@@ -57,6 +84,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.mainWindow = window;
     this.externalWindow = this.props.portalWindow;
     this.isAdvancing = this.props.isAdvancing;
+    this.chapterSlug = this.props.chapterSlug;
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
@@ -71,6 +99,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
         '',
         'width=960,height=540,left=100,top=100'
       );
+      this.props.setChapterSlug(getChapterSlug(this.mainWindow));
     } else {
       this.externalWindow.document.head.innerHTML = '';
       this.externalWindow.document.body.innerHTML = '';
@@ -101,6 +130,10 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.externalWindow?.document.body.appendChild(this.containerEl);
     this.externalWindow?.addEventListener('beforeunload', () => {
       this.props.setShowPreviewPortal(false);
+      if (this.mainWindow.innerWidth < MAX_MOBILE_WIDTH) {
+        this.props.setShowPreviewPane(true);
+      }
+      this.props.removePortalWindow();
     });
 
     this.props.storePortalWindow(this.externalWindow);
@@ -112,11 +145,25 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentWillUnmount() {
-    if (!this.props.isAdvancing) {
+    const currentSlug = getChapterSlug(this.mainWindow);
+
+    // if not moving between pages in chapters and chapter slug changes
+    if (!this.props.isAdvancing && currentSlug !== this.props.chapterSlug) {
+      // means we navigated away from current chapter so close preview window
+      this.props.setChapterSlug('');
       this.externalWindow?.close();
+      this.props.removePortalWindow();
+      // else if moving between pages in chapters
+    } else if (this.props.isAdvancing) {
+      // if moving from one chapter to the next
+      if (currentSlug !== this.props.chapterSlug) {
+        // update chapter slug
+        this.props.setChapterSlug(currentSlug);
+      }
+
+      // set moving chapter state to false now
+      this.props.setIsAdvancing(false);
     }
-    this.props.removePortalWindow();
-    this.props.setIsAdvancing(false);
   }
 
   render() {
