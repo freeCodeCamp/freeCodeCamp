@@ -45,7 +45,7 @@ const initialState = {
   appUsername: '',
   showMultipleProgressModals: false,
   recentlyClaimedBlock: null,
-  completionCountWhenShownProgressModal: null,
+  completionCountWhenShownProgressModal: 0,
   progressDonationModalShown: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
