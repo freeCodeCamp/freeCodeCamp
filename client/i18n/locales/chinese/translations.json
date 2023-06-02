@@ -529,6 +529,8 @@
     "unsubscribed": "你已成功取消订阅",
     "keep-coding": "无论你做什么，都要继续编程！",
     "email-signup": "邮件注册",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson，freeCodeCamp.org 创始人、老师",
     "email-blast": "每周五我会给大约四百万人发送一封邮件，其中包含 5 条关于编程和计算机科学的链接。你也想收到我的邮件吗？",
     "update-email-1": "更新你的邮件地址",
