@@ -51,7 +51,3 @@
 .tool-panel-group .dropdown-menu a {
   padding: 0.5rem;
 }
-
-#get-help-dropdown > .caret {
-  transform: rotate(180deg);
-}

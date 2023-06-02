@@ -15,10 +15,10 @@ describe('Help Button', () => {
 
   it('should render three links when video is available', () => {
     cy.get('.tool-panel-group ul[role="menu"]').within(() => {
-      cy.get('a').should('have.length', 3);
-      cy.get('a').eq(0).contains('Get a Hint');
-      cy.get('a').eq(1).contains('Watch a Video');
-      cy.get('a').eq(2).contains('Ask for Help');
+      cy.get('li').should('have.length', 3);
+      cy.get('li').eq(0).should('have.text', 'Get a Hint');
+      cy.get('li').eq(1).should('have.text', 'Watch a Video');
+      cy.get('li').eq(2).should('have.text', 'Ask for Help');
     });
   });
 
@@ -28,9 +28,9 @@ describe('Help Button', () => {
     );
     cy.get('#get-help-dropdown').scrollIntoView().click();
     cy.get('.tool-panel-group ul[role="menu"]').within(() => {
-      cy.get('a').should('have.length', 2);
-      cy.get('a').eq(0).contains('Get a Hint');
-      cy.get('a').eq(1).contains('Ask for Help');
+      cy.get('li').should('have.length', 2);
+      cy.get('li').eq(0).contains('Get a Hint');
+      cy.get('li').eq(1).contains('Ask for Help');
     });
   });
 });

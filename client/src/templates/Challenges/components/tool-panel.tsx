@@ -102,7 +102,7 @@ function ToolPanel({
         </Button>
       )}
       <Dropdown dropup>
-        <Dropdown.Toggle dropup>
+        <Dropdown.Toggle dropup id={'get-help-dropdown'}>
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
         <Dropdown.Menu dropup>
