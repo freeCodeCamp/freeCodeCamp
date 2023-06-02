@@ -7,51 +7,51 @@ dashedName: css-foundations-exercise-d
 
 # --description--
 
-With this exercise, we've provided you a completed HTML file, so you will only have to edit the CSS file. For this exercise, it's more important to understand how chaining different selectors works than how to actually add the attributes.
+У цій вправі ми надали вам готовий файл HTML, тому вам потрібно відредагувати лише файл CSS. У цій вправі важливіше зрозуміти, як об’єднувати різні селектори, а не додавати атрибути.
 
-1. You should see a `width` of `300px` on the `avatar` and `proportioned` class.
-1. You should give it a height so that it retains its original square proportions (don't hardcode in a pixel value for the height!).
-1. You should give the elements with both the `avatar` and `distorted` classes a `width` of `200px`.
-1. You should give it a `height` twice as big as it's width.
+1. Ви повинні бачити `width` зі значенням `300px` на класах `avatar` та `proportioned`.
+1. Ви повинні надати таку висоту, щоб вона зберігала вихідне квадратне співвідношення сторін (не вказуйте піксельне значення для висоти!).
+1. Ви повинні надати елементам з класами `avatar` та `distorted` властивість `width` зі значенням `200px`.
+1. Ви повинні надати їм `height` у два рази більше ширини.
 
 # --hints--
 
-You should have a `width` of `300px` on the `avatar` and `proportioned` class.
+Ви повинні мати `width` зі значенням `300px` на класах `avatar` та `proportioned`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`);
 assert(style?.width === '300px');
 ```
 
-You should have a height of `auto` on the `avatar` and `proportioned` class.
+Ви повинні мати висоту зі значенням `auto` на класах `avatar` та `proportioned`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`)
 assert(style?.height === 'auto');
 ```
 
-You should use a chaining selector on the `avatar` and `proportioned` class.
+Ви повинні використати об’єднуючий селектор на класах `avatar` та `proportioned`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.proportioned`) || new __helpers.CSSHelp(document).getStyle(`.proportioned.avatar`);
 assert(style);
 ```
 
-You should have a `width` of `200px` on the `avatar` and `distorted` class.
+Ви повинні мати `width` зі значенням `200px` на класах `avatar` та `distorted`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
 assert(style?.width === '200px');
 ```
 
-You should use a chaining selector on the `avatar` and `distorted` class.
+Ви повинні використати об’єднуючий селектор на класах `avatar` та `distorted`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
 assert(style);
 ```
 
-You should have a `height` two times the width on the `avatar` and `distorted` class.
+Ви повинні мати `height` у два рази більше ширини на класах `avatar` та `distorted`.
 
 ```js
 const style = new __helpers.CSSHelp(document).getStyle(`.avatar.distorted`) || new __helpers.CSSHelp(document).getStyle(`.distorted.avatar`);
