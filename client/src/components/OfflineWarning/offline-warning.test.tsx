@@ -36,6 +36,7 @@ describe('<OfflineWarning />', () => {
     );
     act(() => jest.runOnlyPendingTimers());
     expect(screen.getByText('placeholder').tagName).toBe('A');
+    expect(screen.getByText('placeholder')).toHaveAttribute('href', 'mailto:support@freecodecamp.org');
   });
 
   it('renders null when isSignedIn is false', () => {
