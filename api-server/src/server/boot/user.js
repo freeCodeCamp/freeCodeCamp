@@ -21,6 +21,7 @@ import {
   createDeleteUserToken,
   encodeUserToken
 } from '../middlewares/user-token';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -34,7 +35,7 @@ function bootUser(app) {
   const postUserToken = createPostUserToken(app);
   const deleteUserToken = createDeleteUserToken(app);
 
-  api.get('/account', sendNonUserToHome, getAccount);
+  api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
   api.post('/account/delete', ifNoUser401, deleteUserToken, postDeleteAccount);
@@ -160,11 +161,6 @@ function createReadSessionUser(app) {
       return res.json({ user: {}, result: '' });
     }
   };
-}
-
-function getAccount(req, res) {
-  const { username } = req.user;
-  return res.redirect('/' + username);
 }
 
 function getUnlinkSocial(req, res, next) {
