@@ -179,8 +179,6 @@ textarea.inputarea {
   /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
   grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
   gap: 0.75rem;
-  align-items: center;
-  justify-content: center;
 }
 
 .utility-bar > button {
