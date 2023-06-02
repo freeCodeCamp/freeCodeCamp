@@ -186,6 +186,199 @@ describe('settingRoutes', () => {
       });
     });
 
+    describe('/update-my-username', () => {
+      test('PUT returns an error when the username uses special characters', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'twaha@'
+        });
+
+        expect(response?.statusCode).toEqual(400);
+
+        expect(response?.body).toEqual({
+          message: 'Username twaha@ contains invalid characters',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is an endpoint', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'german'
+        });
+
+        expect(response?.statusCode).toEqual(400);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is a bad word', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'ass'
+        });
+
+        expect(response?.statusCode).toEqual(400);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is a https status code', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: '404'
+        });
+
+        expect(response?.statusCode).toEqual(400);
+
+        expect(response?.body).toEqual({
+          message: 'Username 404 is a reserved error code',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns an error when the username is shorter than 3 characters', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'fo'
+        });
+
+        expect(response?.statusCode).toEqual(400);
+        expect(response.body).toEqual({
+          message: 'body/username must NOT have fewer than 3 characters',
+          type: 'info'
+        });
+      });
+
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'TwaHa1'
+        });
+
+        expect(response?.statusCode).toEqual(200);
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          username: 'TwaHa1'
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.username).toEqual('twaha1');
+      });
+
+      test('PUT returns an error when the username is already used', async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            email: 'an@ran.dom',
+            username: 'sembauke',
+            about: 'about',
+            acceptedPrivacyTerms: true,
+            emailVerified: true,
+            externalId: 'externalId',
+            isDonating: true,
+            picture: 'picture',
+            sendQuincyEmail: true,
+            unsubscribeId: 'unsubscribeId'
+          }
+        });
+        await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'twaha2'
+        });
+
+        const secondUpdate = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'twaha2'
+        });
+
+        expect(secondUpdate.body).toEqual({
+          message: 'flash.username-used',
+          type: 'info'
+        });
+        expect(secondUpdate.statusCode).toEqual(400);
+
+        // Not allowed because, while the usernameDisplay is different, the
+        // username is not
+        const existingUser = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'SemBauke'
+        });
+
+        expect(existingUser.body).toEqual({
+          message: 'flash.username-taken',
+          type: 'info'
+        });
+        expect(existingUser.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 200 status code with "success" message', async () => {
+        await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'twaha3'
+        });
+
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username: 'TWaha3'
+        });
+
+        expect(response?.body).toEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          username: 'TWaha3'
+        });
+        expect(response?.statusCode).toEqual(200);
+      });
+      test('PUT /update-my-username returns 400 status code when username is too long', async () => {
+        const username = 'a'.repeat(1001);
+        const response = await superRequest('/update-my-username', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          username
+        });
+
+        expect(response?.statusCode).toEqual(400);
+        expect(response.body).toEqual({
+          message: 'body/username must NOT have more than 1000 characters',
+          type: 'info'
+        });
+      });
+    });
+
     describe('/update-my-keyboard-shortcuts', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superRequest('/update-my-keyboard-shortcuts', {
@@ -359,6 +552,17 @@ describe('settingRoutes', () => {
       const response = await superRequest('/update-privacy-terms', {
         method: 'PUT',
         setCookies
+      });
+
+      expect(response?.statusCode).toEqual(401);
+    });
+
+    test('PUT /update-my-username returns 401 status code for un-authenticated users', async () => {
+      const response = await superRequest('/update-my-username', {
+        method: 'PUT',
+        setCookies
+      }).send({
+        username: 'twaha2'
       });
 
       expect(response?.statusCode).toEqual(401);

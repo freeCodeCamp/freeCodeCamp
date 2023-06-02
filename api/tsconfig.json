@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2022",
     "module": "CommonJS",
-    "allowJs": false,
+    "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
