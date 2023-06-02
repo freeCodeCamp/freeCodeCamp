@@ -26,7 +26,7 @@ describe('<OfflineWarning />', () => {
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 
-  it('renders the placeholder anchor tag', () => {
+  it('renders the placeholder anchor tag if isServerOnline is false', () => {
     render(
       <OfflineWarning
         isOnline={true}
