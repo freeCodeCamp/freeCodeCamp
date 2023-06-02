@@ -118,68 +118,32 @@ export const rtlLangs = [''];
 
 > [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
 
-### Налаштуйте порядок суперблоків мови
+### Set Translated SuperBlocks
 
-У файлі [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) потрібно встановити порядок та стан усіх суперблоків нової мови з об’єкту `superBlockOrder`. Скопіюйте один з мовних ключів і всі його значення, вставте їх знизу об’єкта та змініть ключ на нову мову з переліку `Languages`.
+In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-У такому порядку суперблоки з’являються на цільовій сторінці та навчальних картах. Дотримуйтесь коментарів у цьому файлі, щоб розмістити суперблоки у правильному порядку, а потім перемістіть їх до потрібних місць нової мови.
-
-> [!ATTENTION] Не змінюйте порядок ключів у об‘єкті, а просто перемістіть суперблоки в інші масиви
-
-Масив `CurriculumMaps.Landing` повинен містити один суперблок для всіх актуальних сертифікацій, а об’єкт `CurriculumMaps.Learn` повинен містити всі наявні суперблоки. Перекладені суперблоки розміщуються у `TranslationStates.Audited`, а неперекладені — у `TranslationStates.NotAudited`. Суперблоки цих двох об’єктів можуть перебувати у чотирьох станах.
-
-- `SuperBlockStates.Current`: означає, що суперблок є актуальним (наприклад, `Responsive Web Design`).
-- `SuperBlockStates.New`: з’являється лише тоді, коли `SHOW_NEW_CURRICULUM` налаштовано на `true` у файлі `.env`. Використовується для показу нових суперблоків певної збірки. Наприклад, коли ми опублікували новий адаптивний вебдизайн, він був доступний лише на англійській версії.
-- `SuperBlockStates.Upcoming`: з’являється лише тоді, коли `SHOW_UPCOMING_CHANGES` налаштовано на `true` у файлі `.env`. Використовується для локального показу суперблоків у розробці. Або у випадку, якщо потрібно приховати суперблок з карти.
-- `SuperBlockStates.Legacy`: суперблок переміщено сюди, коли його новіша версія була повністю перекладена та замінила стару.
+Be sure to only add the superblocks which are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
 
 ### Налаштування пошуку
 

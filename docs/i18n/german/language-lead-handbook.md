@@ -374,4 +374,4 @@ Der Benutzer ist jetzt ein Korrekturleser.
 
 ## How to Add or Update a Language
 
-Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [configuring the language superblock order](how-to-enable-new-languages.md#configure-the-language-superblock-order) should be helpful.
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [set translated superblocks](how-to-enable-new-languages.md#set-translated-superblocks) should be helpful.
