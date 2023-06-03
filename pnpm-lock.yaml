@@ -43,8 +43,8 @@ importers:
         specifier: 13.5.0
         version: 13.5.0(@testing-library/dom@8.20.0)
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.2
+        version: 29.5.2
       '@types/lodash':
         specifier: 4.14.195
         version: 4.14.195
@@ -760,8 +760,8 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.2
+        version: 29.5.2
       '@types/jquery':
         specifier: ^3.5.16
         version: 3.5.16
@@ -1318,8 +1318,8 @@ importers:
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.2
+        version: 29.5.2
       '@types/react':
         specifier: 16.14.42
         version: 16.14.42
@@ -2328,10 +2328,6 @@ packages:
     resolution: {integrity: sha512-gMuZsmsgxk/ENC3O/fRw5QY8A9/uxQbbCEypnLIiYYc/qVJtEV7ouxC3EllIIwNzMqAQee5tanFabWsUOutS7g==}
     engines: {node: '>=6.9.0'}
     dev: true
-
-  /@babel/compat-data@7.21.5:
-    resolution: {integrity: sha512-M+XAiQ7GzQ3FDPf0KOLkugzptnIypt0X0ma0wmlTKPR3IchgNFdx2JXxZdvd18JY5s7QkaFD/qyX0dsMpog/Ug==}
-    engines: {node: '>=6.9.0'}
 
   /@babel/compat-data@7.22.3:
     resolution: {integrity: sha512-aNtko9OPOwVESUFp3MZfD8Uzxl7JzSeJpd7npIoxCasU37PFbAQRpKglkaKwlHOyeJdrREpo8TW8ldrkYWwvIQ==}
@@ -3647,7 +3643,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /@babel/plugin-syntax-dynamic-import@7.8.3(@babel/core@7.20.12):
@@ -3656,7 +3652,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.20.2
 
   /@babel/plugin-syntax-dynamic-import@7.8.3(@babel/core@7.22.1):
     resolution: {integrity: sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==}
@@ -10276,8 +10272,8 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
 
-  /@types/jest@29.5.1:
-    resolution: {integrity: sha512-tEuVcHrpaixS36w7hpsfLBLpjtMRJUE09/MHXn923LOVojDwyC14cWcfc0rDs0VEfUyYmt/+iX1kxxp+gZMcaQ==}
+  /@types/jest@29.5.2:
+    resolution: {integrity: sha512-mSoZVJF5YzGVCk+FsDxzDuH7s+SCkzrgKZzf0Z0T2WudhBUPoF6ktoTPC4R0ZoCPCV5xUvuU6ias5NvxcBcMMg==}
     dependencies:
       expect: 29.5.0
       pretty-format: 29.5.0
@@ -10618,7 +10614,7 @@ packages:
   /@types/testing-library__jest-dom@5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
 
   /@types/through@0.0.30:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
@@ -12506,7 +12502,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/compat-data': 7.21.5
+      '@babel/compat-data': 7.22.3
       '@babel/core': 7.20.12
       '@babel/helper-define-polyfill-provider': 0.3.3(@babel/core@7.20.12)
       semver: 6.3.0
@@ -12518,7 +12514,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/compat-data': 7.21.5
+      '@babel/compat-data': 7.22.3
       '@babel/core': 7.22.1
       '@babel/helper-define-polyfill-provider': 0.3.3(@babel/core@7.22.1)
       semver: 6.3.0
