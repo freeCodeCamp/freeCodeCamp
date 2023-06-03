@@ -160,8 +160,8 @@ importers:
         specifier: 4.9.5
         version: 4.9.5
       webpack-bundle-analyzer:
-        specifier: 4.8.0
-        version: 4.8.0
+        specifier: 4.9.0
+        version: 4.9.0
       yargs:
         specifier: 17.7.2
         version: 17.7.2
@@ -884,7 +884,7 @@ importers:
         version: 5.80.0(webpack-cli@4.10.0)
       webpack-cli:
         specifier: 4.10.0
-        version: 4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0)
+        version: 4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0)
 
   client/plugins/fcc-source-challenges:
     devDependencies:
@@ -11265,7 +11265,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       webpack: 5.80.0(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0)
 
   /@webpack-cli/info@1.5.0(webpack-cli@4.10.0):
     resolution: {integrity: sha512-e8tSXZpw2hPl2uMJY6fsMswaok5FdlGNRTktvFk2sD8RjH0hE2+XistawJx1vmKteh4NmGmNUrp+Tb2w+udPcQ==}
@@ -11273,7 +11273,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: 7.8.1
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0)
 
   /@webpack-cli/serve@1.7.0(webpack-cli@4.10.0):
     resolution: {integrity: sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q==}
@@ -11284,7 +11284,7 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0)
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -32957,8 +32957,28 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    dev: true
 
-  /webpack-cli@4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0):
+  /webpack-bundle-analyzer@4.9.0:
+    resolution: {integrity: sha512-+bXGmO1LyiNx0i9enBu3H8mv42sj/BJWhZNFwjz92tVnBa9J3JMGo2an2IXlEleoDOPn/Hofl5hr/xCpObUDtw==}
+    engines: {node: '>= 10.13.0'}
+    hasBin: true
+    dependencies:
+      '@discoveryjs/json-ext': 0.5.7
+      acorn: 8.8.2
+      acorn-walk: 8.2.0
+      chalk: 4.1.2
+      commander: 7.2.0
+      gzip-size: 6.0.0
+      lodash: 4.17.21
+      opener: 1.5.2
+      sirv: 1.0.19
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  /webpack-cli@4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0):
     resolution: {integrity: sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -32990,7 +33010,7 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.1
       webpack: 5.80.0(webpack-cli@4.10.0)
-      webpack-bundle-analyzer: 4.8.0
+      webpack-bundle-analyzer: 4.9.0
       webpack-merge: 5.8.0
 
   /webpack-dev-middleware@3.7.3(webpack@4.46.0):
@@ -33237,7 +33257,7 @@ packages:
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.7(webpack@5.80.0)
       watchpack: 2.4.0
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.8.0)(webpack@5.80.0)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.0)(webpack@5.80.0)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - '@swc/core'
