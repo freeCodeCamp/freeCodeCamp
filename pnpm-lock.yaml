@@ -1251,8 +1251,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(@fortawesome/fontawesome-svg-core@6.4.0)(react@16.14.0)
       '@headlessui/react':
-        specifier: 1.7.14
-        version: 1.7.14(react-dom@16.14.0)(react@16.14.0)
+        specifier: 1.7.15
+        version: 1.7.15(react-dom@16.14.0)(react@16.14.0)
       react:
         specifier: 16.14.0
         version: 16.14.0
@@ -6966,8 +6966,8 @@ packages:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  /@headlessui/react@1.7.14(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-znzdq9PG8rkwcu9oQ2FwIy0ZFtP9Z7ycS+BAqJ3R5EIqC/0bJGvhT7193rFf+45i9nnPsYvCQVW4V/bB9Xc+gA==}
+  /@headlessui/react@1.7.15(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-OTO0XtoRQ6JPB1cKNFYBZv2Q0JMqMGNhYP1CjPvcJvjz8YGokz8oAj89HIYZGN0gZzn/4kk9iUpmMF4Q21Gsqw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
