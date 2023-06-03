@@ -10,7 +10,7 @@ describe('<OfflineWarning />', () => {
     const { container } = render(
       <OfflineWarning isOnline={true} isServerOnline={true} isSignedIn={true} />
     );
-    act(() => jest.runOnlyPendingTimers());
+    act(() => jest.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -22,7 +22,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runOnlyPendingTimers());
+    act(() => jest.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 
@@ -34,9 +34,12 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runOnlyPendingTimers());
+    act(() => jest.runAllTimers());
     expect(screen.getByText('placeholder').tagName).toBe('A');
-    expect(screen.getByText('placeholder')).toHaveAttribute('href', 'mailto:support@freecodecamp.org');
+    expect(screen.getByText('placeholder')).toHaveAttribute(
+      'href',
+      'mailto:support@freecodecamp.org'
+    );
   });
 
   it('renders null when isSignedIn is false', () => {
@@ -47,7 +50,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={false}
       />
     );
-    act(() => jest.runOnlyPendingTimers());
+    act(() => jest.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -59,7 +62,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runOnlyPendingTimers());
+    act(() => jest.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 });
