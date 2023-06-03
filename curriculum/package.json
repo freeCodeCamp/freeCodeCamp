@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.22.1",
-    "@babel/preset-env": "7.22.2",
+    "@babel/preset-env": "7.22.4",
     "@babel/preset-typescript": "7.21.5",
     "@babel/register": "7.21.0",
     "@compodoc/live-server": "^1.2.3",
