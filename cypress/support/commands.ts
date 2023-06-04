@@ -1,7 +1,11 @@
 const login = () => {
+  var startTime = new Date().getTime();
+  console.log("trying to visit :)");
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
   cy.contains('Welcome back');
+  var duraion : number = new Date().getTime() - startTime;
+  console.log(`visit took ${duraion} seconds`)
 };
 
 const preserveSession = () => {
