@@ -205,6 +205,7 @@
   .qr-code {
     left: 40px;
   }
+
   .ribbon {
     right: 3px;
   }
@@ -329,17 +330,13 @@
     justify-content: space-around;
   }
 
-  .certification-namespace h3 {
+  .certification-namespace h3,
+  .certification-namespace h4 {
     font-size: 25px;
   }
 
   .certification-namespace h1 {
-    font-size: 28px;
-  }
-
-  .certification-namespace .issue-date,
-  .certification-namespace .issue-date strong {
-    color: var(--gray-00) !important;
+    font-size: 45px;
   }
 
   .certification-namespace .information {
