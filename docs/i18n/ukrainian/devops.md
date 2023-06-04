@@ -1,6 +1,6 @@
 # Довідник DevOps
 
-Цей посібник допоможе вам зрозуміти наш стек інфраструктури і те, як ми підтримуємо наші платформи. Хоча цей посібник не має вичерпних подробиць всіх операцій, його можна використовувати як довідник для розуміння систем.
+Цей посібник допоможе вам зрозуміти наш стек інфраструктури і те, як ми підтримуємо наші платформи. Хоча цей посібник не містить повних деталей всіх операцій, його можна використовувати як довідник для розуміння систем.
 
 Зв’яжіться з нами, якщо у вас виникнуть запитання, і ми з радістю роз’яснимо всі деталі.
 
@@ -20,7 +20,7 @@
 
 Це проміжний випуск для наших розробників і волонтерів. Він також відомий як «staging» або «beta».
 
-Він ідентичний нашому робочому середовищу на `freeCodeCamp.org`, а також використовує окремі набори баз даних, сервери, вебпроксі тощо. Ця ізоляція дозволяє нам протестувати поточну розробку та функції у «виробничому» сценарії, не впливаючи на звичайних користувачів основних платформ freeCodeCamp.org.
+Він ідентичний нашому робочому середовищу на `freeCodeCamp.org`, але використовує окремі набори баз даних, сервери, вебпроксі тощо. Ця ізоляція дозволяє нам протестувати поточну розробку та функції у «виробничому» сценарії, не впливаючи на звичайних користувачів основних платформ freeCodeCamp.org.
 
 Як тільки команда [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) задоволена змінами на проміжній платформі, ці зміни переносяться кожні декілька днів до гілки [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
 
@@ -286,11 +286,11 @@ doctl auth init
 doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
-## Spin New Resources
+## Створюйте нові ресурси
 
-We are working on creating our IaC setup, and while that is in works you can use the Azure portal or the Azure CLI to spin new virtual machines and other resources.
+Ми працюємо над створенням налаштування IaC. Поки це відбувається, ви можете використовувати портал Azure або Azure CLI, щоб створити нову віртуальну машину та інші ресурси.
 
-> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do some of the basic provisioning like installing docker or adding SSH keys, etc.
+> [!TIP] Незалежно від того, що ви використовуєте для створення нових ресурсів, у нас є декілька [корисних файлів конфігурації хмарної ініціалізації](https://github.com/freeCodeCamp/infra/tree/main/cloud-init), які допоможуть зробити базову ініціалізацію, як-от встановлення Docker або додавання SSH-ключів тощо.
 
 ## Зберігайте віртуальні машини в актуальному стані
 
@@ -788,13 +788,13 @@ pm2 reload all --update-env && pm2 logs
    Are you sure you want to continue? [y/N] y
    ```
 
-   Виберіть «так» (y), щоб видалити все, що не використовується. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
+   Виберіть «так» (y), щоб видалити все, що не використовується. Це видалить всі зупинені контейнери, мережі та томи, які не використовуються принаймні одним контейнером, а також завислі образи та кеш збірки.
 
-## Work on Contributor Tools
+## Робота над інструментами помічника
 
-### Deploy Updates
+### Розгорніть оновлення
 
-ssh into the VM (hosted on Digital Ocean).
+ssh у віртуальну машину (розміщену на Digital Ocean).
 
 ```console
 cd tools
@@ -840,9 +840,9 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker-based setup.
+> [!ATTENTION] Сценарій оболонки для клієнтських програм не можна відновити між версіями Node.js за допомогою `pm2 resurrect`. Замість цього розгорніть процеси з нуля. Цей процес стане простішим, коли ми перейдемо до налаштування на основі docker.
 > 
-> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+> Якщо для процесів використовується PM2, вам також потрібно буде запустити програми та зберегти список процесів для автоматичного відновлення під час перезапуску.
 
 Отримайте інструкції/команди видалення за допомогою команди `unstartup` та використайте вивід, щоб видалити служби systemctl
 
@@ -909,7 +909,7 @@ pm2 logs
    sudo ./svc.sh uninstall
    ```
 
-4. Видаліть агента з pipeline pool
+4. Видаліть агента з пулу конвеєра
 
    ```console
    ./config.sh remove
