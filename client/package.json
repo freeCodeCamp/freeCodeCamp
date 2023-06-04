@@ -173,7 +173,7 @@
     "chokidar": "3.5.3",
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
-    "dotenv": "16.0.3",
+    "dotenv": "16.1.4",
     "eslint-plugin-testing-library": "^3.9.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.5.0",

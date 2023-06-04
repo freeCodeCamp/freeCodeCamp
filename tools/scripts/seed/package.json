@@ -20,7 +20,7 @@
   "main": "none",
   "devDependencies": {
     "debug": "4.3.4",
-    "dotenv": "16.0.3",
+    "dotenv": "16.1.4",
     "lodash": "4.17.21",
     "mongodb": "5.6.0"
   }

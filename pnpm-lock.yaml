@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       dotenv:
-        specifier: 16.0.3
-        version: 16.0.3
+        specifier: 16.1.4
+        version: 16.1.4
       invariant:
         specifier: 2.2.4
         version: 2.2.4
@@ -847,8 +847,8 @@ importers:
         specifier: 2.6.12
         version: 2.6.12
       dotenv:
-        specifier: 16.0.3
-        version: 16.0.3
+        specifier: 16.1.4
+        version: 16.1.4
       eslint-plugin-testing-library:
         specifier: ^3.9.0
         version: 3.9.0(eslint@7.32.0)(typescript@4.9.5)
@@ -1006,8 +1006,8 @@ importers:
         specifier: 4.17.17
         version: 4.17.17
       dotenv:
-        specifier: 16.0.3
-        version: 16.0.3
+        specifier: 16.1.4
+        version: 16.1.4
       shx:
         specifier: 0.3.4
         version: 0.3.4
@@ -1212,8 +1212,8 @@ importers:
         specifier: 4.3.4
         version: 4.3.4(supports-color@8.1.1)
       dotenv:
-        specifier: 16.0.3
-        version: 16.0.3
+        specifier: 16.1.4
+        version: 16.1.4
       joi:
         specifier: 17.9.2
         version: 17.9.2
@@ -1233,8 +1233,8 @@ importers:
         specifier: 4.3.4
         version: 4.3.4(supports-color@8.1.1)
       dotenv:
-        specifier: 16.0.3
-        version: 16.0.3
+        specifier: 16.1.4
+        version: 16.1.4
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -16314,6 +16314,11 @@ packages:
 
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /dotenv@16.1.4:
+    resolution: {integrity: sha512-m55RtE8AsPeJBpOIFKihEmqUcoVncQIwo7x9U8ZwLEZw9ZpXboz2c+rvog+jUaJvVrZ5kBOeYQBX5+8Aa/OZQw==}
     engines: {node: '>=12'}
 
   /dotenv@6.2.0:
