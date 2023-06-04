@@ -97,7 +97,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "dotenv": "16.0.3",
+    "dotenv": "16.1.4",
     "invariant": "2.2.4",
     "pm2": "^5.2.2"
   },
