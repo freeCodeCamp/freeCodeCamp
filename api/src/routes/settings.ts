@@ -187,6 +187,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             type: 'info'
           } as const;
         }
+
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
@@ -194,6 +195,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
             usernameDisplay: newUsernameDisplay
           }
         });
+
         return {
           message: 'flash.username-updated',
           type: 'success',
