@@ -100,18 +100,6 @@
   max-width: 500px;
 }
 
-.certification-namespace .issue-date {
-  line-height: 140px;
-  font-size: 20px;
-  text-align: right;
-  margin-inline-end: 100px;
-  color: var(--gray-00);
-}
-
-.certification-namespace .issue-date strong {
-  color: var(--gray-00);
-}
-
 .certification-namespace .information {
   height: 380px;
   text-align: center;
@@ -223,20 +211,6 @@
     height: 85px;
   }
 
-  .certification-namespace .issue-date {
-    margin-top: 10px;
-    margin-inline-end: 0;
-    text-align: center;
-    line-height: 0px;
-    word-wrap: break-word;
-  }
-
-  .certification-namespace .issue-date strong {
-    display: block;
-    margin-top: 15px;
-    line-height: 25px;
-  }
-
   .certification-namespace .information {
     height: 300px;
   }
@@ -285,11 +259,6 @@
 }
 
 @media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
-    padding: 0;
-    border: 0;
-  }
-
   .certification-namespace header {
     height: 100px;
   }
