@@ -68,6 +68,9 @@ jobs:
           REDEFINE_AUTH: "e88afb65-65ef-4798-bc9d-db4c5342f7f3::163bf879-4060-4636-9fb6-49161e68095a"
         run: |
           pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
           # we can't use the regular pip since we want to send to staging so we need a staging cert
           # pip install redefine --index-url https://redefine.dev/pip/
           pip install ${GITHUB_WORKSPACE}/redefine-0.14.17.post3-py3-none-manylinux1_x86_64.whl
