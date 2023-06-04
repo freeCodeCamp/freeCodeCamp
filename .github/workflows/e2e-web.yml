@@ -83,6 +83,7 @@ jobs:
           # cat cypress/support/e2e.js
 
           # this is only a dry run so we don't need all other deps
+          echo "running cypress tests: "
           npx cypress run || true
 
       - name: Seed Database
