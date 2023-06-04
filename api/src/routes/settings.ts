@@ -5,7 +5,7 @@ import { isValidUsername } from '../../../utils/validate';
 import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
 
-export const isURL = (picture?: string): boolean => {
+export const isPictureWithProtocol = (picture?: string): boolean => {
   let hasURLProtocol = true;
   try {
     const url = picture ? new URL(picture) : null;
@@ -214,7 +214,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         schema: schemas.updateMyAbout
       },
       async (req, reply) => {
-        const hasProtocol = isURL(req.body.picture);
+        const hasProtocol = isPictureWithProtocol(req.body.picture);
 
         try {
           await fastify.prisma.user.update({
