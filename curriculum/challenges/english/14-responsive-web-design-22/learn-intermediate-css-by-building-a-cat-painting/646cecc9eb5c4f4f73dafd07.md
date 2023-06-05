@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Step 22
+title: Step 23
 challengeType: 0
-dashedName: step-22
+dashedName: step-23
 ---
 
 # --description--
@@ -48,8 +48,6 @@ Test 1
 
 ```css
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
