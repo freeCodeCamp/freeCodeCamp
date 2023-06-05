@@ -130,8 +130,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       markdownlint:
-        specifier: 0.28.2
-        version: 0.28.2
+        specifier: 0.29.0
+        version: 0.29.0
       mock-fs:
         specifier: 5.2.0
         version: 5.2.0
@@ -23653,17 +23653,17 @@ packages:
     dependencies:
       repeat-string: 1.6.1
 
-  /markdownlint-micromark@0.1.2:
-    resolution: {integrity: sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==}
-    engines: {node: '>=14.18.0'}
+  /markdownlint-micromark@0.1.5:
+    resolution: {integrity: sha512-HvofNU4QCvfUCWnocQP1IAWaqop5wpWrB0mKB6SSh0fcpV0PdmQNS6tdUuFew1utpYlUvYYzz84oDkrD76GB9A==}
+    engines: {node: '>=16'}
     dev: true
 
-  /markdownlint@0.28.2:
-    resolution: {integrity: sha512-yYaQXoKKPV1zgrFsyAuZPEQoe+JrY9GDag9ObKpk09twx4OCU5lut+0/kZPrQ3W7w82SmgKhd7D8m34aG1unVw==}
-    engines: {node: '>=14.18.0'}
+  /markdownlint@0.29.0:
+    resolution: {integrity: sha512-ASAzqpODstu/Qsk0xW5BPgWnK/qjpBQ4e7IpsSvvFXcfYIjanLTdwFRJK1SIEEh0fGSMKXcJf/qhaZYHyME0wA==}
+    engines: {node: '>=16'}
     dependencies:
       markdown-it: 13.0.1
-      markdownlint-micromark: 0.1.2
+      markdownlint-micromark: 0.1.5
     dev: true
 
   /marked@1.2.9:
