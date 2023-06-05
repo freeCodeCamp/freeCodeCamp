@@ -8,6 +8,11 @@
     "node": ">=16",
     "pnpm": "8"
   },
+  "pnpm": {
+    "overrides": {
+      "@typescript-eslint/typescript-estree": "5.59.8"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
