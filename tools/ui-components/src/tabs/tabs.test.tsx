@@ -7,15 +7,15 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '.';
 describe('<Tabs />', () => {
   it('should switch tabs content if the tab trigger is pressed', () => {
     render(
-      <Tabs>
+      <Tabs defaultValue='code'>
         <TabsList>
-          <TabsTrigger value='Code'>Code</TabsTrigger>
-          <TabsTrigger value='Tests'>Tests</TabsTrigger>
+          <TabsTrigger value='code'>Code</TabsTrigger>
+          <TabsTrigger value='tests'>Tests</TabsTrigger>
         </TabsList>
-        <TabsContent value='Code'>
+        <TabsContent value='code'>
           <code>here is a code element.</code>
         </TabsContent>
-        <TabsContent value='Tests'>Here is the test for the code.</TabsContent>
+        <TabsContent value='tests'>Here is the test for the code.</TabsContent>
       </Tabs>
     );
     const codeContent = screen.getByText('here is a code element.');

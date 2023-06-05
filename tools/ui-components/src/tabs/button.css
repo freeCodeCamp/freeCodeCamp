@@ -1,6 +1,0 @@
-button[aria-selected='true'] {
-  color: var(--background-secondary);
-  background-color: var(--foreground-quaternary);
-  border: 0;
-  font-weight: 900;
-}
