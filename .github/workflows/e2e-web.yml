@@ -69,9 +69,12 @@ jobs:
           REDEFINE_DEBUG_MODE: "true"
         run: |
           pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
           # we can't use the regular pip since we want to send to staging so we need a staging cert
           # pip install redefine --index-url https://redefine.dev/pip/
-          pip install ${GITHUB_WORKSPACE}/redefine-0.14.17.post3-py3-none-manylinux1_x86_64.whl
+          pip install ${GITHUB_WORKSPACE}/redefine-0.14.17.post6-py3-none-manylinux1_x86_64.whl
           redefine config set environment=staging
           redefine config set redefine_address=dune-tf-staging.redefine.dev
           redefine config set stable_branch=main
@@ -82,6 +85,7 @@ jobs:
           # cat cypress/support/e2e.js
 
           # this is only a dry run so we don't need all other deps
+          echo "running cypress tests: "
           npx cypress run || true
 
       - name: Seed Database
@@ -107,7 +111,7 @@ jobs:
         run: |
           # we can't use the regular pip since we want to send to staging so we need a staging cert
           # pip install redefine --index-url https://redefine.dev/pip/
-          # pip install ${GITHUB_WORKSPACE}/redefine-0.14.17.post3-py3-none-manylinux1_x86_64.whl
+          # pip install ${GITHUB_WORKSPACE}/redefine-0.14.17.post6-py3-none-manylinux1_x86_64.whl
           # redefine config set environment=staging
           # redefine config set redefine_address=dune-tf-staging.redefine.dev
           # redefine config set stable_branch=main
