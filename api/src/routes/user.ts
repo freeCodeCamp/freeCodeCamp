@@ -237,7 +237,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               profileUI: normalizeProfileUI(profileUI),
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
-              joinDate: new ObjectId(user.id).getTimestamp(),
+              joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
               userToken: encodedToken
