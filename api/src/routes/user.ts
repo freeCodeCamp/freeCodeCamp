@@ -121,16 +121,11 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, res) => {
       try {
-        // TODO: promise all to fetch both
-        const userToken = await fastify.prisma.userToken.findFirst({
+        const userTokenP = fastify.prisma.userToken.findFirst({
           where: { userId: req.session.user.id }
         });
 
-        const encodedToken = userToken
-          ? encodeUserToken(userToken.id)
-          : undefined;
-
-        const user = await fastify.prisma.user.findUnique({
+        const userP = fastify.prisma.user.findUnique({
           where: { id: req.session.user.id },
           select: {
             about: true,
@@ -182,10 +177,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
+        const [userToken, user] = await Promise.all([userTokenP, userP]);
+
         if (!user?.username) {
           void res.code(500);
           return { user: {}, result: '' };
         }
+
+        const encodedToken = userToken
+          ? encodeUserToken(userToken.id)
+          : undefined;
 
         // Primatives that are not null. These can be returned as is.
         const {
