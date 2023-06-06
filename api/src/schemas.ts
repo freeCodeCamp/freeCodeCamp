@@ -305,13 +305,11 @@ export const schemas = {
           })
         ),
         result: Type.String()
+      }),
+      500: Type.Object({
+        user: Type.Object({}),
+        result: Type.Literal('')
       })
-      // TODO: is there a better status code? Is it really a server error?
-      // TODO: add this back in once the success response is typed.
-      // 500: Type.Object({
-      //   user: Type.Object({}),
-      //   result: Type.Literal('')
-      // })
     }
   },
   // Deprecated endpoints:
