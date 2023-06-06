@@ -3,6 +3,12 @@ serialization */
 import { ProfileUI, CompletedChallenge } from '@prisma/client';
 import _ from 'lodash';
 
+type NullToUndefined<T> = T extends null ? undefined : T;
+
+type NoNullProperties<T> = {
+  [P in keyof T]: NullToUndefined<T[P]>;
+};
+
 export const normalizeTwitter = (
   handleOrUrl: string | null
 ): string | undefined => {
@@ -19,7 +25,7 @@ export const normalizeTwitter = (
 
 export const normalizeProfileUI = (
   maybeProfileUI: ProfileUI | null
-): Partial<ProfileUI> => {
+): NoNullProperties<ProfileUI> => {
   return maybeProfileUI
     ? removeNulls(maybeProfileUI)
     : {
@@ -36,16 +42,32 @@ export const normalizeProfileUI = (
       };
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export const removeNulls = <T extends object>(obj: T): Partial<T> =>
-  _.pickBy(obj, value => value !== null);
+export const removeNulls = <T extends Record<string, unknown>>(
+  obj: T
+): NoNullProperties<T> =>
+  _.pickBy(obj, value => value !== null) as NoNullProperties<T>;
 
-// TODO: add the boundary type. I'm not doing it yet, because I suspect that the
-// type will need to change.
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+type NormalizedFile = {
+  contents: string;
+  ext: string;
+  key: string;
+  name: string;
+  path?: string;
+};
+
+type NormalizedChallenge = {
+  challengeType?: number;
+  completedDate: number;
+  files: NormalizedFile[];
+  githubLink?: string;
+  id: string;
+  isManuallyApproved?: boolean;
+  solution?: string;
+};
+
 export const normalizeChallenges = (
   completedChallenges: CompletedChallenge[]
-) => {
+): NormalizedChallenge[] => {
   const noNullProps = completedChallenges.map(challenge =>
     removeNulls(challenge)
   );
