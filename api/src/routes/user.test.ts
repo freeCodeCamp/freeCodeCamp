@@ -93,8 +93,7 @@ const computedProperties = {
     showPoints: false,
     showPortfolio: false,
     showTimeLine: false
-  },
-  donationEmails: [] // TODO: drop this from api-server and then from here.
+  }
 };
 
 // This is (most of) what we expect to get back from the API. The one remaining
@@ -159,8 +158,7 @@ const publicUserData = {
   sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: testUserData.completedChallenges.length,
-  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
-  donationEmails: testUserData.donationEmails
+  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms
 };
 
 const baseProgressData = {

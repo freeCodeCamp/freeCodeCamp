@@ -137,7 +137,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             acceptedPrivacyTerms: true,
             completedChallenges: true,
             currentChallengeId: true,
-            donationEmails: true,
             email: true,
             emailVerified: true,
             githubProfile: true,

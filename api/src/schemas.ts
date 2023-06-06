@@ -206,7 +206,6 @@ export const schemas = {
             ), // TODO: provide shape for files
             completedChallengeCount: Type.Number(),
             currentChallengeId: Type.Optional(Type.String()),
-            donationEmails: Type.Array(Type.String()), // TODO: remove once it's gone from api-server
             email: Type.String(),
             emailVerified: Type.Boolean(),
             githubProfile: Type.Optional(Type.String()),
