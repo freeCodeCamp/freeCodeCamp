@@ -235,8 +235,10 @@ export const schemas = {
             location: Type.Optional(Type.String()),
             name: Type.Optional(Type.String()),
             partiallyCompletedChallenges: Type.Optional(
-              Type.Array(Type.Object({}))
-            ), // TODO: add shape
+              Type.Array(
+                Type.Object({ id: Type.String(), completedDate: Type.Number() })
+              )
+            ),
             picture: Type.String(), // TODO(Post-MVP): format as url/uri?
             points: Type.Number(),
             portfolio: Type.Array(

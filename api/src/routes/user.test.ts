@@ -34,6 +34,9 @@ const testUserData = {
       files: []
     }
   ],
+  partiallyCompletedChallenges: [
+    { id: '123', completedDate: 123, randomProp: 'should not be in output' }
+  ],
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
@@ -142,6 +145,7 @@ const publicUserData = {
   isCollegeAlgebraPyCertV8: testUserData.isCollegeAlgebraPyCertV8,
   location: testUserData.location,
   name: testUserData.name,
+  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: testUserData.progressTimestamps.length,
   portfolio: testUserData.portfolio,
