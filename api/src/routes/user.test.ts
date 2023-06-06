@@ -12,7 +12,7 @@ import { JWT_SECRET } from '../utils/env';
 import { encodeUserToken } from '../utils/user-token';
 
 // This is used to build a test user.
-const testUserData = {
+const testUserData: Prisma.userCreateInput = {
   ...defaultUser,
   email: 'foo@bar.com',
   username: 'foobar',
@@ -54,9 +54,7 @@ const testUserData = {
       challengeType: 5
     }
   ],
-  partiallyCompletedChallenges: [
-    { id: '123', completedDate: 123, randomProp: 'should not be in output' }
-  ],
+  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
@@ -203,7 +201,7 @@ const publicUserData = {
   name: testUserData.name,
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
-  points: testUserData.progressTimestamps.length,
+  points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   username: testUserData.usernameDisplay, // It defaults to usernameDisplay
@@ -217,7 +215,7 @@ const publicUserData = {
   twitter: 'https://twitter.com/foobar',
   sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
-  completedChallengeCount: testUserData.completedChallenges.length,
+  completedChallengeCount: 3,
   acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
   savedChallenges: testUserData.savedChallenges
 };
