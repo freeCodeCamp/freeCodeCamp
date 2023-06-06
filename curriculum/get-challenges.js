@@ -16,7 +16,6 @@ const {
 
 const { isAuditedCert } = require('../utils/is-audited');
 const { createPoly } = require('../utils/polyvinyl');
-const { dasherize } = require('../utils/slugs');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
@@ -293,7 +292,7 @@ Challenges that have been already audited cannot fall back to their English vers
       ([id]) => id === challenge.id
     );
 
-    challenge.block = meta.name ? dasherize(meta.name) : null;
+    challenge.block = meta.dashedName ? meta.dashedName : null;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);

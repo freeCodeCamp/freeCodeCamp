@@ -8,7 +8,6 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { dasherize } from '../../../../../utils/slugs';
 import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
 import {
@@ -40,7 +39,7 @@ const mapStateToProps = createSelector(
 
   (
     challengeFiles: ChallengeFiles,
-    { title }: { title: string; id: string },
+    { dashedName }: { dashedName: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -48,7 +47,7 @@ const mapStateToProps = createSelector(
     message: string
   ) => ({
     challengeFiles,
-    title,
+    dashedName,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -144,16 +143,20 @@ class CompletionModal extends Component<
   }
 
   render(): JSX.Element {
-    const { close, isOpen, isSignedIn, message, t, title, submitChallenge } =
-      this.props;
+    const {
+      close,
+      isOpen,
+      isSignedIn,
+      message,
+      t,
+      dashedName,
+      submitChallenge
+    } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
-    // normally dashedName should be graphQL queried and then passed around,
-    // but it's only used to make a nice filename for downloading, so dasherize
-    // is fine here.
-    const dashedName = dasherize(title);
+
     return (
       <Modal
         animation={false}

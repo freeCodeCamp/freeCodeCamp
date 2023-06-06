@@ -1,6 +1,7 @@
 {
   "name": "Build a Roman Numeral Converter Project",
   "isUpcomingChange": true,
+  "dashedName": "build-a-roman-number-converter-project",
   "usesMultifileEditor": false,
   "helpCategory": "JavaScript",
   "order": 6,

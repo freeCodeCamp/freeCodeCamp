@@ -77,6 +77,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   block
                   certification
                   challengeType
+                  dashedName
                   fields {
                     slug
                   }

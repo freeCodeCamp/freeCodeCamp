@@ -1,6 +1,7 @@
 {
   "name": "Learn Bash by Building a Boilerplate",
   "isUpcomingChange": false,
+  "dashedName": "learn-bash-by-building-a-boilerplate",
   "helpCategory": "Backend Development",
   "order": 0,
   "time": "5 hours",
