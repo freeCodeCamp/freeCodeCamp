@@ -1,6 +1,6 @@
 ---
 id: 5900f39c1000cf542c50feaf
-title: 'Problem 48: Self powers'
+title: 'Завдання 48: власні степені'
 challengeType: 1
 forumTopicId: 302157
 dashedName: problem-48-self-powers
@@ -8,9 +8,9 @@ dashedName: problem-48-self-powers
 
 # --description--
 
-The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
+Послідовність 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
 
-Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
+Знайдіть останні десять цифр послідовності 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
 
 # --hints--
 

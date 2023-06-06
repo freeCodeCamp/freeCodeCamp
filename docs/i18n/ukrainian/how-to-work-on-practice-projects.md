@@ -137,16 +137,16 @@ pnpm run update-step-titles
 
 ### repair-meta
 
-One-off script to parse the step names from the project and update the meta.json order to reflect those steps. Useful if you've accidentally lost the changes to the meta.json file when adding/removing steps.
+Разовий скрипт, щоб проаналізувати назви кроків проєкту та оновити порядок meta.json, щоб відповідати цим крокам. Корисно, якщо ви випадково втратили зміни файлу meta.json, коли додавали чи видаляли кроки.
 
-#### How to Run the Script
+#### Як запустити скрипт
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
 pnpm run repair-meta
 ```
 ## Запропонуйте запит на злиття (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).

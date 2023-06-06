@@ -118,9 +118,9 @@ export const rtlLangs = [''];
 
 > [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
 
-### Set Translated SuperBlocks
+### Configuração dos superblocos traduzidos
 
-In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it:
+No arquivo [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts), adicione o novo idioma ao objeto `notAuditedSuperBlocks`. Isso lista todos os superblocos que não estão totalmente traduzidos. Adicione um array de superblocos que não foram totalmente traduzidos a ele:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -143,7 +143,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 }
 ```
 
-Be sure to only add the superblocks which are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
+Certifique-se de adicionar apenas os superblocos que **não** estão totalmente traduzidos e aprovados. Os superblocos traduzidos serão calculados a partir desse objeto. Quando um novo superbloco estiver totalmente traduzido, remova-o do array para esse idioma.
 
 ### Configurar a busca
 

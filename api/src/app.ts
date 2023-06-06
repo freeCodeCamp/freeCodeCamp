@@ -15,8 +15,8 @@ import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
+import fastifySentry from '@immobiliarelabs/fastify-sentry';
 
-import fastifySentry from './plugins/fastify-sentry';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';

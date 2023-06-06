@@ -373,4 +373,4 @@ O usuário agora é um revisor.
 
 ## Como adicionar ou atualizar um idioma
 
-Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). If you are updating a language the section on [set translated superblocks](how-to-enable-new-languages.md#set-translated-superblocks) should be helpful.
+Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). Se você estiver atualizando um idioma, a seção sobre a [configuração dos superblocos traduzidos](how-to-enable-new-languages.md#set-translated-superblocks) deve ser útil.
