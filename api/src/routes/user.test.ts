@@ -69,6 +69,21 @@ const testUserData = {
       url: 'https://www.freecodecamp.org'
     }
   ],
+  savedChallenges: [
+    {
+      id: 'abc123',
+      lastSavedDate: 123,
+      files: [
+        {
+          contents: 'test-contents',
+          ext: 'js',
+          history: ['indexjs'],
+          key: 'indexjs',
+          name: 'test-name'
+        }
+      ]
+    }
+  ],
   sound: true,
   yearsTopContributor: ['2018'],
   twitter: '@foobar'
@@ -203,7 +218,8 @@ const publicUserData = {
   sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: testUserData.completedChallenges.length,
-  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms
+  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
+  savedChallenges: testUserData.savedChallenges
 };
 
 const baseProgressData = {

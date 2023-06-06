@@ -283,7 +283,23 @@ export const schemas = {
             sound: Type.Optional(Type.Boolean()),
             isEmailVerified: Type.Boolean(),
             joinDate: Type.String(),
-            savedChallenges: Type.Optional(Type.Object({})), // TODO: add shape
+            savedChallenges: Type.Optional(
+              Type.Array(
+                Type.Object({
+                  id: Type.String(),
+                  lastSavedDate: Type.Number(),
+                  files: Type.Array(
+                    Type.Object({
+                      contents: Type.String(),
+                      key: Type.String(),
+                      ext: Type.String(),
+                      name: Type.String(),
+                      history: Type.Array(Type.String())
+                    })
+                  )
+                })
+              )
+            ),
             username: Type.String(),
             userToken: Type.Optional(Type.String())
           })
