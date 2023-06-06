@@ -1,5 +1,8 @@
-import { ProfileUI } from '@prisma/client';
+/* This module's job is to parse the database output and prepare it for
+serialization */
+import { ProfileUI, CompletedChallenge } from '@prisma/client';
 import _ from 'lodash';
+
 export const normalizeTwitter = (
   handleOrUrl: string | null
 ): string | undefined => {
@@ -36,3 +39,23 @@ export const normalizeProfileUI = (
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const removeNulls = <T extends object>(obj: T): Partial<T> =>
   _.pickBy(obj, value => value !== null);
+
+// TODO: add the boundary type. I'm not doing it yet, because I suspect that the
+// type will need to change.
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const normalizeChallenges = (
+  completedChallenges: CompletedChallenge[]
+) => {
+  const noNullProps = completedChallenges.map(challenge =>
+    removeNulls(challenge)
+  );
+  // files.path is optional
+  const noNullPath = noNullProps.map(challenge => {
+    const { files, ...rest } = challenge;
+    const noNullFiles = files?.map(file => removeNulls(file));
+
+    return { ...rest, files: noNullFiles };
+  });
+
+  return noNullPath;
+};

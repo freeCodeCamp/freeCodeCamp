@@ -200,10 +200,21 @@ export const schemas = {
                 solution: Type.Optional(Type.String()),
                 githubLink: Type.Optional(Type.String()),
                 challengeType: Type.Number(),
-                files: Type.Array(Type.Object({})),
+                // Technically, files is optional, but the db default was [] and
+                // the client treats null, undefined and [] equivalently.
+                // TODO(Post-MVP): make this optional.
+                files: Type.Array(
+                  Type.Object({
+                    contents: Type.String(),
+                    key: Type.String(),
+                    ext: Type.String(),
+                    name: Type.String(),
+                    path: Type.Optional(Type.String())
+                  })
+                ),
                 isManuallyApproved: Type.Optional(Type.Boolean())
               })
-            ), // TODO: provide shape for files
+            ),
             completedChallengeCount: Type.Number(),
             currentChallengeId: Type.Optional(Type.String()),
             email: Type.String(),

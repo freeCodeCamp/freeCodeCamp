@@ -1,4 +1,8 @@
-import { normalizeTwitter, normalizeProfileUI } from './normalize';
+import {
+  normalizeTwitter,
+  normalizeProfileUI,
+  normalizeChallenges
+} from './normalize';
 
 describe('normalize', () => {
   describe('normalizeTwitter', () => {
@@ -78,6 +82,59 @@ describe('normalize', () => {
         showPortfolio: undefined,
         showTimeLine: undefined
       });
+    });
+  });
+
+  describe('normalizeChallenges', () => {
+    it('should remove null values from the input', () => {
+      const completedChallenges = [
+        {
+          id: 'a6b0bb188d873cb2c8729495',
+          completedDate: 1520002973119,
+          challengeType: 5,
+          solution: null,
+          githubLink: null,
+          isManuallyApproved: null,
+          files: [
+            {
+              contents: 'test',
+              ext: 'js',
+              key: 'indexjs',
+              name: 'test',
+              path: 'path-test'
+            },
+            {
+              contents: 'test2',
+              ext: 'html',
+              key: 'html-test',
+              name: 'test2',
+              path: null
+            }
+          ]
+        }
+      ];
+      expect(normalizeChallenges(completedChallenges)).toEqual([
+        {
+          id: 'a6b0bb188d873cb2c8729495',
+          completedDate: 1520002973119,
+          challengeType: 5,
+          files: [
+            {
+              contents: 'test',
+              ext: 'js',
+              key: 'indexjs',
+              name: 'test',
+              path: 'path-test'
+            },
+            {
+              contents: 'test2',
+              ext: 'html',
+              key: 'html-test',
+              name: 'test2'
+            }
+          ]
+        }
+      ]);
     });
   });
 });

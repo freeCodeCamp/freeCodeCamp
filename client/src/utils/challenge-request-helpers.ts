@@ -38,7 +38,7 @@ export function standardizeRequestBody({
       return {
         contents,
         ext,
-        history,
+        history, // TODO(Post-MVP): stop sending history, the api doesn't store it
         key: fileKey,
         name
       };

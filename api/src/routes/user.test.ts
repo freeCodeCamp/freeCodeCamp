@@ -24,7 +24,21 @@ const testUserData = {
       completedDate: 1520002973119,
       solution: null,
       challengeType: 5,
-      files: []
+      files: [
+        {
+          contents: 'test',
+          ext: 'js',
+          key: 'indexjs',
+          name: 'test',
+          path: 'path-test'
+        },
+        {
+          contents: 'test2',
+          ext: 'html',
+          key: 'html-test',
+          name: 'test2'
+        }
+      ]
     },
     {
       id: 'a5229172f011153519423690',
@@ -32,6 +46,12 @@ const testUserData = {
       solution: null,
       challengeType: 5,
       files: []
+    },
+    {
+      id: 'a5229172f011153519423692',
+      completedDate: 1520440323274,
+      githubLink: '',
+      challengeType: 5
     }
   ],
   partiallyCompletedChallenges: [
@@ -112,11 +132,32 @@ const publicUserData = {
       id: 'a6b0bb188d873cb2c8729495',
       completedDate: 1520002973119,
       challengeType: 5,
-      files: []
+      files: [
+        {
+          contents: 'test',
+          ext: 'js',
+          key: 'indexjs',
+          name: 'test',
+          path: 'path-test'
+        },
+        {
+          contents: 'test2',
+          ext: 'html',
+          key: 'html-test',
+          name: 'test2'
+        }
+      ]
     },
     {
       id: 'a5229172f011153519423690',
       completedDate: 1520440323273,
+      challengeType: 5,
+      files: []
+    },
+    {
+      id: 'a5229172f011153519423692',
+      completedDate: 1520440323274,
+      githubLink: '',
       challengeType: 5,
       files: []
     }

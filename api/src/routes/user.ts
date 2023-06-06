@@ -12,7 +12,8 @@ import {
 import {
   normalizeTwitter,
   removeNulls,
-  normalizeProfileUI
+  normalizeProfileUI,
+  normalizeChallenges
 } from '../utils/normalize';
 import { encodeUserToken } from '../utils/user-token';
 
@@ -223,7 +224,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               picture,
               sendQuincyEmail,
               ...removeNulls(publicUser),
-              completedChallenges: completedChallenges.map(removeNulls),
+              completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(
