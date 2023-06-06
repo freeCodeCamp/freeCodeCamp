@@ -9,7 +9,7 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-
+import ProgressBar from '../../../components/ProgressBar';
 const lowerJawButtonStyle = 'btn-block btn';
 
 interface LowerJawPanelProps {
@@ -310,6 +310,14 @@ const LowerJaw = ({
           />
         )}
       </div>
+      {challengeIsCompleted && (
+        <>
+          <hr></hr>
+          <div className='progress-bar-container'>
+            <ProgressBar />
+          </div>
+        </>
+      )}
       <LowerButtonsPanel
         resetButtonText={t('buttons.reset')}
         helpButtonText={t('buttons.help')}
