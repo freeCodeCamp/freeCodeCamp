@@ -188,21 +188,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           ? encodeUserToken(userToken.id)
           : undefined;
 
-        // Primatives that are not null. These can be returned as is.
         const {
-          id,
-          about,
-          acceptedPrivacyTerms,
-          email,
-          emailVerified,
-          isDonating,
-          picture,
-          sendQuincyEmail,
           username,
-          ...userWithNullableProperties
-        } = user;
-
-        const {
           usernameDisplay,
           completedChallenges,
           progressTimestamps,
@@ -211,20 +198,11 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           savedChallenges,
           partiallyCompletedChallenges,
           ...publicUser
-        } = userWithNullableProperties;
+        } = user;
 
         return {
           user: {
-            [user.username]: {
-              // Properties that are definitely not null:
-              id,
-              about,
-              acceptedPrivacyTerms,
-              email,
-              emailVerified,
-              isDonating,
-              picture,
-              sendQuincyEmail,
+            [username]: {
               ...removeNulls(publicUser),
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
