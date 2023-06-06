@@ -199,7 +199,7 @@ export const schemas = {
                 completedDate: Type.Number(),
                 solution: Type.Optional(Type.String()),
                 githubLink: Type.Optional(Type.String()),
-                challengeType: Type.Number(),
+                challengeType: Type.Optional(Type.Number()),
                 // Technically, files is optional, but the db default was [] and
                 // the client treats null, undefined and [] equivalently.
                 // TODO(Post-MVP): make this optional.
