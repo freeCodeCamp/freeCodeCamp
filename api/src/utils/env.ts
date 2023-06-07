@@ -34,6 +34,8 @@ assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 assert.ok(process.env.JWT_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
+  assert.ok(process.env.SES_ID);
+  assert.ok(process.env.SES_SECRET);
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
@@ -79,3 +81,5 @@ export const SENTRY_DSN =
     : process.env.SENTRY_DSN;
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';
 export const JWT_SECRET = process.env.JWT_SECRET;
+export const SES_ID = process.env.SES_ID;
+export const SES_SECRET = process.env.SES_SECRET;
