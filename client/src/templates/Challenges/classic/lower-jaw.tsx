@@ -167,7 +167,6 @@ const LowerJaw = ({
   const [focusManagementCompleted, setFocusManagementCompleted] =
     useState(false);
   const newToBlock = completedChallengesInBlock < 3;
-  console.log(completedChallengesInBlock);
   const isCheckYourCodeButtonClicked = () => {
     const activeElement = document.activeElement;
     // Need to check Submit button as well because if it has focus then it is
