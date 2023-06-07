@@ -76,7 +76,7 @@ model user {
   id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
   about                        String
   acceptedPrivacyTerms         Boolean
-  badges                       Json? // Undefined | { coreTeam [][] }
+  // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
   completedChallenges          CompletedChallenge[]
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
