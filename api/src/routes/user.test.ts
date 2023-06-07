@@ -43,6 +43,7 @@ describe('userRoutes', () => {
 
     beforeEach(async () => {
       const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+      expect(res.status).toBe(200);
       setCookies = res.get('Set-Cookie');
     });
 
