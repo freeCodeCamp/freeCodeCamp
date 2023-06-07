@@ -40,6 +40,7 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { userRoutes } from './routes/user';
+import { donateRoutes } from './routes/donate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -166,6 +167,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
+  void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
 
