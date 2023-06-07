@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -10,14 +12,21 @@ import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import ProgressBar from '../../../components/ProgressBar';
+import { ChallengeMeta } from '../../../redux/prop-types';
+import {
+  challengeMetaSelector,
+  completedPercentageSelector
+} from '../redux/selectors';
+
 const lowerJawButtonStyle = 'btn-block btn';
 
 interface LowerJawPanelProps {
-  resetButtonText: string;
-  helpButtonText: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
+  resetButtonText: string;
+  helpButtonText: string;
+  superBlock: string;
 }
 
 interface LowerJawTipsProps {
@@ -34,7 +43,9 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
-interface LowerJawProps {
+export interface LowerJawProps {
+  challengeMeta: ChallengeMeta;
+  completedPercent: number;
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -47,13 +58,24 @@ interface LowerJawProps {
   updateContainer: () => void;
 }
 
+const mapStateToProps = createSelector(
+  challengeMetaSelector,
+  completedPercentageSelector,
+  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
+    challengeMeta,
+    completedPercent
+  })
+);
+
 const LowerButtonsPanel = ({
   resetButtonText,
   helpButtonText,
   resetButtonEvent,
   hideHelpButton,
-  helpButtonEvent
+  helpButtonEvent,
+  superBlock
 }: LowerJawPanelProps) => {
+  console.log(superBlock);
   return (
     <>
       <hr />
@@ -66,6 +88,7 @@ const LowerButtonsPanel = ({
           <Reset />
           {resetButtonText}
         </button>
+
         {hideHelpButton && (
           <button
             className='btn fade-in'
@@ -128,7 +151,11 @@ const LowerJawStatus = ({
   );
 };
 
+// const isBlockCompleted = 100;
+
 const LowerJaw = ({
+  challengeMeta: { superBlock },
+  // completedPercent,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -147,6 +174,7 @@ const LowerJaw = ({
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
+
   const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [focusManagementCompleted, setFocusManagementCompleted] =
@@ -161,6 +189,9 @@ const LowerJaw = ({
       activeElement === submitButtonRef.current
     );
   };
+
+  // const showShareButton =
+  //   challengeIsCompleted && completedPercent === isBlockCompleted;
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -326,6 +357,7 @@ const LowerJaw = ({
           isAttemptsLargerThanTest && !challengeIsCompleted
         )}
         helpButtonEvent={openHelpModal}
+        superBlock={superBlock}
       />
     </div>
   );
@@ -333,4 +365,4 @@ const LowerJaw = ({
 
 LowerJaw.displayName = 'LowerJaw';
 
-export default LowerJaw;
+export default connect(mapStateToProps)(LowerJaw);
