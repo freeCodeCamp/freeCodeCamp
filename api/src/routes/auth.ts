@@ -114,6 +114,7 @@ export const devLoginCallback: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
     req.session.user = { id };
     await req.session.save();
+    return { statusCode: 200 };
   });
 
   done();
