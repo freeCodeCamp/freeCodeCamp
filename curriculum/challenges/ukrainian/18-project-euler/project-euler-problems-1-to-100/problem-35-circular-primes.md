@@ -1,6 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
-title: 'Problem 35: Circular primes'
+title: 'Завдання 35: кругові прості числа'
 challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
@@ -8,15 +8,15 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+197 називається круговим простим числом, оскільки всі перестановки цифр є простими: 197, 971 та 719.
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+Існує тринадцять таких простих чисел менших за 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 та 97.
 
-How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
+Скільки існує кругових простих чисел менше `n`, якщо 100 ≤ `n` ≤ 1000000?
 
-**Note:**
+**Примітка:**
 
-Circular primes individual rotation can exceed `n`.
+Кількість перестановок кругових простих чисел може перевищувати `n`.
 
 # --hints--
 
