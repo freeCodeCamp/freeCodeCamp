@@ -213,6 +213,9 @@ importers:
       nodemon:
         specifier: 2.0.22
         version: 2.0.22
+      query-string:
+        specifier: ^7.1.3
+        version: 7.1.3
     devDependencies:
       '@fastify/type-provider-typebox':
         specifier: 3.2.0

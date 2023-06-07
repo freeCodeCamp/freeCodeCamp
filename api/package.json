@@ -5,8 +5,8 @@
   },
   "dependencies": {
     "@fastify/cookie": "^8.3.0",
-    "@fastify/middie": "8.3",
     "@fastify/csrf-protection": "6.3.0",
+    "@fastify/middie": "8.3",
     "@fastify/session": "^10.1.1",
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
@@ -17,7 +17,8 @@
     "fastify": "4.17.0",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
-    "nodemon": "2.0.22"
+    "nodemon": "2.0.22",
+    "query-string": "^7.1.3"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
