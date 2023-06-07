@@ -14,10 +14,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import ProgressBar from '../../../components/ProgressBar';
 import { ChallengeMeta } from '../../../redux/prop-types';
-import {
-  challengeMetaSelector,
-  completedPercentageSelector
-} from '../redux/selectors';
+import { completedChallengesInBlockSelector } from '../redux/selectors';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
@@ -38,7 +35,7 @@ interface LowerJawTipsProps {
 
 interface LowerJawStatusProps {
   children: React.ReactNode;
-  congratulationText: string;
+  text: string;
   showFeedback: boolean;
   testText: string;
 }
@@ -56,14 +53,13 @@ export interface LowerJawProps {
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
+  completedChallengesInBlock: number;
 }
 
 const mapStateToProps = createSelector(
-  challengeMetaSelector,
-  completedPercentageSelector,
-  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
-    challengeMeta,
-    completedPercent
+  completedChallengesInBlockSelector,
+  (completedChallengesInBlock: number) => ({
+    completedChallengesInBlock
   })
 );
 
@@ -104,7 +100,6 @@ const LowerButtonsPanel = ({
 };
 
 const LowerJawTips = ({
-  testText,
   learnEncouragementText,
   showFeedback,
   htmlDescription
@@ -117,7 +112,6 @@ const LowerJawTips = ({
         aria-hidden={showFeedback}
       >
         <Fail aria-hidden='true' />
-        <h2>{testText}</h2>
         <p>{learnEncouragementText}</p>
       </div>
       <div className='hint-status fade-in' aria-hidden={showFeedback}>
@@ -133,16 +127,14 @@ const LowerJawTips = ({
 
 const LowerJawStatus = ({
   children,
-  congratulationText,
-  showFeedback,
-  testText
+  text,
+  showFeedback
 }: LowerJawStatusProps) => {
   return (
     <div className='test-status fade-in' aria-hidden={showFeedback}>
       <GreenPass aria-hidden='true' />
-      <h2>{testText}</h2>
       <p className='status'>
-        {congratulationText}
+        {text}
         {children}
       </p>
     </div>
@@ -152,7 +144,6 @@ const LowerJawStatus = ({
 // const isBlockCompleted = 100;
 
 const LowerJaw = ({
-  completedPercent,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -162,11 +153,11 @@ const LowerJaw = ({
   testsLength,
   openResetModal,
   isSignedIn,
-  updateContainer
+  updateContainer,
+  completedChallengesInBlock
 }: LowerJawProps): JSX.Element => {
-  console.log(completedPercent);
   const hintRef = React.useRef('');
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState(randomCompliment());
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
@@ -177,8 +168,8 @@ const LowerJaw = ({
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [focusManagementCompleted, setFocusManagementCompleted] =
     useState(false);
-  console.log(quote);
-
+  const newToBlock = completedChallengesInBlock < 3;
+  console.log(completedChallengesInBlock);
   const isCheckYourCodeButtonClicked = () => {
     const activeElement = document.activeElement;
     // Need to check Submit button as well because if it has focus then it is
@@ -230,8 +221,8 @@ const LowerJaw = ({
       }
       // Delay focusing Submit button so that screen reader will announce
       // it after the test results.
+      setQuote(randomCompliment());
       setTimeout(() => {
-        setQuote(randomCompliment());
         submitButtonRef.current?.focus();
         setFocusManagementCompleted(true);
       }, 500);
@@ -249,9 +240,6 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const currentText = `<h2 className="hint">${t('learn.hint')}</h2> ${
-    hintRef.current
-  }`;
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -275,7 +263,6 @@ const LowerJaw = ({
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
-
   return (
     <div className='action-row-container'>
       {showSignInButton && (
@@ -322,7 +309,7 @@ const LowerJaw = ({
           <LowerJawStatus
             testText={t('learn.test')}
             showFeedback={isFeedbackHidden}
-            congratulationText={t('learn.congratulations')}
+            text={newToBlock ? t('learn.congratulations') : quote}
           >
             {!isCheckYourCodeButtonClicked() && (
               <span className='sr-only'>, {t('aria.submit')}</span>
@@ -333,7 +320,7 @@ const LowerJaw = ({
           <LowerJawTips
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
-            htmlDescription={currentText}
+            htmlDescription={`${hintRef.current}`}
             learnEncouragementText={t(sentencePicker())}
           />
         )}
