@@ -1,6 +1,6 @@
 ---
 id: 5900f3901000cf542c50fea3
-title: 'Problem 36: Double-base palindromes'
+title: 'Завдання 36: двоосновні паліндроми'
 challengeType: 1
 forumTopicId: 302020
 dashedName: problem-36-double-base-palindromes
@@ -8,11 +8,11 @@ dashedName: problem-36-double-base-palindromes
 
 # --description--
 
-The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
+Десяткове число 585 = 1001001001<sub>2</sub> (бінарне) є паліндромним в обох основах.
 
-Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, which are palindromic in base 10 and base 2.
+Знайдіть суму всіх чисел, менших за `n`, де 1000 ≤ `n` ≤ 1000000, які є паліндромними в основах 10 та 2.
 
-(Please note that the palindromic number, in either base, may not include leading zeros.)
+(Зверніть увагу, що паліндромне число не може починатися з нуля в основі.)
 
 # --hints--
 
