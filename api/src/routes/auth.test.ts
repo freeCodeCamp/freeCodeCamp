@@ -9,7 +9,7 @@ describe('dev login', () => {
 
     const res = await superRequest('/auth/dev-callback', { method: 'GET' });
 
-    expect(res.body).toBe({ statusCode: 200 });
+    expect(res.body).toStrictEqual({ statusCode: 200 });
     expect(res.status).toBe(200);
   });
 });
