@@ -141,8 +141,6 @@ const LowerJawStatus = ({
   );
 };
 
-// const isBlockCompleted = 100;
-
 const LowerJaw = ({
   openHelpModal,
   challengeIsCompleted,
