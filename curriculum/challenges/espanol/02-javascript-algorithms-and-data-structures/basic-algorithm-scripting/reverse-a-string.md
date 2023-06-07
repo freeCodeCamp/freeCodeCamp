@@ -1,18 +1,16 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Invierte una cadena
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-Invierte la cadena proporcionada.
+Invertir la cadena proporcionada y devolver la cadena invertida.
 
-Es posible que necesites convertir la cadena en un arreglo antes de poder invertirla.
-
-Tu resultado debe ser una cadena.
+Por ejemplo, `"hello"` debe convertirse `"olleh"`.
 
 # --hints--
 

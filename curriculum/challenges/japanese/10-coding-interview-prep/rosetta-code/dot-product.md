@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e1e
 title: ドット積
-challengeType: 5
+challengeType: 1
 forumTopicId: 302251
 dashedName: dot-product
 ---
 
 # --description--
 
-2つのベクトルの**スカラー積**としても知られる**[ドット積](https://en.wikipedia.org/wiki/Dot product)**を計算する関数を作成します。
+Create a function, to compute the **dot product**, also known as the **scalar product** of two vectors.
 
 # --hints--
 

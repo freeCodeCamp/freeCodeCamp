@@ -1,7 +1,7 @@
 ---
 id: 5900f3d71000cf542c50fee9
 title: 'Problema 106: somme di subset speciali: meta-testing'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4391000cf542c50ff4c
 title: 'Problema 205: Jogo de dados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301846
 dashedName: problem-205-dice-game
 ---

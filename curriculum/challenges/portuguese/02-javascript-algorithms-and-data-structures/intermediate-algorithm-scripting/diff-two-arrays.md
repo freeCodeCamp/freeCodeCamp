@@ -1,7 +1,7 @@
 ---
 id: a5de63ebea8dbee56860f4f2
 title: Diferenciar dois arrays
-challengeType: 5
+challengeType: 1
 forumTopicId: 16008
 dashedName: diff-two-arrays
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed6
 title: 'Проблема 88: Сума похідних чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302203
 dashedName: problem-88-product-sum-numbers
 ---

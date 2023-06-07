@@ -13,7 +13,7 @@ I numeri casuali sono utili per creare comportamenti casuali.
 
 JavaScript ha una funzione `Math.random()` che genera un numero decimale casuale tra `0` (incluso) e `1` (escluso). Così `Math.random()` può restituire uno `0` ma mai un `1`.
 
-**Nota:** Come visto in [Memorizzare valori con l'operatore di assegnazione](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), tutte le chiamate di funzione saranno risolte prima dell'esecuzione del `return`, così possiamo fare un `return` del valore della funzione `Math.random()`.
+**Nota:** Come visto in <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Memorizzare valori con l'operatore di assegnazione</a>, tutte le chiamate di funzione saranno risolte prima dell'esecuzione del `return`, così possiamo fare un `return` del valore della funzione `Math.random()`.
 
 # --instructions--
 

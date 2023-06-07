@@ -28,13 +28,19 @@ Construye `myStr` en varias líneas concatenando estas dos cadenas: `This is the
 
 # --hints--
 
-`myStr` debe tener una cadena con valor `This is the first sentence. This is the second sentence.`
+`myStr` Debe tener un solo carácter de espacio entre las dos cadenas.
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
+`myStr` Debe tener un valor de la cadena `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-Debes usar el operador `+=` para construir `myStr`.
+Deberías usar el operador `+=` para construir `myStr`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

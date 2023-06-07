@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Repl.it</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Cuando se prueba una solicitud `PUT`, a menudo enviarás datos junto con ella. Los datos que incluye con su solicitud `PUT` se llama el body de la petición.
 
@@ -17,6 +17,7 @@ Para enviar una petición `PUT` y un objeto JSON al endpoint `'/travellers'`, pu
 ```js
 chai
   .request(server)
+  .keepOpen()
   .put('/travellers')
   .send({
     "surname": [last name of a traveller of the past]

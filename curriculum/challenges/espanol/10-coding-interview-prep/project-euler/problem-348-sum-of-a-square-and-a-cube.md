@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffdb
 title: 'Problem 348: Sum of a square and a cube'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
 ---
@@ -10,16 +10,22 @@ dashedName: problem-348-sum-of-a-square-and-a-cube
 
 Many numbers can be expressed as the sum of a square and a cube. Some of them in more than one way.
 
-Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways. For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways: 22852 + 203 22232 + 663 18102 + 1253 11972 + 1563
+Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways.
+
+For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways:
+
+$$\begin{align}   & {2285}^2 + {20}^3 \\\\
+  & {2223}^2 + {66}^3 \\\\   & {1810}^2 + {125}^3 \\\\
+  & {1197}^2 + {156}^3 \end{align}$$
 
 Find the sum of the five smallest such palindromic numbers.
 
 # --hints--
 
-`euler348()` should return 1004195061.
+`sumOfSquareAndCube()` should return `1004195061`.
 
 ```js
-assert.strictEqual(euler348(), 1004195061);
+assert.strictEqual(sumOfSquareAndCube(), 1004195061);
 ```
 
 # --seed--
@@ -27,12 +33,12 @@ assert.strictEqual(euler348(), 1004195061);
 ## --seed-contents--
 
 ```js
-function euler348() {
+function sumOfSquareAndCube() {
 
   return true;
 }
 
-euler348();
+sumOfSquareAndCube();
 ```
 
 # --solutions--

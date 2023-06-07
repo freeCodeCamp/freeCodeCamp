@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { withTranslation, TFunction } from 'react-i18next';
+import type { DefaultTFuncReturn, TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { SuperBlocks } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
@@ -13,11 +14,19 @@ import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
-import { completedChallengesSelector, executeGA } from '../../../redux';
+import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import {
+  isCollegeAlgebraPyCert,
+  isNewJsCert,
+  isNewRespCert
+} from '../../../utils/is-a-cert';
+import {
+  isCodeAllyPractice,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -40,22 +49,29 @@ const mapStateToProps = (
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ toggleBlock, executeGA }, dispatch);
+  bindActionCreators({ toggleBlock }, dispatch);
 
 interface BlockProps {
   blockDashedName: string;
   challenges: ChallengeNode[];
   completedChallengeIds: string[];
-  executeGA: typeof executeGA;
   isExpanded: boolean;
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
 
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
+export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
+  return (
+    <div className='block-description'>
+      {intros.map((title, i) => (
+        <p dangerouslySetInnerHTML={{ __html: title }} key={i} />
+      ))}
+    </div>
+  );
+};
 
-export class Block extends Component<BlockProps> {
+class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);
@@ -64,33 +80,16 @@ export class Block extends Component<BlockProps> {
   }
 
   handleBlockClick(): void {
-    const { blockDashedName, toggleBlock, executeGA } = this.props;
+    const { blockDashedName, toggleBlock } = this.props;
     void playTone('block-toggle');
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Map Block Click',
-        action: blockDashedName
-      }
-    });
     toggleBlock(blockDashedName);
   }
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass hushScreenReaderText style={mapIconStyle} />
+      <GreenPass hushScreenReaderText />
     ) : (
-      <GreenNotCompleted hushScreenReaderText style={mapIconStyle} />
-    );
-  }
-
-  renderBlockIntros(arr: string[]): JSX.Element {
-    return (
-      <div className='block-description'>
-        {arr.map((str, i) => (
-          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
-        ))}
-      </div>
+      <GreenNotCompleted hushScreenReaderText />
     );
   }
 
@@ -106,6 +105,8 @@ export class Block extends Component<BlockProps> {
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
     const isNewJsAlgos = isNewJsCert(superBlock);
+    const isOdinProject = blockDashedName == 'the-odin-project';
+    const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -120,38 +121,24 @@ export class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isJsProject =
-        [3, 6, 10, 14, 17].includes(challenge.order) &&
-        challenge.challengeType === 5;
-
-      const isOtherProject =
-        challenge.challengeType === 3 ||
-        challenge.challengeType === 4 ||
-        challenge.challengeType === 10 ||
-        challenge.challengeType === 12 ||
-        challenge.challengeType === 13 ||
-        challenge.challengeType === 14;
-
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
       return (
-        (isJsProject && !isTakeHomeProject) ||
-        (isOtherProject && !isTakeHomeProject)
+        (isFinalProject(challenge.challengeType) ||
+          isCodeAllyPractice(challenge.challengeType)) &&
+        !isTakeHomeProject
       );
     });
 
-    const blockIntroObj: { title?: string; intro: string[] } = t(
-      `intro:${superBlock}.blocks.${blockDashedName}`
+    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
+    // the real type of TFunction is the type below, because intro can be an array of strings
+    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
+    // But changing the type will require refactoring that isn't worth it for a wrong type.
+    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
+      `intro:${superBlock}.blocks.${blockDashedName}.intro`
     );
-    const blockTitle = blockIntroObj ? blockIntroObj.title : null;
-    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
-    const {
-      expand: expandText,
-      collapse: collapseText
-    }: {
-      expand: string;
-      collapse: string;
-    } = t('intro:misc-text');
+    const expandText = t('intro:misc-text.expand');
+    const collapseText = t('intro:misc-text.collapse');
 
     const isBlockCompleted = completedCount === challengesWithCompleted.length;
 
@@ -184,7 +171,7 @@ export class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <button
               aria-expanded={isExpanded}
               className='map-title'
@@ -193,12 +180,23 @@ export class Block extends Component<BlockProps> {
               }}
             >
               <Caret />
-              <h4 className='course-title'>
-                {`${isExpanded ? collapseText : expandText}`}
-              </h4>
+              <div className='course-title'>
+                {`${isExpanded ? collapseText : expandText}`}{' '}
+                <span className='sr-only'>{blockTitle}</span>
+              </div>
               <div className='map-title-completed course-title'>
                 {this.renderCheckMark(isBlockCompleted)}
-                <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span
+                  aria-hidden='true'
+                  className='map-completed-count'
+                >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span className='sr-only'>
+                  ,{' '}
+                  {t('learn.challenges-completed', {
+                    completedCount,
+                    totalChallenges: challengesWithCompleted.length
+                  })}
+                </span>
               </div>
             </button>
             {isExpanded && (
@@ -230,7 +228,7 @@ export class Block extends Component<BlockProps> {
                 </div>
               )}
             </div>
-            {this.renderBlockIntros(blockIntroArr)}
+            <BlockIntros intros={blockIntroArr} />
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
@@ -268,7 +266,7 @@ export class Block extends Component<BlockProps> {
                 <span className='block-header-button-text map-title'>
                   {this.renderCheckMark(isBlockCompleted)}
                   <span>
-                    {blockTitle}{' '}
+                    {blockTitle}
                     <span className='sr-only'>
                       , {courseCompletionStatus()}
                     </span>
@@ -291,15 +289,14 @@ export class Block extends Component<BlockProps> {
                 </Link>
               )}
             </div>
-            {isExpanded && this.renderBlockIntros(blockIntroArr)}
+            {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
-              <>
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  superBlock={superBlock}
-                />
-              </>
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                superBlock={superBlock}
+                blockTitle={blockTitle}
+              />
             )}
           </div>
         </ScrollableAnchor>
@@ -309,50 +306,60 @@ export class Block extends Component<BlockProps> {
     const GridProjectBlock = (
       <ScrollableAnchor id={blockDashedName}>
         <div className='block block-grid grid-project-block'>
-          <Link
-            className='block-header'
-            onClick={() => {
-              this.handleBlockClick();
-            }}
-            to={challengesWithCompleted[0].fields.slug}
-          >
-            <div className='tags-wrapper'>
-              <span className='cert-tag'>
-                {t('misc.certification-project')}
-              </span>
-              {!isAuditedCert(curriculumLocale, superBlock) && (
-                <Link
-                  className='cert-tag'
-                  to={t('links:help-translate-link-url')}
-                >
-                  {t('misc.translation-pending')}
-                </Link>
-              )}
-            </div>
-            <div className='title-wrapper map-title'>
-              {this.renderCheckMark(isBlockCompleted)}
-              <h3 className='block-grid-title'>{blockTitle}</h3>
-            </div>
-            {this.renderBlockIntros(blockIntroArr)}
-          </Link>
+          <div className='tags-wrapper'>
+            <span className='cert-tag' aria-hidden='true'>
+              {t('misc.certification-project')}
+            </span>
+            {!isAuditedCert(curriculumLocale, superBlock) && (
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}{' '}
+                <span className='sr-only'>
+                  {blockTitle} {t('misc.certification-project')}
+                </span>
+              </Link>
+            )}
+          </div>
+          <div className='title-wrapper map-title'>
+            <h3 className='block-grid-title'>
+              <Link
+                className='block-header'
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+                to={challengesWithCompleted[0].fields.slug}
+              >
+                {this.renderCheckMark(isBlockCompleted)}
+                {blockTitle}{' '}
+                <span className='sr-only'>
+                  {t('misc.certification-project')}
+                </span>
+              </Link>
+            </h3>
+          </div>
+          <BlockIntros intros={blockIntroArr} />
         </div>
       </ScrollableAnchor>
     );
 
     const blockrenderer = () => {
-      if (isProjectBlock)
-        return isNewResponsiveWebDesign || isNewJsAlgos
+      if (isProjectBlock && !isOdinProject)
+        return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
           ? GridProjectBlock
           : ProjectBlock;
-      return isNewResponsiveWebDesign || isNewJsAlgos ? GridBlock : Block;
+      return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
+        ? GridBlock
+        : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {(isNewResponsiveWebDesign || isNewJsAlgos) &&
+        {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
         !isProjectBlock ? null : (
-          <Spacer />
+          <Spacer size='medium' />
         )}
       </>
     );

@@ -39,15 +39,13 @@ assert(
 O componente `DisplayMessages` deve renderizar um `div` contendo um elemento `h2`, um elemento `button`, um elemento `ul` e elementos `li` como filhos.
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const state = () => {
     mockedComponent.setState({ messages: ['__TEST__MESSAGE'] });
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const updated = await state();
+  const updated = state();
   assert(
     updated.find('div').length === 1 &&
       updated.find('h2').length === 1 &&
@@ -67,18 +65,16 @@ assert(code.match(/this\.state\.messages\.map/g));
 O elemento `input` deve renderizar o valor de `input` no state local.
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const testValue = '__TEST__EVENT__INPUT';
   const changed = () => {
     causeChange(mockedComponent, testValue);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const updated = await changed();
+  const updated = changed();
   assert(updated.find('input').props().value === testValue);
 };
 ```
@@ -86,19 +82,17 @@ async () => {
 Chamar o método `handleChange` deve atualizar o valor do `input` no state para o input atual.
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage = '__TEST__EVENT__MESSAGE__';
   const changed = () => {
     causeChange(mockedComponent, testMessage);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterInput = await changed();
+  const afterInput = changed();
   assert(
     initialState.input === '' &&
       afterInput.state().input === '__TEST__EVENT__MESSAGE__'
@@ -109,36 +103,34 @@ async () => {
 Clicar o botão `Add message` deve chamar o método `submitMessage` o qual deve adicionar o texto atual no `input` ao array `messages` no state.
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage_1 = '__FIRST__MESSAGE__';
   const firstChange = () => {
     causeChange(mockedComponent, testMessage_1);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const firstResult = await firstChange();
+  const firstResult = firstChange();
   const firstSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit_1 = await firstSubmit();
+  const afterSubmit_1 = firstSubmit();
   const submitState_1 = afterSubmit_1.state();
   const testMessage_2 = '__SECOND__MESSAGE__';
   const secondChange = () => {
     causeChange(mockedComponent, testMessage_2);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const secondResult = await secondChange();
+  const secondResult = secondChange();
   const secondSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit_2 = await secondSubmit();
+  const afterSubmit_2 = secondSubmit();
   const submitState_2 = afterSubmit_2.state();
   assert(
     initialState.messages.length === 0 &&
@@ -152,25 +144,23 @@ async () => {
 O método `submitMessage` deve limpar o input atual.
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage = '__FIRST__MESSAGE__';
   const firstChange = () => {
     causeChange(mockedComponent, testMessage);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const firstResult = await firstChange();
+  const firstResult = firstChange();
   const firstState = firstResult.state();
   const firstSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit = await firstSubmit();
+  const afterSubmit = firstSubmit();
   const submitState = afterSubmit.state();
   assert(firstState.input === testMessage && submitState.input === '');
 };

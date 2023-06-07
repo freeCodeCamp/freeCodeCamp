@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dc
-title: Створення ланцюгу If Else (Що-Якщо)
+title: Ланцюжок інструкцій if else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-`if/else` може бути об'єднаним у разі складних алгоритмів. Ось <dfn>pseudocode</dfn> декількох ланцюжків `if` / `else if` тверджень:
+Інструкції `if/else` можна об’єднати для складної логіки. Ось <dfn>псевдокод</dfn> декількох об’єднаних інструкцій `if` / `else if`:
 
 ```js
 if (condition1) {
@@ -26,29 +26,29 @@ if (condition1) {
 
 # --instructions--
 
-Запишіть ланцюжок `if`/`else if` для того, щоб виконати наступні умови:
+Напишіть об’єднані інструкції `if`/`else if`, щоб виконати наступні умови:
 
-`num < 5` дає `Tiny`  
-`num < 10` дає `Small`  
-`num < 15` дає `Medium`  
-`num < 20` дає `Large`  
-`num >= 20` дає `Huge`
+`num < 5` повертає `Tiny`  
+`num < 10` повертає `Small`  
+`num < 15` повертає `Medium`  
+`num < 20` повертає `Large`  
+`num >= 20` повертає `Huge`
 
 # --hints--
 
-Потрібно мати щонайменше 4 команди `else`
+Ви повинні мати принаймні 4 інструкції `else`
 
 ```js
 assert(code.match(/else/g).length > 3);
 ```
 
-Потрібно мати щонайменше 4 команди `if`
+Ви повинні мати принаймні 4 інструкції `if`
 
 ```js
 assert(code.match(/if/g).length > 3);
 ```
 
-Потрібно мати щонайменше 1 команду `return`
+Ви повинні мати принаймні 1 інструкцію `return`
 
 ```js
 assert(code.match(/return/g).length >= 1);

@@ -1,7 +1,7 @@
 ---
 id: a103376db3ba46b2d50db289
 title: 短線連接格式
-challengeType: 5
+challengeType: 1
 forumTopicId: 16078
 dashedName: spinal-tap-case
 ---

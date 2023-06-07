@@ -18,7 +18,7 @@ dashedName: incidence-matrix
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Ось приклад матриці інцидентності `incidence matrix` з 4-ма ребрами та 4-ма вершинами. Пам'ятайте, стовпці — це ребра, а рядки — вершини.
+Here is an example of an incidence matrix with 4 edges and 4 nodes. Пам'ятайте, стовпці — це ребра, а рядки — вершини.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 

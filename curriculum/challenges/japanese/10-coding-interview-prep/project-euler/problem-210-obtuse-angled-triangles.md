@@ -1,7 +1,7 @@
 ---
 id: 5900f43e1000cf542c50ff50
 title: '問題 210: 鈍角三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles
 ---

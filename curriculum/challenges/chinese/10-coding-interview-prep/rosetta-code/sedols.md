@@ -1,14 +1,16 @@
 ---
 id: 59d9c6bc214c613ba73ff012
 title: SEDOLs
-challengeType: 5
+challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
 ---
 
 # --description--
 
-For each number list of 6-digit [SEDOL](https://en.wikipedia.org/wiki/SEDOL "wp: SEDOL")s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
+<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+
+For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
 
 <pre>
 710889 => 7108899
@@ -64,8 +66,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
+  const checkSum = 0
 
-  return true;
+  return checkSum;
 }
 ```
 
@@ -90,7 +93,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```

@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffda
 title: '問題 345: 行列和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302004
 dashedName: problem-345-matrix-sum
 ---

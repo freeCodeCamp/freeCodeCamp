@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: Algoritmi di ordinamento/Shell Sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---
 
 # --description--
 
-Scrivi una funzione per ordinare un array di elementi usando l'algoritmo [Shell sort](https://en.wikipedia.org/wiki/Shell sort), un tipo di ordinamento a incremento in diminuzione. La funzione dovrebbe restituire l'array ordinato.
+Scrivi una funzione per ordinare un array di elementi usando l'algoritmo Shell sort, un metodo di ordinamento a intervalli decrescenti. La funzione dovrebbe restituire l'array ordinato.
 
 Shell Short (noto anche come metodo di Shellsort o Shell) prende il nome dal suo inventore, Donald Shell, che ha pubblicato l'algoritmo nel 1959.
 

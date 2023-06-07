@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec2
 title: ジャロ距離
-challengeType: 5
+challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
 ---

@@ -49,7 +49,7 @@ assert(!code.match(/i\s?=\s*?1\s*?;/g));
 Il tuo codice dovrebbe impostare la condizione di chiusura del ciclo in modo che si interrompa all'ultimo indice.
 
 ```js
-assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
+assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Il tuo codice dovrebbe fissare la condizione di chiusura del ciclo in modo che si fermi a un passo dalla lunghezza.

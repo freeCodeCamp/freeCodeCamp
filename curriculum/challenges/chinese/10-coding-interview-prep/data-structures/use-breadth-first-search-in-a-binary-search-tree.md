@@ -8,13 +8,13 @@ dashedName: use-breadth-first-search-in-a-binary-search-tree
 
 # --description--
 
-Here we will introduce another tree traversal method: breadth-first search. In contrast to the depth-first search methods from the last challenge, breadth-first search explores all the nodes in a given level within a tree before continuing on to the next level. Typically, queues are utilized as helper data structures in the design of breadth-first search algorithms.
+这里我们将介绍另一种树遍历方法：广度优先搜索。 与上一次挑战中的深度优先搜索方法相比，广度优先搜索在继续进入下一级别之前探索树中给定级别中的所有节点。 通常，队列在广度优先搜索算法的设计中用作辅助数据结构。
 
-In this method, we start by adding the root node to a queue. Then we begin a loop where we dequeue the first item in the queue, add it to a new array, and then inspect both its child subtrees. If its children are not null, they are each enqueued. This process continues until the queue is empty.
+在此方法中，我们首先将根节点添加到队列中。 然后我们开始一个循环，我们将队列中的第一个项目出列，将其添加到一个新数组，然后检查它们的子子树。 If its children are not null, they are each enqueued. 此过程将继续，直到队列为空。
 
 # --instructions--
 
-Let's create a breadth-first search method in our tree called `levelOrder`. This method should return an array containing the values of all the tree nodes, explored in a breadth-first manner. Be sure to return the values in the array, not the nodes themselves. A level should be traversed from left to right. Next, let's write a similar method called `reverseLevelOrder` which performs the same search but in the reverse direction (right to left) at each level.
+Let's create a breadth-first search method in our tree called `levelOrder`. 此方法应返回一个包含所有树节点值的数组，并以广度优先的方式进行探索。 确保返回数组中的值，而不是节点本身。 应从左到右遍历一个级别。 接下来，让我们编写一个名为`reverseLevelOrder`的类似方法，它在每个级别执行相同的搜索，但是反向（从右到左）。
 
 # --hints--
 

@@ -3,11 +3,11 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
-import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
+import { fetchUser } from '../../redux/actions';
+import { isSignedInSelector } from '../../redux/selectors';
 
 interface CertificationProps {
   children?: React.ReactNode;
-  executeGA?: (args: { type: string; data: string }) => void;
   fetchUser: () => void;
   isSignedIn?: boolean;
   pathname: string;
@@ -17,17 +17,14 @@ const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
   isSignedIn
 }));
 
-const mapDispatchToProps = { fetchUser, executeGA };
+const mapDispatchToProps = { fetchUser };
 
 class CertificationLayout extends Component<CertificationProps> {
   static displayName = 'CertificationLayout';
   componentDidMount() {
-    const { isSignedIn, fetchUser, pathname } = this.props;
+    const { isSignedIn, fetchUser } = this.props;
     if (!isSignedIn) {
       fetchUser();
-    }
-    if (this.props.executeGA) {
-      this.props.executeGA({ type: 'page', data: pathname });
     }
   }
 

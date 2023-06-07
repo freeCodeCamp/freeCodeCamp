@@ -1,13 +1,15 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Step 29
+title: Step 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
 
-Per migliorare l'accessibilità dell'immagine che hai appena aggiunto, inserisciun attributo `alt` con il testo `Five cats looking around a field.`
+Per migliorare l'accessibilità dell'immagine che hai aggiunto, aggiungi un attributo `alt` con il testo:
+
+`Five cats looking around a field.`
 
 # --hints--
 
@@ -17,7 +19,7 @@ L'elemento `figure` dovrebbe avere un tag di apertura. I tag di apertura hanno q
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-L'elemento `ol` dovrebbe avere un tag di chiusura. I tag di chiusura hanno un carattere `/` subito dopo il carattere `<`.
+L'elemento `figure` dovrebbe avere un tag di chiusura. I tag di chiusura hanno un carattere`/` subito dopo il carattere `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);
@@ -58,12 +60,12 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>

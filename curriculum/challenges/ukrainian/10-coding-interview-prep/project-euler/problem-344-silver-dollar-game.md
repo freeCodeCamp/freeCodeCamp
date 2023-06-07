@@ -1,14 +1,14 @@
 ---
 id: 5900f4c51000cf542c50ffd7
 title: 'Задача 344: Гра "Срібний долар"'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
 ---
 
 # --description--
 
-Один з варіантів N.G. Гру де Брейна "Срібний долар" можна описати таким чином:
+One variant of N.G. de Bruijn's silver dollar game can be described as follows:
 
 В рядку квадратів розміщена певна кількість монет, щонайбільше одна на квадрат. Цінність має лише монета під назвою "срібний долар". Двоє гравців ходять по черзі. Хід може бути або звичайним, або спеціальним.
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0d0b6c005b0e76f075
-title: 'Мережа: Використання urllib в Python'
+title: 'Мережа: використання urllib у Python'
 challengeType: 11
 videoId: 7lFM1T_CxBs
 bilibiliIds:
@@ -25,15 +25,15 @@ for line in fhand:
 
 ## --answers--
 
-Лише зміст "romeo.txt".
+Лише зміст «romeo.txt».
 
 ---
 
-Верхній колонтитул і зміст "romeo.txt".
+Верхній колонтитул і зміст «romeo.txt».
 
 ---
 
-Верхній та нижній колонтитули, зміст "romeo.txt".
+Верхній та нижній колонтитули, зміст «romeo.txt».
 
 ## --video-solution--
 

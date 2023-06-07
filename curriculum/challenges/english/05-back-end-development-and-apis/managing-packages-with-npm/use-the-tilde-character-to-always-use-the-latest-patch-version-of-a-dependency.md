@@ -10,7 +10,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
 
-To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (`~`) character. Here's an example of how to allow updates to any 1.3.x version.
+To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (`~`) character. Here's an example of how to allow updates to any `1.3.x` version.
 
 ```json
 "package": "~1.3.8"
@@ -18,15 +18,15 @@ To allow an npm dependency to update to the latest PATCH version, you can prefix
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade moment is to use a specific version (2.10.2). But now, you want to allow the latest 2.10.x version.
+In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (`1.2.13`). But now, you want to allow the latest `1.2.x` version.
 
-Use the tilde (`~`) character to prefix the version of moment in your dependencies, and allow npm to update it to any new PATCH release.
+Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` in your dependencies, and allow npm to update it to any new _patch_ release.
 
 **Note:** The version numbers themselves should not be changed.
 
 # --hints--
 
-"dependencies" should include "moment"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Use the tilde (`~`) character to prefix the version of moment in your dependenci
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of moment in your dependenci
   );
 ```
 
-"moment" version should match "~2.10.2"
+`"@freecodecamp/example"` version should match `"~1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ Use the tilde (`~`) character to prefix the version of moment in your dependenci
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

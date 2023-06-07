@@ -1,7 +1,7 @@
 ---
 id: 5900f4be1000cf542c50ffd0
 title: 'Problema 337: Sequenze tozienti a gradino'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301995
 dashedName: problem-337-totient-stairstep-sequences
 ---

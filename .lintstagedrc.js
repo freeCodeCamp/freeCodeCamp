@@ -43,7 +43,7 @@ module.exports = {
 
     if (files.length > 10) {
       completedStages.add('markdown');
-      return 'npm run lint:challenges';
+      return 'pnpm run lint:challenges';
     } else {
       return files.map(
         filename => `node ./tools/scripts/lint/index.js '${filename}'`

@@ -1,7 +1,7 @@
 ---
 id: 5900f5311000cf542c510043
 title: 'Завдання 452: Довгі товари'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302125
 dashedName: problem-452-long-products
 ---

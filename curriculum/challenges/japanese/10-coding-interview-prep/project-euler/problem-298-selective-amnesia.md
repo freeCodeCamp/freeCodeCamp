@@ -1,7 +1,7 @@
 ---
 id: 5900f4971000cf542c50ffa9
 title: '問題 298: 選択的健忘'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301950
 dashedName: problem-298-selective-amnesia
 ---

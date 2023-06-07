@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc800c
 title: ソートアルゴリズム / 順列ソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302316
 dashedName: sorting-algorithmspermutation-sort
 ---

@@ -1,7 +1,7 @@
 ---
 id: 594d8d0ab97724821379b1e6
 title: Médias/Moda
-challengeType: 5
+challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
 ---

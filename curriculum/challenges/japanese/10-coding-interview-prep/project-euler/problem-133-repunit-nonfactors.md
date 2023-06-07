@@ -1,7 +1,7 @@
 ---
 id: 5900f3f21000cf542c50ff04
 title: '問題 133: レピュニット数の非因数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
 ---

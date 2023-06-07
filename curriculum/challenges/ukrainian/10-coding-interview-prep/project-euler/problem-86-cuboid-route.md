@@ -1,7 +1,7 @@
 ---
 id: 5900f3c31000cf542c50fed5
 title: 'Завдання 86: Кубоподібний маршрут'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
 ---

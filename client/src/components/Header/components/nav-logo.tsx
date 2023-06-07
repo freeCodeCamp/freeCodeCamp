@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import FreeCodeCampLogo from '../../../assets/icons/FreeCodeCamp-logo';
+import FreeCodeCampLogo from '../../../assets/icons/freecodecamp';
 
 const NavLogo = (): JSX.Element => {
   const { t } = useTranslation();

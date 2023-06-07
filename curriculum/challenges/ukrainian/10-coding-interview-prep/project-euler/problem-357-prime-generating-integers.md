@@ -1,7 +1,7 @@
 ---
 id: 5900f4d11000cf542c50ffe4
 title: 'Задача 357: Прості генератори цілих чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers
 ---

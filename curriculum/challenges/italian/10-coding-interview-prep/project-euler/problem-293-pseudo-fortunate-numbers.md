@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa4
 title: 'Problema 293: Numeri Pseudo-Fortunati'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301945
 dashedName: problem-293-pseudo-fortunate-numbers
 ---

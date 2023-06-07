@@ -1,7 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feec
 title: '問題 109: ダーツ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301733
 dashedName: problem-109-darts
 ---

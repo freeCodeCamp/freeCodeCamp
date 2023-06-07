@@ -8,8 +8,8 @@ Existem alguns termos que usamos quando discutimos o conteúdo do nosso currícu
 
 - `certification` : Quando nos referimos a uma certificação neste caso, estamos falando de um certificado factual que os usuários podem solicitar. Não estamos falando do nome do superBlock específico.
 - `superBlock` : Um superbloco é a coleção de desafios em nível superior. Cada superbloco corresponde a uma certificação no currículo (por exemplo, Design responsivo para a web).
-- `block` : Um bloco é uma seção dentro de um superbloco. Um bloco corresponde a um grupo de desafios em uma certificação determinada (por exemplo, HTML e HTML5 básicos)
-- `challenge` : Um desafio é uma lição única dentro do currículo (por exemplo, Conhecer os elementos HTML)
+- `block` : Um bloco é uma seção dentro de um superbloco. Um bloco corresponde a um grupo de desafios em uma certificação determinada (por exemplo, HTML e HTML5 básico)
+- `challenge` : um desafio é uma lição única dentro do currículo (por exemplo, Conhecer os elementos HTML)
 
 ## Árvore de arquivos
 
@@ -83,7 +83,6 @@ Faça o seguinte para renomear um bloco do currículo:
 1. Mude o nome da mesma pasta do bloco em _todos_ os outros diretórios de idioma para que correspondam. Eles devem ter a mesma estrutura que a do inglês ou haverá um erro na build.
 1. Mude o nome da pasta do bloco no diretório `_meta`.
 1. Atualize as propriedades `name` e `dashedName` para aquele arquivo `meta.json` do bloco.
-1. Atualize `client/utils/help-category-map.json` para que use o novo nome do bloco como chave.
 1. Atualize a pasta do bloco em `client/src/pages/learn/{superBlock}`.
 1. No arquivo `index.md` da pasta acima, atualize o valor de `block` no frontmatter.
 1. Nos arquivos `client/i18n/locales/{language}/intro.json`, atualize o nome do bloco com o novo nome para todos os idiomas. No arquivo `intro.json` do inglês, atualize também o `title`.

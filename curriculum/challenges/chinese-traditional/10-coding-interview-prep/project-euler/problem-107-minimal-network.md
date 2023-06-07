@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
-challengeType: 5
+title: '問題 107：最小網絡'
+challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
 ---
@@ -27,7 +27,7 @@ The same network can be represented by the matrix below.
 
 However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
 
-<img class="img-responsive center-block" alt="Network wtih seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
 Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
 

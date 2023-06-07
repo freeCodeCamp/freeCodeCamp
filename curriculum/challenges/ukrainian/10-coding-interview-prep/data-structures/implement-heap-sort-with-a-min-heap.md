@@ -18,7 +18,7 @@ dashedName: implement-heap-sort-with-a-min-heap
 
 # --hints--
 
-Повинна існувати структура даних MinHeap (неспадна купа).
+The `MinHeap` data structure should exist.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-MinHeap повинна мати метод під назвою insert.
+`MinHeap` повинен мати метод під назвою `insert`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-MinHeap повинна мати метод під назвою remove.
+`MinHeap` повинен мати метод під назвою `remove`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-MinHeap повинна мати метод під назвою sort.
+`MinHeap` повинен мати метод під назвою `sort`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Метод sort повинен повертати масив, що містить усі елементи, додані до неспадної купи, у відсортованому порядку.
+The `sort` method should return an array containing all items added to the min heap in sorted order.
 
 ```js
 assert(

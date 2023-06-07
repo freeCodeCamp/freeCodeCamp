@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-If you are unfamiliar with `const`, check out [this challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
+If you are unfamiliar with `const`, check out <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">this challenge about the <code>const</code> keyword</a>.
 
 The `const` declaration has many use cases in modern JavaScript.
 
@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` will result in an error. The `console.log` will display the value `[5, 6, 45]`.
+`s = [1, 2, 3]` will result in an error. After commenting out that line, the `console.log` will display the value `[5, 6, 45]`.
 
 As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
 

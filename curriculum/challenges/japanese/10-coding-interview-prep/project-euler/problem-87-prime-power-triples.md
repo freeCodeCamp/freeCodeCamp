@@ -1,7 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed8
 title: '問題 87: 素数の累乗の三つ組'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302201
 dashedName: problem-87-prime-power-triples
 ---

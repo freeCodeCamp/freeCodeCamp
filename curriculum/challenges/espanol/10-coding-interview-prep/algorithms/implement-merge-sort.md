@@ -1,6 +1,6 @@
 ---
 id: 587d825c367417b2b2512c8f
-title: Implement Merge Sort
+title: Implementar ordenamiento por mezcla (merge sort)
 challengeType: 1
 forumTopicId: 301614
 dashedName: implement-merge-sort
@@ -8,27 +8,27 @@ dashedName: implement-merge-sort
 
 # --description--
 
-Another common intermediate sorting algorithm is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:
+El ordenamiento por mezcla (merge sort) es otro algoritmo intermedio de ordenamiento. Así como el ordenamiento rápido (quick sort), el ordenamiento por mezcla (merge sort) usa el enfoque divide y conquistaras con recurisidad para ordenar un arreglo. Este algoritmo aprovecha que es relativamente fácil juntar dos arreglos en uno solo de manera ordenada, siempre y cuando ambos arreglos esten ordenadps desde un inicio. Pero si solo empezamos con único arreglo desordenado ¿Cómo conseguimos dos arreglos ordenados? Bueno podemos dividir recursivamente nuestro arreglo de entrada, hasta alcanzar un caso base de un arreglo con un solo elemento. Un arreglo de un solo elemento naturalmente está ordenado, entoces podemos empezar a combinar. Esta combinación resolverá las llamadas recursivas que separarón el arreglo, finalemente creando un arreglo ordenado con todos los elementos. Los pasos del ordenamiento por mezcla (merge sort) son:
 
-**1)** Recursively split the input array in half until a sub-array with only one element is produced.
+**1)** Separa recursivamente el arreglo de entrada a la mitad hasta que un subarreglo con un solo elemento es producido.
 
-**2)** Merge each sorted sub-array together to produce the final sorted array.
+**2)**Mezcla cada subarreglo ordenado para que al final produzcas un solo arreglo ordenado.
 
-Merge sort is an efficient sorting method, with time complexity of *O(nlog(n))*. This algorithm is popular because it is performant and relatively easy to implement.
+El ordenamiento por mezcla (merge sort) es un metodo eficiente para ordenar, con complejidad algoritmica de *O(nlog(n))*. Este algotimo es muy popular, debido a su rendimiento y es relativamente sencillo de implementar.
 
-As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
+Por otro lado esté será el último algoritmo de ordenamiento que cubriremos aquí. Aunque posteriormente en la sección sobre estructura de datos de árboles describiremos el ordenamiento por montículos (heap sort) y otros métodos de ordenamiento más eficientes que requieren un montículo binario (binary heap) para su implementación.
 
-**Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
+**Instrucciones:**Escribe una función `mergeSort`(ordenamiento por mezcla) que toma un arreglo de enterós como entrada y regresa un arreglo de esos enteros de manera ordenada del más pequeño al más grande. Una bunea manera de implementarlo es escrbiendo una función llamada `merge` (mezcla), la cuál es responsable de mezclar dos arreglos ordenados y otra función llamada `mergeSort`(ordenamiento por mezlca), la cuál usando recursividad produciendo arreglos de un solo elemento, con los que alimentaremos a la función merge (mezcla). ¡Buena suerte!
 
 # --hints--
 
-`mergeSort` should be a function.
+`mergeSort` debe ser una función.
 
 ```js
 assert(typeof mergeSort == 'function');
 ```
 
-`mergeSort` should return a sorted array (least to greatest).
+`mergeSort` Debería retornar un arreglo ordenado (menor a mayor).
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`mergeSort` should return an array that is unchanged except for order.
+`mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])`debe retornar un arreglo sin cambios excepto por el orden.
 
 ```js
 assert.sameMembers(
@@ -83,7 +83,7 @@ assert.sameMembers(
 );
 ```
 
-`mergeSort` should not use the built-in `.sort()` method.
+`mergeSort`no debe de usar el método incorporada (built-in)`.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());
@@ -117,8 +117,6 @@ function mergeSort(array) {
   return array;
   // Only change code above this line
 }
-
-mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

@@ -1,7 +1,7 @@
 ---
 id: 5ea2815e364d9a2222ea55f8
 title: LZW компресія
-challengeType: 5
+challengeType: 1
 forumTopicId: 385288
 dashedName: lzw-compression
 ---
@@ -10,11 +10,9 @@ dashedName: lzw-compression
 
 Алгоритм Лемпеля-Зіва-Велча (LZW) забезпечує стискання даних без втрат.
 
-Детальніше про алгоритм можна прочитати у [статті ](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) Вікіпедія.
-
 # --instructions--
 
-Напишіть функцію, яка бере два параметри. Перший параметр - логічне значення, де `true`позначає стиснути та `false`позначає розвернути. Другий параметр - це рядок або масив для обробки. Якщо це рядок для стиснення, поверніть масив чисел. Якщо це масив чисел для розгортання, поверніть рядок.
+Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
 
 # --hints--
 
@@ -24,7 +22,7 @@ dashedName: lzw-compression
 assert(typeof LZW === 'function');
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` має повернути рядок.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` має повернути масив.
 
 ```js
 assert(Array.isArray(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT')));

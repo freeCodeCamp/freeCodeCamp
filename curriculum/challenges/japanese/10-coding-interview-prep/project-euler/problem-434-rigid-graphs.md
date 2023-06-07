@@ -1,7 +1,7 @@
 ---
 id: 5900f51f1000cf542c510031
 title: '問題 434: 剛なグラフ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
 ---

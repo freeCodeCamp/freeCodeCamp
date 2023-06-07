@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e06
 title: 長方形を切る
-challengeType: 5
+challengeType: 1
 forumTopicId: 302242
 dashedName: cut-a-rectangle
 ---

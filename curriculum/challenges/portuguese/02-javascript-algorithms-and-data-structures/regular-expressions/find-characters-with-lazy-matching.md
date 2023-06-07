@@ -8,7 +8,7 @@ dashedName: find-characters-with-lazy-matching
 
 # --description--
 
-Em expressões regulares, uma captura <dfn>gananciosa</dfn> encontra a parte mais longa o possível de uma string em que a regex atua e a retorna como resultado. A alternativa se chama captura <dfn>preguiçosa</dfn> e ela encontra o menor pedaço o possível de uma string que satisfaz a regex.
+Em expressões regulares, uma captura <dfn>gananciosa</dfn> encontra a parte mais longa o possível de uma string em que a regex atua e a retorna como resultado. A alternativa se chama captura <dfn>preguiçosa</dfn> e ela encontra o menor pedaço possível de uma string que satisfaz a regex.
 
 Você pode aplicar a regex `/t[a-z]*i/` à string `"titanic"`. Essa regex é basicamente um padrão que começa com `t`, termina com `i`e tem algumas letras no meio delas.
 

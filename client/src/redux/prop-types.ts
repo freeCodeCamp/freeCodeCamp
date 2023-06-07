@@ -1,77 +1,7 @@
-import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import { Themes } from '../components/settings/theme';
-import { certMap } from '../resources/cert-and-project-map';
-
-export const UserPropType = PropTypes.shape({
-  about: PropTypes.string,
-  completedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      solution: PropTypes.string,
-      githubLink: PropTypes.string,
-      challengeType: PropTypes.number,
-      completedDate: PropTypes.number,
-      challengeFiles: PropTypes.array
-    })
-  ),
-  email: PropTypes.string,
-  githubProfile: PropTypes.string,
-  is2018DataVisCert: PropTypes.bool,
-  isApisMicroservicesCert: PropTypes.bool,
-  isBackEndCert: PropTypes.bool,
-  isDataVisCert: PropTypes.bool,
-  isEmailVerified: PropTypes.bool,
-  isFrontEndCert: PropTypes.bool,
-  isFrontEndLibsCert: PropTypes.bool,
-  isFullStackCert: PropTypes.bool,
-  isHonest: PropTypes.bool,
-  isInfosecQaCert: PropTypes.bool,
-  isQaCertV7: PropTypes.bool,
-  isInfosecCertV7: PropTypes.bool,
-  isJsAlgoDataStructCert: PropTypes.bool,
-  isRelationalDatabaseCertV8: PropTypes.bool,
-  isRespWebDesignCert: PropTypes.bool,
-  isSciCompPyCertV7: PropTypes.bool,
-  isDataAnalysisPyCertV7: PropTypes.bool,
-  isMachineLearningPyCertV7: PropTypes.bool,
-  linkedin: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  portfolio: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string,
-      url: PropTypes.string,
-      image: PropTypes.string,
-      description: PropTypes.string
-    })
-  ),
-  savedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      challengeFiles: PropTypes.array
-    })
-  ),
-  sendQuincyEmail: PropTypes.bool,
-  sound: PropTypes.bool,
-  theme: PropTypes.string,
-  keyboardShortcuts: PropTypes.bool,
-  twitter: PropTypes.string,
-  username: PropTypes.string,
-  website: PropTypes.string
-});
-
-export const CurrentCertsPropType = PropTypes.arrayOf(
-  PropTypes.shape({
-    show: PropTypes.bool,
-    title: PropTypes.string,
-    certSlug: PropTypes.string
-  })
-);
+import { fullCertMap } from '../resources/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -96,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: typeof certMap[number]['title'];
+    title: (typeof fullCertMap)[number]['title'];
   };
   headings: [
     {
@@ -117,9 +47,13 @@ export type MarkdownRemark = {
   };
 };
 
-type Question = { text: string; answers: string[]; solution: number };
+type Question = {
+  text: string;
+  answers: string[];
+  solution: number;
+};
 type Fields = { slug: string; blockName: string; tests: Test[] };
-export type Required = {
+type Required = {
   link: string;
   raw: boolean;
   src: string;
@@ -185,6 +119,7 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     question: Question;
+    assignments: string[];
     required: Required[];
     solutions: {
       [T in FileKey]: FileKeyChallenge;
@@ -207,18 +142,23 @@ export type ChallengeNode = {
   };
 };
 
+export type CertificateNode = {
+  challenge: {
+    // TODO: use enum
+    certification: string;
+    tests: { id: string }[];
+  };
+};
+
+export type AllChallengesInfo = {
+  challengeEdges: { node: ChallengeNode }[];
+  certificateNodes: CertificateNode[];
+};
+
 export type AllChallengeNode = {
   edges: [
     {
       node: ChallengeNode;
-    }
-  ];
-};
-
-export type AllMarkdownRemark = {
-  edges: [
-    {
-      node: MarkdownRemark;
     }
   ];
 };
@@ -243,7 +183,7 @@ export type ChallengeTest = {
   testString: string;
 };
 
-export type CertTest = {
+type CertTest = {
   id: string;
   title: string;
 };
@@ -261,17 +201,13 @@ export type User = {
   isCheater: boolean;
   isDonating: boolean;
   isHonest: boolean;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
   joinDate: string;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
-  portfolio: Portfolio[];
+  portfolio: PortfolioProjectData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -305,6 +241,7 @@ export type ClaimedCertifications = {
   isBackEndCert: boolean;
   isDataVisCert: boolean;
   isEmailVerified: boolean;
+  isCollegeAlgebraPyCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
@@ -319,7 +256,7 @@ export type ClaimedCertifications = {
   isMachineLearningPyCertV7: boolean;
 };
 
-export type SavedChallenges = SavedChallenge[];
+type SavedChallenges = SavedChallenge[];
 
 export type SavedChallenge = {
   id: string;
@@ -354,8 +291,9 @@ export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
-  nextChallengePath: string;
-  prevChallengePath: string;
+  isFirstStep: boolean;
+  nextChallengePath: string | null;
+  prevChallengePath: string | null;
   removeComments: boolean;
   superBlock: SuperBlocks;
   title?: string;
@@ -363,15 +301,15 @@ export type ChallengeMeta = {
   helpCategory: string;
 };
 
-export type Portfolio = {
+export type PortfolioProjectData = {
   id: string;
-  title?: string;
-  url?: string;
-  image?: string;
-  description?: string;
+  title: string;
+  url: string;
+  image: string;
+  description: string;
 };
 
-export type FileKeyChallenge = {
+type FileKeyChallenge = {
   contents: string;
   ext: Ext;
   head: string;
@@ -387,7 +325,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string;
+  error: null | string | unknown;
   head: string;
   tail: string;
   seed: string;

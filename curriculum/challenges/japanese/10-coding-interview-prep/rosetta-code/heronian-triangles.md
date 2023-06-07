@@ -1,14 +1,14 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: ヘロンの三角形
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---
 
 # --description--
 
-三角形の面積についての[ヘロンの公式](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula")は、3辺の長さが `a`、`b`、`c` である場合、以下のとおりです。
+Hero's formula for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

@@ -8,15 +8,15 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在標有 `#8` 的 `Comparisons` 套件裏，將每個 `assert` 改成 `assert.isAbove` 或 `assert.isAtMost` 方法，讓測試通過（結果應該返回 `true`）。 不要改變傳入斷言的參數。
+在 `tests/1_unit-tests.js` 中，在標有 `#8` 的 `Comparisons` 套件裏，將每個 `assert` 改成 `assert.isAbove` 或 `assert.isAtMost` 方法，讓測試通過（結果應該返回 `true`）。 不要修改傳給斷言的參數。
 
 # --hints--
 
-不應有未通過的測試
+應通過所有測試。
 
 ```js
 (getUserInput) =>

@@ -1,7 +1,7 @@
 ---
 id: 597b2b2a2702b44414742771
 title: Факторіал
-challengeType: 5
+challengeType: 1
 forumTopicId: 302263
 dashedName: factorial
 ---
@@ -22,7 +22,7 @@ dashedName: factorial
   <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
 
-**Примітка:** `0! = 1`
+**Note:** `0! = 1`
 
 # --hints--
 

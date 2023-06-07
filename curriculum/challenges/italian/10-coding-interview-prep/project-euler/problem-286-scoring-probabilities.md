@@ -1,7 +1,7 @@
 ---
 id: 5900f48a1000cf542c50ff9d
 title: 'Problema 286: Dare punteggi alle probabilità'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities
 ---

@@ -11,7 +11,7 @@ dashedName: serve-an-html-file
 Você pode responder às solicitações com um arquivo usando o método `res.sendFile(path)`. Você pode colocá-lo dentro do manipulador de rota `app.get('/', ...)`. Nos bastidores, este método definirá os cabeçalhos apropriados para instruir o navegador sobre como lidar com o arquivo que você deseja enviar, de acordo com o tipo. Então, ele lerá e enviará o arquivo. Este método precisa de um caminho de arquivo absoluto. Recomendamos que use a variável global `__dirname` do Node para calcular o caminho assim:
 
 ```js
-absolutePath = __dirname + relativePath/file.ext
+absolutePath = __dirname + '/relativePath/file.ext'
 ```
 
 # --instructions--

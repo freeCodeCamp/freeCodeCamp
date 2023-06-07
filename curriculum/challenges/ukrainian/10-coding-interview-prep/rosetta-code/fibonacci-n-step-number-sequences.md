@@ -1,14 +1,14 @@
 ---
 id: 598eef80ba501f1268170e1e
 title: Послідовність n-крокових чисел Фібоначчі
-challengeType: 5
+challengeType: 1
 forumTopicId: 302267
 dashedName: fibonacci-n-step-number-sequences
 ---
 
 # --description--
 
-Ця серія чисел є розширенням звичайної [послідовності Фібоначчі](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") де:
+These number series are an expansion of the ordinary Fibonacci sequence where:
 
 <ol>
   <li>Для $n = 2$ ми маємо послідовність Фібоначчі; з початковими значеннями $[1, 1]$ і $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
@@ -17,7 +17,7 @@ dashedName: fibonacci-n-step-number-sequences
   <li>Для загального $n>2$ ми маємо послідовність Фібоначчі $n$-крокову - $F_k^n$; з початковими значеннями з перших $n$ значень $(n-1)$'th $n$-крокової послідовності Фібоначчі $F_k^{n-1}$; і $k$'th значення цієї $n$'ої послідовності - $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}$</li>
 </ol>
 
-Для невеликих значень $n$, <ahref="https://en.wikipe[іноді використовують грецькі числівникові префікси](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") щоб індивідуально дати назву кожній послідовності.
+For small values of $n$, Greek numeric prefixes are sometimes used to individually name each series.
 
 Послідовність $n$- крокових чисел Фібоначчі:
 
@@ -33,7 +33,7 @@ dashedName: fibonacci-n-step-number-sequences
 | 9   | нонаначчі           | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
 | 10  | деканаччі           | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-Союзні послідовності можна створити там, де початкові значення змінюються: [Послідовність Люка](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") сумує два попередніх значення, так само як серія Фібоначчі для $n= 2$, але використовує рядок $\[2, 1]$ як початкові значення.
+Allied sequences can be generated where the initial values are changed: The Lucas series sums the two preceding values like the fibonacci series for $n=2$ but uses $\[2, 1]$ as its initial values.
 
 # --instructions--
 

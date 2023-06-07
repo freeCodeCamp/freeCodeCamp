@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e78
 title: General FizzBuzz
-challengeType: 5
+challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
 ---
 
 # --description--
 
-Write a generalized version of [FizzBuzz](https://rosettacode.org/wiki/FizzBuzz) that works for any list of factors, along with their words.
+Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
 This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
 

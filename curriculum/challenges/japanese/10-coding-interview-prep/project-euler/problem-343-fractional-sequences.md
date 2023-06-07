@@ -1,7 +1,7 @@
 ---
 id: 5900f4c41000cf542c50ffd6
 title: '問題 343: 分数数列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302002
 dashedName: problem-343-fractional-sequences
 ---

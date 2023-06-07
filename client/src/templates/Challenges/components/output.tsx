@@ -1,6 +1,7 @@
 import { isEmpty } from 'lodash-es';
 import React from 'react';
 import sanitizeHtml from 'sanitize-html';
+import i18next from 'i18next';
 
 import './output.css';
 
@@ -19,7 +20,12 @@ function Output({ defaultOutput, output }: OutputProps): JSX.Element {
   return (
     <pre
       className='output-text'
+      data-cy='output-text'
       dangerouslySetInnerHTML={{ __html: message }}
+      role='region'
+      aria-label={i18next.t('learn.editor-tabs.console')}
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
     />
   );
 }

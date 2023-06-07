@@ -26,7 +26,7 @@ dashedName: introduction-to-tensorflow
 
 ---
 
-Мітка-заповнювач
+Заповнювач
 
 ---
 

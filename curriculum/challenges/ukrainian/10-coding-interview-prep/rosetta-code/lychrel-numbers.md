@@ -1,7 +1,7 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
 title: Числа Лішрел
-challengeType: 5
+challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
 ---
@@ -68,7 +68,7 @@ dashedName: lychrel-numbers
 
 # --hints--
 
-`isLychrel` повинен бути функцією.
+`isLychrel` має бути функцією.
 
 ```js
 assert(typeof isLychrel === 'function');

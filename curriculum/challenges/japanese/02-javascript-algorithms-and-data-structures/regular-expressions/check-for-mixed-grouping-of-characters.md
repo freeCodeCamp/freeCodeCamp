@@ -58,7 +58,21 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-正規表現をテストするには `.test()` を使用する必要があります。
+正規表現 `myRegex` は文字列 `FranklinRoosevelt` に対して `false` を返す必要があります。
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('FranklinRoosevelt'));
+```
+
+正規表現 `myRegex` は文字列 `EleanorRoosevelt` に対して `false` を返す必要があります。
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('EleanorRoosevelt'));
+```
+
+`.test()` を使用して正規表現をテストする必要があります。
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
@@ -85,6 +99,6 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let myRegex = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/;
 let result = myRegex.test(myString);
 ```

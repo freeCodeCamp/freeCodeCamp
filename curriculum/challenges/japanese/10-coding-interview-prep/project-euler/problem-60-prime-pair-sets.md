@@ -1,7 +1,7 @@
 ---
 id: 5900f3a81000cf542c50febb
 title: '問題 60: 素数ペア集合'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
 ---

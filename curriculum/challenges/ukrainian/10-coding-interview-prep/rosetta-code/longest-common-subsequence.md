@@ -1,72 +1,66 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
 title: Найдовша спільна підпослідовність
-challengeType: 5
+challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
 ---
 
 # --description--
 
-** Найдовша спільна підпослідовність**([**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) груп А і В - це найдовша група спільних елементів між двома групами, які розташовані в однаковому порядку в кожній групі. Наприклад, послідовності "1234" і "1224533324" мають LCS "1234":
+The **longest common subsequence** (or **LCS**) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. For example, the sequences `1234` and `1224533324` have an LCS of `1234`:<u>1234</u>
+<u>12</u>245<u>3</u>332<u>4</u>
 
-***1234***
+For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+<u>t</u>hi<u>si</u>sa<u>test</u>
 
-***12***245***3***332***4***
+<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
-На прикладі рядка розглянемо послідовності "thisisatest" та "testing123testing". LCS буде "tsitest":
-
-***t***hi***si***sa***test***
-
-***t***e***s***t***i***ng123***test***ing.
-
-Ваш код має складатися тільки з рядків.
-
-Для отримання додаткової інформації про це завдання, будь ласка, дивіться [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem).
+Your code only needs to deal with strings.
 
 # --instructions--
 
-Напишіть чутливу до регістру символів функцію, яка повертає LCS двох рядків. Вам не потрібно показувати багато LCS.
+Write a case-sensitive function that returns the LCS of two strings. You don't need to show multiple LCS's.
 
 # --hints--
 
-`lcs` повинен бути функцією.
+`lcs` має бути функцією.
 
 ```js
 assert(typeof lcs == 'function');
 ```
 
-`lcs("thisisatest", "testing123testing")` повинен вивести рядок.
+`lcs("thisisatest", "testing123testing")` should return a string.
 
 ```js
 assert(typeof lcs('thisisatest', 'testing123testing') == 'string');
 ```
 
-`lcs("thisisatest", "testing123testing")` повинен повернути `"tsitest"`.
+`lcs("thisisatest", "testing123testing")` should return `"tsitest"`.
 
 ```js
 assert.equal(lcs('thisisatest', 'testing123testing'), 'tsitest');
 ```
 
-`lcs("ABCDGH", "AEDFHR")` повинен повернути `"ADH"`.
+`lcs("ABCDGH", "AEDFHR")` should return `"ADH"`.
 
 ```js
 assert.equal(lcs('ABCDGH', 'AEDFHR'), 'ADH');
 ```
 
-`lcs("AGGTAB", "GXTXAYB")` повинен повернути `"GTAB"`.
+`lcs("AGGTAB", "GXTXAYB")` should return `"GTAB"`.
 
 ```js
 assert.equal(lcs('AGGTAB', 'GXTXAYB'), 'GTAB');
 ```
 
-`lcs("BDACDB", "BDCB")` повинен повернути `"BDCB"`.
+`lcs("BDACDB", "BDCB")` should return `"BDCB"`.
 
 ```js
 assert.equal(lcs('BDACDB', 'BDCB'), 'BDCB');
 ```
 
-`lcs("ABAZDC", "BACBAD")` повинен повернути `"ABAD"`.
+`lcs("ABAZDC", "BACBAD")` should return `"ABAD"`.
 
 ```js
 assert.equal(lcs('ABAZDC', 'BACBAD'), 'ABAD');
@@ -86,8 +80,8 @@ function lcs(a, b) {
 
 ```js
 function lcs(a, b) {
-  var aSub = a.substr(0, a.length - 1);
-  var bSub = b.substr(0, b.length - 1);
+  var aSub = a.substring(0, a.length - 1);
+  var bSub = b.substring(0, b.length - 1);
 
   if (a.length === 0 || b.length === 0) {
     return '';

@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec8
 title: 'Problem 73: Counting fractions in a range'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302186
 dashedName: problem-73-counting-fractions-in-a-range
 ---

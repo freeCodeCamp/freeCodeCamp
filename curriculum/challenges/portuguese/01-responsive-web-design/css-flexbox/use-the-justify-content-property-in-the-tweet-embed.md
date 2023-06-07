@@ -17,7 +17,7 @@ No elemento de classe `.profile-name` adicione a propriedade CSS `justify-conten
 
 # --hints--
 
-O elemento de classe `.follow-btn` deve aparecer na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
+O elemento de classe `.follow-btn` deve ser renderizado na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');

@@ -1,7 +1,7 @@
 ---
 id: 5900f4ef1000cf542c510001
 title: 'Problema 386: massima lunghezza di una anticatena'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302050
 dashedName: problem-386-maximum-length-of-an-antichain
 ---

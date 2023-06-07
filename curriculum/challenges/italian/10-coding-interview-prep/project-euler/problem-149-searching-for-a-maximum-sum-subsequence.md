@@ -1,7 +1,7 @@
 ---
 id: 5900f4021000cf542c50ff13
 title: 'Problema 149: Ricerca di una sequenza a somma massima'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301778
 dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 ---

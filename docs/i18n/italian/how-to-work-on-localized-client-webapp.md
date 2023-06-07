@@ -1,10 +1,10 @@
-# Come lavorare su webapp client localizzate
+# How to Work on Localized Client Webapp
 
-La app client basata su react che alimenta la nostra piattaforma è costruita usando Gatsby. È tradotta in varie lingue internazionali usando [react-i18next](https://react.i18next.com/) e [i18next](https://www.i18next.com/).
+The React-based client web app that powers our learning platform is built using Gatsby. È tradotta in varie lingue internazionali usando [react-i18next](https://react.i18next.com/) e [i18next](https://www.i18next.com/).
 
-Puoi scoprire di più su come configurare l'applicazione client localmente per lo sviluppo seguendo [la nostra guida alla configurazione in locale](how-to-setup-freecodecamp-locally.md). Di default, l'applicazione è disponibile solo in inglese.
+Puoi scoprire di più su come configurare l'applicazione client localmente per lo sviluppo seguendo [la nostra guida alla configurazione in locale](how-to-setup-freecodecamp-locally.md). By default, the application is available only in English.
 
-Una volta che avrai configurato il progetto localmente dovresti essere in grado di seguire questa documentazione per eseguire il client nella lingua di tua scelta dall'elenco delle lingue disponibili.
+Once you have set up the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 Questo può essere utile quando stai lavorando su una caratteristica che riguarda specificatamente qualcosa che coinvolge la localizzazione e ti richiede ad esempio l'etichetta di un bottone in una lingua diversa.
 
@@ -14,56 +14,52 @@ Andiamo a vedere come funzionano il framework e gli strumenti.
 
 ## Struttura dei file
 
-La maggior parte dei file per tradurre la piattaforma si trovano nella cartella [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Ogni lingua ha una directory al suo interno che contiene file JSON con le traduzioni.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Ogni lingua ha una directory al suo interno che contiene file JSON con le traduzioni.
 
 ```console
-  config/i18n
-  └── all-langs.ts
+  config
+  └── i18n.ts
   ...
-   client/i18n
+  client/i18n
   ├── configForTests.js
   ├── config.js
   ├── locales
-  │   ├── chinese
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   ├── chinese
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   └── translations.json
   ... ...
-  │   ├── dothraki
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   ├── dothraki
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   └── translations.json
   ... ...
-  │   ├── english
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
-  │   └── espanol
-  │       ├── intro.json
-  │       ├── links.json
-  │       ├── meta-tags.json
-  │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │   ├── english
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   └── translations.json
+  │   └── espanol
+  │       ├── intro.json
+  │       ├── links.json
+  │       ├── meta-tags.json
+  │       ├── motivation.json
+  │       └── translations.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
 ```
 
-Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crowdin), altri no.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
 
 **File tradotti con la nostra piattaforma di traduzione:**
 
-- Il file `translations.json` contiene la maggior parte del testo che compare sugli elementi dell'interfaccia utente. Le chiavi sono usate nel codice per ottenere i testo corretto per qualunque lingua sia impostata. Questo file deve avere le stesse identiche chiavi in tutte le lingue.
+- Il file `translations.json` contiene la maggior parte del testo che compare sugli elementi dell'interfaccia utente. Le chiavi sono usate nel codice per ottenere i testo corretto per qualunque lingua sia impostata. This file needs to have the same keys in all languages.
 
 - Il file `intro.json` contiene le coppie chiave-valore relative al testo introduttivo sulle pagine delle certificazioni.
 
@@ -73,30 +69,39 @@ Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crow
 
 - I file `motivation.json` non devono avere per forza le stesse frasi, complimenti o lunghezze degli array. Basta che abbiano la stessa struttura JSON.
 
-- Il file `trending.json` contiene i titoli e i link ai nuovi articoli di tendenza all'interno del footer del sito.
+- Il file `meta-tags.json` contiene le informazioni per il tag meta del nostro sito.
 
-- Il file `meta-tags.json` contiene le informazioni per il meta tag del nostro sito.
+  I cambiamenti su questi file sono tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://discord.gg/PRyKn3Vbay).
 
-  I cambiamenti su questi file sono tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://chat.freecodecamp.org/channel/contributors).
+## Testing the Client App in a World Language
 
-## Testare la app client in una lingua internazionale
-
-Puoi testare la app client in ogni lingua disponibile nell'[elenco delle lingue](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+Puoi testare la app client in ogni lingua disponibile nell'[elenco `availableLangs` qui](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+export const availableLangs = {
+  client: [
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTraditional,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
+  ],
+  ...
+};
 ```
 
 Se stai testando una nuova lingua, crea una cartella con il nome della lingua come titolo accanto alle altre lingue e copia i file JSON da un'altra lingua alla tua cartella.
 
-Aggiungi la lingua all'array `client` come visto sopra nel file [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js).
+Aggiungi una nuova lingua all'enum `Languages` e all'array `client` in cima al file [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 Successivamente, segui le istruzioni nei commenti nello stesso file per aggiungere/aggiornare il resto delle variabili secondo necessità.
 
-Infine, imposta la variabile `CLIENT_LOCALE` nel tuo file `.env` alla lingua che vuoi sviluppare e hai finito.
+Infine, imposta la variabile `CLIENT_LOCALE` nel tuo file `.env` con la stringa della lingua di cui vuoi eseguire il build dall'enum `Languages` nel file qui sopra.
 
 ## Come strutturare i componenti
 
@@ -193,7 +198,7 @@ import { Trans } from 'react-i18next'
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-Puoi inserire la chiave all'interno del tag del componente come nell'esempio qui sopra, se il testo contiene tag "semplici" senza attributi. `br`, `strong`, `i`, e `p` sono quelli predefiniti, ma la lista può essere ampliata nel file i18n config.
+You can place the key inside the component tags like in the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, e `p` sono quelli predefiniti, ma la lista può essere ampliata nel file i18n config.
 
 ### Elementi complessi annidati
 
@@ -259,9 +264,13 @@ Il file in inglese è la "fonte della verità" per tutti i file `.json` che cond
 
 Sarebbe utile anche tenere tutte le chiavi nello stesso ordine in tutti i file. Inoltre, prova a mettere tutta la punteggiatura, spaziatura, virgolette, etc nei file JSON e non nei componenti o nei file del server.
 
-> [!NOTE] Il trattino basso (`_`) è un carattere riservato alle chiavi nei file per il lato client. Vedi [la documentazione](https://www.i18next.com/translation-function/plurals) per il suo utilizzo.
+> [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vedi [la documentazione](https://www.i18next.com/translation-function/plurals) per il suo utilizzo.
 
-## Documentazione utile
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [Documentazione react-i18next ](https://react.i18next.com/latest/usetranslation-hook)
 - [Documentazione i18next](https://www.i18next.com/translation-function/essentials)

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
 title: I prima di E eccetto dopo C
-challengeType: 5
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) è una frase mnemonica che dovrebbe aiutare con la scrittura delle parole inglesi.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I prima di E, tranne dopo C"</a>** è una regola generale per l'ortografia della lingua inglese. Se non si è sicuri se una parola si scrive con `ei` o con `ie`, la regoletta suggerisce che l'ordine corretto è `ie` a meno che la lettera precedente sia una `c`, in tal caso potrebbe essere `ei`.
 
 Utilizzando le parole fornite, verificare se le due sotto-clausole della frase sono plausibili singolarmente:
 

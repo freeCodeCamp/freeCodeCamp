@@ -1,14 +1,20 @@
 ---
 id: 5a23c84252665b21eecc8029
 title: Scacchiera a cavallo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302325
 dashedName: straddling-checkerboard
 ---
 
 # --description--
 
-Implementa le funzioni per crittografare e decrittografare un messaggio usando il metodo [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard). Le funzioni prenderanno una stringa e un array come parametri. L'array ha 3 stringhe che rappresentano le 3 righe della scacchiera. L'output sarà una serie di cifre decimali. I numeri devono essere cifrati inserendo il carattere di escape prima di ogni cifra, quindi includendo la cifra non cifrata. Questo dovrebbe essere invertito per la decifratura.
+Implementa una funzione per cifrare e decifrare un messaggio usando il metodo della **scacchiera a cavallo**.
+
+Ogni funzione prende due argomenti, una stringa `message` e un array `alphabet`. L'array `alphabet` conterrà tre stringhe rappresentanti le tre righe della scacchiera a cavallo.
+
+L'output della funzione `straddle()` dovrebbe essere una serie di cifre decimali. I numeri dovrebbero essere cifrati inserendo un carattere di escape prima di ogni cifra includendo la cifra <em>non criptata</em>.
+
+Questo dovrebbe essere invertito per la decifrazione con la funzione `unstraddle()`.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Costruisci una app JavaScript full stack che ti permette di cercare immagini come questa: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> e navigare tra ricerce recenti come questa: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Usa un costruttore di siti di tua scelta per completare il progetto.
+Crea una app JavaScript full stack che permette di cercare immagini come questo: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> e navigare termini di ricerca recenti come questo: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Usa un costruttore di siti di tua scelta per completare il progetto.
 
 Ecco le specifiche user story da implementare per questo progetto:
 
@@ -18,7 +18,7 @@ Ecco le specifiche user story da implementare per questo progetto:
 
 **User Story:** Puoi ottenere una lista delle stringhe usate più di recente per la ricerca.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo Link GitHub.
 
 # --solutions--
 

@@ -27,24 +27,6 @@ console.log(myBreed);
 
 コンソールには文字列 `Doberman` が表示されます。
 
-この用法の別の例として、プログラムの実行中にプロパティの名前を動的に取得することができます。次に例を示します。
-
-```js
-const someObj = {
-  propName: "John"
-};
-
-function propPrefix(str) {
-  const s = "prop";
-  return s + str;
-}
-
-const someProp = propPrefix("Name");
-console.log(someObj[someProp]);
-```
-
-`someProp` の値は文字列 `propName` となり、文字列 `John` がコンソールに表示されます。
-
 変数を使用してプロパティにアクセスする場合、変数名を引用符で*囲まない*ことに注意してください。使用するのは変数の*値*であって、*名前*ではありません。
 
 # --instructions--
@@ -83,7 +65,7 @@ assert(/testObj\s*?\[.*?\]/.test(code));
 assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
-ブラケット記法で、変数`playerNumber` を使用する必要があります。
+ブラケット記法で、変数 `playerNumber` を使用する必要があります。
 
 ```js
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));

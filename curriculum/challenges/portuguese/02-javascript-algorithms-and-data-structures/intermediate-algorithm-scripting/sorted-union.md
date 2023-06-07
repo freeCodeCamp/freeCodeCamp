@@ -1,7 +1,7 @@
 ---
 id: a105e963526e7de52b219be9
 title: Unir em ordem
-challengeType: 5
+challengeType: 1
 forumTopicId: 16077
 dashedName: sorted-union
 ---

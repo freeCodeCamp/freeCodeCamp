@@ -1,4 +1,4 @@
-# Cómo ayudar con los desafíos de vídeo
+# How to Help with Video Challenges
 
 Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCamp.
 
@@ -54,24 +54,24 @@ Más respuestas
 El número para la respuesta correcta va aquí.
 ````
 
-## Creando preguntas para los desafíos de video
+## Creating Questions for Video Challenges
 
-### Accede a los archivos markdown del desafío de video
+### Access the Video Challenge Markdown Files
 
-Puedes encontrar los archivos markdown de los desafíos de video en las siguientes ubicaciones del currículum:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Curso de análisis de datos con Python](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [Curso de TensorFlow 2.0](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Curso de Numpy](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
-- [Curso de como funcionan las redes neuronales](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Elige un archivo markdown de las opciones anteriores.
+Pick a challenge markdown file from the options above.
 
-### Dale un vistazo al video asociado con el desafío y crea una pregunta de opción múltiple
+### Skim through the video associated with the challenge and create a multiple-choice question
 
-Primero, encuentra la videoId (id del vídeo).
+First, find the `videoId`.
 
-Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". En GitHub, la información debe ser colocada en un formato de tabla.
+For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". En GitHub, la información debe ser colocada en un formato de tabla.
 
 ````
 ---
@@ -80,12 +80,16 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-A continuación, accede al vídeo de YouTube con esa `videoId`. La URL del video será:
-https://www.youtube.com/watch?v=[videoId] (reemplaza `videoId` en la URL por el id del video, sin los corchetes).
+A continuación, accede al vídeo de YouTube con esa `videoId`. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-### Añade la pregunta al archivo markdown
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Puedes añadir la pregunta localmente o utilizando la interfaz de GitHub. Para añadir la pregunta localmente, necesitas [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). También puede encontrar el archivo en GitHub y hacer clic en el botón Editar para añadir la pregunta directamente en su navegador.
+Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
+
+### Add the Question to the Markdown File
+
+You can add the question locally or using the GitHub interface. Para añadir la pregunta localmente, necesitas [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). También puede encontrar el archivo en GitHub y hacer clic en el botón Editar para añadir la pregunta directamente en su navegador.
 
 Si aún no se ha agregado una pregunta a un desafío de video en particular, tendrá la siguiente pregunta predeterminada:
 
@@ -194,6 +198,6 @@ print(height/3)
 
 Para más ejemplos, puede ver los archivos de markdown para el siguiente curso de video. Todos los desafíos ya tienen preguntas: [Curso de Python para todos](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Abrir una pull request
+## Open a Pull Request
 
 Después de crear una o más preguntas, puedes enviar los cambios a una nueva rama y [abrir una pull request](how-to-open-a-pull-request.md).

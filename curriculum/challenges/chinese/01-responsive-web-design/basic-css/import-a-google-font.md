@@ -11,7 +11,7 @@ dashedName: import-a-google-font
 
 在我们的网站上，除了使用系统提供的默认字体以外，我们也可以使用自定义字体。 网络上有很多字体库。 在这个例子中，我们将使用 Google 字体库。
 
-[Google 字体库](https://fonts.google.com/)是一个免费的 Web 字体库，我们只需要在 CSS 里设置字体的 URL 即可使用。
+Google 字体库是一个免费的 Web 字体库，我们只需要在 CSS 里引用字体的 URL 即可使用。
 
 接下来，我们就要引入和使用 Google Fonts（注意：如果 Google 在你的地区被限制访问，你可以选择跳过这个挑战）。
 

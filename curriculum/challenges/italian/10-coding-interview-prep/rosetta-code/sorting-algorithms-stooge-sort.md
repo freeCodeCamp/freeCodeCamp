@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: Algoritmi di Ordinamento/Stooge Sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--
 
-Scrivi una funzione per eseguire lo [Stooge Sort](https://it.wikipedia.org/wiki/Trippel_sort) su un array di interi. La funzione dovrebbe restituire un array ordinato.
+Scrivi una funzione per ordinare un array di numeri interi usando Stooge Sort. La funzione dovrebbe restituire un array ordinato.
 
 L'algoritmo Stooge Sort è il seguente:
 

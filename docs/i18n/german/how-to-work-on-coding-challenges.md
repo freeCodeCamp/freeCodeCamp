@@ -10,7 +10,7 @@ Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollst
 
 Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu helfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
 
-Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) stellen.
+Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors"-Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei helfen wird, in den nächsten Jahren das Programmieren zu lernen.
 
@@ -190,7 +190,7 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Das Ergebnis ist eine neue ID, zum Beispiel `5a474d78df58bafeb3535d34` oben.
+The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
 Sobald du deine ID hast, fügst du sie in die Markdown-Datei als `id`-Feld am Anfang ein, z. B.
 
@@ -243,9 +243,9 @@ Wenn du länger als zwei Minuten brauchst, um die Aufgabe zu lösen, hast du zwe
 - vereinfache die Aufgabe, oder
 - Teile die Aufgabe in zwei Aufgaben auf.
 
-Die 2-Minuten-Regel zwingt dich, als Aufgabenersteller, deine Anweisungen kurz und präzise zu formulieren, deinen Startcode klar zu formulieren und deine Tests eindeutig zu gestalten.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
-Wir verfolgen, wie lange die Teilnehmer/innen brauchen, um die Aufgaben zu lösen und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
+Wir verfolgen, wie lange die Teilnehmer brauchen, um die Aufgaben zu lösen, und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
 
 ### Modularität
 
@@ -267,7 +267,7 @@ Verwende `parseInt`, um die Variable `realNumber` in eine Integerzahl umzuwandel
 ```
 
 - Verweise auf Dateinamen und Pfadverzeichnisse (z. B. `package.json`, `src/components`) sollten in `` \` ``-Backticks eingeschlossen werden.
-- Mehrzeiligen Codeblöcken **muss eine Leerzeile vorangestellt werden**. Die nächste Zeile muss mit drei Backticks beginnen, unmittelbar gefolgt von einer der [unterstützten Sprachen](https://prismjs.com/#supported-languages). Um den Codeblock zu vervollständigen, musst du eine neue Zeile beginnen, die nur drei Backticks und **eine weitere Leerzeile** enthält. Siehe untenstehendes Beispiel:
+- Mehrzeiligen Codeblöcken **muss eine Leerzeile vorangestellt werden**. Die nächste Zeile muss mit drei Backticks beginnen, unmittelbar gefolgt von einer der [unterstützten Sprachen](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. Siehe untenstehendes Beispiel:
 - Whitespace ist in Markdown wichtig, deshalb empfehlen wir, ihn in deinem Editor sichtbar zu machen.
 
 **Hinweis:** Wenn du einen Beispielcode in YAML verwendest, benutze `yaml` anstelle von `yml` für die Sprache rechts von den Backticks.
@@ -283,10 +283,10 @@ Im Folgenden findest du ein Codebeispiel:
 ````
 
 - Zusätzliche Informationen in Form einer Anmerkung sollten von Leerzeilen umgeben sein und wie folgt formatiert werden: "**Note:** Rest des Anmerkungstextes...".
-- Wenn mehrere Notizen erforderlich sind, listest du alle Notizen in separaten Sätzen auf und verwendest das Format: **Notes:** Erster Text der Notiz. Zweiter Notiztext.`
-- Verwende einfache Anführungszeichen, wo dies möglich ist.
+- Wenn mehrere Notizen erforderlich sind, listest du alle Notizen in separaten Sätzen auf und verwendest das Format: **Notes:** Erster Text der Notiz. Second note text.`
+- Use single quotes where applicable
 
-**Note:** Das Äquivalent _Markdown_ sollte anstelle von _HTML_ Tags verwendet werden.
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## Tests schreiben
 
@@ -296,24 +296,24 @@ Unser Ziel ist es, den einzelnen Aspekt der Aufgabe zu vermitteln und zu prüfen
 
 Aufgabentests können die Assertion-Bibliotheken von Node.js und Chai.js nutzen. Außerdem kann bei Bedarf auf den vom Benutzer erstellten Code in der Variable `code` zugegriffen werden. Zusätzlich stellt das Objekt `__helpers` mehrere Funktionen zur Verfügung, die das Schreiben von Tests vereinfachen. Die verfügbaren Funktionen sind in _client/src/utils/curriculum-helpers.ts_ definiert.
 
-## Formatierung des Startcodes
+## Formatting Seed Code
 
-Im Folgenden findest du bestimmte Formatierungsrichtlinien für den Startcode der Aufgabe:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Verwende zwei Leerzeichen zum Einrücken
-- JavaScript-Anweisungen enden mit einem Semikolon
-- Verwende doppelte Anführungszeichen, wo dies möglich ist
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Kommentare zum Startcode
+### Seed Code Comments
 
-Wir haben ein [comment dictionary](/curriculum/dictionaries/english/comments.js), das die einzigen Kommentare enthält, die im Startcode verwendet werden können. Die Groß- und Kleinschreibung und die Abstände des Kommentarwörterbuchs müssen eingehalten werden. Das Kommentarwörterbuch sollte nicht ohne vorherige Absprache mit dem Entwicklungsteam erweitert werden.
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. Die Groß- und Kleinschreibung und die Abstände des Kommentarwörterbuchs müssen eingehalten werden. Das Kommentarwörterbuch sollte nicht ohne vorherige Absprache mit dem Entwicklungsteam erweitert werden.
 
 Die verwendeten Kommentare sollten ein Leerzeichen zwischen den Kommentarzeichen und dem eigentlichen Kommentar enthalten. Im Allgemeinen sollten Kommentare sparsam verwendet werden. Überlege dir immer, ob du die Beschreibung oder die Instruktionen einer Aufgabe umschreiben kannst, wenn du dadurch einen Kommentar im Startcode vermeiden kannst.
 
-Beispiel für einen gültigen einzeiligen JavaScript-Kommentar:
+Example of a valid single-line JavaScript comment:
 
 ```js
-// Ändere nur den Code unterhalb dieser Zeile
+// Only change code below this line
 ````
 
 Beispiel für einen gültigen CSS-Kommentar:
@@ -366,9 +366,9 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Übersetzung der Kommentare im Startcode
+### Translation of Seed Code Comments
 
-Für jede Sprache gibt es ein eigenes Kommentarwörterbuch. Die [englische Version des Kommentarwörterbuchs](/curriculum/dictionaries/english/comments.js) ist die Grundlage für die Übersetzungen in den entsprechenden nicht-englischen Versionen der Dateien. Die nicht-englische Version des chinesischen Kommentarwörterbuchs befindet sich unter `/curriculum/dictionaries/chinese/comments.js`. Jedes Wörterbuch besteht aus einem Array von Objekten mit einer eindeutigen `id`-Eigenschaft und einer `text`-Eigenschaft. Nur der `text` sollte geändert werden, damit er die Übersetzung des entsprechenden englischen Kommentars enthält.
+Für jede Sprache gibt es ein eigenes Kommentarwörterbuch. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Jedes Wörterbuch besteht aus einem Array von Objekten mit einer eindeutigen `id`-Eigenschaft und einer `text`-Eigenschaft. Nur der `text` sollte geändert werden, damit er die Übersetzung des entsprechenden englischen Kommentars enthält.
 
 Einige Kommentare können ein Wort/einen Satz enthalten, das/der nicht übersetzt werden sollte. Zum Beispiel sollten Variablennamen oder Bibliotheksnamen wie "React" nicht übersetzt werden. Schau dir den Kommentar unten als Beispiel an. Das Wort `myGlobal` sollte nicht übersetzt werden.
 
@@ -388,16 +388,16 @@ Wenn du ein Problem in einem bestehenden Thema für Tipps/Lösungen findest, kan
 
 ### Neue Aufgabenhinweise/Lösungsthemen hinzufügen
 
-Führe die folgenden Schritte aus, wenn du ein neues Thema mit Tipps und Lösungen für Aufgaben hinzufügst.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Beginne mit den gleichen Schritten wie beim Erstellen eines neuen Themas, aber schau dir die nächsten Schritte zum Erstellen des Titels an.
 2. Der Titel des Themas sollte mit `freeCodeCamp Challenge Guide:` beginnen und mit dem eigentlichen Titel der Studienplanaufgabe verkettet werden. Wenn die Aufgabe zum Beispiel "`Chunky Monkey`" heißt, würde der Titel des Themas lauten "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` sollte der Eigentümer dieser Themen/Posts sein. Du musst also einen Admin bitten, den Eigentümer des Hauptposts auf `camperbot` zu ändern.
 4. Sobald das neue Thema erstellt ist, wird eine Forenthemen-ID erstellt. Sie befindet sich am Ende der URL des Forenthemas. Diese ID muss dem Frontmatter der Studienplanaufgabendatei über den normalen Pull-Request-Prozess hinzugefügt werden, damit der `Erhalte einen Tipp` Button auf das Thema verlinkt.
 
-### Richtlinien für den Inhalt von Hinweisen und Lösungsthemen
+### Guidelines for Content of Hints and Solutions Topics
 
-Wenn du eine Lösung für ein Studienplanaufgabenthema vorschlägst, muss der vollständige Code hinzugefügt werden. Dies beinhaltet den gesamten ursprünglichen Startcode sowie alle Änderungen, die nötig sind, um alle Aufgabentests zu bestehen. Die folgende Vorlage sollte verwendet werden, wenn du neue Hinweise/Lösungen für Themen erstellst:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. Dies beinhaltet den gesamten ursprünglichen Startcode sowie alle Änderungen, die nötig sind, um alle Aufgabentests zu bestehen. Die folgende Vorlage sollte verwendet werden, wenn du neue Hinweise/Lösungen für Themen erstellst:
 
 ````md
 # Aufgabentitel hier eintragen
@@ -456,17 +456,17 @@ Bevor du [einen Pull-Request](how-to-open-a-pull-request.md) für deine Änderun
 1. Um alle Aufgaben zu testen, führe den folgenden Befehl im Stammverzeichnis aus
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. Du kannst auch einen Block oder einen Superblock von Aufgaben mit diesen Befehlen testen
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausführst:
@@ -480,15 +480,17 @@ Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausf
 2. Führe das Folgende für jede Aufgabendatei aus, für die du Änderungen vorgenommen hast (ersetze dabei `Aufgabentitel hier eintragen` durch den vollständigen Titel der Aufgabe):
 
    ```
-   npm run test -- -g Aufgabentitel hier eintragen ```
-
-Sobald du sichergestellt hast, dass jede Aufgabe, an der du gearbeitet hast, die Tests besteht, [erstelle bitte einen Pull-Request](how-to-open-a-pull-request.md).
+   pnpm run test -- -g challenge-title-goes-here ```
 
 > [!TIP] Du kannst die Umgebungsvariable `LOCALE` in der `.env` auf die Sprache der Aufgabe(n) setzen, die du testen willst.
 > 
 > Die derzeit akzeptierten Werte sind `englisch` und `chinesisch`, wobei `englisch` standardmäßig eingestellt ist.
 
-### Nützliche Links
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 Aufgaben erstellen und bearbeiten:
 

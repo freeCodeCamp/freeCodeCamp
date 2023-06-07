@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc801c
 title: Matrice a spirale
-challengeType: 5
+challengeType: 1
 forumTopicId: 302321
 dashedName: spiral-matrix
 ---

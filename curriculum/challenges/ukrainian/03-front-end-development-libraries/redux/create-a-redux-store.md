@@ -20,7 +20,7 @@ Redux `store` (сховище) - це об'єкт, який містить та 
 
 Вкажіть `store` змінною та призначте її методу `createStore()`, передавши у `reducer` як аргумент.
 
-**Примітка:** код в редакторі за замовчуванням використовує синтаксис аргументів ES6 для ініціалізаціїї цього стану для утримання значення `5`. Якщо ви не знайомі з аргументами за замовчуванням, ви можете дізнатися більше у [секції ES6 в Навчальному плані ](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions), що охоплює цю тему.
+**Примітка:** код в редакторі за замовчуванням використовує синтаксис аргументів ES6 для ініціалізаціїї цього стану для утримання значення `5`. Якщо ви не знайомі з аргументами за замовчуванням, ви можете дізнатися більше у <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">розділі навчальної програми ES6</a>, що охоплює цю тему.
 
 # --hints--
 

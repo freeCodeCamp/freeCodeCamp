@@ -6,7 +6,7 @@ Os tokens de usuário são usados para identificar os usuários para terceiros. 
 
 No momento, os tokens são usados apenas para enviar os desafios de Bancos de dados relacionais. Um token é criado quando um usuário conectado clica em "Clique aqui para iniciar o curso" ou "Clique aqui para iniciar o projeto" para iniciar um dos cursos ou projetos de Banco de dados relacionais.
 
-## Quando eles forem excluídos ou deletados ou removidos
+## Quando eles são excluídos
 
 Um token de usuário será excluído quando um usuário sai do freeCodeCamp, redefine seu progresso, exclui a conta ou exclui manualmente o token usando o widget na página de configurações.
 

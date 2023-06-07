@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: ソートアルゴリズム / シェルソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---
 
 # --description--
 
-[シェルソート](https://en.wikipedia.org/wiki/Shell sort)アルゴリズム (減少増分ソート) を使用して、要素の配列をソートする関数を記述してください。 この関数はソートされた配列を返す必要があります。
+Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. この関数はソートされた配列を返す必要があります。
 
 シェルソート (シェルメソッドとも呼ばれます) は、1959年にこのアルゴリズムを発表した発案者のドナルド・シェルにちなんで名付けられています。
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f3f21000cf542c50ff04
 title: '问题 133：纯元数非因子'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
 ---

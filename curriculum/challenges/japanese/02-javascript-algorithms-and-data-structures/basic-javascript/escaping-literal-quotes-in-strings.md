@@ -39,7 +39,7 @@ I am a "double quoted" string inside "double quotes".
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-変数 myStr は文字列 `I am a "double quoted" string inside "double quotes".` になる必要があります。
+変数 `myStr` は文字列 `I am a "double quoted" string inside "double quotes".` になる必要があります。
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

@@ -38,7 +38,7 @@ Você deve ter 2 elementos `p` contendo o texto Kitty Ipsum.
 assert($('p').length > 1);
 ```
 
-Cada elemento `p` deve ter uma tag de fechamento.
+Todos os elementos `p` devem ter uma tag de fechamento.
 
 ```js
 assert(

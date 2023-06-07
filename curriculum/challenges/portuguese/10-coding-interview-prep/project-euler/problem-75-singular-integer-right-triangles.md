@@ -1,7 +1,7 @@
 ---
 id: 5900f3b71000cf542c50feca
 title: 'Problema 75: Triângulos retângulos de lados inteiros e singulares'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302188
 dashedName: problem-75-singular-integer-right-triangles
 ---

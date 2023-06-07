@@ -27,63 +27,45 @@ console.log(myBreed);
 
 字符串 `Doberman` 将会出现在控制台中。
 
-使用这一概念的另一种情况是：属性的名字是在程序运行期间动态收集得到的。如下所示：
-
-```js
-const someObj = {
-  propName: "John"
-};
-
-function propPrefix(str) {
-  const s = "prop";
-  return s + str;
-}
-
-const someProp = propPrefix("Name");
-console.log(someObj[someProp]);
-```
-
-`someProp` 的值将为字符串 `propName`，并且字符串 `John` 将会出现在控制台中。
-
-注意，当使用变量名访问属性时，我们*没有*使用引号包裹它，因为我们正在使用的是变量的*值*，而不是变量的*名字*。
+请注意，我们在使用变量名访问属性时，*不要*使用引号引起来，因为我们使用的是 *值*，而不是 *属性名*。
 
 # --instructions--
 
-将变量 `playerNumber` 设置为 `16`。 然后，使用该变量查找玩家的名字，并将其赋值给`player`。
+将 `playerNumber` 变量设置为 `16`。 然后，使用该变量查找播放器的名称并将其分配给 `player`。
 
 # --hints--
 
-`playerNumber` 应该是一个数字
+`playerNumber` 应该是一个数字。
 
 ```js
 assert(typeof playerNumber === 'number');
 ```
 
-变量 `player` 应该是一个字符串
+变量 `player` 应该是一个字符串。
 
 ```js
 assert(typeof player === 'string');
 ```
 
-`player` 的值应该为字符串 `Montana`
+`player` 的值应该是字符串 `Montana`。
 
 ```js
 assert(player === 'Montana');
 ```
 
-你应该使用方括号访问 `testObj`
+你应该使用括号表示法来访问 `testObj`。
 
 ```js
 assert(/testObj\s*?\[.*?\]/.test(code));
 ```
 
-你不应该直接将值 `Montana` 赋给变量 `player`。
+你不应将值 `Montana` 直接分配给变量 `player`。
 
 ```js
 assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
-你应该在你的方括号内使用变量 `playerNumber`。
+你应该在括号符号中使用变量 `playerNumber`。
 
 ```js
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));

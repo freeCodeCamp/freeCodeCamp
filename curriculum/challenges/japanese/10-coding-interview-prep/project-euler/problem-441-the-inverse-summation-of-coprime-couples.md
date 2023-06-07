@@ -1,7 +1,7 @@
 ---
 id: 5900f5261000cf542c510038
 title: '問題 441: 互いに素な組の逆数の総和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
 ---

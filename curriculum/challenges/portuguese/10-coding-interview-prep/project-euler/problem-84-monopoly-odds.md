@@ -1,7 +1,7 @@
 ---
 id: 5900f3c11000cf542c50fed3
 title: 'Problem 84: Probabilidades no Monopoly'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds
 ---

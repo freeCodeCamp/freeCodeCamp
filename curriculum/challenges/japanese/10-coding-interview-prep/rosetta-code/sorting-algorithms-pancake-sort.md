@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc800b
 title: ソートアルゴリズム / パンケーキソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
 ---
 
 # --description--
 
-(手頃なサイズの) 整数の配列を [パンケーキソート](https://en.wikipedia.org/wiki/Pancake sorting)を使って昇順にソートする関数を記述してください。 この関数はソートされた配列を返す必要があります。
+Write a function to sort an array of integers (of any convenient size) into ascending order using Pancake sorting. この関数はソートされた配列を返す必要があります。
 
 つまり、個々の要素をソートするのではなく、以下のように、可能な操作はリストの 1 つの端で「ひっくり返す」ことだけとなります。
 

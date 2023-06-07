@@ -22,11 +22,11 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-Como você pode ver, o body é codificado como a string de consulta. Este é o formato padrão usado pelos formulários de HTML. Com o Ajax, você também pode usar JSON para tratar os dados tendo uma estrutura mais complexa. Existe também um outro tipo de codificação: multipart/form-data. Esta é usada para enviar arquivos binários. Neste exercício, você usará um body urlencoded. Para analisar os dados provenientes de solicitações de POST, você deve instalar o pacote `body-parser`. Este pacote permite que você use uma série de middleware, que pode decodificar os dados em diferentes formatos.
+Como você pode ver, o body é codificado como a string de consulta. Este é o formato padrão usado pelos formulários de HTML. Com o Ajax, você também pode usar JSON para tratar os dados tendo uma estrutura mais complexa. Existe também um outro tipo de codificação: multipart/form-data. Esta é usada para enviar arquivos binários. Neste exercício, você usará um body codificado do URL. Para analisar os dados provenientes de solicitações de POST, você deve instalar o pacote `body-parser`. Este pacote permite que você use uma série de middleware, que pode decodificar os dados em diferentes formatos.
 
 # --instructions--
 
-Instale o módulo `body-parser` no `package.json`. Em seguida, faça o `require` dele no topo do arquivo. Armazene-o em uma variável chamada `bodyParser`. O middleware para manipular dados urlencoded é retornado por `bodyParser.urlencoded({extended: false})`. Passe a função retornada pela chamada do método anterior para `app.use()`. Como sempre, o middleware deve ser montado antes de todas as rotas que dependem dele.
+`body-parser` já está instalado e está no arquivo `package.json` do projeto. Faça o `require` na parte superior do arquivo `myApp.js` e armazene-o em uma variável chamada `bodyParser`. O middleware para manipular dados com codificação do URL é retornado por `bodyParser.urlencoded({extended: false})`. Passe a função retornada pela chamada do método anterior para `app.use()`. Como sempre, o middleware deve ser montado antes de todas as rotas que dependem dele.
 
 **Observação:** `extended` é uma opção de configuração que informa ao `body-parser` que a análise (parsing) precisa ser usada. Quando `extended=false` ele usa a biblioteca clássica de codificação, `querystring`. Quando `extended=true` ele usa a biblioteca `qs` para a análise.
 

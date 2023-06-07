@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 title: >-
   Problema 174: Contare il numero di lamine quadrate "cave" che possono formare uno, due, tre, ... disposizioni distinte
-challengeType: 5
+challengeType: 1
 forumTopicId: 301809
 dashedName: >-
   problem-174-counting-the-number-of-hollow-square-laminae-that-can-form-one-two-three-----distinct-arrangements

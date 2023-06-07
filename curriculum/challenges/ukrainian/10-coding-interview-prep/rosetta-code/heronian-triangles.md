@@ -1,14 +1,14 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: Трикутники Герона
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---
 
 # --description--
 
-[Формула Герона](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") для площі трикутника з урахуванням довжини його трьох сторін `a` `b`, та `c` подається як:
+Hero's formula for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

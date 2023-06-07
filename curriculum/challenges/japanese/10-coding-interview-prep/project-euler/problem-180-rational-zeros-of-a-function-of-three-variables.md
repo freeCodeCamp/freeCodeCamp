@@ -1,7 +1,7 @@
 ---
 id: 5900f4201000cf542c50ff33
 title: '問題 180: 3 つの変数を持つ関数の有理数の零点'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301816
 dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 ---

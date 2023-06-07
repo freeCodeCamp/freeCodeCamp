@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8045
 title: サザーランド・ホッジマン・ポリゴンクリッピング
-challengeType: 5
+challengeType: 1
 forumTopicId: 302336
 dashedName: sutherland-hodgman-polygon-clipping
 ---
 
 # --description--
 
-[サザーランド・ホッジマン・ポリゴンクリッピング・アルゴリズム](https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm) は、任意のポリゴン (「サブジェクトポリゴン」) と凸ポリゴン (「クリップポリゴン」) との共通部分であるポリゴンを求めます。 これは、表示する必要のないポリゴンのパーツを排除することによって、シーンの表示の複雑さを軽減するためにコンピュータグラフィックス (特に2Dグラフィックス) に使用されます。 点によって定義されたクローズドポリゴンを取ります:
+The Sutherland-Hodgman clipping algorithm finds the polygon that is the intersection between an arbitrary polygon (the "subject polygon") and a convex polygon (the "clip polygon"). これは、表示する必要のないポリゴンのパーツを排除することによって、シーンの表示の複雑さを軽減するためにコンピュータグラフィックス (特に2Dグラフィックス) に使用されます。 点によって定義されたクローズドポリゴンを取ります:
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 

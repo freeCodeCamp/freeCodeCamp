@@ -1,7 +1,7 @@
 ---
 id: 5e4ce2b6ac708cc68c1df25e
 title: Остання літера-перша літера
-challengeType: 5
+challengeType: 1
 forumTopicId: 385256
 dashedName: last-letter-first-letter
 ---
@@ -25,7 +25,7 @@ dashedName: last-letter-first-letter
 
 # --hints--
 
-`findLongestChain` повинен бути функцією.
+`findLongestChain` має бути функцією.
 
 ```js
 assert(typeof findLongestChain == 'function');

@@ -8,15 +8,21 @@ dashedName: anonymous-message-board
 
 # --description--
 
-<https://anonymous-message-board.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。
+<a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。
 
 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-messageboard/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -24,22 +30,22 @@ dashedName: anonymous-message-board
 2.  `routes/api.js` でコントローラー/ハンドラーを作成し、ルーティングを処理することを推奨します。
 3.  `server.js` にセキュリティ機能を追加します。
 
-`tests/2_functional-tests.js` に次のテストを記述してください。
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
 -   新しいスレッドを作成する: `/api/threads/{board}` への POST リクエスト
--   3 つの返信を持つ最新のスレッドを 10 個表示する: `/api/threads/{board}` への GET リクエスト
+-   最新のスレッドを 10 個、返信を 3 つずつ持った状態で表示する: `/api/threads/{board}` への GET リクエスト
 -   間違ったパスワードでスレッドを削除する: 無効な `delete_password` による `/api/threads/{board}` への DELETE リクエスト
 -   正しいパスワードでスレッドを削除する: 有効な `delete_password` による `/api/threads/{board}` への DELETE リクエスト
 -   スレッドを報告する: `/api/threads/{board}` への PUT リクエスト
 -   新しい返信を作成する: `/api/replies/{board}` への POST リクエスト
--   すべての返信を持つ単一のスレッドを表示する: `/api/replies/{board}` への GET リクエスト
+-   1 つのスレッドをすべての返信を持つ状態で表示する: `/api/replies/{board}` への GET リクエスト
 -   間違ったパスワードで返信を削除する: 無効な `delete_password` による `/api/replies/{board}` への DELETE リクエスト
 -   正しいパスワードで返信を削除する: 有効な `delete_password` による `/api/replies/{board}` への DELETE リクエスト
 -   返信を報告する: `/api/replies/{board}` への PUT リクエスト
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供することができます。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: anonymous-message-board
 };
 ```
 
-自分のサイトだけを自分のページの iFrame に読み込めるようにします。
+自分のページの iFrame には自分のサイトだけを読み込めるようにします。
 
 ```js
 async (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-`text` と `delete_password` を含むフォームデータを使用して、`/api/threads/{board}` への POST リクエストを送信できます。 保存されるデータベースレコードは、少なくとも `_id`、`text`、`created_on` (日付と時刻)、`bumped_on`(日付と時刻、`created_on` と同じ時刻に開始)、`reported` (ブール値)、`delete_password`、および `replies` (配列) のフィールドを持ちます。
+`text` と `delete_password` を含むフォームデータを使用して、`/api/threads/{board}` への POST リクエストを送信できます。 保存されるデータベースレコードは、少なくとも `_id`、`text`、`created_on` (日付と時刻)、`bumped_on` (日付と時刻、初期値は `created_on` と同じ時刻)、`reported` (ブール値)、`delete_password`、および `replies` (配列) のフィールドを持ちます。
 
 ```js
 async (getUserInput) => {
@@ -150,7 +156,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/threads/{board}` への GET リクエストを送信できます。 掲示板で上に上げられた最新の 10 個のスレッドと、それぞれに対する最新の 3 個の返信のみの配列が返されます。 `reported` フィールドと `delete_password` フィールドはクライアントに送信されません。
+`/api/threads/{board}` への GET リクエストを送信できます。 掲示板で最近更新された (bumped) 10 個のスレッドと、それぞれに対する最新 3 個の返信を含む配列が返されます。 `reported` フィールドと `delete_password` フィールドはクライアントに送信されません。
 
 ```js
 async (getUserInput) => {
@@ -181,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/replies/{board}?thread_id={thread_id}` への GET リクエストを送信できます。 すべての返信を含むスレッド全体のうち、前のテストと同じフィールドをクライアントから除外したものが返されます。
+`/api/replies/{board}?thread_id={thread_id}` への GET リクエストを送信できます。 すべての返信を含むスレッド全体が、1 つ前のテストと同じフィールドを除外した状態でクライアントに返されます。
 
 ```js
 async (getUserInput) => {
@@ -313,8 +319,8 @@ async (getUserInput) => {
 
   let res = await fetch(`${url}/api/threads/fcc_test`);
   const threads = await res.json();
-  const report_id = threads[0]._id;
-  const data = { report_id };
+  const thread_id = threads[0]._id;
+  const data = { thread_id };
 
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
@@ -368,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-10 種類の機能テストがすべて完了して、合格です。
+10 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async (getUserInput) => {

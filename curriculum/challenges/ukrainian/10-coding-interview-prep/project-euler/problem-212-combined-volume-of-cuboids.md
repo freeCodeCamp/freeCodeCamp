@@ -1,7 +1,7 @@
 ---
 id: 5900f4411000cf542c50ff53
 title: 'Завдання 212: Загальний об''єм прямокутних паралелепіпедів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301854
 dashedName: problem-212-combined-volume-of-cuboids
 ---

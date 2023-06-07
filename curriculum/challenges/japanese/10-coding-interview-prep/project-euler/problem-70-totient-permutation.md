@@ -1,7 +1,7 @@
 ---
 id: 5900f3b21000cf542c50fec5
 title: '問題 70: トーティエント関数の置換'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
 ---

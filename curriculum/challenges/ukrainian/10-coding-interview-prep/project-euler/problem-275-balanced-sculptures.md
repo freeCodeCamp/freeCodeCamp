@@ -1,7 +1,7 @@
 ---
 id: 5900f4801000cf542c50ff92
 title: 'Завдання 275: Збалансовані скульптури'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301925
 dashedName: problem-275-balanced-sculptures
 ---

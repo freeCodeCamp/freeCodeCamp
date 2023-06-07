@@ -41,13 +41,13 @@ Reescreva a função `myConcat` que anexa conteúdo de `arr2` para `arr1` para q
 Você deve substituir a palavra-chave `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` deve ser uma variável constante (usando `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
 `myConcat` deve ser uma arrow function com dois parâmetros
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 A palavra-chave `function` não deve ser usada.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

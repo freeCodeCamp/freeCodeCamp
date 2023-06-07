@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffd9
 title: 'Задача 347: Найбільше ціле число ділиться на два простих'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302006
 dashedName: problem-347-largest-integer-divisible-by-two-primes
 ---

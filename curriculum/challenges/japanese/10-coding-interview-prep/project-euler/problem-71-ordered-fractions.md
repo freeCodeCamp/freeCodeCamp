@@ -1,7 +1,7 @@
 ---
 id: 5900f3b31000cf542c50fec6
 title: '問題 71: 順序分数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302184
 dashedName: problem-71-ordered-fractions
 ---

@@ -13,7 +13,7 @@ Números aleatórios são úteis para criar comportamento aleatório.
 
 JavaScript tem a função `Math.random()` que gera um número decimal aleatório entre `0` (incluso) e `1` (excluso). Assim, `Math.random()` pode retornar um `0` mas nunca retornará `1`.
 
-**Observação:** como ao [armazenar valores com operador de atribuição](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), todas as chamadas de funções serão resolvidas antes de executar o `return`, para que possamos dar ao `return` o valor da função `Math.random()`.
+**Observação:** como ao <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">armazenar valores com operador de atribuição</a>, todas as chamadas de funções serão resolvidas antes de executar o `return`, para que possamos dar ao `return` o valor da função `Math.random()`.
 
 # --instructions--
 

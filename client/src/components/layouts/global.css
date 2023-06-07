@@ -6,9 +6,10 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
+  --header-height: 38px;
 }
 
 #___gatsby {
@@ -23,11 +24,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  height: 100%;
 }
 
 .codeally-frame {
   display: block;
-  height: calc(100vh - var(--header-height, 0px));
+  height: calc(100vh - var(--header-height));
   width: 100%;
   border: 0;
 }
@@ -48,36 +50,56 @@ body {
   for those pages.
 */
 .overflow-fix {
-  margin-right: 0;
-  margin-left: 0;
+  margin-inline: 0;
 }
 
 .default-layout {
-  flex: 1 0 auto;
-  margin-top: var(--header-height, 0);
+  margin-top: var(--header-height);
   background: var(--secondary-background);
+}
+
+.default-layout:only-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+#content-start {
+  min-height: 0;
+  height: 100%;
+}
+
+#content-start > div {
+  height: 100%;
 }
 
 h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-monospace);
 }
 
 h4,
@@ -89,7 +111,6 @@ th {
   color: var(--secondary-color);
   font-weight: 400;
   font-size: 1rem;
-  font-family: 'Roboto Mono', monospace;
   margin: 0 0 1.2rem;
 }
 
@@ -142,6 +163,13 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  text-underline-position: under;
+}
+
+@supports not (text-underline-position: under) {
+  a {
+    text-underline-offset: 1em;
+  }
 }
 
 a:hover,
@@ -170,6 +198,18 @@ button.close:focus {
   color: inherit;
   opacity: 1;
   background-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 0;
+}
+
+@supports not selector(:focus-visible) {
+  :focus {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 0;
+  }
 }
 
 .modal-content {
@@ -281,7 +321,7 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline: 0;
+  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {
@@ -304,7 +344,7 @@ fieldset[disabled] .btn-primary.focus {
   height: 100%;
   min-height: 20px;
   min-width: 16px;
-  margin-left: 5px;
+  margin-inline-start: 5px;
 }
 
 .link-btn:active {
@@ -345,7 +385,7 @@ fieldset[disabled] .btn-primary.focus {
 .map-icon {
   width: 35px;
   max-height: 45px;
-  margin-right: 20px;
+  margin-inline: 5px;
 }
 
 .cert-header-icon {
@@ -385,7 +425,6 @@ strong {
 
 .form-control {
   color: var(--primary-color);
-  outline: none;
   border-color: var(--quaternary-background);
   background-color: var(--primary-background);
   -webkit-box-shadow: none !important;
@@ -395,7 +434,7 @@ strong {
 }
 
 input {
-  outline: none;
+  outline-color: transparent;
   border-color: var(--quaternary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -418,7 +457,7 @@ code {
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
 }
 
@@ -435,10 +474,6 @@ hr {
   border-top: 1px solid var(--quaternary-background);
 }
 
-.panel-default {
-  background: var(--secondary-background);
-}
-
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary,
@@ -453,6 +488,11 @@ hr {
 
 .dropdown-menu {
   background-color: var(--secondary-color);
+}
+
+.dropdown,
+.dropdown > .dropdown-menu {
+  width: 100%;
 }
 
 .dropdown-menu > li > a {
@@ -543,10 +583,6 @@ pre {
   margin-bottom: 0;
 }
 
-.solution-viewer {
-  border-color: var(--primary-color);
-}
-
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
@@ -622,6 +658,24 @@ blockquote .small {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
+}
+
+.alert-dismissable .close {
+  top: 0;
+}
+
+.annual-donation-alert {
+  background: linear-gradient(
+      -10deg,
+      rgba(217, 237, 247, 1) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
 }
 
 /* gatsby 404 */

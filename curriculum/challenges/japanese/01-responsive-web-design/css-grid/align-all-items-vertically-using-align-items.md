@@ -9,7 +9,7 @@ dashedName: align-all-items-vertically-using-align-items
 
 # --description--
 
-グリッドコンテナに `align-items` プロパティを使用すると、グリッド内のすべてのアイテムが垂直方向に整列します。
+グリッドコンテナーに `align-items` プロパティを使用すると、グリッド内のすべてのアイテムが垂直方向に整列します。
 
 # --instructions--
 

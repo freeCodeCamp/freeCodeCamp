@@ -1,8 +1,8 @@
 {
   "responsive-web-design": {
-    "title": "レスポンシブウェブデザイン (レガシー)",
+    "title": "(レガシー) レスポンシブウェブデザイン",
     "intro": [
-      "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
+      "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
       "最後に、Flexbox を使った Twitter カードや CSS グリッドを使った複雑なブログレイアウトの作成を通じて、さまざまな画面サイズに応答するウェブページを作成する方法を学びます。"
     ],
@@ -12,7 +12,7 @@
         "title": "HTML と HTML5 の基礎",
         "intro": [
           "HTML は、ウェブページの構造をブラウザに伝えるために特別な構文や記法を使用するマークアップ言語です。HTML 要素は通常、コンテンツに意味を与える開始タグや終了タグを持ちます。例えば、テキストを見出し、段落、リストアイテムとして記述できる各種要素があります。",
-          "このコースでは、Web ページの構成ブロックとして最も一般的な HTML 要素を学ぶために、猫の写真アプリを構築します。"
+          "このコースでは、猫の写真アプリを作成しながら、よく使う HTML 要素を学びます。HTML 要素とは、ウェブページを組み立てるために使うブロックのようなものです。"
         ]
       },
       "basic-css": {
@@ -32,8 +32,8 @@
       "applied-accessibility": {
         "title": "応用アクセシビリティ",
         "intro": [
-          "ウェブ開発におけるアクセシビリティとは、幅広いユーザーが理解し、移動し、対話できるコンテンツやUI (ユーザーインターフェース) のことを指します。これには視覚、聴覚、運動、認知に障害がある人も含みます。",
-          "このコースでは、誰もがアクセス可能な Web ページを構築するためのベストプラクティスを学びます。"
+          "ウェブ開発におけるアクセシビリティとは、幅広いユーザーが理解し、移動し、対話できるコンテンツや UI (ユーザーインターフェース) のことを指します。これには視覚、聴覚、運動、認知に障害がある人も含みます。",
+          "このコースでは、誰もがアクセスしやすいウェブページを作成するためのベストプラクティスを学びます。"
         ]
       },
       "responsive-web-design-principles": {
@@ -53,8 +53,8 @@
       "css-grid": {
         "title": "CSS グリッド",
         "intro": [
-          "CSS グリッドは、複雑なレスポンシブレイアウトを簡単に構築できる新しい標準規格です。これは HTML 要素をグリッドに変えることで動作し、子要素を内部のどこにでも配置できるようになります。",
-          "このコースでは、ブログを含む、多様で複雑なレイアウトを構築することで、CSS グリッドの基礎を学びます。"
+          "CSS グリッドは、複雑なレスポンシブレイアウトを簡単に構築できる比較的新しい方法です。この方法を使うと、HTML 要素をグリッド (格子) に変換して、その中で子要素をどこにでも配置できます。",
+          "このコースでは、ブログを含む、多様で複雑なレイアウトを実装することで、CSS グリッドの基礎を学びます。"
         ]
       },
       "responsive-web-design-projects": {
@@ -67,54 +67,54 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(New) Responsive Web Design",
+    "title": "レスポンシブウェブデザイン",
     "intro": [
-      "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
-      "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
-      "最後に、Flexbox を使った Twitter カードや CSS グリッドを使った複雑なブログレイアウトの作成を通じて、さまざまな画面サイズに応答するウェブページを作成する方法を学びます。"
+      "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
+      "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてクイズサイトを作りながらアクセシビリティのベストプラクティスを学びます。",
+      "最後に、フレックスボックスを使ったフォトギャラリーや、CSS グリッドを使った雑誌記事のレイアウトの作成を通じて、さまざまな画面サイズに応じて表示されるウェブページの作成方法を学びます。"
     ],
     "note": "注意: 広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "build-a-tribute-page-project": {
         "title": "トリビュートページ",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、ご自身で選んだ架空または現実の題材に対するトリビュートページを構築します。"
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、あなたが選んだ題材に関するトリビュートページを作成します。題材は架空のものでも実在のものでも構いません。"
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
         "title": "個人ポートフォリオのウェブページ",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、ご自身の個人ポートフォリオページを作成します。"
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、あなた自身の個人ポートフォリオページを作成します。"
         ]
       },
       "build-a-product-landing-page-project": {
         "title": "プロダクトのランディングページ",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、ご自身で選んだプロダクトを売り出すための、プロダクトのランディングページを構築します。"
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、あなたが選んだプロダクトを売り込むためのランディングページを作成します。"
         ]
       },
       "build-a-survey-form-project": {
         "title": "アンケートフォーム",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、ユーザーからのデータを集めるためのアンケートフォームを構築します。"
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、ユーザーからデータを集めるためのアンケートフォームを作成します。"
         ]
       },
       "build-a-technical-documentation-page-project": {
         "title": "技術ドキュメントページ",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、トピックの説明書または参考資料として役に立つ技術ドキュメントページを構築します。"
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、あるトピックについての説明書または参考資料として機能する技術ドキュメントページを作成します。"
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "HTML の学習: 猫の写真アプリを作成する",
         "intro": [
           "HTML タグはウェブページに構造を与えます。HTML タグで写真やボタン、また他の要素をウェブページに加えることができます。",
-          "このコースでは、あなた自身で猫の写真アプリを構築しながら、最もよく使われる HTML タグを学習します。"
+          "このコースでは、実際に手を動かして猫の写真アプリを作成しながら、最もよく使う HTML タグを学習します。"
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
@@ -128,14 +128,14 @@
         "title": "CSS ボックスモデルの学習: ロスコの絵画を作成する",
         "intro": [
           "すべての HTML 要素は間隔と境界を伴ったボックスそのものです。これはボックスモデルと呼ばれています。",
-          "このコースでは、CSS とボックスモデルを使ってロスコ風の長方形アート作品を作成します。"
+          "このコースでは、CSS とボックスモデルを使ってマーク・ロスコ風の長方形アート作品を作成します。"
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "CSS 変数の学習: 都市のスカイラインを作成する",
         "intro": [
-          "CSS の変数はスタイルを体系づけたり、それらを再利用するのに役立ちます。",
-          "このコースでは、都市のスカイラインを作成します。CSS の変数の設定方法を学習して、使いたい時にいつでもそれらを再利用できるようにします。"
+          "CSS の変数はスタイルを体系づけたり、再利用するのに役立ちます。",
+          "このコースでは、都市のスカイラインの風景を作成します。CSS 変数の設定方法を学習して、必要に応じて再利用できるようにします。"
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
@@ -149,7 +149,7 @@
         "title": "アクセシビリティの学習: クイズを作成する",
         "intro": [
           "アクセシビリティとは、障害のある人を含むすべての人々にとって、ウェブページを利用しやすくすることです。",
-          "このコースでは、クイズのウェブページを作成します。キーボードショートカット、ARIA 属性、デザインのベストプラクティスなど、アクセシビリティのツールについて学習します。"
+          "このコースでは、クイズ (小テスト) のウェブページを作成します。キーボードショートカット、ARIA 属性、デザインのベストプラクティスなど、アクセシビリティのツールについて学習します。"
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
@@ -180,10 +180,10 @@
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "タイポグラフィの学習: 栄養ラベルを作成する",
+        "title": "タイポグラフィの学習: 栄養成分表示ラベルを作成する",
         "intro": [
-          "タイポグラフィはテキストを読み易く、また目的に合うようにスタイリングする技術です。",
-          "このコースでは、タイポグラフィを用いて栄養ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
+          "タイポグラフィとは、テキストを読み易く、また目的に合うようにスタイリングする技術です。",
+          "このコースでは、タイポグラフィを用いて栄養成分表示ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
@@ -201,10 +201,10 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "CSS 疑似セレクターの学習: 貸借対照表を作成する",
+        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
-          "このコースでは、疑似セレクターを用いて貸借対照表を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
+          "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
@@ -300,68 +300,65 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
+    "intro": ["プレイスホルダー", "プレイスホルダー"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "シーザー暗号解析器作成プロジェクト",
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "キャッシュレジスター作成プロジェクト",
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "回文チェッカー作成プロジェクト",
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "ローマ数字コンバーター作成プロジェクト",
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "電話番号バリデーター作成プロジェクト",
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "フォームの検証の学習: カロリー計算機を作る",
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "関数型プログラミングの学習: スプレッドシートを作る",
+        "intro": ["", ""]
+      },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Learn Data Structures By Building A Shopping Cart",
+        "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +366,7 @@
     "title": "フロントエンド開発ライブラリ",
     "intro": [
       "今やあなたは HTML、CSS、そして JavaScript に精通しているので、業界内で最も一般的なフロントエンドライブラリのいくつかを学習することで技能を向上させましょう。",
-      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを素早く整える方法を学習します。Sassで CSS スタイルに論理を加え、そして拡張する方法についても学習します。",
+      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを手軽に整える方法を学習します。Sass を利用して、CSS スタイルに論理的な処理を加えて拡張する方法についても学習します。",
       "後ほど、ショッピングカートや他のアプリケーションを構築しながら、強力なシングルページアプリケーション (SPA) を React と Redux で作成する方法を学習します。"
     ],
     "note": "",
@@ -463,15 +460,12 @@
       },
       "d3-dashboard": {
         "title": "D3 ダッシュボード",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-database": {
-    "title": "リレーショナルデータベース (ベータ版)",
+    "title": "リレーショナルデータベース",
     "intro": [
       "このコースでは、VS Code、PostgreSQL、そして Linux / Unix コマンドラインを含む本格的な開発者ツールとソフトウェアを使用して、インタラクティブなチュートリアルを完了し、プロジェクトを構築します。",
       "これらのコースは基本的な Bash コマンドから始まります。ターミナルを使用して、ファイルシステムの移動や操作から、Bash 内でのスクリプト、幅広い高度な使用法まで、すべてを学習します。",
@@ -482,35 +476,35 @@
       "build-a-celestial-bodies-database-project": {
         "title": "天体データベース",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "このプロジェクトでは、PostgreSQL を使用して天体のデータベースを構築します。"
         ]
       },
       "build-a-number-guessing-game-project": {
         "title": "数当てゲーム",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "このプロジェクトでは、Bash のシェルスクリプト、PostgreSQL、Git を使用して、数当てゲームを作成します。ゲームはターミナル内で動作し、ユーザーの情報を保存できるようにします。"
         ]
       },
       "build-a-periodic-table-database-project": {
         "title": "周期表データベース",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "このプロジェクトでは、周期表データベースから化学元素の情報を取得する、Bash スクリプトを作成します。"
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
         "title": "サロン予約スケジューラー",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "このプロジェクトでは、PostgreSQL を使用して、サロンの顧客と予約を管理するインタラクティブな Bash プログラムを作成します。"
         ]
       },
       "build-a-world-cup-database-project": {
         "title": "ワールドカップデータベース",
         "intro": [
-          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "このプロジェクトでは、PostgreSQL データベースにワールドカップの試合情報を入力し、そこから有用な統計情報を取得する Bash スクリプトを作成します。"
         ]
       },
@@ -583,7 +577,7 @@
     "intro": [
       "ここまでは、JavaScript をフロントエンドで使用して、ページに対話性を加えたり、アルゴリズムチャレンジを解決したり、SPA を構築したりしてきました。しかし JavaScript は、バックエンド (サーバー) でも使用でき、ウェブアプリケーション全体を構築することができます。",
       "現在、アプリケーションを構築する一般的な方法の一つはマイクロサービスを使用する方法です。これは、小さなモジュール式のアプリケーションを組み合わせて、より大きな全体を形成する方法です。",
-      "バックエンド開発と API 認定講座では、Node.js と npm (Node Package Manager) を使用してバックエンドアプリを記述する方法を学習します。また、Express フレームワークでウェブアプリケーションを構築し、そして MongoDB と Mongoose ライブラリで People Finder マイクロサービスを構築します。"
+      "バックエンド開発と API 認定講座では、Node.js と npm を使用してバックエンドアプリを記述する方法を学習します。Express フレームワークでウェブアプリケーションを構築し、MongoDB と Mongoose ライブラリで People Finder マイクロサービスを構築します。"
     ],
     "note": "",
     "blocks": {
@@ -606,8 +600,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB と Mongoose",
         "intro": [
-          "MongoDB はアプリケーションで使用できる JSON ドキュメント (またはレコード) を保管するデータベースアプリケーションです。別の種類のデータベースである SQL とは異なり、Mongo は非リレーショナル、または \"NoSQL\" データベースです。これは、SQL データベースがあらかじめ定義した多くのテーブルにデータを保管するのと異なり、Mongo はすべての関連データを一つのレコードの中に保管することを意味します。",
-          "Mongoose は、よく Mongo と一緒にインストールされる一般的な npm パッケージです。Mongoose を使用することで、JSON ではなく素の JavaScript オブジェクトを使用することができるようになり、Mongo が使いやすくなります。また、スキーマと呼ばれるドキュメントの設計図を作成することを可能にし、間違った型のデータを保存してしまい後にバグを発生させることを防ぎます。",
+          "MongoDB はアプリケーションで使用できる JSON ドキュメント (またはレコード) を保管するデータベースアプリケーションです。別の種類のデータベースである SQL とは異なり、MongoDB は非リレーショナル、または \"NoSQL\" データベースです。これは、SQL データベースがあらかじめ定義した多くのテーブルにデータを保管するのと異なり、MongoDB はすべての関連データを一つのレコードの中に保管することを意味します。",
+          "Mongoose は MongoDB とやり取りするためによく使われる npm パッケージです。Mongoose を利用することで、JSON ではなく素の JavaScript オブジェクトを使用できるようになり、MongoDB が使いやすくなります。また、スキーマと呼ばれるドキュメントの設計図を作成することを可能にし、間違った型のデータを保存してしまい後にバグを発生させることを防ぎます。",
           "MongoDB と Mongoose コースでは、モデルを設定する方法や、データベース内のドキュメントを保存、削除、検索する方法など、永続的なデータを扱うことの基本を学習します。"
         ]
       },
@@ -655,10 +649,10 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Python を用いた科学的コンピューティング",
+    "title": "Python を用いた科学技術計算",
     "intro": [
       "Python は現在最も一般的で適応性のあるプログラミング言語です。基本的なスクリプトから機械学習まで幅広く使用することができます。",
-      "Python を用いた科学的コンピューティング認定講座では、変数、ループ、条件式、そして関数のような、Python の基本を学習します。それから、複雑なデータ構造、ネットワーキング、リレーショナルデータベース、そしてデータ可視化まで素早く強化します。"
+      "Python を用いた科学技術計算認定講座では、変数、ループ、条件式、そして関数のような、Python の基本を学習します。それから、複雑なデータ構造、ネットワーキング、リレーショナルデータベース、そしてデータ可視化まで素早く強化します。"
     ],
     "note": "",
     "blocks": {
@@ -670,9 +664,9 @@
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Python を用いた科学的コンピューティングプロジェクト",
+        "title": "Python を用いた科学技術計算プロジェクト",
         "intro": [
-          "Python の技能をテストする時です。これらのプロジェクトを完成させることによって、Python の優れた基礎知識をもっていることと、Python を用いた科学的コンピューティング認定証を得る資格があることを証明します。"
+          "Python の技能をテストする時です。これらのプロジェクトを完成させることによって、Python の優れた基礎知識をもっていることと、Python を用いた科学技術計算認定証を得る資格があることを証明します。"
         ]
       }
     }
@@ -771,13 +765,147 @@
       }
     }
   },
+  "college-algebra-with-python": {
+    "title": "Python を用いた代数学",
+    "intro": [
+      "このコースは 1 学期の大学講座として作成されました。講義動画、インタラクティブに手を動かしながら学べる Google Colaboratory ノートブック、課題、そして挑戦しがいのあるプロジェクトで構成されています。",
+      "コースの各パートを順に進めていく中で、代数学、そして Python のコードを書いて代数の問題を解く方法がしっかりと理解できます。",
+      "また、コース全体を通して、カスタム計算機として使える Algebra Colab ノートブックを作り上げます。この講座 (およびこれからあなたが書くコード) が、数学とデータサイエンスをより深く理解するための基礎となるでしょう。"
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "Learn Ratios and Proportions",
+        "intro": [
+          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "Learn How to Solve for X",
+        "intro": [
+          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "Learn Fractions and Decimals",
+        "intro": [
+          "This unit will focus on converting decimals to fractions and percents."
+        ]
+      },
+      "learn-functions-and-graphing": {
+        "title": "Learn Functions and Graphing",
+        "intro": ["This unit will teach you about math functions."]
+      },
+      "learn-linear-functions": {
+        "title": "Learn Linear Functions",
+        "intro": [
+          "This unit will show you how to develop linear equations from two points."
+        ]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "Learn Common Factors and Square Roots",
+        "intro": [
+          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+        ]
+      },
+      "build-a-multi-function-calculator-project": {
+        "title": "Multi-Function Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a multi-function calculator."
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "Learn How to Graph Systems of Equations",
+        "intro": [
+          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "Learn How to Solve Systems of Equations",
+        "intro": [
+          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "Learn Applications of Linear Systems",
+        "intro": [
+          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "Learn Quadratic Equations",
+        "intro": [
+          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+        ]
+      },
+      "build-a-graphing-calculator-project": {
+        "title": "Graphing Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a graphing calculator."
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "Learn Parent Graphs and Polynomials",
+        "intro": [
+          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+        ]
+      },
+      "build-three-math-games-project": {
+        "title": "Three Math Games",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build three math games."
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "Learn Business Applications of College Algebra",
+        "intro": [
+          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "Learn Simple and Compound Interest",
+        "intro": [
+          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "Learn Exponents and Logarithms",
+        "intro": [
+          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+        ]
+      },
+      "build-a-financial-calculator-project": {
+        "title": "Financial Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a financial calculator."
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "College Algebra with Python: Conclusion",
+        "intro": [
+          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+        ]
+      },
+      "build-a-data-graph-explorer-project": {
+        "title": "Data Graph Explorer",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a data graph explorer."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "コーディング面接対策",
     "intro": [
       "次回の就職面接に備えて無料のコーディング演習をお探しでしたら、こちらにご用意しています。",
       "このセクションはアルゴリズム、データ構造、および数学の知識をテストする何百ものコーディングチャレンジを含んでいます。技能を向上させ、またはポートフォリオに加えるために活用できる多くの宿題プロジェクトもあります。"
     ],
-    "note": "",
+    "note": "プロジェクト・オイラーのプロジェクトは独立したコースに移動しました。カリキュラムに戻ってコース一覧を確認してください。",
     "blocks": {
       "algorithms": {
         "title": "アルゴリズム",
@@ -804,34 +932,102 @@
         "title": "ロゼッタコード",
         "intro": [
           "由緒あるロゼッタコードライブラリから取られた以下の無料のプログラミングタスクで、クリエイティブな課題解決技能を向上させましょう。",
-          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。"
+          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>作: Rosetta Code</a>"
+        ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
+      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
+      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Learn CSS Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Learn CSS Foundations Projects",
+        "intro": ["A description is to be determined"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "プロジェクト・オイラー",
+    "intro": [
+      "かの偉大なプロジェクト・オイラー・アーカイブを元にした、以下のプログラミングチャレンジを完成させてください。これらの問題でアルゴリズムと数学の知識が強化できるでしょう。",
+      "問題は易しい物から難しい物まであり、その多くで帰納的連鎖学習のような体験ができます。つまり、ある問題を解くことによって新しい概念を学ぶことができ、以前はとっつきにくかった問題に取り組めるようになるでしょう。すべての問題を解けるでしょうか？"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "プロジェクト・オイラー: 問題 1～100",
+        "intro": [
+          "最初の問題セットでは、効率的なアルゴリズムを書くためにフィボナッチ数列、素数理論、組合せ理論のような数学的概念を利用して問題を解いていきます。"
         ]
       },
-      "project-euler": {
-        "title": "プロジェクト・オイラー",
+      "project-euler-problems-101-to-200": {
+        "title": "プロジェクト・オイラー: 問題 101～200",
         "intro": [
-          "大規模なプロジェクト・オイラー・アーカイブから取られた、以下のプログラミングプロジェクトを完成させてください。これらはアルゴリズムと数学の知識を強化するでしょう。",
-          "これらの問題は難しさに幅があり、そして多くの場合、その実習は帰納的なチェーン学習です。つまり、ある問題を解くことにより、以前はとっつきにくかった問題に取り掛ることができるようになる新しい概念に触れられるようになっています。あなたはすべてを終えることができるでしょうか？"
+          "この問題セットでは最初のパートで学んだスキルを踏まえて、ベクトル計算、パスカルの三角錐、RSA アルゴリズムなどの高度な概念を利用して効率的に問題を解いていきます。"
         ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "プロジェクト・オイラー: 問題 201～300",
+        "intro": [
+          "この問題セットでは、引き続きここまで学んできたスキルを基に、二項定理、ハミング数、コラッツ数列などの概念を利用して、数学と問題解決のスキルを磨いていきます。"
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "プロジェクト・オイラー: 問題 301～400",
+        "intro": [
+          "このパートでは、組合せゲーム理論、ビット演算、ゴロムの自己記述的数列などの概念を利用して効率的な解法を作成しながら、引き続き数学とアルゴリズムのスキルを活用します。"
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "プロジェクト・オイラー: 問題 401～480",
+        "intro": [
+          "最後の問題セットでは、ここまで学んだすべてのことを活用して、単約数、カプレカ操作などの高度な概念を使って複雑な問題を解いていきます。"
+        ]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Example Certification",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Example Certification Exam",
+        "intro": ["placeholder"]
       }
     }
   },
   "misc-text": {
     "certification": "{{cert}} 認定",
     "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",
-    "courses": "コース",
+    "courses": "コース一覧",
     "steps": "ステップ",
     "expand": "コースを展開",
     "collapse": "コースを閉じる",
     "legacy-header": "レガシーコース",
     "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
     "legacy-go-back": "カリキュラムの最新版へ移動",
-    "new-rwd-desc": "レスポンシブウェブデザインのカリキュラムが更新されました。以前のカリキュラムに取り組まれていた場合も、進捗状況は保存されておりますのでご安心ください。以前の進捗状況は「レスポンシブウェブデザイン (レガシー)」セクションでご確認いただけます。",
-    "new-rwd-article": "更新のお知らせをご確認いただき、新カリキュラムのご利用をご検討ください。",
-    "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
+    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
-    "enable-cookies": "開始前にサードパーティーの Cookie を有効にしてください。",
+    "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",
     "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。"
   }
 }

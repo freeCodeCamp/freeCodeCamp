@@ -8,7 +8,7 @@ if (!name) {
   throw new Error('You must include a component name.');
 }
 
-if (!name.match(/^[A-Z]/)) {
+if (!/^[A-Z]/.exec(name)) {
   throw new Error('Component name must be in PascalCase.');
 }
 

@@ -8,7 +8,12 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-你将通过使用我们的[Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator)来完成本项目。
+你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
 
 # --instructions--
 
@@ -22,9 +27,9 @@ dashedName: polygon-area-calculator
 - `set_height`
 - `get_area`：返回面积（`width * height`）
 - `get_perimeter`：返回周长（`2 * width + 2 * height`）
-- `get_diagonal`：返回对角线 (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`：返回一个字符串，该字符串使用包含“\*”的行来表示形状。 行数应等于高度，每行中“\*”的数量应等于宽度。 每行末尾应该有一个新行 (`\n`)。 如果宽度或高度大于 50，则应返回字符串：“Too big for picture.”。
-- `get_amount_inside`：以另一个形状（正方形或矩形）作为参数。 返回传入的形状可以装进该形状的次数（没有旋转）。 例如，一个宽为 4，高为 8 的矩形可以放入两个边长为 4 的正方形。
+- `get_diagonal`：返回对角线（`(width ** 2 + height ** 2) ** .5`）
+- `get_picture`：返回一个字符串，该字符串使用包含 “\*” 的行来表示形状。 行数应等于高度，每行中 “\*” 的数量应等于宽度。 每行末尾应该有一个新行（`\n`）。 如果宽度或高度大于 50，则应返回字符串：“Too big for picture.”。
+- `get_amount_inside`：以另一个形状（正方形或矩形）作为参数。 返回传入的形状可以装进该形状的次数（没有旋转）。 例如，一个宽为 4、高为 8 的矩形可以放入两个边长为 4 的正方形。
 
 另外，如果一个 Rectangle 实例被表示为一个字符串，它应该看起来像： `Rectangle(width=5, height=10)`
 

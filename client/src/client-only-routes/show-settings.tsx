@@ -13,43 +13,43 @@ import About from '../components/settings/about';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
-import Internet from '../components/settings/internet';
+import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
-import { Themes } from '../components/settings/theme';
+import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate,
   userTokenSelector
-} from '../redux';
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
   updateMyPortfolio,
   updateMyQuincyEmail,
+  updateMySocials,
   updateMySound,
   updateMyTheme,
-  updateUserFlag,
+  updateMyKeyboardShortcuts,
   verifyCert
-} from '../redux/settings';
+} from '../redux/settings/actions';
 
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-interface ShowSettingsProps {
+type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
-  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  updateInternetSettings: () => void;
+  updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
@@ -57,7 +57,7 @@ interface ShowSettingsProps {
   verifyCert: () => void;
   path?: string;
   userToken: string | null;
-}
+};
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
@@ -79,8 +79,8 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
-    updateUserFlag({ keyboardShortcuts }),
-  updateInternetSettings: updateUserFlag,
+    updateMyKeyboardShortcuts({ keyboardShortcuts }),
+  updateSocials: (formValues: Socials) => updateMySocials(formValues),
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
@@ -116,6 +116,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isDataAnalysisPyCertV7,
       isMachineLearningPyCertV7,
       isRelationalDatabaseCertV8,
+      isCollegeAlgebraPyCertV8,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -137,7 +138,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate,
     showLoading,
     updateQuincyEmail,
-    updateInternetSettings,
+    updateSocials,
     updatePortfolio,
     updateIsHonest,
     verifyCert,
@@ -159,7 +160,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
-          <Spacer size={2} />
+          <Spacer size='large' />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>
@@ -178,29 +179,28 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
-          <Spacer />
+          <Spacer size='medium' />
           <Privacy />
-          <Spacer />
+          <Spacer size='medium' />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer />
+          <Spacer size='medium' />
           <Internet
             githubProfile={githubProfile}
             linkedin={linkedin}
             twitter={twitter}
-            updateInternetSettings={updateInternetSettings}
+            updateSocials={updateSocials}
             website={website}
           />
-          <Spacer />
-          {/* @ts-expect-error Portfolio types mismatch */}
+          <Spacer size='medium' />
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer />
+          <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer />
+          <Spacer size='medium' />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -209,6 +209,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
+            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -226,11 +227,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer />
+              <Spacer size='medium' />
               <UserToken />
             </>
           )}
-          <Spacer />
+          <Spacer size='medium' />
           <DangerZone />
         </main>
       </Grid>

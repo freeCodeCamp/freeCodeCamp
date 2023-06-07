@@ -1,14 +1,14 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
 title: Successione Look-and-say
-challengeType: 5
+challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
 ---
 
 # --description--
 
-La successione [Look and say](https://en.wikipedia.org/wiki/Look and say sequence) è una sequenza di numeri definita ricorsivamente.
+La successione Look-and-say è una sequenza di numeri definita ricorsivamente.
 
 Definizione della successione
 

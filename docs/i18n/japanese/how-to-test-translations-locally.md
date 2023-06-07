@@ -13,13 +13,13 @@
 - `availableLangs`: `client` と `curriculum` 両方の配列で、言語のテキスト名を追加します。 これは `.env` ファイルで使用される値です。
 - `auditedCerts`: 言語のテキスト名を _key_ として追加し、`SuperBlocks.{cert}` 変数の配列を _value_ として追加します。 これは、クライアントにどの認定講座の翻訳が完了しているのかを伝えます。
 - `i18nextCodes`: これらは各言語の ISO の言語コードです。 有効にしようとしている言語に適切な ISO コードを追加する必要があります。 言語コードは、各言語に固有のものである必要があります。
-- `langDisplayNames`: これらはナビゲーションメニューの言語セレクターで使用する表示名です。
-- `langCodes`: これらは日付と数字の書式設定に使用する言語コードです。 ISO コードではなく、Unicode CLDR コードである必要があります。
+- `LangNames`: These are the display names for the language selector in the navigation menu.
+- `LangCodes`: These are the language codes used for formatting dates and numbers. ISO コードではなく、Unicode CLDR コードである必要があります。
 
 一例を挙げると、Dothraki という言語を有効にしたい場合、`all-langs.js` の各オブジェクトは次のようになります。
 
 ```js
-const availableLangs = {
+export const availableLangs = {
   client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
   curriculum: [
     'english',
@@ -69,7 +69,7 @@ export const auditedCerts = {
   ]
 };
 
-const i18nextCodes = {
+export const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
@@ -77,7 +77,7 @@ const i18nextCodes = {
   dothraki: 'mis'
 };
 
-const langDisplayNames = {
+export enum LangNames = {
   english: 'English',
   espanol: 'Español',
   chinese: '中文（简体字）',
@@ -85,7 +85,7 @@ const langDisplayNames = {
   dothraki: 'Dothraki'
 };
 
-const langCodes = {
+export enum LangCodes = {
   english: 'en-US',
   espanol: 'es-419',
   chinese: 'zh',
@@ -96,7 +96,7 @@ const langCodes = {
 
 次に、`client/src/utils/algolia-locale-setup.ts` ファイルを開きます。 このデータは、`/news` 記事を読み込む検索バーに使用されます。 この機能をテストする可能性は低いですが、 言語のデータがないと、ローカルでコードベースを構築しようとする際にエラーが発生する可能性があります。
 
-`algoliaIndices` オブジェクトに言語のオブジェクトを追加します。 ローカルテスト用に `english` オブジェクトの値を使用する必要があります。`english` キーを、言語の `availableLangs` 値に置き換えます。
+`algoliaIndices` オブジェクトに言語のオブジェクトを追加します。 You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
 > [!NOTE] 既に対象言語でニュースのインスタンスをデプロイしている場合は、値を更新してライブインスタンスを反映することができます。 それ以外の場合は、英語の値を使用します。
 
@@ -130,13 +130,36 @@ const algoliaIndices = {
 最後に、`.env` ファイルの中で、`CLIENT_LOCALE` と `CURRICULUM_LOCALE` を新しい言語 (`availableLangs` 値を使用) に設定します。
 
 ```txt
-CLIENT_LOCALE="dothraki"
-CURRICULUM_LOCALE="dothraki"
+CLIENT_LOCALE=dothraki
+CURRICULUM_LOCALE=dothraki
 ```
+
+### Releasing a Superblock
+
+After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+
+```ts
+export const auditedCerts = {
+  // other languages
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Finally, the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+This will move the new superblock to the correct place in the curriculum map on `/learn`.
 
 ## ローカライズされた動画を有効にする
 
-ビデオチャレンジのために、いくつかの変更が必要です。 まず、`client/src/templates/Challenges/video/Show.tsx` ファイルの中の GraphQL クエリに新しいロケールを追加します。 例えば、クエリに Dothraki を追加します。
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -151,7 +174,7 @@ CURRICULUM_LOCALE="dothraki"
       ...
 ```
 
-次に、監査済みブロック内の任意のビデオチャレンジに新しい言語の id を追加します。 例えば、 `all-langs.ts` 中の `auditedCerts` に `dothraki` の `scientific-computing-with-python` が含まれる場合、`videoLocaleIds` に `dothraki` を追加しなければなりません。 フロントマターは次のようになります。
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:
@@ -163,7 +186,7 @@ dashedName: introduction-why-program
 ---
 ```
 
-`client/src/redux/prop-types` の `VideoLocaleIds` インターフェースを更新して、新しい言語を入れます。
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
 
 ```ts
 export interface VideoLocaleIds {
@@ -174,7 +197,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-そして最後に、`curriculum/schema/challengeSchema.js` のチャレンジスキーマを更新します。
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -190,10 +213,10 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## 翻訳内容を読み込む
 
-言語が本番用に承認されていないため、スクリプトは翻訳を自動的にダウンロードしていません。 スタッフのみ、翻訳を直接ダウンロードすることができます - [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) にお問い合わせください。 または、テスト目的で、ローカルで英語のマークダウンファイルを翻訳することもできます。
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
 
-ファイルを入手したら、それらを正しいディレクトリに配置する必要があります。 カリキュラムのチャレンジについては、認定講座のフォルダ (すなわち、`01-responsive-web-design`) を `curriculum/challenges/{lang}` ディレクトリ内に配置する必要があります。 Dothraki の翻訳では、これが `curriculum/challenges/dothraki` になります。 クライアント翻訳の `.json` ファイルは、 `client/i18n/locales/{lang}` ディレクトリに移動します。
+Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
 
-以上の準備が整ったら、 `npm run develop` を実行することで freeCodeCamp の翻訳版を表示できるはずです。
+Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
-> [!ATTENTION] テスト目的でローカルで翻訳を実行することもできますが、翻訳は GitHub を介して送信 _するのではなく_、Crowdin を介してのみ送信する必要があることをご承知おきください。 テストが終了したら、必ずローカルコードベースをリセットしてください。
+> [!ATTENTION] テスト目的でローカルで翻訳を実行することもできますが、翻訳は GitHub を介して送信 _するのではなく_ 、Crowdin を介してのみ送信する必要があることをご承知おきください。 テストが終了したら、必ずローカルコードベースをリセットしてください。

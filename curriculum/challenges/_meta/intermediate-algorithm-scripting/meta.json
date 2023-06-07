@@ -2,6 +2,7 @@
   "name": "Intermediate Algorithm Scripting",
   "isUpcomingChange": false,
   "dashedName": "intermediate-algorithm-scripting",
+  "helpCategory": "JavaScript",
   "order": 8,
   "time": "50 hours",
   "template": "",
@@ -92,4 +93,5 @@
       "af4afb223120f7348cdfc9fd",
       "Map the Debris"
     ]
-  ]}
+  ]
+}

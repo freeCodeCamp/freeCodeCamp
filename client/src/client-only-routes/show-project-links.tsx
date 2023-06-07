@@ -1,23 +1,21 @@
-import { find, first } from 'lodash-es';
+import { Table } from '@freecodecamp/react-bootstrap';
+import { find } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { Spacer, Link } from '../components/helpers';
+import { Link, Spacer } from '../components/helpers';
+import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
-import {
-  projectMap,
-  legacyProjectMap
-} from '../resources/cert-and-project-map';
+import { fullProjectMap } from '../resources/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
 
-import { openModal } from '../templates/Challenges/redux';
+import { openModal } from '../templates/Challenges/redux/actions';
 
-import '../components/layouts/project-links.css';
 import { regeneratePathAndHistory } from '../../../utils/polyvinyl';
+import '../components/layouts/project-links.css';
 interface ShowProjectLinksProps {
   certName: string;
   name: string;
@@ -82,6 +80,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={`${projectTitle} solution`}
+        projectTitle={projectTitle}
         displayContext='certification'
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
@@ -89,9 +88,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const renderProjectsFor = (certName: string) => {
+  const renderProjectsFor = (
+    certName: keyof typeof fullProjectMap | 'Legacy Full Stack'
+  ) => {
     if (certName === 'Legacy Full Stack') {
-      const legacyCerts = [
+      const certs = [
         { title: 'Responsive Web Design' },
         { title: 'JavaScript Algorithms and Data Structures' },
         { title: 'Front End Development Libraries' },
@@ -99,38 +100,33 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { title: 'Back End Development and APIs' },
         { title: 'Legacy Information Security and Quality Assurance' }
       ] as const;
-      return legacyCerts.map((cert, ind) => {
-        const mapToUse = (projectMap[cert.title] ||
-          legacyProjectMap[cert.title]) as { certSlug: string }[];
-        const { certSlug } = first(mapToUse) as { certSlug: string };
+
+      return certs.map((cert, ind) => {
+        const projects = fullProjectMap[cert.title];
+        const { certSlug } = projects[0];
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
-          <li key={ind}>
-            <a
-              className='btn-invert project-link'
-              href={certLocation}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t(`certification.project.title.${cert.title}`, cert.title)}
-            </a>
-          </li>
+          <tr key={ind}>
+            <td>
+              <Link className='project-link' to={certLocation} external>
+                {t(`certification.title.${cert.title}`, cert.title)}
+              </Link>
+            </td>
+          </tr>
         );
       });
     }
-    // @ts-expect-error Error expected until projectMap is typed
-    const project = (projectMap[certName] || legacyProjectMap[certName]) as {
-      link: string;
-      title: string;
-      id: string;
-    }[];
+
+    const project = fullProjectMap[certName];
     return project.map(({ link, title, id }) => (
-      <li key={id}>
-        <Link className='project-link' to={link}>
-          {t(`certification.project.title.${title}`, title)}
-        </Link>
-        : {getProjectSolution(id, title)}
-      </li>
+      <tr key={id}>
+        <td>
+          <Link to={link}>
+            {t(`certification.project.title.${title}`, title)}
+          </Link>
+        </td>
+        <td colSpan={2}>{getProjectSolution(id, title)}</td>
+      </tr>
     ));
   };
 
@@ -151,6 +147,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       }
     : null;
 
+  const isCertName = (
+    maybeCertName: string
+  ): maybeCertName is keyof typeof fullProjectMap | 'Legacy Full Stack' => {
+    if (maybeCertName === 'Legacy Full Stack') return true;
+    return maybeCertName in fullProjectMap;
+  };
+  if (!isCertName(certName)) return <div> Unknown Certification</div>;
+
   return (
     <div>
       {t(
@@ -159,9 +163,18 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           : 'certification.project.heading',
         { user: name }
       )}
-      <Spacer />
-      <ul>{renderProjectsFor(certName)}</ul>
-      <Spacer />
+      <Spacer size='medium' />
+      <Table striped>
+        <thead>
+          <tr>
+            <th>
+              <span className='sr-only'>{t('settings.headings.certs')}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>{renderProjectsFor(certName)}</tbody>
+      </Table>
+      <Spacer size='medium' />
       <ProjectModal
         challengeFiles={completedChallenge?.challengeFiles ?? null}
         handleSolutionModalHide={handleSolutionModalHide}

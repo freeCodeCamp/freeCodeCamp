@@ -1,36 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: ソートアルゴリズム / カクテルシェーカーソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--
 
-カクテルシェーカーソートは、[バブルソート](https://rosettacode.org/wiki/Bubble Sort)の改良版です。 改善点は基本的に、配列の値を双方向に「バブル」する点です。それぞれの反復でカクテルシェーカーソートは、前後に 1 回ずつバブルソートするからです。 アルゴリズムの擬似コード ( [wikipedia](https://en.wikipedia.org/wiki/Cocktail sort) より):
-
-<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
-  <b>do</b>
-    swapped := false
-    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i>
-                                <i>// elements are in the wrong</i>
-                                <i>// order</i>
-        swap( A[ i ], A[ i+1 ] ) <i>// let the two elements</i>
-                                 <i>// change places</i>
-        swapped := true;
-    <b>if</b> swapped = false <b>then</b>
-      <i>// we can exit the outer loop here if no swaps occurred.</i>
-      <b>break do-while loop</b>;
-    swapped := false
-    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
-        swap( A[ i ], A[ i+1 ] )
-        swapped := true;
-  <b>while</b> swapped; <i>// if no elements have been swapped,</i>
-                <i>// then the list is sorted</i>
-</pre>
+The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
 
 # --instructions--
 

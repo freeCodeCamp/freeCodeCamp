@@ -8,7 +8,7 @@ dashedName: perform-a-subset-check-on-two-sets-of-data
 
 # --description--
 
-この課題では、2 つのデータセットに対してサブセット (部分集合) テ ストを実行します。 `isSubsetOf` と呼ばれるメソッドを `Set` データ構造に作成します。 これは最初のセットを 2 番目のセットと比較し、最初のセットがすべて 2 番目のセットに含まれている場合に `true` を返します。
+この課題では、2 つのデータセットに対してサブセット (部分集合) テストを実行します。 `isSubsetOf` と呼ばれるメソッドを `Set` データ構造に作成します。 これは最初のセットを 2 番目のセットと比較し、最初のセットがすべて 2 番目のセットに含まれている場合に `true` を返します。
 
 例えば、`setA = ['a','b']` かつ `setB = ['a','b','c','d']` の場合、 `setA` は `setB` のサブセットなので、`setA.isSubsetOf(setB)` は `true` を返す必要があります。
 
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-最初の Set() が 2 番目の Set に含まれている必要があります。
+The first `Set` should be contained in the second `Set`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` は `true` を返す必要があります。
+`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` should return `true`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` は `false` を返す必要があります。
+`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` should return `false`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-`[].isSubsetOf([])` は `true` を返す必要があります。
+`[].isSubsetOf([])` should return `true`.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['c', 'd'])` は `false` を返す必要があります。
+`['a', 'b'].isSubsetOf(['c', 'd'])` should return `false`.
 
 ```js
 assert(

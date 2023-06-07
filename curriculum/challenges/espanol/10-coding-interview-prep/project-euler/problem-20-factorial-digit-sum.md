@@ -1,53 +1,53 @@
 ---
 id: 5900f3801000cf542c50fe93
-title: 'Problem 20: Factorial digit sum'
-challengeType: 5
+title: 'Problema 20: Suma de los dígitos de un factorial'
+challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
 ---
 
 # --description--
 
-`n`! means `n` × (`n` − 1) × ... × 3 × 2 × 1
+`n`! se define como `n` × (`n` − 1) × ... × 3 × 2 × 1
 
-For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
-and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+Por ejemplo, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
+y la suma de los dígitos del número 10! es 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
-Find the sum of the digits `n`!
+Encuentra la suma de los dígitos de `n`!
 
 # --hints--
 
-`sumFactorialDigits(10)` should return a number.
+`sumFactorialDigits(10)` debe devolver un número.
 
 ```js
 assert(typeof sumFactorialDigits(10) === 'number');
 ```
 
-`sumFactorialDigits(10)` should return 27.
+`sumFactorialDigits(10)` debe devolver 27.
 
 ```js
 assert.strictEqual(sumFactorialDigits(10), 27);
 ```
 
-`sumFactorialDigits(25)` should return 72.
+`sumFactorialDigits(25)` debe devolver 72.
 
 ```js
 assert.strictEqual(sumFactorialDigits(25), 72);
 ```
 
-`sumFactorialDigits(50)` should return 216.
+`sumFactorialDigits(50)` debe devolver 216.
 
 ```js
 assert.strictEqual(sumFactorialDigits(50), 216);
 ```
 
-`sumFactorialDigits(75)` should return 432.
+`sumFactorialDigits(75)` debe devolver 432.
 
 ```js
 assert.strictEqual(sumFactorialDigits(75), 432);
 ```
 
-`sumFactorialDigits(100)` should return 648.
+`sumFactorialDigits(100)` debe devolver 648.
 
 ```js
 assert.strictEqual(sumFactorialDigits(100), 648);

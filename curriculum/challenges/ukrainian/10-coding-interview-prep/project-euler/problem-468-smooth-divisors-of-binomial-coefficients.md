@@ -1,7 +1,7 @@
 ---
 id: 5900f5411000cf542c510054
 title: 'Завдання 468: Гладкі многовиди дивізорів біноміальних коефіцієнтів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302143
 dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 ---

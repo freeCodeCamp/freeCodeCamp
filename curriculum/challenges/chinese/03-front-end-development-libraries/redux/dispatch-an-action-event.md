@@ -8,9 +8,9 @@ dashedName: dispatch-an-action-event
 
 # --description--
 
-`dispatch` 方法用于将 action 分派给 Redux store， 调用 `store.dispatch()` 将从 action creator 返回的值发送回 store。
+`dispatch` 方法用于将 action 分派给 Redux store， 调用 `store.dispatch()`，并传递从一个 action creator 返回的值，将一个 action 送回给 store。
 
-回想一下，动作创建者返回一个具有 type 属性的对象，该属性指定已发生的动作。 然后该方法会将一个 action 对象发送到 Redux store。 基于上一个挑战的示例，下面的行是等效的，两者都会调度类 `LOGIN` 类型的 action：
+回想一下，action creator 返回一个具有 type 属性的对象，该属性指定已发生的动作。 然后该方法会将一个 action 对象发送到 Redux store。 基于上一个挑战的示例，下面的行是等效的，两者都会调度类 `LOGIN` 类型的 action：
 
 ```js
 store.dispatch(actionCreator());

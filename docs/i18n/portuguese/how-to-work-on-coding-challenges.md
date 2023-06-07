@@ -10,7 +10,7 @@ Note que para a versão 7.0 do currículo do freeCodeCamp, nós estamos migrando
 
 A criação destes desafios exige imensa criatividade e atenção aos pormenores. Há muita ajuda disponível. Você terá o apoio de toda uma equipe de colaboradores para quem você pode buscar ideias e provar seus desafios.
 
-E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
+E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
 
 Com sua ajuda, nós podemos projetar um currículo de programação interativo que ajudará milhões de pessoas a aprender a programar nos próximos anos.
 
@@ -245,7 +245,7 @@ Se levar mais do que dois minutos para completar um desafio, você tem duas opç
 
 A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
 
-Acompanhamos quanto dura para os usuários resolverem mudanças e usamos essa informação para identificar desafios que precisam ser simplificados ou divididos.
+Acompanhamos o tempo que leva para os usuários resolverem os desafios e usamos essa informação para identificar desafios que precisem ser simplificados ou divididos.
 
 ### Modularidade
 
@@ -309,7 +309,7 @@ Aqui vemos diretrizes de formatação específicas para o código seed do desafi
 
 ### Comentários do código seed
 
-Temos um [comment dictionary](/curriculum/dictionaries/english/comments.js) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
+Temos um [dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
 
 Os comentários usados devem ter um espaço entre os caracteres do comentário e o comentário em si. Geralmente, os comentários devem ser usados com moderação. Sempre considere reescrever a descrição de um desafio ou instrução se for possível evitar usar um comentário de código fornecido.
 
@@ -371,7 +371,7 @@ class MyComponent extends React.Component {
 
 ### Tradução de comentários de código seed
 
-Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](/curriculum/dictionaries/english/comments.js) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão não inglesa do dicionário de comentário chinesa pode ser encontrada em `/curriculum/dictionaries/chinese/comments.js`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
+Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão do dicionário de comentários em chinês (não a versão em inglês) pode ser encontrada em `/curriculum/dictionaries/chinese/comments.json`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
 
 Alguns comentários podem conter uma palavra/frase que não deve ser traduzida. Por exemplo, nomes de variáveis, ou nomes próprios de bibliotecas como "React" não devem ser traduzidas. Veja o comentário abaixo como um exemplo. A palavra `myGlobal` não deve ser traduzida.
 
@@ -460,17 +460,17 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 1. Para testar todos os desafios, execute o comando abaixo a partir do diretório raiz
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
@@ -484,15 +484,17 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
 2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   npm run test -- -g challenge-title-goes-here ```
-
-Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](how-to-open-a-pull-request.md).
+   pnpm run test -- -g challenge-title-goes-here ```
 
 > [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
 > 
 > Os valores atualmente aceitos são `english` e `chinese`, com `english` sendo o padrão.
 
-### Links úteis
+## Propondo um Pull Request (PR)
+
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
+
+## Links úteis
 
 Criação e edição de desafios:
 

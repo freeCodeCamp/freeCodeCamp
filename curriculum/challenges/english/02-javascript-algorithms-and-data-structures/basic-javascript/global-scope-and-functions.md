@@ -17,7 +17,7 @@ Variables which are declared without the `let` or `const` keywords are automatic
 
 Using `let` or `const`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
 
-Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `let` or `const` keywords.
+Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var`, `let` or `const` keywords.
 
 # --hints--
 
@@ -88,14 +88,14 @@ uncapture();
 
 
 function fun1() {
-  // Assign 5 to oopsGlobal Here
+  // Assign 5 to oopsGlobal here
 
 }
 
 // Only change code above this line
 
 function fun2() {
-  var output = "";
+  let output = "";
   if (typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }
@@ -116,7 +116,7 @@ function fun1() {
 }
 
 function fun2() {
-  var output = "";
+  let output = "";
   if(typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }

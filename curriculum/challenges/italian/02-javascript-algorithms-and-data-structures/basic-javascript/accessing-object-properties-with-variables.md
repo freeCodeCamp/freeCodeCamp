@@ -27,29 +27,11 @@ console.log(myBreed);
 
 La stringa `Doberman` sarà visualizzata nella console.
 
-Un altro modo per utilizzare questo concetto è quando il nome della proprietà viene ottenuto dinamicamente durante l'esecuzione del programma, come segue:
-
-```js
-const someObj = {
-  propName: "John"
-};
-
-function propPrefix(str) {
-  const s = "prop";
-  return s + str;
-}
-
-const someProp = propPrefix("Name");
-console.log(someObj[someProp]);
-```
-
-`someProp` avrà il valore della stringa `propName` e la stringa `John` sarà visualizzata nella console.
-
 Nota che *non* usiamo virgolette attorno al nome della variabile quando la usiamo per accedere alla proprietà perché stiamo usando il *valore* della variabile, non il *nome*.
 
 # --instructions--
 
-Dai alla variabile `playerNumber` il valore di `16`. Quindi, utilizza la variabile per cercare il nome del giocatore e assegnarla a `player`.
+Dai alla variabile `playerNumber` il valore di `16`. Quindi, utilizza la variabile per cercare il nome del giocatore e assegnarlo a `player`.
 
 # --hints--
 

@@ -18,7 +18,7 @@ Sass の `@if` ディレクティブは特定の case をテストするのに�
 }
 ```
 
-JavaScript と同様に、`@else if` と `@else` でテストする条件を増やします。
+And just like in JavaScript, the `@else if` and `@else` directives test for more conditions:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ JavaScript と同様に、`@else if` と `@else` でテストする条件を増�
 
 # --instructions--
 
-パラメーター `$val` を受け取る `border-stroke` というミックスインを作成してください。 ミックスインでは `@if`、`@else if`、`@else` を使用して次の条件をチェックしてください。
+パラメーター `$val` を受け取る `border-stroke` というミックスインを作成してください。 The mixin should check for the following conditions using `@if`, `@else if`, and `@else` directives:
 
 ```scss
 light - 1px solid black
@@ -47,7 +47,7 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-`$val` が `light` でも `medium` でも `heavy` でもない場合は、境界線を `none` に設定してください。
+If the `$val` parameter value is not `light`, `medium`, or `heavy`, then the `border` property should be set to `none`.
 
 # --hints--
 

@@ -14,7 +14,7 @@ dashedName: build-your-own-functions
 
 Altre risorse:
 
-\- [Esercizio](https://www.youtube.com/watch?v=ksvGhDsjtpw)
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Esercizio</a>
 
 # --question--
 

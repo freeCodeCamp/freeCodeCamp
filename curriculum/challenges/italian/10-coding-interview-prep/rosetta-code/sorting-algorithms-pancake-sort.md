@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc800b
 title: Algoritmi di ordinamento/Pancake sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
 ---
 
 # --description--
 
-Scrivi una funzione per ordinare un array di interi (di qualsiasi dimensione conveniente) in ordine crescente usando [Pancake sorting](https://en.wikipedia.org/wiki/Pancake sorting). La funzione dovrebbe restituire l'array ordinato.
+Scrivi una funzione per ordinare un array di numeri interi (di qualsiasi dimensione conveniente) in ordine crescente usando Pancake sorting. La funzione dovrebbe restituire l'array ordinato.
 
 In breve, invece di ordinare singoli elementi, l'unica operazione consentita è quella di "capovolgere" una estremità della lista in questo modo:
 

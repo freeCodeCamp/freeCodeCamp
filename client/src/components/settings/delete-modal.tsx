@@ -2,7 +2,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ButtonSpacer } from '../helpers';
+import { Spacer } from '../helpers';
 
 import './danger-zone.css';
 
@@ -14,7 +14,7 @@ type DeleteModalProps = {
 
 function DeleteModal(props: DeleteModalProps): JSX.Element {
   const { show, onHide } = props;
-  const email = 'team@freecodecamp.org';
+  const email = 'support@freecodecamp.org';
   const { t } = useTranslation();
   return (
     <Modal
@@ -52,7 +52,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind')}
         </Button>
-        <ButtonSpacer />
+        <Spacer size='small' />
         <Button
           block={true}
           bsSize='lg'

@@ -1,7 +1,7 @@
 ---
 id: 597f1e7fbc206f0e9ba95dc4
 title: 整数の因数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302265
 dashedName: factors-of-an-integer
 ---

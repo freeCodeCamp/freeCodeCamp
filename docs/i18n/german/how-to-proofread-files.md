@@ -39,16 +39,16 @@ Nach dem Korrekturlesen einer Datei sind keine weiteren Aktionen erforderlich.
 
 > [!NOTE] Wenn du einen String in der Korrekturansicht genehmigst, wird er als vollständig markiert und bei unserem nächsten Pull von Crowdin auf GitHub heruntergeladen.
 
-## Korrekturleser werden
+## Becoming a Proofreader
 
-Wenn du Fragen hast oder daran interessiert bist, Korrekturleser zu werden, kannst du uns in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) kontaktieren. In der Regel gewähren wir dir Zugang zum Korrekturlesen, wenn du schon eine Weile im freeCodeCamp mitarbeitest.
+Wenn du Fragen hast oder daran interessiert bist, Korrekturleser zu werden, kannst du dich gerne in unserem [Contributors Chat Room](https://discord.gg/PRyKn3Vbay) an uns wenden. In der Regel gewähren wir dir Zugang zum Korrekturlesen, wenn du schon eine Weile im freeCodeCamp mitarbeitest.
 
 Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche nach freundlichen Freiwilligen wie dir, die uns dabei helfen, der Welt qualitativ hochwertige Übersetzungen zur Verfügung zu stellen.
 
 > [!NOTE] Crowdin ermöglicht es dir, deine Übersetzungen zu genehmigen. Im Allgemeinen ist es am besten, wenn du deine vorgeschlagenen Übersetzungen von einem anderen Korrekturleser durchsehen lässt, um sicherzugehen, dass keine Fehler enthalten sind.
 
-## Einen Kanal im Chat für eine Weltsprache erstellen
+## Creating a Channel on Chat for a World Language
 
-In den meisten Fällen empfehlen wir dir, den [Contributors Chat](https://chat.freecodecamp.org/channel/contributors) für die gesamte Korrespondenz zu nutzen. Wenn jedoch das Team der freiwilligen Übersetzer für eine bestimmte Sprache wächst, können wir in Erwägung ziehen, einen zusätzlichen Break-Out-Channel für diese Sprache einzurichten.
+In der Regel empfehlen wir dir, den [Contributors Chat](https://discord.gg/PRyKn3Vbay) für die gesamte Kommunikation zu nutzen. Wenn jedoch das Team der freiwilligen Übersetzer für eine bestimmte Sprache wächst, können wir in Erwägung ziehen, einen zusätzlichen Break-Out-Channel für diese Sprache einzurichten.
 
 Wenn du bereits Korrekturleser/in bist und Interesse an einem eigenen Kanal auf unseren Chatservern für eine bestimmte Sprache hast, [fülle dieses Formular aus](https://forms.gle/XU5CyutrYCgDYaVZA).

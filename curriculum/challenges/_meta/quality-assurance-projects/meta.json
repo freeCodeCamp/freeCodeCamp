@@ -2,6 +2,7 @@
   "name": "Quality Assurance Projects",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-projects",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "150 hours",
   "template": "",
@@ -28,4 +29,5 @@
       "5e601c0d5ac9d0ecd8b94afe",
       "American British Translator"
     ]
-  ]}
+  ]
+}

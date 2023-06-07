@@ -8,7 +8,7 @@ dashedName: access-props-using-this-props
 
 # --description--
 
-前几项挑战涵盖了将 props 传递给子组件的基本方法。 但是，倘若接收 prop 的子组件不是无状态函数组件，而是一个 ES6 类组件又当如何呢？ ES6 类组件访问 props 的方法略有不同。
+前几项挑战涵盖了将 props 传递给子组件的基本方法。 但是，倘若接收 prop 的子组件不是无状态函数组件，而是一个 ES6 类组件，又当如何呢？ ES6 类组件访问 props 的方法略有不同。
 
 任何时候，如果要引用类组件本身，可以使用 `this` 关键字。 要访问类组件中的 props，需要在在访问它的代码前面添加 `this`。 例如，如果 ES6 类组件有一个名为 `data` 的 prop，可以在 JSX 中这样写：`{this.props.data}`。
 
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`Welcome` 组件应显示你在 `strong` 标签中作为 `name` 属性传递的字符串。
+`Welcome` 组件应显示你在 `strong` 标签中作为 `name` prop 传递的字符串。
 
 ```js
 assert(

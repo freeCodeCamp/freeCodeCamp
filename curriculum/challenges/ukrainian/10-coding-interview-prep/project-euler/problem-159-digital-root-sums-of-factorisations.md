@@ -1,7 +1,7 @@
 ---
 id: 5900f40c1000cf542c50ff1e
 title: 'Завдання 159: цифровий корінь сум факторизації'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301790
 dashedName: problem-159-digital-root-sums-of-factorisations
 ---

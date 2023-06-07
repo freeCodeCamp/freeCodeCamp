@@ -1,7 +1,7 @@
 ---
 id: 5900f3d71000cf542c50fee9
 title: 'Problem 106: Special subset sums: meta-testing'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
 ---
@@ -19,7 +19,7 @@ Surprisingly, out of the 25 possible subset pairs that can be obtained from a se
 
 For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
 
-**Note:** This problem is related to Problem 103 and Problem 105.
+**Nota:** Este problema está relacionado con el problema 103 y el problema 105.
 
 # --hints--
 

@@ -1,7 +1,7 @@
 ---
 id: 59e0a8df964e4540d5abe599
 title: Execute Brain****
-challengeType: 5
+challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
 ---
@@ -10,21 +10,21 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF is a set of [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") compilers and interpreters written for Rosetta Code in a variety of languages.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
 Below are links to each of the versions of RCBF.
 
 An implementation need only properly implement the following instructions:
 
-| Command                   | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| <code>></code> | Move the pointer to the right                                                              |
-| <code>&lt;</code> | Move the pointer to the left                                                               |
-| <code>+</code> | Increment the memory cell under the pointer                                                |
-| <code>-</code> | Decrement the memory cell under the pointer                                                |
-| <code>.</code> | Output the character signified by the cell at the pointer                                  |
-| <code>,</code> | Input a character and store it in the cell at the pointer                                  |
-| <code>\[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0          |
+| Command                   | Descripción                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------- |
+| <code>></code> | Move the pointer to the right                                                               |
+| <code>&lt;</code> | Move the pointer to the left                                                                |
+| <code>+</code> | Increment the memory cell under the pointer                                                 |
+| <code>-</code> | Decrement the memory cell under the pointer                                                 |
+| <code>.</code> | Output the character signified by the cell at the pointer                                   |
+| <code>,</code> | Input a character and store it in the cell at the pointer                                   |
+| <code>\[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
 | <code>]</code> | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
 Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.

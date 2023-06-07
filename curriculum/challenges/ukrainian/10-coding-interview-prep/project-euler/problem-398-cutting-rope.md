@@ -1,7 +1,7 @@
 ---
 id: 5900f4fa1000cf542c51000d
 title: 'Задача 398: Порізка мотузки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302063
 dashedName: problem-398-cutting-rope
 ---

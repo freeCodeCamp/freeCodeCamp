@@ -1,7 +1,7 @@
 ---
 id: 5900f37a1000cf542c50fe8d
 title: '问题 14：最长考拉兹序列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
 ---
@@ -22,7 +22,7 @@ dashedName: problem-14-longest-collatz-sequence
 
 求出在小于 `limit` 的数中，哪个可以产生最长的考拉兹序列？
 
-**注意：** 序列中数字的个数允许超过一百万。
+**Note:** Once the chain starts the terms are allowed to go above `limit`.
 
 # --hints--
 

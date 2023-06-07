@@ -121,7 +121,7 @@ assert(
 );
 ```
 
-Cada elemento `a` deve ter uma tag de fechamento.
+Todos os elementos `a` devem ter uma tag de fechamento.
 
 ```js
 assert(

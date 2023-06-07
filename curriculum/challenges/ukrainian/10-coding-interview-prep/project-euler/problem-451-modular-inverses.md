@@ -1,7 +1,7 @@
 ---
 id: 5900f5311000cf542c510042
 title: 'Завдання 451: Обернені за модулем числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
 ---

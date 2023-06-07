@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8045
 title: Recorte de polígonos de Sutherland-Hodgman
-challengeType: 5
+challengeType: 1
 forumTopicId: 302336
 dashedName: sutherland-hodgman-polygon-clipping
 ---

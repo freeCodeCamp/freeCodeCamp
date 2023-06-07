@@ -1,7 +1,7 @@
 ---
 id: 5900f5331000cf542c510045
 title: 'Завдання 454: Діофантові обернені числа. Частина 3'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302127
 dashedName: problem-454-diophantine-reciprocals-iii
 ---

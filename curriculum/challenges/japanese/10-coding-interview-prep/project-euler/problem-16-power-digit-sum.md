@@ -1,7 +1,7 @@
 ---
 id: 5900f37d1000cf542c50fe8f
 title: '問題 16: 累乗の各位の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301791
 dashedName: problem-16-power-digit-sum
 ---

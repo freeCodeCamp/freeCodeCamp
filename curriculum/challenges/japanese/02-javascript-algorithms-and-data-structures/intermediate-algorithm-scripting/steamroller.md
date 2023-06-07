@@ -1,7 +1,7 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: ローラーで押し潰せ！
-challengeType: 5
+challengeType: 1
 forumTopicId: 16079
 dashedName: steamroller
 ---
@@ -40,6 +40,13 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+グローバル変数は使用しないでください。
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
 ```
 
 # --seed--

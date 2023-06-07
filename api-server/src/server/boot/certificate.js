@@ -37,7 +37,8 @@ const {
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
-  relationalDatabaseV8Id
+  relationalDatabaseV8Id,
+  collegeAlgebraPyV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -122,6 +123,10 @@ function createCertTypeIds(allChallenges) {
     [certTypes.relationalDatabaseV8]: getCertById(
       relationalDatabaseV8Id,
       allChallenges
+    ),
+    [certTypes.collegeAlgebraPyV8]: getCertById(
+      collegeAlgebraPyV8Id,
+      allChallenges
     )
   };
 }
@@ -158,7 +163,8 @@ function sendCertifiedEmail(
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8
+    isRelationalDatabaseCertV8,
+    isCollegeAlgebraPyCertV8
   },
   send$
 ) {
@@ -174,7 +180,8 @@ function sendCertifiedEmail(
     !isSciCompPyCertV7 ||
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
-    !isRelationalDatabaseCertV8
+    !isRelationalDatabaseCertV8 ||
+    !isCollegeAlgebraPyCertV8
   ) {
     return Observable.just(false);
   }
@@ -211,7 +218,8 @@ function getUserIsCertMap(user) {
     isSciCompPyCertV7 = false,
     isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
-    isRelationalDatabaseCertV8 = false
+    isRelationalDatabaseCertV8 = false,
+    isCollegeAlgebraPyCertV8 = false
   } = user;
 
   return {
@@ -230,7 +238,8 @@ function getUserIsCertMap(user) {
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8
+    isRelationalDatabaseCertV8,
+    isCollegeAlgebraPyCertV8
   };
 }
 
@@ -357,6 +366,7 @@ function createShowCert(app) {
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;
     return findUserByUsername$(username, {
+      isBanned: true,
       isCheater: true,
       isFrontEndCert: true,
       isBackEndCert: true,
@@ -374,6 +384,7 @@ function createShowCert(app) {
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
       isRelationalDatabaseCertV8: true,
+      isCollegeAlgebraPyCertV8: true,
       isHonest: true,
       username: true,
       name: true,
@@ -391,25 +402,26 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts, showName } = user.profileUI;
+      const { isLocked, showCerts, showName, showTimeLine } = user.profileUI;
 
-      if (!user.name) {
-        return res.json({
-          messages: [
-            {
-              type: 'info',
-              message: 'flash.add-name'
-            }
-          ]
-        });
-      }
-
-      if (user.isCheater) {
+      if (user.isCheater || user.isBanned) {
         return res.json({
           messages: [
             {
               type: 'info',
               message: 'flash.not-eligible'
+            }
+          ]
+        });
+      }
+
+      if (!user.isHonest) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-honest',
+              variables: { username: username }
             }
           ]
         });
@@ -427,6 +439,17 @@ function createShowCert(app) {
         });
       }
 
+      if (!user.name) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.add-name'
+            }
+          ]
+        });
+      }
+
       if (!showCerts) {
         return res.json({
           messages: [
@@ -439,12 +462,12 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.isHonest) {
+      if (!showTimeLine) {
         return res.json({
           messages: [
             {
               type: 'info',
-              message: 'flash.not-honest',
+              message: 'flash.timeline-private',
               variables: { username: username }
             }
           ]

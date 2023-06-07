@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec2
 title: Jaro distance
-challengeType: 5
+challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
 ---
@@ -27,7 +27,7 @@ Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matchi
 
 Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
 
-**Example**
+**示例**
 
 Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
 

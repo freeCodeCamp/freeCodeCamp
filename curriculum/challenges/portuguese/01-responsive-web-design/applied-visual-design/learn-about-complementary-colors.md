@@ -29,7 +29,7 @@ Altere a propriedade `background-color` das classes `blue` (azul) e `yellow` (am
 
 # --hints--
 
-O elemento `div` com a classe `blue` deve ter a propriedade `background-color` com o valor azul (blue).
+O elemento `div` com a classe `blue` deve ter a propriedade `background-color` com o valor blue (azul).
 
 ```js
 assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');

@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "npm": ">=8"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,9 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "debug": "4.3.2",
-    "dotenv": "10.0.0",
+    "debug": "4.3.4",
+    "dotenv": "16.1.4",
     "lodash": "4.17.21",
-    "mongodb": "3.7.3"
+    "mongodb": "5.6.0"
   }
 }

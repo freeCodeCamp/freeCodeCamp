@@ -2,7 +2,7 @@
 id: 5900f40a1000cf542c50ff1d
 title: >-
   問題 158: 辞書順で左隣りの文字より後ろになる文字が 1 つだけ含まれる文字列を探す
-challengeType: 5
+challengeType: 1
 forumTopicId: 301789
 dashedName: >-
   problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left

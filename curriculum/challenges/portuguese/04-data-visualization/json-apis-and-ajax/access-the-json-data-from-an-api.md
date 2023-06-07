@@ -12,7 +12,7 @@ No desafio anterior, você viu como obter dados de JSON da API de fotos de gatos
 
 Agora, dê uma olhada nos dados retornados para entender melhor o formato JSON. Vamos relembrar um pouco da notação do JavaScript:
 
-<blockquote>[ ] -> colchetes representam um array<br>{ } -> chaves representam um objeto<br>" " -> aspas duplas representam uma string. Elas também são usadas para nomes de chaves em JSON</blockquote>
+<blockquote>[ ] -> colchetes representam um array<br>{ } -> chaves representam um objeto.<br>" " -> aspas duplas representam uma string. Elas também são usadas para nomes de chaves em JSON.</blockquote>
 
 Entender a estrutura dos dados que uma API retorna é importante, pois influencia a forma como você obtém os valores de que necessita.
 

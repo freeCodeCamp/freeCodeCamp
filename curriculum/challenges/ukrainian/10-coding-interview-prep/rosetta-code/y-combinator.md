@@ -1,22 +1,20 @@
 ---
 id: 594810f028c0303b75339ad5
 title: Y комбінатор
-challengeType: 5
+challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
 ---
 
 # --description--
 
-У строгому [ функціональному програмуванні](https://www.freecodecamp.org/news/the-principles-of-functional-programming/ "news: the principles of functional programming") та [ лямбда-численнях](https://en.wikipedia.org/wiki/lambda calculus "wp: lambda calculus"), функції (лямбда-вирази) не мають стану і можуть посилатися лише на аргументи охоплювальних функцій. Це виключає звичайне визначення рекурсивної функції, коли функція асоціюється зі станом змінної, а стан цієї змінної використовується в основній частині функції. [ Комбінатор Y ](https://mvanier.livejournal.com/2897.html) сам по собі є функцією без стану, яка при застосуванні до іншої такої функції повертає рекурсивну версію функції. Комбінатор Y — найпростіший з класу таких функцій, який називається [ комбінаторами з фіксованою точкою](https://en.wikipedia.org/wiki/Fixed-point combinator "wp: fixed-point combinator").
+In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. Це виключає звичайне визначення рекурсивної функції, коли функція асоціюється зі станом змінної, а стан цієї змінної використовується в основній частині функції.
+
+The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
 
 # --instructions--
 
-Визначте комбінаторну функцію Y без стану та використовуйте її для обчислення [factorial](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). Функція `factorial(N)` вже дана. **Дивіться також:**
-
-<ul>
-  <li><a href="https://vimeo.com/45140590" target="_blank">Джим Вейріх: Пригоди у функціональному програмуванні</a>.</li>
-</ul>
+Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you.
 
 # --hints--
 

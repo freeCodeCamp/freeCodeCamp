@@ -1,7 +1,7 @@
 ---
 id: 5900f3ad1000cf542c50fec0
 title: 'Problema 65: Convergentes de e'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302177
 dashedName: problem-65-convergents-of-e
 ---

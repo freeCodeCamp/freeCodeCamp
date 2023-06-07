@@ -1,7 +1,7 @@
 ---
 id: 5900f3ea1000cf542c50fefd
 title: '問題 126: 直方体の層'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301753
 dashedName: problem-126-cuboid-layers
 ---

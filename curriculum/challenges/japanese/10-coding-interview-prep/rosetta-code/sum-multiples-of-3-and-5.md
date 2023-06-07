@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8040
 title: 3 と 5 の倍数の和
-challengeType: 5
+challengeType: 1
 forumTopicId: 302332
 dashedName: sum-multiples-of-3-and-5
 ---

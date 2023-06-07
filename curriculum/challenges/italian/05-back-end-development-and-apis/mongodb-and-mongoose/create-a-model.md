@@ -10,7 +10,7 @@ dashedName: create-a-model
 
 **C**RUD Parte I - CREATE
 
-Innanzi tutto abbiamo bisogno di uno Schema. Ogni schema mappa a una collezione MongoDB. Definisce la forma dei documenti all'interno di quella collezione. Gli schemi sono elementi costitutivi dei modelli. Possono essere annidati per creare modelli complessi, ma per ora terremo le cose semplici. Un modello ti permette di creare istanze dei tuoi oggetti, chiamate documenti.
+Innanzitutto abbiamo bisogno di uno Schema. Ogni schema mappa a una collezione MongoDB. Definisce la forma dei documenti all'interno di quella collezione. Gli schemi sono elementi costitutivi dei modelli. Possono essere annidati per creare modelli complessi, ma per ora terremo le cose semplici. Un modello ti permette di creare istanze dei tuoi oggetti, chiamate documenti.
 
 Replit è un vero server, e nei server reali le interazioni con il database avvengono nelle funzioni del gestore. Queste funzioni vengono eseguite quando si verifica qualche evento (ad esempio, qualcuno raggiunge un endpoint sulla tua API). Seguiremo lo stesso approccio in questi esercizi. La funzione `done()` è una callback che ci dice che possiamo procedere dopo aver completato un'operazione asincrona come l'inserimento, la ricerca, l'aggiornamento o la cancellazione. Segue la convenzione Node e dovrebbe essere chiamata come `done(null, data)` in caso di successo, o `done(err)` in caso di errore.
 
@@ -28,19 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Crea uno schema persona chiamato `personSchema` con questo prototipo:
+Crea uno schema persona chiamato `personSchema` con la seguente forma:
 
-```markup
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
-favoriteFoods : array of strings (*)
-```
+* Un campo `name` obbligatorio di tipo `String`
+* Un campo `age` di tipo `Number`
+* Un campo `favoriteFoods` di tipo `[String]`
 
-Utilizzare i tipi di schema base di Mongoose. Se vuoi puoi anche aggiungere più campi, utilizzare semplici validatori come required o unique, e impostare dei valori predefiniti. Vedi i [Mongoose docs](http://mongoosejs.com/docs/guide.html).
+Utilizzare i tipi di schema base di Mongoose. Se vuoi puoi anche aggiungere più campi, utilizzare semplici validatori come required o unique, e impostare dei valori predefiniti. Vedi il nostro <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">articolo su Mongoose</a>.
 
-Ora, crea un modello chiamato `Person` da `personSchema`.
+Ora, crea un modello dal `personSchema` e assegnalo alla variabile esistente `Person`.
 
 # --hints--
 

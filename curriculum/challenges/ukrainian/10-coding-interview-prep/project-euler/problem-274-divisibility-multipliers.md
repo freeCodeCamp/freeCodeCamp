@@ -1,7 +1,7 @@
 ---
 id: 5900f47f1000cf542c50ff91
 title: 'Задача 274: Множники подільності'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301924
 dashedName: problem-274-divisibility-multipliers
 ---

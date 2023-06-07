@@ -1,0 +1,181 @@
+/* 
+Increase the spacing in paragraphs
+*/
+
+[dir='rtl'] p {
+  line-height: 2rem;
+}
+
+/* 
+Intro project buttons and headings 
+*/
+
+[dir='rtl'] .monaco-editor-tabs {
+  /* need to remove the margin because the editor is reversed */
+  margin-inline-end: 0;
+}
+
+[dir='rtl'] .map-ui .superblock-link > svg {
+  transform: rotate(180deg);
+}
+
+/* 
+ intro to courses section
+*/
+
+[dir='rtl'] .link-btn.btn-lg > svg {
+  transform: rotate(180deg);
+}
+
+/* 
+this is used to rotate arrow mark in certification block and donation
+the "not" and "is" selector is used to stop it from affecting other section and pages
+*/
+
+/* arrow icon */
+[dir='rtl']
+  :is(.block:is(:not(.open)), .faq-item:is(:not(.open)))
+  .map-title:not(.title-wrapper, .block-header-button-text)
+  > svg:first-child {
+  transform: rotate(180deg);
+}
+
+/* 
+external fontawesome link icon
+*/
+
+[dir='rtl'] .nav-link > .fa-up-right-from-square,
+[dir='rtl'] td a[target='_blank'] > svg {
+  transform: rotate(270deg);
+}
+
+/* 
+universal-nav-bar
+and menu secion
+*/
+
+[dir='rtl'] .nav-lang-list-option[aria-current='true'] {
+  background-position: 10px center;
+}
+
+@media (min-width: 601px) {
+  [dir='rtl'] .nav-list {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  [dir='rtl'] #universal-nav-logo {
+    left: inherit;
+    right: 17px;
+  }
+
+  [dir='rtl'] .fcc_searchBar .ais-Hits {
+    left: auto;
+    right: 15px;
+  }
+
+  [dir='rtl'] .universal-nav-right .fcc_searchBar {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* had to change overflow, because it clips the first words of the english articles */
+[dir='rtl'] .footer-container {
+  overflow-x: inherit;
+}
+
+/* 
+dropdown links 
+*/
+
+[dir='rtl'] .dropdown-menu {
+  text-decoration-skip-ink: all;
+}
+
+/* 
+New RWD project challenge
+*/
+
+[dir='rtl'] .tabs-row {
+  gap: 10px;
+}
+
+/* Align the the Arabic head with the corresponding English word */
+
+[dir='rtl'] .table thead:first-child tr:first-child th {
+  text-align: right;
+}
+
+/* 
+sections that need to stay left to right
+*/
+
+/* special cases in steps */
+[dir='rtl'] :has(#learn-app-wrapper) table,
+[dir='rtl'] :has(#learn-app-wrapper) pre,
+/* Code snippet*/
+[dir='rtl'] code,
+/* trending articles */
+[dir='rtl'] .trending-guides .trending-guides-row div a,
+[dir='rtl'] .overflow-guard,
+[dir='rtl'] .challenge-preview,
+/* timeline*/
+[dir='rtl'] .timeline-pagination_list {
+  direction: ltr;
+}
+
+[dir='rtl'] code {
+  word-break: normal;
+  unicode-bidi: isolate;
+}
+
+/* bootstrap display block breaks the code elements when they are stacked on top of each other to sort this, we remove it for display: grid  */
+
+[dir='rtl'] pre[class*='language-']:has(code) {
+  display: grid;
+}
+
+[dir='rtl'] .description-container,
+[dir='rtl'] .action-row-container,
+[dir='rtl']
+  .timeline-pagination_list
+  .timeline-pagination_list_item:not(:has(button)) {
+  direction: rtl;
+}
+
+/* Revert the editor layout to account for reverted splitter */
+
+[dir='rtl'] .desktop-layout .tabs-row,
+[dir='rtl'] .desktop-layout .reflex-container:not(.horizontal) {
+  flex-direction: row-reverse;
+}
+
+/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extermely bad */
+
+[dir='rtl'] body,
+[dir='rtl'] .signup-btn,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5,
+[dir='rtl'] h6,
+[dir='rtl'] p,
+[dir='rtl'] td,
+[dir='rtl'] th,
+[dir='rtl'] .donate-page-wrapper,
+[dir='rtl'] .donate-page-wrapper b,
+[dir='rtl'] .donate-page-wrapper h3,
+[dir='rtl'] .donate-page-wrapper p,
+[dir='rtl'] [name='payment-method'] {
+  font-family: 'NotoSansArabic';
+}
+
+@media (min-width: 980px) {
+  [dir='rtl'] .donate-page-wrapper > .row {
+    display: flex;
+  }
+}

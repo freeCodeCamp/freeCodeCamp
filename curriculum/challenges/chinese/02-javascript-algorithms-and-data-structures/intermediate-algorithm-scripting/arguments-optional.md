@@ -1,7 +1,7 @@
 ---
 id: a97fd23d9b809dac9921074f
 title: 可选参数
-challengeType: 5
+challengeType: 1
 forumTopicId: 14271
 dashedName: arguments-optional
 ---
@@ -36,34 +36,46 @@ assert.deepEqual(addTogether(2, 3), 5);
 assert.deepEqual(addTogether(23, 30), 53);
 ```
 
-`addTogether(5)(7)` 应返回 12。
+`addTogether("2", 3)` should return `undefined`.
 
 ```js
-assert.deepEqual(addTogether(5)(7), 12);
+assert.isUndefined(addTogether('2', 3));
 ```
 
-`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` 应该返回 `undefined`。
+`addTogether(5, undefined)` should return `undefined`.
+
+```js
+assert.isUndefined(addTogether(5, undefined));
+```
+
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` should return `undefined`.
 
 ```js
 assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
 ```
 
-`addTogether(2, "3")` 应返回 `undefined`。
+`addTogether(5)` should return a function.
 
 ```js
-assert.isUndefined(addTogether(2, '3'));
+assert.deepEqual(typeof(addTogether(5)), 'function');
 ```
 
-`addTogether(2)([3])` 应返回 `undefined`。
+`addTogether(5)(7)` should return 12.
+
+```js
+assert.deepEqual(addTogether(5)(7), 12);
+```
+
+`addTogether(2)([3])` should return `undefined`.
 
 ```js
 assert.isUndefined(addTogether(2)([3]));
 ```
 
-`addTogether("2", 3)` 应该返回 `undefined`。
+`addTogether(2, "3")` should return `undefined`.
 
 ```js
-assert.isUndefined(addTogether('2', 3));
+assert.isUndefined(addTogether(2, '3'));
 ```
 
 # --seed--

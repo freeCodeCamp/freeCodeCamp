@@ -1,14 +1,14 @@
 ---
 id: 595671d4d2cdc305f0d5b36f
 title: Hash from two arrays
-challengeType: 5
+challengeType: 1
 forumTopicId: 302283
 dashedName: hash-from-two-arrays
 ---
 
 # --description--
 
-Using two arrays of length, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
+Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
 Example:
 

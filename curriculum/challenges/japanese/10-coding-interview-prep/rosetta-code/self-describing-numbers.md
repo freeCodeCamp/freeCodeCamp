@@ -1,14 +1,14 @@
 ---
 id: 5eaf48389ee512d4d103684b
 title: 自己記述数
-challengeType: 5
+challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
 ---
 
 # --description--
 
-いわゆる[「自己記述数」](https://en.wikipedia.org/wiki/Self-descriptive_number) と呼ばれる整数がいくつかあります。
+There are several so-called "self-describing" or "self-descriptive" integers.
 
 各桁が 0 から N-1 にラベル付けされているとき、各桁の数字がこの数字内でその桁が現れる回数と同じという性質を持つ場合、その整数は「自己記述数」と呼ばれます。
 

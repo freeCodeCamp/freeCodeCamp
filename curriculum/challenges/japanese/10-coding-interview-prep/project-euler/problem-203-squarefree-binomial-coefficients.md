@@ -1,7 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4a
 title: '問題 203: 無平方二項係数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301844
 dashedName: problem-203-squarefree-binomial-coefficients
 ---

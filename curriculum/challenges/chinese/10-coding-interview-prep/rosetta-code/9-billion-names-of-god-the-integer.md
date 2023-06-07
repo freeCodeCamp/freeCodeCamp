@@ -1,14 +1,14 @@
 ---
 id: 5949b579404977fbaefcd736
 title: 9 billion names of God the integer
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--
 
-This task is a variation of the [short story by Arthur C. Clarke](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+This task is a variation of the short story by Arthur C. Clarke.
 
 (Solvers should be aware of the consequences of completing this task.)
 
@@ -78,7 +78,7 @@ assert.equal(numberOfNames(23), 1255);
 assert.equal(numberOfNames(42), 53174);
 ```
 
-`numberOfNames(123)` should equal 2552338241.
+`numberOfNames(123)` 应等于 2552338241。
 
 ```js
 assert.equal(numberOfNames(123), 2552338241);

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8014
 title: Stabilità dell'ordinamento
-challengeType: 5
+challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
 ---
 
 # --description--
 
-Quando si ordinano i record in una tabella per una particolare colonna o campo, un [ordinamento stabile](https://en.wikipedia.org/wiki/Stable_sort#Stability) manterrà sempre l'ordine relativo dei record che hanno la stessa chiave.
+Quando si ordinano i record in una tabella per una particolare colonna o campo, un <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">ordinamento stabile</a> manterrà sempre l'ordine relativo dei record che hanno la stessa chiave.
 
 Ad esempio, in questa tabella di paesi e città, un ordinamento stabile sulla **seconda** colonna, le città, manterrebbe US Birmingham sopra UK Birmingham. (Anche se un ordinamento instabile *potrebbe*, in questo caso, posizionare US Birmingham sopra UK Birmingham, un ordinamento stabile lo *garantirebbe* esso).
 

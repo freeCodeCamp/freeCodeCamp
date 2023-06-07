@@ -1,7 +1,7 @@
 ---
 id: 5900f40d1000cf542c50ff1f
 title: 'Задача 160: Факторіальні кінцеві цифри'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301794
 dashedName: problem-160-factorial-trailing-digits
 ---

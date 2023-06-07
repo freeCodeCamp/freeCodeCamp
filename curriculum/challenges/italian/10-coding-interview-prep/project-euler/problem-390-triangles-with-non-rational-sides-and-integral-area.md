@@ -1,7 +1,7 @@
 ---
 id: 5900f4f21000cf542c510005
 title: 'Problema 390: Triangoli con lati di lunghezze non razionali e area di valore intero'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302055
 dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 ---

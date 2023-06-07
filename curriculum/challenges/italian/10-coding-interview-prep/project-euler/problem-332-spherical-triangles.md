@@ -1,7 +1,7 @@
 ---
 id: 5900f4b91000cf542c50ffcb
 title: 'Problema 332: Triangoli sferici'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301990
 dashedName: problem-332-spherical-triangles
 ---

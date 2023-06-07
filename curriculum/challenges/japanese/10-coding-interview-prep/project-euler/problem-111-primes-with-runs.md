@@ -1,7 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feee
 title: '問題 111: 素数内の反復数字'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301736
 dashedName: problem-111-primes-with-runs
 ---

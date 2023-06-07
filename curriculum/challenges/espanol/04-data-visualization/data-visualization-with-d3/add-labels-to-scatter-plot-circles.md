@@ -12,7 +12,7 @@ Puedes agregar texto para crear etiquetas para los puntos en un diagrama de disp
 
 El objetivo es mostrar los valores separados por coma del primer (`x`) y segundo (`y`) campo de cada elemento en `dataset`.
 
-Los nodos `text` necesitan atributos `x` e `y` para posicionarlo en el lienzo SVG. En este desafío, el valor `y` (que determina la altura) puede usar el mismo valor que el `circle` usa para su atributo `cy`. El valor `x` puede ser ligeramente mayor que el valor `cx` del `circle` para que la etiqueta sea visible. Esto empujará la etiqueta a la derecha del punto trazado.
+Los nodos `text` necesitan atributos `x` y `y` para posicionarse en el SVG. En este desafío, el valor `y` (que determina la altura) puede usar el mismo valor que el `circle` usa para su atributo `cy`. El valor `x` puede ser ligeramente mayor que el valor `cx` del `circle` para que la etiqueta sea visible. Esto empujará la etiqueta a la derecha del punto trazado.
 
 # --instructions--
 

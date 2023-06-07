@@ -1,34 +1,34 @@
 ---
 id: 594810f028c0303b75339acb
-title: 100 doors
-challengeType: 5
+title: 100 puertas
+challengeType: 1
 forumTopicId: 302217
 dashedName: 100-doors
 ---
 
 # --description--
 
-There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
+Hay 100 puertas seguidas que están cerradas inicialmente. Haz 100 pases por las puertas. La primera vez, visita cada puerta y "cambia" la puerta (si la puerta está cerrada, ábrela; si está abierta, ciérrela). La segunda vez, sólo visita cada 2da puerta (por ejemplo, la puerta #2, #4, #6, ...) y cámbiala. La tercera vez, visita cada 3ª puerta (por ejemplo, la puerta #3, #6, #9, ...), etc., hasta que sólo visite la puerta 100.
 
 # --instructions--
 
-Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.
+Implementa una función para determinar el estado de las puertas después del último paso. Devuelve el resultado final en una matriz, con sólo el número de puerta incluido en la matriz si está abierta.
 
 # --hints--
 
-`getFinalOpenedDoors` should be a function.
+`getFinalOpenedDoors` debe ser una función.
 
 ```js
 assert(typeof getFinalOpenedDoors === 'function');
 ```
 
-`getFinalOpenedDoors` should return an array.
+`getFinalOpenedDoors` debe devolver una matriz.
 
 ```js
 assert(Array.isArray(getFinalOpenedDoors(100)));
 ```
 
-`getFinalOpenedDoors` should produce the correct result.
+`getFinalOpenedDoors` debe producir el resultado correcto.
 
 ```js
 assert.deepEqual(getFinalOpenedDoors(100), solution);

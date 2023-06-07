@@ -56,7 +56,7 @@ Puedes chequear estas configuraciones yendo a > Idiomas & Librerías > Node.js y
 
 **Docker Desktop para Windows** te permite instalar y ejecutar bases de datos como MongoDB y otros servicios como NGNIX y más. Esto sirve para evitar trampas cuando se instala Mongo DB u otros servicios directamente desde Windows o WSL2.
 
-Sigue las instrucciones en la [documentación oficial](https://docs.docker.com/docker-for-windows/install) e instala Docker Desktop para Windows.
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 Hay unos requrimientos mínimos de hardware para una mejor experiencia.
 
@@ -91,7 +91,7 @@ Una vez que hayas configurado Docker Desktop para trabajar con WSL2, sigue estos
 
 4. Ahora puedes acceder al servicio desde Windows o Ubuntu en `mongodb://localhost:27017`.
 
-## Instalando Node.js y npm
+## Installing Node.js and pnpm
 
 Recomendamos que instales la versión LTS de Node.js con un gestor de versiones de node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -111,23 +111,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js viene empaquetado con `npm`, puedes actualizar a las últimas versiones de `npm` con:
+Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
 ```console
-npm install -g npm@latest
+npm install -g pnpm
 ```
 
-## Configurar freeCodeCamp localmente
+## Set up freeCodeCamp Locally
 
-Ahora que has instalado los requisitos previos, sigue[nuestra guía de configuración local](how-to-setup-freecodecamp-locally.md) para clonar, instalar y configurar freeCodeCamp localmente en tu máquina.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> Tenga en cuenta que en este momento la configuración para las pruebas Cypress (y las necesidades relacionadas con la interfaz de usuario) son un trabajo en curso. Aún así deberías poder trabajar en la mayor parte del código base.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. Aún así deberías poder trabajar en la mayor parte del código base.
 
 ## Enlaces útiles
 
-- [Configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (desarrollador de Staff en freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Preguntas frecuentes sobre:
   - [Subsistema de Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)

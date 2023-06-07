@@ -1,7 +1,7 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 title: 'Problema 191: Strings de prêmios'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
 ---
@@ -14,7 +14,7 @@ Durante um período de n-dias, uma string ternária é formada para cada crianç
 
 Embora existam oitenta e uma strings ternárias para um período de 4 dias que possam ser formadas, exatamente quarenta e três strings levariam a um prêmio:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

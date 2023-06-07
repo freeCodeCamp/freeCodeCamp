@@ -1,7 +1,7 @@
 ---
 id: 5900f4db1000cf542c50ffee
 title: 'Задача 367: Сортування Бозо'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
 ---

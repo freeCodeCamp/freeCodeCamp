@@ -2,6 +2,7 @@
   "name": "Build a Tribute Page Project",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
   "order": 9,
   "time": "30 hours",
   "template": "",
@@ -12,4 +13,5 @@
       "bd7158d8c442eddfaeb5bd18",
       "Build a Tribute Page"
     ]
-  ]}
+  ]
+}

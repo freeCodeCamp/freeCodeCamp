@@ -1,7 +1,7 @@
 ---
 id: 5900f4461000cf542c50ff59
 title: '問題 218: 完全直角三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
 ---

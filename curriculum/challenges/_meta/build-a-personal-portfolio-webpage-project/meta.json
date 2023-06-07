@@ -2,6 +2,7 @@
   "name": "Build a Personal Portfolio Webpage Project",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
   "order": 19,
   "time": "30 hours",
   "template": "",
@@ -12,4 +13,5 @@
       "bd7158d8c242eddfaeb5bd13",
       "Build a Personal Portfolio Webpage"
     ]
-  ]}
+  ]
+}

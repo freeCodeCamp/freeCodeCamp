@@ -4,7 +4,6 @@ declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
 declare module '@types/validator';
 declare module '@types/lodash-es';
-declare module 'react-lazy-load';
 declare module '*.svg' {
   const content: string;
   export default content;
@@ -27,6 +26,7 @@ declare module 'sha-1' {
 // eslint-disable-next-line no-var
 declare var MathJax: {
   Hub: {
+    /* eslint-disable @typescript-eslint/naming-convention*/
     Config: (attributes: {
       tex2jax: {
         inlineMath: Array<string[]>;
@@ -37,3 +37,5 @@ declare var MathJax: {
     Queue: (attributes: unknown[]) => void;
   };
 };
+
+declare module 'monaco-editor/esm/vs/base/common/platform.js';

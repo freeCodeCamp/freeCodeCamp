@@ -1,0 +1,21 @@
+{
+  "name": "Learn Parent Graphs and Polynomials",
+  "isUpcomingChange": false,
+  "dashedName": "learn-parent-graphs-and-polynomials",
+  "helpCategory": "Python",
+  "order": 12,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6363d2529078df117ce4c402",
+      "Parent Graphs"
+    ],
+    [
+      "6363d25c9078df117ce4c403",
+      "Parent Graphs and Polynomials: Extra"
+    ]
+  ]
+}

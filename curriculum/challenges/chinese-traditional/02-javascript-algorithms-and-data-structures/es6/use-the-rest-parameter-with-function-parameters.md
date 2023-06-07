@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 控制檯將顯示字符串 `You have passed 3 arguments.` 和 `You have passed 4 arguments.`。
 
-使用 rest 參數，就不需要查看 `args` 數組，並且允許我們在參數數組上使用 `map()`、`filter()` 和 `reduce()`。
+rest 參數使我們不需要使用 `arguments` 對象，允許我們對傳遞給函數 `howMany` 的參數數組使用數組方法。
 
 # --instructions--
 
@@ -67,7 +67,11 @@ assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
 ```js
 const sum = (x, y, z) => {
   const args = [x, y, z];
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```
 
@@ -75,6 +79,10 @@ const sum = (x, y, z) => {
 
 ```js
 const sum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```

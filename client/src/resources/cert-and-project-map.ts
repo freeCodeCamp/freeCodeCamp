@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import config from '../../../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -25,7 +25,9 @@ const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
+const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -39,7 +41,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap = [
+const legacyCertMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -176,14 +178,7 @@ const certMap = [
       }
     ]
   },
-  {
-    id: '561add10cb82ac38a17213bd',
-    title: 'Legacy Full Stack',
-    certSlug: 'full-stack',
-    flag: 'isFullStackCert'
-    // Requirements are other certs and is
-    // handled elsewhere
-  },
+
   {
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
@@ -291,7 +286,18 @@ const certMap = [
         certSlug: 'information-security-and-quality-assurance'
       }
     ]
-  },
+  }
+] as const;
+const legacyFullStack = {
+  id: '561add10cb82ac38a17213bd',
+  title: 'Legacy Full Stack',
+  certSlug: 'full-stack',
+  flag: 'isFullStackCert',
+  projects: null
+  // Requirements are other certs and is
+  // handled elsewhere
+} as const;
+const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -332,7 +338,6 @@ const certMap = [
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -444,6 +449,44 @@ const certMap = [
         title: 'Visualize Data with a Treemap Diagram',
         link: `${dataVisBase}/visualize-data-with-a-treemap-diagram`,
         certSlug: SuperBlocks.DataVis
+      }
+    ]
+  },
+  {
+    id: '606243f50267e718b1e755f4',
+    title: 'Relational Database',
+    certSlug: 'relational-database-v8',
+    flag: 'isRelationalDatabaseCertV8',
+    projects: [
+      {
+        id: '5f1a4ef5d5d6b5ab580fc6ae',
+        title: 'Celestial Bodies Database',
+        link: `${relationalDatabaseBase}/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '5f9771307d4d22b9d2b75a94',
+        title: 'World Cup Database',
+        link: `${relationalDatabaseBase}/build-a-world-cup-database-project/build-a-world-cup-database`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '5f87ac112ae598023a42df1a',
+        title: 'Salon Appointment Scheduler',
+        link: `${relationalDatabaseBase}/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '602d9ff222201c65d2a019f2',
+        title: 'Periodic Table Database',
+        link: `${relationalDatabaseBase}/build-a-periodic-table-database-project/build-a-periodic-table-database`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '602da04c22201c65d2a019f4',
+        title: 'Number Guessing Game',
+        link: `${relationalDatabaseBase}/build-a-number-guessing-game-project/build-a-number-guessing-game`,
+        certSlug: 'relational-database-v8'
       }
     ]
   },
@@ -677,40 +720,57 @@ const certMap = [
     ]
   },
   {
-    id: '606243f50267e718b1e755f4',
-    title: 'Relational Database',
-    certSlug: 'relational-database-v8',
-    flag: 'isRelationalDatabaseCertV8',
+    id: '61531b20cc9dfa2741a5b800',
+    title: 'College Algebra with Python',
+    certSlug: 'college-algebra-with-python-v8',
+    flag: 'isCollegeAlgebraPyCertV8',
     projects: [
       {
-        id: '5f1a4ef5d5d6b5ab580fc6ae',
-        title: 'Celestial Bodies Database',
-        link: `${relationalDatabaseBase}/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database`,
-        certSlug: 'relational-database-v8'
+        id: '63d83ff239c73468b059cd3f',
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
       },
       {
-        id: '5f9771307d4d22b9d2b75a94',
-        title: 'World Cup Database',
-        link: `${relationalDatabaseBase}/build-a-world-cup-database-project/build-a-world-cup-database`,
-        certSlug: 'relational-database-v8'
+        id: '63d83ffd39c73468b059cd40',
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
       },
       {
-        id: '5f87ac112ae598023a42df1a',
-        title: 'Salon Appointment Scheduler',
-        link: `${relationalDatabaseBase}/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler`,
-        certSlug: 'relational-database-v8'
+        id: '63d8401039c73468b059cd41',
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
+        certSlug: 'college-algebra-with-python-v8'
       },
       {
-        id: '602d9ff222201c65d2a019f2',
-        title: 'Periodic Table Database',
-        link: `${relationalDatabaseBase}/build-a-periodic-table-database-project/build-a-periodic-table-database`,
-        certSlug: 'relational-database-v8'
+        id: '63d8401e39c73468b059cd42',
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
       },
       {
-        id: '602da04c22201c65d2a019f4',
-        title: 'Number Guessing Game',
-        link: `${relationalDatabaseBase}/build-a-number-guessing-game-project/build-a-number-guessing-game`,
-        certSlug: 'relational-database-v8'
+        id: '63d8402e39c73468b059cd43',
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
+        certSlug: 'college-algebra-with-python-v8'
+      }
+    ]
+  }
+] as const;
+
+const upcomingCertMap = [
+  {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Example Certification',
+    certSlug: 'example-certification-v8',
+    flag: 'isExampleCertV8',
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certification Exam',
+        link: `${exampleCertBase}/example-certification-exam`,
+        certSlug: 'example-certification-v8'
       }
     ]
   }
@@ -720,27 +780,55 @@ function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
 }
 
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
+}
+
 function getJavaScriptAlgoPath(project: string) {
   return showUpcomingChanges
     ? `${jsAlgo22Base}/${project}-project/${project}`
     : `${jsAlgoBase}/${project}`;
 }
 
-const titles = certMap.map(({ title }) => title);
-type Title = typeof titles[number];
-const legacyProjectMap: Partial<Record<Title, unknown>> = {};
-const projectMap: Partial<Record<Title, unknown>> = {};
+const certMapWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
+  : ([...legacyCertMap, ...certMap] as const);
 
-certMap.forEach(cert => {
-  // Filter out Legacy Full Stack so inputs for project
-  // URLs aren't rendered on the settings page
-  if (cert.title !== 'Legacy Full Stack') {
-    if (cert.title.startsWith('Legacy')) {
-      legacyProjectMap[cert.title] = cert.projects;
-    } else {
-      projectMap[cert.title] = cert.projects;
-    }
-  }
-});
+const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
-export { certMap, legacyProjectMap, projectMap };
+export type ProjectMap = Record<
+  (typeof certMap)[number]['title'],
+  (typeof certMap)[number]['projects']
+>;
+
+const projectMap = certMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as ProjectMap);
+
+export type LegacyProjectMap = Record<
+  (typeof legacyCertMap)[number]['title'],
+  (typeof legacyCertMap)[number]['projects']
+>;
+
+const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as LegacyProjectMap);
+
+const fullProjectMap = {
+  ...legacyProjectMap,
+  ...projectMap
+};
+
+export {
+  certMapWithoutFullStack,
+  fullCertMap,
+  fullProjectMap,
+  legacyProjectMap,
+  projectMap
+};

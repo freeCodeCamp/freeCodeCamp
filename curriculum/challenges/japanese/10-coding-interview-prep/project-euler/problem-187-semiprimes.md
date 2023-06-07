@@ -1,7 +1,7 @@
 ---
 id: 5900f4291000cf542c50ff3a
 title: '問題 187: 半素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301823
 dashedName: problem-187-semiprimes
 ---

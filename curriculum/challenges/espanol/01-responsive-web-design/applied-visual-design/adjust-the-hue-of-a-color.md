@@ -19,7 +19,7 @@ Se suele pensar que **Hue** es el "color". Si imaginas un espectro de colores co
 
 Aquí hay algunos ejemplos de `hsl()` con colores de iluminación normales y completamente saturados:
 
-<table class='table table-striped'><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>rojo</td><td>hsl(0, 100 %, 50 %)</td></tr><tr><td>amarillo</td><td>hsl(60, 100 %, 50 %)</td></tr><tr><td>verde</td><td>hsl(120, 100 %, 50 %)</td></tr><tr><td>cian</td><td>hsl(180, 100 %, 50 %)</td></tr><tr><td>azul</td><td>hsl(240, 100 %, 50 %)</td></tr><tr><td>magenta</td><td>hsl(300, 100 %, 50 %)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>rojo</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>amarillo</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>verde</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cian</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>azul</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 

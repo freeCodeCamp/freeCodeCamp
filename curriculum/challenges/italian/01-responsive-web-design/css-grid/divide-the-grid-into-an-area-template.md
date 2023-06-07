@@ -17,7 +17,7 @@ grid-template-areas:
   "advert footer footer";
 ```
 
-Questo codice raggruppa le celle della griglia in quattro aree; `header`, `advert`, `content` e `footer`. Ogni parola rappresenta una cella e ogni coppia di virgolette rappresenta una riga.
+Il codice qui sopra raggruppa le celle della griglia in quattro aree: `header`, `advert`, `content` e `footer`. Ogni parola rappresenta una cella e ogni coppia di virgolette rappresenta una riga.
 
 # --instructions--
 

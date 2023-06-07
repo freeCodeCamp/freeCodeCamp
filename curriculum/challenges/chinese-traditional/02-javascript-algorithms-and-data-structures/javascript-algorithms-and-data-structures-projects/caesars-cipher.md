@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e2
-title: 凱撒密碼
+title: 愷撒密碼
 challengeType: 5
 forumTopicId: 16003
 dashedName: caesars-cipher
@@ -8,11 +8,11 @@ dashedName: caesars-cipher
 
 # --description--
 
-凱撒密碼（ <dfn>Caesar cipher</dfn>）是最簡單且最廣爲人知的密碼（<dfn>ciphers</dfn>），也被稱爲移位密碼（<dfn>shift cipher</dfn>）。 在移位密碼中，明文中的字母通過按照一個固定數目進行偏移後被替換成新的字母。
+愷撒密碼（ <dfn>Caesar cipher</dfn>）是最簡單且最廣爲人知的密碼（<dfn>ciphers</dfn>），也被稱爲移位密碼（<dfn>shift cipher</dfn>）。 在移位密碼中，明文中的字母通過按照一個固定數目進行偏移後被替換成新的字母。
 
-[ROT13](https://en.wikipedia.org/wiki/ROT13) 是一個被廣泛使用的加密技術，明文中的所有字母都被移動 13 位。 也就是， `A ↔ N`，`B ↔ O` 等等。
+現代最常被應用到的一個變種就是 <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> 加密，也就是明文中的字母向後移 13 位。 也就是， `A ↔ N`，`B ↔ O` 等等。
 
-編寫一個函數，它將 [ROT13](https://en.wikipedia.org/wiki/ROT13) 編碼的字符串作爲輸入並返回解碼字符串。
+編寫一個函數，它將把使用 <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> 加密編碼的字符串作爲輸入並返回解碼字符串。
 
 所有解碼後的字母都必須爲字母大寫。 請不要解碼非字母的字符（例如，空格、標點符號），但你需要在結果中保留它們。
 

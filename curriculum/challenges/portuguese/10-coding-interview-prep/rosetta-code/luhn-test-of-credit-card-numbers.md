@@ -1,7 +1,7 @@
 ---
 id: 5ea28156e79528a9ab248f27
 title: Teste de Luhn de números de cartão de crédito
-challengeType: 5
+challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
 ---

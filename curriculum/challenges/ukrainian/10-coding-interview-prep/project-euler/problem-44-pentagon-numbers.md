@@ -1,7 +1,7 @@
 ---
 id: 5900f3981000cf542c50feab
 title: 'Завдання 44: П''ятикутні числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302111
 dashedName: problem-44-pentagon-numbers
 ---

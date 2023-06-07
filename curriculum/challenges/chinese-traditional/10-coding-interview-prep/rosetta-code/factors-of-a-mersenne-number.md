@@ -1,7 +1,7 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
-title: Factors of a Mersenne number
-challengeType: 5
+title: 梅森數的因數
+challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
 ---
@@ -12,7 +12,7 @@ A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
 
 If `P` is prime, the Mersenne number may be a Mersenne prime. (If `P` is not prime, the Mersenne number is also not prime.)
 
-In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
+In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a>.
 
 There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
 
@@ -22,7 +22,7 @@ The following is how to implement this modPow yourself:
 
 For example, let's compute <code>2<sup>23</sup> mod 47</code>.
 
-Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+將指數 23 轉換爲二進制，得到 10111。 Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
 
 Remove the top bit of the exponent, and if it's 1 multiply `square` by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
 
@@ -48,7 +48,7 @@ Further properties of Mersenne numbers allow us to refine the process even more.
 
 Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
 
-Finally any potential factor `q` must be [prime](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
 
 As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
 

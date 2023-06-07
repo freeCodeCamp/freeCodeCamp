@@ -1,7 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4b
 title: 'Problema 204: Numeri Di Hamming generalizzati'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301845
 dashedName: problem-204-generalised-hamming-numbers
 ---

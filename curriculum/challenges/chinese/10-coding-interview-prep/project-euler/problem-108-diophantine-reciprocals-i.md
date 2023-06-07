@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feeb
 title: 'Problem 108: Diophantine Reciprocals I'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301732
 dashedName: problem-108-diophantine-reciprocals-i
 ---
@@ -14,7 +14,9 @@ $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
 For `n` = 4 there are exactly three distinct solutions:
 
-$$\begin{align} & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\ \\\\ & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\ \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
+$$\begin{align}   & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\
+  \\\\   & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\
+  \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
 
 What is the least value of `n` for which the number of distinct solutions exceeds one-thousand?
 

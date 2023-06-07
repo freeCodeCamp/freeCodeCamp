@@ -1,42 +1,42 @@
 ---
 id: 5900f3761000cf542c50fe88
-title: 'Problem 9: Special Pythagorean triplet'
-challengeType: 5
+title: 'Problema 9: Terna Pitagórica Especial'
+challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
 ---
 
 # --description--
 
-A Pythagorean triplet is a set of three natural numbers, `a` &lt; `b` &lt; `c`, for which,
+Una Terna Pitagórica es un conjunto de tres números naturales, `a` &lt; `b` &lt; `c`, para los cuales,
 
 <div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
 
-For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+Por ejemplo, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
 
-There exists exactly one Pythagorean triplet for which `a` + `b` + `c` = 1000. Find the product `abc` such that `a` + `b` + `c` = `n`.
+Existe exactamente una Terna Pitagórica en la cual `a` + `b` + `c` = 1000. Encuentra el producto `abc` tal que `a` + `b` + `c` = `n`.
 
 # --hints--
 
-`specialPythagoreanTriplet(24)` should return a number.
+`specialPythagoreanTriplet(24)` debe devolver un número.
 
 ```js
 assert(typeof specialPythagoreanTriplet(24) === 'number');
 ```
 
-`specialPythagoreanTriplet(24)` should return 480.
+`specialPythagoreanTriplet(24)` debe devolver 480.
 
 ```js
 assert.strictEqual(specialPythagoreanTriplet(24), 480);
 ```
 
-`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000
+`specialPythagoreanTriplet(120)` debe devolver 49920, 55080 o 60000.
 
 ```js
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
 ```
 
-`specialPythagoreanTriplet(1000)` should return 31875000.
+`specialPythagoreanTriplet(1000)` debe devolver 31875000.
 
 ```js
 assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);

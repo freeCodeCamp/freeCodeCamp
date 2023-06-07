@@ -1,7 +1,7 @@
 ---
 id: 5900f41f1000cf542c50ff32
 title: 'Завдання 179: Послідовні додатні дільники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors
 ---

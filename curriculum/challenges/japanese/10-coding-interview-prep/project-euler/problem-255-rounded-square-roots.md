@@ -1,7 +1,7 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 title: '問題 255: 丸め平方根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
 ---

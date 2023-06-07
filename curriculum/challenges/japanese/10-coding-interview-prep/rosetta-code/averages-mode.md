@@ -1,14 +1,14 @@
 ---
 id: 594d8d0ab97724821379b1e6
 title: 平均/最頻値
-challengeType: 5
+challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
 ---
 
 # --description--
 
-データ全体の [最頻値](https://en.wikipedia.org/wiki/Mode (statistics) "wp: Mode (statistics)") を見つけるためのプログラムを作成します。
+Write a function `mode` to find the value that appears most in an array.
 
 データが空の場合は無視します。 最頻値が1つではない場合には注意が必要です。
 

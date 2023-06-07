@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objetivo:** Crea una aplicación que funcione similar a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **Historias de usuario:**
 
@@ -24,7 +24,7 @@ dashedName: build-a-technical-documentation-page
 1. Además, la barra de navegación debe contener elementos de enlace (`a`) con la clase de `nav-link`. Debe haber uno para cada elemento con la clase `main-section`
 1. El elemento `header` en la `#navbar` debe venir antes de cualquier enlace (`a`) en la barra de navegación
 1. Cada elemento con la clase de `nav-link` debe contener texto que corresponda al texto `header` dentro de cada `section` (p.ej. Si tienes una sección/encabezado "Hola mundo", tu barra de navegación debe tener un elemento que contenga el texto "Hola mundo")
-1. Cuando hagas clic en un elemento de la barra de navegación, la página debe navegar a la sección correspondiente del elemento `main-doc` (p. ej. Si haces clic en un elemento `nav-link` que contiene el texto "Hola mundo", la página navega a un elemento `section` con ese id y contiene el encabezado correspondiente)
+1. Al hacer clic en un elemento de tu barra de navegación, la página debe dirigirse a la sección correspondiente del elemento `#main-doc` (Ejemplo: Si haces clic en el elemento `.nav-link` que contiene el texto "Hello world", la página debe dirigirse al elemento `section` que tenga ese id y contenga el header correspondiente)
 1. En dispositivos de tamaño normal (portátiles, escritorios), el elemento con `id="navbar"` debe mostrarse en el lado izquierdo de la pantalla y siempre debe ser visible para el usuario
 1. Tu documentación técnica debe usar al menos una consulta de medios
 
@@ -34,21 +34,21 @@ Completa las historias de usuario y pasa todas las pruebas a continuación para 
 
 # --hints--
 
-Debes tener un elemento `main` con un `id` de `main-doc`
+Debes tener un elemento `main` con un `id` de `main-doc`.
 
 ```js
 const el = document.getElementById('main-doc')
 assert(!!el)
 ```
 
-Debes tener al menos cinco elementos de `section` con una clase de `main-section`
+Debes tener al menos cinco elementos `section` con la clase `main-section`.
 
 ```js
 const els = document.querySelectorAll('#main-doc section')
 assert(els.length >= 5)
 ```
 
-Todos tus elementos `.main-section` deben ser elementos `section`
+Todos tus elementos `.main-section` deben ser elementos `section`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -58,14 +58,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Debes tener al menos cinco elementos de `.main-section` que sean descendientes de `#main-doc`
+Debes tener al menos cinco elementos `.main-section` que sean descendientes de `#main-doc`.
 
 ```js
 const els = document.querySelectorAll('#main-doc .main-section')
 assert(els.length >= 5)
 ```
 
-El primer hijo de cada `.main-section` debe ser un elemento de `header`
+El primer hijo de cada `.main-section` debe ser un elemento `header`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -75,7 +75,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Ninguno de tus elementos `header` deben estar vacíos
+Ninguno de tus elementos `header` debe estar vacío.
 
 ```js
 const els = document.querySelectorAll('header')
@@ -85,7 +85,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Todos tus elementos `.main-section` deben tener un `id`
+Todos tus elementos `.main-section` deben tener un `id`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -95,7 +95,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Cada `.main-section` debe tener un `id` que coincida con el texto de su primer hijo, reemplazando los espacios en el texto del hijo con guiones bajos (`_`) para los ids
+Cada `.main-section` debe tener un `id` que coincida con el texto de su primer hijo, reemplazando los espacios en el texto del hijo con guiones bajos (`_`) para los id.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -106,49 +106,49 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Debes tener al menos 10 elementos `p` (total) dentro de tus elementos `.main-section`
+Debes tener al menos 10 elementos (en total) `p` dentro de tus elementos `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section p')
 assert(els.length >= 10)
 ```
 
-Debes tener al menos cinco elementos de `code` que sean descendientes de `.main-section`
+Debes tener al menos cinco elementos `code` que sean descendientes de los elementos `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section code')
 assert(els.length >= 5)
 ```
 
-Debes tener al menos cinco elementos de `li` que sean descendientes de los elementos `.main-section`
+Debes tener al menos cinco elementos `li` que sean descendientes de los elementos `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section li')
 assert(els.length >= 5)
 ```
 
-Debes tener un elemento `nav` con un `id` de `navbar`
+Debes tener un elemento `nav` con un `id` de `navbar`.
 
 ```js
 const el = document.getElementById('navbar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Tú `#navbar` debe tener exactamente un elemento `header` dentro de ella
+Tu `#navbar` debe tener exactamente un elemento `header` dentro de él.
 
 ```js
 const els = document.querySelectorAll('#navbar header')
 assert(els.length === 1)
 ```
 
-Debes tener al menos un elemento `a` con una clase de `nav-link`
+Debes tener al menos un elemento `a` con la clase `nav-link`.
 
 ```js
 const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-Todos tus elementos `.nav-link` deben ser elementos ancla (`a`)
+Todos tus elementos `.nav-link` deben ser elementos ancla (`a`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -158,7 +158,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Todos tus elementos `.nav-link` deben estar en el `#navbar`
+Todos tus elementos `.nav-link` deben estar en el `#navbar`.
 
 ```js
 const els1 = document.querySelectorAll('.nav-link')
@@ -166,7 +166,7 @@ const els2 = document.querySelectorAll('#navbar .nav-link')
 assert(els2.length > 0 && els1.length === els2.length)
 ```
 
-Debe tener el mismo número de elementos `.nav-link` y `.main-section`
+Debes tener el mismo número de elementos `.nav-link` y `.main-section`.
 
 ```js
 const els1 = document.querySelectorAll('.main-section')
@@ -174,7 +174,7 @@ const els2 = document.querySelectorAll('.nav-link')
 assert(els1.length > 0 && els2.length > 0 && els1.length === els2.length)
 ```
 
-El elemento `header` en el `#navbar` debe venir antes de cualquiera de los elementos enlace (`a`) también en la `#navbar`
+El elemento `header` en el `#navbar` debe estar antes de cualquiera de los elementos enlace (`a`) también en la `#navbar`.
 
 ```js
 const navLinks = document.querySelectorAll('#navbar a.nav-link');
@@ -190,7 +190,7 @@ navLinks.forEach((navLink) => {
 assert(!!header)
 ```
 
-Cada `.nav-link` debe tener un texto que corresponda al texto `header` de su `section` relacionada (p.ej. Si tienes una sección/encabezado "Hola mundo", tú `#navbar` debe tener un `.nav-link` que contenga el texto "Hola mundo")
+Cada `.nav-link` debe tener un texto que corresponda con el texto del `header` de su `section` relacionado (por ejemplo, si tienes un section/header "Hello world", tu `#navbar` debe tener un `.nav-link` que tenga el texto "Hello world").
 
 ```js
 const headerText = Array.from(document.querySelectorAll('.main-section')).map(el =>
@@ -203,7 +203,7 @@ const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
 assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
 ```
 
-Cada `.nav-link` debe tener un atributo `href` que enlaza a su correspondiente `.main-section` (ej. Si haces clic en un elemento `.nav-link` que contiene el texto "Hola mundo", la página navega a un elemento `section` con ese id)
+Cada `.nav-link` debe tener un atributo `href` que enlace a su correspondiente `.main-section` (por ejemplo, si haces clic en un elemento `.nav-link` que contenga el texto "Hello world", la página navega al elemento `section` con ese id).
 
 ```js
 const hrefValues = Array.from(document.querySelectorAll('.nav-link')).map(el => el.getAttribute('href'))
@@ -212,7 +212,7 @@ const missingHrefValues = mainSectionIDs.filter(str => hrefValues.indexOf('#' + 
 assert(hrefValues.length > 0 && mainSectionIDs.length > 0 && missingHrefValues.length === 0)
 ```
 
-Tú `#navbar` siempre debe estar en el borde izquierdo del viewport
+Tu `#navbar` siempre debe estar en el borde izquierdo de la ventana.
 
 ```js
 const el = document.getElementById('navbar')
@@ -221,7 +221,7 @@ const left2 = el?.offsetLeft
 assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 ```
 
-Tu proyecto de documentación técnica debe usar al menos una consulta de medios
+Tu proyecto de documentación técnica debe usar al menos una consulta de medios.
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

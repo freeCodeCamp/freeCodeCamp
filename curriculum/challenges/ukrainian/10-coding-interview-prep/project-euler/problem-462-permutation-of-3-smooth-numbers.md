@@ -1,7 +1,7 @@
 ---
 id: 5900f53b1000cf542c51004d
 title: 'Завдання 462: Перестановка 3-гладких чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
 ---

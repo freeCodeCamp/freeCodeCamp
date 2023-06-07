@@ -10,11 +10,23 @@ dashedName: serialization-of-a-user-object
 
 Serialización y deserialización son conceptos importantes en lo que respecta a la autentificación. Para serializar un objeto significa convertir su contenido en una pequeña *key* que puede ser deserializada en el objeto original. Esto es lo que nos permite saber quién se ha comunicado con el servidor sin tener que enviar los datos de autentificación, como el nombre de usuario y la contraseña, en cada petición de una nueva página.
 
-Para configurarlo correctamente, necesitamos tener una función serializada y una función deserializada. En Passport los creamos con `passport.serializeUser( OURFUNCTION )` y `passport.deserializeUser( OURFUNCTION )`
+Para configurar esto apropiadamente, necesita tener una función serializada y una función deserialización. En Passport, esto puede ser creado con:
 
-El `serializeUser` es llamado con 2 argumentos, el objeto de usuario completo y un callback usado por passport. Una clave única para identificar que el usuario debe ser devuelto en el callback, el más fácil de usar es el `_id` del usuario en el objeto. Debe ser único ya que es generado por MongoDB. De manera similar, `deserializeUser` es llamado con esa clave y también una función de callback para passport, pero, esta vez, tenemos que tomar esa clave y devolver el objeto de usuario completo al callback. Para hacer una consulta de búsqueda para Mongo `_id`, tendrás que crear `const ObjectID = require('mongodb').ObjectID;`, y para usarlo llama a `new ObjectID(THE_ID)`. Asegúrate de agregar `mongodb@~3.6.0` como una dependencia. Puedes ver esto en los ejemplos siguientes:
+```javascript
+passport.serializeUser(cb);
+passport.deserializeUser(cb);
+```
 
-```js
+La función callback pasada a `serializeUser` es llamada con dos argumentos: el objeto usuario completo, y un callback usado por passport.
+
+El callback espera dos argumentos: Un error, si existe, y una clave única para identificar el usuario que deberíar ser devuelto en el callback. Utilizarás el usuario `_id` en el objeto. Este está garantizado a ser único, ya que es generado por MongoDB.
+
+Similarmente, `deserializeUser` es llamado con dos argumentos: la llave única, y la función callback.
+
+Este callback espera dos argumentos: Un error, si existe, y el objeto usuario completo. Para obtener el objeto usuario completo, haga una consulta de búsqueda para un Mongo `_id`, como se muestra a continuación:
+
+
+```javascript
 passport.serializeUser((user, done) => {
   done(null, user._id);
 });
@@ -26,98 +38,91 @@ passport.deserializeUser((id, done) => {
 });
 ```
 
-NOTA: Este `deserializeUser` arrojará un error hasta que establezcamos la BD en el siguiente paso, así que por ahora comenta todo el bloque y simplemente llama a `done(null, null)` en la función `deserializeUser`.
+Agrega las dos funciones anteriores a tu servidor. La clase `ObjectID` viene desde el paquete `mongodb`. `mongodb@~3.6.0` ya ha sido agregada como una dependencia. Declara esta clase con:
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048).
+```javascript
+const { ObjectID } = require('mongodb');
+```
+
+El `deserializeUser` arrojará un error hasta que configures la conexión de la base de datos. Así que, por ahora, comenta la llamada `myDatabase.findOne`, y llama `done(null, null)` en la `deserializeUser` función callback.
+
+Envía tu página cuando tu creas la tienes correctamente. Si te encuentras errores, puedes <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">comprobar el proyecto completado hasta este punto</a>.
 
 # --hints--
 
-Debes serializar correctamente la función de usuario.
+Debes serializar el objeto usuario correctamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.serializeUser/gi,
-        'You should have created your passport.serializeUser function'
-      );
-      assert.match(
-        data,
-        /null,\s*user._id/gi,
-        'There should be a callback in your serializeUser with (null, user._id)'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /passport.serializeUser/gi,
+    'You should have created your passport.serializeUser function'
   );
+  assert.match(
+    data,
+    /null,\s*user._id/gi,
+    'There should be a callback in your serializeUser with (null, user._id)'
+  );
+}
 ```
 
-Debes deserializar correctamente la función de usuario.
+Debes deserializar el objeto usuario correctamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.deserializeUser/gi,
-        'You should have created your passport.deserializeUser function'
-      );
-      assert.match(
-        data,
-        /null,\s*null/gi,
-        'There should be a callback in your deserializeUser with (null, null) for now'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /passport.deserializeUser/gi,
+    'You should have created your passport.deserializeUser function'
   );
+  assert.match(
+    data,
+    /null,\s*null/gi,
+    'There should be a callback in your deserializeUser with (null, null) for now'
+  );
+}
 ```
 
 MongoDB debe ser una dependencia.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'mongodb',
-        'Your project should list "mongodb" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'mongodb',
+    'Your project should list "mongodb" as a dependency'
   );
+}
 ```
 
-Mongodb debe ser requerido correctamente, incluyendo el ObjectId.
+Mongodb debe ser requerido apropiadamente incluyendo el ObjectId.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')mongodb\1/gi,
-        'You should have required mongodb'
-      );
-      assert.match(
-        data,
-        /new ObjectID.*id/gi,
-        'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')mongodb\1/gi,
+    'You should have required mongodb'
   );
+  assert.match(
+    data,
+    /new ObjectID.*id/gi,
+    'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'
+  );
+}
 ```
 
 # --solutions--

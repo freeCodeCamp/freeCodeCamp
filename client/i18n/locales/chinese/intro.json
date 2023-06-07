@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "（旧版）响应式网页设计",
     "intro": [
       "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过编写一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，以及通过构建网页表单来学习无障碍的最佳实践。",
@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(New) Responsive Web Design",
+    "title": "响应式网页设计",
     "intro": [
       "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
-      "首先，你将通过编写一个猫咪相册应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，并通过编写网页表单来学习无障碍的最佳实践。",
-      "最后，你将通过编写一个 Twitter 卡片，学习如何使用 Flexbox 实现能够适应不同屏幕大小的网页 ，以及如何使用 CSS Grid 实现一个复杂的博客布局。"
+      "首先，你将通过编写一个展示猫咪图片的应用来学习 HTML 和 CSS 的基本知识。 然后，通过构建一只企鹅来学习像 CSS 变量这样的现代技术，并通过搭建网页表单来学习无障碍的最佳实践。",
+      "最后，你将通过编写一个 Twitter 卡片，学习如何使用 Flexbox 实现适应不同屏幕大小的网页 ，以及如何用 CSS Grid 实现一个复杂的博客布局。"
     ],
     "note": "注意：某些浏览器扩展程序（例如广告拦截器和深色模式）可能干扰测试。如果遇到问题，我们建议你在学习课程时禁用那些修改网页内容或布局的扩展程序。",
     "blocks": {
@@ -208,10 +208,10 @@
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "通过构建一组彩色标记来学习 CSS 颜色",
+        "title": "通过构建一组彩色笔来学习 CSS 颜色",
         "intro": [
           "为你的网页选择正确的颜色可以大大提高对读者的审美吸引力。",
-          "在本课程中，你将构建一组彩色标记。你将学习设置颜色值的不同方法以及如何将颜色相互配对。"
+          "在本课程中，你将构建一组彩色笔。你将学习设置颜色值的不同方法以及如何将颜色相互配对。"
         ]
       }
     }
@@ -300,68 +300,65 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "title": "JavaScript 算法和数据结构项目（Beta 测试版本）",
+    "intro": ["占位符", "占位符"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "构建一个恺撒密码项目",
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "构建一个收银机项目",
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "构建一个回文检测器项目",
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "搭建一个罗马数字转换器项目",
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "构建一个电话号码检验器项目",
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "通过构建角色扮演游戏来学习 JavaScript",
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "通过构建卡路里计数器来学习表单验证",
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "通过构建电子表格学习函数式编程",
+        "intro": ["", ""]
+      },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "通过创建足球队卡学习现代 JavaScript 方法",
+        "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "通过构建统计计算器学习高级数组方法",
+        "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "通过创建购物车学习数据结构",
+        "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "通过创建 fCC 作者页面学习 Fetch 和 Promises",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "通过创建垃圾邮件过滤器学习正则表达式",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "通过创建数字排序器学习基本算法思维",
+        "intro": ["", ""]
       }
     }
   },
@@ -463,15 +460,12 @@
       },
       "d3-dashboard": {
         "title": "D3 面板",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-database": {
-    "title": "关系数据库（Beta）",
+    "title": "关系数据库",
     "intro": [
       "对于这些课程，你将使用真正的开发人员工具和软件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行来完成交互式教程和构建项目。",
       "这些课程从基本的 Bash 命令开始。使用终端，你将学习从导航和操作文件系统、在 Bash 中编写脚本到高级用法的所有内容。",
@@ -583,7 +577,7 @@
     "intro": [
       "在这之前，你只是在前端使用 JavaScript 来给页面添加交互、解决算法挑战，或构建一个 SPA（单页应用程序）。但 JavaScript 也可以用于后端或者服务器来构建整个 web 应用程序。",
       "今天，构建应用软件的广受欢迎的方法之一是微服务，这些微服务是一种小型模块化的应用，能够共同形成一个更大的整体。",
-      "在后端开发和 APIs 认证中，你将学习如何使用 Node.js 和 npm（Node 包管理工具）来写后端。你还将使用 Express 框架构建 web 应用程序，并使用 MongoDB 和 Mongoose 库构建一个 People Finder 微服务。"
+      "在后端开发和 APIs 认证中，你将学习如何使用 Node.js 和 npm 编写后端应用程序。你还将使用 Express 框架构建 Web 应用程序，并使用 MongoDB 和 Mongoose 库构建一个 People Finder 微服务。"
     ],
     "note": "",
     "blocks": {
@@ -606,7 +600,7 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB 和 Mongoose",
         "intro": [
-          "MongoDB 是一个存储你可以在应用程序中使用的 JSON 文件（或记录）的数据库应用程序。不同于SQL，另一种类型的数据库。Mongo 是一个非关系型或 “NoSQL” 数据库。这意味着 Mongo 将所有相关数据存储在一个记录中，而不是像 SQL 数据库中那样在许多预设表中存储数据。",
+          "MongoDB 是一个存储 JSON 文件（或记录）的数据库程序，你可以在自己的程序中使用这些 JSON 文件。与 SQL——另一种类型的数据库——所不同的是，MongoDB 是一个非关系型数据库，也被称为 “NoSQL”。这意味着 MongoDB 将所有相关数据都存储在一个记录中，而不是像 SQL 数据库中那样把数据存储在许多预设表中。",
           "Mongoose 是一个广泛使用的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。此外，它允许你创建文件架构，即 schema，所以你不会意外地保存错误的数据类型并出现 bug。",
           "在 MongoDB 和 Mongoose 课程中，你将学习处理数据的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
         ]
@@ -741,7 +735,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "Python 与机器学习",
+    "title": "Python 和机器学习",
     "intro": [
       "机器学习有许多实际应用程序，你可以在项目中或工作中使用它们。",
       "在这个认证中，你将使用 TensorFlow 框架构建多个神经网络，同时，你将探索更先进的技术，例如自然语言处理和强化学习。",
@@ -771,13 +765,143 @@
       }
     }
   },
+  "college-algebra-with-python": {
+    "title": "Python 和大学数学",
+    "intro": [
+      "本课程设计为一个学期的大学课程。它包含教学视频、用于交互式跟进的 Google Colaboratory 笔记本、任务和具有挑战性的项目。",
+      "当你按顺序学习本课程的每个部分时，你将全面了解代数以及如何编写 Python 代码来解决代数问题。",
+      "在整个课程中，你还将创建自己的代数 Colab 笔记本，你将能够用作自定义计算器。 这门课程（以及你在这里写的代码）将为你理解深度数学和数据科学打下基础。"
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "学习比率和比例",
+        "intro": [
+          "你的旅程从学习如何创建一个可以运行 Python 代码的 Colab 笔记本开始，然后你使用笔记本和视频学习通过 Python 解决比率和比例问题。"
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "学习如何求解 X",
+        "intro": [
+          "这个单元将着重运用书面代数和 Python 代码求解一个未知数（通常被称为 “x”）。"
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "学习分数和小数",
+        "intro": ["这个学习单元将侧重于将小数转换为分数和百分比。"]
+      },
+      "learn-functions-and-graphing": {
+        "title": "学习函数和图像",
+        "intro": ["这个单元将会教你数学函数。"]
+      },
+      "learn-linear-functions": {
+        "title": "学习线性函数",
+        "intro": ["这个单元将向你展示如何从两个点来构建线性方程。"]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "学习公因数和平方根",
+        "intro": [
+          "在这个单元中，你将学习如何找到公因数和分解公因数。这将有助于简化分数和简化平方根式。"
+        ]
+      },
+      "build-a-multi-function-calculator-project": {
+        "title": "多功能计算器",
+        "intro": [
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建一个多功能计算器。"
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "学习如何绘制方程组对应的图像",
+        "intro": [
+          "这个单位将侧重于绘制同一坐标平面上的两个方程式的图像，以便你可以看到线条相交的地方。"
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "学习如何解方程组",
+        "intro": [
+          "在这个单元中，你将学习如何求解一个由两个方程式（两个变量）组成的方程组，而无需图像。 你将会看到如何用 Python 分解因式和求解某个变量。 学完这个单元，你将能用一个代码块来求解方程组并绘制图像。"
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "学习线性方程组的应用",
+        "intro": [
+          "在这个单元中，你将看到如何使用你目前学到的代数来解决真实世界中的问题。"
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "学习二次方程",
+        "intro": [
+          "这个单元将在线性方程的基础上，结合指数和抛物线图像。 你将学习如何在抛物线中找到关键点，以及如何解二次方程。"
+        ]
+      },
+      "build-a-graphing-calculator-project": {
+        "title": "图形计算器",
+        "intro": [
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建一个图形计算器。"
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "学习父图像和多项式",
+        "intro": [
+          "这个单元将显示许多不同类型的“父”图像，即构成更复杂图像的基本模式。多项式是带有“多件事”的数学表达式，是由基本模式构建的更复杂的方程式。你会看到这些图像是什么样的、如何修改它们，以及如何使用 Python 代码来做这一切。"
+        ]
+      },
+      "build-three-math-games-project": {
+        "title": "三个数学游戏",
+        "intro": [
+          "这是你获得认证必做的项目之一。",
+          "在这个项目中，你将创建三个数学游戏。"
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "学习大学代数的商业应用",
+        "intro": [
+          "这个单元将向你展示如何应用你的解答和绘图技能来求解成本、收入和利润。你将从两个点写代码来开发一个需求函数。你将看到价格如何影响利润图，以及所有这些方程如何相互关联。"
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "学习单利和复利",
+        "intro": [
+          "这个单位将向你展示如何计算利息、贷款支付和投资的估值。你将看到数学公式，并将其变成代码。由于这些公式往往很复杂，因此你只需要修改一部分值的代码。"
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "学习指数和对数",
+        "intro": [
+          "这个单元将向你展示指数和对数是反函数，以及你如何在各种应用程序中使用这些函数。"
+        ]
+      },
+      "build-a-financial-calculator-project": {
+        "title": "金融计算器",
+        "intro": [
+          "这是你获得认证必做的项目之一。",
+          "对于这个项目，你将创建一个财务计算器。"
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "Python 和大学代数：总结",
+        "intro": [
+          "这将是本课程的最后一个单元。让我们看看如何能够将你的数学和 Python 知识与外部数据连接起来。"
+        ]
+      },
+      "build-a-data-graph-explorer-project": {
+        "title": "数据图表浏览器",
+        "intro": [
+          "这是你获得认证必做的项目之一。",
+          "对于这个项目，你将创建一个数据图表浏览器。"
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "面试攻略",
     "intro": [
       "如果你正在寻找免费的编程训练来帮你为下一个工作面试做准备，我们已经帮你准备好了。",
       "这一部分包含了大量编程挑战，可以测试你的算法、数据结构和数学知识。这里还有一些你可以在家慢慢做的项目，用于提升你的技术，或者丰富你的作品集。"
     ],
-    "note": "",
+    "note": "欧拉项目已经转移到单独的课程。返回课程选择界面以查看我们提供的课程列表。",
     "blocks": {
       "algorithms": {
         "title": "算法",
@@ -804,15 +928,84 @@
         "title": "罗塞塔代码",
         "intro": [
           "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
-          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。"
+          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>属性：Rosetta 代码</a>"
+        ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "Odin 项目",
+    "intro": [
+      "Odin 项目就是那种“我在学习的时候渴求拥有的”资源之一。 ",
+      "并非每个人都能获得计算机科学专业教育，或是有资金接受编程进阶教学，这两种教育方式也并不适合所有人。",
+      "该项目旨在帮助那些试图自行打破差距且依然希望接受高质量教育的人填补空白。"
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "学习 HTML 基础",
+        "intro": ["详细描述待确定"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "通过搭建食谱页面学习 HTML 基础",
+        "intro": ["详细描述待确定"]
+      },
+      "top-learn-css-foundations": {
+        "title": "学习 CSS 基础",
+        "intro": ["描述待定"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "学习 CSS 基础项目",
+        "intro": ["描述待定"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "欧拉计划",
+    "intro": [
+      "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
+      "这些问题的难度各不相同，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "欧拉计划问题 1 - 100",
+        "intro": [
+          "在这第一组挑战中，你将使用斐波那契数列、素数定理和离散数学这样的数学概念编写算法来解决这些问题。"
         ]
       },
-      "project-euler": {
-        "title": "欧拉计划",
+      "project-euler-problems-101-to-200": {
+        "title": "欧拉计划问题 101 - 200",
         "intro": [
-          "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
-          "这些问题的难度很大，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
+          "在这一系列的挑战中，你将在课程第一部分的基础上，结合更高级的概念，如矢量计算方法、杨辉三角（帕斯卡三角）和 RSA 算法来有效地解决这些问题。"
         ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "欧拉计划问题 201 - 300",
+        "intro": [
+          "在这组挑战中，你将继续利用你之前学到的技能，并使用二项式定理、汉明和考拉兹序列等概念来进一步提升你的数学和解决问题的技能。"
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "欧拉计划问题 301 - 400",
+        "intro": [
+          "在这里，你将继续发挥你的数学和算法技能，使用组合博弈论、位运算和 Golomb 的自描述序列等概念来开发这些问题的有效解决方案。"
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "欧拉计划问题 401 - 480",
+        "intro": [
+          "在这最后一组挑战中，你将需要使用你目前所学到的一切，并使用像元因数、卡普雷卡尔算法等等高级概念来解决这些复杂问题。"
+        ]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "示例认证",
+    "intro": ["占位符"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "示例认证测验",
+        "intro": ["占位符"]
       }
     }
   },
@@ -825,10 +1018,9 @@
     "collapse": "收起课程",
     "legacy-header": "旧版课程",
     "legacy-desc": "这些课程不再是认证路径的一部分，但仍可供你进一步学习。",
-    "legacy-go-back": "Go to the current version of the curriculum.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
-    "viewing-upcoming-change": "你正在查看Beta页面。 ",
+    "legacy-go-back": "进入当前版本的课程。",
+    "course-maintenance": "这些课程正在维护中。如果它们不可用，你可以学习如何在本地运行这些课程 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>。",
+    "progress-wont-save": "当你在本地运行它们时，你的进度不会被保存到你的 freeCodeCamp 账户。",
     "go-back-to-learn": "回到正式版课程",
     "read-database-cert-article": "请在继续之前阅读这个论坛帖子。",
     "enable-cookies": "你必须在开始之前启用第三方 cookies。",

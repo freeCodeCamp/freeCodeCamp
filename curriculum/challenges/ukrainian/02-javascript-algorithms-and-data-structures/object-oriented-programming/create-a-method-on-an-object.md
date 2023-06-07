@@ -29,7 +29,7 @@ duck.sayName();
 
 # --hints--
 
-`dog.sayLegs()` повинен бути функцією.
+`dog.sayLegs()` має бути функцією.
 
 ```js
 assert(typeof dog.sayLegs === 'function');

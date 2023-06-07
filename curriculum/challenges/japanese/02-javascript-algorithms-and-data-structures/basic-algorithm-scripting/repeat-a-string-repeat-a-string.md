@@ -1,7 +1,7 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: 同じ文字列の繰り返し
-challengeType: 5
+challengeType: 1
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
 ---

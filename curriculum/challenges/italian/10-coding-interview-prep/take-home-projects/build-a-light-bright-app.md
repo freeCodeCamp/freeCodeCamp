@@ -8,11 +8,11 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
+**Obiettivo:** crea un'app funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
 
 **Regola #1:** Non guardare il codice del progetto esempio. Arrivaci per conto tuo.
 
-**Regola #2:** Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
+**Regola #2:** Soddisfa le seguenti user story per passare tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
 **User Story:** Posso cliccare o trascinare il cursore del mouse per colorare i cerchi.
 
@@ -28,7 +28,7 @@ dashedName: build-a-light-bright-app
 
 Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-Puoi ottenere un feedback sul tuo progetto condividendolo sul [forum di freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">forum di freeCodeCamp</a>.
 
 # --solutions--
 

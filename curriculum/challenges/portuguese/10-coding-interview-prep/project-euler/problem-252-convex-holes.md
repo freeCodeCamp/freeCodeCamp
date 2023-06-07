@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7b
 title: 'Problema 252: Orifícios convexos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
 ---

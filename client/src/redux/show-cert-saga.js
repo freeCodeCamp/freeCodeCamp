@@ -1,9 +1,9 @@
 import { navigate } from 'gatsby';
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../components/Flash/redux';
 import { getShowCert } from '../utils/ajax';
-import { showCertComplete, showCertError } from '.';
+import { showCertComplete, showCertError } from './actions';
 
 function* getShowCertSaga({ payload: { username, certSlug } }) {
   try {

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8000
 title: Sort disjoint sublist
-challengeType: 5
+challengeType: 1
 forumTopicId: 302307
 dashedName: sort-disjoint-sublist
 ---

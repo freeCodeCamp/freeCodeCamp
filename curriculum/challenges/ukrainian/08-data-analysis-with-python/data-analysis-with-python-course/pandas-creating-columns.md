@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15c
-title: 'Pandas: Створення стовпців'
+title: 'Pandas: створення стовпчиків'
 challengeType: 11
 videoId: _sSo2XZoB3E
 bilibiliIds:
@@ -16,14 +16,14 @@ dashedName: pandas-creating-columns
 
 Додаткові ресурси:
 
--   [Блокноти на GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [Як відкрити блокноти з GitHub використовуючи Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-Який код додасть стовпець "Certificates per month" до таблиці даних `certificates_earned` аналогічно до прикладу нижче?
+Який код додасть стовпчик «Certificates per month» до таблиці даних `certificates_earned` аналогічно до прикладу нижче?
 
 <pre>      Certificates  Time (in months)  Certificates per month
 Tom               8                16                    0.50

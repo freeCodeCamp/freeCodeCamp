@@ -1,7 +1,7 @@
 ---
 id: 5951815dd895584b06884620
 title: Кола з заданим радіусом через дві точки
-challengeType: 5
+challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
 ---
@@ -27,8 +27,8 @@ dashedName: circles-of-given-radius-through-two-points
 
 <ul>
   <li>Якщо точки розташовані на діаметрі, повернеться одна точка. Якщо ж радіус також є нульовим, тоді повернеться <code>"Radius Zero"</code>.</li>
-  <li>Якщо точки збігаються, поверніть <code>"Точку збігу. Безкінечні рішення"</code>.</li>
-  <li>Якщо точки розташовані далі, ніж діаметр, поверніть <code>"Без перетину. Точки, які віддалені одна від одної, відносно діаметра кола"</code>.</li>
+  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
 **Приклади вхідних даних:**
@@ -61,13 +61,13 @@ assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` має повертатися `Точка збігу. Безкінечні рішення"`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` має повертати `Coincident point. Infinite solutions`
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` має повертатися `Без перетину. Точки, які віддалені одна від одної, відносно діаметра кола"`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` має повертати `No intersection. Points further apart than circle diameter`
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);

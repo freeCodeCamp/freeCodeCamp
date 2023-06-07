@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Замість генерації випадкового цілого числа між нулем і даним числом, як ми робили це раніше, ми можемо утворити випадкове ціле число, що потрапляє в діапазон двох конкретних чисел.
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-Для цього ми визначимо мінімальне число `min` і максимальне число `max`.
+You'll call your minimum number `min` and your maximum number `max`.
 
-Ми будемо використовувати наступну формулу. Зробіть паузу, щоб прочитати і зрозуміти, що робить цей код:
+This formula gives a random whole number in the range from `min` to `max`. Зробіть паузу, щоб прочитати і зрозуміти, що робить цей код:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,29 +21,29 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Створіть функцію під назвою `randomRange`, яка займає діапазон `myMin` і `myMax` і повертає випадкове ціле число, яке більше або дорівнює `myMin`і менше або дорівнює `myMax`, включно.
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
-Найменше випадкове число, яке можна створити за допомогою `randomRange` має дорівнювати вашому мінімальному числу, `myMin`.
+Найменше випадкове число, яке може згенерувати `randomRange`, повинне дорівнювати вашому мінімальному числу (`myMin`).
 
 ```js
 assert(calcMin === 5);
 ```
 
-Найбільше випадкове число, яке можна створити за допомогою `randomRange` має дорівнювати вашому максимальному числу, `myMax`.
+Найбільше випадкове число, яке може згенерувати `randomRange`, повинне дорівнювати вашому максимальному числу (`myMax`).
 
 ```js
 assert(calcMax === 15);
 ```
 
-Випадкове число, утворене за допомогою `randomRange` має бути цілим, а не десятковим.
+Випадкове число, згенероване за допомогою `randomRange`, повинне бути цілим, а не десятковим.
 
 ```js
 assert(randomRange(0, 1) % 1 === 0);
 ```
 
-`randomRange` повинен використовувати обидва `myMax` та `myMin`, і повертати випадкове число у межах вашого діапазону.
+`randomRange` має використовувати `myMax` та `myMin`, і повертати випадкове число у межах вашого діапазону.
 
 ```js
 assert(
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

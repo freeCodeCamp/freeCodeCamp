@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad4
 title: Quebra de linha
-challengeType: 5
+challengeType: 1
 forumTopicId: 302344
 dashedName: word-wrap
 ---

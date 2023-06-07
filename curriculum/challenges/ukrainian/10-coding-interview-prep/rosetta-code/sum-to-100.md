@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8043
 title: Сума до 100
-challengeType: 5
+challengeType: 1
 forumTopicId: 302335
 dashedName: sum-to-100
 ---

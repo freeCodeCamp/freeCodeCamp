@@ -1,6 +1,6 @@
 ---
 id: 5e46f7e5ac417301a38fb928
-title: Mean-Variance-Standard Deviation Calculator
+title: Калькулятор середньоквадратичного відхилення
 challengeType: 10
 forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
@@ -8,20 +8,26 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
+
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 годин)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
 # --instructions--
 
-Create a function named `calculate()` in `mean_var_std.py` that uses Numpy to output the mean, variance, standard deviation, max, min, and sum of the rows, columns, and elements in a 3 x 3 matrix.
+Створіть функцію під назвою `calculate()` у `mean_var_std.py`, яка використовує Numpy для виведення середнього значення, дисперсії, стандартного відхилення, максимуму, мінімуму та суми рядків, стовпчиків, і елементів в матриці 3 x 3.
 
-The input of the function should be a list containing 9 digits. The function should convert the list into a 3 x 3 Numpy array, and then return a dictionary containing the mean, variance, standard deviation, max, min, and sum along both axes and for the flattened matrix.
+Вхідним значенням функції має бути список, що містить 9 цифр. Функція повинна перетворити список у масив Numpy 3 x 3, а потім повернути словник, що містить середнє значення, дисперсію, стандартне відхилення, максимум, мінімум і суму вздовж обох осей і для сплощеної матриці.
 
-The returned dictionary should follow this format:
+Повернений словник повинен мати такий формат:
 
 ```py
 {
@@ -34,9 +40,9 @@ The returned dictionary should follow this format:
 }
 ```
 
-If a list containing less than 9 elements is passed into the function, it should raise a `ValueError` exception with the message: "List must contain nine numbers." The values in the returned dictionary should be lists and not Numpy arrays.
+Якщо у функцію передається список, що містить менше 9 елементів, вона має викликати виняток `ValueError` з повідомленням: "List must contain nine numbers." (список має містити дев’ять чисел). Значеннями у повернутому словнику мають бути списки, а не масиви Numpy.
 
-For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
+Наприклад, `calculate([0,1,2,3,4,5,6,7,8])` має повертати:
 
 ```py
 {
@@ -49,23 +55,23 @@ For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
 }
 ```
 
-The unit tests for this project are in `test_module.py`.
+Модульні тести для цього проєкту знаходяться в `test_module.py`.
 
-## Development
+## Розробка
 
-For development, you can use `main.py` to test your `calculate()` function. Click the "run" button and `main.py` will run.
+Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `calculate()`. Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

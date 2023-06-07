@@ -1,7 +1,7 @@
 ---
 id: 5900f3781000cf542c50fe8a
 title: '問題 11: 格子内の最大の積'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
 ---

@@ -17,17 +17,15 @@ import {
 
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { executeGA } from '../redux/actions';
+import { signInLoadingSelector, userSelector } from '../redux/selectors';
+import { PaymentContext } from '../../../config/donation-settings';
 
 export interface ExecuteGaArg {
-  type: string;
-  data: {
-    category: string;
-    action: string;
-    nonInteraction?: boolean;
-    label?: string;
-    value?: number;
-  };
+  event: string;
+  action: string;
+  duration?: string;
+  amount?: number;
 }
 interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
@@ -57,27 +55,11 @@ function DonatePage({
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation View',
-        action: `Displayed donate page`,
-        nonInteraction: true
-      }
+      event: 'donation_view',
+      action: `Displayed Donate Page`
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function handleProcessing(duration: string, amount: number, action: string) {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `donate page ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
-  }
 
   return showLoading ? (
     <Loader fullScreen={true} />
@@ -85,51 +67,51 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        <Spacer />
-        <Row>
-          <>
-            <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-              <Row>
-                <Col className={'text-center'} xs={12}>
-                  {isDonating ? (
-                    <h2>{t('donate.thank-you')}</h2>
-                  ) : (
-                    <h2>{t('donate.help-more')}</h2>
-                  )}
-                  <Spacer />
-                </Col>
-              </Row>
-              {isDonating ? (
-                <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
-                  <p data-cy='donate.thank-you'>{t('donate.thank-you-2')}</p>
-                  <br />
-                  <DonationOptionsAlertText />
-                </Alert>
-              ) : null}
-              <DonationText />
-              <Row>
-                <Col xs={12}>
-                  <DonateForm handleProcessing={handleProcessing} />
-                </Col>
-              </Row>
-              <Spacer size={3} />
-              <Row className='donate-support' id='FAQ'>
-                <Col className={'text-center'} xs={12}>
-                  <hr />
-                  <h2>{t('donate.faq')}</h2>
-                  <Spacer />
-                </Col>
-                <Col xs={12}>
-                  <DonationFaqText />
-                </Col>
-              </Row>
-            </Col>
-            <Col lg={6}>
-              <CampersImage pageName='donate' />
-            </Col>
-          </>
-        </Row>
-        <Spacer />
+        <Spacer size='large'>
+          <Row>
+            <>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+                <Row>
+                  <Col className={'text-center'} xs={12}>
+                    {isDonating ? (
+                      <h2>{t('donate.thank-you')}</h2>
+                    ) : (
+                      <h2>{t('donate.help-more')}</h2>
+                    )}
+                    <Spacer size='medium' />
+                  </Col>
+                </Row>
+                {isDonating ? (
+                  <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
+                    <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
+                    <br />
+                    <DonationOptionsAlertText />
+                  </Alert>
+                ) : null}
+                <DonationText />
+                <Row>
+                  <Col xs={12}>
+                    <DonateForm paymentContext={PaymentContext.DonatePage} />
+                  </Col>
+                </Row>
+                <Spacer size='exLarge' />
+                <Row className='donate-support' id='FAQ'>
+                  <Col className={'text-center'} xs={12}>
+                    <hr />
+                    <h2>{t('donate.faq')}</h2>
+                    <Spacer size='medium' />
+                  </Col>
+                  <Col xs={12}>
+                    <DonationFaqText />
+                  </Col>
+                </Row>
+              </Col>
+              <Col lg={6}>
+                <CampersImage pageName='donate' />
+              </Col>
+            </>
+          </Row>
+        </Spacer>
       </Grid>
     </>
   );

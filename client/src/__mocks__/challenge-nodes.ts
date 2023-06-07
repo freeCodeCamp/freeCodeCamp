@@ -182,6 +182,20 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       superBlock: 'super-block-three',
       dashedName: 'challenge-three'
     }
+  },
+  {
+    challenge: {
+      fields: {
+        slug: '/super-block-four/block-a/challenge-one',
+        blockName: 'Block A'
+      },
+      id: 'm',
+      block: 'block-a',
+      title: 'Challenge One',
+      isPrivate: false,
+      superBlock: 'super-block-four',
+      dashedName: 'challenge-one'
+    }
   }
 ];
 

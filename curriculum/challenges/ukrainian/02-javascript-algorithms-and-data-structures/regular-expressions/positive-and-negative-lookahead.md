@@ -56,7 +56,7 @@ pwRegex.lastIndex = 0;
 assert(!pwRegex.test('astronaut'));
 ```
 
-Ваш регулярний вираз не повинен відповідати рядку `banan1`
+Ваш регулярний вираз не повинен збігатися з рядком `banan1`
 
 ```js
 pwRegex.lastIndex = 0;
@@ -70,35 +70,35 @@ pwRegex.lastIndex = 0;
 assert(pwRegex.test('bana12'));
 ```
 
-Ваш отриманий вираз повинен збігатися з рядком `abc123`
+Ваш регулярний вираз повинен збігатися з рядком `abc123`
 
 ```js
 pwRegex.lastIndex = 0;
 assert(pwRegex.test('abc123'));
 ```
 
-Ваш отриманий вираз не повинен збігатися з рядком `12345`
+Ваш регулярний вираз не повинен збігатися з рядком `12345`
 
 ```js
 pwRegex.lastIndex = 0;
 assert(!pwRegex.test('12345'));
 ```
 
-Ваш отриманий вираз повинен збігатися з рядком `8pass99`
+Ваш регулярний вираз повинен збігатися з рядком `8pass99`
 
 ```js
 pwRegex.lastIndex = 0;
 assert(pwRegex.test('8pass99'));
 ```
 
-Ваш регулярний вираз не повинен відповідати рядку `1a2bcde`
+Ваш регулярний вираз не повинен збігатися з рядком `1a2bcde`
 
 ```js
 pwRegex.lastIndex = 0;
 assert(!pwRegex.test('1a2bcde'));
 ```
 
-Отриманий вираз не повинен відповідати рядку `astr1on11aut`
+Ваш регулярний вираз не повинен збігатися з рядком `astr1on11aut`
 
 ```js
 pwRegex.lastIndex = 0;

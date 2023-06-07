@@ -12,17 +12,17 @@ dashedName: remove-a-package-from-your-dependencies
 
 但是，如果想要删除不再需要的依赖包，该怎么办呢？ 可能已经猜到了——只需要从依赖项中删除相应的键值对就行了。
 
-同样的方法也适用于删除 package.json 中的其它字段。
+同样的方法也适用于删除 package.json 中的其他字段。
 
 # --instructions--
 
-从依赖项中删除 moment 依赖包。
+从依赖项中删除 `@freecodecamp/example` 包。
 
 **注意：**删除依赖包后，确保逗号数量正确。
 
 # --hints--
 
-“dependencies”字段不包含“moment”。
+`"dependencies"` 不应包含 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ dashedName: remove-a-package-from-your-dependencies
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

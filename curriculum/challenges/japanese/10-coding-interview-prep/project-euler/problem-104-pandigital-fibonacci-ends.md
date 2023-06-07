@@ -1,7 +1,7 @@
 ---
 id: 5900f3d51000cf542c50fee6
 title: '問題 104: 両端がパンデジタルであるフィボナッチ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301728
 dashedName: problem-104-pandigital-fibonacci-ends
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3ea1000cf542c50fefd
 title: 'Problem 126: Cuboid layers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301753
 dashedName: problem-126-cuboid-layers
 ---
@@ -10,14 +10,24 @@ dashedName: problem-126-cuboid-layers
 
 The minimum number of cubes to cover every visible face on a cuboid measuring 3 x 2 x 1 is twenty-two.
 
-If we then add a second layer to this solid it would require forty-six cubes to cover every visible face, the third layer would require seventy-eight cubes, and the fourth layer would require one-hundred and eighteen cubes to cover every visible face. However, the first layer on a cuboid measuring 5 x 1 x 1 also requires twenty-two cubes; similarly the first layer on cuboids measuring 5 x 3 x 1, 7 x 2 x 1, and 11 x 1 x 1 all contain forty-six cubes. We shall define C(n) to represent the number of cuboids that contain n cubes in one of its layers. So C(22) = 2, C(46) = 4, C(78) = 5, and C(118) = 8. It turns out that 154 is the least value of n for which C(n) = 10. Find the least value of n for which C(n) = 1000.
+<img class="img-responsive center-block" alt="3x2x1 的长方体被 22 个 1x1x1 的立方体覆盖" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+
+如果我们再添加第二层来覆盖现在这个体的每一个可见面，则需要 64 个立方体，第三层需要 78 个立方体，第四层需要 118 个。
+
+而覆盖尺寸为 5 x 1 x 1 的长方体第一层同样也需要 22 个小立方体；类似的覆盖尺寸为 5 x 3 x 1，7 x 2 x 1，和 11 x 1 x 1 的第一层都需要 46 个立方体。
+
+我们定义 $C(n)$ 为可以用 $n$ 个小立方体覆盖其某一层表面的长方体的数目。 则 $C(22) = 2$，$C(46) = 4$，$C(78) = 5$，而 $C(118) = 8$。
+
+可以发现 154 是满足 $C(n) = 10$ 时 $n$ 的最小值。
+
+求满足 $C(n) = 1000$ 时，$n$ 的最小值。
 
 # --hints--
 
-`euler126()` should return 18522.
+`cuboidLayers()` 应该返回 `18522`。
 
 ```js
-assert.strictEqual(euler126(), 18522);
+assert.strictEqual(cuboidLayers(), 18522);
 ```
 
 # --seed--
@@ -25,12 +35,12 @@ assert.strictEqual(euler126(), 18522);
 ## --seed-contents--
 
 ```js
-function euler126() {
+function cuboidLayers() {
 
   return true;
 }
 
-euler126();
+cuboidLayers();
 ```
 
 # --solutions--

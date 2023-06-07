@@ -18,7 +18,7 @@ But first, let's cover some functional terminology:
 
 Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <dfn>first class</dfn> functions. In JavaScript, all functions are first class functions.
 
-The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
+The functions that take a function as an argument, or return a function as a return value, are called <dfn>higher order</dfn> functions.
 
 When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a <dfn>lambda</dfn>.
 

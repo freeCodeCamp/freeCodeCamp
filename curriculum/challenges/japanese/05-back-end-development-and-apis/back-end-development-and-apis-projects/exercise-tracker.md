@@ -8,19 +8,25 @@ dashedName: exercise-tracker
 
 # --description--
 
-<https://exercise-tracker.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+<a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [ GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
-レスポンスには、以下の構造体が必要です。
+レスポンスは、以下の構造にしてください。
 
-演習:
+エクササイズ:
 
 ```js
 {
@@ -60,7 +66,7 @@ dashedName: exercise-tracker
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出する必要があります。
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-フォームデータ `username` を使用して `/api/users` への `POST` を実行することで、新しいユーザーを作成することができます。
+フォームデータ `username` を使用して `/api/users` への `POST` リクエストを実行することで、新しいユーザーを作成することができます。
 
 ```js
 async (getUserInput) => {
@@ -79,7 +85,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-フォームデータ `username` による `POST /api/users` から返されるレスポンスは、`username` および `_id` プロパティを持つオブジェクトです。
+フォームデータ `username` を使用して `POST /api/users` を実行した際のレスポンスは、`username` プロパティおよび `_id` プロパティを持つオブジェクトです。
 
 ```js
 async (getUserInput) => {
@@ -96,7 +102,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +170,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST /api/users/:_id/exercises` から返されるレスポンスは、追加された演習フィールドを持つユーザーオブジェクトです。
+`POST /api/users/:_id/exercises` から返されるレスポンスは、エクササイズの各フィールドが追加されたユーザーオブジェクトです。
 
 ```js
 async (getUserInput) => {
@@ -198,7 +204,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/users/:_id/logs` への `GET` リクエストを実行すると、任意のユーザーのすべての演習ログを取得できます。
+`/api/users/:_id/logs` への `GET` リクエストを実行すると、任意のユーザーのすべてのエクササイズログを取得できます。
 
 ```js
 async (getUserInput) => {
@@ -237,7 +243,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -268,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-ユーザーログのリクエスト `GET /api/users/:_id/logs` は、そのユーザーに属する演習の数を表す `count` プロパティを持つユーザーオブジェクトを返します。
+ユーザーログのリクエスト `GET /api/users/:_id/logs` は、そのユーザーに属するエクササイズの数を表す `count` プロパティを持つユーザーオブジェクトを返します。
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/users/:id/logs` への `GET` リクエストは、追加されたすべての演習の `log` 配列を持つユーザーオブジェクトを返します。
+`/api/users/:_id/logs` への `GET` リクエストは、全エクササイズの `log` の配列が追加されたユーザーオブジェクトを返します。
 
 ```js
 async(getUserInput) => {
@@ -319,7 +325,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内の各アイテムは、`description`、`duration` および `date` プロパティを持つオブジェクトです。
+`GET /api/users/:_id/logs` から返される `log` 配列内の各アイテムは、`description`、`duration` および `date` プロパティを持つオブジェクトです。
 
 ```js
 async(getUserInput) => {
@@ -363,7 +369,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,17 +406,17 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `description` プロパティも、文字列である必要があります。
+`GET /api/users/:_id/logs` から返される `log` 配列内のどのオブジェクトの `description` プロパティも、文字列である必要があります。
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,17 +453,17 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `duration` プロパティも、数値である必要があります。
+`GET /api/users/:_id/logs` から返される `log` 配列内のどのオブジェクトの `duration` プロパティも、数値である必要があります。
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,17 +500,17 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `date` プロパティも、文字列である必要があります。 `Date` API の `dateString` 形式を使用してください。
+`GET /api/users/:_id/logs` から返される `log` 配列内のどのオブジェクトの `date` プロパティも、文字列である必要があります。 `Date` API の `dateString` 形式を使用してください。
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -513,7 +519,10 @@ async(getUserInput) => {
       description: 'test',
       duration: 60,
       _id,
-      date: new Date().toDateString()
+      date: new Date().toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "short", month: "short",
+        day: "2-digit", year: "numeric"
+      }).replaceAll(',', '')
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
@@ -541,7 +550,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:_id/logs` リクエストに `from`、`to` および `limit` パラメーターを追加すると、任意のユーザーについてログの対象部分を取得できます。 `from` および `to` は、`yyyy-mm-dd` 形式の日付です。 `limit` は、送信するログの数を表す整数です。
+`GET /api/users/:_id/logs` リクエストに `from`、`to` および `limit` パラメーターを追加すると、任意のユーザーについてログの一部を取得できます。 `from` および `to` は、`yyyy-mm-dd` 形式の日付です。 `limit` は、返されるログの数を表す整数です。
 
 ```js
 async (getUserInput) => {
@@ -549,7 +558,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

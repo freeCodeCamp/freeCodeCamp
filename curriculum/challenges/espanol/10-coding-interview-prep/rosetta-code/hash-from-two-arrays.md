@@ -1,20 +1,24 @@
 ---
 id: 595671d4d2cdc305f0d5b36f
 title: Hash from two arrays
-challengeType: 5
+challengeType: 1
 forumTopicId: 302283
 dashedName: hash-from-two-arrays
 ---
 
 # --description--
 
-Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
+Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
-**Related task:**
+Example:
 
-<ul>
-  <li><a href='https://rosettacode.org/wiki/Associative arrays/Creation' title='Associative arrays/Creation' target='_blank'>Associative arrays/Creation</a></li>
-</ul>
+```js
+const firstArr = [1, 2, 3];
+const secondArr = ["a", "b", "c"];
+const hashObj = arrToObj(firstArr, secondArr);
+```
+
+The hash object created from the arrays above will be `{1: "a", 2: "b", 3: "c"}`.
 
 # --hints--
 

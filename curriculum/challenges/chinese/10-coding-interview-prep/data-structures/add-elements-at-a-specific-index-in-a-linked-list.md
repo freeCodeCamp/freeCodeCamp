@@ -8,7 +8,7 @@ dashedName: add-elements-at-a-specific-index-in-a-linked-list
 
 # --description--
 
-Let's create a addAt(index,element) method that adds an element at a given index. Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex. Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
+让我们创建一个 addAt(index,element) 方法，在给定的索引处添加一个元素。 就像我们如何删除给定索引处的元素一样，我们需要在遍历链表时跟踪 currentIndex。 当 currentIndex 与给定索引匹配时，我们需要重新分配上一个节点的下一个属性以引用新添加的节点。 并且新节点应该引用 currentIndex 中的下一个节点。 Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
 
 # --instructions--
 
@@ -24,8 +24,8 @@ assert(
     var test = new LinkedList();
     test.add('cat');
     test.add('dog');
-    test.addAt(0, 'cat');
-    return test.head().element === 'cat';
+    test.addAt(0, 'fish');
+    return test.head().element === 'fish' && test.head().next.element === 'cat';
   })()
 );
 ```

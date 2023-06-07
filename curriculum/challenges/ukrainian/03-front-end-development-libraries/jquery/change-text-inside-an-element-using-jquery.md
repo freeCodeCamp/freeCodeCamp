@@ -22,7 +22,7 @@ jQuery також має схожу функцію, що називається 
 
 Змініть кнопку з ідентифікатором `target4`, виділивши її текст.
 
-[Перегляньте нашу статтю про &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) to learn the difference between `<i>`, `<em>` та їх використання.
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">Перегляньте нашу статтю про &lt;em&gt;</a>, щоб дізнатися різницю між `<i>` та `<em>` та їх використанням.
 
 Зверніть увагу, що хоча `<i>` колись використовувався для виділення тексту, тепер його прийнято використовувати як тег для іконок. Зараз тег `<em>` широко розповсюджений як тег для виділення. У даному випадку підійде будь-який з цих двох.
 

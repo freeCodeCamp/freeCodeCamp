@@ -1,7 +1,7 @@
 ---
 id: 5900f5481000cf542c51005b
 title: 'Завдання 476: Розташування кіл II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii
 ---

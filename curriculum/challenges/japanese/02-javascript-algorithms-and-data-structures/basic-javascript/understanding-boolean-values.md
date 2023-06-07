@@ -15,7 +15,7 @@ dashedName: understanding-boolean-values
 
 # --instructions--
 
-実行ボタンがクリックされたときに `false` ではなく `true` を返すように、`welcomeToBooleans` 関数を変更してください。
+`false` ではなく `true` を返すように、`welcomeToBooleans` 関数を変更してください。
 
 # --hints--
 

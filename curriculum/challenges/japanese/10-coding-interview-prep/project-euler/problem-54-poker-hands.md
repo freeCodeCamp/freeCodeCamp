@@ -1,7 +1,7 @@
 ---
 id: 5900f3a21000cf542c50feb5
 title: '問題 54: ポーカーハンド'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
 ---

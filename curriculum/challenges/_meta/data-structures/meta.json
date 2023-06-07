@@ -2,6 +2,7 @@
   "name": "Data Structures",
   "isUpcomingChange": false,
   "dashedName": "data-structures",
+  "helpCategory": "JavaScript",
   "order": 1,
   "time": "",
   "template": "",
@@ -200,4 +201,5 @@
       "587d825d367417b2b2512c96",
       "Depth-First Search"
     ]
-  ]}
+  ]
+}

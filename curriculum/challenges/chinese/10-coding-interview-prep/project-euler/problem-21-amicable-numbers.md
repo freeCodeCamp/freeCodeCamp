@@ -1,7 +1,7 @@
 ---
 id: 5900f3811000cf542c50fe94
 title: 'Problem 21: Amicable numbers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301851
 dashedName: problem-21-amicable-numbers
 ---

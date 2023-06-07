@@ -1,8 +1,8 @@
 ---
 id: 5efada803cbd2bbdab94e332
-title: Passo 28
+title: Passo 29
 challengeType: 0
-dashedName: step-28
+dashedName: step-29
 ---
 
 # --description--
@@ -61,12 +61,12 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/ca
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
@@ -89,6 +89,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/ca
         </ol>
 --fcc-editable-region--
         <figure>
+
         </figure>
 --fcc-editable-region--
       </section>

@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Crear la lógica de cierre de sesión es fácil. La ruta sólo debe desautentificar al usuario y redirigir a la página principal en lugar de mostrar cualquier vista.
+Crear la lógica de cierre de sesión es fácil. La ruta simplemente debe desautenticar el usuario y redirigir a la página de inicio, en lugar de renderizar ninguna vista.
 
-En passport, desautentificar un usuario es tan fácil como llamar a `req.logout();` antes de redireccionar.
+En passport, desautenticar un usuario es tan sencillo como llamar a `req.logout()` antes de redireccionar. Añade la ruta `/logout` que haga lo siguiente:
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Puede que hayas notado que no estamos manejando páginas faltantes (404). La forma común de manejar esto en Node es con el siguiente middleware. Sigue adelante y añade esto después de todas tus rutas:
+Seguramente habrás observado que no estamos gestionando páginas no encontradas (404). La forma común de manejar esto en Node es con el siguiente middleware. Sigue adelante y añade esto después de todas tus rutas:
 
 ```js
 app.use((req, res, next) => {
@@ -30,44 +30,38 @@ app.use((req, res, next) => {
 });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Envía tu página cuando creas que lo has hecho bien. Si tienes dudas o se producen errores, <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">aquí puedes comprobar el proyecto completado hasta este punto</a>.
 
 # --hints--
 
-`req.Logout` debe ser llamado en la ruta `/logout`.
+`req.logout()` debe ser llamado en la ruta `/logout`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /req.logout/gi,
-        'You should be calling req.logout() in your /logout route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /req.logout/gi,
+    'You should be calling req.logout() in your /logout route'
   );
+}
 ```
 
-Cerrar sesión debe redirigir a la página de inicio.
+`/logout` debe redireccionar a la página de inicio.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/logout').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'When a user logs out they should be redirected to the homepage'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/logout", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/gi,
+    'When a user logs out they should be redirected to the homepage'
   );
+}
 ```
 
 # --solutions--

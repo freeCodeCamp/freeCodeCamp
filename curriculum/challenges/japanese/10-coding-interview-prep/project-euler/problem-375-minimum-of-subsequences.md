@@ -1,7 +1,7 @@
 ---
 id: 5900f4e41000cf542c50fff5
 title: '問題 375: 最小の部分列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302037
 dashedName: problem-375-minimum-of-subsequences
 ---

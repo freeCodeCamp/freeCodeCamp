@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Перша множина Set() повинна міститися у другій
+The first `Set` should be contained in the second `Set`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Метод `['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` повинен повернутися як `true`
+`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` повинен повертати `true`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Метод `['a', 'b', 'c'].isSubsetOf(['a', 'b'])` повинен повернутися як `false`
+`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` повинен повертати `false`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Метод `[].isSubsetOf([])` повинен повернутися як `true`
+`[].isSubsetOf([])` повинен повертати `true`.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-Метод `['a', 'b'].isSubsetOf(['c', 'd'])` повинен повернутися як `false`
+`['a', 'b'].isSubsetOf(['c', 'd'])` повинен повертати `false`.
 
 ```js
 assert(

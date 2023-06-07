@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339acf
 title: Функція Акермана
-challengeType: 5
+challengeType: 1
 forumTopicId: 302223
 dashedName: ackermann-function
 ---

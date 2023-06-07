@@ -23,7 +23,7 @@ function testFun(param1, param2) {
 
 # --instructions--
 
-<ol><li>创建一个名为 <code>functionWithArgs</code> 的函数，它可以接收两个参数，计算参数的和，将结果输出到控制台。</li><li>用两个数字作为参数调用函数。</li></ol>
+<ol><li>创建一个名为 <code>functionWithArgs</code> 的函数，它可以接收两个参数，计算参数的和，将结果输出到控制台。</li><li>自己指定两个数字作为参数，运行函数 functionWithArgs。</li></ol>
 
 # --hints--
 

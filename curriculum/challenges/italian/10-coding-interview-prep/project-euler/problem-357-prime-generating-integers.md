@@ -1,7 +1,7 @@
 ---
 id: 5900f4d11000cf542c50ffe4
 title: 'Problema 357: Numeri interi generatori di numeri primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers
 ---

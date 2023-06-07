@@ -1,14 +1,14 @@
 ---
 id: 5900f4b21000cf542c50ffc5
 title: 'Завдання 326: Суми модулів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301983
 dashedName: problem-326-modulo-summations
 ---
 
 # --description--
 
-Нехай an – це послідовність, рекурсивно визначена за допомогою: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
+Let $a_n$ be a sequence recursively defined by: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
 
 Тож першими 10 елементами $a_n$ є: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
 

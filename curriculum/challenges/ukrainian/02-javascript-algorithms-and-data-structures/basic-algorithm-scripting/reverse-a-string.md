@@ -1,40 +1,38 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Зворотний рядок
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-Переверніть заданий рядок.
+Переверніть наданий рядок та поверніть рядок у зворотньому порядку.
 
-За необхідності перетворіть рядок у масив до того, як вносити зміни.
-
-У результаті ви повинні отримати рядок.
+Наприклад, `"hello"` повинен стати `"olleh"`.
 
 # --hints--
 
-`reverseString("hello")` повинен повністю змінити рядок.
+`reverseString("hello")` має повертати рядок.
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` повинен перетворитися на рядок `olleh`.
+`reverseString("hello")` має повертати рядок `olleh`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` повинен перетворитися на рядок `ydwoH`.
+`reverseString("Howdy")` має повертати рядок `ydwoH`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` повинен перетворитися на рядок `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` має повертати рядок `htraE morf sgniteerG`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

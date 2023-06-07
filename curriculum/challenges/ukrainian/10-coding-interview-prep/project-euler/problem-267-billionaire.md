@@ -1,7 +1,7 @@
 ---
 id: 5900f4771000cf542c50ff8a
 title: 'Завдання 267: Мільярдер'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301916
 dashedName: problem-267-billionaire
 ---

@@ -2,6 +2,7 @@
   "name": "Information Security with HelmetJS",
   "isUpcomingChange": false,
   "dashedName": "information-security-with-helmetjs",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "5 hours",
   "template": "",
@@ -64,4 +65,5 @@
       "58a25bcff9fc0f352b528e7e",
       "Hash and Compare Passwords Synchronously"
     ]
-  ]}
+  ]
+}

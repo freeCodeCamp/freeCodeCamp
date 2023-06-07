@@ -1,7 +1,7 @@
 ---
 id: 5900f46e1000cf542c50ff80
 title: 'Problema 257: Bisettrici angolari'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
 ---

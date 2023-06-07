@@ -36,13 +36,13 @@ oPhrase.match(goRegex);
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Ваш регулярний вираз має збігатися з рядком `A` у `chewieQuote`.
+Ваш регулярний вираз повинен збігатися з рядком `A` у `chewieQuote`.
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Ваш регулярний вираз має збігатися з рядком `Aaaaaaaaaaaaaaaa` у `chewieQuote`.
+Ваш регулярний вираз повинен збігатися з рядком `Aaaaaaaaaaaaaaaa` у `chewieQuote`.
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
@@ -54,7 +54,7 @@ assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 assert(result[0].length === 16);
 ```
 
-Ваш регулярний вираз не повинен збігатися із рядком `He made a fair move. Screaming about it can't help you.`
+Ваш регулярний вираз не повинен збігатися з рядком `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Ваш регулярний вираз не повинен збігатися жодним символом із рядком `Let him have it. It's not wise to upset a Wookiee.`
+Ваш регулярний вираз не повинен збігатися з жодним символом рядка `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

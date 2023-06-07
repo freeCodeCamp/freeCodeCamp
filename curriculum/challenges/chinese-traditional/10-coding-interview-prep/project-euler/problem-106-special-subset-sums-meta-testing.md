@@ -1,7 +1,7 @@
 ---
 id: 5900f3d71000cf542c50fee9
-title: 'Problem 106: Special subset sums: meta-testing'
-challengeType: 5
+title: '問題 106：特殊子集和：元測試'
+challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
 ---

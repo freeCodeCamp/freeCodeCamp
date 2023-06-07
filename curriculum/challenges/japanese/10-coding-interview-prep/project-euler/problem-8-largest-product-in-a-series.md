@@ -1,7 +1,7 @@
 ---
 id: 5900f3741000cf542c50fe87
 title: '問題 8: 数列中の最大の積'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302193
 dashedName: problem-8-largest-product-in-a-series
 ---

@@ -1,14 +1,20 @@
 ---
 id: 5a23c84252665b21eecc8029
 title: Straddling checkerboard
-challengeType: 5
+challengeType: 1
 forumTopicId: 302325
 dashedName: straddling-checkerboard
 ---
 
 # --description--
 
-Implement functions to encrypt and decrypt a message using the [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard) method. The functions will take a string and an array as parameters. The array has 3 strings representing the 3 rows of the checkerboard. The output will be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit unencrypted. This should be reversed for decryption.
+Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
+
+Each function will take two arguments, a `message` string and an `alphabet` array. The `alphabet` array will contain 3 strings representing the 3 rows of the straddling checkerboard.
+
+The output of the `straddle()` function should be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit <em>unencrypted</em>.
+
+This should be reversed for decryption with the `unstraddle()` function.
 
 # --hints--
 

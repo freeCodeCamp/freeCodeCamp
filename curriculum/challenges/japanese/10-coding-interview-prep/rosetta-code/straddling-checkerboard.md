@@ -1,24 +1,30 @@
 ---
 id: 5a23c84252665b21eecc8029
 title: ストラドリングチェッカーボード
-challengeType: 5
+challengeType: 1
 forumTopicId: 302325
 dashedName: straddling-checkerboard
 ---
 
 # --description--
 
-[ストラドリングチェッカーボード](https://en.wikipedia.org/wiki/Straddling_checkerboard) メソッドを使用して、メッセージの暗号化と復号を行う関数を実装します。 関数はパラメータとして文字列と配列を取ります。 この配列にはチェッカーボードの3行を表す3つの文字列が含まれます。 出力は一連の 10 進数になります。 数字は各桁の前にエスケープ文字を挿入し、次に暗号化されていない桁を組み込んで暗号化する必要があります。 復号の場合は逆にします。
+Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
+
+Each function will take two arguments, a `message` string and an `alphabet` array. The `alphabet` array will contain 3 strings representing the 3 rows of the straddling checkerboard.
+
+The output of the `straddle()` function should be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit <em>unencrypted</em>.
+
+This should be reversed for decryption with the `unstraddle()` function.
 
 # --hints--
 
-`straddle` は関数とします。
+`straddle` should be a function.
 
 ```js
 assert(typeof straddle == 'function');
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` は文字列を返す必要があります。
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
 
 ```js
 assert(
@@ -29,7 +35,7 @@ assert(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` は `"34045747525284613427502840425027537379697175891898898898584619028294547488"` を返す必要があります。
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"34045747525284613427502840425027537379697175891898898898584619028294547488"`.
 
 ```js
 assert.equal(
@@ -41,7 +47,7 @@ assert.equal(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` は `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"` を返す必要があります。
+`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"`.
 
 ```js
 assert.equal(
@@ -54,7 +60,7 @@ assert.equal(
 );
 ```
 
-`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` は `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"` を返す必要があります。
+`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"`.
 
 ```js
 assert.equal(
@@ -67,13 +73,13 @@ assert.equal(
 );
 ```
 
-`unstraddle` は関数とします。
+`unstraddle` should be a function.
 
 ```js
 assert(typeof unstraddle == 'function');
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` は文字列を返す必要があります。
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
 
 ```js
 assert(
@@ -84,7 +90,7 @@ assert(
 );
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` は `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."` を返す必要があります。
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."`.
 
 ```js
 assert.equal(
@@ -96,7 +102,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` は `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"` を返す必要があります。
+`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"`.
 
 ```js
 assert.equal(
@@ -108,7 +114,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` は `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."` を返す必要があります。
+`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."`.
 
 ```js
 assert.equal(

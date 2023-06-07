@@ -1,7 +1,7 @@
 ---
 id: 5900f4fd1000cf542c51000f
 title: '問題 401: 約数の平方和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302069
 dashedName: problem-401-sum-of-squares-of-divisors
 ---

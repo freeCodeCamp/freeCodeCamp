@@ -1,7 +1,7 @@
 ---
 id: 5900f5021000cf542c510015
 title: 'Problema 406: Jogo de adivinhação'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302074
 dashedName: problem-406-guessing-game
 ---
@@ -20,7 +20,7 @@ Por exemplo, se $n = 5$, $a = 2$, e $b = 3$, podemos começar perguntando "<stro
 
 Se nos disserem que 2 é maior que o número oculto (para um custo de $b = 3$), então temos certeza de que "<strong>1</strong>" é o número oculto (para um custo total de <strong><span style="color: blue;">3</span></strong>).
 
-Se nos for dito que 2 é menor que o número oculto (para um custo de $a = 2$), então nossa próxima pergunta será <strong>4</strong>".
+Se nos for dito que 2 é menor que o número oculto (para um custo de $a = 2$), então nossa próxima pergunta será "<strong>4</strong>".
 
 Se nos for dito que 4 é maior que o número oculto (para um custo de $b = 3$), então temos certeza de que "<strong>3</strong>" é o número oculto (para um custo total de $2 + 3 = \color{blue}{\mathbf{5}}$).
 

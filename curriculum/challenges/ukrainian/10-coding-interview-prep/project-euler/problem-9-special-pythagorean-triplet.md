@@ -1,7 +1,7 @@
 ---
 id: 5900f3761000cf542c50fe88
 title: 'Завдання 9: Особлива Піфагорова трійка'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
 ---
@@ -30,7 +30,7 @@ assert(typeof specialPythagoreanTriplet(24) === 'number');
 assert.strictEqual(specialPythagoreanTriplet(24), 480);
 ```
 
-`specialPythagoreanTriplet(120)` має повернути числа 49920, 55080 або число 60000
+`specialPythagoreanTriplet(120)` має повернути 49920, 55080 або 60000.
 
 ```js
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));

@@ -1,7 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedd
 title: 'Problema 94: Triângulos quase equiláteros'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302211
 dashedName: problem-94-almost-equilateral-triangles
 ---

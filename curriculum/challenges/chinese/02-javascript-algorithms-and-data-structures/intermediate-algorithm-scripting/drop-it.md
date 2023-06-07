@@ -1,7 +1,7 @@
 ---
 id: a5deed1811a43193f9f1c841
 title: 根据参数删除数组元素
-challengeType: 5
+challengeType: 1
 forumTopicId: 16010
 dashedName: drop-it
 ---

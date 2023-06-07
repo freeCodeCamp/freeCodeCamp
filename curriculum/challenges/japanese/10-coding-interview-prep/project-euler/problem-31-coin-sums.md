@@ -1,7 +1,7 @@
 ---
 id: 5900f38b1000cf542c50fe9e
 title: '問題 31: 硬貨の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301965
 dashedName: problem-31-coin-sums
 ---

@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: S-Expressions
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-Le [S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") sono un modo comodo per analizzare e memorizzare i dati.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">Le espressioni-S</a> sono un metodo conveniente per analizzare e immagazzinare dati.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ Il lettore dovrebbe essere in grado di leggere il seguente input
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-e trasformarlo in una struttura di dati nativa. (Vedi le implementazioni in [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") e [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") per esempi di strutture di dati native.)
+e trasformarlo in una struttura di dati nativa.
 
 # --hints--
 

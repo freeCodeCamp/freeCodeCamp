@@ -1,7 +1,7 @@
 ---
 id: 5900f4a61000cf542c50ffb8
 title: 'Problem 313: スライドゲーム'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301969
 dashedName: problem-313-sliding-game
 ---

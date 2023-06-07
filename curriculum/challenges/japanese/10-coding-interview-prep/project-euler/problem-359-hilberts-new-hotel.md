@@ -1,7 +1,7 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 title: '問題 359: ヒルベルトの新しいホテル'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
 ---

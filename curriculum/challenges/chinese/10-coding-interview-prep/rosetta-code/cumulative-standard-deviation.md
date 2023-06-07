@@ -1,14 +1,39 @@
 ---
 id: 5a23c84252665b21eecc7e03
 title: Cumulative standard deviation
-challengeType: 5
+challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
 ---
 
 # --description--
 
-Write a function that takes an array of numbers as parameter and returns the [standard deviation](https://en.wikipedia.org/wiki/Standard Deviation) of the series.
+Suppose that the entire population of interest is eight students in a particular class. For a finite set of numbers, the population standard deviation is found by taking the square root of the average of the squared deviations of the values subtracted from their average value. The marks of a class of eight students (that is, a statistical population) are the following eight values:
+
+$2, 4, 4, 4, 5, 5, 7, 9$
+
+These eight data points have the mean (average) of 5:
+
+$$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
+
+First, calculate the deviations of each data point from the mean, and square the result of each:
+
+| Deviations of each data | Square the result    |
+| ----------------------- | -------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$  | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(7-5)^{2}=2^{2}=4$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(9-5)^{2}=4^{2}=16$ |
+
+The variance is the mean of these values:
+
+$$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
+
+and the population standard deviation is equal to the square root of the variance:
+
+$$\sigma ={\sqrt {4}}=2$$
+
+Write a function that takes an array of numbers as parameter and returns the <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">standard deviation</a> of the series.
 
 # --hints--
 

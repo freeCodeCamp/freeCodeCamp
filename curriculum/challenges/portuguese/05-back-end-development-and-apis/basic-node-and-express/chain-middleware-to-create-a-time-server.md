@@ -49,7 +49,7 @@ O endpoint (URL) /now deve ter o middleware montado
   );
 ```
 
-O endpoint (URL) /now deve retornar um horário que possui margem de erro de +/- 20 segundos a partir de agora
+O endpoint `/now` deve retornar a hora atual.
 
 ```js
 (getUserInput) =>

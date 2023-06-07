@@ -16,7 +16,7 @@ Existem vários métodos de seleção de cores diferentes que resultam em uma co
 
 Aqui estão três cores criadas usando o esquema de cores complementares divididas:
 
-<table class='table table-striped'><thead><tr><th>Cor</th><th>Código Hex</th></tr></thead><thead></thead><tbody><tr><td>laranja</td><td>#FF7F00</td></tr><tr><td>ciano</td><td>#00FFFF</td></tr><tr><td>framboesa</td><td>#FF007F</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Cor</th><th>Código hexadecimal</th></tr></thead><thead></thead><tbody><tr><td>laranja</td><td>#FF7F00</td></tr><tr><td>ciano</td><td>#00FFFF</td></tr><tr><td>framboesa</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 
@@ -30,7 +30,7 @@ O elemento `div` com a classe `orange` deve ter a propriedade `background-color`
 assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
 ```
 
-O elemento `div` com a classe `cyan` deve ter a propriedade `background-color` de cor ciano.
+O elemento `div` com a classe `cyan` deve ter a propriedade `background-color` com o valor cyan (ciano).
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');

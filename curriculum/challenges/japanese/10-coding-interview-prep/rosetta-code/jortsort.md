@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec4
 title: JortSort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302293
 dashedName: jortsort
 ---
 
 # --description--
 
-jortSortは、ユーザーがソート作業に使用するソート用ツールセットで、ソート作業をやり直さずにすむよう効率性を保証します。 もとは権威ある [JSConf](https://www.youtube.com/watch?v=pj4U_W0OFoE) においてJenn "Moneydollars" Schiffer によって提唱されました。
+jortSortは、ユーザーがソート作業に使用するソート用ツールセットで、ソート作業をやり直さずにすむよう効率性を保証します。 It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious JSConf2014.
 
 jortSort は、比較可能なオブジェクトの単一の配列を引数として取る関数とします。 その後、配列を昇順にソートし、ソートされた配列を元の配列と比較します。 配列が一致する (つまり、元の配列がすでにソートされていた) 場合、関数は true を返します。 配列が一致しない (つまり、元の配列がソートされていなかった) 場合、関数は false を返します。
 

@@ -2,6 +2,7 @@
   "name": "Sass",
   "isUpcomingChange": false,
   "dashedName": "sass",
+  "helpCategory": "HTML-CSS",
   "order": 2,
   "time": "5 hours",
   "template": "",
@@ -44,4 +45,5 @@
       "587d7fa5367417b2b2512bbd",
       "Extend One Set of CSS Styles to Another Element"
     ]
-  ]}
+  ]
+}

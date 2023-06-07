@@ -1,14 +1,18 @@
 ---
 id: 5a23c84252665b21eecc8046
 title: Differenza simmetrica
-challengeType: 5
+challengeType: 1
 forumTopicId: 16086
 dashedName: symmetric-difference
 ---
 
 # --description--
 
-Dati due [insiemi](https://rosettacode.org/wiki/set) *A* e *B*, calcola $(A \\setminus B) \\cup (B \\setminus A). Vale a dire elenca gli elementi che sono in *A* o *B*, ma non in entrambi. Questo insieme è chiamato la [differenza simmetrica](https://en.wikipedia.org/wiki/Symmetric difference) di *A* e *B*. In altre parole: $(A \\cup B) \\setminus (A \\cap B)$ (l'insieme di elementi che sono in almeno uno di *A* o *B* meno l'insieme di elementi che sono sia in *A* che in *B*).
+Dati due *insiemi* A e *B*, calcola $(A \\setminus B) \\cup (B \\setminus A).$ Vale a dire elenca gli elementi che sono in *A* o *B*, ma non in entrambi. Questo set è chiamato la differenza simmetrica di *A* e *B*. In altre parole: $(A \\cup B) \\setminus (A \\cap B)$ (l'insieme di elementi che sono in almeno uno di *A* o *B* meno l'insieme di elementi che sono sia in *A* che in *B*).
+
+Esempio:
+
+Per i set `A = [1, 2, 3]`, e `B = [1, 3, 4]`, la differenza simmetrica di *A* e *B* è `[2, 4]`.
 
 # --instructions--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f3971000cf542c50feaa
 title: 'Завдання 43: Подільність підрядків'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302100
 dashedName: problem-43-sub-string-divisibility
 ---

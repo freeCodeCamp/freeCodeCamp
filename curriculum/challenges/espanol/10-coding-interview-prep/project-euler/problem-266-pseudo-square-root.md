@@ -1,7 +1,7 @@
 ---
 id: 5900f4771000cf542c50ff89
 title: 'Problem 266: Pseudo Square Root'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
 ---
@@ -12,18 +12,18 @@ The divisors of 12 are: 1,2,3,4,6 and 12.
 
 The largest divisor of 12 that does not exceed the square root of 12 is 3.
 
-We shall call the largest divisor of an integer n that does not exceed the square root of n the pseudo square root (PSR) of n.
+We shall call the largest divisor of an integer $n$ that does not exceed the square root of $n$ the pseudo square root ($PSR$) of $n$.
 
-It can be seen that PSR(3102)=47.
+It can be seen that $PSR(3102) = 47$.
 
-Let p be the product of the primes below 190. Find PSR(p) mod 1016.
+Let $p$ be the product of the primes below 190. Find $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 
-`euler266()` should return 1096883702440585.
+`pseudoSquareRoot()` should return `1096883702440585`.
 
 ```js
-assert.strictEqual(euler266(), 1096883702440585);
+assert.strictEqual(pseudoSquareRoot(), 1096883702440585);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler266(), 1096883702440585);
 ## --seed-contents--
 
 ```js
-function euler266() {
+function pseudoSquareRoot() {
 
   return true;
 }
 
-euler266();
+pseudoSquareRoot();
 ```
 
 # --solutions--

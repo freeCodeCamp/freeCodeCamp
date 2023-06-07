@@ -1,7 +1,7 @@
 ---
 id: 5900f3ae1000cf542c50fec1
 title: 'Problem 66: Diophantine equation'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
 ---
@@ -40,25 +40,25 @@ assert(typeof diophantineEquation(7) === 'number');
 
 `diophantineEquation(7)` should return `5`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
 `diophantineEquation(100)` should return `61`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
 `diophantineEquation(409)` should return `409`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
 `diophantineEquation(500)` should return `421`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 

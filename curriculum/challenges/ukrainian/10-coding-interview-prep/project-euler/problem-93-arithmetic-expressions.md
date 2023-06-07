@@ -1,7 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedc
 title: 'Завдання 93: Арифметичні вирази'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
 ---

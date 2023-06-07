@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ace
 title: Fabbrica di accumulatori
-challengeType: 5
+challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
 ---
 
 # --description--
 
-Un problema posto da [Paul Graham](https://it.wikipedia.org/wiki/Paul_Graham_(informatico)) è quello di creare una funzione che accetta un singolo argomento (numerico) e che restituisce un'altra funzione che è un accumulatore. A sua volta anche la funzione accumulatrice restituita accetta un singolo argomento numerico, e restituisce la somma di tutti i valori numerici passati finora a quell'accumulatore (incluso il valore iniziale passato quando l'accumulatore è stato creato).
+Un problema posto da Paul Graham è quello di creare una funzione che prende un singolo argomento numerico e che restituisce un'altra funzione che è un accumulatore. A sua volta anche la funzione accumulatrice restituita accetta un singolo argomento numerico, e restituisce la somma di tutti i valori numerici passati finora a quell'accumulatore (incluso il valore iniziale passato quando l'accumulatore è stato creato).
 
 # --instructions--
 

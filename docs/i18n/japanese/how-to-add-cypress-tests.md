@@ -4,74 +4,81 @@
 
 Cypress テストもしくは「specs」の書き方については、Cypress の公式 [ドキュメント](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) をご覧ください。
 
-## テストを追加する場所
+## Where to Add a Test
 
 - Cypress テストは `./cypress` ディレクトリにあります。
 
 - カリキュラムモジュールの Cypress テストは、対応するカリキュラムディレクトリ、すなわち `cypress/integration/learn/responsive-web-design/basic-css/index.js` にあります。
 
-## テストを実行する方法
+## How to Run Tests
 
-> [!NOTE] GitPod を使用している場合は、[Cypress と GitPod の設定](/how-to-add-cypress-tests#cypress-と-gitpod-の設定) を参照してください。
+> [!NOTE] If using Gitpod, please see [Cypress-Gitpod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
-### 1. MongoDB とクライアントアプリケーションが動作していることを確認する
+### 1. Ensure that MongoDB and Client Applications are Running
 
-- [MongoDB を起動し、データベースをシードします。](/how-to-setup-freecodecamp-locally#step-3-start-mongodb-and-seed-the-database)
+- [MongoDB を起動し、データベースをシードします。](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [freeCodeCamp クライアントアプリケーションと API サーバーを起動します。](/how-to-setup-freecodecamp-locally#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [freeCodeCamp クライアントアプリケーションと API サーバーを起動します。](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Cypress テストを実行する
+### 2. Run the Cypress Tests
 
 `dev` を `prd` に置き換えて本番ビルドに対するテストを実行します。
 
 - `./cypress` ディレクトリで、すべてのテストを実行します。
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
 - 単一のテストを実行します。
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  ```
+
+  For example:
+
+  ```console
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
-## Cypress と GitPod の設定
+## Cypress-Gitpod Setup
 
 ### 1. 開発環境が稼働していることを確認する
 
-GitPod 環境を起動しても自動的に環境が構築されない場合は、以下を実行します。
+If starting the Gitpod environment did not automatically develop the environment:
 
-- データベースを起動します。
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - データベースをシードします。
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - サーバーとクライアントを構築します。
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Cypress ビルドツールをインストールする
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - 端末でプロンプトが表示されたら、言語/エリアでキーボードのレイアウトを選択してください。
 
-これで、[Cypress を実行することができます](/how-to-add-cypress-tests#_2-cypress-テストを実行する)。
+これで、[Cypress を実行することができます](how-to-add-cypress-tests.md#_2-cypress-テストを実行する)。

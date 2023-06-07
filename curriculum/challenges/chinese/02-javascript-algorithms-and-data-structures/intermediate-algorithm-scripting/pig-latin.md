@@ -1,7 +1,7 @@
 ---
 id: aa7697ea2477d1316795783b
 title: 儿童黑话
-challengeType: 5
+challengeType: 1
 forumTopicId: 16039
 dashedName: pig-latin
 ---

@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4b
-title: Використання потрійних рівностей для підтвердження суворої рівності
+title: Використайте потрійну рівність для підтвердження строгої рівності
 challengeType: 2
 forumTopicId: 301610
 dashedName: use-the-triple-equals-to-assert-strict-equality
@@ -8,13 +8,13 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --description--
 
-Нагадуємо, що цей проєкт створено на основі наступного стартового проєкту [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або кальковано з [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `strictEqual()` порівнює об'єкти за допомогою `===`.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#6` в наборі `Equality` змініть кожний `assert` на `assert.strictEqual` або `assert.notStrictEqual`, щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#6` в наборі `Equality` змініть кожний `assert` на `assert.strictEqual` або `assert.notStrictEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для першого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для другого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -64,7 +64,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для третього твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -82,7 +82,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для четвертого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для четвертого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>

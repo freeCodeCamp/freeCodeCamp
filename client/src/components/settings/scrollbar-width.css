@@ -1,0 +1,153 @@
+label[for='scrollbar-width-slider'] {
+  margin-bottom: 1rem;
+}
+
+input.scrollbar-width[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  position: relative;
+  height: calc(1rem + 6px);
+}
+
+input.scrollbar-width[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background: var(--secondary-color);
+}
+
+input.scrollbar-width[type='range']::-webkit-slider-thumb {
+  /* box-shadow is needed to allow left hand side of slider track to have 
+     same color as right side. */
+  box-shadow: 1px 1px 1px #3d3d3d;
+  background: var(--secondary-color);
+  -webkit-appearance: none;
+  width: calc(1rem + 6px);
+  height: calc(1rem + 6px);
+  margin-top: -0.5rem;
+}
+
+input.scrollbar-width[type='range']:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: -3px;
+}
+
+input.scrollbar-width[type='range']::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  background: var(--secondary-color);
+}
+
+input.scrollbar-width[type='range']::-moz-range-progress {
+  background: var(--secondary-color);
+  height: 5px;
+}
+
+input.scrollbar-width[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #3d3d3d;
+  border: 3px solid var(--secondary-color);
+  height: 1rem;
+  width: 1rem;
+  background: var(--secondary-color);
+  position: relative;
+  z-index: 400;
+}
+
+input.scrollbar-width[type='range']:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: -3px;
+}
+
+.scrollbar-width-numbers {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.scrollbar-width-numbers span:nth-child(1) {
+  position: relative;
+  inset-inline-start: 0.375rem;
+}
+
+.scrollbar-width-numbers span:nth-child(2) {
+  position: relative;
+  inset-inline-start: 0.5rem;
+}
+
+.scrollbar-width-numbers span:nth-child(3) {
+  position: relative;
+  inset-inline-start: 0.325rem;
+}
+
+.scrollbar-width-numbers span:nth-child(4) {
+  position: relative;
+  inset-inline-start: 0.15rem;
+}
+
+.scrollbar-width-numbers span:nth-child(5) {
+  position: relative;
+  inset-inline-start: -0.05rem;
+}
+
+.scrollbar-width-numbers .selected {
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.scrollbar-width-container .scrollbar-width-ticks {
+  position: relative;
+  display: flex;
+}
+
+.scrollbar-width-container .tick {
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid var(--secondary-color);
+  background: var(--secondary-background);
+  position: absolute;
+  z-index: 100;
+  top: 3px;
+  display: block;
+}
+
+.scrollbar-width-container .tick[data-current='true'] {
+  z-index: -1;
+}
+
+.scrollbar-width-ticks .tick:nth-child(1),
+[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(5) {
+  left: 3px;
+}
+
+.scrollbar-width-ticks .tick:nth-child(2),
+[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(4) {
+  left: calc(25% - 0.25rem + 2px);
+}
+
+.scrollbar-width-ticks .tick:nth-child(3) {
+  left: calc(50% - 0.5rem + 0.5px);
+}
+
+.scrollbar-width-ticks .tick:nth-child(4),
+[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(2) {
+  left: calc(75% - 0.5rem - 5px);
+}
+
+.scrollbar-width-ticks .tick:nth-child(5),
+[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(1) {
+  left: calc(100% - 1rem - 2px);
+}
+
+.scrollbar-width-ticks .tick:hover,
+.scrollbar-width-numbers span:hover {
+  cursor: pointer;
+}
+
+.scrollbar-width-preview {
+  display: inline-block;
+  background: var(--secondary-color);
+  height: 1.5rem;
+  position: absolute;
+  margin: 0 0.5rem;
+}

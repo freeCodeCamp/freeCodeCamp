@@ -1,7 +1,7 @@
 ---
 id: 5900f3e71000cf542c50fefa
 title: 'Problema 123: Resti di quadrati primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301750
 dashedName: problem-123-prime-square-remainders
 ---

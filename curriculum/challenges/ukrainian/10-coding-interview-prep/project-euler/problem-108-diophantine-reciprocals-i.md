@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feeb
 title: 'Завдання 108: Діофантові рівняння першого степеня'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301732
 dashedName: problem-108-diophantine-reciprocals-i
 ---

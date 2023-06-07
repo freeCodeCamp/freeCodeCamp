@@ -7,7 +7,8 @@ import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
 import startOfDay from 'date-fns/startOfDay';
 import React, { Component } from 'react';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
@@ -16,7 +17,7 @@ import './heatmap.css';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
@@ -124,7 +125,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             &gt;
           </button>
         </Row>
-        <Spacer />
+        <Spacer size='medium' />
 
         <CalendarHeatMap
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -164,7 +165,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
         />
         <ReactTooltip className='react-tooltip' effect='solid' html={true} />
 
-        <Spacer />
+        <Spacer size='medium' />
         <Row>
           <div className='streak-container'>
             <span className='streak' data-testid='longest-streak'>

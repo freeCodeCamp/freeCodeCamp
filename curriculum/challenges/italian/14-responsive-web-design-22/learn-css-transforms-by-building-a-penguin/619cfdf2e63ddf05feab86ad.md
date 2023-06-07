@@ -7,7 +7,7 @@ dashedName: step-47
 
 # --description--
 
-Posiziona gli elementi `.face` in modo che siano a `15%` dall'alto.
+Posiziona gli elementi `.face` in modo che siano al `15%` dall'alto.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Dovresti assegnare a `.face` una proprietà `top`.
 assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
 ```
 
-Dovresti dare a `.face` una proprietà `top` di `--fcc-expected--`, invece che di `--fcc-actual--`.
+Dovresti dare a `.face` una proprietà `top` con il valore `--fcc-expected--` invece di `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
@@ -29,10 +29,10 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -61,7 +61,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  overflow: clip;
+  overflow: hidden;
 }
 
 .left-mountain {
@@ -110,13 +110,13 @@ body {
 
 .penguin-head {
   width: 50%;
-    height: 45%;
+  height: 45%;
   background: linear-gradient(
     45deg,
-        gray,
-        rgb(239, 240, 228)
-    );
-    border-radius: 70% 70% 65% 65%;
+    gray,
+    rgb(239, 240, 228)
+  );
+  border-radius: 70% 70% 65% 65%;
   top: 10%;
   left: 25%;
   z-index: 1;
@@ -137,10 +137,10 @@ body {
   height: 45%;
   background: linear-gradient(
     45deg,
-        rgb(134, 133, 133) 0%,
-        rgb(234, 231, 231) 25%,
-        white 67%
-    );
+    rgb(134, 133, 133) 0%,
+    rgb(234, 231, 231) 25%,
+    white 67%
+  );
   border-radius: 80% 80% 100% 100%;
   top: 40%;
   left: 23.5%;

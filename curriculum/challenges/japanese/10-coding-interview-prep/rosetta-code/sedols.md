@@ -1,14 +1,16 @@
 ---
 id: 59d9c6bc214c613ba73ff012
 title: SEDOLコード
-challengeType: 5
+challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
 ---
 
 # --description--
 
-6桁の [SEDOL コード](https://en.wikipedia.org/wiki/SEDOL "wp: SEDOL")の数字リストごとに、チェックディジットを計算して追加します。 つまり、左側の入力文字列に対して、関数は対応する右側の文字列を返す必要があります。
+<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+
+For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
 
 <pre>
 710889 => 7108899
@@ -24,35 +26,35 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-各入力が正しい形式であるか、特に、SEDOL 文字列で許可されている有効な文字であるかについて確認を行います。 無効な入力に対して関数は `null` を返す必要があります。
+Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return `null` on an invalid input.
 
 # --hints--
 
-`sedol` は関数とします。
+`sedol` should be a function.
 
 ```js
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` は null を返す必要があります。
+`sedol('a')` should return null.
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` は '7108899' を返す必要があります。
+`sedol('710889')` should return '7108899'.
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` は null を返す必要があります。
+`sedol('BOATER')` should return null.
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` は '2282765' を返す必要があります。
+`sedol('228276')` should return '2282765'.
 
 ```js
 assert(sedol('228276') === '2282765');
@@ -64,8 +66,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
+  const checkSum = 0
 
-  return true;
+  return checkSum;
 }
 ```
 
@@ -90,7 +93,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```

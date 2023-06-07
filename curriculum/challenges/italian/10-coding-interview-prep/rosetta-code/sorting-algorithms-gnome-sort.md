@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8007
 title: Algoritmi di ordinamento/Gnome sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
 ---
 
 # --description--
 
-Gnome Sort è un algoritmo di ordinamento che è simile a [Insertion Sort](https://rosettacode.org/wiki/Insertion sort), tranne che lo spostamento di un elemento al suo posto corretto è realizzato da una serie di scambi, come in [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
+Gnome Sort è un algoritmo di ordinamento che è simile a <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">Insertion Sort</a>, tranne che lo spostamento di un elemento al suo posto corretto è realizzato da una serie di scambi, come in <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">Bubble Sort</a>.
 
 Lo pseudocodice per l'algoritmo è:
 

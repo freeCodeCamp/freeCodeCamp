@@ -1,7 +1,7 @@
 ---
 id: 5900f5221000cf542c510033
 title: 'Задача 436: Нечесне парі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302107
 dashedName: problem-436-unfair-wager
 ---

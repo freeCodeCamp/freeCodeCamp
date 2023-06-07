@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`mapDispatchToProps` повинна бути функцією.
+`mapDispatchToProps` має бути функцією.
 
 ```js
 assert(typeof mapDispatchToProps === 'function');

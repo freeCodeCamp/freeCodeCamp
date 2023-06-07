@@ -1,14 +1,14 @@
 ---
 id: 5ea281203167d2b0bdefca00
 title: Numeri ludici
-challengeType: 5
+challengeType: 1
 forumTopicId: 385282
 dashedName: ludic-numbers
 ---
 
 # --description--
 
-[I numeri ludici](https://oeis.org/wiki/Ludic_numbers) sono legati ai numeri primi perché sono generati da un setaccio come il [Crivello di Eratosthenes](https://rosettacode.org/wiki/Sieve_of_Eratosthenes) è usato per generare numeri primi.
+I numeri di Ludic sono legati ai numeri primi visto che sono generati come un setaccio come quello di Eratostene è usato per generare i numeri primi.
 
 Il primo numero ludico è 1.
 

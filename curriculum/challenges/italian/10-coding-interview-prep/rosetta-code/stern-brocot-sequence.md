@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8028
 title: Sequenza di Stern-Brocot
-challengeType: 5
+challengeType: 1
 forumTopicId: 302324
 dashedName: stern-brocot-sequence
 ---
 
 # --description--
 
-Per questa sfida, la serie di Stern-Brocot deve essere generata da un algoritmo simile a quello usato per generare la [serie di Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence).
+Per questa sfida, la serie di Stern-Brocot deve essere generata da un algoritmo simile a quello usato per generare la <a href="https://rosettacode.org/wiki/Fibonacci_sequence" target="_blank" rel="noopener noreferrer nofollow">serie di Fibonacci</a>.
 
 <ol>
   <li>Il primo e il secondo elemento della serie sono entrambi 1:</li>

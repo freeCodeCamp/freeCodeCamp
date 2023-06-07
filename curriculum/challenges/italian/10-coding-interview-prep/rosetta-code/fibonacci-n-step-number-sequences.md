@@ -1,14 +1,14 @@
 ---
 id: 598eef80ba501f1268170e1e
 title: Sequenze di numeri di Fibonacci a passi di n
-challengeType: 5
+challengeType: 1
 forumTopicId: 302267
 dashedName: fibonacci-n-step-number-sequences
 ---
 
 # --description--
 
-Queste serie di numeri sono un'espansione della successione ordinaria di [Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") dove:
+Queste serie di numeri sono espansioni della sequenza di Fibonacci ordinaria dove:
 
 <ol>
   <li>Per $n = 2$ abbiamo la successione di Fibonacci; con valori iniziali $[1, 1]$ e $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
@@ -17,7 +17,7 @@ Queste serie di numeri sono un'espansione della successione ordinaria di [Fibona
   <li>In generale per $n>2$ abbiamo la sequenza di Fibonacci di passo $n$ - $F_k^n$; con i valori iniziali dei primi $n$ valori della sequenza $(n-1)$'ma di Fibonacci di passo $n$ $F_k^{n-1}$; e il $k$-mo valore di questa $n$-ma sequenza è $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
 </ol>
 
-Per piccoli valori di $n$, [i prefissi numerici greci](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") sono talvolta utilizzati per nominare individualmente ogni serie.
+Per valori piccoli di $n$, a volte vengono usati prefissi numerici greci per dare un nome individuale a ogni serie.
 
 Sequenze di Fibonacci di passo $n$:
 
@@ -33,7 +33,7 @@ Sequenze di Fibonacci di passo $n$:
 | 9   | nonanacci        | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
 | 10  | decanacci        | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-Le successioni affini possono essere generate cambiando i valori iniziali: la serie [Lucas](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") somma i due valori precedenti come la serie fibonacci per $n=2$ ma usa $\[2, 1]$ come valori iniziali.
+Le sequenze alleate possono essere generate dove sono cambiati i valori iniziali: la serie di Lucas somma i due valori precedenti come la serie di Fibonacci per $n=2$ ma usa $\[2, 1]$ come valori iniziali.
 
 # --instructions--
 

@@ -77,6 +77,20 @@ export function ifUserRedirectTo(status) {
   };
 }
 
+export function ifNotMobileRedirect() {
+  return (req, res, next) => {
+    //
+    // Todo: Use the below check once we have done more research on usage
+    //
+    // const isMobile = /(iPhone|iPad|Android)/.test(req.headers['user-agent']);
+    // if (!isMobile) {
+    //  res.json({ error: 'not from mobile' });
+    // } else {
+    //  next();
+    // }
+    next();
+  };
+}
 // for use with express-validator error formatter
 export const createValidatorErrorHandler =
   (...args) =>

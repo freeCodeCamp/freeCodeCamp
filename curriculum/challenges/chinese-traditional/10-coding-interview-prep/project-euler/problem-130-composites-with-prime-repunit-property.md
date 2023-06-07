@@ -1,7 +1,7 @@
 ---
 id: 5900f3ee1000cf542c50ff00
 title: '問題 130：具有素數純元數特性的合數'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
 ---

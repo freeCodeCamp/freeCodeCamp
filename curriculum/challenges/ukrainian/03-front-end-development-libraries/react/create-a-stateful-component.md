@@ -22,7 +22,7 @@ this.state = {
 
 # --instructions--
 
-У кодовому редакторі є компонент, який намагається візуалізувати властивість `name` з його `state`. Однак, `state` є невизначеним. Ініціалізуйте компонент з `state` в `constructor` і призначте ваше ім'я до властивості `name`.
+У кодовому редакторі є компонент, який намагається візуалізувати властивість `firstName` з його `state`. Однак, `state` є невизначеним. Ініціалізуйте компонент з `state` в `constructor` і призначте своє ім'я до властивості `firstName`.
 
 # --hints--
 
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-Стан `StatefulComponent` повинен бути ініціалізований з властивістю `name`, яка встановлена на рядок.
+Стан `StatefulComponent` повинен бути ініціалізований з властивістю `firstName`, яка встановлена на рядок.
 
 ```js
 assert(
@@ -65,13 +65,13 @@ assert(
     );
     const initialState = mockedComponent.state();
     return (
-      typeof initialState === 'object' && typeof initialState.name === 'string'
+      typeof initialState === 'object' && typeof initialState.firstName === 'string'
     );
   })()
 );
 ```
 
-Значення `name` у стані `StatefulComponent` повинне візуалізувати елемент `h1`.
+Властивість `firstName` у стані `StatefulComponent` повинна візуалізуватись в елементі `h1`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
       React.createElement(StatefulComponent)
     );
     const initialState = mockedComponent.state();
-    return mockedComponent.find('h1').text() === initialState.name;
+    return mockedComponent.find('h1').text() === initialState.firstName;
   })()
 );
 ```
@@ -106,7 +106,7 @@ class StatefulComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
@@ -120,13 +120,13 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp!'
+      firstName: 'freeCodeCamp!'
     }
   }
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }

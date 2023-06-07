@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-React では `state` を直接変更しないことが前提となっています。代わりに、state が変更された場合は常に `this.setState()` を使用します。 また、React ではパフォーマンスを向上させるために複数の state の更新がバッチ処理されることがあります。 このため、`setState` メソッドによる state の更新が非同期になる可能性があります。 この問題を回避する方法として、`setState` メソッドの代わりとなる構文があります。 必要になることはめったにありませんが、覚えておくと役に立ちます。 詳細は [React のドキュメント](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)を参照してください。
+React では `state` を直接変更しないことが前提となっています。代わりに、state が変更された場合は常に `this.setState()` を使用します。 また、React ではパフォーマンスを向上させるために複数の state の更新がバッチ処理されることがあります。 このため、`setState` メソッドによる state の更新が非同期になる可能性があります。 この問題を回避する方法として、`setState` メソッドの代わりとなる構文があります。 必要になることはめったにありませんが、覚えておくと役に立ちます。 詳細については freeCodeCamp の <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">React に関する記事</a>を参照してください。
 
 # --instructions--
 

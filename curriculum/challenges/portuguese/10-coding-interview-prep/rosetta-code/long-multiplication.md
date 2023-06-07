@@ -1,7 +1,7 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
 title: Multiplicação de números grandes
-challengeType: 5
+challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
 ---

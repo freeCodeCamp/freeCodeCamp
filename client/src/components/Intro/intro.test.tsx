@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import { createStore } from '../../redux/createStore';
+import { createStore } from '../../redux/create-store';
 
 import Intro from '.';
 
@@ -60,7 +60,9 @@ const loggedInProps = {
   navigate: () => jest.fn(),
   pending: false,
   slug: '/',
-  username: 'DevelopmentUser'
+  username: 'DevelopmentUser',
+  isDonating: false,
+  onDonationAlertClick: () => jest.fn()
 };
 
 const loggedOutProps = {
@@ -70,5 +72,7 @@ const loggedOutProps = {
   navigate: () => jest.fn(),
   pending: false,
   slug: '/',
-  username: ''
+  username: '',
+  isDonating: false,
+  onDonationAlertClick: () => jest.fn()
 };

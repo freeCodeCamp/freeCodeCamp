@@ -1,7 +1,7 @@
 ---
 id: ab6137d4e35944e21037b769
 title: Scrivere in maiuscolo le iniziali di ogni parola
-challengeType: 5
+challengeType: 1
 forumTopicId: 16088
 dashedName: title-case-a-sentence
 ---

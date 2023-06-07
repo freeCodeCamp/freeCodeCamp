@@ -1,7 +1,7 @@
 ---
 id: 5900f5081000cf542c51001a
 title: '問題 412: グノモンの番号付け'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302081
 dashedName: problem-412-gnomon-numbering
 ---

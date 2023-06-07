@@ -1,7 +1,7 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
 title: Lychrel numbers
-challengeType: 5
+challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
 ---
@@ -64,7 +64,7 @@ Because of this we can further split the Lychrel numbers into true **Seed** Lych
 
 # --instructions--
 
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. 否則，返回 false。 Remember that the iteration limit is 500.
 
 # --hints--
 

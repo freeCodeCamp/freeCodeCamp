@@ -10,7 +10,7 @@ import type {
   User
 } from '../redux/prop-types';
 
-const { apiLocation } = envData;
+const { apiLocation, gitHash } = envData;
 
 const base = apiLocation;
 
@@ -88,7 +88,6 @@ async function request<T>(
 
 interface SessionUser {
   user?: { [username: string]: User };
-  sessionMeta: { activeDonations: number };
 }
 
 type CompleteChallengeFromApi = {
@@ -136,6 +135,8 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   };
 }
 
+// TODO: this at least needs a few aliases so it's human readable
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function mapFilesToChallengeFiles<File, Rest>(
   fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
 ) {
@@ -161,7 +162,6 @@ export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
     return {
       response,
       data: {
-        sessionMeta: data.sessionMeta,
         result,
         user
       }
@@ -177,7 +177,7 @@ export function getUserProfile(
   username: string
 ): Promise<ResponseWithData<UserProfileResponse>> {
   const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}`
+    `/api/users/get-public-profile?username=${username}&githash=${gitHash}`
   );
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser({
@@ -297,15 +297,6 @@ export function putUpdateMyProfileUI(
   return put('/update-my-profileui', { profileUI });
 }
 
-// Update should contain only one flag and one new value
-// It's possible to constrain to only one key with TS, but is overkill for this
-// https://stackoverflow.com/a/60807986
-export function putUpdateUserFlag(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-user-flag', update);
-}
-
 export function putUpdateMySocials(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
@@ -322,6 +313,12 @@ export function putUpdateMyTheme(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-theme', update);
+}
+
+export function putUpdateMyKeyboardShortcuts(
+  update: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-keyboard-shortcuts', update);
 }
 
 export function putUpdateMyHonesty(

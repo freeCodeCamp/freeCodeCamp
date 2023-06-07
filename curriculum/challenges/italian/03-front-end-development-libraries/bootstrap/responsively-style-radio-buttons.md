@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Stilizzare responsivamente i pulsanti di opzione
+title: Definire responsivamente lo stile dei pulsanti di opzione
 challengeType: 0
 forumTopicId: 18270
 required:

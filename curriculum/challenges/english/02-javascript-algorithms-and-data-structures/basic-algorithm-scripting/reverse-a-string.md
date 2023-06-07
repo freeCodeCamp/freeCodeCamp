@@ -1,18 +1,16 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Reverse a String
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-Reverse the provided string.
+Reverse the provided string and return the reversed string.
 
-You may need to turn the string into an array before you can reverse it.
-
-Your result must be a string.
+For example, `"hello"` should become `"olleh"`.
 
 # --hints--
 

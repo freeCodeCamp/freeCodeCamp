@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: Sorting algorithms/Bogosort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---
 
 # --description--
 
-[Bogosort](https://en.wikipedia.org/wiki/Bogosort) a list of numbers.
+Bogosort a list of numbers.
 
 Bogosort simply shuffles a collection randomly until it is sorted.
 
@@ -18,7 +18,7 @@ Its average run-time is O(n!) because the chance that any given shuffle of a set
 
 Its best case is O(n) since a single pass through the elements may suffice to order them.
 
-Pseudocode:
+僞代碼：
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)

@@ -1,80 +1,152 @@
-# How to Work on Practice Projects
+# Робота над практичними проєктами
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+Для практичних проєктів ми використовуємо покроковий підхід, щоб кемпери вивчили основи. Проєкт складається з декількох файлів, які ми називаємо **кроками**. Ці файли називаються ідентифікаторами завдання, щоб уникнути проблем із перекладом. На жаль, через це важко знайти файл, пов’язаний з певним кроком.
 
-## Create a new project
+Ми створили редактор завдань, який допомагає розв’язати цю проблему. Цей інструмент дозволяє орієнтуватись на доступні проєкти та кроки (за порядком). Існує також вбудований редактор коду, який можна використовувати для безпосередньої роботи з файлами.
 
-Run `npm run create-project`. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+## Використання редактора завдань
 
-If you want to create new steps, the following tools simplify that process.
+У цих інструкціях ви дізнаєтесь, як працювати над практичними проєктами за допомогою нашого редактора завдань.
 
-## create-next-step
+### Запуск редактора
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Щоб запустити редактор, переконайтесь, що знаходитесь у кореневому каталозі freeCodeCamp. Потім запустіть `pnpm run challenge-editor`, щоб запустити клієнта та API, який підтримує редактор.
 
-### How to run script:
+Клієнт запуститься через порт `3300`, тому доступ можна отримати на `http://localhost:3300`. API запуститься через порт `3200`, щоб уникнути конфліктів з навчальним клієнтом та сервером. Це дозволить запустити програму freeCodeCamp одночасно з редактором, щоб ви могли перевірити свої зміни локально.
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+### Навігація по редактору
 
-```bash
-npm run create-next-step
-```
+За замовчуванням ви побачите доступні `superblocks` — це сертифікації. Натисніть посилання сертифікації, над якою хочете працювати.
 
-## create-empty-steps
+Ви перейдете до списку блоків. Це практичні проєкти. Натисніть посилання проєкту, над яким хочете працювати.
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Ви перейдете до списку кроків проєкту. Якщо ви працюєте над наявним кроком, можна натиснути посилання кроку, щоб відкрити редактор. Якщо ви додаєте чи вилучаєте кроки, натисніть посилання `Use the step tools`, щоб перейти до інструментів для цього завдання.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+### Редагування кроків
 
-### How to run script:
+Якщо натиснути на крок, ви перейдете до редактора. Це базовий текстовий редактор, який пропонує підсвічування синтаксису.
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+Після того, як ви застосували зміни, натисніть кнопку `Save Changes`, щоб зберегти зміни. Ви отримаєте сповіщення браузера про те, що ваші зміни готові до внесення. Зауважте, що вам потрібно буде вручну використати `git` для зміни та внесення файлів — інструмент не зробить цього.
 
-```bash
-npm run create-empty-steps X # where X is the number of steps to create.
-```
+### Інструменти для кроків
 
-## insert-step
+Якщо натиснути посилання `Use the step tools`, ви перейдете до сторінки з інструментами кроку. Це дозволить додавати чи вилучати кроки проєкту.
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+#### Створення наступного кроку
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+Натисніть цю кнопку, щоб додати новий крок в кінці проєкту. У цьому кроці використовуватиметься код попереднього кроку як зразок.
 
-### How to run script:
+#### Створення порожнього кроку
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+Введіть кількість кроків, які хочете додати. Потім натисніть кнопку, що створить задану кількість кроків в кінці проєкту.
 
-```bash
-npm run insert-step X # where X is the position to insert the new step.
-```
+#### Додавання кроку
 
-## delete-step
+Введіть номер кроку, який хочете додати. Потім натисніть кнопку `Insert Step`, щоб додати крок. Порядок наступних кроків буде змінено.
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+#### Видалення кроку
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+Введіть номер кроку, який хочете видалити. Потім натисніть кнопку `Delete Step`, щоб видалити крок. Номери наступних кроків автоматично оновляться.
 
-### How to run script
+#### Оновлення заголовків кроку
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+Використовуйте цей інструмент лише тоді, коли додали чи вилучили крок вручну. Цей інструмент змінить порядок номерів кроків.
 
-```bash
-npm run delete-step X # where X is the step number to be deleted.
-```
+## Використання скриптів вручну
 
-## update-step-titles
+Якщо ви хочете працювати над кроками вручну у локальному IDE, ви можете запустити скрипти керування кроками.
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Папка `tools/challenge-helper-scripts` містить інструменти, які допоможуть зі створенням та обслуговуванням проєктноорієнтованої навчальної програми freeCodeCamp.
 
-### How to run script
+### Створіть новий проєкт
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+Змініть каталог на `tools/challenge-helper-scripts` та запустіть `pnpm run create-project`. Ця команда відкриє інтерфейс командного рядка, який допомагатиме. Після цього в англомовній навчальній програмі має з’явитися нове завдання, яке можна використовувати як перший крок проєкту. Наприклад, якщо ви створили проєкт під назвою `test-project` у сертифікації з адаптивного вебдизайну, завдання з’явиться у `curriculum/challenges/english/01-responsive-web-design/test-project`.
+
+Якщо ви хочете створити нові кроки, наступні інструменти допоможуть.
+
+### create-next-step
+
+Це разовий скрипт, який автоматично додасть наступний крок на основі останнього кроку проєкту. Початковий код завдання використовуватиме початковий код попереднього кроку.
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
-npm run update-step-titles
+pnpm run create-next-step
 ```
+
+### create-empty-steps
+
+Це разовий скрипт, який автоматично додасть вказану кількість кроків. Початковий код буде порожнім для всіх створених кроків.
+
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
+
+```bash
+pnpm run create-empty-steps X # де X є кількістю кроків, які потрібно створити.
+```
+
+### insert-step
+
+Це разовий скрипт, який автоматично додає новий крок у визначеному місці, збільшуючи наступні кроки (їхні заголовки та meta.json). Початковий код завдання використовуватиме початковий код попереднього кроку, вилучивши маркери редагованих регіонів (ERM).
+
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
+
+```bash
+pnpm run insert-step X # де X є місцем, куди потрібно вставити новий крок.
+```
+
+### delete-step
+
+Це разовий скрипт, який видаляє наявний крок, зменшуючи наступні кроки (їхні заголовки та meta.json)
+
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
+
+```bash
+pnpm run delete-step X # де X є номером кроку, який потрібно видалити.
+```
+
+### update-step-titles
+
+Це разовий скрипт, який автоматично оновлює початковий матеріал у файлах розмітки проєкту, щоб вони відповідали meta.json. Він гарантує, що заголовки кроків (та dashedName) відповідають challengeOrder.
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
+
+```bash
+pnpm run update-step-titles
+```
+
+### repair-meta
+
+Разовий скрипт, щоб проаналізувати назви кроків проєкту та оновити порядок meta.json, щоб відповідати цим крокам. Корисно, якщо ви випадково втратили зміни файлу meta.json, коли додавали чи видаляли кроки.
+
+#### Як запустити скрипт
+
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
+
+```bash
+pnpm run repair-meta
+```
+## Запропонуйте запит на злиття (PR)
+
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).

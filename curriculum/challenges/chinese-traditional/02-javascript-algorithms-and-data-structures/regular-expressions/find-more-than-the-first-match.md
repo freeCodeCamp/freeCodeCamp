@@ -18,7 +18,7 @@ testStr.match(ourRegex);
 
 在這裏 `match` 將返回 `["Repeat"]`。
 
-若要多次搜尋或提取模式匹配，可以使用 `g` 標誌。
+要多次搜索或提取模型，你可以使用全局搜索標誌： `g`。
 
 ```js
 let repeatRegex = /Repeat/g;

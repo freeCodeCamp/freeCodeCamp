@@ -10,11 +10,11 @@ export const parameters = {
   backgrounds: {
     values: [
       {
-        name: 'light',
+        name: 'light-palette',
         value: '#ffffff'
       },
       {
-        name: 'dark',
+        name: 'dark-palette',
         value: '#0a0a23'
       }
     ]

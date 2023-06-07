@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { appMount } from '../redux';
+import { appMount } from '../redux/actions';
 
 interface AppMountNotifierProps {
   render: () => React.ReactNode;

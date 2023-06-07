@@ -1,14 +1,14 @@
 ---
 id: 5900f3851000cf542c50fe98
 title: 'Problem 25: 1000-digit Fibonacci number'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301897
 dashedName: problem-25-1000-digit-fibonacci-number
 ---
 
 # --description--
 
-The Fibonacci sequence is defined by the recurrence relation:
+斐波那契數列由遞推關係定義：
 
 <div style='padding-left: 4em;'>F<sub>n</sub> = F<sub>n−1</sub> + F<sub>n−2</sub>, where F<sub>1</sub> = 1 and F<sub>2</sub> = 1.</div>
 

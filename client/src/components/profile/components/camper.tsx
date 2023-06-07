@@ -6,10 +6,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import { TFunction, useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
+import type { User } from '../../../redux/prop-types';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SocialIcons from './social-icons';
@@ -20,25 +22,22 @@ const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
 
-interface CamperProps {
-  about: string;
-  githubProfile: string;
-  isDonating: boolean;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
-  joinDate: string;
-  linkedin: string;
-  location: string;
-  name: string;
-  picture: string;
-  points: number | null;
-  twitter: string;
-  username: string;
-  website: string;
-  yearsTopContributor: string[];
-}
+export type CamperProps = Pick<
+  User,
+  | 'about'
+  | 'githubProfile'
+  | 'isDonating'
+  | 'linkedin'
+  | 'username'
+  | 'twitter'
+  | 'yearsTopContributor'
+  | 'location'
+  | 'website'
+  | 'picture'
+  | 'name'
+  | 'joinDate'
+  | 'twitter'
+>;
 
 function joinArray(array: string[], t: TFunction): string {
   return array.reduce((string, item, index, array) => {
@@ -67,16 +66,11 @@ function Camper({
   name,
   username,
   location,
-  points,
   picture,
   about,
   yearsTopContributor,
   githubProfile,
   isDonating,
-  isLinkedIn,
-  isGithub,
-  isTwitter,
-  isWebsite,
   joinDate,
   linkedin,
   twitter,
@@ -98,10 +92,6 @@ function Camper({
       </Row>
       <SocialIcons
         githubProfile={githubProfile}
-        isGithub={isGithub}
-        isLinkedIn={isLinkedIn}
-        isTwitter={isTwitter}
-        isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
         username={username}
@@ -131,15 +121,12 @@ function Camper({
               {t('profile.contributor')}
             </Link>
           </p>
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
+          <p className='text-center'>
+            {joinArray(yearsTopContributor as string[], t)}
+          </p>
         </div>
       )}
       <br />
-      {typeof points === 'number' ? (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      ) : null}
     </div>
   );
 }

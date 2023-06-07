@@ -16,7 +16,7 @@ Quando definimos um array simples como o que vemos abaixo, existem 3 itens nele:
 let ourArray = ["a", "b", "c"];
 ```
 
-Em um array, cada item do array possui um <dfn>índice </dfn>. Esse índice possui dois papéis: é a posição daquele item no array e como você o referencia. No entanto, é importante notar que arrays em JavaScript são <dfn>indexados a partir do zero</dfn>, o que significa que o primeiro elemento do array está, na verdade, na posição ***zero***, e não na primeira. Para recuperar um elemento de um array, nós podemos ao final de um array adicionar um índice encapsulado com colchetes (por exemplo [0]), ou mais comumente, no final de uma variável que faz referência a um objeto array. Isso é conhecido como <dfn>notação de colchetes</dfn>. Por exemplo, se queremos recuperar o `a` de um array `ourArray` e atribuir a uma variável, nós podemos fazer isso com o código a seguir:
+Em um array, cada item do array possui um <dfn>índice </dfn>. Esse índice possui dois papéis: é a posição daquele item no array e como você o referencia. No entanto, é importante notar que arrays em JavaScript são <dfn>indexados a partir do zero</dfn>, o que significa que o primeiro elemento do array está, na verdade, na posição ***zero*** em vez de na posição 1. Para recuperar um elemento de um array, nós podemos ao final de um array adicionar um índice encapsulado com colchetes (por exemplo [0]), ou mais comumente, no final de uma variável que faz referência a um objeto array. Isso é conhecido como <dfn>notação de colchetes</dfn>. Por exemplo, se queremos recuperar o `a` de um array `ourArray` e atribuir a uma variável, nós podemos fazer isso com o código a seguir:
 
 ```js
 let ourVariable = ourArray[0];

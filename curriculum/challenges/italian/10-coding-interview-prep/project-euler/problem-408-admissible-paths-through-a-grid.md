@@ -1,7 +1,7 @@
 ---
 id: 5900f5091000cf542c51001b
 title: 'Problema 408: Percorsi ammissibili attraverso una griglia'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302076
 dashedName: problem-408-admissible-paths-through-a-grid
 ---

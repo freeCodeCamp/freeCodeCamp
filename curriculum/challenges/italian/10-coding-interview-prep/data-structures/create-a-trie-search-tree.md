@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-Il `Trie` dovrebbe avere `print` come metodo.
+La tua classe `HashTable` dovrebbe avere un metodo `add`.
 
 ```js
 assert(

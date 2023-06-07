@@ -25,10 +25,6 @@ const userProps = {
       showDonation: false
     },
     calendar: {},
-    streak: {
-      current: 1,
-      longest: 1
-    },
     completedChallenges: [],
     portfolio: [],
     progressTimestamps: [],
@@ -37,10 +33,6 @@ const userProps = {
     isBanned: false,
     isCheater: true,
     isHonest: true,
-    isGithub: true,
-    isLinkedIn: true,
-    isTwitter: true,
-    isWebsite: true,
     joinDate: 'string',
     linkedin: 'string',
     location: 'string',
@@ -73,7 +65,8 @@ const userProps = {
     isSciCompPyCertV7: true,
     isDataAnalysisPyCertV7: true,
     isMachineLearningPyCertV7: true,
-    isRelationalDatabaseCertV8: true
+    isRelationalDatabaseCertV8: true,
+    isCollegeAlgebraPyCertV8: true
   },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}

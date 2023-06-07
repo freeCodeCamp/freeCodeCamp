@@ -2,7 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 title: >-
   問題 171: 各位の平方和が平方数となる数を求める
-challengeType: 5
+challengeType: 1
 forumTopicId: 301806
 dashedName: >-
   problem-171-finding-numbers-for-which-the-sum-of-the-squares-of-the-digits-is-a-square

@@ -1,20 +1,27 @@
 ---
 id: af4afb223120f7348cdfc9fd
 title: 計算軌道週期
-challengeType: 5
+challengeType: 1
 forumTopicId: 16021
 dashedName: map-the-debris
 ---
 
 # --description--
 
-在這道題目中，我們需要寫一個計算天體軌道週期（單位是秒）的函數。
+根據開普勒第三定律，在環狀或橢圓軌道上在軌兩個點質量的 $T$ 軌道期爲：
 
-它接收一個對象數組參數 arr，對象中包含表示天體名稱的 name 屬性，及表示天體表面平均海拔的 avgAlt 屬性。 就像這樣：`{name: 'name', avgAlt: avgAlt}`。
+$$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
 
-你可以在這條[維基百科](http://en.wikipedia.org/wiki/Orbital_period)的鏈接中找到軌道週期的計算公式：
+- $a$ 是軌道的半主軸
+- $μ = GM$ 是標準重力參數
+- $G$ 是引力常量
+- $M$ 是較大天體的質量
 
-最終的計算結果應取整到最接近的整數。 在這裏計算地球的軌道週期。
+返回一個新數組，將元素的平均高度轉換爲軌道週期（以秒爲單位）。
+
+數組將包含 `{name: 'name', avgAlt: avgAlt}` 格式的對象 。
+
+最終的計算結果應取整到最接近的整數。 正在軌道上的物體是地球。
 
 地球半徑爲 6367.4447 公里，地球的 GM 值爲 398600.4418 km <sup>3</sup> s <sup>-2</sup> 。
 

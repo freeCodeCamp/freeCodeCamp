@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec1
 title: Quadratura di cifre iterata
-challengeType: 5
+challengeType: 1
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
 ---

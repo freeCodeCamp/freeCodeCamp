@@ -1,7 +1,7 @@
 ---
 id: 5900f4071000cf542c50ff19
 title: '問題 154: パスカルの三角錐を探索する'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301785
 dashedName: problem-154-exploring-pascals-pyramid
 ---

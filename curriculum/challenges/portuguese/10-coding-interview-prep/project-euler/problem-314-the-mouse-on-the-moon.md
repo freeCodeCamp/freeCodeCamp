@@ -1,7 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffb9
 title: 'Problema 314: O rato na lua'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301970
 dashedName: problem-314-the-mouse-on-the-moon
 ---

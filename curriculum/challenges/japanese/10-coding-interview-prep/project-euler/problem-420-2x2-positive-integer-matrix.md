@@ -1,7 +1,7 @@
 ---
 id: 5900f5111000cf542c510023
 title: '問題 420: 2x2 の正整数行列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302090
 dashedName: problem-420-2x2-positive-integer-matrix
 ---

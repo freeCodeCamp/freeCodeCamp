@@ -1,7 +1,7 @@
 ---
 id: 5900f3bb1000cf542c50fece
 title: 'Problem 79: Passcode derivation'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
 ---

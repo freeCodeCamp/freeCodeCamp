@@ -14,19 +14,19 @@ dashedName: data-visualization-mailing-lists
 
 Додаткові ресурси:
 
-\- [Відео-урок: geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
+\- <a href="https://www.youtube.com/watch?v=KfhslNzopxo" target="_blank" rel="noopener noreferrer nofollow">Вправа: Geodata</a>
 
-\- [Відео-урок: Gmane model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+\- <a href="https://www.youtube.com/watch?v=wSpl1-7afAk" target="_blank" rel="noopener noreferrer nofollow">Вправа: Gmane Model</a>
 
-\- [Відео-урок: Gmane spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+\- <a href="https://www.youtube.com/watch?v=H3w4lOFBUOI" target="_blank" rel="noopener noreferrer nofollow">Вправа: Gmane Spider</a>
 
-\- [Відео-урок: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- <a href="https://www.youtube.com/watch?v=LRqVPMEXByw" target="_blank" rel="noopener noreferrer nofollow">Вправа: Gmane Viz</a>
 
-\- [Відео-урок: page rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+\- <a href="https://www.youtube.com/watch?v=yFRAZBkBDBs" target="_blank" rel="noopener noreferrer nofollow">Вправа: Page Rank</a>
 
-\- [Відео-урок: page spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\- <a href="https://www.youtube.com/watch?v=sXedPQ_AnWA" target="_blank" rel="noopener noreferrer nofollow">Вправа: Page Spider</a>
 
-\- [Відео-урок: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\- <a href="https://www.youtube.com/watch?v=Fm0hpkxsZoo" target="_blank" rel="noopener noreferrer nofollow">Вправа: Page Viz</a>
 
 # --question--
 

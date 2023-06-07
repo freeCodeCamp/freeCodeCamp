@@ -1,49 +1,41 @@
-# Courses VSCode Extension
+# Cursos de extensión de VSCode
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+Esto detalla las guías de mantenimiento para el repositorio de  [freeCodeCamp/courses-vscode-extensión](https://github.com/freeCodeCamp/courses-vscode-extension), el cual contiene el código fuente de la extensión [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses).
 
-## Publishing the Extension
+## Publicando la Extensión
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on pushes to the `prod` branch.
+'GitHub Action' publica automáticamente la extensión en el Marketplace de Visual Studio,  cada vez que se publica una nueva versión en GitHub.
 
-Ensure the `main` branch is checked out.
-
-```bash
-git checkout main
-```
-
-Update the local repository with `upstream`, and reset `main`.
+1. Empaquete una nueva versión de la extensión:
 
 ```bash
-git fetch upstream
-git reset --hard upstream/main
+npm run pack -- <tag_type>
 ```
 
-Checkout the `prod` branch.
+Donde `<tag_type>` es uno de: `mayor`, `menor`, `parchar`.
+
+2. Envía la nueva versión a `main`:
 
 ```bash
-git checkout prod
+git commit -am "<tag_type>(<version>): <description>"
+git push
 ```
 
-Merge the commits wanted for deployment into `prod`.
+Opcionalmente puedes empujar directamente al `upstream/main`pero abrir un nuevo PR es recomendado para mejor órden.
 
-```bash
-git merge main
-```
+3. Cree una nueva versión de GitHub usando la interfaz de usuario de GitHub:
 
-Push the local branch to `upstream`.
+- Incremente correctamente el número de versión al crear una nueva etiqueta.
+- actualizar el archivo `.vsix` con la nueva versión.
+- Publique el lanzamiento y confirme que la acción se realizó correctamente.
 
-```bash
-git push upstream
-```
+> [!NOTE] La creación de una versión requiere acceso de escritura al repositorio `freeCodeCamp/courses-vscode-extension` repositorio.
 
-> [!NOTE] Pushing to `upstream` requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+## Publicación Manual de la Extensión
 
-## Manually Publishing the Extension
+Se puede realizar una carga manual en Visual Studio Marketplace siguiendo estos pasos:
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
-
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. Visite https://marketplace.visualstudio.com/ e inicie sesión
+2. Vaya a la [página del editor de freeCodeCamp](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Seleccione la extensión relevante y seleccione `Actualizar`
+4. Sube el archivo desde tus archivos locales

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ed2
 title: O problema da mochila/limitado
-challengeType: 5
+challengeType: 1
 forumTopicId: 323652
 dashedName: knapsack-problembounded
 ---

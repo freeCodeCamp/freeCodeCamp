@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad4
 title: Перенесення слів
-challengeType: 5
+challengeType: 1
 forumTopicId: 302344
 dashedName: word-wrap
 ---
@@ -22,7 +22,7 @@ dashedName: word-wrap
 
 # --hints--
 
-перенесення має бути функцією.
+wrap має бути функцією.
 
 ```js
 assert.equal(typeof wrap, 'function');

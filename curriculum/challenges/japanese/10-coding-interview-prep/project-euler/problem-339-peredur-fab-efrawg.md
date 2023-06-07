@@ -1,7 +1,7 @@
 ---
 id: 5900f4c01000cf542c50ffd2
 title: '問題 339: 『エヴラウクの息子ペレドゥルの物語』'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301997
 dashedName: problem-339-peredur-fab-efrawg
 ---

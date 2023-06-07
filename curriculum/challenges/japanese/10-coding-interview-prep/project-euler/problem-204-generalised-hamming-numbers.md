@@ -1,7 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4b
 title: '問題 204: 一般化ハミング数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301845
 dashedName: problem-204-generalised-hamming-numbers
 ---

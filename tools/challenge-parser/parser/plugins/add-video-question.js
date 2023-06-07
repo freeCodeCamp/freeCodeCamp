@@ -6,11 +6,11 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
 function plugin() {
   return transformer;
-
   function transformer(tree, file) {
     const questionNodes = getAllBetween(tree, '--question--');
     if (questionNodes.length > 0) {
       const questionTree = root(questionNodes);
+
       const textNodes = getAllBetween(questionTree, '--text--');
       const answersNodes = getAllBetween(questionTree, '--answers--');
       const solutionNodes = getAllBetween(questionTree, '--video-solution--');
@@ -31,7 +31,6 @@ function getQuestion(textNodes, answersNodes, solutionNodes) {
   if (!answers) throw Error('answers are missing from question');
   if (!solution) throw Error('solution is missing from question');
 
-  // console.log({ text, answers, solution });
   return { text, answers, solution };
 }
 

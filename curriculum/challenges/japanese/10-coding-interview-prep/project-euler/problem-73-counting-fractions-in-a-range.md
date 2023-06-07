@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec8
 title: '問題 73: 範囲内にある分数を数え上げる'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302186
 dashedName: problem-73-counting-fractions-in-a-range
 ---

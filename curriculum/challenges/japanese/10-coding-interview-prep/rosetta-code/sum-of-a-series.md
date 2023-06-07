@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8041
 title: 級数の和
-challengeType: 5
+challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
 ---
 
 # --description--
 
-[級数](https://en.wikipedia.org/wiki/Series (mathematics))の 第 **n** 項までの和、 つまり対応する[数列](https://en.wikipedia.org/wiki/sequence)の最初の **n** 項の和を計算します。 この値、または**n**が無限となる傾向がある場合の極限を、非公式に、*級数の和*とも呼ぶため、このタスクのタイトルにしています。 このタスクでは以下を使用します: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$
+Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **n** first terms of the corresponding <em>sequence</em>. この値、または**n**が無限となる傾向がある場合の極限を、非公式に、*級数の和*とも呼ぶため、このタスクのタイトルにしています。 このタスクでは以下を使用します: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$
 
 # --instructions--
 

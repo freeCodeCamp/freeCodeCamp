@@ -1,7 +1,7 @@
 ---
 id: 5900f3b01000cf542c50fec2
 title: 'Problem 67: Maximum path sum II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302179
 dashedName: problem-67-maximum-path-sum-ii
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e1e
 title: Produto escalar
-challengeType: 5
+challengeType: 1
 forumTopicId: 302251
 dashedName: dot-product
 ---

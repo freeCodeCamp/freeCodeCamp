@@ -24,7 +24,7 @@ Check the spelling of the two variables used in the netWorkingCapital calculatio
 assert(netWorkingCapital === 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ The `receivables` variable should be declared and used properly in the code.
 assert(code.match(/receivables/g).length == 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/payable;/g));

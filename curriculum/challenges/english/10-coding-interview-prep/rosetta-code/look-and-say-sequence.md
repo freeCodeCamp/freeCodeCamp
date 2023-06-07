@@ -1,7 +1,7 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
 title: Look-and-say sequence
-challengeType: 5
+challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
 ---

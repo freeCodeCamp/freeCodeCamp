@@ -1,7 +1,7 @@
 ---
 id: 5900f4c31000cf542c50ffd5
 title: 'Задача 342: Функція квадрата - куб'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302001
 dashedName: problem-342-the-totient-of-a-square-is-a-cube
 ---

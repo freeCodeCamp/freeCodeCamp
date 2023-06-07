@@ -7,9 +7,9 @@ Nuestro contenido instructivo principal se encuentra dentro del directorio conve
 Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro currículo.
 
 - `certification` : Cuando se hace referencia a una certificación en este caso, se está hablando del certificado real que los usuarios reclaman.  Que es independiente del nombre del súper bloque.
-- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificación en el currículo (p. ej. Diseño Web Responsivo).
-- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificación determinada (p. ej. HTML básico y HTML5)
-- `challenge` : Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los elementos HTML)
+- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificacion en el currículo (p. ej. Diseño Web Responsivo).
+- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificacion determinada (p. ej. HTML Básico y HTML5)
+- `challenge`: Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los Elementos HTML)
 
 ## Árbol de archivos
 
@@ -83,11 +83,10 @@ Cuando renombras un bloque del currículo, tienes que:
 1. Cambiar el nombre de la misma carpeta de bloque en _todos_ los demás directorios de lenguajes para que coincidan. Estos deben ser todos iguales a la estructura en inglés o se producirá un error en la compilación.
 1. Cambiar el nombre de la carpeta del bloque en el directorio `_meta`.
 1. Actualizar las propiedades `nombre` y `dashedName` (nombre con guiones) del archivo `meta.json` de ese bloque.
-1. Actualizar el `client/utils/help-category-map.json` para que utilice el nuevo nombre de bloque como clave.
-1. Actualizar la carpeta del bloque en `client/src/pages/learn/{superBlock}`.
-1. En el archivo `index.md` de la carpeta superior, actualizar el valor del `block` prematuramente.
-1. En los archivos `client/i18n/locales/{language}/intro.json`, actualizar el nombre del bloque al nuevo nombre para todos los idiomas. En el archivo `intro.json` en inglés, actualiza también el `title`.
-1. Actualizar el archivo principal `README.md` con el nuevo nombre.
+1. Update the block folder in `client/src/pages/learn/{superBlock}`.
+1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Update the main `README.md` file to the new name.
 
 ### Renombrando un desafío
 

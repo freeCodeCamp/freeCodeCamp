@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ffe
 title: Ordina un array di strutture composite
-challengeType: 5
+challengeType: 1
 forumTopicId: 302306
 dashedName: sort-an-array-of-composite-structures
 ---

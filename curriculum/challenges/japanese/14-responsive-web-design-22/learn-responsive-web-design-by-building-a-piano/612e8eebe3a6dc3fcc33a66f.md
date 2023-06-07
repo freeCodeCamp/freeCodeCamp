@@ -7,7 +7,7 @@ dashedName: step-11
 
 # --description--
 
-ここで、`id` セレクターで `#piano` 要素を指定してください。 `background-color` プロパティの値を `#00471b` に、`width` プロパティの値を `992px` に、`height` プロパティの値を `290px` に設定してください。
+ここで、`id` セレクターで `#piano` 要素を選択してください。 `background-color` プロパティの値を `#00471b` に、`width` プロパティの値を `992px` に、`height` プロパティの値を `290px` に設定してください。
 
 # --hints--
 
@@ -41,7 +41,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#piano')?.height === '290px');
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Piano</title>

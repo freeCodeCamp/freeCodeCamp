@@ -1,7 +1,7 @@
 ---
 id: 5900f5471000cf542c510059
 title: 'Завдання 474: Останні цифри дільників'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302151
 dashedName: problem-474-last-digits-of-divisors
 ---

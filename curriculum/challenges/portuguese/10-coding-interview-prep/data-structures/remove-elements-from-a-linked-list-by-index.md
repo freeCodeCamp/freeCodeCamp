@@ -14,7 +14,7 @@ Vamos escrever um método `removeAt`, que remove o `element` em um determinado `
 
 Uma técnica comum usada para iterar através dos elementos de uma lista encadeada envolve um <dfn>'percorredor'</dfn>, ou sentinela, que 'aponte' para os nós que o seu código está comparando. Em nosso caso, começando com a `head` de nossa lista, iniciamos com uma variável `currentIndex` com o valor `0`. O `currentIndex` deve incrementar de um em um para cada nó que percorrermos.
 
-Assim como nosso método `remove(element)`, que [abordamos em uma aula anterior](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), precisamos ser cuidadosos para não deixar órfã o resto de nossa lista quando removermos o nó em nosso método `removeAt(index)`. Manteremos nossos nós um após o outro, garantindo que o nó que possui a referência ao nó removido tenha uma referência ao próximo nó.
+Assim como nosso método `remove(element)`, que <a href="/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">abordamos em uma aula anterior</a>, precisamos ser cuidadosos para não deixar órfã o resto de nossa lista quando removermos o nó em nosso método `removeAt(index)`. Manteremos nossos nós um após o outro, garantindo que o nó que possui a referência ao nó removido tenha uma referência ao próximo nó.
 
 # --instructions--
 

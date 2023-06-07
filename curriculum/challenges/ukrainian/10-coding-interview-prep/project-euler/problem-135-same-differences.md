@@ -1,7 +1,7 @@
 ---
 id: 5900f3f31000cf542c50ff06
 title: 'Завдання 135: Числа з подібною ознакою'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301763
 dashedName: problem-135-same-differences
 ---

@@ -28,12 +28,14 @@ textarea.inputarea {
 
 .breadcrumbs-demo {
   font-size: 16px;
-  margin: 0 0 1.2rem;
+  margin: 0;
+  padding: 10px;
 }
 
 .editor-upper-jaw,
 .editor-lower-jaw {
-  padding: 15px 15px 15px 0px;
+  padding-inline: 0 15px;
+  padding-block: 15px;
 }
 
 .editor-upper-jaw {
@@ -45,20 +47,22 @@ textarea.inputarea {
   background-color: var(--secondary-background);
   padding: 1rem;
   border: 2px solid var(--quaternary-background);
+  /* the max-width is set to keep the characters in a line at below ~70 to help
+  with readability */
   max-width: 600px;
 }
 
 .challenge-description-header {
   display: flex;
+  gap: 7px;
 }
 
 .description-container h1 {
   color: var(--secondary-color);
-  font-family: Roboto Mono, monospace;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
-  margin: 0 0 0.6rem;
+  margin: 0.1em 0 0.6rem;
 }
 
 .description-highlighter {
@@ -89,8 +93,7 @@ textarea.inputarea {
 .myEditableLineDecoration {
   background-color: var(--gray-45);
   width: 15px !important;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
+  margin-inline: 5px !important;
 }
 
 .myEditableLineDecoration.tests-passed {
@@ -114,17 +117,17 @@ textarea.inputarea {
 }
 
 .test-feedback p {
-  margin: 0.5rem 0 0;
-  font-family: 'Lato', sans-serif;
+  margin: 0.45rem 0 0;
 }
 
 .test-feedback h2 {
   font-size: 1rem;
   line-height: 1.5;
-  padding-right: 0.5rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
   margin: 0.5em 0 0;
+  /* prevent line breaks in Chinese/Japanese/Korean */
+  word-break: keep-all;
 }
 
 .test-feedback h2:after {
@@ -134,18 +137,21 @@ textarea.inputarea {
 .test-feedback svg {
   height: 1.5rem;
   width: auto;
-  margin-right: 0.5rem;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
-.test-feedback > div {
-  margin-top: 1rem;
+.test-feedback .test-status,
+.test-feedback .hint-status {
   display: flex;
+  gap: 0.5rem;
   flex-direction: row;
+  margin-top: 1rem;
 }
 
 .test-status-description,
 .hint-description {
+  display: flex;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -166,4 +172,36 @@ textarea.inputarea {
   100% {
     opacity: 1;
   }
+}
+
+.utility-bar {
+  display: grid;
+  /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.75rem;
+}
+
+.utility-bar > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 6px 0;
+}
+
+.progress-bar-container {
+  text-align: center;
+}
+
+.editor-lower-jaw .progress-bar-wrap-container {
+  width: 100% !important;
+  margin: 32px 0px;
+}
+
+.editor-lower-jaw .progress-bar-background-container {
+  width: 100% !important;
+}
+
+.hint-status {
+  margin-bottom: 18px;
 }

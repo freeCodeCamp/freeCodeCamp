@@ -1,14 +1,24 @@
 ---
 id: 5a23c84252665b21eecc8017
 title: サウンデックス
-challengeType: 5
+challengeType: 1
 forumTopicId: 302320
 dashedName: soundex
 ---
 
 # --description--
 
-サウンデックスは発音から単語のインデックスを作成するためのアルゴリズムです。 目的は、複数の同音異義語を同じ表記にコード化して、スペルの微小な違いにもかかわらず、一致させることです ([wikipedia記事](https://en.wikipedia.org/wiki/soundex)より)。 同じサウンデックスコードを持つ 2 つの子音の分離に関する実装には、多くの場合、大きな問題があります。 ([公式ルール](https://www.archives.gov/research/census/soundex.html) より)。 では、**Ashcraft** を **A-261** にコード化する場合を確認してみましょう。
+**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
+
+It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+
+For example:
+
+If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`.
+
+When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling.
+
+Here is the rules: 
 
 <ul>
   <li>母音 (A、E、I、O、U) が同じサウンデックスコードを持つ2つの子音を分離している場合、母音の右側の子音がコード化されます。 Tymczak は T-522 (T、Mを5、Cを2、Zは無視 (上記の隣接ルールを参照)、Kを2) としてコード化されます。 母音 "A" が Z と K を分離しているため、K がコード化されます。</li>
@@ -17,77 +27,77 @@ dashedName: soundex
 
 # --instructions--
 
-1つの文字列をパラメータとして取り、コード化した文字列を返す関数を記述してください。
+Write a function that takes a string as a parameter and returns the encoded string.
 
 # --hints--
 
-`soundex` は関数とします。
+`soundex` should be a function.
 
 ```js
 assert(typeof soundex == 'function');
 ```
 
-`soundex("Soundex")` は文字列を返す必要があります。
+`soundex("Soundex")` should return a string.
 
 ```js
 assert(typeof soundex('Soundex') == 'string');
 ```
 
-`soundex("Soundex")` は `"S532"` を返す必要があります。
+`soundex("Soundex")` should return `"S532"`.
 
 ```js
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")` は `"E251"` を返す必要があります。
+`soundex("Example")` should return `"E251"`.
 
 ```js
 assert.equal(soundex('Example'), 'E251');
 ```
 
-`soundex("Sownteks")` は `"S532"` を返す必要があります。
+`soundex("Sownteks")` should return `"S532"`.
 
 ```js
 assert.equal(soundex('Sownteks'), 'S532');
 ```
 
-`soundex("Ekzampul")` は `"E251"` を返す必要があります。
+`soundex("Ekzampul")` should return `"E251"`.
 
 ```js
 assert.equal(soundex('Ekzampul'), 'E251');
 ```
 
-`soundex("Euler")` は `"E460"` を返す必要があります。
+`soundex("Euler")` should return `"E460"`.
 
 ```js
 assert.equal(soundex('Euler'), 'E460');
 ```
 
-`soundex("Gauss")` は `"G200"` を返す必要があります。
+`soundex("Gauss")` should return `"G200"`.
 
 ```js
 assert.equal(soundex('Gauss'), 'G200');
 ```
 
-`soundex("Hilbert")` は `"H416"` を返す必要があります。
+`soundex("Hilbert")` should return `"H416"`.
 
 ```js
 assert.equal(soundex('Hilbert'), 'H416');
 ```
 
-`soundex("Knuth")` は `"K530"` を返す必要があります。
+`soundex("Knuth")` should return `"K530"`.
 
 ```js
 assert.equal(soundex('Knuth'), 'K530');
 ```
 
-`soundex("Lloyd")` は `"L300"` を返す必要があります。
+`soundex("Lloyd")` should return `"L300"`.
 
 ```js
 assert.equal(soundex('Lloyd'), 'L300');
 ```
 
-`soundex("Lukasiewicz")` は `"L222"` を返す必要があります。
+`soundex("Lukasiewicz")` should return `"L222"`.
 
 ```js
 assert.equal(soundex('Lukasiewicz'), 'L222');

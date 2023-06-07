@@ -1,7 +1,7 @@
 ---
 id: 5900f4651000cf542c50ff77
 title: 'Problema 248: Numeri per i quali la funzione toziente di Eulero è uguale a 13!'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301895
 dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
 ---

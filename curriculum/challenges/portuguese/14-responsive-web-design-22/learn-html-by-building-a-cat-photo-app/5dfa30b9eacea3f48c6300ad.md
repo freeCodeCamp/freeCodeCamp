@@ -1,11 +1,13 @@
 ---
 id: 5dfa30b9eacea3f48c6300ad
-title: Passo 14
+title: Passo 15
 challengeType: 0
-dashedName: step-14
+dashedName: step-15
 ---
 
 # --description--
+
+Nos passos anteriores, você usou um elemento de âncora para transformar texto em um link. Outros tipos de conteúdo também podem ser transformados em link, colocando-os dentro de tags de elementos de âncora.
 
 Transforme a imagem em um link, envolvendo-a com as tags dos elementos necessários. Use `https://freecatphotoapp.com` como valor do atributo `href` do elemento de âncora.
 
@@ -73,11 +75,11 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+      <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
 --fcc-editable-region--
       <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back.">
 --fcc-editable-region--

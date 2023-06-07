@@ -1,7 +1,7 @@
 ---
 id: 5900f43e1000cf542c50ff50
 title: 'Завдання 210: Тупокутні трикутники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles
 ---

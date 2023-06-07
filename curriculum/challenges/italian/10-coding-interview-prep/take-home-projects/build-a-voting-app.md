@@ -8,7 +8,7 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://voting-app.freecodecamp.rocks/>. Usare un costruttore di siti di tua scelta per completare il progetto.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://voting-app.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://voting-app.freecodecamp.rocks/</a>. Usare un costruttore di siti di tua scelta per completare il progetto.
 
 Ecco le specifiche user story da implementare per questo progetto:
 
@@ -28,7 +28,7 @@ Ecco le specifiche user story da implementare per questo progetto:
 
 **User Story:** Come utente autenticato, se non ti piacciono le opzioni su un sondaggio, puoi creare una nuova opzione.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo Link GitHub.
 
 # --solutions--
 

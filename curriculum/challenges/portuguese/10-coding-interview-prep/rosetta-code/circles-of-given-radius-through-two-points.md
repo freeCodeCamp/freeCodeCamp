@@ -1,7 +1,7 @@
 ---
 id: 5951815dd895584b06884620
 title: Círculos de raio determinado através de dois pontos
-challengeType: 5
+challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
 ---

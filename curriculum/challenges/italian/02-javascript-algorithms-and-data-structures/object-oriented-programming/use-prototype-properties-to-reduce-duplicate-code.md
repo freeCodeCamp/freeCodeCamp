@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-Dal momento che tutte le istanze hanno automaticamente le proprietà del `prototype`, pensa a un `prototype` come una "ricetta" per creare oggetti. Nota che il `prototype` per `duck` e per `canary` fa parte del costruttore `Bird` come `Bird.prototype`. Quasi ogni oggetto in JavaScript ha una proprietà `prototype` che fa parte della funzione costruttore che lo ha creato.
+Dal momento che tutte le istanze hanno automaticamente le proprietà del `prototype`, pensa a un `prototype` come una "ricetta" per creare oggetti. Nota che il `prototype` per `duck` e per `canary` fa parte del costruttore `Bird` come `Bird.prototype`.
 
 # --instructions--
 

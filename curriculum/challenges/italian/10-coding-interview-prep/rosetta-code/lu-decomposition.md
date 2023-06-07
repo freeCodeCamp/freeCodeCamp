@@ -1,20 +1,20 @@
 ---
 id: 5e6decd8ec8d7db960950d1c
 title: Scomposizione LU
-challengeType: 5
+challengeType: 1
 forumTopicId: 385280
 dashedName: lu-decomposition
 ---
 
 # --description--
 
-Ogni matrice quadrata $A$ può essere scomposta in un prodotto di una matrice triangolare inferiore $L$ e una matrice triangolare superiore $U$, come descritto in [decomposizione LU](https://it.wikipedia.org/wiki/Decomposizione_LU).
+Ogni matrice quadrata $A$ può essere decomposta nel prodotto di una matrice triangolare inferiore $L$ e una matrice triangolare superiore $U$. Questo è noto come decomposizione LU.
 
 $A = LU$
 
 È una forma modificata di eliminazione gaussiana.
 
-Mentre la decomposizione [Cholesky](http://rosettacode.org/wiki/Cholesky decomposition) funziona solo per matrici definite simmetriche e positive, la decomposizione LU più generale funziona per qualsiasi matrice quadrata.
+Anche se la decomposizione di Cholesky funziona solo per matrici positive definite simmetriche, la più generica decomposizione LU funziona per qualsiasi matrice quadrata.
 
 Ci sono diversi algoritmi per calcolare $L$ e $U$.
 

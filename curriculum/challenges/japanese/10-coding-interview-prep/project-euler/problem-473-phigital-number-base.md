@@ -1,7 +1,7 @@
 ---
 id: 5900f5461000cf542c510058
 title: '問題 473: フィジタル進数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
 ---
@@ -22,7 +22,7 @@ $2 = \varphi + \varphi^{-2}$, $3 = \varphi^{2} + \varphi^{-2}$
 
 $\varphi$ の累乗の和を表すために、0 と 1 からなり、負の指数の開始点が小数点で示されている文字列を使用します。 この表記法を「フィジタル進数」と呼ぶことにします。
 
-したがって、$1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$, $14 = 100100.001001_{\varphi}$ となります。 フィジタル進数の 1, 2, 14 を表す文字列は回文数で、3 を表す文字列は回文数ではありません (フィジタル進数の小数点が中央の文字ではありません)。
+したがって、$1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$, $14 = 100100.001001_{\varphi}$ となります。 The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not (the phigital point is not the middle character).
 
 フィジタル進数で表すと回文数になる 1000 以下の正の整数の和は 4345 です。
 

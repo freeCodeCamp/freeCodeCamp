@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn CSS Animation by Building a Ferris Wheel Project
-block: Learn CSS Animation by Building a Ferris Wheel
-superBlock: Responsive Web Design
+block: learn-css-animation-by-building-a-ferris-wheel
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Learn CSS Animation by Building a Ferris Wheel Project

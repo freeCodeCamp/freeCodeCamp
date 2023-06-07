@@ -1,7 +1,7 @@
 ---
 id: 596fd036dc1ab896c5db98b1
 title: 秒を複合表示に変換
-challengeType: 5
+challengeType: 1
 forumTopicId: 302236
 dashedName: convert-seconds-to-compound-duration
 ---

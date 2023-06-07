@@ -1,7 +1,7 @@
 ---
 id: 5900f5361000cf542c510048
 title: 'Завдання 457: Многочлен квадрата простих чисел за модулем'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302131
 dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 ---

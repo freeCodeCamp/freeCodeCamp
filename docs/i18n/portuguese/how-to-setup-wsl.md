@@ -91,7 +91,7 @@ Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas
 
 4. Agora você pode acessar o serviço no Windows ou Ubuntu em `mongodb://localhost:27017`.
 
-## Instalando Node.js e npm
+## Instalando o Node.js e o pnpm
 
 Recomendamos que você instale a versão LTS para Node.js com um gerenciador de versões do node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -111,13 +111,13 @@ nvm install 14
 nvm use 12
 ```
 
-O Node.js vem com o `npm` embutido. Você pode atualizar para as versões mais recentes do `npm` com:
+O Node.js vem com o `npm`, que você pode usar para instalar o `pnpm`:
 
 ```console
-npm install -g npm@latest
+npm install -g pnpm
 ```
 
-## Configure localmente o freeCodeCamp
+## Configure o freeCodeCamp localmente
 
 Agora que você instalou os pré-requisitos, siga [nosso guia de instalação local](how-to-setup-freecodecamp-locally.md) para clonar, instalar e configurar o freeCodeCamp em sua máquina.
 
@@ -127,7 +127,7 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
 
 ## Links Úteis
 
-- [Configuração de desenvolvimento WSL2 com Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - um artigo de Mrugesh Mohapatra (Desenvolvedor de Equipe na freeCodeCamp.org)
+- [Configuração de desenvolvimento do WSL2 com Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - um artigo de Mrugesh Mohapatra (desenvolvedor da equipe do freeCodeCamp.org)
 - Perguntas frequentes sobre:
   - [Subsistema Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)

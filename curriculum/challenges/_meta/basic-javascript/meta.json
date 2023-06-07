@@ -2,6 +2,7 @@
   "name": "Basic JavaScript",
   "isUpcomingChange": false,
   "dashedName": "basic-javascript",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "10 hours",
   "template": "",
@@ -460,4 +461,5 @@
       "5cc0bd7a49b71cb96132e54c",
       "Use Recursion to Create a Range of Numbers"
     ]
-  ]}
+  ]
+}

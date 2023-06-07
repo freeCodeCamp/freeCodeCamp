@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Responsive Web Design Challenges
-block: Responsive Web Design Principles
-superBlock: Responsive Web Design
+block: responsive-web-design-principles
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the Responsive Web Design Challenges

@@ -232,3 +232,15 @@ it('Worker executor should get worker from specified location', async () => {
   expect(global.Worker).toBeCalledTimes(1);
   expect(global.Worker).toBeCalledWith('/other/location/test.js');
 });
+
+it('Task should only emit handler once', () => {
+  mockWorker();
+  const testWorker = createWorker('test');
+  const task = testWorker.execute('test');
+  const handler = jest.fn();
+  task.once('testOnce', handler);
+
+  task.emit('testOnce', handler);
+  task.emit('testOnce', handler);
+  expect(handler).toBeCalledTimes(1);
+});

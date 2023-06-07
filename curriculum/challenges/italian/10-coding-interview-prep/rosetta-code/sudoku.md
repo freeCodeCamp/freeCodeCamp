@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc803c
 title: Sudoku
-challengeType: 5
+challengeType: 1
 forumTopicId: 302329
 dashedName: sudoku
 ---
 
 # --description--
 
-Scrivi una funzione per risolvere una normale griglia di [Sudoku](https://en.wikipedia.org/wiki/Sudoku) 9x9 parzialmente riempita e restituisci il risultato. I campi vuoti sono rappresentati da `-1`. [Gli algoritmi di risoluzione di Sudoku](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku) possono aiutare ad implementarlo.
+Scrivi una funzione per risolvere una normale griglia Sudoku 9x9 parzialmente riempita e restituisci il risultato. I campi vuoti sono rappresentati da `-1`.
 
 # --hints--
 

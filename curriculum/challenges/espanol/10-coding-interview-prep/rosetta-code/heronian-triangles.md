@@ -1,14 +1,14 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: Heronian triangles
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---
 
 # --description--
 
-[Hero's formula](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+Hero's formula for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

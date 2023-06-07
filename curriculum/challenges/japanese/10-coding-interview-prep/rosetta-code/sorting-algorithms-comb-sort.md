@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8005
 title: ソートアルゴリズム / コムソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
 ---
@@ -10,28 +10,22 @@ dashedName: sorting-algorithmscomb-sort
 
 *コムソート*を実装します。
 
-**コムソート**は[バブルソート](https://rosettacode.org/wiki/Bubble Sort)の改変版です。
+The **Comb Sort** is a variant of the Bubble Sort.
 
-[シェルソート](https://rosettacode.org/wiki/Shell sort)と同様、コムソートは比較交換する要素の間隔を大きくします。
+Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
 
 間隔を $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ で割るのが最適ですが、1.3 がより実用的かもしれません。
 
 一部の実装では、間隔が一定距離以下になると挿入ソートを使用します。
 
-**参照:**
+Variants:
 
 <ul>
-  <li>Wikipediaの記事: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>コムソート</a>。</li>
+  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
+  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
 </ul>
 
-バリエーション:
-
-<ul>
-  <li>コムソート11 は、間隔の結果を (11, 8, 6, 4, 3, 2, 1) となるようにするもので、他の 2 つの起こり得る間隔の場合よりもずっと高速になります。</li>
-  <li>データがほぼソートされたとき (間隔が小さいとき) 、間隔の結果を変化させると、より効率的なソートになります。 間隔が小さい時のコムソートはバブルソートとほぼ変わりません。</li>
-</ul>
-
-擬似コード:
+Pseudocode:
 
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//initialize gap size</i>
@@ -59,41 +53,41 @@ dashedName: sorting-algorithmscomb-sort
 
 # --instructions--
 
-コムソートを使って、与えられた配列をソートする関数を記述してください。
+Write a function that sorts a given array using Comb sort.
 
 # --hints--
 
-`combSort` は関数とします。
+`combSort` should be a function.
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` は配列を返す必要があります。
+`combSort([25, 32, 12, 7, 20])` should return an array.
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` は `[7, 12, 20, 25, 32]` を返す必要があります。
+`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` は `[8, 13, 35, 38, 45]` を返す必要があります。
+`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` は `[20, 24, 34, 36, 43]` を返す必要があります。
+`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` は `[1, 12, 16, 18, 26, 33, 38]` を返す必要があります。
+`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -107,7 +101,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` は `[1, 3, 4, 16, 29, 39, 48]` を返す必要があります。
+`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

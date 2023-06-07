@@ -19,7 +19,7 @@ Na classe `penguin`, altere o valor `black` para `gray`, o valor `gray` para `wh
 
 # --hints--
 
-A classe `penguin` deve declarar a variável `--penguin-skin` e atribuí-la ao valor `gray`.
+A classe `penguin` deve declarar a variável `--penguin-skin` e atribuir a ela o valor `gray` (cinza).
 
 ```js
 assert(

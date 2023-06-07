@@ -21,7 +21,7 @@ Ricorda che tutte le funzioni `cubic-bezier` iniziano con `p0` a (0, 0) e termin
 
 # --instructions--
 
-Per vedere l'effetto di questa curva di Bezier in azione, cambia la `animation-timing-function` dell'elemento con id `red` in una funzione `cubic-bezier` con valori x1, y1, x2, y2 fissati rispettivamente a 0, 0, 0.58, 1. Questo farà progredire entrambi gli elementi attraverso l'animazione in modo simile.
+Per vedere l'effetto di questa curva di Bezier in azione, cambia la `animation-timing-function` dell'elemento con id `red` in una funzione `cubic-bezier` con valori x1, y1, x2, y2 fissati rispettivamente a `0, 0, 0.58, 1`. Questo farà progredire entrambi gli elementi attraverso l'animazione in modo simile.
 
 # --hints--
 

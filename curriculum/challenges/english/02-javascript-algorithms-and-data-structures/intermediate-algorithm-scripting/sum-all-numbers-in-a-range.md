@@ -1,7 +1,7 @@
 ---
 id: a3566b1109230028080c9345
 title: Sum All Numbers in a Range
-challengeType: 5
+challengeType: 1
 forumTopicId: 16083
 dashedName: sum-all-numbers-in-a-range
 ---

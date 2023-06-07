@@ -1,7 +1,7 @@
 ---
 id: 5900f4f81000cf542c51000b
 title: 'Задача 396: Слабка Послідовність Гудштейна'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302061
 dashedName: problem-396-weak-goodstein-sequence
 ---

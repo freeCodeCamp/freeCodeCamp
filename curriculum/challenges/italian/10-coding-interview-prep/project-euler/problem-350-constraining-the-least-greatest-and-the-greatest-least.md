@@ -1,7 +1,7 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
 title: 'Problema 350: Mettere limiti al più piccolo più grande e al più grande più piccolo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302010
 dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 ---

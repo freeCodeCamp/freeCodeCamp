@@ -1,6 +1,6 @@
 ---
 id: 5f87ac112ae598023a42df1a
-title: Construye un Planificador de Citas de Salón
+title: Crea un planificador de citas de salón
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler

@@ -1,6 +1,6 @@
 ---
 id: bd7150d8c442eddfafb5bd1c
-title: P2P Video Chat Application
+title: Aplicación de chat de vídeo P2P
 challengeType: 4
 forumTopicId: 302366
 dashedName: p2p-video-chat-application
@@ -8,31 +8,31 @@ dashedName: p2p-video-chat-application
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://p2p-video-chat-application.freecodecamp.rocks/>.
+**Objetivo:**Crea una aplicación que sea funcionalmente similar a la siguiente: <a href="https://p2p-video-chat-application.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://p2p-video-chat-application.freecodecamp.rocks/</a>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Completa las siguientes historias de usuario y consigue que todas las pruebas se aprueben. Utiliza las librerías o APIs que necesites. Dale tu propio estilo personal.
 
-**User Story:** Upon arriving, the browser will prompt me to access my camera and microphone.
+**Historia del usuario:** Al acceder, el navegador me solicitará acceder a mi camera y mi micrófono.
 
-**User Story:** After I give it permission, I am prompted to type in a room name.
+**Historia del usuario:** Después de darle permiso, se me solicita escribir un nombre de sala.
 
-**User Story:** Once I type in the room name, a room will be created if no room of that name existed before.
+**Historia del usuario:**Una vez creo el nombre, la sala será creada si no había otra con el mismo nombre.
 
-**User Story:** A friend of mine can subsequently go to the same website, type in the same room I entered, and join the same room, then enter into a video chat with me.
+**Historia del usuario:** Un amigo mío puede ir posteriormente al mismo sitio web, escribir en la misma sala que ingresé y unirse a la misma sala, luego entrar a un video chat conmigo.
 
-**User Story:** If I type in a room name, and there are already two people in that room, I get a notification that the room is full.
+**Historia de usuario:** Si introduzco un nombre de habitación, y ya hay dos personas en esa habitación, recibo una notificación de que la habitación está llena.
 
-**User Story:** Anyone can create or join any room. And there can be any number of rooms, but all of them must have unique names.
+**Historia de usuario:** Cualquiera puede crear o unirse a cualquier sala. Y puede haber cualquier número de salas, pero todas deben tener nombres únicos.
 
-**User Story:** I can choose to not permit the site to access my microphone and webcam. If I choose not to do this, or if some other driver problem occurs, I see an error message saying these are required.
+**Historia de usuario:** Puedo elegir no permitir que el sitio tenga acceso a mi micrófono y cámara web. Si opto por no hacer esto, o si ocurre algún otro problema con el driver, veo un mensaje de error diciendo que son necesarios.
 
-**User Story:** When I choose to cancel the room name input step, or if I type in no name, or just spaces, it should again ask me again to type in a valid room name.
+**Historia del usuario:** Cuando decido cancelar el paso de elección del nombre de la sala, o si no escribo ningún nombre, o sólo espacios, debería pedirme de nuevo que escriba un nombre de sala válido.
 
-**User Story:** If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.
+**Historia del usuario:** Si una de las dos personas de la sala se desconecta, puede volver a conectarse a la misma sala y continuar chateando.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Una vez que hayas terminado de implementar estas historias de usuario, introduce la URL en tu aplicación en vivo y, opcionalmente, en tu repositorio de GitHub. Luego, haga clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puedes obtener opiniones de tu proyecto compartiéndolo en el <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">foro freeCodeCamp</a>.
 
 # --solutions--
 

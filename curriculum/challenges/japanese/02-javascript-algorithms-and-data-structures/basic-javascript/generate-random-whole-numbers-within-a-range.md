@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-前回は、ゼロから指定した数値までの整数の乱数を生成しましたが、2 つの特定の数値の範囲内で整数の乱数を生成することができます。
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-それには最小値 `min` と最大値 `max` を定義します。
+You'll call your minimum number `min` and your maximum number `max`.
 
-ここでは次のような式を使用します。 このコードの動作を理解して確かめてみてください。
+This formula gives a random whole number in the range from `min` to `max`. このコードの動作を理解して確かめてみてください。
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-`myMin` から `myMax` までを範囲とする `randomRange` という関数を作成し、`myMin` 以上 `myMax` 以下の整数の乱数を返してください。
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

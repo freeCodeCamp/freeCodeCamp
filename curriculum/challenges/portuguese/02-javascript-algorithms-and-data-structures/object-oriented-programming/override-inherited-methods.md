@@ -40,7 +40,7 @@ Se você tem uma instância `let duck = new Bird();` e você chamar `duck.eat()`
 
 1.  `duck` => o método `eat()` está definido aqui? Não.
 2.  `Bird` => o método `eat()` está definido aqui? => Sim. Execute isso e pare de procurar.
-3.  `Animal` => `eat()` também é definido, mas o JavaScript parou de procurar antes de chegar a este level.
+3.  `Animal` => `eat()` também é definido, mas o JavaScript parou de procurar antes de chegar a este nível.
 4.  Objeto => JavaScript parou de procurar antes de chegar a este nível.
 
 # --instructions--

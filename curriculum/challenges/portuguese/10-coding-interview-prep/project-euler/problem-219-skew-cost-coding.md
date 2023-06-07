@@ -1,7 +1,7 @@
 ---
 id: 5900f4481000cf542c50ff5a
 title: 'Problema 219: Codificação de custo modificado'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301861
 dashedName: problem-219-skew-cost-coding
 ---

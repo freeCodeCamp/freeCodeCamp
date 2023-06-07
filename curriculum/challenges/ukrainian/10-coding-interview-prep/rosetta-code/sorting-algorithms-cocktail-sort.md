@@ -1,36 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: Алгоритми сортування/Шейкерне сортування
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--
 
-Шейкерне сортування – це удосконалене [сортування бульбашкою](https://rosettacode.org/wiki/Bubble Sort). Покращення в основному полягає в тому, що значення "струменять" в обох напрямках через масив, тому що на кожній ітерації шейкер упорядковує бульбашки один раз вперед і один раз назад. Псевдокод для алгоритму (взято з [Вікіпедії](https://en.wikipedia.org/wiki/Cocktail sort)):
-
-<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
-  <b>do</b>
-    swapped := false
-    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// перевірте, чи два елементи</i>
-                                <i>// знаходяться в неправильному</i>
-                                <i>// порядку</i>
-        swap( A[ i ], A[ i+1 ] ) <i>// поміняйте два елементи</i>
-                                 <i>// місцями</i>
-        swapped := true;
-    <b>if</b> swapped = false <b>then</b>
-      <i>// можна вийти із зовнішнього циклу тут, якщо жодних замін не відбулося.</i>
-      <b>break do-while loop</b>;
-    swapped := false
-    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
-        swap( A[ i ], A[ i+1 ] )
-        swapped := true;
-  <b>while</b> swapped; <i>// якщо жодні елементи не помінялися місцями,</i>
-                <i>// сортування виконано</i>
-</pre>
+The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
 
 # --instructions--
 

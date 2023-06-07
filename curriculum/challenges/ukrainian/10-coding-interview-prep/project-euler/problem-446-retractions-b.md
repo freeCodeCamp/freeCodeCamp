@@ -1,7 +1,7 @@
 ---
 id: 5900f52c1000cf542c51003d
 title: 'Завдання 446: Скорочення B'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302118
 dashedName: problem-446-retractions-b
 ---

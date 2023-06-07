@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: Sorting algorithms/Shell sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---

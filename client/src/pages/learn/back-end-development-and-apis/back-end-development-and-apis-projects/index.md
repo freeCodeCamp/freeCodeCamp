@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Back End Development and APIs Projects
-block: Back End Development and APIs Projects
-superBlock: Back End Development and APIs
+block: back-end-development-and-apis-projects
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the Back End Development and APIs Projects

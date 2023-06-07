@@ -1,7 +1,7 @@
 ---
 id: 59669d08d75b60482359409f
 title: Формат дати
-challengeType: 5
+challengeType: 1
 forumTopicId: 302243
 dashedName: date-format
 ---

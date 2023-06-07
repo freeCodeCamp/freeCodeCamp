@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feea
 title: '問題 107: 最小ネットワーク'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
 ---
@@ -27,7 +27,7 @@ dashedName: problem-107-minimal-network
 
 しかし、ネットワーク上のすべての頂点がつながっている状態を保ちながら一部の辺を取り除くことにより、このネットワークを最適化することができます。 最大限の節約を実現するネットワークを下に示します。 このネットワークの重みは 93 で、元のネットワークからの節約量は 243 - 93 = 150 となります。
 
-<img class="img-responsive center-block" alt="7 頂点と残された 6 辺 (AB, BD, CA, DE, DF, EG) で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
 ネットワークを行列形式で表す二次元配列 `network` を使用して、ネットワークの連結を保ちながら余分な辺を取り除くことで実現できる最大節約量を求めなさい。 連結されていない頂点は `-1` で表されます。
 

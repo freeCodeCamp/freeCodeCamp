@@ -1,7 +1,7 @@
 ---
 id: 5900f3ef1000cf542c50ff02
 title: 'Problema 131: l''alleanza dei cubi e dei numei primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301759
 dashedName: problem-131-prime-cube-partnership
 ---

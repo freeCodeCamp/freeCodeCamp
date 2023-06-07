@@ -1,7 +1,7 @@
 ---
 id: 5900f5361000cf542c510048
 title: '問題 457: 素数の平方数を法とする多項式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302131
 dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 ---

@@ -25,7 +25,7 @@ Dovresti sempre dichiarare le variabili che non vuoi riassegnare usando la parol
 
 # --instructions--
 
-Modifica il codice in modo che tutte le variabili siano dichiarate utilizzando `let` o `const`. Usa `let` quando vuoi che la variabile possa cambiare e `const` quando vuoi che la variabile rimanga costante. Inoltre, rinomina le variabili dichiarate con `const` per conformarti alle pratiche comuni.
+Modifica il codice in modo che tutte le variabili siano dichiarate utilizzando `let` o `const`. Usa `let` quando vuoi che la variabile possa cambiare e `const` quando vuoi che la variabile rimanga costante. Inoltre, rinomina le variabili dichiarate con `const` per conformarti alle pratiche comuni. Non cambiare la stringa assegnata alla variabile.
 
 # --hints--
 
@@ -45,8 +45,13 @@ assert.notMatch(code, /(fCC)/);
 `FCC` dovrebbe essere una variabile costante dichiarata con `const`.
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
+```
+
+La stringa assengata a `FCC` non dovrebbe essere cambiata.
+
+```js
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
 `fact` dovrebbe essere dichiarata con `let`.

@@ -1,7 +1,7 @@
 ---
 id: 5900f4a21000cf542c50ffb5
 title: 'Problema 310: Nim Quadrato'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301966
 dashedName: problem-310-nim-square
 ---

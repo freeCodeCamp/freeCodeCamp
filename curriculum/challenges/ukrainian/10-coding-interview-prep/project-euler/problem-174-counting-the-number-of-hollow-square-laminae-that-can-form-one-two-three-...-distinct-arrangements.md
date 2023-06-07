@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 title: >-
   Завдання 174: Підрахунок кількості квадратних рамок, які можуть утворювати одну, дві, три, ... різні композиції
-challengeType: 5
+challengeType: 1
 forumTopicId: 301809
 dashedName: >-
   problem-174-counting-the-number-of-hollow-square-laminae-that-can-form-one-two-three-----distinct-arrangements

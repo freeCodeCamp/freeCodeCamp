@@ -8,13 +8,13 @@ dashedName: announce-new-users
 
 # --description--
 
-许多聊天室都有这个功能：所有已连接到服务器的在线用户都会看到有人加入或退出的提醒。 我们已经写好了处理连接和断开事件的代码，只要对这个方法稍作修改就可以实现这个功能。 在事件中，我们需要发送这三条信息：连接或断开的用户名、当前用户数量、事件类型（即需要知道用户究竟是连接还是断开）。
+许多聊天室都有这个功能：所有已连接到服务器的在线用户都会看到有人加入或退出的提醒。 我们已经写好了处理连接和断开事件的代码，只要对这个方法稍作修改就可以实现这个功能。 最合理的方式是随事件发送 3 个数据：连接/断开连接的用户的用户名、当前的用户数，以及该用户名是否连接或断开连接。
 
-请将事件名称更改为 `'user'`，其中应包含如下字段：'name'、'currentUsers'、'connected'（布尔值，连接上即为 `true`，断开则是 `false`）。 请务必更改两个 user count 事件，设置 disconnect 事件向 connected 字段发送 `false` ，而不是像 connect 事件一样发送 `true`。
+将事件名称更改为 `'user'`，传递一个对象，其中应包含如下字段：`username`、`currentUsers` 和 `connected`（布尔值，连接上即为 `true`，断开则是 `false`）。 记得更改两个 `'user count'` 事件，设置断开连接事件向 `connected` 字段发送 `false` ，而不是像连接上的事件一样发送 `true`。
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  username: socket.request.user.username,
   currentUsers,
   connected: true
 });
@@ -28,55 +28,49 @@ io.emit('user', {
 socket.on('user', data => {
   $('#num-users').text(data.currentUsers + ' users online');
   let message =
-    data.name +
+    data.username +
     (data.connected ? ' has joined the chat.' : ' has left the chat.');
   $('#messages').append($('<li>').html('<b>' + message + '</b>'));
 });
 ```
 
-完成上述要求后，你可以在下方提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286) 的答案。
+完成上述要求后，你可以在下方提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 
-事件 `'user'` 应该包含，name、 currentUsers 和 connected。
+事件 `'user'` 应该与 `name`、`currentUsers` 和 `connected` 一起发送。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.emit.*('|")user\1.*name.*currentUsers.*connected/gis,
-        'You should have an event emitted named user sending name, currentUsers, and connected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,
+    'You should have an event emitted named user sending name, currentUsers, and connected'
   );
+}
 ```
 
 客户端应处理和显示 `'user'` 中的新数据。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*num-users/gi,
-        'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
-      );
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*messages.*li/gi,
-        'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*num-users/s,
+    'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
   );
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*messages.*li/s,
+    'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
+  );
+}
 ```
 
 # --solutions--

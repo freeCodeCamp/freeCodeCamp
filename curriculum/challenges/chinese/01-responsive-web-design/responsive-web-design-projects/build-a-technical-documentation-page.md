@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -24,7 +24,7 @@ dashedName: build-a-technical-documentation-page
 1. 此外，导航栏应包含 class 为 `nav-link` 的链接元素（`a`）。 每个 class 为 `main-section` 的元素都需要有一个。
 1. `#navbar` 中的 `header` 元素必须在任何链接 (`a`) 之前。
 1. class 为 `nav-link` 的每个元素都应该包含每个 `section` 的 `header` 文本对应的文本（例如，如果你有一个 “Hello world” 部分/标题，你的导航栏应该有一个包含文本 “Hello world” 的元素）。
-1. 当你点击一个 navbar 元素时，页面应该导航到 `main-doc` 元素的相应部分（例如，如果你点击包含文本 “Hello world” 的 `nav-link` 元素，页面将导航到一个带有对应 header 和 id 的 `section` 元素）。
+1. 当你点击一个 navbar 元素时，页面应该导航到 `#main-doc` 元素的相应部分（例如，如果你点击包含文本 “Hello world” 的 `.nav-link` 元素，页面将导航到一个带有对应 header 和 id 的 `section` 元素）。
 1. 在常规尺寸的设备上（笔记本电脑、台式机），带有 `id="navbar"` 的元素应该显示在屏幕左侧，并且始终对用户可见。
 1. 你的技术文档应该使用至少一个媒体查询。
 
@@ -106,7 +106,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-在你的 `.main-section` 元素中应该至少有 10 个 `p` 元素（总计）。
+在你的 `.main-section` 元素中总计应有至少 10 个 `p` 元素
 
 ```js
 const els = document.querySelectorAll('.main-section p')
@@ -174,7 +174,7 @@ const els2 = document.querySelectorAll('.nav-link')
 assert(els1.length > 0 && els2.length > 0 && els1.length === els2.length)
 ```
 
-`#navbar` 中的 `header` 元素必须在 `#navbar` 中的任何链接 (`a`) 之前。
+`#navbar` 中的 `header` 元素必须在 `#navbar` 中的任何链接（`a`）之前。
 
 ```js
 const navLinks = document.querySelectorAll('#navbar a.nav-link');
@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

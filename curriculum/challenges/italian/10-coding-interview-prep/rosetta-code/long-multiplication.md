@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
 title: Moltiplicazione lunga
-challengeType: 5
+challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
 ---
 
 # --description--
 
-Implementa esplicitamente [una moltiplicazione lunga](https://en.wikipedia.org/wiki/long multiplication).
+Implementa esplicitamente la moltiplicazione in colonna.
 
 Questo è un possibile approccio all'algebra intera a precisione arbitraria.
 

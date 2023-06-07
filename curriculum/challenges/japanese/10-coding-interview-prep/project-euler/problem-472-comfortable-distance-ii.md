@@ -1,7 +1,7 @@
 ---
 id: 5900f5451000cf542c510057
 title: '問題 472: 快適な距離 (2)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302149
 dashedName: problem-472-comfortable-distance-ii
 ---

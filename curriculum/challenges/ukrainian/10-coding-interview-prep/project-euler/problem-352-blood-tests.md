@@ -1,7 +1,7 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
 title: 'Задача 352: Аналізи крові'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302012
 dashedName: problem-352-blood-tests
 ---

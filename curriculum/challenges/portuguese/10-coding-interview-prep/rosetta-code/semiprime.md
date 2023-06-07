@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4aa847216613aa81983
 title: Semiprimo
-challengeType: 5
+challengeType: 1
 forumTopicId: 385318
 dashedName: semiprime
 ---
 
 # --description--
 
-Números semiprimos são números naturais que são produtos de dois [números primos](https://rosettacode.org/wiki/prime_number) (que podem ser iguais).
+Números semiprimos são números naturais que são produtos de dois <a href="https://rosettacode.org/wiki/prime_number" target="_blank" rel="noopener noreferrer nofollow">números primos</a> (que podem ser iguais).
 
 <pre>1679  =  23 x 73</pre>
 

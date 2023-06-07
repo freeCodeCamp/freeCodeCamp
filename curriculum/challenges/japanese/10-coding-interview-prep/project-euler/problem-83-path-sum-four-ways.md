@@ -1,7 +1,7 @@
 ---
 id: 5900f3bf1000cf542c50fed2
 title: '問題 83: 経路の和: 4 方向'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302197
 dashedName: problem-83-path-sum-four-ways
 ---

@@ -1,7 +1,7 @@
 ---
 id: acda2fb1324d9b0fa741e6b5
 title: 末尾の一致判定
-challengeType: 5
+challengeType: 1
 forumTopicId: 16006
 dashedName: confirm-the-ending
 ---

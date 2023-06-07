@@ -10,7 +10,11 @@ dashedName: rock-paper-scissors
 
 In questa sfida creerai un programma per giocare a carta, sasso, forbici. Un programma che sceglie a caso di solito vincerà il 50% delle volte. Per superare questa sfida il tuo programma deve giocare partite contro quattro diversi bot, vincendo almeno il 60% dei giochi in ogni partita.
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
 Stiamo ancora sviluppando la parte di didattica interattiva per il programma di machine learning. Per ora, dovrai utilizzare altre risorse per imparare a superare questa sfida.
 
@@ -32,7 +36,7 @@ Non cambiare `RPS_game.py`. Scrivi tutto il tuo codice in `RPS.py`. Per lo svilu
 
 Per testare il tuo codice, fai una partita usando la funzione `play`. La funzione `play` prende quattro argomenti:
 
-- due giocatori per giocare uno contro l'altro (i giocatori sono in realtà funzioni)
+- due giocatori per giocare uno contro l'altro (i giocatori sono in realtà delle funzioni)
 - il numero di mani da giocare nella partita
 - un argomento opzionale per vedere la storia di ogni partita. Impostalo su `True` per vedere questi messaggi.
 

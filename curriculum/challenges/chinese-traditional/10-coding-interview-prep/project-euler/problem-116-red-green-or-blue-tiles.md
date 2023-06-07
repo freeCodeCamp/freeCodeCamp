@@ -1,7 +1,7 @@
 ---
 id: 5900f3e01000cf542c50fef3
 title: 'Problem 116: Red, green or blue tiles'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301742
 dashedName: problem-116-red-green-or-blue-tiles
 ---
@@ -12,23 +12,23 @@ A row of five black square tiles is to have a number of its tiles replaced with 
 
 If red tiles are chosen there are exactly seven ways this can be done.
 
-<img class="img-responsive center-block" alt="Possible ways to placing red oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="將紅色塊放在長度爲 5 個單元的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px;" />
 
 If green tiles are chosen there are three ways.
 
-<img class="img-responsive center-block" alt="Possible ways of placing green oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="將綠色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
 
 And if blue tiles are chosen there are two ways.
 
-<img class="img-responsive center-block" alt="Possible ways of placing blue oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="將藍色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
 
-Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colors cannot be mixed and at least one colored tile must be used?
+假定顏色不能混合，則有 7 + 3 + 2 = 12 種方法來替換長度爲 5 個單位的黑色瓷磚。 如果顏色不能混合且至少必須使用一個彩色瓷塊，那麼一行長度爲50個單位的黑色瓷塊可以有多少種不同的更換方式？
 
-**Note:** This is related to Problem 117.
+**注意：** 這與問題 117 有關。
 
 # --hints--
 
-`redGreenBlueOne()` should return `20492570929`.
+`redGreenBlueOne()` 應該返回 `20492570929`。
 
 ```js
 assert.strictEqual(redGreenBlueOne(), 20492570929);

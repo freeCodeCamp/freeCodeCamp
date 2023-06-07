@@ -14,7 +14,7 @@ Scriviamo un metodo `removeAt` che rimuove l'elemento `element` in un dato `inde
 
 Una tecnica comune utilizzata per iterare attraverso gli elementi di una lista concatenata comporta un <dfn>'runner'</dfn>, o sentinella, che 'punti' ai nodi che il tuo codice sta confrontando. Nel nostro caso, a partire dalla `head` della nostra lista, iniziamo con una variabile `currentIndex` che inizia da `0`. Il `currentIndex` dovrebbe aumentare di uno per ogni nodo che passiamo.
 
-Proprio come il nostro metodo `remove(element)`, che [abbiamo coperto in una lezione precedente](/italian/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), dobbiamo stare attenti a non rendere orfano il resto della nostra lista quando rimuoviamo il nodo nel nostro metodo `removeAt(index)`. Manteniamo i nostri nodi contigui assicurandoci che il nodo che fa riferimento al nodo rimosso abbia un riferimento al nodo successivo.
+Proprio come il nostro metodo `remove(element)`, che <a href="/italian/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">abbiamo coperto in una lezione precedente</a>, dobbiamo stare attenti a non rendere orfano il resto della nostra lista quando rimuoviamo il nodo nel nostro metodo `removeAt(index)`. Manteniamo i nostri nodi contigui assicurandoci che il nodo che fa riferimento al nodo rimosso abbia un riferimento al nodo successivo.
 
 # --instructions--
 

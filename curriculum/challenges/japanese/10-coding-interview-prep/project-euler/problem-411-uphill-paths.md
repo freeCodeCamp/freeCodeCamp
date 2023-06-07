@@ -1,7 +1,7 @@
 ---
 id: 5900f5081000cf542c510019
 title: '問題 411: 登り坂を描く経路'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302080
 dashedName: problem-411-uphill-paths
 ---

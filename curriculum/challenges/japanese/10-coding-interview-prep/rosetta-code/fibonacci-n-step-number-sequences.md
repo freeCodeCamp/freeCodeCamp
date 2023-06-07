@@ -1,14 +1,14 @@
 ---
 id: 598eef80ba501f1268170e1e
 title: フィボナッチ n-ステップ 数列
-challengeType: 5
+challengeType: 1
 forumTopicId: 302267
 dashedName: fibonacci-n-step-number-sequences
 ---
 
 # --description--
 
-これらは、通常の[フィボナッチ数列](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") を応用したものです。
+These number series are an expansion of the ordinary Fibonacci sequence where:
 
 <ol>
   <li>$n = 2$ の場合、初期値が$[1, 1]$ と $F_k^2 = F_{k-1}^2 + F_{k-2}^2$ であるフィボナッチ数列となります。</li>
@@ -17,7 +17,7 @@ dashedName: fibonacci-n-step-number-sequences
   <li>通常の $n>2$ の場合は、フィボナッチ $n$-ステップ数列 - $F_k^n$となります。初期値は、$(n-1)$'th フィボナッチ $n$-ステップ数列 $F_k^{n-1}$ の最初の $n$ 値で、$n$ 番目の数列の $k$' 番目の値は、$F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$です。</li>
 </ol>
 
-$n$ が小さい値の場合、[ギリシャ語の数を表す接頭辞](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") が各列の名前を付けるのに使用されることがあります。
+For small values of $n$, Greek numeric prefixes are sometimes used to individually name each series.
 
 フィボナッチ $n$-ステップ 数列:
 
@@ -33,7 +33,7 @@ $n$ が小さい値の場合、[ギリシャ語の数を表す接頭辞](https:/
 | 9   | ノナナッチ  | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
 | 10  | デカナッチ  | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-類似の数列は、初期値が変更された場合に生成されます。[ルーカスシリーズ](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") は $n=2$ のフィボナッチシリーズのように先行する2つの値を合計しますが、$\[2, 1]$ を初期値として使用します。
+Allied sequences can be generated where the initial values are changed: The Lucas series sums the two preceding values like the fibonacci series for $n=2$ but uses $\[2, 1]$ as its initial values.
 
 # --instructions--
 

@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Repl.it</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Mocha te permite comprobar operaciones asíncronas como llamadas a los endpoints de la API con un complemento llamado `chai-http`.
 
@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -35,15 +36,19 @@ La primera `assert.equal` comprueba si el estado es igual a `200`. El segundo `a
 
 También, ten en cuenta el parámetro `done` en la función callback de la prueba. Llamarlo sin un argumento al final de una prueba es necesario para indicar que la operación asíncrona está completa.
 
+Finalmente, notese que método `keepOpen` va justo luego del método `request`. Normalmente podrías ejecutar tus pruebas desde la línea de comandos, o como parte de un proceso de integración automatizado, y puedes dejar que `chai-http` inicie y detenga tu servidor automáticamente.
+
+Sin embargo, las pruebas que se ejecutan cuando envía el enlace para tu proyecto requieren que tu servidor este levantado, entonces necesitas usar el método `keepOpen` para prevenir que `chai-http` de detenga tu servidor.
+
 # --instructions--
 
-Dentro de `tests/2_functional-tests.js`, modifica la prueba `'Test GET /hello with no name'` (`// #1`) para afirmar él `status` y el `text` de la respuesta para hacer que la prueba pase. No modifiques los argumentos pasados ​​a los verificadores.
+Dentro de `tests/2_functional-tests.js`, altera la prueba `'Test GET /hello with no name'` (`// #1`) para afirmar el `status` y el `text` de la respuesta para hacer que la prueba pase. Do not alter the arguments passed to the asserts.
 
-No debe haber ninguna consulta de URL. Sin una consulta de nombre URL, el endpoint responde con `hello Guest`.
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
-Todas las pruebas deben pasar
+All tests should pass
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ Todas las pruebas deben pasar
   );
 ```
 
-Debe comprobar si `res.status` == 200
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ Debe comprobar si `res.status` == 200
   );
 ```
 
-Debes probar que `res.text` == `'hello Guest'`
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

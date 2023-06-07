@@ -1,7 +1,7 @@
 ---
 id: 5900f4461000cf542c50ff59
 title: 'Завдання 218: Ідеальні прямокутні трикутники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
 ---

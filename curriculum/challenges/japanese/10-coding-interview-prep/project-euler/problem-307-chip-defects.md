@@ -1,7 +1,7 @@
 ---
 id: 5900f4a01000cf542c50ffb2
 title: '問題 307: IC チップの不良'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301961
 dashedName: problem-307-chip-defects
 ---

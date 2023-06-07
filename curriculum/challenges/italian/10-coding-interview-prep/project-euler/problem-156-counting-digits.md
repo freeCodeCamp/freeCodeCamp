@@ -1,7 +1,7 @@
 ---
 id: 5900f4091000cf542c50ff1b
 title: 'Problema 156: Contare le cifre'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301787
 dashedName: problem-156-counting-digits
 ---

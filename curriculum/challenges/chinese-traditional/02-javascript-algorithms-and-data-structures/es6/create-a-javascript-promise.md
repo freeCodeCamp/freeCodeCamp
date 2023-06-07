@@ -33,7 +33,7 @@ promise 應該接收一個函數做爲參數，該函數應該包含 `resolve` �
 ```js
 assert(
   code.match(
-    /Promise\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
+    /Promise\s*\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
   )
 );
 ```

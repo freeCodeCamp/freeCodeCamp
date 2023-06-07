@@ -13,7 +13,7 @@ Atualmente, a foto do gato possui bordas pontiagudas. Podemos arredondar essas b
 
 # --instructions--
 
-Você pode definir o valor da propriedade `border-radius` em pixels. Faça com com que a foto do gato tenha uma borda. Defina a propriedade `border-radius` com o valor de `10px`.
+Você pode definir o valor da propriedade `border-radius` em pixels. Faça com que a foto do gato tenha uma borda. Defina a propriedade `border-radius` com o valor de `10px`.
 
 **Observação:** este desafio aceita mais de uma solução. Por exemplo, você pode adicionar `border-radius` tanto à classe `.thick-green-border` quanto à classe `.smaller-image`.
 

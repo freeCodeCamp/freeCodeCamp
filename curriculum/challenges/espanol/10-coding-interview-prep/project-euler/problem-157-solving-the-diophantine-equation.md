@@ -1,65 +1,30 @@
 ---
 id: 5900f4091000cf542c50ff1c
 title: 'Problem 157: Solving the diophantine equation'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301788
 dashedName: problem-157-solving-the-diophantine-equation
 ---
 
 # --description--
 
-Consider the diophantine equation 1/a+1/b= p/10n with a, b, p, n positive integers and a ≤ b.
+Consider the diophantine equation $\frac{1}{a} + \frac{1}{b} = \frac{p}{{10}^n}$ with $a$, $b$, $p$, $n$ positive integers and $a ≤ b$.
 
-For n=1 this equation has 20 solutions that are listed below:
+For $n = 1$ this equation has 20 solutions that are listed below:
 
-1/1+1/1=20/10
+$$\begin{array}{lllll} \frac{1}{1}  + \frac{1}{1}  = \frac{20}{10} & \frac{1}{1} + \frac{1}{2}  = \frac{15}{10} & \frac{1}{1}  + \frac{1}{5}  = \frac{12}{10} & \frac{1}{1} + \frac{1}{10} = \frac{11}{10} & \frac{1}{2}  + \frac{1}{2}  = \frac{10}{10} \\\\
+  \frac{1}{2}  + \frac{1}{5}  = \frac{7}{10}   & \frac{1}{2} + \frac{1}{10} = \frac{6}{10} & \frac{1}{3}  + \frac{1}{6}  = \frac{5}{10}   & \frac{1}{3} + \frac{1}{15} = \frac{4}{10} & \frac{1}{4}  + \frac{1}{4}  = \frac{5}{10} \\\\
+  \frac{1}{4}  + \frac{1}{4}  = \frac{5}{10}  & \frac{1}{5}  + \frac{1}{5}  = \frac{4}{10} & \frac{1}{5}  + \frac{1}{10} = \frac{3}{10}  & \frac{1}{6}  + \frac{1}{30} = \frac{2}{10} & \frac{1}{10} + \frac{1}{10} = \frac{2}{10} \\\\
+  \frac{1}{11} + \frac{1}{110} = \frac{1}{10} & \frac{1}{12} + \frac{1}{60}  = \frac{1}{10} & \frac{1}{14} + \frac{1}{35}  = \frac{1}{10} & \frac{1}{15} + \frac{1}{30}  = \frac{1}{10} & \frac{1}{20} + \frac{1}{20}  = \frac{1}{10} \end{array}$$
 
-1/1+1/2=15/10
-
-1/1+1/5=12/10
-
-1/1+1/10=11/10
-
-1/2+1/2=10/10
-
-1/2+1/5=7/10
-
-1/2+1/10=6/10
-
-1/3+1/6=5/10
-
-1/3+1/15=4/10
-
-1/4+1/4=5/10
-
-1/4+1/20=3/10
-
-1/5+1/5=4/10
-
-1/5+1/10=3/10
-
-1/6+1/30=2/10
-
-1/10+1/10=2/10
-
-1/11+1/110=1/10
-
-1/12+1/60=1/10
-
-1/14+1/35=1/10
-
-1/15+1/30=1/10
-
-1/20+1/20=1/10
-
-How many solutions has this equation for 1 ≤ n ≤ 9?
+How many solutions has this equation for $1 ≤ n ≤ 9$?
 
 # --hints--
 
-`euler157()` should return 53490.
+`diophantineEquation()` should return `53490`.
 
 ```js
-assert.strictEqual(euler157(), 53490);
+assert.strictEqual(diophantineEquation(), 53490);
 ```
 
 # --seed--
@@ -67,12 +32,12 @@ assert.strictEqual(euler157(), 53490);
 ## --seed-contents--
 
 ```js
-function euler157() {
+function diophantineEquation() {
 
   return true;
 }
 
-euler157();
+diophantineEquation();
 ```
 
 # --solutions--

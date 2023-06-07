@@ -1,19 +1,19 @@
 ---
 id: 5956795bc9e2c415eb244de1
 title: Hash join
-challengeType: 5
+challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
 ---
 
 # --description--
 
-Un [inner join](https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/#how-to-use-an-inner-join-in-sql "news: SQL Join Types – Inner Join VS Outer Join Example#How to Use an INNER JOIN in SQL") è un'operazione che combina due tabelle di dati in una nuova tabella, in base ai valori di colonna corrispondenti. Il modo più semplice di implementare questa operazione è l'algoritmo [nested loop join](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join"), ma un'alternativa più scalabile è l'algoritmo [hash join](https://en.wikipedia.org/wiki/hash join "wp: hash join").
+Un'operazione inner join è un'operazione che combina due tabelle di dati in un'unica tabella, in base ai valori delle colonne che combaciano. Il modo più semplice per implementare questa operazione è l'algoritmo annidato loop join, ma un'alternativa più scalabile è l'algoritmo hash join.
 
 L'algoritmo "hash join" consiste in due passaggi:
 
 <ol>
-  <li><strong>Fase di Hash:</strong> Crea una <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimappa</a> da una delle due tabelle, che mappa ogni valore della colonna di unione a tutte le righe che lo contengono.</li>
+  <li><strong>Fase di hash:</strong> Crea una multimappa da una delle due tavole, mappando da ogni valore della colonna di unione a ogni riga che lo contiene.</li>
   <ul>
     <li>La multimappa deve supportare la ricerca basata su hash che scala meglio di una semplice ricerca lineare, perché questo è il punto di questo algoritmo.</li>
     <li>Idealmente dovremmo creare la multimappa per la tabella più piccola, riducendo così al minimo il tempo di creazione e la dimensione della memoria.</li>

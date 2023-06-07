@@ -1,12 +1,16 @@
 import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { User } from '../../../redux/prop-types';
 
-export interface MenuButtonProps {
+interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
   showMenu: () => void;
   hideMenu: () => void;
+  user?: User;
 }
 
 const MenuButton = ({
@@ -21,7 +25,8 @@ const MenuButton = ({
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (
       event.relatedTarget &&
-      !event.relatedTarget.closest('.universal-nav-right') &&
+      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.fcc_searchBar') &&
       displayMenu
     ) {
       hideMenu();
@@ -39,15 +44,17 @@ const MenuButton = ({
   return (
     <button
       aria-expanded={displayMenu}
-      className={`toggle-button-nav${
-        displayMenu ? ' reverse-toggle-color' : ''
-      }`}
+      className='exposed-button-nav'
       id='toggle-button-nav'
       onBlur={handleBlur}
       onClick={handleClick}
       ref={innerRef}
     >
-      {t('buttons.menu')}
+      <span className='menu-btn-icon'>
+        <FontAwesomeIcon icon={faBars} />
+        <span className='sr-only'>{t('buttons.menu')}</span>
+      </span>
+      <span className='menu-btn-text'>{t('buttons.menu')}</span>
     </button>
   );
 };

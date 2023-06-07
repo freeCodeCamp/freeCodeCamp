@@ -1,7 +1,7 @@
 ---
 id: 5900f5351000cf542c510047
 title: '問題 456: 原点を内包する三角形 (2)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302130
 dashedName: problem-456-triangles-containing-the-origin-ii
 ---

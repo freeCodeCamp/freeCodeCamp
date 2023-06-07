@@ -1,7 +1,7 @@
 ---
 id: 5900f4181000cf542c50ff2b
 title: 'Завдання 172: Дослідження чисел з кількома повторюваними цифрами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301807
 dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 ---

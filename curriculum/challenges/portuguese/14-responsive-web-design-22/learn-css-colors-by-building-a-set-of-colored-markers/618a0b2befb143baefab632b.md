@@ -11,7 +11,7 @@ Observe que as cores vermelho e ciano estão muito brilhantes perto uma da outra
 
 É uma prática melhor escolher uma cor como a cor dominante e usar sua cor complementar como um destaque para chamar a atenção para certos conteúdos na página.
 
-Primeiro, na regra `h1`, use a função `rgb` para definir a cor de fundo como ciano.
+Primeiro, na regra `h1`, use a função `rgb` para definir `background-color` como ciano.
 
 # --hints--
 
@@ -33,12 +33,12 @@ assert(new __helpers.CSSHelp(document).getStyle('h1')?.backgroundColor === 'rgb(
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colored Markers</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>CSS Color Markers</h1>

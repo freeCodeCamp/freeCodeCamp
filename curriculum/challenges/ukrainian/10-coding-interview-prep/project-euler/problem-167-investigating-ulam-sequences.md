@@ -1,7 +1,7 @@
 ---
 id: 5900f4141000cf542c50ff26
 title: 'Задача 167: Дослідження послідовностей Уляма'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301801
 dashedName: problem-167-investigating-ulam-sequences
 ---

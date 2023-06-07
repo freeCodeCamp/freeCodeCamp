@@ -1,7 +1,7 @@
 ---
 id: 5900f5431000cf542c510056
 title: '問題 471: 楕円に内接する三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302148
 dashedName: problem-471-triangle-inscribed-in-ellipse
 ---

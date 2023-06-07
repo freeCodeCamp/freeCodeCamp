@@ -16,7 +16,7 @@ Por exemplo, você cria um aplicativo "Lista de Coisas a Fazer" simples. Como pr
 
 O editor de código tem a maioria do componente `MyToDoList` configurado. Parte deste código deve parecer familiar se você completou o desafio de formulário controlado. Você notará um `textarea` e um `button`, junto com alguns métodos que rastreiam seus estados, mas nada é renderizado na página ainda.
 
-Dentro do `constructor`, crie um objeto `this.state` e defina dois estados: `userInput` deve ser inicializado como uma string vazia, e `toDoList` deve ser inicializado como um array vazio. Em seguida, exclua o comentário no método `render()` ao lado da variável `items`. Em seu lugar, mapeie sobre o array `toDoList` armazenado no estado interno do componente e renderize dinamicamente um `li` para cada item. Tente inserir a string `eat, code, sleep, repeat` dentro do `textarea`, depois clique no botão e veja o que acontece.
+Dentro do `constructor`, crie um objeto `this.state` e defina dois estados: `userInput` deve ser inicializado como uma string vazia, e `toDoList` deve ser inicializado como um array vazio. Em seguida, exclua o valor `null` no método `render()` ao lado da variável `items`. Em seu lugar, mapeie sobre o array `toDoList` armazenado no estado interno do componente e renderize dinamicamente um `li` para cada item. Tente inserir a string `eat, code, sleep, repeat` dentro do `textarea`, depois clique no botão e veja o que acontece.
 
 **Observação:** você pode saber que todos os elementos filhos do irmão criados por uma operação de mapeamento como esta precisam ser fornecidos com um atributo `key` exclusivo. Não se preocupe, este é o tema do próximo desafio.
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedc
 title: '問題 93: 算術式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
 ---

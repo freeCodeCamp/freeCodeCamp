@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e087d56ed3ffdc36be
-title: Passo 62
+title: Passo 61
 challengeType: 0
-dashedName: step-62
+dashedName: step-61
 ---
 
 # --description--
@@ -36,22 +36,20 @@ assert($('.established').css('font-style') === 'italic');
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="menu">
+      <main>
 --fcc-editable-region--
-      <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
 --fcc-editable-region--
-      <main>
         <section>
           <h2>Coffee</h2>
           <article class="item">
@@ -88,7 +86,7 @@ assert($('.established').css('font-style') === 'italic');
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

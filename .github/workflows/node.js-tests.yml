@@ -1,9 +1,21 @@
-name: Node.js CI
+name: CI - Node.js Test Current
+env:
+  NODE_OPTIONS: '--max_old_space_size=6144'
+
 on:
+  # Run on push events, but only for the below branches
   push:
-    branches-ignore:
-      - 'renovate/**'
+    branches:
+      - 'main'
+      - 'prod-**'
+  # Run on pull requests, but only for the below targets
   pull_request:
+    branches:
+      - 'main'
+      - 'next-**'
+  # Run on Merge Queue
+  merge_group:
+    types: [checks_requested]
 
 permissions:
   contents: read
@@ -12,29 +24,33 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
-
     strategy:
-      fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
+      fail-fast: false
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
       - name: Check number of lockfiles
         run: |
-          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 0 ]
           then
-            echo 'Error: found too many lockfiles in the repository'
+            echo -e 'Error: found package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
             exit 1
           fi
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -46,13 +62,13 @@ jobs:
       # currently, built as workspaces.
       - name: Lint Source Files
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
-          npm run build:curriculum
-          npm run lint
+          pnpm run build:curriculum
+          pnpm run lint
 
   test:
     name: Test
@@ -62,32 +78,44 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
           cp sample.env .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
 
   test-upcoming:
     name: Test Upcoming Changes
@@ -97,17 +125,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -115,15 +148,71 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
+
+  test-new:
+    name: Test New Curriculum
+    needs: lint
+    runs-on: ubuntu-20.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
+      - name: Install Dependencies
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+
+      - name: Run Tests
+        run: pnpm test
 
   test-localization:
     name: Localize
@@ -133,36 +222,74 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         locale: [chinese, espanol]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
           cp sample.env .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: npm test
+        run: pnpm test
+
+  failure-comment:
+    name: Comment on i18n Failure
+    needs: ['test', 'test-localization']
+    runs-on: ubuntu-20.04
+    if: ${{ always() && needs.test.result == 'success' && needs.test-localization.result == 'failure' }}
+    steps:
+      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        with:
+          github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
+          script: |
+            const isDev = await github.rest.teams.getMembershipForUserInOrg({
+              org: "freeCodeCamp",
+              team_slug: "dev-team",
+              username: context.payload.pull_request.user.login
+            }).catch(() => ({status: 404}));
+            if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "Hi,\n\nIt looks like the localization tests have failed. This is expected when there are significant curriculum changes in the English version.\n\nThis could mean a Crowdin sync is required to address the scenario. Please check with our staff developer team, either on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org). They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
+              })
+            } else if (isDev.status === 200) {
+              core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
+            }

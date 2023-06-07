@@ -11,16 +11,17 @@ dashedName: introduction-to-data-analysis
 ---
 
 # --description--
+El análisis de datos es el acto de convertir datos crudos y desordenados en información útil limpiando los datos, transformándolos, manipulándolos e inspeccionándolos.
 
 Más recursos:
 
-\- [Diapositivas](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
+\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">Artículo de noticias</a>
 
 # --question--
 
 ## --text--
 
-¿Cuál de las siguientes opciones no **es** parte del Análisis de Datos?
+¿Cuál de las siguientes opciones **no es** parte del Análisis de Datos?
 
 ## --answers--
 
@@ -28,7 +29,7 @@ Construcción de modelos estadísticos y visualización de datos.
 
 ---
 
-Elegir una conclusión deseada para el análisis.
+Selección de una conclusión deseada para el análisis.
 
 ---
 
@@ -36,7 +37,7 @@ Corregir valores incorrectos y eliminar datos no válidos.
 
 ---
 
-Transformación de datos en una estructura de datos apropiada.
+Transformando datos en una estructura de datos apropiada.
 
 ## --video-solution--
 

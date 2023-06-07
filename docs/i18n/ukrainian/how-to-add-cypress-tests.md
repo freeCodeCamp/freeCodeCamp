@@ -1,10 +1,10 @@
 # Як додати тести Cypress
 
-При внесенні змін до JavaScript, CSS або HTML, які можуть змінити функціональність або макет сторінки, важливо додати відповідні інтеграційні тести  [Cypress](https://docs.cypress.io).
+При внесенні змін до JavaScript, CSS або HTML, які можуть змінити функціональність або макет сторінки, важливо додати відповідні інтеграційні тести [Cypress](https://docs.cypress.io).
 
-Щоб дізнатися, як писати тести Cypress, або "специфікації", будь ласка, зверніться до офіційної [документації Cypress](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
+Щоб дізнатися, як писати тести Cypress, або «специфікації», будь ласка, зверніться до офіційної [документації Cypress](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
 
-## Where to add a test
+## Куди додати тест
 
 - Тести Cypress знаходяться в каталозі `./cypress`.
 
@@ -12,66 +12,73 @@
 
 ## Як проводити тести
 
-> [!NOTE] За користування GitPod, будь ласка, перегляньте [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] Якщо ви використовуєте Gitpod, див. [налаштування Cypress-Gitpod](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Start MongoDB and seed the database](/how-to-setup-freecodecamp-locally#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [Start the freeCodeCamp client application and API server](/how-to-setup-freecodecamp-locally#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Запустіть тести cypress
+### 2. Запустіть тести Cypress
 
-To run tests against production builds, replace `dev` with `prd` below.
+Щоб запустити тести кінцевої збірки, замініть `dev` на `prd` нижче.
 
 - Щоб запустити всі тести в каталозі `./cypress`:
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
-- Для запуску одного тесту:
+- Щоб запустити один тест:
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
-- Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі існуючі тести cypress:
+  Наприклад:
 
   ```console
-  npm run e2e:dev:run
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
-## Налаштування Cypress-GitPod
+- Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
 
-### 1. Ensure Development Environment is Running
+  ```console
+  pnpm run e2e:dev:run
+  ```
 
-If starting the GitPod environment did not automatically develop the environment:
+## Налаштування Cypress-Gitpod
 
-- Start the database
+### 1. Переконайтеся, що середовище розробки запущене
 
-```console
-mongod
-```
+Якщо запуск середовища Gitpod не розробив середовище автоматично:
 
-- Seed the database
-
-```console
-npm run seed
-```
-
-- Develop the server and client
+- Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
+- Створіть конфігураційний файл.
 
 ```console
-npm run develop
+pnpm run create:config
 ```
 
-### 2. Install Cypress Build Tools
+- Заповніть базу даних
 
 ```console
-npm run cypress:install-build-tools
+pnpm run seed
 ```
 
-- When prompted in the terminal, select your keyboard layout by language/area
+- Розробіть сервер та клієнта
 
-Тепер, [Cypress може бути запущений](/how-to-add-cypress-tests#_2-run-the-cypress-tests)
+```console
+pnpm run develop
+```
+
+### 2. Встановіть інструменти збірки Cypress
+
+```console
+pnpm run cypress:install-build-tools
+```
+
+- Якщо керований в терміналі, виберіть розкладку клавіатури за мовою/регіоном
+
+Тепер [Cypress можна запустити](how-to-add-cypress-tests.md#_2-run-the-cypress-tests)

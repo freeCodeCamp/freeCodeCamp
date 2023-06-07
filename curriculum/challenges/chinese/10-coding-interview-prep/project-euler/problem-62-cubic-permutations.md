@@ -1,7 +1,7 @@
 ---
 id: 5900f3aa1000cf542c50febd
 title: 'Problem 62: Cubic permutations'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302174
 dashedName: problem-62-cubic-permutations
 ---

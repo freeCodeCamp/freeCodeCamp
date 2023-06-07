@@ -11,9 +11,9 @@ dashedName: use-hex-code-for-specific-colors
 
 Você sabia que existem outras maneiras de representar cores no CSS? Uma dessas formas é chamada de código hexadecimal ou, abreviadamente, hex code (em inglês).
 
-Normalmente, usamos <dfn>decimais</dfn>, ou números de base 10, que usam os símbolos de 0 a 9 para cada dígito. <dfn>Hexadecimais</dfn> (ou <dfn>hex</dfn>) são números de base 16. Isso significa que eles usam dezesseis símbolos diferentes. Como os decimais, os símbolos de 0 a 9 representam os valores de zero a nove. Além deles, temos A, B, C, D, E e F, que representam os valores de dez a quinze. Ao todo, números de 0 a F podem representar um dígito em hexadecimal, com 16 valores possíveis. Você pode encontrar mais informações sobre [números hexadecimais aqui](https://www.freecodecamp.org/news/hexadecimal-number-system/).
+Normalmente, usamos <dfn>decimais</dfn>, ou números de base 10, que usam os símbolos de 0 a 9 para cada dígito. <dfn>Hexadecimais</dfn> (ou <dfn>hex</dfn>) são números de base 16. Isso significa que eles usam dezesseis símbolos diferentes. Como os decimais, os símbolos de 0 a 9 representam os valores de zero a nove. Além deles, temos A, B, C, D, E e F, que representam os valores de dez a quinze. Ao todo, números de 0 a F podem representar um dígito em hexadecimal, com 16 valores possíveis. Você pode encontrar mais informações sobre <a href="https://www.freecodecamp.org/news/hexadecimal-number-system/" target="_blank" rel="noopener noreferrer nofollow">números hexadecimais aqui</a>.
 
-No CSS, podemos usar 6 dígitos hexadecimais para representar as cores, dois de cada para os componentes vermelho (R), verde (G) e azul (B). Por exemplo, `#000000` é preto e também é o valor mais baixo possível. Você pode encontrar mais informações sobre o [sistema de cores RGB aqui](https://www.freecodecamp.org/news/rgb-color-html-and-css-guide/#whatisthergbcolormodel).
+No CSS, podemos usar 6 dígitos hexadecimais para representar as cores, dois de cada para os componentes vermelho (R), verde (G) e azul (B). Por exemplo, `#000000` é preto e também é o valor mais baixo possível. Você pode encontrar mais informações sobre o <a href="https://www.freecodecamp.org/news/rgb-color-html-and-css-guide/#whatisthergbcolormodel" target="_blank" rel="noopener noreferrer nofollow">sistema de cores RGB aqui</a>.
 
 ```css
 body {

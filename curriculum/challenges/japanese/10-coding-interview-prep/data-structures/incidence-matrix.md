@@ -18,7 +18,7 @@ dashedName: incidence-matrix
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-4 本のエッジと 4 つのノードを持つ`接続行列`の例を示します。 列はエッジ、行はノード自体であることを思い出してください。
+Here is an example of an incidence matrix with 4 edges and 4 nodes. 列はエッジ、行はノード自体であることを思い出してください。
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 

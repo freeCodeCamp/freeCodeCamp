@@ -2,7 +2,7 @@
 id: 5900f4111000cf542c50ff23
 title: >-
   問題 164: 3 つの連続桁の和がいずれも所与の値以下であるような数
-challengeType: 5
+challengeType: 1
 forumTopicId: 301798
 dashedName: >-
   problem-164-numbers-for-which-no-three-consecutive-digits-have-a-sum-greater-than-a-given-value

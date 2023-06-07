@@ -1,7 +1,7 @@
 ---
 id: 5900f50a1000cf542c51001c
 title: 'Problema 413: Numeri figli unici'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302082
 dashedName: problem-413-one-child-numbers
 ---

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: Алгоритми сортування/Випадкове сортування
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---
 
 # --description--
 
-[випадкове сортування](https://en.wikipedia.org/wiki/Bogosort) – це список чисел.
+Bogosort a list of numbers.
 
 Випадкове сортування просто перемішує набір елементів випадковим чином, поки він не упорядкований.
 

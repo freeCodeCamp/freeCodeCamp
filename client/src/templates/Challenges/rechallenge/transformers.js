@@ -38,11 +38,11 @@ function testLoopProtectCB(line) {
   );
 }
 
-// hold Babel, presets and options so we don't try to import them multiple times
+// hold Babel and presets so we don't try to import them multiple times
 
 let Babel;
 let presetEnv, presetReact;
-let babelOptionsJSBase, babelOptionsJS, babelOptionsJSX, babelOptionsJSPreview;
+let presetsJS, presetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -69,16 +69,8 @@ async function loadPresetEnv() {
     );
   /* eslint-enable no-inline-comments */
 
-  babelOptionsJSBase = {
+  presetsJS = {
     presets: [presetEnv]
-  };
-  babelOptionsJS = {
-    ...babelOptionsJSBase,
-    plugins: ['testLoopProtection']
-  };
-  babelOptionsJSPreview = {
-    ...babelOptionsJSBase,
-    plugins: ['loopProtection']
   };
 }
 
@@ -93,8 +85,7 @@ async function loadPresetReact() {
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
     );
   /* eslint-enable no-inline-comments */
-  babelOptionsJSX = {
-    plugins: ['loopProtection'],
+  presetsJSX = {
     presets: [presetEnv, presetReact]
   };
 }
@@ -108,9 +99,8 @@ const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
 const testHTML = matchesProperty('ext', 'html');
 const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
-export const testJS$JSX = overSome(testJS, testJSX);
 
-export const replaceNBSP = cond([
+const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))
@@ -132,14 +122,14 @@ function tryTransform(wrap = identity) {
   };
 }
 
-const babelTransformer = options => {
+const babelTransformer = loopProtectOptions => {
   return cond([
     [
       testJS,
       async code => {
         await loadBabel();
         await loadPresetEnv();
-        const babelOptions = getBabelOptions(options);
+        const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
         return partial(
           transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
@@ -151,10 +141,11 @@ const babelTransformer = options => {
       async code => {
         await loadBabel();
         await loadPresetReact();
+        const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
         return flow(
           partial(
             transformHeadTailAndContents,
-            tryTransform(babelTransformCode(babelOptionsJSX))
+            tryTransform(babelTransformCode(babelOptions))
           ),
           partial(setExt, 'js')
         )(code);
@@ -164,16 +155,15 @@ const babelTransformer = options => {
   ]);
 };
 
-function getBabelOptions({ preview = false, protect = true }) {
-  let options = babelOptionsJSBase;
+function getBabelOptions(
+  presets,
+  { preview, protect } = { preview: false, protect: true }
+) {
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
-  if (protect) {
-    options = preview ? babelOptionsJSPreview : babelOptionsJS;
-  } else {
-    options = preview ? babelOptionsJSPreview : options;
-  }
-  return options;
+  if (preview) return { ...presets, plugins: ['loopProtection'] };
+  if (protect) return { ...presets, plugins: ['testLoopProtection'] };
+  return presets;
 }
 
 const sassWorker = createWorker(sassCompile);
@@ -197,9 +187,9 @@ async function transformScript(documentElement) {
   await loadPresetEnv();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
-      script.innerHTML
-    );
+    script.innerHTML = tryTransform(
+      babelTransformCode(getBabelOptions(presetsJS))
+    )(script.innerHTML);
   });
 }
 
@@ -221,12 +211,15 @@ export const embedFilesInHtml = async function (challengeFiles) {
       style.classList.add('fcc-injected-styles');
       style.innerHTML = stylesCss?.contents;
 
-      link.parentNode.replaceChild(style, link);
+      link.parentNode.appendChild(style);
+
+      link.removeAttribute('href');
+      link.dataset.href = 'styles.css';
     }
     if (script) {
-      const script = (contentDocument.createElement('script').innerHTML =
-        scriptJs?.contents);
-      link.parentNode.replaceChild(script, link);
+      script.innerHTML = scriptJs?.contents;
+      script.removeAttribute('src');
+      script.setAttribute('data-src', 'script.js');
     }
     return {
       contents: documentElement.innerHTML
@@ -304,9 +297,9 @@ const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const getTransformers = options => [
+export const getTransformers = loopProtectOptions => [
   replaceNBSP,
-  babelTransformer(options ? options : {}),
+  babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
   htmlTransformer
 ];

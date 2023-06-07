@@ -1,7 +1,7 @@
 ---
 id: 5900f3f61000cf542c50ff09
 title: '問題 138: 特殊な二等辺三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4d41000cf542c50ffe7
 title: 'Problema 360: Sfera Spaventosa'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302021
 dashedName: problem-360-scary-sphere
 ---

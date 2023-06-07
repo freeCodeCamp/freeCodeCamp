@@ -1,7 +1,7 @@
 ---
 id: 598de241872ef8353c58a7a2
 title: Evaluate binomial coefficients
-challengeType: 5
+challengeType: 1
 forumTopicId: 302259
 dashedName: evaluate-binomial-coefficients
 ---

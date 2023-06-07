@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. Inside the form element, you are **required** to enter your email in an `input` field that has an `id` of `email`
 1. If you enter an email that is not formatted correctly, you will see an HTML5 validation error
 1. Inside the form, you can enter a number in an `input` field that has an `id` of `number`
-1. If you enter non-numbers in the number input, you will see an HTML5 validation error
+1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
 1. If you enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, you will see an HTML5 validation error
 1. For the name, email, and number input fields, you can see corresponding `label` elements in the form, that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`
 1. For the name, email, and number input fields, you can see placeholder text that gives a description or instructions for each field
@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`.
+Your `#name` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+Your `#email` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`.
+Your `#number` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -182,42 +182,42 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty.
+Your `#name-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty.
+Your `#email-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty.
+Your `#number-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`.
+Your `#name-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`.
+Your `#email-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`.
+Your `#number-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

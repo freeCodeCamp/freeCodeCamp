@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db1
-title: Розробка Сканера Nmap (частина 1)
+title: Розробка сканера Nmap (частина 1)
 challengeType: 11
 videoId: jYk9XaGoAnk
 bilibiliIds:

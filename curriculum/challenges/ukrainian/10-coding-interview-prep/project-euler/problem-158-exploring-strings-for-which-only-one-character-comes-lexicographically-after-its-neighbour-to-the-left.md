@@ -2,7 +2,7 @@
 id: 5900f40a1000cf542c50ff1d
 title: >-
   Завдання 158: Дослідження рядкових типів, де лише один символ стоїть у лексикографічному порядку зліва від сусіднього символу
-challengeType: 5
+challengeType: 1
 forumTopicId: 301789
 dashedName: >-
   problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left

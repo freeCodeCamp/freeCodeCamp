@@ -16,13 +16,13 @@ package.json の依存関係セクションを使用して、いくつかの方�
 
 # --instructions--
 
-moment パッケージを依存関係から削除してください。
+依存関係から `@freecodecamp/example` パッケージを削除してください。
 
 **注:** 削除した後にコンマの数が正しいことを確認してください。
 
 # --hints--
 
-「dependencies」に「moment」を含めないようにする必要があります。
+`"dependencies"` が `"@freecodecamp/example"` を含んでいないようにする必要があります。
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ moment パッケージを依存関係から削除してください。
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

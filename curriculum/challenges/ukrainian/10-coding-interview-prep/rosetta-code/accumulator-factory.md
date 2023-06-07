@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ace
 title: Акумуляторна фабрика
-challengeType: 5
+challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
 ---
 
 # --description--
 
-Проблема, спричинена [Paul Graham](https://en.wikipedia.org/wiki/Paul_Graham_(programmer)) полягає у створенні функції, яка приймає один (числовий) аргумент, і яка повертає іншу функцію, тобто акумулятор. Повернена акумуляторна функція в свою чергу також бере один числовий аргумент, і повертає суму усіх числових значень, прийнятих до цього часу до цього акумулятора (включаючи початкове значення, передане при створенні акумулятора).
+A problem posed by Paul Graham is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. Повернена акумуляторна функція в свою чергу також бере один числовий аргумент, і повертає суму усіх числових значень, прийнятих до цього часу до цього акумулятора (включаючи початкове значення, передане при створенні акумулятора).
 
 # --instructions--
 

@@ -11,14 +11,14 @@ dashedName: add-a-box-shadow-to-a-card-like-element
 
 Властивість `box-shadow` додає одну або більше тіней до елемента.
 
-Властивість `box-shadow` приймає значення
+Властивість `box-shadow` приймає такі значення, за порядком:
 
 <ul>
-  <li><code>offset-x</code> (наскільки далеко відсунути тінь від елемента по горизонталі)</li>
-  <li><code>offset-y</code> (наскільки далеко відсунути тінь від елемента по вертикалі)</li>
-  <li><code>blur-radius</code>,</li>
-  <li><code>spread-radius</code> і</li>
-  <li><code>color</code>, в такому порядку.</li>
+  <li><code>offset-x</code> (наскільки далеко відсунута тінь від елемента по горизонталі)</li>
+  <li><code>offset-y</code> (наскільки далеко відсунута тінь від елемента по вертикалі)</li>
+  <li><code>blur-radius</code></li>
+  <li><code>spread-radius</code></li>
+  <li><code>color</code></li>
 </ul>
 
 Значення `blur-radius` та `spread-radius` є необов'язковими.

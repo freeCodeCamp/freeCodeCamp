@@ -1,7 +1,7 @@
 ---
 id: 599c333915e0ea32d04d4bec
 title: Element-wise operations
-challengeType: 5
+challengeType: 1
 forumTopicId: 302252
 dashedName: element-wise-operations
 ---

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the D3 Dashboard
-block: D3 Dashboard
-superBlock: Data Visualization
+block: d3-dashboard
+superBlock: data-visualization
 ---
 
 ## Introduction to the D3 Dashboard

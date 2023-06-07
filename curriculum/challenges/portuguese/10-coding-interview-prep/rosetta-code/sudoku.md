@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc803c
 title: Sudoku
-challengeType: 5
+challengeType: 1
 forumTopicId: 302329
 dashedName: sudoku
 ---

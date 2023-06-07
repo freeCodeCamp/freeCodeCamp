@@ -2,7 +2,7 @@
 id: 5900f4351000cf542c50ff47
 title: >-
   問題 200: 連続する部分文字列 "200" が含まれる、200 番目の素数耐性スクーブを求める
-challengeType: 5
+challengeType: 1
 forumTopicId: 301840
 dashedName: >-
   problem-200-find-the-200th-prime-proof-sqube-containing-the-contiguous-sub-string-200

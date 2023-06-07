@@ -6,7 +6,6 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 const env = require('../config/env.json');
 
-const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -151,7 +150,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               }
             }) => block
           )
-        ).map(block => blockNameify(block));
+        );
 
         const superBlocks = uniq(
           result.data.allChallengeNode.edges.map(
@@ -270,6 +269,8 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 };
 
+// Take care to QA the challenges when modifying this. It has broken certain
+// types of challenge in the past.
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
@@ -280,6 +281,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       challengeFiles: [FileContents]
       notes: String
       url: String
+      assignments: [String]
     }
     type FileContents {
       fileKey: String
@@ -293,44 +295,3 @@ exports.createSchemaCustomization = ({ actions }) => {
   `;
   createTypes(typeDefs);
 };
-
-// TODO: this broke the React challenges, not sure why, but I'll investigate
-// further and reimplement if it's possible and necessary (Oliver)
-// I'm still not sure why, but the above schema seems to work.
-// Typically the schema can be inferred, but not when some challenges are
-// skipped (at time of writing the Chinese only has responsive web design), so
-// this makes the missing fields explicit.
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   const typeDefs = `
-//     type ChallengeNode implements Node {
-//       question: Question
-//       videoId: String
-//       required: ExternalFile
-//       files: ChallengeFile
-//     }
-//     type Question {
-//       text: String
-//       answers: [String]
-//       solution: Int
-//     }
-//     type ChallengeFile {
-//       indexhtml: FileContents
-//       indexjs: FileContents
-//       indexjsx: FileContents
-//     }
-//     type ExternalFile {
-//       link: String
-//       src: String
-//     }
-//     type FileContents {
-//       key: String
-//       ext: String
-//       name: String
-//       contents: String
-//       head: String
-//       tail: String
-//     }
-//   `;
-//   createTypes(typeDefs);
-// };

@@ -66,7 +66,7 @@
   "cvh4x7": "只修改這一行下面的代碼",
   "lvmnm7": "打開一個新的選項卡，顯示貓的圖片",
   "avpx79": "打開你的瀏覽器控制檯。",
-  "0b5ps6": "畫布邊線和圖表之間的 padding",
+  "0b5ps6": "SVG 邊界和繪圖之間的填充",
   "uemoej": "將 n 個 0 推入當前行以創建列",
   "lm86nf": "將當前行（已有 n 個 0）推送到數組",
   "qscelx": "可從 Redux 對象獲得 Redux 方法",
@@ -98,6 +98,8 @@
   "bheu99": "這將保存一個集合",
   "x1djjr": "在下一行使用 console.clear()，清除瀏覽器控制檯的內容",
   "22ta95": "使用 console.log() 打印輸出變量",
+  "owgrP6": "Use the classes ABOVE this line",
+  "oszrtn": "Use the classes BELOW this line",
   "w43c7l": "使用 s = [2, 5, 7] 將無效",
   "pgckoj": "變量賦值",
   "2xiqvv": "變量聲明",
@@ -106,5 +108,6 @@
   "es69h6": "當你將兩個窗口合併爲一個窗口時",
   "fho5t5": "當你在最後打開一個選項卡時",
   "00kcrm": "輸出 true",
-  "sxpg2a": "你的郵箱、Google Drive 和其他工作地點"
+  "sxpg2a": "你的郵箱、Google Drive 和其他工作地點",
+  "4143lf": "初始化按鈕"
 }

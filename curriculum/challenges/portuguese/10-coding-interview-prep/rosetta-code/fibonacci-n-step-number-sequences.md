@@ -1,7 +1,7 @@
 ---
 id: 598eef80ba501f1268170e1e
 title: Sequências de números de n passos de Fibonacci
-challengeType: 5
+challengeType: 1
 forumTopicId: 302267
 dashedName: fibonacci-n-step-number-sequences
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5958469238c0d8d2632f46db
 title: Combinações
-challengeType: 5
+challengeType: 1
 forumTopicId: 302233
 dashedName: combinations
 ---

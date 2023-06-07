@@ -40,42 +40,42 @@ assert(code.match(/\.test\(.*\)/));
 assert(/\./.test(unRegex.source));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `run` у рядку `Let us go on a run.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `run` у рядку `Let us go on a run.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Let us go on a run.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `sun` у рядку `The sun is out today.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `sun` у рядку `The sun is out today.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('The sun is out today.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `fun` у рядку `Coding is a lot of fun.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `fun` у рядку `Coding is a lot of fun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Coding is a lot of fun.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `pun` у рядку `Seven days without a pun makes one weak.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `pun` у рядку `Seven days without a pun makes one weak.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Seven days without a pun makes one weak.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `nun` у рядку `One takes a vow to be a nun.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `nun` у рядку `One takes a vow to be a nun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `bun` у рядку `She got fired from the hot dog stand for putting her hair in a bun.`
+Ваш регулярний вираз `unRegex` повинен збігатися з `bun` у рядку `She got fired from the hot dog stand for putting her hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
@@ -86,14 +86,14 @@ assert(
 );
 ```
 
-Ваш регулярний вираз `unRegex` не повинен знайти рядок `There is a bug in my code.`
+Ваш регулярний вираз `unRegex` не повинен збігатися з рядком `There is a bug in my code.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(!unRegex.test('There is a bug in my code.'));
 ```
 
-Ваш регулярний вираз `unRegex` не повинен знайти рядок `Catch me if you can.`
+Ваш регулярний вираз `unRegex` не повинен збігатися з рядком `Catch me if you can.`
 
 ```js
 unRegex.lastIndex = 0;

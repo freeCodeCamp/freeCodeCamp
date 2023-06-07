@@ -22,17 +22,17 @@ const myVar = 12 - 6;
 现在，变量 `myVar` 的值为 `6`。
 # --instructions--
 
-改变数字`0`让变量 difference 的值为 `12`。
+改变数字 `0` 让变量 difference 的值为 `12`。
 
 # --hints--
 
-变量 `difference` 的值应该为 12。
+变量 `difference` 的值应该为 `12`。
 
 ```js
 assert(difference === 12);
 ```
 
-您只能从 45 中减去一个数字。
+你只能从 `45` 中减去一个数。
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));

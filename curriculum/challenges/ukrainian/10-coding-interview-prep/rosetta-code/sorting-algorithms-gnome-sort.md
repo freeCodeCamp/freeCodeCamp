@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8007
 title: Алгоритми сортування/Сортування гнома
-challengeType: 5
+challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
 ---
 
 # --description--
 
-Сортування гнома – це алгоритм сортування, який схожий на [сортування вставленням](https://rosettacode.org/wiki/Insertion sort), за винятком того, що переміщення елемента в потрібне місце виконується послідовністю замін, як в [сортуванні бульбашкою](https://rosettacode.org/wiki/Bubble Sort).
+Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">Bubble Sort</a>.
 
 Псевдокод для алгоритму:
 

@@ -14,7 +14,7 @@ dashedName: remove-elements-from-a-linked-list-by-index
 
 リンクリストの要素に対して操作を繰り返すための一般的なテクニックは、比較対象ノードを「指し示す」ための <dfn>'runner'</dfn>、すなわち番兵を使用することです。 今回のケースでは、リストの `head` が出発点です。`0` で始まる `currentIndex` 変数で操作を開始します。 `currentIndex` は、ノードが 1 つ渡されるたびに 1 ずつ増加する必要があります。
 
-[前回のレッスン](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list)で取り上げた `remove(element)` メソッドと同じように、`removeAt(index)` メソッドでノードを削除する際には、リストの残りの部分が孤立しないように注意する必要があります。 削除されたノードへの参照を持つノードに、次のノードへの参照を必ず持たせることにより、ノードの連続性を保ちます。
+<a href="/japanese/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">以前のレッスン</a>で取り上げた `remove(element)` メソッドと同じように、`removeAt(index)` メソッドでノードを削除する際には、リストの残りの部分が孤立しないように注意する必要があります。 削除されたノードへの参照を持つノードに、次のノードへの参照を必ず持たせることにより、ノードの連続性を保ちます。
 
 # --instructions--
 

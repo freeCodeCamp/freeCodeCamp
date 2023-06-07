@@ -1,7 +1,7 @@
 ---
 id: 5900f3831000cf542c50fe96
 title: 'Problema 23: Somme non abbondanti'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
 ---

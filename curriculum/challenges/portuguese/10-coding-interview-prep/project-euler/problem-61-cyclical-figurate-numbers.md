@@ -1,7 +1,7 @@
 ---
 id: 5900f3a91000cf542c50febc
 title: 'Problema 61: Números cíclicos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302173
 dashedName: problem-61-cyclical-figurate-numbers
 ---

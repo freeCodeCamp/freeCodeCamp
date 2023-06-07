@@ -1,17 +1,20 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../config/certification-settings';
-import APIIcon from './API-icon';
-import D3Icon from './D3-icon';
-import DatabaseIcon from './Database-icon';
-import JavaScriptIcon from './JavaScript-icon';
-import ReactIcon from './React-icon';
-import TensorflowIcon from './Tensorflow-icon';
+import { SuperBlocks } from '../../../../config/superblocks';
+import APIIcon from './api';
+import D3Icon from './d3';
+import DatabaseIcon from './database';
+import JavaScriptIcon from './javascript';
+import ReactIcon from './react';
+import TensorflowIcon from './tensorflow';
 import Algorithm from './algorithm';
 import Analytics from './analytics';
 import Clipboard from './clipboard';
-import PythonIcon from './python-icon';
+import PythonIcon from './python';
 import ResponsiveDesign from './responsive-design';
 import Shield from './shield';
+import VikingHelmet from './viking-helmet';
+import Graduation from './graduation';
+import CollegeAlgebra from './college-algebra';
 
 const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
@@ -27,7 +30,11 @@ const iconMap = {
   [SuperBlocks.DataAnalysisPy]: Analytics,
   [SuperBlocks.InfoSec]: Shield,
   [SuperBlocks.MachineLearningPy]: TensorflowIcon,
-  [SuperBlocks.CodingInterviewPrep]: Algorithm
+  [SuperBlocks.CodingInterviewPrep]: Algorithm,
+  [SuperBlocks.TheOdinProject]: VikingHelmet,
+  [SuperBlocks.ProjectEuler]: Graduation,
+  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
+  [SuperBlocks.ExampleCertification]: ResponsiveDesign
 };
 
 const generateIconComponent = (

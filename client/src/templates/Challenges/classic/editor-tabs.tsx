@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import i18next from 'i18next';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
+import { toggleVisibleEditor } from '../redux/actions';
 import {
-  toggleVisibleEditor,
   visibleEditorsSelector,
   challengeFilesSelector
-} from '../redux';
+} from '../redux/selectors';
 
 type VisibleEditors = {
   [key: string]: boolean;
@@ -44,10 +45,13 @@ class EditorTabs extends Component<EditorTabsProps> {
             <button
               aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
               key={challengeFile.fileKey}
+              data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}
-              <span className='sr-only'>editor</span>
+              <span className='sr-only'>
+                {i18next.t('learn.editor-tabs.editor')}
+              </span>
             </button>
           )
         )}

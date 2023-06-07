@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Bootstrap の fluid コンテナでレスポンシブデザインを使用する
+title: Bootstrap の fluid コンテナーでレスポンシブデザインを使用する
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers

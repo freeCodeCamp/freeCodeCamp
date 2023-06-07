@@ -1,4 +1,4 @@
-# Linux 用の Windows サブシステム (WSL) で freeCodeCamp を設定する
+# Windows Subsystem for Linux (WSL) で freeCodeCamp 開発環境を構築する
 
 > [!NOTE] これらの指示に従う前に、システムが要件を満たしていることを確認してください。
 > 
@@ -56,7 +56,7 @@ Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインス�
 
 **Docker Desktop for Windows** を使用すると、MongoDB のようなデータベースや NGINX などのサービスをインストールして実行できます。 MongoDB やその他のサービスを Windows または WSL2 に直接インストールする際の一般的な落とし穴を避けることができます。
 
-[公式ドキュメント](https://docs.docker.com/docker-for-windows/install) の指示に従って、Docker Desktop for Windows をインストールしてください。
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 最高の体験を得るための最低限のハードウェア要件があります。
 
@@ -91,7 +91,7 @@ WSL2 で動作するように Docker Desktop を設定したら、次の手順�
 
 4. Windows または Ubuntu から `mongodb://localhost:27017` でサービスにアクセスできるようになりました。
 
-## Node.js と npm をインストールする
+## Installing Node.js and pnpm
 
 Node バージョンマネジャー - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) を使用して、Node.js 用の LTS リリースをインストールすることを推奨します。
 
@@ -111,23 +111,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js には `npm` がバンドルされています。次のコマンドで `npm` の最新バージョンに更新することができます。
+Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
 ```console
-npm install -g npm@latest
+npm install -g pnpm
 ```
 
-## freeCodeCamp をローカルで設定する
+## Set up freeCodeCamp Locally
 
-前提条件のインストールが完了したら、[ ローカルセットアップガイド](how-to-setup-freecodecamp-locally.md) に従って、マシンに freeCodeCamp をローカルにクローンし、インストールし、セットアップしてください。
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> 現在、Cypress テストのセットアップ (および関連するGUIのニーズ) 作業が進行中です。 それでも、ほとんどのコードベースで作業できるはずです。
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. それでも、ほとんどのコードベースで作業できるはずです。
 
 ## 有用なリンク
 
-- [Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker を使用した WSL2 Dev セットアップ](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - Mrugesh Mohapatra (freeCodeCamp.org のスタッフ開発者)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - よくある質問:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

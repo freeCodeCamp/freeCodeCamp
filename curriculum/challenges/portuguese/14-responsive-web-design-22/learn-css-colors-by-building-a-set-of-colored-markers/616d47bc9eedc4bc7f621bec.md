@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Em seguida, dentro do `div`, adicione outro elemento `div` e dê a ele a classe `marker`.
+Em seguida, dentro do elemento `div`, adicione outro elemento `div` e dê a ele a classe `marker`.
 
 # --hints--
 
@@ -42,12 +42,12 @@ assert(containerChildren.every(child => child.classList?.contains('marker')));
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colored Markers</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
 --fcc-editable-region--
   <body>

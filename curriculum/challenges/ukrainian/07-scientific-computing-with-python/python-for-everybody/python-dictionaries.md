@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f067
-title: Словники Python
+title: Словники в Python
 challengeType: 11
 videoId: dnzvfimrRMg
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: python-dictionaries
 
 ## --text--
 
-Чому даний словник буде еквівалентним після виконання наведеного нижче коду?:
+Яким буде значення словника після виконання цього коду?:
 
 ```python
 dict = {"Fri": 20, "Thu": 6, "Sat": 1}

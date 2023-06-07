@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8038
 title: Subleq
-challengeType: 5
+challengeType: 1
 forumTopicId: 302328
 dashedName: subleq
 ---
 
 # --description--
 
-[Subleq](https://rosettacode.org/wiki/eso:Subleq) è un esempio di un [Computer One-Instruction Set (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
+Subleq è un esempio di un One-Instruction Set Computer (OISC).
 
 Esso prende il nome dalla sua unica istruzione, che è **SU**btract e **B**ranch se **L**ess than or **EQ**ual to zero (sottrai e dirama se minore o uguale a zero).
 

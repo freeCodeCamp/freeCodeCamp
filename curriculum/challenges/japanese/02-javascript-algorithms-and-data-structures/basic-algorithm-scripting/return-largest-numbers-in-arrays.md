@@ -1,7 +1,7 @@
 ---
 id: a789b3483989747d63b0e427
 title: 各配列の最大数値を返す
-challengeType: 5
+challengeType: 1
 forumTopicId: 16042
 dashedName: return-largest-numbers-in-arrays
 ---

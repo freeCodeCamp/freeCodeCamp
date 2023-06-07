@@ -1,7 +1,7 @@
 ---
 id: 5900f5461000cf542c510058
 title: 'Завдання 473: База чисел ϕ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
 ---
@@ -22,7 +22,7 @@ $2 = \varphi + \varphi^{-2}$ і $3 = \varphi^{2} + \varphi^{-2}$
 
 Щоб представити цю суму степенів в $\varphi$, ми використовуємо рядок з нулем і одиницею, щоб вказати, де починаються від'ємні значення. Ми називаємо це представленням у базі чисел ϕ.
 
-Таким чином, $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ та $14 = 100.100.00{\varphi}$. Рядки, що представляють 1, 2 і 14 в базі чисел ϕ є паліндромними, а рядок, що представляє 3 таким не є. (точка ϕ не є середнім символом).
+Таким чином, $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ та $14 = 100.100.00{\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not (the phigital point is not the middle character).
 
 Сума додатних цілих чисел не перевищує 1000, чиї ϕ-представлення є паліндромними та дорівнюють 4345.
 

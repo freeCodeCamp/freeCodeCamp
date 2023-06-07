@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5e
-title: Learn how a Stack Works
+title: Aprende cómo funciona una Pila
 challengeType: 1
 forumTopicId: 301705
 dashedName: learn-how-a-stack-works
@@ -8,43 +8,43 @@ dashedName: learn-how-a-stack-works
 
 # --description--
 
-You are probably familiar with stack of books on your table. You have likely used the undo feature of a text editor. You are also probably used to hitting the back button on your phone to go back to the previous view in your app.
+Probablemente esté familiarizado con la pila de libros en su mesa. Es probable que haya usado la característica de deshacer de un editor de texto. Probablemente también estés acostumbrado a pulsar el botón atrás de tu teléfono para volver a la vista anterior de tu aplicación.
 
-You know what they all have in common? They all store the data in a way so that you can traverse backwards.
+¿Sabes lo que todos tienen en común? Todos almacenan los datos de una manera que usted puede atravesar hacia atrás.
 
-The topmost book in the stack was the one that was put there last. If you remove that book from your stack's top, you would expose the book that was put there before the last book and so on.
+El libro más alto de la pila fue el que se puso a lo último. Si eliminas ese libro de la parte superior de tu pila, expondrías el libro que se puso allí antes del último libro y así sucesivamente.
 
-If you think about it, in all the above examples, you are getting <dfn>Last-In-First-Out</dfn> type of service. We will try to mimic this with our code.
+Si lo piensas, en todos los ejemplos anteriores, obtienes el tipo de servicio de <dfn>Last-In-First-Out</dfn>. Intentaremos imitar esto con nuestro código.
 
-This data storage scheme is called a <dfn>Stack</dfn>. In particular, we would have to implement the `push()` method that pushes JavaScript objects at the top of the stack; and `pop()` method, that removes the JavaScript object that's at the top of the stack at the current moment.
+Este esquema de almacenamiento de datos se llama una pila <dfn></dfn>. En particular, tendríamos que implementar el método `push()` que empuja objetos JavaScript en la parte superior de la pila; y el método `pop()` , que elimina el objeto JavaScript que está en la parte superior de la pila en el momento actual.
 
 # --instructions--
 
-Here we have a stack of homework assignments represented as an array: `"BIO12"` is at the base, and `"PSY44"` is at the top of the stack.
+Aquí tenemos una pila de tareas de inicio representadas como un arreglo: `"BIO12"` está en la base, y `"PSY44"` está en la parte superior de la pila.
 
-Modify the given array and treat it like a `stack` using the JavaScript methods mentioned above. Remove the top element `"PSY44"` from the stack. Then add `"CS50"` to be the new top element of the stack.
+Modifique el array dado y trate como una pila `` usando los métodos de JavaScript mencionados anteriormente. Elimina el elemento superior `"PSY44"` de la pila. Luego añade `"CS50"` para ser el nuevo elemento superior de la pila.
 
 # --hints--
 
-`homeworkStack` should only contain 4 elements.
+`homeworkStack` solo debe contener 4 elementos.
 
 ```js
 assert(homeworkStack.length === 4);
 ```
 
-The last element in `homeworkStack` should be `"CS50"`.
+El último elemento en `homeworkStack` debe ser `"CS50"`.
 
 ```js
 assert(homeworkStack[3] === 'CS50');
 ```
 
-`homeworkStack` should not contain `"PSY44"`.
+`homeworkStack` no debe contener `"PSY44"`.
 
 ```js
 assert(homeworkStack.indexOf('PSY44') === -1);
 ```
 
-The initial declaration of the `homeworkStack` should not be changed.
+La declaración inicial de `homeworkStack` no debe ser cambiada.
 
 ```js
 assert(

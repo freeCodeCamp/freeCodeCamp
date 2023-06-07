@@ -11,7 +11,7 @@ Notice that the red and cyan colors are very bright right next to each other. Th
 
 It's better practice to choose one color as the dominant color, and use its complementary color as an accent to bring attention to certain content on the page.
 
-First, in the `h1` rule, use the `rgb` function to set its background color to cyan.
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 
@@ -33,12 +33,12 @@ assert(new __helpers.CSSHelp(document).getStyle('h1')?.backgroundColor === 'rgb(
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colored Markers</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>CSS Color Markers</h1>

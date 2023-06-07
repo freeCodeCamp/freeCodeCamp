@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff16
 title: '問題 151: 標準サイズの用紙: 期待値の問題'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301782
 dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 ---

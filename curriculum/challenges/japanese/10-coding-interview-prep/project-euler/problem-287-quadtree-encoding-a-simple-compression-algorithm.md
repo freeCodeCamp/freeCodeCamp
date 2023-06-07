@@ -1,7 +1,7 @@
 ---
 id: 5900f48b1000cf542c50ff9e
 title: '問題 287: 四分木符号化 (単純な圧縮アルゴリズム)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301938
 dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 ---

@@ -1,6 +1,6 @@
 ---
 id: 5895f70bf9fc0f352b528e64
-title: Використовуйте можливості шаблонного рушія
+title: Використання можливостей шаблонізатора
 challengeType: 2
 forumTopicId: 301567
 dashedName: use-a-template-engines-powers
@@ -8,38 +8,67 @@ dashedName: use-a-template-engines-powers
 
 # --description--
 
-Одна з головних переваг використання шаблонного рушія – це можливість передавати змінні з сервера в файл шаблону перед його візуалізацією в HTML.
+Одна з головних переваг шаблонізатора – це можливість передавати змінні з сервера до шаблону перед його візуалізацією в HTML.
 
-У вашому файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної тексту елемента p.
+У своєму файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної до тексту елемента p.
 
-Ми рекомендуємо вивчити синтаксис і структуру Pug [тут](https://github.com/pugjs/pug) у README GitHub. Файл Pug націлений на використання прогалин і вкладок для зображення гніздових елементів і скорочення обсягу коду, необхідного для створення красивого сайту.
+Pug націлений на використання прогалин і вкладок для зображення вкладених елементів та скорочення обсягу коду, необхідного для створення красивого сайту.
 
-Коли йдеться про наш файл pug «index.pug», включений у ваш проєкт, ми використовували змінні *title* і *message*.
+Візьмемо, наприклад, такий код Pug:
 
-Щоб передати їх з нашого сервера, вам потрібно буде додати об'єкт як другий аргумент у ваш *res.render* зі змінними та їх значеннями. Наприклад, передайте цьому об'єкту установку змінних для індексного перегляду: `{title: 'Hello', message: 'Please login'}`
+```pug
+head
+  script(type='text/javascript').
+    if (foo) bar(1 + 5);
+body
+  if youAreUsingPug
+      p You are amazing
+    else
+      p Get on it!
+```
 
-Це має мати наступний вигляд: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Тепер оновіть свою сторінку. Під час перегляду ви повинні побачити ці значення у потрібному місці, як зазначено у файлі index.pug!
+Наведене вище видає наступний HTML:
 
-Якщо вам вдалося, запустіть сторінку. Якщо ви зіткнулися з помилками, можете перевірити завершений до цього етапу проєкт [тут](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
+```html
+<head>
+  <script type="text/javascript">
+    if (foo) bar(1 + 5);
+  </script>
+</head>
+<body>
+  <p>You are amazing</p>
+</body>
+```
+
+Ваш файл `index.pug`, поміщений у проєкті, використовує змінні `title` та `message`.
+
+Передайте їх зі свого сервера до файлу Pug, додавши об'єкт як другий аргумент до свого виклику `res.render` зі змінними та їхніми значеннями. Надайте `title` значення `Hello`, а `message` значення `Please log in`.
+
+Це має виглядати так:
+
+```javascript
+res.render('index', { title: 'Hello', message: 'Please log in' });
+```
+
+Тепер оновіть свою сторінку, і ви повинні побачити ці значення у перегляді в правильному місці, як зазначено у вашому файлі `index.pug`!
+
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Файл Pug повинен правильно відображати змінні.
+Pug повинен правильно відображати змінні.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /pug-variable("|')>Please login/gi,
-        'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /pug-variable("|')>Please log in/gi,
+    'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
+}
 ```
 
 # --solutions--

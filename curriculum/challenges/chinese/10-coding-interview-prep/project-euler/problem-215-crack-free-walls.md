@@ -1,7 +1,7 @@
 ---
 id: 5900f4431000cf542c50ff56
 title: 'Problem 215: Crack-free Walls'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301857
 dashedName: problem-215-crack-free-walls
 ---
@@ -12,16 +12,18 @@ Consider the problem of building a wall out of 2×1 and 3×1 bricks (horizontal�
 
 For example, the following 9×3 wall is not acceptable due to the running crack shown in red:
 
-There are eight ways of forming a crack-free 9×3 wall, written W(9,3) = 8.
+<img class="img-responsive center-block" alt="9x3 wall with one lined up gap between horizontally-adjacent bricks" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
 
-Calculate W(32,10).
+There are eight ways of forming a crack-free 9×3 wall, written $W(9,3) = 8$.
+
+Calculate $W(32,10)$.
 
 # --hints--
 
-`euler215()` should return 806844323190414.
+`crackFreeWalls()` should return `806844323190414`.
 
 ```js
-assert.strictEqual(euler215(), 806844323190414);
+assert.strictEqual(crackFreeWalls(), 806844323190414);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler215(), 806844323190414);
 ## --seed-contents--
 
 ```js
-function euler215() {
+function crackFreeWalls() {
 
   return true;
 }
 
-euler215();
+crackFreeWalls();
 ```
 
 # --solutions--

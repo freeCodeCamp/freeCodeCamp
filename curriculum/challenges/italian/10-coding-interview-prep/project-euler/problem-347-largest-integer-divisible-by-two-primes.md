@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffd9
 title: 'Problema 347: Intero più grande divisibile per due primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302006
 dashedName: problem-347-largest-integer-divisible-by-two-primes
 ---

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd1f
-title: Використання Twitch JSON API
+title: Використайте Twitch JSON API
 challengeType: 3
 forumTopicId: 19541
 dashedName: use-the-twitch-json-api
@@ -8,25 +8,25 @@ dashedName: use-the-twitch-json-api
 
 # --description--
 
-**Мета:** Створити додаток [CodePen.io](https://codepen.io), який за функціями схожий на цей: [ https://codepen.io/freeCodeCamp/full/Myvqmo/](https://codepen.io/freeCodeCamp/full/Myvqmo/).
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/Myvqmo/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.
 
-Виконайте наведені нижче [історії користувача](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні вам бібліотеки або API. Виконайте завдання у власному стилі.
+Twitch API — це RESTful API, який дозволяє розробникам створювати творчі інтеграції для ширшої спільноти Twitch.
 
-**Історія користувача:** Я можу бачити чи зараз freeCodeCamp транслюється на Twitch.tv.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-**Історія користувача:** Я можу натиснути на статус користувача і безпосередньо перейти на канал freeCodeCamp на Twitch.tv.
+**Історія користувача:** я можу побачити, чи freeCodeCamp проводить трансляцію на Twitch.tv.
 
-**Історія користувача:** Якщо користувач Twitch на цей момент проводить трансляцію, я можу подивитись додаткову інформацію про що вона.
+**Історія користувача:** я можу натиснути на статус користувача і перейти на канал freeCodeCamp на Twitch.tv.
 
-**Підказка:** Відповідна документація про JSON API на Twitch.tv тут: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
+**Історія користувача:** якщо користувач Twitch на цей момент проводить трансляцію, я можу подивитись додаткову інформацію про неї.
 
-**Підказка:** Ось перелік імен користувачів, хто регулярно проводить трансляції: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
+**Підказка:** ось перелік користувачів, які регулярно проводять трансляції: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 
-**UPDATE:** Через зміни в умовах користування API Twitch.tv вимагає ключ доступу API, але ми створили спосіб його обійти. Використовуйте <https://twitch-proxy.freecodecamp.rocks/> замість базового посилання на API Twitch (наприклад, `https://api.twitch.tv/helix` ), і ви теж зможете отримати інформацію облікового запису без реєстрації для отримання ключа доступу API.
+**ОНОВЛЕННЯ:** Twitch.tv вимагає ключ доступу API через зміни в умовах користування API, але ми знайшли інший спосіб. Використайте <a href="https://twitch-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://twitch-proxy.freecodecamp.rocks/</a> замість базового посилання на API Twitch, і ви зможете отримати інформацію облікового запису без реєстрації для отримання ключа API.
 
-Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 
 # --solutions--
 

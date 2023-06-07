@@ -1,6 +1,5 @@
 import {
   Alert,
-  Col,
   ControlLabel,
   FormControl,
   FormGroup,
@@ -11,14 +10,23 @@ import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
-import { FormOptions } from './form';
 import {
   editorValidator,
   localhostValidator,
   composeValidators,
   fCCValidator,
-  httpValidator
+  httpValidator,
+  pathValidator
 } from './form-validators';
+
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
+};
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];
@@ -51,12 +59,19 @@ function FormFields(props: FormFieldsProps): JSX.Element {
         validationError = (err as { message?: string })?.message;
       }
     }
-    const validationWarning = composeValidators(
-      name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
-      fCCValidator,
-      httpValidator,
-      isLocalLinkAllowed ? null : localhostValidator
-    )(value);
+
+    const validators = [fCCValidator, httpValidator];
+    const isSolutionLink = name !== 'githubLink';
+    if (isSolutionLink && !isEditorLinkAllowed) {
+      validators.push(editorValidator);
+      if (isLocalLinkAllowed) {
+        validators.push(pathValidator);
+      }
+    }
+    if (!isLocalLinkAllowed) {
+      validators.push(localhostValidator);
+    }
+    const validationWarning = composeValidators(...validators)(value);
     const message: string = (error ||
       validationError ||
       validationWarning) as string;
@@ -72,7 +87,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     ) : null;
   };
   return (
-    <div>
+    <>
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
@@ -85,35 +100,33 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                 name in placeholders ? placeholders[name] : '';
               const isURL = types[name] === 'url';
               return (
-                <Col key={key} xs={12}>
-                  <FormGroup>
-                    {type === 'hidden' ? null : (
-                      <ControlLabel htmlFor={key}>{label}</ControlLabel>
-                    )}
-                    <FormControl
-                      componentClass={type === 'textarea' ? type : 'input'}
-                      id={key}
-                      name={name}
-                      onChange={onChange}
-                      placeholder={placeholder}
-                      required={required.includes(name)}
-                      rows={4}
-                      type={type}
-                      value={value as string}
-                    />
-                    {nullOrWarning(
-                      value as string,
-                      !pristine && error,
-                      isURL,
-                      name
-                    )}
-                  </FormGroup>
-                </Col>
+                <FormGroup key={key}>
+                  {type === 'hidden' ? null : (
+                    <ControlLabel htmlFor={key}>{label}</ControlLabel>
+                  )}
+                  <FormControl
+                    componentClass={type === 'textarea' ? type : 'input'}
+                    id={key}
+                    name={name}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                    required={required.includes(name)}
+                    rows={4}
+                    type={type}
+                    value={value as string}
+                  />
+                  {nullOrWarning(
+                    value as string,
+                    !pristine && error,
+                    isURL,
+                    name
+                  )}
+                </FormGroup>
               );
             }}
           </Field>
         ))}
-    </div>
+    </>
   );
 }
 

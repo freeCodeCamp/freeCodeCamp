@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
 title: I antes de E, exceto depois de C
-challengeType: 5
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-**"I antes de E, exceto depois de C"** é uma regra mnemônica para a ortografia em inglês. Quando não temos certeza se uma palavra é escrita com o dígrafo `ei` ou `ie`, a rima sugere que a ordem correta é `ie`, a menos que a letra anterior seja `c`, caso no qual ele deve ser `ei`.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I antes do E, exceto após o C"</a>** é uma regra geral para a ortografia no inglês. Quando não temos certeza se uma palavra é escrita com o dígrafo `ei` ou `ie`, a rima sugere que a ordem correta é `ie`, a menos que a letra anterior seja `c`, caso no qual ele deve ser `ei`.
 
 Usando as palavras fornecidas, verifique se as duas subcláusulas da frase são plausíveis individualmente:
 

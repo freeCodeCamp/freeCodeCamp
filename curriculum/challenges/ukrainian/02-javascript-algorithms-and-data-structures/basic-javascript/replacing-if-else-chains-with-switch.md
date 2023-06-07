@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e0
-title: Заміна "if else" ланцюжка ключем
+title: Заміна ланцюжків if else на switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JE8fy'
 forumTopicId: 18266
@@ -9,7 +9,7 @@ dashedName: replacing-if-else-chains-with-switch
 
 # --description--
 
-Якщо ви маєте багато опцій, з яких можете вибирати, то твердження `switch` може бути легшим для написання, ніж багатоланцюгові `if`/`else if` твердження. Наступне:
+Якщо ви маєте багато варіантів для вибору, простіше використати інструкцію `switch` замість багатьох ланцюжків `if`/`else if`. Наступне:
 
 ```js
 if (val === 1) {
@@ -21,7 +21,7 @@ if (val === 1) {
 }
 ```
 
-можна замінити цим:
+можна замінити на:
 
 ```js
 switch (val) {
@@ -38,65 +38,65 @@ switch (val) {
 
 # --instructions--
 
-Змініть ланцюжкові `if`/`else if` твердження на `switch` твердження.
+Змініть ланцюжки інструкцій `if`/`else if` на інструкцію `switch`.
 
 # --hints--
 
-Вам не слід використовувати будь-які `else` твердження будь-де в редакторі
+Ви не повинні використовувати інструкцію `else` в редакторі
 
 ```js
 assert(!/else/g.test(code));
 ```
 
-Вам не слід використовувати будь-які `if` твердження будь-де в редакторі
+Ви не повинні використовувати інструкцію `if` в редакторі
 
 ```js
 assert(!/if/g.test(code));
 ```
 
-Ви повинні мати хоча б чотири `break` твердження
+Ви повинні мати принаймні чотири інструкції `break`
 
 ```js
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` має бути рядком `Marley`
+`chainToSwitch("bob")` має повертати рядок `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` має бути рядком `The Answer`
+`chainToSwitch(42)` має повертати рядок `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` має бути рядком `There is no #1`
+`chainToSwitch(1)` має повертати рядок `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` має бути рядком `Missed me by this much!`
+`chainToSwitch(99)` має повертати рядок `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` має бути рядком `Ate Nine`
+`chainToSwitch(7)` має повертати рядок `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` має бути `""` (пустим рядком)
+`chainToSwitch("John")` має повертати `""` (порожній рядок)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` має бути `""` (пустим рядком)
+`chainToSwitch(156)` має повертати `""` (порожній рядок)
 
 ```js
 assert(chainToSwitch(156) === '');

@@ -1,7 +1,7 @@
 ---
 id: 5900f48d1000cf542c50ffa0
 title: 'Задача 289: Ейлерові ланцюги'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301940
 dashedName: problem-289-eulerian-cycles
 ---

@@ -12,17 +12,17 @@ dashedName: remove-a-package-from-your-dependencies
 
 但是，如果想要刪除不再需要的依賴包，該怎麼辦呢？ 可能已經猜到了——只需要從依賴項中刪除相應的鍵值對就行了。
 
-同樣的方法也適用於刪除 package.json 中的其它字段。
+同樣的方法也適用於刪除 package.json 中的其他字段。
 
 # --instructions--
 
-從依賴項中刪除 moment 依賴包。
+從依賴項中刪除 `@freecodecamp/example` 包。
 
 **注意：**刪除依賴包後，確保逗號數量正確。
 
 # --hints--
 
-“dependencies”字段不包含“moment”。
+`"dependencies"` 不應包含 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ dashedName: remove-a-package-from-your-dependencies
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

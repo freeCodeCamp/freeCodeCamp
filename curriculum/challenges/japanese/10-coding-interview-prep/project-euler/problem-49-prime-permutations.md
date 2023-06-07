@@ -1,7 +1,7 @@
 ---
 id: 5900f39d1000cf542c50feb0
 title: '問題 49: 素因数の順列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302159
 dashedName: problem-49-prime-permutations
 ---

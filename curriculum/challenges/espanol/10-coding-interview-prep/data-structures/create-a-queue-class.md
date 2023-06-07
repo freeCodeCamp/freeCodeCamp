@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c60
-title: Create a Queue Class
+title: Crea una clase Cola
 challengeType: 1
 forumTopicId: 301631
 dashedName: create-a-queue-class
@@ -8,19 +8,19 @@ dashedName: create-a-queue-class
 
 # --description--
 
-Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.
+Como las pilas, las colas son una colleción de elementos. Pero a diferencia de las pilas, las colas siguen el principio FIFO (First-In First-Out). Los elementos que son añadidos a la cola son puestos en la cola, o al final, de la cola, y solo el elemento del frente de la cola es posible extraerlo.
 
-We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.
+Podríamos usar un arreglo para representar una cola, pero como las pilas, queremos limitar la cantidad de control que tenemos sobre nuestras colas.
 
-The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.
+Los métodos principales de una clase cola son el enqueue y el dequeue. El método enqueue coloca un elemento al final de la cola, y el método dequeue elimina y devuelve el elemento al frente de la cola. Otros métodos útiles son el front, size e isEmpty.
 
 # --instructions--
 
-Write an `enqueue` method that pushes an element to the tail of the queue, a `dequeue` method that removes and returns the front element, a `front` method that lets us see the front element, a `size` method that shows the length, and an `isEmpty` method to check if the queue is empty.
+Escribe un método `enqueue` que ponga un elemento al final de la cola, un método `dequeue` que elimine y devuelva el elemento del frente, un método `front` que nos permita ver el elemento del frente, un método `size` que muestre la longitud, y un método `isEmpty` que compruebe si la cola está vacía.
 
 # --hints--
 
-Your `Queue` class should have a `enqueue` method.
+La clase `Queue` debe tener un método `enqueue`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `dequeue` method.
+La clase `Queue` debe tener un método `dequeue`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `front` method.
+La clase `Queue` debe tener un método `front`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `size` method.
+La clase `Queue` deber tener un método `size`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have an `isEmpty` method.
+La clase `Queue` debe tener un método `isEmpty`.
 
 ```js
 assert(
@@ -75,7 +75,7 @@ assert(
 );
 ```
 
-The `dequeue` method should remove and return the front element of the queue
+El método `dequeue` debe eliminar y devolver el elemento del frente de la cola
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The `front` method should return value of the front element of the queue
+El método `front` debe devolver el valor del elemento del frente de la cola
 
 ```js
 assert(
@@ -101,7 +101,7 @@ assert(
 );
 ```
 
-The `size` method should return the length of the queue
+El método `size` debe devolver la longitud de la cola
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return `false` if there are elements in the queue
+El método `isEmpty` debe devolver `false` si hay elementos en la cola
 
 ```js
 assert(

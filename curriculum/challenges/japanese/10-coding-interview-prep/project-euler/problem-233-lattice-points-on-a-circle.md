@@ -1,7 +1,7 @@
 ---
 id: 5900f4551000cf542c50ff68
 title: '問題 233: 円周上の格子点'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301877
 dashedName: problem-233-lattice-points-on-a-circle
 ---

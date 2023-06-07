@@ -1,7 +1,7 @@
 ---
 id: 5900f4601000cf542c50ff72
 title: 'Завдання 244: П''ятнашки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301891
 dashedName: problem-244-sliders
 ---

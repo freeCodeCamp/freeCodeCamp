@@ -1,7 +1,7 @@
 ---
 id: 5900f42f1000cf542c50ff40
 title: '問題 194: 色付きの構成'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301832
 dashedName: problem-194-coloured-configurations
 ---

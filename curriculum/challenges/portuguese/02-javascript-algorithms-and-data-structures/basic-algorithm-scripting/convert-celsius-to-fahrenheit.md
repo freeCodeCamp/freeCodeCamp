@@ -14,40 +14,40 @@ Você tem uma variável `celsius` representando uma temperatura em Celsius. Use 
 
 # --hints--
 
-`convertToF(0)` deve retornar um número
+`convertCtoF(0)` deve retornar um número
 
 ```js
-assert(typeof convertToF(0) === 'number');
+assert(typeof convertCtoF(0) === 'number');
 ```
 
-`convertToF(-30)` deve retornar um valor de `-22`
+`convertCtoF(-30)` deve retornar um valor de `-22`
 
 ```js
-assert(convertToF(-30) === -22);
+assert(convertCtoF(-30) === -22);
 ```
 
-`convertToF(-10)` deve retornar um valor de `14`
+`convertCtoF(-10)` deve retornar um valor de `14`
 
 ```js
-assert(convertToF(-10) === 14);
+assert(convertCtoF(-10) === 14);
 ```
 
-`convertToF(0)` deve retornar um valor de `32`
+`convertCtoF(0)` deve retornar um valor de `32`
 
 ```js
-assert(convertToF(0) === 32);
+assert(convertCtoF(0) === 32);
 ```
 
-`convertToF(20)` deve retornar um valor de `68`
+`convertCtoF(20)` deve retornar um valor de `68`
 
 ```js
-assert(convertToF(20) === 68);
+assert(convertCtoF(20) === 68);
 ```
 
-`convertToF(30)` deve retornar um valor de `86`
+`convertCtoF(30)` deve retornar um valor de `86`
 
 ```js
-assert(convertToF(30) === 86);
+assert(convertCtoF(30) === 86);
 ```
 
 # --seed--
@@ -55,22 +55,21 @@ assert(convertToF(30) === 86);
 ## --seed-contents--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit;
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```
 
 # --solutions--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit = celsius * 9/5 + 32;
-
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```

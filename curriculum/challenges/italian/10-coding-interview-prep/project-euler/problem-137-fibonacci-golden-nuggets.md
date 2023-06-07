@@ -1,7 +1,7 @@
 ---
 id: 5900f3f51000cf542c50ff08
 title: 'Problema 137: la pepita d''oro di Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301765
 dashedName: problem-137-fibonacci-golden-nuggets
 ---

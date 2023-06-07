@@ -27,7 +27,7 @@ assert(img?.nextElementSibling?.className === 'keys');
 assert(img?.previousElementSibling === null);
 ```
 
-O elemento `img` deve ter uma `class` definida como logo.
+O elemento `img` deve ter o atributo `class` definido como `logo`.
 
 ```js
 const img = document.querySelector('img');
@@ -59,7 +59,7 @@ assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Piano</title>

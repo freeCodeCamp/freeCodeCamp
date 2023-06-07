@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4a21f462f409d656c73
 title: Sequenza autoreferenziale
-challengeType: 5
+challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
 ---
 
 # --description--
 
-Ci sono diversi modi per generare una sequenza autoreferenziale. Uno molto comune (la sequenza [Look-and-say](https://rosettacode.org/wiki/Look-and-say sequence)) è iniziare con un numero intero positivo, quindi generare il termine successivo concatenando gruppi enumerati di cifre simili adiacenti:
+Ci sono diversi modi per generare una sequenza autoreferenziale. Uno molto comune (la sequenza <a href="https://rosettacode.org/wiki/Look-and-say_sequence" target="_blank" rel="noopener noreferrer nofollow">Look-and-say</a>) è iniziare con un numero intero positivo, quindi generare il termine successivo concatenando gruppi enumerati di cifre simili adiacenti:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 

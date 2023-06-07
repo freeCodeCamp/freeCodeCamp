@@ -1,55 +1,48 @@
-import React, { MutableRefObject, RefObject, useRef } from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import { editor } from 'monaco-editor';
-import { isDonationModalOpenSelector, userSelector } from '../../../redux';
+import {
+  userSelector,
+  isDonationModalOpenSelector
+} from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   visibleEditorsSelector
-} from '../redux';
+} from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
-import {
-  ChallengeFile,
-  Dimensions,
-  Ext,
-  FileKey,
-  ResizeProps,
-  Test
-} from '../../../redux/prop-types';
+import { FileKey } from '../../../redux/prop-types';
 import { Themes } from '../../../components/settings/theme';
-import Editor from './editor';
+import Editor, { type EditorProps } from './editor';
 
 type VisibleEditors = {
   [key: string]: boolean;
 };
-interface MultifileEditorProps {
-  canFocus?: boolean;
-  challengeFiles: ChallengeFile[];
-  containerRef: RefObject<HTMLElement>;
-  contents?: string;
-  description: string;
-  dimensions?: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
-  ext?: Ext;
-  fileKey?: string;
-  initialEditorContent?: string;
-  initialExt?: string;
-  initialTests: Test[];
-  output?: string[];
-  resizeProps: ResizeProps;
-  title: string;
-  showProjectPreview: boolean;
-  usesMultifileEditor: boolean;
+type MultifileEditorProps = Pick<
+  EditorProps,
+  | 'usesMultifileEditor'
+  | 'showProjectPreview'
+  | 'title'
+  | 'resizeProps'
+  | 'isUsingKeyboardInTablist'
+  | 'isMobileLayout'
+  | 'initialTests'
+  | 'editorRef'
+  | 'containerRef'
+  | 'challengeFiles'
+  | 'description'
+  // We use dimensions to trigger a re-render of the editor
+  | 'dimensions'
+> & {
   visibleEditors: {
     indexhtml?: boolean;
     indexjsx?: boolean;
     stylescss?: boolean;
     scriptjs?: boolean;
   };
-}
+};
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
@@ -77,6 +70,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     description,
     editorRef,
     initialTests,
+    isMobileLayout,
+    isUsingKeyboardInTablist,
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
@@ -129,7 +124,12 @@ const MultifileEditor = (props: MultifileEditorProps) => {
               );
             } else {
               return (
-                <ReflexElement {...reflexProps} {...resizeProps} key={key}>
+                <ReflexElement
+                  data-cy={`editor-container-${key}`}
+                  {...reflexProps}
+                  {...resizeProps}
+                  key={key}
+                >
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
                     challengeFiles={challengeFiles}
@@ -138,12 +138,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     editorRef={editorRef}
                     fileKey={key as FileKey}
                     initialTests={initialTests}
+                    isMobileLayout={isMobileLayout}
+                    isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
-                    contents={props.contents ?? ''}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}
-                    ext={props.ext ?? 'html'}
-                    initialEditorContent={props.initialEditorContent ?? ''}
-                    initialExt={props.initialExt ?? ''}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}

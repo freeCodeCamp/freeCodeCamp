@@ -1,16 +1,16 @@
 ---
 id: 5900f3e81000cf542c50fefb
-title: 'Problem 124: Ordered radicals'
-challengeType: 5
+title: 'Задача 124: Впорядковані радикали'
+challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
 ---
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of the distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+The radical of $n$, $rad(n)$, is the product of the distinct prime factors of $n$. Наприклад, $ 504 = 2^3 × 3^2 × 7 $, тому $rad(504) = 2 × 3 × 7 = 42$.
 
-If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and sorting on $n$ if the radical values are equal, we get:
+Якщо ми обчислюємо $rad (n)$ для $1 ≤ n ≤ 10$, то сортуємо їх за $rad (n)$, а за $n$, якщо радикальні значення рівні, то отримуємо:
 
 <div style="text-align: center;">
   <table cellpadding="2" cellspacing="0" border="0" align="center">
@@ -112,11 +112,11 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+Нехай $E(k)$ - елемент $k$ у відсортованому стовпці $n$; наприклад, $E(4) = 8$ і $E(6) = 9$. Якщо $rad(n)$ відсортовано за $1 ≤ n ≤ 100000$, знайдіть $E(10000)$.
 
 # --hints--
 
-`orderedRadicals()` should return `21417`.
+`orderedRadicals()` має повернути `21417`.
 
 ```js
 assert.strictEqual(orderedRadicals(), 21417);

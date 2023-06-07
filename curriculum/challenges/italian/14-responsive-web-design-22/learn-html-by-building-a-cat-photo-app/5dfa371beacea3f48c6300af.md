@@ -1,15 +1,17 @@
 ---
 id: 5dfa371beacea3f48c6300af
-title: Step 18
+title: Step 19
 challengeType: 0
-dashedName: step-18
+dashedName: step-19
 ---
 
 # --description--
 
 L'aggiunta alla pagina un elemento d'intestazione di rango inferiore, denota l'inizio una nuova sottosezione.
 
-Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo `Things cats love:`.
+Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo:
+
+`Things cats love:`
 
 # --hints--
 
@@ -62,17 +64,18 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
 --fcc-editable-region--
       <section>
         <h2>Cat Lists</h2>
+
       </section>
 --fcc-editable-region--
     </main>

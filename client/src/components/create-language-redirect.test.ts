@@ -9,7 +9,7 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const currentPageURL =
       'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const chinesePageURL =
-      'https://chinese.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+      'https://www.freecodecamp.org/chinese/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
       'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const chineseTraditionalPageURL =
@@ -54,7 +54,7 @@ describe('createLanguageRedirect for clientLocale === english', () => {
 
   describe('settings page', () => {
     const currentPageURL = 'https://www.freecodecamp.org/settings';
-    const chinesePageURL = 'https://chinese.freecodecamp.org/settings';
+    const chinesePageURL = 'https://www.freecodecamp.org/chinese/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
     const chineseTraditionalPageURL =
       'https://www.freecodecamp.org/chinese-traditional/settings';
@@ -103,7 +103,7 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
 
   describe('challenge page', () => {
     const currentPageURL =
-      'https://chinese.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+      'https://www.freecodecamp.org/chinese/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const englishPageURL =
       'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
@@ -149,7 +149,7 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
   });
 
   describe('settings page', () => {
-    const currentPageURL = 'https://chinese.freecodecamp.org/settings';
+    const currentPageURL = 'https://www.freecodecamp.org/chinese/settings';
     const englishPageURL = 'https://www.freecodecamp.org/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
     const chineseTraditionalPageURL =

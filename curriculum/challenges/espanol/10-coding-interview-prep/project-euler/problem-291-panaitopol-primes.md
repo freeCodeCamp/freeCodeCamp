@@ -1,23 +1,23 @@
 ---
 id: 5900f48f1000cf542c50ffa2
 title: 'Problem 291: Panaitopol Primes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301943
 dashedName: problem-291-panaitopol-primes
 ---
 
 # --description--
 
-A prime number p is called a Panaitopol prime if for some positive integersx and y.
+A prime number $p$ is called a Panaitopol prime if $p = \frac{x^4 - y^4}{x^3 + y^3}$ for some positive integers $x$ and $y$.
 
-Find how many Panaitopol primes are less than 5×1015.
+Find how many Panaitopol primes are less than $5 × {10}^{15}$.
 
 # --hints--
 
-`euler291()` should return 4037526.
+`panaitopolPrimes()` should return `4037526`.
 
 ```js
-assert.strictEqual(euler291(), 4037526);
+assert.strictEqual(panaitopolPrimes(), 4037526);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler291(), 4037526);
 ## --seed-contents--
 
 ```js
-function euler291() {
+function panaitopolPrimes() {
 
   return true;
 }
 
-euler291();
+panaitopolPrimes();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da3
-title: Навчання з підкріпленням за допомогою Q-Learning
+title: Посилене навчання за допомогою Q-Learning
 challengeType: 11
 videoId: Cf7DSU0gVb4
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: reinforcement-learning-with-q-learning
 
 ## --text--
 
-Ключові компоненти навчання з підкріпленням...
+До ключових компонентів посиленого навчання належать...
 
 ## --answers--
 

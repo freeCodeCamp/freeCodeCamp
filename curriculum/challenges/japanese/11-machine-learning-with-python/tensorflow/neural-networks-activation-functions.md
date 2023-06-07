@@ -14,7 +14,7 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
--1 ～ 1 の間で値が切り替わる活性化関数はどれですか？
+Which activation function squishes values between -1 and 1?
 
 ## --answers--
 

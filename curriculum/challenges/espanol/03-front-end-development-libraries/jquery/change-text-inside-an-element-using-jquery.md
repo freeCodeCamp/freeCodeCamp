@@ -22,7 +22,7 @@ jQuery también tiene una función similar llamada `.text()` que solamente alter
 
 Cambia el botón con id `target4` enfatizando su texto.
 
-[ Ve a nuestro artículo sobre &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) para aprender la diferencia entre `<i>` y `<em>` y sus usos.
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">Vea nuestro artículo de noticias para &lt;em&gt;</a> aprender la diferencia entre `<i>` y `<em>` y sus usos.
 
 Ten en cuenta que mientras la etiqueta `<i>` tradicionalmente se usaba para enfatizar texto, fue adaptada para ser usada como etiqueta para iconos. La etiqueta `<em>` ahora es ampliamente aceptada como la etiqueta de énfasis. Cualquiera de las dos servirá para este desafío.
 

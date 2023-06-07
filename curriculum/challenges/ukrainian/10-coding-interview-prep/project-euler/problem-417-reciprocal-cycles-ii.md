@@ -1,7 +1,7 @@
 ---
 id: 5900f50d1000cf542c51001f
 title: 'Завдання 417: Зворотні цикли II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302086
 dashedName: problem-417-reciprocal-cycles-ii
 ---

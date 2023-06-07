@@ -1,7 +1,7 @@
 ---
 id: 5900f48a1000cf542c50ff9c
 title: 'Проблема 285: коефіцієнт Піфагора'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301936
 dashedName: problem-285-pythagorean-odds
 ---

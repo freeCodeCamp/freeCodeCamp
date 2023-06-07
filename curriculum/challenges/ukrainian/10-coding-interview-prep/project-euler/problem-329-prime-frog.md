@@ -1,7 +1,7 @@
 ---
 id: 5900f4b51000cf542c50ffc8
 title: 'Завдання 329: Проста жаба'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
 ---

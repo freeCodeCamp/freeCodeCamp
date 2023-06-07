@@ -1,7 +1,7 @@
 ---
 id: 5900f3e21000cf542c50fef4
 title: 'Завдання 117: Червоні, зелені та сині комірки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
 ---

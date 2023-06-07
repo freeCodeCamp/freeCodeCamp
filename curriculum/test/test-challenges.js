@@ -1,10 +1,8 @@
-/* eslint-disable no-loop-func */
 const path = require('path');
-const { inspect } = require('util');
 const vm = require('vm');
 const { assert, AssertionError } = require('chai');
 const jsdom = require('jsdom');
-const liveServer = require('live-server');
+const liveServer = require('@compodoc/live-server');
 const lodash = require('lodash');
 const Mocha = require('mocha');
 const mockRequire = require('mock-require');
@@ -17,7 +15,6 @@ const stringSimilarity = require('string-similarity');
 mockRequire('lodash-es', lodash);
 
 const clientPath = path.resolve(__dirname, '../../client');
-require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
@@ -35,64 +32,41 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../client/utils/challenge-types');
 // the config files are created during the build, but not before linting
-/* eslint-disable import/no-unresolved */
 const testEvaluator =
   require('../../config/client/test-evaluator.json').filename;
-/* eslint-enable import/no-unresolved */
 
 const { getLines } = require('../../utils/get-lines');
-const { isAuditedCert } = require('../../utils/is-audited');
 
-const {
-  getChallengesForLang,
-  getMetaForBlock,
-  getTranslatableComments
-} = require('../getChallenges');
-const { challengeSchemaValidator } = require('../schema/challengeSchema');
+const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
+const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
-const ChallengeTitles = require('./utils/challengeTitles');
-const MongoIds = require('./utils/mongoIds');
+const ChallengeTitles = require('./utils/challenge-titles');
+const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');
 
-const TRANSLATABLE_COMMENTS = getTranslatableComments(
-  path.resolve(__dirname, '..', 'dictionaries')
-);
+const { flatten, isEmpty, cloneDeep } = lodash;
 
-const commentExtractors = {
-  html: require('./utils/extract-html-comments'),
-  js: require('./utils/extract-js-comments'),
-  jsx: require('./utils/extract-jsx-comments'),
-  css: require('./utils/extract-css-comments'),
-  scriptJs: require('./utils/extract-script-js-comments')
-};
-
-const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
-
-// rethrow unhandled rejections to make sure the tests exit with -1
+// rethrow unhandled rejections to make sure the tests exit with non-zero code
 process.on('unhandledRejection', err => handleRejection(err));
 // If an uncaught exception gets here, then mocha is in an unexpected state. All
 // we can do is log the exception and exit with a non-zero code.
 process.on('uncaughtException', err => {
-  console.error('Uncaught exception:', err.message);
-  console.error(err.stack);
-  // eslint-disable-next-line no-process-exit
+  console.error('Uncaught exception:');
+  console.error(err);
   process.exit(1);
 });
 
+// some errors *may* not be reported, since cleanup is triggered by the first
+// error and that starts shutting down the browser and the server.
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
   // code on unhandled exceptions.
   process.exitCode = 1;
   cleanup();
-  if (process.env.FULL_OUTPUT === 'true') {
-    // some errors *may* not be reported, since cleanup is triggered by the
-    // first error and that starts shutting down the browser and the server.
-    console.error(err);
-  } else {
-    throw err;
-  }
+  console.error(err);
+  if (process.env.FULL_OUTPUT !== 'true') process.exit();
 };
 
 const dom = new jsdom.JSDOM('');
@@ -132,7 +106,7 @@ setup()
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+  if (process.env.FCC_SUPERBLOCK && process.env.FCC_BLOCK) {
     throw new Error(`Please do not use both a block and superblock as input.`);
   }
 
@@ -174,9 +148,9 @@ async function setup() {
   ];
 
   // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_superblock) {
+  if (process.env.FCC_SUPERBLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_superblock,
+      process.env.FCC_SUPERBLOCK,
       targetSuperBlockStrings
     ).bestMatch.target;
 
@@ -190,9 +164,9 @@ async function setup() {
     }
   }
 
-  if (process.env.npm_config_block) {
+  if (process.env.FCC_BLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_block,
+      process.env.FCC_BLOCK,
       targetBlockStrings
     ).bestMatch.target;
 
@@ -263,49 +237,51 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  describe('Assert meta order', function () {
-    /** This array can be used to skip a superblock - we'll use this
-     * when we are working on the new project-based curriculum for
-     * a superblock (because keeping those challenges in order is
-     * tricky and needs cleaning up before deploying).
-     */
-    const superBlocksUnderDevelopment = [
-      '2022/javascript-algorithms-and-data-structures'
-    ];
-    const superBlocks = new Set([
-      ...Object.values(meta)
-        .map(el => el.superBlock)
-        .filter(el => !superBlocksUnderDevelopment.includes(el))
-    ]);
-    superBlocks.forEach(superBlock => {
-      const filteredMeta = Object.values(meta)
-        .filter(el => el.superBlock === superBlock)
-        .sort((a, b) => a.order - b.order);
-      if (!filteredMeta.length) {
-        return;
-      }
-      it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+  if (!process.env.FCC_BLOCK) {
+    describe('Assert meta order', function () {
+      /** This array can be used to skip a superblock - we'll use this
+       * when we are working on the new project-based curriculum for
+       * a superblock (because keeping those challenges in order is
+       * tricky and needs cleaning up before deploying).
+       */
+      const superBlocksUnderDevelopment = [
+        '2022/javascript-algorithms-and-data-structures'
+      ];
+      const superBlocks = new Set([
+        ...Object.values(meta)
+          .map(el => el.superBlock)
+          .filter(el => !superBlocksUnderDevelopment.includes(el))
+      ]);
+      superBlocks.forEach(superBlock => {
+        const filteredMeta = Object.values(meta)
+          .filter(el => el.superBlock === superBlock)
+          .sort((a, b) => a.order - b.order);
+        if (!filteredMeta.length) {
+          return;
+        }
+        it(`${superBlock} should have the same order in every meta`, function () {
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+          });
+          assert.isNumber(firstOrder);
+          assert.isTrue(
+            filteredMeta.every(
+              el =>
+                getSuperOrder(el.superBlock, {
+                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+                }) === firstOrder
+            ),
+            'The superOrder properties are mismatched.'
+          );
         });
-        assert.isNumber(firstOrder);
-        assert.isTrue(
-          filteredMeta.every(
-            el =>
-              getSuperOrder(el.superBlock, {
-                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-              }) === firstOrder
-          ),
-          'The superOrder properties are mismatched.'
-        );
-      });
-      filteredMeta.forEach((meta, index) => {
-        it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-          assert.equal(meta.order, index);
+        filteredMeta.forEach((meta, index) => {
+          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+            assert.equal(meta.order, index);
+          });
         });
       });
     });
-  });
+  }
 
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
@@ -342,100 +318,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
             challengeTitles.check(title, pathAndTitle);
           });
 
-          it('Has replaced all the English comments', () => {
-            // special cases are where this process breaks for some reason, but
-            // we have validated that the challenge gets parsed correctly.
-            const specialCases = [
-              '587d7b84367417b2b2512b36',
-              '587d7b84367417b2b2512b37',
-              '587d7db0367417b2b2512b82',
-              '587d7dbe367417b2b2512bb8',
-              '5a24c314108439a4d4036161',
-              '5a24c314108439a4d4036154',
-              '5a94fe0569fb03452672e45c',
-              '5a94fe7769fb03452672e463',
-              '5a24c314108439a4d4036148'
-            ];
-            if (specialCases.includes(challenge.id)) return;
-            if (
-              lang === 'english' ||
-              !isAuditedCert(lang, challenge.superBlock)
-            ) {
-              return;
-            }
-
-            // If no .challengeFiles, then no seed:
-            if (!challenge.challengeFiles) return;
-
-            // - None of the translatable comments should appear in the
-            //   translations. While this is a crude check, no challenges
-            //   currently have the text of a comment elsewhere. If that happens
-            //   we can handle that challenge separately.
-            TRANSLATABLE_COMMENTS.forEach(comment => {
-              const errorText = `English comment '${comment}' should be replaced with its translation`;
-              challenge.challengeFiles.forEach(challengeFile => {
-                if (challengeFile.contents.includes(comment))
-                  if (process.env.SHOW_UPCOMING_CHANGES == 'true') {
-                    console.warn(errorText);
-                  } else {
-                    throw Error(errorText);
-                  }
-              });
-            });
-
-            // - None of the translated comment texts should appear *outside* a
-            //   comment
-            challenge.challengeFiles.forEach(challengeFile => {
-              let comments = {};
-
-              // We get all the actual comments using the appropriate parsers
-              if (challengeFile.ext === 'html') {
-                const commentTypes = ['css', 'html', 'scriptJs'];
-                for (let type of commentTypes) {
-                  const newComments = commentExtractors[type](
-                    challengeFile.contents
-                  );
-                  for (const [key, value] of Object.entries(newComments)) {
-                    comments[key] = comments[key]
-                      ? comments[key] + value
-                      : value;
-                  }
-                }
-              } else {
-                comments = commentExtractors[challengeFile.ext](
-                  challengeFile.contents
-                );
-              }
-
-              /*
-               * Then we compare the number of times each comment appears in the
-               * translated text (commentMap) with the number of replacements
-               * made during translation (challenge.__commentCounts). If they
-               * differ, the translation must have gone wrong
-               */
-
-              const commentMap = new Map(Object.entries(comments));
-
-              if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
-                return;
-
-              if (
-                process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-                !isEqual(commentMap, challenge.__commentCounts)
-              )
-                throw Error(`Mismatch in ${challenge.title}. Replaced comments:
-${inspect(challenge.__commentCounts)}
-Comments in translated text:
-${inspect(commentMap)}
-`);
-            });
-          });
-
           const { challengeType } = challenge;
           if (
             challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire &&
+            challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
             challengeType !== challengeTypes.backend
           ) {
@@ -464,7 +351,7 @@ ${inspect(commentMap)}
 
           const buildChallenge =
             challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.bonfire
+            challengeType === challengeTypes.jsProject
               ? buildJSChallenge
               : buildDOMChallenge;
 

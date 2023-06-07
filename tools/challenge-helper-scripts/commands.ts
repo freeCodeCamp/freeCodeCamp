@@ -9,7 +9,7 @@ import {
   updateStepTitles
 } from './utils';
 
-function deleteStep(stepNum: number) {
+function deleteStep(stepNum: number): void {
   if (stepNum < 1) {
     throw 'Step not deleted. Step num must be a number greater than 0.';
   }
@@ -28,7 +28,7 @@ function deleteStep(stepNum: number) {
   console.log(`Sucessfully deleted step #${stepNum}`);
 }
 
-function insertStep(stepNum: number) {
+function insertStep(stepNum: number): void {
   if (stepNum < 1) {
     throw 'Step not inserted. New step number must be greater than 0.';
   }
@@ -56,7 +56,7 @@ function insertStep(stepNum: number) {
   console.log(`Sucessfully inserted new step #${stepNum}`);
 }
 
-function createEmptySteps(num: number) {
+function createEmptySteps(num: number): void {
   if (num < 1 || num > 1000) {
     throw `No steps created. arg 'num' must be between 1 and 1000 inclusive`;
   }

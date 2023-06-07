@@ -1,7 +1,7 @@
 ---
 id: 5900f3bd1000cf542c50fed0
 title: 'Завдання 81: Сума шляхів: два способи'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways
 ---

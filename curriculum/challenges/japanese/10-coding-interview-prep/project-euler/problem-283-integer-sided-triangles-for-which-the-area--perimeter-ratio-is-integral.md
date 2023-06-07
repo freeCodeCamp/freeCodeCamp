@@ -2,7 +2,7 @@
 id: 5900f4881000cf542c50ff9a
 title: >-
   問題 283: 面積 / 周長の比率が整数である整数辺三角形
-challengeType: 5
+challengeType: 1
 forumTopicId: 301934
 dashedName: >-
   problem-283-integer-sided-triangles-for-which-the-area--perimeter-ratio-is-integral

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7eb1
 title: Matrice identità
-challengeType: 5
+challengeType: 1
 forumTopicId: 302290
 dashedName: identity-matrix
 ---

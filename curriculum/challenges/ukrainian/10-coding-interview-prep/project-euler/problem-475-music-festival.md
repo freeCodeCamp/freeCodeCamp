@@ -1,7 +1,7 @@
 ---
 id: 5900f5481000cf542c51005a
 title: 'Завдання 475: Музичний фестиваль'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302152
 dashedName: problem-475-music-festival
 ---

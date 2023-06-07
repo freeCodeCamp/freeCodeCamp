@@ -49,7 +49,7 @@ L'endpoint /now dovrebbe avere il middleware montato
   );
 ```
 
-L'endpoint /now dovrebbe restituire un tempo che è di +/- 20 secondi da ora
+L'endpoint `/now` dovrebbe restituire l'ora corrente.
 
 ```js
 (getUserInput) =>

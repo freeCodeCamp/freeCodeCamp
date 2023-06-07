@@ -8,9 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-Про візуалізацію та подання даних можна дізнатися за допомогою D3. Ймовірно, що на основі даних ви захочете змінити стиль елементів. Для того, щоб змінити стиль для різних елементів, ви можете використати функцію зворотного зв'язку в методі `style()`.
-
-Наприклад, ви можливо маєте бажання зафарбувати точку даних у синій колір, якщо її значення менше ніж 20, в іншому випадку - у червоний. Ви можете використати функцію зворотного зв'язку в методі `style()` і включити умовну логіку. Для відображення точки даних, функція зворотного зв'язку використовує параметр `d`:
+Про візуалізацію та подання даних можна дізнатися за допомогою D3. Ймовірно, що на основі даних ви захочете змінити стиль елементів. For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
 
 ```js
 selection.style("color", (d) => {
@@ -18,65 +16,65 @@ selection.style("color", (d) => {
 });
 ```
 
-При використанні методу `style()` він не обмежується лише встановленням `color`, адже він може добре використовуватися і з іншими властивостями CSS.
+The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
 
 # --instructions--
 
-Щоб встановити `color` елементів `h2` умовно, потрібно додати метод `style()` до коду в редакторі. Запишіть функцію зворотного зв'язку, щоб вона повертала червоний колір, якщо значення менше 20, в іншому випадку - зелений.
+Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
 
-**Note:** Ви можете використовувати if-else логіку або тернарний оператор.
+**Note:** You can use if-else logic, or the ternary operator.
 
 # --hints--
 
-Перший `h2` повинен мати червоний `color`.
+The first `h2` should have a `color` of red.
 
 ```js
 assert($('h2').eq(0).css('color') == 'rgb(255, 0, 0)');
 ```
 
-Другий `h2` повинен мати зелений `color`.
+The second `h2` should have a `color` of green.
 
 ```js
 assert($('h2').eq(1).css('color') == 'rgb(0, 128, 0)');
 ```
 
-Третій `h2` повинен мати зелений `color`.
+The third `h2` should have a `color` of green.
 
 ```js
 assert($('h2').eq(2).css('color') == 'rgb(0, 128, 0)');
 ```
 
-Четвертий `h2` повинен мати червоний `color`.
+The fourth `h2` should have a `color` of red.
 
 ```js
 assert($('h2').eq(3).css('color') == 'rgb(255, 0, 0)');
 ```
 
-П'ятий `h2` повинен мати зелений `color`.
+The fifth `h2` should have a `color` of green.
 
 ```js
 assert($('h2').eq(4).css('color') == 'rgb(0, 128, 0)');
 ```
 
-Шостий `h2` повинен мати червоний `color`.
+The sixth `h2` should have a `color` of red.
 
 ```js
 assert($('h2').eq(5).css('color') == 'rgb(255, 0, 0)');
 ```
 
-Сьомий `h2` повинен мати зелений `color`.
+The seventh `h2` should have a `color` of green.
 
 ```js
 assert($('h2').eq(6).css('color') == 'rgb(0, 128, 0)');
 ```
 
-Восьмий `h2` повинен мати червоний `color`.
+The eighth `h2` should have a `color` of red.
 
 ```js
 assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
 ```
 
-Дев'ятий `h2` повинен мати червоний `color`.
+The ninth `h2` should have a `color` of red.
 
 ```js
 assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');

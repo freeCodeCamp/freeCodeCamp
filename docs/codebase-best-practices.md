@@ -1,5 +1,25 @@
 # Codebase Best Practices
 
+## Styling a component
+
+We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/). 
+
+The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
+
+We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
+
+The `!important` keyword may be used to override values in some cases (e.g. accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+
+### RTL support
+
+We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are some quick rules of thumb to follow:
+
+- Don't use `float` properties
+  - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
+- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
+  - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line starts and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Don't use `!important` in `font-family`: RTL layout uses different fonts compared to the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too.
+
 ## General JavaScript
 
 In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
@@ -128,6 +148,40 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
+
+## API
+
+### Testing
+
+The `api/` tests are split into two parts:
+
+1. Unit tests
+2. Integration tests
+
+#### Unit Tests
+
+Unit tests isolate a single function or component. The tests do not need mocking, but will require fixtures.
+
+The unit tests are located in a new file adjacent the file exporting that being tested:
+
+```text
+api/
+├── src/
+│   ├── utils.ts
+│   ├── utils.test.ts
+```
+
+#### Integration Tests
+
+Integration tests test the API as a whole. The tests will require mocking, and should not require fixtures beyond the database seeding data, and a method to authenticate.
+
+Typically, each integration test file will be directly related to a route. The integration tests are located in the `api/tests/` directory:
+
+```text
+api/
+├── tests/
+│   ├── settings.ts
+```
 
 ## Further Literature
 

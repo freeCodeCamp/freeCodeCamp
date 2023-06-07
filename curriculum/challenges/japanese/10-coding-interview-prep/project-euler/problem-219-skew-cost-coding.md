@@ -1,7 +1,7 @@
 ---
 id: 5900f4481000cf542c50ff5a
 title: '問題 219: 不均一な料金で符号を送信する'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301861
 dashedName: problem-219-skew-cost-coding
 ---

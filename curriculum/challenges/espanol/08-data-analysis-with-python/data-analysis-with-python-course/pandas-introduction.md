@@ -16,8 +16,8 @@ dashedName: pandas-introduction
 
 Más recursos:
 
--   [Notas en GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [Cómo abrir Notebooks desde GitHub utilizando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Notas en GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Cómo abrir Notebooks desde GitHub utilizando Google Colab.</a>
 
 # --question--
 
@@ -38,7 +38,7 @@ print(certificates_earned)
 
 ## --answers--
 
-```
+```markup
 Tom      8
 Kris     2
 Ahmad    5
@@ -48,7 +48,7 @@ dtype: int64
 
 ---
 
-```
+```markup
 Kris     2
 Ahmad    5
 Beau     6
@@ -58,7 +58,7 @@ dtype: int64
 
 ---
 
-```
+```markup
 Tom      8
 Kris     2
 Ahmad    5

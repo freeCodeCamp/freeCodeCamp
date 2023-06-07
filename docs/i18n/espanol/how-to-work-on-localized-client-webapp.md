@@ -1,10 +1,10 @@
-# Cómo trabajar en una aplicación web de cliente localizada
+# How to Work on Localized Client Webapp
 
-La aplicación web de cliente basada en react que impulsa nuestra plataforma de aprendizaje se construyo utilizando Gatsby. Se traduce a varios idiomas utilizando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
+The React-based client web app that powers our learning platform is built using Gatsby. Se traduce a varios idiomas utilizando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
 
-Puedes obtener más información sobre cómo configurar la aplicación cliente localmente para su desarrollo siguiendo [nuestra guía de configuración local aquí](how-to-setup-freecodecamp-locally.md). Por defecto, la aplicación solo está disponible en inglés.
+Puedes obtener más información sobre cómo configurar la aplicación cliente localmente para su desarrollo siguiendo [nuestra guía de configuración local aquí](how-to-setup-freecodecamp-locally.md). By default, the application is available only in English.
 
-Una vez que hayas configurado el proyecto localmente, deberías poder seguir esta documentación para ejecutar el cliente en el idioma de tu elección de la lista de idiomas disponibles.
+Once you have set up the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 Esto podría ser útil cuando se está trabajando en una función que se dirige específicamente a algo que implica la localización, y requiere que valides, por ejemplo, la etiqueta de un botón en un idioma diferente.
 
@@ -14,11 +14,11 @@ Veamos cómo funcionan los marcos de trabajo y las herramientas de i18n.
 
 ## Estructura de archivos
 
-La mayoría de los archivos para traducir la plataforma se encuentran en la carpeta [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
 
 ```console
-  config/i18n
-  └── all-langs.ts
+  config
+  └── i18n.ts
   ...
   client/i18n
   ├── configForTests.js
@@ -29,41 +29,37 @@ La mayoría de los archivos para traducir la plataforma se encuentran en la carp
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── dothraki
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── english
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   │   └── espanol
   │       ├── intro.json
   │       ├── links.json
   │       ├── meta-tags.json
   │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │       └── translations.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
 ```
 
-Algunos de estos archivos son traducidos en nuestra plataforma de traducción (Crowdin), otros no lo son.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
 
 **Archivos traducidos en nuestra plataforma de traducción:**
 
-- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
+- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. This file needs to have the same keys in all languages.
 
 - El archivo `intro.json` contiene los pares clave-valor para el texto de introducción en las páginas de certificación.
 
@@ -73,32 +69,41 @@ Algunos de estos archivos son traducidos en nuestra plataforma de traducción (C
 
 - Los archivos  `motivation.json` no requieren que tengan las mismas comillas, complementos o tamaños u orden. Simplemente la misma estructura JSON.
 
-- El archivo `trending.json` contiene los títulos y enlaces para los artículos noticiosos en tendencia dentro del footer del sitio web.
+- The `meta-tags.json` file contains the information for our website's meta tag information.
 
-- El archivo`meta-tags.json` contiene la información para nuestra informacion de la Meta etiqueta del sitio web.
+  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
-  Los cambios en estos archivos son usualmente realizados por nuestro personal. Si ves algo raro o fuera de lo normal, deberías comunicarte con nosotros en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors).
+## Testing the Client App in a World Language
 
-## Probando la app cliente en un idioma mundial
-
-Puedes probar la app cliente en cualquier lenguaje disponible en la [lista de idiomas aquí](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+export const availableLangs = {
+  client: [
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTraditional,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
+  ],
+  ...
+};
 ```
 
 Si estas probando un nuevo idioma, crea una carpeta con el nombre del idioma como titulo junto al otro idioma y copia los archivos JSON desde el otro idioma dentro de la nueva carpeta.
 
-Agrega el idioma al arreglo `cliente` como se ve arriba en el archivo[`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js).
+Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
 
 A continuación, sigue las instrucciones en los comentarios en el mismo archivo para agregar/actualizar el resto de las variables tanto como se necesite.
 
-Finalmente, establece la variable `CLIENT_LOCALE`  en tu archivo `.env`  en la configuración regional que quieres crear y estás listo.
+Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Languages` enum in the above file.
 
-## How to Structure Components
+## Como estructurar los componentes
 
 Si estás trabajando en una característica o en un error para el cliente de la app web, por ejemplo agregando unos nuevos elementos UI en la página de configuración, debes seguir las líneas de ayuda siguientes. Te ayudarán a preparar los componentes para localizarlo en todos los idiomas mundiales soportados.
 
@@ -175,53 +180,53 @@ La regla general es usar la función "t" cuando puedas. Pero hay un componente `
 ### Elementos básicos anidados
 
 ```js
-// in the component:
+// en el componente
 import { Trans } from 'react-i18next'
 
 <p>
   <Trans>fcc.greeting</Trans>
 </p>
 
-// in the JSON file:
+// en el archivo JSON:
 {
   "fcc": {
     "greeting": "Welcome to <strong>freeCodeCamp</strong>"
   }
 }
 
-// output:
+// salida:
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-You can place the key inside the component tags like the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` are the default, but that list can be expanded in the i18n config.
+You can place the key inside the component tags like in the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` están por defecto, pero esa lista puede ser extendida en la configuración i18n.
 
-### Complex Elements Nested
+### Elementos complejos anidados
 
-Other times, you will want to have certain text inside another element, an anchor tag is a good example:
+En otros tiempos, querrás tener cierto texto dentro de otro elemento, una etiqueta de anclaje es un buen ejemplo:
 
 ```js
-// in the component:
+// en el componente:
 <p>
   <Trans i18nKey='check-forum'>
     <a href='https://forum.freecodecamp.org/'>placeholder</a>
   </Trans>
 </p>
 
-// in the JSON file:
+// en el archivo JSON:
 {
   "check-forum": "Check out <0>our forum</0>."
 }
 
-// output:
+// salida:
 <p>Check out <a href='https://forum.freecodecamp.org/'>our forum</a></p>
 ```
 
-In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter complains about empty `<a>` elements.
+En el ejemplo de arriba, la clave es colocada en los atributos del componente `Trans`. El `<0>` y `</0>` en el JSON representa el primer hijo del componente, en este caso, el elemento ancla. Si hubiera más hijos, podrían contarlos después de que usen la misma sintaxis. Puedes encontrar el hijo de un componente en las herramientas dev de react inspeccionándolos. El `placeholder` están simplemente ahí debido a que el linter busca un elemento vacío `<a>`.
 
-### With a Variable
+### Con una variable
 
 ```js
-// in the component:
+// en el componente:
 const email = 'team@freecodecamp.org';
 
 <p>
@@ -232,36 +237,40 @@ const email = 'team@freecodecamp.org';
   </Trans>
 </p>
 
-// in the JSON file:
+// en el archivo JSON:
 {
   "fcc": {
     "email": "Send us an email at: <0>{{email}}</0>"
   }
 }
 
-// output:
+// salida:
 <p>Send us an email at: <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a><p>
 ```
 
-In the above example, the key and a variable are set in the attributes of the `Trans` component. `{{ email }}` needs to be somewhere in the `Trans` component as well, it doesn't matter where.
+En el ejemplo de arriba, la clave y la variable son establecidas en el atributo del componente  `Trans`. El `{{ email }}` necesita estar en algún lado del componente `Trans` tan bien, no importa donde.
 
-## Changing Text
+## Cambiar texto
 
-To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
+Para cambiar el texto de las cosas del lado del cliente, ve al archivo relevante `.json`, encuentra la clave que es usada en el componente React, y cambia el valor al nuevo texto que quieras. Deberías de buscar en la base del código para que esa clave para asegurarte de que no está siendo usada en ningún otro sitio. O, si es así, que el cambio tenga sentido en todos los sitios.
 
-## Adding Text
+## Agregar texto
 
-If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
+Si el texto que quieres añadir al cliente existe en el archivo pertinente, `.json`, usa la clave existente. En el caso contrario, crea una clave nueva.
 
-The English file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
+El archivo English es la "fuente de la verdad" para todos los archivos `.json` que compartan el mismo nombre. Si necesitas añadir una nueva clave, añádela ahí. Después,  añade la clave **all** de los archivos  `translations.json`.
 
-> [!NOTE] Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
+> [!NOTE] Utiliza texto en inglés para todos los idiomas si el archivo se traduce a través de Crowdin. La prueba se caerá si no lo haces.
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
+Sería bueno mantener la clave en el mismo orden en todos los archivos también. Además, intenta poner todos los signos de puntuación, el espaciado, las comillas, etc. en los archivos JSON y no en los componentes o archivos del servidor.
 
-> [!NOTE] The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+> [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vea  [the documentation](https://www.i18next.com/translation-function/plurals) de como debe ser usado.
+
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Helpful Documentation
 
-- [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
-- [i18next docs](https://www.i18next.com/translation-function/essentials)
+- [Documentación de react-i18next ](https://react.i18next.com/latest/usetranslation-hook)
+- [Documentación de i18next](https://www.i18next.com/translation-function/essentials)

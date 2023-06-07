@@ -39,7 +39,7 @@ Você deve usar aspas duplas (`"`) e quatro aspas duplas escapadas (`\"`).
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-Variável myStr deve conter a string: `I am a "double quoted" string inside "double quotes".`
+Variável `myStr` deve conter a string: `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

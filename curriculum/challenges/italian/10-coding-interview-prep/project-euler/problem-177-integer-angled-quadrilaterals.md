@@ -1,7 +1,7 @@
 ---
 id: 5900f41e1000cf542c50ff30
 title: 'Problema 177: Quadrilaterali ad angolo intero'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301812
 dashedName: problem-177-integer-angled-quadrilaterals
 ---

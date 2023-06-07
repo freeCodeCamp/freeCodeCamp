@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad7
 title: Алгоритм проріджування Чжан-Суна
-challengeType: 5
+challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
 ---
@@ -85,7 +85,7 @@ $$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \bol
 
 # --hints--
 
-`thinImage` повинно бути функцією.
+`thinImage` має бути функцією.
 
 ```js
 assert.equal(typeof thinImage, 'function');

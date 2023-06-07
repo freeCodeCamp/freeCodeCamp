@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c74
-title: Create a Priority Queue Class
+title: Crear una Clase Cola de Prioridad
 challengeType: 1
 forumTopicId: 301630
 dashedName: create-a-priority-queue-class
@@ -8,27 +8,27 @@ dashedName: create-a-priority-queue-class
 
 # --description--
 
-In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.
+En este desafío crearás una Cola de Prioridad. Una cola de Prioridad es un tipo especial de cola en la que los elementos pueden tener una información adicional que especifica su proridad. Esto podría ser simplemente representado con un entero. La prioridad del elemento anulará el orden de colocación para determinar la secuencia de los elementos se debe sacar los elementos de la cola. Si un elemento con una prioridad más alta se pone en cola después de elementos con una prioridad más baja, el elemento con mayor prioridad será extraído antes que los demás elementos.
 
-For instance, let’s imagine we have a priority queue with three items:
+Por ejemplo, imaginemos que tenemos una cola de prioridad con tres elementos:
 
 ```js
 [['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-Here the second value (an integer) represents item priority. If we enqueue `['human', 1]` with a priority of `1` (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would look like this:
+Aquí el segundo valor ( un entero) representa la prioridad del elemento. Si ponemos en cola `['human', 1]` con una prioridad `1` ( asumiendo que las prioridades inferiores tengan precedencia) entonces sería el primer elemento en ser extraído de la cola. La colección se vería así:
 
 ```js
 [['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-We’ve started writing a `PriorityQueue` in the code editor. You will need to add an `enqueue` method for adding items with a priority, a `dequeue` method for removing and returning items, a `size` method to return the number of items in the queue, a `front` method to return the element at the front of the queue, and finally an `isEmpty` method that will return `true` if the queue is empty or `false` if it is not.
+Hemos empezado a escribir una `PriorityQueue` en el editor de código. Necesitarás agregar un método `enqueue` para agregar elementos con una prioridad, un método `dequeue` para eliminar y devolver elementos, un método `size` que devuelva el número de elementos en la cola, un método `front` que devuelva el elemento al inicio de la cola, y finalmente un método `isEmpty` que devolverá `true` si la cola esta vacía o `false` si no lo está.
 
-The `enqueue` should accept items with the format shown above (`['human', 1]`) where `1` represents the priority. `dequeue` and `front` should return only the item's name, not its priority.
+`enqueue` debe aceptar elementos con el formato mostrado arriba(`['human', 1]`) donde `1` representa la prioridad. `dequeue` y `front` debe devolver sole el nombre del elementos, no su prioridad.
 
 # --hints--
 
-Your `PriorityQueue` class should have a `enqueue` method.
+Tu clase `PriorityQueue` debe tener un método `enqueue`.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `dequeue` method.
+Tu clase `PriorityQueue` debe tener una método `dequeue`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `size` method.
+Tu clase `PriorityQueue` debe tener un método `size`.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `front` method.
+Tu clase `PriorityQueue` debe tener un método `front`.
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have an `isEmpty` method.
+Tu clase `PriorityQueue` debe tener un método `isEmpty`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should correctly keep track of the current number of items using the `size` method as items are enqueued and dequeued.
+Tu clase `PriorityQueue` debe guardar un seguimiento correctamente al número actual de elementos usando el método `size` como elementos encolados y desencolados.
 
 ```js
 assert(
@@ -102,7 +102,7 @@ assert(
 );
 ```
 
-The `front` method should return the correct item at the front of the queue as items are enqueued and dequeued.
+El método `front` debe devolver el elemento correcto que está al frente de la cola ya que los elementos están encolados y desencolados.
 
 ```js
 assert(
@@ -129,7 +129,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return `true` when the queue is empty.
+El método `isEmpty` debe devolver `true` cuando la cola esté vacía.
 
 ```js
 assert(
@@ -145,7 +145,7 @@ assert(
 );
 ```
 
-The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.
+La cola de prioridad debe devolver los elementos con una prioridad mayor antes que los elementos con una prioridad más baja y devolver los elementos en orden first-in-first-out de lo contrario.
 
 ```js
 assert(

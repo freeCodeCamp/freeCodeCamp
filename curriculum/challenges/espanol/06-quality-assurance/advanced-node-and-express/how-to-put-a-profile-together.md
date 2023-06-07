@@ -8,42 +8,41 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Ahora que podemos asegurarnos de que el usuario que accede al `/profile` está autenticado, ¡podemos utilizar la información contenida en `req.user` en nuestra página!
+Una vez asegurado que el usuario que accede a `/profile` está autenticado, se puede aprovechar la información contenida en `req.user` y hacer uso de ella en la página que estamos construyendo.
 
-Pasa un objeto que contenga la propiedad `username` y el valor de `req.user.username` como segundo argumento para el método render de la vista de perfil. Luego, ve a tu perfil `profile.pug` y agrega la siguiente línea debajo del elemento existente `h1` y al mismo nivel de indentación:
+Pasa un objeto con la propiedad `username` y valor `req.user.username` como segundo argumento al método `render` de la vista profile.
+
+Después, en la vista `profile.pug` añade la siguiente línea debajo del elemento `h1`, con el mismo nivel de indentación:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-Esto crea un elemento `h2` con la clase '`center`' e id '`welcome`' conteniendo el texto '`Welcome,`' seguido por el nombre de usuario.
+Esto crea un elemento `h2` con la clase `center` e id `welcome` que contiene el texto`Welcome,` seguido del nombre de usuario.
 
-Además, en `profile.pug`, añade un enlace que haga referencia a la ruta `/logout`, que alojará la lógica para des-autentificar a un usuario.
+Añade, también en `profile.pug`, un enlace a la ruta `/logout`, la cual albergará la lógica para desautenticar un usuario:
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+Envía tu página cuando creas que está correcta. Si tienes problemas, <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow"> aquí puedes comprobar el proyecto completado hasta este punto</a>.
 
 # --hints--
 
-Debes agregar correctamente una variable de renderizado Pug a /profile.
+Debes añadir correctamente la variable de renderizado Pug a `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /username:( |)req.user.username/gi,
-        'You should be passing the variable username with req.user.username into the render function of the profile page'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /username:( |)req.user.username/,
+    'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
+}
 ```
 
 # --solutions--

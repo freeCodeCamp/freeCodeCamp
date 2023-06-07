@@ -11,24 +11,25 @@ dashedName: introduction-to-data-analysis
 ---
 
 # --description--
+データ分析とは、加工されていない乱雑なデータを、整理したり、変換したり、操作したり、検査したりして、その本質が見える有益な情報に変える活動のことです。
 
 その他のリソース:
 
-\- [スライド](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
+\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">ニュース記事</a>
 
 # --question--
 
 ## --text--
 
-次のうち、**データ分析の一部ではない**ことはどれですか？
+次のうち、データ分析の一部**ではない**ことはどれですか？
 
 ## --answers--
 
-統計モデルとデータ可視化を構築すること。
+統計モデルの構築とデータ可視化。
 
 ---
 
-分析にとって望ましい結論を選ぶこと。
+分析のために望ましい結論を選ぶこと。
 
 ---
 

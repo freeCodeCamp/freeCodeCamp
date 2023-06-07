@@ -1,9 +1,6 @@
 import chai from 'chai';
-import '@babel/polyfill';
 import { toString as __toString } from 'lodash-es';
-import curriculumHelpers, {
-  removeJSComments
-} from '../../utils/curriculum-helpers';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 import { format as __format } from '../../utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
@@ -13,6 +10,7 @@ const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
 
   let logs: string[] = [];
+
   function flushLogs() {
     if (logs.length) {
       ctx.postMessage({
@@ -23,14 +21,36 @@ const __utils = (() => {
     }
   }
 
-  const oldLog = ctx.console.log.bind(ctx.console);
-  function proxyLog(...args: string[]) {
+  function pushLogs(logs: string[], args: string[]) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
       flushLogs();
     }
+  }
+
+  const oldLog = ctx.console.log.bind(ctx.console);
+  function proxyLog(...args: string[]) {
+    pushLogs(logs, args);
     return oldLog(...args);
+  }
+
+  const oldInfo = ctx.console.info.bind(ctx.console);
+  function proxyInfo(...args: string[]) {
+    pushLogs(logs, args);
+    return oldInfo(...args);
+  }
+
+  const oldWarn = ctx.console.warn.bind(ctx.console);
+  function proxyWarn(...args: string[]) {
+    pushLogs(logs, args);
+    return oldWarn(...args);
+  }
+
+  const oldError = ctx.console.error.bind(ctx.console);
+  function proxyError(...args: string[]) {
+    pushLogs(logs, args);
+    return oldError(...args);
   }
 
   // unless data.type is truthy, this sends data out to the testRunner
@@ -49,6 +69,9 @@ const __utils = (() => {
 
   const toggleProxyLogger = (on: unknown) => {
     ctx.console.log = on ? proxyLog : oldLog;
+    ctx.console.info = on ? proxyInfo : oldInfo;
+    ctx.console.warn = on ? proxyWarn : oldWarn;
+    ctx.console.error = on ? proxyError : oldError;
   };
 
   return {
@@ -80,14 +103,14 @@ interface TestEvaluatorEvent extends MessageEvent {
 ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   let code = (e.data?.code?.contents || '').slice();
-  code = e.data?.removeComments ? removeJSComments(code) : code;
+  code = e.data?.removeComments ? helpers.removeJSComments(code) : code;
   let editableContents = (e.data?.code?.editableContents || '').slice();
   editableContents = e.data?.removeComments
-    ? removeJSComments(editableContents)
+    ? helpers.removeJSComments(editableContents)
     : editableContents;
 
   const assert = chai.assert;
-  const __helpers = curriculumHelpers;
+  const __helpers = helpers;
   // Fake Deep Equal dependency
   const DeepEqual = (a: unknown, b: unknown) =>
     JSON.stringify(a) === JSON.stringify(b);
@@ -104,13 +127,15 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = eval(`${
-        e.data?.removeComments ? removeJSComments(e.data.build) : e.data.build
+      testResult = (await eval(`${
+        e.data?.removeComments
+          ? helpers.removeJSComments(e.data.build)
+          : e.data.build
       }
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-${e.data.testString}`) as unknown;
+${e.data.testString}`)) as unknown;
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.

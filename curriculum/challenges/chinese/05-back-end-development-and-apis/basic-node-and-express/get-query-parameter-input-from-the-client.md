@@ -20,7 +20,7 @@ dashedName: get-query-parameter-input-from-the-client
 
 # --hints--
 
-测试 1：你的 API 应该用正确的名字来响应
+测试一：当 `/name` 被调用为 `?first=Mick&last=Jagger` 时，你的 API 端点应该响应为 `{ "name": "Mick Jagger" }`。
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ dashedName: get-query-parameter-input-from-the-client
   );
 ```
 
-测试 2：你的 API 应该用正确的名字来响应
+测试二：当 `/name` 被调用为 `?first=Keith&last=Richards` 时，你的 API 端点应该响应为 `{ "name": "Keith Richards" }`。
 
 ```js
 (getUserInput) =>

@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Design responsivo para a web (novo)",
+    "title": "Design responsivo para a web",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
-      "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
-      "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo um card do Twitter com Flexbox, e um layout complexo de blog com o CSS Grid."
+      "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um site de questionário.",
+      "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo uma galeria de fotos com o Flexbox, e um layout de artigo de revista com o CSS Grid."
     ],
     "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e extensões de modo escuro podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem o conteúdo ou o layout das páginas durante o curso.",
     "blocks": {
@@ -301,67 +301,64 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "intro": ["placeholder", "placeholder"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Projeto de criação da Cifra de César",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
+      },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
+        "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Aprenda estruturas de dados criando um carrinho de compras",
+        "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Aprenda expressões regulares criando um filtro de spam",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
+        "intro": ["", ""]
       }
     }
   },
@@ -463,15 +460,12 @@
       },
       "d3-dashboard": {
         "title": "Painel do D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-database": {
-    "title": "Banco de dados relacional (Beta)",
+    "title": "Bancos de dados relacionais",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
       "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
@@ -583,7 +577,7 @@
     "intro": [
       "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
       "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
-      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm (Node Package Manager). Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
+      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm. Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -606,8 +600,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB e Mongoose",
         "intro": [
-          "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o Mongo é um banco de dados não relacional ou \"NoSQL\". Isto significa que o Mongo armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
-          "O Mongoose é um pacote popular do npm que é frequentemente instalado junto com MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o Mongo. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
+          "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o MongoDB é um banco de dados não relacional ou \"NoSQL\". Isto significa que o MongoDB armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
+          "O Mongoose é um pacote popular do npm para a interação com o MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o MongoDB. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
           "Nos cursos de MongoDB e Mongoose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
         ]
       },
@@ -771,13 +765,147 @@
       }
     }
   },
+  "college-algebra-with-python": {
+    "title": "Álgebra para o ensino superior com Python",
+    "intro": [
+      "Este curso foi projetado como um curso universitário de um semestre. Ele consiste em vídeos instrutivos, com os notebooks do Google Colaboratory para acompanhar os desafios e projetos de modo interativo.",
+      "À medida que você passa por cada parte do curso em sequência, você vai entender a álgebra e como escrever códigos em Python para resolver problemas de álgebra.",
+      "Ao longo deste curso, você também criará seu próprio notebook de álgebra no Colaboratory, que poderá usar como uma calculadora personalizada. Este curso (e o código que você escreve aqui) dará a você a base para uma compreensão mais profunda da matemática e da ciência de dados."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "Aprenda razões e proporções",
+        "intro": [
+          "Sua jornada começa aqui enquanto você aprende como configurar um notebook do Colaboratory que pode executar código em Python. Então, use o notebook para acompanhar os vídeos para aprender razões e proporções usando Python."
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "Aprenda a resolver para X",
+        "intro": [
+          "Esta unidade se concentrará em como resolver um número desconhecido (geralmente chamado de \"x\") usando código escrito em Python e álgebra."
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "Aprenda frações e números decimais",
+        "intro": [
+          "Esta unidade se concentrará na conversão de números decimais em frações e porcentagens."
+        ]
+      },
+      "learn-functions-and-graphing": {
+        "title": "Aprenda funções e gráficos",
+        "intro": ["Esta unidade ensinará você sobre as funções matemáticas."]
+      },
+      "learn-linear-functions": {
+        "title": "Aprenda funções lineares",
+        "intro": [
+          "Esta unidade mostrará para você como desenvolver equações lineares a partir de dois pontos."
+        ]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "Aprenda fatores comuns e raízes quadradas",
+        "intro": [
+          "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
+        ]
+      },
+      "build-a-multi-function-calculator-project": {
+        "title": "Calculadora multifunção",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora multifunção."
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "Aprenda a criar sistemas gráficos de equações",
+        "intro": [
+          "Esta unidade se concentrará em construir o gráfico de duas equações no mesmo plano de coordenadas, para que você possa ver onde as linhas se cruzam."
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "Aprenda a resolver sistemas de equações",
+        "intro": [
+          "Nesta unidade, você aprenderá a resolver um sistema de duas equações (com duas variáveis) sem gráfico. Você verá como pode fatorar uma equação e resolver para uma determinada variável em Python. Ao final desta unidade, você será capaz de resolver e criar o gráfico do sistema com um bloco de código."
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "Aprenda aplicações de sistemas lineares",
+        "intro": [
+          "Nesta unidade, você verá como usar a álgebra que aprendeu até agora para resolver problemas do mundo real."
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "Aprenda equações quadráticas",
+        "intro": [
+          "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
+        ]
+      },
+      "build-a-graphing-calculator-project": {
+        "title": "Calculadora gráfica",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora gráfica."
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "Aprenda gráficos e polinômios pais",
+        "intro": [
+          "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
+        ]
+      },
+      "build-three-math-games-project": {
+        "title": "Três jogos de matemática",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará três jogos de matemática."
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "Aprenda aplicações de negócios com álgebra do ensino superior",
+        "intro": [
+          "Esta unidade mostrará a você como aplicar as habilidades de resolução e criação de gráficos para encontrar custo, receita e lucro. Você escreverá um código para desenvolver uma função de demanda a partir de dois pontos. Você verá como o preço afeta o gráfico de lucros e como todas essas equações se relacionam entre si."
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "Aprenda juros simples e compostos",
+        "intro": [
+          "Esta unidade mostrará a você como calcular juros, pagamentos de empréstimos e o valor estimado dos investimentos. Você verá a fórmula matemática e a transformará em código. Como essas fórmulas tendem a ficar complicadas, você vai gostar de ter o código onde você pode apenas modificar alguns valores."
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "Aprenda expoentes e logaritmos",
+        "intro": [
+          "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
+        ]
+      },
+      "build-a-financial-calculator-project": {
+        "title": "Calculadora financeira",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora financeira."
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "Álgebra do ensino superior com Python: conclusão",
+        "intro": [
+          "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
+        ]
+      },
+      "build-a-data-graph-explorer-project": {
+        "title": "Explorador de gráfico de dados",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma explorador de gráfico de dados."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "Preparação para entrevistas de programação",
     "intro": [
       "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
       "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
     ],
-    "note": "",
+    "note": "O Projeto Euler foi movido para seu próprio curso. Volte ao currículo para ver a lista dos cursos que oferecemos.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -804,15 +932,84 @@
         "title": "Rosetta Code",
         "intro": [
           "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
-          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares."
+          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Créditos: Rosetta Code</a>"
+        ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project é um daqueles recursos do tipo \"O que eu gostaria de ter visto quando estava aprendendo\". ",
+      "Nem todas as pessoas têm acesso à educação em ciência da computação ou aos fundos necessários para frequentar uma escola de programação intensiva. De qualquer modo, não necessariamente, essas duas sejam a solução final para todos que queiram aprender.",
+      "Este projeto destina-se a preencher a lacuna para aquelas pessoas que tentam buscar suas próprias soluções, mas que continuam procurando uma educação de alta qualidade."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Aprenda o básico de HTML",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Aprenda o básico de HTML criando uma página de receitas",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Aprenda o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Projeto Euler",
+    "intro": [
+      "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
+      "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Problemas do Projeto Euler de 1 a 100",
+        "intro": [
+          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas."
         ]
       },
-      "project-euler": {
-        "title": "Projeto Euler",
+      "project-euler-problems-101-to-200": {
+        "title": "Problemas do Projeto Euler de 101 a 200",
         "intro": [
-          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
-          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente."
         ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Problemas do Projeto Euler de 201 a 300",
+        "intro": [
+          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Problemas do Projeto Euler de 301 a 400",
+        "intro": [
+          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Problemas do Projeto Euler de 401 a 480",
+        "intro": [
+          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
+        ]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Certificação de exemplo",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Exame da certificação de exemplo",
+        "intro": ["placeholder"]
       }
     }
   },
@@ -826,9 +1023,8 @@
     "legacy-header": "Cursos anteriores",
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
-    "new-rwd-desc": "Atualizamos nosso currículo de Design responsivo para a web. Se você estava fazendo o currículo anterior, seu progresso ainda está salvo! Você pode encontrá-lo na seção Design responsivo para a web legado.",
-    "new-rwd-article": "Encorajamos você a ler sobre as mudanças que fizemos e a explorar o currículo atualizado.",
-    "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
+    "course-maintenance": "Estes cursos estão passando por manutenção. Se eles não estiverem funcionando, você pode aprender como executá-los localmente em <0>https://www.freecodecamp.org/portuguese/news/curso-de-bancos-de-dados-relacionais-como-aprender-sql-no-vscode-usando-o-docker-e-o-freecodecamp/</0>.",
+    "progress-wont-save": "O progresso não será salvo em sua conta do freeCodeCamp quando executá-los localmente.",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",
     "enable-cookies": "Você deve habilitar cookies de terceiros antes de iniciar.",

@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 
 export function isNewRespCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RespWebDesignNew;
@@ -14,4 +14,8 @@ export function isNewJsCert(superBlock: string): boolean {
 
 export function isRelationalDbCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RelationalDb;
+}
+
+export function isCollegeAlgebraPyCert(superBlock: string): boolean {
+  return superBlock === SuperBlocks.CollegeAlgebraPy;
 }

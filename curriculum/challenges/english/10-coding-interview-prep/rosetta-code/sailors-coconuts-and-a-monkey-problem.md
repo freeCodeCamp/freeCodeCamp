@@ -1,7 +1,7 @@
 ---
 id: 59da22823d04c95919d46269
 title: 'Sailors, coconuts and a monkey problem'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
 ---

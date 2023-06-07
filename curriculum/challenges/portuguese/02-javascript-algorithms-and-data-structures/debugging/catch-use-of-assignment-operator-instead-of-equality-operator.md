@@ -8,7 +8,7 @@ dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 
 # --description--
 
-Programas de ramificação, ou seja, programas que fazem coisas diferentes se certas condições forem atendidas, dependem de instruções `i`, `else if` e `else` em JavaScript. Às vezes a condição verifica se um resultado é igual a um valor.
+Programas de ramificação, ou seja, programas que fazem coisas diferentes se certas condições forem atendidas, dependem de instruções `if`, `else if` e `else` em JavaScript. Às vezes a condição verifica se um resultado é igual a um valor.
 
 Essa lógica é dita da seguinte forma: "se x for igual a y, então ..." o que pode literalmente ser traduzido para código usando o `=`, ou operador de atribuição. Isso leva a um controle de fluxo inesperado no seu programa.
 

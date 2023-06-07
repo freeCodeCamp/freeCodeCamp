@@ -1,7 +1,7 @@
 ---
 id: 5900f48a1000cf542c50ff9d
 title: '問題 286: 得点の確率'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities
 ---

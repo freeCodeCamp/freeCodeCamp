@@ -1,7 +1,7 @@
 ---
 id: 5900f44e1000cf542c50ff5f
 title: 'Завдання 224: Майже прямокутні трикутники II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301867
 dashedName: problem-224-almost-right-angled-triangles-ii
 ---

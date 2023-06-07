@@ -1,7 +1,7 @@
 ---
 id: 5900f3f11000cf542c50ff03
 title: 'Problema 132: Grandi fattori repunit'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301760
 dashedName: problem-132-large-repunit-factors
 ---

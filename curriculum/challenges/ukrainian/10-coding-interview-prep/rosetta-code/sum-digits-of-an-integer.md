@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc803f
 title: Cума цифр цілого числа
-challengeType: 5
+challengeType: 1
 forumTopicId: 302331
 dashedName: sum-digits-of-an-integer
 ---
@@ -19,7 +19,7 @@ dashedName: sum-digits-of-an-integer
 
 # --hints--
 
-`sumDigits`повинна бути функцією.
+`sumDigits` має бути функцією.
 
 ```js
 assert(typeof sumDigits == 'function');

@@ -1,7 +1,7 @@
 ---
 id: 5900f3e01000cf542c50fef2
 title: 'Problema 114: Conteggio delle combinazioni di blocchi I'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301740
 dashedName: problem-114-counting-block-combinations-i
 ---

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05f
-title: 'Ітерації: Додаткові шаблони'
+title: 'Ітерації: додаткові шаблони'
 challengeType: 11
 videoId: 9Wtqo6vha1M
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: iterations-more-patterns
 
 Додаткові ресурси:
 
-\- [Відео-урок](https://www.youtube.com/watch?v=kjxXZQw0uPg)
+\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4511000cf542c50ff63
 title: 'Problem 228: Somas de Minkowski'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301871
 dashedName: problem-228-minkowski-sums
 ---

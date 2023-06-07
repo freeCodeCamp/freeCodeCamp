@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8007
 title: ソートアルゴリズム / ノームソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
 ---
 
 # --description--
 
-ノームソートは、[挿入ソート](https://rosettacode.org/wiki/Insertion sort)に似たソートアルゴリズムですが、適切な場所への要素の移動が[バブルソート](https://rosettacode.org/wiki/Bubble Sort)のように一連の交換で行われる点のみが異なっています。
+Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">Bubble Sort</a>.
 
 アルゴリズムの疑似コードは次のとおりです。
 

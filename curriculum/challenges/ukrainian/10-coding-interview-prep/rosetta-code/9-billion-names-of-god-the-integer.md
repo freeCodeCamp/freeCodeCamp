@@ -1,14 +1,14 @@
 ---
 id: 5949b579404977fbaefcd736
 title: Ціле число "9 мільярдів імен Бога"
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--
 
-Це завдання є варіацією [оповідання Артура Кларка](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+This task is a variation of the short story by Arthur C. Clarke.
 
 (Той хто розв'язує завдання, має знати про наслідки виконання даного завдання.)
 

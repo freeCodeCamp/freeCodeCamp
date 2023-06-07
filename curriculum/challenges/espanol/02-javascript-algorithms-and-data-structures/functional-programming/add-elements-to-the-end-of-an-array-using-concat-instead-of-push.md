@@ -10,20 +10,20 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 La programación funcional consiste en crear y utilizar funciones no mutantes.
 
-El último desafío introdujo el método `concat` como una forma de combinar arreglos en uno nuevo sin mutar los arreglos originales. Compara `concat` con el método `push`. `push` añade un elemento al final del arreglo desde el que se llama, lo cual muta ese arreglo. Aquí hay un ejemplo:
+En el reto anterior se introdujo el método `concat` como una forma de unir varios arreglos en uno nuevo sin alterar los arreglos originales. Compara `concat` con el método `push`. `push` añade elementos al final del propio arreglo sobre el que es invocado, alterando dicho arreglo. Aquí hay un ejemplo:
 
 ```js
 const arr = [1, 2, 3];
-arr.push([4, 5, 6]);
+arr.push(4, 5, 6);
 ```
 
-`arr` tendría un valor modificado de `[1, 2, 3, [4, 5, 6]]`, que no encaja con el paradigma de la programación funcional.
+`arr` habría sido modificado a `[1, 2, 3, 4, 5, 6]`, hecho que no cumple con los principios de la programación funcional.
 
-`concat` ofrece una forma de añadir nuevos elementos al final de un arreglo, sin provocar ningún efecto de mutación.
+`concat` ofrece una manera de unir nuevos elementos al final del arreglo sin ningún efecto colateral.
 
 # --instructions--
 
-Cambia la función `nonMutatingPush` para que use `concat` para añadir `newItem` al final de `original` en lugar de `push`. La función debe devolver un arreglo.
+Cambia la función `nonMutatingPush` de manera que utilice `concat` para unir `newItem` al final de `original` sin alterar los arreglos `original` o `newItem`. La función debe devolver un arreglo.
 
 # --hints--
 

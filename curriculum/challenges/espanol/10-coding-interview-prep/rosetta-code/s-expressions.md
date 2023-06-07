@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: S-Expressions
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-[S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") are one convenient way to parse and store data.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ The reader should be able to read the following input
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure. (See the [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") and [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") implementations for examples of native data structures.)
+and turn it into a native data structure.
 
 # --hints--
 

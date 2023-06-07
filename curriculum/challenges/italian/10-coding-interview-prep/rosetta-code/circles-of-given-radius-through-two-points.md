@@ -1,7 +1,7 @@
 ---
 id: 5951815dd895584b06884620
 title: Cerchi di raggio dato attraverso due punti
-challengeType: 5
+challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
 ---

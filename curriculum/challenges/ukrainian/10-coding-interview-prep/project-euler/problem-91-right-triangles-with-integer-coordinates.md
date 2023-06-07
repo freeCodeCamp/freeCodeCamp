@@ -1,7 +1,7 @@
 ---
 id: 5900f3c71000cf542c50feda
 title: 'Завдання 91: Прямокутні трикутники з цілочисельними координатами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302208
 dashedName: problem-91-right-triangles-with-integer-coordinates
 ---

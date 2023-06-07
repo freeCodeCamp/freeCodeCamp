@@ -10,39 +10,48 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 では、<dfn>class</dfn> キーワードを使用してオブジェクトを作成する新しい構文が提供されています。
 
-`class` 構文は単なる構文にすぎません。Java、Python、Ruby などの言語とは異なり、オブジェクト指向のパラダイムをクラスベースで本格的に実装するものではないことに注意してください。
+ES5 では、`constructor` 関数を定義して、`new` キーワードを使ってオブジェクトをインスタンス化することによってオブジェクトを作成できました。
 
-ES5 では、通常は `constructor` 関数を定義し、`new` キーワードを使用してオブジェクトをインスタンス化します。
-
-```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-`class` 構文は、こうした `constructor` 関数による作成の代わりとなるだけです。
+ES6 では、`class` 宣言が `new` キーワードにより呼び出される `constructor` メソッドを持ちます。 `constructor` メソッドが明示的に定義されない場合は、暗黙的に引数なしで定義されます。
 
 ```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
-`class` キーワードによって、コンストラクターの追加先となる新しい関数を宣言していることに注意してください。 このコンストラクターは、新しいオブジェクトを作成するために `new` が呼び出されるときに呼び出されます。
+`class` キーワードは、新しい関数を宣言していることに注意してください。そこにコンストラクターを追加します。 このコンストラクターは、新しいオブジェクトを作成するために `new` が呼び出されたときに実行されます。
 
 **注:** ES6 のクラス名には、上記の `SpaceShuttle` のように「アッパーキャメルケース」を使用するのが慣例になっています。
 
-`constructor` メソッドは、class を使用して作成されたオブジェクトを生成して初期化するための特別なメソッドです。 詳細については、「JavaScript アルゴリズムとデータ構造」認定講座の「オブジェクト指向プログラミング」のセクションを参照してください。
+`constructor` メソッドは、class を使用して作成されるオブジェクトを生成、初期化するための特別なメソッドです。 詳細については、「JavaScript アルゴリズムとデータ構造」認定講座の「オブジェクト指向プログラミング」のセクションを参照してください。
 
 # --instructions--
 
 `class` キーワードを使用して `constructor` を記述し、`Vegetable` クラスを作成してください。
 
-`Vegetable` クラスを使用すると、`constructor` に渡されたプロパティ `name` を持つ野菜オブジェクトを作成できます。
+`Vegetable` クラスを使用すると、`constructor` に渡されたプロパティ `name` を持つ野菜オブジェクトを作成できるようにします。
 
 # --hints--
 

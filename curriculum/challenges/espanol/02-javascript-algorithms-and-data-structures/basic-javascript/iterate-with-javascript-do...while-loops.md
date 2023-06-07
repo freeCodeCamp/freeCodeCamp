@@ -21,7 +21,7 @@ do {
 } while (i < 5);
 ```
 
-El ejemplo anterior se comporta de forma similar a otros tipos de bucles, siendo el arreglo resultante `[0, 1, 2, 3, 4]`. Sin embargo, lo que hace que el bucle `do...while` sea diferente a otros bucles es cómo se comporta cuando la condición falla en la primera verificación. Veamos esto en acción: Aquí puedes ver un bucle `while` que ejecutará el código una y otra vez siempre que `i < 5`:
+El ejemplo anterior se comporta de forma similar a otros tipos de bucles, siendo el arreglo resultante `[0, 1, 2, 3, 4]`. Sin embargo, lo que hace que el bucle `do...while` sea diferente a otros bucles es cómo se comporta cuando la condición falla en la primera verificación. Veamos esto en acción. Aquí hay un bucle `while` normal que ejecutara el código en el bucle mientras `i < 5`:
 
 ```js
 const ourArray = []; 

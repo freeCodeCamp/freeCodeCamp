@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4b5f629b9a07429a5d2
 title: SHA-1
-challengeType: 5
+challengeType: 1
 forumTopicId: 385326
 dashedName: sha-1
 ---
@@ -16,7 +16,7 @@ BitTorrent використовує SHA-1 для перевірки завант
 
 Git і Mercurial використовують дайджести SHA-1 для визначення комітів.
 
-Стандарт уряду США, [FIPS 180-1](https://rosettacode.org/wiki/SHA-1/FIPS-180-1), визначає SHA-1.
+A US government standard, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, defines SHA-1.
 
 # --instructions--
 

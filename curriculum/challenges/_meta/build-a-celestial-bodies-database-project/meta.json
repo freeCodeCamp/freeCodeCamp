@@ -2,6 +2,7 @@
   "name": "Build a Celestial Bodies Database Project",
   "isUpcomingChange": false,
   "order": 2,
+  "helpCategory": "Backend Development",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +12,5 @@
       "5f1a4ef5d5d6b5ab580fc6ae",
       "Build a Celestial Bodies Database"
     ]
-  ]}
+  ]
+}

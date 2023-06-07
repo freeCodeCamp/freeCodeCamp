@@ -2,9 +2,8 @@ import { navigate } from 'gatsby';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../components/Flash/redux';
-
 import { postReportUser } from '../utils/ajax';
-import { reportUserComplete, reportUserError } from './';
+import { reportUserComplete, reportUserError } from './actions';
 
 function* reportUserSaga({ payload }) {
   try {

@@ -8,7 +8,7 @@ dashedName: build-the-game-of-life
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/BpwMZv/>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/BpwMZv/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.
 
 O Jogo da Vida é um autômato celular concebido pelo matemático britânico John Horton Conway. É um <em>jogo sem jogadores</em>, o que significa que sua evolução é determinada pelo seu estado inicial, não exigindo mais nenhuma entrada. Uma pessoa interage com o Jogo da Vida criando uma configuração inicial e observando como ela evolui.
 
@@ -37,7 +37,7 @@ Atenda às histórias de usuário abaixo e faça com que todos os testes passem.
 
 Quando terminar, inclua um link para o seu projeto e clique no botão "Eu completei esse desafio".
 
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">fórum freeCodeCamp</a>.
 
 # --solutions--
 

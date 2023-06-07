@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
 title: Лінійний конгруентний метод
-challengeType: 5
+challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
 ---
 
 # --description--
 
-[Лінійний конгруентний метод](https://en.wikipedia.org/wiki/linear congruential generator) є дуже простим прикладом [генератора випадкових чисел](http://rosettacode.org/wiki/random number generator). Усі лінійні конгруентні генератори працюють за формулою:
+A linear congruential generator (LCG) is an <em>algorithm</em> that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. Усі лінійні конгруентні генератори працюють за формулою:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
@@ -22,7 +22,7 @@ $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
 Якщо уважно вибирати значення $a$, $c$ і $m$, то генератор створює рівномірний розподіл цілих чисел від $0$ до $m - 1$.
 
-Згенеровані алгоритмом числа неякісні. $r_n$ та $r\_{n + 1}$ не є незалежними, як справжні випадкові числа. Знаючи $r_n$, можна передбачити $r\_{n + 1}$, тому лінійний конгруентний метод не є криптографічно стійким. Лінійний конгруентний метод добре підходить для простих завдань, наприклад для [Miller-Rabin primality test](http://rosettacode.org/wiki/Miller-Rabin primality test) або [FreeCell deals](http://rosettacode.org/wiki/deal cards for FreeCell). Перевагою цього методу є те, що можна легко відтворити послідовність чисел з того самого $r_0$. Можна також відтворити таку послідовність за допомогою іншої мови програмування, оскільки формула дуже проста.
+<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ та $r\_{n + 1}$ не є незалежними, як справжні випадкові числа. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. Можна також відтворити таку послідовність за допомогою іншої мови програмування, оскільки формула дуже проста.
 
 # --instructions--
 

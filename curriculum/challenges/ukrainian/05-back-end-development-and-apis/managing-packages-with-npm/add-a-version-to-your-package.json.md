@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bff
-title: Додати опис до вашого package.json
+title: Додайте версію до свого package.json
 challengeType: 2
 forumTopicId: 301525
 dashedName: add-a-version-to-your-package-json
@@ -8,7 +8,7 @@ dashedName: add-a-version-to-your-package-json
 
 # --description--
 
-`version` є одним з необхідних полів вашого package.json файлу. Це поле описує поточну версію вашого проекту. Ось приклад:
+`version` є одним з необхідних полів вашого файлу package.json. Це поле описує поточну версію вашого проєкту. Ось приклад:
 
 ```json
 "version": "1.2.0",
@@ -16,11 +16,11 @@ dashedName: add-a-version-to-your-package-json
 
 # --instructions--
 
-Додайте `version` до файлу package.json вашого проєкту.
+Додайте `version` до файлу package.json свого проєкту.
 
 # --hints--
 
-package.json повинен мати допустимий ключ "версія"
+package.json повинен мати дійсний ключ «version»
 
 ```js
 (getUserInput) =>

@@ -13,3 +13,13 @@ pre.output-text code {
   font-size: 90%;
   padding: 2px 4px;
 }
+
+.output-text:focus-visible {
+  outline-offset: -2px;
+}
+
+@supports not selector(:focus-visible) {
+  .output-text:focus {
+    outline-offset: -2px;
+  }
+}

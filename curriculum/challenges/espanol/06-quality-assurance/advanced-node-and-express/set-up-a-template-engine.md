@@ -10,99 +10,103 @@ dashedName: set-up-a-template-engine
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) y completa estos desafíos localmente.
-- Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) para completar estos desafíos.
+- Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+- Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`.
+Si utilizas Replit, sigue estos pasos para configurar el proyecto:
 
-Un motor de plantillas te permite usar plantillas estáticas (como las escritas en *Pug*) en tu aplicación. En tiempo de ejecución, el motor de plantillas reemplaza variables en un archivo de plantilla con valores reales que pueden ser suministrados por tu servidor. Luego transforma la plantilla en un archivo HTML estático que se envía al cliente. Este enfoque hace más fácil el diseño de una página HTML y permite mostrar variables en la página sin necesidad de hacer una llamada API desde el cliente.
+-   Empieza importando el proyecto en Replit.
+-   A continuación, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-Añade `pug@~3.0.0` como una dependencia en tu archivo `package.json`.
+Cuando hayas terminado, asegúrate de que una demo funcional de tu proyecto está alojada en algún lugar público. A continuación, introduce la URL en el campo enlace a la solución.
 
-Express necesita saber qué motor de plantillas está utilizando. Utilizaremos el método `set` para asignar `pug` como el valor de `view engine` de la propiedad: `app.set('view engine', 'pug')`
+Un motor de plantillas te permite utilizar archivos de plantillas estáticas (como los escritos en *Pug*) en tu aplicación. En tiempo de ejecución, el motor de plantillas sustituye las variables de un archivo de plantilla por valores reales que pueden ser suministrados por tu servidor. A continuación, transforma la plantilla en un archivo HTML estático que se envía al cliente. Este enfoque facilita el diseño de una página HTML y permite mostrar variables en la página sin necesidad de realizar una llamada a la API desde el cliente.
 
-La página no se cargará hasta que procese correctamente el archivo de índice en el directorio `views/pug`.
+`pug@~3.0.0` ya se ha instalado y aparece como dependencia en el archivo `package.json`.
 
-Cambia el argumento de la sentencia `res.render()` en la ruta `/` para que sea la ruta del archivo al directorio `views/pug`. La ruta puede ser una ruta relativa (relativa a las vistas), o una ruta absoluta, y no requiere una extensión de archivo.
+Express necesita saber qué motor de plantillas está utilizando. Utiliza el método `set` para asignar `pug` como valor de la propiedad `view engine`:
 
-Si todo ha ido según lo previsto, ¡la página de inicio de tu aplicación dejará de mostrar el mensaje "`Pug template is not defined.`" y ahora mostrará un mensaje indicando que has renderizado con éxito la plantilla Pug!
+```javascript
+app.set('view engine', 'pug');
+```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Después de eso, añade otro método `set` que establezca la propiedad `views` de tu `app` para que apunte al directorio `./views/pug`. Esto le dice a Express que renderice todas las vistas relativas a ese directorio.
+
+Por último, utiliza `res.render()` en la ruta para tu página de inicio, pasando `index` como primer argumento. Esto mostrará la plantilla `pug`.
+
+Si todo ha ido según lo previsto, la página de inicio de tu aplicación ya no estará en blanco. ¡En su lugar, mostrará un mensaje indicando que has renderizado correctamente la plantilla Pug!
+
+Envía tu página cuando crea que lo ha hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Pug debe ser una dependencia.
+Pug should be a dependency.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'pug',
-        'Your project should list "pug" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'pug',
+    'Your project should list "pug" as a dependency'
   );
+}
 ```
 
-El motor de vistas debe ser Pug.
+View engine should be Pug.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /('|")view engine('|"),( |)('|")pug('|")/gi,
-        'Your project should set Pug as a view engine'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.['view engine'], "pug");
+}
 ```
 
-Utiliza el método de ExpressJS correcto para renderizar la página de índice de la respuesta.
+You should set the `views` property of the application to `./views/pug`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.views, "./views/pug");
+}
+```
+
+Use the correct ExpressJS method to render the index page from the response.
+
+```js
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /FCC Advanced Node and Express/gi,
         'You successfully rendered the Pug template!'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
-Pug debe estar funcionando.
+Pug should be working.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /pug-success-message/gi,
         'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
 # --solutions--

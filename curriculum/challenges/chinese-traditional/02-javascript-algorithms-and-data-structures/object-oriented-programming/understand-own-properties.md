@@ -8,7 +8,7 @@ dashedName: understand-own-properties
 
 # --description--
 
-請看下面的實例，`Bird` 構造函數定義了兩個屬性：`name` 和 `numLegs`：
+請看下面的實例，`Bird` 構造函數定義了兩個屬性：`name` 和 `numLegs`。
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` 和 `numLegs` 被叫做 <dfn>自身屬性</dfn>，因爲它們是直接在實例對象上定義的。 這就意味着 `duck` 和 `canary` 這兩個對象分別擁有這些屬性的獨立副本。 事實上，`Bird` 的所有實例都將擁有這些屬性的獨立副本。 下面的代碼將 `duck` 的所有自身屬性都存到一個叫作 `ownProps` 的數組裏面：
+`name` 和 `numLegs` 被叫作<dfn>自身屬性</dfn>，因爲它們是直接在實例對象上定義的。 這就意味着 `duck` 和 `canary` 這兩個對象分別擁有這些屬性的獨立副本。 事實上，`Bird` 的所有實例都將擁有這些屬性的獨立副本。 下面的代碼將 `duck` 的所有自身屬性都存到一個叫作 `ownProps` 的數組裏面：
 
 ```js
 let ownProps = [];

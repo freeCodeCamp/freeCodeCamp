@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c58
-title: Запуск функціональних тестів на кінцевих точках API за допомогою Chai-HTTP
+title: Запустіть функціональні тести на кінцевих точках API за допомогою Chai-HTTP
 challengeType: 2
 forumTopicId: 301593
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http
@@ -8,17 +8,18 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі початкового проєкту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Mocha дозволяє вам тестувати асинхронні операції, такі як виклики в кінцевих точках API з плагіном `chai-http`.
+Mocha дозволяє перевіряти асинхронні операції (наприклад, виклики в кінцевих точках API) за допомогою плагіну `chai-http`.
 
-Приклад тесту за допомогою `chai-http` для набору `'GET /hello?name=[name] => "hello [name]"'`:
+Знизу наведено приклад тесту, який використовує `chai-http` для набору під назвою `'GET /hello?name=[name] => "hello [name]"'`:
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -29,21 +30,25 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
 });
 ```
 
-Тест відправляє запит `GET` до сервера з ім’ям як рядок запиту URL (`?name=John`). У функії зворотного виклику методу `end` відповідь об'єкта (`res`) отримується і містить властивість `status`.
+Тест надсилає запит `GET` до сервера з назвою як рядок запиту URL (`?name=John`). У функії зворотного виклику методу `end` отримується об'єкт-відповідь (`res`), який містить властивість `status`.
 
-Перший `assert.equal` перевіряє, чи стан дорівнює `200`. Другий `assert.equal` перевіряє, що рядок відповіді (`res.text`) містить `"hello John"`.
+Перший `assert.equal` перевіряє, чи статус дорівнює `200`. Другий `assert.equal` перевіряє, чи рядок відповіді (`res.text`) рівний `"hello John"`.
 
-Також зверніть увагу на параметр `done` у функції тесту зворотного виклику. Виклик без аргументу в кінці тесту є необхідним, щоб асинхронна операція була завершена.
+Зверніть увагу на параметр `done` у функції тесту зворотного виклику. Його необхідно викликати без аргументу в кінці тесту, щоб повідомити, що асинхронна операція завершена.
+
+Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+
+However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js`, змініть тест `'Test GET /hello with no name'` (`// #1`) для перевірки відповідей `status` та `text` для проходження тесту. Не змінюйте аргументи, передані до тверджень.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
 
-Не має бути запитів URL. Без імені запиту URL кінцева точка відповідає `hello Guest`.
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
-Необхідно пройти всі тести
+All tests should pass
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Перевірте значення `res.status` == 200
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Перевірте значення `res.text` == `'hello Guest'`
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

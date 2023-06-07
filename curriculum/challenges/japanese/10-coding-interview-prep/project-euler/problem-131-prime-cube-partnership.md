@@ -1,7 +1,7 @@
 ---
 id: 5900f3ef1000cf542c50ff02
 title: '問題 131: 素数と立方数の関係'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301759
 dashedName: problem-131-prime-cube-partnership
 ---

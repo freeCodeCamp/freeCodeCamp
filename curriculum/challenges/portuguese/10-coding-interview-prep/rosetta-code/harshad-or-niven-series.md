@@ -1,7 +1,7 @@
 ---
 id: 595668ca4cfe1af2fb9818d4
 title: Séries de Harshad ou de Niven
-challengeType: 5
+challengeType: 1
 forumTopicId: 302281
 dashedName: harshad-or-niven-series
 ---

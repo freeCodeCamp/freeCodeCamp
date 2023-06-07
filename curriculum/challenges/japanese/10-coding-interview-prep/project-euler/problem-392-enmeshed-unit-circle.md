@@ -1,7 +1,7 @@
 ---
 id: 5900f4f41000cf542c510007
 title: '問題 392: 網にかかった単位円'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
 ---

@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) にある次のスタータープロジェクトをベースに構築されているか、または [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) からクローンされています。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ウェブサイトのアップデートを行う際に、ユーザーに常に新しいバージョンをダウンロードしてもらいたい場合、クライアントのブラウザーでキャッシュの無効化を行う (または試みる) ことができます。 これは開発の場合にも役立ちます。 キャッシュにはパフォーマンス上の利点がありますが、それを失うことになるため、このオプションは本当に必要な場合にのみ使用してください。
 

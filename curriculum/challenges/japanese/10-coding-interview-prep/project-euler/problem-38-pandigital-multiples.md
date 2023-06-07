@@ -1,7 +1,7 @@
 ---
 id: 5900f3931000cf542c50fea5
 title: '問題 38: パンデジタル倍数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
 ---

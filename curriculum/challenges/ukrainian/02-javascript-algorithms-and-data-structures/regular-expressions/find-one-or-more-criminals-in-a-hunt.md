@@ -36,19 +36,19 @@ dashedName: find-one-or-more-criminals-in-a-hunt
 
 # --hints--
 
-Ваш регулярний вираз має знайти одного злочинця (`C`) в рядку `C`
+Ваш регулярний вираз повинен збігатися з одним злочинцем (`C`) у рядку `C`
 
 ```js
 assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-Ваш регулярний вираз має знайти двох злочинців (`CC`) у рядку `CC`
+Ваш регулярний вираз повинен збігатися з двома злочинцями (`CC`) у рядку `CC`
 
 ```js
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Ваш регулярний вираз має знайти трьох злочинців (`CCC`) у рядку `P1P5P4CCCcP2P6P3`.
+Ваш регулярний вираз повинен збігатися з трьома злочинцями (`CCC`) у рядку `P1P5P4CCCcP2P6P3`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Ваш регулярний вираз має знайти п'ятьох злочинців (`CCCCC`) у рядку `P6P2P7P4P5CCCCCP3P1`
+Ваш регулярний вираз повинен збігатися з п’ятьма злочинцями (`CCCCC`) у рядку `P6P2P7P4P5CCCCCP3P1`
 
 ```js
 assert(
@@ -66,21 +66,21 @@ assert(
 );
 ```
 
-Ваш регулярний вираз не повинен знайти жодного злочинця в порожньому рядку `""`
+Ваш регулярний вираз не повинен збігатися з жодним злочинцем у порожньому рядку `""`
 
 ```js
 reCriminals.lastIndex = 0;
 assert(!reCriminals.test(''));
 ```
 
-Ваш регулярний вираз не повинен знайти жодного злочинця в рядку `P1P2P3`
+Ваш регулярний вираз не повинен збігатися з жодним злочинцем у рядку `P1P2P3`
 
 ```js
 reCriminals.lastIndex = 0;
 assert(!reCriminals.test('P1P2P3'));
 ```
 
-Ваш регулярний вираз має знайти п'ятдесят злочинців (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) у рядку `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
+Ваш регулярний вираз повинен збігатися з п’ятдесятьма злочинцями (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) у рядку `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
 
 ```js
 assert(

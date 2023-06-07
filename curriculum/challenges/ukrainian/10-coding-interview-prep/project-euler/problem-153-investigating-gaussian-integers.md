@@ -1,7 +1,7 @@
 ---
 id: 5900f4051000cf542c50ff18
 title: 'Завдання 153. Дослідження Гауссових цілих чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
 ---

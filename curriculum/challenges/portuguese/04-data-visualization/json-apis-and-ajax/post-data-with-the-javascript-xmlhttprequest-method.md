@@ -26,7 +26,13 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Você já viu vários desses métodos antes. Aqui, o método `open` inicializa a solicitação como um `POST` para um determinado URL de um recurso externo, usando o booleano `true` para torná-lo assíncrono. O método `setRequestHeader` define o valor de um cabeçalho de solicitação HTTP, que contém informações sobre o remetente e sobre a solicitação. Ele deve ser chamado após o método `open`, mas antes do método `send`. Os dois parâmetros são o nome do cabeçalho e o valor a ser definido como o corpo desse cabeçalho. Em seguida, o listener do evento `onreadystatechange` trata a mudança no estado da solicitação. Um `readyState` com o valor `4` significa que a operação foi concluída, enquanto o `status` `201` significa que a solicitação foi um sucesso. O HTML do documento pode ser atualizado. Por fim, o método `send` envia a solicitação com o valor de `body`, que era a chave `userName` fornecida pelo usuário no campo `input`.
+Você já viu vários desses métodos antes. Aqui, o método `open` inicializa a solicitação como um `POST` para um determinado URL de um recurso externo, passando `true` como terceiro parâmetro – indicando que se deve realizar a operação de modo assíncrono.
+
+O método `setRequestHeader` define o valor de um cabeçalho de solicitação HTTP, que contém informações sobre o remetente e sobre a solicitação. Ele deve ser chamado após o método `open`, mas antes do método `send`. Os dois parâmetros são o nome do cabeçalho e o valor a ser definido como o corpo desse cabeçalho.
+
+Em seguida, o listener do evento `onreadystatechange` trata a mudança no estado da solicitação. Um `readyState` com o valor `4` significa que a operação foi concluída, enquanto o `status` `201` significa que a solicitação foi um sucesso. Portanto, o HTML do documento pode ser atualizado.
+
+Por fim, o método `send` envia a solicitação com o valor de `body`. O `body` consiste em um `userName` e uma chave `suffix`.
 
 # --instructions--
 

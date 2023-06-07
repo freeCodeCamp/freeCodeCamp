@@ -1,6 +1,7 @@
 {
   "name": "Learn Relational Databases by Building a Mario Database",
   "isUpcomingChange": false,
+  "helpCategory": "Backend Development",
   "order": 1,
   "time": "5 hours",
   "template": "",
@@ -11,4 +12,5 @@
       "5f2c289f164c29556da632fd",
       "Build a Mario Database"
     ]
-  ]}
+  ]
+}

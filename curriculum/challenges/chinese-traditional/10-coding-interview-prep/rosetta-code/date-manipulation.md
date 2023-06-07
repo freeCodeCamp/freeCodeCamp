@@ -1,14 +1,14 @@
 ---
 id: 5966c21cf732a95f1b67dd28
 title: Date manipulation
-challengeType: 5
+challengeType: 1
 forumTopicId: 302244
 dashedName: date-manipulation
 ---
 
 # --description--
 
-Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
+給定 EST 中的日期字符串，將給定的日期輸出爲在時間上添加 12 小時的字符串。 Time zone should be preserved.
 
 Example input: `"March 6 2009 7:30pm EST"`
 

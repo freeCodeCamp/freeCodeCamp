@@ -1,7 +1,7 @@
 ---
 id: 5900f3801000cf542c50fe93
 title: '問題 20: 階乗の各位の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
 ---

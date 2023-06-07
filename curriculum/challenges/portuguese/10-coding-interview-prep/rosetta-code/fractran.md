@@ -1,7 +1,7 @@
 ---
 id: 5a7dad05be01840e1778a0d1
 title: Fractran
-challengeType: 5
+challengeType: 1
 forumTopicId: 302270
 dashedName: fractran
 ---

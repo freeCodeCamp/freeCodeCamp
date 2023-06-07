@@ -27,29 +27,11 @@ console.log(myBreed);
 
 La cadena `Doberman` se mostrará en la consola.
 
-Otra forma de usar este concepto es cuando el nombre de la propiedad se recoge dinámicamente durante la ejecución del programa, de la siguiente manera:
-
-```js
-const someObj = {
-  propName: "John"
-};
-
-function propPrefix(str) {
-  const s = "prop";
-  return s + str;
-}
-
-const someProp = propPrefix("Name");
-console.log(someObj[someProp]);
-```
-
-`someProp` tendrá una cadena con un valor `propName` y la cadena `John` se mostrará en la consola.
-
-Ten en cuenta que *no* usamos comillas alrededor del nombre de la variable cuando la usamos para acceder a la propiedad porque utilizamos el *valor* de la variable, no el *nombre*.
+Ten en cuenta que *no* utilizamos comillas alrededor del nombre de la variable cuando la usamos para acceder a la propiedad porque utilizamos el *valor* de la variable, no el *nombre*.
 
 # --instructions--
 
-Establece la variable `playerNumber` a `16`. Luego, usa la variable para buscar el nombre del jugador y asignarlo a `player`.
+Asigna la variable `playerNumber` a `16`. Luego, usa la variable para buscar el nombre del jugador y asignarlo a `player`.
 
 # --hints--
 
@@ -71,7 +53,7 @@ El valor de `player` debe ser la cadena `Montana`
 assert(player === 'Montana');
 ```
 
-Debes usar la notación de corchete para acceder a `testObj`
+Debes usar la notación de corchetes para acceder a `testObj`
 
 ```js
 assert(/testObj\s*?\[.*?\]/.test(code));
@@ -83,7 +65,7 @@ No debes asignar el valor de `Montana` a la variable `player` directamente.
 assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
-Debes usar la variable `playerNumber` en tu notación de corchete
+Debes usar la variable `playerNumber` en tu notación de corchetes
 
 ```js
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));

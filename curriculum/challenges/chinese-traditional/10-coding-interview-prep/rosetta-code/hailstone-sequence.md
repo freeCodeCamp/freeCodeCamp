@@ -1,14 +1,14 @@
 ---
 id: 595608ff8bcd7a50bd490181
 title: Hailstone sequence
-challengeType: 5
+challengeType: 1
 forumTopicId: 302279
 dashedName: hailstone-sequence
 ---
 
 # --description--
 
-The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
+Hailstone 數字序列可以從一個起始正整數 `n` 生成：
 
 - If `n` is `1` then the sequence ends
 - If `n` is `even` then the next `n` of the sequence `= n/2`
@@ -25,7 +25,7 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` 應該是一個函數。
 
 ```js
 assert(typeof hailstoneSequence === 'function');

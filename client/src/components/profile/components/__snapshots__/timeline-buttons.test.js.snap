@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should check certification page consistency 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-sm-8 col-sm-offset-2 col-xs-12"
+  >
+    <h2
+      className="text-center"
+    >
+      profile.timeline
+    </h2>
+    <table
+      className="table table-striped table-condensed"
+    >
+      <thead>
+        <tr>
+          <th>
+            profile.challenge
+          </th>
+          <th>
+            settings.labels.solution
+          </th>
+          <th
+            className="text-center"
+          >
+            profile.completed
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41"
+            >
+              Learn Accessibility by Building a Quiz - Step 41
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/build-a-number-guessing-game-project/build-a-number-guessing-game"
+            >
+              Build a Number Guessing Game
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/build-a-periodic-table-database-project/build-a-periodic-table-database"
+            >
+              Build a Periodic Table Database
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-git-by-building-an-sql-reference-object/build-an-sql-reference-object"
+            >
+              Build an SQL Reference Object
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-nano-by-building-a-castle/build-a-castle"
+            >
+              Build a Castle
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler"
+            >
+              Build a Salon Appointment Scheduler
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-bash-and-sql-by-building-a-bike-rental-shop/build-a-bike-rental-shop"
+            >
+              Build a Bike Rental Shop
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-advanced-bash-by-building-a-kitty-ipsum-translator/build-a-kitty-ipsum-translator"
+            >
+              Build a Kitty Ipsum Translator
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/build-a-world-cup-database-project/build-a-world-cup-database"
+            >
+              Build a World Cup Database
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-sql-by-building-a-student-database-part-2/build-a-student-database-part-2"
+            >
+              Build a Student Database: Part 2
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-sql-by-building-a-student-database-part-1/build-a-student-database-part-1"
+            >
+              Build a Student Database: Part 1
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-bash-scripting-by-building-five-programs/build-five-programs"
+            >
+              Build Five Programs
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database"
+            >
+              Build a Celestial Bodies Database
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-relational-databases-by-building-a-mario-database/build-a-mario-database"
+            >
+              Build a Mario Database
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+        <tr
+          className="timeline-row"
+        >
+          <td>
+            <a
+              gatsby="true"
+              href="/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate"
+            >
+              Build a Boilerplate
+            </a>
+          </td>
+          <td />
+          <td
+            className="text-center"
+          >
+            <time
+              dateTime="2016-09-28T20:31:56.730Z"
+            >
+              Dec 29, 2022
+            </time>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav
+      aria-label="Timeline Pagination"
+      role="navigation"
+    >
+      <ul
+        aria-hidden="true"
+        className="timeline-pagination_list"
+      >
+        <li
+          className="timeline-pagination_list_item"
+          style={
+            {
+              "visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-label="aria.first-page"
+            disabled={true}
+            onClick={[Function]}
+          >
+            &lt;&lt;
+          </button>
+        </li>
+        <li
+          className="timeline-pagination_list_item"
+          style={
+            {
+              "visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-label="aria.previous-page"
+            disabled={true}
+            onClick={[Function]}
+          >
+            &lt;
+          </button>
+        </li>
+        <li
+          className="timeline-pagination_list_item"
+        >
+          profile.page-number
+        </li>
+        <li
+          className="timeline-pagination_list_item"
+          style={
+            {
+              "visibility": "unset",
+            }
+          }
+        >
+          <button
+            aria-label="aria.next-page"
+            disabled={false}
+            onClick={[Function]}
+          >
+            &gt;
+          </button>
+        </li>
+        <li
+          className="timeline-pagination_list_item"
+          style={
+            {
+              "visibility": "unset",
+            }
+          }
+        >
+          <button
+            aria-label="aria.last-page"
+            disabled={false}
+            onClick={[Function]}
+          >
+            &gt;&gt;
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

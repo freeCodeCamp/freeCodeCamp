@@ -29,7 +29,7 @@ Quanto sopra mostrerà la stringa `Hello` nella console, e restituirà la string
 Modifica la funzione `abTest` in modo che se `a` o `b` sono inferiori a `0` la funzione esce immediatamente con un valore di `undefined`.
 
 **Suggerimento**  
-Ricorda che [`undefined` è una parola chiave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), non una stringa.
+Ricorda che <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> è una parola chiave</a>, non una stringa.
 
 # --hints--
 

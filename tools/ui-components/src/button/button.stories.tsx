@@ -14,7 +14,8 @@ const story = {
         'size',
         'disabled',
         'block',
-        'to',
+        'href',
+        'download',
         'target',
         'onClick'
       ]
@@ -41,7 +42,10 @@ const story = {
     onClick: {
       action: 'clicked'
     },
-    to: {
+    href: {
+      control: { type: 'text' }
+    },
+    download: {
       control: { type: 'text' }
     }
   }
@@ -95,7 +99,14 @@ FullWidth.args = {
 export const AsALink = Template.bind({});
 AsALink.args = {
   children: "I'm a link that looks like a button",
-  to: 'https://www.freecodecamp.org'
+  href: 'https://www.freecodecamp.org'
+};
+
+export const AsADownloadLink = Template.bind({});
+AsALink.args = {
+  children: "I'm a link that looks like a button",
+  href: 'https://www.freecodecamp.org',
+  download: 'download.txt'
 };
 
 export default story;

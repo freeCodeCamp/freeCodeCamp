@@ -1,7 +1,7 @@
 ---
 id: 5900f53d1000cf542c51004f
 title: 'Завдання 464: функція Мебіуса та інтервали'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302139
 dashedName: problem-464-mbius-function-and-intervals
 ---

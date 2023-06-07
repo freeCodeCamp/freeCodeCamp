@@ -11,14 +11,14 @@ dashedName: understand-string-immutability
 
 在 JavaScript 中，字符串（`String`）的值是不可变的（<dfn>immutable</dfn>），这意味着一旦字符串被创建就不能被改变。
 
-例如，下面的代码：
+例如，以下代码将产生错误，因为字符串 `Bob` 中的字母 `B` 不能更改为字母 `J`：
 
 ```js
 let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-是不会把变量 `myStr` 的值改变成 `Job` 的，因为变量 `myStr` 是不可变的。 注意，这*并不*意味着 `myStr` 永远不能被改变，只是字符串字面量 <dfn>string literal</dfn> 的各个字符不能被改变。 改变 `myStr` 的唯一方法是重新给它赋一个值，例如：
+请注意，这*不*意味着无法重新分配 `myStr`。 更改 `myStr` 的唯一方法是为其分配一个新值，如下所示：
 
 ```js
 let myStr = "Bob";

@@ -16,7 +16,7 @@ Por ejemplo, crea una aplicación simple "To Do List". Como programador, no tien
 
 El editor de código tiene la mayoría del componente `MyToDoList` configurado. Parte de este código debería parecer familiar si completaste el desafío de formulario controlado. Vas a notar un `textarea` y un `button`, junto con un par de métodos que rastrean sus estados, pero aún no se muestra nada a la página.
 
-Dentro del `constructor`, crea un objeto `this.state` y define dos estados: `userInput` que debe inicializarse como una cadena vacía, y `toDoList` que debe inicializarse como un arreglo vacío. Luego, elimina el comentario junto a la variable `items` del método `render()`. En su lugar, utiliza la función map() para recorrer el arreglo `toDoList` almacenado en el estado interno del componente y renderizar un `li` por cada artículo. Intenta introducir la cadena `eat, code, sleep, repeat` dentro del `textarea`, haz clic en el botón y ve qué sucede.
+Dentro del `constructor`, crea un objeto `this.state` y define dos estados: `userInput` que debe inicializarse como una cadena vacía, y `toDoList` que debe inicializarse como un arreglo vacío. Luego, elimina el valor `null` del método `render()` a un costado de la variable `items`. En su lugar, utiliza la función map() para recorrer el arreglo `toDoList` almacenado en el estado interno del componente y renderizar un `li` por cada artículo. Intenta introducir la cadena `eat, code, sleep, repeat` dentro del `textarea`, haz clic en el botón y ve qué sucede.
 
 **Nota:** Puede que sepas que todos los elementos hijos hermanos creados por una operación map como ésta necesitan poseer un atributo `key` único. No te preocupes, este es el tema de nuestro próximo desafío.
 

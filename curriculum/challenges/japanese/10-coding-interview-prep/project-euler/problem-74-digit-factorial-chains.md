@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec9
 title: '問題 74: 各位の階乗の連鎖'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302187
 dashedName: problem-74-digit-factorial-chains
 ---

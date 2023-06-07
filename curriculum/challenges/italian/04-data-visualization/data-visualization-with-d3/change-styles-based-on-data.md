@@ -8,9 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 riguarda la visualizzazione e la presentazione dei dati. È probabile che tu voglia cambiare lo stile degli elementi in base ai dati. È possibile utilizzare una funzione di callback nel metodo `style()` per cambiare lo stile di diversi elementi.
-
-Ad esempio, potresti voler rendere blu un punto dati se ha un valore inferiore a 20, e rosso altrimenti. Puoi usare una funzione di callback nel metodo `style()` e includere la logica condizionale. La funzione callback utilizza il parametro `d` per rappresentare il punto dati:
+D3 riguarda la visualizzazione e la presentazione dei dati. È probabile che tu voglia cambiare lo stile degli elementi in base ai dati. Ad esempio, potresti voler rendere blu un punto dati se ha un valore inferiore a 20, e rosso altrimenti. Puoi usare una funzione di callback nel metodo `style()` e includere la logica condizionale. La funzione callback utilizza il parametro `d` per rappresentare il punto dati:
 
 ```js
 selection.style("color", (d) => {

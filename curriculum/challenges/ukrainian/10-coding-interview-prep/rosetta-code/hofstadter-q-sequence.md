@@ -1,18 +1,18 @@
 ---
 id: 59637c4d89f6786115efd814
 title: Q послідовність Гофстедтера
-challengeType: 5
+challengeType: 1
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
 ---
 
 # --description--
 
-[Q послідовність Гофстедтера](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") визначають як:
+The Hofstadter Q sequence is defined as:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-Вона визначається як [послідовність Фібоначчі](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence"), але в той час як наступний член у послідовності Фібоначчі - це сума попередніх двох членів, у послідовності Q попередні два члени вказують на те, як далеко треба повернутися назад в послідовності Q, щоб знайти два числа, які потрібно підсумувати, щоб утворити наступний член послідовності.
+It is defined like the Fibonacci sequence, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
 
 # --instructions--
 

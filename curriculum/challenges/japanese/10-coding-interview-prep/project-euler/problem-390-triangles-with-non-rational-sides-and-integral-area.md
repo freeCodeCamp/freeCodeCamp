@@ -1,7 +1,7 @@
 ---
 id: 5900f4f21000cf542c510005
 title: '問題 390: 非有理的な辺と整数の面積を持つ三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302055
 dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 ---

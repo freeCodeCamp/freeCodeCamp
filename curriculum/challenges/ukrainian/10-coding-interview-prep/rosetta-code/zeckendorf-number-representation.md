@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad6
 title: Подання Цекендорфа
-challengeType: 5
+challengeType: 1
 forumTopicId: 302346
 dashedName: zeckendorf-number-representation
 ---
@@ -18,7 +18,7 @@ dashedName: zeckendorf-number-representation
 
 # --hints--
 
-`zeckendorf` повинен бути функцією.
+`zeckendorf` має бути функцією.
 
 ```js
 assert.equal(typeof zeckendorf, 'function');

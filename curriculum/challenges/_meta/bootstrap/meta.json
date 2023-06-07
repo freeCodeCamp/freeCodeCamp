@@ -2,6 +2,7 @@
   "name": "Bootstrap",
   "isUpcomingChange": false,
   "dashedName": "bootstrap",
+  "helpCategory": "HTML-CSS",
   "order": 0,
   "time": "5 hours",
   "template": "",
@@ -136,4 +137,5 @@
       "bad87fee1348bd9aec908857",
       "Use Comments to Clarify Code"
     ]
-  ]}
+  ]
+}

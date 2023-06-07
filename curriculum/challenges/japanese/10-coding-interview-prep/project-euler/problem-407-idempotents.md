@@ -1,7 +1,7 @@
 ---
 id: 5900f5041000cf542c510016
 title: '問題 407: 冪等元'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302075
 dashedName: problem-407-idempotents
 ---

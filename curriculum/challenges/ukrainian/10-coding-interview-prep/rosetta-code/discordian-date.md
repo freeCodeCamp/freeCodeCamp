@@ -1,14 +1,31 @@
 ---
 id: 59f4eafba0343628bb682785
 title: Дискордіанський календар
-challengeType: 5
+challengeType: 1
 forumTopicId: 302250
 dashedName: discordian-date
 ---
 
 # --description--
+The Gregorian calendar is a solar calendar with 12 months of 28-31 days each. A week consists of seven days, and there are 52 weeks and 1 day per year. The year consists of 365 days with a leap day added to February every leap year. A leap year occurs every four years, except for the first three centurial years of every 400 years.
 
-Перетворіть дану дату з [Григоріанського календаря ](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") в [Дискордіанський календар](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
+The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar, and begins on January 1. The week consists of five days, and there are 73 weeks per year. The year also consists of 365 days, with an extra day inserted between Chaos 59 and Chaos 60 every leap year.
+
+The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
+
+Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
+
+Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+
+Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+
+# --instructions--
+
+Convert a given date from the Gregorian calendar to the Discordian calendar.
+
+Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
 
 # --hints--
 
@@ -18,7 +35,7 @@ dashedName: discordian-date
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` повинен повернутися як `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
 
 ```js
 assert(
@@ -27,7 +44,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` повинен повертатися як `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -36,7 +53,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 29))` повинен повертатися як `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Святкуйте St. Tib\'s Day!"`.
+`discordianDate(new Date(2012, 1, 29))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
 
 ```js
 assert(
@@ -45,7 +62,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` повинен повертатися як `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -54,7 +71,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2010, 0, 5))` повинен повертатися як `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Відсвяткуйте Mungday!"`.
+`discordianDate(new Date(2010, 0, 5))` should return `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
 
 ```js
 assert(
@@ -63,7 +80,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2011, 4, 3))` повинен повертатися як `"Pungenday, the 50th day of Discord in the YOLD 3177. Відсвяткуйте Discoflux!"`.
+`discordianDate(new Date(2011, 4, 3))` should return `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
 
 ```js
 assert(
@@ -72,7 +89,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` повинен повертатися як `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
 
 ```js
 assert(

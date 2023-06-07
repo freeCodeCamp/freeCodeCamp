@@ -2,7 +2,7 @@
 id: 5900f4231000cf542c50ff34
 title: >-
   問題 181: 2 色の物体を何通りにグループ分けできるかを調べ上げる
-challengeType: 5
+challengeType: 1
 forumTopicId: 301817
 dashedName: >-
   problem-181-investigating-in-how-many-ways-objects-of-two-different-colours-can-be-grouped

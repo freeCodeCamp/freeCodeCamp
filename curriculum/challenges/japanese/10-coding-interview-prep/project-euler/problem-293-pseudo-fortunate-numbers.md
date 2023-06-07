@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa4
 title: '問題 293: 疑似フォーチュン数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301945
 dashedName: problem-293-pseudo-fortunate-numbers
 ---

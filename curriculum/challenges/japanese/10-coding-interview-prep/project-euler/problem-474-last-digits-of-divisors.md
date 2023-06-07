@@ -1,7 +1,7 @@
 ---
 id: 5900f5471000cf542c510059
 title: '問題 474: 約数の下位桁'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302151
 dashedName: problem-474-last-digits-of-divisors
 ---

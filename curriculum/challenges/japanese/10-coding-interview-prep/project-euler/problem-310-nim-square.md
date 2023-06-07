@@ -1,7 +1,7 @@
 ---
 id: 5900f4a21000cf542c50ffb5
 title: '問題 310: ニム平方数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301966
 dashedName: problem-310-nim-square
 ---

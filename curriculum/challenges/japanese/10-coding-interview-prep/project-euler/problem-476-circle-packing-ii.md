@@ -1,7 +1,7 @@
 ---
 id: 5900f5481000cf542c51005b
 title: '問題 476: 円を詰める (2)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3d01000cf542c50fee2
 title: '問題 99: 最大の累乗値'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302216
 dashedName: problem-99-largest-exponential
 ---

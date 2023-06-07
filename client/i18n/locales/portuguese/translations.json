@@ -6,17 +6,17 @@
     "first-lesson": "Ir para a primeira aula",
     "close": "Fechar",
     "edit": "Editar",
-    "show-code": "Exibir código",
-    "show-solution": "Exibir solução",
-    "show-project": "Mostrar o projeto",
     "frontend": "Front-end",
     "backend": "Back-end",
     "view": "Visualizar",
+    "view-code": "Ver código",
+    "view-project": "Ver o projeto",
+    "view-cert-title": "Ver {{certTitle}}",
     "show-cert": "Exibir certificado",
     "claim-cert": "Solicitar certificação",
     "save-progress": "Salvar progresso",
-    "accepted-honesty": "Você aceitou nossa política de honestidade acadêmica.",
-    "agree": "Aceitar",
+    "accepted-honesty": "Você concordou com nossa política de honestidade acadêmica.",
+    "agree-honesty": "Concordo com a Política de Honestidade Acadêmica do FreeCodeCamp.",
     "save-portfolio": "Salvar esse item de portfólio",
     "remove-portfolio": "Remover este item de portfólio",
     "add-portfolio": "Adicionar um novo item de portfólio",
@@ -29,6 +29,7 @@
     "sign-up-email-list": "Inscreva-se para receber o e-mail semanal do Quincy",
     "sign-out": "Encerrar sessão",
     "curriculum": "Currículo",
+    "contribute": "Contribua",
     "forum": "Fórum",
     "radio": "Rádio",
     "profile": "Perfil",
@@ -51,9 +52,9 @@
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
-    "reset-code": "Redefinir todo o código",
+    "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
     "get-help": "Obter ajuda",
     "watch-video": "Assistir a um vídeo",
@@ -72,8 +73,14 @@
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
+    "click-start-exam": "Iniciar o exame",
     "change-language": "Alterar idioma",
-    "cancel-change": "Cancelar alteração"
+    "resume-project": "Retomar projeto",
+    "start-project": "Iniciar o projeto",
+    "previous-question": "Questão anterior",
+    "next-question": "Próxima questão",
+    "finish-exam": "Finalizar o exame",
+    "submit-exam-results": "Enviar meus resultados"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -100,7 +107,65 @@
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
       }
     },
-    "certification-heading": "Ganhe certificações verificadas gratuitas em:"
+    "certification-heading": "Ganhe certificações verificadas gratuitas em:",
+    "faq": "Perguntas frequentes:",
+    "faqs": [
+      {
+        "question": "O que é exatamente o freeCodeCamp?",
+        "answer": [
+          "O freeCodeCamp é uma comunidade de pessoas de todo o mundo que estão aprendendo a programar juntas. Somos uma instituição pública beneficente aos moldes da legislação tributária americana, seção 501(c)(3)."
+        ]
+      },
+      {
+        "question": "Como o freeCodeCamp vai me ajudar a aprender a programar?",
+        "answer": [
+          "Você aprenderá a programar construindo dezenas de projetos, passo a passo, no seu navegador, editor de código ou aplicação para dispositivos móveis.",
+          "Você também receberá certificados verificados gratuitamente ao longo do caminho."
+        ]
+      },
+      {
+        "question": "O freeCodeCamp é realmente gratuito?",
+        "answer": [
+          "Sim. Todos os aspectos do freeCodeCamp são 100% gratuitos: os cursos, os projetos e até mesmo as certificações."
+        ]
+      },
+      {
+        "question": "O freeCodeCamp pode me ajudar a obter um trabalho como desenvolvedor de software?",
+        "answer": [
+          "Sim. Todos os anos, várias pessoas que se juntam à comunidade do freeCodeCamp conseguem seu primeiro emprego em desenvolvimento de software."
+        ]
+      },
+      {
+        "question": "Que competências eu aprenderei?",
+        "answer": [
+          "Você aprenderá as habilidades que os desenvolvedores mais usam no trabalho: HTML, CSS, JavaScript, Python, Linux, Git, SQL e muito mais. Você também aprenderá a usar bibliotecas poderosas para desenvolvimento para a web, desenvolvimento de aplicações para dispositivos móveis, ciência de dados e inteligência artificial."
+        ]
+      },
+      {
+        "question": "Quanto tempo leva para aprender tudo isso?",
+        "answer": [
+          "O freeCodeCamp segue seu próprio ritmo. Adotando uma perspectiva realista, pode levar vários anos de prática em programação para aprender essas habilidades o suficiente para conseguir um emprego como engenheiro de software. Não deixe de estudar ou trabalhar no seu emprego regular até que você se sinta pronto."
+        ]
+      },
+      {
+        "question": "Como eu começo?",
+        "answer": [
+          "Se você é um iniciante, deve começar no início do currículo principal do freeCodeCamp. Se estiver mais avançado, nós ainda recomendamos começar no início, mas você pode pular para qualquer área que desejar."
+        ]
+      },
+      {
+        "question": "Como eu ganho as certificações verificadas gratuitamente?",
+        "answer": [
+          "Você precisa construir 5 projetos de certificação para cada uma delas e fazer com que todos os testes do projeto passem para poder solicitar a certificação."
+        ]
+      },
+      {
+        "question": "Não vejo [nome da ferramenta] no currículo principal do freeCodeCamp.",
+        "answer": [
+          "Além do currículo principal do freeCodeCamp, temos diversos livros, cursos e tutoriais de programação completos e gratuitos. Provavelmente ensinamos qualquer uma das ferramentas de programação que você queira aprender. Basta usar a barra de pesquisa."
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
@@ -111,6 +176,8 @@
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações de conta para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
+    "sound-volume": "Volume do modo fogueira:",
+    "scrollbar-width": "Largura da barra de rolagem do editor",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -155,7 +222,8 @@
       "honesty": "Política de honestidade acadêmica",
       "internet": "Sua presença na internet",
       "portfolio": "Configurações do portfólio",
-      "privacy": "Configurações de privacidade"
+      "privacy": "Configurações de privacidade",
+      "personal-info": "Informações pessoais"
     },
     "danger": {
       "heading": "Zona de perigo",
@@ -216,20 +284,18 @@
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
-    "total-points": "{{count}} ponto no total",
-    "total-points_plural": "{{count}} pontos no total",
+    "total-points": "Número de pontos: {{count}}",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "screen-shot": "Uma captura de tela de {{title}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
   },
   "footer": {
-    "tax-exempt-status": "O freeCodeCamp é uma organização sem fins lucrativos apoiada por doadores e isenta de impostos 501(c)(3) (Número de identificação fiscal federal dos Estados Unidos: 82-0779546)",
+    "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
     "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de graça. Nós conseguimos isso através da criação de milhares de vídeos, artigos e aulas interativas de programação – tudo disponível gratuitamente para o público. Também temos milhares de grupos de estudo do freeCodeCamp espalhados por todo o mundo.",
     "donation-initiatives": "Doações para o freeCodeCamp vão para as nossas iniciativas educacionais e ajudam a pagar por servidores, serviços e equipe.",
     "donate-text": "Você pode <1>fazer uma doação dedutível de imposto aqui</1>.",
     "trending-guides": "Guias em alta",
-    "our-nonprofit": "Nossa organização sem fins lucrativos",
+    "our-nonprofit": "Nossa instituição",
     "links": {
       "about": "Sobre",
       "alumni": "Rede de ex-alunos",
@@ -247,6 +313,7 @@
   },
   "learn": {
     "heading": "Boas-vindas ao currículo do freeCodeCamp.",
+    "skip-to-content": "Ir para o conteúdo",
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
@@ -262,7 +329,7 @@
       "p8": "Este currículo dará a você milhares de horas prática de programação \"mão na massa\".",
       "p9": "Se você quiser aprender mais matemática e teoria da ciência da computação, também temos milhares de horas de cursos em vídeo no canal do YouTube do <0>freeCodeCamp</0>.",
       "p10": "Se você quiser conseguir um trabalho como desenvolvedor ou ter clientes como freelance, as habilidades de programação serão apenas parte do desafio. Você também precisa construir sua rede pessoal e sua reputação como desenvolvedor.",
-      "p11": "Você pode fazer isso no Twitter e GitHub, assim como no <0>fórum do freeCodeCamp </0>.",
+      "p11": "Você pode fazer isso no LinkedIn e GitHub, assim como no <0>fórum do freeCodeCamp </0>.",
       "p12": "Boa programação!"
     },
     "upcoming-lessons": "Próximas lições",
@@ -270,10 +337,13 @@
     "add-subtitles": "Ajudar a melhorar ou adicionar legendas",
     "wrong-answer": "Desculpe, essa não é a resposta correta. Quer tentar novamente?",
     "check-answer": "Clique no botão abaixo para verificar sua resposta.",
+    "assignment-not-complete": "Termine as tarefas",
+    "assignments": "Tarefas",
+    "question": "Questão",
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
+    "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -282,19 +352,19 @@
     "sign-in-save": "Faça o login para salvar seu progresso",
     "download-solution": "Baixar minha solução",
     "percent-complete": "{{percent}}% completo",
+    "project-complete": "Concluídos {{completedChallengesInBlock}} de {{totalChallengesInBlock}} projetos de certificação",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "rsa": "Leia, pesquise, pergunte",
+    "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "Certificação {{title}} (300 horas)",
-      "coding-prep": "{{title}} (milhares de horas de desafios)"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
-      "info": "Informações",
       "code": "Código",
       "tests": "Testes",
       "restart": "Reiniciar",
@@ -302,7 +372,12 @@
       "console": "Console",
       "instructions": "Instruções",
       "notes": "Observações",
-      "preview": "Pré-visualizar"
+      "preview": "Pré-visualizar",
+      "editor": "Editor"
+    },
+    "editor-alerts": {
+      "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
+      "tab-free": "Ao apertar a tecla tab, agora, você moverá o foco para o próximo elemento que possa ser focado"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
@@ -321,15 +396,19 @@
     "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
     "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
-    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista."
+    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos",
+    "season-greetings-fcc": "Boas festas de fim de ano, da comunidade do freeCodeCamp 🎉",
+    "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão beneficente.",
+    "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
+    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente."
   },
   "donate": {
-    "title": "Dê seu apoio à nossa organização sem fins lucrativos",
+    "title": "Ajude nossa instituição",
     "processing": "Estamos processando a sua doação.",
     "redirecting": "Redirecionando...",
     "thanks": "Agradecemos por sua doação",
     "thank-you": "Obrigado pelo seu apoio.",
-    "thank-you-2": "Obrigado por apoiar o freeCodeCamp. Você tem uma doação recorrente registrada.",
     "additional": "Você pode fazer uma doação adicional de qualquer valor usando este link: <0>{{url}}</0>",
     "help-more": "Ajude-nos a fazer mais",
     "error": "Algo deu errado com a sua doação.",
@@ -347,10 +426,20 @@
     "your-donation": "Sua doação de US${{usd}} proporcionará {{hours}} horas de aprendizado para pessoas ao redor do mundo.",
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
-    "duration": "Torne-se um apoiador por doação única da nossa organização sem fins lucrativos.",
-    "duration-2": "Torne-se um apoiador mensal da nossa organização sem fins lucrativos.",
-    "duration-3": "Torne-se um apoiador anual da nossa organização sem fins lucrativos",
-    "duration-4": "Torne-se um apoiador da nossa organização sem fins lucrativos",
+    "become-supporter": "Torne-se um apoiador",
+    "duration": "Torne-se um apoiador com uma doação única para nossa organização beneficente.",
+    "duration-2": "Torne-se um apoiador mensal da nossa organização beneficente.",
+    "duration-4": "Torne-se um apoiador da nossa organização beneficente",
+    "progress-modal-cta-1": "Doe agora para ajudar nossa instituição beneficente a criar um curso superior gratuito de Ciência da Computação acreditado para todos.",
+    "progress-modal-cta-2": "Doe agora para patrocinar 53 horas de tempo de servidor para o site da nossa instituição beneficente.",
+    "progress-modal-cta-3": "Doe agora para ajudar nossa instituição beneficente a traduzir as aulas em 32 idiomas para alunos em todo o mundo.",
+    "progress-modal-cta-4": "Doe agora para apoiar o desenvolvimento do novo currículo de Python da nossa instituição beneficente.",
+    "progress-modal-cta-5": "Doe agora para ajudar nossa instituição beneficente a criar aulas sobre novas ferramentas de programação.",
+    "progress-modal-cta-6": "Doe agora para apoiar os projetos de código aberto de nossa instituição beneficente.",
+    "progress-modal-cta-7": "Doe agora para ajudar nossa instituição beneficente a contratar ainda mais professores incríveis.",
+    "progress-modal-cta-8": "Doe agora para nos ajudar a desenvolver novos cursos sobre ferramentas emergentes e conceitos de programação.",
+    "progress-modal-cta-9": "Doe agora para apoiar o nosso currículo de matemática para desenvolvedores.",
+    "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
     "credit-card-2": "Ou doe com um cartão de crédito:",
@@ -364,25 +453,25 @@
     "email-receipt": "E-mail (enviaremos um comprovante de doação):",
     "need-help": "Precisa de ajuda com suas doações atuais ou anteriores?",
     "forward-receipt": "Envie uma cópia do recibo de sua doação para donors@freecodecamp.org e nos diga como podemos ajudar.",
-    "efficiency": "O freeCodeCamp é uma organização educacional, sem fins lucrativos, e altamente eficiente.",
+    "efficiency": "O freeCodeCamp é uma organização educacional, beneficente e de grande eficácia.",
     "why-donate-1": "Quando você doa para o freeCodeCamp, você ajuda as pessoas a aprender novas habilidades e sustentar suas famílias.",
     "why-donate-2": "Você também nos ajuda a criar novos recursos que você pode usar para melhorar as suas próprias habilidades tecnológicas.",
     "bigger-donation": "Quer fazer uma doação maior de uma única vez, enviar-nos um cheque ou doar de outras maneiras?",
-    "other-ways": "Aqui estão muitas <0>outras maneiras para ajudar a nossa missão sem fins lucrativos</0>.",
+    "other-ways": "Aqui estão muitas <0>outras maneiras para ajudar a nossa missão beneficente</0>.",
     "failed-pay": "Opa. Parece que a sua transação não funcionou. Você poderia tentar de novo?",
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
     "expiration": "Data de validade:",
     "secure-donation": "Doação segura",
     "faq": "Perguntas frequentes",
-    "only-you": "Só você pode ver esta mensagem. Parabéns por ganhar este certificado. Não é uma tarefa fácil. Manter o freeCodeCamp também não é fácil. Nem é barato. Ajude-nos a ajudar você e muitas outras pessoas ao redor do mundo. Faça uma dedução de impostos doando para nossa organização sem fins lucrativos hoje.",
+    "only-you": "Só você pode ver esta mensagem. Parabéns por ganhar este certificado. Não é uma tarefa fácil. Manter o freeCodeCamp também não é fácil. Nem é barato. Ajude-nos a ajudar você e muitas outras pessoas ao redor do mundo. Faça uma dedução de impostos doando para nossa organização beneficente hoje.",
     "get-help": "Como posso obter ajuda com minhas doações?",
     "how-transparent": "Qual é o nível de transparência do freeCodeCamp.org?",
     "very-transparent": "Grande. Temos uma classificação de transparência Platinum do GuideStar.org.",
     "download-irs": "Você pode <0>baixar nossa Carta de Determinação do IRS aqui</0>.",
     "download-990": "Você pode <0>baixar nosso último 990 (relatório anual de impostos) aqui</0>.",
     "how-efficient": "Qual é o nível de eficiência do freeCodeCamp?",
-    "fcc-budget": "O orçamento do freeCodeCamp é muito menor do que o da maioria das organizações sem fins lucrativos. Não temos profissionais em arrecadação de fundos. Em vez disso, Quincy faz tudo por conta própria.",
+    "fcc-budget": "O orçamento do freeCodeCamp é muito menor do que o da maioria das organizações beneficentes. Não temos profissionais em arrecadação de fundos. Em vez disso, Quincy faz tudo por conta própria.",
     "help-millions": "No entanto, com um orçamento de apenas algumas centenas de milhares de dólares por ano, conseguimos ajudar milhões de pessoas.",
     "how-one-time": "Como posso fazer uma doação única?",
     "one-time": "Se você preferir fazer doações únicas, pode apoiar a missão do freeCodeCamp sempre que tiver dinheiro sobrando. Você pode usar <0>este link para doar qualquer quantia que sentir que vale a pena através do PayPal</0>.",
@@ -392,7 +481,7 @@
     "can-check": "Posso enviar um cheque físico?",
     "yes-check": "Sim, receberemos cheques com satisfação. Você pode nos enviar cheques pelo correio pelo endereço:",
     "how-matching-gift": "Como eu posso configurar donativos correspondentes do meu empregador, ou deduções na folha de pagamento?",
-    "employers-vary": "Isso varia de empregador para empregador. Nossa organização sem fins lucrativos já está listada em muitas das grandes bases de dados de doações correspondentes.",
+    "employers-vary": "Isso varia de empregador para empregador. Nossa organização beneficente já está listada em muitos dos grandes bancos de dados de doações correspondentes.",
     "some-volunteer": "Algumas pessoas são capazes de se voluntariar para o freeCodeCamp e suas correspondências de empregador, doando uma quantidade fixa por hora que voluntariam. Outros empregadores corresponderão a quaisquer doações que os doadores pagarem até um certo valor",
     "help-matching-gift": "Se você precisar de ajuda com isso, envie um e-mail para o Quincy diretamente: quincy@freecodecamp.org",
     "how-endowment": "Como posso configurar um presente de dote para o freeCodeCamp.org?",
@@ -403,13 +492,13 @@
     "thank-wikimedia": "Gostaríamos de agradecer à Wikimedia Foundation por nos fornecer esta linguagem formal para utilizarmos.",
     "legacy-gift-questions": "Se você tiver alguma dúvida sobre este processo, envie um e-mail para quincy@freecodecamp.org.",
     "how-stock": "Como posso doar ações para freeCodeCamp.org?",
-    "welcome-stock": "Receberemos suas doações em ações com satisfação. Envie um e-mail para o Quincy diretamente e ele pode ajudá-lo com isso e compartilhar os detalhes de nossa conta de corretora sem fins lucrativos: quincy@freecodecamp.org.",
+    "welcome-stock": "Receberemos suas doações em ações com satisfação. Envie um e-mail para o Quincy diretamente e ele pode ajudá-lo com isso e compartilhar os detalhes da conta de corretora de nossa organização beneficente: quincy@freecodecamp.org.",
     "how-receipt": "Posso obter um recibo de doação para deduzi-la dos meus impostos?",
     "just-forward": "Claro. Basta encaminhar o recibo de sua transação para donors@freecodecamp.org, dizer que você gostaria de um recibo e quaisquer instruções especiais que você possa ter, e nós responderemos com um recibo para você.",
     "how-update": "Criei uma doação mensal, mas preciso atualizar ou pausar a recorrência mensal. Como posso fazer isso?",
     "take-care-of-this": "Apenas encaminhe um de seus recibos mensais para donors@freecodecamp.org e diga-nos o que você gostaria que fizéssemos. Cuidaremos disso para você e enviaremos sua confirmação.",
     "anything-else": "Há mais alguma coisa que eu possa aprender sobre doações para freeCodeCamp.org?",
-    "other-support": "Se você quiser apoiar a nossa organização sem fins lucrativos e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org."
+    "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org."
   },
   "report": {
     "sign-in": "Você precisa estar logado para denunciar um usuário",
@@ -428,7 +517,7 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Pesquisar entre mais de 8.000 tutoriais",
+    "placeholder": "Buscar entre os mais de 500 tutoriais",
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -440,6 +529,8 @@
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
+    "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
+    "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
     "email-blast": "A propósito, todas as sextas-feiras, eu envio um e-mail com 5 links sobre programação e ciência da computação. Eu envio essas mensagens para cerca de 4 milhões de pessoas. Você gostaria que eu as enviasse para você também?",
     "update-email-1": "Atualize seu endereço de e-mail",
@@ -448,7 +539,12 @@
     "and": "e",
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
-    "certification-project": "Projeto de certificação"
+    "certification-project": "Projeto de certificação",
+    "iframe-preview": "Visualização de {{title}}",
+    "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
+    "iframe-form-submit-alert": "Normalmente, esse formulário seria enviado! Funciona. Ele será enviado para: {{externalLink}}",
+    "document-notfound": "documento não encontrado",
+    "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página."
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -457,14 +553,17 @@
     "donate": "Doar com PayPal",
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
+    "waiting": "Aguardando",
     "passed": "Aprovado",
+    "failed": "Falhou",
     "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
+    "input-reset": "Limpar termos de pesquisa",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
-    "magnifier": "lupa"
+    "magnifier": "Enviar termos de pesquisa"
   },
   "aria": {
     "fcc-curriculum": "Currículo do freeCodeCamp",
@@ -480,10 +579,21 @@
     "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter para enviar.",
-    "running-tests": "Executando testes"
+    "running-tests": "Executando testes",
+    "hide-preview": "Ocultar a visualização",
+    "move-preview-to-new-window": "Mover a visualização para uma nova janela e focá-la",
+    "move-preview-to-main-window": "Mover a visualização para esta janela e fechar a janela de visualização externa",
+    "close-external-preview-window": "Fechar a janela de visualização externa",
+    "show-preview": "Mostrar a visualização nesta janela",
+    "open-preview-in-new-window": "Abrir a visualização em uma nova janela e focá-la",
+    "step": "Passo",
+    "steps": "Passos",
+    "steps-for": "Passos para {{blockTitle}}",
+    "code-example": "Exemplo de código de {{codeName}}",
+    "opens-new-window": "Abre em uma nova janela"
   },
   "flash": {
-    "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
+    "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Algo não está certo. Um relatório foi gerado e a equipe do freeCodeCamp.org foi notificada",
     "went-wrong": "Algo deu errado. Verifique e tente novamente",
@@ -492,7 +602,13 @@
     "not-authorized": "Você não está autorizado a continuar nesta rota",
     "could-not-find": "Não conseguimos encontrar o que você estava procurando. Verifique e tente novamente",
     "wrong-updating": "Algo deu errado ao atualizar sua conta. Verifique e tente novamente",
-    "updated-preferences": "Atualizamos as suas preferências",
+    "updated-about-me": "Atualizamos suas informações pessoais",
+    "updated-socials": "Atualizamos seus links das redes sociais",
+    "updated-sound": "Atualizamos suas configurações de som",
+    "updated-themes": "Atualizamos seu tema",
+    "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
+    "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
+    "portfolio-item-updated": "Atualizamos seu portfólio",
     "email-invalid": "Formato de e-mail inválido",
     "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
@@ -502,6 +618,7 @@
     "username-used": "Este nome de usuário já está associado a esta conta",
     "username-taken": "Este nome de usuário já está associado a uma conta diferente",
     "username-updated": "Atualizamos seu nome de usuário para {{username}}",
+    "privacy-updated": "Atualizamos suas configurações de privacidade",
     "could-not-logout": "Não foi possível sair. Tente novamente em alguns instantes",
     "email-encoded-wrong": "O e-mail codificado no link está formatado incorretamente",
     "oops-not-right": "Ops, algo não está correto. Solicite um novo link para entrar ou se cadastrar",
@@ -539,6 +656,7 @@
     "complete-project-first": "Você precisa completar o projeto primeiro.",
     "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador.",
+    "timeline-private": "{{username}} escolheu deixar sua linha do tempo privada e precisa torná-la pública para que outros possam ver a sua certificação.",
     "code-saved": "Seu código foi salvo no banco de dados. Ele estará aqui quando você voltar.",
     "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
     "code-save-less": "Devagar! O código não foi salvo. Tente novamente em alguns segundos.",
@@ -561,7 +679,8 @@
     "editor-url": "Lembre-se de enviar o URL do aplicativo em produção.",
     "http-url": "Não é possível usar um URL (http) inseguro.",
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
-    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível."
+    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
@@ -643,8 +762,51 @@
         "Cat and Dog Image Classifier": "Classificador de imagens de gatos e cachorros",
         "Book Recommendation Engine using KNN": "Mecanismo de recomendação de livros usando KNN",
         "Linear Regression Health Costs Calculator": "Calculadora de custos de saúde de regressão linear",
-        "Neural Network SMS Text Classifier": "Classificador de texto SMS baseado em rede neural"
+        "Neural Network SMS Text Classifier": "Classificador de texto SMS baseado em rede neural",
+        "Celestial Bodies Database": "Banco de dados de corpos celestiais",
+        "World Cup Database": "Banco de dados da Copa do Mundo",
+        "Salon Appointment Scheduler": "Agendador de compromissos do salão de beleza",
+        "Periodic Table Database": "Banco de dados da tabela periódica",
+        "Number Guessing Game": "Jogo de adivinhação de números",
+        "Build a freeCodeCamp Forum Homepage": "Criar uma página inicial do fórum do freeCodeCamp"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Design responsivo para a web",
+      "responsive-web-design": "Certificação de design responsivo para a web",
+      "JavaScript Algorithms and Data Structures": "Algoritmos e estruturas de dados em JavaScript",
+      "javascript-algorithms-and-data-structures": "Certificação de algoritmos e estruturas de dados em JavaScript",
+      "Front End Development Libraries": "Bibliotecas de desenvolvimento em front-end",
+      "front-end-development-libraries": "Certificação de desenvolvimento com bibliotecas de front-end",
+      "Data Visualization": "Visualização de dados",
+      "data-visualization": "Certificação de visualização de dados",
+      "Relational Database": "Bancos de dados relacionais",
+      "relational-database-v8": "Certificação de bancos de dados relacionais",
+      "Back End Development and APIs": "APIs e desenvolvimento de back-end",
+      "back-end-development-and-apis": "Certificação de APIs e desenvolvimento de back-end",
+      "Quality Assurance": "Garantia de qualidade",
+      "quality-assurance-v7": "Certificação de garantia de qualidade",
+      "Scientific Computing with Python": "Computação científica em Python",
+      "scientific-computing-with-python-v7": "Certificação de computação científica em Python",
+      "Data Analysis with Python": "Análise de dados com Python",
+      "data-analysis-with-python-v7": "Certificação de análise de dados com Python",
+      "Information Security": "Segurança da informação",
+      "information-security-v7": "Certificação de segurança da informação",
+      "Machine Learning with Python": "Aprendizado de máquina com Python",
+      "machine-learning-with-python-v7": "Certificação de aprendizagem de máquina com Python",
+      "College Algebra with Python": "Álgebra para o ensino superior com Python",
+      "college-algebra-with-python-v8": "Certificação de Álgebra do ensino superior com Python",
+      "Legacy Front End": "Front-end legado",
+      "legacy-front-end": "Certificação de front-end",
+      "Legacy Back End": "Back-end legado",
+      "legacy-back-end": "Certificação de back-end",
+      "Legacy Data Visualization": "Visualização de dados legada",
+      "legacy-data-visualization": "Certificação de visualização de dados",
+      "Legacy Information Security and Quality Assurance": "Segurança da informação e garantia da qualidade legado",
+      "information-security-and-quality-assurance": "Certificação de segurança da informação e garantia da qualidade",
+      "Legacy Full Stack Certification": "Certificação de full-stack legada",
+      "Legacy Full Stack": "Full-stack legado",
+      "full-stack": "Certificação de full-stack"
     }
   },
   "certification-card": {
@@ -660,7 +822,7 @@
   "forum-help": {
     "browser-info": "**Informações de seu navegador:**",
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
-    "challenge": "**Desafio:** {{challengeTitle}}",
+    "challenge": "**Desafio:**",
     "challenge-link": "**Link para o desafio:**",
     "whats-happening": "**Conte-nos o que está acontecendo:**",
     "describe": "Descreva detalhadamente o problema aqui.",
@@ -697,5 +859,12 @@
     "focus-instructions-panel": "Foco no painel de instruções",
     "navigate-previous": "Navegar para o exercício anterior",
     "navigate-next": "Navegar para o próximo exercício"
+  },
+  "signout": {
+    "heading": "Sair da sua conta",
+    "p1": "Aviso: se continuar, seu progresso não será mais salvo.",
+    "p2": "Esta ação encerrará a sua conta somente neste dispositivo e na sessão do navegador. Confirme se deseja prosseguir.",
+    "certain": "Sim, sair da minha conta",
+    "nevermind": "Deixa para lá, eu não quero sair da minha conta"
   }
 }

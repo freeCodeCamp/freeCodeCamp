@@ -1,43 +1,35 @@
 ---
 id: 59622f89e4e137560018a40e
 title: Sequenze figura-figura di Hofstadter
-challengeType: 5
+challengeType: 1
 forumTopicId: 302286
 dashedName: hofstadter-figure-figure-sequences
 ---
 
 # --description--
 
-Queste due sequnze di numeri interi positivi sono definite come:
+Le sequenze di Hofstadter figura-figura $R_n$ e $S_n$ sono date da
 
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+$R_1 = 1\\ ;\\ S_1 = 2 \\\\R_n = R_{n-1} + S_{n-1}, \\quad n>1.$
 
-La sequenza $S(n)$ è ulteriormente definita come la sequenza di numeri interi positivi non presenti in $R(n)$.
-
-La sequenza $R$ inizia in questo modo:
+Specificatamente, la sequenza $R_n$ contiene i valori
 
 <pre>1, 3, 7, 12, 18, ...</pre>
 
-La sequenza $S$ inizia in questo modo:
+e la sequenza $S_n$ contiene i valori
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
+La sequenza $R_n$ è definita dalla relazione ricorrente $R_n = R_{n-1} + S_{n-1}$, mentre $S_n$ è definita come la sequenza di numeri interi positivi che non sono inclusi nella sequenza $R_n$.
+
 # --instructions--
 
-Crea due funzioni chiamate `ffr` e `ffs` che quando dato `n` restituiscono rispettivamente `R(n)` o `S(n)`. (Nota che R(1) = 1 e S(1) = 2 per evitare errori off-by-one).
+Crea due funzioni chiamate `ffr` e `ffs` che restituiscono `R(n)` o `S(n)` rispettivamente, per ogni indice `n`. Nota che le sequenze figura-figura di Hofstadfer sono indicizzate da 1, con $R_1 = 1$ e $S_1 = 2$.
 
 Non deve essere ipotizzato un valore massimo di `n`.
 
-**Riferimenti**
+**Riferimenti**<p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
 
-<ul>
-  <li>
-    <a href='https://oeis.org/A005228' target='_blank'>A005228</a> e <a href='https://oeis.org/A030124' target='_blank'>A030124</a> di Sloane.
-  </li>
-  <li>
-    Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a>.
-  </li>
-</ul>
 
 # --hints--
 

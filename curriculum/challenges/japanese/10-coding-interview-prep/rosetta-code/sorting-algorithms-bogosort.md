@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: ソートアルゴリズム / ボゴソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---
 
 # --description--
 
-数字のリストを[ボゴソート](https://en.wikipedia.org/wiki/Bogosort)します。
+Bogosort a list of numbers.
 
 ボゴソートは、ソートされるまで集合をランダムに、単にシャッフルするものです。
 

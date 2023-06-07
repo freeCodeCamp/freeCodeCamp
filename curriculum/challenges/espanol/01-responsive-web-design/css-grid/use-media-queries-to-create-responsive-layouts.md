@@ -1,6 +1,6 @@
 ---
 id: 5a94fe7769fb03452672e463
-title: Usa consultas de medios (media queries) para crear diseños responsivos
+title: Usa consultas de medios (media queries) para crear diseños adaptables
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
@@ -9,7 +9,7 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 # --description--
 
-CSS Grid puede ser una manera fácil de hacer que tu sitio sea más receptivo al usar consultas de medios (media queries) para reorganizar las áreas de cuadrícula (grid), cambiar sus dimensiones y reorganizar la ubicación de los elementos.
+CSS Grid puede ser una manera fácil de hacer que tu sitio sea más adaptable al usar consultas de medios (media queries) para reorganizar las áreas de cuadrícula (grid), cambiar sus dimensiones y reorganizar la ubicación de los elementos.
 
 En la vista previa, cuando el ancho del viewport es 300px o más, el número de columnas cambia de 1 a 2. El área de publicidad entonces ocupa la columna de la izquierda por completo.
 

@@ -21,7 +21,7 @@ animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
 
 # --instructions--
 
-このベジェ曲線の効果を確認するには `red` の id を持つ要素の `animation-timing-function` を `cubic-bezier` 関数に変更し、x1, y1, x2, y2 の値をそれぞれ 0, 0, 0.58, 1 に設定します。 これで両方の要素のアニメーションが同じように進行します。
+このベジェ曲線の効果を確認するには `red` の id を持つ要素の `animation-timing-function` を `cubic-bezier` 関数に変更し、x1, y1, x2, y2 をそれぞれ `0, 0, 0.58, 1` に設定します。 これで両方の要素のアニメーションが同じように進行します。
 
 # --hints--
 

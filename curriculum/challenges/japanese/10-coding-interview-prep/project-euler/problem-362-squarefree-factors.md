@@ -1,7 +1,7 @@
 ---
 id: 5900f4d61000cf542c50ffe9
 title: '問題 362: 無平方因数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302023
 dashedName: problem-362-squarefree-factors
 ---

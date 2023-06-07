@@ -1,7 +1,7 @@
 ---
 id: 5900f4f11000cf542c510002
 title: '問題 388: 相異なる線'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
 ---

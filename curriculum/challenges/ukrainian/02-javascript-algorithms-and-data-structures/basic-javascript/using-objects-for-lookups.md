@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: Використання об'єктів для пошуків
+title: Використання об’єктів для пошуків
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
@@ -9,34 +9,32 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-Об'єкти можна вважати сховищем ключів та значень, як словники. Якщо ви маєте табличні дані, ви краще можете використати об'єкт для пошуку значень, ніж `switch` твердження або `if/else` ланцюжок. Це найбільш корисно, коли ви знаєте, що ваші вхідні дані обмежені до певного діапазону.
+Об’єкти можна вважати сховищем ключів/значень, як словники. Якщо ви маєте табличні дані, для пошуку значень краще використати об’єкт, а не інструкцію `switch` чи ланцюжок `if/else`. В такому випадку найкраще, якщо ви знаєте, що ваші вхідні дані обмежені до певного діапазону.
 
-Ось приклад простого пошуку алфавіту в зворотньому порядку:
+Ось приклад об’єкта-публікації:
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-alpha[2];
-alpha[24];
+const articleAuthor = article["author"];
+const articleLink = article["link"];
 
-const value = 2;
-alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`alpha[2]` - це рядок `Y`, `alpha[24]` - це рядок `C`, а `alpha[value]` - це рядок `Y`.
+`articleAuthor` є рядком `Kaashan Hussain`, `articleLink` є рядком `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, а `valueLookup` є рядком `How to create objects in JavaScript`.
 
 # --instructions--
 
-Переробіть ключове твердження на об'єкт, що називається `lookup`. Використовуйте його, щоб шукати `val` і призначати пов'язаний рядок до `result` змінної.
+Перетворіть інструкцію switch на об’єкт під назвою `lookup`. Використайте його, щоб знайти `val` та призначати пов’язаний рядок до змінної `result`.
 
 # --hints--
 
@@ -82,13 +80,13 @@ assert(phoneticLookup('foxtrot') === 'Frank');
 assert(typeof phoneticLookup('') === 'undefined');
 ```
 
-Вам не слід змінювати `return` твердження
+Ви не повинні змінювати інструкцію `return`
 
 ```js
 assert(code.match(/return\sresult;/));
 ```
 
-Вам не слід використовувати `case`, `switch` або `if` твердження
+Ви не повинні використовувати інструкції `case`, `switch` або `if`
 
 ```js
 assert(

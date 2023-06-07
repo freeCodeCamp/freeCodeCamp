@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc800b
 title: Algoritmos de ordenação/ordenação da panqueca
-challengeType: 5
+challengeType: 1
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
 ---

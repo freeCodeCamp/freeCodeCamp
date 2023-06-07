@@ -1,7 +1,7 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: Rullo compressore
-challengeType: 5
+challengeType: 1
 forumTopicId: 16079
 dashedName: steamroller
 ---
@@ -40,6 +40,13 @@ La tua soluzione non dovrebbe utilizzare i metodi `Array.prototype.flat()` o `Ar
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+Le variabili globali non dovrebbero essere utilizzate.
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
 ```
 
 # --seed--

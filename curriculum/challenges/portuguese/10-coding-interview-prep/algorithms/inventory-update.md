@@ -1,7 +1,7 @@
 ---
 id: a56138aff60341a09ed6c480
 title: Atualização de inventário
-challengeType: 5
+challengeType: 1
 forumTopicId: 16019
 dashedName: inventory-update
 ---

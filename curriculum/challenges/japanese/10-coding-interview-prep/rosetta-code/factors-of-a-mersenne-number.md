@@ -1,7 +1,7 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
 title: メルセンヌ数の因数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
 ---
@@ -12,7 +12,7 @@ dashedName: factors-of-a-mersenne-number
 
 `P` が素数の場合、メルセンヌ数はメルセンヌの素数である場合があります。 ( `P` が素数でない場合、メルセンヌ数も素数ではありません。)
 
-メルセンヌ素数を求めるには、長い時間を要する可能性がある [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test") を開始する前に、小さな因数を見つけることによって指数を除去することをお勧めします。
+In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a>.
 
 数字が <code>2<sup>P</sup>-1</code> を割るかどうか (すなわち、<code>2<sup>P</sup> mod (the number) = 1</code> となるかどうか) を判定するのに適した非常に効率的なアルゴリズムがあります。
 
@@ -48,7 +48,7 @@ square        top bit  multiply by 2  mod 47
 
 <code>2<sup>P</sup>-1</code> の因数 `q` は `2kP+1`の形を取り、`k` は正の整数またはゼロです。 さらに、`q` は `1` または `7 mod 8` です。
 
-最後に、潜在的因数 `q` は [素数](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division") でなければなりません。
+Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
 
 他の試行徐算アルゴリズムと同様に、アルゴリズムは `2kP+1 > sqrt(N)`となった場合に停止します。これらのテストは、`P` が素数である場合に、メルセンヌ数に対してのみ働きます。 例えば、<code>M<sub>4</sub>=15</code> はこれらの手法で因数を生成しません。3と5を考えると、いずれも`2kP+1`に適合しません。
 

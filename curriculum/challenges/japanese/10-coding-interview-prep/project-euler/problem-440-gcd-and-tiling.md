@@ -1,7 +1,7 @@
 ---
 id: 5900f5241000cf542c510037
 title: '問題 440: 最大公約数とタイル貼り'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302112
 dashedName: problem-440-gcd-and-tiling
 ---

@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-你應該還記得[相等運算符](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator)這道挑戰題。 在那裏我們提到，所有比較操作符都會返回 boolean：要麼是 `true` 要麼是 `false`。
+你應該還記得 <a href="javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">相等運算符</a> 這道挑戰題。在那裏我們提到，所有比較操作符都會返回布爾值：要麼是`true`，要麼是`false`。
 
 有時人們通過 `if/else` 語句來做比較，像這樣。
 

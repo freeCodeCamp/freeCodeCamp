@@ -1,7 +1,7 @@
 ---
 id: 5900f3761000cf542c50fe88
 title: 'Problema 9: Tripletta Pitagorica Speciale'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
 ---

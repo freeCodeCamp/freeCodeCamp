@@ -14,19 +14,19 @@ dashedName: data-visualization-mailing-lists
 
 その他のリソース:
 
-\- [演習: Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
+\- <a href="https://www.youtube.com/watch?v=KfhslNzopxo" target="_blank" rel="noopener noreferrer nofollow">演習: Geodata</a>
 
-\- [演習: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+\- <a href="https://www.youtube.com/watch?v=wSpl1-7afAk" target="_blank" rel="noopener noreferrer nofollow">演習: Gmane Model</a>
 
-\- [演習: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+\- <a href="https://www.youtube.com/watch?v=H3w4lOFBUOI" target="_blank" rel="noopener noreferrer nofollow">演習: Gmane Spider</a>
 
-\- [演習: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- <a href="https://www.youtube.com/watch?v=LRqVPMEXByw" target="_blank" rel="noopener noreferrer nofollow">演習: Gmane Viz</a>
 
-\- [演習: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+\- <a href="https://www.youtube.com/watch?v=yFRAZBkBDBs" target="_blank" rel="noopener noreferrer nofollow">演習: Page Rank</a>
 
-\- [演習: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\- <a href="https://www.youtube.com/watch?v=sXedPQ_AnWA" target="_blank" rel="noopener noreferrer nofollow">演習: Page Spider</a>
 
-\- [演習: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\- <a href="https://www.youtube.com/watch?v=Fm0hpkxsZoo" target="_blank" rel="noopener noreferrer nofollow">演習: Page Viz</a>
 
 # --question--
 

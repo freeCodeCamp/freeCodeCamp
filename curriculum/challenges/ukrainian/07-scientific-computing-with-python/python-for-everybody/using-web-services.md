@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07a
-title: Використання Web Services
+title: Використання вебсервісів
 challengeType: 11
 videoId: oNl1OVDPGKE
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: using-web-services
 
 ## --text--
 
-Які два найпоширеніші способи відправлення даних через Інтернет?
+Які два найпоширеніші способи надсилання даних через інтернет?
 
 ## --answers--
 

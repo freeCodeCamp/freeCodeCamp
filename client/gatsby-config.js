@@ -10,10 +10,7 @@ const { clientLocale, curriculumLocale, homeLocation, sentryClientDSN } =
   envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
-const pathPrefix =
-  clientLocale === 'english' || clientLocale === 'chinese'
-    ? ''
-    : '/' + clientLocale;
+const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
 
 module.exports = {
   flags: {
@@ -25,6 +22,7 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    'gatsby-plugin-pnpm',
     {
       resolve: '@sentry/gatsby',
       options: {
@@ -97,20 +95,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-advanced-sitemap`,
-    //   options: {
-    //     exclude: [
-    //       `/dev-404-page`,
-    //       `/404`,
-    //       `/404.html`,
-    //       `/offline-plugin-app-shell-fallback`,
-    //       `/learn`,
-    //       /(\/)learn(\/)\S*/
-    //     ],
-    //     addUncaughtPages: true
-    //   }
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

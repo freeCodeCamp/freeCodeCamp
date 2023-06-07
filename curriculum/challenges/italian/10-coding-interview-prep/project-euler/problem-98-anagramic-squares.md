@@ -1,7 +1,7 @@
 ---
 id: 5900f3cf1000cf542c50fee1
 title: 'Problema 98: quadrati anagrammici'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302215
 dashedName: problem-98-anagramic-squares
 ---

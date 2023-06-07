@@ -16,7 +16,7 @@
 
 .landing-page ul {
   list-style: none;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .quote-partial .blockquote {
@@ -26,7 +26,6 @@
 
 .intro-description strong,
 .intro-description p {
-  font-family: 'Lato', sans-serif;
   font-size: 1.17rem;
 }
 

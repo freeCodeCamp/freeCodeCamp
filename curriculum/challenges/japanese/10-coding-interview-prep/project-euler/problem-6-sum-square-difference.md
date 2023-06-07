@@ -1,7 +1,7 @@
 ---
 id: 5900f3721000cf542c50fe85
 title: '問題 6: 和と 2 乗の差'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302171
 dashedName: problem-6-sum-square-difference
 ---

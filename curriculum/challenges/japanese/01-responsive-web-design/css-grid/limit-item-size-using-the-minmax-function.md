@@ -9,7 +9,7 @@ dashedName: limit-item-size-using-the-minmax-function
 
 # --description--
 
-`grid-template-columns` と `grid-template-rows` と共に使われる組み込み関数にはもう一つ、`minmax` があります。 これはグリッドコンテナのサイズが変更されたときに、アイテムのサイズを制限するために使用されます。 これを行うには、アイテムの許容サイズ範囲を指定する必要があります。 例:
+`grid-template-columns` と `grid-template-rows` と共に使われる組み込み関数にはもう一つ、`minmax` があります。 これはグリッドコンテナーのサイズが変更されたときに、アイテムのサイズを制限するために使用されます。 これを行うには、アイテムの許容サイズ範囲を指定する必要があります。 例:
 
 ```css
 grid-template-columns: 100px minmax(50px, 200px);

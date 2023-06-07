@@ -1,7 +1,7 @@
 ---
 id: 5900f4531000cf542c50ff65
 title: 'Problema 230: Parole di Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301874
 dashedName: problem-230-fibonacci-words
 ---

@@ -39,16 +39,16 @@ No additional actions are required once a file has been proofread.
 
 > [!NOTE] Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
 
-## Becoming a proofreader
+## Becoming a Proofreader
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
 
 Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
 
 > [!NOTE] Crowdin 会允许你校对你自己的译文。 一般来说，最好是让另一位校对者审核你的译文，以确保最终内容的准确性。
 
-## Creating a channel on Chat for a world language
+## Creating a Channel on Chat for a World Language
 
-For the most part we encourage you to use the [contributors chat](https://chat.freecodecamp.org/channel/contributors) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
 
 If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).

@@ -27,7 +27,7 @@ body {
 
 # --hints--
 
-O elemento `body` deve ter a propriedade `background-color` com o valor de preto (black).
+O elemento `body` deve ter a propriedade `background-color` com o valor black (preto).
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');

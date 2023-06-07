@@ -11,7 +11,7 @@ dashedName: serve-an-html-file
 `res.sendFile(path)` メソッドを使用して、ファイルでリクエストに応答することができます。 メソッドは `app.get('/', ...)` ルートハンドラーの中に記述できます。 このメソッドは、送信したいファイルの処理方法をブラウザーに指示するための適切なヘッダーを、そのファイルタイプに応じて設定します。 そして、ファイルを読み取り、送信します。 このメソッドには絶対ファイルパスが必要です。 以下のようなパスを計算するために、Node のグローバル変数 `__dirname` を使用することを推奨します。
 
 ```js
-absolutePath = __dirname + relativePath/file.ext
+absolutePath = __dirname + '/relativePath/file.ext'
 ```
 
 # --instructions--

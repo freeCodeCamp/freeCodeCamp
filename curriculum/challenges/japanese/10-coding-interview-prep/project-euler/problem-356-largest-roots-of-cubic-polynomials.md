@@ -1,14 +1,14 @@
 ---
 id: 5900f4d01000cf542c50ffe3
 title: '問題 356: 三次多項式の最大根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302016
 dashedName: problem-356-largest-roots-of-cubic-polynomials
 ---
 
 # --description--
 
-$a_n$ を、多項式 $g(x) = x^3 - 2^n \times x^2 + n$ の最大の実根とします。
+Let $a_n$ be the largest real root of a polynomial $g(x) = x^3 - 2^n \times x^2 + n$.
 
 例: $a_2 = 3.86619826\ldots$
 

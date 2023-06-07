@@ -1,19 +1,19 @@
 ---
 id: 5a23c84252665b21eecc7eaf
 title: IBAN
-challengeType: 5
+challengeType: 1
 forumTopicId: 302289
 dashedName: iban
 ---
 
 # --description--
 
-Il numero internazione del conto bancario ([International Bank Account Number IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) è un modo per identificare internazionalmente i conti bancari con un rischio ridotto di propagare [errori di trascrizione](https://en.wikipedia.org/wiki/Transcription_error).
+L'IBAN (International Bank Account Number) è un modo concordato internazionalmente per identificare i conti bancari attraverso confini internazionali con un rischio ridotto di propagare errori di trascrizione.
 
-L’IBAN è costituito da un massimo di 34 caratteri alfanumerici:
+L'<abbr title="International Bank Account Number">IBAN</abbr> contiene fino a 34 caratteri alfanumerici:
 
 <ul>
-  <li>inizia con il codice paese a due lettere ISO 3166-1 alpha-2</li>
+  <li>prima il codice paese a due lettere <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2</li>
   <li>poi due cifre di controllo, e</li>
   <li>infine un numero di conto bancario di base specifico per paese (BBAN).</li>
 </ul>
@@ -95,10 +95,10 @@ function isValid(iban) {
     iban = __helpers.removeWhiteSpace(iban)
     if (!iban.match(/^[\dA-Z]+$/)) return false
     var len = iban.length
-    if (len != ibanLen[iban.substr(0,2)]) return false
-    iban = iban.substr(4) + iban.substr(0,4)
+    if (len != ibanLen[iban.substring(0,2)]) return false
+    iban = iban.substring(4) + iban.substring(0,4)
     for (var s='', i=0; i<len; i+=1) s+=parseInt(iban.charAt(i),36)
-    for (var m=s.substr(0,15)%97, s=s.substr(15); s; s=s.substr(13)) m=(m+s.substr(0,13))%97
+    for (var m=s.substring(0,15)%97, s=s.substring(15); s; s=s.substring(13)) m=(m+s.substring(0,13))%97
     return m == 1
 }
 ```

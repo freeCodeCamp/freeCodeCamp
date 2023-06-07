@@ -6,6 +6,6 @@ const story = {
   component: AllPalettes
 };
 
-export const ColorSystem = () => <AllPalettes />;
+export const ColorSystem = (): JSX.Element => <AllPalettes />;
 
 export default story;

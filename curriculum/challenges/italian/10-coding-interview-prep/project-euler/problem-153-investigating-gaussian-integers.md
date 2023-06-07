@@ -1,7 +1,7 @@
 ---
 id: 5900f4051000cf542c50ff18
 title: 'Problema 153: Indagare sugli interi Gaussiani'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
 ---

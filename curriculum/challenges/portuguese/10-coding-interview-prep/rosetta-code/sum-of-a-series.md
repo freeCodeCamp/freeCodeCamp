@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8041
 title: Soma de uma série
-challengeType: 5
+challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
 ---

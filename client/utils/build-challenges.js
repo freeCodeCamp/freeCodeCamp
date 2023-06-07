@@ -9,7 +9,7 @@ const {
   CHALLENGES_DIR,
   META_DIR,
   getChallengesDirForLang
-} = require('../../curriculum/getChallenges');
+} = require('../../curriculum/get-challenges');
 
 const { curriculumLocale } = envData;
 

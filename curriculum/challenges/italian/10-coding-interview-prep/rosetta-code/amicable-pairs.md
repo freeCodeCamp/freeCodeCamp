@@ -1,23 +1,25 @@
 ---
 id: 5949b579404977fbaefcd737
 title: Coppie amicabili
-challengeType: 5
+challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
 ---
 
 # --description--
 
-Due numeri interi $N$ e $M$ sono detti [Numeri amicabili](https://it.wikipedia.org/wiki/Numeri_amicabili) se $N \\neq M$ e la somma dei [divisori propri](https://rosettacode.org/wiki/Proper divisors "Proper divisors") di $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ e $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Due numeri interi $N$ e $M$ sono detti coppie amicabili se $N \\neq M$ e la somma dei divisori propri di $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$, come anche $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Esempio:**
 
 **1184** e **1210** sono una coppia amicabile, con i seguenti divisori propri:
 
 <ul>
-  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  e</li>
-  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   rispettivamente.</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 e</li>
+  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 rispettivamente.</li>
 </ul>
+
+La somma dei divisori del primo valore **1184** è **1210**, e la somma dei divisori del secondo valore **1210** è **1184**.
 
 # --instructions--
 

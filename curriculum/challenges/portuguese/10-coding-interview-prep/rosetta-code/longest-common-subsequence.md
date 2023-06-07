@@ -1,7 +1,7 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
 title: Maior subsequência comum
-challengeType: 5
+challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
 ---
@@ -80,8 +80,8 @@ function lcs(a, b) {
 
 ```js
 function lcs(a, b) {
-  var aSub = a.substr(0, a.length - 1);
-  var bSub = b.substr(0, b.length - 1);
+  var aSub = a.substring(0, a.length - 1);
+  var bSub = b.substring(0, b.length - 1);
 
   if (a.length === 0 || b.length === 0) {
     return '';

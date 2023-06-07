@@ -1,7 +1,7 @@
 ---
 title: Introduction to Python for Everybody
-block: Python for Everybody
-superBlock: Scientific Computing with Python
+block: python-for-everybody
+superBlock: scientific-computing-with-python
 ---
 
 ## Introduction to Python for Everybody

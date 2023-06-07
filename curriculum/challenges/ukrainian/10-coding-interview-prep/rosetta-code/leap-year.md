@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ede
 title: Високосний рік
-challengeType: 5
+challengeType: 1
 forumTopicId: 302300
 dashedName: leap-year
 ---
@@ -12,7 +12,7 @@ dashedName: leap-year
 
 # --hints--
 
-`isLeapYear` повинен бути функцією.
+`isLeapYear` має бути функцією.
 
 ```js
 assert(typeof isLeapYear == 'function');

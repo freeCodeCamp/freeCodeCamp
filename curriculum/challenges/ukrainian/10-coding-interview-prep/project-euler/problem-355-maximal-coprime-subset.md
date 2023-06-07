@@ -1,7 +1,7 @@
 ---
 id: 5900f4d01000cf542c50ffe2
 title: 'Задача 355: Максимальна підмножина співвідношень'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset
 ---

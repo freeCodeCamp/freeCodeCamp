@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db2
-title: Розробка Сканера Nmap (частина 2)
+title: Розробка сканера Nmap (частина 2)
 challengeType: 11
 videoId: a98PscnUsTg
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: developing-an-nmap-scanner-part-2
 
 ## --text--
 
-Який з наступних методів дозволить просканувати UDP-порти від 21 до 443?
+Що з переліченого дозволяє просканувати порти UDP від 21 до 443?
 
 ## --answers--
 

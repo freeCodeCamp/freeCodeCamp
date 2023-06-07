@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-すべてのインスタンスは自動的に `prototype` にプロパティを持つので、`prototype` をオブジェクトを作成するための「レシピ」と捉えることができます。 ちなみに、`duck` と `canary` の `prototype` は、`Bird.prototype` として `Bird` のコンストラクターの一部となっています。 JavaScript のほぼすべてのオブジェクトは、それを作成したコンストラクター関数の一部である `prototype` プロパティを持っています。
+すべてのインスタンスは自動的に `prototype` にプロパティを持つので、`prototype` をオブジェクトを作成するための「レシピ」と捉えることができます。 ちなみに、`duck` と `canary` の `prototype` は、`Bird.prototype` として `Bird` のコンストラクターの一部となっています。
 
 # --instructions--
 

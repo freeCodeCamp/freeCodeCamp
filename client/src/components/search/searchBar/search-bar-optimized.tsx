@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import Magnifier from '../../../assets/icons/Magnifier';
+import Magnifier from '../../../assets/icons/magnifier';
+import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
+import type { SearchBarProps } from './search-bar';
 
-type Props = {
-  innerRef?: React.RefObject<HTMLDivElement>;
-};
-
-const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
+const SearchBarOptimized = ({
+  innerRef
+}: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
   const { t } = useTranslation();
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
+  const inputElementRef = useRef<HTMLInputElement>(null);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +20,10 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
     }
+  };
+  const onClick = () => {
+    setValue('');
+    inputElementRef.current?.focus();
   };
 
   return (
@@ -32,11 +37,14 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
             onSubmit={onSubmit}
             role='search'
           >
+            <label className='sr-only' htmlFor='ais-SearchBox-input'>
+              {t ? t('search.label') : ''}
+            </label>
             <input
-              aria-label='Search'
               autoCapitalize='off'
               autoComplete='off'
               autoCorrect='off'
+              id='ais-SearchBox-input'
               className='ais-SearchBox-input'
               maxLength={512}
               onChange={onChange}
@@ -44,14 +52,20 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
               spellCheck='false'
               type='search'
               value={value}
+              ref={inputElementRef}
             />
-            <button
-              className='ais-SearchBox-submit'
-              title='Submit your search query.'
-              type='submit'
-            >
+            <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
             </button>
+            {value && (
+              <button
+                className='ais-SearchBox-reset'
+                onClick={onClick}
+                type='button'
+              >
+                <InputReset />
+              </button>
+            )}
           </form>
         </div>
       </div>

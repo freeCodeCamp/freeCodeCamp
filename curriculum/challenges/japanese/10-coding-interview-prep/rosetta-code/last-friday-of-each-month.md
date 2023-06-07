@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7edc
 title: 毎月の最終金曜日
-challengeType: 5
+challengeType: 1
 forumTopicId: 302299
 dashedName: last-friday-of-each-month
 ---

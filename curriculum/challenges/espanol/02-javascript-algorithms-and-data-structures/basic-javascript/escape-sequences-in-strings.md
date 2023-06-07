@@ -9,36 +9,35 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Hay dos razones para usar caracteres de escape:
+Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Las secuencias de escape le permiten utilizar caracteres que de otro modo no podrías usar en una cadena.
 
-1.  Para permitir el uso de caracteres que de otra manera no te sería posible escribir, como un retorno de carro.
-2.  Para permitirte representar múltiples comillas en una cadena sin que JavaScript malinterprete lo que quieres decir.
+<table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\t</code></td><td>tabulador</td></tr><tr><td><code>\r</code></td><td>retorno del carro</td></tr><tr><td><code>\b</code></td><td>retroceso</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
 
-Esto lo aprendimos en el desafío anterior.
-
-<table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\t</code></td><td>tabulación</td></tr><tr><td><code>\b</code></td><td>límite de palabra</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
-
-*Ten en cuenta que la barra invertida en sí debe ser escapada para poder mostrarla como una barra invertida.*
+*Ten en cuenta que la barra invertida debe escaparse para que aparezca como tal.*
 
 # --instructions--
 
-Asigna las siguientes tres líneas de texto en la variable única `myStr` usando secuencias de escape.
+Asigna las siguientes tres líneas de texto a la variable única `myStr` utilizando secuencias de escape.
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
-Necesitarás usar secuencias de escape para insertar correctamente los caracteres especiales. También necesitarás seguir el espaciado tal y como se ve arriba, sin espacios entre secuencias de escape o palabras.
+Deberás utilizar secuencias de escape para insertar correctamente caracteres especiales. También tendrás que seguir el espaciado tal y como se ve arriba, sin espacios entre secuencias de escape o palabras.
 
-**Nota:** La sangría para la segunda línea (`SecondLine`) se consigue con el carácter de escape de tabulación, no con espacios.
+**Note:** La sangría para `SecondLine` se consigue con el carácter de escape tabulador, no con espacios.
 
 # --hints--
 
-`myStr` no debe contener ningún espacio
+`myStr` no debe contener espacios
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` debe contener las cadenas `FirstLine`, `SecondLine` y `ThirdLine` (recuerda la sensibilidad a mayúsculas y minúsculas)
+`myStr` debe contener las cadenas `FirstLine`, `SecondLine` y `ThirdLine` (recuerda distinguir entre mayúsculas y minúsculas)
 
 ```js
 assert(
@@ -46,45 +45,37 @@ assert(
 );
 ```
 
-`FirstLine` debe ir seguido del carácter de línea nueva `\n`
+`FirstLine` debe ir seguido del carácter de nueva línea `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` debe contener un carácter de tabulación `\t` seguido de un carácter de línea nueva
+`myStr` debe contener un carácter de tabulación `\t` que sigue a un carácter de nueva línea
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` debe estar precedida por el carácter de barra invertida `\`
+`SecondLine` debe ir precedido del carácter de barra invertida `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-Debe haber un carácter de línea nueva entre `SecondLine` y `ThirdLine`
+Debe haber un carácter de nueva línea entre `SecondLine` y `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` solo debe contener caracteres mostrados en las instrucciones
+`myStr` sólo debe contener los caracteres mostrados en las instrucciones
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
 
 ## --seed-contents--
 

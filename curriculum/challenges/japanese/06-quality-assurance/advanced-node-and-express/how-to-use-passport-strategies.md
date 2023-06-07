@@ -8,64 +8,60 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-`index.pug` ファイルには、実はログインフォームがあります。 これまでは、インラインの JavaScript `if showLogin` があり、その後でフォームがインデントされていたために非表示になっていました。 `showLogin` が変数として定義されていなかったため、フォームを含むコードブロックがレンダーされませんでした。 このページの `res.render` で、新しい変数を `showLogin: true` としてオブジェクトに追加してください。 ページを更新すると、フォームが表示されます！ このフォームは、`/login` で **POST** を実行するように設定されています。つまり、ここで POST を受け入れてユーザーを認証する必要があります。
+`index.pug` ファイルには、ログインフォームがあります。 It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
-このチャレンジでは、POST リクエストを受け入れるためにルート `/login` を追加する必要があります。 このルートで認証するには、レスポンスを送信する前にそのためのミドルウェアを追加する必要があります。 それには、レスポンスで `function(req,res)` の前に別のミドルウェアの引数を渡すだけです！ 使用するミドルウェアは `passport.authenticate('local')` です。
+In the `res.render` for that page, add a new variable to the object, `showLogin: true`. ページを更新すると、フォームが表示されます！ This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
 
-`passport.authenticate` は引数として `{ failureRedirect: '/' }` などのいくつかのオプションを受け取ることができるのでとても便利です。ですので必ず追加してください。 ミドルウェア (認証ミドルウェアが成功した場合にのみ呼び出されます) を使用した後のレスポンスではユーザーを `/profile` にリダイレクトする必要があり、ルートでビュー `profile.pug` をレンダーする必要があります。
+For this challenge, you should add the route `/login` to accept a POST request. このルートで認証するには、レスポンスを送信する前にそのためのミドルウェアを追加する必要があります。 This is done by just passing another argument with the middleware before with your response. 使用するミドルウェアは `passport.authenticate('local')` です。
+
+`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
 
 認証が成功すると、ユーザーオブジェクトが `req.user` に保存されます。
 
-この時点で、ユーザー名とパスワードをフォームへ入力すると、ホームページ `/` にリダイレクトされ、サーバーのコンソールに `'User {USERNAME} attempted to log in.'` と表示されます。これは、今の段階では、登録されていないユーザーをログインさせないためです。
+この時点で、ユーザー名とパスワードをフォームへ入力すると、ホームページ `/` にリダイレクトされ、サーバーのコンソールに `'User {USERNAME} attempted to log in.'` と表示されます。これは、今の段階では、登録されていないユーザーはログインできないためです。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9)で確認できます。
+完成したと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 
-すべてのステップを server.js に正しく実装する必要があります。
+All steps should be correctly implemented in `server.js`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showLogin:( |)true/gi,
-        'You should be passing the variable "showLogin" as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /failureRedirect:( |)('|")\/('|")/gi,
-        'Your code should include a failureRedirect to the "/" route'
-      );
-      assert.match(
-        data,
-        /login[^]*post[^]*local/gi,
-        'You should have a route for login which accepts a POST and passport.authenticates local'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showLogin:( |)true/,
+    'You should be passing the variable "showLogin" as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /failureRedirect:( |)('|")\/('|")/,
+    'Your code should include a failureRedirect to the "/" route'
+  );
+  assert.match(
+    data,
+    /login[^]*post[^]*local/,
+    'You should have a route for login which accepts a POST and passport.authenticates local'
+  );
+}
 ```
 
-/login への POST リクエストで / に正しくリダイレクトする必要があります。
+A POST request to `/login` should correctly redirect to `/`.
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/login').then(
-    (data) => {
-      assert.match(
-        data,
-        /Looks like this page is being rendered from Pug into HTML!/gi,
-        'A login attempt at this point should redirect to the homepage since we do not have any registered users'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/login", getUserInput("url"));
+  const res = await fetch(url, { method: 'POST' });
+  const data = await res.text();
+  assert.match(
+    data,
+    /Looks like this page is being rendered from Pug into HTML!/,
+    'A login attempt at this point should redirect to the homepage since we do not have any registered users'
   );
+}
 ```
 
 # --solutions--

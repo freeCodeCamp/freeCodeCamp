@@ -1,20 +1,20 @@
 ---
 id: 5a23c84252665b21eecc8001
 title: Algoritmi di ordinamento/Bead sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302310
 dashedName: sorting-algorithmsbead-sort
 ---
 
 # --description--
 
-Ordina un array di interi positivi usando l'[Algoritmo di ordinamento Bead Sort](https://en.wikipedia.org/wiki/Bead_sort).
+L'algoritmo *bead sort* inizia creando una matrice di zeri la cui lunghezza è pari al valore dell'elemento più grande nell'array di input. La matrice è trasformata aggiungendo uno a tutti gli elementi tra l'indice zero e l'indice indicato dall'elemento corrente. Questo processo è ripetuto fino a che non hai riempito la matrice.
 
-Un *bead sort* è anche conosciuto come un *ordinamento per gravità*.
+Iterare sulla matrice, sommare i numeri degli elementi maggiori di zero, poi diminuire il valore di ogni elemento di uno produce l'array ordinato.
 
-L'algoritmo ha complessità O(S), dove S è la somma degli interi nel set di ingresso: Ogni perla viene spostata singolarmente.
+**Nota:** Ogni elemento dell'array di input è unico.
 
-Questo è il caso in cui Bead Sort è implementato senza un meccanismo per aiutare a trovare spazi vuoti sotto le perle, ad esempio nelle implementazioni software.
+Ordina un array di numeri interi positivi usando l'algoritmo Bead Sort.
 
 # --hints--
 
@@ -90,31 +90,31 @@ function beadSort(arr) {
 
 ```js
 function beadSort(arr) {
-  var max = 0;
-  for (var i = 0; i < arr.length; i++) if (arr[i] > max) max = arr[i];
-  var grid = new Array(arr.length);
-  for (var i = 0; i < grid.length; i++) {
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) if (arr[i] > max) max = arr[i];
+  const grid = new Array(arr.length);
+  for (let i = 0; i < grid.length; i++) {
     grid[i] = new Array(max);
   }
-  var levelcount = new Array(max);
+  const levelcount = new Array(max);
   levelcount.fill(0);
-  for (var i = 0; i < max; i++) {
+  for (let i = 0; i < max; i++) {
     levelcount[i] = 0;
-    for (var j = 0; j < arr.length; j++) grid[j][i] = '_';
+    for (let j = 0; j < arr.length; j++) grid[j][i] = '_';
   }
-  for (var i = 0; i < arr.length; i++) {
-    var num = arr[i];
-    for (var j = 0; num > 0; j++) {
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+    for (let j = 0; num > 0; j++) {
       grid[levelcount[j]++][j] = '*';
       num--;
     }
   }
-  var sorted = new Array(arr.length);
+  const sorted = new Array(arr.length);
   sorted.fill(0);
-  for (var i = 0; i < arr.length; i++) {
-    var putt = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let putt = 0;
     for (
-      var j = 0;
+      let j = 0;
       j < max &&
       (function(c) {
         return c.charCodeAt == null ? c : c.charCodeAt(0);
