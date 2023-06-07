@@ -51,8 +51,7 @@ export const userPropsForSession = [
   'sound',
   'keyboardShortcuts',
   'completedChallengeCount',
-  'acceptedPrivacyTerms',
-  'donationEmails'
+  'acceptedPrivacyTerms'
 ];
 
 export function normaliseUserFields(user) {
