@@ -44,7 +44,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';

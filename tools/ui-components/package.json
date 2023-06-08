@@ -26,7 +26,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "6.4.0",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "@headlessui/react": "1.7.14",
+    "@headlessui/react": "1.7.15",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "tslib": "2.5.2",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.22.1",
-    "@babel/preset-env": "7.22.2",
+    "@babel/preset-env": "7.22.4",
     "@babel/preset-typescript": "7.21.5",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
@@ -51,7 +51,7 @@
     "@storybook/react": "6.5.16",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
-    "@types/jest": "29.5.1",
+    "@types/jest": "29.5.2",
     "@types/react": "16.14.42",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",

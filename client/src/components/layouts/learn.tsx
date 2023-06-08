@@ -4,13 +4,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
 import { tryToShowDonationModal } from '../../redux/actions';
-import {
-  userFetchStateSelector,
-  isSignedInSelector,
-  userSelector
-} from '../../redux/selectors';
+import { userFetchStateSelector } from '../../redux/selectors';
 import DonateModal from '../Donation/donation-modal';
-import createRedirect from '../create-redirect';
 
 import './prism.css';
 import './prism-night.css';
@@ -29,20 +24,14 @@ type User = {
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
-  isSignedInSelector,
-  userSelector,
-  (fetchState: FetchState, isSignedIn, user: User) => ({
-    fetchState,
-    isSignedIn,
-    user
+  (fetchState: FetchState) => ({
+    fetchState
   })
 );
 
 const mapDispatchToProps = {
   tryToShowDonationModal
 };
-
-const RedirectEmailSignUp = createRedirect('/email-sign-up');
 
 type LearnLayoutProps = {
   isSignedIn?: boolean;
@@ -54,9 +43,7 @@ type LearnLayoutProps = {
 };
 
 function LearnLayout({
-  isSignedIn,
   fetchState,
-  user,
   tryToShowDonationModal,
   children,
   hasEditableBoundaries
@@ -77,10 +64,6 @@ function LearnLayout({
 
   if (fetchState.pending && !fetchState.complete) {
     return <Loader fullScreen={true} />;
-  }
-
-  if (isSignedIn && !user.acceptedPrivacyTerms) {
-    return <RedirectEmailSignUp />;
   }
 
   return (

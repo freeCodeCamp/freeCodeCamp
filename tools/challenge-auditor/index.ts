@@ -9,8 +9,7 @@ config({ path: envPath });
 
 import { availableLangs } from '../../config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
-import { SuperBlocks } from '../../config/certification-settings';
-import { getAuditedSuperBlocks } from '../../config/superblock-order';
+import { SuperBlocks, getAuditedSuperBlocks } from '../../config/superblocks';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in

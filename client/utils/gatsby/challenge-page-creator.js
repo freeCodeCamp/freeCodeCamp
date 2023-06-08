@@ -1,5 +1,4 @@
 const path = require('path');
-const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
 const { challengeTypes, viewTypes } = require('../challenge-types');
 
@@ -79,6 +78,7 @@ function getTemplateComponent(challengeType) {
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
+      dashedName,
       certification,
       superBlock,
       block,
@@ -96,6 +96,7 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          dashedName,
           certification,
           superBlock,
           block,
@@ -163,7 +164,7 @@ exports.createBlockIntroPages = function (createPage) {
       path: slug,
       component: intro,
       context: {
-        block: dasherize(block),
+        block,
         slug
       }
     });

@@ -529,6 +529,8 @@
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
     "keep-coding": "Sea lo que sea que hagas, ¡sigue programando!",
     "email-signup": "Registrarse con un correo electrónico",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, el profesor que fundó freeCodeCamp.org",
     "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
     "update-email-1": "Actualiza tu correo electrónico",

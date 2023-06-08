@@ -6,7 +6,8 @@ type Endpoints = [string, 'GET' | 'POST'][];
 export const endpoints: Endpoints = [
   ['/refetch-user-completed-challenges', 'POST'],
   ['/certificate/verify-can-claim-cert', 'GET'],
-  ['/api/github', 'GET']
+  ['/api/github', 'GET'],
+  ['/account', 'GET']
 ];
 
 export const deprecatedEndpoints: FastifyPluginCallbackTypebox = (

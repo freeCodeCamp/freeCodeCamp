@@ -1004,12 +1004,12 @@
     }
   },
   "example-certification": {
-    "title": "Example Certification",
-    "intro": ["placeholder"],
+    "title": "Зразкова сертифікація",
+    "intro": ["заповнювач"],
     "blocks": {
       "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+        "title": "Екзамен зі зразкової сертифікації",
+        "intro": ["заповнювач"]
       }
     }
   },

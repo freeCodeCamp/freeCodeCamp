@@ -19,7 +19,6 @@ declare module 'fastify' {
 const defaultUser = {
   about: '',
   acceptedPrivacyTerms: false,
-  badges: {},
   completedChallenges: [],
   currentChallengeId: '',
   emailVerified: false,
@@ -63,8 +62,6 @@ const defaultUser = {
     showTimeLine: false
   },
   progressTimestamps: [],
-  // TODO: check what this is used for in api-server and if we need it
-  rand: 0,
   sendQuincyEmail: false,
   theme: 'default',
   // TODO: generate a UUID like in api-server
@@ -114,6 +111,7 @@ export const devLoginCallback: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
     req.session.user = { id };
     await req.session.save();
+    return { statusCode: 200 };
   });
 
   done();

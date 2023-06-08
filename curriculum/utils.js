@@ -1,11 +1,8 @@
 const path = require('path');
 const {
-  CurriculumMaps,
-  superBlockOrder,
-  SuperBlockStates,
-  TranslationStates,
-  orderedSuperBlockStates
-} = require('../config/superblock-order');
+  createFlatSuperBlockMap,
+  SuperBlocks
+} = require('../config/superblocks');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
@@ -26,72 +23,30 @@ exports.testedLang = function testedLang() {
   }
 };
 
-/*
- * creates an object with all the superblocks in
- * 'superBlockOrder[lang][learn]' as keys and gives them
- * a number (superOrder), starting with 0, as the value
- */
-function createSuperOrder({
-  language = 'english',
-  showNewCurriculum = 'false',
-  showUpcomingChanges = 'false'
-}) {
-  if (!Object.prototype.hasOwnProperty.call(superBlockOrder, language)) {
-    throw Error(`${language} not found in superblock-order.ts`);
+function createSuperOrder(superBlocks) {
+  if (!Array.isArray(superBlocks)) {
+    throw Error(`superBlocks must be an Array`);
   }
-
-  if (
-    !Object.prototype.hasOwnProperty.call(superBlockOrder[language], [
-      CurriculumMaps.Learn
-    ])
-  ) {
-    throw Error(
-      `${language} does not have a 'learn' key in superblock-order.ts`
-    );
-  }
-
-  const audited =
-    superBlockOrder[language][CurriculumMaps.Learn][TranslationStates.Audited];
-  const notAudited =
-    superBlockOrder[language][CurriculumMaps.Learn][
-      TranslationStates.NotAudited
-    ];
+  superBlocks.forEach(superBlock => {
+    if (!Object.values(SuperBlocks).includes(superBlock)) {
+      throw Error(`Invalid superBlock: ${superBlock}`);
+    }
+  });
 
   const superOrder = {};
-  let i = 0;
 
-  function addToSuperOrder(superBlocks) {
-    superBlocks.forEach(key => {
-      superOrder[key] = i;
-      i++;
-    });
-  }
-
-  function canAddToSuperOrder(superBlockState) {
-    if (superBlockState === SuperBlockStates.New)
-      return showNewCurriculum === 'true';
-    if (superBlockState === SuperBlockStates.Upcoming)
-      return showUpcomingChanges === 'true';
-    return true;
-  }
-
-  function addSuperBlockStates(translationState) {
-    orderedSuperBlockStates.forEach(state => {
-      if (canAddToSuperOrder(state)) addToSuperOrder(translationState[state]);
-    });
-  }
-
-  addSuperBlockStates(audited);
-  addSuperBlockStates(notAudited);
+  superBlocks.forEach((superBlock, i) => {
+    superOrder[superBlock] = i;
+  });
 
   return superOrder;
 }
 
-const superOrder = createSuperOrder({
-  language: process.env.CURRICULUM_LOCALE,
+const flatSuperBlockMap = createFlatSuperBlockMap({
   showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
   showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
 });
+const superOrder = createSuperOrder(flatSuperBlockMap);
 
 // gets the superOrder of a superBlock from the object created above
 function getSuperOrder(superblock) {
