@@ -292,7 +292,12 @@ Challenges that have been already audited cannot fall back to their English vers
       ([id]) => id === challenge.id
     );
 
-    challenge.block = meta.dashedName ? meta.dashedName : null;
+    if (!meta.dashedName)
+      throw Error(
+        `The 'meta.json' file for the block with challenge '${challenge.title}' has no 'dashedName' property`
+      );
+
+    challenge.block = meta.dashedName;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);
