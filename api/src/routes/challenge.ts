@@ -38,9 +38,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
     async (req, reply) => {
       try {
-        // const user = await fastify.prisma.user.findUnique({
-        //     where: { id: req.session.user.id }
-        // });
 
         let userToken;
 
@@ -95,9 +92,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         if (!challenge) return 'Tutorial name is not valid';
 
-        if (userToken) {
-          return '';
-        }
+        // try {
+
+        //     const tokenInfo  = await fastify.prisma.userToken.findUnique({
+        //         where: { id: userToken }
+        //     });
+
+        //     if(!tokenInfo) return 'User token not found';
+        // } catch {
+
+        // }
       } catch {
         return '';
       }
