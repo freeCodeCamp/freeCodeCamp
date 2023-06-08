@@ -22,6 +22,7 @@ import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import { settingRoutes } from './routes/settings';
+import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
 import { testMiddleware } from './middleware';
@@ -169,6 +170,7 @@ export const build = async (
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
+  void fastify.register(challengeRoutes);
   void fastify.register(deprecatedEndpoints);
 
   return fastify;
