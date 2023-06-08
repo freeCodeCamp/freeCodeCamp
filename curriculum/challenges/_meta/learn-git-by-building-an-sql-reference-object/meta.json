@@ -1,6 +1,7 @@
 {
   "name": "Learn Git by Building an SQL Reference Object",
   "isUpcomingChange": false,
+  "dashedName": "learn-git-by-building-an-sql-reference-object",
   "helpCategory": "Backend Development",
   "order": 11,
   "time": "5 hours",
