@@ -28,7 +28,7 @@ export const MenuItems = React.forwardRef<
   const itemsClasses = dropup ? dropUpItems : dropDownItems;
   const buttonClass: string = [className, itemsClasses].join(' ');
   return (
-    <Menu.Items as='ul' className={buttonClass} ref={ref}>
+    <Menu.Items className={buttonClass} ref={ref}>
       {children}
     </Menu.Items>
   );

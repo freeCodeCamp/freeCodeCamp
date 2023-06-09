@@ -8,17 +8,19 @@ describe('Help Button', () => {
 
   it('should toggle the dropdown menu', () => {
     cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('.tool-panel-group ul[role="menu"]')
+    cy.get('.tool-panel-group [role="menu"]')
       .scrollIntoView()
       .should('be.visible');
   });
 
   it('should render three links when video is available', () => {
-    cy.get('.tool-panel-group ul[role="menu"]').within(() => {
-      cy.get('li').should('have.length', 3);
-      cy.get('li').eq(0).should('have.text', 'Get a Hint');
-      cy.get('li').eq(1).should('have.text', 'Watch a Video');
-      cy.get('li').eq(2).should('have.text', 'Ask for Help');
+    cy.get('.tool-panel-group [role="menu"]')
+      .children()
+      .should('have.length', 3);
+    cy.get('.tool-panel-group [role="menu"]').within(() => {
+      cy.get('a').contains('Get a Hint');
+      cy.get('button').contains('Watch a Video');
+      cy.get('button').contains('Ask for Help');
     });
   });
 
@@ -27,10 +29,12 @@ describe('Help Button', () => {
       '/learn/front-end-development-libraries/bootstrap/apply-the-default-bootstrap-button-style'
     );
     cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('.tool-panel-group ul[role="menu"]').within(() => {
-      cy.get('li').should('have.length', 2);
-      cy.get('li').eq(0).contains('Get a Hint');
-      cy.get('li').eq(1).contains('Ask for Help');
+    cy.get('.tool-panel-group [role="menu"]')
+      .children()
+      .should('have.length', 2);
+    cy.get('.tool-panel-group [role="menu"]').within(() => {
+      cy.get('a').contains('Get a Hint');
+      cy.get('button').contains('Ask for Help');
     });
   });
 });
