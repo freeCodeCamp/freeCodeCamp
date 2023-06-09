@@ -2,7 +2,7 @@
 import { omit, pick } from 'lodash';
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { SavedChallenge } from '../../../client/src/redux/prop-types';
+// import { SavedChallenge } from '../../../client/src/redux/prop-types';
 import { getChallenges } from './get-challenges';
 
 const jsCertProjectIds = [
@@ -73,6 +73,13 @@ export async function buildUserUpdate(
         savedChallenges = [],
         progressTimestamps = [],
         partiallyCompletedChallenges = []
+    }:{
+        timezone: string | null;
+        completedChallenges?: CompletedChallenge[];
+        needsModeration: boolean | null;
+        savedChallenges?: SavedChallengeFile[];
+        progressTimestamps?: number[];
+        partiallyCompletedChallenges?: CompletedChallenge[];
     } = user;
 
     const oldIndex = completedChallenges.findIndex(
