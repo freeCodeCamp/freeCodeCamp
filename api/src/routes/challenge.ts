@@ -6,10 +6,10 @@ import {
   Type
 } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'bson';
+import { isEmpty, omit, pick } from 'lodash'; // Shouldn't this fail as lodash is not installed in "api" workspace
 import isNumeric from 'validator/lib/isNumeric';
-import { flatten, isEmpty, omit, pick } from 'lodash'; // Shouldn't this fail as lodash is not installed in "api" workspace
 import isURL from 'validator/lib/isURL';
-import curriculum from '../../../config/curriculum.json';
+import { getChallenges } from '../utils/get-curriculum';
 
 const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
@@ -26,17 +26,6 @@ const multifileCertProjectIds = getChallenges()
 const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
-
-function getChallenges() {
-  return Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, []);
-}
 
 function buildUserUpdate(user, challengeId, _completedChallenge, timezone) {
   const { files, completedDate = Date.now() } = _completedChallenge;
@@ -145,10 +134,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
   // NOTE: This would be better if it could be added as a hook instead of
   //       being called in each submission route
-  function isValidChallengeCompletion(req, reply) {
-    const {
-      body: { id, challengeType, solution }
-    } = req;
+  function isValidChallengeCompletion(
+    body: { id: string; challengeType: number; solution: string },
+    reply
+  ) {
+    const { id, challengeType, solution } = body;
 
     const isValidChallengeCompletionErrorMsg = {
       type: 'error',
@@ -156,17 +146,17 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     };
 
     if (!ObjectId.isValid(id)) {
-      fastify.log.info(`isObjectId - ${id} - ${ObjectId.isValid(id)}`);
+      fastify.log.info(`isObjectId - ${id} - ${String(ObjectId.isValid(id))}`);
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
     if ('challengeType' in req.body && !String(challengeType)) {
       fastify.log.info(
-        `challengeType - ${challengeType} - ${isNumeric(challengeType)}`
+        `challengeType - ${challengeType} - ${String(isNumeric(challengeType))}`
       );
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
     if ('solution' in req.body && !isURL(solution)) {
-      fastify.log.info(`isObjectId - ${id} - ${ObjectId.isValid(id)}`);
+      fastify.log.info(`isObjectId - ${id} - ${String(ObjectId.isValid(id))}`);
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
   }
@@ -191,7 +181,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const user = await fastify.prisma.user.findFirst({
           where: { id: req.session.user.id }
         });
-        await isValidChallengeCompletion(req, reply);
+        await isValidChallengeCompletion(req.body, reply);
         if (reply.sent) return;
 
         const { alreadyCompleted, updateData } = buildUserUpdate(
