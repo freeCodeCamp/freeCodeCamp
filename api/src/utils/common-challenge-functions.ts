@@ -2,7 +2,7 @@
 import { omit, pick } from 'lodash';
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { CompletedChallenge, SavedChallenge } from '../../../client/src/redux/prop-types';
+import { SavedChallenge } from '../../../client/src/redux/prop-types';
 import { getChallenges } from './get-challenges';
 
 const jsCertProjectIds = [
@@ -21,38 +21,58 @@ const savableChallenges = getChallenges()
     .filter(challenge => challenge.challengeType === 14)
     .map(challenge => challenge.id);
 
+type SavedChallengeFile = {
+    key: string;
+    ext: string;
+    name: string;
+    history?: string[];
+    contents: string;
+};
+
+type CompletedChallenge = {
+  id: string;
+  solution?: string | null;
+  githubLink?: string | null;
+  challengeType?: number | null;
+  completedDate: number;
+  isManuallyApproved?: boolean | null;
+  files?: SavedChallengeFile[];
+}
+
 export async function buildUserUpdate(
     fastify: FastifyInstance,
     user: user,
     challengeId: string,
-    _completedChallenge: CompletedChallenge,
+    _userCompletedChallenge: CompletedChallenge,
     timezone?: string,
 ) {
-    const { files, completedDate: newProgressTimeStamp = Date.now() } = _completedChallenge;
+    const { files, completedDate: newProgressTimeStamp = Date.now() } = _userCompletedChallenge;
     
-    let completedChallenge;
+    let completedChallenge: CompletedChallenge;
     
     if (
         jsCertProjectIds.includes(challengeId) ||
         multifileCertProjectIds.includes(challengeId)
     ) {
         completedChallenge = {
-            ..._completedChallenge,
+            ..._userCompletedChallenge,
             files: files?.map(file =>
-                pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
+                pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext']) as SavedChallengeFile
             )
         };
     } else {
-        completedChallenge = omit(_completedChallenge, ['files']);
+        completedChallenge = omit(_userCompletedChallenge, ['files']);
     }
     let finalChallenge = {} as CompletedChallenge;
 
+    // Since these values are destuctured for easier updating, collectively update before returning
     const {
         timezone: userTimezone,
         completedChallenges = [],
         needsModeration = false,
         savedChallenges = [],
-        progressTimestamps = []
+        progressTimestamps = [],
+        partiallyCompletedChallenges = []
     } = user;
 
     const oldIndex = completedChallenges.findIndex(
@@ -68,7 +88,7 @@ export async function buildUserUpdate(
 
         if (challengeWithOldDate) {
             challengeWithOldDate.completedDate = oldChallenge.completedDate;
-            finalChallenge = challengeWithOldDate;
+            finalChallenge = challengeWithOldDate;  
         }
 
 
@@ -83,7 +103,7 @@ export async function buildUserUpdate(
             ...completedChallenge
         };
         // $push.progressTimestamps = completedDate;
-        if (progressTimestamps) {
+        if (progressTimestamps && Array.isArray(progressTimestamps)) {
             progressTimestamps.push(newProgressTimeStamp);
         }
         // $push.completedChallenges = finalChallenge;
@@ -120,13 +140,15 @@ export async function buildUserUpdate(
     }
 
     // remove from partiallyCompleted on submit
-    $pull.partiallyCompletedChallenges = { id: challengeId };
+    // $pull.partiallyCompletedChallenges = { id: challengeId };
+    partiallyCompletedChallenges.filter((challenge) => challenge.id !== challengeId)
 
     if (
         timezone &&
         timezone !== 'UTC' &&
         (!userTimezone || userTimezone === 'UTC')
     ) {
+        timezone = userTimezone;
         await fastify.prisma.user.update({
             where: { id: user.id },
             data: {
@@ -135,14 +157,25 @@ export async function buildUserUpdate(
         });
     }
 
-    if (needsModeration) {
-        await fastify.prisma.user.update({
-            where: { id: user.id },
-            data: {
-                needsModeration: true
-            }
-        });
-    }
+    // Doesnt make sense as if false it wont be executed and when true sets "true" again
+    // if (needsModeration) {
+    //     await fastify.prisma.user.update({
+    //         where: { id: user.id },
+    //         data: {
+    //             needsModeration: true
+    //         }
+    //     });
+    // }
+
+    await fastify.prisma.user.update({
+        where: { id: user.id },
+        data: {
+        completedChallenges,
+        needsModeration,
+        savedChallenges,
+        progressTimestamps,
+        partiallyCompletedChallenges
+    }});
 
     const updateData = {};
 
