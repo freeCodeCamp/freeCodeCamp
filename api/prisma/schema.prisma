@@ -118,6 +118,7 @@ model user {
   partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
   password                     String? // Undefined
   picture                      String
+  points                       Int
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
   progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[]
