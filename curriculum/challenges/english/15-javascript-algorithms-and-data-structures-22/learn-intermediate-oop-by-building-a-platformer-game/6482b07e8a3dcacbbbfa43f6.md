@@ -1,29 +1,28 @@
 ---
-id: 6461baf1e276bdfe3b8ff92a
-title: Step 5
+id: 6482b07e8a3dcacbbbfa43f6
+title: Step 9
 challengeType: 0
-dashedName: step-5
+dashedName: step-9
 ---
 
 # --description--
 
-The `canvas` element has a `width` property which is a positive number that represents the width of the canvas. 
+In the game, the player will have the opportunity to cross different checkpoints. You will need to keep track of the status for the checkpoint collision detection.
 
-```js
-canvas.width
-```
-
-Below your `const` declarations, append the `width` property to the `canvas` variable.
-
-
-
+Create a new `let` variable called `isCheckpointCollisionDetectionActive` and assign it the value of `true`. 
 
 # --hints--
 
-You should append the `width` property to the `canvas` variable.
+You should create a `let` variable called `isCheckpointCollisionDetectionActive`
 
 ```js
-assert.match(code, /canvas\.width/);
+assert.match(code, /let\s+isCheckpointCollisionDetectionActive/);
+```
+
+You should assign the value of `true` to `isCheckpointCollisionDetectionActive` 
+
+```js
+assert.match(code, /let\s+isCheckpointCollisionDetectionActive\s*=\s*true/);
 ```
 
 # --seed--
@@ -170,6 +169,9 @@ const startScreen = document.querySelector(".start-screen");
 const checkpointScreen = document.querySelector(".checkpoint-screen");
 const checkpointMessage = document.querySelector(".checkpoint-screen > p");
 const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+const gravity = 0.5;
 
 --fcc-editable-region--
 

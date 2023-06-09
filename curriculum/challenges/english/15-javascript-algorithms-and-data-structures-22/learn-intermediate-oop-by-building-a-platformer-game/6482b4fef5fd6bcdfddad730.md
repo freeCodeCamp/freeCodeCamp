@@ -1,29 +1,46 @@
 ---
-id: 6461baf1e276bdfe3b8ff92a
-title: Step 5
+id: 6482b4fef5fd6bcdfddad730
+title: Step 10
 challengeType: 0
-dashedName: step-5
+dashedName: step-10
 ---
 
 # --description--
 
-The `canvas` element has a `width` property which is a positive number that represents the width of the canvas. 
+The next step is to define some characteristics for the main player of the game.
+
+In JavaScript, there is a special function called a <dfn>class</dfn> which allows you to create a template for an object. 
 
 ```js
-canvas.width
+class User {
+
+}
 ```
 
-Below your `const` declarations, append the `width` property to the `canvas` variable.
+**Note:** UpperCamelCase should be used when creating classes.
 
-
-
+Create a new `class` called `Player`.
 
 # --hints--
 
-You should append the `width` property to the `canvas` variable.
+`Player` should be a class.
 
 ```js
-assert.match(code, /canvas\.width/);
+assert(
+  typeof Player === 'function' 
+);
+```
+
+The `class` keyword should be used.
+
+```js
+assert(code.match(/class/g));
+```
+
+You should create a new class called `Player`
+
+```js
+assert.match(code, /class\s+Player\s*{\s*}\s*/);
 ```
 
 # --seed--
@@ -170,6 +187,10 @@ const startScreen = document.querySelector(".start-screen");
 const checkpointScreen = document.querySelector(".checkpoint-screen");
 const checkpointMessage = document.querySelector(".checkpoint-screen > p");
 const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+const gravity = 0.5;
+let isCheckpointCollisionDetectionActive = true;
 
 --fcc-editable-region--
 
