@@ -149,13 +149,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       fastify.log.info(`isObjectId - ${id} - ${String(ObjectId.isValid(id))}`);
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
-    if ('challengeType' in req.body && !String(challengeType)) {
+    if ('challengeType' in body && !String(challengeType)) {
       fastify.log.info(
         `challengeType - ${challengeType} - ${String(isNumeric(challengeType))}`
       );
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
-    if ('solution' in req.body && !isURL(solution)) {
+    if ('solution' in body && !isURL(solution)) {
       fastify.log.info(`isObjectId - ${id} - ${String(ObjectId.isValid(id))}`);
       return reply.code(403).send(isValidChallengeCompletionErrorMsg);
     }
