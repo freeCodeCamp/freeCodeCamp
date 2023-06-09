@@ -273,15 +273,17 @@ export type SavedChallengeFile = {
 
 export type SavedChallengeFiles = SavedChallengeFile[];
 
+export type SubChallengeFile =    Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
+| null;
+
 export type CompletedChallenge = {
   id: string;
   solution?: string | null;
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles:
-    | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
-    | null;
+  challengeFiles: SubChallengeFile
+  files?: SubChallengeFile; 
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
