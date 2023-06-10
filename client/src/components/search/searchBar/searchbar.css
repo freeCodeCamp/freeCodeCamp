@@ -129,7 +129,7 @@ and arrow keys */
   grid-template-areas: 'submit input reset';
   margin-bottom: 0;
   gap: 0.25em;
-  margin-top: 6px;
+  margin-top: 17px;
   background-color: var(--gray-75);
 }
 
