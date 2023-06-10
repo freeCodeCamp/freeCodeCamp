@@ -9,7 +9,7 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
-  --header-height: 38px;
+  --header-height: 60px;
 }
 
 #___gatsby {
