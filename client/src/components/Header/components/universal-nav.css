@@ -354,7 +354,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   display: none;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 981px) {
   #universal-nav-logo {
     height: 100%;
     margin-inline: 1em;
@@ -375,9 +375,11 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   .fcc_searchBar .ais-SearchBox-form {
     max-width: calc(100vw - 350px);
   }
-
+  
   #universal-nav-logo {
-    padding-top: 0.2em;
+    margin: 0px;
+    max-height: 60px;
+    padding-top: 0.8em;
   }
 
   .expand-nav {
@@ -425,9 +427,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   }
   .exposed-button-nav {
     padding: 2px 8px;
-  }
-  #universal-nav-logo {
-    padding-block: 0.2em 0.1em;
   }
 }
 
