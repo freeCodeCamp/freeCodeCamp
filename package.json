@@ -102,10 +102,10 @@
     "pm2": "^5.2.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-function-bind": "7.18.9",
-    "@babel/preset-env": "7.22.4",
-    "@babel/preset-react": "7.22.3",
-    "@babel/preset-typescript": "7.21.5",
+    "@babel/plugin-proposal-function-bind": "7.22.5",
+    "@babel/preset-env": "7.22.5",
+    "@babel/preset-react": "7.22.5",
+    "@babel/preset-typescript": "7.22.5",
     "@testing-library/cypress": "8.0.7",
     "@testing-library/dom": "8.20.0",
     "@testing-library/jest-dom": "5.16.5",
@@ -117,7 +117,7 @@
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
     "babel-jest": "29.5.0",
-    "@babel/eslint-parser": "7.21.8",
+    "@babel/eslint-parser": "7.22.5",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "11.2.0",
