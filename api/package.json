@@ -14,7 +14,7 @@
     "@prisma/client": "4.15.0",
     "connect-mongo": "4.6.0",
     "bad-words": "3.0.4",
-    "fastify": "4.17.0",
+    "fastify": "4.18.0",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
     "nodemon": "2.0.22",
