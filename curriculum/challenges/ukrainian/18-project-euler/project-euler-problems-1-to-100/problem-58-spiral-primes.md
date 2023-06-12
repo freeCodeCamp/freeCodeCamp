@@ -1,6 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
-title: 'Problem 58: Spiral primes'
+title: 'Завдання 58: спіральні прості числа'
 challengeType: 1
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
@@ -8,7 +8,7 @@ dashedName: problem-58-spiral-primes
 
 # --description--
 
-Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+Починаючи з 1 і рухаючись спірально проти годинникової стрілки, утворюється квадратна спіраль із довжиною сторони 7.
 
 <div style='text-align: center;'>
   <strong><span style='color: red;'>37</span></strong> 36 35 34 33 32 <strong><span style='color: red;'>31</span></strong><br>
@@ -20,9 +20,9 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+Цікаво відзначити, що непарні квадрати лежать уздовж нижньої правої діагоналі, але цікавішим є те, що 8 з 13 чисел, які лежать уздовж обох діагоналей, є простими; тобто співвідношення дорівнює 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Якщо до спіралі, зображеної вище, додати один новий шар, утвориться квадратна спіраль із довжиною сторони 9. Якщо цей процес продовжити, якою буде довжина сторони квадратної спіралі, для якої відсоток простих чисел уздовж обох діагоналей спочатку впаде нижче `percent`?
 
 # --hints--
 

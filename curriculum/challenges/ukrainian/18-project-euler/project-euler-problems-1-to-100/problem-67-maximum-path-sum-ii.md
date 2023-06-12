@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec2
-title: 'Problem 67: Maximum path sum II'
+title: 'Завдання 67: максимальна сума шляху ІІ'
 challengeType: 1
 forumTopicId: 302179
 dashedName: problem-67-maximum-path-sum-ii
@@ -8,7 +8,7 @@ dashedName: problem-67-maximum-path-sum-ii
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+Якщо почати з вершини трикутника, зображеного нижче, і рухатись до суміжних чисел у нижньому рядку, максимальною сумою зверху вниз буде 23.
 
 <div style='text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,11 +17,11 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Тобто 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom in `numTriangle`, a 2D array defined in the background containing a triangle with one-hundred rows.
+Знайдіть максимальну суму згори донизу у 2D-масиві `numTriangle`, визначеному у фоновому режимі, який містить трикутник із сотнею рядків.
 
-**Note:** This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2<sup>99</sup> altogether! If you could check one trillion (10<sup>12</sup>) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+**Примітка:** це набагато складніша версія завдання 18. Це завдання неможливо вирішити, спробувавши кожний шлях, оскільки їх всього 2<sup>99</sup>! Якби ви могли перевіряти один трильйон (10<sup>12</sup>) шляхів щосекунди, вам знадобилося б понад двадцять мільярдів років, щоб перевірити їх усі. Існує ефективний алгоритм вирішення даного завдання. ;o)
 
 # --hints--
 
