@@ -9,7 +9,7 @@ import curriculum from '../../../config/curriculum.json';
 import { SuperBlocks } from '../../../config/superblocks';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 
-type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
+type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
 type SuperBlockKeys = keyof Curriculum;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -23,12 +23,12 @@ interface CurriculumProps {
 
 export function getChallenges() {
   const superBlockKeys = Object.keys(SuperBlocks) as SuperBlockKeys[];
-  const typedCurriculum = curriculum as Curriculum;
+  const typedCurriculum: Curriculum = curriculum;
 
   return superBlockKeys
-    .map(key => typedCurriculum[key].blocks)
+    .map(key => typedCurriculum[key]?.blocks)
     .reduce((accumulator: ChallengeNode['challenge'][], superBlock) => {
-      const blockKeys = Object.keys(superBlock);
+      const blockKeys = Object.keys(superBlock ?? {});
       const challengesForBlock = blockKeys.map(
         key => superBlock?.[key]?.challenges ?? []
       );
