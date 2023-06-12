@@ -29,7 +29,7 @@ Du solltest dein neues `div`-Element innerhalb des `div`-Elements mit der Klasse
 assert(document.querySelector('.container')?.children[0]?.localName === 'div');
 ```
 
-You should give your new `div` element a class of `marker`.
+Du solltest deinem neuen `div`-Element die Klasse `marker` zuweisen.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
