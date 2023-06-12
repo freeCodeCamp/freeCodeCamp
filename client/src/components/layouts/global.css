@@ -462,7 +462,7 @@ code {
 }
 
 .challenge-instructions code {
-  color: blue;
+  white-space: break-spaces;
 }
 
 .panel {
