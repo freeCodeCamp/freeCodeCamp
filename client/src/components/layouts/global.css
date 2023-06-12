@@ -461,6 +461,10 @@ code {
   overflow-wrap: anywhere;
 }
 
+.challenge-instructions code {
+  color: blue;
+}
+
 .panel {
   border-radius: 0;
   background-color: transparent;
