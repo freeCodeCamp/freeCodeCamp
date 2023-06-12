@@ -1,7 +1,6 @@
-import { omit, pick } from 'lodash';
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-// import { SavedChallenge } from '../../../client/src/redux/prop-types';
+import { omit, pick } from 'lodash';
 import { getChallenges } from './get-challenges';
 
 const jsCertProjectIds = [
@@ -149,7 +148,7 @@ export async function buildUserUpdate(
       lastSavedDate: newProgressTimeStamp,
       files: files?.map(file =>
         pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-      )
+      ) as SavedChallengeFile[]
     };
 
     const savedIndex = userSavedChallenges.findIndex(
