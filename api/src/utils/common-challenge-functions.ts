@@ -132,13 +132,6 @@ export async function buildUserUpdate(
         ...challengeWithOldDate
       };
     }
-
-    await fastify.prisma.user.update({
-      where: { id: user.id },
-      data: {
-        completedChallenges: userCompletedChallenges
-      }
-    });
   } else {
     finalChallenge = {
       ...completedChallenge
@@ -147,13 +140,6 @@ export async function buildUserUpdate(
       userProgressTimestamps.push(newProgressTimeStamp);
     }
     userCompletedChallenges.push(finalChallenge);
-    await fastify.prisma.user.update({
-      where: { id: user.id },
-      data: {
-        progressTimestamps: userProgressTimestamps,
-        completedChallenges: userCompletedChallenges
-      }
-    });
   }
 
   if (savableChallenges.includes(challengeId)) {
