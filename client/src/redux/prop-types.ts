@@ -273,9 +273,10 @@ export type SavedChallengeFile = {
 
 export type SavedChallengeFiles = SavedChallengeFile[];
 
-export type SubChallengeFile = | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>
-  | null;
-
+export type SubChallengeFile = Pick<
+  ChallengeFile,
+  'contents' | 'ext' | 'fileKey' | 'name'
+> | null;
 
 export type CompletedChallenge = {
   id: string;
