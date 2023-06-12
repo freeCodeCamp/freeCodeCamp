@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useRef } from 'react';
 import { Menu } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +11,12 @@ export type DropdownProps = React.ComponentPropsWithoutRef<typeof Menu> & {
 
 type DropDownButtonProps = React.ComponentPropsWithoutRef<typeof Menu>;
 
-const DropDownContext = createContext<DropdownProps>({});
+type DropDownContextProps = DropdownProps & {
+  menuButtonRef: React.MutableRefObject<HTMLButtonElement | null>;
+};
+const DropDownContext = createContext<DropDownContextProps>({
+  menuButtonRef: React.createRef()
+});
 
 const dropDownItems =
   'list-none bg-foreground-secondary text-center border-1 border-solid border-background-quaternary focus:outline-transparent origin-top-right absolute w-full min-w-max py-1 px-0 z-10';
@@ -23,12 +28,16 @@ export const MenuItems = React.forwardRef<
   React.ElementRef<typeof Menu.Items>,
   MenuItemsProps
 >(({ children, className }, ref) => {
-  const { dropup } = useContext(DropDownContext);
+  const { dropup, menuButtonRef } = useContext(DropDownContext);
+
+  const handleClick = () => {
+    menuButtonRef.current?.focus();
+  };
 
   const itemsClasses = dropup ? dropUpItems : dropDownItems;
   const buttonClass: string = [className, itemsClasses].join(' ');
   return (
-    <Menu.Items className={buttonClass} ref={ref}>
+    <Menu.Items className={buttonClass} ref={ref} onClick={handleClick}>
       {children}
     </Menu.Items>
   );
@@ -39,11 +48,11 @@ const DropDownButton = ({
   className,
   ...rest
 }: DropDownButtonProps) => {
-  const { dropup } = useContext(DropDownContext);
+  const { dropup, menuButtonRef } = useContext(DropDownContext);
 
   const classes = [className, toggleClassNames].join(' ');
   return (
-    <Menu.Button className={classes} {...rest}>
+    <Menu.Button ref={menuButtonRef} className={classes} {...rest}>
       {children}
       <FontAwesomeIcon
         icon={dropup ? faCaretUp : faCaretDown}
@@ -59,8 +68,10 @@ export const Dropdown = ({
   dropup,
   ...props
 }: DropdownProps): JSX.Element => {
+  const menuButtonRef = useRef(null);
+  const context = { dropup, menuButtonRef };
   return (
-    <DropDownContext.Provider value={{ dropup }}>
+    <DropDownContext.Provider value={context}>
       <Menu className='relative w-full' as='div' {...props}>
         {children}
       </Menu>
