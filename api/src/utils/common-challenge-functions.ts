@@ -30,6 +30,7 @@ type SavedChallengeFile = {
 
 type SavedChallenge = {
   id: string;
+  lastSavedDate: number;
   files?: SavedChallengeFile[];
 };
 
