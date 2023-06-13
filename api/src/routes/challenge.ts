@@ -17,7 +17,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/project-completed',
     {
       schema: {
-        body: Type.Object({ id: Type.String() }),
+        // TODO(Post-MVP): make id required.
+        body: Type.Object({ id: Type.Optional(Type.String()) }),
         response: {
           // TODO: update to correct schema and test success case.
           200: Type.Object({ done: Type.Boolean() }),

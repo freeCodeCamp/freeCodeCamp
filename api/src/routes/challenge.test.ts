@@ -18,6 +18,16 @@ describe('challengeRoutes', () => {
     });
 
     describe('/project-completed', () => {
+      it('POST rejects requests without ids', async () => {
+        const response = await superRequest('/project-completed', {
+          method: 'POST',
+          setCookies
+        }).send({});
+
+        expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
+        expect(response.statusCode).toBe(400);
+      });
+
       it('POST rejects requests without valid ObjectIDs', async () => {
         const response = await superRequest('/project-completed', {
           method: 'POST',
