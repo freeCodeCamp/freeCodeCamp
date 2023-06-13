@@ -82,6 +82,9 @@ module.exports = {
       1: '1px',
       3: '3px'
     },
+    outlineWidth: {
+      3: '3px'
+    },
     fontSize: {
       // https://tailwindcss.com/docs/font-size#providing-a-default-line-height
       // [fontSize, lineHeight]
