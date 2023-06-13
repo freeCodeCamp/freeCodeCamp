@@ -33,7 +33,7 @@
 }
 
 .site-footer a {
-  color: #717171;
+  color: var(--gray-45);
   text-decoration: none;
   padding: 2px;
 }
