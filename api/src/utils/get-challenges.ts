@@ -7,14 +7,17 @@ import { flatten } from 'lodash';
 // collected.
 import curriculum from '../../../config/curriculum.json';
 import { SuperBlocks } from '../../../config/superblocks';
-import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 
 type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
 type SuperBlockKeys = keyof Curriculum;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface Block<T> {
-  challenges: ChallengeNode['challenge'][];
+interface Block {
+  challenges: {
+    id: string;
+    tests?: { id?: string }[];
+    challengeType: number;
+  }[];
 }
 
 interface CurriculumProps {
@@ -23,7 +26,7 @@ interface CurriculumProps {
 
 export function getChallenges() {
   const superBlockKeys = Object.keys(SuperBlocks) as SuperBlockKeys[];
-  const typedCurriculum: Curriculum = curriculum;
+  const typedCurriculum: Curriculum = curriculum as Curriculum;
 
   return superBlockKeys
     .map(key => typedCurriculum[key]?.blocks)
