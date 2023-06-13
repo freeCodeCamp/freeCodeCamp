@@ -16,7 +16,13 @@ The last challenge demonstrated how to pass information from a parent component 
 </ParentComponent>
 ```
 
-The child component then has access to the array property `colors`. Array methods such as `join()` can be used when accessing the property. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>` Later, we will learn about other common methods to render arrays of data in React.
+The child component then has access to the array property `colors`. Array methods such as `join()` can be used when accessing the property. 
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+``` 
+
+This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>` Later, we will learn about other common methods to render arrays of data in React.
 
 # --instructions--
 
