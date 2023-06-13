@@ -44,7 +44,14 @@ describe('challengeRoutes', () => {
           setCookies
         }).send({
           id: 'bd7123c8c441eddfaeb5bdef',
-          challengeType: 'not-a-valid-challenge-type'
+          challengeType: 'not-a-valid-challenge-type',
+          // TODO(Post-MVP): drop these comments, since the api-server will not
+          // exist.
+
+          // a solution is required, because otherwise the request will be
+          // rejected before it gets to the challengeType validation. NOTE: this
+          // is a departure from the api-server, but only in the message sent.
+          solution: ''
         });
 
         expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
