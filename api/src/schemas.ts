@@ -1,5 +1,12 @@
 import { Type } from '@fastify/type-provider-typebox';
 
+const generic500 = Type.Object({
+  message: Type.Literal(
+    'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+  ),
+  type: Type.Literal('danger')
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -165,23 +172,13 @@ export const schemas = {
   deleteMyAccount: {
     response: {
       200: Type.Object({}),
-      500: Type.Object({
-        message: Type.Literal(
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        ),
-        type: Type.Literal('danger')
-      })
+      500: generic500
     }
   },
   resetMyProgress: {
     response: {
       200: Type.Object({}),
-      500: Type.Object({
-        message: Type.Literal(
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        ),
-        type: Type.Literal('danger')
-      })
+      500: generic500
     }
   },
   // Deprecated endpoints:
