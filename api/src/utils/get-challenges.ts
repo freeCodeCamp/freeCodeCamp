@@ -21,7 +21,7 @@ interface Block {
 }
 
 interface CurriculumProps {
-  blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
+  blocks: Record<string, Block>;
 }
 
 export function getChallenges() {
@@ -30,7 +30,7 @@ export function getChallenges() {
 
   return superBlockKeys
     .map(key => typedCurriculum[key]?.blocks)
-    .reduce((accumulator: ChallengeNode['challenge'][], superBlock) => {
+    .reduce((accumulator: Block['challenges'], superBlock) => {
       const blockKeys = Object.keys(superBlock ?? {});
       const challengesForBlock = blockKeys.map(
         key => superBlock?.[key]?.challenges ?? []
