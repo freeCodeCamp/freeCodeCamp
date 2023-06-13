@@ -1,6 +1,6 @@
 ---
 id: 5900f3a11000cf542c50feb4
-title: 'Problem 53: Combinatoric selections'
+title: 'Завдання 53: комбінаторні вибірки'
 challengeType: 1
 forumTopicId: 302164
 dashedName: problem-53-combinatoric-selections
@@ -8,17 +8,17 @@ dashedName: problem-53-combinatoric-selections
 
 # --description--
 
-There are exactly ten ways of selecting three from five, 12345:
+Існує десять способів, як з п’яти елементів (12345) вибрати три:
 
-<div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, and 345</div>
+<div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245 і 345</div>
 
-In combinatorics, we use the notation, $\\displaystyle \\binom 5 3 = 10$
+У комбінаториці використовують позначення $\\displaystyle \\binom 5 3 = 10$
 
-In general, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, where $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$, and $0! = 1$.
+Загалом, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, де $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$ та $0! = 1$.
 
-It is not until $n = 23$, that a value exceeds one-million: $\\displaystyle \\binom {23} {10} = 1144066$.
+Починаючи з $n = 23$, значення перевищуватиме мільйон: $\\displaystyle \\binom {23} {10} = 1144066$.
 
-How many, not necessarily distinct, values of $\\displaystyle \\binom n r$ for $1 \\le n \\le 100$, are greater than one-million?
+Скільки (не обов’язково різних) значень $\\displaystyle \\binom n r$ для $1 \\le n \\le 100$ є більшими за мільйон?
 
 # --hints--
 

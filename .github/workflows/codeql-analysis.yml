@@ -32,7 +32,7 @@ jobs:
         language: ['javascript']
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: Setup CodeQL
         uses: github/codeql-action/init@83f0fe6c4988d98a455712a27f0255212bba9bd4 # v2
         with:
