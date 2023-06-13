@@ -40,6 +40,7 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN
 } from './utils/env';
+import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
 import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
@@ -169,6 +170,7 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
