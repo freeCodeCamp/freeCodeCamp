@@ -6,6 +6,7 @@ import {
 
 import { isObjectID } from '../utils/validation';
 import { formatValidationError } from '../utils/error-formatting';
+import { canSubmitCodeRoadCertProject } from './helpers/challenge-helpers';
 
 const invalidChallengeSubmission = {
   type: 'error',
@@ -51,20 +52,50 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       },
       attachValidation: true
     },
-    (req, reply) => {
-      if (!isObjectID(req.body.id)) {
-        void reply.code(400);
-        return invalidChallengeSubmission;
-      }
-      if (req.validationError) {
-        void reply.code(400);
-        const formattedErrors = formatValidationError(
-          req.validationError.validation as ErrorObject[]
-        );
-        return formattedErrors[0] ?? invalidChallengeSubmission;
-      }
+    async (req, reply) => {
+      const { id: projectId, challengeType } = req.body;
 
-      return { done: true };
+      try {
+        if (!isObjectID(projectId)) {
+          void reply.code(400);
+          return invalidChallengeSubmission;
+        }
+        if (req.validationError) {
+          void reply.code(400);
+          const formattedErrors = formatValidationError(
+            req.validationError.validation as ErrorObject[]
+          );
+          return formattedErrors[0] ?? invalidChallengeSubmission;
+        }
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id },
+          select: {
+            completedChallenges: true,
+            partiallyCompletedChallenges: true
+          }
+        });
+
+        if (
+          challengeType === 13 &&
+          !canSubmitCodeRoadCertProject(projectId, user)
+        ) {
+          void reply.code(400);
+          return {
+            type: 'error',
+            message:
+              'You have to complete the project before you can submit a URL.'
+          } as const;
+        }
+
+        return { done: true };
+      } catch (err) {
+        // TODO: send to Sentry
+        fastify.log.error(err);
+        void reply.code(500);
+        // TODO: use proper error message.
+        return { message: '', type: 'error' } as const;
+      }
     }
   );
 
