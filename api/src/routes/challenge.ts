@@ -29,7 +29,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         body: Type.Object({
           id: Type.Optional(Type.String()),
           challengeType: Type.Optional(Type.Number()),
-          solution: Type.String()
+          solution: Type.String({ format: 'url', maxLength: 1024 })
         }),
         response: {
           // TODO: update to correct schema and test success case.
