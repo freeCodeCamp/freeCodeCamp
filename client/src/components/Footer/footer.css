@@ -33,7 +33,7 @@
 }
 
 .site-footer a {
-  color: var(--tertiary-color);
+  color: #717171;
   text-decoration: none;
   padding: 2px;
 }
@@ -55,10 +55,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
   gap: 0.5rem;
+  border-top: 1px;
+  border-top-style: solid;
+  border-top-color: var(--quaternary-background);
 }
 
 .trending-guides-articles {
   white-space: pre;
+  padding-top: 0.5rem;
 }
 
 .footer-row {
@@ -88,6 +92,10 @@
 p.footer-donation {
   font-weight: 700;
   font-size: 18px;
+}
+
+p.footer-donation a {
+  color: var(--tertirary-color);
 }
 
 p.footer-donation a:hover {
