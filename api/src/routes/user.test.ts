@@ -90,11 +90,18 @@ describe('userRoutes', () => {
   });
 
   describe('Unauthenticated user', () => {
-    // TODO: get CSRF cookies when that PR is in.
+    let setCookies: string[];
+    // Get the CSRF cookies from an unprotected route
+    beforeAll(async () => {
+      const res = await superRequest('/', { method: 'GET' });
+      setCookies = res.get('Set-Cookie');
+    });
+
     describe('/account/delete', () => {
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/account/delete', {
-          method: 'POST'
+          method: 'POST',
+          setCookies
         });
 
         expect(response?.statusCode).toBe(401);
@@ -104,7 +111,8 @@ describe('userRoutes', () => {
     describe('/account/reset-progress', () => {
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/account/reset-progress', {
-          method: 'POST'
+          method: 'POST',
+          setCookies
         });
 
         expect(response?.statusCode).toBe(401);
