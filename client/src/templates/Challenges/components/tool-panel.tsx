@@ -1,5 +1,7 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -108,7 +110,9 @@ function ToolPanel({
         <Dropdown.Menu dropup>
           {guideUrl ? (
             <MenuItem href={guideUrl} target='_blank'>
-              {t('buttons.get-hint')}
+              {t('buttons.get-hint')}{' '}
+              <FontAwesomeIcon icon={faExternalLinkAlt} />
+              <span className='sr-only'>, {t('aria.opens-new-window')}</span>
             </MenuItem>
           ) : null}
           {videoUrl ? (
