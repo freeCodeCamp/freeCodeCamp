@@ -1,6 +1,6 @@
 ---
 id: 5900f38b1000cf542c50fe9e
-title: 'Problem 31: Coin sums'
+title: 'Завдання 31: суми монет'
 challengeType: 1
 forumTopicId: 301965
 dashedName: problem-31-coin-sums
@@ -8,15 +8,15 @@ dashedName: problem-31-coin-sums
 
 # --description--
 
-In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
+В Англії валюта складається з фунтів (£) і пенні (p), а в загальному обігу є вісім монет:
 
-<div style='margin-left: 4em;'>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).</div>
+<div style='margin-left: 4em;'>1p, 5p, 5p, 10p, 20p, 50p, £1 (100p) і £2 (200p).</div>
 
-It is possible to make £2 in the following way:
+£2 можна подати наступним чином:
 
 <div style='margin-left: 4em;'>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</div>
 
-How many different ways can `n` pence be made using any number of coins?
+Скількома різними способами можна подати `n` пенні, використовуючи будь-яку кількість монет?
 
 # --hints--
 

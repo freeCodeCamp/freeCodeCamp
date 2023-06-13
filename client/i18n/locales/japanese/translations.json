@@ -529,6 +529,8 @@
     "unsubscribed": "購読解除が完了しました",
     "keep-coding": "どこへ行っても、コーディングを続けてください！",
     "email-signup": "E メールでサインアップ",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
     "email-blast": "毎週金曜日に、プログラミングとコンピュータサイエンスに関する 5 つのリンクをメールで配信しています。このメールを約 4 百万人が購読しています。あなたにもお届けしましょうか？",
     "update-email-1": "メールアドレスを更新",

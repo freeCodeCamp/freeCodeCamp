@@ -15,7 +15,9 @@ const repairMeta = async () => {
   // [id, title]
   const challengeOrder = fileList
     .map(file => matter.read(join(path, file)))
-    .sort((a, b) => sortByStepNum(a.data.dashedName, b.data.dashedName))
+    .sort((a, b) =>
+      sortByStepNum(a.data.dashedName as string, b.data.dashedName as string)
+    )
     .map(({ data }) => [data.id, data.title] as [string, string]);
   if (!challengeOrder.every(([, step]) => /Step \d+/.test(step))) {
     throw new Error(

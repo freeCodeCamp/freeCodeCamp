@@ -15,8 +15,8 @@ import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
+import fastifySentry from '@immobiliarelabs/fastify-sentry';
 
-import fastifySentry from './plugins/fastify-sentry';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
@@ -40,6 +40,7 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { userRoutes } from './routes/user';
+import { donateRoutes } from './routes/donate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -166,6 +167,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
   void fastify.register(settingRoutes);
+  void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
 

@@ -8,7 +8,7 @@ dashedName: graphing-systems
 
 # --description--
 
-This first video will show you how to graph systems of equations with with written math, then code.
+This first video will show you how to graph systems of equations with written math, then code.
 
 Here is the <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
