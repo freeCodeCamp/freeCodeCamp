@@ -253,15 +253,26 @@ describe('challengeRoutes', () => {
             githubLink: 'https://github.com/anything/valid/'
           };
 
-          await superRequest('/project-completed', {
+          const projectOneRes = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
           }).send(projectOne);
 
-          const response = await superRequest('/project-completed', {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          const originalCompletedDate = projectOneRes.body.completedDate;
+
+          await superRequest('/project-completed', {
             method: 'POST',
             setCookies
           }).send(projectTwo);
+
+          // sending projectOne again should update that, but not progressTimestamps
+          // or it's completedDate
+
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({ ...projectOne, solution: 'https://any.other/url' });
 
           const user = await fastifyTestInstance.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
@@ -275,6 +286,7 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 ...projectOne,
+                solution: 'https://any.other/url',
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 completedDate: expect.any(Number)
               },
@@ -287,13 +299,16 @@ describe('challengeRoutes', () => {
             progressTimestamps: expectedProgressTimestamps
           });
 
-          const completedDate = user?.completedChallenges[1]?.completedDate;
+          const completedDate = user?.completedChallenges[0]?.completedDate;
 
           expect(response.body).toStrictEqual({
-            alreadyCompleted: false,
+            alreadyCompleted: true,
             points: 2,
             completedDate
           });
+
+          // It should respect the original completedDate
+          expect(completedDate).toBe(originalCompletedDate);
 
           expect(response.statusCode).toBe(200);
         });

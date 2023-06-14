@@ -112,6 +112,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         // appropriate.
         // TODO: Handle the other progressTimestamp types.
         const progressTimestamps = user.progressTimestamps as number[];
+
         if (alreadyCompleted) {
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },
@@ -148,7 +149,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         return {
           alreadyCompleted,
-          completedDate,
+          completedDate: oldChallenge?.completedDate ?? completedDate,
           points: alreadyCompleted ? points : points + 1
         };
       } catch (err) {
