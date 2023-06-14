@@ -8,7 +8,7 @@ dashedName: graphing-systems
 
 # --description--
 
-This first video will show you how to graph systems of equations with written math, then code.
+Перше відео покаже, як побудувати графік системи рівнянь письмово, а потім за допомогою коду.
 
 Ось <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 

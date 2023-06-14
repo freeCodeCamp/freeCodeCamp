@@ -20,7 +20,7 @@ In the same way, for m = 10, it can be verified that $F(10, 56) = 880711$ and $F
 
 For m = 50, find the least value of `n` for which the fill-count function first exceeds one million.
 
-**Note:** This is a more difficult version of Problem 114.
+**Примітка:** це складніша версія завдання 114.
 
 # --hints--
 
