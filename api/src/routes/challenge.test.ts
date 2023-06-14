@@ -112,6 +112,63 @@ describe('challengeRoutes', () => {
         expect(response.statusCode).toBe(403);
       });
 
+      it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
+        const now = Date.now();
+        // TODO: move setup and teardown to beforeAll and afterAll (or each)
+
+        // setup: complete the required challenges
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            partiallyCompletedChallenges: [
+              { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1 }
+            ],
+            completedChallenges: []
+          }
+        });
+
+        // submit the project
+        const response = await superRequest('/project-completed', {
+          method: 'POST',
+          setCookies
+        }).send({
+          id: 'bd7123c8c441eddfaeb5bdef',
+          challengeType: 13,
+          solution: 'https://any.valid/url'
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user).toMatchObject({
+          partiallyCompletedChallenges: [],
+          completedChallenges: [
+            {
+              id: 'bd7123c8c441eddfaeb5bdef',
+              solution: 'https://any.valid/url',
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              completedDate: expect.any(Number)
+            }
+          ],
+          savedChallenges: []
+        });
+
+        const completedDate = user?.completedChallenges[0]?.completedDate;
+
+        // TODO: use a custom matcher for this
+        expect(completedDate).toBeGreaterThan(now);
+        expect(completedDate).toBeLessThan(now + 1000);
+
+        expect(response.body).toStrictEqual({
+          alreadyCompleted: false,
+          points: 1,
+          completedDate
+        });
+
+        expect(response.statusCode).toBe(200);
+      });
+
       // tests to add: successfully codeAlly project, successfully non-codeAlly
       // project, successfully non-project challenge, resubmission, submission
       // of savable challenges.
