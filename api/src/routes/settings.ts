@@ -4,6 +4,7 @@ import { isValidUsername } from '../../../utils/validate';
 // we have to use this file as JavaScript because it is used by the old api.
 import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
+import { DbUtils } from './helpers/db-utils';
 
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -16,6 +17,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
+  const { findUserById, updateUserById } = new DbUtils(fastify);
   fastify.put(
     '/update-my-profileui',
     {
@@ -23,21 +25,18 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            profileUI: {
-              isLocked: req.body.profileUI.isLocked,
-              showAbout: req.body.profileUI.showAbout,
-              showCerts: req.body.profileUI.showCerts,
-              showDonation: req.body.profileUI.showDonation,
-              showHeatMap: req.body.profileUI.showHeatMap,
-              showLocation: req.body.profileUI.showLocation,
-              showName: req.body.profileUI.showName,
-              showPoints: req.body.profileUI.showPoints,
-              showPortfolio: req.body.profileUI.showPortfolio,
-              showTimeLine: req.body.profileUI.showTimeLine
-            }
+        await updateUserById(req.session.user.id, {
+          profileUI: {
+            isLocked: req.body.profileUI.isLocked,
+            showAbout: req.body.profileUI.showAbout,
+            showCerts: req.body.profileUI.showCerts,
+            showDonation: req.body.profileUI.showDonation,
+            showHeatMap: req.body.profileUI.showHeatMap,
+            showLocation: req.body.profileUI.showLocation,
+            showName: req.body.profileUI.showName,
+            showPoints: req.body.profileUI.showPoints,
+            showPortfolio: req.body.profileUI.showPortfolio,
+            showTimeLine: req.body.profileUI.showTimeLine
           }
         });
 
@@ -61,11 +60,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            theme: req.body.theme
-          }
+        await updateUserById(req.session.user.id, {
+          theme: req.body.theme
         });
 
         return {
@@ -87,14 +83,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            website: req.body.website,
-            twitter: req.body.twitter,
-            githubProfile: req.body.githubProfile,
-            linkedin: req.body.linkedin
-          }
+        await updateUserById(req.session.user.id, {
+          website: req.body.website,
+          twitter: req.body.twitter,
+          githubProfile: req.body.githubProfile,
+          linkedin: req.body.linkedin
         });
 
         return {
@@ -117,8 +110,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const user = await fastify.prisma.user.findFirstOrThrow({
-          where: { id: req.session.user.id }
+        const user = await findUserById(req.session.user.id, {
+          username: true,
+          usernameDisplay: true
         });
 
         const newUsernameDisplay = req.body.username.trim();
@@ -176,12 +170,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            username: newUsername,
-            usernameDisplay: newUsernameDisplay
-          }
+        await updateUserById(req.session.user.id, {
+          username: newUsername,
+          usernameDisplay: newUsernameDisplay
         });
 
         return {
@@ -204,11 +195,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            keyboardShortcuts: req.body.keyboardShortcuts
-          }
+        await updateUserById(req.session.user.id, {
+          keyboardShortcuts: req.body.keyboardShortcuts
         });
 
         return {
@@ -230,11 +218,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            sendQuincyEmail: req.body.sendQuincyEmail
-          }
+        await updateUserById(req.session.user.id, {
+          sendQuincyEmail: req.body.sendQuincyEmail
         });
 
         return {
@@ -256,11 +241,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            isHonest: req.body.isHonest
-          }
+        await updateUserById(req.session.user.id, {
+          isHonest: req.body.isHonest
         });
 
         return {
@@ -282,12 +264,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            acceptedPrivacyTerms: true,
-            sendQuincyEmail: req.body.quincyEmails
-          }
+        await updateUserById(req.session.user.id, {
+          acceptedPrivacyTerms: true,
+          sendQuincyEmail: req.body.quincyEmails
         });
 
         return {

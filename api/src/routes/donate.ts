@@ -2,6 +2,7 @@ import {
   Type,
   type FastifyPluginCallbackTypebox
 } from '@fastify/type-provider-typebox';
+import { DbUtils } from './helpers/db-utils';
 
 export const donateRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -13,6 +14,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
+  const { findUserById, updateUserById } = new DbUtils(fastify);
 
   fastify.post(
     '/donate/add-donation',
@@ -36,11 +38,11 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
+        const user = await findUserById(req.session.user.id, {
+          isDonating: true
         });
 
-        if (user?.isDonating) {
+        if (user.isDonating) {
           void reply.code(400);
           return {
             type: 'info',
@@ -48,12 +50,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            isDonating: true
-          }
-        });
+        await updateUserById(req.session.user.id, { isDonating: true });
 
         return {
           isDonating: true
