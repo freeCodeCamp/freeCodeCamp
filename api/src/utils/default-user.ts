@@ -6,7 +6,7 @@ export const defaultUser: Omit<Prisma.userCreateInput, 'email'> = {
   acceptedPrivacyTerms: false,
   completedChallenges: [],
   currentChallengeId: '',
-  emailVerified: true,
+  emailVerified: true, // this should be true until a user changes their email address
   externalId: '',
   is2018DataVisCert: false,
   is2018FullStackCert: false,
