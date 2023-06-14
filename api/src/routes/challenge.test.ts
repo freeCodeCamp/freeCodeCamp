@@ -18,158 +18,171 @@ describe('challengeRoutes', () => {
     });
 
     describe('/project-completed', () => {
-      it('POST rejects requests without ids', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({});
+      describe('validation', () => {
+        it('POST rejects requests without ids', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({});
 
-        expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
-        expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+            // This is a departure from api-server, which does not require a
+            // solution to give this error. However, the validator will reject
+            // based on the missing solution before it gets to the invalid id.
+          }).send({ id: 'not-a-valid-id', solution: '' });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('POST rejects requests with invalid challengeTypes', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 'not-a-valid-challenge-type',
+            // TODO(Post-MVP): drop these comments, since the api-server will not
+            // exist.
+
+            // a solution is required, because otherwise the request will be
+            // rejected before it gets to the challengeType validation. NOTE: this
+            // is a departure from the api-server, but only in the message sent.
+            solution: ''
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('POST rejects requests without solutions', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 3
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message:
+              'You have not provided the valid links for us to inspect your work.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('POST rejects requests with solutions that are not urls', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 3,
+            solution: 'not-a-valid-solution'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef', // not a codeally challenge id, but does not matter
+            challengeType: 13, // this does matter, however, since there's special logic for that challenge type
+            solution: 'https://any.valid/url'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message:
+              'You have to complete the project before you can submit a URL.'
+          });
+          // It's not really a bad request, since the client is sending a valid
+          // body. It's just that the user is not allowed to do this - hence 403.
+          expect(response.statusCode).toBe(403);
+        });
       });
 
-      it('POST rejects requests without valid ObjectIDs', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-          // This is a departure from api-server, which does not require a
-          // solution to give this error. However, the validator will reject
-          // based on the missing solution before it gets to the invalid id.
-        }).send({ id: 'not-a-valid-id', solution: '' });
+      describe('handling', () => {
+        // TODO: this test does quite a lot. It would be better to split it up.
+        it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
+          const now = Date.now();
+          // TODO: move setup and teardown to beforeAll and afterAll (or each)
 
-        expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
-        expect(response.statusCode).toBe(400);
-      });
-
-      it('POST rejects requests with invalid challengeTypes', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({
-          id: 'bd7123c8c441eddfaeb5bdef',
-          challengeType: 'not-a-valid-challenge-type',
-          // TODO(Post-MVP): drop these comments, since the api-server will not
-          // exist.
-
-          // a solution is required, because otherwise the request will be
-          // rejected before it gets to the challengeType validation. NOTE: this
-          // is a departure from the api-server, but only in the message sent.
-          solution: ''
-        });
-
-        expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
-        expect(response.statusCode).toBe(400);
-      });
-
-      it('POST rejects requests without solutions', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({
-          id: 'bd7123c8c441eddfaeb5bdef',
-          challengeType: 3
-        });
-
-        expect(response.body).toStrictEqual({
-          type: 'error',
-          message:
-            'You have not provided the valid links for us to inspect your work.'
-        });
-        expect(response.statusCode).toBe(400);
-      });
-
-      it('POST rejects requests with solutions that are not urls', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({
-          id: 'bd7123c8c441eddfaeb5bdef',
-          challengeType: 3,
-          solution: 'not-a-valid-solution'
-        });
-
-        expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
-        expect(response.statusCode).toBe(400);
-      });
-
-      it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({
-          id: 'bd7123c8c441eddfaeb5bdef', // not a codeally challenge id, but does not matter
-          challengeType: 13, // this does matter, however, since there's special logic for that challenge type
-          solution: 'https://any.valid/url'
-        });
-
-        expect(response.body).toStrictEqual({
-          type: 'error',
-          message:
-            'You have to complete the project before you can submit a URL.'
-        });
-        // It's not really a bad request, since the client is sending a valid
-        // body. It's just that the user is not allowed to do this - hence 403.
-        expect(response.statusCode).toBe(403);
-      });
-
-      it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
-        const now = Date.now();
-        // TODO: move setup and teardown to beforeAll and afterAll (or each)
-
-        // setup: complete the required challenges
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: 'foo@bar.com' },
-          data: {
-            partiallyCompletedChallenges: [
-              { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1 }
-            ],
-            completedChallenges: []
-          }
-        });
-
-        // submit the project
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        }).send({
-          id: 'bd7123c8c441eddfaeb5bdef',
-          challengeType: 13,
-          solution: 'https://any.valid/url'
-        });
-
-        const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
-        });
-
-        expect(user).toMatchObject({
-          partiallyCompletedChallenges: [],
-          completedChallenges: [
-            {
-              id: 'bd7123c8c441eddfaeb5bdef',
-              solution: 'https://any.valid/url',
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              completedDate: expect.any(Number)
+          // setup: complete the required challenges
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              partiallyCompletedChallenges: [
+                { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1 }
+              ],
+              completedChallenges: []
             }
-          ],
-          savedChallenges: []
+          });
+
+          // submit the project
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 13,
+            solution: 'https://any.valid/url'
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            partiallyCompletedChallenges: [],
+            completedChallenges: [
+              {
+                id: 'bd7123c8c441eddfaeb5bdef',
+                solution: 'https://any.valid/url',
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                completedDate: expect.any(Number)
+              }
+            ],
+            savedChallenges: []
+          });
+
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+
+          // TODO: use a custom matcher for this
+          expect(completedDate).toBeGreaterThan(now);
+          expect(completedDate).toBeLessThan(now + 1000);
+
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate
+          });
+
+          expect(response.statusCode).toBe(200);
         });
-
-        const completedDate = user?.completedChallenges[0]?.completedDate;
-
-        // TODO: use a custom matcher for this
-        expect(completedDate).toBeGreaterThan(now);
-        expect(completedDate).toBeLessThan(now + 1000);
-
-        expect(response.body).toStrictEqual({
-          alreadyCompleted: false,
-          points: 1,
-          completedDate
-        });
-
-        expect(response.statusCode).toBe(200);
       });
 
-      // tests to add: successfully codeAlly project, successfully non-codeAlly
+      // tests to add successfully non-codeAlly
       // project, successfully non-project challenge, resubmission, submission
       // of savable challenges.
     });
