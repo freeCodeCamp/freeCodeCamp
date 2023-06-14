@@ -454,7 +454,8 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
-  background-color: var(--quaternary-background);
+  background-color: inherit;
+  border: solid var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
