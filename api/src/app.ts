@@ -42,6 +42,7 @@ import {
 import { userRoutes } from './routes/user';
 import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
+import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -172,6 +173,7 @@ export const build = async (
   void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
+  void fastify.register(unsubscribeDeprecated);
 
   return fastify;
 };

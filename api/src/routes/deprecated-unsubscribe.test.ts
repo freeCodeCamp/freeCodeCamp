@@ -1,12 +1,12 @@
 import request from 'supertest';
-
 import { setupServer } from '../../jest.utils';
-import { endpoints } from './deprecated-endpoints';
 
-describe('Deprecated endpoints', () => {
+import { unsubscribeEndpoints } from './deprecated-unsubscribe';
+
+describe('Deprecated unsubscribeEndpoints', () => {
   setupServer();
 
-  endpoints.forEach(([endpoint, method]) => {
+  unsubscribeEndpoints.forEach(([endpoint, method]) => {
     test(`${method} ${endpoint} returns 410 status code with "info" message`, async () => {
       const response = await request(fastifyTestInstance.server)[
         method.toLowerCase() as 'get' | 'post'
@@ -16,7 +16,8 @@ describe('Deprecated endpoints', () => {
       expect(response.body).toStrictEqual({
         message: {
           type: 'info',
-          message: 'Please reload the app, this feature is no longer available.'
+          message:
+            'We are no longer able to process this unsubscription request. Please go to your settings to update your email preferences'
         }
       });
     });
