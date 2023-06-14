@@ -62,10 +62,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
         if (req.validationError) {
           void reply.code(400);
-          const formattedErrors = formatValidationError(
+          return formatValidationError(
             req.validationError.validation as ErrorObject[]
           );
-          return formattedErrors[0] ?? invalidChallengeSubmission;
         }
 
         const user = await fastify.prisma.user.findUniqueOrThrow({

@@ -1,16 +1,11 @@
-import type {
-  CompletedChallenge,
-  PartiallyCompletedChallenge
-} from '@prisma/client';
-
 export const canSubmitCodeRoadCertProject = (
   id: string | undefined,
   {
     partiallyCompletedChallenges,
     completedChallenges
   }: {
-    partiallyCompletedChallenges: PartiallyCompletedChallenge[];
-    completedChallenges: CompletedChallenge[];
+    partiallyCompletedChallenges: { id: string }[];
+    completedChallenges: { id: string }[];
   }
 ) => {
   if (partiallyCompletedChallenges.some(c => c.id === id)) return true;
