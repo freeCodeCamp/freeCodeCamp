@@ -958,6 +958,10 @@
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
         "intro": ["A description is to be determined"]
+      },
+      "top-the-cascade-of-css": {
+        "title": "The Cascade Of CSS",
+        "intro": ["A description is to be determined"]
       }
     }
   },
