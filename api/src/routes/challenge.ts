@@ -1,17 +1,10 @@
-import type { ErrorObject } from 'ajv';
 import {
   type FastifyPluginCallbackTypebox,
   Type
 } from '@fastify/type-provider-typebox';
 
-import { isObjectID } from '../utils/validation';
 import { formatValidationError } from '../utils/error-formatting';
 import { canSubmitCodeRoadCertProject } from './helpers/challenge-helpers';
-
-const invalidChallengeSubmission = {
-  type: 'error',
-  message: 'That does not appear to be a valid challenge submission.'
-} as const;
 
 export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -26,9 +19,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/project-completed',
     {
       schema: {
-        // TODO(Post-MVP): make id required.
         body: Type.Object({
-          id: Type.Optional(Type.String()),
+          id: Type.String({ format: 'objectid', maxLength: 24 }),
           challengeType: Type.Optional(Type.Number()),
           solution: Type.String({ format: 'url', maxLength: 1024 })
         }),
@@ -56,23 +48,19 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           })
         }
       },
-      attachValidation: true
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatValidationError(error.validation);
+        } else {
+          this.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
       const { id: projectId, challengeType } = req.body;
 
       try {
-        if (!isObjectID(projectId)) {
-          void reply.code(400);
-          return invalidChallengeSubmission;
-        }
-        if (req.validationError) {
-          void reply.code(400);
-          return formatValidationError(
-            req.validationError.validation as ErrorObject[]
-          );
-        }
-
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id },
           select: {

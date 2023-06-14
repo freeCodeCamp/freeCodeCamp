@@ -32,7 +32,10 @@ describe('challengeRoutes', () => {
         const response = await superRequest('/project-completed', {
           method: 'POST',
           setCookies
-        }).send({ id: 'not-a-valid-id' });
+          // This is a departure from api-server, which does not require a
+          // solution to give this error. However, the validator will reject
+          // based on the missing solution before it gets to the invalid id.
+        }).send({ id: 'not-a-valid-id', solution: '' });
 
         expect(response.body).toStrictEqual(isValidChallengeCompletionErrorMsg);
         expect(response.statusCode).toBe(400);

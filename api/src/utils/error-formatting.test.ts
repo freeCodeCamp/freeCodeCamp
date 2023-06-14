@@ -9,6 +9,14 @@ const missingSolutionError = {
   message: "must have required property 'solution'"
 };
 
+const missingIdError = {
+  instancePath: '',
+  schemaPath: '#/required',
+  keyword: 'required',
+  params: { missingProperty: 'id' },
+  message: "must have required property 'id'"
+};
+
 describe('Error formatting', () => {
   describe('formatValidationError', () => {
     it('should handle missing solutions', () => {
@@ -18,6 +26,16 @@ describe('Error formatting', () => {
         type: 'error',
         message:
           'You have not provided the valid links for us to inspect your work.'
+      });
+    });
+
+    it('should handle missing ids', () => {
+      const formattedError = formatValidationError([missingIdError]);
+
+      expect(formattedError).toStrictEqual({
+        type: 'error',
+
+        message: 'That does not appear to be a valid challenge submission.'
       });
     });
 
