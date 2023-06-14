@@ -123,12 +123,8 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
-        // TODO: this test does quite a lot. It would be better to split it up.
-        it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
-          const now = Date.now();
-          // TODO: move setup and teardown to beforeAll and afterAll (or each)
-
-          // setup: complete the required challenges
+        beforeEach(async () => {
+          // setup: complete the challenges that codeally projects require
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
@@ -138,6 +134,22 @@ describe('challengeRoutes', () => {
               completedChallenges: []
             }
           });
+        });
+
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              partiallyCompletedChallenges: [],
+              completedChallenges: [],
+              savedChallenges: []
+            }
+          });
+        });
+
+        // TODO: this test does quite a lot. It would be better to split it up.
+        it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
+          const now = Date.now();
 
           // submit the project
           const response = await superRequest('/project-completed', {
@@ -162,8 +174,54 @@ describe('challengeRoutes', () => {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 completedDate: expect.any(Number)
               }
-            ],
-            savedChallenges: []
+            ]
+          });
+
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+
+          // TODO: use a custom matcher for this
+          expect(completedDate).toBeGreaterThan(now);
+          expect(completedDate).toBeLessThan(now + 1000);
+
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate
+          });
+
+          expect(response.statusCode).toBe(200);
+        });
+
+        // TODO: this test does quite a lot. It would be better to split it up.
+        it('POST accepts backend projects ', async () => {
+          const now = Date.now();
+
+          // submit the project
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 4,
+            solution: 'https://any.valid/url',
+            githubLink: 'https://github.com/anything/valid/'
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            partiallyCompletedChallenges: [],
+            completedChallenges: [
+              {
+                id: 'bd7123c8c441eddfaeb5bdef',
+                solution: 'https://any.valid/url',
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                completedDate: expect.any(Number),
+                githubLink: 'https://github.com/anything/valid/'
+              }
+            ]
           });
 
           const completedDate = user?.completedChallenges[0]?.completedDate;
@@ -183,8 +241,7 @@ describe('challengeRoutes', () => {
       });
 
       // tests to add successfully non-codeAlly
-      // project, successfully non-project challenge, resubmission, submission
-      // of savable challenges.
+      // project, resubmission,
     });
   });
   describe('Unauthenticated user', () => {

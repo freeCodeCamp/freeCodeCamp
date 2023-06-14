@@ -22,7 +22,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         body: Type.Object({
           id: Type.String({ format: 'objectid', maxLength: 24 }),
           challengeType: Type.Optional(Type.Number()),
-          solution: Type.String({ format: 'url', maxLength: 1024 })
+          solution: Type.String({ format: 'url', maxLength: 1024 }),
+          // TODO(Post-MVP): require format: 'url' for githubLink
+          githubLink: Type.Optional(Type.String())
         }),
         response: {
           // TODO: update to correct schema and test success case.
@@ -97,7 +99,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const newChallenge = {
           challengeType,
-          solution: req.body.solution
+          solution: req.body.solution,
+          githubLink: req.body.githubLink
         };
 
         const alreadyCompleted = !!oldChallenge;
