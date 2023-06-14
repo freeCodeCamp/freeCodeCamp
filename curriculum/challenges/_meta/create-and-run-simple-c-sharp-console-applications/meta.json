@@ -1,0 +1,45 @@
+{
+  "name": "Create and Run Simple C# Console Applications",
+  "isUpcomingChange": true,
+  "dashedName": "create-and-run-simple-c-sharp-console-applications",
+  "helpCategory": "HTML-CSS",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    [
+      "647e21f88acb466c97ccbeeb",
+      "Install and Configure Visual Studio Code"
+    ],
+    [
+      "647e21c48acb466c97ccbee7",
+      "Call Methods From the .NET Class Library Using C#"
+    ],
+    [
+      "647e21ba8acb466c97ccbee6",
+      "Add Decision Logic to Your Code Using if, else, and else if statements in C#"
+    ],
+    [
+      "647e22058acb466c97ccbeec",
+      "Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#"
+    ],
+    [
+      "647e21df8acb466c97ccbee9",
+      "Create Readable Code with Conventions, Whitespace, and Comments in C#"
+    ],
+    [
+      "647e21eb8acb466c97ccbeea",
+      "Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#"
+    ],
+    [
+      "647e21d08acb466c97ccbee8",
+      "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#"
+    ],
+    [
+      "647f87dc07d29547b3bee1bf",
+      "Trophy - Create and Run Simple C# Console Applications"
+    ]
+  ]
+}

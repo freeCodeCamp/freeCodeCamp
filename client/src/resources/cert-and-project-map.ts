@@ -27,6 +27,7 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const foundationalCSharpBase = '/learn/foundational-c-sharp-with-microsoft';
 const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
@@ -760,6 +761,20 @@ const certMap = [
 ] as const;
 
 const upcomingCertMap = [
+  {
+    id: '647e3159823e0ef219c7359b',
+    title: 'Foundational C# with Microsoft',
+    certSlug: 'foundational-c-sharp-with-microsoft',
+    flag: 'isFoundationalCSharpCert',
+    projects: [
+      {
+        id: '647e22d18acb466c97ccbef8',
+        title: 'Foundational C# with Microsoft Certification Exam',
+        link: `${foundationalCSharpBase}/foundational-c-sharp-with-microsoft-certification-exam`,
+        certSlug: 'foundational-c-sharp-with-microsoft'
+      }
+    ]
+  },
   {
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',
