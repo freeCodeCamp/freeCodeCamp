@@ -11,10 +11,22 @@ Move the left ear into position by setting a position of `absolute`, a `top` of 
 
 # --hints--
 
-Test 1
+Your `.left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.position === 'absolute')
+```
 
+Your `.left-ear` selector should have a `top` property set to `-26px`
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.top === '-26px')
+```
+
+Your `.left-ear` selector should have a `left` property set to `-31px`
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.left === '-31px')
 ```
 
 # --seed--
@@ -70,9 +82,9 @@ body {
 }
 
 .left-ear {
-  --fcc-editable-region--
+--fcc-editable-region--
 
-  --fcc-editable-region--
+--fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 70px solid #5e5e5e;
