@@ -47,6 +47,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             //     'You have not provided the valid links for us to inspect your work.'
             //   )
             // ])
+          }),
+          403: Type.Object({
+            type: Type.Literal('error'),
+            message: Type.Literal(
+              'You have to complete the project before you can submit a URL.'
+            )
           })
         }
       },
@@ -79,7 +85,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challengeType === 13 &&
           !canSubmitCodeRoadCertProject(projectId, user)
         ) {
-          void reply.code(400);
+          void reply.code(403);
           return {
             type: 'error',
             message:

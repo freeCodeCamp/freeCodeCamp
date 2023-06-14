@@ -89,7 +89,7 @@ describe('challengeRoutes', () => {
         expect(response.statusCode).toBe(400);
       });
 
-      it('POST rejects codeAlly projects when the user has not completed the required challenges', async () => {
+      it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
         const response = await superRequest('/project-completed', {
           method: 'POST',
           setCookies
@@ -104,6 +104,9 @@ describe('challengeRoutes', () => {
           message:
             'You have to complete the project before you can submit a URL.'
         });
+        // It's not really a bad request, since the client is sending a valid
+        // body. It's just that the user is not allowed to do this - hence 403.
+        expect(response.statusCode).toBe(403);
       });
 
       // tests to add: successfully codeAlly project, successfully non-codeAlly
