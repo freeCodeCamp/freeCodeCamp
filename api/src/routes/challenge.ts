@@ -59,7 +59,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           void reply.code(400);
           return formatValidationError(error.validation);
         } else {
-          this.errorHandler(error, request, reply);
+          fastify.errorHandler(error, request, reply);
         }
       }
     },
@@ -110,6 +110,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         // functions that build the update object based on the challenge type.
         // Unlike buildUserUpdate we want multiple functions that we can call if
         // appropriate.
+        // TODO: Handle the other progressTimestamp types.
+        const progressTimestamps = user.progressTimestamps as number[];
         if (alreadyCompleted) {
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },
@@ -135,7 +137,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
               },
               partiallyCompletedChallenges: {
                 deleteMany: { where: { id: projectId } }
-              }
+              },
+              progressTimestamps: [...progressTimestamps, completedDate]
             }
           });
         }

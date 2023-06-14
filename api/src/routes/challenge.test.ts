@@ -131,7 +131,8 @@ describe('challengeRoutes', () => {
               partiallyCompletedChallenges: [
                 { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1 }
               ],
-              completedChallenges: []
+              completedChallenges: [],
+              progressTimestamps: []
             }
           });
         });
@@ -193,7 +194,7 @@ describe('challengeRoutes', () => {
         });
 
         // TODO: this test does quite a lot. It would be better to split it up.
-        it('POST accepts backend projects ', async () => {
+        it('POST accepts backend projects', async () => {
           const now = Date.now();
 
           // submit the project
@@ -233,6 +234,64 @@ describe('challengeRoutes', () => {
           expect(response.body).toStrictEqual({
             alreadyCompleted: false,
             points: 1,
+            completedDate
+          });
+
+          expect(response.statusCode).toBe(200);
+        });
+
+        it('POST correctly handles multiple requests', async () => {
+          const projectOne = {
+            id: 'bd7123c8c441eddfaeb5bdef',
+            challengeType: 13,
+            solution: 'https://any.valid/url'
+          };
+          const projectTwo = {
+            id: 'bd7123c8c441eddfaeb5bdec',
+            challengeType: 4,
+            solution: 'https://any.valid/url',
+            githubLink: 'https://github.com/anything/valid/'
+          };
+
+          await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send(projectOne);
+
+          const response = await superRequest('/project-completed', {
+            method: 'POST',
+            setCookies
+          }).send(projectTwo);
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const expectedProgressTimestamps = user?.completedChallenges.map(
+            challenge => challenge.completedDate
+          );
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                ...projectOne,
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                completedDate: expect.any(Number)
+              },
+              {
+                ...projectTwo,
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                completedDate: expect.any(Number)
+              }
+            ],
+            progressTimestamps: expectedProgressTimestamps
+          });
+
+          const completedDate = user?.completedChallenges[1]?.completedDate;
+
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 2,
             completedDate
           });
 
