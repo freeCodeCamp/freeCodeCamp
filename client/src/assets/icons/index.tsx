@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 import APIIcon from './api';
 import D3Icon from './d3';
 import DatabaseIcon from './database';
@@ -33,7 +33,8 @@ const iconMap = {
   [SuperBlocks.CodingInterviewPrep]: Algorithm,
   [SuperBlocks.TheOdinProject]: VikingHelmet,
   [SuperBlocks.ProjectEuler]: Graduation,
-  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra
+  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
+  [SuperBlocks.ExampleCertification]: ResponsiveDesign
 };
 
 const generateIconComponent = (

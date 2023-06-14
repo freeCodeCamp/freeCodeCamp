@@ -34,25 +34,25 @@ Implement a function to determine how many ways there are to make change for a g
 
 # --hints--
 
-`countCoins` should be a function.
+`countCoins` sollte eine Funktion zurückgeben.
 
 ```js
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` should return `6`.
+`countCoins(15)` sollte `6` zurückgeben.
 
 ```js
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` should return `163`.
+`countCoins(85)` sollte `163` zurückgeben.
 
 ```js
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` should return `242`.
+`countCoins(100)` sollte `242` zurückgeben.
 
 ```js
 assert.equal(countCoins(100), 242);

@@ -7,25 +7,25 @@ dashedName: step-21
 
 # --description--
 
-You now need a total count of each product that the user has in the cart. Declare a `totalCountPerProduct` variable, and assign it an empty object.
+Agora, você precisa de uma contagem total de cada produto que o usuário tem no carrinho. Declare uma variável `totalCountPerProduct` e atribua a ela um objeto vazio.
 
 # --hints--
 
-You should declare a `totalCountPerProduct` variable in your `addItem` function.
+Você deve declarar uma variável `totalCountPerProduct` na função `addItem`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*=/);
 ```
 
-You should use `const` to declare `totalCountPerProduct`.
+Você deve usar `const` para declarar `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+totalCountPerProduct\s*=/);
 ```
 
-You should assign an empty object to `totalCountPerProduct`.
+Você deve atribuir um objeto vazio a `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];

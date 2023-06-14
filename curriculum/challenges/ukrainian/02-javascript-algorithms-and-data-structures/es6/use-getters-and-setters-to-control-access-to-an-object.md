@@ -61,80 +61,53 @@ console.log(novel.writer);
 `Thermostat` повинен бути класом (`class`) із визначеним методом `constructor`.
 
 ```js
-assert(
-  typeof Thermostat === 'function' &&
-    typeof Thermostat.constructor === 'function'
-);
+assert.isFunction(Thermostat);
+assert.isFunction(Thermostat?.constructor);
 ```
 
-Використайте ключове слово `class`.
+The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /class/);
 ```
 
 `Thermostat` повинен бути реалізованим.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return typeof t === 'object';
-  })()
-);
+const _t = new Thermostat(122);
+assert.isObject(_t);
 ```
 
 Коли значення за Фаренгейтом буде реалізоване, `Thermostat` повинен встановити правильну `temperature`.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return t.temperature === 50;
-  })()
-);
+const _t = new Thermostat(122);
+assert.strictEqual(_t?.temperature, 50);
 ```
 
 `getter` має бути визначеним.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.get === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.get);
 ```
 
 `setter` має бути визначеним.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.set === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.set);
 ```
 
 Виклик `setter` зі значенням за Цельсієм має встановити `temperature`.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(32);
-    t.temperature = 26;
-    const u = new Thermostat(32);
-    u.temperature = 50;
-    return t.temperature === 26 && u.temperature === 50;
-  })()
-);
+const _t = new Thermostat(32);
+_t.temperature = 26;
+const _u = new Thermostat(32);
+_u.temperature = 50;
+assert.approximately(_t.temperature, 26, 0.1);
+assert.approximately(_u.temperature, 50, 0.1);
 ```
 
 # --seed--

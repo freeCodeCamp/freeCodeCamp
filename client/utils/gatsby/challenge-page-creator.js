@@ -1,5 +1,4 @@
 const path = require('path');
-const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
 const { challengeTypes, viewTypes } = require('../challenge-types');
 
@@ -37,6 +36,11 @@ const odin = path.resolve(
   '../../src/templates/Challenges/odin/show.tsx'
 );
 
+const exam = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/exam/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -44,7 +48,8 @@ const views = {
   frontend,
   video,
   codeAlly,
-  odin
+  odin,
+  exam
   // quiz: Quiz
 };
 
@@ -73,6 +78,7 @@ function getTemplateComponent(challengeType) {
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
+      dashedName,
       certification,
       superBlock,
       block,
@@ -90,6 +96,7 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          dashedName,
           certification,
           superBlock,
           block,
@@ -157,7 +164,7 @@ exports.createBlockIntroPages = function (createPage) {
       path: slug,
       component: intro,
       context: {
-        block: dasherize(block),
+        block,
         slug
       }
     });

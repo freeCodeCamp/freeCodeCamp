@@ -90,7 +90,7 @@ There is a "Preview Custom 404 Page" button, click it to see the profile.
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using Gitpod instead of an offline setup.
 
 > [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 

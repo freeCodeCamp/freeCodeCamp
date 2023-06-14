@@ -42,7 +42,7 @@ git version 2.25.1
 
 (Необов’язково, але рекомендовано) Тепер ви можете перейти до [налаштування ключів ssh](https://help.github.com/articles/generating-an-ssh-key) на GitHub.
 
-## Встановіть редактор коду
+## Встановлення редактора коду
 
 Ми наполегливо рекомендуємо встановити [Visual Studio Code](https://code.visualstudio.com) на Windows 10. Цей редактор підтримує WSL та автоматично встановлює всі необхідні розширення на вашому дистрибутиві WSL.
 
@@ -52,33 +52,33 @@ git version 2.25.1
 
 Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and NPM.
 
-## Installing Docker Desktop
+## Встановлення Docker Desktop
 
-**Docker Desktop for Windows** allows you to install and run databases like MongoDB and other services like NGINX and more. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
+**Docker Desktop на Windows** дозволяє встановити й запускати бази даних (наприклад, MongoDB) та інші служби (наприклад, NGINX), а також багато іншого. Це важливо для того, щоб уникнути помилок при налаштуванні MongoDB чи інших служб одразу на Windows або WSL2.
 
-Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
+Дотримуйтесь інструкцій з [офіційної документації](https://docs.docker.com/docker-for-windows/install) та встановіть Docker Desktop на свій дистрибутив Windows.
 
-There are some minimum hardware requirements for the best experience.
+Для кращого досвіду існують деякі мінімальні вимоги до апаратного забезпечення.
 
-## Configure Docker Desktop for WSL
+## Налаштуйте Docker Desktop на WSL
 
-Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
+Як тільки Docker Desktop встановлено, [дотримуйтесь цих інструкцій](https://docs.docker.com/docker-for-windows/wsl) та налаштуйте його для роботи з Ubuntu-18.04 як бекенду.
 
-This makes it so that the containers run on the WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
+Завдяки цьому контейнери працюють на стороні WSL, а не Windows. Ви можете отримати доступ до служб на `http://localhost` (як на Windows, так і на Ubuntu).
 
-## Install MongoDB from Docker Hub
+## Встановіть MongoDB із Docker Hub
 
-Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
+Як тільки ви налаштували Docker Desktop для роботи з WSL2, дотримуйтесь цих кроків, щоб запустити службу MongoDB:
 
-1. Launch a new Ubuntu-18.04 terminal
+1. Запустіть новий термінал Ubuntu-18.04
 
-2. Pull `MongoDB 4.0.x` from dockerhub
+2. Витягніть `MongoDB 4.0.x` із dockerhub
 
    ```console
    docker pull mongo:4.0
    ```
 
-3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
+3. Запустіть службу MongoDB на порті `27017` та налаштуйте її на автоматичний запуск після перезавантаження системи
 
    ```console
    docker run -it \
@@ -89,13 +89,13 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
      -d mongo:4.0
    ```
 
-4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
+4. Тепер ви можете отримати доступ до служби з Windows чи Ubuntu на `mongodb://localhost:27017`.
 
-## Installing Node.js and pnpm
+## Встановлення Node.js та pnpm
 
-We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Ми рекомендуємо встановити випуск LTS для Node.js за допомогою Node Version Manager ([nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-Once installed use these commands to install and use the Node.js version as needed
+Як тільки його буде встановлено, використайте ці команди, щоб встановити та використовувати версію Node.js за потреби:
 
 ```console
 nvm install --lts
@@ -111,23 +111,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js comes bundled with `npm`, which you can use to install `pnpm`:
+Node.js надходить разом з `npm`, який можна використати для встановлення `pnpm`:
 
 ```console
 npm install -g pnpm
 ```
 
-## Set up freeCodeCamp Locally
+## Налаштуйте freeCodeCamp локально
 
-Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
+Ви встановили передумови, тому дотримуйтесь [нашого посібника з локального налаштування](how-to-setup-freecodecamp-locally.md), щоб клонувати, встановити та налаштувати freeCodeCamp локально на своїй машині.
 
 > [!WARNING]
 > 
-> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
+> Зауважте, що наразі налаштування тестів Cypress (та пов’язаних потреб GUI) знаходяться в стадії розробки. Ви повинні вміти працювати над більшою частиною кодової бази.
 
 ## Корисні посилання
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
-- Поширені питання щодо:
-  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) — стаття Мругеша Мохапатри (штатний розробник freeCodeCamp.org)
+- Часті питання:
+  - [Підсистема Windows для Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop для Windows](https://docs.docker.com/docker-for-windows/faqs)

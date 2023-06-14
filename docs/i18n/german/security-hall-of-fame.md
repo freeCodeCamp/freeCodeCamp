@@ -8,4 +8,4 @@ Auch wenn wir im Moment keine Belohnungen oder Swags anbieten, sind wir diesen g
 - Peter Samir https://www.linkedin.com/in/peter-samir/
 - Laurence Tennant ([@hyperreality](https://github.com/hyperreality)) arbeitet mit IncludeSecurity.com - [GHSA-cc3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Vielen Dank für eure Beiträge :pray:
+> **Thank you for your contributions :pray:**

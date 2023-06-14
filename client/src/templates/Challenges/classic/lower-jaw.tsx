@@ -9,12 +9,12 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-
+import ProgressBar from '../../../components/ProgressBar';
 const lowerJawButtonStyle = 'btn-block btn';
 
 interface LowerJawPanelProps {
-  resetButtonName: string;
-  helpButtonName: string;
+  resetButtonText: string;
+  helpButtonText: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
@@ -48,8 +48,8 @@ interface LowerJawProps {
 }
 
 const LowerButtonsPanel = ({
-  resetButtonName,
-  helpButtonName,
+  resetButtonText,
+  helpButtonText,
   resetButtonEvent,
   hideHelpButton,
   helpButtonEvent
@@ -57,27 +57,24 @@ const LowerButtonsPanel = ({
   return (
     <>
       <hr />
-      <div className='lower-jaw-icon-bar'>
+      <div className='utility-bar'>
         <button
           className='btn fade-in'
-          title={resetButtonName}
-          aria-label={resetButtonName}
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
+          {resetButtonText}
         </button>
-
         {hideHelpButton && (
           <button
             className='btn fade-in'
             id='get-help-button'
-            title={helpButtonName}
-            aria-label={helpButtonName}
             data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
+            {helpButtonText}
           </button>
         )}
       </div>
@@ -313,13 +310,21 @@ const LowerJaw = ({
           />
         )}
       </div>
+      {challengeIsCompleted && (
+        <>
+          <hr></hr>
+          <div className='progress-bar-container'>
+            <ProgressBar />
+          </div>
+        </>
+      )}
       <LowerButtonsPanel
-        resetButtonName={t('buttons.reset-step')}
+        resetButtonText={t('buttons.reset')}
+        helpButtonText={t('buttons.help')}
         resetButtonEvent={openResetModal}
         hideHelpButton={Boolean(
           isAttemptsLargerThanTest && !challengeIsCompleted
         )}
-        helpButtonName={t('buttons.get-help')}
         helpButtonEvent={openHelpModal}
       />
     </div>

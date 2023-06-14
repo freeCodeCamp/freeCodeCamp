@@ -5,7 +5,7 @@ import readdirp from 'readdirp';
 // TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -57,7 +57,10 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
     test('the files generated should have the correct schema', async () => {
       const fileArray = (
-        await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`)
+        await readdirp.promise(
+          `${clientStaticPath}/curriculum-data/${VERSION}`,
+          { directoryFilter: ['!challenges'] }
+        )
       ).map(file => file.path);
 
       fileArray
@@ -87,7 +90,8 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       const isUpcoming = [
         '2022/javascript-algorithms-and-data-structures',
         'college-algebra-with-python',
-        'the-odin-project'
+        'the-odin-project',
+        'example-certification'
       ];
 
       // TODO: this is a hack, we should have a single source of truth for the

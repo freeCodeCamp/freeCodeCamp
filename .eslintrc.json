@@ -6,7 +6,12 @@
     "node": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "root": true,
   "extends": [
     "eslint:recommended",

@@ -371,3 +371,7 @@ Search for the user that will become a proofreader. Verwende das Menü mit den d
 Der Benutzer ist jetzt ein Korrekturleser.
 
 > [!TIP] Der neu beförderte Korrekturleser könnte vom Lesen der [Korrekturlesen von Übersetzungen](how-to-proofread-files.md)-Dokumentation profitieren.
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [set translated superblocks](how-to-enable-new-languages.md#set-translated-superblocks) should be helpful.

@@ -307,16 +307,7 @@ function handleInvalidUpdate(res) {
 
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
-  const allowedKeys = [
-    'isGithub',
-    'isLinkedIn',
-    'isTwitter',
-    'isWebsite',
-    'githubProfile',
-    'linkedin',
-    'twitter',
-    'website'
-  ];
+  const allowedKeys = ['githubProfile', 'linkedin', 'twitter', 'website'];
   if (Object.keys(update).every(key => allowedKeys.includes(key))) {
     return user.updateAttributes(
       update,

@@ -1,6 +1,6 @@
 ---
 id: 5900f4281000cf542c50ff39
-title: 'Problem 186: Connectedness of a network'
+title: 'Problema 186: connessione di una rete'
 challengeType: 1
 forumTopicId: 301822
 dashedName: problem-186-connectedness-of-a-network
@@ -8,30 +8,30 @@ dashedName: problem-186-connectedness-of-a-network
 
 # --description--
 
-Here are the records from a busy telephone system with one million users:
+Ecco i dati da un sistema telefonico molto usato con un milione di utenti:
 
-| RecNr | Caller | Called |
-| ----- | ------ | ------ |
-| 1     | 200007 | 100053 |
-| 2     | 600183 | 500439 |
-| 3     | 600863 | 701497 |
-| ...   | ...    | ...    |
+| RecNr | Chiamante | Chiamato |
+| ----- | --------- | -------- |
+| 1     | 200007    | 100053   |
+| 2     | 600183    | 500439   |
+| 3     | 600863    | 701497   |
+| ...   | ...       | ...      |
 
-The telephone number of the caller and the called number in record $n$ are $Caller(n) = S_{2n - 1}$ and $Called(n) = S_{2n}$ where ${S}_{1,2,3,\ldots}$ come from the "Lagged Fibonacci Generator":
+Il numero di telefono del chiamante e il numero chiamato nel record $n$ sono $Caller(n) = S_{2n - 1}$ e $Called(n) = S_{2n}$ dove ${S}_{1,, 3,\ldots}$ provengono dal "generatore di Fibonacci ritardato":
 
-For $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
+Per $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
 
-For $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
+Per $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
 
-If $Caller(n) = Called(n)$ then the user is assumed to have misdialled and the call fails; otherwise the call is successful.
+Se $Caller(n) = Called(n)$ allora si presume che l'utente abbia sbagliato e la chiamata fallisce; altrimenti la chiamata è riuscita.
 
-From the start of the records, we say that any pair of users $X$ and $Y$ are friends if $X$ calls $Y$ or vice-versa. Similarly, $X$ is a friend of a friend of $Z$ if $X$ is a friend of $Y$ and $Y$ is a friend of $Z$; and so on for longer chains.
+Dall'inizio delle registrazioni, diciamo che qualsiasi coppia di utenti $X$ e $Y$ sono amici se $X$ chiama $Y$ o viceversa. Allo stesso modo, $X$ è un amico di un amico di $Z$ se $X$ è un amico di $Y$ e $Y$ è un amico di $Z$; e così via per catene più lunghe.
 
-The Prime Minister's phone number is 524287. After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
+Il numero di telefono del Primo Ministro è 524287. Dopo quante chiamate riuscite, senza contare gli errori, il 99% degli utenti (compreso il PM) sarà un amico, o un amico di un amico ecc. del Primo Ministro?
 
 # --hints--
 
-`connectednessOfANetwork()` should return `2325629`.
+`connectednessOfANetwork()` dovrebbe restituire `2325629`.
 
 ```js
 assert.strictEqual(connectednessOfANetwork(), 2325629);

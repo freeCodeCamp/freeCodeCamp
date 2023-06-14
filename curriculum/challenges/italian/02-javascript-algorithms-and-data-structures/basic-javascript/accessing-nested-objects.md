@@ -51,6 +51,12 @@ Il tuo codice dovrebbe utilizzare la notazione a punti e parentesi per accedere 
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+`gloveBoxContents` dovrebbe ancora essere dichiarata con `const`.
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/)
+```
+
 # --seed--
 
 ## --after-user-code--

@@ -16,7 +16,7 @@ To generate succeeding ludic numbers create an array of increasing integers star
 
 <code style='margin-left: 2em;'><span style='color:blue;font-weight:bold'>2</span> 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ...</code>
 
-(Loop)
+(Schleife)
 
 <ul>
   <li>Take the first member of the resultant array as the next ludic number <span style='color:blue;font-weight:bold'>2</span>.</li>
@@ -56,43 +56,43 @@ Write a function that returns all the ludic numbers less than or equal to the gi
 
 # --hints--
 
-`ludic` should be a function.
+`ludic` sollte eine Funktion sein.
 
 ```js
 assert(typeof ludic === 'function', '<code>ludic</code> should be a function.');
 ```
 
-`ludic(2)` should return a array.
+`ludic(2)` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(ludic(2)));
 ```
 
-`ludic(2)` should return `[1, 2]`.
+`ludic(2)` sollte `[1, 2]` zurückgeben.
 
 ```js
 assert.deepEqual(ludic(2), [1, 2]);
 ```
 
-`ludic(3)` should return `[1, 2, 3]`.
+`ludic(3)` sollte `[1, 2, 3]` zurückgeben.
 
 ```js
 assert.deepEqual(ludic(3), [1, 2, 3]);
 ```
 
-`ludic(5)` should return `[1, 2, 3, 5]`.
+`ludic(5)` sollte `[1, 2, 3, 5]` zurückgeben.
 
 ```js
 assert.deepEqual(ludic(5), [1, 2, 3, 5]);
 ```
 
-`ludic(20)` should return `[1, 2, 3, 5, 7, 11, 13, 17]`.
+`ludic(20)` sollte `[1, 2, 3, 5, 7, 11, 13, 17]` zurückgeben.
 
 ```js
 assert.deepEqual(ludic(20), [1, 2, 3, 5, 7, 11, 13, 17]);
 ```
 
-`ludic(26)` should return `[1, 2, 3, 5, 7, 11, 13, 17, 23, 25]`.
+`ludic(26)` sollte `[1, 2, 3, 5, 7, 11, 13, 17, 23, 25]` zurückgeben.
 
 ```js
 assert.deepEqual(ludic(26), [1, 2, 3, 5, 7, 11, 13, 17, 23, 25]);

@@ -30,7 +30,7 @@ Nota la sintassi dei selettori di `class`: un punto immediatamente seguito dal v
 
 Un'altra cosa che puoi fare con l'attributo `class` è aggiungere più classi a un singolo elemento, come un elenco separato da spazi, ad esempio `class="alert-text severe-alert"`. Dato che lo spazio viene usato per separare i nomi di `class`, non dovresti mai usare spazi per nomi composti da più parole, ma invece dovresti usare un trattino.
 
-## ID Selectors
+## Selettori di ID
 I selettori di ID sono simili ai selettori di `class`. Selezionano un elemento con un dato `id`, che è un altro attributo assegnato a un elemento HTML:
 
 ```html

@@ -57,7 +57,7 @@ Write a function that sorts a given array using Comb sort.
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` sollte eine Funktion sein.
 
 ```js
 assert(typeof combSort == 'function');
@@ -69,25 +69,25 @@ assert(typeof combSort == 'function');
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` sollte `[7, 12, 20, 25, 32]` zurückgeben.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` sollte `[8, 13, 35, 38, 45]` zurückgeben.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` sollte `[20, 24, 34, 36, 43]` zurückgeben.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` sollte `[1, 12, 16, 18, 26, 33, 38]` zurückgeben.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -101,7 +101,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` sollte `[1, 3, 4, 16, 29, 39, 48]` zurückgeben.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [
