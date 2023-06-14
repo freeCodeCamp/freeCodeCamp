@@ -84,6 +84,10 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   hasEditableBoundaries
                   id
                   order
+                  prerequisites {
+                    id
+                    title
+                  }
                   required {
                     link
                     src

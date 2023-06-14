@@ -32,6 +32,7 @@ const toneUrls = {
   [FlashMessages.IncompleteSteps]: TRY_AGAIN,
   [FlashMessages.LocalCodeSaved]: CHAL_COMP,
   [FlashMessages.LocalCodeSaveError]: TRY_AGAIN,
+  [FlashMessages.MissingPrerequisite]: TRY_AGAIN,
   [FlashMessages.NameNeeded]: TRY_AGAIN,
   // [FlashMessages.None]: '',
   [FlashMessages.NotEligible]: TRY_AGAIN,

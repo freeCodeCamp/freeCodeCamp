@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What type of action is being performed when changing a `float` into an `int`?
 
 ## --answers--
 
-A
+A narrowing conversion.
 
 ---
 
-B
+A widening conversion.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An illegal conversion.
 
 ## --video-solution--
 
-4
+1

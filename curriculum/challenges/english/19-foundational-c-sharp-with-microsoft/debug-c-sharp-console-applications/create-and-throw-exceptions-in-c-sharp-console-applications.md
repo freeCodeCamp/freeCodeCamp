@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+When should a method throw an exception?
 
 ## --answers--
 
-A
+A method should throw an exception when the method can complete its intended purpose.
 
 ---
 
-B
+A method should throw an exception when the method can't complete its intended purpose.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A method should throw an exception when an exception type matches the intended purpose of the method.
 
 ## --video-solution--
 
-4
+2

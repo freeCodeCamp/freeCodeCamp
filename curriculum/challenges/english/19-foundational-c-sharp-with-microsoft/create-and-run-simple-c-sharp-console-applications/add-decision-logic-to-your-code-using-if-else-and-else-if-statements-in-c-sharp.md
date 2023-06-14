@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the choices below is not a valid operator in C#?
 
 ## --answers--
 
-A
+`%%`
 
 ---
 
-B
+`&&`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`||`
 
 ## --video-solution--
 
-4
+1

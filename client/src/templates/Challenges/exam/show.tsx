@@ -21,7 +21,6 @@ import Hotkeys from '../components/hotkeys';
 import { startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
-  partiallyCompletedChallengesSelector,
   isSignedInSelector,
   examInProgressSelector
 } from '../../../redux/selectors';
@@ -36,6 +35,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   ChallengeNode,
   ChallengeMeta,
@@ -51,19 +51,16 @@ const mapStateToProps = createSelector(
   completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
-  partiallyCompletedChallengesSelector,
   examInProgressSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
-    partiallyCompletedChallenges: CompletedChallenge[],
     examInProgress: boolean
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
-    partiallyCompletedChallenges,
     examInProgress
   })
 );
@@ -362,28 +359,65 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
   };
 
   runExam = () => {
-    // TODO: show loader
-    // TODO: fetch exam from server/database
-    const newExam = this.state.generatedExam.map(q => {
-      return { question: q.question, answer: null };
-    });
-
-    this.timerInterval = setInterval(() => {
-      this.setState({
-        examTimeInSeconds: this.state.examTimeInSeconds + 1
-      });
-    }, 1000);
-
-    this.setState(
-      {
-        userExam: newExam
+    const {
+      data: {
+        challengeNode: {
+          challenge: { prerequisites }
+        }
       },
-      this.props.startExam
-    );
+      completedChallenges,
+      createFlashMessage
+    } = this.props;
 
-    window.addEventListener('beforeunload', this.stopWindowClose);
-    window.addEventListener('unload', this.stopWindowClose);
-    window.addEventListener('popstate', this.stopBrowserBack);
+    // check that they have all the prerequisites before they can start
+    let qualifiedForExam = true;
+    let incompleteChallenge = '';
+
+    for (let i = 0; i < prerequisites.length; i++) {
+      const prerequisiteChallenge = prerequisites[i];
+      const isPrerequisiteCompleted = completedChallenges.find(
+        (completedChallenge: CompletedChallenge) =>
+          prerequisiteChallenge.id === completedChallenge.id
+      );
+
+      if (!isPrerequisiteCompleted) {
+        qualifiedForExam = false;
+        incompleteChallenge = prerequisiteChallenge.title;
+        break;
+      }
+    }
+
+    if (!qualifiedForExam) {
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.MissingPrerequisite,
+        variables: { challengeTitle: incompleteChallenge }
+      });
+    } else {
+      // qualified to take the exam
+      // TODO: show loader
+      // TODO: fetch exam from server/database
+      const newExam = this.state.generatedExam.map(q => {
+        return { question: q.question, answer: null };
+      });
+
+      this.timerInterval = setInterval(() => {
+        this.setState({
+          examTimeInSeconds: this.state.examTimeInSeconds + 1
+        });
+      }, 1000);
+
+      this.setState(
+        {
+          userExam: newExam
+        },
+        this.props.startExam
+      );
+
+      window.addEventListener('beforeunload', this.stopWindowClose);
+      window.addEventListener('unload', this.stopWindowClose);
+      window.addEventListener('popstate', this.stopBrowserBack);
+    }
   };
 
   selectAnswer = (index: number, option: string): void => {
@@ -490,8 +524,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
     const ariaLabel = t('aria.answer');
-
-    console.log(this.state);
 
     return examInProgress ? (
       <Grid>
@@ -650,6 +682,7 @@ export const query = graphql`
   query ExamChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
+        block
         challengeType
         description
         fields {
@@ -658,6 +691,10 @@ export const query = graphql`
         helpCategory
         id
         instructions
+        prerequisites {
+          id
+          title
+        }
         superBlock
         title
         translationPending

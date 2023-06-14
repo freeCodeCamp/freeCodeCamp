@@ -16,28 +16,16 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+When is an `ArgumentOutOfRangeException` exception thrown?
 
 ## --answers--
 
-A
+An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
 
----
+An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
 
-B
-
----
-
-C
-
----
-
-D
-
----
-
-E
+An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
 
 ## --video-solution--
 
-4
+2
