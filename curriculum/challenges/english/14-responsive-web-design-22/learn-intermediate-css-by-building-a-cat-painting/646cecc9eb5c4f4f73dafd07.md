@@ -39,7 +39,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.left === '-31px')
 <head>
     <meta charset="UTF-8">
     <title>fCC Cat Painting</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <main>
