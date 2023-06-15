@@ -167,11 +167,8 @@ describe('challengeRoutes', () => {
           });
         });
 
-        // TODO: this test does quite a lot. It would be better to split it up.
         it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
           const now = Date.now();
-
-          // submit the project
           const response = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
@@ -206,11 +203,9 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
 
-        // TODO: this test does quite a lot. It would be better to split it up.
         it('POST accepts backend projects', async () => {
           const now = Date.now();
 
-          // submit the project
           const response = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
@@ -258,7 +253,7 @@ describe('challengeRoutes', () => {
             setCookies
           }).send(backendProject);
 
-          // sending projectOne again should update its solution, but not
+          // sending backendProject again should update its solution, but not
           // progressTimestamps or its completedDate
 
           const resTwo = await superRequest('/project-completed', {
