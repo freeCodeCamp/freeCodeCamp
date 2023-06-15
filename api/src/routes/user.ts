@@ -1,7 +1,15 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
 import { encodeUserToken } from '../utils/user-token';
+
+// Loopback creates a 64 character string for the user id, this customizes
+// nanoid to do the same.  Any unique key _should_ be fine, though.
+const nanoid = customAlphabet(
+  '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  64
+);
 
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -92,24 +100,22 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  fastify.post('/user/token', async (req, _reply) => {
+  fastify.post('/user/token', async req => {
     await fastify.prisma.userToken.deleteMany({
       where: { userId: req.session.user.id }
     });
 
-    await fastify.prisma.userToken.create({
+    const token = await fastify.prisma.userToken.create({
       data: {
         created: new Date(),
-        id: 'hjeIs012tXf5IR00DO1cnwRlGy5bwTrwVeG26Tp6JGbnw3QjLxHJE1VGerOV6jpC',
+        id: nanoid(),
         userId: req.session.user.id,
         ttl: 77760000000 // TODO: check this number
       }
     });
 
     return {
-      userToken: encodeUserToken(
-        'hjeIs012tXf5IR00DO1cnwRlGy5bwTrwVeG26Tp6JGbnw3QjLxHJE1VGerOV6jpC'
-      )
+      userToken: encodeUserToken(token.id)
     };
   });
 
