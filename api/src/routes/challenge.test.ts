@@ -1,9 +1,28 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { setupServer, superRequest } from '../../jest.utils';
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
   message: 'That does not appear to be a valid challenge submission.'
 };
+
+const id1 = 'bd7123c8c441eddfaeb5bdef';
+const id2 = 'bd7123c8c441eddfaeb5bdec';
+
+const codeallyProject = {
+  id: id1,
+  challengeType: 13,
+  solution: 'https://any.valid/url'
+};
+const backendProject = {
+  id: id2,
+  challengeType: 4,
+  solution: 'https://any.valid/url',
+  githubLink: 'https://github.com/anything/valid/'
+};
+
+const partialCompletion = { id: id1, completedDate: 1 };
 
 describe('challengeRoutes', () => {
   setupServer();
@@ -156,11 +175,7 @@ describe('challengeRoutes', () => {
           const response = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
-          }).send({
-            id: 'bd7123c8c441eddfaeb5bdef',
-            challengeType: 13,
-            solution: 'https://any.valid/url'
-          });
+          }).send(codeallyProject);
 
           const user = await fastifyTestInstance.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
@@ -170,9 +185,7 @@ describe('challengeRoutes', () => {
             partiallyCompletedChallenges: [],
             completedChallenges: [
               {
-                id: 'bd7123c8c441eddfaeb5bdef',
-                solution: 'https://any.valid/url',
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                ...codeallyProject,
                 completedDate: expect.any(Number)
               }
             ]
@@ -201,26 +214,18 @@ describe('challengeRoutes', () => {
           const response = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
-          }).send({
-            id: 'bd7123c8c441eddfaeb5bdef',
-            challengeType: 4,
-            solution: 'https://any.valid/url',
-            githubLink: 'https://github.com/anything/valid/'
-          });
+          }).send(backendProject);
 
           const user = await fastifyTestInstance.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
           });
 
           expect(user).toMatchObject({
-            partiallyCompletedChallenges: [],
+            partiallyCompletedChallenges: [partialCompletion],
             completedChallenges: [
               {
-                id: 'bd7123c8c441eddfaeb5bdef',
-                solution: 'https://any.valid/url',
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                completedDate: expect.any(Number),
-                githubLink: 'https://github.com/anything/valid/'
+                ...backendProject,
+                completedDate: expect.any(Number)
               }
             ]
           });
@@ -241,38 +246,25 @@ describe('challengeRoutes', () => {
         });
 
         it('POST correctly handles multiple requests', async () => {
-          const projectOne = {
-            id: 'bd7123c8c441eddfaeb5bdef',
-            challengeType: 13,
-            solution: 'https://any.valid/url'
-          };
-          const projectTwo = {
-            id: 'bd7123c8c441eddfaeb5bdec',
-            challengeType: 4,
-            solution: 'https://any.valid/url',
-            githubLink: 'https://github.com/anything/valid/'
-          };
-
-          const projectOneRes = await superRequest('/project-completed', {
+          const resOne = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
-          }).send(projectOne);
+          }).send(codeallyProject);
 
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-          const originalCompletedDate = projectOneRes.body.completedDate;
+          const originalCompletedDate = resOne.body.completedDate;
 
           await superRequest('/project-completed', {
             method: 'POST',
             setCookies
-          }).send(projectTwo);
+          }).send(backendProject);
 
-          // sending projectOne again should update that, but not progressTimestamps
-          // or it's completedDate
+          // sending projectOne again should update its solution, but not
+          // progressTimestamps or its completedDate
 
-          const response = await superRequest('/project-completed', {
+          const resTwo = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
-          }).send({ ...projectOne, solution: 'https://any.other/url' });
+          }).send({ ...codeallyProject, solution: 'https://any.other/url' });
 
           const user = await fastifyTestInstance.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
@@ -285,14 +277,12 @@ describe('challengeRoutes', () => {
           expect(user).toMatchObject({
             completedChallenges: [
               {
-                ...projectOne,
+                ...codeallyProject,
                 solution: 'https://any.other/url',
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 completedDate: expect.any(Number)
               },
               {
-                ...projectTwo,
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                ...backendProject,
                 completedDate: expect.any(Number)
               }
             ],
@@ -301,7 +291,7 @@ describe('challengeRoutes', () => {
 
           const completedDate = user?.completedChallenges[0]?.completedDate;
 
-          expect(response.body).toStrictEqual({
+          expect(resTwo.body).toStrictEqual({
             alreadyCompleted: true,
             points: 2,
             completedDate
@@ -310,12 +300,9 @@ describe('challengeRoutes', () => {
           // It should respect the original completedDate
           expect(completedDate).toBe(originalCompletedDate);
 
-          expect(response.statusCode).toBe(200);
+          expect(resTwo.statusCode).toBe(200);
         });
       });
-
-      // tests to add successfully non-codeAlly
-      // project, resubmission,
     });
   });
   describe('Unauthenticated user', () => {
