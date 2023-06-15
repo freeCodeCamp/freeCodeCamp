@@ -68,15 +68,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const { id: projectId, challengeType } = req.body;
+      const { id: projectId, challengeType, solution, githubLink } = req.body;
+      const userId = req.session.user.id;
 
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id },
+          where: { id: userId },
           select: {
             completedChallenges: true,
             partiallyCompletedChallenges: true,
-            savedChallenges: true,
             progressTimestamps: true
           }
         });
@@ -93,33 +93,28 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        // update the user
-
         const completedDate = Date.now();
-
         const oldChallenge = user.completedChallenges?.find(
           challenge => challenge.id === projectId
         );
-
         const newChallenge = {
           challengeType,
-          solution: req.body.solution,
-          githubLink: req.body.githubLink
+          solution,
+          githubLink
         };
-
         const alreadyCompleted = !!oldChallenge;
-
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
+        const points = getPoints(progressTimestamps);
         // TODO: once we have the required acceptance tests, work on refactoring
         // this into something that the other routes can use. i.e. a few
         // functions that build the update object based on the challenge type.
         // Unlike buildUserUpdate we want multiple functions that we can call if
         // appropriate.
-        const progressTimestamps =
-          user.progressTimestamps as ProgressTimestamp[];
 
         if (alreadyCompleted) {
           await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
+            where: { id: userId },
             data: {
               completedChallenges: {
                 updateMany: { where: { id: projectId }, data: newChallenge }
@@ -131,7 +126,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         } else {
           await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
+            where: { id: userId },
             data: {
               completedChallenges: {
                 push: {
@@ -147,8 +142,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             }
           });
         }
-
-        const points = getPoints(progressTimestamps);
 
         return {
           alreadyCompleted,
