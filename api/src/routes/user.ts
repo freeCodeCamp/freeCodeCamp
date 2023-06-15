@@ -100,7 +100,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  fastify.post('/user/token', async req => {
+  fastify.post('/user/user-token', async req => {
     await fastify.prisma.userToken.deleteMany({
       where: { userId: req.session.user.id }
     });
@@ -110,7 +110,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         created: new Date(),
         id: nanoid(),
         userId: req.session.user.id,
-        ttl: 77760000000 // TODO: check this number
+        // TODO(Post-MVP): expire after ttl has passed.
+        ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
       }
     });
 

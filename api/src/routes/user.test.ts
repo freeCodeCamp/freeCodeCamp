@@ -93,7 +93,7 @@ describe('userRoutes', () => {
         expect(user).toMatchObject(baseProgressData);
       });
     });
-    describe('/user/token', () => {
+    describe('/user/user-token', () => {
       beforeEach(async () => {
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
@@ -108,7 +108,7 @@ describe('userRoutes', () => {
 
       // TODO(Post-MVP): consider using PUT and updating the logic to upsert
       test('POST success response includes a JWT encoded string', async () => {
-        const response = await superRequest('/user/token', {
+        const response = await superRequest('/user/user-token', {
           method: 'POST',
           setCookies
         });
@@ -130,7 +130,7 @@ describe('userRoutes', () => {
       });
 
       test('POST responds with an encoded UserToken id', async () => {
-        const response = await superRequest('/user/token', {
+        const response = await superRequest('/user/user-token', {
           method: 'POST',
           setCookies
         });
@@ -148,7 +148,7 @@ describe('userRoutes', () => {
       });
 
       test('POST deletes old tokens when creating a new one', async () => {
-        const response = await superRequest('/user/token', {
+        const response = await superRequest('/user/user-token', {
           method: 'POST',
           setCookies
         });
@@ -161,7 +161,7 @@ describe('userRoutes', () => {
           where: { id: userTokenId }
         });
 
-        await superRequest('/user/token', {
+        await superRequest('/user/user-token', {
           method: 'POST',
           setCookies
         });
@@ -199,9 +199,9 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('/user/token', () => {
+    describe('/user/user-token', () => {
       test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/token', {
+        const response = await superRequest('/user/user-token', {
           method: 'POST'
         });
 
