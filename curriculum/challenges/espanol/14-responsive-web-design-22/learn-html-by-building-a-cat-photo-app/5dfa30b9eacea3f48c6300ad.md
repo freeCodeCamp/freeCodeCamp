@@ -29,7 +29,7 @@ Your anchor (`a`) element should have an opening tag. Opening tags have this syn
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You should only add one opening anchor (`a`) tag. Please remove any extras.
+Creating a link with the anchor element requires both an opening and closing (`a`) tag.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

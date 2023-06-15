@@ -41,7 +41,7 @@ Your anchor (`a`) element should have a closing tag. Closing tags have a `/` jus
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-You should only add one closing anchor (`a`) tag. Please remove any extras.
+Creating a link with the anchor element requires both an opening and closing (`a`) tag.
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
