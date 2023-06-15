@@ -118,7 +118,7 @@ describe('userRoutes', () => {
 
         expect(response.body).toStrictEqual({ userToken: expect.any(String) });
         expect(decodedToken).toStrictEqual({
-          userToken: expect.stringMatching(/^[\w0-9]{64}$/),
+          userToken: expect.stringMatching(/^[a-zA-Z0-9]{64}$/),
           iat: expect.any(Number)
         });
 
