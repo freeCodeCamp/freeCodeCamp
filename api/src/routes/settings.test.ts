@@ -90,6 +90,7 @@ describe('settingRoutes', () => {
       const res = await request(fastifyTestInstance.server).get(
         '/auth/dev-callback'
       );
+      expect(res.status).toBe(200);
       setCookies = res.get('Set-Cookie');
     });
 

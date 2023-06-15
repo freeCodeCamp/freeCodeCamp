@@ -43,6 +43,7 @@ describe('userRoutes', () => {
 
     beforeEach(async () => {
       const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+      expect(res.status).toBe(200);
       setCookies = res.get('Set-Cookie');
     });
 
@@ -57,8 +58,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response.status).toBe(200);
         expect(response.body).toStrictEqual({});
+        expect(response.status).toBe(200);
         expect(userCount).toBe(0);
       });
     });
@@ -79,8 +80,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response.status).toBe(200);
         expect(response.body).toStrictEqual({});
+        expect(response.status).toBe(200);
 
         expect(user?.progressTimestamps).toHaveLength(1);
         expect(user).toMatchObject(baseProgressData);

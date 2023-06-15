@@ -20,12 +20,17 @@ type File {
 
 type CompletedChallenge {
   challengeType      Int? // Null | Undefined
-  completedDate      Float
+  completedDate      Float // TODO(Post-MVP): Change to DateTime
   files              File[]
   githubLink         String? // Undefined
   id                 String
   isManuallyApproved Boolean? // Undefined
   solution           String? // Null | Undefined
+}
+
+type PartiallyCompletedChallenge {
+  id            String
+  completedDate Float
 }
 
 type Portfolio {
@@ -68,13 +73,13 @@ type SavedChallenge {
 }
 
 model user {
-  id                           String               @id @default(auto()) @map("_id") @db.ObjectId
+  id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
   about                        String
   acceptedPrivacyTerms         Boolean
-  badges                       Json? // Undefined | { coreTeam [][] }
+  // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
   completedChallenges          CompletedChallenge[]
   currentChallengeId           String?
-  donationEmails               String[]             @default([]) // Undefined | String[] (only possible for built in Types like String)
+  donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String
   emailAuthLinkTTL             DateTime? // Null | Undefined
   emailVerified                Boolean
@@ -110,25 +115,25 @@ model user {
   name                         String? // Null
   needsModeration              Boolean? // Undefined
   newEmail                     String? // Null | Undefined
-  partiallyCompletedChallenges Json? // Undefined | PartiallyCompletedChallenge[] TODO: The db only has this as an empty array
+  partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
   password                     String? // Undefined
   picture                      String
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
   progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[]
-  rand                         Float? // Undefined
-  savedChallenges              Json? // Undefined | SavedChallenge[]
+  // rand Float? // Undefined removed, as new API never uses it.
+  savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
   sendQuincyEmail              Boolean
   sound                        Boolean? // Undefined
   theme                        String? // Undefined
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
   unsubscribeId                String
-  username                     String  // TODO(Post-MVP): make this unique
+  username                     String // TODO(Post-MVP): make this unique
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
   website                      String? // Undefined
-  yearsTopContributor          String[]             @default([]) // Undefined | String[]
+  yearsTopContributor          String[] // Undefined | String[]
 }
 
 // -----------------------------------

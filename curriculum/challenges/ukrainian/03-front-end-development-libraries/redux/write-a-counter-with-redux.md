@@ -28,13 +28,19 @@ assert(incAction().type === INCREMENT);
 assert(decAction().type === DECREMENT);
 ```
 
-Сховище Redux повинне ініціалізуватися із `state`, що дорівнює 0.
+Running `store.getState()` should return a number
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
+The Redux store should initialize with a `state` of 0.
 
 ```js
 assert(_store.getState() === 0);
 ```
 
-Відправлення `incAction` у сховище Redux має збільшити `state` на 1.
+Dispatching `incAction` on the Redux store should increment the `state` by 1.
 
 ```js
 assert(
@@ -47,7 +53,7 @@ assert(
 );
 ```
 
-Відправлення `decAction` у сховище Redux має зменшити `state` на 1.
+Dispatching `decAction` on the Redux store should decrement the `state` by 1.
 
 ```js
 assert(
@@ -60,7 +66,7 @@ assert(
 );
 ```
 
-`counterReducer` має бути функцією
+`counterReducer` should be a function
 
 ```js
 assert(typeof counterReducer === 'function');

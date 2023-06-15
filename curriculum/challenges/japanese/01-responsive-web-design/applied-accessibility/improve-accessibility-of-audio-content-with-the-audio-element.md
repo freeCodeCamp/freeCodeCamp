@@ -26,7 +26,7 @@ HTML5 の `audio` 要素は、サウンドやオーディオストリームコ�
 
 # --instructions--
 
-Camper Cat から少し離れる時間を取って、アクセシビリティの達人でありスクリーンリーダーのユーザーでもあるキャンパー仲間、Zersiax (@zersiax) をご紹介します。 彼のスクリーンリーダーが動作する様子の音声を聴くには、`p` の後ろに `audio` 要素を追加します。 `controls` 属性を含めましょう。 次に `audio` タグの中に、`src` 属性に `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` を、`type` 属性に `"audio/mpeg"` を設定した `source` タグを配置します。
+Camper Cat から少し離れる時間を取って、アクセシビリティの達人でありスクリーンリーダーのユーザーでもあるキャンパー仲間、Zersiax (@zersiax) をご紹介します。 To hear a clip of his screen reader in action, add an `audio` element after the `p` element. `controls` 属性を含めましょう。 Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **注:** 音声が高速に聞こえて理解しにくいかもしれませんが、これはスクリーンリーダーのユーザーにとっては通常の速度です。
 

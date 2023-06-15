@@ -374,4 +374,4 @@ flexibleAlerts: {
 
 ## Як додати чи оновити мову
 
-Перейдіть до документації з [додавання нової мови](how-to-enable-new-languages.md). Якщо ви оновлюєте мову, див. розділ з [налаштування порядку суперблоків мови](how-to-enable-new-languages.md#configure-the-language-superblock-order).
+Перейдіть до документації з [додавання нової мови](how-to-enable-new-languages.md). Якщо ви оновлюєте мову, див. розділ з [налаштування перекладених суперблоків](how-to-enable-new-languages.md#set-translated-superblocks).
