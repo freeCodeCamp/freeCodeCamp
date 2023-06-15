@@ -1,10 +1,8 @@
-import {
-  type FastifyPluginCallbackTypebox,
-  Type
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { formatValidationError } from '../utils/error-formatting';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
+import { schemas } from '../schemas';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -23,45 +21,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/project-completed',
     {
-      schema: {
-        body: Type.Object({
-          id: Type.String({ format: 'objectid', maxLength: 24 }),
-          challengeType: Type.Optional(Type.Number()),
-          solution: Type.String({ format: 'url', maxLength: 1024 }),
-          // TODO(Post-MVP): require format: 'url' for githubLink
-          githubLink: Type.Optional(Type.String())
-        }),
-        response: {
-          200: Type.Object({
-            completedDate: Type.Number(),
-            points: Type.Number(),
-            alreadyCompleted: Type.Boolean()
-          }),
-          400: Type.Object({
-            type: Type.Literal('error'),
-            message: Type.Union([
-              Type.Literal(
-                'That does not appear to be a valid challenge submission.'
-              ),
-              Type.Literal(
-                'You have not provided the valid links for us to inspect your work.'
-              )
-            ])
-          }),
-          403: Type.Object({
-            type: Type.Literal('error'),
-            message: Type.Literal(
-              'You have to complete the project before you can submit a URL.'
-            )
-          }),
-          500: Type.Object({
-            message: Type.Literal(
-              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-            ),
-            type: Type.Literal('danger')
-          })
-        }
-      },
+      schema: schemas.projectCompleted,
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
