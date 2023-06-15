@@ -1,4 +1,4 @@
-import { setupServer, superRequest, ORIGIN } from '../../jest.utils';
+import { setupServer, superRequest } from '../../jest.utils';
 
 import { unsubscribeEndpoints } from './deprecated-unsubscribe';
 
@@ -9,12 +9,15 @@ describe('Deprecated unsubscribeEndpoints', () => {
   setupServer();
 
   unsubscribeEndpoints.forEach(([endpoint, method]) => {
-    test(`${method} ${endpoint} redirects to origin with "info" message`, async () => {
-      const response = await superRequest(endpoint, { method });
+    test(`${method} ${endpoint} redirects to referer with "info" message`, async () => {
+      const response = await superRequest(endpoint, { method }).set(
+        'Referer',
+        'https://www.freecodecamp.org/settings'
+      );
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(response.headers.location).toStrictEqual(
-        ORIGIN + urlEncodedMessage
+        'https://www.freecodecamp.org/settings' + urlEncodedMessage
       );
       expect(response.status).toBe(302);
     });

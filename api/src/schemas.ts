@@ -178,17 +178,5 @@ export const schemas = {
         })
       })
     }
-  },
-  subscriptionDeprecated: {
-    response: {
-      410: Type.Object({
-        message: Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal(
-            'We are no longer able to process this unsubscription request. Please go to your settings to update your email preferences'
-          )
-        })
-      })
-    }
   }
 };

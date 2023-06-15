@@ -21,6 +21,7 @@ import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
+import redirectWithMessage from './plugins/redirect-with-message';
 import { settingRoutes } from './routes/settings';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
@@ -174,6 +175,7 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
+  void fastify.register(redirectWithMessage);
 
   return fastify;
 };

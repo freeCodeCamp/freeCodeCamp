@@ -1,5 +1,5 @@
 import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { schemas } from '../schemas';
+import { HOME_LOCATION } from '../utils/env';
 
 type Endpoint = [string, 'GET' | 'POST'];
 
@@ -17,16 +17,15 @@ export const unsubscribeDeprecated: FastifyPluginCallbackTypebox = (
     fastify.route({
       method,
       url: endpoint,
-      schema: schemas.subscriptionDeprecated,
-      handler: async (_req, reply) => {
-        void reply.status(410);
-        return {
-          message: {
-            type: 'info',
-            message:
-              'We are no longer able to process this unsubscription request. Please go to your settings to update your email preferences'
-          }
-        } as const;
+      handler: async (req, reply) => {
+        // TODO: port over getRedirectParams from api-server anduser that
+        const origin = req.headers.referer ?? HOME_LOCATION;
+        void reply.redirectWithMessage(origin, {
+          type: 'info',
+          content:
+            'We are no longer able to process this unsubscription request. ' +
+            'Please go to your settings to update your email preferences'
+        });
       }
     });
   });
