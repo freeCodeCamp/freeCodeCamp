@@ -213,6 +213,9 @@ importers:
       jsonwebtoken:
         specifier: 8.5.1
         version: 8.5.1
+      nanoid:
+        specifier: '3'
+        version: 3.3.6
       nodemon:
         specifier: 2.0.22
         version: 2.0.22
