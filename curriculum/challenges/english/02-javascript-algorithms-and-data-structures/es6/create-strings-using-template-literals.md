@@ -69,7 +69,7 @@ assert(
 Template strings and expression interpolation should be used.
 
 ```js
-code.match(/(`.*\${.*}.*`)/);
+assert.match(code, /(`.*\${.*}.*`)/);
 ```
 
 An iterator should be used.
