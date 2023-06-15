@@ -1,6 +1,6 @@
 ---
 id: 6489cf6282cf2e4f86f03ae6
-title: The Case of CSS Question E
+title: The Cascade of CSS Question E
 challengeType: 15
 dashedName: the-cascade-of-css-question-e
 ---
@@ -22,19 +22,13 @@ dashedName: the-cascade-of-css-question-e
 
 In this final example, both rules are using ID and class selectors, so neither rule is using a more specific selector than the other. The cascade then checks the amounts of each selector type. Both rules only have one ID selector, but rule 2 has more class selectors, so rule 2 has a higher specificity!
 
-While the color: red declaration would take precedence, the background-color: yellow declaration would still be applied since there’s no conflicting declaration for it.
+While the `color: red` declaration would take precedence, the `background-color: yellow` declaration would still be applied since there’s no conflicting declaration for it.
 
 # --question--
 
 ## --text--
 
 Considering the updated CSS code, which of the following describes the rendering of the `<div class="list" id="subsection"></div>` element?
-
-A) Text color: Blue, Background color: Yellow
-B) Text color: Red, Background color: Yellow
-C) Text color: Blue, Background color: Transparent
-D) Text color: Red, Background color: Transparent
-
 
 ## --answers--
 

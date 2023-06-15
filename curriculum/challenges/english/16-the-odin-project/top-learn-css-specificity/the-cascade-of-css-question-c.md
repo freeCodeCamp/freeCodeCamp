@@ -1,6 +1,6 @@
 ---
 id: 6489cb0b82cf2e4f86f03ae3
-title: The Case of CSS Question C
+title: The Cascade of CSS Question C
 challengeType: 15
 dashedName: the-cascade-of-css-question-c
 ---
@@ -16,6 +16,7 @@ Let’s take a look at a few quick examples to visualize how specificity works. 
   <div class="list subsection"></div>
 </div>
 ```
+
 ```css
 /* rule 1 */
 .subsection {
@@ -27,6 +28,7 @@ Let’s take a look at a few quick examples to visualize how specificity works. 
   color: red;
 }
 ```
+
 In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors.
 
 # --question--

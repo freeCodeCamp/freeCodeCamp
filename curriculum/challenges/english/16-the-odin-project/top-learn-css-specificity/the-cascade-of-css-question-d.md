@@ -1,6 +1,6 @@
 ---
 id: 6489cf5882cf2e4f86f03ae5
-title: The Case of CSS Question D
+title: The Cascade of CSS Question D
 challengeType: 15
 dashedName: the-cascade-of-css-question-d
 ---
@@ -16,6 +16,7 @@ Now, let’s change things a little bit:
   <div class="list" id="subsection"></div>
 </div>
 ```
+
 ```css
 /* rule 1 */
 #subsection {

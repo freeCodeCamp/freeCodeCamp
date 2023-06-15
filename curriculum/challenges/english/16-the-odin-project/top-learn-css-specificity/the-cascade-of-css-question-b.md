@@ -1,13 +1,13 @@
 ---
 id: 6489c96782cf2e4f86f03ae2
-title: The Case of CSS Question B
+title: The Cascade of CSS Question B
 challengeType: 15
 dashedName: the-cascade-of-css-question-b
 ---
 
 # --description--
 
-A CSS declaration that is more specific will take precedence over less specific ones. Inline styles, which we went over in the previous lesson, have the highest specificity compared to selectors, while each type of selector has its own specificity level that contributes to how specific a declaration is. Other selectors contribute to specificity, but we’re focusing only on the ones we’ve gone over so far:
+A CSS declaration that is more specific will take precedence over less specific ones. Inline styles, which you went over in a previous lesson, have the highest specificity compared to selectors, while each type of selector has its own specificity level that contributes to how specific a declaration is. Other selectors contribute to specificity, but you're focusing only on the ones you’ve gone over so far:
 
 1. ID selectors (most specific selector)
 2. Class selectors
