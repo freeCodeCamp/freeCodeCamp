@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedd
-title: 'Problem 94: Almost equilateral triangles'
+title: 'Завдання 94: майже рівносторонні трикутники'
 challengeType: 1
 forumTopicId: 302211
 dashedName: problem-94-almost-equilateral-triangles
@@ -8,11 +8,11 @@ dashedName: problem-94-almost-equilateral-triangles
 
 # --description--
 
-It is easily proved that no equilateral triangle exists with integral length sides and integral area. However, the almost equilateral triangle 5-5-6 has an area of 12 square units.
+Відомо, що не існує рівностороннього трикутника з цілочисельними сторонами і площею. Однак площа майже рівностороннього трикутника зі сторонами 5-5-6 дорівнює 12 квадратних одиниць.
 
-We shall define an <dfn>almost equilateral triangle</dfn> to be a triangle for which two sides are equal and the third differs by no more than one unit.
+Визначимо <dfn>майже рівносторонній трикутник</dfn> як трикутник, у якого дві сторони рівні, а третя відрізняється не більше ніж на одну одиницю.
 
-Find the sum of the perimeters of all almost equilateral triangles with integral side lengths and area and whose perimeters do not exceed `limit`.
+Знайдіть суму периметрів усіх майже рівносторонніх трикутників з цілочисельними сторонами і площею, периметри яких не перевищують `limit`.
 
 # --hints--
 

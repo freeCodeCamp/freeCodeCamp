@@ -1,10 +1,10 @@
-# Como trabalhar em um client webapp traduzido
+# Como trabalhar na aplicação de client da web traduzida
 
-O nosso cliente web app com base em React que alimenta nossa plataforma de aprendizado foi criado usando o Gatsby. Ele é traduzido em vários idiomas do mundo todo usando [react-i18next](https://react.i18next.com/) e  [i18next](https://www.i18next.com/).
+A nossa aplicação de client da web com base em React alimenta nossa plataforma de aprendizado e foi criada usando o Gatsby. Ela é traduzida em vários idiomas do mundo todo usando [react-i18next](https://react.i18next.com/) e  [i18next](https://www.i18next.com/).
 
-Você pode aprender mais sobre configurar o cliente localmente para desenvolvimento seguindo [nosso guia de configuração aqui](how-to-setup-freecodecamp-locally.md). Por padrão, a aplicação está disponível somente em inglês.
+Você pode aprender mais sobre configurar o client localmente para desenvolvimento seguindo [nosso guia de configuração aqui](how-to-setup-freecodecamp-locally.md). Por padrão, a aplicação está disponível somente em inglês.
 
-Assim que você tiver o projeto configurado localmente, você poderá seguir essa documentação para rodar o cliente no idioma de sua escolha a partir de uma lista de idiomas disponíveis.
+Assim que você tiver o projeto configurado localmente, você poderá seguir essa documentação para rodar o client no idioma de sua escolha a partir de uma lista de idiomas disponíveis.
 
 Isso pode ser de grande ajuda quando você estiver trabalhando em uma nova feature que envolva tradução, em especial, e que necessite que você valide, por exemplo, uma label de botão em um idioma diferente.
 
@@ -71,11 +71,11 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 - O arquivo `meta-tags.json` contém as informações para a tag meta do nosso site.
 
-  Mudanças nesses arquivos são tipicamente feitos pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
+  Mudanças nesses arquivos são tipicamente feitas pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos colaboradores](https://discord.gg/PRyKn3Vbay).
 
-## Testando o cliente web em um idioma mundial
+## Teste da aplicação do client em um idioma mundial
 
-Você pode testar o client app em qualquer linguagem disponível na [lista de idiomas disponíveis, `availableLangs`, aqui](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Você pode testar a aplicação do client em qualquer idioma disponível na [lista de idiomas disponíveis, `availableLangs`, aqui](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -105,7 +105,7 @@ Por fim, defina a variável `CLIENT_LOCALE` no seu arquivo `.env` arquivo para a
 
 ## Como estruturar os componentes
 
-Se você estiver trabalhando em uma feature ou em um bug para o cliente web, por exemplo: adicionado novos itens de IU na pagina de configuração, você deve seguir as diretrizes abaixo. Elas vão te ajudar a preparar os componentes para tradução em todos os idiomas mundiais suportados.
+Se você estiver trabalhando em uma feature ou em um bug para o client da web (por exemplo, adicionando novos itens de IU na pagina de configuração), você deve seguir as diretrizes abaixo. Elas vão ajudar você a preparar os componentes para tradução em todos os idiomas mundiais suportados.
 
 ### Componente funcional
 
@@ -252,11 +252,11 @@ No exemplo acima, a chave e a variável estão configuradas nos atributos do com
 
 ## Mudando texto
 
-Para mudar o texto no lado do cliente, vá para o arquivo `.json`, ache a chave usada no componente React, e mude o valor para o novo texto que você deseja. Você deve pesquisar na base do código por aquela chave para ter certeza de que não está sendo usada em outro lugar. Ou, se está, se as mudanças fazem sentido em todos os lugares.
+Para mudar o texto no lado do client, vá para o arquivo `.json`, ache a chave usada no componente React, e mude o valor para o novo texto que você deseja. Você deve pesquisar na base do código por aquela chave para ter certeza de que não está sendo usada em outro lugar. Ou, se está, se as mudanças fazem sentido em todos os lugares.
 
 ## Adicionando texto
 
-Se o texto que você deseja adicionar ao cliente existe no arquivo `.json`, use a chave existente. Caso contrário, crie uma nova chave.
+Se o texto que você deseja adicionar ao client existe no arquivo `.json`, use a chave existente. Caso contrário, crie uma nova chave.
 
 O arquivo em inglês é a "fonte da verdade" para todos os arquivos `.json` que compartilham o mesmo nome. Se você precisa adicionar uma nova chave, a adicione lá. Então, adicione a chave em **todos** os arquivos `translations.json`.
 

@@ -27,6 +27,7 @@ const mockSuperBlocks = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStructNew,
   SuperBlocks.TheOdinProject,
+  SuperBlocks.FoundationalCSharp,
   SuperBlocks.ExampleCertification
 ];
 
@@ -48,7 +49,8 @@ const fullSuperOrder = {
   [SuperBlocks.RespWebDesign]: 14,
   [SuperBlocks.JsAlgoDataStructNew]: 15,
   [SuperBlocks.TheOdinProject]: 16,
-  [SuperBlocks.ExampleCertification]: 17
+  [SuperBlocks.FoundationalCSharp]: 17,
+  [SuperBlocks.ExampleCertification]: 18
 };
 
 describe('createSuperOrder', () => {
@@ -97,7 +99,7 @@ describe('getSuperOrder', () => {
     } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(15);
     } else {
-      expect.assertions(18);
+      expect.assertions(19);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
@@ -122,13 +124,15 @@ describe('getSuperOrder', () => {
     ) {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
     } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
       return;
     } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
     }
   });
 });
@@ -139,7 +143,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(19);
+    expect.assertions(20);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -147,7 +151,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(19);
+    expect.assertions(20);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

@@ -20,7 +20,7 @@ Il componente figlio ha quindi accesso alla proprietà array `colors`. I metodi 
 
 # --instructions--
 
-Nell'editor di codice ci sono i componenti `List` e `ToDo`. Quando si esegue il rendering di ogni `List` dal componente `ToDo`, deve essere passata una proprietà `tasks` assegnata a un array di attività da fare, ad esempio `["walk dog", "workout"]`. Quindi accedi a questo array `tasks` nel componente `List`, mostrandone il valore all'interno dell'elemento `p`. Usa `join(", ")` per visualizzare l'array `props.tasks` nell'elemento `p` come lista separata da virgole. L'elenco di oggi (Today) dovrebbe avere almeno 2 task e quella di domani (Tomorrow) dovrebbe avere almeno 3 task.
+Nell'editor di codice ci sono i componenti `List` e `ToDo`. Quando si esegue il rendering di ogni `List` dal componente `ToDo`, deve essere passata una proprietà `tasks` assegnata a un array di attività da fare, ad esempio `["walk dog", "workout"]`. Quindi accedi a questo array `tasks` nel componente `List`, mostrandone il valore all'interno dell'elemento `p`. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. L'elenco di oggi (Today) dovrebbe avere almeno 2 task e quella di domani (Tomorrow) dovrebbe avere almeno 3 task.
 
 # --hints--
 

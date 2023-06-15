@@ -17,7 +17,8 @@ export const certTypes = {
   machineLearningPyV7: 'isMachineLearningPyCertV7',
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
-  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8'
+  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
+  foundationalCSharp: 'isFoundationalCSharp'
 } as const;
 
 export const certIds = {
@@ -37,7 +38,8 @@ export const certIds = {
   dataAnalysisPyV7Id: '5e46fc95ac417301a38fb934',
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
-  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800'
+  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
+  foundationalCSharpId: '647f7da207d29547b3bee1ba'
 };
 
 export const completionHours = {
@@ -57,7 +59,8 @@ export const completionHours = {
   [certTypes.dataAnalysisPyV7]: 300,
   [certTypes.machineLearningPyV7]: 300,
   [certTypes.relationalDatabaseV8]: 300,
-  [certTypes.collegeAlgebraPyV8]: 300
+  [certTypes.collegeAlgebraPyV8]: 300,
+  [certTypes.foundationalCSharp]: 300
 };
 
 export const certSlugTypeMap = {
@@ -84,7 +87,8 @@ export const certSlugTypeMap = {
   'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
   'machine-learning-with-python-v7': certTypes.machineLearningPyV7,
   'relational-database-v8': certTypes.relationalDatabaseV8,
-  'college-algebra-with-python-v8': certTypes.collegeAlgebraPyV8
+  'college-algebra-with-python-v8': certTypes.collegeAlgebraPyV8,
+  'foundational-c-sharp-with-microsoft': certTypes.foundationalCSharp
 };
 
 export const superBlockCertTypeMap = {
@@ -108,6 +112,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
+  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharp,
 
   // post-modern
   // TODO: use enum
@@ -132,7 +137,8 @@ export const certTypeIdMap = {
   [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
   [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
-  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id
+  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
+  [certTypes.foundationalCSharp]: certIds.foundationalCSharpId
 };
 
 export const certTypeTitleMap = {
@@ -152,7 +158,8 @@ export const certTypeTitleMap = {
   [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
   [certTypes.relationalDatabaseV8]: 'Relational Database',
-  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python'
+  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
+  [certTypes.foundationalCSharp]: 'Foundational C# with Microsoft'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

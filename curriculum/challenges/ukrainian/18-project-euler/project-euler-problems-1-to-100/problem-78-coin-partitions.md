@@ -1,6 +1,6 @@
 ---
 id: 5900f3ba1000cf542c50fecd
-title: 'Problem 78: Coin partitions'
+title: 'Завдання 78: сортування монет'
 challengeType: 1
 forumTopicId: 302191
 dashedName: problem-78-coin-partitions
@@ -8,11 +8,11 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Let ${p}(n)$ represent the number of different ways in which `n` coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so ${p}(5) = 7$.
+Нехай ${p}(n)$ представляє кількість різних способів, за яких можна розділити `n` монет на стопки. Наприклад, п’ять монет можна розділити на стопки сімома способами, тому ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 
-| Coin piles        |
+| Стопки монет        |
 | ----------------- |
 | OOOOO             |
 | OOOO   O          |
@@ -24,7 +24,7 @@ Let ${p}(n)$ represent the number of different ways in which `n` coins can be se
 
 </div><br>
 
-Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
+Знайдіть найменше значення `n`, при якому ${p}(n)$ ділиться на `divisor`.
 
 # --hints--
 
