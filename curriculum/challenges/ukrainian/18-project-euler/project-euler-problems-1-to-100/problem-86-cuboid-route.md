@@ -1,6 +1,6 @@
 ---
 id: 5900f3c31000cf542c50fed5
-title: 'Problem 86: Cuboid route'
+title: 'Завдання 86: маршрут паралелепіпедом'
 challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
@@ -8,15 +8,15 @@ dashedName: problem-86-cuboid-route
 
 # --description--
 
-Павук S сидить в одному кутку кубоподібної кімнати 6х5х3, а муха F сидить в протилежному кутку. Подорожуючи поверхнями кімнати, найкоротша відстань від S до F становить 10, як показано на малюнку нижче.
+Павук S сидить в одному кутку кімнати у формі паралелепіпеда 6х5х3, а муха F сидить в протилежному кутку. Подорожуючи поверхнями кімнати, найкоротша відстань від S до F становить 10, як показано на малюнку нижче.
 
-<img class="img-responsive center-block" alt="a diagram of a spider and fly's path from one corner of a cuboid room to the opposite corner" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="шлях павука та мухи з одного кута кімнати у протилежний" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 
-However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
+Однак для будь-якого прямокутного паралелепіпеда існує до трьох можливих «найкоротших» шляхи, який не завжди має цілочисельну довжину.
 
-It can be shown that there are exactly `2060` distinct cuboids, ignoring rotations, with integer dimensions, up to a maximum size of M by M by M, for which the shortest route has integer length when M = 100. This is the least value of M for which the number of solutions first exceeds two thousand; the number of solutions when M = 99 is `1975`.
+Існує `2060` прямокутних паралелепіпедів з максимальним розміром MхMхM, для яких найкоротший шлях становить ціле число, якщо M = 100. Це найменше значення М, для якого кількість розв’язків перевищує дві тисячі: кількість розв’язків при М = 99 становить `1975`.
 
-Find the least value of M such that the number of solutions first exceeds `n`.
+Знайдіть найменше значення М, при якому кількість розв’язків перевищує `n`.
 
 # --hints--
 
