@@ -94,9 +94,9 @@ A primeira configuração pode demorar um pouco, dependendo da largura de banda 
 
 > [!NOTE] Se estiver usando dispositivos da Apple com o chip M1 para executar a aplicação localmente, sugerimos usar o Node v14.7 ou uma versão mais recente. Do contrário, você poderá ter problemas com dependências como o Sharp.
 
-## Working With Other Languages
+## Como trabalhar com outros idiomas
 
-To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
+Para ver como o client é renderizado em outro idioma, acesse [teste da aplicação do client em um idioma mundial.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
 
 ## Obter ajuda
 
