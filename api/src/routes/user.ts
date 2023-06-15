@@ -100,6 +100,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async req => {
     await fastify.prisma.userToken.deleteMany({
       where: { userId: req.session.user.id }
