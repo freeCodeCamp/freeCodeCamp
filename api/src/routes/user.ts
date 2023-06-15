@@ -1,6 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
+import { encodeUserToken } from '../utils/user-token';
 
 export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -90,6 +91,27 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+
+  fastify.post('/user/token', async (req, _reply) => {
+    await fastify.prisma.userToken.deleteMany({
+      where: { userId: req.session.user.id }
+    });
+
+    await fastify.prisma.userToken.create({
+      data: {
+        created: new Date(),
+        id: 'hjeIs012tXf5IR00DO1cnwRlGy5bwTrwVeG26Tp6JGbnw3QjLxHJE1VGerOV6jpC',
+        userId: req.session.user.id,
+        ttl: 77760000000 // TODO: check this number
+      }
+    });
+
+    return {
+      userToken: encodeUserToken(
+        'hjeIs012tXf5IR00DO1cnwRlGy5bwTrwVeG26Tp6JGbnw3QjLxHJE1VGerOV6jpC'
+      )
+    };
+  });
 
   done();
 };
