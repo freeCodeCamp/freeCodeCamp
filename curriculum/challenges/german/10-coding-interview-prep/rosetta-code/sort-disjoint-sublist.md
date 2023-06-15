@@ -24,19 +24,19 @@ Where the correct result would be:
 
 # --hints--
 
-`sortDisjoint` should be a function.
+`sortDisjoint` sollte eine Funktion sein.
 
 ```js
 assert(typeof sortDisjoint == 'function');
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return an array.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])));
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return `[7, 0, 5, 4, 3, 2, 1, 6]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` sollte `[7, 0, 5, 4, 3, 2, 1, 6]` zurückgeben.
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
@@ -51,7 +51,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` should return `[7, 1, 2, 4, 3, 5, 6, 0]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` sollte `[7, 1, 2, 4, 3, 5, 6, 0]` zurückgeben.
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
@@ -66,7 +66,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` should return `[8, 1, 6, 5, 4, 3, 2, 7]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` sollte `[8, 1, 6, 5, 4, 3, 2, 7]` zurückgeben.
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
@@ -81,7 +81,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` should return `[8, 2, 6, 3, 4, 5, 7, 1]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` sollte `[8, 2, 6, 3, 4, 5, 7, 1]` zurückgeben.
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
@@ -96,7 +96,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` should return `[6, 1, 7, 1, 3, 5, 6]`.
+`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` sollte `[6, 1, 7, 1, 3, 5, 6]` zurückgeben.
 
 ```js
 assert.deepEqual(sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4]), [

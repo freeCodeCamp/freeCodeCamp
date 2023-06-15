@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` матиме значення `89`.
 
-`...arr` повертає розпакований масив. Іншими словами, це *розширює* масив. Однак оператор розширення працює лише на місці, наприклад, в аргументі функції чи літералі масиву. Наступний код не буде працювати:
+`...arr` повертає розпакований масив. In other words, it spreads the array. Однак оператор розширення працює лише на місці, наприклад, в аргументі функції чи літералі масиву. For example:
+
+```js
+const spreaded = [...arr];
+```
+
+However, the following code will not work:
 
 ```js
 const spreaded = ...arr;
@@ -36,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Скопіюйте весь вміст `arr1` до іншого масиву `arr2`, використовуючи оператор розширення.
+Copy all contents of `arr1` into another array `arr2` using the spread operator.
 
 # --hints--
 
-`arr2` повинен бути правильною копією `arr1`.
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-Для дублювання `arr1` потрібно використати оператор розширення (`...`).
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` повинен залишатись без змін, а `arr1` повинен бути зміненим.
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {

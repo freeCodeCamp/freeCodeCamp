@@ -755,7 +755,6 @@ export default function initializeUser(User) {
       name,
       points,
       portfolio,
-      streak,
       username,
       yearsTopContributor
     } = user;
@@ -800,7 +799,6 @@ export default function initializeUser(User) {
       name: showName ? name : '',
       points: showPoints ? points : null,
       portfolio: showPortfolio ? portfolio : [],
-      streak: showHeatMap ? streak : {},
       yearsTopContributor: yearsTopContributor
     };
   }
@@ -811,13 +809,12 @@ export default function initializeUser(User) {
         if (!user) {
           return Observable.of({});
         }
-        const { completedChallenges, progressTimestamps, timezone, profileUI } =
-          user;
+        const { completedChallenges, progressTimestamps, profileUI } = user;
         const allUser = {
           ..._.pick(user, publicUserProps),
           points: progressTimestamps.length,
           completedChallenges,
-          ...getProgress(progressTimestamps, timezone),
+          ...getProgress(progressTimestamps),
           ...normaliseUserFields(user),
           joinDate: user.id.getTimestamp()
         };

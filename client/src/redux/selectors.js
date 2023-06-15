@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -7,12 +7,15 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
-export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-
-export const emailSelector = state => userSelector(state).email;
-
+export const completionCountSelector = state => state[MainApp].completionCount;
+export const showMultipleProgressModalsSelector = state =>
+  state[MainApp].showMultipleProgressModals;
+export const completionCountWhenShownProgressModalSelector = state =>
+  state[MainApp].completionCountWhenShownProgressModal;
+export const progressDonationModalShownSelector = state =>
+  state[MainApp].progressDonationModalShown;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -31,11 +34,14 @@ export const showCertSelector = state => state[MainApp].showCert;
 export const showCertFetchStateSelector = state =>
   state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
-  const completedChallenges = completedChallengesSelector(state);
+  const completedChallengesLength = completedChallengesSelector(state).length;
   const completionCount = completionCountSelector(state);
-  const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
+  const lastCompletionCount =
+    completionCountWhenShownProgressModalSelector(state);
+  const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -43,14 +49,24 @@ export const shouldRequestDonationSelector = state => {
   // a block has been completed
   if (recentlyClaimedBlock) return true;
 
+  /* 
+  When AB testing for showing multiple progress modals is active,
+  show a donation modal every 30 challenges after the first 50
+   */
+  if (
+    showMultipleProgressModals &&
+    progressDonationModalShown &&
+    completedChallengesLength > 50 &&
+    completionCount - lastCompletionCount >= 30
+  )
+    return true;
+
   // a donation has already been requested
-  if (!canRequestProgressDonation) return false;
+  if (progressDonationModalShown) return false;
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  if (completedChallenges.length < 10) {
-    return false;
-  }
+  if (completedChallengesLength < 10) return false;
 
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
@@ -63,6 +79,10 @@ export const userTokenSelector = state => {
 
 export const showCodeAllySelector = state => {
   return state[MainApp].showCodeAlly;
+};
+
+export const examInProgressSelector = state => {
+  return state[MainApp].examInProgress;
 };
 
 export const userByNameSelector = username => state => {

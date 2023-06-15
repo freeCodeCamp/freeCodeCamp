@@ -1,6 +1,6 @@
 ---
 id: 5900f4621000cf542c50ff75
-title: 'Problem 246: Tangents to an ellipse'
+title: 'Problema 246: tangenti a un''ellisse'
 challengeType: 1
 forumTopicId: 301893
 dashedName: problem-246-tangents-to-an-ellipse
@@ -8,31 +8,31 @@ dashedName: problem-246-tangents-to-an-ellipse
 
 # --description--
 
-A definition for an ellipse is:
+Una definizione di un'ellisse è:
 
-Given a circle $c$ with centre $M$ and radius $r$ and a point $G$ such that $d(G, M) < r$, the locus of the points that are equidistant from $c$ and $G$ form an ellipse.
+Dato un cerchio $c$ con centro $M$ e raggio $r$ e un punto $G$ tali che $d(G, m) < r$, il luogo dei punti che sono equidistanti da $c$ e $G$ forma una ellisse.
 
-The construction of the points of the ellipse is shown below.
+La costruzione dei punti dell'ellisse è mostrata di seguito.
 
-<img class="img-responsive center-block" alt="animation of ellipse construction" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animazione della costruzione di un'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px;" />
 
-Given are the points $M(-2000, 1500)$ and $G(8000, 1500)$.
+Dati i punti $M(-2000, 1500)$ e $G(800, 1500)$.
 
-Given is also the circle $c$ with centre $M$ and radius $15\\,000$.
+Dato il cerchio $c$ con centro $M$ e raggio $15\\,000$.
 
-The locus of the points that are equidistant from $G$ and $c$ form an ellipse $e$.
+Il luogo dei punti che sono equidistanti da $G$ e $c$ forma un'ellisse $e$.
 
-From a point $P$ outside $e$ the two tangents $t_1$ and $t_2$ to the ellipse are drawn.
+Da un punto $P$ al di fuori di $e$ sono tracciate le due tangenti all'ellisse $$t_1$ e $t_2$.
 
-Let the points where $t_1$ and $t_2$ touch the ellipse be $R$ and $S$.
+Siano $R$ e $S$ i punti dove $t_1$ e $t_2$ toccano l'ellisse.
 
-<img class="img-responsive center-block" alt="circle c with the centre M, radius 15000, and point P outsie of ellipse e; from point P two tangents t_1 and t_2 are drawn to the ellipse, with points touching ellipse are R and S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="cerchio c con centro M, raggio 15000 e un punto P al di fuori dell'ellisse e; dal punto P due tangenti t_1 e t_2 sono disegnate sull'ellisse, con i punti R e S che toccano l'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;" />
 
-For how many lattice points $P$ is angle $RPS$ greater than 45°?
+Per quanti punti $P$ del reticolo l'angolo $RPS$ è maggiore di 45°?
 
 # --hints--
 
-`tangentsToAnEllipse()` should return `810834388`.
+`tangentsToAnEllipse()` dovrebbe restituire `810834388`.
 
 ```js
 assert.strictEqual(tangentsToAnEllipse(), 810834388);

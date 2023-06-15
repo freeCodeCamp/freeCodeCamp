@@ -55,7 +55,7 @@
 
 ## Запропонуйте PR
 
-1. Як тільки зміни будуть збережені, вам буде запропоновано створити PR на сторінці вашої гілки GitHub.
+1. Як тільки зміни будуть збережені, вам буде запропоновано створити PR на сторінці вашого розгалуження GitHub.
 
    <details>
    <summary>Переглянути знімок екрану</summary>
@@ -71,7 +71,7 @@
    <details>
    <summary>Переглянути знімок екрану</summary>
 
-   ![Зображення - Порівняння форків під час створення PR](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   ![Зображення - Порівняння розгалужень під час створення PR](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
    </details>
 
@@ -101,7 +101,7 @@
 
 І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-> [!TIP] Якщо ви хочете внести ще більше PR, ми рекомендуємо прочитати про [внесення змін та синхронізацію](how-to-setup-freecodecamp-locally.md#making-changes-locally), щоб уникнути видалення вашого форку.
+> [!TIP] Якщо ви хочете внести ще більше PR, ми рекомендуємо прочитати про [внесення змін та синхронізацію](how-to-setup-freecodecamp-locally.md#making-changes-locally), щоб уникнути видалення вашого розгалуження.
 
 ## Конфлікти PR
 
@@ -142,7 +142,7 @@
 
 Коли ви працюєте над функціональностями для майбутньої навчальної програми на гілках `next-*`, потрібно виконати команду cherry pick:
 
-1. Переконайтесь, що віддалена гілка синхронізована з локальною:
+1. Переконайтесь, що upstream синхронізовано з локальною гілкою:
 
    ```console
    git checkout main

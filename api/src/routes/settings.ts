@@ -1,44 +1,25 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import badWordsFilter from 'bad-words';
+import { isValidUsername } from '../../../utils/validate';
+// we have to use this file as JavaScript because it is used by the old api.
+import { blocklistedUsernames } from '../../../config/constants.js';
+import { schemas } from '../schemas';
 
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
 ) => {
+  // The order matters here, since we want to reject invalid cross site requests
+  // before checking if the user is authenticated.
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.put(
     '/update-my-profileui',
     {
-      schema: {
-        body: Type.Object({
-          profileUI: Type.Object({
-            isLocked: Type.Boolean(),
-            showAbout: Type.Boolean(),
-            showCerts: Type.Boolean(),
-            showDonation: Type.Boolean(),
-            showHeatMap: Type.Boolean(),
-            showLocation: Type.Boolean(),
-            showName: Type.Boolean(),
-            showPoints: Type.Boolean(),
-            showPortfolio: Type.Boolean(),
-            showTimeLine: Type.Boolean()
-          })
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.privacy-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
       try {
@@ -76,21 +57,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-theme',
     {
-      schema: {
-        body: Type.Object({
-          theme: Type.Union([Type.Literal('default'), Type.Literal('night')])
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.updated-themes'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyTheme
     },
     async (req, reply) => {
       try {
@@ -114,23 +81,126 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.put(
+    '/update-my-socials',
+    {
+      schema: schemas.updateMySocials
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            website: req.body.website,
+            twitter: req.body.twitter,
+            githubProfile: req.body.githubProfile,
+            linkedin: req.body.linkedin
+          }
+        });
+
+        return {
+          message: 'flash.updated-socials',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-username',
+    {
+      schema: schemas.updateMyUsername,
+      attachValidation: true
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findFirstOrThrow({
+          where: { id: req.session.user.id }
+        });
+
+        const newUsernameDisplay = req.body.username.trim();
+        const oldUsernameDisplay = user.usernameDisplay?.trim();
+
+        const newUsername = newUsernameDisplay.toLowerCase();
+        const oldUsername = user.username.toLowerCase();
+
+        const usernameUnchanged =
+          newUsername === oldUsername &&
+          newUsernameDisplay === oldUsernameDisplay;
+
+        if (usernameUnchanged) {
+          void reply.code(400);
+          return {
+            message: 'flash.username-used',
+            type: 'info'
+          } as const;
+        }
+
+        if (req.validationError) {
+          void reply.code(400);
+          return {
+            message: req.validationError.message,
+            type: 'info'
+          } as const;
+        }
+
+        const validation = isValidUsername(newUsername);
+
+        if (!validation.valid) {
+          void reply.code(400);
+          return {
+            // TODO(Post-MVP): custom validation errors.
+            message: `Username ${newUsername} ${validation.error}`,
+            type: 'info'
+          } as const;
+        }
+
+        const isProfane = new badWordsFilter().isProfane(newUsername);
+        const onBlocklist = blocklistedUsernames.includes(newUsername);
+
+        const usernameTaken =
+          newUsername === oldUsername
+            ? false
+            : await fastify.prisma.user.count({
+                where: { username: newUsername }
+              });
+
+        if (usernameTaken || isProfane || onBlocklist) {
+          void reply.code(400);
+          return {
+            message: 'flash.username-taken',
+            type: 'info'
+          } as const;
+        }
+
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            username: newUsername,
+            usernameDisplay: newUsernameDisplay
+          }
+        });
+
+        return {
+          message: 'flash.username-updated',
+          type: 'success',
+          username: newUsernameDisplay
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: {
-        body: Type.Object({
-          keyboardShortcuts: Type.Boolean()
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.keyboard-shortcut-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
       try {
@@ -156,21 +226,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: {
-        body: Type.Object({
-          sendQuincyEmail: Type.Boolean()
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('flash.subscribe-to-quincy-updated'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
       try {
@@ -196,21 +252,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-honesty',
     {
-      schema: {
-        body: Type.Object({
-          isHonest: Type.Literal(true)
-        }),
-        response: {
-          200: Type.Object({
-            message: Type.Literal('buttons.accepted-honesty'),
-            type: Type.Literal('success')
-          }),
-          500: Type.Object({
-            message: Type.Literal('flash.wrong-updating'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
       try {
@@ -232,5 +274,33 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+
+  fastify.put(
+    '/update-privacy-terms',
+    {
+      schema: schemas.updateMyPrivacyTerms
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            acceptedPrivacyTerms: true,
+            sendQuincyEmail: req.body.quincyEmails
+          }
+        });
+
+        return {
+          message: 'flash.privacy-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };

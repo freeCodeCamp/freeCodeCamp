@@ -1,6 +1,6 @@
 ---
 id: 5900f4ee1000cf542c510000
-title: 'Problem 385: Ellipses inside triangles'
+title: 'Problema 385: ellissi dentro triangoli'
 challengeType: 1
 forumTopicId: 302049
 dashedName: problem-385-ellipses-inside-triangles
@@ -8,28 +8,28 @@ dashedName: problem-385-ellipses-inside-triangles
 
 # --description--
 
-For any triangle $T$ in the plane, it can be shown that there is a unique ellipse with largest area that is completely inside $T$.
+Per qualsiasi triangolo $T$ nel piano, si può dimostrare che esiste un'unica ellisse con l'area più grande che è completamente all'interno di $T$.
 
-<img class="img-responsive center-block" alt="ellipse completely inside a triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ellisse completamente all'interno di un triangolo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
 
-For a given $n$, consider triangles $T$ such that:
+Per un dato $n$, considera i triangoli $T$ tali che:
 
--   the vertices of $T$ have integer coordinates with absolute value $≤ n$, and
--   the foci<sup>1</sup> of the largest-area ellipse inside $T$ are $(\sqrt{13}, 0)$ and $(-\sqrt{13}, 0)$.
+-   i vertici di $T$ hanno coordinate intere con valore assoluto $≤ n$, e
+-   i fuochi<sup>1</sup> della più grande ellisse dentro $T$ sono $(\sqrt{13}, 0)$ e $(-\sqrt{13}, 0)$.
 
-Let $A(n)$ be the sum of the areas of all such triangles.
+Sia $A(n)$ la somma delle aree di tutti questi triangoli.
 
-For example, if $n = 8$, there are two such triangles. Their vertices are (-4,-3), (-4,3), (8,0) and (4,3), (4,-3), (-8,0), and the area of each triangle is 36. Thus $A(8) = 36 + 36 = 72$.
+Ad esempio, se $n = 8$, ci sono due triangoli. I loro vertici sono (-4,-3), (-4,3), (8,0) e (4,3), (4,-3), (-8,0), e l'area di ciascun triangolo è 36. Quindi $A(8) = 36 + 36 = 72$.
 
-It can be verified that $A(10) = 252$, $A(100) = 34\\,632$ and $A(1000) = 3\\,529\\,008$.
+Si può verificare che $A(10) = 252$, $A(100) = 34\\,632$ e che $A(1000) = 3\\,529\\,008$.
 
-Find $A(1\\,000\\,000\\,000)$.
+Trova $A(1\\,000\\,000\\,000)$.
 
-<sup>1</sup>The foci (plural of focus) of an ellipse are two points $A$ and $B$ such that for every point $P$ on the boundary of the ellipse, $AP + PB$ is constant.
+<sup>1</sup> I fuochi di una ellisse sono due punti $A$ e $B$ tali che per ogni punto $P$ sulla curva dell'ellisse, $AP + PB$ è costante.
 
 # --hints--
 
-`ellipsesInsideTriangles()` should return `3776957309612154000`.
+`ellipsesInsideTriangles()` dovrebbe restituire `3776957309612154000`.
 
 ```js
 assert.strictEqual(ellipsesInsideTriangles(), 3776957309612154000);

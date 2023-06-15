@@ -1,6 +1,6 @@
 ---
 id: 5900f3881000cf542c50fe9b
-title: 'Problem 28: Number spiral diagonals'
+title: 'Завдання 28: діагоналі числової спіралі'
 challengeType: 1
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
@@ -8,7 +8,7 @@ dashedName: problem-28-number-spiral-diagonals
 
 # --description--
 
-Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+Починаючи з числа 1 і рухаючись праворуч за годинниковою стрілкою, утворюється спіраль 5 на 5:
 
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
@@ -18,9 +18,9 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-It can be verified that the sum of the numbers on the diagonals is 101.
+Можна переконатися, що сума чисел по діагоналях дорівнює 101.
 
-What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+Чому дорівнює сума чисел по діагоналях у спіралі `n` на `n`, створеній так само?
 
 # --hints--
 

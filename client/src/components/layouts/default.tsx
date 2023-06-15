@@ -22,6 +22,7 @@ import {
 } from '../../redux/actions';
 import {
   isSignedInSelector,
+  examInProgressSelector,
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
@@ -53,6 +54,7 @@ import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
+  examInProgressSelector,
   flashMessageSelector,
   isOnlineSelector,
   isServerOnlineSelector,
@@ -61,6 +63,7 @@ const mapStateToProps = createSelector(
   userSelector,
   (
     isSignedIn,
+    examInProgress: boolean,
     flashMessage,
     isOnline: boolean,
     isServerOnline: boolean,
@@ -69,6 +72,7 @@ const mapStateToProps = createSelector(
     user: User
   ) => ({
     isSignedIn,
+    examInProgress,
     flashMessage,
     hasMessage: !!flashMessage.message,
     isOnline,
@@ -102,6 +106,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   showFooter?: boolean;
   isChallenge?: boolean;
   block?: string;
+  examInProgress: boolean;
   showCodeAlly: boolean;
   superBlock?: string;
 }
@@ -116,6 +121,7 @@ const getSystemTheme = () =>
 function DefaultLayout({
   children,
   hasMessage,
+  examInProgress,
   fetchState,
   flashMessage,
   isOnline,
@@ -239,7 +245,7 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !showCodeAlly && (
+          {isChallenge && !showCodeAlly && !examInProgress && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}

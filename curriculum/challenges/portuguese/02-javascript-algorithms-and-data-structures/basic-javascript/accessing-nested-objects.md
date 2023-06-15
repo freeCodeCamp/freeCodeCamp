@@ -51,6 +51,12 @@ O código deve usar notação de ponto e de colchetes para acessar `myStorage`.
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+`gloveBoxContents` ainda deve ser declarada com `const`.
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/)
+```
+
 # --seed--
 
 ## --after-user-code--

@@ -1,6 +1,6 @@
 ---
 id: 5900f4db1000cf542c50ffee
-title: 'Problem 367: Bozo sort'
+title: 'Problema 367: bozo sort'
 challengeType: 1
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
@@ -8,29 +8,29 @@ dashedName: problem-367-bozo-sort
 
 # --description--
 
-Bozo sort, not to be confused with the slightly less efficient bogo sort, consists out of checking if the input sequence is sorted and if not swapping randomly two elements. This is repeated until eventually the sequence is sorted.
+Bozo sort, da non confondersi con il'algoritmo leggermente meno efficiente bogo sort, consiste nel controllare se la sequenza di input è ordinata, e se non lo è scambiare a caso due elementi. Questo viene ripetuto finché alla fine la sequenza è in ordine.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of swaps, averaged over all $4!$ input sequences is $24.75$.
+Se consideriamo tutte le permutazioni dei primi 4 numeri naturali come input, il valore di attesa del numero di scambi, mediato su tutte le $4!$ sequenze di input è $24.75$.
 
-The already sorted sequence takes 0 steps.
+La sequenza già ordinata ha bisogno di 0 step.
 
-In this problem we consider the following variant on bozo sort.
+In questo problema consideriamo le seguenti varianti nel bozo sort.
 
-If the sequence is not in order we pick three elements at random and shuffle these three elements randomly.
+Se la sequenza non è in ordine, scegliamo 3 elementi a caso e mescoliamo questi tre elementi casualmente.
 
-All $3! = 6$ permutations of those three elements are equally likely.
+Tutte le $3! = 6$ permutazioni di questi tre elementi sono altrettanto probabili.
 
-The already sorted sequence will take 0 steps.
+La sequenza già ordinata ha bisogno di 0 step.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of shuffles, averaged over all $4!$ input sequences is $27.5$.
+Se consideriamo tutte le permutazioni dei primi 4 numeri naturali come input, il valore di attesa del numero di mescolamenti, mediato su tutte le $4!$ sequenze di input è $27.5$.
 
-Consider as input sequences the permutations of the first 11 natural numbers.
+Considera come sequenze di input le permutazioni dei primi 11 numeri naturali.
 
-Averaged over all $11!$ input sequences, what is the expected number of shuffles this sorting algorithm will perform? Give your answer rounded to the nearest integer.
+Mediato su tutte le $11!$ sequenze di input, qual è il numero medio di mescolamenti che svolgerà questo algoritmo? Dai la tua risposta arrotondata al numero intero più vicino.
 
 # --hints--
 
-`bozoSort()` should return `48271207`.
+`bozoSort()` dovrebbe restituire `48271207`.
 
 ```js
 assert.strictEqual(bozoSort(), 48271207);

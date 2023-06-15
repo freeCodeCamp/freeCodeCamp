@@ -29,6 +29,7 @@
     "sign-up-email-list": "Inscreva-se para receber o e-mail semanal do Quincy",
     "sign-out": "Encerrar sessão",
     "curriculum": "Currículo",
+    "contribute": "Contribua",
     "forum": "Fórum",
     "radio": "Rádio",
     "profile": "Perfil",
@@ -72,9 +73,14 @@
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
+    "click-start-exam": "Iniciar o exame",
     "change-language": "Alterar idioma",
     "resume-project": "Retomar projeto",
-    "start-project": "Iniciar o projeto"
+    "start-project": "Iniciar o projeto",
+    "previous-question": "Questão anterior",
+    "next-question": "Próxima questão",
+    "finish-exam": "Finalizar o exame",
+    "submit-exam-results": "Enviar meus resultados"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -523,6 +529,8 @@
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
+    "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
+    "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
     "email-blast": "A propósito, todas as sextas-feiras, eu envio um e-mail com 5 links sobre programação e ciência da computação. Eu envio essas mensagens para cerca de 4 milhões de pessoas. Você gostaria que eu as enviasse para você também?",
     "update-email-1": "Atualize seu endereço de e-mail",

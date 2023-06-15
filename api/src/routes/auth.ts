@@ -19,10 +19,10 @@ declare module 'fastify' {
 const defaultUser = {
   about: '',
   acceptedPrivacyTerms: false,
-  badges: {},
   completedChallenges: [],
   currentChallengeId: '',
   emailVerified: false,
+  externalId: '',
   is2018DataVisCert: false,
   is2018FullStackCert: false,
   isApisMicroservicesCert: false,
@@ -47,6 +47,7 @@ const defaultUser = {
   keyboardShortcuts: false,
   location: '',
   name: '',
+  unsubscribeId: '',
   picture: '',
   profileUI: {
     isLocked: false,
@@ -61,8 +62,6 @@ const defaultUser = {
     showTimeLine: false
   },
   progressTimestamps: [],
-  // TODO: check what this is used for in api-server and if we need it
-  rand: 0,
   sendQuincyEmail: false,
   theme: 'default',
   // TODO: generate a UUID like in api-server
@@ -106,12 +105,13 @@ export const devLoginCallback: FastifyPluginCallback = (
   _options,
   done
 ) => {
-  fastify.get('/dev-callback', async (req, _res) => {
+  fastify.get('/dev-callback', async req => {
     const email = 'foo@bar.com';
 
     const { id } = await findOrCreateUser(fastify, email);
     req.session.user = { id };
     await req.session.save();
+    return { statusCode: 200 };
   });
 
   done();
@@ -120,7 +120,7 @@ export const devLoginCallback: FastifyPluginCallback = (
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
-  fastify.get('/callback', async (req, _res) => {
+  fastify.get('/callback', async req => {
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

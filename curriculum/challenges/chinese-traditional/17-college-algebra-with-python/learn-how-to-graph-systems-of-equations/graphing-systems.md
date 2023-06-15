@@ -8,7 +8,7 @@ dashedName: graphing-systems
 
 # --description--
 
-這第一個視頻將向你展示如何用書面數學繪製方程組的圖像，然後是代碼。
+This first video will show you how to graph systems of equations with written math, then code.
 
 這是<a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>。
 

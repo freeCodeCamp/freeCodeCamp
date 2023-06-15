@@ -1,6 +1,6 @@
 ---
 id: 5900f3911000cf542c50fea4
-title: 'Problem 37: Truncatable primes'
+title: 'Завдання 37: скоротні прості числа'
 challengeType: 1
 forumTopicId: 302031
 dashedName: problem-37-truncatable-primes
@@ -8,11 +8,11 @@ dashedName: problem-37-truncatable-primes
 
 # --description--
 
-The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+Число 3739 має цікаву властивість. Оскільки воно є простим числом, з нього можна послідовно вилучати числа зліва направо і воно все одно залишатиметься простим на кожному етапі: 3797, 797, 97 та 7. Це працює аналогічно і в іншому напрямку: 3797, 379, 37 та 3.
 
-Find the sum of the only `n` (8 ≤ `n` ≤ 11) primes that are both truncatable from left to right and right to left.
+Знайдіть суму `n` простих чисел (8 ≤ `n` ≤ 11), які можна скоротити як зліва направо, так і справа наліво.
 
-NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+ПРИМІТКА: 2, 3, 5 та 7 не вважаються скоротними простими числами.
 
 # --hints--
 

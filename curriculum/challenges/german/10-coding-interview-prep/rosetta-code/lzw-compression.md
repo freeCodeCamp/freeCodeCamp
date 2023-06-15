@@ -16,19 +16,19 @@ Write a function that takes two parameters. The first parameter is a boolean whe
 
 # --hints--
 
-`LZW` should be a function.
+`LZW` sollte eine Funktion sein.
 
 ```js
 assert(typeof LZW === 'function');
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return a array.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT')));
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return a string.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` sollte einen String zurückgeben.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` sollte `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]` zurückgeben.
 
 ```js
 assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
@@ -76,7 +76,7 @@ assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
 ]);
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return `"TOBEORNOTTOBEORTOBEORNOT"`.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` sollte `"TOBEORNOTTOBEORTOBEORNOT"` zurückgeben.
 
 ```js
 assert.equal(
@@ -102,7 +102,7 @@ assert.equal(
 );
 ```
 
-`LZW(true, "0123456789")` should return `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`.
+`LZW(true, "0123456789")` sollte `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]` zurückgeben.
 
 ```js
 assert.deepEqual(LZW(true, '0123456789'), [
@@ -119,7 +119,7 @@ assert.deepEqual(LZW(true, '0123456789'), [
 ]);
 ```
 
-`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` should return `"0123456789"`.
+`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` sollte `"0123456789"` zurückgeben.
 
 ```js
 assert.equal(
@@ -128,13 +128,13 @@ assert.equal(
 );
 ```
 
-`LZW(true, "BABAABAAA")` should return `[66, 65, 256, 257, 65, 260]`.
+`LZW(true, "BABAABAAA")` sollte `[66, 65, 256, 257, 65, 260]` zurückgeben.
 
 ```js
 assert.deepEqual(LZW(true, 'BABAABAAA'), [66, 65, 256, 257, 65, 260]);
 ```
 
-`LZW(false, [66, 65, 256, 257, 65, 260])` should return `"BABAABAAA"`.
+`LZW(false, [66, 65, 256, 257, 65, 260])` sollte `"BABAABAAA"` zurückgeben.
 
 ```js
 assert.equal(LZW(false, [66, 65, 256, 257, 65, 260]), 'BABAABAAA');

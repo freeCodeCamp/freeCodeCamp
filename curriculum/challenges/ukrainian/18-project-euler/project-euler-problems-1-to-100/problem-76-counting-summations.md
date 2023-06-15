@@ -1,6 +1,6 @@
 ---
 id: 5900f3b81000cf542c50fecb
-title: 'Problem 76: Counting summations'
+title: 'Завдання 76: підрахунок сум'
 challengeType: 1
 forumTopicId: 302189
 dashedName: problem-76-counting-summations
@@ -8,7 +8,7 @@ dashedName: problem-76-counting-summations
 
 # --description--
 
-It is possible to write five as a sum in exactly six different ways:
+Число 5 можна записати як суму простих чисел шістьма різними способами:
 
 <div style='margin-left: 4em;'>
   4 + 1<br>
@@ -19,7 +19,7 @@ It is possible to write five as a sum in exactly six different ways:
   1 + 1 + 1 + 1 + 1<br><br>
 </div>
 
-How many different ways can `n` be written as a sum of at least two positive integers?
+Скількома різними способами можна записати `n` як суму хоча б двох додатних чисел?
 
 # --hints--
 

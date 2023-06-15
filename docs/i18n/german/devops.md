@@ -203,19 +203,19 @@ Du kannst die genaue Version, die eingesetzt wurde, in den Build- und Deployment
 
 Es gibt einige bekannte Einschränkungen und Kompromisse bei der Beta-Version der Plattform.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Benutzer der Beta-Version haben ein von der Produktionsversion getrenntes Konto.** Die Beta-Version verwendet eine von der Produktionsversion physisch getrennte Datenbank. So können wir versehentliche Datenverluste oder Änderungen verhindern. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Es wird erwartet, dass die Deployments häufig und in schnellen Iterationen erfolgen, manchmal mehrmals am Tag. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Schicke keine normalen Nutzer auf diese Seite, um eine Korrektur zu bestätigen.
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   Die Beta-Seite ist und war immer dazu da, die lokale Entwicklung und das Testen zu unterstützen, nichts anderes. Es ist kein Versprechen auf das, was kommt, sondern ein Ausblick auf das, woran gearbeitet wird.
 
-- #### Die Anmeldeseite kann anders aussehen als die Produktionsseite
+- **Sign in page may look different than production**
 
   Wir verwenden einen Test-Mandanten für freeCodeCamp.dev auf Auth0 und haben daher nicht die Möglichkeit, eine benutzerdefinierte Domain einzustellen. Dies führt dazu, dass alle Weiterleitungsaufrufe und die Anmeldeseite auf einer Standarddomain erscheinen, wie z.B.: `https://freecodecamp-dev.auth0.com/`. Dies hat keinen Einfluss auf die Funktionalität und ist so nah an der Produktion, wie wir es nur bekommen können.
 

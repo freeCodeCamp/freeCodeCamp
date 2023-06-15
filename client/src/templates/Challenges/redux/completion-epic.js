@@ -35,6 +35,7 @@ import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
+  examResultsSelector,
   projectFormValuesSelector,
   isBlockNewlyCompletedSelector
 } from './selectors';
@@ -78,6 +79,7 @@ function submitModern(type, state) {
   if (
     challengeType === 11 ||
     challengeType === 15 ||
+    challengeType === 19 ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {
@@ -159,8 +161,26 @@ const submitters = {
   tests: submitModern,
   backend: submitBackendChallenge,
   'project.frontEnd': submitProject,
-  'project.backEnd': submitProject
+  'project.backEnd': submitProject,
+  exam: submitExam
 };
+
+function submitExam(type, state) {
+  // TODO: verify shape of examResults?
+  if (type === actionTypes.submitChallenge) {
+    const { id } = challengeMetaSelector(state);
+    const examResults = examResultsSelector(state);
+    const { username } = userSelector(state);
+    const challengeInfo = { id, examResults };
+
+    const update = {
+      endpoint: '/exam-challenge-completed',
+      payload: challengeInfo
+    };
+    return postChallenge(update, username);
+  }
+  return empty();
+}
 
 export default function completionEpic(action$, state$) {
   return action$.pipe(

@@ -2,11 +2,11 @@ Folge dieser Anleitung, um die freeCodeCamp mobile App lokal auf deinem System e
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+## How to Prepare your Local Machine
 
 Installiere zunächst die erforderliche Software für dein Betriebssystem.
 
-#### Prerequisites
+### Prerequisites
 
 | Voraussetzung                                 | Version | Notizen                                                       |
 | --------------------------------------------- | ------- | ------------------------------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Sobald du die notwendigen Ressourcen installiert hast, musst du deine Entwicklungsumgebung vorbereiten. Dies ist bei vielen Entwicklungsabläufen üblich, und du musst dies nur einmal tun.
 
-##### Befolge diese Schritte, um deine Entwicklungsumgebung vorzubereiten:
+#### Follow these steps to get your development environment ready:
 
 1. Installiere [Git](https://git-scm.com/) oder deinen bevorzugten Git-Client, falls du das nicht schon getan hast. Aktualisiere die neueste Version; die Version, die mit deinem Betriebssystem mitgeliefert wurde, ist möglicherweise veraltet.
 
@@ -361,7 +361,7 @@ Folge diesen Schritten:
     git push origin branch/name-here
     ```
 
-## Einen Pull Request (PR) vorschlagen
+## Proposing a Pull Request (PR)
 
 Nachdem du deine Änderungen übertragen hast, kannst du hier nachlesen, [wie man einen Pull Request erstellt](how-to-open-a-pull-request.md).
 
@@ -374,7 +374,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Fehlerbehebung
+## Troubleshooting
 
 ### Probleme bei der Installation der empfohlenen Voraussetzungen
 
@@ -398,7 +398,7 @@ Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere 
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 
-## Hilfe bekommen
+## Getting Help
 
 Wenn du nicht weiterkommst und Hilfe brauchst, kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors "Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 

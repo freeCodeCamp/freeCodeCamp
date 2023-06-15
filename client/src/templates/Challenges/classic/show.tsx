@@ -442,6 +442,7 @@ function ShowClassic({
                 previewMounted={previewMounted}
               />
             }
+            windowTitle={windowTitle}
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }

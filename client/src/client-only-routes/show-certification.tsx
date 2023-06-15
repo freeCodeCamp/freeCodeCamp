@@ -344,10 +344,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           <div className='row signatures'>
             <Image
               alt="Quincy Larson's Signature"
-              src={
-                'https://cdn.freecodecamp.org' +
-                '/platform/english/images/quincy-larson-signature.svg'
-              }
+              src='https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
             />
             <p>
               <strong>Quincy Larson</strong>

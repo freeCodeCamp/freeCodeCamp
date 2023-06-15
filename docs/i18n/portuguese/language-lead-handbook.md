@@ -373,4 +373,4 @@ O usuário agora é um revisor.
 
 ## Como adicionar ou atualizar um idioma
 
-Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). Se você estiver atualizando um idioma, a seção sobre a [configuração da ordem dos superblocos de idioma](how-to-enable-new-languages.md#configure-the-language-superblock-order) deve ser útil.
+Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). Se você estiver atualizando um idioma, a seção sobre a [configuração dos superblocos traduzidos](how-to-enable-new-languages.md#set-translated-superblocks) deve ser útil.
