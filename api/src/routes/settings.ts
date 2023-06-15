@@ -6,14 +6,12 @@ import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
 
 export const isPictureWithProtocol = (picture?: string): boolean => {
-  let hasURLProtocol = true;
+  if (!picture) return false;
   try {
-    const url = picture ? new URL(picture) : null;
-    return (hasURLProtocol =
-      !!url && (url.protocol == 'http:' || url.protocol == 'https:'));
+    const url = new URL(picture);
+    return url.protocol == 'http:' || url.protocol == 'https:';
   } catch {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    return (hasURLProtocol = false);
+    return false;
   }
 };
 
@@ -207,37 +205,37 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
-  ),
-    fastify.put(
-      '/update-my-about',
-      {
-        schema: schemas.updateMyAbout
-      },
-      async (req, reply) => {
-        const hasProtocol = isPictureWithProtocol(req.body.picture);
+  );
+  fastify.put(
+    '/update-my-about',
+    {
+      schema: schemas.updateMyAbout
+    },
+    async (req, reply) => {
+      const hasProtocol = isPictureWithProtocol(req.body.picture);
 
-        try {
-          await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
-            data: {
-              about: req.body.about,
-              name: req.body.name,
-              location: req.body.location,
-              ...(hasProtocol && { picture: req.body.picture })
-            }
-          });
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            about: req.body.about,
+            name: req.body.name,
+            location: req.body.location,
+            ...(hasProtocol && { picture: req.body.picture })
+          }
+        });
 
-          return {
-            message: 'flash.updated-about-me',
-            type: 'success'
-          } as const;
-        } catch (err) {
-          fastify.log.error(err);
-          void reply.code(500);
-          return { message: 'flash.wrong-updating', type: 'danger' } as const;
-        }
+        return {
+          message: 'flash.updated-about-me',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
-    );
+    }
+  );
 
   fastify.put(
     '/update-my-keyboard-shortcuts',
