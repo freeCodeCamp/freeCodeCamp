@@ -205,6 +205,8 @@ export const schemas = {
     }),
     response: {
       200: Type.Object({
+        // TODO(Post-MVP): delete completedDate and alreadyCompleted? As far as
+        // I can tell, they are not used anywhere
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean()
