@@ -4,6 +4,7 @@ import {
 } from '@fastify/type-provider-typebox';
 
 import { formatValidationError } from '../utils/error-formatting';
+import { ProgressTimestamp, getPoints } from '../utils/progress';
 import { canSubmitCodeRoadCertProject } from './helpers/challenge-helpers';
 
 export const challengeRoutes: FastifyPluginCallbackTypebox = (
@@ -110,8 +111,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         // functions that build the update object based on the challenge type.
         // Unlike buildUserUpdate we want multiple functions that we can call if
         // appropriate.
-        // TODO: Handle the other progressTimestamp types.
-        const progressTimestamps = user.progressTimestamps as number[];
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
 
         if (alreadyCompleted) {
           await fastify.prisma.user.update({
@@ -144,8 +145,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        // TODO: replace this with the function used in get-session-user.
-        const points = (user.progressTimestamps as unknown[]).length;
+        const points = getPoints(progressTimestamps);
 
         return {
           alreadyCompleted,
