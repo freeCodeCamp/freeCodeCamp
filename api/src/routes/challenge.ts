@@ -28,7 +28,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           githubLink: Type.Optional(Type.String())
         }),
         response: {
-          // TODO: update to correct schema and test success case.
           200: Type.Object({
             completedDate: Type.Number(),
             points: Type.Number(),
@@ -36,22 +35,26 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           }),
           400: Type.Object({
             type: Type.Literal('error'),
-            message: Type.String()
-            // TODO: use literals if possible.
-            // message: Type.Union([
-            //   Type.Literal(
-            //     'That does not appear to be a valid challenge submission.'
-            //   ),
-            //   Type.Literal(
-            //     'You have not provided the valid links for us to inspect your work.'
-            //   )
-            // ])
+            message: Type.Union([
+              Type.Literal(
+                'That does not appear to be a valid challenge submission.'
+              ),
+              Type.Literal(
+                'You have not provided the valid links for us to inspect your work.'
+              )
+            ])
           }),
           403: Type.Object({
             type: Type.Literal('error'),
             message: Type.Literal(
               'You have to complete the project before you can submit a URL.'
             )
+          }),
+          500: Type.Object({
+            message: Type.Literal(
+              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+            ),
+            type: Type.Literal('danger')
           })
         }
       },
@@ -156,8 +159,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         // TODO: send to Sentry
         fastify.log.error(err);
         void reply.code(500);
-        // TODO: use proper error message.
-        return { message: '', type: 'error' } as const;
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
       }
     }
   );
