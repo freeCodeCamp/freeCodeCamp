@@ -7,10 +7,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import {
-  modalDefaultDonation,
-  PaymentContext
-} from '../../../../config/donation-settings';
+import { PaymentContext } from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
@@ -57,19 +54,7 @@ type DonateModalProps = {
 
 const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
   const { t } = useTranslation();
-  const rotateProgressModalCta = useFeature('progress-modal-cta-rotation').on;
-  if (rotateProgressModalCta)
-    return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
-
-  const donationDuration = modalDefaultDonation.donationDuration;
-  switch (donationDuration) {
-    case 'one-time':
-      return <b>{t('donate.duration')}</b>;
-    case 'month':
-      return <b>{t('donate.duration-2')}</b>;
-    default:
-      return <b>{t('donate.duration-4')}</b>;
-  }
+  return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
 };
 
 const RenderIlustration = ({
