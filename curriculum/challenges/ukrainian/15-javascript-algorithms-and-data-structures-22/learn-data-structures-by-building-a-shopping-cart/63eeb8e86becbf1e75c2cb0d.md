@@ -18,7 +18,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*=/);
 ```
 
-You should use `const` to declare `totalCountPerProduct`.
+Ви повинні використати `const`, щоб оголосити `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];

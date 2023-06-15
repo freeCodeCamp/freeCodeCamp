@@ -22,7 +22,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /currentProductCountSpan\s*=/);
 ```
 
-You should use `const` to declare `currentProductCountSpan`.
+Ви повинні використати `const`, щоб оголосити `currentProductCountSpan`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
