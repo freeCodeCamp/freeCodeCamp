@@ -1,15 +1,15 @@
 ---
 id: 647e22d18acb466c97ccbef8
-title: 'Foundational C# with Microsoft Certification Exam'
+title: 'Exame de fundamentos de C# com certificação da Microsoft'
 challengeType: 17
 dashedName: foundational-c-sharp-with-microsoft-certification-exam
 ---
 
 # --description--
 
-Here are some rules:
+Aqui vão algumas regras:
 
-- click start
+- clique em Iniciar
 
 # --instructions--
 
