@@ -398,7 +398,7 @@ describe('userRoutes', () => {
         });
       });
 
-      afterAll(async () => {
+      afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.delete({
           where: { id: 'dummy-id' }
         });
