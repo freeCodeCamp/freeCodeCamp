@@ -377,12 +377,10 @@ const algoliaIndices = {
 
 Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 
-Відкрийте файл `serve.json` у новій папці та замініть його вміст на наступне:
+In your new folder, open the `redirects.json` file and replace its contents with an empty array:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Потім зафіксуйте та відправте гілку до репозиторію News.

@@ -377,12 +377,10 @@ Em seguida, vá para o diretório `config/i18n/locales`, crie uma pasta e inform
 
 Em seguida, copie os arquivos JSON do diretório `english` para a sua nova pasta.
 
-Na sua nova pasta, abra o arquivo `serve.json` e substitua seu conteúdo pelo seguinte:
+In your new folder, open the `redirects.json` file and replace its contents with an empty array:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Em seguida, faça o commit e o push de sua branch diretamente para o repositório News.

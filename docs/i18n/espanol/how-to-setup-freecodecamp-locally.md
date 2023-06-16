@@ -2,6 +2,8 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 ## Choose between Gitpod or your Own Machine (local setup)
 
+> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+
 Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
@@ -14,8 +16,6 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 | Más lento y puede tardar unos minutos en iniciarse                          | Más rápido y puede ponerse en marcha en segundos                                   |
 | Necesita conexión a Internet para funcionar                                 | Requiere una conexión mínima a Internet (una vez configurado)                      |
 | Algunas tareas, como la compilación y las pruebas, pueden llevar más tiempo | Realización más rápida de las tareas (en función de las capacidades de tu máquina) |
-
-> [!ATTENTION] **Nota:** Si utilizas Windows 10 u 11, tendrás que utilizar WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
 
 ### How to Prepare a Gitpod Workspace
 

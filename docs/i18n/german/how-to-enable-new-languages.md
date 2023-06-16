@@ -377,12 +377,10 @@ Als nächstes gehst du in das Verzeichnis `config/i18n/locales`, erstellst einen
 
 Kopiere dann die JSON-Dateien aus dem Verzeichnis `english` in deinen neuen Ordner.
 
-Öffne in deinem neuen Ordner die Datei `serve.json` und ersetze ihren Inhalt durch den folgenden:
+In your new folder, open the `redirects.json` file and replace its contents with an empty array:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Dann commitest und pushst du deinen Zweig direkt in das News-Repository.
