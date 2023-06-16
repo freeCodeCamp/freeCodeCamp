@@ -311,10 +311,19 @@ describe('userRoutes', () => {
     describe('/user/user-token', () => {
       let userId: string | undefined;
       beforeEach(async () => {
-        const user = await fastifyTestInstance.prisma.user.findFirst({
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
           where: { email: 'foo@bar.com' }
         });
         userId = user?.id;
+
+        await fastifyTestInstance.prisma.userToken.create({
+          data: {
+            created: new Date(),
+            id: '123',
+            ttl: 1000,
+            userId
+          }
+        });
       });
 
       afterEach(async () => {
@@ -393,7 +402,37 @@ describe('userRoutes', () => {
         ).toBeNull();
         expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
       });
+
+      test('DELETE returns 200 status with null userToken', async () => {
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response.body).toStrictEqual({ userToken: null });
+        expect(response.status).toBe(200);
+        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(0);
+      });
+
+      test('DELETEing a missing userToken returns 404 status with an error message', async () => {
+        await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response.body).toStrictEqual({
+          type: 'info',
+          message: 'userToken not found'
+        });
+        expect(response.status).toBe(404);
+      });
     });
+
     describe('user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
@@ -577,6 +616,15 @@ describe('userRoutes', () => {
     });
 
     describe('/user/user-token', () => {
+      test('DELETE returns 401 status code with error message', async () => {
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response?.statusCode).toBe(401);
+      });
+
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/user/user-token', {
           method: 'POST',

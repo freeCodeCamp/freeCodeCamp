@@ -1,7 +1,10 @@
 import _, { isEmpty } from 'lodash';
 import { ObjectId } from 'mongodb';
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { customAlphabet } from 'nanoid';
+import {
+  Type,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
 import {
@@ -261,6 +264,53 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       userToken: encodeUserToken(token.id)
     };
   });
+
+  fastify.delete(
+    '/user/user-token',
+    {
+      schema: {
+        response: {
+          200: Type.Object({
+            userToken: Type.Null()
+          }),
+          404: Type.Object({
+            message: Type.Literal('userToken not found'),
+            type: Type.Literal('info')
+          }),
+          500: Type.Object({
+            message: Type.Literal(
+              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+            ),
+            type: Type.Literal('danger')
+          })
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { count } = await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+
+        if (count === 0) {
+          void reply.code(404);
+          return {
+            message: 'userToken not found',
+            type: 'info'
+          } as const;
+        }
+        return { userToken: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        } as const;
+      }
+    }
+  );
 
   done();
 };
