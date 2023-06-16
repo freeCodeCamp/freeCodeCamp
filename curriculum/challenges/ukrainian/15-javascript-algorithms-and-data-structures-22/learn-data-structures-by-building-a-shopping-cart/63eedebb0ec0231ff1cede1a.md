@@ -1,6 +1,6 @@
 ---
 id: 63eedebb0ec0231ff1cede1a
-title: Step 22
+title: Крок 22
 challengeType: 0
 dashedName: step-22
 ---
@@ -39,7 +39,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)/);
 ```
 
-Your callback function should be empty.
+Функція зворотного виклику повинна бути порожньою.
 
 ```js
 const cart = new ShoppingCart();
