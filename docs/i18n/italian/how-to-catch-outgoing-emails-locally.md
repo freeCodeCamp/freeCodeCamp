@@ -7,11 +7,11 @@
 
 ## Introduzione
 
-Some email workflows, like updating a user's email, require the back-end api-server to send outgoing emails. MailHog è una alternativa ad usare un provider di un servizio email per mandare messagi email. È uno strumento per lo sviluppo per testare le email che catturerà i messaggi email mandati dalla tua istanza di freeCodeCamp.
+Some email workflows, like updating a user's email, require the back-end API server to send outgoing emails. MailHog è una alternativa ad usare un provider di un servizio email per mandare messagi email. È uno strumento per lo sviluppo per testare le email che catturerà i messaggi email mandati dalla tua istanza di freeCodeCamp.
 
 ## Installare MailHog
 
-MailHog can be installed on macOS, Windows, and Linux or used via Docker
+MailHog can be installed on macOS, Windows, and Linux or used via Docker.
 
 <details><summary>Installare MailHog con Docker</summary>
 
@@ -42,7 +42,7 @@ brew install mailhog
 brew services start mailhog
 ```
 
-I comandi qui sopra avvieranno un servizio mailhog in background.
+The above commands will start a MailHog service in the background.
 
 Quando l'installazione è completa, puoi iniziare a [usare MailHog](#using-mailhog).
 

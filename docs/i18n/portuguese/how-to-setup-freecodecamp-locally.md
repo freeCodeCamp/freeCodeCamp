@@ -2,6 +2,8 @@ Siga estas orientações para criar um ambiente de desenvolvimento para o freeCo
 
 ## Escolha entre o Gitpod ou seu próprio computador (configuração local)
 
+> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente no Windows.
+
 Se você deseja fazer uma contribuição única, use o Gitpod para fazer alterações. A configuração do Gitpod abre um ambiente pronto para código em poucos minutos no seu navegador. Para contribuir a longo prazo, recomendamos que você instale o freeCodeCamp em seu computador.
 
 Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é a melhor para você:
@@ -14,8 +16,6 @@ Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é
 | Mais lento e pode levar alguns minutos para abrir                                     | Mais rápido e pode ser iniciado em segundos                                      |
 | Precisa de uma conexão com a internet para funcionar                                  | Conexão com a internet mínima necessária (uma vez configurada)                   |
 | Algumas tarefas, como a compilação e testes, podem demorar mais para serem concluídas | Completa as tarefas mais rapidamente (dependendo das capacidades da sua máquina) |
-
-> [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente no Windows.
 
 ### Como preparar um espaço de trabalho no GitPod
 
