@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { createSelector } from 'reselect';
-import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -14,7 +12,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import ProgressBar from '../../../components/ProgressBar';
 import { ChallengeMeta } from '../../../redux/prop-types';
-import { completedChallengesInBlockSelector } from '../redux/selectors';
+import Quote from '../../../assets/icons/qoute';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
@@ -53,15 +51,7 @@ export interface LowerJawProps {
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
-  completedChallengesInBlock: number;
 }
-
-const mapStateToProps = createSelector(
-  completedChallengesInBlockSelector,
-  (completedChallengesInBlock: number) => ({
-    completedChallengesInBlock
-  })
-);
 
 const LowerButtonsPanel = ({
   resetButtonText,
@@ -125,6 +115,15 @@ const LowerJawTips = ({
   );
 };
 
+const LowerJawQuote = ({ quote }: { quote: string }) => (
+  <div className='hint-status fade-in'>
+    <Quote aria-hidden='true' />
+    <div className='hint-description'>
+      <p>{`"${quote}"`}</p>
+    </div>
+  </div>
+);
+
 const LowerJawStatus = ({
   children,
   text,
@@ -151,8 +150,7 @@ const LowerJaw = ({
   testsLength,
   openResetModal,
   isSignedIn,
-  updateContainer,
-  completedChallengesInBlock
+  updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = React.useRef('');
   const [quote, setQuote] = useState(randomCompliment());
@@ -166,7 +164,6 @@ const LowerJaw = ({
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [focusManagementCompleted, setFocusManagementCompleted] =
     useState(false);
-  const newToBlock = completedChallengesInBlock < 3;
   const isCheckYourCodeButtonClicked = () => {
     const activeElement = document.activeElement;
     // Need to check Submit button as well because if it has focus then it is
@@ -303,15 +300,18 @@ const LowerJaw = ({
           <span className='sr-only'>{t('aria.running-tests')}</span>
         )}
         {challengeIsCompleted && (
-          <LowerJawStatus
-            testText={t('learn.test')}
-            showFeedback={isFeedbackHidden}
-            text={newToBlock ? t('learn.congratulations') : quote}
-          >
-            {!isCheckYourCodeButtonClicked() && (
-              <span className='sr-only'>, {t('aria.submit')}</span>
-            )}
-          </LowerJawStatus>
+          <>
+            <LowerJawStatus
+              testText={t('learn.test')}
+              showFeedback={isFeedbackHidden}
+              text={t('learn.congratulations')}
+            >
+              {!isCheckYourCodeButtonClicked() && (
+                <span className='sr-only'>, {t('aria.submit')}</span>
+              )}
+            </LowerJawStatus>
+            <LowerJawQuote quote={quote} />
+          </>
         )}
         {hintRef.current && !challengeIsCompleted && (
           <LowerJawTips
@@ -345,4 +345,4 @@ const LowerJaw = ({
 
 LowerJaw.displayName = 'LowerJaw';
 
-export default connect(mapStateToProps)(LowerJaw);
+export default LowerJaw;
