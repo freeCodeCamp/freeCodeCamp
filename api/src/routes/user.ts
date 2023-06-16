@@ -1,10 +1,7 @@
 import _, { isEmpty } from 'lodash';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
 import {
@@ -268,23 +265,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   fastify.delete(
     '/user/user-token',
     {
-      schema: {
-        response: {
-          200: Type.Object({
-            userToken: Type.Null()
-          }),
-          404: Type.Object({
-            message: Type.Literal('userToken not found'),
-            type: Type.Literal('info')
-          }),
-          500: Type.Object({
-            message: Type.Literal(
-              'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-            ),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.deleteUserToken
     },
     async (req, reply) => {
       try {
