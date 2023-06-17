@@ -996,19 +996,19 @@
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "Proyectos Euler del 401 a 480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "En este último conjunto de retos, tendras que utilizar todo lo aprendido hasta este punto y utilizar conceptos avanzados como divisores unitarios, la rutina de Kaprekar y mucho más, para poder resolver estos problemas complejos."
         ]
       }
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "C# Fundacional con Microsoft",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "Este curso ofrece una introducción comprensiva a la programación en C#, cubriendo sus conceptos fundamentales, sintaxis y aplicación práctica en el desarrollo de software.",
+      "Por medio de la elaboración de ejercicios y proyectos, aprenderás sobre los aspectos fundamentales de C#, incluyendo variables, tipos de datos, estructuras de control y principios de la programación orientada a objetos.",
+      "Al final de este curso, habrás obtenido las destrezas prácticas y el conocimiento necesario para utilizar C# a tu favor para construir aplicaciones robustas y escalables."
     ],
     "blocks": {
       "write-your-first-code-using-c-sharp": {
