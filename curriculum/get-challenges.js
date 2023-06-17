@@ -334,6 +334,9 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.translationPending =
       lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+  }
+
+  function fixChallengeProperties(challenge) {
     if (challenge.challengeFiles) {
       // The client expects the challengeFiles to be an array of polyvinyls
       challenge.challengeFiles = challengeFilesToPolys(
@@ -344,6 +347,10 @@ Challenges that have been already audited cannot fall back to their English vers
       // The test runner needs the solutions to be arrays of polyvinyls so it
       // can sort them correctly.
       challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+    }
+    // if removeComments is not explicitly set, default to true
+    if (typeof challenge.removeComments === 'undefined') {
+      challenge.removeComments = true;
     }
   }
 
@@ -371,6 +378,7 @@ Challenges that have been already audited cannot fall back to their English vers
       : parseMD(getFullPath('english', filePath)));
 
     addMetaToChallenge(challenge, meta);
+    fixChallengeProperties(challenge);
 
     return challenge;
   }
