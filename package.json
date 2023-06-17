@@ -107,7 +107,7 @@
     "@babel/preset-react": "7.22.5",
     "@babel/preset-typescript": "7.22.5",
     "@testing-library/cypress": "8.0.7",
-    "@testing-library/dom": "8.20.0",
+    "@testing-library/dom": "8.20.1",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.2",
