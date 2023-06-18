@@ -33,7 +33,7 @@ tasks:
       exit;
 
   - name: db
-    # starting mongod in background, so it doesn't block prebuilds
+    # starting mongodb in background, so it doesn't block prebuilds
     before: >
       mkdir -p /workspace/data &&
       (mongod --dbpath /workspace/data &)
