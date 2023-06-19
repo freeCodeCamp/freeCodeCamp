@@ -1,22 +1,22 @@
 ---
 id: 647e224b8acb466c97ccbeef
-title: 'Create C# Methods with Parameters'
+title: 'Crie métodos com parâmetros em C#'
 challengeType: 19
 dashedName: create-c-sharp-methods-with-parameters
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/</a> and complete all the tasks for the "Create C# Methods with Parameters" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/</a> e complete todas as tarefas do módulo "Crie métodos com parâmetros em C#". Isto é necessário para adquirir o troféu "Crie métodos em aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

@@ -69,14 +69,13 @@ assert(
 應使用模板字符串和表達式內插。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+assert.match(code, /(`.*\${.*}.*`)/);
 ```
 
 應該使用遍歷。
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
+assert(code.match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

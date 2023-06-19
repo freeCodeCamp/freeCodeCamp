@@ -1,22 +1,22 @@
 ---
 id: 647e21658acb466c97ccbee2
-title: 'Control Variable Scope and Logic Using Code Blocks in C#'
+title: 'Controle o escopo de variáveis e a lógica usando blocos de código em C#'
 challengeType: 19
 dashedName: control-variable-scope-and-logic-using-code-blocks-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/</a> and complete all the tasks for the "Control Variable Scope and Logic Using Code Blocks in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/</a> e complete todas as tarefas do módulo "Controle o escopo de variáveis e a lógica usando blocos de código em C#". Isto é necessário para adquirir o troféu "Adicione lógica a aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

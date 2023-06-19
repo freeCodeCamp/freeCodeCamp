@@ -49,7 +49,7 @@ assert(testArr_.every((e, i) => e === i + 1) && testArr_.length === 5);
 `Array.slice()` should not be used.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/slice/g));
+assert(!code.match(/slice/g));
 ```
 
 Destructuring on `list` should be used.
@@ -82,6 +82,7 @@ const sourceWithoutFirstTwo = removeFirstTwo(source);
 
 ```js
 function removeFirstTwo(list) {
+  // comment with 'slice' to check comments are removed in tests
   const [, , ...shorterList] = list;
   return shorterList;
 }

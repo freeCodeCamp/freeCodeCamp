@@ -1,22 +1,22 @@
 ---
 id: 647e21ba8acb466c97ccbee6
-title: 'Add Decision Logic to Your Code Using if, else, and else if statements in C#'
+title: 'Adicione lógica de decisão ao seu código usando instruções if, else e else if em C#'
 challengeType: 19
 dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> and complete all the tasks for the "Add Decision Logic to Your Code Using if, else, and else if statements in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> e complete todas as tarefas do módulo "Adicione lógica de decisão ao seu código usando instruções if, else e else if em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

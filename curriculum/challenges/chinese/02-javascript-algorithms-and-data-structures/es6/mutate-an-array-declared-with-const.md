@@ -36,24 +36,21 @@ console.log(s);
 不要替换 `const` 关键字。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const/g));
+assert(code.match(/const/g));
 ```
 
 `s` 应该是一个常量变量（通过使用 `const`）。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
+assert(code.match(/const\s+s/g));
 ```
 
 不要改变原数组的声明。
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(
-      /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
-    )
-  );
+assert(code.match(
+/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
+));
 ```
 
 `s` 应该等于 `[2, 5, 7]`。

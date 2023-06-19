@@ -1,22 +1,22 @@
 ---
 id: 647e223c8acb466c97ccbeee
-title: 'Create C# Methods that Return Values'
+title: 'Crie métodos em C# que retornem valores'
 challengeType: 19
 dashedName: create-c-sharp-methods-that-return-values
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/</a> and complete all the tasks for the "Create C# Methods that Return Values" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/</a> e complete todas as tarefas do módulo "Crie métodos em C# que retornem valores". Isto é necessário para adquirir o troféu "Crie métodos em aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

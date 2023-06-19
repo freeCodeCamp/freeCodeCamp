@@ -15,7 +15,7 @@ Let $n$ be a positive integer. An integer triple ($a$, $b$, $c$) is called a fac
 
 Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of $n$ which minimises $\frac{c}{a}$. One can show that this triple is unique.
 
-For example, $f(165) = 19$, $f(100\\,100) = 142$ and $f(20!) = 4\\,034\\,872$.
+Наприклад, $f(165) = 19$, $f(100\\,100) = 142$ та $f(20!) = 4\\,034\\,872$.
 
 Find $f(43!)$.
 
