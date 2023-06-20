@@ -17,6 +17,8 @@ const multifileCertProject = 14;
 const theOdinProject = 15;
 const colab = 16;
 const exam = 17;
+const msTrophyUrl = 18;
+const multipleChoice = 19;
 
 // individual exports
 exports.backend = backend;
@@ -26,6 +28,8 @@ exports.pythonProject = pythonProject;
 exports.codeAllyCert = codeAllyCert;
 exports.colab = colab;
 exports.exam = exam;
+exports.msTrophyUrl = msTrophyUrl;
+exports.multipleChoice = multipleChoice;
 
 exports.challengeTypes = {
   html,
@@ -46,7 +50,9 @@ exports.challengeTypes = {
   multifileCertProject,
   theOdinProject,
   colab,
-  exam
+  exam,
+  msTrophyUrl,
+  multipleChoice
 };
 
 exports.isFinalProject = challengeType => {
@@ -87,7 +93,9 @@ exports.viewTypes = {
   [multifileCertProject]: 'classic',
   [theOdinProject]: 'odin',
   [colab]: 'frontend',
-  [exam]: 'exam'
+  [exam]: 'exam',
+  [msTrophyUrl]: 'frontend',
+  [multipleChoice]: 'video'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -112,5 +120,7 @@ exports.submitTypes = {
   [multifileCertProject]: 'tests',
   [theOdinProject]: 'tests',
   [colab]: 'project.backEnd',
-  [exam]: 'exam'
+  [exam]: 'exam',
+  [msTrophyUrl]: 'project.frontEnd',
+  [multipleChoice]: 'tests'
 };

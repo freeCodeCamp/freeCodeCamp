@@ -1,6 +1,6 @@
 ---
 id: 5900f3b61000cf542c50fec8
-title: 'Problem 73: Counting fractions in a range'
+title: 'Завдання 73: підрахунок дробів в межах діапазону'
 challengeType: 1
 forumTopicId: 302186
 dashedName: problem-73-counting-fractions-in-a-range
@@ -8,15 +8,15 @@ dashedName: problem-73-counting-fractions-in-a-range
 
 # --description--
 
-Consider the fraction, $\frac{n}{d}$, where `n` and `d` are positive integers. If `n` &lt; `d` and highest common factor, ${HCF}(n, d) = 1$, it is called a reduced proper fraction.
+Розглянемо дріб $\frac{n}{d}$, де `n` та `d` є додатними цілими числами. Якщо `n` &lt; `d` та найбільший спільний дільник ${HCF}(n, d) = 1$, то це називається скоротним правильним дробом.
 
-If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order of size, we get:
+Якщо перерахувати скоротні правильні дроби для `d` ≤ 8 у порядку зростання, то отримаємо:
 
 $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, \frac{1}{3}, \mathbf{\frac{3}{8}, \frac{2}{5}, \frac{3}{7}}, \frac{1}{2}, \frac{4}{7}, \frac{3}{5}, \frac{5}{8}, \frac{2}{3}, \frac{5}{7}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \frac{6}{7}, \frac{7}{8}$$
 
-It can be seen that there are `3` fractions between $\frac{1}{3}$ and $\frac{1}{2}$.
+Можна побачити, що між $\frac{1}{3}$ та $\frac{1}{2}$ існує `3` дроби.
 
-How many fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set of reduced proper fractions for `d` ≤ `limit`?
+Скільки дробів розташовано між $\frac{1}{3}$ та $\frac{1}{2}$ у відсортованій множині скоротних правильних дробів для `d` ≤ `limit`?
 
 # --hints--
 

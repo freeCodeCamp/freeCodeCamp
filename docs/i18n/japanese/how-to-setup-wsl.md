@@ -1,6 +1,6 @@
 # Windows Subsystem for Linux (WSL) で freeCodeCamp 開発環境を構築する
 
-> [!NOTE] これらの指示に従う前に、システムが要件を満たしていることを確認してください。
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements.
 > 
 > **WSL2**: Windows 10 64-bit (Version 2004, Build 19041以上) - Windows 10 Home を含むすべてのディストリビューションで利用可能です。
 > 
@@ -18,7 +18,7 @@
 
    > [!NOTE]
    > 
-   > 他の非debianベースのdistrosを使用することができますが、それぞれの問題点があり、このガイドの範囲を超えています。
+   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
 
 2. OS の依存関係を更新します。
 
@@ -44,13 +44,13 @@ git version 2.25.1
 
 ## コードエディターをインストールする
 
-Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインストールすることを強くお勧めします。 WSLの素晴らしいサポートがあり、自動的にWSL distro に必要な拡張機能をすべてインストールします。
+Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインストールすることを強くお勧めします。 It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
 
 基本的には、Windows にインストールされている VS Code を使用して、Ubuntu-18.04 上でコードを編集して保存します。
 
-[IntelliJ Idea](https://www.jetbrains.com/idea/) を使用する場合、Node インタプリターと Npm パッケージマネジャーを WSL distro にインストールされているものに更新する必要があるかもしれません。
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
 
-その設定は、設定 > 言語 & フレームワーク > Node.js および NPM で確認できます。
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
 
 ## Docker Desktop をインストールする
 
@@ -72,7 +72,7 @@ WSL2 で動作するように Docker Desktop を設定したら、次の手順�
 
 1. 新しい Ubuntu-18.04 端末を起動します。
 
-2. dockerhub から `MongoDB 4.0.x` を取得します。
+2. Pull `MongoDB 4.0.x` from Docker Hub
 
    ```console
    docker pull mongo:4.0

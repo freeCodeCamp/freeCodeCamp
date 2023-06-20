@@ -22,11 +22,7 @@ module.exports = defineConfig({
     specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
 
     // Temporary disable these until we can address the flakiness
-    excludeSpecPattern: [
-      'cypress/e2e/**/challenge-hot-keys.ts',
-      'cypress/e2e/**/multifile.ts',
-      'cypress/e2e/**/codeally.ts'
-    ],
+    excludeSpecPattern: ['cypress/e2e/**/challenge-hot-keys.ts'],
 
     setupNodeEvents(on, config) {
       config.env = config.env || {};
