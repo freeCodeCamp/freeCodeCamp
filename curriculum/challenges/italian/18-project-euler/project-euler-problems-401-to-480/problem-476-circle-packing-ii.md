@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005b
-title: 'Problem 476: Circle Packing II'
+title: 'Problema 476: impaccamento di cerchi II'
 challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii
@@ -8,17 +8,17 @@ dashedName: problem-476-circle-packing-ii
 
 # --description--
 
-Let $R(a, b, c)$ be the maximum area covered by three non-overlapping circles inside a triangle with edge lengths $a$, $b$ and $c$.
+Sia $R(a, b, c)$ l'area massima coperta da tre cerchi non sovrapposti all'interno di un triangolo con lunghezze dei lati $a$, $b$ e $c$.
 
-Let $S(n)$ be the average value of $R(a, b, c)$ over all integer triplets $(a, b, c)$ such that $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
+Sia $S(n)$ il valore medio di $R(a, b, c)$ su tutte le terne intere $(a, b, c)$ tali che $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
 
-You are given $S(2) = R(1, 1, 1) ≈ 0.31998$, $S(5) ≈ 1.25899$.
+Ti viene dato che $S(2) = R(1, 1, 1) ≈ 0.31998$, $S(5) ≈ 1.25899$.
 
-Find $S(1803)$ rounded to 5 decimal places behind the decimal point.
+Trova $S(1803)$ arrotondato a 5 cifre dopo il punto decimale.
 
 # --hints--
 
-`circlePackingTwo()` should return `110242.87794`.
+`circlePackingTwo()` dovrebbe restituire `110242.87794`.
 
 ```js
 assert.strictEqual(circlePackingTwo(), 110242.87794);

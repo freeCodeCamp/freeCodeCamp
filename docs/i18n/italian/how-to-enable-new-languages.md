@@ -118,68 +118,32 @@ export const rtlLangs = [''];
 
 > [!NOTE] Quando è stato impostato il deployment per una lingua che ha già una sezione `/news` live, può essere rimossa dall'array `hiddenLangs` e resa disponibile al pubblico.
 
-### Configurare l'ordine del superblocco di una lingua
+### Set Translated SuperBlocks
 
-Nel file [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts), devi impostare l'ordine e lo stato di tutti i superblocchi per la nuova lingua nell'oggetto `superBlockOrder`. Copia una delle chiavi della lingua e tutti i suoi valori, incollala in fondo all'oggetto (o in un'altra posizione) e cambia la chiave con la nuova lingua dall'enum `Languages`.
+In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-L'ordine dei superblocchi in questo oggetto rispecchia il modo in cui appaiono sulla pagina "Landing" e sulle mappe "Learn". Segui i commenti in quel file in modo da sapere come ti è permesso ordinare i superblocchi, poi spostali nella posizione appropriata per la nuova lingua.
-
-> [!ATTENTION] Non modificare l'ordine di alcuna chiave nell'oggetto, sposta solo i superblocchi nei diversi array
-
-L'array `CurriculumMaps.Landing` dovrebbe contenere esattamente un superblocco per tutte le nostre certificazioni attuali e l'oggetto `CurriculumMaps.Learn` dovrebbe avere tutti i superblocchi esistenti al suo interno. I superblocchi tradotti vanno in `TranslationStates.Audited` e i superblocchi non tradotti vanno in `TranslationStates.NotAudited`. Ognuno di questi due oggetti ha i quattro stati diversi in cui può essere un superblocco.
-
-- `SuperBlockStates.Current`: Means that the superblock is current, `Responsive Web Design` for example.
-- `SuperBlockStates.New`: Compare solo quando `SHOW_NEW_CURRICULUM` è impostato su `true` nel file `.env`. È per la visualizzazione di nuovi superblocchi su uno specifico build. For example, when we released the new RWD, we only showed it on English to start.
-- `SuperBlockStates.Upcoming`: Compare solo quando `SHOW_UPCOMING_CHANGES` è impostato su `true` nel file `.env`. È per mostrare i superblocchi localmente mentre sono in sviluppo. Oppure, se hai solo bisogno di nascondere un superblocco dalla mappa per qualche altra ragione.
-- `SuperBlockStates.Legacy`: Un superblocco viene spostato qui quando una versione più recente di quel superblocco è stata completamente tradotta e sostituita.
+Be sure to only add the superblocks which are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
 
 ### Configurare la ricerca
 
@@ -216,7 +180,7 @@ const algoliaIndices = {
 };
 ```
 
-## Attivare video localizzati
+### Enabling Localized Videos
 
 Per le sfide video, devi cambiare alcune cose. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. Per esempio, in questo modo aggiungeresti Dothraki alla query:
 
@@ -270,7 +234,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Interfaccia utente client
+## Client UI
 
 Dovrai fare un ulteriore passo per gestire le traduzioni dell'interfaccia utente client.
 
@@ -283,7 +247,7 @@ Dovrai copiare i seguenti file da `/client/i18n/locales/english` a `/client/i18n
 - `motivation.json`
 - `trending.json`
 
-## Testare traduzioni in locale
+## Testing Translations Locally
 
 Se desideri testare le traduzioni localmente, prima di aggiungerle al nostro repository principale - salta i cambiamenti delle procedure di Crowdin. Segui i passaggi per abilitare una lingua, quindi scarica le traduzioni da Crowdin e caricale nel tuo codice locale.
 
@@ -303,11 +267,11 @@ Una volta che questi saranno in posizione, dovresti essere in grado di eseguire 
 
 Per distribuire News per una nuova lingua, dovrai creare due PR. Una Pr sarà al [repo CDN](https://github.com/freeCodeCamp/cdn), e l'altra sarà al [repo News](https://github.com/freeCodeCamp/news).
 
-## Preparare il Repo CDN per la nuova lingua
+## Prep the CDN Repo for the New Language
 
 News ottiene i link di tendenza e i titoli degli articoli dal nostro CDN durante il build e li aggiunge al piè di pagina. News recupera anche i file Day.js dal CDN durante il build per localizzare date e orari per ogni lingua.
 
-### Aggiungere un file YAML per gli articoli di tendenza
+### Add a YAML File for Trending Articles
 
 Clona il [repo CDN](https://github.com/freeCodeCamp/cdn) e crea un nuovo branch.
 
@@ -329,7 +293,7 @@ article3link: ...
   ...
 ```
 
-### Aggiungere un file Day.js locale per la nuova lingua
+### Add a Day.js Locale File for the New Language
 
 Per impostazione predefinita, Day.js include solo l'inglese come locale. Per abilitarlo a lavorare con altre lingue, è necessario aggiungere un nuovo file locale Day.js al CDN.
 
@@ -367,13 +331,13 @@ Copia il codice locale Day.js dalla nuova scheda nel nuovo file che hai creato. 
 
 Quindi apri una PR al repo CDN per aggiungere i file YAML e Day.js per la revisione.
 
-## Preparare il Repo News per la nuova lingua
+## Prep the News Repo for the New Language
 
 Il [repo News](https://github.com/freeCodeCamp/news) prende i dati da un'istanza di Ghost, i file che hai aggiunto al CDN, fa il build di News e il deployment.
 
 > [!WARN] Pull requests to the News repo _must_ come from the same repo. Non dovresti lavorare da un fork per questo passaggio.
 
-### Modificare il file di configurazione principale
+### Modify the Main Config File
 
 Clona il repo News e crea un nuovo branch.
 
@@ -407,18 +371,16 @@ const algoliaIndices = {
 };
 ```
 
-### Aggiungere il file JSON i18next per la nuova lingua
+### Add the i18next JSON Files for the New Language
 
 Successivamente, vai nella cartella `config/i18n/locales`, crea una nuova cartella e dalle il nome della nuova lingua che stai aggiungendo. Ad esempio, se stai lanciando le News in Dothraki, crea una nuova cartella chiamata `dothraki`.
 
 Quindi copia i file JSON dalla cartella `english` nella tua nuova cartella.
 
-Nella nuova cartella, apri il file `serve.json` e sostituisci il suo contenuto con quanto segue:
+In your new folder, open the `redirects.json` file and replace its contents with an empty array:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Quindi fail il commit e il push del tuo branch direttamente dal repo News.

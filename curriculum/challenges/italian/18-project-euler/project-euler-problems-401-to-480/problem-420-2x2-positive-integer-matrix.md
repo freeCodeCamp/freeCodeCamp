@@ -1,6 +1,6 @@
 ---
 id: 5900f5111000cf542c510023
-title: 'Problem 420: 2x2 positive integer matrix'
+title: 'Problema 420: matrice intera positiva 2x2'
 challengeType: 1
 forumTopicId: 302090
 dashedName: problem-420-2x2-positive-integer-matrix
@@ -8,12 +8,12 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 # --description--
 
-A positive integer matrix is a matrix whose elements are all positive integers.
+Una matrice intera positiva è una matrice i cui elementi sono tutti interi positivi.
 
-Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. Here is an example:
+Alcune matrici intere positive possono essere espresse come un quadrato di una matrice intera positiva in due modi diversi. Ecco un esempio:
 
-$$\begin{pmatrix}   40 & 12 \\\\
-  48 & 40 \end{pmatrix} =
+$$$\begin{pmatrix}   40 & 12 \\\\
+  48 & 40 \end{pmatrix}=
 {\begin{pmatrix}
   2 & 3 \\\\
  12 & 2 \end{pmatrix}}^2 =
@@ -21,15 +21,15 @@ $$\begin{pmatrix}   40 & 12 \\\\
   6 & 1 \\\\
   4 & 6 \end{pmatrix}}^2$$
 
-We define $F(N)$ as the number of the 2x2 positive integer matrices which have a trace less than N and which can be expressed as a square of a positive integer matrix in two different ways.
+Definiamo $F(N)$ come il numero delle matrici intere positive 2x2 che hanno una traccia inferiore a N e che possono essere espresse come un quadrato di una matrice intera positiva in due modi diversi.
 
-We can verify that $F(50) = 7$ and $F(1000) = 1019$.
+Possiamo verificare che $F(50) = 7$ e $F(1000) = 1019$.
 
-Find $F({10}^7)$.
+Trova $F({10}^7)$.
 
 # --hints--
 
-`positiveIntegerMatrix()` should return `145159332`.
+`positiveIntegerMatrix()` dovrebbe restituire `145159332`.
 
 ```js
 assert.strictEqual(positiveIntegerMatrix(), 145159332);

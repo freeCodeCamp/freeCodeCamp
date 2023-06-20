@@ -2,11 +2,11 @@ Segui questa guida per impostare l'app mobile di freeCodeCamp localmente sul tuo
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+## How to Prepare your Local Machine
 
 Inizia installando i prerequisiti software per il tuo sistema operativo.
 
-#### Prerequisites
+### Prerequisites
 
 | Prerequisito                                  | Versione | Note                                         |
 | --------------------------------------------- | -------- | -------------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente di sviluppo. Questo è comune a molti flussi di lavoro di sviluppo, e si dovrà fare solo una volta.
 
-##### Segui questi passaggi per preparare il tuo ambiente di sviluppo:
+#### Follow these steps to get your development environment ready:
 
 1. Installa [Git](https://git-scm.com/) o il tuo client Git preferito, se non lo hai già. Aggiorna alla versione più recente; la versione fornita con il tuo sistema operativo potrebbe essere obsoleta.
 
@@ -361,7 +361,7 @@ Segui questi passaggi:
     git push origin branch/name-here
     ```
 
-## Proporre una Pull Request (PR)
+## Proposing a Pull Request (PR)
 
 Dopo aver fatto il commit delle tue modifiche, controlla qui per [come aprire una Pull Request](how-to-open-a-pull-request.md).
 
@@ -374,7 +374,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Risoluzione Dei Problemi
+## Troubleshooting
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
@@ -398,7 +398,7 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 
-## Ottenere Aiuto
+## Getting Help
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 

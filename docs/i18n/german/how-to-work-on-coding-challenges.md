@@ -482,13 +482,15 @@ Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausf
    ```
    pnpm run test -- -g challenge-title-goes-here ```
 
-Sobald du sichergestellt hast, dass jede Aufgabe, an der du gearbeitet hast, die Tests besteht, [erstelle bitte einen Pull-Request](how-to-open-a-pull-request.md).
-
 > [!TIP] Du kannst die Umgebungsvariable `LOCALE` in der `.env` auf die Sprache der Aufgabe(n) setzen, die du testen willst.
 > 
 > Die derzeit akzeptierten Werte sind `englisch` und `chinesisch`, wobei `englisch` standardmäßig eingestellt ist.
 
-### Nützliche Links
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 Aufgaben erstellen und bearbeiten:
 

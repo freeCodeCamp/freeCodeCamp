@@ -1,6 +1,6 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-title: 'Problem 81: Path sum: two ways'
+title: 'Завдання 81: сума шляхів (два способи)'
 challengeType: 1
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways
@@ -8,13 +8,13 @@ dashedName: problem-81-path-sum-two-ways
 
 # --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to `2427`.
+У наведеній нижче матриці 5х5 шлях з мінімальною сумою від верхнього лівого кута до нижнього правого **(рухаючись тільки праворуч і вниз)** виділений жирним червоним шрифтом і дорівнює `2427`.
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & 234 & 103 & 18\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
+Знайдіть суму найкоротшого шляху з лівого верхнього кута до нижнього правого, рухаючись лише праворуч і вниз у 2D масиві `matrix`, який представляє матрицю. Максимальний розмір матриці, що використовується в тестах, становить 80х80.
 
 # --hints--
 

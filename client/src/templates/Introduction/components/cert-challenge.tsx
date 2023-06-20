@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   certSlugTypeMap,
-  superBlockCertTypeMap,
-  SuperBlocks
+  superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
+
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {

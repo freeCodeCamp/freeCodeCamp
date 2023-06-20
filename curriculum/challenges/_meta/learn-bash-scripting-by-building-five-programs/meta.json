@@ -1,6 +1,7 @@
 {
   "name": "Learn Bash Scripting by Building Five Programs",
   "isUpcomingChange": false,
+  "dashedName": "learn-bash-scripting-by-building-five-programs",
   "helpCategory": "Backend Development",
   "order": 3,
   "time": "5 hours",

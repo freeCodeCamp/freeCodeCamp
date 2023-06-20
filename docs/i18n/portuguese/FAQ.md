@@ -1,12 +1,16 @@
-### Eu sou novo no GitHub e em código aberto. Por onde devo começar?
+# Perguntas frequentes
+
+Respostas para perguntas frequentes.
+
+## Eu sou novo no GitHub e em código aberto. Por onde devo começar?
 
 Leia nosso ["Guia de como contribuir com código aberto"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). É uma referência ampla para quem contribui com projetos pela primeira vez. E inclui muitas dicas de como contribuir para código aberto.
 
-### O que eu preciso saber para contribuir com a base de código?
+## O que eu preciso saber para contribuir com a base de código?
 
 O freeCodeCamp é executado em uma stack de JavaScript moderna. Se estiver interessado em contribuir com a nossa base de código, você precisará ter alguma familiaridade com JavaScript e com algumas das tecnologias que usamos como o Node.js, MongoDB, OAuth 2.0, React, Gatsby e Webpack.
 
-### Posso traduzir os recursos do freeCodeCamp?
+## Posso traduzir os recursos do freeCodeCamp?
 
 Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis em nossa plataforma de tradução.
 
@@ -14,7 +18,7 @@ Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos 
 
 Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](how-to-translate-files.md) primeiro.
 
-### Posso contribuir com artigos para o editorial do freeCodeCamp ou com vídeos para o canal do YouTube do CodeCamp?
+## Posso contribuir com artigos para o editorial do freeCodeCamp ou com vídeos para o canal do YouTube do CodeCamp?
 
 Sim - você pode contribuir com o nosso blog de publicação e com o canal do YouTube.
 
@@ -22,7 +26,7 @@ Se estiver interessado em escrever artigos para o editorial do freeCodeCamp, vis
 
 Para nos ajudar a fazer vídeos educacionais para nosso canal do YouTube, você pode seguir o [guia do canal do YouTube aqui](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
-### Como posso relatar um novo erro?
+## Como posso relatar um novo erro?
 
 Se você acha que encontrou um erro, primeiro leia o artigo ["Como relatar um erro"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) e siga suas instruções.
 
@@ -30,33 +34,33 @@ Se você está confiante de que é um novo erro, vá em frente e crie uma nova i
 
 Observe que essas issues do GitHub são para discussões e questões relacionadas ao código – não para obter ajuda sobre como aprender a programar. Sempre que houver dúvidas, você deve [procurar por assistência no fórum](https://forum.freecodecamp.org) antes de criar uma issue no GitHub.
 
-### Como posso relatar um problema de segurança?
+## Como posso relatar um problema de segurança?
 
 Não crie issues no GitHub para problemas de segurança. Em vez disso, [siga nossa política de segurança](https://contribute.freecodecamp.org/#/security).
 
-### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
+## Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
 
 Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. Recebemos muitos pull-requests e contribuições em código de desenvolvedores voluntários e respeitamos o tempo e esforço deles. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
 
 Pedimos que você planeje com antecedência e que trabalhe em suas contribuições de código tendo isso em mente.
 
-### O que significam estas etiquetas diferentes marcadas nas issues?
+## O que significam estas etiquetas diferentes marcadas nas issues?
 
 Os responsáveis pelo código fazem a [triagem](https://en.wikipedia.org/wiki/Software_bug#Bug_management) das issues e pull requests tendo como base a prioridade, importância e outros fatores. Você pode [encontrar um glossário completo dos significados aqui](https://github.com/freecodecamp/freecodecamp/labels).
 
-### Por onde começar se quero ajudar em uma issue?
+## Por onde começar se quero ajudar em uma issue?
 
 Você deve consultar issues [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) ou [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) para saber o que está disponível para ajuda.
 
 > [!TIP] Você não precisa pedir permissão para ajudar com issues marcadas como **`help wanted`**. No entanto, issues com a etiqueta **`first timers only`** são issues especiais projetadas para pessoas que não contribuíram antes para a base de código freeCodeCamp.
 
-### Encontrei um erro de digitação. Devo relatar uma issue antes de poder fazer um pull request?
+## Encontrei um erro de digitação. Devo relatar uma issue antes de poder fazer um pull request?
 
 Para erros de digitação e outras mudanças em palavras, você pode diretamente abrir pull requests sem criar uma issue antes. Certifique-se de mencionar detalhes na descrição do pull request para nos ajudar a entender e revisar sua contribuição – mesmo se for uma mudança pequena.
 
 Crie uma issue se quiser discutir grandes aspectos da base do código ou currículo.
 
-### Como posso receber uma issue atribuída a mim?
+## Como posso receber uma issue atribuída a mim?
 
 Tipicamente, não atribuímos issues para ninguém além de contribuidores de longo prazo. Ao invés disso, seguimos a política abaixo para sermos justos com todos:
 
@@ -69,7 +73,7 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
    - Você seguiu a checklist do pull request?
    - Você deu um título significativo ao seu pull request?
 
-### Tenho interesse em ser um moderador no freeCodeCamp. Por onde devo começar?
+## Tenho interesse em ser um moderador no freeCodeCamp. Por onde devo começar?
 
 Os moderadores da nossa comunidade são nossos heróis. Suas contribuições voluntárias fazem do freeCodeCamp uma comunidade segura e receptiva.
 
@@ -87,7 +91,7 @@ Se você praticar o que foi dito acima **consistentemente por algum tempo** e se
 
 Dê uma olhada no nosso [Manual do Moderador](moderator-handbook.md) para obter uma lista mais completa de outras responsabilidades e expectativas que temos nossos moderadores.
 
-### Estou com dificuldade em algo que não está incluído na documentação.
+## Estou com dificuldade em algo que não está incluído na documentação.
 
 **Fique à vontade para pedir ajuda em:**
 
@@ -98,7 +102,7 @@ Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. 
 
 Agradecemos antecipadamente por ser educado(a) e paciente. Lembre-se – esta comunidade é feita principalmente de voluntários.
 
-### Assistência adicional
+## Assistência adicional
 
 Se você tiver dúvidas sobre a stack, a arquitetura do código, as traduções ou qualquer outra coisa, pode entrar em contato com nossa equipe [no fórum](https://forum.freecodecamp.org/g/team).
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ae1000cf542c50fec1
-title: 'Problem 66: Diophantine equation'
+title: 'Завдання 66: діофантове рівняння'
 challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
@@ -8,15 +8,15 @@ dashedName: problem-66-diophantine-equation
 
 # --description--
 
-Consider quadratic Diophantine equations of the form:
+Розглянемо квадратні діофантові рівняння типу:
 
 <div style='text-align: center;'>x<sup>2</sup> – Dy<sup>2</sup> = 1</div>
 
-For example, when D=13, the minimal solution in x is 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
+Наприклад, для D=13, мінімальний розв’язок х дорівнює 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
 
-It can be assumed that there are no solutions in positive integers when D is square.
+Можна припустити, що не існує цілих додатних розв’язків, якщо D є квадратом.
 
-By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
+Знайшовши мінімальні розв’язки x для D = {2, 3, 5, 6, 7}, отримаємо наступне:
 
 <div style='margin-left: 2em;'>
   3<sup>2</sup> – 2×2<sup>2</sup> = 1<br>
@@ -26,9 +26,9 @@ By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the followi
   8<sup>2</sup> – 7×3<sup>2</sup> = 1<br>
 </div>
 
-Hence, by considering minimal solutions in `x` for D ≤ 7, the largest `x` is obtained when D=5.
+Отже, розглянувши мінімальні розв’язки `x` для D ≤ 7, найбільше значення `x` отримаємо тоді, коли D=5.
 
-Find the value of D ≤ `n` in minimal solutions of `x` for which the largest value of `x` is obtained.
+Знайдіть значення D ≤ `n` для мінімальних розв’язків `x`, при яких отримано найбільше значення `x`.
 
 # --hints--
 

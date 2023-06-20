@@ -14,10 +14,7 @@ interface HeaderProps {
   user: User;
   skipButtonText: string;
 }
-export class Header extends React.Component<
-  HeaderProps,
-  { displayMenu: boolean }
-> {
+class Header extends React.Component<HeaderProps, { displayMenu: boolean }> {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;

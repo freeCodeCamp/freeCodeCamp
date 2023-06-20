@@ -7,6 +7,6 @@ config/i18n.js
 config/misc.js
 config/certification-settings.js
 config/donation-settings.js
-config/superblock-order.js
+config/superblocks.js
 web/**
 docs/**/*.md

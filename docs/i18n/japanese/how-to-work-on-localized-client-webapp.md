@@ -266,7 +266,11 @@ const email = 'team@freecodecamp.org';
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
 
-## 参考ドキュメント
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)

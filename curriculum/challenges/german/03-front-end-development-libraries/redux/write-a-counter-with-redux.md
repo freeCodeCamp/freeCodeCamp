@@ -28,13 +28,19 @@ Der Action Creator `decAction` sollte ein Action-Objekt mit `type` gleich dem We
 assert(decAction().type === DECREMENT);
 ```
 
-Der Redux-Store sollte mit einem `state` von 0 initialisiert werden.
+Running `store.getState()` should return a number
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
+The Redux store should initialize with a `state` of 0.
 
 ```js
 assert(_store.getState() === 0);
 ```
 
-Das Senden von `incAction` an den Redux-Store sollte den `state` um 1 erhöhen.
+Dispatching `incAction` on the Redux store should increment the `state` by 1.
 
 ```js
 assert(
@@ -47,7 +53,7 @@ assert(
 );
 ```
 
-Das Senden von `decAction` an den Redux-Store sollte den `state` um 1 verringern.
+Dispatching `decAction` on the Redux store should decrement the `state` by 1.
 
 ```js
 assert(
@@ -60,7 +66,7 @@ assert(
 );
 ```
 
-`counterReducer` sollte eine Funktion sein
+`counterReducer` should be a function
 
 ```js
 assert(typeof counterReducer === 'function');

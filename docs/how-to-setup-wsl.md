@@ -1,7 +1,7 @@
 # Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
 > [!NOTE]
-> Before you follow these instructions make sure your system meets the requirements
+> Before you follow these instructions make sure your system meets the requirements.
 >
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 >
@@ -19,7 +19,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
 
    > [!NOTE]
    >
-   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
+   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
 
 2. Update the dependencies for the OS
 
@@ -45,13 +45,13 @@ git version 2.25.1
 
 ## Installing a Code Editor
 
-We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
 
 Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
 
-You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
 
 ## Installing Docker Desktop
 
@@ -73,7 +73,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 1. Launch a new Ubuntu-18.04 terminal
 
-2. Pull `MongoDB 4.0.x` from dockerhub
+2. Pull `MongoDB 4.0.x` from Docker Hub
 
    ```console
    docker pull mongo:4.0

@@ -2,6 +2,8 @@ Siga estas orientações para criar um ambiente de desenvolvimento para o freeCo
 
 ## Escolha entre o Gitpod ou seu próprio computador (configuração local)
 
+> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente no Windows.
+
 Se você deseja fazer uma contribuição única, use o Gitpod para fazer alterações. A configuração do Gitpod abre um ambiente pronto para código em poucos minutos no seu navegador. Para contribuir a longo prazo, recomendamos que você instale o freeCodeCamp em seu computador.
 
 Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é a melhor para você:
@@ -14,8 +16,6 @@ Aqui estão alguns prós e contras que devem ajudá-lo a decidir qual opção é
 | Mais lento e pode levar alguns minutos para abrir                                     | Mais rápido e pode ser iniciado em segundos                                      |
 | Precisa de uma conexão com a internet para funcionar                                  | Conexão com a internet mínima necessária (uma vez configurada)                   |
 | Algumas tarefas, como a compilação e testes, podem demorar mais para serem concluídas | Completa as tarefas mais rapidamente (dependendo das capacidades da sua máquina) |
-
-> [!ATTENTION] **Observação:** se você estiver usando o Windows 10 ou 11, precisará usar o WSL2. Você pode seguir [este guia](how-to-setup-wsl.md) para configurar o WSL2. Você não pode usar o prompt de comando, o Git Bash ou o PowerShell para executar freeCodeCamp nativamente dentro de janelas.
 
 ### Como preparar um espaço de trabalho no GitPod
 
@@ -69,9 +69,9 @@ Apoiamos principalmente o desenvolvimento em sistemas Linux e Unix, como o Ubunt
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                        | `18.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                                | `8.x`   | -                                                                                           |
-| [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
+| [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                           |
 
-> [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. Veja [solução de problemas](#troubleshooting) para detalhes.
+> [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. Veja [a seção de solução de problemas](troubleshooting-development-issues.md) para detalhes.
 
 Se o Node.js já estiver instalado em sua máquina, execute os seguintes comandos para validar as versões:
 

@@ -1,6 +1,7 @@
 {
   "name": "Build a Caesars Cipher Project",
   "isUpcomingChange": true,
+  "dashedName": "build-a-caesars-cipher-project",
   "usesMultifileEditor": false,
   "helpCategory": "JavaScript",
   "order": 17,

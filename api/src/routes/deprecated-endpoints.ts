@@ -1,14 +1,13 @@
-import {
-  FastifyPluginCallbackTypebox,
-  Type
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { schemas } from '../schemas';
 
 type Endpoints = [string, 'GET' | 'POST'][];
 
 export const endpoints: Endpoints = [
   ['/refetch-user-completed-challenges', 'POST'],
   ['/certificate/verify-can-claim-cert', 'GET'],
-  ['/api/github', 'GET']
+  ['/api/github', 'GET'],
+  ['/account', 'GET']
 ];
 
 export const deprecatedEndpoints: FastifyPluginCallbackTypebox = (
@@ -20,18 +19,7 @@ export const deprecatedEndpoints: FastifyPluginCallbackTypebox = (
     fastify.route({
       method,
       url: endpoint,
-      schema: {
-        response: {
-          410: Type.Object({
-            message: Type.Object({
-              type: Type.Literal('info'),
-              message: Type.Literal(
-                'Please reload the app, this feature is no longer available.'
-              )
-            })
-          })
-        }
-      },
+      schema: schemas.deprecatedEndpoints,
       handler: async (_req, reply) => {
         void reply.status(410);
         return {

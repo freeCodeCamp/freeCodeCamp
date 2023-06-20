@@ -17,7 +17,7 @@ import { createGaSaga } from './ga-saga';
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
-import { savedChallengesSelector } from './selectors';
+import { completionCountSelector, savedChallengesSelector } from './selectors';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
@@ -43,8 +43,10 @@ export const defaultDonationFormState = {
 
 const initialState = {
   appUsername: '',
+  showMultipleProgressModals: false,
   recentlyClaimedBlock: null,
-  canRequestProgressDonation: true,
+  completionCountWhenShownProgressModal: 0,
+  progressDonationModalShown: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
@@ -64,7 +66,6 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
-  sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   showSignoutModal: false,
   isOnline: true,
@@ -179,7 +180,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.fetchUserComplete]: (
       state,
-      { payload: { user, username, sessionMeta } }
+      { payload: { user, username } }
     ) => ({
       ...state,
       user: {
@@ -193,10 +194,6 @@ export const reducer = handleActions(
         complete: true,
         errored: false,
         error: null
-      },
-      sessionMeta: {
-        ...state.sessionMeta,
-        ...sessionMeta
       }
     }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({
@@ -256,9 +253,16 @@ export const reducer = handleActions(
       ...state,
       recentlyClaimedBlock: null
     }),
-    [actionTypes.preventProgressDonationRequests]: state => ({
+    [actionTypes.setCompletionCountWhenShownProgressModal]: state => ({
       ...state,
-      canRequestProgressDonation: false
+      progressDonationModalShown: true,
+      completionCountWhenShownProgressModal: completionCountSelector({
+        [MainApp]: state
+      })
+    }),
+    [actionTypes.setShowMultipleProgressModals]: (state, { payload }) => ({
+      ...state,
+      showMultipleProgressModals: payload
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,

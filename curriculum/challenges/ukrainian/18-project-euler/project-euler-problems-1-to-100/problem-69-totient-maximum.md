@@ -1,6 +1,6 @@
 ---
 id: 5900f3b11000cf542c50fec4
-title: 'Problem 69: Totient maximum'
+title: 'Завдання 69: максимум функції Ейлера'
 challengeType: 1
 forumTopicId: 302181
 dashedName: problem-69-totient-maximum
@@ -8,11 +8,11 @@ dashedName: problem-69-totient-maximum
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of numbers less than `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$.
+Функція Ейлера ${\phi}(n)$ використовується для визначення кількості чисел, менших за `n`, які є відносно простими до `n`. Наприклад, оскільки числа 1, 2, 4, 5, 7 і 8 менші за дев’ять і відносно прості до дев’яти, ${\phi}(9) = 6$.
 
 <div style='margin-left: 4em;'>
 
-| $n$ | $\text{Relatively Prime}$ | $\displaystyle{\phi}(n)$ | $\displaystyle\frac{n}{{\phi}(n)}$ |
+| $n$ | $\text{Взаємно прості числа}$ | $\displaystyle{\phi}(n)$ | $\displaystyle\frac{n}{{\phi}(n)}$ |
 | --- | ------------------------- | ------------------------ | ---------------------------------- |
 | 2   | 1                         | 1                        | 2                                  |
 | 3   | 1,2                       | 2                        | 1.5                                |
@@ -26,9 +26,9 @@ Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is us
 
 </div>
 
-It can be seen that `n` = 6 produces a maximum $\displaystyle\frac{n}{{\phi}(n)}$ for `n` ≤ 10.
+Можна побачити, що `n` = 6 утворює максимум $\displaystyle\frac{n}{{\phi}(n)}$ при `n` ≤ 10.
 
-Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ is a maximum.
+Знайдіть значення `n` ≤ `limit`, при якому $\displaystyle\frac{n}{{\phi(n)}$ є максимальним.
 
 # --hints--
 

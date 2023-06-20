@@ -79,6 +79,7 @@ function submitModern(type, state) {
   if (
     challengeType === 11 ||
     challengeType === 15 ||
+    challengeType === 19 ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {
