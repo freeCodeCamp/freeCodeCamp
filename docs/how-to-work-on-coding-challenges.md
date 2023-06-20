@@ -503,17 +503,25 @@ Creating and Editing Challenges:
 
 ## Helper Scripts
 
-There are a few helper scripts that can be used to manage the challenges in a block.
-
-### Update Challenge Order
-
-If you need to manually re-order the challenges, you should first switch to the block directory. For example:
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
 ```
 
-Then call the script:
+### Add New Challenge
+
+To add a new challenge at the end of a block, call the script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+
+### Update Challenge Order
+
+If you need to manually re-order the challenges, call the script:
 
 ```bash
 pnpm run update-challenge-order
