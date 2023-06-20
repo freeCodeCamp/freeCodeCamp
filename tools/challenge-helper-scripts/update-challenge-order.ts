@@ -1,20 +1,10 @@
-import { readdir } from 'fs/promises';
-import { join } from 'path';
-
-import * as matter from 'gray-matter';
 import { prompt } from 'inquirer';
 
-import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
+import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 
 const updateChallengeOrder = async () => {
-  const path = getProjectPath();
-  const fileList = await readdir(path);
-  // [id, title]
-  const oldChallengeOrder = fileList
-    .map(file => matter.read(join(path, file)))
-    .map(({ data }) => [data.id, data.title] as [string, string]);
-
+  const oldChallengeOrder = getChallengeOrderFromMeta();
   console.log('Current challenge order is: ');
   console.table(oldChallengeOrder.map(([_id, title]) => ({ title })));
 
