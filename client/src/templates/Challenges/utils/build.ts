@@ -204,26 +204,21 @@ export function buildDOMChallenge(
   const finalFiles = challengeFiles?.map(pipeLine);
 
   if (finalFiles) {
-    return Promise.all(finalFiles)
-      .then(checkFilesErrors)
-      .then(embedFilesInHtml)
-      .then(([_challengeFiles, _contents]) => {
-        const challengeFiles = _challengeFiles as ChallengeFiles;
-        const contents = _contents as string;
-
-        return {
-          challengeType:
-            challengeTypes.html || challengeTypes.multifileCertProject,
-          build: concatHtml({
-            required,
-            template,
-            contents,
-            ...(usesTestRunner && { testRunner: frameRunnerSrc })
-          }),
-          sources: buildSourceMap(challengeFiles),
-          loadEnzyme
-        };
-      });
+    return (
+      Promise.all(finalFiles)
+        .then(checkFilesErrors)
+        .then(embedFilesInHtml) as Promise<[ChallengeFiles, string]>
+    ).then(([challengeFiles, contents]) => ({
+      challengeType: challengeTypes.html || challengeTypes.multifileCertProject,
+      build: concatHtml({
+        required,
+        template,
+        contents,
+        ...(usesTestRunner && { testRunner: frameRunnerSrc })
+      }),
+      sources: buildSourceMap(challengeFiles),
+      loadEnzyme
+    }));
   }
 }
 
