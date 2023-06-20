@@ -17,8 +17,11 @@ import { FileKey } from '../../../redux/prop-types';
 import { Themes } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
-type VisibleEditors = {
-  [key: string]: boolean;
+export type VisibleEditors = {
+  indexhtml?: boolean;
+  indexjsx?: boolean;
+  stylescss?: boolean;
+  scriptjs?: boolean;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
@@ -36,12 +39,7 @@ type MultifileEditorProps = Pick<
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
 > & {
-  visibleEditors: {
-    indexhtml?: boolean;
-    indexjsx?: boolean;
-    stylescss?: boolean;
-    scriptjs?: boolean;
-  };
+  visibleEditors: VisibleEditors;
 };
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
