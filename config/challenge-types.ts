@@ -94,7 +94,7 @@ export const viewTypes = {
   [exam]: 'exam',
   [msTrophyUrl]: 'frontend',
   [multipleChoice]: 'video',
-  [python]: 'classicterminal'
+  [python]: 'modern'
 };
 
 // determine the type of submit function to use for the challenge on completion
