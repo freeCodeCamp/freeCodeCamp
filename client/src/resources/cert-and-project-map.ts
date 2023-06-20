@@ -748,7 +748,6 @@ const upcomingCertMap = [
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
     certSlug: 'foundational-c-sharp-with-microsoft',
-    flag: 'isFoundationalCSharpCert',
     projects: [
       {
         id: '647e22d18acb466c97ccbef8',
