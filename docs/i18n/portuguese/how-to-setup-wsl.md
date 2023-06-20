@@ -1,6 +1,6 @@
 # Configure o freeCodeCamp no subsistema Windows para Linux (WSL)
 
-> [!NOTE] Before you follow these instructions make sure your system meets the requirements.
+> [!NOTE] Antes de seguir estas instruções, verifique se o sistema atende aos requisitos.
 > 
 > **WSL 2**: Windows 10 64-bit (Versão 2004, Build 19041 ou superior) - disponível para todas as distribuições, incluindo o Windows 10 Home.
 > 
@@ -18,7 +18,7 @@ Siga as instruções na [documentação oficial](https://docs.microsoft.com/en-u
 
    > [!NOTE]
    > 
-   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
+   > Embora você possa usar outras distribuições não baseadas em Debian, todas vêm com seus próprios empecilhos, que estão além do escopo deste guia.
 
 2. Atualize as dependências para o sistema operacional
 
@@ -44,13 +44,13 @@ git version 2.25.1
 
 ## Instalando um Editor de Código
 
-É altamente recomendável instalar o [Visual Studio Code](https://code.visualstudio.com) no Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
+É altamente recomendável instalar o [Visual Studio Code](https://code.visualstudio.com) no Windows 10. Tem um ótimo suporte para WSL e instala automaticamente todas as extensões necessárias na distribuição WSL.
 
 Essencialmente, você irá editar e armazenar seu código no Ubuntu-18.04 com o VS Code instalado no Windows.
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
+Se você usa o [IntelliJ Idea](https://www.jetbrains.com/idea/), talvez precise atualizar seu interpretador do Node e seu gerenciador de pacotes npm pelo que estiver instalado em sua distro WSL.
 
-You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
+Você pode checar essas configurações indo em Settings > Languages & Frameworks > Node.js and npm.
 
 ## Instalando o Docker Desktop
 
@@ -72,7 +72,7 @@ Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas
 
 1. Inicie um novo terminal Ubuntu-18.04
 
-2. Pull `MongoDB 4.0.x` from Docker Hub
+2. Faça o pull `MongoDB 4.0.x` do Docker Hub
 
    ```console
    docker pull mongo:4.0
