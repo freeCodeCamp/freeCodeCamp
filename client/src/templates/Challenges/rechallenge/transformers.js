@@ -196,7 +196,7 @@ async function transformScript(documentElement) {
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, stylesCss, scriptJs, indexJsx } =
+  const { indexHtml, stylesCss, scriptJs, indexJsx, mainPy } =
     challengeFilesToObject(challengeFiles);
 
   const embedStylesAndScript = (documentElement, contentDocument) => {
@@ -236,6 +236,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
     return [challengeFiles, `<script>${indexJsx.contents}</script>`];
   } else if (scriptJs) {
     return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+  } else if (mainPy) {
+    // There's no need to embed the python code, yet. The concatHtml and the
+    // template should handle it.
+    return [challengeFiles, mainPy.contents];
   } else {
     throw Error('No html or js(x) file found');
   }
@@ -248,7 +252,8 @@ function challengeFilesToObject(challengeFiles) {
   );
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
-  return { indexHtml, indexJsx, stylesCss, scriptJs };
+  const mainPy = challengeFiles.find(file => file.fileKey === 'mainpy');
+  return { indexHtml, indexJsx, stylesCss, scriptJs, mainPy };
 }
 
 const transformWithFrame = async function (transform, contents) {

@@ -101,7 +101,8 @@ const buildFunctions = {
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
-  [challengeTypes.colab]: buildBackendChallenge
+  [challengeTypes.colab]: buildBackendChallenge,
+  [challengeTypes.python]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -192,6 +193,8 @@ type BuildResult = {
   sources: Source | undefined;
 };
 
+// TODO: Consider a creating separate buildPythonChallenge function. It's okay
+// for now, but it's a bit too mcuh for one function.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
