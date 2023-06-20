@@ -16,28 +16,24 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is the value of the following result? `int result = 3 + 1 * 5 / 2;`
 
 ## --answers--
 
-A
+10
 
 ---
 
-B
+5
 
 ---
 
-C
+6
 
 ---
 
-D
-
----
-
-E
+5.5
 
 ## --video-solution--
 
-4
+2

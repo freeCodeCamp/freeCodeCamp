@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
 
 ## --answers--
 
-A
+The VARIABLES section.
 
 ---
 
-B
+The CALL STACK section.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+The WATCH section.
 
 ## --video-solution--
 
-4
+2

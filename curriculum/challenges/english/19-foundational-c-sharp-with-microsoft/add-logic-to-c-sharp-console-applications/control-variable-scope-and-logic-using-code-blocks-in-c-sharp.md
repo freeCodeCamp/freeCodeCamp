@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following describes the affect of a `using` statement?
 
 ## --answers--
 
-A
+Affects only the first code block in the code file.
 
 ---
 
-B
+Affects only the current code block in the code file.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Affects all of the code in the code file.
 
 ## --video-solution--
 
-4
+3

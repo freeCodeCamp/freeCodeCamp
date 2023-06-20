@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following options correctly returns a `string` value?
 
 ## --answers--
 
-A
+`return "";`
 
 ---
 
-B
+`return 'a';`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`return 5;`
 
 ## --video-solution--
 
-4
+1
