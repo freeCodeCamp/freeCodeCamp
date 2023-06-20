@@ -2,7 +2,7 @@
 
 ## Оберіть між Gitpod чи власною машиною (локальне налаштування)
 
-> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Використовуйте [цей посібник](how-to-setup-wsl.md), щоб налаштувати WSL2. Ви не можете використовувати командний рядок, Git Bash або PowerShell для запуску freeCodeCamp на Windows.
+> [!ATTENTION] **Примітка:** freeCodeCamp НЕ працює належним чином на Windows 10 чи 11, вам потрібно використовувати WSL2. Використовуйте [цей посібник](how-to-setup-wsl.md), щоб налаштувати WSL2. Ви не можете використовувати командний рядок, Git Bash або PowerShell для запуску freeCodeCamp на Windows.
 
 Якщо ви бажаєте зробити одноразовий внесок, використовуйте Gitpod. Налаштування Gitpod надає готове середовище у вашому браузері за декілька хвилин. Для тривалих внесків ми рекомендуємо налаштувати freeCodeCamp на локальній машині.
 
