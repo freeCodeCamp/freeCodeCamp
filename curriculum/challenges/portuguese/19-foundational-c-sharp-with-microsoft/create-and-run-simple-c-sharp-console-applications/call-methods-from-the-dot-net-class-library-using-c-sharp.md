@@ -1,22 +1,22 @@
 ---
 id: 647e21c48acb466c97ccbee7
-title: 'Call Methods From the .NET Class Library Using C#'
+title: 'Chame métodos da biblioteca de classes .NET com o C#'
 challengeType: 19
 dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/</a> and complete all the tasks for the "Call Methods From the .NET Class Library Using C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/</a> e complete todas as tarefas do módulo "Chame métodos da biblioteca de classes .NET com o C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

@@ -14,7 +14,7 @@ Consider a honey bee's honeycomb where each cell is a perfect regular hexagon wi
 
 One particular cell is occupied by the queen bee. For a positive real number $L$, let $B(L)$ count the cells with distance $L$ from the queen bee cell (all distances are measured from centre to centre); you may assume that the honeycomb is large enough to accommodate for any distance we wish to consider.
 
-For example, $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$ and $B(111\\,111\\,111) = 54$.
+Наприклад, $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$ та $B(111\\,111\\,111) = 54$.
 
 Find the number of $L ≤ 5 \times {10}^{11}$ such that $B(L) = 450$.
 

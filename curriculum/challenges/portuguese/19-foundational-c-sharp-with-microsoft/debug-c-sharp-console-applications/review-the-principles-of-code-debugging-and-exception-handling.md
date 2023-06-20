@@ -1,22 +1,22 @@
 ---
 id: 647e22c08acb466c97ccbef7
-title: Review the Principles of Code Debugging and Exception Handling
+title: Revise os princípios de depuração de código e tratamento de exceções
 challengeType: 19
 dashedName: review-the-principles-of-code-debugging-and-exception-handling
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> and complete all the tasks for the "Review the Principles of Code Debugging and Exception Handling" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Revise os princípios de depuração de código e tratamento de exceções". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

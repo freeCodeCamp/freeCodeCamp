@@ -17,7 +17,7 @@ For example, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -
 
 Let $C(n)$ be the number of triangles whose vertices are in $P_n$ which contain the origin in the interior.
 
-Examples:
+Приклади:
 
 $$\begin{align}   & C(8) = 20 \\\\
   & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$

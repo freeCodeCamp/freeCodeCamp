@@ -12,10 +12,10 @@ Agora que você completou todos os módulos de "Crie métodos em aplicações de
 Siga estas instruções para encontrar o URL do seu troféu:
 
 1. Acesse <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> usando o navegador pelo qual você está conectado à Microsoft
-1. Find the trophy for "Create Methods in C# Console Applications" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
+1. Encontre o troféu de "Crie métodos em aplicações de console em C#" e clique no ícone "Compartilhar" ao lado dele
+1. Clique no botão "Copiar URL"
+1. Cole o URL na entrada abaixo
 
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=your-username&sharingId=your-sharing-id`
+O URL deve ser semelhante a: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=your-username&sharingId=your-sharing-id`
 
-This trophy is required to qualify to take the certification exam.
+Este troféu é necessário para se qualificar ao fazer o exame de certificação.
