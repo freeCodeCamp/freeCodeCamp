@@ -18,7 +18,7 @@ Note that if you make a component stateful, no other components are aware of its
 
 # --instructions--
 
-In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the component's render method which renders the value of `name` from the component's state.
+In the code editor, `MyComponent` is already stateful. Define an `h1` tag within the `return` statement of the component's `render` method which renders the value of `name` from the component's state.
 
 **Note:** The `h1` should only render the value from `state` and nothing else. In JSX, any code you write with curly braces `{ }` will be treated as JavaScript. So to access the value from `state` just enclose the reference in curly braces.
 
