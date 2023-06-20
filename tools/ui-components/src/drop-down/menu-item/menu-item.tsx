@@ -98,7 +98,7 @@ export const MenuItem = ({
     <Menu.Item>
       {({ active }) => {
         const activeStyles = active
-          ? 'text-foreground-secondary bg-background-secondary outline outline-3 outline-blue-500'
+          ? 'text-foreground-secondary bg-background-secondary outline outline-3 outline-blue-500 outline-offset-[-3px]'
           : 'text-background-secondary bg-foreground-secondary';
         const classes = [defaultClass, className, activeStyles].join(' ');
         return (
