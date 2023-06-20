@@ -39,6 +39,10 @@
   margin: 0 !important;
 }
 
+.tool-panel-group-mobile *:focus-visible {
+  outline-offset: -3px;
+}
+
 .tool-panel-group .dropdown-menu {
   top: auto;
   bottom: 100%;
