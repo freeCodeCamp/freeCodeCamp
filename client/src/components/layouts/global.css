@@ -391,6 +391,7 @@ fieldset[disabled] .btn-primary.focus {
 .cert-header-icon {
   display: block;
   width: 80px;
+  height: 80px;
   margin: auto;
 }
 
@@ -404,6 +405,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 100px;
+    height: 100px;
   }
 }
 
@@ -413,6 +415,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 120px;
+    height: 120px;
   }
 }
 

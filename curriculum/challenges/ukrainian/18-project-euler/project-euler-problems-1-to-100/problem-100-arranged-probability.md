@@ -1,6 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee3
-title: 'Problem 100: Arranged probability'
+title: 'Завдання 100: ймовірні комбінації'
 challengeType: 1
 forumTopicId: 301724
 dashedName: problem-100-arranged-probability
@@ -8,13 +8,13 @@ dashedName: problem-100-arranged-probability
 
 # --description--
 
-If a box contains twenty-one colored discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs.
+Припустимо, що в коробці є двадцять один кольоровий диск, з яких п’ятнадцять – синього кольору, а шість — червоного. Два диски обрали навмання, тому є ймовірність, що обрали два синіх диски.
 
 $${P(BB)} = \frac{15}{21}×\frac{14}{20} = \frac{1}{2}$$
 
-The next such arrangement, for which there is exactly a 50% chance of taking two blue discs at random, is a box containing eighty-five blue discs and thirty-five red discs.
+Наступна комбінація дисків, за якої вірогідність взяти навмання два синіх диски становить 50% — коли у коробці розміщено вісімдесят п’ять синіх і тридцять п’ять червоних дисків.
 
-By finding the first arrangement to contain over `limit` discs in total, determine the number of blue discs that the box would contain.
+Визначте ймовірну кількість синіх дисків у коробці, якщо у першій комбінації загальна кількість дисків становить більше `limit`.
 
 # --hints--
 

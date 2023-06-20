@@ -1,6 +1,6 @@
 ---
 id: 5900f3ce1000cf542c50fee0
-title: 'Problem 97: Large non-Mersenne prime'
+title: 'Завдання 97: великі немерсенові числа'
 challengeType: 1
 forumTopicId: 302214
 dashedName: problem-97-large-non-mersenne-prime
@@ -8,11 +8,11 @@ dashedName: problem-97-large-non-mersenne-prime
 
 # --description--
 
-The first known prime found to exceed one million digits was discovered in 1999, and is a Mersenne prime of the form $2^{6972593} − 1$; it contains exactly 2,098,960 digits. Subsequently other Mersenne primes, of the form $2^p − 1$, have been found which contain more digits.
+Перше відоме число, довжина якого становить більше мільйона цифр, знайшли в 1999 році. Це просте число Мерсенна у вигляді $2^{6972593} − 1$, яке складається з 2 098 960 цифр. Згодом виявилося, що інші числа Мерсенна у вигляді $2^p − 1$ містять ще більше цифр.
 
-However, in 2004 there was found a massive non-Mersenne prime which contains 2,357,207 digits: $28433 × 2^{7830457} + 1$.
+Однак у 2004 році знайшли масивне немерсенове просте число, яке складається з 2 357 207 цифр: $28433 × 2^{7830457} + 1$.
 
-Find the last ten digits of that non-Mersenne prime in the form $multiplier × 2^{power} + 1$.
+Знайдіть останні десять цифр цього числа у вигляді $multiplier × 2^{power} + 1$.
 
 # --hints--
 

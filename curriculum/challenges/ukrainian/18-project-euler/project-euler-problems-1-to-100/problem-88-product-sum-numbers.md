@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed6
-title: 'Problem 88: Product-sum numbers'
+title: 'Завдання 88: числа суми-добутку'
 challengeType: 1
 forumTopicId: 302203
 dashedName: problem-88-product-sum-numbers
@@ -8,11 +8,11 @@ dashedName: problem-88-product-sum-numbers
 
 # --description--
 
-A natural number, `N`, that can be written as the sum and product of a given set of at least two natural numbers, $\\{a_1, a_2, \ldots , a_k\\}$ is called a product-sum number: $N = a_1 + a_2 + \cdots + a_k = a_1 × a_2 × \cdots × a_k$.
+Натуральне число `N`, яке можна записати як суму і добуток даної множини щонайменше двох натуральних чисел $\\{a_1, a_2, \ldots , a_k\\}$, називається числом суми-добутку: $N = a_1 + a_2 + \cdots + a_k = a_1 × a_2 × \cdots × a_k$.
 
-For example, 6 = 1 + 2 + 3 = 1 × 2 × 3.
+Наприклад, 6 = 1 + 2 + 3 = 1 × 2 × 3.
 
-For a given set of size, `k`, we shall call the smallest N with this property a minimal product-sum number. The minimal product-sum numbers for sets of size, `k` = 2, 3, 4, 5, and 6 are as follows.
+Найменше число N з цією властивістю у заданій множині розміром `k` ми називатимемо мінімальним числом суми-добутку. Тому мінімальними числами для множини розміру `k` = 2, 3, 4, 5, і 6 є:
 
 <div style='margin-left: 4em;'>
   <var>k</var>=2: 4 = 2 × 2 = 2 + 2<br>
@@ -22,11 +22,11 @@ For a given set of size, `k`, we shall call the smallest N with this property a 
   <var>k</var>=6: 12 = 1 × 1 × 1 × 1 × 2 × 6 = 1 + 1 + 1 + 1 + 2 + 6
 </div><br>
 
-Hence for 2 ≤ `k` ≤ 6, the sum of all the minimal product-sum numbers is 4 + 6 + 8 + 12 = 30; note that `8` is only counted once in the sum.
+Тобто, якщо 2 ≤ `k` ≤ 6, то сумою всіх мінімальних чисел суми-добутку є 4 + 6 + 8 + 12 = 30. Зверніть увагу, що `8` врахували лише один раз.
 
-In fact, as the complete set of minimal product-sum numbers for 2 ≤ `k` ≤ 12 is $\\{4, 6, 8, 12, 15, 16\\}$, the sum is `61`.
+Тобто цілою множиною мінімальних чисел суми-добутку для 2 ≤ `k` ≤ 12 є $\\{4, 6, 8, 12, 15, 16\\}$, а сума дорівнює `61`.
 
-What is the sum of all the minimal product-sum numbers for 2 ≤ `k` ≤ `limit`?
+Якою буде сума мінімальних чисел суми-добутку для 2 ≤ `k` ≤ `limit`?
 
 # --hints--
 

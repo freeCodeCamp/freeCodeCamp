@@ -94,6 +94,10 @@ La primera configuración puede tardar un rato dependiendo del ancho de banda de
 
 > [!NOTE] Si estás utilizando dispositivos de Apple con el chip M1 para iniciar la aplicación localmente, es sugerido usar Node v14.7 or superior. De lo contrario, podrías tener problemas con dependencias como Sharp.
 
+## Working With Other Languages
+
+To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
+
 ## Getting Help
 
 Si estás atascado y necesitas ayuda, sientete libre de hacer preguntas en ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) o [the contributors chat room](https://discord.gg/PRyKn3Vbay).
