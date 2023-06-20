@@ -457,7 +457,7 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
-  border: 0.5px solid var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
