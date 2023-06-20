@@ -41,48 +41,11 @@ With `link` being the link of the original article.
 > [!TIP]
 > Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
 
-There are two places in which to change the trending articles.
+To update the trending articles in the footer, you need to update the yaml file in [the CDN repository](https://github.com/freeCodeCamp/cdn). Both the curriculum and the publication references this file.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
+The file in the CDN repository is the file `build/universal/trending/<language>.yaml`.
 
-For each article, you will need to create a shorter title to use in the footer.
-
-### Change Trending Articles in the Curriculum
-
-The trending articles in the curriculum footer can be changed by editing the file at `client/i18n/locales/<language>/trending.json`.
-
-This file is a `*.json` file that has the shape of an object with property keys in the shape `article0title` and `article0link`.
-
-Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
-
-This is an example of how part of the `trending.json` file has to look.
-
-```json
-{
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
-  ...
-}
-```
-
-You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
-
-### How to Update the Trending Articles in the CDN
-
-The file in the CDN repository is the file `universal/trending/<language>.yaml`.
-
-This file is shaped differently. For example, here is the file content for the first 6 articles:
+For example, here is the file content for the first 6 articles:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -99,10 +62,9 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+For each article, you will need to create a shorter title to use in the footer. Each title must stay on a single line and not go to a new line.
 
-> [!TIP]
-> A new workflow is being worked on, there will be only one place to change in the future.
+Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
 
 ## How to Translate Articles in the Footer Links
 
