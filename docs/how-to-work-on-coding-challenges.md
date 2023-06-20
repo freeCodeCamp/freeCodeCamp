@@ -519,6 +519,31 @@ pnpm run create-next-challenge
 
 This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
 
+### Insert a Challenge
+
+To insert a challenge before an existing challenge, call the script:
+
+```bash
+pnpm run insert-challenge
+```
+
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+
+```bash
+a
+b
+c
+```
+
+And you choose `b`, your new order will be:
+
+```bash
+a
+new challenge
+b
+c
+```
+
 ### Update Challenge Order
 
 If you need to manually re-order the challenges, call the script:
