@@ -1,6 +1,6 @@
 ---
 id: 5900f3d71000cf542c50fee9
-title: 'Problem 106: Special subset sums: meta-testing'
+title: 'Завдання 106: суми особливих підмножин (метатестування)'
 challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
@@ -8,10 +8,10 @@ dashedName: problem-106-special-subset-sums-meta-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Нехай $S(A)$ є сумою елементів множини A розміру n. Назвемо це особливою множиною сум, якщо для будь-яких двох непорожніх й неперетинних множин В і С виконуються умови:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$; тобто суми підмножин не можуть бути рівними.
+2. Якщо B містить більше елементів ніж C, тоді $S(B) > S(C)$.
 
 For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
 
@@ -19,7 +19,7 @@ Surprisingly, out of the 25 possible subset pairs that can be obtained from a se
 
 For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
 
-**Note:** This problem is related to Problem 103 and Problem 105.
+**Примітка:** це завдання пов’язане із завданнями №103 та №105.
 
 # --hints--
 
