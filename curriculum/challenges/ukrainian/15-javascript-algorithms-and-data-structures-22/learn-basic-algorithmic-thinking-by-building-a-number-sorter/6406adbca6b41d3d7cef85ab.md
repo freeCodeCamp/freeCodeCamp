@@ -1,6 +1,6 @@
 ---
 id: 6406adbca6b41d3d7cef85ab
-title: Step 5
+title: Крок 5
 challengeType: 0
 dashedName: step-5
 ---

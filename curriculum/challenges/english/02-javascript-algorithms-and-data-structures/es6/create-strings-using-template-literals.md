@@ -69,14 +69,13 @@ assert(
 Template strings and expression interpolation should be used.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+assert.match(code, /(`.*\${.*}.*`)/);
 ```
 
 An iterator should be used.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
+assert(code.match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

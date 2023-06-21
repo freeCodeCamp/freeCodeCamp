@@ -1,22 +1,22 @@
 ---
 id: 647e21f88acb466c97ccbeeb
-title: Install and Configure Visual Studio Code
+title: Instale e configure o Visual Studio Code
 challengeType: 19
 dashedName: install-and-configure-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/</a> and complete all the tasks for the "Install and Configure Visual Studio Code" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/</a> e complete todas as tarefas do módulo "Instale e configure o Visual Studio Code". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

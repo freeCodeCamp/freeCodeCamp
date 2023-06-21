@@ -1,22 +1,22 @@
 ---
 id: 647e21df8acb466c97ccbee9
-title: 'Create Readable Code with Conventions, Whitespace, and Comments in C#'
+title: 'Crie um código legível com convenções, espaços em branco e comentários em C#'
 challengeType: 19
 dashedName: create-readable-code-with-conventions-whitespace-and-comments-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/</a> and complete all the tasks for the "Create Readable Code with Conventions, Whitespace, and Comments in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/</a> e complete todas as tarefas do módulo "Crie um código legível com convenções, espaços em branco e comentários em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

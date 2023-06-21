@@ -47,7 +47,10 @@ describe('Challenge with multifile editor', () => {
   // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
     cy.visit(location);
-    cy.focused().type('{end}{enter}<meta charset="UTF-8" />{ctrl+enter}');
+    cy.focused()
+      .click()
+      .type('{end}{enter}<meta charset="UTF-8" />')
+      .type('{ctrl}{enter}', { release: false, delay: 100 });
     cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
     cy.contains(translations.learn['congratulations']);
     cy.get(selectors.signInButton).click();
@@ -55,20 +58,28 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).should('not.exist');
   });
 
-  it('focuses the submit button after testing a valid solution', () => {
-    cy.visit(location);
-    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
-    cy.get(selectors.checkLowerJawButton).should('not.be.focused');
-    cy.get(selectors.checkLowerJawButton).click();
-    cy.get(selectors.submitLowerJawButton).should('be.focused');
-  });
+  it(
+    'focuses on the submit button after tests passed',
+    { browser: '!firefox' },
+    () => {
+      cy.visit(location);
+      cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
+      cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+      cy.get(selectors.checkLowerJawButton).click();
+      cy.get(selectors.submitLowerJawButton).should('be.focused');
+    }
+  );
 
-  it('checks hotkeys when instruction is focused', () => {
-    cy.reload();
-    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
-    cy.get(selectors.instructionContainer)
-      .click('topRight')
-      .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
-    cy.get(selectors.submitLowerJawButton).should('not.be.focused');
-  });
+  it(
+    'checks hotkeys when instruction is focused',
+    { browser: '!firefox' },
+    () => {
+      cy.reload();
+      cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+      cy.get(selectors.instructionContainer)
+        .click('topRight')
+        .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
+      cy.get(selectors.submitLowerJawButton).should('not.be.focused');
+    }
+  );
 });

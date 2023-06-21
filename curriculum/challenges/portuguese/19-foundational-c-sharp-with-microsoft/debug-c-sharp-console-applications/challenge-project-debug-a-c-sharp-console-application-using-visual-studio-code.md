@@ -1,22 +1,22 @@
 ---
 id: 647e22778acb466c97ccbef2
-title: 'Challenge Project - Debug a C# Console Application Using Visual Studio Code'
+title: 'Projeto de desafio – depurar uma aplicação de console em C# usando o Visual Studio Code'
 challengeType: 19
 dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> e complete todas as tarefas do módulo "Projeto de desafio – depurar uma aplicação de console em C# usando o Visual Studio Code". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

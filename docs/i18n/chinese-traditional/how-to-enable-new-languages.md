@@ -377,12 +377,10 @@ Next, go to the `config/i18n/locales` directory, create a new folder, and give i
 
 Then copy the JSON files from the `english` directory to your new folder.
 
-In your new folder, open the `serve.json` file and replace its contents with the following:
+In your new folder, open the `redirects.json` file and replace its contents with an empty array:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Then commit and push your branch directly to the News repo.

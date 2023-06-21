@@ -1,22 +1,22 @@
 ---
 id: 647e21d08acb466c97ccbee8
-title: 'Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
+title: 'Projeto de desafio – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#'
 challengeType: 19
 dashedName: challenge-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/</a> and complete all the tasks for the "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/</a> e complete todas as tarefas do módulo "Projeto de desafio – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

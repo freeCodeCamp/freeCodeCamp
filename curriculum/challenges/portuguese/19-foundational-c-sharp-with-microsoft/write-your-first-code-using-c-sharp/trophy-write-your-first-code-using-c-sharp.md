@@ -1,21 +1,21 @@
 ---
 id: 647f85d407d29547b3bee1bb
-title: 'Trophy - Write Your First Code Using C#'
+title: 'Troféu – Escreva seu primeiro código em C#'
 challengeType: 18
 dashedName: trophy-write-your-first-code-using-c-sharp
 ---
 
 # --description--
 
-Now that you've completed all of the "Write Your First Code Using C#" modules on Microsoft's learn platform, submit the URL to your trophy below.
+Agora que você completou todos os módulos de "Escreva seu primeiro código em C#" na plataforma de aprendizagem da Microsoft, envie abaixo o URL do seu troféu.
 
-Follow these instructions to find your trophy URL:
+Siga estas instruções para encontrar o URL do seu troféu:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
-1. Find the trophy for "Write Your First Code Using C#" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
+1. Acesse <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> usando o navegador pelo qual você está conectado à Microsoft
+1. Encontre o troféu de "Escreva seu primeiro código em C#" e clique no ícone "Compartilhar" ao lado dele
+1. Clique no botão "Copiar URL"
+1. Cole o URL na entrada abaixo
 
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=your-username&sharingId=your-sharing-id`
+O URL deve ser semelhante a: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=your-username&sharingId=your-sharing-id`
 
-This trophy is required to qualify to take the certification exam.
+Este troféu é necessário para se qualificar para fazer o exame de certificação.
