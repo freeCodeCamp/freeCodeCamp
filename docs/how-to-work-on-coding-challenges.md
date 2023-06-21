@@ -519,6 +519,16 @@ pnpm run create-next-challenge
 
 This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
 
+### Delete a Challenge
+
+To delete a challenge, call the script:
+
+```bash
+pnpm run delete-challenge
+```
+
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+
 ### Insert a Challenge
 
 To insert a challenge before an existing challenge, call the script:
