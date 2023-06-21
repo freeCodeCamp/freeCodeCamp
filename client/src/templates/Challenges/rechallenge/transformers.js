@@ -239,7 +239,11 @@ export const embedFilesInHtml = async function (challengeFiles) {
   } else if (mainPy) {
     // There's no need to embed the python code, yet. The concatHtml and the
     // template should handle it.
-    return [challengeFiles, mainPy.contents];
+
+    // There is, however, a need to stringify it, since the template creates a
+    // string and we want contents to be a string embedded in a string. This is
+    // necessary because we have to pass that code string to pyodide.
+    return [challengeFiles, JSON.stringify(mainPy.contents)];
   } else {
     throw Error('No html or js(x) file found');
   }
