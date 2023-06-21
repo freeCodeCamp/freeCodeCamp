@@ -1,5 +1,5 @@
 // Package Utilities
-import { Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -35,7 +35,6 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   ChallengeNode,
   ChallengeMeta,
@@ -359,65 +358,28 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
   };
 
   runExam = () => {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { prerequisites }
-        }
+    // TODO: show loader
+    // TODO: fetch exam from server/database
+    const newExam = this.state.generatedExam.map(q => {
+      return { question: q.question, answer: null };
+    });
+
+    this.timerInterval = setInterval(() => {
+      this.setState({
+        examTimeInSeconds: this.state.examTimeInSeconds + 1
+      });
+    }, 1000);
+
+    this.setState(
+      {
+        userExam: newExam
       },
-      completedChallenges,
-      createFlashMessage
-    } = this.props;
+      this.props.startExam
+    );
 
-    // check that they have all the prerequisites before they can start
-    let qualifiedForExam = true;
-    let incompleteChallenge = '';
-
-    for (let i = 0; i < prerequisites.length; i++) {
-      const prerequisiteChallenge = prerequisites[i];
-      const isPrerequisiteCompleted = completedChallenges.find(
-        (completedChallenge: CompletedChallenge) =>
-          prerequisiteChallenge.id === completedChallenge.id
-      );
-
-      if (!isPrerequisiteCompleted) {
-        qualifiedForExam = false;
-        incompleteChallenge = prerequisiteChallenge.title;
-        break;
-      }
-    }
-
-    if (!qualifiedForExam) {
-      createFlashMessage({
-        type: 'danger',
-        message: FlashMessages.MissingPrerequisite,
-        variables: { challengeTitle: incompleteChallenge }
-      });
-    } else {
-      // qualified to take the exam
-      // TODO: show loader
-      // TODO: fetch exam from server/database
-      const newExam = this.state.generatedExam.map(q => {
-        return { question: q.question, answer: null };
-      });
-
-      this.timerInterval = setInterval(() => {
-        this.setState({
-          examTimeInSeconds: this.state.examTimeInSeconds + 1
-        });
-      }, 1000);
-
-      this.setState(
-        {
-          userExam: newExam
-        },
-        this.props.startExam
-      );
-
-      window.addEventListener('beforeunload', this.stopWindowClose);
-      window.addEventListener('unload', this.stopWindowClose);
-      window.addEventListener('popstate', this.stopBrowserBack);
-    }
+    window.addEventListener('beforeunload', this.stopWindowClose);
+    window.addEventListener('unload', this.stopWindowClose);
+    window.addEventListener('popstate', this.stopBrowserBack);
   };
 
   selectAnswer = (index: number, option: string): void => {
@@ -496,6 +458,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
             description,
             fields: { blockName },
             instructions,
+            prerequisites,
             superBlock,
             title,
             translationPending
@@ -503,6 +466,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
         }
       },
       examInProgress,
+      completedChallenges,
       isChallengeCompleted,
       openFinishExamModal,
       pageContext: {
@@ -518,6 +482,22 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       userExam,
       showResults
     } = this.state;
+
+    const incompletePrequisites = [];
+    let qualifiedForExam = true;
+
+    for (let i = 0; i < prerequisites.length; i++) {
+      const prerequisiteChallenge = prerequisites[i];
+      const isPrerequisiteCompleted = completedChallenges.find(
+        (completedChallenge: CompletedChallenge) =>
+          prerequisiteChallenge.id === completedChallenge.id
+      );
+
+      if (!isPrerequisiteCompleted) {
+        incompletePrequisites.push(prerequisites[i].title);
+        qualifiedForExam = false;
+      }
+    }
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -647,6 +627,26 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   {title}
                 </ChallengeTitle>
                 <Spacer size='medium' />
+
+                {qualifiedForExam ? (
+                  <Alert id='qualified-for-exam' bsStyle='info'>
+                    <p>{t('learn.qualified-for-exam')}</p>
+                  </Alert>
+                ) : (
+                  <Alert id='not-qualified-for-exam' bsStyle='danger'>
+                    <p>
+                      {t('learn.not-qualified-for-exam')}{' '}
+                      {t('learn.incomplete-challenges')}
+                    </p>
+                    <Spacer size='small' />
+                    <ul>
+                      {incompletePrequisites.map((challengeTitle, i) => (
+                        <li key={i}>{challengeTitle}</li>
+                      ))}
+                    </ul>
+                  </Alert>
+                )}
+
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
@@ -655,6 +655,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   block={true}
                   bsStyle='primary'
                   data-cy='start-exam'
+                  disabled={!qualifiedForExam}
                   onClick={this.runExam}
                 >
                   {t('buttons.click-start-exam')}
