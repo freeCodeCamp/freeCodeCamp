@@ -409,22 +409,24 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const setTabTrapped = (trapped: boolean) => {
+    const setTabTrapped = (trapped: boolean, announce = true) => {
       setMonacoTabTrapped(trapped);
       store.set('monacoTabTrapped', trapped);
-      ariaAlert(
-        `${
-          trapped
-            ? t('learn.editor-alerts.tab-trapped')
-            : t('learn.editor-alerts.tab-free')
-        }`
-      );
+      if (announce) {
+        ariaAlert(
+          `${
+            trapped
+              ? t('learn.editor-alerts.tab-trapped')
+              : t('learn.editor-alerts.tab-free')
+          }`
+        );
+      }
     };
 
     // By default, Tab will be trapped in the monaco editor, so we only need to
     // check if the user has turned this off.
     if (!isTabTrapped()) {
-      setTabTrapped(false);
+      setTabTrapped(false, false);
     }
 
     const accessibilityMode = storedAccessibilityMode();
@@ -608,14 +610,23 @@ const Editor = (props: EditorProps): JSX.Element => {
   const ariaAlert = (message: string) => {
     const ariaLive: NodeListOf<HTMLDivElement> =
       document.querySelectorAll('.monaco-alert');
+    const time = `t${Date.now()}`;
     if (ariaLive.length > 0) {
       const liveText = ariaLive[0];
+      liveText.dataset.timestamp = time;
       liveText.textContent = message;
       // Hack used by monaco to force older browsers to announce the update to
       // the live region.
       // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
       liveText.style.visibility = 'hidden';
       liveText.style.visibility = 'visible';
+      // Need to remove message after a few seconds so screen readers don't
+      // run into it.
+      setTimeout(function () {
+        if (liveText.dataset.timestamp === time) {
+          liveText.textContent = '';
+        }
+      }, 3000);
     }
   };
 
