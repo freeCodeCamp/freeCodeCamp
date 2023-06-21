@@ -1,0 +1,40 @@
+.exam-nav {
+  display: flex;
+  justify-content: space-around;
+  height: 120px;
+  background: var(--primary-color);
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+}
+
+.exam-nav .logo {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+.exam-nav .freecodecamp-logo svg {
+  height: 80%;
+  width: 80%;
+  max-width: 420px;
+}
+
+.exam-nav .partner-logo svg {
+  height: 80%;
+  width: 80%;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  .exam-nav {
+    height: 80px;
+  }
+
+  .exam-nav .logo {
+    height: 80px;
+  }
+}

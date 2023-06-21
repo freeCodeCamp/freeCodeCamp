@@ -491,8 +491,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
     const ariaLabel = t('aria.answer');
 
-    console.log(this.state);
-
     return examInProgress ? (
       <Grid>
         <Row>
