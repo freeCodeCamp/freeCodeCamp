@@ -365,9 +365,9 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
 
     this.timerInterval = setInterval(() => {
-      this.setState({
-        examTimeInSeconds: this.state.examTimeInSeconds + 1
-      });
+      this.setState(state => ({
+        examTimeInSeconds: state.examTimeInSeconds + 1
+      }));
     }, 1000);
 
     this.setState(
