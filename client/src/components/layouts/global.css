@@ -466,6 +466,10 @@ code {
   overflow-wrap: anywhere;
 }
 
+.challenge-instructions code {
+  white-space: break-spaces;
+}
+
 .panel {
   border-radius: 0;
   background-color: transparent;
