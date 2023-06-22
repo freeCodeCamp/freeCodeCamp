@@ -465,6 +465,57 @@ describe('settingRoutes', () => {
       });
     });
 
+    describe('/update-my-about', () => {
+      test('PUT updates the values in about settings', async () => {
+        const response = await superRequest('/update-my-about', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture:
+            'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual('Teacher at freeCodeCamp');
+        expect(user?.name).toEqual('Quincy Larson');
+        expect(user?.location).toEqual('USA');
+        expect(user?.picture).toEqual(
+          'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
+        );
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT updates the values in about settings without image', async () => {
+        const response = await superRequest('/update-my-about', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
+          picture: 'invalid'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+    });
+
     describe('/update-my-honesty', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superRequest('/update-my-honesty', {

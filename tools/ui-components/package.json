@@ -29,6 +29,7 @@
     "@headlessui/react": "1.7.15",
     "react": "16.14.0",
     "react-dom": "16.14.0",
+    "tslib": "2.5.2",
     "typescript": "4.9.5"
   },
   "devDependencies": {
@@ -58,6 +59,7 @@
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
+    "npm-run-all": "4.1.5",
     "postcss": "8.4.24",
     "postcss-import": "14.1.0",
     "rollup": "2.79.1",
@@ -72,7 +74,9 @@
     "build": "pnpm run build:css && pnpm run build:js",
     "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
-    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "dev:js": "cross-env NODE_ENV=development rollup -c -w ",
+    "dev:css": "pnpm tailwindcss -i ./src/base.css -o ./dist/base.css --watch",
+    "develop": "npm-run-all --parallel dev:css dev:js storybook",
     "clean": "rm -rf dist/*",
     "gen-component": "ts-node ./utils/gen-component-script"
   }

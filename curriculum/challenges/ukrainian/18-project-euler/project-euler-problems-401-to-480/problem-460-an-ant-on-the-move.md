@@ -25,7 +25,7 @@ The right image is another path. The total required time is calculated as $0.980
 
 <img class="img-responsive center-block" alt="two possible paths for d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
 
-Let $F(d)$ be the total required time if the ant chooses the quickest path. For example, $F(4) ≈ 2.960\\,516\\,287$. We can verify that $F(10) ≈ 4.668\\,187\\,834$ and $F(100) ≈ 9.217\\,221\\,972$.
+Let $F(d)$ be the total required time if the ant chooses the quickest path. Наприклад, $F(4) ≈ 2.960\\,516\\,287$. We can verify that $F(10) ≈ 4.668\\,187\\,834$ and $F(100) ≈ 9.217\\,221\\,972$.
 
 Find $F(10\\,000)$. Give your answer rounded to nine decimal places.
 

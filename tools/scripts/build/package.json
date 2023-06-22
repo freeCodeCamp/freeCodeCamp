@@ -23,7 +23,7 @@
     "@types/node-fetch": "2.6.4",
     "chai": "4.3.7",
     "debug": "4.3.4",
-    "dotenv": "16.1.4",
+    "dotenv": "16.3.1",
     "joi": "17.9.2",
     "js-yaml": "4.1.0",
     "node-fetch": "2.6.11",

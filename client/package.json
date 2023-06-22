@@ -19,11 +19,12 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "prebuild": "pnpm -w run create:config && pnpm run build:workers --env production",
+    "prebuild": "pnpm -w run create:config && pnpm run build:workers --env production && pnpm run build:components-library",
     "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby build --prefix-paths",
     "build:workers": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack --config ./webpack-workers.js",
     "clean": "gatsby clean",
-    "predevelop": "pnpm -w run create:config && pnpm run build:workers --env development",
+    "predevelop": "pnpm -w run create:config && pnpm run build:workers --env development && pnpm run build:components-library",
+    "build:components-library": "pnpm run -F=@freecodecamp/ui build",
     "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
     "lint": "ts-node ./i18n/schema-validation.ts",
     "serve": "gatsby serve -p 8000",
@@ -49,6 +50,7 @@
     "@freecodecamp/react-bootstrap": "0.32.3",
     "@freecodecamp/react-calendar-heatmap": "1.1.0",
     "@freecodecamp/strip-comments": "3.0.1",
+    "@freecodecamp/ui": "workspace:*",
     "@growthbook/growthbook-react": "0.16.0",
     "@loadable/component": "5.15.3",
     "@reach/router": "1.3.4",
@@ -173,7 +175,7 @@
     "chokidar": "3.5.3",
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
-    "dotenv": "16.1.4",
+    "dotenv": "16.3.1",
     "eslint-plugin-testing-library": "^3.9.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.5.0",
@@ -184,7 +186,7 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "ts-node": "10.9.1",
-    "webpack": "5.86.0",
+    "webpack": "5.87.0",
     "webpack-cli": "4.10.0"
   }
 }

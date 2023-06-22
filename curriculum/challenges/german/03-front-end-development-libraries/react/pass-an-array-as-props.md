@@ -20,7 +20,7 @@ Die Kindkomponente hat dann Zugriff auf die Array-Eigenschaft `colors`. Array-Me
 
 # --instructions--
 
-Im Code-Editor gibt es die Komponenten `List` und `ToDo`. Beim Rendern jeder `List` der Komponente `ToDo` übergibst du eine `tasks`-Eigenschaft, die einem Array von To-Do-Aufgaben zugewiesen ist, zum Beispiel `["walk dog", "workout"]`. Dann greifst du auf dieses `tasks`-Array in der Komponente `List` zu und zeigst seinen Wert innerhalb des `p`-Elements an. Verwende `join(", ")`, um das `props.tasks`array im `p`-Element als kommagetrennte Liste anzuzeigen. Die Liste von heute sollte mindestens 2 Aufgaben und die von morgen mindestens 3 Aufgaben enthalten.
+Im Code-Editor gibt es die Komponenten `List` und `ToDo`. Beim Rendern jeder `List` der Komponente `ToDo` übergibst du eine `tasks`-Eigenschaft, die einem Array von To-Do-Aufgaben zugewiesen ist, zum Beispiel `["walk dog", "workout"]`. Dann greifst du auf dieses `tasks`-Array in der Komponente `List` zu und zeigst seinen Wert innerhalb des `p`-Elements an. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. Die Liste von heute sollte mindestens 2 Aufgaben und die von morgen mindestens 3 Aufgaben enthalten.
 
 # --hints--
 

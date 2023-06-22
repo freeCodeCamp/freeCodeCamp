@@ -1,6 +1,6 @@
 ---
 id: 5900f3b41000cf542c50fec7
-title: 'Problem 72: Counting fractions'
+title: 'Завдання 72: підрахунок дробів'
 challengeType: 1
 forumTopicId: 302185
 dashedName: problem-72-counting-fractions
@@ -8,15 +8,15 @@ dashedName: problem-72-counting-fractions
 
 # --description--
 
-Consider the fraction, $\frac{n}{d}$, where `n` and `d` are positive integers. If `n` &lt; `d` and highest common factor, ${HCF}(n, d) = 1$, it is called a reduced proper fraction.
+Розглянемо дріб $\frac{n}{d}$, де `n` та `d` є додатними цілими числами. Якщо `n` &lt; `d` та найбільший спільний дільник ${HCF}(n, d) = 1$, то це називається скоротним правильним дробом.
 
-If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order of size, we get:
+Якщо перерахувати скоротні правильні дроби для `d` ≤ 8 у порядку зростання, то отримаємо:
 
 $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, \frac{1}{3}, \frac{3}{8}, \frac{2}{5}, \frac{3}{7}, \frac{1}{2}, \frac{4}{7}, \frac{3}{5}, \frac{5}{8}, \frac{2}{3}, \frac{5}{7}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \frac{6}{7}, \frac{7}{8}$$
 
-It can be seen that there are `21` elements in this set.
+Бачимо, що кількість елементів становить `21`.
 
-How many elements would be contained in the set of reduced proper fractions for `d` ≤ `limit`?
+Зі скількох елементів складатиметься множина скорочених правильних дробів для `d` ≤ `limit`?
 
 # --hints--
 

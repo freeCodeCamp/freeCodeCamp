@@ -1,6 +1,6 @@
 ---
 id: 5900f3db1000cf542c50feed
-title: 'Problem 110: Diophantine Reciprocals II'
+title: 'Завдання 110: обернені числа Діофанта ІІ'
 challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
@@ -8,15 +8,15 @@ dashedName: problem-110-diophantine-reciprocals-ii
 
 # --description--
 
-In the following equation x, y, and n are positive integers.
+У даному рівнянні x, y та n є натуральними числами.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-It can be verified that when `n` = 1260 there are 113 distinct solutions and this is the least value of `n` for which the total number of distinct solutions exceeds one hundred.
+Можна перевірити, що за умови `n` = 1260 існує 113 різних розв’язків, і це найменше значення `n`, для якого загальна кількість різних розв’язків перевищує сотню.
 
-What is the least value of `n` for which the number of distinct solutions exceeds four million?
+Яке найменше значення `n`, для якого кількість розв’язків перевищує чотири мільйони?
 
-**Note:** This problem is a much more difficult version of Problem 108 and as it is well beyond the limitations of a brute force approach it requires a clever implementation.
+**Примітка:** це складніша версія завдання №108, оскільки для нього потрібно використати грамотне розумове рішення.
 
 # --hints--
 

@@ -26,9 +26,9 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
-    removeComments: Joi.bool(),
+    removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(17).required(),
+    challengeType: Joi.number().min(0).max(19).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),

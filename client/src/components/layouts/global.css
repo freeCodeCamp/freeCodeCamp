@@ -391,6 +391,7 @@ fieldset[disabled] .btn-primary.focus {
 .cert-header-icon {
   display: block;
   width: 80px;
+  height: 80px;
   margin: auto;
 }
 
@@ -404,6 +405,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 100px;
+    height: 100px;
   }
 }
 
@@ -413,6 +415,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 120px;
+    height: 120px;
   }
 }
 
@@ -454,11 +457,17 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
+  border: 1px solid var(--secondary-color);
+  padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+}
+
+.challenge-instructions code {
+  white-space: break-spaces;
 }
 
 .panel {
@@ -552,6 +561,7 @@ hr {
 code[class*='language-'],
 pre[class*='language-'] {
   border-radius: 0;
+  border: none;
 }
 
 pre {

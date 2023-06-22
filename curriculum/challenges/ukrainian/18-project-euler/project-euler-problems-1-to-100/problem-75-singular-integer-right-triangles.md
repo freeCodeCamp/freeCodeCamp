@@ -1,6 +1,6 @@
 ---
 id: 5900f3b71000cf542c50feca
-title: 'Problem 75: Singular integer right triangles'
+title: 'Завдання 75: одиничні цілочисельні прямокутні трикутники'
 challengeType: 1
 forumTopicId: 302188
 dashedName: problem-75-singular-integer-right-triangles
@@ -8,24 +8,24 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+Виявляється, що 12 см — це найменша довжина дроту, який можна зігнути так, щоб сформувати прямокутний трикутник з цілими сторонами лише одним способом, проте існує набагато більше прикладів.
 
 <div style='margin-left: 4em;'>
-  <strong>12 cm:</strong> (3,4,5)<br>
-  <strong>24 cm:</strong> (6,8,10)<br>
-  <strong>30 cm:</strong> (5,12,13)<br>
-  <strong>36 cm:</strong> (9,12,15)<br>
-  <strong>40 cm:</strong> (8,15,17)<br>
-  <strong>48 cm:</strong> (12,16,20)<br><br>
+  <strong>12 см:</strong> (3,4,5)<br>
+  <strong>24 см:</strong> (6,8,10)<br>
+  <strong>30 см:</strong> (5,12,13)<br>
+  <strong>36 см:</strong> (9,12,15)<br>
+  <strong>40 см:</strong> (8,15,17)<br>
+  <strong>48 см:</strong> (12,16,20)<br><br>
 </div>
 
-In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer sided right angle triangle, and other lengths allow more than one solution to be found; for example, using 120 cm it is possible to form exactly three different integer sided right angle triangles.
+Однак існують деякі довжини дроту (наприклад, 20 см), які не можна зігнути так, щоб сформувати прямокутний трикутник з цілими сторонами. А деякі довжини пропонують декілька способів: наприклад, з дроту 120 см можна сформувати три різних прямокутних трикутники з цілими сторонами.
 
 <div style='margin-left: 4em;'>
-  <strong>120 cm:</strong> (30,40,50), (20,48,52), (24,45,51)<br><br>
+  <strong>120 см:</strong> (30,40,50), (20,48,52), (24,45,51)<br><br>
 </div>
 
-Given that L is the length of the wire, for how many values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
+Відомо, що довжина дроту становить L. Для скількох значень L ≤ `n` можна отримати лише один прямокутний трикутник з цілими сторонами?
 
 # --hints--
 
