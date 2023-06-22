@@ -270,6 +270,7 @@ button.map-title {
 .map-challenge-title-grid a.map-grid-item {
   margin: 5px 0;
   justify-content: center;
+  border: 1px dashed var(--primary-color);
 }
 
 .block-description {
@@ -280,9 +281,10 @@ button.map-title {
   margin-bottom: 0;
 }
 
-.challenge-completed {
+a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
+  border: 1px solid var(--primary-color);
 }
 
 .challenge-completed:focus-visible {
