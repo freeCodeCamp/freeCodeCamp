@@ -409,10 +409,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const setTabTrapped = (trapped: boolean, announce = true) => {
+    const setTabTrapped = (
+      trapped: boolean,
+      opts: { announce: boolean } = { announce: true }
+    ) => {
       setMonacoTabTrapped(trapped);
       store.set('monacoTabTrapped', trapped);
-      if (announce) {
+      if (opts.announce) {
         ariaAlert(
           `${
             trapped
@@ -426,7 +429,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // By default, Tab will be trapped in the monaco editor, so we only need to
     // check if the user has turned this off.
     if (!isTabTrapped()) {
-      setTabTrapped(false, false);
+      setTabTrapped(false, { announce: false });
     }
 
     const accessibilityMode = storedAccessibilityMode();
