@@ -21,6 +21,7 @@ import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
+import redirectWithMessage from './plugins/redirect-with-message';
 import { settingRoutes } from './routes/settings';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
@@ -42,6 +43,7 @@ import {
 import { userRoutes } from './routes/user';
 import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
+import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -172,6 +174,8 @@ export const build = async (
   void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
+  void fastify.register(unsubscribeDeprecated);
+  void fastify.register(redirectWithMessage);
 
   return fastify;
 };
