@@ -6,7 +6,7 @@ export const newChallengePrompts = async (): Promise<{
   title: string;
   challengeType: string;
 }> => {
-  const title = await prompt({
+  const dashedName = await prompt({
     name: 'value',
     message: 'What is the short name (in kebab-case) for this challenge?',
     validate: (block: string) => {
@@ -22,7 +22,7 @@ export const newChallengePrompts = async (): Promise<{
       return block.toLowerCase();
     }
   });
-  const name = await prompt({
+  const title = await prompt({
     name: 'value',
     message: 'What is the title of this challenge?',
     default: (title: { value: string }) => title.value
@@ -39,7 +39,7 @@ export const newChallengePrompts = async (): Promise<{
 
   return {
     title: String(title.value),
-    name: String(name.value),
+    dashedName: String(dashedName.value),
     challengeType: String(challengeType.value)
   };
 };

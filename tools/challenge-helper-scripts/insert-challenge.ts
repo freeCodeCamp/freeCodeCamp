@@ -14,7 +14,7 @@ const insertChallenge = async () => {
 
   const challenges = getChallengeOrderFromMeta();
 
-  const challengeAfter = (await prompt({
+  const challengeAfter = await prompt<{id: string}>({
     name: 'id',
     message: 'Which challenge should come AFTER this new one?',
     type: 'list',
@@ -22,7 +22,7 @@ const insertChallenge = async () => {
       name: title,
       value: id
     }))
-  })) as { id: string };
+  })
   const indexToInsert = challenges.findIndex(
     ([id]) => id === challengeAfter.id
   );
@@ -33,14 +33,13 @@ const insertChallenge = async () => {
   }
   const challengeId = new ObjectID();
   const template = templateGenerator({ ...options, challengeId });
-  createChallengeFile(options.title, template, path);
+  createChallengeFile(options.dashedName, template, path);
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToInsert, 0, [
     challengeId.toString(),
     options.title
   ]);
-  meta.challengeOrder.push([challengeId.toString(), options.title]);
   updateMetaData(meta);
 };
 
