@@ -75,6 +75,31 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
+function getNextChallengeMeta(_node, index, nodeArray) {
+  const next = nodeArray[index + 1];
+  if (next) {
+    const { superBlock, block } = next.node.challenge;
+    return {
+      superBlock,
+      block,
+      blockHashSlug: createBlockHashSlug(_node)
+    };
+  }
+  return null;
+}
+
+function createBlockHashSlug(_node) {
+  if (_node) {
+    const {
+      block,
+      fields: { slug }
+    } = _node;
+    const re = new RegExp(`${block}.*`);
+    return slug.replace(re, `#${block}`);
+  }
+  return null;
+}
+
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
@@ -96,6 +121,7 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          blockHashSlug: createBlockHashSlug(challenge),
           dashedName,
           certification,
           superBlock,
@@ -103,6 +129,11 @@ exports.createChallengePages = function (createPage) {
           isFirstStep: getIsFirstStep(challenge, index, allChallengeEdges),
           template,
           required,
+          nextChallengeMeta: getNextChallengeMeta(
+            challenge,
+            index,
+            allChallengeEdges
+          ),
           nextChallengePath: getNextChallengePath(
             challenge,
             index,
