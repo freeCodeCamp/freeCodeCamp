@@ -483,21 +483,12 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       showResults
     } = this.state;
 
-    const incompletePrequisites = [];
-    let qualifiedForExam = true;
+    const missingPrequisites = prerequisites.filter(
+      prerequisite =>
+        !completedChallenges.find(({ id }) => prerequisite.id === id)
+    );
 
-    for (let i = 0; i < prerequisites.length; i++) {
-      const prerequisiteChallenge = prerequisites[i];
-      const isPrerequisiteCompleted = completedChallenges.find(
-        (completedChallenge: CompletedChallenge) =>
-          prerequisiteChallenge.id === completedChallenge.id
-      );
-
-      if (!isPrerequisiteCompleted) {
-        incompletePrequisites.push(prerequisites[i].title);
-        qualifiedForExam = false;
-      }
-    }
+    const qualifiedForExam = missingPrequisites.length === 0;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -640,8 +631,8 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     </p>
                     <Spacer size='small' />
                     <ul>
-                      {incompletePrequisites.map((challengeTitle, i) => (
-                        <li key={i}>{challengeTitle}</li>
+                      {missingPrequisites.map(({ title, id }) => (
+                        <li key={id}>{title}</li>
                       ))}
                     </ul>
                   </Alert>
