@@ -14,7 +14,9 @@ export interface Source {
 }
 
 export interface Context {
-  window?: Window & typeof globalThis & { i18nContent?: i18n };
+  window?: Window &
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
   document?: FrameDocument;
   element: HTMLIFrameElement;
   build: string;
@@ -253,9 +255,9 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         getUserInput,
         loadEnzyme
       });
-      if (frameReady) {
-        frameReady();
-      }
+
+      await tryToLoadPyodide(frameContext.window);
+      if (frameReady) frameReady();
     })
     .catch(handleDocumentNotFound);
   return frameContext;
@@ -264,7 +266,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
 const initMainFrame =
   (_: unknown, proxyLogger?: ProxyLogger) => (frameContext: Context) => {
     waitForFrame(frameContext)
-      .then(() => {
+      .then(async () => {
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
@@ -284,11 +286,17 @@ const initMainFrame =
             // an error from a cross origin script just appears as 'Script error.'
             return false;
           };
+          await tryToLoadPyodide(frameContext.window);
         }
       })
       .catch(handleDocumentNotFound);
     return frameContext;
   };
+
+// Not all challenges include pyodide, but those that do need to load it.
+async function tryToLoadPyodide(window: Window): Promise<void> {
+  if (window.loadPyodide) window.__pyodide = await window.loadPyodide();
+}
 
 function handleDocumentNotFound(err: string) {
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
