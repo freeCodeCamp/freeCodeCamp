@@ -79,12 +79,14 @@ describe('Challenge with multifile editor', () => {
       cy.get(selectors.checkLowerJawButton).should('not.be.focused');
       cy.get(selectors.checkLowerJawButton).click();
       // Ready to submit (submit button replaces check button)
-      cy.get(selectors.checkLowerJawButton).should('not.be.visible');
       cy.get(selectors.submitLowerJawButton).should('be.visible');
+      cy.get(selectors.checkLowerJawButton).should('not.be.visible');
       // Reset
       cy.get(selectors.resetCodeButton).click();
       cy.get('[data-cy=reset-modal-confirm').click();
-      // Check button is back
+      // First we need to click on the description or Cypress will not be able
+      // to scroll to the button
+      cy.get('.editor-upper-jaw').click();
       cy.get(selectors.checkLowerJawButton).should('be.visible');
       cy.get(selectors.submitLowerJawButton).should('not.be.visible');
     }
