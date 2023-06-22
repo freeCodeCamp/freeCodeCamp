@@ -7,9 +7,13 @@ dashedName: foundational-c-sharp-with-microsoft-certification-exam
 
 # --description--
 
-Here are some rules:
+Pass this exam to earn your Foundational C# with Microsoft Certification. Please familiarize yourself with the following guidelines and click the start button when you are ready to begin:
 
-- click start
+- You must complete the exam in a single session.
+- If you exit the exam at any point, it will result in the loss of your progress.
+- The exam will comprise of multiple-choice questions.
+- There is no time limit, but your time will be recorded.
+- Complete the exam and answer a sufficent number of question correctly to qualify to claim your certification.
 
 # --instructions--
 
