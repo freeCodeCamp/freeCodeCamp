@@ -71,6 +71,26 @@ describe('Challenge with multifile editor', () => {
   );
 
   it(
+    'brings back the check button after reset',
+    { browser: '!firefox' },
+    () => {
+      cy.visit(location);
+      cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
+      cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+      cy.get(selectors.checkLowerJawButton).click();
+      // Ready to submit (submit button replaces check button)
+      cy.get(selectors.checkLowerJawButton).should('not.be.visible');
+      cy.get(selectors.submitLowerJawButton).should('be.visible');
+      // Reset
+      cy.get(selectors.resetCodeButton).click();
+      cy.get('[data-cy=reset-modal-confirm').click();
+      // Check button is back
+      cy.get(selectors.checkLowerJawButton).should('be.visible');
+      cy.get(selectors.submitLowerJawButton).should('not.be.visible');
+    }
+  );
+
+  it(
     'checks hotkeys when instruction is focused',
     { browser: '!firefox' },
     () => {
