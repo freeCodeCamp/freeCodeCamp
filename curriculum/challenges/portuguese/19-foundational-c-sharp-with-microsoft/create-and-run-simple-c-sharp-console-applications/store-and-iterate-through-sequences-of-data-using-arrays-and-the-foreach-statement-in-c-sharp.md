@@ -1,22 +1,22 @@
 ---
 id: 647e22058acb466c97ccbeec
-title: 'Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#'
+title: 'Armazene e percorra sequências de dados usando arrays e a instrução foreach em C#'
 challengeType: 19
 dashedName: store-and-iterate-through-sequences-of-data-using-arrays-and-the-foreach-statement-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-arrays/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-arrays/</a> and complete all the tasks for the "Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-arrays/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-arrays/</a> e complete todas as tarefas do módulo "Armazene e percorra sequências de dados usando arrays e a instrução foreach em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

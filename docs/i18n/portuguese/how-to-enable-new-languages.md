@@ -377,7 +377,7 @@ Em seguida, vá para o diretório `config/i18n/locales`, crie uma pasta e inform
 
 Em seguida, copie os arquivos JSON do diretório `english` para a sua nova pasta.
 
-In your new folder, open the `redirects.json` file and replace its contents with an empty array:
+Na sua nova pasta, abra o arquivo `redirects.json` e substitua seu conteúdo por um array vazio:
 
 ```json
 []

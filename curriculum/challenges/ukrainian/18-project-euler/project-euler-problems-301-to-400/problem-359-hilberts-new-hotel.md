@@ -25,7 +25,7 @@ Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
 
 Eventually, every person in the line gets a room in the hotel.
 
-Define $P(f, r)$ to be $n$ if person $n$ occupies room $r$ in floor $f$, and 0 if no person occupies the room. Here are a few examples:
+Define $P(f, r)$ to be $n$ if person $n$ occupies room $r$ in floor $f$, and 0 if no person occupies the room. Ось декілька прикладів:
 
 $$\begin{align}   & P(1, 1) = 1 \\\\
   & P(1, 2) = 3 \\\\   & P(2, 1) = 2 \\\\

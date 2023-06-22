@@ -377,7 +377,7 @@ const algoliaIndices = {
 
 Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 
-In your new folder, open the `redirects.json` file and replace its contents with an empty array:
+Відкрийте файл `redirects.json` у новій папці та замініть його вміст на порожній масив:
 
 ```json
 []

@@ -18,11 +18,11 @@ For example, here are some of the ways to tile a board of length $n = 8$:
 
 Let $T(n)$ be the number of ways to tile a board of length $n$ as described above.
 
-For example, $T(1) = 10$ and $T(2) = 101$.
+Наприклад, $T(1) = 10$ та $T(2) = 101$.
 
 Let $S(L)$ be the triple sum $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ for $1 ≤ a, b, c ≤ L$.
 
-For example:
+Наприклад:
 
 $$\begin{align}   & S(2) = 10\\,444 \\\\
   & S(3) = 1\\,292\\,115\\,238\\,446\\,807\\,016\\,106\\,539\\,989 \\\\ & S(4)\bmod 987\\,898\\,789 = 670\\,616\\,280. \end{align}$$

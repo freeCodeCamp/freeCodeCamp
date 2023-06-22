@@ -30,7 +30,7 @@ Thus, the worst-case cost achieved by this strategy is <strong><span style="colo
 
 Let $C(n, a, b)$ be the worst-case cost achieved by an optimal strategy for the given values of $n$, $a$, and $b$.
 
-Here are a few examples:
+Ось декілька прикладів:
 
 $$\begin{align}   & C(5, 2, 3) = 5 \\\\
   & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\   & C(20\\,000, 5, 7) = 82 \\\\

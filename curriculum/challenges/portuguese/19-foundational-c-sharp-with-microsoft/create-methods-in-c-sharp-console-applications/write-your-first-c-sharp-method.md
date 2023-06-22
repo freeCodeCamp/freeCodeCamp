@@ -1,22 +1,22 @@
 ---
 id: 647e226a8acb466c97ccbef1
-title: 'Write Your First C# Method'
+title: 'Escreva seu primeiro método em C#'
 challengeType: 19
 dashedName: write-your-first-c-sharp-method
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/" target="_blank">https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/</a> and complete all the tasks for the "Write Your First C# Method" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/" target="_blank">https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/</a> e complete todas as tarefas do módulo "Escreva seu primeiro método em C#". Isto é necessário para adquirir o troféu "Crie métodos em aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

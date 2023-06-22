@@ -47,7 +47,6 @@ const legacyCertMap = [
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
     certSlug: 'legacy-front-end',
-    flag: 'isFrontEndCert',
     projects: [
       {
         id: 'bd7158d8c242eddfaeb5bd13',
@@ -115,7 +114,6 @@ const legacyCertMap = [
     id: '660add10cb82ac38a17513be',
     title: 'Legacy Back End',
     certSlug: 'legacy-back-end',
-    flag: 'isBackEndCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
@@ -184,7 +182,6 @@ const legacyCertMap = [
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
     certSlug: 'legacy-data-visualization',
-    flag: 'isDataVisCert',
     projects: [
       {
         id: 'bd7157d8c242eddfaeb5bd13',
@@ -253,7 +250,6 @@ const legacyCertMap = [
     title: 'Legacy Information Security and Quality Assurance',
     // Keep this as information-security-and-quality-assurance
     certSlug: 'information-security-and-quality-assurance',
-    flag: 'isInfosecQaCert',
     projects: [
       // Keep this as information-security-and-quality-assurance
       {
@@ -293,7 +289,6 @@ const legacyFullStack = {
   id: '561add10cb82ac38a17213bd',
   title: 'Legacy Full Stack',
   certSlug: 'full-stack',
-  flag: 'isFullStackCert',
   projects: null
   // Requirements are other certs and is
   // handled elsewhere
@@ -303,7 +298,6 @@ const certMap = [
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
     certSlug: SuperBlocks.RespWebDesign,
-    flag: 'isRespWebDesignCert',
     projects: [
       {
         id: '587d78af367417b2b2512b03',
@@ -343,7 +337,6 @@ const certMap = [
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
     certSlug: SuperBlocks.JsAlgoDataStruct,
-    flag: 'isJsAlgoDataStructCert',
     projects: [
       {
         id: 'aaa48de84e1ecc7c742e1124',
@@ -381,7 +374,6 @@ const certMap = [
     id: '561acd10cb82ac38a17513bc',
     title: 'Front End Development Libraries',
     certSlug: SuperBlocks.FrontEndDevLibs,
-    flag: 'isFrontEndLibsCert',
     projects: [
       {
         id: 'bd7158d8c442eddfaeb5bd13',
@@ -419,7 +411,6 @@ const certMap = [
     id: '5a553ca864b52e1d8bceea14',
     title: 'Data Visualization',
     certSlug: SuperBlocks.DataVis,
-    flag: 'is2018DataVisCert',
     projects: [
       {
         id: 'bd7168d8c242eddfaeb5bd13',
@@ -457,7 +448,6 @@ const certMap = [
     id: '606243f50267e718b1e755f4',
     title: 'Relational Database',
     certSlug: 'relational-database-v8',
-    flag: 'isRelationalDatabaseCertV8',
     projects: [
       {
         id: '5f1a4ef5d5d6b5ab580fc6ae',
@@ -495,7 +485,6 @@ const certMap = [
     id: '561add10cb82ac38a17523bc',
     title: 'Back End Development and APIs',
     certSlug: SuperBlocks.BackEndDevApis,
-    flag: 'isApisMicroservicesCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
@@ -533,7 +522,6 @@ const certMap = [
     id: '5e611829481575a52dc59c0e',
     title: 'Quality Assurance',
     certSlug: 'quality-assurance-v7',
-    flag: 'isQaCertV7',
     projects: [
       {
         id: '587d8249367417b2b2512c41',
@@ -571,7 +559,6 @@ const certMap = [
     id: '5e44431b903586ffb414c951',
     title: 'Scientific Computing with Python',
     certSlug: 'scientific-computing-with-python-v7',
-    flag: 'isSciCompPyCertV7',
     projects: [
       {
         id: '5e44412c903586ffb414c94c',
@@ -609,7 +596,6 @@ const certMap = [
     id: '5e46fc95ac417301a38fb934',
     title: 'Data Analysis with Python',
     certSlug: 'data-analysis-with-python-v7',
-    flag: 'isDataAnalysisPyCertV7',
     projects: [
       {
         id: '5e46f7e5ac417301a38fb928',
@@ -648,7 +634,6 @@ const certMap = [
     id: '5e6021435ac9d0ecd8b94b00',
     title: 'Information Security',
     certSlug: 'information-security-v7',
-    flag: 'isInfosecCertV7',
     projects: [
       {
         id: '587d824a367417b2b2512c44',
@@ -686,7 +671,6 @@ const certMap = [
     id: '5e46fc95ac417301a38fb935',
     title: 'Machine Learning with Python',
     certSlug: 'machine-learning-with-python-v7',
-    flag: 'isMachineLearningPyCertV7',
     projects: [
       {
         id: '5e46f8d6ac417301a38fb92d',
@@ -724,7 +708,6 @@ const certMap = [
     id: '61531b20cc9dfa2741a5b800',
     title: 'College Algebra with Python',
     certSlug: 'college-algebra-with-python-v8',
-    flag: 'isCollegeAlgebraPyCertV8',
     projects: [
       {
         id: '63d83ff239c73468b059cd3f',
@@ -765,7 +748,6 @@ const upcomingCertMap = [
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
     certSlug: 'foundational-c-sharp-with-microsoft',
-    flag: 'isFoundationalCSharpCert',
     projects: [
       {
         id: '647e22d18acb466c97ccbef8',
@@ -779,7 +761,6 @@ const upcomingCertMap = [
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',
     certSlug: 'example-certification-v8',
-    flag: 'isExampleCertV8',
     projects: [
       {
         id: '645147516c245de4d11eb7ba',

@@ -1,22 +1,22 @@
 ---
 id: 647e236d8acb466c97ccbf01
-title: Guided Project - Calculate Final GPA
+title: Projeto guiado - calcular o GPA final
 challengeType: 19
 dashedName: guided-project-calculate-final-gpa
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-final-gpa/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-final-gpa/</a> and complete all the tasks for the "Guided Project - Calculate Final GPA" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-final-gpa/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-final-gpa/</a> e complete todas as tarefas do módulo "Projeto guiado - calcular o GPA final". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

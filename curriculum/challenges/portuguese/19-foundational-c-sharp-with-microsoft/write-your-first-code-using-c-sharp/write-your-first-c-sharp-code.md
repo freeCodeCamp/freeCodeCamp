@@ -1,22 +1,22 @@
 ---
 id: 647e239e8acb466c97ccbf05
-title: 'Write Your First C# Code'
+title: 'Escreva seu primeiro código C#'
 challengeType: 19
 dashedName: write-your-first-c-sharp-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-write-first/</a> and complete all the tasks for the "Write Your First C# Code" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-write-first/</a> e complete todas as tarefas do módulo "Escreva seu primeiro código C#". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

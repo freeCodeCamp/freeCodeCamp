@@ -1,22 +1,22 @@
 ---
 id: 647e23788acb466c97ccbf02
-title: 'Perform Basic Operations on Numbers in C#'
+title: 'Execute operações básicas com números em C#'
 challengeType: 19
 dashedName: perform-basic-operations-on-numbers-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/</a> and complete all the tasks for the "Perform Basic Operations on Numbers in C#" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/</a> e complete todas as tarefas do módulo "Execute operações básicas com números em C#". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+O que é o C#?
 
 ## --answers--
 

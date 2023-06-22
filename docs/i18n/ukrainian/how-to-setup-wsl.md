@@ -1,6 +1,6 @@
 # Налаштування freeCodeCamp на Windows Subsystem for Linux (WSL)
 
-> [!NOTE] Before you follow these instructions make sure your system meets the requirements.
+> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам.
 > 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 чи вище) — доступно для всіх дистрибутивів, включно з Windows 10 Home.
 > 
@@ -18,7 +18,7 @@
 
    > [!NOTE]
    > 
-   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
+   > Ви можете використовувати інші дистрибутиви, основою яких не є Debian, але у них наявні певні недоліки та вони виходять за рамки цього посібника.
 
 2. Оновіть залежності ОС
 
@@ -44,13 +44,13 @@ git version 2.25.1
 
 ## Встановлення редактора коду
 
-Ми наполегливо рекомендуємо встановити [Visual Studio Code](https://code.visualstudio.com) на Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
+Ми наполегливо рекомендуємо встановити [Visual Studio Code](https://code.visualstudio.com) на Windows 10. Цей редактор підтримує WSL та автоматично встановлює всі необхідні розширення на вашому дистрибутиві WSL.
 
 По суті, ви змінюватимете та зберігатимете свій код на Ubuntu-18.04 із VS Code, встановленим на Windows.
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
+Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками npm до версії, налаштованої у вашому дистрибутиві WSL.
 
-You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
+Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and npm.
 
 ## Встановлення Docker Desktop
 
@@ -72,7 +72,7 @@ You can check these settings by going to Settings > Languages & Frameworks > Nod
 
 1. Запустіть новий термінал Ubuntu-18.04
 
-2. Pull `MongoDB 4.0.x` from Docker Hub
+2. Витягніть `MongoDB 4.0.x` із Docker Hub
 
    ```console
    docker pull mongo:4.0
