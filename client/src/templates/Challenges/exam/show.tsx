@@ -625,10 +625,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   </Alert>
                 ) : (
                   <Alert id='not-qualified-for-exam' bsStyle='danger'>
-                    <p>
-                      {t('learn.not-qualified-for-exam')}{' '}
-                      {t('learn.incomplete-challenges')}
-                    </p>
+                    <p>{t('learn.not-qualified-for-exam')}</p>
                     <Spacer size='small' />
                     <ul>
                       {missingPrequisites.map(({ title, id }) => (
