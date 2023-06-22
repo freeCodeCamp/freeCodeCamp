@@ -13,11 +13,11 @@ dashedName: problem-106-special-subset-sums-meta-testing
 1. $S(B) ≠ S(C)$; тобто суми підмножин не можуть бути рівними.
 2. Якщо B містить більше елементів ніж C, тоді $S(B) > S(C)$.
 
-For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
+У цьому завданні припустимо, що дана множина містить n висхідних елементів та задовільняє друге правило.
 
-Surprisingly, out of the 25 possible subset pairs that can be obtained from a set for which n = 4, only 1 of these pairs need to be tested for equality (first rule). Similarly, when n = 7, only 70 out of the 966 subset pairs need to be tested.
+На диво, з 25 можливих пар підмножин, які можна отримати за умови n = 4, на рівність потрібно перевірити лише одну (перше правило). Аналогічно, якщо n = 7, треба перевірити лише 70 з 966 пар підмножин.
 
-For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
+Скільки можливих пар підмножин з 261625 потрібно перевірити на рівність, якщо n = 12?
 
 **Примітка:** це завдання пов’язане із завданнями №103 та №105.
 
