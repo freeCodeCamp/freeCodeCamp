@@ -45,7 +45,7 @@
     "cypress:dev:watch": "pnpm run cypress open",
     "cypress:install": "cypress install && echo 'for use with ./cypress-install.js'",
     "cypress:install-build-tools": "sh ./cypress-install.sh",
-    "predevelop": "npm-run-all -p create:* build:curriculum",
+    "predevelop": "npm-run-all -p create:* -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && pnpm run develop",
     "develop:server": "cd ./api-server && pnpm run develop",
