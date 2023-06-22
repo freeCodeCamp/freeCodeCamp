@@ -87,19 +87,26 @@ export const HeadlessButton = React.forwardRef<
 );
 
 const defaultClass =
-  'block text-center no-underline px-[20px] py-[3px] bg-foreground-primary text-background-primary bg-foreground-primary text-background-primary focus:bg-background-primary focus:text-foreground-primary hover:text-foreground-primary hover:bg-background-primary w-full';
+  'block text-center no-underline border-none px-4 py-1.5 focus:bg-background-secondary focus:text-foreground-secondary hover:text-foreground-secondary hover:bg-background-secondary w-full';
 
 export const MenuItem = ({
   children,
   className,
   ...props
 }: MenuItemsProps): JSX.Element => {
-  const classes = [defaultClass, className].join(' ');
   return (
-    <Menu.Item as='li'>
-      <HeadlessButton className={classes} {...props}>
-        {children}
-      </HeadlessButton>
+    <Menu.Item>
+      {({ active }) => {
+        const activeStyles = active
+          ? 'text-foreground-secondary bg-background-secondary outline outline-3 outline-blue-500 outline-offset-[-3px]'
+          : 'text-background-secondary bg-foreground-secondary';
+        const classes = [defaultClass, className, activeStyles].join(' ');
+        return (
+          <HeadlessButton className={classes} {...props}>
+            {children}
+          </HeadlessButton>
+        );
+      }}
     </Menu.Item>
   );
 };
