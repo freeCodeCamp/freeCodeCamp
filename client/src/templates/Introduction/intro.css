@@ -250,7 +250,7 @@ button.map-title {
 }
 
 .map-challenges-grid .map-challenge-title a:focus {
-  outline-offset: -2px;
+  outline-offset: 1px;
 }
 
 .map-challenges-grid {
@@ -285,10 +285,6 @@ a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
   border: 1px solid var(--primary-color);
-}
-
-.challenge-completed:focus-visible {
-  outline-color: var(--secondary-color);
 }
 
 .challenge-completed span {
