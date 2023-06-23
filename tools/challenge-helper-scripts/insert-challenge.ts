@@ -14,7 +14,7 @@ const insertChallenge = async () => {
 
   const challenges = getChallengeOrderFromMeta();
 
-  const challengeAfter = await prompt<{id: string}>({
+  const challengeAfter = await prompt<{ id: string }>({
     name: 'id',
     message: 'Which challenge should come AFTER this new one?',
     type: 'list',
@@ -22,7 +22,7 @@ const insertChallenge = async () => {
       name: title,
       value: id
     }))
-  })
+  });
   const indexToInsert = challenges.findIndex(
     ([id]) => id === challengeAfter.id
   );

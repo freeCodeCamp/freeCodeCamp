@@ -3,33 +3,33 @@ import ObjectID from 'bson-objectid';
 export interface ChallengeOptions {
   challengeId: ObjectID;
   title: string;
-  name: string;
+  dashedName: string;
   challengeType: string;
 }
 
 const buildFrontMatter = ({
   challengeId,
   title,
-  name,
+  dashedName,
   challengeType
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
 title: ${title}
 challengeType: ${challengeType}
-dashedName: ${name}
+dashedName: ${dashedName}
 ---`;
 
 const buildFrontMatterWithVideo = ({
   challengeId,
   title,
-  name,
+  dashedName,
   challengeType
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
 videoId: ADD YOUR VIDEO ID HERE!!!
 title: ${title}
 challengeType: ${challengeType}
-dashedName: ${name}
+dashedName: ${dashedName}
 ---`;
 
 export const getLegacyChallengeTemplate = (

@@ -2,11 +2,11 @@ import { prompt } from 'inquirer';
 import { challengeTypes } from '../../../client/utils/challenge-types';
 
 export const newChallengePrompts = async (): Promise<{
-  name: string;
   title: string;
+  dashedName: string;
   challengeType: string;
 }> => {
-  const dashedName = await prompt({
+  const dashedName = await prompt<{ value: string }>({
     name: 'value',
     message: 'What is the short name (in kebab-case) for this challenge?',
     validate: (block: string) => {
@@ -22,12 +22,12 @@ export const newChallengePrompts = async (): Promise<{
       return block.toLowerCase();
     }
   });
-  const title = await prompt({
+  const title = await prompt<{ value: string }>({
     name: 'value',
     message: 'What is the title of this challenge?',
     default: (title: { value: string }) => title.value
   });
-  const challengeType = (await prompt({
+  const challengeType = await prompt<{ value: string }>({
     name: 'value',
     message: 'What type of challenge is this?',
     type: 'list',
@@ -35,11 +35,11 @@ export const newChallengePrompts = async (): Promise<{
       name: key,
       value
     }))
-  })) as { value: string };
+  });
 
   return {
-    title: String(title.value),
-    dashedName: String(dashedName.value),
-    challengeType: String(challengeType.value)
+    title: title.value,
+    dashedName: dashedName.value,
+    challengeType: challengeType.value
   };
 };
