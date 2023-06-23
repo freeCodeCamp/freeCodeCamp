@@ -4,6 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+  "helpCategory": "JavaScript",
   "order": 42,
   "time": "5 hours",
   "template": "",
