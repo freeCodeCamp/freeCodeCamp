@@ -615,7 +615,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       document.querySelectorAll('.monaco-alert');
     if (ariaLive.length > 0) {
       const liveText = ariaLive[0];
-      liveText.dataset.timestamp = time;
       liveText.textContent = message;
       // Hack used by monaco to force older browsers to announce the update to
       // the live region.
