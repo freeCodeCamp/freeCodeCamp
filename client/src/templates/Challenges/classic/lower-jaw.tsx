@@ -12,7 +12,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import ProgressBar from '../../../components/ProgressBar';
 import { ChallengeMeta } from '../../../redux/prop-types';
-import Quote from '../../../assets/icons/qoute';
+import Quote from '../../../assets/icons/quote';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
