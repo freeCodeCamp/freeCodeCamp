@@ -613,7 +613,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   const ariaAlert = (message: string) => {
     const ariaLive: NodeListOf<HTMLDivElement> =
       document.querySelectorAll('.monaco-alert');
-    const time = `t${Date.now()}`;
     if (ariaLive.length > 0) {
       const liveText = ariaLive[0];
       liveText.dataset.timestamp = time;
