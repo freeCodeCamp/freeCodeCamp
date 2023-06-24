@@ -9,11 +9,14 @@ import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 
+interface ShowUnsubscribedProps {
+  unsubscribeId?: string;
+  path?: string;
+}
+
 function ShowUnsubscribed({
   unsubscribeId
-}: {
-  unsubscribeId: string;
-}): JSX.Element {
+}: ShowUnsubscribedProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
