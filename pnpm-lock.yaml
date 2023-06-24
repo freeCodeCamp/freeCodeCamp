@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       dotenv:
-        specifier: 16.3.1
+        specifier: 16.3.11
         version: 16.3.1
       invariant:
         specifier: 2.2.4
