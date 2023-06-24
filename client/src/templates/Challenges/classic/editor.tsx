@@ -623,7 +623,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       liveText.style.visibility = 'visible';
       // Need to remove message after a few seconds so screen readers don't
       // run into it.
+      // First, track the latest message so it is shown for the full duration.
+      const time = `t${Date.now()}`;
+      liveText.dataset.timestamp = time;
       setTimeout(function () {
+        // Now, only the latest message will have this timestamp.
         if (liveText.dataset.timestamp === time) {
           liveText.textContent = '';
         }
