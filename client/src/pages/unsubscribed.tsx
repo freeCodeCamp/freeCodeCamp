@@ -1,5 +1,4 @@
 import { Router } from '@reach/router';
-import { withPrefix } from 'gatsby';
 import React from 'react';
 
 import ShowUnsubscribed from '../client-only-routes/show-unsubscribed';
@@ -8,9 +7,9 @@ import RedirectHome from '../components/redirect-home';
 function Unsubscribed(): JSX.Element {
   return (
     <Router>
-      <ShowUnsubscribed path={withPrefix('/unsubscribed/:unsubscribeId')} />
+      <ShowUnsubscribed />
 
-      <ShowUnsubscribed path={withPrefix('/unsubscribed')} />
+      <ShowUnsubscribed />
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       <RedirectHome default={true} />

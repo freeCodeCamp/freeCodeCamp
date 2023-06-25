@@ -11,7 +11,6 @@ const { apiLocation } = envData;
 
 interface ShowUnsubscribedProps {
   unsubscribeId?: string;
-  path?: string;
 }
 
 function ShowUnsubscribed({
