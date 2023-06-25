@@ -15,7 +15,7 @@ function FourOhFourPage(): JSX.Element {
       {/* @ts-ignore */}
       <ShowProfileOrFourOhFour path={withPrefix('/:maybeUser')} />
 
-      <FourOhFour default={true} />
+      <FourOhFour />
     </Router>
   );
 }
