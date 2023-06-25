@@ -15,7 +15,7 @@ const FourOhFour = (): JSX.Element => {
   return (
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
-      <img alt={t('404.not-found') || ''} src={notFoundLogo} />
+      <img alt={t('404.not-found')} src={notFoundLogo} />
       <Spacer size='medium' />
       <h1>{t('404.page-not-found')}.</h1>
       <Spacer size='medium' />
