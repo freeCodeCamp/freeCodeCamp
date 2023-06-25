@@ -9,14 +9,9 @@ import { Spacer } from '../helpers';
 
 import './404.css';
 
-interface FourOhFourProps {
-  default?: boolean;
-}
-
-const FourOhFour = (_props: FourOhFourProps): JSX.Element => {
+const FourOhFour = (): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
-
   return (
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
