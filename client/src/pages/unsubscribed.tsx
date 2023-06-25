@@ -15,7 +15,7 @@ function Unsubscribed(): JSX.Element {
       {/* @ts-ignore */}
       <ShowUnsubscribed path={withPrefix('/unsubscribed')} />
 
-      <RedirectHome default={true} />
+      <RedirectHome />
     </Router>
   );
 }

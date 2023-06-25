@@ -1,11 +1,7 @@
 import { navigate } from 'gatsby';
 
-interface RedirectProps {
-  default?: boolean;
-}
-
 const createRedirect =
-  (to = '/'): ((_props: RedirectProps) => JSX.Element | null) =>
+  (to = '/'): (() => JSX.Element | null) =>
   () => {
     if (typeof window !== 'undefined') {
       void navigate(to);

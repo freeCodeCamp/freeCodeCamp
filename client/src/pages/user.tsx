@@ -11,7 +11,7 @@ function User(): JSX.Element {
       {/* @ts-expect-error Adding path property breaks username typing */}
       <ShowUser path={withPrefix('/user/:username/report-user')} />
 
-      <RedirectHome default={true} />
+      <RedirectHome />
     </Router>
   );
 }
