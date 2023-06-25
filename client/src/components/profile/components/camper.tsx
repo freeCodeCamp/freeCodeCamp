@@ -121,9 +121,7 @@ function Camper({
               {t('profile.contributor')}
             </Link>
           </p>
-          <p className='text-center'>
-            {joinArray(yearsTopContributor as string[], t)}
-          </p>
+          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
         </div>
       )}
       <br />
