@@ -1,6 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50feff
-title: 'Problem 128: Hexagonal tile differences'
+title: 'Завдання 128: різниці шестикутних плиток'
 challengeType: 1
 forumTopicId: 301755
 dashedName: problem-128-hexagonal-tile-differences
@@ -8,23 +8,23 @@ dashedName: problem-128-hexagonal-tile-differences
 
 # --description--
 
-A hexagonal tile with number 1 is surrounded by a ring of six hexagonal tiles, starting at "12 o'clock" and numbering the tiles 2 to 7 in an anti-clockwise direction.
+Шестикутна плитка з числом 1 оточена кільцем із шести шестикутних плиток, які, починаючи із «12-ї години», пронумеровані від 2 до 7 у напрямку проти годинникової стрілки.
 
-New rings are added in the same fashion, with the next rings being numbered 8 to 19, 20 to 37, 38 to 61, and so on. The diagram below shows the first three rings.
+Нові кільця додані так само, і пронумеровані від 8 до 19, від 20 до 37, від 38 до 61 і так далі. На малюнку нижче зображено перші три кільця.
 
-<img class="img-responsive center-block" alt="three first rings of arranged hexagonal tiles with numbers 1 to 37, and with highlighted tiles 8 and 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="перші три кільця упорядкованих шестикутних плиток з числами від 1 до 37 і з виділеними плитками 8 та 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
 
-By finding the difference between tile $n$ and each of its six neighbours we shall define $PD(n)$ to be the number of those differences which are prime.
+Знайшовши різницю між плиткою $n$ та кожним із її шести сусідів, визначимо $PD(n)$ як кількість різниць, які є простими числами.
 
-For example, working clockwise around tile 8 the differences are 12, 29, 11, 6, 1, and 13. So $PD(8) = 3$.
+Наприклад, працюючи за годинниковою стрілкою навколо клітинки 8, різницями є 12, 29, 11, 6, 1 та 13. Отже, $PD(8) = 3$.
 
-In the same way, the differences around tile 17 are 1, 17, 16, 1, 11, and 10, hence $PD(17) = 2$.
+Точно так само різницями навколо плитки 17 є 1, 17, 16, 1, 11 та 10, тому $PD(17) = 2$.
 
-It can be shown that the maximum value of $PD(n)$ is $3$.
+Можна показати, що максимальним значенням $PD(n)$ є $3$.
 
-If all of the tiles for which $PD(n) = 3$ are listed in ascending order to form a sequence, the 10th tile would be 271.
+Якщо всі плитки, для яких $PD(n) = 3$, перераховані в порядку зростання для формування послідовності, то десятою плиткою буде 271.
 
-Find the 2000th tile in this sequence.
+Знайдіть 2000-ну плитку в цій послідовності.
 
 # --hints--
 

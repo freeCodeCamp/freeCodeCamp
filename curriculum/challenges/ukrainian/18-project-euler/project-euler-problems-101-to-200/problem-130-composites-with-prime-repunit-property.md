@@ -1,6 +1,6 @@
 ---
 id: 5900f3ee1000cf542c50ff00
-title: 'Problem 130: Composites with prime repunit property'
+title: 'Завдання 130: складені числа з властивістю простих реп’юнітів'
 challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
@@ -8,15 +8,15 @@ dashedName: problem-130-composites-with-prime-repunit-property
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Число, що повністю складається з одиниць, називається реп’юнітом. Визначимо, що $R(k)$ є реп’юнітом довжиною $k$. Наприклад, $R(6) = 111111$.
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+Дано, що $n$ є цілим додатним числом і $НСД(n, 10) = 1$. Можна побачити, що завжди існує значення $k$, за якого $R(k)$ ділиться на $n$ без остачі. Нехай $A(n)$ буде найменшим таким значенням $k$; наприклад, $A(7) = 6$ і $A(41) = 5$.
 
-You are given that for all primes, $p > 5$, that $p − 1$ is divisible by $A(p)$. For example, when $p = 41, A(41) = 5$, and 40 is divisible by 5.
+Дано, що для всіх простих чисел $p > 5$, число $p − 1$ ділиться на $A(p)$ без остачі. Наприклад, коли $p = 41, A(41) = 5$, а 40 ділиться на 5 без остачі.
 
-However, there are rare composite values for which this is also true; the first five examples being 91, 259, 451, 481, and 703.
+Однак існують рідкісні складені значення, для яких діє ця умова. Перші п’ять прикладів: 91, 259, 451, 481 та 703.
 
-Find the sum of the first twenty-five composite values of $n$ for which $GCD(n, 10) = 1$ and $n − 1$ is divisible by $A(n)$.
+Знайдіть суму перших двадцяти п’яти складених значень $n$, за яких $НСД (n, 10) = 1$ й $n − 1$ ділиться на $A(n)$ без остачі.
 
 # --hints--
 

@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
+If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. Eine `switch`-Anweisung vergleich den Wert einen mit der <dfn>case</dfn>-Anweisungen, in denen verschiedene mögliche Werte definiert werden. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
 
 Hier ist ein Beispiel für eine `switch`-Anweisung:
 

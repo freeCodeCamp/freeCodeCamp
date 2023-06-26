@@ -8,7 +8,7 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
+Manchmal musst du alle Schlüssel innerhalb eines Objekts durchlaufen. Du kannst dazu eine <dfn>for...in</dfn>-Schleife verwenden. Die for...in-Schleife sieht wie folgt aus:
 
 ```javascript
 const refrigerator = {
@@ -21,7 +21,7 @@ for (const food in refrigerator) {
 }
 ```
 
-This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
+Dieser Code protokolliert `milk 1`  und `eggs 12`, wobei jeder Schlüssel-Wert-Paar in einer eigenen Zeile steht.
 
 We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
 
@@ -29,7 +29,7 @@ We defined the variable `food` in the loop head and this variable was set to eac
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
+Wir haben eine Funktion `countOnline` definiert, die ein Argument (ein Nutzer-Objekt) `allUsers` akzeptiert. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. Ein Beispiel für ein Objekt, das an `countOnline` übergeben werden könnte, ist unten abgebildet. Jeder Nutzer wird eine `online`-Eigenschaft mit entweder einem `true` oder `false`-Wert besitzen.
 
 ```js
 {

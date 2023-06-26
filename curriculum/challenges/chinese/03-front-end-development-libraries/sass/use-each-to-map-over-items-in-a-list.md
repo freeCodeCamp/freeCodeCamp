@@ -44,7 +44,7 @@ $colors: (color1: blue, color2: red, color3: green);
 
 # --instructions--
 
-Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the `color` part changes for each item to the respective color. Each class should set the `background-color` to the respective color as well.
+编写一个 `@each` 指令遍历列表：`blue, black, red` ，将每个变量分配给 class 为 `.color-bg` 的项目，使每个项目的 `color` 部分都是各自相应的颜色。 每个 class 也应该将 `background-color` 设置为相应的颜色。
 
 # --hints--
 

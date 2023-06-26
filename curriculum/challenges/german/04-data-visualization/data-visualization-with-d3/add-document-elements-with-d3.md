@@ -16,13 +16,13 @@ Die `select()`-Methode wählt ein Element aus dem Dokument aus. Sie nimmt ein Ar
 const anchor = d3.select("a");
 ```
 
-Im obigen Beispiel wird das erste Anker-Tag auf der Seite gefunden und ein HTML-Knoten für dieses in der Variable `anchor` gespeichert. Du kannst die Auswahl mit anderen Methoden verwenden. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
+Im obigen Beispiel wird das erste Anker-Tag auf der Seite gefunden und ein HTML-Knoten für dieses in der Variable `anchor` gespeichert. Du kannst die Auswahl mit anderen Methoden verwenden. Der `d3`-Teil des Beispiels ist ein Verweis auf das D3-Objekt, mit dem du auf D3-Methoden zugreifst.
 
 Zwei weitere nützliche Methoden sind `append()` und `text()`.
 
 Die `append()`-Methode akzeptiert das Element, welches du dem Dokument hinzufügen möchtest, als Argument. Es fügt einen HTML-Knoten einem bestimmten Element hinzu und gibt ein Handle zu diesem Knoten zurück.
 
-Die `text()`-Methode legt entweder den Text des ausgewählten Knotens fest oder ruft den aktuellen Text ab. To set the value, you pass a string as an argument inside the parentheses of the method.
+Die `text()`-Methode legt entweder den Text des ausgewählten Knotens fest oder ruft den aktuellen Text ab. Übergib ein String als Argument innerhalb der Klammern der Methode, um den Wert festzulegen.
 
 Hier ist ein Beispiel, das eine ungeordnete Liste auswählt, ein Listenelement anhängt und Text hinzufügt:
 

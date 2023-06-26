@@ -36,43 +36,43 @@ assert.deepEqual(addTogether(2, 3), 5);
 assert.deepEqual(addTogether(23, 30), 53);
 ```
 
-`addTogether("2", 3)` should return `undefined`.
+`addTogether("2", 3)` sollte `undefined` zurückgeben.
 
 ```js
 assert.isUndefined(addTogether('2', 3));
 ```
 
-`addTogether(5, undefined)` should return `undefined`.
+`addTogether(5, undefined)` sollte `undefined` zurückgeben.
 
 ```js
 assert.isUndefined(addTogether(5, undefined));
 ```
 
-`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` should return `undefined`.
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` sollte `undefined` zurückgeben.
 
 ```js
 assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
 ```
 
-`addTogether(5)` should return a function.
+`addTogether(5)` sollte eine Funktion zurückgeben.
 
 ```js
 assert.deepEqual(typeof(addTogether(5)), 'function');
 ```
 
-`addTogether(5)(7)` should return 12.
+`addTogether(5)(7)` sollte 12 zurückgeben.
 
 ```js
 assert.deepEqual(addTogether(5)(7), 12);
 ```
 
-`addTogether(2)([3])` should return `undefined`.
+`addTogether(2)([3])` sollte `undefined` zurückgeben.
 
 ```js
 assert.isUndefined(addTogether(2)([3]));
 ```
 
-`addTogether(2, "3")` should return `undefined`.
+`addTogether(2, "3")` sollte `undefined` zurückgeben.
 
 ```js
 assert.isUndefined(addTogether(2, '3'));
