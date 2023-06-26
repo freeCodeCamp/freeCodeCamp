@@ -10,7 +10,7 @@ function Settings(): JSX.Element {
     <Router>
       <ShowSettings path={withPrefix('/settings')} />
 
-      <RedirectHome />
+      <RedirectHome default />
     </Router>
   );
 }

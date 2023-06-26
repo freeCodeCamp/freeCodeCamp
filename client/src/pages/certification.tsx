@@ -17,7 +17,7 @@ function Certification(): JSX.Element {
         path={withPrefix('/certification/:username/:certSlug')}
       />
 
-      <RedirectHome />
+      <RedirectHome default />
     </Router>
   );
 }
