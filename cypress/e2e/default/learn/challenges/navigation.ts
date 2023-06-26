@@ -70,7 +70,7 @@ describe('submitting a challenge', () => {
     cy.visit(rwdChallenge.url);
     cy.get('[data-cy=editor-container-indexhtml]')
       .click()
-      .invoke('val', rwdChallengeSolution)
+      .type(rwdChallengeSolution)
       .type('{ctrl}{enter}', { release: false, delay: 100 });
     cy.contains('Submit and go to next challenge').click();
     cy.url().should('include', rwdChallenge.nextUrl);
