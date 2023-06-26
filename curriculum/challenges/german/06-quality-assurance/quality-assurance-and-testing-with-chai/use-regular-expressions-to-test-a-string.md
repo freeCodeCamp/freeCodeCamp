@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `match` vs. `notMatch`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `match` vs. `notMatch`.
 
 ```js
 (getUserInput) =>

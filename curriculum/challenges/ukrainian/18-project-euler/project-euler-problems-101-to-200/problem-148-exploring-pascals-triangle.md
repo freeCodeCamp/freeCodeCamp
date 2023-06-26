@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff14
-title: 'Problem 148: Exploring Pascal''s triangle'
+title: 'Завдання 148: вивчення трикутника Паскаля'
 challengeType: 1
 forumTopicId: 301777
 dashedName: problem-148-exploring-pascals-triangle
@@ -8,7 +8,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 # --description--
 
-We can easily verify that none of the entries in the first seven rows of Pascal's triangle are divisible by 7:
+Ми можемо легко перевірити, що жоден елемент у перших семи рядах трикутника Паскаля не ділиться на 7:
 
 ```markup
             1
@@ -20,11 +20,11 @@ We can easily verify that none of the entries in the first seven rows of Pascal'
 1   6   15  20  15  6   1
 ```
 
-However, if we check the first one hundred rows, we will find that only 2361 of the 5050 entries are not divisible by 7.
+Однак, якщо ми перевіряємо перші сто рядів, то виявимо, що лише 2361 з 5050 елементів не діляться на 7.
 
 # --instructions--
 
-Find the number of entries which are not divisible by 7 in the first one billion (${10}^9$) rows of Pascal's triangle.
+Знайдіть кількість елементів, які не діляться на 7 у першому мільярді (${10}^9$) рядків трикутника Паскаля.
 
 # --hints--
 

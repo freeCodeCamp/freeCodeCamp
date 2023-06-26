@@ -1,6 +1,6 @@
 ---
 id: 5900f3f11000cf542c50ff03
-title: 'Problem 132: Large repunit factors'
+title: 'Завдання 132: множники великих реп’юнітів'
 challengeType: 1
 forumTopicId: 301760
 dashedName: problem-132-large-repunit-factors
@@ -8,11 +8,11 @@ dashedName: problem-132-large-repunit-factors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$.
+Число, що повністю складається з одиниць, називається реп’юнітом. Визначимо $R(k)$ як реп’юніт довжиною $k$.
 
-For example, $R(10) = 1111111111 = 11 × 41 × 271 × 9091$, and the sum of these prime factors is 9414.
+Наприклад, $R(10) = 1111111111 = 11 × 41 × 271 × 9091$, а сумою цих простих множників є 9414.
 
-Find the sum of the first forty prime factors of $R({10}^9)$.
+Знайдіть суму перших сорока простих множників $R({10}^9)$.
 
 # --hints--
 

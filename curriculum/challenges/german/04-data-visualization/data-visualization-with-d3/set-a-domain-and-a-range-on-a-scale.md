@@ -12,7 +12,7 @@ Standardmäßig verwenden Skalen die Identitätsbeziehung. Das bedeutet, dass de
 
 Angenommen ein Datensatz hat Werte zwischen 50 und 480. Dies ist die Eingangsinformation für eine Skala, die auch als <dfn>Domäne</dfn> bezeichnet wird.
 
-You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
+Diese Punkte sollten entlang der `x`-Achse auf der SVG zwischen 10 Einheiten und 500 Einheiten zugeordnet werden. Dies sind die Ausgabeinformationen, die auch als <dfn>range</dfn> bezeichnet werden.
 
 Die `domain()`- und `range()`-Methoden legen diese Werte für die Skala fest. Beide Methoden nehmen ein Array von mindestens zwei Elementen als Argument. Hier ist ein Beispiel:
 

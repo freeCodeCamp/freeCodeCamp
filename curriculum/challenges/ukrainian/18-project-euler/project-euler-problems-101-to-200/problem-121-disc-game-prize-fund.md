@@ -1,6 +1,6 @@
 ---
 id: 5900f3e51000cf542c50fef8
-title: 'Problem 121: Disc game prize fund'
+title: 'Завдання 121: призовий фонд гри з дисками'
 challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
@@ -8,13 +8,13 @@ dashedName: problem-121-disc-game-prize-fund
 
 # --description--
 
-A bag contains one red disc and one blue disc. In a game of chance a player takes a disc at random and its colour is noted. After each turn the disc is returned to the bag, an extra red disc is added, and another disc is taken at random.
+У торбі лежать один червоний диск і один синій диск. У грі на вдачу гравець навмання дістає один диск і записує його колір. Після кожного ходу диск повертається в торбу, куди додається ще один червоний диск, і знову потрібно навмання дістати інший диск.
 
-The player pays £1 to play and wins if they have taken more blue discs than red discs at the end of the game.
+Гравець платить £1 за гру і виграє, якщо до кінця гри дістає більше синіх дисків, ніж червоних.
 
-If the game is played for four turns, the probability of a player winning is exactly 11/120, and so the maximum prize fund the banker should allocate for winning in this game would be £10 before they would expect to incur a loss. Note that any payout will be a whole number of pounds and also includes the original £1 paid to play the game, so in the example given the player actually wins £9.
+Якщо гра складається з чотирьох ходів, ймовірність виграшу для гравця становить 11/120, тому максимальний призовий фонд в цьому випадку повинен складати £10, щоб не зазнати збитків. Зверніть увагу, що будь-яка виплата проводиться цілим числом фунтів стерлінгів, а також містить вартість гри в розмірі £1, тому в прикладі гравець насправді виграє £9.
 
-Find the maximum prize fund that should be allocated to a single game in which fifteen turns are played.
+Знайдіть максимальний призовий фонд, який треба виділити для однієї гри з п’ятнадцятьма ходами.
 
 # --hints--
 

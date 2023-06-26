@@ -14,23 +14,23 @@ Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Method
 - Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um diese Aufgaben abzuschließen.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das Solution Link-Feld ein.
 
-In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
+In dieser Aufgabe wirst du eine eine MongoDB-Atlas-Datenbank einrichten und die erforderlichen Pakete importieren, um dich mit ihr zu verbinden.
 
-Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">this tutorial</a> to set up a hosted database on MongoDB Atlas.
+Folge <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">diesem Tutorial</a>, um eine gehostete Datenbank mit MongoDB Atlas einzurichten.
 
 # --instructions--
 
-`mongoose@^5.11.15` has been added to your project’s `package.json` file. First, require mongoose as `mongoose` in `myApp.js`. Next, create a `.env` file and add a `MONGO_URI` variable to it. Its value should be your MongoDB Atlas database URI. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. Zum Beispiel: `MONGO_URI='VALUE'`.
+`mongoose@^5.11.15` wurde der `package.json`-Datei deines Projekts hinzugefügt. Fordere zunächst Mongoose als `mongoose` in `myApp.js` an. Erstelle als Nächstes eine `.env`-Datei und füge dieser eine `MONGO_URI`-Variable hinzu. Ihr Wert sollte deine MongoDB-Atlas-Datenbank-URI sein. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. Zum Beispiel: `MONGO_URI='VALUE'`.
 
-**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
+**Hinweis:** Wenn du Replit nutzt, kannst du keine `.env`-Datei erstellen. Verwende stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um die Variable hinzuzufügen. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
 
 Sobald du fertig bist, verbinde dich mit der Datenbank durch Aufruf der `connect`-Methode innerhalb deiner `myApp.js`-Datei unter Verwendung der folgenden Syntax:
 
@@ -40,7 +40,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-"mongoose version ^5.11.15" dependency should be in package.json
+Abhängigkeit "mongoose Version ^5.11.15" sollte sich in package.json befinden
 
 ```js
 (getUserInput) =>
@@ -60,7 +60,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-"mongoose" should be connected to a database
+"mongoose" sollte mit einer Datenbank verbunden sein
 
 ```js
 (getUserInput) =>

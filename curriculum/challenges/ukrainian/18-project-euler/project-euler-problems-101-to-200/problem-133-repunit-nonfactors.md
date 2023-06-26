@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff04
-title: 'Problem 133: Repunit nonfactors'
+title: 'Завдання 133: немножники реп’юнітів'
 challengeType: 1
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
@@ -8,13 +8,13 @@ dashedName: problem-133-repunit-nonfactors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Число, що повністю складається з одиниць, називається реп’юнітом. Визначимо, що $R(k)$ є реп’юнітом довжиною $k$. Наприклад, $R(6) = 111111$.
 
-Let us consider repunits of the form $R({10}^n)$.
+Розглянемо реп’юніт $R({10}^n)$.
 
-Although $R(10)$, $R(100)$, or $R(1000)$ are not divisible by 17, $R(10000)$ is divisible by 17. Yet there is no value of n for which $R({10}^n)$ will divide by 19. Remarkably, 11, 17, 41, and 73 are the only four primes below one-hundred that can be a factor of $R({10}^n)$.
+Хоча $R(10)$, $R(100)$ чи $R(1000)$ не діляться на 17 без остачі, $R(10000)$ ділиться на 17 без остачі. Однак не існує значення n, за якого $R({10}^n)$ ділиться на 19 без остачі. Пам’ятайте, що 11, 17, 41 та 73 — це єдині чотири прості числа менші за сто, які можуть бути множниками $R({10}^n)$.
 
-Find the sum of all the primes below one-hundred thousand that will never be a factor of $R({10}^n)$.
+Знайдіть суму всіх простих чисел менших за сто тисяч, які не можуть бути множниками $R({10}^n)$.
 
 # --hints--
 

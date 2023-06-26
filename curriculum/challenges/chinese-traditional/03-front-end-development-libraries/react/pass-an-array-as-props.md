@@ -20,7 +20,7 @@ dashedName: pass-an-array-as-props
 
 # --instructions--
 
-代碼編輯器中有 `List` 和 `ToDo` 組件。 在 `ToDo` 組件中渲染每個 `List` 時，傳入 `tasks` 屬性並將其分配給待辦任務數組，例如 `["walk dog", "workout"]`。 然後訪問 `List` 組件中的 `tasks` 數組，在`p`元素中顯示其值。 Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. 今天的列表應該至少有 2 個任務，明天的列表應該至少有 3 個任務。
+代碼編輯器中有 `List` 和 `ToDo` 組件。 在 `ToDo` 組件中渲染每個 `List` 時，傳入 `tasks` 屬性並將其分配給待辦任務數組，例如 `["walk dog", "workout"]`。 然後訪問 `List` 組件中的 `tasks` 數組，在`p`元素中顯示其值。 使用 `join(", ")` 將 `props.tasks` 數組以逗號分隔列表的形式顯示在 `p` 元素中。 今天的列表應該至少有 2 個任務，明天的列表應該至少有 3 個任務。
 
 # --hints--
 
