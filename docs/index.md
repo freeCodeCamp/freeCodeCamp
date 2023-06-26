@@ -1,46 +1,46 @@
-The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
+أصبح منتدى [freeCodeCamp.org] (https://freecodecamp.org) ممكنًا بفضل آلاف المتطوعين اللطفاء مثلك. إذا كنت ترغب في المساهمة بوقتك وخبرتك ، يسعدنا أن نرحب بك على متن الطائرة.
 
-> [!NOTE]
-> Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
+> [! ملاحظة]
+> قبل المتابعة ، يُرجى تخصيص دقيقتين سريعًا لقراءة [مدونة قواعد السلوك] (https://www.freecodecamp.org/code-of-conduct). نحن نطبقها بصرامة عبر مجتمعنا بحيث تكون المساهمة في freeCodeCamp.org تجربة آمنة وشاملة للجميع.
 
-You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
+نرحب بإنشاء وتحديث وإصلاح الأخطاء في [المناهج] (# المناهج) ، أو مساعدتنا في إصلاح الأخطاء في [النظام الأساسي التعليمي] التابع لـ freeCodeCamp.org (# learning-platform) ، أو [ساعدنا في الترجمة] (# ترجمات) freeCodeCamp .org إلى لغات العالم.
 
-We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+نجيب على الأسئلة الأكثر شيوعًا حول المساهمة [في الأسئلة الشائعة الخاصة بالمساهمين] (FAQ.md).
 
-Happy contributing.
+مساهمة سعيدة.
 
----
+-
 
-## Curriculum
+## مقرر
 
-Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
+يتم تنسيق مناهجنا من قبل مجتمع freeCodeCamp العالمي. بهذه الطريقة ، نحن قادرون على دمج المعرفة المتخصصة من المتطوعين مثلك.
 
-You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
+يمكنك المساعدة في توسيع وتحسين المناهج الدراسية. يمكنك أيضًا تحديث قصص مستخدمي المشروع لشرح المفاهيم بشكل أفضل. ويمكنك تحسين اختباراتنا الآلية حتى نتمكن من اختبار أكواد الأشخاص بدقة أكبر.
 
-**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
+** إذا كنت مهتمًا بتحسين منهجنا ، فإليك [كيفية المساهمة في المنهج] (كيف تعمل على ترميز التحديات. md). **
 
-## Translations
+## الترجمات
 
-We are localizing freeCodeCamp.org to major world languages.
+نحن نقوم بترجمة موقع freeCodeCamp.org إلى لغات العالم الرئيسية.
 
-Certifications are already live in some major world languages like below:
+الشهادات موجودة بالفعل في بعض لغات العالم الرئيسية مثل أدناه:
 
-- [Chinese (中文)](https://www.freecodecamp.org/chinese/learn)
-- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
-- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
-- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
-- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
-- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
-- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
+- [الصينية (中文)] (https://www.freecodecamp.org/chinese/learn)
+- [الإسبانية (الإسبانية)] (https://www.freecodecamp.org/espanol/learn)
+- [إيطالي (إيطاليانو)] (https://www.freecodecamp.org/italian/learn)
+- [البرتغالية (البرتغالية)] (https://www.freecodecamp.org/portuguese/learn)
+- [الأوكرانية (Українська)] (https://www.freecodecamp.org/ukrainian/learn)
+- [اليابانية (日本語)] (https://www.freecodecamp.org/japanese/learn)
+- [الألمانية (الألمانية)] (https://www.freecodecamp.org/german/learn)
 
-We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
+نشجعك على قراءة [الإعلان هنا] (https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) ومشاركته مع أصدقائك لإثارة حماستهم حيال ذلك.
 
-**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
+** إذا كنت مهتمًا بالترجمة ، فإليك [كيفية ترجمة موارد freeCodeCamp] (how-to-translate-files.md). **
 
-## Learning Platform
+## منصة التعلم
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+تعمل منصة التعلم الخاصة بنا على مكدس JavaScript حديث. يحتوي على العديد من المكونات والأدوات والمكتبات. وتشمل هذه Node.js و MongoDB و OAuth 2.0 و React و Gatsby و Webpack والمزيد.
 
-Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
+على نطاق واسع ، لدينا خادم واجهة برمجة تطبيقات يستند إلى Node.js ، ومجموعة من تطبيقات العميل المستندة إلى React ، واختبار البرامج النصية لتقييم مشاريع المناهج المقدمة من الكارافانات ، والمزيد. إذا كنت ترغب في المساهمة بشكل منتج في منصة التعلم ، فإننا نوصي ببعض الإلمام بهذه الأدوات.
 
-**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
+** إذا كنت تريد مساعدتنا في تحسين قاعدة التعليمات البرمجية الخاصة بنا ، فإليك [كيفية إعداد freeCodeCamp] (how-to-setup-freecodecamp-locally.md). **
