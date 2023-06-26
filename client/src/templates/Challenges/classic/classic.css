@@ -89,6 +89,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* for positioning preview display button */
+  position: relative;
 }
 
 #mobile-layout .nav-tabs {
@@ -111,7 +113,7 @@
   border: 0;
 }
 
-#mobile-layout .nav-tabs > li > a:not(#mobile-layout-tab-preview) {
+#mobile-layout .nav-tabs > li > a {
   padding: 8px 10px;
 }
 
@@ -127,24 +129,34 @@
   color: var(--secondary-color);
 }
 
-#mobile-layout-tab-preview {
-  position: relative;
-  padding: 8px 46px 8px 10px;
-}
-
 #portal-button {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 3px;
+  top: 2px;
+  height: 32px;
+  width: 32px;
+  border: 1px solid black;
+  padding: 1px;
+  background: white;
+}
+
+#portal-button > span {
+  padding: 1px;
+  display: flex;
   height: 100%;
-  width: 36px;
-  border: 0;
+  width: 100%;
+  background: var(--quaternary-background);
+  justify-content: center;
+  align-items: center;
+}
+
+#portal-button:hover > span {
+  background: var(--secondary-color);
 }
 
 #portal-button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
-  color: var(--secondary-background);
 }
 
 #mobile-layout .tab-content {
@@ -153,6 +165,11 @@
   flex-grow: 1;
   overflow-y: hidden;
   padding-block-end: 37px;
+}
+
+#mobile-layout-pane-preview .preview-external-window {
+  text-align: center;
+  margin-top: 60px;
 }
 
 #mobile-layout-pane-editor {
