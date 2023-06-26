@@ -1,0 +1,16 @@
+{
+  "name": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-intermediate-algorithmic-thinking-by-building-a-dice-game",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [["64994c4e6255ac241c0436e9", "Step 1"]],
+  "helpCategory": "JavaScript"
+}
