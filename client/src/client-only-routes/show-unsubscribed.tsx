@@ -1,4 +1,5 @@
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -9,9 +10,9 @@ import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 
-interface ShowUnsubscribedProps {
+type ShowUnsubscribedProps = Pick<RouteComponentProps, 'path'> & {
   unsubscribeId?: string;
-}
+};
 
 function ShowUnsubscribed({
   unsubscribeId
