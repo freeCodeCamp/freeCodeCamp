@@ -53,21 +53,21 @@ const views = {
   // quiz: Quiz
 };
 
-function getIsFirstStep(_node, index, nodeArray) {
-  const current = nodeArray[index];
-  const previous = nodeArray[index - 1];
+function getIsFirstStepInBlock(id, edges) {
+  const current = edges[id];
+  const previous = edges[id - 1];
 
   if (!previous) return true;
   return previous.node.challenge.block !== current.node.challenge.block;
 }
 
-function getNextChallengePath(_node, index, nodeArray) {
-  const next = nodeArray[index + 1];
+function getNextChallengePath(id, edges) {
+  const next = edges[id + 1];
   return next ? next.node.challenge.fields.slug : null;
 }
 
-function getPrevChallengePath(_node, index, nodeArray) {
-  const prev = nodeArray[index - 1];
+function getPrevChallengePath(id, edges) {
+  const prev = edges[id - 1];
   return prev ? prev.node.challenge.fields.slug : null;
 }
 
@@ -75,8 +75,8 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-function getNextChallengeMeta(_node, index, nodeArray) {
-  const next = nodeArray[index + 1];
+function getNextChallengeMeta(id, edges) {
+  const next = edges[id + 1];
   if (next) {
     const { superBlock, block, blockHashSlug } = next.node.challenge;
     return {
@@ -114,24 +114,12 @@ exports.createChallengePages = function (createPage) {
           certification,
           superBlock,
           block,
-          isFirstStep: getIsFirstStep(challenge, index, allChallengeEdges),
+          isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextChallengeMeta: getNextChallengeMeta(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
-          nextChallengePath: getNextChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
-          prevChallengePath: getPrevChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
+          nextChallengeMeta: getNextChallengeMeta(index, allChallengeEdges),
+          nextChallengePath: getNextChallengePath(index, allChallengeEdges),
+          prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
         },
         projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
