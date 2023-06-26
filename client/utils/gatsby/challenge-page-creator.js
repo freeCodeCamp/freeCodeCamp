@@ -75,17 +75,9 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-function getNextChallengeMeta(id, edges) {
+function getNextBlock(id, edges) {
   const next = edges[id + 1];
-  if (next) {
-    const { superBlock, block, blockHashSlug } = next.node.challenge;
-    return {
-      superBlock,
-      block,
-      blockHashSlug
-    };
-  }
-  return null;
+  return next ? next.node.challenge.block : null;
 }
 
 exports.createChallengePages = function (createPage) {
@@ -117,7 +109,7 @@ exports.createChallengePages = function (createPage) {
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextChallengeMeta: getNextChallengeMeta(index, allChallengeEdges),
+          nextBlock: getNextBlock(index, allChallengeEdges),
           nextChallengePath: getNextChallengePath(index, allChallengeEdges),
           prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
