@@ -18,12 +18,13 @@ async function initPythonFrame() {
   });
 
   function runPython(code: string) {
-    console.log(
-      pyodide.runPython(`
-    import sys
-    sys.version
-  `)
-    );
+    // Pyodide doesn't clear the global namespace when you runPython, so we have
+    // to.
+    pyodide.runPython(`
+user_defined = [var for var in globals().copy() if not var.startswith("__")]
+for var in user_defined:
+  del globals()[var]`);
+
     pyodide.runPython(code);
   }
 
