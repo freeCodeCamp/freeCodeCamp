@@ -241,6 +241,32 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const finalDocument = portalDocument || document;
 
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
+
+        const scripts = Array.from(
+          finalDocument.querySelectorAll('script[src]')
+        );
+        const links = Array.from(
+          finalDocument.querySelectorAll('link[rel="stylesheet"][href]')
+        );
+        const allElements = [...scripts, ...links];
+
+        allElements &&
+          allElements.forEach(async el => {
+            const url = el.tagName === 'SCRIPT' ? el.src : el.href;
+            try {
+              const response = await fetch(url);
+              if (!response.ok)
+                throw new Error(
+                  `Cannot retrieve ${el.tagName.toLowerCase()} link ${url}, link status code: ${
+                    response.status
+                  }`
+                );
+            } catch {
+              throw new Error(
+                `The ${el.tagName.toLowerCase()} link "${url}" does not exist. Also, the only files that can be sourced are styles.css, script.js, or remote files.`
+              );
+            }
+          });
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,
