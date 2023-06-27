@@ -186,9 +186,13 @@ const run = async () => {
   if (process.argv[2] === 'certified-user') {
     await user.insertOne(fullyCertifiedUser);
     await user.insertOne(blankUser);
-  } else {
+  } else if (!process.argv[2]) {
     await user.insertOne(demoUser);
     await user.insertOne(blankUser);
+  } else {
+    throw new Error(
+      'Invalid argument - This can only be called with zero or one argument. If there is an argument, it must be "certified-user"'
+    );
   }
   log('local auth user seed complete');
 };
