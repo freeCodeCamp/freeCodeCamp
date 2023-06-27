@@ -11,22 +11,22 @@ Move the left ear into position by setting a position of `absolute`, a `top` of 
 
 # --hints--
 
-Your `.left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.position === 'absolute')
+assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.left-ear` selector should have a `top` property set to `-26px`
+Your `.cat-left-ear` selector should have a `top` property set to `-26px`
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.top === '-26px')
+assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.left-ear` selector should have a `left` property set to `-31px`
+Your `.cat-left-ear` selector should have a `left` property set to `-31px`
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.left === '-31px')
+assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')
 ```
 
 # --seed--
@@ -45,10 +45,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.left-ear')?.left === '-31px')
     <main>
       <div class="cat-head">
         <div class="cat-ears">
-          <div class="left-ear">
+          <div class="cat-left-ear">
             <div class="cat-left-inner-ear"></div>
           </div>
-          <div class="right-ear">
+          <div class="cat-right-ear">
             <div class="cat-right-inner-ear"></div>
           </div>
         </div>
@@ -81,7 +81,7 @@ body {
   border-radius: 46%;
 }
 
-.left-ear {
+.cat-left-ear {
 --fcc-editable-region--
 
 --fcc-editable-region--
