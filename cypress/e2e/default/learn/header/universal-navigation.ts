@@ -46,7 +46,7 @@ describe('Default Navigation Menu', () => {
 describe('Authenticated Navigation Menu', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
   });
@@ -68,7 +68,7 @@ describe('Authenticated Navigation Menu', () => {
 describe('Authenticated User Sign Out', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('pnpm run seed');
+    cy.task('seed');
   });
   beforeEach(() => {
     cy.login();

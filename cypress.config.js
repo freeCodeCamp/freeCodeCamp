@@ -31,6 +31,11 @@ module.exports = defineConfig({
           execSync('pnpm run build:curriculum');
         }
       });
+      on('task', {
+        seed: () => execSync('node tools/scripts/seed/seed-demo-user'),
+        seedCertified: () =>
+          execSync('node tools/scripts/seed/seed-demo-user certified-user')
+      });
 
       config.env.API_LOCATION = 'http://localhost:3000';
       return config;

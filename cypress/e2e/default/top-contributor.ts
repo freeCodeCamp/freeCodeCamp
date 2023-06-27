@@ -5,7 +5,7 @@ describe('Top contributor in user profile', () => {
   });
 
   after(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
   });
 
   beforeEach(() => {
