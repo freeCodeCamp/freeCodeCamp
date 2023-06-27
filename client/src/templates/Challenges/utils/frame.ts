@@ -286,7 +286,10 @@ const initMainFrame =
             return false;
           };
 
-          void frameContext.document?.__runPython('print(1 + 2)');
+          void frameContext.document?.__initPythonFrame().then(() => {
+            void frameContext.document?.__runPython('print(1 + 2)');
+            void frameContext.document?.__runPython('print(1 + 2 + 3)');
+          });
         }
       })
       .catch(handleDocumentNotFound);

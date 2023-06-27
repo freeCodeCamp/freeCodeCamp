@@ -8,7 +8,8 @@ export interface FrameDocument extends Document {
   ) => Promise<
     { pass: boolean } | { err: { message: string; stack?: string } }
   >;
-  __runPython: (code: string) => Promise<void>;
+  __initPythonFrame: () => Promise<void>;
+  __runPython: (code: string) => void;
 }
 
 export interface InitTestFrameArg {
