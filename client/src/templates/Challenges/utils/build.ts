@@ -1,6 +1,8 @@
+import { challengeTypes } from '../../../../../config/challenge-types';
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import pythonRunnerData from '../../../../../config/client/python-runner.json';
+
 import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
@@ -41,10 +43,16 @@ interface BuildOptions {
   usesTestRunner: boolean;
 }
 
-const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
 
-const frameRunnerSrc = `/js/${runner}.js`;
+
+const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
+
+const pythonRunner = [
+  {
+    src: `/js/${pythonRunnerData.filename}.js`
+  }
+];
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -199,6 +207,9 @@ export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
 ): Promise<BuildResult> | undefined {
+  const finalRequires = [...required];
+  // TODO: handle pythonRunner like frameRunnerSrc.
+  finalRequires.push(...pythonRunner);
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
@@ -214,7 +225,7 @@ export function buildDOMChallenge(
     ).then(([challengeFiles, contents]) => ({
       challengeType: challengeTypes.html || challengeTypes.multifileCertProject,
       build: concatHtml({
-        required,
+        required: finalRequires,
         template,
         contents,
         ...(usesTestRunner && { testRunner: frameRunnerSrc })

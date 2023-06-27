@@ -256,7 +256,6 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         loadEnzyme
       });
 
-      await tryToLoadPyodide(frameContext.window);
       if (frameReady) frameReady();
     })
     .catch(handleDocumentNotFound);
@@ -266,7 +265,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
 const initMainFrame =
   (_: unknown, proxyLogger?: ProxyLogger) => (frameContext: Context) => {
     waitForFrame(frameContext)
-      .then(async () => {
+      .then(() => {
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
@@ -286,17 +285,13 @@ const initMainFrame =
             // an error from a cross origin script just appears as 'Script error.'
             return false;
           };
-          await tryToLoadPyodide(frameContext.window);
+
+          void frameContext.document?.__runPython('print(1 + 2)');
         }
       })
       .catch(handleDocumentNotFound);
     return frameContext;
   };
-
-// Not all challenges include pyodide, but those that do need to load it.
-async function tryToLoadPyodide(window: Window): Promise<void> {
-  if (window.loadPyodide) window.__pyodide = await window.loadPyodide();
-}
 
 function handleDocumentNotFound(err: string) {
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {

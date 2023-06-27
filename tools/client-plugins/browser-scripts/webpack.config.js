@@ -13,7 +13,8 @@ module.exports = (env = {}) => {
     entry: {
       'frame-runner': './frame-runner.ts',
       'sass-compile': './sass-compile.ts',
-      'test-evaluator': './test-evaluator.ts'
+      'test-evaluator': './test-evaluator.ts',
+      'python-runner': './python-runner.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
@@ -76,7 +77,7 @@ module.exports = (env = {}) => {
         buffer: require.resolve('buffer'),
         util: false,
         stream: false,
-        process: require.resolve('process/browser')
+        process: require.resolve('process/browser.js')
       },
       extensions: ['.js', '.ts']
     }
