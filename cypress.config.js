@@ -2,6 +2,10 @@ const { execSync } = require('child_process');
 const { existsSync } = require('fs');
 const { defineConfig } = require('cypress');
 
+function seed(args = []) {
+  execSync('node tools/scripts/seed/seed-demo-user' + args.join(' '));
+}
+
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
@@ -32,9 +36,7 @@ module.exports = defineConfig({
         }
       });
       on('task', {
-        seed: () => execSync('node tools/scripts/seed/seed-demo-user'),
-        seedCertified: () =>
-          execSync('node tools/scripts/seed/seed-demo-user certified-user')
+        seed
       });
 
       config.env.API_LOCATION = 'http://localhost:3000';

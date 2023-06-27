@@ -2,7 +2,7 @@ const certifiedUser = '/certification/certifieduser/responsive-web-design';
 
 describe('A certification,', function () {
   before(() => {
-    cy.task('seedCertified');
+    cy.task('seed', ['certified-user']);
   });
 
   describe('while viewing your own,', function () {

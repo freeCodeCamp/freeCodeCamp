@@ -94,7 +94,7 @@ describe('Authenticated User Sign Out', () => {
 describe('Donor Navigation Menu', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('pnpm run seed -- --donor');
+    cy.task('seed', ['--donor']);
     cy.login();
     cy.visit('/donate');
   });
