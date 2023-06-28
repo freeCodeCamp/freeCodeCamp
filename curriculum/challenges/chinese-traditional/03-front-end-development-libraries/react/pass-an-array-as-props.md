@@ -16,15 +16,21 @@ dashedName: pass-an-array-as-props
 </ParentComponent>
 ```
 
-這樣，子組件就可以訪問數組屬性 `colors`。 訪問屬性時可以使用 `join()` 等數組方法。 `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` 這將把所有 `colors` 數組項連接成一個逗號分隔的字符串並生成： `<p>green, blue, red</p>` 稍後，我們將瞭解在 React 中渲染數組數據的其他常用方法。
+這樣，子組件就可以訪問數組屬性 `colors`。 訪問屬性時可以使用 `join()` 等數組方法。
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+```
+
+This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
 
 # --instructions--
 
-代碼編輯器中有 `List` 和 `ToDo` 組件。 在 `ToDo` 組件中渲染每個 `List` 時，傳入 `tasks` 屬性並將其分配給待辦任務數組，例如 `["walk dog", "workout"]`。 然後訪問 `List` 組件中的 `tasks` 數組，在`p`元素中顯示其值。 使用 `join(", ")` 將 `props.tasks` 數組以逗號分隔列表的形式顯示在 `p` 元素中。 今天的列表應該至少有 2 個任務，明天的列表應該至少有 3 個任務。
+There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
 
 # --hints--
 
-`ToDo` 組件應該返回單個外部 `div`。
+The `ToDo` component should return a single outer `div`.
 
 ```js
 assert(
@@ -35,7 +41,7 @@ assert(
 );
 ```
 
-`ToDo` 組件的第三個子元素應該是 `List` 組件的一個實例。
+The third child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -46,7 +52,7 @@ assert(
 );
 ```
 
-`ToDo` 組件的第五個子元素應該是 `List` 組件的一個實例。
+The fifth child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -57,7 +63,7 @@ assert(
 );
 ```
 
-`List` 組件的兩個實例都應該具有一個名爲 `tasks` 的屬性，並且 `tasks` 的類型應該是數組。
+Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
 
 ```js
 assert(
@@ -71,7 +77,7 @@ assert(
 );
 ```
 
-表示今天任務的第一個 `List` 組件應該有 2 個或更多項。
+The first `List` component representing the tasks for today should have 2 or more items.
 
 ```js
 assert(
@@ -82,7 +88,7 @@ assert(
 );
 ```
 
-表示明天任務的第二個 `List` 組件應該有 3 個或更多項。
+The second `List` component representing the tasks for tomorrow should have 3 or more items.
 
 ```js
 assert(
@@ -93,7 +99,7 @@ assert(
 );
 ```
 
-`List` 組件應在 `p` 標籤中渲染 `tasks` 屬性的值。
+The `List` component should render the value from the `tasks` prop in the `p` tag.
 
 ```js
 assert(

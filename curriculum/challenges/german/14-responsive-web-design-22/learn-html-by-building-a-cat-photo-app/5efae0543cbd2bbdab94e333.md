@@ -13,25 +13,25 @@ Um die Zugänglichkeit des von dir hinzugefügten Bildes zu verbessern, fügst d
 
 # --hints--
 
-Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+Dein `figure`-Element sollte ein öffnendes Tag haben. Öffnende Tags haben diese Syntax: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+Dein `figure` sollte ein schließendes Tag haben. Schließende Tags haben ein `/` genau nach dem `<`-Zeichen.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);
 ```
 
-There should be a `figure` element right above the last `section` element's closing tag.
+Genau über dem letzten schließenden Tag des `section`-Elements sollte ein `figure`-Element stehen.
 
 ```js
 assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
 ```
 
-The Cats `img` element should be nested in the `figure` element.
+Das `img`-Cats-Element sollte im `figure`-Element eingebettet sein.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
+Das `img`-Cats-Element sollte ein `alt`-Attribut mit dem Wert `Five cats looking around a field.` haben
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
