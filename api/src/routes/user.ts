@@ -7,6 +7,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.post(
