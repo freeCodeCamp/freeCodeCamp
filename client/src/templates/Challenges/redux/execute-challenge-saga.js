@@ -34,6 +34,7 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
+import { runPythonInMainFrame } from '../utils/frame';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -241,6 +242,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const finalDocument = portalDocument || document;
 
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
+        // TODO: run python here.
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,
@@ -258,6 +260,25 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
     }
     console.log(err);
     yield put(updateConsole(escape(err)));
+  }
+}
+
+function* updatePreviewSaga() {
+  const challengeData = yield select(challengeDataSelector);
+  if (challengeData.challengeType === challengeTypes.python) {
+    const document = yield getContext('document');
+    // TODO: run through buildChallengeData
+    const code = challengeData.challengeFiles[0].contents;
+    // TODO: proxy errors to the console
+    try {
+      yield call(runPythonInMainFrame, document, code);
+    } catch (err) {
+      console.log('Error evaluating python code', code);
+      console.log('Message:', err.message);
+    }
+  } else {
+    // all other challenges have to recreate the preview
+    yield previewChallengeSaga();
   }
 }
 
@@ -282,8 +303,9 @@ function* previewProjectSolutionSaga({ payload }) {
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
+    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.updateFile, types.challengeMounted, types.resetChallenge],
+      [types.challengeMounted, types.resetChallenge],
       previewChallengeSaga
     ),
     takeLatest(types.previewMounted, previewChallengeSaga, {

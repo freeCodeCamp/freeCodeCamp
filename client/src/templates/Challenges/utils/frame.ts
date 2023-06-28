@@ -161,9 +161,7 @@ export const runPythonInMainFrame = function (
   code: string
 ): void {
   const contentDocument = getContentDocument(document, mainPreviewId);
-  if (contentDocument) {
-    contentDocument.__runPython(code);
-  }
+  contentDocument?.__runPython(code);
 };
 
 const createFrame =
@@ -301,12 +299,14 @@ const initMainFrame =
             // an error from a cross origin script just appears as 'Script error.'
             return false;
           };
-
-          void frameContext.document?.__initPythonFrame().then(() => {
-            void frameContext.document?.__runPython('print(1 + 2)');
-            void frameContext.document?.__runPython('print(1 + 2 + 3)');
-          });
         }
+
+        // The document may exist, even if the window does not, so we can try
+        // to initialize, even if 'window' is undefined.
+        void frameContext.document?.__initPythonFrame().then(() => {
+          void frameContext.document?.__runPython('print(1 + 2)');
+          void frameContext.document?.__runPython('print(1 + 2 + 3)');
+        });
       })
       .catch(handleDocumentNotFound);
     return frameContext;

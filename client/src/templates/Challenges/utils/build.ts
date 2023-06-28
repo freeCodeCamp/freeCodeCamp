@@ -327,7 +327,8 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.python
   );
 }
 
