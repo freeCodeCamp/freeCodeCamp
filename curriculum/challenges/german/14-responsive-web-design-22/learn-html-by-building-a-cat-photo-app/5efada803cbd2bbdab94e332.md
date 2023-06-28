@@ -11,19 +11,19 @@ Inside the `figure` element you just added, nest an `img` element with a `src` a
 
 # --hints--
 
-Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+Dein zweites `figure`-Element sollte ein öffnendes Tag haben. Öffnende Tags haben diese Syntax: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('figure').length >= 2);
 ```
 
-Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+Dein zweites `figure`-Element sollte ein schließendes Tag haben. Schließende Tags haben ein `/` direkt nach dem `<`-Zeichen.
 
 ```js
 assert(code.match(/<\/figure>/g).length >= 2);
 ```
 
-There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
+Es sollte ein zweites `figure`-Element genau über dem zweiten schließenden Tag des `section`-Elements geben. Sie sind in falscher Reihenfolge.
 
 ```js
 assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The third image should have an `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
+Das dritte Bild sollte ein `src`-Attribut auf `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg` gesetzt haben.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+Obwohl du den `src` des neuen Bilds auf die richtige URL gesetzt hast, wird empfohlen, den Wert immer zwischen Anführungszeichen anzugeben.
 
 ```js
 assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/cats\.jpg/.test(code));

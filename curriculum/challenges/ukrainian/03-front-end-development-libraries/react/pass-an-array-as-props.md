@@ -16,15 +16,21 @@ dashedName: pass-an-array-as-props
 </ParentComponent>
 ```
 
-Потім дочірній компонент отримує доступ до властивості масиву `colors`. При доступі до властивості можна використовувати такі методи масиву, як `join()`. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` Це об’єднає всі елементи масиву `colors` у рядок, розділений комами і створить: `<p>green, blue, red</p>`. Пізніше дізнаємось про інші поширені методи візуалізації масивів даних у React.
+Потім дочірній компонент отримує доступ до властивості масиву `colors`. При доступі до властивості можна використовувати такі методи масиву, як `join()`.
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+```
+
+This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
 
 # --instructions--
 
-У редакторі коду є компоненти `List` та `ToDo`. Під час візуалізації кожного компоненту `List` з компоненту `ToDo`, передайте властивість `tasks`, призначену для масиву завдань до виконання, наприклад, `["walk dog", "workout"]`. Потім перейдіть до цього масиву `tasks` у компоненті `List`, показуючи його значення у межах елементу `p`. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. У сьогоднішньому списку має бути щонайменше 2 завдання, а у завтрашньому - щонайменше 3 завдання.
+There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
 
 # --hints--
 
-Компонент `ToDo` повинен відображати одинарний зовнішній `div`.
+The `ToDo` component should return a single outer `div`.
 
 ```js
 assert(
@@ -35,7 +41,7 @@ assert(
 );
 ```
 
-Третій дочірній компонент `ToDo` повинен бути зразком компоненту `List`.
+The third child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -46,7 +52,7 @@ assert(
 );
 ```
 
-П'ятий дочірній компонент `ToDo` повинен бути зразком компоненту `List`.
+The fifth child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -57,7 +63,7 @@ assert(
 );
 ```
 
-Обидва зразки компонента `List` повинні мати властивість `tasks`, і `tasks` повинен бути масивом типу.
+Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
 
 ```js
 assert(
@@ -71,7 +77,7 @@ assert(
 );
 ```
 
-Перший компонент `List`, що представляє завдання на сьогодні, повинен містити 2 або більше елементів.
+The first `List` component representing the tasks for today should have 2 or more items.
 
 ```js
 assert(
@@ -82,7 +88,7 @@ assert(
 );
 ```
 
-Другий компонент `List`, що представляє завдання на завтра, повинен містити 3 або більше елементів.
+The second `List` component representing the tasks for tomorrow should have 3 or more items.
 
 ```js
 assert(
@@ -93,7 +99,7 @@ assert(
 );
 ```
 
-Компонент `List` повинен відображати значення пропсу `tasks` у тегу `p`.
+The `List` component should render the value from the `tasks` prop in the `p` tag.
 
 ```js
 assert(
