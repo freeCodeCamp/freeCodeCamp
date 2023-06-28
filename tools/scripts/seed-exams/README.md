@@ -8,7 +8,7 @@
 
 - `_id`: This should match the `id` in the exam challenge markdown file,
 - `title`: This should match the `title` in the exam challenge markdown file,
-- `numberOfQuestionsInExam`: This is how many questions will be given to campers who take the exam. It must be less or equal to than the length of the `questions` array.
+- `numberOfQuestionsInExam`: This is how many questions will be given to campers who take the exam. It must be less than or equal to the length of the `questions` array.
 - `passingPercent`: Percent of questions needed to get correct to pass the exam
 - `questions`: Array of exam questions
 
@@ -25,7 +25,7 @@
 5. Add the ID's:
 
 - Change the `examPath` variable in the `add-nano-ids.js` file to the name of the new exam file
-- Run it with `node add-nano-ids.js`. It will add and ID to each `question`, and each `answer`.
+- Run it with `node add-nano-ids.js`. It will add an `id` to each `question`, and each `answer`.
 
 Add a `deprecated: true` property to any of the `questions`, `wrongAnswers`, or `correctAnwers`. Any that include this will be omitted when generating an exam.
 
