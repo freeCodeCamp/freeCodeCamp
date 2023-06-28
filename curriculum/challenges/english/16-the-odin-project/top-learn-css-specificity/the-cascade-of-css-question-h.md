@@ -7,54 +7,45 @@ dashedName: the-cascade-of-css-question-h
 
 # --description--
 
-Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (`color`, `font-size`, `font-family`, etc.) are usually inherited, while most other properties aren’t.
+The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
 
-The exception to this is when directly targeting an element, as this always beats inheritance:
-
-```html
-<!-- index.html -->
-
-<div id="parent">
-  <div class="child"></div>
-</div>
-```
+Really simply, actually. Whichever rule was the last defined is the winner.
 
 ```css
 /* styles.css */
 
-#parent {
+.alert {
   color: red;
 }
 
-.child {
-  color: blue;
+.warning {
+  color: yellow;
 }
 ```
 
-Despite the`parent` element having a higher specificity with an ID, the `child` element would have the `color: blue` style applied since that declaration directly targets it, while `color: red` from the parent is only inherited.
+For an element that has both the `alert` and `warning` classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the `.warning` rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
 
 # --question--
-
 ## --text--
 
-Based on the given HTML and CSS code, what would be the color of the `<div class="child"></div>` element?
+What determines which CSS rule is applied when there are conflicting rules targeting the same element?
 
 ## --answers--
 
-Red
+The Specificity of the CSS rule.
 
 ---
 
-Blue
+The Inheritance hierarchy of the element.
 
 ---
 
-Inherited from the parent element
+The presence of classes or IDs on the element.
 
 ---
 
-Transparent
+The order in which the rules were defined.
 
 ## --video-solution--
 
-2
+4
