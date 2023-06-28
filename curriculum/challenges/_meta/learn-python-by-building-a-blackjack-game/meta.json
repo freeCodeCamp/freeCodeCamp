@@ -7,7 +7,7 @@
   "helpCategory": "JavaScript",
   "order": 0,
   "time": "2 hours",
-  "template": "",
+  "template": "<style>#terminal { margin-top: 10px; width: 100%; height: 350px; background-color: #000; color: #00ff00; padding: 5px; overflow: auto; border: 1px solid #ccc; border-radius: 3px; }</style><body><div id='terminal'></div></body>",
   "required": [],
   "superBlock": "scientific-computing-with-python",
   "isBeta": true,

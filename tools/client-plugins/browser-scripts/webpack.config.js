@@ -58,6 +58,11 @@ module.exports = (env = {}) => {
               ]
             }
           }
+        },
+        // xterm doesn't bundle its css, so we need to load it ourselves
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
         }
       ]
     },

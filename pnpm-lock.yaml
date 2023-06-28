@@ -1202,6 +1202,13 @@ importers:
         version: 3.0.4
 
   tools/client-plugins/browser-scripts:
+    dependencies:
+      xterm:
+        specifier: ^5.2.1
+        version: 5.2.1
+      xterm-addon-fit:
+        specifier: ^0.7.0
+        version: 0.7.0(xterm@5.2.1)
     devDependencies:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
@@ -1248,6 +1255,9 @@ importers:
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.76.2)
+      css-loader:
+        specifier: ^6.8.1
+        version: 6.8.1(webpack@5.76.2)
       enzyme:
         specifier: 3.11.0
         version: 3.11.0
@@ -1269,6 +1279,9 @@ importers:
       sass.js:
         specifier: 0.11.1
         version: 0.11.1
+      style-loader:
+        specifier: ^3.3.3
+        version: 3.3.3(webpack@5.76.2)
       util:
         specifier: 0.12.5
         version: 0.12.5
@@ -15871,6 +15884,23 @@ packages:
       webpack: 5.88.2(webpack-cli@4.10.0)
     dev: false
 
+  /css-loader@6.8.1(webpack@5.76.2):
+    resolution: {integrity: sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.25)
+      postcss: 8.4.25
+      postcss-modules-extract-imports: 3.0.0(postcss@8.4.25)
+      postcss-modules-local-by-default: 4.0.3(postcss@8.4.25)
+      postcss-modules-scope: 3.0.0(postcss@8.4.25)
+      postcss-modules-values: 4.0.0(postcss@8.4.25)
+      postcss-value-parser: 4.2.0
+      semver: 7.5.3
+      webpack: 5.76.2(webpack-cli@4.10.0)
+    dev: true
+
   /css-mediaquery@0.1.2:
     resolution: {integrity: sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==}
     dev: false
@@ -27422,6 +27452,18 @@ packages:
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
 
+  /postcss-modules-local-by-default@4.0.3(postcss@8.4.25):
+    resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
+    engines: {node: ^10 || ^12 || >= 14}
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.25)
+      postcss: 8.4.25
+      postcss-selector-parser: 6.0.11
+      postcss-value-parser: 4.2.0
+    dev: true
+
   /postcss-modules-scope@2.2.0:
     resolution: {integrity: sha512-YyEgsTMRpNd+HmyC7H/mh3y+MeFWevy7V1evVhJWewmMbjDHIbZbOXICC2y+m1xI1UVfIT1HMW/O04Hxyu9oXQ==}
     engines: {node: '>= 6'}
@@ -31374,6 +31416,15 @@ packages:
       webpack: 5.88.2(webpack-cli@4.10.0)
     dev: false
 
+  /style-loader@3.3.3(webpack@5.76.2):
+    resolution: {integrity: sha512-53BiGLXAcll9maCYtZi2RCQZKa8NQQai5C4horqKyRmHj9H7QmcUyucrH+4KW/gBQbXM2AsB0axoEcFZPlfPcw==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      webpack: 5.76.2(webpack-cli@4.10.0)
+    dev: true
+
   /style-to-object@0.3.0:
     resolution: {integrity: sha512-CzFnRRXhzWIdItT3OmF8SQfWyahHhjq3HwcMNCNLn+N7klOOqPjMeG/4JSu77D7ypZdGvSzvkrbyeTMizz2VrA==}
     dependencies:
@@ -34163,6 +34214,18 @@ packages:
   /xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
+
+  /xterm-addon-fit@0.7.0(xterm@5.2.1):
+    resolution: {integrity: sha512-tQgHGoHqRTgeROPnvmtEJywLKoC/V9eNs4bLLz7iyJr1aW/QFzRwfd3MGiJ6odJd9xEfxcW36/xRU47JkD5NKQ==}
+    peerDependencies:
+      xterm: ^5.0.0
+    dependencies:
+      xterm: 5.2.1
+    dev: false
+
+  /xterm@5.2.1:
+    resolution: {integrity: sha512-cs5Y1fFevgcdoh2hJROMVIWwoBHD80P1fIP79gopLHJIE4kTzzblanoivxTiQ4+92YM9IxS36H1q0MxIJXQBcA==}
+    dev: false
 
   /y18n@4.0.3:
     resolution: {integrity: sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ==}

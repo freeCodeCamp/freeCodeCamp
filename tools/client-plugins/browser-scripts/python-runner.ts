@@ -3,6 +3,10 @@
 // and 'import' defaults to .mjs
 import { loadPyodide } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
+import { Terminal } from 'xterm';
+import { FitAddon } from 'xterm-addon-fit';
+import 'xterm/css/xterm.css';
+
 import type { FrameDocument } from '.';
 
 // This will be running in an iframe, so document will be
@@ -10,9 +14,18 @@ import type { FrameDocument } from '.';
 // exist on this document (but not on the parent)
 const contentDocument = document as FrameDocument;
 
-contentDocument.__initPythonFrame = initPythonFrame;
+function setupTerminal() {
+  const terminalContainer = document.getElementById('terminal');
+  if (!terminalContainer) throw Error('Could not find terminal container');
 
-async function initPythonFrame() {
+  const term = new Terminal();
+  const fitAddon = new FitAddon();
+  term.loadAddon(fitAddon);
+  term.open(terminalContainer);
+  fitAddon.fit();
+}
+
+async function setupPyodide() {
   const pyodide = await loadPyodide({
     indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
   });
@@ -30,3 +43,10 @@ for var in user_defined:
 
   contentDocument.__runPython = runPython;
 }
+
+async function initPythonFrame() {
+  setupTerminal();
+  await setupPyodide();
+}
+
+contentDocument.__initPythonFrame = initPythonFrame;

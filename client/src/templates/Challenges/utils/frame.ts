@@ -85,6 +85,9 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
+// TODO: for Python challenges, put the terminal css in the head of the iframe.
+// Not for other challenges, though, because it could interfere with their CSS.
+
 const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
