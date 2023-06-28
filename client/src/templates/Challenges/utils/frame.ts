@@ -131,22 +131,38 @@ type TestResult =
   | { pass: boolean }
   | { err: { message: string; stack?: string } };
 
+// TODO: Probably going to need this to be generic, since we have multiple
+// different types of frames.
+function getContentDocument(document: Document, id: string) {
+  const frame = document.getElementById(id);
+  if (!frame) return null;
+  const frameDocument = (frame as HTMLIFrameElement).contentDocument;
+  return frameDocument as FrameDocument;
+}
+
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number
 ): Promise<TestResult | undefined> {
-  const { contentDocument } = document.getElementById(
-    testId
-  ) as HTMLIFrameElement;
-  const frame = contentDocument as FrameDocument;
-  if (frame !== null) {
+  const contentDocument = getContentDocument(document, testId);
+  if (contentDocument) {
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
       >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-      frame.__runTest(test)
+      contentDocument.__runTest(test)
     ]);
+  }
+};
+
+export const runPythonInMainFrame = function (
+  document: Document,
+  code: string
+): void {
+  const contentDocument = getContentDocument(document, mainPreviewId);
+  if (contentDocument) {
+    contentDocument.__runPython(code);
   }
 };
 
