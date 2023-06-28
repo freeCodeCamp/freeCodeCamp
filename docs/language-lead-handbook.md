@@ -60,9 +60,23 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
+Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
+
 For each article, you will need to create a shorter title to use in the footer. Each title must stay on a single line and not go to a new line.
 
-Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. You can preview the changes by editing the `trending.json` file in your local. Here are the detailed steps:
+
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run develop`. This will automatically generate `trending.json` file for your language under `/client/i18n/locales/` directory.
+
+3. Stop the running command with `Ctrl+C` in the terminal.
+
+4. Start the server by running `pnpm run develop:server` in one terminal window.
+
+5. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your .yaml file into JSON format with some tool.
+
+6. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## How to Translate Articles in the Footer Links
 
