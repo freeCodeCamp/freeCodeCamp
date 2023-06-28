@@ -41,7 +41,7 @@ With `link` being the link of the original article.
 > [!TIP]
 > Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
 
-To update the trending articles in the footer, you need to update the yaml file in [the CDN repository](https://github.com/freeCodeCamp/cdn). Both the curriculum and the publication references this file.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
 The file in the CDN repository is the file `build/universal/trending/<language>.yaml`.
 
