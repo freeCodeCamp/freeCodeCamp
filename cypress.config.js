@@ -3,7 +3,7 @@ const { existsSync } = require('fs');
 const { defineConfig } = require('cypress');
 
 function seed(args = []) {
-  return execSync('node tools/scripts/seed/seed-demo-user' + args.join(' '));
+  return execSync('node tools/scripts/seed/seed-demo-user ' + args.join(' '));
 }
 
 module.exports = defineConfig({
