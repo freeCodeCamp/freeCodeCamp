@@ -210,7 +210,8 @@ describe('userRoutes', () => {
     describe('/user/user-token', () => {
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/user/user-token', {
-          method: 'POST'
+          method: 'POST',
+          setCookies
         });
 
         expect(response.statusCode).toBe(401);
