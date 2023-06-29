@@ -1,5 +1,3 @@
-import { flatten } from 'lodash';
-
 // TODO: keeping curriculum in memory is handy if we want to field requests that
 // need to 'query' the curriculum, but if we force the client to handle
 // redirectToCurrentChallenge and, instead, only report the current challenge id
