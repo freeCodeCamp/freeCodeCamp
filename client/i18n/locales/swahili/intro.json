@@ -1,300 +1,300 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "Ubunifu wa Wavuti Sikivu (Legacy Responsive Web Design)",
     "intro": [
       "Katika Uthibitishaji huu wa Muundo Wa Wavuti Sikivu, utajifunza lugha ambazo watengenezaji wa tovuti hutumia kutengeneza kurasa za wavuti: HTML(Hypertext Markup Language) kwa ajili ya maudhui, na CSS (Cascading Style Sheets) kwa ajili ya muundo.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "Kwanza, utaunda programu ya picha ya paka ili kujifunza misingi ya HTML na CSS. Baadaye, utajifunza mbinu za kisasa kama vile vihifadhi vya CSS kwa kujenga pengwini, na mbinu bora za ufikivu kwa kuunda fomu ya wavuti.",
+      "Hatimaye, utajifunza jinsi ya kutengeneza kurasa za tovuti zinazojibu ukubwa tofauti wa skrini kwa kutengeneza kadi ya Twitter na Flexbox, na mpangilio changamano wa blogu ukitumia Gridi ya CSS."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Kumbuka: Baadhi ya viendelezi vya kivinjari, kama vile vizuizi vya matangazo na viendelezi vya hali ya giza vinaweza kutatiza majaribio. Ukikumbana na matatizo, tunapendekeza kuzima viendelezi vinavyorekebisha maudhui au mpangilio wa kurasa, wakati unachukua kozi.",
     "blocks": {
       "basic-html-and-html5": {
-        "title": "Basic HTML and HTML5",
+        "title": "Msingi wa HTML na HTML5",
         "intro": [
-          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.",
-          "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
+          "HTML ni lugha ya markup inayotumia sintaksia maalum au nukuu kuelezea muundo wa ukurasa wa wavuti kwa kivinjari. Vipengele vya HTML kawaida huwa na tagi za kufungua na kufunga ambazo huzunguka na kutoa maana kwa yaliyomo. Kwa mfano, vipengele tofauti vinaweza kuelezea maandishi kama kichwa, aya au kipengee cha orodha.",
+          "Katika kozi hii, utaunda programu ya picha ya paka ili kujifunza baadhi ya vipengele vya kawaida vya HTML - vizuizi vya ujenzi wa ukurasa wowote wa tovuti."
         ]
       },
       "basic-css": {
-        "title": "Basic CSS",
+        "title": "Msingi wa CSS",
         "intro": [
-          "CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and many other aspects of HTML elements.",
-          "Now that you've described the structure of your cat photo app, give it some style with CSS."
+          "CSS, au Cascading Style Sheets, huaamba kivinjari jinsi ya kuonyesha maandishi na maudhui mengine unayoandika katika HTML. Ukiwa na CSS, unaweza kudhibiti rangi, fonti, saizi, nafasi, na vipengele vingine vingi vya vipengele vya HTML.",
+          "Kwa kuwa sasa umeelezea muundo wa programu yako ya picha ya paka, ipe mtindo fulani ukitumia CSS."
         ]
       },
       "applied-visual-design": {
-        "title": "Applied Visual Design",
+        "title": "Usanifu wa Kuonekana Uliotumika",
         "intro": [
-          "Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to help deliver your unique message.",
-          "In this course, you'll learn how to apply these different elements of visual design to your webpages."
+          "Muundo unaoonekana ni mchanganyiko wa uchapaji, nadharia ya rangi, michoro, uhuishaji, mpangilio wa ukurasa, na zaidi ili kusaidia kuwasilisha ujumbe wako wa kipekee.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia vipengele hivi tofauti vya muundo wa kuona kwenye kurasa zako za wavuti."
         ]
       },
       "applied-accessibility": {
-        "title": "Applied Accessibility",
+        "title": "Ufikivu Uliotumika",
         "intro": [
-          "In web development, accessibility refers to web content and a UI (user interface) that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.",
-          "In this course, you'll learn best practices for building webpages that are accessible to everyone."
+          "Katika utengenezaji wa wavuti, ufikivu unarejelea maudhui ya wavuti na UI (user interface) ambacho kinaweza kueleweka, kuangaziwa, na kuingiliana nacho na hadhira pana. Hii inajumuisha watu wenye ulemavu wa kuona, kusikia, uhamaji au utambuzi.",
+          "Katika kozi hii, utajifunza mbinu bora za kuunda kurasa za wavuti zinazoweza kufikiwa na kila mtu."
         ]
       },
       "responsive-web-design-principles": {
-        "title": "Responsive Web Design Principles",
+        "title": "Kanuni za Responsive Web Design",
         "intro": [
-          "There are many devices that can access the web, and they come in all shapes and sizes. Responsive web design is the practice of designing flexible websites that can respond to different screen sizes, orientations, and resolutions.",
-          "In this course, you'll learn how to use CSS to make your webpages look good, no matter what device they're viewed on."
+          "Kuna vifaa vingi vinavyoweza kufikia wavuti, na vinakuja kwa maumbo na saizi zote. Muundo wa wavuti unaoitikia ni mazoea ya kubuni tovuti zinazonyumbulika ambazo zinaweza kujibu ukubwa tofauti wa skrini, mielekeo na maazimio.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia CSS ili kufanya kurasa zako za wavuti zionekane vizuri, bila kujali ni kifaa gani zinatazamwa."
         ]
       },
       "css-flexbox": {
         "title": "CSS Flexbox",
         "intro": [
-          "Flexbox is a powerful, well-supported layout method that was introduced with the latest version of CSS, CSS3. With flexbox, it's easy to center elements on the page and create dynamic user interfaces that shrink and expand automatically.",
-          "In this course, you'll learn the fundamentals of flexbox and dynamic layouts by building a Twitter card."
+          "Flexbox ni mbinu ya mpangilio yenye nguvu, inayoauniwa vyema ambayo ilianzishwa kwa toleo jipya zaidi la CSS, CSS3. Ukiwa na flexbox, ni rahisi kuweka vipengee katikati kwenye ukurasa na kuunda miingiliano madhubuti ya watumiaji ambayo husinyaa na kupanuka kiotomatiki.",
+          "Katika kozi hii, utajifunza misingi ya flexbox na mipangilio inayobadilika kwa kuunda kadi ya Twitter."
         ]
       },
       "css-grid": {
-        "title": "CSS Grid",
+        "title": "Gridi ya CSS",
         "intro": [
-          "The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.",
-          "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
+          "Gridi ya CSS ni kiwango kipya zaidi kinachorahisisha kuunda miundo changamano inayoitikia. Inafanya kazi kwa kugeuza kipengee cha HTML kuwa gridi, na hukuruhusu kuweka vipengele vya watoto popote ndani.",
+          "Katika kozi hii, utajifunza misingi ya gridi ya CSS kwa kuunda miundo changamano tofauti, ikiwa ni pamoja na blogu."
         ]
       },
       "responsive-web-design-projects": {
-        "title": "Responsive Web Design Projects",
+        "title": "Miradi ya Responsive Web Design",
         "intro": [
-          "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
-          "Complete the five web programming projects below to earn your Responsive Web Design certification."
+          "Ni wakati wa kuweka ujuzi wako mpya kufanya kazi. Kwa kufanyia kazi miradi hii, utapata fursa ya kutumia ujuzi, kanuni, na dhana zote ambazo umejifunza kufikia sasa: HTML, CSS, Muundo Unaoonekana, Ufikivu, na zaidi.",
+          "Kamilisha miradi mitano ya programu ya wavuti iliyo hapa chini ili upate cheti chako cha Muundo wa Wavuti."
         ]
       }
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Muundo Wa Wavuti Sikivu",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
+      "Katika Uthibitishaji huu wa Muundo Wa Wavuti Sikivu, utajifunza lugha ambazo watengenezaji wa tovuti hutumia kutengeneza kurasa za wavuti: HTML(Hypertext Markup Language) kwa ajili ya maudhui, na CSS (Cascading Style Sheets) kwa ajili ya muundo.",
+      "Kwanza, utaunda programu ya picha ya paka ili kujifunza misingi ya HTML na CSS. Baadaye, utajifunza mbinu za kisasa kama vile vihifadhi vya CSS kwa kujenga pengwini, na mbinu bora za ufikivu kwa kuunda tovuti ya maswali.",
+      "Hatimaye, utajifunza jinsi ya kutengeneza kurasa za tovuti zinazojibu ukubwa tofauti wa skrini kwa kuunda matunzio ya picha kwa kutumia Flexbox, na mpangilio wa makala ya jarida kwa kutumia Gridi ya CSS."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Kumbuka: Baadhi ya viendelezi vya kivinjari, kama vile vizuizi vya matangazo na viendelezi vya hali ya giza vinaweza kutatiza majaribio. Ukikumbana na matatizo, tunapendekeza kuzima viendelezi vinavyorekebisha maudhui au mpangilio wa kurasa, wakati unachukua kozi.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Tribute Page",
+        "title": "Ukurasa wa Kushukuru",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
+          "Huu ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda ukurasa wa kushukuru kwa somo ulilochagua, la kubuni au halisi."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Personal Portfolio Webpage",
+        "title": "Ukurasa wa Wavuti wa Kibinafsi",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build your own personal portfolio page."
+          "Huu ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda tovuti yako ya kibinafsi."
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Product Landing Page",
+        "title": "Ukurasa wa Kutua kwa Bidhaa (Product Landing Page)",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a product landing page to market a product of your choice."
+          "Huu ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda ukurasa wa kutua wa bidhaa ili kuuza bidhaa unayopenda."
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Survey Form",
+        "title": "Fomu ya Utafiti",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a survey form to collect data from your users."
+          "Huu ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda fomu ya utafiti ili kukusanya data kutoka kwa watumiaji wako."
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Technical Documentation Page",
+        "title": "Ukurasa wa Hati za Kiufundi",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
+          "Huu ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda ukurasa wa hati za kiufundi ili kutumika kama maagizo au marejeleo ya mada."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "Jifunze HTML kwa Kuunda Programu ya Picha ya Paka",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "Tagi za HTML hupa ukurasa wa tovuti muundo wake. Unaweza kutumia tagi za HTML kuongeza picha, vitufe na vipengele vingine kwenye ukurasa wako wa tovuti.",
+          "Katika kozi hii, utajifunza tagi za kawaida za HTML kwa kuunda programu yako ya picha ya paka."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "Jifunze Msingi wa CSS kwa Kuunda Menyu ya Mkahawa",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
+          "CSS huambia kivinjari jinsi ya kuonyesha ukurasa wako wa wavuti. Unaweza kutumia CSS kuweka rangi, fonti, saizi na vipengele vingine vya vipengele vya HTML.",
+          "Katika kozi hii, utajifunza CSS kwa kubuni ukurasa wa menyu kwa ukurasa wa wavuti wa mkahawa."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "Jifunze CSS Box Model kwa Kutengeneza Mchoro wa Rothko",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Kila kipengele cha HTML ni kisanduku chake - chenye nafasi zake na mpaka. Hii inaitwa Box Model.",
+          "Katika kozi hii, utatumia CSS na Box Model kuunda vipande vyako vya sanaa vya mstatili vya mtindo wa Rothko."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "Jifunze Vihifadhi vya CSS kwa Kujenga City Skyline",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
+          "Vihifadhi vya CSS hukusaidia kupanga mitindo yako na kuitumia tena.",
+          "Katika kozi hii, utaunda city skyline. Utajifunza jinsi ya kusanidi vihifadhi vya CSS ili uweze kuvitumia tena wakati wowote unapotaka."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "Jifunze Fomu za HTML kwa Kuunda Fomu ya Usajili",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
-          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "Unaweza kutumia fomu za HTML kukusanya taarifa kutoka kwa watu wanaotembelea ukurasa wako wa tovuti.",
+          "Katika kozi hii, utajifunza fomu za HTML kwa kuunda ukurasa wa kujisajili. Utajifunza jinsi ya kudhibiti ni aina gani za data ambazo watu wanaweza kuandika kwenye fomu yako, na baadhi ya zana mpya za CSS za kutengeneza ukurasa wako."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "Jifunze Accessibility kwa Kuunda Maswali",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
-          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "Accessibility ni kufanya ukurasa wako wa wavuti kuwa rahisi kwa watu wote kutumia – hata watu wenye ulemavu.",
+          "Katika kozi hii, utaunda ukurasa wa wavuti wa maswali. Utajifunza zana za ufikivu kama vile mikato ya kibodi, sifa za ARIA na mbinu bora za kubuni."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "Jifunze Intermediate CSS kwa Kuunda Mchoro wa Picasso",
         "intro": [
-          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "Katika kozi hii, utajifunza jinsi ya kutumia baadhi ya mbinu za intermediate CSS kwa kuunda ukurasa wako wa tovuti wa mchoro wa Picasso. Utajifunza kuhusu aikoni za SVG, CSS positioning, na uhakiki ujuzi mwingine wa CSS ambao umejifunza."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "Jifunze Responsive Web Design kwa Kutengeneza Piano",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "Responsive Design huambia ukurasa wako wa tovuti jinsi unavyopaswa kuonekana kwenye skrini za ukubwa tofauti.",
+          "Katika kozi hii, utatumia CSS na Muundo Msikivu kutengenza piano. Pia utajifunza zaidi kuhusu media quries na pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "Jifunze CSS Flexbox kwa Kuunda Photo Gallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
+          "Flexbox hukusaidia kuunda ukurasa wako wa tovuti ili uonekane mzuri kwenye saizi yoyote ya skrini.",
+          "Katika kozi hii, utatumia Flexbox kuunda ukurasa wa tovuti wa matunzio ya picha (photo gallery)."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "Jifunze CSS Grid kwa Kuunda Jarida",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
+          "CSS Grid hukupa udhibiti wa safu mlalo na safu wima za muundo wa ukurasa wako wa tovuti.",
+          "Katika kozi hii, utaunda nakala ya gazeti. Utajifunza jinsi ya kutumia CSS Grid, ikijumuisha dhana kama safu mlalo na safu wima za gridi."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "Jifunze Typography kwa Kuunda Lebo ya Lishe",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "Typography ni sanaa ya kupanga maandishi yako ili yasomeke kwa urahisi na kuendana na madhumuni yake.",
+          "Katika kozi hii, utatumia uchapaji kuunda ukurasa wa wavuti wa lebo ya lishe. Utajifunza jinsi ya kutengeneza maandishi, kurekebisha urefu wa mstari, na kuweka maandishi yako kwa kutumia CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "Jifunze CSS Transforms kwa Kuunda Pengwini",
         "intro": [
-          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+          "Unaweza kubadilisha vipengele vya HTML ili kuunda miundo ya kuvutia inayovutia macho ya msomaji wako. Unaweza kutumia vibadilishaji kuzungusha vipengele, kuvipima, na zaidi.",
+          "Katika kozi hii, utaunda pengwini. Utatumia CSS transform ili kuweka na kurekebisha ukubwa wa sehemu za pengwini yako, kuunda mandharinyuma, na kuhuisha kazi yako."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "Jifunze Uhuishaji wa CSS kwa Kuunda Gurudumu la Ferris",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+          "Unaweza kutumia CSS animation kuvutia sehemu mahususi za ukurasa wako wa tovuti na kuufanya uvutie zaidi.",
+          "Katika kozi hii, utaunda gurudumu la Ferris. Utajifunza jinsi ya kutumia CSS kuhuisha vipengele, kuvibadilisha, na kurekebisha kasi yake."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "Pata Maelezo Zaidi Kuhusu CSS Pseudo Selectors Kwa Kuunda Balance Sheet",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "Unaweza kutumia CSS pseudo selectors kubadilisha vipengee mahususi vya HTML.",
+          "Katika kozi hii, utaunda laha kwa kutumia pseudo selectors. Utajifunza jinsi ya kubadilisha mtindo wa kipengele unapoelea juu yake kwa kutumia kipanya chako, na kuanzisha matukio mengine kwenye ukurasa wako wa tovuti."
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "title": "Jifunze Rangi za CSS kwa Kuunda Seti ya Alama za Rangi",
         "intro": [
-          "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
-          "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
+          "Kuchagua rangi zinazofaa kwa ukurasa wako wa tovuti kunaweza kuboresha pakubwa mvuto wa kupendeza kwa wasomaji wako.",
+          "Katika kozi hii, utaunda seti ya alama za rangi. Utajifunza njia tofauti za kuweka thamani za rangi na jinsi ya kuunganisha rangi."
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Algorithms za JavaScript na Data Structures",
     "intro": [
-      "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
-      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
-      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
+      "Ingawa HTML na CSS hudhibiti maudhui na mtindo wa ukurasa, JavaScript inatumika kuifanya ishirikiane. Katika Uthibitishaji wa Algorithm ya JavaScript na Miundo ya Data, utajifunza misingi ya JavaScript ikijumuisha variables, arrays, objects, loops, na functions.",
+      "Baada ya kuelewa misingi yake, utatumia maarifa hayo kwa kuunda algoriti ili kudhibiti strings, kurekebisha nambari, na hata kukokotoa mzingo wa Kituo cha Kimataifa cha Anga cha Juu.",
+      "Njiani, pia utajifunza mitindo miwili muhimu ya upangaji au dhana: Object Oriented Programming (OOP) na Functional Programming (FP)."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "Kumbuka: Baadhi ya viendelezi vya kivinjari, kama vile ad-blockers na script-blockers vinaweza kuingilia majaribio. Ukikumbana na matatizo, tunapendekeza kuzima viendelezi vinavyorekebisha au kuzuia maudhui ya kurasa wakati wa mafunzo.",
     "blocks": {
       "basic-javascript": {
-        "title": "Basic JavaScript",
+        "title": "Msingi wa JavaScript",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
-          "In this course, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data structures like numbers and strings. Then you'll learn to work with arrays, objects, functions, loops, if/else statements, and more."
+          "JavaScript ni lugha ya uandishi unayoweza kutumia kufanya kurasa za wavuti kuingiliana. Ni moja ya teknolojia kuu za wavuti, pamoja na HTML na CSS, na inasaidiwa na vivinjari vyote vya kisasa.",
+          "Katika kozi hii, utajifunza dhana za msingi za programu katika JavaScript. Utaanza na miundo msingi ya data kama vile nambari na strings. Kisha utajifunza kufanya kazi na arrays, objects, functions, loops, if/else statements, na zaidi."
         ]
       },
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
+          "ECMAScript, au ES, ni toleo sanifu la JavaScript. Kwa sababu vivinjari vyote vikuu vinafuata vipimo hivi, maneno ECMAScript na JavaScript yanaweza kubadilishana.",
+          "Zaidi ya JavaScript uliyojifunza hadi wakati huu ilikuwa katika ES5 (ECMAScript 5), ambayo ilikamilishwa mwaka wa 2009. Ingawa bado unaweza kuandika programu katika ES5, JavaScript inabadilika mara kwa mara, na vipengele vipya vinatolewa kila mwaka.",
+          "ES6, iliyotolewa mwaka wa 2015, iliongeza vipengele vingi vipya vyenye nguvu kwenye lugha. Katika kozi hii, utajifunza vipengele hivi vipya, ikiwa ni pamoja na arrow functions, destructuring, classes, promises, na modules."
         ]
       },
       "regular-expressions": {
         "title": "Regular Expressions",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
-          "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+          "Regular expressions, mara nyingi hufupishwa kuwa \"regex\" au \"regexp\", ni ruwaza zinazosaidia watayarishaji programu kuendana, kutafuta, na kubadilisha maandishi. Regular expressions ina nguvu sana, lakini inaweza kuwa ngumu kusoma kwa sababu hutumia herufi maalum kutengeneza ulinganifu changamano zaidi na unaonyumbulika.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia herufi maalum, vikundi vya kunasa, mitazamo chanya na hasi, na mbinu zingine ili kulinganisha maandishi yoyote unayotaka."
         ]
       },
       "debugging": {
-        "title": "Debugging",
+        "title": "Utatuzi (Debugging)",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "Issues in code generally come in three forms: syntax errors that prevent your program from running, runtime errors where your code has unexpected behavior, or logical errors where your code doesn't do what you intended.",
-          "In this course, you'll learn how to use the JavaScript console to debug programs and prevent common issues before they happen."
+          "Utatuzi ni mchakato wa kupitia msimbo wako, kutafuta maswala yoyote, na kuyarekebisha.",
+          "Masuala katika msimbo kwa ujumla huja katika aina tatu: syntax errors zinazozuia programu yako kufanya kazi, runtime errors ambapo msimbo wako una tabia isiyotarajiwa, au logical errors ambapo msimbo wako haufanyi ulichokusudia.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia JavaScript console kutatua programu na kuzuia masuala ya kawaida kabla hayajatokea."
         ]
       },
       "basic-data-structures": {
-        "title": "Basic Data Structures",
+        "title": "Msingi wa Data Structures",
         "intro": [
-          "Data can be stored and accessed in many ways. You already know some common JavaScript data structures — arrays and objects.",
-          "In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and manipulate data."
+          "Data inaweza kuhifadhiwa na kupatikana kwa njia nyingi. Tayari unajua baadhi ya miundo ya kawaida ya data ya JavaScript - arrays na objects.",
+          "Katika kozi hii ya Msingi wa Data Structures, utajifunza zaidi kuhusu tofauti kati ya arrays na objects, na ambayo unaweza kutumia katika hali tofauti. Pia utajifunza jinsi ya kutumia mbinu muhimu za JS kama vile <code>splice()</code> na <code>Object.keys()</code> ili kufikia na kuendesha data."
         ]
       },
       "basic-algorithm-scripting": {
-        "title": "Basic Algorithm Scripting",
+        "title": "Msingi wa Algorithm Scripting",
         "intro": [
-          "An algorithm is a series of step-by-step instructions that describe how to do something.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
-          "In this course, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
+          "Algorithm ni mfululizo wa maagizo ya hatua kwa hatua ambayo yanaelezea jinsi ya kufanya kitu.",
+          "Kuandika algoriti yenye ufanisi husaidia kuvunja tatizo katika sehemu ndogo na kufikiria kwa makini jinsi ya kutatua kila sehemu kwa kutumia msimbo.",
+          "Katika kozi hii, utajifunza misingi ya mawazo ya algoriti kwa kuandika kanuni ambazo hufanya kila kitu kutoka kwa kubadilisha halijoto hadi kushughulikia array changamano za 2D."
         ]
       },
       "object-oriented-programming": {
         "title": "Object Oriented Programming",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "OOP, au Object Oriented Programming, ni mojawapo ya mbinu kuu za mchakato wa ukuzaji wa programu. Katika OOP, objects na classes hupanga msimbo kuelezea mambo na kile wanachoweza kufanya.",
+          "Katika kozi hii, utajifunza kanuni za msingi za OOP katika JavaScript, ikijumuisha neno kuu la <code>this</code>, prototype chains, constructors, na inheritance."
         ]
       },
       "functional-programming": {
         "title": "Functional Programming",
         "intro": [
-          "Functional Programming is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
+          "Functional Programming ni njia nyingine maarufu ya ukuzaji wa programu. Katika Upangaji Utendaji, msimbo umepangwa katika vitendakazi vidogo vidogo ambavyo vinaweza kuunganishwa ili kuunda programu ngumu.",
+          "Katika kozi hii, utajifunza dhana za msingi za Functional Programming ikijumuisha utendakazi safi, jinsi ya kuepuka mabadiliko, na jinsi ya kuandika msimbo safi kwa kutumia mbinu kama vile <code>.map()</code> na <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
         "title": "Intermediate Algorithm Scripting",
         "intro": [
-          "Now that you know the basics of algorithmic thinking, along with OOP and Functional Programming, test your skills with the Intermediate Algorithm Scripting challenges."
+          "Kwa kuwa sasa unajua misingi ya kufikiri kwa kufuata kanuni za algoriti, pamoja na OOP na Functional Programming, jaribu ujuzi wako kwa changamoto za Uandikaji wa Algorithm ya Kati."
         ]
       },
       "javascript-algorithms-and-data-structures-projects": {
-        "title": "JavaScript Algorithms and Data Structures Projects",
+        "title": "Miradi ya JavaScript Algorithms na Data Structures",
         "intro": [
-          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
-          "Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certification."
+          "Huu ndio wakati wa kuweka ujuzi wako mpya wa JavaScript kufanya kazi. Miradi hii ni sawa na changamoto za uandishi wa algorithm ambazo umefanya hapo awali – ila ni ngumu zaidi.",
+          "Kamilisha miradi hii 5 ya JavaScript ili upate cheti cha JavaScript Algorithms and Data Structures."
         ]
       }
     }
@@ -305,59 +305,59 @@
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Caesars Cipher Project",
+        "title": "Unda Mradi wa Cipher wa Kaisari",
         "intro": ["", ""]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "Unda Mradi wa Cash Register",
         "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "Unda Mradi wa Palindrome Checker",
         "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "Unda Mradi wa Kubadilisha Nambari za Kirumi",
         "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "Unda Mradi wa Kuthibitisha Nambari ya Simu",
         "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "Jifunze Misingi ya JavaScript kwa Kuunda Mchezo wa Role Playing",
         "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "Jifunze Uthibitishaji wa Fomu kwa Kuunda Calorie Counter",
         "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "Jifunze Functional Programming kwa Kuunda Spreadsheet",
         "intro": ["", ""]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Jifunze Mbinu za Kisasa za JavaScript Kwa Kuunda Kadi za Timu ya Soka",
         "intro": ["", ""]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "Jifunze Mbinu za Kina za Array kwa Kuunda Kikokotoo cha Takwimu",
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Learn Data Structures By Building A Shopping Cart",
+        "title": "Jifunze Data Structures Kwa Kuunda Shopping Cart",
         "intro": ["", ""]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Jifunze Fetch na Promises Kwa Kuunda Ukurasa wa Waandishi wa fCC",
         "intro": ["", ""]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "Jifunze Regular Expressions kwa Kuunda Spam Filter",
         "intro": ["", ""]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Jifunze Msingi wa Algorithmic Thinking kwa Kuunda Kipanga Nambari",
         "intro": ["", ""]
       }
     }
@@ -365,62 +365,62 @@
   "front-end-development-libraries": {
     "title": "Front End Development Libraries",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
-      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
-      "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
+      "Kwa kuwa sasa unafahamu HTML, CSS na JavaScript, ongeza ujuzi wako kwa kujifunza baadhi ya maktaba maarufu za front end kwenye sekta hiyo.",
+      "Katika cheti cha Front End Development Libraries, utajifunza jinsi ya kutengeneza tovuti yako haraka na Bootstrap. Pia utajifunza jinsi ya kuongeza mantiki kwenye mitindo yako ya CSS na kuiendeleza kwa Sass.",
+      "Baadaye, utaunda shopping cart na programu zingine ili kujifunza jinsi ya kuunda Single Page Applications (SPAs) kwa kutumia React na Redux."
     ],
     "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
-          "In this course, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
+          "Bootstrap ni mfumo wa front end unaotumiwa kuunda kurasa za wavuti na programu zinazoitikia. Inahitaji mbinu ya kwanza ya rununu kwa ukuzaji wa wavuti, na inajumuisha mitindo na madarasa ya CSS yaliyoundwa mapema, pamoja na utendaji wa JavaScript.",
+          "Katika kozi hii, utajifunza jinsi ya kuunda tovuti responsive kwa kutumia Bootstrap, na kutumia madarasa yake yaliyojumuishwa ili kuunda vitufe, picha, fomu, urambazaji na vipengele vingine vya kawaida."
         ]
       },
       "jquery": {
         "title": "jQuery",
         "intro": [
-          "jQuery is one of the most widely used JavaScript libraries in the world.",
-          "In 2006 when it was released, all major browsers handled JavaScript slightly differently. jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.",
-          "In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page."
+          "jQuery ni mojawapo ya maktaba za JavaScript zinazotumiwa sana ulimwenguni.",
+          "Mnamo 2006 ilipotolewa, vivinjari vyote vikuu vilishughulikia JavaScript kwa njia tofauti kidogo. jQuery imerahisisha mchakato wa kuandika JavaScript ya upande wa mteja na pia ilihakikisha kuwa msimbo wako inafanya kazi kwa njia ile ile katika vivinjari vyote.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia jQuery kuchagua, kuondoa, kuiga, na kurekebisha vipengele tofauti kwenye ukurasa."
         ]
       },
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.",
-          "In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
+          "Sass, au \"Syntactically Awesome StyleSheets\", ni kiendelezi cha lugha cha CSS. Inaongeza vipengele ambavyo havipatikani katika CSS msingi, ambayo hukurahisishia kurahisisha na kudumisha laha za mtindo kwa ajili ya miradi yako.",
+          "Katika kozi hii ya Sass, utajifunza jinsi ya kuhifadhi data katika variables, nest CSS, kuunda mitindo inayoweza kutumika tena na michanganyiko, kuongeza mantiki na mizunguko kwenye mitindo yako, na zaidi."
         ]
       },
       "react": {
         "title": "React",
         "intro": [
-          "React is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications.",
-          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.",
-          "In this course, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
+          "React ni maktaba maarufu ya JavaScript kwa ajili ya kujenga violesura vinavyoweza kutumika tena, vinavyoendeshwa na vipengele vya kurasa za wavuti au programu.",
+          "React inachanganya HTML na utendaji wa JavaScript katika lugha yake ya ghafi iitwayo JSX. React pia hurahisisha kudhibiti mtiririko wa data katika programu tumizi.",
+          "Katika kozi hii, utajifunza jinsi ya kuunda vipengee tofauti vya React, kudhibiti data katika mfumo wa state props, kutumia mbinu tofauti za mzunguko kama vile <code>componentDidMount</code>, na mengi zaidi."
         ]
       },
       "redux": {
         "title": "Redux",
         "intro": [
-          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
-          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
-          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+          "Kadiri programu zinavyokua kwa ukubwa na upeo, kudhibiti data iliyoshirikiwa inakuwa vigumu zaidi. Redux inafafanuliwa kama \"predictable state container for JavaScript apps\" ambayo husaidia kuhakikisha programu zako zinafanya kazi kwa kutabirika, na ni rahisi kuzifanyia majaribio.",
+          "Ingawa unaweza kutumia Redux na maktaba yoyote ya kutazama, tunatanguliza Redux hapa kabla ya kuichanganya na React katika seti inayofuata ya kozi.",
+          "Katika kozi hii, utajifunza misingi ya Redux stores, actions, reducers na middleware ili kudhibiti data katika programu yako yote."
         ]
       },
       "react-and-redux": {
-        "title": "React and Redux",
+        "title": "React na Redux",
         "intro": [
-          "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
-          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+          "React na Redux mara nyingi hutajwa pamoja, na kwa sababu nzuri. Msanidi programu aliyeunda Redux alikuwa msanidi programu wa React ambaye alitaka kurahisisha kushiriki data kwenye vipengele tofauti.",
+          "Kwa kuwa sasa unajua jinsi ya kudhibiti mtiririko wa data iliyoshirikiwa na Redux, ni wakati wa kuchanganya maarifa hayo na React. Katika kozi za React na Redux, utaunda kipengele cha React na kujifunza jinsi ya kudhibiti state katika kiwango cha component, na katika programu nzima ya Redux."
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front End Development Libraries Projects",
+        "title": "Miradi ya Front End Development Libraries",
         "intro": [
-          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front End Development Libraries certification."
+          "Ni wakati wa kujaribu ujuzi wako wa ukuzaji wa front end libraries. Tumia Bootstrap, jQuery, Sass, React, na Redux kuunda miradi 5 ambayo itajaribu kila kitu ambacho umejifunza hadi sasa.",
+          "Kamilisha miradi yote 5, na utapata cheti cha Front End Development Libraries."
         ]
       }
     }
@@ -428,38 +428,38 @@
   "data-visualization": {
     "title": "Data Visualization",
     "intro": [
-      "Data is all around us, but it doesn't mean much without shape or context.",
-      "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
-      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
+      "Data iko pande zote, lakini haimaanishi mengi bila umbo au muktadha.",
+      "Katika Cheti cha Data Visualization, utaunda chati, grafu na ramani ili kuwasilisha aina tofauti za data kwenye maktaba ya D3.js.",
+      "Pia utajifunza kuhusu JSON (JavaScript Object Notation), na jinsi ya kufanya kazi na data mtandaoni kwa kutumia API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {
       "data-visualization-with-d3": {
-        "title": "Data Visualization with D3",
+        "title": "Data Visualization na D3",
         "intro": [
-          "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
-          "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
-          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
-          "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
+          "D3, au D3.js, inasimamia Data Driven Documents. Ni maktaba ya JavaScript ya kuunda taswira za data wasilianifu katika kivinjari.",
+          "D3 imeundwa kufanya kazi na viwango vya kawaida vya wavuti – yaani HTML, CSS, na Scalable Vector Graphics (SVG).",
+          "D3 inasaidia aina nyingi tofauti za umbizo la data ya ingizo. Kisha, kwa kutumia mbinu zake zenye nguvu zilizojengewa ndani, unaweza kubadilisha data hizo kuwa chati, grafu na ramani tofauti.",
+          "Katika kozi hii ya Data Visualization na D3, utajifunza jinsi ya kufanya kazi na data ili kuunda chati tofauti, grafu, vipengele vya kuelea na viungo vingine ili kuunda taswira ya data inayobadilika na ya kuvutia."
         ]
       },
       "json-apis-and-ajax": {
-        "title": "JSON APIs and AJAX",
+        "title": "JSON APIs na AJAX",
         "intro": [
-          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
-          "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
-          "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
+          "Sawa na jinsi UI husaidia watu kutumia programu, API (Application Programming Interfaces) husaidia programu kuingiliana na programu zingine. API ni zana ambazo kompyuta hutumia kuwasiliana na nyingine, kwa sehemu kutuma na kupokea data.",
+          "Watengenezaji wa programu mara nyingi hutumia AJAX (Asynchronous JavaScript and XML) wakati wa kufanya kazi na API. AJAX inarejelea kundi la teknolojia zinazofanya maombi yasiyolingana kwa seva ili kuhamisha data, kisha kupakia data yoyote iliyorejeshwa kwenye ukurasa. Na data inayohamishwa kati ya kivinjari na seva mara nyingi huwa katika umbizo linaloitwa JSON (JavaScript Object Notation).",
+          "Kozi hii itakufundisha misingi ya kufanya kazi na API na teknolojia tofauti za AJAX kwenye kivinjari."
         ]
       },
       "data-visualization-projects": {
-        "title": "Data Visualization Projects",
+        "title": "Miradi ya Data Visualization",
         "intro": [
-          "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
-          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
+          "Kwa kuwa sasa umejifunza jinsi ya kufanya kazi na teknolojia za D3, API na AJAX, jaribu ujuzi wako ukitumia miradi hii 5 ya Kuonyesha Data.",
+          "Katika miradi hii, utahitaji kuleta data na kuchanganua mkusanyiko wa data, kisha utumie D3 kuunda taswira tofauti za data. Maliza yote ili upate cheti chako cha Data Visualization."
         ]
       },
       "d3-dashboard": {
-        "title": "D3 Dashboard",
+        "title": "Dashibodi ya D3",
         "intro": ["", ""]
       }
     }
@@ -467,107 +467,107 @@
   "relational-database": {
     "title": "Relational Database",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
-      "Finally, you will learn Git, the version control system, an essential tool of every developer."
+      "Kwa kozi hizi, utatumia zana na programu halisi za wasanidi programu ikijumuisha VS Code, PostgreSQL, na mstari wa amri wa Linux / Unix ili kukamilisha mafunzo shirikishi na kujenga miradi.",
+      "Kozi hizi huanza na amri za kimsingi za Bash. Kwa kutumia terminal, utajifunza kila kitu kutoka kwa kusogeza na kudhibiti mfumo wa faili, na uandishi katika Bash, hadi utumiaji wa hali ya juu.",
+      "Kisha, utajifunza jinsi ya kuunda na kutumia relational database na PostgreSQL, mfumo wa usimamizi wa hifadhidata, na SQL, lugha ya hifadhidata hizi.",
+      "Mwishowe, utajifunza Git, mfumo wa udhibiti wa toleo, zana muhimu ya kila msanidi programu."
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
-        "title": "Celestial Bodies Database",
+        "title": "Hifadhidata ya Celestial Bodies",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda hifadhidata ya celestial bodies kwa kutumia PostgreSQL."
         ]
       },
       "build-a-number-guessing-game-project": {
-        "title": "Number Guessing Game",
+        "title": "Mchezo wa Kukisia Nambari",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utatumia uandishi wa Bash, PostgreSQL, na Git kuunda mchezo wa kubahatisha nambari unaoendeshwa kwenye terminal na kuhifadhi maelezo ya mtumiaji."
         ]
       },
       "build-a-periodic-table-database-project": {
-        "title": "Periodic Table Database",
+        "title": "Hifadhidata ya Periodic Table",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda hati ya Bash ili kupata maelezo kuhusu vipengele vya kemikali kutoka kwa hifadhidata ya periodic table."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
-        "title": "Salon Appointment Scheduler",
+        "title": "Mratibu wa Uteuzi wa Saluni",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda programu shirikishi ya Bash inayotumia PostgreSQL kufuatilia wateja na miadi ya saluni yako."
         ]
       },
       "build-a-world-cup-database-project": {
-        "title": "World Cup Database",
+        "title": "Hifadhidata ya Kombe la Dunia",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda hati ya Bash inayoingiza taarifa kutoka kwa michezo ya Kombe la Dunia katika PostgreSQL, kisha uulize hifadhidata kwa takwimu muhimu."
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "title": "Jifunze Advanced Bash kwa Kuunda Kitafsiri cha Kitty Ipsum",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
+          "Kuna zaidi kwa amri za Bash kuliko unavyoweza kufikiria.",
+          "Katika kozi hii ya masomo 140, utajifunza amri changamano zaidi na maelezo ya jinsi amri zinavyofanya kazi."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "title": "Jifunze Bash na SQL kwa Kujenga Duka la Kukodisha Baiskeli",
         "intro": [
-          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "Katika kozi hii ya masomo 210, utaunda programu shirikishi ya Bash ambayo huhifadhi maelezo ya kukodisha kwa duka lako la kukodisha baiskeli kwa kutumia PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Learn Bash by Building a Boilerplate",
+        "title": "Jifunze Bash kwa Kuunda Boilerplate",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "Terminal inakuwezesha kutuma amri za maandishi kwa kompyuta yako ambayo inaweza kuendesha mfumo wa faili, kuendesha programu, kazi za otomatiki, na mengi zaidi.",
+          "Katika kozi hii ya masomo 170, utajifunza amri za terminal kwa kuunda boilerplate ya tovuti kwa kutumia tu mstari wa amri."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Learn Bash Scripting by Building Five Programs",
+        "title": "Jifunze Bash Scripts kwa Kuunda Programu Tano",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Bash scripts huunganizha amri za terminal na mantiki katika programu zinazoweza kutekeleza au kufanya kazi otomatiki, na mengi zaidi.",
+          "Katika kozi hii ya masomo 220, utajifunza amri zaidi za terminal na jinsi ya kuzitumia ndani ya hati za Bash kwa kuunda programu tano ndogo."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "Jifunze Git kwa Kuunda SQL Reference Object",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git ni mfumo wa udhibiti wa toleo ambao hufuatilia mabadiliko yote unayofanya kwenye msimbo wako.",
+          "Katika kozi hii ya masomo 240, utajifunza jinsi Git hufuatilia msimbo wako kwa kuunda kitu kilicho na amri za SQL zinazotumiwa sana."
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Learn Nano by Building a Castle",
+        "title": "Jifunze Nano kwa Kuunda Ngome",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano ni programu ambayo hukuruhusu kuhariri faili moja kwa moja kwenye terminal.",
+          "Katika kozi hii ya masomo 40, utajifunza jinsi ya kuhariri faili katika terminal na Nano wakati wa kujenga ngome."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+        "title": "Jifunze Relational Databases kwa Kuunda Mario Database",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Relational database hupanga data katika majedwali ambayo yameunganishwa pamoja kupitia uhusiano.",
+          "Katika kozi hii ya masomo 165, utajifunza misingi ya relational database kwa kuunda PostgreSQL database iliyojaa wahusika wa mchezo wa video."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "Learn SQL by Building a Student Database: Part 1",
+        "title": "Jifunze SQL kwa Kuunda Hifadhidata ya Wanafunzi: Sehemu ya 1",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL, au Structured Query Language, ni lugha ya kuwasiliana na relational database.",
+          "Katika kozi hii ya masomo 140, utaunda hati ya Bash inayotumia SQL kuingiza taarifa kuhusu wanafunzi wako wa sayansi ya kompyuta katika PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "Learn SQL by Building a Student Database: Part 2",
+        "title": "Jifunze SQL kwa Kuunda Hifadhidata ya Wanafunzi: Sehemu ya 2",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
+          "Amri za SQL join hutumiwa kuunganisha taarifa kutoka kwa jedwali nyingi katika relational database",
+          "Katika kozi hii ya masomo 140, utakamilisha hifadhidata yako ya wanafunzi huku ukizama zaidi katika amri za SQL."
         ]
       }
     }
@@ -575,129 +575,129 @@
   "back-end-development-and-apis": {
     "title": "Back End Development and APIs",
     "intro": [
-      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
-      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Hadi kufikia hatua hii, umetumia JavaScript iliyo upande wa mbele pekee ili kuongeza mwingiliano kwenye ukurasa, kutatua changamoto za kanuni au kuunda SPA. Lakini JavaScript pia inaweza kutumika upande wa nyuma, au seva, kuunda programu nzima za wavuti.",
+      "Leo, mojawapo ya njia maarufu za kuunda programu ni kupitia huduma ndogo, ambazo ni ndogo, programu ambazo kwa kawaida hufanya kazi pamoja ili kuunda nzima zaidi.",
+      "Katika cheti cha Back End Development and APIs, utajifunza jinsi ya kuandika upya programu ukitumia Node.js na npm. Pia utaunda programu za wavuti kwa mfumo wa Express, na utaunda programu ndogo ya People Finder na MongoDB na maktaba ya Mongoose."
     ],
     "note": "",
     "blocks": {
       "managing-packages-with-npm": {
-        "title": "Managing Packages with NPM",
+        "title": "Kusimamia Vifurushi na NPM",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+          "npm (Node Package Manager), ni zana ya mstari wa amri ya kusakinisha, kuunda, na kushiriki vifurushi vya msimbo wa JavaScript ulioandikwa kwa Node.js. Kuna vifurushi vingi vya programu huria vinavyopatikana kwenye npm, kwa hivyo kabla ya kuanza mradi, chukua muda kuchunguza ili usiishie kutengeneza gurudumu la vitu kama kufanya kazi na tarehe au kupata data kutoka kwa API.",
+          "Katika kozi hii, utajifunza misingi ya kutumia npm, ikijumuisha jinsi ya kufanya kazi na <code>package.json</code> na jinsi ya kudhibiti utegemezi wako uliosakinishwa."
         ]
       },
       "basic-node-and-express": {
-        "title": "Basic Node and Express",
+        "title": "Msingi wa Node na Express",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+          "Node.js ni muda wa utekelezaji wa JavaScript ambao huruhusu wasanidi programu kuandika programu za nyuma (upande wa seva) katika JavaScript. Node.js huja na moduli chache zilizojengewa ndani - programu ndogo zinazojitegemea - ambazo husaidia na hili. Baadhi ya moduli za msingi ni pamoja na HTTP, ambayo hufanya kazi kama seva, na Mfumo wa Faili, moduli ya kusoma na kurekebisha faili.",
+          "Katika seti ya mwisho ya kozi, ulijifunza kusakinisha na kudhibiti vifurushi kutoka npm, ambavyo ni makusanyo ya moduli ndogo. Vifurushi hivi vinaweza kukusaidia kuunda programu kubwa na ngumu zaidi.",
+          "Express ni mfumo mwepesi wa maombi ya wavuti na ni mojawapo ya vifurushi maarufu kwenye npm. Express hurahisisha zaidi kuunda seva na kushughulikia uelekezaji wa programu yako, ambayo hushughulikia mambo kama vile kuelekeza watu kwenye ukurasa sahihi wanapotembelea sehemu fulani ya mwisho kama vile <pre>/blog</pre>.",
+          "Katika kozi hii, utajifunza misingi ya Node na Express ikijumuisha jinsi ya kuunda seva, kuhudumia faili tofauti, na kushughulikia maombi tofauti kutoka kwa kivinjari."
         ]
       },
       "mongodb-and-mongoose": {
-        "title": "MongoDB and Mongoose",
+        "title": "MongoDB na Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
-          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+          "MongoDB ni programu ya hifadhidata ambayo huhifadhi hati za JSON (au rekodi) ambazo unaweza kutumia katika programu yako. Tofauti na SQL, aina nyingine ya hifadhidata, MongoDB ni hifadhidata isiyo ya uhusiano au \"NoSQL\". Hii inamaanisha kuwa MongoDB huhifadhi data zote zinazohusiana ndani ya rekodi moja, badala ya kuihifadhi kwenye jedwali nyingi zilizowekwa kama kwenye hifadhidata ya SQL.",
+          "Mongoose ni kifurushi maarufu cha npm cha kuingiliana na MongoDB. Ukiwa na Mongoose, unaweza kutumia JavaScript wazi badala ya JSON, ambayo hurahisisha kufanya kazi na MongoDB. Pia, hukuruhusu kuunda michoro ya hati zako zinazoitwa schemas, ili usihifadhi kwa bahati mbaya aina mbaya ya data na kusababisha hitilafu baadaye.",
+          "Katika kozi za MongoDB na Mongoose, utajifunza misingi ya kufanya kazi na data inayoendelea ikiwa ni pamoja na jinsi ya kuweka muundo, na kuhifadhi, kufuta na kupata hati katika hifadhidata."
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Back End Development and APIs Projects",
+        "title": "Miradi ya Back End Development na APIs",
         "intro": [
-          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
+          "Umefanya kazi na API hapo awali, lakini kwa kuwa sasa unajua npm, Node, Express, MongoDB, na Mongoose, ni wakati wa kuunda yako mwenyewe. Chora kwenye kila kitu ambacho umejifunza hadi kufikia hatua hii ili kuunda huduma ndogo 5 tofauti, ambazo ni programu ndogo ambazo zina upeo mdogo.",
+          "Baada ya kuunda hizi, utakuwa na API 5 nzuri za huduma ndogo unazoweza kuwaonyesha marafiki, familia na waajiri watarajiwa. Lo, na utakuwa na cheti kipya cha Back End Development na APIs, pia."
         ]
       }
     }
   },
   "quality-assurance": {
-    "title": "Quality Assurance",
+    "title": "Ubora (Quality Assurance)",
     "intro": [
-      "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
-      "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
-      "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
+      "Kadiri programu au programu zako za wavuti zinavyozidi kuwa ngumu, utataka kuzijaribu ili kuhakikisha kuwa mabadiliko mapya hayavunji utendakazi wao asili.",
+      "Katika cheti cha Quality Assurance, utajifunza jinsi ya kuandika majaribio na Chai ili kuhakikisha kuwa programu zako hufanya kazi jinsi unavyotarajia.",
+      "Kisha utaunda programu ya gumzo ili kujifunza dhana za hali ya juu za Node na Express. Pia utatumia Pug kama injini ya kiolezo, Pasipoti ya uthibitishaji, na Socket.io kwa mawasiliano ya wakati halisi kati ya seva na wateja waliounganishwa."
     ],
     "note": "",
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
-        "title": "Quality Assurance and Testing with Chai",
+        "title": "Quality Assurance and Testing kutumia Chai",
         "intro": [
-          "Chai is a JavaScript testing library that helps you confirm that your program still behaves the way you expect it to after you make changes to your code.",
-          "Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
-          "In this course, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
+          "Chai ni maktaba ya majaribio ya JavaScript ambayo hukusaidia kuthibitisha kuwa programu yako bado inafanya kazi jinsi unavyotarajia baada ya kufanya mabadiliko kwenye msimbo wako.",
+          "Kwa kutumia Chai, unaweza kuandika majaribio ambayo yanaelezea mahitaji ya programu yako na kuona kama programu yako inayatimiza.",
+          "Katika kozi hii, utajifunza kuhusu madai, usawa wa kina, ukweli, API za majaribio, na mambo mengine msingi ya kujaribu programu za JavaScript."
         ]
       },
       "advanced-node-and-express": {
-        "title": "Advanced Node and Express",
+        "title": "Advanced Node na Express",
         "intro": [
-          "Now it's time to take a deep dive into Node.js and Express.js by building a chat application with a sign-in system.",
-          "To implement the sign-in system safely, you'll need to learn about authentication. This is the act of verifying the identity of a person or process.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
+          "Sasa ni wakati wa kuzama ndani ya Node.js na Express.js kwa kuunda programu ya gumzo na mfumo wa kuingia.",
+          "Ili kutekeleza mfumo wa kuingia katika akaunti kwa usalama, utahitaji kujifunza kuhusu uthibitishaji. Hiki ni kitendo cha kuthibitisha utambulisho wa mtu au mchakato.",
+          "Katika kozi hii, utajifunza jinsi ya kutumia Pasipoti kudhibiti uthibitishaji, Pug kuunda violezo vinavyoweza kutumika tena kwa ajili ya kujenga sehemu ya mbele haraka, na soketi za wavuti kwa mawasiliano ya wakati halisi kati ya wateja na seva."
         ]
       },
       "quality-assurance-projects": {
-        "title": "Quality Assurance Projects",
+        "title": "Miradi ya Quality Assurance",
         "intro": [
-          "Now that you're well versed in both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
-          "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certification to show off on your portfolio."
+          "Sasa kwa kuwa umefahamu vyema sehemu ya mbele na ya nyuma, ni wakati wa kutumia ujuzi na dhana zote ambazo umejifunza hadi kufikia hatua hii. Utaunda programu 5 tofauti za wavuti, na uandike majaribio kwa kila moja ili kuhakikisha kuwa zinafanya kazi na zinaweza kushughulikia kesi tofauti tofauti.",
+          "Baada ya kukamilisha miradi hii ya Quality Assurance, utakuwa na miradi 5 zaidi chini ya ukanda wako, na uthibitisho mpya wa kujionyesha kwenye wasifu yako."
         ]
       }
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
+    "title": "Scientific Computing na Python",
     "intro": [
-      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+      "Python ni mojawapo ya lugha maarufu zaidi za programu leo. Unaweza kuitumia kwa kila kitu kuanzia uandishi wa kimsingi hadi ujifunzaji wa mashine.",
+      "Katika cheti hiki cha Scientific Computing na Python, utajifunza misingi ya Python kama vile variables, loops, conditionals, na functions. Kisha utaongeza haraka miundo changamano ya data, mitandao, hifadhidata za uhusiano, na taswira ya data."
     ],
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "Python kwa kila Mtu",
         "intro": [
-          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "Python kwa kila Mtu ni mfululizo wa kozi za video za bure zinazofundisha misingi ya kutumia Python 3.",
+          "Kozi hizo ziliundwa na Dk. Charles Severance (pia anajulikana kama Dk. Chuck). Yeye ni Profesa wa Kliniki katika Shule ya Habari ya Chuo Kikuu cha Michigan, ambapo anafundisha kozi mbalimbali zinazozingatia teknolojia ikiwa ni pamoja na programu, muundo wa hifadhidata, na ukuzaji wa wavuti."
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Scientific Computing with Python Projects",
+        "title": "Miradi ya Scientific Computing with Python",
         "intro": [
-          "Time to put your Python skills to the test. By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Python Certification."
+          "Ni wakati wa kujaribu ujuzi wako wa Python. Kwa kukamilisha miradi hii, utaonyesha kuwa una ujuzi mzuri wa msingi wa Python na unahitimu kwa Cheti cha Scientific Computing with Python."
         ]
       }
     }
   },
   "data-analysis-with-python": {
-    "title": "Data Analysis with Python",
+    "title": "Data Analysis na Python",
     "intro": [
-      "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
-      "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
+      "Uchambuzi wa Data umekuwepo kwa muda mrefu. Lakini hadi miaka michache iliyopita, watengenezaji waliifanyia mazoezi kwa kutumia zana ghali, zisizo na chanzo kama vile Tableau. Lakini hivi majuzi, Python, SQL, na maktaba zingine zilizo wazi zimebadilisha Uchambuzi wa Data milele.",
+      "Katika Cheti cha Data Analysis na Python, utajifunza misingi ya uchanganuzi wa data na Python. Kufikia mwisho wa uthibitishaji huu, utajua jinsi ya kusoma data kutoka vyanzo kama vile CSVs na SQL, na jinsi ya kutumia maktaba kama vile Numpy, Pandas, Matplotlib na Seaborn kuchakata na kuona data."
     ],
     "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
-        "title": "Data Analysis with Python",
+        "title": "Data Analysis na Python",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll be reading data from multiple sources (CSV, SQL, Excel), process that data using NumPy and Pandas, and visualize it using Matplotlib and Seaborn,",
-          "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
+          "Katika kozi hizi za kina za video, iliyoundwa na Santiago Basulto, utajifunza mchakato mzima wa uchambuzi wa data. Utakuwa unasoma data kutoka kwa vyanzo vingi (CSV, SQL, Excel), kuchakata data hiyo kwa kutumia NumPy na Pandas, na kuibua kwa kutumia Matplotlib na Seaborn,",
+          "Zaidi ya hayo, tumejumuisha kozi kamili ya Jupyter Notebook, na rejeleo la haraka la Python ili kukukumbusha ujuzi wako wa kuandika programu."
         ]
       },
       "numpy": {
         "title": "Numpy",
         "intro": [
-          "Learn the basics of the NumPy library in the following video course created by Keith Galli.",
-          "In this course, you'll learn how NumPy works and how it compares to Python's built-in lists. You'll also learn how to write code with NumPy, indexing, reshaping, applied statistics, and much more."
+          "Jifunze misingi ya maktaba ya NumPy katika kozi ifuatayo ya video iliyoundwa na Keith Galli.",
+          "Katika kozi hii, utajifunza jinsi NumPy inavyofanya kazi na jinsi inavyolinganishwa na orodha zilizojengwa za Python. Pia utajifunza jinsi ya kuandika msimbo na NumPy, kuorodhesha, kuunda upya, takwimu zilizotumika, na mengi zaidi."
         ]
       },
       "data-analysis-with-python-projects": {
-        "title": "Data Analysis with Python Projects",
+        "title": "Miradi ya Data Analysis na Python",
         "intro": [
-          "There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
-          "Finish them all to claim your Data Analysis with Python certification."
+          "Kuna njia nyingi za kuchambua data na Python. Kwa kukamilisha miradi hii, utaonyesha kuwa una ujuzi mzuri wa msingi wa uchambuzi wa data na Python.",
+          "Maliza zote ili kupata Cheti cha Data Analysis na Python."
         ]
       }
     }
@@ -705,62 +705,62 @@
   "information-security": {
     "title": "Information Security",
     "intro": [
-      "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
-      "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
-      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
+      "Pamoja na kila kitu tunachofanya mtandaoni, kuna kiasi kikubwa cha taarifa nyeti hatarini: anwani za barua pepe, nenosiri, nambari za simu na mengine mengi.",
+      "Ukiwa na Cheti cha Information Security, utaunda programu salama ya wavuti ukitumia HelmetJS ili kujifunza mambo msingi ya kulinda taarifa za watu mtandaoni.",
+      "Pia utaunda TCP client, na Nmap na port scanner kwenye Python. Hii itakusaidia kujifunza misingi ya penetration testing — sehemu muhimu ya usalama mzuri wa habari."
     ],
     "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
-        "title": "Information Security with HelmetJS",
+        "title": "Information Security na HelmetJS",
         "intro": [
-          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
-          "Completing the courses below will help you understand how to protect your website from malicious behavior."
+          "Kozi hii ya upangaji inaangazia HelmetJS, aina ya vifaa vya kati vya programu zinazotumia Express ambavyo huweka vichwa vya HTTP kiotomatiki. Kwa njia hii inaweza kuzuia taarifa nyeti kupitishwa bila kukusudia kati ya seva na mteja.",
+          "Kukamilisha kozi zilizo hapa chini kutakusaidia kuelewa jinsi ya kulinda tovuti yako dhidi ya uovu."
         ]
       },
       "python-for-penetration-testing": {
-        "title": "Python for Penetration Testing",
+        "title": "Python kwa Penetration Testing",
         "intro": [
-          "These video courses teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities.",
-          "In this course, you'll learn about sockets, create a TCP server and client, build an Nmap scanner, and other tools and techniques that pen testers use daily."
+          "Kozi hizi za video hukufundisha penetration testing na Python. Pia hujulikana kama pen test, penetration testing ni shambulio la kuigwa dhidi ya mfumo ili kuangalia udhaifu.",
+          "Katika kozi hii, utajifunza kuhusu sockets, kuunda client na server TCP, kuunda Nmap scanner, na zana na mbinu zingine ambazo wajaribu kalamu hutumia kila siku."
         ]
       },
       "information-security-projects": {
-        "title": "Information Security Projects",
+        "title": "Miradi ya Information Security",
         "intro": [
-          "Now it’s time to put your new information security skills to work. These projects will give you a chance to apply the infosec skills, principles, and concepts you've learned.",
-          "When you are done, you will have plenty of information security projects under your belt, along with a certification that you can show off to friends, family, and employers."
+          "Sasa ni wakati wa kuweka ujuzi wako mpya wa usalama wa habari kufanya kazi. Miradi hii itakupa nafasi ya kutumia ujuzi, kanuni na dhana za infosec ambazo umejifunza.",
+          "Ukimaliza, utakuwa na miradi mingi ya usalama wa taarifa chini ya ukanda wako, pamoja na cheti ambacho unaweza kuonyesha kwa marafiki, familia na waajiri."
         ]
       }
     }
   },
   "machine-learning-with-python": {
-    "title": "Machine Learning with Python",
+    "title": "Machine Learning na Python",
     "intro": [
-      "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
-      "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
+      "Kujifunza kwa mashine kuna matumizi mengi ya vitendo ambayo unaweza kutumia katika miradi yako au kazini.",
+      "Katika Cheti cha Machine Learning na Python, utatumia mfumo wa TensorFlow kujenga neural networks kadhaa na kuchunguza mbinu za juu zaidi kama vile kuchakata lugha asilia na ujifunzaji wa uimarishaji.",
+      "Pia utaingia kwenye neural networks, na kujifunza kanuni za neural networks na inavyofanya kazi."
     ],
     "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
         "intro": [
-          "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
-          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
+          "TensorFlow ni mfumo wa chanzo huria ambao hurahisisha utumiaji wa ujifunzaji wa mashine na mtandao wa neva.",
+          "Kozi ifuatayo ya video iliundwa na Tim Ruscica, pia inajulikana kama “Tech With Tim”. Itakusaidia kuelewa TensorFlow na baadhi ya uwezo wake wenye nguvu."
         ]
       },
       "how-neural-networks-work": {
-        "title": "How Neural Networks Work",
+        "title": "Jinsi Neural Networks inavyofanya kazi",
         "intro": [
-          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been hard to understand. Especially for beginners in the machine learning field.",
-          "Even if you are completely new to neural networks, these video courses by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
+          "Neural networks ndio msingi wa kile tunachoita artificial intelligence leo. Lakini kihistoria imekuwa ngumu kuelewa. Hasa kwa wanaoanza katika uwanja machine learning.",
+          "Hata kama wewe ni mgeni kabisa kwa neural networks, kozi hizi za video za Brandon Rohrer zitakufanya uelewe dhana na hesabu nyuma yao."
         ]
       },
       "machine-learning-with-python-projects": {
-        "title": "Machine Learning with Python Projects",
+        "title": "Miradi ya Machine Learning with Python",
         "intro": [
-          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
+          "Machine learning ina matumizi mengi ya vitendo. Kwa kukamilisha miradi hii ya usimbaji isiyolipishwa na yenye changamoto, utaonyesha kuwa una ujuzi mzuri wa msingi wa kujifunza kwa mashine, na kufuzu kwa Cheti cha Machine Learning with Python."
         ]
       }
     }
@@ -768,318 +768,318 @@
   "college-algebra-with-python": {
     "title": "College Algebra with Python",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "Kozi hii imeundwa kama kozi ya chuo cha muhula mmoja. Inajumuisha video za mafundisho, na madaftari ya Ushirikiano ya Google ili kufuata kwa maingiliano, kazi, na miradi yenye changamoto.",
+      "Unapopitia kila sehemu ya kozi hii katika mlolongo, utapata ufahamu kamili wa Algebra na jinsi ya kuandika msimbo wa Python kutatua matatizo ya Algebra.",
+      "Katika kozi hii yote, pia utaunda daftari lako la Algebra Colab ambalo utaweza kutumia kama kikokotoo chako maalum. Kozi hii (na msimbo unaoandika hapa) itakupa msingi wa uelewa wa kina wa sayansi ya hesabu na data."
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "Jifunze Ratios na Proportions",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "Safari yako inaanzia hapa unapojifunza jinsi ya kusanidi Daftari la Colab ambalo linaweza kutumia msimbo wa Python. Kisha, tumia daftari kufuata pamoja na video ili kujifunza ratios na proportions kwa kutumia Python."
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "Jifunze Jinsi ya Kutatua kwa X",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "Kitengo hiki kitazingatia jinsi ya kutatua nambari isiyojulikana (mara nyingi hujulikana kama \"x\") kwa kutumia msimbo wa Algebra na Python iliyoandikwa."
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "Jifunze Fractions na Decimals",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "Kitengo hiki kitalenga kubadilisha desimali hadi sehemu na asilimia."
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "Jifunze Functions na Graphing",
+        "intro": ["Kitengo hiki kitakufundisha kuhusu vitendakazi za hesabu."]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "Jifunze Linear Functions",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "Kitengo hiki kitakuonyesha jinsi ya kutengeneza milinganyo ya mstari (linear equations) kutoka kwa pointi mbili."
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "Jifunze Common Factors na Square Roots",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "Katika kitengo hiki, utajifunza jinsi ya kupata sababu za kawaida na kuzigawanya. Hii itakuwa muhimu wakati wa kurahisisha sehemu na kuweka mizizi ya mraba."
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "Kikokotoo cha kazi nyingi",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda kikokotoo cha kazi nyingi."
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "Jifunze Jinsi ya Kuchora Mifumo ya Milingano",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "Kitengo hiki kitazingatia kuchora milinganyo miwili kwenye ukurasa moja wa kuratibu ili uweze kuona mahali mistari inapoingiliana."
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "Jifunze Jinsi ya Kutatua Mifumo ya Milingano",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "Katika kitengo hiki, utajifunza jinsi ya kutatua mfumo wa equations mbili (na vigezo viwili) bila graphing. Utaona jinsi unavyoweza kuzingatia equation na kutatua kwa kutofautisha fulani katika Python. Kufikia mwisho wa kitengo hiki, utaweza kutatua na kuchora mfumo kwa block moja ya msimbo."
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "Jifunze Utumiaji wa Mifumo ya Linear",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "Katika kitengo hiki, utaona jinsi unavyoweza kutumia aljebra uliyojifunza kufikia sasa kutatua matatizo ya ulimwengu halisi."
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "Jifunze Quadratic Equations",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "Kitengo hiki kitaenda zaidi ya linear equations, ili kufanya kazi na vielelezo na vielelezo vya grafu. Utajifunza jinsi ya kupata pointi muhimu katika parabolas na jinsi ya kutatua quadratic equations."
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "Kikokotoo cha Graphing",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda kikokotoo cha graphing."
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "Jifunze Parent Graphs na Polynomials",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "Kitengo hiki kitakuonyesha aina nyingi tofauti za \"parent\" graphs, miundo msingi inayounda grafu ngumu zaidi. Polynomials ni maneno ya hisabati yenye \"vitu vingi\" - milinganyo changamano zaidi ambayo hujengwa kwa ruwaza msingi. Utaona jinsi grafu hizi zinavyoonekana, jinsi ya kuzirekebisha, na jinsi ya kufanya haya yote na msimbo wa Python."
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "Michezo mitatu ya Hisabati",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda michezo mitatu ya hesabu."
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "Jifunze Matumizi ya Biashara ya Chuo cha Algebra",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "Kitengo hiki kitakuonyesha jinsi ya kutumia ujuzi wako wa kutatua na kuchora ili kupata gharama, mapato na faida. Utaandika msimbo ili kukuza utendaji wa mahitaji kutoka kwa alama mbili. Utaona jinsi bei inavyoathiri grafu ya faida na jinsi milinganyo hii yote inavyohusiana."
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "Jifunze Simple na Compound Interest",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "Kitengo hiki kitakuonyesha jinsi ya kukokotoa riba, malipo ya mkopo na makadirio ya thamani ya uwekezaji. Utaona fomula ya hesabu na kuibadilisha kuwa nambari. Kwa sababu fomula hizi zinaelekea kuwa ngumu, utafurahi kuwa na nambari ambapo unaweza kurekebisha tu maadili machache."
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "Jifunze Exponents na Logarithms",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "Kitengo hiki kitakuonyesha jinsi exponents na logarithms zinavyotenda kazi kinyume, na jinsi unavyoweza kutumia vitendaji hivi katika programu mbalimbali."
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "Kikokotoo cha fedha",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda kikokotoo cha kifedha."
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "College Algebra with Python: Hitimisho",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "Hiki kitakuwa kitengo cha mwisho katika kozi hii. Wacha tuangalie jinsi unavyoweza kuunganisha maarifa yako ya Hisabati na Python na data ya nje."
         ]
       },
       "build-a-data-graph-explorer-project": {
         "title": "Data Graph Explorer",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "Hii ni mojawapo ya miradi inayohitajika ili kupata cheti chako.",
+          "Kwa mradi huu, utaunda data graph explorer."
         ]
       }
     }
   },
   "coding-interview-prep": {
-    "title": "Coding Interview Prep",
+    "title": "Matayarisho ya Mahojiano ya Coding",
     "intro": [
-      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
-      "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
+      "Ikiwa unatafuta mazoezi ya coding bila malipo ili kujiandaa kwa mahojiano yako ya kazini, tumekushughulikia.",
+      "Sehemu hii ina mamia ya changamoto za usimbaji ambazo hujaribu ujuzi wako wa kanuni, miundo ya data na hisabati. Pia ina idadi ya miradi ya kwenda nyumbani unayoweza kutumia kuimarisha ujuzi wako, au kuongeza kwenye wasifu yako."
     ],
-    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
+    "note": "Mradi wa Euler Project umehamishwa hadi kwenye mkondo wake. Rudi kwenye mtaala ili kuona orodha ya kozi tunazotoa.",
     "blocks": {
       "algorithms": {
         "title": "Algorithms",
         "intro": [
-          "These free programming exercises will teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.",
-          "These algorithms are frequently used in job interviews to test a candidate's skills. We'll give you clear and concise explanations of how these different algorithms work so you can implement a solution for each one."
+          "Mazoezi haya ya programu bila malipo yatakufundisha kuhusu algoriti za kawaida ambazo unaweza kukutana nazo katika maisha halisi. Hii ni fursa nzuri ya kuboresha ujuzi wako wa mantiki na programu.",
+          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja."
         ]
       },
       "data-structures": {
         "title": "Data Structures",
         "intro": [
-          "These free programming courses are meant to help you deal with large and complex data structures that you may not yet be familiar with.",
-          "Working through the courses below, you will learn about each type of data structure, and implement algorithms to reinforce your understanding of them."
+          "Kozi hizi za upangaji bila malipo zinakusudiwa kukusaidia kukabiliana na miundo mikubwa na changamano ya data ambayo huenda bado huifahamu.",
+          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu."
         ]
       },
       "take-home-projects": {
-        "title": "Take Home Projects",
+        "title": "Miradi ya kuchukua Nyumbani",
         "intro": [
-          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
-          "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
+          "Mahojiano ya kuprogramu yamekuwa ya kusisitiza kila wakati. Waombaji kazi wakati mwingine hupewa mradi wa kurudi nyumbani ili kukamilishwa nje ya usaili. Aina hizi za mahojiano kawaida huhitaji kazi nyingi, lakini ni njia nzuri kwa waajiri kuona jinsi unavyoweza kufanya kazi.",
+          "Unda miradi ya usimbaji ya bonasi hapa chini kwa mazoezi ya ziada. Chukua muda wako, uzifanye vizuri, na uziweke kwenye wasifu wako ili kuonyesha waajiri watarajiwa."
         ]
       },
       "rosetta-code": {
         "title": "Rosetta Code",
         "intro": [
-          "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+          "Ongeza ujuzi wako wa kibunifu wa kutatua matatizo kwa kazi hizi zisizolipishwa za kupanga kutoka maktaba ya Kanuni ya Rosetta ya kawaida.",
+          "Changamoto hizi zinaweza kuwa ngumu, lakini zitasukuma mantiki yako ya algorithm kufikia kiwango kipya.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Sifa: Rosetta Code</a>"
         ]
       }
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "Mradi wa Odin",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "Mradi wa Odin ni mojawapo ya nyenzo za \"Ninatamani ningekuwa nazo nilipokuwa najifunza\". ",
+      "Sio kila mtu anayeweza kupata elimu ya sayansi ya kompyuta au pesa za kuhudhuria shule ya usimbaji ya kina na hakuna kati ya hizo zinazofaa kwa kila mtu.",
+      "Mradi huu umeundwa ili kujaza pengo la watu wanaojaribu kuudukua wao wenyewe lakini bado wanataka elimu ya hali ya juu."
     ],
     "blocks": {
       "top-learn-html-foundations": {
-        "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Misingi ya HTML",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-build-a-recipe-project": {
-        "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Misingi ya HTML kwa Kuunda Ukurasa wa Mapishi",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-learn-css-foundations": {
-        "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Misingi ya CSS",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-learn-css-foundations-projects": {
-        "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Miradi ya Msingi wa CSS",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       }
     }
   },
   "project-euler": {
-    "title": "Project Euler",
+    "title": "Mradi wa Euler",
     "intro": [
-      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+      "Kamilisha changamoto za upangaji hapa chini, kutoka kwa kumbukumbu kubwa za Mradi wa Euler. Hizi zitaimarisha maarifa yako ya algorithm na hisabati.",
+      "Matatizo haya hutofautiana katika ugumu na, kwa wengi, uzoefu ni kujifunza kwa mnyororo kwa kufata neno. Hiyo ni, kwa kutatua tatizo moja, itakuonyesha kwa dhana mpya ambayo inakuwezesha kufanya tatizo ambalo halikuweza kufikiwa hapo awali. Je, unaweza kumaliza yote?"
     ],
     "blocks": {
       "project-euler-problems-1-to-100": {
-        "title": "Project Euler Problems 1 to 100",
+        "title": "Mradi wa Euler Matatizo 1 hadi 100",
         "intro": [
-          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya."
         ]
       },
       "project-euler-problems-101-to-200": {
-        "title": "Project Euler Problems 101 to 200",
+        "title": "Mradi wa Euler Matatizo 101 hadi 200",
         "intro": [
-          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi."
         ]
       },
       "project-euler-problems-201-to-300": {
-        "title": "Project Euler Problems 201 to 300",
+        "title": "Mradi wa Euler Matatizo 201 hadi 300",
         "intro": [
-          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo."
         ]
       },
       "project-euler-problems-301-to-400": {
-        "title": "Project Euler Problems 301 to 400",
+        "title": "Mradi wa Euler Matatizo 301 hadi 400",
         "intro": [
-          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya."
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "Mradi wa Euler Matatizo 401 hadi 480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano."
         ]
       }
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "Msingi C# na Microsoft",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "Kozi hii inatoa utangulizi wa kina wa utayarishaji wa C#, unaojumuisha dhana zake za msingi, sintaksia, na matumizi ya vitendo katika ukuzaji programu.",
+      "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
+      "Kufikia mwisho wa kozi hii, utakuwa umepata ujuzi wa vitendo na ujuzi unaohitajika ili kutumia C# kwa ujasiri kwa ajili ya kujenga matumizi thabiti na yenye hatari"
     ],
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "Andika Msimbo wako wa Kwanza kwa kutumia C#",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "Anza safari yako kwa kujifunza kuandika msimbo wako wa kwanza kwa kutumia C#. Jenga msingi thabiti unapochunguza misingi na sintaksia ya lugha, ukiweka msingi wa matukio yako ya upangaji programu."
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "Unda na Utekeleze Programu Rahisi ya C# Console",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "Boresha sanaa ya kuunda na kuendesha programu rahisi za C# console. Ingia katika ulimwengu wa upangaji programu unaotegemea console, ambapo utapata uzoefu wa utekelezaji wa msimbo wako na kuiona ikitekelezwa."
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "Ongeza Mantiki kwa Programu za C# Console",
         "intro": [
-          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+          "Fungua nguvu ya mantiki katika programu za C# console. Jifunze jinsi ya kuongeza uwezo wa mantiki na wa kufanya maamuzi kwenye msimbo wako, kuwezesha programu zako kufanya chaguo zinazobadilika na kujibu hali tofauti kwa akili."
         ]
       },
       "work-with-variable-data-in-c-sharp-console-applications": {
-        "title": "Work with Variable Data in C# Console Applications",
+        "title": "Fanya kazi na Data Inayoweza Kubadilika katika Programu za C# Console",
         "intro": [
-          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+          "Gundua utofauti wa data tofauti katika programu za C# console. Tumia uwezo wa kuhifadhi na kuendesha aina tofauti za data, kama vile nambari na maandishi, unapoingia kwenye dhana muhimu za vigeuzo na utunzaji wa data."
         ]
       },
       "create-methods-in-c-sharp-console-applications": {
-        "title": "Create Methods in C# Console Applications",
+        "title": "Unda Mbinu katika Programu za C# Console",
         "intro": [
-          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+          "Peleka programu zako za C# console kwa kiwango kinachofuata kwa ujuzi wa kuunda mbinu. Jifunze jinsi ya kupanga na kurekebisha msimbo wako, na kuifanya iweze kudhibitiwa zaidi, iweze kutumika tena na kwa ufanisi zaidi."
         ]
       },
       "debug-c-sharp-console-applications": {
-        "title": "Debug C# Console Applications",
+        "title": "Tatua Programu za C# Console",
         "intro": [
-          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+          "Imarisha ujuzi wako wa utatuzi unapoingia katika ulimwengu wa utatuzi wa programu za C# console. Pata uwezo wa kutambua na kurekebisha matatizo katika msimbo wako, ukihakikisha kwamba programu zako zinaendeshwa kwa urahisi na kutoa matokeo unayotaka."
         ]
       },
       "foundational-c-sharp-with-microsoft-certification-exam": {
-        "title": "Foundational C# with Microsoft Certification Exam",
+        "title": "Msingi C# na Mtihani wa Uthibitishaji wa Microsoft",
         "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+          "Tumia ulichojifunza ili kufaulu mtihani ili kupata cheti cha Msingi cha Microsoft cha C#"
         ]
       }
     }
   },
   "example-certification": {
-    "title": "Example Certification",
+    "title": "Mfano wa Uthibitisho",
     "intro": ["placeholder"],
     "blocks": {
       "example-certification-exam": {
-        "title": "Example Certification Exam",
+        "title": "Mfano wa Mtihani wa Cheti",
         "intro": ["placeholder"]
       }
     }
   },
   "misc-text": {
-    "certification": "{{cert}} Certification",
-    "browse-other": "Browse our other free certifications\n(we recommend doing these in order)",
-    "courses": "Courses",
-    "steps": "Steps",
-    "expand": "Expand course",
-    "collapse": "Collapse course",
-    "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
-    "legacy-go-back": "Go to the current version of the curriculum.",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
-    "go-back-to-learn": "Go back to the stable version of the curriculum.",
-    "read-database-cert-article": "Please read this forum post before proceeding.",
-    "enable-cookies": "You must enable third-party cookies before starting.",
-    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
+    "certification": "Uthibitishaji wa {{cert}}",
+    "browse-other": "Vinjari vyeti vyetu vingine vya bila malipo\n(tunapendekeza kufanya haya kwa utaratibu)",
+    "courses": "Kozi",
+    "steps": "Hatua",
+    "expand": "Panua kozi",
+    "collapse": "Kunja kozi",
+    "legacy-header": "Kozi za Legacy",
+    "legacy-desc": "Kozi hizi si sehemu tena ya njia ya uthibitishaji, lakini bado zinapatikana kwako ili kuendeleza masomo yako.",
+    "legacy-go-back": "Nenda kwenye toleo la sasa la mtaala.",
+    "course-maintenance": "Kozi hizi zinaendelea na matengenezo. Ikiwa hazifanyi kazi, unaweza kujifunza jinsi ya kuziendesha ndani ya mashine kwenye <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode- na-coderoad</0>.",
+    "progress-wont-save": "Maendeleo yako hayatahifadhiwa kwenye akaunti yako ya freeCodeCamp unapoyaendesha ndani ya mashine yako.",
+    "go-back-to-learn": "Rudi kwenye toleo thabiti la mtaala.",
+    "read-database-cert-article": "Tafadhali soma chapisho hili la jukwaa kabla ya kuendelea.",
+    "enable-cookies": "Lazima uwashe third-party cookies kabla ya kuanza.",
+    "english-only": "Kozi katika sehemu hii zinapatikana kwa Kiingereza pekee. Tuna uwezo wa kutafsiri mada na utangulizi pekee kwa sasa, si masomo yenyewe."
   }
 }
