@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following is a bad reason to use a code comment?
 
 ## --answers--
 
-A
+To describe the high-level intent of the code.
 
 ---
 
-B
+To temporarily comment out a line of code while evaluating a feature in a different way.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+To explain how a new C# keyword works.
 
 ## --video-solution--
 
-4
+3

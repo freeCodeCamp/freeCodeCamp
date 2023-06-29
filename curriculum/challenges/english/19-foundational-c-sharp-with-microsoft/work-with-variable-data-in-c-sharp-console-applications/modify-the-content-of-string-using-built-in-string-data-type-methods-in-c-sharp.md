@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
 
 ## --answers--
 
-A
+`IndexOfAny()`
 
 ---
 
-B
+`Remove()`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`IndexOf()`
 
 ## --video-solution--
 
-4
+1

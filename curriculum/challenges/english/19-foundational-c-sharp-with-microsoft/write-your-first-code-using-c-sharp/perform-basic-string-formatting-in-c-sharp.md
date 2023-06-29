@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following lines of code correctly uses string interpolation assuming that the variable `value` is a string?
 
 ## --answers--
 
-A
+'`Console.WriteLine(@"My value: {value}");'`'
 
 ---
 
-B
+'`Console.WriteLine($"My value: {value}");`'
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+'`Console.WriteLine(@"My value: [value]");`'
 
 ## --video-solution--
 
-4
+2
