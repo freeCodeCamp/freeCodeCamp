@@ -1,7 +1,7 @@
 .exam-nav {
   display: flex;
   justify-content: space-around;
-  height: 100px;
+  height: 80px;
   background: var(--theme-color);
   position: fixed;
   z-index: 1000;
@@ -14,13 +14,13 @@
   width: 50%;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 80px;
 }
 
 .exam-nav .freecodecamp-logo svg {
   height: 80%;
   width: 80%;
-  max-width: 400px;
+  max-width: 360px;
 }
 
 .exam-nav .partner-logo svg {
@@ -30,11 +30,8 @@
 }
 
 @media (max-width: 600px) {
-  .exam-nav {
-    height: 80px;
-  }
-
-  .exam-nav .logo {
-    height: 80px;
+  .exam-nav .freecodecamp-logo svg {
+    height: 90%;
+    width: 90%;
   }
 }
