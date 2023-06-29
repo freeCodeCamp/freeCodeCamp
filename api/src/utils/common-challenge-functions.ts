@@ -64,7 +64,7 @@ type CompletedChallenge = {
   files?: CompletedChallengeFile[];
 };
 
-export async function buildUserUpdate(
+export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: user,
   challengeId: string,
