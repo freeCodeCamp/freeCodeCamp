@@ -64,7 +64,7 @@ Each number represents one of the 30 articles in the footer. Make sure to match 
 
 For each article, you will need to create a shorter title to use in the footer. Each title must stay on a single line and not go to a new line.
 
-You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. You can preview the changes by editing the `trending.json` file in your local. Here are the detailed steps:
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. You can preview the changes by editing the `trending.json` file in your local environment:
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
