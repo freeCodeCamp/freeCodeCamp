@@ -675,8 +675,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0(react-dom@16.14.0)(react@16.14.0)
       react-responsive:
-        specifier: 6.1.2
-        version: 6.1.2(react@16.14.0)
+        specifier: 9.0.2
+        version: 9.0.2(react@16.14.0)
       react-scrollable-anchor:
         specifier: 0.6.1
         version: 0.6.1(react-dom@16.14.0)(react@16.14.0)
@@ -28632,16 +28632,17 @@ packages:
     resolution: {integrity: sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ==}
     engines: {node: '>=0.10.0'}
 
-  /react-responsive@6.1.2(react@16.14.0):
-    resolution: {integrity: sha512-AXentVC/kN3KED9zhzJv2pu4vZ0i6cSHdTtbCScVV1MT6F5KXaG2qs5D7WLmhdaOvmiMX8UfmS4ZSO+WPwDt4g==}
-    engines: {node: '>= 0.10'}
+  /react-responsive@9.0.2(react@16.14.0):
+    resolution: {integrity: sha512-+4CCab7z8G8glgJoRjAwocsgsv6VA2w7JPxFWHRc7kvz8mec1/K5LutNC2MG28Mn8mu6+bu04XZxHv5gyfT7xQ==}
+    engines: {node: '>=0.10'}
     peerDependencies:
-      react: ^16.3.0
+      react: '>=16.8.0'
     dependencies:
       hyphenate-style-name: 1.0.4
       matchmediaquery: 0.3.1
       prop-types: 15.8.1
       react: 16.14.0
+      shallow-equal: 1.2.1
     dev: false
 
   /react-router-dom@6.14.0(react-dom@16.14.0)(react@16.14.0):
@@ -30216,6 +30217,10 @@ packages:
 
   /shallow-compare@1.2.2:
     resolution: {integrity: sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==}
+
+  /shallow-equal@1.2.1:
+    resolution: {integrity: sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==}
+    dev: false
 
   /shallowequal@1.1.0:
     resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
