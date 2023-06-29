@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
 
 ## --answers--
 
-A
+`IndexOfAny()`
 
 ---
 
-B
+`Remove()`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`IndexOf()`
 
 ## --video-solution--
 
-4
+1

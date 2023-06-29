@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which of the following lines of code is a valid use of the conditional operator?
 
 ## --answers--
 
-A
+`int value = amount >= 10? 10: 20;`
 
 ---
 
-B
+`int value = amount >= 10: 10? 20;`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`int value = amount >= 10? 10| 20;`
 
 ## --video-solution--
 
-4
+1

@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following correctly declares a method?
 
 ## --answers--
 
-A
+`DisplayNumbers();`
 
 ---
 
-B
+`void DisplayNumbers{};`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`void DisplayNumbers() { }`
 
 ## --video-solution--
 
-4
+3

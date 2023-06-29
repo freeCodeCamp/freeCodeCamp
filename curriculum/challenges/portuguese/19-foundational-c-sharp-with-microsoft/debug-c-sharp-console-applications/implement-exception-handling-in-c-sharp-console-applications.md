@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+When is an `ArrayTypeMismatchException` exception thrown?
 
 ## --answers--
 
-A
+An `ArrayTypeMismatchException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
 
 ---
 
-B
+An `ArrayTypeMismatchException` exception is thrown when attempting to access a member on a type whose value is null.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An `ArrayTypeMismatchException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
 
 ## --video-solution--
 
-4
+1

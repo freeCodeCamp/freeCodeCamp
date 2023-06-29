@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which of the following `for` statements is correct?
 
 ## --answers--
 
-A
+`for (int x = 20: x < 80: x++)`
 
 ---
 
-B
+`for (int j = 0; j == 80; j + 1)`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`for (int counter = 20; counter < 80; counter++)`
 
 ## --video-solution--
 
-4
+3

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
 
 ## --answers--
 
-A
+The VARIABLES section.
 
 ---
 
-B
+The CALL STACK section.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+The WATCH section.
 
 ## --video-solution--
 
-4
+2

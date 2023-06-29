@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which of the following describes the affect of a `using` statement?
 
 ## --answers--
 
-A
+Affects only the first code block in the code file.
 
 ---
 
-B
+Affects only the current code block in the code file.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Affects all of the code in the code file.
 
 ## --video-solution--
 
-4
+3

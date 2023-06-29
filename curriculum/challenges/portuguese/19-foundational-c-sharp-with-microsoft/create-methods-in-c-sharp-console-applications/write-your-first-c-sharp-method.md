@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which of the following correctly declares a method?
 
 ## --answers--
 
-A
+`DisplayNumbers();`
 
 ---
 
-B
+`void DisplayNumbers{};`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`void DisplayNumbers() { }`
 
 ## --video-solution--
 
-4
+3

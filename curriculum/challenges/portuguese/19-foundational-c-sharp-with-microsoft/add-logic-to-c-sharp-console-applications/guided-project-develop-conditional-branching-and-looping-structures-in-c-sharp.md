@@ -16,28 +16,21 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
 
 ## --answers--
 
-A
+A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
 
 ---
 
-B
+A `switch-case` construct is appropriate when the number of `case` patterns is small.
 
 ---
 
-C
+A `switch-case` construct is appropriate when the selection statement is inside a loop.
 
----
-
-D
-
----
-
-E
 
 ## --video-solution--
 
-4
+1

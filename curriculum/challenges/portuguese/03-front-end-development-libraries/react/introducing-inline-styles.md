@@ -30,7 +30,7 @@ Percebeu como colocamos em camelCase a propriedade `fontSize`? Isso é porque o 
 
 Adicione um atributo `style` para o `div` no editor de código para dar ao texto a cor vermelha e tamanho da fonte de `72px`.
 
-Note que você pode opcionalmente definir o tamanho da fonte como um número. omitindo as unidades `px`, ou escreva-o como `72px`.
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 O componente deve renderizar um elemento `div`.
