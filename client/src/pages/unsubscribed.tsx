@@ -8,11 +8,8 @@ import RedirectHome from '../components/redirect-home';
 function Unsubscribed(): JSX.Element {
   return (
     <Router>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
       <ShowUnsubscribed path={withPrefix('/unsubscribed/:unsubscribeId')} />
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
+
       <ShowUnsubscribed path={withPrefix('/unsubscribed')} />
 
       <RedirectHome default />
