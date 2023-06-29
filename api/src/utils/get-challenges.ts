@@ -35,6 +35,6 @@ export function getChallenges() {
       const challengesForBlock = blockKeys.map(
         key => superBlock?.[key]?.challenges ?? []
       );
-      return [...accumulator, ...flatten(challengesForBlock)];
+      return [...accumulator, ...challengesForBlock.flat()];
     }, []);
 }
