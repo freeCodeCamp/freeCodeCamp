@@ -1,5 +1,5 @@
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
-import { RouteComponentProps } from '@reach/router';
+import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
