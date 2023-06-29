@@ -121,8 +121,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FoundationalCSharp
   ],
   [Languages.Portuguese]: [
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FoundationalCSharp
   ],

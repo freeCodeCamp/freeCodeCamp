@@ -1,5 +1,5 @@
-client/.cache/**
 client/static/**
+client/.cache/**
 client/public/**
 api-server/src/public/**
 api-server/lib/**
@@ -10,3 +10,4 @@ config/donation-settings.js
 config/superblocks.js
 web/**
 docs/**/*.md
+tools/ui-components/dist/**

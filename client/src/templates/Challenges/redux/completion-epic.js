@@ -188,8 +188,14 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
 
-      const { nextChallengePath, challengeType, superBlock, block } =
-        challengeMetaSelector(state);
+      const {
+        nextChallengeMeta: { block: nextBlock },
+        nextChallengePath,
+        challengeType,
+        superBlock,
+        block,
+        blockHashSlug
+      } = challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -206,19 +212,17 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const isNextChallengeInSameSuperBlock =
-        nextChallengePath.includes(superBlock);
-
-      const pathToNavigateTo = isNextChallengeInSameSuperBlock
-        ? nextChallengePath
-        : `/learn/${superBlock}/#${superBlock}-projects`;
+      const lastChallengeInBlock = block !== nextBlock;
+      let pathToNavigateTo = lastChallengeInBlock
+        ? blockHashSlug
+        : nextChallengePath;
 
       const canAllowDonationRequest = (state, action) =>
         isBlockNewlyCompletedSelector(state) &&
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(isNextChallengeInSameSuperBlock))),
+        concat(of(setIsAdvancing(!lastChallengeInBlock))),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))

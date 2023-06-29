@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which method changes the order of items in an `string` array?
 
 ## --answers--
 
-A
+`myArray.Resize()`
 
 ---
 
-B
+`myArray.Clear()`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`Array.Sort()`
 
 ## --video-solution--
 
-4
+3

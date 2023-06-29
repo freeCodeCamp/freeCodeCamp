@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee7
-title: 'Problem 103: Special subset sums: optimum'
+title: 'Завдання 103: суми особливих підмножин (оптимум)'
 challengeType: 1
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
@@ -8,25 +8,25 @@ dashedName: problem-103-special-subset-sums-optimum
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Нехай $S(A)$ є сумою елементів множини A розміру n. Назвемо це особливою множиною сум, якщо для будь-яких двох непорожніх й неперетинних множин В і С виконуються умови:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$; тобто суми підмножин не можуть бути рівними.
+2. Якщо B містить більше елементів ніж C, тоді $S(B) > S(C)$.
 
-If $S(A)$ is minimised for a given n, we shall call it an optimum special sum set. The first five optimum special sum sets are given below.
+Якщо сума $S(A)$ змінімізована до заданого значення n, її називають оптимальною особливою множиною сум. Нижче наведено перші п’ять оптимальних особливих множин сум.
 
 $$\begin{align}   & n = 1: \\{1\\} \\\\
   & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
   & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
 \end{align}$$
 
-It seems that for a given optimum set, $A = \\{a_1, a_2, \ldots, a_n\\}$, the next optimum set is of the form $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, where b is the "middle" element on the previous row.
+Схоже, що для даної оптимальної множини $A = \\{a_1, a_2, \ldots, a_n\\}$, наступною оптимальною множиною є $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, де b — «середній» елемент попереднього рядка.
 
-By applying this "rule" we would expect the optimum set for $n = 6$ to be $A = \\{11, 17, 20, 22, 23, 24\\}$, with $S(A) = 117$. However, this is not the optimum set, as we have merely applied an algorithm to provide a near optimum set. The optimum set for $n = 6$ is $A = \\{11, 18, 19, 20, 22, 25\\}$, with $S(A) = 115$ and corresponding set string: `111819202225`.
+За цим правилом можна очікувати, що оптимальною множиною для $n = 6$ є $A = \\{11, 17, 20, 22, 23, 24\\}$, де $S(A) = 117$. Однак ця множина не є оптимальною, оскільки ми просто застосували алгоритм, щоб отримати близьку до оптимальної множину. Оптимальною множиною для $n = 6$ є $A = \\{11, 18, 19, 20, 22, 25\\}$, де $S(A) = 115$, а відповідним рядком є `111819202225`.
 
-Given that A is an optimum special sum set for $n = 7$, find its set string.
+Дано, що A є оптимальною множиною сум для $n = 7$. Знайдіть рядок цієї множини.
 
-**Note:** This problem is related to Problem 105 and Problem 106.
+**Примітка:** це завдання пов’язане із завданнями №105 та №106.
 
 # --hints--
 

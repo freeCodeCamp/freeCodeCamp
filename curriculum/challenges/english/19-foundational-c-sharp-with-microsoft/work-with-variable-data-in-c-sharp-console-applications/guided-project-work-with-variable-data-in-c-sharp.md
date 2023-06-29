@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String. Which best describes the value type for `myConvert` when the `TryParse()` is successful?
 
 ## --answers--
 
-A
+A string representing numeric digits.
 
 ---
 
-B
+A Boolean value.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A decimal
 
 ## --video-solution--
 
-4
+3

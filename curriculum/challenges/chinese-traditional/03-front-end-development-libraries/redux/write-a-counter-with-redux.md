@@ -28,19 +28,19 @@ action creator `decAction` 應該返回一個 `type` 等於 `DECREMENT` 的 acti
 assert(decAction().type === DECREMENT);
 ```
 
-Running `store.getState()` should return a number
+運行 `store.getState()` 應該返回一個數字。
 
 ```js
 assert(typeof store.getState() === 'number');
 ```
 
-The Redux store should initialize with a `state` of 0.
+Redux store 應該將 `state` 初始化爲 0。
 
 ```js
 assert(_store.getState() === 0);
 ```
 
-Dispatching `incAction` on the Redux store should increment the `state` by 1.
+在 Redux store 上 dispatch `incAction` 應該將 `state` 增加 1。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Dispatching `decAction` on the Redux store should decrement the `state` by 1.
+在 Redux store 上 dispatch `decAction` 應該將 `state` 減少 1。
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-`counterReducer` should be a function
+`counterReducer` 應該是一個函數。
 
 ```js
 assert(typeof counterReducer === 'function');

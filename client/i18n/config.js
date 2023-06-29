@@ -73,7 +73,8 @@ i18n.use(initReactI18next).init({
   },
   react: {
     useSuspense: true
-  }
+  },
+  returnNull: false
 });
 
 i18n.languages = clientLocale;

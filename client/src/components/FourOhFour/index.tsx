@@ -1,3 +1,4 @@
+import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -9,7 +10,7 @@ import { Spacer } from '../helpers';
 
 import './404.css';
 
-const FourOhFour = (): JSX.Element => {
+const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
   return (

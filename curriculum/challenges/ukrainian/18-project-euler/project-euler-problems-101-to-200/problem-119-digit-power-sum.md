@@ -1,6 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef6
-title: 'Problem 119: Digit power sum'
+title: 'Завдання 119: степінь суми числа'
 challengeType: 1
 forumTopicId: 301745
 dashedName: problem-119-digit-power-sum
@@ -8,13 +8,13 @@ dashedName: problem-119-digit-power-sum
 
 # --description--
 
-The number 512 is interesting because it is equal to the sum of its digits raised to some power: $5 + 1 + 2 = 8$, and $8^3 = 512$. Another example of a number with this property is $614656 = 28^4$.
+Число 512 цікаве тим, що воно дорівнює сумі його цифр, піднесеній до певного степеня: $5 + 1 + 2 = 8$, а $8^3 = 512$. Іншим прикладом числа з такою властивістю є $614656 = 28^4$.
 
-We shall define $a_n$ to be the $n-th$ term of this sequence and insist that a number must contain at least two digits to have a sum.
+Ми визначимо $a_n$ як $n-ний$ член цієї послідовності та наполягатимемо на тому, що число повинне містити щонайменше дві цифри, щоб мати суму.
 
-You are given that $a_2 = 512$ and $a_{10} = 614656$.
+Вам дано, що $a_2 = 512$ і $a_{10} = 614656$.
 
-Find $a_{30}$.
+Знайдіть $a_{30}$.
 
 # --hints--
 

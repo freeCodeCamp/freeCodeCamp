@@ -20,7 +20,13 @@ const initialState = {
   challengeMeta: {
     superBlock: '',
     block: '',
+    blockHashSlug: '/',
     id: '',
+    nextChallengeMeta: {
+      superBlock: '',
+      block: '',
+      blockHashSlug: '/'
+    },
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1

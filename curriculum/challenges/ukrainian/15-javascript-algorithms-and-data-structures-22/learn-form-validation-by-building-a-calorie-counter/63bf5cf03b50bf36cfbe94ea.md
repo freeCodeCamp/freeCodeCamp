@@ -11,13 +11,13 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 
 # --hints--
 
-You should declare an `addEntry` variable.
+Ви повинні оголосити змінну `addEntry`.
 
 ```js
 assert.isDefined(addEntry);
 ```
 
-Your `addEntry` variable should be a function.
+Змінна `addEntry` повинна бути функцією.
 
 ```js
 assert.isFunction(addEntry);

@@ -22,7 +22,7 @@ Let $P(n)$ be the number of polar polygons such that the vertices $(x, y)$ have 
 
 Note that polygons should be counted as different if they have different set of edges, even if they enclose the same area. For example, the polygon with vertices [(0,0), (0,3), (1,1), (3,0)] is distinct from the polygon with vertices [(0,0), (0,3), (1,1), (3,0), (1,0)].
 
-For example, $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ and $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
+Наприклад, $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ та $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
 
 Find $P(7^{13})\bmod 1\\,000\\,000\\,007$.
 

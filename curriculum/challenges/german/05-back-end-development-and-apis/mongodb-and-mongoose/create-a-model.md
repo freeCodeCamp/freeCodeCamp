@@ -32,7 +32,7 @@ Erstelle ein Personen-Schema namens `personSchema` mit der folgenden Form:
 
 * Ein erforderliches `name`-Feld mit `String`-Datentyp
 * Ein `age`-Feld mit `Number`-Datentyp
-* A `favoriteFoods` field of type `[String]`
+* Ein `favoriteFoods`-Feld des Typs `[String]`
 
 Verwende die Mongoose-Basis-Schema-Typen. Wenn du möchtest, kannst du auch weitere Felder hinzufügen. Verwende hierzu einfache Validatoren – bspw. „required“ oder „unique“ – und lege Standardwerte fest. Schau dir hierzu unseren <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose-Artikel</a> an.
 

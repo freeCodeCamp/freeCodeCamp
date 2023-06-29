@@ -44,7 +44,7 @@ $colors: (color1: blue, color2: red, color3: green);
 
 # --instructions--
 
-Напишіть директиву `@each`, яка проходить список: `blue, black, red` і призначає кожній змінній клас `.color-bg`, де частина `color` змінюється для кожного елемента. Кожен клас повинен встановити для `background-color` відповідний колір.
+Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the `color` part changes for each item to the respective color. Each class should set the `background-color` to the respective color as well.
 
 # --hints--
 

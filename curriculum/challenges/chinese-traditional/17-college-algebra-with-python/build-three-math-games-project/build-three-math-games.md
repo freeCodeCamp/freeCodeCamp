@@ -9,7 +9,7 @@ dashedName: build-three-math-games
 
 你將<a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">使用 Google Colaboratory 來完成這個項目</a>。
 
-Once you complete the project, submit your project link below. 如果你提交的是 Google Colaboratory 的鏈接，請確保鏈接分享選項爲 “anyone with the link”。
+完成項目之後，請在下方提交你的項目鏈接。 如果你提交的是 Google Colaboratory 的鏈接，請確保鏈接分享選項爲 “anyone with the link”。
 
 # --instructions--
 

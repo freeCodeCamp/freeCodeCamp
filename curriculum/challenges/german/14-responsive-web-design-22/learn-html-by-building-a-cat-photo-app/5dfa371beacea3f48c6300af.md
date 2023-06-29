@@ -7,7 +7,7 @@ dashedName: step-19
 
 # --description--
 
-When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
+Wenn du ein untergeordnetes Überschriftenelement zur Seite hinzufügst, wird angedeutet, dass du einen neuen Unterabschnitt beginnst.
 
 After the last `h2` element of the second `section` element, add an `h3` element with this text:
 
@@ -15,7 +15,7 @@ After the last `h2` element of the second `section` element, add an `h3` element
 
 # --hints--
 
-The second `section` element appears to be missing or does not have both an opening and closing tag.
+Das zweite `section`-Element scheint zu fehlen oder es hat kein öffnendes und schließendes Tag.
 
 ```js
 assert(
@@ -24,7 +24,7 @@ assert(
 );
 ```
 
-There should be an `h3` element right above the second `section` element's closing tag.
+Es sollte ein `h3`-Element direkt über dem schließenden Tag des zweiten `section`-Elements geben.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
+Das `h3`-Element genau über dem schließenden Tags des zweiten `section`-Elements sollte den Text `Things cats love:` haben. Stelle sicher, dass der Doppelpunkt am Ende des Textes eingefügt wurde.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
+Es sollte ein `h2`-Element mit dem Text `Cat Lists` oberhalb des letzten `h3`-Elements geben, das im letzten `section`-Element eingebettet wurde. Möglicherweise hast du versehentlich das `h2`-Element gelöscht.
 
 ```js
 const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]

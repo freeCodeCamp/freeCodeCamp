@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
 
 ## --answers--
 
-A
+`foreach`
 
 ---
 
-B
+`for`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`while`
 
 ## --video-solution--
 
-4
+1
