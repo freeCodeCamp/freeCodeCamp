@@ -1,6 +1,6 @@
 describe('progress bar', () => {
   beforeEach(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
   });
 
