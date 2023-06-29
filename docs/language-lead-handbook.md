@@ -68,9 +68,7 @@ You will want to [build the translated client locally](how-to-enable-new-languag
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run develop`. This will automatically generate `trending.json` file for your language under `/client/i18n/locales/` directory.
-
-3. Stop the running command with `Ctrl+C` in the terminal.
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
 4. Start the server by running `pnpm run develop:server` in one terminal window.
 
