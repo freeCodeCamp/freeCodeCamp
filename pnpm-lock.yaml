@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -211,8 +211,8 @@ importers:
         specifier: ^4.3.0
         version: 4.5.0
       jsonwebtoken:
-        specifier: 8.5.1
-        version: 8.5.1
+        specifier: 9.0.0
+        version: 9.0.0
       nanoid:
         specifier: '3'
         version: 3.3.4
@@ -23085,6 +23085,16 @@ packages:
       lodash.once: 4.1.1
       ms: 2.1.3
       semver: 5.7.1
+    dev: false
+
+  /jsonwebtoken@9.0.0:
+    resolution: {integrity: sha512-tuGfYXxkQGDPnLJ7SibiQgVgeDgfbPq2k2ICcbgqW8WxWLBAxKQM/ZCu/IT8SOSwmaYl4dpTFCW5xZv7YbbWUw==}
+    engines: {node: '>=12', npm: '>=6'}
+    dependencies:
+      jws: 3.2.2
+      lodash: 4.17.21
+      ms: 2.1.3
+      semver: 7.5.1
     dev: false
 
   /jsprim@1.4.2:
