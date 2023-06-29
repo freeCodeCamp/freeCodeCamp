@@ -70,11 +70,11 @@ You will want to [build the translated client locally](how-to-enable-new-languag
 
 2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
-4. Start the server by running `pnpm run develop:server` in one terminal window.
+3. Start the server by running `pnpm run develop:server` in one terminal window.
 
-5. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your .yaml file into JSON format with some tool.
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
 
-6. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## How to Translate Articles in the Footer Links
 
