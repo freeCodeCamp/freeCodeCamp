@@ -98,6 +98,7 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
 const testHTML = matchesProperty('ext', 'html');
+const testPython = matchesProperty('ext', 'py');
 const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
 
 const replaceNBSP = cond([
@@ -306,9 +307,19 @@ const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
+const transformPython = async function (file) {
+  return transformContents(() => file.contents, file);
+};
+
+const pythonTransformer = cond([
+  [testPython, transformPython],
+  [stubTrue, identity]
+]);
+
 export const getTransformers = loopProtectOptions => [
   replaceNBSP,
   babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
-  htmlTransformer
+  htmlTransformer,
+  pythonTransformer
 ];
