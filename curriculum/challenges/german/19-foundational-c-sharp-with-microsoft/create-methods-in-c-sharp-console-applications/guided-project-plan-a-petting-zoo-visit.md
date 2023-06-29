@@ -16,29 +16,21 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is the purpose of defining an optional parameter in a method?
 
 ## --answers--
 
-A
+To cause a method to perform a different task.
 
 ---
 
-B
+To overload a method.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+To simplify the required parameters when a parameter isn't significant to the result.
 
 ## --video-solution--
 
-4
+3
 

@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following lines of code creates a variable correctly?
 
 ## --answers--
 
-A
+`int x = 12.3m;`
 
 ---
 
-B
+`decimal x = 12.3m;`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`bool x = 'False';`
 
 ## --video-solution--
 
-4
+2

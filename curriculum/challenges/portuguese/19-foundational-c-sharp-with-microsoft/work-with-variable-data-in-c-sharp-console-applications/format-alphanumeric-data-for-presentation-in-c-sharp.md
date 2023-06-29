@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expected output?
 
 ## --answers--
 
-A
+`C11000`
 
 ---
 
-B
+`C110000000`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`00C110`
 
 ## --video-solution--
 
-4
+3

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+What type of action is being performed when changing a `float` into an `int`?
 
 ## --answers--
 
-A
+A narrowing conversion.
 
 ---
 
-B
+A widening conversion.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An illegal conversion.
 
 ## --video-solution--
 
-4
+1

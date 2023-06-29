@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
 
 ## --answers--
 
-A
+`foreach`
 
 ---
 
-B
+`for`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`while`
 
 ## --video-solution--
 
-4
+1

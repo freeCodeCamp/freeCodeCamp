@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Which method changes the order of items in an `string` array?
 
 ## --answers--
 
-A
+`myArray.Resize()`
 
 ---
 
-B
+`myArray.Clear()`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`Array.Sort()`
 
 ## --video-solution--
 
-4
+3

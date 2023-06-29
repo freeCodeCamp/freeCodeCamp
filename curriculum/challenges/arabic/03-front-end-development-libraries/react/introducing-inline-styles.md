@@ -30,7 +30,7 @@ dashedName: introducing-inline-styles
 
 أضف خاصية `style` إلى `div` في محرر التعليمات البرمجية لإعطاء النص لون أحمر (red) وحجم خط يبلغ `72px`.
 
-لاحظ أنه يمكنك اختياريا تعيين حجم الخط ليكون رقما، حذف وحدات `px`، أو كتابتها مثل `72px`.
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 يجب أن يكون المكون عنصر `div`.

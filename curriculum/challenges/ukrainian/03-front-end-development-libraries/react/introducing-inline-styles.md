@@ -30,7 +30,7 @@ dashedName: introducing-inline-styles
 
 Додайте атрибут `style` до `div` в редактор коду, щоб надати тексту червоного кольору а шрифту розміру `72px`.
 
-Зверніть увагу, ви можете за необхідністю встановити розмір шрифту як номер, пропускаючи одиниці виміру `px`, або записати це як `72px`.
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 Компонент повинен відображати елемент `div`.

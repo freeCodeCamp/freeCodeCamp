@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
 
 ## --answers--
 
-A
+float
 
 ---
 
-B
+double
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+int
 
 ## --video-solution--
 
-4
+3
