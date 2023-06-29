@@ -14,9 +14,8 @@ function Unsubscribed(): JSX.Element {
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       <ShowUnsubscribed path={withPrefix('/unsubscribed')} />
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
-      <RedirectHome default={true} />
+
+      <RedirectHome default />
     </Router>
   );
 }
