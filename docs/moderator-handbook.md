@@ -147,7 +147,7 @@ There are also situations where the contributor is trying to add a link to their
 
 You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
 
-#### Pull Request Pro Tip:
+#### Filtering Pull Requests
 
 To sort Pull Requests for Quality Assurance for quick access to PRs that are ready for review, do not have a merge conflict, are not blocked, and have all status checks in green, use the following link to apply the filters:
 
