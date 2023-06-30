@@ -272,7 +272,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 .expand-nav {
-  min-height: calc(2 * var(--header-height));
+  min-height: calc(var(--header-height) * 2);
 }
 
 .display-menu {
