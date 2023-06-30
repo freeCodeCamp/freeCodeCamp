@@ -958,6 +958,10 @@
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
         "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Learn CSS Specificity",
+        "intro": ["A description is to be determined"]
       }
     }
   },
