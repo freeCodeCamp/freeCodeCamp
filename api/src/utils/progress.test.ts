@@ -4,7 +4,7 @@ describe('utils/progress', () => {
   describe('getCalendar', () => {
     it('should return an empty object if no timestamps are passed', () => {
       expect(getCalendar([])).toEqual({});
-      expect(getCalendar()).toEqual({});
+      expect(getCalendar(null)).toEqual({});
     });
     it('should take timestamps and return a calendar object', () => {
       const timestamps = [-1111001, 0, 1111000, 1111500, 1113000, 9999999];
@@ -30,7 +30,7 @@ describe('utils/progress', () => {
 
   describe('getPoints', () => {
     it('should return 1 if there are no progressTimestamps', () => {
-      expect(getPoints(undefined)).toEqual(1);
+      expect(getPoints(null)).toEqual(1);
     });
     it('should return then number of progressTimestamps if there are any', () => {
       expect(getPoints([0, 1, 2])).toEqual(3);
