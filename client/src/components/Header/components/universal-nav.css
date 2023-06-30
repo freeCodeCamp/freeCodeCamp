@@ -397,11 +397,8 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
     max-height: calc(100vh - var(--header-height) * 2);
   }
 
+  .universal-nav-right .fcc_searchBar .ais-Hits,
   .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
-    width: calc(100% - 30px);
-  }
-
-  .universal-nav-right .fcc_searchBar .ais-Hits {
     width: calc(100% - 30px);
   }
   #universal-nav .signup-btn {
