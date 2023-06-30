@@ -55,7 +55,7 @@ export default function prodErrorHandler() {
 
     if (type === 'json') {
       return res.json({
-        type: handled.type || 'danger',
+        type: handled.type || 'errors',
         message
       });
     } else {
