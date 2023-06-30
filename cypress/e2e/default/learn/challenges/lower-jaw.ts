@@ -11,7 +11,7 @@ describe('lower jaw', () => {
 
   it(
     'Should show the quote when the code passes',
-    { browser: 'electron' },
+    { browser: ['electron', 'chrome', 'chromium', 'firefox', 'edge'] },
     () => {
       cy.visit(
         '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
@@ -22,7 +22,7 @@ describe('lower jaw', () => {
         .type('{downArrow}')
         .clear()
         .type('<h2>Cat Photos</h2>');
-      cy.contains('Check Your Code (Ctrl + Enter)').click({ force: true });
+      cy.contains('Check Your Code (Ctrl + Enter)').click();
       cy.contains(
         'Congratulations, your code passes. Submit your code to continue.'
       );
