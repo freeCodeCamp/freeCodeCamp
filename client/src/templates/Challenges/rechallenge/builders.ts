@@ -33,8 +33,9 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .join('\n');
 
+  // The script has an id so that tests can look for it, if needed.
   const testRunnerScript = testRunner
-    ? `<script src='${testRunner}' type='text/javascript'></script>`
+    ? `<script id="fcc-test-runner" src='${testRunner}' type='text/javascript'></script>`
     : '';
 
   return `<head>${head}</head>${
