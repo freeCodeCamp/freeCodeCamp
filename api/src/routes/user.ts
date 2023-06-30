@@ -208,7 +208,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(
-                progressTimestamps as ProgressTimestamp[] | undefined
+                progressTimestamps as ProgressTimestamp[] | null
               ),
               partiallyCompletedChallenges: isEmpty(
                 partiallyCompletedChallenges
@@ -217,7 +217,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
                 : partiallyCompletedChallenges,
               // This assertion is necessary until the database is normalized.
               points: getPoints(
-                progressTimestamps as ProgressTimestamp[] | undefined
+                progressTimestamps as ProgressTimestamp[] | null
               ),
               profileUI: normalizeProfileUI(profileUI),
               savedChallenges: isEmpty(savedChallenges)
