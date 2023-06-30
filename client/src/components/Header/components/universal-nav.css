@@ -358,7 +358,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 @media (min-width: 980px) {
   #universal-nav-logo {
     height: 100%;
-    padding-top: initial;
+    padding-top: 0;
     margin-inline: 1em;
   }
 
