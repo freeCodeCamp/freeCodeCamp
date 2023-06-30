@@ -4,7 +4,28 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectId } = require('mongodb');
 const fullyCertifiedUser = require('./certified-user-data');
 
-const envVariables = process.argv;
+const args = process.argv.slice(2);
+
+const allowedArgs = [
+  '--donor',
+  '--top-contributor',
+  '--unset-privacy-terms',
+  'certified-user'
+];
+
+// Check for invalid arguments
+args.forEach(arg => {
+  if (!allowedArgs.includes(arg))
+    throw new Error(
+      `Invalid argument ${arg}. Allowed arguments are ${allowedArgs.join(', ')}`
+    );
+});
+
+if (args.includes('certified-user') && args.length > 1) {
+  throw new Error(
+    `Invalid arguments. When using 'certified-user', no other arguments are allowed.`
+  );
+}
 
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
@@ -36,9 +57,7 @@ const demoUser = {
   name: 'Development User',
   location: '',
   picture: '',
-  acceptedPrivacyTerms: envVariables.includes('--unset-privacy-terms')
-    ? null
-    : true,
+  acceptedPrivacyTerms: args.includes('--unset-privacy-terms') ? null : true,
   sendQuincyEmail: false,
   currentChallengeId: '',
   isHonest: false,
@@ -62,7 +81,7 @@ const demoUser = {
   isCollegeAlgebraPyCertV8: false,
   completedChallenges: [],
   portfolio: [],
-  yearsTopContributor: envVariables.includes('--top-contributor')
+  yearsTopContributor: args.includes('--top-contributor')
     ? ['2017', '2018', '2019']
     : [],
   rand: 0.6126749173148205,
@@ -82,7 +101,7 @@ const demoUser = {
   badges: {
     coreTeam: []
   },
-  isDonating: envVariables.includes('--donor'),
+  isDonating: args.includes('--donor'),
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
   keyboardShortcuts: true,
@@ -183,7 +202,7 @@ const dropUsers = async function () {
 const run = async () => {
   await dropUserTokens();
   await dropUsers();
-  if (process.argv[2] === 'certified-user') {
+  if (args.includes('certified-user')) {
     await user.insertOne(fullyCertifiedUser);
     await user.insertOne(blankUser);
   } else {

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+What is an object?
 
 ## --answers--
 
-A
+A memory address.
 
 ---
 
-B
+A stateless class.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An instance of a class.
 
 ## --video-solution--
 
-4
+3

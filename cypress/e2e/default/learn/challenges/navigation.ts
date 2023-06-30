@@ -14,7 +14,7 @@ const challenge2 = {
 
 describe('submitting a challenge', () => {
   before(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
   });
 

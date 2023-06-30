@@ -16,15 +16,21 @@ In der letzten Aufgabe wurde gezeigt, wie man Informationen von einer Elternkomp
 </ParentComponent>
 ```
 
-Die Kindkomponente hat dann Zugriff auf die Array-Eigenschaft `colors`. Array-Methoden wie `join()` können beim Zugriff auf die Eigenschaft verwendet werden. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` Das fügt alle `colors` Array-Elemente zu einem kommagetrennten String zusammen und erzeugt: `<p>green, blue, red</p>` Später werden wir andere gängige Methoden kennenlernen, um Arrays von Daten in React darzustellen.
+Die Kindkomponente hat dann Zugriff auf die Array-Eigenschaft `colors`. Array-Methoden wie `join()` können beim Zugriff auf die Eigenschaft verwendet werden.
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+```
+
+This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
 
 # --instructions--
 
-Im Code-Editor gibt es die Komponenten `List` und `ToDo`. Beim Rendern jeder `List` der Komponente `ToDo` übergibst du eine `tasks`-Eigenschaft, die einem Array von To-Do-Aufgaben zugewiesen ist, zum Beispiel `["walk dog", "workout"]`. Dann greifst du auf dieses `tasks`-Array in der Komponente `List` zu und zeigst seinen Wert innerhalb des `p`-Elements an. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. Die Liste von heute sollte mindestens 2 Aufgaben und die von morgen mindestens 3 Aufgaben enthalten.
+There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
 
 # --hints--
 
-Die Komponente `ToDo` sollte ein einzelnes äußeres `div` zurückgeben.
+The `ToDo` component should return a single outer `div`.
 
 ```js
 assert(
@@ -35,7 +41,7 @@ assert(
 );
 ```
 
-Das dritte Kindelement der Komponente `ToDo` sollte eine Instanz der Komponente `List` sein.
+The third child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -46,7 +52,7 @@ assert(
 );
 ```
 
-Das fünfte Kindelement der Komponente `ToDo` sollte eine Instanz der Komponente `List` sein.
+The fifth child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -57,7 +63,7 @@ assert(
 );
 ```
 
-Beide Instanzen der Komponente `List` sollten eine Eigenschaft namens `tasks` haben und `tasks` sollte vom Typ Array sein.
+Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
 
 ```js
 assert(
@@ -71,7 +77,7 @@ assert(
 );
 ```
 
-Die erste `List`, die die Aufgaben für heute darstellt, sollte 2 oder mehr Einträge enthalten.
+The first `List` component representing the tasks for today should have 2 or more items.
 
 ```js
 assert(
@@ -82,7 +88,7 @@ assert(
 );
 ```
 
-Die zweite `List`, die die Aufgaben für morgen darstellt, sollte 3 oder mehr Einträge enthalten.
+The second `List` component representing the tasks for tomorrow should have 3 or more items.
 
 ```js
 assert(
@@ -93,7 +99,7 @@ assert(
 );
 ```
 
-Die Komponente `List` sollte den Wert aus der Eigenschaft `tasks` im `p`-Tag wiedergeben.
+The `List` component should render the value from the `tasks` prop in the `p` tag.
 
 ```js
 assert(

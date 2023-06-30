@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is an object?
 
 ## --answers--
 
-A
+A memory address.
 
 ---
 
-B
+A stateless class.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An instance of a class.
 
 ## --video-solution--
 
-4
+3

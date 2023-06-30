@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
 
 ## --answers--
 
-A
+float
 
 ---
 
-B
+double
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+int
 
 ## --video-solution--
 
-4
+3

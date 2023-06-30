@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
 
 ## --answers--
 
-A
+`sophiaSum` is not initialized before use
 
 ---
 
-B
+`sophiaSum` is not implicitly typed to a string
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`sophiaSum` should use the var keyword
 
 ## --video-solution--
 
-4
+1

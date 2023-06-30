@@ -30,7 +30,7 @@ Notice how we camelCase the `fontSize` property? This is because React will not 
 
 Add a `style` attribute to the `div` in the code editor to give the text a color of red and font size of `72px`.
 
-Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `72px`.
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 The component should render a `div` element.

@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?
 
 ## --answers--
 
-A
+`string GetValueAtIndex(string[] array, int index)`
 
 ---
 
-B
+`bool GetValueAtIndex(string[] array, int index)`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`int GetValueAtIndex(int index)`
 
 ## --video-solution--
 
-4
+1

@@ -23,7 +23,7 @@ assert(
 );
 ```
 
-Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+Dein (`a`)-Ankerelement sollte ein öffnendes Tag haben. Öffnende Tags haben folgende Syntax: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('a').length >= 2);
@@ -41,7 +41,7 @@ Dein (`a`)-Ankerelement sollte ein schließendes Tag haben. Closing tags have a 
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-Du solltest nur ein schließendes (`a`)-Ankertag hinzufügen. Please remove any extras.
+Du solltest nur ein schließendes (`a`)-Ankertag hinzufügen. Entferne bitte alles Zusätzliche.
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
