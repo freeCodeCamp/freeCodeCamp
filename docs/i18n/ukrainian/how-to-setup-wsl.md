@@ -1,6 +1,6 @@
 # Налаштування freeCodeCamp на Windows Subsystem for Linux (WSL)
 
-> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам
+> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам.
 > 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 чи вище) — доступно для всіх дистрибутивів, включно з Windows 10 Home.
 > 
@@ -48,9 +48,9 @@ git version 2.25.1
 
 По суті, ви змінюватимете та зберігатимете свій код на Ubuntu-18.04 із VS Code, встановленим на Windows.
 
-Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками Npm до версії, налаштованої у вашому дистрибутиві WSL.
+Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками npm до версії, налаштованої у вашому дистрибутиві WSL.
 
-Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and NPM.
+Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and npm.
 
 ## Встановлення Docker Desktop
 
@@ -72,7 +72,7 @@ git version 2.25.1
 
 1. Запустіть новий термінал Ubuntu-18.04
 
-2. Витягніть `MongoDB 4.0.x` із dockerhub
+2. Витягніть `MongoDB 4.0.x` із Docker Hub
 
    ```console
    docker pull mongo:4.0

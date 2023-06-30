@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed8
-title: 'Problem 87: Prime power triples'
+title: 'Завдання 87: прості треті степені'
 challengeType: 1
 forumTopicId: 302201
 dashedName: problem-87-prime-power-triples
@@ -8,7 +8,7 @@ dashedName: problem-87-prime-power-triples
 
 # --description--
 
-The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is `28`. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
+Найменшим числом, яке можна виразити у вигляді суми квадрата простого числа, куба простого числа та четвертого степеня простого числа, є `28`. Насправді саме чотири числа нижче п’ятдесяти можуть бути виражені таким чином:
 
 <div style='margin-left: 4em;'>
   28 = 2<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>
@@ -17,7 +17,7 @@ The smallest number expressible as the sum of a prime square, prime cube, and pr
   47 = 2<sup>2</sup> + 3<sup>3</sup> + 2<sup>4</sup>
 </div><br>
 
-How many numbers below `n` can be expressed as the sum of a prime square, prime cube, and prime fourth power?
+Скільки чисел менших за `n` можна виразити у вигляді суми квадрата, куба та четвертого степеня простого числа?
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: 'Завдання 54: покерні руки'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,38 +8,38 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+Рука у картковій грі «Покер» складається з п’яти карт і оцінюється за старшинством (від найменшої до найстаршої):
 
 <ul>
-  <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
-  <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>Старша карта: найстарша карта.</li>
+  <li>Одна пара: дві карти одного рангу.</li>
+  <li>Дві пари: дві різні пари.</li>
+  <li>Трійка: три карти одного рангу.</li>
+  <li>Стріт: п’ять послідовних карт.</li>
+  <li>Флеш: п’ять карт однієї масті.</li>
+  <li>Фул-хаус: три карти одного рангу і пара.</li>
+  <li>Каре: чотири карти одного рангу.</li>
+  <li>Стріт-флеш: п’ять послідовних карт однієї масті.</li>
+  <li>Роял-флеш: десятка, валет, дама, король і туз однієї масті.</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+Карти оцінюються за порядком 2, 3, 4, 5, 6, 7, 8, 9, 10, валет, дама, король, туз.
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Якщо у двох гравців руки однакової масті, то виграє той, у кого карти вищого рангу: наприклад, дві вісімки виграють дві п’ятірки (див. приклад 1 нижче). Якщо ранг карт однаковий, наприклад, в обох гравців пара дам, то порівнюють найстарші карти в кожній руці (див. приклад 4 нижче); якщо ж і ці карти однакові, порівнюють наступні дві і т. д.
 
-Consider the following five hands dealt to two players:
+Розглянемо п’ять рук, які роздали двом гравцям:
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
-| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
-| <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
-| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
+| Комбінація                | Гравець 1                                                           | Гравець 2                                                        | Переможець |
+| ------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------- | ---------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> Пара п’ятірок                             | 2C 3S 8S 8D TD <br> Пара вісімок                           | Гравець 2  |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> Найстаршою є туз                          | 2C 5C 7D 8S QH <br> Найстаршою є дама                      | Гравець 1  |
+| <strong>3</strong> | 2D 9C AS AH AC <br> Три тузи                                  | 3D 6D 7D TD QD <br> Флеш з бубнів                          | Гравець 2  |
+| <strong>4</strong> | 4D 6S 9H QH QC <br> Пара дам <br> Найстаршою є дев’ятка | 3D 6D 7H QD QS <br> Пара дам <br> Найстаршою є сімка | Гравець 1  |
+| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Фул-хаус <br> з трьох четвірок      | 3C 3D 3S 9S 9D <br> Фул-хаус <br> з трьох трійок     | Гравець 1  |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+До функції передано глобальний масив (`handsArr`), що містить тисячу випадкових карт, які розподілені між гравцями. У кожному рядку файлу є десять карт (розділених одним пробілом): перші п’ять є картами першого гравця, а інші п’ять — картами другого гравця. Можна вважати, що всі руки дійсні (немає недійсних символів чи повторів карт), роздача карт гравцям проводиться у невизначеному порядку, і що при кожній роздачі є безумовний переможець.
 
-How many hands does Player 1 win?
+Скільки рук виграє перший гравець?
 
 # --hints--
 

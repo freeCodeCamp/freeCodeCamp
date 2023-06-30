@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
-import Media from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
@@ -214,6 +214,9 @@ function ShowClassic({
   const containerRef = useRef<HTMLElement>();
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -422,7 +425,7 @@ function ShowClassic({
     >
       <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />
-        <Media maxWidth={MAX_MOBILE_WIDTH}>
+        {isMobile && (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -450,8 +453,8 @@ function ShowClassic({
             usesMultifileEditor={usesMultifileEditor}
             videoUrl={videoUrl}
           />
-        </Media>
-        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+        )}
+        {!isMobile && (
           <DesktopLayout
             challengeFiles={reduxChallengeFiles}
             challengeType={challengeType}
@@ -480,7 +483,7 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
           />
-        </Media>
+        )}
         <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />

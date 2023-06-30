@@ -1,6 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
-title: 'Problem 70: Totient permutation'
+title: 'Завдання 70: перестановка функції Ейлера'
 challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
@@ -8,11 +8,11 @@ dashedName: problem-70-totient-permutation
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of positive numbers less than or equal to `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$. The number 1 is considered to be relatively prime to every positive number, so ${\phi}(1) = 1$.
+Функція Ейлера, ${\phi}(n)$ використовується для визначення кількості додатних чисел менших або рівних `n`, які є взаємно простими `n`. Наприклад, оскільки числа 1, 2, 4, 5, 7 і 8 менші за дев’ять та взаємно прості 9, ${\phi}(9) = 6$. Число 1 вважається взаємно простим для кожного додатного числа, тобто ${\phi}(1) = 1$.
 
-Interestingly, ${\phi}(87109) = 79180$, and it can be seen that 87109 is a permutation of 79180.
+Цікаво, що ${\phi}(87109) = 79180$, і можна побачити, що 87109 є перестановкою 79180.
 
-Find the value of `n`, 1 &lt; `n` &lt; `limit`, for which ${\phi}(n)$ is a permutation of `n` and the ratio $\displaystyle\frac{n}{{\phi}(n)}$ produces a minimum.
+Знайдіть значення `n`, 1 &lt; `n` &lt; `limit`, для якого ${\phi}(n)$ є перестановкою `n`, а співвідношення $\displaystyle\frac{n}{{\phi}(n)}$ є мінімальним.
 
 # --hints--
 

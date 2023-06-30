@@ -32,6 +32,8 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
   return csrfToken;
 };
 
+export const ORIGIN = 'https://www.freecodecamp.org';
+
 export function superRequest(
   resource: string,
   config: {
@@ -43,10 +45,7 @@ export function superRequest(
   const { method, setCookies } = config;
   const { sendCSRFToken = true } = options ?? {};
 
-  const req = requests[method](resource).set(
-    'Origin',
-    'https://www.freecodecamp.org'
-  );
+  const req = requests[method](resource).set('Origin', ORIGIN);
 
   if (setCookies) {
     void req.set('Cookie', setCookies);

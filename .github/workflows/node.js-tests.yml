@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Check number of lockfiles
         run: |
@@ -82,7 +82,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -129,7 +129,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -177,7 +177,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -227,7 +227,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2

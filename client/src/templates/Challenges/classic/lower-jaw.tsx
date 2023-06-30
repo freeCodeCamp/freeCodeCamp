@@ -284,7 +284,8 @@ const LowerJaw = ({
         onClick={tryToExecuteChallenge}
         {...(challengeIsCompleted &&
           !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
-        {...(focusManagementCompleted && { 'aria-hidden': true })}
+        {...(challengeIsCompleted &&
+          focusManagementCompleted && { 'aria-hidden': true })}
         ref={checkYourCodeButtonRef}
       >
         {checkButtonText}

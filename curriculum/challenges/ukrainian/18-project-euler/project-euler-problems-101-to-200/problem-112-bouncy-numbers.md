@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50feef
-title: 'Problem 112: Bouncy numbers'
+title: 'Завдання 112: стрибучі числа'
 challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
@@ -8,17 +8,17 @@ dashedName: problem-112-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Якщо, читаючи число зліва направо, жодна цифра не перевищує цифру справа від неї, таке число називається висхідним. Наприклад, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Таким же чином, якщо жодна цифра не перевищує цифру зліва від неї, число називається низхідним. Наприклад, 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+«Стрибучим» числом називають додатне число, яке не являється ні висхідним, ні низхідним. Наприклад, 155349.
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over half of the numbers below one-thousand (525) are bouncy. In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+Очевидно, що стрибучі числа не можуть бути меншими за сотню. Однак більш ніж половина чисел, які менші за одну тисячу (525), є стрибучими. Найменшим числом, при якому частина стрибучих чисел досягає 50%, є 538.
 
-Surprisingly, bouncy numbers become more and more common and by the time we reach 21780 the proportion of bouncy numbers is equal to 90%.
+На диво, стрибучі числа зустрічаються все частіше і частіше, а до моменту досягнення числа 21780 частина стрибучих чисел становить 90%.
 
-Find the least number for which the proportion of bouncy numbers is exactly 99%.
+Знайдіть найменше число, при якому частина стрибучих чисел дорівнює 99%.
 
 # --hints--
 

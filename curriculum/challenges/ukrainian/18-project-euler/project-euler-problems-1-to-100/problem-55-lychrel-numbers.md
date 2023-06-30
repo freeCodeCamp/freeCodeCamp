@@ -1,6 +1,6 @@
 ---
 id: 5900f3a31000cf542c50feb6
-title: 'Problem 55: Lychrel numbers'
+title: 'Завдання 55: числа Лішрел'
 challengeType: 1
 forumTopicId: 302166
 dashedName: problem-55-lychrel-numbers
@@ -8,9 +8,9 @@ dashedName: problem-55-lychrel-numbers
 
 # --description--
 
-If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
+Якщо взяти число 47, перевернути його та додати (47 + 74 = 121), то вийде паліндром.
 
-Not all numbers produce palindromes so quickly. For example,
+Не з усіх чисел можна утворити паліндром так легко. Наприклад,
 
 <div style="margin-left: 4em;">
   349 + 943 = 1292,<br>
@@ -18,15 +18,15 @@ Not all numbers produce palindromes so quickly. For example,
   4213 + 3124 = 7337<br>
 </div>
 
-That is, 349 took three iterations to arrive at a palindrome.
+Щоб стати паліндромом, числу 349 знадобилося три інтерації.
 
-Although no one has proved it yet, it is thought that some numbers, like 196, never produce a palindrome. A number that never forms a palindrome through the reverse and add process is called a Lychrel number. Due to the theoretical nature of these numbers, and for the purpose of this problem, we shall assume that a number is Lychrel until proven otherwise. In addition you are given that for every number below ten-thousand, it will either (i) become a palindrome in less than fifty iterations, or, (ii) no one, with all the computing power that exists, has managed so far to map it to a palindrome. In fact, 10677 is the first number to be shown to require over fifty iterations before producing a palindrome: 4668731596684224866951378664 (53 iterations, 28-digits).
+Попри відсутність доказів, вважається, що деякі числа, такі-от як 196, ніколи не утворюють паліндроми. Число Лішрел — це число, яке ніколи не формує паліндром шляхом перевертання і додавання. Зважаючи на теоретичну природу цих чисел та задля цілі даної задачі, ми вважатимемо, що число є числом Лішрел, поки не буде доведено протилежне. Окрім цього відомо, що будь-яке число менше десяти тисяч або стане паліндромом менш ніж за п’ятдесят ітерацій, або нікому, навіть маючи всю можливу обчислювальну потужність, не вдасться зобразити його у вигляді паліндрому. Насправді 10677 є першим відомим числом, яке вимагає понад п’ятдесяти ітерацій для утворення паліндрому: 4668731596684224866951378664 (53 ітерації, 28-значне число).
 
-Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is 4994.
+Дивно, але є паліндромні числа, які також є числами Лішрел; перший приклад — 4994.
 
-How many Lychrel numbers are there below `num`?
+Скільки існує чисел Лішрел, менших за `num`?
 
-**Note:** Wording was modified slightly on 24 April 2007 to emphasize the theoretical nature of Lychrel numbers.
+**Примітка:** формулювання завдання було трохи змінено 24 квітня 2007 року, щоб підкреслити теоретичну природу чисел Лішрела.
 
 # --hints--
 

@@ -44,7 +44,7 @@ $colors: (color1: blue, color2: red, color3: green);
 
 # --instructions--
 
-編寫一個 `@each` 指令遍歷列表：`blue, black, red` ，將每個變量分配給 class 爲`.color-bg` 的項目，使每個項目的 `color` 都不一樣。 每個 class 都應該將 `background-color` 設置爲相應的顏色。
+編寫一個 `@each` 指令遍歷列表：`blue, black, red` ，將每個變量分配給 class 爲 `.color-bg` 的項目，使每個項目的 `color` 部分都是各自相應的顏色。 每個 class 也應該將 `background-color` 設置爲相應的顏色。
 
 # --hints--
 

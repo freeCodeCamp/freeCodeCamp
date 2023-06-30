@@ -409,22 +409,27 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const setTabTrapped = (trapped: boolean) => {
+    const setTabTrapped = (
+      trapped: boolean,
+      opts: { announce: boolean } = { announce: true }
+    ) => {
       setMonacoTabTrapped(trapped);
       store.set('monacoTabTrapped', trapped);
-      ariaAlert(
-        `${
-          trapped
-            ? t('learn.editor-alerts.tab-trapped')
-            : t('learn.editor-alerts.tab-free')
-        }`
-      );
+      if (opts.announce) {
+        ariaAlert(
+          `${
+            trapped
+              ? t('learn.editor-alerts.tab-trapped')
+              : t('learn.editor-alerts.tab-free')
+          }`
+        );
+      }
     };
 
     // By default, Tab will be trapped in the monaco editor, so we only need to
     // check if the user has turned this off.
     if (!isTabTrapped()) {
-      setTabTrapped(false);
+      setTabTrapped(false, { announce: false });
     }
 
     const accessibilityMode = storedAccessibilityMode();
@@ -616,6 +621,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
       liveText.style.visibility = 'hidden';
       liveText.style.visibility = 'visible';
+      // Need to remove message after a few seconds so screen readers don't
+      // run into it.
+      // First, track the latest message so it is shown for the full duration.
+      const time = `t${Date.now()}`;
+      liveText.dataset.timestamp = time;
+      setTimeout(function () {
+        // Now, only the latest message will have this timestamp.
+        if (liveText.dataset.timestamp === time) {
+          liveText.textContent = '';
+        }
+      }, 3000);
     }
   };
 

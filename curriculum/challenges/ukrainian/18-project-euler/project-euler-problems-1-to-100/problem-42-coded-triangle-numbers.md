@@ -1,6 +1,6 @@
 ---
 id: 5900f3961000cf542c50fea9
-title: 'Problem 42: Coded triangle numbers'
+title: 'Завдання 42: закодовані трикутні числа'
 challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
@@ -8,13 +8,13 @@ dashedName: problem-42-coded-triangle-numbers
 
 # --description--
 
-The `n`<sup>th</sup> term of the sequence of triangle numbers is given by, `tn` = ½`n`(`n`+1); so the first ten triangle numbers are:
+`n`-ний член послідовності трикутних чисел виражений як `tn` = ½`n`(`n`+1). Тому першими десятьма трикутними числами є:
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = `t`<sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
+Перетворивши кожну літеру слова в число, що відповідає її порядковому номеру в алфавіті, і додавши ці значення, ми отримаємо числове значення слова. Наприклад, числове значення слова SKY дорівнює 19 + 11 + 25 = 55 = `t`<sub>10</sub>. Якщо числове значення слова є трикутним числом, то ми називатимемо це слово трикутним.
 
-Using words array of `n`-length, how many are triangle words?
+Використовуючи масив слів довжиною `n`, визначте, скільки в ньому трикутних слів.
 
 # --hints--
 

@@ -1003,6 +1003,58 @@
       }
     }
   },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "Fundamentos de C# com a Microsoft",
+    "intro": [
+      "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
+      "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
+      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para construir aplicações robustas e escaláveis."
+    ],
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Escreva seu primeiro código em C#",
+        "intro": [
+          "Comece sua jornada aprendendo a escrever seu primeiro código em C#. Desenvolva bem seus conhecimentos básicos enquanto explora os fundamentos e a sintaxe da linguagem, preparando o terreno para suas aventuras em programação."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Crie e execute aplicações simples de console em C#",
+        "intro": [
+          "Domine a arte de criar e executar aplicações simples de console em C#. Mergulhe no mundo da programação baseada em consoles, onde você ganhará a experiência prática de executar seu código e vê-lo em ação."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Adicione lógica a aplicações de console em C#",
+        "intro": [
+          "Libere o poder da lógica nas aplicações de console em C#. Aprenda a adicionar lógica e recursos de tomada de decisão ao código, permitindo que suas aplicações façam escolhas dinâmicas e respondam inteligentemente a diferentes cenários."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Trabalhe com dados variáveis em aplicações de console do C#",
+        "intro": [
+          "Descubra a versatilidade de dados variáveis nas aplicações de console em C#. Aproveite a capacidade de armazenar e manipular diferentes tipos de dados, como números e texto, aprofundando em conceitos essenciais de variáveis e manipulação de dados."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Crie métodos em aplicações de console em C#",
+        "intro": [
+          "Torne mais avançadas suas aplicações de console em C# dominando a arte de criar métodos. Aprenda a organizar e modularizar seu código, tornando-o mais controlável, reutilizável e eficiente."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Depure aplicações de console em C#",
+        "intro": [
+          "Aprimore suas habilidades de solução de problemas ao mergulhar no mundo da depuração de aplicações de console em C#. Obtenha a capacidade de identificar e corrigir problemas no código, garantindo que as aplicações sejam executadas sem problemas e apresentem os resultados desejados."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Exame de fundamentos de C# com certificação da Microsoft",
+        "intro": [
+          "Use o que aprendeu para passar no exame e ganhar suas Certificação da Microsoft em Fundamentos de C#"
+        ]
+      }
+    }
+  },
   "example-certification": {
     "title": "Certificação de exemplo",
     "intro": ["placeholder"],

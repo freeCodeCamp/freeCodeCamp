@@ -8,7 +8,7 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
+有时候你需要遍历一个对象中的所有键。 你可以使用 <dfn>for...in</dfn> 循环来做这件事。 for...in 循环是这样的：
 
 ```javascript
 const refrigerator = {
@@ -21,15 +21,15 @@ for (const food in refrigerator) {
 }
 ```
 
-This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
+以上代码记录 `milk 1` 和 `eggs 12`，每个键值对单独为一行。
 
-We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
+我们在循环头中定义了变量 `food` ，这个变量被设置为每次迭代上对象的每个键值，将每个食物的名称打印到控制台。
 
 **注意：**对象中的键是无序的，这与数组不同。 因此，一个对象中某个属性的位置，或者说它出现的相对顺序，在引用或访问该属性时是不确定的。
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
+我们定义了一个函数 `countOnline`，它接收一个参数 `allUsers`。 在这个函数中使用 <dfn>for...in</dfn> 语句来遍历 `allUsers` 对象，并返回 `online` 属性为 `true` 的用户数量。 一个可以传递给 `countOnline` 的对象的例子显示如下。 每个用户都有 `online` 属性，其属性值为 `true` 或 `false`。
 
 ```js
 {

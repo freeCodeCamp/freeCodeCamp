@@ -1,6 +1,6 @@
 ---
 id: 5900f3971000cf542c50feaa
-title: 'Problem 43: Sub-string divisibility'
+title: 'Завдання 43: подільність підрядків'
 challengeType: 1
 forumTopicId: 302100
 dashedName: problem-43-sub-string-divisibility
@@ -8,21 +8,21 @@ dashedName: problem-43-sub-string-divisibility
 
 # --description--
 
-The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
+Число 1406357289 є панцифровим від 0 до 9, оскільки складається з цифр від 0 до 9 у певному порядку, а також воно має цікаву властивість подільності підрядків.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
+Нехай $d_1$ буде першою цифрою, $d_2$ буде другою цифрою і так далі. Таким чином можна помітити наступне:
 
-- ${d_2}{d_3}{d_4} = 406$ is divisible by 2
-- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
-- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
-- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
-- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
-- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
-- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
+- ${d_2}{d_3}{d_4} = 406$ ділиться на 2 без остачі
+- ${d_3}{d_4}{d_5} = 063$ ділиться на 3 без остачі
+- ${d_4}{d_5}{d_6} = 635$ ділиться на 5 без остачі
+- ${d_5}{d_6}{d_7} = 357$ ділиться на 7 без остачі
+- ${d_6}{d_7}{d_8} = 572$ ділиться на 11 без остачі
+- ${d_7}{d_8}{d_9} = 728$ ділиться на 13 без остачі
+- ${d_8}{d_9}{d_{10}} = 289$ ділиться на 17 без остачі
 
-Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+Знайдіть суму всіх панцифрових чисел від 0 до `n` з підрядками, які б відповідали особливостям подільності `n - 2`.
 
-**Note:** Pandigital numbers starting with `0` are to be considered in the result.
+**Примітка:** у результаті потрібно врахувати панцифрові числа, які починаються з `0`.
 
 # --hints--
 
