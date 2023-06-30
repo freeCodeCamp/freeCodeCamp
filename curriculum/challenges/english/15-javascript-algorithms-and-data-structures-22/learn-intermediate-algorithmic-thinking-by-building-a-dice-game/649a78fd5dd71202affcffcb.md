@@ -130,7 +130,7 @@ assert.match(code, /function\s*rollDice\s*\(\)\s*{\s*}/);
       <ol id="score-history"></ol>
     </div>
   </main>
-  <script src="index.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
