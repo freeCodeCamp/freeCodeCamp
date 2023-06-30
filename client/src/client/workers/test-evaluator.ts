@@ -104,6 +104,10 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
 
   const assert = chai.assert;
   const __helpers = helpers;
+  // If the learner tries to modify these, weird behavior may result. Freezing
+  // them means they get an error instead.
+  Object.freeze(assert);
+  Object.freeze(__helpers);
   // Fake Deep Equal dependency
   const DeepEqual = (a: unknown, b: unknown) =>
     JSON.stringify(a) === JSON.stringify(b);
@@ -173,3 +177,8 @@ ${e.data.testString}`)) as unknown;
 };
 
 ctx.postMessage({ type: 'contentLoaded' });
+
+// Similiarly to assert and __helpers, we freeze these two to prevent learners
+// from getting the tester into a weird state.
+Object.freeze(self);
+Object.freeze(__utils);
