@@ -32,11 +32,11 @@ What determines which CSS rule is applied when there are conflicting rules targe
 
 ## --answers--
 
-The Specificity of the CSS rule.
+The specificity of the CSS rule.
 
 ---
 
-The Inheritance hierarchy of the element.
+The inheritance hierarchy of the element.
 
 ---
 
