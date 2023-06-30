@@ -1,17 +1,15 @@
 import { template as _template } from 'lodash-es';
 
 interface ConcatHTMLOptions {
-  required?: { src: string; link?: string }[];
+  required: { src: string; link?: string }[];
   template?: string;
   contents?: string;
-  testRunner?: string;
 }
 
 export function concatHtml({
   required = [],
   template,
-  contents,
-  testRunner
+  contents
 }: ConcatHTMLOptions): string {
   const embedSource = template
     ? _template(template)
@@ -33,12 +31,5 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .join('\n');
 
-  // The script has an id so that tests can look for it, if needed.
-  const testRunnerScript = testRunner
-    ? `<script id="fcc-test-runner" src='${testRunner}' type='text/javascript'></script>`
-    : '';
-
-  return `<head>${head}</head>${
-    embedSource({ source: contents }) || ''
-  }${testRunnerScript}`;
+  return `<head>${head}</head>${embedSource({ source: contents }) || ''}`;
 }

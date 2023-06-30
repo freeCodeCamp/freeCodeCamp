@@ -44,7 +44,11 @@ interface BuildOptions {
 const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
 
-const frameRunnerSrc = `/js/${runner}.js`;
+const frameRunner = [
+  {
+    src: `/js/${runner}.js`
+  }
+];
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -196,6 +200,9 @@ export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
 ): Promise<BuildResult> | undefined {
+  const finalRequires = [...required];
+  if (usesTestRunner) finalRequires.push(...frameRunner);
+
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
@@ -215,10 +222,9 @@ export function buildDOMChallenge(
           challengeType:
             challengeTypes.html || challengeTypes.multifileCertProject,
           build: concatHtml({
-            required,
+            required: finalRequires,
             template,
-            contents,
-            ...(usesTestRunner && { testRunner: frameRunnerSrc })
+            contents
           }),
           sources: buildSourceMap(challengeFiles),
           loadEnzyme
@@ -258,7 +264,7 @@ export function buildJSChallenge(
 function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: concatHtml({ testRunner: frameRunnerSrc }),
+    build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
 }
