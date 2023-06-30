@@ -309,14 +309,18 @@ describe('userRoutes', () => {
       });
     });
     describe('/user/user-token', () => {
+      let userId: string | undefined;
       beforeEach(async () => {
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
+        userId = user?.id;
+      });
 
+      afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: {
-            userId: user?.id
+            userId
           }
         });
       });
