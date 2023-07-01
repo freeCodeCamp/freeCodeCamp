@@ -185,8 +185,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.JsAlgoDataStructNew
   ]
 };
 
