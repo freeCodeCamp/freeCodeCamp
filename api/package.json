@@ -35,7 +35,7 @@
     "pino-pretty": "10.0.0",
     "prisma": "4.16.1",
     "supertest": "6.3.3",
-    "ts-jest": "29.1.0"
+    "ts-jest": "29.1.1"
   },
   "engines": {
     "node": ">=18",
