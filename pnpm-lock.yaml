@@ -202,8 +202,8 @@ importers:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.16.0)
       fastify:
-        specifier: 4.19.0
-        version: 4.19.0
+        specifier: 4.19.1
+        version: 4.19.1
       fastify-auth0-verify:
         specifier: ^1.0.0
         version: 1.0.0
@@ -18317,8 +18317,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify@4.19.0:
-    resolution: {integrity: sha512-Fb7w46k3kum/V+OMiw2/LN1lo2xqhJqwTsv+LGie5n7YNdA9bmDUntXfcec9rG6VRDXIBfPf5xmFv2wooBdxzg==}
+  /fastify@4.19.1:
+    resolution: {integrity: sha512-99r7xae02BUWI1H8exJidkFJXi/SUZpO18YIJ6SSWIB1bb5CN659ga0iB85oLD+C4D9LeTOKplOJ1/YcFsK7oQ==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
