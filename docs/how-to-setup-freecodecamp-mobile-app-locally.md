@@ -370,7 +370,7 @@ Follow these steps:
 ## Running mobile curriculum tests
 
 > [!NOTE]
-> You need to follow this section if you're modifying the challenge test runner in the mobile app otherwise you can go ahead to the next section on how to open a Pull Request.
+> You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
 
 1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
 
