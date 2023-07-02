@@ -273,11 +273,47 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
 const initMainFrame =
   (_: unknown, proxyLogger?: ProxyLogger) => (frameContext: Context) => {
     waitForFrame(frameContext)
-      .then(() => {
+      .then(async () => {
+        const iframeBuild: string = frameContext.build;
+        const parser = new DOMParser();
+        const iframeBuildDoc = parser.parseFromString(iframeBuild, 'text/html');
+        const allLinks = iframeBuildDoc.querySelectorAll(
+          'script[src], link[href]'
+        );
+        let errMsgs = '';
+        let unfetchedLinks = allLinks.length;
+
+        if (!unfetchedLinks) return null;
+
+        for (const url of allLinks) {
+          const urlAddr =
+            url.tagName === 'SCRIPT'
+              ? (url as HTMLScriptElement).src
+              : (url as HTMLLinkElement).href;
+
+          try {
+            const response = await fetch(String(urlAddr));
+            if (!response.ok) {
+              errMsgs = `${errMsgs}\nCannot retrieve ${urlAddr}, link status code: ${response.status}`;
+            } else if (!unfetchedLinks) {
+              continue;
+            }
+            unfetchedLinks -= 1;
+          } catch {
+            errMsgs = `${errMsgs}\n${urlAddr} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
+          }
+        }
+
+        return errMsgs.length ? errMsgs : 'This link does not exist.';
+      })
+      .then(importResult => {
+        if (importResult) {
+          console.warn.call(frameContext.window, importResult);
+          proxyLogger && proxyLogger(importResult);
+        }
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
-
         frameContext.window.onerror = function (msg) {
           if (typeof msg === 'string') {
             const string = msg.toLowerCase();
@@ -301,6 +337,9 @@ function handleDocumentNotFound(err: string) {
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
     console.log(err);
   }
+  // else if (err == FILE_NOT_FOUND_ERROR) {
+  //   console.log(err);
+  // }
 }
 
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
