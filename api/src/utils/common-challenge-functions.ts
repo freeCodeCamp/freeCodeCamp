@@ -183,15 +183,14 @@ export async function updateUserChallengeData(
     });
   }
 
-  // Doesnt make sense as if false it wont be executed and when true sets "true" again
-  // if (needsModeration) {
-  //     await fastify.prisma.user.update({
-  //         where: { id: user.id },
-  //         data: {
-  //             needsModeration: true
-  //         }
-  //     });
-  // }
+  if (needsModeration) {
+    await fastify.prisma.user.update({
+      where: { id: user.id },
+      data: {
+        needsModeration: true
+      }
+    });
+  }
 
   await fastify.prisma.user.update({
     where: { id: user.id },
