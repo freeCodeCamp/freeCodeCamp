@@ -148,6 +148,10 @@ export const runTestInTestFrame = async function (
 ): Promise<TestResult | undefined> {
   const contentDocument = getContentDocument(document, testId);
   if (contentDocument) {
+    console.log('running test in test frame');
+    console.log(test);
+    console.log(contentDocument);
+    console.log(contentDocument.__runPython);
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
@@ -270,6 +274,16 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         getUserInput,
         loadEnzyme
       });
+
+      // TODO: initializing is painfully slow and is ideally not something we
+      // want to do more than once, let alone on every test run. Can we put
+      // pyodide in its own frame and keep it alive? Then we'd only reset it
+      // manually when the user clicks the reset button.
+
+      // The document may exist, even if the window does not, so we can try
+      // to initialize, even if 'window' is undefined.
+      await frameContext.document?.__initPythonFrame();
+      console.log('initialized test frame');
 
       if (frameReady) frameReady();
     })

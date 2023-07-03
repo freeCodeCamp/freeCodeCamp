@@ -5,9 +5,14 @@ import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import { IDisposable, Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
+import jQuery from 'jquery'; // TODO: is jQuery needed for the python runner?
+import * as helpers from '@freecodecamp/curriculum-helpers';
+
+import type { FrameDocument, FrameWindow, InitTestFrameArg } from '.';
+
 import 'xterm/css/xterm.css';
 
-import type { FrameDocument } from '.';
+(window as FrameWindow).$ = jQuery;
 
 // This will be running in an iframe, so document will be
 // element.contentDocument. This declaration is just to add properties we know
@@ -103,27 +108,144 @@ function setupRunPython(pyodide: PyodideInterface, term: Terminal) {
   function runPython(code: string) {
     // Pyodide doesn't clear the global namespace when you runPython, so we have
     // to.
+    console.log('Clearing globals');
     pyodide.runPython(`
 user_defined = [var for var in globals().copy() if not var.startswith("__")]
 for var in user_defined:
   del globals()[var]`);
     // Make print and input available to python
     // TODO: use registerJsModule so we don't have to modify window.
+    console.log('Setting up print and input');
     pyodide.runPython(`
 import js
 from js import print
 from js import input
 `);
+    console.log('Running python');
     pyodide.runPython(code);
+    console.log('Python finished');
+    return pyodide;
   }
 
   contentDocument.__runPython = runPython;
 }
 
 async function initPythonFrame() {
+  console.log('Initializing python frame');
   const term = createTerminal();
   const pyodide = await setupPyodide();
   setupRunPython(pyodide, term);
 }
 
 contentDocument.__initPythonFrame = initPythonFrame;
+
+contentDocument.__initTestFrame = initTestFrame;
+
+// TODO: DRY this and frame-runner.ts's initTestFrame
+async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
+  console.log('Initializing test frame');
+  const code = (e.code.contents || '').slice();
+  const __file = (id?: string) => {
+    if (id && e.code.original) {
+      return e.code.original[id];
+    } else {
+      return code;
+    }
+  };
+
+  if (!e.getUserInput) {
+    e.getUserInput = () => code;
+  }
+
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  // Fake Deep Equal dependency
+  const DeepEqual = (a: Record<string, unknown>, b: Record<string, unknown>) =>
+    JSON.stringify(a) === JSON.stringify(b);
+
+  // Hardcode Deep Freeze dependency
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const DeepFreeze = (o: Record<string, any>) => {
+    Object.freeze(o);
+    Object.getOwnPropertyNames(o).forEach(function (prop) {
+      if (
+        Object.prototype.hasOwnProperty.call(o, prop) &&
+        o[prop] !== null &&
+        (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
+        !Object.isFrozen(o[prop])
+      ) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        DeepFreeze(o[prop]);
+      }
+    });
+    return o;
+  };
+
+  const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
+  const assert = chai.assert;
+  const __helpers = helpers;
+  /* eslint-enable @typescript-eslint/no-unused-vars */
+
+  let Enzyme;
+  if (e.loadEnzyme) {
+    /* eslint-disable prefer-const */
+    let Adapter16;
+
+    [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
+      import(/* webpackChunkName: "enzyme" */ 'enzyme'),
+      import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
+    ]);
+    /* eslint-enable no-inline-comments */
+
+    Enzyme.configure({ adapter: new Adapter16() });
+    /* eslint-enable prefer-const */
+  }
+
+  contentDocument.__runTest = async function runTests(testString: string) {
+    // uncomment the following line to inspect
+    // the frame-runner as it runs tests
+    // make sure the dev tools console is open
+    // debugger;
+    try {
+      // TODO: figure out what happens when the user code is waiting for input.
+      // Can we supply that in a test? Can we do that incrementally? If so, how
+      // do we stop the user code when the test is done?
+      // Make __pyodide available to the test code
+      const __pyodide = this.__runPython(code);
+      // eval test string to actual JavaScript
+      // This return can be a function
+      // i.e. function() { assert(true, 'happy coding'); }
+      const testPromise = new Promise((resolve, reject) =>
+        // To avoid race conditions, we have to run the test in a final
+        // frameDocument ready:
+        $(() => {
+          try {
+            const test: unknown = eval(testString);
+            resolve(test);
+          } catch (err) {
+            reject(err);
+          }
+        })
+      );
+      const test = await testPromise;
+      if (typeof test === 'function') {
+        await test(e.getUserInput);
+      }
+      return { pass: true };
+    } catch (err) {
+      if (!(err instanceof chai.AssertionError)) {
+        console.error(err);
+      }
+      // to provide useful debugging information when debugging the tests, we
+      // have to extract the message, stack and, if they exist, expected and
+      // actual before returning
+      return {
+        err: {
+          message: (err as Error).message,
+          stack: (err as Error).stack,
+          expected: (err as { expected?: string }).expected,
+          actual: (err as { actual?: string }).actual
+        }
+      };
+    }
+  };
+}

@@ -212,9 +212,12 @@ type BuildResult = {
 // for now, but it's a bit too mcuh for one function.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   { usesTestRunner } = { usesTestRunner: false }
 ): Promise<BuildResult> | undefined {
   const finalRequires = [...required];
+  // TODO: re-enable this after splitting the build function in two.
+  // if (usesTestRunner) finalRequires.push(...frameRunner);
   // TODO: handle pythonRunner like frameRunnerSrc.
   finalRequires.push(...pythonRunner);
   const loadEnzyme = challengeFiles?.some(

@@ -319,12 +319,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
           });
 
           const { challengeType } = challenge;
+          // TODO: shouldn't this be a function in challenge-types.js?
           if (
             challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
             challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend
+            challengeType !== challengeTypes.backend &&
+            challengeType !== challengeTypes.python
           ) {
             return;
           }
@@ -570,6 +572,12 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
+      // TODO: why doesn't this use frame.ts? It would be good if it did, since
+      // that would be closer to how the client works.
+
+      // TODO: this is doing too much. It shouldn't need to be conditionally
+      // initializing the python frame. Use a separate function for this?
+      await (document.__initPythonFrame && document.__initPythonFrame());
       await document.__initTestFrame({
         code: sources,
         getUserInput,
