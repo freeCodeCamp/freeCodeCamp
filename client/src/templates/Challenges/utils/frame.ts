@@ -10,6 +10,7 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
+  transformedPython?: string;
   original: { [key: string]: string };
 }
 

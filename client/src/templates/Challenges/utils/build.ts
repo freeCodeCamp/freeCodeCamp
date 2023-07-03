@@ -83,9 +83,16 @@ function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
       sources.contents = sources.index;
       sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
+      // TODO: transformed Python code doesn't belong here (it's not a source)
+      sources.transformedPython += challengeFile.contents || '';
       return sources;
     },
-    { index: '', editableContents: '', original: {} } as Source
+    {
+      index: '',
+      editableContents: '',
+      original: {},
+      transformedPython: ''
+    } as Source
   );
   return source;
 }

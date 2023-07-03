@@ -267,8 +267,10 @@ function* updatePreviewSaga() {
   const challengeData = yield select(challengeDataSelector);
   if (challengeData.challengeType === challengeTypes.python) {
     const document = yield getContext('document');
-    // TODO: run through buildChallengeData
-    const code = challengeData.challengeFiles[0].contents;
+    // TODO: refactor this. It can't be correct to build the entire challenge
+    // just to modify the code. Concerns are in need of separation.
+    const buildData = yield buildChallengeData(challengeData);
+    const code = buildData.sources.transformedPython;
     // TODO: proxy errors to the console
     try {
       yield call(runPythonInMainFrame, document, code);
