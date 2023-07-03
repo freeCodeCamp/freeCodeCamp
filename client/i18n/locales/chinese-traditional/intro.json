@@ -957,6 +957,10 @@
       "top-learn-css-foundations-projects": {
         "title": "學習 CSS 基礎項目",
         "intro": ["描述待定"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Learn CSS Specificity",
+        "intro": ["A description is to be determined"]
       }
     }
   },
