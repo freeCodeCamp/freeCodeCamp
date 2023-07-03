@@ -961,6 +961,10 @@
       "top-learn-css-foundations-projects": {
         "title": "Jifunze Miradi ya Msingi wa CSS",
         "intro": ["Maelezo yanapaswa kuamuliwa"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Jifunze Umaalumu wa CSS",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       }
     }
   },

@@ -961,6 +961,10 @@
       "top-learn-css-foundations-projects": {
         "title": "Проєкти «Вивчіть основи CSS»",
         "intro": ["Опис буде надано пізніше"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Вивчіть специфічність CSS",
+        "intro": ["Опис буде надано пізніше"]
       }
     }
   },

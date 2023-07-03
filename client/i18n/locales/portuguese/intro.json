@@ -961,6 +961,10 @@
       "top-learn-css-foundations-projects": {
         "title": "Projetos para aprender o básico de CSS",
         "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Aprenda especificidade no CSS",
+        "intro": ["Uma descrição deve ser determinada"]
       }
     }
   },
