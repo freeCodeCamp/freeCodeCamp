@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-css-by-building-a-cat-painting",
-  "order": 12,
+  "order": 11,
   "time": "5 hours",
   "template": "",
   "required": [],
@@ -245,15 +245,15 @@
       "Step 58"
     ],
     [
-      "646f0304ed3f1103b1a4def6",
+      "64a2687ef267e5934a2f93e3",
       "Step 59"
     ],
     [
-      "646f0417322c0e04983a5149",
+      "64a26ac5540c5493f4641f10",
       "Step 60"
     ],
     [
-      "646f062f5bc44f05840f7404",
+      "646f0417322c0e04983a5149",
       "Step 61"
     ],
     [
@@ -265,104 +265,96 @@
       "Step 63"
     ],
     [
-      "646f09f15a49b307b88eec2d",
+      "646f0c9a1e3360092d1bbd33",
       "Step 64"
     ],
     [
-      "646f0c09e963d4089e1a6d9b",
+      "646f0ce5737243098ad6e494",
       "Step 65"
     ],
     [
-      "646f0c9a1e3360092d1bbd33",
+      "646f0ef13604420a8744f7d4",
       "Step 66"
     ],
     [
-      "646f0ce5737243098ad6e494",
+      "646f0f7c5933560af8e7e380",
       "Step 67"
     ],
     [
-      "646f0ef13604420a8744f7d4",
+      "646f102bf87b350b593baa72",
       "Step 68"
     ],
     [
-      "646f0f7c5933560af8e7e380",
+      "646f107abb89d00bb99f387a",
       "Step 69"
     ],
     [
-      "646f102bf87b350b593baa72",
+      "646f12da0b4c5d0ca162834a",
       "Step 70"
     ],
     [
-      "646f107abb89d00bb99f387a",
+      "646f135eab69d90d0c6d4e9b",
       "Step 71"
     ],
     [
-      "646f12da0b4c5d0ca162834a",
+      "646f13fae12fd10d86980942",
       "Step 72"
     ],
     [
-      "646f135eab69d90d0c6d4e9b",
+      "646f159b2cffb21150b927cb",
       "Step 73"
     ],
     [
-      "646f13fae12fd10d86980942",
+      "646f164bf100dd11d226161f",
       "Step 74"
     ],
     [
-      "646f159b2cffb21150b927cb",
+      "646f16a1195a4a1234b625fd",
       "Step 75"
     ],
     [
-      "646f164bf100dd11d226161f",
+      "646f1764e2f1d212ba9785a7",
       "Step 76"
     ],
     [
-      "646f16a1195a4a1234b625fd",
+      "646f1802a09a171332e14630",
       "Step 77"
     ],
     [
-      "646f1764e2f1d212ba9785a7",
+      "646f184704f3441391a81e74",
       "Step 78"
     ],
     [
-      "646f1802a09a171332e14630",
+      "646f4d6c42dc5f214f4e7444",
       "Step 79"
     ],
     [
-      "646f184704f3441391a81e74",
+      "646f4e46e81f7021d5fd9c1d",
       "Step 80"
     ],
     [
-      "646f4d6c42dc5f214f4e7444",
+      "646f4ec018c2d5224725dbff",
       "Step 81"
     ],
     [
-      "646f4e46e81f7021d5fd9c1d",
+      "646f4f6a14e3c522d130a0d2",
       "Step 82"
     ],
     [
-      "646f4ec018c2d5224725dbff",
+      "646f4fe12b7985232bf475a5",
       "Step 83"
     ],
     [
-      "646f4f6a14e3c522d130a0d2",
+      "646f50308a3c70238ae99c42",
       "Step 84"
     ],
     [
-      "646f4fe12b7985232bf475a5",
+      "646f507e4d1cd323f17db4fc",
       "Step 85"
     ],
     [
-      "646f50308a3c70238ae99c42",
-      "Step 86"
-    ],
-    [
-      "646f507e4d1cd323f17db4fc",
-      "Step 87"
-    ],
-    [
       "646f516dbfc1342495515625",
-      "Step 88"
+      "Step 86"
     ]
   ],
   "helpCategory": "HTML-CSS"
