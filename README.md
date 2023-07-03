@@ -130,7 +130,7 @@ Here are our ten core certifications:
 - [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing)
   <br />
   <br />
-  **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
+  **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real-Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
 #### 10. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
@@ -146,7 +146,7 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -174,7 +174,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 ### Reporting Security Issues and Responsible Disclosure
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+We appreciate the responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
