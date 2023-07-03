@@ -14,7 +14,7 @@ Let $F(K, X)$ be the number of the integer quadruplets $(k, a, b, c)$ such that 
 
 For example, $F(1, 10) = 41$ and $F(10, 100) = 12\\,492$.
 
-Find $F({10}^6, {10}^9)$.
+Знайдіть $F({10}^6, {10}^9)$.
 
 # --hints--
 

@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What is an object?
+O que é um objeto?
 
 ## --answers--
 
-A memory address.
+Um endereço da memória.
 
 ---
 
-A stateless class.
+Uma classe sem estado.
 
 ---
 
-An instance of a class.
+Uma instância de uma classe.
 
 ## --video-solution--
 

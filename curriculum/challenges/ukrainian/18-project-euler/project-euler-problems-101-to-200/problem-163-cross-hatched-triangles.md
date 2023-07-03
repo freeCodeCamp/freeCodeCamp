@@ -21,7 +21,7 @@ If we denote $T(n)$ as the number of triangles present in a triangle of size $n$
 $$\begin{align}   & T(1) = 16 \\\\
   & T(2) = 104 \end{align}$$
 
-Find $T(36)$.
+Знайдіть $T(36)$.
 
 # --hints--
 

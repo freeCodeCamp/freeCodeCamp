@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-When is an `ArrayTypeMismatchException` exception thrown?
+Quando é lançada uma exceção do tipo `ArrayTypeMismatchException`?
 
 ## --answers--
 
-An `ArrayTypeMismatchException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+Uma exceção `ArrayTypeMismatchException` é lançada quando é feita uma tentativa de armazenar um valor de um tipo em um array de outro tipo.
 
 ---
 
-An `ArrayTypeMismatchException` exception is thrown when attempting to access a member on a type whose value is null.
+Uma exceção do tipo `ArrayTypeMismatchException` é lançada ao tentar acessar um membro de um tipo cujo valor é nulo.
 
 ---
 
-An `ArrayTypeMismatchException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+Uma exceção `ArrayTypeMismatchException` é lançada quando é feita uma tentativa de indexar um array fora dos limites do array.
 
 ## --video-solution--
 

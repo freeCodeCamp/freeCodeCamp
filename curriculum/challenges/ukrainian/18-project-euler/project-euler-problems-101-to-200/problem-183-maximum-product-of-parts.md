@@ -24,7 +24,7 @@ Let $D(N) = N$ if $M(N)$ is a non-terminating decimal and $D(N) = -N$ if $M(N)$ 
 
 For example, $\sum D(N)$ for $5 ≤ N ≤ 100$ is 2438.
 
-Find $\sum D(N)$ for $5 ≤ N ≤ 10000$.
+Знайдіть $\sum D(N)$ за умови $5 ≤ N ≤ 10000$.
 
 # --hints--
 

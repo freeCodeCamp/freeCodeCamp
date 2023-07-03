@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What is the purpose of the `break` keyword?
+Qual é a finalidade do elemento `break`?
 
 ## --answers--
 
-The `break` keyword tells the runtime to continue evaluating other cases in the `switch` construct.
+A palavra-chave `break` diz ao tempo de execução para continuar avaliando outros casos no bloco `switch`.
 
 ---
 
-The `break` keyword tells the runtime to stop evaluating other cases in the `switch` construct.
+A palavra-chave `break` diz ao tempo de execução para parar de avaliar outros casos no bloco `switch`.
 
 ---
 
-The `break` keyword tells the runtime to exit the application.
+A palavra-chave `break` diz ao tempo de execução para sair da aplicação.
 
 ## --video-solution--
 

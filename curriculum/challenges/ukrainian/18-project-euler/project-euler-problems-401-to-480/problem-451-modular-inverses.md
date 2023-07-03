@@ -25,7 +25,7 @@ So $I(15) = 11$.
 
 Also $I(100) = 51$ and $I(7) = 1$.
 
-Find $\sum I(n)$ for $3 ≤ n ≤ 2 \times {10}^7$
+Знайдіть $\sum I(n)$ за умови $3 ≤ n ≤ 2 \times {10}^7$
 
 # --hints--
 

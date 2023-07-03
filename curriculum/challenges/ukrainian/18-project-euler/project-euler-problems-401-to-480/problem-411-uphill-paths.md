@@ -20,7 +20,7 @@ For example, if $n = 22$, there are 11 distinct stations, and a valid path can p
 
 It can also be verified that $S(123) = 14$ and $S(10\\,000) = 48$.
 
-Find $\sum S(k^5)$ for $1 ≤ k ≤ 30$.
+Знайдіть $\sum S(k^5)$ за умови $1 ≤ k ≤ 30$.
 
 # --hints--
 

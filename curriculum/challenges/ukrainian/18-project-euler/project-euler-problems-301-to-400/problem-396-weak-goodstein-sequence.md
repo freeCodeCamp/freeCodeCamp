@@ -32,7 +32,7 @@ It can be verified that $G(2) = 3$, $G(4) = 21$ and $G(6) = 381$.
 
 It can also be verified that $\sum G(n) = 2517$ for $1 ≤ n &lt; 8$.
 
-Find the last 9 digits of $\sum G(n)$ for $1 ≤ n &lt; 16$.
+Знайдіть останні дев’ять цифр $\sum G(n)$ за умови $1 ≤ n &lt; 16$.
 
 # --hints--
 

@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-To sort a string array, why is it be important to use the `String.Trim()` method on each array element before sorting?
+Para ordenar um array de strings, por que é importante usar o método `String.Trim()` em cada elemento do array antes de ordená-lo?
 
 ## --answers--
 
-Only string arrays with elements trimmed with `String.Trim()` can sort
+Apenas arrays de string com elementos cortados com `String.Trim()` podem ser ordenados
 
 ---
 
-`String.Trim()` removes leading white space that would sort before numbers and letters.
+`String.Trim()` remove um espaço em branco que ordenaria antes de números e letras, o que os ordenaria antes.
 
 ---
 
-The array sort is noticeably faster using `String.Trim()` on each element.
+A ordenação de array é visivelmente mais rápida usando `String.Trim()` em cada elemento.
 
 ## --video-solution--
 

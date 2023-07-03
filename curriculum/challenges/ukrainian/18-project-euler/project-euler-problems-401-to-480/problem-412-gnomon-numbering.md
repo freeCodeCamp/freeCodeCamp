@@ -22,7 +22,7 @@ For example, here are two valid numberings of $L(5, 3)$:
 
 Let $LC(m, n)$ be the number of valid numberings of $L(m, n)$. It can be verified that $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$ and $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$.
 
-Find $LC(10\\,000, 5\\,000)\bmod 76\\,543\\,217$.
+Знайдіть $LC(10\\,000, 5\\,000)\bmod 76\\,543\\,217$.
 
 # --hints--
 

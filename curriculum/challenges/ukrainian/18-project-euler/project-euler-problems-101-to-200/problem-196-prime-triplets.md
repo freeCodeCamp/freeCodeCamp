@@ -28,9 +28,9 @@ If row 8 is considered, it contains two primes which are elements of some prime 
 
 Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
 
-You are given that $S(10000) = 950007619$.
+Дано, що $S(10000) = 950007619$.
 
-Find $S(5678027) + S(7208785)$.
+Знайдіть $S(5678027) + S(7208785)$.
 
 # --hints--
 

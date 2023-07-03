@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the choices below is not a valid operator in C#?
+Qual das opções abaixo não é um operador válido em C#?
 
 ## --answers--
 

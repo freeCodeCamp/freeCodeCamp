@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following `for` statements is correct?
+Qual das seguintes instruções `for` está correta?
 
 ## --answers--
 

@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?
+Um desenvolvedor precisa criar uma instrução de iteração. Sob qual condição a instrução `while` é uma escolha melhor do que a instrução `do`?
 
 ## --answers--
 
-When the expression values evaluated by the iteration statement are unknown prior to the iteration code block.
+Quando os valores de expressão avaliados pela instrução de iteração são desconhecidos antes do bloco de código de iteração.
 
 ---
 
-When the expression values evaluated by the iteration statement are known prior to the iteration code block.
+Quando os valores da expressão avaliados pela instrução de iteração são conhecidos antes do bloco de código de iteração.
 
 ---
 
-When the developer creates nested `do` or `while` loops.
+Quando o desenvolvedor cria laços `do` ou `while` aninhados.
 
 ## --video-solution--
 

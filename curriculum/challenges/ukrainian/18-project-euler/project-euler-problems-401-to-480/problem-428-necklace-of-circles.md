@@ -29,7 +29,7 @@ For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be sho
 
 Let $T(n)$ be the number of necklace triplets $(a, b, c)$ such that $a$, $b$ and $c$ are positive integers, and $b ≤ n$. For example, $T(1) = 9$, $T(20) = 732$ and $T(3\\,000) = 438\\,106$.
 
-Find $T(1\\,000\\,000\\,000)$.
+Знайдіть $T(1\\,000\\,000\\,000)$.
 
 # --hints--
 

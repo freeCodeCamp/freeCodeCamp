@@ -14,7 +14,7 @@ The largest value of a such that $a^2 ≡ a\bmod 6$ is $4$.
 
 Let's call $M(n)$ the largest value of $a &lt; n$ such that $a^2 ≡ a (\text{mod } n)$. So $M(6) = 4$.
 
-Find $\sum M(n)$ for $1 ≤ n ≤ {10}^7$.
+Знайдіть $\sum M(n)$ за умови $1 ≤ n ≤ {10}^7$.
 
 # --hints--
 

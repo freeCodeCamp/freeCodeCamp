@@ -16,7 +16,7 @@ On the other hand, the set {(0, 0), (1, 1), (2, 2), (4, 4)} is not a titanic set
 
 For any positive integer $N$, let $T(N)$ be the number of titanic sets $S$ whose every point ($x$, $y$) satisfies $0 ≤ x$, $y ≤ N$. It can be verified that $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$ and $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$.
 
-Find $T({10}^{11})\bmod {10}^8$.
+Знайдіть $T({10}^{11})\bmod {10}^8$.
 
 # --hints--
 

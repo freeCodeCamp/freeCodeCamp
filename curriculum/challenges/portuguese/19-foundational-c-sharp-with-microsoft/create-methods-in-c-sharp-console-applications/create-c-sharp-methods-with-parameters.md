@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Given the method signature, `void Print(string name, string number = "", bool member = false)`, which of the following options correctly uses named and optional arguments?
+Dada a assinatura do método `void Print(string name, string number = "", bool member = false)`, qual das seguintes opções usa corretamente argumentos nomeados e opcionais?
 
 ## --answers--
 
