@@ -186,7 +186,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.RespWebDesign,
     SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.JsAlgoDataStructNew
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.JsAlgoDataStruct
   ]
 };
 
