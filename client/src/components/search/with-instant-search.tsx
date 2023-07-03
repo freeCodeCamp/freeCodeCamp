@@ -7,7 +7,7 @@ import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
-import envData from '../../../../config/env.json';
+import { algoliaAppId, algoliaAPIKey } from '../../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {
@@ -16,8 +16,6 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-
-const { algoliaAppId, algoliaAPIKey } = envData;
 
 // If a key is missing, searches will fail, but the client will still render.
 const searchClient =
@@ -84,7 +82,7 @@ function InstantSearchRoot({
 
   const propsQuery = query;
   function onSearchStateChange({ query }: { query: string | undefined }): void {
-    if (propsQuery === query || !query) {
+    if (propsQuery === query || typeof query === 'undefined') {
       return;
     }
     updateSearchQuery(query);
