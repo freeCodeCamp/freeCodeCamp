@@ -8,7 +8,8 @@ export enum Languages {
   Ukrainian = 'ukrainian',
   Japanese = 'japanese',
   German = 'german',
-  Arabic = 'arabic'
+  Arabic = 'arabic',
+  Swahili = 'swahili'
 }
 
 /*
@@ -30,7 +31,8 @@ export const availableLangs = {
     Languages.Ukrainian,
     Languages.Japanese,
     Languages.German,
-    Languages.Arabic
+    Languages.Arabic,
+    Languages.Swahili
   ],
   curriculum: [
     Languages.English,
@@ -42,7 +44,8 @@ export const availableLangs = {
     Languages.Ukrainian,
     Languages.Japanese,
     Languages.German,
-    Languages.Arabic
+    Languages.Arabic,
+    Languages.Swahili
   ]
 };
 
@@ -64,7 +67,8 @@ export const i18nextCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Arabic]: 'ar'
+  [Languages.Arabic]: 'ar',
+  [Languages.Swahili]: 'sw'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -78,7 +82,8 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Ukrainian]: 'Українська',
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
-  [Languages.Arabic]: 'العربية'
+  [Languages.Arabic]: 'العربية',
+  [Languages.Swahili]: 'Swahili'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -95,7 +100,8 @@ export const LangCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Arabic]: 'ar'
+  [Languages.Arabic]: 'ar',
+  [Languages.Swahili]: 'sw'
 };
 
 /**
