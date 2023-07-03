@@ -20,7 +20,7 @@ Now we define a sequence of points in $H, \\{P_i : i ≥ 1\\}$, as:
 
 <img class="img-responsive center-block" alt="animation showing defining points P_1 to P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-You are given that $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$ and $P_7 = (\frac{17\\,194\\,218\\,091}{143\\,327\\,232}, \frac{274\\,748\\,766\\,781}{1\\,719\\,926\\,784})$.
+Дано, що $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$ та $P_7 = (\frac{17\\,194\\,218\\,091}{143\\,327\\,232}, \frac{274\\,748\\,766\\,781}{1\\,719\\,926\\,784})$.
 
 Find $P_n$ for $n = {11}^{14}$ in the following format: If $P_n = (\frac{a}{b}, \frac{c}{d})$ where the fractions are in lowest terms and the denominators are positive, then the answer is $(a + b + c + d)\bmod 1\\,000\\,000\\,007$.
 

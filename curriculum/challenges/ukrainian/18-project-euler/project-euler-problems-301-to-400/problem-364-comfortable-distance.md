@@ -20,7 +20,7 @@ Let $T(N)$ be the number of possibilities that $N$ seats are occupied by $N$ peo
 
 We can verify that $T(10) = 61\\,632$ and $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
 
-Find $T(1\\,000\\,000)\bmod 100\\,000\\,007$.
+Знайдіть $T(1\\,000\\,000)\bmod 100\\,000\\,007$.
 
 # --hints--
 

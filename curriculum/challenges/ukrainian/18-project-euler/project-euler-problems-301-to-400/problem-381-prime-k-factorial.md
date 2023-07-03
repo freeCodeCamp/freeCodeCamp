@@ -18,7 +18,7 @@ As $872\bmod (7) = 4$, $S(7) = 4$.
 
 It can be verified that $\sum S(p) = 480$ for $5 ≤ p &lt; 100$.
 
-Find $\sum S(p)$ for $5 ≤ p &lt; {10}^8$.
+Знайдіть $\sum S(p)$ за умови $5 ≤ p &lt; {10}^8$.
 
 # --hints--
 

@@ -24,7 +24,7 @@ Let $C(N)$ be the number of distinct canonical ellipsoidal triplets ($a$, $b$, $
 
 It can be verified that $C({10}^3) = 7$, $C({10}^4) = 106$ and $C({10}^6) = 11\\,845$.
 
-Find $C({10}^{17})$.
+Знайдіть $C({10}^{17})$.
 
 # --hints--
 

@@ -12,11 +12,11 @@ dashedName: problem-401-sum-of-squares-of-divisors
 
 Сума квадратів цих чисел дорівнює $1 + 4 + 9 + 36 = 50$.
 
-$\sigma_2(n)$ позначає суму квадратів дільників $n$. Отже, $\sigma_2(6) = 50$.
+Нехай $\sigma_2(n)$ позначає суму квадратів дільників $n$. Отже, $\sigma_2(6) = 50$.
 
-Let $\Sigma_2$ represent the summatory function of $\sigma_2$, that is $\Sigma_2(n) = \sum \sigma_2(i)$ for $i=1$ to $n$. The first 6 values of $\Sigma_2$ are: 1, 6, 16, 37, 63 and 113.
+Нехай $\Sigma_2$ позначає суматорну функцію $\sigma_2$, тобто $\Sigma_2(n) = \sum \sigma_2(i)$ для $i$ від $1 до n$. Першими шістьма значеннями $\Sigma_2$ є 1, 6, 16, 37, 63 та 113.
 
-Find $\Sigma_2({10}^{15})$ modulo ${10}^9$.
+Знайдіть $\Sigma_2({10}^{15})$ modulo ${10}^9$.
 
 # --hints--
 

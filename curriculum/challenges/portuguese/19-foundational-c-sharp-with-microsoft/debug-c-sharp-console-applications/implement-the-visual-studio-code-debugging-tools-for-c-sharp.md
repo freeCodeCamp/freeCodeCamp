@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
+Qual seção da visão de EXECUTAR E DEPURAR é usada para rastrear o ponto de execução atual dentro da aplicação em execução?
 
 ## --answers--
 
-The VARIABLES section.
+A seção VARIÁVEIS.
 
 ---
 
-The CALL STACK section.
+A seção PILHA DE CHAMADAS.
 
 ---
 
-The WATCH section.
+A seção INSPEÇÃO.
 
 ## --video-solution--
 

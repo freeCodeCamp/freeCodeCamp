@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What is the value of the following result? `int result = 3 + 1 * 5 / 2;`
+Qual é o valor do seguinte resultado? `int result = 3 + 1 * 5 / 2;`
 
 ## --answers--
 

@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
+Um trecho de código deve armazenar valores numéricos inteiros entre `1,000,000` positivo e negativo. Que tipo de dado você deve escolher?
 
 ## --answers--
 

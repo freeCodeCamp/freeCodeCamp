@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Suppose `decimal gradePointAverage = 3.99872831;`. What is the value of `(int) gradePointAverage`?
+Suponha que `decimal gradePointAverage = 3.99872831;`. Qual é o valor de `(int) gradePointAverage`?
 
 ## --answers--
 

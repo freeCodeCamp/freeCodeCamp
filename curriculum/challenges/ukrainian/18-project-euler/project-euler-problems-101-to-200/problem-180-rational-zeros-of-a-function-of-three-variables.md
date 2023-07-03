@@ -19,11 +19,11 @@ $$\begin{align} & f_n(x,y,z) = f_{1,n}(x,y,z) + f_{2,n}(x,y,z) − f_{3,n}(x,y,z
 
 We call $(x,y,z)$ a golden triple of order $k$ if $x$, $y$, and $z$ are all rational numbers of the form $\frac{a}{b}$ with $0 &lt; a &lt; b ≤ k$ and there is (at least) one integer $n$, so that $f_n(x,y,z) = 0$.
 
-Let $s(x,y,z) = x + y + z$.
+Нехай $s(x,y,z) = x + y + z$.
 
 Let $t = \frac{u}{v}$ be the sum of all distinct $s(x,y,z)$ for all golden triples $(x,y,z)$ of order 35. All the $s(x,y,z)$ and $t$ must be in reduced form.
 
-Find $u + v$.
+Знайдіть $u + v$.
 
 # --hints--
 

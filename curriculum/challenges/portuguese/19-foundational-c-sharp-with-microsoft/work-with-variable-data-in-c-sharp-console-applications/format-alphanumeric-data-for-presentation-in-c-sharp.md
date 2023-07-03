@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expected output?
+Para o código em C#, `Console.WriteLine("C110".PadLeft(6, '0'));`, qual é a saída esperada?
 
 ## --answers--
 

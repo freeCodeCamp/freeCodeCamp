@@ -16,7 +16,7 @@ Let $T_5(n)$ be the number of integers $i$ which satisfy $f_5((2 \times i - 1)!)
 
 It can be verified that $T_5({10}^3) = 68$ and $T_5({10}^9) = 2\\,408\\,210$.
 
-Find $T_5({10}^{18})$.
+Знайдіть $T_5({10}^{18})$.
 
 # --hints--
 

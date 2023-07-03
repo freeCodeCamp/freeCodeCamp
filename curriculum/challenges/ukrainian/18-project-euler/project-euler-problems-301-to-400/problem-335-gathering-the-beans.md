@@ -16,7 +16,7 @@ So with 5 bowls it takes Peter 15 moves to return to the initial situation.
 
 Let $M(x)$ represent the number of moves required to return to the initial situation, starting with $x$ bowls. Thus, $M(5) = 15$. It can also be verified that $M(100) = 10920$.
 
-Find $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Give your answer modulo $7^9$.
+Знайдіть $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Give your answer modulo $7^9$.
 
 # --hints--
 

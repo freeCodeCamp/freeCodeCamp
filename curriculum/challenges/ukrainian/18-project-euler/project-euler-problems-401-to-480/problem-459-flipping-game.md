@@ -32,7 +32,7 @@ For $N = 5$, the first player's eight winning first moves are:
 
 <img class="img-responsive center-block" alt="eight winning first moves for N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
 
-Find $W({10}^6)$.
+Знайдіть $W({10}^6)$.
 
 # --hints--
 

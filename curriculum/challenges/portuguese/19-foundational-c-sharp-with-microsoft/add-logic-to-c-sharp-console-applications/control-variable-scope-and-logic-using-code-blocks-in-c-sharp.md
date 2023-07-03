@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following describes the affect of a `using` statement?
+Qual das opções abaixo descreve o efeito de uma instrução `using`?
 
 ## --answers--
 
-Affects only the first code block in the code file.
+Afeta apenas o primeiro bloco de código no arquivo.
 
 ---
 
-Affects only the current code block in the code file.
+Afeta apenas o bloco de código atual no arquivo.
 
 ---
 
-Affects all of the code in the code file.
+Afeta todo o código no arquivo.
 
 ## --video-solution--
 

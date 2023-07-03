@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following options can be used set a breakpoint in Visual Studio Code?
+Qual das seguintes opções pode ser usada para definir um ponto de interrupção no Visual Studio Code?
 
 ## --answers--
 
-Left-click in the column to the left of a line number in the code editor. Correct. A breakpoint can be set by positioning the mouse pointer in the column to the left of a line number and then left-clicking.
+Clicar com o botão esquerdo na coluna à esquerda de um número de linha no editor de código. Correto. Um ponto de interrupção pode ser definido posicionando o ponteiro do mouse na coluna à esquerda de um número de linha e, em seguida, clicando com o botão esquerdo.
 
 ---
 
-Select Toggle Breakpoint on the Edit menu.
+Selecionar Ativar/Desativar o ponto de interrupção no menu Editar.
 
 ---
 
-Right-click in the middle of a line of code, and then select Toggle Breakpoint.
+Clicar com o botão direito no meio de uma linha de código e selecionar Ativar/Desativar o ponto de interrupção.
 
 ## --video-solution--
 

@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following is a bad reason to use a code comment?
+Qual das seguintes opções é uma razão inadequada para se usar um comentário de código?
 
 ## --answers--
 
-To describe the high-level intent of the code.
+Descrever a intenção de alto nível do código.
 
 ---
 
-To temporarily comment out a line of code while evaluating a feature in a different way.
+Comentar temporariamente uma linha de código enquanto avalia um recurso de maneira diferente.
 
 ---
 
-To explain how a new C# keyword works.
+Explicar como uma nova palavra-chave funciona em C#.
 
 ## --video-solution--
 

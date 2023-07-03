@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following foreach statements is syntactically correct?
+Qual das seguintes instruções foreach está sintaticamente correta?
 
 ## --answers--
 

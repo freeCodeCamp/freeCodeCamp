@@ -24,7 +24,7 @@ A winning configuration is an arrangement of coins on the strip where the first 
 
 Let $W(n, c)$ be the number of winning configurations for a strip of $n$ squares, $c$ worthless coins and one silver dollar.
 
-You are given that $W(10, 2) = 324$ and $W(100, 10) = 1\\,514\\,704\\,946\\,113\\,500$.
+Дано, що $W(10, 2) = 324$ та $W(100, 10) = 1\\,514\\,704\\,946\\,113\\,500$.
 
 Find $W(1\\,000\\,000, 100)$ modulo the semiprime $1000\\,036\\,000\\,099 (= 1\\,000\\,003 \times 1\\,000\\,033)$.
 

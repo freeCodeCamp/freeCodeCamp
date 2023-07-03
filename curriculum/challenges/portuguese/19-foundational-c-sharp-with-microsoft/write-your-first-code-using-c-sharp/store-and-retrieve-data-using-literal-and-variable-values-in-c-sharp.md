@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following lines of code creates a variable correctly?
+Qual das linhas de código a seguir cria uma variável corretamente?
 
 ## --answers--
 

@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following options correctly returns a `string` value?
+Qual das opções a seguir retorna corretamente um valor do tipo `string`?
 
 ## --answers--
 

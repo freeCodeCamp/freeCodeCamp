@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String. Which best describes the value type for `myConvert` when the `TryParse()` is successful?
+Para o código `decimal.TryParse(numberString, out myConvert))` quando o tipo `numberString` é uma String. Qual dos valores melhor descreve o tipo para `myConvert` quando `TryParse()` for bem-sucedido?
 
 ## --answers--
 
-A string representing numeric digits.
+Uma string representando algarismos numéricos.
 
 ---
 
-A Boolean value.
+Um valor booleano.
 
 ---
 
-A decimal
+Um decimal
 
 ## --video-solution--
 

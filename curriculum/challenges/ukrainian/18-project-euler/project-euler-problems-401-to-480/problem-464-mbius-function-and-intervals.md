@@ -22,12 +22,12 @@ Let $N(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $
 Let $C(n)$ be the number of integer pairs $(a, b)$ such that:
 
 - $1 ≤ a ≤ b ≤ n$,
-- $99 \times N(a, b) ≤ 100 \times P(a, b)$, and
+- $99 \times N(a, b) ≤ 100 \times P(a, b)$, та
 - $99 \times P(a, b) ≤ 100 \times N(a, b)$.
 
 Наприклад, $C(10) = 13$, $C(500) = 16\\,676$ та $C(10\\,000) = 20\\,155\\,319$.
 
-Find $C(20\\,000\\,000)$.
+Знайдіть $C(20\\,000\\,000)$.
 
 # --hints--
 

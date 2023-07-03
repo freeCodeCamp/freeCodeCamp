@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following lines of code is a valid use of the conditional operator?
+Qual das linhas de código abaixo é um uso válido do operador condicional?
 
 ## --answers--
 

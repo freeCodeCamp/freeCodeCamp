@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?
+Um desenvolvedor quer criar um método que retorne um valor em um array. Qual das opções abaixo seria uma boa escolha para uma assinatura de método?
 
 ## --answers--
 
