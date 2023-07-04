@@ -22,7 +22,7 @@ const examFilenames = [
 const client = new MongoClient(MONGOHQ_URL, { useUnifiedTopology: true });
 
 const db = client.db('freecodecamp');
-const exams = db.collection('exams');
+const exams = db.collection('Exam');
 
 function handleError(err, client) {
   if (err) {
