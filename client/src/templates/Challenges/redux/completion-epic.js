@@ -189,7 +189,7 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
 
       const {
-        nextChallengeMeta: { block: nextBlock },
+        nextBlock,
         nextChallengePath,
         challengeType,
         superBlock,

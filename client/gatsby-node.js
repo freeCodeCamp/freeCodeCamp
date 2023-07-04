@@ -80,6 +80,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   dashedName
                   fields {
                     slug
+                    blockHashSlug
                   }
                   hasEditableBoundaries
                   id
