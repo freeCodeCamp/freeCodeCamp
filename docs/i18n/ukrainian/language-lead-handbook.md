@@ -40,48 +40,9 @@ Ghost дозволяє налаштувати декілька рівнів ко
 
 > [!TIP] Змінювати статті у нижньому колонтитулі принаймні раз на місяць дозволяє покращити результати пошуку в гуглі.
 
-Існує два місця, в яких потрібно змінювати популярні статті.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
-- [Репозиторій навчальної програми](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [Репозиторій CDN](https://github.com/freeCodeCamp/cdn)
-
-Для кожної статті потрібно створювати коротший заголовок, який використовуватиметься у нижньому колонтитулі.
-
-### Зміна популярних статей у навчальній програмі
-
-Популярні статті у нижньому колонтитулі навчальної програми можна змінити, відредагувавши файл у `client/i18n/locales/<language>/trending.json`.
-
-Цей файл є файлом `*.json`, який має форму об’єкта з ключами властивостей у формі `article0title` та `article0link`.
-
-Кожне число представляє одну із 30 статей у колонтитулі. Переконайтесь, що заголовок та посилання відповідають один одному.
-
-Ось приклад того, як повинна виглядати частина файлу `trending.json`.
-
-```json
-{
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
-  ...
-}
-```
-
-Вам доведеться [побудувати перекладеного клієнта локально](how-to-enable-new-languages.md), щоб переконатись, що довжина заголовків правильна. Кожен заголовок повинен залишатися в одному рядку та не переходити в інший.
-
-### Зміна популярних статей у CDN
-
-Файлом у репозиторії CDN є файл `universal/trending/<language>.yaml`.
-
-Цей файл має іншу форму. Наприклад, ось вміст файлу для перших шести статей:
+Наприклад, ось вміст файлу для перших шести статей:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -98,9 +59,21 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-Ви можете вручну перетворити один формат в інший. Або ви можете використати [цей скрипт](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Кожне число представляє одну із 30 статей у колонтитулі. Переконайтесь, що заголовок та посилання відповідають один одному.
 
-> [!TIP] Розробляється новий робочий процес, тому у майбутньому потрібно буде змінювати лише одне місце.
+Для кожної статті потрібно створювати коротший заголовок, який використовуватиметься у нижньому колонтитулі. Кожен заголовок повинен залишатися в одному рядку та не переходити в інший.
+
+Вам доведеться [побудувати перекладеного клієнта локально](how-to-enable-new-languages.md), щоб переконатись, що довжина заголовків правильна. You can preview the changes by editing the `trending.json` file in your local environment:
+
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+
+3. Start the server by running `pnpm run develop:server` in one terminal window.
+
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## Як перекладати статті в нижньому колонтитулі
 
@@ -152,7 +125,7 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 
 > [!WARNING] Можна перекладати лише «Про нас», «Допомога», «Академічна доброчесність» та «Кодекс поведінки». Не змінюйте інших URL.
 
-Оновіть наступну частину файлу:
+Update the following part in the file:
 
 ```json
 {

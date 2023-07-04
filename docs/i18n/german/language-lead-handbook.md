@@ -40,48 +40,9 @@ The original author and the original article are linked automatically adding thi
 
 > [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
 
-Es gibt zwei Stellen, an denen du die angesagten Artikel ändern kannst.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
-- [Das Curriculum-Repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [Das CDN-Repository](https://github.com/freeCodeCamp/cdn)
-
-For each article, you will need to create a shorter title to use in the footer.
-
-### Change Trending Articles in the Curriculum
-
-Die angesagte  Artikel in der Fußzeile des Lehrplans können durch Bearbeiten der Datei `client/i18n/locales/<language>/trending.json` geändert werden.
-
-Diese Datei ist eine `*.json`-Datei, die die Form eines Objekts mit Eigenschaftsschlüsseln in der Form `article0title` und `article0link` hat.
-
-Each number represents one of the 30 articles in the footer. Achte darauf, dass der Titel und der Link richtig zugeordnet sind.
-
-Dies ist ein Beispiel dafür, wie ein Teil der Datei `trending.json` aussehen muss.
-
-```json
-{
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
-  ...
-}
-```
-
-Du solltest [den übersetzten Client lokal einrichten](how-to-enable-new-languages.md), um zu sehen, ob die Titel die richtige Länge haben. Jeder Titel muss in einer einzigen Zeile bleiben und darf nicht in eine neue Zeile übergehen.
-
-### How to Update the Trending Articles in the CDN
-
-The file in the CDN repository is the file `universal/trending/<language>.yaml`.
-
-This file is shaped differently. For example, here is the file content for the first 6 articles:
+For example, here is the file content for the first 6 articles:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -98,9 +59,21 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-Du kannst von einem Format in ein anderes konvertieren, indem du es vorsichtig manuell ändern. Oder du kannst [das Skript in diesem Repl](https://replit.com/@Ieahleen/convert-json-to-yaml) verwenden.
+Each number represents one of the 30 articles in the footer. Achte darauf, dass der Titel und der Link richtig zugeordnet sind.
 
-> [!TIP] Es wird an einem neuen Arbeitsablauf gearbeitet, sodass es in Zukunft nur noch eine Stelle gibt, an der Änderungen vorgenommen werden müssen.
+For each article, you will need to create a shorter title to use in the footer. Jeder Titel muss in einer einzigen Zeile bleiben und darf nicht in eine neue Zeile übergehen.
+
+Du solltest [den übersetzten Client lokal einrichten](how-to-enable-new-languages.md), um zu sehen, ob die Titel die richtige Länge haben. You can preview the changes by editing the `trending.json` file in your local environment:
+
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+
+3. Start the server by running `pnpm run develop:server` in one terminal window.
+
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## How to Translate Articles in the Footer Links
 
