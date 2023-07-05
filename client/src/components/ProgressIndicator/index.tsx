@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { useTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { certificatesByNameSelector } from '../../redux/selectors';
 import type { CurrentCert } from '../../redux/prop-types';
@@ -74,11 +73,6 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   } = props;
 
   const isLearnPage = '/learn/'; // current path of main (learn) page
-
-  // Get the current superblock name
-  const { t } = useTranslation();
-  const superBlockIntroObj: string = t(`intro:${superBlock}`);
-  const { title: i18nSuperBlock } = { title: superBlockIntroObj };
 
   // Compute the earned current and legacy certificates
   let earnedCertificateCount = 0;
@@ -210,12 +204,10 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
     length: superBlockTotalProjectsCount
   });
 
-  const headerText = i18nSuperBlock ? i18nSuperBlock : 'Overall';
-
   return (
     <div className='progress-summary'>
       <h2 className='progress-summary__main-header'>
-        {headerText} Progress Summary
+        OverAll Progress Summary
       </h2>
       {pathname === isLearnPage && (
         <section className='progress-summary__section'>
