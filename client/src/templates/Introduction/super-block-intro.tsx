@@ -25,7 +25,6 @@ import {
   signInLoadingSelector
 } from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
-import ProgressIndicator from '../../components/ProgressIndicator';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -181,9 +180,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
   const defaultCurriculumNames = blockDashedNames;
 
-  const superBlockTotalChallengesCount = edges.length;
-  const superBlockChallengesList = edges;
-  const completedChallengesList = user.completedChallenges;
   const superblockWithoutCert = [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.TheOdinProject,
@@ -202,14 +198,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <Spacer size='large' />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro superBlock={superBlock} />
-              <Spacer size={2} />
-              <ProgressIndicator
-                username={user.username}
-                superBlockTotalChallengesCount={superBlockTotalChallengesCount}
-                superBlock={superBlock}
-                superBlockChallengesList={superBlockChallengesList}
-                completedChallengesList={completedChallengesList}
-              />
               <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
