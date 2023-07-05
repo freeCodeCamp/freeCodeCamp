@@ -206,7 +206,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   };
 
   type CertName = keyof ProjectMap | keyof LegacyProjectMap;
-  const Certification = (certName: CertName) => {
+  const Certification = ({ certName }: { certName: CertName }) => {
     const { t } = useTranslation();
     const { certSlug } = fullProjectMap[certName][0];
     return (
