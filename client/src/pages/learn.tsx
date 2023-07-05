@@ -9,7 +9,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
-import ProgressIndicator from '../components/ProgressIndicator';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import { defaultDonation } from '../../../config/donation-settings';
@@ -62,7 +61,6 @@ interface LearnPageProps {
       };
     };
   };
-  path: string;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -72,20 +70,14 @@ function LearnPage({
   isSignedIn,
   executeGA,
   fetchState: { pending, complete },
-  user: {
-    name = '',
-    completedChallengeCount = 0,
-    isDonating = false,
-    username = ''
-  },
+  user: { name = '', completedChallengeCount = 0, isDonating = false },
   data: {
     challengeNode: {
       challenge: {
         fields: { slug }
       }
     }
-  },
-  path
+  }
 }: LearnPageProps) {
   const { t } = useTranslation();
 
@@ -97,7 +89,6 @@ function LearnPage({
       amount: defaultDonation.donationAmount
     });
   };
-
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
@@ -114,14 +105,6 @@ function LearnPage({
               onDonationAlertClick={onDonationAlertClick}
               isDonating={isDonating}
             />
-            {isSignedIn && (
-              <ProgressIndicator
-                completedChallengeCount={completedChallengeCount}
-                username={username}
-                pathname={path}
-              />
-            )}
-            <h2 className='sr-only'>{t('settings.headings.certs')}</h2>
             <Map />
             <Spacer size='large' />
           </Col>
