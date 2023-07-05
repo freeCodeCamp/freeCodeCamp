@@ -94,6 +94,10 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 > [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
+## Working With Other Languages
+
+To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
+
 ## Getting Help
 
 If you are stuck and need help, feel free to ask questions in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).

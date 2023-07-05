@@ -1,8 +1,7 @@
-import {
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
+import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -104,40 +103,28 @@ function ToolPanel({
           {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
         </Button>
       )}
-      <DropdownButton
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        id='get-help-dropdown'
-        title={isMobile ? t('buttons.help') : t('buttons.get-help')}
-      >
-        {guideUrl ? (
-          <MenuItem
-            bsStyle='primary'
-            className='btn-invert'
-            href={guideUrl}
-            target='_blank'
-          >
-            {t('buttons.get-hint')}
+      <Dropdown dropup>
+        <Dropdown.Toggle dropup id={'get-help-dropdown'}>
+          {isMobile ? t('buttons.help') : t('buttons.get-help')}
+        </Dropdown.Toggle>
+        <Dropdown.Menu dropup>
+          {guideUrl ? (
+            <MenuItem href={guideUrl} target='_blank'>
+              {t('buttons.get-hint')}{' '}
+              <FontAwesomeIcon icon={faExternalLinkAlt} />
+              <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+            </MenuItem>
+          ) : null}
+          {videoUrl ? (
+            <MenuItem onClick={openVideoModal}>
+              {t('buttons.watch-video')}
+            </MenuItem>
+          ) : null}
+          <MenuItem onClick={openHelpModal}>
+            {t('buttons.ask-for-help')}
           </MenuItem>
-        ) : null}
-        {videoUrl ? (
-          <MenuItem
-            bsStyle='primary'
-            className='btn-invert'
-            onClick={openVideoModal}
-          >
-            {t('buttons.watch-video')}
-          </MenuItem>
-        ) : null}
-        <MenuItem
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openHelpModal}
-        >
-          {t('buttons.ask-for-help')}
-        </MenuItem>
-      </DropdownButton>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
   );
 }

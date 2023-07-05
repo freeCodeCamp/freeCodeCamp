@@ -118,68 +118,34 @@ export const rtlLangs = [''];
 
 > [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
 
-### Налаштуйте порядок суперблоків мови
+### Налаштуйте перекладені суперблоки
 
-У файлі [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) потрібно встановити порядок та стан усіх суперблоків нової мови з об’єкту `superBlockOrder`. Скопіюйте один з мовних ключів і всі його значення, вставте їх знизу об’єкта та змініть ключ на нову мову з переліку `Languages`.
+У файлі [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) додайте нову мову до об’єкту `notAuditedSuperBlocks`. Це виведе список усіх суперблоків, які не повністю перекладені. Add an array of superblocks which have not been fully translated to it. For example:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-У такому порядку суперблоки з’являються на цільовій сторінці та навчальних картах. Дотримуйтесь коментарів у цьому файлі, щоб розмістити суперблоки у правильному порядку, а потім перемістіть їх до потрібних місць нової мови.
+Переконайтесь, що додали лише ті суперблоки, які **не** повністю перекладені та затверджені. Перекладені суперблоки будуть вирахувані з цього об’єкта. Коли новий суперблок буде повністю перекладений, вилучіть його з масиву цієї мови.
 
-> [!ATTENTION] Не змінюйте порядок ключів у об‘єкті, а просто перемістіть суперблоки в інші масиви
-
-Масив `CurriculumMaps.Landing` повинен містити один суперблок для всіх актуальних сертифікацій, а об’єкт `CurriculumMaps.Learn` повинен містити всі наявні суперблоки. Перекладені суперблоки розміщуються у `TranslationStates.Audited`, а неперекладені — у `TranslationStates.NotAudited`. Суперблоки цих двох об’єктів можуть перебувати у чотирьох станах.
-
-- `SuperBlockStates.Current`: означає, що суперблок є актуальним (наприклад, `Responsive Web Design`).
-- `SuperBlockStates.New`: з’являється лише тоді, коли `SHOW_NEW_CURRICULUM` налаштовано на `true` у файлі `.env`. Використовується для показу нових суперблоків певної збірки. Наприклад, коли ми опублікували новий адаптивний вебдизайн, він був доступний лише на англійській версії.
-- `SuperBlockStates.Upcoming`: з’являється лише тоді, коли `SHOW_UPCOMING_CHANGES` налаштовано на `true` у файлі `.env`. Використовується для локального показу суперблоків у розробці. Або у випадку, якщо потрібно приховати суперблок з карти.
-- `SuperBlockStates.Legacy`: суперблок переміщено сюди, коли його новіша версія була повністю перекладена та замінила стару.
+See the `SuperBlocks` enum at the beginning of the same file for the full list of superblocks.
 
 ### Налаштування пошуку
 
@@ -216,7 +182,7 @@ const algoliaIndices = {
 };
 ```
 
-### Enabling Localized Videos
+### Додавання локалізованих відео
 
 Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі `client/src/templates/Challenges/video/Show.tsx`. Ось так додається дотракійська мова:
 
@@ -270,7 +236,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Client UI
+## Інтерфейс клієнта
 
 Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
 
@@ -281,9 +247,8 @@ videoLocaleIds: Joi.when('challengeType', {
 - `links.json`
 - `meta-tags.json`
 - `motivation.json`
-- `trending.json`
 
-## Testing Translations Locally
+## Тестування перекладів локально
 
 Якщо ви хочете перевірити переклади локально, перш ніж додати їх до нашого основного репозиторію, то пропустіть зміни робочого процесу на Crowdin. Виконайте кроки для додавання мови, а потім завантажте переклади з Crowdin і додайте їх до свого локального коду.
 
@@ -303,11 +268,11 @@ videoLocaleIds: Joi.when('challengeType', {
 
 Щоб започаткувати новини новою мовою, потрібно створити два PR. Один PR буде для [репозиторію CDN](https://github.com/freeCodeCamp/cdn), а інший — для [репозиторію News](https://github.com/freeCodeCamp/news).
 
-## Prep the CDN Repo for the New Language
+## Приготуйте репозиторій CDN для нової мови
 
 News отримує популярні посилання й назви статей із нашого CDN під час збірки та додає їх у нижній колонтитул. News також отримує файли Day.js із CDN під час збірки, щоб локалізувати дати та час кожної мови.
 
-### Add a YAML File for Trending Articles
+### Додайте файл YAML для популярних статей
 
 Клонуйте [репозиторій CDN](https://github.com/freeCodeCamp/cdn) та створіть нову гілку.
 
@@ -329,7 +294,7 @@ article3link: ...
   ...
 ```
 
-### Add a Day.js Locale File for the New Language
+### Додайте файл локалі Day.js для нової мови
 
 Day.js містить лише англійську локаль за замовчуванням. Щоб дозволити роботу з іншими мовами, потрібно додати новий файл локалі Day.js до CDN.
 
@@ -367,13 +332,13 @@ Day.js містить лише англійську локаль за замов
 
 Потім відкрийте PR до репозиторію CDN, щоб додати файли YAML та Day.js для перегляду.
 
-## Prep the News Repo for the New Language
+## Приготуйте репозиторій News для нової мови
 
 [Репозиторій News](https://github.com/freeCodeCamp/news) отримує дані з екземпляра Ghost, файли, додані до CDN, будує News та розробляє їх.
 
 > [!WARN] PR для репозиторію News _повинні_ надходити з одного репозиторію. Не працюйте над цим кроком з розгалуження.
 
-### Modify the Main Config File
+### Змініть головний файл конфігурації
 
 Клонуйте репозиторій News та створіть нову гілку.
 
@@ -407,18 +372,16 @@ const algoliaIndices = {
 };
 ```
 
-### Add the i18next JSON Files for the New Language
+### Додайте файли JSON i18next для нової мови
 
 Перейдіть до каталогу `config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
 
 Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 
-Відкрийте файл `serve.json` у новій папці та замініть його вміст на наступне:
+Відкрийте файл `redirects.json` у новій папці та замініть його вміст на порожній масив:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Потім зафіксуйте та відправте гілку до репозиторію News.

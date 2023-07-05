@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
-title: 'Problem 59: XOR decryption'
+title: 'Завдання 59: шифр XOR'
 challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
@@ -8,15 +8,15 @@ dashedName: problem-59-xor-decryption
 
 # --description--
 
-Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (\*) = 42, and lowercase k = 107.
+Кожному символу на комп’ютері присвоюється унікальний код, а переважним стандартом є ASCII (Американський стандартний код для обміну інформацією). Наприклад, літера A верхнього регістру = 65, зірочка (\*) = 42, а k нижнього регістру = 107.
 
-A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+Сучасний метод шифрування полягає в тому, щоб взяти текстовий файл, перетворити байти в ASCII, потім над кожним байтом провести операцію XOR із заданим значенням, яке взято із секретного ключа. Перевага функції XOR полягає в тому, що використання того самого ключа шифрування в зашифрованому тексті відновлює початковий текст; наприклад, 65 XOR 42 = 107, потім 107 XOR 42 = 65.
 
-For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+Для незламного шифрування ключ повинен мати таку ж довжину, як і текст повідомлення, а також повинен складатись з випадкових байтів. Користувач зберігатиме зашифровані повідомлення і ключ шифрування в різних місцях, тому без обидвох «половинок» розшифрувати повідомлення буде неможливо.
 
-Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+На жаль, цей метод непрактичний для більшості користувачів, тож видозмінений метод використовує пароль як ключ. Якщо пароль коротший за повідомлення, що ймовірно, ключ циклічно повторюється протягом усього повідомлення. Баланс для цього методу полягає у використанні достатньо довгого ключа пароля для безпеки, але достатньо короткого, щоб його запам’ятати.
 
-Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+Ваше завдання полегшено, оскільки ключ шифрування складається з трьох символів нижнього регістру. Використовуючи масив `cipher`, який містить зашифровані коди ASCII, а також той факт, що текст повинен містити звичайні англійські слова, розшифруйте повідомлення та знайдіть суму значень ASCII у початковому тексті.
 
 # --hints--
 

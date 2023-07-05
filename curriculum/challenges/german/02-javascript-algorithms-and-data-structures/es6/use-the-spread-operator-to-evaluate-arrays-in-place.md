@@ -28,13 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` hätte dann einen Wert von `89`.
 
-`...arr` gibt ein ungepacktes Array zurück. In other words, it spreads the array. Der Spread-Operator funktioniert jedoch nur an Ort und Stelle, z. B. in einem Argument einer Funktion oder in einem Array-Literal. For example:
+`...arr` gibt ein ungepacktes Array zurück. Mit anderen Worten: Es verteilt das Array. Der Spread-Operator funktioniert jedoch nur an Ort und Stelle, z. B. in einem Argument einer Funktion oder in einem Array-Literal. Zum Beispiel:
 
 ```js
 const spreaded = [...arr];
 ```
 
-However, the following code will not work:
+Der folgende Code funktioniert jedoch nicht:
 
 ```js
 const spreaded = ...arr;
@@ -42,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copy all contents of `arr1` into another array `arr2` using the spread operator.
+Kopiere alle Inhalte von `arr1` in ein anderes Array `arr2`, indem du den Spread-Operator benutzt.
 
 # --hints--
 
-`arr2` should be correct copy of `arr1`.
+`arr2` sollte die korrekte Kopie von `arr1` sein.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` spread operator should be used to duplicate `arr1`.
+Der Spread-Operator `...` sollte zum Duplizieren von `arr1` verwendet werden.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` should remain unchanged when `arr1` is changed.
+`arr2` sollte unverändert bleiben, wenn `arr1` geändert wird.
 
 ```js
 assert((arr1, arr2) => {

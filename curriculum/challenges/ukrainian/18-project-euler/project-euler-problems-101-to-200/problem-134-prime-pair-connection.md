@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff05
-title: 'Problem 134: Prime pair connection'
+title: 'Завдання 134: з’єднання пар простих чисел'
 challengeType: 1
 forumTopicId: 301762
 dashedName: problem-134-prime-pair-connection
@@ -8,11 +8,11 @@ dashedName: problem-134-prime-pair-connection
 
 # --description--
 
-Consider the consecutive primes $p_1 = 19$ and $p_2 = 23$. It can be verified that 1219 is the smallest number such that the last digits are formed by $p_1$ whilst also being divisible by $p_2$.
+Розглянемо прості числа $p_1 = 19$ та $p_2 = 23$. Можна перевірити, що 1219 є найменшим числом, двома останніми цифрами якого є $p_1$, а також ділиться на $p_2$.
 
-In fact, with the exception of $p_1 = 3$ and $p_2 = 5$, for every pair of consecutive primes, $p_2 > p_1$, there exist values of $n$ for which the last digits are formed by $p_1$ and $n$ is divisible by $p_2$. Let $S$ be the smallest of these values of $n$.
+За винятком пари $p_1 = 3$ та $p_2 = 5$, для кожної пари послідовних простих чисел $p_2 > p_1$ існують значення $n$, останніми двома цифрами яких є $p_1$, а $n$ ділиться на $p_2$. Нехай $S$ є найменшим із таких значень $n$.
 
-Find $\sum{S}$ for every pair of consecutive primes with $5 ≤ p_1 ≤ 1000000$.
+Знайдіть $\sum{S}$ для кожної пари послідовних простих чисел за умови $5 ≤ p_1 ≤ 1000000$.
 
 # --hints--
 

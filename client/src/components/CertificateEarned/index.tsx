@@ -1,7 +1,7 @@
 import React from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 import {
   isSignedInSelector,
   userSelector,
@@ -59,7 +59,12 @@ const certsMap = {
   [SuperBlocks.DataAnalysisPy]: false,
   [SuperBlocks.InfoSec]: false,
   [SuperBlocks.MachineLearningPy]: false,
-  [SuperBlocks.CodingInterviewPrep]: false
+  [SuperBlocks.CodingInterviewPrep]: false,
+  [SuperBlocks.TheOdinProject]: false,
+  [SuperBlocks.ProjectEuler]: false,
+  [SuperBlocks.CollegeAlgebraPy]: false,
+  [SuperBlocks.FoundationalCSharp]: false,
+  [SuperBlocks.ExampleCertification]: false
 };
 
 interface CertificateEarnedProps {
@@ -109,7 +114,7 @@ const CertificateEarned = ({ superBlock, user }: CertificateEarnedProps) => {
       break;
   }
 
-  return certsMap[superBlock] ? (
+  return superBlock in certsMap && certsMap[superBlock] ? (
     <CircleCheckRegular role='img' aria-label='earned' />
   ) : (
     <></>

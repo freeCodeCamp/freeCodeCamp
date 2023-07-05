@@ -61,80 +61,53 @@ En otras palabras, estás abstrayendo los detalles de la implementación del usu
 `Thermostat` debe ser una `class` con un método `constructor` definido.
 
 ```js
-assert(
-  typeof Thermostat === 'function' &&
-    typeof Thermostat.constructor === 'function'
-);
+assert.isFunction(Thermostat);
+assert.isFunction(Thermostat?.constructor);
 ```
 
-La palabra clave `class` debe ser utilizada.
+The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /class/);
 ```
 
 `Thermostat` debe ser capaz de ser instanciado.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return typeof t === 'object';
-  })()
-);
+const _t = new Thermostat(122);
+assert.isObject(_t);
 ```
 
 Cuando se crea una instancia con un valor de Fahrenheit, `Thermostat` debe establecer la temperatura (`temperature`) correcta.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return t.temperature === 50;
-  })()
-);
+const _t = new Thermostat(122);
+assert.strictEqual(_t?.temperature, 50);
 ```
 
 Un `getter` debe ser definido.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.get === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.get);
 ```
 
 Un `setter` debe ser definido.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.set === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.set);
 ```
 
 Llamar al `setter` con un valor Celsius debe establecer `temperature`.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(32);
-    t.temperature = 26;
-    const u = new Thermostat(32);
-    u.temperature = 50;
-    return t.temperature === 26 && u.temperature === 50;
-  })()
-);
+const _t = new Thermostat(32);
+_t.temperature = 26;
+const _u = new Thermostat(32);
+_u.temperature = 50;
+assert.approximately(_t.temperature, 26, 0.1);
+assert.approximately(_u.temperature, 50, 0.1);
 ```
 
 # --seed--

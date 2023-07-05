@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 import APIIcon from './api';
 import D3Icon from './d3';
 import DatabaseIcon from './database';
@@ -15,6 +15,7 @@ import Shield from './shield';
 import VikingHelmet from './viking-helmet';
 import Graduation from './graduation';
 import CollegeAlgebra from './college-algebra';
+import CSharpLogo from './c-sharp-logo';
 
 const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
@@ -34,6 +35,7 @@ const iconMap = {
   [SuperBlocks.TheOdinProject]: VikingHelmet,
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
+  [SuperBlocks.FoundationalCSharp]: CSharpLogo,
   [SuperBlocks.ExampleCertification]: ResponsiveDesign
 };
 

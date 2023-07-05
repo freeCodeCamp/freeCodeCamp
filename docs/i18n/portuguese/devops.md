@@ -203,19 +203,19 @@ Você pode identificar a versão exata implantada visitando os registros de comp
 
 Existem algumas limitações e desvantagens conhecidas ao usar a versão beta da plataforma.
 
-- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
+- **Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção**
 
   **Os usuários na versão beta terão uma conta separada da produção.** A versão beta usa um banco de dados fisicamente separado da produção. Isso nos dá a capacidade de evitar qualquer perda acidental de dados ou modificações. A equipe de desenvolvimento pode limpar o banco de dados nesta versão beta conforme necessário.
 
-- **The beta platforms do not provide any assurances regarding uptime and reliability**
+- **As plataformas beta não oferecem nenhuma garantia com relação a tempo de atividade e confiabilidade**
 
   Espera-se que a implantação seja frequente e em iterações rápidas, às vezes várias vezes ao dia. Como resultado, haverá tempos de inatividade inesperados ou funcionalidades quebradas na versão beta.
 
-- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
+- **Para garantir a eficácia da correção, é aconselhável não direcionar usuários regulares para este site para fins de verificação.**
 
   O site beta é e sempre foi para melhorar o desenvolvimento e os testes locais, nada mais. Não é uma promessa do que está por vir, mas um vislumbre do que está sendo trabalhado.
 
-- **Sign in page may look different than production**
+- **O login na página pode parecer diferente da produção**
 
   Nós utilizamos um locatário de teste para o freeCodeCamp.dev no Auth 0 e, portanto, não temos a capacidade de definir um domínio personalizado. Isso faz com que todas as callbacks de redirecionamento e a página de login apareçam em um domínio padrão como: `https://freecodecamp-dev.auth0.com/`. Isso não afeta a funcionalidade e é o mais próximo da produção que conseguimos.
 

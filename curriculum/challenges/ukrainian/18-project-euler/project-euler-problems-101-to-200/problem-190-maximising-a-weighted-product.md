@@ -12,7 +12,7 @@ Let $S_m = (x_1, x_2, \ldots, x_m)$ be the $m$-tuple of positive real numbers wi
 
 For example, it can be verified that $[P_{10}] = 4112$ ([ ] is the integer part function).
 
-Find $\sum {[P_m]}$ for $2 ≤ m ≤ 15$.
+Знайдіть $\sum {[P_m]}$ за умови $2 ≤ m ≤ 15$.
 
 # --hints--
 

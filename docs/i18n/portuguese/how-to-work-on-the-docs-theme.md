@@ -53,6 +53,6 @@ pnpm run docs:serve
 
 > O site da documentação deve estar disponível em <http://localhost:3400>
 
-## Proposing a Pull Request (PR)
+## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).

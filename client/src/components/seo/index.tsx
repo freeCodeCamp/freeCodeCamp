@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 
 interface SEOProps {
   title?: string;

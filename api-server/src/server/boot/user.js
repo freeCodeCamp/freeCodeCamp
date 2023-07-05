@@ -21,6 +21,7 @@ import {
   createDeleteUserToken,
   encodeUserToken
 } from '../middlewares/user-token';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -34,7 +35,7 @@ function bootUser(app) {
   const postUserToken = createPostUserToken(app);
   const deleteUserToken = createDeleteUserToken(app);
 
-  api.get('/account', sendNonUserToHome, getAccount);
+  api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
   api.post('/account/delete', ifNoUser401, deleteUserToken, postDeleteAccount);
@@ -92,7 +93,7 @@ function deleteUserTokenResponse(req, res) {
 }
 
 function createReadSessionUser(app) {
-  const { Donation, UserToken } = app.models;
+  const { UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
@@ -118,14 +119,12 @@ function createReadSessionUser(app) {
 
     try {
       const [
-        activeDonations,
         completedChallenges,
         partiallyCompletedChallenges,
         progressTimestamps,
         savedChallenges
       ] = await Promise.all(
         [
-          Donation.getCurrentActiveDonationCount$(),
           queryUser.getCompletedChallenges$(),
           queryUser.getPartiallyCompletedChallenges$(),
           queryUser.getPoints$(),
@@ -154,9 +153,6 @@ function createReadSessionUser(app) {
             userToken: encodedUserToken
           }
         },
-        sessionMeta: {
-          activeDonations
-        },
         result: user.username
       };
       return res.json(response);
@@ -165,11 +161,6 @@ function createReadSessionUser(app) {
       return res.json({ user: {}, result: '' });
     }
   };
-}
-
-function getAccount(req, res) {
-  const { username } = req.user;
-  return res.redirect('/' + username);
 }
 
 function getUnlinkSocial(req, res, next) {

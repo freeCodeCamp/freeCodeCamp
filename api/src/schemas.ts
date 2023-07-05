@@ -43,6 +43,26 @@ export const schemas = {
       })
     }
   },
+  updateMyUsername: {
+    body: Type.Object({
+      username: Type.String({ minLength: 3, maxLength: 1000 })
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('success'),
+        username: Type.String()
+      }),
+      400: Type.Object({
+        message: Type.Optional(Type.String()),
+        type: Type.Literal('info')
+      }),
+      500: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   updateMySocials: {
     body: Type.Object({
       website: Type.Optional(Type.String({ format: 'url', maxLength: 1024 })),
@@ -100,6 +120,24 @@ export const schemas = {
     response: {
       200: Type.Object({
         message: Type.Literal('buttons.accepted-honesty'),
+        type: Type.Literal('success')
+      }),
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
+  updateMyAbout: {
+    body: Type.Object({
+      about: Type.Optional(Type.String()),
+      name: Type.Optional(Type.String()),
+      picture: Type.Optional(Type.String()),
+      location: Type.Optional(Type.String())
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.updated-about-me'),
         type: Type.Literal('success')
       }),
       500: Type.Object({

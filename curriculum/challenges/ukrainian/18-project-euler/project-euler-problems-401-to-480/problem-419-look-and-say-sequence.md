@@ -28,7 +28,7 @@ It helps to do this out loud:
 
 Define $A(n)$, $B(n)$ and $C(n)$ as the number of ones, twos and threes in the $n$'th element of the sequence respectively. One can verify that $A(40) = 31\\,254$, $B(40) = 20\\,259$ and $C(40) = 11\\,625$.
 
-Find $A(n)$, $B(n)$ and $C(n)$ for $n = {10}^{12}$. Give your answer modulo $2^{30}$ as a string and separate your values for $A$, $B$ and $C$ by a comma. E.g. for $n = 40$ the answer would be `31254,20259,11625`.
+Знайдіть $A(n)$, $B(n)$ та $C(n)$ за умови $n = {10}^{12}$. Give your answer modulo $2^{30}$ as a string and separate your values for $A$, $B$ and $C$ by a comma. E.g. for $n = 40$ the answer would be `31254,20259,11625`.
 
 # --hints--
 

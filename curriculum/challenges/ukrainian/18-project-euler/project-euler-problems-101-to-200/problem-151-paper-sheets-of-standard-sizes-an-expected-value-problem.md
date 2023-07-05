@@ -1,6 +1,6 @@
 ---
 id: 5900f4031000cf542c50ff16
-title: 'Problem 151: Paper sheets of standard sizes: an expected-value problem'
+title: 'Завдання 151: аркуші стандартного розміру (очікувана кількість)'
 challengeType: 1
 forumTopicId: 301782
 dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
@@ -8,21 +8,21 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 # --description--
 
-A printing shop runs 16 batches (jobs) every week and each batch requires a sheet of special colour-proofing paper of size A5.
+Щотижня типографія друкує 16 партій, а для кожної партії потрібен аркуш спеціального паперу формату A5.
 
-Every Monday morning, the foreman opens a new envelope, containing a large sheet of the special paper with size A1.
+Щоранку в понеділок майстер відкриває новий конверт, який містить великий аркуш спеціального паперу формату A1.
 
-He proceeds to cut it in half, thus getting two sheets of size A2. Then he cuts one of them in half to get two sheets of size A3 and so on until he obtains the A5-size sheet needed for the first batch of the week.
+Він розрізає його навпіл, таким чином отримуючи два аркуші А2. Потім він розрізає один з них навпіл, щоб отримати два аркуші А3 і так далі, поки не отримає аркуш А5, необхідний для першої партії тижня.
 
-All the unused sheets are placed back in the envelope.
+Усі невикористані аркуші кладуть назад у конверт.
 
-<img class="img-responsive center-block" alt="A1-size sheet split into: A2, A3, A4 and two A5 sheets" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="аркуш A1 можна поділити на A2, A3, A4 та два A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
 
-At the beginning of each subsequent batch, he takes one sheet of paper from the envelope at random. If it is of size A5, he uses it. If it is larger, he repeats the 'cut-in-half' procedure until he has what he needs, and any remaining sheets are always placed back in the envelope.
+На початку кожної наступної партії він навмання бере один аркуш паперу з конверта. Якщо це А5, то майстер використовує його. Якщо ж більший, то він повторює процедуру «розрізання навпіл», поки не отримає те, що йому потрібно, а решту аркушів повертає назад до конверта.
 
-Excluding the first and last batch of the week, find the expected number of times (during each week) that the foreman finds a single sheet of paper in the envelope.
+За виключенням першої та останньої партії тижня, знайдіть очікувану кількість разів (протягом кожного тижня), коли майстер знайде в конверті один аркуш.
 
-Give your answer rounded to six decimal places using the format `x.xxxxxx`.
+Дайте відповідь, заокруглену до шести знаків після коми, використовуючи формат `x.xxxxxx`.
 
 # --hints--
 

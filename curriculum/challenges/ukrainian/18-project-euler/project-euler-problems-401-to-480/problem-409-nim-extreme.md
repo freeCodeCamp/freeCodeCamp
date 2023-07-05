@@ -18,7 +18,7 @@ Let $W(n)$ be the number of winning nim positions satisfying the above condition
 
 For example, $W(1) = 1$, $W(2) = 6$, $W(3) = 168$, $W(5) = 19\\,764\\,360$ and $W(100)\bmod 1\\,000\\,000\\,007 = 384\\,777\\,056$.
 
-Find $W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
+Знайдіть $W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 

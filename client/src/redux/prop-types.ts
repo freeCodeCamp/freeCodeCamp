@@ -1,5 +1,5 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import { Themes } from '../components/settings/theme';
 import { fullCertMap } from '../resources/cert-and-project-map';
 
@@ -218,8 +218,7 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  yearsTopContributor: any[];
+  yearsTopContributor: string[];
 } & ClaimedCertifications;
 
 export type ProfileUI = {

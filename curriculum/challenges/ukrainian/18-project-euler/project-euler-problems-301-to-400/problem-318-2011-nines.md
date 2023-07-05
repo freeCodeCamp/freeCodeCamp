@@ -26,7 +26,7 @@ Let $C(p,q,n)$ be the number of consecutive nines at the beginning of the fracti
 
 Let $N(p,q)$ be the minimal value of $n$ such that $C(p,q,n) ≥ 2011$.
 
-Find $\sum N(p,q)$ for $p + q ≤ 2011$.
+Знайдіть $\sum N(p,q)$ за умови $p + q ≤ 2011$.
 
 # --hints--
 

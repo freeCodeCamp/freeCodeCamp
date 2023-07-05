@@ -1,6 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee5
-title: 'Problem 102: Triangle containment'
+title: 'Завдання 102: координати вершин трикутника'
 challengeType: 1
 forumTopicId: 301726
 dashedName: problem-102-triangle-containment
@@ -8,9 +8,9 @@ dashedName: problem-102-triangle-containment
 
 # --description--
 
-Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+На координатній площині навмання розташовані три різні точки, координатами яких є -1000 ≤ x, y ≤ 1000. Таким чином утворюється трикутник.
 
-Consider the following two triangles:
+Розглянемо два трикутники:
 
 ```js
 const exampleTriangles = [
@@ -19,9 +19,9 @@ const exampleTriangles = [
 ];
 ```
 
-It can be verified that first triangle contains the origin, whereas second triangle does not.
+Як відомо, перший трикутник містить початок координат, а другий — ні.
 
-Using the `triangles` array containing coordinates of triangles, find the number of triangles for which the interior contains the origin.
+Знайдіть кількість трикутників, що містять початок координат, використовуючи масив `triangles` з координатами трикутників.
 
 # --hints--
 

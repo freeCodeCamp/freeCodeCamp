@@ -106,10 +106,13 @@
 
 #mobile-layout .nav-tabs > li > a {
   margin-inline-end: 0;
-  padding: 5px 10px;
   text-decoration: none;
   font-size: 0.8em;
   border: 0;
+}
+
+#mobile-layout .nav-tabs > li > a:not(#mobile-layout-tab-preview) {
+  padding: 8px 10px;
 }
 
 #mobile-layout .nav-tabs > li.active > a {
@@ -122,6 +125,26 @@
 #mobile-layout .nav-tabs > li:not(.active) > a:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
+}
+
+#mobile-layout-tab-preview {
+  position: relative;
+  padding: 8px 46px 8px 10px;
+}
+
+#portal-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 36px;
+  border: 0;
+}
+
+#portal-button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-background);
 }
 
 #mobile-layout .tab-content {

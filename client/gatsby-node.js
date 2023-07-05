@@ -77,8 +77,10 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   block
                   certification
                   challengeType
+                  dashedName
                   fields {
                     slug
+                    blockHashSlug
                   }
                   hasEditableBoundaries
                   id

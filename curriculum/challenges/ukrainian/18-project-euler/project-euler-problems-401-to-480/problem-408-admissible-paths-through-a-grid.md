@@ -16,7 +16,7 @@ Consider a path from point ($x_1$, $y_1$) to point ($x_2$, $y_2$) using only uni
 
 Let $P(n)$ be the number of admissible paths from (0, 0) to ($n$, $n$). It can be verified that $P(5) = 252$, $P(16) = 596\\,994\\,440$ and $P(1\\,000)\bmod 1\\,000\\,000\\,007 = 341\\,920\\,854$.
 
-Find $P(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
+Знайдіть $P(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 

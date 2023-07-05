@@ -1,0 +1,45 @@
+{
+    "name": "TOP Learn CSS Specificity",
+    "dashedName": "top-learn-css-specificity",
+    "isUpcomingChange": true,
+    "helpCategory": "HTML-CSS",
+    "order": 4,
+    "time": "",
+    "template": "",
+    "required": [],
+    "superBlock": "the-odin-project",
+    "challengeOrder": [
+        [
+            "6489bcd7b7600c818dc297ea",
+            "The Cascade of CSS Question A"
+        ],
+        [
+            "6489c96782cf2e4f86f03ae2",
+            "The Cascade of CSS Question B"
+        ],
+        [
+            "6489cb0b82cf2e4f86f03ae3",
+            "The Cascade of CSS Question C"
+        ],
+        [
+            "6489cf5882cf2e4f86f03ae5",
+            "The Cascade of CSS Question D"
+        ],
+        [
+            "6489cf6282cf2e4f86f03ae6",
+            "The Cascade of CSS Question E"
+        ],
+        [
+            "6489cf6782cf2e4f86f03ae7",
+            "The Cascade of CSS Question F"
+        ],
+        [
+            "6489cf7682cf2e4f86f03ae8",
+            "The Cascade of CSS Question G"
+        ],
+        [
+            "648acb0745e79f79650fa2ac",
+            "The Cascade of CSS Question H"
+        ]
+    ]
+}

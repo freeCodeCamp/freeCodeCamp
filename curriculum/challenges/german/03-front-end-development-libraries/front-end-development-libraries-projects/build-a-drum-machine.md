@@ -42,7 +42,7 @@ Hier sind einige Beispiele, die du für deine Schlagzeug-Maschine verwenden kann
 
 Du kannst dein Projekt erstellen, indem du diese CodePen-Vorlage <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow"></a> verwendest und auf `Save` klickst, um deinen eigenen Pen zu erstellen. Oder du kannst diesen CDN-Link verwenden, um die Tests in jeder beliebigen Umgebung auszuführen: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Sobald du fertig bist, übermittle die URL an dein Arbeitsprojekt, wenn alle Tests bestanden sind.
 
 # --solutions--
 

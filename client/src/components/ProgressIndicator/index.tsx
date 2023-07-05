@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { certificatesByNameSelector } from '../../redux/selectors';
 import type { CurrentCert } from '../../redux/prop-types';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 
 import './progress-indicator.css';
 
@@ -77,10 +77,8 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
 
   // Get the current superblock name
   const { t } = useTranslation();
-  const superBlockIntroObj: {
-    title: string;
-  } = t(`intro:${superBlock}`);
-  const { title: i18nSuperBlock } = superBlockIntroObj;
+  const superBlockIntroObj: string = t(`intro:${superBlock}`);
+  const { title: i18nSuperBlock } = { title: superBlockIntroObj };
 
   // Compute the earned current and legacy certificates
   let earnedCertificateCount = 0;

@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
 
 interface Meta {
   challengeOrder: string[][];
@@ -64,7 +64,7 @@ const pythonProjects = {
 
 describe('project submission', () => {
   beforeEach(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
   });
   // NOTE: this will fail once challenge tests are added.

@@ -1,6 +1,7 @@
 {
   "name": "Build a Palindrome Checker Project",
   "isUpcomingChange": true,
+  "dashedName": "build-a-palindrome-checker-project",
   "usesMultifileEditor": false,
   "helpCategory": "JavaScript",
   "order": 3,
