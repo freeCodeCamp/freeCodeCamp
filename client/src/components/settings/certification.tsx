@@ -2,7 +2,7 @@ import { Table, Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
-import { useTranslation, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
@@ -206,8 +206,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
   };
 
   type CertName = keyof ProjectMap | keyof LegacyProjectMap;
-  const Certification = ({ certName }: { certName: CertName }) => {
-    const { t } = useTranslation();
+  const Certification = ({
+    certName,
+    t
+  }: {
+    certName: CertName;
+    t: TFunction;
+  }) => {
     const { certSlug } = fullProjectMap[certName][0];
     return (
       <FullWidthRow>
@@ -401,12 +406,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
         {certifications.map(certName => (
-          <Certification key={certName} certName={certName} />
+          <Certification key={certName} certName={certName} t={t} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {renderLegacyFullStack()}
         {legacyCertifications.map(certName => (
-          <Certification key={certName} certName={certName} />
+          <Certification key={certName} certName={certName} t={t} />
         ))}
         <ProjectModal
           {...{
