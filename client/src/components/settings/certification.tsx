@@ -210,7 +210,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     const { t } = useTranslation();
     const { certSlug } = fullProjectMap[certName][0];
     return (
-      <FullWidthRow key={certName}>
+      <FullWidthRow>
         <Spacer size='medium' />
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {t(`certification.title.${certName}`, certName)}
@@ -400,13 +400,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map((certName, i) => (
-          <Certification key={i} certName={certName} />
+        {certifications.map(certName => (
+          <Certification key={certName} certName={certName} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {renderLegacyFullStack()}
-        {legacyCertifications.map((certName, i) => (
-          <Certification key={i} certName={certName} />
+        {legacyCertifications.map(certName => (
+          <Certification key={certName} certName={certName} />
         ))}
         <ProjectModal
           {...{
