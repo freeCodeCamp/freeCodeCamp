@@ -10,6 +10,7 @@ import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
+import CertificateEarned from '../CertificateEarned';
 import {
   curriculumLocale,
   showUpcomingChanges,
@@ -74,6 +75,7 @@ function MapLi({
             {getSuperBlockTitleForMap(superBlock)}
           </div>
           {landing && <LinkButton />}
+          <CertificateEarned superBlock={superBlock} />
         </Link>
       </li>
     </>
