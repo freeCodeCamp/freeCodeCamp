@@ -166,7 +166,7 @@ export const runPythonInMainFrame = function (
   code: string
 ): void {
   const contentDocument = getContentDocument(document, mainPreviewId);
-  contentDocument?.__runPython(code);
+  void contentDocument?.__runPython(code);
 };
 
 const createFrame =
@@ -275,15 +275,16 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         loadEnzyme
       });
 
-      // TODO: initializing is painfully slow and is ideally not something we
-      // want to do more than once, let alone on every test run. Can we put
-      // pyodide in its own frame and keep it alive? Then we'd only reset it
-      // manually when the user clicks the reset button.
+      // UPDATE: this is folded into __initTestFrame for now.
+      // // TODO: initializing is painfully slow and is ideally not something we
+      // // want to do more than once, let alone on every test run. Can we put
+      // // pyodide in its own frame and keep it alive? Then we'd only reset it
+      // // manually when the user clicks the reset button.
 
-      // The document may exist, even if the window does not, so we can try
-      // to initialize, even if 'window' is undefined.
-      await frameContext.document?.__initPythonFrame();
-      console.log('initialized test frame');
+      // // The document may exist, even if the window does not, so we can try
+      // // to initialize, even if 'window' is undefined.
+      // await frameContext.document?.__initPythonFrame();
+      // console.log('initialized test frame');
 
       if (frameReady) frameReady();
     })

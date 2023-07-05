@@ -38,11 +38,11 @@ async function setupPyodide() {
   });
 }
 
-// TODO: term will need to be abstracted to allow for testing. Either light
-// abstraction (just a interface with the methods we need) or heavy abstraction
-// (pass in functions that handle writing and reading to... something
-// unspecified)
-function setupRunPython(pyodide: PyodideInterface, term: Terminal) {
+type Input = (text: string) => Promise<string>;
+
+type Print = (...args: unknown[]) => void;
+
+function createHelpers(term: Terminal) {
   function print(...args: unknown[]) {
     const text = args
       .map(arg => {
@@ -61,7 +61,7 @@ function setupRunPython(pyodide: PyodideInterface, term: Terminal) {
 
   const writeLine = (text: string) => term.writeln(`>>> ${text}`);
 
-  const waitForInput = () =>
+  const waitForInput = (): Promise<string> =>
     new Promise(resolve => {
       let userinput = '';
       // Eslint is confused because this is a hack. The disposable does not
@@ -101,11 +101,18 @@ function setupRunPython(pyodide: PyodideInterface, term: Terminal) {
     return await waitForInput();
   };
 
+  return { print, input };
+}
+
+function setupRunPython(
+  pyodide: PyodideInterface,
+  { input, print }: { input: Input; print: Print }
+) {
   window.print = print;
   // @ts-expect-error I'll update the window type later
   window.input = input;
 
-  function runPython(code: string) {
+  async function runPython(code: string) {
     // Pyodide doesn't clear the global namespace when you runPython, so we have
     // to.
     console.log('Clearing globals');
@@ -114,15 +121,18 @@ user_defined = [var for var in globals().copy() if not var.startswith("__")]
 for var in user_defined:
   del globals()[var]`);
     // Make print and input available to python
-    // TODO: use registerJsModule so we don't have to modify window.
     console.log('Setting up print and input');
+    // TODO: use registerJsModule or jsglobals so we don't have to modify
+    // window and can pass in print and input as arguments.
     pyodide.runPython(`
 import js
 from js import print
 from js import input
 `);
     console.log('Running python');
-    pyodide.runPython(code);
+    // This need to be async because we use top-level await in the python code
+    // (input is transformed into an async function that must be awaited)
+    await pyodide.runPythonAsync(code);
     console.log('Python finished');
     return pyodide;
   }
@@ -134,7 +144,8 @@ async function initPythonFrame() {
   console.log('Initializing python frame');
   const term = createTerminal();
   const pyodide = await setupPyodide();
-  setupRunPython(pyodide, term);
+  const helpers = createHelpers(term);
+  setupRunPython(pyodide, helpers);
 }
 
 contentDocument.__initPythonFrame = initPythonFrame;
@@ -144,7 +155,12 @@ contentDocument.__initTestFrame = initTestFrame;
 // TODO: DRY this and frame-runner.ts's initTestFrame
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   console.log('Initializing test frame');
-  const code = (e.code.contents || '').slice();
+  const pyodide = await setupPyodide();
+
+  // transformedPython is used here not because it's necessary (it's not), but
+  // because we want to run the tests against exactly the same code that runs in
+  // the preview.
+  const code = (e.code.transformedPython || '').slice();
   const __file = (id?: string) => {
     if (id && e.code.original) {
       return e.code.original[id];
@@ -206,20 +222,18 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     // make sure the dev tools console is open
     // debugger;
     try {
-      // TODO: figure out what happens when the user code is waiting for input.
-      // Can we supply that in a test? Can we do that incrementally? If so, how
-      // do we stop the user code when the test is done?
-      // Make __pyodide available to the test code
-      const __pyodide = this.__runPython(code);
-      // eval test string to actual JavaScript
-      // This return can be a function
-      // i.e. function() { assert(true, 'happy coding'); }
-      const testPromise = new Promise((resolve, reject) =>
+      // eval test string to get the dummy input and actual test
+      const testPromise = new Promise<{
+        input: string[];
+        test: () => Promise<unknown>;
+      }>((resolve, reject) =>
         // To avoid race conditions, we have to run the test in a final
         // frameDocument ready:
         $(() => {
           try {
-            const test: unknown = eval(testString);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            const test: { input: string[]; test: () => Promise<unknown> } =
+              eval(testString);
             resolve(test);
           } catch (err) {
             reject(err);
@@ -227,9 +241,19 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         })
       );
       const test = await testPromise;
-      if (typeof test === 'function') {
-        await test(e.getUserInput);
-      }
+      setupRunPython(pyodide, {
+        input: () => {
+          return Promise.resolve(test.input ? test.input[0] : '');
+        },
+        print: () => void 0
+      });
+
+      // Make __pyodide available to the test code
+      const __pyodide = await this.__runPython(code);
+      // TODO: less terrible name for this. It's the function that actually tests
+      // the code. (probably rename the object instead of the function)
+      await test.test();
+
       return { pass: true };
     } catch (err) {
       if (!(err instanceof chai.AssertionError)) {
