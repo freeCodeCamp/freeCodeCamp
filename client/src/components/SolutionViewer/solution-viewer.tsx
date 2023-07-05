@@ -30,6 +30,7 @@ function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
           <Panel.Body>
             <pre>
               <code
+                className='border-none'
                 dangerouslySetInnerHTML={{
                   __html: Prism.highlight(
                     contents.trim(),
