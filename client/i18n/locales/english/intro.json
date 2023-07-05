@@ -962,6 +962,10 @@
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
         "intro": ["A description is to be determined"]
+      },
+      "top-inspecting-html-and-css": {
+        "title": "Learn to Inspect HTML and CSS",
+        "intro": ["A description is to be determined"]
       }
     }
   },
