@@ -5,6 +5,11 @@ Joi.objectId = JoiObjectId(Joi);
 
 const nanoIdRE = new RegExp('[a-z0-9]{10}');
 
+const PrerequisitesJoi = Joi.object().keys({
+  id: Joi.objectId().required(),
+  title: Joi.string()
+});
+
 const AnswerJoi = Joi.object().keys({
   id: Joi.string().regex(nanoIdRE).required(),
   deprecated: Joi.bool(),
@@ -63,6 +68,7 @@ const schema = Joi.object()
     title: Joi.string().required(),
     numberOfQuestionsInExam: Joi.number().min(0).max(10).required(),
     passingPercent: Joi.number().min(0).max(100).required(),
+    prerequisites: Joi.array().items(PrerequisitesJoi),
     questions: Joi.array().items(QuestionJoi).min(1).required()
   })
   .when(
