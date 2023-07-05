@@ -16,7 +16,7 @@ For example, $Q(2, 2) = 94$ as can be seen below:
 
 <img class="img-responsive center-block" alt="94 quadrilaterals whose vertices are lattice points with coordinates (x, y) satiffying 0 &le; x &le; m and 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
 
-It can also be verified that $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ and $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
+Можна довести, що $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ та $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
 
 Знайдіть $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
 

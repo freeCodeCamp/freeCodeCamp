@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
-title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+title: 'Завдання 197: вивчення поведінки рекурсивно визначеної послідовності'
 challengeType: 1
 forumTopicId: 301835
 dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
@@ -8,9 +8,9 @@ dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-seq
 
 # --description--
 
-Given is the function $f(x) = ⌊{2}^{30.403243784 - x^2}⌋ × {10}^{-9}$ ( ⌊ ⌋ is the floor-function), the sequence $u_n$ is defined by $u_0 = -1$ and $u_{n + 1} = f(u_n)$.
+За даної функції $f(x) = ⌊{2}^{30.403243784 - x^2}⌋ × {10}^{-9}$ ( ⌊ ⌋ є функцією підлоги), послідовність $u_n$ визначена як $u_0 = -1$ та $u_{n + 1} = f(u_n)$.
 
-Знайдіть $u_n + u_{n + 1}$ за умови $n = {10}^{12}$. Give your answer with 9 digits after the decimal point.
+Знайдіть $u_n + u_{n + 1}$ за умови $n = {10}^{12}$. Відповідь закругліть до дев’яти цифр після коми.
 
 # --hints--
 

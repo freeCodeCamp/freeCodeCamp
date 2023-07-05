@@ -20,7 +20,7 @@ $$0000, 0001, 001, 01, 10, 11$$
 
 Now suppose that it costs one penny to transmit a '0' bit, but four pence to transmit a '1'. Then the total cost of the prefix-free code shown above is 35 pence, which happens to be the cheapest possible for the skewed pricing scheme in question. In short, we write $Cost(6) = 35$.
 
-What is $Cost(10^9)$?
+Чому дорівнює $Cost(10^9)$?
 
 # --hints--
 

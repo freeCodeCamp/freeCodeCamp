@@ -7,9 +7,9 @@ dashedName: the-cascade-of-css-question-g
 
 # --description--
 
-Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (`color`, `font-size`, `font-family`, etc.) are usually inherited, while most other properties aren’t.
+Спадковість стосується деяких властивостей CSS, які, застосувавши до елемента, успадковуються нащадками цього елемента, навіть якщо ми не пишемо окреме правило для них. Властивості на основі типографії (`color`, `font-size`, `font-family` тощо) зазвичай успадковуються, а більшість інших властивостей — ні.
 
-The exception to this is when directly targeting an element, as this always beats inheritance:
+Виняток лише тоді, коли елемент прямо націлений, оскільки це переважає успадкування:
 
 ```html
 <!-- index.html -->
@@ -31,29 +31,29 @@ The exception to this is when directly targeting an element, as this always beat
 }
 ```
 
-Despite the `parent` element having a higher specificity with an ID, the `child` element would have the `color: blue` style applied since that declaration directly targets it, while `color: red` from the parent is only inherited.
+Хоча елемент `parent` має вищу специфічність через ID, до елемента `child` буде застосовано стиль `color: blue`, оскільки оголошення прямо націлене на нього, а `color: red` успадковується від батька.
 
 # --question--
 
 ## --text--
 
-Based on the given HTML and CSS code, what would be the color of the `<div class="child"></div>` element?
+На основі наданого коду HTML та CSS, яким буде колір елемента `<div class="child"></div>`?
 
 ## --answers--
 
-Red
+Червоний
 
 ---
 
-Blue
+Синій
 
 ---
 
-Inherited from the parent element
+Успадкований від батьківського елемента
 
 ---
 
-Transparent
+Прозорий
 
 ## --video-solution--
 

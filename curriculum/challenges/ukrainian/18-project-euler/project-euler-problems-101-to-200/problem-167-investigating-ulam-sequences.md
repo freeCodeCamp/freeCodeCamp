@@ -1,6 +1,6 @@
 ---
 id: 5900f4141000cf542c50ff26
-title: 'Problem 167: Investigating Ulam sequences'
+title: 'Завдання 167: вивчення послідовностей Уляма'
 challengeType: 1
 forumTopicId: 301801
 dashedName: problem-167-investigating-ulam-sequences
@@ -8,13 +8,13 @@ dashedName: problem-167-investigating-ulam-sequences
 
 # --description--
 
-For two positive integers $a$ and $b$, the Ulam sequence $U(a,b)$ is defined by ${U{(a,b)}\_1} = a$, ${U{(a,b)}\_2} = b$ and for $k > 2$, ${U{(a,b)}\_k}$ is the smallest integer greater than ${U{(a,b)}\_{(k-1)}}$ which can be written in exactly one way as the sum of two distinct previous members of $U(a,b)$.
+Послідовність Уляма $U(a,b)$ для двох натуральних чисел $a$ та $b$ визначається так: ${U{(a,b)}\_1} = a$, ${U{(a,b)}\_2} = b$, а для $k > 2$, ${U{(a,b)}\_k}$ є найменшим цілим числом, більшим за ${U{(a,b)}\_{(k-1)}}$, що можна записати лише у вигляді суми двох різних попередніх членів $U(a,b)$.
 
-For example, the sequence $U(1,2)$ begins with
+Наприклад, послідовність $U(1,2)$ починається з
 
 $$1, 2, 3 = 1 + 2, 4 = 1 + 3, 6 = 2 + 4, 8 = 2 + 6, 11 = 3 + 8$$
 
-5 does not belong to it because $5 = 1 + 4 = 2 + 3$ has two representations as the sum of two previous members, likewise $7 = 1 + 6 = 3 + 4$.
+5 не належить сюди, тому що $5 = 1 + 4 = 2 + 3$ має два варіанти написання у вигляді суми двох попередніх членів, як і $7 = 1 + 6 = 3 + 4$.
 
 Знайдіть $\sum {U(2, 2n + 1)_k}$ за умови $2 ≤ n ≤ 10$, де $k = {10}^{11}$.
 

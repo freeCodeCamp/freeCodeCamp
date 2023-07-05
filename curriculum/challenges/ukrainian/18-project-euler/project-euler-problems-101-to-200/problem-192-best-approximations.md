@@ -8,7 +8,7 @@ dashedName: problem-192-best-approximations
 
 # --description--
 
-Let $x$ be a real number.
+Нехай $x$ буде дійсним числом.
 
 A best approximation to $x$ for the denominator bound $d$ is a rational number $\frac{r}{s}$ in reduced form, with $s ≤ d$, such that any rational number which is closer to $x$ than $\frac{r}{s}$ has a denominator larger than $d$:
 

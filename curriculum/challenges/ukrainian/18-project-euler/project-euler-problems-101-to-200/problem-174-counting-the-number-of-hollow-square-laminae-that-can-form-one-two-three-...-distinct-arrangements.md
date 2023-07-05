@@ -20,7 +20,7 @@ If $t$ represents the number of tiles used, we shall say that $t = 8$ is type $L
 
 Let $N(n)$ be the number of $t ≤ 1000000$ such that $t$ is type $L(n)$; for example, $N(15) = 832$.
 
-What is $\sum N(n)$ for $1 ≤ n ≤ 10$?
+Чому дорівнює $\sum N(n)$ за умови $1 ≤ n ≤ 10$?
 
 # --hints--
 

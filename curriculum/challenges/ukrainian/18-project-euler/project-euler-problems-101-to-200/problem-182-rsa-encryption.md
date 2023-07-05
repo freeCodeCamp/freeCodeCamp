@@ -24,7 +24,7 @@ For any given `p` and `q`, find the sum of all values of `e`, `1 < e < φ(p,q)` 
 
 # --hints--
 
-`RSAEncryption` should be a function.
+`RSAEncryption` має бути функцією.
 
 ```js
 assert(typeof RSAEncryption === 'function')

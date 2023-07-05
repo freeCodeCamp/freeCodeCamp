@@ -1,6 +1,6 @@
 ---
 id: 646d0a022da7bcabf3e3aca3
-title: Step 44
+title: Крок 44
 challengeType: 0
 dashedName: step-44
 ---
@@ -9,7 +9,7 @@ dashedName: step-44
 
 The concept of returning a function within a function is called <dfn>currying</dfn>. This approach allows you to create a variable that holds a function to be called later, but with a reference to the parameters of the outer function call.
 
-For example:
+Наприклад:
 
 ```js
 const innerOne = elemValue(1);
@@ -22,31 +22,31 @@ You'll get some more practice with this. Declare a function called `addCharacter
 
 # --hints--
 
-You should declare an `addCharacters` variable.
+Ви повинні оголосити змінну `addCharacters`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*(?:var|let|const)\s+addCharacters/);
 ```
 
-You should use `const` to declare your `addCharacters` variable.
+Ви повинні використати `const`, щоб оголосити змінну `addCharacters`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters/);
 ```
 
-Your `addCharacters` variable should be an arrow function.
+Змінна `addCharacters` має бути стрілковою функцією.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?.*\)?\s*=>/);
 ```
 
-Your `addCharacters` function should not use an implicit return.
+Функція `addCharacters` не повинна використовувати неявне повернення.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?.*\)?\s*=>\s*\{/);
 ```
 
-Your `addCharacters` function should have a `character1` parameter.
+Функція `addCharacters` повинна мати параметр `character1`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?\s*character1\s*\)?\s*=>/);

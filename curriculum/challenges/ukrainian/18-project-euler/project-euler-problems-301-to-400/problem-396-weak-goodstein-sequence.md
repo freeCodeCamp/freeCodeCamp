@@ -28,9 +28,9 @@ It can be shown that every weak Goodstein sequence terminates.
 
 Let $G(n)$ be the number of nonzero elements in the $n$th weak Goodstein sequence.
 
-It can be verified that $G(2) = 3$, $G(4) = 21$ and $G(6) = 381$.
+Можна довести, що $G(2) = 3$, $G(4) = 21$ та $G(6) = 381$.
 
-It can also be verified that $\sum G(n) = 2517$ for $1 ≤ n &lt; 8$.
+Також можна довести, що $\sum G(n) = 2517$ за умови $1 ≤ n &lt; 8$.
 
 Знайдіть останні дев’ять цифр $\sum G(n)$ за умови $1 ≤ n &lt; 16$.
 

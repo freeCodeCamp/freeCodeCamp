@@ -22,7 +22,7 @@ For example, (209, 247, 286) is a canonical ellipsoidal triplet.
 
 Let $C(N)$ be the number of distinct canonical ellipsoidal triplets ($a$, $b$, $c$) for $a ≤ N$.
 
-It can be verified that $C({10}^3) = 7$, $C({10}^4) = 106$ and $C({10}^6) = 11\\,845$.
+Можна довести, що $C({10}^3) = 7$, $C({10}^4) = 106$ та $C({10}^6) = 11\\,845$.
 
 Знайдіть $C({10}^{17})$.
 
