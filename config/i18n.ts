@@ -82,7 +82,8 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Ukrainian]: 'Українська',
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
-  [Languages.Arabic]: 'العربية'
+  [Languages.Arabic]: 'العربية',
+  [Languages.Swahili]: 'Swahili'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -107,7 +108,11 @@ export const LangCodes = {
  * This array contains languages that should NOT appear in the language selector.
  */
 // German is temporarily disabled until the new RWD is fully translated
-export const hiddenLangs = [Languages.Arabic, Languages.German];
+export const hiddenLangs = [
+  Languages.Arabic,
+  Languages.German,
+  Languages.Swahili
+];
 
 /**
  * This array contains languages that use the RTL layouts.
