@@ -19,7 +19,7 @@ dashedName: the-cascade-of-css-question-f
 }
 ```
 
-Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining selector (no space) and rule 2 uses a descendant combinator (the empty space). But both rules have two classes and the combinator symbol itself does not add to the specificity.
+Обидва правила мають однакову специфічність. Правило №1 використовує об’єднуючий селектор (немає пробілу), а правило №2 використовує нащадка (є пробіл). Однак обидва правила мають два класи, а символ комбінатора не додає специфічності.
 
 ```css
 /* rule 1 */
@@ -32,15 +32,15 @@ Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining se
 }
 ```
 
-This example shows the same thing. Even though rule 2 is using a child combinator (`>`), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
+Цей приклад показує те саме. Хоча правило №2 використовує дочірній комбінатор (`>`), значення специфічності не змінюється. Обидва правила мають два класи, тому специфічність однакова.
 
-*Note:* Not everything adds to specificity When comparing selectors, you may come across special symbols for the universal selector (`*`) as well as combinators (`+`, `~`, `>`, and an empty space). These symbols do not add any specificity in and of themselves.
+*Примітка:* не все впливає на специфічність. Порівнюючи селектори, ви можете наткнутись на спеціальні символи універсального селектора (`*`), а також комбінаторів (`+`, `~`, `>` й пробіл). Такі символи не додають жодної специфічності.
 
 # --question--
 
 ## --text--
 
-Based on the given CSS code, which font size would be applied to elements with the class "class second-class"?
+На основі наданого коду CSS, який розмір шрифту буде застосовано до елементів з класом «class second-class»?
 
 ## --answers--
 

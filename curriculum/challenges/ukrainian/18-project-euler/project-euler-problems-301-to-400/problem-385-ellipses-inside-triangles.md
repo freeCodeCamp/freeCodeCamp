@@ -21,7 +21,7 @@ Let $A(n)$ be the sum of the areas of all such triangles.
 
 For example, if $n = 8$, there are two such triangles. Their vertices are (-4,-3), (-4,3), (8,0) and (4,3), (4,-3), (-8,0), and the area of each triangle is 36. Thus $A(8) = 36 + 36 = 72$.
 
-It can be verified that $A(10) = 252$, $A(100) = 34\\,632$ and $A(1000) = 3\\,529\\,008$.
+Можна довести, що $A(10) = 252$, $A(100) = 34\\,632$ та $A(1000) = 3\\,529\\,008$.
 
 Знайдіть $A(1\\,000\\,000\\,000)$.
 

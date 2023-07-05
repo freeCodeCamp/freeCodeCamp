@@ -20,31 +20,31 @@ dashedName: the-cascade-of-css-question-e
 }
 ```
 
-In this final example, both rules are using ID and class selectors, so neither rule is using a more specific selector than the other. The cascade then checks the amounts of each selector type. Both rules only have one ID selector, but rule 2 has more class selectors, so rule 2 has a higher specificity!
+В останньому прикладі обидва правила використовують селектори ID та класу, тому жодне правило не використовує специфічнішого селектора. У такому випадку каскад перевіряє кількість кожного типу селектору. Обидва правила мають по одному селектору ID, але правило №2 має більше селекторів класу, а отже має вищу специфічність!
 
-While the `color: red` declaration would take precedence, the `background-color: yellow` declaration would still be applied since there’s no conflicting declaration for it.
+Хоча оголошення `color: red` має перевагу, оголошення `background-color: yellow` все одно буде застосовано, оскільки не виникає конфліктуючого оголошення.
 
 # --question--
 
 ## --text--
 
-Considering the updated CSS code, which of the following describes the rendering of the `<div class="list" id="subsection"></div>` element?
+Враховуючи оновлений код CSS, що з переліченого описує візуалізацію елемента `<div class="list" id="subsection"></div>`?
 
 ## --answers--
 
-Text color: Red, Background color: Transparent
+Колір тексту: червоний, колір фону: прозорий
 
 ---
 
-Text color: Red, Background color: Yellow
+Колір тексту: червоний, колір фону: жовтий
 
 ---
 
-Text color: Blue, Background color: Transparent
+Колір тексту: синій, колір фону: прозорий
 
 ---
 
-Text color: Blue, Background color: Yellow
+Колір тексту: синій, колір фону: жовтий
 
 ## --video-solution--
 

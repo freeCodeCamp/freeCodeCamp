@@ -1,6 +1,6 @@
 ---
 id: 5900f40f1000cf542c50ff22
-title: 'Problem 163: Cross-hatched triangles'
+title: 'Завдання 163: заштриховані трикутники'
 challengeType: 1
 forumTopicId: 301797
 dashedName: problem-163-cross-hatched-triangles
@@ -8,15 +8,15 @@ dashedName: problem-163-cross-hatched-triangles
 
 # --description--
 
-Consider an equilateral triangle in which straight lines are drawn from each vertex to the middle of the opposite side, such as in the size 1 triangle in the sketch below.
+Розглянемо рівносторонній трикутник, у якому проведені меридіани, як у трикутнику розміру 1 на рисунку нижче.
 
-<img class="img-responsive center-block" alt="triangles with size 1 and size 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="трикутники розміру 1 і розміру 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
 
-Sixteen triangles of either different shape or size or orientation or location can now be observed in that triangle. Using size 1 triangles as building blocks, larger triangles can be formed, such as the size 2 triangle in the above sketch. One-hundred and four triangles of either different shape or size or orientation or location can now be observed in that size 2 triangle.
+Тепер у цьому трикутнику можна знайти шістнадцять трикутників різної форми, розміру, напряму чи розташування. Використовуючи трикутники розміру 1 як будівельні блоки, можна сформувати більші трикутники, такі як трикутник розміру 2 на рисунку вище. Тепер у трикутнику розміру 2 можна знайти сто чотири трикутники різної форми, розміру, напряму чи розташування.
 
-It can be observed that the size 2 triangle contains 4 size 1 triangle building blocks. A size 3 triangle would contain 9 size 1 triangle building blocks and a size $n$ triangle would thus contain $n^2$ size 1 triangle building blocks.
+Можна помітити, що трикутник розміру 2 складається з 4 будівельних блоків трикутника розміру 1. Трикутник розміру 3 складатиметься з 9 будівельних блоків трикутника розміру 1, а трикутник розміру $n$ складатиметься з $n^2$ будівельник блоків трикутника розміру 1.
 
-If we denote $T(n)$ as the number of triangles present in a triangle of size $n$, then
+Якщо позначити $T(n)$ як кількість трикутників, що містяться в трикутнику розміру $n$, тоді
 
 $$\begin{align}   & T(1) = 16 \\\\
   & T(2) = 104 \end{align}$$

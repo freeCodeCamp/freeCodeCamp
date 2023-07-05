@@ -11,13 +11,13 @@ To prevent the text content from overflowing, give your `span[class~="sr-only"]`
 
 # --hints--
 
-Your `span[class~="sr-only"]` selector should have an `overflow` property set to `hidden`.
+Dein `span[class~="sr-only"]`-Selektor sollte eine `overflow`-Eigenschaft auf `hidden` gesetzt haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('overflow') === 'hidden');
 ```
 
-Your `span[class~="sr-only"]` selector should have a `white-space` property set to `nowrap`.
+Dein `span[class~="sr-only"]`-Selektor sollte eine `white-space`-Eigenschaft auf `nowrap` gesetzt haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('white-space') === 'nowrap');
