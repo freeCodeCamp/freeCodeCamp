@@ -1,6 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff35
-title: 'Problem 182: RSA encryption'
+title: 'Завдання 182: шифрування RSA'
 challengeType: 1
 forumTopicId: 301818
 dashedName: problem-182-rsa-encryption
@@ -8,19 +8,19 @@ dashedName: problem-182-rsa-encryption
 
 # --description--
 
-The RSA encryption is based on the following procedure:
+Шифрування RSA базується на наступній процедурі:
 
-Generate two distinct primes `p` and `q`. Compute `n=p*q` and `φ=(p-1)(q-1)`. Find an integer `e`, `1 < e < φ`, such that `gcd(e,φ) = 1`
+Згенеруйте два різних простих числа `p` та `q`. Обчисліть `n=p*q` та `φ=(p-1)(q-1)`. Знайдіть ціле число `e`, `1 < e < φ`, за якого `нсд(e,φ) = 1`
 
-A message in this system is a number in the interval `[0,n-1]`. A text to be encrypted is then somehow converted to messages (numbers in the interval `[0,n-1]`). To encrypt the text, for each message, `m`, c=m<sup>e</sup> mod n is calculated.
+Повідомлення в цій системі представлене у вигляді числа з інтервалу `[0,n-1]`. Зашифрований текст потім перетворюється у повідомлення (числа з інтервалу `[0,n-1]`). Щоб зашифрувати текст, для кожного повідомлення обчислюється `m`, c=m<sup>e</sup> mod n.
 
-To decrypt the text, the following procedure is needed: calculate `d` such that `ed=1 mod φ`, then for each encrypted message, `c`, calculate m=c<sup>d</sup> mod n.
+Щоб розшифрувати текст, виконайте наступне: обчисліть `d`, за якого `ed=1 mod φ`, а потім обчисліть m=c<sup>d</sup> mod n для кожного зашифрованого повідомлення `c`.
 
-There exist values of `e` and `m` such that m<sup>e</sup> mod n = m. We call messages `m` for which m<sup>e</sup> mod n=m unconcealed messages.
+Існують значення `e` та `m`, за яких m<sup>e</sup> mod n = m. Повідомлення `m`, за яких m<sup>e</sup> mod n=m, називають відкритими.
 
-An issue when choosing `e` is that there should not be too many unconcealed messages. For instance, let `p=19` and `q=37`. Then `n=19*37=703` and `φ=18*36=648`. If we choose `e=181`, then, although `gcd(181,648)=1` it turns out that all possible messages m `(0≤m≤n-1)` are unconcealed when calculating m<sup>e</sup> mod n. For any valid choice of `e` there exist some unconcealed messages. It's important that the number of unconcealed messages is at a minimum.
+Проблема при виборі `e` полягає в тому, що відкритих повідомлень має бути мало. Наприклад, нехай `p=19` та `q=37`. Тоді `n=19*37=703` та `φ=18*36=648`. Якщо ми оберемо `e=181`, тоді виявиться (хоча `нсд(181,648)=1`), що всі можливі повідомлення m `(0≤m≤n-1)` є відкритими після розрахунку m<sup>e</sup> mod n. Для будь-якого дійсного вибору `e` існує декілька відкритих повідомлень. Важливо, щоб кількість відкритих повідомлень була мінімальною.
 
-For any given `p` and `q`, find the sum of all values of `e`, `1 < e < φ(p,q)` and `gcd(e,φ)=1`, so that the number of unconcealed messages for this value of `e` is at a minimum.
+Знайдіть суму всіх значень `e`, `1 < e < φ(p,q)` та `gcd(e,φ)=1` за будь-яких даних `p` й `q`, щоб кількість відкритих повідомлень за значення `e` була мінімальною.
 
 # --hints--
 
