@@ -402,7 +402,9 @@
     "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Support our charity",

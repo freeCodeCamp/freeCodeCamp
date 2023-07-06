@@ -1010,6 +1010,7 @@
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
       "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
     ],
+    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Write Your First Code Using C#",
