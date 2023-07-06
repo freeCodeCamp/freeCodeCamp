@@ -22,7 +22,6 @@ const QuestionJoi = Joi.object().keys({
   deprecated: Joi.bool(),
   wrongAnswers: Joi.array()
     .items(AnswerJoi)
-    .min(4)
     .required()
     .custom((value, helpers) => {
       const nonDeprecatedCount = value.reduce(
@@ -41,7 +40,6 @@ const QuestionJoi = Joi.object().keys({
     }),
   correctAnswers: Joi.array()
     .items(AnswerJoi)
-    .min(1)
     .required()
     .custom((value, helpers) => {
       const nonDeprecatedCount = value.reduce(
@@ -60,40 +58,28 @@ const QuestionJoi = Joi.object().keys({
     })
 });
 
-const schema = Joi.object()
-  .keys({
-    _id: Joi.objectId().required(),
-    title: Joi.string().required(),
-    numberOfQuestionsInExam: Joi.number().min(1).required(),
-    passingPercent: Joi.number().min(0).max(100).required(),
-    prerequisites: Joi.array().items(PrerequisitesJoi),
-    questions: Joi.array().items(QuestionJoi).min(1).required()
-  })
-  .when(
-    Joi.object({
-      numberOfQuestionsInExam: Joi.number().required(),
-      questions: Joi.array().required()
-    }).unknown(),
-    {
-      then: Joi.object({
-        numberOfQuestionsInExam: Joi.number()
-          .min(1)
-          .max(
-            Joi.ref('questions', {
-              adjust: questions => {
-                const nonDeprecatedCount = questions.reduce(
-                  (count, question) =>
-                    question.deprecated ? count : count + 1,
-                  0
-                );
-                return nonDeprecatedCount;
-              }
-            })
-          )
-          .required()
+const schema = Joi.object().keys({
+  // TODO: make sure _id and title match what's in the challenge markdown file
+  _id: Joi.objectId().required(),
+  title: Joi.string().required(),
+  numberOfQuestionsInExam: Joi.number()
+    .min(1)
+    .max(
+      Joi.ref('questions', {
+        adjust: questions => {
+          const nonDeprecatedCount = questions.reduce(
+            (count, question) => (question.deprecated ? count : count + 1),
+            0
+          );
+          return nonDeprecatedCount;
+        }
       })
-    }
-  );
+    )
+    .required(),
+  passingPercent: Joi.number().min(0).max(100).required(),
+  prerequisites: Joi.array().items(PrerequisitesJoi),
+  questions: Joi.array().items(QuestionJoi).min(1).required()
+});
 
 export const validateExamSchema = exam => {
   return schema.validate(exam);
