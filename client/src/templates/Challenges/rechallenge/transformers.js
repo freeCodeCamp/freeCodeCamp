@@ -19,6 +19,7 @@ import {
   compileHeadTail
 } from '../../../../../utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
+import { wrapInCoroutine } from './transform-python';
 
 const { filename: sassCompile } = sassData;
 
@@ -340,7 +341,6 @@ function modifyInputStatements(line) {
   return [line];
 }
 
-// TODO: handle input statements outside of functions
 const transformPython = async function (file) {
   const code = file.contents;
 
@@ -395,7 +395,8 @@ const transformPython = async function (file) {
     modifiedLines.push(...updatedLines);
   }
   const newCode = modifiedLines.join('\n');
-  return transformContents(() => newCode, file);
+  const cancellableCode = wrapInCoroutine(newCode);
+  return transformContents(() => cancellableCode, file);
 };
 
 // TODO: So, transformers only run on build (duh!). So, python code will have to

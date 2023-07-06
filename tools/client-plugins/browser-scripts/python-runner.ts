@@ -42,7 +42,9 @@ type Input = (text: string) => Promise<string>;
 
 type Print = (...args: unknown[]) => void;
 
-function createHelpers(term: Terminal) {
+type ResetTerminal = () => void;
+
+function createHelpers(term: Terminal, disposables: IDisposable[]) {
   function print(...args: unknown[]) {
     const text = args
       .map(arg => {
@@ -61,6 +63,8 @@ function createHelpers(term: Terminal) {
 
   const writeLine = (text: string) => term.writeln(`>>> ${text}`);
 
+  // TODO: this is not nice. Is there a clever way to avoid having to close over
+  // disposable AND disposables?
   const waitForInput = (): Promise<string> =>
     new Promise(resolve => {
       let userinput = '';
@@ -94,6 +98,7 @@ function createHelpers(term: Terminal) {
       };
 
       disposable = term.onData(keyListener); // Listen for key events and store the disposable
+      disposables.push(disposable);
     });
 
   const input = async (text: string) => {
@@ -101,38 +106,58 @@ function createHelpers(term: Terminal) {
     return await waitForInput();
   };
 
-  return { print, input };
+  const resetTerminal = () => {
+    term.reset();
+    disposables.forEach(disposable => disposable.dispose());
+    disposables.length = 0;
+  };
+
+  return { print, input, resetTerminal };
 }
 
 function setupRunPython(
   pyodide: PyodideInterface,
-  { input, print }: { input: Input; print: Print }
+  {
+    input,
+    print,
+    resetTerminal
+  }: { input: Input; print: Print; resetTerminal: ResetTerminal }
 ) {
   window.print = print;
   // @ts-expect-error I'll update the window type later
   window.input = input;
 
-  async function runPython(code: string) {
+  // Make print and input available to python
+  console.log('Setting up print and input');
+  // TODO: use registerJsModule or jsglobals so we don't have to modify
+  // window and can pass in print and input as arguments.
+  pyodide.runPython(`
+  import js
+  from js import print
+  from js import input
+  `);
+
+  function runPython(code: string) {
+    console.log('Stopping python');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    pyodide.globals.get('__cancel')?.();
+    resetTerminal();
     // Pyodide doesn't clear the global namespace when you runPython, so we have
     // to.
+
+    // TODO: figure out how to import print and input AND clear the other globals
+    // (just filter out print and input?)
+
     console.log('Clearing globals');
     pyodide.runPython(`
 user_defined = [var for var in globals().copy() if not var.startswith("__")]
 for var in user_defined:
-  del globals()[var]`);
-    // Make print and input available to python
-    console.log('Setting up print and input');
-    // TODO: use registerJsModule or jsglobals so we don't have to modify
-    // window and can pass in print and input as arguments.
-    pyodide.runPython(`
-import js
-from js import print
-from js import input
-`);
+    del globals()[var]`);
+
     console.log('Running python');
-    // This need to be async because we use top-level await in the python code
-    // (input is transformed into an async function that must be awaited)
-    await pyodide.runPythonAsync(code);
+    console.log('code', code);
+
+    pyodide.runPython(code);
     console.log('Python finished');
     return pyodide;
   }
@@ -144,7 +169,8 @@ async function initPythonFrame() {
   console.log('Initializing python frame');
   const term = createTerminal();
   const pyodide = await setupPyodide();
-  const helpers = createHelpers(term);
+  const disposables: IDisposable[] = [];
+  const helpers = createHelpers(term, disposables);
   setupRunPython(pyodide, helpers);
 }
 
@@ -250,11 +276,16 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
             inputIterator ? inputIterator.next().value : ''
           );
         },
-        print: () => void 0
+        // We don't, currently, care what print is called with, hence the dummy
+        // function
+        print: () => void 0,
+        // reset is only necessary when calling __runPython more than once, which
+        // we don't do in the test frame
+        resetTerminal: () => void 0
       });
 
       // Make __pyodide available to the test code
-      const __pyodide = await this.__runPython(code);
+      const __pyodide = this.__runPython(code);
       // TODO: less terrible name for this. It's the function that actually tests
       // the code. (probably rename the object instead of the function)
       await test.test();

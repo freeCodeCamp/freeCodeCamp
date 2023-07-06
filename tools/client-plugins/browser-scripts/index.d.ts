@@ -12,7 +12,7 @@ export interface FrameDocument extends Document {
     { pass: boolean } | { err: { message: string; stack?: string } }
   >;
   __initPythonFrame: () => Promise<void>;
-  __runPython: (code: string) => Promise<PyodideInterface>;
+  __runPython: (code: string) => PyodideInterface;
 }
 
 export interface InitTestFrameArg {
