@@ -280,7 +280,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     ];
     for (const word of lowers)
       convertedTitle = convertedTitle.replace(
-        new RegExp('\\s' + word, 'g'),
+        new RegExp('\\s' + word + '(?!\\w)', 'g'),
         txt => txt.toLowerCase()
       );
 
