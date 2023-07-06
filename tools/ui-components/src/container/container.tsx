@@ -1,14 +1,23 @@
 import React from 'react';
-
-const styles = {
-  width: 'min(100% - 2rem, 20em)',
-  margin: '0 auto'
-};
+import type { ContainerProps } from './types';
 
 export const Container = ({
-  children
-}: {
-  children?: React.ReactNode;
-}): JSX.Element => {
-  return <div style={styles}>{children}</div>;
+  children,
+  className,
+  fluid
+}: ContainerProps): JSX.Element => {
+  let elementClasses = '';
+  if (!fluid) {
+    elementClasses = `my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px]`;
+  }
+
+  if (!className) {
+    className = '';
+  }
+
+  return (
+    <div className={`mx-auto px-[15px] ${elementClasses} ${className}`}>
+      {children}
+    </div>
+  );
 };

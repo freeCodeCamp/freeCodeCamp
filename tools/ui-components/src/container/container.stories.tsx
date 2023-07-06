@@ -8,10 +8,30 @@ const story = {
 };
 
 const Template: Story<ContainerProps> = args => {
-  return <Container {...args}>test</Container>;
+  return (
+    <Container {...args}>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+      <p>Random text to test the element width</p>
+    </Container>
+  );
 };
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Fluid = Template.bind({});
+Fluid.args = {
+  fluid: true
+};
 
 export default story;
