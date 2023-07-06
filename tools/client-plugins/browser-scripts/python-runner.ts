@@ -137,7 +137,7 @@ function setupRunPython(
   from js import input
   `);
 
-  function runPython(code: string) {
+  async function runPython(code: string) {
     console.log('Stopping python');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     pyodide.globals.get('__cancel')?.();
@@ -148,16 +148,19 @@ function setupRunPython(
     // TODO: figure out how to import print and input AND clear the other globals
     // (just filter out print and input?)
 
-    console.log('Clearing globals');
-    pyodide.runPython(`
-user_defined = [var for var in globals().copy() if not var.startswith("__")]
-for var in user_defined:
-    del globals()[var]`);
+    // TODO: can we simply 'save' the globals on setup and then restore them?
+    // This filtering stuff isn't great.
+    //     console.log('Clearing globals');
+    //     pyodide.runPython(`
+    // user_defined = [var for var in globals().copy() if not var.startswith("__")]
+    // not_helper = [var for var in user_defined if var not in ["input", "print"]]
+    // for var in not_helper:
+    //     del globals()[var]`);
 
     console.log('Running python');
     console.log('code', code);
 
-    pyodide.runPython(code);
+    await pyodide.runPythonAsync(code);
     console.log('Python finished');
     return pyodide;
   }
@@ -285,7 +288,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       });
 
       // Make __pyodide available to the test code
-      const __pyodide = this.__runPython(code);
+      const __pyodide: PyodideInterface = await this.__runPython(code);
       // TODO: less terrible name for this. It's the function that actually tests
       // the code. (probably rename the object instead of the function)
       await test.test();

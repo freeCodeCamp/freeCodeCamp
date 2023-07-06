@@ -32,7 +32,8 @@ async def cancellable_coroutine():
 __task = asyncio.create_task(cancellable_coroutine())
 
 def __cancel():
-    __task.cancel()`;
+    __task.cancel()
+await __task`;
 
       expect(wrapInCoroutine(inputCode)).toEqual(wrappedCode);
     });

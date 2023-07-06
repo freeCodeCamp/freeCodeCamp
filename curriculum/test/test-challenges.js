@@ -577,6 +577,9 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
 
       // TODO: this is doing too much. It shouldn't need to be conditionally
       // initializing the python frame. Use a separate function for this?
+
+      // TODO: we need to avoid initializing the python frame for each test.
+      // It's just too slow.
       await (document.__initPythonFrame && document.__initPythonFrame());
       await document.__initTestFrame({
         code: sources,
