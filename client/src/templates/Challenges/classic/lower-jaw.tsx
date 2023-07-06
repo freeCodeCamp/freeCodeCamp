@@ -118,7 +118,7 @@ const LowerJawTips = ({
 const LowerJawQuote = ({ quote }: { quote: string }) => (
   <div className='hint-status fade-in'>
     <Quote aria-hidden='true' />
-    <div className='hint-description'>
+    <div id='lowerjaw-quote'>
       <p>{`"${quote}"`}</p>
     </div>
   </div>
