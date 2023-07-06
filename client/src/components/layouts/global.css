@@ -458,10 +458,6 @@ input:focus {
 }
 
 :not(pre) > code {
-  border: 1px solid var(--secondary-color);
-}
-
-:not(pre) > code {
     border: 1px solid var(--secondary-color);
 }
 code {
