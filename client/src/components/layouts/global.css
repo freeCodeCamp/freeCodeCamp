@@ -452,6 +452,7 @@ textarea {
 form {
   margin-bottom: 5px;
 }
+
 .form-control:focus,
 input:focus {
   border-color: var(--tertiary-color);
@@ -460,6 +461,7 @@ input:focus {
 :not(pre) > code {
     border: 1px solid var(--secondary-color);
 }
+
 code {
   padding: 1px 4px;
   background-color: var(--quaternary-background);
