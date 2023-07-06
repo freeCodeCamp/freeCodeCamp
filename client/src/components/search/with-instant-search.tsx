@@ -58,7 +58,7 @@ function InstantSearchRoot({
   children
 }: InstantSearchRootProps) {
   const isMobile = useMediaQuery({
-    query: `(min-width: 768px)`
+    query: `(min-height: 768px)`
   });
 
   // https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state
