@@ -12,25 +12,55 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 ## --text--
 
-What does the box-sizing CSS property do?
+How do you set the alternative box model for all of your elements?
 
 ## --answers--
 
-It determines the order of the box-model properties.
+```css
+html {
+    box-sizing: inherit;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+```
 
 ---
 
-It specifies the position of an element on the webpage.
+```css
+* {
+    box-sizing: border-box;
+}
+```
 
 ---
 
-It controls how the total width and height of an element are calculated.
+```css
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+}
+```
 
 ---
 
-It sets the background color of an element.
+```css
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+```
+
 
 
 ## --video-solution--
 
-3
+4

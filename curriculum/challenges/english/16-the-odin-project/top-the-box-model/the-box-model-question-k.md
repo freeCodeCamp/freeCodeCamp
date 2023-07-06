@@ -12,25 +12,24 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 ## --text--
 
-What does the box-sizing CSS property do?
+Which CSS property would you use to create more space between the contents of an element and its border?
 
 ## --answers--
 
-It determines the order of the box-model properties.
+Margin
 
 ---
 
-It specifies the position of an element on the webpage.
+Padding
 
 ---
 
-It controls how the total width and height of an element are calculated.
+Border
 
 ---
 
-It sets the background color of an element.
-
+Float
 
 ## --video-solution--
 
-3
+2

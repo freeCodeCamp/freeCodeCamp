@@ -12,25 +12,25 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 ## --text--
 
-What does the box-sizing CSS property do?
+Would you use margin or padding to create more space between 2 elements?
 
 ## --answers--
 
-It determines the order of the box-model properties.
+Padding
 
 ---
 
-It specifies the position of an element on the webpage.
+Both margin and padding can be used interchangeably
 
 ---
 
-It controls how the total width and height of an element are calculated.
+Neither margin nor padding can be used to create more space between elements
 
 ---
 
-It sets the background color of an element.
+Margin
 
 
 ## --video-solution--
 
-3
+4

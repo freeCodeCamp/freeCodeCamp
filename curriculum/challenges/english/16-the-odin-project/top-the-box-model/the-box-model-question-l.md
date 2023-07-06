@@ -12,25 +12,16 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 ## --text--
 
-What does the box-sizing CSS property do?
+Would you use margin or padding if you wanted two elements to overlap each other?
 
 ## --answers--
 
-It determines the order of the box-model properties.
+Padding
 
 ---
 
-It specifies the position of an element on the webpage.
-
----
-
-It controls how the total width and height of an element are calculated.
-
----
-
-It sets the background color of an element.
-
+Margin
 
 ## --video-solution--
 
-3
+2
