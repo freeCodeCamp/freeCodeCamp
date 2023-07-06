@@ -62,8 +62,6 @@ function maximumPathSumII(triangle) {
 
   return true;
 }
-
-maximumPathSumII(testTriangle);
 ```
 
 # --solutions--
