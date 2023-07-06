@@ -461,6 +461,9 @@ input:focus {
   border: 1px solid var(--secondary-color);
 }
 
+:not(pre) > code {
+    border: 1px solid var(--secondary-color);
+}
 code {
   padding: 1px 4px;
   background-color: var(--quaternary-background);
