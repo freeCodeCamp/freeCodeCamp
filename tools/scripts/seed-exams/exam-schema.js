@@ -44,12 +44,11 @@ const QuestionJoi = Joi.object().keys({
     .min(1)
     .required()
     .custom((value, helpers) => {
-      const deprecatedCount = value.reduce(
-        (count, answer) => (answer.deprecated === true ? count + 1 : count),
+      const nonDeprecatedCount = value.reduce(
+        (count, answer) => (answer.deprecated ? count : count + 1),
         0
       );
       const minimumAnswers = 1;
-      const nonDeprecatedCount = value.length - deprecatedCount;
 
       if (nonDeprecatedCount < minimumAnswers) {
         return helpers.message(
