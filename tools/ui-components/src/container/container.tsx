@@ -8,7 +8,7 @@ const styles = {
 export const Container = ({
   children
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }): JSX.Element => {
   return <div style={styles}>{children}</div>;
 };
