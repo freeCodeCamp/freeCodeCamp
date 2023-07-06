@@ -1,8 +1,8 @@
 ---
 id: 64a5529c02815a7d323aab88
-title: Inspecting HTML and CSS Question A
+title: The Box Model Question A
 challengeType: 15
-dashedName: inspecting-html-and-css-question-a
+dashedName: the-box-model-question-a
 ---
 # --description--
 

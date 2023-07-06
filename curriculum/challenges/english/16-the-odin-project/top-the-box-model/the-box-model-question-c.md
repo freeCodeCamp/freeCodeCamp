@@ -1,8 +1,8 @@
 ---
-id: 64a55a6102815a7d323aab8b
-title: Inspecting HTML and CSS Question D
+id: 64a5551d02815a7d323aab8a
+title: The Box Model Question C
 challengeType: 15
-dashedName: inspecting-html-and-css-question-d
+dashedName: the-box-model-question-c
 --- 
 # --description--
 
@@ -23,11 +23,11 @@ Play around with Chrome Dev Tools and see if you can answer the following questi
 
 ## --text--
 
-In the Style pane, what information can you view about an element when it is selected?
+Which feature in the Elements pane allows you to select any element on a webpage by hovering over it?
 
 ## --answers--
 
-HTML structure and CSS rules
+Blue-highlighted icon
 
 ---
 
@@ -39,7 +39,7 @@ Inspector tab
 
 ---
 
-Applied styles and overwritten styles.
+HTML structure view 
 
 
 ## --video-solution--

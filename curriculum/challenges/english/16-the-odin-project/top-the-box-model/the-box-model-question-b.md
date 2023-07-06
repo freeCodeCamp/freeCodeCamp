@@ -1,9 +1,9 @@
 ---
-id: 64a5551d02815a7d323aab8a
-title: Inspecting HTML and CSS Question C
+id: 64a553ed02815a7d323aab89
+title: The Box Model Question B
 challengeType: 15
-dashedName: inspecting-html-and-css-question-c
---- 
+dashedName: the-box-model-question-b
+---
 # --description--
 
 In the Elements pane, you can see the entire HTML structure of your page. You can click on any of the elements in this pane to select that specific element. Alternatively, you can click the blue-highlighted icon shown below on the left, and hover over any element on the page.
@@ -14,34 +14,28 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 ![Alt Text](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 
-
-# --question--
-
-## --assignment--
-
-Play around with Chrome Dev Tools and see if you can answer the following question.
+# --question--    
 
 ## --text--
 
-Which feature in the Elements pane allows you to select any element on a webpage by hovering over it?
+When inspecting an element in the Chrome Dev Tools, if a style property is shown with a strikethrough, what does it indicate?
 
 ## --answers--
 
-Blue-highlighted icon
+The style property is currently disabled and not applied to the element.
 
 ---
 
-Styles tab
+The style property is overridden by a more specific CSS rule.
 
 ---
 
-Inspector tab
+The style property is deprecated and should not be used.
 
 ---
 
-HTML structure view 
-
+The style property is experimental and may not be supported by all browsers
 
 ## --video-solution--
 
-2
+2   
