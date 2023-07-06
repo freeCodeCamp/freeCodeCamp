@@ -250,6 +250,50 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     }
   `);
   const idToNameMap = new Map();
+
+  function titleConverter(title: string) {
+    let convertedString = title
+      .replace(/(\w+-*)/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase();
+      })
+      .replace(/-/g, ' ');
+
+    const lowers = [
+      'A',
+      'An',
+      'The',
+      'And',
+      'But',
+      'Or',
+      'For',
+      'As',
+      'At',
+      'By',
+      'For',
+      'From',
+      'In',
+      'Into',
+      'Of',
+      'On',
+      'To',
+      'With'
+    ];
+    for (const word of lowers)
+      convertedString = convertedString.replace(
+        new RegExp('\\s' + word, 'g'),
+        txt => txt.toLowerCase()
+      );
+
+    const uppers = ['Html', 'Css'];
+    for (const word of uppers)
+      convertedString = convertedString.replace(
+        new RegExp(word, 'g'),
+        word.toUpperCase()
+      );
+
+    return convertedString;
+  }
+
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
     const certName = t(`certification.title.${certPath}`);
@@ -273,7 +317,8 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     }) => {
       idToNameMap.set(id, {
         challengeTitle: `${
-          title.includes('Step') ? `${blockName} - ` : ''
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          title.includes('Step') ? `${titleConverter(blockName)} - ` : ''
         }${title}`,
         challengePath: slug
       });
