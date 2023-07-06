@@ -64,7 +64,7 @@ const schema = Joi.object()
   .keys({
     _id: Joi.objectId().required(),
     title: Joi.string().required(),
-    numberOfQuestionsInExam: Joi.number().min(0).max(10).required(),
+    numberOfQuestionsInExam: Joi.number().min(1).required(),
     passingPercent: Joi.number().min(0).max(100).required(),
     prerequisites: Joi.array().items(PrerequisitesJoi),
     questions: Joi.array().items(QuestionJoi).min(1).required()
@@ -77,15 +77,16 @@ const schema = Joi.object()
     {
       then: Joi.object({
         numberOfQuestionsInExam: Joi.number()
+          .min(1)
           .max(
             Joi.ref('questions', {
               adjust: questions => {
-                const deprecatedQuestionsCount = questions.reduce(
+                const nonDeprecatedCount = questions.reduce(
                   (count, question) =>
-                    question.deprecated === true ? count + 1 : count,
+                    question.deprecated ? count : count + 1,
                   0
                 );
-                return questions.length - deprecatedQuestionsCount;
+                return nonDeprecatedCount;
               }
             })
           )
