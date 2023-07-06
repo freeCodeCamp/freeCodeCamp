@@ -241,9 +241,14 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         })
       );
       const test = await testPromise;
+      // TODO: throw helpful error if we run out of input values, since it's likely
+      // that the user added too many input statements.
+      const inputIterator = test.input ? test.input.values() : null;
       setupRunPython(pyodide, {
         input: () => {
-          return Promise.resolve(test.input ? test.input[0] : '');
+          return Promise.resolve(
+            inputIterator ? inputIterator.next().value : ''
+          );
         },
         print: () => void 0
       });
