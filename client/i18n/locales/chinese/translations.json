@@ -402,7 +402,9 @@
     "season-greetings-fcc": "来自 freeCodeCamp 社区的季节问候 🎉",
     "if-getting-value": "如果你从 freeCodeCamp 中获益良多，可以捐款支持我们的慈善组织的使命。",
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
-    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。"
+    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "支持我们的慈善组织",

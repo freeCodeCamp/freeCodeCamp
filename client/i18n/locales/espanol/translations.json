@@ -402,7 +402,9 @@
     "season-greetings-fcc": "Saludos de Temporada de la comunidad freeCodeCamp 🎉",
     "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar con el fin de apoyar nuestra misión sin fines de lucro.",
     "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
-    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante."
+    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Apoya nuestra caridad",
