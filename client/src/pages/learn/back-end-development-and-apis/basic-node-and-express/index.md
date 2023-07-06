@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Basic Node and Express Challenges
-block: Basic Node and Express
-superBlock: Back End Development and APIs
+block: basic-node-and-express
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the Basic Node and Express Challenges

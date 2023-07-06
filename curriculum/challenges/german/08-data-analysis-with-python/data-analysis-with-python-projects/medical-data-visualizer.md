@@ -1,6 +1,6 @@
 ---
 id: 5e46f7f8ac417301a38fb92a
-title: Medical Data Visualizer
+title: Medizinischer Datenvisualisierer
 challengeType: 10
 forumTopicId: 462368
 dashedName: medical-data-visualizer
@@ -44,9 +44,9 @@ Dateiname: medical_examination.csv
 |                 Rauchen                  | Subjective Feature  |    `smoke`    |                        binär                        |
 |              Alkoholkonsum               | Subjective Feature  |    `alco`     |                        binär                        |
 |          Körperliche Aktivität           | Subjective Feature  |   `active`    |                        binär                        |
-| Leiden unter Herz-Kreislauf-Erkrankungen |   Target Variable   |   `cardio`    |                        binär                        |
+| Leiden unter Herz-Kreislauf-Erkrankungen |    Zielvariable     |   `cardio`    |                        binär                        |
 
-## Tasks
+## Aufgaben
 
 Erstelle ein Diagramm, ähnlich wie `examples/Figure_1.png`, in dem wir die guten und schlechten Ergebnisse für `cholesterol`, `gluc`, `alco`, `active`, und `smoke`-Variablen der Patienten mit cardio=1 und cardio=0 in verschiedenen Panels anzeigen.
 
@@ -69,19 +69,19 @@ Modultests werden für dich in `test_module.py` geschrieben.
 
 ## Entwicklung
 
-Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Click the "run" button and `main.py` will run.
+Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Klicke den "Run"-Button und `main.py` wird ausgeführt.
 
-## Testing
+## Testen
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+We imported the tests from `test_module.py` to `main.py` for your convenience. Die Tests werden automatisch ausgeführt, wenn du auf den "Run"-Button klickst.
 
-## Submitting
+## Absenden
 
-Copy your project's URL and submit it to freeCodeCamp.
+Kopiere die URL deines Projekts und sende sie an freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Es sollte alle Python-Tests bestehen.
 
 ```js
 

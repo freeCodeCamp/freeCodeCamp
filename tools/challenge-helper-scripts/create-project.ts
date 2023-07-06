@@ -5,13 +5,17 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
-import { SuperBlocks } from '../../config/certification-settings';
-import { blockNameify } from '../../utils/block-nameify';
+import { SuperBlocks } from '../../config/superblocks';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
-const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
+const helpCategories = [
+  'HTML-CSS',
+  'JavaScript',
+  'Backend Development',
+  'Python'
+] as const;
 
 type BlockInfo = {
   title: string;
@@ -40,15 +44,19 @@ async function createProject(
   title?: string
 ) {
   if (!title) {
-    title = blockNameify(block);
-  } else if (title !== blockNameify(block)) {
-    void updateBlockNames(block, title);
+    title = block;
   }
   void updateIntroJson(superBlock, block, title);
-  void updateHelpCategoryMap(block, helpCategory);
 
   const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(superBlock, block, title, order, challengeId);
+  void createMetaJson(
+    superBlock,
+    block,
+    title,
+    helpCategory,
+    order,
+    challengeId
+  );
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
@@ -74,38 +82,11 @@ async function updateIntroJson(
   );
 }
 
-async function updateHelpCategoryMap(block: string, helpCategory: string) {
-  const helpCategoryPath = path.resolve(
-    __dirname,
-    '../../client/utils/help-category-map.json'
-  );
-  const helpMap = await parseJson<Record<string, string>>(helpCategoryPath);
-  helpMap[block] = helpCategory;
-  void withTrace(
-    fs.writeFile,
-    helpCategoryPath,
-    format(JSON.stringify(helpMap), { parser: 'json' })
-  );
-}
-
-async function updateBlockNames(block: string, title: string) {
-  const blockNamesPath = path.resolve(
-    __dirname,
-    '../../utils/preformatted-block-names.json'
-  );
-  const blockNames = await parseJson<Record<string, string>>(blockNamesPath);
-  blockNames[block] = title;
-  void withTrace(
-    fs.writeFile,
-    blockNamesPath,
-    format(JSON.stringify(blockNames), { parser: 'json' })
-  );
-}
-
 async function createMetaJson(
   superBlock: SuperBlocks,
   block: string,
   title: string,
+  helpCategory: string,
   order: number,
   challengeId: ObjectID
 ) {
@@ -113,6 +94,7 @@ async function createMetaJson(
   const newMeta = await parseJson<Meta>('./base-meta.json');
   newMeta.name = title;
   newMeta.dashedName = block;
+  newMeta.helpCategory = helpCategory;
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
@@ -133,7 +115,7 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
-superBlock: Responsive Web Design
+superBlock: ${superBlock}
 isBeta: true
 ---
 
@@ -227,7 +209,7 @@ void prompt([
   },
   {
     name: 'title',
-    default: ({ block }: { block: string }) => blockNameify(block)
+    default: ({ block }: { block: string }) => block
   },
   {
     name: 'helpCategory',

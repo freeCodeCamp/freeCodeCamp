@@ -1,8 +1,8 @@
 # How to open a Pull Request (PR)
 
-A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+We expect our contributors to be aware of the process specific to this project. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Some examples of this are:
 
@@ -18,7 +18,7 @@ Some examples of this are:
 > [!NOTE]
 > Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## Prepare a good PR title
+## Prepare a Good PR Title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
@@ -34,7 +34,7 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 | Type  | When to select                                                                   |
 | :---- | :------------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
 | feat  | Only if you are adding new functionality, tests, etc.                            |
 | chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
 | docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
@@ -91,11 +91,11 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
-## Feedback on pull requests
+## Feedback on Pull Requests
 
 > :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
@@ -106,13 +106,13 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 > [!TIP]
 > If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Conflicts on a pull request
+## Conflicts on a Pull Request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
 More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
-### For usual bug fixes and features
+### For Usual Bug Fixes and Features
 
 When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
@@ -141,7 +141,7 @@ When you are working on regular bugs and features on our development branch `mai
    git push --force origin <pr-branch>
    ```
 
-### For upcoming curriculum and features
+### For Upcoming Curriculum and Features
 
 When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 

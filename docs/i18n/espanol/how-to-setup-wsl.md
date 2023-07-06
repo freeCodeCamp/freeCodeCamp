@@ -1,6 +1,6 @@
 # Configurar freeCodeCamp en el subsistema de Windows para Linux (WSL)
 
-> [!NOTE] Antes de seguir estas instrucciones asegúrate de que tu sistema cumple con los requisitos
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements.
 > 
 > **WSL 2**: Windows 10 64-bit (Versión 2004, Build 19041 o superior) - disponible para todas las distribuciones incluyendo Windows 10 Home.
 > 
@@ -18,7 +18,7 @@ Sigue las instrucciones de la [documentación oficial](https://docs.microsoft.co
 
    > [!NOTE]
    > 
-   > Aunque usted puede utilizar otras distribuciones no basadas en debian, todas vienen con sus propias complicaciones y están más allá del alcance de esta guía.
+   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
 
 2. Actualizar las dependencias del sistema operativo
 
@@ -44,13 +44,13 @@ git version 2.25.1
 
 ## Instalar un editor de código
 
-Recomendamos encarecidamente instalar [Visual Studio Code](https://code.visualstudio.com) en Windows 10. Posee un gran soporte para WSL e instala automáticamente todas las extensiones necesarias en tu distribución de WSL.
+Recomendamos encarecidamente instalar [Visual Studio Code](https://code.visualstudio.com) en Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
 
 Esencialmente, editaras y almacenaras tu código en Ubuntu-18.04 con el VS Code instalado en Windows.
 
-Si utilizas [IntelliJ Idea](https://www.jetbrains.com/idea/), quizás necesites actualizar el intérprete de Node y el gestor de paquetes npm que está instalado en tu distribución WSL.
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
 
-Puedes chequear estas configuraciones yendo a > Idiomas & Librerías > Node.js y NPM.
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
 
 ## Instalando Docker Desktop
 
@@ -72,7 +72,7 @@ Una vez que hayas configurado Docker Desktop para trabajar con WSL2, sigue estos
 
 1. Inicia una nueva terminal Ubuntu-18.04
 
-2. Extrae `MongoDB 4.0.x` desde dockerhub
+2. Pull `MongoDB 4.0.x` from Docker Hub
 
    ```console
    docker pull mongo:4.0
@@ -117,17 +117,17 @@ Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 npm install -g pnpm
 ```
 
-## Configurar freeCodeCamp localmente
+## Set up freeCodeCamp Locally
 
-Ahora que has instalado los requisitos previos, sigue[nuestra guía de configuración local](how-to-setup-freecodecamp-locally.md) para clonar, instalar y configurar freeCodeCamp localmente en tu máquina.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> Tenga en cuenta que en este momento la configuración para las pruebas Cypress (y las necesidades relacionadas con la interfaz de usuario) son un trabajo en curso. Aún así deberías poder trabajar en la mayor parte del código base.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. Aún así deberías poder trabajar en la mayor parte del código base.
 
 ## Enlaces útiles
 
-- [Una configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (Staff Developer en freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Preguntas frecuentes sobre:
   - [Subsistema de Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)

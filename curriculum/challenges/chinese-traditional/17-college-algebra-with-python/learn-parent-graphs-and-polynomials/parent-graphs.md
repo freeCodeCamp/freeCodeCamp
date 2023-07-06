@@ -1,6 +1,6 @@
 ---
 id: 6363d2529078df117ce4c402
-title: "Parent Graphs"
+title: "父圖像"
 challengeType: 15
 videoId: 6S2QhY8rIcw
 dashedName: parent-graphs
@@ -8,15 +8,15 @@ dashedName: parent-graphs
 
 # --description--
 
-In this video, you will see what these parent graphs look like, how to modify them, and how to do this all with Python code.
+在這個視頻中，你將看到這些父/母圖像（parent graphs）是什麼樣子的、如何修改它們，以及如何用 Python 代碼完成這一切。
 
-Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+這是<a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和這個視頻配套的 Colab 筆記本</a>。
 
 # --question--
 
 ## --text--
 
-In numpy, what is the cube root of x?
+在 numpy 中，x 的立方根是什麼？
 
 ## --answers--
 

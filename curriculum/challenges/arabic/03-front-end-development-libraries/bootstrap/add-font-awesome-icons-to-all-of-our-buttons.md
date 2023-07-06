@@ -18,7 +18,7 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 باستخدام Font Awesome, كم بإضافة `info-circle` إلى زر المعلومات, وأيقونة `trash` إلى زر الحذف.
 
-**لاحظ:** يكون عنصر `span` بديل مقبول لعنصر `i` للمتطلبات بالأدنى.
+**Note:** You can use either `i` or `span` elements to complete this challenge.
 
 # --hints--
 

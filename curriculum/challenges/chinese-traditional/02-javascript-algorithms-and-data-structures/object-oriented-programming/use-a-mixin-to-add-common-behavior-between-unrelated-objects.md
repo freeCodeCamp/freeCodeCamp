@@ -44,7 +44,7 @@ bird.fly();
 plane.fly();
 ```
 
-控制檯將顯示字符串 `Flying, wooosh!` 兩次，每 `.fly()` 調用都會顯示。
+控制檯將顯示字符串 `Flying, wooosh!` 兩次，每次 `.fly()` 調用都會顯示。
 
 注意觀察 mixin 是如何允許相同的 `fly` 方法被不相關的對象 `bird` 和 `plane` 重用的。
 

@@ -23,7 +23,7 @@ import {
   postChargeProcessing,
   postChargeError,
   preventBlockDonationRequests,
-  preventProgressDonationRequests,
+  setCompletionCountWhenShownProgressModal,
   executeGA
 } from './actions';
 import {
@@ -45,7 +45,7 @@ function* showDonateModalSaga() {
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
     } else {
-      yield put(preventProgressDonationRequests());
+      yield put(setCompletionCountWhenShownProgressModal());
     }
   }
 }

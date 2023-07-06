@@ -18,43 +18,43 @@ where $count_i$ is the count of character $n_i$.
 
 # --hints--
 
-`entropy` should be a function.
+`entropy` sollte eine Funktion sein.
 
 ```js
 assert(typeof entropy === 'function');
 ```
 
-`entropy("0")` should return `0`
+`entropy("0")` sollte `0` zurückgeben
 
 ```js
 assert.equal(entropy('0'), 0);
 ```
 
-`entropy("01")` should return `1`
+`entropy("01")` sollte `1` zurückgeben
 
 ```js
 assert.equal(entropy('01'), 1);
 ```
 
-`entropy("0123")` should return `2`
+`entropy("0123")` sollte `2` zurückgeben
 
 ```js
 assert.equal(entropy('0123'), 2);
 ```
 
-`entropy("01234567")` should return `3`
+`entropy("01234567")` sollte `3` zurückgeben
 
 ```js
 assert.equal(entropy('01234567'), 3);
 ```
 
-`entropy("0123456789abcdef")` should return `4`
+`entropy("0123456789abcdef")` sollte `4` zurückgeben
 
 ```js
 assert.equal(entropy('0123456789abcdef'), 4);
 ```
 
-`entropy("1223334444")` should return `1.8464393446710154`
+`entropy("1223334444")` sollte `1.8464393446710154` zurückgeben
 
 ```js
 assert.equal(entropy('1223334444'), 1.8464393446710154);

@@ -100,7 +100,7 @@ Would return:
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` sollte eine Funktion sein.
 
 ```js
 assert(typeof getClosestPair === 'function');
@@ -112,7 +112,7 @@ assert(typeof getClosestPair === 'function');
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` sollte `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]` sein.
 
 ```js
 assert.deepEqual(

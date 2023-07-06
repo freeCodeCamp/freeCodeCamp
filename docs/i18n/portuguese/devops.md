@@ -2,9 +2,9 @@
 
 Este guia irá ajudá-lo a entender nossas ferramentas de infraestrutura e como mantemos nossas plataformas. Embora este guia não tenha muitos detalhes para todas as operações, ele pode ser usado como referência para a compreensão dos sistemas.
 
-Fale com a gente, se você tiver algum comentário ou dúvidas, e teremos prazer em esclarecê-las.
+Fale com a gente se tiver algum comentário ou dúvidas e teremos prazer em esclarecê-las.
 
-# Manual de Voo - Implementação de Código
+## Manual de Voo – Implementação de código
 
 Este repositório é continuamente construído, testado e implementado em **conjuntos separados de infraestrutura (servidores, base de dados, CDNs, etc.)**.
 
@@ -14,7 +14,7 @@ Isto implica três passos a serem seguidos em sequência:
 2. Estas alterações são executadas por uma série de testes automatizados.
 3. Uma vez que os testes passem, liberamos as alterações (ou as atualizamos se necessário) para implementações na nossa infraestrutura.
 
-#### Compilando a base de código - mapeando branches do Git para implementações.
+### Compilando a base de código - mapeando branches do Git para implementações
 
 Normalmente, é feito um merge de [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (branch padrão de desenvolvimento) na branch [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) uma vez ao dia e liberada em uma infraestrutura isolada.
 
@@ -26,7 +26,7 @@ Uma vez que a equipe de desenvolvedores [`@freeCodeCamp/dev-team`](https://githu
 
 Esta é a versão final que move as mudanças para as nossas plataformas de produção no freeCodeCamp.org.
 
-#### Testando alterações - Teste de integração e de aceitação do usuário.
+### Testando alterações - Teste de integração e de aceitação do usuário
 
 Empregamos vários níveis de testes de integração e aceitação para verificar a qualidade do código. Todos os nossos testes são feitos através de software como [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) e [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
@@ -36,7 +36,7 @@ Temos testes unitários para nossas soluções de desafio, APIs do servidor e in
 
 Juntos, esses testes ajudam a evitar que problemas se repitam e garantem que não introduzimos um erro enquanto trabalhamos em outra falha ou recurso.
 
-#### Implementando alterações - Enviando alterações para os servidores.
+### Implementando alterações - Enviando alterações para os servidores
 
 Nós configuramos software de entrega contínua para fazer push de mudanças no nosso servidor de desenvolvimento e produção.
 
@@ -44,15 +44,15 @@ Uma vez que as alterações são enviadas para as branches de lançamento proteg
 
 O pipeline de compilação aciona um correspondente pipeline de lançamento se ele completar uma execução bem-sucedida. Os pipelines de lançamento são responsáveis por coletar os artefatos de compilação, movendo-os para os servidores e deixando-os disponíveis para acesso.
 
-Estado de compilações e lançamentos estão [disponíveis aqui](#build-test-and-deployment-status).
+O estado das compilações e lançamentos está [disponível aqui](#build-test-and-deployment-status).
 
 ## Acione uma compilação, um teste e uma implantação
 
 Atualmente, somente membros da equipe de desenvolvedores podem dar push nas branches de produção. As alterações nas branches `production-*` podem ser enviadas para [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp) apenas por meio de um fast-forward merge.
 
-> [!NOTE] Nos próximos dias, nós vamos melhorar este fluxo a ser feito por meio de pull-requests, para melhor gerenciamento de acesso e transparência.
+> [!NOTE] Nos próximos dias, vamos melhorar este fluxo a ser feito por meio de pull-requests, para melhor gerenciamento de acesso e transparência.
 
-### Enviando alterações para aplicações em fase de preparo.
+### Enviando alterações para aplicações em fase de preparo
 
 1. Configure seus remotes corretamente.
 
@@ -110,7 +110,7 @@ As etapas acima vão disparar automaticamente uma execução no pipeline de comp
 
 O pipeline de lançamento é acionado automaticamente quando um novo artefato estiver disponível a partir do pipeline de compilação conectado. Para plataformas de staging, este processo não envolve aprovação manual e os artefatos são empurrados para os servidores de CDN do cliente e API.
 
-### Enviando alterações para aplicações de produção.
+### Enviando alterações para aplicações de produção
 
 O processo é quase o mesmo das plataformas de preparo, com algumas verificações extras. Só para garantir, não quebramos nada no freeCodeCamp.org que possa ver centenas de usuários usá-lo a qualquer momento.
 
@@ -134,7 +134,7 @@ O processo é quase o mesmo das plataformas de preparo, com algumas verificaçõ
    git push upstream
    ```
 
-   > [!NOTE] Você não será capaz de forçar o push e, se você reescreveu o histórico de qualquer forma, esses comandos irão falhar.
+   > [!NOTE] Você não será capaz de dar um force push, e se houver reescrito o histórico de alguma forma, esses comandos vão falhar.
    > 
    > Se falharem, você pode ter feito algo errado e deve começar de novo.
 
@@ -142,7 +142,7 @@ As etapas acima vão disparar automaticamente uma execução no pipeline de comp
 
 **Etapas adicionais para a equipe**
 
-Um release run é acionado, membros da equipe de desenvolvedores receberão um e-mail manual de intervenção automático. Eles podem _aprovar_ ou _rejeitar_ o release run.
+Quando um release run é acionado, membros da equipe de desenvolvedores receberão um e-mail manual de intervenção automático. Eles podem _aprovar_ ou _rejeitar_ o release run.
 
 Se as alterações estão funcionando bem e foram testadas na plataforma de preparo, então podem ser aprovadas. A aprovação deve ser dada no prazo de 4 horas após a liberação ser acionada antes de ser automaticamente rejeitada. Uma equipe pode acionar novamente a execução de lançamento manualmente para execuções rejeitadas ou esperar pelo próximo ciclo de lançamento.
 
@@ -175,7 +175,7 @@ Agradecemos por relatar erros que encontra e ajuda para melhorar o freeCodeCamp.
 
 ### Identificando a próxima versão das plataformas
 
-Atualmente uma versão pública de testes beta está disponível em:
+Atualmente, uma versão pública de testes beta está disponível em:
 
 | Aplicação | Linguagem | URL                                      |
 |:--------- |:--------- |:---------------------------------------- |
@@ -203,19 +203,19 @@ Você pode identificar a versão exata implantada visitando os registros de comp
 
 Existem algumas limitações e desvantagens conhecidas ao usar a versão beta da plataforma.
 
-- #### Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção.
+- **Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção**
 
   **Os usuários na versão beta terão uma conta separada da produção.** A versão beta usa um banco de dados fisicamente separado da produção. Isso nos dá a capacidade de evitar qualquer perda acidental de dados ou modificações. A equipe de desenvolvimento pode limpar o banco de dados nesta versão beta conforme necessário.
 
-- #### Não há garantias na disponibilidade e confiabilidade das plataformas beta.
+- **As plataformas beta não oferecem nenhuma garantia com relação a tempo de atividade e confiabilidade**
 
   Espera-se que a implantação seja frequente e em iterações rápidas, às vezes várias vezes ao dia. Como resultado, haverá tempos de inatividade inesperados ou funcionalidades quebradas na versão beta.
 
-- #### Não envie usuários regulares para este site como uma medida de confirmar uma correção
+- **Para garantir a eficácia da correção, é aconselhável não direcionar usuários regulares para este site para fins de verificação.**
 
   O site beta é e sempre foi para melhorar o desenvolvimento e os testes locais, nada mais. Não é uma promessa do que está por vir, mas um vislumbre do que está sendo trabalhado.
 
-- #### O login na página pode parecer diferente da produção
+- **O login na página pode parecer diferente da produção**
 
   Nós utilizamos um locatário de teste para o freeCodeCamp.dev no Auth 0 e, portanto, não temos a capacidade de definir um domínio personalizado. Isso faz com que todas as callbacks de redirecionamento e a página de login apareçam em um domínio padrão como: `https://freecodecamp-dev.auth0.com/`. Isso não afeta a funcionalidade e é o mais próximo da produção que conseguimos.
 
@@ -225,7 +225,7 @@ Abra novas issues para discussões e informações sobre erros.
 
 Você pode enviar um e-mail para `dev[at]freecodecamp.org` se você tiver alguma dúvida. Como sempre, todas as vulnerabilidades de segurança devem ser relatadas à `security[at]freecodecamp.org` em vez do rastreador público e fórum.
 
-# Manual de voo - Mantendo o servidor
+## Manual de voo - Mantendo o servidor
 
 > [!WARNING]
 > 
@@ -294,11 +294,11 @@ Nós estamos trabalhando na criação da configuração do IaC. Enquanto isso es
 
 ## Mantenha as VMs atualizadas
 
-Você deve manter as VMs atualizadas realizando atualizações e atualizações. Isto vai garantir que a máquina virtual está corrigida com correções de segurança mais recentes.
+Você deve manter as VMs atualizadas realizando atualizações e atualizações. Isto vai garantir que a máquina virtual está corrigida com as correções de segurança mais recentes.
 
 > [!WARNING] Antes de executar estes comandos:
 > 
-> - Certifique-se de que a MV foi completamente fornecida e que não há etapas pós instalação sendo executadas.
+> - Certifique-se de que a MV foi completamente fornecida e que não há etapas pós-instalação sendo executadas.
 > - Se você estiver atualizando pacotes em uma MV que já está servindo uma aplicação, certifique-se de que a aplicação está parada/salva. Atualizações de pacotes causarão picos no uso da banda larga, memória e/ou CPU levando à falhas nas aplicações que estão sendo executadas.
 
 Atualize informações do pacote
@@ -325,7 +325,7 @@ Estamos executando instâncias equilibradas (Azure Load Balancer) para nossos se
 
 A configuração do NGINX está disponível neste [repositório](https://github.com/freeCodeCamp/nginx-config).
 
-### Primeiro instale
+### Primeira instalação
 
 Provisionando VMs com o código
 
@@ -370,7 +370,7 @@ Provisionando VMs com o código
 
    Adicione/atualize os endereços IP do aplicativo fonte/origem.
 
-3. Configure a rede e o firewall.
+3. Configure a rede e os firewalls.
 
    Configure o firewall da Azure e `ufw` conforme o necessário para entrar os endereços de origem.
 
@@ -470,7 +470,7 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 pnpm start:server
 ```
 
-### Registro e monitoramento
+### Registro e Monitoramento
 
 ```console
 pnpm pm2 logs
@@ -482,11 +482,11 @@ pnpm pm2 monit
 
 ### Atualizando instâncias (Manutenção)
 
-Mudanças no código devem ser implementadas na instância da API de tempos em tempos. Pode ser uma atualização contínua ou manual. A data posterior é essencial quando estão sendo realizadas mudanças ou adições variáveis de ambiente.
+Mudanças no código devem ser implementadas na instância da API de tempos em tempos. Pode ser uma atualização contínua ou manual. A data posterior é essencial quando estão sendo realizadas mudanças nas dependências ou variáveis de ambiente estão sendo adicionadas.
 
 > [!ATTENTION] Os pipelines automatizados não estão manipulando atualizações de dependências no momento. É necessário fazer uma atualização manual antes que qualquer desenvolvimento nas pipelines seja executado.
 
-#### 1. Atualizações manuais - Usado para atualizar dependências, variáveis de ambiente.
+#### 1. Atualizações manuais - Usadas para atualizar dependências, variáveis de ambiente.
 
 1. Pare todas as instâncias
 
@@ -512,13 +512,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 pnpm start:server && pnpm pm2 logs
 ```
 
-#### 2. Atualizações contínuas - Usado par mudanças lógicas no código.
+#### 2. Atualizações contínuas - Usadas para mudanças lógicas no código.
 
 ```console
 pnpm reload:server && pnpm pm2 logs
 ```
 
-> [!NOTE] Nós estamos lidando com atualizações contínuas no código, lógico, via pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.
+> [!NOTE] Estamos lidando com atualizações contínuas no código e com a lógica por meio de pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.
 
 #### 3. Atualizando o Node
 
@@ -530,7 +530,7 @@ pnpm reload:server && pnpm pm2 logs
 pnpm pm2 update
 ```
 
-## Trabalhe em instâncias de cliente
+## Trabalhe em instâncias de client
 
 1. Instale ferramentas de compilação para os binários do node (`node-gyp` e outros).
 
@@ -576,7 +576,7 @@ Provisionando MVs com o código
    >    pm2 start  ./client-start-secondary.sh --name client-secondary
    > ```
 
-### Registro e Monitoramento
+### Registro e monitoramento
 
 ```console
 pm2 logs
@@ -592,7 +592,7 @@ As alterações no código precisam ser implementadas para as instâncias de API
 
 > [!ATTENTION] Os pipelines automatizados não estão manipulando atualizações de dependências no momento. É necessário fazer uma atualização manual antes que qualquer deploy nas pipelines seja executado.
 
-#### 1. Atualizações manuais - Usadas para atualizar dependências, variáveis de ambiente.
+#### 1. Atualizações manuais - Usado para atualizar dependências, variáveis de ambiente.
 
 1. Pare todas as instâncias
 
@@ -608,7 +608,7 @@ As alterações no código precisam ser implementadas para as instâncias de API
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Atualizações contínuas - Usadas para mudanças lógicas no código.
+#### 2. Atualizações contínuas - Usado par mudanças lógicas no código.
 
 ```console
 pm2 reload all --update-env && pm2 logs
@@ -924,7 +924,7 @@ Atualmente, atualizar os agentes requer que sejam removidos e reconfigurados. Is
 
 Quando você completar as etapas acima, você pode repetir as mesmas etapas na instalação do agente.
 
-# Manual de Vôo - Disparo de e-mail
+## Manual de Vôo - Disparo de e-mail
 
 Nós usamos [uma ferramenta de linha de comando](https://github.com/freecodecamp/sendgrid-email-blast) para enviar a newsletter semanal. Para começar o processo:
 
@@ -955,7 +955,7 @@ Nós usamos [uma ferramenta de linha de comando](https://github.com/freecodecamp
 
 7. Quando o disparo de email estiver completo, verifique se nenhum e-mail falhou antes de destruir os droplets.
 
-# Manual de Voo - adicionando instâncias de notícias aos novos idiomas
+## Manual de Voo - adicionando instâncias de notícias aos novos idiomas
 
 ### Alterações nos temas
 

@@ -8,15 +8,15 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap 具有一套 12 列的響應式柵格系統，可以輕鬆的將多個元素放入一行並指定它們的相對寬度。 Bootstrap 的大部分 class 屬性都可以應用在 `div` 元素上。
+Bootstrap 具有一套 12 列的響應式柵格系統，可以輕鬆地將多個元素放入一行並指定它們的相對寬度。 Bootstrap 的大部分 class 屬性都可以應用在 `div` 元素上。
 
-Bootstrap 的列寬取決於用戶的屏幕寬度。 比如，手機有着窄屏幕而筆記本電腦有者更大的屏幕.
+Bootstrap 有不同的列寬屬性，它根據用戶的屏幕寬度來使用相應的寬度。 比如，手機的屏幕窄，而筆記本電腦的屏幕更寬。
 
-就拿 Bootstrap 的 `col-md-*` class 來說。 在這裏， `md` 表示 medium （中等的）， 而 `*` 是一個數字，說明了這個元素佔有多少個列寬度。 這個例子就是指定了中等大小屏幕（例如筆記本電腦）下元素所佔的列寬度。
+以 Bootstrap 的 `col-md-*` class 爲例， 在這裏， `md` 表示 medium （中等的）， 而 `*` 是一個數字，說明了這個元素佔有多少個列寬度。 這個例子就是指定了中等大小屏幕（例如筆記本電腦）下元素所佔的列寬度。
 
 在 Cat Photo App 中，將使用 `col-xs-*` ， 其中 `xs` 是 extra small 的縮寫 (比如窄屏手機屏幕)， `*` 是填寫的數字，代表一行中的元素該佔多少列寬。
 
-將 `Like`，`Info` 和 `Delete` 三個按鈕並排放入一個 `<div class="row">` 元素中，然後每個按鈕都各用一個 `<div class="col-xs-4">` 元素包裹起來。
+將 `Like`、`Info` 和 `Delete` 三個按鈕並排放入一個 `<div class="row">` 元素中，然後將每個按鈕都各用一個 `<div class="col-xs-4">` 元素包裹起來。
 
 當 `div` 元素設置了 `row` class 之後，那幾個按鈕便會嵌入其中了。
 

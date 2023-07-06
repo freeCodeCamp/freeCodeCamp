@@ -16,7 +16,7 @@ D3 有两种方法来渲染 y 轴和 x 轴，分别是 `axisLeft()` 和 `axisBot
 const xAxis = d3.axisBottom(xScale);
 ```
 
-The next step is to render the axis on the SVG. 为此，你可以使用一个 SVG 组件， `g` 元素， `g` 是英文中组（group）的缩写。 不同于 `rect`、`circle`、`text`，在渲染时，轴只是一条直线。 因为它是一个简单的图形，所以可以用 `g` 。 The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG 支持多种 `transforms`，但是定位轴需要使用 `translate` 属性。 当它应用在 `g` 元素上时，它根据给出的总量移动整组。 下面是一个例子：
+下一步是在 SVG 上渲染 x 轴。 为此，你可以使用一个 SVG 组件， `g` 元素， `g` 是英文中组（group）的缩写。 不同于 `rect`、`circle`、`text`，在渲染时，轴只是一条直线。 因为它是一个简单的图形，所以可以用 `g` 。 最后一步是使用 `transform` 属性将轴放置在 SVG 的正确位置上。 否则，轴将会沿着 SVG 的边缘渲染，从而不可见。 SVG 支持多种 `transforms`，但是定位轴需要使用 `translate` 属性。 当它应用在 `g` 元素上时，它根据给出的总量移动整组。 下面是一个例子：
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-The above code places the x-axis at the bottom of the SVG. 然后 x 轴作为参数被传递给 `call()` 方法。 y 轴的定位也是这样，只是 `translate` 参数的形式是 `(x, 0)`。 因为 `translate` 是 `attr()` 方法中的一个字符串，你可以在参数中使用字符串的连接将变量值包括进去。
+上部分代码将 x 轴放置在 SVG 的底端。 然后 x 轴作为参数被传递给 `call()` 方法。 y 轴的定位也是这样，只是 `translate` 参数的形式是 `(x, 0)`。 因为 `translate` 是 `attr()` 方法中的一个字符串，你可以在参数中使用字符串的连接将变量值包括进去。
 
 # --instructions--
 

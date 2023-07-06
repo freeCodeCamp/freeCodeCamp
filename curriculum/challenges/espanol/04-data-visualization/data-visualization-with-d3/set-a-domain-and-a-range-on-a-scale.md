@@ -12,7 +12,7 @@ Por defecto, las escalas usan la relación de identidad. Esto significa que el v
 
 Digamos que un conjunto de datos tiene valores entre 50 y 480. Esta es la información de entrada para una escala, también conocido como el <dfn>dominio</dfn>.
 
-You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. Esta es la información de salida, también conocida como el <dfn>rango</dfn>.
+Desea asignar esos puntos a lo largo del eje `x` en el SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, también conocida como el <dfn>rango</dfn>.
 
 Los métodos `domain()` y `range()` establecen estos valores para la escala. Ambos métodos toman un arreglo de al menos dos elementos como argumento. Aquí un ejemplo:
 

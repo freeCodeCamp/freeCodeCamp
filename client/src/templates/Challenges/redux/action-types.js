@@ -22,8 +22,6 @@ export const actionTypes = createTypes(
 
     'logsToConsole',
 
-    'lockCode',
-    'unlockCode',
     'disableBuildOnError',
     'storedCodeFound',
     'noStoredCodeFound',
@@ -33,19 +31,20 @@ export const actionTypes = createTypes(
     'closeModal',
     'openModal',
     'setIsAdvancing',
-
+    'setChapterSlug',
+    'setExamResults',
     'previewMounted',
     'projectPreviewMounted',
     'storePortalWindow',
     'removePortalWindow',
     'challengeMounted',
+    'sendRenderTime',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
     'stopResetting',
     'submitChallenge',
     'resetAttempts',
-
     'setEditorFocusability',
     'toggleVisibleEditor'
   ],

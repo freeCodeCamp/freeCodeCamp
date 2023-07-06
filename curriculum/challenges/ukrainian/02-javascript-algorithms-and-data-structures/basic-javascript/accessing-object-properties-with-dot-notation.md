@@ -33,7 +33,7 @@ const prop2val = myObj.prop2;
 
 # --hints--
 
-`hatValue` повинен бути рядком
+`hatValue` має бути рядком
 
 ```js
 assert(typeof hatValue === 'string');
@@ -45,7 +45,7 @@ assert(typeof hatValue === 'string');
 assert(hatValue === 'ballcap');
 ```
 
-`shirtValue` повинен бути рядком
+`shirtValue` має бути рядком
 
 ```js
 assert(typeof shirtValue === 'string');

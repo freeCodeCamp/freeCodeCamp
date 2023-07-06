@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Debugging Challenges
-block: Debugging
-superBlock: JavaScript Algorithms and Data Structures
+block: debugging
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to the Debugging Challenges

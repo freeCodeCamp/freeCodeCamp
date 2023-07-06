@@ -14,49 +14,49 @@ jortSort should be a function that takes a single array of comparable objects as
 
 # --hints--
 
-`jortsort` should be a function.
+`jortsort` sollte eine Funktion sein.
 
 ```js
 assert(typeof jortsort == 'function');
 ```
 
-`jortsort([1,2,3,4,5])` should return a boolean.
+`jortsort([1,2,3,4,5])` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof jortsort([1, 2, 3, 4, 5]) == 'boolean');
 ```
 
-`jortsort([1,2,3,4,5])` should return `true`.
+`jortsort([1,2,3,4,5])` sollte `true` zurückgeben.
 
 ```js
 assert.equal(jortsort([1, 2, 3, 4, 5]), true);
 ```
 
-`jortsort([1,2,13,4,5])` should return `false`.
+`jortsort([1,2,13,4,5])` sollte `false` zurückgeben.
 
 ```js
 assert.equal(jortsort([1, 2, 13, 4, 5]), false);
 ```
 
-`jortsort([12,4,51,2,4])` should return `false`.
+`jortsort([12,4,51,2,4])` sollte `false` zurückgeben.
 
 ```js
 assert.equal(jortsort([12, 4, 51, 2, 4]), false);
 ```
 
-`jortsort([1,2])` should return `true`.
+`jortsort([1,2])` sollte `true` zurückgeben.
 
 ```js
 assert.equal(jortsort([1, 2]), true);
 ```
 
-`jortsort([5,4,3,2,1])` should return `false`.
+`jortsort([5,4,3,2,1])` sollte `false` zurückgeben.
 
 ```js
 assert.equal(jortsort([5, 4, 3, 2, 1]), false);
 ```
 
-`jortsort([1,1,1,1,1])` should return `true`.
+`jortsort([1,1,1,1,1])` sollte `true` zurückgeben.
 
 ```js
 assert.equal(jortsort([1, 1, 1, 1, 1]), true);

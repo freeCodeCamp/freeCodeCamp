@@ -4,23 +4,23 @@ Wenn du Änderungen an JavaScript, CSS oder HTML vornimmst, die die Funktionalit
 
 Wie man Cypress-Tests oder "Specs" schreibt, erfährst du in der offiziellen [Dokumentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) von Cypress.
 
-## Wo du einen Test hinzufügen kannst
+## Where to Add a Test
 
 - Cypress-Tests befinden sich im Verzeichnis `./cypress`.
 
 - Cypress-Tests für ein Studienplanmodul befinden sich im entsprechenden Studienplanverzeichnis, d.h. `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## Wie man Tests durchführt
+## How to Run Tests
 
-> [!NOTE] Wenn du GitPod verwendest, lies bitte [Cypress-GitPod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
+> [!NOTE] If using Gitpod, please see [Cypress-Gitpod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
-### 1. Sicherstellen, dass MongoDB und Client-Anwendungen ausgeführt werden
+### 1. Ensure that MongoDB and Client Applications are Running
 
 - [Starte MongoDB und erstelle die Datenbank](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Starte die freeCodeCamp Client-Anwendung und den API-Server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Führe die Cypress-Tests durch
+### 2. Run the Cypress Tests
 
 Um Tests mit Produktions-Builds durchzuführen, ersetze unten `dev` durch `prd`.
 
@@ -39,7 +39,7 @@ Um Tests mit Produktions-Builds durchzuführen, ersetze unten `dev` durch `prd`.
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Um einen Entwicklungs-Build zu erstellen, starte den Entwicklungsserver und führe alle vorhandenen Cypress-End-to-End-Tests aus:
@@ -48,16 +48,17 @@ Um Tests mit Produktions-Builds durchzuführen, ersetze unten `dev` durch `prd`.
   pnpm run e2e:dev:run
   ```
 
-## Cypress-GitPod Setup
+## Cypress-Gitpod Setup
 
 ### 1. Sicherstellen, dass die Entwicklungsumgebung läuft
 
-Wenn das Starten der GitPod-Umgebung nicht automatisch die Umgebung aufgebaut hat:
+If starting the Gitpod environment did not automatically develop the environment:
 
-- Starte die Datenbank
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Richte die Datenbank ein

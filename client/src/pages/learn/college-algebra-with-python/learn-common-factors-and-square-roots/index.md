@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Common Factors and Square Roots
-block: Learn Common Factors and Square Roots
-superBlock: College Algebra with Python
+block: learn-common-factors-and-square-roots
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Common Factors and Square Roots

@@ -5,372 +5,405 @@ exports[`<Footer /> matches snapshot 1`] = `
   className="site-footer"
 >
   <div
-    className="footer-container"
+    className="footer-top"
   >
     <div
-      className="footer-top"
+      className="footer-desc-col"
     >
-      <div
-        className="footer-desc-col"
+      <p>
+        footer.tax-exempt-status
+      </p>
+      <p>
+        footer.mission-statement
+      </p>
+      <p>
+        footer.donation-initiatives
+      </p>
+      <p
+        className="footer-donation"
       >
-        <p>
-          footer.tax-exempt-status
-        </p>
-        <p>
-          footer.mission-statement
-        </p>
-        <p>
-          footer.donation-initiatives
-        </p>
-        <p
-          className="footer-donation"
+        You can
+        <a
+          className="inline"
+          href="/donate"
         >
-          You can
-          <a
-            className="inline"
-            href="/donate"
-          >
-            make a tax-deductible donation here
-          </a>
-          .
-        </p>
-      </div>
-      <div
-        className="trending-guides"
-      >
-        <h2
-          className="col-header"
-        >
-          footer.trending-guides
-        </h2>
-        <div
-          className="trending-guides-row"
-        >
-          <div
-            className="footer-col footer-col-1"
-          >
-            <a
-              href="trending:article0link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article0title
-            </a>
-            <a
-              href="trending:article1link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article1title
-            </a>
-            <a
-              href="trending:article2link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article2title
-            </a>
-            <a
-              href="trending:article3link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article3title
-            </a>
-            <a
-              href="trending:article4link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article4title
-            </a>
-            <a
-              href="trending:article5link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article5title
-            </a>
-            <a
-              href="trending:article6link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article6title
-            </a>
-            <a
-              href="trending:article7link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article7title
-            </a>
-            <a
-              href="trending:article8link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article8title
-            </a>
-            <a
-              href="trending:article9link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article9title
-            </a>
-          </div>
-          <div
-            className="footer-col footer-col-2"
-          >
-            <a
-              href="trending:article10link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article10title
-            </a>
-            <a
-              href="trending:article11link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article11title
-            </a>
-            <a
-              href="trending:article12link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article12title
-            </a>
-            <a
-              href="trending:article13link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article13title
-            </a>
-            <a
-              href="trending:article14link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article14title
-            </a>
-            <a
-              href="trending:article15link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article15title
-            </a>
-            <a
-              href="trending:article16link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article16title
-            </a>
-            <a
-              href="trending:article17link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article17title
-            </a>
-            <a
-              href="trending:article18link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article18title
-            </a>
-            <a
-              href="trending:article19link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article19title
-            </a>
-          </div>
-          <div
-            className="footer-col footer-col-3"
-          >
-            <div
-              className="footer-left"
-            >
-              <a
-                href="trending:article20link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article20title
-              </a>
-              <a
-                href="trending:article21link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article21title
-              </a>
-              <a
-                href="trending:article22link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article22title
-              </a>
-              <a
-                href="trending:article23link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article23title
-              </a>
-              <a
-                href="trending:article24link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article24title
-              </a>
-            </div>
-            <div
-              className="footer-right"
-            >
-              <a
-                href="trending:article25link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article25title
-              </a>
-              <a
-                href="trending:article26link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article26title
-              </a>
-              <a
-                href="trending:article27link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article27title
-              </a>
-              <a
-                href="trending:article28link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article28title
-              </a>
-              <a
-                href="trending:article29link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article29title
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+          make a tax-deductible donation here
+        </a>
+        .
+      </p>
     </div>
     <div
-      className="footer-bottom"
+      className="trending-guides"
     >
       <h2
         className="col-header"
       >
-        footer.our-nonprofit
+        footer.trending-guides
       </h2>
       <div
-        className="footer-divder"
-      />
-      <div
-        className="our-nonprofit"
+        className="trending-guides-articles"
       >
-        <a
-          href="links:footer.about-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.about
-        </a>
-        <a
-          href="https://www.linkedin.com/school/free-code-camp/people/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.alumni
-        </a>
-        <a
-          href="https://github.com/freeCodeCamp/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.open-source
-        </a>
-        <a
-          href="links:footer.shop-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.shop
-        </a>
-        <a
-          href="links:footer.support-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.support
-        </a>
-        <a
-          href="links:footer.sponsors-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.sponsors
-        </a>
-        <a
-          href="links:footer.honesty-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.honesty
-        </a>
-        <a
-          href="links:footer.coc-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.coc
-        </a>
-        <a
-          href="links:footer.privacy-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.privacy
-        </a>
-        <a
-          href="links:footer.tos-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.tos
-        </a>
-        <a
-          href="links:footer.copyright-url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          footer.links.copyright
-        </a>
+        <span>
+          <a
+            href="trending:article0link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article0title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article1link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article1title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article2link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article2title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article3link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article3title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article4link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article4title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article5link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article5title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article6link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article6title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article7link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article7title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article8link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article8title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article9link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article9title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article10link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article10title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article11link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article11title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article12link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article12title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article13link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article13title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article14link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article14title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article15link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article15title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article16link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article16title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article17link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article17title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article18link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article18title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article19link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article19title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article20link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article20title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article21link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article21title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article22link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article22title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article23link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article23title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article24link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article24title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article25link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article25title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article26link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article26title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article27link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article27title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article28link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article28title
+          </a>
+        </span>
+        <span>
+          <a
+            href="trending:article29link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            trending:article29title
+          </a>
+        </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="footer-bottom"
+  >
+    <h2
+      className="col-header"
+    >
+      footer.our-nonprofit
+    </h2>
+    <div
+      className="our-nonprofit"
+    >
+      <a
+        href="links:footer.about-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.about
+      </a>
+      <a
+        href="https://www.linkedin.com/school/free-code-camp/people/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.alumni
+      </a>
+      <a
+        href="https://github.com/freeCodeCamp/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.open-source
+      </a>
+      <a
+        href="links:footer.shop-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.shop
+      </a>
+      <a
+        href="links:footer.support-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.support
+      </a>
+      <a
+        href="links:footer.sponsors-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.sponsors
+      </a>
+      <a
+        href="links:footer.honesty-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.honesty
+      </a>
+      <a
+        href="links:footer.coc-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.coc
+      </a>
+      <a
+        href="links:footer.privacy-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.privacy
+      </a>
+      <a
+        href="links:footer.tos-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.tos
+      </a>
+      <a
+        href="links:footer.copyright-url"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        footer.links.copyright
+      </a>
     </div>
   </div>
 </footer>

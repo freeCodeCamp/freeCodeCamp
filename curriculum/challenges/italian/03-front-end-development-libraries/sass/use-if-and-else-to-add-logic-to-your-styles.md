@@ -18,7 +18,7 @@ La direttiva `@if` in Sass è utile per valutare un caso specifico - funziona co
 }
 ```
 
-E proprio come in JavaScript, `@else if` e `@else` valutano ulteriori condizioni:
+E proprio come in JavaScript, le direttive `@else if` e `@else` valutano ulteriori condizioni:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ E proprio come in JavaScript, `@else if` e `@else` valutano ulteriori condizioni
 
 # --instructions--
 
-Crea un mixin chiamato `border-stroke` che prende un parametro `$val`. Il mixin dovrebbe controllare le seguenti condizioni usando `@if`, `@else if`e `@else`:
+Crea un mixin chiamato `border-stroke` che prende un parametro `$val`. Il mixin dovrebbe controllare le seguenti condizioni usando le direttive `@if`, `@else if`e `@else`:
 
 ```scss
 light - 1px solid black
@@ -47,7 +47,7 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-Se `$val` non è `light`, `medium`, o `heavy`, il bordo dovrebbe essere impostato a `none`.
+Se il valore del parametro `$val` non è `light`, `medium` o `heavy`, allora la proprietà `border` dovrebbe essere impostata su `none`.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd737
-title: Amicable pairs
+title: Pares amigables
 challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
@@ -8,18 +8,18 @@ dashedName: amicable-pairs
 
 # --description--
 
-Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Se dice que dos enteros $N$ y $M$ son pares amigables si $N \\neq M$ y la suma de los divisores apropiados de $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$, así como $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Por ejemplo:**
 
-**1184** and **1210** are an amicable pair, with proper divisors:
+**1184** y **1210** son un par amigable, con los divisores adecuados:
 
 <ul>
-  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>
-  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 y</li>
+  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectivamente.</li>
 </ul>
 
-The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**, is **1184**.
+La suma de los divisores para el primer valor, **1184**, es **1210** y la suma de los divisores para el segundo valor, **1210**, es **1184**.
 
 # --instructions--
 

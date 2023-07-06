@@ -2,6 +2,7 @@
   "name": "Python for Everybody",
   "isUpcomingChange": false,
   "dashedName": "python-for-everybody",
+  "helpCategory": "Python",
   "order": 0,
   "time": "15 hours",
   "superBlock": "scientific-computing-with-python",

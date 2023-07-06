@@ -1,6 +1,6 @@
 ---
 id: 6363d26c9078df117ce4c405
-title: "Simple and Compound Interest"
+title: "Прості та складні відсотки"
 challengeType: 15
 videoId: iMPFK7wXNPg
 dashedName: simple-and-compound-interest
@@ -8,33 +8,33 @@ dashedName: simple-and-compound-interest
 
 # --description--
 
-This video will help you understand the equations of simple and compound interest, and what it all means.
+Це відео допоможе зрозуміти прості та складні відсотки, і що вони взагалі означають.
 
-Here is the <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
-Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook that shows you one way to put many of these interest and payment forumlas into Python functions.</a> Also you will see an example of using some formulas to output results, notice a trend, and follow up with other formulas to analyze patterns.
+Ось додатковий <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab, який показує один зі способів додавання відсотків та формул розрахунку до функцій Python.</a> Ви також побачите приклад використання деяких формул для відображення результатів, спостереження за трендами та дотримання інших формул, щоб аналізувати закономірності.
 
 # --question--
 
 ## --text--
 
-In percent increase formulas, what does the "principle" refer to?
+Що означає «принцип» у формулах відсоткового збільшення?
 
 ## --answers--
 
-the main amount
+основна сума
 
 ---
 
-the ending amount
+кінцева сума
 
 ---
 
-the starting amount
+початкова сума
 
 ---
 
-the (1 + rate) multiplier
+множник (1 + ставка)
 
 ## --video-solution--
 

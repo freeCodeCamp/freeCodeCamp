@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
-title: Linear congruential generator
+title: Generador lineal congruencial
 challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
@@ -8,65 +8,65 @@ dashedName: linear-congruential-generator
 
 # --description--
 
-A linear congruential generator (LCG) is an <em>algorithm</em> that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. All linear congruential generators use this formula:
+Un generador lineal congruencial (GLC) es un <em>algoritmo</em> que produce una secuencia de números pseudoaleatorios calculados con una función lineal definida a trozos discontinua. Todos los generadores lineales congruenciales usan la siguiente fórmula:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
-Where:
+Donde:
 
 <ul>
-<li>$ r_0 $ is a seed.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., are the random numbers.</li>
-<li>$a$, $c$, $m$ are constants.</li>
+<li>$ r_0 $ es una semilla.</li>
+<li>$r_1$, $r_2$, $r_3$, ..., son los números aleatorios.</li>
+<li>$a$, $c$, $m$ son constantes.</li>
 </ul>
 
-If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
+Si uno elige los valores de $a$, $c$ y $m$ con cuidado, entonces el generador produce una distribución uniforme de enteros de $0$ a $m - 1$.
 
-<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+Los números del <abbr title="linear congruential generator">GLC</abbr> tienen una calidad deficiente. $r_n$ y $r\_{n + 1}$ no son independientes, como lo serían los números aleatorios verdaderos. Cualquiera que conozca $r_n$ puede predecir $r\_{n + 1}$, por lo tanto <abbr title="linear congruential generator">GLC</abbr> no es criptográficamente seguro. El <abbr title="linear congruential generator">GLC</abbr> sigue siendo lo suficientemente bueno para tareas simples como el test de primalidad Miller-Rabin, o las cartas de FreeCell. Entre los beneficios del <abbr title="linear congruential generator">LCG</abbr>, uno puede fácilmente reproducir una secuencia de números, de los mismos $r_0$. También se puede reproducir tal secuencia con un lenguaje de programación diferente, porque la fórmula es tan simple.
 
 # --instructions--
 
-Write a function that takes $r_0,a,c,m,n$ as parameters and returns $r_n$.
+Escribe una función que tome $r_0,a,c,m,n$ como parámetros y devuelve $r_n$.
 
 # --hints--
 
-`linearCongGenerator` should be a function.
+`linearCongGenerator` debería ser una función.
 
 ```js
 assert(typeof linearCongGenerator == 'function');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return a number.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` debe devolver un número.
 
 ```js
 assert(typeof linearCongGenerator(324, 1145, 177, 2148, 3) == 'number');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return `855`.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` debe devolver `855`.
 
 ```js
 assert.equal(linearCongGenerator(324, 1145, 177, 2148, 3), 855);
 ```
 
-`linearCongGenerator(234, 11245, 145, 83648, 4)` should return `1110`.
+`linearCongGenerator(234, 11245, 145, 83648, 4)` debería devolver `1110`.
 
 ```js
 assert.equal(linearCongGenerator(234, 11245, 145, 83648, 4), 1110);
 ```
 
-`linearCongGenerator(85, 11, 1234, 214748, 5)` should return `62217`.
+`linearCongGenerator(85, 11, 1234, 214748, 5)` debería devolver `62217`.
 
 ```js
 assert.equal(linearCongGenerator(85, 11, 1234, 214748, 5), 62217);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` should return `12345`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` debería devolver `12345`.
 
 ```js
 assert.equal(linearCongGenerator(0, 1103515245, 12345, 2147483648, 1), 12345);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` should return `1406932606`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` debería devolver `1406932606`.
 
 ```js
 assert.equal(

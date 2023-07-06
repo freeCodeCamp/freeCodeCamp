@@ -4,7 +4,8 @@ import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -15,6 +16,7 @@ import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
@@ -176,11 +178,10 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             title,
+            challengeType,
             description,
             superBlock,
-            certification,
             block,
             translationPending,
             videoId,
@@ -201,6 +202,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -224,23 +226,26 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 {title}
               </ChallengeTitle>
 
-              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                <div className='video-wrapper'>
-                  {!this.state.videoIsLoaded ? (
-                    <div className='video-placeholder-loader'>
-                      <Loader />
-                    </div>
-                  ) : null}
-                  <VideoPlayer
-                    bilibiliIds={bilibiliIds}
-                    onVideoLoad={this.onVideoLoad}
-                    title={title}
-                    videoId={videoId}
-                    videoIsLoaded={this.state.videoIsLoaded}
-                    videoLocaleIds={videoLocaleIds}
-                  />
-                </div>
-              </Col>
+              {challengeType === challengeTypes.video && (
+                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                  <div className='video-wrapper'>
+                    {!this.state.videoIsLoaded ? (
+                      <div className='video-placeholder-loader'>
+                        <Loader />
+                      </div>
+                    ) : null}
+                    <VideoPlayer
+                      bilibiliIds={bilibiliIds}
+                      onVideoLoad={this.onVideoLoad}
+                      title={title}
+                      videoId={videoId}
+                      videoIsLoaded={this.state.videoIsLoaded}
+                      videoLocaleIds={videoLocaleIds}
+                    />
+                  </div>
+                </Col>
+              )}
+
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
@@ -252,7 +257,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={t('aria.answer')}
+                          aria-label={ariaLabel}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -298,12 +303,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 </Button>
                 <Spacer size='large' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
             </Row>
           </Grid>
         </LearnLayout>
@@ -339,10 +339,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {

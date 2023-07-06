@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "7"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -24,16 +24,16 @@
     "insert-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
+    "repair-meta": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/repair-meta",
     "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
     "test": "ts-node ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true ts-node ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.21.3",
-    "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.20.2",
-    "@babel/preset-typescript": "7.21.0",
-    "@babel/register": "7.21.0",
+    "@babel/core": "7.22.5",
+    "@babel/preset-env": "7.22.5",
+    "@babel/preset-typescript": "7.22.5",
+    "@babel/register": "7.22.5",
     "@compodoc/live-server": "^1.2.3",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",
@@ -46,7 +46,7 @@
     "css": "3.0.0",
     "glob": "8.1.0",
     "invariant": "2.2.4",
-    "joi": "17.8.4",
+    "joi": "17.9.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
     "jsdom": "16.7.0",

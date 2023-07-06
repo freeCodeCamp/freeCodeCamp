@@ -4,7 +4,17 @@ import { ControlLabel, ControlLabelProps } from '.';
 
 const story = {
   title: 'Example/ControlLabel',
-  component: ControlLabel
+  component: ControlLabel,
+  parameters: {
+    controls: {
+      include: ['className']
+    }
+  },
+  argType: {
+    className: { control: { type: 'text' } },
+    htmlFor: { control: { type: 'text' } },
+    srOnly: { options: ['srOnly', ''] }
+  }
 };
 
 const Template: Story<ControlLabelProps> = args => {
@@ -13,7 +23,7 @@ const Template: Story<ControlLabelProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
+  children: 'Control Label'
 };
 
 export default story;

@@ -96,14 +96,14 @@ reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 
-Your regex should not match the string `42\t42\t42`.
+La expresión regular no debe coincidir con la cadena `42\t42\t42`.
 
 ```js
 reRegex.lastIndex = 0;
 assert(!reRegex.test('42\t42\t42'));
 ```
 
-Your regex should not match the string `42  42  42`.
+La expresión regular no debe coincidir con la cadena `42  42  42`.
 
 ```js
 reRegex.lastIndex = 0;

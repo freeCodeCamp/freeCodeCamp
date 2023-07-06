@@ -1,7 +1,7 @@
 ---
 title: Introduction to Build a Graphing Calculator
-block: Build a Graphing Calculator
-superBlock: College Algebra with Python
+block: build-a-graphing-calculator
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Build a Graphing Calculator

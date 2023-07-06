@@ -20,7 +20,7 @@ Dopo aver confermato le linee guida di qui sopra, sentiti libero di mandare una 
 
 Una volta che riporti una vulnerabilità, la investigheremo e ci assicureremo che non sia un falso positivo. Se abbiamo bisogno di chiarimenti e dettagli, ti ricontatteremo. Puoi fare segnalazioni separate per ogni problema che trovi. Per favore nota che non saremo in grado di rispondere a qualsiasi problema che pensiamo sia al di fuori delle linee guida.
 
-## Piattaforme & Codebase
+## Platforms and Codebases
 
 Ecco una lista delle piattaforme e codebase per cui accettiamo segnalazioni:
 

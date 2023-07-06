@@ -21,6 +21,7 @@ import {
   createDeleteUserToken,
   encodeUserToken
 } from '../middlewares/user-token';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -34,7 +35,7 @@ function bootUser(app) {
   const postUserToken = createPostUserToken(app);
   const deleteUserToken = createDeleteUserToken(app);
 
-  api.get('/account', sendNonUserToHome, getAccount);
+  api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
   api.post('/account/delete', ifNoUser401, deleteUserToken, postDeleteAccount);
@@ -92,7 +93,7 @@ function deleteUserTokenResponse(req, res) {
 }
 
 function createReadSessionUser(app) {
-  const { Donation, UserToken } = app.models;
+  const { UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
@@ -118,14 +119,12 @@ function createReadSessionUser(app) {
 
     try {
       const [
-        activeDonations,
         completedChallenges,
         partiallyCompletedChallenges,
         progressTimestamps,
         savedChallenges
       ] = await Promise.all(
         [
-          Donation.getCurrentActiveDonationCount$(),
           queryUser.getCompletedChallenges$(),
           queryUser.getPartiallyCompletedChallenges$(),
           queryUser.getPoints$(),
@@ -133,10 +132,10 @@ function createReadSessionUser(app) {
         ].map(obs => obs.toPromise())
       );
 
-      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const { calendar } = getProgress(progressTimestamps);
       const user = {
         ...queryUser.toJSON(),
-        ...progress,
+        calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem
@@ -149,17 +148,10 @@ function createReadSessionUser(app) {
             ...pick(user, userPropsForSession),
             username: user.usernameDisplay || user.username,
             isEmailVerified: !!user.emailVerified,
-            isGithub: !!user.githubProfile,
-            isLinkedIn: !!user.linkedin,
-            isTwitter: !!user.twitter,
-            isWebsite: !!user.website,
             ...normaliseUserFields(user),
             joinDate: user.id.getTimestamp(),
             userToken: encodedUserToken
           }
-        },
-        sessionMeta: {
-          activeDonations
         },
         result: user.username
       };
@@ -169,11 +161,6 @@ function createReadSessionUser(app) {
       return res.json({ user: {}, result: '' });
     }
   };
-}
-
-function getAccount(req, res) {
-  const { username } = req.user;
-  return res.redirect('/' + username);
 }
 
 function getUnlinkSocial(req, res, next) {

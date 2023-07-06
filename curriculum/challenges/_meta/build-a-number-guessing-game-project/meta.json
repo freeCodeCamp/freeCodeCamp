@@ -1,7 +1,9 @@
 {
   "name": "Build a Number Guessing Game Project",
   "isUpcomingChange": false,
+  "dashedName": "build-a-number-guessing-game-project",
   "order": 13,
+  "helpCategory": "Backend Development",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +13,5 @@
       "602da04c22201c65d2a019f4",
       "Build a Number Guessing Game"
     ]
-  ]}
+  ]
+}

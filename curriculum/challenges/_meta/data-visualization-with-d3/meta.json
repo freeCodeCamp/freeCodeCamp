@@ -2,6 +2,7 @@
   "name": "Data Visualization with D3",
   "isUpcomingChange": false,
   "dashedName": "data-visualization-with-d3",
+  "helpCategory": "JavaScript",
   "order": 0,
   "time": "5 hours",
   "template": "",
@@ -12,39 +13,121 @@
   ],
   "superBlock": "data-visualization",
   "challengeOrder": [
-    ["587d7fa6367417b2b2512bc2", "Add Document Elements with D3"],
-    ["587d7fa6367417b2b2512bc3", "Select a Group of Elements with D3"],
-    ["587d7fa7367417b2b2512bc4", "Work with Data in D3"],
-    ["587d7fa7367417b2b2512bc5", "Work with Dynamic Data in D3"],
-    ["587d7fa7367417b2b2512bc6", "Add Inline Styling to Elements"],
-    ["587d7fa7367417b2b2512bc7", "Change Styles Based on Data"],
-    ["587d7fa7367417b2b2512bc8", "Add Classes with D3"],
-    ["587d7fa8367417b2b2512bc9", "Update the Height of an Element Dynamically"],
-    ["587d7fa8367417b2b2512bca", "Change the Presentation of a Bar Chart"],
-    ["587d7fa8367417b2b2512bcb", "Learn About SVG in D3"],
-    ["587d7fa8367417b2b2512bcc", "Display Shapes with SVG"],
-    ["587d7fa8367417b2b2512bcd", "Create a Bar for Each Data Point in the Set"],
+    [
+      "587d7fa6367417b2b2512bc2",
+      "Add Document Elements with D3"
+    ],
+    [
+      "587d7fa6367417b2b2512bc3",
+      "Select a Group of Elements with D3"
+    ],
+    [
+      "587d7fa7367417b2b2512bc4",
+      "Work with Data in D3"
+    ],
+    [
+      "587d7fa7367417b2b2512bc5",
+      "Work with Dynamic Data in D3"
+    ],
+    [
+      "587d7fa7367417b2b2512bc6",
+      "Add Inline Styling to Elements"
+    ],
+    [
+      "587d7fa7367417b2b2512bc7",
+      "Change Styles Based on Data"
+    ],
+    [
+      "587d7fa7367417b2b2512bc8",
+      "Add Classes with D3"
+    ],
+    [
+      "587d7fa8367417b2b2512bc9",
+      "Update the Height of an Element Dynamically"
+    ],
+    [
+      "587d7fa8367417b2b2512bca",
+      "Change the Presentation of a Bar Chart"
+    ],
+    [
+      "587d7fa8367417b2b2512bcb",
+      "Learn About SVG in D3"
+    ],
+    [
+      "587d7fa8367417b2b2512bcc",
+      "Display Shapes with SVG"
+    ],
+    [
+      "587d7fa8367417b2b2512bcd",
+      "Create a Bar for Each Data Point in the Set"
+    ],
     [
       "587d7fa9367417b2b2512bce",
       "Dynamically Set the Coordinates for Each Bar"
     ],
-    ["587d7fa9367417b2b2512bcf", "Dynamically Change the Height of Each Bar"],
-    ["587d7fa9367417b2b2512bd0", "Invert SVG Elements"],
-    ["587d7fa9367417b2b2512bd1", "Change the Color of an SVG Element"],
-    ["587d7faa367417b2b2512bd2", "Add Labels to D3 Elements"],
-    ["587d7faa367417b2b2512bd3", "Style D3 Labels"],
-    ["587d7faa367417b2b2512bd4", "Add a Hover Effect to a D3 Element"],
-    ["587d7faa367417b2b2512bd6", "Add a Tooltip to a D3 Element"],
-    ["587d7fab367417b2b2512bd7", "Create a Scatterplot with SVG Circles"],
-    ["587d7fab367417b2b2512bd8", "Add Attributes to the Circle Elements"],
-    ["587d7fab367417b2b2512bd9", "Add Labels to Scatter Plot Circles"],
-    ["587d7fab367417b2b2512bda", "Create a Linear Scale with D3"],
-    ["587d7fac367417b2b2512bdb", "Set a Domain and a Range on a Scale"],
+    [
+      "587d7fa9367417b2b2512bcf",
+      "Dynamically Change the Height of Each Bar"
+    ],
+    [
+      "587d7fa9367417b2b2512bd0",
+      "Invert SVG Elements"
+    ],
+    [
+      "587d7fa9367417b2b2512bd1",
+      "Change the Color of an SVG Element"
+    ],
+    [
+      "587d7faa367417b2b2512bd2",
+      "Add Labels to D3 Elements"
+    ],
+    [
+      "587d7faa367417b2b2512bd3",
+      "Style D3 Labels"
+    ],
+    [
+      "587d7faa367417b2b2512bd4",
+      "Add a Hover Effect to a D3 Element"
+    ],
+    [
+      "587d7faa367417b2b2512bd6",
+      "Add a Tooltip to a D3 Element"
+    ],
+    [
+      "587d7fab367417b2b2512bd7",
+      "Create a Scatterplot with SVG Circles"
+    ],
+    [
+      "587d7fab367417b2b2512bd8",
+      "Add Attributes to the Circle Elements"
+    ],
+    [
+      "587d7fab367417b2b2512bd9",
+      "Add Labels to Scatter Plot Circles"
+    ],
+    [
+      "587d7fab367417b2b2512bda",
+      "Create a Linear Scale with D3"
+    ],
+    [
+      "587d7fac367417b2b2512bdb",
+      "Set a Domain and a Range on a Scale"
+    ],
     [
       "587d7fac367417b2b2512bdc",
       "Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset"
     ],
-    ["587d7fac367417b2b2512bdd", "Use Dynamic Scales"],
-    ["587d7fac367417b2b2512bde", "Use a Pre-Defined Scale to Place Elements"],
-    ["587d7fad367417b2b2512bdf", "Add Axes to a Visualization"]
-  ]}
+    [
+      "587d7fac367417b2b2512bdd",
+      "Use Dynamic Scales"
+    ],
+    [
+      "587d7fac367417b2b2512bde",
+      "Use a Pre-Defined Scale to Place Elements"
+    ],
+    [
+      "587d7fad367417b2b2512bdf",
+      "Add Axes to a Visualization"
+    ]
+  ]
+}

@@ -8,7 +8,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -21,7 +22,7 @@ import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
-import ToggleSetting from './toggle-setting';
+import ToggleButtonSetting from './toggle-button-setting';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -136,6 +137,7 @@ function EmailSettings({
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
     isPristine;
+  const ariaLabel = t('settings.email.heading');
   if (!currentEmail) {
     return (
       <div>
@@ -183,7 +185,7 @@ function EmailSettings({
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <div role='group' aria-label={t('settings.email.heading')}>
+          <div role='group' aria-label={ariaLabel}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
@@ -225,8 +227,8 @@ function EmailSettings({
       </FullWidthRow>
       <Spacer size='medium' />
       <FullWidthRow>
-        <form id='form-quincy-email' onSubmit={handleSubmit}>
-          <ToggleSetting
+        <form id='form-quincy-email' onSubmit={e => e.preventDefault()}>
+          <ToggleButtonSetting
             action={t('settings.email.weekly')}
             flag={sendQuincyEmail}
             flagName='sendQuincyEmail'

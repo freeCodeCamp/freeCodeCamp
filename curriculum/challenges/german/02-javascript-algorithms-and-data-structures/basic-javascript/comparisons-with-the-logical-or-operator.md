@@ -13,7 +13,7 @@ Der <dfn>logische Oder</dfn>-Operator (`||`) gibt `true` zurück, wenn einer der
 
 Der <dfn>logische Oder</dfn>-Operator besteht aus zwei Pipe-Symbolen: (`||`). Diese befindet sich normalerweise zwischen der Backspace- und der Enter-Taste.
 
-Das folgende Muster sollte dir von früheren Hinweisen bekannt vorkommen:
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-gibt nur dann `Yes` zurück, wenn `num` zwischen `5` und `10` liegt (einschließlich 5 und 10). Die gleiche Logik lässt sich wie folgt formulieren:
+Dieser Code wird `Yes` zurückgeben, wenn `num` zwischen `5` und `10` liegt (einschließlich `5` und `10`). Die gleiche Logik kann mit dem Operator <dfn>logical and</dfn> geschrieben werden.
 
 ```js
 if (num > 10 || num < 5) {

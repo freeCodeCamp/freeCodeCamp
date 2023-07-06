@@ -9,15 +9,15 @@ dashedName: build-a-periodic-table-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create Bash a script to get information about chemical elements from a periodic table database.
+Dies ist eines der Projekte, die für den Erhalt der Zertifizierung erforderlich sind. In diesem Projekt erstellst du mit Bash ein Skript, das Informationen über chemische Elemente aus einer Datenbank des Periodensystems abruft.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `periodic_table.sql` file, as well as your `element.sh` file, so you can complete step 2. There will be instructions on how to do that within the virtual machine.
+**Wichtig:** Nachdem du alle Projekttests bestanden hast, speichere einen Dump deiner Datenbank in einer `periodic_table.sql`-Datei, sowie deine `element.sh`-Datei, damit du Schritt 2 abschließen kannst. There will be instructions on how to do that within the virtual machine.
 
 # --notes--
 
-Required files: `periodic_table.sql`, `element.sh`
+Erforderliche Dateien: `periodic_table.sql`, `element.sh`
 
 # --hints--
 

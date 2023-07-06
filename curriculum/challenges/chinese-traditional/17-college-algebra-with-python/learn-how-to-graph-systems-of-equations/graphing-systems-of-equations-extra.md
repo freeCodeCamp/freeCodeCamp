@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "繪製方程組的圖像：補充"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+接下來的視頻將讓你更深入地瞭解方程組的圖像、不等式的圖像以及線上或線下的陰影可以做什麼。 你還會看到如何將圖像下載到你的電腦或你的 Google Drive。
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+這是<a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>。
 
 # --question--
 
 ## --text--
 
-If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
+如果你想創建一個有滑塊放大和縮小的交互式圖像，大部分的圖像代碼應該在哪裏？
 
 ## --answers--
 
-Within the interactive() function
+在 interactive() 函數中
 
 ---
 
-In the slider
+在滑塊中
 
 ---
 
-Within the function that the interactive() calls
+在 interactive() 調用的函數中
 
 ---
 
-Before all of the functions
+在所有的函數之前
 
 ## --video-solution--
 

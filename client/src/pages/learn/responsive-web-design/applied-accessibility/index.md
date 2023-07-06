@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Applied Accessibility Challenges
-block: Applied Accessibility
-superBlock: Responsive Web Design
+block: applied-accessibility
+superBlock: responsive-web-design
 ---
 
 ## Introduction to the Applied Accessibility Challenges

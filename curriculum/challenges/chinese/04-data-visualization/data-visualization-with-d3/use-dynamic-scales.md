@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdd
-title: 使用动态比例
+title: 使用动态比例尺
 challengeType: 6
 forumTopicId: 301495
 dashedName: use-dynamic-scales
@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 D3 的 `min()` 和 `max()` 方法在设置比例尺时十分有用。
 
-对于一个复杂的数据集，首要是设置比例尺，这样可视化才能适合 SVG 容器的宽和高。 You want all the data plotted inside the SVG so it's visible on the web page.
+对于一个复杂的数据集，首要是设置比例尺，这样可视化才能适合 SVG 容器的宽和高。 所有数据都应布局在 SVG 内部，这样它们在页面上才是可见的。
 
 下面这个例子为散点图设置了 x 轴的比例尺。 `domain()` 方法给比例尺传递关于散点图原数据值的信息， `range()` 方法给出在页面上进行可视化的实际空间信息。
 
-在这个例子中，domain 是从 0 到数据集中的最大值， 它使用 `max()` 方法和基于数组中 x 值的回调函数。 The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
+在这个例子中，定义域是从 0 到数据集中的最大值， 它使用 `max()` 方法和基于数组中 x 值的回调函数。 值域使用 SVG 画布的宽（`w`），并包含 padding， 这将在散点图和 SVG 边缘之间添加空隙。
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-在一开始可能很难理解 padding。 Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). 在 `range()` 方法中包含 padding 使散点图沿着这条直线从 30 （而不是 0）开始，在 470 （而不是 500）结束。
+在一开始可能很难理解 padding。 想象 x 轴是一条从 0 到 500 （SVG 宽的值）的水平直线。 在 `range()` 方法中包含 padding 使散点图沿着这条直线从 30 （而不是 0）开始，在 470 （而不是 500）结束。
 
 # --instructions--
 

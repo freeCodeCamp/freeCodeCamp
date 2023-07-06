@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-如果我們想要遍歷對象中的所有屬性， 只需要使用 JavaScript 中的 <dfn>for...in</dfn> 語句即可。 以遍歷 `users` 對象的屬性爲例：
+有時候你需要遍歷一個對象中的所有鍵。 你可以使用 <dfn>for...in</dfn> 循環來做這件事。 for...in 循環是這樣的：
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-這將記錄 `Alan`、`Jeff` 和 `Sarah` - 每個值都在自己的行中。
+以上代碼記錄 `milk 1` 和 `eggs 12`，每個鍵值對單獨爲一行。
 
-在上面的代碼中，我們定義了一個 `user` 變量。 可以觀察到，這個變量在遍歷對象的語句執行過程中會一直被重置並賦予新值，結果就是不同的用戶名打印到了 console 中。
+我們在循環頭中定義了變量 `food` ，這個變量被設置爲每次迭代上對象的每個鍵值，將每個食物的名稱打印到控制檯。
 
 **注意：**對象中的鍵是無序的，這與數組不同。 因此，一個對象中某個屬性的位置，或者說它出現的相對順序，在引用或訪問該屬性時是不確定的。
 
 # --instructions--
 
-我們已經定義了一個 `countOnline` 函數，它接收一個 users 對象參數。 請在其中使用 <dfn>for...in</dfn> 語句來遍歷傳入函數的 users 對象中的用戶，並返回 `online` 屬性爲 `true` 的用戶數量。 以下是一個傳入 `countOnline` 函數的對象示例， 注意每個用戶都有 `online` 屬性，其屬性值爲 `true` 或 `false`：
+我們定義了一個函數 `countOnline`，它接收一個參數 `allUsers`。 在這個函數中使用 <dfn>for...in</dfn> 語句來遍歷 `allUsers` 對象，並返回 `online` 屬性爲 `true` 的用戶數量。 一個可以傳遞給 `countOnline` 的對象的例子顯示如下。 每個用戶都有 `online` 屬性，其屬性值爲 `true` 或 `false`。
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

@@ -40,48 +40,9 @@ Sendo `link` o link do artigo original.
 
 > [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
-Mudamos os artigos em destaque em dois lugares diferentes.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
-- [O repositório do currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [O repositório do CDN](https://github.com/freeCodeCamp/cdn)
-
-Para cada artigo, você precisará criar um título menor para usar no rodapé.
-
-### Alterar artigos em destaque no currículo
-
-Os artigos em destaque no rodapé do currículo podem ser alterados, editando o arquivo em `client/i18n/locales/<language>/trending.json`.
-
-Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
-
-Cada número apresenta um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
-
-Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
-
-```json
-{
-  "article0title":"Nova aba em HTML",
-  "article0link":"https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/",
-  "article1title":"Máscaras de sub-rede",
-  "article1link":"https://www.freecodecamp.org/portuguese/news/ficha-informativa-de-sub-redes-mascara-de-sub-rede-24-30-26-27-29/",
-  "article2title":"40 projetos em JavaScript",
-  "article2link":"https://www.freecodecamp.org/portuguese/news/40-projetos-em-javascript-para-iniciantes-ideias-simples-para-comecar-a-programar-em-js/",
-  "article3title":"Tutorial de button onClick",
-  "article3link":"https://www.freecodecamp.org/portuguese/news/tutorial-sobre-button-onclick-em-html-e-evento-de-clique-em-javascript/",
-  "article4title":"Bot do Discord",
-  "article4link":"https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/",
-  "article5title":"Centralizar em CSS",
-  "article5link":"https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/",
-  ...
-}
-```
-
-Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
-
-### Como atualizar os artigos em destaque no cdn
-
-O arquivo no repositório cdn é o arquivo `universal/trending/<language>.yaml`.
-
-Este arquivo é formatado de modo diferente. Por exemplo, aqui vemos o conteúdo do arquivo para os primeiros 6 artigos:
+Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
 
 ```yaml
 article0title: 'Nova aba em HTML'
@@ -98,9 +59,21 @@ article5title: 'Centralizar em CSS'
 article5link: 'https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/'
 ```
 
-Você pode converter de um formato para o outro cuidadosamente, alterando-o manualmente. Ou você pode usar [o script neste repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
 
-> [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
+Para cada artigo, você precisará criar um título menor para usar no rodapé. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. You can preview the changes by editing the `trending.json` file in your local environment:
+
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+
+3. Start the server by running `pnpm run develop:server` in one terminal window.
+
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## Como traduzir os artigos dos links de rodapé
 
@@ -152,7 +125,7 @@ Depois de ter traduzido e publicado os artigos listados como "podem ser traduzid
 
 > [!WARNING] Apenas "Sobre", "Suporte", "Honestidade acadêmica" e "Código de conduta" podem ser traduzidos. Deixar os outros URLs inalterados.
 
-Atualize a seguinte parte do arquivo:
+Update the following part in the file:
 
 ```json
 {
@@ -265,7 +238,7 @@ Os elogios são as frases curtas que aparecem na conclusão de um desafio.
 
 Você não precisa traduzir diretamente as frases usadas em inglês. Você pode escrever um conjunto de frases curtas que sejam apropriadas para mostrar na conclusão de um desafio.
 
-O array `compliments` (de elogios) é um array de strings. Então, por exemplo, você escreveria:
+O array `compliments` é um array de strings. Então, por exemplo, você escreveria:
 
 ```json
 {
@@ -329,7 +302,7 @@ Você pode escolher "From Machine Translation" (da tradução de máquina) ou "F
 
 Depois, há três etapas a concluir:
 
-1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todo o projeto, pastas ou arquivos específicos.
+1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todos os projetos ou pastas e arquivos específicos.
 2. Idiomas. Defina o seu idioma aqui.
 3. Traduções existentes. A melhor combinação aqui é "100% match" (100% correspondente) e "Apply to untranslated strings only" (aplicar apenas a frases não traduzidas). Não aprove automaticamente, já que é sempre melhor que um olho humano revise tudo.
 
@@ -370,3 +343,7 @@ Procure pelo usuário que se tornará um revisor. Use o menu de três pontos na 
 O usuário agora é um revisor.
 
 > [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).
+
+## Como adicionar ou atualizar um idioma
+
+Confira a documentação sobre [como ativar um novo idioma](how-to-enable-new-languages.md). Se você estiver atualizando um idioma, a seção sobre a [configuração dos superblocos traduzidos](how-to-enable-new-languages.md#set-translated-superblocks) deve ser útil.

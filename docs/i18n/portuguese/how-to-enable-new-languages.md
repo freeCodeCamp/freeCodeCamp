@@ -66,7 +66,7 @@ export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -118,68 +118,34 @@ export const rtlLangs = [''];
 
 > [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
 
-### Configurar a ordem do superbloco do idioma
+### Configuração dos superblocos traduzidos
 
-No arquivo [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts), você precisa definir a ordem e o estado de todos os superblocos para o novo idioma no objeto `superBlockOrder`. Copie uma das chaves do idioma e todos os seus valores, cole na parte inferior do objeto (ou seja onde for) e altere a chave para o seu novo idioma do enum `Languages`.
+No arquivo [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts), adicione o novo idioma ao objeto `notAuditedSuperBlocks`. Isso lista todos os superblocos que não estão totalmente traduzidos. Add an array of superblocks which have not been fully translated to it. For example:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-A ordem dos superblocos neste objeto é como eles aparecem na página inicial e nos mapas em "Learn". Siga os comentários nesse arquivo para saber como você pode ordenar os superblocos. Em seguida, mova-os para os lugares apropriados para o novo idioma.
+Certifique-se de adicionar apenas os superblocos que **não** estão totalmente traduzidos e aprovados. Os superblocos traduzidos serão calculados a partir desse objeto. Quando um novo superbloco estiver totalmente traduzido, remova-o do array para esse idioma.
 
-> [!ATTENTION] Não altere a ordem das chaves no objeto. Apenas mova os superblocos para os diferentes arrays
-
-O array `CurriculumMaps.Landing` deve conter exatamente um superbloco para todas as nossas certificações atuais. O objeto `CurriculumMaps.Learn` deve ter em si todos os superblocos existentes. Os superblocos traduzidos vão em `TranslationStates.Audited` e os superblocos não traduzidos vão em `TranslationStates.NotAudited`. Esses dois objetos têm, cada um, quatro estados diferentes nos quais um superbloco pode estar.
-
-- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como `(New) Responsive Web Design`, por exemplo.
-- `SuperBlockStates.New`: esses aparecem apenas quando `SHOW_NEW_CURRICULUM` estiver definido como `true` no arquivo `.env`. Ele serve para exibir novos superblocos em uma build específica. Por exemplo, quando lançamos a nova certificação de Design responsivo para a web, nós a mostramos apenas em inglês para começar.
-- `SuperBlockStates.Upcoming`: esses aparecem apenas quando `SHOW_UPCOMING_CHANGES` estiver definido como `true` no arquivo `.env`. Eles servem para mostrar os superblocos em nível local enquanto eles estão em desenvolvimento. Como alternativa, podem ser usados quando precisamos ocultar um superbloco do mapa por alguma outra razão.
-- `SuperBlockStates.Legacy`: um superbloco é movido para cá quando uma nova versão daquele superbloco já está totalmente traduzida e pronta para substituí-lo.
+See the `SuperBlocks` enum at the beginning of the same file for the full list of superblocks.
 
 ### Configurar a busca
 
@@ -216,7 +182,7 @@ const algoliaIndices = {
 };
 ```
 
-## Ativando vídeos localizados
+### Ativar os vídeos localizados
 
 Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
@@ -281,7 +247,6 @@ Você vai querer copiar os seguintes arquivos de `/client/i18n/locales/english` 
 - `links.json`
 - `meta-tags.json`
 - `motivation.json`
-- `trending.json`
 
 ## Testar traduções localmente
 
@@ -303,11 +268,11 @@ Quando estes arquivos estiverem no local certo, você deve poder usar `pnpm run 
 
 Para implantar novos idiomas em News, você precisa criar dois PRs. Um PR será para o [repositório do CDN](https://github.com/freeCodeCamp/cdn), enquanto o outro será para o [repositório News](https://github.com/freeCodeCamp/news).
 
-## Preparação do repositório do CDN para o novo idioma
+## Preparar o repositório do CDN para o novo idioma
 
 News busca os links de tendências e títulos de artigos do nosso CDN durante a build e adiciona-os ao rodapé. News também busca os arquivos Day.js do CDN durante a build para fazer a localização das datas e horários para cada idioma.
 
-### Adicionar um Arquivo YAML para os artigos populares
+### Adicionar um arquivo YAML para os artigos populares
 
 Faça a clonagem do repositório [CDN](https://github.com/freeCodeCamp/cdn) e crie um branch.
 
@@ -367,11 +332,11 @@ Copie o código de local de Day.js da nova aba para o novo arquivo que você cri
 
 Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAML e Day.js para revisão.
 
-## Preparação do repositório do CDN para o novo idioma
+## Preparar o repositório do editorial para o novo idioma
 
 O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 
-> [!WARN] Pull requests para o repositório de News _devem_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
+> [!WARN] Pull requests para o repositório News _precisam_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
 
 ### Modificar o arquivo de configuração principal
 
@@ -413,12 +378,10 @@ Em seguida, vá para o diretório `config/i18n/locales`, crie uma pasta e inform
 
 Em seguida, copie os arquivos JSON do diretório `english` para a sua nova pasta.
 
-Na sua nova pasta, abra o arquivo `serve.json` e substitua seu conteúdo pelo seguinte:
+Na sua nova pasta, abra o arquivo `redirects.json` e substitua seu conteúdo por um array vazio:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Em seguida, faça o commit e o push de sua branch diretamente para o repositório News.

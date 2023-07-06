@@ -32,7 +32,7 @@ dashedName: install-and-set-up-mongoose
 
 **注意：**如果你使用的是 Replit，則無法創建 `.env` 文件。 相反，使用內置的 <dfn>SECRETS</dfn> 選項卡來添加變量。 在使用 <em>SECRETS</em> 選項卡時，<em>不要</em>將值括在引號中。
 
-When you are done, connect to the database by calling the `connect` method within your `myApp.js` file by using the following syntax:
+完成後，使用以下語法在你的 `myApp.js` 文件中調用 `connect` 方法，連接到數據庫：
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -35,15 +36,19 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
 
 Зверніть увагу на параметр `done` у функції тесту зворотного виклику. Його необхідно викликати без аргументу в кінці тесту, щоб повідомити, що асинхронна операція завершена.
 
+Finally, note the `keepOpen` method just after the `request` method. Normally you would run your tests from the command line, or as part of an automated integration process, and you could let `chai-http` start and stop your server automatically.
+
+However, the tests that run when you submit the link to your project require your server to be up, so you need to use the `keepOpen` method to prevent `chai-http` from stopping your server.
+
 # --instructions--
 
-У межах `tests/2_functional-tests.js` змініть `'Test GET /hello with no name'` тесту (`// #1`) для підтвердження `status` та `text`, щоб пройти тест. Не змінюйте аргументи, передані до тверджень.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
 
-Запити URL повинні бути відсутніми. Якщо немає назви запиту URL, то кінцева точка відповідає `hello Guest`.
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
-Всі тести повинні бути успішно пройдені
+All tests should pass
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Ви повинні перевірити, чи `res.status` == 200
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +78,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Ви повинні перевірити, чи `res.text` == `'hello Guest'`
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

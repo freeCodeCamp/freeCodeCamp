@@ -1,6 +1,6 @@
 ---
 id: 61abc7ebf3029b56226de5b6
-title: Implement Binary Search
+title: Реалізуйте двійковий пошук
 challengeType: 1
 forumTopicId: 487618
 dashedName: implement-binary-search
@@ -8,26 +8,26 @@ dashedName: implement-binary-search
 
 # --description--
 
-Binary search is an **O(log(n))** efficiency algorithm for searching a sorted array to find an element. It operates using the following steps:
+Двійковий пошук — це алгоритм для пошуку елемента у відсортованому масиві з ефективністю **O(log(n))**. Він працює за допомогою таких кроків:
 
-1. Find the middle `value` of a sorted array. If `value == target` return `true` (The value has been found and the search is complete).
-1. If middle `value < target`, search right half of array in next compare.
-1. If middle `value > target`, search left half of array in next compare.
-1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
+1. Знайдіть середнє значення (`value`) відсортованого масиву. Якщо `value == target`, поверніть `true` (значення знайдено та пошук завершено).
+1. Якщо `value < target`, шукайте праву половину масиву під час наступного порівняння.
+1. Якщо `value > target`, шукайте ліву половину масиву під час наступного порівняння.
+1. Якщо після пошуку в усьому масиві значення відсутнє, поверніть `false` (в масиві було проведено пошук, а значення в масиві немає).
 
-As you can see, you are successively halving an array, which gives you the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
+Як бачите, ви послідовно ділите масив навпіл, що дає вам ефективність log(n). У цьому завданні ми хочемо, щоб ви показали свою роботу — як ви досягли цільового значення... шлях, який ви пройшли!
 
 # --instructions--
 
-Write a function `binarySearch` that implements the binary search algorithm on an array, returning the path you took (each middle value comparison) to find the target in an array.
+Напишіть функцію `binarySearch`, яка реалізує алгоритм бінарного пошуку в масиві, повертаючи шлях, який ви обрали (порівняння кожного середнього значення), щоб знайти ціль в масиві.
 
-The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. The target value should be the last element of the returned array. If the value is not found, return the string `Value Not Found`.
+Функція приймає відсортований масив цілих чисел та цільове значення як ввід. Вона повертає масив, що містить (за порядком) середнє значення, яке ви знайшли при кожному діленні вихідного масиву навпіл, доки не знайдете цільове значення. Цільове значення повинне бути останнім елементом повернутого масиву. Якщо значення не знайдено, поверніть рядок `Value Not Found`.
 
-For example, `binarySearch([1,2,3,4,5,6,7], 5)` would return `[4,6,5]`.
+Наприклад, `binarySearch([1,2,3,4,5,6,7], 5)` поверне `[4,6,5]`.
 
-For this challenge, when halving, you MUST use `Math.floor()` when doing division: `Math.floor(x/2)`. This will give a consistent, testable path.
+При діленні навпіл у цьому завданні ОБОВ’ЯЗКОВО використайте `Math.floor()`: `Math.floor(x/2)`. Це дасть послідовний, перевірений шлях.
 
-**Note:** The following array will be used in tests:
+**Примітка:** у тестах використовуватиметься цей масив:
 
 ```js
 const testArray = [

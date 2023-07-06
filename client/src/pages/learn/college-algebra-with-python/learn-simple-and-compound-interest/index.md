@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Simple and Compound Interest
-block: Learn Simple and Compound Interest
-superBlock: College Algebra with Python
+block: learn-simple-and-compound-interest
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Simple and Compound Interest

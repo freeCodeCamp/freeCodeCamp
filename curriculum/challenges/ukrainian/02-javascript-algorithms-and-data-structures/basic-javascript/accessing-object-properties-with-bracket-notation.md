@@ -37,7 +37,7 @@ myObj["NoSpace"];
 
 # --hints--
 
-`entreeValue` повинен бути рядком
+`entreeValue` має бути рядком
 
 ```js
 assert(typeof entreeValue === 'string');
@@ -49,7 +49,7 @@ assert(typeof entreeValue === 'string');
 assert(entreeValue === 'hamburger');
 ```
 
-`drinkValue` повинне бути рядком
+`drinkValue` має бути рядком
 
 ```js
 assert(typeof drinkValue === 'string');

@@ -2,63 +2,72 @@
 /* ---------------------------------------------------------- */
 
 .site-footer {
-  flex-shrink: 0;
   color: var(--tertiary-color);
   background: var(--tertiary-background);
   line-height: 1.6;
-}
-
-.footer-container {
-  margin-inline: auto;
   padding: 40px 15px;
   font-size: 16px;
-  overflow-x: hidden;
 }
 
-.footer-container p {
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30.5em, 1fr));
+}
+
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
+  }
+}
+
+.footer-top,
+.footer-bottom {
+  width: min(100%, 1300px);
+  margin-inline: auto;
+}
+
+.site-footer p {
   margin: 0 0 1.45rem;
   line-height: 30px;
   font-size: 16px;
 }
 
-.footer-container a {
+.site-footer a {
   color: var(--tertiary-color);
   text-decoration: none;
+  padding: 2px;
 }
 
-.footer-container a:hover {
+.site-footer a:hover {
   text-decoration: underline;
 }
 
-.footer-container .col-header {
-  flex: 0 0 100%;
+.site-footer .col-header,
+.trending-guides .col-header {
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
-  text-align: center;
   padding: 0 15px 15px;
   margin-bottom: 0;
 }
 
+.trending-guides-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  gap: 0.5rem;
+}
+
+.trending-guides-articles {
+  white-space: pre;
+}
+
 .footer-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin: 0;
 }
 
 .footer-col {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 100%;
   padding-inline: 15px;
   font-size: 16px;
-}
-
-.footer-right,
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 100%;
 }
 
 .footer-col a {
@@ -66,15 +75,14 @@
 }
 
 .footer-desc-col {
-  flex: 1 0 90%;
-  display: flex;
-  flex-direction: column;
   padding-inline: 15px;
   margin-bottom: 30px;
+  align-self: center;
 }
 
 .footer-desc-col a {
   text-decoration: underline;
+  padding: 2px;
 }
 
 p.footer-donation {
@@ -84,10 +92,6 @@ p.footer-donation {
 
 p.footer-donation a:hover {
   text-decoration: none;
-}
-
-.footer-container .col-spacer {
-  margin-top: -3rem;
 }
 
 .trending-guides {
@@ -106,102 +110,44 @@ p.footer-donation a:hover {
 }
 
 @media (min-width: 500px) {
-  .trending-guides-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .footer-col-3 {
-    flex: 1 0 100%;
-    flex-direction: row;
-  }
-  .footer-right {
-    padding-inline-start: 15px;
-  }
-  .footer-col-1,
-  .footer-col-2,
-  .footer-right,
-  .footer-left {
-    flex: 1 0 45%;
-    height: auto;
+  .footer-col {
     font-size: 15;
   }
 }
 
 @media (min-width: 800px) {
-  .footer-container {
-    width: 750px;
-  }
-  .footer-col-1,
-  .footer-col-2,
-  .footer-col-3 {
-    flex: 1 0 25%;
-    height: auto;
+  .footer-col {
     font-size: 16.5;
-  }
-  .footer-col-3 {
-    flex-direction: column;
-  }
-  .footer-right {
-    padding-inline-start: 0;
-  }
-  .footer-container .col-spacer {
-    margin-top: 40px;
   }
   .footer-bottom .our-nonprofit a {
     padding: 5px;
   }
 }
 
-@media (min-width: 1020px) {
-  .footer-container {
-    width: 850px;
-  }
-}
-
 @media (min-width: 1200px) {
-  .footer-container {
-    width: 1170px;
-  }
-  .footer-top {
-    display: flex;
-    flex-direction: row;
-  }
   .footer-desc-col {
     flex: 1 0 45%;
   }
   .trending-guides {
     flex: 1 0 58%;
   }
-
-  .footer-col-1 {
-    flex: 1 0 25%;
-  }
-  .footer-col-3 {
-    flex: 1 0 30%;
-  }
-  .footer-col-2 {
-    flex: 1 0 20%;
-  }
-
   p.footer-donation {
-    margin-top: 18px;
+    margin-top: 40px;
   }
-
   .footer-bottom .our-nonprofit {
-    padding: 0 10px;
+    padding-inline: 10px;
+    padding-top: 1.25rem;
     justify-content: space-between;
   }
-
   .footer-bottom .col-header {
-    display: none;
+    visibility: hidden;
+    padding: 0px;
+    margin: 0;
+    height: 1px;
   }
   .our-nonprofit {
-    margin-top: 20px;
-  }
-  .footer-divder {
-    height: 2px;
-    margin: 0 15px;
-    background-color: var(--quaternary-background);
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: var(--quaternary-background);
   }
 }

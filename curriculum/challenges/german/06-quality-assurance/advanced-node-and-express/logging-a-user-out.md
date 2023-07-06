@@ -1,6 +1,6 @@
 ---
 id: 58965611f9fc0f352b528e6c
-title: Logging a User Out
+title: Einen Nutzer abmelden
 challengeType: 2
 forumTopicId: 301560
 dashedName: logging-a-user-out
@@ -8,7 +8,7 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Creating the logout logic is easy. The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
+Die Logout-Logik zu erstellen ist einfach. The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
 
 In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Füge diese `/logout`-Route hinzu, um dies zu tun:
 

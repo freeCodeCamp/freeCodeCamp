@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 const path = require('path');
 const vm = require('vm');
 const { assert, AssertionError } = require('chai');
@@ -16,7 +15,6 @@ const stringSimilarity = require('string-similarity');
 mockRequire('lodash-es', lodash);
 
 const clientPath = path.resolve(__dirname, '../../client');
-require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
@@ -34,10 +32,8 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../client/utils/challenge-types');
 // the config files are created during the build, but not before linting
-/* eslint-disable import/no-unresolved */
 const testEvaluator =
   require('../../config/client/test-evaluator.json').filename;
-/* eslint-enable import/no-unresolved */
 
 const { getLines } = require('../../utils/get-lines');
 

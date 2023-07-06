@@ -2,6 +2,7 @@
   "name": "Object Oriented Programming",
   "isUpcomingChange": false,
   "dashedName": "object-oriented-programming",
+  "helpCategory": "JavaScript",
   "order": 6,
   "time": "5 hours",
   "template": "",
@@ -112,4 +113,5 @@
       "587d7db2367417b2b2512b8c",
       "Use an IIFE to Create a Module"
     ]
-  ]}
+  ]
+}

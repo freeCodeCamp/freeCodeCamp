@@ -12,13 +12,13 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 # --description--
 
-Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles irão assumir o tamanho de fonte de seus elementos HTML parentes.
+Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles assumirão o tamanho de fonte de seus elementos pais no HTML.
 
 # --instructions--
 
 Utilize Font Awesome para adicionar um ícone `info-circle` ao botão de informação e um ícone `trash` para o botão de deleção.
 
-**Observação:** o elemento `span` é uma alternativa aceitável ao elemento `i` para as instruções abaixo.
+**Observação:** você pode usar os elementos `i` ou `span` para concluir este desafio.
 
 # --hints--
 

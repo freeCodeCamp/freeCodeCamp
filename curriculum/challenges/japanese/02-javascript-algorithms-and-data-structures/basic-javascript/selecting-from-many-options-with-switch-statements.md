@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-選択肢が多数ある場合は <dfn>switch</dfn> ステートメントを使用してください。 `switch` ステートメントは値を調べますが、多数の <dfn>case</dfn> ステートメントを記述してさまざまな値の候補を定義することができます。 条件が一致した最初の `case` 値から `break` に達するまで、ステートメントが実行されます。
+If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
 
 次は `switch` ステートメントの例です。
 

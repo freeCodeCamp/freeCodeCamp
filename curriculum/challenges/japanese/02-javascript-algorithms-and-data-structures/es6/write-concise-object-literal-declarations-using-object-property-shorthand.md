@@ -43,7 +43,7 @@ assert.deepEqual(
 コードでは `key:value` の形式を使用しないでください。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/:/g));
+assert(!code.match(/:/g))
 ```
 
 # --seed--
@@ -66,10 +66,17 @@ const createPerson = (name, age, gender) => {
 
 ```js
 const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  /*return {
+    name: name,
+    age: age,
+    gender: gender
+  };*/
   return {
     name,
     age,
     gender
   };
+  // Only change code above this line
 };
 ```

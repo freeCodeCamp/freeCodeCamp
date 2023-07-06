@@ -39,7 +39,7 @@ Você pode nos ajudar a organizar e moderar issues usando etiquetas [dessa lista
 
 Preste atenção especial às etiquetas `"help wanted"` e `"first timers only"`. Elas devem ser adicionadas aos tópicos que você considere que possam ser abertos aos potenciais contribuidores para realizar um "pull request".
 
-Uma etiqueta `"first timers only"` deve ser aplicada a uma issue trivial (ex.: consertar um erro de digitação) e deve incluir informações adicionais. Você pode usar esse [modelo de resposta](moderator-handbook.md#first-timer-only-issues) para a triagem.
+Para a triagem de uma issue trivial como uma correção de ortografia, é recomendado aplicar uma etiqueta "first timers only" juntamente com informações adicionais. Você pode usar o [modelo de resposta](reply-templates.md#first-timer-only-issues) fornecido para esta finalidade.
 
 #### Fechando issues e pull requests parados, desatualizados ou inativos
 
@@ -49,7 +49,7 @@ Uma etiqueta `"first timers only"` deve ser aplicada a uma issue trivial (ex.: c
 
 - Se o criador do PR pedir assistência adicional ou mais tempo, as regras acima podem ser revistas após uma resposta. Em todo caso, os moderadores devem usar o melhor julgamento para resolverem o estado do PR.
 
-> [!TIP] Recomendamos usar essa lista de [modelos de resposta](moderator-handbook.md#reply-templates) padrão enquanto estiver monitorando issues.
+> [!TIP] Recomendamos usar essa lista de [modelos de resposta](reply-templates.md) padrão enquanto estiver monitorando issues.
 
 ### Moderando pull requests
 
@@ -63,7 +63,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Você também pode revisar isso diretamente no GitHub e decidir fazer merge ou não. Precisamos ter um pouco mais de cuidado com relação a isso, pois milhões de pessoas encontrarão este texto enquanto usam o currículo do freeCodeCamp. O pull request deixa o texto mais claro sem deixá-lo muito mais longo? As edições são relevantes e não são excessivamente pedantes? Lembre-se que nosso objetivo é que os desafios sejam mais claros e curtos dentro do possível. Não são o lugar para detalhes obscuros. Os contribuidores talvez tentem adicionar links para recursos dos desafios.
 
-   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](moderator-handbook.md#closing-invalid-pull-requests).
+   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM" (Looks Good To Me - me parece bom, em inglês). Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -75,7 +75,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns contribuidores podem tentar adicionar mais testes para cobrir casos confusos pedantes. Precisamos ter cuidado para não deixarmos o desafio muito complicado. Esses desafios e seus testes devem ser simples e intuitivos na medida do possível. Além dos desafios de algoritmo e a seção de preparação para entrevistas, os estudantes devem ser capazes de resolver cada desafio em aproximadamente 2 minutos.
 
-   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](moderator-handbook.md#closing-invalid-pull-requests).
+   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -91,7 +91,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns PRs são atualizações de dependência automáticos feitos a partir de uma integração. Você não deve dar merge ou aprovar esses PRs. Um dos membros do time de desenvolvimento cuidará da revisão e irá dar merge em PRs automáticos.
 
-#### Como revisar, dar merge ou fechar pull requests
+#### Como revisar, fazer o merge ou fechar pull requests
 
 ##### Seja responsável por um pull request:
 
@@ -99,7 +99,7 @@ Em primeiro lugar, quando você escolhe um pull request para revisar, você deve
 
 Dependendo do tipo de pull request, siga as regras correspondentes listadas anteriormente.
 
-##### Certifique-se de que os testes de CI passaram:
+##### Certifique-se de que as verificações de CI passaram:
 
 Antes de dar merge em qualquer pull request, certifique-se de que haja um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
 
@@ -142,7 +142,13 @@ Muitas vezes, um pull request será obviamente de baixo esforço. Muitas vezes, 
 
 Há também situações em que o colaborador está tentando adicionar um link para o seu próprio site, incluir uma biblioteca que criou, ou tem uma edição frívola que não serve para ajudar ninguém, exceto a si mesmo.
 
-Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](moderator-handbook.md#closing-invalid-pull-requests).
+Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
+
+#### Filtrando pull requests
+
+Para ordenar Pull Requests para Garantia de Qualidade para acesso rápido a PRs que estão prontos para revisão, não tenham conflitos de merge, não estejam bloqueadas e tenham todas as verificações de status em verde, use o seguinte link para aplicar os filtros:
+
+[Link direto com filtro aplicado](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse)
 
 #### Outras diretrizes para moderadores no GitHub
 
@@ -305,16 +311,6 @@ Se for aprovado, nós adicionaremos você ao nosso time de moderadores no [GitHu
 > 
 > Isso é necessário para nós podermos dar a você acesso de escrita em alguns de nossos repositórios.
 
-## Como nós retiramos moderadores inativos
-
-Observe que, frequentemente, removeremos moderadores que pensamos estarem inativos. Quando fizermos isso, enviaremos a seguinte mensagem:
-
-```markdown
-Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de moderadores. Nós agradecemos profundamente sua ajuda no passado.
-
-Se acha que fizemos isso por engano ou quando você estiver pronto para voltar e contribuir mais, apenas responda essa mensagem nos avisando.
-```
-
 ## Como funciona nossa sala de Colaboradores
 
 Todos são bem-vindos no [chat de colaboradores do nosso servidor](https://discord.gg/PRyKn3Vbay). Esse é o chat destinado aos moderadores e outros usuários do freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
@@ -331,7 +327,7 @@ Recebemos propostas como essa com frequência. A equipe está em melhor posiçã
 
 Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
 
-Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
+Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir de volta para o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
 
 Apesar de ser difícil às vezes, evite dar quaisquer dicas ou conselhos que não sejam indicar ao usuário buscar ajuda profissional!
 
@@ -341,7 +337,7 @@ Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário
 - O chat público não será mais perturbado.
 - Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho.
 
-URLs úteis:
+Links úteis:
 
 http://suicide.org/international-suicide-hotlines.html
 
@@ -354,219 +350,3 @@ Essa tirinha da XKDC resume perfeitamente o pensamento da maioria das comunidade
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
 Obrigado por ler isto, e obrigado por ajudar a comunidade de desenvolvedores!
-
-## Modelos de resposta
-
-Esses são alguns dos modelos de resposta que você talvez use enquanto estiver revisando issues/pull requests.
-
-> Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub chamada [saved replies](https://github.com/settings/replies/) ou usar as citadas abaixo.
-
-### Obrigado
-
-```markdown
-Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 🎉
-```
-
-### Obrigado e parabéns
-
-> Para agradecer e encorajar colaboradores de primeira viagem.
-
-```markdown
-Hi @username. Congrats on your first pull request (PR)! 🎉
-
-Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 📝
-```
-
-### Erro de compilação
-
-```markdown
-Hey @username
-
-We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
-
-Assim que você resolver essas issues, nós poderemos rever seu PR e fazer o merge. 😊
-
----
-
-Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
-```
-
-### Sincronização de forks
-
-> Quando um PR não está atualizado com a branch `main`.
-
-````markdown
-Hey @username
-
-We would love to be able to merge your changes, but it looks like the branch is not up to date. ⚠️
-
-To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
-
-Using the command line, you can do this in three easy steps:
-
-```bash
-git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
-
-git fetch upstream
-
-git pull upstream main
-````
-
-Se você estiver usando uma GUI, basta clicar em `Add a new remote...` e usar o link `git://github.com/freeCodeCamp/freeCodeCamp.git` de cima.
-
-Após sincronizar seu fork e passar no build, poderemos revisar seu PR e fazer o merge. 😊
-
----
-
-Fique à vontade para recorrer ao artigo [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) no GitHub para mais ideias de como manter seu fork atualizado com o repositório upstream. 🔄
-````
-
-### Merge Conflicts
-
-> When PR has merge conflicts that need to be resolved.¹
-
-```markdown
-Hey @username
-
-We would love to be able to merge your changes, but it looks like you have some merge conflicts. ⚠️
-
-Once you resolve these conflicts, we will be able to review your PR and merge it. 😊
-
----
-
-If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
-
-Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
-````
-
-¹ Se é a primeira vez de um colaborador e se ele tem um conflito de merge, os mantenedores resolverão o conflito para ele.
-
-### PR duplicado
-
-> Quando um PR é duplo ou repetitivo.
-
-```markdown
-Hey @username
-
-This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
-
-If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
-
-Thanks again! 😊
-
----
-
-If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
-```
-
-### Fechando pull requests inválidos
-
-> Quando um PR é inválido.
-
-```markdown
-Hey @username
-
-Thank you for opening this pull request.
-
-This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
-
-Thank you and happy coding.
-```
-
-> Quando o PR adiciona links para recursos externos.
-
-```markdown
-Thank you for your pull request.
-
-We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
-
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
-```
-
-### Adicionando comentário sobre erros de iniciante
-
-```markdown
-Como um novo colaborador, encorajamos você a ler nossas [diretrizes de contribuição](https://contribute.freecodecamp.org).
-
-Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você ganha o respeito de outros mantenedores e poupa tempo a todos.
-
-Alguns exemplos disso são:
-
-1. Não edite arquivos diretamente no GitHub – apesar de você poder, não é uma boa ideia.
-2. Certifique-se de seguir a lista de verificação de PRs e não apenas saia marcando as coisas; caso contrário, não levaremos você a sério.
-3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
-4. Mantenha as menções e pedidos de revisão no mínimo. Compreendemos que você está entusiasmado em contribuir, e os nossos mantenedores retornarão você assim que tiverem uma chance.
-5. Não trabalhe diretamente no seu branch `main` - crie um novo branch para as alterações em que está trabalhando.
-
-Agradecemos por você usar seu tempo para nos ajudar, e esperamos ver mais contribuições de você.
-
-Boas contribuições.
-```
-
-### Fechando issues inválidas
-
-> Quando uma issue se refere ao código do usuário do freeCodeCamp.
-
-```markdown
-Thank you for reporting this issue.
-
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
-
-If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
-
-Thank you and happy coding.
-```
-
-> Quando uma issue é a mesma que uma issue anterior.
-
-```markdown
-Thank you for reporting this issue.
-
-This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
-
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
-```
-
-> Quando uma issue foi resolvida na fase de preparo.
-
-```markdown
-Thank you for reporting this issue.
-
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
-
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
-```
-
-### Issues de `first timer only`
-
-> Quando uma issue é considerada eligível pela primeira vez como contribuição ao código.
-
-```markdown
-Thanks for opening this issue.
-
-This looks like something that can be fixed by "first-time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
-
-List of files:
-
-1. ...
-2. ...
-3. ...
-
-Please make sure you read our [guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our [chat room](https://discord.gg/PRyKn3Vbay) or our [forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing; our moderators will guide you through this.
-
-Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
-
-Happy contributing.
-```
-
-### Solicitações de atribuição
-
-```md
-Normalmente, não atribuímos issues. Em vez disso, aceitamos o primeiro pull request que resolve o problema como um todo.
-
-Issues rotuladas com `help wanted` ou `first timers only` estão abertas para contribuições.
-
-Certifique-se de ler [nossas diretrizes para contribuição](https://contribute.freecodecamp.org/#/). Priorizamos os colaboradores de acordo com as instruções em nosso guia. Faça parte de [nossa sala de bate-papo](https://discord.gg/PRyKn3Vbay) ou [do fórum](https://forum.freecodecamp.org/c/contributors/3) caso precise de ajuda com suas contribuições. Nossos moderadores orientarão você pelo processo.
-```

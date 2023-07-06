@@ -1,6 +1,6 @@
 ---
 id: 58a25c98f9fc0f352b528e7f
-title: Hashing Your Passwords
+title: Hashing deiner Passwörter
 challengeType: 2
 forumTopicId: 301553
 dashedName: hashing-your-passwords
@@ -8,7 +8,7 @@ dashedName: hashing-your-passwords
 
 # --description--
 
-Going back to the information security section, you may remember that storing plaintext passwords is *never* okay. Now it is time to implement BCrypt to solve this issue.
+Going back to the information security section, you may remember that storing plaintext passwords is *never* okay. Jetzt ist es an der Zeit, BCrypt zu implementieren, um dieses Problem zu lösen.
 
 `bcrypt@~5.0.0` has already been added as a dependency, so require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account, and when you check to see that a password is correct on login.
 
@@ -28,7 +28,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-BCrypt should be a dependency.
+BCrypt sollte eine Abhängigkeit sein.
 
 ```js
 async (getUserInput) => {
@@ -43,7 +43,7 @@ async (getUserInput) => {
 }
 ```
 
-BCrypt should be correctly required and implemented.
+BCrypt sollte korrekt angewendet und implementiert werden.
 
 ```js
 async (getUserInput) => {

@@ -2,6 +2,7 @@
   "name": "MongoDB and Mongoose",
   "isUpcomingChange": false,
   "dashedName": "mongodb-and-mongoose",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "5 hours",
   "superBlock": "back-end-development-and-apis",

@@ -39,7 +39,7 @@ const person = {
 وينبغي عدم استخدام الـ function expression التقليدي.
 
 ```js
-(getUserInput) => assert(!code.match(/function/));
+assert(!code.match(/function/));
 ```
 
 يجب أن تكون `setGear` وظيفة معلنا (declarative function).
@@ -79,6 +79,7 @@ console.log(bicycle.gear);
 ```js
 const bicycle = {
   gear: 2,
+  // setGear: function(newGear) {
   setGear(newGear) {
     this.gear = newGear;
   }

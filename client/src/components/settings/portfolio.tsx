@@ -9,7 +9,8 @@ import {
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { PortfolioProjectData } from '../../redux/prop-types';
 
@@ -336,11 +337,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
         <FullWidthRow>
-          <div className='portfolio-settings-intro'>
-            <p className='p-intro'>{t('settings.share-projects')}</p>
-          </div>
-        </FullWidthRow>
-        <FullWidthRow>
+          <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
             block={true}

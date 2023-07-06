@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: Reparte cartas para FreeCell
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -8,11 +8,11 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
+*FreeCell* es el juego de cartas solitario que Paul Alfille presentó para el sistema PLATO en 1978. Jim Horne, en Microsoft, cambió el nombre a FreeCell y reimplementó el juego para DOS, luego Windows. Esta version introdujo 32000 repartidas numeradas.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+Como el juego se hizo popular, Jim Horne revelo el algoritmo, y otras implementaciones de FreeCell comenzaron a reproducir los turnos de Microsoft. Estos turnos son numerados desde 1 to 32000. Nuevas versiones de Microsoft tienen 1 million de turnos, numerados desde 1 a 1000000; algunas implementaciones permiten números fuera de ese rango.
 
-The algorithm uses this linear congruential generator from Microsoft C:
+El algoritmo usa este generador congruencial lineal de Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -23,21 +23,21 @@ The algorithm uses this linear congruential generator from Microsoft C:
 A continuación el algoritmo:
 
 <ol>
-  <li>Seed the RNG with the number of the deal.
-  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  <li>Sembrar la RNG con el número del turno.
+  </li><li>Crea un arreglo de 52 cartas: As de Tréboles, As de Diamantes, As de Corazones, As de Espadas, 2 de Tréboles, 2 de Diamantes, y así sucesivamente por los rangos: As, 2, 3, 4, 5, 6, 7, 8, 9, 10, Sota, Reina, Rey. Los índices del arreglo son de 0 a 51, con As de Tréboles en 0, y Rey de Espadas al 51.</li>
+  <li>Hasta que el arreglo quede vacío:</li>
+  <li>Escoge una carta aleatoria al índice ≡ siguiente número aleatorio (mod array length).</li>
     <ul>
-      <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>Intercambia esta carta aleatoria con la última carta del arreglo.</li>
+      <li>Remueve esta carta aleatoria del arreglo. (Longitud del arreglo bajara en 1)</li>
+      <li>Reparte esta carta aleatoria.</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>Reparte todas las 52 cartas, boca arriba, sobre 8 columnas. Las primeras 8 cartas van en 8 columnas, las siguientes 8 van sobre las primeras 8 cartas, y así sucesivamente.</li>
 </ol>
 
 **Por ejemplo:**
 
-**Order to deal cards**
+**Ordena para repartir cartas**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ A continuación el algoritmo:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**Juego #1**
 
 ```js
 [
@@ -77,35 +77,35 @@ A continuación el algoritmo:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+Escribe una función que tome un número de reparto y reparta las cartas en el mismo orden como este algoritmo. La función debe retornar un arreglo de dos dimensiones representando el tablero de FreeCell.
 
 # --hints--
 
-`dealFreeCell` should be a function.
+`dealFreeCell` debe ser una función.
 
 ```js
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` should return an object.
+`dealFreeCell(seed)` debe devolver un objeto.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` should return an array of length 7.
+`dealFreeCell(seed)` debe devolver un arreglo de tamaño 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` should return an array identical to example "Game #1"
+`dealFreeCell(1)` debería devolver un arreglo identico al ejemplo "Juego #1"
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` should return an array identical to example "Game #617"
+`dealFreeCell(617)` debería devolver un arreglo identico al ejemplo "Juego #617"
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

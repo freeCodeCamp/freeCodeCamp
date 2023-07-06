@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-بدلاً من إنشاء رَقَم صحيح عشوائي بين صفر ورَقَم أخر معين، كما فعلنا من قبل، يمكننا إنشاء رَقَم صحيح عشوائي يقع ضمن نطاق رَقَمين محددين.
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-لفعل ذلك، سنحدد الحد الأدنى للرَقْم `min` والحد الأقصى `max`.
+You'll call your minimum number `min` and your maximum number `max`.
 
-هذه هي الصيغة التي سنستخدمها. خذ لحظة لقراءتها ومحاولة فهم ما يفعله هذا الكود:
+This formula gives a random whole number in the range from `min` to `max`. خذ لحظة لقراءتها ومحاولة فهم ما يفعله هذا الكود:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-أنشئ وظيفة (function) تسمى `randomRange` التي تأخذ نطاق `myMin` و `myMax` وترجع رَقَماً صحيحاً عشوائياً أكبر من أو يساوي `myMax`، و أقل من أو يساوي `myMin`، بشمول الاثنين.
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

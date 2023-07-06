@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc803f
-title: Sum digits of an integer
+title: Suma los dígitos de un número entero
 challengeType: 1
 forumTopicId: 302331
 dashedName: sum-digits-of-an-integer
@@ -8,36 +8,36 @@ dashedName: sum-digits-of-an-integer
 
 # --description--
 
-Write a function that takes a string as a parameter. This string represents a number that can be in any base (less than 37) and return the sum of its digits.
+Escribe una funcion que toma una cadena de texto como parametro. Esta cadena de texto representa un número que puede estar un cualquier base (mejor que 37) y devolver la suma de sus digitos.
 
 <ul>
-  <li><b>1</b><sub>10</sub> sums to <b>1</b></li>
-  <li><b>1234</b><sub>10</sub> sums to <b>10</b></li>
+  <li><b>1</b><sub>10</sub>suma a <b>1</b></li>
+  <li><b>1234</b><sub>10</sub> suma a <b>10</b></li>
   <li><b>fe</b><sub>16</sub> sums to <b>29</b></li>
   <li><b>f0e</b><sub>16</sub> sums to <b>29</b></li>
 </ul>
 
 # --hints--
 
-`sumDigits` should be a function.
+`sumDigits` debe de ser una función.
 
 ```js
 assert(typeof sumDigits == 'function');
 ```
 
-`sumDigits("1")` should return a number.
+`sumDigits("1")` debe devolver un número.
 
 ```js
 assert(typeof sumDigits('1') == 'number');
 ```
 
-`sumDigits("1")` should return `1`.
+`sumDigits("1")` debe devolver `1`.
 
 ```js
 assert.equal(sumDigits('1'), 1);
 ```
 
-`sumDigits("12345")` should return `15`.
+`sumDigits("12345")` debe devolver `15`.
 
 ```js
 assert.equal(sumDigits('12345'), 15);

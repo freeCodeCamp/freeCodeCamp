@@ -20,7 +20,7 @@ Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurich
 -   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das Solution Link-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das GitHub Link-Feld ein.
 
 # --instructions--
 
@@ -519,7 +519,10 @@ async(getUserInput) => {
       description: 'test',
       duration: 60,
       _id,
-      date: new Date().toDateString()
+      date: new Date().toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "short", month: "short",
+        day: "2-digit", year: "numeric"
+      }).replaceAll(',', '')
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',

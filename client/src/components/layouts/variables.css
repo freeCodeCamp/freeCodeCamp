@@ -28,6 +28,7 @@
   --love-dark: #f82153;
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
+  --focus-outline-color: var(--blue-mid);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
 }

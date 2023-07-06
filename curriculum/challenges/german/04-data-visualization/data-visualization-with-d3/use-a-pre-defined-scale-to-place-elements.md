@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-Nachdem die Skalen festgelegt wurden, können nun erneut Daten in das Streudiagramm eingetragen werden. The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG. Sie halten die Daten innerhalb des Bildschirm-Darstellungsbereichs.
+Nachdem die Skalen festgelegt wurden, können nun erneut Daten in das Streudiagramm eingetragen werden. Skalen gleichen Verarbeitungsfunktionen, die `x`- und `y`-Rohdaten in Werte umwandeln, die in das SVG passen und korrekt dargestellt werden können. Sie halten die Daten innerhalb des Bildschirm-Darstellungsbereichs.
 
 Die Koordinaten-Attributwerte einer SVG-Form setzt du mithilfe der Skalierungsfunktion. Damit sind sowohl `x`- und `y`-Attribute für `rect`- bzw. `text`-Elemente als auch `cx`- und `cy`-Attribute für `circles` gemeint. Hier ein Beispiel:
 
@@ -17,11 +17,11 @@ shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Scales set shape coordinate attributes to place the data points onto the SVG. Die Anwendung von Skalen ist nicht notwendig, wenn du den eigentlichen Datenwert wiedergibst, wie beispielsweise in den `text()`-Methoden für Kurzinformationen oder Beschriftungen.
+Skalen setzen Formkoordinaten-Attribute fest, um die Datenpunkte auf das SVG zu platzieren. Die Anwendung von Skalen ist nicht notwendig, wenn du den eigentlichen Datenwert wiedergibst, wie beispielsweise in den `text()`-Methoden für Kurzinformationen oder Beschriftungen.
 
 # --instructions--
 
-Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG. Wende für `circles`-Skalen zur Festlegung der `cx`- und `cy`-Attribute an. Gib ihnen auch einen Radius von `5` Einheiten.
+Verwende `xScale` und `yScale`, um die `circle`- und `text`-Formen im SVG zu positionieren. Wende für `circles`-Skalen zur Festlegung der `cx`- und `cy`-Attribute an. Gib ihnen auch einen Radius von `5` Einheiten.
 
 Wende für `text`-Elemente Skalen zur Festlegung der `x`- und `y`-Attribute an. Die Beschriftungen sollten rechts neben den Punkten angezeigt werden. Erhöhe den `x`-Datenwert um `10` Einheiten, bevor du diesen an `xScale` übergibst, um das zu erreichen.
 

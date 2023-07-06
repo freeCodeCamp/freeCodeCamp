@@ -40,18 +40,19 @@ function IntroductionPage({
   const { t } = useTranslation();
   const {
     html,
-    frontmatter: { block }
+    frontmatter: { block, superBlock }
   } = markdownRemark;
   const firstLesson =
     allChallengeNode && allChallengeNode.edges[0].node.challenge;
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
-
+  const blockTitle =
+    t(`intro:${superBlock}.blocks.${block}.title`) + ' | freeCodeCamp.org';
   return (
     <LearnLayout>
       <Helmet>
-        <title>{block} | freeCodeCamp.org</title>
+        <title>{blockTitle}</title>
       </Helmet>
       <Grid className='intro-layout-container'>
         <FullWidthRow>
@@ -94,6 +95,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block
+        superBlock
       }
       html
     }

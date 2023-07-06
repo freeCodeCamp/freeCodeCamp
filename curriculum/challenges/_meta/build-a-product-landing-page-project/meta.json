@@ -1,7 +1,9 @@
 {
   "name": "Build a Product Landing Page Project",
   "isUpcomingChange": false,
+  "dashedName": "build-a-product-landing-page-project",
   "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
   "order": 16,
   "time": "30 hours",
   "template": "",
@@ -12,4 +14,5 @@
       "587d78af367417b2b2512b04",
       "Build a Product Landing Page"
     ]
-  ]}
+  ]
+}

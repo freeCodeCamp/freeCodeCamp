@@ -1,6 +1,6 @@
 ---
 id: 6331d23eb51aeedd1a2bd646
-title: "Solving for X"
+title: "求解 X"
 challengeType: 15
 videoId: _U9PEFKjyb8
 dashedName: solving-for-x
@@ -8,19 +8,19 @@ dashedName: solving-for-x
 
 # --description--
 
-This first video will show you the essence of algebra and then how Python code does the same task in a different way.
+第一个视频将向你展示代数的本质，然后是 Python 代码如何以不同的方式完成同样的任务。
 
-Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Add the code from the video to your algebra Colab notebook to see how to solve for X using Python. Then change the code if you want, test it, and compare it to paper-and-pencil solving. Remember the equation input needs to be in Python syntax.
+这是<a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和视频配套的 Colab 笔记本</a>。将视频中的代码添加到你的代数 Colab 笔记本中，看看如何用 Python 求解 X。 然后，如果你想的话，修改代码，进行测试，并与用纸笔解题的方法进行比较。 记住，方程输入需要使用 Python 语法。
 
 # --question--
 
-## --assignment--
+## --任务--
 
-Add the code to solve for x from the video to your algebra Colab notebook.
+将视频中求解 x 的方法的代码添加到你的代数 Colab 笔记本中。
 
 ## --text--
 
-In Python, what is the library you import to solve algebra problems with variables?
+在 Python 中，你导入什么库来解决带有变量的代数问题？
 
 ## --answers--
 

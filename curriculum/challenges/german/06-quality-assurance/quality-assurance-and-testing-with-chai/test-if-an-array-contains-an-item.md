@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `include` vs. `notInclude`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `include` vs. `notInclude`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `include` vs. `no
   );
 ```
 
-You should choose the correct method for the second assertion - `include` vs. `notInclude`.
+Du solltest die richtige Methode für die zweite Behauptung auswählen - `include` vs. `notInclude`.
 
 ```js
 (getUserInput) =>

@@ -16,7 +16,7 @@ import Honesty from '../components/settings/honesty';
 import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
-import { Themes } from '../components/settings/theme';
+import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
@@ -41,13 +41,12 @@ import {
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-interface ShowSettingsProps {
+type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
-  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateSocials: (formValues: Socials) => void;
@@ -58,7 +57,7 @@ interface ShowSettingsProps {
   verifyCert: () => void;
   path?: string;
   userToken: string | null;
-}
+};
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,

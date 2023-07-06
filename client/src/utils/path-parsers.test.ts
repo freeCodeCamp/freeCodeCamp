@@ -1,4 +1,4 @@
-import { isChallenge, isLanding } from './path-parsers';
+import { isLanding } from './path-parsers';
 
 const pathnames = {
   english: {
@@ -54,35 +54,5 @@ describe('isLanding', () => {
   });
   it('returns false for Espanol with year challenge pathname', () => {
     expect(isLanding(pathnames.espanolWithYear.challenge)).toBe(false);
-  });
-});
-
-describe('isChallenge', () => {
-  it('returns a boolean', () => {
-    expect(typeof isChallenge('/')).toBe('boolean');
-  });
-  it('returns false for Espanol landing pathname', () => {
-    expect(isChallenge(pathnames.espanol.landing)).toBe(false);
-  });
-  it('returns false for Espanol super block pathname', () => {
-    expect(isChallenge(pathnames.espanol.superBlock)).toBe(false);
-  });
-  it('returns true for Espanol challenge pathname', () => {
-    expect(isChallenge(pathnames.espanol.challenge)).toBe(true);
-  });
-  it('returns false for English landing pathname', () => {
-    expect(isChallenge(pathnames.english.landing)).toBe(false);
-  });
-  it('returns false for English super block pathname', () => {
-    expect(isChallenge(pathnames.english.superBlock)).toBe(false);
-  });
-  it('returns true for English challenge pathname', () => {
-    expect(isChallenge(pathnames.english.challenge)).toBe(true);
-  });
-  it('returns true for English with year challenge pathname', () => {
-    expect(isChallenge(pathnames.englishWithYear.challenge)).toBe(true);
-  });
-  it('returns true for Espanol with year challenge pathname', () => {
-    expect(isChallenge(pathnames.espanolWithYear.challenge)).toBe(true);
   });
 });

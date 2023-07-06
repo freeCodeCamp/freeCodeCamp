@@ -11,7 +11,7 @@ dashedName: escape-sequences-in-strings
 
 文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 エスケープシーケンスを使用すると、文字列で通常は使用できない文字を使用できます。
 
-<table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>タブ</td></tr><tr><td><code>\r</code></td><td>キャリッジリターン</td></tr><tr><td><code>\b</code></td><td>単語境界</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>タブ</td></tr><tr><td><code>\r</code></td><td>キャリッジリターン</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
 
 *バックスラッシュ自体をバックスラッシュとして表示するためにはエスケープする必要があります。*
 

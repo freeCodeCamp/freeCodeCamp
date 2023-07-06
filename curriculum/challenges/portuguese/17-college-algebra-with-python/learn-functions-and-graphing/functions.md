@@ -1,6 +1,6 @@
 ---
 id: 6331d266b51aeedd1a2bd64b
-title: "Functions"
+title: "Funções"
 challengeType: 15
 videoId: rYg12-omcGg
 dashedName: functions
@@ -8,19 +8,19 @@ dashedName: functions
 
 # --description--
 
-This first video will show you what it means to be a function, and then it will show you how math functions and Python functions are similar.
+Este primeiro vídeo mostrará a você o que significa uma função. Ele mostrará como as funções matemáticas e as funções do Python são semelhantes.
 
-Here is the <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste e nos próximos vídeos.</a>
 
 # --question--
 
-## --assigment--
+## --assignment--
 
-Add code to your algebra Colab notebook that creates Python functions for decimal-to-fraction conversions
+Adicione código ao notebook de álgebra do Colaboratory que cria funções do Python para conversões entre decimais e frações
 
 ## --text--
 
-After defining a function in Python, indent each line of the function how many spaces?
+Após definir uma função em Python, quantos espaços você usará para indentar cada linha da função?
 
 ## --answers--
 

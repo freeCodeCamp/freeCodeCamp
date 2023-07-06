@@ -1,6 +1,6 @@
 ---
 id: bd7154d8c242eddfaeb5bd13
-title: Створіть гру Життя
+title: Створіть гру «Життя»
 challengeType: 3
 forumTopicId: 302362
 dashedName: build-the-game-of-life
@@ -8,34 +8,34 @@ dashedName: build-the-game-of-life
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/BpwMZv/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/BpwMZv/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.
 
-The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway. It is a <em>zero-player game</em>, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+Гра життя — це клітинний автомат, розроблений британським математиком Джоном Хортоном Конвеєм. Це <em>гра з нульовим гравцем</em>, тобто її розвиток визначається початковим станом та не потребує подальших вводів. Людина взаємодіє з грою, створюючи початкову конфігурацію та спостерігаючи за розвитком.
 
-The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, populated and unpopulated. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent.
+Всесвіт гри — це нескінченна двовимірна ортогональна сітка квадратних клітинок, кожна з яких перебуває в одному з двох можливих станів: заселеному та незаселеному. Кожна клітинка взаємодіє зі своїми вісьмома сусідами, які є клітинками, розташованими по горизонталі, вертикалі або діагоналі.
 
-At each step in time, the following transitions occur:
+На кожному кроці в часі відбуваються такі переходи:
 
-- Any live cell with fewer than two live neighbours dies, as if by underpopulation.
-- Any live cell with two or three live neighbours lives on to the next generation.
-- Any live cell with more than three live neighbours dies, as if by overpopulation.
-- Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+- Будь-яка жива клітинка з менш ніж двома живими сусідами гине від недостатнього заселення.
+- Будь-яка жива клітинка з двома чи трьома живими сусідами живе до наступного покоління.
+- Будь-яка жива клітинка з більш ніж трьома живими сусідами гине від перенаселення.
+- Будь-яка мертва клітинка з трьома живими сусідами стає живою клітинкою шляхом репродукції.
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-**User Story:** When I first arrive at the game, it will randomly generate a board and start playing.
+**Історія користувача:** коли я вперше заходжу в гру, вона випадково створить площину і почне гру.
 
-**User Story:** I can start and stop the board.
+**Історія користувача:** я можу запустити і зупинити площину.
 
-**User Story:** I can set up the board.
+**Історія користувача:** я можу налаштувати площину.
 
-**User Story:** I can clear the board.
+**Історія користувача:** я можу очистити площину.
 
-**User Story:** When I press start, the game will play out.
+**Історія користувача:** коли я натисну кнопку «Start», гра почнеться.
 
-**User Story:** Each time the board changes, I can see how many generations have gone by.
+**Історія користувача:** щоразу, коли змінюється площина, я можу побачити, скільки поколінь минуло.
 
-When you are finished, include a link to your project and click the "I've completed this challenge" button.
+Коли закінчите, надайте посилання на свій проєкт та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 

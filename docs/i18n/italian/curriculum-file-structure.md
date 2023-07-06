@@ -83,11 +83,10 @@ Quando rinomini un blocco del curriculum, devi:
 1. Cambiare il nome della cartella dello stesso blocco in _tutte_ le directory delle altre lingue. Queste devono tutte essere uguali alla struttura inglese o il build avrà errori.
 1. Cambia il nome della cartella del blocco nella directory `_meta`.
 1. Aggiorna le proprietà `name` e `dashedName` per il `meta.json` di quel blocco.
-1. Aggiorna `client/utils/help-category-map.json` inmodo che usi il nuovo nome del blocco come chiave.
-1. Aggiorna la cartella del blocco in `client/src/pages/learn/{superBlock}`.
-1. Nel file `index.md` della cartella sopra, aggiorna il valore di `block` nel frontespizio.
-1. Nei file `client/i18n/locales/{language}/intro.json` aggiorna il nome del blocco con il nuovo nome per tutte le lingue. Nel file inglese `intro.json`, cambia anche `title`.
-1. Aggiorna il file `README.md` principale al nuovo nome.
+1. Update the block folder in `client/src/pages/learn/{superBlock}`.
+1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Update the main `README.md` file to the new name.
 
 ### Rinominare una sfida
 

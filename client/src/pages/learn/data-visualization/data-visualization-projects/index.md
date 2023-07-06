@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Data Visualization Projects
-block: Data Visualization Projects
-superBlock: Data Visualization
+block: data-visualization-projects
+superBlock: data-visualization
 ---
 
 ## Introduction to the Data Visualization Projects

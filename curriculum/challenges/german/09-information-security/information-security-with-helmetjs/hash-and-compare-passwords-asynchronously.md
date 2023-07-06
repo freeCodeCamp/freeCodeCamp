@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7d
-title: Hash and Compare Passwords Asynchronously
+title: Passwörter asynchron hashen und vergleichen
 challengeType: 2
 forumTopicId: 301578
 dashedName: hash-and-compare-passwords-asynchronously
@@ -10,7 +10,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
+Da das Hashing sehr rechenintensiv ist, wird empfohlen, es asynchron auf dem Server durchzuführen, um zu vermeiden, dass eingehende Verbindungen während des Hashens blockiert werden. All you have to do to hash a password asynchronous is call
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -20,7 +20,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-Add this hashing function to your server (we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.
+Add this hashing function to your server (we've already defined the variables used in the function for you to use) and log it to the console for you to see! An dieser Stelle speicherst du normalerweise den Hash in deiner Datenbank.
 
 Now when you need to figure out if a new input is the same data as the hash you would just use the compare function.
 
@@ -47,7 +47,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben.
 
 # --hints--
 
-Async hash should be generated and correctly compared.
+Async-Hash sollte generiert und korrekt verglichen werden.
 
 ```js
 (getUserInput) =>

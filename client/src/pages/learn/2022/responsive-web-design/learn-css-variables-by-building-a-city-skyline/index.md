@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn CSS Variables by Building a City Skyline Project
-block: Learn CSS Variables by Building a City Skyline
-superBlock: Responsive Web Design
+block: learn-css-variables-by-building-a-city-skyline
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Learn CSS Variables by Building a City Skyline Project

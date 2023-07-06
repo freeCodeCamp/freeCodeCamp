@@ -142,10 +142,10 @@ textarea.inputarea {
 
 .test-feedback .test-status,
 .test-feedback .hint-status {
-  margin-top: 1rem;
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
+  margin-top: 1rem;
 }
 
 .test-status-description,
@@ -174,20 +174,34 @@ textarea.inputarea {
   }
 }
 
-.lower-jaw-icon-bar {
-  overflow: hidden;
+.utility-bar {
+  display: grid;
+  /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.75rem;
+}
+
+.utility-bar > button {
   display: flex;
-  gap: 10px;
-  flex-direction: row;
-}
-.lower-jaw-icon-bar > button {
-  line-height: 0;
-}
-
-.lower-jaw-icon-bar > button:focus {
-  outline: 2px solid var(--blue-mid);
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 6px 0;
 }
 
-.lower-jaw-icon-bar > button:last-child {
-  margin-inline-end: 0;
+.progress-bar-container {
+  text-align: center;
+}
+
+.editor-lower-jaw .progress-bar-wrap-container {
+  width: 100% !important;
+  margin: 32px 0px;
+}
+
+.editor-lower-jaw .progress-bar-background-container {
+  width: 100% !important;
+}
+
+.hint-status {
+  margin-bottom: 18px;
 }

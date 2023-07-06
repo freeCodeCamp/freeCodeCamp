@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn Linear Functions
-block: Learn Linear Functions
-superBlock: College Algebra with Python
+block: learn-linear-functions
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn Linear Functions

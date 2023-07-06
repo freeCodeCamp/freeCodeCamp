@@ -1,4 +1,4 @@
-# How to help with video challenges
+# How to Help with Video Challenges
 
 Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
@@ -54,9 +54,9 @@ More answers
 The number for the correct answer goes here.
 ````
 
-## Creating questions for video challenges
+## Creating Questions for Video Challenges
 
-### Access the video challenge markdown files
+### Access the Video Challenge Markdown Files
 
 You can find the markdown files for video challenges at the following locations in the curriculum:
 
@@ -87,7 +87,7 @@ In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
-### Add the question to the markdown file
+### Add the Question to the Markdown File
 
 You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
@@ -198,6 +198,6 @@ print(height/3)
 
 For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open a pull request
+## Open a Pull Request
 
 After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

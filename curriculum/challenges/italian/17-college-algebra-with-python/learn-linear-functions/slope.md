@@ -1,6 +1,6 @@
 ---
 id: 6331d291b51aeedd1a2bd651
-title: "Slope"
+title: "Coefficiente angolare"
 challengeType: 15
 videoId: nURsz7SR5aM
 dashedName: slope
@@ -8,15 +8,15 @@ dashedName: slope
 
 # --description--
 
-This first video will focus on the slope of a line and how to calculate it.
+Questo primo video si concentra sulla pendenza di una retta (coefficiente angolare) e come calcolarla.
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo e nei prossimi video.</a>
 
 # --question--
 
 ## --text--
 
-If you have already defined these variables, which of the following is the correct slope formula?
+Se hai già definito queste variabili, quale delle seguenti è la formula corretta della pendenza?
 
 ## --answers--
 

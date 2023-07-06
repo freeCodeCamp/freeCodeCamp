@@ -148,6 +148,40 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
+## API
+
+### Testing
+
+The `api/` tests are split into two parts:
+
+1. Unit tests
+2. Integration tests
+
+#### Unit Tests
+
+Unit tests isolate a single function or component. The tests do not need mocking, but will require fixtures.
+
+The unit tests are located in a new file adjacent the file exporting that being tested:
+
+```text
+api/
+├── src/
+│   ├── utils.ts
+│   ├── utils.test.ts
+```
+
+#### Integration Tests
+
+Integration tests test the API as a whole. The tests will require mocking, and should not require fixtures beyond the database seeding data, and a method to authenticate.
+
+Typically, each integration test file will be directly related to a route. The integration tests are located in the `api/tests/` directory:
+
+```text
+api/
+├── tests/
+│   ├── settings.ts
+```
+
 ## Further Literature
 
 - [TypeScript Docs](https://www.typescriptlang.org/docs/)

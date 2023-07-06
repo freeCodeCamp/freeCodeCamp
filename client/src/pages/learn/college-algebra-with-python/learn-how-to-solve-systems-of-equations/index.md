@@ -1,7 +1,7 @@
 ---
 title: Introduction to Learn How to Solve Systems of Equations
-block: Learn How to Solve Systems of Equations
-superBlock: College Algebra with Python
+block: learn-how-to-solve-systems-of-equations
+superBlock: college-algebra-with-python
 ---
 
 ## Introduction to Learn How to Solve Systems of Equations

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Machine Learning Projects
-block: Machine Learning with Python Projects
-superBlock: Machine Learning with Python
+block: machine-learning-with-python-projects
+superBlock: machine-learning-with-python
 ---
 
 ## Introduction to the Machine Learning Projects

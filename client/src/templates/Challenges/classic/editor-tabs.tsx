@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import i18next from 'i18next';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
 import { toggleVisibleEditor } from '../redux/actions';
@@ -48,7 +49,9 @@ class EditorTabs extends Component<EditorTabsProps> {
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}
-              <span className='sr-only'>editor</span>
+              <span className='sr-only'>
+                {i18next.t('learn.editor-tabs.editor')}
+              </span>
             </button>
           )
         )}

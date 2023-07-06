@@ -1,6 +1,6 @@
 ---
 id: 6331d258b51aeedd1a2bd649
-title: "Converting Fractions and Decimals"
+title: "Convertire Frazioni e Decimali"
 challengeType: 15
 videoId: hVHWr4KXZn0
 dashedName: converting-fractions-and-decimals
@@ -8,19 +8,19 @@ dashedName: converting-fractions-and-decimals
 
 # --description--
 
-The first video will show you how to convert between fractions, decimals, and percents on paper. Then, it will show you how to do it with Python code.
+Il primo video ti mostrerà come eseguire conversioni tra frazioni, decimali e percentuali su carta. Poi, ti mostrerà come farlo con il codice Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in the video.</a> Use this code as a model, and write your own code to convert fractions and decimals.
+Ecco il <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">notebook Colab notebook usato nel video.</a> Usa questo codice come modello e scrivi il tuo codice per convertire frazioni e decimali.
 
 # --question--
 
 ## --assignment--
 
-Add the code to convert fractions and decimals to your algebra Colab notebook.
+Aggiungi il codice per convertire frazioni e decimali al tuo notebook Colab.
 
 ## --text--
 
-Which of the following correctly represents "three hundredths" as a decimal?
+Quale delle seguenti risposte rappresenta correttamente "tre centesimi" come decimale?
 
 ## --answers--
 

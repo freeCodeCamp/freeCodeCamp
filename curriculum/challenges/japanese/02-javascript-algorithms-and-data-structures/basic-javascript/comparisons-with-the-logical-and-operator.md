@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 一度に複数の条件をテストしなければならない場合があります。 <dfn>論理積</dfn>演算子 (`&&`) は、左側と右側の<dfn>オペランド</dfn>の両方が true である場合にのみ `true` を返します。
 
-if ステートメントを別の if ステートメントにネストしても、同じ効果が得られます。
+The same effect could be achieved by nesting an `if` statement inside another `if`.
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-上の例は、`num` が `5` より大きく `10` より小さい場合にのみ `Yes` を返します。 同じロジックを次のように記述することができます。
+This code will return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written with the <dfn>logical and</dfn> operator.
 
 ```js
 if (num > 5 && num < 10) {

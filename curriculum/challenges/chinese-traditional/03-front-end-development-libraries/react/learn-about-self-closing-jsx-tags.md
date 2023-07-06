@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036161
-title: 瞭解 JSX 的自動閉合
+title: 瞭解自閉合 JSX 標籤
 challengeType: 6
 forumTopicId: 301396
 dashedName: learn-about-self-closing-jsx-tags
@@ -12,7 +12,7 @@ dashedName: learn-about-self-closing-jsx-tags
 
 JSX 不同於 HTML 的另一個重要方面是自閉合標籤。
 
-在HTML中，幾乎所有的標籤都有一個開始和結束標籤：`<div></div>`，結束標籤在你要關閉的標籤名之前始終具有正斜槓。 但是，HTML 中有一些稱爲 “自閉合標籤” 的特殊實例，它們在另一個標籤開始之前，不需要開始和結束標籤都存在。
+在HTML中，幾乎所有的標籤都有一個開始和結束標籤：`<div></div>`，結束標籤在你要關閉的標籤名之前始終具有正斜槓。 但是，HTML 中有一些被稱爲“自閉合標籤”的特殊實例，它們在另一個標籤開始之前，不需要開始和結束標籤都存在。
 
 例如，換行標籤可以寫成 `<br>` 或者 `<br />`，但是不應該寫成 `<br></br>`，因爲它不包含任何內容。
 

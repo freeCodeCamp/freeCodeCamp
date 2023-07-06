@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 Los métodos `min()` y `max()` de D3 son útiles para ayudar a establecer la escala.
 
-Dado un conjunto de datos complejo, una de las prioridades es establecer la escala para que la visualización encaje la anchura y altura del contenedor SVG. You want all the data plotted inside the SVG so it's visible on the web page.
+Dado un conjunto de datos complejo, una de las prioridades es establecer la escala para que la visualización encaje la anchura y altura del contenedor SVG. Quieres que todos los datos trazados dentro de la SVG por lo que es visible en la página web.
 
 El siguiente ejemplo establece la escala del eje x para datos de un diagrama de dispersión. El método `domain()` envía información a la escala sobre los valores originales de los datos para el trazado. El método `range()` le proporciona información sobre el espacio actual en la página web para la visualización.
 
-En el ejemplo, el dominio va de 0 al máximo en el conjunto. Utiliza el método `max()` con una función callback basada en los valores de x en los arreglos. The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
+En el ejemplo, el dominio va de 0 al máximo en el conjunto. Utiliza el método `max()` con una función callback basada en los valores de x en los arreglos. El rango utiliza el ancho del SVG (`w`), pero también incluye algo de relleno (padding). Esto deja espacio entre los puntos del gráfico de dispersión y el borde del SVG.
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-El padding (relleno) podría ser confuso en un principio. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). Incluir el padding en el método `range()` obliga al trazado a empezar en 30 a lo largo de esa línea (en lugar de 0), y terminar en 470 (en lugar de 500).
+El padding (relleno) podría ser confuso en un principio. Imagine el eje x como una línea horizontal de 0 a 500 (el valor de anchura del SVG). Incluir el padding en el método `range()` obliga al trazado a empezar en 30 a lo largo de esa línea (en lugar de 0), y terminar en 470 (en lugar de 500).
 
 # --instructions--
 

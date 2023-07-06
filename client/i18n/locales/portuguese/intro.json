@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Design responsivo para a web (novo)",
+    "title": "Design responsivo para a web",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um site de questionário.",
@@ -336,8 +336,28 @@
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
       },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
+        "intro": ["", ""]
+      },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
+      },
+      "learn-data-structures-by-building-a-shopping-cart": {
+        "title": "Aprenda estruturas de dados criando um carrinho de compras",
+        "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
+        "intro": ["", ""]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Aprenda expressões regulares criando um filtro de spam",
+        "intro": ["", ""]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
         "intro": ["", ""]
       }
     }
@@ -445,7 +465,7 @@
     }
   },
   "relational-database": {
-    "title": "Banco de dados relacional (Beta)",
+    "title": "Bancos de dados relacionais",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
       "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
@@ -788,8 +808,8 @@
           "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
         ]
       },
-      "build-a-multi-function-calculator": {
-        "title": "Crie uma calculadora multifunção",
+      "build-a-multi-function-calculator-project": {
+        "title": "Calculadora multifunção",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora multifunção."
@@ -819,8 +839,8 @@
           "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
         ]
       },
-      "build-a-graphing-calculator": {
-        "title": "Criar uma calculadora gráfica",
+      "build-a-graphing-calculator-project": {
+        "title": "Calculadora gráfica",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora gráfica."
@@ -832,8 +852,8 @@
           "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
         ]
       },
-      "build-three-math-games": {
-        "title": "Crie três jogos de matemática",
+      "build-three-math-games-project": {
+        "title": "Três jogos de matemática",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará três jogos de matemática."
@@ -857,8 +877,8 @@
           "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
         ]
       },
-      "build-a-financial-calculator": {
-        "title": "Criar uma calculadora financeira",
+      "build-a-financial-calculator-project": {
+        "title": "Calculadora financeira",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma calculadora financeira."
@@ -870,8 +890,8 @@
           "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
         ]
       },
-      "build-a-data-graph-explorer": {
-        "title": "Crie um explorador de gráfico de dados",
+      "build-a-data-graph-explorer-project": {
+        "title": "Explorador de gráfico de dados",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma explorador de gráfico de dados."
@@ -885,7 +905,7 @@
       "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
       "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
     ],
-    "note": "",
+    "note": "O Projeto Euler foi movido para seu próprio curso. Volte ao currículo para ver a lista dos cursos que oferecemos.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -913,14 +933,7 @@
         "intro": [
           "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
-        ]
-      },
-      "project-euler": {
-        "title": "Projeto Euler",
-        "intro": [
-          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
-          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Créditos: Rosetta Code</a>"
         ]
       }
     }
@@ -940,6 +953,119 @@
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations": {
+        "title": "Aprenda o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Aprenda especificidade no CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Projeto Euler",
+    "intro": [
+      "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
+      "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Problemas do Projeto Euler de 1 a 100",
+        "intro": [
+          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas."
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "Problemas do Projeto Euler de 101 a 200",
+        "intro": [
+          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente."
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Problemas do Projeto Euler de 201 a 300",
+        "intro": [
+          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Problemas do Projeto Euler de 301 a 400",
+        "intro": [
+          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Problemas do Projeto Euler de 401 a 480",
+        "intro": [
+          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
+        ]
+      }
+    }
+  },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "Fundamentos de C# com a Microsoft",
+    "intro": [
+      "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
+      "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
+      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para construir aplicações robustas e escaláveis."
+    ],
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Escreva seu primeiro código em C#",
+        "intro": [
+          "Comece sua jornada aprendendo a escrever seu primeiro código em C#. Desenvolva bem seus conhecimentos básicos enquanto explora os fundamentos e a sintaxe da linguagem, preparando o terreno para suas aventuras em programação."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Crie e execute aplicações simples de console em C#",
+        "intro": [
+          "Domine a arte de criar e executar aplicações simples de console em C#. Mergulhe no mundo da programação baseada em consoles, onde você ganhará a experiência prática de executar seu código e vê-lo em ação."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Adicione lógica a aplicações de console em C#",
+        "intro": [
+          "Libere o poder da lógica nas aplicações de console em C#. Aprenda a adicionar lógica e recursos de tomada de decisão ao código, permitindo que suas aplicações façam escolhas dinâmicas e respondam inteligentemente a diferentes cenários."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Trabalhe com dados variáveis em aplicações de console do C#",
+        "intro": [
+          "Descubra a versatilidade de dados variáveis nas aplicações de console em C#. Aproveite a capacidade de armazenar e manipular diferentes tipos de dados, como números e texto, aprofundando em conceitos essenciais de variáveis e manipulação de dados."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Crie métodos em aplicações de console em C#",
+        "intro": [
+          "Torne mais avançadas suas aplicações de console em C# dominando a arte de criar métodos. Aprenda a organizar e modularizar seu código, tornando-o mais controlável, reutilizável e eficiente."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Depure aplicações de console em C#",
+        "intro": [
+          "Aprimore suas habilidades de solução de problemas ao mergulhar no mundo da depuração de aplicações de console em C#. Obtenha a capacidade de identificar e corrigir problemas no código, garantindo que as aplicações sejam executadas sem problemas e apresentem os resultados desejados."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Exame de fundamentos de C# com certificação da Microsoft",
+        "intro": [
+          "Use o que aprendeu para passar no exame e ganhar suas Certificação da Microsoft em Fundamentos de C#"
+        ]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Certificação de exemplo",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Exame da certificação de exemplo",
+        "intro": ["placeholder"]
       }
     }
   },
@@ -953,9 +1079,8 @@
     "legacy-header": "Cursos anteriores",
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
-    "new-rwd-desc": "Atualizamos nosso currículo de Design responsivo para a web. Se você estava fazendo o currículo anterior, seu progresso ainda está salvo! Você pode encontrá-lo na seção Design responsivo para a web legado.",
-    "new-rwd-article": "Encorajamos você a ler sobre as mudanças que fizemos e a explorar o currículo atualizado.",
-    "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
+    "course-maintenance": "Estes cursos estão passando por manutenção. Se eles não estiverem funcionando, você pode aprender como executá-los localmente em <0>https://www.freecodecamp.org/portuguese/news/curso-de-bancos-de-dados-relacionais-como-aprender-sql-no-vscode-usando-o-docker-e-o-freecodecamp/</0>.",
+    "progress-wont-save": "O progresso não será salvo em sua conta do freeCodeCamp quando executá-los localmente.",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",
     "enable-cookies": "Você deve habilitar cookies de terceiros antes de iniciar.",

@@ -1,7 +1,9 @@
 {
   "name": "Build a Financial Calculator Project",
   "isUpcomingChange": false,
+  "dashedName": "build-a-financial-calculator-project",
   "order": 17,
+  "helpCategory": "Python",
   "time": "30 hours",
   "template": "",
   "required": [],
@@ -11,4 +13,5 @@
       "63d8401e39c73468b059cd42",
       "Build a Financial Calculator"
     ]
-  ]}
+  ]
+}

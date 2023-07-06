@@ -1,6 +1,6 @@
 ---
 id: 6331d251b51aeedd1a2bd648
-title: "Factoring"
+title: "Розкладання на множники"
 challengeType: 15
 videoId: Puyp_-ZYA54
 dashedName: factoring
@@ -8,31 +8,31 @@ dashedName: factoring
 
 # --description--
 
-This first video will show you how to find common factors and divide them out - in writing, then in code using loops and modulus operations.
+Перше відео покаже, як знайти спільні множники та скорочувати їх письмово. Потім ви дізнаєтесь, як це зробити у коді за допомогою циклів та операцій modulo.
 
-Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ось <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
 # --question--
 
 ## --text--
 
-What does the modulus (`%`) operator do in Python?
+Що робить оператор modulo (`%`) у Python?
 
 ## --answers--
 
-returns the percent
+повертає відсоток
 
 ---
 
-divides
+ділить
 
 ---
 
-returns the remainder when dividing
+повертає остачу від ділення
 
 ---
 
-creates a space
+створює пропуск
 
 ## --video-solution--
 

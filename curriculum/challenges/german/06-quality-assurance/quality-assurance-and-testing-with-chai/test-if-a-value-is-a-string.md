@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isString` vs. `isNotString`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `isString` vs. `isNotString`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `isString` vs. `i
   );
 ```
 
-You should choose the correct method for the second assertion - `isString` vs. `isNotString`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `isString` vs. `isNotString`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `isString` vs. `
   );
 ```
 
-You should choose the correct method for the third assertion - `isString` vs. `isNotString`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `isString` vs. `isNotString`.
 
 ```js
 (getUserInput) =>

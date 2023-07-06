@@ -29,6 +29,7 @@
     "sign-up-email-list": "أرسل لي بريد كوينسي الأسبوعي",
     "sign-out": "تسجيل الخروج",
     "curriculum": "المنهج الدراسي",
+    "contribute": "Contribute",
     "forum": "المنتدى",
     "radio": "radio",
     "profile": "الملف الشخصي",
@@ -72,10 +73,14 @@
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
+    "click-start-exam": "Start the exam",
     "change-language": "تغيير اللغة",
-    "cancel-change": "إلغاء التغيير",
     "resume-project": "أستكمال المشروع",
-    "start-project": "إبدأ المشروع"
+    "start-project": "إبدأ المشروع",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -102,7 +107,65 @@
         "testimony": "\"لقد ناضلت دائمًا لتعلم JavaScript. لقد أخذت العديد من الدورات ولكن دورة freeCodeCamp التي دامت. إن دراسة JavaScript وكذلك هياكل البيانات والخوارزميات على <strong>freeCodeCamp أعطتني المهارات</strong> والثقة التي كنت بحاجة إليها لإبراز عملي كمهندس برمجيات في Spotify.\""
       }
     },
-    "certification-heading": "احصل على شهادات معتمدة مجانية في:"
+    "certification-heading": "احصل على شهادات معتمدة مجانية في:",
+    "faq": "Frequently asked questions:",
+    "faqs": [
+      {
+        "question": "What exactly is freeCodeCamp?",
+        "answer": [
+          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+        ]
+      },
+      {
+        "question": "How will freeCodeCamp help me learn to code?",
+        "answer": [
+          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
+          "You will also earn free verified certifications along the way."
+        ]
+      },
+      {
+        "question": "Is freeCodeCamp really free?",
+        "answer": [
+          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+        ]
+      },
+      {
+        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "answer": [
+          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+        ]
+      },
+      {
+        "question": "What skills will I learn?",
+        "answer": [
+          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+        ]
+      },
+      {
+        "question": "How long does it take to learn all this?",
+        "answer": [
+          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+        ]
+      },
+      {
+        "question": "How do I get started?",
+        "answer": [
+          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+        ]
+      },
+      {
+        "question": "How do I earn the free verified certifications?",
+        "answer": [
+          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+        ]
+      },
+      {
+        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "answer": [
+          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "شارك مشاريعك غير التي بـ freeCodeCamp أو مقالاتك أو الـ pull requests الخاصه بك.",
@@ -114,6 +177,7 @@
     "for": "إعدادات الحساب لـ {{username}}",
     "sound-mode": "هذا يضيف صوت قيتارة ممتع في جميع أنحاء الموقع. سوف تحصل على تنبيهات موسيقية عند الكتابة على المحرر وإكمال التحديات وعند المطالبة بالشهادات وغير ذلك.",
     "sound-volume": "مستوي صوت Campfire:",
+    "scrollbar-width": "Editor Scrollbar Width",
     "username": {
       "contains invalid characters": "اسم المستخدم\"{{username}}\" يحتوي على أحرف غير صالحة",
       "is too short": "اسم المستخدم \"{{username}}\" قصير جداً",
@@ -220,8 +284,7 @@
     "tweet": "لقد حصلت للتو على شهادة {{certTitle}} @freeCodeCamp! تحقق منها هنا: {{certURL}}",
     "avatar": "صورة {{username}}",
     "joined": "تاريخ الانضمام {{date}}",
-    "total-points": "مجموع النقاط {{count}}",
-    "total-points_plural": "مُجمل النقاط {{count}}",
+    "total-points": "Number of points: {{count}}",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
@@ -279,6 +342,7 @@
     "question": "Question",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
     "congratulations": "تهانينا، نجح كودك. قدّم كودك للمتابعة.",
     "i-completed": "لقد أكملت هذا التحدي",
@@ -309,7 +373,8 @@
       "console": "وحدة تحكم",
       "instructions": "تعليمات",
       "notes": "ملاحظات",
-      "preview": "معاينة"
+      "preview": "معاينة",
+      "editor": "Editor"
     },
     "editor-alerts": {
       "tab-trapped": "الضغط على زر tab سيدرج الآن رمز التباعد",
@@ -363,9 +428,16 @@
     "your-donation-2": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل شهر.",
     "your-donation-3": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل عام.",
     "become-supporter": "أصبح داعماً",
-    "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
-    "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
-    "duration-4": "كن داعماً لمنظمتنا الخيرية",
+    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
+    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
+    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
+    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
+    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
+    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
+    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
+    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
+    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
+    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "nicely-done": "ممتاز، لقد انتهيت لتوك من {{block}}.",
     "credit-card": "بطاقة ائتمان",
     "credit-card-2": "أو التبرع ببطاقة ائتمانية:",
@@ -455,6 +527,8 @@
     "unsubscribed": "تم إلغاء اشتراكك بنجاح",
     "keep-coding": "أياً كان ما تقوم به، استمر في البرمجة!",
     "email-signup": "التسجيل عبر البريد الإلكتروني",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson، المدرّس الذي أسس freeCodeCamp.org",
     "email-blast": "بالمناسبة، في كل يوم جمعة، أرسل رسالة بريد إلكتروني مع 5 روابط حول البرمجة وعلوم الكمبيوتر. أرسلها إلى حوالي 4 ملايين شخص. هل تريدني أن أرسل هذا إليك أيضاً؟",
     "update-email-1": "تحديث عنوان بريدك الإلكتروني",
@@ -526,7 +600,13 @@
     "not-authorized": "غير مصرح لك بالمتابعة على هذا المسار",
     "could-not-find": "لم نتمكن من العثور على ما كنت تبحث عنه. الرجاء التحقق والمحاولة مرة أخرى",
     "wrong-updating": "حدث خطأ ما في تحديث حسابك. الرجاء التحقق والمحاولة مرة أخرى",
-    "updated-preferences": "لقد قمنا بتحديث تفضيلاتك",
+    "updated-about-me": "We have updated your personal information",
+    "updated-socials": "We have updated your social links",
+    "updated-sound": "We have updated your sound settings",
+    "updated-themes": "We have updated your theme",
+    "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
+    "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "portfolio-item-updated": "We have updated your portfolio",
     "email-invalid": "تنسيق البريد الإلكتروني غير صالح",
     "email-valid": "تم تغيير بريدك الإلكتروني بنجاح، برمجة سعيدة!",
     "bad-challengeId": "currentChallengeId هو challene ID غير صحيح",
@@ -536,6 +616,7 @@
     "username-used": "اسم المستخدم مرتبط بالفعل بهذا الحساب",
     "username-taken": "اسم المستخدم مرتبط حالباً بحساب آخر",
     "username-updated": "قمنا بتحديث اسم المستخدم الخاص بك إلى {{username}}",
+    "privacy-updated": "We have updated your privacy settings",
     "could-not-logout": "لم نتمكن من تسجيل خروجك، الرجاء المحاولة مرة أخرى بعد لحظات",
     "email-encoded-wrong": "تم تنسيق البريد الإلكتروني المشفر في الرابط بشكل غير صحيح",
     "oops-not-right": "عفوًا ، هناك خطأ ما ، يرجى طلب رابط جديد لتسجيل الدخول / الاشتراك",
@@ -713,6 +794,8 @@
       "machine-learning-with-python-v7": "مشاريع تعلم الآله باستخدام Python",
       "College Algebra with Python": "College Algebra with Python",
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
+      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",
@@ -739,7 +822,7 @@
   "forum-help": {
     "browser-info": "**معلومات المتصفح الخاصة بك:**",
     "user-agent": "وكيل المستخدم هو: <code>{{userAgent}}</code>",
-    "challenge": "**التحدي:** {{challengeTitle}}",
+    "challenge": "**Challenge:**",
     "challenge-link": "**رابط للتحدي:**",
     "whats-happening": "**أخبرنا بما يحدث:**",
     "describe": "قم بوصف مشكلتك بالتفصيل هنا.",

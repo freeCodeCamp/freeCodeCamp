@@ -28,7 +28,7 @@ Now you've successfully learned how to use the ES6 `Set()` object, good job!
 
 # --hints--
 
-`checkSet(new Set([1,2,3,4,5,6,7])` should return `[1, 2, 3, 4, 5, 6, 7]`.
+`checkSet(new Set([1,2,3,4,5,6,7])` sollte `[1, 2, 3, 4, 5, 6, 7]` zurückgeben.
 
 ```js
 assert(

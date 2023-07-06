@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `isDefined` vs. `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isDefined` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `isDefined` vs. `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ You should choose the correct method for the second assertion - `isDefined` vs. 
   );
 ```
 
-You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `isDefined` vs. `isUndefined`.
 
 ```js
 (getUserInput) =>

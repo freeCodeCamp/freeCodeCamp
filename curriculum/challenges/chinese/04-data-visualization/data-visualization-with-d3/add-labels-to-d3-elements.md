@@ -10,7 +10,7 @@ dashedName: add-labels-to-d3-elements
 
 D3 允许你使用 SVG 的 `text` 元素给图形元素，如条形图，添加标签。
 
-Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG. 它也需要能够获取数据来显示数据值。
+和 `rect` 元素类似，`text` 元素也需要 `x` 和 `y` 属性来指定其放置在 SVG 上的位置， 它也需要能够获取数据来显示数据值。
 
 D3 给了你很高的权限给图形添加标签。
 

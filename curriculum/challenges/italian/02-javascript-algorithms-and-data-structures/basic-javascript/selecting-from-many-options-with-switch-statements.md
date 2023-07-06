@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-Se hai molte opzioni tra cui scegliere, usa un'istruzione <dfn>switch</dfn>. Un'istruzione `switch` verifica un valore e può avere molte istruzioni <dfn>case</dfn> che definiscono vari valori possibili. Le istruzioni vengono eseguite dal primo valore `case` che combacia e fino a quando non si incontra un `break`.
+Se hai bisogno di abbinare un valore a molte opzioni, puoi usare un'istruzione <dfn>switch</dfn>. Un'istruzione `switch` confronta un valore con le istruzioni <dfn>case</dfn> che definiscono diversi valori possibili. Qualsiasi istruzione JavaScript valida può essere eseguita all'interno di un blocco <dfn>case</dfn> e verrà eseguita dal primo valore di `case` per cui c'è riscontro fino a quando non viene incontrato un `break`.
 
 Ecco un esempio di un'istruzione `switch`:
 

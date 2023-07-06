@@ -27,7 +27,7 @@ Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matchi
 
 Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
 
-**Example**
+**Beispiel**
 
 Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
 
@@ -46,43 +46,43 @@ Write a function a that takes two strings as parameters and returns the associat
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` sollte eine Funktion sein.
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` sollte `0.9444444444444445` zurückgeben.
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` sollte `0.7666666666666666` zurückgeben.
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` sollte `0.8962962962962964` zurückgeben.
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` sollte `0.888888888888889` zurückgeben.
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` sollte `0.8333333333333334` zurückgeben.
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

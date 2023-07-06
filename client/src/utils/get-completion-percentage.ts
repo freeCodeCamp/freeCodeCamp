@@ -1,5 +1,4 @@
 import { AllChallengesInfo } from '../redux/prop-types';
-import { dasherize } from '../../../utils/slugs';
 import { isFinalProject } from '../../utils/challenge-types';
 
 export function getCompletedPercentage(
@@ -43,9 +42,7 @@ export const getCurrentBlockIds = (
   const { challengeEdges, certificateNodes } = allChallengesInfo;
   const currentCertificateIds =
     certificateNodes
-      .filter(
-        node => dasherize(node.challenge.certification) === certification
-      )[0]
+      .filter(node => node.challenge.certification === certification)[0]
       ?.challenge.tests.map(test => test.id) ?? [];
   const currentBlockIds = challengeEdges
     .filter(edge => edge.node.challenge.block === block)

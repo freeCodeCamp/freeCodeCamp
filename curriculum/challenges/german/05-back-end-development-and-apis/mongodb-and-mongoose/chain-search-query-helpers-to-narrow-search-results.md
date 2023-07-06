@@ -1,6 +1,6 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Chain Search Query Helpers to Narrow Search Results
+title: Verkettung von Search Query Helpers zur Eingrenzung der Suchergebnisse
 challengeType: 2
 forumTopicId: 301533
 dashedName: chain-search-query-helpers-to-narrow-search-results
@@ -8,15 +8,15 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-Wenn du den Callback nicht als letztes Argument an `Model.find()` (oder an die anderen Suchmethoden) übergibst, wird die Abfrage nicht ausgeführt. Du kannst die Abfrage zur späteren Verwendung in einer Variablen speichern. Diese Art von Objekt ermöglicht es dir, eine Abfrage mit Hilfe einer Verkettungssyntax zu erstellen. Die eigentliche Datenbanksuche wird ausgeführt, wenn du schließlich die Methode `.exec()` verkettest. An diese letzte Methode musst du immer deinen Callback übermitteln. There are many query helpers, here we'll use the most commonly used.
+Wenn du den Callback nicht als letztes Argument an `Model.find()` (oder an die anderen Suchmethoden) übergibst, wird die Abfrage nicht ausgeführt. Du kannst die Abfrage zur späteren Verwendung in einer Variablen speichern. Diese Art von Objekt ermöglicht es dir, eine Abfrage mit Hilfe einer Verkettungssyntax zu erstellen. Die eigentliche Datenbanksuche wird ausgeführt, wenn du schließlich die Methode `.exec()` verkettest. An diese letzte Methode musst du immer deinen Callback übermitteln. Es gibt viele Query Helpers, hier werden wir die Gängigsten verwenden.
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sortiere sie nach `name`, beschränke die Ergebnisse auf zwei Dokumente und blende ihr Alter aus. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Übergebe den `done(err, data)`-Callback an `exec()`.
+Ändere die `queryChain`-Funktion so, dass sie Personen findet, die das Essen mögen, das in der Variablen namens `foodToSearch` angegeben ist. Sortiere sie nach `name`, beschränke die Ergebnisse auf zwei Dokumente und blende ihr Alter aus. Verkette `.find()`, `.sort()`, `.limit()`, `.select()`, und dann `.exec()`. Übergebe den `done(err, data)`-Callback an `exec()`.
 
 # --hints--
 
-Chaining query helpers should succeed
+Verkettung von Query Helpers sollte funktionieren
 
 ```js
 (getUserInput) =>

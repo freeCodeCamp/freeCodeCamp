@@ -1,6 +1,6 @@
 ---
 id: 6331d28ab51aeedd1a2bd650
-title: "Linear Equations"
+title: "Equazioni Lineari"
 challengeType: 15
 videoId: u0bgovPh4ME
 dashedName: linear-equations
@@ -8,19 +8,19 @@ dashedName: linear-equations
 
 # --description--
 
-This video will show you the math behind finding the y-intercept in a linear function, so you can develop the whole equation. Then the video will show you how to graph the whole function. You will also see how to do the whole process with Python code.
+Questo video ti mostrerà la matematica necessaria per trovare l'intercetta sull'asse y di una funzione lineare, in modo da poter sviluppare l'intera equazione. Poi il video ti mostrerà come tracciare il grafico dell'intera funzione. Vedrai anche come svolgere tutto il processo con il codice Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
+Ecco il <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per i prossimi due video,</a> che puoi usare per vedere le formule.
 
 # --question--
 
 ## --assignment--
 
-Add code to your algebra Colab notebook to graph a function from points or from equation input.
+Aggiungi il codice al notebook Colab per tracciare una funzione dai punti o dall'input dell'equazione.
 
 ## --text--
 
-If you know the slope ("m") and you have one (x,y) coordinate point, which of the following equations could you use to find "b", representing the y-intercept in Python?
+Se conosci la pendenza ("m") e hai un punto di coordinate (x,y), quale delle seguenti equazioni puoi utilizzare per trovare "b", che rappresenta l'intercetta sull'asse y in Python?
 
 ## --answers--
 

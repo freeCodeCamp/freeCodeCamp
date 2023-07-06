@@ -1,6 +1,6 @@
 ---
 id: 6331d29fb51aeedd1a2bd653
-title: "Solving Proportions"
+title: "Розв’язок пропорцій"
 challengeType: 15
 videoId: 61A3PNx1hjY
 dashedName: solving-proportions
@@ -8,31 +8,31 @@ dashedName: solving-proportions
 
 # --description--
 
-Now we get to the math content. This video will show you how to set up and solve proportions and write code to solve for variables.
+Тепер перейдемо до математики. У відео роз’яснено, як розв’язати пропорцію та написати код для знаходження змінної.
 
-Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
+Ось <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Налаштуйте свій блокнот з алгебри Colab, якщо ви цього досі не зробили. Потім додайте код цього відео до блокнота.
 
 # --question--
 
 ## --assignment--
 
-Add the code from the video to the algebra Colab notebook you created in the first step.
+Додайте код з відео до блокнота з алгебри Colab, який ви створили у першому кроці.
 
 ## --text--
 
-In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
+Якщо один чисельник у пропорції є нулем, чи повинен інший чисельник також бути нулем, щоб рівність була правильною?
 
 ## --answers--
 
-Yes
+Так
 
 ---
 
-No
+Ні
 
 ---
 
-Sometimes
+Іноді
 
 ## --video-solution--
 

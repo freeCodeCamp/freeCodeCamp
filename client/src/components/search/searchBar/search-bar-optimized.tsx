@@ -3,12 +3,11 @@ import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/magnifier';
 import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
+import type { SearchBarProps } from './search-bar';
 
-type Props = {
-  innerRef?: React.RefObject<HTMLDivElement>;
-};
-
-const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
+const SearchBarOptimized = ({
+  innerRef
+}: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
   const { t } = useTranslation();
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;

@@ -2,9 +2,9 @@
 
 This handbook will help you set up and use the tools for your localization efforts.
 
-## How to invite new contributors to Ghost
+## How to Invite New Contributors to Ghost
 
-Ghost allows you to set contributors with different levels of authorizations.
+Ghost allows you to set contributors with different levels of authorization.
 
 Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
 
@@ -14,7 +14,7 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
-### How are the articles built
+### How are the Articles Built
 
 We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
 
@@ -24,9 +24,9 @@ This process is automated and runs periodically. If you publish something now, i
 
 You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
 
-## How to mention the original author of a translated article
+## How to Mention the Original Author of a Translated Article
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on Ghost.
 
 ```html
 <script>
@@ -36,53 +36,14 @@ The original author and the original article are linked automatically adding thi
 
 With `link` being the link of the original article.
 
-## How to update trending articles
+## How to Update Trending Articles
 
 > [!TIP]
-> Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
 
-There are two places in which to change the trending articles.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
-
-For each article you will need to create a shorter title to use in the footer.
-
-### Change trending articles in the curriculum
-
-The trending articles in the curriculum footer can be changed by editing the file at `client/i18n/locales/<language>/trending.json`.
-
-This file is a `*.json` file that has the shape of an object with property keys in the shape `article0title` and `article0link`.
-
-Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
-
-This is an example of how part of the `trending.json` file has to look.
-
-```json
-{
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
-  ...
-}
-```
-
-You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
-
-### How to update the trending articles in the cdn
-
-The file in the cdn repository is the file `universal/trending/<language>.yaml`.
-
-This file is shaped differently, for example here the file content for the first 6 articles:
+For example, here is the file content for the first 6 articles:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -99,14 +60,25 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
 
-> [!TIP]
-> A new workflow is being worked on, there will be only one place to change in the future.
+For each article, you will need to create a shorter title to use in the footer. Each title must stay on a single line and not go to a new line.
 
-## How to translate articles in the footer links
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. You can preview the changes by editing the `trending.json` file in your local environment:
 
-There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+
+3. Start the server by running `pnpm run develop:server` in one terminal window.
+
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
+
+## How to Translate Articles in the Footer Links
+
+There are some links listed at the bottom of the footer (About, Alumni Network, Open Source, etc.) and some of them can be translated into your language in the same way as other articles.
 
 Articles that can be translated:
 
@@ -128,7 +100,7 @@ The following links are pointing to external sites and cannot be translated:
 - Alumni Network
 - Open Source
 
-### Change the footer links in the news
+### Change the Footer Links in the News
 
 Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
 
@@ -149,7 +121,7 @@ Update the following part in the file:
 }
 ```
 
-### Change the footer links in the curriculum
+### Change the Footer Links in the Curriculum
 
 When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
 
@@ -176,7 +148,7 @@ Update the following part in the file:
 }
 ```
 
-## How to translate the info boxes headers in the documentation
+## How to Translate the Info Boxes Headers in the Documentation
 
 You can find these boxes all around the documentation:
 
@@ -256,7 +228,7 @@ flexibleAlerts: {
 }
 ```
 
-## How to translate the motivational quotes
+## How to Translate the Motivational Quotes
 
 The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
 
@@ -273,7 +245,7 @@ The compliments are the short sentences that appear at the completion of a chall
 
 You don't need to directly translate the sentences used in English, you can write a set of short sentences that are appropriate to show at the completion of a challenge.
 
-The `compliments` array is an array of strings, so for example you would write:
+The `compliments` array is an array of strings. So, for example, you would write:
 
 ```json
 {
@@ -306,9 +278,9 @@ The `motivationalQuotes` array is an array of objects, these objects should incl
 ```
 
 > [!TIP]
-> You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reload the page.
+> You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reloads the page.
 
-## How to update the common links
+## How to Update the Common Links
 
 We maintain a file of common links used throughout our [curriculum site](https://github.com/freecodecamp/freecodecamp) in the `/client/i18n/locales/<language>/links.json` file.
 
@@ -316,7 +288,7 @@ Some of these links will not change - but you should update the `/news` article 
 
 You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
 
-## How to update the site meta-data
+## How to Update the Site Meta-Data
 
 The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
 
@@ -342,7 +314,7 @@ You can choose "From Machine Translation" or "From Translation Memory". Choose "
 
 Then there are three steps to complete:
 
-1. Files. Choose which files to translate, you can do all the project, or specific folders or files.
+1. Files. Choose which files to translate, you can do all the projects, or specific folders or files.
 2. Languages. Set your language here.
 3. Existing Translations. The best combination here is "100% match" and "Apply to untranslated strings only". Do not approve automatically, as it's always best to have a human eye on things.
 
@@ -350,39 +322,43 @@ Then there are three steps to complete:
 
 When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
 
-## How to update Crowdin Glossary
+## How to Update Crowdin Glossary
 
 > [!TIP]
-> An updated glossary helps in having an homogeneous translation of technical terms.
+> An updated glossary helps in having a homogeneous translation of technical terms.
 
 The Crowdin Glossary is kept in the [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries) repository.
 
-In the `glossaries` folder there are various `*.csv` (comma separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
+In the `glossaries` folder, there are various `*.csv` (comma,separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
 
 The `client.csv` file is for the Learn User Interface project, the `curriculum.csv` file is for the Coding Curriculum project, the `docs.csv` file is for the Contributing Documentation project.
 
-To update the Crowdin Glossaries you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example Microsoft Excel.
+To update the Crowdin Glossaries, you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example, Microsoft Excel.
 
 In the `.csv` file you will find that the English language occupies the first three columns, `Term:English` is the column for the English term, `Description:English` is the column for the English description, and `Part:English` is for the part of speech (e.g., noun, verb etc.) of the term.
 
 Then, each target language has two columns. If you translate to Dothraki, you will be interested in the columns `Term:Dothraki` and `Description:Dothraki`. The column `Term:Dothraki` is for the translation of the term in Dothraki, and the column `Description:Dothraki` is for a description of the term in Dothraki.
 
 > [!TIP]
-> In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
+> In programs like Microsoft Excel, you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
 
 ## How to Promote a Contributor to Proofreader
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them this way:
 
-In Crowdin, individuate the `User management` on the left hand side menu.
+In Crowdin, individuate the `User management` on the left-hand side menu.
 
 This will open the user management tools, you will be able to see the list of all the users.
 
-Search for the user that will become proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Search for the user that will become a proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
 
 The user is now a proofreader.
 
 > [!TIP]
 > The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+
+## How to Add or Update a Language
+
+Check out the [how to enable new language](how-to-enable-new-languages.md) docs. If you are updating a language the section on [set translated superblocks](how-to-enable-new-languages.md#set-translated-superblocks) should be helpful.

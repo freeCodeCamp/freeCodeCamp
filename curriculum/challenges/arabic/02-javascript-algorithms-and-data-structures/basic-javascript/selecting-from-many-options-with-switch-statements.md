@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-إن كنت تريد الاختيار بين خيارات كثيرة، استخدم عبارة <dfn>switch</dfn>. تختبر عبارة `switch` قيمة، ومن الأمكن أن تحتوي على عديد من عبارات <dfn>case</dfn> التي تحدد قيم مختلفة ممكنة. يتم تنفيذ العبارات من أول قيمة `case` متطابقة حتى يتم العثور على `break`.
+If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
 
 فيما يلي مثال على عبارة `switch`:
 
