@@ -252,7 +252,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
 
   function titleConverter(title: string) {
-    let convertedString = title
+    let convertedTitle = title
       .replace(/(\w+-*)/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase();
       })
@@ -279,19 +279,19 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       'With'
     ];
     for (const word of lowers)
-      convertedString = convertedString.replace(
+      convertedTitle = convertedTitle.replace(
         new RegExp('\\s' + word, 'g'),
         txt => txt.toLowerCase()
       );
 
     const uppers = ['Html', 'Css'];
     for (const word of uppers)
-      convertedString = convertedString.replace(
+      convertedTitle = convertedTitle.replace(
         new RegExp(word, 'g'),
         word.toUpperCase()
       );
 
-    return convertedString;
+    return convertedTitle;
   }
 
   for (const id of getCertIds()) {
