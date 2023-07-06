@@ -40,7 +40,7 @@ Ghost дозволяє налаштувати декілька рівнів ко
 
 > [!TIP] Змінювати статті у нижньому колонтитулі принаймні раз на місяць дозволяє покращити результати пошуку в гуглі.
 
-To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
+Щоб оновити статті у нижньому колонтитулі, вам потрібно оновити [файл yaml у репозиторії CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) для своєї мови. Це стосується і навчальної програми, і новин.
 
 Наприклад, ось вміст файлу для перших шести статей:
 
@@ -63,17 +63,17 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 
 Для кожної статті потрібно створювати коротший заголовок, який використовуватиметься у нижньому колонтитулі. Кожен заголовок повинен залишатися в одному рядку та не переходити в інший.
 
-Вам доведеться [побудувати перекладеного клієнта локально](how-to-enable-new-languages.md), щоб переконатись, що довжина заголовків правильна. You can preview the changes by editing the `trending.json` file in your local environment:
+Вам доведеться [побудувати перекладеного клієнта локально](how-to-enable-new-languages.md), щоб переконатись, що довжина заголовків правильна. Ви можете переглянути зміни, відредагувавши файл `trending.json` у своєму локальному середовищі:
 
-1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+1. Оновіть файл `.env` так, щоб він використовував вашу мову для `CLIENT_LOCALE` та `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Запустіть `pnpm run create:config`. Це автоматично згенерує файл `trending.json` для вашої мови у каталозі `/client/i18n/locales/`.
 
-3. Start the server by running `pnpm run develop:server` in one terminal window.
+3. Запустіть сервер, виконавши `pnpm run develop:server` у вікні терміналу.
 
-4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+4. Відредагуйте файл `trending.json`, щоб він містив потрібні заголовки. Можливо, знадобиться конвертувати файл `.yaml` у формат JSON.
 
-5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
+5. В іншому вікні терміналу запустіть `pnpm run clean:client`, а потім `pnpm run develop:client`
 
 ## Як перекладати статті в нижньому колонтитулі
 
@@ -125,7 +125,7 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 
 > [!WARNING] Можна перекладати лише «Про нас», «Допомога», «Академічна доброчесність» та «Кодекс поведінки». Не змінюйте інших URL.
 
-Update the following part in the file:
+Оновіть цю частину файлу:
 
 ```json
 {
