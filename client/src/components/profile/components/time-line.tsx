@@ -279,7 +279,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       )}`;
       idToNameMap.set(id, {
         challengeTitle: `${
-          title.includes('Step') ? `${blockNameTitle} - ` : ''
+          title.includes(`${t(`aria.step`)}`) ? `${blockNameTitle} - ` : ''
         }${title}`,
         challengePath: slug
       });
