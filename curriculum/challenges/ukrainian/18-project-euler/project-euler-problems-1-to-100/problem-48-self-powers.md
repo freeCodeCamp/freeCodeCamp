@@ -8,7 +8,7 @@ dashedName: problem-48-self-powers
 
 # --description--
 
-Послідовність 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
+Дано послідовність 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
 
 Знайдіть останні десять цифр послідовності 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
 

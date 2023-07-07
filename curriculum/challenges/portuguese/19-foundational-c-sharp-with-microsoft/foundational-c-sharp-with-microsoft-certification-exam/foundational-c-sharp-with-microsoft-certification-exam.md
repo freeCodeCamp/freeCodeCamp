@@ -26,13 +26,13 @@ prerequisites:
 
 # --description--
 
-Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:
+Passe neste exame para conquistar a certificação de Fundamentos de C# da Microsoft. Antes de iniciar o exame, reveja as seguintes orientações:
 
-- You must complete the entire exam in one session.
-- Exiting the exam at any point before you are finished, will result in the loss of your progress.
-- The exam consists of multiple-choice questions.
-- There is no time limit, but your total time taken will be recorded.
-- Complete the exam and answer a sufficent number of question correctly to earn your certification.
+- Você deve concluir o exame inteiro em uma sessão.
+- Caso saia do exame a qualquer momento antes de terminar, você perderá o seu progresso.
+- O exame consiste em questões de múltipla escolha.
+- Não há limite de tempo, mas seu tempo total será gravado.
+- Complete o exame e responda a um número suficiente de perguntas corretamente para conquistar sua certificação.
 
 # --instructions--
 
