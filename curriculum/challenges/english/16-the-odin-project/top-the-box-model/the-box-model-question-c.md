@@ -43,4 +43,4 @@ HTML structure view
 
 ## --video-solution--
 
-2
+1

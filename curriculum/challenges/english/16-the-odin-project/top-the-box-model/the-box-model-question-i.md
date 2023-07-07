@@ -12,7 +12,7 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 ## --text--
 
-What does the box-sizing CSS property do?
+What is the difference between the standard and alternative box model?
 
 ## --answers--
 

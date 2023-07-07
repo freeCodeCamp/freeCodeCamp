@@ -23,7 +23,7 @@ Play around with Chrome Dev Tools and see if you can answer the following questi
 
 ## --text--
 
-In the Style pane, what information can you view about an element when it is selected?
+In the Styles pane, what information can you view about an element when it is selected?
 
 ## --answers--
 
@@ -44,4 +44,4 @@ Applied styles and overwritten styles.
 
 ## --video-solution--
 
-2
+4
