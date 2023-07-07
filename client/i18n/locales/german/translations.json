@@ -391,7 +391,6 @@
     "runs-in-vm": "Das Projekt läuft in einer virtuellen Maschine. Vervollständige die dort beschriebenen User Stories und bestehe alle Tests, um Schritt 1 abzuschließen.",
     "completed": "Abgeschlossen",
     "not-started": "Nicht gestartet",
-    "hint": "Hinweis",
     "test": "Test",
     "sorry-try-again": "Tut mir leid, dein Code funktioniert nicht. Versuche es noch einmal.",
     "sorry-keep-trying": "Tut mir leid, dein Code funktioniert nicht. Versuche es weiter.",

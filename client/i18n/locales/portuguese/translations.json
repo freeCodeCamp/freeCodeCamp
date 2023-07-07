@@ -391,7 +391,6 @@
     "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
     "completed": "Concluído",
     "not-started": "Não iniciado",
-    "hint": "Dica",
     "test": "Teste",
     "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
     "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
@@ -403,8 +402,8 @@
     "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão beneficente.",
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
     "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "qualified-for-exam": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
+    "not-qualified-for-exam": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:"
   },
   "donate": {
     "title": "Ajude nossa instituição",

@@ -391,7 +391,6 @@
     "runs-in-vm": "Проєкт виконується на віртуальній машині; виконайте описані там історії користувачів та пройдіть всі тести, щоб завершити крок 1.",
     "completed": "Виконано",
     "not-started": "Не розпочато",
-    "hint": "Підказка",
     "test": "Тест",
     "sorry-try-again": "На жаль, ваш код не пройшов. Спробуйте ще раз.",
     "sorry-keep-trying": "На жаль, ваш код не пройшов. Продовжуйте спроби.",
@@ -403,8 +402,8 @@
     "if-getting-value": "Якщо ви отримуєте багато інформації завдяки freeCodeCamp, то зараз слушний час зробити внесок на підтримку нашої місії.",
     "building-a-university": "Ми розробляємо безоплатну університетську програму «Комп’ютерні науки»",
     "if-help-university": "Ми вже зробили багато роботи. Підтримайте довгий шлях нашої благодійної організації.",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "qualified-for-exam": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
+    "not-qualified-for-exam": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:"
   },
   "donate": {
     "title": "Підтримайте нашу організацію",
