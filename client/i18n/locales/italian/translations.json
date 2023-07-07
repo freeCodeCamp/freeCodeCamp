@@ -391,7 +391,6 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Suggerimento",
     "test": "Test",
     "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",

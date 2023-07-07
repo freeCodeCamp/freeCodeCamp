@@ -391,7 +391,6 @@
     "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1.",
     "completed": "Completado",
     "not-started": "Sin iniciar",
-    "hint": "Sugerencia",
     "test": "Prueba",
     "sorry-try-again": "Lo sentimos, tu código no pasa. Inténtalo de nuevo.",
     "sorry-keep-trying": "Lo sentimos, tu código no pasa. Continúa intentándolo.",
