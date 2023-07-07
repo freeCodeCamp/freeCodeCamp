@@ -219,6 +219,26 @@ You will want to copy the following files from `/client/i18n/locales/english` to
 - `meta-tags.json`
 - `motivation.json`
 
+You don't have to have everything in these 3 files translated at first. It's possible to translate only the relevant parts and make adjustments later.
+
+#### `links.json`
+
+You can replace any URLs that you have corresponding pages ready in your language.
+
+For example, if you have the publication in your language, you can replace the URL for `"news"`. If you want to translate articles listed in the footer links, see [How to Translate Articles in the Footer Links](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
+
+#### `meta-tags.json`
+
+This file contains metadata for the web page of `/learn` in your language. You can translate the values for `"title"`, `"description"`, and `"social-description"`. The value for `"youre-unsubscribed"` is used when someone unsubscribes from Quincy's weekly email.
+
+Also, you can translate or add relevant keywords in your language to the `"keywords"` array.
+
+#### `motivation.json`
+
+This file contains the compliments that will be displayed to campers when they complete a challenge, and motivational quotes that are displayed on the top page of `/learn`.
+
+You can translate them, or even replace them with relevant compliments/quotes of your choice in your language.
+
 ### Enabling Localized Videos
 
 This section is applicable only if you have localized videos in the challenges. Otherwise, you can skip this section.
