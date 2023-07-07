@@ -274,11 +274,12 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         }
       }
     }) => {
+      const blockNameTitle = `${t(
+        `intro:${superBlock}.blocks.${blockName}.title`
+      )}`;
       idToNameMap.set(id, {
         challengeTitle: `${
-          title.includes('Step')
-            ? `${t(`intro:${superBlock}.blocks.${blockName}.title`)} - `
-            : ''
+          title.includes('Step') ? `${blockNameTitle} - ` : ''
         }${title}`,
         challengePath: slug
       });
