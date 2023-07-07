@@ -322,7 +322,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       }}
                     </strong>
                   </h1>
-                  <h4>
+                  <h4 data-cy={'issue-date'}>
                     {{
                       time: certDate.toLocaleString([localeCode, 'en-US'], {
                         year: 'numeric',

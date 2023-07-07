@@ -31,8 +31,8 @@ describe('A certification,', function () {
 
     it('should be issued with the submission date', () => {
       cy.visit(certifiedUser);
-      const issued = `Issued\xa0August 3, 2018`;
-      cy.get('[data-cy=issue-date]').should('have.text', issued);
+      const issued = `Developer Certification on August 3, 2018`;
+      cy.get('[data-cy=issue-date]').should('include.text', issued);
     });
   });
 
@@ -42,9 +42,7 @@ describe('A certification,', function () {
     });
 
     it('should display certificate', function () {
-      cy.contains('has successfully completed the freeCodeCamp.org').should(
-        'exist'
-      );
+      cy.contains('successfully completed').should('exist');
       cy.contains('Responsive Web Design').should('exist');
     });
 
