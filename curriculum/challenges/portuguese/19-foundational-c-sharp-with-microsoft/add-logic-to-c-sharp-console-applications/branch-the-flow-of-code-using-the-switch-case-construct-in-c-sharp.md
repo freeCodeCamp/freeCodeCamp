@@ -1,43 +1,35 @@
 ---
 id: 647e214b8acb466c97ccbee0
-title: 'Branch the Flow of Code Using the switch-case Construct in C#'
+title: 'Faça a ramificação do fluxo de código usando a construção de switch-case em C#'
 challengeType: 19
 dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/</a> and complete all the tasks for the "Branch the Flow of Code Using the switch-case Construct in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/</a> e complete todas as tarefas do módulo "Faça a ramificação do fluxo de código usando a construção de switch-case em C#". Isto é necessário para adquirir o troféu "Adicione lógica a aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+Qual é a finalidade do elemento `break`?
 
 ## --answers--
 
-A
+A palavra-chave `break` diz ao tempo de execução para continuar avaliando outros casos no bloco `switch`.
 
 ---
 
-B
+A palavra-chave `break` diz ao tempo de execução para parar de avaliar outros casos no bloco `switch`.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A palavra-chave `break` diz ao tempo de execução para sair da aplicação.
 
 ## --video-solution--
 
-4
+2

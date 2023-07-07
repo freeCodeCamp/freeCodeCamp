@@ -23,7 +23,7 @@ However, 11 and 103 are not 2's relatives.
 
 Let $F(N)$ be the sum of the primes $≤ N$ which are not 2's relatives. We can verify that $F({10}^3) = 431$ and $F({10}^4) = 78\\,728$.
 
-Find $F({10}^7)$.
+Знайдіть $F({10}^7)$.
 
 # --hints--
 

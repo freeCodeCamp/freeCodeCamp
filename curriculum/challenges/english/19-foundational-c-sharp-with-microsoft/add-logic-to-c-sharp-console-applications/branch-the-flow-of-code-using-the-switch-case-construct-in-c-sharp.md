@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is the purpose of the `break` keyword?
 
 ## --answers--
 
-A
+The `break` keyword tells the runtime to continue evaluating other cases in the `switch` construct.
 
 ---
 
-B
+The `break` keyword tells the runtime to stop evaluating other cases in the `switch` construct.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+The `break` keyword tells the runtime to exit the application.
 
 ## --video-solution--
 
-4
+2

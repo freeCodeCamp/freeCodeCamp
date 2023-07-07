@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um desenvolvedor quer criar um método que retorne um valor em um array. Qual das opções abaixo seria uma boa escolha para uma assinatura de método?
 
 ## --answers--
 
-A
+`string GetValueAtIndex(string[] array, int index)`
 
 ---
 
-B
+`bool GetValueAtIndex(string[] array, int index)`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`int GetValueAtIndex(int index)`
 
 ## --video-solution--
 
-4
+1

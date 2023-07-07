@@ -39,7 +39,7 @@ Refactor the function `setGear` inside the object `bicycle` to use the shorthand
 Traditional function expression should not be used.
 
 ```js
-(getUserInput) => assert(!code.match(/function/));
+assert(!code.match(/function/));
 ```
 
 `setGear` should be a declarative function.
@@ -79,6 +79,7 @@ console.log(bicycle.gear);
 ```js
 const bicycle = {
   gear: 2,
+  // setGear: function(newGear) {
   setGear(newGear) {
     this.gear = newGear;
   }

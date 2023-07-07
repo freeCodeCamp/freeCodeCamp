@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?
 
 ## --answers--
 
-A
+When the expression values evaluated by the iteration statement are unknown prior to the iteration code block.
 
 ---
 
-B
+When the expression values evaluated by the iteration statement are known prior to the iteration code block.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+When the developer creates nested `do` or `while` loops.
 
 ## --video-solution--
 
-4
+2

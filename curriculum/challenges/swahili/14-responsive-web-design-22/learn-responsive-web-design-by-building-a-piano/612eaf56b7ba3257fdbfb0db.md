@@ -19,7 +19,7 @@ Unapaswa kuongeza kipengele kipya cha `img`.
 assert(document.querySelectorAll('img')?.length === 1);
 ```
 
-Kipengele chako cha `img` kinapaswa kuja kabla ya kipengele chako cha kwanza cha `.key`.
+Kipengele chako cha `img` kinafaa kuja kabla ya kipengee chako cha kwanza cha `.keys`.
 
 ```js
 const img = document.querySelector('img');

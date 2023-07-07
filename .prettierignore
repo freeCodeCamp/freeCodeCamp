@@ -22,3 +22,4 @@ web/.next
 curriculum-server/data/curriculum.json
 docs/**/*.md
 client/src/components/Donation/types.js
+tools/ui-components/dist

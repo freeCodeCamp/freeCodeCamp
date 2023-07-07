@@ -1,43 +1,35 @@
 ---
 id: 647e21eb8acb466c97ccbeea
-title: 'Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
+title: 'Projeto guiado – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#'
 challengeType: 19
 dashedName: guided-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-arrays-iteration-selection/</a> and complete all the tasks for the "Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-arrays-iteration-selection/</a> e complete todas as tarefas do módulo "Projeto guiado – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+Um desenvolvedor escreve uma aplicação que usa um laço `foreach` para iterar através de um array contendo 20 elementos. Após a conclusão da aplicação, o desenvolvedor descobre que o array deve ser atualizado para incluir 40 elementos. A aplicação precisa examinar todos os 40 elementos do array. Quais dos itens a seguir descreve o código de atualização necessário?
 
 ## --answers--
 
-A
+Criar um segundo laço `foreach` que itera através dos itens adicionais.
 
 ---
 
-B
+Não são necessárias alterações no laço `foreach`.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Colocar o laço original `foreach` dentro do bloco de código de um segundo `foreach` que itera duas vezes.
 
 ## --video-solution--
 
-4
+2

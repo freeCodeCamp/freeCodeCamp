@@ -14,23 +14,23 @@ Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionali
 -   Verwende<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow"> dieses Replit-Starterprojekt</a>, um dein Projekt fertigzustellen.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
+-   Beginne mit dem Importieren des Projekts in Replit.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Select `Use run command` and click the `Done` button.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 
--   Complete the necessary routes in `/routes/api.js`
--   Create all of the functional tests in `tests/2_functional-tests.js`
--   Copy the `sample.env` file to `.env` and set the variables appropriately
+-   Ergänze die notwendigen Routen in `/routes/api.js`
+-   Erstelle alle Funktionstests in `tests/2_functional-tests.js`
+-   Kopiere die `sample.env`-Datei nach `.env` und setze die Variablen entsprechend
 -   To run the tests uncomment `NODE_ENV=test` in your `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Um die Tests in der Konsole auszuführen, verwende den Befehl `npm run test`. Um die Replit-Konsole zu öffnen, drückst du Strg+Umschalt+P (Cmd auf einem Mac) und gibst "open shell" ein
 
-Write the following tests in `tests/2_functional-tests.js`:
+Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
 
 -   Create an issue with every field: POST request to `/api/issues/{project}`
 -   Create an issue with only required fields: POST request to `/api/issues/{project}`
@@ -79,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Excluded optional fields will be returned as empty strings. Füge außerdem `created_on` (Datum/Uhrzeit), `updated_on` (Datum/Uhrzeit), `open` (Boolean, `true` für offen - Standardwert, `false` für geschlossen) sowie `_id` hinzu.
+The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Ausgeschlossene optionale Felder werden als leere Zeichenketten zurückgegeben. Füge außerdem `created_on` (Datum/Uhrzeit), `updated_on` (Datum/Uhrzeit), `open` (Boolean, `true` für offen - Standardwert, `false` für geschlossen) sowie `_id` hinzu.
 
 ```js
 async (getUserInput) => {
@@ -113,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-If you send a `POST` request to `/api/issues/{projectname}` without the required fields, returned will be the error `{ error: 'required field(s) missing' }`
+Wenn du eine `POST`-Anfrage an `/api/issues/{projectname}` ohne die erforderlichen Felder sendest, wird der Fehler `{ error: 'required field(s) missing' }` zurückgegeben
 
 ```js
 async (getUserInput) => {
@@ -178,7 +178,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/issues/{projectname}` and filter the request by also passing along any field and value as a URL query (ie. `/api/issues/{project}?open=false`). You can pass one or more field/value pairs at once.
+You can send a `GET` request to `/api/issues/{projectname}` and filter the request by also passing along any field and value as a URL query (ie. `/api/issues/{project}?open=false`). Du kannst ein oder mehrere Feld/Wert-Paare auf einmal übergeben.
 
 ```js
 async (getUserInput) => {
@@ -342,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing.
+Alle 14 Funktionstests sind abgeschlossen und bestanden.
 
 ```js
 async (getUserInput) => {

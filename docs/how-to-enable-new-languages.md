@@ -122,7 +122,7 @@ export const rtlLangs = [''];
 
 ### Set Translated SuperBlocks
 
-In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it:
+In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it. For example:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -146,6 +146,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 ```
 
 Be sure to only add the superblocks which are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
+
+See the `SuperBlocks` enum at the beginning of the same file for the full list of superblocks.
 
 ### Configure Search
 
@@ -248,7 +250,6 @@ You will want to copy the following files from `/client/i18n/locales/english` to
 - `links.json`
 - `meta-tags.json`
 - `motivation.json`
-- `trending.json`
 
 ## Testing Translations Locally
 

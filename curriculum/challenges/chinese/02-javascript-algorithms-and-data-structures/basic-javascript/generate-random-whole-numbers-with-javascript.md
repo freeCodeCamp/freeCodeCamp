@@ -9,25 +9,25 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-You can generate random decimal numbers with `Math.random()`, but sometimes you need to generate random whole numbers. The following process will give you a random whole number less than `20`:
+你可以用 `Math.random()` 生成随机的小数，但有时你需要生成随机的整数。 下面的流程将给你一个小于 `20` 的随机整数：
 
-1. Use `Math.random()` to generate a random decimal number.
-2. Multiply that random decimal number by `20`.
-3. Use `Math.floor()` to round this number down to its nearest whole number.
+1. 用 `Math.random()` 生成一个随机小数。
+2. 把这个随机小数乘以 `20`。
+3. 用 `Math.floor()` 向下取整，获得它最近的整数。
 
-Remember that `Math.random()` can never quite return a `1`, so it's impossible to actually get `20` since you are rounding down with `Math.floor()`. This process will give you a random whole number in the range from `0` to `19`.
+记住 `Math.random()` 永远不能完全返回 `1`，所以不可能实际得到 `20`，因为你正在用 `Math.floor()` 四舍五入。 这个流程将给你一个从 `0` 到 `19` 的随机整数。
 
-Putting everything together, this is what your code looks like:
+把操作连起来，代码类似于下面：
 
 ```js
 Math.floor(Math.random() * 20);
 ```
 
-You are calling `Math.random()`, multiplying the result by 20, then passing the value to `Math.floor()` to round the value down to the nearest whole number.
+你将调用 `Math.random()`，把结果乘以 20，然后把值传给 `Math.floor()`，向下取整获得最近的整数。
 
 # --instructions--
 
-Use this technique to generate and return a random whole number in the range from `0` to `9`.
+使用这个方法生成并返回 `0` 和 `9` 之间的随机整数。
 
 # --hints--
 
@@ -49,7 +49,7 @@ assert(
 assert(code.match(/Math.random/g).length >= 1);
 ```
 
-You should have multiplied the result of `Math.random` by 10 to make it a number in the range from zero to nine.
+应该将 `Math.random` 的结果乘以 10，以生成 0 到 9 之间的随机数。
 
 ```js
 assert(

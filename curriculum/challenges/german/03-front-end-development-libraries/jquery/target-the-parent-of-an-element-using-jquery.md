@@ -10,7 +10,7 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 Jedes HTML-Element hat ein Eltern(`parent`)-element, von dem es Eigenschaften erbt (`inherits`).
 
-For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
+Zum Beispiel enthält das `h3`-Element in deinem `jQuery Playground` das Elternelement von `<div class="container-fluid">`, das wiederum das Elternelement von `body` enthält.
 
 jQuery hat eine Funktion namens `parent()`, mit der du auf das Elternelement des von dir ausgewählten Elements zugreifen kannst.
 

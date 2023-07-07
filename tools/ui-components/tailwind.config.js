@@ -1,6 +1,10 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
+  mode: 'jit',
+  corePlugins: {
+    preflight: false
+  },
   content: [
     './src/**/*.html',
     './src/**/*.js',
@@ -76,6 +80,9 @@ module.exports = {
     },
     borderWidth: {
       1: '1px',
+      3: '3px'
+    },
+    outlineWidth: {
       3: '3px'
     },
     fontSize: {

@@ -14,7 +14,7 @@ dashedName: problem-45-triangular-pentagonal-and-hexagonal
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>П’ятикутні</div><div>P<sub>n</sub>=<var>n</var>(3<var>n</var>−1)/2</div><div>1, 5, 12, 22, 35, ...</div></div>
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>Шестикутні</div><div>H<sub>n</sub>=<var>n</var>(2<var>n</var>−1)</div><div>1, 6, 15, 28, 45, ...</div></div>
 
-Можна переконатися у тому, що T<sub>285</sub> = P<sub>165</sub> = H<sub>143</sub> = 40755.
+Можна довести, що T<sub>285</sub> = P<sub>165</sub> = H<sub>143</sub> = 40755.
 
 Знайдіть наступне трикутне число, яке також є п’ятикутним і шестикутним.
 

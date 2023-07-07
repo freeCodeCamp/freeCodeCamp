@@ -402,7 +402,9 @@
     "season-greetings-fcc": "Saluti dalla comunità freeCodeCamp 🎉",
     "if-getting-value": "Se stai trovando utile freeCodeCamp, è un ottimo momento per donare e sostenere la missione del nostro ente di beneficenza.",
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
-    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende."
+    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Supporta il nostro ente",
@@ -428,9 +430,6 @@
     "your-donation-2": "La tua donazione ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo ogni mese.",
     "your-donation-3": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento a persone di tutto il mondo ogni anno.",
     "become-supporter": "Diventa sostenitore",
-    "duration": "Diventa un sostenitore una tantum del nostro ente di beneficenza.",
-    "duration-2": "Diventa un sostenitore mensile del nostro ente di beneficenza.",
-    "duration-4": "Diventa un sostenitore del nostro ente di beneficenza",
     "progress-modal-cta-1": "Dona ora per aiutare la nostra charity a creare un corso di laurea in Informatica gratuito e accreditato per tutti.",
     "progress-modal-cta-2": "Dona ora per sponsorizzare 53 ore di tempo server per il sito web della nostra charity.",
     "progress-modal-cta-3": "Dona ora per aiutare la nostra charity a tradurre le lezioni in 32 lingue per gli studenti di tutto il mondo.",

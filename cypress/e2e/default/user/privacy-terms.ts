@@ -8,7 +8,7 @@ describe('Privacy terms', () => {
     }).as('updatePrivacyTerms');
 
     // Seed dev user with `acceptedPrivacyTerms` unset
-    cy.exec('pnpm run seed -- --unset-privacy-terms');
+    cy.task('seed', ['--unset-privacy-terms']);
     // Go to the homepage and log in manually so we can assert the following:
     // 1. Redirection to /email-sign-up works properly
     // 2. The /update-privacy-terms has not been requested
@@ -37,7 +37,7 @@ describe('Privacy terms', () => {
     }).as('updatePrivacyTerms');
 
     // Seed dev user with `acceptedPrivacyTerms` unset
-    cy.exec('pnpm run seed -- --unset-privacy-terms');
+    cy.task('seed', ['--unset-privacy-terms']);
     // Go to the homepage and log in manually so we can assert the following:
     // 1. Redirection to /email-sign-up works properly
     // 2. The /update-privacy-terms has not been requested

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um desenvolvedor precisa criar uma instrução de iteração. Sob qual condição a instrução `while` é uma escolha melhor do que a instrução `do`?
 
 ## --answers--
 
-A
+Quando os valores de expressão avaliados pela instrução de iteração são desconhecidos antes do bloco de código de iteração.
 
 ---
 
-B
+Quando os valores da expressão avaliados pela instrução de iteração são conhecidos antes do bloco de código de iteração.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Quando o desenvolvedor cria laços `do` ou `while` aninhados.
 
 ## --video-solution--
 
-4
+2

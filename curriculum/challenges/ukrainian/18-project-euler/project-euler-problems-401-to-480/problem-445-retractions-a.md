@@ -16,7 +16,7 @@ We will call $f_{n, a, b}$ a retraction if $f_{n, a, b}(f_{n, a, b}(x)) \equiv f
 
 Let $R(n)$ be the number of retractions for $n$.
 
-You are given that
+Дано
 
 $$\sum_{k = 1}^{99\\,999} R(\displaystyle\binom{100\\,000}{k}) \equiv 628\\,701\\,600\bmod 1\\,000\\,000\\,007$$
 

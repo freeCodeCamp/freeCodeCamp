@@ -1,43 +1,35 @@
 ---
 id: 647e22b38acb466c97ccbef6
-title: 'Implement the Visual Studio Code Debugging Tools for C#'
+title: 'Implementar as ferramentas de depuração do Visual Studio Code para o C#'
 challengeType: 19
 dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank">https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/</a> and complete all the tasks for the "Implement the Visual Studio Code Debugging Tools for C#" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank">https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/</a> e complete todas as tarefas do módulo "Implementar as ferramentas de depuração do Visual Studio Code para o C#". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+Qual seção da visão de EXECUTAR E DEPURAR é usada para rastrear o ponto de execução atual dentro da aplicação em execução?
 
 ## --answers--
 
-A
+A seção VARIÁVEIS.
 
 ---
 
-B
+A seção PILHA DE CHAMADAS.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A seção INSPEÇÃO.
 
 ## --video-solution--
 
-4
+2

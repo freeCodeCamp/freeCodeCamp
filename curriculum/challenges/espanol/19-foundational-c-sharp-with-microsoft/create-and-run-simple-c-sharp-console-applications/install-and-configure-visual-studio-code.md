@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following choices provides the best description of an Integrated Development Environment (IDE)?
 
 ## --answers--
 
-A
+Visual Studio Code is an Integrated Development Environment.
 
 ---
 
-B
+An Integrated Development Environment is tool that makes it easier to write code.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+An IDE is a suite of tools that supports the full software development lifecycle.
 
 ## --video-solution--
 
-4
+3

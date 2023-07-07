@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following options can be used set a breakpoint in Visual Studio Code?
 
 ## --answers--
 
-A
+Left-click in the column to the left of a line number in the code editor. Correct. A breakpoint can be set by positioning the mouse pointer in the column to the left of a line number and then left-clicking.
 
 ---
 
-B
+Select Toggle Breakpoint on the Edit menu.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Right-click in the middle of a line of code, and then select Toggle Breakpoint.
 
 ## --video-solution--
 
-4
+1

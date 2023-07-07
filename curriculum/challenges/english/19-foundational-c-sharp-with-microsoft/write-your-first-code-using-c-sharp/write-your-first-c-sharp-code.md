@@ -16,28 +16,24 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is the difference between `Console.Write` and `Console.WriteLine`?
 
 ## --answers--
 
-A
+`Console.Write` prints the output on a new line.
 
 ---
 
-B
+`Console.WriteLine` prints the output on a new line.
 
 ---
 
-C
+`Console.WriteLine` appends a new line after the output.
 
 ---
 
-D
-
----
-
-E
+There is no difference.
 
 ## --video-solution--
 
-4
+3

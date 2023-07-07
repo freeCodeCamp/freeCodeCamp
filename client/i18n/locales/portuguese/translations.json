@@ -402,7 +402,9 @@
     "season-greetings-fcc": "Boas festas de fim de ano, da comunidade do freeCodeCamp 🎉",
     "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão beneficente.",
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
-    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente."
+    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Ajude nossa instituição",
@@ -428,9 +430,6 @@
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
     "become-supporter": "Torne-se um apoiador",
-    "duration": "Torne-se um apoiador com uma doação única para nossa organização beneficente.",
-    "duration-2": "Torne-se um apoiador mensal da nossa organização beneficente.",
-    "duration-4": "Torne-se um apoiador da nossa organização beneficente",
     "progress-modal-cta-1": "Doe agora para ajudar nossa instituição beneficente a criar um curso superior gratuito de Ciência da Computação acreditado para todos.",
     "progress-modal-cta-2": "Doe agora para patrocinar 53 horas de tempo de servidor para o site da nossa instituição beneficente.",
     "progress-modal-cta-3": "Doe agora para ajudar nossa instituição beneficente a traduzir as aulas em 32 idiomas para alunos em todo o mundo.",

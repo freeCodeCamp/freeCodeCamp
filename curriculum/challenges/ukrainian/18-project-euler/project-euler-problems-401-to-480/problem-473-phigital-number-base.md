@@ -16,9 +16,9 @@ Even then this representation is not unique.
 
 We can make it unique by requiring that no powers with consecutive exponents are used and that the representation is finite.
 
-E.g:
+Наприклад:
 
-$2 = \varphi + \varphi^{-2}$ and $3 = \varphi^{2} + \varphi^{-2}$
+$2 = \varphi + \varphi^{-2}$ та $3 = \varphi^{2} + \varphi^{-2}$
 
 To represent this sum of powers of $\varphi$ we use a string of 0's and 1's with a point to indicate where the negative exponents start. We call this the representation in the phigital numberbase.
 

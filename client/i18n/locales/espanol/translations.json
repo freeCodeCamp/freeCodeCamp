@@ -402,7 +402,9 @@
     "season-greetings-fcc": "Saludos de Temporada de la comunidad freeCodeCamp 🎉",
     "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar con el fin de apoyar nuestra misión sin fines de lucro.",
     "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
-    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante."
+    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Apoya nuestra caridad",
@@ -428,9 +430,6 @@
     "your-donation-2": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
     "your-donation-3": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
     "become-supporter": "Conviértete en un colaborador",
-    "duration": "Se un benefactor de nuestra organización benéfica con una donación única.",
-    "duration-2": "Se un benefactor mensual de nuestra organización benéfica.",
-    "duration-4": "Se un benefactor de nuestra organización benéfica",
     "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
     "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
     "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",

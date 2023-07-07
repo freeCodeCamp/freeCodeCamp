@@ -14,7 +14,7 @@ Thus $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\\,121\\,222
 
 Also, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
 
-Find $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
+Знайдіть $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
 
 # --hints--
 

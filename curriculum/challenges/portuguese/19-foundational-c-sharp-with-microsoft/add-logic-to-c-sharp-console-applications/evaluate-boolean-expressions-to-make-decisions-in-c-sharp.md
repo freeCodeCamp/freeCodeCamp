@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das linhas de código abaixo é um uso válido do operador condicional?
 
 ## --answers--
 
-A
+`int value = amount >= 10? 10: 20;`
 
 ---
 
-B
+`int value = amount >= 10: 10? 20;`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`int value = amount >= 10? 10| 20;`
 
 ## --video-solution--
 
-4
+1

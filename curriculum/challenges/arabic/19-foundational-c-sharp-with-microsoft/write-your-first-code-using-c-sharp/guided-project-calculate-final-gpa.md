@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Suppose `decimal gradePointAverage = 3.99872831;`. What is the value of `(int) gradePointAverage`?
 
 ## --answers--
 
-A
+3.99
 
 ---
 
-B
+4
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+3
 
 ## --video-solution--
 
-4
+3

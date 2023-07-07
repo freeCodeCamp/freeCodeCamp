@@ -1,43 +1,35 @@
 ---
 id: 647e23368acb466c97ccbefd
-title: 'Guided Project - Work with Variable Data in C#'
+title: 'Projeto guiado – trabalhe com dados variáveis em C#'
 challengeType: 19
 dashedName: guided-project-work-with-variable-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/</a> and complete all the tasks for the "Guided Project - Work with Variable Data in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/</a> e complete todas as tarefas do módulo "Projeto guiado – trabalhe com dados variáveis em C#". Isto é necessário para adquirir o troféu "Trabalhe com dados variáveis em aplicações de console em C#".
+1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-What is C#?
+Para o código `decimal.TryParse(numberString, out myConvert))` quando o tipo `numberString` é uma String. Qual dos valores melhor descreve o tipo para `myConvert` quando `TryParse()` for bem-sucedido?
 
 ## --answers--
 
-A
+Uma string representando algarismos numéricos.
 
 ---
 
-B
+Um valor booleano.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Um decimal
 
 ## --video-solution--
 
-4
+3

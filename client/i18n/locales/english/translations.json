@@ -391,7 +391,6 @@
     "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
     "completed": "Completed",
     "not-started": "Not started",
-    "hint": "Hint",
     "test": "Test",
     "sorry-try-again": "Sorry, your code does not pass. Try again.",
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Support our charity",
@@ -428,9 +429,6 @@
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
     "become-supporter": "Become a Supporter",
-    "duration": "Become a one-time supporter of our charity.",
-    "duration-2": "Become a monthly supporter of our charity.",
-    "duration-4": "Become a supporter of our charity",
     "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
     "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
     "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",

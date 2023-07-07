@@ -1,13 +1,13 @@
 ---
 id: 62a8ad8e01d7cb0deae5ec66
-title: Step 56
+title: Schritt 56
 challengeType: 0
 dashedName: step-56
 ---
 
 # --description--
 
-Create another property in your object called `button functions`. Give this property an array containing the three functions assigned to the `onclick` properties in the `goTown` function. Remember that these functions are variables, not strings, and should not be wrapped in quotes.
+Erstelle in deinem Objekt eine weitere Eigenschaft namens `button functions`. Give this property an array containing the three functions assigned to the `onclick` properties in the `goTown` function. Denke daran, dass diese Funktionen Variablen und keine Zeichenketten sind und, dass sie nicht zwischen Anführungzeichen stehen sollten.
 
 # --hints--
 
