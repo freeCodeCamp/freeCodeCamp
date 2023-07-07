@@ -21,11 +21,6 @@ const fileJoi = Joi.object().keys({
   history: Joi.array().items(Joi.string().allow(''))
 });
 
-const prerequisitesJoi = Joi.object().keys({
-  id: Joi.objectId().required(),
-  title: Joi.string().required()
-});
-
 const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
@@ -60,10 +55,6 @@ const schema = Joi.object()
     isPrivate: Joi.bool(),
     notes: Joi.string().allow(''),
     order: Joi.number(),
-    prerequisites: Joi.when('challengeType', {
-      is: [challengeTypes.exam],
-      then: Joi.array().items(prerequisitesJoi)
-    }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
       is: challengeTypes.video,
