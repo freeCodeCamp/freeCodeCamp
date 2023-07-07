@@ -85,10 +85,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   hasEditableBoundaries
                   id
                   order
-                  prerequisites {
-                    id
-                    title
-                  }
                   required {
                     link
                     src
@@ -288,7 +284,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       notes: String
       url: String
       assignments: [String]
-      prerequisites: [PrerequisiteChallenge]
     }
     type FileContents {
       fileKey: String
@@ -298,10 +293,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       head: String
       tail: String
       editableRegionBoundaries: [Int]
-    }
-    type PrerequisiteChallenge {
-      id: String
-      title: String
     }
   `;
   createTypes(typeDefs);

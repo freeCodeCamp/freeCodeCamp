@@ -1,5 +1,5 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -21,6 +21,7 @@ import Hotkeys from '../components/hotkeys';
 import { startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
+  partiallyCompletedChallengesSelector,
   isSignedInSelector,
   examInProgressSelector
 } from '../../../redux/selectors';
@@ -50,16 +51,19 @@ const mapStateToProps = createSelector(
   completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
+  partiallyCompletedChallengesSelector,
   examInProgressSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
+    partiallyCompletedChallenges: CompletedChallenge[],
     examInProgress: boolean
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
+    partiallyCompletedChallenges,
     examInProgress
   })
 );
@@ -365,9 +369,9 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
 
     this.timerInterval = setInterval(() => {
-      this.setState(state => ({
-        examTimeInSeconds: state.examTimeInSeconds + 1
-      }));
+      this.setState({
+        examTimeInSeconds: this.state.examTimeInSeconds + 1
+      });
     }, 1000);
 
     this.setState(
@@ -458,7 +462,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
             description,
             fields: { blockName },
             instructions,
-            prerequisites,
             superBlock,
             title,
             translationPending
@@ -466,7 +469,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
         }
       },
       examInProgress,
-      completedChallenges,
       isChallengeCompleted,
       openFinishExamModal,
       pageContext: {
@@ -482,13 +484,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       userExam,
       showResults
     } = this.state;
-
-    const missingPrequisites = prerequisites.filter(
-      prerequisite =>
-        !completedChallenges.find(({ id }) => prerequisite.id === id)
-    );
-
-    const qualifiedForExam = missingPrequisites.length === 0;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -618,23 +613,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   {title}
                 </ChallengeTitle>
                 <Spacer size='medium' />
-
-                {qualifiedForExam ? (
-                  <Alert id='qualified-for-exam' bsStyle='info'>
-                    <p>{t('learn.qualified-for-exam')}</p>
-                  </Alert>
-                ) : (
-                  <Alert id='not-qualified-for-exam' bsStyle='danger'>
-                    <p>{t('learn.not-qualified-for-exam')}</p>
-                    <Spacer size='small' />
-                    <ul>
-                      {missingPrequisites.map(({ title, id }) => (
-                        <li key={id}>{title}</li>
-                      ))}
-                    </ul>
-                  </Alert>
-                )}
-
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
@@ -643,7 +621,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   block={true}
                   bsStyle='primary'
                   data-cy='start-exam'
-                  disabled={!qualifiedForExam}
                   onClick={this.runExam}
                 >
                   {t('buttons.click-start-exam')}
@@ -671,7 +648,6 @@ export const query = graphql`
   query ExamChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
-        block
         challengeType
         description
         fields {
@@ -680,10 +656,6 @@ export const query = graphql`
         helpCategory
         id
         instructions
-        prerequisites {
-          id
-          title
-        }
         superBlock
         title
         translationPending
