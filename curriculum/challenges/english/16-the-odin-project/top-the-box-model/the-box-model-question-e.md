@@ -14,23 +14,23 @@ Learning to position elements on a webpage is not that difficult once you unders
 
 ## --text--
 
-What is a crucial skill to master in CSS for positioning and layout of elements on a webpage?
+Why is it important to have a solid understanding of CSS in web development?
 
 ## --answers--
 
-Changing fonts and colors.
+It allows you to create complex animations and interactive effects.
 
 ---
 
-Understanding HTML structure.
+It allows you to create complex animations and interactive effects.
 
 ---
 
-Mastering JavaScript.
+It helps in optimizing database queries for improved performance.
 
 ---
 
-Learning how to position elements on a webpage.
+It enables you to style and design webpages with precision and control.
 
 
 ## --video-solution--
