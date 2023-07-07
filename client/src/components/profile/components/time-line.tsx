@@ -242,6 +242,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
                 blockName
               }
               id
+              superBlock
               title
             }
           }
@@ -250,50 +251,6 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     }
   `);
   const idToNameMap = new Map();
-
-  function titleConverter(title: string) {
-    let convertedTitle = title
-      .replace(/(\w+-*)/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase();
-      })
-      .replace(/-/g, ' ');
-
-    const lowers = [
-      'A',
-      'An',
-      'The',
-      'And',
-      'But',
-      'Or',
-      'For',
-      'As',
-      'At',
-      'By',
-      'For',
-      'From',
-      'In',
-      'Into',
-      'Of',
-      'On',
-      'To',
-      'With'
-    ];
-    for (const word of lowers)
-      convertedTitle = convertedTitle.replace(
-        new RegExp('\\s' + word + '(?!\\w)', 'g'),
-        txt => txt.toLowerCase()
-      );
-
-    const uppers = ['Html', 'Css'];
-    for (const word of uppers)
-      convertedTitle = convertedTitle.replace(
-        new RegExp(word, 'g'),
-        word.toUpperCase()
-      );
-
-    return convertedTitle;
-  }
-
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
     const certName = t(`certification.title.${certPath}`);
@@ -309,6 +266,8 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
+          superBlock,
+          // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
           fields: { slug, blockName }
@@ -317,8 +276,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     }) => {
       idToNameMap.set(id, {
         challengeTitle: `${
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-          title.includes('Step') ? `${titleConverter(blockName)} - ` : ''
+          title.includes('Step')
+            ? `${t(`intro:${superBlock}.blocks.${blockName}.title`)} - `
+            : ''
         }${title}`,
         challengePath: slug
       });
