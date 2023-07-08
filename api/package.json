@@ -17,7 +17,7 @@
     "fastify": "4.19.2",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
-    "jsonwebtoken": "9.0.0",
+    "jsonwebtoken": "9.0.1",
     "nanoid": "3",
     "nodemon": "2.0.22",
     "query-string": "^7.1.3"
