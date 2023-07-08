@@ -120,7 +120,7 @@ export const rtlLangs = [''];
 
 ### Налаштуйте перекладені суперблоки
 
-У файлі [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) додайте нову мову до об’єкту `notAuditedSuperBlocks`. Це виведе список усіх суперблоків, які не повністю перекладені. Add an array of superblocks which have not been fully translated to it. For example:
+У файлі [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) додайте нову мову до об’єкту `notAuditedSuperBlocks`. Це виведе список усіх суперблоків, які не повністю перекладені. Додайте сюди масив суперблоків, які не повністю перекладені. Наприклад:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -145,7 +145,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Переконайтесь, що додали лише ті суперблоки, які **не** повністю перекладені та затверджені. Перекладені суперблоки будуть вирахувані з цього об’єкта. Коли новий суперблок буде повністю перекладений, вилучіть його з масиву цієї мови.
 
-See the `SuperBlocks` enum at the beginning of the same file for the full list of superblocks.
+Див. запис `SuperBlocks` на початку того ж файлу для повного списку суперблоків.
 
 ### Налаштування пошуку
 

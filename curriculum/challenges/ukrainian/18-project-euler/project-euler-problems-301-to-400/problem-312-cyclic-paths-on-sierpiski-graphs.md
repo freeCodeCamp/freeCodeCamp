@@ -17,7 +17,7 @@ Let $C(n)$ be the number of cycles that pass exactly once through all the vertic
 
 <img class="img-responsive center-block" alt="eight cycles that pass exactly once through all vertices of S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
 
-It can also be verified that:
+Також можна довести, що:
 
 $$\begin{align}   & C(1) = C(2) = 1 \\\\
   & C(5) = 71\\,328\\,803\\,586\\,048 \\\\   & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\

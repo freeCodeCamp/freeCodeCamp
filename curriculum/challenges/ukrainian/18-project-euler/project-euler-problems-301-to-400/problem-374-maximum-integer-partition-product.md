@@ -22,7 +22,7 @@ So $f(5) = 6$ and $m(5) = 2$.
 
 For $n = 10$ the partition with the largest product is $10 = 2 + 3 + 5$, which gives $f(10) = 30$ and $m(10) = 3$. And their product, $f(10) \times m(10) = 30 \times 3 = 90$
 
-It can be verified that $\sum f(n) \times m(n)$ for $1 ≤ n ≤ 100 = 1\\,683\\,550\\,844\\,462$.
+Можна довести, що $\sum f(n) \times m(n)$ за умови $1 ≤ n ≤ 100 = 1\\,683\\,550\\,844\\,462$.
 
 Знайдіть $\sum f(n) \times m(n)$ за умови $1 ≤ n ≤ {10}^{14}$. Give your answer modulo $982\\,451\\,653$, the 50 millionth prime.
 

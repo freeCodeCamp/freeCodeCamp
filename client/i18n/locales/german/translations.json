@@ -391,7 +391,6 @@
     "runs-in-vm": "Das Projekt läuft in einer virtuellen Maschine. Vervollständige die dort beschriebenen User Stories und bestehe alle Tests, um Schritt 1 abzuschließen.",
     "completed": "Abgeschlossen",
     "not-started": "Nicht gestartet",
-    "hint": "Hinweis",
     "test": "Test",
     "sorry-try-again": "Tut mir leid, dein Code funktioniert nicht. Versuche es noch einmal.",
     "sorry-keep-trying": "Tut mir leid, dein Code funktioniert nicht. Versuche es weiter.",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Support our charity",

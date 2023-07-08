@@ -391,7 +391,6 @@
     "runs-in-vm": "Mradi unaendeshwa kwa mashine virtual, kamilisha mazoezi za watumiaji zilizofafanuliwa hapo na upate majaribio yote ya kupita ili kumaliza hatua ya 1.",
     "completed": "Imekamilika",
     "not-started": "Haujaanza",
-    "hint": "Kidokezo",
     "test": "Jaribio",
     "sorry-try-again": "Samahani, msimbo wako haupiti. Jaribu tena.",
     "sorry-keep-trying": "Samahani, msimbo wako haupiti. Zidi kujaribu.",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "Salamu za Msimu kutoka kwa jumuiya ya freeCodeCamp 🎉",
     "if-getting-value": "Ikiwa unapata mengi kutoka kwa freeCodeCamp, sasa ni wakati mzuri wa kuchangia ili kusaidia kazi yetu ya kutoa msaada.",
     "building-a-university": "Tunaunda Programu ya Bila Malipo wa Shahada ya Chuo Kikuu ya Computer Science",
-    "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele."
+    "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Unga mkono hisani yetu",

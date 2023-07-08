@@ -52,11 +52,6 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
-  const { t } = useTranslation();
-  return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
-};
-
 const RenderIlustration = ({
   recentlyClaimedBlock
 }: {
@@ -155,7 +150,7 @@ function DonateModal({
                 })}
               </b>
             )}
-            <GetCommonDonationText ctaNumber={ctaNumber} />
+            <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
           </Col>
         )}
       </Row>

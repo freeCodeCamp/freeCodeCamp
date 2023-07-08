@@ -361,6 +361,113 @@ Follow these steps:
     git push origin branch/name-here
     ```
 
+## Running mobile curriculum tests
+
+> [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
+
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+
+    ```console
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Change directory to the freeCodeCamp repo:
+
+    ```console
+    cd freeCodeCamp
+    ```
+
+3. Make a copy of the `.env` file:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
+
+4. Install the dependencies for the freeCodeCamp repo:
+
+    ```console
+    pnpm install && pnpm run create:config
+    ```
+
+5. Generate the challenge data JSON file:
+
+    ```console
+    pnpm run build:curriculum
+    ```
+
+6. Copy the generated JSON file to the mobile app:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
+
+7. Change directory to the mobile app:
+
+    ```console
+    cd ../mobile/mobile-app
+    ```
+
+8. Install the dependencies for the mobile app:
+
+    ```console
+    flutter pub get
+    ```
+
+9. Update the test file to use the challenge data JSON file:
+
+    ```console
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    ```
+
+10. Generate the challenge files:
+
+    ```console
+    flutter test test/widget_test.dart
+    ```
+
+11. Start a local server to serve the challenge files with the help of `serve` package:
+
+    ```console
+    npx serve
+    ```
+
+12. In a different terminal go back to the freeCodeCamp repo:
+
+    ```console
+    cd ../../freeCodeCamp
+    ```
+
+13. Run the cypress tests:
+
+    ```console
+    pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    ```
+
 ## Proposing a Pull Request (PR)
 
 After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).

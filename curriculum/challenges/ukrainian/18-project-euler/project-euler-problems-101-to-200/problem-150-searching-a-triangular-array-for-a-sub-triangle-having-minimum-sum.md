@@ -11,7 +11,7 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 Нам потрібно знайти трикутник, сума чисел якого є найменшою серед інших трикутників у масиві з додатними та від’ємними числами.
 
-У наведеному нижче прикладі можна легко побачити, що виділений трикутник відповідає умові, оскільки його сума дорівнює −42.
+У наведеному нижче прикладі можна легко довести, що виділений трикутник відповідає умові, оскільки його сума дорівнює −42.
 
 <img class="img-responsive center-block" alt="трикутний масив з виділеним трикутником із сумою -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
 

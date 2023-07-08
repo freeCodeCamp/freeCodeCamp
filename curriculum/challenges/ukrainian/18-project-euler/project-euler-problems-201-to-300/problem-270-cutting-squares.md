@@ -18,7 +18,7 @@ Counting any reflections or rotations as distinct, we call $C(N)$ the number of 
 
 <img class="img-responsive center-block" alt="ways to cut 2x2 square, counting reflections and rotations as distinct" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
 
-What is $C(30)\bmod {10}^8$ ?
+Чому дорівнює $C(30)\bmod {10}^8$ ?
 
 # --hints--
 

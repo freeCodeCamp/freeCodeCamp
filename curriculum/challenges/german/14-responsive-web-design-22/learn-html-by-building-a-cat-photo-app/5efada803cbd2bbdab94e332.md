@@ -7,7 +7,7 @@ dashedName: step-29
 
 # --description--
 
-Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
+Bette innerhalb des `figure`-Elements, das du eben hinzugefügt hast, ein `img`-Element mit einem `src`-Attribut ein, das auf `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg` gesetzt ist.
 
 # --hints--
 
@@ -29,7 +29,7 @@ Es sollte ein zweites `figure`-Element genau über dem zweiten schließenden Tag
 assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
 ```
 
-You should have a third `img` element nested in the `figure` element.
+Du solltest ein drittes `img`-Element in dem `figure`-Element einbetten.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];

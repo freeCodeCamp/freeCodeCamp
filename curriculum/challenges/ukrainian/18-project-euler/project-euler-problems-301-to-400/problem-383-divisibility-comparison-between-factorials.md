@@ -14,7 +14,7 @@ For example, $f_5(625\\,000) = 7$.
 
 Let $T_5(n)$ be the number of integers $i$ which satisfy $f_5((2 \times i - 1)!) &lt; 2 \times f_5(i!)$ and $1 ≤ i ≤ n$.
 
-It can be verified that $T_5({10}^3) = 68$ and $T_5({10}^9) = 2\\,408\\,210$.
+Можна довести, що $T_5({10}^3) = 68$ та $T_5({10}^9) = 2\\,408\\,210$.
 
 Знайдіть $T_5({10}^{18})$.
 

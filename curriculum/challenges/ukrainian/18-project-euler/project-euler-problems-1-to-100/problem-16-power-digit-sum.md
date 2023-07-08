@@ -10,7 +10,7 @@ dashedName: problem-16-power-digit-sum
 
 2<sup>15</sup> = 32768, а сума цифр цього числа дорівнює 3 + 2 + 7 + 6 + 8 = 26.
 
-Якою буде сума цифр степеня 2<sup><code>exponent</code></sup>?
+Якою буде сума цифр числа 2<sup><code>у степені</code></sup>?
 
 # --hints--
 

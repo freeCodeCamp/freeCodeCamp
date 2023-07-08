@@ -40,7 +40,7 @@ Sendo `link` o link do artigo original.
 
 > [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
-To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
+Para atualizar os artigos de tendência no rodapé, você precisa atualizar o [arquivo yaml no repositório CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) para o seu idioma. Tanto o currículo como o editorial fazem referência a esse arquivo.
 
 Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
 
@@ -63,17 +63,17 @@ Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspond
 
 Para cada artigo, você precisará criar um título menor para usar no rodapé. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
-Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. You can preview the changes by editing the `trending.json` file in your local environment:
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Você pode visualizar as alterações editando o arquivo `trending.json` em seu ambiente local:
 
-1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+1. Atualize o arquivo `.env` para usar seu idioma em `CLIENT_LOCALE` e `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Execute `pnpm run create:config`. Isso gerará automaticamente o arquivo `trending.json` para o seu idioma no diretório `/client/i18n/locales/`.
 
-3. Start the server by running `pnpm run develop:server` in one terminal window.
+3. Inicie o servidor executando `pnpm run develop:server` em uma janela do terminal.
 
-4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+4. Edite o arquivo `trending.json` para que contenha os títulos que você deseja visualizar. Você pode querer converter o seu arquivo `.yaml` em formato JSON com uma ferramenta automática.
 
-5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
+5. Em outra janela do terminal, execute `pnpm run clean:client` e, em seguida, `pnpm run develop: client`
 
 ## Como traduzir os artigos dos links de rodapé
 
@@ -125,7 +125,7 @@ Depois de ter traduzido e publicado os artigos listados como "podem ser traduzid
 
 > [!WARNING] Apenas "Sobre", "Suporte", "Honestidade acadêmica" e "Código de conduta" podem ser traduzidos. Deixar os outros URLs inalterados.
 
-Update the following part in the file:
+Atualize a seguinte parte do arquivo:
 
 ```json
 {

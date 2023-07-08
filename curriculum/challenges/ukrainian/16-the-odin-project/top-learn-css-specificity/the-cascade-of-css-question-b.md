@@ -7,35 +7,35 @@ dashedName: the-cascade-of-css-question-b
 
 # --description--
 
-A CSS declaration that is more specific will take precedence over less specific ones. Inline styles, which you went over in a previous lesson, have the highest specificity compared to selectors, while each type of selector has its own specificity level that contributes to how specific a declaration is. Other selectors contribute to specificity, but you're focusing only on the ones you’ve gone over so far:
+Чим специфічніше оголошення CSS, тим у нього більше переваги над іншими. Вбудовані стилі, які ви розглянули минулого уроку, мають найвищу специфічність серед інших селекторів, хоча кожен тип селектора має власний рівень специфічності, який сприяє специфічності оголошення. Інші селектори сприяють специфічності, але ми фокусуємось лише на тих, які вже розглянули:
 
-1. ID selectors (most specific selector)
-2. Class selectors
-3. Type selectors
+1. Селектори ID (найспецифічніший селектор)
+2. Селектори класу
+3. Селектори типу
 
-Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it, sort of like a tie-breaker. An ID selector will always beat any number of class selectors, a class selector will always beat any number of type selectors, and a type selector will always beat any number of anything less specific than it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
+Специфічність враховується лише тоді, коли елемент має декілька конфліктуючих оголошень, націлених на себе. Селектор ID завжди переважатиме будь-яку кількість селекторів класу, селектор класу завжди переважатиме будь-яку кількість селекторів типу, а селектор типу завжди переважатиме будь-яку кількість менш специфічних селекторів. Якщо жодне оголошення не має селектору вищої специфічності, то більша кількість селектору переважає меншу кількість того самого селектору.
 
 # --question--
 
 ## --text--
 
-Which of the following is the correct order of specificity for CSS selectors, from most specific to least specific?
+Що з переліченого показує правильний порядок специфічності селекторів CSS (від найбільш специфічного до найменш специфічного)?
 
 ## --answers--
 
-Type selectors, class selectors, ID selectors
+Селектори типу, селектори класу, селектори ID
 
 ---
 
-ID selectors, class selectors, type selectors
+Селектори ID, селектори класу, селектори типу
 
 ---
 
-Class selectors, type selectors, ID selectors
+Селектори класу, селектори типу, селектори ID
 
 ---
 
-ID selectors, type selectors, class selectors
+Селектори ID, селектори типу, селектори класу
 
 ## --video-solution--
 

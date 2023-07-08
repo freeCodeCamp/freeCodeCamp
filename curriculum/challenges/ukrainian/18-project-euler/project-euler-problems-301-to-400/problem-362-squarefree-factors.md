@@ -8,7 +8,7 @@ dashedName: problem-362-squarefree-factors
 
 # --description--
 
-Consider the number 54.
+Розглянемо число 54.
 
 54 can be factored in 7 distinct ways into one or more factors larger than 1:
 

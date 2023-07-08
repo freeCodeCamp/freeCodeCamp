@@ -20,7 +20,7 @@ For example, here are two valid numberings of $L(5, 3)$:
 
 <img class="img-responsive center-block" alt="two valid numberings of L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;" />
 
-Let $LC(m, n)$ be the number of valid numberings of $L(m, n)$. It can be verified that $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$ and $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$.
+Let $LC(m, n)$ be the number of valid numberings of $L(m, n)$. Можна довести, що $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$ та $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$.
 
 Знайдіть $LC(10\\,000, 5\\,000)\bmod 76\\,543\\,217$.
 
