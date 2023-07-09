@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
-import GreenNotCompleted from '../../../assets/icons/green-not-completed';
-import GreenPass from '../../../assets/icons/green-pass';
+import { CheckMark } from '../../../components/CheckMark/check-mark';
 import { executeGA } from '../../../redux/actions';
 import { SuperBlocks } from '../../../../../config/superblocks';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
@@ -29,10 +28,6 @@ function Challenges({
   blockTitle
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
-
-  const renderCheckMark = (isCompleted: boolean) =>
-    isCompleted ? <GreenPass /> : <GreenNotCompleted />;
-
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
   const firstIncompleteChallenge = challengesWithCompleted.find(
@@ -91,7 +86,7 @@ function Challenges({
                 <Link to={challenge.fields.slug}>
                   {challenge.title}
                   <span className=' badge map-badge map-project-checkmark'>
-                    {renderCheckMark(challenge.isCompleted)}
+                    <CheckMark isCompleted={challenge.isCompleted} />
                   </span>
                 </Link>
               )}
@@ -113,7 +108,7 @@ function Challenges({
           {!isProjectBlock ? (
             <Link to={challenge.fields.slug}>
               <span className='badge map-badge'>
-                {renderCheckMark(challenge.isCompleted)}
+                <CheckMark isCompleted={challenge.isCompleted} />
               </span>
               {challenge.title}
             </Link>
@@ -121,7 +116,7 @@ function Challenges({
             <Link to={challenge.fields.slug}>
               {challenge.title}
               <span className='badge map-badge map-project-checkmark'>
-                {renderCheckMark(challenge.isCompleted)}
+                <CheckMark isCompleted={challenge.isCompleted} />
               </span>
             </Link>
           )}
