@@ -11,7 +11,8 @@ import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
-import { CheckMark } from '../../../components/CheckMark/check-mark';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
+import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
@@ -69,6 +70,14 @@ export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
     </div>
   );
 };
+
+function CheckMark({ isCompleted }: { isCompleted: boolean }): JSX.Element {
+  return isCompleted ? (
+    <GreenPass hushScreenReaderText />
+  ) : (
+    <GreenNotCompleted hushScreenReaderText />
+  );
+}
 
 class Block extends Component<BlockProps> {
   static displayName: string;
