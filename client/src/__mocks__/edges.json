@@ -20500,9 +20500,10 @@
       "challenge": {
         "fields": {
           "slug": "/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41",
-          "blockName": "Learn Accessibility by Building a Quiz"
+          "blockName": "learn-accessibility-by-building-a-quiz"
         },
         "id": "6145f685797bd30df9784e8c",
+        "superBlock": "2022/responsive-web-design",
         "title": "Step 41"
       }
     }
