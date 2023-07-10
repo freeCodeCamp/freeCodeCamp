@@ -1,14 +1,15 @@
 ---
-id: 64a2d86799a58517c29f79a5
-title: Step 31
+id: 64aaf2aff7f1fc7a550f40cb
+title: Step 32
 challengeType: 0
-dashedName: step-31
+dashedName: step-32
 ---
 
 # --description--
 
-The next step is to use the `new` keyword to create a new instance of the `Player` object and assign it to a new `const` variable called `player`. 
+Now it is time to see your new player drawn on the screen.
 
+Start by creating an empty arrow function called `startGame`.
 
 # --hints--
 
@@ -205,6 +206,8 @@ class Player {
     }
   }
 }
+
+const player = new Player();
 
 --fcc-editable-region--
 
