@@ -26,9 +26,9 @@ dashedName: problem-69-totient-maximum
 
 </div>
 
-Можна побачити, що `n` = 6 утворює максимум $\displaystyle\frac{n}{{\phi}(n)}$ при `n` ≤ 10.
+Можна побачити, що `n` = 6 утворює максимум $\displaystyle\frac{n}{{\phi}(n)}$ за умови `n` ≤ 10.
 
-Знайдіть значення `n` ≤ `limit`, при якому $\displaystyle\frac{n}{{\phi(n)}$ є максимальним.
+Знайдіть значення `n` ≤ `limit`, за якого $\displaystyle\frac{n}{{\phi(n)}$ є максимальним.
 
 # --hints--
 

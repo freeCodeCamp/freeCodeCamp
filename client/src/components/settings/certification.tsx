@@ -206,11 +206,16 @@ function CertificationSettings(props: CertificationSettingsProps) {
   };
 
   type CertName = keyof ProjectMap | keyof LegacyProjectMap;
-  function renderCertifications(certName: CertName) {
-    const { t } = props;
+  const Certification = ({
+    certName,
+    t
+  }: {
+    certName: CertName;
+    t: TFunction;
+  }) => {
     const { certSlug } = fullProjectMap[certName][0];
     return (
-      <FullWidthRow key={certName}>
+      <FullWidthRow>
         <Spacer size='medium' />
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {t(`certification.title.${certName}`, certName)}
@@ -231,7 +236,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         </Table>
       </FullWidthRow>
     );
-  }
+  };
   function renderProjectsFor({
     certName,
     isCert
@@ -400,10 +405,14 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(certName => renderCertifications(certName))}
+        {certifications.map(certName => (
+          <Certification key={certName} certName={certName} t={t} />
+        ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {renderLegacyFullStack()}
-        {legacyCertifications.map(certName => renderCertifications(certName))}
+        {legacyCertifications.map(certName => (
+          <Certification key={certName} certName={certName} t={t} />
+        ))}
         <ProjectModal
           {...{
             projectTitle,

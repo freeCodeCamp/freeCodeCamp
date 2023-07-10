@@ -20,7 +20,7 @@ You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> 
 
 # --hints--
 
-`almostPi` should be a function.
+`almostPi` має бути функцією.
 
 ```js
 assert(typeof almostPi === 'function')

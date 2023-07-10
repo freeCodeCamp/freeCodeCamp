@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das seguintes opções é uma razão inadequada para se usar um comentário de código?
 
 ## --answers--
 
-A
+Descrever a intenção de alto nível do código.
 
 ---
 
-B
+Comentar temporariamente uma linha de código enquanto avalia um recurso de maneira diferente.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Explicar como uma nova palavra-chave funciona em C#.
 
 ## --video-solution--
 
-4
+3

@@ -16,29 +16,21 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual é a finalidade de definir um parâmetro opcional em um método?
 
 ## --answers--
 
-A
+Fazer com que um método realize uma tarefa diferente.
 
 ---
 
-B
+Sobrecarregar um método.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Simplificar os parâmetros obrigatórios quando um parâmetro não é significativo para o resultado.
 
 ## --video-solution--
 
-4
+3
 

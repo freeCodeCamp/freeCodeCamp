@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das opções abaixo descreve o efeito de uma instrução `using`?
 
 ## --answers--
 
-A
+Afeta apenas o primeiro bloco de código no arquivo.
 
 ---
 
-B
+Afeta apenas o bloco de código atual no arquivo.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Afeta todo o código no arquivo.
 
 ## --video-solution--
 
-4
+3

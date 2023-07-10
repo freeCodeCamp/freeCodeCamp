@@ -22,7 +22,7 @@ Let $C(n)$ be the number of triangles whose vertices are in $P_n$ which contain 
 $$\begin{align}   & C(8) = 20 \\\\
   & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$
 
-Find $C(2\\,000\\,000)$.
+Знайдіть $C(2\\,000\\,000)$.
 
 # --hints--
 

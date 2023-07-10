@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Para o código `decimal.TryParse(numberString, out myConvert))` quando o tipo `numberString` é uma String. Qual dos valores melhor descreve o tipo para `myConvert` quando `TryParse()` for bem-sucedido?
 
 ## --answers--
 
-A
+Uma string representando algarismos numéricos.
 
 ---
 
-B
+Um valor booleano.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Um decimal
 
 ## --video-solution--
 
-4
+3

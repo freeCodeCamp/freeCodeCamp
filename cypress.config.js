@@ -2,6 +2,10 @@ const { execSync } = require('child_process');
 const { existsSync } = require('fs');
 const { defineConfig } = require('cypress');
 
+function seed(args = []) {
+  return execSync('node tools/scripts/seed/seed-demo-user ' + args.join(' '));
+}
+
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
@@ -30,6 +34,9 @@ module.exports = defineConfig({
         if (!existsSync('./config/curriculum.json')) {
           execSync('pnpm run build:curriculum');
         }
+      });
+      on('task', {
+        seed
       });
 
       config.env.API_LOCATION = 'http://localhost:3000';

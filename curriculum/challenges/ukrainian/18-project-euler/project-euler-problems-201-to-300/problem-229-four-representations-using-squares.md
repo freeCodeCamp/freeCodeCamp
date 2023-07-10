@@ -8,7 +8,7 @@ dashedName: problem-229-four-representations-using-squares
 
 # --description--
 
-Consider the number 3600. It is very special, because
+Розглянемо число 3600. It is very special, because
 
 $$\begin{align}   & 3600 = {48}^2 + {36}^2   \\\\
   & 3600 = {20}^2 + {2×40}^2 \\\\   & 3600 = {30}^2 + {3×30}^2 \\\\

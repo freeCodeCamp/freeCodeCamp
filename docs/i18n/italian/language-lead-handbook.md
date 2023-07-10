@@ -40,48 +40,9 @@ The original author and the original article are linked automatically adding thi
 
 > [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on Google results.
 
-Ci sono due posti in cui cambiare gli articoli di tendenza.
+To update the trending articles in the footer, you need to update the [yaml file in the CDN repository](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) for your language. Both the curriculum and the publication reference this file.
 
-- [Il repository del curriculum](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [Il repository CDN](https://github.com/freeCodeCamp/cdn)
-
-For each article, you will need to create a shorter title to use in the footer.
-
-### Change Trending Articles in the Curriculum
-
-Gli articoli di tendenza nel piè di pagina del curriculum possono essere cambiati modificando il file `client/i18n/locales/<language>/trending.json`.
-
-Questo è un file `*.json` che ha la struttura di un oggetto con chiavi di proprietà in forma di `article0title` e `article0link`.
-
-Each number represents one of the 30 articles in the footer. Assicurati di abbinare correttamente il titolo e il link.
-
-Questo è un esempio di come deve essere una parte del file `trending.json`.
-
-```json
-{
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
-  ...
-}
-```
-
-Dovrai [fare il build in locale del client tradotto](how-to-enable-new-languages.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
-
-### How to Update the Trending Articles in the CDN
-
-The file in the CDN repository is the file `universal/trending/<language>.yaml`.
-
-This file is shaped differently. For example, here is the file content for the first 6 articles:
+For example, here is the file content for the first 6 articles:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -98,9 +59,21 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-Puoi passare da un formato all'altro cambiandolo con attenzione manualmente. Oppure puoi usare [lo script in questo repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Each number represents one of the 30 articles in the footer. Assicurati di abbinare correttamente il titolo e il link.
 
-> [!TIP] Un nuovo workflow è in fase di sviluppo, ci sarà solo un posto in cui apportare modifiche in futuro.
+For each article, you will need to create a shorter title to use in the footer. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
+
+Dovrai [fare il build in locale del client tradotto](how-to-enable-new-languages.md) per vedere se i titoli hanno la giusta lunghezza. You can preview the changes by editing the `trending.json` file in your local environment:
+
+1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+
+2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+
+3. Start the server by running `pnpm run develop:server` in one terminal window.
+
+4. Edit the `trending.json` to contain the titles you want to preview. You may want to convert your `.yaml` file into JSON format with an automatic tool.
+
+5. In another terminal window, run `pnpm run clean:client`, and then `pnpm run develop:client`
 
 ## How to Translate Articles in the Footer Links
 
@@ -152,7 +125,7 @@ Una volta che hai tradotto e pubblicato gli articoli elencati come "possono esse
 
 > [!WARNING] Solo "About", "Support", "Academic Honesty", e "Code of Conduct" possono essere tradotti. Lascia gli altri URL invariati.
 
-Aggiorna la seguente parte nel file:
+Update the following part in the file:
 
 ```json
 {

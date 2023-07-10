@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um desenvolvedor escreve uma aplicação que usa um laço `foreach` para iterar através de um array contendo 20 elementos. Após a conclusão da aplicação, o desenvolvedor descobre que o array deve ser atualizado para incluir 40 elementos. A aplicação precisa examinar todos os 40 elementos do array. Quais dos itens a seguir descreve o código de atualização necessário?
 
 ## --answers--
 
-A
+Criar um segundo laço `foreach` que itera através dos itens adicionais.
 
 ---
 
-B
+Não são necessárias alterações no laço `foreach`.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Colocar o laço original `foreach` dentro do bloco de código de um segundo `foreach` que itera duas vezes.
 
 ## --video-solution--
 
-4
+2

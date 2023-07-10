@@ -1,7 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2e
 title: >-
-  Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2
+  Завдання 175: дроби, які включають різні способи запису числа у вигляді суми степенів двійки
 challengeType: 1
 forumTopicId: 301810
 dashedName: >-
@@ -10,23 +10,23 @@ dashedName: >-
 
 # --description--
 
-Define $f(0) = 1$ and $f(n)$ to be the number of ways to write $n$ as a sum of powers of 2 where no power occurs more than twice.
+Нехай $f(0) = 1$ та $f(n)$ позначають кількість можливих записів $n$ у вигляді суми степенів двійки, де кожен степінь зустрічається не більше двох разів.
 
-For example, $f(10) = 5$ since there are five different ways to express 10:
+Наприклад, $f(10) = 5$, оскільки для запису 10 існує п’ять різних способів:
 
 $$10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1$$
 
-It can be shown that for every fraction $\frac{p}{q}\\; (p>0, q>0)$ there exists at least one integer $n$ such that $\frac{f(n)}{f(n - 1)} = \frac{p}{q}$.
+Можна довести, що для кожного дробу $\frac{p}{q}\\; (p>0, q>0)$ існує принаймні одне ціле число $n$, за якого $\frac{f(n)}{f(n - 1)} = \frac{p}{q}$.
 
-For instance, the smallest $n$ for which $\frac{f(n)}{f(n - 1)} = \frac{13}{17}$ is 241. The binary expansion of 241 is 11110001.
+Наприклад, найменшим $n$, за якого $\frac{f(n)}{f(n - 1)} = \frac{13}{17}$, є 241. Бінарним розкладанням числа 241 є 11110001.
 
-Reading this binary number from the most significant bit to the least significant bit there are 4 one's, 3 zeroes and 1 one. We shall call the string 4,3,1 the Shortened Binary Expansion of 241.
+Читаючи це бінарне число від старшого біта до молодшого, ми зустрінемо 4 одиниці, 3 нулі та 1 одиницю. Назвемо рядок 4,3,1 скороченим бінарним розкладанням числа 241.
 
-Find the Shortened Binary Expansion of the smallest $n$ for which
+Знайдіть скорочене бінарне розкладання найменшого $n$, за якого
 
 $$\frac{f(n)}{f(n - 1)} = \frac{123456789}{987654321}$$
 
-Give your answer as a string with comma separated integers, without any whitespaces.
+Надайте відповідь у вигляді рядка з цілих чисел, розділеними комами, без пробілів.
 
 # --hints--
 

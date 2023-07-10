@@ -24,7 +24,7 @@ dashedName: problem-78-coin-partitions
 
 </div><br>
 
-Знайдіть найменше значення `n`, при якому ${p}(n)$ ділиться на `divisor`.
+Знайдіть найменше значення `n`, за якого ${p}(n)$ ділиться на `divisor`.
 
 # --hints--
 

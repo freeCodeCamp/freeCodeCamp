@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?
 
 ## --answers--
 
-A
+When updates are made, the developers use line and block comments to identify each individual code update.
 
 ---
 
-B
+When updates are made, the developers leave all existing code comments intact. New comments are added to indicate when old comments no longer apply.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+When updates are made, the developers summarize changes using block comments.
 
 ## --video-solution--
 
-4
+3

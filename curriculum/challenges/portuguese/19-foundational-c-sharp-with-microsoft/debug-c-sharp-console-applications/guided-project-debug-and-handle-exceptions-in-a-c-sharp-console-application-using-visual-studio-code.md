@@ -16,28 +16,16 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Quando é lançada uma exceção do tipo `ArgumentOutOfRangeException`?
 
 ## --answers--
 
-A
+Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de indexar um array fora dos limites do array.
 
----
+Uma exceção `ArgumentOutOfRangeException` é lançada quando o valor de um argumento está fora do intervalo permitido de valores conforme definido pelo método.
 
-B
-
----
-
-C
-
----
-
-D
-
----
-
-E
+Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de armazenar um valor de um tipo em um array de outro tipo.
 
 ## --video-solution--
 
-4
+2

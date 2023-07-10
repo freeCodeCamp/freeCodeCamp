@@ -1,6 +1,6 @@
 ---
 id: aaa48de84e1ecc7c742e1124
-title: Build A Palindrome Checker
+title: Erstelle einen Palindrom-Prüfer
 challengeType: 5
 forumTopicId: 16004
 dashedName: build-a-palindrome-checker
@@ -8,19 +8,19 @@ dashedName: build-a-palindrome-checker
 
 # --description--
 
-Return `true` if the given string is a palindrome. Otherwise, return `false`.
+Gib `true` zurück, falls der übergebene String ein Palindrom ist. Gib ansonsten `false` zurück.
 
-A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+Ein <dfn>Palindrom</dfn> kann sowohl ein Wort als auch ein Satz sein, das sowohl vorwärts als auch rückwärts gelesen dasselbe Wort bzw. denselben Satz ergibt. Interpunktion, Leerzeichen sowie Groß- und Kleinschreibung ausgenommen.
 
-**Note:** You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+**Hinweis:** Entferne **alle nicht alphanumerischen Zeichen** (Interpunktion, Leerzeichen und Symbole) und setze alles in dieselbe Schreibweise (Klein- oder Großbuchstaben), um nach Palindromen zu filtern.
 
 We'll pass strings with varying formats, such as `racecar`, `RaceCar`, and `race CAR` among others.
 
-We'll also pass strings with special symbols, such as `2A3*3a2`, `2A3 3a2`, and `2_A3*3#A2`.
+Auch Strings mit speziellen Symbolen wie `2A3*3a2`, `2A3 3a2` und `2_A3*3#A2` werden dir übergeben.
 
 # --hints--
 
-`palindrome("eye")` should return a boolean.
+`palindrome("eye")` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof palindrome('eye') === 'boolean');
@@ -50,7 +50,7 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` should return `true`.
+`palindrome("A man, a plan, a canal. Panama")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('A man, a plan, a canal. Panama') === true);

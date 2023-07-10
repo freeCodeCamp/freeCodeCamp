@@ -391,7 +391,6 @@
     "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
     "completed": "Concluído",
     "not-started": "Não iniciado",
-    "hint": "Dica",
     "test": "Teste",
     "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
     "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "Boas festas de fim de ano, da comunidade do freeCodeCamp 🎉",
     "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão beneficente.",
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
-    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente."
+    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
+    "qualified-for-exam": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
+    "not-qualified-for-exam": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:"
   },
   "donate": {
     "title": "Ajude nossa instituição",
@@ -428,9 +429,6 @@
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
     "become-supporter": "Torne-se um apoiador",
-    "duration": "Torne-se um apoiador com uma doação única para nossa organização beneficente.",
-    "duration-2": "Torne-se um apoiador mensal da nossa organização beneficente.",
-    "duration-4": "Torne-se um apoiador da nossa organização beneficente",
     "progress-modal-cta-1": "Doe agora para ajudar nossa instituição beneficente a criar um curso superior gratuito de Ciência da Computação acreditado para todos.",
     "progress-modal-cta-2": "Doe agora para patrocinar 53 horas de tempo de servidor para o site da nossa instituição beneficente.",
     "progress-modal-cta-3": "Doe agora para ajudar nossa instituição beneficente a traduzir as aulas em 32 idiomas para alunos em todo o mundo.",
@@ -685,9 +683,9 @@
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
-    "verify": "Verificar esta certificação em {{certURL}}",
+    "verify": "Verificar esta certificação em:",
     "issued": "Emitido",
-    "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp.org, representando aproximadamente {{time}} horas de curso.</4>",
+    "fulltext": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",

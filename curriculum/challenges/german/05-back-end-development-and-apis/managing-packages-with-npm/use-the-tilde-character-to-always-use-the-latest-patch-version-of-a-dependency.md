@@ -18,7 +18,7 @@ Um eine npm-Abhängigkeit auf die neueste PATCH-Version zu aktualisieren, kannst
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (`1.2.13`). But now, you want to allow the latest `1.2.x` version.
+In der package.json Datei ist deine aktuelle Regel, dass npm das `@freecodecamp/example` aktualisieren kann, indem du eine bestimmte Version (`1.2.13`) verwendest. Jetzt möchtest du aber die neueste `1.2.x`-Version zulassen.
 
 Verwende das (`~`) Tilde-Zeichen, um die Version von `@freecodecamp/example` in deinen Abhängigkeiten voranzustellen und erlaube npm auf jede neue _patch_ Version zu aktualisieren.
 

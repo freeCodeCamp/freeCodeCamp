@@ -18,7 +18,7 @@ dashedName: problem-28-number-spiral-diagonals
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-Можна переконатися, що сума чисел по діагоналях дорівнює 101.
+Можна довести, що сума чисел по діагоналях дорівнює 101.
 
 Чому дорівнює сума чисел по діагоналях у спіралі `n`х`n`, створеній так само?
 

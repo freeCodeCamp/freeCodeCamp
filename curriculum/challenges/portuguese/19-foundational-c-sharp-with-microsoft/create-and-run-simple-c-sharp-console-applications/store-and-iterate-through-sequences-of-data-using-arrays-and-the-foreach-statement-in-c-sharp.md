@@ -16,28 +16,21 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das seguintes instruções foreach está sintaticamente correta?
 
 ## --answers--
 
-A
+`foreach (int value of values)`
 
 ---
 
-B
+`foreach (int value with values)`
 
 ---
 
-C
+`foreach (int value in values)`
 
----
-
-D
-
----
-
-E
 
 ## --video-solution--
 
-4
+3

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das seguintes opções pode ser usada para definir um ponto de interrupção no Visual Studio Code?
 
 ## --answers--
 
-A
+Clicar com o botão esquerdo na coluna à esquerda de um número de linha no editor de código. Correto. Um ponto de interrupção pode ser definido posicionando o ponteiro do mouse na coluna à esquerda de um número de linha e, em seguida, clicando com o botão esquerdo.
 
 ---
 
-B
+Selecionar Ativar/Desativar o ponto de interrupção no menu Editar.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Clicar com o botão direito no meio de uma linha de código e selecionar Ativar/Desativar o ponto de interrupção.
 
 ## --video-solution--
 
-4
+1

@@ -14,7 +14,7 @@ The MediaWiki software powers Wikipedia, and it helps you collect and organize k
 
 Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
 
-以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. Give it your own personal style.
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. あなた独自のアレンジを加えましょう。
 
 **User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
 

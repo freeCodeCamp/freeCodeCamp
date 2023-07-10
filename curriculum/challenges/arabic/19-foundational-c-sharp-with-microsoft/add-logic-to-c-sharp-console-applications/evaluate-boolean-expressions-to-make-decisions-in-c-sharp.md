@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following lines of code is a valid use of the conditional operator?
 
 ## --answers--
 
-A
+`int value = amount >= 10? 10: 20;`
 
 ---
 
-B
+`int value = amount >= 10: 10? 20;`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`int value = amount >= 10? 10| 20;`
 
 ## --video-solution--
 
-4
+1

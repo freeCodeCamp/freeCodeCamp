@@ -24,7 +24,7 @@ Wählen den Minimalbereich (3. Parameter) aus, damit der Test immer bestanden wi
 
 # --hints--
 
-Alle Tests sollten bestanden werden.
+All tests should pass.
 
 ```js
 (getUserInput) =>

@@ -29,7 +29,7 @@ We call an ordered pair of positive real numbers ($r_1$, $r_2$) a lenticular pai
 
 Let $L(N)$ be the number of distinct lenticular pairs ($r_1$, $r_2$) for which $0 &lt; r_1 ≤ r_2 ≤ N$. We can verify that $L(10) = 30$ and $L(100) = 3442$.
 
-Find $L(100\\,000)$.
+Знайдіть $L(100\\,000)$.
 
 # --hints--
 

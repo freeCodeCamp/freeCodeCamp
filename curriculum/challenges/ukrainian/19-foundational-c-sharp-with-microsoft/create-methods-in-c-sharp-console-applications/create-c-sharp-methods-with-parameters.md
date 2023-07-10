@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Given the method signature, `void Print(string name, string number = "", bool member = false)`, which of the following options correctly uses named and optional arguments?
 
 ## --answers--
 
-A
+`Print("Tony", member: true);`
 
 ---
 
-B
+`Print(number: "555", member: false)`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`Print("Tony", false)`
 
 ## --video-solution--
 
-4
+1

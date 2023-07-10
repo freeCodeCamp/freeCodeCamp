@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das opções a seguir retorna corretamente um valor do tipo `string`?
 
 ## --answers--
 
-A
+`return "";`
 
 ---
 
-B
+`return 'a';`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`return 5;`
 
 ## --video-solution--
 
-4
+1

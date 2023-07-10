@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+What is the relationship between the type of exception and the information it contains?
 
 ## --answers--
 
-A
+The type of exception determines the information it contains.
 
 ---
 
-B
+The type of exception and the information it contains are unrelated.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+The information contained in an exception determines the type of exception.
 
 ## --video-solution--
 
-4
+1

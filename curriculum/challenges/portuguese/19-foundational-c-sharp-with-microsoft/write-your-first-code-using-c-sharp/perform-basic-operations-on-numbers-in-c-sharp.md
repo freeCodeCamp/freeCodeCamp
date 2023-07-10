@@ -16,28 +16,24 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual é o valor do seguinte resultado? `int result = 3 + 1 * 5 / 2;`
 
 ## --answers--
 
-A
+10
 
 ---
 
-B
+5
 
 ---
 
-C
+6
 
 ---
 
-D
-
----
-
-E
+5.5
 
 ## --video-solution--
 
-4
+2

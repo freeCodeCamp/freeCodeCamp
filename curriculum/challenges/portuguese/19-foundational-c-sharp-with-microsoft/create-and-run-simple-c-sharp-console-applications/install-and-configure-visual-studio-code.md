@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das seguintes opções oferece a melhor descrição de um Ambiente Integrado de Desenvolvimento (IDE)?
 
 ## --answers--
 
-A
+O Visual Studio Code é um Ambiente Integrado de Desenvolvimento.
 
 ---
 
-B
+Um Ambiente Integrado de Desenvolvimento é uma ferramenta que facilita a escrita de código.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Um IDE é um conjunto de ferramentas que oferece suporte a todo o ciclo de vida do desenvolvimento de software.
 
 ## --video-solution--
 
-4
+3

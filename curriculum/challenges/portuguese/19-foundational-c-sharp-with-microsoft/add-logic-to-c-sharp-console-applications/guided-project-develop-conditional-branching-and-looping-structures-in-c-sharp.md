@@ -16,28 +16,21 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Quando é apropriado usar um bloco `switch-case` ao invés de um bloco `if-elseif-else`?
 
 ## --answers--
 
-A
+Um bloco `switch-case` é apropriado quando mais de 2-3 blocos de código `else if` forem necessários.
 
 ---
 
-B
+Um bloco `switch-case` é apropriado quando o número de padrões `case` for pequeno.
 
 ---
 
-C
+Um bloco `switch-case` é apropriado quando a instrução de seleção estiver dentro de um laço.
 
----
-
-D
-
----
-
-E
 
 ## --video-solution--
 
-4
+1

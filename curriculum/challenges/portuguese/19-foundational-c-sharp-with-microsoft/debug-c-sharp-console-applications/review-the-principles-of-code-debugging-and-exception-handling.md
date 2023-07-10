@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual é a relação entre o tipo de exceção e a informação que ele contém?
 
 ## --answers--
 
-A
+O tipo de exceção determina a informação que ele contém.
 
 ---
 
-B
+O tipo de exceção e a informação que ele contém não estão relacionados.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A informação contida numa exceção determina o tipo de exceção.
 
 ## --video-solution--
 
-4
+1

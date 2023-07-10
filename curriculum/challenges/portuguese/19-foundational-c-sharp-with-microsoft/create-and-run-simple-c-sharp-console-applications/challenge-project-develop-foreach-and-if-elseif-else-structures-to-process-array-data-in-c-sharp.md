@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um desenvolvedor está trabalhando com dois outros desenvolvedores para atualizar uma coleção de aplicações. Os desenvolvedores usarão comentários de código durante o processo de atualização. Qual das seguintes opções descreve um uso apropriado de comentários de código?
 
 ## --answers--
 
-A
+Quando as atualizações são feitas, os desenvolvedores usam comentários de linha e de bloco para identificar cada atualização de código individual.
 
 ---
 
-B
+Quando as atualizações são feitas, os desenvolvedores deixam todos os comentários de código existentes intactos. Novos comentários são adicionados para indicar quando os comentários antigos já não se aplicam.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Quando as atualizações são feitas, os desenvolvedores resumem as alterações usando comentários de bloco.
 
 ## --video-solution--
 
-4
+3

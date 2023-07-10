@@ -1,13 +1,13 @@
 ---
 id: 62a8ae85fcaedc0fddc7ca4f
-title: Step 58
+title: Schritt 58
 challengeType: 0
 dashedName: step-58
 ---
 
 # --description--
 
-Add a second object to your `locations` array (remember to separate them with a comma). Following the pattern you used in the first object, create the same properties but use the values from the `goStore` function. Set the `name` property to `store`.
+Add a second object to your `locations` array (remember to separate them with a comma). Erstelle nach dem gleichen Muster wie beim ersten Objekt dieselben Eigenschaften, verwende aber die Werte aus der `goStore` Funktion. Set the `name` property to `store`.
 
 # --hints--
 
@@ -45,13 +45,13 @@ assert.equal(locations[1]["button text"][1], "Buy weapon (30 gold)");
 assert.equal(locations[1]["button text"][2], "Go to town square");
 ```
 
-Your second `locations` object should have a `button functions` property which is an array.
+Dein zweites `locations`-Objekt sollte eine `button functions`-Eigenschaft haben, die ein Array ist.
 
 ```js
 assert.isArray(locations[1]["button functions"]);
 ```
 
-Your `button functions` property should have the function values `buyHealth`, `buyWeapon`, and `goTown`.
+Deine `button functions`-Eigenschaft sollte die Funktionswerte `buyHealth`, `buyWeapon` und `goTown` haben.
 
 ```js
 assert.equal(locations[1]["button functions"][0], buyHealth);

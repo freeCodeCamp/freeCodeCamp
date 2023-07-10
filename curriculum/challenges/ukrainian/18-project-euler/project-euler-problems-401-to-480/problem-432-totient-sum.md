@@ -10,9 +10,9 @@ dashedName: problem-432-totient-sum
 
 Let $S(n, m) = \sum φ(n × i)$ for $1 ≤ i ≤ m$. ($φ$ is Euler's totient function)
 
-You are given that $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
+Дано, що $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
 
-Find $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
+Знайдіть $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
 
 # --hints--
 
