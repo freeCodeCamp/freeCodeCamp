@@ -213,6 +213,33 @@ export function getUsernameExists(
   return get(`/api/users/exists?username=${username}`);
 }
 
+interface Answer {
+  id: string;
+  answer: string;
+}
+
+interface Exam {
+  id?: string;
+  question?: string;
+  answers?: Answer[];
+}
+
+export interface GenerateExamResponse {
+  exam?: Exam[];
+  error?: string;
+}
+
+export function getGenerateExam(
+  challengeId: string
+): Promise<ResponseWithData<GenerateExamResponse>> {
+  const responseWithData = get<GenerateExamResponse>(
+    `/generate-exam?challengeId=${challengeId}`
+  );
+  return responseWithData.then(({ response, data }) => {
+    return { response, data };
+  });
+}
+
 /** POST **/
 
 interface Donation {

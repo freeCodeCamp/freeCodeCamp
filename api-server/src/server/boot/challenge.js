@@ -25,6 +25,11 @@ import {
   normalizeParams,
   getPrefixedLandingPath
 } from '../utils/redirection';
+import { randomizeExam } from '../utils/exam';
+import {
+  validateExamFromDbSchema,
+  validateGeneratedExamSchema
+} from '../utils/exam-schemas';
 
 const log = debug('fcc:boot:challenges');
 
@@ -61,6 +66,10 @@ export default async function bootChallenge(app, done) {
     isValidChallengeCompletion,
     backendChallengeCompleted
   );
+
+  const generateExam = createGenerateExam(app);
+
+  api.get('/generate-exam', send200toNonUser, generateExam);
 
   api.post(
     '/exam-challenge-completed',
@@ -427,6 +436,76 @@ async function backendChallengeCompleted(req, res, next) {
       completedDate: completedChallenge.completedDate
     });
   });
+}
+
+// TODO: Use debug instead of console logs
+// TODO: send flash message keys to client so they can be i18n
+function createGenerateExam(app) {
+  const { Exam } = app.models;
+
+  return async function generateExam(req, res) {
+    const {
+      user: { completedChallenges },
+      query: { challengeId }
+    } = req;
+
+    try {
+      const examFromDb = await Exam.findById(challengeId);
+      if (!examFromDb) {
+        res.status(500);
+        throw new Error(
+          `An error occurred trying to get the exam from the database.`
+        );
+      }
+
+      // This is cause there was struggles validating the exam directly from the db/loopback
+      const examJson = JSON.parse(JSON.stringify(examFromDb));
+
+      const validExamFromDbSchema = validateExamFromDbSchema(examJson);
+
+      if (validExamFromDbSchema.error) {
+        res.status(500);
+        console.log(validGeneratedExamSchema.error);
+        throw new Error(
+          `An error occurred trying to get the exam from the database.`
+        );
+      }
+
+      const { prerequisites, numberOfQuestionsInExam } = examFromDb;
+
+      // Validate User has completed prerequisite challenges
+      prerequisites?.forEach(prerequisite => {
+        const prerequisiteCompleted = completedChallenges.find(
+          challenge => challenge.id === prerequisite.id
+        );
+
+        if (!prerequisiteCompleted) {
+          res.status(403);
+          throw new Error(
+            `User has not completed the required challenges for exam with ID '${challengeId}' to start the exam.`
+          );
+        }
+      });
+
+      const randomizedExam = randomizeExam(examJson);
+
+      const validGeneratedExamSchema = validateGeneratedExamSchema(
+        randomizedExam,
+        numberOfQuestionsInExam
+      );
+
+      if (validGeneratedExamSchema.error) {
+        res.status(500);
+        console.log(validGeneratedExamSchema.error);
+        throw new Error(`An error occurred trying to generate the exam.`);
+      }
+
+      return res.send({ exam: randomizedExam });
+    } catch (err) {
+      console.error(err);
+      return res.send({ error: err.message });
+    }
+  };
 }
 
 async function examChallengeCompleted(req, res, next) {
