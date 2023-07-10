@@ -7,7 +7,7 @@ dashedName: step-33
 
 # --description--
 
-To prevent the text content from overflowing, give your `span[class~="sr-only"]` selector an `overflow` property set to `hidden` and a `white-space` property set to `nowrap`.
+Weise deinem `span[class~="sr-only"]`-Selektor eine `overflow`-Eigenschaft mit dem Wert `hidden` und eine `white-space`-Eigenschaft mit dem Wert `nowrap` zu, um zu verhindern, dass der Textinhalt überlastet wird.
 
 # --hints--
 

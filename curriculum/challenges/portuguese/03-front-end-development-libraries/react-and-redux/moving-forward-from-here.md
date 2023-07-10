@@ -8,7 +8,7 @@ dashedName: moving-forward-from-here
 
 # --description--
 
-Parabéns! Você concluiu as lições sobre React e Redux. Vale a pena destacar um último item antes de continuar. Normalmente, você não escreverá apps React em um editor de código como esse. This challenge gives you a glimpse of what the syntax looks like if you're working with a file system on your own machine. O código deve ser similar, exceto para o uso de instruções de `import` (essas puxam em todas as dependências fornecidas para você nos desafios).
+Parabéns! Você concluiu as lições sobre React e Redux. Vale a pena destacar um último item antes de continuar. Normalmente, você não escreverá apps React em um editor de código como esse. Esse desafio dá a você uma ideia de como a sintaxe se parece se você está trabalhando com um sistema de arquivos na sua própria máquina. O código deve ser similar, exceto para o uso de instruções de `import` (essas puxam em todas as dependências fornecidas para você nos desafios).
 
 Finalmente, escrever código React e Redux geralmente requer alguma configuração. Isto pode tornar-se complicado rapidamente. Se você estiver interessado em experimentar em sua própria máquina, o <a href="https://www.freecodecamp.org/news/install-react-with-create-react-app/" target="_blank" rel="noopener noreferrer nofollow">Create React App</a> vem configurado e pronto para ser usado.
 
