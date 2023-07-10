@@ -683,9 +683,9 @@
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",
-    "verify": "確認此認證 {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "發佈日期",
-    "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成 freeCodeCamp.org</2> <3>{{title}}</3> <4>開發者認證課程，約 {{time}} 課時。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",

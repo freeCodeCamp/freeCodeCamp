@@ -683,9 +683,9 @@
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
-    "verify": "تحقق من هذه الشهادة في {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "صدر",
-    "fulltext": "<0>ويشهد هذا على أن </0> <1>{{user}}</1> <2>قد أكمل freeCodeCamp.org</2> <3>{{title}}</3> <4>شهادة المطور، مما يمثل حوالي {{time}} ساعة من الدورة التدريبية.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
