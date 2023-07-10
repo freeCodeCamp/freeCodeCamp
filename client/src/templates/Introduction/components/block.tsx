@@ -71,6 +71,14 @@ export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
   );
 };
 
+function CheckMark({ isCompleted }: { isCompleted: boolean }): JSX.Element {
+  return isCompleted ? (
+    <GreenPass hushScreenReaderText />
+  ) : (
+    <GreenNotCompleted hushScreenReaderText />
+  );
+}
+
 class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
@@ -83,14 +91,6 @@ class Block extends Component<BlockProps> {
     const { blockDashedName, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(blockDashedName);
-  }
-
-  renderCheckMark(isCompleted: boolean): JSX.Element {
-    return isCompleted ? (
-      <GreenPass hushScreenReaderText />
-    ) : (
-      <GreenNotCompleted hushScreenReaderText />
-    );
   }
 
   render(): JSX.Element {
@@ -185,7 +185,7 @@ class Block extends Component<BlockProps> {
                 <span className='sr-only'>{blockTitle}</span>
               </div>
               <div className='map-title-completed course-title'>
-                {this.renderCheckMark(isBlockCompleted)}
+                <CheckMark isCompleted={isBlockCompleted} />
                 <span
                   aria-hidden='true'
                   className='map-completed-count'
@@ -264,7 +264,7 @@ class Block extends Component<BlockProps> {
                 }}
               >
                 <span className='block-header-button-text map-title'>
-                  {this.renderCheckMark(isBlockCompleted)}
+                  <CheckMark isCompleted={isBlockCompleted} />
                   <span>
                     {blockTitle}
                     <span className='sr-only'>
@@ -331,7 +331,7 @@ class Block extends Component<BlockProps> {
                 }}
                 to={challengesWithCompleted[0].fields.slug}
               >
-                {this.renderCheckMark(isBlockCompleted)}
+                <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
                 <span className='sr-only'>
                   {t('misc.certification-project')}
