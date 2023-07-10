@@ -140,7 +140,7 @@ export const rtlLangs = [''];
 ```
 
 > [!NOTE]
-> When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
+> When a language has been set up in the deployment pipeline AND has a public `/learn` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
 
 ### Set Translated SuperBlocks
 
