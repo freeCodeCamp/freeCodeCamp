@@ -256,9 +256,8 @@ button.map-title {
 .map-challenges-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 3.4rem);
-  grid-gap: 3px;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: center;
+  margin: 5px auto;
   width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
@@ -268,7 +267,6 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 5px 0;
   justify-content: center;
   border: 1px dashed var(--primary-color);
 }
