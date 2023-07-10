@@ -204,6 +204,12 @@ const algoliaIndices = {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
   }
+
+  // If we already have /news in the target language up and running, you can update the values like this:
+  // dothraki: {
+  //   name: 'news-mis',
+  //   searchPage: 'https://www.freecodecamp.org/dothraki/news/search/'
+  // }
 };
 ```
 
