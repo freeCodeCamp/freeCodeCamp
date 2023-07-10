@@ -22,15 +22,15 @@ We will explain each step in the following sections.
 
 ## Updating Crowdin Settings
 
-Before you can release a new language, you will need to allow the languages to download from Crowdin. To configure that, you need to add a custom language code for your language on Crowdin first.
+Before you can release a new language, you will need to allow the languages to download from Crowdin. To configure that, you need to add a custom language code for your language.
 
-In the `Curriculum` and `Learn UI` projects, you will need to select `Settings` > `Languages` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, or you don't have an admin role and can't see the settings, reach out in our contributor chat and we will assist you.
+In the `Curriculum` and `Learn UI` projects on Crowdin, you will need to select `Settings` > `Languages` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, or you don't have an admin role and can't see the settings, reach out in our contributor chat and we will assist you.
 
 ## Updating Workflows for GitHub Actions
 
 Then you need to configure the syncing between Crowdin and GitHub.
 
-You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+You will need to add a step to the [`crowdin-download.client-ui.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.client-ui.yml) and [`crowdin-download.curriculum.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.curriculum.yml). The step for these will be the same. For example, if you want to enable Dothraki downloads:
 
 ```yml
 ##### Download Dothraki #####
@@ -72,7 +72,7 @@ Note that the `download_language` key needs to be set to the language code displ
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
+First, visit the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file to add the language to the list of available languages and configure the values. There are several objects here.
 
 - `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
 - `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
@@ -173,7 +173,7 @@ See the `SuperBlocks` enum at the beginning of the same file for the full list o
 
 ### Configure Search
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Next, open the [`client/src/utils/algolia-locale-setup.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/utils/algolia-locale-setup.ts) file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
 Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
@@ -213,7 +213,7 @@ You will need to take an additional step to handle the client UI translations.
 
 The Crowdin workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
 
-You will want to copy the following files from `/client/i18n/locales/english` to `/client/i18n/locales/<your-language>`, and apply translations as needed:
+You will want to copy the following files from [`/client/i18n/locales/english`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n/locales/english) to `/client/i18n/locales/<your-language>`, and apply translations as needed:
 
 - `links.json`
 - `meta-tags.json`
@@ -243,7 +243,7 @@ You can translate them, or even replace them with relevant compliments/quotes of
 
 This section is applicable only if you have localized videos in the challenges. Otherwise, you can skip this section.
 
-For the video challenges, you need to change a few things. First, add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+For the video challenges, you need to change a few things. First, add the new locale to the GraphQL query in the [`client/src/templates/Challenges/video/Show.tsx`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/templates/Challenges/video/show.tsx) file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -317,7 +317,7 @@ Once these are in place, you should be able to run `pnpm run develop` to view yo
 
 When your prior PR is merged and the VM for your language is ready, make another PR to show your language in the navigation menu.
 
-In `config/i18n.ts` file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
+In [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
 
 ```js
 export const hiddenLangs = []; // Remove your language from the array
