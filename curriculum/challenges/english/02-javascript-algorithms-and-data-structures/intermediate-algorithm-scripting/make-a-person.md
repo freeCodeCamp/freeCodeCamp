@@ -141,7 +141,7 @@ person.setFullName('Emily Martinez', 'de la Rosa');
 assert.strictEqual(person.getFullName(), 'Emily Martinez de la Rosa');
 ```
 
-The `.getFirstName()` property should return the string `Emily Martinez` after calling `.setFullName('Emily Martinez', 'de la Rosa').
+The `.getFirstName()` property should return the string `Emily Martinez` after calling `.setFullName('Emily Martinez', 'de la Rosa')`.
 
 ```js
 const person = new Person('Bob', 'Ross');
@@ -149,7 +149,7 @@ person.setFullName('Emily Martinez', 'de la Rosa');
 assert.strictEqual(person.getFirstName(), 'Emily Martinez');
 ```
 
-The `.getLastName()` property should return the string `de la Rosa` after calling `.setFullName('Emily Martinez', 'de la Rosa').
+The `.getLastName()` property should return the string `de la Rosa` after calling `.setFullName('Emily Martinez', 'de la Rosa')`.
 
 ```js
 const person = new Person('Bob', 'Ross');
