@@ -683,9 +683,9 @@
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",
-    "verify": "Thibitisha uthibitishaji huu kwenye {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "Iliyotolewa",
-    "fulltext": "<0>Hii inathibitisha kwamba</0> <1>{{user}}</1> <2>amekamilisha kwa ufanisi freeCodeCamp.org</2> <3>{{title}}</3> <4 >Uidhinishaji wa Msanidi Programu, unaowakilisha takriban saa {{time}} za kazi ya kozi.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Kama sehemu ya uthibitishaji huu wa Legacy Full Stack, {{user}} alikamilisha uthibitishaji ufuatao:",
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
