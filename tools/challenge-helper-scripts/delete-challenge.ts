@@ -35,4 +35,4 @@ const deleteChallenge = async () => {
   updateMetaData(meta);
 };
 
-void (async () => await deleteChallenge())();
+void deleteChallenge();

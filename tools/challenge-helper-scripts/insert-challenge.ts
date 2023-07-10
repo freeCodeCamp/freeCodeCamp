@@ -43,4 +43,4 @@ const insertChallenge = async () => {
   updateMetaData(meta);
 };
 
-void (async () => await insertChallenge())();
+void insertChallenge();

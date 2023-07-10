@@ -22,4 +22,4 @@ const createNextChallenge = async () => {
   updateMetaData(meta);
 };
 
-void (async () => await createNextChallenge())();
+void createNextChallenge();
