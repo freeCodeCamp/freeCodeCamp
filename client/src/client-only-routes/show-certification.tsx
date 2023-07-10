@@ -32,6 +32,7 @@ import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
 import { PaymentContext } from '../../../config/donation-settings';
+import ribbon from '../assets/images/ribbon.svg';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -208,13 +209,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const {
-    date,
-    name: userFullName = null,
-    username,
-    certTitle,
-    completionTime
-  } = cert;
+  const { date, name: userFullName = null, username, certTitle } = cert;
 
   const { user } = props;
 
@@ -302,64 +297,73 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   return (
     <Grid className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <Row className='certificate-wrapper certification-namespace'>
-        <header>
-          <Col md={5} sm={12}>
-            <div className='logo'>
-              <FreeCodeCampLogo aria-hidden='true' />
-            </div>
-          </Col>
-          <Col md={7} sm={12}>
-            <div className='issue-date' data-cy='issue-date'>
-              {t('certification.issued')}&nbsp;
-              <strong>
-                {certDate.toLocaleString([localeCode, 'en-US'], {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </strong>
-            </div>
-          </Col>
-        </header>
-
-        <main className='information'>
-          <div className='information-container'>
-            <Trans i18nKey='certification.fulltext' title={certTitle}>
-              <h3>placeholder</h3>
-              <h1>
-                <strong>{{ user: displayName }}</strong>
-              </h1>
-              <h3>placeholder</h3>
-              <h1>
-                <strong>
-                  {{ title: t(`certification.title.${certTitle}`, certTitle) }}
-                </strong>
-              </h1>
-              <h4>{{ time: completionTime }}</h4>
-            </Trans>
-          </div>
-        </main>
-        <footer>
-          <div className='row signatures'>
-            <Image
-              alt="Quincy Larson's Signature"
-              src='https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
-            />
-            <p>
-              <strong>Quincy Larson</strong>
-            </p>
-            <p>{t('certification.executive')}</p>
-          </div>
-          <span className='qr-wrap'>
-            <QRCodeSVG className='qr-code' value={certURL} />
-          </span>
-          <Row>
-            <p className='verify'>
-              {t('certification.verify', { certURL: certURL })}
-            </p>
+      <Row className='certificate-inner-wrapper'>
+        <Row className='certificate-second-inner-wrapper'>
+          <Row className='certificate-wrapper certification-namespace'>
+            <header>
+              <Col sm={12}>
+                <div className='logo'>
+                  <FreeCodeCampLogo aria-hidden='true' />
+                </div>
+              </Col>
+            </header>
+            <main className='information'>
+              <div className='information-container'>
+                <Trans i18nKey='certification.fulltext' title={certTitle}>
+                  <h3>placeholder</h3>
+                  <h1>
+                    <strong>{{ user: displayName }}</strong>
+                  </h1>
+                  <h3>placeholder</h3>
+                  <h1>
+                    <strong>
+                      {{
+                        title: t(`certification.title.${certTitle}`, certTitle)
+                      }}
+                    </strong>
+                  </h1>
+                  <h4 data-cy={'issue-date'}>
+                    {{
+                      time: certDate.toLocaleString([localeCode, 'en-US'], {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })
+                    }}
+                  </h4>
+                </Trans>
+              </div>
+            </main>
+            <footer>
+              <div className='row signatures'>
+                <Image
+                  alt="Quincy Larson's Signature"
+                  src={
+                    'https://cdn.freecodecamp.org' +
+                    '/platform/english/images/quincy-larson-signature.svg'
+                  }
+                />
+                <p className='quincy-name'>
+                  <strong>Quincy Larson</strong>
+                </p>
+                <p className='quincy-role'>{t('certification.executive')}</p>
+              </div>
+              <span className='ribbon-wrap'>
+                <Image className='ribbon' src={ribbon} />
+              </span>
+              <span className='qr-wrap'>
+                <QRCodeSVG className='qr-code' value={certURL} />
+              </span>
+              <Row>
+                <p className='verify'>
+                  {t('certification.verify')}
+                  <br />
+                  {certURL}
+                </p>
+              </Row>
+            </footer>
           </Row>
-        </footer>
+        </Row>
       </Row>
       <div className='row certificate-links'>
         <Spacer size='large' />

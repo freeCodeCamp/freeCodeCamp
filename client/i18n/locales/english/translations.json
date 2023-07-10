@@ -683,9 +683,9 @@
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
-    "verify": "Verify this certification at {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "Issued",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully completed the freeCodeCamp.org</2> <3>{{title}}</3> <4>Developer Certification, representing approximately {{time}} hours of coursework.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
