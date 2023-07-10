@@ -361,24 +361,24 @@ Siga estes passos:
     git push origin branch/nome-aqui
     ```
 
-## Running mobile curriculum tests
+## Executando testes do currículo para dispositivos móveis
 
-> [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
+> [!NOTE] Você somente precisa seguir esta seção se estiver modificando o executador de testes de desafio na aplicação para dispositivos móveis. Caso contrário, vá para a próxima seção sobre [como abrir um pull request](#proposing-a-pull-request-pr).
 
-1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+1. Faça a clonagem do [repositório do freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) localmente e fora da cópia local do repositório para dispositivos móveis do freeCodeCamp. A estrutura de pastas deve ficar assim:
 
     ```console
     ├── freeCodeCamp
     ├── mobile
     ```
 
-2. Change directory to the freeCodeCamp repo:
+2. Mude o diretório para o novo diretório do freeCodeCamp:
 
     ```console
     cd freeCodeCamp
     ```
 
-3. Make a copy of the `.env` file:
+3. Fazer uma cópia do arquivo `.env`:
 
 <!-- tabs:start -->
 
@@ -396,19 +396,19 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-4. Install the dependencies for the freeCodeCamp repo:
+4. Instale as dependências para o repositório do freeCodeCamp:
 
     ```console
     pnpm install && pnpm run create:config
     ```
 
-5. Generate the challenge data JSON file:
+5. Gere o arquivo JSON dos dados de desafio:
 
     ```console
     pnpm run build:curriculum
     ```
 
-6. Copy the generated JSON file to the mobile app:
+6. Copie o arquivo JSON gerado para a aplicação para dispositivos móveis:
 
 <!-- tabs:start -->
 
@@ -426,43 +426,43 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 
 <!-- tabs:end -->
 
-7. Change directory to the mobile app:
+7. Mude o diretório para o diretório da aplicação para dispositivos móveis:
 
     ```console
     cd ../mobile/mobile-app
     ```
 
-8. Install the dependencies for the mobile app:
+8. Instale as dependências para a aplicação para dispositivos móveis:
 
     ```console
     flutter pub get
     ```
 
-9. Update the test file to use the challenge data JSON file:
+9. Atualize o arquivo de testes para que use o arquivo JSON de dados do desafio:
 
     ```console
     sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
     ```
 
-10. Generate the challenge files:
+10. Gere os arquivos do desafio:
 
     ```console
     flutter test test/widget_test.dart
     ```
 
-11. Start a local server to serve the challenge files with the help of `serve` package:
+11. Inicie um servidor local para servir os arquivos de desafio com a ajuda do pacote `serve`:
 
     ```console
     npx serve
     ```
 
-12. In a different terminal go back to the freeCodeCamp repo:
+12. Em um terminal diferente, volte ao repositório do freeCodeCamp:
 
     ```console
     cd ../../freeCodeCamp
     ```
 
-13. Run the cypress tests:
+13. Execute os testes do Cypress:
 
     ```console
     pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
