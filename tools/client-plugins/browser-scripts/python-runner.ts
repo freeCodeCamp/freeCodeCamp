@@ -272,10 +272,10 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
           }
         })
       );
-      const test = await testPromise;
+      const { input, test } = await testPromise;
       // TODO: throw helpful error if we run out of input values, since it's likely
       // that the user added too many input statements.
-      const inputIterator = test.input ? test.input.values() : null;
+      const inputIterator = input ? input.values() : null;
       setupRunPython(pyodide, {
         input: () => {
           return Promise.resolve(
@@ -292,9 +292,9 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
 
       // Make __pyodide available to the test code
       const __pyodide: PyodideInterface = await this.__runPython(code);
-      // TODO: less terrible name for this. It's the function that actually tests
-      // the code. (probably rename the object instead of the function)
-      await test.test();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      const __userGlobals = __pyodide.globals.get('__locals');
+      await test();
 
       return { pass: true };
     } catch (err) {
