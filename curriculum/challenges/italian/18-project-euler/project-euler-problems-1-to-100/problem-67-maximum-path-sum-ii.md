@@ -25,13 +25,13 @@ Trova il totale massimo da cima a fondo in `numTriangle`, un array 2D definito d
 
 # --hints--
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return a number.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` dovrebbe restituire un numero.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return 23.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` dovrebbe restituire 23.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
