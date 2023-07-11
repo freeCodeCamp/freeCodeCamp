@@ -19,7 +19,7 @@ import 'xterm/css/xterm.css';
 // exist on this document (but not on the parent)
 const contentDocument = document as FrameDocument;
 
-function createTerminal() {
+function createTerminal(disposables: IDisposable[]) {
   const terminalContainer = document.getElementById('terminal');
   if (!terminalContainer) throw Error('Could not find terminal container');
 
@@ -29,7 +29,13 @@ function createTerminal() {
   term.open(terminalContainer);
   fitAddon.fit();
 
-  return term;
+  const resetTerminal = () => {
+    term.reset();
+    disposables.forEach(disposable => disposable.dispose());
+    disposables.length = 0;
+  };
+
+  return { term, resetTerminal };
 }
 
 async function setupPyodide() {
@@ -44,7 +50,10 @@ type Print = (...args: unknown[]) => void;
 
 type ResetTerminal = () => void;
 
-function createHelpers(term: Terminal, disposables: IDisposable[]) {
+function createJSFunctionsForPython(
+  term: Terminal,
+  disposables: IDisposable[]
+) {
   function print(...args: unknown[]) {
     const text = args
       .map(arg => {
@@ -106,13 +115,7 @@ function createHelpers(term: Terminal, disposables: IDisposable[]) {
     return await waitForInput();
   };
 
-  const resetTerminal = () => {
-    term.reset();
-    disposables.forEach(disposable => disposable.dispose());
-    disposables.length = 0;
-  };
-
-  return { print, input, resetTerminal };
+  return { print, input };
 }
 
 function setupRunPython(
@@ -170,11 +173,11 @@ function setupRunPython(
 
 async function initPythonFrame() {
   console.log('Initializing python frame');
-  const term = createTerminal();
-  const pyodide = await setupPyodide();
   const disposables: IDisposable[] = [];
-  const helpers = createHelpers(term, disposables);
-  setupRunPython(pyodide, helpers);
+  const { term, resetTerminal } = createTerminal(disposables);
+  const pyodide = await setupPyodide();
+  const { print, input } = createJSFunctionsForPython(term, disposables);
+  setupRunPython(pyodide, { input, print, resetTerminal });
 }
 
 contentDocument.__initPythonFrame = initPythonFrame;
