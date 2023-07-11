@@ -243,6 +243,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
               }
               id
               superBlock
+              hasEditableBoundaries
               title
             }
           }
