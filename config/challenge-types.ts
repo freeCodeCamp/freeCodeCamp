@@ -121,5 +121,6 @@ export const submitTypes = {
   [colab]: 'project.backEnd',
   [exam]: 'exam',
   [msTrophyUrl]: 'project.frontEnd',
-  [multipleChoice]: 'tests'
+  [multipleChoice]: 'tests',
+  [python]: 'tests'
 };
