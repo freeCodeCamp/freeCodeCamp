@@ -10,18 +10,6 @@ import Timeline from './time-line';
 Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
 Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
 
-const t = jest.fn(key => {
-  if (
-    Object.is(
-      key,
-      'intro:2022/responsive-web-design.blocks.learn-accessibility-by-building-a-quiz.title'
-    )
-  )
-    return 'Learn Accessibility by Building a Quiz';
-  else if (Object.is(key, 'aria.step')) return 'Step';
-  else return key;
-});
-
 jest.mock('../../../analytics');
 
 jest.mock('gatsby', () => {
@@ -66,7 +54,6 @@ it('should check certification page consistency', () => {
         <Timeline
           completedMap={completedChallenges}
           username='CeritifedUser'
-          t={t}
           onPress={() => {}}
         />
       </Provider>
