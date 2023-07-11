@@ -19,6 +19,7 @@
     "fastify-plugin": "^4.3.0",
     "jsonwebtoken": "9.0.1",
     "nanoid": "3",
+    "mongodb": "4",
     "nodemon": "2.0.22",
     "query-string": "^7.1.3"
   },

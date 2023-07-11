@@ -1,7 +1,20 @@
+import _, { isEmpty } from 'lodash';
+import { ObjectId } from 'mongodb';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
+import {
+  type ProgressTimestamp,
+  getCalendar,
+  getPoints
+} from '../utils/progress';
+import {
+  normalizeTwitter,
+  removeNulls,
+  normalizeProfileUI,
+  normalizeChallenges
+} from '../utils/normalize';
 import { encodeUserToken } from '../utils/user-token';
 
 // Loopback creates a 64 character string for the user id, this customizes
@@ -98,6 +111,132 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
         };
+      }
+    }
+  );
+  fastify.get(
+    '/user/get-session-user',
+    {
+      schema: schemas.getSessionUser
+    },
+    async (req, res) => {
+      try {
+        const userTokenP = fastify.prisma.userToken.findFirst({
+          where: { userId: req.session.user.id }
+        });
+
+        const userP = fastify.prisma.user.findUnique({
+          where: { id: req.session.user.id },
+          select: {
+            about: true,
+            acceptedPrivacyTerms: true,
+            completedChallenges: true,
+            currentChallengeId: true,
+            email: true,
+            emailVerified: true,
+            githubProfile: true,
+            id: true,
+            is2018DataVisCert: true,
+            isApisMicroservicesCert: true,
+            isBackEndCert: true,
+            isCheater: true,
+            isCollegeAlgebraPyCertV8: true,
+            isDataAnalysisPyCertV7: true,
+            isDataVisCert: true,
+            isDonating: true,
+            isFrontEndCert: true,
+            isFrontEndLibsCert: true,
+            isFullStackCert: true,
+            isHonest: true,
+            isInfosecCertV7: true,
+            isInfosecQaCert: true,
+            isJsAlgoDataStructCert: true,
+            isMachineLearningPyCertV7: true,
+            isQaCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isRespWebDesignCert: true,
+            isSciCompPyCertV7: true,
+            keyboardShortcuts: true,
+            linkedin: true,
+            location: true,
+            name: true,
+            partiallyCompletedChallenges: true,
+            picture: true,
+            portfolio: true,
+            profileUI: true,
+            progressTimestamps: true,
+            savedChallenges: true,
+            sendQuincyEmail: true,
+            sound: true,
+            theme: true,
+            twitter: true,
+            username: true,
+            usernameDisplay: true,
+            website: true,
+            yearsTopContributor: true
+          }
+        });
+
+        const [userToken, user] = await Promise.all([userTokenP, userP]);
+
+        if (!user?.username) {
+          void res.code(500);
+          return { user: {}, result: '' };
+        }
+
+        const encodedToken = userToken
+          ? encodeUserToken(userToken.id)
+          : undefined;
+
+        const {
+          username,
+          usernameDisplay,
+          completedChallenges,
+          progressTimestamps,
+          twitter,
+          profileUI,
+          savedChallenges,
+          partiallyCompletedChallenges,
+          ...publicUser
+        } = user;
+
+        return {
+          user: {
+            [username]: {
+              ...removeNulls(publicUser),
+              completedChallenges: normalizeChallenges(completedChallenges),
+              completedChallengeCount: completedChallenges.length,
+              // This assertion is necessary until the database is normalized.
+              calendar: getCalendar(
+                progressTimestamps as ProgressTimestamp[] | null
+              ),
+              partiallyCompletedChallenges: isEmpty(
+                partiallyCompletedChallenges
+              )
+                ? undefined
+                : partiallyCompletedChallenges,
+              // This assertion is necessary until the database is normalized.
+              points: getPoints(
+                progressTimestamps as ProgressTimestamp[] | null
+              ),
+              profileUI: normalizeProfileUI(profileUI),
+              savedChallenges: isEmpty(savedChallenges)
+                ? undefined
+                : savedChallenges,
+              // TODO(Post-MVP) remove this and just use emailVerified
+              isEmailVerified: user.emailVerified,
+              joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+              twitter: normalizeTwitter(twitter),
+              username: usernameDisplay || username,
+              userToken: encodedToken
+            }
+          },
+          result: user.username
+        };
+      } catch (err) {
+        fastify.log.error(err);
+        void res.code(500);
+        return { user: {}, result: '' };
       }
     }
   );
