@@ -162,15 +162,12 @@ assert.strictEqual(person.getLastName(), 'de la Rosa');
 ## --seed-contents--
 
 ```js
-const Person = function(firstAndLast) {
+const Person = function(first, last) {
   this.getFullName = function() {
     return "";
   };
-  return firstAndLast;
+  return "";
 };
-
-const bob = new Person('Bob Ross');
-bob.getFullName();
 ```
 
 # --solutions--
