@@ -278,7 +278,6 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
-      const step = t(`aria.step`);
       idToNameMap.set(id, {
         challengeTitle: `${
           title.includes(step) ? blockNameTitle + ' - ' : ''
