@@ -271,7 +271,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName }
+          fields: { slug, blockName },
+          // @ts-expect-error Graphql needs typing
+          hasEditableBoundaries
         }
       }
     }) => {
