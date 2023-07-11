@@ -63,7 +63,6 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -73,7 +72,7 @@ Icon
 .Spotlight-V100
 .TemporaryItems
 .Trashes
-.VolumeIcon.icns
+.VolumeIcon.icon
 .com.apple.timemachine.donotpresent
 
 # Directories potentially created on remote AFP share
