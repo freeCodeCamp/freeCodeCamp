@@ -1,14 +1,36 @@
 # Додавання нових мов для `/learn`
 
-Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin.
+To enable a new language on `/learn` (curriculum), you need to complete the following steps:
+
+- Complete translating and approving the first 3 certifications on Crowdin. (New Responsive Web Design, JavaScript Algorithms and Data Structures, and Front End Development Libraries)
+- Complete translating and approving all strings in Learn UI project on Crowdin.
+- Update Crowdin settings to add a custom language code for the new language.
+- Open the 1st PR to configure GitHub Actions. You need to update 2 files:
+  - `crowdin-download.client-ui.yml`
+  - `crowdin-download.curriculum.yml`
+- Open the 2nd PR to add other configurations. You need to update/add the following files:
+  - Update `i18n.ts`
+  - Update `superblocks.ts`
+  - Update `algolia-locale-setup.ts`
+  - Add `links.json`
+  - Add `meta-tags.json`
+  - Add `motivation.json`
+- Ask infrastructure team to spin up the VM for the new language.
+- Once the VM is ready, open the 3rd PR to show the new language in the navigation menu.
+
+We will explain each step in the following sections.
 
 ## Оновлення налаштувань Crowdin
 
-На бічній панелі проєктів `Curriculum` та `Learn UI` вам потрібно обрати `Project Settings`. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. Якщо ви не впевнені, що вводити, ми допоможемо у нашому чаті помічників.
+Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin. To configure that, you need to add a custom language code for your language.
 
-## Оновлення потоку робіт
+In the `Curriculum` and `Learn UI` projects on Crowdin, you will need to select `Settings` > `Languages` from the sidebar. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. If you aren't sure what to use, or you don't have an admin role and can't see the settings, reach out in our contributor chat and we will assist you.
 
-Вам потрібно буде додати крок до `crowdin-download.client-ui.yml` та `crowdin-download.curriculum.yml`. Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
+## Updating Workflows for GitHub Actions
+
+Then you need to configure the syncing between Crowdin and GitHub.
+
+You will need to add a step to the [`crowdin-download.client-ui.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.client-ui.yml) and [`crowdin-download.curriculum.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.curriculum.yml). Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
 
 ```yml
 ##### Download Dothraki #####
@@ -49,14 +71,14 @@
 
 Щоб дозволити кодовій базі функціонувати на обраній вами мові, потрібно зробити декілька кроків.
 
-Спочатку відвідайте файл `config/i18n.ts`, щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
+First, visit the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file to add the language to the list of available languages and configure the values. У ньому розміщено декілька об’єктів.
 
 - `Languages`: додайте нову мову до запису `Languages`, схоже до інших. Значення рядка пізніше буде використане у файлі `.env`, щоб налаштувати збірку мови.
 - `availableLangs`: додайте нову властивість із запису `Languages` до масивів `client` та `curriculum`.
 - `i18nextCodes`: мовні коди ISO для кожної мови. Вам потрібно додати відповідний код ISO для мови, з якою працюєте. Вони повинні бути унікальними для кожної мови.
 - `LangNames`: назви мов для перемикача мови у навігаційному меню.
 - `LangCodes`: мовні коди, які використовуються для форматування дат і чисел. Ними повинні бути коди Unicode CLDR замість кодів ISO.
-- `hiddenLangs`: мови, які не показано у навігаційному меню. Використовують для мов, які не готові до випуску.
+- `hiddenLangs`: мови, які не показано у навігаційному меню. Використовують для мов, які не готові до випуску. Include your language in this array in the first PR and ask staff team to prepare the VM instance for your language. When the VM is ready, make another PR to remove it from the array.
 - `rtlLangs`: мови, які читаються справа наліво.
 
 Наприклад, якщо ви хочете використовувати дотракійську мову, об’єкти `i18n.ts` повинні виглядати так:
@@ -116,7 +138,7 @@ export const hiddenLangs = ['dothraki'];
 export const rtlLangs = [''];
 ```
 
-> [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
+> [!NOTE] When a language has been set up in the deployment pipeline AND has a public `/learn` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
 
 ### Налаштуйте перекладені суперблоки
 
@@ -149,7 +171,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 ### Налаштування пошуку
 
-Потім відкрийте файл `client/src/utils/algolia-locale-setup.ts`. Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
+Next, open the [`client/src/utils/algolia-locale-setup.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/utils/algolia-locale-setup.ts) file. Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
 
 Додайте об’єкт своєї мови до об’єкта `algoliaIndices`. Використовуйте значення об’єкта `english` для локального тестування, замінивши ключ `english` на значення своєї мови `availableLangs`.
 
@@ -179,12 +201,52 @@ const algoliaIndices = {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
   }
+
+  // If we already have /news in the target language up and running, you can update the values like this:
+  // dothraki: {
+  //   name: 'news-mis',
+  //   searchPage: 'https://www.freecodecamp.org/dothraki/news/search/'
+  // }
 };
 ```
 
+### Інтерфейс клієнта
+
+Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
+
+Робочі процеси на Crowdin автоматично завантажують _деякі_ переклади інтерфейсу, однак певні файли потрібно перемістити вручну.
+
+You will want to copy the following files from [`/client/i18n/locales/english`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n/locales/english) to `/client/i18n/locales/<your-language>`, and apply translations as needed:
+
+- `links.json`
+- `meta-tags.json`
+- `motivation.json`
+
+You don't have to have everything in these 3 files translated at first. It's possible to translate only the relevant parts and make adjustments later.
+
+#### `links.json`
+
+You can replace any URLs that you have corresponding pages ready in your language.
+
+For example, if you have the publication in your language, you can replace the URL for `"news"`. If you want to translate articles listed in the footer links, see [How to Translate Articles in the Footer Links](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
+
+#### `meta-tags.json`
+
+This file contains metadata for the web page of `/learn` in your language. You can translate the values for `"title"`, `"description"`, and `"social-description"`. The value for `"youre-unsubscribed"` is used when someone unsubscribes from Quincy's weekly email.
+
+Also, you can translate or add relevant keywords in your language to the `"keywords"` array.
+
+#### `motivation.json`
+
+This file contains the compliments that will be displayed to campers when they complete a challenge, and motivational quotes that are displayed on the top page of `/learn`.
+
+You can translate them, or even replace them with relevant compliments/quotes of your choice in your language.
+
 ### Додавання локалізованих відео
 
-Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі `client/src/templates/Challenges/video/Show.tsx`. Ось так додається дотракійська мова:
+This section is applicable only if you have localized videos in the challenges. Otherwise, you can skip this section.
+
+Вам потрібно дещо змінити стосовно відеозавдань. First, add the new locale to the GraphQL query in the [`client/src/templates/Challenges/video/Show.tsx`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/templates/Challenges/video/show.tsx) file. Ось так додається дотракійська мова:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -236,18 +298,6 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Інтерфейс клієнта
-
-Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
-
-Робочі процеси на Crowdin автоматично завантажують _деякі_ переклади інтерфейсу, однак певні файли потрібно перемістити вручну.
-
-Вам потрібно скопіювати наступні файли з `/client/i18n/locales/english` до `/client/i18n/locales/<your-language>` та застосувати переклади там, де потрібно:
-
-- `links.json`
-- `meta-tags.json`
-- `motivation.json`
-
 ## Тестування перекладів локально
 
 Якщо ви хочете перевірити переклади локально, перш ніж додати їх до нашого основного репозиторію, то пропустіть зміни робочого процесу на Crowdin. Виконайте кроки для додавання мови, а потім завантажте переклади з Crowdin і додайте їх до свого локального коду.
@@ -263,6 +313,18 @@ videoLocaleIds: Joi.when('challengeType', {
 > [!TIP] Якщо ви побудували клієнта однією мовою та потім хочете побудувати його іншою мовою, вам потрібно використати команду `pnpm run clean-and-develop` після зміни файлу `.env`, оскільки Gatsby кешуватиме першу мову.
 
 > [!ATTENTION] Ви можете працювати з перекладами локально, щоб провести тестування. Ми нагадуємо, що переклади _не_ потрібно надсилати через GitHub, а лише через Crowdin. Не забудьте скинути локальну кодову базу після закінчення тестування.
+
+## Show the language in the navigation menu
+
+When your prior PR is merged and the VM for your language is ready, make another PR to show your language in the navigation menu.
+
+In [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
+
+```js
+export const hiddenLangs = []; // Remove your language from the array
+```
+
+When this PR is merged and gets deployed, the curriculum in your language will be live.
 
 # Додавання нових мов для `/news`
 
