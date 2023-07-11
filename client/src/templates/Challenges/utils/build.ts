@@ -280,7 +280,7 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
-function buildPythonChallenge({
+export function buildPythonChallenge({
   challengeFiles,
   required = [],
   template = ''

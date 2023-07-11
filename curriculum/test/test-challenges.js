@@ -25,7 +25,8 @@ require('@babel/register')({
 });
 const {
   buildDOMChallenge,
-  buildJSChallenge
+  buildJSChallenge,
+  buildPythonChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
   default: createWorker
@@ -351,11 +352,15 @@ function populateTestsForLang({ lang, challenges, meta }) {
             return;
           }
 
+          // TODO(after python PR): simplify pipeline and sync with client.
+          // buildChallengeData should be called and any errors handled.
+          // canBuildChallenge does not need to exist independently.
           const buildChallenge =
-            challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.jsProject
-              ? buildJSChallenge
-              : buildDOMChallenge;
+            {
+              [challengeTypes.js]: buildJSChallenge,
+              [challengeTypes.jsProject]: buildJSChallenge,
+              [challengeTypes.python]: buildPythonChallenge
+            }[challengeType] ?? buildDOMChallenge;
 
           it('Test suite must fail on the initial contents', async function () {
             this.timeout(5000 * tests.length + 1000);
