@@ -22,7 +22,12 @@ jest.mock('./helpers/get-step-template', () => {
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
-import { createStepFile, insertStepIntoMeta, updateStepTitles } from './utils';
+import {
+  createChallengeFile,
+  createStepFile,
+  insertStepIntoMeta,
+  updateStepTitles
+} from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -53,6 +58,27 @@ describe('Challenge utils helper scripts', () => {
         `project/${mockChallengeId}.md`,
         `project/step-001.md`,
         `project/step-002.md`
+      ]);
+    });
+  });
+
+  describe('createChallengeFile util', () => {
+    it('should create the challenge', () => {
+      mock({
+        'project/': {
+          'fake-challenge.md': 'Lorem ipsum...',
+          'so-many-fakes.md': 'Lorem ipsum...'
+        }
+      });
+
+      createChallengeFile('hi', 'pretend this is a template', 'project/');
+      // - Should write a file with a given name and template
+      const files = glob.sync(`project/*.md`);
+
+      expect(files).toEqual([
+        `project/fake-challenge.md`,
+        `project/hi.md`,
+        `project/so-many-fakes.md`
       ]);
     });
   });

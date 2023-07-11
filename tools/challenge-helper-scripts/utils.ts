@@ -31,6 +31,14 @@ const createStepFile = ({
   return challengeId;
 };
 
+const createChallengeFile = (
+  title: string,
+  template: string,
+  path = getProjectPath()
+): void => {
+  fs.writeFileSync(`${path}${title}.md`, template);
+};
+
 interface InsertOptions {
   stepNum: number;
   stepId: ObjectID;
@@ -98,6 +106,7 @@ const getChallengeSeeds = (
 
 export {
   createStepFile,
+  createChallengeFile,
   updateStepTitles,
   getChallengeSeeds,
   insertStepIntoMeta,
