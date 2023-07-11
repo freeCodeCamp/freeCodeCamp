@@ -41,8 +41,6 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution

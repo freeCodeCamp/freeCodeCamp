@@ -25,7 +25,6 @@ tests:
     testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```
-
 </section>
 
 ## Challenge Seed
@@ -39,8 +38,6 @@ tests:
 ```
 
 </div>
-
-
 
 </section>
 

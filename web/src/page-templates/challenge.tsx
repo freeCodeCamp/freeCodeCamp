@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Editor from '@monaco-editor/react';
 import Link from 'next/link';
 
+
 import type {
   getStaticProps,
   Challenge
@@ -27,7 +28,6 @@ export default function ChallengeComponent({
     </>
   );
 }
-
 interface MainProps {
   challengeData: Challenge | null;
 }
