@@ -1,6 +1,6 @@
 ---
 id: 63dbd0375d93712ff177d969
-title: "Business Applications of College Algebra: Extra"
+title: "大学代数的商业应用：补充"
 challengeType: 15
 videoId: 9n_ZybF0Phc
 dashedName: business-applications-of-college-algebra-extra
@@ -8,29 +8,29 @@ dashedName: business-applications-of-college-algebra-extra
 
 # --description--
 
-This video is showing you some economics applications, and creating graphs and formulas.
+这个视频向你展示了一些经济学应用，以及创建图像和公式。
 
 # --question--
 
 ## --text--
 
-Which of the following is not true of supply and demand graphs?
+以下对于供需关系图的描述哪一项不是真的？
 
 ## --answers--
 
-The supply curve has a positive slope
+供应曲线的斜率为正值
 
 ---
 
-The demand curve has a negative slope
+需求曲线的斜率为负值
 
 ---
 
-The supply curve and demand curve will intersect
+供应曲线和需求曲线将相交
 
 ---
 
-The supply curve and demand curve will always be straight lines
+供给曲线和需求曲线将总是一条直线
 
 ## --video-solution--
 

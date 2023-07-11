@@ -1,14 +1,15 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation, Trans } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import IntroDescription from '../components/Intro/components/IntroDescription';
+import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
-import { ButtonSpacer, Spacer, Loader } from '../components/helpers';
+import { Spacer, Loader, Link } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
@@ -25,6 +26,7 @@ interface AcceptPrivacyTermsProps {
   isSignedIn: boolean;
   t: TFunction;
   showLoading: boolean;
+  completedChallengeCount?: number;
 }
 
 const mapStateToProps = createSelector(
@@ -32,13 +34,17 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   signInLoadingSelector,
   (
-    { acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean },
+    {
+      acceptedPrivacyTerms,
+      completedChallengeCount
+    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
     isSignedIn: boolean,
     showLoading: boolean
   ) => ({
     acceptedPrivacyTerms,
     isSignedIn,
-    showLoading
+    showLoading,
+    completedChallengeCount
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -50,7 +56,8 @@ function AcceptPrivacyTerms({
   acceptedPrivacyTerms,
   isSignedIn,
   t,
-  showLoading
+  showLoading,
+  completedChallengeCount = 0
 }: AcceptPrivacyTermsProps) {
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
@@ -60,24 +67,11 @@ function AcceptPrivacyTerms({
     acceptTermsRef.current = acceptTerms;
   });
 
-  useEffect(() => {
-    return () => {
-      // if a user navigates away from here we should set acceptedPrivacyTerms
-      // to true (so they do not get pulled back) without changing their email
-      // preferences (hence the null payload)
-      // This makes sure that the user has to opt in to Quincy's emails and that
-      // they are only asked twice
-      if (!acceptedPrivacyRef.current) {
-        acceptTermsRef.current(null);
-      }
-    };
-  }, []);
-
   function onClick(isWeeklyEmailAccepted: boolean) {
     acceptTerms(isWeeklyEmailAccepted);
   }
 
-  function renderEmailListOptin(isSignedIn: boolean, showLoading: boolean) {
+  function renderEmailListOptIn(isSignedIn: boolean, showLoading: boolean) {
     if (showLoading) {
       return <Loader fullScreen={true} />;
     }
@@ -94,7 +88,7 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.yes-please')}
             </Button>
-            <ButtonSpacer />
+            <Spacer size='small' />
           </Col>
           <Col md={4} sm={5} xs={12}>
             <Button
@@ -106,14 +100,14 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.no-thanks')}
             </Button>
-            <ButtonSpacer />
+            <Spacer size='small' />
           </Col>
         </Row>
       );
     } else {
       return (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <ButtonSpacer />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -123,7 +117,7 @@ function AcceptPrivacyTerms({
           >
             {t('buttons.sign-up-email-list')}
           </Button>
-          <ButtonSpacer />
+          <Spacer size='small' />
         </Col>
       );
     }
@@ -137,23 +131,38 @@ function AcceptPrivacyTerms({
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
+        {isSignedIn && completedChallengeCount < 1 ? (
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='large' />
+              <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
+              <Spacer size='small' />
+              <p>
+                <Trans i18nKey='misc.duplicate-account-warning'>
+                  <Link className='inline' to='/settings#danger-zone' />
+                </Trans>
+              </p>
+            </Col>
+          </Row>
+        ) : (
+          ''
+        )}
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer />
+            <Spacer size='small' />
             <IntroDescription />
             <hr />
           </Col>
         </Row>
         <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <strong>{t('misc.quincy')}</strong>
-            <Spacer />
+            <Spacer size='small' />
             <p>{t('misc.email-blast')}</p>
-            <Spacer />
+            <Spacer size='small' />
           </Col>
-          {renderEmailListOptin(isSignedIn, showLoading)}
+          {renderEmailListOptIn(isSignedIn, showLoading)}
           <Col xs={12}>
-            <Spacer />
+            <Spacer size='medium' />
           </Col>
         </Row>
       </Grid>

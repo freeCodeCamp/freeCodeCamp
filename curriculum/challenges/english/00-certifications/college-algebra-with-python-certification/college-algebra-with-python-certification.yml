@@ -1,16 +1,17 @@
 ---
 id: 61531b20cc9dfa2741a5b800
 title: College Algebra with Python Certification
+certification: college-algebra-with-python
 challengeType: 7
 isPrivate: true
 tests:
   - id: 63d83ff239c73468b059cd3f
-    title: Multi-Function Calculator
+    title: Build a Multi-Function Calculator
   - id: 63d83ffd39c73468b059cd40
-    title: Graphing Calculator
+    title: Build a Graphing Calculator
   - id: 63d8401039c73468b059cd41
-    title: Three Math Games
+    title: Build Three Math Games
   - id: 63d8401e39c73468b059cd42
-    title: Financial Calculator
+    title: Build a Financial Calculator
   - id: 63d8402e39c73468b059cd43
-    title: Data Graph Explorer
+    title: Build a Data Graph Explorer

@@ -8,6 +8,8 @@ on:
       - 'prod-**'
     paths-ignore:
       - 'docs/**'
+  # to test this ad-hoc
+  workflow_dispatch:
 
 jobs:
   do-everything:
@@ -29,10 +31,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Checkout client-config
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -40,10 +42,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: ${{ matrix.node-version }}
           # cypress-io/github-action caches the store, so we should not cache it
@@ -66,6 +68,14 @@ jobs:
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
+        # In our cypress config, we default to the cypress/e2e/default directory.
+        # We need to change this to cypress/e2e/ for the specific tests we are running
+        # in this workflow.
+        #
+      - name: Adjust the Cypress Config
+        run: |
+          sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
+
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
@@ -75,5 +85,4 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: chrome
-
-          spec: cypress/e2e/third-party/*.{js,ts}
+          spec: 'cypress/e2e/third-party/donate-page.ts'

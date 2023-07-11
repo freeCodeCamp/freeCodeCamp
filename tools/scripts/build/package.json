@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "7"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,13 @@
   "main": "none",
   "devDependencies": {
     "@types/js-yaml": "4.0.5",
-    "@types/node-fetch": "2.6.2",
+    "@types/node-fetch": "2.6.4",
     "chai": "4.3.7",
     "debug": "4.3.4",
-    "dotenv": "16.0.3",
-    "joi": "17.7.0",
+    "dotenv": "16.3.1",
+    "joi": "17.9.2",
     "js-yaml": "4.1.0",
-    "node-fetch": "2.6.9",
+    "node-fetch": "2.6.12",
     "readdirp": "3.6.0"
   }
 }

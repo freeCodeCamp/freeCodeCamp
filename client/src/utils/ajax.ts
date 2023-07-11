@@ -10,7 +10,7 @@ import type {
   User
 } from '../redux/prop-types';
 
-const { apiLocation } = envData;
+const { apiLocation, gitHash } = envData;
 
 const base = apiLocation;
 
@@ -88,7 +88,6 @@ async function request<T>(
 
 interface SessionUser {
   user?: { [username: string]: User };
-  sessionMeta: { activeDonations: number };
 }
 
 type CompleteChallengeFromApi = {
@@ -163,7 +162,6 @@ export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
     return {
       response,
       data: {
-        sessionMeta: data.sessionMeta,
         result,
         user
       }
@@ -179,7 +177,7 @@ export function getUserProfile(
   username: string
 ): Promise<ResponseWithData<UserProfileResponse>> {
   const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}`
+    `/api/users/get-public-profile?username=${username}&githash=${gitHash}`
   );
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser({

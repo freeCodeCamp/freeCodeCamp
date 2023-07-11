@@ -1,42 +1,37 @@
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Media from 'react-responsive';
+import Media, { useMediaQuery } from 'react-responsive';
+import { useFeature } from '@growthbook/growthbook-react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
-import { User } from '../../../redux/prop-types';
+import {
+  SEARCH_EXPOSED_WIDTH,
+  DONATE_NAV_EXPOSED_WIDTH
+} from '../../../../../config/misc';
 import MenuButton from './menu-button';
-import NavLinks from './nav-links';
+import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
+import LanguageList from './language-list';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-const MAX_MOBILE_WIDTH = 980;
-
-interface UniversalNavProps {
-  displayMenu: boolean;
-  isLanguageMenuDisplayed: boolean;
+type UniversalNavProps = Omit<
+  NavLinksProps,
+  'toggleNightMode' | 'openSignoutModal'
+> & {
   fetchState: { pending: boolean };
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef?: React.RefObject<HTMLDivElement>;
-  showMenu: () => void;
-  hideMenu: () => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
-  hideLanguageMenu: () => void;
-  user?: User;
-}
-export const UniversalNav = ({
+};
+const UniversalNav = ({
   displayMenu,
-  isLanguageMenuDisplayed,
   showMenu,
   hideMenu,
-  showLanguageMenu,
-  hideLanguageMenu,
   menuButtonRef,
   searchBarRef,
   user,
@@ -44,6 +39,11 @@ export const UniversalNav = ({
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
   const { t } = useTranslation();
+  const isSearchExposedWidth = useMediaQuery({
+    query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
+  });
+
+  const exposeDonateButton = useFeature('expose_donate_button').on;
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
@@ -58,16 +58,18 @@ export const UniversalNav = ({
       className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
       id='universal-nav'
     >
-      <div
-        className={`universal-nav-left${displayMenu ? ' display-search' : ''}`}
-      >
-        <Media minWidth={MAX_MOBILE_WIDTH + 1}>{search}</Media>
-      </div>
-      <div className='universal-nav-middle'>
-        <Link id='universal-nav-logo' to='/learn'>
-          <NavLogo />
-        </Link>
-      </div>
+      {isSearchExposedWidth && (
+        <div
+          className={`universal-nav-left${
+            displayMenu ? ' display-search' : ''
+          }`}
+        >
+          {search}
+        </div>
+      )}
+      <Link id='universal-nav-logo' to='/learn'>
+        <NavLogo />
+      </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
@@ -75,6 +77,19 @@ export const UniversalNav = ({
           </div>
         ) : (
           <>
+            {!user?.isDonating && exposeDonateButton && (
+              <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
+                <Link
+                  sameTab={false}
+                  to='/donate'
+                  data-test-label='nav-donate-button'
+                  className='exposed-button-nav'
+                >
+                  {t('buttons.donate')}
+                </Link>
+              </Media>
+            )}
+            <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
               hideMenu={hideMenu}
@@ -82,15 +97,11 @@ export const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <Media maxWidth={MAX_MOBILE_WIDTH}>{search}</Media>
+            {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}
-              fetchState={fetchState}
-              isLanguageMenuDisplayed={isLanguageMenuDisplayed}
-              hideLanguageMenu={hideLanguageMenu}
               hideMenu={hideMenu}
               menuButtonRef={menuButtonRef}
-              showLanguageMenu={showLanguageMenu}
               showMenu={showMenu}
               user={user}
             />

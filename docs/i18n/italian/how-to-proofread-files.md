@@ -39,7 +39,7 @@ Non sono necessarie altre azioni una volta che un file è stato revisionato.
 
 > [!NOTE] Approvare una stringa in modalità di revisione la segnerà come completata e farà sì che sia scaricata nel prossimo pull da Crowdin a GitHub.
 
-## Diventare un proofreader/revisore
+## Becoming a Proofreader
 
 Se hai domande o sei interessato a diventare proofreader, puoi contattarci nella [chat room per i contributori](https://discord.gg/PRyKn3Vbay). In genere diamo i permessi di revisore se è da un po' che contribuisci a freeCodeCamp.
 
@@ -47,7 +47,7 @@ Il nostro staff e i moderatori della community sono sempre alla ricerca di volon
 
 > [!NOTE] Crowdin ti permette di approvare le tue traduzioni. In genere, è meglio permettere ad un altro proofreader di rivedere le tue proposte di traduzione per maggior sicurezza che non ci siano errori.
 
-## Creare un canale su Chat per una lingua
+## Creating a Channel on Chat for a World Language
 
 Per la maggior parte, incoraggiamo l'uso della [chat room per i contributori](https://discord.gg/PRyKn3Vbay) per tutte le comunicazioni. Ma se il team di volontari per una certa lingua cresce, possiamo considerare di creare un canale aggiuntivo per la lingua.
 

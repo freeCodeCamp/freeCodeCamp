@@ -16,7 +16,7 @@ let onlineUsers = users.filter(user => user.online);
 
 # --instructions--
 
-在代碼編輯器中，`MyComponent` 的 `state` 被初始化爲一個用戶數組。 有些用戶在線，有些則沒有。 過濾數組，以便只查看在線用戶。 要執行此操作，請首先使用 `filter` 返回僅包含 `online` 屬性爲 `true` 的用戶的新數組。 然後，在 `renderOnline` 變量中，映射已過濾的數組，併爲包含其 `username` 文本的每個用戶返回 `li` 元素。 確保包含一個唯一的 `key` ，就像上一個挑戰一樣。
+在代碼編輯器中，`MyComponent` 的 `state` 被初始化爲一個用戶數組。 有些用戶在線，有些則沒有。 過濾數組，以便只查看在線用戶。 要執行此操作，請首先使用 `filter` 返回僅包含 `online` 屬性爲 `true` 的用戶的新數組。 然後，在 `renderOnline` 變量中，映射已過濾的數組，併爲包含其 `username` 文本的每個用戶返回 `li` 元素。 確保包含一個唯一的 `key`，就像上一個挑戰一樣。
 
 # --hints--
 

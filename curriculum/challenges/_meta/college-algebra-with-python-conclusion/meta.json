@@ -1,7 +1,8 @@
 {
   "name": "College Algebra with Python: Conclusion",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "college-algebra-with-python-conclusion",
+  "helpCategory": "Python",
   "order": 18,
   "time": "",
   "template": "",

@@ -220,7 +220,7 @@ function mobileLogin(app) {
 
       const { email } = await auth0Res.json();
 
-      if (!isEmail(email)) {
+      if (typeof email !== 'string' || !isEmail(email)) {
         return next(
           wrapHandledError(new TypeError('decoded email is invalid'), {
             type: 'danger',

@@ -30,7 +30,7 @@ Las certificaciones ya están disponibles en algunos de los principales idiomas 
 - [portugués (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Ucraniano (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japonés (日本語)](https://www.freecodecamp.org/japanese/learn)
-- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
+- [Alemán (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Te animamos a leer el anuncio [aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) y compartirlo con tus amigos para que se sientan entusiasmados con esto.
 
@@ -42,4 +42,4 @@ Nuestra plataforma de aprendizaje se ejecuta en un stack de JavaScript moderno. 
 
 A grandes rasgos, tenemos un servidor API basado en Node.js, un conjunto de aplicaciones cliente basadas en React, scripts de prueba para evaluar proyectos currículo enviados por los estudiantes, y más. Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarices un poco con estas herramientas.
 
-**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
+**Si quieres ayudarnos a mejorar nuestra base de código, puedes verlo aquí [Cómo configurar freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

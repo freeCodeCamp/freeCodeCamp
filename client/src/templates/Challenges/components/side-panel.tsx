@@ -23,6 +23,7 @@ interface SidePanelProps {
   guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
+  superBlock: string;
   tests: Test[];
   videoUrl: string;
 }
@@ -34,6 +35,7 @@ export function SidePanel({
   guideUrl,
   instructionsPanelRef,
   showToolPanel = false,
+  superBlock,
   tests,
   videoUrl
 }: SidePanelProps): JSX.Element {
@@ -42,7 +44,7 @@ export function SidePanel({
     const mathJaxMountPoint = document.querySelector('#mathjax');
     const mathJaxChallenge =
       block === 'rosetta-code' ||
-      block === 'project-euler' ||
+      superBlock === 'project-euler' ||
       block === 'intermediate-algorithm-scripting';
     if (MathJax) {
       // Configure MathJax when it's loaded and
@@ -68,7 +70,7 @@ export function SidePanel({
     } else if (!mathJaxMountPoint && mathJaxChallenge) {
       mathJaxScriptLoader();
     }
-  }, [block]);
+  }, [block, superBlock]);
 
   return (
     <div

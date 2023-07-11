@@ -6,7 +6,6 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 const env = require('../config/env.json');
 
-const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -78,12 +77,18 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   block
                   certification
                   challengeType
+                  dashedName
                   fields {
                     slug
+                    blockHashSlug
                   }
                   hasEditableBoundaries
                   id
                   order
+                  prerequisites {
+                    id
+                    title
+                  }
                   required {
                     link
                     src
@@ -151,7 +156,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               }
             }) => block
           )
-        ).map(block => blockNameify(block));
+        );
 
         const superBlocks = uniq(
           result.data.allChallengeNode.edges.map(
@@ -283,6 +288,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       notes: String
       url: String
       assignments: [String]
+      prerequisites: [PrerequisiteChallenge]
     }
     type FileContents {
       fileKey: String
@@ -292,6 +298,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       head: String
       tail: String
       editableRegionBoundaries: [Int]
+    }
+    type PrerequisiteChallenge {
+      id: String
+      title: String
     }
   `;
   createTypes(typeDefs);

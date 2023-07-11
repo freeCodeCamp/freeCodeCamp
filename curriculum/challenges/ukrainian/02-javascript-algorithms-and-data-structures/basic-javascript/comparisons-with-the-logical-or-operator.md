@@ -13,7 +13,7 @@ dashedName: comparisons-with-the-logical-or-operator
 
 <dfn>Логічний оператор or</dfn> складається з двох вертикальних рисок: (`||`). Як правило, цей символ можна знайти на клавіатурі між клавішами backspace та enter.
 
-Наведений нижче шаблон має виглядати знайомим за пунктами з попередніх уривків:
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-поверне `Yes` лише за умови, що `num` знаходиться між `5` та `10` (включно з 5 і 10). Цю саму логіку можна записати як:
+This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
 
 ```js
 if (num > 10 || num < 5) {

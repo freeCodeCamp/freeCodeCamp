@@ -1,7 +1,8 @@
 {
   "name": "Learn How to Solve for X",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-solve-for-x",
+  "helpCategory": "Python",
   "order": 1,
   "time": "",
   "template": "",

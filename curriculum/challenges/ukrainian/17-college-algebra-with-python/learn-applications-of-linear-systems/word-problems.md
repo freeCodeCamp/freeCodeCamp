@@ -1,6 +1,6 @@
 ---
 id: 6363d2019078df117ce4c3fe
-title: "Word Problems"
+title: "Текстові задачі"
 challengeType: 15
 videoId: 3ZM3XMn1QYo
 dashedName: word-problems
@@ -8,27 +8,27 @@ dashedName: word-problems
 
 # --description--
 
-This first video will look at key words that tell you what math operation to use. Then you will see how to apply some of your code to different problems.
+У першому відео розглядаються ключові слова для кожної математичної операції. Потім ви побачите, як застосувати код до різних виразів.
 
-**Here are links to the textbooks you will need to complete the assignments for this video:**
+**Ось посилання на підручники, з яких вам потрібно виконати завдання:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Бізнес-математика: покроковий довідник (2021). Жан-Пол Олівер</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Алгебра та тригонометрія. Джей Абрамсон</a>
 
 # --question--
 
 ## --assignment--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+Розв’яжіть завдання на ст. 63, 75, 85 та 118 з підручника «Бізнес-математика: покроковий довідник (2021)».
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+Розв’яжіть завдання на ст. 304, 308 та 321 з підручника «Алгебра та тригонометрія».
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+Які з перелічених ключових слів вказують на віднімання?
 
 ## --answers--
 

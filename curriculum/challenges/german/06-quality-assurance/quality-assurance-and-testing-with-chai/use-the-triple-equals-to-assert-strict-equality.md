@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4b
-title: Use the Triple Equals to Assert Strict Equality
+title: Benutze das Dreifache Gleichheitszeichen um die strikte Gleichheit anzugeben
 challengeType: 2
 forumTopicId: 301610
 dashedName: use-the-triple-equals-to-assert-strict-equality
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `strictEqual` vs. `notStrictEqual`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `strictEqual` vs. `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `strictEqual` vs.
   );
 ```
 
-You should choose the correct method for the second assertion - `strictEqual` vs. `notStrictEqual`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `strictEqual` vs. `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -64,7 +64,7 @@ You should choose the correct method for the second assertion - `strictEqual` vs
   );
 ```
 
-You should choose the correct method for the third assertion - `strictEqual` vs. `notStrictEqual`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `strictEqual` vs. `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -82,7 +82,7 @@ You should choose the correct method for the third assertion - `strictEqual` vs.
   );
 ```
 
-You should choose the correct method for the fourth assertion - `strictEqual` vs. `notStrictEqual`.
+Du solltest die richtige Methode für die vierte Behauptung wählen - `strictEqual` vs. `notStrictEqual`.
 
 ```js
 (getUserInput) =>

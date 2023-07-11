@@ -8,11 +8,11 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وأضفتهم بلوحة (canvas) SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موقع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
+The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موقع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
 
-لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين تضع *وَسَط (center)* الشكل على لوحة SVG. تحدد سمة نصف قطر (radius) (وتكتب: `r`) حجم الدائرة (`circle`).
+لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. They tell D3 where to position the *center* of the shape on the SVG. تحدد سمة نصف قطر (radius) (وتكتب: `r`) حجم الدائرة (`circle`).
 
-مثل مقياس الإحداثيات `rect` داخل `y`، تقاس `cy` داخل `circle` من الجزء العلوي للوحة (canvas) SVG، ليس من الأسفل.
+Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG, not from the bottom.
 
 تستطيع جميع السمات (attributes) الثلاث باستخدام وظيفة لإعادة التفعيل (callback function) لتحديد قيمها بشكل ديناميكي. تذكر أن جميع الطرق (methods) المسلسلة بعد وظيفة `data(dataset)` تفعّل مرة واحدة لكل عنصر في `dataset`. يشير الوسيط `d` في وظيفة إعادة التفعيل إلى العنصر الحالي في `dataset`، وهو قائمة لكل نقطة. استخدم رمز الأقواس، مثل `d[0]`، للوصول إلى القيم في تلك القائمة.
 

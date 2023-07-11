@@ -8,21 +8,27 @@ dashedName: record-collection
 
 # --description--
 
-Du bekommst ein Objektliteral, das einen Teil deiner Musikalbensammlung darstellt. Jedes Album hat eine eindeutige ID-Nummer als Schlüssel und verschiedene andere Eigenschaften. Nicht alle Alben enthalten vollständige Informationen.
+Du wirst eine Funktion erstellen, die bei der Verwaltung einer Musikalbensammlung helfen wird. Die Sammlung ist als ein Objekt organisiert, das mehrere Alben enthält, die ebenfalls Objekte darstellen. Jedes Album wird in der Sammlung mit einer einzigartigen `id` als Eigenschaftsname dargestellt. Innerhalb jedes Albumobjekts befinden sich verschiedene Eigenschaften, die Informationen über das Album enthalten. Nicht alle Alben enthalten vollständige Informationen.
 
-Du beginnst mit einer Funktion `updateRecords`, die ein Objektliteral, `records`, mit der Musikalbensammlung, einer `id`, einer `prop` (wie `artist` oder `tracks`) und einem `value` nimmt. Vervollständige die Funktion mit Hilfe der folgenden Regeln, um das an die Funktion übergebene Objekt zu verändern.
+Die `updateRecords`-Funktion erwartet 4 Argumente, die durch die folgenden Funktionsparameter repräsentiert werden:
 
--   Deine Funktion muss immer das gesamte Objekt der Datensammlung zurückgeben.
--   Wenn `prop` nicht `tracks` ist und `value` keinen leeren String enthält, aktualisiere oder setze `prop` für dieses Album auf `value`.
--   Wenn `prop` `tracks` ist, das Album aber keine Eigenschaft `tracks` hat, erstelle ein leeres Array und füge `value` hinzu.
--   Wenn `prop` `tracks` ist und `value` keinen leeren String darstellt, füge `value` an das Ende des bestehenden Arrays `tracks` des Albums an.
--   Wenn `value` ein leerer String ist, lösche die angegebene Eigenschaft `prop` aus dem Album.
+-   `records` - ein Objekt mit mehreren einzelnen Alben
+-   `id` - eine Zahl, die ein bestimmtes Album im `records`-Objekt repräsentiert
+-   `prop` - ein String, der den Namen der zu aktualisierenden Eigenschaft des Albums angibt
+-   `value` - ein String, der die Informationen enthält, die zur Aktualisierung der Album-Eigenschaft verwendet werden
 
-**Hinweis:** Für die Tests wird eine Kopie des Objekts `recordCollection` verwendet.
+Vervollständige die Funktion mit Hilfe der folgenden Regeln, um das an die Funktion übergebene Objekt zu verändern.
+
+-   Deine Funktion muss immer das gesamte `records`-Objekt zurückgeben.
+-   Falls `value` einen leeren String darstellt, lösche die angegebene `prop`-Eigenschaft aus dem Album.
+-   Falls `prop` nicht `tracks` darstellt und `value` kein leerer String ist, dann weise `value` dem `prop` des jeweiligen Albums zu.
+-   Wenn `prop` `tracks` ist und `value` keinen leeren String darstellt, dann musst du das `tracks`-Array des Albums aktualisieren. Wenn das Album keine `tracks`-Eigenschaft hat, dann weise ihm ein leeres Array zu. Füge dann den `value` als letzten Eintrag im `tracks`-Array des Albums hinzu.
+
+**Hinweis:** Für die Tests wird eine Kopie des Objekts `recordCollection` verwendet. Du solltest das Objekt `recordCollection` nicht direkt anpassen.
 
 # --hints--
 
-Nach `updateRecords(recordCollection, 5439, "artist", "ABBA")`, sollte `artist` der String `ABBA` sein
+Nachdem `updateRecords(recordCollection, 5439, "artist", "ABBA")` ausgeführt wurde, sollte `artist` den String `ABBA` darstellen
 
 ```js
 assert(
@@ -31,7 +37,7 @@ assert(
 );
 ```
 
-Nach `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, sollte `tracks` den String `Take a Chance on Me` als einziges und letztes Element enthalten.
+Nachdem `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` ausgeführt wurde, sollte `tracks` den String `Take a Chance on Me` als letztes und einziges Element enthalten.
 
 ```js
 assert(
@@ -41,14 +47,14 @@ assert(
 );
 ```
 
-Nach `updateRecords(recordCollection, 2548, "artist", "")`, sollte `artist` nicht gesetzt werden
+Nachdem `updateRecords(recordCollection, 2548, "artist", "")` ausgeführt wurde, sollte kein Wert für `artist` eingestellt sein
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-Nach `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` sollte `tracks` den String `Addicted to Love` als letztes Element enthalten.
+Nachdem `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` ausgeführt wurde, sollte `tracks` den String `Addicted to Love` als letztes Element enthalten.
 
 ```js
 assert(
@@ -58,7 +64,7 @@ assert(
 );
 ```
 
-Nach `updateRecords(recordCollection, 2468, "tracks", "Free")` sollte `tracks` den String `1999` als erstes Element enthalten.
+Nachdem `updateRecords(recordCollection, 2468, "tracks", "Free")` ausgeführt wurde, sollte `tracks` den String `1999` als erstes Element enthalten.
 
 ```js
 assert(
@@ -68,14 +74,14 @@ assert(
 );
 ```
 
-Nach `updateRecords(recordCollection, 2548, "tracks", "")`, sollte `tracks` nicht gesetzt werden
+Nachdem `updateRecords(recordCollection, 2548, "tracks", "")` ausgeführt wurde, sollte kein Wert für `tracks` eingestellt sein
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-Nach `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, sollte `albumTitle` der String `Riptide` sein
+Nachdem `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")` ausgeführt wurde, sollte `albumTitle` den String `Riptide` darstellen
 
 ```js
 assert(

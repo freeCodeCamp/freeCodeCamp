@@ -1,12 +1,12 @@
 Segui questa guida per impostare l'app mobile di freeCodeCamp localmente sul tuo sistema. È altamente raccomandato se vuoi contribuire regolarmente.
 
-Alcune procedure per contribuire – come sistemare bug nel codebase – necessitano di eseguire l'app di freeCodeCamp localmente.
+Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### Come preparare la macchina locale
+## How to Prepare your Local Machine
 
 Inizia installando i prerequisiti software per il tuo sistema operativo.
 
-#### Prerequisiti:
+### Prerequisites
 
 | Prerequisito                                  | Versione | Note                                         |
 | --------------------------------------------- | -------- | -------------------------------------------- |
@@ -26,13 +26,13 @@ dart --version
 
 Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente di sviluppo. Questo è comune a molti flussi di lavoro di sviluppo, e si dovrà fare solo una volta.
 
-##### Segui questi passaggi per preparare il tuo ambiente di sviluppo:
+#### Follow these steps to get your development environment ready:
 
 1. Installa [Git](https://git-scm.com/) o il tuo client Git preferito, se non lo hai già. Aggiorna alla versione più recente; la versione fornita con il tuo sistema operativo potrebbe essere obsoleta.
 
-2. Configura [Android Studio](https://developer.android.com/studio) e [Android Emulators](https://developer.android.com/studio/run/managing-avds) con l'ultima versione Android disponibile. Consigliamo di utilizzare Pixel 3a XL e Nexus One(per simulare schermi più piccoli).
+2. Set up [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. Consigliamo di utilizzare Pixel 3a XL e Nexus One(per simulare schermi più piccoli).
 
-3. (Opzionale per MacOS) Configura Xcode e iOS Simulator con l'ultima versione iOS disponibile.
+3. (Optional for MacOS) Set up Xcode and iOS Simulator with the latest released iOS version.
 
 4. (Opzionale ma raccomandato) [Imposta una chiave SSH](https://help.github.com/articles/generating-an-ssh-key/) per GitHub.
 
@@ -40,7 +40,7 @@ Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente 
 
    Consigliamo vivamente di utilizzare [Visual Studio Code](https://code.visualstudio.com/) o Android Studio. Consigliamo anche di installare le [estensioni](https://docs.flutter.dev/get-started/editor?tab=vscode) ufficiali.
 
-## Fare il Fork del repository su GitHub
+## Fork the Repository on GitHub
 
 Fare il [fork](https://help.github.com/articles/about-forks/) è il passaggio grazie a cui ottieni la tua copia del repository (_repo_) su GitHub.
 
@@ -58,9 +58,9 @@ Questo è essenziale, in quanto consente di lavorare sulla propria copia dell'ap
 
 3. Dopo che è stato creato un fork del repository, sarai portato alla tua copia del repository su `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` è sostituito dal tuo nome utente GitHub.)
 
-## Clonare il tuo fork da GitHub
+## Clone your Fork from GitHub
 
-La [Clonazione](https://help.github.com/articles/cloning-a-repository/) consiste nello **scaricare** una copia di un repository da una `posizione remota` che è di proprietà tua o di qualcun altro. Nel tuo caso, questa posizione remota è il tuo `fork` del repository di freeCodeCamp che dovrebbe essere disponibile su `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` è sostituito dal tuo nome utente GitHub.)
+La [Clonazione](https://help.github.com/articles/cloning-a-repository/) consiste nello **scaricare** una copia di un repository da una `posizione remota` che è di proprietà tua o di qualcun altro. In your case, this remote location is your `fork` of freeCodeCamp's repository which should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` è sostituito dal tuo nome utente GitHub.)
 
 Esegui questi comandi sulla tua macchina locale:
 
@@ -78,11 +78,11 @@ Questo scaricherà l'intero repository mobile freeCodeCamp nella directory dei t
 
 Nota: `--depth=1` crea un clone superficiale del fork, con la sola cronologia dei commit più recente.
 
-## Impostare la sincronizzazione dal genitore
+## Set up Syncing from Parent
 
 Ora che hai scaricato una copia del fork, dovrai configurare un `upstream` remoto che punti al repository genitore.
 
-[Come già accennato](#fork-the-repository-on-github), il repository principale fa riferimento al repository `upstream`. Il tuo fork fa riferimento al repository `origin`.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 Hai bisogno di un riferimento dal tuo clone locale al repository `upstream` oltre che al repository `origin`. In questo modo potrai sincronizzare le modifiche dal repository principale senza bisogno di fare ripetuti fork e clonazioni.
 
@@ -113,7 +113,7 @@ Hai bisogno di un riferimento dal tuo clone locale al repository `upstream` oltr
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Eseguire l'app mobile freeCodeCamp localmente
+## Running freeCodeCamp Mobile App Locally
 
 Ora che disponi di una copia locale dell'app mobile, potrai seguire queste istruzioni per eseguirla localmente.
 
@@ -123,11 +123,11 @@ E come sempre, fai liberamente le tue domande nella [categoria 'Contributors' su
 
 > [!NOTE] La directory `mobile` contiene le cartelle `mobile-api` e `mobile-app`. `mobile-api` contiene il codice delle API utilizzate per i podcast. `mobile-app` contiene l'app Flutter ed è dove dovresti trovarti per seguire i passaggi successivi.
 
-### Configurare le dipendenze
+### Configuring Dependencies
 
-#### Step 1: Impostare il file delle variabili d'ambiente
+#### Step 1: Set Up the Environment Variable File
 
-Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `sample.env`. Questo file deve essere copiato in un nuovo file chiamato `.env` a cui si accede dinamicamente durante la fase di installazione. Ricordati di spostarti nella directory `mobile-app` prima di eseguire i seguenti comandi.
+Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Ricordati di spostarti nella directory `mobile-app` prima di eseguire i seguenti comandi.
 
 ```console
 # Crea una copia di "sample.env" e chiamalo ".env".
@@ -172,9 +172,9 @@ flutter run
 
 > [!TIP] Se stai usando VSCode o Android Studio puoi avviare facilmente l'app senza eseguire comandi dal terminale. Maggiori informazioni [qui](https://docs.flutter.dev/get-started/test-drive).
 
-## Apportare modifiche a livello locale
+## Making Changes Locally
 
-Ora puoi apportare modifiche ai file e inviare le modifiche al clone locale del tuo fork.
+You can now make changes to files and commit your changes to the local clone of your fork.
 
 Segui questi passaggi:
 
@@ -225,7 +225,7 @@ Segui questi passaggi:
    git push origin main --force
    ```
 
-   Puoi controllare che il tuo main attuale corrisponda con upstream/main facendo un diff:
+   You can validate that your current main matches the upstream/main by performing a diff:
 
    ```console
    git diff upstream/main
@@ -243,7 +243,7 @@ Segui questi passaggi:
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Il nome del branch dovrebbe iniziare con un `fix/`, `feat/`, `docs/`, ecc. Evita di utilizzare i numeri delle issue nei branch. Tienili brevi, significativi e unici.
+   Il nome del branch dovrebbe iniziare con un `fix/`, `feat/`, `docs/`, ecc. Evita di utilizzare i numeri delle issue nei branch. Keep them short, meaningful, and unique.
 
    Alcuni esempi di nomi buoni per un branch sono:
 
@@ -361,7 +361,114 @@ Segui questi passaggi:
     git push origin branch/name-here
     ```
 
-## Proporre una Pull Request (PR)
+## Running mobile curriculum tests
+
+> [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
+
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+
+    ```console
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Change directory to the freeCodeCamp repo:
+
+    ```console
+    cd freeCodeCamp
+    ```
+
+3. Make a copy of the `.env` file:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
+
+4. Install the dependencies for the freeCodeCamp repo:
+
+    ```console
+    pnpm install && pnpm run create:config
+    ```
+
+5. Generate the challenge data JSON file:
+
+    ```console
+    pnpm run build:curriculum
+    ```
+
+6. Copy the generated JSON file to the mobile app:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
+
+7. Change directory to the mobile app:
+
+    ```console
+    cd ../mobile/mobile-app
+    ```
+
+8. Install the dependencies for the mobile app:
+
+    ```console
+    flutter pub get
+    ```
+
+9. Update the test file to use the challenge data JSON file:
+
+    ```console
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    ```
+
+10. Generate the challenge files:
+
+    ```console
+    flutter test test/widget_test.dart
+    ```
+
+11. Start a local server to serve the challenge files with the help of `serve` package:
+
+    ```console
+    npx serve
+    ```
+
+12. In a different terminal go back to the freeCodeCamp repo:
+
+    ```console
+    cd ../../freeCodeCamp
+    ```
+
+13. Run the cypress tests:
+
+    ```console
+    pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    ```
+
+## Proposing a Pull Request (PR)
 
 Dopo aver fatto il commit delle tue modifiche, controlla qui per [come aprire una Pull Request](how-to-open-a-pull-request.md).
 
@@ -374,7 +481,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Risoluzione Dei Problemi
+## Troubleshooting
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
@@ -392,13 +499,13 @@ Se si verificano problemi con l'interfaccia utente o errori di compilazione, una
 flutter clean
 ```
 
-### Problemi nell'installazione delle dipendenze
+### Issues Installing Dependencies
 
 Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscono di accedere alle risorse.
 
-Sii paziente, dato che la prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete.
+Be patient as the first-time setup can take a while depending on your network bandwidth.
 
-## Ottenere Aiuto
+## Getting Help
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 

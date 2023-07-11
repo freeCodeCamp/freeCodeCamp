@@ -11,7 +11,13 @@ dashedName: word-blanks
 
 Ti vengono date delle frasi con delle parole mancanti, come nomi, verbi, aggettivi e avverbi. Devi quindi riempire le parti mancanti con parole a tua scelta in modo che la frase completata abbia senso.
 
-Considera questa frase: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
+Considera questa frase:
+
+```md
+It was really ____, and we ____ ourselves ____.
+```
+
+Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -44,7 +50,7 @@ assert(
 );
 ```
 
-Non dovresti usare direttamente i valori `dog`, `ran`, `big` o`quickly` per creare `wordBlanks`.
+Non dovresti usare direttamente i valori `dog`, `ran`, `big` o `quickly` per creare `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);

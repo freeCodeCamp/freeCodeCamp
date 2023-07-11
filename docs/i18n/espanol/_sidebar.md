@@ -6,9 +6,8 @@
   - [Trabajar en la traducción de recursos](how-to-translate-files.md)
   - [Revisar las traducciones](how-to-proofread-files.md)
 - **Participa en la programación**
-  - [Set up freeCodeCamp](how-to-setup-freecodecamp-locally.md)
-  - [Follow best-practices](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Configuración de FreeCodeCamp](how-to-setup-freecodecamp-locally.md)
+  - [Seguir las mejores prácticas de código](codebase-best-practices.md)
   - [Work on Codebase](how-to-contribute-to-the-codebase.md)
   - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
   - [Work on Component Library](how-to-work-on-the-component-library.md)
@@ -19,11 +18,13 @@
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on Video Challenges](how-to-help-with-video-challenges.md)
   - [Work on Documentation](how-to-work-on-the-docs-theme.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
 - **Guías adicionales**
   - [Entender la estructura de los archivos del currículo](curriculum-file-structure.md)
   - [Depurar localmente los emails salientes](how-to-catch-outgoing-emails-locally.md)
   - [Configurar freeCodeCamp en Windows (WSL)](how-to-setup-wsl.md)
-  - [Flujo de trabajo del Token del usuario](user-token-workflow.md)
+  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
+  - [User Token Workflow](user-token-workflow.md)
   - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
   - [Authors Analytics Manual](authors-analytics-manual.md)
 
@@ -31,10 +32,11 @@
 
 - **Manuales de Vuelo** (para el personal & moderadores)
   - [Manual del moderador](moderator-handbook.md)
-  - [Libro Principal de Idiomas](language-lead-handbook.md)
-  - [Manual de DevOps](devops.md)
-  - [Extensión de cursos de VSCode](courses-vscode-extension.md)
-  - [Habilitar nuevo idioma](how-to-enable-new-languages.md)
+  - [Reply Templates](reply-templates.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

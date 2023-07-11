@@ -1,14 +1,14 @@
-# Deploying New Languages on `/learn`
+# Додавання нових мов для `/learn`
 
-Before you can release a new language, you will need to allow the languages to download from Crowdin.
+Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin.
 
-## Updating Crowdin Settings
+## Оновлення налаштувань Crowdin
 
-In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+На бічній панелі проєктів `Curriculum` та `Learn UI` вам потрібно обрати `Project Settings`. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. Якщо ви не впевнені, що вводити, ми допоможемо у нашому чаті помічників.
 
-## Updating Workflows
+## Оновлення потоку робіт
 
-You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+Вам потрібно буде додати крок до `crowdin-download.client-ui.yml` та `crowdin-download.curriculum.yml`. Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
 
 ```yml
 ##### Download Dothraki #####
@@ -41,32 +41,32 @@ You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin
     # dryrun_action: true
 ```
 
-Note that the `download_language` key needs to be set to the language code displayed on Crowdin.
+Зауважте, що ключ `download_language` потрібно встановити на код мови, вказаний на Crowdin.
 
-## Enabling a Language
+## Додавання мови
 
-> [!NOTE] The above section with updating the workflows should be completed before proceeding - these need to be done in separate steps or the builds will fail.
+> [!NOTE] Перед тим як продовжити, потрібно виконати вищеподаний розділ оновлення потоку робіт. Їх потрібно виконати окремо, інакше збірка не виконуватиметься.
 
-There are a few steps to take in order to allow the codebase to build in your desired language.
+Щоб дозволити кодовій базі функціонувати на обраній вами мові, потрібно зробити декілька кроків.
 
-First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
+Спочатку відвідайте файл `config/i18n.ts`, щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
 
-- `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
-- `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
-- `LangNames`: These are the display names for the language selector in the navigation menu.
-- `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
-- `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.
-- `rtlLangs`: These are languages that read from right to left.
+- `Languages`: додайте нову мову до запису `Languages`, схоже до інших. Значення рядка пізніше буде використане у файлі `.env`, щоб налаштувати збірку мови.
+- `availableLangs`: додайте нову властивість із запису `Languages` до масивів `client` та `curriculum`.
+- `i18nextCodes`: мовні коди ISO для кожної мови. Вам потрібно додати відповідний код ISO для мови, з якою працюєте. Вони повинні бути унікальними для кожної мови.
+- `LangNames`: назви мов для перемикача мови у навігаційному меню.
+- `LangCodes`: мовні коди, які використовуються для форматування дат і чисел. Ними повинні бути коди Unicode CLDR замість кодів ISO.
+- `hiddenLangs`: мови, які не показано у навігаційному меню. Використовують для мов, які не готові до випуску.
+- `rtlLangs`: мови, які читаються справа наліво.
 
-As an example, if you wanted to enable Dothraki as a language, your `i18n.ts` objects should look like this:
+Наприклад, якщо ви хочете використовувати дотракійську мову, об’єкти `i18n.ts` повинні виглядати так:
 
 ```js
 export enum Languages {
   English = 'english',
   Espanol = 'espanol',
   Chinese = 'chinese',
-  ChineseTrandational = 'chinese-traditional',
+  ChineseTraditional = 'chinese-traditional',
   Dothraki = 'dothraki'
 }
 
@@ -75,14 +75,14 @@ export const availableLangs = {
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ],
   curriculum: [
     Languages.English,
     Languages.Espanol,
     Languages.Chinese,
-    Languages.ChineseTrandational,
+    Languages.ChineseTraditional,
     Languages.Dothraki
   ]
 };
@@ -91,7 +91,7 @@ export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -99,7 +99,7 @@ export enum LangNames = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
-  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.ChineseTraditional]: '中文（繁體字）',
   [Languages.Dothraki]: 'Dothraki'
 };
 
@@ -107,7 +107,7 @@ export enum LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
   [Languages.Chinese]: 'zh',
-  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.ChineseTraditional]: 'zh-Hant',
   [Languages.Dothraki]: 'mis'
 };
 
@@ -116,80 +116,46 @@ export const hiddenLangs = ['dothraki'];
 export const rtlLangs = [''];
 ```
 
-> [!NOTE] When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
+> [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
 
-### Configure the Language Superblock Order
+### Налаштуйте перекладені суперблоки
 
-In the [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object (or wherever), and change the key to your new language from the `Languages` enum.
+У файлі [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) додайте нову мову до об’єкту `notAuditedSuperBlocks`. Це виведе список усіх суперблоків, які не повністю перекладені. Додайте сюди масив суперблоків, які не повністю перекладені. Наприклад:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file so you know how you are allowed to order the superblocks, then move them to their proper places for the new language.
+Переконайтесь, що додали лише ті суперблоки, які **не** повністю перекладені та затверджені. Перекладені суперблоки будуть вирахувані з цього об’єкта. Коли новий суперблок буде повністю перекладений, вилучіть його з масиву цієї мови.
 
-> [!ATTENTION] Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
+Див. запис `SuperBlocks` на початку того ж файлу для повного списку суперблоків.
 
-The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+### Налаштування пошуку
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `(New) Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
-- `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
-- `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+Потім відкрийте файл `client/src/utils/algolia-locale-setup.ts`. Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
 
-### Configure Search
+Додайте об’єкт своєї мови до об’єкта `algoliaIndices`. Використовуйте значення об’єкта `english` для локального тестування, замінивши ключ `english` на значення своєї мови `availableLangs`.
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+> [!NOTE] Якщо ви вже розгорнули екземпляр новин потрібною мовою, ви можете оновити значення, щоб зобразити активний екземпляр. В іншому випадку використовуйте значення англійської мови.
 
-Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
-
-> [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
-
-If you were to add Dothraki:
+Якби ви додали дотракійську:
 
 ```js
 const algoliaIndices = {
@@ -216,9 +182,9 @@ const algoliaIndices = {
 };
 ```
 
-## Enabling Localized Videos
+### Додавання локалізованих відео
 
-For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі `client/src/templates/Challenges/video/Show.tsx`. Ось так додається дотракійська мова:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -233,7 +199,7 @@ For the video challenges, you need to change a few things. First add the new loc
       ...
 ```
 
-Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `i18n.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+Потім додайте ідентифікатор нової мови до будь-якого відеозавдання в перевіреному блоці. Наприклад, якщо `auditedCerts` у `i18n.ts` містить `scientific-computing-with-python` для `dothraki`, тоді ви повинні додати запис `dothraki` в `videoLocaleIds`. Тоді вступна частина має виглядати так:
 
 ```yml
 videoLocaleIds:
@@ -245,7 +211,7 @@ dashedName: introduction-why-program
 ---
 ```
 
-Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
+Оновіть інтерфейс `VideoLocaleIds` у `client/src/redux/prop-types`, додавши нову мову.
 
 ```ts
 export interface VideoLocaleIds {
@@ -256,7 +222,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+Вкінці оновіть схему завдань у `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -270,52 +236,51 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Client UI
+## Інтерфейс клієнта
 
-You will need to take an additional step to handle the client UI translations.
+Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
 
-The Crowdin workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
+Робочі процеси на Crowdin автоматично завантажують _деякі_ переклади інтерфейсу, однак певні файли потрібно перемістити вручну.
 
-You will want to copy the following files from `/client/i18n/locales/english` to `/client/i18n/locales/<your-language>`, and apply translations as needed:
+Вам потрібно скопіювати наступні файли з `/client/i18n/locales/english` до `/client/i18n/locales/<your-language>` та застосувати переклади там, де потрібно:
 
 - `links.json`
 - `meta-tags.json`
 - `motivation.json`
-- `trending.json`
 
-## Testing Translations Locally
+## Тестування перекладів локально
 
-If you would like to test translations locally, before adding them to our main repository - skip the Crowdin workflow changes. Follow the steps for enabling a language, then download the translations from Crowdin and load them into your local code.
+Якщо ви хочете перевірити переклади локально, перш ніж додати їх до нашого основного репозиторію, то пропустіть зміни робочого процесу на Crowdin. Виконайте кроки для додавання мови, а потім завантажте переклади з Crowdin і додайте їх до свого локального коду.
 
-Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
+Оскільки мова не затверджена для випуску, наші скрипти поки не завантажуватимуть переклади автоматично. Лише робочий персонал має доступ до завантаження перекладів. Ви можете звернутися до нас у [чаті](https://discord.gg/PRyKn3Vbay) або можете локально перекласти файли розмітки з метою тестування.
 
-Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
+Як тільки ви отримаєте файли, їх потрібно розмістити у правильному каталозі. Щодо завдань навчальної програми: вам потрібно розмістити папки сертифікацій (наприклад, `01-responsive-web-design`) в межах каталогу `curriculum/challenges/{lang}`. Для перекладів дотракійською це був би `curriculum/challenges/dothraki`. Файли `.json` з перекладом клієнта будуть розміщені в каталозі `client/i18n/locales/{lang}`.
 
-Update your `.env` file to use your new language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+Оновіть файл `.env` так, щоб він використовував нову мову для `CLIENT_LOCALE` та `CURRICULUM_LOCALE`.
 
-Once these are in place, you should be able to run `pnpm run develop` to view your translated version of freeCodeCamp.
+Як тільки все на місці, ви зможете запустити `pnpm run develop`, щоб переглянути перекладену версію freeCodeCamp.
 
-> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `pnpm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
+> [!TIP] Якщо ви побудували клієнта однією мовою та потім хочете побудувати його іншою мовою, вам потрібно використати команду `pnpm run clean-and-develop` після зміни файлу `.env`, оскільки Gatsby кешуватиме першу мову.
 
-> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.
+> [!ATTENTION] Ви можете працювати з перекладами локально, щоб провести тестування. Ми нагадуємо, що переклади _не_ потрібно надсилати через GitHub, а лише через Crowdin. Не забудьте скинути локальну кодову базу після закінчення тестування.
 
-# Deploying New Languages on `/news`
+# Додавання нових мов для `/news`
 
-To deploy News for a new language, you'll need to create two PRs. One PR will be to the [CDN repo](https://github.com/freeCodeCamp/cdn), and the other will be to the [News repo](https://github.com/freeCodeCamp/news).
+Щоб започаткувати новини новою мовою, потрібно створити два PR. Один PR буде для [репозиторію CDN](https://github.com/freeCodeCamp/cdn), а інший — для [репозиторію News](https://github.com/freeCodeCamp/news).
 
-## Prep the CDN Repo for the New Language
+## Приготуйте репозиторій CDN для нової мови
 
-News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches Day.js files from the CDN during the build to localize dates and times for each language.
+News отримує популярні посилання й назви статей із нашого CDN під час збірки та додає їх у нижній колонтитул. News також отримує файли Day.js із CDN під час збірки, щоб локалізувати дати та час кожної мови.
 
-### Add a YAML File for Trending Articles
+### Додайте файл YAML для популярних статей
 
-Clone the [CDN repo](https://github.com/freeCodeCamp/cdn) and create a new branch.
+Клонуйте [репозиторій CDN](https://github.com/freeCodeCamp/cdn) та створіть нову гілку.
 
-In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
+Створіть новий файл у каталозі [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) та назвіть його `language.yaml`. Наприклад, якщо ви запускаєте новини дотракійською мовою, назвіть файл `dothraki.yaml`.
 
-Then copy the contents of the [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) trending file and paste it into the new YAML file you just created.
+Потім скопіюйте вміст файлу [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) до нового файлу YAML, який ви щойно створили.
 
-The contents will look something like this:
+Вміст виглядатиме приблизно так:
 
 ```yaml
 article0title: 'Learn JavaScript'
@@ -329,19 +294,19 @@ article3link: ...
   ...
 ```
 
-### Add a Day.js Locale File for the New Language
+### Додайте файл локалі Day.js для нової мови
 
-By default, Day.js only includes English as a locale. To enable it to work with other languages, you need to add a new Day.js locale file to the CDN.
+Day.js містить лише англійську локаль за замовчуванням. Щоб дозволити роботу з іншими мовами, потрібно додати новий файл локалі Day.js до CDN.
 
-In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+Створіть новий файл у каталозі [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) та назвіть його `isocode.min.js`. Наприклад, якщо ви запускаєте новини дотракійською мовою, назвіть файл `mis.min.js`.
 
-> [!NOTE] The version number will change as the dependencies are updated.
+> [!NOTE] Номер версії буде змінено, оскільки залежності оновлюються.
 
-Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available Day.js files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Потім відвідайте [цю сторінку на cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) з усіма доступними файлами Day.js для вашої версії, знайдіть посилання `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` для нової мови та відкрийте його у новій вкладці.
 
-> [!NOTE] You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other Day.js files.
+> [!NOTE] Вам потрібно додати лише файл локалі .../dayjs/\<version\>/_locale_/isocode.min.js. Не додавайте інших файлів Day.js.
 
-Copy the Day.js locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for Day.js:
+Скопіюйте код локалі Day.js з нової вкладки до файлу, який ви створили. Наприклад, ось мінімізована версія коду англійської локалі для Day.js:
 
 ```js
 !(function (e, n) {
@@ -365,27 +330,27 @@ Copy the Day.js locale code from the new tab into the new file you created. For 
 });
 ```
 
-Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
+Потім відкрийте PR до репозиторію CDN, щоб додати файли YAML та Day.js для перегляду.
 
-## Prep the News Repo for the New Language
+## Приготуйте репозиторій News для нової мови
 
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
+[Репозиторій News](https://github.com/freeCodeCamp/news) отримує дані з екземпляра Ghost, файли, додані до CDN, будує News та розробляє їх.
 
-> [!WARN] Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] PR для репозиторію News _повинні_ надходити з одного репозиторію. Не працюйте над цим кроком з розгалуження.
 
-### Modify the Main Config File
+### Змініть головний файл конфігурації
 
-Clone the News repo and create a new branch.
+Клонуйте репозиторій News та створіть нову гілку.
 
-Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+Відкрийте файл `config/index.js`, щоб додати нову мову та налаштувати потрібні значення. Потрібно змінити декілька об’єктів та масивів:
 
-- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
-- `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
-- `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+- `locales`: масив, який містить активні та майбутні мови для новин. Це значення, які використовуються у файлі `.env`, щоб обрати екземпляр та інтерфейс Ghost для кожної збірки. Додайте назву нової мови в нижньому регістрі до цього масиву.
+- `localeCodes`: цей об’єкт є картою кодів ISO для кожної мови, який використовують, щоб налаштувати i18next перед побудовою інтерфейсу. Щоб додати нову мову, використайте назву мови в нижньому регістрі як _ключ_ та код мови ISO 639-1 як _значення_.
+- `algoliaIndices`: цей об’єкт є картою індексів Algolia для кожної мови. Щоб додати нову мову, використайте назву мови в нижньому регістрі як _ключ_ та `news-` із кодом мови ISO 639-1 у нижньому регістрі як _значення_.
 
-> [!NOTE] If you are unsure about the string to use while setting `algoliaIndices`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> [!NOTE] Якщо ви невпевнені, який рядок потрібно використовувати при налаштуванні `algoliaIndices`, напишіть Крісу (@scissorsneedfoodtoo) або комусь іншому з доступом до Algolia.
 
-For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
+Наприклад, якщо ви запускаєте новини дотракійською мовою, об’єкти/масиви повинні виглядати ось так:
 
 ```js
 const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
@@ -407,26 +372,24 @@ const algoliaIndices = {
 };
 ```
 
-### Add the i18next JSON Files for the New Language
+### Додайте файли JSON i18next для нової мови
 
-Next, go to the `config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. For example, if you're launching Dothraki News, create a new folder named `dothraki`.
+Перейдіть до каталогу `config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
 
-Then copy the JSON files from the `english` directory to your new folder.
+Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 
-In your new folder, open the `serve.json` file and replace its contents with the following:
+Відкрийте файл `redirects.json` у новій папці та замініть його вміст на порожній масив:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
-Then commit and push your branch directly to the News repo.
+Потім зафіксуйте та відправте гілку до репозиторію News.
 
-> [!NOTE] You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
+> [!NOTE] Ви повинні знаходитись в одній з команд з доступом до репозиторію News, щоб відправити гілки одразу до News. Наразі такий доступ мають лише dev, i18n та staff.
 
-Finally, open a PR for review.
+Вкінці відкрийте PR для розгляду.
 
-Once both your PRs to the CDN and News repo have been approved, they can be merged.
+Як тільки ваші PR для CDN та News затверджені, їх можна об’єднати.
 
-> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).
+> [!NOTE] Розгортання оброблятиме робочий персонал. Ось зразок PR [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) з прикладом. Для детальнішої інформації див. [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

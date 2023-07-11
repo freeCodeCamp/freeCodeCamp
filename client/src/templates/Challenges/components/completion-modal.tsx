@@ -3,13 +3,12 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { dasherize } from '../../../../../utils/slugs';
-import Login from '../../../components/Header/components/Login';
+import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
 import {
   isSignedInSelector,
@@ -22,12 +21,10 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector,
-  completedPercentageSelector,
-  completedChallengesInBlockSelector,
-  currentBlockIdsSelector
+  challengeMetaSelector
 } from '../redux/selectors';
-import CompletionModalBody from './completion-modal-body';
+import ProgressBar from '../../../components/ProgressBar';
+import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
 
@@ -39,72 +36,39 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   allChallengesInfoSelector,
   successMessageSelector,
-  completedPercentageSelector,
-  completedChallengesInBlockSelector,
-  currentBlockIdsSelector,
+
   (
     challengeFiles: ChallengeFiles,
-    {
-      title,
-      id,
-      challengeType
-    }: { title: string; id: string; challengeType: number },
+    { dashedName }: { dashedName: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
     allChallengesInfo: AllChallengesInfo,
-    message: string,
-    completedPercent: number,
-    completedChallengesInBlock: number,
-    currentBlockIds: string[]
+    message: string
   ) => ({
     challengeFiles,
-    title,
-    id,
-    challengeType,
+    dashedName,
     completedChallengesIds,
     isOpen,
     isSignedIn,
     allChallengesInfo,
-    message,
-    completedPercent,
-    completedChallengesInBlock,
-    currentBlockIds
+    message
   })
 );
 
-const mapDispatchToProps = function (dispatch: Dispatch) {
-  const dispatchers = {
-    close: () => dispatch(closeModal('completion')),
-    submitChallenge: () => {
-      dispatch(submitChallenge());
-    },
-    executeGA
-  };
-  return () => dispatchers;
+const mapDispatchToProps = {
+  close: () => closeModal('completion'),
+  submitChallenge,
+  executeGA
 };
 
-interface CompletionModalsProps {
-  block: string;
-  blockName: string;
-  certification: string;
-  challengeType: number;
+type StateProps = ReturnType<typeof mapStateToProps>;
+
+interface CompletionModalsProps extends StateProps {
   close: () => void;
-  completedChallengesIds: string[];
   executeGA: () => void;
-  challengeFiles: ChallengeFiles;
-  id: string;
-  isOpen: boolean;
-  isSignedIn: boolean;
-  allChallengesInfo: AllChallengesInfo;
-  message: string;
-  completedPercent: number;
-  completedChallengesInBlock: number;
-  currentBlockIds: string[];
   submitChallenge: () => void;
-  superBlock: string;
   t: TFunction;
-  title: string;
 }
 
 interface CompletionModalState {
@@ -180,30 +144,19 @@ class CompletionModal extends Component<
 
   render(): JSX.Element {
     const {
-      block,
       close,
-      id,
       isOpen,
       isSignedIn,
       message,
-      superBlock = '',
       t,
-      title,
-      completedPercent,
-      completedChallengesInBlock,
-      currentBlockIds,
+      dashedName,
       submitChallenge
     } = this.props;
-
-    const totalChallengesInBlock = currentBlockIds.length;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
-    // normally dashedName should be graphQL queried and then passed around,
-    // but it's only used to make a nice filename for downloading, so dasherize
-    // is fine here.
-    const dashedName = dasherize(title);
+
     return (
       <Modal
         animation={false}
@@ -222,16 +175,15 @@ class CompletionModal extends Component<
           <Modal.Title className='completion-message'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
-          <CompletionModalBody
-            {...{
-              block,
-              completedPercent,
-              completedChallengesInBlock,
-              currentChallengeId: id,
-              superBlock,
-              totalChallengesInBlock
-            }}
-          />
+          <div className='completion-challenge-details'>
+            <GreenPass
+              className='completion-success-icon'
+              data-testid='fcc-completion-success-icon'
+            />
+          </div>
+          <div className='completion-block-details'>
+            <ProgressBar />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (

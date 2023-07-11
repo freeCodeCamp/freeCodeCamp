@@ -29,6 +29,7 @@
     "sign-up-email-list": "订阅 Quincy 每周的电子邮件",
     "sign-out": "退出",
     "curriculum": "课程",
+    "contribute": "Contribute",
     "forum": "论坛",
     "radio": "电台",
     "profile": "个人资料",
@@ -72,10 +73,14 @@
     "go-to-settings": "转到设置以领取你的认证",
     "click-start-course": "开始课程",
     "click-start-project": "启动项目",
+    "click-start-exam": "Start the exam",
     "change-language": "修改语言",
-    "cancel-change": "撤销修改",
     "resume-project": "继续项目",
-    "start-project": "开始项目"
+    "start-project": "开始项目",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -102,7 +107,65 @@
         "testimony": "\"我一直努力学习 JavaScript，尝试了许多课程，最后是 freeCodeCamp 的课程吸引了我。在 freeCodeCamp 学习 JavaScript、数据结构和算法，<strong>我不仅掌握了技能，</strong>还变得更自信，所以才能获得理想中的工作，成为 Spotify 的一名软件工程师。\""
       }
     },
-    "certification-heading": "获得以下免费认证："
+    "certification-heading": "获得以下免费认证：",
+    "faq": "常见问题：",
+    "faqs": [
+      {
+        "question": "什么是 freeCodeCamp？",
+        "answer": [
+          "freeCodeCamp 是一个由来自世界各地学习编程的人们组成的社区。这是一个 501(c)(3) 公共慈善组织。"
+        ]
+      },
+      {
+        "question": "freeCodeCamp 如何帮助我学习编程？",
+        "answer": [
+          "你将通过在浏览器、代码编辑器或移动应用中一步步地创建数十个项目来学习编程。",
+          "你还将获得免费的认证。"
+        ]
+      },
+      {
+        "question": "freeCodeCamp 真的免费吗？",
+        "answer": [
+          "是的，freeCodeCamp 100% 免费！无论是课程、项目甚至认证，都是免费的。"
+        ]
+      },
+      {
+        "question": "freeCodeCamp 能帮助我获得软件开发者的工作吗？",
+        "answer": [
+          "是的。每一年，freeCodeCamp 社区中成千上万的人们找到了他们的第一份软件开发工作。"
+        ]
+      },
+      {
+        "question": "我将学到什么技能？",
+        "answer": [
+          "你将学习大多数开发者在工作中使用的技能：HTML、CSS、JavaScript、Python、Linux、Git 和 SQL 等等。 你还将学习如何使用 web 开发的强大的库、移动应用开发、数据科学和人工智能等。"
+        ]
+      },
+      {
+        "question": "学习所有这些知识需要多长时间？",
+        "answer": [
+          "你在 freeCodeCamp 学习可以自定义进度。 实际上，要学好这些技能并获得一份软件工程师工作，可能需要几年时间来持续练习编程。在你准备好之前，不要退学或辞职。"
+        ]
+      },
+      {
+        "question": "我如何开始？",
+        "answer": [
+          "如果你是初学者，你应该从 freeCodeCamp 核心课程开始。 如果你有经验，我们仍然建议从最初的课程开始，但你可以跳到任何你想要学习的领域。"
+        ]
+      },
+      {
+        "question": "我如何获取免费的认证？",
+        "answer": [
+          "对于每个认证，你需要构建 5 个认证项目，通过所有的项目测试，以获得认证。"
+        ]
+      },
+      {
+        "question": "我在 freeCodeCamp 核心课程中看不到[工具名称]。",
+        "answer": [
+          "除了 freeCodeCamp 提供的核心课程外，我们还有数千份免费的完整的书、课程和编程教程。我们几乎教授你想学习的任何编程工具。你只需通过使用搜索栏来搜索它们。"
+        ]
+      }
+    ]
   },
   "settings": {
     "share-projects": "分享你在 freeCodeCamp 之外做的项目，写的文章或者在 GitHub 上被接受的 pull requests。",
@@ -114,6 +177,7 @@
     "for": "{{username}} 账号设置",
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
+    "scrollbar-width": "编辑器滚动条宽度",
     "username": {
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
       "is too short": "用户名 \"{{username}}\" 太短",
@@ -220,8 +284,7 @@
     "tweet": "我获得了 {{certTitle}} 认证 @freeCodeCamp！在这里查看：{{certURL}}",
     "avatar": "{{username}} 的头像",
     "joined": "于 {{date}} 加入",
-    "total-points": "{{count}} 总分",
-    "total-points_plural": "{{count}} 总分",
+    "total-points": "点数： {{count}}",
     "points": "{{date}} 获得 {{count}} 分",
     "points_plural": "{{date}} 获得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
@@ -279,6 +342,7 @@
     "question": "问题",
     "solution-link": "解决方案链接",
     "github-link": "GitHub 链接",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
     "i-completed": "我已经完成这个挑战",
@@ -309,7 +373,8 @@
       "console": "控制台",
       "instructions": "说明",
       "notes": "注意",
-      "preview": "预览"
+      "preview": "预览",
+      "editor": "编辑器"
     },
     "editor-alerts": {
       "tab-trapped": "按下选项卡将插入选项卡字符",
@@ -326,7 +391,6 @@
     "runs-in-vm": "该项目在虚拟机中运行，完成在那里描述的用户故事，获取所有测试并通过它们以完成步骤 1。",
     "completed": "已完成",
     "not-started": "未开始",
-    "hint": "提示",
     "test": "测试",
     "sorry-try-again": "抱歉，你的代码未通过，再试一次。",
     "sorry-keep-trying": "抱歉，你的代码未通过，再试试看。",
@@ -337,7 +401,9 @@
     "season-greetings-fcc": "来自 freeCodeCamp 社区的季节问候 🎉",
     "if-getting-value": "如果你从 freeCodeCamp 中获益良多，可以捐款支持我们的慈善组织的使命。",
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
-    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。"
+    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "支持我们的慈善组织",
@@ -363,9 +429,16 @@
     "your-donation-2": "你的 ${{usd}} 捐款每月将帮助世界各地的人们学习 {{hours}} 小时。",
     "your-donation-3": "你的 ${{usd}} 捐款每年将帮助世界各地的人们学习 {{hours}} 小时。",
     "become-supporter": "成为支持者",
-    "duration": "成为我们的慈善组织的一次性支持者",
-    "duration-2": "成为我们的慈善组织的每月定期支持者",
-    "duration-4": "成为我们的慈善组织的支持者",
+    "progress-modal-cta-1": "现在捐赠以帮助我们的慈善组织为所有人创建免费的认证计算机科学学位课程。",
+    "progress-modal-cta-2": "现在捐赠以为我们的慈善组织的网站赞助 53 小时服务器时间。",
+    "progress-modal-cta-3": "现在捐赠以帮助我们的慈善组织为全世界的学习者将课程翻译成 32 种语言。",
+    "progress-modal-cta-4": "现在捐赠以支持我们的慈善组织开发新的 Python 课程。",
+    "progress-modal-cta-5": "现在捐赠以帮助我们的慈善组织为新的编程工具设计课程。",
+    "progress-modal-cta-6": "现在捐赠以支持我们的慈善组织的开源项目。",
+    "progress-modal-cta-7": "现在捐赠以帮助我们的慈善组织雇用更多老师。",
+    "progress-modal-cta-8": "现在捐赠以帮助我们为不断涌现的工具和编程概念开发新课程。",
+    "progress-modal-cta-9": "现在捐赠以支持我们的面向开发者的数学课程。",
+    "progress-modal-cta-10": "现在捐赠以帮助我们为所有人开发免费的专业编程认证。",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -455,6 +528,8 @@
     "unsubscribed": "你已成功取消订阅",
     "keep-coding": "无论你做什么，都要继续编程！",
     "email-signup": "邮件注册",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson，freeCodeCamp.org 创始人、老师",
     "email-blast": "每周五我会给大约四百万人发送一封邮件，其中包含 5 条关于编程和计算机科学的链接。你也想收到我的邮件吗？",
     "update-email-1": "更新你的邮件地址",
@@ -526,7 +601,13 @@
     "not-authorized": "你无权继续访问",
     "could-not-find": "我们未找到你搜索的信息。请检查并重试。",
     "wrong-updating": "更新你的账号出了点问题。请检查并重试。",
-    "updated-preferences": "我们已更新你的偏好设置。",
+    "updated-about-me": "我们已更新你的个人信息",
+    "updated-socials": "我们已更新你的社交链接",
+    "updated-sound": "我们已更新你的声音设置",
+    "updated-themes": "我们已更新你的主题",
+    "keyboard-shortcut-updated": "我们已更新你的键盘快捷键设置",
+    "subscribe-to-quincy-updated": "我们已更新你对 Quincy 的电子邮件的订阅",
+    "portfolio-item-updated": "我们已更新你的作品集",
     "email-invalid": "邮箱格式无效",
     "email-valid": "你的电子邮件已成功更改，编码愉快！",
     "bad-challengeId": "currentChallengeId 是无效的挑战 ID",
@@ -536,6 +617,7 @@
     "username-used": "用户名已和此账号关联",
     "username-taken": "用户名已和别的账号关联",
     "username-updated": "我们已更新你的用户名为 {{username}}",
+    "privacy-updated": "我们已更新你的隐私设置",
     "could-not-logout": "你的账号未退出，请稍后重试。",
     "email-encoded-wrong": "链接中的邮箱格式不正确",
     "oops-not-right": "有点不对劲。请刷新链接再登录/注册",
@@ -601,9 +683,9 @@
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
-    "verify": "确认此认证 {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "发布日期",
-    "fulltext": "<0>特证明</0> <1>{{user}}</1> <2>已完成 freeCodeCamp.org</2> <3>{{title}}</3> <4>开发者认证课程，约 {{time}} 课时。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
@@ -711,8 +793,10 @@
       "information-security-v7": "信息安全认证",
       "Machine Learning with Python": "机器学习与Python",
       "machine-learning-with-python-v7": "Python 和机器学习认证",
-      "College Algebra with Python": "College Algebra with Python",
-      "college-algebra-with-python-v8": "College Algebra with Python Certification",
+      "College Algebra with Python": "Python 和大学代数",
+      "college-algebra-with-python-v8": "Python 和大学代数认证",
+      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",
       "Legacy Back End": "旧版后端",
@@ -739,7 +823,7 @@
   "forum-help": {
     "browser-info": "**你的浏览器信息：**",
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "**挑战：** {{challengeTitle}}",
+    "challenge": "**挑战：**",
     "challenge-link": "**挑战的链接：**",
     "whats-happening": "**告诉我们发生了什么：**",
     "describe": "在此详细描述你的问题。",

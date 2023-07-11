@@ -30,7 +30,7 @@ dashedName: visualizing-data-with-python
 
 ---
 
-запам'ятовані
+запам’ятовані
 
 ---
 

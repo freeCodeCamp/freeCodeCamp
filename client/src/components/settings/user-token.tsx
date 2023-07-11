@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import { deleteUserToken } from '../../redux/actions';
-import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 
 import './user-token.css';
 
@@ -33,10 +34,10 @@ class UserToken extends Component<UserTokenProps> {
         <FullWidthRow>
           <Panel className='user-panel'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
-            <Spacer />
+            <Spacer size='medium' />
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <ButtonSpacer />
+              <Spacer size='small' />
               <Button
                 block={true}
                 bsSize='lg'
@@ -48,7 +49,7 @@ class UserToken extends Component<UserTokenProps> {
               >
                 {t('user-token.delete')}
               </Button>
-              <Spacer />
+              <Spacer size='medium' />
             </FullWidthRow>
           </Panel>
         </FullWidthRow>

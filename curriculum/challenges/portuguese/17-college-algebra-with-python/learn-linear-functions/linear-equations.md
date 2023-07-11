@@ -1,6 +1,6 @@
 ---
 id: 6331d28ab51aeedd1a2bd650
-title: "Linear Equations"
+title: "Equações lineares"
 challengeType: 15
 videoId: u0bgovPh4ME
 dashedName: linear-equations
@@ -8,19 +8,19 @@ dashedName: linear-equations
 
 # --description--
 
-This video will show you the math behind finding the y-intercept in a linear function, so you can develop the whole equation. Then the video will show you how to graph the whole function. You will also see how to do the whole process with Python code.
+Este vídeo mostrará a matemática por trás do cálculo da interceptação do eixo y em uma função linear, assim você poderá desenvolver a equação inteira. Então, o vídeo mostrará como criar o gráfico de uma função inteira. Você também verá como fazer todo o processo com o código em Python.
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
+Aqui está o <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha os dois últimos vídeos</a> para que você possa ver as fórmulas.
 
 # --question--
 
 ## --assignment--
 
-Add code to your algebra Colab notebook to graph a function from points or from equation input.
+Adicione código ao seu notebook do Colaboratory de álgebra para representar graficamente uma função a partir de pontos ou de entradas na equação.
 
 ## --text--
 
-If you know the slope ("m") and you have one (x,y) coordinate point, which of the following equations could you use to find "b", representing the y-intercept in Python?
+Se você souber o coeficiente angular ("m") e se tiver um ponto de coordenadas (x, y), qual das seguintes equações você poderia usar para encontrar "b", representando o ponto de interceptação do eixo y em Python?
 
 ## --answers--
 

@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "Criação do gráfico de sistemas de equações: extra"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+Este próximo vídeo mostrará em mais detalhes o que você pode fazer com gráficos de sistemas de equações, representação gráfica de desigualdades e sombreamento acima ou abaixo da linha. Você também verá como baixar o gráfico para seu computador ou para seu Google Drive.
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Aqui está o <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste vídeo.</a>
 
 # --question--
 
 ## --text--
 
-If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
+Se você deseja criar um gráfico interativo com um controle deslizante para aumentar e diminuir o zoom, onde aparece a maioria do código do gráfico?
 
 ## --answers--
 
-Within the interactive() function
+Dentro da função interactive()
 
 ---
 
-In the slider
+No controle deslizante
 
 ---
 
-Within the function that the interactive() calls
+Dentro da função que interactive() chama
 
 ---
 
-Before all of the functions
+Antes de todas as funções
 
 ## --video-solution--
 

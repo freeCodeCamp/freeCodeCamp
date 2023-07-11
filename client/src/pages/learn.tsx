@@ -106,7 +106,7 @@ function LearnPage({
               isDonating={isDonating}
             />
             <Map />
-            <Spacer size={2} />
+            <Spacer size='large' />
           </Col>
         </Row>
       </Grid>

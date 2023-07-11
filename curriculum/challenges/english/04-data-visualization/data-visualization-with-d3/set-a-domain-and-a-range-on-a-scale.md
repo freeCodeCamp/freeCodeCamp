@@ -12,7 +12,7 @@ By default, scales use the identity relationship. This means the input value map
 
 Say a dataset has values ranging from 50 to 480. This is the input information for a scale, also known as the <dfn>domain</dfn>.
 
-You want to map those points along the `x` axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
+You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
 
 The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
 

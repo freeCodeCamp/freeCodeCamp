@@ -13,7 +13,7 @@ dashedName: comparisons-with-the-logical-or-operator
 
 يتكون مشغل <dfn>إي من</dfn> من رمزين و هما خطين مستقيمين كالآتي: (`||`). يمكن العثور على هذا الرمز عادة بين مفاتيح Backspace و Enter.
 
-يجب أن يبدو النمط أدناه مألوفًا من الدروس السابقة:
+The pattern below should look familiar from prior waypoints.
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-سوف يعيد `Yes` فقط إذا كان `num` بين `5` و `10` (5 و 10 مشمولين). ويمكن كتابة نفس المنطق كما يلي:
+This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
 
 ```js
 if (num > 10 || num < 5) {

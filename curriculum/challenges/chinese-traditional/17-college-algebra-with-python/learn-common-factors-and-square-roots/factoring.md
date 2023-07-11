@@ -1,6 +1,6 @@
 ---
 id: 6331d251b51aeedd1a2bd648
-title: "Factoring"
+title: "因式分解"
 challengeType: 15
 videoId: Puyp_-ZYA54
 dashedName: factoring
@@ -8,31 +8,31 @@ dashedName: factoring
 
 # --description--
 
-This first video will show you how to find common factors and divide them out - in writing, then in code using loops and modulus operations.
+這第一個視頻將告訴你如何找到公因子並將其除掉——以書面形式，然後在代碼中使用循環和模數運算。
 
-Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+這是<a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>。
 
 # --question--
 
 ## --text--
 
-What does the modulus (`%`) operator do in Python?
+在 Python 中，模數（`%`）運算符有什麼作用？
 
 ## --answers--
 
-returns the percent
+返回百分比
 
 ---
 
-divides
+除法運算
 
 ---
 
-returns the remainder when dividing
+返回除法運算的餘數
 
 ---
 
-creates a space
+創建空格
 
 ## --video-solution--
 

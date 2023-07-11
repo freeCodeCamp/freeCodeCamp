@@ -1,6 +1,6 @@
 ---
 id: 63dbd0375d93712ff177d969
-title: "Business Applications of College Algebra: Extra"
+title: "Applicazioni Economiche dell'Algebra Universitaria: Extra"
 challengeType: 15
 videoId: 9n_ZybF0Phc
 dashedName: business-applications-of-college-algebra-extra
@@ -8,29 +8,29 @@ dashedName: business-applications-of-college-algebra-extra
 
 # --description--
 
-This video is showing you some economics applications, and creating graphs and formulas.
+Questo video mostra alcune applicazioni economiche e la creazione di grafici e formule.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true of supply and demand graphs?
+Quale delle seguenti affermazioni non è vera per i grafici dell'offerta e della domanda?
 
 ## --answers--
 
-The supply curve has a positive slope
+La curva dell'offerta ha una pendenza positiva
 
 ---
 
-The demand curve has a negative slope
+La curva della domanda ha una pendenza negativa
 
 ---
 
-The supply curve and demand curve will intersect
+La curva dell'offerta e la curva della domanda si intersecano
 
 ---
 
-The supply curve and demand curve will always be straight lines
+La curva dell'offerta e la curva della domanda sono sempre rette
 
 ## --video-solution--
 

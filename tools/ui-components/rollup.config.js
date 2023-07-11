@@ -12,17 +12,13 @@ const config = {
   output: [
     {
       file: 'dist/bundle.js',
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: true
     },
     {
-      file: 'dist/bundle.esm.js',
-      format: 'es'
-    },
-    {
-      file: 'dist/bundle.iife.js',
-      format: 'iife',
-      globals: { react: 'React' },
-      name: 'uiComponents'
+      file: 'dist/bundle.es.js',
+      format: 'es',
+      sourcemap: true
     }
   ],
   plugins: [

@@ -1,6 +1,6 @@
 ---
 id: 6331d29fb51aeedd1a2bd653
-title: "Solving Proportions"
+title: "Resolução de proporções"
 challengeType: 15
 videoId: 61A3PNx1hjY
 dashedName: solving-proportions
@@ -8,31 +8,31 @@ dashedName: solving-proportions
 
 # --description--
 
-Now we get to the math content. This video will show you how to set up and solve proportions and write code to solve for variables.
+Passemos, agora, ao conteúdo da matemática. Este vídeo mostrará como configurar e resolver proporções e como escrever código para resolver para variáveis.
 
-Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
+Aqui está o <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a> Se você ainda não fez isso, configure seu notebook do Colaboratory de álgebra do vídeo passado. Em seguida, adicione o código deste vídeo a ele.
 
 # --question--
 
 ## --assignment--
 
-Add the code from the video to the algebra Colab notebook you created in the first step.
+Adicione o código do vídeo ao notebook do Colaboratory de álgebra que você criou no primeiro passo.
 
 ## --text--
 
-In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
+Ao resolver uma proporção, se um numerador for zero, o outro numerador precisa ser zero para que a instrução seja verdadeira?
 
 ## --answers--
 
-Yes
+Sim
 
 ---
 
-No
+Não
 
 ---
 
-Sometimes
+Às vezes
 
 ## --video-solution--
 

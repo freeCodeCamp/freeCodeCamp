@@ -60,43 +60,43 @@ Debes tener al menos cuatro sentencias `break`
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should return the string `Marley`
+`chainToSwitch("bob")` debe devolver una cadena `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should return the string `The Answer`
+`chainToSwitch(42)` debe devolver la cadena `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should return the string `There is no #1`
+`chainToSwitch(1)` debe devolver la cadena `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should return the string `Missed me by this much!`
+`chainToSwitch(99)` debe devolver la cadena `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should return the string `Ate Nine`
+`chainToSwitch(7)` debe devolver la cadena `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should return `""` (empty string)
+`chainToSwitch("John")` debe devolver `""` (cadena vacía)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should return `""` (empty string)
+`chainToSwitch(156)` debe devolver `""` (cadena vacía)
 
 ```js
 assert(chainToSwitch(156) === '');

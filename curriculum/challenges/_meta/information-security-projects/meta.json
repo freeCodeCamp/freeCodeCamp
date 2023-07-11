@@ -2,6 +2,7 @@
   "name": "Information Security Projects",
   "isUpcomingChange": false,
   "dashedName": "information-security-projects",
+  "helpCategory": "JavaScript",
   "order": 2,
   "time": "150 hours",
   "template": "",
@@ -28,4 +29,5 @@
       "5e601c775ac9d0ecd8b94aff",
       "Secure Real Time Multiplayer Game"
     ]
-  ]}
+  ]
+}

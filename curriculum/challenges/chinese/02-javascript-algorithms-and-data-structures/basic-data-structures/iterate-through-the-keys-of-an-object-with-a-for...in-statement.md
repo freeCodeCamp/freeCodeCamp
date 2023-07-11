@@ -8,23 +8,28 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-如果我们想要遍历对象中的所有属性， 只需要使用 JavaScript 中的 <dfn>for...in</dfn> 语句即可。 以遍历 `users` 对象的属性为例：
+有时候你需要遍历一个对象中的所有键。 你可以使用 <dfn>for...in</dfn> 循环来做这件事。 for...in 循环是这样的：
 
-```js
-for (let user in users) {
-  console.log(user);
+```javascript
+const refrigerator = {
+  'milk': 1,
+  'eggs': 12,
+};
+
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]);
 }
 ```
 
-这将记录 `Alan`、`Jeff` 和 `Sarah` - 每个值都在自己的行中。
+以上代码记录 `milk 1` 和 `eggs 12`，每个键值对单独为一行。
 
-在上面的代码中，我们定义了一个 `user` 变量。 可以观察到，这个变量在遍历对象的语句执行过程中会一直被重置并赋予新值，结果就是不同的用户名打印到了 console 中。
+我们在循环头中定义了变量 `food` ，这个变量被设置为每次迭代上对象的每个键值，将每个食物的名称打印到控制台。
 
 **注意：**对象中的键是无序的，这与数组不同。 因此，一个对象中某个属性的位置，或者说它出现的相对顺序，在引用或访问该属性时是不确定的。
 
 # --instructions--
 
-我们已经定义了一个 `countOnline` 函数，它接收一个 users 对象参数。 请在其中使用 <dfn>for...in</dfn> 语句来遍历传入函数的 users 对象中的用户，并返回 `online` 属性为 `true` 的用户数量。 以下是一个传入 `countOnline` 函数的对象示例， 注意每个用户都有 `online` 属性，其属性值为 `true` 或 `false`：
+我们定义了一个函数 `countOnline`，它接收一个参数 `allUsers`。 在这个函数中使用 <dfn>for...in</dfn> 语句来遍历 `allUsers` 对象，并返回 `online` 属性为 `true` 的用户数量。 一个可以传递给 `countOnline` 的对象的例子显示如下。 每个用户都有 `online` 属性，其属性值为 `true` 或 `false`。
 
 ```js
 {
@@ -128,7 +133,7 @@ const users = {
   }
 }
 
-function countOnline(usersObj) {
+function countOnline(allUsers) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +145,13 @@ console.log(countOnline(users));
 # --solutions--
 
 ```js
-function countOnline(usersObj) {
-  let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
-      online++;
+function countOnline(allUsers) {
+  let numOnline = 0;
+  for(const user in allUsers){
+    if(allUsers[user].online) {
+      numOnline++;
     }
   }
-  return online;
+  return numOnline;
 }
 ```

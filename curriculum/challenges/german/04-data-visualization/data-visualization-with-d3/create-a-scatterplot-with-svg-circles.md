@@ -14,7 +14,7 @@ SVG hat ein `circle`-Tag um die Kreisform zu erstellen. Es funktioniert sehr äh
 
 # --instructions--
 
-Verwende `data()`-, `enter()`- und `append()`-Methoden, um `dataset` an neue `circle`-Elemente zu binden, die dem SVG-Canvas hinzugefügt werden.
+Verwende die `data()`-, `enter()`- und `append()`-Methoden, um `dataset` an neue `circle`-Elemente zu binden, die der SVG hinzugefügt werden.
 
 **Hinweis:** Die Kreise werden nicht sichtbar sein, weil wir ihre Attribute noch nicht gesetzt haben. Wir werden das bei der nächsten Aufgabe machen.
 

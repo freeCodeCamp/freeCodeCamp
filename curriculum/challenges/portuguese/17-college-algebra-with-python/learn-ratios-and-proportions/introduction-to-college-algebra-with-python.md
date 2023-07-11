@@ -1,6 +1,6 @@
 ---
 id: 6331caa1b51aeedd1a2bd644
-title: "Introduction to College Algebra with Python"
+title: "Introdução à álgebra universitária com Python"
 challengeType: 15
 videoId: bO3Sn10-XNw
 dashedName: introduction-to-college-algebra-with-python
@@ -8,23 +8,23 @@ dashedName: introduction-to-college-algebra-with-python
 
 # --description--
 
-This first video includes an introduction to the course, how it will work, and how to use Google Colaboratory. Follow along to create your first Colab notebook.
+Este primeiro vídeo inclui uma introdução ao curso, como ele vai funcionar e como usar o Google Colaboratory. Acompanhe-o para criar o seu primeiro notebook do Colaboratory.
 
-**Videos throughout these courses will reference problems from these two textbooks:**
+**Os vídeos deste curso farão referência a problemas destes dois livros:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021), de Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry, de Jay Abramson</a>
 
 # --question--
 
 ## --assignment--
 
-Create an algebra <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">Colab notebook on your google drive</a> so you can follow along with the videos.
+Crie um <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory de álgebra no seu Google Drive</a> para que você possa acompanhar os vídeos.
 
 ## --text--
 
-When adding text in Google Colab, what symbol would you use to create a heading that will appear in the table of contents?
+Ao adicionar texto no Google Colaboratory, qual símbolo você usaria para criar um título que aparecerá no sumário?
 
 ## --answers--
 

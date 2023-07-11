@@ -1,6 +1,6 @@
 ---
 id: 6331d283b51aeedd1a2bd64f
-title: "Linear Functions: Extra"
+title: "Funzioni Lineari: Extra"
 challengeType: 15
 videoId: Emeex5gi5uA
 dashedName: linear-functions-extra
@@ -8,15 +8,15 @@ dashedName: linear-functions-extra
 
 # --description--
 
-This video will give you a deeper look into developing equations from word problems (so then you can write the code to solve or graph those equations). The video will also begin to look at data points as (x,y) coordinates. With this, you will begin to see the connection between Algebra and data science.
+Questo video ti darà una visione più approfondita nello sviluppo di equazioni da problemi testuali (in modo da poter scrivere il codice per risolvere o graficare quelle equazioni). Il video inizierà anche a esaminare i punti di dati come coordinate (x,y). Con questo, inizierai a vedere la connessione tra l'algebra e la scienza dei dati.
 
-Here is the <a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziNeG2IJhbXm88-XK?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziNeG2IJhbXm88-XK?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
 # --question--
 
 ## --text--
 
-Which of the following would you not use when displaying a graph?
+Quale delle seguenti opzioni non useresti per visualizzare un grafico?
 
 ## --answers--
 

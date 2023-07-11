@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Accessibility by Building a Quiz Project
-block: Learn Accessibility by Building a Quiz
-superBlock: Responsive Web Design
+block: learn-accessibility-by-building-a-quiz
+superBlock: 2022/responsive-web-design
 ---
 
 ## Introduction to the Learn Accessibility by Building a Quiz Project

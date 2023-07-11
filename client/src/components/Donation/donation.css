@@ -109,7 +109,7 @@
 
 .donation-form .form-control:focus {
   border-color: #66afe9;
-  outline: 0;
+  outline-color: transparent;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
 }
@@ -197,8 +197,6 @@
 
 .amount-values > label:focus,
 .amount-values > label:active:hover {
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-color: -webkit-focus-ring-color;
   outline-style: auto;
   outline-width: 5px;
   outline-offset: -2px;
@@ -242,12 +240,10 @@ li.disabled > a {
   color: var(--gray-15) !important;
 }
 
-.donate-page-wrapper,
-.donate-page-wrapper b,
+.donate-page-wrapper h2,
 .donate-page-wrapper h3,
-.donate-page-wrapper p,
 [name='payment-method'] {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 
 @media (max-width: 400px) {
@@ -258,28 +254,32 @@ li.disabled > a {
 }
 
 .donation-icon {
-  width: 150px;
-  height: auto;
-  transform: scale(1.5);
-  opacity: 0;
-  animation: donation-icon-animation 1s linear 100ms forwards;
+  height: 150px;
+  width: auto;
 }
 
-@keyframes donation-icon-animation {
-  33% {
-    transform: scale(1.2);
-  }
-  66% {
-    transform: scale(1.25);
+.two-seconds-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+  animation-delay: 2s;
+}
+
+.no-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+}
+
+@keyframes opacity-animation {
+  0% {
+    pointer-events: none;
+    opacity: 0;
   }
   100% {
+    pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
   }
-}
-
-.donation-modal {
-  font-family: 'Lato', sans-serif;
 }
 
 .donation-modal .btn-link:focus {
@@ -292,13 +292,16 @@ li.disabled > a {
   font-weight: 600;
   font-size: 1.2rem;
 }
-.donation-label-modal,
+
 .donation-modal p,
 .donation-modal b {
   text-align: center;
   font-size: 1rem;
   width: 100%;
   display: inline-block;
+}
+.donation-label-modal {
+  font-weight: normal;
 }
 
 .donation-icon-container {
@@ -466,6 +469,11 @@ a.patreon-button:hover {
   display: none;
 }
 
+.donation-modal .btn-link:disabled {
+  opacity: 0;
+  cursor: default;
+}
+
 .donate-btn-group {
   display: flex;
   flex-direction: column;
@@ -489,7 +497,6 @@ a.patreon-button:hover {
 }
 
 .form-status p {
-  font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: #eb1c26;
   text-align: left;

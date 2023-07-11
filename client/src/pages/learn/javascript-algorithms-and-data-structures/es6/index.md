@@ -1,7 +1,7 @@
 ---
 title: Introduction to the ES6 Challenges
-block: ES6
-superBlock: JavaScript Algorithms and Data Structures
+block: es6
+superBlock: javascript-algorithms-and-data-structures
 ---
 
 ## Introduction to the ES6 Challenges

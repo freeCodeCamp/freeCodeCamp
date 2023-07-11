@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`replace-imports should have an output to match the snapshot 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+{
+  "children": [
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 18,
               "line": 3,
               "offset": 68,
             },
-            "start": Object {
+            "start": {
               "column": 3,
               "line": 3,
               "offset": 53,
@@ -23,13 +23,13 @@ Object {
         },
       ],
       "depth": 1,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 18,
           "line": 3,
           "offset": 68,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 3,
           "offset": 51,
@@ -37,16 +37,16 @@ Object {
       },
       "type": "heading",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 12,
               "line": 5,
               "offset": 81,
             },
-            "start": Object {
+            "start": {
               "column": 1,
               "line": 5,
               "offset": 70,
@@ -56,13 +56,13 @@ Object {
           "value": "Paragraph 1",
         },
       ],
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 12,
           "line": 5,
           "offset": 81,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 5,
           "offset": 70,
@@ -70,16 +70,16 @@ Object {
       },
       "type": "paragraph",
     },
-    Object {
+    {
       "lang": "html",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 9,
           "offset": 107,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 7,
           "offset": 83,
@@ -88,16 +88,16 @@ Object {
       "type": "code",
       "value": "code example",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 19,
               "line": 11,
               "offset": 127,
             },
-            "start": Object {
+            "start": {
               "column": 3,
               "line": 11,
               "offset": 111,
@@ -108,13 +108,13 @@ Object {
         },
       ],
       "depth": 1,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 19,
           "line": 11,
           "offset": 127,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 11,
           "offset": 109,
@@ -122,16 +122,16 @@ Object {
       },
       "type": "heading",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 12,
               "line": 13,
               "offset": 140,
             },
-            "start": Object {
+            "start": {
               "column": 1,
               "line": 13,
               "offset": 129,
@@ -141,13 +141,13 @@ Object {
           "value": "Paragraph 0",
         },
       ],
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 12,
           "line": 13,
           "offset": 140,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 13,
           "offset": 129,
@@ -155,16 +155,16 @@ Object {
       },
       "type": "paragraph",
     },
-    Object {
+    {
       "lang": "html",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 17,
           "offset": 168,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 15,
           "offset": 142,
@@ -173,16 +173,16 @@ Object {
       "type": "code",
       "value": "code example 0",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 12,
               "line": 19,
               "offset": 181,
             },
-            "start": Object {
+            "start": {
               "column": 3,
               "line": 19,
               "offset": 172,
@@ -193,13 +193,13 @@ Object {
         },
       ],
       "depth": 1,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 12,
           "line": 19,
           "offset": 181,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 19,
           "offset": 170,
@@ -207,16 +207,16 @@ Object {
       },
       "type": "heading",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 11,
               "line": 21,
               "offset": 193,
             },
-            "start": Object {
+            "start": {
               "column": 1,
               "line": 21,
               "offset": 183,
@@ -226,13 +226,13 @@ Object {
           "value": "First hint",
         },
       ],
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 11,
           "line": 21,
           "offset": 193,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 21,
           "offset": 183,
@@ -240,16 +240,16 @@ Object {
       },
       "type": "paragraph",
     },
-    Object {
+    {
       "lang": "js",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 25,
           "offset": 217,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 23,
           "offset": 195,
@@ -258,16 +258,16 @@ Object {
       "type": "code",
       "value": "// test code",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 18,
               "line": 27,
               "offset": 236,
             },
-            "start": Object {
+            "start": {
               "column": 1,
               "line": 27,
               "offset": 219,
@@ -276,14 +276,14 @@ Object {
           "type": "text",
           "value": "Second hint with ",
         },
-        Object {
-          "position": Object {
-            "end": Object {
+        {
+          "position": {
+            "end": {
               "column": 24,
               "line": 27,
               "offset": 242,
             },
-            "start": Object {
+            "start": {
               "column": 18,
               "line": 27,
               "offset": 236,
@@ -292,14 +292,14 @@ Object {
           "type": "html",
           "value": "<code>",
         },
-        Object {
-          "position": Object {
-            "end": Object {
+        {
+          "position": {
+            "end": {
               "column": 28,
               "line": 27,
               "offset": 246,
             },
-            "start": Object {
+            "start": {
               "column": 24,
               "line": 27,
               "offset": 242,
@@ -308,14 +308,14 @@ Object {
           "type": "text",
           "value": "code",
         },
-        Object {
-          "position": Object {
-            "end": Object {
+        {
+          "position": {
+            "end": {
               "column": 35,
               "line": 27,
               "offset": 253,
             },
-            "start": Object {
+            "start": {
               "column": 28,
               "line": 27,
               "offset": 246,
@@ -325,13 +325,13 @@ Object {
           "value": "</code>",
         },
       ],
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 35,
           "line": 27,
           "offset": 253,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 27,
           "offset": 219,
@@ -339,16 +339,16 @@ Object {
       },
       "type": "paragraph",
     },
-    Object {
+    {
       "lang": "js",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 31,
           "offset": 282,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 29,
           "offset": 255,
@@ -357,16 +357,16 @@ Object {
       "type": "code",
       "value": "// more test code",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 11,
               "line": 34,
               "offset": 295,
             },
-            "start": Object {
+            "start": {
               "column": 3,
               "line": 34,
               "offset": 287,
@@ -377,13 +377,13 @@ Object {
         },
       ],
       "depth": 1,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 11,
           "line": 34,
           "offset": 295,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 34,
           "offset": 285,
@@ -391,16 +391,16 @@ Object {
       },
       "type": "heading",
     },
-    Object {
-      "children": Array [
-        Object {
-          "position": Object {
-            "end": Object {
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
               "column": 21,
               "line": 36,
               "offset": 317,
             },
-            "start": Object {
+            "start": {
               "column": 4,
               "line": 36,
               "offset": 300,
@@ -411,13 +411,13 @@ Object {
         },
       ],
       "depth": 2,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 21,
           "line": 36,
           "offset": 317,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 36,
           "offset": 297,
@@ -425,16 +425,16 @@ Object {
       },
       "type": "heading",
     },
-    Object {
+    {
       "lang": "html",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 43,
           "offset": 364,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 38,
           "offset": 319,
@@ -446,16 +446,16 @@ Object {
   </body>
 </html>",
     },
-    Object {
+    {
       "lang": "css",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 49,
           "offset": 406,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 45,
           "offset": 366,
@@ -466,17 +466,17 @@ Object {
   background: green;
 }",
     },
-    Object {
-      "children": Array [
-        Object {
+    {
+      "children": [
+        {
           "alt": "custom-name",
-          "position": Object {
-            "end": Object {
+          "position": {
+            "end": {
               "column": 17,
               "line": 51,
               "offset": 424,
             },
-            "start": Object {
+            "start": {
               "column": 1,
               "line": 51,
               "offset": 408,
@@ -487,13 +487,13 @@ Object {
           "url": "",
         },
       ],
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 17,
           "line": 51,
           "offset": 424,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 51,
           "offset": 408,
@@ -501,16 +501,16 @@ Object {
       },
       "type": "paragraph",
     },
-    Object {
+    {
       "lang": "js",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 55,
           "offset": 448,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 53,
           "offset": 426,
@@ -519,16 +519,16 @@ Object {
       "type": "code",
       "value": "var x = 'y';",
     },
-    Object {
+    {
       "lang": "js",
       "meta": null,
-      "position": Object {
-        "end": Object {
+      "position": {
+        "end": {
           "column": 4,
           "line": 6,
           "offset": 125,
         },
-        "start": Object {
+        "start": {
           "column": 1,
           "line": 1,
           "offset": 0,
@@ -541,13 +541,13 @@ Object {
 }",
     },
   ],
-  "position": Object {
-    "end": Object {
+  "position": {
+    "end": {
       "column": 1,
       "line": 58,
       "offset": 476,
     },
-    "start": Object {
+    "start": {
       "column": 1,
       "line": 1,
       "offset": 0,

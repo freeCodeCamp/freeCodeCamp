@@ -1,6 +1,6 @@
 ---
 id: 6331d291b51aeedd1a2bd651
-title: "Slope"
+title: "Кутовий коефіцієнт"
 challengeType: 15
 videoId: nURsz7SR5aM
 dashedName: slope
@@ -8,15 +8,15 @@ dashedName: slope
 
 # --description--
 
-This first video will focus on the slope of a line and how to calculate it.
+Перше відео фокусуватиметься на кутовому коефіцієнті прямої та його розрахунку.
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+Ось <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього та наступних відео.</a>
 
 # --question--
 
 ## --text--
 
-If you have already defined these variables, which of the following is the correct slope formula?
+Якщо ви вже визначили ці змінні, що з переліченого є правильною формулою кутового коефіцієнта?
 
 ## --answers--
 

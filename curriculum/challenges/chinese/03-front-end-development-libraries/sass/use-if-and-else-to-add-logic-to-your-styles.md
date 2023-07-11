@@ -18,7 +18,7 @@ Sass 中的 `@if` 指令对于测试特定情况非常有用——它的工作�
 }
 ```
 
-类似 JavaScript，可以在 Sass 中使用 `@else if` 和 `@else` 测试更多条件：
+类似 JavaScript，`@else if` 和 `@else` 指令测试更多条件：
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ Sass 中的 `@if` 指令对于测试特定情况非常有用——它的工作�
 
 # --instructions--
 
-创建一个名为 `border-stroke` 的 mixin，它接受一个参数 `$val`。 mixin 应使用 `@if`，`@else if` 和 `@else` 检查以下条件：
+创建一个名为 `border-stroke` 的 mixin，它接受一个参数 `$val`。 mixin 应使用 `@if`、`@else if` 和 `@else` 指令检查以下条件：
 
 ```scss
 light - 1px solid black
@@ -47,7 +47,7 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-如果 `$val` 不是 `light`、`medium` 或者 `heavy`，border 应该设置为 `none`。
+如果 `$val` 参数值不是 `light`、`medium` 或者 `heavy`，`border` 属性应该被设置为 `none`。
 
 # --hints--
 

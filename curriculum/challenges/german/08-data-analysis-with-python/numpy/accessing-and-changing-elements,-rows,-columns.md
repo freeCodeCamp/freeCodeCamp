@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed4
-title: 'Accessing and Changing Elements, Rows, Columns'
+title: 'Zugriff und Änderung von Elementen, Zeilen, Spalten'
 challengeType: 11
 videoId: v-7Y7koJ_N0
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: accessing-and-changing-elements-rows-columns
 
 ## --text--
 
-What code would change the values in the 3rd column of both of the following Numpy arrays to 20?
+Welcher Code würde die Werte in der 3. Spalte der beiden folgenden Numpy-Arrays auf 20 ändern?
 
 ```py
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])

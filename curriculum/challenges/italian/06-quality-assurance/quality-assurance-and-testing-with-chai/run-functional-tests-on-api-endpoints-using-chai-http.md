@@ -19,6 +19,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   test('?name=John', function (done) {
     chai
       .request(server)
+      .keepOpen()
       .get('/hello?name=John')
       .end(function (err, res) {
         assert.equal(res.status, 200, 'Response status should be 200');
@@ -35,15 +36,19 @@ Il primo `assert.equal` controlla se lo stato è pari a `200`. Il secondo `asser
 
 Inoltre, nota il parametro `done` nella funzione di callback del test. Chiamarlo senza un argomento alla fine di un test è necessario per segnalare che l'operazione asincrona è completa.
 
+Infine, nota il metodo `keepOpen` subito dopo il metodo `request`. Normalmente si eseguono i test dalla riga di comando, o come parte di un processo di integrazione automatica, e potresti lasciare che sia `chai-http` ad avviare e fermare automaticamente il server.
+
+Tuttavia, i test che vengono eseguiti quando si invia il link al progetto richiedono che il server sia in funzione, quindi devi utilizzare il metodo `keepOpen` per impedire a `chai-http` di fermare il server.
+
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, modifica il test `'Test GET /hello with no name'` (`// #1`) per asserire che lo `status` e il `text` della risposta facciano passare i test. Non alterare gli argomenti passati alle asserzioni.
+All'interno di `tests/2_functional-tests.js`, modifica il test `'Test GET /hello with no name'` (`// #1`) per asserire che lo `status` e il `text` della risposta facciano passare i test. Non cambiare gli argomenti passati alle asserzioni.
 
-Non ci dovrebbe essere una URL di query. Senza un nome nella query URL, l'endpoint risponde con `hello Guest`.
+Non ci dovrebbe essere una query URL. Senza un nome nella query URL, l'endpoint risponde con `hello Guest`.
 
 # --hints--
 
-Tutti i test dovrebbero passare
+Tutti i test dovrebbero essere superati
 
 ```js
 (getUserInput) =>
@@ -57,7 +62,7 @@ Tutti i test dovrebbero passare
   );
 ```
 
-Dovresti verificare che `res.status` sia 200
+Dovresti verificare che `res.status` == 200
 
 ```js
 (getUserInput) =>

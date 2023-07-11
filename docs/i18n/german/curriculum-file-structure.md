@@ -83,11 +83,10 @@ Wenn du einen Studienplanblock umbenennen willst, musst du Folgendes tun:
 1. Ändere den Namen des gleichen Blockordners in _allen_ der anderen Sprachverzeichnisse, damit er übereinstimmt. Diese müssen alle mit der englischen Struktur übereinstimmen, sonst wird der Build nicht funktionieren.
 1. Ändere den Namen des Blockordners im `_meta`-Verzeichnis.
 1. Aktualisiere die Eigenschaften `name` und `dashedName` in der `meta.json`-Datei des Blocks.
-1. Aktualisiere die `client/utils/help-category-map.json`, um den neuen Blocknamen als Schlüssel(key) zu verwenden.
-1. Aktualisiere den Blockordner in `client/src/pages/learn/{superBlock}`.
-1. Aktualisiere in der `index.md`-Datei des obigen Ordners den `block`-Wert im Frontmatter.
-1. Aktualisiere in den `client/i18n/locales/{language}/intro.json`-Dateien den Blocknamen auf den neuen Namen für alle Sprachen. In der englischen `intro.json`-Datei aktualisierst du auch den `title`.
-1. Aktualisiere die Hauptdatei `README.md` auf den neuen Namen.
+1. Update the block folder in `client/src/pages/learn/{superBlock}`.
+1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Update the main `README.md` file to the new name.
 
 ### Umbenennen einer Aufgabe
 

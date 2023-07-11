@@ -32,7 +32,7 @@ Sigue <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
 
 **Nota:** Si estás usando Replit, no puedes crear un archivo `.env`. En su lugar, utiliza la pestaña integrada <dfn>SECRETS</dfn> para añadir la variable. <em>No</em> envuelvas los valores con comillas al usar la pestaña <em>SECRETS</em>.
 
-Cuando hayas terminado, conéctate a la base de datos usando la siguiente sintaxis:
+Cuando hayas terminado, conéctate a la base de datos llamando al método `connect` dentro de tu archivo `myApp.js` utilizando la siguiente sintaxis:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

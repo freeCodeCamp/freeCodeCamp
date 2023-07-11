@@ -14,7 +14,7 @@ SVG には円形を作成するための `circle` タグがあります。 こ�
 
 # --instructions--
 
-`data()`、`enter()`、`append()` の各メソッドを使用して、`dataset` を、SVG キャンバスに追加される新しい `circle` 要素にバインドしてください。
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
 
 **注:** まだ属性を設定していないため、円は表示されません。 次のチャレンジでそれを行います。
 

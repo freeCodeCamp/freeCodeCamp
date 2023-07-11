@@ -22,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Checkout client-config
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -33,10 +33,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -80,10 +80,7 @@ jobs:
         include:
           - browsers: electron
             spec: cypress/e2e/default/learn/challenges/projects.ts
-          - browsers: chrome
-            spec: cypress/e2e/default/**/*.{js,ts}
-          - browsers: firefox
-            spec: cypress/e2e/default/**/*.{js,ts}
+
     services:
       mongodb:
         image: mongo:4.4
@@ -102,7 +99,7 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
@@ -113,21 +110,13 @@ jobs:
           tar -xf client-artifact.tar
           rm client-artifact.tar
 
-      - name: Downgrade Firefox
-        run: |
-          curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
-          tar -xjf firefox-101.0.tar.bz2
-          sudo mv firefox /opt/
-          sudo mv /usr/bin/firefox /usr/bin/firefox_old
-          sudo ln -s /opt/firefox/firefox /usr/bin/firefox
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: ${{ matrix.node-version }}
           # cypress-io/github-action caches the store, so we should not cache it
@@ -155,5 +144,4 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-
           spec: ${{ matrix.spec }}

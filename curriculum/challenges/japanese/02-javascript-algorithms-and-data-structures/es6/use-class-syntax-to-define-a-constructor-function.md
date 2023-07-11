@@ -10,9 +10,9 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 では、<dfn>class</dfn> キーワードを使用してオブジェクトを作成する新しい構文が提供されています。
 
-In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+ES5 では、`constructor` 関数を定義して、`new` キーワードを使ってオブジェクトをインスタンス化することによってオブジェクトを作成できました。
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+ES6 では、`class` 宣言が `new` キーワードにより呼び出される `constructor` メソッドを持ちます。 `constructor` メソッドが明示的に定義されない場合は、暗黙的に引数なしで定義されます。
 
 ```js
 // Explicit constructor
@@ -41,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
+`class` キーワードは、新しい関数を宣言していることに注意してください。そこにコンストラクターを追加します。 このコンストラクターは、新しいオブジェクトを作成するために `new` が呼び出されたときに実行されます。
 
-**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+**注:** ES6 のクラス名には、上記の `SpaceShuttle` のように「アッパーキャメルケース」を使用するのが慣例になっています。
 
-The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+`constructor` メソッドは、class を使用して作成されるオブジェクトを生成、初期化するための特別なメソッドです。 詳細については、「JavaScript アルゴリズムとデータ構造」認定講座の「オブジェクト指向プログラミング」のセクションを参照してください。
 
 # --instructions--
 
-Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
+`class` キーワードを使用して `constructor` を記述し、`Vegetable` クラスを作成してください。
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
+`Vegetable` クラスを使用すると、`constructor` に渡されたプロパティ `name` を持つ野菜オブジェクトを作成できるようにします。
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+`Vegetable` は、`constructor` メソッドが定義された `class` である必要があります。
 
 ```js
 assert(
@@ -63,13 +63,13 @@ assert(
 );
 ```
 
-The `class` keyword should be used.
+`class` キーワードを使用する必要があります。
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+`Vegetable` をインスタンス化できる必要があります。
 
 ```js
 assert(() => {
@@ -78,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+`carrot.name` は `carrot` を返す必要があります。
 
 ```js
 assert(carrot.name == 'carrot');

@@ -16,7 +16,7 @@ const donateImageSize = {
 };
 
 const landingImageSize = {
-  marginTop: '60px',
+  marginTop: '30px',
   height: 442,
   width: 750
 };
@@ -27,11 +27,11 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
 
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
-      <figure style={figureSize}>
+      <figure style={figureSize} data-test-label='landing-page-figure'>
         <LazyImage
           alt={t('landing.hero-img-description')}
-          className='landing-page-image'
           src={wideImg}
+          style={figureSize}
         />
         <figcaption className='caption'>
           {t('landing.hero-img-description')}

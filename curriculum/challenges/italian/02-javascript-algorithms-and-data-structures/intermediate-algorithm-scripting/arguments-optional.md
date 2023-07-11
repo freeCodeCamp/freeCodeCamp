@@ -36,30 +36,6 @@ assert.deepEqual(addTogether(2, 3), 5);
 assert.deepEqual(addTogether(23, 30), 53);
 ```
 
-`addTogether(5)(7)` dovrebbe restituire 12.
-
-```js
-assert.deepEqual(addTogether(5)(7), 12);
-```
-
-`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` dovrebbe restituire `undefined`.
-
-```js
-assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
-```
-
-`addTogether(2, "3")` dovrebbe restituire `undefined`.
-
-```js
-assert.isUndefined(addTogether(2, '3'));
-```
-
-`addTogether(2)([3])` dovrebbe restituire `undefined`.
-
-```js
-assert.isUndefined(addTogether(2)([3]));
-```
-
 `addTogether("2", 3)` dovrebbe restituire `undefined`.
 
 ```js
@@ -70,6 +46,36 @@ assert.isUndefined(addTogether('2', 3));
 
 ```js
 assert.isUndefined(addTogether(5, undefined));
+```
+
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` dovrebbe restituire `undefined`.
+
+```js
+assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
+```
+
+`addTogether(5)` dovrebbe restituire una funzione.
+
+```js
+assert.deepEqual(typeof(addTogether(5)), 'function');
+```
+
+`addTogether(5)(7)` dovrebbe restituire 12.
+
+```js
+assert.deepEqual(addTogether(5)(7), 12);
+```
+
+`addTogether(2)([3])` dovrebbe restituire `undefined`.
+
+```js
+assert.isUndefined(addTogether(2)([3]));
+```
+
+`addTogether(2, "3")` dovrebbe restituire `undefined`.
+
+```js
+assert.isUndefined(addTogether(2, '3'));
 ```
 
 # --seed--

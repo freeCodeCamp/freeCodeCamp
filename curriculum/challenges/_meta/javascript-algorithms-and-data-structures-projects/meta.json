@@ -2,6 +2,7 @@
   "name": "JavaScript Algorithms and Data Structures Projects",
   "isUpcomingChange": false,
   "dashedName": "javascript-algorithms-and-data-structures-projects",
+  "helpCategory": "JavaScript",
   "order": 9,
   "time": "50 hours",
   "template": "",
@@ -28,4 +29,5 @@
       "aa2e6f85cab2ab736c9a9b24",
       "Cash Register"
     ]
-  ]}
+  ]
+}

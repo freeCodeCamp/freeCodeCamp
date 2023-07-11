@@ -9,15 +9,15 @@ dashedName: build-a-world-cup-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics.
+Dies ist eines der Projekte, die für den Erhalt der Zertifizierung erforderlich sind. For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `worldcup.sql` file, as well as your `insert_data.sh` and `queries.sh` files, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Wichtig:** Nachdem du alle Projekttests bestanden hast, speichere einen Dump deiner Datenbank in einer `worldcup.sql`-Datei, sowie deine `insert_data.sh`-Datei und `queries.sh`, damit du Schritt 2 abschließen kannst. There will be instructions how to do that within the virtual machine.
 
 # --notes--
 
-Required files: `worldcup.sql`, `insert_data.sh`, `queries.sh`
+Erforderliche Dateien: `worldcup.sql`, `insert_data.sh`, `queries.sh`
 
 # --hints--
 

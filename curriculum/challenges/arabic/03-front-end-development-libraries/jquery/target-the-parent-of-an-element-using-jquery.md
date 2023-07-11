@@ -10,7 +10,7 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 يحتوي كل عنصر HTML على عنصر `parent` الذي `inherits` خصائص.
 
-على سبيل المثال يحتوي `jQuery Playground` على عنصر `h3` يكون الأبُ لعنصر `<div class="container-fluid">`، الذي نفسه يملك الأبُ `body`.
+For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
 
 jQuery لديه وظيفة تسمى `parent()` التي تسمح لك بالوصول إلى الأبُ من أي عنصر واختارته.
 

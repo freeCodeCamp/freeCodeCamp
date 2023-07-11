@@ -163,7 +163,8 @@ function sendCertifiedEmail(
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8
+    isRelationalDatabaseCertV8,
+    isCollegeAlgebraPyCertV8
   },
   send$
 ) {
@@ -179,7 +180,8 @@ function sendCertifiedEmail(
     !isSciCompPyCertV7 ||
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
-    !isRelationalDatabaseCertV8
+    !isRelationalDatabaseCertV8 ||
+    !isCollegeAlgebraPyCertV8
   ) {
     return Observable.just(false);
   }

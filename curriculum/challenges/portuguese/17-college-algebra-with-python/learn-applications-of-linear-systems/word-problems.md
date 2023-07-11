@@ -1,6 +1,6 @@
 ---
 id: 6363d2019078df117ce4c3fe
-title: "Word Problems"
+title: "Problemas com palavras"
 challengeType: 15
 videoId: 3ZM3XMn1QYo
 dashedName: word-problems
@@ -8,43 +8,43 @@ dashedName: word-problems
 
 # --description--
 
-This first video will look at key words that tell you what math operation to use. Then you will see how to apply some of your code to different problems.
+Este primeiro vídeo examinará as palavras-chave que dizem a você qual operação matemática usar. Então, você verá como aplicar parte do seu código para problemas diferentes.
 
-**Here are links to the textbooks you will need to complete the assignments for this video:**
+**Aqui estão os links para os livros que você precisará para concluir as atividades para este vídeo:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021), de Jean-Paul Oliver</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry, de Jay Abramson</a>
 
 # --question--
 
 ## --assignment--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+Resolva os problemas das páginas 63, 75, 85 e 118 do livro "Business Math, a Step-by-Step Handbook (2021)".
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+Resolva os problemas das páginas 304, 308 e 321 do livro "Algebra and Trigonometry".
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+Quais das seguintes palavras-chave indicam subtração?
 
 ## --answers--
 
-plus, more, increase, up
+soma, mais, aumento, para cima
 
 ---
 
-difference, less, decrease, down
+diferença, menos, diminuir, para baixo
 
 ---
 
-of, by, factor, area, times
+de, por, fator, área, vezes
 
 ---
 
-out of, per, divided, quotient
+retirado de, por, dividido, quociente
 
 ## --video-solution--
 

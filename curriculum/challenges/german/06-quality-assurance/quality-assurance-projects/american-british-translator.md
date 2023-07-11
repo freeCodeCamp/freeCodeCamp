@@ -1,6 +1,6 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
-title: American British Translator
+title: Amerikanisch-Britischer Übersetzer
 challengeType: 4
 forumTopicId: 462358
 dashedName: american-british-translator
@@ -8,57 +8,57 @@ dashedName: american-british-translator
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
+Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> aufweist. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Select `Use run command` and click the `Done` button.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 
--   All logic can go into `/components/translator.js`
--   Complete the `/api/translate` route in `/routes/api.js`
--   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
--   See the JavaScript files in `/components` for the different spelling and terms your application should translate
+-   Die gesamte Logik kann in `/components/translator.js` untergebracht werden
+-   Vervollständige die `/api/translate`-Route in `/routes/api.js`
+-   Erstelle alle Unit/Funktionstests in `tests/1_unit-tests.js` und `tests/2_functional-tests.js`
+-   In den JavaScript-Dateien unter `/components` findest du die verschiedenen Schreibweisen und Begriffe, die deine Anwendung übersetzen soll
 -   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Um die Tests in der Konsole auszuführen, verwendest du den Befehl `npm run test`. Um die Replit-Konsole zu öffnen, drückst du Strg+Umschalt+P (Cmd auf einem Mac) und gibst "open shell" ein
 
-Write the following tests in `tests/1_unit-tests.js`:
+Schreibe die folgenden Tests in `tests/1_unit-tests.js`:
 
--   Translate `Mangoes are my favorite fruit.` to British English
--   Translate `I ate yogurt for breakfast.` to British English
--   Translate `We had a party at my friend's condo.` to British English
--   Translate `Can you toss this in the trashcan for me?` to British English
--   Translate `The parking lot was full.` to British English
--   Translate `Like a high tech Rube Goldberg machine.` to British English
--   Translate `To play hooky means to skip class or work.` to British English
--   Translate `No Mr. Bond, I expect you to die.` to British English
--   Translate `Dr. Grosh will see you now.` to British English
--   Translate `Lunch is at 12:15 today.` to British English
--   Translate `We watched the footie match for a while.` to American English
--   Translate `Paracetamol takes up to an hour to work.` to American English
--   Translate `First, caramelise the onions.` to American English
--   Translate `I spent the bank holiday at the funfair.` to American English
--   Translate `I had a bicky then went to the chippy.` to American English
--   Translate `I've just got bits and bobs in my bum bag.` to American English
--   Translate `The car boot sale at Boxted Airfield was called off.` to American English
--   Translate `Have you met Mrs Kalyani?` to American English
--   Translate `Prof Joyner of King's College, London.` to American English
--   Translate `Tea time is usually around 4 or 4.30.` to American English
--   Highlight translation in `Mangoes are my favorite fruit.`
--   Highlight translation in `I ate yogurt for breakfast.`
--   Highlight translation in `We watched the footie match for a while.`
--   Highlight translation in `Paracetamol takes up to an hour to work.`
+-   Übersetze `Mangoes are my favorite fruit.` in Britisches Englisch
+-   Übersetze `I ate yogurt for breakfast.` in Britisches Englisch
+-   Übersetze `We had a party at my friend's condo.` in Britisches Englisch
+-   Übersetze `Can you toss this in the trashcan for me?` in Britisches Englisch
+-   Übersetze `The parking lot was full.` in Britisches Englisch
+-   Übersetze `Like a high tech Rube Goldberg machine.` in Britisches Englisch
+-   Übersetze `To play hooky means to skip class or work.` in Britisches Englisch
+-   Übersetze `No Mr. Bond, I expect you to die.` in Britisches Englisch
+-   Übersetze `Dr. Grosh will see you now.` in Britisches Englisch
+-   Übersetzen Sie `Lunch is at 12:15 today.` in Britisches Englisch
+-   Übersetze `We watched the footie match for a while.` in Amerikanisches Englisch
+-   Übersetze `Paracetamol takes up to an hour to work.` in Amerikanisches Englisch
+-   Übersetze `First, caramelise the onions.` in Amerikanisches Englisch
+-   Übersetze `I spent the bank holiday at the funfair.` in Amerikanisches Englisch
+-   Übersetze `I had a bicky then went to the chippy.` in Amerikanisches Englisch
+-   Übersetze `I've just got bits and bobs in my bum bag.` in Amerikanisches Englisch
+-   Übersetze `The car boot sale at Boxted Airfield was called off.` in Amerikanisches Englisch
+-   Übersetze `Have you met Mrs Kalyani?` in Amerikanisches Englisch
+-   Übersetze `Prof Joyner of King's College, London.` in Amerikanisches Englisch
+-   Übersetze `Tea time is usually around 4 or 4.30.` in Amerikanisches Englisch
+-   Übersetzung hervorheben in `Mangoes are my favorite fruit.`
+-   Übersetzung hervorheben in `I ate yogurt for breakfast.`
+-   Übersetzung hervorheben in `We watched the footie match for a while.`
+-   Übersetzung hervorheben in `Paracetamol takes up to an hour to work.`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
 
 -   Translation with text and locale fields: POST request to `/api/translate`
 -   Translation with text and invalid locale field: POST request to `/api/translate`
@@ -81,7 +81,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
+You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. Das zurückgegebene Objekt sollte den übermittelten `text` und die `translation` mit dem übersetzten Text enthalten.
 
 ```js
 async (getUserInput) => {
@@ -109,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
+Die `/api/translate`-Route sollte die Schreibweise der Zeit im amerikanischen und britischen Englisch berücksichtigen. So wird zum Beispiel "10 thirty" im britischen Englisch als "10.30" und im amerikanischen Englisch als "10:30" geschrieben. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -136,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
+The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. Zum Beispiel wird Doktor Wright im britischen Englisch als "Dr Wright" und im amerikanischen Englisch als "Dr. Wright" abgekürzt. Siehe `/components/american-to-british-titles.js` für die verschiedenen Titel, die deine Anwendung verarbeiten sollte.
 
 ```js
 async (getUserInput) => {
@@ -163,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
+Umschließe alle übersetzten Schreibweisen oder Begriffe mit `<span class="highlight">...</span>`-Tags, damit sie in grüner Farbe erscheinen.
 
 ```js
 async (getUserInput) => {
@@ -191,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
+Wenn eines oder mehrere der erforderlichen Felder fehlen, wird `{ error: 'Required field(s) missing' }` zurückgegeben.
 
 ```js
 async (getUserInput) => {
@@ -212,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-If `text` is empty, return `{ error: 'No text to translate' }`
+Wenn `text` leer ist, gib `{ error: 'No text to translate' }` zurück
 
 ```js
 async (getUserInput) => {
@@ -233,7 +233,7 @@ async (getUserInput) => {
 };
 ```
 
-If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
+Wenn `locale` mit keiner der beiden angegebenen Sprachumgebungen übereinstimmt, wird `{ error: 'Invalid value for locale field' }` zurückgegeben.
 
 ```js
 async (getUserInput) => {
@@ -255,7 +255,7 @@ async (getUserInput) => {
 };
 ```
 
-If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
+Wenn `text` keine Übersetzung erfordert, wird `"Everything looks good to me!"` als `translation`-Wert zurückgegeben.
 
 ```js
 async (getUserInput) => {

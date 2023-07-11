@@ -2,6 +2,7 @@
   "name": "Redux",
   "isUpcomingChange": false,
   "dashedName": "redux",
+  "helpCategory": "JavaScript",
   "order": 4,
   "time": "5 hours",
   "template": "",
@@ -83,4 +84,5 @@
       "5a24c314108439a4d403615b",
       "Copy an Object with Object.assign"
     ]
-  ]}
+  ]
+}

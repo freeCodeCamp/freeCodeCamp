@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-رَسَم البيانات كلا من المخطوطان, أعمدة وانسياب (النِّقَاط المبعثرة), مباشرا على لوحة SVG. ولكن إذا كان ارتفاع العمود أو إحدى نِقَاط البيانات أكبر من ارتفاع أو عرض مساحة SVG، سيقع خارج نطاق منطقة SVG.
+The bar and scatter plot charts both plotted data directly onto the SVG. ولكن إذا كان ارتفاع العمود أو إحدى نِقَاط البيانات أكبر من ارتفاع أو عرض مساحة SVG، سيقع خارج نطاق منطقة SVG.
 
-في D3، هناك مقاييس (scales) للمساعدة في تخطيط البيانات. تكون `scales` وظائف (functions) تخبر البرنامَج كيفية ملأ مجموعة من نِقَاط البيانات الخام على عدد البكسلس (pixels) في لوحة SVG.
+في D3، هناك مقاييس (scales) للمساعدة في تخطيط البيانات. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG.
 
-على سبيل المثال، قل أن لديك لوحة SVG بحجم 100x500، وتريد رسم الناتج المحلي الإجمالي (Gross Domestic Product) لعدد من الدول. ومجموعة الأعداد ستكون في حدود المليار أو تريليون دولار. يمكنك توفير D3 من مقياس (scale) لمعرفة كيف توضع قيم الناتج المحلي الإجمالي (GDP) الكبيرة في تلك المساحة 100x500.
+For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. ومجموعة الأعداد ستكون في حدود المليار أو تريليون دولار. يمكنك توفير D3 من مقياس (scale) لمعرفة كيف توضع قيم الناتج المحلي الإجمالي (GDP) الكبيرة في تلك المساحة 100x500.
 
-من غير المحتمل أن ترسم البيانات الخام كما هي. قبل الرسم، عيّن المقياس لكامل مجموعة البيانات. بحيث أن قيم `x` و `y` تتناسب مع عرض وطول اللوحة.
+من غير المحتمل أن ترسم البيانات الخام كما هي. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
 
 ولدى D3 عدة أنواع من المقاييس. للحصول على مقياس خطي (linear scale) (يستخدم عادة مع البيانات الكمية (quantitative data))، هناك طريقة في D3 تسمى `scaleLinear()`:
 

@@ -1,6 +1,6 @@
 ---
 id: 6331d28ab51aeedd1a2bd650
-title: "Linear Equations"
+title: "线性方程"
 challengeType: 15
 videoId: u0bgovPh4ME
 dashedName: linear-equations
@@ -8,19 +8,19 @@ dashedName: linear-equations
 
 # --description--
 
-This video will show you the math behind finding the y-intercept in a linear function, so you can develop the whole equation. Then the video will show you how to graph the whole function. You will also see how to do the whole process with Python code.
+这个视频将向你展示在线性函数中求解 y 截距背后的数学知识，这样你就可以展开整个方程式。 然后，视频将告诉你如何绘制整个函数的图像。 你还将看到如何用 Python 代码完成整个过程。
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
+这是<a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和上两个视频配套的 Colab 笔记本</a>，这样你就可以看到公式。
 
 # --question--
 
-## --assignment--
+## --任务--
 
-Add code to your algebra Colab notebook to graph a function from points or from equation input.
+在你的代数 Colab 笔记本上添加代码，通过点或通过方程输入绘制函数图像。
 
 ## --text--
 
-If you know the slope ("m") and you have one (x,y) coordinate point, which of the following equations could you use to find "b", representing the y-intercept in Python?
+如果你知道斜率（“m”），你有一个 (x,y) 坐标点，你可以用以下哪个方程来求 “b”，在 Python 中代表 y 截距？
 
 ## --answers--
 

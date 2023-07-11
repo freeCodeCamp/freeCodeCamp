@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import config from '../../../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -27,6 +27,8 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const foundationalCSharpBase = '/learn/foundational-c-sharp-with-microsoft';
+const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -40,12 +42,11 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap = [
+const legacyCertMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
     certSlug: 'legacy-front-end',
-    flag: 'isFrontEndCert',
     projects: [
       {
         id: 'bd7158d8c242eddfaeb5bd13',
@@ -113,7 +114,6 @@ const certMap = [
     id: '660add10cb82ac38a17513be',
     title: 'Legacy Back End',
     certSlug: 'legacy-back-end',
-    flag: 'isBackEndCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
@@ -177,19 +177,11 @@ const certMap = [
       }
     ]
   },
-  {
-    id: '561add10cb82ac38a17213bd',
-    title: 'Legacy Full Stack',
-    certSlug: 'full-stack',
-    flag: 'isFullStackCert'
-    // Requirements are other certs and is
-    // handled elsewhere
-  },
+
   {
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
     certSlug: 'legacy-data-visualization',
-    flag: 'isDataVisCert',
     projects: [
       {
         id: 'bd7157d8c242eddfaeb5bd13',
@@ -258,7 +250,6 @@ const certMap = [
     title: 'Legacy Information Security and Quality Assurance',
     // Keep this as information-security-and-quality-assurance
     certSlug: 'information-security-and-quality-assurance',
-    flag: 'isInfosecQaCert',
     projects: [
       // Keep this as information-security-and-quality-assurance
       {
@@ -292,12 +283,21 @@ const certMap = [
         certSlug: 'information-security-and-quality-assurance'
       }
     ]
-  },
+  }
+] as const;
+const legacyFullStack = {
+  id: '561add10cb82ac38a17213bd',
+  title: 'Legacy Full Stack',
+  certSlug: 'full-stack',
+  projects: null
+  // Requirements are other certs and is
+  // handled elsewhere
+} as const;
+const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
     certSlug: SuperBlocks.RespWebDesign,
-    flag: 'isRespWebDesignCert',
     projects: [
       {
         id: '587d78af367417b2b2512b03',
@@ -333,12 +333,10 @@ const certMap = [
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
     certSlug: SuperBlocks.JsAlgoDataStruct,
-    flag: 'isJsAlgoDataStructCert',
     projects: [
       {
         id: 'aaa48de84e1ecc7c742e1124',
@@ -376,7 +374,6 @@ const certMap = [
     id: '561acd10cb82ac38a17513bc',
     title: 'Front End Development Libraries',
     certSlug: SuperBlocks.FrontEndDevLibs,
-    flag: 'isFrontEndLibsCert',
     projects: [
       {
         id: 'bd7158d8c442eddfaeb5bd13',
@@ -414,7 +411,6 @@ const certMap = [
     id: '5a553ca864b52e1d8bceea14',
     title: 'Data Visualization',
     certSlug: SuperBlocks.DataVis,
-    flag: 'is2018DataVisCert',
     projects: [
       {
         id: 'bd7168d8c242eddfaeb5bd13',
@@ -452,7 +448,6 @@ const certMap = [
     id: '606243f50267e718b1e755f4',
     title: 'Relational Database',
     certSlug: 'relational-database-v8',
-    flag: 'isRelationalDatabaseCertV8',
     projects: [
       {
         id: '5f1a4ef5d5d6b5ab580fc6ae',
@@ -490,7 +485,6 @@ const certMap = [
     id: '561add10cb82ac38a17523bc',
     title: 'Back End Development and APIs',
     certSlug: SuperBlocks.BackEndDevApis,
-    flag: 'isApisMicroservicesCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
@@ -528,7 +522,6 @@ const certMap = [
     id: '5e611829481575a52dc59c0e',
     title: 'Quality Assurance',
     certSlug: 'quality-assurance-v7',
-    flag: 'isQaCertV7',
     projects: [
       {
         id: '587d8249367417b2b2512c41',
@@ -566,7 +559,6 @@ const certMap = [
     id: '5e44431b903586ffb414c951',
     title: 'Scientific Computing with Python',
     certSlug: 'scientific-computing-with-python-v7',
-    flag: 'isSciCompPyCertV7',
     projects: [
       {
         id: '5e44412c903586ffb414c94c',
@@ -604,7 +596,6 @@ const certMap = [
     id: '5e46fc95ac417301a38fb934',
     title: 'Data Analysis with Python',
     certSlug: 'data-analysis-with-python-v7',
-    flag: 'isDataAnalysisPyCertV7',
     projects: [
       {
         id: '5e46f7e5ac417301a38fb928',
@@ -643,7 +634,6 @@ const certMap = [
     id: '5e6021435ac9d0ecd8b94b00',
     title: 'Information Security',
     certSlug: 'information-security-v7',
-    flag: 'isInfosecCertV7',
     projects: [
       {
         id: '587d824a367417b2b2512c44',
@@ -681,7 +671,6 @@ const certMap = [
     id: '5e46fc95ac417301a38fb935',
     title: 'Machine Learning with Python',
     certSlug: 'machine-learning-with-python-v7',
-    flag: 'isMachineLearningPyCertV7',
     projects: [
       {
         id: '5e46f8d6ac417301a38fb92d',
@@ -719,37 +708,65 @@ const certMap = [
     id: '61531b20cc9dfa2741a5b800',
     title: 'College Algebra with Python',
     certSlug: 'college-algebra-with-python-v8',
-    flag: 'isCollegeAlgebraPyCertV8',
     projects: [
       {
         id: '63d83ff239c73468b059cd3f',
-        title: 'Multi-Function Calculator',
-        link: `${collegeAlgebraPyBase}/multi-function-calculator`,
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d83ffd39c73468b059cd40',
-        title: 'Graphing Calculator',
-        link: `${collegeAlgebraPyBase}/graphing-calculator`,
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401039c73468b059cd41',
-        title: 'Three Math Games',
-        link: `${collegeAlgebraPyBase}/three-math-games`,
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8401e39c73468b059cd42',
-        title: 'Financial Calculator',
-        link: `${collegeAlgebraPyBase}/financial-calculator`,
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
         certSlug: 'college-algebra-with-python-v8'
       },
       {
         id: '63d8402e39c73468b059cd43',
-        title: 'Data Graph Explorer',
-        link: `${collegeAlgebraPyBase}/data-graph-explorer`,
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
         certSlug: 'college-algebra-with-python-v8'
+      }
+    ]
+  }
+] as const;
+
+const upcomingCertMap = [
+  {
+    id: '647e3159823e0ef219c7359b',
+    title: 'Foundational C# with Microsoft',
+    certSlug: 'foundational-c-sharp-with-microsoft',
+    projects: [
+      {
+        id: '647e22d18acb466c97ccbef8',
+        title: 'Foundational C# with Microsoft Certification Exam',
+        link: `${foundationalCSharpBase}/foundational-c-sharp-with-microsoft-certification-exam`,
+        certSlug: 'foundational-c-sharp-with-microsoft'
+      }
+    ]
+  },
+  {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Example Certification',
+    certSlug: 'example-certification-v8',
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certification Exam',
+        link: `${exampleCertBase}/example-certification-exam`,
+        certSlug: 'example-certification-v8'
       }
     ]
   }
@@ -759,29 +776,55 @@ function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
 }
 
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
+}
+
 function getJavaScriptAlgoPath(project: string) {
   return showUpcomingChanges
     ? `${jsAlgo22Base}/${project}-project/${project}`
     : `${jsAlgoBase}/${project}`;
 }
 
-const titles = certMap.map(({ title }) => title);
-type Title = (typeof titles)[number];
-const legacyProjectMap: Partial<Record<Title, unknown>> = {};
-const projectMap: Partial<Record<Title, unknown>> = {};
+const certMapWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
+  : ([...legacyCertMap, ...certMap] as const);
 
-certMap.forEach(cert => {
-  // Filter out Legacy Full Stack so inputs for project
-  // URLs aren't rendered on the settings page
-  if (cert.title !== 'Legacy Full Stack') {
-    if (cert.title.startsWith('Legacy')) {
-      legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of certs from settings page
-      // should do suggestion on line 33 and use front matter to hide it
-    } else if (!cert.title.startsWith('College Algebra')) {
-      projectMap[cert.title] = cert.projects;
-    }
-  }
-});
+const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
 
-export { certMap, legacyProjectMap, projectMap };
+export type ProjectMap = Record<
+  (typeof certMap)[number]['title'],
+  (typeof certMap)[number]['projects']
+>;
+
+const projectMap = certMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as ProjectMap);
+
+export type LegacyProjectMap = Record<
+  (typeof legacyCertMap)[number]['title'],
+  (typeof legacyCertMap)[number]['projects']
+>;
+
+const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as LegacyProjectMap);
+
+const fullProjectMap = {
+  ...legacyProjectMap,
+  ...projectMap
+};
+
+export {
+  certMapWithoutFullStack,
+  fullCertMap,
+  fullProjectMap,
+  legacyProjectMap,
+  projectMap
+};

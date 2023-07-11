@@ -25,13 +25,13 @@ Write a function that takes an input array of words. The function should return 
 
 # --hints--
 
-`findLongestChain` should be a function.
+`findLongestChain` sollte eine Funktion sein.
 
 ```js
 assert(typeof findLongestChain == 'function');
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return an array.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return `["involves", "starting", "game", "each"]`.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` sollte `["involves", "starting", "game", "each"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` should return `["braviary", "yamask", "kangaskhan"]`
+`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` sollte `["braviary", "yamask", "kangaskhan"]` zurückgeben
 
 ```js
 assert.deepEqual(
@@ -84,7 +84,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` should return `["poliwrath", "harp", "poochyena", "archana"]`.
+`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` sollte `["poliwrath", "harp", "poochyena", "archana"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` should return `["scolipede", "elephant", "tigers", "sealeo"]`.
+`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` sollte `["scolipede", "elephant", "tigers", "sealeo"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -116,7 +116,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` should return `["machamp", "petilil", "lumineon", "nosepass"]`.
+`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` sollte `["machamp", "petilil", "lumineon", "nosepass"]` zurückgeben.
 
 ```js
 assert.deepEqual(

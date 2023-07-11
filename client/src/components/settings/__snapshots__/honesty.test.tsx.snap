@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = `
+<section
+  id="honesty-policy"
+>
+  <SectionHeader>
+    settings.headings.honesty
+  </SectionHeader>
+  <FullWidthRow>
+    <Uncontrolled(Panel)
+      className="honesty-panel"
+    >
+      <p>
+        settings.honesty.p1
+      </p>
+      <p>
+        settings.honesty.p2
+      </p>
+      <p>
+        settings.honesty.p3
+      </p>
+      <p>
+        settings.honesty.p4
+      </p>
+      <p>
+        settings.honesty.p5
+      </p>
+      <p>
+        settings.honesty.p6
+      </p>
+      <p>
+        <Trans
+          i18nKey="settings.honesty.p7"
+        >
+          <a
+            href="mailto:support@freecodecamp.org"
+          >
+            {
+              "email": "support@freecodecamp.org",
+            }
+          </a>
+        </Trans>
+      </p>
+    </Uncontrolled(Panel)>
+    <Button
+      active={false}
+      aria-disabled={false}
+      block={true}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      buttons.agree-honesty
+    </Button>
+  </FullWidthRow>
+</section>
+`;
+
+exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted 1`] = `
+<section
+  id="honesty-policy"
+>
+  <SectionHeader>
+    settings.headings.honesty
+  </SectionHeader>
+  <FullWidthRow>
+    <Uncontrolled(Panel)
+      className="honesty-panel"
+    >
+      <p>
+        settings.honesty.p1
+      </p>
+      <p>
+        settings.honesty.p2
+      </p>
+      <p>
+        settings.honesty.p3
+      </p>
+      <p>
+        settings.honesty.p4
+      </p>
+      <p>
+        settings.honesty.p5
+      </p>
+      <p>
+        settings.honesty.p6
+      </p>
+      <p>
+        <Trans
+          i18nKey="settings.honesty.p7"
+        >
+          <a
+            href="mailto:support@freecodecamp.org"
+          >
+            {
+              "email": "support@freecodecamp.org",
+            }
+          </a>
+        </Trans>
+      </p>
+    </Uncontrolled(Panel)>
+    <Button
+      active={false}
+      aria-disabled={true}
+      block={true}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      buttons.accepted-honesty
+    </Button>
+  </FullWidthRow>
+</section>
+`;

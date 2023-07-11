@@ -4,17 +4,17 @@
 
 ## 拡張機能を公開する
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
+新たな GitHub リリースが公開されると、自動的に GitHub Action が拡張機能を Visual Studio Marketplace へ公開します。
 
-1. Package a new version of the extension:
+1. 新しいバージョンの拡張機能をパッケージ化します。
 
 ```bash
 npm run pack -- <tag_type>
 ```
 
-Where `<tag_type>` is one of: `major`, `minor`, `patch`.
+`<tag_type>` は `major`, `minor`, `patch` のいずれかになります。
 
-2. Push the new version to `main`:
+2. `main` へ新しいバージョンをプッシュします。
 
 ```bash
 git commit -am "<tag_type>(<version>): <description>"

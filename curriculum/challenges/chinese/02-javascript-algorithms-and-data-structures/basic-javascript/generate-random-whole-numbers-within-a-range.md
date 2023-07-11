@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-我们之前生成的随机数是在 0 到某个数之间，现在我们要生成的随机数是在两个指定的数之间。
+你可以在从零到给定数字的范围内生成随机整数。 你也可以为此范围选择一个不同的较小数字。
 
-我们需要定义一个最小值 `min` 和一个最大值 `max`。
+你将把最小的数字定义为 `min`，把最大的数字定义为 `max`。
 
-下面是我们将要使用的方法， 仔细看看并尝试理解这行代码到底在干嘛：
+这个公式将生成一个从 `min` 到 `max` 的随机整数。 仔细看看并尝试理解这行代码到底在干嘛：
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

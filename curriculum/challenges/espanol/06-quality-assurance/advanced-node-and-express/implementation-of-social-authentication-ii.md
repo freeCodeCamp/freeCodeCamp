@@ -12,7 +12,7 @@ La última parte de configurar tu autentificación de GitHub es crear la propia 
 
 Para configurar la estrategia de GitHub, debes decirle a Passport que utilice una instancia de `GitHubStrategy`, que acepta 2 argumentos: un objeto (que contiene `clientID`, `clientSecret`, y `callbackURL`) y una función a ser llamada cuando un usuario es autentificado con éxito, que determinará si el usuario es nuevo y qué campos guardar inicialmente en el objeto de base de datos del usuario. Esto es común en muchas estrategias, pero algunas pueden requerir más información como se indica en el README de GitHub de esa estrategia específica. Por ejemplo, Google requiere un *ámbito* también que determina qué tipo de información está pidiendo que se le devuelva y pide al usuario que apruebe dicho acceso.
 
-The current strategy you are implementing authenticates users using a GitHub account and OAuth 2.0 tokens. El ID de cliente y el secreto obtenidos al crear una aplicación se proporcionan como opciones al crear la estrategia. La estrategia también requiere un callback `verify`, que recibe el token de acceso y el token de actualización opcional, así como `profile` que contiene el perfil de GitHub del usuario autenticado. El callback `verify` debe llamar a `cb` que proporciona un usuario para completar la autenticación.
+La estrategia que estás implementando actualmente autentica usuarios mediante una cuenta de GitHub y tokens de OAuth 2.0. El ID de cliente y el secreto obtenidos al crear una aplicación se proporcionan como opciones al crear la estrategia. La estrategia también requiere un callback `verify`, que recibe el token de acceso y el token de actualización opcional, así como `profile` que contiene el perfil de GitHub del usuario autenticado. El callback `verify` debe llamar a `cb` que proporciona un usuario para completar la autenticación.
 
 Así es como debe verse tu nueva estrategia en este punto:
 
@@ -31,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 ¡Tu autenticación aún no será exitosa, y en realidad arrojará un error sin la lógica de la base de datos y el callback, pero debería registrar tu perfil de GitHub en tu consola si lo intentas!
 
-Envía tu página cuando creas que la tienes correcta. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-ii-4" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando creas que la tienes correcta. Si tienes dudas o se producen errores, <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-ii-4" target="_blank" rel="noopener noreferrer nofollow">aquí puedes comprobar el proyecto completado hasta este punto</a>.
 
 # --hints--
 

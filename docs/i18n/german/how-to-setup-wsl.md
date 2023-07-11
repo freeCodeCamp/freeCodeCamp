@@ -1,6 +1,6 @@
 # freeCodeCamp auf dem Windows Subsystem für Linux (WSL) einrichten
 
-> [!HINWEIS] Bevor Sie diesen Anweisungen folgen, stellen Sie sicher, dass Ihr System die Anforderungen erfüllt
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements.
 > 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 oder höher) - verfügbar für alle Distributionen einschließlich Windows 10 Home.
 > 
@@ -18,7 +18,7 @@ Folge den Anweisungen in der [offiziellen Dokumentation](https://docs.microsoft.
 
    > [!NOTE]
    > 
-   > Du kannst zwar auch andere, nicht auf Debian basierende Distributionen verwenden, aber die haben alle ihre eigenen Tücken und werden in diesem Leitfaden nicht behandelt.
+   > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
 
 2. Abhängigkeiten (Dependencies) für das Betriebssystem aktualisieren
 
@@ -44,13 +44,13 @@ git version 2.25.1
 
 ## Installation eines Code-Editors
 
-Wir empfehlen wärmstens, [Visual Studio Code](https://code.visualstudio.com) auf Windows 10 zu installieren. Es bietet eine hervorragende Unterstützung für WSL und installiert automatisch alle notwendigen Erweiterungen auf deiner WSL-Distribution.
+Wir empfehlen wärmstens, [Visual Studio Code](https://code.visualstudio.com) auf Windows 10 zu installieren. It has great support for WSL and automatically installs all the necessary extensions on your WSL distribution.
 
 Im Wesentlichen bearbeitest und speicherst du deinen Code auf Ubuntu-18.04, während VS Code auf Windows installiert ist.
 
-Wenn du [IntelliJ Idea](https://www.jetbrains.com/idea/) verwendest, musst du eventuell deinen Node-Interpreter und Npm-Paketmanager auf den Stand deiner WSL-Distribution bringen.
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and npm package manager to what is installed on your WSL distro.
 
-Du kannst diese Einstellungen überprüfen, indem du zu Einstellungen > Sprachen & Frameworks > Node.js und NPM gehst.
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and npm.
 
 ## Docker Desktop installieren
 
@@ -72,7 +72,7 @@ Sobald du Docker Desktop für die Zusammenarbeit mit WSL2 konfiguriert hast, bef
 
 1. Starte ein neues Ubuntu-18.04 Terminal
 
-2. Rufe `MongoDB 4.0.x` von dockerhub ab
+2. Pull `MongoDB 4.0.x` from Docker Hub
 
    ```console
    docker pull mongo:4.0
@@ -117,17 +117,17 @@ Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 npm install -g pnpm
 ```
 
-## FreeCodeCamp lokal einrichten
+## Set up freeCodeCamp Locally
 
-Nachdem du nun die Voraussetzungen erfüllt hast, folge [unserem Leitfaden zur lokalen Einrichtung](how-to-setup-freecodecamp-locally.md), um freeCodeCamp zu klonen, zu installieren und lokal auf deinem Rechner einzurichten.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
-> Bitte beachte, dass die Einrichtung der Cypress-Tests (und die damit verbundenen Anforderungen an die Benutzeroberfläche) derzeit noch nicht abgeschlossen ist. Du solltest immer noch in der Lage sein, an den meisten Teilen der Codebasis zu arbeiten.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. Du solltest immer noch in der Lage sein, an den meisten Teilen der Codebasis zu arbeiten.
 
 ## Nützliche Links
 
-- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Staff Developer bei freeCodeCamp.org)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Häufig gestellte Fragen zu:
   - [Windows Subsystem für Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop für Windows](https://docs.docker.com/docker-for-windows/faqs)

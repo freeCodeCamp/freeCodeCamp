@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/superblocks';
 import APIIcon from './api';
 import D3Icon from './d3';
 import DatabaseIcon from './database';
@@ -13,7 +13,9 @@ import PythonIcon from './python';
 import ResponsiveDesign from './responsive-design';
 import Shield from './shield';
 import VikingHelmet from './viking-helmet';
+import Graduation from './graduation';
 import CollegeAlgebra from './college-algebra';
+import CSharpLogo from './c-sharp-logo';
 
 const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
@@ -31,7 +33,10 @@ const iconMap = {
   [SuperBlocks.MachineLearningPy]: TensorflowIcon,
   [SuperBlocks.CodingInterviewPrep]: Algorithm,
   [SuperBlocks.TheOdinProject]: VikingHelmet,
-  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra
+  [SuperBlocks.ProjectEuler]: Graduation,
+  [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
+  [SuperBlocks.FoundationalCSharp]: CSharpLogo,
+  [SuperBlocks.ExampleCertification]: ResponsiveDesign
 };
 
 const generateIconComponent = (

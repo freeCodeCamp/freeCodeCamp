@@ -10,7 +10,7 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 すべての HTML 要素には `parent` (親) 要素があり、そこからプロパティを `inherits` (継承) します。
 
-たとえば、`jQuery Playground` の `h3` 要素は `<div class="container-fluid">` という親要素を持ち、それ自身は親の `body` を持ちます。
+For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
 
 jQuery には `parent()` という関数があり、選択した要素の親要素にアクセスすることができます。
 

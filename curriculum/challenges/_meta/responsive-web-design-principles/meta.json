@@ -2,6 +2,7 @@
   "name": "Responsive Web Design Principles",
   "isUpcomingChange": false,
   "dashedName": "responsive-web-design-principles",
+  "helpCategory": "HTML-CSS",
   "order": 4,
   "time": "1 hour",
   "template": "",
@@ -24,4 +25,5 @@
       "587d78b1367417b2b2512b0c",
       "Make Typography Responsive"
     ]
-  ]}
+  ]
+}

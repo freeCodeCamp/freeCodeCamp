@@ -83,11 +83,10 @@ Also, you will likely want to rename the certificate and the `{superBlock}-proje
 1. 他の言語ディレクトリ _すべて_ において、同じブロックフォルダの名前を一致させます。 これらすべてが英語の構造と同じでないと、ビルドエラーになります。
 1. `_meta` ディレクトリ内のブロックフォルダ名を変更します。
 1. ブロックの `meta.json` ファイルの `name` と `dashedName` プロパティを更新します。
-1. `client/utils/help-category-map.json` を更新して、新しいブロック名をキーとして使用します。
-1. `client/src/pages/learn/{superBlock}` のブロックフォルダを更新します。
-1. 上記フォルダの `index.md` ファイルで、フロントマターの `ブロック` の値を更新します。
-1. `client/i18n/locales/{language}/intro.json` ファイルで、全言語のブロック名を更新します。英語の `intro.json` ファイルでは、`title` も更新します。
-1. メイン `README.md` ファイルを新しい名前に更新します。
+1. Update the block folder in `client/src/pages/learn/{superBlock}`.
+1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Update the main `README.md` file to the new name.
 
 ### チャレンジ名を変更する
 

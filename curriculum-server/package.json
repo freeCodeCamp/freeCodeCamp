@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "7"
+    "pnpm": "8"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "source-curriculum": "ts-node source-curriculum.ts"
   },
   "dependencies": {
-    "json-server": "0.17.2"
+    "json-server": "0.17.3"
   },
   "devDependencies": {
     "ts-node": "10.9.1",

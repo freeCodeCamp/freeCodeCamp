@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-Bei den Balken- und Punktdiagrammen werden die Daten direkt in SVG-Canvas dargestellt. Wäre jedoch die Höhe eines Balkens oder eines Datenpunkts größer als die SVG-Höhen- oder Breitenwerte, würde er außerhalb des SVG-Bereichs liegen.
+Bei den Balken- und Streu-Diagrammen werden die Daten direkt in das SVG eingezeichnet. Wäre jedoch die Höhe eines Balkens oder eines Datenpunkts größer als die SVG-Höhen- oder Breitenwerte, würde er außerhalb des SVG-Bereichs liegen.
 
-In D3 gibt es Skalen, die bei der Darstellung von Daten helfen. `scales` sind Funktionen, die dem Programm mitteilen, wie ein Satz von unbearbeiteten Datenpunkten den Pixeln der SVG-Canvas zugeordnet werden soll.
+In D3 gibt es Skalen, die bei der Darstellung von Daten helfen. `scales` sind Funktionen, die dem Programm mitteilen, wie eine Menge von unbearbeiteten Datenpunkten den SVG-Pixeln zugeordnet werden soll.
 
-Nehmen wir an, du hast eine SVG-Canvas der Größe 100x500 und möchtest das Bruttoinlandsprodukt (BIP) für eine Reihe von Ländern darstellen. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. Du übergibst D3 einen Skalierungstyp, mit welchem du ihm mitteilst, wie die hohen BIP-Werte in dem 100x500 großen Bereich zu platzieren sind.
+Nehmen wir beispielsweise an, du hast ein SVG der Größe 100x500 und möchtest das Bruttoinlandsprodukt (BIP) für eine Reihe von Ländern darstellen. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. Du übergibst D3 einen Skalierungstyp, mit welchem du ihm mitteilst, wie die hohen BIP-Werte in dem 100x500 großen Bereich zu platzieren sind.
 
-Es ist unwahrscheinlich, dass du die Rohdaten so darstellen würdest, wie sie sind. Bevor du mit der Platzierung beginnst, legst du die Skala für deinen Datensatz fest – so, dass die `x`- und `y`-Werte zu deiner Canvas-Breite und -Höhe passen.
+Es ist unwahrscheinlich, dass du die Rohdaten so darstellen würdest, wie sie sind. Bevor du mit der Einzeichnung beginnst, legst du die Skala für deinen Datensatz fest, so dass die `x`- und `y`-Werte zu deiner SVG-Breite sowie -Höhe passen.
 
 D3 verfügt über verschiedene Skalierungstypen. Möchtest du eine lineare Skalierung (wie sie für quantitative Daten meist verwendet wird), verwendest du die D3-Methode `scaleLinear()`:
 

@@ -19,7 +19,7 @@ module.exports = {
     '^.+\\.[jt]sx?$': '<rootDir>/jest.transform.js'
   },
   roots: ['.', './client', './api-server'],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  transformIgnorePatterns: ['node_modules/.pnpm/(?!(nanoid|uuid)@)'],
   setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'jsdom'
 };

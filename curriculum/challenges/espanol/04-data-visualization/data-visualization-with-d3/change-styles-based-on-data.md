@@ -8,7 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 se trata de la visualización y presentación de datos. Probablemente vayas a querer estilizar los elementos con base en los datos. For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
+D3 se trata de la visualización y presentación de datos. Probablemente vayas a querer estilizar los elementos con base en los datos. Por ejemplo, puede que desas colorear un punto de datos en azul si tiene un valor inferior a 20, y en rojo en caso contrario. Puedes utilizar una función callback en el método `style()` e incluir la lógica condicional. La función callback utiliza el parámetro `d` para representar el punto de datos:
 
 ```js
 selection.style("color", (d) => {
@@ -16,65 +16,65 @@ selection.style("color", (d) => {
 });
 ```
 
-The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
+El método `style()` no se limita a establecer el `color` - también se puede utilizar con otras propiedades CSS.
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
+Agrega el método `style()` al código del editor para establecer el `color` de los elementos `h2` de forma condicional. Escribe la función callback de forma que si el valor de los datos es inferior a 20, devuelva rojo, en caso contrario devuelva verde.
 
-**Note:** You can use if-else logic, or the ternary operator.
+**Nota:** Puedes utilizar la lógica if-else, o el operador ternario.
 
 # --hints--
 
-The first `h2` should have a `color` of red.
+El primer `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(0).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The second `h2` should have a `color` of green.
+El segundo `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(1).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The third `h2` should have a `color` of green.
+El tercer `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(2).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The fourth `h2` should have a `color` of red.
+El cuarto `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(3).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The fifth `h2` should have a `color` of green.
+El quinto `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(4).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The sixth `h2` should have a `color` of red.
+El sexto `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(5).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The seventh `h2` should have a `color` of green.
+El séptimo `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(6).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The eighth `h2` should have a `color` of red.
+El octavo `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The ninth `h2` should have a `color` of red.
+El noveno `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');

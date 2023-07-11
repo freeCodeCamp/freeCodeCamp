@@ -1,8 +1,8 @@
 Esta página describe cómo contribuir a los tutoriales y proyectos de freeCodeCamp que se complementan usando la extensión CodeRoad de VS Code.
 
-## Cómo funcionan los tutoriales
+## How the Tutorials Work
 
-Los tutoriales de freeCodeCamp que utilizan CodeRoad tienen cada uno su propio repositorio bajo la organización freeCodeCamp en GitHub. Todos comienzan con `learn-`. Por ejemplo, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+Each of the freeCodeCamp tutorials that use CodeRoad has its own repo under the freeCodeCamp GitHub organization. Todos comienzan con `learn-`. Por ejemplo, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
 Cada repositorio tiene una rama principal `main`  y una "versión" de rama, por ejemplo. `v1.0.0`.
 
@@ -18,7 +18,7 @@ Para realizar cambios a los commits en una rama de versión, necesitaría realiz
 > 
 > Nunca realice o envíe cambios a una rama de versión que se encuentre en uno de los repositorios de freeCodeCamp. Siempre cree una nueva
 
-## Cómo contribuir
+## How to Contribute
 
 ### Requisitos previos
 
@@ -49,7 +49,7 @@ Siga estas instrucciones para hacer un PR, teniendo en cuenta que las instruccio
 - Confirme los cambios con `update json` como mensaje
 - Hacer un PR
 
-### Probando cambios en `main`
+### Testing Changes on `main`
 
 Si deseas probar sus cambios en `main` después de seguir las instrucciones anteriores, sigue estas instrucciones:
 
@@ -64,7 +64,7 @@ El archivo `tutorial.json` no debería tener cambios para los hash de commit, o 
 
 Además, ten en cuenta que las instrucciones usualmente usan las lecciones a su alrededor para el contexto, así que asegúrate de que tienen sentido.
 
-### Trabajando en la rama de versión
+### Working on Version Branch
 
 > [!ADVERTENCIA]
 > 
@@ -91,12 +91,12 @@ Sigue estas instrucciones para crear una nueva versión:
 - Hacer un PR a `principal` usando su nueva rama `feat/version-X.X.Y`. Dale un título de `versión X.X.Y lista para la revisión`. Esto no se fusionará, es sólo para hacer saber a los revisores que hay una nueva versión lista
 - Déjalo aquí para revisores
 
-### Probando cambios a una rama de versiones
+### Testing Changes to a Version Branch
 
 - Sigue las instrucciones en el repositorio [rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para ejecutar un contenedor
 - Comience el tutorial utilizando el archivo `tutorial.json` en cualquier bifurcación en la que estén los cambios. Asegúrate de usar el archivo en la rama `feat: version-X.X.Y` y no la rama `main`
 
-### Subiendo una nueva versión
+### Pushing a New Version
 
 Antes de empujar una nueva versión, ver la nueva `feat/version-vX.X.Y` (se fusionará a `main`) rama en el fork del usuario. Asegúrese de que hay adiciones al `CHANGELOG. d` archivo que incluye los nuevos cambios, y la versión en los dos manchas de la carga de código `. aml` coincide con la nueva rama de versión.
 
@@ -121,7 +121,7 @@ Si tienes acceso de escritura al repo de freeCodeCamp, has verificado los archiv
 - Después de fusionar las relaciones públicas, abra el tutorial siguiendo las instrucciones en el repositorio [rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para asegurarse de que está cargando correctamente, y que usted puede pasar unos pasos
 - Finalmente, si existe algún PRs para esta versión, ciérrelos
 
-### Cómo volver a una versión anterior
+### How to Revert to a Previous Version
 
 - Crea una nueva rama desde la última `main` con `git checkout -b revert/to-version-X.X.X`
 - Revertir todos los commits en esta rama hasta e incluyendo el commit de la versión después del que desea revertir. Por ejemplo, puede haber commits que se vean así:

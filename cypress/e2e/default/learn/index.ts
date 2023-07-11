@@ -1,5 +1,5 @@
 const challengerSelector = {
-  challengeMap: "[data-test-label='learn-curriculum-map']"
+  curriculumMap: "[data-test-label='curriculum-map']"
 } as const;
 
 const learnUrl = {
@@ -7,18 +7,20 @@ const learnUrl = {
 } as const;
 
 const superBlockNames = [
-  '(New) Responsive Web Design Certification',
+  'Responsive Web Design Certification',
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
-  'Relational Database (Beta) Certification',
+  'Relational Database Certification',
   'Back End Development and APIs Certification',
   'Quality Assurance Certification',
   'Scientific Computing with Python Certification',
   'Data Analysis with Python Certification',
   'Information Security Certification',
   'Machine Learning with Python Certification',
+  'College Algebra with Python Certification',
   'Coding Interview Prep',
+  'Project Euler',
   'Legacy Responsive Web Design Certification'
 ];
 
@@ -41,9 +43,9 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
-        `${challengerSelector.challengeMap} > li > a`
+        `${challengerSelector.curriculumMap} > ul > li > a`
       );
-      expect(superBlocks).to.have.length(13);
+      expect(superBlocks).to.have.length(15);
 
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);

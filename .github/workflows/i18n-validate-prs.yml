@@ -16,13 +16,13 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -40,7 +40,7 @@ jobs:
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
         if: ${{ failure() && steps.validate.conclusion == 'failure' }}
-        uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975 # v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |

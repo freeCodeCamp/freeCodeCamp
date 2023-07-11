@@ -3,7 +3,7 @@ const challenges = {
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements',
   rosettaCode: '/learn/coding-interview-prep/rosetta-code/100-doors',
   projectEuler:
-    '/learn/coding-interview-prep/project-euler/problem-1-multiples-of-3-and-5'
+    '/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-and-5'
 };
 
 const social = {

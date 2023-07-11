@@ -10,7 +10,7 @@ dashedName: add-labels-to-d3-elements
 
 D3 lets you label a graph element, such as a bar, using the SVG `text` element.
 
-Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG. It also needs to access the data to display those values.
 
 D3 gives you a high level of control over how you label your bars.
 

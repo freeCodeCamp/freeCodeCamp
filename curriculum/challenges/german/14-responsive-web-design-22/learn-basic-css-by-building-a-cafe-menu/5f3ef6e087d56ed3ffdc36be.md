@@ -7,7 +7,7 @@ dashedName: step-61
 
 # --description--
 
-Now apply the `established` class to the `Est. 2020` text.
+Wende jetzt die `established`-Klasse auf den Text `Est. 2020` an.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Du solltest die `class` des `p`-Elements auf `established` setzen.
 assert(code.match(/<p class=('|")established\1>/i));
 ```
 
-Your `established` class should be on the element with the text `Est. 2020`.
+Deine `established`-Klasse sollte sich auf dem Element mit dem Text `Est. 2020` befinden.
 
 ```js
 const established = $('.established');

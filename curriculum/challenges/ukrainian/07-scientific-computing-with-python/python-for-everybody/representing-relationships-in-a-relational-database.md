@@ -14,7 +14,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 ## --text--
 
-Що таке foreign key?
+Що таке іноземний ключ?
 
 ## --answers--
 
@@ -26,7 +26,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 ---
 
-Число, яке вказує на первинний ключ від пов'язаного рядка в іншій таблиці.
+Число, яке вказує на первинний ключ від пов’язаного рядка в іншій таблиці.
 
 ---
 

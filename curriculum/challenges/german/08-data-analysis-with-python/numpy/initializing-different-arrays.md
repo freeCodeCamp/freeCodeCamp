@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed5
-title: Initializing Different Arrays
+title: Initialisiere verschiedene Arrays
 challengeType: 11
 videoId: CEykdsKT4U4
 bilibiliIds:

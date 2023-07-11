@@ -1,11 +1,10 @@
 const path = require('path');
-const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
 const { challengeTypes, viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/backend/Show.tsx'
+  '../../src/templates/Challenges/projects/backend/show.tsx'
 );
 const classic = path.resolve(
   __dirname,
@@ -13,7 +12,7 @@ const classic = path.resolve(
 );
 const frontend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/frontend/Show.tsx'
+  '../../src/templates/Challenges/projects/frontend/show.tsx'
 );
 const codeAlly = path.resolve(
   __dirname,
@@ -29,12 +28,17 @@ const superBlockIntro = path.resolve(
 );
 const video = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/video/Show.tsx'
+  '../../src/templates/Challenges/video/show.tsx'
 );
 
 const odin = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/odin/Show.tsx'
+  '../../src/templates/Challenges/odin/show.tsx'
+);
+
+const exam = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/exam/show.tsx'
 );
 
 const views = {
@@ -44,39 +48,46 @@ const views = {
   frontend,
   video,
   codeAlly,
-  odin
+  odin,
+  exam
   // quiz: Quiz
 };
 
-function getIsFirstStep(_node, index, nodeArray) {
-  const current = nodeArray[index];
-  const previous = nodeArray[index - 1];
+function getIsFirstStepInBlock(id, edges) {
+  const current = edges[id];
+  const previous = edges[id - 1];
 
   if (!previous) return true;
   return previous.node.challenge.block !== current.node.challenge.block;
 }
 
-function getNextChallengePath(_node, index, nodeArray) {
-  const next = nodeArray[index + 1];
-  return next ? next.node.challenge.fields.slug : '/learn';
+function getNextChallengePath(id, edges) {
+  const next = edges[id + 1];
+  return next ? next.node.challenge.fields.slug : null;
 }
 
-function getPrevChallengePath(_node, index, nodeArray) {
-  const prev = nodeArray[index - 1];
-  return prev ? prev.node.challenge.fields.slug : '/learn';
+function getPrevChallengePath(id, edges) {
+  const prev = edges[id - 1];
+  return prev ? prev.node.challenge.fields.slug : null;
 }
 
 function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
+function getNextBlock(id, edges) {
+  const next = edges[id + 1];
+  return next ? next.node.challenge.block : null;
+}
+
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
+      dashedName,
       certification,
       superBlock,
       block,
-      fields: { slug },
+      fields: { slug, blockHashSlug },
       required = [],
       template,
       challengeType,
@@ -90,22 +101,17 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          blockHashSlug,
+          dashedName,
           certification,
           superBlock,
           block,
-          isFirstStep: getIsFirstStep(challenge, index, allChallengeEdges),
+          isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextChallengePath: getNextChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
-          prevChallengePath: getPrevChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
+          nextBlock: getNextBlock(index, allChallengeEdges),
+          nextChallengePath: getNextChallengePath(index, allChallengeEdges),
+          prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
         },
         projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
@@ -157,7 +163,7 @@ exports.createBlockIntroPages = function (createPage) {
       path: slug,
       component: intro,
       context: {
-        block: dasherize(block),
+        block,
         slug
       }
     });

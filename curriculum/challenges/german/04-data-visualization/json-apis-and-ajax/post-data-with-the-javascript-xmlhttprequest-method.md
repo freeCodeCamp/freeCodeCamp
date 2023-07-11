@@ -26,11 +26,17 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Du hast bereits mehrere dieser Methoden gesehen. Hier initialisiert die `open`-Methode die Anfrage als `POST` an die angegebene URL der externen Ressource und verwendet den `true` Boolean, um es asynchron zu gestalten. Die Methode `setRequestHeader` setzt den Wert eines HTTP-Request-Headers, der Informationen über den Absender und die Anfrage enthält. Es muss nach der `open`-Methode aufgerufen werden, aber noch vor der `send`-Methode. Die beiden Parameter sind der Name des Headers und der Wert, der als der Körper des Headers gesetzt werden soll. Als nächstes bearbeitet der `onreadystatechange` Event-Listener eine Änderung des Status der Abfrage. Ein `readyState` von `4` bedeutet, dass die Operation abgeschlossen ist und ein `status` von `201` bedeutet, dass es eine erfolgreiche Anfrage war. Der HTML-Code des Dokuments kann aktualisiert werden. Schließlich sendet die `send`-Methode eine Anfrage mit dem `body` Wert, dessen `userName`-Schlüssel vom Nutzer im `input`-Feld gegeben wurde.
+Du hast bereits mehrere dieser Methoden gesehen. Here the `open` method initializes the request as a `POST` to the given URL of the external resource, and passes `true` as the third parameter - indicating to perform the operation asynchronously.
+
+Die Methode `setRequestHeader` legt den Wert eines HTTP-Request-Headers fest, der Informationen über den Absender und die Anfrage enthält. Es muss nach der `open`-Methode, aber noch vor der `send`-Methode aufgerufen werden. Die beiden Parameter sind der Name des Headers und der Wert, der als der Körper des Headers festgelegt werden soll.
+
+Als Nächstes bearbeitet der `onreadystatechange`-Event-Listener eine Änderung des Status der Anfrage. Ein `readyState` von `4` bedeutet, dass die Operation abgeschlossen ist und ein `status` von `201` bedeutet, dass es eine erfolgreiche Anfrage war. Daher kann der HTML-Code des Dokuments aktualisiert werden.
+
+Schließlich sendet die `send`-Methode die Anfrage mit dem `body`-Wert ab. Der `body` besteht aus einem `userName` und einem `suffix`-Schlüssel.
 
 # --instructions--
 
-Aktualisiere den Code, damit er eine `POST`-Anfrage an den API-Endpunkt stellt. Gib dann deinen Namen in das Eingabefeld ein und klicke auf `Send Message`. Deine AJAX Funktion sollte `Reply from Server will be here.` durch Daten vom Server ersetzen. Formatiere die Antwort so, dass dein Name zusammen mit dem Text `loves cats` angezeigt wird.
+Aktualisiere den Code so, dass er eine `POST`-Anfrage an den API-Endpunkt stellt. Gib dann deinen Namen in das Eingabefeld ein und klicke auf `Send Message`. Deine AJAX Funktion sollte `Reply from Server will be here.` durch Daten vom Server ersetzen. Formatiere die Antwort so, dass dein Name zusammen mit dem Text `loves cats` angezeigt wird.
 
 # --hints--
 

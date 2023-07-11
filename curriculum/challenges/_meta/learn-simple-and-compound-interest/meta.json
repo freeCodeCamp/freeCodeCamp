@@ -1,7 +1,8 @@
 {
   "name": "Learn Simple and Compound Interest",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-simple-and-compound-interest",
+  "helpCategory": "Python",
   "order": 15,
   "time": "",
   "template": "",

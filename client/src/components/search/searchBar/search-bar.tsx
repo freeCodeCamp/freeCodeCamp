@@ -1,7 +1,8 @@
 import { isEqual } from 'lodash-es';
 import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { Hit } from 'react-instantsearch-core';
 import { SearchBox } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
@@ -39,14 +40,14 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
     dispatch
   );
 
-type SearchBarProps = {
+export type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
   updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
-  t?: TFunction;
+  t: TFunction;
 };
 type SearchBarState = {
   index: number;
@@ -187,9 +188,6 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
-    const submitTitle = t ? t('icons.magnifier') : '';
-    const resetTitle = t ? t('icons.input-reset') : '';
-    const placeholder = t ? t('search.placeholder') : '';
 
     return (
       <WithInstantSearch>
@@ -201,7 +199,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>
               <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-                {t ? t('search.label') : ''}
+                {t('search.label')}
               </label>
               <ObserveKeys except={['Space']}>
                 <div onFocus={this.handleFocus} role='textbox'>
@@ -213,9 +211,9 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                     }}
                     showLoadingIndicator={false}
                     translations={{
-                      submitTitle: submitTitle,
-                      resetTitle: resetTitle,
-                      placeholder: placeholder
+                      submitTitle: t('icons.magnifier'),
+                      resetTitle: t('icons.input-reset'),
+                      placeholder: t('search.placeholder')
                     }}
                   />
                 </div>

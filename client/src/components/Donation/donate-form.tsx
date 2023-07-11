@@ -5,6 +5,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
+import type { TFunction } from 'i18next';
 
 import {
   amountsConfig,
@@ -27,7 +28,7 @@ import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm from './stripe-card-form';
-import WalletsWrapper from './walletsButton';
+import WalletsWrapper from './wallets-button';
 import SecurityLockIcon from './security-lock-icon';
 import {
   PaymentProvider,
@@ -88,10 +89,7 @@ type DonateFormProps = {
   isSignedIn: boolean;
   isDonating: boolean;
   showLoading: boolean;
-  t: (
-    label: string,
-    { usd, hours }?: { usd?: string | number; hours?: string }
-  ) => string;
+  t: TFunction;
   theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
@@ -238,17 +236,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
   }
 
-  renderCompletion(props: {
-    processing: boolean;
-    redirecting: boolean;
-    success: boolean;
-    error: string | null;
-    isSignedIn: boolean;
-    reset: () => unknown;
-  }) {
-    return <DonateCompletion {...props} />;
-  }
-
   renderButtonGroup() {
     const { donationAmount, donationDuration } = this.state;
     const {
@@ -273,7 +260,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
           {this.getDonationButtonLabel()}:
         </b>
-        <Spacer />
+        <Spacer size='medium' />
         <fieldset className={'donate-btn-group security-legend'}>
           <legend>
             <SecurityLockIcon />
@@ -349,28 +336,31 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     } = this.props;
 
     if (success || error) {
-      return this.renderCompletion({
-        processing,
-        redirecting,
-        success,
-        error,
-        isSignedIn,
-        reset: this.resetDonation
-      });
+      return (
+        <DonateCompletion
+          processing={processing}
+          redirecting={redirecting}
+          success={success}
+          error={error}
+          isSignedIn={isSignedIn}
+          reset={this.resetDonation}
+        />
+      );
     }
 
     // keep payment provider elements on DOM during processing and redirect to avoid errors.
     return (
       <>
-        {(processing || redirecting) &&
-          this.renderCompletion({
-            processing,
-            redirecting,
-            success,
-            error,
-            isSignedIn,
-            reset: this.resetDonation
-          })}
+        {(processing || redirecting) && (
+          <DonateCompletion
+            processing={processing}
+            redirecting={redirecting}
+            success={success}
+            error={error}
+            isSignedIn={isSignedIn}
+            reset={this.resetDonation}
+          />
+        )}
         <div className={processing || redirecting ? 'hide' : ''}>
           {isMinimalForm ? this.renderButtonGroup() : this.renderPageForm()}
         </div>

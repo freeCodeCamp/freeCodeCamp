@@ -1,4 +1,5 @@
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -9,11 +10,13 @@ import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 
+type ShowUnsubscribedProps = Pick<RouteComponentProps, 'path'> & {
+  unsubscribeId?: string;
+};
+
 function ShowUnsubscribed({
   unsubscribeId
-}: {
-  unsubscribeId: string;
-}): JSX.Element {
+}: ShowUnsubscribedProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
@@ -23,9 +26,9 @@ function ShowUnsubscribed({
       <Grid>
         <main>
           <FullWidthRow>
-            <Spacer size={2} />
+            <Spacer size='large' />
             <Panel bsStyle='primary' className='text-center'>
-              <Spacer />
+              <Spacer size='medium' />
               <h2>{t('misc.unsubscribed')}</h2>
               <p>{t('misc.keep-coding')}</p>
             </Panel>
@@ -42,7 +45,7 @@ function ShowUnsubscribed({
               </Button>
             </FullWidthRow>
           ) : null}
-          <Spacer size={2} />
+          <Spacer size='large' />
         </main>
       </Grid>
     </>

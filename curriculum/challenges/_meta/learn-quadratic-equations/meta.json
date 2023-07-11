@@ -1,7 +1,8 @@
 {
   "name": "Learn Quadratic Equations",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-quadratic-equations",
+  "helpCategory": "Python",
   "order": 10,
   "time": "",
   "template": "",

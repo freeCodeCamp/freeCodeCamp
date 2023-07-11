@@ -2,13 +2,13 @@ import React from 'react';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
-export interface AlertProps {
+export type AlertProps = {
   children: React.ReactNode;
   className?: string;
   variant: AlertVariant;
-}
+};
 
-const variantClasses: Record<AlertVariant, string> = {
+const variantClasses = {
   success: 'text-green-700 bg-green-50 border-green-100',
   info: 'text-blue-700 bg-blue-50 border-blue-100',
   warning: 'text-yellow-700 bg-yellow-50 border-yellow-100',
@@ -20,11 +20,11 @@ const variantClasses: Record<AlertVariant, string> = {
  *
  * `Alert` is not dismissable.
  */
-export function Alert({
+export const Alert = ({
   children,
   className,
   variant
-}: AlertProps): JSX.Element {
+}: AlertProps): JSX.Element => {
   const variantClass = variantClasses[variant];
 
   const classes = [
@@ -38,4 +38,4 @@ export function Alert({
       {children}
     </div>
   );
-}
+};

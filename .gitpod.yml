@@ -33,7 +33,7 @@ tasks:
       exit;
 
   - name: db
-    # starting mongo in background, so it doesn't block prebuilds
+    # starting mongod in background, so it doesn't block prebuilds
     before: >
       mkdir -p /workspace/data &&
       (mongod --dbpath /workspace/data &)
@@ -46,12 +46,12 @@ tasks:
       cp sample.env .env &&
       pnpm install &&
       gp sync-done pnpm-install &&
-      gp ports await 27017 &&
-      pnpm run seed &&
-      mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
+      gp ports await 27017
     command: >
       pnpm run create:config &&
       pnpm run build:curriculum &&
+      pnpm run seed &&
+      mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
       gp ports await 27017 &&
       pnpm run develop:server
 

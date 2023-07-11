@@ -9,19 +9,21 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-生成随机小数很棒，但随机数更有用的地方在于生成随机整数。
+你可以用 `Math.random()` 生成随机的小数，但有时你需要生成随机的整数。 下面的流程将给你一个小于 `20` 的随机整数：
 
-<ol><li>用 <code>Math.random()</code> 生成一个随机小数。</li><li>把这个随机小数乘以 <code>20</code>。</li><li>用 <code>Math.floor()</code> 向下取整，获得它最近的整数。</li></ol>
+1. 用 `Math.random()` 生成一个随机小数。
+2. 把这个随机小数乘以 `20`。
+3. 用 `Math.floor()` 向下取整，获得它最近的整数。
 
-记住 `Math.random()` 永远不会返回 `1`。同时因为我们是在向下取整，所以最终我们获得的结果不可能有 `20`。 这确保了我们获得了一个在 `0` 到 `19` 之间的整数。
+记住 `Math.random()` 永远不能完全返回 `1`，所以不可能实际得到 `20`，因为你正在用 `Math.floor()` 四舍五入。 这个流程将给你一个从 `0` 到 `19` 的随机整数。
 
-把操作连缀起来，代码类似于下面：
+把操作连起来，代码类似于下面：
 
 ```js
 Math.floor(Math.random() * 20);
 ```
 
-我们先调用 `Math.random()`，把它的结果乘以 20，然后把上一步的结果传给 `Math.floor()`，最终通过向下取整获得最近的整数。
+你将调用 `Math.random()`，把结果乘以 20，然后把值传给 `Math.floor()`，向下取整获得最近的整数。
 
 # --instructions--
 
@@ -74,9 +76,6 @@ assert(code.match(/Math.floor/g).length >= 1);
 
 ```js
 function randomWholeNum() {
-
-  // Only change code below this line
-
   return Math.random();
 }
 ```

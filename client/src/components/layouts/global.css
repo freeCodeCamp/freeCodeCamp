@@ -6,9 +6,10 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
+  --header-height: 38px;
 }
 
 #___gatsby {
@@ -28,7 +29,7 @@ body {
 
 .codeally-frame {
   display: block;
-  height: calc(100vh - var(--header-height, 0px));
+  height: calc(100vh - var(--header-height));
   width: 100%;
   border: 0;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 .default-layout {
-  margin-top: var(--header-height, 0);
+  margin-top: var(--header-height);
   background: var(--secondary-background);
 }
 
@@ -77,22 +78,28 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-monospace);
 }
 
 h4,
@@ -104,7 +111,6 @@ th {
   color: var(--secondary-color);
   font-weight: 400;
   font-size: 1rem;
-  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0 0 1.2rem;
 }
 
@@ -157,6 +163,13 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  text-underline-position: under;
+}
+
+@supports not (text-underline-position: under) {
+  a {
+    text-underline-offset: 1em;
+  }
 }
 
 a:hover,
@@ -185,6 +198,18 @@ button.close:focus {
   color: inherit;
   opacity: 1;
   background-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 0;
+}
+
+@supports not selector(:focus-visible) {
+  :focus {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 0;
+  }
 }
 
 .modal-content {
@@ -296,7 +321,7 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline: 0;
+  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {
@@ -366,6 +391,7 @@ fieldset[disabled] .btn-primary.focus {
 .cert-header-icon {
   display: block;
   width: 80px;
+  height: 80px;
   margin: auto;
 }
 
@@ -379,6 +405,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 100px;
+    height: 100px;
   }
 }
 
@@ -388,6 +415,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 120px;
+    height: 120px;
   }
 }
 
@@ -400,7 +428,6 @@ strong {
 
 .form-control {
   color: var(--primary-color);
-  outline: none;
   border-color: var(--quaternary-background);
   background-color: var(--primary-background);
   -webkit-box-shadow: none !important;
@@ -410,7 +437,7 @@ strong {
 }
 
 input {
-  outline: none;
+  outline-color: transparent;
   border-color: var(--quaternary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -430,11 +457,17 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
+  border: 1px solid var(--secondary-color);
+  padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+}
+
+.challenge-instructions code {
+  white-space: break-spaces;
 }
 
 .panel {
@@ -528,6 +561,7 @@ hr {
 code[class*='language-'],
 pre[class*='language-'] {
   border-radius: 0;
+  border: none;
 }
 
 pre {

@@ -14,7 +14,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 2) 聲明函數參數 - 函數內的任何計算僅取決於參數，而不取決於任何全局對象或變量。
 
-給數字增加 1 不夠刺激，我們可以在處理數組或更復雜的對象時應用這些原則。
+給數字增加 1 不夠有意思，但是我們可以在處理數組或更復雜的對象時應用這些原則。
 
 # --instructions--
 
@@ -24,7 +24,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --hints--
 
-`bookList` 應等於 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`bookList` 不應該改變，仍然等於 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 add(bookList, "Test");

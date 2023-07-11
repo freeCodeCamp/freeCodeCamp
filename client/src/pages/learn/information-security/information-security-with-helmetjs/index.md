@@ -1,7 +1,7 @@
 ---
 title: Introduction to Information Security with HelmetJS Challenges
-block: Information Security with HelmetJS
-superBlock: Information Security
+block: information-security-with-helmetjs
+superBlock: information-security
 ---
 
 ## Introduction to Information Security with HelmetJS Challenges

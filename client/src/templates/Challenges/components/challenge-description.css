@@ -7,15 +7,3 @@
   margin-bottom: 1.45rem;
   font-size: 0.9rem;
 }
-
-#description p,
-#instructions p,
-#notes p,
-#description ul,
-#instructions ul,
-#notes ul,
-#description ol,
-#instructions ol,
-#notes ol {
-  font-family: 'Lato', sans-serif;
-}

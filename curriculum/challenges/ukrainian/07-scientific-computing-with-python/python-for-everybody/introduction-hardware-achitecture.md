@@ -22,7 +22,7 @@ dashedName: introduction-hardware-architecture
 
 ---
 
-Пам'ять.
+Пам’ять.
 
 ---
 

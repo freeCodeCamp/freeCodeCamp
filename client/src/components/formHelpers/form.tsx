@@ -42,13 +42,19 @@ function formatUrlValues(
     invalidValues: []
   };
   const urlValues = Object.keys(values).reduce((result, key: string) => {
+    // NOTE: pathValidator is not used here, because it is only used as a
+    // suggestion - should not prevent form submission
+    const validators = [fCCValidator, httpValidator];
+    const isSolutionLink = key !== 'githubLink';
+    if (isSolutionLink && !isEditorLinkAllowed) {
+      validators.push(editorValidator);
+    }
+    if (!isLocalLinkAllowed) {
+      validators.push(localhostValidator);
+    }
+
     let value: string = values[key];
-    const nullOrWarning: JSX.Element | null = composeValidators(
-      fCCValidator,
-      httpValidator,
-      isLocalLinkAllowed ? null : localhostValidator,
-      key === 'githubLink' || isEditorLinkAllowed ? null : editorValidator
-    )(value);
+    const nullOrWarning = composeValidators(...validators)(value);
     if (nullOrWarning) {
       validatedValues.invalidValues.push(nullOrWarning);
     }

@@ -16,6 +16,9 @@ const codeAllyCert = 13;
 const multifileCertProject = 14;
 const theOdinProject = 15;
 const colab = 16;
+const exam = 17;
+const msTrophyUrl = 18;
+const multipleChoice = 19;
 
 // individual exports
 exports.backend = backend;
@@ -24,6 +27,9 @@ exports.backEndProject = backEndProject;
 exports.pythonProject = pythonProject;
 exports.codeAllyCert = codeAllyCert;
 exports.colab = colab;
+exports.exam = exam;
+exports.msTrophyUrl = msTrophyUrl;
+exports.multipleChoice = multipleChoice;
 
 exports.challengeTypes = {
   html,
@@ -43,7 +49,10 @@ exports.challengeTypes = {
   codeAllyCert,
   multifileCertProject,
   theOdinProject,
-  colab
+  colab,
+  exam,
+  msTrophyUrl,
+  multipleChoice
 };
 
 exports.isFinalProject = challengeType => {
@@ -55,7 +64,8 @@ exports.isFinalProject = challengeType => {
     challengeType === jsProject ||
     challengeType === pythonProject ||
     challengeType === codeAllyCert ||
-    challengeType === multifileCertProject
+    challengeType === multifileCertProject ||
+    challengeType === exam
   );
 };
 
@@ -82,7 +92,10 @@ exports.viewTypes = {
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
   [theOdinProject]: 'odin',
-  [colab]: 'frontend'
+  [colab]: 'frontend',
+  [exam]: 'exam',
+  [msTrophyUrl]: 'frontend',
+  [multipleChoice]: 'video'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -106,8 +119,8 @@ exports.submitTypes = {
   [codeAllyCert]: 'project.frontEnd',
   [multifileCertProject]: 'tests',
   [theOdinProject]: 'tests',
-  [colab]: 'project.backEnd'
+  [colab]: 'project.backEnd',
+  [exam]: 'exam',
+  [msTrophyUrl]: 'project.frontEnd',
+  [multipleChoice]: 'tests'
 };
-
-// determine which help forum questions should be posted to
-exports.helpCategoryMap = require('./help-category-map.json');

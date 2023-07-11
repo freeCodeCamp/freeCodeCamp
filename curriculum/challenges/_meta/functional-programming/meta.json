@@ -2,6 +2,7 @@
   "name": "Functional Programming",
   "isUpcomingChange": false,
   "dashedName": "functional-programming",
+  "helpCategory": "JavaScript",
   "order": 7,
   "time": "5 hours",
   "template": "",
@@ -104,4 +105,5 @@
       "587d7dab367417b2b2512b70",
       "Introduction to Currying and Partial Application"
     ]
-  ]}
+  ]
+}

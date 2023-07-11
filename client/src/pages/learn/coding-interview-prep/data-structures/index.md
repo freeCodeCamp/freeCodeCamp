@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Coding Interview Data Structure Questions
-block: Data Structures
-superBlock: Coding Interview Prep
+block: data-structures
+superBlock: coding-interview-prep
 ---
 
 ## Introduction to the Coding Interview Data Structure Questions

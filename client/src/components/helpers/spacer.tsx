@@ -1,22 +1,24 @@
 import React from 'react';
 
+const Padding = Object.freeze({
+  small: 5,
+  xSmall: 10,
+  medium: 15,
+  large: 30,
+  exLarge: 45,
+  doubleXL: 90
+});
+
+type PaddingKeys = keyof typeof Padding;
 interface SpacerProps {
-  size?: number;
+  size: PaddingKeys;
+  children?: React.ReactNode;
 }
 
-const styles = { padding: '15px 0', height: '1px' };
-
-const Comp = ({ ...props }): JSX.Element => <div style={styles} {...props} />;
-
-const Spacer = ({ size = 1 }: SpacerProps): JSX.Element =>
-  size === 1 ? (
-    <Comp />
-  ) : (
-    <>
-      {Array.from(Array(size), (_, i) => (
-        <Comp key={`spacer_${i}`} />
-      ))}
-    </>
-  );
+const Spacer = ({ size, children }: SpacerProps): JSX.Element => (
+  <div className='spacer' style={{ padding: `${Padding[size]}px 0` }}>
+    {children}
+  </div>
+);
 
 export default Spacer;

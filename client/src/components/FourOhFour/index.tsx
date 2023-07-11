@@ -1,3 +1,4 @@
+import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -9,28 +10,25 @@ import { Spacer } from '../helpers';
 
 import './404.css';
 
-const FourOhFour = (): JSX.Element => {
+const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
   return (
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
       <img alt={t('404.not-found')} src={notFoundLogo} />
-      <Spacer />
+      <Spacer size='medium' />
       <h1>{t('404.page-not-found')}.</h1>
-      <Spacer />
+      <Spacer size='medium' />
       <div>
         <p>{t('404.heres-a-quote')}</p>
-        <Spacer />
+        <Spacer size='medium' />
         <blockquote className='quote-wrapper'>
-          <p className='quote'>
-            <span>&#8220;</span>
-            {quote.quote}
-          </p>
+          <p className='quote'>{quote.quote}</p>
           <p className='author'>- {quote.author}</p>
         </blockquote>
       </div>
-      <Spacer size={2} />
+      <Spacer size='large' />
       <Link className='btn btn-cta' to='/learn'>
         {t('buttons.view-curriculum')}
       </Link>

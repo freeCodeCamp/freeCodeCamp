@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0a
-title: Create Many Records with model.create()
+title: Mehrere Einträge mit model.create() erstellen
 challengeType: 2
 forumTopicId: 301537
 dashedName: create-many-records-with-model-create

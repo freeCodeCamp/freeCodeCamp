@@ -1,13 +1,13 @@
 ---
 id: 62a3bb9aeefe4b3fc43c6d7b
-title: Step 31
+title: Schritt 31
 challengeType: 0
 dashedName: step-31
 ---
 
 # --description--
 
-`button1` is a variable that is not going to be reassigned. If you are not going to assign a new value to a variable, it is best practice to use the `const` keyword to declare it instead of the `let` keyword. This will tell JavaScript to throw an error if you accidentally reassign it.
+`button1` ist eine Variable, die nicht neu zugewiesen wird. If you are not going to assign a new value to a variable, it is best practice to use the `const` keyword to declare it instead of the `let` keyword. Dadurch wird JavaScript angewiesen, einen Fehler zu melden, wenn du sie versehentlich neu zuweist.
 
 Change your `button1` variable to be declared with the `const` keyword.
 

@@ -85,7 +85,6 @@ When renaming a curriculum block, you need to:
 1. Change the name of the same block folder in _all_ of the other language directories to match. These must all be the same as the English structure or the build will error out.
 1. Change the name of the block folder in the `_meta` directory.
 1. Update the `name` and `dashedName` property for that block's `meta.json` file.
-1. Update the `client/utils/help-category-map.json` to use the new block name as the key.
 1. Update the block folder in `client/src/pages/learn/{superBlock}`.
 1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
 1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.

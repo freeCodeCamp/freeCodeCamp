@@ -14,31 +14,31 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si utilizas Replit, sigue estos pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Empieza importando el proyecto en Replit.
+-   A continuación, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
+Cuando hayas terminado, asegúrate de que una demo funcional de tu proyecto está alojada en algún lugar público. A continuación, introduce la URL en el campo enlace a la solución.
 
-A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+Un motor de plantillas te permite utilizar archivos de plantillas estáticas (como los escritos en *Pug*) en tu aplicación. En tiempo de ejecución, el motor de plantillas sustituye las variables de un archivo de plantilla por valores reales que pueden ser suministrados por tu servidor. A continuación, transforma la plantilla en un archivo HTML estático que se envía al cliente. Este enfoque facilita el diseño de una página HTML y permite mostrar variables en la página sin necesidad de realizar una llamada a la API desde el cliente.
 
-`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+`pug@~3.0.0` ya se ha instalado y aparece como dependencia en el archivo `package.json`.
 
-Express needs to know which template engine you are using. Use the `set` method to assign `pug` as the `view engine` property's value:
+Express necesita saber qué motor de plantillas está utilizando. Utiliza el método `set` para asignar `pug` como valor de la propiedad `view engine`:
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+Después de eso, añade otro método `set` que establezca la propiedad `views` de tu `app` para que apunte al directorio `./views/pug`. Esto le dice a Express que renderice todas las vistas relativas a ese directorio.
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+Por último, utiliza `res.render()` en la ruta para tu página de inicio, pasando `index` como primer argumento. Esto mostrará la plantilla `pug`.
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+Si todo ha ido según lo previsto, la página de inicio de tu aplicación ya no estará en blanco. ¡En su lugar, mostrará un mensaje indicando que has renderizado correctamente la plantilla Pug!
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando crea que lo ha hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

@@ -40,7 +40,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `isTrue` vs. `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ You should choose the correct method for the first assertion - `isTrue` vs. `isN
   );
 ```
 
-You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
+Du solltest die richtige Methode für die zweite Behauptung wählen - `isTrue` vs. `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should choose the correct method for the second assertion - `isTrue` vs. `is
   );
 ```
 
-You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `isTrue` vs. `isNotTrue`.
 
 ```js
 (getUserInput) =>

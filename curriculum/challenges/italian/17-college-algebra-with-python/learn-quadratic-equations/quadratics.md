@@ -1,6 +1,6 @@
 ---
 id: 6363d2429078df117ce4c400
-title: "Quadratics"
+title: "Equazioni Quadratiche"
 challengeType: 15
 videoId: pPLBL3L0OGg
 dashedName: quadratics
@@ -8,15 +8,15 @@ dashedName: quadratics
 
 # --description--
 
-This video show you how to solve quadratic equations, and explain the coefficients ("A," "B," and "C") in the standard form and how to use them to find the roots and vertex.
+Questo video mostra come risolvere le equazioni quadratiche e spiega i coefficienti ("A, "B" e "C") nella forma standard e come usarli per trovare le radici e il vertice.
 
-Here is the <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Ecco il <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
 # --question--
 
 ## --text--
 
-In Python code, what is the formula for the x value of the vertex?
+Nel codice Python, qual è la formula per il valore x del vertice?
 
 ## --answers--
 
