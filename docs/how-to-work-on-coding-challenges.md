@@ -503,6 +503,9 @@ Creating and Editing Challenges:
 
 ## Helper Scripts
 
+> [!NOTE]
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+
 There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
 
 ```bash
