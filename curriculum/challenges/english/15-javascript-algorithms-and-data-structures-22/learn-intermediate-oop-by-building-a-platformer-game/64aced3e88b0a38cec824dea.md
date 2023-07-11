@@ -1,15 +1,15 @@
 ---
-id: 64ab178206f3237eafcc0ef4
-title: Step 37
+id: 64aced3e88b0a38cec824dea
+title: Step 39
 challengeType: 0
-dashedName: step-37
+dashedName: step-39
 ---
 
 # --description--
 
-The <dfn>requestAnimationFrame()</dfn> web API, takes in a callback and is used to update the animation on the screen. The `animate` function will be responsible for updating the player's position and continually drawing it on the canvas. 
+The next step is to update the player's position as it moves throughout the game.
 
-Inside the `animate` function, call the `requestAnimationFrame()` API and pass in `animate` for the argument.
+Below your `ctx.clearRect()`, call the `update()` method on the player.
 
 # --hints--
 
@@ -212,6 +212,8 @@ const player = new Player();
 --fcc-editable-region--
 
 const animate = () => {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 }
 
