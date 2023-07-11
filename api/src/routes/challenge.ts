@@ -1,7 +1,8 @@
-import {
-  FastifyPluginCallbackTypebox,
-  Type
-} from '@fastify/type-provider-typebox';
+import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+
+import { schemas } from '../schemas';
+import { updateUserChallengeData } from '../utils/common-challenge-functions';
+import { getPoints, ProgressTimestamp } from '../utils/progress';
 
 export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify,
@@ -15,26 +16,43 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/backend-challenge-completed',
     {
-      schema: {
-        body: Type.Object({
-          id: Type.String(),
-          solution: Type.String()
-        })
-      }
+      schema: schemas.backendChallengeCompleted
     },
     async (req, reply) => {
       try {
-        console.log(req.body);
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const points = getPoints(progressTimestamps);
+
+        const completedChallenge = {
+          completedDate: Date.now(),
+          ...req.body
+        };
+
+        const { alreadyCompleted } = await updateUserChallengeData(
+          fastify,
+          user,
+          req.body.id,
+          completedChallenge
+        );
+
         return {
-          message: 'Challenge Submitted'
+          alreadyCompleted,
+          points: alreadyCompleted ? points : points + 1,
+          completedDate: completedChallenge.completedDate
         };
       } catch (error) {
         fastify.log.error(error);
         void reply.code(500);
         return {
-          message: 'flash.wrong-updating',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
-        };
+        } as const;
       }
     }
   );

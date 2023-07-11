@@ -324,5 +324,31 @@ export const schemas = {
         })
       })
     }
+  },
+  // Challenges
+  backendChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ maxLength: 24, minLength: 24 }),
+      solution: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal(
+          'That does not appear to be a valid challenge submission.'
+        )
+      }),
+      500: Type.Object({
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        ),
+        type: Type.Literal('danger')
+      })
+    }
   }
 };
