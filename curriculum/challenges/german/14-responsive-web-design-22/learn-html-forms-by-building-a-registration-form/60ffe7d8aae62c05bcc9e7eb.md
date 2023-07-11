@@ -9,17 +9,17 @@ dashedName: step-57
 
 With a `display` of `block` the submit button sits flush against the left edge of its parent.
 
-Use the same technique used to center the `form` to center the submit button.
+Verwende das gleiche Verfahren, dass beim Zentrieren der `form` verwendet wurde, um den Bestätigungsbutton zu zentrieren.
 
 # --hints--
 
-You should give the submit button a `margin` of `0 auto`.
+Du solltest dem Bestätigungsbutton eine `margin` von `0 auto` zuweisen.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.margin, '0px auto');
 ```
 
-You should not give the submit button a `min-width` or `max-width`.
+Du solltest dem Bestätigungsbutton keine `min-width` oder `max-width` zuweisen.
 
 ```js
 assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.minWidth);

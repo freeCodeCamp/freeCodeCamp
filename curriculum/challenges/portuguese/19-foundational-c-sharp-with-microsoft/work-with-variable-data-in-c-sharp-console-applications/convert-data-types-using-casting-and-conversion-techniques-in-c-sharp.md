@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What type of action is being performed when changing a `float` into an `int`?
+Qual tipo de ação está sendo realizada ao mudar um `float` para um `int`?
 
 ## --answers--
 
-A narrowing conversion.
+Uma conversão de restrição.
 
 ---
 
-A widening conversion.
+Uma conversão de expansão.
 
 ---
 
-An illegal conversion.
+Uma conversão ilegal.
 
 ## --video-solution--
 

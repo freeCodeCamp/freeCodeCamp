@@ -1,6 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
-title: 'Problem 199: Iterative Circle Packing'
+title: 'Завдання 199: ітеративна укладка кіл'
 challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
@@ -8,13 +8,13 @@ dashedName: problem-199-iterative-circle-packing
 
 # --description--
 
-Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
+Три кола з однаковим радіусом розміщені всередині більшого кола так, що кожна пара кіл дотична одна до одної, а внутрішні кола не перетинаються. Залишається чотири непокритих «прогалини», які потрібно інтерактивно заповнити дотичними колами.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="зображення кіл, які не перетинаються" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+При кожній ітерації у прогалині розміщують максимально велике коло, що створює ще більше прогалин для наступної ітерації. Після трьох ітерацій (на малюнку) залишилось 108 прогалин, а частка непокритої площі становить 0.06790342, заокруглено до восьмого знака після коми.
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Яка частка площі залишається непокритою після `n` ітерацій? Дайте відповідь, округлену до восьми знаків після коми у форматі x.xxxxxxxx.
 
 # --hints--
 

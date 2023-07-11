@@ -8,7 +8,7 @@ dashedName: problem-263-an-engineers-dream-come-true
 
 # --description--
 
-Consider the number 6. The divisors of 6 are: 1,2,3 and 6.
+Розглянемо число 6. The divisors of 6 are: 1,2,3 and 6.
 
 Every number from 1 up to and including 6 can be written as a sum of distinct divisors of 6:
 

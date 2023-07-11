@@ -120,20 +120,6 @@ textarea.inputarea {
   margin: 0.45rem 0 0;
 }
 
-.test-feedback h2 {
-  font-size: 1rem;
-  line-height: 1.5;
-  /* using float instead of inline display so screen readers recognize h2 as a block element */
-  float: left;
-  margin: 0.5em 0 0;
-  /* prevent line breaks in Chinese/Japanese/Korean */
-  word-break: keep-all;
-}
-
-.test-feedback h2:after {
-  content: ':';
-}
-
 .test-feedback svg {
   height: 1.5rem;
   width: auto;
@@ -148,6 +134,7 @@ textarea.inputarea {
   margin-top: 1rem;
 }
 
+#lowerjaw-qoute,
 .test-status-description,
 .hint-description {
   display: flex;

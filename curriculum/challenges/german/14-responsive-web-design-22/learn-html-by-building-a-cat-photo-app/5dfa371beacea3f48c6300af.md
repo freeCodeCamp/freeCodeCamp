@@ -9,7 +9,7 @@ dashedName: step-19
 
 Wenn du ein untergeordnetes Überschriftenelement zur Seite hinzufügst, wird angedeutet, dass du einen neuen Unterabschnitt beginnst.
 
-After the last `h2` element of the second `section` element, add an `h3` element with this text:
+Füge nach dem letzten `h2`-Element des zweiten `section`-Elements ein `h3`-Element mit diesem Text hinzu:
 
 `Things cats love:`
 

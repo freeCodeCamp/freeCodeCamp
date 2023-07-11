@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+O que há de errado com o código a seguir? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
 
 ## --answers--
 
-`sophiaSum` is not initialized before use
+`sophiaSum` não foi inicializado antes do uso
 
 ---
 
-`sophiaSum` is not implicitly typed to a string
+`sophiaSum` não é implicitamente tipificado como uma string
 
 ---
 
-`sophiaSum` should use the var keyword
+`sophiaSum` deve usar a palavra-chave var
 
 ## --video-solution--
 

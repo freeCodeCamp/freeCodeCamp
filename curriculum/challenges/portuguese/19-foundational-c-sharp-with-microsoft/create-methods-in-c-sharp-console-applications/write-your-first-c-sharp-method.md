@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which of the following correctly declares a method?
+Qual das opções abaixo declara corretamente um método?
 
 ## --answers--
 

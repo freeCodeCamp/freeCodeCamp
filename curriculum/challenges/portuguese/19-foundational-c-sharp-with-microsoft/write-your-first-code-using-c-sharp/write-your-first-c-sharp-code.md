@@ -16,23 +16,23 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-What is the difference between `Console.Write` and `Console.WriteLine`?
+Qual é a diferença entre `Console.Write` e `Console.WriteLine`?
 
 ## --answers--
 
-`Console.Write` prints the output on a new line.
+`Console.Write` imprime a saída em uma nova linha.
 
 ---
 
-`Console.WriteLine` prints the output on a new line.
+`Console.WriteLine` imprime a saída em uma nova linha.
 
 ---
 
-`Console.WriteLine` appends a new line after the output.
+`Console.WriteLine` anexa uma nova linha após a saída.
 
 ---
 
-There is no difference.
+Não há diferença.
 
 ## --video-solution--
 

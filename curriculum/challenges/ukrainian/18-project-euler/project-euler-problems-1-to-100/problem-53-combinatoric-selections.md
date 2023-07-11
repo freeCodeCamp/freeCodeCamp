@@ -18,7 +18,7 @@ dashedName: problem-53-combinatoric-selections
 
 Починаючи з $n = 23$, значення перевищуватиме мільйон: $\\displaystyle \\binom {23} {10} = 1144066$.
 
-Скільки (не обов’язково різних) значень $\\displaystyle \\binom n r$ для $1 \\le n \\le 100$ є більшими за мільйон?
+Скільки (не обов’язково різних) значень $\\displaystyle \\binom n r$ за умови $1 \\le n \\le 100$ є більшими за мільйон?
 
 # --hints--
 

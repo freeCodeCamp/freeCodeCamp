@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?
+Um desenvolvedor está trabalhando com dois outros desenvolvedores para atualizar uma coleção de aplicações. Os desenvolvedores usarão comentários de código durante o processo de atualização. Qual das seguintes opções descreve um uso apropriado de comentários de código?
 
 ## --answers--
 
-When updates are made, the developers use line and block comments to identify each individual code update.
+Quando as atualizações são feitas, os desenvolvedores usam comentários de linha e de bloco para identificar cada atualização de código individual.
 
 ---
 
-When updates are made, the developers leave all existing code comments intact. New comments are added to indicate when old comments no longer apply.
+Quando as atualizações são feitas, os desenvolvedores deixam todos os comentários de código existentes intactos. Novos comentários são adicionados para indicar quando os comentários antigos já não se aplicam.
 
 ---
 
-When updates are made, the developers summarize changes using block comments.
+Quando as atualizações são feitas, os desenvolvedores resumem as alterações usando comentários de bloco.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4331000cf542c50ff45
-title: 'Problem 198: Ambiguous Numbers'
+title: 'Завдання 198: двозначні числа'
 challengeType: 1
 forumTopicId: 301836
 dashedName: problem-198-ambiguous-numbers
@@ -8,11 +8,11 @@ dashedName: problem-198-ambiguous-numbers
 
 # --description--
 
-A best approximation to a real number $x$ for the denominator bound $d$ is a rational number $\frac{r}{s}$ (in reduced form) with $s ≤ d$, so that any rational number $\frac{p}{q}$ which is closer to $x$ than $\frac{r}{s}$ has $q > d$.
+Найкращою апроксимацією дійсного числа $x$ для знаменника, обмеженого $d$, є раціональне число $\frac{r}{s}$ у скороченій формі, де $s ≤ d$, щоб будь-яке раціональне число $\frac{p}{q}$, яке ближче до $x$ ніж $\frac{r}{s}$, було $q > d$.
 
-Usually the best approximation to a real number is uniquely determined for all denominator bounds. However, there are some exceptions, e.g. $\frac{9}{40}$ has the two best approximations $\frac{1}{4}$ and $\frac{1}{5}$ for the denominator bound $6$. We shall call a real number $x$ ambiguous, if there is at least one denominator bound for which $x$ possesses two best approximations. Clearly, an ambiguous number is necessarily rational.
+Зазвичай найкраща апроксимація дійсного числа визначається для будь-яких меж знаменника. Однак є деякі винятки. Наприклад, $\frac{9}{40}$ має дві найкращі апроксимації: $\frac{1}{4}$ та $\frac{1}{5}$ для знаменника, обмеженого $6$. Дійсне число $x$ називають двозначним, якщо існує принаймні одна межа знаменника, за якої $x$ отримує дві апроксимації. Очевидно, що двозначне число має бути раціональним.
 
-How many ambiguous numbers $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$, are there whose denominator $q$ does not exceed ${10}^8$?
+Скільки існує двозначних чисел $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$, знаменник $q$ яких не перевищує ${10}^8$?
 
 # --hints--
 

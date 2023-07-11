@@ -71,6 +71,11 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+export interface PrerequisiteChallenge {
+  id: string;
+  title: string;
+}
+
 export type ChallengeWithCompletedNode = {
   block: string;
   challengeType: number;
@@ -114,6 +119,7 @@ export type ChallengeNode = {
       type: string;
     };
     notes: string;
+    prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;
     isLocked: boolean;
     isPrivate: boolean;

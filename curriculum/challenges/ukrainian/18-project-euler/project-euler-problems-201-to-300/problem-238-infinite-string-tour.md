@@ -29,7 +29,7 @@ Note that substring 025 starting at position 3, has a sum of digits equal to 7, 
 
 We can verify that, for $0 &lt; k ≤ {10}^3$, $\sum p(k) = 4742$.
 
-Find $\sum p(k)$, for $0 &lt; k ≤ 2 \times {10}^{15}$.
+Знайдіть $\sum p(k)$ за умови $0 &lt; k ≤ 2 \times {10}^{15}$.
 
 # --hints--
 

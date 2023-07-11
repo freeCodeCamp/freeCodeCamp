@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which method changes the order of items in an `string` array?
+Qual método altera a ordem dos itens em um array de `string`?
 
 ## --answers--
 

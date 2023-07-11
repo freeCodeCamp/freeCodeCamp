@@ -20,7 +20,7 @@ For example, the following quadrilateral is a biclinic integral quadrilateral: $
 
 Let $B(N)$ be the number of distinct biclinic integral quadrilaterals $ABCD$ that satisfy ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. We can verify that $B(10\\,000) = 49$ and $B(1\\,000\\,000) = 38239$.
 
-Find $B(10\\,000\\,000\\,000)$.
+Знайдіть $B(10\\,000\\,000\\,000)$.
 
 # --hints--
 

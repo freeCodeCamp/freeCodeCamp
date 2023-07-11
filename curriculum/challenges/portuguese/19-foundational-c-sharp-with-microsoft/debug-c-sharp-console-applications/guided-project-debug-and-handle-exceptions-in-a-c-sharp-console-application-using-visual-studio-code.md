@@ -16,15 +16,15 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-When is an `ArgumentOutOfRangeException` exception thrown?
+Quando é lançada uma exceção do tipo `ArgumentOutOfRangeException`?
 
 ## --answers--
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de indexar um array fora dos limites do array.
 
-An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
+Uma exceção `ArgumentOutOfRangeException` é lançada quando o valor de um argumento está fora do intervalo permitido de valores conforme definido pelo método.
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de armazenar um valor de um tipo em um array de outro tipo.
 
 ## --video-solution--
 

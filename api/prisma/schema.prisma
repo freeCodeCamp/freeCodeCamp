@@ -120,7 +120,7 @@ model user {
   picture                      String
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
-  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[]
+  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   // rand Float? // Undefined removed, as new API never uses it.
   savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
   sendQuincyEmail              Boolean

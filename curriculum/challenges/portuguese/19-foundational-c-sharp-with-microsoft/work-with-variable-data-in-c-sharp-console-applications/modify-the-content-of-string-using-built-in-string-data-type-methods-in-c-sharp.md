@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
+Qual método encontra o próximo índice dos caracteres `-`, `=` ou `_`?
 
 ## --answers--
 

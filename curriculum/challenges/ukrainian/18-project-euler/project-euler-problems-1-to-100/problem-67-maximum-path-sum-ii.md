@@ -25,13 +25,13 @@ dashedName: problem-67-maximum-path-sum-ii
 
 # --hints--
 
-`maximumPathSumII(testTriangle)` має повернути число.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` має повернути число.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII(testTriangle)` має повернути 23.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` має повернути 23.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
@@ -62,13 +62,6 @@ function maximumPathSumII(triangle) {
 
   return true;
 }
-
-const testTriangle = [[3, 0, 0, 0],
-                      [7, 4, 0, 0],
-                      [2, 4, 6, 0],
-                      [8, 5, 9, 3]];
-
-maximumPathSumII(testTriangle);
 ```
 
 # --solutions--

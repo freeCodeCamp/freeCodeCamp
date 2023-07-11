@@ -25,7 +25,7 @@ We define $F(N)$ as the number of the 2x2 positive integer matrices which have a
 
 We can verify that $F(50) = 7$ and $F(1000) = 1019$.
 
-Find $F({10}^7)$.
+Знайдіть $F({10}^7)$.
 
 # --hints--
 

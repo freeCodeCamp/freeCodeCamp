@@ -53,12 +53,6 @@ const __utils = (() => {
     return oldError(...args);
   }
 
-  // unless data.type is truthy, this sends data out to the testRunner
-  function postResult(data: unknown) {
-    flushLogs();
-    ctx.postMessage(data);
-  }
-
   function log(...msgs: Error[]) {
     if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
@@ -75,12 +69,16 @@ const __utils = (() => {
   };
 
   return {
-    postResult,
     log,
     toggleProxyLogger,
     flushLogs
   };
 })();
+
+// We freeze these two to prevent learners from getting the tester into a weird
+// state.
+Object.freeze(self);
+Object.freeze(__utils);
 
 interface TestEvaluatorEvent extends MessageEvent {
   data: {
@@ -111,6 +109,10 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
 
   const assert = chai.assert;
   const __helpers = helpers;
+  // Similarly to self and __utils, if the learner tries to modify these, weird
+  // behavior may result. Freezing them means they get an error instead.
+  Object.freeze(assert);
+  Object.freeze(__helpers);
   // Fake Deep Equal dependency
   const DeepEqual = (a: unknown, b: unknown) =>
     JSON.stringify(a) === JSON.stringify(b);
@@ -160,17 +162,17 @@ ${e.data.testString}`)) as unknown;
         __toString(e.data.sources[fileName])
       );
     }
-    __utils.postResult({
-      pass: true
-    });
+    __utils.flushLogs();
+    ctx.postMessage({ pass: true });
   } catch (err) {
     // Errors from testing go to the browser console only.
     __utils.toggleProxyLogger(false);
     // Report execution errors in case user code has errors that are only
     // uncovered during testing.
     __utils.log(err as Error);
-    // postResult flushes the logs and must be called after logging is finished.
-    __utils.postResult({
+    // Now that all logs have been created we can flush them.
+    __utils.flushLogs();
+    ctx.postMessage({
       err: {
         message: (err as Error).message,
         stack: (err as Error).stack

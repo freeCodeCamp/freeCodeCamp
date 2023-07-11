@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
+Quando é apropriado usar um bloco `switch-case` ao invés de um bloco `if-elseif-else`?
 
 ## --answers--
 
-A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
+Um bloco `switch-case` é apropriado quando mais de 2-3 blocos de código `else if` forem necessários.
 
 ---
 
-A `switch-case` construct is appropriate when the number of `case` patterns is small.
+Um bloco `switch-case` é apropriado quando o número de padrões `case` for pequeno.
 
 ---
 
-A `switch-case` construct is appropriate when the selection statement is inside a loop.
+Um bloco `switch-case` é apropriado quando a instrução de seleção estiver dentro de um laço.
 
 
 ## --video-solution--

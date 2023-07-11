@@ -16,19 +16,19 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A developer writes an application that uses a `foreach` loop to iterate through an array containing 20 elements. After the application is complete, the developer learns that the array must be updated to include 40 elements. The application needs to examine all 40 array elements. Which of the following items describes the required code update?
+Um desenvolvedor escreve uma aplicação que usa um laço `foreach` para iterar através de um array contendo 20 elementos. Após a conclusão da aplicação, o desenvolvedor descobre que o array deve ser atualizado para incluir 40 elementos. A aplicação precisa examinar todos os 40 elementos do array. Quais dos itens a seguir descreve o código de atualização necessário?
 
 ## --answers--
 
-Create a second `foreach` loop that iterates through the additional items.
+Criar um segundo laço `foreach` que itera através dos itens adicionais.
 
 ---
 
-No changes are required to the `foreach` loop.
+Não são necessárias alterações no laço `foreach`.
 
 ---
 
-Place the original `foreach` loop inside the code block of a second `foreach` loop that iterates twice.
+Colocar o laço original `foreach` dentro do bloco de código de um segundo `foreach` que itera duas vezes.
 
 ## --video-solution--
 

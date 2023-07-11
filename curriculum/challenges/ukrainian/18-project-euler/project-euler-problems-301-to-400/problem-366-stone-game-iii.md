@@ -38,7 +38,7 @@ Let $M(n)$ be the maximum number of stones the first player can take from a winn
 
 $\sum M(n)$ for $n ≤ 100$ is 728.
 
-Find $\sum M(n)$ for $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+Знайдіть $\sum M(n)$ за умови $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
 
 # --hints--
 

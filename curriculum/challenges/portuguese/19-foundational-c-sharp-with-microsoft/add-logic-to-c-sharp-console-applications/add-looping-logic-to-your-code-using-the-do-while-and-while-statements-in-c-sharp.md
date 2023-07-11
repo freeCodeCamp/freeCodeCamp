@@ -16,7 +16,7 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
+Um desenvolvedor precisa iterar através de um array de itens para encontrar um que corresponda a um determinado critério. Qual é a melhor instrução de iteração para esta finalidade?
 
 ## --answers--
 

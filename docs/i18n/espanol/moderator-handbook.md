@@ -144,27 +144,33 @@ También hay situaciones en las que el colaborador está tratando de agregar un 
 
 You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
 
-#### Otras Directrices para Moderadores en GitHub
+#### Filtering Pull Requests
 
-Aunque tendrá acceso de escritura al repositorio de freeCodeCamp, ** nunca debe enviar código directamente a los repositorios de freeCodeCamp **. Todo el código debe ingresar a la base de código de freeCodeCamp en forma de una solicitud de extracción desde una bifurcación del repositorio.
+To sort Pull Requests for Quality Assurance for quick access to PRs that are ready for review, do not have a merge conflict, are not blocked, and have all status checks in green, use the following link to apply the filters:
 
-Además, nunca debe aceptar sus propios RP. Deben ser revisados ​​por otro moderador, al igual que con cualquier otro RP.
+[Direct link with filter applied](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse)
+
+#### Other Guidelines for Moderators on GitHub
+
+Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
+
+Also, you should never accept your own PRs. They must be reviewed by another moderator, just like any other PR.
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
 ## Moderando el foro
 
-As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. Se ocupará de las publicaciones marcadas y manejará el spam, las conversaciones fuera de tema y otras conversaciones inapropiadas.
+As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
-Tenga en cuenta que una vez que sea un moderador en el foro, comenzará a ver sugerencias azules de moderador sobre los miembros del foro, como "esta es la primera vez que [persona] publica: ¡démosle la bienvenida a la comunidad!" o "[persona] no ha publicado en mucho tiempo, démosle la bienvenida".
+Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
-![Un mensaje de texto azul que dice "esta es la primera vez que [person] ha publicado - ¡Demos la bienvenida a la comunidad!](https://i.imgur.com/mPmVgzK.png)
+![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-Estas son oportunidades para que les dé la bienvenida y los haga sentir muy especiales. Nunca se sabe qué persona que a sido marginada puede convertirse en nuestro próximo súper ayudante, ayudando a muchas otras personas en su viaje de codificación. Incluso la más mínima bondad puede desencadenar una cascada de buenas acciones.
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
 ### Eliminando mensajes del foro
 
-Los moderadores del foro pueden borrar las publicaciones de los usuarios. Solo debes hacer esto en los siguientes casos:
+Forum moderators can delete users' posts. You should only do this for the following instances:
 
 1. Alguien ha publicado una imagen pornográfica o gráficamente violenta.
 2. Alguien ha publicado un enlace o código que es de naturaleza maliciosa y podría dañar a otros usuarios que hagan clic en él.
@@ -173,7 +179,7 @@ Los moderadores del foro pueden borrar las publicaciones de los usuarios. Solo d
 
 ### Tratando con Spam
 
-For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Deje una nota en el perfil del usuario explicando la acción que ha realizado. Si el problema persiste, bloquee silenciosamente al usuario para que no publique (usando la opción de silencio en el panel de administración de usuarios). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Marque la casilla en el mensaje privado que indica que su mensaje es una "advertencia formal".
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -181,7 +187,7 @@ As a moderator, you can ask questions and report incidents in the [mod-team foru
 
 Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
 
-En circunstancias excepcionales, puede ser apropiado que un moderador divida una discusión en varios hilos.
+In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 

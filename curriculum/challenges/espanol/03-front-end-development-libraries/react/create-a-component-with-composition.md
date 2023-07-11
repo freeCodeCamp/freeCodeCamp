@@ -28,7 +28,7 @@ Cuando React encuentra una etiqueta HTML personalizada que hace referencia a otr
 
 En el editor de código, hay un componente funcional simple llamado `ChildComponent` y un componente de clase llamado `ParentComponent`. Compón los dos juntos renderizando el `ChildComponent` dentro del `ParentComponent`. Asegúrate de cerrar la etiqueta `ChildComponent` con una barra diagonal.
 
-**Nota:** `ChildComponent` se define con una función de flecha ES6 porque es una práctica muy común al usar React. Sin embargo, has de saber que se trata de una función simple. Si no estás familiarizado con la sintaxis de la función flecha, consulta la sección de JavaScript.
+**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
 
 # --hints--
 

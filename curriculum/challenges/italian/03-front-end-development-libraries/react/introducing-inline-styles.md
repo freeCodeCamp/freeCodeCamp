@@ -30,7 +30,7 @@ Vedi come abbiamo usato camelCase nella proprietà `fontSize`? Questo perché Re
 
 Aggiungi un attributo `style` al `div`nell'editor di codice per dare al testo un colore rosso e una dimensione del carattere di `72px`.
 
-Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
+Nota che è possibile impostare facoltativamente la dimensione del carattere come un numero, omettendo le unità `px` o scrivendole come `"72px"`.
 # --hints--
 
 Il componente dovrebbe mostrare un elemento `div`.

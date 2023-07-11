@@ -22,7 +22,7 @@ For a pair $w$ and $h$, let $F(w, h)$ be the number of distinct rectangles that 
 
 For an integer $N$, let $G(N)$ be the sum of $F(w, h)$ for all pairs $w$ and $h$ which satisfy $0 &lt; h ≤ w ≤ N$. We can verify that $G(10) = 55$, $G({10}^3) = 971\\,745$ and $G({10}^5) = 9\\,992\\,617\\,687$.
 
-Find $G({10}^{12})$. Give your answer modulo ${10}^8$.
+Знайдіть $G({10}^{12})$. Give your answer modulo ${10}^8$.
 
 # --hints--
 

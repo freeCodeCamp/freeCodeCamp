@@ -17,7 +17,7 @@ Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of 
 
 Наприклад, $f(165) = 19$, $f(100\\,100) = 142$ та $f(20!) = 4\\,034\\,872$.
 
-Find $f(43!)$.
+Знайдіть $f(43!)$.
 
 # --hints--
 

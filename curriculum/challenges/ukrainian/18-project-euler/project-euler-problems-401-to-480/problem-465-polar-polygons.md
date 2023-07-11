@@ -24,7 +24,7 @@ Note that polygons should be counted as different if they have different set of 
 
 Наприклад, $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ та $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
 
-Find $P(7^{13})\bmod 1\\,000\\,000\\,007$.
+Знайдіть $P(7^{13})\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
