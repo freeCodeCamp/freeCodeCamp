@@ -187,7 +187,9 @@ const modeMap = {
   css: 'css',
   html: 'html',
   js: 'javascript',
-  jsx: 'javascript'
+  jsx: 'javascript',
+  py: 'python',
+  python: 'python'
 };
 
 let monacoThemesDefined = false;
