@@ -57,7 +57,7 @@ function InstantSearchRoot({
   updateSearchQuery,
   children
 }: InstantSearchRootProps) {
-  const isMobile = useMediaQuery({
+  const isSmallHeight = useMediaQuery({
     query: `(min-height: 768px)`
   });
 
@@ -88,7 +88,7 @@ function InstantSearchRoot({
     updateSearchQuery(query);
   }
 
-  const hitsPerPage = isMobile ? 8 : 5;
+  const hitsPerPage = isSmallHeight ? 8 : 5;
   return (
     <InstantSearch
       indexName={newsIndex}
