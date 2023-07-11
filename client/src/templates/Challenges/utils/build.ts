@@ -8,7 +8,11 @@ import {
   ChallengeMeta
 } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
-import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
+import {
+  getTransformers,
+  embedFilesInHtml,
+  getPythonTransformers
+} from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
@@ -117,7 +121,7 @@ const buildFunctions = {
   [challengeTypes.pythonProject]: buildBackendChallenge,
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
   [challengeTypes.colab]: buildBackendChallenge,
-  [challengeTypes.python]: buildDOMChallenge
+  [challengeTypes.python]: buildPythonChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -208,18 +212,10 @@ type BuildResult = {
   sources: Source | undefined;
 };
 
-// TODO: Consider a creating separate buildPythonChallenge function. It's okay
-// for now, but it's a bit too mcuh for one function.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   { usesTestRunner } = { usesTestRunner: false }
 ): Promise<BuildResult> | undefined {
-  const finalRequires = [...required];
-  // TODO: re-enable this after splitting the build function in two.
-  // if (usesTestRunner) finalRequires.push(...frameRunner);
-  // TODO: handle pythonRunner like frameRunnerSrc.
-  finalRequires.push(...pythonRunner);
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
@@ -233,9 +229,11 @@ export function buildDOMChallenge(
         .then(checkFilesErrors)
         .then(embedFilesInHtml) as Promise<[ChallengeFiles, string]>
     ).then(([challengeFiles, contents]) => ({
-      challengeType: challengeTypes.html || challengeTypes.multifileCertProject,
+      // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+      // necessary at the moment.
+      challengeType: challengeTypes.html,
       build: concatHtml({
-        required: finalRequires,
+        required,
         template,
         contents,
         ...(usesTestRunner && { testRunner: frameRunnerSrc })
@@ -280,6 +278,37 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
     build: concatHtml({ testRunner: frameRunnerSrc }),
     sources: { url }
   };
+}
+
+function buildPythonChallenge({
+  challengeFiles,
+  required = [],
+  template = ''
+}: BuildChallengeData): Promise<BuildResult> | undefined {
+  // TODO: handle pythonRunner like frameRunnerSrc.
+  const finalRequires = [...required, ...pythonRunner];
+  const pipeLine = composeFunctions(...getPythonTransformers());
+  const finalFiles = challengeFiles.map(pipeLine);
+
+  if (finalFiles) {
+    return (
+      Promise.all(finalFiles)
+        .then(checkFilesErrors)
+        // Unlike the DOM challenges, there's no need to embed the files in HTML
+        .then(challengeFiles => ({
+          // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+          // necessary at the moment.
+          challengeType: challengeTypes.html,
+          // Both the terminal and pyodide are loaded into the browser, so we
+          // still need to build the HTML.
+          build: concatHtml({
+            required: finalRequires,
+            template
+          }),
+          sources: buildSourceMap(challengeFiles)
+        }))
+    );
+  }
 }
 
 export function updatePreview(
