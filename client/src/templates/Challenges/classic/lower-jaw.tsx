@@ -11,7 +11,6 @@ import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import ProgressBar from '../../../components/ProgressBar';
-import { ChallengeMeta } from '../../../redux/prop-types';
 import Quote from '../../../assets/icons/quote';
 
 const lowerJawButtonStyle = 'btn-block btn';
@@ -38,9 +37,7 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
-export interface LowerJawProps {
-  challengeMeta: ChallengeMeta;
-  completedPercent: number;
+interface LowerJawProps {
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
