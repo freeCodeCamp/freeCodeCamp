@@ -13,7 +13,7 @@ export const indent = (code, spaces) => {
 //
 // Finally, we have to await the task, or there's no way for the JavaScript
 // context to know when the task is complete.
-export const wrapInCoroutine = code => `import asyncio
+export const makeCancellable = code => `import asyncio
 async def cancellable_coroutine():
     try:
 ${indent(code, 8)}

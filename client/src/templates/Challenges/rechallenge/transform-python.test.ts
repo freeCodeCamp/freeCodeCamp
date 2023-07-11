@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { indent, wrapInCoroutine } from './transform-python';
+import { indent, makeCancellable } from './transform-python';
 
 describe('transform-python', () => {
   describe('indent', () => {
@@ -16,7 +16,7 @@ describe('transform-python', () => {
     });
   });
 
-  describe('wrapInCoroutine', () => {
+  describe('makeCancellable', () => {
     it('should wrap a code string in a cancellable coroutine', () => {
       const inputCode = `def foo():
     print('bar')`;
@@ -35,7 +35,7 @@ def __cancel():
     __task.cancel()
 await __task`;
 
-      expect(wrapInCoroutine(inputCode)).toEqual(wrappedCode);
+      expect(makeCancellable(inputCode)).toEqual(wrappedCode);
     });
   });
 });

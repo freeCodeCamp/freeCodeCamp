@@ -19,7 +19,7 @@ import {
   compileHeadTail
 } from '../../../../../utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
-import { wrapInCoroutine } from './transform-python';
+import { makeCancellable } from './transform-python';
 
 const { filename: sassCompile } = sassData;
 
@@ -395,7 +395,7 @@ const transformPython = async function (file) {
     modifiedLines.push(...updatedLines);
   }
   const newCode = modifiedLines.join('\n');
-  const cancellableCode = wrapInCoroutine(newCode);
+  const cancellableCode = makeCancellable(newCode);
   return transformContents(() => cancellableCode, file);
 };
 
