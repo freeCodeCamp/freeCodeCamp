@@ -14,7 +14,7 @@ export const getChallengeOrderFromFileTree = async (): Promise<
   const challengeOrder = fileList
     .map(file => matter.read(join(path, file)))
     .map(({ data }) => ({
-      id: String(data.id),
+      id: data.id as string,
       title: data.title as string
     }));
   return challengeOrder;
@@ -26,7 +26,7 @@ export const getChallengeOrderFromMeta = (): {
 }[] => {
   const meta = getMetaData();
   return meta.challengeOrder.map(({ id, title }) => ({
-    id: String(id),
+    id,
     title
   }));
 };

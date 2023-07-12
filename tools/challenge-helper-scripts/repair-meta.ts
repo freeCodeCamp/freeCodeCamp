@@ -6,7 +6,7 @@ const sortByStepNum = (a: string, b: string) =>
 
 const repairMeta = async () => {
   const challengeOrder = await getChallengeOrderFromFileTree();
-  if (!challengeOrder.every(({ title: step }) => /Step \d+/.test(step))) {
+  if (!challengeOrder.every(({ title }) => /Step \d+/.test(title))) {
     throw new Error(
       'You can only run this command on project-based blocks with step files.'
     );
