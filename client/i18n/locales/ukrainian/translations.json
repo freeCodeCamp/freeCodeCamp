@@ -683,9 +683,9 @@
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
-    "verify": "Verify this certification at:",
+    "verify": "Перевірити сертифікацію:",
     "issued": "Виданий",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "В рамках сертифікації програмного забезпечення повного циклу {{user}} отримав(-ла) такі сертифікації:",
       "heading": "У рамках цієї сертифікації {{user}} створив(-ла) такі проєкти і успішно пройшов(-ла) усі автоматизовані тестування:",
