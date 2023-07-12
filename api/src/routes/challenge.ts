@@ -81,7 +81,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         if (!tutorialRepo) {
           return false;
         }
-        return challenge.url.endsWith(tutorialRepo);
+        return challenge.url?.endsWith(tutorialRepo);
       });
 
       if (!challenge) return 'Tutorial name is not valid';
