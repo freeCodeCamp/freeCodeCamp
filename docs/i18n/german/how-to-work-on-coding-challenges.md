@@ -480,11 +480,13 @@ Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausf
 2. Führe das Folgende für jede Aufgabendatei aus, für die du Änderungen vorgenommen hast (ersetze dabei `Aufgabentitel hier eintragen` durch den vollständigen Titel der Aufgabe):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here
+   ```
 
-> [!TIP] Du kannst die Umgebungsvariable `LOCALE` in der `.env` auf die Sprache der Aufgabe(n) setzen, die du testen willst.
-> 
-> Die derzeit akzeptierten Werte sind `englisch` und `chinesisch`, wobei `englisch` standardmäßig eingestellt ist.
+> [!TIP]
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+>
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
 ## Proposing a Pull Request (PR)
 
@@ -492,8 +494,74 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 ## Useful Links
 
-Aufgaben erstellen und bearbeiten:
+Creating and Editing Challenges:
 
-1. [Aufgabentypen](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - was die numerischen Aufgabentypenwerte bedeuten (Enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Beitrag zum FreeCodeCamp - ES6 Challenge Tests schreiben](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - ein Video, das [Ethan Arrowood](https://twitter.com/ArrowoodTech) bei seinem Beitrag zur alten Version des Lehrplans begleitet.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+
+## Helper Scripts
+
+> [!NOTE]
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
+
+```bash
+cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
+```
+
+### Add New Challenge
+
+To add a new challenge at the end of a block, call the script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+
+### Delete a Challenge
+
+To delete a challenge, call the script:
+
+```bash
+pnpm run delete-challenge
+```
+
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+
+### Insert a Challenge
+
+To insert a challenge before an existing challenge, call the script:
+
+```bash
+pnpm run insert-challenge
+```
+
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+
+```bash
+a
+b
+c
+```
+
+And you choose `b`, your new order will be:
+
+```bash
+a
+new challenge
+b
+c
+```
+
+### Update Challenge Order
+
+If you need to manually re-order the challenges, call the script:
+
+```bash
+pnpm run update-challenge-order
+```
+
+This will take you through an interactive process to select the order of the challenges.
