@@ -253,7 +253,7 @@ function DefaultLayout({
               />
             </div>
           )}
-            {fetchState.complete && children}
+          {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
       </div>
