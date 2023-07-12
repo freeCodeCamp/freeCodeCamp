@@ -16,160 +16,166 @@ getLastName()
 getFullName()
 setFirstName(first)
 setLastName(last)
-setFullName(firstAndLast)
+setFullName(first, last)
 ```
 
-Execute os testes para ver a saída esperada para cada método. Os métodos que recebem um argumento têm de aceitar apenas um argumento e tem de ser uma string. Estes métodos devem constituir o único meio de interação com o objeto.
+Execute os testes para ver a saída esperada para cada método. Estes métodos devem constituir o único meio de interação com o objeto. Cada teste declara uma nova instância de `Person` como `new Person('Bob', 'Ross')`.
 
 # --hints--
 
-Nenhuma propriedade deve ser adicionada. `Object.keys(bob).length` deve sempre retornar 6.
+Você não deve alterar a assinatura da função.
 
 ```js
-assert.strictEqual(
-  Object.keys((function () {
-    let bob = new Person('Bob Ross');
-    bob.setFirstName('Haskell');
-    bob.setLastName('Curry');
-    bob.setFullName('John Smith');
-    return bob;
-  })()).length,
-  6
- );
+assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s*{/);
 ```
 
-`bob instanceof Pessoa` deve retornar `true`.
+Você não deve reatribuir o parâmetro `first`.
 
 ```js
-assert.deepEqual(_test_bob instanceof Person, true);
+assert.notMatch(code, /first\s*=\s*/);
 ```
 
-`bob.firstName` deve retornar `undefined`.
+Você não deve reatribuir o parâmetro `last`.
 
 ```js
-assert.deepEqual(_test_bob.firstName, undefined);
+assert.notMatch(code, /last\s*=\s*/);
 ```
 
-`bob.lastName` deve retornar `undefined`.
+Nenhuma propriedade deve ser adicionada. `Object.keys(Person).length` deve sempre retornar 6.
 
 ```js
-assert.deepEqual(_test_bob.lastName, undefined);
+const person = new Person('Bob', 'Ross');
+person.setFirstName('Haskell');
+person.setLastName('Curry');
+person.setFullName('John', 'Smith');
+assert.lengthOf(Object.keys(person), 6);
 ```
 
-`bob.getFirstName()` deve retornar a string `Bob`.
+Você deve ser capaz de instanciar o objeto `Person`.
 
 ```js
-assert.deepEqual(_test_bob.getFirstName(), 'Bob');
+const person = new Person('Bob', 'Ross');
+assert.instanceOf(person, Person);
 ```
 
-`bob.getLastName()` deve retornar a string `Ross`.
+O objeto `Person` deve ter a propriedade `firstName`.
 
 ```js
-assert.deepEqual(_test_bob.getLastName(), 'Ross');
+const person = new Person('Bob', 'Ross');
+assert.notProperty(person, 'firstName');
 ```
 
-`bob.getFullName()` deve retornar a string `Bob Ross`.
+O objeto `Person` deve ter a propriedade `lastName`.
 
 ```js
-assert.deepEqual(_test_bob.getFullName(), 'Bob Ross');
+const person = new Person('Bob', 'Ross');
+assert.notProperty(person, 'lastName');
 ```
 
-`bob.getFullName()` deve retornar a string `Haskell Ross` após `bob.setFirstName("Haskell")`.
+O método `.getFirstName()` deve retornar a string `Bob`.
 
 ```js
-assert.strictEqual(
-  (function () {
-    _test_bob.setFirstName('Haskell');
-    return _test_bob.getFullName();
-  })(),
-  'Haskell Ross'
-);
+const person = new Person('Bob', 'Ross');
+assert.strictEqual(person.getFirstName(), 'Bob');
 ```
 
-`bob.getFullName()` deve retornar a string `Haskell Curry` após `bob.setLastName("Curry")`.
+O método `.getLastName()` deve retornar a string `Ross`.
 
 ```js
-assert.strictEqual(
-  (function () {
-    var _bob = new Person('Haskell Ross');
-    _bob.setLastName('Curry');
-    return _bob.getFullName();
-  })(),
-  'Haskell Curry'
-);
+const person = new Person('Bob', 'Ross');
+assert.strictEqual(person.getLastName(), 'Ross');
 ```
 
-`bob.getFullName()` deve retornar a string `Haskell Curry` após `bob.setFullName("Haskell Curry")`.
+O método `.getFullName()` deve retornar a string `Bob Ross`.
 
 ```js
-assert.strictEqual(
-  (function () {
-    _test_bob.setFullName('Haskell Curry');
-    return _test_bob.getFullName();
-  })(),
-  'Haskell Curry'
-);
+const person = new Person('Bob', 'Ross');
+assert.strictEqual(person.getFullName(), 'Bob Ross');
 ```
 
-`bob.getFirstName()` deve retornar a string `Haskell` após `bob.setFullName("Haskell Curry")`.
+O método `.getFullName()` deve retornar a string `Haskell Ross` após a chamada de `.setFirstName('Haskell')`.
 
 ```js
-assert.strictEqual(
-  (function () {
-    _test_bob.setFullName('Haskell Curry');
-    return _test_bob.getFirstName();
-  })(),
-  'Haskell'
-);
+const person = new Person('Bob', 'Ross');
+person.setFirstName('Haskell');
+assert.strictEqual(person.getFullName(), 'Haskell Ross');
 ```
 
-`bob.getLastName()` deve retornar a string `Curry` após `bob.setFullName("Haskell Curry")`.
+O método `.getFullName()` deve retornar a string `Bob Curry` após a chamada de `.setLastName('Curry')`.
 
 ```js
-assert.strictEqual(
-  (function () {
-    _test_bob.setFullName('Haskell Curry');
-    return _test_bob.getLastName();
-  })(),
-  'Curry'
-);
+const person = new Person('Bob', 'Ross');
+person.setLastName('Curry');
+assert.strictEqual(person.getFullName(), 'Bob Curry');
+```
+
+O método `.getFullName()` deve retornar a string `Haskell Curry` após a chamada de `.setFullName('Haskell', 'Curry')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Haskell', 'Curry');
+assert.strictEqual(person.getFullName(), 'Haskell Curry');
+```
+
+O método `.getFirstName()` deve retornar a string `Haskell` após a chamada de `.setFullName('Haskell', 'Curry')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Haskell', 'Curry');
+assert.strictEqual(person.getFirstName(), 'Haskell');
+```
+
+O método `.getLastName()` deve retornar a string `Curry` após a chamada de `.setFullName('Haskell', 'Curry')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Haskell', 'Curry');
+assert.strictEqual(person.getLastName(), 'Curry');
+```
+
+O método `.getFullName()` deve retornar a string `Emily Martinez de la Rosa` após a chamada de `.setFullName('Emily Martinez', 'de la Rosa')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(person.getFullName(), 'Emily Martinez de la Rosa');
+```
+
+O método `.getFirstName()` deve retornar a string `Emily Martinez` após a chamada de `.setFullName('Emily Martinez', 'de la Rosa')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(person.getFirstName(), 'Emily Martinez');
+```
+
+O método `.getLastName()` deve retornar a string `de la Rosa` após a chamada de `.setFullName('Emily Martinez', 'de la Rosa')`.
+
+```js
+const person = new Person('Bob', 'Ross');
+person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(person.getLastName(), 'de la Rosa');
 ```
 
 # --seed--
 
-## --after-user-code--
-
-```js
-const _test_bob = new Person('Bob Ross');
-```
-
 ## --seed-contents--
 
 ```js
-const Person = function(firstAndLast) {
+const Person = function(first, last) {
   this.getFullName = function() {
     return "";
   };
-  return firstAndLast;
+  return "";
 };
-
-const bob = new Person('Bob Ross');
-bob.getFullName();
 ```
 
 # --solutions--
 
 ```js
-const Person = function(firstAndLast) {
-
-  let firstName, lastName;
-
-  function updateName(str) {
-    firstName = str.split(" ")[0];
-    lastName = str.split(" ")[1];
-  }
-
-  updateName(firstAndLast);
+const Person = function(first, last) {
+  let firstName = first;
+  let lastName = last;
 
   this.getFirstName = function(){
     return firstName;
@@ -192,11 +198,9 @@ const Person = function(firstAndLast) {
     lastName = str;
   };
 
-  this.setFullName = function(str){
-    updateName(str);
+  this.setFullName = function(first, last){
+    firstName = first;
+    lastName = last;
   };
 };
-
-const bob = new Person('Bob Ross');
-bob.getFullName();
 ```

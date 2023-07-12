@@ -29,7 +29,7 @@ Kipengele chako cha nanga (`a`) kinapaswa kuwa na tagi ya ufunguzi. Tagi za ufun
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-Unapaswa kuongeza tu tagi moja ya ufunguzi ya (`a`). Tafadhali ondoa ziada yoyote.
+You are missing a closing (`a`) tag after the image.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
