@@ -3,10 +3,6 @@
   height: 100%;
 }
 
-#content-start > div {
-  height: 100%;
-}
-
 #learn-app-wrapper,
 #learn-app-wrapper .desktop-layout,
 #learn-app-wrapper .reflex-container.vertical {
