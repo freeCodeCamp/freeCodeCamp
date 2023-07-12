@@ -140,7 +140,7 @@ describe('Challenge utils helper scripts', () => {
       mock({
         '_meta/project/': {
           'meta.json':
-            '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-2", "title": "Step 2"}, {"id": "id-3", "title": "Step 3"}}]}'
+            '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}'
         },
         'english/superblock/project/': {
           'id-1.md': `---

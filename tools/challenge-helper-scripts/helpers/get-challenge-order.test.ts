@@ -26,7 +26,7 @@ describe('getChallengeOrderFromMeta helper', () => {
             'mock-project': {
               'meta.json': `{
           "id": "mock-id",
-          "challengeOrder": [{"id": "1", "title": "This title is wrong"}, {"id": "2", "title": "I Dunno"}, {"id": "100", "title": "What a Cool Thing"}}]}
+          "challengeOrder": [{"id": "1", "title": "This title is wrong"}, {"id": "2", "title": "I Dunno"}, {"id": "100", "title": "What a Cool Thing"}]}
           `
             }
           }
@@ -76,7 +76,7 @@ describe('getChallengeOrderFromFileTree helper', () => {
             'mock-project': {
               'meta.json': `{
           "id": "mock-id",
-          "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 3"}, {"id": "100", "title": "Step 2"}}]}
+          "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 3"}, {"id": "100", "title": "Step 2"}]}
           `
             }
           }
@@ -98,8 +98,8 @@ describe('getChallengeOrderFromFileTree helper', () => {
     const challengeOrder = await getChallengeOrderFromFileTree();
     expect(challengeOrder).toEqual([
       { id: '1', title: 'Step 1' },
-      { id: '2', title: 'Step 3' },
-      { id: '100', title: 'Step 2' }
+      { id: '100', title: 'Step 2' },
+      { id: '2', title: 'Step 3' }
     ]);
   });
 
