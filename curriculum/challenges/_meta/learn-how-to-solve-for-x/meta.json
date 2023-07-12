@@ -9,13 +9,13 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6331d23eb51aeedd1a2bd646",
-      "Solving for X"
-    ],
-    [
-      "6331d233b51aeedd1a2bd645",
-      "How to Solve for X: Extra"
-    ]
+    {
+      "id": "6331d23eb51aeedd1a2bd646",
+      "title": "Solving for X"
+    },
+    {
+      "id": "6331d233b51aeedd1a2bd645",
+      "title": "How to Solve for X: Extra"
+    }
   ]
 }

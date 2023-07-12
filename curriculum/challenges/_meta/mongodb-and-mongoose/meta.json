@@ -7,53 +7,53 @@
   "time": "5 hours",
   "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
-    [
-      "587d7fb6367417b2b2512c06",
-      "Install and Set Up Mongoose"
-    ],
-    [
-      "587d7fb6367417b2b2512c07",
-      "Create a Model"
-    ],
-    [
-      "587d7fb6367417b2b2512c09",
-      "Create and Save a Record of a Model"
-    ],
-    [
-      "587d7fb7367417b2b2512c0a",
-      "Create Many Records with model.create()"
-    ],
-    [
-      "587d7fb7367417b2b2512c0b",
-      "Use model.find() to Search Your Database"
-    ],
-    [
-      "587d7fb7367417b2b2512c0c",
-      "Use model.findOne() to Return a Single Matching Document from Your Database"
-    ],
-    [
-      "587d7fb7367417b2b2512c0d",
-      "Use model.findById() to Search Your Database By _id"
-    ],
-    [
-      "587d7fb8367417b2b2512c0e",
-      "Perform Classic Updates by Running Find, Edit, then Save"
-    ],
-    [
-      "587d7fb8367417b2b2512c0f",
-      "Perform New Updates on a Document Using model.findOneAndUpdate()"
-    ],
-    [
-      "587d7fb8367417b2b2512c10",
-      "Delete One Document Using model.findByIdAndRemove"
-    ],
-    [
-      "587d7fb8367417b2b2512c11",
-      "Delete Many Documents with model.remove()"
-    ],
-    [
-      "587d7fb9367417b2b2512c12",
-      "Chain Search Query Helpers to Narrow Search Results"
-    ]
+    {
+      "id": "587d7fb6367417b2b2512c06",
+      "title": "Install and Set Up Mongoose"
+    },
+    {
+      "id": "587d7fb6367417b2b2512c07",
+      "title": "Create a Model"
+    },
+    {
+      "id": "587d7fb6367417b2b2512c09",
+      "title": "Create and Save a Record of a Model"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0a",
+      "title": "Create Many Records with model.create()"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0b",
+      "title": "Use model.find() to Search Your Database"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0c",
+      "title": "Use model.findOne() to Return a Single Matching Document from Your Database"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0d",
+      "title": "Use model.findById() to Search Your Database By _id"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c0e",
+      "title": "Perform Classic Updates by Running Find, Edit, then Save"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c0f",
+      "title": "Perform New Updates on a Document Using model.findOneAndUpdate()"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c10",
+      "title": "Delete One Document Using model.findByIdAndRemove"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c11",
+      "title": "Delete Many Documents with model.remove()"
+    },
+    {
+      "id": "587d7fb9367417b2b2512c12",
+      "title": "Chain Search Query Helpers to Narrow Search Results"
+    }
   ]
 }

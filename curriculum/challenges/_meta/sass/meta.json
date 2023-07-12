@@ -9,41 +9,41 @@
   "required": [],
   "superBlock": "front-end-development-libraries",
   "challengeOrder": [
-    [
-      "587d7dbd367417b2b2512bb4",
-      "Store Data with Sass Variables"
-    ],
-    [
-      "587d7dbd367417b2b2512bb5",
-      "Nest CSS with Sass"
-    ],
-    [
-      "587d7dbd367417b2b2512bb6",
-      "Create Reusable CSS with Mixins"
-    ],
-    [
-      "587d7dbe367417b2b2512bb8",
-      "Use @if and @else to Add Logic To Your Styles"
-    ],
-    [
-      "587d7dbe367417b2b2512bb9",
-      "Use @for to Create a Sass Loop"
-    ],
-    [
-      "587d7dbf367417b2b2512bba",
-      "Use @each to Map Over Items in a List"
-    ],
-    [
-      "587d7dbf367417b2b2512bbb",
-      "Apply a Style Until a Condition is Met with @while"
-    ],
-    [
-      "587d7dbf367417b2b2512bbc",
-      "Split Your Styles into Smaller Chunks with Partials"
-    ],
-    [
-      "587d7fa5367417b2b2512bbd",
-      "Extend One Set of CSS Styles to Another Element"
-    ]
+    {
+      "id": "587d7dbd367417b2b2512bb4",
+      "title": "Store Data with Sass Variables"
+    },
+    {
+      "id": "587d7dbd367417b2b2512bb5",
+      "title": "Nest CSS with Sass"
+    },
+    {
+      "id": "587d7dbd367417b2b2512bb6",
+      "title": "Create Reusable CSS with Mixins"
+    },
+    {
+      "id": "587d7dbe367417b2b2512bb8",
+      "title": "Use @if and @else to Add Logic To Your Styles"
+    },
+    {
+      "id": "587d7dbe367417b2b2512bb9",
+      "title": "Use @for to Create a Sass Loop"
+    },
+    {
+      "id": "587d7dbf367417b2b2512bba",
+      "title": "Use @each to Map Over Items in a List"
+    },
+    {
+      "id": "587d7dbf367417b2b2512bbb",
+      "title": "Apply a Style Until a Condition is Met with @while"
+    },
+    {
+      "id": "587d7dbf367417b2b2512bbc",
+      "title": "Split Your Styles into Smaller Chunks with Partials"
+    },
+    {
+      "id": "587d7fa5367417b2b2512bbd",
+      "title": "Extend One Set of CSS Styles to Another Element"
+    }
   ]
 }

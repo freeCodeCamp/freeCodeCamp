@@ -9,13 +9,13 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6331d2b0b51aeedd1a2bd655",
-      "Solving Systems"
-    ],
-    [
-      "6331d2a9b51aeedd1a2bd654",
-      "Solving Systems of Equations: Extra"
-    ]
+    {
+      "id": "6331d2b0b51aeedd1a2bd655",
+      "title": "Solving Systems"
+    },
+    {
+      "id": "6331d2a9b51aeedd1a2bd654",
+      "title": "Solving Systems of Equations: Extra"
+    }
   ]
 }
