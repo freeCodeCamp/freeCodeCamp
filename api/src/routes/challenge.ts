@@ -3,12 +3,12 @@ import {
   type FastifyPluginCallbackTypebox
 } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
+import { uniqBy } from 'lodash';
 import { environment, deploymentEnv } from '../../../config/env.json';
 import { jwtSecret } from '../../../config/secrets';
 import { fixPartiallyCompletedChallengeItem } from '../utils';
 import { getChallenges } from '../utils/get-challenges';
-
-
+import { updateUserChallengeData } from '../utils/common-challenge-functions';
 interface JwtPayload {
   userToken: string;
 }
@@ -38,96 +38,87 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
 
     async (req, reply) => {
+      let userToken;
+
+      const { 'coderoad-user-token': encodedUserToken } = req.headers;
+      const { tutorialId } = req.body;
+
+      if (!tutorialId) {
+        void reply.code(400);
+        return `'tutorialId' not found in request body`;
+      }
+
+      if (!encodedUserToken) {
+        void reply.code(400);
+        return `'coderoad-user-token' not found in request headers`;
+      }
+
       try {
+        if (typeof encodedUserToken === 'string' && jwtSecret) {
+          const payload = jwt.verify(encodedUserToken, jwtSecret) as JwtPayload;
+          userToken = payload.userToken;
+        }
+      } catch {
+        void reply.code(400);
+        return `invalid user token`;
+      }
 
-        let userToken;
+      const tutorialRepo = tutorialId?.split(':')[0];
+      const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
-        const { 'coderoad-user-token': encodedUserToken } = req.headers;
-        const { tutorialId } = req.body;
-
-        if (!tutorialId) {
+      if (deploymentEnv !== 'staging' && environment !== 'development') {
+        if (tutorialOrg !== 'freeCodeCamp') {
           void reply.code(400);
-          return `'tutorialId' not found in request body`;
+          return `Tutorial not hosted on freeCodeCamp GitHub account`;
         }
+      }
 
-        if (!encodedUserToken) {
-          void reply.code(400);
-          return `'coderoad-user-token' not found in request headers`;
+      const codeRoadChallenges = getChallenges().filter(
+        ({ challengeType }) => challengeType === 12 || challengeType === 13
+      );
+
+      const challenge = codeRoadChallenges.find(challenge => {
+        if (!tutorialRepo) {
+          return false;
         }
+        return challenge.url.endsWith(tutorialRepo);
+      });
 
-        try {
-          if (typeof encodedUserToken === 'string' && jwtSecret) {
-            const payload = jwt.verify(
-              encodedUserToken,
-              jwtSecret
-            ) as JwtPayload;
-            userToken = payload.userToken;
-          } else {
-            throw Error('something went wrong');
-          }
-        } catch {
-          void reply.code(400);
-          return `invalid user token`;
-        }
+      if (!challenge) return 'Tutorial name is not valid';
 
-        const tutorialRepo = tutorialId?.split(':')[0];
-        const tutorialOrg = tutorialRepo?.split('/')?.[0];
-
-        if (deploymentEnv !== 'staging' && environment !== 'development') {
-          if (tutorialOrg !== 'freeCodeCamp') {
-            void reply.code(400);
-            return `Tutorial not hosted on freeCodeCamp GitHub account`;
-          }
-        }
-
-        const codeRoadChallenges = getChallenges().filter(
-          ({ challengeType }) => challengeType === 12 || challengeType === 13
-        );
-
-        const challenge = codeRoadChallenges.find(challenge => {
-          if (!tutorialRepo) {
-            return false;
-          }
-          return challenge.url?.endsWith(tutorialRepo);
+      const { id: challengeId, challengeType } = challenge;
+      try {
+        const tokenInfo = await fastify.prisma.userToken.findUnique({
+          where: { id: userToken }
         });
 
-        if (!challenge) return 'Tutorial name is not valid';
+        if (!tokenInfo) return 'User token not found';
 
-        const { id: challengeId, challengeType } = challenge;
-        try {
+        const { userId } = tokenInfo;
 
-          const tokenInfo = await fastify.prisma.userToken.findUnique({
-            where: { id: userToken }
-          });
+        const user = await fastify.prisma.user.findFirstOrThrow({
+          where: { id: userId }
+        });
 
-          if (!tokenInfo) return 'User token not found';
+        if (!user) return 'User for user token not found';
 
-          const { userId } = tokenInfo;
+        const completedDate = Date.now();
+        const { completedChallenges = [], partiallyCompletedChallenges = [] } =
+          user;
 
-          const user = await fastify.prisma.user.findFirstOrThrow({
-            where: { id: userId }
-          });
+        const isCompleted = completedChallenges.some(
+          challenge => challenge.id === challengeId
+        );
 
-          if (!user) return `User for user token not found`;
+        if (challengeType === 13 && !isCompleted) {
+          const finalChallenge = {
+            id: challengeId,
+            completedDate
+          };
 
-          const completedDate = Date.now();
-          const { completedChallenges = [], partiallyCompletedChallenges = [] } = user;
-
-          let userUpdateInfo = <UserUpdateInfo>{};
-
-          const isCompleted = completedChallenges.some(
-            challenge => challenge.id === challengeId
-          );
-
-
-          if (challengeType === 13 && !isCompleted) {
-            const finalChallenge = {
-              id: challengeId,
-              completedDate
-            };
-
-            userUpdateInfo.updateData = {};
-            userUpdateInfo.updateData.$set = {
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
               partiallyCompletedChallenges: uniqBy(
                 [
                   finalChallenge,
@@ -137,21 +128,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
                 ],
                 'id'
               )
-            };
-
-          } else {
-            userUpdateInfo = buildUserUpdate(fastify, user, challengeId, {
-              id: challengeId,
-              completedDate
-            });
-          }
-
-        } catch {
-
+            }
+          });
+        } else {
+          await updateUserChallengeData(fastify, user, challengeId, {
+            id: challengeId,
+            completedDate
+          });
         }
       } catch {
-        return '';
+        return 'An error occurred trying to submit the challenge';
       }
+      return 'Successfully submitted challenge';
     }
   );
 
