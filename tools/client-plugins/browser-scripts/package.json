@@ -53,6 +53,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.13",
     "xterm": "^5.2.1",
     "xterm-addon-fit": "^0.7.0"
   }
