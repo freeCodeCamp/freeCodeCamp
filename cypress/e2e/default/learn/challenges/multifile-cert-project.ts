@@ -17,7 +17,7 @@ describe('multifileCertProjects', function () {
   beforeEach(() => {
     cy.preserveSession();
     cy.visit(
-      'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
+      'learn/2022/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
     );
   });
 

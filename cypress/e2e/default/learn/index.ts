@@ -21,7 +21,7 @@ const superBlockNames = [
   'College Algebra with Python Certification',
   'Coding Interview Prep',
   'Project Euler',
-  'Legacy Responsive Web Design Certification'
+  'Legacy Responsive Web Design Challenges'
 ];
 
 describe('Learn Landing page (not logged in)', () => {
