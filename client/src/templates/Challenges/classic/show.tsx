@@ -413,16 +413,7 @@ function ShowClassic({
   };
 
   return (
-    <Hotkeys
-      challengeType={challengeType}
-      executeChallenge={executeChallenge}
-      innerRef={containerRef}
-      instructionsPanelRef={instructionsPanelRef}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-      usesMultifileEditor={usesMultifileEditor}
-      {...(editorRef && { editorRef: editorRef })}
-    >
+
       <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />
         {isMobile && (
@@ -496,7 +487,6 @@ function ShowClassic({
         />
         <ShortcutsModal />
       </LearnLayout>
-    </Hotkeys>
   );
 }
 

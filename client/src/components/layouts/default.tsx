@@ -253,9 +253,7 @@ function DefaultLayout({
               />
             </div>
           )}
-          <div id='content-start' tabIndex={-1}>
             {fetchState.complete && children}
-          </div>
         </div>
         {showFooter && <Footer />}
       </div>

@@ -65,14 +65,6 @@ body {
   min-height: 0;
 }
 
-#content-start {
-  min-height: 0;
-  height: 100%;
-}
-
-#content-start > div {
-  height: 100%;
-}
 
 h1 {
   color: var(--secondary-color);
