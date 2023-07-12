@@ -195,12 +195,21 @@ importers:
       '@prisma/client':
         specifier: 4.16.2
         version: 4.16.2(prisma@4.16.2)
+      ajv:
+        specifier: 8.12.0
+        version: 8.12.0
+      ajv-formats:
+        specifier: ^2.1.1
+        version: 2.1.1(ajv@8.12.0)
       bad-words:
         specifier: 3.0.4
         version: 3.0.4
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.16.0)
+      fast-uri:
+        specifier: ^2.2.0
+        version: 2.2.0
       fastify:
         specifier: 4.19.2
         version: 4.19.2
@@ -241,9 +250,6 @@ importers:
       '@types/supertest':
         specifier: 2.0.12
         version: 2.0.12
-      ajv:
-        specifier: 8.12.0
-        version: 8.12.0
       dotenv-cli:
         specifier: 7.2.1
         version: 7.2.1
@@ -18747,7 +18753,6 @@ packages:
         optional: true
     dependencies:
       debug: 2.2.0
-    dev: false
 
   /follow-redirects@1.15.2(debug@3.2.7):
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -20817,7 +20822,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.2(debug@4.3.4)
+      follow-redirects: 1.15.2(debug@2.2.0)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug

@@ -2,6 +2,7 @@ import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
+import { formatValidationError } from '../utils/error-formatting';
 import { getPoints, ProgressTimestamp } from '../utils/progress';
 
 export const challengeRoutes: FastifyPluginCallbackTypebox = (
@@ -16,7 +17,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/backend-challenge-completed',
     {
-      schema: schemas.backendChallengeCompleted
+      schema: schemas.backendChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatValidationError(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
       try {

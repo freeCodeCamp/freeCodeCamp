@@ -328,8 +328,8 @@ export const schemas = {
   // Challenges
   backendChallengeCompleted: {
     body: Type.Object({
-      id: Type.String({ maxLength: 24, minLength: 24 }),
-      solution: Type.String()
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+      solution: Type.String({ format: 'url', maxLength: 1024 })
     }),
     response: {
       200: Type.Object({
@@ -339,9 +339,14 @@ export const schemas = {
       }),
       400: Type.Object({
         type: Type.Literal('error'),
-        message: Type.Literal(
-          'That does not appear to be a valid challenge submission.'
-        )
+        message: Type.Union([
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          ),
+          Type.Literal(
+            'You have not provided the valid links for us to inspect your work.'
+          )
+        ])
       }),
       500: Type.Object({
         message: Type.Literal(
