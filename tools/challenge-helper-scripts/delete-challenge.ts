@@ -14,13 +14,13 @@ const deleteChallenge = async () => {
     name: 'id',
     message: 'Which challenge should be deleted?',
     type: 'list',
-    choices: challenges.map(([id, title]) => ({
+    choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
   })) as { id: string };
   const indexToDelete = challenges.findIndex(
-    ([id]) => id === challengeToDelete.id
+    ({ id }) => id === challengeToDelete.id
   );
   const fileToDelete = await getFileName(challengeToDelete.id);
 
