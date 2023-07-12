@@ -269,7 +269,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
-                  Preview currently showing in external window
+                  Preview currently showing in external window.
                 </p>
               )}
             </TabPane>
@@ -281,7 +281,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               videoUrl={videoUrl}
             />
           )}
-          {this.state.currentTab !== 'preview' && (
+          {hasPreview && this.state.currentTab !== 'preview' && (
             <button
               className='portal-button'
               aria-expanded={!!showPreviewPortal}
