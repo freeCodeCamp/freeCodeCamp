@@ -12,13 +12,13 @@ The function $lcm(a, b)$ denotes the least common multiple of $a$ and $b$.
 
 Let $A(n)$ be the average of the values of $lcm(n, i)$ for $1 ≤ i ≤ n$.
 
-E.g: $A(2) = \frac{2 + 2}{2} = 2$ and $A(10) = \frac{10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10}{10} = 32$.
+Наприклад: $A(2) = \frac{2 + 2}{2} = 2$ та $A(10) = \frac{10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10}{10} = 32$.
 
 Let $S(n) = \sum A(k)$ for $1 ≤ k ≤ n$.
 
 $S(100) = 122\\,726$.
 
-Find $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
+Знайдіть $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
 
 # --hints--
 

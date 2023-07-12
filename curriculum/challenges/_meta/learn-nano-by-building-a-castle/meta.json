@@ -1,6 +1,7 @@
 {
   "name": "Learn Nano by Building a Castle",
   "isUpcomingChange": false,
+  "dashedName": "learn-nano-by-building-a-castle",
   "helpCategory": "Backend Development",
   "order": 10,
   "time": "5 hours",

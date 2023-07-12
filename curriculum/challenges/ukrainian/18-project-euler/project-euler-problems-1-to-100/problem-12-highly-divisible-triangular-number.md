@@ -12,7 +12,7 @@ dashedName: problem-12-highly-divisible-triangular-number
 
 <div style='text-align: center;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-Перерахуємо множники перших семи трикутних чисел:
+Перерахуємо дільники перших семи трикутних чисел:
 
 <div style='padding-left: 4em;'><b>1:</b> 1</div>
 <div style='padding-left: 4em;'><b>3:</b> 1, 3</div>
@@ -22,7 +22,7 @@ dashedName: problem-12-highly-divisible-triangular-number
 <div style='padding-left: 4em;'><b>21:</b> 1, 3, 7, 21</div>
 <div style='padding-left: 4em;'><b>28:</b> 1, 2, 4, 7, 14, 28</div>
 
-Бачимо, що 28 є першим трикутним числом, яке має понад п’яти дільників.
+Бачимо, що 28 є першим трикутним числом, яке має більше п’яти дільників.
 
 Яке значення першого трикутного числа, що має більше `n` дільників?
 

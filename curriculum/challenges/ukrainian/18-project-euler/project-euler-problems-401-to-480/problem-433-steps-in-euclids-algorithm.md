@@ -21,7 +21,7 @@ Define $S(N)$ as the sum of $E(x, y)$ for $1 ≤ x$, $y ≤ N$.
 
 We have $S(1) = 1$, $S(10) = 221$ and $S(100) = 39\\,826$.
 
-Find $S(5 \times {10}^6)$.
+Знайдіть $S(5 \times {10}^6)$.
 
 # --hints--
 

@@ -19,6 +19,7 @@ export enum SuperBlocks {
   TheOdinProject = 'the-odin-project',
   ProjectEuler = 'project-euler',
   CollegeAlgebraPy = 'college-algebra-with-python',
+  FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   ExampleCertification = 'example-certification'
 }
 
@@ -73,6 +74,7 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.ExampleCertification
   ]
 };
@@ -94,41 +96,46 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Chinese]: [
     SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Italian]: [
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Portuguese]: [
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Japanese]: [
     SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.German]: [
     SuperBlocks.RespWebDesignNew,
@@ -144,7 +151,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
   ],
   [Languages.Arabic]: [
     SuperBlocks.DataVis,
@@ -159,7 +167,27 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp
+  ],
+  [Languages.Swahili]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp,
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.JsAlgoDataStruct
   ]
 };
 

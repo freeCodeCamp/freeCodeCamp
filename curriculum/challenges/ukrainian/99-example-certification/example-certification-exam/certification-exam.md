@@ -1,15 +1,15 @@
 ---
 id: 645147516c245de4d11eb7ba
-title: Certification Exam
+title: Сертифікаційний екзамен
 challengeType: 17
 dashedName: certification-exam
 ---
 
 # --description--
 
-Here are some rules:
+Ось декілька правил:
 
-- click start
+- натисніть старт
 
 # --instructions--
 

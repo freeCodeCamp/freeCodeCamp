@@ -29,7 +29,7 @@ Let $M(n)$ be the highest number the first player can choose at her first turn t
 
 It can be verified $\sum M{(n)}^3 = 8150$ for $1 ≤ n ≤ 20$.
 
-Find $\sum M{(n)}^3$ for $1 ≤ n ≤ 1000$.
+Знайдіть $\sum M{(n)}^3$ за умови $1 ≤ n ≤ 1000$.
 
 # --hints--
 

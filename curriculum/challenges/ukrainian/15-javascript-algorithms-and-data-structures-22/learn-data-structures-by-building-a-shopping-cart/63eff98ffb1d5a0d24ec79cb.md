@@ -1,6 +1,6 @@
 ---
 id: 63eff98ffb1d5a0d24ec79cb
-title: Step 26
+title: Крок 26
 challengeType: 0
 dashedName: step-26
 ---
@@ -15,21 +15,21 @@ Assign your query to a `currentProductCountSpan` variable.
 
 # --hints--
 
-You should declare a `currentProductCountSpan` variable.
+Ви повинні оголосити змінну `currentProductCountSpan`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /currentProductCountSpan\s*=/);
 ```
 
-You should use `const` to declare `currentProductCountSpan`.
+Ви повинні використати `const`, щоб оголосити `currentProductCountSpan`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+currentProductCountSpan\s*=/);
 ```
 
-You should use `document.getElementById()` to get the matching element.
+Ви повинні використати `document.getElementById()`, щоб отримати відповідний елемент.
 
 ```js
 const cart = new ShoppingCart();

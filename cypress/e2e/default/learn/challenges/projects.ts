@@ -64,7 +64,7 @@ const pythonProjects = {
 
 describe('project submission', () => {
   beforeEach(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
   });
   // NOTE: this will fail once challenge tests are added.

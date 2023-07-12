@@ -8,19 +8,19 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
+In the `index.pug` file supplied, there is a login form. Es wird durch das Inline-JavaScript `if showLogin` ausgeblendet, wobei das Formular hinten eingerückt wird.
 
 Füge innerhalb des `res.render` dieser Seite dem Objekt eine neue Variable hinzu, `showLogin: true`. Wenn du deine Seite aktualisierst, solltest du das Formular sehen! Das Formular übermittelt **POST**-Anfragen an `/login`. Hier solltest du also die POST-Anfrage annehmen und den Nutzer authentifizieren.
 
 In dieser Aufgabe erstellst du die Route `/login`, um eine POST-Anfrage anzunehmen. Um mithilfe dieser Route Nutzer zu authentifizieren, benötigst du eine Middleware, die das vor Beantwortung der Anfrage tut. Dazu wird einfach ein weiteres Argument an die Middleware übergeben, bevor die Antwort kommt. The middleware to use is `passport.authenticate('local')`.
 
-`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
+`passport.authenticate` kann auch einige Optionen als Argument akzeptieren, wie z.B. `{ failureRedirect: '/' }`, was unglaublich nützlich ist, also füge auch das hinzu. Füge nach der Verwendung der Middleware eine Antwort hinzu (die nur aufgerufen wird, wenn die Authentifizierungs-Middleware funktioniert), die den Benutzer zu `/profile` umleitet. Fügen diese Route ebenfalls hinzu und lasse sie die Ansicht `profile.pug` rendern.
 
-If the authentication was successful, the user object will be saved in `req.user`.
+Wenn die Authentifizierung erfolgreich war, wird das Benutzerobjekt in `req.user` gespeichert.
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+Wenn du zu diesem Zeitpunkt einen Benutzernamen und ein Passwort in das Formular eingibst, sollte es auf die Startseite `/` umleiten und die Konsole deines Servers sollte `'User {USERNAME} attempted to log in.'` anzeigen, da wir derzeit keinen Benutzer anmelden können, der nicht registriert ist.
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">das bis zu diesem Punkt abgeschlossene Projekt überprüfen</a>.
 
 # --hints--
 

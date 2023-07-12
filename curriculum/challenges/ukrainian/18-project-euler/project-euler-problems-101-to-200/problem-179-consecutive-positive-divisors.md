@@ -1,6 +1,6 @@
 ---
 id: 5900f41f1000cf542c50ff32
-title: 'Problem 179: Consecutive positive divisors'
+title: 'Завдання 179: послідовні додатні дільники'
 challengeType: 1
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors
@@ -8,7 +8,7 @@ dashedName: problem-179-consecutive-positive-divisors
 
 # --description--
 
-Find the number of integers $1 &lt; n &lt; {10}^7$, for which $n$ and $n + 1$ have the same number of positive divisors. For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
+Знайдіть кількість цілих чисел $1 &lt; n &lt; {10}^7$, за яких $n$ та $n + 1$ мають однакову кількість додатних дільників. Наприклад, число 14 має додатні дільники 1, 2, 7 і 14, а число 15 — 1, 3, 5, 15.
 
 # --hints--
 

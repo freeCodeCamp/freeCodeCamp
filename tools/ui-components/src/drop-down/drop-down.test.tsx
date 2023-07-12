@@ -39,7 +39,7 @@ describe('<DropDownButton>', () => {
     userEvent.click(dropdownTrigger);
     const unorderedList = screen.getByRole('menu');
     expect(unorderedList).toHaveClass(
-      'shadow-lg bg-foreground-primary text-background-primary text-center ring-1 ring-black ring-opacity-5 focus:outline-transparent origin-top-right absolute min-w-full py-1 z-10 transform -translate-y-full top-0'
+      'list-none bg-foreground-secondary text-center border-1 border-solid border-background-quaternary focus:outline-transparent origin-top-right absolute w-full min-w-max py-1 px-0 z-10 transform -translate-y-full top-0'
     );
   });
 

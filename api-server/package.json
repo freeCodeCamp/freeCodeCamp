@@ -24,9 +24,6 @@
     "develop": "node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "1.2.0",
     "@sentry/node": "7.37.1",
@@ -85,9 +82,6 @@
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/preset-env": "7.18.0",
     "@babel/register": "7.17.7",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-plugin-transform-function-bind": "6.22.0",
-    "babel-plugin-transform-imports": "1.5.1",
     "loopback-component-explorer": "6.4.0",
     "nodemon": "2.0.16",
     "smee-client": "1.2.3"

@@ -16,7 +16,7 @@ Let $N(r)$ be the number of points $B$ in $S(r)$, so that the triangle $OBC$ has
 
 So, for example, $N(4)=24$ and $N(8)=100$.
 
-What is $N(1\\,000\\,000\\,000)$?
+Чому дорівнює $N(1\\,000\\,000\\,000)$?
 
 # --hints--
 

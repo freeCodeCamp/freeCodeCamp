@@ -2,6 +2,10 @@ const { execSync } = require('child_process');
 const { existsSync } = require('fs');
 const { defineConfig } = require('cypress');
 
+function seed(args = []) {
+  return execSync('node tools/scripts/seed/seed-demo-user ' + args.join(' '));
+}
+
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
@@ -22,11 +26,7 @@ module.exports = defineConfig({
     specPattern: ['cypress/e2e/default/**/*.js', 'cypress/e2e/default/**/*.ts'],
 
     // Temporary disable these until we can address the flakiness
-    excludeSpecPattern: [
-      'cypress/e2e/**/challenge-hot-keys.ts',
-      'cypress/e2e/**/multifile.ts',
-      'cypress/e2e/**/codeally.ts'
-    ],
+    excludeSpecPattern: ['cypress/e2e/**/challenge-hot-keys.ts'],
 
     setupNodeEvents(on, config) {
       config.env = config.env || {};
@@ -34,6 +34,9 @@ module.exports = defineConfig({
         if (!existsSync('./config/curriculum.json')) {
           execSync('pnpm run build:curriculum');
         }
+      });
+      on('task', {
+        seed
       });
 
       config.env.API_LOCATION = 'http://localhost:3000';

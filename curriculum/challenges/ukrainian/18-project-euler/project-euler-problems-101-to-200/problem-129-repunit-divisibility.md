@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff01
-title: 'Problem 129: Repunit divisibility'
+title: 'Завдання 129: подільність реп’юніта'
 challengeType: 1
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
@@ -8,13 +8,13 @@ dashedName: problem-129-repunit-divisibility
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Число, що повністю складається з одиниць, називається реп’юнітом. Визначимо, що $R(k)$ є реп’юнітом довжиною $k$. Наприклад, $R(6) = 111111$.
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+Дано, що $n$ є цілим додатним числом і $НСД(n, 10) = 1$. Можна побачити, що завжди існує значення $k$, за якого $R(k)$ ділиться на $n$ без остачі. Нехай $A(n)$ буде найменшим таким значенням $k$; наприклад, $A(7) = 6$ і $A(41) = 5$.
 
-The least value of $n$ for which $A(n)$ first exceeds ten is 17.
+Найменше значення $n$, за якого $A(n)$ перевищує десять, дорівнює 17.
 
-Find the least value of $n$ for which $A(n)$ first exceeds one-million.
+Знайдіть найменше значення $n$, за якого $A(n)$ перевищує мільйон.
 
 # --hints--
 

@@ -16,7 +16,7 @@ Let $F(R, X)$ be the number of the integer quadruplets $(r, a, b, c)$ with this 
 
 We can verify that $F(1, 5) = 10$, $F(2, 10) = 52$ and $F(10, 100) = 3384$.
 
-Find $F({10}^8, {10}^9) + F({10}^9, {10}^8)$.
+Знайдіть $F({10}^8, {10}^9) + F({10}^9, {10}^8)$.
 
 # --hints--
 

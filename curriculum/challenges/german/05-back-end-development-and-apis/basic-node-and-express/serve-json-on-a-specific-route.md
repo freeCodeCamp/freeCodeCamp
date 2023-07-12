@@ -18,7 +18,7 @@ Liefere das Objekt `{"message": "Hello json"}` im JSON-Format als Antwort, um GE
 
 # --hints--
 
-The endpoint `/json` should serve the JSON object `{"message": "Hello json"}`
+Der Endpunkt `/json` sollte das JSON-Objekt `{"message": "Hello json"}` liefern
 
 ```js
 (getUserInput) =>

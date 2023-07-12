@@ -361,6 +361,113 @@ Siga estes passos:
     git push origin branch/nome-aqui
     ```
 
+## Executando testes do currículo para dispositivos móveis
+
+> [!NOTE] Você somente precisa seguir esta seção se estiver modificando o executador de testes de desafio na aplicação para dispositivos móveis. Caso contrário, vá para a próxima seção sobre [como abrir um pull request](#proposing-a-pull-request-pr).
+
+1. Faça a clonagem do [repositório do freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) localmente e fora da cópia local do repositório para dispositivos móveis do freeCodeCamp. A estrutura de pastas deve ficar assim:
+
+    ```console
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Mude o diretório para o novo diretório do freeCodeCamp:
+
+    ```console
+    cd freeCodeCamp
+    ```
+
+3. Fazer uma cópia do arquivo `.env`:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
+
+4. Instale as dependências para o repositório do freeCodeCamp:
+
+    ```console
+    pnpm install && pnpm run create:config
+    ```
+
+5. Gere o arquivo JSON dos dados de desafio:
+
+    ```console
+    pnpm run build:curriculum
+    ```
+
+6. Copie o arquivo JSON gerado para a aplicação para dispositivos móveis:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
+
+7. Mude o diretório para o diretório da aplicação para dispositivos móveis:
+
+    ```console
+    cd ../mobile/mobile-app
+    ```
+
+8. Instale as dependências para a aplicação para dispositivos móveis:
+
+    ```console
+    flutter pub get
+    ```
+
+9. Atualize o arquivo de testes para que use o arquivo JSON de dados do desafio:
+
+    ```console
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    ```
+
+10. Gere os arquivos do desafio:
+
+    ```console
+    flutter test test/widget_test.dart
+    ```
+
+11. Inicie um servidor local para servir os arquivos de desafio com a ajuda do pacote `serve`:
+
+    ```console
+    npx serve
+    ```
+
+12. Em um terminal diferente, volte ao repositório do freeCodeCamp:
+
+    ```console
+    cd ../../freeCodeCamp
+    ```
+
+13. Execute os testes do Cypress:
+
+    ```console
+    pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    ```
+
 ## Propondo um Pull Request (PR)
 
 Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).

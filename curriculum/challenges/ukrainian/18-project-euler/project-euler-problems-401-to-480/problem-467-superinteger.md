@@ -29,7 +29,7 @@ $$\begin{align}   & P_{10} = 2\\,357\\,248\\,152 \\\\
 
 Let $f(n)$ be the smallest positive integer that is a common superinteger of $P_n$ and $C_n$. For example, $f(10) = 2\\,357\\,246\\,891\\,352\\,679$, and $f(100)\bmod 1\\,000\\,000\\,007 = 771\\,661\\,825$.
 
-Find $f(10\\,000)\bmod 1\\,000\\,000\\,007$.
+Знайдіть $f(10\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 

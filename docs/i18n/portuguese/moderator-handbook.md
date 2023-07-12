@@ -144,6 +144,12 @@ Há também situações em que o colaborador está tentando adicionar um link pa
 
 Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](reply-templates.md#closing-invalid-pull-requests).
 
+#### Filtrando pull requests
+
+Para ordenar Pull Requests para Garantia de Qualidade para acesso rápido a PRs que estão prontos para revisão, não tenham conflitos de merge, não estejam bloqueadas e tenham todas as verificações de status em verde, use o seguinte link para aplicar os filtros:
+
+[Link direto com filtro aplicado](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse)
+
 #### Outras diretrizes para moderadores no GitHub
 
 Embora você tenha acesso de escrita ao repositório do freeCodeCamp, **você nunca deve enviar o código diretamente para repositórios do freeCodeCamp**. Todos os códigos devem entrar na base de código do freeCodeCamp em forma de pull request a partir de um fork do repositório.
@@ -321,11 +327,11 @@ Recebemos propostas como essa com frequência. A equipe está em melhor posiçã
 
 Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
 
-Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir de volta para o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que nós não somos profissionais da saúde e que você encoraja o usuário a buscar ajuda profissional.
+Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir de volta para o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
 
 Apesar de ser difícil às vezes, evite dar quaisquer dicas ou conselhos que não sejam indicar ao usuário buscar ajuda profissional!
 
-Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando`private` do bot.
+Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando `private` do bot.
 
 - O usuário tem a privacidade garantida.
 - O chat público não será mais perturbado.

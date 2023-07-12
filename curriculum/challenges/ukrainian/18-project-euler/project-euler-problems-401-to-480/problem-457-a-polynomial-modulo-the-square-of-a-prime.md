@@ -16,7 +16,7 @@ Let $R(p)$ be the smallest positive integer $n$ such that $f(n)\bmod p^2 = 0$ if
 
 Let $SR(L)$ be $\sum R(p)$ for all primes not exceeding $L$.
 
-Find $SR({10}^7)$.
+Знайдіть $SR({10}^7)$.
 
 # --hints--
 
