@@ -136,7 +136,10 @@ const StripeCardForm = ({
   };
 
   return (
-    <form className='donation-form' onSubmit={() => handleSubmit}>
+    <form
+      className='donation-form'
+      onSubmit={event => void handleSubmit(event)}
+    >
       <div
         className={`donation-elements${
           !isSubmissionValid ? ' failed-submition' : ''
