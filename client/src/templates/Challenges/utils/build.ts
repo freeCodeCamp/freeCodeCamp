@@ -49,7 +49,6 @@ interface BuildOptions {
 
 const { filename: testEvaluator } = testEvaluatorData;
 
-
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
 
 const pythonRunner = [
