@@ -10,6 +10,7 @@ enum SuperBlockI18nKeys {
 // the map and window. e.g. 'Certification' in Responsive Web Design
 // Certification
 const superBlocksWithoutLastWord = [
+  SuperBlocks.RespWebDesign,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject,
   SuperBlocks.ProjectEuler
