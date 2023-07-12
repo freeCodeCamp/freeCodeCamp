@@ -1,7 +1,7 @@
 export type ProgressTimestamp = number | { timestamp: number } | null;
 
 export const getCalendar = (
-  progressTimestamps?: ProgressTimestamp[]
+  progressTimestamps: ProgressTimestamp[] | null
 ): Record<string, 1> => {
   const calendar: Record<string, 1> = {};
 
@@ -17,6 +17,8 @@ export const getCalendar = (
   return calendar;
 };
 
-export const getPoints = (progressTimestamps?: ProgressTimestamp[]): number => {
+export const getPoints = (
+  progressTimestamps: ProgressTimestamp[] | null
+): number => {
   return progressTimestamps?.length ?? 1;
 };

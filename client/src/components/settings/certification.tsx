@@ -138,6 +138,113 @@ type CertificationSettingsProps = {
 } & ClaimedCertifications &
   Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
 
+const LegacyFullStack = (props: CertificationSettingsProps) => {
+  const {
+    isFullStackCert,
+    username,
+    isHonest,
+    createFlashMessage,
+    verifyCert,
+    is2018DataVisCert,
+    isApisMicroservicesCert,
+    isFrontEndLibsCert,
+    isInfosecQaCert,
+    isJsAlgoDataStructCert,
+    isRespWebDesignCert,
+    t
+  } = props;
+
+  const fullStackClaimable =
+    is2018DataVisCert &&
+    isApisMicroservicesCert &&
+    isFrontEndLibsCert &&
+    isInfosecQaCert &&
+    isJsAlgoDataStructCert &&
+    isRespWebDesignCert;
+
+  // Keep the settings page certSlug as full-stack rather than
+  // legacy-full-stack so we don't break existing links
+  const certSlug = 'full-stack';
+  const certLocation = `/certification/${username}/${certSlug}`;
+
+  const buttonStyle = {
+    marginBottom: '30px',
+    padding: '6px 12px',
+    fontSize: '18px'
+  };
+
+  const createClickHandler =
+    (certSlug: keyof typeof certSlugTypeMap) =>
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      if (isFullStackCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(certSlug)
+        : createFlashMessage(honestyInfoMessage);
+    };
+  return (
+    <FullWidthRow key={certSlug}>
+      <Spacer size='medium' />
+      <h3 className='text-center'>
+        {t('certification.title.Legacy Full Stack Certification')}
+      </h3>
+      <div>
+        <p>
+          {t('settings.claim-legacy', {
+            cert: t('certification.title.Legacy Full Stack Certification')
+          })}
+        </p>
+        <ul>
+          <li>{t('certification.title.Responsive Web Design')}</li>
+          <li>
+            {t('certification.title.JavaScript Algorithms and Data Structures')}
+          </li>
+          <li>{t('certification.title.Front End Development Libraries')}</li>
+          <li>{t('certification.title.Data Visualization')}</li>
+          <li>{t('certification.title.Back End Development and APIs')}</li>
+          <li>
+            {t(
+              'certification.title.Legacy Information Security and Quality Assurance'
+            )}
+          </li>
+        </ul>
+      </div>
+
+      <div className={'col-xs-12'}>
+        {fullStackClaimable ? (
+          <Button
+            bsSize='sm'
+            bsStyle='primary'
+            className={'col-xs-12'}
+            href={certLocation}
+            id={'button-' + certSlug}
+            onClick={createClickHandler(certSlug)}
+            style={buttonStyle}
+            target='_blank'
+          >
+            {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+          </Button>
+        ) : (
+          <Button
+            bsSize='sm'
+            bsStyle='primary'
+            className={'col-xs-12'}
+            disabled={true}
+            id={'button-' + certSlug}
+            style={buttonStyle}
+            target='_blank'
+          >
+            {t('buttons.claim-cert')}
+          </Button>
+        )}
+      </div>
+      <Spacer size='medium' />
+    </FullWidthRow>
+  );
+};
+
 function CertificationSettings(props: CertificationSettingsProps) {
   const [projectTitle, setProjectTitle] = useState('');
   const [challengeFiles, setChallengeFiles] = useState<
@@ -288,117 +395,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
       ]);
   }
 
-  const renderLegacyFullStack = () => {
-    const {
-      isFullStackCert,
-      username,
-      isHonest,
-      createFlashMessage,
-      verifyCert,
-      is2018DataVisCert,
-      isApisMicroservicesCert,
-      isFrontEndLibsCert,
-      isInfosecQaCert,
-      isJsAlgoDataStructCert,
-      isRespWebDesignCert,
-      t
-    } = props;
-
-    const fullStackClaimable =
-      is2018DataVisCert &&
-      isApisMicroservicesCert &&
-      isFrontEndLibsCert &&
-      isInfosecQaCert &&
-      isJsAlgoDataStructCert &&
-      isRespWebDesignCert;
-
-    // Keep the settings page certSlug as full-stack rather than
-    // legacy-full-stack so we don't break existing links
-    const certSlug = 'full-stack';
-    const certLocation = `/certification/${username}/${certSlug}`;
-
-    const buttonStyle = {
-      marginBottom: '30px',
-      padding: '6px 12px',
-      fontSize: '18px'
-    };
-
-    const createClickHandler =
-      (certSlug: keyof typeof certSlugTypeMap) =>
-      (e: MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (isFullStackCert) {
-          return navigate(certLocation);
-        }
-        return isHonest
-          ? verifyCert(certSlug)
-          : createFlashMessage(honestyInfoMessage);
-      };
-    return (
-      <FullWidthRow key={certSlug}>
-        <Spacer size='medium' />
-        <h3 className='text-center'>
-          {t('certification.title.Legacy Full Stack Certification')}
-        </h3>
-        <div>
-          <p>
-            {t('settings.claim-legacy', {
-              cert: t('certification.title.Legacy Full Stack Certification')
-            })}
-          </p>
-          <ul>
-            <li>{t('certification.title.Responsive Web Design')}</li>
-            <li>
-              {t(
-                'certification.title.JavaScript Algorithms and Data Structures'
-              )}
-            </li>
-            <li>{t('certification.title.Front End Development Libraries')}</li>
-            <li>{t('certification.title.Data Visualization')}</li>
-            <li>{t('certification.title.Back End Development and APIs')}</li>
-            <li>
-              {t(
-                'certification.title.Legacy Information Security and Quality Assurance'
-              )}
-            </li>
-          </ul>
-        </div>
-
-        <div className={'col-xs-12'}>
-          {fullStackClaimable ? (
-            <Button
-              bsSize='sm'
-              bsStyle='primary'
-              className={'col-xs-12'}
-              href={certLocation}
-              id={'button-' + certSlug}
-              onClick={createClickHandler(certSlug)}
-              style={buttonStyle}
-              target='_blank'
-            >
-              {isFullStackCert
-                ? t('buttons.show-cert')
-                : t('buttons.claim-cert')}
-            </Button>
-          ) : (
-            <Button
-              bsSize='sm'
-              bsStyle='primary'
-              className={'col-xs-12'}
-              disabled={true}
-              id={'button-' + certSlug}
-              style={buttonStyle}
-              target='_blank'
-            >
-              {t('buttons.claim-cert')}
-            </Button>
-          )}
-        </div>
-        <Spacer size='medium' />
-      </FullWidthRow>
-    );
-  };
-
   const { t } = props;
 
   return (
@@ -409,7 +405,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <Certification key={certName} certName={certName} t={t} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
-        {renderLegacyFullStack()}
+        <LegacyFullStack {...props} />
         {legacyCertifications.map(certName => (
           <Certification key={certName} certName={certName} t={t} />
         ))}

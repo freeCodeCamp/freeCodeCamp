@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ButtonProps, ButtonSize, ButtonVariant } from './types';
 
 const defaultClassNames = [
@@ -20,7 +20,8 @@ const defaultClassNames = [
   'aria-disabled:opacity-50',
   'focus:outline-none', // Hide the default browser outline
   'focus:ring',
-  'focus:ring-focus-outline-color'
+  'focus:ring-focus-outline-color',
+  'mt-[0.5px]'
 ];
 
 const computeClassNames = ({
@@ -103,93 +104,110 @@ const computeClassNames = ({
   return classNames.join(' ');
 };
 
-export const Button = React.forwardRef<
-  HTMLButtonElement | HTMLAnchorElement,
-  ButtonProps
->(
-  (
-    {
-      variant = 'primary',
-      size = 'medium',
-      type = 'button',
-      onClick,
-      children,
-      disabled,
-      block,
-      href,
-      download,
-      target
-    },
-    ref
-  ) => {
-    const classes = useMemo(
-      () => computeClassNames({ size, variant, disabled, block }),
-      [size, variant, disabled, block]
-    );
-
+const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
+  ({ className, onClick, disabled, children, type, ...rest }, ref) => {
     // Manually prevent click event if the button is disabled
     // as `aria-disabled` marks the element disabled but still registers the click event.
     // Ref: https://css-tricks.com/making-disabled-buttons-more-inclusive/#aa-the-difference-between-disabled-and-aria-disabled
-    const handleClick = useCallback(
-      (event: React.MouseEvent<HTMLButtonElement>) => {
-        const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
 
-        if (!ariaDisabled && onClick) {
-          onClick(event);
-        }
-      },
-      [onClick]
-    );
-
-    const renderButton: () => JSX.Element = useCallback(() => {
-      return (
-        <button
-          ref={ref as React.ForwardedRef<HTMLButtonElement>}
-          className={classes}
-          type={type}
-          onClick={handleClick}
-          aria-disabled={disabled}
-        >
-          {children}
-        </button>
-      );
-    }, [children, classes, ref, type, handleClick, disabled]);
-
-    const renderLink: () => JSX.Element = useCallback(() => {
-      // Render a `button` tag if `disabled` is defined to keep the component semantically correct
-      // as a link cannot be disabled.
-      if (disabled) {
-        return renderButton();
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
+      if (!ariaDisabled && onClick) {
+        onClick(event);
       }
+    };
 
+    return (
+      <button
+        className={className}
+        onClick={handleClick}
+        aria-disabled={disabled}
+        ref={ref}
+        type={type ?? 'button'}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+
+const Link = React.forwardRef<React.ElementRef<'a'>, ButtonProps>(
+  ({ className, href, download, target, children, ...rest }, ref) => {
+    return (
+      <a
+        className={className}
+        download={download}
+        target={target}
+        ref={ref}
+        href={href ?? undefined}
+        {...rest}
+      >
+        {children}
+      </a>
+    );
+  }
+);
+
+export const HeadlessButton = React.forwardRef<
+  React.ElementRef<'button' | 'a'>,
+  ButtonProps
+>(
+  (
+    { onClick, className, children, disabled, href, download, target, ...rest },
+    ref
+  ) => {
+    if (href && !disabled) {
       return (
-        <a
-          ref={ref as React.ForwardedRef<HTMLAnchorElement>}
-          className={classes}
-          href={href ?? undefined}
+        <Link
+          className={className}
+          href={href}
           download={download}
           target={target}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          {...rest}
         >
           {children}
-        </a>
+        </Link>
       );
-    }, [
-      children,
-      classes,
-      ref,
-      disabled,
-      href,
-      target,
-      renderButton,
-      download
-    ]);
-
-    if (href) {
-      return renderLink();
     } else {
-      return renderButton();
+      return (
+        <StylessButton
+          className={className}
+          onClick={onClick}
+          aria-disabled={disabled}
+          ref={ref as React.Ref<HTMLButtonElement>}
+          {...rest}
+        >
+          {children}
+        </StylessButton>
+      );
     }
   }
 );
 
+export const Button = React.forwardRef<
+  React.ElementRef<'button' | 'a'>,
+  ButtonProps
+>(({ className, size, disabled, variant, block, ...rest }, ref) => {
+  const classes = useMemo(
+    () => computeClassNames({ size, variant, disabled, block }),
+    [size, variant, disabled, block]
+  );
+
+  const buttonStyle = [className, classes].join(' ');
+
+  return (
+    <HeadlessButton
+      className={buttonStyle}
+      ref={ref}
+      disabled={disabled}
+      {...rest}
+    />
+  );
+});
+
 Button.displayName = 'Button';
+HeadlessButton.displayName = 'HeadlessButton';
+StylessButton.displayName = 'StylessButton';
+Link.displayName = 'Link';

@@ -188,17 +188,6 @@
   right: 0px;
 }
 
-/*mobile media queries*/
-@media screen and (max-width: 1200px) {
-  .qr-code {
-    left: 40px;
-  }
-
-  .ribbon {
-    right: 3px;
-  }
-}
-
 @media screen and (max-width: 992px) {
   .certification-namespace header {
     height: 100px;
@@ -228,28 +217,6 @@
 
   .certification-namespace h1 {
     font-size: 30px;
-  }
-
-  .qr-code,
-  .ribbon {
-    position: absolute;
-    width: 96px;
-    height: 96px;
-    top: calc(-96px - 50px);
-  }
-
-  .ribbon {
-    height: 140px;
-    width: 140px;
-    right: 5px;
-    top: -90px;
-  }
-
-  .qr-code {
-    width: 120px;
-    height: 120px;
-    top: -80px;
-    left: 20px;
   }
 
   .qr-code,
