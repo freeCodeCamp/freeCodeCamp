@@ -1,5 +1,4 @@
 import {
-  Form,
   FormGroup,
   FormControl,
   ControlLabel,
@@ -78,7 +77,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
-              <Form horizontal={true} onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <FormGroup
                   controlId='emailInput'
                   validationState={getEmailValidationState()}
@@ -111,7 +110,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                     ? t('buttons.update-email')
                     : t('buttons.verify-email')}
                 </Button>
-              </Form>
+              </form>
               <p className='text-center'>
                 <Link to='/signout'>{t('buttons.sign-out')}</Link>
               </p>
