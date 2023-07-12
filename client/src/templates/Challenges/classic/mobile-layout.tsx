@@ -257,10 +257,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               title={i18next.t('learn.editor-tabs.preview')}
             >
               <button
-                id='portal-button'
+                className='portal-button'
                 aria-expanded={!!showPreviewPortal}
                 onClick={() => togglePane('showPreviewPortal')}
-                tabIndex={this.state.currentTab === 'preview' ? 0 : -1}
               >
                 <span>
                   <span className='sr-only'>{getPortalBtnSrText()}</span>
@@ -281,6 +280,18 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               isMobile={true}
               videoUrl={videoUrl}
             />
+          )}
+          {this.state.currentTab !== 'preview' && (
+            <button
+              className='portal-button'
+              aria-expanded={!!showPreviewPortal}
+              onClick={() => togglePane('showPreviewPortal')}
+            >
+              <span>
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </span>
+            </button>
           )}
         </Tabs>
         {displayPreviewPortal && (

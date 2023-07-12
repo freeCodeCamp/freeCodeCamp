@@ -129,7 +129,7 @@
   color: var(--secondary-color);
 }
 
-#portal-button {
+.portal-button {
   position: absolute;
   right: 3px;
   top: 2px;
@@ -140,7 +140,7 @@
   background: white;
 }
 
-#portal-button > span {
+.portal-button > span {
   padding: 1px;
   display: flex;
   height: 100%;
@@ -150,11 +150,11 @@
   align-items: center;
 }
 
-#portal-button:hover > span {
+.portal-button:hover > span {
   background: var(--secondary-color);
 }
 
-#portal-button[aria-expanded='true'] {
+.portal-button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
