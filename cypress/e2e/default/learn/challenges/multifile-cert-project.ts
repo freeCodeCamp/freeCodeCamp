@@ -48,9 +48,7 @@ describe('multifileCertProjects', function () {
     cy.contains('Your code was saved to the database.');
     cy.get(editorElements.closeFlash).click();
     // load saved code when navigating site (no hard refresh)'
-    cy.contains('Responsive Web Design Projects').click();
-    cy.contains('In this Responsive Web Design Certification');
-    cy.contains('Build a Tribute Page').click();
+    cy.contains('Tribute Page').click();
     cy.get(editorElements.container)
       .find(editorElements.editor)
       .contains(save2text);
