@@ -23,7 +23,7 @@ describe('getFileName helper', () => {
             'mock-project': {
               'meta.json': `{
           "id": "mock-id",
-          "challengeOrder": [["1","This title is wrong"], ["2","I Dunno"], ["100","What a Cool Thing"]]}
+          "challengeOrder": [{"id": "1", "title": "This title is wrong"}, {"id": "2", "title": "I Dunno"}, {"id": "100", "title": "What a Cool Thing"}}}]}
           `
             }
           }

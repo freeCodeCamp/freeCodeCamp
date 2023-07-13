@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5fa323cdaf6a73463d590659",
-      "Build an SQL Reference Object"
-    ]
+    {
+      "id": "5fa323cdaf6a73463d590659",
+      "title": "Build an SQL Reference Object"
+    }
   ]
 }

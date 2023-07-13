@@ -6,26 +6,26 @@ import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 const updateChallengeOrder = async () => {
   const oldChallengeOrder = getChallengeOrderFromMeta();
   console.log('Current challenge order is: ');
-  console.table(oldChallengeOrder.map(([_id, title]) => ({ title })));
+  console.table(oldChallengeOrder.map(({ title }) => ({ title })));
 
-  const newChallengeOrder: [string, string][] = [];
+  const newChallengeOrder: { id: string; title: string }[] = [];
 
   while (oldChallengeOrder.length) {
     const nextChallenge = (await prompt({
       name: 'id',
       message: newChallengeOrder.length
         ? `What challenge comes after ${
-            newChallengeOrder[newChallengeOrder.length - 1][1]
+            newChallengeOrder[newChallengeOrder.length - 1].title
           }?`
         : 'What is the first challenge?',
       type: 'list',
-      choices: oldChallengeOrder.map(([id, title]) => ({
+      choices: oldChallengeOrder.map(({ id, title }) => ({
         name: title,
         value: id
       }))
     })) as { id: string };
     const nextChallengeIndex = oldChallengeOrder.findIndex(
-      ([id]) => id === nextChallenge.id
+      ({ id }) => id === nextChallenge.id
     );
     const targetChallenge = oldChallengeOrder[nextChallengeIndex];
     oldChallengeOrder.splice(nextChallengeIndex, 1);
@@ -33,7 +33,7 @@ const updateChallengeOrder = async () => {
   }
 
   console.log('New challenge order is: ');
-  console.table(newChallengeOrder.map(([_id, title]) => ({ title })));
+  console.table(newChallengeOrder.map(({ title }) => ({ title })));
 
   const confirm = await prompt({
     name: 'correct',
