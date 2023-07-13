@@ -269,7 +269,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
-                  Preview currently showing in external window.
+                  {i18next.t('learn.preview-external-window')}
                 </p>
               )}
             </TabPane>
