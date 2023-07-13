@@ -70,7 +70,7 @@ describe('challengeRoutes', () => {
             method: 'POST',
             setCookies
           }).send({
-            id: 'bd7123c8c441eddfaeb5bdef',
+            id: id1,
             challengeType: 'not-a-valid-challenge-type',
             // TODO(Post-MVP): drop these comments, since the api-server will not
             // exist.
@@ -92,7 +92,7 @@ describe('challengeRoutes', () => {
             method: 'POST',
             setCookies
           }).send({
-            id: 'bd7123c8c441eddfaeb5bdef',
+            id: id1,
             challengeType: 3
           });
 
@@ -109,7 +109,7 @@ describe('challengeRoutes', () => {
             method: 'POST',
             setCookies
           }).send({
-            id: 'bd7123c8c441eddfaeb5bdef',
+            id: id1,
             challengeType: 3,
             solution: 'not-a-valid-solution'
           });
@@ -125,7 +125,7 @@ describe('challengeRoutes', () => {
             method: 'POST',
             setCookies
           }).send({
-            id: 'bd7123c8c441eddfaeb5bdef', // not a codeally challenge id, but does not matter
+            id: id1, // not a codeally challenge id, but does not matter
             challengeType: 13, // this does matter, however, since there's special logic for that challenge type
             solution: 'https://any.valid/url'
           });
@@ -148,7 +148,7 @@ describe('challengeRoutes', () => {
             where: { email: 'foo@bar.com' },
             data: {
               partiallyCompletedChallenges: [
-                { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1 }
+                { id: id1, completedDate: 1 }
               ],
               completedChallenges: [],
               progressTimestamps: []
