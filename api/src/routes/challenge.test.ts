@@ -49,8 +49,42 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
   });
 
   // test('should return 400 if invalid tutorialId', async () => {
-  //     const response = await superRequest('/challenge/coderoad-challenge-completed', { method: 'POST', setCookies }).set('Accept', 'application/json').set('coderoad-user-token', 'eyJ1c2VyVG9rZW4iOiJ0ZXN0In0=').send({ tutorialId: 'invalid' });
+  //     const tokenResponse = await superRequest('/user/user-token', { method: 'POST', setCookies });
+  //     expect(tokenResponse.status).toBe(200);
+  //     expect(tokenResponse.body).toHaveProperty('userToken');
+
+  //     const token = (tokenResponse.body as { userToken: string }).userToken;
+
+  //     const response = await superRequest('/challenge/coderoad-challenge-completed', { method: 'POST', setCookies })
+  //         .set('Accept', 'application/json')
+  //         .set('coderoad-user-token', token)
+  //         .send({ tutorialId: '' });
+
   //     expect(response.status).toBe(400);
-  //     expect(response.body).toEqual({ msg: `'tutorialId' not found in request body` });
+  //     expect(response.body).toEqual({ msg: `Tutorial not hosted on freeCodeCamp GitHub account` });
   // });
+
+  test('should return 200 if valid tutorialId', async () => {
+    const tokenResponse = await superRequest('/user/user-token', {
+      method: 'POST',
+      setCookies
+    });
+    expect(tokenResponse.status).toBe(200);
+    expect(tokenResponse.body).toHaveProperty('userToken');
+
+    const token = (tokenResponse.body as { userToken: string }).userToken;
+
+    const response = await superRequest(
+      '/challenge/coderoad-challenge-completed',
+      { method: 'POST', setCookies }
+    )
+      .set('Accept', 'application/json')
+      .set('coderoad-user-token', token)
+      .send({
+        tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+      });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({});
+  });
 });

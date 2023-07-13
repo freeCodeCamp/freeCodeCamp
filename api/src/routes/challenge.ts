@@ -26,7 +26,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           tutorialId: Type.String()
         }),
         response: {
-          200: Type.Object({}),
+          200: Type.Object({ msg: Type.String() }),
           400: Type.Object({
             msg: Type.String()
           }),
