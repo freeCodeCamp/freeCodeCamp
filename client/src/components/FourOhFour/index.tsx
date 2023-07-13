@@ -18,7 +18,7 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
       <img alt={t('404.not-found')} src={notFoundLogo} />
       <Spacer size='medium' />
-      <h1>{t('404.page-not-found')}.</h1>
+      <h1 id='content-start'>{t('404.page-not-found')}.</h1>
       <Spacer size='medium' />
       <div>
         <p>{t('404.heres-a-quote')}</p>
