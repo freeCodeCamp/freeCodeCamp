@@ -325,7 +325,7 @@ export const schemas = {
   // Challenges:
   projectCompleted: {
     body: Type.Object({
-      id: Type.String({ format: 'objectid', maxLength: 24 }),
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
       challengeType: Type.Optional(Type.Number()),
       solution: Type.String({ format: 'url', maxLength: 1024 }),
       // TODO(Post-MVP): require format: 'url' for githubLink
