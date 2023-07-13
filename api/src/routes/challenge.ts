@@ -18,6 +18,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  const challenges = getChallenges();
   fastify.post(
     '/challenge/coderoad-challenge-completed',
     {
@@ -74,7 +75,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       }
 
-      const codeRoadChallenges = getChallenges().filter(
+      const codeRoadChallenges = challenges.filter(
         ({ challengeType }) => challengeType === 12 || challengeType === 13
       );
 
