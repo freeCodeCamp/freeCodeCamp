@@ -1,9 +1,9 @@
-import { Grid } from '@freecodecamp/react-bootstrap';
 import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui/src';
 
 import envData from '../../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -158,7 +158,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Grid>
+      <Container>
         <main>
           <Spacer size='large' />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
@@ -234,7 +234,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <DangerZone />
         </main>
-      </Grid>
+      </Container>
     </>
   );
 }

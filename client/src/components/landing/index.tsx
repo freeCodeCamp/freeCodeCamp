@@ -1,6 +1,6 @@
-import { Grid } from '@freecodecamp/react-bootstrap';
 import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@freecodecamp/ui/src';
 
 import SEO from '../seo';
 import AsSeenIn from './components/as-seen-in';
@@ -18,12 +18,12 @@ function Landing(): ReactElement {
     <>
       <SEO title={t('metaTags:title')} />
       <main className='landing-page'>
-        <Grid>
+        <Container>
           <LandingTop />
-        </Grid>
-        <Grid fluid={true}>
+        </Container>
+        <Container fluid={true}>
           <AsSeenIn />
-        </Grid>
+        </Container>
         <Testimonials />
         <Certifications />
         <Faq />
