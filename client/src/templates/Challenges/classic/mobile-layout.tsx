@@ -219,6 +219,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           onMouseDown={this.handleClick}
           onSelect={this.switchTab}
           onTouchStart={this.handleClick}
+          {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           {!hasEditableBoundaries && (
             <TabPane
