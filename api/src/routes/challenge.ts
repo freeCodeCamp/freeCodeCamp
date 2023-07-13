@@ -27,7 +27,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }),
         response: {
           200: Type.Object({}),
-          400: Type.String(),
+          400: Type.Object({
+            msg: Type.String()
+          }),
           500: Type.Object({
             message: Type.Literal('Something went wrong.'),
             type: Type.Literal('danger')
@@ -36,7 +38,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       },
       attachValidation: true
     },
-
     async (req, reply) => {
       let userToken;
 
@@ -45,12 +46,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       if (!tutorialId) {
         void reply.code(400);
-        return `'tutorialId' not found in request body`;
+        return { msg: `'tutorialId' not found in request body` };
       }
 
       if (!encodedUserToken) {
         void reply.code(400);
-        return `'coderoad-user-token' not found in request headers`;
+        return { msg: `'coderoad-user-token' not found in request headers` };
       }
 
       try {
@@ -60,7 +61,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       } catch {
         void reply.code(400);
-        return `invalid user token`;
+        return { msg: `invalid user token` };
       }
 
       const tutorialRepo = tutorialId?.split(':')[0];
@@ -69,7 +70,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       if (deploymentEnv !== 'staging' && environment !== 'development') {
         if (tutorialOrg !== 'freeCodeCamp') {
           void reply.code(400);
-          return `Tutorial not hosted on freeCodeCamp GitHub account`;
+          return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
         }
       }
 
@@ -84,7 +85,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         return challenge.url?.endsWith(tutorialRepo);
       });
 
-      if (!challenge) return 'Tutorial name is not valid';
+      if (!challenge) return { msg: 'Tutorial name is not valid' };
 
       const { id: challengeId, challengeType } = challenge;
       try {
@@ -92,7 +93,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userToken }
         });
 
-        if (!tokenInfo) return 'User token not found';
+        if (!tokenInfo) return { msg: 'User token not found' };
 
         const { userId } = tokenInfo;
 
@@ -100,7 +101,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userId }
         });
 
-        if (!user) return 'User for user token not found';
+        if (!user) return { msg: 'User for user token not found' };
 
         const completedDate = Date.now();
         const { completedChallenges = [], partiallyCompletedChallenges = [] } =
@@ -137,9 +138,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
       } catch {
-        return 'An error occurred trying to submit the challenge';
+        return { msg: 'An error occurred trying to submit the challenge' };
       }
-      return 'Successfully submitted challenge';
+      return { msg: 'Successfully submitted challenge' };
     }
   );
 
