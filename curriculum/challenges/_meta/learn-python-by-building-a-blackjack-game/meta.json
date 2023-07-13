@@ -4,12 +4,12 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-python-by-building-a-blackjack-game",
-  "helpCategory": "JavaScript",
+  "helpCategory": "Python",
   "order": 0,
   "time": "2 hours",
   "template": "<style>#terminal { margin-top: 10px; width: 100%; height: 350px; background-color: #000; color: #00ff00; padding: 5px; overflow: auto; border: 1px solid #ccc; border-radius: 3px; }</style><body><div id='terminal'></div></body>",
   "required": [],
-  "superBlock": "scientific-computing-with-python",
+  "superBlock": "upcoming-python",
   "isBeta": true,
   "challengeOrder": [
     [

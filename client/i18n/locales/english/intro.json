@@ -649,10 +649,6 @@
     ],
     "note": "",
     "blocks": {
-      "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
-      },
       "python-for-everybody": {
         "title": "Python for Everybody",
         "intro": [
@@ -1058,6 +1054,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

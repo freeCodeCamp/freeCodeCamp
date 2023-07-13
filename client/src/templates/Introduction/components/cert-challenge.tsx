@@ -80,8 +80,9 @@ const CertChallenge = ({
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
-  // @ts-expect-error Typescript is confused
-  const certSlug = fullCertMap.find(x => x.title === title).certSlug;
+  const cert = fullCertMap.find(x => x.title === title);
+  if (!cert) throw Error(`Certification ${title} not found`);
+  const certSlug = cert.certSlug;
 
   useEffect(() => {
     const { pending, complete } = fetchState;
