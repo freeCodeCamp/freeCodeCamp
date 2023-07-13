@@ -484,66 +484,66 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
 2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here
+   pnpm run test -- -g titulo-do-desafio-aqui
    ```
 
 > [!TIP]
-> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> Você pode definir a váriavel de ambiente `LOCALE` no arquivo `.env` para o idioma do(s) desafio(s) que você precisa testar.
 >
-> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+> Os valores aceitos de momento são `english` e `chinese`, com `english` sendo o valor padrão.
 
-## Proposing a Pull Request (PR)
+## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Depois de fazer o commit de suas alterações, confira aqui [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
-## Useful Links
+## Links úteis
 
-Creating and Editing Challenges:
+Criação e edição de desafios:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contribuindo para o FreeCodeCamp - Escrevendo testes para desafios de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo que acompanha [Ethan Arrowood](https://twitter.com/ArrowoodTech) durante sua contribuição para a versão antiga do currículo.
 
-## Helper Scripts
+## Scripts auxiliares
 
 > [!NOTE]
-> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+> Se estiver trabalhando com os desafios baseados em passos, consulte a seção [Trabalho com projetos práticos](how-to-work-on-practice-projects.md).
 
-There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
+Existem alguns scripts auxiliares que podem ser usados para gerenciar os desafios em um bloco. Observe que todos esses comandos devem ser executados no diretório do bloco. Por exemplo:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
 ```
 
-### Add New Challenge
+### Adicionar um novo desafio
 
-To add a new challenge at the end of a block, call the script:
+Para adicionar um novo desafio no final de um bloco, chame o script:
 
 ```bash
 pnpm run create-next-challenge
 ```
 
-This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+Ele solicitará a informação do desafio e criará o arquivo de desafio, atualizando o arquivo `meta.json` com as novas informações de desafio.
 
-### Delete a Challenge
+### Excluir um desafio
 
-To delete a challenge, call the script:
+Para excluir um desafio, chame o script:
 
 ```bash
 pnpm run delete-challenge
 ```
 
-This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+Ele solicitará que você selecione qual desafio deve ser excluído. Em seguida, excluirá o arquivo e atualizará o arquivo `meta.json` para remover o desafio da ordem.
 
-### Insert a Challenge
+### Inserir um desafio
 
-To insert a challenge before an existing challenge, call the script:
+Para inserir um desafio antes de um desafio existente, chame o script:
 
 ```bash
 pnpm run insert-challenge
 ```
 
-This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+Ele solicitará a informação do desafio e, em seguida, o desafio será inserido antes do desafio informado. Por exemplo, se suas escolhas forem:
 
 ```bash
 a
@@ -551,21 +551,21 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+E se você escolher `b`, a nova ordem será:
 
 ```bash
 a
-new challenge
+novo desafio
 b
 c
 ```
 
-### Update Challenge Order
+### Atualizar a ordem dos desafios
 
-If you need to manually re-order the challenges, call the script:
+Se você precisar reordenar manualmente os desafios, chame o script:
 
 ```bash
 pnpm run update-challenge-order
 ```
 
-This will take you through an interactive process to select the order of the challenges.
+Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.
