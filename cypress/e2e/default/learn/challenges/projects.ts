@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../../../config/superblocks';
 
 interface Meta {
-  challengeOrder: string[][];
+  challengeOrder: { id: string; title: string }[];
 }
 
 interface File {
@@ -102,7 +102,7 @@ describe('project submission', () => {
           )[0];
           const { challenges, meta } = javaScriptSuperBlock.blocks[targetBlock];
 
-          const projectTitles = meta.challengeOrder.map(([, title]) => title);
+          const projectTitles = meta.challengeOrder.map(({ title }) => title);
           const projectsInOrder = projectTitles.map(projectTitle => {
             return challenges.find(({ title }) => title === projectTitle);
           }) as Challenge[];
@@ -182,7 +182,7 @@ describe('project submission', () => {
           )[0];
           const { challenges, meta } = portfolioBlock.blocks[targetBlock];
 
-          const projectTitle = meta.challengeOrder[0][1];
+          const projectTitle = meta.challengeOrder[0].title;
           const { block, superBlock, dashedName, solutions } = challenges.find(
             ({ title }) => title === projectTitle
           ) as Challenge;

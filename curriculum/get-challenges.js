@@ -289,7 +289,7 @@ Challenges that have been already audited cannot fall back to their English vers
   function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
-      ([id]) => id === challenge.id
+      ({ id }) => id === challenge.id
     );
 
     if (!meta.dashedName)

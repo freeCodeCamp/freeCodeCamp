@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "63d83ff239c73468b059cd3f",
-      "Build a Multi-Function Calculator"
-    ]
+    {
+      "id": "63d83ff239c73468b059cd3f",
+      "title": "Build a Multi-Function Calculator"
+    }
   ]
 }

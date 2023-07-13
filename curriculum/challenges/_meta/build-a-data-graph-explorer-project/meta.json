@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "63d8402e39c73468b059cd43",
-      "Build a Data Graph Explorer"
-    ]
+    {
+      "id": "63d8402e39c73468b059cd43",
+      "title": "Build a Data Graph Explorer"
+    }
   ]
 }
