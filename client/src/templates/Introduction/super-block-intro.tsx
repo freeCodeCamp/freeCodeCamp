@@ -1,4 +1,4 @@
-import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui/src';
 
 import { SuperBlocks } from '../../../../config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
@@ -192,7 +191,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       <Helmet>
         <title>{i18nTitle} | freeCodeCamp.org</title>
       </Helmet>
-      <Container>
+      <Grid>
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -246,7 +245,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             </Col>
           </Row>
         </main>
-      </Container>
+      </Grid>
       <DonateModal location={props.location} />
     </>
   );

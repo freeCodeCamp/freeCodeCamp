@@ -1,5 +1,5 @@
 // Package Utilities
-import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui/src';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -498,7 +497,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     const ariaLabel = t('aria.answer');
 
     return examInProgress ? (
-      <Container>
+      <Grid>
         <Row>
           <Spacer size='medium' />
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
@@ -600,7 +599,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
           </Col>
           <FinishExamModal finishExam={this.finishExam} />
         </Row>
-      </Container>
+      </Grid>
     ) : (
       <Hotkeys
         innerRef={this._container}
@@ -609,7 +608,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Container>
+          <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeTitle
@@ -653,7 +652,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Container>
+          </Grid>
         </LearnLayout>
       </Hotkeys>
     );

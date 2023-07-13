@@ -3,6 +3,7 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
+  Grid,
   Row,
   Col,
   Button
@@ -19,7 +20,6 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
-import { Container } from '@freecodecamp/ui/src';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';
@@ -74,7 +74,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       </Helmet>
       <Spacer size='medium' />
       <h2 className='text-center'>{t('misc.update-email-2')}</h2>
-      <Container>
+      <Grid>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
@@ -118,7 +118,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
             </Row>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </>
   );
 }

@@ -1,9 +1,8 @@
-import { ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
+import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 import { Link, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Container } from '@freecodecamp/ui/src';
 
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
@@ -55,7 +54,7 @@ function IntroductionPage({
       <Helmet>
         <title>{blockTitle}</title>
       </Helmet>
-      <Container className='intro-layout-container'>
+      <Grid className='intro-layout-container'>
         <FullWidthRow>
           <div
             className='intro-layout'
@@ -82,7 +81,7 @@ function IntroductionPage({
             {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
           </ListGroup>
         </FullWidthRow>
-      </Container>
+      </Grid>
     </LearnLayout>
   );
 }

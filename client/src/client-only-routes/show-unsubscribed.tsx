@@ -1,5 +1,4 @@
-import { Panel, Button } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui/src';
+import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -24,7 +23,7 @@ function ShowUnsubscribed({
       <Helmet>
         <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
-      <Container>
+      <Grid>
         <main>
           <FullWidthRow>
             <Spacer size='large' />
@@ -48,7 +47,7 @@ function ShowUnsubscribed({
           ) : null}
           <Spacer size='large' />
         </main>
-      </Container>
+      </Grid>
     </>
   );
 }
