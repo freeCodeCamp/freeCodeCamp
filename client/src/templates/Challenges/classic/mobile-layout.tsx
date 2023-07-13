@@ -263,10 +263,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 aria-expanded={!!showPreviewPortal}
                 onClick={() => togglePane('showPreviewPortal')}
               >
-                <span>
-                  <span className='sr-only'>{getPortalBtnSrText()}</span>
-                  <FontAwesomeIcon icon={faWindowRestore} />
-                </span>
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
               </button>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
@@ -289,10 +287,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               aria-expanded={!!showPreviewPortal}
               onClick={() => togglePane('showPreviewPortal')}
             >
-              <span>
-                <span className='sr-only'>{getPortalBtnSrText()}</span>
-                <FontAwesomeIcon icon={faWindowRestore} />
-              </span>
+              <span className='sr-only'>{getPortalBtnSrText()}</span>
+              <FontAwesomeIcon icon={faWindowRestore} />
             </button>
           )}
         </Tabs>

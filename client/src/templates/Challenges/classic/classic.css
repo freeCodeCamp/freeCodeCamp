@@ -98,6 +98,7 @@
   padding: 0;
   display: flex;
   border-bottom: 1px solid var(--quaternary-color);
+  height: 2rem;
 }
 
 /* Need to narrow width to make room for preview toggle button */
@@ -119,7 +120,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
+  height: calc(2rem - 1px);
   padding: 0;
 }
 
@@ -128,6 +129,7 @@
   background-color: var(--quaternary-color);
   border: 0;
   font-weight: 900;
+  height: 100%;
 }
 
 #mobile-layout .nav-tabs > li:not(.active) > a:hover {
@@ -139,30 +141,17 @@
   position: absolute;
   right: 1px;
   top: 0;
-  height: calc(2rem + 1px);
+  height: 2rem;
   width: 2rem;
   border: 0;
   border-bottom: 1px solid var(--quaternary-color);
   padding: 0;
 }
 
-.portal-button > span {
-  padding: 1px;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  background: var(--quaternary-background);
-  justify-content: center;
-  align-items: center;
-}
-
-.portal-button:hover > span {
-  background: var(--secondary-color);
-}
-
 .portal-button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
+  color: var(--secondary-background);
 }
 
 .portal-button:focus-visible {
