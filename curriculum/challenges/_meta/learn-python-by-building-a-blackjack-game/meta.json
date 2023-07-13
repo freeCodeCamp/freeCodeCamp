@@ -12,13 +12,13 @@
   "superBlock": "upcoming-python",
   "isBeta": true,
   "challengeOrder": [
-    [
-      "5daa813381b9e3db6c126b43",
-      "Step 1"
-    ],
-    [
-      "64a5229b99ff0e8250cd9a72",
-      "Step 2"
-    ]
+    {
+      "id": "5daa813381b9e3db6c126b43",
+      "title": "Step 1"
+    },
+    {
+      "id": "64a5229b99ff0e8250cd9a72",
+      "title": "Step 2"
+    }
   ]
 }
