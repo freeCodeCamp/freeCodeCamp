@@ -23,7 +23,10 @@ function createTerminal(disposables: IDisposable[]) {
   const terminalContainer = document.getElementById('terminal');
   if (!terminalContainer) throw Error('Could not find terminal container');
 
-  const term = new Terminal();
+  // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
+  // will interpret \n as line feed and just move the cursor to the next line.
+  // convertEol makes every \n a \r\n.
+  const term = new Terminal({ convertEol: true });
   const fitAddon = new FitAddon();
   term.loadAddon(fitAddon);
   term.open(terminalContainer);
