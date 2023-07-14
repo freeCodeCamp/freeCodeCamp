@@ -7,7 +7,7 @@ dashedName: step-150
 
 # --description--
 
-Add an `else` statement to the first `if` statement inside you `attack()` function. In the `else` statement, use the `+=` operator to add the text `You miss.` to the end of `text.innerText`.
+Füge eine `else`-Anweisung zur ersten `if`-Anweisung innerhalb deiner `attack()`-Funktion hinzu. In the `else` statement, use the `+=` operator to add the text `You miss.` to the end of `text.innerText`.
 
 # --hints--
 

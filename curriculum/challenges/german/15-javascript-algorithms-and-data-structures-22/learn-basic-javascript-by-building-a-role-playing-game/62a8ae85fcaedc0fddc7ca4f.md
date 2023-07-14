@@ -7,17 +7,17 @@ dashedName: step-58
 
 # --description--
 
-Add a second object to your `locations` array (remember to separate them with a comma). Erstelle nach dem gleichen Muster wie beim ersten Objekt dieselben Eigenschaften, verwende aber die Werte aus der `goStore` Funktion. Set the `name` property to `store`.
+Füge ein zweites Objekt zu deinem `locations`-Array hinzu (denke daran, es mit einem Komma zu trennen). Erstelle nach dem gleichen Muster wie beim ersten Objekt dieselben Eigenschaften, verwende aber die Werte aus der `goStore` Funktion. Setze die `name`-Eigenschaft auf `store`.
 
 # --hints--
 
-Your `locations` array should have two values.
+Dein `locations`-Array sollte zwei Werte haben.
 
 ```js
 assert.lengthOf(locations, 2);
 ```
 
-Both `locations` values should be objects.
+Beide `locations`-Werte sollten Objekte sein.
 
 
 ```js
@@ -25,13 +25,13 @@ assert.isObject(locations[0]);
 assert.isObject(locations[1]);
 ```
 
-Your second `locations` object should have a `name` property with the value of `store`.
+Dein zweites `locations`-Objekt sollte eine `name`-Eigenschaft mit dem Wert `store` haben.
 
 ```js
 assert.equal(locations[1].name, "store");
 ```
 
-Your second `locations` object should have a `button text` property which is an array.
+Dein zweites `locations`-Objekt sollte eine `button text`-Eigenschaft haben, die ein Array ist.
 
 ```js
 assert.isArray(locations[1]["button text"]);
@@ -71,7 +71,7 @@ Your second `locations` object should have a `text` property with the value of `
 assert.equal(locations[1].text, "You enter the store.");
 ```
 
-You should not modify the first `locations` object.
+Du solltest das erste `locations`-Objekt nicht ändern.
 
 ```js
 assert.deepEqual(locations[0], {
