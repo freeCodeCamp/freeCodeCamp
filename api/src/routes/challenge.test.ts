@@ -147,9 +147,7 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [
-                { id: id1, completedDate: 1 }
-              ],
+              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }],
               completedChallenges: [],
               progressTimestamps: []
             }
@@ -241,14 +239,12 @@ describe('challengeRoutes', () => {
         });
 
         it('POST correctly handles multiple requests', async () => {
-          const resOne = await superRequest('/project-completed', {
+          const resOriginal = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
           }).send(codeallyProject);
 
-          const originalCompletedDate = resOne.body.completedDate;
-
-          await superRequest('/project-completed', {
+          const resBackend = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
           }).send(backendProject);
@@ -256,7 +252,7 @@ describe('challengeRoutes', () => {
           // sending backendProject again should update its solution, but not
           // progressTimestamps or its completedDate
 
-          const resTwo = await superRequest('/project-completed', {
+          const resUpdate = await superRequest('/project-completed', {
             method: 'POST',
             setCookies
           }).send({ ...codeallyProject, solution: 'https://any.other/url' });
@@ -274,28 +270,27 @@ describe('challengeRoutes', () => {
               {
                 ...codeallyProject,
                 solution: 'https://any.other/url',
-                completedDate: expect.any(Number)
+                completedDate: resOriginal.body.completedDate
               },
               {
                 ...backendProject,
-                completedDate: expect.any(Number)
+                completedDate: resBackend.body.completedDate
               }
             ],
             progressTimestamps: expectedProgressTimestamps
           });
 
-          const completedDate = user?.completedChallenges[0]?.completedDate;
-
-          expect(resTwo.body).toStrictEqual({
+          expect(resUpdate.body).toStrictEqual({
             alreadyCompleted: true,
             points: 2,
-            completedDate
+            completedDate: expect.any(Number)
           });
 
-          // It should respect the original completedDate
-          expect(completedDate).toBe(originalCompletedDate);
-
-          expect(resTwo.statusCode).toBe(200);
+          // It should return an updated completedDate
+          expect(resUpdate.body.completedDate).not.toBe(
+            resOriginal.body.completedDate
+          );
+          expect(resUpdate.statusCode).toBe(200);
         });
       });
     });

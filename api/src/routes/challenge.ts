@@ -87,7 +87,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         return {
           alreadyCompleted,
-          completedDate: oldChallenge?.completedDate ?? completedDate,
+          // TODO(Post-MVP): audit the client and remove this if the client does
+          // not use it.
+          completedDate,
           points: alreadyCompleted ? points : points + 1
         };
       } catch (err) {
