@@ -72,9 +72,9 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size='medium' />
-      <h2 className='text-center'>{t('misc.update-email-2')}</h2>
       <Grid>
+        <Spacer size='medium' />
+        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
