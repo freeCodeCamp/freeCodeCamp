@@ -489,58 +489,58 @@ FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 >
 > Наразі прийнятними значеннями є `english` та `chinese` (`english` за замовчуванням).
 
-## Proposing a Pull Request (PR)
+## Відкриття запиту на злиття (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
 
-## Useful Links
+## Корисні посилання
 
-Creating and Editing Challenges:
+Створення та редагування завдань:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Види завдань](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) — що означають числові значення завдань (перелік).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Внесок до FreeCodeCamp: написання тестів до завдань ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) — відео [Ітана Арровуда](https://twitter.com/ArrowoodTech) про його внесок до старої версії навчальної програми.
 
-## Helper Scripts
+## Допоміжні скрипти
 
 > [!NOTE]
-> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+> Якщо ви працюєте над покроковими завданнями, див. розділ щодо [роботи над практичними проєктами](how-to-work-on-practice-projects.md).
 
-There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. Наприклад:
+Існує декілька допоміжних скриптів, які можна використовувати для завдань у блоці. Зверніть увагу, що ці команди потрібно виконувати у каталозі блоків. Наприклад:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
 ```
 
-### Add New Challenge
+### Додати нове завдання
 
-To add a new challenge at the end of a block, call the script:
+Щоб додати нове завдання в кінці блоку, викличте скрипт:
 
 ```bash
 pnpm run create-next-challenge
 ```
 
-This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+Це допоможе отримати інформацію про завдання та створити файл з завданням, оновивши файл `meta.json` новою інформацією про завдання.
 
-### Delete a Challenge
+### Видалити завдання
 
-To delete a challenge, call the script:
+Щоб видалити завдання, викличте скрипт:
 
 ```bash
 pnpm run delete-challenge
 ```
 
-This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+Це допоможе обрати потрібне завдання, видалити файл та оновити файл `meta.json`, щоб видалити завдання з порядку.
 
-### Insert a Challenge
+### Вставити завдання
 
-To insert a challenge before an existing challenge, call the script:
+Щоб вставити завдання перед наявним завданням, викличте скрипт:
 
 ```bash
 pnpm run insert-challenge
 ```
 
-This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+Це допоможе отримати інформацію про нове завдання, а також про наявне завдання. Наприклад, якщо варіанти такі:
 
 ```bash
 a
@@ -548,7 +548,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+Ви обираєте `b`, а новим порядком буде:
 
 ```bash
 a
@@ -557,12 +557,12 @@ b
 c
 ```
 
-### Update Challenge Order
+### Оновити порядок завдань
 
-If you need to manually re-order the challenges, call the script:
+Якщо вам потрібно змінити порядок завдань вручну, викличте скрипт:
 
 ```bash
 pnpm run update-challenge-order
 ```
 
-This will take you through an interactive process to select the order of the challenges.
+Він проведе вас через інтерактивний процес, який допоможе впорядкувати завдання.
