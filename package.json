@@ -75,6 +75,7 @@
     "preseed": "npm-run-all create:*",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user",
+    "seed:exams": "cd tools/scripts/seed-exams && cross-env node ./create-exams.js",
     "serve:client": "cd ./client && pnpm run serve",
     "serve:client-ci": "cd ./client && pnpm run serve-ci",
     "start": "npm-run-all create:* -p develop:server serve:client",
