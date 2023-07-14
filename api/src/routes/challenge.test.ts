@@ -1,6 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { setupServer, superRequest } from '../../jest.utils';
 
+jest.mock('../utils/env', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('../utils/env'),
+    DEPLOYMENT_ENV: 'production',
+    FREECODECAMP_NODE_ENV: 'production'
+  };
+});
+
 describe('POST /challenge/coderoad-challenge-completed', () => {
   let setCookies: string[];
 
@@ -50,15 +59,6 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
   });
 
   test('should return 400 if invalid tutorialId', async () => {
-    jest.mock('../utils/env', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return {
-        ...jest.requireActual('../utils/env'),
-        DEPLOYMENT_ENV: 'production',
-        FREECODECAMP_NODE_ENV: 'production'
-      };
-    });
-
     const tokenResponse = await superRequest('/user/user-token', {
       method: 'POST',
       setCookies
