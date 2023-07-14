@@ -4,7 +4,6 @@ import {
 } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { environment, deploymentEnv } from '../../../config/env.json';
 import { jwtSecret } from '../../../config/secrets';
 import { fixPartiallyCompletedChallengeItem } from '../utils';
 import { getChallenges } from '../utils/get-challenges';
@@ -68,12 +67,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const tutorialRepo = tutorialId?.split(':')[0];
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
-      if (deploymentEnv !== 'staging' && environment !== 'development') {
-        if (tutorialOrg !== 'freeCodeCamp') {
-          void reply.code(400);
-          return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
-        }
+      if (tutorialOrg !== 'freeCodeCamp') {
+        void reply.code(400);
+        return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
       }
+
+      console.log('tutorialRepo', tutorialRepo);
 
       const codeRoadChallenges = challenges.filter(
         ({ challengeType }) => challengeType === 12 || challengeType === 13
@@ -86,7 +85,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         return challenge.url?.endsWith(tutorialRepo);
       });
 
-      if (!challenge) return { msg: 'Tutorial name is not valid' };
+      if (!challenge) {
+        void reply.code(400);
+        return { msg: 'Tutorial name is not valid' };
+      }
 
       const { id: challengeId, challengeType } = challenge;
       try {
