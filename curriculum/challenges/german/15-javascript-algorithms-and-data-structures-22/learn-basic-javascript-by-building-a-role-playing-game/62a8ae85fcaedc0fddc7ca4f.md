@@ -65,7 +65,7 @@ Your second `locations` object should have a `text` property which is a string.
 assert.isString(locations[1].text);
 ```
 
-Your second `locations` object should have a `text` property with the value of `You enter the store.`.
+Dein zweites `locations`-Objekt sollte eine `text`-Eigenschaft mit dem Wert `You enter the store.` haben.
 
 ```js
 assert.equal(locations[1].text, "You enter the store.");

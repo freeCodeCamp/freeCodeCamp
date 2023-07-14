@@ -1,6 +1,6 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Step 92
+title: Schritt 92
 challengeType: 0
 dashedName: step-92
 ---

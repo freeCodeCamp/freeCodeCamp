@@ -1,6 +1,6 @@
 ---
 id: 5a661e0f1068aca922b3ef17
-title: Доступ до вмісту масиву завдяки дужковій нотації
+title: Доступ до вмісту масиву за допомогою дужкової нотації
 challengeType: 1
 forumTopicId: 301149
 dashedName: access-an-arrays-contents-using-bracket-notation
