@@ -223,7 +223,7 @@ importers:
         specifier: 9.0.1
         version: 9.0.1
       mongodb:
-        specifier: '4'
+        specifier: ^4.16.0
         version: 4.16.0
       nanoid:
         specifier: '3'
