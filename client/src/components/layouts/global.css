@@ -457,13 +457,16 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
-  border: 1px solid var(--secondary-color);
   padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+}
+
+:not(pre) > code {
+  border: 1px solid var(--secondary-color);
 }
 
 .challenge-instructions code {
@@ -561,7 +564,6 @@ hr {
 code[class*='language-'],
 pre[class*='language-'] {
   border-radius: 0;
-  border: none;
 }
 
 pre {
