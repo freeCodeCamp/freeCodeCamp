@@ -47,7 +47,7 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
-export interface LowerJawProps {
+interface LowerJawProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   hint?: string;
@@ -342,6 +342,9 @@ const LowerJaw = ({
               )}
             </LowerJawStatus>
             <LowerJawQuote quote={quote} />
+            <span className='sr-only'>
+              {t('learn.percent-complete', { percent: completedPercent })}
+            </span>
           </>
         )}
         {hintRef.current && !challengeIsCompleted && (
