@@ -233,6 +233,7 @@ input[type='submit'],
   border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
+  border-style: solid;
 }
 
 button:hover,
