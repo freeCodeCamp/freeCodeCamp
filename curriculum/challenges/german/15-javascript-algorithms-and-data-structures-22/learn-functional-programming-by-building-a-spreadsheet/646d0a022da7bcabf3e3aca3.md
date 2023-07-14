@@ -1,6 +1,6 @@
 ---
 id: 646d0a022da7bcabf3e3aca3
-title: Step 44
+title: Schritt 44
 challengeType: 0
 dashedName: step-44
 ---

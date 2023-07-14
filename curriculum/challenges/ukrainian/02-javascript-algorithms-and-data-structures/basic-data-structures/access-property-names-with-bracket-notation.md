@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1a
-title: Доступ до назв властивостей завдяки дужковій нотації
+title: Доступ до назв властивостей за допомогою дужкової нотації
 challengeType: 1
 forumTopicId: 301150
 dashedName: access-property-names-with-bracket-notation
