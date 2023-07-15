@@ -9,12 +9,10 @@ const backendChallengeId1 = '587d7fb1367417b2b2512bf4';
 const backendChallengeId2 = '587d7fb2367417b2b2512bf8';
 
 const backendChallengeBody1 = {
-  id: backendChallengeId1,
-  solution: 'https://any.valid/url'
+  id: backendChallengeId1
 };
 const backendChallengeBody2 = {
-  id: backendChallengeId2,
-  solution: 'https://other.valid/url'
+  id: backendChallengeId2
 };
 
 describe('challengeRoutes', () => {
@@ -55,35 +53,6 @@ describe('challengeRoutes', () => {
             isValidChallengeCompletionErrorMsg
           );
         });
-
-        test('POST rejects requests without solutions', async () => {
-          const response = await superRequest('/backend-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({ id: backendChallengeId1 });
-
-          expect(response.statusCode).toBe(400);
-          expect(response.body).toStrictEqual({
-            type: 'error',
-            message:
-              'You have not provided the valid links for us to inspect your work.'
-          });
-        });
-
-        test('POST rejects requests with invalid solution link', async () => {
-          const response = await superRequest('/backend-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: backendChallengeId1,
-            solution: 'not-a-valid-solution'
-          });
-
-          expect(response.statusCode).toBe(400);
-          expect(response.body).toStrictEqual(
-            isValidChallengeCompletionErrorMsg
-          );
-        });
       });
 
       describe('handling', () => {
@@ -91,9 +60,7 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [],
               completedChallenges: [],
-              savedChallenges: [],
               progressTimestamps: []
             }
           });
@@ -134,25 +101,27 @@ describe('challengeRoutes', () => {
         });
 
         test('POST correctly handles multiple requests', async () => {
-          const resOne = await superRequest('/backend-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send(backendChallengeBody1);
-
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-          const originalCompletedDate = resOne.body.completedDate;
+          const resOriginal = await superRequest(
+            '/backend-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send(backendChallengeBody1);
 
           await superRequest('/backend-challenge-completed', {
             method: 'POST',
             setCookies
           }).send(backendChallengeBody2);
 
-          const resTwo = await superRequest('/backend-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            ...backendChallengeBody1,
-            solution: 'https://any.other/url'
+          const resUpdated = await superRequest(
+            '/backend-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send({
+            ...backendChallengeBody1
           });
 
           const user = await fastifyTestInstance.prisma.user.findFirst({
@@ -167,7 +136,6 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 ...backendChallengeBody1,
-                solution: 'https://any.other/url',
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 completedDate: expect.any(Number)
               },
@@ -180,15 +148,17 @@ describe('challengeRoutes', () => {
             progressTimestamps: expectedProgressTimestamps
           });
 
-          const completedDate = user?.completedChallenges[0]?.completedDate;
-
-          expect(completedDate).toBe(originalCompletedDate);
-
-          expect(resTwo.statusCode).toBe(200);
-          expect(resTwo.body).toStrictEqual({
+          expect(resUpdated.statusCode).toBe(200);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          expect(resUpdated.body.completedDate).not.toBe(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            resOriginal.body.completedDate
+          );
+          expect(resUpdated.body).toStrictEqual({
             alreadyCompleted: true,
             points: 2,
-            completedDate
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            completedDate: expect.any(Number)
           });
         });
       });
