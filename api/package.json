@@ -25,7 +25,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "3.2.0",
+    "@fastify/type-provider-typebox": "3.3.0",
     "@types/bad-words": "^3.0.1",
     "@types/express-session": "1.17.7",
     "@types/jsonwebtoken": "^9.0.2",
