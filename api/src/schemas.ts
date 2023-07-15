@@ -328,8 +328,7 @@ export const schemas = {
   // Challenges
   backendChallengeCompleted: {
     body: Type.Object({
-      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
-      solution: Type.String({ format: 'url', maxLength: 1024 })
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
     }),
     response: {
       200: Type.Object({
