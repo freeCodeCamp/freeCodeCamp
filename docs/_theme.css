@@ -385,3 +385,105 @@ body.close .github-corner {
   text-align: left;
   width: 10em;
 }
+
+/* Dark Mode Functionality */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1b1b32;
+    --text-color: #ffffff;
+    --link-color: #ffffff;
+    --sidebar-color: #1b1b32;
+    --highlight-color: #3b3b4f;
+    --highlight-text-color: #dfdfe2;
+    --highlight-link-color: #ffffff;
+    --highlight-accent-color: #add8e6;
+    --active-link-color: #7d8590;
+    --hover-link-color: blue;
+  }
+
+  section.cover {
+    background: var(--background-color) !important;
+    color: var(--text-color);
+  }
+
+  .anchor span {
+    color: var(--text-color);
+  }
+
+  .sidebar {
+    background: var(--sidebar-color);
+  }
+
+  body {
+    background: var(--background-color);
+    color: var(--text-color);
+  }
+
+  li {
+    color: var(--text-color);
+  }
+
+  .sidebar ul li a {
+    color: var(--active-link-color);
+  }
+
+  .markdown-section a {
+    color: var(--link-color);
+    border-bottom: 0.1rem solid var(--link-color);
+  }
+
+  body .sidebar-toggle span {
+    background-color: var(--text-color);
+  }
+
+  .content p ul li strong,
+  .content ul li strong,
+  .content p strong {
+    color: var(--text-color);
+  }
+
+  .markdown-section a strong code {
+    background-color: var(--highlight-color);
+    color: var(--highlight-text-color);
+  }
+
+  .markdown-section tr:nth-child(2n) {
+    background-color: var(--highlight-color);
+  }
+
+  .markdown-section strong {
+    color: var(--highlight-accent-color);
+  }
+
+  .markdown-section code,
+  .markdown-section pre {
+    background-color: var(--highlight-color);
+    color: var(--highlight-text-color);
+  }
+
+  .token.punctuation {
+    color: var(--text-color);
+  }
+
+  .markdown-section pre > code,
+  .markdown-section a > code,
+  .markdown-section a > strong > code {
+    color: var(--text-color);
+    background-color: var(--highlight-color);
+  }
+
+  .sidebar ul li.active > a {
+    border-right: 2px solid;
+    color: var(--active-link-color);
+    font-weight: 600;
+  }
+
+  .sidebar ul li a:hover {
+    color: var(--hover-link-color);
+  }
+
+  .input-wrap > input {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
