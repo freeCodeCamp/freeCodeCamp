@@ -334,7 +334,7 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
-        beforeEach(async () => {
+        afterEach(async () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
