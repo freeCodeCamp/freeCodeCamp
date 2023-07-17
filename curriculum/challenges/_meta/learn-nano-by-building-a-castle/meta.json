@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5f32db63eb37f7e17323f459",
-      "Build a Castle"
-    ]
+    {
+      "id": "5f32db63eb37f7e17323f459",
+      "title": "Build a Castle"
+    }
   ]
 }

@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5f1a4ef5d5d6b5ab580fc6ae",
-      "Build a Celestial Bodies Database"
-    ]
+    {
+      "id": "5f1a4ef5d5d6b5ab580fc6ae",
+      "title": "Build a Celestial Bodies Database"
+    }
   ]
 }

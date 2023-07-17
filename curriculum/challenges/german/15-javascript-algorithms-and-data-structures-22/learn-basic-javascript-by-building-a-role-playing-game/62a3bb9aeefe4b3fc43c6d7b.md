@@ -9,17 +9,17 @@ dashedName: step-31
 
 `button1` ist eine Variable, die nicht neu zugewiesen wird. If you are not going to assign a new value to a variable, it is best practice to use the `const` keyword to declare it instead of the `let` keyword. Dadurch wird JavaScript angewiesen, einen Fehler zu melden, wenn du sie versehentlich neu zuweist.
 
-Change your `button1` variable to be declared with the `const` keyword.
+Ändere deine `button1`-Variable, so dass sie mit dem `const`-Schlüsselwort deklariert wird.
 
 # --hints--
 
-Your `button1` variable should be declared with `const`.
+Deine `button1`-Variable sollte mit `const` deklariert werden.
 
 ```js
 assert.match(code, /const button1/);
 ```
 
-Your `button1` variable should still have the value of your `#button1` element.
+Deine `button1`-Variable sollte noch immer den Wert deines `#button1`-Elements haben.
 
 ```js
 assert.deepEqual(button1, document.querySelector("#button1"));

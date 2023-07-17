@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5ea8adfab628f68d805bfc5e",
-      "Build a Boilerplate"
-    ]
+    {
+      "id": "5ea8adfab628f68d805bfc5e",
+      "title": "Build a Boilerplate"
+    }
   ]
 }

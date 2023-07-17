@@ -14,7 +14,7 @@ Ein <dfn>Palindrom</dfn> kann sowohl ein Wort als auch ein Satz sein, das sowohl
 
 **Hinweis:** Entferne **alle nicht alphanumerischen Zeichen** (Interpunktion, Leerzeichen und Symbole) und setze alles in dieselbe Schreibweise (Klein- oder Großbuchstaben), um nach Palindromen zu filtern.
 
-We'll pass strings with varying formats, such as `racecar`, `RaceCar`, and `race CAR` among others.
+Wir übergeben Strings mit unterschiedlichen Formaten, wie zum Beispiel `racecar`, `RaceCar` und `race CAR`.
 
 Auch Strings mit speziellen Symbolen wie `2A3*3a2`, `2A3 3a2` und `2_A3*3#A2` werden dir übergeben.
 

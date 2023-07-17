@@ -13,45 +13,45 @@
   ],
   "superBlock": "data-visualization",
   "challengeOrder": [
-    [
-      "587d7fad367417b2b2512be1",
-      "Handle Click Events with JavaScript using the onclick property"
-    ],
-    [
-      "587d7fad367417b2b2512be2",
-      "Change Text with click Events"
-    ],
-    [
-      "587d7fae367417b2b2512be3",
-      "Get JSON with the JavaScript XMLHttpRequest Method"
-    ],
-    [
-      "5ccfad82bb2dc6c965a848e5",
-      "Get JSON with the JavaScript fetch method"
-    ],
-    [
-      "587d7fae367417b2b2512be4",
-      "Access the JSON Data from an API"
-    ],
-    [
-      "587d7fae367417b2b2512be5",
-      "Convert JSON Data to HTML"
-    ],
-    [
-      "587d7fae367417b2b2512be6",
-      "Render Images from Data Sources"
-    ],
-    [
-      "587d7fae367417b2b2512be7",
-      "Pre-filter JSON to Get the Data You Need"
-    ],
-    [
-      "587d7faf367417b2b2512be8",
-      "Get Geolocation Data to Find A User's GPS Coordinates"
-    ],
-    [
-      "587d7faf367417b2b2512be9",
-      "Post Data with the JavaScript XMLHttpRequest Method"
-    ]
+    {
+      "id": "587d7fad367417b2b2512be1",
+      "title": "Handle Click Events with JavaScript using the onclick property"
+    },
+    {
+      "id": "587d7fad367417b2b2512be2",
+      "title": "Change Text with click Events"
+    },
+    {
+      "id": "587d7fae367417b2b2512be3",
+      "title": "Get JSON with the JavaScript XMLHttpRequest Method"
+    },
+    {
+      "id": "5ccfad82bb2dc6c965a848e5",
+      "title": "Get JSON with the JavaScript fetch method"
+    },
+    {
+      "id": "587d7fae367417b2b2512be4",
+      "title": "Access the JSON Data from an API"
+    },
+    {
+      "id": "587d7fae367417b2b2512be5",
+      "title": "Convert JSON Data to HTML"
+    },
+    {
+      "id": "587d7fae367417b2b2512be6",
+      "title": "Render Images from Data Sources"
+    },
+    {
+      "id": "587d7fae367417b2b2512be7",
+      "title": "Pre-filter JSON to Get the Data You Need"
+    },
+    {
+      "id": "587d7faf367417b2b2512be8",
+      "title": "Get Geolocation Data to Find A User's GPS Coordinates"
+    },
+    {
+      "id": "587d7faf367417b2b2512be9",
+      "title": "Post Data with the JavaScript XMLHttpRequest Method"
+    }
   ]
 }

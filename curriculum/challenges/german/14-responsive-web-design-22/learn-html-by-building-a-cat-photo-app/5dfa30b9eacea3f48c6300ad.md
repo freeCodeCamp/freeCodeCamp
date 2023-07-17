@@ -29,7 +29,7 @@ Dein (`a`)-Ankerelement sollte ein öffnendes Tag haben. Öffnende Tags haben fo
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-Du solltest nur ein einleitendes (`a`)-Ankertag hinzufügen. Entferne bitte alles Zusätzliche.
+You are missing a closing (`a`) tag after the image.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

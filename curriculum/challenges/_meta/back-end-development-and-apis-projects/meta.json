@@ -7,25 +7,25 @@
   "time": "150 hours",
   "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
-    [
-      "bd7158d8c443edefaeb5bdef",
-      "Timestamp Microservice"
-    ],
-    [
-      "bd7158d8c443edefaeb5bdff",
-      "Request Header Parser Microservice"
-    ],
-    [
-      "bd7158d8c443edefaeb5bd0e",
-      "URL Shortener Microservice"
-    ],
-    [
-      "5a8b073d06fa14fcfde687aa",
-      "Exercise Tracker"
-    ],
-    [
-      "bd7158d8c443edefaeb5bd0f",
-      "File Metadata Microservice"
-    ]
+    {
+      "id": "bd7158d8c443edefaeb5bdef",
+      "title": "Timestamp Microservice"
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdff",
+      "title": "Request Header Parser Microservice"
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0e",
+      "title": "URL Shortener Microservice"
+    },
+    {
+      "id": "5a8b073d06fa14fcfde687aa",
+      "title": "Exercise Tracker"
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0f",
+      "title": "File Metadata Microservice"
+    }
   ]
 }

@@ -9,33 +9,33 @@
   "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
-    [
-      "647e239e8acb466c97ccbf05",
-      "Write Your First C# Code"
-    ],
-    [
-      "647e238f8acb466c97ccbf04",
-      "Store and Retrieve Data Using Literal and Variable Values in C#"
-    ],
-    [
-      "647e23828acb466c97ccbf03",
-      "Perform Basic String Formatting in C#"
-    ],
-    [
-      "647e23788acb466c97ccbf02",
-      "Perform Basic Operations on Numbers in C#"
-    ],
-    [
-      "647e235a8acb466c97ccbf00",
-      "Guided Project - Calculate and Print Student Grades"
-    ],
-    [
-      "647e236d8acb466c97ccbf01",
-      "Guided Project - Calculate Final GPA"
-    ],
-    [
-      "647f85d407d29547b3bee1bb",
-      "Trophy - Write Your First Code Using C#"
-    ]
+    {
+      "id": "647e239e8acb466c97ccbf05",
+      "title": "Write Your First C# Code"
+    },
+    {
+      "id": "647e238f8acb466c97ccbf04",
+      "title": "Store and Retrieve Data Using Literal and Variable Values in C#"
+    },
+    {
+      "id": "647e23828acb466c97ccbf03",
+      "title": "Perform Basic String Formatting in C#"
+    },
+    {
+      "id": "647e23788acb466c97ccbf02",
+      "title": "Perform Basic Operations on Numbers in C#"
+    },
+    {
+      "id": "647e235a8acb466c97ccbf00",
+      "title": "Guided Project - Calculate and Print Student Grades"
+    },
+    {
+      "id": "647e236d8acb466c97ccbf01",
+      "title": "Guided Project - Calculate Final GPA"
+    },
+    {
+      "id": "647f85d407d29547b3bee1bb",
+      "title": "Trophy - Write Your First Code Using C#"
+    }
   ]
 }

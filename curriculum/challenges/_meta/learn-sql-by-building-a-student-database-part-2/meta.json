@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "618590adb0730ca724e37672",
-      "Build a Student Database: Part 2"
-    ]
+    {
+      "id": "618590adb0730ca724e37672",
+      "title": "Build a Student Database: Part 2"
+    }
   ]
 }

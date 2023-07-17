@@ -22,7 +22,7 @@ const ourStr = "Hello, our name is " + ourName + ", how are you?";
 
 # --instructions--
 
-Встановіть `myName` на рядок, рівний вашому імені, і побудуйте `myStr` із `myName` між рядками `My name is` та `and I am well!`
+Встановіть `myName` на ваше ім’я і побудуйте `myStr` з `myName` між рядками `My name is` та `and I am well!`
 
 # --hints--
 
@@ -32,7 +32,7 @@ const ourStr = "Hello, our name is " + ourName + ", how are you?";
 assert(typeof myName !== 'undefined' && myName.length > 2);
 ```
 
-Ви повинні використати два оператори `+`, щоб побудувати `myStr` із `myName` всередині.
+Ви повинні використати два оператори `+`, щоб побудувати `myStr` з `myName` всередині.
 
 ```js
 assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);

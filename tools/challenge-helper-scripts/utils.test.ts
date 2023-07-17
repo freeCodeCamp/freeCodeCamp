@@ -89,18 +89,18 @@ describe('Challenge utils helper scripts', () => {
         '_meta/project/': {
           'meta.json': `{"id": "mock-id",
           "challengeOrder": [
-            [
-              "id-1",
-              "Step 1"
-            ],
-            [
-              "id-2",
-              "Step 2"
-            ],
-            [
-              "id-3",
-              "Step 3"
-            ]
+            {
+              "id": "id-1",
+              "title": "Step 1"
+            },
+            {
+              "id": "id-2",
+              "title": "Step 2"
+            },
+            {
+              "id": "id-3",
+              "title": "Step 3"
+            }
           ]}`
         }
       });
@@ -114,10 +114,22 @@ describe('Challenge utils helper scripts', () => {
       expect(meta).toEqual({
         id: 'mock-id',
         challengeOrder: [
-          ['id-1', 'Step 1'],
-          ['id-2', 'Step 2'],
-          [mockChallengeId, 'Step 3'],
-          ['id-3', 'Step 4']
+          {
+            id: 'id-1',
+            title: 'Step 1'
+          },
+          {
+            id: 'id-2',
+            title: 'Step 2'
+          },
+          {
+            id: mockChallengeId,
+            title: 'Step 3'
+          },
+          {
+            id: 'id-3',
+            title: 'Step 4'
+          }
         ]
       });
     });
@@ -128,7 +140,7 @@ describe('Challenge utils helper scripts', () => {
       mock({
         '_meta/project/': {
           'meta.json':
-            '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-3", "Step 2"], ["id-2", "Step 3"]]}'
+            '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}'
         },
         'english/superblock/project/': {
           'id-1.md': `---
