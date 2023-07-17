@@ -1,17 +1,16 @@
 ---
-id: 64b4197bd3817c0afb348f78
-title: Step 69
+id: 64b5322f4abaca4b4dfc36ff
+title: Step 75
 challengeType: 0
-dashedName: step-69
+dashedName: step-75
 ---
 
 # --description--
 
-When you start the game, you will notice that the position of the platforms is animating alongside the player. But if you try to jump below one of the platforms, then you will jump right through it.
+Add another conditional statement that checks if the player's `y` position plus the player's height is greater than or equal to the platform's `y` position.
 
-In order to fix this issue, you will need to add collision detection logic to the game.
+Below that, add another conditional statement that checks if the player's `y` position is less than or equal to the sum of the platform's `y` position plus the platform's height.
 
-Start by calling the `forEach` method on the `platforms` array. For the callback function pass in `platform` as the parameter.
 # --hints--
 
 Test 1
@@ -275,6 +274,28 @@ const animate = () => {
 
 --fcc-editable-region--
 
+  platforms.forEach((platform) => {
+    const collisionDetectionRules = [
+      player.position.y + player.height <= platform.position.y,
+      player.position.y + player.height + player.velocity.y >=
+        platform.position.y,
+      player.position.x >= platform.position.x - player.width / 2,
+      player.position.x <=
+        platform.position.x + platform.width - player.width / 3
+    ];
+
+    if (collisionDetectionRules.every((rule) => rule)) {
+      player.velocity.y = 0;
+      return;
+    }
+
+    const platformDetectionRules = [
+      player.position.x >= platform.position.x - player.width / 2,
+      player.position.x <=
+        platform.position.x + platform.width - player.width / 3,
+      
+    ];
+  })
 
 --fcc-editable-region--
 
