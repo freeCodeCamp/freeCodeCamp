@@ -7,6 +7,7 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
+import Ajv from 'ajv';
 import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
@@ -16,6 +17,8 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
+import uriResolver from 'fast-uri';
+import addFormats from 'ajv-formats';
 
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
@@ -40,10 +43,12 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN
 } from './utils/env';
+import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
 import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
+import { isObjectID } from './utils/validation';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -53,12 +58,33 @@ export type FastifyInstanceWithTypeProvider = FastifyInstance<
   TypeBoxTypeProvider
 >;
 
+// Options that fastify uses
+const ajv = new Ajv({
+  coerceTypes: 'array', // change data type of data to match type keyword
+  useDefaults: true, // replace missing properties and items with the values from corresponding default keyword
+  removeAdditional: true, // remove additional properties
+  uriResolver,
+  addUsedSchema: false,
+  // Explicitly set allErrors to `false`.
+  // When set to `true`, a DoS attack is possible.
+  allErrors: false
+});
+
+// add the default formatters from avj-formats
+addFormats(ajv);
+ajv.addFormat('objectid', {
+  type: 'string',
+  validate: (str: string) => isObjectID(str)
+});
+
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
+
+  fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
   void fastify.register(security);
 
@@ -169,6 +195,7 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);

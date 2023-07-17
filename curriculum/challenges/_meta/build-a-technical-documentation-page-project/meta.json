@@ -10,9 +10,9 @@
   "required": [],
   "superBlock": "2022/responsive-web-design",
   "challengeOrder": [
-    [
-      "587d78b0367417b2b2512b05",
-      "Build a Technical Documentation Page"
-    ]
+    {
+      "id": "587d78b0367417b2b2512b05",
+      "title": "Build a Technical Documentation Page"
+    }
   ]
 }

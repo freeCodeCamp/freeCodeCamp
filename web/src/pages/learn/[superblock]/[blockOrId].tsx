@@ -15,7 +15,7 @@ import { getDestination } from '../[...id]';
 interface Props {
   blockNames: string[];
   blockNameToChallengeOrderMap: {
-    [index: string]: [id: string, title: string];
+    [index: string]: { id: string; title: string };
   };
   idToDashedNameMap: { [index: string]: string };
 }

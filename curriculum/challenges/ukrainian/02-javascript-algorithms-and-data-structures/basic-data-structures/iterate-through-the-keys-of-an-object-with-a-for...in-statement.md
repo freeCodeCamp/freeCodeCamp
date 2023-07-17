@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: Ітерація через ключі об'єкта у циклі "for...in"
+title: Ітерація через ключі об’єкта за допомогою інструкції for...in
 challengeType: 1
 forumTopicId: 301162
 dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
@@ -8,7 +8,7 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
+Часом потрібно ітерувати через всі ключі всередині об’єкта. Для цього можна використати цикл <dfn>for...in</dfn>. Цикл for...in виглядає так:
 
 ```javascript
 const refrigerator = {
@@ -21,15 +21,15 @@ for (const food in refrigerator) {
 }
 ```
 
-This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
+Цей код виводить `milk 1` та `eggs 12`, а кожна пара ключ-значення з’являється в окремому рядку.
 
-We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
+Ми визначили змінну `food` у голові циклу, і ця змінна встановлювалася на кожний з ключів об’єкта за кожної ітерації. У результаті цього кожна назва їжі виводилась на консолі.
 
-**ПРИМІТКА:** об'єкти не зберігають впорядкування ключів так, як це роблять масиви. Таким чином, позиція ключа в об'єкті або відносний його порядок є недоречним, коли ми його відсилаємо або отримуємо до нього доступ.
+**ПРИМІТКА:** об’єкти не зберігають впорядкування ключів так, як це роблять масиви. Тому позиція ключа в об’єкті або його відносний порядок є недоречними, якщо ми посилаємось або отримуємо до нього доступ.
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
+Ми визначили функцію `countOnline`, яка приймає один аргумент `allUsers`. Використайте інструкцію <dfn>for...in</dfn> всередині цієї функції, щоб пройтися по об’єкту `allUsers` і повернути кількість користувачів, чия властивість `online` встановлена на `true`. Приклад об’єкту, який можна передати до `countOnline`, показано нижче. Кожен користувач матиме властивість `online` встановлену на `true` або `false`.
 
 ```js
 {
@@ -47,7 +47,7 @@ We've defined a function `countOnline` which accepts one argument, `allUsers`. U
 
 # --hints--
 
-Для функції `countOnline` слід використовувати `for in` цикл, щоб ітерувати ключі об'єкта, який передається до неї.
+Функція `countOnline` має використати інструкцію `for in`, щоб ітерувати через ключі об’єкта, переданого до неї.
 
 ```js
 assert(
@@ -57,19 +57,19 @@ assert(
 );
 ```
 
-Функція `countOnline` повинна повернути `1`, коли об'єкт `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` передається до неї
+Функція `countOnline` має повернути `1`, коли до неї передано об’єкт `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }`
 
 ```js
 assert(countOnline(usersObj1) === 1);
 ```
 
-Функція `countOnline` повинна повернути `2`, коли об'єкт `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` передається до неї
+Функція `countOnline` має повернути `2`, коли до неї передано об’єкт `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }`
 
 ```js
 assert(countOnline(usersObj2) === 2);
 ```
 
-Функція `countOnline` повинна повернути `0`, коли об'єкт `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` передається до неї
+Функція `countOnline` має повернути `0`, коли до неї передано об’єкт `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }`
 
 ```js
 assert(countOnline(usersObj3) === 0);

@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "63d8401e39c73468b059cd42",
-      "Build a Financial Calculator"
-    ]
+    {
+      "id": "63d8401e39c73468b059cd42",
+      "title": "Build a Financial Calculator"
+    }
   ]
 }

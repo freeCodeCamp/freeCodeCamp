@@ -7,17 +7,26 @@ import { getProjectPath } from './get-project-info';
 import { getMetaData } from './project-metadata';
 
 export const getChallengeOrderFromFileTree = async (): Promise<
-  [string, string][]
+  { id: string; title: string }[]
 > => {
   const path = getProjectPath();
   const fileList = await readdir(path);
   const challengeOrder = fileList
     .map(file => matter.read(join(path, file)))
-    .map(({ data }) => [data.id, data.title] as [string, string]);
+    .map(({ data }) => ({
+      id: data.id as string,
+      title: data.title as string
+    }));
   return challengeOrder;
 };
 
-export const getChallengeOrderFromMeta = (): [string, string][] => {
+export const getChallengeOrderFromMeta = (): {
+  id: string;
+  title: string;
+}[] => {
   const meta = getMetaData();
-  return meta.challengeOrder.map(el => [el[0], el[1]]);
+  return meta.challengeOrder.map(({ id, title }) => ({
+    id,
+    title
+  }));
 };
