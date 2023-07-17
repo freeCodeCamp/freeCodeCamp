@@ -158,9 +158,7 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }],
-              completedChallenges: [],
-              progressTimestamps: []
+              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }]
             }
           });
         });
@@ -171,7 +169,8 @@ describe('challengeRoutes', () => {
             data: {
               partiallyCompletedChallenges: [],
               completedChallenges: [],
-              savedChallenges: []
+              savedChallenges: [],
+              progressTimestamps: []
             }
           });
         });
