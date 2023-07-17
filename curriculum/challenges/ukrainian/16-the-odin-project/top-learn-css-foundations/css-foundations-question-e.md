@@ -1,16 +1,16 @@
 ---
 id: 63ee35370d8d4841c3a7091e
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question E
+title: Основи CSS. Запитання E
 challengeType: 15
 dashedName: css-foundations-question-e
 ---
 
 # --description--
 
-Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we’re going to only show you the descendant combinator, which is represented in CSS by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
+Комбінатори дозволяють комбінувати декілька селекторів по-іншому, а не групуючи чи об’єднуючи, оскільки вони показують зв’язок між селекторами. Загалом існує чотири типи комбінаторів, але ми зупинимося на нащадку, який представлений у CSS пробілом між селекторами. Нащадок дозволить обирати лише ті елементи, які відповідають останньому селектору за умови, що вони також мають предка (батька, прабатька тощо), який відповідає попередньому селектору.
 
-So something like `.ancestor .child` would select an element with the class `child` if it has an ancestor with the class `ancestor`. Another way to think of it is child will only be selected if it is nested inside of `ancestor`, no matter how deep. Take a quick look at the example below and see if you can tell which elements would be selected based on the CSS rule provided:
+`.ancestor .child` обрав би елемент з класом `child`, якщо він має предка із класом `ancestor`. Також можна вважати, що дочірній елемент буде обрано лише тоді, якщо він розміщений всередині `ancestor`. Перегляньте наведений нижче приклад та подумайте, чи ви можете сказати, які елементи буде обрано на основі наданого правила CSS:
 
 ```html
 <!-- index.html -->
@@ -33,27 +33,27 @@ So something like `.ancestor .child` would select an element with the class `chi
 }
 ```
 
-In the above example, the first two elements with the `contents` class (`B` and `C`) would be selected, but that last element (`D`) won’t be. Was your guess correct?
+Перші два елементи з класом `contents` (`B` та `C`) будуть вибрані, а останній елемент (`D`) — ні. Ваша відповідь була правильною?
 
-There’s really no limit to how many combinators you can add to a rule, so `.one .two .three .four` would be totally valid. This would just select an element that has a class of `four` if it has an ancestor with a class of `three`, and if that ancestor has its own ancestor with a class of `two`, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
+До правила можна додати необмежену кількість комбінаторів, тому `.one .two .three .four` будуть дійсними. Буде обрано елемент з класом `four`, якщо він має предка з класом `three`, та якщо предок має власного предка з класом `two`, і так далі. Старайтесь уникати вибирати елементи, які вимагають такого рівня вкладення, оскільки це може бути заплутано та довго, а також може призвести до проблем щодо специфічності.
 
 # --question--
 
 ## --text--
 
-What does the descendant combinator do?
+Що робить нащадок?
 
 ## --answers--
 
-It groups certain classes together which share the same declarations.
+Групує певні класи, які мають однакові оголошення.
 
 ---
 
-It gives the ability to select an element that shares the same `class` and `id`.
+Дозволяє вибирати елемент з однаковими `class` та `id`.
 
 ---
 
-It allows you to select an element based on its relationship with its ancestor (parent, grandparent, and so on).
+Дозволяє вибирати елемент, базуючись на його зв’язку з предком (батьком, прабатьком і т. д.).
 
 
 ## --video-solution--

@@ -14,7 +14,7 @@ Let $T(n)$ be the number of strings of length $n$ consisting of letters from $A$
 
 $T(7) = 7^7 - 7! = 818\\,503$.
 
-Find $T({10}^{12})$. Give the last 9 digits of your answer.
+Знайдіть $T({10}^{12})$. Give the last 9 digits of your answer.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f40e1000cf542c50ff21
-title: 'Problem 162: Hexadecimal numbers'
+title: 'Problema 162: Números hexadecimais'
 challengeType: 1
 forumTopicId: 301796
 dashedName: problem-162-hexadecimal-numbers
@@ -8,31 +8,31 @@ dashedName: problem-162-hexadecimal-numbers
 
 # --description--
 
-In the hexadecimal number system numbers are represented using 16 different digits:
+Os números do sistema de números hexadecimais são representados usando 16 algarismos diferentes:
 
 $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 
-The hexadecimal number AF when written in the decimal number system equals $10 \times 16 + 15 = 175$.
+O número hexadecimal AF quando escrito no sistema de números decimais é igual a $10 \times 16 + 15 = 175$.
 
-In the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits 0,1 and A are all present.
+Nos números hexadecimais de 3 algarismos 10A, 1A0, A10 e A01, os algarismos 0,1 e A estão todos presentes.
 
-Like numbers written in base ten we write hexadecimal numbers without leading zeroes.
+Como números escritos na base dez, escrevemos números hexadecimais sem zeros à frente.
 
-How many hexadecimal numbers containing at most sixteen hexadecimal digits exist with all of the digits 0,1, and A present at least once?
+Quantos números hexadecimais, contendo no máximo dezesseis algarismos hexadecimais, existem com os algarismos 0,1 e A presentes pelo menos uma vez?
 
-Give your answer with hexadecimal number as a string.
+Dê sua resposta com um número hexadecimal como uma string.
 
-**Note:** (A,B,C,D,E and F in upper case, without any leading or trailing code that marks the number as hexadecimal and without leading zeroes , e.g. 1A3F and not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)
+**Observação:** deixe A,B,C,D,E e F em maiúsculas, sem qualquer código anterior ou posterior que marque o número como hexadecimal e sem zeros à direita, por exemplo: 1A3F e não: 1a3f, 0x1a3f, $1A3F, #1A3F ou 0000001A3F.
 
 # --hints--
 
-`hexadecimalNumbers()` should return a string.
+`hexadecimalNumbers()` deve retornar uma string.
 
 ```js
 assert(typeof hexadecimalNumbers() === 'string');
 ```
 
-`hexadecimalNumbers()` should return the string `3D58725572C62302`.
+`hexadecimalNumbers()` deve retornar a string `3D58725572C62302`.
 
 ```js
 assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');

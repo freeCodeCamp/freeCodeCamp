@@ -16,19 +16,19 @@ Write a function that takes an array of strings and returns the strings that hav
 
 # --hints--
 
-`longestString` should be a function.
+`longestString` sollte eine Funktion sein.
 
 ```js
 assert(typeof longestString == 'function');
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return a array.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg'])));
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return `["ccc", "ggg"]`.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` sollte `["ccc", "ggg"]` zurückgeben.
 
 ```js
 assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [
@@ -37,7 +37,7 @@ assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [
 ]);
 ```
 
-`longestString(["afedg", "bb", "sdccc", "efdee", "f", "geegg"])` should return `["afedg", "sdccc", "efdee", "geegg"]`.
+`longestString(["afedg", "bb", "sdccc", "efdee", "f", "geegg"])` sollte `["afedg", "sdccc", "efdee", "geegg"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -46,7 +46,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["a", "bhghgb", "ccc", "efde", "fssdrr", "ggg"])` should return `["bhghgb", "fssdrr"]`.
+`longestString(["a", "bhghgb", "ccc", "efde", "fssdrr", "ggg"])` sollte `["bhghgb", "fssdrr"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -55,7 +55,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["ahgfhg", "bdsfsb", "ccc", "ee", "f", "ggdsfg"])` should return `["ahgfhg", "bdsfsb", "ggdsfg"]`.
+`longestString(["ahgfhg", "bdsfsb", "ccc", "ee", "f", "ggdsfg"])` sollte `["ahgfhg", "bdsfsb", "ggdsfg"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -64,7 +64,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["a", "bbdsf", "ccc", "edfe", "gzzzgg"])` should return `["gzzzgg"]`.
+`longestString(["a", "bbdsf", "ccc", "edfe", "gzzzgg"])` sollte `["gzzzgg"]` zurückgeben.
 
 ```js
 assert.deepEqual(longestString(['a', 'bbdsf', 'ccc', 'edfe', 'gzzzgg']), [

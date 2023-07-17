@@ -1,5 +1,5 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../config/superblocks';
 import { Themes } from '../components/settings/theme';
 import { fullCertMap } from '../resources/cert-and-project-map';
 
@@ -71,6 +71,11 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+export interface PrerequisiteChallenge {
+  id: string;
+  title: string;
+}
+
 export type ChallengeWithCompletedNode = {
   block: string;
   challengeType: number;
@@ -114,6 +119,7 @@ export type ChallengeNode = {
       type: string;
     };
     notes: string;
+    prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;
     isLocked: boolean;
     isPrivate: boolean;
@@ -218,8 +224,7 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  yearsTopContributor: any[];
+  yearsTopContributor: string[];
 } & ClaimedCertifications;
 
 export type ProfileUI = {

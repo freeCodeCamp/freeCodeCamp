@@ -7,26 +7,26 @@ dashedName: step-25
 
 # --description--
 
-Users will be allowed to choose either a `Personal Account` or `Business Account`.
+Benutzer haben die Möglichkeit, zwischen einem `Personal Account` oder `Business Account` zu wählen.
 
-To do this, within each of the first two `label` elements, add one `input` element with `type="radio"`.
+Um dies zu tun, füge innerhalb jedes der beiden ersten `label`-Element ein `input`-Element mit `type="radio"` hinzu.
 
 # --hints--
 
-You should add two `input` elements.
+Du solltest zwei `input`-Elemente hinzufügen.
 
 ```js
 assert.equal(document.querySelectorAll('fieldset:nth-child(2) input')?.length, 2);
 ```
 
-You should add one `input` to each of the first two `label` elements.
+Du solltest zu jedem der ersten zwei `label`-Elemente ein `input` hinzufügen.
 
 ```js
 assert.exists(document.querySelector('fieldset:nth-child(2) > label:nth-child(1) > input'));
 assert.exists(document.querySelector('fieldset:nth-child(2) > label:nth-child(2) > input'));
 ```
 
-You should give both `input` elements a `type` of `radio`.
+Du solltest beiden `input`-Elementen einen `type` von `radio` zuweisen.
 
 ```js
 assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"]')?.length, 2);

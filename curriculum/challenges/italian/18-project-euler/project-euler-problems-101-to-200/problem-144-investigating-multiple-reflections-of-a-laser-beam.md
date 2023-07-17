@@ -1,6 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0f
-title: 'Problem 144: Investigating multiple reflections of a laser beam'
+title: 'Problema 144: analizzando molteplici riflessi di un fascio laser'
 challengeType: 1
 forumTopicId: 301773
 dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
@@ -8,34 +8,34 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 
 # --description--
 
-In laser physics, a "white cell" is a mirror system that acts as a delay line for the laser beam. The beam enters the cell, bounces around on the mirrors, and eventually works its way back out.
+Nella fisica dei laser, una "cella bianca" è un sistema a specchio che funge da linea di ritardo per il raggio laser. Il raggio entra nella cella, rimbalza sugli specchi e, alla fine, trova la sua via di uscita.
 
-The specific white cell we will be considering is an ellipse with the equation $4{x}^2 + y^2 = 100$
+La specifica cella bianca che prenderemo in considerazione è un'ellisse con l'equazione $4{x}^2 + y^2 = 100$
 
-The section corresponding to $−0.01 ≤ x ≤ +0.01$ at the top is missing, allowing the light to enter and exit through the hole.
+Manca la sezione corrispondente a $−0.01 ≤ x ≤ +0.01$ in alto, che permette alla luce di entrare e uscire attraverso il foro.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="fascio luminoso che parte dal punto (0.0, 10.1) e che attraversa lo specchio al punto (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animazione con le prime 10 riflessioni del fascio" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
-The light beam in this problem starts at the point (0.0, 10.1) just outside the white cell, and the beam first impacts the mirror at (1.4, -9.6).
+Il fascio luminoso in questo problema inizia dal punto (0.0, 10.1) appena fuori dalla cella bianca e incontra per la prima volta lo specchio a (1.4, -9.6).
 
-Each time the laser beam hits the surface of the ellipse, it follows the usual law of reflection "angle of incidence equals angle of reflection." That is, both the incident and reflected beams make the same angle with the normal line at the point of incidence.
+Ogni volta che il raggio laser colpisce la superficie dell'ellisse, segue la consueta legge di riflessione "l'angolo di incidenza è uguale all'angolo di riflessione". Cioè, sia i fasci incidenti che quelli riflessi formano lo stesso angolo con la linea normale nel punto di incidenza.
 
-In the figure on the left, the red line shows the first two points of contact between the laser beam and the wall of the white cell; the blue line shows the line tangent to the ellipse at the point of incidence of the first bounce.
+Nella figura a sinistra, la linea rossa indica i primi due punti di contatto tra il fascio laser e la parete della cella bianca; la linea blu mostra la linea tangente all'ellisse nel punto di incidenza della prima riflessione.
 
-The slope m of the tangent line at any point (x, y) of the given ellipse is: $m = −4 × \frac{x}{y}$
+La pendenza m della linea tangente in qualsiasi punto (x, y) della data ellisse è: $m = −4 × \frac{x}{y}$
 
-The normal line is perpendicular to this tangent line at the point of incidence.
+La linea normale è perpendicolare a questa linea tangente nel punto di incidenza.
 
-The animation on the right shows the first 10 reflections of the beam.
+L'animazione a destra mostra le prime 10 riflessioni del fascio.
 
-How many times does the beam hit the internal surface of the white cell before exiting?
+Quante volte il raggio colpisce la superficie interna della cella bianca prima di uscire?
 
 # --hints--
 
-`laserBeamReflections()` should return `354`.
+`laserBeamReflections()` dovrebbe restituire `354`.
 
 ```js
 assert.strictEqual(laserBeamReflections(), 354);

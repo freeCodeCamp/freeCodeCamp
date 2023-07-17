@@ -1,6 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
-title: 'Problem 199: Iterative Circle Packing'
+title: 'Problema 199: Embalagem de círculos iterativa'
 challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
@@ -8,29 +8,29 @@ dashedName: problem-199-iterative-circle-packing
 
 # --description--
 
-Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
+Três círculos de raio igual são colocados dentro de um círculo maior, de tal forma que cada par de círculos é tangente entre si e os círculos internos não se sobrepõem. Há quatro "lacunas" descobertas que devem ser preenchidas iterativamente com mais círculos tangentes.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="um diagrama de círculos não sobrepostos" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+A cada iteração, um círculo de tamanho máximo é colocado em cada lacuna, o que cria mais lacunas para a próxima iteração. Após 3 iterações (na figura), há 108 lacunas e a fração da área que não é coberta pelos círculos é de 0, 6790342, arredondado para oito casas decimais.
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Qual fração da área não é coberta pelos círculos depois de `n` iterações? Arredonde sua resposta para até oito casas decimais usando o formato x.xxxxxxxx.
 
 # --hints--
 
-`iterativeCirclePacking(10)` should return a number.
+`iterativeCirclePacking(10)` deve retornar um número.
 
 ```js
 assert(typeof iterativeCirclePacking(10) === 'number');
 ```
 
-`iterativeCirclePacking(10)` should return `0.00396087`.
+`iterativeCirclePacking(10)` deve retornar `0.00396087`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(10), 0.00396087);
 ```
 
-`iterativeCirclePacking(3)` should return `0.06790342`.
+`iterativeCirclePacking(3)` deve retornar `0.06790342`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(3), 0.06790342);

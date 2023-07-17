@@ -1,6 +1,6 @@
 ---
 id: 5900f3f51000cf542c50ff07
-title: 'Problem 136: Singleton difference'
+title: 'Problema 136: Diferenças de solitários'
 challengeType: 1
 forumTopicId: 301764
 dashedName: problem-136-singleton-difference
@@ -8,17 +8,17 @@ dashedName: problem-136-singleton-difference
 
 # --description--
 
-The positive integers, $x$, $y$, and $z$, are consecutive terms of an arithmetic progression. Given that $n$ is a positive integer, the equation, $x^2 − y^2 − z^2 = n$, has exactly one solution when $n = 20$:
+Os números inteiros positivos, $x$, $y$e $z$, são termos consecutivos de uma progressão aritmética. Dado que $n$ é um número inteiro positivo, a equação, $x^2 - y^2 - z^2 = n$, tem exatamente uma solução quando $n = 20$:
 
 $$13^2 − 10^2 − 7^2 = 20$$
 
-In fact, there are twenty-five values of $n$ below one hundred for which the equation has a unique solution.
+De fato, há vinte e cinco valores de $n$ abaixo de cem para os quais a equação tem uma solução única.
 
-How many values of $n$ less than fifty million have exactly one solution?
+Quantos valores de $n$ abaixo de cinquenta milhões têm exatamente uma solução?
 
 # --hints--
 
-`singletonDifference()` should return `2544559`.
+`singletonDifference()` deve retornar `2544559`.
 
 ```js
 assert.strictEqual(singletonDifference(), 2544559);

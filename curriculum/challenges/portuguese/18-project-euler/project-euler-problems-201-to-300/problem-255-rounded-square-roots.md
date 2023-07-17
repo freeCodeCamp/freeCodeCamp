@@ -1,6 +1,6 @@
 ---
 id: 5900f46d1000cf542c50ff7f
-title: 'Problem 255: Rounded Square Roots'
+title: 'Problema 255: Raízes quadradas arredondadas'
 challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
@@ -8,40 +8,40 @@ dashedName: problem-255-rounded-square-roots
 
 # --description--
 
-We define the rounded-square-root of a positive integer $n$ as the square root of $n$ rounded to the nearest integer.
+Definimos a raiz quadrada arredondada de um número inteiro positivo $n$ como a raiz quadrada de $n$ arredondada para o número inteiro mais próximo.
 
-The following procedure (essentially Heron's method adapted to integer arithmetic) finds the rounded-square-root of $n$:
+O procedimento a seguir (essencialmente, o método de Heron adaptado para a aritmética de números inteiros) encontra a raiz arredondada de $n$:
 
-Let $d$ be the number of digits of the number $n$.
+Considere $d$ como o número de algarismos do número $n$.
 
-If $d$ is odd, set $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
+Se $d$ for ímpar, defina $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
 
-If $d$ is even, set $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
+Se $d$ for par, defina $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
 
-Repeat:
+Repita:
 
 $$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\right\rfloor$$
 
-until $x_{k + 1} = x_k$.
+até $x_{k + 1} = x_k$.
 
-As an example, let us find the rounded-square-root of $n = 4321$.
+Como exemplo, vamos encontrar a raiz quadrada arredondada de $n = 4321$.
 
-$n$ has 4 digits, so $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
+$n$ tem 4 algarismos, então $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
 $$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
 x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
-Since $x_2 = x_1$, we stop here. So, after just two iterations, we have found that the rounded-square-root of 4321 is 66 (the actual square root is 65.7343137…).
+Como $x_2 = x_1$, paramos aqui. Então, depois de apenas duas iterações, descobrimos que a raiz arredondada de 4321 é 66 (a raiz quadrada real é 65.7343137…).
 
-The number of iterations required when using this method is surprisingly low. For example, we can find the rounded-square-root of a 5-digit integer ($10\\,000 ≤ n ≤ 99\\,999$) with an average of 3.2102888889 iterations (the average value was rounded to 10 decimal places).
+O número de iterações necessárias ao usar este método é surpreendentemente baixo. Por exemplo, podemos encontrar a raiz quadrada arredondada de um inteiro de 5 algarismos ($10.000 ≤ n ≤ 99.999$) com uma média de 3,2102888889 iterações (o valor médio foi arredondado para 10 casas decimais).
 
-Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (${10}^{13} ≤ n &lt; {10}^{14}$)? Give your answer rounded to 10 decimal places.
+Usando o procedimento descrito acima, qual é o número médio de iterações necessárias para encontrar a raiz quadrada arredondada de um número de 14 algarismos (${10}^{13} ≤ n &lt; {10}^{14}$)? Dê sua resposta arredondada para 10 casas decimais.
 
-**Note:** The symbols $⌊x⌋$ and $⌈x⌉$ represent the floor function and ceiling function respectively.
+**Observação:** os símbolos $⌊x⌋$ e $⌈x⌉$ representam as funções piso e teto, respectivamente.
 
 # --hints--
 
-`roundedSquareRoots()` should return `4.447401118`.
+`roundedSquareRoots()` deve retornar `4.447401118`.
 
 ```js
 assert.strictEqual(roundedSquareRoots(), 4.447401118);

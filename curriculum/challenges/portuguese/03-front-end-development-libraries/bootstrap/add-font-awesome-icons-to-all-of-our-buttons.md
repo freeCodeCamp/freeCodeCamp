@@ -18,7 +18,7 @@ Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser f
 
 Utilize Font Awesome para adicionar um ícone `info-circle` ao botão de informação e um ícone `trash` para o botão de deleção.
 
-**Observação:** o elemento `span` é uma alternativa aceitável ao elemento `i` para as instruções abaixo.
+**Observação:** você pode usar os elementos `i` ou `span` para concluir este desafio.
 
 # --hints--
 

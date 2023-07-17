@@ -1,6 +1,6 @@
 ---
 id: 5900f4fe1000cf542c510010
-title: 'Problem 400: Fibonacci tree game'
+title: 'Problema 400: Jogo da árvore de Fibonacci'
 challengeType: 1
 forumTopicId: 302067
 dashedName: problem-400-fibonacci-tree-game
@@ -8,27 +8,27 @@ dashedName: problem-400-fibonacci-tree-game
 
 # --description--
 
-A Fibonacci tree is a binary tree recursively defined as:
+Uma árvore de Fibonacci é uma árvore binária recursivamente definida como:
 
-- $T(0)$ is the empty tree.
-- $T(1)$ is the binary tree with only one node.
-- $T(k)$ consists of a root node that has $T(k - 1)$ and $T(k - 2)$ as children.
+- $T(0)$ é a árvore vazia.
+- $T(1)$ é a árvore binária com apenas um nó.
+- $T(k)$ consiste em um nó raiz que tem $T(k - 1)$ e $T(k - 2)$ como filhos.
 
-On such a tree two players play a take-away game. On each turn a player selects a node and removes that node along with the subtree rooted at that node. The player who is forced to take the root node of the entire tree loses.
+Em uma árvore desse tipo, dois jogadores jogam um jogo de remoção de nós. Em cada turno, um jogador seleciona um nó e o remove, juntamente à subárvore que tem esse nó como raiz. O jogador que for forçado a pegar o nó raiz da árvore é o perdedor.
 
-Here are the winning moves of the first player on the first turn for $T(k)$ from $k = 1$ to $k = 6$.
+Aqui estão os movimentos vencedores para o primeiro jogador no primeiro movimento para $T(k)$ de $k = 1$ a $k = 6$.
 
-<img class="img-responsive center-block" alt="winning moves of first player, on the first turn for k = 1 to k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="movimentos vencedores do primeiro jogador, no primeiro movimento, para k = 1 a k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
 
-Let $f(k)$ be the number of winning moves of the first player (i.e. the moves for which the second player has no winning strategy) on the first turn of the game when this game is played on $T(k)$.
+Considere $f(k)$ como o número de movimentos vencedores do primeiro jogador (ou seja, movimentos para os quais o segundo jogador não pode ter uma estratégia vencedora) no primeiro movimento desse jogo quando ele é jogado em $T(k)$.
 
-For example, $f(5) = 1$ and $f(10) = 17$.
+Por exemplo, $f(5) = 1$ e $f(10) = 17$.
 
-Find $f(10000)$. Give the last 18 digits of your answer.
+Encontre $f(10000)$. Dê os últimos 18 algarismos da sua resposta.
 
 # --hints--
 
-`fibonacciTreeGame()` should return `438505383468410600`.
+`fibonacciTreeGame()` deve retornar `438505383468410600`.
 
 ```js
 assert.strictEqual(fibonacciTreeGame(), 438505383468410600);

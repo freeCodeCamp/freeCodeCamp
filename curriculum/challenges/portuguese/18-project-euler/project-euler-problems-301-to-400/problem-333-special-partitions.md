@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcc
-title: 'Problem 333: Special partitions'
+title: 'Problema 333: Partições especiais'
 challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
@@ -8,26 +8,26 @@ dashedName: problem-333-special-partitions
 
 # --description--
 
-All positive integers can be partitioned in such a way that each and every term of the partition can be expressed as $2^i \times 3^j$, where $i, j ≥ 0$.
+Todos os números inteiros positivos podem ser divididos de tal forma que cada termo da partição pode ser expresso como $2^i \times 3^j$, onde $i, j ≥ 0$.
 
-Let's consider only those such partitions where none of the terms can divide any of the other terms. For example, the partition of $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ would not be valid since 2 can divide 6. Neither would the partition $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ since 1 can divide 16. The only valid partition of 17 would be $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
+Consideremos apenas aquelas partições em que nenhum dos termos pode dividir qualquer um dos outros termos. Por exemplo, a partição de $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ não seria válida, pois 2 pode dividir 6. Tão pouco a partição $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ seria válida, já que 1 pode dividir 16. A única partição válida de 17 seria $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
 
-Many integers have more than one valid partition, the first being 11 having the following two partitions.
+Muitos números inteiros têm mais de uma partição válida, sendo o primeiro 11 tendo as duas partições que seguem.
 
 $$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
   & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
-Let's define $P(n)$ as the number of valid partitions of $n$. For example, $P(11) = 2$.
+Vamos definir $P(n)$ como o número de partições válidas de $n$. Por exemplo, $P(11) = 2$.
 
-Let's consider only the prime integers $q$ which would have a single valid partition such as $P(17)$.
+Vamos considerar apenas os números inteiros primos $q$ que teriam uma única partição válida como $P(17)$.
 
-The sum of the primes $q &lt;100$ such that $P(q) = 1$ equals 233.
+A soma dos primos $q &lt;100$, tal que $P(q) = 1$ é igual a 233.
 
-Find the sum of the primes $q &lt; 1\\,000\\,000$ such that $P(q) = 1$.
+Encontre a soma dos números primos $q &lt; 1.000.000$ tal que $P(q) = 1$.
 
 # --hints--
 
-`specialPartitions()` should return `3053105`.
+`specialPartitions()` deve retornar `3053105`.
 
 ```js
 assert.strictEqual(specialPartitions(), 3053105);

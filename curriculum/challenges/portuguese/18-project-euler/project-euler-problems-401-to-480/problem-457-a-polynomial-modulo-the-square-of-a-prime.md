@@ -1,6 +1,6 @@
 ---
 id: 5900f5361000cf542c510048
-title: 'Problem 457: A polynomial modulo the square of a prime'
+title: 'Problema 457: Um módulo polinomial, o quadrado de um primo'
 challengeType: 1
 forumTopicId: 302131
 dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
@@ -8,19 +8,19 @@ dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 
 # --description--
 
-Let $f(n) = n^2 - 3n - 1$.
+Considere $f(n) = n^2 - 3n - 1$.
 
-Let $p$ be a prime.
+Considere que $p$ é um número primo.
 
-Let $R(p)$ be the smallest positive integer $n$ such that $f(n)\bmod p^2 = 0$ if such an integer $n$ exists, otherwise $R(p) = 0$.
+Considere $R(p)$ o menor número inteiro positivo $n$, tal que $f(n)\bmod p^2 = 0$, se um número inteiro $n$ existir. Do contrário, considere que $R(p) = 0$.
 
-Let $SR(L)$ be $\sum R(p)$ for all primes not exceeding $L$.
+Considere $SR(L)$ como a $\sum R(p)$ de todos os números primos que não exceda $L$.
 
-Find $SR({10}^7)$.
+Encontre $SR({10}^7)$.
 
 # --hints--
 
-`polynomialModuloSquareOfPrime()` should return `2647787126797397000`.
+`polynomialModuloSquareOfPrime()` deve retornar `2647787126797397000`.
 
 ```js
 assert.strictEqual(polynomialModuloSquareOfPrime(), 2647787126797397000);

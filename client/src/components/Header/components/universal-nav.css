@@ -33,6 +33,7 @@
   max-inline-size: max-content;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-scrolling: touch;
+  padding-top: 0.2em;
 }
 
 #universal-nav-logo:focus {
@@ -44,7 +45,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  flex: 1 0 33%;
+  flex: 1 0 auto;
   height: var(--header-height);
 }
 
@@ -77,16 +78,29 @@
   top: 100%;
 }
 
+.exposed-button-nav:is(
+    :hover,
+    :hover:focus,
+    [aria-expanded='true'],
+    [aria-expanded='true']:hover
+  ),
 .lang-button-nav:is(
     :hover,
     :hover:focus,
     [aria-expanded='true'],
     [aria-expanded='false'].force-show
   ) {
-  background-color: var(--gray-10);
+  background-color: var(--gray-00);
   color: var(--theme-color);
-  border: 1px solid var(--gray-00);
-  fill: var(--gray-10);
+}
+
+.lang-button-nav:is(
+    :hover,
+    :hover:focus,
+    [aria-expanded='true'],
+    [aria-expanded='false'].force-show
+  ) {
+  fill: var(--gray-00);
 }
 
 .nav-list li {
@@ -173,10 +187,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   justify-content: space-between;
 }
 
-.nav-link-sign-in {
-  display: none;
-}
-
 .nav-link-dull {
   color: var(--gray-45);
 }
@@ -195,7 +205,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .exposed-button-nav,
 .lang-button-nav {
-  padding: 2px 14px;
   border: 1px solid var(--gray-00);
   font-size: 18px;
   color: var(--gray-00);
@@ -206,10 +215,16 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   align-items: center;
 }
 
+.exposed-button-nav {
+  padding: 2px 14px;
+}
+
+.lang-button-nav {
+  padding: 5px;
+}
+
 .exposed-button-nav:hover,
 .exposed-button-nav:hover:focus {
-  background-color: var(--gray-00);
-  color: var(--gray-90);
   border: 1px solid var(--gray-00);
 }
 
@@ -257,7 +272,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 .expand-nav {
-  height: var(--header-height);
+  min-height: calc(var(--header-height) * 2);
 }
 
 .display-menu {
@@ -272,16 +287,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .display-menu::-webkit-scrollbar {
   display: none;
-}
-
-.exposed-button-nav.reverse-toggle-color {
-  background-color: var(--gray-00);
-  color: var(--theme-color);
-}
-
-.exposed-button-nav.reverse-toggle-color:hover {
-  background-color: var(--gray-00);
-  color: var(--theme-color);
 }
 
 .nav-line {
@@ -353,7 +358,16 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 @media (min-width: 980px) {
   #universal-nav-logo {
     height: 100%;
+    padding-top: 0;
     margin-inline: 1em;
+  }
+
+  .expand-nav {
+    min-height: var(--header-height);
+  }
+
+  .universal-nav-right {
+    flex: 1 0 33%;
   }
 }
 
@@ -362,22 +376,8 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
     display: initial;
   }
 
-  .universal-nav-right {
-    flex: 1 0 auto;
-    display: flex;
-    justify-content: flex-end;
-  }
-
   .fcc_searchBar .ais-SearchBox-form {
     max-width: calc(100vw - 350px);
-  }
-
-  #universal-nav-logo {
-    padding-top: 0.2em;
-  }
-
-  .expand-nav {
-    min-height: calc(2 * var(--header-height));
   }
 }
 
@@ -387,24 +387,18 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
     margin-top: 0;
   }
 
-  .display-menu {
-    top: calc(var(--header-height) * 2);
-  }
-
   .fcc_searchBar,
   .fcc_searchBar div {
     width: 100%;
   }
 
-  .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
-    width: calc(100% - 30px);
-  }
-
   .display-menu {
+    top: calc(var(--header-height) * 2);
     max-height: calc(100vh - var(--header-height) * 2);
   }
 
-  .universal-nav-right .fcc_searchBar .ais-Hits {
+  .universal-nav-right .fcc_searchBar .ais-Hits,
+  .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
     width: calc(100% - 30px);
   }
   #universal-nav .signup-btn {
@@ -433,8 +427,5 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   }
   .universal-nav {
     padding: 0 5px;
-  }
-  .nav-link-sign-in {
-    display: flex;
   }
 }

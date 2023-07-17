@@ -26,50 +26,50 @@ For example, given the string "Hello hello goodbye", your function should return
 
 # --hints--
 
-`wordFrequency` should be a function.
+`wordFrequency` sollte eine Funktion sein.
 
 ```js
 assert(typeof wordFrequency == 'function');
 ```
 
-`wordFrequency` should return an array.
+`wordFrequency` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello hello world", 2)` sollte `[['hello', 2], ['world', 1]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
-`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` sollte `[['the', 2]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
-`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+`wordFrequency("Opensource opensource open-source open source", 1)` sollte `[['opensource', 2]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
-`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+`wordFrequency("Apple App apply aPP aPPlE", 3)` sollte `[['app', 2], ['apple', 2], ['apply', 1]]` oder `[['apple', 2], ['app', 2], ['apply', 1]]` zurückgeben
 
 ```js
 const arr = JSON.stringify(wordFrequency(example_4, 3));
 assert(arr === example_4_solution_a || arr === example_4_solution_b);
 ```
 
-`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+`wordFrequency("c d a d c a b d d c", 4)` sollte `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
-`wordFrequency("", 5)` should return `[]`
+`wordFrequency("", 5)` sollte `[]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);

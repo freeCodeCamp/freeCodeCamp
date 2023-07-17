@@ -1,8 +1,8 @@
 # Come aprire una Pull Request (PR)
 
-Una pull request (PR) consente di inviare modifiche dal tuo fork su GitHub al repository principale di freeCodeCamp.org. Una volta che hai fatto delle modifiche al codice, puoi seguire queste linee guida per aprire una PR.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Una volta che hai fatto delle modifiche al codice, puoi seguire queste linee guida per aprire una PR.
 
-Ci aspettiamo che i nostri contributori siano consapevoli del processo specifico di questo progetto. Seguire scrupolosamente le linee guida ti fa guadagnare il rispetto di chi si occupa della manutenzione e fa risparmiare del tempo a tutti.
+Ci aspettiamo che i nostri contributori siano consapevoli del processo specifico di questo progetto. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Alcuni esempi di ciò sono:
 
@@ -31,12 +31,12 @@ Ogni volta in cui apri una Pull Request (PR), puoi usare la seguente lista per d
 
 **Tipo:**
 
-| Tipo  | Quando selezionare                                                                     |
-|:----- |:-------------------------------------------------------------------------------------- |
-| fix   | Cambiamenti o aggiornamenti/miglioramenti a funzioni, test, testo di una lezione, ecc. |
-| feat  | Solo se si aggiungono nuove funzionalità, test, ecc.                                   |
-| chore | Cambiamenti che non sono legati a codice, test, o testo di una lezione.                |
-| docs  | Modifiche alla directory `/docs` o alle linee guida per i contributi, ecc.             |
+| Tipo  | Quando selezionare                                                              |
+|:----- |:------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
+| feat  | Solo se si aggiungono nuove funzionalità, test, ecc.                            |
+| chore | Cambiamenti che non sono legati a codice, test, o testo di una lezione.         |
+| docs  | Modifiche alla directory `/docs` o alle linee guida per i contributi, ecc.      |
 
 **Ambito:**
 
@@ -89,7 +89,7 @@ Alcuni esempi di buoni titoli di PR sono:
 
 5. Indica se hai testato i tuoi cambiamenti su una copia locale del sito oppure no.
 
-   - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
+   - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](how-to-add-cypress-tests.md).
 

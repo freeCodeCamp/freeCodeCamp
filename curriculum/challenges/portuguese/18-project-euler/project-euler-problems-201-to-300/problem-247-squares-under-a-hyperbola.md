@@ -1,6 +1,6 @@
 ---
 id: 5900f4641000cf542c50ff76
-title: 'Problem 247: Squares under a hyperbola'
+title: 'Problema 247: Quadrados sob uma hipérbole'
 challengeType: 1
 forumTopicId: 301894
 dashedName: problem-247-squares-under-a-hyperbola
@@ -8,29 +8,29 @@ dashedName: problem-247-squares-under-a-hyperbola
 
 # --description--
 
-Consider the region constrained by $1 ≤ x$ and $0 ≤ y ≤ \frac{1}{x}$.
+Considere a região restringida por $1 ≤ x$ e $0 ≤ y ≤ \frac{1}{x}$.
 
-Let $S_1$ be the largest square that can fit under the curve.
+Considere $S_1$ como o maior quadrado que pode caber sob a curva.
 
-Let $S_2$ be the largest square that fits in the remaining area, and so on.
+Considere $S_2$ como o maior quadrado que cabe na área restante e assim por diante.
 
-Let the index of $S_n$ be the pair (left, below) indicating the number of squares to the left of $S_n$ and the number of squares below $S_n$.
+Considere o índice de $S_n$ como o par (esquerda, abaixo) indicando o número de quadrados à esquerda de $S_n$ e o número de quadrados abaixo de $S_n$.
 
-<img class="img-responsive center-block" alt="diagram with squares under the hyperbola" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="diagrama com quadrados sob a hipérbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-The diagram shows some such squares labelled by number.
+O diagrama mostra alguns desses quadrados rotulados por número.
 
-$S_2$ has one square to its left and none below, so the index of $S_2$ is (1, 0).
+$S_2$ tem um quadrado à sua esquerda e nenhum abaixo, então o índice de $S_2$ é (1, 0).
 
-It can be seen that the index of $S_{32}$ is (1,1) as is the index of $S_{50}$.
+Podemos ver que o índice de $S_{32}$ é (1,1) como é o índice de $S_{50}$.
 
-50 is the largest $n$ for which the index of $S_n$ is (1, 1).
+50 é o maior $n$ para o qual o índice de $S_n$ é (1, 1).
 
-What is the largest $n$ for which the index of $S_n$ is (3, 3)?
+3 é o maior $n$ para o qual o índice de $S_n$ é (3, 3)?
 
 # --hints--
 
-`squaresUnderAHyperbola()` should return `782252`.
+`squaresUnderAHyperbola()` deve retornar `782252`.
 
 ```js
 assert.strictEqual(squaresUnderAHyperbola(), 782252);

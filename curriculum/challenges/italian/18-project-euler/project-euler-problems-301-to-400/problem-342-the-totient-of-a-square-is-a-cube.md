@@ -1,6 +1,6 @@
 ---
 id: 5900f4c31000cf542c50ffd5
-title: 'Problem 342: The totient of a square is a cube'
+title: 'Problema 342: il toziente di un quadrato è un cubo'
 challengeType: 1
 forumTopicId: 302001
 dashedName: problem-342-the-totient-of-a-square-is-a-cube
@@ -8,18 +8,18 @@ dashedName: problem-342-the-totient-of-a-square-is-a-cube
 
 # --description--
 
-Consider the number 50.
+Considera il numero 50.
 
-${50}^2 = 2500 = 2^2 × 5^4$, so $φ(2500) = 2 × 4 × 5^3 = 8 × 5^3 = 2^3 × 5^3$. $φ$ denotes Euler's totient function.
+${50}^2 = 2500 = 2^2 × 5^4$, so $φ(2500) = 2 × 4 × 5^3 = 8 × 5^3 = 2^3 × 5^3$. $φ$ denota la funzione toziente di Eulero.
 
-So 2500 is a square and $φ(2500)$ is a cube.
+Quindi 2500 è un quadrato e $φ(2500)$ è un cubo.
 
-Find the sum of all numbers $n$, $1 &lt; n &lt; {10}^{10}$ such that $φ(n^2)$ is a cube.
+Trova la somma di tutti i numeri $n$, $1 &lt; n &lt; {10}^{10}$ in modo che $φ(n^2)$ sia un cubo.
 
 
 # --hints--
 
-`totientOfSquare()` should return `5943040885644`.
+`totientOfSquare()` dovrebbe restituire `5943040885644`.
 
 ```js
 assert.strictEqual(totientOfSquare(), 5943040885644);

@@ -9,17 +9,17 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6331d266b51aeedd1a2bd64b",
-      "Functions"
-    ],
-    [
-      "6331d26fb51aeedd1a2bd64c",
-      "Graphing"
-    ],
-    [
-      "63e1798f811fda1bc546bba0",
-      "Functions and Graphing: Extra"
-    ]
+    {
+      "id": "6331d266b51aeedd1a2bd64b",
+      "title": "Functions"
+    },
+    {
+      "id": "6331d26fb51aeedd1a2bd64c",
+      "title": "Graphing"
+    },
+    {
+      "id": "63e1798f811fda1bc546bba0",
+      "title": "Functions and Graphing: Extra"
+    }
   ]
 }

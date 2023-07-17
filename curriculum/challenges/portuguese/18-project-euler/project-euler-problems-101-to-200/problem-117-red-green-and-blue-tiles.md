@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef4
-title: 'Problem 117: Red, green, and blue tiles'
+title: 'Problema 117: Blocos vermelhos, verdes e azuis'
 challengeType: 1
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
@@ -8,17 +8,17 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 # --description--
 
-Using a combination of black square tiles and oblong tiles chosen from: red tiles measuring two units, green tiles measuring three units, and blue tiles measuring four units, it is possible to tile a row measuring five units in length in exactly fifteen different ways.
+Usando uma combinação de blocos quadrados pretos e blocos oblongos selecionados entre: blocos vermelhos medindo duas unidades, blocos verdes medindo três unidades e blocos azuis medindo quatro unidades, é possível fazer fileiras de cinco unidades de comprimento exatamente de quinze formas diferentes.
 
-<img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Formas possíveis de colocar oblongos vermelhos, verdes e azuis em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+De quantas maneiras uma fileira de cinquenta unidades de comprimento pode ser preenchida?
 
-**Note**: This is related to Problem 116.
+**Observação**: este problema está relacionado ao Problema 116.
 
 # --hints--
 
-`redGreenBlueTilesTwo()` should return `100808458960497`.
+`redGreenBlueTilesTwo()` deve retornar `100808458960497`.
 
 ```js
 assert.strictEqual(redGreenBlueTilesTwo(), 100808458960497);

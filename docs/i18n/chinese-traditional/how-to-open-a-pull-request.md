@@ -1,8 +1,8 @@
 # How to open a Pull Request (PR)
 
-A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+We expect our contributors to be aware of the process specific to this project. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Some examples of this are:
 
@@ -31,12 +31,12 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 **Type:**
 
-| Type  | When to select                                                                   |
-|:----- |:-------------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                            |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
+| Type  | When to select                                                                  |
+|:----- |:------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                           |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.           |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.               |
 
 **Scope:**
 
@@ -89,7 +89,7 @@ Some examples of good PR titles would be:
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 

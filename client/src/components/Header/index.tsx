@@ -3,21 +3,31 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { User } from '../../redux/prop-types';
+import { examInProgressSelector } from '../../redux/selectors';
 
 import UniversalNav from './components/universal-nav';
+import ExamNav from './components/exam-nav';
 
 import './header.css';
 
+const mapStateToProps = createSelector(
+  examInProgressSelector,
+  (examInProgress: boolean) => ({
+    examInProgress
+  })
+);
+
 interface HeaderProps {
+  examInProgress: boolean;
   fetchState: { pending: boolean };
   user: User;
   skipButtonText: string;
 }
-export class Header extends React.Component<
-  HeaderProps,
-  { displayMenu: boolean }
-> {
+
+class Header extends React.Component<HeaderProps, { displayMenu: boolean }> {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
@@ -66,21 +76,25 @@ export class Header extends React.Component<
 
   render(): JSX.Element {
     const { displayMenu } = this.state;
-    const { fetchState, user, skipButtonText } = this.props;
+    const { examInProgress, fetchState, user, skipButtonText } = this.props;
     return (
       <header>
         <a href='#content-start' className='skip-to-content-button'>
           {skipButtonText}
         </a>
-        <UniversalNav
-          displayMenu={displayMenu}
-          fetchState={fetchState}
-          hideMenu={this.hideMenu}
-          menuButtonRef={this.menuButtonRef}
-          searchBarRef={this.searchBarRef}
-          showMenu={this.showMenu}
-          user={user}
-        />
+        {examInProgress ? (
+          <ExamNav />
+        ) : (
+          <UniversalNav
+            displayMenu={displayMenu}
+            fetchState={fetchState}
+            hideMenu={this.hideMenu}
+            menuButtonRef={this.menuButtonRef}
+            searchBarRef={this.searchBarRef}
+            showMenu={this.showMenu}
+            user={user}
+          />
+        )}
       </header>
     );
   }
@@ -88,4 +102,4 @@ export class Header extends React.Component<
 
 Header.displayName = 'Header';
 
-export default Header;
+export default connect(mapStateToProps, null)(Header);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: 'Problema 54: Mãos do pôquer'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,54 +8,54 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+No pôquer, uma mão consiste em cinco cartas e é classificada, da menor para a maior (mão), da seguinte maneira:
 
 <ul>
-  <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
-  <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>Carta alta: qualquer mão que não esteja nas categorias abaixo.</li>
+  <li>Um par: duas cartas de mesmo valor e três outras cartas não relacionadas.</li>
+  <li>Dois pares: dois pares de valores diferentes cada e uma outra carta não relacionada.</li>
+  <li>Trinca: três cartas de mesmo valor e duas outras cartas não relacionadas.</li>
+  <li>Sequência: cinco cartas em sequência.</li>
+  <li>Flush: cinco cartas do mesmo naipe.</li>
+  <li>Full House: três cartas de mesmo valor e duas outras cartas diferentes de mesmo valor.</li>
+  <li>Quadra: quatro cartas de mesmo valor e uma outra carta não relacionada.</li>
+  <li>Straight Flush: cinco cartas em ordem numérica, todas do mesmo naipe.</li>
+  <li>Royal Flush: Dez, Valete, Rainha, Rei e Ás, todos do mesmo naipe.</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+A ordem das cartas é a seguinte: 2, 3, 4, 5, 6, 7, 8, 9, 10, Valete, Rainha, Rei e Ás.
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Se dois jogadores tiverem as mesmas mãos, o jogador com as cartas de valor mais alto vence. Por exemplo, um par de oito vence um par de cinco (veja o exemplo 1 abaixo). Se os dois jogadores tiverem a mesma mão com os mesmos valores, as cartas mais altas de cada jogador são comparadas (veja exemplo 4 abaixo) para fim de desempate. Se as cartas mais altas empatarem de novo, então outras cartas são comparadas, e assim por diante.
 
-Consider the following five hands dealt to two players:
+Considere as cinco mãos a seguir dadas a dois jogadores:
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
-| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
-| <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
-| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
+| Mão                       | Jogador 1                                                                | Jogador 2                                                                | Vencedor  |
+| ------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | --------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> Par de cincos                                  | 2C 3S 8S 8D TD <br> Par de oitos                                   | Jogador 2 |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> Maior carta é o Ás                             | 2C 5C 7D 8S QH <br> Maior carta é a Rainha                         | Jogador 1 |
+| <strong>3</strong> | 2D 9C AS AH AC <br> Três Ases                                      | 3D 6D 7D TD QD <br> Flush de ouros                                 | Jogador 2 |
+| <strong>4</strong> | 4D 6S 9H QH QC <br> Par de Rainhas <br> A maior carta é Nove | 3D 6D 7H QD QS <br> Par de Rainhas <br> A maior carta é Sete | Jogador 1 |
+| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> com três Quatros         | 3C 3D 3S 9S 9D <br> Full House <br> com três Três            | Jogador 1 |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+O array global (`handsArr`) passado para a função contém mil mãos aleatórias dadas a dois jogadores. Cada linha do arquivo contém dez cartas (separadas por um único espaço): as cinco primeiras são as cartas do Jogador 1 e as últimas cinco são cartas do Jogador 2. Você pode assumir que todas as mãos são válidas (sem caracteres inválidos ou cartas repetidas). A mão de cada jogador não está em uma ordem específica e em cada mão há um vencedor claro.
 
-How many hands does Player 1 win?
+Quantas mãos o Jogador 1 vence?
 
 # --hints--
 
-`pokerHands(testArr)` should return a number.
+`pokerHands(testArr)` deve retornar um número.
 
 ```js
 assert(typeof pokerHands(testArr) === 'number');
 ```
 
-`pokerHands(testArr)` should return 2.
+`pokerHands(testArr)` deve retornar 2.
 
 ```js
 assert.strictEqual(pokerHands(testArr), 2);
 ```
 
-`pokerHands(handsArr)` should return 376.
+`pokerHands(handsArr)` deve retornar 376.
 
 ```js
 assert.strictEqual(pokerHands(handsArr), 376);

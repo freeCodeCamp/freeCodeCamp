@@ -26,7 +26,7 @@ Let $E(n)$ be the number of subsets of $M(n)$ which can produce the mixture with
 
 We can verify that $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ and $E(500)\bmod {11}^8 = 13\\,801\\,403$.
 
-Find $E(10\\,000\\,000)\bmod {11}^8$.
+Знайдіть $E(10\\,000\\,000)\bmod {11}^8$.
 
 # --hints--
 

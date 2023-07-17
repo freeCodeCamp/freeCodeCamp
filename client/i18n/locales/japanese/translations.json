@@ -29,6 +29,7 @@
     "sign-up-email-list": "Quincy のウィークリーメールを受け取る",
     "sign-out": "サインアウト",
     "curriculum": "カリキュラム",
+    "contribute": "Contribute",
     "forum": "フォーラム",
     "radio": "ラジオ",
     "profile": "プロフィール",
@@ -42,7 +43,7 @@
     "menu": "メニュー",
     "settings": "設定",
     "take-me": "チャレンジに移動",
-    "check-answer": "解答を確認",
+    "check-answer": "解答をチェック",
     "get-hint": "ヒントを見る",
     "ask-for-help": "質問する",
     "create-post": "フォーラムにヘルプ投稿を作成",
@@ -72,9 +73,14 @@
     "go-to-settings": "設定へ移動して認定証を取得",
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
+    "click-start-exam": "Start the exam",
     "change-language": "言語変更",
     "resume-project": "プロジェクト再開",
-    "start-project": "プロジェクト開始"
+    "start-project": "プロジェクト開始",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -102,61 +108,61 @@
       }
     },
     "certification-heading": "以下の検証済み認定証を無料で取得できます。",
-    "faq": "Frequently asked questions:",
+    "faq": "よくある質問:",
     "faqs": [
       {
-        "question": "What exactly is freeCodeCamp?",
+        "question": "freeCodeCamp とは何ですか？",
         "answer": [
-          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+          "freeCodeCamp は、世界中の人々が集まって一緒にプログラミングを学んでいるコミュニティです。私たちは 501(c)(3) パブリック・チャリティです。"
         ]
       },
       {
-        "question": "How will freeCodeCamp help me learn to code?",
+        "question": "freeCodeCamp ではどのようにしてプログラミングを学べますか？",
         "answer": [
-          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
-          "You will also earn free verified certifications along the way."
+          "ブラウザ、コードエディター、モバイルアプリなどからすぐに使える環境で、段階的に、たくさんのプロジェクトを作成しながら学習します。",
+          "また、無料で検証済み認定証を取得できます。"
         ]
       },
       {
-        "question": "Is freeCodeCamp really free?",
+        "question": "freeCodeCamp は本当に無料ですか？",
         "answer": [
-          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+          "はい。freeCodeCamp のあらゆるコンテンツは 100% 無料です。全講座、プロジェクト、さらには認定証も無料です。"
         ]
       },
       {
-        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "question": "freeCodeCamp はソフトウェア開発の仕事に就くのに役立ちますか？",
         "answer": [
-          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+          "はい。毎年数千人の freeCodeCamp コミュニティ参加者が、初めてのソフトウェア開発の仕事を得ています。"
         ]
       },
       {
-        "question": "What skills will I learn?",
+        "question": "どのようなスキルが学べますか？",
         "answer": [
-          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+          "HTML、CSS、JavaScript、Python、Linux、Git、SQL など、多くの開発者が仕事で必要とするスキルが学べます。また、ウェブ開発、モバイルアプリ開発、データサイエンス、人工知能などに関する便利なライブラリの使い方も学べます。"
         ]
       },
       {
-        "question": "How long does it take to learn all this?",
+        "question": "どれくらいの時間で学べますか？",
         "answer": [
-          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+          "freeCodeCamp は自分のペースで進められます。現実的には、ソフトウェアエンジニアとして仕事を得るのに十分なレベルに到達するには数年かかるでしょう。準備が不十分な状態で、生計を立てるための仕事や学校を辞めることはおすすめしません。"
         ]
       },
       {
-        "question": "How do I get started?",
+        "question": "どこから始めたらいいですか？",
         "answer": [
-          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+          "まったくの初心者の場合は、freeCodeCamp コアカリキュラムの最初から始めるのが良いでしょう。いくらか経験がある場合でも最初から始めることをおすすめしますが、学びたい分野まで飛ばしても構いません。"
         ]
       },
       {
-        "question": "How do I earn the free verified certifications?",
+        "question": "無料の検証済み認定証はどうすれば取得できますか？",
         "answer": [
-          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+          "認定証を取得するには、それぞれ 5 つある認定プロジェクトを完成させ、すべてのテストを成功させる必要があります。"
         ]
       },
       {
-        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "question": "学びたい分野が freeCodeCamp のコアカリキュラムにありません。",
         "answer": [
-          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+          "freeCodeCamp ではコアカリキュラムの他にも、何千件もの (本のようなボリュームの) 記事、講座、チュートリアルを無料で公開しています。あなたが学習したい分野もきっと見つかると思います。検索バーから探してみてください。"
         ]
       }
     ]
@@ -278,7 +284,7 @@
     "tweet": "{{certTitle}} の認定証を @freeCodeCamp で取得しました！確認はこちら: {{certURL}}",
     "avatar": "{{username}} のアバター",
     "joined": "{{date}} に加入",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "ポイント数: {{count}}",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}"
@@ -331,11 +337,12 @@
     "add-subtitles": "字幕の改善や追加を支援する",
     "wrong-answer": "残念、正しい答えではありません。もう一度挑戦してみましょう。",
     "check-answer": "以下のボタンをクリックして解答を確認してください。",
-    "assignment-not-complete": "課題を完了してください",
-    "assignments": "課題",
+    "assignment-not-complete": "宿題を完了してください",
+    "assignments": "宿題",
     "question": "問題",
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "提出して次のチャレンジに進む",
     "congratulations": "おめでとうございます、合格です。次に進むにはコードを提出してください。",
     "i-completed": "このチャレンジを完了しました",
@@ -384,7 +391,6 @@
     "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこに書かれたユーザーストーリーを実装し、すべてのテストが成功するようにしてください。",
     "completed": "完了",
     "not-started": "未着手",
-    "hint": "ヒント",
     "test": "テスト",
     "sorry-try-again": "残念ながら、テストが通りませんでした。もう一度挑戦しましょう。",
     "sorry-keep-trying": "残念ながら、テストが通りませんでした。続けて挑戦しましょう。",
@@ -395,7 +401,9 @@
     "season-greetings-fcc": "freeCodeCamp コミュニティから季節のご挨拶🎉",
     "if-getting-value": "freeCodeCamp が役に立ったと感じていただけたなら、寄付を通して当団体の使命をご支援いただけますと幸いです。",
     "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
-    "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。"
+    "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "当団体への支援",
@@ -421,19 +429,16 @@
     "your-donation-2": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎月提供します。",
     "your-donation-3": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎年提供します。",
     "become-supporter": "サポーターになる",
-    "duration": "当団体に一回のご支援をいただけますと幸いです。",
-    "duration-2": "当団体に毎月のご支援をいただけますと幸いです。",
-    "duration-4": "当団体にご支援をいただけますと幸いです。",
-    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
-    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
-    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
-    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
-    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
-    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
-    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
-    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
-    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
-    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "progress-modal-cta-1": "寄付を通して、無料のコンピューターサイエンス認定学位の開発をご支援ください。",
+    "progress-modal-cta-2": "寄付を通して、私たちのウェブサイトのサーバー稼働時間 53 時間分をご支援ください。",
+    "progress-modal-cta-3": "寄付を通して、世界中の学習者に向けた 32 言語の翻訳活動をご支援ください。",
+    "progress-modal-cta-4": "寄付を通して、新しい Python カリキュラムの開発をご支援ください。",
+    "progress-modal-cta-5": "寄付を通して、新たなプログラミングツールに関する講座の作成をご支援ください。",
+    "progress-modal-cta-6": "寄付を通して当団体のオープンソースプロジェクトをご支援ください。",
+    "progress-modal-cta-7": "寄付を通して、当団体がさらに多くの優れた講師を雇用できるようご支援ください。",
+    "progress-modal-cta-8": "寄付を通して、新しいツールやコンセプトに対応する新講座の開発をご支援ください。",
+    "progress-modal-cta-9": "寄付を通して、開発者のための数学講座の作成をご支援ください。",
+    "progress-modal-cta-10": "寄付を通して、無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
     "credit-card-2": "またはクレジットカードで寄付する:",
@@ -523,6 +528,8 @@
     "unsubscribed": "購読解除が完了しました",
     "keep-coding": "どこへ行っても、コーディングを続けてください！",
     "email-signup": "E メールでサインアップ",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
     "email-blast": "毎週金曜日に、プログラミングとコンピュータサイエンスに関する 5 つのリンクをメールで配信しています。このメールを約 4 百万人が購読しています。あなたにもお届けしましょうか？",
     "update-email-1": "メールアドレスを更新",
@@ -594,7 +601,6 @@
     "not-authorized": "このルートへのアクセス権限がありません",
     "could-not-find": "お探しのページが見つかりませんでした。ご確認の上もう一度お試しください。",
     "wrong-updating": "アカウント情報の更新中に問題が発生しました。ご確認の上もう一度お試しください。",
-    "updated-preferences": "設定を更新しました",
     "updated-about-me": "個人情報を更新しました",
     "updated-socials": "他サービスのリンクを更新しました",
     "updated-sound": "サウンド設定を更新しました",
@@ -677,9 +683,9 @@
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
-    "verify": "この認定証は {{certURL}} で確認できます",
+    "verify": "Verify this certification at:",
     "issued": "発行日",
-    "fulltext": "<0>ここに</0> <1>{{user}}</1> <2>が freeCodeCamp.org の約 {{time}} 時間の課程に相当する</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
@@ -789,6 +795,8 @@
       "machine-learning-with-python-v7": "Python を用いた機械学習認定証",
       "College Algebra with Python": "Python を用いた代数学",
       "college-algebra-with-python-v8": "Python を用いた代数学認定証",
+      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",
@@ -817,17 +825,17 @@
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
     "challenge": "**チャレンジ:**",
     "challenge-link": "**チャレンジへのリンク:**",
-    "whats-happening": "**何が起きているか説明してください:**",
-    "describe": "困っている内容をこちらに詳しく記入してください。",
+    "whats-happening": "**状況を説明しましょう:**",
+    "describe": "質問内容をここに詳しく記入してください。",
     "camper-project": "**プロジェクトのリンク**",
     "camper-code": "**現状のコード**",
-    "warning": "警告",
-    "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、チャレンジから移植できる最大長を超えています。",
-    "too-long-two": "記述したコードを読み易いフォーマットで表示するには、ここで追加の手順が必要です。",
-    "too-long-three": "このリンクを開いた元のチャレンジの、エディター内に表示されているすべてのコードをコピーし、貼り付けてください。",
-    "add-code-one": "この 2 つの文を、コピーしたコードと置き換えてください。",
-    "add-code-two": "上の ``` と下の ``` の行を残しておくことで、",
-    "add-code-three": "投稿内でコードが適切にフォーマットされますので、そのようにしてください。"
+    "warning": "注意",
+    "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、自動でコピーできる最大長を超えています。",
+    "too-long-two": "記述したコードを読みやすいフォーマットで表示するために、追加の手順が必要です。",
+    "too-long-three": "リンク元のチャレンジの、エディター内に表示されているすべてのコードをコピーして、貼り付けてください。",
+    "add-code-one": "この 2 つの文を、コピーしたコードに置き換えてください。",
+    "add-code-two": "投稿内でコードが適切にフォーマットされるようにするため、",
+    "add-code-three": "上の ``` と下の ``` の行は残しておいてください。"
   },
   "user-token": {
     "title": "ユーザートークン",

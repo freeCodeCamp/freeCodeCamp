@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff92
-title: 'Problem 275: Balanced Sculptures'
+title: 'Problema 275: Esculturas balanceadas'
 challengeType: 1
 forumTopicId: 301925
 dashedName: problem-275-balanced-sculptures
@@ -8,24 +8,24 @@ dashedName: problem-275-balanced-sculptures
 
 # --description--
 
-Let us define a balanced sculpture of order $n$ as follows:
+Vamos definir uma escultura balanceada de ordem $n$ da seguinte forma:
 
-- A polyomino made up of $n + 1$ tiles known as the blocks ($n$ tiles) and the plinth (remaining tile);
-- the plinth has its centre at position ($x = 0$, $y = 0$);
-- the blocks have $y$-coordinates greater than zero (so the plinth is the unique lowest tile);
-- the centre of mass of all the blocks, combined, has $x$-coordinate equal to zero.
+- Um poliminó composto por $n + 1$ blocos, sendo que $n$ são os "blocos" e o bloco restante (+1) é o "pedestal";
+- o pedestal tem seu centro na posição ($x = 0$, $y = 0$);
+- os blocos têm coordenadas $y$ maiores que zero (portanto o pedestal é o único bloco inferior);
+- o centro de massa de todos os blocos, combinados, tem a coordenada $x$ igual a zero.
 
-When counting the sculptures, any arrangements which are simply reflections about the $y$-axis, are <u>not</u> counted as distinct. For example, the 18 balanced sculptures of order 6 are shown below; note that each pair of mirror images (about the $y$-axis) is counted as one sculpture:
+Ao contar as esculturas, todos os arranjos que são simplesmente reflexões sobre o eixo $y$, <u>não</u> são contados como distintos. Por exemplo, as 18 esculturas equilibradas de ordem 6 são mostradas abaixo. Observe que cada par de imagens espelhadas (sobre o eixo $y$) é contado como uma escultura:
 
-<img class="img-responsive center-block" alt="18 balanced sculptures of order 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="18 esculturas balanceadas da ordem de 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
 
-There are 964 balanced sculptures of order 10 and 360505 of order 15.
+Existem 964 esculturas equilibradas da ordem de 10 e 360505 da ordem de 15.
 
-How many balanced sculptures are there of order 18?
+Quantas esculturas equilibradas existem na ordem de 18?
 
 # --hints--
 
-`balancedSculptures()` should return `15030564`.
+`balancedSculptures()` deve retornar `15030564`.
 
 ```js
 assert.strictEqual(balancedSculptures(), 15030564);

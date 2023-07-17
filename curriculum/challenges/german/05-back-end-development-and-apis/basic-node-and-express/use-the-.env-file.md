@@ -18,11 +18,11 @@ Lass uns eine Umgebungsvariable als Konfigurationsoption setzen.
 
 Erstelle eine `.env`-Datei im Hauptverzeichnis deines Projekts, speichere in dieser anschließend die Variabel `MESSAGE_STYLE=uppercase`.
 
-Greife nun in dem `/json`-GET-Route-Handler, den du in der letzten Aufgabe erstellt hast, auf`process.env.MESSAGE_STYLE` zu und verwandle das Antwort-Objekt der `message` in Großbuchstaben, wenn die Variable `uppercase` entspricht. Das Antwortobjekt sollte entweder `{"message": "Hello json"}` oder `{"message": "HELLO JSON"}` sein, je nachdem welchen Wert du für `MESSAGE_STYLE` gesetzt hast. Note that you must read the value of `process.env.MESSAGE_STYLE` **inside** the route handler, not outside of it, due to the way our tests run.
+Greife nun in dem `/json`-GET-Route-Handler, den du in der letzten Aufgabe erstellt hast, auf`process.env.MESSAGE_STYLE` zu und verwandle das Antwort-Objekt der `message` in Großbuchstaben, wenn die Variable `uppercase` entspricht. Das Antwortobjekt sollte entweder `{"message": "Hello json"}` oder `{"message": "HELLO JSON"}` sein, je nachdem welchen Wert du für `MESSAGE_STYLE` gesetzt hast. Beachte, dass du den Wert von `process.env.MESSAGE_STYLE` **innerhalb** des Route-Handlers lesen musst, und nicht außerhalb. Aufgrund der Art und Weise wie unsere Tests laufen.
 
 **Hinweis:** Nutzt du Replit, kannst du keine `.env`-Datei erstellen. Benutze stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um eine Variabel hinzuzufügen.
 
-Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. At the top of your `myApp.js` file, add `require('dotenv').config()` to load the environment variables.
+Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. Füge am Anfang deiner `myApp.js`-Datei `require('dotenv').config()` hinzu, um die Umgebungsvariablen zu laden.
 
 # --hints--
 

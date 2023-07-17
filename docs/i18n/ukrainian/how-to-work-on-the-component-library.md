@@ -1,31 +1,31 @@
-Welcome to freeCodeCamp's `ui-components` library. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/).
+# Як працювати над компонентною бібліотекою
 
-# How to Work on the Component Library
+Ласкаво просимо до бібліотеки freeCodeCamp `ui-components`. Переважно компоненти побудовані з нуля завдяки базовим елементам HTML та [Tailwind CSS](https://tailwindcss.com/).
 
 > [!NOTE]
 > 
-> freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which helps standardize our UX/UI patterns and improve accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
+> freeCodeCamp використовує компоненти Bootstrap в UI. Однак ми віддаляємось від цього та будуємо власну компонентну бібліотеку, яка допоможе стандартизувати наші шаблони UX/UI та покращити доступність. Проєкт відстежується у [цьому завданні на GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
 
-The following steps are recommended when working on a new component:
+Для роботи над новим компонентом рекомендовані наступні кроки:
 
-- Research and planning
-- Implement the component
-- Display the use cases on Storybook
-- Write unit tests
+- Дослідження та планування
+- Реалізація компонента
+- Показ сценаріїв використання на Storybook
+- Написання модульних тестів
 
-## Researching and Planning
+## Дослідження та планування
 
-Before building a component, you need to research and document on how the existing version behaves and looks, to ensure that the new one has matching styles and supports all the current usages. In order to meet the web accessibility requirements, you should also pay attention to the accessibility aspect of the component, see which HTML elements and ARIA attributes are used under the hood.
+Перед побудовою компонента вам потрібно дослідити та задокументувати поведінку й вигляд поточної версії, щоб переконатись, що нова версія відповідатиме стилю та підтримуватиме усі поточні використання. Щоб відповідати вимогам доступності мережі, також звертайте увагу на аспекти доступності компонента, перегляньте, які елементи HTML та атрибути ARIA використовуються під капотом.
 
-Once you have gathered enough information about the component, you can start thinking about the props interface. Ideally, the interface should be as similar to the current version as possible, to ease the adoption later on. Since we are using Bootstrap components, the simplest approach is to mimic [their implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src).
+Як тільки ви зібрали достатньо інформації про компонент, можна почати думати про інтерфейс властивостей. В ідеалі інтерфейс повинен бути максимально схожим до поточної версії, щоб полегшити майбутнє впровадження. Оскільки ми використовуємо компоненти Bootstrap, найпростіший спосіб — імітувати [їхню реалізацію](https://github.com/react-bootstrap/react-bootstrap/tree/master/src).
 
-We prefer smaller pull requests rather than a large one, because they speed up the review time and reduce cognitive overload for the reviewers. For that reason, you should think about how you would break down the implementation and come up with a delivery plan.
+Ми надаємо перевагу коротким запитам на злиття, оскільки вони пришвидшують час на перегляд та зменшують когнітивне навантаження на рецензентів. З цієї причини подумайте, як би ви розбили реалізацію та розробили план доставки.
 
-We recommend opening a separate GitHub issue for each component and include all the notes in the issue description. It can be used as a place to host all of your working notes, as well as a way to communicate the approach with the reviewers. We will use the issue thread for further discussion if needed. [The issue for Button component](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) can be used as a reference.
+Ми рекомендуємо відкривати окреме завдання на GitHub для кожного компонента та додавати всі нотатки в опис завдання. Його можна використовувати як місце для розміщення всіх робочих нотаток, а також як спосіб донести свій підхід до рецензентів. За потреби ми використаємо тред завдання для подальшого обговорення. [Завдання для компонента Button](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) можна використати як зразок.
 
-## Implementing the Component
+## Реалізація компонента
 
-A new component can be created using the following command from the root directory:
+Новий компонент можна створити за допомогою наступної команди з кореневого каталогу:
 
 ```bash
 cd tools/ui-components
@@ -33,75 +33,79 @@ cd tools/ui-components
 pnpm run gen-component MyComponent
 ```
 
-The command will generate a new folder inside the `ui-components` directory, with the following files:
+Всередині каталогу `ui-components` команда згенерує папку з наступними файлами:
 
-| File name                  | Purpose                                                    |
+| Назва файлу                | Призначення                                                |
 | -------------------------- | ---------------------------------------------------------- |
-| `index.ts`                 | It is used for exporting the component and its types.      |
-| `my-component.stories.tsx` | It is used for demoing the component on Storybook.         |
-| `my-component.test.tsx`    | It is a test file.                                         |
-| `my-component.tsx`         | It is where we implement the component.                    |
-| `types.ts`                 | It is where we locate the component's interface and types. |
+| `index.ts`                 | Використовується для експорту компонента та його типів.    |
+| `my-component.stories.tsx` | Використовується для демонстрації компонента на Storybook. |
+| `my-component.test.tsx`    | Тестовий файл.                                             |
+| `my-component.tsx`         | Місце реалізації компонента.                               |
+| `types.ts`                 | Місце розташування інтерфейсу та типів компонента.         |
 
-Each component is different, but in general, a component should:
+Кожен компонент відрізняється, але загалом він повинен:
 
-- Support forwarding ref
-- Be styled for both light and dark themes
-- Be styled internally based on their props (the consumers should not need to restyle the component with the `className` prop)
-- Utilize the built-in styling system from Tailwind instead of having custom styles
+- Підтримувати перенаправлення ref
+- Бути стилізованим для світлої та темної тем
+- Бути внутрішньо стилізованим на основі своїх властивостей (споживачам не знадобиться ще раз стилізувати компонент за допомогою властивості `className`)
+- Використовувати вбудовану систему стилізації з Tailwind замість власних стилів
 
-### Using Colors
+### Використання кольорів
 
-There are two color "layers" in the component library:
+У компонентній бібліотеці є два «шари» кольорів:
 
-- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
-- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+- Базовий шар, де назви кольорів описують колір, тобто `gray00`, `blue50`
+- Семантичний шар, де назви кольорів описують для чого використані кольори, тобто `foreground-primary`, `background-danger`
 
-Generally, when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for its states.
+Під час використання кольору в компоненті варто надавати перевагу семантичним змінним. Однак бувають винятки, особливо коли ви стилізуєте стани компонента (hover, active, disabled тощо). У таких випадках ми рекомендуємо використовувати базові змінні, а не створювати семантичні змінні, оскільки кожен компонент може мати різні стилі для своїх станів.
 
-> [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+> [!NOTE] Визначення кольору можна знайти у файлі [`colors.css`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). Колір доступний для використання лише якщо його додано до [ файлу `tailwind.config.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) під властивістю `colors`.
 
-### Useful Links
+### Корисні посилання
 
-- [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
-- [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
-- [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [Конфігурація CSS Tailwind](https://tailwindcss.com/docs/configuration)
+- [Документація React Bootstrap v0.33](https://react-bootstrap-v3.netlify.app)
+- [Таблиця стилів Bootstrap 3.3.7](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
+- [Поточне впровадження React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [Поточні тести React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
-## Displaying the Use Cases on Storybook
+## Показ сценаріїв використання на Storybook
 
-Use cases of the component should be added to the Storybook file (`.stories.tsx`).
+Сценарії використання компонентів потрібно додати до файлу Storybook (`.stories.tsx`).
 
-To start Storybook, run the following command from the root directory:
+Щоб запустити Storybook, виконайте наступну команду з кореневого каталогу:
 
 ```bash
 pnpm run storybook
 ```
 
-The Storybook page is available on [http://localhost:6006](http://localhost:6006).
+Сторінка Storybook доступна на [http://localhost:6006](http://localhost:6006).
 
-## Writing Unit Tests
+## Написання модульних тестів
 
-We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
+Ми використовуємо [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) для написання модульних тестів. Тести повинні підтверджувати, що компоненти поводяться як потрібно та є доступними.
 
-To run tests against the component library, run the following command from the root directory:
+Щоб запустити тести компонентної бібліотеки, виконайте наступну команду з кореневого каталогу:
 
 ```bash
 pnpm run test-ui-components
 ```
 
-## Adding Packages to the UI-Component Library
+## Запропонуйте запит на злиття (PR)
 
-We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
+
+## Додавання пакетів до компонентної бібліотеки UI
+
+Ми обмежуємо додавання нових пакетів до компонентів UI, щоб допомогти з обслуговуванням проєкту. За рідкісних випадків, якщо на вашу думку потрібна залежність, будь ласка, обговоріть це зі спеціалістом з обслуговування та використайте наступну команду, щоб додати пакет:
 
 ```bash
 cd tools/ui-components 
 pnpm add package_name
 ```
 
-### Useful Links
+## Корисні посилання
 
-- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
-- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Тестування доступності](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Черговість запитів React Testing Library](https://testing-library.com/docs/queries/about/#priority)
+- [Часті помилки при роботі з React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)

@@ -203,19 +203,19 @@ Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-
 
 Ci sono alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Gli utenti nella versione beta avranno un account separato dalla produzione.** La versione beta utilizza un database fisicamente separato dalla produzione. Questo ci dà la possibilità di prevenire qualsiasi perdita accidentale di dati o modifiche. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Il deploy dovrebbe essere frequente e in iterazioni rapide, talvolta più volte al giorno. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Non inviare utenti regolari a questo sito come misura per confermare una correzione
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   Il sito beta ha il solo scopo di supportare lo sviluppo locale e il testing, nient'altro. Non è una promessa di ciò che sta arrivando, ma un assaggio di ciò a cui si sta lavorando.
 
-- #### La pagina di iscrizione può essere diversa da quella di produzione
+- **Sign in page may look different than production**
 
   Usiamo un test tenant per freeCodeCamp.dev su Auth0, e quindi non abbiamo l'abilità di impostare un dominio personalizzato. Questo fa sì che tutte le callback di reindirizzamento e la pagina di login appaiano su un dominio predefinito come: `https://freecodecamp-dev.auth0.com/`. Questo non ha effetto sulle funzionalità ed è quanto più vicino possiamo arrivare alla produzione.
 

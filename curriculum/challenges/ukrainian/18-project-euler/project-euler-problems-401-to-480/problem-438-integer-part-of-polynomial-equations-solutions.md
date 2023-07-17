@@ -21,7 +21,7 @@ We define $S(t)$ as the sum of the absolute values of the integers in $t$.
 
 For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
 
-Find $\sum S(t)$ for $n = 7$.
+Знайдіть $\sum S(t)$ за умови $n = 7$.
 
 # --hints--
 

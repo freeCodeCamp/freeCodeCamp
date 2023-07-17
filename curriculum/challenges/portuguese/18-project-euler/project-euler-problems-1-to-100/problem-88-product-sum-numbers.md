@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed6
-title: 'Problem 88: Product-sum numbers'
+title: 'Problema 88: Números de somas e produtos'
 challengeType: 1
 forumTopicId: 302203
 dashedName: problem-88-product-sum-numbers
@@ -8,11 +8,11 @@ dashedName: problem-88-product-sum-numbers
 
 # --description--
 
-A natural number, `N`, that can be written as the sum and product of a given set of at least two natural numbers, $\\{a_1, a_2, \ldots , a_k\\}$ is called a product-sum number: $N = a_1 + a_2 + \cdots + a_k = a_1 × a_2 × \cdots × a_k$.
+Um número natural, `N`, que pode ser escrito como a soma e o produto de um determinado conjunto de, pelo menos, dois números naturais, $\\{a_1, a_2, \ldots , a_k\\}$, é chamado de um número de soma e produto: $N = a_1 + a_2 + \cdots + a_k = a_1 × a_2 × \cdots × a_k$.
 
-For example, 6 = 1 + 2 + 3 = 1 × 2 × 3.
+Por exemplo: 6 = 1 + 2 + 3 = 1 x 2 x 3.
 
-For a given set of size, `k`, we shall call the smallest N with this property a minimal product-sum number. The minimal product-sum numbers for sets of size, `k` = 2, 3, 4, 5, and 6 are as follows.
+Para um determinado conjunto de tamanho `k`, vamos chamar o menor número N com essa propriedade de número mínimo de soma e produto. Os números mínimos de soma e produto para conjuntos de tamanho `k` = 2, 3, 4, 5 e 6 são os seguintes.
 
 <div style='margin-left: 4em;'>
   <var>k</var>=2: 4 = 2 × 2 = 2 + 2<br>
@@ -22,45 +22,45 @@ For a given set of size, `k`, we shall call the smallest N with this property a 
   <var>k</var>=6: 12 = 1 × 1 × 1 × 1 × 2 × 6 = 1 + 1 + 1 + 1 + 2 + 6
 </div><br>
 
-Hence for 2 ≤ `k` ≤ 6, the sum of all the minimal product-sum numbers is 4 + 6 + 8 + 12 = 30; note that `8` is only counted once in the sum.
+Assim, para 2 ≤ `k` ≤ 6, a soma de todos os números mínimos de soma e produto é 4 + 6 + 8 + 12 = 30. Observe que `8` é contado apenas uma vez na soma.
 
-In fact, as the complete set of minimal product-sum numbers for 2 ≤ `k` ≤ 12 is $\\{4, 6, 8, 12, 15, 16\\}$, the sum is `61`.
+De fato, como o conjunto completo de números mínimos de soma e produto para 2 ≤ `k` ≤ 12 é $\\{4, 6, 8, 12, 15, 16\\}$, a soma é `61`.
 
-What is the sum of all the minimal product-sum numbers for 2 ≤ `k` ≤ `limit`?
+Qual é a soma de todos os números mínimos de soma e produto para 2 ≤ `k` ≤ `limit`?
 
 # --hints--
 
-`productSumNumbers(6)` should return a number.
+`productSumNumbers(6)` deve retornar um número.
 
 ```js
 assert(typeof productSumNumbers(6) === 'number');
 ```
 
-`productSumNumbers(6)` should return `30`.
+`productSumNumbers(6)` deve retornar `30`.
 
 ```js
 assert.strictEqual(productSumNumbers(6), 30);
 ```
 
-`productSumNumbers(12)` should return `61`.
+`productSumNumbers(12)` deve retornar `61`.
 
 ```js
 assert.strictEqual(productSumNumbers(12), 61);
 ```
 
-`productSumNumbers(300)` should return `12686`.
+`productSumNumbers(300)` deve retornar `12686`.
 
 ```js
 assert.strictEqual(productSumNumbers(300), 12686);
 ```
 
-`productSumNumbers(6000)` should return `2125990`.
+`productSumNumbers(6000)` deve retornar `2125990`.
 
 ```js
 assert.strictEqual(productSumNumbers(6000), 2125990);
 ```
 
-`productSumNumbers(12000)` should return `7587457`.
+`productSumNumbers(12000)` deve retornar `7587457`.
 
 ```js
 assert.strictEqual(productSumNumbers(12000), 7587457);

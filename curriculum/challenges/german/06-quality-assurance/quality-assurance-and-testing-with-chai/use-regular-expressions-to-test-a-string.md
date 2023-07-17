@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c54
-title: Use Regular Expressions to Test a String
+title: Verwende reguläre Ausdrücke um einen String zu testen
 challengeType: 2
 forumTopicId: 301608
 dashedName: use-regular-expressions-to-test-a-string
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `match` vs. `notMatch`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `match` vs. `notMatch`.
 
 ```js
 (getUserInput) =>

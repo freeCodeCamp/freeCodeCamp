@@ -34,37 +34,37 @@ Test your function with the following series of inputs showing your output here 
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` sollte eine Funktion sein.
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+`quibble(["ABC"])` sollte einen String zurückgeben.
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+`quibble([])` sollte "{}" zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` should return `"{ABC}"`.
+`quibble(["ABC"])` sollte `"{ABC}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` should return `"{ABC and DEF}"`.
+`quibble(["ABC", "DEF"])` sollte `"{ABC and DEF}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` should return `"{ABC, DEF, G and H}"`.
+`quibble(["ABC", "DEF", "G", "H"])` sollte `"{ABC, DEF, G and H}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

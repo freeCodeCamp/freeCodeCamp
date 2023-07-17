@@ -1,6 +1,6 @@
 ---
 id: 5a51eabcad78bf416f316e2a
-title: 'Problem 22: Names scores'
+title: 'Problema 22: Pontuações de nomes'
 challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
@@ -8,33 +8,33 @@ dashedName: problem-22-names-scores
 
 # --description--
 
-Using `names`, an array defined in the background containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+Usando `names`, um array em segundo plano contendo mais de 5 mil nomes, a primeira coisa que você precisa fazer é ordenar estes nomes alfabeticamente. Em seguida, descubra a posição de cada letra do nome e some todas as posições. Após calcular a soma, multiplique este valor pela posição do nome dentro do array de nomes.
 
-For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+Por exemplo, após ordenar a lista alfabeticamente, o nome COLIN, cujas letras valem 3 + 15 + 12 + 9 + 14 = 53, é o 938º nome na lista. Portanto, o nome COLIN obteria a pontuação de 938 × 53 = 49714.
 
-What is the total of all the name scores in the array?
+Qual é o total de todas as pontuações no array de nomes?
 
 # --hints--
 
-`namesScores(test1)` should return a number.
+`namesScores(test1)` deve retornar um número.
 
 ```js
 assert(typeof namesScores(test1) === 'number');
 ```
 
-`namesScores(test1)` should return 791.
+`namesScores(test1)` deve retornar 791.
 
 ```js
 assert.strictEqual(namesScores(test1), 791);
 ```
 
-`namesScores(test2)` should return 1468.
+`namesScores(test2)` deve retornar 1468.
 
 ```js
 assert.strictEqual(namesScores(test2), 1468);
 ```
 
-`namesScores(names)` should return 871198282.
+`namesScores(names)` deve retornar 871198282.
 
 ```js
 assert.strictEqual(namesScores(names), 871198282);

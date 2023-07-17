@@ -1,15 +1,15 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 27
+title: Passo 27
 challengeType: 0
 dashedName: step-27
 ---
 
 # --description--
 
-`arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring to unpack them into variables.
+`arr` contém uma série de objetos. Cada um deles contém as propriedades `name`, `position`, `number`, `isCaptain` e `nickname`. Para acessar cada uma dessas propriedades dentro da função de callback, você precisará usar a desestruturação de objetos para colocá-los em variáveis.
 
-Here is an example:
+Aqui está um exemplo:
 
 ```js
 function myExampleFunction({ name, age, job, city }) {
@@ -17,11 +17,11 @@ function myExampleFunction({ name, age, job, city }) {
 }
 ```
 
-Inside the parameter list in the callback function for the `map` method, unpack all 5 object properties from objects in `arr` using object destructuring.
+Dentro da lista de parâmetros na função de callback para o método `map`, coloque todas as cinco propriedades de objetos em `arr` usando a desestruturação do objetos.
 
 # --hints--
 
-You should unpack all 5 object properties from objects in `arr` using object destructuring.
+Você deve inserir todas as cinco propriedades dos objetos em `arr` usando a desestruturação de objetos.
 
 ```js
 

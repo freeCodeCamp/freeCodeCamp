@@ -20,7 +20,12 @@ const blockSchema = Joi.object({}).keys({
     template: Joi.string().allow(''),
     required: Joi.array(),
     superBlock: Joi.string(),
-    challengeOrder: Joi.array().items(Joi.array().min(1))
+    challengeOrder: Joi.array().items(
+      Joi.object({}).keys({
+        id: Joi.string(),
+        title: Joi.string()
+      })
+    )
   })
 });
 

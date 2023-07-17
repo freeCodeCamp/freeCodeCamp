@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
-title: 'Problem 353: Risky moon'
+title: 'Problema 353: Lua perigosa'
 challengeType: 1
 forumTopicId: 302013
 dashedName: problem-353-risky-moon
@@ -8,27 +8,27 @@ dashedName: problem-353-risky-moon
 
 # --description--
 
-A moon could be described by the sphere $C(r)$ with centre (0, 0, 0) and radius $r$.
+Uma lua poderia ser descrita pela esfera $C(r)$ com centro (0, 0, 0) e raio $r$.
 
-There are stations on the moon at the points on the surface of $C(r)$ with integer coordinates. The station at (0, 0, $r$) is called North Pole station, the station at (0, 0, $-r$) is called South Pole station.
+Há estações na lua em pontos na superfície de $C(r)$ com coordenadas em números inteiros. A estação em (0, 0, $r$) é chamada de estação do Polo Norte, enquanto a estação em (0, 0, $-r$) é chamada de estação do Polo Sul.
 
-All stations are connected with each other via the shortest road on the great arc through the stations. A journey between two stations is risky. If $d$ is the length of the road between two stations, $\{\left(\frac{d}{πr}\right)}^2$ is a measure for the risk of the journey (let us call it the risk of the road). If the journey includes more than two stations, the risk of the journey is the sum of risks of the used roads.
+Todas as estações estão ligadas entre si através da estrada mais curta no grande arco que passa pelas estações. Uma jornada entre duas estações é arriscada. Se $d$ é o comprimento da estrada entre duas estações, $\{\left(\frac{d}{πr}\right)}^2$ é uma medida para o risco da jornada (vamos chamá-la de risco da estrada). Se a viagem inclui mais de duas estações, o risco da viagem é a soma dos riscos das estradas utilizadas.
 
-A direct journey from the North Pole station to the South Pole station has the length $πr$ and risk 1. The journey from the North Pole station to the South Pole station via (0, $r$, 0) has the same length, but a smaller risk:
+Uma jornada direta da estação do Polo Norte para a estação do Polo Sul tem o comprimento $πr$ e o risco 1. A viagem da estação do Polo Norte para a estação do Polo do Sul via (0, $r$, 0) tem o mesmo comprimento, mas um risco menor:
 
 $${\left(\frac{\frac{1}{2}πr}{πr}\right)}^2+{\left(\frac{\frac{1}{2}πr}{πr}\right)}^2 = 0.5$$
 
-The minimal risk of a journey from the North Pole station to the South Pole station on $C(r)$ is $M(r)$.
+O risco mínimo de uma jornada da estação do Polo Norte até a estação do Polo Sul em $C(r)$ é $M(r)$.
 
-You are given that $M(7) = 0.178\\,494\\,399\\,8$ rounded to 10 digits behind the decimal point.
+Você é informado que $M(7) = 0.1784943998$ arredondado para 10 casas depois da vírgula.
 
-Find $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
+Encontre $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
 
-Give your answer rounded to 10 digits behind the decimal point in the form a.bcdefghijk.
+Arredonde sua resposta para até 10 casas depois da vírgula usando o formato a.bcdefghijk.
 
 # --hints--
 
-`riskyMoon()` should return `1.2759860331`.
+`riskyMoon()` deve retornar `1.2759860331`.
 
 ```js
 assert.strictEqual(riskyMoon(), 1.2759860331);

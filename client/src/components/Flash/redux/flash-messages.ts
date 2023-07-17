@@ -31,7 +31,6 @@ export enum FlashMessages {
   StartProjectErr = 'flash.start-project-err',
   TimelinePrivate = 'flash.timeline-private',
   TokenDeleted = 'flash.token-deleted',
-  UpdatedPreferences = 'flash.updated-preferences',
   UpdatedAboutMe = 'flash.updated-about-me',
   UpdatedSocials = 'flash.updated-socials',
   UpdatedSound = 'flash.updated-sound',

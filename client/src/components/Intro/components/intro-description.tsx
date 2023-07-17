@@ -11,7 +11,10 @@ function IntroDescription(): JSX.Element {
 
   return (
     <div className='intro-description'>
-      <strong>{t('learn.read-this.heading')}</strong>
+      <Spacer size='medium' />
+      <p className='text-center'>
+        <strong>{t('learn.read-this.heading')}</strong>
+      </p>
       <Spacer size='medium' />
       <p>{t('learn.read-this.p1')}</p>
       <p>{t('learn.read-this.p2')}</p>
@@ -33,6 +36,7 @@ function IntroDescription(): JSX.Element {
         </Trans>
       </p>
       <p>{t('learn.read-this.p12')}</p>
+      <strong>{t('misc.quincy')}</strong>
     </div>
   );
 }

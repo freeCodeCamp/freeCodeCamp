@@ -1,6 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef7
-title: 'Problem 120: Square remainders'
+title: 'Завдання 120: квадратні остачі'
 challengeType: 1
 forumTopicId: 301747
 dashedName: problem-120-square-remainders
@@ -8,11 +8,11 @@ dashedName: problem-120-square-remainders
 
 # --description--
 
-Let `r` be the remainder when ${(a − 1)}^n + {(a + 1)}^n$ is divided by $a^2$.
+Нехай `r` буде остачею при діленні ${(a − 1)}^n + {(a + 1)}^n$ на $a^2$.
 
-For example, if $a = 7$ and $n = 3$, then $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$. And as `n` varies, so too will `r`, but for $a = 7$ it turns out that $r_{max} = 42$.
+Наприклад, якщо $a = 7$ і $n = 3$, тоді $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$. Оскільки змінюється `n`, також змінюється `r`, але за умови $a = 7$ виходить так, що $r_{max} = 42$.
 
-For $3 ≤ a ≤ 1000$, find $\sum{r}_{max}$.
+Знайдіть $\sum{r}_{max}$ за умови 3 ≤ a ≤ 1000$.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4eb1000cf542c50fffd
-title: 'Problem 382: Generating polygons'
+title: 'Problema 382: generare poligoni'
 challengeType: 1
 forumTopicId: 302046
 dashedName: problem-382-generating-polygons
@@ -8,38 +8,38 @@ dashedName: problem-382-generating-polygons
 
 # --description--
 
-A polygon is a flat shape consisting of straight line segments that are joined to form a closed chain or circuit. A polygon consists of at least three sides and does not self-intersect.
+Un poligono è una forma piatta costituita da segmenti lineari che si uniscono a formare una catena o un circuito chiusi. Un poligono è costituito da almeno tre lati e non si autointerseca.
 
-A set $S$ of positive numbers is said to generate a polygon $P$ if:
+Si dice che un set $S$ di numeri positivi genera un poligono $P$ se:
 
-- no two sides of $P$ are the same length,
-- the length of every side of $P$ is in $S$, and
-- $S$ contains no other value.
+- nessuna coppia di lati di $P$ ha la stessa lunghezza,
+- la lunghezza di ogni lato di $P$ è in $S$ e
+- $S$ non contiene nessun altro valore.
 
-For example:
+Ad esempio:
 
-The set {3, 4, 5} generates a polygon with sides 3, 4, and 5 (a triangle).
+Il set {3, 4, 5} genera un poligono con i lati 3, 4 e 5 (un triangolo).
 
-The set {6, 9, 11, 24} generates a polygon with sides 6, 9, 11, and 24 (a quadrilateral).
+Il set {6, 9, 11, 24} genera un poligono con i lati 6, 9, 11 e 24 (un quadrilatero).
 
-The sets {1, 2, 3} and {2, 3, 4, 9} do not generate any polygon at all.
+I set {1, 2, 3} e {2, 3, 4, 9} non generano alcun poligono.
 
-Consider the sequence $s$, defined as follows:
+Considera la sequenza $s$, definita come segue:
 
 - $s_1 = 1$, $s_2 = 2$, $s_3 = 3$
-- $s_n = s_{n - 1} + s_{n - 3}$ for $n > 3$.
+- $s_n = s_{n - 1} + s_{n - 3}$ per $n > 3$.
 
-Let $U_n$ be the set $\\{s_1, s_2, \ldots, s_n\\}$. For example, $U_{10} = \\{1, 2, 3, 4, 6, 9, 13, 19, 28, 41\\}$.
+Sia $U_n$ il set $\\{s_1, s_2, \ldots, s_n\\}$. Per esempio, $U_{10} = \\{1, 2, 3, 4, 6, 9, 13, 19, 28, 41\\}$.
 
-Let $f(n)$ be the number of subsets of $U_n$ which generate at least one polygon.
+Sia $f(n)$ il numero di sottoinsiemi di $U_n$ che generano almeno un poligono.
 
-For example, $f(5) = 7$, $f(10) = 501$ and $f(25) = 18\\,635\\,853$.
+Per esempio, $f(5) = 7$, $f(10) = 501$ e $f(25) = 18\\,635\\,853$.
 
-Find the last 9 digits of $f({10}^{18})$.
+Trova le ultime 9 cifre di $f({10}^{18})$.
 
 # --hints--
 
-`generatingPolygons()` should return `697003956`.
+`generatingPolygons()` dovrebbe restituire `697003956`.
 
 ```js
 assert.strictEqual(generatingPolygons(), 697003956);

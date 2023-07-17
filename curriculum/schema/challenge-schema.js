@@ -21,14 +21,19 @@ const fileJoi = Joi.object().keys({
   history: Joi.array().items(Joi.string().allow(''))
 });
 
+const prerequisitesJoi = Joi.object().keys({
+  id: Joi.objectId().required(),
+  title: Joi.string().required()
+});
+
 const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
-    removeComments: Joi.bool(),
+    removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(15).required(),
+    challengeType: Joi.number().min(0).max(19).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -55,6 +60,10 @@ const schema = Joi.object()
     isPrivate: Joi.bool(),
     notes: Joi.string().allow(''),
     order: Joi.number(),
+    prerequisites: Joi.when('challengeType', {
+      is: [challengeTypes.exam],
+      then: Joi.array().items(prerequisitesJoi)
+    }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
       is: challengeTypes.video,

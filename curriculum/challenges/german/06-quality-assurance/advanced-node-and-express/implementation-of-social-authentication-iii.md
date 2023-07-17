@@ -39,7 +39,7 @@ myDataBase.findOneAndUpdate(
 );
 ```
 
-`findOneAndUpdate` ermöglicht es dir, nach einem Objekt zu suchen und es zu aktualisieren. Wenn das Objekt nicht existiert, wird es eingefügt und der Callback-Funktion zur Verfügung gestellt. In this example, we always set `last_login`, increment the `login_count` by `1`, and only populate the majority of the fields when a new object (new user) is inserted. Notice the use of default values. Manchmal ist ein übermitteltes Profil nicht vollständig ausgefüllt oder der Nutzer hält es privat. In diesem Fall verarbeitest du es, um einen Fehler zu vermeiden.
+`findOneAndUpdate` ermöglicht es dir, nach einem Objekt zu suchen und es zu aktualisieren. Wenn das Objekt nicht existiert, wird es eingefügt und der Callback-Funktion zur Verfügung gestellt. In this example, we always set `last_login`, increment the `login_count` by `1`, and only populate the majority of the fields when a new object (new user) is inserted. Beachte, die Verwendung von Standardwerten. Manchmal ist ein übermitteltes Profil nicht vollständig ausgefüllt oder der Nutzer hält es privat. In diesem Fall verarbeitest du es, um einen Fehler zu vermeiden.
 
 Du solltest dich jetzt bei deiner App anmelden können. Versuch es!
 

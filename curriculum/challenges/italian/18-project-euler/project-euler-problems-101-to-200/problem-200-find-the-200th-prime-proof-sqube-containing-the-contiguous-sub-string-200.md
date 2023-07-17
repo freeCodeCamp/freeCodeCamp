@@ -1,7 +1,7 @@
 ---
 id: 5900f4351000cf542c50ff47
 title: >-
-  Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"
+  Problema 200: trovare il 200° sqube a prova di primo contenente la sotto-stringa contigua "200"
 challengeType: 1
 forumTopicId: 301840
 dashedName: >-
@@ -10,19 +10,19 @@ dashedName: >-
 
 # --description--
 
-We shall define a sqube to be a number of the form, ${p^2}{q^3}$, where $p$ and $q$ are distinct primes.
+Definiamo uno sqube come un numero nella forma ${p^2}{q^3}$, dove $p$ e $q$ sono numeri primi distinti.
 
-For example, $200 = {5^2}{2^3}$ or $120072949 = {{23}^2}{{61}^3}$.
+Ad esempio, $200 = {5^2}{2^3}$ o $120072949 = {{23}^2}{{61}^3}$.
 
-The first five squbes are 72, 108, 200, 392, and 500.
+I primi cinque sqube sono 72, 108, 200, 392 e 500.
 
-Interestingly, 200 is also the first number for which you cannot change any single digit to make a prime; we shall call such numbers, prime-proof. The next prime-proof sqube which contains the contiguous sub-string `200` is 1992008.
+È interessante notare che 200 è anche il primo numero per il quale non si può cambiare nessuna singola cifra ottenendo un primo; chiameremo tali numeri, "a prova di primo". Il prossimo sqube a prova di primo che contiene la sotto-stringa contigua `200` è 1992008.
 
-Find the 200th prime-proof sqube containing the contiguous sub-string `200`.
+Trova il 200mo sqube a prova di primo contenente la sotto-stringa contigua `200`.
 
 # --hints--
 
-`primeProofSqubeWithSubString()` should return `229161792008`.
+`primeProofSqubeWithSubString()` dovrebbe restituire `229161792008`.
 
 ```js
 assert.strictEqual(primeProofSqubeWithSubString(), 229161792008);

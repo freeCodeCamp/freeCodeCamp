@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
-title: 'Problem 388: Distinct Lines'
+title: 'Problema 388: linee distinte'
 challengeType: 1
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
@@ -8,13 +8,13 @@ dashedName: problem-388-distinct-lines
 
 # --description--
 
-Consider all lattice points ($a$, $b$, $c$) with $0 ≤ a, b, c ≤ N$.
+Considera tutti i punti del reticolo ($a$, $b$, $c$) con $0 ≤ a, b, c ≤ N$.
 
-From the origin $O(0, 0, 0)$ all lines are drawn to the other lattice points. Let $D(N)$ be the number of distinct such lines.
+Dall'origine $O(0, 0, 0)$ tutte le linee sono disegnate verso gli altri punti del reticolo. Sia $D(N)$ il numero di linee distinte.
 
-You are given that $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
+Ti è dato che $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
 
-Find $D({10}^{10})$. Give as your answer the first nine digits followed by the last nine digits.
+Trova $D({10}^{10})$. Dai come risposta le prime nove cifre seguite dalle ultime nove cifre.
 
 # --hints--
 

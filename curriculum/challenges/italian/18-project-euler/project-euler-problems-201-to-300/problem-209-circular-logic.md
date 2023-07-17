@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff4f
-title: 'Problem 209: Circular Logic'
+title: 'Problema 209: logica circolare'
 challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic
@@ -8,7 +8,7 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [false] or 1 [true]) to 1 output bit. For example, the $2$-input binary truth tables for the logical $AND$ and $XOR$ functions are:
+Una tabella della verità binaria a $k$ input è una mappa da $k$ bit di input (cifre binarie, 0 [false] o 1 [true]) a 1 bit di output. Per esempio, le tabelle binarie della verità a $2$ bit di input per le funzioni logiche $AND$ e $XOR$ sono:
 
 | x | y | x AND y |
 | - | - | ------- |
@@ -24,15 +24,15 @@ A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [f
 | 1 | 0 | 1       |
 | 1 | 1 | 0       |
 
-How many $6$-input binary truth tables, $τ$, satisfy the formula
+Quante tabelle binarie della verità a $6$ bit di input, $τ$, soddisfano la formula
 
 $$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
 
-for all $6$-bit inputs ($a$, $b$, $c$, $d$, $e$, $f$)?
+per tutti gli input a $6$ bit ($a$, $b$, $c$, $d$, $e$, $f$)?
 
 # --hints--
 
-`circularLogic()` should return `15964587728784`.
+`circularLogic()` dovrebbe restituire `15964587728784`.
 
 ```js
 assert.strictEqual(circularLogic(), 15964587728784);

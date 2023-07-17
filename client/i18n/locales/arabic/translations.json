@@ -29,6 +29,7 @@
     "sign-up-email-list": "أرسل لي بريد كوينسي الأسبوعي",
     "sign-out": "تسجيل الخروج",
     "curriculum": "المنهج الدراسي",
+    "contribute": "Contribute",
     "forum": "المنتدى",
     "radio": "radio",
     "profile": "الملف الشخصي",
@@ -72,9 +73,14 @@
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
+    "click-start-exam": "Start the exam",
     "change-language": "تغيير اللغة",
     "resume-project": "أستكمال المشروع",
-    "start-project": "إبدأ المشروع"
+    "start-project": "إبدأ المشروع",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "finish-exam": "Finish the exam",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -336,6 +342,7 @@
     "question": "Question",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
     "congratulations": "تهانينا، نجح كودك. قدّم كودك للمتابعة.",
     "i-completed": "لقد أكملت هذا التحدي",
@@ -384,7 +391,6 @@
     "runs-in-vm": "المشروع يعمل في آلة افتراضية، يكمل قصص المستخدم الموصوفة هناك ويحصل على جميع الاختبارات لتمريرها لإنهاء الخطوة 1.",
     "completed": "مكتمل",
     "not-started": "لم يبدأ",
-    "hint": "تلميح",
     "test": "الاختبار",
     "sorry-try-again": "عذراً، لم يجتَز كودك. حاول مرة أخرى.",
     "sorry-keep-trying": "عذراً، لم يجتَز كودك. حاول مجدداً.",
@@ -395,7 +401,9 @@
     "season-greetings-fcc": "تحيات الموسم من مجتمع freeCodeCamp 🎉",
     "if-getting-value": "إذا أفادك freeCodeCamp بشكل مثمر، يمكنك تتبرع دعما لرسالتنا التطوعية حتي يستمر مهمتنا.",
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
-    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا."
+    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "ادعم مؤسستنا الخيرية",
@@ -421,9 +429,6 @@
     "your-donation-2": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل شهر.",
     "your-donation-3": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل عام.",
     "become-supporter": "أصبح داعماً",
-    "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
-    "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
-    "duration-4": "كن داعماً لمنظمتنا الخيرية",
     "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
     "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
     "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
@@ -523,6 +528,8 @@
     "unsubscribed": "تم إلغاء اشتراكك بنجاح",
     "keep-coding": "أياً كان ما تقوم به، استمر في البرمجة!",
     "email-signup": "التسجيل عبر البريد الإلكتروني",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson، المدرّس الذي أسس freeCodeCamp.org",
     "email-blast": "بالمناسبة، في كل يوم جمعة، أرسل رسالة بريد إلكتروني مع 5 روابط حول البرمجة وعلوم الكمبيوتر. أرسلها إلى حوالي 4 ملايين شخص. هل تريدني أن أرسل هذا إليك أيضاً؟",
     "update-email-1": "تحديث عنوان بريدك الإلكتروني",
@@ -594,7 +601,6 @@
     "not-authorized": "غير مصرح لك بالمتابعة على هذا المسار",
     "could-not-find": "لم نتمكن من العثور على ما كنت تبحث عنه. الرجاء التحقق والمحاولة مرة أخرى",
     "wrong-updating": "حدث خطأ ما في تحديث حسابك. الرجاء التحقق والمحاولة مرة أخرى",
-    "updated-preferences": "لقد قمنا بتحديث تفضيلاتك",
     "updated-about-me": "We have updated your personal information",
     "updated-socials": "We have updated your social links",
     "updated-sound": "We have updated your sound settings",
@@ -677,9 +683,9 @@
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
-    "verify": "تحقق من هذه الشهادة في {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "صدر",
-    "fulltext": "<0>ويشهد هذا على أن </0> <1>{{user}}</1> <2>قد أكمل freeCodeCamp.org</2> <3>{{title}}</3> <4>شهادة المطور، مما يمثل حوالي {{time}} ساعة من الدورة التدريبية.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
@@ -789,6 +795,8 @@
       "machine-learning-with-python-v7": "مشاريع تعلم الآله باستخدام Python",
       "College Algebra with Python": "College Algebra with Python",
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
+      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",

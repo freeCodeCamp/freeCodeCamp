@@ -18,7 +18,7 @@ Let $f(12n)$ be the number of ways to organize the trios amongst the $12n$ music
 
 You are given $f(12) = 576$ and $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$.
 
-Find $f(600)\bmod 1\\,000\\,000\\,007$.
+Знайдіть $f(600)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 

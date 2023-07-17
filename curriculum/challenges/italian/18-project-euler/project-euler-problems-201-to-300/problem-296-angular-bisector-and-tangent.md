@@ -1,6 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
-title: 'Problem 296: Angular Bisector and Tangent'
+title: 'Problema 296: bisettrice angolare e tangente'
 challengeType: 1
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent
@@ -8,17 +8,17 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with $BC ≤ AC ≤ AB$. $k$ is the angular bisector of angle $ACB$. $m$ is the tangent at $C$ to the circumscribed circle of $ABC$. $n$ is a line parallel to $m$ through $B$.
+Dato un triangolo intero $ABC$ con $BC ≤ AC ≤ AB$. $k$ è la bisettrice angolare dell'angolo $ACB$. $m$ è la tangente in $C$ al cerchio circoscritto ad $ABC$. $n$ è una linea parallela a $m$ attraverso $B$.
 
-The intersection of $n$ and $k$ is called $E$.
+L'intersezione di $n$ e $k$ viene chiamata $E$.
 
-<img class="img-responsive center-block" alt="triangle ABC, with k - the angular bisector of angle ACB, m - tangent at point C, n - line parallel to m through B, and point E - intersection of k and n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="triangolo ABC, con k - bisettrice angolare dell'angolo ACB, m - tangente nel punto C, n - linea parallela a m attraverso B, e punto E - intersezione di k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
 
-How many triangles $ABC$ with a perimeter not exceeding $100\\,000$ exist such that $BE$ has integral length?
+Quanti triangoli $ABC$ con un perimetro non superiore a $100\\,000$ esistono tali che $BE$ ha lunghezza intera?
 
 # --hints--
 
-`angularBisectorAndTangent()` should return `1137208419`.
+`angularBisectorAndTangent()` dovrebbe restituire `1137208419`.
 
 ```js
 assert.strictEqual(angularBisectorAndTangent(), 1137208419);

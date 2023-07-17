@@ -20,11 +20,11 @@ Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 -   Als nächstes wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das Solution Link-Feld ein.
 
-Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. Es speichert Informationen über dein Projekt, ähnlich wie der `head`-Abschnitt eines HTML-Dokuments den Inhalt einer Webseite beschreibt. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. Es gibt dort nur zwei Pflichtfelder: `name` und `version`. Es ist jedoch empfehlenswert, zusätzliche Informationen über dein Projekt anzugeben, die für zukünfige Benutzer oder Maintainer nützlich sein könnten.
 
-If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. Das ist die Datei, die du in den nächsten paar Aufgaben verbessern wirst.
+Wenn du dir den Dateibaum deines Projekts ansiehst, wirst du die `package.json`-Datei auf der obersten Ebene des Baums finden. Das ist die Datei, die du in den nächsten paar Aufgaben verbessern wirst.
 
 Eine der häufigsten Angaben in dieser Datei stellt das `author`-Feld dar. Es gibt an, wer das Projekt erstellt hat, und kann aus einer Zeichenfolge oder einem Objekt mit Kontaktdaten oder anderen Informationen bestehen. Für größere Projekte wird ein Objekt empfohlen, aber eine einfache Zeichenfolge wie das folgende Beispiel ist für dieses Projekt ausreichend.
 
@@ -34,7 +34,7 @@ Eine der häufigsten Angaben in dieser Datei stellt das `author`-Feld dar. Es gi
 
 # --instructions--
 
-Add your name as the `author` of the project in the `package.json` file.
+Trage in der `package.json`-Datei deinen Namen als `author` des Projekts ein.
 
 **Hinweis:** Denk daran, dass du JSON schreibst, daher müssen alle Feldnamen in doppelten Anführungszeichen (") gesetzt und durch ein Komma (,) getrennt werden.
 

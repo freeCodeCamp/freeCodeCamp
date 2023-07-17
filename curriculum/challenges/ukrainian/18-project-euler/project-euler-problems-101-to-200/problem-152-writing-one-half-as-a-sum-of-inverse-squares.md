@@ -1,6 +1,6 @@
 ---
 id: 5900f4041000cf542c50ff17
-title: 'Problem 152: Writing one half as a sum of inverse squares'
+title: 'Завдання 152: запис половини у вигляді суми обернених квадратів'
 challengeType: 1
 forumTopicId: 301783
 dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
@@ -8,15 +8,15 @@ dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
 
 # --description--
 
-There are several ways to write the number $\frac{1}{2}$ as a sum of inverse squares using distinct integers.
+Існує два способи запису числа $\frac{1}{2}$ у вигляді суми обернених квадратів, використовуючи різні цілі числа.
 
-For instance, the numbers {2,3,4,5,7,12,15,20,28,35} can be used:
+Наприклад, можна використати числа {2,3,4,5,7,12,15,20,28,35}:
 
 $$\frac{1}{2} = \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{{12}^2} + \frac{1}{{15}^2} + \frac{1}{{20}^2} + \frac{1}{{28}^2} + \frac{1}{{35}^2}$$
 
-In fact, only using integers between 2 and 45 inclusive, there are exactly three ways to do it, the remaining two being: {2,3,4,6,7,9,10,20,28,35,36,45} and {2,3,4,6,7,9,12,15,28,30,35,36,45}.
+Насправді, якщо використовувати лише цілі числа від 2 до 45 включно, існує три способи. А іншими двома є {2,3,4,6,7,9,10,20,28,35,36,45} та {2,3,4,6,7,9,12,15,28,30,35,36,45}.
 
-How many ways are there to write the number $\frac{1}{2}$ as a sum of inverse squares using distinct integers between 2 and 80 inclusive?
+Скільки існує способів записати число $\frac{1}{2}$ у вигляді суми обернених квадратів, використовуючи різні цілі числа від 2 до 80 включно?
 
 # --hints--
 

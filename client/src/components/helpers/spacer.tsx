@@ -16,10 +16,7 @@ interface SpacerProps {
 }
 
 const Spacer = ({ size, children }: SpacerProps): JSX.Element => (
-  <div
-    className='spacer'
-    style={{ padding: `${Padding[size]}px 0`, height: '1px' }}
-  >
+  <div className='spacer' style={{ padding: `${Padding[size]}px 0` }}>
     {children}
   </div>
 );

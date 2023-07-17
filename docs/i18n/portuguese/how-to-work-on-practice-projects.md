@@ -134,3 +134,19 @@ Um script único que atualiza automaticamente a frontmatter nos arquivos markdow
 ```bash
 pnpm run update-step-titles
 ```
+
+### repair-meta
+
+Um script único para analisar os nomes dos passos do projeto e atualizar a ordem de meta.json para refletir esses passos. Útil se você perdeu acidentalmente as alterações para o arquivo meta.json ao adicionar/remover passos.
+
+#### Como executar o script
+
+1. Mude para o diretório do projeto.
+2. Execute o comando a seguir:
+
+```bash
+pnpm run repair-meta
+```
+## Propondo um Pull Request (PR)
+
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).

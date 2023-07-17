@@ -1,6 +1,6 @@
 ---
 id: 5900f4251000cf542c50ff38
-title: 'Problem 185: Number Mind'
+title: 'Problema 185: Senha de números'
 challengeType: 1
 forumTopicId: 301821
 dashedName: problem-185-number-mind
@@ -8,20 +8,20 @@ dashedName: problem-185-number-mind
 
 # --description--
 
-The game Number Mind is a variant of the well known game Master Mind.
+O jogo da Senha de números é uma variante do conhecido jogo Senha.
 
-Instead of coloured pegs, you have to guess a secret sequence of digits. After each guess you're only told in how many places you've guessed the correct digit. So, if the sequence was 1234 and you guessed 2036, you'd be told that you have one correct digit; however, you would NOT be told that you also have another digit in the wrong place.
+Em vez de peças coloridas, você tem que adivinhar uma sequência secreta de algarismos. Depois de cada palpite você é informado apenas em quantos lugares você adivinhou o algarismo correto. Então, se a sequência for 1234 e seu palpite for 2036, você será informado de que tem um algarismo correto. No entanto, NÃO será informado se você tem outro algarismo correto, mas no lugar errado.
 
-For instance, given the following guesses for a 5-digit secret sequence,
+Por exemplo, dados os seguintes palpites para uma sequência secreta de 5 algarismos
 
 $$\begin{align}   & 90342 ;2\\;\text{correct}\\\\
   & 70794 ;0\\;\text{correct}\\\\   & 39458 ;2\\;\text{correct}\\\\
   & 34109 ;1\\;\text{correct}\\\\   & 51545 ;2\\;\text{correct}\\\\
   & 12531 ;1\\;\text{correct} \end{align}$$
 
-The correct sequence 39542 is unique.
+A sequência correta 39542 é única.
 
-Based on the following guesses,
+Com base nos palpites abaixo
 
 $$\begin{align}   & 5616185650518293 ;2\\;\text{correct}\\\\
   & 3847439647293047 ;1\\;\text{correct}\\\\   & 5855462940810587 ;3\\;\text{correct}\\\\
@@ -36,11 +36,11 @@ $$\begin{align}   & 5616185650518293 ;2\\;\text{correct}\\\\
   & 3041631117224635 ;3\\;\text{correct}\\\\   & 1841236454324589 ;3\\;\text{correct}\\\\
   & 2659862637316867 ;2\\;\text{correct} \end{align}$$
 
-Find the unique 16-digit secret sequence.
+Encontre a sequência secreta única de 16 algarismos.
 
 # --hints--
 
-`numberMind()` should return `4640261571849533`.
+`numberMind()` deve retornar `4640261571849533`.
 
 ```js
 assert.strictEqual(numberMind(), 4640261571849533);

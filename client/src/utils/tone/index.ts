@@ -46,7 +46,6 @@ const toneUrls = {
   [FlashMessages.StartProjectErr]: TRY_AGAIN,
   [FlashMessages.TimelinePrivate]: TRY_AGAIN,
   [FlashMessages.TokenDeleted]: CHAL_COMP,
-  [FlashMessages.UpdatedPreferences]: CHAL_COMP,
   [FlashMessages.UpdatedAboutMe]: CHAL_COMP,
   [FlashMessages.UpdatedKeyboardShortCuts]: CHAL_COMP,
   [FlashMessages.UpdatedPortfolio]: CHAL_COMP,

@@ -10,7 +10,7 @@ dashedName: symmetric-difference
 
 Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the symmetric difference of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
 
-Example:
+Beispiel:
 
 For sets `A = [1, 2, 3]`, and `B = [1, 3, 4]`, the symmetric difference of *A* and *B* is `[2, 4]`.
 
@@ -20,13 +20,13 @@ Write a function that takes two arrays as parameters and returns the symmetric d
 
 # --hints--
 
-`symmetricDifference` should be a function.
+`symmetricDifference` sollte eine Funktion sein.
 
 ```js
 assert(typeof symmetricDifference == 'function');
 ```
 
-`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return an array.
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return `["Jim", "Serena"]`.
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` sollte `["Jim", "Serena"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -51,13 +51,13 @@ assert.deepEqual(
 );
 ```
 
-`symmetricDifference([1, 2, 3], [3, 4])` should return `[1, 2, 4]`.
+`symmetricDifference([1, 2, 3], [3, 4])` sollte `[1, 2, 4]` zurückgeben.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 3], [3, 4]), [1, 2, 4]);
 ```
 
-`symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])` should return `[1, 2, 5, 7, 8]`.
+`symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])` sollte `[1, 2, 5, 7, 8]` zurückgeben.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [
@@ -69,7 +69,7 @@ assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [
 ]);
 ```
 
-`symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])` should return `[2, 4, 9]`.
+`symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])` sollte `[2, 4, 9]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -78,7 +78,7 @@ assert.deepEqual(
 );
 ```
 
-`symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])` should return `[1, 3, 4, 8]`.
+`symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])` sollte `[1, 3, 4, 8]` zurückgeben.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9]), [

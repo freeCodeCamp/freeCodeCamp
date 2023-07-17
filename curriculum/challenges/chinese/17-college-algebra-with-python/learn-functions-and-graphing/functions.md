@@ -14,7 +14,7 @@ dashedName: functions
 
 # --question--
 
-## --任务--
+## --assignment--
 
 在你的代数 Colab 笔记本上添加代码，创建用于小数到分数转换的 Python 函数。
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
-title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+title: 'Завдання 141: вивчення прогресивних чисел n, які є квадратами'
 challengeType: 1
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
@@ -8,15 +8,15 @@ dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-squar
 
 # --description--
 
-A positive integer, $n$, is divided by $d$ and the quotient and remainder are $q$ and $r$ respectively. In addition $d$, $q$, and $r$ are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
+При діленні натурального числа $n$ на $d$ отримуємо частку $q$ та остачу $r$. До того ж значення $d$, $q$ та $r$ є послідовними членами геометричної прогресії, але необов’язково в такому порядку.
 
-For example, 58 divided by 6 has a quotient of 9 and a remainder of 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio $\frac{3}{2}$).
+Наприклад, якщо поділити 58 на 6, отримаємо частку 9 і остачу 4. Можна побачити, що 4, 6, 9 є послідовними членами геометричної прогресії (знаменником прогресії є $\frac{3}{2}$).
 
-We will call such numbers, $n$, progressive.
+Такі числа $n$ називають прогресивними.
 
-Some progressive numbers, such as 9 and 10404 = ${102}^2$, also happen to be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+Деякі прогресивні числа, як-от 9 та 10404 = ${102}^2$, також є повними квадратами. Сума всіх прогресивних повних квадратів менших за сто тисяч дорівнює 124657.
 
-Find the sum of all progressive perfect squares below one trillion (${10}^{12}$).
+Знайдіть суму всіх прогресивних повних квадратів менших за один трильйон (${10}^{12}$).
 
 # --hints--
 

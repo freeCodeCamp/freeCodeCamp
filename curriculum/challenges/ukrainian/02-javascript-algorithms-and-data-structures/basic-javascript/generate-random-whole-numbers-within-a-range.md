@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
+Ви можете згенерувати випадкове ціле число в діапазоні від нуля до заданого числа. Ви також можете вибрати будь-яке інше менше число для цього діапазону.
 
-You'll call your minimum number `min` and your maximum number `max`.
+Мінімальне число називають `min`, а максимальне — `max`.
 
-This formula gives a random whole number in the range from `min` to `max`. Зробіть паузу, щоб прочитати і зрозуміти, що робить цей код:
+Завдяки цій формулі можна отримати випадкове ціле число від `min` до `max`. Зробіть паузу, щоб прочитати і зрозуміти, що робить цей код:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
+Створіть функцію під назвою `randomRange`, яка приймає діапазон `myMin` та `myMax` і повертає випадкове ціле число, яке більше або дорівнює `myMin` і менше або дорівнює `myMax`.
 
 # --hints--
 

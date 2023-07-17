@@ -22,7 +22,7 @@ If you use Replit, follow these steps to set up the project:
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet hilft dir, deine Express-Anwendungen durch die Einstellung verschiedener HTTP-Header zu sichern.
 
 # --instructions--
 

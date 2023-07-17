@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Your `difference` method should return the proper collection.
+Deine `difference`-Methode sollte die richtige Sammlung zurückgeben.
 
 ```js
 assert(

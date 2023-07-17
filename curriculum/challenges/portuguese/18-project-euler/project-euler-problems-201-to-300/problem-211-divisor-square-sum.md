@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff52
-title: 'Problem 211: Divisor Square Sum'
+title: 'Problema 211: Soma dos quadrados dos divisores'
 challengeType: 1
 forumTopicId: 301853
 dashedName: problem-211-divisor-square-sum
@@ -8,15 +8,15 @@ dashedName: problem-211-divisor-square-sum
 
 # --description--
 
-For a positive integer $n$, let $σ_2(n)$ be the sum of the squares of its divisors. For example,
+Para um número inteiro positivo $n$, considere $σ_2(n)$ como sendo a soma dos quadrados de seus divisores. Por exemplo:
 
 $$σ_2(10) = 1 + 4 + 25 + 100 = 130$$
 
-Find the sum of all $n$, $0 &lt; n &lt; 64\\,000\\,000$ such that $σ_2(n)$ is a perfect square.
+Encontre a soma de todos os $n$, $0 &lt; n &lt; 64.000.000$, de tal forma que $σ_2(n)$ seja um quadrado perfeito.
 
 # --hints--
 
-`divisorSquareSum()` should return `1922364685`.
+`divisorSquareSum()` deve retornar `1922364685`.
 
 ```js
 assert.strictEqual(divisorSquareSum(), 1922364685);

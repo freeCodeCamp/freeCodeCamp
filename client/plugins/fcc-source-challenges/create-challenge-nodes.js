@@ -40,11 +40,13 @@ function createChallengeNode(
   if (internal.type === 'ChallengeNode') {
     const { tests = [], block, dashedName, superBlock } = challenge;
     const slug = `/learn/${superBlock}/${block}/${dashedName}`;
+    const blockHashSlug = `/learn/${superBlock}/#${block}`;
 
     challenge.fields = {
       slug,
       blockName: block,
-      tests
+      tests,
+      blockHashSlug
     };
   }
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
-title: 'Problem 113: Non-bouncy numbers'
+title: 'Problema 113: Números não saltitantes'
 challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers
@@ -8,19 +8,19 @@ dashedName: problem-113-non-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Trabalhando da esquerda para a direita, se nenhum algarismo for excedido pelo algarismo à sua esquerda, é chamado de número crescente. Por exemplo, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Da mesma forma, se nenhum algarismo for excedido pelo algarismo à sua direita, é chamado de número decrescente. Por exemplo, 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+Chamaremos um número inteiro positivo que não aumenta nem diminui um número "saltitante"; por exemplo, 155349.
 
-As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
+À medida que n aumenta, a proporção de números saltitantes abaixo de n aumenta de tal forma que há apenas 12951 números abaixo de um milhão que não são saltitantes e apenas 277032 números não saltitantes abaixo de ${10}^{10}$.
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+Quantos números abaixo de um googol (${10}^{100}$) não são saltitantes?
 
 # --hints--
 
-`nonBouncyNumbers()` should return `51161058134250`.
+`nonBouncyNumbers()` deve retornar `51161058134250`.
 
 ```js
 assert.strictEqual(nonBouncyNumbers(), 51161058134250);

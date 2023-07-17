@@ -43,8 +43,6 @@ export const setShowPreviewPane = createAction(actionTypes.setShowPreviewPane);
 
 export const logsToConsole = createAction(actionTypes.logsToConsole);
 
-export const lockCode = createAction(actionTypes.lockCode);
-export const unlockCode = createAction(actionTypes.unlockCode);
 export const disableBuildOnError = createAction(
   actionTypes.disableBuildOnError
 );
@@ -52,6 +50,9 @@ export const storedCodeFound = createAction(actionTypes.storedCodeFound);
 export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
 export const saveEditorContent = createAction(actionTypes.saveEditorContent);
 export const setIsAdvancing = createAction(actionTypes.setIsAdvancing);
+export const setChapterSlug = createAction(actionTypes.setChapterSlug);
+export const setExamResults = createAction(actionTypes.setExamResults);
+
 export const closeModal = createAction(actionTypes.closeModal);
 export const openModal = createAction(actionTypes.openModal);
 

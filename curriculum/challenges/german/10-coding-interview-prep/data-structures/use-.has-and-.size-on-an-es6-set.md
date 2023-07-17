@@ -34,7 +34,7 @@ In this exercise we will pass an array and a value to the checkSet() function. Y
 
 # --hints--
 
-`checkSet([4, 5, 6], 3)` should return [ false, 3 ]
+`checkSet([4, 5, 6], 3)` sollte [ false, 3 ] zurückgeben
 
 ```js
 assert(

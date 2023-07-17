@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff15
 title: >-
-  Problem 150: Searching a triangular array for a sub-triangle having minimum-sum
+  Problema 150: ricerca di una matrice triangolare per un sotto-triangolo con somma minima
 challengeType: 1
 forumTopicId: 301781
 dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum
@@ -9,13 +9,13 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 # --description--
 
-In a triangular array of positive and negative integers, we wish to find a sub-triangle such that the sum of the numbers it contains is the smallest possible.
+In una serie triangolare di numeri interi positivi e negativi, desideriamo trovare un sotto-triangolo in modo che la somma dei numeri che contiene sia la più piccola possibile.
 
-In the example below, it can be easily verified that the marked triangle satisfies this condition having a sum of −42.
+Nell'esempio sottostante si può facilmente verificare che il triangolo marcato soddisfa questa condizione con una somma di −42.
 
-<img class="img-responsive center-block" alt="triangular array, with marked sub-triangle, having sum of -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="array triangolare, con sotto-triangolo marcato, avente una somma di -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
 
-We wish to make such a triangular array with one thousand rows, so we generate 500500 pseudo-random numbers $s_k$ in the range $±2^{19}$, using a type of random number generator (known as a Linear Congruential Generator) as follows:
+Vogliamo creare una tale matrice triangolare con mille righe, in modo da generare 500500 numeri pseudo-casuali $s_k$ nel range $±2^{19}$, utilizzando un tipo di generatore di numeri casuali (noto come generatore di elementi costitutivi lineari) come segue:
 
 $$\begin{align}   t := & \\ 0\\\\
   \text{for}\\ & k = 1\\ \text{up to}\\ k = 500500:\\\\   & t := (615949 × t + 797807)\\ \text{modulo}\\ 2^{20}\\\\
@@ -23,21 +23,21 @@ $$\begin{align}   t := & \\ 0\\\\
 
 Thus: $s_1 = 273519$, $s_2 = −153582$, $s_3 = 450905$ etc.
 
-Our triangular array is then formed using the pseudo-random numbers thus:
+La nostra matrice triangolare è poi formata utilizzando i numeri pseudo-casuali in questo modo:
 
 $$ s_1 \\\\
 s_2\\;s_3 \\\\ s_4\\; s_5\\; s_6 \\\\
 s_7\\; s_8\\; s_9\\; s_{10} \\\\ \ldots $$
 
-Sub-triangles can start at any element of the array and extend down as far as we like (taking-in the two elements directly below it from the next row, the three elements directly below from the row after that, and so on).
+I sotto-triangoli possono iniziare da qualsiasi elemento dell'array ed estendersi quanto vogliamo (prendendo i due elementi direttamente sotto di esso dalla riga successiva, i tre elementi direttamente al di sotto dalla riga successiva, e così via).
 
-The "sum of a sub-triangle" is defined as the sum of all the elements it contains.
+La "somma di un sotto-triangolo" è definita come la somma di tutti gli elementi che contiene.
 
-Find the smallest possible sub-triangle sum.
+Trova la somma subtriangolare più piccola possibile.
 
 # --hints--
 
-`smallestSubTriangleSum()` should return `-271248680`.
+`smallestSubTriangleSum()` dovrebbe restituire `-271248680`.
 
 ```js
 assert.strictEqual(smallestSubTriangleSum(), -271248680);

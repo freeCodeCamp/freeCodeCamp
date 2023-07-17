@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
-title: 'Problem 455: Powers With Trailing Digits'
+title: 'Problema 455: Potências com algarismos à direita'
 challengeType: 1
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
@@ -8,19 +8,19 @@ dashedName: problem-455-powers-with-trailing-digits
 
 # --description--
 
-Let $f(n)$ be the largest positive integer $x$ less than ${10}^9$ such that the last 9 digits of $n^x$ form the number $x$ (including leading zeros), or zero if no such integer exists.
+Considere $f(n)$ como o maior número inteiro positivo $x$ inferior a ${10}^9$, tal que os últimos 9 algarismos de $n^x$ formam o número $x$ (incluindo zeros à esquerda) ou zero, se nenhum número inteiro desse tipo existir.
 
-For example:
+Por exemplo:
 
-$$\begin{align}   & f(4) = 411\\,728\\,896 (4^{411\\,728\\,896} = ...490\underline{411728896}) \\\\
-  & f(10) = 0 \\\\   & f(157) = 743\\,757 (157^{743\\,757} = ...567\underline{000743757}) \\\\
-  & Σf(n), 2 ≤ n ≤ 103 = 442\\,530\\,011\\,399 \end{align}$$
+$$\begin{align}   & f(4) = 411.728.896 (4^{411.728.896} = ...490\underline{411728896}) \\\\
+  & f(10) = 0 \\\\   & f(157) = 743.757 (157^{743.757} = ...567\underline{000743757}) \\\\
+  & Σf(n), 2 ≤ n ≤ 103 = 442.530.011.399 \end{align}$$
 
-Find $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
+Encontre $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 
 # --hints--
 
-`powersWithTrailingDigits()` should return `450186511399999`.
+`powersWithTrailingDigits()` deve retornar `450186511399999`.
 
 ```js
 assert.strictEqual(powersWithTrailingDigits(), 450186511399999);

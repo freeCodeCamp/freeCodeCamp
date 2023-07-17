@@ -14,7 +14,7 @@ describe('<FormGroup>', () => {
     );
 
     const element = screen.getByTestId('test-id');
-    expect(element.childElementCount).toBe(sameNumberOfChildren);
+    expect(element.childNodes.length).toBe(sameNumberOfChildren);
 
     const formGroupChildren = screen.getAllByTitle('Child');
     expect(formGroupChildren.length).toBe(sameNumberOfChildren);

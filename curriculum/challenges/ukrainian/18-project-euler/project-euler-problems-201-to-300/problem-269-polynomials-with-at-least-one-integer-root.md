@@ -22,9 +22,9 @@ We can see that:
 
 Define $Z(k)$ as the number of positive integers, $n$, not exceeding $k$ for which the polynomial $P_n$ has at least one integer root.
 
-It can be verified that $Z(100\\,000)$ is 14696.
+Можна довести, що $Z(100\\,000)$ дорівнює 14696.
 
-What is $Z({10}^{16})$?
+Чому дорівнює $Z({10}^{16})$?
 
 # --hints--
 

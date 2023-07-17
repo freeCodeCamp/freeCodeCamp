@@ -27,7 +27,7 @@ describe('Backend challenge', function () {
       .type('https://example.com')
       .type('{enter}')
       .then(() => {
-        cy.get(selectors.class.outputText)
+        cy.get(selectors.dataCy.outputText)
           .contains(runningOutput)
           .contains(finishedOutput);
         cy.contains(unhandledErrorMessage).should('not.exist');
