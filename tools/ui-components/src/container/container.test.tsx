@@ -6,7 +6,7 @@ import { Container } from '.';
 describe('<Container />', () => {
   it('remove width when the container is fluid', () => {
     render(
-      <Container fluid={true}>Random text to test the element width</Container>
+      <Container fluid={true}>Learn to code for free.</Container>
     );
     expect(
       screen.getByText('Random text to test the element width')
@@ -15,7 +15,7 @@ describe('<Container />', () => {
   it('should add className to it', () => {
     render(
       <Container className='certificate-outer-wrapper'>
-        Random text to test the element width
+        Learn to code for free.
       </Container>
     );
     expect(
