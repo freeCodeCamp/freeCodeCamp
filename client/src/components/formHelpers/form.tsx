@@ -8,7 +8,8 @@ import {
   editorValidator,
   composeValidators,
   fCCValidator,
-  httpValidator
+  httpValidator,
+  microsoftValidator
 } from './form-validators';
 import FormFields, { FormOptions } from './form-fields';
 
@@ -35,7 +36,12 @@ function validateFormValues(
   formValues: FormValues,
   options: FormOptions
 ): ValidatedValues {
-  const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
+  const {
+    isEditorLinkAllowed,
+    isLocalLinkAllowed,
+    isMicrosoftLearnLink,
+    types
+  } = options;
   const validatedValues: ValidatedValues = {
     values: {},
     errors: [],
@@ -52,6 +58,9 @@ function validateFormValues(
       }
       if (!isLocalLinkAllowed) {
         validators.push(localhostValidator);
+      }
+      if (isMicrosoftLearnLink) {
+        validators.push(microsoftValidator);
       }
 
       const nullOrWarning = composeValidators(...validators)(value);
