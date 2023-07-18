@@ -116,5 +116,15 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual({ msg: 'Successfully submitted challenge' });
+
+    const user = await fastifyTestInstance.prisma.user.findFirst({
+      where: { email: 'foo@bar.com' }
+    });
+
+    const challengeCompleted = user?.completedChallenges.some(challenge => {
+      return challenge.id === '5ea8adfab628f68d805bfc5e';
+    });
+
+    expect(challengeCompleted).toBe(true);
   });
 });
