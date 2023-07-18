@@ -437,6 +437,17 @@ describe('challengeRoutes', () => {
         setCookies = res.get('Set-Cookie');
       });
 
+      describe('/coderoad-challenge-completed', () => {
+        test('POST returns 401 status code with error message', async () => {
+          const response = await superRequest('/coderoad-challenge-completed', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response?.statusCode).toBe(401);
+        });
+      });
+
       describe('/project-completed', () => {
         test('POST returns 401 status code with error message', async () => {
           const response = await superRequest('/project-completed', {
