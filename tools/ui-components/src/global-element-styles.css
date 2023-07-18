@@ -306,6 +306,7 @@ pre code {
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
+  border: none;
   border-radius: 0;
 }
 fieldset {

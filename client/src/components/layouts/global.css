@@ -457,7 +457,6 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
-  border: 1px solid var(--secondary-color);
   padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
@@ -567,7 +566,6 @@ pre[class*='language-'] {
 pre {
   color: inherit;
   background-color: inherit;
-  border: none;
   border-radius: 0;
 }
 
