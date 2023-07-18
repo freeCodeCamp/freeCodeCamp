@@ -368,14 +368,16 @@ export const schemas = {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
       challengeType: Type.Number(),
-      files: Type.Array(
-        Type.Object({
-          contents: Type.String(),
-          key: Type.String(),
-          ext: Type.String(),
-          name: Type.String(),
-          history: Type.Array(Type.String())
-        })
+      files: Type.Optional(
+        Type.Array(
+          Type.Object({
+            contents: Type.String(),
+            key: Type.String(),
+            ext: Type.String(),
+            name: Type.String(),
+            history: Type.Array(Type.String())
+          })
+        )
       )
     }),
     response: {
