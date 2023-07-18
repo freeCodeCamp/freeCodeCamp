@@ -27,10 +27,24 @@ const partialCompletion = { id: id1, completedDate: 1 };
 
 // /modern-challenge-completed
 const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2'; // HTML - 0
+const JsProjectId = '56533eb9ac21ba0edf2244e2';
 
 const HtmlChallengeBody = {
   challengeType: 0,
   id: HtmlChallengeId
+};
+const JsProjectBody = {
+  challengeType: 5,
+  id: JsProjectId,
+  files: [
+    {
+      contents: 'console.log("Hello There!")',
+      key: 'scriptjs',
+      ext: 'js',
+      name: 'script',
+      history: ['script.js']
+    }
+  ]
 };
 
 describe('challengeRoutes', () => {
@@ -331,7 +345,6 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
-        // test js(1), jsProject(5), modern(6), video(11), multifileCertProject(14) and theOdinProject(15) challenges
         describe('POST accepts the following challenges', () => {
           afterEach(async () => {
             await fastifyTestInstance.prisma.user.updateMany({
@@ -344,6 +357,7 @@ describe('challengeRoutes', () => {
             });
           });
 
+          // HTML(0), JS(1), Modern(6), Video(11), The Odin Project(15)
           test('HTML Challenge - 0', async () => {
             const now = Date.now();
 
@@ -360,6 +374,46 @@ describe('challengeRoutes', () => {
               completedChallenges: [
                 {
                   id: HtmlChallengeId,
+                  completedDate: expect.any(Number)
+                }
+              ]
+            });
+
+            const completedDate = user?.completedChallenges[0]?.completedDate;
+            expect(completedDate).toBeGreaterThanOrEqual(now);
+            expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+            expect(response.statusCode).toBe(200);
+            expect(response.body).toStrictEqual({
+              alreadyCompleted: false,
+              points: 1,
+              completedDate,
+              savedChallenges: []
+            });
+          });
+
+          // JS Project(5), Multi-file Cert Project(14)
+          test('JS Project - 5', async () => {
+            const now = Date.now();
+
+            const response = await superRequest('/modern-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send(JsProjectBody);
+
+            const user = await fastifyTestInstance.prisma.user.findFirst({
+              where: { email: 'foo@bar.com' }
+            });
+
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            const { history: _history, ...files } = JsProjectBody.files[0]!;
+
+            expect(user).toMatchObject({
+              completedChallenges: [
+                {
+                  id: JsProjectId,
+                  challengeType: JsProjectBody.challengeType,
+                  files: [files],
                   completedDate: expect.any(Number)
                 }
               ]
