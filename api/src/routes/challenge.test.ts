@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { setupServer, superRequest } from '../../jest.utils';
 
-describe('POST /challenge/coderoad-challenge-completed', () => {
+describe('POST /coderoad-challenge-completed', () => {
   let setCookies: string[];
 
   setupServer();
@@ -24,11 +24,9 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
     const response = await superRequest('/coderoad-challenge-completed', {
       method: 'POST',
       setCookies
-    })
-      .set('Accept', 'application/json')
-      .send({
-        tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
-      });
+    }).send({
+      tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+    });
     expect(response.status).toBe(400);
     expect(response.body).toEqual({
       msg: `'coderoad-user-token' not found in request headers`
@@ -40,13 +38,12 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
       method: 'POST',
       setCookies
     })
-      .set('Accept', 'application/json')
       .set('coderoad-user-token', 'invalid')
       .send({
         tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
       });
     expect(response.status).toBe(400);
-    expect(response.body).toEqual({ msg: `invalid user token` });
+    expect(response.body).toEqual({ msg: 'invalid user token' });
   });
 
   test('should return 400 if invalid tutorialId', async () => {
@@ -63,13 +60,12 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
       method: 'POST',
       setCookies
     })
-      .set('Accept', 'application/json')
       .set('coderoad-user-token', token)
       .send({ tutorialId: 'invalid' });
 
     expect(response.status).toBe(400);
     expect(response.body).toEqual({
-      msg: `Tutorial not hosted on freeCodeCamp GitHub account`
+      msg: 'Tutorial not hosted on freeCodeCamp GitHub account'
     });
   });
 
@@ -87,15 +83,14 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
       method: 'POST',
       setCookies
     })
-      .set('Accept', 'application/json')
       .set('coderoad-user-token', token)
       .send({ tutorialId: 'freeCodeCamp/invalid:V1.0.0' });
 
     expect(response.status).toBe(400);
-    expect(response.body).toEqual({ msg: `Tutorial name is not valid` });
+    expect(response.body).toEqual({ msg: 'Tutorial name is not valid' });
   });
 
-  test('should return 200 if valid tutorialId', async () => {
+  test('should return 200 if tutorialId, userToken are present', async () => {
     const tokenResponse = await superRequest('/user/user-token', {
       method: 'POST',
       setCookies
