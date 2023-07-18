@@ -19,7 +19,7 @@ type File {
 }
 
 type CompletedChallenge {
-  challengeType      Int? // Null | Undefined
+  challengeType      Int?     @db.Int // Null | Undefined
   completedDate      Float // TODO(Post-MVP): Change to DateTime
   files              File[]
   githubLink         String? // Undefined
@@ -156,7 +156,7 @@ model AuthToken {
 
 model Donation {
   id             String            @id @default(auto()) @map("_id") @db.ObjectId
-  amount         Int
+  amount         Int               @db.Int
   customerId     String
   duration       String?
   email          String

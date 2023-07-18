@@ -9,8 +9,10 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.js',
     './src/**/*.ts',
-    './src/**/*.tsx'
+    './src/**/*.tsx',
+    '!./src/**/*.test.tsx'
   ],
+  blocklist: ['container'],
   darkMode: 'class',
   theme: {
     colors: {
