@@ -1,7 +1,4 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
 import { jwtSecret } from '../../../config/secrets';
@@ -35,21 +32,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/coderoad-challenge-completed',
     {
-      schema: {
-        body: Type.Object({
-          tutorialId: Type.String()
-        }),
-        response: {
-          200: Type.Object({ msg: Type.String() }),
-          400: Type.Object({
-            msg: Type.String()
-          }),
-          500: Type.Object({
-            message: Type.Literal('Something went wrong.'),
-            type: Type.Literal('danger')
-          })
-        }
-      },
+      schema: schemas.coderoadChallengeCompleted,
       attachValidation: true
     },
     async (req, reply) => {
@@ -60,12 +43,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       if (!tutorialId) {
         void reply.code(400);
-        return { msg: `'tutorialId' not found in request body` };
+        return {
+          type: 'error',
+          msg: `'tutorialId' not found in request body`
+        } as const;
       }
 
       if (!encodedUserToken) {
         void reply.code(400);
-        return { msg: `'coderoad-user-token' not found in request headers` };
+        return {
+          type: 'error',
+          msg: `'coderoad-user-token' not found in request headers`
+        } as const;
       }
 
       try {
@@ -75,7 +64,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       } catch {
         void reply.code(400);
-        return { msg: `invalid user token` };
+        return { type: 'error', msg: `invalid user token` } as const;
       }
 
       const tutorialRepo = tutorialId?.split(':')[0];
@@ -83,7 +72,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       if (tutorialOrg !== 'freeCodeCamp') {
         void reply.code(400);
-        return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
+        return {
+          type: 'error',
+          msg: `Tutorial not hosted on freeCodeCamp GitHub account`
+        } as const;
       }
 
       const codeRoadChallenges = challenges.filter(
@@ -96,7 +88,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       if (!challenge) {
         void reply.code(400);
-        return { msg: 'Tutorial name is not valid' };
+        return { type: 'error', msg: 'Tutorial name is not valid' } as const;
       }
 
       const { id: challengeId, challengeType } = challenge;
@@ -105,7 +97,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userToken }
         });
 
-        if (!tokenInfo) return { msg: 'User token not found' };
+        if (!tokenInfo)
+          return { type: 'error', msg: 'User token not found' } as const;
 
         const { userId } = tokenInfo;
 
@@ -113,7 +106,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userId }
         });
 
-        if (!user) return { msg: 'User for user token not found' };
+        if (!user)
+          return {
+            type: 'error',
+            msg: 'User for user token not found'
+          } as const;
 
         const completedDate = Date.now();
         const { completedChallenges = [], partiallyCompletedChallenges = [] } =
@@ -150,9 +147,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
       } catch {
-        return { msg: 'An error occurred trying to submit the challenge' };
+        void reply.code(400);
+        return {
+          type: 'error',
+          msg: 'An error occurred trying to submit the challenge'
+        } as const;
       }
-      return { msg: 'Successfully submitted challenge' };
+      return {
+        type: 'success',
+        msg: 'Successfully submitted challenge'
+      } as const;
     }
   );
 

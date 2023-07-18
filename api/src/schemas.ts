@@ -363,5 +363,24 @@ export const schemas = {
         type: Type.Literal('danger')
       })
     }
+  },
+  coderoadChallengeCompleted: {
+    body: Type.Object({
+      tutorialId: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('success'),
+        msg: Type.String()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        msg: Type.String()
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        msg: Type.String()
+      })
+    }
   }
 };
