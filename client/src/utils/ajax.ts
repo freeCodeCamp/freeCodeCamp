@@ -298,6 +298,44 @@ export function postSaveChallenge(body: {
   return post('/save-challenge', body);
 }
 
+interface UserExamAnswer {
+  id: string | null;
+  answer: string | null;
+}
+
+interface UserExamQuestion {
+  id: string;
+  question: string;
+  answer: UserExamAnswer;
+}
+
+interface UserExam {
+  examTimeInSeconds: number;
+  userExamQuestions: UserExamQuestion[];
+}
+
+interface ExamResults {
+  percentCorrect: number;
+  time: number;
+}
+
+export interface EvaluateExamResponse {
+  examResults?: ExamResults;
+  error?: string;
+}
+
+export function postEvaluteExam(body: {
+  userExam: UserExam;
+  challengeId: string;
+}): Promise<ResponseWithData<EvaluateExamResponse>> {
+  // we will need to update completed challenges as well
+  console.log('posting exam...');
+  const responseWithData = post<EvaluateExamResponse>(`/evaluate-exam`, body);
+  return responseWithData.then(({ response, data }) => {
+    return { response, data };
+  });
+}
+
 /** PUT **/
 
 interface MyAbout {

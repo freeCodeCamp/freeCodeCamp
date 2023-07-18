@@ -112,3 +112,34 @@ export const validateGeneratedExamSchema = (exam, numberOfQuestionsInExam) => {
 
   return generatedExamSchema.validate(exam);
 };
+
+// User Completed Exam Schema
+const UserCompletedQuestionJoi = Joi.object().keys({
+  id: Joi.string().regex(nanoIdRE).required(),
+  question: Joi.string().required(),
+  answer: Joi.object().keys({
+    id: Joi.string().regex(nanoIdRE).required(),
+    answer: Joi.string().required()
+  })
+});
+
+const userCompletedExamSchema = Joi.object().keys({
+  userExamQuestions: Joi.array()
+    .items(UserCompletedQuestionJoi)
+    .min(1)
+    .required(),
+  examTimeInSeconds: Joi.number().min(0)
+});
+
+export const validateUserCompletedExamSchema = (
+  exam,
+  numberOfQuestionsInExam
+) => {
+  if (!exam.length === numberOfQuestionsInExam) {
+    throw new Error(
+      'The number of exam questions answered does not match the number of questions required.'
+    );
+  }
+
+  return userCompletedExamSchema.validate(exam);
+};

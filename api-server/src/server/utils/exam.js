@@ -22,6 +22,7 @@ function getRandomIndex(arr) {
   return Math.random() * (arr.length - 1);
 }
 
+// Used to generate a random exam
 export function randomizeExam(examJson) {
   const { numberOfQuestionsInExam, questions } = examJson;
   const numberOfAnswersPerQuestion = 5;
@@ -63,4 +64,46 @@ export function randomizeExam(examJson) {
   }
 
   return shuffleArray(randomizedExam);
+}
+
+// Used to evaluate user completed exams
+export function createExamResults(userExam, originalExam) {
+  let correctAnswers = 0;
+  const { userExamQuestions, examTimeInSeconds } = userExam;
+  const {
+    questions: originalQuestions,
+    numberOfQuestionsInExam,
+    passingPercent
+  } = originalExam;
+
+  userExamQuestions.forEach(userQuestion => {
+    const originalQuestion = originalQuestions.find(
+      examQuestion => examQuestion.id === userQuestion.id
+    );
+
+    if (!originalQuestion) {
+      throw new Error('An error occurred. Could not find exam question.');
+    }
+
+    const isCorrect = originalQuestion.correctAnswers.find(
+      examAnswer => examAnswer.id === userQuestion.answer.id
+    );
+
+    if (isCorrect) {
+      correctAnswers++;
+    }
+  });
+
+  const percent = (correctAnswers / numberOfQuestionsInExam) * 100;
+  const percentCorrect = Math.round(percent * 10) / 10;
+  const passed = percentCorrect >= passingPercent;
+
+  return {
+    correctAnswers,
+    numberOfQuestionsInExam,
+    percentCorrect,
+    passingPercent,
+    passed,
+    examTimeInSeconds
+  };
 }
