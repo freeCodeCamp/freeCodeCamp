@@ -1,5 +1,12 @@
 import { Type } from '@fastify/type-provider-typebox';
 
+const generic500 = Type.Object({
+  message: Type.Literal(
+    'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+  ),
+  type: Type.Literal('danger')
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -165,23 +172,13 @@ export const schemas = {
   deleteMyAccount: {
     response: {
       200: Type.Object({}),
-      500: Type.Object({
-        message: Type.Literal(
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        ),
-        type: Type.Literal('danger')
-      })
+      500: generic500
     }
   },
   resetMyProgress: {
     response: {
       200: Type.Object({}),
-      500: Type.Object({
-        message: Type.Literal(
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        ),
-        type: Type.Literal('danger')
-      })
+      500: generic500
     }
   },
   getSessionUser: {
@@ -322,6 +319,48 @@ export const schemas = {
             'Please reload the app, this feature is no longer available.'
           )
         })
+      })
+    }
+  },
+  // Challenges:
+  projectCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+      challengeType: Type.Optional(Type.Number()),
+      solution: Type.String({ format: 'url', maxLength: 1024 }),
+      // TODO(Post-MVP): require format: 'url' for githubLink
+      githubLink: Type.Optional(Type.String())
+    }),
+    response: {
+      200: Type.Object({
+        // TODO(Post-MVP): delete completedDate and alreadyCompleted? As far as
+        // I can tell, they are not used anywhere
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Union([
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          ),
+          Type.Literal(
+            'You have not provided the valid links for us to inspect your work.'
+          )
+        ])
+      }),
+      403: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal(
+          'You have to complete the project before you can submit a URL.'
+        )
+      }),
+      500: Type.Object({
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        ),
+        type: Type.Literal('danger')
       })
     }
   }

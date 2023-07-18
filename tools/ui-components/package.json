@@ -33,8 +33,8 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/core": "7.22.8",
-    "@babel/preset-env": "7.22.7",
+    "@babel/core": "7.22.9",
+    "@babel/preset-env": "7.22.9",
     "@babel/preset-typescript": "7.22.5",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
@@ -51,7 +51,7 @@
     "@storybook/react": "6.5.16",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
-    "@types/jest": "29.5.2",
+    "@types/jest": "29.5.3",
     "@types/react": "16.14.43",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
@@ -60,12 +60,12 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "npm-run-all": "4.1.5",
-    "postcss": "8.4.25",
+    "postcss": "8.4.26",
     "postcss-import": "14.1.0",
     "rollup": "2.79.1",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-terser": "7.0.2",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.3"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

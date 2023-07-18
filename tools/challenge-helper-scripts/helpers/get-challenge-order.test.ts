@@ -26,7 +26,7 @@ describe('getChallengeOrderFromMeta helper', () => {
             'mock-project': {
               'meta.json': `{
           "id": "mock-id",
-          "challengeOrder": [["1","This title is wrong"], ["2","I Dunno"], ["100","What a Cool Thing"]]}
+          "challengeOrder": [{"id": "1", "title": "This title is wrong"}, {"id": "2", "title": "I Dunno"}, {"id": "100", "title": "What a Cool Thing"}]}
           `
             }
           }
@@ -46,9 +46,9 @@ describe('getChallengeOrderFromMeta helper', () => {
     );
     const challengeOrder = getChallengeOrderFromMeta();
     expect(challengeOrder).toEqual([
-      ['1', 'This title is wrong'],
-      ['2', 'I Dunno'],
-      ['100', 'What a Cool Thing']
+      { id: '1', title: 'This title is wrong' },
+      { id: '2', title: 'I Dunno' },
+      { id: '100', title: 'What a Cool Thing' }
     ]);
   });
 
@@ -66,9 +66,12 @@ describe('getChallengeOrderFromFileTree helper', () => {
           english: {
             superblock: {
               'mock-project': {
-                'step-001.md': '---\nid: 1\ntitle: Step 1\n---',
-                'step-002.md': '---\nid: 100\ntitle: Step 2\n---',
-                'step-003.md': '---\nid: 2\ntitle: Step 3\n---'
+                'step-001.md':
+                  '---\nid: a8d97bd4c764e91f9d2bda01\ntitle: Step 1\n---',
+                'step-002.md':
+                  '---\nid: a6b0bb188d873cb2c8729495\ntitle: Step 2\n---',
+                'step-003.md':
+                  '---\nid: a5de63ebea8dbee56860f4f2\ntitle: Step 3\n---'
               }
             }
           },
@@ -76,7 +79,7 @@ describe('getChallengeOrderFromFileTree helper', () => {
             'mock-project': {
               'meta.json': `{
           "id": "mock-id",
-          "challengeOrder": [["1","step1"], ["100","step2"], ["2","step3"]]}
+          "challengeOrder": [{"id": "a8d97bd4c764e91f9d2bda01", "title": "Step 1"}, {"id": "a6b0bb188d873cb2c8729495", "title": "Step 3"}, {"id": "a5de63ebea8dbee56860f4f2", "title": "Step 2"}]}
           `
             }
           }
@@ -97,9 +100,9 @@ describe('getChallengeOrderFromFileTree helper', () => {
     );
     const challengeOrder = await getChallengeOrderFromFileTree();
     expect(challengeOrder).toEqual([
-      [1, 'Step 1'],
-      [100, 'Step 2'],
-      [2, 'Step 3']
+      { id: 'a8d97bd4c764e91f9d2bda01', title: 'Step 1' },
+      { id: 'a6b0bb188d873cb2c8729495', title: 'Step 2' },
+      { id: 'a5de63ebea8dbee56860f4f2', title: 'Step 3' }
     ]);
   });
 

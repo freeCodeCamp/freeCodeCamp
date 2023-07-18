@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "602da0de22201c65d2a019f6",
-      "Build a Kitty Ipsum Translator"
-    ]
+    {
+      "id": "602da0de22201c65d2a019f6",
+      "title": "Build a Kitty Ipsum Translator"
+    }
   ]
 }

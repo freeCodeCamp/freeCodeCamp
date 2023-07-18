@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5f2c289f164c29556da632fd",
-      "Build a Mario Database"
-    ]
+    {
+      "id": "5f2c289f164c29556da632fd",
+      "title": "Build a Mario Database"
+    }
   ]
 }

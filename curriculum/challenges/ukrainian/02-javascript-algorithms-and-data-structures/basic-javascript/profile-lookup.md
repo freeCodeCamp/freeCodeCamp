@@ -9,11 +9,11 @@ dashedName: profile-lookup
 
 # --description--
 
-У нас є масив об'єктів, які представляють різних людей зі списку контактів.
+У нас є масив об’єктів, які представляють різних людей зі списку контактів.
 
 Функція `lookUpProfile`, яка приймає `name` та властивість (`prop`) як аргументи, вже записана для вас.
 
-Функція повинна перевірити, чи `name` дійсно є ім’ям (`firstName`) контакту і надана властивість (`prop`) є властивістю цього контакту.
+The function should check if `name` is an actual contact's `firstName` and the given property (`prop`) is a property of that contact.
 
 Якщо обидва є істинними, то поверніть значення цієї власності.
 

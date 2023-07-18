@@ -5,22 +5,18 @@ import { Container } from '.';
 
 describe('<Container />', () => {
   it('remove width when the container is fluid', () => {
-    render(
-      <Container fluid={true}>Random text to test the element width</Container>
+    render(<Container fluid={true}>Learn to code for free.</Container>);
+    expect(screen.getByText('Learn to code for free.')).toHaveClass(
+      'mx-auto px-[15px] '
     );
-    expect(
-      screen.getByText('Random text to test the element width')
-    ).toHaveClass('mx-auto px-[15px] ');
   });
   it('should add className to it', () => {
     render(
       <Container className='certificate-outer-wrapper'>
-        Random text to test the element width
+        Learn to code for free.
       </Container>
     );
-    expect(
-      screen.getByText('Random text to test the element width')
-    ).toHaveClass(
+    expect(screen.getByText('Learn to code for free.')).toHaveClass(
       'mx-auto px-[15px] my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px] certificate-outer-wrapper'
     );
   });

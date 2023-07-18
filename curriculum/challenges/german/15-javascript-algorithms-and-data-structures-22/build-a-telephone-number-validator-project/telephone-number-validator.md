@@ -48,7 +48,7 @@ assert(telephoneCheck('5555555555') === true);
 assert(telephoneCheck('555-555-5555') === true);
 ```
 
-`telephoneCheck("(555)555-5555")` should return `true`.
+`telephoneCheck("(555)555-5555")` sollte `true` zurückgeben.
 
 ```js
 assert(telephoneCheck('(555)555-5555') === true);

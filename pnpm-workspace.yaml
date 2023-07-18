@@ -12,4 +12,5 @@ packages:
   - 'tools/crowdin'
   - 'tools/scripts/build'
   - 'tools/scripts/seed'
+  - 'tools/scripts/seed-exams'
   - 'tools/ui-components'

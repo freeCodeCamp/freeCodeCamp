@@ -484,15 +484,17 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
 2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g titulo-do-desafio-aqui
+   ```
 
-> [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
-> 
-> Os valores atualmente aceitos são `english` e `chinese`, com `english` sendo o padrão.
+> [!TIP]
+> Você pode definir a váriavel de ambiente `LOCALE` no arquivo `.env` para o idioma do(s) desafio(s) que você precisa testar.
+>
+> Os valores aceitos de momento são `english` e `chinese`, com `english` sendo o valor padrão.
 
 ## Propondo um Pull Request (PR)
 
-Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
+Depois de fazer o commit de suas alterações, confira aqui [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
 ## Links úteis
 
@@ -500,4 +502,70 @@ Criação e edição de desafios:
 
 1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
-2. [Contribuindo para o FreeCodeCamp - Escrevendo testes de desafio ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo com [Ethan Arrowood](https://twitter.com/ArrowoodTech) contribuindo para a versão antiga do currículo.
+2. [Contribuindo para o FreeCodeCamp - Escrevendo testes para desafios de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo que acompanha [Ethan Arrowood](https://twitter.com/ArrowoodTech) durante sua contribuição para a versão antiga do currículo.
+
+## Scripts auxiliares
+
+> [!NOTE]
+> Se estiver trabalhando com os desafios baseados em passos, consulte a seção [Trabalho com projetos práticos](how-to-work-on-practice-projects.md).
+
+Existem alguns scripts auxiliares que podem ser usados para gerenciar os desafios em um bloco. Observe que todos esses comandos devem ser executados no diretório do bloco. Por exemplo:
+
+```bash
+cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
+```
+
+### Adicionar um novo desafio
+
+Para adicionar um novo desafio no final de um bloco, chame o script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+Ele solicitará a informação do desafio e criará o arquivo de desafio, atualizando o arquivo `meta.json` com as novas informações de desafio.
+
+### Excluir um desafio
+
+Para excluir um desafio, chame o script:
+
+```bash
+pnpm run delete-challenge
+```
+
+Ele solicitará que você selecione qual desafio deve ser excluído. Em seguida, excluirá o arquivo e atualizará o arquivo `meta.json` para remover o desafio da ordem.
+
+### Inserir um desafio
+
+Para inserir um desafio antes de um desafio existente, chame o script:
+
+```bash
+pnpm run insert-challenge
+```
+
+Ele solicitará a informação do desafio e, em seguida, o desafio será inserido antes do desafio informado. Por exemplo, se suas escolhas forem:
+
+```bash
+a
+b
+c
+```
+
+E se você escolher `b`, a nova ordem será:
+
+```bash
+a
+novo desafio
+b
+c
+```
+
+### Atualizar a ordem dos desafios
+
+Se você precisar reordenar manualmente os desafios, chame o script:
+
+```bash
+pnpm run update-challenge-order
+```
+
+Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.

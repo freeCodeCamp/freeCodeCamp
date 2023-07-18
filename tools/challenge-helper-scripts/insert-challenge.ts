@@ -18,13 +18,13 @@ const insertChallenge = async () => {
     name: 'id',
     message: 'Which challenge should come AFTER this new one?',
     type: 'list',
-    choices: challenges.map(([id, title]) => ({
+    choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
   });
   const indexToInsert = challenges.findIndex(
-    ([id]) => id === challengeAfter.id
+    ({ id }) => id === challengeAfter.id
   );
 
   const templateGenerator = challengeTypeToTemplate[options.challengeType];
@@ -36,10 +36,10 @@ const insertChallenge = async () => {
   createChallengeFile(options.dashedName, template, path);
 
   const meta = getMetaData();
-  meta.challengeOrder.splice(indexToInsert, 0, [
-    challengeId.toString(),
-    options.title
-  ]);
+  meta.challengeOrder.splice(indexToInsert, 0, {
+    id: challengeId.toString(),
+    title: options.title
+  });
   updateMetaData(meta);
 };
 
