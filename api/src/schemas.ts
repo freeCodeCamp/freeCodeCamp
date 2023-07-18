@@ -383,7 +383,25 @@ export const schemas = {
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
-        savedChallenges: Type.Array(Type.Number()) // Dummy type set in array for now
+        savedChallenges: Type.Array(
+          Type.Object({
+            id: Type.String({
+              format: 'objectid',
+              maxLength: 24,
+              minLength: 24
+            }),
+            lastSavedDate: Type.Number(),
+            files: Type.Array(
+              Type.Object({
+                contents: Type.String(),
+                key: Type.String(),
+                ext: Type.String(),
+                name: Type.String(),
+                history: Type.Array(Type.String())
+              })
+            )
+          })
+        )
       }),
       400: Type.Object({
         type: Type.Literal('error'),

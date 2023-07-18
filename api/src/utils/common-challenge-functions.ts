@@ -23,14 +23,14 @@ type SavedChallengeFile = {
   key: string;
   ext: string; // NOTE: This is Ext type in client
   name: string;
-  history?: string[];
+  history: string[];
   contents: string;
 };
 
 type SavedChallenge = {
   id: string;
   lastSavedDate: number;
-  files?: SavedChallengeFile[];
+  files: SavedChallengeFile[];
 };
 
 // TODO: Confirm this type - read comments below
