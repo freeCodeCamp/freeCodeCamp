@@ -45,13 +45,13 @@ let camper = "David";
 assert.notMatch(code, /var/g);
 ```
 
-`catName` повинна бути рядком `Oliver`.
+`catName` має бути рядком `Oliver`.
 
 ```js
 assert.equal(catName, 'Oliver');
 ```
 
-`catSound` повинна бути рядком `Meow!`
+`catSound` має бути рядком `Meow!`
 
 ```js
 assert.equal(catSound, 'Meow!');

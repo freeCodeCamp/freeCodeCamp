@@ -1,6 +1,6 @@
 ---
 id: 5900f4241000cf542c50ff37
-title: 'Problem 184: Triangles containing the origin'
+title: 'Завдання 184: трикутники, що містять початок координат'
 challengeType: 1
 forumTopicId: 301820
 dashedName: problem-184-triangles-containing-the-origin
@@ -8,15 +8,15 @@ dashedName: problem-184-triangles-containing-the-origin
 
 # --description--
 
-Consider the set $I_r$ of points $(x,y)$ with integer coordinates in the interior of the circle with radius $r$, centered at the origin, i.e. $x^2 + y^2 &lt; r^2$.
+Розглянемо $I_r$ як множину точок $(x,y)$ з цілочисельними координатами, які знаходяться всередині круга з радіусом $r$ з центром в початку координат, тобто $x^2 + y^2 &lt; r^2$.
 
-For a radius of 2, $I_2$ contains the nine points (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) and (1,-1). There are eight triangles having all three vertices in $I_2$ which contain the origin in the interior. Two of them are shown below, the others are obtained from these by rotation.
+Якщо радіус дорівнює 2, то $I_2$ має дев’ять точок: (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) та (1,-1). Існує вісім трикутників, чиї вершини розташовані в $I_2$ та які містять початок координат. Два з них наведено нижче, а решту можна отримати шляхом обертання.
 
-<img class="img-responsive center-block" alt="circle with radius 2, centered at the origin, with nine marked points and two triangles - (-1,0), (0,1), (1,-1) and (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="круг з радіусом 2 з центром в початку координат, з дев’ятьма позначеними точками й двома трикутниками: (-1,0), (0,1), (1,-1) та (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
 
-For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in $I_3$ and for $I_5$ the number is 10600.
+Якщо радіус дорівнює 3, то існує 360 трикутників, які містять початок координат та чиї вершини розташовані в $I_3$, а для $I_5$ це число становить 10600.
 
-How many triangles are there containing the origin in the interior and having all three vertices in $I_{105}$?
+Скільки існує трикутників, які містять початок координат та чиї вершини розташовані в $I_{105}$?
 
 # --hints--
 

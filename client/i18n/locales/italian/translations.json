@@ -391,7 +391,6 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Suggerimento",
     "test": "Test",
     "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "Saluti dalla comunità freeCodeCamp 🎉",
     "if-getting-value": "Se stai trovando utile freeCodeCamp, è un ottimo momento per donare e sostenere la missione del nostro ente di beneficenza.",
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
-    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende."
+    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "Supporta il nostro ente",
@@ -682,9 +683,9 @@
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
-    "verify": "Verifica questa certificazione presso {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "Emesso",
-    "fulltext": "<0>Si certifica che</0> <1>{{user}}</1> <2>ha completato con successo presso freeCodeCamp.org la certificazione di sviluppatore</2> <3>{{title}}</3> <4>che rappresenta circa {{time}} ore di lavoro nel corso.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",

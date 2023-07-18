@@ -1,5 +1,4 @@
 import {
-  Form,
   FormGroup,
   FormControl,
   ControlLabel,
@@ -72,13 +71,13 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size='medium' />
-      <h2 className='text-center'>{t('misc.update-email-2')}</h2>
       <Grid>
+        <Spacer size='medium' />
+        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
-              <Form horizontal={true} onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <FormGroup
                   controlId='emailInput'
                   validationState={getEmailValidationState()}
@@ -111,7 +110,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                     ? t('buttons.update-email')
                     : t('buttons.verify-email')}
                 </Button>
-              </Form>
+              </form>
               <p className='text-center'>
                 <Link to='/signout'>{t('buttons.sign-out')}</Link>
               </p>

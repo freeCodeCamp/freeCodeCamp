@@ -30,7 +30,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-Modules should be present.
+Module sollten vorhanden sein.
 
 ```js
 async (getUserInput) => {

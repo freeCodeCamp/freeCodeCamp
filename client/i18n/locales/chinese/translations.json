@@ -391,7 +391,6 @@
     "runs-in-vm": "该项目在虚拟机中运行，完成在那里描述的用户故事，获取所有测试并通过它们以完成步骤 1。",
     "completed": "已完成",
     "not-started": "未开始",
-    "hint": "提示",
     "test": "测试",
     "sorry-try-again": "抱歉，你的代码未通过，再试一次。",
     "sorry-keep-trying": "抱歉，你的代码未通过，再试试看。",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "来自 freeCodeCamp 社区的季节问候 🎉",
     "if-getting-value": "如果你从 freeCodeCamp 中获益良多，可以捐款支持我们的慈善组织的使命。",
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
-    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。"
+    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "支持我们的慈善组织",
@@ -682,9 +683,9 @@
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
-    "verify": "确认此认证 {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "发布日期",
-    "fulltext": "<0>特证明</0> <1>{{user}}</1> <2>已完成 freeCodeCamp.org</2> <3>{{title}}</3> <4>开发者认证课程，约 {{time}} 课时。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",

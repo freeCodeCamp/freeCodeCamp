@@ -391,7 +391,6 @@
     "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこに書かれたユーザーストーリーを実装し、すべてのテストが成功するようにしてください。",
     "completed": "完了",
     "not-started": "未着手",
-    "hint": "ヒント",
     "test": "テスト",
     "sorry-try-again": "残念ながら、テストが通りませんでした。もう一度挑戦しましょう。",
     "sorry-keep-trying": "残念ながら、テストが通りませんでした。続けて挑戦しましょう。",
@@ -402,7 +401,9 @@
     "season-greetings-fcc": "freeCodeCamp コミュニティから季節のご挨拶🎉",
     "if-getting-value": "freeCodeCamp が役に立ったと感じていただけたなら、寄付を通して当団体の使命をご支援いただけますと幸いです。",
     "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
-    "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。"
+    "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
   },
   "donate": {
     "title": "当団体への支援",
@@ -682,9 +683,9 @@
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
-    "verify": "この認定証は {{certURL}} で確認できます",
+    "verify": "Verify this certification at:",
     "issued": "発行日",
-    "fulltext": "<0>ここに</0> <1>{{user}}</1> <2>が freeCodeCamp.org の約 {{time}} 時間の課程に相当する</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",

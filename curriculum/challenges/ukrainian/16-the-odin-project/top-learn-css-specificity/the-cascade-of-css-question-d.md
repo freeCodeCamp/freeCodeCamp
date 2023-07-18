@@ -7,7 +7,7 @@ dashedName: the-cascade-of-css-question-d
 
 # --description--
 
-Now, let’s change things a little bit:
+Тепер додамо трішки змін:
 
 ```html
 <!-- index.html -->
@@ -29,29 +29,29 @@ Now, let’s change things a little bit:
 }
 ```
 
-In the example above, despite rule 2 having more class selectors than ID selectors, rule 1 is more specific because ID beats class.
+Хоча правило №2 у прикладі вище має більше селекторів класу ніж селекторів ID, специфічнішим є правило №1, оскільки ID перемагає клас.
 
 # --question--
 
 ## --text--
 
-Based on the modified HTML and CSS code, which color would the `<div class="list" id="subsection"></div>` element be rendered as?
+На основі зміненого коду HTML та CSS, якого кольору буде елемент `<div class="list" id="subsection"></div>`?
 
 ## --answers--
 
-orange
+оранжевого
 
 ---
 
-red
+червоного
 
 ---
 
-blue
+синього
 
 ---
 
-cyan
+блакитного
 
 ## --video-solution--
 

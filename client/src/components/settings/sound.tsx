@@ -1,4 +1,3 @@
-import { Form } from '@freecodecamp/react-bootstrap';
 import React, { ChangeEvent, useState } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
@@ -40,7 +39,7 @@ export default function SoundSettings({
   }
 
   return (
-    <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
+    <form onSubmit={(e: React.FormEvent) => e.preventDefault()}>
       <ToggleButtonSetting
         action={t('settings.labels.sound-mode')}
         explain={t('settings.sound-mode')}
@@ -66,7 +65,7 @@ export default function SoundSettings({
         onInput={handleVolumeChange}
       />
       <Spacer size='medium'></Spacer>
-    </Form>
+    </form>
   );
 }
 

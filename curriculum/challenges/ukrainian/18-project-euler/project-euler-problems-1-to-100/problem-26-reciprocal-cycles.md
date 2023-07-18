@@ -12,7 +12,7 @@ dashedName: problem-26-reciprocal-cycles
 
 <div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div><sup>1</sup>/<sub>2</sub> = 0.5</div><div><sup>1</sup>/<sub>3</sub> = 0.(3)</div><div><sup>1</sup>/<sub>4</sub> = 0.25</div><div><sup>1</sup>/<sub>5</sub> = 0.2</div><div><sup>1</sup>/<sub>6</sub> = 0.1(6)</div><div><sup>1</sup>/<sub>7</sub> = 0.(142857)</div><div><sup>1</sup>/<sub>8</sub> = 0.125</div><div><sup>1</sup>/<sub>9</sub> = 0.(1)</div><div><sup>1</sup>/<sub>10</sub> = 0.1</div></div>
 
-Де 0.1(6) означає 0.166666... та має періодичну послідовність з одної цифри. Можна побачити, що <sup>1</sup>/<sub>7</sub> має періодичну послідовність із шести цифр.
+Де 0.1(6) означає 0.166666... та має періодичну послідовність з одної цифри. Можна побачити, що <sup>1</sup>/<sub>7</sub> має періодичну послідовність із шести.
 
 Знайдіть значення `d` &lt; `n`, за якого <sup>1</sup>/<sub>d</sub> містить найдовшу періодичну послідовність в десятковій частині дробу.
 

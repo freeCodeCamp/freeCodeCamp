@@ -296,7 +296,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
             const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
-              arr => arr[0] === challenge.id
+              ({ id }) => id === challenge.id
             );
 
             if (index < 0) {

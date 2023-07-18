@@ -10,9 +10,9 @@
   "required": [],
   "superBlock": "2022/responsive-web-design",
   "challengeOrder": [
-    [
-      "587d78af367417b2b2512b03",
-      "Build a Survey Form"
-    ]
+    {
+      "id": "587d78af367417b2b2512b03",
+      "title": "Build a Survey Form"
+    }
   ]
 }

@@ -1014,6 +1014,7 @@
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
       "Kufikia mwisho wa kozi hii, utakuwa umepata ujuzi wa vitendo na ujuzi unaohitajika ili kutumia C# kwa ujasiri kwa ajili ya kujenga matumizi thabiti na yenye hatari"
     ],
+    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Andika Msimbo wako wa Kwanza kwa kutumia C#",

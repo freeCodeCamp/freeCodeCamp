@@ -1,6 +1,6 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
-title: American British Translator
+title: Amerikanisch-Britischer Übersetzer
 challengeType: 4
 forumTopicId: 462358
 dashedName: american-british-translator

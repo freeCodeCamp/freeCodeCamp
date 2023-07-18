@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
-title: 'Problem 190: Maximising a weighted product'
+title: 'Завдання 190: максимізація зваженого добутку'
 challengeType: 1
 forumTopicId: 301828
 dashedName: problem-190-maximising-a-weighted-product
@@ -8,9 +8,9 @@ dashedName: problem-190-maximising-a-weighted-product
 
 # --description--
 
-Let $S_m = (x_1, x_2, \ldots, x_m)$ be the $m$-tuple of positive real numbers with $x_1 + x_2 + \cdots + x_m = m$ for which $P_m = x_1 \times {x_2}^2 \times \cdots \times {x_m}^m$ is maximised.
+Нехай $S_m = (x_1, x_2, \ldots, x_m)$ буде $m$-кортежем натуральних чисел з властивістю $x_1 + x_2 + \cdots + x_m = m$, за яких $P_m = x_1 \times {x_2}^2 \times \cdots \times {x_m}^m$ є максимізованим.
 
-For example, it can be verified that $[P_{10}] = 4112$ ([ ] is the integer part function).
+Наприклад, можна довести, що $[P_{10}] = 4112$ ([ ] є функцією цілої частини числа).
 
 Знайдіть $\sum {[P_m]}$ за умови $2 ≤ m ≤ 15$.
 

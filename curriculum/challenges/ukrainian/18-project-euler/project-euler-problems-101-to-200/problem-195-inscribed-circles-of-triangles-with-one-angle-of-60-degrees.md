@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+title: 'Завдання 195: вписані кола в трикутнику, один кут якого становить 60 градусів'
 challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
@@ -8,13 +8,13 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 # --description--
 
-Let's call an integer sided triangle with exactly one angle of 60° a 60° triangle.
+60-градусним трикутником називають трикутник з цілочисельними сторонами та одним кутом 60°.
 
-Let $r$ be the radius of the inscribed circle of such a 60° triangle.
+Нехай $r$ буде радіусом кола, вписаного в 60-градусний трикутник.
 
-There are 1234 60° triangles for which $r ≤ 100$.
+Існує 1234 таких трикутників, за яких $r ≤ 100$.
 
-Let $T(n)$ be the number of 60° triangles for which $r ≤ n$, so $T(100) = 1234$, $T(1000) = 22767$, and $T(10000) = 359912$.
+Нехай $T(n)$ буде кількістю 60-градусних трикутників, за яких $r ≤ n$, отже $T(100) = 1234$, $T(1000) = 22767$ та $T(10000) = 359912$.
 
 Знайдіть $T(1053779)$.
 
