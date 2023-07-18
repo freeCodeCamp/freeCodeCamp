@@ -72,7 +72,8 @@ export class SolutionForm extends Component<SolutionFormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false
+      isLocalLinkAllowed: false,
+      isMicrosoftLearnLink: false
     };
 
     let formFields = solutionField;
@@ -117,6 +118,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
       case msTrophyUrl:
         formFields = msTrophyField;
+        options.isMicrosoftLearnLink = true;
         solutionLink =
           solutionLink +
           'https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=you';

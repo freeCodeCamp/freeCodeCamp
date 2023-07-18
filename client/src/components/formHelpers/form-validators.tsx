@@ -37,6 +37,9 @@ export const isMicrosoftLearnLink = (value: string): boolean => {
   return correctDomain && correctPath && hasSharingId && hasUsername;
 };
 
+export const microsoftValidator: Validator = value =>
+  !isMicrosoftLearnLink(value) ? <Trans>validation.ms-learn-link</Trans> : null;
+
 export const editorValidator: Validator = value =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;
 
