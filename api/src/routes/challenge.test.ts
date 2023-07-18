@@ -7,6 +7,7 @@ const isValidChallengeCompletionErrorMsg = {
   message: 'That does not appear to be a valid challenge submission.'
 };
 
+// /project-completed
 const id1 = 'bd7123c8c441eddfaeb5bdef';
 const id2 = 'bd7123c8c441eddfaeb5bdec';
 
@@ -23,6 +24,14 @@ const backendProject = {
 };
 
 const partialCompletion = { id: id1, completedDate: 1 };
+
+// /modern-challenge-completed
+const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2'; // HTML - 0
+
+const HtmlChallengeBody = {
+  challengeType: 0,
+  id: HtmlChallengeId
+};
 
 describe('challengeRoutes', () => {
   setupServer();
@@ -147,9 +156,7 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }],
-              completedChallenges: [],
-              progressTimestamps: []
+              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }]
             }
           });
         });
@@ -160,7 +167,8 @@ describe('challengeRoutes', () => {
             data: {
               partiallyCompletedChallenges: [],
               completedChallenges: [],
-              savedChallenges: []
+              savedChallenges: [],
+              progressTimestamps: []
             }
           });
         });
@@ -294,7 +302,86 @@ describe('challengeRoutes', () => {
         });
       });
     });
+
+    describe('/modern-challenge-completed', () => {
+      describe('validation', () => {
+        test('POST rejects requests without ids', async () => {
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+
+        test('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({ id: 'not-a-valid-id' });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+      });
+
+      describe('handling', () => {
+        // test js(1), jsProject(5), modern(6), video(11), multifileCertProject(14) and theOdinProject(15) challenges
+        describe('POST accepts the following challenges', () => {
+          afterEach(async () => {
+            await fastifyTestInstance.prisma.user.updateMany({
+              where: { email: 'foo@bar.com' },
+              data: {
+                completedChallenges: [],
+                savedChallenges: [],
+                progressTimestamps: []
+              }
+            });
+          });
+
+          test('HTML Challenge - 0', async () => {
+            const now = Date.now();
+
+            const response = await superRequest('/modern-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send(HtmlChallengeBody);
+
+            const user = await fastifyTestInstance.prisma.user.findFirst({
+              where: { email: 'foo@bar.com' }
+            });
+
+            expect(user).toMatchObject({
+              completedChallenges: [
+                {
+                  id: HtmlChallengeId,
+                  completedDate: expect.any(Number)
+                }
+              ]
+            });
+
+            const completedDate = user?.completedChallenges[0]?.completedDate;
+            expect(completedDate).toBeGreaterThanOrEqual(now);
+            expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+            expect(response.statusCode).toBe(200);
+            expect(response.body).toStrictEqual({
+              alreadyCompleted: false,
+              points: 1,
+              completedDate,
+              savedChallenges: []
+            });
+          });
+        });
+      });
+    });
   });
+
   describe('Unauthenticated user', () => {
     let setCookies: string[];
 
@@ -313,6 +400,15 @@ describe('challengeRoutes', () => {
 
         expect(response?.statusCode).toBe(401);
       });
+    });
+
+    test('POST /modern-challenge-completed returns 401 status code with error message', async () => {
+      const response = await superRequest('/modern-challenge-completed', {
+        method: 'POST',
+        setCookies
+      });
+
+      expect(response?.statusCode).toBe(401);
     });
   });
 });
