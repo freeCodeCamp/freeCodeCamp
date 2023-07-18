@@ -1,15 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { setupServer, superRequest } from '../../jest.utils';
 
-jest.mock('../utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return {
-    ...jest.requireActual('../utils/env'),
-    DEPLOYMENT_ENV: 'production',
-    FREECODECAMP_NODE_ENV: 'production'
-  };
-});
-
 describe('POST /challenge/coderoad-challenge-completed', () => {
   let setCookies: string[];
 
@@ -22,18 +13,18 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
   });
 
   test('should return 500 if no tutorialId', async () => {
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    );
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    });
     expect(response.status).toBe(500);
   });
 
   test('should return 400 if no user token', async () => {
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    )
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    })
       .set('Accept', 'application/json')
       .send({
         tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
@@ -45,10 +36,10 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
   });
 
   test('should return 400 if invalid user token', async () => {
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    )
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    })
       .set('Accept', 'application/json')
       .set('coderoad-user-token', 'invalid')
       .send({
@@ -68,10 +59,10 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
 
     const token = (tokenResponse.body as { userToken: string }).userToken;
 
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    )
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    })
       .set('Accept', 'application/json')
       .set('coderoad-user-token', token)
       .send({ tutorialId: 'invalid' });
@@ -92,10 +83,10 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
 
     const token = (tokenResponse.body as { userToken: string }).userToken;
 
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    )
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    })
       .set('Accept', 'application/json')
       .set('coderoad-user-token', token)
       .send({ tutorialId: 'freeCodeCamp/invalid:V1.0.0' });
@@ -114,10 +105,10 @@ describe('POST /challenge/coderoad-challenge-completed', () => {
 
     const token = (tokenResponse.body as { userToken: string }).userToken;
 
-    const response = await superRequest(
-      '/challenge/coderoad-challenge-completed',
-      { method: 'POST', setCookies }
-    )
+    const response = await superRequest('/coderoad-challenge-completed', {
+      method: 'POST',
+      setCookies
+    })
       .set('coderoad-user-token', token)
       .send({
         tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'

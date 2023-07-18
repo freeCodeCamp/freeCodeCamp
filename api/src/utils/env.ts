@@ -32,7 +32,6 @@ assert.ok(process.env.SESSION_SECRET);
 assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 assert.ok(process.env.JWT_SECRET);
-assert.ok(process.env.DEPLOYMENT_ENV);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.COOKIE_DOMAIN);
@@ -65,7 +64,6 @@ export const MONGOHQ_URL =
   process.env.MONGOHQ_URL ??
   'mongodb://localhost:27017/freecodecamp?directConnection=true';
 export const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV;
-export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
 export const PORT = process.env.PORT || '3000';

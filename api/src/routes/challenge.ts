@@ -8,7 +8,6 @@ import { jwtSecret } from '../../../config/secrets';
 import { fixPartiallyCompletedChallengeItem } from '../utils';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
-import { DEPLOYMENT_ENV, FREECODECAMP_NODE_ENV } from '../utils/env';
 interface JwtPayload {
   userToken: string;
 }
@@ -20,7 +19,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   const challenges = getChallenges();
   fastify.post(
-    '/challenge/coderoad-challenge-completed',
+    '/coderoad-challenge-completed',
     {
       schema: {
         body: Type.Object({
@@ -68,91 +67,78 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const tutorialRepo = tutorialId?.split(':')[0];
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
-      console.log(DEPLOYMENT_ENV, FREECODECAMP_NODE_ENV);
-
-      if (
-        DEPLOYMENT_ENV !== 'staging' &&
-        FREECODECAMP_NODE_ENV !== 'development'
-      ) {
-        if (tutorialOrg !== 'freeCodeCamp') {
-          void reply.code(400);
-          return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
-        }
-      }
       if (tutorialOrg !== 'freeCodeCamp') {
-        const codeRoadChallenges = challenges.filter(
-          ({ challengeType }) => challengeType === 12 || challengeType === 13
-        );
+        void reply.code(400);
+        return { msg: `Tutorial not hosted on freeCodeCamp GitHub account` };
+      }
 
-        const challenge = codeRoadChallenges.find(challenge => {
-          if (!tutorialRepo) {
-            return false;
-          }
-          return challenge.url?.endsWith(tutorialRepo);
+      const codeRoadChallenges = challenges.filter(
+        ({ challengeType }) => challengeType === 12 || challengeType === 13
+      );
+
+      const challenge = codeRoadChallenges.find(challenge => {
+        return challenge.url?.endsWith(tutorialRepo ?? '');
+      });
+
+      if (!challenge) {
+        void reply.code(400);
+        return { msg: 'Tutorial name is not valid' };
+      }
+
+      const { id: challengeId, challengeType } = challenge;
+      try {
+        const tokenInfo = await fastify.prisma.userToken.findUnique({
+          where: { id: userToken }
         });
 
-        if (!challenge) {
-          void reply.code(400);
-          return { msg: 'Tutorial name is not valid' };
-        }
+        if (!tokenInfo) return { msg: 'User token not found' };
 
-        const { id: challengeId, challengeType } = challenge;
-        try {
-          const tokenInfo = await fastify.prisma.userToken.findUnique({
-            where: { id: userToken }
+        const { userId } = tokenInfo;
+
+        const user = await fastify.prisma.user.findFirstOrThrow({
+          where: { id: userId }
+        });
+
+        if (!user) return { msg: 'User for user token not found' };
+
+        const completedDate = Date.now();
+        const { completedChallenges = [], partiallyCompletedChallenges = [] } =
+          user;
+
+        const isCompleted = completedChallenges.some(
+          challenge => challenge.id === challengeId
+        );
+
+        if (challengeType === 13 && !isCompleted) {
+          const finalChallenge = {
+            id: challengeId,
+            completedDate
+          };
+
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              partiallyCompletedChallenges: uniqBy(
+                [
+                  finalChallenge,
+                  ...partiallyCompletedChallenges.map(
+                    fixPartiallyCompletedChallengeItem
+                  )
+                ],
+                'id'
+              )
+            }
           });
-
-          if (!tokenInfo) return { msg: 'User token not found' };
-
-          const { userId } = tokenInfo;
-
-          const user = await fastify.prisma.user.findFirstOrThrow({
-            where: { id: userId }
+        } else {
+          await updateUserChallengeData(fastify, user, challengeId, {
+            id: challengeId,
+            completedDate
           });
-
-          if (!user) return { msg: 'User for user token not found' };
-
-          const completedDate = Date.now();
-          const {
-            completedChallenges = [],
-            partiallyCompletedChallenges = []
-          } = user;
-
-          const isCompleted = completedChallenges.some(
-            challenge => challenge.id === challengeId
-          );
-
-          if (challengeType === 13 && !isCompleted) {
-            const finalChallenge = {
-              id: challengeId,
-              completedDate
-            };
-
-            await fastify.prisma.user.update({
-              where: { id: req.session.user.id },
-              data: {
-                partiallyCompletedChallenges: uniqBy(
-                  [
-                    finalChallenge,
-                    ...partiallyCompletedChallenges.map(
-                      fixPartiallyCompletedChallengeItem
-                    )
-                  ],
-                  'id'
-                )
-              }
-            });
-          } else {
-            await updateUserChallengeData(fastify, user, challengeId, {
-              id: challengeId,
-              completedDate
-            });
-          }
-        } catch {
-          return { msg: 'An error occurred trying to submit the challenge' };
         }
-        return { msg: 'Successfully submitted challenge' };
+      } catch {
+        return { msg: 'An error occurred trying to submit the challenge' };
       }
+      return { msg: 'Successfully submitted challenge' };
     }
   );
 
