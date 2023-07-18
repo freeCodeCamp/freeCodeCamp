@@ -3,7 +3,7 @@ import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { getChallenges } from './get-challenges';
 
-const jsCertProjectIds = [
+export const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
   'a7f4d8f2483413a6ce226cac',
   '56533eb9ac21ba0edf2244e2',
@@ -11,7 +11,7 @@ const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-const multifileCertProjectIds = getChallenges()
+export const multifileCertProjectIds = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
@@ -54,7 +54,7 @@ type CompletedChallengeFile = {
   path?: string | null;
 };
 
-type CompletedChallenge = {
+export type CompletedChallenge = {
   id: string;
   solution?: string | null;
   githubLink?: string | null;

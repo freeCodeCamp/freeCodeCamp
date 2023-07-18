@@ -4,6 +4,12 @@ import { formatValidationError } from '../utils/error-formatting';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
 import { schemas } from '../schemas';
 import {
+  type CompletedChallenge,
+  jsCertProjectIds,
+  multifileCertProjectIds,
+  updateUserChallengeData
+} from '../utils/common-challenge-functions';
+import {
   canSubmitCodeRoadCertProject,
   createProject,
   updateProject
@@ -95,6 +101,70 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       } catch (err) {
         // TODO: send to Sentry
         fastify.log.error(err);
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/modern-challenge-completed',
+    {
+      schema: schemas.modernChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatValidationError(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { id, files, challengeType } = req.body;
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const points = getPoints(progressTimestamps);
+
+        const completedChallenge: CompletedChallenge = {
+          id,
+          files,
+          completedDate: Date.now()
+        };
+
+        if (challengeType === 14) {
+          completedChallenge.isManuallyApproved = true;
+          user.needsModeration = true;
+        }
+
+        if (
+          jsCertProjectIds.includes(id) ||
+          multifileCertProjectIds.includes(id)
+        ) {
+          completedChallenge.challengeType = challengeType;
+        }
+
+        const { alreadyCompleted, userSavedChallenges: savedChallenges } =
+          await updateUserChallengeData(fastify, user, id, completedChallenge);
+
+        return {
+          alreadyCompleted,
+          points: alreadyCompleted ? points : points + 1,
+          completedDate: completedChallenge.completedDate,
+          savedChallenges
+        };
+      } catch (error) {
+        fastify.log.error(error);
         void reply.code(500);
         return {
           message:
