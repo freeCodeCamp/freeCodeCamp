@@ -51,6 +51,66 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ acceptTerms }, dispatch);
 const RedirectToLearn = createRedirect('/learn');
 
+function EmailListOptIn({
+  isSignedIn,
+  showLoading,
+  t
+}: {
+  isSignedIn: boolean;
+  showLoading: boolean;
+  t: TFunction;
+}) {
+  if (showLoading) {
+    return <Loader fullScreen={true} />;
+  }
+  if (isSignedIn) {
+    return (
+      <Row>
+        <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            className='big-cta-btn'
+            onClick={() => acceptTerms(true)}
+          >
+            {t('buttons.yes-please')}
+          </Button>
+          <Spacer size='small' />
+        </Col>
+        <Col md={4} sm={5} xs={12}>
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            className='big-cta-btn'
+            onClick={() => acceptTerms(false)}
+          >
+            {t('buttons.no-thanks')}
+          </Button>
+          <Spacer size='small' />
+        </Col>
+      </Row>
+    );
+  } else {
+    return (
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Spacer size='small' />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          className='big-cta-btn'
+          href={`${apiLocation}/signin`}
+        >
+          {t('buttons.sign-up-email-list')}
+        </Button>
+        <Spacer size='small' />
+      </Col>
+    );
+  }
+}
+
 function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
@@ -66,62 +126,6 @@ function AcceptPrivacyTerms({
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
   });
-
-  function onClick(isWeeklyEmailAccepted: boolean) {
-    acceptTerms(isWeeklyEmailAccepted);
-  }
-
-  function renderEmailListOptIn(isSignedIn: boolean, showLoading: boolean) {
-    if (showLoading) {
-      return <Loader fullScreen={true} />;
-    }
-    if (isSignedIn) {
-      return (
-        <Row>
-          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(true)}
-            >
-              {t('buttons.yes-please')}
-            </Button>
-            <Spacer size='small' />
-          </Col>
-          <Col md={4} sm={5} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(false)}
-            >
-              {t('buttons.no-thanks')}
-            </Button>
-            <Spacer size='small' />
-          </Col>
-        </Row>
-      );
-    } else {
-      return (
-        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer size='small' />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            href={`${apiLocation}/signin`}
-          >
-            {t('buttons.sign-up-email-list')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      );
-    }
-  }
 
   return acceptedPrivacyTerms ? (
     <RedirectToLearn />
@@ -160,7 +164,11 @@ function AcceptPrivacyTerms({
             <p>{t('misc.email-blast')}</p>
             <Spacer size='small' />
           </Col>
-          {renderEmailListOptIn(isSignedIn, showLoading)}
+          <EmailListOptIn
+            isSignedIn={isSignedIn}
+            showLoading={showLoading}
+            t={t}
+          />
           <Col xs={12}>
             <Spacer size='medium' />
           </Col>
