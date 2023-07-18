@@ -53,16 +53,11 @@ const RedirectToLearn = createRedirect('/learn');
 
 function EmailListOptIn({
   isSignedIn,
-  showLoading,
   t
 }: {
   isSignedIn: boolean;
-  showLoading: boolean;
   t: TFunction;
 }) {
-  if (showLoading) {
-    return <Loader fullScreen={true} />;
-  }
   if (isSignedIn) {
     return (
       <Row>
@@ -164,11 +159,11 @@ function AcceptPrivacyTerms({
             <p>{t('misc.email-blast')}</p>
             <Spacer size='small' />
           </Col>
-          <EmailListOptIn
-            isSignedIn={isSignedIn}
-            showLoading={showLoading}
-            t={t}
-          />
+          {showLoading ? (
+            <Loader fullScreen={true} />
+          ) : (
+            <EmailListOptIn isSignedIn={isSignedIn} t={t} />
+          )}
           <Col xs={12}>
             <Spacer size='medium' />
           </Col>
