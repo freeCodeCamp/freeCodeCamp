@@ -9,57 +9,37 @@
     "required": [],
     "superBlock": "the-odin-project",
     "challengeOrder": [
-        [
-            "64a5529c02815a7d323aab88",
-            "The Box Model Question A"
-        ],
-        [
-            "64a553ed02815a7d323aab89",
-            "The Box Model Question B"
-        ],
-        [
-            "64a5551d02815a7d323aab8a",
-            "The Box Model Question C"
-        ],
-        [
-            "64a55a6102815a7d323aab8b",
-            "The Box Model Question D"
-        ],
-        [
-            "64a669f77a7d00f97013ed0c",
-            "The Box Model Question E"
-        ],
-        [
-            "64a66c917a7d00f97013ed0d",
-            "The Box Model Question F"
-        ],
-        [
-            "64a6702e7a7d00f97013ed0e",
-            "The Box Model Question G"
-        ],
-        [
-            "64a674937a7d00f97013ed0f",
-            "The Box Model Question H"
-        ],
-        [
-            "64a6749a7a7d00f97013ed10",
-            "The Box Model Question I"
-        ],
-        [
-            "64a674a47a7d00f97013ed11",
-            "The Box Model Question J"
-        ],
-        [
-            "64a674ac7a7d00f97013ed12",
-            "The Box Model Question K"
-        ],
-        [
-            "64a674b97a7d00f97013ed13",
-            "The Box Model Question L"
-        ],
-        [
-            "64a674c27a7d00f97013ed14",
-            "The Box Model Question M"
-        ]
+        {
+            "id": "6489bcd7b7600c818dc297ea",
+            "title": "The Cascade of CSS Question A"
+        },
+        {
+            "id": "6489c96782cf2e4f86f03ae2",
+            "title": "The Cascade of CSS Question B"
+        },
+        {
+            "id": "6489cb0b82cf2e4f86f03ae3",
+            "title": "The Cascade of CSS Question C"
+        },
+        {
+            "id": "6489cf5882cf2e4f86f03ae5",
+            "title": "The Cascade of CSS Question D"
+        },
+        {
+            "id": "6489cf6282cf2e4f86f03ae6",
+            "title": "The Cascade of CSS Question E"
+        },
+        {
+            "id": "6489cf6782cf2e4f86f03ae7",
+            "title": "The Cascade of CSS Question F"
+        },
+        {
+            "id": "6489cf7682cf2e4f86f03ae8",
+            "title": "The Cascade of CSS Question G"
+        },
+        {
+            "id": "648acb0745e79f79650fa2ac",
+            "title": "The Cascade of CSS Question H"
+        }
     ]
 }
