@@ -28,6 +28,7 @@ const partialCompletion = { id: id1, completedDate: 1 };
 // /modern-challenge-completed
 const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2'; // HTML - 0
 const JsProjectId = '56533eb9ac21ba0edf2244e2';
+const multiFileCertProjectId = 'bd7158d8c242eddfaeb5bd13';
 
 const HtmlChallengeBody = {
   challengeType: 0,
@@ -43,6 +44,26 @@ const JsProjectBody = {
       ext: 'js',
       name: 'script',
       history: ['script.js']
+    }
+  ]
+};
+const multiFileCertProjectBody = {
+  challengeType: 14,
+  id: multiFileCertProjectId,
+  files: [
+    {
+      contents: '<h1>Multi File Project</h1>',
+      key: 'indexhtml',
+      ext: 'html',
+      name: 'index',
+      history: ['index.html']
+    },
+    {
+      contents: '.hello-there { general: kenobi; }',
+      key: 'stylescss',
+      ext: 'css',
+      name: 'styles',
+      history: ['styles.css']
     }
   ]
 };
@@ -429,6 +450,63 @@ describe('challengeRoutes', () => {
               points: 1,
               completedDate,
               savedChallenges: []
+            });
+          });
+
+          test('Multi-file Cert Project - 14', async () => {
+            const now = Date.now();
+
+            const response = await superRequest('/modern-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send(multiFileCertProjectBody);
+
+            const user = await fastifyTestInstance.prisma.user.findFirst({
+              where: { email: 'foo@bar.com' }
+            });
+
+            const testFiles = multiFileCertProjectBody.files.map(
+              ({ history: _history, ...rest }) => rest
+            );
+
+            console.log(user?.savedChallenges);
+
+            expect(user).toMatchObject({
+              needsModeration: true,
+              completedChallenges: [
+                {
+                  id: multiFileCertProjectId,
+                  challengeType: multiFileCertProjectBody.challengeType,
+                  files: testFiles,
+                  completedDate: expect.any(Number),
+                  isManuallyApproved: true
+                }
+              ],
+              savedChallenges: [
+                {
+                  id: multiFileCertProjectId,
+                  lastSavedDate: expect.any(Number),
+                  files: multiFileCertProjectBody.files
+                }
+              ]
+            });
+
+            const completedDate = user?.completedChallenges[0]?.completedDate;
+            expect(completedDate).toBeGreaterThanOrEqual(now);
+            expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+            expect(response.statusCode).toBe(200);
+            expect(response.body).toStrictEqual({
+              alreadyCompleted: false,
+              points: 1,
+              completedDate,
+              savedChallenges: [
+                {
+                  id: multiFileCertProjectId,
+                  lastSavedDate: completedDate,
+                  files: multiFileCertProjectBody.files
+                }
+              ]
             });
           });
         });
