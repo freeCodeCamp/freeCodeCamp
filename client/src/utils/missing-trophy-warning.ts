@@ -1,6 +1,6 @@
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 
 export const trophyMissingMessage = {
-  type: 'warn',
+  type: 'danger',
   message: FlashMessages.MSTrophyMissing
 };
