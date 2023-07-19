@@ -268,9 +268,9 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 5px 0;
+  margin: 2px;
   justify-content: center;
-  border: 1px dashed var(--primary-color);
+  border: 1px dashed var(--background-tertiary);
 }
 
 .block-description {
@@ -289,7 +289,6 @@ a.map-grid-item.challenge-completed {
 
 .challenge-completed span {
   font-weight: 900;
-  font-size: 1.25rem;
   margin-top: -0.05rem;
 }
 
