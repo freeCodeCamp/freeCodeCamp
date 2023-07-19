@@ -53,12 +53,12 @@ import {
 import {
   attemptsSelector,
   canFocusEditorSelector,
+  challengeMetaSelector,
   consoleOutputSelector,
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
-  isChallengeCompletedSelector,
-  challengeMetaSelector
+  isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
@@ -129,9 +129,9 @@ interface EditorProperties {
 }
 
 const mapStateToProps = createSelector(
-  challengeMetaSelector,
   attemptsSelector,
   canFocusEditorSelector,
+  challengeMetaSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
