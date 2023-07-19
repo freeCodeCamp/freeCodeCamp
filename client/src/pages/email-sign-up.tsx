@@ -1,8 +1,7 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -24,7 +23,6 @@ interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
   isSignedIn: boolean;
-  t: TFunction;
   showLoading: boolean;
   completedChallengeCount?: number;
 }
@@ -53,13 +51,12 @@ const RedirectToLearn = createRedirect('/learn');
 
 function EmailListOptIn({
   isSignedIn,
-  acceptTerms,
-  t
+  acceptTerms
 }: {
   isSignedIn: boolean;
   acceptTerms: (accepted: boolean) => void;
-  t: TFunction;
 }) {
+  const { t } = useTranslation();
   if (isSignedIn) {
     return (
       <Row>
@@ -112,10 +109,10 @@ function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
   isSignedIn,
-  t,
   showLoading,
   completedChallengeCount = 0
 }: AcceptPrivacyTermsProps) {
+  const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
 
@@ -165,11 +162,7 @@ function AcceptPrivacyTerms({
           {showLoading ? (
             <Loader fullScreen={true} />
           ) : (
-            <EmailListOptIn
-              isSignedIn={isSignedIn}
-              acceptTerms={acceptTerms}
-              t={t}
-            />
+            <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
           )}
           <Col xs={12}>
             <Spacer size='medium' />
@@ -180,7 +173,4 @@ function AcceptPrivacyTerms({
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(AcceptPrivacyTerms));
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);
