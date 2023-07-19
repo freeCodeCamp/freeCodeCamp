@@ -122,7 +122,8 @@
   font-weight: 900;
 }
 
-#mobile-layout .nav-tabs > li:not(.active) > a:hover {
+#mobile-layout .nav-tabs > li:not(.active) > a:hover,
+#portal-button:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
 }
@@ -139,6 +140,8 @@
   height: 100%;
   width: 36px;
   border: 0;
+  /* This is the default for the a elements in the nav-tabs, inherited from bootstrap */
+  background: transparent;
 }
 
 #portal-button[aria-expanded='true'] {
