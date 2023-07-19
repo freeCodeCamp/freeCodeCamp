@@ -435,7 +435,13 @@ Bereitstellung von VMs mit dem Code
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, set up env, and keys.
+3. Install pm2 globally.
+
+```console
+npm install -g pm2
+```
+
+4. Clone freeCodeCamp, set up env, and keys.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -443,28 +449,28 @@ cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Create the `.env` from the secure credentials storage.
+5. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+6. Install dependencies
 
 ```console
 pnpm install
 ```
 
-6. Setup pm2 `logrotate` and startup on boot
+7. Setup pm2 `logrotate` and startup on boot
 
 ```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Build the server
+8. Build the server
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Start Instances
+9.  Start Instances
 
 ```console
 pnpm start:server
@@ -473,11 +479,11 @@ pnpm start:server
 ### Logging und Monitoring
 
 ```console
-pnpm pm2 logs
+pm2 logs
 ```
 
 ```console
-pnpm pm2 monit
+pm2 monit
 ```
 
 ### Aktualisieren von Instanzen (Wartung)
@@ -491,7 +497,7 @@ Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werde
 1. Stop all instances
 
 ```console
-pnpm pm2 stop all
+pm2 stop all
 ```
 
 2. Install dependencies
@@ -509,13 +515,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 4. Start Instances
 
 ```console
-pnpm start:server && pnpm pm2 logs
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pnpm reload:server && pnpm pm2 logs
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code and logic via pipelines. Du solltest diese Befehle nicht ausführen müssen. Sie dienen nur der Dokumentation.
@@ -527,7 +533,7 @@ pnpm reload:server && pnpm pm2 logs
 2. Update pm2 to use the new version
 
 ```console
-pnpm pm2 update
+pm2 update
 ```
 
 ## Work on Client Instances
