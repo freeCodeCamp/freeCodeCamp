@@ -53,9 +53,11 @@ const RedirectToLearn = createRedirect('/learn');
 
 function EmailListOptIn({
   isSignedIn,
+  acceptTerms,
   t
 }: {
   isSignedIn: boolean;
+  acceptTerms: (accepted: boolean) => void;
   t: TFunction;
 }) {
   if (isSignedIn) {
@@ -120,7 +122,8 @@ function AcceptPrivacyTerms({
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return acceptedPrivacyTerms ? (
     <RedirectToLearn />
@@ -162,7 +165,11 @@ function AcceptPrivacyTerms({
           {showLoading ? (
             <Loader fullScreen={true} />
           ) : (
-            <EmailListOptIn isSignedIn={isSignedIn} t={t} />
+            <EmailListOptIn
+              isSignedIn={isSignedIn}
+              acceptTerms={acceptTerms}
+              t={t}
+            />
           )}
           <Col xs={12}>
             <Spacer size='medium' />
