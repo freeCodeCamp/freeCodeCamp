@@ -7,9 +7,7 @@ import curriculum from '../../../config/curriculum.json';
 import { SuperBlocks } from '../../../config/superblocks';
 
 type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
-type SuperBlockKeys = keyof Curriculum;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Block {
   challenges: {
     id: string;
@@ -23,7 +21,7 @@ interface CurriculumProps {
 }
 
 export function getChallenges() {
-  const superBlockKeys = Object.keys(SuperBlocks) as SuperBlockKeys[];
+  const superBlockKeys = Object.values(SuperBlocks);
   const typedCurriculum: Curriculum = curriculum as Curriculum;
 
   return superBlockKeys
