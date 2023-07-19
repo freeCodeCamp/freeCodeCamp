@@ -23,7 +23,7 @@ interface CurriculumProps {
 }
 
 export function getChallenges() {
-  const superBlockKeys = Object.keys(SuperBlocks) as SuperBlockKeys[];
+  const superBlockKeys = Object.values(SuperBlocks) as SuperBlockKeys[];
   const typedCurriculum: Curriculum = curriculum as Curriculum;
 
   return superBlockKeys
