@@ -26,7 +26,7 @@ const backendProject = {
 const partialCompletion = { id: id1, completedDate: 1 };
 
 // /modern-challenge-completed
-const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2'; // HTML - 0
+const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2';
 const JsProjectId = '56533eb9ac21ba0edf2244e2';
 const multiFileCertProjectId = 'bd7158d8c242eddfaeb5bd13';
 
@@ -366,148 +366,146 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
-        describe('POST accepts the following challenges', () => {
-          afterEach(async () => {
-            await fastifyTestInstance.prisma.user.updateMany({
-              where: { email: 'foo@bar.com' },
-              data: {
-                completedChallenges: [],
-                savedChallenges: [],
-                progressTimestamps: []
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
+
+        // HTML(0), JS(1), Modern(6), Video(11), The Odin Project(15)
+        test('POST accepts challenges without files present', async () => {
+          const now = Date.now();
+
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(HtmlChallengeBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                id: HtmlChallengeId,
+                completedDate: expect.any(Number)
               }
-            });
+            ]
           });
 
-          // HTML(0), JS(1), Modern(6), Video(11), The Odin Project(15)
-          test('HTML Challenge - 0', async () => {
-            const now = Date.now();
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-            const response = await superRequest('/modern-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send(HtmlChallengeBody);
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: []
+          });
+        });
 
-            const user = await fastifyTestInstance.prisma.user.findFirst({
-              where: { email: 'foo@bar.com' }
-            });
+        // JS Project(5), Multi-file Cert Project(14)
+        test('POST accepts challenges with files present', async () => {
+          const now = Date.now();
 
-            expect(user).toMatchObject({
-              completedChallenges: [
-                {
-                  id: HtmlChallengeId,
-                  completedDate: expect.any(Number)
-                }
-              ]
-            });
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(JsProjectBody);
 
-            const completedDate = user?.completedChallenges[0]?.completedDate;
-            expect(completedDate).toBeGreaterThanOrEqual(now);
-            expect(completedDate).toBeLessThanOrEqual(now + 1000);
-
-            expect(response.statusCode).toBe(200);
-            expect(response.body).toStrictEqual({
-              alreadyCompleted: false,
-              points: 1,
-              completedDate,
-              savedChallenges: []
-            });
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
           });
 
-          // JS Project(5), Multi-file Cert Project(14)
-          test('JS Project - 5', async () => {
-            const now = Date.now();
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const { history: _history, ...files } = JsProjectBody.files[0]!;
 
-            const response = await superRequest('/modern-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send(JsProjectBody);
-
-            const user = await fastifyTestInstance.prisma.user.findFirst({
-              where: { email: 'foo@bar.com' }
-            });
-
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const { history: _history, ...files } = JsProjectBody.files[0]!;
-
-            expect(user).toMatchObject({
-              completedChallenges: [
-                {
-                  id: JsProjectId,
-                  challengeType: JsProjectBody.challengeType,
-                  files: [files],
-                  completedDate: expect.any(Number)
-                }
-              ]
-            });
-
-            const completedDate = user?.completedChallenges[0]?.completedDate;
-            expect(completedDate).toBeGreaterThanOrEqual(now);
-            expect(completedDate).toBeLessThanOrEqual(now + 1000);
-
-            expect(response.statusCode).toBe(200);
-            expect(response.body).toStrictEqual({
-              alreadyCompleted: false,
-              points: 1,
-              completedDate,
-              savedChallenges: []
-            });
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                id: JsProjectId,
+                challengeType: JsProjectBody.challengeType,
+                files: [files],
+                completedDate: expect.any(Number)
+              }
+            ]
           });
 
-          test('Multi-file Cert Project - 14', async () => {
-            const now = Date.now();
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-            const response = await superRequest('/modern-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send(multiFileCertProjectBody);
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: []
+          });
+        });
 
-            const user = await fastifyTestInstance.prisma.user.findFirst({
-              where: { email: 'foo@bar.com' }
-            });
+        test('POST accepts challenges with saved solutions', async () => {
+          const now = Date.now();
 
-            const testFiles = multiFileCertProjectBody.files.map(
-              ({ history: _history, ...rest }) => rest
-            );
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(multiFileCertProjectBody);
 
-            console.log(user?.savedChallenges);
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
 
-            expect(user).toMatchObject({
-              needsModeration: true,
-              completedChallenges: [
-                {
-                  id: multiFileCertProjectId,
-                  challengeType: multiFileCertProjectBody.challengeType,
-                  files: testFiles,
-                  completedDate: expect.any(Number),
-                  isManuallyApproved: true
-                }
-              ],
-              savedChallenges: [
-                {
-                  id: multiFileCertProjectId,
-                  lastSavedDate: expect.any(Number),
-                  files: multiFileCertProjectBody.files
-                }
-              ]
-            });
+          const testFiles = multiFileCertProjectBody.files.map(
+            ({ history: _history, ...rest }) => rest
+          );
 
-            const completedDate = user?.completedChallenges[0]?.completedDate;
-            expect(completedDate).toBeGreaterThanOrEqual(now);
-            expect(completedDate).toBeLessThanOrEqual(now + 1000);
+          console.log(user?.savedChallenges);
 
-            expect(response.statusCode).toBe(200);
-            expect(response.body).toStrictEqual({
-              alreadyCompleted: false,
-              points: 1,
-              completedDate,
-              savedChallenges: [
-                {
-                  id: multiFileCertProjectId,
-                  lastSavedDate: completedDate,
-                  files: multiFileCertProjectBody.files
-                }
-              ]
-            });
+          expect(user).toMatchObject({
+            needsModeration: true,
+            completedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                challengeType: multiFileCertProjectBody.challengeType,
+                files: testFiles,
+                completedDate: expect.any(Number),
+                isManuallyApproved: true
+              }
+            ],
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: multiFileCertProjectBody.files
+              }
+            ]
+          });
+
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: completedDate,
+                files: multiFileCertProjectBody.files
+              }
+            ]
           });
         });
       });
