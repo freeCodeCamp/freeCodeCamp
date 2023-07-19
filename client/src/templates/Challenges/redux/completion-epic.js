@@ -11,8 +11,10 @@ import {
   mergeMap
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import standardErrorMessage from '../../../utils/standard-error-message';
-import { trophyMissingMessage } from '../../../utils/missing-trophy-warning';
+import {
+  standardErrorMessage,
+  trophyMissingMessage
+} from '../../../utils/error-messages';
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
