@@ -52,7 +52,7 @@ const multiFileCertProjectBody = {
   id: multiFileCertProjectId,
   files: [
     {
-      contents: '<h1>Multi File Project</h1>',
+      contents: '<h1>Multi File Project v1</h1>',
       key: 'indexhtml',
       ext: 'html',
       name: 'index',
@@ -60,6 +60,26 @@ const multiFileCertProjectBody = {
     },
     {
       contents: '.hello-there { general: kenobi; }',
+      key: 'stylescss',
+      ext: 'css',
+      name: 'styles',
+      history: ['styles.css']
+    }
+  ]
+};
+const updatedMultiFileCertProjectBody = {
+  challengeType: 14,
+  id: multiFileCertProjectId,
+  files: [
+    {
+      contents: '<h1>Multi File Project v2</h1>',
+      key: 'indexhtml',
+      ext: 'html',
+      name: 'index',
+      history: ['index.html']
+    },
+    {
+      contents: '.wibbly-wobbly { timey: wimey; }',
       key: 'stylescss',
       ext: 'css',
       name: 'styles',
@@ -504,6 +524,84 @@ describe('challengeRoutes', () => {
                 id: multiFileCertProjectId,
                 lastSavedDate: completedDate,
                 files: multiFileCertProjectBody.files
+              }
+            ]
+          });
+        });
+
+        test('POST correctly handles multiple requests', async () => {
+          const resOriginal = await superRequest(
+            '/modern-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send(multiFileCertProjectBody);
+
+          await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(HtmlChallengeBody);
+
+          const resUpdate = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(updatedMultiFileCertProjectBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const expectedProgressTimestamps = user?.completedChallenges.map(
+            challenge => challenge.completedDate
+          );
+
+          const testFiles = updatedMultiFileCertProjectBody.files.map(
+            ({ history: _history, ...rest }) => rest
+          );
+
+          expect(user).toMatchObject({
+            needsModeration: true,
+            completedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                challengeType: updatedMultiFileCertProjectBody.challengeType,
+                files: testFiles,
+                completedDate: expect.any(Number),
+                isManuallyApproved: true
+              },
+              {
+                id: HtmlChallengeId,
+                completedDate: expect.any(Number)
+              }
+            ],
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ],
+            progressTimestamps: expectedProgressTimestamps
+          });
+
+          expect(
+            resUpdate.body.savedChallenges[0].lastSavedDate
+          ).toBeGreaterThan(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            resOriginal.body.savedChallenges[0].lastSavedDate
+          );
+
+          expect(resUpdate.statusCode).toBe(200);
+          expect(resUpdate.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 2,
+            completedDate: expect.any(Number),
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: updatedMultiFileCertProjectBody.files
               }
             ]
           });
