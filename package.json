@@ -56,7 +56,6 @@
     "e2e:prd:run": "pnpm run build && start-test 'localhost:3000/status/ping|localhost:8000' cypress:dev:run",
     "e2e:prd:watch": "pnpm run build && start-test 'localhost:3000/status/ping|localhost:8000' cypress:dev:watch",
     "download-trending": "ts-node ./tools/scripts/build/download-trending.ts",
-    "get:challenge": "node ./tools/scripts/build/generate-challenge-completed-objects.js",
     "ensure-env": "cross-env DEBUG=fcc:* ts-node ./tools/scripts/build/ensure-env.ts",
     "format": "run-s format:eslint format:prettier",
     "format:curriculum": "run-s format:curriculum:eslint format:curriculum:prettier",
