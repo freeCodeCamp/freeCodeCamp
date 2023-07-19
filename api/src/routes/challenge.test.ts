@@ -22,8 +22,18 @@ const backendProject = {
   solution: 'https://any.valid/url',
   githubLink: 'https://github.com/anything/valid/'
 };
-
 const partialCompletion = { id: id1, completedDate: 1 };
+
+// /backend-challenge-completed
+const backendChallengeId1 = '587d7fb1367417b2b2512bf4';
+const backendChallengeId2 = '587d7fb2367417b2b2512bf8';
+
+const backendChallengeBody1 = {
+  id: backendChallengeId1
+};
+const backendChallengeBody2 = {
+  id: backendChallengeId2
+};
 
 // /modern-challenge-completed
 const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2';
@@ -358,6 +368,136 @@ describe('challengeRoutes', () => {
       });
     });
 
+    describe('/backend-challenge-completed', () => {
+      describe('validation', () => {
+        test('POST rejects requests without ids', async () => {
+          const response = await superRequest('/backend-challenge-completed', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+
+        test('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superRequest('/backend-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({ id: 'not-a-valid-id', solution: '' });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
+
+        test('POST accepts backend challenges', async () => {
+          const now = Date.now();
+
+          const response = await superRequest('/backend-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(backendChallengeBody1);
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                ...backendChallengeBody1,
+                completedDate: expect.any(Number)
+              }
+            ]
+          });
+
+          const completedDate = user?.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate
+          });
+        });
+
+        test('POST correctly handles multiple requests', async () => {
+          const resOriginal = await superRequest(
+            '/backend-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send(backendChallengeBody1);
+
+          await superRequest('/backend-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(backendChallengeBody2);
+
+          const resUpdated = await superRequest(
+            '/backend-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send({
+            ...backendChallengeBody1
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const expectedProgressTimestamps = user?.completedChallenges.map(
+            challenge => challenge.completedDate
+          );
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                ...backendChallengeBody1,
+                completedDate: expect.any(Number)
+              },
+              {
+                ...backendChallengeBody2,
+                completedDate: expect.any(Number)
+              }
+            ],
+            progressTimestamps: expectedProgressTimestamps
+          });
+
+          expect(resUpdated.statusCode).toBe(200);
+          expect(resUpdated.body.completedDate).not.toBe(
+            resOriginal.body.completedDate
+          );
+          expect(resUpdated.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 2,
+            completedDate: expect.any(Number)
+          });
+        });
+      });
+    });
+
     describe('/modern-challenge-completed', () => {
       describe('validation', () => {
         test('POST rejects requests without ids', async () => {
@@ -627,6 +767,15 @@ describe('challengeRoutes', () => {
         });
 
         expect(response?.statusCode).toBe(401);
+      });
+
+      test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
+        const response = await superRequest('/backend-challenge-completed', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(401);
       });
     });
 
