@@ -102,6 +102,7 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.22.9",
     "@babel/plugin-proposal-function-bind": "7.22.5",
     "@babel/preset-env": "7.22.9",
     "@babel/preset-react": "7.22.5",
@@ -117,7 +118,6 @@
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-jest": "29.6.1",
-    "@babel/eslint-parser": "7.22.9",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "11.2.0",
@@ -126,6 +126,7 @@
     "docsify-cli": "4.4.4",
     "eslint": "8.45.0",
     "eslint-config-prettier": "8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-filenames-simple": "0.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jest-dom": "3.9.4",
