@@ -93,9 +93,7 @@ const LowerButtonsPanel = ({
           <Reset />
           {resetButtonText}
         </button>
-        {showShareButton && (
-          <Share superBlock={superBlock || ''} block={block || ''} />
-        )}
+        {showShareButton && <Share superBlock={superBlock} block={block} />}
 
         {hideHelpButton && (
           <button
