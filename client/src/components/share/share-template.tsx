@@ -23,7 +23,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         aria-label='twitterIcon'
         aria-hidden='true'
       />
-      {t('buttons.tweet')}{' '}
+      {t('buttons.tweet')}
       <span className='sr-only'>{t('aria.opens-new-window')}</span>
     </a>
   );
