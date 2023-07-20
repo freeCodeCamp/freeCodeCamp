@@ -10,7 +10,7 @@ import {
   frontEndProject,
   msTrophyUrl,
   pythonProject
-} from '../../../../utils/challenge-types';
+} from '../../../../../config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues

@@ -12,7 +12,10 @@ import {
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import standardErrorMessage from '../../../utils/standard-error-message';
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  submitTypes
+} from '../../../../../config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
