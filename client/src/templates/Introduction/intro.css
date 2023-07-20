@@ -258,7 +258,7 @@ button.map-title {
   grid-template-columns: repeat(auto-fill, 3.4rem);
   grid-gap: 3px;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto 18px;
   width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
@@ -268,9 +268,9 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 2px;
+  margin: 6px 0;
   justify-content: center;
-  border: 1px dashed var(--background-tertiary);
+  border: 1px dashed var(--background-quaternary);
 }
 
 .block-description {
