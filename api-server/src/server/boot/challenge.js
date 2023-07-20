@@ -382,7 +382,7 @@ async function projectCompleted(req, res, next) {
       isTrophyMissing = mSLearnAPIUrl ? !(await fetch(mSLearnAPIUrl)).ok : true;
     } catch {
       isTrophyMissing = true;
-      log('Error verifying trophy');
+      log(`Error verifying trophy: ${completedChallenge.solution}`);
     }
   }
 
