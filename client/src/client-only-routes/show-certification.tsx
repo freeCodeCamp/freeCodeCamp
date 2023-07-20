@@ -31,6 +31,7 @@ import { fullCertMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
+
 import { PaymentContext } from '../../../config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
