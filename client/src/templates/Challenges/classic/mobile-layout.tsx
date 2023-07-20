@@ -1,6 +1,6 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
-import React, { Component, ReactElement, SyntheticEvent } from 'react';
+import React, { Component, ReactElement } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
@@ -85,14 +85,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab, e: SyntheticEvent): void => {
-    const portalButton = document.getElementById('portal-button');
-    // prevent switching to preview tab if pressing portal button
-    if (portalButton?.contains(e.target as Node)) {
-      e.preventDefault();
-      return;
-    }
-
+  switchTab = (tab: Tab): void => {
     this.setState({
       currentTab: tab
     });
@@ -219,12 +212,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           activeKey={currentTab}
+          animation={false}
           defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onSelect={this.switchTab}
           onTouchStart={this.handleClick}
+          {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           {!hasEditableBoundaries && (
             <TabPane
@@ -261,21 +256,22 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {hasPreview && (
             <TabPane
               eventKey={Tab.Preview}
-              title={
-                <>
-                  {i18next.t('learn.editor-tabs.preview')}
-                  <button
-                    id='portal-button'
-                    aria-expanded={!!showPreviewPortal}
-                    onClick={() => togglePane('showPreviewPortal')}
-                  >
-                    <span className='sr-only'>{getPortalBtnSrText()}</span>
-                    <FontAwesomeIcon icon={faWindowRestore} />
-                  </button>
-                </>
-              }
+              title={i18next.t('learn.editor-tabs.preview')}
             >
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
               {displayPreviewPane && preview}
+              {showPreviewPortal && (
+                <p className='preview-external-window'>
+                  {i18next.t('learn.preview-external-window')}
+                </p>
+              )}
             </TabPane>
           )}
           {!hasEditableBoundaries && (
@@ -284,6 +280,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               isMobile={true}
               videoUrl={videoUrl}
             />
+          )}
+          {hasPreview && this.state.currentTab !== 'preview' && (
+            <button
+              className='portal-button'
+              aria-expanded={!!showPreviewPortal}
+              onClick={() => togglePane('showPreviewPortal')}
+            >
+              <span className='sr-only'>{getPortalBtnSrText()}</span>
+              <FontAwesomeIcon icon={faWindowRestore} />
+            </button>
           )}
         </Tabs>
         {displayPreviewPortal && (
