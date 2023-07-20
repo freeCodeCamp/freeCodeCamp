@@ -49,12 +49,6 @@ describe('challengeRoutes', () => {
     });
 
     describe('POST /coderoad-challenge-completed', () => {
-      beforeEach(async () => {
-        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
-        expect(res.status).toBe(200);
-        setCookies = res.get('Set-Cookie');
-      });
-
       test('should return 500 if no tutorialId', async () => {
         const response = await superRequest('/coderoad-challenge-completed', {
           method: 'POST',
@@ -178,8 +172,17 @@ describe('challengeRoutes', () => {
 
         expect(challengeCompleted).toBe(true);
       });
-    });
 
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+    });
     describe('/project-completed', () => {
       describe('validation', () => {
         it('POST rejects requests without ids', async () => {
