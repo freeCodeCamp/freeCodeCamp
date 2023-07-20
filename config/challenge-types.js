@@ -75,6 +75,11 @@ exports.isCodeAllyPractice = challengeType => {
   return challengeType === codeAllyPractice;
 };
 
+exports.hasNoTests = challengeType =>
+  challengeType === multipleChoice ||
+  challengeType === theOdinProject ||
+  challengeType === video;
+
 // determine the component view for each challenge
 exports.viewTypes = {
   [html]: 'classic',
