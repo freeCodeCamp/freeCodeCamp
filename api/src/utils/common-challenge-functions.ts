@@ -124,7 +124,6 @@ export async function updateUserChallengeData(
 
   if (alreadyCompleted && oldChallenge) {
     finalChallenge = {
-      ...oldChallenge, // Do we need to do this as the old code just directly spreads the new challenge data
       ...completedChallenge,
       completedDate: oldChallenge.completedDate
     };
