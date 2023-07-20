@@ -20,17 +20,6 @@ const exam = 17;
 const msTrophyUrl = 18;
 const multipleChoice = 19;
 
-// individual exports
-exports.backend = backend;
-exports.frontEndProject = frontEndProject;
-exports.backEndProject = backEndProject;
-exports.pythonProject = pythonProject;
-exports.codeAllyCert = codeAllyCert;
-exports.colab = colab;
-exports.exam = exam;
-exports.msTrophyUrl = msTrophyUrl;
-exports.multipleChoice = multipleChoice;
-
 exports.challengeTypes = {
   html,
   js,
