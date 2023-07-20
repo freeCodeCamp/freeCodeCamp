@@ -100,6 +100,26 @@
   max-width: 500px;
 }
 
+.certification-namespace .dual-logo {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certification-namespace .dual-logo svg {
+  max-width: 70%;
+  height: auto;
+}
+
+.certification-namespace .fcc-logo svg {
+  width: 350px;
+}
+
+.certification-namespace .ms-logo svg {
+  width: 300px;
+}
+
 .certification-namespace .information {
   height: 380px;
   text-align: center;
@@ -133,6 +153,8 @@
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .certification-namespace .signatures img {
@@ -145,11 +167,36 @@
   padding-top: 1px;
 }
 
-.certification-namespace .quincy-name {
+.certification-namespace .microsoft-signature {
+  padding-top: 30px;
+  z-index: 1;
+}
+
+.certification-namespace .microsoft-signature img {
+  z-index: 1;
+  position: sticky;
+}
+
+.certification-namespace .signature-underline {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgb(200, 200, 200) 0%,
+    rgb(0, 0, 0) 8%,
+    rgb(0, 0, 0) 92%,
+    rgb(200, 200, 200) 100%
+  );
+  position: relative;
+  top: -9px;
+  margin-bottom: 8px;
+}
+
+.certification-namespace .signee-name {
   font-size: 20px;
 }
 
-.certification-namespace .quincy-role {
+.certification-namespace .signee-role {
   font-size: 17px;
 }
 

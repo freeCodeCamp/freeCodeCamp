@@ -10,6 +10,7 @@ import { createSelector } from 'reselect';
 import envData from '../../../config/env.json';
 import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
+import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
@@ -30,9 +31,12 @@ import { fullCertMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
-
 import { PaymentContext } from '../../../config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
+import {
+  certTypes,
+  certTypeTitleMap
+} from '../../../config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -294,6 +298,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </Row>
   );
 
+  const isMicrosoftCert =
+    certTitle === certTypeTitleMap[certTypes.foundationalCSharp];
+
   return (
     <Grid className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
@@ -302,9 +309,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           <Row className='certificate-wrapper certification-namespace'>
             <header>
               <Col sm={12}>
-                <div className='logo'>
-                  <FreeCodeCampLogo aria-hidden='true' />
-                </div>
+                {isMicrosoftCert ? (
+                  <>
+                    <div className='dual-logo fcc-logo'>
+                      <FreeCodeCampLogo aria-hidden='true' />
+                    </div>
+                    <div className='dual-logo ms-logo'>
+                      <MicrosoftLogo aria-hidden='true' />
+                    </div>
+                  </>
+                ) : (
+                  <div className='logo'>
+                    <FreeCodeCampLogo aria-hidden='true' />
+                  </div>
+                )}
               </Col>
             </header>
             <main className='information'>
@@ -336,24 +354,68 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </main>
             <footer>
               <div className='row signatures'>
-                <Image
-                  alt="Quincy Larson's Signature"
-                  src={
-                    'https://cdn.freecodecamp.org' +
-                    '/platform/english/images/quincy-larson-signature.svg'
-                  }
-                />
-                <p className='quincy-name'>
-                  <strong>Quincy Larson</strong>
-                </p>
-                <p className='quincy-role'>{t('certification.executive')}</p>
+                {isMicrosoftCert ? (
+                  <>
+                    <div>
+                      <Image
+                        alt="Quincy Larson's Signature"
+                        src={
+                          'https://cdn.freecodecamp.org' +
+                          '/platform/english/images/quincy-larson-signature.svg'
+                        }
+                      />
+                      <p className='signee-name'>
+                        <strong>Quincy Larson</strong>
+                      </p>
+                      <p className='signee-role'>
+                        {t('certification.executive')}
+                      </p>
+                    </div>
+                    <div className='microsoft-signature'>
+                      <Image
+                        alt="Julia Liusons's Signature"
+                        src={
+                          'https://cdn.freecodecamp.org' +
+                          '/platform/english/images/microsoft-signature.png'
+                        }
+                      />
+                      <div className='signature-underline'></div>
+                      <p className='signee-name'>
+                        <strong>Julia Liuson</strong>
+                      </p>
+                      <p className='signee-role'>
+                        President, Microsoft Developer Division
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <div>
+                    <Image
+                      alt="Quincy Larson's Signature"
+                      src={
+                        'https://cdn.freecodecamp.org' +
+                        '/platform/english/images/quincy-larson-signature.svg'
+                      }
+                    />
+                    <p className='signee-name'>
+                      <strong>Quincy Larson</strong>
+                    </p>
+                    <p className='signee-role'>
+                      {t('certification.executive')}
+                    </p>
+                  </div>
+                )}
               </div>
-              <span className='ribbon-wrap'>
-                <Image className='ribbon' src={ribbon} />
-              </span>
-              <span className='qr-wrap'>
-                <QRCodeSVG className='qr-code' value={certURL} />
-              </span>
+              {!isMicrosoftCert && (
+                <>
+                  <span className='ribbon-wrap'>
+                    <Image className='ribbon' src={ribbon} />
+                  </span>
+                  <span className='qr-wrap'>
+                    <QRCodeSVG className='qr-code' value={certURL} />
+                  </span>
+                </>
+              )}
               <Row>
                 <p className='verify'>
                   {t('certification.verify')}
