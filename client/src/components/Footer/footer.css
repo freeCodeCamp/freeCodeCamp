@@ -52,12 +52,6 @@
 }
 
 .trending-guides-articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  gap: 0.5rem;
-}
-
-.trending-guides-articles {
   white-space: pre;
 }
 
