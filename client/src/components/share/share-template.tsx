@@ -17,16 +17,14 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
       target='_blank'
       rel='noreferrer'
     >
-      <span className='sr-only'>
-        {t('buttons.share-on-twitter')}, {t('aria.opens-new-window')}
-      </span>
       <FontAwesomeIcon
         icon={faTwitter}
         size='1x'
         aria-label='twitterIcon'
         aria-hidden='true'
       />
-      <span aria-hidden>{t('buttons.tweet')}</span>
+      {t('buttons.tweet')}{' '}
+      <span className='sr-only'>{t('aria.opens-new-window')}</span>
     </a>
   );
 };
