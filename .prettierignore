@@ -12,6 +12,7 @@ config/certification-settings.js
 config/donation-settings.js
 config/superblocks.js
 config/superblocks.test.js
+config/challenge-types.js
 utils/index.js
 utils/get-lines.js
 utils/get-lines.test.js
