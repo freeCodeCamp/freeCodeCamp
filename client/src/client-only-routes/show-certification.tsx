@@ -384,7 +384,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                         <strong>Julia Liuson</strong>
                       </p>
                       <p className='signee-role'>
-                        President, Microsoft Developer Division
+                        {t('certification.ms-president')}
                       </p>
                     </div>
                   </>
