@@ -10,7 +10,6 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   const { t } = useTranslation();
   return (
     <a
-      title={t('buttons.share-on-twitter') || 'Share on Twitter'}
       data-testid='ShareTemplateWrapperTestID'
       className='btn fade-in'
       href={redirectURL}
