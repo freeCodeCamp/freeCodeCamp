@@ -153,7 +153,8 @@
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-evenly;
 }
 
@@ -169,6 +170,8 @@
 
 .certification-namespace .microsoft-signature {
   padding-top: 30px;
+  display: grid;
+  justify-items: center;
 }
 
 .certification-namespace .microsoft-signature img {
@@ -177,7 +180,7 @@
 }
 
 .certification-namespace .signature-underline {
-  width: 100%;
+  width: 300px;
   height: 1px;
   background: linear-gradient(
     90deg,

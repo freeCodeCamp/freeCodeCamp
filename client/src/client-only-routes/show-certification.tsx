@@ -354,7 +354,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </div>
             </main>
             <footer>
-              <div className='row signatures'>
+              <div className='signatures'>
                 {isMicrosoftCert ? (
                   <>
                     <div>
