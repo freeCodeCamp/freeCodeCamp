@@ -150,21 +150,29 @@
   color: var(--theme-color);
 }
 
+.certification-namespace .signature,
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-evenly;
 }
 
-.certification-namespace .signatures img {
+.certification-namespace .signature {
+  display: flex;
+}
+
+.certification-namespace .signatures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.certification-namespace .signature img {
   max-width: 300px;
   width: 100%;
   margin: 0 auto;
 }
 
-.certification-namespace .signatures p {
+.certification-namespace .signature p {
   padding-top: 1px;
 }
 
@@ -328,7 +336,7 @@
     height: 300px;
   }
 
-  .certification-namespace .signatures img {
+  .certification-namespace .signature img {
     max-width: 300px !important;
   }
 

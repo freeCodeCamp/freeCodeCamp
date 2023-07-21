@@ -354,42 +354,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </div>
             </main>
             <footer>
-              <div className='signatures'>
-                {isMicrosoftCert ? (
-                  <>
-                    <div>
-                      <Image
-                        alt="Quincy Larson's Signature"
-                        src={
-                          'https://cdn.freecodecamp.org' +
-                          '/platform/english/images/quincy-larson-signature.svg'
-                        }
-                      />
-                      <p className='signee-name'>
-                        <strong>Quincy Larson</strong>
-                      </p>
-                      <p className='signee-role'>
-                        {t('certification.executive')}
-                      </p>
-                    </div>
-                    <div className='microsoft-signature'>
-                      <Image
-                        alt="Julia Liusons's Signature"
-                        src={
-                          'https://cdn.freecodecamp.org' +
-                          '/platform/english/images/microsoft-signature.png'
-                        }
-                      />
-                      <div className='signature-underline'></div>
-                      <p className='signee-name'>
-                        <strong>Julia Liuson</strong>
-                      </p>
-                      <p className='signee-role'>
-                        {t('certification.ms-president')}
-                      </p>
-                    </div>
-                  </>
-                ) : (
+              {isMicrosoftCert ? (
+                <div className='signatures'>
                   <div>
                     <Image
                       alt="Quincy Larson's Signature"
@@ -405,8 +371,42 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       {t('certification.executive')}
                     </p>
                   </div>
-                )}
-              </div>
+                  <div className='microsoft-signature'>
+                    <Image
+                      alt="Julia Liusons's Signature"
+                      src={
+                        'https://cdn.freecodecamp.org' +
+                        '/platform/english/images/microsoft-signature.png'
+                      }
+                    />
+                    <div className='signature-underline'></div>
+                    <p className='signee-name'>
+                      <strong>Julia Liuson</strong>
+                    </p>
+                    <p className='signee-role'>
+                      {t('certification.ms-president')}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className='signture'>
+                  <div>
+                    <Image
+                      alt="Quincy Larson's Signature"
+                      src={
+                        'https://cdn.freecodecamp.org' +
+                        '/platform/english/images/quincy-larson-signature.svg'
+                      }
+                    />
+                    <p className='signee-name'>
+                      <strong>Quincy Larson</strong>
+                    </p>
+                    <p className='signee-role'>
+                      {t('certification.executive')}
+                    </p>
+                  </div>
+                </div>
+              )}
               {!isMicrosoftCert && (
                 <>
                   <span className='ribbon-wrap'>
