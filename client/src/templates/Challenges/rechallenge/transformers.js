@@ -305,9 +305,6 @@ const transformPython = async function (file) {
   return transformContents(() => cancellableCode, file);
 };
 
-// TODO: So, transformers only run on build (duh!). So, python code will have to
-// be handled differently. For now, I'll call buildDOMChallenge from
-// updatePreviewSaga, but it's questionable if that's correct.
 const pythonTransformer = cond([
   [testPython, transformPython],
   [stubTrue, identity]
