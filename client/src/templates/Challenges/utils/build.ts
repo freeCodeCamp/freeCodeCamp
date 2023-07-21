@@ -7,7 +7,7 @@ import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders';
+import { concatHtml, createPythonTerminal } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
@@ -51,11 +51,7 @@ const { filename: testEvaluator } = testEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
 
-const pythonRunner = [
-  {
-    src: `/js/${pythonRunnerData.filename}.js`
-  }
-];
+const pythonRunnerSrc = `/js/${pythonRunnerData.filename}.js`;
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -280,12 +276,8 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
 }
 
 export function buildPythonChallenge({
-  challengeFiles,
-  required = [],
-  template = ''
+  challengeFiles
 }: BuildChallengeData): Promise<BuildResult> | undefined {
-  // TODO: handle pythonRunner like frameRunnerSrc.
-  const finalRequires = [...required, ...pythonRunner];
   const pipeLine = composeFunctions(...getPythonTransformers());
   const finalFiles = challengeFiles.map(pipeLine);
 
@@ -300,10 +292,7 @@ export function buildPythonChallenge({
           challengeType: challengeTypes.html,
           // Both the terminal and pyodide are loaded into the browser, so we
           // still need to build the HTML.
-          build: concatHtml({
-            required: finalRequires,
-            template
-          }),
+          build: createPythonTerminal(pythonRunnerSrc),
           sources: buildSourceMap(challengeFiles)
         }))
     );
