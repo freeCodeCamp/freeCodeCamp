@@ -368,12 +368,12 @@ describe('challengeRoutes', () => {
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-          expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({
             alreadyCompleted: false,
             points: 1,
             completedDate
           });
+          expect(response.statusCode).toBe(200);
         });
 
         test('POST correctly handles multiple requests', async () => {
@@ -452,7 +452,7 @@ describe('challengeRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
 
       test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
