@@ -161,11 +161,12 @@ export const runTestInTestFrame = async function (
   }
 };
 
-export const runPythonInMainFrame = function (
+export const runPythonInFrame = function (
   document: Document,
-  code: string
+  code: string,
+  previewId: string
 ): void {
-  const contentDocument = getContentDocument(document, mainPreviewId);
+  const contentDocument = getContentDocument(document, previewId);
   void contentDocument?.__runPython(code);
 };
 
@@ -308,6 +309,7 @@ const initMainFrame =
 
         // The document may exist, even if the window does not, so we can try
         // to initialize, even if 'window' is undefined.
+        // TODO: Should we always try to init python? Probably not.
         void frameContext.document?.__initPythonFrame();
       })
       .catch(handleDocumentNotFound);
@@ -321,6 +323,17 @@ function handleDocumentNotFound(err: string) {
 }
 
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
+
+// TODO: reimplement when ready to preview python challenges
+// const initPreviewFrame = () => (frameContext: Context) => {
+//   waitForFrame(frameContext)
+//     .then(() => {
+//       // TODO: Should we always try to init python? Probably not.
+//       void frameContext.document?.__initPythonFrame();
+//     })
+//     .catch(handleDocumentNotFound);
+//   return frameContext;
+// };
 
 const waitForFrame = (frameContext: Context) => {
   return new Promise((resolve, reject) => {

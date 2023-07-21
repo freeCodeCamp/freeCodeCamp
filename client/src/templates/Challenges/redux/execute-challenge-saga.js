@@ -34,7 +34,7 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
-import { runPythonInMainFrame } from '../utils/frame';
+import { runPythonInFrame, mainPreviewId } from '../utils/frame';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -273,7 +273,7 @@ function* updatePreviewSaga() {
     const code = buildData.sources.transformedPython;
     // TODO: proxy errors to the console
     try {
-      yield call(runPythonInMainFrame, document, code);
+      yield call(runPythonInFrame, document, code, mainPreviewId);
     } catch (err) {
       console.log('Error evaluating python code', code);
       console.log('Message:', err.message);
