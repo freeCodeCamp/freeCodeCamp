@@ -30,7 +30,7 @@ export const isMicrosoftLearnLink = (value: string): boolean => {
 
   const correctDomain = url.hostname === 'learn.microsoft.com';
   const correctPath = !!url.pathname.match(
-    /^\/[^/]+\/training\/achievements\//
+    /^\/[^/]+\/training\/achievements\/learn\.wwl\.get-started-c-sharp-part-\d\.trophy$/
   );
   const hasSharingId = !!url.searchParams.get('sharingId');
   const hasUsername = !!url.searchParams.get('username');
