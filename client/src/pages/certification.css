@@ -54,22 +54,7 @@
   color: var(--quaternary-color);
 }
 
-.certificate-inner-wrapper {
-  background-color: var(--gray-90);
-  margin: 0;
-  padding: 20px;
-}
-
-.certificate-inner-wrapper .row {
-  margin: 0;
-}
-
-.certificate-second-inner-wrapper {
-  padding: 14px;
-  border: 10px solid white;
-}
-
-.certificate-wrapper {
+.certification-namespace {
   background-color: white;
 }
 
