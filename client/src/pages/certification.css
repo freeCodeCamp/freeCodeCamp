@@ -8,10 +8,11 @@
 }
 
 .certificate-wrapper {
-  position: relative;
-  width: 100%;
   --outline-width: 11px;
   --namespace-offset: 10px;
+  position: relative;
+  width: 100%;
+  margin-inline: 1em;
 }
 
 .certification-namespace {
