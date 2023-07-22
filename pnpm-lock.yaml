@@ -37,8 +37,8 @@ importers:
         specifier: 8.20.1
         version: 8.20.1
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/user-event':
         specifier: 13.5.0
         version: 13.5.0(@testing-library/dom@8.20.1)
@@ -519,8 +519,8 @@ importers:
         specifier: 1.54.1
         version: 1.54.1
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       algoliasearch:
         specifier: 4.18.0
         version: 4.18.0
@@ -1033,8 +1033,8 @@ importers:
   tools/challenge-editor/client:
     dependencies:
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
@@ -1354,8 +1354,8 @@ importers:
         specifier: 6.5.16
         version: 6.5.16(@babel/core@7.22.9)(@storybook/builder-webpack5@6.5.16)(@storybook/manager-webpack5@6.5.16)(eslint@8.45.0)(react-dom@16.14.0)(react@16.14.0)(require-from-string@2.0.2)(typescript@4.9.5)
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
@@ -10130,8 +10130,8 @@ packages:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  /@testing-library/jest-dom@5.16.5:
-    resolution: {integrity: sha512-N5ixQ2qKpi5OLYfwQmUb/5mSV9LneAcaUfp32pn4yCnpb8r/Yz0pXFPck21dIicKmi+ta5WRAknkZCfA8refMA==}
+  /@testing-library/jest-dom@5.17.0:
+    resolution: {integrity: sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==}
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
       '@adobe/css-tools': 4.2.0
