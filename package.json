@@ -108,7 +108,7 @@
     "@babel/preset-typescript": "7.22.5",
     "@testing-library/cypress": "8.0.7",
     "@testing-library/dom": "8.20.1",
-    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/jest-dom": "5.17.0",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.3",
     "@types/lodash": "4.14.195",
