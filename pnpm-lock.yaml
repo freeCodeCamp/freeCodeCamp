@@ -254,8 +254,8 @@ importers:
         specifier: 29.6.1
         version: 29.6.1(@types/node@18.16.20)(ts-node@10.9.1)
       pino-pretty:
-        specifier: 10.0.1
-        version: 10.0.1
+        specifier: 10.1.0
+        version: 10.1.0
       prisma:
         specifier: 4.16.2
         version: 4.16.2
@@ -17246,7 +17246,7 @@ packages:
       minimatch: 3.1.2
       object.values: 1.1.6
       resolve: 1.22.2
-      semver: 6.3.1
+      semver: 6.3.0
       tsconfig-paths: 3.14.2
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
@@ -17341,7 +17341,7 @@ packages:
       minimatch: 3.1.2
       object.entries: 1.1.6
       object.fromentries: 2.0.6
-      semver: 6.3.1
+      semver: 6.3.0
 
   /eslint-plugin-jsx-a11y@6.7.1(eslint@8.45.0):
     resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
@@ -26342,8 +26342,8 @@ packages:
       readable-stream: 4.3.0
       split2: 4.1.0
 
-  /pino-pretty@10.0.1:
-    resolution: {integrity: sha512-yrn00+jNpkvZX/NrPVCPIVHAfTDy3ahF0PND9tKqZk4j9s+loK8dpzrJj4dGb7i+WLuR50ussuTAiWoMWU+qeA==}
+  /pino-pretty@10.1.0:
+    resolution: {integrity: sha512-9gAgVHCVTEq0ThcjoXkOICYQgdqh1h90WSuVAnNeCrRrefJInUvMbpDfy6PlsI29Nbu9UW9CGkUHztrR1A9N+A==}
     hasBin: true
     dependencies:
       colorette: 2.0.19
