@@ -214,9 +214,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username } = cert;
-  let { certTitle } = cert;
-  certTitle = certTypeTitleMap[certTypes.foundationalCSharp];
+  const { date, name: userFullName = null, username, certTitle } = cert;
 
   const { user } = props;
 
