@@ -65,9 +65,6 @@
 .col-xs-12 {
   float: left;
 }
-.col-xs-12 {
-  width: 100%;
-}
 .col-xs-11 {
   width: 91.66666667%;
 }
@@ -724,4 +721,29 @@
   .col-lg-offset-0 {
     margin-left: 0;
   }
+}
+
+@media (min-width: 768px) {
+  .col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .col-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .col-sm-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+}
+.col-xs-12 {
+  width: 100%;
 }
