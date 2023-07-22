@@ -741,9 +741,5 @@
   }
   .col-sm-8 {
     width: 66.66666667%;
-    float: left;
   }
-}
-.col-xs-12 {
-  width: 100%;
 }
