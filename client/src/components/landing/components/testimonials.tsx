@@ -19,7 +19,7 @@ const Testimonials = (): JSX.Element => {
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
             <LazyImage
-              alt='Shawn Wang'
+              alt='Shawn Wang is smiling lively at the top of a tall mountain.'
               className='testimonial-image'
               src={shawnImg}
             />
@@ -46,7 +46,7 @@ const Testimonials = (): JSX.Element => {
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
             <LazyImage
-              alt='Sarah Chima'
+              alt='Sarah Chima is sitting in a chair and smiling with poise.'
               className='testimonial-image'
               src={sarahImg}
             />
@@ -73,7 +73,7 @@ const Testimonials = (): JSX.Element => {
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
             <LazyImage
-              alt='Emma Bostian'
+              alt='Emma Bostian is in the garden with bright smile.'
               className='testimonial-image'
               src={emmaImg}
             />
