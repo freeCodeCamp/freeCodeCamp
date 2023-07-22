@@ -1,4 +1,4 @@
-
-export interface ColProps {
-  className?: string
+export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+  children?: React.ReactNode;
 }
