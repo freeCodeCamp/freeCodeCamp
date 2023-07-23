@@ -40,13 +40,13 @@ describe('settingRoutes', () => {
         method: 'PUT'
       });
 
-      expect(response.statusCode).toEqual(403);
       expect(response.body).toEqual({
         code: 'FST_CSRF_MISSING_SECRET',
         error: 'Forbidden',
         message: 'Missing csrf secret',
         statusCode: 403
       });
+      expect(response.statusCode).toEqual(403);
     });
 
     it('should return 403 if the csrf_token is invalid', async () => {
@@ -54,13 +54,13 @@ describe('settingRoutes', () => {
         method: 'PUT'
       }).set('Cookie', ['_csrf=foo', 'csrf-token=bar']);
 
-      expect(response.statusCode).toEqual(403);
       expect(response.body).toEqual({
         code: 'FST_CSRF_INVALID_TOKEN',
         error: 'Forbidden',
         message: 'Invalid csrf token',
         statusCode: 403
       });
+      expect(response.statusCode).toEqual(403);
     });
 
     it('should receive a new CSRF token + secret in the response', async () => {
@@ -107,12 +107,12 @@ describe('settingRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response.statusCode).toEqual(200);
         expect(response.body).toEqual({
           message: 'flash.privacy-updated',
           type: 'success'
         });
         expect(user?.profileUI).toEqual(profileUI);
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT ignores invalid keys', async () => {
@@ -130,8 +130,8 @@ describe('settingRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(response.statusCode).toEqual(200);
         expect(user?.profileUI).toEqual(profileUI);
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with missing keys', async () => {
@@ -148,13 +148,13 @@ describe('settingRoutes', () => {
           }
         });
 
-        expect(response.statusCode).toEqual(400);
         expect(response.body).toEqual({
           code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: `body/profileUI must have required property 'showAbout'`,
           statusCode: 400
         });
+        expect(response.statusCode).toEqual(400);
       });
     });
 
@@ -167,12 +167,11 @@ describe('settingRoutes', () => {
           theme: 'night'
         });
 
-        expect(response.statusCode).toEqual(200);
-
         expect(response.body).toEqual({
           message: 'flash.updated-themes',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
@@ -196,12 +195,11 @@ describe('settingRoutes', () => {
           username: 'twaha@'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'Username twaha@ contains invalid characters',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns an error when the username is an endpoint', async () => {
@@ -212,12 +210,11 @@ describe('settingRoutes', () => {
           username: 'german'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.username-taken',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns an error when the username is a bad word', async () => {
@@ -228,12 +225,11 @@ describe('settingRoutes', () => {
           username: 'ass'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.username-taken',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns an error when the username is a https status code', async () => {
@@ -244,12 +240,11 @@ describe('settingRoutes', () => {
           username: '404'
         });
 
-        expect(response?.statusCode).toEqual(400);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'Username 404 is a reserved error code',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns an error when the username is shorter than 3 characters', async () => {
@@ -260,11 +255,11 @@ describe('settingRoutes', () => {
           username: 'fo'
         });
 
-        expect(response?.statusCode).toEqual(400);
         expect(response.body).toEqual({
           message: 'body/username must NOT have fewer than 3 characters',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
@@ -275,9 +270,7 @@ describe('settingRoutes', () => {
           username: 'TwaHa1'
         });
 
-        expect(response?.statusCode).toEqual(200);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.username-updated',
           type: 'success',
           username: 'TwaHa1'
@@ -288,6 +281,7 @@ describe('settingRoutes', () => {
         });
 
         expect(user?.username).toEqual('twaha1');
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns an error when the username is already used', async () => {
@@ -356,12 +350,12 @@ describe('settingRoutes', () => {
           username: 'TWaha3'
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.username-updated',
           type: 'success',
           username: 'TWaha3'
         });
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
       });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
@@ -372,11 +366,11 @@ describe('settingRoutes', () => {
           username
         });
 
-        expect(response?.statusCode).toEqual(400);
         expect(response.body).toEqual({
           message: 'body/username must NOT have more than 1000 characters',
           type: 'info'
         });
+        expect(response.statusCode).toEqual(400);
       });
     });
 
@@ -387,12 +381,11 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ keyboardShortcuts: true });
 
-        expect(response?.statusCode).toEqual(200);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.keyboard-shortcut-updated',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with invalid shortcuts setting', async () => {
@@ -417,12 +410,11 @@ describe('settingRoutes', () => {
           githubProfile: 'https://github.com/QuincyLarson'
         });
 
-        expect(response.statusCode).toEqual(200);
-
         expect(response.body).toEqual({
           message: 'flash.updated-socials',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with invalid socials setting', async () => {
@@ -447,12 +439,11 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ sendQuincyEmail: true });
 
-        expect(response.statusCode).toEqual(200);
-
         expect(response.body).toEqual({
           message: 'flash.subscribe-to-quincy-updated',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with invalid sendQuincyEmail', async () => {
@@ -523,12 +514,11 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ isHonest: true });
 
-        expect(response?.statusCode).toEqual(200);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'buttons.accepted-honesty',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with invalid honesty', async () => {
@@ -537,7 +527,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ isHonest: false });
 
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
     });
 
@@ -548,12 +538,11 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ quincyEmails: true });
 
-        expect(response?.statusCode).toEqual(200);
-
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.privacy-updated',
           type: 'success'
         });
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT returns 400 status code with non-boolean data', async () => {
@@ -562,13 +551,13 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ quincyEmails: '123' });
 
-        expect(response?.statusCode).toEqual(400);
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           code: 'FST_ERR_VALIDATION',
           error: 'Bad Request',
           message: 'body/quincyEmails must be boolean',
           statusCode: 400
         });
+        expect(response.statusCode).toEqual(400);
       });
     });
   });
@@ -606,7 +595,7 @@ describe('settingRoutes', () => {
         setCookies
       });
 
-      expect(response?.statusCode).toEqual(401);
+      expect(response.statusCode).toEqual(401);
     });
 
     test('PUT /update-my-username returns 401 status code for un-authenticated users', async () => {
@@ -617,7 +606,7 @@ describe('settingRoutes', () => {
         username: 'twaha2'
       });
 
-      expect(response?.statusCode).toEqual(401);
+      expect(response.statusCode).toEqual(401);
     });
   });
 });

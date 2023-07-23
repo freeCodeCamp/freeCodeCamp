@@ -29,10 +29,10 @@ describe('Donate', () => {
           itIs: 'ignored'
         });
 
-        expect(response.status).toBe(200);
         expect(response.body).toEqual({
           isDonating: true
         });
+        expect(response.status).toBe(200);
       });
 
       it('should return 400 if the user is already donating', async () => {
