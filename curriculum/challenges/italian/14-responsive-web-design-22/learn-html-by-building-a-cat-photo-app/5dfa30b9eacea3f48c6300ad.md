@@ -29,7 +29,7 @@ L'elemento di ancoraggio (`a`) dovrebbe avere un tag di apertura. I tag di apert
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You are missing a closing (`a`) tag after the image.
+Ti manca un tag di chiusura (`a`) dopo l'immagine.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

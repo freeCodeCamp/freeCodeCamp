@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7b
-title: Розуміння власних властивостей
+title: Власні властивості
 challengeType: 1
 forumTopicId: 301326
 dashedName: understand-own-properties
@@ -8,7 +8,7 @@ dashedName: understand-own-properties
 
 # --description--
 
-В наступному прикладі конструктор `Bird` встановлює дві властивості `name` й `numLegs`:
+У цьому прикладі конструктор `Bird` визначає властивості `name` та `numLegs`:
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` й `numLegs` називаються <dfn>own properties</dfn>, бо вони визначаються напряму від об'єкта. Це означає, що `duck` й `canary` мають власні копії цих властивостей. Насправді кожна частина `Bird` повинна мати власну копію цих властивостей. Цей код надає змогу додати всі власні властивості `duck` до масиву `ownProps`:
+`name` та `numLegs` називаються <dfn>власними властивостями</dfn>, оскільки їх визначено одразу в екземплярі об’єкта. Це означає, що `duck` та `canary` мають власні копії властивостей. Кожен екземпляр `Bird` матиме власну копію властивостей. Цей код додає всі власні властивості `duck` до масиву `ownProps`:
 
 ```js
 let ownProps = [];
@@ -34,7 +34,7 @@ for (let property in duck) {
 console.log(ownProps);
 ```
 
-Консоль повинна зображати значення `["name", "numLegs"]`.
+Консоль показуватиме значення `["name", "numLegs"]`.
 
 # --instructions--
 
@@ -42,19 +42,19 @@ console.log(ownProps);
 
 # --hints--
 
-`ownProps` має містити в собі значення `numLegs` й `name`.
+`ownProps` має містити значення `numLegs` та `name`.
 
 ```js
 assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 ```
 
-Ви повинні розв'язати це завдання без використання побудови в методі `Object.keys()`.
+Виконайте це завдання, не використовуючи вбудований метод `Object.keys()`.
 
 ```js
 assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```
 
-Ви повинні розв'язати це завдання без використання складного кодування `ownProps`.
+Виконайте це завдання, не закодовуючи масив `ownProps` жорстко.
 
 ```js
 assert(
