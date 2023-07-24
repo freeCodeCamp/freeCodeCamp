@@ -267,8 +267,9 @@ function* updatePreviewSaga() {
   const challengeData = yield select(challengeDataSelector);
   if (challengeData.challengeType === challengeTypes.python) {
     const document = yield getContext('document');
-    // TODO: refactor this. It can't be correct to build the entire challenge
-    // just to modify the code. Concerns are in need of separation.
+    // TODO: refactor the build pipeline so that we have discrete, composable
+    // functions to handle transforming code, embedding it and building the
+    // final html. Then we can just use the transformation function here.
     const buildData = yield buildChallengeData(challengeData);
     const code = buildData.sources.transformedPython;
     // TODO: proxy errors to the console

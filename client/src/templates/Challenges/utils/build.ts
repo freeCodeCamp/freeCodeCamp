@@ -74,6 +74,8 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
+// TODO: split this into at least two functions. One to create 'original' i.e.
+// the source and another to create the contents.
 function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
@@ -207,6 +209,9 @@ type BuildResult = {
   sources: Source | undefined;
 };
 
+// TODO: All the buildXChallenge files have a similar structure, so make that
+// abstraction (function, class, whatever) and then create the various functions
+// out of it.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
