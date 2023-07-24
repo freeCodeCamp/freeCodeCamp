@@ -2,7 +2,10 @@ import { toString, flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
 import { format } from '../../../utils/format';
-import type { FrameDocument } from '../../../../../tools/client-plugins/browser-scripts';
+import type {
+  FrameDocument,
+  PythonDocument
+} from '../../../../../tools/client-plugins/browser-scripts';
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -17,7 +20,7 @@ export interface Context {
   window?: Window &
     // eslint-disable-next-line @typescript-eslint/naming-convention
     typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
-  document?: FrameDocument;
+  document?: FrameDocument | PythonDocument;
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
@@ -131,13 +134,14 @@ type TestResult =
   | { pass: boolean }
   | { err: { message: string; stack?: string } };
 
-// TODO: Probably going to need this to be generic, since we have multiple
-// different types of frames.
-function getContentDocument(document: Document, id: string) {
+function getContentDocument<T extends Document = FrameDocument>(
+  document: Document,
+  id: string
+) {
   const frame = document.getElementById(id);
   if (!frame) return null;
   const frameDocument = (frame as HTMLIFrameElement).contentDocument;
-  return frameDocument as FrameDocument;
+  return frameDocument as T;
 }
 
 export const runTestInTestFrame = async function (
@@ -147,10 +151,6 @@ export const runTestInTestFrame = async function (
 ): Promise<TestResult | undefined> {
   const contentDocument = getContentDocument(document, testId);
   if (contentDocument) {
-    console.log('running test in test frame');
-    console.log(test);
-    console.log(contentDocument);
-    console.log(contentDocument.__runPython);
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
@@ -165,7 +165,10 @@ export const runPythonInFrame = function (
   code: string,
   previewId: string
 ): void {
-  const contentDocument = getContentDocument(document, previewId);
+  const contentDocument = getContentDocument<PythonDocument>(
+    document,
+    previewId
+  );
   void contentDocument?.__runPython(code);
 };
 
@@ -308,8 +311,12 @@ const initMainFrame =
 
         // The document may exist, even if the window does not, so we can try
         // to initialize, even if 'window' is undefined.
-        // TODO: Should we always try to init python? Probably not.
-        void frameContext.document?.__initPythonFrame();
+        if (
+          frameContext.document &&
+          '__initPythonFrame' in frameContext.document
+        ) {
+          void frameContext.document?.__initPythonFrame();
+        }
       })
       .catch(handleDocumentNotFound);
     return frameContext;
@@ -327,8 +334,12 @@ const initPreviewFrame = () => (frameContext: Context) => frameContext;
 // const initPreviewFrame = () => (frameContext: Context) => {
 //   waitForFrame(frameContext)
 //     .then(() => {
-//       // TODO: Should we always try to init python? Probably not.
-//       void frameContext.document?.__initPythonFrame();
+//       if (
+//         frameContext.document &&
+//         '__initPythonFrame' in frameContext.document
+//       ) {
+//         void frameContext.document?.__initPythonFrame();
+//       }
 //     })
 //     .catch(handleDocumentNotFound);
 //   return frameContext;

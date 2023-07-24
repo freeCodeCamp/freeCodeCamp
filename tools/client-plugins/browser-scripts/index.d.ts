@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-// TODO: probably want a 'python' document that extends FrameDocument, since
 
 import { PyodideInterface } from 'pyodide';
 
-// __runPython is only available in the python iframe.
 export interface FrameDocument extends Document {
   __initTestFrame: (e: InitTestFrameArg) => Promise<void>;
   __runTest: (
@@ -11,6 +9,9 @@ export interface FrameDocument extends Document {
   ) => Promise<
     { pass: boolean } | { err: { message: string; stack?: string } }
   >;
+}
+
+export interface PythonDocument extends FrameDocument {
   __initPythonFrame: () => Promise<void>;
   __runPython: (code: string) => Promise<PyodideInterface>;
 }

@@ -8,7 +8,7 @@ import { FitAddon } from 'xterm-addon-fit';
 import jQuery from 'jquery'; // TODO: is jQuery needed for the python runner?
 import * as helpers from '@freecodecamp/curriculum-helpers';
 
-import type { FrameDocument, FrameWindow, InitTestFrameArg } from '.';
+import type { PythonDocument, FrameWindow, InitTestFrameArg } from '.';
 
 import 'xterm/css/xterm.css';
 
@@ -17,7 +17,7 @@ import 'xterm/css/xterm.css';
 // This will be running in an iframe, so document will be
 // element.contentDocument. This declaration is just to add properties we know
 // exist on this document (but not on the parent)
-const contentDocument = document as FrameDocument;
+const contentDocument = document as PythonDocument;
 
 function createTerminal(disposables: IDisposable[]) {
   const terminalContainer = document.getElementById('terminal');
