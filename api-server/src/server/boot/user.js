@@ -5,6 +5,7 @@ import { pick } from 'lodash';
 
 import {
   fixCompletedChallengeItem,
+  fixCompletedExamsItem,
   fixPartiallyCompletedChallengeItem,
   fixSavedChallengeItem
 } from '../../common/utils';
@@ -120,12 +121,14 @@ function createReadSessionUser(app) {
     try {
       const [
         completedChallenges,
+        completedExams,
         partiallyCompletedChallenges,
         progressTimestamps,
         savedChallenges
       ] = await Promise.all(
         [
           queryUser.getCompletedChallenges$(),
+          queryUser.getCompletedExams$(),
           queryUser.getPartiallyCompletedChallenges$(),
           queryUser.getPoints$(),
           queryUser.getSavedChallenges$()
@@ -137,6 +140,7 @@ function createReadSessionUser(app) {
         ...queryUser.toJSON(),
         calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
+        completedExams: completedExams.map(fixCompletedExamsItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem
         ),
