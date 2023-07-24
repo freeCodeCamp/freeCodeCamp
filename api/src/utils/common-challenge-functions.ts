@@ -1,6 +1,7 @@
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
+import { challengeTypes } from '../../../config/challenge-types';
 import { getChallenges } from './get-challenges';
 
 const jsCertProjectIds = [
@@ -12,12 +13,12 @@ const jsCertProjectIds = [
 ];
 
 const multifileCertProjectIds = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
-  .map(challenge => challenge.id);
+  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
+  .map(c => c.id);
 
 const savableChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
-  .map(challenge => challenge.id);
+  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
+  .map(c => c.id);
 
 type SavedChallengeFile = {
   key: string;
