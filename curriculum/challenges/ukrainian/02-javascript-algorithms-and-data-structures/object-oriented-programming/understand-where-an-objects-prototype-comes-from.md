@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b81
-title: Розуміння того, звідки з'являється прототип об'єкта
+title: Звідки з’являється прототип об’єкта
 challengeType: 1
 forumTopicId: 301330
 dashedName: understand-where-an-objects-prototype-comes-from
@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-Так само, як люди успадковують гени від своїх батьків, об'єкт успадковує його `prototype` безпосередньо від функції конструктора, яка його створила. Наприклад, `Bird`конструктор створює об'єкт `duck`:
+Люди успадковують гени від своїх батьків, а об’єкт успадковує `prototype` від функції-конструктора, яка його створила. Наприклад, конструктор `Bird` створює об’єкт `duck`:
 
 ```js
 function Bird(name) {
@@ -18,21 +18,21 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` наслідує `prototype` з функції конструктора `Bird`. Ви можете показати це відношення з методом `isPrototypeOf`:
+`duck` успадковує `prototype` від функції-конструктора `Bird`. Такі зв’язки можна показати за допомогою методу `isPrototypeOf`:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
 ```
 
-Вони повернуть `true`.
+Повернеться `true`.
 
 # --instructions--
 
-Використовуйте `isPrototypeOf` щоб перевірити `prototyp` of `beagle`.
+Використайте `isPrototypeOf`, щоб перевірити `beagle` `prototype`.
 
 # --hints--
 
-Ви повинні показати, що `Dog.prototype` це є `prototype` `beagle`
+Ви повинні показати, що `Dog.prototype` є прототипом `beagle`
 
 ```js
 assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));

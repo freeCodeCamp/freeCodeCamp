@@ -13,7 +13,7 @@ dashedName: profile-lookup
 
 Функція `lookUpProfile`, яка приймає `name` та властивість (`prop`) як аргументи, вже записана для вас.
 
-The function should check if `name` is an actual contact's `firstName` and the given property (`prop`) is a property of that contact.
+Функція повинна перевірити, чи `name` дійсно є ім’ям контакту (`firstName`) і надана властивість (`prop`) є властивістю цього контакту.
 
 Якщо обидва є істинними, то поверніть значення цієї власності.
 
