@@ -39,6 +39,7 @@ const GrowthBookReduxConnector = ({
   const displayProgressModalMultipleTimes = useFeature(
     'display_progress_modal_multiple_times'
   ).on;
+  useFeature('aa-test');
   useEffect(() => {
     if (
       isSignedIn &&
