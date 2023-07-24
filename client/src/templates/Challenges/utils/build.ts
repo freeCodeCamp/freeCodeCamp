@@ -219,23 +219,26 @@ export function buildDOMChallenge(
   const finalFiles = challengeFiles?.map(pipeLine);
 
   if (finalFiles) {
-    return (
-      Promise.all(finalFiles)
-        .then(checkFilesErrors)
-        .then(embedFilesInHtml) as Promise<[ChallengeFiles, string]>
-    ).then(([challengeFiles, contents]) => ({
-      // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-      // necessary at the moment.
-      challengeType: challengeTypes.html,
-      build: concatHtml({
-        required,
-        template,
-        contents,
-        ...(usesTestRunner && { testRunner: frameRunnerSrc })
-      }),
-      sources: buildSourceMap(challengeFiles),
-      loadEnzyme
-    }));
+    return Promise.all(finalFiles)
+      .then(checkFilesErrors)
+      .then(
+        embedFilesInHtml as (
+          x: ChallengeFiles
+        ) => Promise<[ChallengeFiles, string]>
+      )
+      .then(([challengeFiles, contents]) => ({
+        // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+        // necessary at the moment.
+        challengeType: challengeTypes.html,
+        build: concatHtml({
+          required,
+          template,
+          contents,
+          ...(usesTestRunner && { testRunner: frameRunnerSrc })
+        }),
+        sources: buildSourceMap(challengeFiles),
+        loadEnzyme
+      }));
   }
 }
 
