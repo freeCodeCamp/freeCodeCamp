@@ -20,7 +20,6 @@ export interface InitTestFrameArg {
     contents?: string;
     editableContents?: string;
     original?: { [id: string]: string };
-    transformedPython?: string;
   };
   getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;

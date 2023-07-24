@@ -271,7 +271,7 @@ function* updatePreviewSaga() {
     // functions to handle transforming code, embedding it and building the
     // final html. Then we can just use the transformation function here.
     const buildData = yield buildChallengeData(challengeData);
-    const code = buildData.sources.transformedPython;
+    const code = buildData.sources.contents;
     // TODO: proxy errors to the console
     try {
       yield call(runPythonInFrame, document, code, mainPreviewId);
