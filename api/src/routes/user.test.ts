@@ -550,7 +550,7 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
     });
 
@@ -561,7 +561,7 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
     });
 
@@ -572,7 +572,7 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
     });
 

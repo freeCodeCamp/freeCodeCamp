@@ -1,8 +1,7 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -24,7 +23,6 @@ interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
   isSignedIn: boolean;
-  t: TFunction;
   showLoading: boolean;
   completedChallengeCount?: number;
 }
@@ -51,77 +49,78 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ acceptTerms }, dispatch);
 const RedirectToLearn = createRedirect('/learn');
 
+function EmailListOptIn({
+  isSignedIn,
+  acceptTerms
+}: {
+  isSignedIn: boolean;
+  acceptTerms: (accepted: boolean) => void;
+}) {
+  const { t } = useTranslation();
+  if (isSignedIn) {
+    return (
+      <Row>
+        <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            className='big-cta-btn'
+            onClick={() => acceptTerms(true)}
+          >
+            {t('buttons.yes-please')}
+          </Button>
+          <Spacer size='small' />
+        </Col>
+        <Col md={4} sm={5} xs={12}>
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            className='big-cta-btn'
+            onClick={() => acceptTerms(false)}
+          >
+            {t('buttons.no-thanks')}
+          </Button>
+          <Spacer size='small' />
+        </Col>
+      </Row>
+    );
+  } else {
+    return (
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Spacer size='small' />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          className='big-cta-btn'
+          href={`${apiLocation}/signin`}
+        >
+          {t('buttons.sign-up-email-list')}
+        </Button>
+        <Spacer size='small' />
+      </Col>
+    );
+  }
+}
+
 function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
   isSignedIn,
-  t,
   showLoading,
   completedChallengeCount = 0
 }: AcceptPrivacyTermsProps) {
+  const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
 
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
-  });
-
-  function onClick(isWeeklyEmailAccepted: boolean) {
-    acceptTerms(isWeeklyEmailAccepted);
-  }
-
-  function renderEmailListOptIn(isSignedIn: boolean, showLoading: boolean) {
-    if (showLoading) {
-      return <Loader fullScreen={true} />;
-    }
-    if (isSignedIn) {
-      return (
-        <Row>
-          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(true)}
-            >
-              {t('buttons.yes-please')}
-            </Button>
-            <Spacer size='small' />
-          </Col>
-          <Col md={4} sm={5} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(false)}
-            >
-              {t('buttons.no-thanks')}
-            </Button>
-            <Spacer size='small' />
-          </Col>
-        </Row>
-      );
-    } else {
-      return (
-        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer size='small' />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            href={`${apiLocation}/signin`}
-          >
-            {t('buttons.sign-up-email-list')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      );
-    }
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return acceptedPrivacyTerms ? (
     <RedirectToLearn />
@@ -160,7 +159,11 @@ function AcceptPrivacyTerms({
             <p>{t('misc.email-blast')}</p>
             <Spacer size='small' />
           </Col>
-          {renderEmailListOptIn(isSignedIn, showLoading)}
+          {showLoading ? (
+            <Loader fullScreen={true} />
+          ) : (
+            <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
+          )}
           <Col xs={12}>
             <Spacer size='medium' />
           </Col>
@@ -170,7 +173,4 @@ function AcceptPrivacyTerms({
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(AcceptPrivacyTerms));
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);

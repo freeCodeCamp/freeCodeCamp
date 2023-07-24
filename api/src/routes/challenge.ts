@@ -1,8 +1,9 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { formatValidationError } from '../utils/error-formatting';
-import { ProgressTimestamp, getPoints } from '../utils/progress';
 import { schemas } from '../schemas';
+import { updateUserChallengeData } from '../utils/common-challenge-functions';
+import { formatValidationError } from '../utils/error-formatting';
+import { getPoints, ProgressTimestamp } from '../utils/progress';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -95,6 +96,58 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       } catch (err) {
         // TODO: send to Sentry
         fastify.log.error(err);
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/backend-challenge-completed',
+    {
+      schema: schemas.backendChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatValidationError(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const points = getPoints(progressTimestamps);
+
+        const completedChallenge = {
+          completedDate: Date.now(),
+          ...req.body
+        };
+
+        const { alreadyCompleted } = await updateUserChallengeData(
+          fastify,
+          user,
+          req.body.id,
+          completedChallenge
+        );
+
+        return {
+          alreadyCompleted,
+          points: alreadyCompleted ? points : points + 1,
+          completedDate: completedChallenge.completedDate
+        };
+      } catch (error) {
+        fastify.log.error(error);
         void reply.code(500);
         return {
           message:
