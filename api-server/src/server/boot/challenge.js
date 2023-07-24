@@ -25,9 +25,10 @@ import {
   normalizeParams,
   getPrefixedLandingPath
 } from '../utils/redirection';
-import { randomizeExam, createExamResults } from '../utils/exam';
+import { generateRandomExam, createExamResults } from '../utils/exam';
 import {
   validateExamFromDbSchema,
+  validateExamResultsSchema,
   validateGeneratedExamSchema,
   validateUserCompletedExamSchema
 } from '../utils/exam-schemas';
@@ -443,7 +444,6 @@ async function backendChallengeCompleted(req, res, next) {
   });
 }
 
-// TODO: Use debug instead of console logs
 // TODO: send flash message keys to client so they can be i18n
 function createGenerateExam(app) {
   const { Exam } = app.models;
@@ -470,7 +470,7 @@ function createGenerateExam(app) {
 
       if (validExamFromDbSchema.error) {
         res.status(500);
-        console.log(validExamFromDbSchema.error);
+        log(validExamFromDbSchema.error);
         throw new Error(
           `An error occurred validating the exam information from the database.`
         );
@@ -492,7 +492,7 @@ function createGenerateExam(app) {
         }
       });
 
-      const randomizedExam = randomizeExam(examJson);
+      const randomizedExam = generateRandomExam(examJson);
 
       const validGeneratedExamSchema = validateGeneratedExamSchema(
         randomizedExam,
@@ -501,13 +501,13 @@ function createGenerateExam(app) {
 
       if (validGeneratedExamSchema.error) {
         res.status(500);
-        console.log(validGeneratedExamSchema.error);
+        log(validGeneratedExamSchema.error);
         throw new Error(`An error occurred trying to randomize the exam.`);
       }
 
-      return res.send({ exam: randomizedExam });
+      return res.send({ generatedExam: randomizedExam });
     } catch (err) {
-      console.error(err);
+      log(err);
       return res.send({ error: err.message });
     }
   };
@@ -518,7 +518,7 @@ function createEvaluateExam(app) {
 
   return async function evaluateExam(req, res) {
     const {
-      body: { userExam, challengeId },
+      body: { userCompletedExam, challengeId },
       user: { completedChallenges }
     } = req;
 
@@ -534,11 +534,10 @@ function createEvaluateExam(app) {
       // This is cause there was struggles validating the exam directly from the db/loopback
       const examJson = JSON.parse(JSON.stringify(examFromDb));
 
-      // Do I really need to validate this again? I suppose why not
       const validExamFromDbSchema = validateExamFromDbSchema(examJson);
       if (validExamFromDbSchema.error) {
         res.status(500);
-        console.log(validExamFromDbSchema.error);
+        log(validExamFromDbSchema.error);
         throw new Error(
           `An error occurred validating the exam information from the database.`
         );
@@ -546,7 +545,7 @@ function createEvaluateExam(app) {
 
       const { prerequisites, numberOfQuestionsInExam, title } = examJson;
 
-      // Validate User has completed prerequisite challenges, do we need to do this again?
+      // Validate User has completed prerequisite challenges
       prerequisites?.forEach(prerequisite => {
         const prerequisiteCompleted = completedChallenges.find(
           challenge => challenge.id === prerequisite.id
@@ -562,31 +561,36 @@ function createEvaluateExam(app) {
 
       // Validate user completed exam
       const validUserCompletedExam = validateUserCompletedExamSchema(
-        userExam,
+        userCompletedExam,
         numberOfQuestionsInExam
       );
       if (validUserCompletedExam.error) {
         res.status(500);
-        console.log(validUserCompletedExam.error);
+        log(validUserCompletedExam.error);
         throw new Error(`An error occurred validating the submitted exam.`);
       }
 
-      const examResults = createExamResults(userExam, examJson);
+      const examResults = createExamResults(userCompletedExam, examJson);
 
-      // TODO: validate examResults
-      console.log('examResults');
-      console.log(examResults);
+      const validExamResults = validateExamResultsSchema(examResults);
+      if (validExamResults.error) {
+        res.status(500);
+        log(validExamResults.error);
+        throw new Error(`An error occurred validating the submitted exam.`);
+      }
 
-      // TODO: if examResults.passed -> Save to completedChallenges + remove the other save method
+      // if passed -> add to completedExams[]
+      // Then when claiming the cert, check that they have the challenge, and it's passed.
 
       return res.send({ examResults });
     } catch (err) {
-      console.error(err);
+      log(err);
       return res.send({ error: err.message });
     }
   };
 }
 
+// TODO: Delete this whole thing - add to completedChallenges when evaluating
 async function examChallengeCompleted(req, res, next) {
   // TODO: verify shape of exam results
   const { user, body = {} } = req;

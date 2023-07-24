@@ -135,6 +135,7 @@ export const validateUserCompletedExamSchema = (
   exam,
   numberOfQuestionsInExam
 ) => {
+  // TODO: Validate that the properties exist
   if (!exam.length === numberOfQuestionsInExam) {
     throw new Error(
       'The number of exam questions answered does not match the number of questions required.'
@@ -142,4 +143,19 @@ export const validateUserCompletedExamSchema = (
   }
 
   return userCompletedExamSchema.validate(exam);
+};
+
+// Exam Results Schema
+const examResultsSchema = Joi.object().keys({
+  examId: Joi.objectId().required(),
+  numberOfCorrectAnswers: Joi.number().min(0),
+  numberOfQuestionsInExam: Joi.number().min(0),
+  percentCorrect: Joi.number().min(0),
+  passingPercent: Joi.number().min(0).max(100),
+  passed: Joi.bool(),
+  examTimeInSeconds: Joi.number().min(0)
+});
+
+export const validateExamResultsSchema = examResults => {
+  return examResultsSchema.validate(examResults);
 };

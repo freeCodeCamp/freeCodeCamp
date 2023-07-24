@@ -23,7 +23,7 @@ function getRandomIndex(arr) {
 }
 
 // Used to generate a random exam
-export function randomizeExam(examJson) {
+export function generateRandomExam(examJson) {
   const { numberOfQuestionsInExam, questions } = examJson;
   const numberOfAnswersPerQuestion = 5;
   const randomizedExam = [];
@@ -68,9 +68,10 @@ export function randomizeExam(examJson) {
 
 // Used to evaluate user completed exams
 export function createExamResults(userExam, originalExam) {
-  let correctAnswers = 0;
+  let numberOfCorrectAnswers = 0;
   const { userExamQuestions, examTimeInSeconds } = userExam;
   const {
+    id,
     questions: originalQuestions,
     numberOfQuestionsInExam,
     passingPercent
@@ -90,16 +91,18 @@ export function createExamResults(userExam, originalExam) {
     );
 
     if (isCorrect) {
-      correctAnswers++;
+      numberOfCorrectAnswers++;
     }
   });
 
-  const percent = (correctAnswers / numberOfQuestionsInExam) * 100;
+  // Percent rounded to one decimal place
+  const percent = (numberOfCorrectAnswers / numberOfQuestionsInExam) * 100;
   const percentCorrect = Math.round(percent * 10) / 10;
   const passed = percentCorrect >= passingPercent;
 
   return {
-    correctAnswers,
+    examId: id,
+    numberOfCorrectAnswers,
     numberOfQuestionsInExam,
     percentCorrect,
     passingPercent,
