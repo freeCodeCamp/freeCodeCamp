@@ -5,7 +5,7 @@ import { pick } from 'lodash';
 
 import {
   fixCompletedChallengeItem,
-  fixCompletedExamsItem,
+  fixCompletedExamItem,
   fixPartiallyCompletedChallengeItem,
   fixSavedChallengeItem
 } from '../../common/utils';
@@ -140,7 +140,7 @@ function createReadSessionUser(app) {
         ...queryUser.toJSON(),
         calendar,
         completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
-        completedExams: completedExams.map(fixCompletedExamsItem),
+        completedExams: completedExams.map(fixCompletedExamItem),
         partiallyCompletedChallenges: partiallyCompletedChallenges.map(
           fixPartiallyCompletedChallengeItem
         ),

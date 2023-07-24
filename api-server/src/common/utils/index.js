@@ -28,5 +28,5 @@ export const fixSavedChallengeItem = obj =>
 export const fixPartiallyCompletedChallengeItem = obj =>
   pick(obj, ['id', 'completedDate']);
 
-export const fixCompletedExamsItem = obj =>
+export const fixCompletedExamItem = obj =>
   pick(obj, ['id', 'completedDate', 'challengeType', 'examResults']);
