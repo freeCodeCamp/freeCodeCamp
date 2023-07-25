@@ -165,6 +165,18 @@ We are happy you are excited to contribute and appreciate you taking the time to
 Happy Contributing.
 ```
 
+## Issue Not Triaged
+
+> When a PR is opened for an issue that hasn't been triaged and marked as ready for contribution.
+
+```markdown
+Hi there,
+
+Thanks for creating this pull request.
+
+The linked issue has not been triaged yet, and a solution has not been agreed upon. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until the issue is open for contribution, we will not be able to review your pull request.
+```
+
 ## Закриття недійсних завдань
 
 > Якщо завдання стосується коду користувача.
