@@ -965,6 +965,10 @@
       "top-learn-css-specificity": {
         "title": "Aprenda especificidade no CSS",
         "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-the-box-model": {
+        "title": "Aprenda sobre o modelo de caixas",
+        "intro": ["Uma descrição deve ser determinada"]
       }
     }
   },

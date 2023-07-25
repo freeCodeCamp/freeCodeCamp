@@ -965,6 +965,10 @@
       "top-learn-css-specificity": {
         "title": "Jifunze Umaalumu wa CSS",
         "intro": ["Maelezo yanapaswa kuamuliwa"]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
+        "intro": ["A description is to be determined"]
       }
     }
   },

@@ -77,6 +77,7 @@
     "change-language": "Badilisha Lugha",
     "resume-project": "Rejea mradi",
     "start-project": "Anza mradi",
+    "tweet": "Tweet",
     "previous-question": "Swali lililotangulia",
     "next-question": "Swali linalofuata",
     "finish-exam": "Maliza mtihani",
@@ -403,7 +404,8 @@
     "building-a-university": "Tunaunda Programu ya Bila Malipo wa Shahada ya Chuo Kikuu ya Computer Science",
     "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele.",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Unga mkono hisani yetu",
@@ -531,7 +533,7 @@
     "brand-new-account": "Karibu kwenye akaunti yako mpya kabisa ya freeCodeCamp. Tuanze.",
     "duplicate-account-warning": "Ikiwa ulitaka kuingia katika akaunti iliyopo badala ya kufungua akaunti hii, <0>bofya hapa ili kufuta akaunti hii</0> na ujaribu anwani nyingine ya barua pepe.",
     "quincy": "- Quincy Larson, mwalimu aliyeanzisha freeCodeCamp.org",
-    "email-blast": "Kila Ijumaa mimi hutuma barua pepe na viungo 5 kuhusu programu na sayansi ya kompyuta. Ninatuma hizi kwa takriban watu milioni 4. Je, ungependa nikutumie hii pia?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Sasisha anwani yako ya barua pepe",
     "update-email-2": "Sasisha anwani yako ya barua pepe hapa:",
     "email": "Barua pepe",
@@ -543,7 +545,8 @@
     "iframe-alert": "Kwa kawaida kiungo hiki kinaweza kukuleta kwenye tovuti nyingine! Inafanya kazi. Hiki ni kiungo cha: {{externalLink}}",
     "iframe-form-submit-alert": "Kwa kawaida fomu hii ingewasilishwa! Inafanya kazi. Hii itawasilishwa kwa: {{externalLink}}",
     "document-notfound": "hati haijapatikana",
-    "slow-load-msg": "Inaonekana hii inachukua muda mrefu kuliko kawaida, tafadhali jaribu pakia upya ukurasa."
+    "slow-load-msg": "Inaonekana hii inachukua muda mrefu kuliko kawaida, tafadhali jaribu pakia upya ukurasa.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Kombe la dhahabu",

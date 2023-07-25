@@ -77,6 +77,7 @@
     "change-language": "تغيير اللغة",
     "resume-project": "أستكمال المشروع",
     "start-project": "إبدأ المشروع",
+    "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
     "finish-exam": "Finish the exam",
@@ -403,7 +404,8 @@
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
     "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "ادعم مؤسستنا الخيرية",
@@ -531,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson، المدرّس الذي أسس freeCodeCamp.org",
-    "email-blast": "بالمناسبة، في كل يوم جمعة، أرسل رسالة بريد إلكتروني مع 5 روابط حول البرمجة وعلوم الكمبيوتر. أرسلها إلى حوالي 4 ملايين شخص. هل تريدني أن أرسل هذا إليك أيضاً؟",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "تحديث عنوان بريدك الإلكتروني",
     "update-email-2": "قم بتحديث عنوان بريدك الإلكتروني هنا:",
     "email": "البريد الإلكتروني",
@@ -543,7 +545,8 @@
     "iframe-alert": "عادة هذا الرابط من شأنه أن يجلبك إلى موقع آخر! إنه يعمل. هذا رابط: {{externalLink}}",
     "iframe-form-submit-alert": "عادة سيتم تقديم هذا النموذج! إنه يعمل. سيتم إرسال هذا إلى: {{externalLink}}",
     "document-notfound": "لم يوجد المستند",
-    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة."
+    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "كأس الذهب",

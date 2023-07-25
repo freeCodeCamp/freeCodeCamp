@@ -77,6 +77,7 @@
     "change-language": "Alterar idioma",
     "resume-project": "Retomar projeto",
     "start-project": "Iniciar o projeto",
+    "tweet": "Faça um Tweet",
     "previous-question": "Questão anterior",
     "next-question": "Próxima questão",
     "finish-exam": "Finalizar o exame",
@@ -403,7 +404,8 @@
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
     "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
     "qualified-for-exam": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
-    "not-qualified-for-exam": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:"
+    "not-qualified-for-exam": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",
+    "preview-external-window": "Visualização exibida atualmente na janela externa."
   },
   "donate": {
     "title": "Ajude nossa instituição",
@@ -531,7 +533,7 @@
     "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
     "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
-    "email-blast": "A propósito, todas as sextas-feiras, eu envio um e-mail com 5 links sobre programação e ciência da computação. Eu envio essas mensagens para cerca de 4 milhões de pessoas. Você gostaria que eu as enviasse para você também?",
+    "email-blast": "A propósito, todas as sextas-feiras, eu envio um e-mail com 5 links sobre programação e ciência da computação. Eu envio essas mensagens para cerca de 6 milhões de pessoas. Você gostaria que eu as enviasse para você também?",
     "update-email-1": "Atualize seu endereço de e-mail",
     "update-email-2": "Atualize seu endereço de e-mail aqui:",
     "email": "E-mail",
@@ -543,7 +545,8 @@
     "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente, esse formulário seria enviado! Funciona. Ele será enviado para: {{externalLink}}",
     "document-notfound": "documento não encontrado",
-    "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página."
+    "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página.",
+    "navigation-warning": "Se sair desta página, perderá o seu progresso. Tem certeza?"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
