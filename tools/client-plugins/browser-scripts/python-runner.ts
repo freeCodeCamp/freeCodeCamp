@@ -48,32 +48,22 @@ async function setupPyodide() {
 }
 
 type Input = (text: string) => Promise<string>;
-
 type Print = (...args: unknown[]) => void;
-
 type ResetTerminal = () => void;
 
 function createJSFunctionsForPython(
   term: Terminal,
-  disposables: IDisposable[]
+  disposables: IDisposable[],
+  pyodide: PyodideInterface
 ) {
-  function print(...args: unknown[]) {
-    const text = args
-      .map(arg => {
-        // @ts-expect-error types forthcoming
-        if (typeof arg === 'object' && arg?.__str__) {
-          // @ts-expect-error types forthcoming
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-          return arg.__str__();
-        } else {
-          return arg;
-        }
-      })
-      .join(' ');
-    term.writeln(`>>> ${text}`);
-  }
-
   const writeLine = (text: string) => term.writeln(`>>> ${text}`);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const str = pyodide.globals.get('str') as (x: unknown) => string;
+  function print(...args: unknown[]) {
+    const text = args.map(x => str(x)).join(' ');
+    writeLine(text);
+  }
 
   // TODO: this is not nice. Is there a clever way to avoid having to close over
   // disposable AND disposables?
@@ -179,7 +169,11 @@ async function initPythonFrame() {
   const disposables: IDisposable[] = [];
   const { term, resetTerminal } = createTerminal(disposables);
   const pyodide = await setupPyodide();
-  const { print, input } = createJSFunctionsForPython(term, disposables);
+  const { print, input } = createJSFunctionsForPython(
+    term,
+    disposables,
+    pyodide
+  );
   setupRunPython(pyodide, { input, print, resetTerminal });
 }
 
