@@ -119,14 +119,11 @@ function setupRunPython(
     resetTerminal
   }: { input: Input; print: Print; resetTerminal: ResetTerminal }
 ) {
-  window.print = print;
-  // @ts-expect-error I'll update the window type later
-  window.input = input;
-
   // Make print and input available to python
-  console.log('Setting up print and input');
-  // TODO: use registerJsModule or jsglobals so we don't have to modify
-  // window and can pass in print and input as arguments.
+  pyodide.registerJsModule('js', {
+    input,
+    print
+  });
   pyodide.runPython(`
   import js
   from js import print
