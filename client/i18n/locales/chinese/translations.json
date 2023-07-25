@@ -77,6 +77,7 @@
     "change-language": "修改语言",
     "resume-project": "继续项目",
     "start-project": "开始项目",
+    "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
     "finish-exam": "Finish the exam",
@@ -403,7 +404,8 @@
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
     "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "支持我们的慈善组织",
@@ -531,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson，freeCodeCamp.org 创始人、老师",
-    "email-blast": "每周五我会给大约四百万人发送一封邮件，其中包含 5 条关于编程和计算机科学的链接。你也想收到我的邮件吗？",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "更新你的邮件地址",
     "update-email-2": "在这里更新你的邮件地址：",
     "email": "邮箱",
@@ -543,7 +545,8 @@
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常这个表单将被提交！工作正常，这将被提交到：{{externalLink}}",
     "document-notfound": "找不到文件",
-    "slow-load-msg": "看起来这比平常花费更长时间，请尝试刷新页面。"
+    "slow-load-msg": "看起来这比平常花费更长时间，请尝试刷新页面。",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "金奖杯",

@@ -77,6 +77,7 @@
     "change-language": "Sprache wechseln",
     "resume-project": "Projekt fortsetzen",
     "start-project": "Projekt starten",
+    "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
     "finish-exam": "Finish the exam",
@@ -403,7 +404,8 @@
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
     "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Support our charity",
@@ -531,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, der Lehrer, der freeCodeCamp.org gegründet hat",
-    "email-blast": "Übrigens, jeden Freitag verschicke ich eine E-Mail mit 5 Links über Programmierung und Informatik. Diese schicke ich an etwa 4 Millionen Menschen. Möchtest du, dass ich diese auch an dich sende?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aktualisiere deine E-Mail-Adresse",
     "update-email-2": "Aktualisiere deine E-Mail-Adresse hier:",
     "email": "E-Mail",
@@ -543,7 +545,8 @@
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
     "iframe-form-submit-alert": "Normalerweise würde dieses Formular übermittelt werden! Es funktioniert. Dies wird übermittelt an: {{externalLink}}",
     "document-notfound": "Dokument wurde nicht gefunden",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Goldpokal",

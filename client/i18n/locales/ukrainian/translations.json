@@ -77,6 +77,7 @@
     "change-language": "Змінити мову",
     "resume-project": "Продовжити проєкт",
     "start-project": "Розпочати проєкт",
+    "tweet": "Tweet",
     "previous-question": "Попереднє запитання",
     "next-question": "Наступне запитання",
     "finish-exam": "Завершити екзамен",
@@ -403,7 +404,8 @@
     "building-a-university": "Ми розробляємо безоплатну університетську програму «Комп’ютерні науки»",
     "if-help-university": "Ми вже зробили багато роботи. Підтримайте довгий шлях нашої благодійної організації.",
     "qualified-for-exam": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
-    "not-qualified-for-exam": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:"
+    "not-qualified-for-exam": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Підтримайте нашу організацію",
@@ -531,7 +533,7 @@
     "brand-new-account": "Вітаємо у новому обліковому записі freeCodeCamp. Розпочнемо!",
     "duplicate-account-warning": "Якщо ви хотіли ввійти у наявний обліковий запис, а не створювати новий, <0>натисніть тут, щоб видалити цей обліковий запис</0> та спробуйте іншу адресу електронної пошти.",
     "quincy": "— Квінсі Ларсон, вчитель, який заснував freeCodeCamp.org",
-    "email-blast": "До речі, щоп’ятниці я надсилаю електронний лист із 5 посиланнями про програмування та інформатику. Я відправляю їх приблизно 4 мільйонам людей. Чи хотіли б ви, щоб я відправляв ці листи ще й вам?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Оновити свою адресу електронної пошти",
     "update-email-2": "Оновіть свою адресу електронної пошти тут:",
     "email": "Адреса електронної пошти",
@@ -543,7 +545,8 @@
     "iframe-alert": "Зазвичай це посилання перенесло б вас на інший вебсайт! Воно працює. Це посилання на: {{externalLink}}",
     "iframe-form-submit-alert": "Зазвичай ця форма буде відправлена! Вона буде відправлена на: {{externalLink}}",
     "document-notfound": "документ не знайдено",
-    "slow-load-msg": "Схоже, це займає більше часу, ніж зазвичай. Будь ласка, спробуйте оновити сторінку."
+    "slow-load-msg": "Схоже, це займає більше часу, ніж зазвичай. Будь ласка, спробуйте оновити сторінку.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Золотий кубок",
