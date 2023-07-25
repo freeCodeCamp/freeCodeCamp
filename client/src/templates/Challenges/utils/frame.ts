@@ -285,9 +285,10 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
 };
 
 const initMainFrame =
-  (_: unknown, proxyLogger?: ProxyLogger) => (frameContext: Context) => {
+  (frameReady?: () => void, proxyLogger?: ProxyLogger) =>
+  (frameContext: Context) => {
     waitForFrame(frameContext)
-      .then(() => {
+      .then(async () => {
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
@@ -309,14 +310,13 @@ const initMainFrame =
           };
         }
 
-        // The document may exist, even if the window does not, so we can try
-        // to initialize, even if 'window' is undefined.
         if (
           frameContext.document &&
           '__initPythonFrame' in frameContext.document
         ) {
-          void frameContext.document?.__initPythonFrame();
+          await frameContext.document?.__initPythonFrame();
         }
+        if (frameReady) frameReady();
       })
       .catch(handleDocumentNotFound);
     return frameContext;
@@ -384,14 +384,15 @@ const writeContentToFrame = (frameContext: Context) => {
 export const createMainPreviewFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
-  frameTitle: string
+  frameTitle: string,
+  frameReady?: () => void
 ): ((args: Context) => void) =>
   createFramer(
     document,
     mainPreviewId,
     initMainFrame,
     proxyLogger,
-    undefined,
+    frameReady,
     frameTitle
   );
 

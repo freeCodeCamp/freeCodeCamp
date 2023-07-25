@@ -308,16 +308,24 @@ export function updatePreview(
   buildData: BuildChallengeData,
   document: Document,
   proxyLogger: ProxyLogger
-): void {
+): Promise<void> {
+  // TODO: either create a 'buildType' or use the real challengeType here
+  // (buildData.challengeType is set to 'html' for challenges that can be
+  // previewed, hence this being true for python challenges, multifile steps and
+  // so on).
+
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    createMainPreviewFramer(
-      document,
-      proxyLogger,
-      getDocumentTitle(buildData)
-    )(buildData);
+    return new Promise<void>(resolve =>
+      createMainPreviewFramer(
+        document,
+        proxyLogger,
+        getDocumentTitle(buildData),
+        resolve
+      )(buildData)
+    );
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`
