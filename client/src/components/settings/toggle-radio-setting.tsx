@@ -31,11 +31,8 @@ export default function ToggleRadioSetting({
         'aria-labelledby': `legend${flagName} desc${flagName}`
       })}
     >
-      <legend className='sr-only' {...(explain && { id: `legend${flagName}` })}>
-        {action}
-      </legend>
       <div className='toggle-description'>
-        <p aria-hidden={true}>{action}</p>
+        <legend {...(explain && { id: `legend${flagName}` })}>{action}</legend>
         {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
       </div>
       <div className='toggle-radio-group'>

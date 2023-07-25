@@ -51,22 +51,20 @@ export default function SoundSettings({
           toggleSoundMode(sound ? false : true);
         }}
       />
-      <form onSubmit={(e: React.FormEvent) => e.preventDefault()}>
-        <label htmlFor='volumeslider'>
-          {t('settings.sound-volume')}{' '}
-          <span aria-hidden='true'>{volumeDisplay}</span>
-        </label>
-        <input
-          type='range'
-          min='10'
-          max='100'
-          id='volumeslider'
-          defaultValue={volumeDisplay}
-          className='soundbar'
-          onInput={handleVolumeChange}
-        />
-        <Spacer size='medium'></Spacer>
-      </form>
+      <label htmlFor='volumeslider'>
+        {t('settings.sound-volume')}{' '}
+        <span aria-hidden='true'>{volumeDisplay}</span>
+      </label>
+      <input
+        type='range'
+        min='10'
+        max='100'
+        id='volumeslider'
+        defaultValue={volumeDisplay}
+        className='soundbar'
+        onInput={handleVolumeChange}
+      />
+      <Spacer size='medium'></Spacer>
     </>
   );
 }

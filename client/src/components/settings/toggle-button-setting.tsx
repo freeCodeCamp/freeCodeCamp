@@ -14,9 +14,14 @@ export default function ToggleButtonSetting({
   onLabel
 }: ToggleSettingProps): JSX.Element {
   return (
-    <div className='toggle-setting-container'>
+    <fieldset
+      className='toggle-setting-container'
+      {...(explain && {
+        'aria-labelledby': `legend${flagName} desc${flagName}`
+      })}
+    >
       <div className='toggle-description'>
-        <p aria-hidden={true}>{action}</p>
+        <legend {...(explain && { id: `legend${flagName}` })}>{action}</legend>
         {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
       </div>
       <div className='toggle-button-group'>
@@ -43,7 +48,7 @@ export default function ToggleButtonSetting({
           </span>
         </button>
       </div>
-    </div>
+    </fieldset>
   );
 }
 

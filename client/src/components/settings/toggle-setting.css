@@ -18,12 +18,13 @@
   max-width: 50%;
 }
 
-.toggle-description > p:first-child {
+.toggle-description legend {
+  all: unset;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.toggle-description > p:not(:first-child) {
+.toggle-description p {
   font-style: italic;
   font-size: 0.8rem;
 }
