@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 
 import { Col } from '.';
 
 describe('<Col />', () => {
-  it('should render correctly', () => {});
+  it('should render correctly', () => {
+    render(<Col />);
+  });
 });
