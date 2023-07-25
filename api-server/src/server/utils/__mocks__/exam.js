@@ -73,7 +73,6 @@ export const userExam2 = {
 };
 
 export const mockResults1 = {
-  // examId: 1,
   numberOfCorrectAnswers: 1,
   numberOfQuestionsInExam: 2,
   percentCorrect: 50,
@@ -83,7 +82,6 @@ export const mockResults1 = {
 };
 
 export const mockResults2 = {
-  // examId: 1,
   numberOfCorrectAnswers: 2,
   numberOfQuestionsInExam: 2,
   percentCorrect: 100,
