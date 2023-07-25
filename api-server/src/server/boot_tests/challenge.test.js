@@ -145,6 +145,8 @@ describe('boot/challenge', () => {
     });
   });
 
+  xdescribe('buildUserExamUpdate', () => {});
+
   describe('buildChallengeUrl', () => {
     it('resolves the correct Url for the provided challenge', () => {
       const result = buildChallengeUrl(mockChallenge);

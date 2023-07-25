@@ -73,16 +73,9 @@ export default async function bootChallenge(app, done) {
 
   api.get('/generate-exam', send200toNonUser, generateExam);
 
-  const evaluateExam = createEvaluateExam(app);
+  const submitExam = createSubmitExam(app);
 
-  api.post('/evaluate-exam', send200toNonUser, evaluateExam);
-
-  api.post(
-    '/exam-challenge-completed',
-    send200toNonUser,
-    isValidChallengeCompletion,
-    examChallengeCompleted
-  );
+  api.post('/submit-exam', send200toNonUser, submitExam);
 
   api.post(
     '/save-challenge',
@@ -216,6 +209,67 @@ export function buildUserUpdate(
     updateData,
     completedDate: finalChallenge.completedDate,
     savedChallenges
+  };
+}
+
+export function buildExamUserUpdate(user, _completedChallenge) {
+  const {
+    id,
+    challengeType,
+    completedDate = Date.now(),
+    examResults
+  } = _completedChallenge;
+
+  let finalChallenge = { id, challengeType, completedDate, examResults };
+
+  const { completedChallenges = [] } = user;
+  const $push = {},
+    $set = {};
+
+  // Always push to completedExams[] to keep a record of all submissions, it may come in handy.
+  $push.completedExams = pick(_completedChallenge, [
+    'id',
+    'challengeType',
+    'completedDate',
+    'examResults'
+  ]);
+
+  let alreadyCompleted = false;
+  let addPoint = false;
+
+  // completedChallenges[] should have their best exam
+  if (examResults.passed) {
+    const alreadyCompletedIndex = completedChallenges.findIndex(
+      challenge => challenge.id === id
+    );
+
+    alreadyCompleted = alreadyCompletedIndex !== -1;
+
+    if (alreadyCompleted) {
+      const { percentCorrect } = examResults;
+      const oldChallenge = completedChallenges[alreadyCompletedIndex];
+      const oldResults = oldChallenge.examResults;
+
+      // only update if it's a better result
+      if (percentCorrect > oldResults.percentCorrect) {
+        finalChallenge.completedDate = oldChallenge.completedDate;
+        $set[`completedChallenges.${alreadyCompletedIndex}`] = finalChallenge;
+      }
+    } else {
+      addPoint = true;
+      $push.completedChallenges = finalChallenge;
+    }
+  }
+
+  const updateData = {};
+  if (!isEmpty($set)) updateData.$set = $set;
+  if (!isEmpty($push)) updateData.$push = $push;
+
+  return {
+    alreadyCompleted,
+    addPoint,
+    updateData,
+    completedDate: finalChallenge.completedDate
   };
 }
 
@@ -448,11 +502,17 @@ async function backendChallengeCompleted(req, res, next) {
 function createGenerateExam(app) {
   const { Exam } = app.models;
 
-  return async function generateExam(req, res) {
+  return async function generateExam(req, res, next) {
     const {
-      user: { completedChallenges },
+      user,
       query: { challengeId }
     } = req;
+
+    try {
+      await user.getCompletedChallenges$().toPromise();
+    } catch (e) {
+      return next(e);
+    }
 
     try {
       const examFromDb = await Exam.findById(challengeId);
@@ -480,7 +540,7 @@ function createGenerateExam(app) {
 
       // Validate User has completed prerequisite challenges
       prerequisites?.forEach(prerequisite => {
-        const prerequisiteCompleted = completedChallenges.find(
+        const prerequisiteCompleted = user.completedChallenges.find(
           challenge => challenge.id === prerequisite.id
         );
 
@@ -513,17 +573,22 @@ function createGenerateExam(app) {
   };
 }
 
-function createEvaluateExam(app) {
+function createSubmitExam(app) {
   const { Exam } = app.models;
 
-  return async function evaluateExam(req, res) {
-    const {
-      body: { userCompletedExam, challengeId },
-      user: { completedChallenges }
-    } = req;
+  return async function submitExam(req, res, next) {
+    const { body = {}, user } = req;
 
     try {
-      const examFromDb = await Exam.findById(challengeId);
+      await user.getCompletedChallenges$().toPromise();
+    } catch (e) {
+      return next(e);
+    }
+
+    const { userCompletedExam = [], id } = body;
+
+    try {
+      const examFromDb = await Exam.findById(id);
       if (!examFromDb) {
         res.status(500);
         throw new Error(
@@ -547,7 +612,7 @@ function createEvaluateExam(app) {
 
       // Validate User has completed prerequisite challenges
       prerequisites?.forEach(prerequisite => {
-        const prerequisiteCompleted = completedChallenges.find(
+        const prerequisiteCompleted = user.completedChallenges.find(
           challenge => challenge.id === prerequisite.id
         );
 
@@ -579,47 +644,32 @@ function createEvaluateExam(app) {
         throw new Error(`An error occurred validating the submitted exam.`);
       }
 
-      // if passed -> add to completedExams[]
-      // Then when claiming the cert, check that they have the challenge, and it's passed.
+      const completedChallenge = pick(body, ['id', 'challengeType']);
+      completedChallenge.completedDate = Date.now();
+      completedChallenge.examResults = examResults;
 
-      return res.send({ examResults });
+      const { addPoint, alreadyCompleted, updateData, completedDate } =
+        buildExamUserUpdate(user, completedChallenge);
+
+      user.updateAttributes(updateData, err => {
+        if (err) {
+          return next(err);
+        }
+
+        const points = addPoint ? user.points + 1 : user.points;
+
+        return res.json({
+          alreadyCompleted,
+          points,
+          completedDate,
+          examResults
+        });
+      });
     } catch (err) {
       log(err);
       return res.send({ error: err.message });
     }
   };
-}
-
-// TODO: Delete this whole thing - add to completedChallenges when evaluating
-async function examChallengeCompleted(req, res, next) {
-  // TODO: verify shape of exam results
-  const { user, body = {} } = req;
-  const completedChallenge = pick(body, ['id', 'examResults']);
-  completedChallenge.completedDate = Date.now();
-
-  try {
-    await user.getCompletedChallenges$().toPromise();
-  } catch (e) {
-    return next(e);
-  }
-
-  const { alreadyCompleted, updateData } = buildUserUpdate(
-    user,
-    completedChallenge.id,
-    completedChallenge
-  );
-
-  user.updateAttributes(updateData, err => {
-    if (err) {
-      return next(err);
-    }
-
-    return res.json({
-      alreadyCompleted,
-      points: alreadyCompleted ? user.points : user.points + 1,
-      completedDate: completedChallenge.completedDate
-    });
-  });
 }
 
 async function saveChallenge(req, res, next) {

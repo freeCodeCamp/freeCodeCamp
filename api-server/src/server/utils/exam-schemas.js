@@ -147,7 +147,6 @@ export const validateUserCompletedExamSchema = (
 
 // Exam Results Schema
 const examResultsSchema = Joi.object().keys({
-  examId: Joi.objectId().required(),
   numberOfCorrectAnswers: Joi.number().min(0),
   numberOfQuestionsInExam: Joi.number().min(0),
   percentCorrect: Joi.number().min(0),

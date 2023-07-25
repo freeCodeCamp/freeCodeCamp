@@ -70,8 +70,17 @@ export function generateRandomExam(examJson) {
 export function createExamResults(userExam, originalExam) {
   let numberOfCorrectAnswers = 0;
   const { userExamQuestions, examTimeInSeconds } = userExam;
+  /**
+   * Potential Bug:
+   *  numberOfQuestionsInExam and passingPercent come from the exam in the database.
+   *  If either changes between the time a camper starts and submits, it could skew
+   *  the scores. The alternative is to send those to the client and then get them
+   *  back from the client - but then they could be manipulated to cheat. So I think
+   *  this is the way to go. They are unlikely to change, as that would be unfair. We
+   *  could get numberOfQuestionsInExam from userExamQuestions.length - so only the
+   *  passingPercent would come from the database. Maybe that would be better.
+   */
   const {
-    id,
     questions: originalQuestions,
     numberOfQuestionsInExam,
     passingPercent
@@ -101,7 +110,6 @@ export function createExamResults(userExam, originalExam) {
   const passed = percentCorrect >= passingPercent;
 
   return {
-    examId: id,
     numberOfCorrectAnswers,
     numberOfQuestionsInExam,
     percentCorrect,
