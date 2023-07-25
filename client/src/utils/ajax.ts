@@ -213,33 +213,6 @@ export function getUsernameExists(
   return get(`/api/users/exists?username=${username}`);
 }
 
-interface Answer {
-  id: string;
-  answer: string;
-}
-
-interface Exam {
-  id?: string;
-  question?: string;
-  answers?: Answer[];
-}
-
-export interface GenerateExamResponse {
-  exam?: Exam[];
-  error?: string;
-}
-
-export function getGenerateExam(
-  challengeId: string
-): Promise<ResponseWithData<GenerateExamResponse>> {
-  const responseWithData = get<GenerateExamResponse>(
-    `/generate-exam?challengeId=${challengeId}`
-  );
-  return responseWithData.then(({ response, data }) => {
-    return { response, data };
-  });
-}
-
 /** POST **/
 
 interface Donation {
@@ -296,44 +269,6 @@ export function postSaveChallenge(body: {
   files: ChallengeFiles;
 }): Promise<ResponseWithData<void>> {
   return post('/save-challenge', body);
-}
-
-interface UserExamAnswer {
-  id: string | null;
-  answer: string | null;
-}
-
-interface UserExamQuestion {
-  id: string;
-  question: string;
-  answer: UserExamAnswer;
-}
-
-interface UserExam {
-  examTimeInSeconds: number;
-  userExamQuestions: UserExamQuestion[];
-}
-
-interface ExamResults {
-  percentCorrect: number;
-  time: number;
-}
-
-export interface EvaluateExamResponse {
-  examResults?: ExamResults;
-  error?: string;
-}
-
-export function postEvaluteExam(body: {
-  userExam: UserExam;
-  challengeId: string;
-}): Promise<ResponseWithData<EvaluateExamResponse>> {
-  // we will need to update completed challenges as well
-  console.log('posting exam...');
-  const responseWithData = post<EvaluateExamResponse>(`/evaluate-exam`, body);
-  return responseWithData.then(({ response, data }) => {
-    return { response, data };
-  });
 }
 
 /** PUT **/
