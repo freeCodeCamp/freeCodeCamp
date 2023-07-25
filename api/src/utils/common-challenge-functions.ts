@@ -124,15 +124,12 @@ export async function updateUserChallengeData(
     : null;
 
   if (alreadyCompleted && oldChallenge) {
-    const challengeWithOldDate = userCompletedChallenges[oldIndex];
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate
+    };
 
-    if (challengeWithOldDate) {
-      challengeWithOldDate.completedDate = oldChallenge.completedDate;
-      finalChallenge = {
-        ...completedChallenge,
-        ...challengeWithOldDate
-      };
-    }
+    userCompletedChallenges[oldIndex] = finalChallenge;
   } else {
     finalChallenge = {
       ...completedChallenge
