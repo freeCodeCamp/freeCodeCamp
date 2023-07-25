@@ -234,11 +234,43 @@ const updatePrivacyTerms = (req, res, next) => {
   );
 };
 
-function updateMySocials(...args) {
-  const buildUpdate = body =>
-    _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
-  const validate = update =>
-    Object.values(update).every(x => typeof x === 'string');
+const allowedSocialsAndDomains = {
+  githubProfile: 'github.com',
+  linkedin: 'linkedin.com',
+  twitter: 'twitter.com',
+  website: ''
+};
+
+const socialVals = Object.keys(allowedSocialsAndDomains);
+
+export function updateMySocials(...args) {
+  const buildUpdate = body => _.pick(body, socialVals);
+  const validate = update => {
+    // Socials should point to their respective domains
+    // or be empty strings
+    return Object.keys(update).every(key => {
+      const val = update[key];
+      if (val === '') {
+        return true;
+      }
+      if (key === 'website') {
+        return isURL(val, { require_protocol: true });
+      }
+
+      const domain = allowedSocialsAndDomains[key];
+
+      try {
+        const url = new URL(val);
+        const topDomain = url.hostname.split('.').slice(-2);
+        if (topDomain.length === 2) {
+          return topDomain.join('.') === domain;
+        }
+        return false;
+      } catch (e) {
+        return false;
+      }
+    });
+  };
   createUpdateUserProperties(
     buildUpdate,
     validate,

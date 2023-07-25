@@ -250,7 +250,7 @@ button.map-title {
 }
 
 .map-challenges-grid .map-challenge-title a:focus {
-  outline-offset: -2px;
+  outline-offset: 1px;
 }
 
 .map-challenges-grid {
@@ -258,7 +258,7 @@ button.map-title {
   grid-template-columns: repeat(auto-fill, 3.4rem);
   grid-gap: 3px;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto 18px;
   width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
@@ -268,8 +268,9 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 5px 0;
+  margin: 6px 0;
   justify-content: center;
+  border: 1px dashed var(--background-quaternary);
 }
 
 .block-description {
@@ -280,18 +281,14 @@ button.map-title {
   margin-bottom: 0;
 }
 
-.challenge-completed {
+a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
-}
-
-.challenge-completed:focus-visible {
-  outline-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .challenge-completed span {
   font-weight: 900;
-  font-size: 1.5rem;
   margin-top: -0.05rem;
 }
 

@@ -17,7 +17,6 @@ import isURL from 'validator/lib/isURL';
 import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../../../../config/secrets';
 
-import { environment, deploymentEnv } from '../../../../config/env.json';
 import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
@@ -543,12 +542,8 @@ function createCoderoadChallengeCompleted(app) {
     const tutorialRepo = tutorialId?.split(':')[0];
     const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
-    // this allows any GH account to host the repo in development or staging
-    // .org submissions should always be from repos hosted on the fCC GH org
-    if (deploymentEnv !== 'staging' && environment !== 'development') {
-      if (tutorialOrg !== 'freeCodeCamp')
-        return res.send('Tutorial not hosted on freeCodeCamp GitHub account');
-    }
+    if (tutorialOrg !== 'freeCodeCamp')
+      return res.send('Tutorial not hosted on freeCodeCamp GitHub account');
 
     // validate tutorial name is in codeRoadChallenges object
     const challenge = codeRoadChallenges.find(challenge =>

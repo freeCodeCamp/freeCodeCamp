@@ -30,7 +30,7 @@ const {
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../client/utils/challenge-types');
+const { challengeTypes } = require('../../config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
   require('../../config/client/test-evaluator.json').filename;

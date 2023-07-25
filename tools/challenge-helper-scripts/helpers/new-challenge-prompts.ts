@@ -1,5 +1,5 @@
 import { prompt } from 'inquirer';
-import { challengeTypes } from '../../../client/utils/challenge-types';
+import { challengeTypes } from '../../../config/challenge-types';
 
 export const newChallengePrompts = async (): Promise<{
   title: string;

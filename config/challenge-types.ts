@@ -20,18 +20,7 @@ const exam = 17;
 const msTrophyUrl = 18;
 const multipleChoice = 19;
 
-// individual exports
-exports.backend = backend;
-exports.frontEndProject = frontEndProject;
-exports.backEndProject = backEndProject;
-exports.pythonProject = pythonProject;
-exports.codeAllyCert = codeAllyCert;
-exports.colab = colab;
-exports.exam = exam;
-exports.msTrophyUrl = msTrophyUrl;
-exports.multipleChoice = multipleChoice;
-
-exports.challengeTypes = {
+export const challengeTypes = {
   html,
   js,
   backend,
@@ -55,7 +44,8 @@ exports.challengeTypes = {
   multipleChoice
 };
 
-exports.isFinalProject = challengeType => {
+export const isFinalProject = (challengeType: number) => {
+  // TODO: remove the type check once everything is converted to TS
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return (
@@ -69,14 +59,20 @@ exports.isFinalProject = challengeType => {
   );
 };
 
-exports.isCodeAllyPractice = challengeType => {
+export const isCodeAllyPractice = (challengeType: number) => {
+  // TODO: remove the type check once everything is converted to TS
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return challengeType === codeAllyPractice;
 };
 
+export const hasNoTests = (challengeType: number): boolean =>
+  challengeType === multipleChoice ||
+  challengeType === theOdinProject ||
+  challengeType === video;
+
 // determine the component view for each challenge
-exports.viewTypes = {
+export const viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
   [jsProject]: 'classic',
@@ -99,7 +95,7 @@ exports.viewTypes = {
 };
 
 // determine the type of submit function to use for the challenge on completion
-exports.submitTypes = {
+export const submitTypes = {
   [html]: 'tests',
   [js]: 'tests',
   [jsProject]: 'tests',

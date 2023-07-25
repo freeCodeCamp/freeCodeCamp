@@ -168,11 +168,11 @@ textarea.inputarea {
   gap: 0.75rem;
 }
 
-.utility-bar > button {
+.utility-bar > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   padding: 6px 0;
 }
 
