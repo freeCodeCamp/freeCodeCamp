@@ -682,10 +682,12 @@
     "http-url": "URL isiyo salama (http) haiwezi kutumika.",
     "own-work-url": "Kumbuka kuwasilisha kazi yako mwenyewe.",
     "publicly-visible-url": "Kumbuka kuwasilisha URL ya programu inayoonekana hadharani.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path"
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Iliyotolewa",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "Udhibitisho wa Kujifunza kwa Mashine na Python",
       "College Algebra with Python": "Algebra ya Chuo na Python",
       "college-algebra-with-python-v8": "Udhibitisho wa Algebra ya Chuo na Python",
-      "Foundational C# with Microsoft": "Msingi C# na Microsoft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Msingi C# na Cheti cha Microsoft",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Udhibitisho wa Front End",

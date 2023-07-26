@@ -682,10 +682,12 @@
     "http-url": "安全でない (http) URL は使用できません。",
     "own-work-url": "あなた自身の作品を提出してください。",
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "発行日",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "Python を用いた機械学習認定証",
       "College Algebra with Python": "Python を用いた代数学",
       "college-algebra-with-python-v8": "Python を用いた代数学認定証",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
