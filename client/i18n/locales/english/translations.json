@@ -682,6 +682,7 @@
     "http-url": "An unsecure (http) URL cannot be used.",
     "own-work-url": "Remember to submit your own work.",
     "publicly-visible-url": "Remember to submit a publicly visible app URL.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
