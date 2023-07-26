@@ -71,6 +71,18 @@ const mapStateToProps = createSelector(
   })
 );
 
+const sentenceArray = [
+  'learn.sorry-try-again',
+  'learn.sorry-keep-trying',
+  'learn.sorry-getting-there',
+  'learn.sorry-hang-in-there',
+  'learn.sorry-dont-giveup'
+];
+
+const sentencePicker = (currentAttempts: number) => {
+  return sentenceArray[currentAttempts % sentenceArray.length];
+};
+
 const LowerButtonsPanel = ({
   resetButtonText,
   helpButtonText,
@@ -264,17 +276,6 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const sentencePicker = () => {
-    const sentenceArray = [
-      'learn.sorry-try-again',
-      'learn.sorry-keep-trying',
-      'learn.sorry-getting-there',
-      'learn.sorry-hang-in-there',
-      'learn.sorry-dont-giveup'
-    ];
-    return sentenceArray[currentAttempts % sentenceArray.length];
-  };
-
   const isAttemptsLargerThanTest =
     currentAttempts &&
     testsLength &&
@@ -352,7 +353,7 @@ const LowerJaw = ({
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
             htmlDescription={`${hintRef.current}`}
-            learnEncouragementText={t(sentencePicker())}
+            learnEncouragementText={t(sentencePicker(currentAttempts))}
           />
         )}
       </div>
