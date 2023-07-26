@@ -24,7 +24,7 @@ dashedName: remove-whitespace-from-start-and-end
 assert(result === 'Hello, World!');
 ```
 
-Ви не повинні використовувати метод `String.prototype.trim()` для вирішення завдання.
+Не використовуйте метод `String.prototype.trim()` у розв’язку.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?trim/));

@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-Коли змінні у JavaScript оголошено, вони отримують початкове значення `undefined`. Якщо виконати математичну дію на змінній `undefined`, то результатом буде `NaN`, що означає «Not a Number» <dfn>(укр. «не є числом»)</dfn>. Якщо об’єднати рядок зі змінною `undefined`, ви отримаєте <dfn>рядок</dfn> з `undefined`.
+Коли змінні у JavaScript оголошено, вони отримують початкове значення `undefined`. Якщо виконати математичну дію на змінній `undefined`, то результатом буде `NaN`, що означає «Not a Number» <dfn>(укр. «не є числом»)</dfn>. Якщо об’єднати рядок зі змінною `undefined`, ви отримаєте <dfn>рядок</dfn> `undefined`.
 
 # --instructions--
 

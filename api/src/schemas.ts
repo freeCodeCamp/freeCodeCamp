@@ -309,6 +309,23 @@ export const schemas = {
       })
     }
   },
+  deleteUserToken: {
+    response: {
+      200: Type.Object({
+        userToken: Type.Null()
+      }),
+      404: Type.Object({
+        message: Type.Literal('userToken not found'),
+        type: Type.Literal('info')
+      }),
+      500: Type.Object({
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        ),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {
@@ -361,6 +378,30 @@ export const schemas = {
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         ),
         type: Type.Literal('danger')
+      })
+    }
+  },
+  backendChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal(
+          'That does not appear to be a valid challenge submission.'
+        )
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
       })
     }
   }

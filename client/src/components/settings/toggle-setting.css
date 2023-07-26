@@ -2,16 +2,6 @@
   margin-bottom: 15px;
 }
 
-.toggle-setting-container .form-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.toggle-setting-container > .form-group > * {
-  flex: 1 1 0;
-}
-
 .toggle-description {
   max-width: 50%;
 }

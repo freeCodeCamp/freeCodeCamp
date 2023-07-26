@@ -39,23 +39,16 @@ assert(code.match(/\.slice/g));
 assert(!code.match(/\.?[\s\S]*?splice/g));
 ```
 
-不能改變 `inputCities` 數組。
+You should not mutate the original array passed to the function.
 
 ```js
-assert(
-  JSON.stringify(inputCities) ===
-    JSON.stringify(['Chicago', 'Delhi', 'Islamabad', 'London', 'Berlin'])
-);
+assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);
 ```
 
 `nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` 應返回 `["Chicago", "Delhi", "Islamabad"]`。
 
 ```js
-assert(
-  JSON.stringify(
-    nonMutatingSplice(['Chicago', 'Delhi', 'Islamabad', 'London', 'Berlin'])
-  ) === JSON.stringify(['Chicago', 'Delhi', 'Islamabad'])
-);
+assert.deepEqual(nonMutatingSplice(_inputCities), ["Chicago", "Delhi", "Islamabad"]);
 ```
 
 # --seed--
@@ -64,14 +57,15 @@ assert(
 
 ```js
 function nonMutatingSplice(cities) {
-  // Only change code below this line
+
   return cities.splice(3);
-
-  // Only change code above this line
 }
+```
 
-const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-nonMutatingSplice(inputCities);
+## --after-user-code--
+
+```js
+const _inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 ```
 
 # --solutions--
@@ -80,5 +74,4 @@ nonMutatingSplice(inputCities);
 function nonMutatingSplice(cities) {
   return cities.slice(0,3);
 }
-const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 ```

@@ -24,7 +24,7 @@ import {
   challengeTestsSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isFinalProject } from '../../../../utils/challenge-types';
+import { isFinalProject } from '../../../../../config/challenge-types';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,

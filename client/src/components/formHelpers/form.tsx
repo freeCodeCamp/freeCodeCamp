@@ -8,11 +8,12 @@ import {
   editorValidator,
   composeValidators,
   fCCValidator,
-  httpValidator
+  httpValidator,
+  microsoftValidator
 } from './form-validators';
 import FormFields, { FormOptions } from './form-fields';
 
-type URLValues = {
+type FormValues = {
   [key: string]: string;
 };
 
@@ -22,7 +23,7 @@ type ValidationError = {
 };
 
 export type ValidatedValues = {
-  values: URLValues;
+  values: FormValues;
   errors: ValidationError[];
   invalidValues: (JSX.Element | null)[];
 };
@@ -31,45 +32,55 @@ const normalizeOptions = {
   stripWWW: false
 };
 
-function formatUrlValues(
-  values: URLValues,
+function validateFormValues(
+  formValues: FormValues,
   options: FormOptions
 ): ValidatedValues {
-  const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
+  const {
+    isEditorLinkAllowed,
+    isLocalLinkAllowed,
+    isMicrosoftLearnLink,
+    types
+  } = options;
   const validatedValues: ValidatedValues = {
     values: {},
     errors: [],
     invalidValues: []
   };
-  const urlValues = Object.keys(values).reduce((result, key: string) => {
-    // NOTE: pathValidator is not used here, because it is only used as a
-    // suggestion - should not prevent form submission
-    const validators = [fCCValidator, httpValidator];
-    const isSolutionLink = key !== 'githubLink';
-    if (isSolutionLink && !isEditorLinkAllowed) {
-      validators.push(editorValidator);
-    }
-    if (!isLocalLinkAllowed) {
-      validators.push(localhostValidator);
-    }
-
-    let value: string = values[key];
-    const nullOrWarning = composeValidators(...validators)(value);
-    if (nullOrWarning) {
-      validatedValues.invalidValues.push(nullOrWarning);
-    }
-    if (value && types && types[key] === 'url') {
-      try {
-        value = normalizeUrl(value, normalizeOptions);
-      } catch (err: unknown) {
-        validatedValues.errors.push({
-          error: err as { message?: string },
-          value
-        });
+  const urlValues = Object.entries(formValues).reduce(
+    (result, [key, value]) => {
+      // NOTE: pathValidator is not used here, because it is only used as a
+      // suggestion - should not prevent form submission
+      const validators = [fCCValidator, httpValidator];
+      const isSolutionLink = key !== 'githubLink';
+      if (isSolutionLink && !isEditorLinkAllowed) {
+        validators.push(editorValidator);
       }
-    }
-    return { ...result, [key]: value };
-  }, {});
+      if (!isLocalLinkAllowed) {
+        validators.push(localhostValidator);
+      }
+      if (isMicrosoftLearnLink) {
+        validators.push(microsoftValidator);
+      }
+
+      const nullOrWarning = composeValidators(...validators)(value);
+      if (nullOrWarning) {
+        validatedValues.invalidValues.push(nullOrWarning);
+      }
+      if (value && types && types[key] === 'url') {
+        try {
+          value = normalizeUrl(value, normalizeOptions);
+        } catch (err: unknown) {
+          validatedValues.errors.push({
+            error: err as { message?: string },
+            value
+          });
+        }
+      }
+      return { ...result, [key]: value };
+    },
+    {}
+  );
   validatedValues.values = urlValues;
   return validatedValues;
 }
@@ -81,7 +92,7 @@ export type StrictSolutionFormProps = {
   id: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
-  submit: (values: ValidatedValues, ...args: unknown[]) => void;
+  submit: (values: ValidatedValues) => void;
 };
 
 export const StrictSolutionForm = ({
@@ -96,8 +107,8 @@ export const StrictSolutionForm = ({
   return (
     <Form
       initialValues={initialValues}
-      onSubmit={(values: URLValues, ...args: unknown[]) => {
-        submit(formatUrlValues(values, options), ...args);
+      onSubmit={(values: FormValues) => {
+        submit(validateFormValues(values, options));
       }}
     >
       {({ handleSubmit, pristine, error }) => (

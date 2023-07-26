@@ -25,7 +25,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /this\.items\.forEach\(/);
 ```
 
-You should pass a callback function to the `.forEach()` method.
+Передайте функцію зворотного виклику до методу `.forEach()`.
 
 ```js
 const cart = new ShoppingCart();
