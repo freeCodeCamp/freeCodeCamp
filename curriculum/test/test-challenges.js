@@ -498,7 +498,11 @@ async function createTestRunner(
     editableContents: sources.editableContents
   };
 
-  const evaluator = await (buildChallenge === buildDOMChallenge
+  const runsInBrowser =
+    buildChallenge === buildDOMChallenge ||
+    buildChallenge === buildPythonChallenge;
+
+  const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme)
     : getWorkerEvaluator(build, sources, code, removeComments));
 
