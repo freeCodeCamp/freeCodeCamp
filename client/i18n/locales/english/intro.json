@@ -962,6 +962,10 @@
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
         "intro": ["A description is to be determined"]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
+        "intro": ["A description is to be determined"]
       }
     }
   },

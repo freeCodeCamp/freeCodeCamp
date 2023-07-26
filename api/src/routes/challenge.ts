@@ -3,6 +3,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { schemas } from '../schemas';
 import { formatValidationError } from '../utils/error-formatting';
 import { getPoints, ProgressTimestamp } from '../utils/progress';
+import { challengeTypes } from '../../../config/challenge-types';
 import {
   type CompletedChallenge,
   jsCertProjectIds,
@@ -52,7 +53,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (
-          challengeType === 13 &&
+          challengeType === challengeTypes.codeAllyCert &&
           !canSubmitCodeRoadCertProject(projectId, user)
         ) {
           void reply.code(403);

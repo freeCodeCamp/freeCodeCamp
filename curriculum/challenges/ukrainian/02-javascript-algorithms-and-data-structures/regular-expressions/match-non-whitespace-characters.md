@@ -26,7 +26,7 @@ whiteSpace.match(nonSpaceRegex).length;
 
 # --hints--
 
-Ваш регулярний вираз повинен використовувати глобальний прапорець.
+Ваш регулярний вираз має використати глобальний прапорець.
 
 ```js
 assert(countNonWhiteSpace.global);

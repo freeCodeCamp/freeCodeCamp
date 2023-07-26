@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   challengeTypes,
   isFinalProject
-} from '../../../../utils/challenge-types';
+} from '../../../../../config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,

@@ -77,6 +77,7 @@
     "change-language": "Cambiar Idioma",
     "resume-project": "Reanudar proyecto",
     "start-project": "Iniciar proyecto",
+    "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
     "finish-exam": "Finish the exam",
@@ -403,7 +404,8 @@
     "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
     "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante.",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Apoya nuestra caridad",
@@ -531,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, el profesor que fundó freeCodeCamp.org",
-    "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Actualiza tu correo electrónico",
     "update-email-2": "Actualiza tu correo electrónico aquí:",
     "email": "Correo electrónico",
@@ -543,7 +545,8 @@
     "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
     "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
     "document-notfound": "documento no encontrado",
-    "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página."
+    "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Copa de Oro",

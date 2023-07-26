@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { challengeTypes } from '../../../config/challenge-types';
 import { setupServer, superRequest } from '../../jest.utils';
 
 const isValidChallengeCompletionErrorMsg = {
@@ -13,12 +14,12 @@ const id2 = 'bd7123c8c441eddfaeb5bdec';
 
 const codeallyProject = {
   id: id1,
-  challengeType: 13,
+  challengeType: challengeTypes.codeAllyCert,
   solution: 'https://any.valid/url'
 };
 const backendProject = {
   id: id2,
-  challengeType: 4,
+  challengeType: challengeTypes.backEndProject,
   solution: 'https://any.valid/url',
   githubLink: 'https://github.com/anything/valid/'
 };
@@ -431,12 +432,12 @@ describe('challengeRoutes', () => {
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-          expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({
             alreadyCompleted: false,
             points: 1,
             completedDate
           });
+          expect(response.statusCode).toBe(200);
         });
 
         test('POST correctly handles multiple requests', async () => {
@@ -766,7 +767,7 @@ describe('challengeRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
 
       test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {

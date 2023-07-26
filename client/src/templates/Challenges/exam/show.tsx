@@ -348,13 +348,13 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
 
   stopWindowClose = (event: Event) => {
     event.preventDefault();
-    alert('stop!');
+    alert(this.props.t('misc.navigation-warning'));
   };
 
   stopBrowserBack = (event: Event) => {
     event.preventDefault();
     window.history.forward();
-    alert('stop!');
+    alert(this.props.t('misc.navigation-warning'));
   };
 
   runExam = () => {

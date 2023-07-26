@@ -1,6 +1,9 @@
 const path = require('path');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
-const { challengeTypes, viewTypes } = require('../challenge-types');
+const {
+  challengeTypes,
+  viewTypes
+} = require('../../../config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
