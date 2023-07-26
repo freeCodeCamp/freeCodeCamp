@@ -6,9 +6,9 @@ import { fixPartiallyCompletedChallengeItem } from '../utils';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
 import { formatValidationError } from '../utils/error-formatting';
-import { ProgressTimestamp, getPoints } from '../utils/progress';
 import { schemas } from '../schemas';
-
+import { getPoints, ProgressTimestamp } from '../utils/progress';
+import { challengeTypes } from '../../../config/challenge-types';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -189,7 +189,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (
-          challengeType === 13 &&
+          challengeType === challengeTypes.codeAllyCert &&
           !canSubmitCodeRoadCertProject(projectId, user)
         ) {
           void reply.code(403);

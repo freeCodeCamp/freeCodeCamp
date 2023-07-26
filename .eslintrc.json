@@ -18,7 +18,6 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
@@ -34,9 +33,14 @@
   "settings": {
     "react": {
       "version": "16.4.2"
+    },
+    "import/resolver": {
+      "typescript": true,
+      "node": true
     }
   },
   "rules": {
+    "import/no-unresolved": [2, { "commonjs": true }],
     "import/named": "error",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
@@ -74,10 +78,12 @@
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript"
       ],
       "plugins": ["@typescript-eslint"],
       "rules": {
+        "import/no-unresolved": "off",
         "import/named": 0,
         "@typescript-eslint/naming-convention": [
           "error",

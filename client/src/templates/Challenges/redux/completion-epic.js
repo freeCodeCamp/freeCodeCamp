@@ -12,7 +12,11 @@ import {
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import standardErrorMessage from '../../../utils/standard-error-message';
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  hasNoTests,
+  submitTypes
+} from '../../../../../config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
@@ -77,9 +81,7 @@ function submitModern(type, state) {
   const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (
-    challengeType === 11 ||
-    challengeType === 15 ||
-    challengeType === 19 ||
+    hasNoTests(challengeType) ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {

@@ -77,6 +77,7 @@
     "change-language": "Cambia lingua",
     "resume-project": "Riprendi progetto",
     "start-project": "Avvia il progetto",
+    "tweet": "Tweet",
     "previous-question": "Domanda precedente",
     "next-question": "Domanda successiva",
     "finish-exam": "Termina l'esame",
@@ -403,7 +404,8 @@
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
     "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
     "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:"
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Supporta il nostro ente",
@@ -531,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, l'insegnante che ha fondato freeCodeCamp.org",
-    "email-blast": "A proposito, ogni venerdì invio una e-mail con 5 link sulla programmazione e l'informatica. Li mando a circa 4 milioni di persone: vorresti che lo inviassi anche a te?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aggiorna il tuo indirizzo email",
     "update-email-2": "Aggiorna il tuo indirizzo email qui:",
     "email": "Email",
@@ -543,7 +545,8 @@
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
     "document-notfound": "documento non trovato",
-    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina."
+    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -679,10 +682,12 @@
     "http-url": "Non è possibile utilizzare un URL non sicuro (http).",
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
     "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Emesso",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -795,7 +800,7 @@
       "machine-learning-with-python-v7": "Certificazione Machine Learning con Python",
       "College Algebra with Python": "Algebra Universitaria con Python",
       "college-algebra-with-python-v8": "Certificazione di Algebra Universitaria con Python",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "Front End Legacy",
       "legacy-front-end": "Certificazione Front End",

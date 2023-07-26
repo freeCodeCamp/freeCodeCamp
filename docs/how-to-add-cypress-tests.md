@@ -34,13 +34,13 @@ To run tests against production builds, replace `dev` with `prd` below.
 - To run a single test:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
   
   For example:
  
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
+  pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - To create a development build, start the development server, and run all existing cypress end-to-end tests:

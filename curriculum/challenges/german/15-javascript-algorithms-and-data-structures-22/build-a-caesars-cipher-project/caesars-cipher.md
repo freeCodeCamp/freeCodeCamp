@@ -14,7 +14,7 @@ A common modern use is the <a href="https://www.freecodecamp.org/news/how-to-cod
 
 Write a function which takes a <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> encoded string as input and returns a decoded string.
 
-All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+Alle Buchstaben werden großgeschrieben. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
