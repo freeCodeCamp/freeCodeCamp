@@ -15,7 +15,7 @@ The website will consist of a main index page which will have links to a few rec
 1. Your recipe page should include an `html` element with a `head` and `body` element as children.
 1. You should have a `title` element within the `head` element with the text `The Odin Recipes`.
 1. You should see an `h1` element that has the text `Creamy Chocolate Fudge`.
-1. You should see a fitting image with an `alt` attribute.
+1. You should see a related image with an `alt` attribute.
 1. There should be an `h2` element with the text `Description` under the image.
 1. You should see a couple of paragraphs under `Description` that describe the recipe.
 1. There should be an `h2` element with the text `Ingredients`.
@@ -58,7 +58,7 @@ You should have a `h1` element within your `body` element that contains the text
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-You should have a fitting image with an `alt` attribute.
+You should have an image with an `alt` attribute.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
