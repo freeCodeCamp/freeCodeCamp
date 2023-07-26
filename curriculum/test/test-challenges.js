@@ -484,14 +484,15 @@ async function createTestRunner(
     solutionFiles
   );
 
-  const { build, sources, loadEnzyme } = await buildChallenge(
-    {
-      challengeFiles,
-      required,
-      template
-    },
-    { usesTestRunner: true }
-  );
+  const { build, sources, loadEnzyme, transformedPython } =
+    await buildChallenge(
+      {
+        challengeFiles,
+        required,
+        template
+      },
+      { usesTestRunner: true }
+    );
 
   const code = {
     contents: sources.index,
@@ -503,7 +504,7 @@ async function createTestRunner(
     buildChallenge === buildPythonChallenge;
 
   const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
     : getWorkerEvaluator(build, sources, code, removeComments));
 
   return async ({ text, testString }) => {
@@ -548,8 +549,20 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(build, sources, code, loadEnzyme) {
-  await initializeTestRunner(build, sources, code, loadEnzyme);
+async function getContextEvaluator(
+  build,
+  sources,
+  code,
+  loadEnzyme,
+  transformedPython
+) {
+  await initializeTestRunner(
+    build,
+    sources,
+    code,
+    loadEnzyme,
+    transformedPython
+  );
 
   return {
     evaluate: async (testString, timeout) =>
@@ -575,11 +588,17 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
   };
 }
 
-async function initializeTestRunner(build, sources, code, loadEnzyme) {
+async function initializeTestRunner(
+  build,
+  sources,
+  code,
+  loadEnzyme,
+  transformedPython
+) {
   await page.reload();
   await page.setContent(build);
   await page.evaluate(
-    async (code, sources, loadEnzyme) => {
+    async (code, sources, loadEnzyme, transformedPython) => {
       const getUserInput = fileName => sources[fileName];
       // TODO: why doesn't this use frame.ts? It would be good if it did, since
       // that would be closer to how the client works.
@@ -593,11 +612,13 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
       await document.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme
+        loadEnzyme,
+        transformedPython
       });
     },
     code,
     sources,
-    loadEnzyme
+    loadEnzyme,
+    transformedPython
   );
 }

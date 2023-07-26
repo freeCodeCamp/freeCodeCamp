@@ -280,6 +280,10 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
+function getTransformedPython(challengeFiles: ChallengeFiles) {
+  return challengeFiles[0].contents;
+}
+
 export function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> | undefined {
@@ -298,7 +302,8 @@ export function buildPythonChallenge({
           // Both the terminal and pyodide are loaded into the browser, so we
           // still need to build the HTML.
           build: createPythonTerminal(pythonRunnerSrc),
-          sources: buildSourceMap(challengeFiles)
+          sources: buildSourceMap(challengeFiles),
+          transformedPython: getTransformedPython(challengeFiles)
         }))
     );
   }

@@ -24,6 +24,7 @@ export interface InitTestFrameArg {
   };
   getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;
+  transformedPython?: string;
 }
 
 export type FrameWindow = Window &

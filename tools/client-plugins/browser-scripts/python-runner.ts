@@ -179,15 +179,15 @@ contentDocument.__initPythonFrame = initPythonFrame;
 contentDocument.__initTestFrame = initTestFrame;
 
 // TODO: DRY this and frame-runner.ts's initTestFrame
-async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
+async function initTestFrame(e: InitTestFrameArg) {
   console.log('Initializing test frame');
   const pyodide = await setupPyodide();
 
-  // contents is used here not because it's necessary (it's not since
+  // transformedPython is used here not because it's necessary (it's not since
   // the transformation converts `input` into `await input` and the tests
   // provide a synchronous `input` function), but because we want to run the
   // tests against exactly the same code that runs in the preview.
-  const code = (e.code.contents || '').slice();
+  const code = (e.transformedPython || '').slice();
   const __file = (id?: string) => {
     if (id && e.code.original) {
       return e.code.original[id];
