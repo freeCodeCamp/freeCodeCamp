@@ -42,6 +42,10 @@ function createTerminal(disposables: IDisposable[]) {
 }
 
 async function setupPyodide() {
+  // I tried setting jsglobals here, to provide 'input' and 'print' to python,
+  // without having to modify the global window object. However, it didn't work
+  // because pyodide needs access to that object. Instead, I used
+  // registerJsModule when setting up runPython.
   return await loadPyodide({
     indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
   });
@@ -120,41 +124,26 @@ function setupRunPython(
   }: { input: Input; print: Print; resetTerminal: ResetTerminal }
 ) {
   // Make print and input available to python
-  pyodide.registerJsModule('js', {
+  pyodide.registerJsModule('jscustom', {
     input,
     print
   });
   pyodide.runPython(`
-  import js
-  from js import print
-  from js import input
+  import jscustom
+  from jscustom import print
+  from jscustom import input
   `);
 
   async function runPython(code: string) {
-    console.log('Stopping python');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     pyodide.globals.get('__cancel')?.();
     resetTerminal();
-    // Pyodide doesn't clear the global namespace when you runPython, so we have
-    // to.
 
-    // TODO: figure out how to import print and input AND clear the other globals
-    // (just filter out print and input?)
-
-    // TODO: can we simply 'save' the globals on setup and then restore them?
-    // This filtering stuff isn't great.
-    //     console.log('Clearing globals');
-    //     pyodide.runPython(`
-    // user_defined = [var for var in globals().copy() if not var.startswith("__")]
-    // not_helper = [var for var in user_defined if var not in ["input", "print"]]
-    // for var in not_helper:
-    //     del globals()[var]`);
-
-    console.log('Running python');
-    console.log('code', code);
-
+    // There's no need to clear out globals between runs, because the user's
+    // code is always run in a coroutine and shouldn't pollute the globals. If
+    // we subsequently want to run code that does interact with globals, we can
+    // revisit this.
     await pyodide.runPythonAsync(code);
-    console.log('Python finished');
     return pyodide;
   }
 
@@ -162,7 +151,6 @@ function setupRunPython(
 }
 
 async function initPythonFrame() {
-  console.log('Initializing python frame');
   const disposables: IDisposable[] = [];
   const { term, resetTerminal } = createTerminal(disposables);
   const pyodide = await setupPyodide();
@@ -175,7 +163,6 @@ async function initPythonFrame() {
 }
 
 contentDocument.__initPythonFrame = initPythonFrame;
-
 contentDocument.__initTestFrame = initTestFrame;
 
 // TODO: DRY this and frame-runner.ts's initTestFrame
