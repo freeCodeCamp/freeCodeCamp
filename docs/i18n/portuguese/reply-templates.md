@@ -165,12 +165,12 @@ We are happy you are excited to contribute and appreciate you taking the time to
 Happy Contributing.
 ```
 
-## Issue Not Triaged
+## Issue não passou por triagem
 
-> When a PR is opened for an issue that hasn't been triaged and marked as ready for contribution.
+> Quando um PR é aberto para uma issue que não passou por triagem e marcada como pronta para contribuição.
 
 ```markdown
-Hi there,
+Hi there, 
 
 Thanks for creating this pull request.
 

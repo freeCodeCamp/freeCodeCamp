@@ -165,9 +165,9 @@ We are happy you are excited to contribute and appreciate you taking the time to
 Happy Contributing.
 ```
 
-## Issue Not Triaged
+## Невідсортоване завдання
 
-> When a PR is opened for an issue that hasn't been triaged and marked as ready for contribution.
+> Якщо PR відкрито для завдання, яке не відсортоване та не позначене як готове для внеску.
 
 ```markdown
 Hi there,
