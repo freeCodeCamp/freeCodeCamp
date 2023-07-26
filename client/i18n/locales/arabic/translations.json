@@ -682,10 +682,12 @@
     "http-url": "لا يمكن استخدام عنوان URL غير آمن (http).",
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
     "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "صدر",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "مشاريع تعلم الآله باستخدام Python",
       "College Algebra with Python": "College Algebra with Python",
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",

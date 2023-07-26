@@ -77,7 +77,7 @@
     "change-language": "Змінити мову",
     "resume-project": "Продовжити проєкт",
     "start-project": "Розпочати проєкт",
-    "tweet": "Tweet",
+    "tweet": "Твітнути",
     "previous-question": "Попереднє запитання",
     "next-question": "Наступне запитання",
     "finish-exam": "Завершити екзамен",
@@ -405,7 +405,7 @@
     "if-help-university": "Ми вже зробили багато роботи. Підтримайте довгий шлях нашої благодійної організації.",
     "qualified-for-exam": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
     "not-qualified-for-exam": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Попередній перегляд знаходиться у зовнішньому вікні."
   },
   "donate": {
     "title": "Підтримайте нашу організацію",
@@ -533,7 +533,7 @@
     "brand-new-account": "Вітаємо у новому обліковому записі freeCodeCamp. Розпочнемо!",
     "duplicate-account-warning": "Якщо ви хотіли ввійти у наявний обліковий запис, а не створювати новий, <0>натисніть тут, щоб видалити цей обліковий запис</0> та спробуйте іншу адресу електронної пошти.",
     "quincy": "— Квінсі Ларсон, вчитель, який заснував freeCodeCamp.org",
-    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "До речі, щоп’ятниці я надсилаю електронний лист із 5 посиланнями про програмування та інформатику. Я відправляю їх приблизно 6 мільйонам людей. Чи хотіли б ви, щоб я відправляв ці листи ще й вам?",
     "update-email-1": "Оновити свою адресу електронної пошти",
     "update-email-2": "Оновіть свою адресу електронної пошти тут:",
     "email": "Адреса електронної пошти",
@@ -546,7 +546,7 @@
     "iframe-form-submit-alert": "Зазвичай ця форма буде відправлена! Вона буде відправлена на: {{externalLink}}",
     "document-notfound": "документ не знайдено",
     "slow-load-msg": "Схоже, це займає більше часу, ніж зазвичай. Будь ласка, спробуйте оновити сторінку.",
-    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
+    "navigation-warning": "Ви втратите прогрес, якщо залишите цю сторінку. Ви впевнені?"
   },
   "icons": {
     "gold-cup": "Золотий кубок",
@@ -682,10 +682,12 @@
     "http-url": "Не можна використовувати ненадійну (http) URL-адресу.",
     "own-work-url": "Не забудьте відправити власну роботу.",
     "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу застосунку.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path"
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Перевірити сертифікацію:",
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "Сертифікація «Машинне навчання з Python»",
       "College Algebra with Python": "Алгебра з Python",
       "college-algebra-with-python-v8": "Сертифікація «Алгебра з Python»",
-      "Foundational C# with Microsoft": "Основи C# з Microsoft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Сертифікація «Основи C# з Microsoft»",
       "Legacy Front End": "Застарілий Front End",
       "legacy-front-end": "Сертифікація «Front End»",
