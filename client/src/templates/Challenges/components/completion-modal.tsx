@@ -27,6 +27,7 @@ import ProgressBar from '../../../components/ProgressBar';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
+import { fireConfetti } from '../../../utils/fire-confetti';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -155,8 +156,8 @@ class CompletionModal extends Component<
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
+      fireConfetti();
     }
-
     return (
       <Modal
         animation={false}
