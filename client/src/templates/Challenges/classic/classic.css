@@ -132,7 +132,8 @@
   height: 100%;
 }
 
-#mobile-layout .nav-tabs > li:not(.active) > a:hover {
+#mobile-layout .nav-tabs > li:not(.active) > a:hover,
+.portal-button:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
 }
@@ -144,13 +145,16 @@
   height: 2rem;
   width: 2rem;
   border: 0;
+  /* This is the default for the a elements in the nav-tabs, inherited from bootstrap */
+  /* We need to set this here to override our default button styles. */
+  background: transparent;
   border-bottom: 1px solid var(--quaternary-color);
   padding: 0;
 }
 
 .portal-button[aria-expanded='true'] {
-  border-color: var(--primary-color);
-  background-color: var(--primary-color);
+  border-color: var(--quaternary-color);
+  background-color: var(--quaternary-color);
   color: var(--secondary-background);
 }
 
