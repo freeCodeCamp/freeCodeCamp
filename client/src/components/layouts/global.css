@@ -382,6 +382,14 @@ fieldset[disabled] .btn-primary.focus {
   fill: var(--primary-color);
 }
 
+.map-icon .inverted-color {
+  fill: var(--quaternary-background);
+}
+
+.link-btn.btn-lg:hover .map-icon .inverted-color {
+  fill: var(--secondary-color);
+}
+
 .map-icon {
   width: 35px;
   max-height: 45px;
