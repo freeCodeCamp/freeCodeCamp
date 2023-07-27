@@ -600,14 +600,8 @@ async function initializeTestRunner(
   await page.evaluate(
     async (code, sources, loadEnzyme, transformedPython) => {
       const getUserInput = fileName => sources[fileName];
-      // TODO: why doesn't this use frame.ts? It would be good if it did, since
-      // that would be closer to how the client works.
-
-      // TODO: this is doing too much. It shouldn't need to be conditionally
-      // initializing the python frame. Use a separate function for this?
-
-      // TODO: we need to avoid initializing the python frame for each test.
-      // It's just too slow.
+      // TODO: use frame's functions directly, so it behaves more like the
+      // client. Also, keep an eye on performance - loading pyodide is slow.
       await document.__initTestFrame({
         code: sources,
         getUserInput,
