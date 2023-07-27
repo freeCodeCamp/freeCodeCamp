@@ -91,16 +91,9 @@ export const Col = ({
 
   return (
     <div
-      className={`relative min-h-[1px] px-[15px] float-left ${className ?? ''} 
-      ${xsClass}
-      ${smClass}
-      ${mdClass}
-      ${lgClass}
-      ${xsOffsetClass}
-      ${smOffsetClass}
-      ${mdOffsetClass}
-      ${lgOffsetClass}
-      ${smPushClass}`}
+      className={`relative min-h-[1px] px-[15px] float-left ${
+        className ?? ''
+      } ${xsClass} ${smClass} ${mdClass} ${lgClass} ${xsOffsetClass} ${smOffsetClass} ${mdOffsetClass} ${lgOffsetClass} ${smPushClass}`}
       {...props}
     >
       {children}
