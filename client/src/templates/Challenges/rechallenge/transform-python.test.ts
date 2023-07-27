@@ -27,7 +27,7 @@ async def cancellable_coroutine():
             print('bar')
         globals()['__locals'] = locals()
     except asyncio.CancelledError:
-        raise
+        pass
 
 __task = asyncio.create_task(cancellable_coroutine())
 
