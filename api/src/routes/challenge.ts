@@ -84,7 +84,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
-        return challenge.url?.endsWith(tutorialRepo ?? '');
+        return tutorialRepo && challenge.url?.endsWith(tutorialRepo);
       });
 
       if (!challenge) {
@@ -98,8 +98,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userToken }
         });
 
-        if (!tokenInfo)
+        if (!tokenInfo) {
+          void reply.code(400);
           return { type: 'error', msg: 'User token not found' } as const;
+        }
 
         const { userId } = tokenInfo;
 
