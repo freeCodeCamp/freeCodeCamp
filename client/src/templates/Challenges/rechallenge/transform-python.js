@@ -19,7 +19,7 @@ async def cancellable_coroutine():
 ${indent(code, 8)}
         globals()['__locals'] = locals()
     except asyncio.CancelledError:
-        raise
+        pass
 
 __task = asyncio.create_task(cancellable_coroutine())
 
