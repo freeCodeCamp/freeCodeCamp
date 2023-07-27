@@ -26,6 +26,7 @@ import {
   normalizeParams,
   getPrefixedLandingPath
 } from '../utils/redirection';
+import { isMicrosoftLearnLink } from '../../../../utils/validate';
 import { getApiUrlFromTrophy } from '../utils/ms-learn-utils';
 
 const log = debug('fcc:boot:challenges');
@@ -377,6 +378,13 @@ async function projectCompleted(req, res, next) {
   const isMSTrophyProject = completedChallenge.challengeType === 18;
   let isTrophyMissing = false;
   if (isMSTrophyProject) {
+    if (!isMicrosoftLearnLink(completedChallenge.solution)) {
+      return res.status(403).json({
+        type: 'error',
+        message:
+          'You have not provided the valid links for us to inspect your work.'
+      });
+    }
     try {
       const mSLearnAPIUrl = getApiUrlFromTrophy(completedChallenge.solution);
       isTrophyMissing = mSLearnAPIUrl ? !(await fetch(mSLearnAPIUrl)).ok : true;
