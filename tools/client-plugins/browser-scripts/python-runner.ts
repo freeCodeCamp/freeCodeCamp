@@ -215,21 +215,6 @@ async function initTestFrame(e: InitTestFrameArg) {
   const __helpers = helpers;
   /* eslint-enable @typescript-eslint/no-unused-vars */
 
-  let Enzyme;
-  if (e.loadEnzyme) {
-    /* eslint-disable prefer-const */
-    let Adapter16;
-
-    [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
-      import(/* webpackChunkName: "enzyme" */ 'enzyme'),
-      import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
-    ]);
-    /* eslint-enable no-inline-comments */
-
-    Enzyme.configure({ adapter: new Adapter16() });
-    /* eslint-enable prefer-const */
-  }
-
   contentDocument.__runTest = async function runTests(testString: string) {
     // uncomment the following line to inspect
     // the frame-runner as it runs tests
@@ -237,7 +222,7 @@ async function initTestFrame(e: InitTestFrameArg) {
     // debugger;
     try {
       // eval test string to get the dummy input and actual test
-      const testPromise = new Promise<{
+      const { input, test } = await new Promise<{
         input: string[];
         test: () => Promise<unknown>;
       }>((resolve, reject) =>
@@ -254,7 +239,6 @@ async function initTestFrame(e: InitTestFrameArg) {
           }
         })
       );
-      const { input, test } = await testPromise;
       // TODO: throw helpful error if we run out of input values, since it's likely
       // that the user added too many input statements.
       const inputIterator = input ? input.values() : null;
