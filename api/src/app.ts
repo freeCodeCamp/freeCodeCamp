@@ -45,7 +45,7 @@ import {
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN,
-  SES_ID
+  EMAIL_PROVIDER
 } from './utils/env';
 import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
@@ -152,7 +152,8 @@ export const build = async (
     })
   });
 
-  const provider = SES_ID ? new SESProvider() : new NodemailerProvider();
+  const provider =
+    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
   void fastify.register(mailer, { provider });
 
   // Swagger plugin

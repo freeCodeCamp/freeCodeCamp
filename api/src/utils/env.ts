@@ -22,9 +22,15 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
+function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
+  return ['ses', 'nodemailer'].includes(provider);
+}
+
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
 assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
+assert.ok(process.env.EMAIL_PROVIDER);
+assert.ok(isAllowedProvider(process.env.EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
@@ -59,6 +65,10 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     process.env.FCC_ENABLE_DEV_LOGIN_MODE !== 'true',
     'Dev login mode MUST be disabled in production.'
   );
+  assert.ok(
+    process.env.EMAIL_PROVIDER === 'ses',
+    'SES MUST be used in production.'
+  );
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
@@ -83,3 +93,4 @@ export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
+export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
