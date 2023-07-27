@@ -109,11 +109,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id: userId }
         });
 
-        if (!user)
+        if (!user) {
+          void reply.code(400);
           return {
             type: 'error',
             msg: 'User for user token not found'
           } as const;
+        }
 
         const completedDate = Date.now();
         const { completedChallenges = [], partiallyCompletedChallenges = [] } =
