@@ -1,8 +1,8 @@
 ---
 id: 637f4e2f72c65bc8e73dfe22
-title: HTML Boilerplate Question C
+title: HTML Foundations Question F
 challengeType: 15
-dashedName: html-boilerplate-question-c
+dashedName: html-foundations-question-f
 ---
 
 # --description--
