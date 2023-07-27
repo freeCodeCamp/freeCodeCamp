@@ -137,7 +137,7 @@ describe('challengeRoutes', () => {
         });
       });
 
-      test('should return 200 if tutorialId, userToken are present', async () => {
+      test('Should complete challenge with code 200', async () => {
         const tokenResponse = await superRequest('/user/user-token', {
           method: 'POST',
           setCookies
@@ -172,6 +172,40 @@ describe('challengeRoutes', () => {
         });
 
         expect(challengeCompleted).toBe(true);
+      });
+
+      test('Should complete project with code 200', async () => {
+        const tokenResponse = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+        expect(tokenResponse.status).toBe(200);
+        expect(tokenResponse.body).toHaveProperty('userToken');
+
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
+          });
+
+        expect(response.status).toBe(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const projectCompleted = user?.partiallyCompletedChallenges.some(
+          project => {
+            return project.id === '5f1a4ef5d5d6b5ab580fc6ae';
+          }
+        );
+
+        expect(projectCompleted).toBe(true);
       });
 
       afterAll(async () => {
