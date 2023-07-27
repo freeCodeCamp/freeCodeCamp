@@ -68,18 +68,16 @@ function createJSFunctionsForPython(
     const text = args.map(x => str(x)).join(' ');
     writeLine(text);
   }
-
-  // TODO: this is not nice. Is there a clever way to avoid having to close over
-  // disposable AND disposables?
+  // TODO: prevent user from moving cursor outside the current input line and
+  // handle insertion and deletion properly. While backspace and delete don't
+  // seem to work, we can use "\x1b[0K" to clear from the cursor to the end.
+  // Also, we should not add special characters to the userinput string.
   const waitForInput = (): Promise<string> =>
     new Promise(resolve => {
       let userinput = '';
-      // Eslint is confused because this is a hack. The disposable does not
-      // exist until term.onData is called by the keyListener, but we need a
-      // reference to it to create the keyListener. The way out is to declare a
-      // variable to hold the reference, knowing that it will be assigned before
-      // done is called.
-
+      // Eslint is correct that this only gets assigned once, but we can't use
+      // const because the declaration (before keyListener is defined) and
+      // assignment (after keyListener is defined) must be separate.
       // eslint-disable-next-line prefer-const
       let disposable: IDisposable | undefined;
 
@@ -140,8 +138,8 @@ function setupRunPython(
     resetTerminal();
 
     // There's no need to clear out globals between runs, because the user's
-    // code is always run in a coroutine and shouldn't pollute the globals. If
-    // we subsequently want to run code that does interact with globals, we can
+    // code is always run in a coroutine and shouldn't pollute them. If we
+    // subsequently want to run code that does interact with globals, we can
     // revisit this.
     await pyodide.runPythonAsync(code);
     return pyodide;
@@ -167,7 +165,6 @@ contentDocument.__initTestFrame = initTestFrame;
 
 // TODO: DRY this and frame-runner.ts's initTestFrame
 async function initTestFrame(e: InitTestFrameArg) {
-  console.log('Initializing test frame');
   const pyodide = await setupPyodide();
 
   // transformedPython is used here not because it's necessary (it's not since
@@ -248,11 +245,11 @@ async function initTestFrame(e: InitTestFrameArg) {
             inputIterator ? inputIterator.next().value : ''
           );
         },
-        // We don't, currently, care what print is called with, hence the dummy
-        // function
+        // We don't, currently, care what print is called with, but it does need
+        // to exist
         print: () => void 0,
-        // reset is only necessary when calling __runPython more than once, which
-        // we don't do in the test frame
+        // resetTerminal is only necessary when calling __runPython more than
+        // once, which we don't do in the test frame
         resetTerminal: () => void 0
       });
 
