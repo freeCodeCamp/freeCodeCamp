@@ -682,12 +682,12 @@
     "http-url": "Не можна використовувати ненадійну (http) URL-адресу.",
     "own-work-url": "Не забудьте відправити власну роботу.",
     "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу застосунку.",
-    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
+    "ms-learn-link": "Використайте дійсне трофейне посилання Microsoft Learn.",
     "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path"
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
-    "ms-president": "President, Microsoft Developer Division",
+    "ms-president": "Президент відділу розробки Microsoft",
     "verify": "Перевірити сертифікацію:",
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
@@ -800,7 +800,7 @@
       "machine-learning-with-python-v7": "Сертифікація «Машинне навчання з Python»",
       "College Algebra with Python": "Алгебра з Python",
       "college-algebra-with-python-v8": "Сертифікація «Алгебра з Python»",
-      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
+      "Foundational C# with Microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft": "Сертифікація «Основи C# з Microsoft»",
       "Legacy Front End": "Застарілий Front End",
       "legacy-front-end": "Сертифікація «Front End»",

@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Altes Responsives Webdesign",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In dieser Zertifizierung für \"Responsives Webdesign\" lernst Du die Sprachen, die Entwickler verwenden, um Webseiten zu erstellen: HTML (Hypertext Markup Language) für Inhalte, und CSS (Cascading Style Sheets) für Design.",
       "Zuerst erstellst Du eine Katzenfoto-App, um die Grundlagen von HTML und CSS zu erlernen. Später lernst Du moderne Techniken wie CSS-Variablen, indem Du einen Pinguin erstellst und bewährte Abläufe für die Barrierefreiheit beim Erstellen eines Web-Formulars nutzt.",
@@ -55,13 +55,6 @@
         "intro": [
           "Das CSS Grid ist ein neuerer Standard, der es einfach macht, komplexe responsive Layouts zu erstellen. Es funktioniert, indem es ein HTML-Element in ein Raster verwandelt und du darin überall Kindelemente platzieren kannst.",
           "In diesem Kurs lernst du die Grundlagen des CSS Grid, indem du verschiedene komplexe Layouts erstellst, darunter auch einen Blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Responsives Web Design Projekte",
-        "intro": [
-          "Zeit, deine neu erlernten Fähigkeiten in die Tat umzusetzen. Indem du an diesen Projekten arbeitest, bekommst du die Chance, all die Fähigkeiten, Prinzipien und Konzepte anzuwenden, die du bisher gelernt hast: HTML, CSS, Visuelles Design, Barrierefreiheit und mehr.",
-          "Schließe die folgenden fünf Web-Programmierungsprojekte ab, um Deine Responsive Web Design Zertifizierung zu erhalten."
         ]
       }
     }

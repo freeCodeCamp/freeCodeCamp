@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Web Design Responsivo Legacy",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
@@ -55,13 +55,6 @@
         "intro": [
           "CSS grid, o griglia CSS, è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
           "In questo corso imparerai le basi della griglia CSS costruendo vari layout complessi, incluso un blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Progetti di Web Design Responsivo",
-        "intro": [
-          "È ora di mettere in pratica le tue nuove capacità. Lavorando su questi progetti, avrai modo di applicare tutte le competenze, i principi e i concetti che hai imparato finora: HTML, CSS, Visual Design, accessibilità, e altro.",
-          "Completa i cinque progetti di sviluppo web che seguono per guadagnare la tua certificazione Web Design Responsivo."
         ]
       }
     }

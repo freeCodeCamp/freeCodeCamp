@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Diseño Web Adaptativo Legado",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "En esta Certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
@@ -55,13 +55,6 @@
         "intro": [
           "La cuadrícula (grid) CSS es un estándar reciente que facilita la creación de diseños complejos y responsivos. Funciona convirtiendo un elemento HTML en una cuadrícula y te permite colocar elementos secundarios en cualquier lugar dentro ella.",
           "En este curso, aprenderá los fundamentos de la cuadrícula (grid) CSS construyendo diferentes diseños complejos, incluido un blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Proyectos de diseño web responsivo",
-        "intro": [
-          "Es hora de poner tus habilidades recién aprendidas a funcionar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que has aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
-          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web adaptativo."
         ]
       }
     }
