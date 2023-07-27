@@ -362,8 +362,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
               [challengeTypes.python]: buildPythonChallenge
             }[challengeType] ?? buildDOMChallenge;
 
+          // The python tests are (currently) slow, so we give them more time.
+          const timePerTest =
+            challengeType === challengeTypes.python ? 10000 : 5000;
           it('Test suite must fail on the initial contents', async function () {
-            this.timeout(5000 * tests.length + 1000);
+            this.timeout(timePerTest * tests.length + 1000);
             // suppress errors in the console.
             const oldConsoleError = console.error;
             console.error = () => {};
@@ -452,7 +455,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               it(`Solution ${
                 index + 1
               } must pass the tests`, async function () {
-                this.timeout(5000 * tests.length + 2000);
+                this.timeout(timePerTest * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
