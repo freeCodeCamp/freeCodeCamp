@@ -288,7 +288,7 @@ const initMainFrame =
               : (elem as HTMLLinkElement).href;
 
           try {
-            const response = await fetch(String(urlAddr));
+            const response = await fetch(url);
             return response.ok
               ? ''
               : `Cannot retrieve ${url}, link status code: ${response.status}`;
@@ -298,7 +298,7 @@ const initMainFrame =
           }
         }
 
-        return errMsgs.length ? errMsgs : 'This link does not exist.';
+        return (await Promise.all(errors)).filter(Boolean).join('\n');
       })
       .then(importResult => {
         if (importResult) {
@@ -331,9 +331,6 @@ function handleDocumentNotFound(err: string) {
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
     console.log(err);
   }
-  // else if (err == FILE_NOT_FOUND_ERROR) {
-  //   console.log(err);
-  // }
 }
 
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
