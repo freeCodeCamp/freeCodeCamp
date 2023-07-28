@@ -57,15 +57,13 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
   const loggingKeys = ['sentryClientDSN'];
   const abTestingKeys = ['growthbookUri'];
-  const diagnosticKeys = ['gitHash'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,
     searchKeys,
     donationKeys,
     loggingKeys,
-    abTestingKeys,
-    diagnosticKeys
+    abTestingKeys
   );
   const actualVariables = Object.keys(env as Record<string, unknown>);
   if (expectedVariables.length !== actualVariables.length) {

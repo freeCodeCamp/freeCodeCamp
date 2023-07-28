@@ -1,5 +1,4 @@
 const path = require('path');
-const { execSync } = require('child_process');
 
 const envPath = path.resolve(__dirname, '../.env');
 const { error } = require('dotenv').config({ path: envPath });
@@ -48,10 +47,6 @@ const locations = {
     : radioLocation
 };
 
-// This is used to identify the current deployment and is trimmed to remove
-// the trailing newline.
-const gitHash = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
-
 module.exports = Object.assign(locations, {
   clientLocale,
   curriculumLocale,
@@ -87,6 +82,5 @@ module.exports = Object.assign(locations, {
   growthbookUri:
     !growthbookUri || growthbookUri === 'api_URI_from_Growthbook_dashboard'
       ? null
-      : growthbookUri,
-  gitHash
+      : growthbookUri
 });
