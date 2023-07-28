@@ -28,6 +28,7 @@ const machineLearningPyBase =
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase = '/learn/foundational-c-sharp-with-microsoft';
+const upcomingPythonBase = '/learn/upcoming-python';
 const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
@@ -767,6 +768,19 @@ const upcomingCertMap = [
         title: 'Certification Exam',
         link: `${exampleCertBase}/example-certification-exam`,
         certSlug: 'example-certification-v8'
+      }
+    ]
+  },
+  {
+    id: '64afc4e8f3b37856e035b85f',
+    title: 'Upcoming Python Certification',
+    certSlug: 'upcoming-python-v8',
+    projects: [
+      {
+        id: '64afc37bf3b37856e035b85e',
+        title: 'Upcoming Python Project',
+        link: `${upcomingPythonBase}/upcoming-python-project`,
+        certSlug: 'upcoming-python-v8'
       }
     ]
   }

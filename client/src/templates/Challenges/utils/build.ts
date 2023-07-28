@@ -1,12 +1,18 @@
+import { challengeTypes } from '../../../../../config/challenge-types';
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import pythonRunnerData from '../../../../../config/client/python-runner.json';
+
 import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders';
-import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
+import { concatHtml, createPythonTerminal } from '../rechallenge/builders';
+import {
+  getTransformers,
+  embedFilesInHtml,
+  getPythonTransformers
+} from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
@@ -41,10 +47,11 @@ interface BuildOptions {
   usesTestRunner: boolean;
 }
 
-const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
 
-const frameRunnerSrc = `/js/${runner}.js`;
+const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
+
+const pythonRunnerSrc = `/js/${pythonRunnerData.filename}.js`;
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -67,6 +74,8 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
+// TODO: split this into at least two functions. One to create 'original' i.e.
+// the source and another to create the contents.
 function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
@@ -77,7 +86,11 @@ function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '', original: {} } as Source
+    {
+      index: '',
+      editableContents: '',
+      original: {}
+    } as Source
   );
   return source;
 }
@@ -101,7 +114,8 @@ const buildFunctions = {
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
-  [challengeTypes.colab]: buildBackendChallenge
+  [challengeTypes.colab]: buildBackendChallenge,
+  [challengeTypes.python]: buildPythonChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -192,6 +206,9 @@ type BuildResult = {
   sources: Source | undefined;
 };
 
+// TODO: All the buildXChallenge files have a similar structure, so make that
+// abstraction (function, class, whatever) and then create the various functions
+// out of it.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
@@ -206,24 +223,24 @@ export function buildDOMChallenge(
   if (finalFiles) {
     return Promise.all(finalFiles)
       .then(checkFilesErrors)
-      .then(embedFilesInHtml)
-      .then(([_challengeFiles, _contents]) => {
-        const challengeFiles = _challengeFiles as ChallengeFiles;
-        const contents = _contents as string;
-
-        return {
-          challengeType:
-            challengeTypes.html || challengeTypes.multifileCertProject,
-          build: concatHtml({
-            required,
-            template,
-            contents,
-            ...(usesTestRunner && { testRunner: frameRunnerSrc })
-          }),
-          sources: buildSourceMap(challengeFiles),
-          loadEnzyme
-        };
-      });
+      .then(
+        embedFilesInHtml as (
+          x: ChallengeFiles
+        ) => Promise<[ChallengeFiles, string]>
+      )
+      .then(([challengeFiles, contents]) => ({
+        // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+        // necessary at the moment.
+        challengeType: challengeTypes.html,
+        build: concatHtml({
+          required,
+          template,
+          contents,
+          ...(usesTestRunner && { testRunner: frameRunnerSrc })
+        }),
+        sources: buildSourceMap(challengeFiles),
+        loadEnzyme
+      }));
   }
 }
 
@@ -263,20 +280,57 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
+function getTransformedPython(challengeFiles: ChallengeFiles) {
+  return challengeFiles[0].contents;
+}
+
+export function buildPythonChallenge({
+  challengeFiles
+}: BuildChallengeData): Promise<BuildResult> | undefined {
+  const pipeLine = composeFunctions(...getPythonTransformers());
+  const finalFiles = challengeFiles.map(pipeLine);
+
+  if (finalFiles) {
+    return (
+      Promise.all(finalFiles)
+        .then(checkFilesErrors)
+        // Unlike the DOM challenges, there's no need to embed the files in HTML
+        .then(challengeFiles => ({
+          // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+          // necessary at the moment.
+          challengeType: challengeTypes.html,
+          // Both the terminal and pyodide are loaded into the browser, so we
+          // still need to build the HTML.
+          build: createPythonTerminal(pythonRunnerSrc),
+          sources: buildSourceMap(challengeFiles),
+          transformedPython: getTransformedPython(challengeFiles)
+        }))
+    );
+  }
+}
+
 export function updatePreview(
   buildData: BuildChallengeData,
   document: Document,
   proxyLogger: ProxyLogger
-): void {
+): Promise<void> {
+  // TODO: either create a 'buildType' or use the real challengeType here
+  // (buildData.challengeType is set to 'html' for challenges that can be
+  // previewed, hence this being true for python challenges, multifile steps and
+  // so on).
+
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    createMainPreviewFramer(
-      document,
-      proxyLogger,
-      getDocumentTitle(buildData)
-    )(buildData);
+    return new Promise<void>(resolve =>
+      createMainPreviewFramer(
+        document,
+        proxyLogger,
+        getDocumentTitle(buildData),
+        resolve
+      )(buildData)
+    );
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`
@@ -318,7 +372,8 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.python
   );
 }
 

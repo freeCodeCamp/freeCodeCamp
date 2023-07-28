@@ -11,9 +11,8 @@ import {
   challengeFilesSelector
 } from '../redux/selectors';
 
-type VisibleEditors = {
-  [key: string]: boolean;
-};
+import type { VisibleEditors } from './multifile-editor';
+
 interface EditorTabsProps {
   challengeFiles: ChallengeFiles;
   toggleVisibleEditor: typeof toggleVisibleEditor;
@@ -43,7 +42,13 @@ class EditorTabs extends Component<EditorTabsProps> {
         {sortChallengeFiles(challengeFiles).map(
           (challengeFile: ChallengeFile) => (
             <button
-              aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
+              aria-expanded={
+                // @ts-expect-error TODO: validate challengeFile on io-boundary,
+                // then we won't need to ignore this error and we can drop the
+                // nullish handling.
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                visibleEditors[challengeFile.fileKey] ?? 'false'
+              }
               key={challengeFile.fileKey}
               data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}

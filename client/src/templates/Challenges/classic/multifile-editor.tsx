@@ -17,8 +17,12 @@ import { FileKey } from '../../../redux/prop-types';
 import { Themes } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
-type VisibleEditors = {
-  [key: string]: boolean;
+export type VisibleEditors = {
+  indexhtml?: boolean;
+  indexjsx?: boolean;
+  stylescss?: boolean;
+  scriptjs?: boolean;
+  mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
@@ -36,12 +40,7 @@ type MultifileEditorProps = Pick<
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
 > & {
-  visibleEditors: {
-    indexhtml?: boolean;
-    indexjsx?: boolean;
-    stylescss?: boolean;
-    scriptjs?: boolean;
-  };
+  visibleEditors: VisibleEditors;
 };
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
@@ -74,7 +73,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     isUsingKeyboardInTablist,
     resizeProps,
     title,
-    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
+    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx, mainpy },
     usesMultifileEditor,
     showProjectPreview
   } = props;
@@ -98,6 +97,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
+  if (mainpy) editorKeys.push('mainpy');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {

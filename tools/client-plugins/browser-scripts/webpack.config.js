@@ -5,15 +5,16 @@ const webpack = require('webpack');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
-  const staticPath = path.join(__dirname, './static/js');
-  const configPath = path.join(__dirname, '../config/client');
+  const staticPath = path.join(__dirname, '../../../client/static/js');
+  const configPath = path.join(__dirname, '../../../config/client');
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './src/client/frame-runner.ts',
-      'sass-compile': './src/client/workers/sass-compile.ts',
-      'test-evaluator': './src/client/workers/test-evaluator.ts'
+      'frame-runner': './frame-runner.ts',
+      'sass-compile': './sass-compile.ts',
+      'test-evaluator': './test-evaluator.ts',
+      'python-runner': './python-runner.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
@@ -57,6 +58,11 @@ module.exports = (env = {}) => {
               ]
             }
           }
+        },
+        // xterm doesn't bundle its css, so we need to load it ourselves
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
         }
       ]
     },
@@ -76,7 +82,7 @@ module.exports = (env = {}) => {
         buffer: require.resolve('buffer'),
         util: false,
         stream: false,
-        process: require.resolve('process/browser')
+        process: require.resolve('process/browser.js')
       },
       extensions: ['.js', '.ts']
     }
