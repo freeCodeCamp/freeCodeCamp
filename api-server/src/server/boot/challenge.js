@@ -73,9 +73,13 @@ export default async function bootChallenge(app, done) {
 
   api.get('/generate-exam', send200toNonUser, generateExam);
 
-  const submitExam = createSubmitExam(app);
+  const examChallengeCompleted = createExamChallengeCompleted(app);
 
-  api.post('/submit-exam', send200toNonUser, submitExam);
+  api.post(
+    '/exam-challenge-completed',
+    send200toNonUser,
+    examChallengeCompleted
+  );
 
   api.post(
     '/save-challenge',
@@ -573,10 +577,10 @@ function createGenerateExam(app) {
   };
 }
 
-function createSubmitExam(app) {
+function createExamChallengeCompleted(app) {
   const { Exam } = app.models;
 
-  return async function submitExam(req, res, next) {
+  return async function examChallengeCompleted(req, res, next) {
     const { body = {}, user } = req;
 
     try {
