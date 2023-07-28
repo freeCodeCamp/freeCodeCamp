@@ -306,8 +306,8 @@ const initMainFrame =
       })
       .then(importResult => {
         if (importResult) {
-          console.warn.call(frameContext.window, importResult);
-          proxyLogger && proxyLogger(importResult);
+          // @ts-expect-error the window types will be updated in another PR
+          frameContext.window.console.error(importResult);
         }
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
