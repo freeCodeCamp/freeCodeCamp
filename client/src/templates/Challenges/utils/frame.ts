@@ -300,7 +300,8 @@ const initMainFrame =
             }
             unfetchedLinks -= 1;
           } catch {
-            errMsgs = `${errMsgs}\n${urlAddr} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
+            // TODO: tailor message to the file (e.g. script.js, styles.css etc.)
+            return `${url} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
           }
         }
 
