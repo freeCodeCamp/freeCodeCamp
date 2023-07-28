@@ -280,7 +280,6 @@ const initMainFrame =
         const allLinks = iframeBuildDoc.querySelectorAll(
           'script[src], link[href]'
         );
-        let errMsgs = '';
 
      const errors = Array.from(elements).map(async elem => {
           const urlAddr =
