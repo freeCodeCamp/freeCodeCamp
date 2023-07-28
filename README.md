@@ -7,7 +7,7 @@
 [![Discord](https://img.shields.io/discord/692816967895220344)](https://discord.gg/PRyKn3Vbay)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
-## FreeCodeCamp.org's Open-Source Codebase and Curriculum  #Looks more grammatically correct
+## FreeCodeCamp.org's Open-Source Codebase and Curriculum  
 
 
 
