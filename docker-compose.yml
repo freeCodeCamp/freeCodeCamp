@@ -1,4 +1,14 @@
 services:
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+  api:
+    image: fcc-api
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
   client:
     image: fcc-client
     ports:
