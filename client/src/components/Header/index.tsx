@@ -21,7 +21,7 @@ const mapStateToProps = createSelector(
 );
 
 interface HeaderProps {
-  examInProgress?: boolean;
+  examInProgress: boolean;
   fetchState: { pending: boolean };
   user: User;
   skipButtonText: string;
@@ -76,12 +76,7 @@ class Header extends React.Component<HeaderProps, { displayMenu: boolean }> {
 
   render(): JSX.Element {
     const { displayMenu } = this.state;
-    const {
-      examInProgress = false,
-      fetchState,
-      user,
-      skipButtonText
-    } = this.props;
+    const { examInProgress, fetchState, user, skipButtonText } = this.props;
     return (
       <header>
         <a href='#content-start' className='skip-to-content-button'>
