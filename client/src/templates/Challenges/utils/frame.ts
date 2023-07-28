@@ -290,12 +290,9 @@ const initMainFrame =
 
           try {
             const response = await fetch(String(urlAddr));
-            if (!response.ok) {
-              errMsgs = `${errMsgs}\nCannot retrieve ${urlAddr}, link status code: ${response.status}`;
-            } else if (!unfetchedLinks) {
-              continue;
-            }
-            unfetchedLinks -= 1;
+            return response.ok
+              ? ''
+              : `Cannot retrieve ${url}, link status code: ${response.status}`;
           } catch {
             // TODO: tailor message to the file (e.g. script.js, styles.css etc.)
             return `${url} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
