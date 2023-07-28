@@ -1057,6 +1057,20 @@
       }
     }
   },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
+      }
+    }
+  },
   "example-certification": {
     "title": "Mfano wa Uthibitisho",
     "intro": ["placeholder"],
