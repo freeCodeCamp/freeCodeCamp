@@ -282,10 +282,10 @@ const initMainFrame =
         );
 
      const errors = Array.from(elements).map(async elem => {
-          const urlAddr =
-            url.tagName === 'SCRIPT'
-              ? (url as HTMLScriptElement).src
-              : (url as HTMLLinkElement).href;
+          const url =
+            elem.tagName === 'SCRIPT'
+              ? (elem as HTMLScriptElement).src
+              : (elem as HTMLLinkElement).href;
 
           try {
             const response = await fetch(String(urlAddr));
