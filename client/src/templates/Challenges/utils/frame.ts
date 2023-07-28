@@ -282,7 +282,7 @@ const initMainFrame =
         );
         let errMsgs = '';
 
-        for (const url of allLinks) {
+     const errors = Array.from(elements).map(async elem => {
           const urlAddr =
             url.tagName === 'SCRIPT'
               ? (url as HTMLScriptElement).src
