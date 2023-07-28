@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Ubunifu wa Wavuti Sikivu (Legacy Responsive Web Design)",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "Katika Uthibitishaji huu wa Muundo Wa Wavuti Sikivu, utajifunza lugha ambazo watengenezaji wa tovuti hutumia kutengeneza kurasa za wavuti: HTML(Hypertext Markup Language) kwa ajili ya maudhui, na CSS (Cascading Style Sheets) kwa ajili ya muundo.",
       "Kwanza, utaunda programu ya picha ya paka ili kujifunza misingi ya HTML na CSS. Baadaye, utajifunza mbinu za kisasa kama vile vihifadhi vya CSS kwa kujenga pengwini, na mbinu bora za ufikivu kwa kuunda fomu ya wavuti.",
@@ -55,13 +55,6 @@
         "intro": [
           "Gridi ya CSS ni kiwango kipya zaidi kinachorahisisha kuunda miundo changamano inayoitikia. Inafanya kazi kwa kugeuza kipengee cha HTML kuwa gridi, na hukuruhusu kuweka vipengele vya watoto popote ndani.",
           "Katika kozi hii, utajifunza misingi ya gridi ya CSS kwa kuunda miundo changamano tofauti, ikiwa ni pamoja na blogu."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Miradi ya Responsive Web Design",
-        "intro": [
-          "Ni wakati wa kuweka ujuzi wako mpya kufanya kazi. Kwa kufanyia kazi miradi hii, utapata fursa ya kutumia ujuzi, kanuni, na dhana zote ambazo umejifunza kufikia sasa: HTML, CSS, Muundo Unaoonekana, Ufikivu, na zaidi.",
-          "Kamilisha miradi mitano ya programu ya wavuti iliyo hapa chini ili upate cheti chako cha Muundo wa Wavuti."
         ]
       }
     }
