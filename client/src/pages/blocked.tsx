@@ -12,7 +12,7 @@ function BlockedPage(): JSX.Element {
         <Spacer size='large' />
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <h1>We can&apos;t log you in.</h1>
+            <h1 id='content-start'>We can&apos;t log you in.</h1>
             <Spacer size='large' />
             <Col lg={10} lgOffset={1} sm={10} smOffset={1} xs={12}>
               <div className='text-left blocked-body'>

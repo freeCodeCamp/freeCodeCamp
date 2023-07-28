@@ -1,7 +1,12 @@
+:root {
+  --header-height: 38px;
+}
+
 html {
   height: 100%;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
+  scroll-padding-top: calc(var(--header-height) + 10px);
 }
 
 body {
@@ -9,7 +14,6 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
-  --header-height: 38px;
 }
 
 #___gatsby {
@@ -63,15 +67,6 @@ body {
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
-}
-
-#content-start {
-  min-height: 0;
-  height: 100%;
-}
-
-#content-start > div {
-  height: 100%;
 }
 
 h1 {

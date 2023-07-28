@@ -174,6 +174,7 @@ function Hotkeys({
   return (
     <>
       <HotKeys
+        id='content-start'
         allowChanges={true}
         handlers={handlers}
         innerRef={innerRef}
