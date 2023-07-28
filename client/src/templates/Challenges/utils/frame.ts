@@ -281,9 +281,6 @@ const initMainFrame =
           'script[src], link[href]'
         );
         let errMsgs = '';
-        let unfetchedLinks = allLinks.length;
-
-        if (!unfetchedLinks) return null;
 
         for (const url of allLinks) {
           const urlAddr =
