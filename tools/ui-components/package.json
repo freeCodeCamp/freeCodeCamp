@@ -29,7 +29,7 @@
     "@headlessui/react": "1.7.16",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "tslib": "2.6.0",
+    "tslib": "2.6.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {
