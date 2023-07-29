@@ -34,7 +34,7 @@
     "@types/enzyme": "3.10.13",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/jquery": "3.5.16",
-    "@types/lodash-es": "4.17.6",
+    "@types/lodash-es": "4.17.8",
     "babel-loader": "8.3.0",
     "buffer": "6.0.3",
     "chai": "4.3.7",
