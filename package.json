@@ -128,7 +128,7 @@
     "eslint-config-prettier": "8.9.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-filenames-simple": "0.8.0",
-    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-import": "2.28.0",
     "eslint-plugin-jest-dom": "3.9.4",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-no-only-tests": "2.6.0",
