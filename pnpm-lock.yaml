@@ -1235,8 +1235,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(webpack-cli@4.10.0)
       '@types/enzyme':
-        specifier: 3.10.12
-        version: 3.10.12
+        specifier: 3.10.13
+        version: 3.10.13
       '@types/enzyme-adapter-react-16':
         specifier: 1.0.6
         version: 1.0.6
@@ -3786,8 +3786,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-skip-transparent-expression-wrappers': 7.20.0
       '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.20.12)
 
   /@babel/plugin-proposal-optional-chaining@7.17.12(@babel/core@7.22.9):
@@ -3797,8 +3797,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.9
-      '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-skip-transparent-expression-wrappers': 7.20.0
       '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.22.9)
 
   /@babel/plugin-proposal-optional-chaining@7.21.0(@babel/core@7.18.0):
@@ -10652,6 +10652,13 @@ packages:
 
   /@types/enzyme@3.10.12:
     resolution: {integrity: sha512-xryQlOEIe1TduDWAOphR0ihfebKFSWOXpIsk+70JskCfRfW+xALdnJ0r1ZOTo85F9Qsjk6vtlU7edTYHbls9tA==}
+    dependencies:
+      '@types/cheerio': 0.22.31
+      '@types/react': 16.14.43
+    dev: true
+
+  /@types/enzyme@3.10.13:
+    resolution: {integrity: sha512-FCtoUhmFsud0Yx9fmZk179GkdZ4U9B0GFte64/Md+W/agx0L5SxsIIbhLBOxIb9y2UfBA4WQnaG1Od/UsUQs9Q==}
     dependencies:
       '@types/cheerio': 0.22.31
       '@types/react': 16.14.43
