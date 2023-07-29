@@ -42,7 +42,7 @@
     "css-loader": "^6.8.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
-    "jquery": "3.6.4",
+    "jquery": "3.7.0",
     "lodash-es": "4.17.21",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
