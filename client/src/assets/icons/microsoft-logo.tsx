@@ -6,10 +6,8 @@ function MicrosoftLogo(
   return (
     <svg
       version='1.1'
+      viewBox='0 0 610 130'
       xmlns='http://www.w3.org/2000/svg'
-      height='800'
-      width='1200'
-      viewBox='-90.585 -32.25 785.07 193.5'
       {...props}
     >
       <path
