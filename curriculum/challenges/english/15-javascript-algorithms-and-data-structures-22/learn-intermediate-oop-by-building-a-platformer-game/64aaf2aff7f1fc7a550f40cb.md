@@ -13,9 +13,12 @@ Start by creating an empty arrow function called `startGame`.
 
 # --hints--
 
-Test 1
+You should create an arrow function called `startGame`.
+
 
 ```js
+
+assert.match(code, /\s*const\s+startGame\s*=\s*\(\s*\)\s*=>\s*{\s*}\s*;?/);
 
 ```
 

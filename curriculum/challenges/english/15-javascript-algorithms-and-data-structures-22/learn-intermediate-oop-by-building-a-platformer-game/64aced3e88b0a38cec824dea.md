@@ -13,10 +13,10 @@ Below your `ctx.clearRect()`, call the `update()` method on the player.
 
 # --hints--
 
-Test 1
+You should call the `update()` method on the player.
 
 ```js
-
+assert.match(code, /\s*player\s*\.\s*update\s*\(\s*\)\s*;?/);
 ```
 
 # --seed--
