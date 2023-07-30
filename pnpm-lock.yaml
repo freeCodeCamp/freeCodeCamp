@@ -211,8 +211,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       fastify:
-        specifier: 4.20.0
-        version: 4.20.0
+        specifier: 4.21.0
+        version: 4.21.0
       fastify-auth0-verify:
         specifier: ^1.0.0
         version: 1.0.0
@@ -18727,8 +18727,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify@4.20.0:
-    resolution: {integrity: sha512-zWWi5KGAb1YZ6fyrnFnA1CA1EZHkGM6YuELgB3QpS3l4lLRy14W1cc16b4KGPH/zQ98WCSdS+T41JkHY3eq1oA==}
+  /fastify@4.21.0:
+    resolution: {integrity: sha512-tsu4bcwE4HetxqW8prA5fbC9bKHMYDp7jGEDWyzK1l90a3uOaLoIcQbdGcWeODNLVJviQnzh1wvIjTZE3MJFEg==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
