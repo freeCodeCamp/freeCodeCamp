@@ -291,6 +291,35 @@ const initMainFrame =
   (frameContext: Context) => {
     waitForFrame(frameContext)
       .then(async () => {
+        const linkElements = Array.from(
+          frameContext.document.querySelectorAll('script[src], link[href]')
+        );
+
+        const errors = linkElements.map(async elem => {
+          const urlAddr =
+            elem.tagName === 'SCRIPT'
+              ? (elem as HTMLScriptElement).src
+              : (elem as HTMLLinkElement).href;
+
+          try {
+            const response = await fetch(urlAddr, {
+              mode: 'cors'
+            });
+            return response.ok
+              ? ''
+              : `Cannot retrieve ${urlAddr}, link status code: ${response.status}`;
+          } catch {
+            return `${urlAddr} does not exist. Only files that can be sourced are styles.css, script.s, or remote files`;
+          }
+        });
+
+        return (await Promise.all(errors)).filter(Boolean).join('\n');
+      })
+      .then(async importResult => {
+        if (importResult) {
+          frameContext.window.console.error(importResult);
+          proxyLogger && proxyLogger(importResult);
+        }
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
