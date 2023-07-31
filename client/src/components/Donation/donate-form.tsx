@@ -237,7 +237,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {t('donate.confirm', {
+          {t('donate.confirm-monthly', {
             usd: formattedAmountLabel(donationAmount)
           })}
         </b>
