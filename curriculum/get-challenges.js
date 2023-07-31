@@ -4,7 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { showUpcomingChanges } = require('../config/env.json');
+
 const { curriculum: curriculumLangs } =
   require('../config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
@@ -183,7 +183,7 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
       throw Error(`meta file at ${metaPath} is missing 'helpCategory'`);
     }
 
-    if (!isUpcomingChange || showUpcomingChanges) {
+    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
       // add the block to the superBlock
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
@@ -274,8 +274,10 @@ ${getFullPath('english', filePath)}
 `);
 
     const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock) &&
-      !fs.existsSync(getFullPath(lang, filePath));
+      isAuditedCert(lang, superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      }) && !fs.existsSync(getFullPath(lang, filePath));
     if (missingAuditedChallenge)
       throw Error(`Missing ${lang} audited challenge for
 ${filePath}
@@ -332,7 +334,11 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
-      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
+      lang !== 'english' &&
+      !isAuditedCert(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
   }
 
@@ -366,8 +372,10 @@ Challenges that have been already audited cannot fall back to their English vers
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
     const translateComments =
-      isAuditedCert(lang, meta.superBlock) &&
-      fs.existsSync(getFullPath(lang, filePath));
+      isAuditedCert(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      }) && fs.existsSync(getFullPath(lang, filePath));
 
     const challenge = await (translateComments
       ? parseTranslation(

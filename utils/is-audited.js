@@ -1,16 +1,16 @@
 const { getAuditedSuperBlocks } = require('../config/superblocks');
-const {
-  showNewCurriculum,
-  showUpcomingChanges
-} = require('../config/env.json');
 
-function isAuditedCert(language, superblock) {
+function isAuditedCert(
+  language,
+  superblock,
+  { showNewCurriculum, showUpcomingChanges }
+) {
   if (!language || !superblock)
     throw Error('Both arguments must be provided for auditing');
 
   const auditedSuperBlocks = getAuditedSuperBlocks({
-    showNewCurriculum: showNewCurriculum.toString(),
-    showUpcomingChanges: showUpcomingChanges.toString(),
+    showNewCurriculum,
+    showUpcomingChanges,
     language
   });
   return auditedSuperBlocks.includes(superblock);
