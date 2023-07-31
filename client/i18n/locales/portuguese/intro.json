@@ -943,6 +943,14 @@
         "title": "Aprenda o básico de HTML",
         "intro": ["Uma descrição deve ser determinada"]
       },
+      "top-working-with-text": {
+        "title": "Trabalhando com textos",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-links-and-images": {
+        "title": "Links e imagens",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
@@ -1058,15 +1066,15 @@
     }
   },
   "upcoming-python": {
-    "title": "Upcoming Python",
+    "title": "Próximo Python",
     "intro": ["placeholder"],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
+        "title": "Aprenda Python criando um jogo de Blackjack",
+        "intro": ["Aprenda Python.", ""]
       },
       "upcoming-python-project": {
-        "title": "Upcoming Python Project",
+        "title": "Próximo projeto de Python",
         "intro": ["placeholder"]
       }
     }
