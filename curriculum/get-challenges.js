@@ -334,7 +334,11 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
-      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
+      lang !== 'english' &&
+      !isAuditedCert(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
   }
 
@@ -368,8 +372,10 @@ Challenges that have been already audited cannot fall back to their English vers
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
     const translateComments =
-      isAuditedCert(lang, meta.superBlock) &&
-      fs.existsSync(getFullPath(lang, filePath));
+      isAuditedCert(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      }) && fs.existsSync(getFullPath(lang, filePath));
 
     const challenge = await (translateComments
       ? parseTranslation(
