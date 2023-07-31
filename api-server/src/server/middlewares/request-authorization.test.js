@@ -1,9 +1,13 @@
+import path from 'path';
 import jwt from 'jsonwebtoken';
+import { config } from 'dotenv';
 
 import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import createRequestAuthorization, {
   isAllowedPath
 } from './request-authorization';
+
+config({ path: path.resolve(__dirname, '../../../../.env') });
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
