@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-import { homeLocation } from '../../../../config/env.json';
 import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import createRequestAuthorization, {
   isAllowedPath
@@ -27,7 +26,7 @@ const mockGetUserById = id =>
 
 const mockReq = args => {
   const mock = mockRequest(args);
-  mock.header = () => homeLocation;
+  mock.header = () => process.env.HOME_LOCATION;
   return mock;
 };
 

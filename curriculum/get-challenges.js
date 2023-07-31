@@ -4,7 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { showUpcomingChanges } = require('../config/env.json');
+
 const { curriculum: curriculumLangs } =
   require('../config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
@@ -183,7 +183,7 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
       throw Error(`meta file at ${metaPath} is missing 'helpCategory'`);
     }
 
-    if (!isUpcomingChange || showUpcomingChanges) {
+    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
       // add the block to the superBlock
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
