@@ -30,7 +30,7 @@ import {
 import Challenges from './challenges';
 import '../intro.css';
 
-const { curriculumLocale } = envData;
+const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
 
 const mapStateToProps = (
   state: unknown,
@@ -130,6 +130,11 @@ class Block extends Component<BlockProps> {
       );
     });
 
+    const isAudited = isAuditedCert(curriculumLocale, superBlock, {
+      showNewCurriculum,
+      showUpcomingChanges
+    });
+
     const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
     // the real type of TFunction is the type below, because intro can be an array of strings
     // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
@@ -160,7 +165,7 @@ class Block extends Component<BlockProps> {
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {!isAuditedCert(curriculumLocale, superBlock) && (
+              {isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
                     className='block-title-translation-cta'
@@ -217,7 +222,7 @@ class Block extends Component<BlockProps> {
           <div className='block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {!isAuditedCert(curriculumLocale, superBlock) && (
+              {isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
                     className='block-title-translation-cta'
@@ -280,7 +285,7 @@ class Block extends Component<BlockProps> {
               </button>
             </h3>
             <div className='tags-wrapper'>
-              {!isAuditedCert(curriculumLocale, superBlock) && (
+              {isAudited && (
                 <Link
                   className='cert-tag'
                   to={t('links:help-translate-link-url')}
@@ -310,7 +315,7 @@ class Block extends Component<BlockProps> {
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
             </span>
-            {!isAuditedCert(curriculumLocale, superBlock) && (
+            {isAudited && (
               <Link
                 className='cert-tag'
                 to={t('links:help-translate-link-url')}

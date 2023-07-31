@@ -274,8 +274,10 @@ ${getFullPath('english', filePath)}
 `);
 
     const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock) &&
-      !fs.existsSync(getFullPath(lang, filePath));
+      isAuditedCert(lang, superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      }) && !fs.existsSync(getFullPath(lang, filePath));
     if (missingAuditedChallenge)
       throw Error(`Missing ${lang} audited challenge for
 ${filePath}
