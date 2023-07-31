@@ -201,9 +201,6 @@ importers:
       ajv-formats:
         specifier: ^2.1.1
         version: 2.1.1(ajv@8.12.0)
-      bad-words:
-        specifier: 3.0.4
-        version: 3.0.4
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.16.0)
@@ -228,6 +225,9 @@ importers:
       nanoid:
         specifier: '3'
         version: 3.3.4
+      no-profanity:
+        specifier: ^1.1.6
+        version: 1.1.6
       nodemon:
         specifier: 2.0.22
         version: 2.0.22
@@ -238,9 +238,6 @@ importers:
       '@fastify/type-provider-typebox':
         specifier: 3.3.0
         version: 3.3.0(@sinclair/typebox@0.28.9)
-      '@types/bad-words':
-        specifier: ^3.0.1
-        version: 3.0.1
       '@types/express-session':
         specifier: 1.17.7
         version: 1.17.7
@@ -286,9 +283,6 @@ importers:
       axios:
         specifier: 0.23.0
         version: 0.23.0(debug@2.2.0)
-      bad-words:
-        specifier: 3.0.4
-        version: 3.0.4
       body-parser:
         specifier: 1.20.0
         version: 1.20.0
@@ -373,6 +367,9 @@ importers:
       nanoid:
         specifier: 3.3.4
         version: 3.3.4
+      no-profanity:
+        specifier: ^1.1.6
+        version: 1.1.6
       node-fetch:
         specifier: ^2.6.7
         version: 2.6.9
@@ -10412,10 +10409,6 @@ packages:
     dependencies:
       '@babel/types': 7.22.5
 
-  /@types/bad-words@3.0.1:
-    resolution: {integrity: sha512-7la3ZDJG1tlRqySO+pnXycZpacaMEw/iLEm8kc4l+I+jN8KjBfoQVwO6jm98xzXVLrxV8vDrB5TaMoop8sKclQ==}
-    dev: true
-
   /@types/body-parser@1.19.2:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
@@ -13978,17 +13971,6 @@ packages:
 
   /backo2@1.0.2:
     resolution: {integrity: sha512-zj6Z6M7Eq+PBZ7PQxl5NT665MvJdAkzp0f60nAJ+sLaSCBPMwVak5ZegFbgVCzFcCJTKFoMizvM5Ld7+JrRJHA==}
-
-  /bad-words@3.0.4:
-    resolution: {integrity: sha512-v/Q9uRPH4+yzDVLL4vR1+S9KoFgOEUl5s4axd6NIAq8SV2mradgi4E8lma/Y0cw1ltVdvyegCQQKffCPRCp8fg==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      badwords-list: 1.0.0
-    dev: false
-
-  /badwords-list@1.0.0:
-    resolution: {integrity: sha512-oWhaSG67e+HQj3OGHQt2ucP+vAPm1wTbdp2aDHeuh4xlGXBdWwzZ//pfu6swf5gZ8iX0b7JgmSo8BhgybbqszA==}
-    dev: false
 
   /bail@1.0.5:
     resolution: {integrity: sha512-xFbRxM1tahm08yHBP16MMjVUAvDaBMD38zsM9EMAUN61omwLmKlOpB/Zku5QkjZ8TZ4vn53pj+t518cH0S03RQ==}
@@ -17830,7 +17812,7 @@ packages:
       minimatch: 3.1.2
       object.entries: 1.1.6
       object.fromentries: 2.0.6
-      semver: 6.3.1
+      semver: 6.3.0
 
   /eslint-plugin-jsx-a11y@6.7.1(eslint@8.46.0):
     resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
@@ -25805,6 +25787,11 @@ packages:
     dependencies:
       lower-case: 2.0.2
       tslib: 2.6.1
+
+  /no-profanity@1.1.6:
+    resolution: {integrity: sha512-3oxjEwQCIziASKhSyZr8jU+Wtu5OK4lzB/iu9CBv/8p+vjznXnBbWmxEt6pEl1laB3qWtrZwawfP5oeaABaB+w==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /nocache@2.1.0:
     resolution: {integrity: sha512-0L9FvHG3nfnnmaEQPjT9xhfN4ISk0A8/2j4M37Np4mcDesJjHgEUfgPhdCyZuFI954tjokaIj/A3NdpFNdEh4Q==}
