@@ -251,6 +251,8 @@ const modifiedProgressData = {
   needsModeration: true
 };
 
+const userTokenId = 'dummy-id';
+
 describe('userRoutes', () => {
   setupServer();
 
@@ -271,7 +273,7 @@ describe('userRoutes', () => {
         });
 
         const userCount = await fastifyTestInstance.prisma.user.count({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
@@ -283,12 +285,12 @@ describe('userRoutes', () => {
     describe('/account/reset-progress', () => {
       afterAll(async () => {
         await fastifyTestInstance.prisma.user.deleteMany({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email }
         });
       });
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: 'foo@bar.com' },
+          where: { email: testUserData.email },
           data: modifiedProgressData
         });
 
@@ -298,7 +300,7 @@ describe('userRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
@@ -309,12 +311,13 @@ describe('userRoutes', () => {
       });
     });
     describe('/user/user-token', () => {
-      let userId: string | undefined;
+      let userId: string;
       beforeEach(async () => {
         const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email },
+          select: { id: true }
         });
-        userId = user?.id;
+        userId = user.id;
 
         await fastifyTestInstance.prisma.userToken.create({
           data: {
@@ -443,12 +446,12 @@ describe('userRoutes', () => {
 
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
-          where: { id: 'dummy-id' }
+          where: { id: userTokenId }
         });
       });
 
       test('GET rejects with 500 status code if the username is missing', async () => {
-        await fastifyTestInstance?.prisma.user.updateMany({
+        await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
           data: { username: '' }
         });
@@ -511,7 +514,7 @@ describe('userRoutes', () => {
         const tokenData = {
           userId: testUser.id,
           ttl: 123,
-          id: 'dummy-id',
+          id: userTokenId,
           created: new Date()
         };
 
@@ -622,7 +625,7 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        expect(response?.statusCode).toBe(401);
+        expect(response.statusCode).toBe(401);
       });
 
       test('POST returns 401 status code with error message', async () => {
