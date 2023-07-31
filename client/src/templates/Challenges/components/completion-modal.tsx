@@ -28,6 +28,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
 import { fireConfetti } from '../../../utils/fire-confetti';
+import { certMapWithoutFullStack } from '../../../resources/cert-and-project-map';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -37,10 +38,9 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   allChallengesInfoSelector,
   successMessageSelector,
-
   (
     challengeFiles: ChallengeFiles,
-    { dashedName }: { dashedName: string },
+    { dashedName, id }: { dashedName: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -48,6 +48,7 @@ const mapStateToProps = createSelector(
     message: string
   ) => ({
     challengeFiles,
+    id,
     dashedName,
     completedChallengesIds,
     isOpen,
@@ -75,6 +76,11 @@ interface CompletionModalsProps extends StateProps {
 interface CompletionModalState {
   downloadURL: null | string;
 }
+
+const isCertificationProject = (id: string) =>
+  certMapWithoutFullStack.some(cert => {
+    return cert.projects.some((project: { id: string }) => project.id === id);
+  });
 
 class CompletionModal extends Component<
   CompletionModalsProps,
@@ -147,6 +153,7 @@ class CompletionModal extends Component<
     const {
       close,
       isOpen,
+      id,
       isSignedIn,
       message,
       t,
@@ -156,7 +163,9 @@ class CompletionModal extends Component<
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-      fireConfetti();
+      if (isCertificationProject(id)) {
+        fireConfetti();
+      }
     }
     return (
       <Modal
