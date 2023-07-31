@@ -939,6 +939,14 @@
         "title": "學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "通過搭建食譜頁面學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
