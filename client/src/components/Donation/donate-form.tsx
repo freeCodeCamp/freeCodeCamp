@@ -36,7 +36,6 @@ import {
   PostPayment,
   HandleAuthentication,
   DonationApprovalData,
-  DonationAmount,
   DonationConfig
 } from './types';
 
@@ -152,7 +151,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
-    this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
     this.postPayment = this.postPayment.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
@@ -227,10 +225,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
     if (this.props.handleProcessing) this.props.handleProcessing();
   };
-
-  handleSelectAmount(donationAmount: DonationAmount) {
-    this.setState({ donationAmount });
-  }
 
   resetDonation() {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
