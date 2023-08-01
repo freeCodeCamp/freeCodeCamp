@@ -38,7 +38,6 @@
     "clean:packages": "rm -rf ./node_modules ./**/node_modules",
     "clean:server": "rm -rf ./api-server/lib",
     "create:config": "tsc -p config",
-    "create:trending": "ts-node ./tools/scripts/build/download-trending.ts",
     "create:utils": "tsc -p utils",
     "precypress": "node ./cypress-install.js",
     "cypress": "cypress",
