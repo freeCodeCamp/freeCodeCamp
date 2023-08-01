@@ -22,7 +22,7 @@ export function setAccessTokenToResponse(
     ...createCookieConfig(req),
     maxAge: accessToken.ttl || 77760000000,
     httpOnly: true,
-    secure: process.env.ENV === 'production'
+    secure: process.env.FREECODECAMP_NODE_ENV === 'production'
   };
   const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
   res.cookie(jwtCookieNS, jwtAccess, cookieConfig);
