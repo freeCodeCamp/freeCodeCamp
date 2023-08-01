@@ -5,13 +5,13 @@ import {
 } from '@aws-sdk/client-ses';
 
 import { MailProvider, SendEmailArgs } from '../mailer';
-import { SES_ID, SES_SECRET } from '../../utils/env';
+import { SES_ID, SES_SECRET, SES_REGION } from '../../utils/env';
 
 export class SESProvider implements MailProvider {
   private client: SESClient;
 
   constructor() {
-    if (!SES_ID || !SES_SECRET) {
+    if (!SES_ID || !SES_SECRET || !SES_REGION) {
       throw new Error('Email service is set to SES but missing required keys.');
     }
     const awsConfig: SESClientConfig = {
@@ -19,7 +19,7 @@ export class SESProvider implements MailProvider {
         accessKeyId: SES_ID,
         secretAccessKey: SES_SECRET
       },
-      region: 'us-east-1'
+      region: SES_REGION
     };
     this.client = new SESClient(awsConfig);
   }

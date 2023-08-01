@@ -41,20 +41,33 @@ assert.ok(process.env.JWT_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
+  assert.notEqual(
+    process.env.SES_ID,
+    'ses_id_from_aws',
+    'The SES ID should be changed from the default value.'
+  );
   assert.ok(process.env.SES_SECRET);
+  assert.notEqual(
+    process.env.SES_SECRET,
+    'ses_secret_from_aws',
+    'The SES secret should be changed from the default value.'
+  );
+  assert.ok(process.env.SES_REGION);
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
   assert.ok(process.env.SENTRY_DSN);
-  assert.notEqual(
-    process.env.JWT_SECRET,
-    'a_jwt_secret',
-    'The JWT secret should be changed from the default value.'
-  );
+  // The following values can exist in development, but production-like
+  // environments need to override the defaults.
   assert.notEqual(
     process.env.SENTRY_DSN,
     'dsn_from_sentry_dashboard',
     `The DSN from Sentry's dashboard should be used.`
+  );
+  assert.notEqual(
+    process.env.JWT_SECRET,
+    'a_jwt_secret',
+    'The JWT secret should be changed from the default value.'
   );
   assert.notEqual(
     process.env.SESSION_SECRET,
@@ -93,4 +106,5 @@ export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
+export const SES_REGION = process.env.SES_REGION;
 export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
