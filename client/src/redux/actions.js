@@ -100,6 +100,7 @@ export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const startExam = createAction(actionTypes.startExam);
 export const stopExam = createAction(actionTypes.stopExam);
+export const clearExamResults = createAction(actionTypes.clearExamResults);
 
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
 export const openSignoutModal = createAction(actionTypes.openSignoutModal);

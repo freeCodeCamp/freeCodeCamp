@@ -5,6 +5,8 @@ import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
+  GenerateExamResponse,
+  GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
   User
@@ -211,6 +213,17 @@ export function getUsernameExists(
   username: string
 ): Promise<ResponseWithData<boolean>> {
   return get(`/api/users/exists?username=${username}`);
+}
+
+export function getGenerateExam(
+  challengeId: string
+): Promise<GenerateExamResponseWithData> {
+  const responseWithData = get<GenerateExamResponse>(
+    `/generate-exam?challengeId=${challengeId}`
+  );
+  return responseWithData.then(({ response, data }) => {
+    return { response, data };
+  });
 }
 
 /** POST **/
