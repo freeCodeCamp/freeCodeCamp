@@ -53,8 +53,21 @@
 
 .trending-guides-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 0.5rem;
+}
+
+@media (max-width: 1400px) {
+  .trending-guides-articles {
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .trending-guides-articles {
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+  }
 }
 
 .trending-guides-articles {
