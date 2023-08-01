@@ -7,13 +7,8 @@ import {
   fetchUserComplete,
   fetchUserError
 } from './actions';
-import { jwt } from './cookie-values';
 
 function* fetchSessionUser() {
-  if (!jwt) {
-    yield put(fetchUserComplete({ user: {}, username: '' }));
-    return;
-  }
   try {
     const {
       data: { user = {}, result = '' }
