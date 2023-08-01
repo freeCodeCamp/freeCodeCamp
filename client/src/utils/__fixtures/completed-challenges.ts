@@ -1,4 +1,4 @@
-import {challengeFiles} from '../../../../utils/__fixtures__/challenges';
+import { challengeFiles } from '../../../utils/__fixtures/challenges';
 
 const baseChallenge = {
   id: '1',
