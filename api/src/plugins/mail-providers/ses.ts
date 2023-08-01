@@ -35,7 +35,7 @@ export class SESProvider implements MailProvider {
           Charset: 'UTF-8'
         },
         Body: {
-          Html: {
+          Text: {
             Charset: 'UTF-8',
             Data: text
           }
