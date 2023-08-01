@@ -165,7 +165,7 @@ class Block extends Component<BlockProps> {
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {isAudited && (
+              {!isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
                     className='block-title-translation-cta'
@@ -222,7 +222,7 @@ class Block extends Component<BlockProps> {
           <div className='block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {isAudited && (
+              {!isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
                     className='block-title-translation-cta'
@@ -285,7 +285,7 @@ class Block extends Component<BlockProps> {
               </button>
             </h3>
             <div className='tags-wrapper'>
-              {isAudited && (
+              {!isAudited && (
                 <Link
                   className='cert-tag'
                   to={t('links:help-translate-link-url')}
@@ -315,7 +315,7 @@ class Block extends Component<BlockProps> {
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
             </span>
-            {isAudited && (
+            {!isAudited && (
               <Link
                 className='cert-tag'
                 to={t('links:help-translate-link-url')}
