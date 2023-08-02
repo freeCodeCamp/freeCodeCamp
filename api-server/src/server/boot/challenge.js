@@ -13,8 +13,9 @@ import { isEmpty, pick, omit, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
-
+import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
+
 import { jwtSecret } from '../../../../config/secrets';
 
 import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
@@ -25,6 +26,8 @@ import {
   normalizeParams,
   getPrefixedLandingPath
 } from '../utils/redirection';
+import { isMicrosoftLearnLink } from '../../../../utils/validate';
+import { getApiUrlFromTrophy } from '../utils/ms-learn-utils';
 
 const log = debug('fcc:boot:challenges');
 
@@ -372,6 +375,25 @@ async function projectCompleted(req, res, next) {
     }
   }
 
+  const isMSTrophyProject = completedChallenge.challengeType === 18;
+  let isTrophyMissing = false;
+  if (isMSTrophyProject) {
+    if (!isMicrosoftLearnLink(completedChallenge.solution)) {
+      return res.status(403).json({
+        type: 'error',
+        message:
+          'You have not provided the valid links for us to inspect your work.'
+      });
+    }
+    try {
+      const mSLearnAPIUrl = getApiUrlFromTrophy(completedChallenge.solution);
+      isTrophyMissing = mSLearnAPIUrl ? !(await fetch(mSLearnAPIUrl)).ok : true;
+    } catch {
+      isTrophyMissing = true;
+      log(`Error verifying trophy: ${completedChallenge.solution}`);
+    }
+  }
+
   try {
     // This is an ugly hack to update `user.completedChallenges`
     await user.getCompletedChallenges$().toPromise();
@@ -393,7 +415,8 @@ async function projectCompleted(req, res, next) {
     return res.json({
       alreadyCompleted,
       points: alreadyCompleted ? user.points : user.points + 1,
-      completedDate: completedChallenge.completedDate
+      completedDate: completedChallenge.completedDate,
+      ...(isMSTrophyProject && { isTrophyMissing })
     });
   });
 }
