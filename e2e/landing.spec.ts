@@ -43,7 +43,6 @@ test.describe('Landing page', () => {
     );
 
     const callToAction = page.getByTestId(landingPageElements.callToAction);
-    // const callToActionHeader = page.getByTestId(landingPageElements.callToAction).nth(1);
 
     const callToActionHeader = page.locator('a .login-btn-text').nth(1);
 
