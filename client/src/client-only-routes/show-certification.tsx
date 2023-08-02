@@ -28,9 +28,11 @@ import {
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
 import { fullCertMap } from '../resources/cert-and-project-map';
-import certificateMissingMessage from '../utils/certificate-missing-message';
-import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
-import standardErrorMessage from '../utils/standard-error-message';
+import {
+  certificateMissingErrorMessage,
+  reallyWeirdErrorMessage,
+  standardErrorMessage
+} from '../utils/error-messages';
 
 import { PaymentContext } from '../../../config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
@@ -194,7 +196,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   } = props;
 
   if (!isValidCert) {
-    createFlashMessage(certificateMissingMessage);
+    createFlashMessage(certificateMissingErrorMessage);
     return <RedirectHome />;
   }
 

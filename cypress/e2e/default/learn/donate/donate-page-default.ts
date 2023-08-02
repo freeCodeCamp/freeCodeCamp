@@ -1,5 +1,5 @@
 describe('Donate page', () => {
-  it('Should render correctly', () => {
+  it('Should render the donation page correctly', () => {
     cy.visit('/donate');
     cy.title().should('eq', 'Support our charity | freeCodeCamp.org');
 

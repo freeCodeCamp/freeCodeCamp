@@ -1,10 +1,13 @@
 import { writeFileSync } from 'fs';
+import path from 'path';
+
 import fetch from 'node-fetch';
 import yaml from 'js-yaml';
-import envData from '../../../config/env.json';
+import { config } from 'dotenv';
+
 import { trendingSchemaValidator } from './schema/trending-schema';
 
-const { clientLocale } = envData;
+config({ path: path.resolve(__dirname, '../../../.env') });
 
 const createCdnUrl = (lang: string) =>
   `https://cdn.freecodecamp.org/universal/trending/${lang}.yaml`;
@@ -44,7 +47,11 @@ const download = async (clientLocale: string) => {
   }
 };
 
-void download(clientLocale);
+const locale = process.env.CLIENT_LOCALE;
+
+if (!locale) throw Error('CLIENT_LOCALE must be set to a valid locale');
+
+void download(locale);
 // TODO: remove the need to fallback to english once we're confident it's
 // unnecessary (client/i18n/config.js will need all references to 'en' removing)
-if (clientLocale !== 'english') void download('english');
+if (locale !== 'english') void download('english');
