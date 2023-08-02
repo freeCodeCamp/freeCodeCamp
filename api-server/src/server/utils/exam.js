@@ -19,7 +19,7 @@ function filterDeprecated(arr) {
 }
 
 function getRandomElement(arr) {
-  const id = Math.floor(Math.random() * arr.length)
+  const id = Math.floor(Math.random() * arr.length);
   return arr[id];
 }
 
@@ -52,7 +52,6 @@ export function generateRandomExam(examJson) {
 
 // Used to evaluate user completed exams
 export function createExamResults(userExam, originalExam) {
-  let numberOfCorrectAnswers = 0;
   const { userExamQuestions, examTimeInSeconds } = userExam;
   /**
    * Potential Bug:

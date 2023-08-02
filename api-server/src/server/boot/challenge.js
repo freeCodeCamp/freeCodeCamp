@@ -17,7 +17,10 @@ import isURL from 'validator/lib/isURL';
 import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../../../../config/secrets';
 
-import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
+import {
+  fixPartiallyCompletedChallengeItem,
+  fixCompletedExamItem
+} from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
