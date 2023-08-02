@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+A developer writes an application that uses a `foreach` loop to iterate through an array containing 20 elements. After the application is complete, the developer learns that the array must be updated to include 40 elements. The application needs to examine all 40 array elements. Which of the following items describes the required code update?
 
 ## --answers--
 
-A
+Create a second `foreach` loop that iterates through the additional items.
 
 ---
 
-B
+No changes are required to the `foreach` loop.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Place the original `foreach` loop inside the code block of a second `foreach` loop that iterates twice.
 
 ## --video-solution--
 
-4
+2

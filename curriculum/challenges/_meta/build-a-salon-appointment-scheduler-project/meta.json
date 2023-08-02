@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
-    [
-      "5f87ac112ae598023a42df1a",
-      "Build a Salon Appointment Scheduler"
-    ]
+    {
+      "id": "5f87ac112ae598023a42df1a",
+      "title": "Build a Salon Appointment Scheduler"
+    }
   ]
 }

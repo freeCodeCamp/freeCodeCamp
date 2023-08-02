@@ -1,7 +1,7 @@
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Media from 'react-responsive';
+import Media, { useMediaQuery } from 'react-responsive';
 import { useFeature } from '@growthbook/growthbook-react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
@@ -39,6 +39,9 @@ const UniversalNav = ({
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
   const { t } = useTranslation();
+  const isSearchExposedWidth = useMediaQuery({
+    query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
+  });
 
   const exposeDonateButton = useFeature('expose_donate_button').on;
 
@@ -55,7 +58,7 @@ const UniversalNav = ({
       className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
       id='universal-nav'
     >
-      <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>
+      {isSearchExposedWidth && (
         <div
           className={`universal-nav-left${
             displayMenu ? ' display-search' : ''
@@ -63,7 +66,7 @@ const UniversalNav = ({
         >
           {search}
         </div>
-      </Media>
+      )}
       <Link id='universal-nav-logo' to='/learn'>
         <NavLogo />
       </Link>
@@ -94,7 +97,7 @@ const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
+            {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}
               hideMenu={hideMenu}

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um desenvolvedor precisa iterar através de um array de itens para encontrar um que corresponda a um determinado critério. Qual é a melhor instrução de iteração para esta finalidade?
 
 ## --answers--
 
-A
+`foreach`
 
 ---
 
-B
+`for`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`while`
 
 ## --video-solution--
 
-4
+1

@@ -435,7 +435,13 @@ sudo apt install build-essential
 npm install -g pnpm
 ```
 
-3. Клонуйте freeCodeCamp, налаштуйте середовище та ключі.
+3. Встановіть pm2 глобально.
+
+```console
+npm install -g pm2
+```
+
+4. Клонуйте freeCodeCamp, налаштуйте середовище та ключі.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -443,28 +449,28 @@ cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Створіть `.env` із безпечного сховища облікових даних.
+5. Створіть `.env` із безпечного сховища облікових даних.
 
-5. Встановіть залежності
+6. Встановіть залежності
 
 ```console
 pnpm install
 ```
 
-6. Налаштуйте pm2 `logrotate` та запустіть під час завантаження
+7. Налаштуйте pm2 `logrotate` та запустіть під час завантаження
 
 ```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Побудуйте сервер
+8. Побудуйте сервер
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Запустіть екземпляри
+9.  Запустіть екземпляри
 
 ```console
 pnpm start:server
@@ -473,11 +479,11 @@ pnpm start:server
 ### Журналювання та моніторинг
 
 ```console
-pnpm pm2 logs
+pm2 logs
 ```
 
 ```console
-pnpm pm2 monit
+pm2 monit
 ```
 
 ### Оновлення екземплярів (обслуговування)
@@ -491,7 +497,7 @@ pnpm pm2 monit
 1. Зупиніть всі екземпляри
 
 ```console
-pnpm pm2 stop all
+pm2 stop all
 ```
 
 2. Встановіть залежності
@@ -509,13 +515,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 4. Запустіть екземпляри
 
 ```console
-pnpm start:server && pnpm pm2 logs
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Постійне оновлення: використовується для логічних змін коду.
 
 ```console
-pnpm reload:server && pnpm pm2 logs
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] Ми обробляємо постійні оновлення коду та логіки через конвеєри. Вам не потрібно запускати ці команди. Вони тут для документації.
@@ -527,7 +533,7 @@ pnpm reload:server && pnpm pm2 logs
 2. Оновіть pm2 для використання нової версії
 
 ```console
-pnpm pm2 update
+pm2 update
 ```
 
 ## Робота над екземплярами клієнта
@@ -652,11 +658,11 @@ pm2 reload all --update-env && pm2 logs
    Перемістіть наявні сертифікати:
 
    ```console
-   # Local
+   # Локально
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
 
-   # Remote
+   # Віддалено
    rm -rf ./ssl
    mv /tmp/ssl ./
    ```

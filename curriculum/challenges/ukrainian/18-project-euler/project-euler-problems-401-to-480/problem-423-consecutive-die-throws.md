@@ -27,7 +27,7 @@ Define $S(L)$ as $\sum C(n)$ for $1 ≤ n ≤ L$.
 
 Наприклад, $S(50)\bmod 1\\,000\\,000\\,007 = 832\\,833\\,871$.
 
-Find $S(50\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
+Знайдіть $S(50\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 <sup>1</sup> $π$ denotes the prime-counting function, i.e. $π(n)$ is the number of primes $≤ n$.
 

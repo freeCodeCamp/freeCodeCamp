@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Dada a assinatura do método `void Print(string name, string number = "", bool member = false)`, qual das seguintes opções usa corretamente argumentos nomeados e opcionais?
 
 ## --answers--
 
-A
+`Print("Tony", member: true);`
 
 ---
 
-B
+`Print(number: "555", member: false)`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`Print("Tony", false)`
 
 ## --video-solution--
 
-4
+1

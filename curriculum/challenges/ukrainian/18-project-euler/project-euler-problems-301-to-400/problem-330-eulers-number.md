@@ -22,7 +22,7 @@ with $e = 2.7182818\ldots$ being Euler's constant.
 
 It can be shown that $a(n)$ is of the form $\displaystyle\frac{A(n)e + B(n)}{n!}$ for integers $A(n)$ and $B(n)$.
 
-For example $\displaystyle a(10) = \frac{328161643e − 652694486}{10!}$.
+Наприклад, $\displaystyle a(10) = \frac{328161643e − 652694486}{10!}$.
 
 Find $A({10}^9)$ + $B({10}^9)$ and give your answer $\bmod 77\\,777\\,777$.
 

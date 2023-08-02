@@ -44,7 +44,7 @@ $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
   & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\
   & P(\text{euler}) = 115246685191495243 \\\\ \end{align}$$
 
-Find $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
+Знайдіть $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
 Give your answer using lowercase characters (no punctuation or space).
 

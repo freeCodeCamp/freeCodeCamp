@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das opções abaixo não é um operador válido em C#?
 
 ## --answers--
 
-A
+`%%`
 
 ---
 
-B
+`&&`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`||`
 
 ## --video-solution--
 
-4
+1

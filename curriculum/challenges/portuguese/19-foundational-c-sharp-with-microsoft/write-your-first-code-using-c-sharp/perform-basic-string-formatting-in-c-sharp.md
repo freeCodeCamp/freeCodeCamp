@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das linhas a seguir de código usa interpolação de strings corretamente, assumindo que a variável `value` é uma string?
 
 ## --answers--
 
-A
+'`Console.WriteLine(@"My value: {value}");'`'
 
 ---
 
-B
+'`Console.WriteLine($"My value: {value}");`'
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+'`Console.WriteLine(@"My value: [value]");`'
 
 ## --video-solution--
 
-4
+2

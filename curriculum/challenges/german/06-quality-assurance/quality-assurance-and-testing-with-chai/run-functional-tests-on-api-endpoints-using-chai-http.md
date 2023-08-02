@@ -42,13 +42,13 @@ Die Tests, die ausgeführt werden, sobald du den Link zu deinem Projekt einreich
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
+Ändere in `tests/2_functional-tests.js` den `'Test GET /hello with no name'`-Test (`// #1`), um den `status` und den `text` der Antwort geltend zu machen, damit der Test erfolgreich abgeschlossen wird. Verändere die an die Asserts übergebenen Argumente nicht.
 
-There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
+Es sollte keine URL-Query existieren. Ohne eine Namens-URL-Query antwortet der Endpunkt mit `hello Guest`.
 
 # --hints--
 
-All tests should pass
+Alle Tests sollten bestehen
 
 ```js
 (getUserInput) =>

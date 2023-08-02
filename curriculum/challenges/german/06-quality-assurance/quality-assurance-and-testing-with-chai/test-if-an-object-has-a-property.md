@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c55
-title: Test if an Object has a Property
+title: Teste, ob ein Objekt über eine Eigenschaft verfügt
 challengeType: 2
 forumTopicId: 301604
 dashedName: test-if-an-object-has-a-property
@@ -8,13 +8,13 @@ dashedName: test-if-an-object-has-a-property
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Zur Erinnerung: Dieses Projekt baut auf dem folgenden Startprojekt auf<a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">repliziert</a>, oder geklont von<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `property` asserts that the actual object has a given property.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labelled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). Ändere nicht die Argumente, die an die Assertions übergeben werden.
 
 # --hints--
 

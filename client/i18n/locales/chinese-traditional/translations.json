@@ -77,6 +77,7 @@
     "change-language": "修改語言",
     "resume-project": "繼續項目",
     "start-project": "開始項目",
+    "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
     "finish-exam": "Finish the exam",
@@ -391,7 +392,6 @@
     "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
     "completed": "已完成",
     "not-started": "未開始",
-    "hint": "提示",
     "test": "測試",
     "sorry-try-again": "抱歉，你的代碼未通過，再試一次。",
     "sorry-keep-trying": "抱歉，你的代碼未通過，再試試看。",
@@ -402,7 +402,10 @@
     "season-greetings-fcc": "來自 freeCodeCamp 社區的季節問候 🎉",
     "if-getting-value": "如果你從 freeCodeCamp 中獲益良多，可以捐款支持我們的慈善組織的使命。",
     "building-a-university": "我們正在創建一個免費計算機科學大學學位課程",
-    "if-help-university": "我們已取得了重大進展。請支持我們的慈善組織完成這項長期事業。"
+    "if-help-university": "我們已取得了重大進展。請支持我們的慈善組織完成這項長期事業。",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "支持我們的慈善組織",
@@ -428,9 +431,6 @@
     "your-donation-2": "你的 ${{usd}} 捐款每月將幫助世界各地的人們學習 {{hours}} 小時。",
     "your-donation-3": "你的 ${{usd}} 捐款每年將幫助世界各地的人們學習 {{hours}} 小時。",
     "become-supporter": "成爲支持者",
-    "duration": "成爲我們的慈善組織的一次性支持者",
-    "duration-2": "成爲我們的慈善組織的每月定期支持者",
-    "duration-4": "成爲我們的慈善組織的支持者",
     "progress-modal-cta-1": "現在捐贈以幫助我們的慈善組織爲所有人創建免費的認證計算機科學學位課程。",
     "progress-modal-cta-2": "現在捐贈以爲我們的慈善組織的網站贊助 53 小時服務器時間。",
     "progress-modal-cta-3": "現在捐贈以幫助我們的慈善組織爲全世界的學習者將課程翻譯成 32 種語言。",
@@ -533,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson，freeCodeCamp.org 創始人、老師",
-    "email-blast": "每週五我會給大約四百萬人發送一封郵件，其中包含 5 條關於編程和計算機科學的鏈接。你也想收到我的郵件嗎？",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "更新你的郵件地址",
     "update-email-2": "在這裏更新你的郵件地址：",
     "email": "郵箱",
@@ -545,7 +545,8 @@
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常這個表單將被提交！工作正常，這將被提交到：{{externalLink}}",
     "document-notfound": "找不到文件",
-    "slow-load-msg": "看起來這比平常花費更長時間，請嘗試刷新頁面。"
+    "slow-load-msg": "看起來這比平常花費更長時間，請嘗試刷新頁面。",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -685,9 +686,9 @@
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",
-    "verify": "確認此認證 {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "發佈日期",
-    "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成 freeCodeCamp.org</2> <3>{{title}}</3> <4>開發者認證課程，約 {{time}} 課時。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",

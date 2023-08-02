@@ -40,48 +40,9 @@ Sendo `link` o link do artigo original.
 
 > [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
-Mudamos os artigos em destaque em dois lugares diferentes.
+Para atualizar os artigos de tendência no rodapé, você precisa atualizar o [arquivo yaml no repositório CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) para o seu idioma. Tanto o currículo como o editorial fazem referência a esse arquivo.
 
-- [O repositório do currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [O repositório do CDN](https://github.com/freeCodeCamp/cdn)
-
-Para cada artigo, você precisará criar um título menor para usar no rodapé.
-
-### Alterar artigos em destaque no currículo
-
-Os artigos em destaque no rodapé do currículo podem ser alterados, editando o arquivo em `client/i18n/locales/<language>/trending.json`.
-
-Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
-
-Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
-
-Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
-
-```json
-{
-  "article0title":"Nova aba em HTML",
-  "article0link":"https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/",
-  "article1title":"Máscaras de sub-rede",
-  "article1link":"https://www.freecodecamp.org/portuguese/news/ficha-informativa-de-sub-redes-mascara-de-sub-rede-24-30-26-27-29/",
-  "article2title":"40 projetos em JavaScript",
-  "article2link":"https://www.freecodecamp.org/portuguese/news/40-projetos-em-javascript-para-iniciantes-ideias-simples-para-comecar-a-programar-em-js/",
-  "article3title":"Tutorial de button onClick",
-  "article3link":"https://www.freecodecamp.org/portuguese/news/tutorial-sobre-button-onclick-em-html-e-evento-de-clique-em-javascript/",
-  "article4title":"Bot do Discord",
-  "article4link":"https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/",
-  "article5title":"Centralizar em CSS",
-  "article5link":"https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/",
-  ...
-}
-```
-
-Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
-
-### Como atualizar os artigos em destaque no CDN
-
-O arquivo no repositório CDN é o arquivo `universal/trending/<language>.yaml`.
-
-Este arquivo está em formato diferente. Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
+Por exemplo, aqui está o conteúdo do arquivo para os primeiros 6 artigos:
 
 ```yaml
 article0title: 'Nova aba em HTML'
@@ -98,9 +59,21 @@ article5title: 'Centralizar em CSS'
 article5link: 'https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/'
 ```
 
-Você pode converter de um formato para o outro cuidadosamente, alterando-o manualmente. Ou você pode usar [o script neste repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Cada número representa um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
 
-> [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
+Para cada artigo, você precisará criar um título menor para usar no rodapé. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Você pode visualizar as alterações editando o arquivo `trending.json` em seu ambiente local:
+
+1. Atualize o arquivo `.env` para usar seu idioma em `CLIENT_LOCALE` e `CURRICULUM_LOCALE`.
+
+2. Execute `pnpm run create:config`. Isso gerará automaticamente o arquivo `trending.json` para o seu idioma no diretório `/client/i18n/locales/`.
+
+3. Inicie o servidor executando `pnpm run develop:server` em uma janela do terminal.
+
+4. Edite o arquivo `trending.json` para que contenha os títulos que você deseja visualizar. Você pode querer converter o seu arquivo `.yaml` em formato JSON com uma ferramenta automática.
+
+5. Em outra janela do terminal, execute `pnpm run clean:client` e, em seguida, `pnpm run develop: client`
 
 ## Como traduzir os artigos dos links de rodapé
 

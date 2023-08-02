@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Para ordenar um array de strings, por que é importante usar o método `String.Trim()` em cada elemento do array antes de ordená-lo?
 
 ## --answers--
 
-A
+Apenas arrays de string com elementos cortados com `String.Trim()` podem ser ordenados
 
 ---
 
-B
+`String.Trim()` remove um espaço em branco que ordenaria antes de números e letras, o que os ordenaria antes.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A ordenação de array é visivelmente mais rápida usando `String.Trim()` em cada elemento.
 
 ## --video-solution--
 
-4
+2

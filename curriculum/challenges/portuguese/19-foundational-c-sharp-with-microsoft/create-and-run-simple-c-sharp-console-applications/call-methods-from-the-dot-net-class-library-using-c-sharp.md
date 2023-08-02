@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+O que é um objeto?
 
 ## --answers--
 
-A
+Um endereço da memória.
 
 ---
 
-B
+Uma classe sem estado.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Uma instância de uma classe.
 
 ## --video-solution--
 
-4
+3

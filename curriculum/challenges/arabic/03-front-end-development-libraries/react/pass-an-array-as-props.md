@@ -16,15 +16,21 @@ dashedName: pass-an-array-as-props
 </ParentComponent>
 ```
 
-بعد ذلك يمكن لمكون الفرعي الوصول إلى خاصية قائمة (array) باسم `colors`. وسائل القائمة مثل `join()` يمكن استخدامها عند اللجوء إلى الخاصية. سيؤدي `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` إلى ضم جميع عناصر قائمة `colors` إلى string مفصولة بالفصلة (comma) وينتج: <`<p>green, blue, red</p>` لاحقا، ستتعلم عن الطرق الشائعة الأخرى لإنتاج قائمات البيانات في React.
+بعد ذلك يمكن لمكون الفرعي الوصول إلى خاصية قائمة (array) باسم `colors`. وسائل القائمة مثل `join()` يمكن استخدامها عند اللجوء إلى الخاصية.
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+```
+
+This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
 
 # --instructions--
 
-هناك `List` و `ToDo` في محرر التعليمات البرمجية. عند أنتاج كل `List` من المكون `ToDo`، مرر خاصية `tasks` تم تعيينها لقائمة من المهام للقيام بها، على سبيل المثال `["walk dog", "workout"]`. ثم أستخدم قائمة `tasks` في مكون القائمة `List`، تظهر قيمتها داخل عنصر `p`. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma separated list. وينبغي لقائمة اليوم أن تتضمن مهمتين في الأقل، وينبغي أن يكون للغد 3 مهام في الأقل.
+There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
 
 # --hints--
 
-مكون `ToDo` يجب أن ينتج `div` خارجي واحد.
+The `ToDo` component should return a single outer `div`.
 
 ```js
 assert(
@@ -35,7 +41,7 @@ assert(
 );
 ```
 
-يجب أن يكون العنصر الفرعي الثالث من مكون `ToDo` جزء من مكون `List`.
+The third child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -46,7 +52,7 @@ assert(
 );
 ```
 
-يجب أن يكون العنصر الفرعي الخامس من مكون `ToDo` جزء من مكون `List`.
+The fifth child of the `ToDo` component should be an instance of the `List` component.
 
 ```js
 assert(
@@ -57,7 +63,7 @@ assert(
 );
 ```
 
-يجب أن يكون لكلا مثالين من مكون `List` خاصية تسمى `tasks` و يجب أن تكون `tasks` من نوع القائمة (array).
+Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
 
 ```js
 assert(
@@ -71,7 +77,7 @@ assert(
 );
 ```
 
-يجب أن يحتوي المكون `List` الأول الذي يمثل مهام اليوم على عنصرين أو أكثر.
+The first `List` component representing the tasks for today should have 2 or more items.
 
 ```js
 assert(
@@ -82,7 +88,7 @@ assert(
 );
 ```
 
-المكون `List` الثاني الذي يمثل مهام الغد يجب أن يحتوي على 3 عناصر أو أكثر.
+The second `List` component representing the tasks for tomorrow should have 3 or more items.
 
 ```js
 assert(
@@ -93,7 +99,7 @@ assert(
 );
 ```
 
-يجب أن يقدم المكون `List` القيمة من مِيزة `tasks` في علامة `p`.
+The `List` component should render the value from the `tasks` prop in the `p` tag.
 
 ```js
 assert(

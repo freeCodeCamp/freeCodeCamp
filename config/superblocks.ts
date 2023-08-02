@@ -169,6 +169,25 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FoundationalCSharp
+  ],
+  [Languages.Swahili]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp,
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.JsAlgoDataStruct
   ]
 };
 

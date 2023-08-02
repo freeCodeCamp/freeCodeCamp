@@ -77,6 +77,7 @@
     "change-language": "Cambia lingua",
     "resume-project": "Riprendi progetto",
     "start-project": "Avvia il progetto",
+    "tweet": "Tweet",
     "previous-question": "Domanda precedente",
     "next-question": "Domanda successiva",
     "finish-exam": "Termina l'esame",
@@ -391,7 +392,6 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Suggerimento",
     "test": "Test",
     "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
@@ -402,7 +402,10 @@
     "season-greetings-fcc": "Saluti dalla comunità freeCodeCamp 🎉",
     "if-getting-value": "Se stai trovando utile freeCodeCamp, è un ottimo momento per donare e sostenere la missione del nostro ente di beneficenza.",
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
-    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende."
+    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
+    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
+    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+    "preview-external-window": "Preview currently showing in external window."
   },
   "donate": {
     "title": "Supporta il nostro ente",
@@ -428,9 +431,6 @@
     "your-donation-2": "La tua donazione ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo ogni mese.",
     "your-donation-3": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento a persone di tutto il mondo ogni anno.",
     "become-supporter": "Diventa sostenitore",
-    "duration": "Diventa un sostenitore una tantum del nostro ente di beneficenza.",
-    "duration-2": "Diventa un sostenitore mensile del nostro ente di beneficenza.",
-    "duration-4": "Diventa un sostenitore del nostro ente di beneficenza",
     "progress-modal-cta-1": "Dona ora per aiutare la nostra charity a creare un corso di laurea in Informatica gratuito e accreditato per tutti.",
     "progress-modal-cta-2": "Dona ora per sponsorizzare 53 ore di tempo server per il sito web della nostra charity.",
     "progress-modal-cta-3": "Dona ora per aiutare la nostra charity a tradurre le lezioni in 32 lingue per gli studenti di tutto il mondo.",
@@ -533,7 +533,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, l'insegnante che ha fondato freeCodeCamp.org",
-    "email-blast": "A proposito, ogni venerdì invio una e-mail con 5 link sulla programmazione e l'informatica. Li mando a circa 4 milioni di persone: vorresti che lo inviassi anche a te?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aggiorna il tuo indirizzo email",
     "update-email-2": "Aggiorna il tuo indirizzo email qui:",
     "email": "Email",
@@ -545,7 +545,8 @@
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
     "document-notfound": "documento non trovato",
-    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina."
+    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -685,9 +686,9 @@
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
-    "verify": "Verifica questa certificazione presso {{certURL}}",
+    "verify": "Verify this certification at:",
     "issued": "Emesso",
-    "fulltext": "<0>Si certifica che</0> <1>{{user}}</1> <2>ha completato con successo presso freeCodeCamp.org la certificazione di sviluppatore</2> <3>{{title}}</3> <4>che rappresenta circa {{time}} ore di lavoro nel corso.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",

@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Quando é lançada uma exceção do tipo `ArrayTypeMismatchException`?
 
 ## --answers--
 
-A
+Uma exceção `ArrayTypeMismatchException` é lançada quando é feita uma tentativa de armazenar um valor de um tipo em um array de outro tipo.
 
 ---
 
-B
+Uma exceção do tipo `ArrayTypeMismatchException` é lançada ao tentar acessar um membro de um tipo cujo valor é nulo.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Uma exceção `ArrayTypeMismatchException` é lançada quando é feita uma tentativa de indexar um array fora dos limites do array.
 
 ## --video-solution--
 
-4
+1

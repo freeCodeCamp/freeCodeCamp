@@ -29,7 +29,7 @@ assert(
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-Ви повинні додати лише один початковий теґ прив'язки (`a`). Будь ласка, видаліть всі зайві.
+У вас відсутній кінцевий тег (`a`) після зображення.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

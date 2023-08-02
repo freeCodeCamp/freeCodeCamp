@@ -16,7 +16,7 @@ Similarly, 104 is a 3-digit one-child number because only 0 is divisible by 3. 1
 
 Let $F(N)$ be the number of the one-child numbers less than $N$. We can verify that $F(10) = 9$, $F({10}^3) = 389$ and $F({10}^7) = 277\\,674$.
 
-Find $F({10}^{19})$.
+Знайдіть $F({10}^{19})$.
 
 # --hints--
 

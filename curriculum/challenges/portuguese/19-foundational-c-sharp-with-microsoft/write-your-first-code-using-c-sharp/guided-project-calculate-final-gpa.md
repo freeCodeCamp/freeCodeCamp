@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Suponha que `decimal gradePointAverage = 3.99872831;`. Qual é o valor de `(int) gradePointAverage`?
 
 ## --answers--
 
-A
+3.99
 
 ---
 
-B
+4
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+3
 
 ## --video-solution--
 
-4
+3

@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
-    [
-      "647e22d18acb466c97ccbef8",
-      "Foundational C# with Microsoft Certification Exam"
-    ]
+    {
+      "id": "647e22d18acb466c97ccbef8",
+      "title": "Foundational C# with Microsoft Certification Exam"
+    }
   ]
 }

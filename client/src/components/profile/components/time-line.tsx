@@ -242,6 +242,8 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
                 blockName
               }
               id
+              superBlock
+              hasEditableBoundaries
               title
             }
           }
@@ -265,15 +267,20 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
+          superBlock,
+          // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName }
+          fields: { slug, blockName },
+          // @ts-expect-error Graphql needs typing
+          hasEditableBoundaries
         }
       }
     }) => {
+      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
       idToNameMap.set(id, {
         challengeTitle: `${
-          title.includes('Step') ? `${blockName} - ` : ''
+          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });

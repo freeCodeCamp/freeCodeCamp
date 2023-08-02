@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import {
-  backend,
-  backEndProject,
-  codeAllyCert,
-  colab,
-  frontEndProject,
-  msTrophyUrl,
-  pythonProject
-} from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues
@@ -80,26 +72,26 @@ export class SolutionForm extends Component<SolutionFormProps> {
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
-      case frontEndProject:
+      case challengeTypes.frontEndProject:
         formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
         break;
 
-      case backend:
+      case challengeTypes.backend:
         formFields = solutionField;
         options.isLocalLinkAllowed = true;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         break;
 
-      case backEndProject:
+      case challengeTypes.backEndProject:
         formFields = backEndProjectFields;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         solutionFormID = 'back-end-form';
         break;
 
-      case pythonProject:
-      case colab:
+      case challengeTypes.pythonProject:
+      case challengeTypes.colab:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink =
@@ -109,13 +101,13 @@ export class SolutionForm extends Component<SolutionFormProps> {
             : 'https://replit.com/@camperbot/hello');
         break;
 
-      case codeAllyCert:
+      case challengeTypes.codeAllyCert:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
         break;
 
-      case msTrophyUrl:
+      case challengeTypes.msTrophyUrl:
         formFields = msTrophyField;
         solutionLink =
           solutionLink +

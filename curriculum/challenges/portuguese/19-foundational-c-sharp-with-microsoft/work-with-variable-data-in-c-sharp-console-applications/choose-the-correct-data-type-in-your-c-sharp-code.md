@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Um trecho de código deve armazenar valores numéricos inteiros entre `1,000,000` positivo e negativo. Que tipo de dado você deve escolher?
 
 ## --answers--
 
-A
+float
 
 ---
 
-B
+double
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+int
 
 ## --video-solution--
 
-4
+3

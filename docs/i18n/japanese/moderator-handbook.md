@@ -144,27 +144,33 @@ Sometimes there will be a merge conflict.
 
 You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
 
+#### Filtering Pull Requests
+
+To sort Pull Requests for Quality Assurance for quick access to PRs that are ready for review, do not have a merge conflict, are not blocked, and have all status checks in green, use the following link to apply the filters:
+
+[Direct link with filter applied](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse)
+
 #### Other Guidelines for Moderators on GitHub
 
-freeCodeCamp のリポジトリへの書き込み権限はありますが、**freeCodeCamp リポジトリに直接コードをプッシュしてはいけません**。 すべてのコードは、リポジトリのフォークからのプルリクエストへという形で、freeCodeCamp のコードベースに入る必要があります。
+Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
-また、自分の PR を承認するべきではありません。 他の PR と同様に、別のモデレーターがレビューする必要があります。
+Also, you should never accept your own PRs. They must be reviewed by another moderator, just like any other PR.
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
 ## フォーラムをモデレートする
 
-As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. フラグ付きの投稿やスパム、トピック外の内容、不適切な会話に対処します。
+As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
-フォーラムのモデレーターになると、「 [person] さんの初めての投稿です。ようこそコミュニティへ！」または「 [person] さんは長い間投稿していません。投稿があったら歓迎しましょう！」など、フォーラムメンバーに関する青色のモデレーターヒントが表示されるようになります。
+Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
-![「 [person] さんが投稿するのはこれが初めてです。コミュニティに歓迎しましょう！」という青色のテキストメッセージ](https://i.imgur.com/mPmVgzK.png)
+![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-これは、あなたが彼らを歓迎するとともに彼らを特別な気分にさせる機会です。 わずかにしか関与していない人が、次のスーパーヘルパーになり、コーディングの学習で多くの人を助けることになる可能性があります。 ほんの少しの思いやりが、善行の連鎖を引き起こすかもしれません。
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
 ### Deleting Forum Posts
 
-Forum moderators can delete users' posts. 以下の場合にのみ、投稿を削除する必要があります。
+Forum moderators can delete users' posts. You should only do this for the following instances:
 
 1. ポルノやグラフィカルに暴力的な画像を投稿している
 2. 本質的に悪意のあるリンクやコードを投稿し、それをクリックする他のキャンパーに害を与える可能性がある
@@ -173,7 +179,7 @@ Forum moderators can delete users' posts. 以下の場合にのみ、投稿を�
 
 ### Dealing with Spam
 
-For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. ユーザーのプロフィール欄に、あなたが行ったアクションを説明するメモを残してください。 問題が解決しない場合は、(ユーザー管理パネルのサイレンスオプションを使用して) ユーザーの投稿をブロックします。 Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). プライベートメッセージのボックスにチェックを入れ、メッセージが「正式な警告」であることを示します。
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -181,7 +187,7 @@ As a moderator, you can ask questions and report incidents in the [mod-team foru
 
 Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
 
-例外的な状況として、モデレーターがディスカッションを複数のスレッドにフォークすることが適切である場合があります。
+In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 

@@ -45,7 +45,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: ${{ matrix.node-version }}
           # cypress-io/github-action caches the store, so we should not cache it
@@ -67,6 +67,10 @@ jobs:
         run: pnpm run seed
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
+
+      # start-ci uses pm2, so it needs to be installed globally
+      - name: Install pm2
+        run: npm i -g pm2
 
         # In our cypress config, we default to the cypress/e2e/default directory.
         # We need to change this to cypress/e2e/ for the specific tests we are running

@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "63d8401039c73468b059cd41",
-      "Build Three Math Games"
-    ]
+    {
+      "id": "63d8401039c73468b059cd41",
+      "title": "Build Three Math Games"
+    }
   ]
 }

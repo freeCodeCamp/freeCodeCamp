@@ -18,7 +18,7 @@ Define $sg(i)$ as the sum of the digits of $g(i)$. So $sg(5) = 2 + 5 = 7$.
 
 Further, it can be verified that $g(20)$ is 267 and $\sum sg(i)$ for $1 ≤ i ≤ 20$ is 156.
 
-What is $\sum sg(i)$ for $1 ≤ i ≤ 150$?
+Чому дорівнює $\sum sg(i)$ за умови $1 ≤ i ≤ 150$?
 
 # --hints--
 

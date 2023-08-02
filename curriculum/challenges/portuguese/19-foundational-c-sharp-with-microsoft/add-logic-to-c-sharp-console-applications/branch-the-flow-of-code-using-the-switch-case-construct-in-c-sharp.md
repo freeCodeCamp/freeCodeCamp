@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual é a finalidade do elemento `break`?
 
 ## --answers--
 
-A
+A palavra-chave `break` diz ao tempo de execução para continuar avaliando outros casos no bloco `switch`.
 
 ---
 
-B
+A palavra-chave `break` diz ao tempo de execução para parar de avaliar outros casos no bloco `switch`.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A palavra-chave `break` diz ao tempo de execução para sair da aplicação.
 
 ## --video-solution--
 
-4
+2

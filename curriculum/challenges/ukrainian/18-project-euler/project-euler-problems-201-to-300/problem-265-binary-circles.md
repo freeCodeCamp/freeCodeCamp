@@ -23,7 +23,7 @@ $${00010111}_2 = 23\\\\
 
 Calling $S(N)$ the sum of the unique numeric representations, we can see that $S(3) = 23 + 29 = 52$.
 
-Find $S(5)$.
+Знайдіть $S(5)$.
 
 # --hints--
 

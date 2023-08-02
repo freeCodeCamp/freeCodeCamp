@@ -16,28 +16,20 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expected output?
 
 ## --answers--
 
-A
+`C11000`
 
 ---
 
-B
+`C110000000`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`00C110`
 
 ## --video-solution--
 
-4
+3

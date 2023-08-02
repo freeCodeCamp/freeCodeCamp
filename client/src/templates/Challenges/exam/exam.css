@@ -1,7 +1,14 @@
 .exam-wrapper {
+  margin-top: 60px;
   padding: 25px;
   background-color: var(--primary-background);
   border: 2px solid var(--tertiary-background);
+}
+
+@media (max-width: 600px) {
+  .exam-wrapper {
+    margin-top: 80px;
+  }
 }
 
 .exam-header {

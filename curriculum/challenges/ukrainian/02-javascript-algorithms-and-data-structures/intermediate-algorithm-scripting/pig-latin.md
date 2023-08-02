@@ -50,7 +50,7 @@ assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
 assert.deepEqual(translatePigLatin('eight'), 'eightway');
 ```
 
-Ваша програма повинна обробляти слова, у яких перший голосний звук у середині слова.  `translatePigLatin("schwartz")` має повертати рядок `artzschway`.
+Ваша програма повинна обробляти слова, у яких перший голосний звук розташований у середині слова.  `translatePigLatin("schwartz")` має повертати рядок `artzschway`.
 
 ```js
 assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');

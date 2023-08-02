@@ -16,28 +16,21 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is C#?
+Which of the following foreach statements is syntactically correct?
 
 ## --answers--
 
-A
+`foreach (int value of values)`
 
 ---
 
-B
+`foreach (int value with values)`
 
 ---
 
-C
+`foreach (int value in values)`
 
----
-
-D
-
----
-
-E
 
 ## --video-solution--
 
-4
+3

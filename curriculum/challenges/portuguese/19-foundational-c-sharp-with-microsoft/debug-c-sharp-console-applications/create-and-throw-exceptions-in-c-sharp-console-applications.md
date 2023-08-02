@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Quando um método deve lançar uma exceção?
 
 ## --answers--
 
-A
+Um método deve lançar uma exceção quando o método pode completar o propósito pretendido.
 
 ---
 
-B
+Um método deve lançar uma exceção quando o método não pode completar o propósito pretendido.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Um método deve lançar uma exceção quando um tipo de exceção corresponder ao objetivo pretendido pelo método.
 
 ## --video-solution--
 
-4
+2

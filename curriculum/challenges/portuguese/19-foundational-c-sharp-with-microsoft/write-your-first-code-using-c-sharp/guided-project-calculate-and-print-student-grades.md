@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+O que há de errado com o código a seguir? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
 
 ## --answers--
 
-A
+`sophiaSum` não foi inicializado antes do uso
 
 ---
 
-B
+`sophiaSum` não é implicitamente tipificado como uma string
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`sophiaSum` deve usar a palavra-chave var
 
 ## --video-solution--
 
-4
+1

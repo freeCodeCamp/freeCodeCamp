@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6363d2769078df117ce4c406",
-      "Exponents and Logarithms"
-    ]
+    {
+      "id": "6363d2769078df117ce4c406",
+      "title": "Exponents and Logarithms"
+    }
   ]
 }

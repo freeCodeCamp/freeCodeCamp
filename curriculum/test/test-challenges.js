@@ -30,7 +30,7 @@ const {
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../client/utils/challenge-types');
+const { challengeTypes } = require('../../config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
   require('../../config/client/test-evaluator.json').filename;
@@ -296,7 +296,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
             const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
-              arr => arr[0] === challenge.id
+              ({ id }) => id === challenge.id
             );
 
             if (index < 0) {

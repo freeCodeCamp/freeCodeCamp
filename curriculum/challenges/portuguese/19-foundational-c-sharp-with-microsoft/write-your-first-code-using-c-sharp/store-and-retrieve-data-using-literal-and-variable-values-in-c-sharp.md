@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual das linhas de código a seguir cria uma variável corretamente?
 
 ## --answers--
 
-A
+`int x = 12.3m;`
 
 ---
 
-B
+`decimal x = 12.3m;`
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+`bool x = 'False';`
 
 ## --video-solution--
 
-4
+2

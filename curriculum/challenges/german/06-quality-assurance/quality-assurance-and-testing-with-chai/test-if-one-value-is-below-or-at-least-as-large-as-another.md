@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4e
-title: Test if One Value is Below or At Least as Large as Another
+title: Teste, ob ein Wert unter oder mindestens so groß ist wie ein anderer
 challengeType: 2
 forumTopicId: 301606
 dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#9` in the `Comparisons` suite, change each `assert` to either `assert.isBelow` or `assert.isAtLeast` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labelled `#9` in the `Comparisons` suite, change each `assert` to either `assert.isBelow` or `assert.isAtLeast` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 

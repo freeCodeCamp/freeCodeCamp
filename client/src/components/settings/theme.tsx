@@ -1,4 +1,3 @@
-import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { updateMyTheme } from '../../redux/settings/actions';
@@ -22,10 +21,7 @@ export default function ThemeSettings({
   const { t } = useTranslation();
 
   return (
-    <Form
-      inline={true}
-      onSubmit={(e: React.FormEvent): void => e.preventDefault()}
-    >
+    <form onSubmit={(e: React.FormEvent): void => e.preventDefault()}>
       <ToggleButtonSetting
         action={t('settings.labels.night-mode')}
         flag={currentTheme === Themes.Night}
@@ -38,7 +34,7 @@ export default function ThemeSettings({
           );
         }}
       />
-    </Form>
+    </form>
   );
 }
 

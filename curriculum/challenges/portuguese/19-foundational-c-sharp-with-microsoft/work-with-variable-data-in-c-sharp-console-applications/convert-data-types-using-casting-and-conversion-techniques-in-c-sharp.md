@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual tipo de ação está sendo realizada ao mudar um `float` para um `int`?
 
 ## --answers--
 
-A
+Uma conversão de restrição.
 
 ---
 
-B
+Uma conversão de expansão.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+Uma conversão ilegal.
 
 ## --video-solution--
 
-4
+1

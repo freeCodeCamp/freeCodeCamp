@@ -1,7 +1,7 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../client/utils/challenge-types');
+const { challengeTypes } = require('../../config/challenge-types');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -19,6 +19,11 @@ const fileJoi = Joi.object().keys({
   contents: Joi.string().allow(''),
   id: Joi.string().allow(''),
   history: Joi.array().items(Joi.string().allow(''))
+});
+
+const prerequisitesJoi = Joi.object().keys({
+  id: Joi.objectId().required(),
+  title: Joi.string().required()
 });
 
 const schema = Joi.object()
@@ -55,6 +60,10 @@ const schema = Joi.object()
     isPrivate: Joi.bool(),
     notes: Joi.string().allow(''),
     order: Joi.number(),
+    prerequisites: Joi.when('challengeType', {
+      is: [challengeTypes.exam],
+      then: Joi.array().items(prerequisitesJoi)
+    }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
       is: challengeTypes.video,

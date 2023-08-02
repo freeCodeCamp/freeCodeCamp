@@ -65,7 +65,7 @@ assert.isFunction(Thermostat);
 assert.isFunction(Thermostat?.constructor);
 ```
 
-The `class` keyword should be used.
+Das Schlüsselwort `class` sollte verwendet werden.
 
 ```js
 assert.match(code, /class/);

@@ -18,10 +18,6 @@ type FetchState = {
   errored: boolean;
 };
 
-type User = {
-  acceptedPrivacyTerms: boolean;
-};
-
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   (fetchState: FetchState) => ({
@@ -34,9 +30,7 @@ const mapDispatchToProps = {
 };
 
 type LearnLayoutProps = {
-  isSignedIn?: boolean;
   fetchState: FetchState;
-  user: User;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
   hasEditableBoundaries?: boolean;

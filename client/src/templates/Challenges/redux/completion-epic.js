@@ -12,7 +12,11 @@ import {
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import standardErrorMessage from '../../../utils/standard-error-message';
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  hasNoTests,
+  submitTypes
+} from '../../../../../config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
@@ -77,9 +81,7 @@ function submitModern(type, state) {
   const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (
-    challengeType === 11 ||
-    challengeType === 15 ||
-    challengeType === 19 ||
+    hasNoTests(challengeType) ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {
@@ -188,8 +190,14 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
 
-      const { nextChallengePath, challengeType, superBlock, block } =
-        challengeMetaSelector(state);
+      const {
+        nextBlock,
+        nextChallengePath,
+        challengeType,
+        superBlock,
+        block,
+        blockHashSlug
+      } = challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -206,19 +214,17 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const isNextChallengeInSameSuperBlock =
-        nextChallengePath.includes(superBlock);
-
-      const pathToNavigateTo = isNextChallengeInSameSuperBlock
-        ? nextChallengePath
-        : `/learn/${superBlock}/#${superBlock}-projects`;
+      const lastChallengeInBlock = block !== nextBlock;
+      let pathToNavigateTo = lastChallengeInBlock
+        ? blockHashSlug
+        : nextChallengePath;
 
       const canAllowDonationRequest = (state, action) =>
         isBlockNewlyCompletedSelector(state) &&
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(isNextChallengeInSameSuperBlock))),
+        concat(of(setIsAdvancing(!lastChallengeInBlock))),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))

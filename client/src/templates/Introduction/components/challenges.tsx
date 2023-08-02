@@ -22,6 +22,9 @@ interface Challenges {
   blockTitle?: string | null;
 }
 
+const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
+  isCompleted ? <GreenPass /> : <GreenNotCompleted />;
+
 function Challenges({
   challengesWithCompleted,
   isProjectBlock,
@@ -29,9 +32,6 @@ function Challenges({
   blockTitle
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
-
-  const renderCheckMark = (isCompleted: boolean) =>
-    isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
@@ -91,7 +91,7 @@ function Challenges({
                 <Link to={challenge.fields.slug}>
                   {challenge.title}
                   <span className=' badge map-badge map-project-checkmark'>
-                    {renderCheckMark(challenge.isCompleted)}
+                    <CheckMark isCompleted={challenge.isCompleted} />
                   </span>
                 </Link>
               )}
@@ -113,7 +113,7 @@ function Challenges({
           {!isProjectBlock ? (
             <Link to={challenge.fields.slug}>
               <span className='badge map-badge'>
-                {renderCheckMark(challenge.isCompleted)}
+                <CheckMark isCompleted={challenge.isCompleted} />
               </span>
               {challenge.title}
             </Link>
@@ -121,7 +121,7 @@ function Challenges({
             <Link to={challenge.fields.slug}>
               {challenge.title}
               <span className='badge map-badge map-project-checkmark'>
-                {renderCheckMark(challenge.isCompleted)}
+                <CheckMark isCompleted={challenge.isCompleted} />
               </span>
             </Link>
           )}

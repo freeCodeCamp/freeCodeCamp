@@ -2,22 +2,35 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
+import { randomCompliment } from '../../../../src/utils/get-words';
 import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
+import { ChallengeMeta } from '../../../redux/prop-types';
+import { Share } from '../../../components/share';
+import { ShareProps } from '../../../components/share/types';
 import ProgressBar from '../../../components/ProgressBar';
+import Quote from '../../../assets/icons/quote';
+import {
+  challengeMetaSelector,
+  completedPercentageSelector
+} from '../redux/selectors';
+
 const lowerJawButtonStyle = 'btn-block btn';
 
-interface LowerJawPanelProps {
+interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
   helpButtonText: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
+  showShareButton: boolean;
 }
 
 interface LowerJawTipsProps {
@@ -29,12 +42,14 @@ interface LowerJawTipsProps {
 
 interface LowerJawStatusProps {
   children: React.ReactNode;
-  congratulationText: string;
+  text: string;
   showFeedback: boolean;
   testText: string;
 }
 
 interface LowerJawProps {
+  challengeMeta: ChallengeMeta;
+  completedPercent: number;
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -47,12 +62,24 @@ interface LowerJawProps {
   updateContainer: () => void;
 }
 
+const mapStateToProps = createSelector(
+  challengeMetaSelector,
+  completedPercentageSelector,
+  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
+    challengeMeta,
+    completedPercent
+  })
+);
+
 const LowerButtonsPanel = ({
   resetButtonText,
   helpButtonText,
   resetButtonEvent,
   hideHelpButton,
-  helpButtonEvent
+  helpButtonEvent,
+  showShareButton,
+  superBlock,
+  block
 }: LowerJawPanelProps) => {
   return (
     <>
@@ -66,6 +93,8 @@ const LowerButtonsPanel = ({
           <Reset />
           {resetButtonText}
         </button>
+        {showShareButton && <Share superBlock={superBlock} block={block} />}
+
         {hideHelpButton && (
           <button
             className='btn fade-in'
@@ -83,7 +112,6 @@ const LowerButtonsPanel = ({
 };
 
 const LowerJawTips = ({
-  testText,
   learnEncouragementText,
   showFeedback,
   htmlDescription
@@ -96,7 +124,6 @@ const LowerJawTips = ({
         aria-hidden={showFeedback}
       >
         <Fail aria-hidden='true' />
-        <h2>{testText}</h2>
         <p>{learnEncouragementText}</p>
       </div>
       <div className='hint-status fade-in' aria-hidden={showFeedback}>
@@ -110,25 +137,36 @@ const LowerJawTips = ({
   );
 };
 
+const LowerJawQuote = ({ quote }: { quote: string }) => (
+  <div className='hint-status fade-in'>
+    <Quote aria-hidden='true' />
+    <div id='lowerjaw-quote'>
+      <p>{`"${quote}"`}</p>
+    </div>
+  </div>
+);
+
 const LowerJawStatus = ({
   children,
-  congratulationText,
-  showFeedback,
-  testText
+  text,
+  showFeedback
 }: LowerJawStatusProps) => {
   return (
     <div className='test-status fade-in' aria-hidden={showFeedback}>
       <GreenPass aria-hidden='true' />
-      <h2>{testText}</h2>
       <p className='status'>
-        {congratulationText}
+        {text}
         {children}
       </p>
     </div>
   );
 };
 
+const isBlockCompleted = 100;
+
 const LowerJaw = ({
+  challengeMeta: { superBlock, block },
+  completedPercent,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -141,17 +179,18 @@ const LowerJaw = ({
   updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = React.useRef('');
+  const [quote, setQuote] = useState(randomCompliment());
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
+
   const checkYourCodeButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [focusManagementCompleted, setFocusManagementCompleted] =
     useState(false);
-
   const isCheckYourCodeButtonClicked = () => {
     const activeElement = document.activeElement;
     // Need to check Submit button as well because if it has focus then it is
@@ -161,6 +200,9 @@ const LowerJaw = ({
       activeElement === submitButtonRef.current
     );
   };
+
+  const showShareButton =
+    challengeIsCompleted && completedPercent === isBlockCompleted;
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -203,6 +245,7 @@ const LowerJaw = ({
       }
       // Delay focusing Submit button so that screen reader will announce
       // it after the test results.
+      setQuote(randomCompliment());
       setTimeout(() => {
         submitButtonRef.current?.focus();
         setFocusManagementCompleted(true);
@@ -221,9 +264,6 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const currentText = `<h2 className="hint">${t('learn.hint')}</h2> ${
-    hintRef.current
-  }`;
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -247,7 +287,6 @@ const LowerJaw = ({
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
-
   return (
     <div className='action-row-container'>
       {showSignInButton && (
@@ -275,7 +314,8 @@ const LowerJaw = ({
         onClick={tryToExecuteChallenge}
         {...(challengeIsCompleted &&
           !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
-        {...(focusManagementCompleted && { 'aria-hidden': true })}
+        {...(challengeIsCompleted &&
+          focusManagementCompleted && { 'aria-hidden': true })}
         ref={checkYourCodeButtonRef}
       >
         {checkButtonText}
@@ -291,21 +331,27 @@ const LowerJaw = ({
           <span className='sr-only'>{t('aria.running-tests')}</span>
         )}
         {challengeIsCompleted && (
-          <LowerJawStatus
-            testText={t('learn.test')}
-            showFeedback={isFeedbackHidden}
-            congratulationText={t('learn.congratulations')}
-          >
-            {!isCheckYourCodeButtonClicked() && (
-              <span className='sr-only'>, {t('aria.submit')}</span>
-            )}
-          </LowerJawStatus>
+          <>
+            <LowerJawStatus
+              testText={t('learn.test')}
+              showFeedback={isFeedbackHidden}
+              text={t('learn.congratulations')}
+            >
+              {!isCheckYourCodeButtonClicked() && (
+                <span className='sr-only'>, {t('aria.submit')}</span>
+              )}
+            </LowerJawStatus>
+            <LowerJawQuote quote={quote} />
+            <span className='sr-only'>
+              {t('learn.percent-complete', { percent: completedPercent })}
+            </span>
+          </>
         )}
         {hintRef.current && !challengeIsCompleted && (
           <LowerJawTips
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
-            htmlDescription={currentText}
+            htmlDescription={`${hintRef.current}`}
             learnEncouragementText={t(sentencePicker())}
           />
         )}
@@ -326,6 +372,9 @@ const LowerJaw = ({
           isAttemptsLargerThanTest && !challengeIsCompleted
         )}
         helpButtonEvent={openHelpModal}
+        showShareButton={showShareButton}
+        superBlock={superBlock}
+        block={block}
       />
     </div>
   );
@@ -333,4 +382,4 @@ const LowerJaw = ({
 
 LowerJaw.displayName = 'LowerJaw';
 
-export default LowerJaw;
+export default connect(mapStateToProps)(LowerJaw);

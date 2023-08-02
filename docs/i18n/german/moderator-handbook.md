@@ -144,27 +144,33 @@ Es gibt auch Situationen, in denen der/die Mitwirkende versucht, einen Link zu s
 
 You can close these invalid pull requests and reply to them with these [reply templates](reply-templates.md#closing-invalid-pull-requests).
 
+#### Filtering Pull Requests
+
+To sort Pull Requests for Quality Assurance for quick access to PRs that are ready for review, do not have a merge conflict, are not blocked, and have all status checks in green, use the following link to apply the filters:
+
+[Direct link with filter applied](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse)
+
 #### Other Guidelines for Moderators on GitHub
 
-Obwohl du Schreibzugriff auf das freeCodeCamp-Repository hast, **solltest du niemals Code direkt in die freeCodeCamp-Repositories pushen**. Der gesamte Code sollte in Form eines Pull-Requests von einem Fork des Repositorys in die Codebasis von freeCodeCamp gelangen.
+Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
-Außerdem solltest du niemals deine eigenen PRs akzeptieren. Sie müssen von einem anderen Moderator überprüft werden, genau wie jeder andere PR.
+Also, you should never accept your own PRs. They must be reviewed by another moderator, just like any other PR.
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
 ## Das Forum moderieren
 
-As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. Du bearbeitest markierte Beiträge und kümmerst dich um Spam, Off-Topic und andere unangemessene Unterhaltungen.
+As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
-Sobald du ein Moderator im Forum bist, wirst du blaue Moderatorenhinweise zu Forenmitgliedern sehen, wie z. B. "Dies ist das erste Mal, dass [person] gepostet hat - heißen wir sie in der Community willkommen!" oder "[person] hat schon lange nicht mehr gepostet - heißen wir sie wieder willkommen."
+Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
-![Eine blaue Textnachricht mit dem Hinweis "Dies ist das erste Mal, dass [person] gepostet hat - heißen wir sie in der Community willkommen!](https://i.imgur.com/mPmVgzK.png)
+![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-Das sind Gelegenheiten für dich, sie willkommen zu heißen und ihnen das Gefühl zu geben, etwas Besonderes zu sein. Man weiß nie, welche Person, die nur am Rande beteiligt ist, unser nächster Superhelfer wird, der vielen anderen Menschen auf ihrem Weg zum Programmieren hilft. Selbst die kleinste Freundlichkeit kann eine Kaskade von guten Taten auslösen.
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
 ### Deleting Forum Posts
 
-Forum moderators can delete users' posts. Du solltest dies nur in den folgenden Fällen tun:
+Forum moderators can delete users' posts. You should only do this for the following instances:
 
 1. Jemand hat ein pornografisches oder grafisch gewalttätiges Bild gepostet.
 2. Jemand hat einen Link oder Code gepostet, der bösartig ist und anderen Teilnehmern, die darauf klicken, schaden könnte.
@@ -173,7 +179,7 @@ Forum moderators can delete users' posts. Du solltest dies nur in den folgenden 
 
 ### Dealing with Spam
 
-For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Hinterlasse eine Notiz im Profil des Nutzers, in der du die von dir ergriffene Maßnahme erklärst. Wenn das Problem weiterhin besteht, sperre den/die Benutzer/in stillschweigend für Beiträge (mit der Stille-Option im Benutzer-Administrationsbereich). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Aktiviere das Kästchen in der privaten Nachricht, das angibt, dass deine Nachricht eine "formelle Warnung" ist.
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -181,7 +187,7 @@ As a moderator, you can ask questions and report incidents in the [mod-team foru
 
 Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
 
-In Ausnahmefällen kann es für einen Moderator angemessen sein, eine Diskussion in mehrere Threads aufzuteilen.
+In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 

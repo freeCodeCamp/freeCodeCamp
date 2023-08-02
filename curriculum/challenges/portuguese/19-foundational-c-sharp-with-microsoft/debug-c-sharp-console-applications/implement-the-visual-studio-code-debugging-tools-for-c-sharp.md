@@ -16,28 +16,20 @@ Este desafio será parcialmente concluído na plataforma de aprendizagem da Micr
 
 ## --text--
 
-O que é o C#?
+Qual seção da visão de EXECUTAR E DEPURAR é usada para rastrear o ponto de execução atual dentro da aplicação em execução?
 
 ## --answers--
 
-A
+A seção VARIÁVEIS.
 
 ---
 
-B
+A seção PILHA DE CHAMADAS.
 
 ---
 
-C
-
----
-
-D
-
----
-
-E
+A seção INSPEÇÃO.
 
 ## --video-solution--
 
-4
+2

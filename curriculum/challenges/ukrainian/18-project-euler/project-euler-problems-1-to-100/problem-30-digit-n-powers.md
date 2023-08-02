@@ -1,6 +1,6 @@
 ---
 id: 5900f38a1000cf542c50fe9d
-title: 'Завдання 30: n-ий степінь цифр'
+title: 'Завдання 30: степені числа n'
 challengeType: 1
 forumTopicId: 301953
 dashedName: problem-30-digit-n-powers

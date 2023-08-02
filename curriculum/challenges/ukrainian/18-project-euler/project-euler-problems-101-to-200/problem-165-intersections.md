@@ -1,6 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff24
-title: 'Problem 165: Intersections'
+title: 'Завдання 165: перетини'
 challengeType: 1
 forumTopicId: 301799
 dashedName: problem-165-intersections
@@ -8,33 +8,33 @@ dashedName: problem-165-intersections
 
 # --description--
 
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely many points in common.
+Відрізок визначається лише двома кінцевими точками. Розглядаючи два відрізки у планіметрії є три варіанти: відрізки не мають спільних точок, мають одну спільну точку або мають нескінченно багато спільних точок.
 
-Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
+Крім того, коли два відрізки мають лише одну спільну точку, це може бути той випадок, коли спільною точкою є кінцева точка або одного з відрізків, або обох. Якщо спільна точка двох відрізків не є кінцевою точкою будь-якого із відрізків, то це внутрішня точка обох відрізків.
 
-We will call a common point $T$ of two segments $L_1$ and $L_2$ a true intersection point of $L_1$ and $L_2$ if $T$ is the only common point of $L_1$ and $L_2$ and $T$ is an interior point of both segments.
+Назвемо спільну точку $T$ двох відрізків $L_1$ й $L_2$ точкою перетину $L_1$ й $L_2$, якщо $T$ є єдиною спільною точкою $L_1$ й $L_2$, а $T$ є внутрішньою точкою обох відрізків.
 
-Consider the three segments $L_1$, $L_2$, and $L_3$:
+Розглянемо три відрізки $L_1$, $L_2$ та $L_3$:
 
-$$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
-  & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
+$$\begin{align}   & L_1: від (27, 44) \\;\text{до}\\; (12, 32) \\\\
+  & L_2: від (46, 53) \\;\text{до}\\; (17, 62) \\\\   & L_3: від (46, 70) \\;\text{до}\\; (22, 40) \\\\
 \end{align}$$
 
-It can be verified that line segments $L_2$ and $L_3$ have a true intersection point. We note that as the one of the end points of $L_3$: (22, 40) lies on $L_1$ this is not considered to be a true point of intersection. $L_1$ and $L_2$ have no common point. So among the three line segments, we find one true intersection point.
+Можна довести, що відрізки $L_2$ та $L_3$ мають точку перетину. Зазначимо, що оскільки одна кінцева точка $L_3$ (22, 40) лежить на $L_1$, вона не являється точкою перетину. $L_1$ та $L_2$ не мають спільних точок. Тому серед трьох відрізків ми знайшли лише одну точку перетину.
 
-Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator.
+Тепер зробимо те саме для 5000 відрізків. З цією метою ми згенеруємо 20000 чисел, використовуючи так званий генератор псевдовипадкових чисел «Blum Blum Shub».
 
 $$\begin{align}   & s_0 = 290797 \\\\
   & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
 \end{align}$$
 
-To create each line segment, we use four consecutive numbers $t_n$. That is, the first line segment is given by:
+Щоб створити кожен відрізок, ми використовуємо чотири послідовних числа $t_n$. Тобто перший відрізок задано цими координатами:
 
-($_t$1, $t_2$) to ($t_3$, $t_4$)
+від ($_t$1, $t_2$) до ($t_3$, $t_4$)
 
-The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
+Перші чотири числа вичислені згідно зі згаданим генератором: 27, 144, 12 та 232. Тобто перший відрізок задається точками (27, 144) та (12, 232).
 
-How many distinct true intersection points are found among the 5000 line segments?
+Скільки окремих точок перетину буде знайдено серед 5000 відрізків?
 
 # --hints--
 

@@ -28,7 +28,7 @@ return (
 
 У редакторі коду є простий функціональний компонент, який називається `ChildComponent` і компонент класу, який називається `ParentComponent`. Складіть їх обидвох разом, використовуючи відображення `ChildComponent` всередині `ParentComponent`. Пересвідчіться, що закрили тег `ChildComponent` за допомогою навскісної риски перед ним.
 
-**Note:** `ChildComponent` визначається за допомогою функції стрілки ES6, тому що це досить поширена практика під час використання React. Проте, знайте, що це - просто функція. Якщо ви не знайомі з синтаксисом функції зі стрілками, будь ласка, зверніться до розділу JavaScript.
+**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
 
 # --hints--
 
