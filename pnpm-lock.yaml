@@ -873,6 +873,9 @@ importers:
       core-js:
         specifier: 2.6.12
         version: 2.6.12
+      cross-env:
+        specifier: 7.0.3
+        version: 7.0.3
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
