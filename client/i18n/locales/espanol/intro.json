@@ -943,6 +943,14 @@
         "title": "Aprender fundamentos de HTML",
         "intro": ["Una descripción debe ser determinada"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Aprende fundaciones HTML construyendo una página de receta",
         "intro": ["Una descripción debe ser determinada"]

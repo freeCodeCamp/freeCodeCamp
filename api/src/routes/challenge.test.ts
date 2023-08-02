@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { challengeTypes } from '../../../config/challenge-types';
-import { setupServer, superRequest } from '../../jest.utils';
+import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -43,9 +43,7 @@ describe('challengeRoutes', () => {
 
     // Authenticate user
     beforeAll(async () => {
-      const res = await superRequest('/auth/dev-callback', { method: 'GET' });
-      expect(res.status).toBe(200);
-      setCookies = res.get('Set-Cookie');
+      setCookies = await devLogin();
     });
 
     describe('/project-completed', () => {

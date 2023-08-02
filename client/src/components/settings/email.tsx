@@ -227,16 +227,14 @@ function EmailSettings({
       </FullWidthRow>
       <Spacer size='medium' />
       <FullWidthRow>
-        <form id='form-quincy-email' onSubmit={e => e.preventDefault()}>
-          <ToggleButtonSetting
-            action={t('settings.email.weekly')}
-            flag={sendQuincyEmail}
-            flagName='sendQuincyEmail'
-            offLabel={t('buttons.no-thanks')}
-            onLabel={t('buttons.yes-please')}
-            toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
-          />
-        </form>
+        <ToggleButtonSetting
+          action={t('settings.email.weekly')}
+          flag={sendQuincyEmail}
+          flagName='sendQuincyEmail'
+          offLabel={t('buttons.no-thanks')}
+          onLabel={t('buttons.yes-please')}
+          toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
+        />
       </FullWidthRow>
     </div>
   );

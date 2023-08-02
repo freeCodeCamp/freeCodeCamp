@@ -123,7 +123,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       username,
       about,
       picture,
-      points,
       theme,
       sound,
       keyboardShortcuts,
@@ -174,7 +173,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             location={location}
             name={name}
             picture={picture}
-            points={points}
             sound={sound}
             keyboardShortcuts={keyboardShortcuts}
             submitNewAbout={submitNewAbout}
