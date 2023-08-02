@@ -510,6 +510,9 @@ describe('userRoutes', () => {
           data: tokenData
         });
 
+        const tokens = await fastifyTestInstance.prisma.userToken.count();
+        expect(tokens).toBe(1);
+
         const response = await superRequest('/user/get-session-user', {
           method: 'GET',
           setCookies
