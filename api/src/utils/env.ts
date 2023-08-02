@@ -41,11 +41,6 @@ assert.ok(process.env.JWT_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
-  assert.notEqual(
-    process.env.SES_ID,
-    'ses_id_from_aws',
-    'The SES ID should be changed from the default value.'
-  );
   assert.ok(process.env.SES_SECRET);
   assert.notEqual(
     process.env.SES_SECRET,
