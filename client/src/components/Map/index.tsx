@@ -1,9 +1,8 @@
 import i18next from 'i18next';
 import React from 'react';
-
 import {
   SuperBlocks,
-  createFlatSuperBlockMap,
+  createSuperBlockMap,
   getFirstNotAuditedSuperBlock
 } from '../../../../config/superblocks';
 import { generateIconComponent } from '../../assets/icons';
@@ -29,7 +28,8 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const flatSuperBlockMap = createFlatSuperBlockMap({
+// TODO: try to replace this with createSuperBlockMap
+const superBlockMap = createSuperBlockMap({
   showNewCurriculum: showNewCurriculum.toString(),
   showUpcomingChanges: showUpcomingChanges.toString()
 });
@@ -41,10 +41,14 @@ const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
 
 function MapLi({
   superBlock,
-  landing = false
+  landing = false,
+  last = false,
+  index
 }: {
-  superBlock: SuperBlocks;
+  superBlock: SuperBlocks | string;
   landing: boolean;
+  last?: boolean;
+  index: number;
 }) {
   return (
     <>
@@ -68,10 +72,26 @@ function MapLi({
       )}
 
       <li data-test-label='curriculum-map-button'>
+        <div className='progress-icon'>
+          <span
+            className={`progress-number ${index % 2 === 0 ? 'solid' : 'grey'}`}
+          >
+            {index}
+          </span>
+          {!last && (
+            <span
+              className={`arrow ${
+                index % 2 === 0 ? 'solid-arrow' : 'grey-arrow'
+              }`}
+            >
+              &#x2193;
+            </span>
+          )}
+        </div>
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
-            {generateIconComponent(superBlock, 'map-icon')}
-            {getSuperBlockTitleForMap(superBlock)}
+            {generateIconComponent(superBlock as SuperBlocks, 'map-icon')}
+            {getSuperBlockTitleForMap(superBlock as SuperBlocks)}
           </div>
           {landing && <LinkButton />}
         </Link>
@@ -80,13 +100,39 @@ function MapLi({
   );
 }
 
+let startingIndex = 0;
+
 function Map({ forLanding = false }: MapProps): React.ReactElement {
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       <ul>
-        {flatSuperBlockMap.map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
-        ))}
+        {Object.entries(superBlockMap).map(([stage, vals], indx) => {
+          const blockElement = (
+            <>
+              <Spacer size='small' />
+              <h2>
+                Stage {indx + 1}: {stage}
+              </h2>
+              {vals.map(
+                (
+                  superBlock: SuperBlocks | string,
+                  i: number,
+                  superBlockMap: SuperBlocks[] | string[]
+                ) => (
+                  <MapLi
+                    key={i}
+                    index={startingIndex + i + 1}
+                    last={i + 1 === superBlockMap.length}
+                    superBlock={superBlock}
+                    landing={forLanding}
+                  />
+                )
+              )}
+            </>
+          );
+          startingIndex += vals.length;
+          return blockElement;
+        })}
       </ul>
     </div>
   );

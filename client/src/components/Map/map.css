@@ -1,11 +1,83 @@
+.map-ui .stage-heading {
+  font-size: 28px;
+}
+
 .map-ui {
   height: 100%;
 }
-
 .map-ui ul {
   list-style: none;
   color: var(--secondary-color);
   padding: 0;
+}
+
+.map-ui ul li {
+  display: flex;
+}
+
+.map-ui ul li .progress-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+
+.map-ui ul li .progress-icon .cert-icon-outline {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.map-ui ul li .progress-icon .cert-icon-outline > svg {
+  display: inline-block;
+  height: 30px;
+  width: auto;
+}
+
+.map-ui ul li .progress-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.map-ui ul li .progress-icon .solid {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.map-ui ul li .progress-icon .grey {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-background);
+}
+
+.map-ui ul li .progress-icon .arrow {
+  position: absolute;
+  top: 54px;
+  font-size: 38px;
+}
+
+.map-ui ul li .progress-icon .solid-arrow {
+  color: var(--secondary-color);
+}
+
+.map-ui ul li .progress-icon .grey-arrow {
+  color: var(--quaternary-background);
+}
+
+.map-ui ul li .map-icon {
+  align-self: flex-end;
 }
 
 @media (max-width: 640px) {
@@ -13,7 +85,6 @@
     padding-inline-start: 6px;
     font-size: 0.9rem;
   }
-
   .map-ui > ul {
     padding-inline-start: 0;
   }
