@@ -1,4 +1,4 @@
-const { challengeFiles } = require('./__fixtures/challenges');
+const { challengeFiles } = require('./__fixtures__/challenges');
 const { sortChallengeFiles } = require('./sort-challengefiles');
 
 describe('sort-files', () => {
