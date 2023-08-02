@@ -18,52 +18,36 @@ function filterDeprecated(arr) {
   return arr.filter(i => !i.deprecated);
 }
 
-function getRandomIndex(arr) {
-  return Math.random() * (arr.length - 1);
+function getRandomElement(arr) {
+  const id = Math.floor(Math.random() * arr.length)
+  return arr[id];
 }
 
 // Used to generate a random exam
 export function generateRandomExam(examJson) {
   const { numberOfQuestionsInExam, questions } = examJson;
   const numberOfAnswersPerQuestion = 5;
-  const randomizedExam = [];
-  const availableQuestions = filterDeprecated(questions);
 
-  while (randomizedExam.length < numberOfQuestionsInExam) {
-    const randomQuestionIndex = getRandomIndex(availableQuestions);
-    const randomQuestion = availableQuestions.splice(randomQuestionIndex, 1)[0];
+  const availableQuestions = shuffleArray(filterDeprecated(questions));
+  const examQuestions = availableQuestions.slice(0, numberOfQuestionsInExam);
 
-    const { correctAnswers, wrongAnswers } = randomQuestion;
+  const randomizedExam = examQuestions.map(question => {
+    const { correctAnswers, wrongAnswers } = question;
     const availableCorrectAnswers = filterDeprecated(correctAnswers);
-    const availableWrongAnswers = filterDeprecated(wrongAnswers);
-
-    const randomCorrectIndex = getRandomIndex(availableCorrectAnswers);
-    const randomCorrectAnswer = availableCorrectAnswers.splice(
-      randomCorrectIndex,
-      1
-    )[0];
-
-    const answers = [randomCorrectAnswer];
-
-    while (answers.length < numberOfAnswersPerQuestion) {
-      const randomWrongIndex = getRandomIndex(availableWrongAnswers);
-      const randomWrongAnswer = availableWrongAnswers.splice(
-        randomWrongIndex,
-        1
-      )[0];
-      answers.push(randomWrongAnswer);
-    }
-
-    const randomizedQuestion = {
-      id: randomQuestion.id,
-      question: randomQuestion.question,
-      answers: shuffleArray(answers)
+    const availableWrongAnswers = shuffleArray(filterDeprecated(wrongAnswers));
+    const correctAnswer = getRandomElement(availableCorrectAnswers);
+    const answers = shuffleArray([
+      correctAnswer,
+      ...availableWrongAnswers.slice(0, numberOfAnswersPerQuestion - 1)
+    ]);
+    return {
+      id: question.id,
+      question: question.question,
+      answers
     };
+  });
 
-    randomizedExam.push(randomizedQuestion);
-  }
-
-  return shuffleArray(randomizedExam);
+  return randomizedExam;
 }
 
 // Used to evaluate user completed exams
@@ -86,23 +70,23 @@ export function createExamResults(userExam, originalExam) {
     passingPercent
   } = originalExam;
 
-  userExamQuestions.forEach(userQuestion => {
-    const originalQuestion = originalQuestions.find(
-      examQuestion => examQuestion.id === userQuestion.id
-    );
+  const numberOfCorrectAnswers = userExamQuestions.reduce(
+    (count, userQuestion) => {
+      const originalQuestion = originalQuestions.find(
+        examQuestion => examQuestion.id === userQuestion.id
+      );
 
-    if (!originalQuestion) {
-      throw new Error('An error occurred. Could not find exam question.');
-    }
+      if (!originalQuestion) {
+        throw new Error('An error occurred. Could not find exam question.');
+      }
 
-    const isCorrect = originalQuestion.correctAnswers.find(
-      examAnswer => examAnswer.id === userQuestion.answer.id
-    );
-
-    if (isCorrect) {
-      numberOfCorrectAnswers++;
-    }
-  });
+      const isCorrect = originalQuestion.correctAnswers.find(
+        examAnswer => examAnswer.id === userQuestion.answer.id
+      );
+      return isCorrect ? count + 1 : count;
+    },
+    0
+  );
 
   // Percent rounded to one decimal place
   const percent = (numberOfCorrectAnswers / numberOfQuestionsInExam) * 100;

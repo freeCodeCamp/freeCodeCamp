@@ -231,12 +231,7 @@ export function buildExamUserUpdate(user, _completedChallenge) {
     $set = {};
 
   // Always push to completedExams[] to keep a record of all submissions, it may come in handy.
-  $push.completedExams = pick(_completedChallenge, [
-    'id',
-    'challengeType',
-    'completedDate',
-    'examResults'
-  ]);
+  $push.completedExams = fixCompletedExamItem(_completedChallenge);
 
   let alreadyCompleted = false;
   let addPoint = false;
@@ -634,7 +629,7 @@ function createExamChallengeCompleted(app) {
         numberOfQuestionsInExam
       );
       if (validUserCompletedExam.error) {
-        res.status(500);
+        res.status(400);
         log(validUserCompletedExam.error);
         throw new Error(`An error occurred validating the submitted exam.`);
       }
