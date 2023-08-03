@@ -10,7 +10,6 @@ function* clearSearchWithoutReRender() {
 
 function* parseMessagesSaga() {
   const search = window.location.search.slice();
-  // TODO: (Bouncey) Find a way to clear the search without causing a re-render
   if (search) {
     const { messages } = qs.parse(search, { arrayFormat: 'index' });
     if (messages) {
