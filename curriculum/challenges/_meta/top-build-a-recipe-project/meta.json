@@ -1,13 +1,17 @@
 {
-  "name": "TOP Learn Block and Inline",
+  "name": "TOP build a recipe project",
   "isUpcomingChange": true,
-  "dashedName": "top-learn-block-and-inline",
+  "dashedName": "top-build-a-recipe-project",
   "helpCategory": "HTML-CSS",
-  "order": 6,
+  "order": 1,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "the-odin-project",
   "challengeOrder": [
+    {
+      "id": "6391d1a4f7ac71efd0621380",
+      "title": "Build a Recipe Page Project"
+    }
   ]
 }
