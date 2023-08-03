@@ -27,7 +27,9 @@ describe('AppMountNotifier', () => {
     render(
       <Provider store={store}>
         <I18nextProvider i18n={i18nTestConfig}>
-          <AppMountNotifier render={() => <p>App content</p>} />
+          <AppMountNotifier>
+            <p>App content</p>
+          </AppMountNotifier>
         </I18nextProvider>
       </Provider>
     );
