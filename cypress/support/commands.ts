@@ -1,19 +1,23 @@
-const login = () => {
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+// This script contains Cypress test commands for testing a web application
+
+// Custom login command
+Cypress.Commands.add('login', () => {
   cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
   cy.contains('Welcome back');
-};
+});
 
-const preserveSession = () => {
+// Custom command to preserve session cookies
+Cypress.Commands.add('preserveSession', () => {
   Cypress.Cookies.preserveOnce(
     'jwt_access_token',
     'csrf_token',
     '_csrf',
     'connect.sid'
   );
-};
+});
 
-const setPrivacyTogglesToPublic = () => {
+// Custom command to set privacy toggles to public
+Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
   cy.get('#privacy-settings')
     .find('[type=radio][value=2]')
     .each(element => {
@@ -23,54 +27,40 @@ const setPrivacyTogglesToPublic = () => {
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();
   cy.contains('You have agreed to our Academic Honesty Policy');
-};
+});
 
-const goToSettings = () => {
+// Custom command to navigate to settings page and set aliases
+Cypress.Commands.add('goToSettings', () => {
   cy.visit('/settings');
-
-  // Setting aliases here
   cy.get('[data-cy=username-input]').as('usernameInput');
   cy.get('[data-cy=username-form]').as('usernameForm');
-};
+});
 
-const typeUsername = (username: string) => {
+// Custom command to type a username in the settings page
+Cypress.Commands.add('typeUsername', (username) => {
   cy.get('@usernameInput')
     .clear({ force: true })
     .type(username, { force: true });
-};
+});
 
-const resetUsername = () => {
+// Custom command to reset the username
+Cypress.Commands.add('resetUsername', () => {
   cy.goToSettings();
-
   cy.typeUsername('developmentuser');
-
   cy.contains('Username is available');
-
   cy.get('@usernameInput').type('{enter}', { force: true, release: false });
-
   cy.contains('Account Settings for developmentuser').should('be.visible');
-};
+});
 
-Cypress.Commands.add('login', login);
-
-Cypress.Commands.add('preserveSession', preserveSession);
-
-Cypress.Commands.add('setPrivacyTogglesToPublic', setPrivacyTogglesToPublic);
-
-Cypress.Commands.add('goToSettings', goToSettings);
-
-Cypress.Commands.add('typeUsername', typeUsername);
-
-Cypress.Commands.add('resetUsername', resetUsername);
-
-// eslint-disable-next-line @typescript-eslint/no-namespace
+// Extend Cypress namespace with custom commands
 declare namespace Cypress {
   interface Chainable {
-    login: typeof login;
-    preserveSession: typeof preserveSession;
-    setPrivacyTogglesToPublic: typeof setPrivacyTogglesToPublic;
-    goToSettings: typeof goToSettings;
-    typeUsername(username: string): Chainable<JQuery<HTMLElement>>;
-    resetUsername: typeof resetUsername;
+    login: () => void;
+    preserveSession: () => void;
+    setPrivacyTogglesToPublic: () => void;
+    goToSettings: () => void;
+    typeUsername: (username: string) => Chainable<JQuery<HTMLElement>>;
+    resetUsername: () => void;
   }
-}
+    }
+                     
