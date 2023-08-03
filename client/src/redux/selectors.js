@@ -85,8 +85,7 @@ export const examInProgressSelector = state => {
   return state[MainApp].examInProgress;
 };
 
-export const examResultsSelector = state =>
-  userSelector(state).examResults;
+export const examResultsSelector = state => userSelector(state).examResults;
 
 export const userByNameSelector = username => state => {
   const { user } = state[MainApp];

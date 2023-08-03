@@ -1,4 +1,5 @@
-.exam-wrapper, .exam-results-wrapper {
+.exam-wrapper,
+.exam-results-wrapper {
   margin-top: 60px;
   padding: 25px;
   background-color: var(--primary-background);
@@ -6,12 +7,14 @@
 }
 
 @media (max-width: 600px) {
-  .exam-wrapper, .exam-results-wrapper {
+  .exam-wrapper,
+  .exam-results-wrapper {
     margin-top: 80px;
   }
 }
 
-.exam-header, .exam-results-header {
+.exam-header,
+.exam-results-header {
   width: 100%;
   display: flex;
   justify-content: space-evenly;

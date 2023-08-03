@@ -302,7 +302,11 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      const { examResults = null, submittedChallenge, savedChallenges } = payload;
+      const {
+        examResults = null,
+        submittedChallenge,
+        savedChallenges
+      } = payload;
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
