@@ -24,7 +24,7 @@ function* parseMessagesSaga() {
       for (let i = 0; i < flash.length; i++) {
         yield put(createFlashMessage(flash[i]));
       }
-      yield clearSearchWithoutReRender();
+      clearSearchWithoutReRender();
     }
   }
 }
