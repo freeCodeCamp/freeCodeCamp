@@ -17,7 +17,7 @@ function* parseMessagesSaga() {
       const flash = Object.keys(flashMap).reduce(
         (acc, type) => [
           ...acc,
-          ...flashMap[type].map(message => ({ type, message })),
+          ...flashMap[type].map(message => ({ type, message }))
         ],
         []
       );
