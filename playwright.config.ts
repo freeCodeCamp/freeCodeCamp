@@ -59,7 +59,8 @@ export default defineConfig({
       name: 'Mobile Safari',
       use: { ...devices['iPhone 12'] }
     }
-
+/* Uncomment the blocks out if you want to enable the mentioned features */
+/* ====================================================== */
     /* Test against branded browsers. */
     // {
     //   name: 'Microsoft Edge',
