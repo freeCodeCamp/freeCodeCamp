@@ -2,7 +2,7 @@ import qs from 'query-string';
 import { put, takeEvery } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
 
-function* clearSearchWithoutReRender() {
+function clearSearchWithoutReRender() {
   // Clear the search without causing a re-render
   const newUrl = window.location.pathname;
   window.history.pushState({}, '', newUrl);
