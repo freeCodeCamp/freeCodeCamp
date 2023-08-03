@@ -15,7 +15,6 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
-import { encodeUserToken } from '../utils/user-token';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -504,8 +503,6 @@ describe('userRoutes', () => {
           created: new Date()
         };
 
-        const encodedToken = encodeUserToken(tokenData.id);
-
         await fastifyTestInstance.prisma.userToken.create({
           data: tokenData
         });
@@ -518,13 +515,11 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        const {
-          user: { foobar }
-        } = response.body as unknown as {
-          user: { foobar: unknown };
-        };
+        const { userToken } = jwt.decode(
+          response.body.user.foobar.userToken
+        ) as { userToken: string };
 
-        expect(foobar).toMatchObject({ userToken: encodedToken });
+        expect(tokenData.id).toBe(userToken);
       });
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
