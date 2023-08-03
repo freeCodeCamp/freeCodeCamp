@@ -181,6 +181,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const defaultCurriculumNames = blockDashedNames;
 
   const superblockWithoutCert = [
+    SuperBlocks.RespWebDesign,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.TheOdinProject,
     SuperBlocks.ProjectEuler

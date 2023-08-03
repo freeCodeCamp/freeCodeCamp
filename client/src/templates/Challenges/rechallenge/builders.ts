@@ -42,3 +42,11 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     embedSource({ source: contents }) || ''
   }${testRunnerScript}`;
 }
+
+export function createPythonTerminal(pythonRunnerSrc: string): string {
+  const head =
+    '<head><style>#terminal { margin-top: 10px; width: 100%; height: 350px; background-color: #000; color: #00ff00; padding: 5px; overflow: auto; border: 1px solid #ccc; border-radius: 3px; }</style></head>';
+
+  const body = `<body><div id='terminal'></div><script src='${pythonRunnerSrc}' type='text/javascript'></script></body>`;
+  return `<html>${head}${body}</html>`;
+}

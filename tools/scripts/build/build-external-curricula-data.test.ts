@@ -92,6 +92,7 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
         'college-algebra-with-python',
         'the-odin-project',
         'foundational-c-sharp-with-microsoft',
+        'upcoming-python',
         'example-certification'
       ];
 

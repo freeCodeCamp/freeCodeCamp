@@ -682,10 +682,12 @@
     "http-url": "Eine unsichere (http) URL kann nicht verwendet werden.",
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
     "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Ausgestellt",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "Machine Learning with Python Certification",
       "College Algebra with Python": "College Algebra with Python",
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Front End Certification",

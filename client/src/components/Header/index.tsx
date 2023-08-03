@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
-import { connect } from 'react-redux';
+import { ConnectedProps, connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { User } from '../../redux/prop-types';
 import { examInProgressSelector } from '../../redux/selectors';
@@ -20,18 +20,21 @@ const mapStateToProps = createSelector(
   })
 );
 
-interface HeaderProps {
-  examInProgress: boolean;
+const connector = connect(mapStateToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+type Props = PropsFromRedux & {
   fetchState: { pending: boolean };
   user: User;
   skipButtonText: string;
-}
+};
 
-class Header extends React.Component<HeaderProps, { displayMenu: boolean }> {
+class Header extends React.Component<Props, { displayMenu: boolean }> {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
-  constructor(props: HeaderProps) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       displayMenu: false
@@ -102,4 +105,4 @@ class Header extends React.Component<HeaderProps, { displayMenu: boolean }> {
 
 Header.displayName = 'Header';
 
-export default connect(mapStateToProps, null)(Header);
+export default connector(Header);

@@ -682,10 +682,12 @@
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "记住要提交你自己的作业",
     "publicly-visible-url": "记得要提交一个公开可见的app URL",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。"
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "发布日期",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
@@ -798,7 +800,7 @@
       "machine-learning-with-python-v7": "Python 和机器学习认证",
       "College Algebra with Python": "Python 和大学代数",
       "college-algebra-with-python-v8": "Python 和大学代数认证",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",

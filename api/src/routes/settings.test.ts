@@ -1,6 +1,4 @@
-import request from 'supertest';
-
-import { setupServer, superRequest } from '../../jest.utils';
+import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
 const baseProfileUI = {
   isLocked: false,
@@ -83,15 +81,14 @@ describe('settingRoutes', () => {
 
     // Authenticate user
     beforeAll(async () => {
+      setCookies = await devLogin();
+      // This is not strictly necessary, since the defaultUser has this
+      // profileUI, but we're interested in how the profileUI is updated. As
+      // such, setting this explicitly isolates these tests.
       await fastifyTestInstance.prisma.user.updateMany({
         where: { email: 'foo@bar.com' },
         data: { profileUI: baseProfileUI }
       });
-      const res = await request(fastifyTestInstance.server).get(
-        '/auth/dev-callback'
-      );
-      expect(res.status).toBe(200);
-      setCookies = res.get('Set-Cookie');
     });
 
     describe('/update-my-profileui', () => {

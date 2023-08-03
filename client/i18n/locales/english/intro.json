@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
@@ -55,13 +55,6 @@
         "intro": [
           "The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.",
           "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Responsive Web Design Projects",
-        "intro": [
-          "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
-          "Complete the five web programming projects below to earn your Responsive Web Design certification."
         ]
       }
     }
@@ -458,7 +451,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
@@ -947,6 +943,14 @@
         "title": "Learn HTML Foundations",
         "intro": ["A description is to be determined"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
@@ -1058,6 +1062,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

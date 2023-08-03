@@ -34,6 +34,7 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
+import { runPythonInFrame, mainPreviewId } from '../utils/frame';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -241,6 +242,15 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const finalDocument = portalDocument || document;
 
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
+
+        // Python challenges need to be created in two steps:
+        // 1) build the frame
+        // 2) evaluate the code in the frame. This is necessary to avoid
+        //    recreating the frame (which is slow since loadPyodide takes a long
+        //    time)on every change.
+        if (challengeData.challengeType === challengeTypes.python) {
+          yield updatePython(challengeData);
+        }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,
@@ -251,6 +261,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       }
     }
   } catch (err) {
+    console.log('previewChallengeSaga error', err);
     if (err[0] === 'timeout') {
       // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
@@ -258,6 +269,32 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
     }
     console.log(err);
     yield put(updateConsole(escape(err)));
+  }
+}
+
+function* updatePreviewSaga() {
+  const challengeData = yield select(challengeDataSelector);
+  if (challengeData.challengeType === challengeTypes.python) {
+    yield updatePython(challengeData);
+  } else {
+    // all other challenges have to recreate the preview
+    yield previewChallengeSaga();
+  }
+}
+
+function* updatePython(challengeData) {
+  const document = yield getContext('document');
+  // TODO: refactor the build pipeline so that we have discrete, composable
+  // functions to handle transforming code, embedding it and building the
+  // final html. Then we can just use the transformation function here.
+  const buildData = yield buildChallengeData(challengeData);
+  const code = buildData.transformedPython;
+  // TODO: proxy errors to the console
+  try {
+    yield call(runPythonInFrame, document, code, mainPreviewId);
+  } catch (err) {
+    console.log('Error evaluating python code', code);
+    console.log('Message:', err.message);
   }
 }
 
@@ -282,8 +319,9 @@ function* previewProjectSolutionSaga({ payload }) {
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
+    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.updateFile, types.challengeMounted, types.resetChallenge],
+      [types.challengeMounted, types.resetChallenge],
       previewChallengeSaga
     ),
     takeLatest(types.previewMounted, previewChallengeSaga, {

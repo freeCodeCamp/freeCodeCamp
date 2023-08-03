@@ -11,7 +11,10 @@ import {
   mergeMap
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import standardErrorMessage from '../../../utils/standard-error-message';
+import {
+  standardErrorMessage,
+  trophyMissingMessage
+} from '../../../utils/error-messages';
 import {
   challengeTypes,
   hasNoTests,
@@ -48,7 +51,7 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points } = data;
+      const { savedChallenges, points, isTrophyMissing } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -60,7 +63,8 @@ function postChallenge(update, username) {
           })
         );
       }
-      return of(
+
+      const actions = [
         submitComplete({
           submittedChallenge: {
             username,
@@ -70,7 +74,11 @@ function postChallenge(update, username) {
           savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
         updateComplete()
-      );
+      ];
+      // TODO(Post-MVP): separate endpoint for trophy submission?
+      if (isTrophyMissing)
+        actions.push(createFlashMessage(trophyMissingMessage));
+      return of(...actions);
     }),
     catchError(() => of(updateFailed(update)))
   );

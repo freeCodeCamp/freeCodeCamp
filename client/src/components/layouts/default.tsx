@@ -50,7 +50,6 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
-import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -132,7 +131,7 @@ function DefaultLayout({
   isChallenge = false,
   block,
   superBlock,
-  theme = Themes.Default,
+  theme,
   showCodeAlly,
   user,
   fetchUser,
@@ -253,9 +252,7 @@ function DefaultLayout({
               />
             </div>
           )}
-          <div id='content-start' tabIndex={-1}>
-            {fetchState.complete && children}
-          </div>
+          {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
       </div>
