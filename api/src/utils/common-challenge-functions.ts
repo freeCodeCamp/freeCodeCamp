@@ -65,6 +65,18 @@ type CompletedChallenge = {
   files?: CompletedChallengeFile[];
 };
 
+/**
+ * Helper function to update a user's challenge data. Used in challenge
+ * submission endpoints.
+ *
+ * @deprecated Create specific functions for each submission endpoint.
+ * @param fastify The Fastify instance.
+ * @param user The existing user record.
+ * @param challengeId The id of the submitted challenge.
+ * @param _completedChallenge The challenge submission.
+ * @param timezone The user's timezone.
+ * @returns Information about the update.
+ */
 export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: user,

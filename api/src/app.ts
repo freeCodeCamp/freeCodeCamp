@@ -77,6 +77,13 @@ ajv.addFormat('objectid', {
   validate: (str: string) => isObjectID(str)
 });
 
+/**
+ * Top-level wrapper to instantiate the API server. This is where all middleware and
+ * routes should be mounted.
+ *
+ * @param options The options to pass to the Fastify constructor.
+ * @returns The instantiated Fastify server, with TypeBox.
+ */
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
