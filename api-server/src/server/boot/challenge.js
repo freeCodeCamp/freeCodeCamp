@@ -77,7 +77,7 @@ export default async function bootChallenge(app, done) {
 
   const generateExam = createGenerateExam(app);
 
-  api.get('/generate-exam', send200toNonUser, generateExam);
+  api.get('/exam/:id', send200toNonUser, generateExam);
 
   const examChallengeCompleted = createExamChallengeCompleted(app);
 
@@ -530,7 +530,7 @@ function createGenerateExam(app) {
   return async function generateExam(req, res, next) {
     const {
       user,
-      query: { challengeId }
+      params: { id }
     } = req;
 
     try {
@@ -540,7 +540,7 @@ function createGenerateExam(app) {
     }
 
     try {
-      const examFromDb = await Exam.findById(challengeId);
+      const examFromDb = await Exam.findById(id);
       if (!examFromDb) {
         res.status(500);
         throw new Error(
