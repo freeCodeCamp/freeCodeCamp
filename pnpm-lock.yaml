@@ -437,6 +437,12 @@ importers:
       '@babel/register':
         specifier: 7.17.7
         version: 7.17.7(@babel/core@7.18.0)
+      joi:
+        specifier: 17.9.2
+        version: 17.9.2
+      joi-objectid:
+        specifier: 3.0.1
+        version: 3.0.1
       loopback-component-explorer:
         specifier: 6.4.0
         version: 6.4.0
