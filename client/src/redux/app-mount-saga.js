@@ -24,7 +24,6 @@ function* parseMessagesSaga() {
       for (let i = 0; i < flash.length; i++) {
         yield put(createFlashMessage(flash[i]));
       }
-      // After processing the flash messages, clear the search parameters without re-render
       yield clearSearchWithoutReRender();
     }
   }
