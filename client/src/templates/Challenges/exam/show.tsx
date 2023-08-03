@@ -45,7 +45,6 @@ import {
   UserExamQuestion,
   UserExam,
   GeneratedExamResults,
-  GenerateExamResponseWithData,
   GeneratedExamQuestion
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
