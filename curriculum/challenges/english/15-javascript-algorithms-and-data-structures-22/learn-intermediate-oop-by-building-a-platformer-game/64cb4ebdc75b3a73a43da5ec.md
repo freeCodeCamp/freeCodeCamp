@@ -1,20 +1,48 @@
 ---
-id: 64c9fe7b2ffa3539fbf82d32
-title: Step 81
+id: 64cb4ebdc75b3a73a43da5ec
+title: Step 103
 challengeType: 0
-dashedName: step-81
+dashedName: step-103
 ---
 
 # --description--
 
-Add one last conditional statement that checks if the player's `x` position is less than or equal to the sum of the platform's `x` position plus the platform's width minus one third of the player's width.
+Create an `if` statement that checks if `isCheckpointCollisionDetectionActive` is true.
+
+Inside the `if` statement, add a `setTimeout()` that takes in a callback function and a delay of 2000 milliseconds.
+
+For the callback function, it should set the `checkpointScreen` display property to none.
 
 # --hints--
 
-TODO: Tried adding tests but none of my attempts were working. Will try again later.
+You should have an `if` statement that checks if `isCheckpointCollisionDetectionActive` is true.
 
 ```js
+assert.match(code, /\s*if\s*\(\s*isCheckpointCollisionDetectionActive\s*\)\s*{/s);
+```
 
+You should have a `setTimeout()` function inside the `if` statement.
+
+```js
+assert.match(code, /\s*if\s*\(\s*isCheckpointCollisionDetectionActive\s*\)\s*{\s*setTimeout\s*\(/s);
+```
+
+Your `setTimeout()` function should have a callback function as the first argument.
+
+```js
+assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>/s);
+```
+
+Your `setTimeout()` function should have a delay of 2000 milliseconds as the second argument.
+
+```js
+assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>[^,]*,\s*2000\s*\)/s);
+```
+
+Your callback function should set the `checkpointScreen` display property to none.
+
+```js
+assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*\(\s*checkpointScreen\.style\.display\s*=\s*["']none["']\s*\)\s*,\s*2000\s*\)\s*;?\s*}/s);
 ```
 
 # --seed--
@@ -220,6 +248,27 @@ class Platform {
   }
 }
 
+class CheckPoint {
+  constructor(x, y) {
+    this.position = {
+      x,
+      y,
+    };
+    this.width = 40;
+    this.height = 70;
+  };
+
+  draw() {
+    ctx.fillStyle = "#f1be32";
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+  }
+  claim() {
+    this.width = 0;
+    this.height = 0;
+    this.position.y = Infinity;
+  }
+};
+
 const player = new Player();
 
 const platformPositions = [
@@ -241,12 +290,26 @@ const platforms = platformPositions.map(
   (platform) => new Platform(platform.x, platform.y)
 );
 
+const checkpointPositions = [
+  { x: 1170, y: 80 },
+  { x: 2900, y: 330 },
+  { x: 4800, y: 80 },
+];
+
+const checkpoints = checkpointPositions.map(
+  checkpoint => new CheckPoint(checkpoint.x, checkpoint.y)
+);
+
 const animate = () => {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   platforms.forEach((platform) => {
     platform.draw();
+  });
+
+  checkpoints.forEach(checkpoint => {
+    checkpoint.draw();
   });
 
   player.update();
@@ -262,25 +325,49 @@ const animate = () => {
       platforms.forEach((platform) => {
         platform.position.x -= 5;
       });
+
+      checkpoints.forEach((checkpoint) => {
+        checkpoint.position.x -= 5;
+      });
+    
     } else if (keys.leftKey.pressed && isCheckpointCollisionDetectionActive) {
       platforms.forEach((platform) => {
         platform.position.x += 5;
       });
+
+      checkpoints.forEach((checkpoint) => {
+        checkpoint.position.x += 5;
+      });
     }
   }
-
---fcc-editable-region--
 
   platforms.forEach((platform) => {
     const collisionDetectionRules = [
       player.position.y + player.height <= platform.position.y,
       player.position.y + player.height + player.velocity.y >= platform.position.y,
       player.position.x >= platform.position.x - player.width / 2,
-
+      player.position.x <=
+        platform.position.x + platform.width - player.width / 3,
     ];
-  });
 
---fcc-editable-region--
+    if (collisionDetectionRules.every((rule) => rule)) {
+      player.velocity.y = 0;
+      return;
+    }
+
+    const platformDetectionRules = [
+      player.position.x >= platform.position.x - player.width / 2,
+      player.position.x <=
+        platform.position.x + platform.width - player.width / 3,
+      player.position.y + player.height >= platform.position.y,
+      player.position.y <= platform.position.y + platform.height,
+    ];
+
+    if (platformDetectionRules.every(rule => rule)) {
+      player.position.y = platform.position.y + player.height;
+      player.velocity.y = gravity;
+    };
+  });
 }
 
 
@@ -327,6 +414,16 @@ const startGame = () => {
   startScreen.style.display = "none";
   animate();
 }
+
+--fcc-editable-region--
+
+const showCheckpointScreen = (msg) => {
+  checkpointScreen.style.display = "block";
+  checkpointMessage.textContent = msg;
+
+};
+
+--fcc-editable-region--
 
 startBtn.addEventListener("click", startGame);
 
