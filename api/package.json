@@ -22,7 +22,7 @@
     "jsonwebtoken": "9.0.1",
     "mongodb": "^4.16.0",
     "nanoid": "3",
-    "no-profanity": "^1.3.0",
+    "no-profanity": "^1.4.0",
     "nodemon": "2.0.22",
     "query-string": "^7.1.3"
   },
