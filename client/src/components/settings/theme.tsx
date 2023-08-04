@@ -4,13 +4,28 @@ import type { updateMyTheme } from '../../redux/settings/actions';
 
 import ToggleButtonSetting from './toggle-button-setting';
 
-export enum Themes {
-  Night = 'night',
-  Default = 'default'
+type themeValue = {
+  'paypalButton': string,
+  'editorTheme': string,
+  'walletButton': 'light' | 'dark'
 }
+type Themes = {
+'night': themeValue,
+'default': themeValue
+}
+export type ThemesKind = keyof Themes;
+
+export const themesMap = new Map<ThemesKind, themeValue>([
+  [
+'default', { "paypalButton": "gold", "editorTheme": "vs-custom", 'walletButton': 'light'},
+],
+[
+  'night', { "paypalButton": "white", "editorTheme": "vs-dark-custom", 'walletButton': 'dark'},
+],
+]);
 
 export type ThemeProps = {
-  currentTheme: Themes;
+  currentTheme: ThemesKind;
   toggleNightMode: typeof updateMyTheme;
 };
 
@@ -21,18 +36,18 @@ export default function ThemeSettings({
   const { t } = useTranslation();
 
   return (
-    <ToggleButtonSetting
-      action={t('settings.labels.night-mode')}
-      flag={currentTheme === Themes.Night}
-      flagName='currentTheme'
-      offLabel={t('buttons.off')}
-      onLabel={t('buttons.on')}
-      toggleFlag={() => {
-        toggleNightMode(
-          currentTheme === Themes.Night ? Themes.Default : Themes.Night
-        );
-      }}
-    />
+<ToggleButtonSetting
+action={t('settings.labels.night-mode')}
+flag={currentTheme === 'night'}
+flagName='currentTheme'
+offLabel={t('buttons.off')}
+onLabel={t('buttons.on')}
+toggleFlag={() => {
+  toggleNightMode(
+    currentTheme === 'night' ? 'default' : 'night'
+  );
+}}
+/>
   );
 }
 

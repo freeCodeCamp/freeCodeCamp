@@ -10,7 +10,7 @@ import {
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
-import { Themes } from '../settings/theme';
+import { ThemesKind, themesMap } from '../settings/theme';
 import {
   DonationApprovalData,
   PostPayment,
@@ -37,7 +37,7 @@ type PaypalButtonProps = {
   isPaypalLoading: boolean;
   t: (label: string) => string;
   ref?: Ref<PaypalButton>;
-  theme: Themes;
+  theme: ThemesKind;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
   isMinimalForm: boolean | undefined;
@@ -94,7 +94,7 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
     const { duration, planId, amount } = this.state;
     const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
     const isSubscription = duration !== 'one-time';
-    const buttonColor = theme === Themes.Night ? 'white' : 'gold';
+    const buttonColor = themesMap.get(theme)?.paypalButton as string;
     if (!paypalClientId) {
       return null;
     }

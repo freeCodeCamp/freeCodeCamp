@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Themes } from '../settings/theme';
 
 import Profile from './profile';
 
@@ -43,7 +42,7 @@ const userProps = {
     sendQuincyEmail: true,
     sound: true,
     keyboardShortcuts: false,
-    theme: Themes.Default,
+    theme: 'night' as const,
     twitter: 'string',
     username: 'string',
     website: 'string',

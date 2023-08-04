@@ -15,7 +15,7 @@ import React, { useState } from 'react';
 
 import { PaymentProvider } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
-import { Themes } from '../settings/theme';
+import { ThemesKind, themesMap } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
@@ -24,7 +24,7 @@ interface FormPropTypes {
   onDonationStateChange: (donationState: DonationApprovalData) => void;
   postPayment: (arg0: PostPayment) => void;
   t: (label: string) => string;
-  theme: Themes;
+  theme: ThemesKind;
   processing: boolean;
 }
 
@@ -84,7 +84,7 @@ const StripeCardForm = ({
     style: {
       base: {
         fontSize: '18px',
-        color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
+        color: themesMap.get(theme)?.paypalButton,
         '::placeholder': {
           color: `#858591`
         }

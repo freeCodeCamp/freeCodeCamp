@@ -1,6 +1,6 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/superblocks';
-import { Themes } from '../components/settings/theme';
+import { ThemesKind } from '../components/settings/theme';
 import { fullCertMap } from '../resources/cert-and-project-map';
 
 export type Steps = {
@@ -219,7 +219,7 @@ export type User = {
   savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
-  theme: Themes;
+  theme: ThemesKind;
   keyboardShortcuts: boolean;
   twitter: string;
   username: string;

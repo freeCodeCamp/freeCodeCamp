@@ -7,7 +7,7 @@ import { Stripe, loadStripe } from '@stripe/stripe-js';
 import type { Token, PaymentRequest } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
 import envData from '../../../../config/env.json';
-import { Themes } from '../settings/theme';
+import { ThemesKind, themesMap } from '../settings/theme';
 import { PaymentProvider } from '../../../../config/donation-settings';
 import { DonationApprovalData, PostPayment } from './types';
 
@@ -16,7 +16,7 @@ const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 interface WrapperProps {
   label: string;
   amount: number;
-  theme: Themes;
+  theme: ThemesKind;
   postPayment: (arg0: PostPayment) => void;
   onDonationStateChange: (donationState: DonationApprovalData) => void;
   refreshErrorMessage: string;
@@ -101,7 +101,7 @@ const WalletsButton = ({
             style: {
               paymentRequestButton: {
                 type: 'default',
-                theme: theme === Themes.Night ? 'light' : 'dark',
+                theme: themesMap.get(theme)?.walletButton,
                 height: '43px'
               }
             },

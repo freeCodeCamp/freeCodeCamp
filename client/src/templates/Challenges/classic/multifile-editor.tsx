@@ -14,7 +14,7 @@ import {
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import { FileKey } from '../../../redux/prop-types';
-import { Themes } from '../../../components/settings/theme';
+import { ThemesKind } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
 export type VisibleEditors = {
@@ -53,7 +53,7 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
-    { theme }: { theme: Themes }
+    { theme }: { theme: ThemesKind }
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,

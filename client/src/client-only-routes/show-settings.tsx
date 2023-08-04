@@ -16,7 +16,7 @@ import Honesty from '../components/settings/honesty';
 import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
-import { type ThemeProps, Themes } from '../components/settings/theme';
+import { type ThemeProps, ThemesKind } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
@@ -76,7 +76,7 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleNightMode: (theme: ThemesKind) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),

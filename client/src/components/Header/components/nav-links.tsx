@@ -15,7 +15,7 @@ import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
 import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import { Link } from '../../helpers';
-import { type ThemeProps, Themes } from '../../settings/theme';
+import { type ThemeProps, ThemesKind } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 
 export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
@@ -28,7 +28,7 @@ export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
 }
 
 const mapDispatchToProps = {
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleNightMode: (theme: ThemesKind) => updateMyTheme({ theme }),
   openSignoutModal
 };
 
@@ -88,11 +88,11 @@ const DonateButton = ({
 };
 
 const toggleTheme = (
-  currentTheme = Themes.Default,
+  currentTheme = 'default',
   toggleNightMode: typeof updateMyTheme
 ) => {
   toggleNightMode(
-    currentTheme === Themes.Night ? Themes.Default : Themes.Night
+    currentTheme === 'night' ? 'default' : 'night'
   );
 };
 
@@ -254,7 +254,7 @@ function NavLinks({
         <button
           {...(!currentUserName && { 'aria-describedby': 'theme-sign-in' })}
           aria-disabled={!currentUserName}
-          aria-pressed={currentUserTheme === Themes.Night ? 'true' : 'false'}
+          aria-pressed={currentUserTheme === 'night' ? 'true' : 'false'}
           className={
             'nav-link nav-link-flex' +
             (!currentUserName ? ' nav-link-header' : '')
@@ -269,7 +269,7 @@ function NavLinks({
           {currentUserName ? (
             <>
               <span>{t('settings.labels.night-mode')}</span>
-              {currentUserTheme === Themes.Night ? (
+              {currentUserTheme === 'night' ? (
                 <FontAwesomeIcon icon={faCheckSquare} />
               ) : (
                 <FontAwesomeIcon icon={faSquare} />

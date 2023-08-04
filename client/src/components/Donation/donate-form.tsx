@@ -23,7 +23,7 @@ import {
   donationFormStateSelector
 } from '../../redux/selectors';
 import Spacer from '../helpers/spacer';
-import { Themes } from '../settings/theme';
+import { ThemesKind } from '../settings/theme';
 import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import PaypalButton from './paypal-button';
@@ -80,7 +80,7 @@ type PostCharge = (data: {
 
 type DonateFormProps = {
   postCharge: PostCharge;
-  defaultTheme?: Themes;
+  defaultTheme?: ThemesKind;
   email: string;
   handleProcessing?: () => void;
   donationFormState: DonateFormState;
@@ -89,7 +89,7 @@ type DonateFormProps = {
   isDonating: boolean;
   showLoading: boolean;
   t: TFunction;
-  theme: Themes;
+  theme: ThemesKind;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
 };
@@ -105,7 +105,7 @@ const mapStateToProps = createSelector(
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes }
+    { email, theme }: { email: string; theme: ThemesKind }
   ) => ({
     isSignedIn,
     isDonating,

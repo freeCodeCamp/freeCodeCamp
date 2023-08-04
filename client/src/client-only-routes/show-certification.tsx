@@ -16,7 +16,7 @@ import DonateForm from '../components/Donation/donate-form';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
-import { Themes } from '../components/settings/theme';
+import { ThemesKind } from '../components/settings/theme';
 import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
@@ -253,7 +253,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <DonateForm
-            defaultTheme={Themes.Default}
+            defaultTheme='default'
             handleProcessing={handleProcessing}
             isMinimalForm={true}
             paymentContext={PaymentContext.Certificate}

@@ -18,7 +18,7 @@ import store from 'store';
 import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
-import { Themes } from '../../../components/settings/theme';
+import { ThemesKind, themesMap } from '../../../components/settings/theme';
 import { saveChallenge } from '../../../redux/actions';
 import {
   isDonationModalOpenSelector,
@@ -99,7 +99,7 @@ export interface EditorProps {
   stopResetting: () => void;
   resetAttempts: () => void;
   tests: Test[];
-  theme: Themes;
+  theme: ThemesKind;
   title: string;
   showProjectPreview: boolean;
   previewOpen: boolean;
@@ -149,7 +149,7 @@ const mapStateToProps = createSelector(
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
-    { theme }: { theme: Themes },
+    { theme }: { theme: ThemesKind },
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
@@ -1240,12 +1240,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     '(prefers-color-scheme: dark)'
   ).matches;
   const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
-  const editorTheme =
-    theme === Themes.Night
-      ? 'vs-dark-custom'
-      : theme === Themes.Default
-      ? 'vs-custom'
-      : editorSystemTheme;
+  const editorTheme = theme ? themesMap.get(theme)?.editorTheme : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
