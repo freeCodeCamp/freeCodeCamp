@@ -1,6 +1,6 @@
 .flash-message {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row-reverse;
   margin-bottom: 0px;
   padding-top: 3px;
