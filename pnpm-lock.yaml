@@ -226,8 +226,8 @@ importers:
         specifier: '3'
         version: 3.3.4
       no-profanity:
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.4.1
+        version: 1.4.1
       nodemon:
         specifier: 2.0.22
         version: 2.0.22
@@ -368,8 +368,8 @@ importers:
         specifier: 3.3.4
         version: 3.3.4
       no-profanity:
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.4.1
+        version: 1.4.1
       node-fetch:
         specifier: ^2.6.7
         version: 2.6.9
@@ -25788,8 +25788,8 @@ packages:
       lower-case: 2.0.2
       tslib: 2.6.1
 
-  /no-profanity@1.4.0:
-    resolution: {integrity: sha512-RwVip4KdrAz/lWi2umZf4cfkG5Y6TIVdRfsZws9tru5sJ9Jn3KyK5yTK7+xb6PAb/Q/0P0nNco0Tvgfr2OHDyA==}
+  /no-profanity@1.4.1:
+    resolution: {integrity: sha512-TLrMN6LvKorjEnL/hH7aPplhSfx97EwIfzBfjUl75bjH35dbs6xKfxVYnI0P8dRF6c9U6dLQGl5wUrf+Aokpaw==}
     engines: {node: '>=14.0.0'}
     dev: false
 
