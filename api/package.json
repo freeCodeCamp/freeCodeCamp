@@ -11,13 +11,13 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
     "@immobiliarelabs/fastify-sentry": "^6.0.0",
-    "@prisma/client": "4.16.2",
+    "@prisma/client": "5.0.0",
     "ajv": "8.12.0",
     "ajv-formats": "^2.1.1",
     "bad-words": "3.0.4",
     "connect-mongo": "4.6.0",
     "fast-uri": "2.2.0",
-    "fastify": "4.20.0",
+    "fastify": "4.21.0",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
     "jsonwebtoken": "9.0.1",
@@ -34,9 +34,9 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/supertest": "2.0.12",
     "dotenv-cli": "7.2.1",
-    "jest": "29.6.1",
-    "pino-pretty": "10.1.0",
-    "prisma": "4.16.2",
+    "jest": "29.6.2",
+    "pino-pretty": "10.2.0",
+    "prisma": "5.0.0",
     "supertest": "6.3.3",
     "ts-jest": "29.1.1"
   },
@@ -69,7 +69,8 @@
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
     "prisma": "dotenv -e ../.env prisma",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "lint": "cd .. && eslint api/src --max-warnings 0"
   },
   "version": "0.0.1"
 }

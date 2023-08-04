@@ -1,5 +1,5 @@
 const path = require('path');
-const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
+const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes
@@ -147,7 +147,9 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     showProjectPreview:
       challengeOrder === 0 &&
       usesMultifileEditor &&
-      challengeType !== challengeTypes.multifileCertProject,
+      challengeType !== challengeTypes.multifileCertProject &&
+      // TODO: revert this to enable project previews for python challenges
+      challengeType !== challengeTypes.python,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles

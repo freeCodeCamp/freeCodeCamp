@@ -1,6 +1,12 @@
 import { randomBytes, createHash } from 'crypto';
 import { pick } from 'lodash';
 
+/**
+ * Utility to encode a buffer to a base64 URI.
+ *
+ * @param buf The buffer to encode.
+ * @returns The encoded string.
+ */
 export function base64URLEncode(buf: Buffer): string {
   return buf
     .toString('base64')

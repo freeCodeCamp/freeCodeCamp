@@ -36,7 +36,8 @@ const iconMap = {
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
-  [SuperBlocks.ExampleCertification]: ResponsiveDesign
+  [SuperBlocks.ExampleCertification]: ResponsiveDesign,
+  [SuperBlocks.UpcomingPython]: PythonIcon
 };
 
 const generateIconComponent = (

@@ -9,7 +9,12 @@ export type FormattedError = {
     | 'You have to complete the project before you can submit a URL.';
 };
 
-// This only formats invalid challenge submission for now.
+/**
+ * Format invalid challenge submission errors.
+ *
+ * @param errors An array of validation errors.
+ * @returns Formatted errors that can be used in the response.
+ */
 export const formatValidationError = (
   errors: ErrorObject[]
 ): FormattedError => {

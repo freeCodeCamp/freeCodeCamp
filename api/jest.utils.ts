@@ -1,6 +1,7 @@
 import request from 'supertest';
 
 import { build } from './src/app';
+import { defaultUser } from './src/utils/default-user';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -72,4 +73,24 @@ export function setupServer(): void {
     // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
   });
+}
+
+export const defaultUserId = '64c7810107dd4782d32baee7';
+export const defaultUserEmail = 'foo@bar.com';
+
+export async function devLogin(): Promise<string[]> {
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { email: 'foo@bar.com' }
+  });
+
+  await fastifyTestInstance.prisma.user.create({
+    data: {
+      ...defaultUser,
+      id: defaultUserId,
+      email: defaultUserEmail
+    }
+  });
+  const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+  expect(res.status).toBe(200);
+  return res.get('Set-Cookie');
 }

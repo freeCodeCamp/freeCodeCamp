@@ -21,6 +21,10 @@ interface CurriculumProps {
   blocks: Record<string, Block>;
 }
 
+/**
+ * Get all the challenges from the curriculum.
+ * @returns An array of challenges.
+ */
 export function getChallenges() {
   const superBlockKeys = Object.values(SuperBlocks);
   const typedCurriculum: Curriculum = curriculum as Curriculum;

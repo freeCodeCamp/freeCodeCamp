@@ -19,6 +19,7 @@ const colab = 16;
 const exam = 17;
 const msTrophyUrl = 18;
 const multipleChoice = 19;
+const python = 20;
 
 export const challengeTypes = {
   html,
@@ -41,7 +42,8 @@ export const challengeTypes = {
   colab,
   exam,
   msTrophyUrl,
-  multipleChoice
+  multipleChoice,
+  python
 };
 
 export const isFinalProject = (challengeType: number) => {
@@ -91,7 +93,8 @@ export const viewTypes = {
   [colab]: 'frontend',
   [exam]: 'exam',
   [msTrophyUrl]: 'frontend',
-  [multipleChoice]: 'video'
+  [multipleChoice]: 'video',
+  [python]: 'modern'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -118,5 +121,6 @@ export const submitTypes = {
   [colab]: 'project.backEnd',
   [exam]: 'exam',
   [msTrophyUrl]: 'project.frontEnd',
-  [multipleChoice]: 'tests'
+  [multipleChoice]: 'tests',
+  [python]: 'tests'
 };
