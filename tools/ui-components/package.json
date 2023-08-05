@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "6.4.0",
+    "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "0.2.0",
     "@headlessui/react": "1.7.16",
     "react": "16.14.0",
