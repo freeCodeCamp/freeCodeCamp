@@ -798,12 +798,18 @@ importers:
       '@types/jquery':
         specifier: ^3.5.16
         version: 3.5.16
+      '@types/js-yaml':
+        specifier: 4.0.5
+        version: 4.0.5
       '@types/loadable__component':
         specifier: 5.13.4
         version: 5.13.4
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.6
+      '@types/node-fetch':
+        specifier: '2'
+        version: 2.6.4
       '@types/prismjs':
         specifier: ^1.26.0
         version: 1.26.0
@@ -879,6 +885,9 @@ importers:
       core-js:
         specifier: 2.6.12
         version: 2.6.12
+      cross-env:
+        specifier: 7.0.3
+        version: 7.0.3
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -894,9 +903,18 @@ importers:
       jest-json-schema-extended:
         specifier: 1.0.1
         version: 1.0.1
+      joi:
+        specifier: 17.9.2
+        version: 17.9.2
+      js-yaml:
+        specifier: 4.1.0
+        version: 4.1.0
       monaco-editor-webpack-plugin:
         specifier: 4.2.0
         version: 4.2.0(monaco-editor@0.28.1)(webpack@5.88.2)
+      node-fetch:
+        specifier: 2.6.12
+        version: 2.6.12
       react-test-renderer:
         specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
@@ -1326,30 +1344,12 @@ importers:
 
   tools/scripts/build:
     devDependencies:
-      '@types/js-yaml':
-        specifier: 4.0.5
-        version: 4.0.5
-      '@types/node-fetch':
-        specifier: 2.6.4
-        version: 2.6.4
       chai:
         specifier: 4.3.7
         version: 4.3.7
-      debug:
-        specifier: 4.3.4
-        version: 4.3.4(supports-color@8.1.1)
-      dotenv:
-        specifier: 16.3.1
-        version: 16.3.1
       joi:
         specifier: 17.9.2
         version: 17.9.2
-      js-yaml:
-        specifier: 4.1.0
-        version: 4.1.0
-      node-fetch:
-        specifier: 2.6.12
-        version: 2.6.12
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
@@ -11382,7 +11382,7 @@ packages:
   /@types/node-fetch@2.6.4:
     resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
     dependencies:
-      '@types/node': 18.16.0
+      '@types/node': 18.17.1
       form-data: 3.0.1
 
   /@types/node@10.17.60:
@@ -11408,6 +11408,7 @@ packages:
 
   /@types/node@18.16.0:
     resolution: {integrity: sha512-BsAaKhB+7X+H4GnSjGhJG9Qi8Tw+inU9nJDwmD5CgOmBLEI6ArdhikpLX7DjbjDRDTbqZzU2LSQNZg8WGPiSZQ==}
+    dev: true
 
   /@types/node@18.17.0:
     resolution: {integrity: sha512-GXZxEtOxYGFchyUzxvKI14iff9KZ2DI+A6a37o6EQevtg6uO9t+aUZKcaC1Te5Ng1OnLM7K9NVVj+FbecD9cJg==}
@@ -16926,6 +16927,7 @@ packages:
     dependencies:
       ms: 2.1.3
       supports-color: 8.1.1
+    dev: true
 
   /debug@4.3.1:
     resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
@@ -17256,7 +17258,7 @@ packages:
       '@types/tmp': 0.0.33
       application-config-path: 0.1.1
       command-exists: 1.2.9
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       eol: 0.9.1
       get-port: 3.2.0
       glob: 7.2.3
@@ -18179,7 +18181,7 @@ packages:
   /eslint-import-resolver-node@0.3.7:
     resolution: {integrity: sha512-gozW2blMLJCeFpBwugLTGyvVjNoeo1knonXAcatC6bjPBZitotxdWf7Gimr25N4c0AAOo4eOUfaG82IJPDpqCA==}
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       is-core-module: 2.12.1
       resolve: 1.22.2
     transitivePeerDependencies:
@@ -18230,7 +18232,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/parser': 4.33.0(eslint@7.32.0)(typescript@4.9.5)
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.28.0)(eslint@8.46.0)
@@ -18259,7 +18261,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.46.0)(typescript@4.9.5)
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       eslint: 8.46.0
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.28.0)(eslint@8.46.0)
     transitivePeerDependencies:
@@ -18287,7 +18289,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.46.0)(typescript@4.9.5)
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       eslint: 8.46.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.28.0)(eslint@8.46.0)
@@ -18361,7 +18363,7 @@ packages:
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       doctrine: 2.1.0
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.7
@@ -18394,7 +18396,7 @@ packages:
       array.prototype.findlastindex: 1.2.2
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       doctrine: 2.1.0
       eslint: 8.46.0
       eslint-import-resolver-node: 0.3.7
@@ -19384,7 +19386,7 @@ packages:
       fastify-plugin: 4.5.0
       http-errors: 2.0.0
       node-cache: 5.1.2
-      node-fetch: 2.6.9
+      node-fetch: 2.6.12
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -19690,7 +19692,6 @@ packages:
         optional: true
     dependencies:
       debug: 2.2.0
-    dev: false
 
   /follow-redirects@1.15.2(debug@3.2.7):
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -19701,7 +19702,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
 
   /follow-redirects@1.15.2(debug@4.3.4):
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -20063,7 +20064,7 @@ packages:
       joi: 17.9.2
       lodash: 4.17.21
       meant: 1.0.3
-      node-fetch: 2.6.9
+      node-fetch: 2.6.12
       opentracing: 0.14.7
       pretty-error: 2.1.2
       progress: 2.0.3
@@ -20523,7 +20524,7 @@ packages:
       css-minimizer-webpack-plugin: 2.0.0(webpack@5.88.2)
       css.escape: 1.5.1
       date-fns: 2.30.0
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       deepmerge: 4.3.0
       del: 5.1.0
       detect-port: 1.5.1
@@ -24720,7 +24721,7 @@ packages:
     dependencies:
       async: 0.9.2
       commondir: 1.0.1
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       lodash: 4.17.21
       semver: 5.7.1
       strong-globalize: 4.1.3
@@ -24733,7 +24734,7 @@ packages:
     resolution: {integrity: sha512-vDRR4gqkvGOEXh5yL383xGuGxUW9xtF+NCY6/lJu1VAgupKltZxEx3Vw+L3nsGvQrlkJTSmiK3jk72qxkoBtbw==}
     engines: {node: '>=6'}
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       lodash: 4.17.21
       loopback-swagger: 5.9.0
       strong-globalize: 4.1.3
@@ -24748,7 +24749,7 @@ packages:
     dependencies:
       async: 2.6.4
       bson: 1.1.6
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       loopback-connector: 4.11.1
       mongodb: 3.6.9
       strong-globalize: 4.1.3
@@ -24792,7 +24793,7 @@ packages:
     dependencies:
       async: 2.6.4
       bluebird: 3.7.2
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       depd: 1.1.2
       inflection: 1.13.4
       lodash: 4.17.21
@@ -24816,7 +24817,7 @@ packages:
     resolution: {integrity: sha512-p0qSzuuX7eATe5Bxy+RqCj3vSfSFfdCtqyf3yuC+DpchMvgal33XlhEi2UmywyK/Ym28oVnZxxWmfrwFMzSwLQ==}
     engines: {node: '>=4.0.0'}
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -24826,7 +24827,7 @@ packages:
     engines: {node: '>=8.9'}
     dependencies:
       async: 2.6.4
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       strong-globalize: 4.1.3
     transitivePeerDependencies:
       - supports-color
@@ -24837,7 +24838,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       async: 2.6.4
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       ejs: 2.7.4
       lodash: 4.17.21
       strong-globalize: 4.1.3
@@ -26542,6 +26543,7 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+    dev: false
 
   /node-forge@1.3.1:
     resolution: {integrity: sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==}
@@ -34488,7 +34490,7 @@ packages:
   /webpack-virtual-modules@0.2.2:
     resolution: {integrity: sha512-kDUmfm3BZrei0y+1NTHJInejzxfhtU8eDj2M7OKb2IWrPFAeO1SOH2KuQ68MSZu9IGEHcxbkKKR1v18FrUSOmA==}
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -34496,7 +34498,7 @@ packages:
   /webpack-virtual-modules@0.3.2:
     resolution: {integrity: sha512-RXQXioY6MhzM4CNQwmBwKXYgBs6ulaiQ8bkNQEl2J6Z+V+s7lgl/wGvaI/I0dLnYKB8cKsxQc17QOAVIphPLDw==}
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 

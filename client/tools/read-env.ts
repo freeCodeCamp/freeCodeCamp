@@ -1,7 +1,8 @@
-const path = require('path');
+import path from 'path';
+import { config } from 'dotenv';
 
-const envPath = path.resolve(__dirname, '../.env');
-const { error } = require('dotenv').config({ path: envPath });
+const envPath = path.resolve(__dirname, '../../.env');
+const { error } = config({ path: envPath });
 
 if (error) {
   console.warn(`
@@ -47,7 +48,7 @@ const locations = {
     : radioLocation
 };
 
-module.exports = Object.assign(locations, {
+export default Object.assign(locations, {
   clientLocale,
   curriculumLocale,
   showLocaleDropdownMenu: showLocaleDropdownMenu === 'true',
