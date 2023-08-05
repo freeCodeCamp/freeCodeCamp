@@ -22,6 +22,9 @@ import addFormats from 'ajv-formats';
 
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
+import { SESProvider } from './plugins/mail-providers/ses';
+import mailer from './plugins/mailer';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import redirectWithMessage from './plugins/redirect-with-message';
@@ -41,7 +44,8 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
-  SENTRY_DSN
+  SENTRY_DSN,
+  EMAIL_PROVIDER
 } from './utils/env';
 import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
@@ -147,6 +151,10 @@ export const build = async (
       mongoUrl: MONGOHQ_URL
     })
   });
+
+  const provider =
+    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
+  void fastify.register(mailer, { provider });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI) {
