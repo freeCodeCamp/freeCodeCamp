@@ -48,8 +48,6 @@ tasks:
       gp sync-done pnpm-install &&
       gp ports await 27017
     command: >
-      pnpm run create:config &&
-      pnpm run build:curriculum &&
       pnpm run seed &&
       mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
       gp ports await 27017 &&
@@ -60,12 +58,10 @@ tasks:
     init: >
       cd ./client &&
       gp sync-await pnpm-install &&
-      pnpm run predevelop &&
       cd ..
     command: >
       gp ports await 3000 &&
-      cd ./client &&
-      pnpm run develop -- -H '0.0.0.0'
+      pnpm run develop:client -- -H '0.0.0.0'
     openMode: split-right
 
 github:
