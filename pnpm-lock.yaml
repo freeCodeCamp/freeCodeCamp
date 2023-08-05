@@ -765,8 +765,8 @@ importers:
         specifier: 8.3.2
         version: 8.3.2
       validator:
-        specifier: 13.9.0
-        version: 13.9.0
+        specifier: 13.11.0
+        version: 13.11.0
     devDependencies:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
@@ -34017,6 +34017,11 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /validator@13.11.0:
+    resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /validator@13.7.0:
     resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==}
