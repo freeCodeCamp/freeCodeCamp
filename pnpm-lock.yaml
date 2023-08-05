@@ -1113,8 +1113,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       inquirer:
-        specifier: 8.2.5
-        version: 8.2.5
+        specifier: 8.2.6
+        version: 8.2.6
       prettier:
         specifier: 2.8.8
         version: 2.8.8
@@ -22038,8 +22038,8 @@ packages:
       strip-ansi: 6.0.1
       through: 2.3.8
 
-  /inquirer@8.2.5:
-    resolution: {integrity: sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==}
+  /inquirer@8.2.6:
+    resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
@@ -22056,7 +22056,7 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
-      wrap-ansi: 7.0.0
+      wrap-ansi: 6.2.0
     dev: true
 
   /insert-module-globals@7.2.1:
