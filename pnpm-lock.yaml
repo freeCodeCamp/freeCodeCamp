@@ -245,8 +245,8 @@ importers:
         version: 7.1.3
     devDependencies:
       '@fastify/type-provider-typebox':
-        specifier: 3.3.0
-        version: 3.3.0(@sinclair/typebox@0.28.9)
+        specifier: 3.4.0
+        version: 3.4.0(@sinclair/typebox@0.28.9)
       '@types/bad-words':
         specifier: ^3.0.1
         version: 3.0.1
@@ -7645,10 +7645,10 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox@3.3.0(@sinclair/typebox@0.28.9):
-    resolution: {integrity: sha512-CJ4bhrx2FurljP7zIR1pIGlSzf3ChSm65p5MyKUR74CT4Ft5gcqrZg6FNq4mOCtMegmgUL7Z0Ly762aIHp5ZWw==}
+  /@fastify/type-provider-typebox@3.4.0(@sinclair/typebox@0.28.9):
+    resolution: {integrity: sha512-wy1ihi8WtH00sW4YlaA0lZ0nIz/mVVh4stQQ68AtNYTgXI9LPKWylNYDTP2lcXO9az9w902CvqRc8BBwOUTo7w==}
     peerDependencies:
-      '@sinclair/typebox': '>=0.26 <=0.29'
+      '@sinclair/typebox': '>=0.26 <=0.30'
     dependencies:
       '@sinclair/typebox': 0.28.9
     dev: true
