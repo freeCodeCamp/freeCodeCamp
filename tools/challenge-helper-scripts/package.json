@@ -30,7 +30,7 @@
     "cross-env": "7.0.3",
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
-    "inquirer": "8.2.5",
+    "inquirer": "8.2.6",
     "prettier": "2.8.8",
     "ts-node": "10.9.1",
     "typescript": "4.9.5"
