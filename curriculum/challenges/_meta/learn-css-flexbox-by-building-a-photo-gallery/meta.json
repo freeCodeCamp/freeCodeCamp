@@ -10,11 +10,12 @@
   "template": "",
   "required": [],
   "superBlock": "2022/responsive-web-design",
-  "challengeOrder": [
-    [
-      "61537485c4f2a624f18d7794",
-      "Step 1"
-    ],
+  "challengeOrder": 
+    {
+"id": "61537485c4f2a624f18d7794",
+"title":  "Step 1"
+    },
+     
     [
       "61537a8054753e2f1f2a1574",
       "Step 2"
