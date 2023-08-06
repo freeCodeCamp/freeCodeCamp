@@ -68,9 +68,10 @@ export const superBlockOrder: SuperBlockOrder = {
   ],
   [SuperBlockStages.Extra]: [
     SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.RespWebDesign
   ],
-  [SuperBlockStages.Legacy]: [SuperBlocks.RespWebDesign],
+  [SuperBlockStages.Legacy]: [],
   [SuperBlockStages.New]: [],
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.JsAlgoDataStructNew,
