@@ -16,6 +16,7 @@ import {
   normalizeChallenges
 } from '../utils/normalize';
 import { encodeUserToken } from '../utils/user-token';
+import { trimTags } from '../utils/validation';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -289,6 +290,68 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
         return { userToken: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/report-user',
+    {
+      schema: schemas.reportUser,
+      preValidation: (req, reply, done) => {
+        // NOTE: Is this the right hook?
+        req.body = {
+          ...req.body,
+          reportDescription: trimTags(req.body.reportDescription)
+        };
+        done();
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const { username, reportDescription: report } = req.body;
+
+        if (!username || !report || report === '') {
+          // NOTE: Do we want to log these instances?
+          // NOTE: The first two conditions don't matter as the schema
+          //       should prevent them from happening. But if the third
+          //       condition is true, then shouldn't the message be
+          //       'flash.provide-report'? This looks like a Post-MVP
+          //       change as that message isn't present in client.
+          void reply.code(400);
+          return {
+            type: 'danger',
+            message: 'flash.provide-username'
+          } as const;
+        }
+
+        const subject = `Abuse Report: Reporting ${username}'s profile`;
+        const intro = `Hello Team,\n\nThis is to report the profile of ${username}.`;
+        const reportDetails = `Report Details:\n\n${report}`;
+        const reporterUsername = `Username: ${user.username}`;
+        const reporterName = `Name: ${user.name ?? ''}`;
+        const reporterEmail = `Email: ${user.email}`;
+        const reportedBy = `Reported by:\n${reporterUsername}\n${reporterName}\n${reporterEmail}`;
+        const signature = `Thanks and regards,\n${user.name ?? ''}`;
+
+        await fastify.sendEmail({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: user.email,
+          subject: subject,
+          text: `${intro}\n\n${reportDetails}\n\n\n${reportedBy}\n\n${signature}`
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
