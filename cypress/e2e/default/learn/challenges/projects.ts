@@ -221,4 +221,31 @@ describe('project submission', () => {
       );
     }
   );
+
+  it('should not be possible to submit twice in quick succession', () => {
+    const { superBlock, block, challenges } = pythonProjects;
+    const { slug } = challenges[0];
+
+    cy.intercept('http://localhost:3000/project-completed', req => {
+      req.continue(_res => {
+        // delay the response by 0.5 seconds
+        const wait = new Promise<void>(resolve => setTimeout(resolve, 500));
+        return wait;
+      });
+    });
+
+    const url = `/learn/${superBlock}/${block}/${slug}`;
+    cy.visit(url);
+    cy.get('#dynamic-front-end-form')
+      .get('#solution')
+      .type('https://replit.com/@camperbot/python-project#main.py');
+
+    cy.contains("I've completed this challenge").click();
+    cy.get('[data-cy=submit-challenge]').as('submitChallenge');
+    cy.get('@submitChallenge').click();
+    cy.get('@submitChallenge').should('be.disabled');
+    // After the api responds, the button is enabled, but since the modal leaves
+    // the DOM we just check for that.
+    cy.get('[data-cy=completion-modal]').should('not.exist');
+  });
 });

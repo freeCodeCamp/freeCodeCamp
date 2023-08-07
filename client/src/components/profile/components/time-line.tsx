@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
 import { getLangCode } from '../../../../../config/i18n';
-import { getCertIds, getPathFromID } from '../../../../../utils';
+import { getCertIds, getPathFromID } from '../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';

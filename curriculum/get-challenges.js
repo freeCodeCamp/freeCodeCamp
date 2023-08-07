@@ -258,7 +258,7 @@ function generateChallengeCreator(basePath, lang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
 
-  async function validate(filePath, superBlock) {
+  async function validate(filePath) {
     const invalidLang = !curriculumLangs.includes(lang);
     if (invalidLang)
       throw Error(`${lang} is not a accepted language.
@@ -272,20 +272,6 @@ ${filePath}
 It should be in
 ${getFullPath('english', filePath)}
 `);
-
-    const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && !fs.existsSync(getFullPath(lang, filePath));
-    if (missingAuditedChallenge)
-      throw Error(`Missing ${lang} audited challenge for
-${filePath}
-
-Explanation:
-
-Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
-    `);
   }
 
   function addMetaToChallenge(challenge, meta) {

@@ -11,6 +11,13 @@ import {
   updateProject
 } from './helpers/challenge-helpers';
 
+/**
+ * Plugin for the challenge submission endpoints.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
 export const challengeRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
