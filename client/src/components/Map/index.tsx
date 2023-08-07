@@ -42,7 +42,6 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-// TODO: try to replace this with createSuperBlockMap
 const superBlockMap = createSuperBlockMap({
   showNewCurriculum: showNewCurriculum.toString(),
   showUpcomingChanges: showUpcomingChanges.toString()
@@ -62,8 +61,6 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = {};
-
 function MapLi({
   superBlock,
   landing = false,
@@ -72,11 +69,11 @@ function MapLi({
   completed,
   index
 }: {
-  superBlock: SuperBlocks | string;
+  superBlock: string;
   landing: boolean;
   last?: boolean;
   trackProgress: boolean;
-  completed: boolean | undefined;
+  completed: boolean;
   index: number;
 }) {
   return (
@@ -104,7 +101,7 @@ function MapLi({
         {trackProgress && (
           <div className='progress-icon'>
             {completed ? (
-              <RibbonIcon getValue={index} />
+              <RibbonIcon value={index} />
             ) : (
               <span className='progress-number'>{index}</span>
             )}
@@ -123,73 +120,103 @@ function MapLi({
   );
 }
 
+function MapList({
+  stage,
+  vals,
+  indx,
+  isSignedIn,
+  currentCerts,
+  forLanding,
+  startingIndex
+}: {
+  stage: SuperBlockStages;
+  vals: SuperBlocks[];
+  indx: number;
+  isSignedIn: boolean;
+  currentCerts: CurrentCert[];
+  forLanding: boolean;
+  startingIndex: number;
+}): React.ReactElement {
+  return (
+    <>
+      <Spacer size='small' />
+      <h2 id={stage}>
+        Stage {Number(indx + 1)}: {stage}
+      </h2>
+      <ol aria-labelledby={stage}>
+        {vals.length ? (
+          vals.map(
+            (
+              superBlock: SuperBlocks | string,
+              i: number,
+              superBlockMap: SuperBlocks[] | string[]
+            ) => (
+              <MapLi
+                key={i}
+                index={Number(startingIndex + i + 1)}
+                last={i + 1 === superBlockMap.length}
+                trackProgress={
+                  ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
+                    stage
+                  )
+                }
+                completed={
+                  isSignedIn
+                    ? Boolean(
+                        currentCerts?.find(
+                          (cert: { certSlug: string }) =>
+                            (certSlugTypeMap as { [key: string]: string })[
+                              cert.certSlug
+                            ] ===
+                            (
+                              superBlockCertTypeMap as { [key: string]: string }
+                            )[superBlock]
+                        )
+                      )
+                    : false
+                }
+                superBlock={superBlock}
+                landing={forLanding}
+              />
+            )
+          )
+        ) : (
+          <></>
+        )}
+      </ol>
+    </>
+  );
+}
+
 function Map({
   forLanding = false,
   isSignedIn,
   currentCerts
 }: MapProps): React.ReactElement {
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
+  let startingIndex = 0;
+  const superBlockMaps = (
+    <div className='map-ui' data-test-label='curriculum-map'>
+      {Object.entries(superBlockMap).map(([stage, vals], indx) => {
+        const MapListComponent = (
+          <MapList
+            stage={stage as SuperBlockStages}
+            vals={vals}
+            indx={indx}
+            currentCerts={currentCerts}
+            forLanding={forLanding}
+            isSignedIn={isSignedIn}
+            startingIndex={startingIndex}
+          />
+        );
+        startingIndex += vals.length;
+        return MapListComponent;
+      })}
+    </div>
+  );
 
-  return (() => {
-    let startingIndex = 0;
-    const superBlockMaps = (
-      <div className='map-ui' data-test-label='curriculum-map'>
-        <ul>
-          {Object.entries(superBlockMap).map(([stage, vals], indx) => {
-            const blockElement = vals.length ? (
-              <>
-                <Spacer size='small' />
-                <h2>
-                  Stage {indx + 1}: {stage}
-                </h2>
-                {vals.map(
-                  (
-                    superBlock: SuperBlocks | string,
-                    i: number,
-                    superBlockMap: SuperBlocks[] | string[]
-                  ) => (
-                    <MapLi
-                      key={i}
-                      index={Number(startingIndex + i + 1)}
-                      last={i + 1 === superBlockMap.length}
-                      trackProgress={
-                        ![
-                          SuperBlockStages.Upcoming,
-                          SuperBlockStages.Extra
-                        ].includes(stage as SuperBlockStages)
-                      }
-                      completed={
-                        isSignedIn
-                          ? Boolean(
-                              currentCerts?.find(
-                                (cert: { certSlug: string }) =>
-                                  certSlugTypeMapTyped[cert.certSlug] ===
-                                  superBlockCertTypeMapTyped[superBlock]
-                              )
-                            )
-                          : false
-                      }
-                      superBlock={superBlock}
-                      landing={forLanding}
-                    />
-                  )
-                )}
-              </>
-            ) : (
-              <></>
-            );
-            startingIndex += vals.length;
-            return blockElement;
-          })}
-        </ul>
-      </div>
-    );
-    return superBlockMaps;
-  })();
+  return superBlockMaps;
 }
 
 Map.displayName = 'Map';
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map);
+export default connect(mapStateToProps)(Map);
