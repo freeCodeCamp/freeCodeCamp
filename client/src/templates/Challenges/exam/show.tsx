@@ -210,11 +210,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     const generateExamResponse = await getGenerateExam(challengeId);
     const { response, data } = generateExamResponse;
 
-    if (
-      'status' in response &&
-      response.status === 200 &&
-      'generatedExam' in data
-    ) {
+    if (response.status === 200) {
       const { generatedExam = [] } = data;
       const emptyUserExamQuestions = generatedExam.map(q => {
         return {

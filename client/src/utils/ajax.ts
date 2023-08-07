@@ -218,10 +218,7 @@ export function getUsernameExists(
 export function getGenerateExam(
   challengeId: string
 ): Promise<GenerateExamResponseWithData> {
-  const responseWithData = get<GenerateExamResponse>(`/exam/${challengeId}`);
-  return responseWithData.then(({ response, data }) => {
-    return { response, data };
-  });
+  return get(`/exam/${challengeId}`);
 }
 
 /** POST **/
