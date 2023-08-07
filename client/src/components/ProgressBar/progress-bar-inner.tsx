@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-
+import PropTypes from 'prop-types';
 import BezierEasing from 'bezier-easing';
 
 interface ProgressBarInnerProps {
@@ -10,7 +10,6 @@ interface ProgressBarInnerProps {
 
 const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 const intervalLength = 10;
-let percent = 0;
 
 function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -24,22 +23,25 @@ function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
   );
 
   useEffect(() => {
-    ref.current && observer.observe(ref.current);
-    return () => {
-      observer.disconnect();
-    };
+    if (ref.current) {
+      observer.observe(ref.current);
+      return () => {
+        observer.disconnect();
+      };
+    }
   }, [ref, observer]);
 
   return isIntersecting;
 }
+
 function ProgressBarInner({
   completedPercent,
   title,
-  meta
+  meta,
 }: ProgressBarInnerProps): JSX.Element {
   const [shownPercent, setShownPercent] = useState(0);
   const [progressBarInnerWidth, setProgressBarInnerWidth] = useState(0);
-  const [lastShopwnPercent, setLastShownPercent] = useState(0);
+  const [lastShownPercent, setLastShownPercent] = useState(0);
   const progressBarInnerWrap = useRef<HTMLDivElement>(null);
   const isProgressBarInViewport = useIsInViewport(progressBarInnerWrap);
 
@@ -50,6 +52,7 @@ function ProgressBarInner({
     const transitionLength = completedPercent * 10 + 750;
     const intervalsToFinish = transitionLength / intervalLength;
     const amountPerInterval = completedPercent / intervalsToFinish;
+    let percent = 0;
 
     const myInterval = window.setInterval(() => {
       percent += amountPerInterval;
@@ -65,17 +68,22 @@ function ProgressBarInner({
       }
     }, intervalLength);
   };
+
   useEffect(() => {
-    if (lastShopwnPercent !== completedPercent && isProgressBarInViewport) {
+    if (lastShownPercent !== completedPercent && isProgressBarInViewport) {
       setLastShownPercent(completedPercent);
       animateProgressBarInner(completedPercent);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isProgressBarInViewport]);
+
+    return () => {
+      clearInterval();
+    };
+  }, [completedPercent, isProgressBarInViewport, lastShownPercent]);
 
   useEffect(() => {
-    if (progressBarInnerWrap.current)
+    if (progressBarInnerWrap.current) {
       setProgressBarInnerWidth(progressBarInnerWrap.current.offsetWidth);
+    }
   }, [progressBarInnerWrap]);
 
   return (
@@ -94,7 +102,7 @@ function ProgressBarInner({
         >
           <div
             className='progress-bar-foreground'
-            style={{ width: progressBarInnerWidth }}
+            style={{ width: `${progressBarInnerWidth}%` }}
           ></div>
         </div>
       </div>
@@ -103,6 +111,13 @@ function ProgressBarInner({
   );
 }
 
+ProgressBarInner.propTypes = {
+  completedPercent: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  meta: PropTypes.string.isRequired,
+};
+
 ProgressBarInner.displayName = 'ProgressBarInner';
 
 export default ProgressBarInner;
+         
