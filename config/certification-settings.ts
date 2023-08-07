@@ -102,8 +102,6 @@ export const certSlugTypeMap = {
   [Certification.LegacyFrontEnd]: certTypes.frontEnd,
   [Certification.LegacyBackEnd]: certTypes.backEnd,
   [Certification.LegacyDataVis]: certTypes.dataVis,
-  // Keep these slugs the same so we don't
-  // break existing links
   [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
   [Certification.LegacyFullStack]: certTypes.fullStack,
 
