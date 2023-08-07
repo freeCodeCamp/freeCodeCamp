@@ -163,6 +163,7 @@ class CompletionModal extends Component<
 
     return (
       <Modal
+        data-cy='completion-modal'
         animation={false}
         bsSize='lg'
         dialogClassName='challenge-success-modal'
@@ -198,6 +199,7 @@ class CompletionModal extends Component<
             bsSize='large'
             bsStyle='primary'
             disabled={isSubmitting}
+            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
