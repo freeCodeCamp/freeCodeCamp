@@ -36,7 +36,9 @@ import { actionTypes } from './action-types';
 import {
   closeModal,
   updateSolutionFormValues,
-  setIsAdvancing
+  setIsAdvancing,
+  submitChallengeComplete,
+  submitChallengeError
 } from './actions';
 import {
   challengeFilesSelector,
@@ -73,14 +75,15 @@ function postChallenge(update, username) {
           },
           savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
-        updateComplete()
+        updateComplete(),
+        submitChallengeComplete()
       ];
       // TODO(Post-MVP): separate endpoint for trophy submission?
       if (isTrophyMissing)
         actions.push(createFlashMessage(trophyMissingMessage));
       return of(...actions);
     }),
-    catchError(() => of(updateFailed(update)))
+    catchError(() => of(updateFailed(update), submitChallengeError()))
   );
   return saveChallenge;
 }
