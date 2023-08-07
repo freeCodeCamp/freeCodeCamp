@@ -5,7 +5,6 @@ import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
-  GenerateExamResponse,
   GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
