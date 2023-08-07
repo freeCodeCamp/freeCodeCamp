@@ -169,6 +169,29 @@
       "rules": {
         "filenames-simple/naming-convention": "off"
       }
+    },
+    {
+      "files": ["**/api/src/**/*.ts"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
+      "rules": {
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "require": {
+              "ArrowFunctionExpression": true,
+              "ClassDeclaration": true,
+              "ClassExpression": true,
+              "FunctionDeclaration": true,
+              "FunctionExpression": true,
+              "MethodDefinition": true
+            },
+            "publicOnly": true
+          }
+        ],
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
+      }
     }
   ]
 }
