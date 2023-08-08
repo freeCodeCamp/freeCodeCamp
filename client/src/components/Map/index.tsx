@@ -120,7 +120,7 @@ function MapLi({
   );
 }
 
-function MapList({
+function MapStage({
   stage,
   vals,
   indx,
@@ -129,7 +129,7 @@ function MapList({
   forLanding,
   startingIndex
 }: {
-  stage: SuperBlockStages;
+  stage: string;
   vals: SuperBlocks[];
   indx: number;
   isSignedIn: boolean;
@@ -140,14 +140,14 @@ function MapList({
   return (
     <>
       <Spacer size='small' />
-      <h2 id={stage}>
+      <h2>
         Stage {Number(indx + 1)}: {stage}
       </h2>
-      <ol aria-labelledby={stage}>
+      <ol>
         {vals.length ? (
           vals.map(
             (
-              superBlock: SuperBlocks | string,
+              superBlock: SuperBlocks,
               i: number,
               superBlockMap: SuperBlocks[] | string[]
             ) => (
@@ -194,12 +194,13 @@ function Map({
   currentCerts
 }: MapProps): React.ReactElement {
   let startingIndex = 0;
-  const superBlockMaps = (
+
+  return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {Object.entries(superBlockMap).map(([stage, vals], indx) => {
-        const MapListComponent = (
-          <MapList
-            stage={stage as SuperBlockStages}
+        const MapStageComponent = (
+          <MapStage
+            stage={stage}
             vals={vals}
             indx={indx}
             currentCerts={currentCerts}
@@ -209,12 +210,10 @@ function Map({
           />
         );
         startingIndex += vals.length;
-        return MapListComponent;
+        return MapStageComponent;
       })}
     </div>
   );
-
-  return superBlockMaps;
 }
 
 Map.displayName = 'Map';
