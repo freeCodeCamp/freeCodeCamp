@@ -800,9 +800,7 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certsWithoutFullStack = showUpcomingChanges
-  ? [...upcomingCerts, ...legacyCerts, ...certs]
-  : ([...legacyCerts, ...certs] as const);
+const certsWithoutFullStack = [...legacyCerts, ...certs] as const;
 
 const liveCerts = [...certsWithoutFullStack, legacyFullStack] as const;
 
@@ -811,7 +809,16 @@ export type CertsToProjects = Record<
   (typeof certs)[number]['projects']
 >;
 
-// TODO: include upcoming certs when showUpcomingChanges is true
+export type LegacyCertsToProjects = Record<
+  (typeof legacyCerts)[number]['title'],
+  (typeof legacyCerts)[number]['projects']
+>;
+
+export type UpcomingCertsToProjects = Record<
+  (typeof upcomingCerts)[number]['title'],
+  (typeof upcomingCerts)[number]['projects']
+>;
+
 const certsToProjects = certs.reduce((acc, curr) => {
   return {
     ...acc,
@@ -819,17 +826,21 @@ const certsToProjects = certs.reduce((acc, curr) => {
   };
 }, {} as CertsToProjects);
 
-export type LegacyCertsToProjects = Record<
-  (typeof legacyCerts)[number]['title'],
-  (typeof legacyCerts)[number]['projects']
->;
-
 const legacyCertsToProjects = legacyCerts.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
 }, {} as LegacyCertsToProjects);
+
+// TODO: use this (probably in liveCertsToProjects)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as UpcomingCertsToProjects);
 
 const liveCertsToProjects = {
   ...legacyCertsToProjects,
