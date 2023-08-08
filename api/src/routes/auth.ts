@@ -37,8 +37,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
     select: { id: true }
   });
 
-  if (existingUsers.length > 1) 
-    throw new Error("Multiple Users Found");
+  if (existingUsers.length > 1) throw new Error("Multiple Users Found");
 
   return (
     existingUsers[0] ??
