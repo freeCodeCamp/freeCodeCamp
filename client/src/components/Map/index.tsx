@@ -123,68 +123,58 @@ function MapLi({
 function MapStage({
   stage,
   vals,
-  indx,
   isSignedIn,
   currentCerts,
   forLanding,
   startingIndex
 }: {
-  stage: string;
+  stage: number;
   vals: SuperBlocks[];
-  indx: number;
   isSignedIn: boolean;
   currentCerts: CurrentCert[];
   forLanding: boolean;
   startingIndex: number;
 }): React.ReactElement {
   return (
-    <>
-      <Spacer size='small' />
-      <h2>
-        Stage {Number(indx + 1)}: {stage}
-      </h2>
-      <ol>
-        {vals.length ? (
-          vals.map(
-            (
-              superBlock: SuperBlocks,
-              i: number,
-              superBlockMap: SuperBlocks[] | string[]
-            ) => (
-              <MapLi
-                key={i}
-                index={Number(startingIndex + i + 1)}
-                last={i + 1 === superBlockMap.length}
-                trackProgress={
-                  ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
-                    stage
+    <ol>
+      {vals.length ? (
+        vals.map(
+          (
+            superBlock: SuperBlocks,
+            i: number,
+            superBlockMap: SuperBlocks[] | string[]
+          ) => (
+            <MapLi
+              key={i}
+              index={Number(startingIndex + i + 1)}
+              last={i + 1 === superBlockMap.length}
+              trackProgress={
+                ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(stage)
+              }
+              completed={
+                isSignedIn
+                  ? Boolean(
+                    currentCerts?.find(
+                      (cert: { certSlug: string }) =>
+                        (certSlugTypeMap as { [key: string]: string })[
+                        cert.certSlug
+                        ] ===
+                        (
+                          superBlockCertTypeMap as { [key: string]: string }
+                        )[superBlock]
+                    )
                   )
-                }
-                completed={
-                  isSignedIn
-                    ? Boolean(
-                        currentCerts?.find(
-                          (cert: { certSlug: string }) =>
-                            (certSlugTypeMap as { [key: string]: string })[
-                              cert.certSlug
-                            ] ===
-                            (
-                              superBlockCertTypeMap as { [key: string]: string }
-                            )[superBlock]
-                        )
-                      )
-                    : false
-                }
-                superBlock={superBlock}
-                landing={forLanding}
-              />
-            )
+                  : false
+              }
+              superBlock={superBlock}
+              landing={forLanding}
+            />
           )
-        ) : (
-          <></>
-        )}
-      </ol>
-    </>
+        )
+      ) : (
+        <></>
+      )}
+    </ol>
   );
 }
 
@@ -200,9 +190,8 @@ function Map({
       {Object.entries(superBlockMap).map(([stage, vals], indx) => {
         const MapStageComponent = (
           <MapStage
-            stage={stage}
+            stage={Number(stage)}
             vals={vals}
-            indx={indx}
             currentCerts={currentCerts}
             forLanding={forLanding}
             isSignedIn={isSignedIn}
@@ -210,7 +199,15 @@ function Map({
           />
         );
         startingIndex += vals.length;
-        return MapStageComponent;
+        return (
+          <>
+            <Spacer size='small' />
+            {vals.length ? <h2>
+              Stage {Number(indx + 1)}: {stage}
+            </h2> : <></>}
+            {MapStageComponent}
+          </>
+        );
       })}
     </div>
   );
