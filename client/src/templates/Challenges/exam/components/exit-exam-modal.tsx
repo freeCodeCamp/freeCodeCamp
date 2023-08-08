@@ -61,7 +61,6 @@ function ExitExamModal({
         <Button
           data-cy='exit-exam-modal-confirm'
           block={true}
-          bsSize='medium'
           bsStyle='danger'
           onClick={exitExam}
         >
@@ -70,7 +69,6 @@ function ExitExamModal({
         <Button
           data-cy='exit-exam-modal-deny'
           block={true}
-          bsSize='medium'
           bsStyle='primary'
           onClick={closeExitExamModal}
         >
