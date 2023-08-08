@@ -45,10 +45,10 @@ const mapDispatchToProps = {
 
 // Safety: projectMap definitely has projectMap keys,
 // and we are only interested in these keys
-const certifications = Object.keys(projectMap) as Array<keyof ProjectMap>;
+const certTitles = Object.keys(projectMap) as Array<keyof ProjectMap>;
 // Safety: legacyProjectMap definitely has legacyProjectMap keys,
 // and we are only interested in these keys
-const legacyCertifications = Object.keys(legacyProjectMap) as Array<
+const legacyCertTitles = Object.keys(legacyProjectMap) as Array<
   keyof LegacyProjectMap
 >;
 const isCertSelector = ({
@@ -402,13 +402,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(certName => (
-          <Certification key={certName} certName={certName} t={t} />
+        {certTitles.map(title => (
+          <Certification key={title} certName={title} t={t} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         <LegacyFullStack {...props} />
-        {legacyCertifications.map(certName => (
-          <Certification key={certName} certName={certName} t={t} />
+        {legacyCertTitles.map(title => (
+          <Certification key={title} certName={title} t={t} />
         ))}
         <ProjectModal
           {...{

@@ -43,7 +43,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const legacyCertMap = [
+const legacyCerts = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -294,7 +294,7 @@ const legacyFullStack = {
   // Requirements are other certs and is
   // handled elsewhere
 } as const;
-const certMap = [
+const certs = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -744,7 +744,7 @@ const certMap = [
   }
 ] as const;
 
-const upcomingCertMap = [
+const upcomingCerts = [
   {
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
@@ -800,18 +800,19 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMapWithoutFullStack = showUpcomingChanges
-  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
-  : ([...legacyCertMap, ...certMap] as const);
+const certsWithoutFullStack = showUpcomingChanges
+  ? [...upcomingCerts, ...legacyCerts, ...certs]
+  : ([...legacyCerts, ...certs] as const);
 
-const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
+const claimableCerts = [...certsWithoutFullStack, legacyFullStack] as const;
 
 export type ProjectMap = Record<
-  (typeof certMap)[number]['title'],
-  (typeof certMap)[number]['projects']
+  (typeof certs)[number]['title'],
+  (typeof certs)[number]['projects']
 >;
 
-const projectMap = certMap.reduce((acc, curr) => {
+// TODO: include upcoming certs when showUpcomingChanges is true
+const projectMap = certs.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
@@ -819,11 +820,11 @@ const projectMap = certMap.reduce((acc, curr) => {
 }, {} as ProjectMap);
 
 export type LegacyProjectMap = Record<
-  (typeof legacyCertMap)[number]['title'],
-  (typeof legacyCertMap)[number]['projects']
+  (typeof legacyCerts)[number]['title'],
+  (typeof legacyCerts)[number]['projects']
 >;
 
-const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+const legacyProjectMap = legacyCerts.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
@@ -836,8 +837,8 @@ const fullProjectMap = {
 };
 
 export {
-  certMapWithoutFullStack,
-  fullCertMap,
+  certsWithoutFullStack,
+  claimableCerts,
   fullProjectMap,
   legacyProjectMap,
   projectMap
