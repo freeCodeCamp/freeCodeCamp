@@ -22,7 +22,10 @@ import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
-import { certSlugTypeMap } from '../../../../config/certification-settings';
+import {
+  Certification,
+  certSlugTypeMap
+} from '../../../../config/certification-settings';
 
 import './certification.css';
 import {
@@ -162,9 +165,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
     isJsAlgoDataStructCert &&
     isRespWebDesignCert;
 
-  // Keep the settings page certSlug as full-stack rather than
-  // legacy-full-stack so we don't break existing links
-  const certSlug = 'full-stack';
+  const certSlug = Certification.LegacyFullStack;
   const certLocation = `/certification/${username}/${certSlug}`;
 
   const buttonStyle = {
