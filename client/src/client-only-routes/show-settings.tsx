@@ -1,4 +1,4 @@
-import { Grid } from '@freecodecamp/react-bootstrap';
+import { Container } from '@freecodecamp/ui';
 import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -157,7 +157,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Grid>
+      <Container>
         <main>
           <Spacer size='large' />
           <h1
@@ -236,7 +236,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <DangerZone />
         </main>
-      </Grid>
+      </Container>
     </>
   );
 }

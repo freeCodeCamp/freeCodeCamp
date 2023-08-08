@@ -2,7 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { Col, Grid, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
+import { Container } from '@freecodecamp/ui';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -228,7 +229,7 @@ class BackEnd extends Component<BackEndProps> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -267,7 +268,7 @@ class BackEnd extends Component<BackEndProps> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

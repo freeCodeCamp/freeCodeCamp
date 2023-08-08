@@ -1,5 +1,6 @@
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
+import { Container } from '@freecodecamp/ui';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -92,7 +93,7 @@ function LearnPage({
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
-      <Grid>
+      <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Intro
@@ -109,7 +110,7 @@ function LearnPage({
             <Spacer size='large' />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </LearnLayout>
   );
 }

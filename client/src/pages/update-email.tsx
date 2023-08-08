@@ -2,11 +2,11 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
-  Grid,
   Row,
   Col,
   Button
 } from '@freecodecamp/react-bootstrap';
+import { Container } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
 import React, { useState } from 'react';
@@ -71,7 +71,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <Spacer size='medium' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
@@ -117,7 +117,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
             </Row>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </>
   );
 }

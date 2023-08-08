@@ -1,5 +1,6 @@
 // Package Utilities
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Container } from '@freecodecamp/ui';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -239,7 +240,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -362,7 +363,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               </Col>
               <CompletionModal />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

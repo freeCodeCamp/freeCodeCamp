@@ -1,4 +1,5 @@
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Container } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -192,7 +193,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       <Helmet>
         <title>{i18nTitle} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -246,7 +247,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             </Col>
           </Row>
         </main>
-      </Grid>
+      </Container>
       <DonateModal location={props.location} />
     </>
   );
