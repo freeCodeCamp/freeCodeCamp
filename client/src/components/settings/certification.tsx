@@ -12,11 +12,11 @@ import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
-  projectMap,
-  legacyProjectMap,
-  fullProjectMap,
-  ProjectMap,
-  LegacyProjectMap
+  certsToProjects,
+  legacyCertsToProjects,
+  liveCertsToProjects,
+  type CertsToProjects,
+  type LegacyCertsToProjects
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
@@ -43,13 +43,13 @@ const mapDispatchToProps = {
   openModal
 };
 
-// Safety: projectMap definitely has projectMap keys,
-// and we are only interested in these keys
-const certTitles = Object.keys(projectMap) as Array<keyof ProjectMap>;
-// Safety: legacyProjectMap definitely has legacyProjectMap keys,
-// and we are only interested in these keys
-const legacyCertTitles = Object.keys(legacyProjectMap) as Array<
-  keyof LegacyProjectMap
+// Safety: certToProjects definitely has certToProjects keys, and we are only
+// interested in these keys
+const certTitles = Object.keys(certsToProjects) as Array<keyof CertsToProjects>;
+// Safety: legacyCertsToProjects definitely has legacyCertsToProjects keys, and
+// we are only interested in these keys
+const legacyCertTitles = Object.keys(legacyCertsToProjects) as Array<
+  keyof LegacyCertsToProjects
 >;
 const isCertSelector = ({
   is2018DataVisCert,
@@ -313,7 +313,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type CertName = keyof ProjectMap | keyof LegacyProjectMap;
+  type CertName = keyof CertsToProjects | keyof LegacyCertsToProjects;
   const Certification = ({
     certName,
     t
@@ -321,7 +321,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certName: CertName;
     t: TFunction;
   }) => {
-    const { certSlug } = fullProjectMap[certName][0];
+    const { certSlug } = liveCertsToProjects[certName][0];
     return (
       <FullWidthRow>
         <Spacer size='medium' />
@@ -353,7 +353,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     isCert: boolean;
   }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = fullProjectMap[certName][0];
+    const { certSlug } = liveCertsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -364,7 +364,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return fullProjectMap[certName]
+    return liveCertsToProjects[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>

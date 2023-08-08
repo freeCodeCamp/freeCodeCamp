@@ -804,42 +804,42 @@ const certsWithoutFullStack = showUpcomingChanges
   ? [...upcomingCerts, ...legacyCerts, ...certs]
   : ([...legacyCerts, ...certs] as const);
 
-const claimableCerts = [...certsWithoutFullStack, legacyFullStack] as const;
+const liveCerts = [...certsWithoutFullStack, legacyFullStack] as const;
 
-export type ProjectMap = Record<
+export type CertsToProjects = Record<
   (typeof certs)[number]['title'],
   (typeof certs)[number]['projects']
 >;
 
 // TODO: include upcoming certs when showUpcomingChanges is true
-const projectMap = certs.reduce((acc, curr) => {
+const certsToProjects = certs.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-}, {} as ProjectMap);
+}, {} as CertsToProjects);
 
-export type LegacyProjectMap = Record<
+export type LegacyCertsToProjects = Record<
   (typeof legacyCerts)[number]['title'],
   (typeof legacyCerts)[number]['projects']
 >;
 
-const legacyProjectMap = legacyCerts.reduce((acc, curr) => {
+const legacyCertsToProjects = legacyCerts.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-}, {} as LegacyProjectMap);
+}, {} as LegacyCertsToProjects);
 
-const fullProjectMap = {
-  ...legacyProjectMap,
-  ...projectMap
+const liveCertsToProjects = {
+  ...legacyCertsToProjects,
+  ...certsToProjects
 };
 
 export {
   certsWithoutFullStack,
-  claimableCerts,
-  fullProjectMap,
-  legacyProjectMap,
-  projectMap
+  liveCerts,
+  liveCertsToProjects,
+  legacyCertsToProjects,
+  certsToProjects
 };

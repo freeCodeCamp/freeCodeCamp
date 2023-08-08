@@ -19,7 +19,7 @@ import {
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings/actions';
-import { claimableCerts } from '../../../resources/cert-and-project-map';
+import { liveCerts } from '../../../resources/cert-and-project-map';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -34,7 +34,7 @@ interface CertChallengeProps {
   isSignedIn: boolean;
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
-  title: (typeof claimableCerts)[number]['title'];
+  title: (typeof liveCerts)[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
 }
@@ -80,7 +80,7 @@ const CertChallenge = ({
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
-  const cert = claimableCerts.find(x => x.title === title);
+  const cert = liveCerts.find(x => x.title === title);
   if (!cert) throw Error(`Certification ${title} not found`);
   const certSlug = cert.certSlug;
 
