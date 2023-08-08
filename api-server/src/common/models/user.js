@@ -1037,6 +1037,21 @@ export default function initializeUser(User) {
       });
     };
 
+  User.prototype.getCompletedExams$ = function getCompletedExams$() {
+    if (Array.isArray(this.completedExams) && this.completedExams.length) {
+      return Observable.of(this.completedExams);
+    }
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { completedExams: true }
+    };
+    return this.constructor.findOne$(filter).map(user => {
+      this.completedExams = user.completedExams;
+      return user.completedExams;
+    });
+  };
+
   User.getMessages = messages => Promise.resolve(messages);
 
   User.remoteMethod('getMessages', {

@@ -1,4 +1,4 @@
-import { ChallengeFile } from "../../client/src/redux/prop-types";
+import { ChallengeFile } from "../../src/redux/prop-types";
 
 export const challengeFiles: ChallengeFile[] = [
   {

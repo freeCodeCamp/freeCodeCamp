@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
+import { isMicrosoftLearnLink } from '../../../../utils/validate';
 
 // Matches editor links for: Replit, Glitch, CodeSandbox, GitHub
 const editorRegex =
@@ -18,24 +19,6 @@ function isPathRoot(urlString: string): boolean {
 }
 
 type Validator = (value: string) => React.ReactElement | null;
-
-// example link: https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=moT01&sharingId=E2EF453C1F9208B8
-export const isMicrosoftLearnLink = (value: string): boolean => {
-  let url;
-  try {
-    url = new URL(value);
-  } catch {
-    return false;
-  }
-
-  const correctDomain = url.hostname === 'learn.microsoft.com';
-  const correctPath = !!url.pathname.match(
-    /^\/[^/]+\/training\/achievements\/learn\.wwl\.get-started-c-sharp-part-\d\.trophy$/
-  );
-  const hasSharingId = !!url.searchParams.get('sharingId');
-  const hasUsername = !!url.searchParams.get('username');
-  return correctDomain && correctPath && hasSharingId && hasUsername;
-};
 
 export const microsoftValidator: Validator = value =>
   !isMicrosoftLearnLink(value) ? <Trans>validation.ms-learn-link</Trans> : null;

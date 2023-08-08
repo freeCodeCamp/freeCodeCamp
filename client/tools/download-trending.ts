@@ -7,7 +7,7 @@ import { config } from 'dotenv';
 
 import { trendingSchemaValidator } from './schema/trending-schema';
 
-config({ path: path.resolve(__dirname, '../../../.env') });
+config({ path: path.resolve(__dirname, '../../.env') });
 
 const createCdnUrl = (lang: string) =>
   `https://cdn.freecodecamp.org/universal/trending/${lang}.yaml`;
@@ -28,7 +28,10 @@ const download = async (clientLocale: string) => {
 
   const data = await res.text();
   const trendingJSON = JSON.stringify(yaml.load(data));
-  const trendingLocation = `./client/i18n/locales/${clientLocale}/trending.json`;
+  const trendingLocation = path.resolve(
+    __dirname,
+    `../i18n/locales/${clientLocale}/trending.json`
+  );
   writeFileSync(trendingLocation, trendingJSON);
 
   const trendingObject = JSON.parse(trendingJSON) as Record<string, string>;

@@ -150,7 +150,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.state = { ...initialAmountAndDuration };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
-    this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
     this.postPayment = this.postPayment.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
@@ -177,26 +176,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         [provider]: false
       }
     });
-  }
-
-  getDonationButtonLabel() {
-    const { donationAmount, donationDuration } = this.state;
-    const { t } = this.props;
-    const usd = formattedAmountLabel(donationAmount);
-    let donationBtnLabel = t('donate.confirm');
-    if (donationDuration === 'one-time') {
-      donationBtnLabel = t('donate.confirm-2', {
-        usd: usd
-      });
-    } else {
-      donationBtnLabel =
-        donationDuration === 'month'
-          ? t('donate.confirm-3', {
-              usd: usd
-            })
-          : t('donate.confirm-4', { usd: usd });
-    }
-    return donationBtnLabel;
   }
 
   postPayment = ({
@@ -252,7 +231,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {this.getDonationButtonLabel()}:
+          {t('donate.confirm-monthly', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
         </b>
         <Spacer size='medium' />
         <fieldset className={'donate-btn-group security-legend'}>

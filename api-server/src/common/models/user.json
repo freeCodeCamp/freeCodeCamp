@@ -299,6 +299,26 @@
       ],
       "default": []
     },
+    "completedExams": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "examResults": {
+            "type": {
+              "numberOfCorrectAnswers": "number",
+              "numberOfQuestionsInExam": "number",
+              "percentCorrect": "number",
+              "passingPercent": "number",
+              "passed": "boolean",
+              "examTimeInSeconds": "number"
+            }
+          }
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []
