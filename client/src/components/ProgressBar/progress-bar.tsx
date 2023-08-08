@@ -9,7 +9,7 @@ import {
   completedChallengesInBlockSelector,
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
-import { certMapWithoutFullStack } from '../../resources/cert-and-project-map';
+import { certsWithoutFullStack } from '../../../config/cert-and-project-map';
 import ProgressBarInner from './progress-bar-inner';
 
 const mapStateToProps = createSelector(
@@ -55,7 +55,7 @@ function ProgressBar({
   t
 }: ProgressBarProps): JSX.Element {
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-  const isCertificationProject = certMapWithoutFullStack.some(cert => {
+  const isCertificationProject = certsWithoutFullStack.some(cert => {
     return cert.projects.some((project: { id: string }) => project.id === id);
   });
 

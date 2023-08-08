@@ -7,7 +7,10 @@ import { connect } from 'react-redux';
 import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
-import { fullProjectMap } from '../resources/cert-and-project-map';
+import {
+  liveCertsToProjects,
+  type CertTitle
+} from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
@@ -88,9 +91,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const renderProjectsFor = (
-    certName: keyof typeof fullProjectMap | 'Legacy Full Stack'
-  ) => {
+  const renderProjectsFor = (certName: CertTitle) => {
     if (certName === 'Legacy Full Stack') {
       const certs = [
         { title: 'Responsive Web Design' },
@@ -102,7 +103,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       ] as const;
 
       return certs.map((cert, ind) => {
-        const projects = fullProjectMap[cert.title];
+        const projects = liveCertsToProjects[cert.title];
         const { certSlug } = projects[0];
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
@@ -117,7 +118,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       });
     }
 
-    const project = fullProjectMap[certName];
+    const project = liveCertsToProjects[certName];
     return project.map(({ link, title, id }) => (
       <tr key={id}>
         <td>
@@ -147,11 +148,9 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       }
     : null;
 
-  const isCertName = (
-    maybeCertName: string
-  ): maybeCertName is keyof typeof fullProjectMap | 'Legacy Full Stack' => {
+  const isCertName = (maybeCertName: string): maybeCertName is CertTitle => {
     if (maybeCertName === 'Legacy Full Stack') return true;
-    return maybeCertName in fullProjectMap;
+    return maybeCertName in liveCertsToProjects;
   };
   if (!isCertName(certName)) return <div> Unknown Certification</div>;
 

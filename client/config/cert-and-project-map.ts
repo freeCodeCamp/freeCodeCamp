@@ -1,5 +1,5 @@
-import { Certification } from '../../../config/certification-settings';
-import config from '../../../config/env.json';
+import { Certification } from '../../config/certification-settings';
+import config from '../../config/env.json';
 
 const { showUpcomingChanges } = config;
 
@@ -43,7 +43,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const legacyCertMap = [
+const legacyCerts = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -294,7 +294,7 @@ const legacyFullStack = {
   // Requirements are other certs and is
   // handled elsewhere
 } as const;
-const certMap = [
+const certs = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -744,7 +744,7 @@ const certMap = [
   }
 ] as const;
 
-const upcomingCertMap = [
+const upcomingCerts = [
   {
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
@@ -800,45 +800,65 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMapWithoutFullStack = showUpcomingChanges
-  ? [...upcomingCertMap, ...legacyCertMap, ...certMap]
-  : ([...legacyCertMap, ...certMap] as const);
+const certsWithoutFullStack = [...legacyCerts, ...certs] as const;
 
-const fullCertMap = [...certMapWithoutFullStack, legacyFullStack] as const;
+const liveCerts = [...certsWithoutFullStack, legacyFullStack] as const;
 
-export type ProjectMap = Record<
-  (typeof certMap)[number]['title'],
-  (typeof certMap)[number]['projects']
+export type CertsToProjects = Record<
+  (typeof certs)[number]['title'],
+  (typeof certs)[number]['projects']
 >;
 
-const projectMap = certMap.reduce((acc, curr) => {
+export type LegacyCertsToProjects = Record<
+  (typeof legacyCerts)[number]['title'],
+  (typeof legacyCerts)[number]['projects']
+>;
+
+export type UpcomingCertsToProjects = Record<
+  (typeof upcomingCerts)[number]['title'],
+  (typeof upcomingCerts)[number]['projects']
+>;
+
+const certsToProjects = certs.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-}, {} as ProjectMap);
+}, {} as CertsToProjects);
 
-export type LegacyProjectMap = Record<
-  (typeof legacyCertMap)[number]['title'],
-  (typeof legacyCertMap)[number]['projects']
->;
-
-const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
+const legacyCertsToProjects = legacyCerts.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-}, {} as LegacyProjectMap);
+}, {} as LegacyCertsToProjects);
 
-const fullProjectMap = {
-  ...legacyProjectMap,
-  ...projectMap
+// TODO: use this (probably in liveCertsToProjects)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+}, {} as UpcomingCertsToProjects);
+
+const liveCertsToProjects = {
+  ...legacyCertsToProjects,
+  ...certsToProjects
 };
 
+const certTitles = certs.map(({ title }) => title);
+const legacyCertTitles = legacyCerts.map(({ title }) => title);
+
+export type CertTitle =
+  | (typeof certTitles)[number]
+  | (typeof legacyCertTitles)[number]
+  | 'Legacy Full Stack';
+
 export {
-  certMapWithoutFullStack,
-  fullCertMap,
-  fullProjectMap,
-  legacyProjectMap,
-  projectMap
+  certTitles,
+  legacyCertTitles,
+  certsWithoutFullStack,
+  liveCerts,
+  liveCertsToProjects
 };
