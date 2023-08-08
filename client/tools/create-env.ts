@@ -2,10 +2,10 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs, Languages } from '../../../config/i18n';
-import env from '../../../config/read-env';
+import { availableLangs, Languages } from '../../config/i18n';
+import env from './read-env';
 
-const globalConfigPath = path.resolve(__dirname, '../../../config');
+const globalConfigPath = path.resolve(__dirname, '../../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
 

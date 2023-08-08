@@ -5,6 +5,12 @@ import { isValidUsername } from '../../../utils/validate';
 import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
 
+/**
+ * Validate an image url.
+ *
+ * @param picture The url to check.
+ * @returns Whether the url is a picture with a valid protocol.
+ */
 export const isPictureWithProtocol = (picture?: string): boolean => {
   if (!picture) return false;
   try {
@@ -15,6 +21,13 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+/**
+ * Plugin for all endpoints related to user settings.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
+ */
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,

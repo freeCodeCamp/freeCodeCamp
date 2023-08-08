@@ -71,6 +71,12 @@ export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
+export const submitChallengeComplete = createAction(
+  actionTypes.submitChallengeComplete
+);
+export const submitChallengeError = createAction(
+  actionTypes.submitChallengeError
+);
 export const resetAttempts = createAction(actionTypes.resetAttempts);
 
 export const setEditorFocusability = createAction(

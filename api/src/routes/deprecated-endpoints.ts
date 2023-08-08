@@ -10,6 +10,18 @@ export const endpoints: Endpoints = [
   ['/account', 'GET']
 ];
 
+/**
+ * Plugin for the deprecated endpoints. Instantiates a Fastify route for each
+ * endpoint, returning a 410 status code and a message indicating that the user
+ * should reload the app.
+ *
+ * These endpoints remain active until we can confirm that no requests are being
+ * made to them.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
+ */
 export const deprecatedEndpoints: FastifyPluginCallbackTypebox = (
   fastify,
   _options,

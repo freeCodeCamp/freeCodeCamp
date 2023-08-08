@@ -16,10 +16,7 @@ export default function KeyboardShortcutsSettings({
   const { t } = useTranslation();
 
   return (
-    <form
-      onSubmit={(e: React.FormEvent) => e.preventDefault()}
-      data-testid='fcc-enable-shortcuts-setting'
-    >
+    <>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
         flag={keyboardShortcuts}
@@ -31,7 +28,7 @@ export default function KeyboardShortcutsSettings({
         }}
       />
       <Spacer size='medium'></Spacer>
-    </form>
+    </>
   );
 }
 

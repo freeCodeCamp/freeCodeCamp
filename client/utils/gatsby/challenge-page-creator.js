@@ -1,5 +1,5 @@
 const path = require('path');
-const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
+const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes

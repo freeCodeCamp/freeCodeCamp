@@ -82,6 +82,8 @@
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/preset-env": "7.18.0",
     "@babel/register": "7.17.7",
+    "joi": "17.9.2",
+    "joi-objectid": "3.0.1",
     "loopback-component-explorer": "6.4.0",
     "nodemon": "2.0.16",
     "smee-client": "1.2.3"

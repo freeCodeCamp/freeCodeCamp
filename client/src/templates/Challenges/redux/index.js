@@ -52,7 +52,8 @@ const initialState = {
   projectFormValues: {},
   successMessage: 'Happy Coding!',
   isAdvancing: false,
-  chapterSlug: ''
+  chapterSlug: '',
+  isSubmitting: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -64,6 +65,18 @@ export const sagas = [
 
 export const reducer = handleActions(
   {
+    [actionTypes.submitChallenge]: state => ({
+      ...state,
+      isSubmitting: true
+    }),
+    [actionTypes.submitChallengeComplete]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
+    [actionTypes.submitChallengeError]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload,
