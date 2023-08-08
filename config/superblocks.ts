@@ -32,13 +32,13 @@ export enum SuperBlocks {
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
  */
 export enum SuperBlockStages {
-  FrontEnd = 'Front End Development',
-  Backend = 'Back End Development',
-  Python = 'Python & AI',
-  Extra = 'Extra',
-  Legacy = 'Legacy',
-  New = 'New',
-  Upcoming = 'Upcoming'
+  FrontEnd,
+  Backend,
+  Python,
+  Extra,
+  Legacy,
+  New,
+  Upcoming
 }
 
 export type SuperBlockOrder = {

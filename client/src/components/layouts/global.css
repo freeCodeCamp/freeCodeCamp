@@ -222,8 +222,7 @@ button,
 input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
-  border-width: 3px;
-  border-color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
   color: var(--secondary-color);
   border-radius: 0;
   text-decoration: none;

@@ -39,7 +39,7 @@ export default function SoundSettings({
   }
 
   return (
-    <form onSubmit={(e: React.FormEvent) => e.preventDefault()}>
+    <>
       <ToggleButtonSetting
         action={t('settings.labels.sound-mode')}
         explain={t('settings.sound-mode')}
@@ -65,7 +65,7 @@ export default function SoundSettings({
         onInput={handleVolumeChange}
       />
       <Spacer size='medium'></Spacer>
-    </form>
+    </>
   );
 }
 

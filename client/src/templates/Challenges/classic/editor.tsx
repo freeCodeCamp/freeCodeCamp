@@ -149,7 +149,7 @@ const mapStateToProps = createSelector(
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
-    { theme = Themes.Default }: { theme: Themes },
+    { theme }: { theme: Themes },
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
@@ -1234,13 +1234,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { isSignedIn, theme } = props;
+  const { theme } = props;
+
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
-  const isDarkTheme =
-    theme === Themes.Night || (preferDarkScheme && !isSignedIn);
-  const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme =
+    theme === Themes.Night
+      ? 'vs-dark-custom'
+      : theme === Themes.Default
+      ? 'vs-custom'
+      : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>

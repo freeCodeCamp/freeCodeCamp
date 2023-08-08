@@ -69,6 +69,7 @@ let blocklist = [
   'donate',
   'email-signin',
   'events',
+  'exam',
   'explorer',
   'external',
   'field-guide',

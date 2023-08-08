@@ -1,4 +1,4 @@
-import { createTypes } from '../../../utils/create-types';
+import { createAsyncTypes, createTypes } from '../../../utils/create-types';
 
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
@@ -43,10 +43,10 @@ export const actionTypes = createTypes(
     'executeChallenge',
     'resetChallenge',
     'stopResetting',
-    'submitChallenge',
     'resetAttempts',
     'setEditorFocusability',
-    'toggleVisibleEditor'
+    'toggleVisibleEditor',
+    ...createAsyncTypes('submitChallenge')
   ],
   ns
 );

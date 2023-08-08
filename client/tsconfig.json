@@ -15,5 +15,18 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["i18n/**/*", "plugins/**/*", "src/**/*", "utils/**/*"]
+  "include": [
+    "i18n/**/*",
+    "plugins/**/*",
+    "src/**/*",
+    "utils/**/*",
+    "tools/**/*"
+  ], // since ts-node compiles ts on the fly and then uses node, it needs to
+  // compile the scripts to commonjs (or node will complain about the requires)
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    },
+    "transpileOnly": true
+  }
 }

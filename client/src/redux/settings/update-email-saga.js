@@ -3,7 +3,7 @@ import isEmail from 'validator/lib/isEmail';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { putUserUpdateEmail } from '../../utils/ajax';
-import reallyWeirdErrorMessage from '../../utils/really-weird-error-message';
+import { reallyWeirdErrorMessage } from '../../utils/error-messages';
 import { updateMyEmailComplete, updateMyEmailError } from './actions';
 
 function* updateMyEmailSaga({ payload: email = '' }) {
