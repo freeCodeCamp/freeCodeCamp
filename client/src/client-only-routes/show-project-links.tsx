@@ -7,7 +7,10 @@ import { connect } from 'react-redux';
 import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
-import { liveCertsToProjects } from '../../config/cert-and-project-map';
+import {
+  liveCertsToProjects,
+  type CertTitle
+} from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
@@ -88,9 +91,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const renderProjectsFor = (
-    certName: keyof typeof liveCertsToProjects | 'Legacy Full Stack'
-  ) => {
+  const renderProjectsFor = (certName: CertTitle) => {
     if (certName === 'Legacy Full Stack') {
       const certs = [
         { title: 'Responsive Web Design' },
@@ -147,11 +148,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       }
     : null;
 
-  const isCertName = (
-    maybeCertName: string
-  ): maybeCertName is
-    | keyof typeof liveCertsToProjects
-    | 'Legacy Full Stack' => {
+  const isCertName = (maybeCertName: string): maybeCertName is CertTitle => {
     if (maybeCertName === 'Legacy Full Stack') return true;
     return maybeCertName in liveCertsToProjects;
   };

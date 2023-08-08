@@ -850,6 +850,11 @@ const liveCertsToProjects = {
 const certTitles = certs.map(({ title }) => title);
 const legacyCertTitles = legacyCerts.map(({ title }) => title);
 
+export type CertTitle =
+  | (typeof certTitles)[number]
+  | (typeof legacyCertTitles)[number]
+  | 'Legacy Full Stack';
+
 export {
   certTitles,
   legacyCertTitles,
