@@ -274,33 +274,42 @@ mongod
 pnpm run seed
 ```
 
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+
+```console
+pnpm run seed:certified-user
+```
+
+> [!WARNING] Running `pnpm run seed:certified-user` will log you out. You will have to clear your browser cookies and sign in again.
+
 #### Крок 4: запустіть клієнтську програму freeCodeCamp та сервер API
 
-Тепер ви можете запустити сервер API та клієнтську програму.
+You can now start up the API server and the client applications.
 
 ```console
 pnpm run develop
 ```
 
-Ця команда запустить всі служби, включно з сервером API та клієнтською програмою, з якими ви можете працювати.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-Після цього відкрийте веббраузер та відвідайте <http://localhost:8000>. Якщо застосунок завантажується, увійдіть в систему. Вітання — все готово! Тепер ви маєте копію повної навчальної платформи freeCodeCamp на своїй локальній машині.
+Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-Сервер API обслуговує кінцеві точки на `http://localhost:3000`. Gatsby обслуговує клієнтську програму на `http://localhost:8000`.
+The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
 
-Якщо ви увійшли в систему, відвідайте <http://localhost:3000/explorer> і побачите доступні API.
+While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-> [!WARNING] Якщо очистити cookies чи запустити `pnpm run seed:certified-user`, ви вийдете з системи та вам доведеться увійти знову.
+> [!WARNING] Clearing your cookies or running `pnpm run seed:certified-user` will log you out, and you will have to sign in again.
 
-Якщо у вас виникли проблеми, див. розділ з [розв’язання проблем розробки](troubleshooting-development-issues.md).
+If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
 
 ## Коротко про команди
 
-Короткий довідник команд, які знадобляться при локальній роботі.
+A quick reference to the commands that you will need when working locally.
 
-| команда            | опис                                                                 |
-| ------------------ | -------------------------------------------------------------------- |
-| `pnpm install`     | Встановлює/перевстановлює всі залежності та запускає різні служби.   |
-| `pnpm run seed`    | Створює авторизованих тестових користувачів і розміщує їх у MongoDB. |
-| `pnpm run develop` | Запускає сервер API та клієнтські програми freeCodeCamp.             |
-| `pnpm run clean`   | Видаляє всі залежності та очищує кеш.                                |
+| команда                        | опис                                                                                              |
+| ------------------------------ | ------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Встановлює/перевстановлює всі залежності та запускає різні служби.                                |
+| `pnpm run seed`                | Створює авторизованих тестових користувачів і розміщує їх у MongoDB.                              |
+| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB. |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                       |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                 |
