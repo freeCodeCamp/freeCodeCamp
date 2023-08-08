@@ -1,6 +1,6 @@
-import { Container } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@freecodecamp/ui';
 import { AsSeenInText } from '../../../assets/images/components';
 
 const AsSeenIn = (): JSX.Element => {

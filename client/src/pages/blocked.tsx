@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import Helmet from 'react-helmet';
 
+import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 
 function BlockedPage(): JSX.Element {

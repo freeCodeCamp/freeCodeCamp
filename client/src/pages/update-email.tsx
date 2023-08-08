@@ -6,7 +6,6 @@ import {
   Col,
   Button
 } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
 import React, { useState } from 'react';
@@ -20,6 +19,7 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
 
+import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux/selectors';

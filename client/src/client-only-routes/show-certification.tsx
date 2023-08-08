@@ -1,5 +1,4 @@
 import { Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -8,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import envData from '../../../config/env.json';
 import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';

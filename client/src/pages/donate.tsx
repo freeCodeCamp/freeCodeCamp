@@ -1,5 +1,4 @@
 import { Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -9,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,

@@ -1,5 +1,4 @@
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -11,6 +10,7 @@ import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';

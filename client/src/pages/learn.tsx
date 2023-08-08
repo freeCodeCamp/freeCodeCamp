@@ -1,6 +1,5 @@
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import { Container } from '@freecodecamp/ui';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators, Dispatch } from 'redux';
 
+import { Container } from '@freecodecamp/ui';
 import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';

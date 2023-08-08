@@ -1,10 +1,10 @@
 import { ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import { Link, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
+import { Container } from '@freecodecamp/ui';
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';

@@ -1,5 +1,4 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { Container } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { clientLocale } from '../../../../../config/env.json';
@@ -12,6 +11,7 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
+import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
