@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
-import { liveCertsToProjects } from '../resources/cert-and-project-map';
+import { liveCertsToProjects } from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';

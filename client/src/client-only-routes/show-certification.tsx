@@ -27,7 +27,7 @@ import {
   usernameSelector
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
-import { liveCerts } from '../resources/cert-and-project-map';
+import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
   reallyWeirdErrorMessage,

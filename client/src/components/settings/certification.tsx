@@ -17,7 +17,7 @@ import {
   liveCertsToProjects,
   type CertsToProjects,
   type LegacyCertsToProjects
-} from '../../resources/cert-and-project-map';
+} from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';

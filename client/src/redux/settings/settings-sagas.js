@@ -14,7 +14,7 @@ import {
   certTypes
 } from '../../../../config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
-import { liveCerts } from '../../resources/cert-and-project-map';
+import { liveCerts } from '../../../config/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,

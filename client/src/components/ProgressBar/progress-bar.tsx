@@ -9,7 +9,7 @@ import {
   completedChallengesInBlockSelector,
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
-import { certsWithoutFullStack } from '../../resources/cert-and-project-map';
+import { certsWithoutFullStack } from '../../../config/cert-and-project-map';
 import ProgressBarInner from './progress-bar-inner';
 
 const mapStateToProps = createSelector(

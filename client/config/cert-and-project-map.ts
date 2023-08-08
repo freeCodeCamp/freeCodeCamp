@@ -1,5 +1,5 @@
-import { Certification } from '../../../config/certification-settings';
-import config from '../../../config/env.json';
+import { Certification } from '../../config/certification-settings';
+import config from '../../config/env.json';
 
 const { showUpcomingChanges } = config;
 

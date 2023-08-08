@@ -19,7 +19,7 @@ import {
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings/actions';
-import { liveCerts } from '../../../resources/cert-and-project-map';
+import { liveCerts } from '../../../../config/cert-and-project-map';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
