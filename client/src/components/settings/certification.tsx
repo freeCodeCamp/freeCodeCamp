@@ -12,8 +12,8 @@ import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
-  certsToProjects,
-  legacyCertsToProjects,
+  certTitles,
+  legacyCertTitles,
   liveCertsToProjects,
   type CertsToProjects,
   type LegacyCertsToProjects
@@ -43,14 +43,6 @@ const mapDispatchToProps = {
   openModal
 };
 
-// Safety: certToProjects definitely has certToProjects keys, and we are only
-// interested in these keys
-const certTitles = Object.keys(certsToProjects) as Array<keyof CertsToProjects>;
-// Safety: legacyCertsToProjects definitely has legacyCertsToProjects keys, and
-// we are only interested in these keys
-const legacyCertTitles = Object.keys(legacyCertsToProjects) as Array<
-  keyof LegacyCertsToProjects
->;
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,

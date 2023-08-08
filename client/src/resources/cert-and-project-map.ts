@@ -847,10 +847,13 @@ const liveCertsToProjects = {
   ...certsToProjects
 };
 
+const certTitles = certs.map(({ title }) => title);
+const legacyCertTitles = legacyCerts.map(({ title }) => title);
+
 export {
+  certTitles,
+  legacyCertTitles,
   certsWithoutFullStack,
   liveCerts,
-  liveCertsToProjects,
-  legacyCertsToProjects,
-  certsToProjects
+  liveCertsToProjects
 };
