@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useRef } from 'react';
 import { Menu } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
@@ -75,16 +75,14 @@ export const MenuItems = React.forwardRef<HTMLDivElement, DropDownButtonProps>(
 
 const DropDownButton = ({
   children,
-  className
-}: {
-  children: ReactNode;
-  className?: string;
-}): JSX.Element => {
+  className,
+  ...rest
+}: DropDownButtonProps): JSX.Element => {
   const { dropup, menuButtonRef } = useContext(DropDownContext);
 
   const classes = [className, toggleClassNames].join(' ');
   return (
-    <Menu.Button ref={menuButtonRef} className={classes}>
+    <Menu.Button ref={menuButtonRef} className={classes} {...rest}>
       {children}
       <FontAwesomeIcon
         icon={dropup ? faCaretUp : faCaretDown}
