@@ -31,6 +31,8 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
 export const isFinishExamModalOpenSelector = state =>
   state[ns].modal.finishExam;
+export const isExamResultsModalOpenSelector = state =>
+  state[ns].modal.examResults;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
 export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
