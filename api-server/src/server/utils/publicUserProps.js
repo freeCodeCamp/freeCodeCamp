@@ -26,6 +26,7 @@ export const publicUserProps = [
   'isDataAnalysisPyCertV7',
   'isMachineLearningPyCertV7',
   'isCollegeAlgebraPyCertV8',
+  'isFoundationalCSharpCertV8',
   'linkedin',
   'location',
   'name',

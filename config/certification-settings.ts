@@ -24,6 +24,7 @@ export enum Certification {
   InfoSec = 'information-security-v7',
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
+  // Upcoming certifications
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   UpcomingPython = 'upcoming-python-v8',
   // Legacy certifications
@@ -33,6 +34,31 @@ export enum Certification {
   LegacyInfoSecQa = 'information-security-and-quality-assurance',
   LegacyFullStack = 'full-stack'
 }
+
+export const currentCertifications = [
+  Certification.RespWebDesign,
+  Certification.JsAlgoDataStruct,
+  Certification.FrontEndDevLibs,
+  Certification.DataVis,
+  Certification.RelationalDb,
+  Certification.BackEndDevApis,
+  Certification.QualityAssurance,
+  Certification.SciCompPy,
+  Certification.DataAnalysisPy,
+  Certification.InfoSec,
+  Certification.MachineLearningPy,
+  Certification.CollegeAlgebraPy,
+  Certification.LegacyFrontEnd,
+  Certification.LegacyBackEnd,
+  Certification.LegacyDataVis,
+  Certification.LegacyInfoSecQa,
+  Certification.LegacyFullStack
+];
+
+export const upcomingCertifications = [
+  Certification.UpcomingPython,
+  Certification.FoundationalCSharp
+];
 
 export const certTypes = {
   frontEnd: 'isFrontEndCert',
@@ -52,7 +78,7 @@ export const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharp: 'isFoundationalCSharp'
+  foundationalCSharp: 'isFoundationalCSharpCertV8'
 } as const;
 
 export const certIds = {
