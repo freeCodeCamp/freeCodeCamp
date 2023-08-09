@@ -7,26 +7,22 @@ import { useTranslation } from 'react-i18next';
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
-import {
-  MarkdownRemark,
-  AllChallengeNode,
-  ChallengeNode
-} from '../../redux/prop-types';
+import { MarkdownRemark, type AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
 
-function renderMenuItems({
-  edges = []
-}: {
-  edges?: Array<{ node: ChallengeNode }>;
-}) {
-  return edges
-    .map(({ node: { challenge } }) => challenge)
-    .map(({ title, fields: { slug } }) => (
-      <Link key={'intro-' + slug} to={slug}>
-        <ListGroupItem>{title}</ListGroupItem>
-      </Link>
-    ));
+function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
+  return (
+    <>
+      {challengeNodes.edges
+        .map(({ node: { challenge } }) => challenge)
+        .map(({ title, fields: { slug } }) => (
+          <Link key={'intro-' + slug} to={slug}>
+            <ListGroupItem>{title}</ListGroupItem>
+          </Link>
+        ))}
+    </>
+  );
 }
 
 function IntroductionPage({
@@ -55,6 +51,7 @@ function IntroductionPage({
         <title>{blockTitle}</title>
       </Helmet>
       <Grid className='intro-layout-container'>
+        TEST THE PAGE
         <FullWidthRow>
           <div
             className='intro-layout'
@@ -78,7 +75,9 @@ function IntroductionPage({
         <FullWidthRow>
           <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
           <ListGroup className='intro-toc'>
-            {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
+            {allChallengeNode ? (
+              <Challenges challengeNodes={allChallengeNode} />
+            ) : null}
           </ListGroup>
         </FullWidthRow>
       </Grid>
