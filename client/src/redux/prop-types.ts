@@ -252,7 +252,6 @@ export type ClaimedCertifications = {
   isDataVisCert: boolean;
   isEmailVerified: boolean;
   isCollegeAlgebraPyCertV8: boolean;
-  isFoundationalCSharpCert: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;

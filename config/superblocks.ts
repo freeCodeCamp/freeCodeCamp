@@ -64,8 +64,7 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp
+    SuperBlocks.CollegeAlgebraPy
   ],
   [SuperBlockStages.Extra]: [
     SuperBlocks.CodingInterviewPrep,
@@ -76,6 +75,7 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.ExampleCertification,
     SuperBlocks.UpcomingPython
   ]

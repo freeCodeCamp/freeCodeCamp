@@ -117,7 +117,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isMachineLearningPyCertV7,
       isRelationalDatabaseCertV8,
       isCollegeAlgebraPyCertV8,
-      isFoundationalCSharpCert,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -213,7 +212,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCert={isFoundationalCSharpCert}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}

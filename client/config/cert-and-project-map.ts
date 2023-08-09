@@ -741,9 +741,12 @@ const certs = [
         certSlug: Certification.CollegeAlgebraPy
       }
     ]
-  },
+  }
+] as const;
+
+const upcomingCerts = [
   {
-    id: '647f7da207d29547b3bee1ba',
+    id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
     certSlug: Certification.FoundationalCSharp,
     projects: [
@@ -754,10 +757,7 @@ const certs = [
         certSlug: Certification.FoundationalCSharp
       }
     ]
-  }
-] as const;
-
-const upcomingCerts = [
+  },
   {
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',

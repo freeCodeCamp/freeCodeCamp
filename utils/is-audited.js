@@ -8,7 +8,6 @@ function isAuditedCert(
   if (!language || !superblock)
     throw Error('Both arguments must be provided for auditing');
 
-  if (language === 'english') return true;
   const auditedSuperBlocks = getAuditedSuperBlocks({
     showNewCurriculum,
     showUpcomingChanges,
