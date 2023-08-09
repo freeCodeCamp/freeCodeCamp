@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
-import { MarkdownRemark, type AllChallengeNode } from '../../redux/prop-types';
+import type { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
 
@@ -51,7 +51,6 @@ function IntroductionPage({
         <title>{blockTitle}</title>
       </Helmet>
       <Grid className='intro-layout-container'>
-        TEST THE PAGE
         <FullWidthRow>
           <div
             className='intro-layout'
