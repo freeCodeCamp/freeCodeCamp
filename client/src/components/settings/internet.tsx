@@ -1,15 +1,16 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  HelpBlock,
-  FormControl,
-  FormGroup,
-  ControlLabel
-} from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+import {
+  FormControl,
+  FormGroup,
+  ControlLabel,
+  HelpBlock,
+  type FormGroupProps
+} from '@freecodecamp/ui';
 
 import { maybeUrlRE } from '../../utils';
 
@@ -33,6 +34,11 @@ type InternetState = {
   formValues: Socials;
   originalValues: Socials;
 };
+
+interface URLValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
 
 function Info({ message }: { message: string }) {
   return message ? <HelpBlock>{message}</HelpBlock> : null;
@@ -78,7 +84,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   }
 
-  getValidationStateFor(maybeURl = '') {
+  getValidationStateFor(maybeURl = ''): URLValidation {
     const { t } = this.props;
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
       return {
@@ -152,7 +158,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderCheck = (url: string, validation: string | null) =>
+  renderCheck = (url: string, validation: FormGroupProps['validationState']) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
         <span>

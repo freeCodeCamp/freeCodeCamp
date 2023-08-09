@@ -1,20 +1,19 @@
-import {
-  Panel,
-  FormControl,
-  FormGroup,
-  ControlLabel,
-  Button
-} from '@freecodecamp/react-bootstrap';
+import { Panel, Button } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Col, Row } from '@freecodecamp/ui';
+import {
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Col,
+  Row
+} from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
-
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
 import {
@@ -126,6 +125,7 @@ function ShowUser({
             <FormGroup controlId='report-user-textarea'>
               <ControlLabel>{t('report.what')}</ControlLabel>
               <FormControl
+                data-cy='report-user'
                 componentClass='textarea'
                 onChange={handleChange}
                 placeholder={t('report.details')}

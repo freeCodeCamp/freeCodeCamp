@@ -3,9 +3,11 @@ import { FormContext } from '../form-group/form-group';
 
 import { ControlLabelProps } from './types';
 
-const hasSuccess = 'text-foreground-info';
-const hasWarning = 'text-foreground-warning';
-const hasError = 'text-foreground-danger';
+const validationLabel = {
+  success: 'text-background-info',
+  warning: 'text-background-warning',
+  error: 'text-background-danger'
+};
 
 export const ControlLabel = ({
   className,
@@ -15,14 +17,9 @@ export const ControlLabel = ({
 }: ControlLabelProps): JSX.Element => {
   const { controlId, validationState } = useContext(FormContext);
 
-  const labelStyle =
-    validationState === 'success'
-      ? hasSuccess
-      : validationState === 'error'
-      ? hasError
-      : validationState === 'warning'
-      ? hasWarning
-      : undefined;
+  const labelStyle = validationState
+    ? validationLabel[validationState]
+    : undefined;
   const screenOnlyClass = srOnly ? 'sr-only' : undefined;
   const defaultClasses = [labelStyle, screenOnlyClass, className].join(' ');
 
