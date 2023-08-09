@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { omit } from 'lodash';
 import { challengeTypes } from '../../../config/challenge-types';
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
@@ -545,7 +546,7 @@ describe('challengeRoutes', () => {
             setCookies
           }).send(HtmlChallengeBody);
 
-          const user = await fastifyTestInstance.prisma.user.findFirst({
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
@@ -558,7 +559,7 @@ describe('challengeRoutes', () => {
             ]
           });
 
-          const completedDate = user?.completedChallenges[0]?.completedDate;
+          const completedDate = user.completedChallenges[0]?.completedDate;
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
@@ -580,29 +581,24 @@ describe('challengeRoutes', () => {
             setCookies
           }).send(JsProjectBody);
 
-          const user = await fastifyTestInstance.prisma.user.findFirst({
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          if (!JsProjectBody.files[0]) {
-            throw new Error(
-              'JsProjectBody.files[0] is undefined but it definitely should not be.'
-            );
-          }
-          const { history: _history, ...files } = JsProjectBody.files[0];
+          const file = omit(JsProjectBody.files[0], 'history');
 
           expect(user).toMatchObject({
             completedChallenges: [
               {
                 id: JsProjectId,
                 challengeType: JsProjectBody.challengeType,
-                files: [files],
+                files: [file],
                 completedDate: expect.any(Number)
               }
             ]
           });
 
-          const completedDate = user?.completedChallenges[0]?.completedDate;
+          const completedDate = user.completedChallenges[0]?.completedDate;
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
@@ -623,7 +619,7 @@ describe('challengeRoutes', () => {
             setCookies
           }).send(multiFileCertProjectBody);
 
-          const user = await fastifyTestInstance.prisma.user.findFirst({
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
@@ -651,7 +647,7 @@ describe('challengeRoutes', () => {
             ]
           });
 
-          const completedDate = user?.completedChallenges[0]?.completedDate;
+          const completedDate = user.completedChallenges[0]?.completedDate;
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
@@ -689,16 +685,16 @@ describe('challengeRoutes', () => {
             setCookies
           }).send(updatedMultiFileCertProjectBody);
 
-          const user = await fastifyTestInstance.prisma.user.findFirst({
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const expectedProgressTimestamps = user?.completedChallenges.map(
+          const expectedProgressTimestamps = user.completedChallenges.map(
             challenge => challenge.completedDate
           );
 
-          const testFiles = updatedMultiFileCertProjectBody.files.map(
-            ({ history: _history, ...rest }) => rest
+          const testFiles = updatedMultiFileCertProjectBody.files.map(file =>
+            omit(file, 'history')
           );
 
           expect(user).toMatchObject({
