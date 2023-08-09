@@ -27,7 +27,8 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
-const foundationalCSharpBase = '/learn/foundational-c-sharp-with-microsoft';
+const foundationalCSharpBase =
+  '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const upcomingPythonBase = '/learn/upcoming-python';
 const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
@@ -801,8 +802,9 @@ function getJavaScriptAlgoPath(project: string) {
 }
 
 // "Standard" certs are those whose prerequisites are not other certs. Currently
-// only the legacy full stack cert is non-standard.
-const standardCerts = [...legacyCerts, ...certs] as const;
+// only the legacy full stack cert is non-standard. Upcoming certs are included,
+// but they are not displayed unless showUpcomingChanges is true.
+const standardCerts = [...legacyCerts, ...certs, ...upcomingCerts] as const;
 
 // "Live" certs are those that are currently available to students. Currently
 // this only excludes the upcoming certs.
@@ -847,21 +849,25 @@ const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
 }, {} as UpcomingCertsToProjects);
 
 const standardCertsToProjects = {
+  ...upcomingCertsToProjects,
   ...legacyCertsToProjects,
   ...certsToProjects
 };
 
 const certTitles = certs.map(({ title }) => title);
 const legacyCertTitles = legacyCerts.map(({ title }) => title);
+const upcomingCertTitles = upcomingCerts.map(({ title }) => title);
 
 export type CertTitle =
   | (typeof certTitles)[number]
   | (typeof legacyCertTitles)[number]
+  | (typeof upcomingCertTitles)[number]
   | 'Legacy Full Stack';
 
 export {
   certTitles,
   legacyCertTitles,
+  upcomingCertTitles,
   standardCerts,
   liveCerts,
   standardCertsToProjects

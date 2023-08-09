@@ -14,6 +14,7 @@ import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   certTitles,
   legacyCertTitles,
+  upcomingCertTitles,
   standardCertsToProjects,
   type CertTitle
 } from '../../../config/cert-and-project-map';
@@ -25,8 +26,8 @@ import {
   Certification,
   certSlugTypeMap
 } from '../../../../config/certification-settings';
+import env from '../../../../config/env.json';
 
-import './certification.css';
 import {
   ClaimedCertifications,
   CompletedChallenge,
@@ -35,6 +36,10 @@ import {
 import { createFlashMessage } from '../Flash/redux';
 import { verifyCert } from '../../redux/settings/actions';
 import SectionHeader from './section-header';
+
+import './certification.css';
+
+const { showUpcomingChanges } = env;
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
@@ -59,7 +64,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCertV8
 }: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -77,7 +83,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -98,7 +105,8 @@ const isCertMapSelector = createSelector(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -115,7 +123,12 @@ const isCertMapSelector = createSelector(
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
-    'Legacy Information Security and Quality Assurance': isInfosecQaCert
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert,
+    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
+    // TODO: remove Example Certification? Also, include Upcoming Python
+    // Certification.
+    'Example Certification': false,
+    'Upcoming Python Certification': false
   })
 );
 
@@ -400,6 +413,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
         {legacyCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
+        {showUpcomingChanges &&
+          upcomingCertTitles.map(title => (
+            <Certification key={title} certName={title} t={t} />
+          ))}
         <ProjectModal
           {...{
             projectTitle,
