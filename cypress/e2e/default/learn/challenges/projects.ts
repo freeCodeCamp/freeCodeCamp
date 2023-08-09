@@ -89,6 +89,7 @@ describe('project submission', () => {
       // cy.url().should('not.have.string', url);
     });
   });
+
   it(
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
