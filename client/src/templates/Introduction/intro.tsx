@@ -13,15 +13,15 @@ import './intro.css';
 
 function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
   return (
-    <>
+    <ListGroup className='intro-toc'>
       {challengeNodes.edges
         .map(({ node: { challenge } }) => challenge)
         .map(({ title, fields: { slug } }) => (
-          <Link key={'intro-' + slug} to={slug}>
-            <ListGroupItem>{title}</ListGroupItem>
-          </Link>
+          <ListGroupItem key={'intro-' + slug}>
+            <Link to={slug}>{title}</Link>
+          </ListGroupItem>
         ))}
-    </>
+    </ListGroup>
   );
 }
 
@@ -73,11 +73,9 @@ function IntroductionPage({
         </FullWidthRow>
         <FullWidthRow>
           <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
-          <ListGroup className='intro-toc'>
-            {allChallengeNode ? (
-              <Challenges challengeNodes={allChallengeNode} />
-            ) : null}
-          </ListGroup>
+          {allChallengeNode ? (
+            <Challenges challengeNodes={allChallengeNode} />
+          ) : null}
         </FullWidthRow>
       </Grid>
     </LearnLayout>
