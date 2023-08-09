@@ -352,6 +352,12 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           subject: subject,
           text: `${intro}\n\n${reportDetails}\n\n\n${reportedBy}\n\n${signature}`
         });
+
+        return {
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: user.email }
+        } as const;
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
