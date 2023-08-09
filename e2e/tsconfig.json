@@ -1,1 +1,10 @@
-{}
+{
+  "compilerOptions": {
+    "baseUrl": ".", // This must be specified if "paths" is.,
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "../tests-out"
+  }
+}
