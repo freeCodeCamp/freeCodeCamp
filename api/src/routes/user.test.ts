@@ -5,6 +5,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import nodemailer from 'nodemailer';
 
 import { defaultUser } from '../utils/default-user';
 import {
@@ -15,6 +16,14 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+import { generateReportEmail } from '../utils/email-templates';
+
+// Mock sending emails
+jest.mock('nodemailer');
+const sendEmailMock = jest.fn();
+nodemailer.createTransport = jest.fn().mockReturnValue({
+  sendMail: sendEmailMock
+});
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -308,6 +317,7 @@ describe('userRoutes', () => {
         expect(user).toMatchObject(baseProgressData);
       });
     });
+
     describe('/user/user-token', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.userToken.create({
@@ -521,6 +531,7 @@ describe('userRoutes', () => {
 
         expect(tokenData.id).toBe(userToken);
       });
+
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
         await fastifyTestInstance.prisma.user.deleteMany({
@@ -558,6 +569,109 @@ describe('userRoutes', () => {
         };
 
         expect(testuser).toStrictEqual(publicUser);
+      });
+    });
+
+    describe('/user/report-user', () => {
+      test('POST returns 400 for empty username', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: '',
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.provide-username'
+        });
+      });
+
+      test('POST returns 400 for empty report', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription: ''
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.provide-username'
+        });
+      });
+
+      test('POST sanitises report description', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription:
+            '<script>const breath = "loud"</script>Luke, I am your father'
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(sendEmailMock).toBeCalledTimes(1);
+        expect(sendEmailMock).toBeCalledWith({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: user?.email,
+          subject: "Abuse Report: Reporting darth-vader's profile",
+          text: generateReportEmail(
+            user,
+            'darth-vader',
+            'Luke, I am your father'
+          )
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: user?.email }
+        });
+      });
+
+      test('POST returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription: 'Luke, I am your father'
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(sendEmailMock).toBeCalledTimes(2);
+        expect(sendEmailMock).toBeCalledWith({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: user?.email,
+          subject: "Abuse Report: Reporting darth-vader's profile",
+          text: generateReportEmail(
+            user,
+            'darth-vader',
+            'Luke, I am your father'
+          )
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: user?.email }
+        });
       });
     });
   });
@@ -615,6 +729,17 @@ describe('userRoutes', () => {
 
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(401);
+      });
+    });
+
+    describe('/user/report-user', () => {
+      test('POST returns 401 status code with error message', async () => {
+        const response = await superRequest('/user/report-user', {
           method: 'POST',
           setCookies
         });
