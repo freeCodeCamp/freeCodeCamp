@@ -153,10 +153,5 @@
     "typescript": "4.9.5",
     "webpack-bundle-analyzer": "4.9.0",
     "yargs": "17.7.2"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "e2e"
-    ]
   }
 }
