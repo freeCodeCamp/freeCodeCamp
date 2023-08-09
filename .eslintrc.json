@@ -162,6 +162,9 @@
       }
     },
     {
+      "files": ["e2e/*.ts"]
+    },
+    {
       "files": ["web/**/*.tsx"],
       "extends": ["plugin:react/jsx-runtime"]
     },
