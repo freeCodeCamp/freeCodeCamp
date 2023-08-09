@@ -15,7 +15,11 @@ Instead of wrapping content with an opening and closing tag, it embeds an image 
 
 For example, using an absolute path you can display an image located on The Odin Project site:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/gORbExZ?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=gORbExZ&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_gORbExZ"></iframe>
+## --sandpack--
+
+ <img src="https://www.theodinproject.com/mstile-310x310.png">
+
+----
 
 To use images that you have on your own websites, you can use a relative path.
 

@@ -288,6 +288,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       notes: String
       url: String
       assignments: [String]
+      sandpack: [String]
       prerequisites: [PrerequisiteChallenge]
     }
     type FileContents {

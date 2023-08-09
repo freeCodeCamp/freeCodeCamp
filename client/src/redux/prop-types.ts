@@ -131,6 +131,7 @@ export type ChallengeNode = {
     order: number;
     question: Question;
     assignments: string[];
+    sandpack:   string[];
     required: Required[];
     solutions: {
       [T in FileKey]: FileKeyChallenge;

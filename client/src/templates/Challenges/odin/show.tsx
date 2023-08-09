@@ -1,5 +1,6 @@
 // Package Utilities
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Sandpack } from "@codesandbox/sandpack-react"
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -211,7 +212,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             videoLocaleIds,
             bilibiliIds,
             question: { text, answers, solution },
-            assignments
+            assignments,
+            sandpack
           }
         }
       },
@@ -264,6 +266,22 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <h2>{title}</h2>
+                { sandpack[0]  && ( <Sandpack
+                options={
+                  {
+                    visibleFiles: ['/index.html'],
+                    activeFile: "index.html",
+                  }
+                }
+                template='vanilla'
+                theme= 'dark'
+                files={
+                  {
+                    'index.html': sandpack[0],
+                    'index.js': ''
+                  }
+                }
+                />) }
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
                 <ObserveKeys>
@@ -406,6 +424,7 @@ export const query = graphql`
           solution
         }
         translationPending
+        sandpack
         assignments
       }
     }

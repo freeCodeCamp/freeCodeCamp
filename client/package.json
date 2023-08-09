@@ -44,6 +44,7 @@
     "@babel/preset-react": "7.22.5",
     "@babel/runtime": "^7.20.13",
     "@babel/standalone": "7.22.9",
+    "@codesandbox/sandpack-react": "^2.6.9",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/free-brands-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",

@@ -10,6 +10,7 @@ const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
 const addAssignment = require('./plugins/add-assignment');
+const addSandpack = require('./plugins/add-sandpack');
 const replaceImports = require('./plugins/replace-imports');
 const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
@@ -46,6 +47,7 @@ const processor = unified()
   .use(restoreDirectives)
   .use(addVideoQuestion)
   .use(addAssignment)
+  .use(addSandpack)
   .use(addTests)
   .use(addText, ['description', 'instructions', 'notes']);
 

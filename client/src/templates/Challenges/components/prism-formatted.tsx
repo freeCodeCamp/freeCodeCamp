@@ -21,6 +21,7 @@ function PrismFormatted({ className, text }: PrismFormattedProps): JSX.Element {
   return (
     <div
       className={className}
+      id='instructions'
       dangerouslySetInnerHTML={{ __html: text }}
       ref={instructionsRef}
     />
