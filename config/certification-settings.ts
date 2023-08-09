@@ -52,7 +52,7 @@ export const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharp: 'isFoundationalCSharp'
+  foundationalCSharp: 'isFoundationalCSharpCert'
 } as const;
 
 export const certIds = {

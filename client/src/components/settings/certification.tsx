@@ -62,7 +62,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCert
 }: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -80,7 +81,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCert
 });
 
 const isCertMapSelector = createSelector(
@@ -101,7 +103,8 @@ const isCertMapSelector = createSelector(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -115,6 +118,7 @@ const isCertMapSelector = createSelector(
     'Machine Learning with Python': isMachineLearningPyCertV7,
     'Relational Database': isRelationalDatabaseCertV8,
     'College Algebra with Python': isCollegeAlgebraPyCertV8,
+    'Foundational C# with Microsoft': isFoundationalCSharpCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
