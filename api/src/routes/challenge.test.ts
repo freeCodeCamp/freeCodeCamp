@@ -584,8 +584,10 @@ describe('challengeRoutes', () => {
             where: { email: 'foo@bar.com' }
           });
 
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const { history: _history, ...files } = JsProjectBody.files[0]!;
+          if (!JsProjectBody.files[0]) {
+            throw new Error('JsProjectBody.files[0] is undefined but it definitely should not be.')
+          }
+          const { history: _history, ...files } = JsProjectBody.files[0];
 
           expect(user).toMatchObject({
             completedChallenges: [
