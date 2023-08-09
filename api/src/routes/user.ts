@@ -17,6 +17,7 @@ import {
 } from '../utils/normalize';
 import { encodeUserToken } from '../utils/user-token';
 import { trimTags } from '../utils/validation';
+import { generateReportEmail } from '../utils/email-templates';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -324,11 +325,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
         if (!username || !report || report === '') {
           // NOTE: Do we want to log these instances?
-          // NOTE: The first two conditions don't matter as the schema
-          //       should prevent them from happening. But if the third
-          //       condition is true, then shouldn't the message be
-          //       'flash.provide-report'? This looks like a Post-MVP
-          //       change as that message isn't present in client.
           void reply.code(400);
           return {
             type: 'danger',
@@ -336,21 +332,12 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        const subject = `Abuse Report: Reporting ${username}'s profile`;
-        const intro = `Hello Team,\n\nThis is to report the profile of ${username}.`;
-        const reportDetails = `Report Details:\n\n${report}`;
-        const reporterUsername = `Username: ${user.username}`;
-        const reporterName = `Name: ${user.name ?? ''}`;
-        const reporterEmail = `Email: ${user.email}`;
-        const reportedBy = `Reported by:\n${reporterUsername}\n${reporterName}\n${reporterEmail}`;
-        const signature = `Thanks and regards,\n${user.name ?? ''}`;
-
         await fastify.sendEmail({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user.email,
-          subject: subject,
-          text: `${intro}\n\n${reportDetails}\n\n\n${reportedBy}\n\n${signature}`
+          subject: `Abuse Report: Reporting ${username}'s profile`,
+          text: generateReportEmail(user, username, report)
         });
 
         return {
