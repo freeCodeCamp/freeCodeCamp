@@ -55,25 +55,23 @@ const dropUpItems = dropDownItems + ' transform -translate-y-full top-0';
 const toggleClassNames =
   'cursor-pointer border-3 border-solid w-full block text-center touch-manipulation bg-background-quaternary text-foreground-secondary px-3 py-1.5 relative hover:bg-foreground-secondary hover:text-background-secondary btn-block border-foreground-secondary';
 
-export const MenuItems = React.forwardRef<
-  HTMLDivElement,
-  DropDownButtonProps
-  // { children: ReactNode; className?: string }
->(({ children, className }, ref): JSX.Element => {
-  const { dropup, menuButtonRef } = useContext(DropDownContext);
+export const MenuItems = React.forwardRef<HTMLDivElement, DropDownButtonProps>(
+  ({ children, className }, ref): JSX.Element => {
+    const { dropup, menuButtonRef } = useContext(DropDownContext);
 
-  const handleClick = () => {
-    menuButtonRef.current?.focus();
-  };
+    const handleClick = () => {
+      menuButtonRef.current?.focus();
+    };
 
-  const itemsClasses = dropup ? dropUpItems : dropDownItems;
-  const buttonClass: string = [className, itemsClasses].join(' ');
-  return (
-    <Menu.Items className={buttonClass} ref={ref} onClick={handleClick}>
-      {children}
-    </Menu.Items>
-  );
-});
+    const itemsClasses = dropup ? dropUpItems : dropDownItems;
+    const buttonClass: string = [className, itemsClasses].join(' ');
+    return (
+      <Menu.Items className={buttonClass} ref={ref} onClick={handleClick}>
+        {children}
+      </Menu.Items>
+    );
+  }
+);
 
 const DropDownButton = ({
   children,
