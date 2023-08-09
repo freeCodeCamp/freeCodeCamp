@@ -80,7 +80,10 @@
     "tweet": "Твітнути",
     "previous-question": "Попереднє запитання",
     "next-question": "Наступне запитання",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Завершити екзамен",
+    "finish": "Finish",
     "submit-exam-results": "Здати результати"
   },
   "landing": {
@@ -353,6 +356,7 @@
     "console-output": "// вивід консолі",
     "sign-in-save": "Увійдіть, щоб зберегти свій прогрес",
     "download-solution": "Завантажити моє рішення",
+    "download-results": "Download my results",
     "percent-complete": "виконано {{percent}}%",
     "project-complete": "Завершено {{completedChallengesInBlock}} із {{totalChallengesInBlock}} сертифікаційних проєктів",
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
@@ -403,9 +407,31 @@
     "if-getting-value": "Якщо ви отримуєте багато інформації завдяки freeCodeCamp, то зараз слушний час зробити внесок на підтримку нашої місії.",
     "building-a-university": "Ми розробляємо безоплатну університетську програму «Комп’ютерні науки»",
     "if-help-university": "Ми вже зробили багато роботи. Підтримайте довгий шлях нашої благодійної організації.",
-    "qualified-for-exam": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
-    "not-qualified-for-exam": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:",
-    "preview-external-window": "Попередній перегляд знаходиться у зовнішньому вікні."
+    "preview-external-window": "Попередній перегляд знаходиться у зовнішньому вікні.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "Підтримайте нашу організацію",
@@ -665,7 +691,8 @@
     "code-save-less": "Зачекайте! Ваш код не було збережено. Спробуйте ще раз через кілька секунд.",
     "challenge-save-too-big": "На жаль, ви не можете зберегти свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "challenge-submit-too-big": "На жаль, ви не можете надіслати свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
-    "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом."
+    "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

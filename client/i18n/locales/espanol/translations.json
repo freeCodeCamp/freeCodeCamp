@@ -80,7 +80,10 @@
     "tweet": "Twittear",
     "previous-question": "Pregunta anterior",
     "next-question": "Siguiente pregunta",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Finalizar el examen",
+    "finish": "Finish",
     "submit-exam-results": "Enviar mis resultados"
   },
   "landing": {
@@ -353,6 +356,7 @@
     "console-output": "// salida de consola",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descargar mi solución",
+    "download-results": "Download my results",
     "percent-complete": "{{percent}}% completo",
     "project-complete": "Completado {{completedChallengesInBlock}} de {{totalChallengesInBlock}} proyectos de certificación",
     "tried-rsa": "Si ya has probado el método <0>Leer-Buscar-Preguntar</0>, entonces puedes pedir ayuda en el foro de freeCodeCamp.",
@@ -403,9 +407,31 @@
     "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar con el fin de apoyar nuestra misión sin fines de lucro.",
     "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
     "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante.",
-    "qualified-for-exam": "Enhorabuena, has completado todos los requisitos para calificar para el examen.",
-    "not-qualified-for-exam": "No has cumplido los requisitos para ser elegible para el examen. Para calificar, por favor completa los siguientes desafíos:",
-    "preview-external-window": "Vista previa mostrada actualmente en ventana externa."
+    "preview-external-window": "Vista previa mostrada actualmente en ventana externa.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "Apoya nuestra caridad",
@@ -665,7 +691,8 @@
     "code-save-less": "¡Espera! Tu código no fue guardado. Intenta de nuevo más tarde.",
     "challenge-save-too-big": "Lo sentimos, no puedes guardar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita asistencia en https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Lo sentimos, no puedes enviar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita ayuda en https://forum.freecodecamp.org",
-    "invalid-update-flag": "Estás intentando acceder a recursos prohibidos. Por favor, solicita asistencia en https://forum.freecodecamp.org si es una solicitud válida."
+    "invalid-update-flag": "Estás intentando acceder a recursos prohibidos. Por favor, solicita asistencia en https://forum.freecodecamp.org si es una solicitud válida.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
