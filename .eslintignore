@@ -11,4 +11,3 @@ config/superblocks.js
 web/**
 docs/**/*.md
 tools/ui-components/dist/**
-playwright.config.ts
