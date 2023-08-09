@@ -80,7 +80,10 @@
     "tweet": "Tweet",
     "previous-question": "Swali lililotangulia",
     "next-question": "Swali linalofuata",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Maliza mtihani",
+    "finish": "Finish",
     "submit-exam-results": "Wasilisha matokeo yangu"
   },
   "landing": {
@@ -353,6 +356,7 @@
     "console-output": "// pato la console",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
     "download-solution": "Pakua suluhisho langu",
+    "download-results": "Download my results",
     "percent-complete": "Imekamilika {{percent}}%",
     "project-complete": "Imekamilisha miradi ya uthibitishaji ya {{completedChallengesInBlock}} kati ya {{totalChallengesInBlock}}}",
     "tried-rsa": "Ikiwa tayari umejaribu mbinu ya <0>Soma-Tafuta-Uliza</0>, basi unaweza kuomba usaidizi kwenye jukwaa la freeCodeCamp.",
@@ -403,9 +407,31 @@
     "if-getting-value": "Ikiwa unapata mengi kutoka kwa freeCodeCamp, sasa ni wakati mzuri wa kuchangia ili kusaidia kazi yetu ya kutoa msaada.",
     "building-a-university": "Tunaunda Programu ya Bila Malipo wa Shahada ya Chuo Kikuu ya Computer Science",
     "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele.",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "Unga mkono hisani yetu",
@@ -665,7 +691,8 @@
     "code-save-less": "Punguza mwendo! Msimbo wako haukuhifadhiwa. Jaribu tena baada ya sekunde chache.",
     "challenge-save-too-big": "Samahani, huwezi kuhifadhi msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Samahani, huwezi kuwasilisha msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
-    "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali."
+    "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
