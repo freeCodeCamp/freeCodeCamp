@@ -92,6 +92,7 @@
     "jquery": "3.7.0",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
+    "micromark": "4.0.0",
     "monaco-editor": "0.28.1",
     "nanoid": "3.3.6",
     "normalize-url": "4.5.1",

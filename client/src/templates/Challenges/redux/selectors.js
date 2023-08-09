@@ -28,6 +28,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
 export const isFinishExamModalOpenSelector = state =>
   state[ns].modal.finishExam;
 export const isProjectPreviewModalOpenSelector = state =>
@@ -46,7 +47,7 @@ export const chapterSlugSelector = state => state[ns].chapterSlug;
 export const portalDocumentSelector = state => state[ns].portalWindow?.document;
 export const portalWindowSelector = state => state[ns].portalWindow;
 
-export const examResultsSelector = state => state[ns].examResults;
+export const userCompletedExamSelector = state => state[ns].userCompletedExam;
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };

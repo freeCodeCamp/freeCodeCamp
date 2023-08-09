@@ -29,10 +29,7 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: [],
-  examResults: {
-    timeInSeconds: 0,
-    results: []
-  },
+  userCompletedExam: null,
   hasCompletedBlock: false,
   isBuildEnabled: true,
   isResetting: false,
@@ -42,6 +39,7 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
+    exitExam: false,
     finishExam: false,
     projectPreview: false,
     shortcuts: false
@@ -214,9 +212,9 @@ export const reducer = handleActions(
       ...state,
       chapterSlug: payload
     }),
-    [actionTypes.setExamResults]: (state, { payload }) => ({
+    [actionTypes.setUserCompletedExam]: (state, { payload }) => ({
       ...state,
-      examResults: payload
+      userCompletedExam: payload
     }),
     [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,

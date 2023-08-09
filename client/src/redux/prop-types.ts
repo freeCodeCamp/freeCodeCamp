@@ -52,7 +52,12 @@ type Question = {
   answers: string[];
   solution: number;
 };
-type Fields = { slug: string; blockName: string; tests: Test[] };
+type Fields = {
+  slug: string;
+  blockHashSlug: string;
+  blockName: string;
+  tests: Test[];
+};
 type Required = {
   link: string;
   raw: boolean;
@@ -346,4 +351,54 @@ export interface UserFetchState {
   complete: boolean;
   errored: boolean;
   error: string | null;
+}
+
+// Exam Related Types:
+interface GeneratedExamAnswer {
+  id: string;
+  answer: string;
+}
+
+// Generated Exam (from API)
+export interface GeneratedExamQuestion {
+  id: string;
+  question: string;
+  answers: GeneratedExamAnswer[];
+}
+
+export interface GenerateExamResponse {
+  error?: string;
+  generatedExam?: GeneratedExamQuestion[];
+}
+
+export interface GenerateExamResponseWithData {
+  response: Response;
+  data: GenerateExamResponse;
+}
+
+// User Exam (null until they answer the question)
+interface UserExamAnswer {
+  id: string | null;
+  answer: string | null;
+}
+
+export interface UserExamQuestion {
+  id: string;
+  question: string;
+  answer: UserExamAnswer;
+}
+
+export interface UserExam {
+  examTimeInSeconds: number;
+  userExamQuestions: UserExamQuestion[];
+}
+
+// Exam Results (from API)
+export interface GeneratedExamResults {
+  numberOfCorrectAnswers: number;
+  numberOfQuestionsInExam: number;
+  percentCorrect: number;
+  passingPercent: number;
+  passed: boolean;
+  examTimeInSeconds: number;
 }
