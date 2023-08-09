@@ -585,7 +585,9 @@ describe('challengeRoutes', () => {
           });
 
           if (!JsProjectBody.files[0]) {
-            throw new Error('JsProjectBody.files[0] is undefined but it definitely should not be.')
+            throw new Error(
+              'JsProjectBody.files[0] is undefined but it definitely should not be.'
+            );
           }
           const { history: _history, ...files } = JsProjectBody.files[0];
 
@@ -628,8 +630,6 @@ describe('challengeRoutes', () => {
           const testFiles = multiFileCertProjectBody.files.map(
             ({ history: _history, ...rest }) => rest
           );
-
-          console.log(user?.savedChallenges);
 
           expect(user).toMatchObject({
             needsModeration: true,
