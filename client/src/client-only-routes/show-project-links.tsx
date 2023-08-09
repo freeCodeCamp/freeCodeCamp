@@ -8,7 +8,7 @@ import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
 import {
-  liveCertsToProjects,
+  standardCertsToProjects,
   type CertTitle
 } from '../../config/cert-and-project-map';
 
@@ -103,7 +103,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       ] as const;
 
       return certs.map((cert, ind) => {
-        const projects = liveCertsToProjects[cert.title];
+        const projects = standardCertsToProjects[cert.title];
         const { certSlug } = projects[0];
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
@@ -118,7 +118,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       });
     }
 
-    const project = liveCertsToProjects[certName];
+    const project = standardCertsToProjects[certName];
     return project.map(({ link, title, id }) => (
       <tr key={id}>
         <td>
@@ -150,7 +150,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   const isCertName = (maybeCertName: string): maybeCertName is CertTitle => {
     if (maybeCertName === 'Legacy Full Stack') return true;
-    return maybeCertName in liveCertsToProjects;
+    return maybeCertName in standardCertsToProjects;
   };
   if (!isCertName(certName)) return <div> Unknown Certification</div>;
 

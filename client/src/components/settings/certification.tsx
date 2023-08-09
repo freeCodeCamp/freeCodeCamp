@@ -14,9 +14,8 @@ import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   certTitles,
   legacyCertTitles,
-  liveCertsToProjects,
-  type CertsToProjects,
-  type LegacyCertsToProjects
+  standardCertsToProjects,
+  type CertTitle
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
@@ -305,15 +304,14 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type CertName = keyof CertsToProjects | keyof LegacyCertsToProjects;
   const Certification = ({
     certName,
     t
   }: {
-    certName: CertName;
+    certName: Exclude<CertTitle, 'Legacy Full Stack'>;
     t: TFunction;
   }) => {
-    const { certSlug } = liveCertsToProjects[certName][0];
+    const { certSlug } = standardCertsToProjects[certName][0];
     return (
       <FullWidthRow>
         <Spacer size='medium' />
@@ -341,11 +339,11 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certName,
     isCert
   }: {
-    certName: CertName;
+    certName: Exclude<CertTitle, 'Legacy Full Stack'>;
     isCert: boolean;
   }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = liveCertsToProjects[certName][0];
+    const { certSlug } = standardCertsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -356,7 +354,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return liveCertsToProjects[certName]
+    return standardCertsToProjects[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>

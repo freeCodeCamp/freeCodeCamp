@@ -800,21 +800,25 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certsWithoutFullStack = [...legacyCerts, ...certs] as const;
+// "Standard" certs are those whose prerequisites are not other certs. Currently
+// only the legacy full stack cert is non-standard.
+const standardCerts = [...legacyCerts, ...certs] as const;
 
-const liveCerts = [...certsWithoutFullStack, legacyFullStack] as const;
+// "Live" certs are those that are currently available to students. Currently
+// this only excludes the upcoming certs.
+const liveCerts = [...standardCerts, legacyFullStack] as const;
 
-export type CertsToProjects = Record<
+type CertsToProjects = Record<
   (typeof certs)[number]['title'],
   (typeof certs)[number]['projects']
 >;
 
-export type LegacyCertsToProjects = Record<
+type LegacyCertsToProjects = Record<
   (typeof legacyCerts)[number]['title'],
   (typeof legacyCerts)[number]['projects']
 >;
 
-export type UpcomingCertsToProjects = Record<
+type UpcomingCertsToProjects = Record<
   (typeof upcomingCerts)[number]['title'],
   (typeof upcomingCerts)[number]['projects']
 >;
@@ -833,7 +837,7 @@ const legacyCertsToProjects = legacyCerts.reduce((acc, curr) => {
   };
 }, {} as LegacyCertsToProjects);
 
-// TODO: use this (probably in liveCertsToProjects)
+// TODO: use this (probably in standardCertsToProjects)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
   return {
@@ -842,7 +846,7 @@ const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
   };
 }, {} as UpcomingCertsToProjects);
 
-const liveCertsToProjects = {
+const standardCertsToProjects = {
   ...legacyCertsToProjects,
   ...certsToProjects
 };
@@ -858,7 +862,7 @@ export type CertTitle =
 export {
   certTitles,
   legacyCertTitles,
-  certsWithoutFullStack,
+  standardCerts,
   liveCerts,
-  liveCertsToProjects
+  standardCertsToProjects
 };
