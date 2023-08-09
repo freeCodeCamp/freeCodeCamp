@@ -74,8 +74,7 @@
           "./utils/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
-          "./cypress/tsconfig.json",
-          "./e2e/tsconfig.json"
+          "./cypress/tsconfig.json"
         ]
       },
       "extends": [
