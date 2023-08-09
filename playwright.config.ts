@@ -26,7 +26,7 @@ export default defineConfig({
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: process.env.HOME_LOCATION || 'http://127.0.0.1:8000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
