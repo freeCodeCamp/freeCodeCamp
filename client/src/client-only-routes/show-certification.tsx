@@ -357,7 +357,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     })
                   }}
                 </h4>
-                <h5>{{ completionTime }}</h5>
+                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
               </Trans>
             </div>
           </main>
