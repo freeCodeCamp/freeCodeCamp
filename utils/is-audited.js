@@ -9,8 +9,8 @@ function isAuditedCert(
     throw Error('Both arguments must be provided for auditing');
 
   const auditedSuperBlocks = getAuditedSuperBlocks({
-    showNewCurriculum,
-    showUpcomingChanges,
+    showNewCurriculum: showNewCurriculum.toString(),
+    showUpcomingChanges: showUpcomingChanges.toString(),
     language
   });
   return auditedSuperBlocks.includes(superblock);
