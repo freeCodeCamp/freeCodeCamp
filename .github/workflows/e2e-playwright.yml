@@ -142,6 +142,6 @@ jobs:
       - name: Run playwright tests
         run: |
           pnpm run start-ci &
-          sleep 5
+          sleep 10
           cd ./e2e
           npx playwright test
