@@ -2,7 +2,11 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import { SuperBlocks } from '../../../config/superblocks';
+import {
+  SuperBlocks,
+  notAuditedSuperBlocks
+} from '../../../config/superblocks';
+import { Languages } from '../../../config/i18n';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum<T> = {
@@ -31,6 +35,13 @@ interface Block<T> {
   intro: string[];
   challenges: T;
   meta: Record<string, unknown>;
+}
+
+type AvailableSuperBlocks = { [value in Languages]: AvailableSuperBlock[] };
+
+interface AvailableSuperBlock {
+  dashedName: (typeof SuperBlocks)[keyof typeof SuperBlocks];
+  public: boolean;
 }
 
 export const orderedSuperBlockInfo = [
@@ -73,12 +84,7 @@ export function buildExtCurriculumData(
       dashedNames.includes(x)
     );
 
-    writeToFile('available-superblocks', {
-      superblocks: orderedSuperBlockInfo.map(x => ({
-        ...x,
-        title: getSuperBlockTitle(x.dashedName)
-      }))
-    });
+    getAvailableSuperBlocks();
 
     for (const superBlockKey of superBlockKeys) {
       const superBlock = <Curriculum<GeneratedCurriculumProps>>{};
@@ -140,18 +146,43 @@ export function buildExtCurriculumData(
     return superBlockIntro[superBlockKey]['intro'];
   }
 
-  function getSuperBlockTitle(superBlock: SuperBlocks): string {
-    const superBlocks = JSON.parse(
-      readFileSync(blockIntroPath, 'utf-8')
-    ) as Intro;
+  // function getSuperBlockTitle(superBlock: SuperBlocks): string {
+  //   const superBlocks = JSON.parse(
+  //     readFileSync(blockIntroPath, 'utf-8')
+  //   ) as Intro;
 
-    return superBlocks[superBlock].title;
-  }
+  //   return superBlocks[superBlock].title;
+  // }
 
   function getSubmitTypes() {
     writeFileSync(
       `${dataPath}/submit-types.json`,
       JSON.stringify(submitTypes, null, 2)
     );
+  }
+
+  function getAvailableSuperBlocks() {
+    const availableSuperBlocks = <AvailableSuperBlocks>{};
+
+    for (const language of Object.values(Languages)) {
+      availableSuperBlocks[language] = orderedSuperBlockInfo;
+    }
+
+    for (const language of Object.values(Languages)) {
+      for (let i = 0; i < availableSuperBlocks[language].length; i++) {
+        for (let j = 0; j < notAuditedSuperBlocks[language].length; j++) {
+          if (
+            availableSuperBlocks[language][i].dashedName ===
+            notAuditedSuperBlocks[language][j]
+          ) {
+            availableSuperBlocks[language][i].public = false;
+          }
+        }
+      }
+    }
+
+    writeToFile('available-superblocks', {
+      superblocks: availableSuperBlocks
+    });
   }
 }
