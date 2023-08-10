@@ -53,12 +53,7 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const {
-        savedChallenges,
-        points,
-        isTrophyMissing,
-        examResults = {}
-      } = data;
+      const { savedChallenges, points, isTrophyMissing, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
