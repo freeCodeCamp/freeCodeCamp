@@ -165,18 +165,17 @@ export function buildExtCurriculumData(
     const availableSuperBlocks = <AvailableSuperBlocks>{};
 
     for (const language of Object.values(Languages)) {
-      availableSuperBlocks[language] = orderedSuperBlockInfo;
+      availableSuperBlocks[language] = structuredClone(orderedSuperBlockInfo);
     }
 
     for (const language of Object.values(Languages)) {
       for (let i = 0; i < availableSuperBlocks[language].length; i++) {
-        for (let j = 0; j < notAuditedSuperBlocks[language].length; j++) {
-          if (
-            availableSuperBlocks[language][i].dashedName ===
-            notAuditedSuperBlocks[language][j]
-          ) {
-            availableSuperBlocks[language][i].public = false;
-          }
+        if (
+          notAuditedSuperBlocks[language].includes(
+            availableSuperBlocks[language][i].dashedName
+          )
+        ) {
+          availableSuperBlocks[language][i].public = false;
         }
       }
     }
