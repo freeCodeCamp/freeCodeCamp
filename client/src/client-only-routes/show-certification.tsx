@@ -216,7 +216,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username, certTitle } = cert;
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    completionTime
+  } = cert;
 
   const { user } = props;
 
@@ -351,6 +357,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     })
                   }}
                 </h4>
+                <h5>{{ completionTime }}</h5>
               </Trans>
             </div>
           </main>
