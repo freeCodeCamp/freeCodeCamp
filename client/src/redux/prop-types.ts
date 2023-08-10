@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/superblocks';
 import { Themes } from '../components/settings/theme';
-import { liveCerts } from '../../config/cert-and-project-map';
+import { type CertTitle } from '../../config/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: (typeof liveCerts)[number]['title'];
+    title: CertTitle;
   };
   headings: [
     {
