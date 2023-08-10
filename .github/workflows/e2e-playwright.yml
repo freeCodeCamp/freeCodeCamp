@@ -5,12 +5,14 @@ on:
       - 'docs/**'
     branches:
       - 'main'
+      - 'e2e-**'
   pull_request:
     paths-ignore:
       - 'docs/**'
     branches:
       - 'main'
       - 'next-**'
+      - 'e2e-**'
 
 jobs:
   build-client:
