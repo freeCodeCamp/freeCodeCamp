@@ -59,12 +59,12 @@ export default function bootCertificate(app) {
 
 export function getFallbackFullStackDate(completedChallenges, completedDate) {
   var chalIds = [
-    certIds.respWebDesignId,
-    certIds.jsAlgoDataStructId,
-    certIds.frontEndDevLibsId,
-    certIds.dataVis2018Id,
-    certIds.apisMicroservicesId,
-    certIds.legacyInfosecQaId
+    respWebDesignId,
+    jsAlgoDataStructId,
+    frontEndDevLibsId,
+    dataVis2018Id,
+    apisMicroservicesId,
+    legacyInfosecQaId
   ];
 
   const latestCertDate = completedChallenges
