@@ -506,6 +506,7 @@ function createShowCert(app) {
 
         if (!showName) {
           return res.json({
+            certSlug,
             certTitle,
             username,
             date: completedDate,
@@ -514,6 +515,7 @@ function createShowCert(app) {
         }
 
         return res.json({
+          certSlug,
           certTitle,
           username,
           name,
