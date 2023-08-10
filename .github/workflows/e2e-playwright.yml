@@ -71,7 +71,7 @@ jobs:
           path: client/public/stats.json
 
   playwright-run:
-    name: Test
+    name: E2E Test
     runs-on: ubuntu-20.04
     needs: build-client
     strategy:
