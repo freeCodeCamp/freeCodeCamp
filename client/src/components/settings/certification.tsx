@@ -12,10 +12,10 @@ import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
-  certTitles,
+  currentCertTitles,
   legacyCertTitles,
   upcomingCertTitles,
-  standardCertsToProjects,
+  certsToProjects,
   type CertTitle
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
@@ -324,7 +324,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certName: Exclude<CertTitle, 'Legacy Full Stack'>;
     t: TFunction;
   }) => {
-    const { certSlug } = standardCertsToProjects[certName][0];
+    const { certSlug } = certsToProjects[certName][0];
     return (
       <FullWidthRow>
         <Spacer size='medium' />
@@ -356,7 +356,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     isCert: boolean;
   }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = standardCertsToProjects[certName][0];
+    const { certSlug } = certsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -367,7 +367,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return standardCertsToProjects[certName]
+    return certsToProjects[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
@@ -405,7 +405,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certTitles.map(title => (
+        {currentCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
