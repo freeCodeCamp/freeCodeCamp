@@ -75,7 +75,9 @@ jobs:
     runs-on: ubuntu-20.04
     needs: build-client
     strategy:
+      fail-fast: false
       matrix:
+        browsers: [chromium, firefox, webkit]
         node-version: [18.x]
 
     services:
@@ -146,4 +148,4 @@ jobs:
           pnpm run start-ci &
           sleep 10
           cd ./e2e
-          npx playwright test
+          npx playwright test --project=${{ matrix.browsers }}
