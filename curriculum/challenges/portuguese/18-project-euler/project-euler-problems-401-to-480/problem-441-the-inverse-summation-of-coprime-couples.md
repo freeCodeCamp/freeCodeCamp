@@ -1,6 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
-title: 'Problem 441: The inverse summation of coprime couples'
+title: 'Problema 441: A soma inversa de pares de coprimos'
 challengeType: 1
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
@@ -8,21 +8,21 @@ dashedName: problem-441-the-inverse-summation-of-coprime-couples
 
 # --description--
 
-For an integer $M$, we define $R(M)$ as the sum of $\frac{1}{p·q}$ for all the integer pairs $p$ and $q$ which satisfy all of these conditions:
+Para um número inteiro $M$, definimos $R(M)$ como a soma de $\frac{1}{p·q}$ para todos os pares de números inteiros $p$ e $q$ que satisfazem todas essas condições:
 
 - $1 ≤ p &lt; q ≤ M$
 - $p + q ≥ M$
-- $p$ and $q$ are coprime.
+- $p$ e $q$ são números coprimos.
 
-We also define $S(N)$ as the sum of $R(i)$ for $2 ≤ i ≤ N$.
+Também definimos $S(N)$ como a soma de $R(i)$ para $2 ≤ i ≤ N$.
 
-We can verify that $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$.
+Podemos verificar que $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6,9147$ e $S(100) ≈ 58,2962$.
 
-Find $S({10}^7)$. Give your answer rounded to four decimal places.
+Encontre $S({10}^7)$. Dê sua resposta arredondada para quatro casas decimais.
 
 # --hints--
 
-`inverseSummationCoprimeCouples()` should return `5000088.8395`.
+`inverseSummationCoprimeCouples()` deve retornar `5000088.8395`.
 
 ```js
 assert.strictEqual(inverseSummationCoprimeCouples(), 5000088.8395);

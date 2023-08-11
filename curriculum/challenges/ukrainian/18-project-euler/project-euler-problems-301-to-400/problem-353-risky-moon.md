@@ -22,7 +22,7 @@ The minimal risk of a journey from the North Pole station to the South Pole stat
 
 You are given that $M(7) = 0.178\\,494\\,399\\,8$ rounded to 10 digits behind the decimal point.
 
-Find $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
+Знайдіть $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
 
 Give your answer rounded to 10 digits behind the decimal point in the form a.bcdefghijk.
 

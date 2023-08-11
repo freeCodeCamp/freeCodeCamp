@@ -20,13 +20,16 @@ const initialState = {
   challengeMeta: {
     superBlock: '',
     block: '',
+    blockHashSlug: '/',
     id: '',
+    nextBlock: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1
   },
   challengeTests: [],
   consoleOut: [],
+  userCompletedExam: null,
   hasCompletedBlock: false,
   isBuildEnabled: true,
   isResetting: false,
@@ -36,6 +39,8 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
+    exitExam: false,
+    finishExam: false,
     projectPreview: false,
     shortcuts: false
   },
@@ -44,7 +49,9 @@ const initialState = {
   showPreviewPane: true,
   projectFormValues: {},
   successMessage: 'Happy Coding!',
-  isAdvancing: false
+  isAdvancing: false,
+  chapterSlug: '',
+  isSubmitting: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -56,6 +63,18 @@ export const sagas = [
 
 export const reducer = handleActions(
   {
+    [actionTypes.submitChallenge]: state => ({
+      ...state,
+      isSubmitting: true
+    }),
+    [actionTypes.submitChallengeComplete]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
+    [actionTypes.submitChallengeError]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload,
@@ -82,7 +101,8 @@ export const reducer = handleActions(
           challengeFile.fileKey === fileKey
             ? { ...challengeFile, ...updates }
             : { ...challengeFile }
-        )
+        ),
+        isBuildEnabled: true
       };
     },
     [actionTypes.storedCodeFound]: (state, { payload }) => ({
@@ -187,6 +207,14 @@ export const reducer = handleActions(
     [actionTypes.setIsAdvancing]: (state, { payload }) => ({
       ...state,
       isAdvancing: payload
+    }),
+    [actionTypes.setChapterSlug]: (state, { payload }) => ({
+      ...state,
+      chapterSlug: payload
+    }),
+    [actionTypes.setUserCompletedExam]: (state, { payload }) => ({
+      ...state,
+      userCompletedExam: payload
     }),
     [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,

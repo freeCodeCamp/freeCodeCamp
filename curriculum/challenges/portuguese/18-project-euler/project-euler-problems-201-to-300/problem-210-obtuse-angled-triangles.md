@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff50
-title: 'Problem 210: Obtuse Angled Triangles'
+title: 'Problema 210: Triângulos de ângulos obtusos'
 challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles
@@ -8,19 +8,19 @@ dashedName: problem-210-obtuse-angled-triangles
 
 # --description--
 
-Consider the set $S(r)$ of points ($x$,$y$) with integer coordinates satisfying $|x| + |y| ≤ r$.
+Considere o conjunto $S(r)$ de pontos ($x$,$y$) com coordenadas inteiras que satisfaçam $|x| + |y| ≤ r$.
 
-Let $O$ be the point (0,0) and $C$ the point ($\frac{r}{4}$,$\frac{r}{4}$).
+Considere $O$ como sendo o ponto (0,0) e $C$ o ponto($\frac{r}{4}$,$\frac{r}{4}$).
 
-Let $N(r)$ be the number of points $B$ in $S(r)$, so that the triangle $OBC$ has an obtuse angle, i.e. the largest angle $α$ satisfies $90°&lt;α&lt;180°$.
+Considere $N(r)$ como sendo o número de pontos $B$ em $S(r)$, para que o triângulo $OBC$ tenha um ângulo obtuso, ou seja, o maior ângulo $α$ satisfaz $90°&lt;α&lt;180°$.
 
-So, for example, $N(4)=24$ and $N(8)=100$.
+Assim, por exemplo, $N(4)=24$ e $N(8)=100$.
 
-What is $N(1\\,000\\,000\\,000)$?
+Qual é $N(1.000.000.000)$?
 
 # --hints--
 
-`obtuseAngledTriangles()` should return `1598174770174689500`.
+`obtuseAngledTriangles()` deve retornar `1598174770174689500`.
 
 ```js
 assert.strictEqual(obtuseAngledTriangles(), 1598174770174689500);

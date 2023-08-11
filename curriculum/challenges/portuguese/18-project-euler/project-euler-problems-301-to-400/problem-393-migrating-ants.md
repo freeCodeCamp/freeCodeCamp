@@ -1,6 +1,6 @@
 ---
 id: 5900f4f61000cf542c510008
-title: 'Problem 393: Migrating ants'
+title: 'Problema 393: Formigas migratórias'
 challengeType: 1
 forumTopicId: 302058
 dashedName: problem-393-migrating-ants
@@ -8,19 +8,19 @@ dashedName: problem-393-migrating-ants
 
 # --description--
 
-An $n × n$ grid of squares contains $n^2$ ants, one ant per square.
+Uma grade de $n × n$ quadrados contém $n^2$ formigas, uma por quadrado.
 
-All ants decide to move simultaneously to an adjacent square (usually 4 possibilities, except for ants on the edge of the grid or at the corners).
+Todas as formigas decidem se mover simultaneamente para um quadrado adjacente (em geral, 4 possibilidades, exceto para as formigas nas arestas ou nos vértices da grade).
 
-We define $f(n)$ to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
+Definimos $f(n)$ como o número de formas pelas quais isso pode acontecer sem que qualquer formiga acabe no mesmo quadrado em que estava e sem que duas formigas cruzem a mesma aresta entre dois quadrados.
 
-You are given that $f(4) = 88$.
+Você é informado de que $f(4) = 88$.
 
-Find $f(10)$.
+Encontre $f(10)$.
 
 # --hints--
 
-`migratingAnts()` should return `112398351350823100`.
+`migratingAnts()` deve retornar `112398351350823100`.
 
 ```js
 assert.strictEqual(migratingAnts(), 112398351350823100);

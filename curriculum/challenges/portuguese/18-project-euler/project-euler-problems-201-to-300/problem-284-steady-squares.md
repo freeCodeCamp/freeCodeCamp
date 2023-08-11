@@ -1,6 +1,6 @@
 ---
 id: 5900f4891000cf542c50ff9b
-title: 'Problem 284: Steady Squares'
+title: 'Problema 284: Quadrados estáveis'
 challengeType: 1
 forumTopicId: 301935
 dashedName: problem-284-steady-squares
@@ -8,23 +8,23 @@ dashedName: problem-284-steady-squares
 
 # --description--
 
-The 3-digit number 376 in the decimal numbering system is an example of numbers with the special property that its square ends with the same digits: ${376}^2 = 141376$. Let's call a number with this property a steady square.
+O número de 3 algarismos 376 no sistema de numeração decimal é um exemplo de números com a propriedade especial de que o quadrado termina com os mesmos algarismos: ${376}^2 = 141376$. Vamos chamar um número com essa propriedade de um quadrado estável.
 
-Steady squares can also be observed in other numbering systems. In the base 14 numbering system, the 3-digit number $c37$ is also a steady square: $c37^2 = aa0c37$, and the sum of its digits is $c+3+7=18$ in the same numbering system. The letters $a$, $b$, $c$ and $d$ are used for the 10, 11, 12 and 13 digits respectively, in a manner similar to the hexadecimal numbering system.
+Os quadrados estáveis também podem ser observados em outros sistemas de numeração. No sistema de numeração de base 14, o número de 3 algarismos $c37$ também é um quadrado estável: $c37^2 = aa0c37$ e a soma de seus algarismos é $c+3+7=18$ no mesmo sistema de numeração. As letras $a$, $b$, $c$ e $d$ são usadas para os algarismos 10, 11, 12 e 13, respectivamente, de uma maneira semelhante ao sistema de numeração hexadecimal.
 
-For $1 ≤ n ≤ 9$, the sum of the digits of all the $n$-digit steady squares in the base 14 numbering system is $2d8$ (582 decimal). Steady squares with leading 0's are not allowed.
+Para $1 ≤ n ≤ 9$, a soma dos algarismos de todos os quadrados estáveis de $n$ algarismos no sistema de numeração de base 14 é $2d8$ (582 no sistema decimal). Não são permitidos quadrados estáveis com zeros à esquerda.
 
-Find the sum of the digits of all the $n$-digit steady squares in the base 14 numbering system for $1 ≤ n ≤ 10000$ (decimal) and give your answer as a string in the base 14 system using lower case letters where necessary.
+Encontre a soma dos algarismos de todos os quadrados estáveis de $n$ algarismos no sistema de numeração de base 14 para $1 ≤ n ≤ 10000$ (no sistema decimal) e dê sua resposta como uma string no sistema de base 14 usando letras minúsculas, quando necessário.
 
 # --hints--
 
-`steadySquares()` should return a string.
+`steadySquares()` deve retornar uma string.
 
 ```js
 assert(typeof steadySquares() === 'string');
 ```
 
-`steadySquares()` should return the string `5a411d7b`.
+`steadySquares()` deve retornar a string `5a411d7b`.
 
 ```js
 assert.strictEqual(steadySquares(), '5a411d7b');

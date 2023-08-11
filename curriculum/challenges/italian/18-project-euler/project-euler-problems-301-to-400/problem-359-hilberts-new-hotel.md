@@ -1,6 +1,6 @@
 ---
 id: 5900f4d31000cf542c50ffe6
-title: 'Problem 359: Hilbert''s New Hotel'
+title: 'Problema 359: il nuovo hotel di Hilbert'
 challengeType: 1
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
@@ -8,35 +8,35 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
+Un numero infinito di persone (numerate 1, 2, 3, ecc.) sono in fila per prendere una stanza nel nuovo hotel infinito di Hilbert. L'hotel contiene un numero infinito di piani (numerati 1, 2, 3, ecc.) e ogni piano contiene un numero infinito di stanze (numerate 1, 2, 3, ecc.).
 
-Initially the hotel is empty. Hilbert declares a rule on how the $n^{\text{th}}$ person is assigned a room: person $n$ gets the first vacant room in the lowest numbered floor satisfying either of the following:
+All'inizio l'hotel è vuoto. Hilbert dichiara una regola su come all'$n$-esima persona è assegnata una stanza: la persona $n$ riceve la prima stanza vuota al piano col numero più basso che soddisfa una delle seguenti condizioni:
 
-- the floor is empty
-- the floor is not empty, and if the latest person taking a room in that floor is person $m$, then $m + n$ is a perfect square
+- il piano è vuoto
+- il piano non è vuoto, e se l'ultima persona che ha preso una stanza in quel piano è la persona $m$ allora $m + n$ è un quadrato perfetto
 
-Person 1 gets room 1 in floor 1 since floor 1 is empty.
+La persona 1 prende la stanza 1 al piano 1 visto che il piano 1 è vuoto.
 
-Person 2 does not get room 2 in floor 1 since 1 + 2 = 3 is not a perfect square.
+La persona 2 non prende la stanza 2 al piano 1 visto che 1 + 2 = 3 non è un quadrato perfetto.
 
-Person 2 instead gets room 1 in floor 2 since floor 2 is empty.
+La persona 2 invece prende la stanza 1 al piano 2 visto che il piano 2 è vuoto.
 
-Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
+La persona 3 prende la stanza 2 al piano 1 visto che 1 + 3 = 4 è un quadrato perfetto.
 
-Eventually, every person in the line gets a room in the hotel.
+Alla fine, ogni persona in fila ottiene una stanza nell'hotel.
 
-Define $P(f, r)$ to be $n$ if person $n$ occupies room $r$ in floor $f$, and 0 if no person occupies the room. Here are a few examples:
+Si definisce $P(f, r)$ come $n$ se la persona $n$ occupa stanza $r$ al piano $f$, e 0 se nessuna persona occupa la stanza. Ecco alcuni esempi:
 
 $$\begin{align}   & P(1, 1) = 1 \\\\
   & P(1, 2) = 3 \\\\   & P(2, 1) = 2 \\\\
   & P(10, 20) = 440 \\\\   & P(25, 75) = 4863 \\\\
   & P(99, 100) = 19454 \end{align}$$
 
-Find the sum of all $P(f, r)$ for all positive $f$ and $r$ such that $f × r = 71\\,328\\,803\\,586\\,048$ and give the last 8 digits as your answer.
+Trova la somma di tutti i $P(f, r)$ per tutti i positivi $f$ e $r$ in modo tale che $f × r = 71\\,328\\,803\\,586\\,048$ e dai le ultime 8 cifre come risposta.
 
 # --hints--
 
-`hilbertsNewHotel()` should return `40632119`.
+`hilbertsNewHotel()` dovrebbe restituire `40632119`.
 
 ```js
 assert.strictEqual(hilbertsNewHotel(), 40632119);

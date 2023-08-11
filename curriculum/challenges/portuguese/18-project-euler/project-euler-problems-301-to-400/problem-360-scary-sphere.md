@@ -1,6 +1,6 @@
 ---
 id: 5900f4d41000cf542c50ffe7
-title: 'Problem 360: Scary Sphere'
+title: 'Problema 360: Esfera assustadora'
 challengeType: 1
 forumTopicId: 302021
 dashedName: problem-360-scary-sphere
@@ -8,21 +8,21 @@ dashedName: problem-360-scary-sphere
 
 # --description--
 
-Given two points ($x_1$, $y_1$, $z_1$) and ($x_2$, $y_2$, $z_2$) in three dimensional space, the Manhattan distance between those points is defined as $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$.
+Dados dois pontos, ($x_1$, $y_1$, $z_1$) e ($x_2$, $y_2$, $z_2$), em um espaço tridimensional, a distância de Manhattan entre esses pontos está definida como $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$.
 
-Let $C(r)$ be a sphere with radius $r$ and center in the origin $O(0, 0, 0)$.
+Considere $C(r)$ como uma esfera com o raio $r$ e o centro na origem $O(0, 0, 0)$.
 
-Let $I(r)$ be the set of all points with integer coordinates on the surface of $C(r)$.
+Considere $I(r)$ como o conjunto de todos os pontos com coordenadas em números inteiros na superfície de $C(r)$.
 
-Let $S(r)$ be the sum of the Manhattan distances of all elements of $I(r)$ to the origin $O$.
+Considere $S(r)$ como a soma das distâncias de Manhattan de todos os elementos de $I(r)$ até a origem $O$.
 
-E.g. $S(45)=34518$.
+Ex: $S(45)=34518$.
 
-Find $S({10}^{10})$.
+Encontre $S({10}^{10})$.
 
 # --hints--
 
-`scarySphere()` should return `878825614395267100`.
+`scarySphere()` deve retornar `878825614395267100`.
 
 ```js
 assert.strictEqual(scarySphere(), 878825614395267100);

@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa2
-title: 'Problem 291: Panaitopol Primes'
+title: 'Problema 291: Números primos de Panaitopol'
 challengeType: 1
 forumTopicId: 301943
 dashedName: problem-291-panaitopol-primes
@@ -8,13 +8,13 @@ dashedName: problem-291-panaitopol-primes
 
 # --description--
 
-A prime number $p$ is called a Panaitopol prime if $p = \frac{x^4 - y^4}{x^3 + y^3}$ for some positive integers $x$ and $y$.
+Um número primo $p$ é chamado de primo de Panaitopol se $p = \frac{x^4 - y^4}{x^3 + y^3}$ para alguns inteiros positivos $x$ e $y$.
 
-Find how many Panaitopol primes are less than $5 × {10}^{15}$.
+Encontre quantos primos de Panaitopol são menores que $5 × {10}^{15}$.
 
 # --hints--
 
-`panaitopolPrimes()` should return `4037526`.
+`panaitopolPrimes()` deve retornar `4037526`.
 
 ```js
 assert.strictEqual(panaitopolPrimes(), 4037526);

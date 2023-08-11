@@ -7,7 +7,7 @@ dashedName: step-18
 
 # --description--
 
-Erstelle unter deinem `.text`-Element ein neues `section`-Element und gib ihm eine `class` von `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
+Erstelle unter deinem `.text`-Element ein neues `section`-Element und gib ihm eine `class` von `text text-with-images`. Erstelle darin ein `article`-Element mit der `class` auf `brief-history` gesetzt und einem `aside`-Element mit der `class` auf `image-wrapper` gesetzt.
 
 # --hints--
 

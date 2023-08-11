@@ -16,7 +16,7 @@ We also define $S(N)$ as the sum of $L(a, b)$ for all the pairs ($a$, $b$) such 
 
 We can verify that $S(5) = 344$ and $S(100) = 26\\,709\\,528$.
 
-Find $S({10}^{12})$. Give your answer $\bmod {10}^8$.
+Знайдіть $S({10}^{12})$. Give your answer $\bmod {10}^8$.
 
 # --hints--
 

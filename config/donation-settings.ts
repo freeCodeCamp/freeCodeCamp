@@ -60,7 +60,7 @@ export const donationSubscriptionConfig = {
 export const paypalConfigTypes = {
   live: {
     month: {
-      500: { planId: 'P-1L11422374370240ULZKX3PA' },
+      500: { planId: 'P-6B636789V3105190KMTJFH7A' },
       1000: { planId: 'P-61K21421WY874920PL6E36YI' },
       2000: { planId: 'P-31999436LF709112VL6E374A' },
       3000: { planId: 'P-1KY930839N8045117L6E4BKY' },

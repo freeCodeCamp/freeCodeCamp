@@ -12,7 +12,7 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 
 ## How to Run Tests
 
-> [!NOTE] GitPod を使用している場合は、[Cypress と GitPod の設定](how-to-add-cypress-tests.md#cypress-と-gitpod-の設定) を参照してください。
+> [!NOTE] If using Gitpod, please see [Cypress-Gitpod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
 ### 1. Ensure that MongoDB and Client Applications are Running
 
@@ -33,13 +33,13 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 - 単一のテストを実行します。
 
   ```console
-  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
+  pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。
@@ -48,11 +48,11 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
   pnpm run e2e:dev:run
   ```
 
-## Cypress と GitPod の設定
+## Cypress-Gitpod Setup
 
 ### 1. 開発環境が稼働していることを確認する
 
-GitPod 環境を起動しても自動的に環境が構築されない場合は、以下を実行します。
+If starting the Gitpod environment did not automatically develop the environment:
 
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.

@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: 'Problema 290: Assinatura digital'
 challengeType: 1
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
@@ -8,11 +8,11 @@ dashedName: problem-290-digital-signature
 
 # --description--
 
-How many integers $0 ≤ n &lt; {10}^{18}$ have the property that the sum of the digits of $n$ equals the sum of digits of $137n$?
+Quantos números inteiros $0 ≤ n &lt; {10}^{18}$ têm a propriedade de que a soma dos algarismos de $n$ é igual à soma dos algarismos de $137n$?
 
 # --hints--
 
-`digitalSignature()` should return `20444710234716470`.
+`digitalSignature()` deve retornar `20444710234716470`.
 
 ```js
 assert.strictEqual(digitalSignature(), 20444710234716470);

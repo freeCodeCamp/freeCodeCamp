@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: 'Problema 107: rete minimale'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -8,11 +8,11 @@ dashedName: problem-107-minimal-network
 
 # --description--
 
-The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
+La seguente rete non orientata è costituita da sette vertici e dodici archi con un peso totale di 243.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Rete con sette vertici e dodici archi" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
-The same network can be represented by the matrix below.
+La stessa rete può essere rappresentata dalla matrice sottostante.
 
 |   | A  | B  | C  | D  | E  | F  | G  |
 | - | -- | -- | -- | -- | -- | -- | -- |
@@ -25,15 +25,15 @@ The same network can be represented by the matrix below.
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+Tuttavia, è possibile ottimizzare la rete rimuovendo alcuni archi, garantendo ancora che tutti i punti della rete rimangano connessi. La rete per cui il risparmio è massimo è mostrata di seguito. Ha un peso di 93, che rappresenta un risparmio di 243 − 93 = 150 rispetto alla rete originale.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Rete con sette vertici e sei archi rimanenti: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+Utilizzando `network`, un array 2D che rappresenta la rete in forma di matrice, trova il massimo risparmio che può essere ottenuto rimuovendo gli archi ridondanti, garantendo al contempo che la rete rimanga connessa. I vertici che non hanno connessione saranno rappresentati con `-1`.
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` dovrebbe restituire `259679`.
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

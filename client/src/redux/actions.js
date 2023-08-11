@@ -19,8 +19,11 @@ export const openDonationModal = createAction(actionTypes.openDonationModal);
 export const preventBlockDonationRequests = createAction(
   actionTypes.preventBlockDonationRequests
 );
-export const preventProgressDonationRequests = createAction(
-  actionTypes.preventProgressDonationRequests
+export const setCompletionCountWhenShownProgressModal = createAction(
+  actionTypes.setCompletionCountWhenShownProgressModal
+);
+export const setShowMultipleProgressModals = createAction(
+  actionTypes.setShowMultipleProgressModals
 );
 export const updateDonationFormState = createAction(
   actionTypes.updateDonationFormState
@@ -94,6 +97,10 @@ export const deleteUserTokenComplete = createAction(
 export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
 export const showCodeAlly = createAction(actionTypes.showCodeAlly);
 export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
+
+export const startExam = createAction(actionTypes.startExam);
+export const stopExam = createAction(actionTypes.stopExam);
+export const clearExamResults = createAction(actionTypes.clearExamResults);
 
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
 export const openSignoutModal = createAction(actionTypes.openSignoutModal);

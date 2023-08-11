@@ -1,15 +1,13 @@
 import { Location } from '@reach/router';
 import type { WindowLocation } from '@reach/router';
 import algoliasearch from 'algoliasearch/lite';
-import { navigate } from 'gatsby';
-import qs from 'query-string';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
-import Media from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
-import envData from '../../../../config/env.json';
+import { algoliaAppId, algoliaAPIKey } from '../../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {
@@ -18,10 +16,6 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-
-const { algoliaAppId, algoliaAPIKey } = envData;
-
-const DEBOUNCE_TIME = 100;
 
 // If a key is missing, searches will fail, but the client will still render.
 const searchClient =
@@ -47,19 +41,9 @@ const mapDispatchToProps = {
   updateSearchQuery
 };
 
-function searchStateToUrl(
-  { pathname }: { pathname: string },
-  query: string
-): string {
-  return `${pathname}${query ? `?${qs.stringify({ query })}` : ''}`;
-}
-function urlToSearchState({ search }: WindowLocation): { query: string } {
-  return qs.parse(search.slice(1)) as { query: string };
-}
-
 interface InstantSearchRootProps {
   isDropdownEnabled: boolean;
-  location: WindowLocation<{ query: string }>;
+  location: WindowLocation;
   query: string;
   toggleSearchDropdown: (toggle: boolean) => void;
   updateSearchQuery: (query: string) => void;
@@ -73,73 +57,28 @@ function InstantSearchRoot({
   updateSearchQuery,
   children
 }: InstantSearchRootProps) {
-  function isSearchPage(): boolean {
-    return location.pathname.startsWith('/search');
-  }
-
-  function setQueryFromURL(): void {
-    if (isSearchPage()) {
-      const { query: queryFromURL } = urlToSearchState(location);
-      if (query !== queryFromURL) {
-        updateSearchQuery(queryFromURL);
-      }
-    }
-  }
-
-  useEffect(() => {
-    toggleSearchDropdown(!isSearchPage());
-    setQueryFromURL();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const isSmallHeight = useMediaQuery({
+    query: `(min-height: 768px)`
+  });
 
   // https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state
   const prevLocationRef = useRef<InstantSearchRootProps['location']>();
   useEffect(() => {
     prevLocationRef.current = location;
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const prevLocation = prevLocationRef.current;
   useEffect(() => {
-    const enableDropdown = !isSearchPage();
-    if (isDropdownEnabled !== enableDropdown) {
-      toggleSearchDropdown(enableDropdown);
+    if (!isDropdownEnabled) {
+      toggleSearchDropdown(true);
     }
 
     if (location !== prevLocation) {
-      if (isSearchPage()) {
-        if (
-          location.state &&
-          typeof location.state === 'object' &&
-          Object.prototype.hasOwnProperty.call(location.state, 'query')
-        ) {
-          updateSearchQuery(location.state.query);
-        } else if (location.search) {
-          setQueryFromURL();
-        } else {
-          void navigate(searchStateToUrl(location, query), {
-            state: { query },
-            replace: true
-          });
-        }
-      } else if (query) {
-        updateSearchQuery('');
-      }
+      updateSearchQuery('');
     }
-  });
-
-  const debouncedSetState = useRef<number>();
-  function updateBrowserHistory(query: string): void {
-    if (isSearchPage()) {
-      clearTimeout(debouncedSetState.current);
-
-      debouncedSetState.current = window.setTimeout(() => {
-        if (isSearchPage()) {
-          void navigate(searchStateToUrl(location, query), {
-            state: { query }
-          });
-        }
-      }, DEBOUNCE_TIME);
-    }
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const propsQuery = query;
   function onSearchStateChange({ query }: { query: string | undefined }): void {
@@ -147,10 +86,9 @@ function InstantSearchRoot({
       return;
     }
     updateSearchQuery(query);
-    updateBrowserHistory(query);
   }
 
-  const MAX_MOBILE_HEIGHT = 768;
+  const hitsPerPage = isSmallHeight ? 8 : 5;
   return (
     <InstantSearch
       indexName={newsIndex}
@@ -158,18 +96,7 @@ function InstantSearchRoot({
       searchClient={searchClient}
       searchState={{ query }}
     >
-      {isSearchPage() ? (
-        <Configure hitsPerPage={15} />
-      ) : (
-        <>
-          <Media maxHeight={MAX_MOBILE_HEIGHT}>
-            <Configure hitsPerPage={5} />
-          </Media>
-          <Media minHeight={MAX_MOBILE_HEIGHT + 1}>
-            <Configure hitsPerPage={8} />
-          </Media>
-        </>
-      )}
+      <Configure hitsPerPage={hitsPerPage} />
       {children}
     </InstantSearch>
   );
@@ -189,9 +116,7 @@ function WithInstantSearch({ children }: WithInstantSearchProps): JSX.Element {
   return (
     <Location>
       {({ location }) => (
-        <InstantSearchRootConnected
-          location={location as InstantSearchRootProps['location']}
-        >
+        <InstantSearchRootConnected location={location}>
           {children}
         </InstantSearchRootConnected>
       )}

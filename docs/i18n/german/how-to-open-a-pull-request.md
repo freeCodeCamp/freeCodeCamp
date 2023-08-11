@@ -1,8 +1,8 @@
 # Wie man einen Pull-Request (PR) öffnet
 
-Ein Pull-Request (PR) ermöglicht es dir, Änderungen von deinem Fork auf GitHub an FreeCodeCamp.orgs Hauptrepository zu senden. Wenn du mit den Änderungen am Code fertig bist, kannst du diese Richtlinien befolgen, um einen PR zu eröffnen.
+A pull request (PR), enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Wenn du mit den Änderungen am Code fertig bist, kannst du diese Richtlinien befolgen, um einen PR zu eröffnen.
 
-Wir erwarten von unseren Mitwirkenden, dass sie den für dieses Projekt spezifischen Prozess kennen. Wenn du die Richtlinien gewissenhaft befolgst, verschaffe dir den Respekt deiner Kollegen und spare allen Beteiligten Zeit.
+Wir erwarten von unseren Mitwirkenden, dass sie den für dieses Projekt spezifischen Prozess kennen. Following the guidelines carefully earns you the respect of fellow maintainers and saves everyone time.
 
 Einige Beispiele hierfür sind:
 
@@ -31,12 +31,12 @@ Wenn du einen Pull Request (PR) öffnest, kannst du den Typ, den Geltungsbereich
 
 **Typ:**
 
-| Typ   | Wann wählen                                                                                      |
-|:----- |:------------------------------------------------------------------------------------------------ |
-| fix   | Geänderte oder aktualisierte/verbesserte Funktionalität, Tests, der Wortlaut einer Lektion, usw. |
-| feat  | Nur wenn du neue Funktionen, Tests usw. hinzufügst.                                              |
-| chore | Änderungen, die sich nicht auf den Code, die Tests oder den Wortlaut einer Lektion beziehen.     |
-| docs  | Änderungen im Verzeichnis `/docs` oder in den Mitwirkungsrichtlinien, etc.                       |
+| Typ   | Wann wählen                                                                                  |
+|:----- |:-------------------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc.              |
+| feat  | Nur wenn du neue Funktionen, Tests usw. hinzufügst.                                          |
+| chore | Änderungen, die sich nicht auf den Code, die Tests oder den Wortlaut einer Lektion beziehen. |
+| docs  | Änderungen im Verzeichnis `/docs` oder in den Mitwirkungsrichtlinien, etc.                   |
 
 **Geltungsbereich (Scope):**
 
@@ -89,7 +89,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 5. Gib an, ob du auf einer lokalen Kopie der Website getestet hast oder nicht.
 
-   - Das ist sehr wichtig, wenn du Änderungen vornimmst, die nicht nur Textinhalte wie die Dokumentation oder eine Aufgabenbeschreibung betreffen. Beispiele für Änderungen, die lokal getestet werden müssen, sind JavaScript, CSS oder HTML, die die Funktionalität oder das Layout einer Seite verändern könnten.
+   - Das ist sehr wichtig, wenn du Änderungen vornimmst, die nicht nur Textinhalte wie die Dokumentation oder eine Aufgabenbeschreibung betreffen. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
    - Wenn dein PR das Verhalten einer Seite beeinflusst, sollte er von entsprechenden [Cypress Integrationstests](how-to-add-cypress-tests.md) begleitet werden.
 

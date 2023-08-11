@@ -20,7 +20,7 @@ The image below shows $E(3,3)$ and an example of an Eulerian non-crossing path.
 
 Let $L(m,n)$ be the number of Eulerian non-crossing paths on $E(m,n)$. For example, $L(1,2) = 2$, $L(2,2) = 37$ and $L(3,3) = 104290$.
 
-Find $L(6,10)\bmod {10}^{10}$.
+Знайдіть $L(6,10)\bmod {10}^{10}$.
 
 # --hints--
 

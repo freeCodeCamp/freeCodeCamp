@@ -51,6 +51,12 @@ assert(gloveBoxContents === 'maps');
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+應該用 `const` 聲明 `gloveBoxContents`。
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/)
+```
+
 # --seed--
 
 ## --after-user-code--

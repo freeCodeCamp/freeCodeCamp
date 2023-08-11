@@ -12,17 +12,20 @@ import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
-  projectMap,
-  legacyProjectMap,
-  fullProjectMap,
-  ProjectMap,
-  LegacyProjectMap
-} from '../../resources/cert-and-project-map';
+  certTitles,
+  legacyCertTitles,
+  liveCertsToProjects,
+  type CertsToProjects,
+  type LegacyCertsToProjects
+} from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
-import { certSlugTypeMap } from '../../../../config/certification-settings';
+import {
+  Certification,
+  certSlugTypeMap
+} from '../../../../config/certification-settings';
 
 import './certification.css';
 import {
@@ -40,14 +43,6 @@ const mapDispatchToProps = {
   openModal
 };
 
-// Safety: projectMap definitely has projectMap keys,
-// and we are only interested in these keys
-const certifications = Object.keys(projectMap) as Array<keyof ProjectMap>;
-// Safety: legacyProjectMap definitely has legacyProjectMap keys,
-// and we are only interested in these keys
-const legacyCertifications = Object.keys(legacyProjectMap) as Array<
-  keyof LegacyProjectMap
->;
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -138,6 +133,111 @@ type CertificationSettingsProps = {
 } & ClaimedCertifications &
   Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
 
+const LegacyFullStack = (props: CertificationSettingsProps) => {
+  const {
+    isFullStackCert,
+    username,
+    isHonest,
+    createFlashMessage,
+    verifyCert,
+    is2018DataVisCert,
+    isApisMicroservicesCert,
+    isFrontEndLibsCert,
+    isInfosecQaCert,
+    isJsAlgoDataStructCert,
+    isRespWebDesignCert,
+    t
+  } = props;
+
+  const fullStackClaimable =
+    is2018DataVisCert &&
+    isApisMicroservicesCert &&
+    isFrontEndLibsCert &&
+    isInfosecQaCert &&
+    isJsAlgoDataStructCert &&
+    isRespWebDesignCert;
+
+  const certSlug = Certification.LegacyFullStack;
+  const certLocation = `/certification/${username}/${certSlug}`;
+
+  const buttonStyle = {
+    marginBottom: '30px',
+    padding: '6px 12px',
+    fontSize: '18px'
+  };
+
+  const createClickHandler =
+    (certSlug: keyof typeof certSlugTypeMap) =>
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      if (isFullStackCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(certSlug)
+        : createFlashMessage(honestyInfoMessage);
+    };
+  return (
+    <FullWidthRow key={certSlug}>
+      <Spacer size='medium' />
+      <h3 className='text-center'>
+        {t('certification.title.Legacy Full Stack Certification')}
+      </h3>
+      <div>
+        <p>
+          {t('settings.claim-legacy', {
+            cert: t('certification.title.Legacy Full Stack Certification')
+          })}
+        </p>
+        <ul>
+          <li>{t('certification.title.Responsive Web Design')}</li>
+          <li>
+            {t('certification.title.JavaScript Algorithms and Data Structures')}
+          </li>
+          <li>{t('certification.title.Front End Development Libraries')}</li>
+          <li>{t('certification.title.Data Visualization')}</li>
+          <li>{t('certification.title.Back End Development and APIs')}</li>
+          <li>
+            {t(
+              'certification.title.Legacy Information Security and Quality Assurance'
+            )}
+          </li>
+        </ul>
+      </div>
+
+      <div className={'col-xs-12'}>
+        {fullStackClaimable ? (
+          <Button
+            bsSize='sm'
+            bsStyle='primary'
+            className={'col-xs-12'}
+            href={certLocation}
+            id={'button-' + certSlug}
+            onClick={createClickHandler(certSlug)}
+            style={buttonStyle}
+            target='_blank'
+          >
+            {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+          </Button>
+        ) : (
+          <Button
+            bsSize='sm'
+            bsStyle='primary'
+            className={'col-xs-12'}
+            disabled={true}
+            id={'button-' + certSlug}
+            style={buttonStyle}
+            target='_blank'
+          >
+            {t('buttons.claim-cert')}
+          </Button>
+        )}
+      </div>
+      <Spacer size='medium' />
+    </FullWidthRow>
+  );
+};
+
 function CertificationSettings(props: CertificationSettingsProps) {
   const [projectTitle, setProjectTitle] = useState('');
   const [challengeFiles, setChallengeFiles] = useState<
@@ -205,12 +305,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type CertName = keyof ProjectMap | keyof LegacyProjectMap;
-  function renderCertifications(certName: CertName) {
-    const { t } = props;
-    const { certSlug } = fullProjectMap[certName][0];
+  type CertName = keyof CertsToProjects | keyof LegacyCertsToProjects;
+  const Certification = ({
+    certName,
+    t
+  }: {
+    certName: CertName;
+    t: TFunction;
+  }) => {
+    const { certSlug } = liveCertsToProjects[certName][0];
     return (
-      <FullWidthRow key={certName}>
+      <FullWidthRow>
         <Spacer size='medium' />
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {t(`certification.title.${certName}`, certName)}
@@ -231,7 +336,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         </Table>
       </FullWidthRow>
     );
-  }
+  };
   function renderProjectsFor({
     certName,
     isCert
@@ -240,7 +345,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     isCert: boolean;
   }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = fullProjectMap[certName][0];
+    const { certSlug } = liveCertsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -251,7 +356,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return fullProjectMap[certName]
+    return liveCertsToProjects[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
@@ -283,127 +388,20 @@ function CertificationSettings(props: CertificationSettingsProps) {
       ]);
   }
 
-  const renderLegacyFullStack = () => {
-    const {
-      isFullStackCert,
-      username,
-      isHonest,
-      createFlashMessage,
-      verifyCert,
-      is2018DataVisCert,
-      isApisMicroservicesCert,
-      isFrontEndLibsCert,
-      isInfosecQaCert,
-      isJsAlgoDataStructCert,
-      isRespWebDesignCert,
-      t
-    } = props;
-
-    const fullStackClaimable =
-      is2018DataVisCert &&
-      isApisMicroservicesCert &&
-      isFrontEndLibsCert &&
-      isInfosecQaCert &&
-      isJsAlgoDataStructCert &&
-      isRespWebDesignCert;
-
-    // Keep the settings page certSlug as full-stack rather than
-    // legacy-full-stack so we don't break existing links
-    const certSlug = 'full-stack';
-    const certLocation = `/certification/${username}/${certSlug}`;
-
-    const buttonStyle = {
-      marginBottom: '30px',
-      padding: '6px 12px',
-      fontSize: '18px'
-    };
-
-    const createClickHandler =
-      (certSlug: keyof typeof certSlugTypeMap) =>
-      (e: MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (isFullStackCert) {
-          return navigate(certLocation);
-        }
-        return isHonest
-          ? verifyCert(certSlug)
-          : createFlashMessage(honestyInfoMessage);
-      };
-    return (
-      <FullWidthRow key={certSlug}>
-        <Spacer size='medium' />
-        <h3 className='text-center'>
-          {t('certification.title.Legacy Full Stack Certification')}
-        </h3>
-        <div>
-          <p>
-            {t('settings.claim-legacy', {
-              cert: t('certification.title.Legacy Full Stack Certification')
-            })}
-          </p>
-          <ul>
-            <li>{t('certification.title.Responsive Web Design')}</li>
-            <li>
-              {t(
-                'certification.title.JavaScript Algorithms and Data Structures'
-              )}
-            </li>
-            <li>{t('certification.title.Front End Development Libraries')}</li>
-            <li>{t('certification.title.Data Visualization')}</li>
-            <li>{t('certification.title.Back End Development and APIs')}</li>
-            <li>
-              {t(
-                'certification.title.Legacy Information Security and Quality Assurance'
-              )}
-            </li>
-          </ul>
-        </div>
-
-        <div className={'col-xs-12'}>
-          {fullStackClaimable ? (
-            <Button
-              bsSize='sm'
-              bsStyle='primary'
-              className={'col-xs-12'}
-              href={certLocation}
-              id={'button-' + certSlug}
-              onClick={createClickHandler(certSlug)}
-              style={buttonStyle}
-              target='_blank'
-            >
-              {isFullStackCert
-                ? t('buttons.show-cert')
-                : t('buttons.claim-cert')}
-            </Button>
-          ) : (
-            <Button
-              bsSize='sm'
-              bsStyle='primary'
-              className={'col-xs-12'}
-              disabled={true}
-              id={'button-' + certSlug}
-              style={buttonStyle}
-              target='_blank'
-            >
-              {t('buttons.claim-cert')}
-            </Button>
-          )}
-        </div>
-        <Spacer size='medium' />
-      </FullWidthRow>
-    );
-  };
-
   const { t } = props;
 
   return (
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(certName => renderCertifications(certName))}
+        {certTitles.map(title => (
+          <Certification key={title} certName={title} t={t} />
+        ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
-        {renderLegacyFullStack()}
-        {legacyCertifications.map(certName => renderCertifications(certName))}
+        <LegacyFullStack {...props} />
+        {legacyCertTitles.map(title => (
+          <Certification key={title} certName={title} t={t} />
+        ))}
         <ProjectModal
           {...{
             projectTitle,

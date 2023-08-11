@@ -56,7 +56,7 @@ Newton's cooling law describes how an object of initial temperature $T(t_0) = T_
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+oder
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
@@ -76,7 +76,7 @@ Implement a routine of Euler's method and then use it to solve the given example
 
 <ul>
   <li><code>2 s</code></li>
-  <li><code>5 s</code> and</li>
+  <li><code>5 s</code> und</li>
   <li><code>10 s</code></li>
 </ul>
 
@@ -95,31 +95,31 @@ First parameter to the function is initial time, second parameter is initial tem
 
 # --hints--
 
-`eulersMethod` should be a function.
+`eulersMethod` sollte eine Funktion sein.
 
 ```js
 assert(typeof eulersMethod === 'function');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return a number.
+`eulersMethod(0, 100, 100, 2)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return 20.0424631833732.
+`eulersMethod(0, 100, 100, 2)` sollte 20.0424631833732 zurückgeben.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
 ```
 
-`eulersMethod(0, 100, 100, 5)` should return 20.01449963666907.
+`eulersMethod(0, 100, 100, 5)` sollte 20.01449963666907 zurückgeben.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 ```
 
-`eulersMethod(0, 100, 100, 10)` should return 20.000472392.
+`eulersMethod(0, 100, 100, 10)` sollte 20.000472392 zurückgeben.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);

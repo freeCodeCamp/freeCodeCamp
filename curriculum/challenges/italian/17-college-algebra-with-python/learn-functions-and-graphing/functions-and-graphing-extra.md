@@ -14,7 +14,7 @@ Ecco il <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzx
 
 # --question--
 
-## --assignemnts--
+## --assignment--
 
 Aggiungi al tuo notebook Colab del codice per le funzioni e i grafici.
 

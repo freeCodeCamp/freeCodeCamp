@@ -2,6 +2,9 @@ Follow these guidelines for setting up a development environment for freeCodeCam
 
 ## Choose between Gitpod or your Own Machine (local setup)
 
+> [!ATTENTION]
+> **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
+
 If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
 Here are some pros and cons which should help you decide which option is best for you:
@@ -15,14 +18,11 @@ Here are some pros and cons which should help you decide which option is best fo
 | Need an internet connection to work                               | Minimal internet connection required (once setup)                     |
 | Some tasks like compilation and tests can take longer to complete | Faster completion of tasks (depending on your machine's capabilities) |
 
-> [!ATTENTION]
-> **Note:** If you are using Windows 10 or 11, you will need to use WSL2. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
-
 ### How to Prepare a Gitpod Workspace
 
-We have automated the process of installing all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+We have automated the process of installing all the dependencies & tools you will need. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
-There are various ways to launch an GitPod workspace:
+There are various ways to launch an Gitpod workspace:
 
 1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
 
@@ -35,9 +35,21 @@ There are various ways to launch an GitPod workspace:
    - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
    - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
-   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+   Once installed you will see a 'Gitpod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
 
-That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a Gitpod workspace. Most parts of this guide applies to Gitpod workspaces, but be mindful of [how the URLs & Ports work within a Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+**Note: Troubleshooting port issues on Gitpod**
+
+Sometimes the service on port `8000` doesn't go live. This is common when you are restarting an inactive workspace.
+
+If the service is not coming up on port `8000`, you can troubleshoot using these steps:
+
+- **Start the server**: Run `pnpm run develop:server` in one terminal window from the root project directory (`/workspace/freeCodeCamp`) to start the server.
+
+- **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
+
+This should make port `8000` available.
 
 ### How to Prepare your Local Machine
 
@@ -58,10 +70,10 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                            |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                           |
 
 > [!ATTENTION]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting section](troubleshooting-development-issues.md) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
@@ -148,7 +160,7 @@ Note: `--depth=1` creates a shallow clone of your fork, with only the most recen
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
@@ -271,6 +283,15 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+
+```console
+pnpm run seed:certified-user
+```
+
+> [!WARNING]
+> Running `pnpm run seed:certified-user` will log you out. You will have to clear your browser cookies and sign in again.
+
 #### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
@@ -300,5 +321,6 @@ A quick reference to the commands that you will need when working locally.
 | ----------------- | ----------------------------------------------------------------------------- |
 | `pnpm install`          | Installs / re-installs all dependencies and bootstraps the different services. |
 | `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.        |
+| `pnpm run seed:certified-user`    | Creates authorized test users with certifications fully completed, and inserts them into MongoDB.        |
 | `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
 | `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                             |

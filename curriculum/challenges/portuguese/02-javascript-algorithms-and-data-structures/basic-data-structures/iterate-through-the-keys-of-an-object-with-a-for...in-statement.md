@@ -8,7 +8,7 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
+Às vezes, você precisa iterar através de todas as chaves dentro de um objeto. Você pode usar um laço <dfn>for... in</dfn> para fazer isso. O laço for...in tem esta aparência:
 
 ```javascript
 const refrigerator = {
@@ -21,15 +21,15 @@ for (const food in refrigerator) {
 }
 ```
 
-This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
+Este código registra `milk 1`  e `eggs 12`, com cada par de chave-valor em sua própria linha.
 
-We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
+Definimos a variável `food` no início do laço e essa variável foi definida com cada uma das chaves do objeto em cada iteração, resultando na impressão do nome de cada comida no console.
 
 **Observação:** objetos não mantém uma ordem para as chaves armazenadas como arrays fazem. Portanto, a posição de uma chave em um objeto, ou a ordem relativa na qual ela aparece, é irrelevante quando referenciando ou acessando aquela chave.
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose online property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
+Definimos uma função `countOnline`, a qual aceita um argumento, `allUsers`. Use a declaração <dfn>for...in</dfn> dentro dessa função para iterar pelo objeto `allUsers` e retorne o número de usuários que possuam a propriedade `online` definida como `true`. Um exemplo de um objeto que pode ser passado para `countOnline` é mostrado abaixo. Cada usuário terá a propriedade `online` definida como `true` ou `false`.
 
 ```js
 {

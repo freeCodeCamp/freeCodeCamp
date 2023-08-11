@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff67
-title: 'Problem 232: The Race'
+title: 'Problema 232: A corrida'
 challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race
@@ -8,23 +8,23 @@ dashedName: problem-232-the-race
 
 # --description--
 
-Two players share an unbiased coin and take it in turns to play "The Race".
+Dois jogadores compartilham uma moeda não viesada e a usam, cada um na sua vez, para jogar "A Corrida".
 
-On Player 1's turn, he tosses the coin once: if it comes up Heads, he scores one point; if it comes up Tails, he scores nothing.
+No turno do Jogador 1, ele joga uma vez a moeda: se der Cara, ele marca um ponto; se der Coroa, ele não marca nada.
 
-On Player 2's turn, she chooses a positive integer $T$ and tosses the coin $T$ times: if it comes up all Heads, she scores $2^{T - 1}$ points; otherwise, she scores nothing.
+Na vez do Jogador 2, ela escolhe um número inteiro positivo $T$ e joga a moeda $T$ vezes: se der Cara sempre, ele faz $2^{T - 1}$ pontos. Caso contrário, ele não pontua.
 
-Player 1 goes first. The winner is the first to 100 or more points.
+O jogador 1 joga primeiro. O vencedor é o primeiro a chegar a 100 pontos ou mais.
 
-On each turn Player 2 selects the number, $T$, of coin tosses that maximises the probability of her winning.
+Em cada turno, o Jogador 2 seleciona o número, $T$, de lançamentos da moeda que maximizam a probabilidade de sua vitória.
 
-What is the probability that Player 2 wins?
+Qual é a probabilidade de o Jogador 2 vencer?
 
-Give your answer rounded to eight decimal places in the form 0.abcdefgh .
+Arredonde sua resposta para até oito casas decimais usando o formato 0.abcdefgh.
 
 # --hints--
 
-`theRace()` should return `0.83648556`.
+`theRace()` deve retornar `0.83648556`.
 
 ```js
 assert.strictEqual(theRace(), 0.83648556);

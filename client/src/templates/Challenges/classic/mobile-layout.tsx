@@ -1,8 +1,23 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
+import {
+  removePortalWindow,
+  setShowPreviewPortal,
+  setShowPreviewPane
+} from '../redux/actions';
+import {
+  portalWindowSelector,
+  showPreviewPortalSelector,
+  showPreviewPaneSelector
+} from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
+import PreviewPortal from '../components/preview-portal';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
@@ -14,6 +29,13 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  windowTitle: string;
+  showPreviewPortal: boolean;
+  showPreviewPane: boolean;
+  removePortalWindow: () => void;
+  setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
+  portalWindow: null | Window;
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
@@ -32,6 +54,28 @@ interface MobileLayoutState {
   currentTab: Tab;
 }
 
+const mapDispatchToProps = {
+  removePortalWindow,
+  setShowPreviewPortal,
+  setShowPreviewPane
+};
+
+const mapStateToProps = createSelector(
+  showPreviewPortalSelector,
+  showPreviewPaneSelector,
+  portalWindowSelector,
+
+  (
+    showPreviewPortal: boolean,
+    showPreviewPane: boolean,
+    portalWindow: null | Window
+  ) => ({
+    showPreviewPortal,
+    showPreviewPane,
+    portalWindow
+  })
+);
+
 class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   static displayName: string;
 
@@ -48,7 +92,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   };
 
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
-  setToolPanelPosition = () => {
+  setToolPanelPosition = (): void => {
     if (!this.#toolPanelGroup) return;
     // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
@@ -66,7 +110,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     }
   };
 
-  isMobileDeviceWithToolPanel = () =>
+  isMobileDeviceWithToolPanel = (): RegExpExecArray | null =>
     this.#toolPanelGroup && /iPhone|Android.+Mobile/.exec(navigator.userAgent);
 
   componentDidMount(): void {
@@ -105,6 +149,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
+      showPreviewPane,
+      showPreviewPortal,
+      removePortalWindow,
+      setShowPreviewPane,
+      setShowPreviewPortal,
+      portalWindow,
+      windowTitle,
       guideUrl,
       videoUrl,
       usesMultifileEditor
@@ -115,6 +166,45 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       unmountOnExit: true
     };
 
+    const displayPreviewPane = hasPreview && showPreviewPane;
+    const displayPreviewPortal = hasPreview && showPreviewPortal;
+
+    const togglePane = (pane: string): void => {
+      if (pane === 'showPreviewPane') {
+        if (!showPreviewPane && showPreviewPortal) {
+          setShowPreviewPortal(false);
+        }
+        setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
+        removePortalWindow();
+      } else if (pane === 'showPreviewPortal') {
+        if (!showPreviewPortal && showPreviewPane) {
+          setShowPreviewPane(false);
+        }
+        setShowPreviewPortal(!showPreviewPortal);
+        if (showPreviewPortal) {
+          portalWindow?.close();
+          removePortalWindow();
+        }
+      } else {
+        setShowPreviewPane(true);
+        setShowPreviewPortal(false);
+      }
+    };
+
+    // sets screen reader text for the portal button
+    function getPortalBtnSrText() {
+      // preview open in main window
+      let portalBtnSrText = i18next.t('aria.move-preview-to-new-window');
+
+      // preview open in external window
+      if (showPreviewPortal && !showPreviewPane) {
+        portalBtnSrText = i18next.t('aria.close-external-preview-window');
+      }
+
+      return portalBtnSrText;
+    }
+
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
 
@@ -122,12 +212,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           activeKey={currentTab}
+          animation={false}
           defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onSelect={this.switchTab}
           onTouchStart={this.handleClick}
+          {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           {!hasEditableBoundaries && (
             <TabPane
@@ -166,7 +258,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               eventKey={Tab.Preview}
               title={i18next.t('learn.editor-tabs.preview')}
             >
-              {preview}
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+              {displayPreviewPane && preview}
+              {showPreviewPortal && (
+                <p className='preview-external-window'>
+                  {i18next.t('learn.preview-external-window')}
+                </p>
+              )}
             </TabPane>
           )}
           {!hasEditableBoundaries && (
@@ -176,7 +281,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               videoUrl={videoUrl}
             />
           )}
+          {hasPreview && this.state.currentTab !== 'preview' && (
+            <button
+              className='portal-button'
+              aria-expanded={!!showPreviewPortal}
+              onClick={() => togglePane('showPreviewPortal')}
+            >
+              <span className='sr-only'>{getPortalBtnSrText()}</span>
+              <FontAwesomeIcon icon={faWindowRestore} />
+            </button>
+          )}
         </Tabs>
+        {displayPreviewPortal && (
+          <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
+        )}
       </>
     );
   }
@@ -184,4 +302,4 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
 MobileLayout.displayName = 'MobileLayout';
 
-export default MobileLayout;
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);

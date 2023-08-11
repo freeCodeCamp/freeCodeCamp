@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` avrà un valore di `89`.
 
-`...arr` restituisce un array spacchettato. In altre parole, *espande* l'array. Tuttavia, l'operatore spread funziona solo in loco, come argomento di una funzione o in un array letterale (definito usando le parentesi quadre). Il seguente codice non funzionerà:
+`...arr` restituisce un array spacchettato. In altre parole, espande l'array. Tuttavia, l'operatore spread funziona solo in loco, come argomento di una funzione o in un array letterale (definito usando le parentesi quadre). Ad esempio:
+
+```js
+const spreaded = [...arr];
+```
+
+Tuttavia, il seguente codice non funzionerà:
 
 ```js
 const spreaded = ...arr;

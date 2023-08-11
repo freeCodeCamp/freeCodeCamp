@@ -1,14 +1,14 @@
 ---
 id: 63ee35300d8d4841c3a7091d
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question D
+title: Основи CSS. Запитання D
 challengeType: 15
 dashedName: css-foundations-question-d
 ---
 
 # --description--
 
-Another way to use selectors is to chain them as a list without any separation. Let’s say you had the following HTML:
+Ще один спосіб використовувати селектори — об’єднати їх у списку без відокремлень. Скажімо, ви маєте такий HTML:
 
 ```html
 <div>
@@ -17,7 +17,7 @@ Another way to use selectors is to chain them as a list without any separation. 
 </div>
 ```
 
-You have two elements with the `subsection` class that have some sort of unique styles, but what if you only want to apply a separate rule to the element that also has `header` as a second class? Well, you could chain both the `class` selectors together in your CSS like so:
+У вас є два елементи з класом `subsection`, які мають відносно унікальні стилі. Вам потрібно застосувати окреме правило до елемента, який також має `header` як другий клас. Що робитимете? Ви можете об’єднати селектори `class` у CSS:
 
 ```css
 .subsection.header {
@@ -25,9 +25,9 @@ You have two elements with the `subsection` class that have some sort of unique 
 }
 ```
 
-What `.subsection.header` does is it selects any element that has both the `subsection` and `header` classes. Notice how there isn’t any space between the `.subsection` and `.header` `class` selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
+`.subsection.header` обирає будь-який елемент, який має класи `subsection` та `header`. Зверніть увагу, що між селекторами `class` `.subsection` та `.header` немає пробілу. Цей синтаксис в основному працює для об’єднання будь-якої комбінації селекторів, за винятком об’єднання декількох селекторів типу.
 
-This can also be used to chain a class and an ID, as shown below:
+Його можна використовувати, щоб об’єднати клас та ID:
 
 ```html
 <div>
@@ -36,7 +36,7 @@ This can also be used to chain a class and an ID, as shown below:
 </div>
 ```
 
-You can take the two elements above and combine them with the following:
+Ви можете взяти два елементи вище та поєднати їх:
 
 ```css
 .subsection.header {
@@ -48,13 +48,13 @@ You can take the two elements above and combine them with the following:
 }
 ```
 
-In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
+Ви не зможете об’єднати декілька селекторів типу, оскільки елемент може мати лише один тип. Наприклад, якщо об’єднати два селектори (`div` та `p`), ми отримаємо селектор `divp`, який не працюватиме, оскільки шукатиме літеральний елемент `<divp>`, якого не існує.
 
 # --question--
 
 ## --text--
 
-Given an element that has an `id` of `title` and a `class` of `primary`, how would you use both attributes for a single rule?
+Вам надано елемент, який має `id` зі значенням `title` та `class` зі значенням `primary`. Як ви б використали обидва атрибути для одного правила?
 
 ## --answers--
 

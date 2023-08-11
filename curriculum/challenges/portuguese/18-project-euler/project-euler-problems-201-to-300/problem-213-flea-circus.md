@@ -1,6 +1,6 @@
 ---
 id: 5900f4411000cf542c50ff54
-title: 'Problem 213: Flea Circus'
+title: 'Problema 213: Circo de pulgas'
 challengeType: 1
 forumTopicId: 301855
 dashedName: problem-213-flea-circus
@@ -8,15 +8,15 @@ dashedName: problem-213-flea-circus
 
 # --description--
 
-A 30×30 grid of squares contains 900 fleas, initially one flea per square.
+Uma grade de 30×30 quadrados contém 900 pulgas, inicialmente uma pulga por quadrado.
 
-When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).
+Quando uma campainha é tocada, cada pulga salta para um quadrado adjacente aleatoriamente (geralmente 4 possibilidades, exceto para as pulgas nas bordas da grade ou nos cantos).
 
-What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.
+Qual é o número esperado de quadrados desocupados após 50 toques da campainha? Dê sua resposta arredondada para seis casas decimais.
 
 # --hints--
 
-`fleaCircus()` should return `330.721154`.
+`fleaCircus()` deve retornar `330.721154`.
 
 ```js
 assert.strictEqual(fleaCircus(), 330.721154);

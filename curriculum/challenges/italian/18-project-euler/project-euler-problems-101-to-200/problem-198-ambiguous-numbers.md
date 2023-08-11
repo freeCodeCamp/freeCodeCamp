@@ -1,6 +1,6 @@
 ---
 id: 5900f4331000cf542c50ff45
-title: 'Problem 198: Ambiguous Numbers'
+title: 'Problema 198: numeri ambigui'
 challengeType: 1
 forumTopicId: 301836
 dashedName: problem-198-ambiguous-numbers
@@ -8,15 +8,15 @@ dashedName: problem-198-ambiguous-numbers
 
 # --description--
 
-A best approximation to a real number $x$ for the denominator bound $d$ is a rational number $\frac{r}{s}$ (in reduced form) with $s ≤ d$, so that any rational number $\frac{p}{q}$ which is closer to $x$ than $\frac{r}{s}$ has $q > d$.
+Una migliore approssimazione di un numero reale $x$ con il limite del denominatore $d$ è un numero razionale $\frac{r}{s}$ (in forma semplificata) con $s ≤ d$, in modo che qualsiasi numero razionale $\frac{p}{q}$ che è più vicino a $x$ di $\frac{r}{s}$ abbia $q > d$.
 
-Usually the best approximation to a real number is uniquely determined for all denominator bounds. However, there are some exceptions, e.g. $\frac{9}{40}$ has the two best approximations $\frac{1}{4}$ and $\frac{1}{5}$ for the denominator bound $6$. We shall call a real number $x$ ambiguous, if there is at least one denominator bound for which $x$ possesses two best approximations. Clearly, an ambiguous number is necessarily rational.
+Di solito la migliore approssimazione di un numero reale è determinata univocamente per tutti i limiti del denominatore. Vi sono tuttavia alcune eccezioni, ad es. $\frac{9}{40}$ ha le due migliori approssimazioni $\frac{1}{4}$ e $\frac{1}{5}$ per il limite del denominatore $6$. Diremo che un numero reale $x$ è ambiguo se c'è almeno un limite del denominatore per il quale $x$ possiede due migliori approssimazioni. Chiaramente, un numero ambiguo è necessariamente razionale.
 
-How many ambiguous numbers $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$, are there whose denominator $q$ does not exceed ${10}^8$?
+Quanti numeri ambigui $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$ ci sono il cui denominatore $q$ non supera ${10}^8$?
 
 # --hints--
 
-`ambiguousNumbers()` should return `52374425`.
+`ambiguousNumbers()` dovrebbe restituire `52374425`.
 
 ```js
 assert.strictEqual(ambiguousNumbers(), 52374425);

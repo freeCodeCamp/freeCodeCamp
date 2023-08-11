@@ -24,16 +24,12 @@
     "develop": "node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "1.2.0",
     "@sentry/node": "7.37.1",
     "@sentry/tracing": "7.37.1",
     "accepts": "1.3.8",
     "axios": "0.23.0",
-    "bad-words": "3.0.4",
     "body-parser": "1.20.0",
     "compression": "1.7.4",
     "connect-mongo": "3.2.0",
@@ -62,6 +58,7 @@
     "mongodb": "3.6.9",
     "morgan": "1.10.0",
     "nanoid": "3.3.4",
+    "no-profanity": "^1.4.2",
     "node-fetch": "^2.6.7",
     "nodemailer-ses-transport": "1.5.1",
     "passport": "0.4.1",
@@ -85,9 +82,8 @@
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/preset-env": "7.18.0",
     "@babel/register": "7.17.7",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-plugin-transform-function-bind": "6.22.0",
-    "babel-plugin-transform-imports": "1.5.1",
+    "joi": "17.9.2",
+    "joi-objectid": "3.0.1",
     "loopback-component-explorer": "6.4.0",
     "nodemon": "2.0.16",
     "smee-client": "1.2.3"

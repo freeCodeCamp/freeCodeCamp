@@ -36,7 +36,7 @@ Die `Hat`-Klasse sollte eine `draw`-Methode haben, die ein Argument akzeptiert, 
 Erstelle nun eine `experiment`-Funktion in `prob_calculator.py` (nicht innerhalb der `Hat`-Klasse). Diese Funktion sollte die folgenden Argumente akzeptieren:
 
 - `hat`: Ein Hut-Objekt, das Bälle enthält, das innerhalb der Funktion kopiert werden soll.
-- `expected_balls`: Ein Objekt, das die genaue Gruppe von Bällen angibt, die für das Experiment aus dem Hut gezogen werden sollen. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `expected_balls`: Ein Objekt, das die genaue Gruppe von Bällen angibt, die für das Experiment aus dem Hut gezogen werden sollen. Setze zum Beispiel `expected_balls` auf `{"blue":2, "red":1}`, um die Wahrscheinlichkeit zu bestimmen, dass 2 blaue Kugeln und 1 rote Kugel aus dem Hut gezogen werden.
 - `num_balls_drawn`: Die Anzahl der Bälle, die in jedem Experiment aus dem Hut gezogen werden sollen.
 - `num_experiments`: Die Anzahl der durchzuführenden Experimente. (Je mehr Experimente durchgeführt werden, desto genauer wird die ungefähre Wahrscheinlichkeit sein.)
 

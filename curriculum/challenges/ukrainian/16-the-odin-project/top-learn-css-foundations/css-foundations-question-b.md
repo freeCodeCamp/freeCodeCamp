@@ -1,14 +1,14 @@
 ---
 id: 63ee35240d8d4841c3a7091b
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question B
+title: Основи CSS. Запитання B
 challengeType: 15
 dashedName: css-foundations-question-b
 ---
 
 # --description--
 
-Class selectors will select all elements with the given `class`, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:
+Селектори класу обирають всі елементи з наданим `class`, що є звичайним атрибутом, розміщеним в елементі HTML. Ось так ви додаєте клас до тегу HTML та обираєте його в CSS:
 
 ```html
 <!-- index.html -->
@@ -26,12 +26,12 @@ Class selectors will select all elements with the given `class`, which is just a
 }
 ```
 
-Note the syntax for `class` selectors: a period immediately followed by the case-sensitive value of the class attribute. Classes aren’t required to be unique, so you can use the same `class` on as many elements as you want.
+Примітка щодо синтаксису для селекторів `class`: після крапки пишеться значення атрибуту класу, яке чутливе до регістру. Класи не повинні бути унікальними, тому ви можете використовувати однаковий `class` для декількох елементів.
 
-Another thing you can do with the `class` attribute is to add multiple classes to a single element as a space-separated list, such as `class="alert-text severe-alert"`. Since whitespace is used to separate `class` names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
+Завдяки атрибуту `class` також можна додати декілька класів до одного елемента, розділивши їх пробілом, як-от `class="alert-text severe-alert"`. Оскільки пробіл використовують, щоб розділити назви `class`, не використовуйте пробіли у назвах з декількома словами (натомість використовуйте дефіси).
 
-## ID Selectors
-ID selectors are similar to `class` selectors. They select an element with the given `id`, which is another attribute you place on an HTML element:
+## Селектори ID
+Селектори ID схожі до селекторів `class`. Вони обирають елемент з наданим `id`, що є ще одним атрибутом елемента HTML:
 
 ```html
 <!-- index.html -->
@@ -47,27 +47,27 @@ ID selectors are similar to `class` selectors. They select an element with the g
 }
 ```
 
-Instead of a period, you use a hashtag immediately followed by the case-sensitive value of the `id` attribute. A common pitfall is people overusing the `id` attribute when they don’t necessarily need to, and when classes will suffice. While there are cases where using an `id` makes sense or is needed, such as taking advantage of specificity or having links redirect to a section on the current page, you should use `id`s sparingly (if at all).
+Замість коми потрібно використовувати знак решітки, після якого пишеться значення атрибута `id`, чутливе до регістру. Загальною помилкою є те, що люди часто використовують атрибут `id` там, де немає потреби і можна було використати класи. Хоча є випадки, коли логічніше використовувати `id` (наприклад, щоб використати переваги специфічності чи перенаправити до розділу поточної сторінки).
 
-The major difference between classes and IDs is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
+Головною відмінністю між класами та ID є те, що елемент може мати лише один `id`. `id` не може повторюватись на сторінці, а атрибут `id` не повинен містити пробілів.
 
 # --question--
 
 ## --text--
 
-What is the syntax for class and ID selectors?
+Який синтаксис для селекторів класу та ID?
 
 ## --answers--
 
-To select a `class` you use `$` and to select an `id` you use `#`
+Щоб обрати `class`, використовуйте `$`; щоб обрати `id`, використовуйте `#`
 
 ---
 
-To select a `class` you use `.` and to select an `id` you use `*`
+Щоб обрати `class`, використовуйте `.`; щоб обрати `id`, використовуйте `*`
 
 ---
 
-To select a `class` you use `.` and to select an `id` you use `#`
+Щоб обрати `class`, використовуйте `.`; щоб обрати `id`, використовуйте `#`
 
 
 ## --video-solution--

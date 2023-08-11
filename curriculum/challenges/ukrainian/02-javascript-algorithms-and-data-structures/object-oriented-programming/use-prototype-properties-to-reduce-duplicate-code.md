@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7c
-title: Використання властивостей прототипу для зменшення дублювання коду
+title: Властивості прототипу, щоб зменшити дублювання коду
 challengeType: 1
 forumTopicId: 301336
 dashedName: use-prototype-properties-to-reduce-duplicate-code
@@ -8,32 +8,32 @@ dashedName: use-prototype-properties-to-reduce-duplicate-code
 
 # --description--
 
-Оскільки `numLegs`, ймовірно, матиме однакове значення для всіх екземплярів `Bird`у вас по суті є дубльована змінна`numLegs` всередині кожного `Bird`.
+Оскільки `numLegs`, ймовірно, матиме однакове значення для всіх екземплярів `Bird`, у вас по суті є дубльована змінна `numLegs` всередині кожного екземпляра `Bird`.
 
-Це не може бути проблемою, коли існує тільки два випадки, але уявіть собі, якщо є мільйони екземплярів. Буде багато дублюючих змінних.
+Це не може бути проблемою, коли існує тільки два випадки, але уявіть собі, якщо є мільйони екземплярів. Буде багато дубльованих змінних.
 
-Кращий спосіб - використовувати `prototype` `Bird`. Особливості в `prototype` є загальними для всіх примірників`Bird`. Наприклад можна ось так додати `numLegs` до `Bird prototype`:
+Краще використати `Bird` `prototype`. Властивості в `prototype` є загальними для ВСІХ екземплярів `Bird`. Ось так можна додати `numLegs` до `Bird prototype`:
 
 ```js
 Bird.prototype.numLegs = 2;
 ```
 
-Тепер всі випадки`Bird` мають властивість `numLegs`.
+Тепер всі екземпляри `Bird` мають властивість `numLegs`.
 
 ```js
 console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-Оскільки всі екземпляри автоматично мають властивості `prototype`, подумайти про `prototype` як "рецепт" для створення об'єктів. Зверніть увагу, що`prototype` `duck` і `canary` є частиною конструктора `Bird` як `Bird.prototype`.
+Оскільки всі екземпляри автоматично мають властивості `prototype`, вважайте `prototype` «рецептом» для створення об’єктів. Зверніть увагу, що `duck` та `canary` `prototype` є частиною конструктора `Bird` як `Bird.prototype`.
 
 # --instructions--
 
-Додати `numLegs` властивість `prototype` з `Dog`
+Додайте властивість `numLegs` до `Dog` `prototype`
 
 # --hints--
 
-`beagle` повинен мати властивість `numLegs` визначену числом.
+`beagle` повинен мати властивість `numLegs`.
 
 ```js
 assert(beagle.numLegs !== undefined);
@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` має мати властивість `prototype` а не власну властивість.
+`numLegs` повинна бути властивістю `prototype`, а не власною властивістю.
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);

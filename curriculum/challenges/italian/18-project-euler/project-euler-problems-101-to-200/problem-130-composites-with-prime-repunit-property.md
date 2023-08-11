@@ -1,6 +1,6 @@
 ---
 id: 5900f3ee1000cf542c50ff00
-title: 'Problem 130: Composites with prime repunit property'
+title: 'Problema 130: numeri compositi con la proprietà dei primi repunit'
 challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
@@ -8,19 +8,19 @@ dashedName: problem-130-composites-with-prime-repunit-property
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Un numero costituito interamente da uno è chiamato un repunit (ripetizione di uno). Definiamo $R(k)$ come repunit di lunghezza $k$, per esempio $R(6) = 111111$.
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+Dato che $n$ è un numero positivo intero e $MCD(n, 10) = 1$, si può dimostrare che esiste sempre un valore di $k$ per cui $R(k)$ è divisibile per $n$, $A(n)$ è il minimo valore di $k$ per cui ciò è vero; per esempio, $A(7) = 6$ e $A(41) = 5$.
 
-You are given that for all primes, $p > 5$, that $p − 1$ is divisible by $A(p)$. For example, when $p = 41, A(41) = 5$, and 40 is divisible by 5.
+Ti viene dato per tutti i numeri primi, $p > 5$, che $p − 1$ è divisibile per $A(p)$. Per esempio, quando $p = 41, A(41) = 5$, e 40 è divisibile per 5.
 
-However, there are rare composite values for which this is also true; the first five examples being 91, 259, 451, 481, and 703.
+Eppure, ci sono anche rari valori compositi per i quali è vero; i primi cinque esempi sono 91, 259, 451, 481 e 703.
 
-Find the sum of the first twenty-five composite values of $n$ for which $GCD(n, 10) = 1$ and $n − 1$ is divisible by $A(n)$.
+Trova la somma dei primi venticinque valori compositi di $n$ per cui $MCD(n, 10) = 1$ e $n - 1$ è divisibile per $A(n)$.
 
 # --hints--
 
-`compositeRepunit()` should return `149253`.
+`compositeRepunit()` dovrebbe restituire `149253`.
 
 ```js
 assert.strictEqual(compositeRepunit(), 149253);

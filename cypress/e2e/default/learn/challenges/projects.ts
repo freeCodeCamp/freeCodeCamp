@@ -1,7 +1,7 @@
-import { SuperBlocks } from '../../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../../config/superblocks';
 
 interface Meta {
-  challengeOrder: string[][];
+  challengeOrder: { id: string; title: string }[];
 }
 
 interface File {
@@ -64,7 +64,7 @@ const pythonProjects = {
 
 describe('project submission', () => {
   beforeEach(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
     cy.login();
   });
   // NOTE: this will fail once challenge tests are added.
@@ -102,7 +102,7 @@ describe('project submission', () => {
           )[0];
           const { challenges, meta } = javaScriptSuperBlock.blocks[targetBlock];
 
-          const projectTitles = meta.challengeOrder.map(([, title]) => title);
+          const projectTitles = meta.challengeOrder.map(({ title }) => title);
           const projectsInOrder = projectTitles.map(projectTitle => {
             return challenges.find(({ title }) => title === projectTitle);
           }) as Challenge[];
@@ -182,7 +182,7 @@ describe('project submission', () => {
           )[0];
           const { challenges, meta } = portfolioBlock.blocks[targetBlock];
 
-          const projectTitle = meta.challengeOrder[0][1];
+          const projectTitle = meta.challengeOrder[0].title;
           const { block, superBlock, dashedName, solutions } = challenges.find(
             ({ title }) => title === projectTitle
           ) as Challenge;
@@ -221,4 +221,31 @@ describe('project submission', () => {
       );
     }
   );
+
+  it('should not be possible to submit twice in quick succession', () => {
+    const { superBlock, block, challenges } = pythonProjects;
+    const { slug } = challenges[0];
+
+    cy.intercept('http://localhost:3000/project-completed', req => {
+      req.continue(_res => {
+        // delay the response by 0.5 seconds
+        const wait = new Promise<void>(resolve => setTimeout(resolve, 500));
+        return wait;
+      });
+    });
+
+    const url = `/learn/${superBlock}/${block}/${slug}`;
+    cy.visit(url);
+    cy.get('#dynamic-front-end-form')
+      .get('#solution')
+      .type('https://replit.com/@camperbot/python-project#main.py');
+
+    cy.contains("I've completed this challenge").click();
+    cy.get('[data-cy=submit-challenge]').as('submitChallenge');
+    cy.get('@submitChallenge').click();
+    cy.get('@submitChallenge').should('be.disabled');
+    // After the api responds, the button is enabled, but since the modal leaves
+    // the DOM we just check for that.
+    cy.get('[data-cy=completion-modal]').should('not.exist');
+  });
 });

@@ -17,7 +17,7 @@ dashedName: step-131
 assert.match(defeatMonster.toString(), /update/);
 ```
 
-Ви повинні передати `locations[4]` як аргумент.
+Передайте `locations[4]` як аргумент.
 
 ```js
 assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);

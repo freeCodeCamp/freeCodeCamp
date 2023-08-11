@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
-title: 'Problem 17: Number letter counts'
+title: 'Problema 17: Contador de letras'
 challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
@@ -8,33 +8,33 @@ dashedName: problem-17-number-letter-counts
 
 # --description--
 
-If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+Considere os números de 1 a 5 escritos em palavras em inglês: one, two, three, four, five. Se você somar a quantidade de letras, terá 3 + 3 + 5 + 4 + 4 = 19.
 
-If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+Se todos os números entre 1 e o parâmetro `limit` (inclusive) fossem escritos em palavras, quantas letras seriam usadas?
 
-**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+**Observação:** não conte espaços ou hífens. Por exemplo, 342 (three hundred and forty-two) contém 23 letras e 115 (one hundred and fifteen) contém 12 letras. O uso de "and" ao escrever números está em conformidade com a utilização britânica. Lembre-se de que o teste considera apenas números escritos em inglês.
 
 # --hints--
 
-`numberLetterCounts(5)` should return a number.
+`numberLetterCounts(5)` deve retornar um número.
 
 ```js
 assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-`numberLetterCounts(5)` should return 19.
+`numberLetterCounts(5)` deve retornar 19.
 
 ```js
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` deve retornar 1903.
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` deve retornar 21124.
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

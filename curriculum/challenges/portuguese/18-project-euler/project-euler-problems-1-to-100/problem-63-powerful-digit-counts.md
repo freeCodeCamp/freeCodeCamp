@@ -1,6 +1,6 @@
 ---
 id: 5900f3ab1000cf542c50febe
-title: 'Problem 63: Powerful digit counts'
+title: 'Problema 63: Contagem poderosa de algarismos'
 challengeType: 1
 forumTopicId: 302175
 dashedName: problem-63-powerful-digit-counts
@@ -8,73 +8,73 @@ dashedName: problem-63-powerful-digit-counts
 
 # --description--
 
-The 5-digit number, 16807 = 7<sup>5</sup>, is also a fifth power. Similarly, the 9-digit number, 134217728 = 8<sup>9</sup>, is a ninth power.
+O número de 5 algarismos, 16807 = 7<sup>5</sup>, também é uma quinta potência. Da mesma forma, o número de 9 algarismos, 134217728 = 8<sup>9</sup>, é uma nona potência.
 
-Complete the function so that it returns how many positive integers are of length `n` and an `n`th power.
+Complete a função para que ela retorne quantos números inteiros e positivos são da `n`-ésima potência e de comprimento `n`.
 
 # --hints--
 
-`powerfulDigitCounts(1)` should return a number.
+`powerfulDigitCounts(1)` deve retornar um número.
 
 ```js
 assert(typeof powerfulDigitCounts(1) === 'number');
 ```
 
-`powerfulDigitCounts(1)` should return `9`.
+`powerfulDigitCounts(1)` deve retornar `9`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(1), 9);
 ```
 
-`powerfulDigitCounts(2)` should return `6`.
+`powerfulDigitCounts(2)` deve retornar `6`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(2), 6);
 ```
 
-`powerfulDigitCounts(3)` should return `5`.
+`powerfulDigitCounts(3)` deve retornar `5`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(3), 5);
 ```
 
-`powerfulDigitCounts(4)` should return `4`.
+`powerfulDigitCounts(4)` deve retornar `4`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(4), 4);
 ```
 
-`powerfulDigitCounts(5)` should return `3`.
+`powerfulDigitCounts(5)` deve retornar `3`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(5), 3);
 ```
 
-`powerfulDigitCounts(6)` should return `3`.
+`powerfulDigitCounts(6)` deve retornar `3`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(6), 3);
 ```
 
-`powerfulDigitCounts(7)` should return `2`.
+`powerfulDigitCounts(7)` deve retornar `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(7), 2);
 ```
 
-`powerfulDigitCounts(8)` should return `2`.
+`powerfulDigitCounts(8)` deve retornar `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(8), 2);
 ```
 
-`powerfulDigitCounts(10)` should return `2`.
+`powerfulDigitCounts(10)` deve retornar `2`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(10), 2);
 ```
 
-`powerfulDigitCounts(21)` should return `1`.
+`powerfulDigitCounts(21)` deve retornar `1`.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(21), 1);

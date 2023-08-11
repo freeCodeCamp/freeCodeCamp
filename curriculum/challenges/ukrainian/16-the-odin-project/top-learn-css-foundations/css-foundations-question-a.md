@@ -1,14 +1,14 @@
 ---
 id: 63ee351d0d8d4841c3a7091a
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question A
+title: Основи CSS. Запитання A
 challengeType: 15
 dashedName: css-foundations-question-a
 ---
 
 # --description--
 
-A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element:
+Селектор типу (або селектор елемента) обирає всі елементи наданого типу, а синтаксисом є назва елемента:
 
 ```html
 <!-- index.html -->
@@ -27,25 +27,25 @@ div {
 }
 ```
 
-Here, all three `<div>` elements would be selected, while the `<p>` element wouldn’t be.
+У цьому прикладі всі три елементи `<div>` будуть обрані, а елемент `<p>` — ні.
 
 # --question--
 
 ## --text--
 
-Which of the following best describes the CSS code given above?
+Що з переліченого найкраще описує код CSS, поданий вище?
 
 ## --answers--
 
-The code applies a `white` color to all elements in the HTML file.
+Код надає колір зі значенням `white` всім елементам у файлі HTML.
 
 ---
 
-The code applies a `white` color to all `div` elements in the HTML file.
+Код надає колір зі значенням `white` всім елементам `div` у файлі HTML.
 
 ---
 
-The code applies a `white` color to all `p` elements in the HTML file.
+Код надає колір зі значенням `white` всім елементам `p` у файлі HTML.
 
 
 ## --video-solution--

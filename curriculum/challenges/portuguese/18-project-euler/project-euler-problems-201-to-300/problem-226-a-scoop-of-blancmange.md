@@ -1,6 +1,6 @@
 ---
 id: 5900f4511000cf542c50ff62
-title: 'Problem 226: A Scoop of Blancmange'
+title: 'Problema 226: Uma colherada de manjar branco'
 challengeType: 1
 forumTopicId: 301869
 dashedName: problem-226-a-scoop-of-blancmange
@@ -8,19 +8,19 @@ dashedName: problem-226-a-scoop-of-blancmange
 
 # --description--
 
-The blancmange curve is the set of points ($x$,$y$) such that $0 ≤ x ≤ 1$ and $\displaystyle y = \sum_{n = 0}^{\infty} \frac{s(2^nx)}{2^n}$, where $s(x)$ is the distance from $x$ to the nearest integer.
+A curva de manjar branco é um conjunto de pontos ($x$,$y$), tal que $0 ≤ x ≤ 1$ e $\displaystyle y = \sum_{n = 0}^{\infty} \frac{s(2^nx)}{2^n}$, onde $s(x)$ é a distância de $x$ até o próximo número inteiro.
 
-The area under the blancmange curve is equal to $\frac{1}{2}$, shown in pink in the diagram below.
+A área abaixo da curva de manjar branco é igual a$\frac{1}{2}$, que aparece em rosa no diagrama abaixo.
 
-<img class="img-responsive center-block" alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="diagrama da curva de manjar branco, com o círculo C mostrado no diagrama" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
 
-Let $C$ be the circle with centre ($\frac{1}{4}$,$\frac{1}{2}$) and radius $\frac{1}{4}$, shown in black in the diagram.
+Considere $C$ como sendo o círculo com o centro ($\frac{1}{4}$,$\frac{1}{2}$) e raio $\frac{1}{4}$, que aparece em preto no diagrama.
 
-What area under the blancmange curve is enclosed by $C$? Give your answer rounded to eight decimal places in the form 0.abcdefgh
+Qual área sob a curva de manjar branco está delimitada por $C$? Arredonde sua resposta para até oito casas decimais usando o formato 0.abcdefgh
 
 # --hints--
 
-`scoopOfBlancmange()` should return `0.11316017`.
+`scoopOfBlancmange()` deve retornar `0.11316017`.
 
 ```js
 assert.strictEqual(scoopOfBlancmange(), 0.11316017);

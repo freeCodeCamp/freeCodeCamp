@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Web Design Responsivo Legacy",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
@@ -55,13 +55,6 @@
         "intro": [
           "CSS grid, o griglia CSS, è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
           "In questo corso imparerai le basi della griglia CSS costruendo vari layout complessi, incluso un blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Progetti di Web Design Responsivo",
-        "intro": [
-          "È ora di mettere in pratica le tue nuove capacità. Lavorando su questi progetti, avrai modo di applicare tutte le competenze, i principi e i concetti che hai imparato finora: HTML, CSS, Visual Design, accessibilità, e altro.",
-          "Completa i cinque progetti di sviluppo web che seguono per guadagnare la tua certificazione Web Design Responsivo."
         ]
       }
     }
@@ -950,6 +943,14 @@
         "title": "Impara i Fondamenti di HTML",
         "intro": ["A description is to be determined"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Impara i Fondamenti di HTML Creando una Pagina di Ricette",
         "intro": ["A description is to be determined"]
@@ -960,6 +961,14 @@
       },
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Learn CSS Specificity",
+        "intro": ["A description is to be determined"]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
       }
     }
@@ -1000,6 +1009,83 @@
         "intro": [
           "In questa serie finale di sfide, avrai bisogno di attingere a tutto quello che hai imparato fino a questo punto e utilizzare concetti avanzati come i divisori unitari, l'algoritmo di Kaprekar e molto altro ancora per risolvere problemi complessi."
         ]
+      }
+    }
+  },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "Foundational C# with Microsoft",
+    "intro": [
+      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
+      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+    ],
+    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Write Your First Code Using C#",
+        "intro": [
+          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Create and Run Simple C# Console Applications",
+        "intro": [
+          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Add Logic to C# Console Applications",
+        "intro": [
+          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Work with Variable Data in C# Console Applications",
+        "intro": [
+          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Create Methods in C# Console Applications",
+        "intro": [
+          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Debug C# Console Applications",
+        "intro": [
+          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Foundational C# with Microsoft Certification Exam",
+        "intro": [
+          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+        ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Example Certification",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Example Certification Exam",
+        "intro": ["placeholder"]
       }
     }
   },

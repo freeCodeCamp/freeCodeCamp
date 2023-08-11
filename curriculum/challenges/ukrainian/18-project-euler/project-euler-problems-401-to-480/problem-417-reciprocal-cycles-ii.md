@@ -21,9 +21,9 @@ Where $0.1(6)$ means $0.166666\ldots$, and has a 1-digit recurring cycle. It can
 
 Unit fractions whose denominator has no other prime factors than 2 and/or 5 are not considered to have a recurring cycle. We define the length of the recurring cycle of those unit fractions as 0.
 
-Let $L(n)$ denote the length of the recurring cycle of $\frac{1}{n}$. You are given that $\sum L(n)$ for $3 ≤ n ≤ 1\\,000\\,000$ equals $55\\,535\\,191\\,115$.
+Let $L(n)$ denote the length of the recurring cycle of $\frac{1}{n}$. Дано, що $\sum L(n)$ за умови $3 ≤ n ≤ 1\\,000\\,000$ дорівнює $55\\,535\\,191\\,115$.
 
-Find $\sum L(n)$ for $3 ≤ n ≤ 100\\,000\\,000$.
+Знайдіть $\sum L(n)$ за умови $3 ≤ n ≤ 100\\,000\\,000$.
 
 # --hints--
 

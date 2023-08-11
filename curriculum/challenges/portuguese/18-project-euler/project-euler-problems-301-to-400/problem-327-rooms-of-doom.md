@@ -1,6 +1,6 @@
 ---
 id: 5900f4b31000cf542c50ffc6
-title: 'Problem 327: Rooms of Doom'
+title: 'Problema 327: Salas da destruição'
 challengeType: 1
 forumTopicId: 301984
 dashedName: problem-327-rooms-of-doom
@@ -8,35 +8,35 @@ dashedName: problem-327-rooms-of-doom
 
 # --description--
 
-A series of three rooms are connected to each other by automatic doors.
+Uma série de três salas está interligada por portas automáticas.
 
-<img class="img-responsive center-block" alt="series of three rooms, connected to each other by automatic doors" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="série de três salas interligada por portas automáticas" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
 
-Each door is operated by a security card. Once you enter a room, the door automatically closes, and that security card cannot be used again. A machine will dispense an unlimited number of cards at the start, but each room (including the starting room) contains scanners. If they detect that you are holding more than three security cards or if they detect an unattended security card on the floor, then all the doors will become permanently locked. However, each room contains a box where you may safely store any number of security cards for use at a later stage.
+Cada porta é operada por um cartão de segurança. Ao entrar em uma sala, a porta fecha automaticamente e esse cartão de segurança não poderá ser usado novamente. Uma máquina vai dispensar um número ilimitado de cartões no início, mas cada sala (incluindo a sala inicial) contém scanners. Caso eles detectem que você está segurando mais de três cartões de segurança ou caso eles detectem um cartão de segurança solto no chão, todas as portas ficarão permanentemente trancadas. No entanto, cada sala contém uma caixa onde você pode armazenar com segurança qualquer número de cartões de segurança para uso em uma fase posterior.
 
-If you simply tried to travel through the rooms one at a time then as you entered room 3 you would have used all three cards and would be trapped in that room forever!
+Se simplesmente tentássemos atravessar a sala uma por vez, quando entrássemos na sala 3, teríamos usado todos os três cartões e ficaríamos presos para sempre!
 
-However, if you make use of the storage boxes, then escape is possible. For example, you could enter room 1 using your first card, place one card in the storage box, and use your third card to exit the room back to the start. Then after collecting three more cards from the dispensing machine you could use one to enter room 1 and collect the card you placed in the box a moment ago. You now have three cards again and will be able to travel through the remaining three doors. This method allows you to travel through all three rooms using six security cards in total.
+No entanto, se utilizarmos as caixas de armazenamento, é possível escapar. Por exemplo, você pode entrar na sala 1 usando seu primeiro cartão, colocar um cartão na caixa de armazenamento, e usar seu terceiro cartão para sair da sala de volta ao início. Então, depois de coletar mais três cartões da máquina de dispensar, você poderia usar um para entrar na sala 1 e coletar o cartão que você colocou na caixa há alguns instantes. Você tem agora três cartões novamente e poderá passar pelas três portas que restam. Esse método permite que você viaje através de todas as três salas usando seis cartões de segurança no total.
 
-It is possible to travel through six rooms using a total of 123 security cards while carrying a maximum of 3 cards.
+É possível viajar através de seis salas utilizando um total de 123 cartões de segurança, enquanto se carrega um máximo de 3 cartões.
 
-Let $C$ be the maximum number of cards which can be carried at any time.
+Considere $C$ como o número máximo de cartões que podem ser transportados a qualquer momento.
 
-Let $R$ be the number of rooms to travel through.
+Considere $R$ como o número de salas a percorrer.
 
-Let $M(C, R)$ be the minimum number of cards required from the dispensing machine to travel through $R$ rooms carrying up to a maximum of $C$ cards at any time.
+Considere $M(C, R)$ como o número mínimo de cartões necessários da máquina de dispensa de cartões para viajar $R$ salas carregando até um máximo de $C$ cartões a qualquer momento.
 
-For example, $M(3, 6) = 123$ and $M(4, 6) = 23$.
+Por exemplo, $M(3, 6) = 123$ e $M(4, 6) = 23$.
 
-And, $\sum M(C, 6) = 146$ for $3 ≤ C ≤ 4$.
+E $\sum M(C, 6) = 146$ para $3 ≤ C ≤ 4$.
 
-You are given that $\sum M(C, 10) = 10382$ for $3 ≤ C ≤ 10$.
+Você é informado que $\sum M(C, 10) = 10382$ para $3 ≤ C ≤ 10$.
 
-Find $\sum M(C, 30)$ for $3 ≤ C ≤ 40$.
+Encontre $\sum M(C, 30)$ para $3 ≤ C ≤ 40$.
 
 # --hints--
 
-`roomsOfDoom()` should return `34315549139516`.
+`roomsOfDoom()` deve retornar `34315549139516`.
 
 ```js
 assert.strictEqual(roomsOfDoom(), 34315549139516);

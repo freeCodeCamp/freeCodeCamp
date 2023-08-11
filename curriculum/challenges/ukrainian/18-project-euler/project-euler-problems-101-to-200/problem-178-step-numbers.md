@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff31
-title: 'Problem 178: Step Numbers'
+title: 'Завдання 178: крокові числа'
 challengeType: 1
 forumTopicId: 301813
 dashedName: problem-178-step-numbers
@@ -8,15 +8,15 @@ dashedName: problem-178-step-numbers
 
 # --description--
 
-Consider the number 45656.
+Розглянемо число 45656.
 
-It can be seen that each pair of consecutive digits of 45656 has a difference of one.
+Зауважимо, що будь-які дві послідовні цифри в 45656 відрізняються на одиницю.
 
-A number for which every pair of consecutive digits has a difference of one is called a step number.
+Число, в якому будь-які дві послідовні цифри відрізняються на одиницю, називається кроковим числом.
 
-A pandigital number contains every decimal digit from 0 to 9 at least once.
+У панцифровому числі кожна десяткова цифра від 0 до 9 зустрічається хоча б раз.
 
-How many pandigital step numbers less than ${10}^{40}$ are there?
+Скільки існує панцифрових крокових чисел, менших за ${10}^{40}$?
 
 # --hints--
 

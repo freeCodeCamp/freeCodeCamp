@@ -1,6 +1,6 @@
 ---
 id: 5900f3e81000cf542c50fefb
-title: 'Problem 124: Ordered radicals'
+title: 'Завдання 124: впорядковані радикали'
 challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
@@ -8,17 +8,17 @@ dashedName: problem-124-ordered-radicals
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of the distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+Радикалом числа $n$ — $rad(n)$ — називають добуток простих множників $n$. Наприклад, $504 = 2^3 × 3^2 × 7$, тому $rad(504) = 2 × 3 × 7 = 42$.
 
-If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and sorting on $n$ if the radical values are equal, we get:
+Якщо обчислити $rad(n)$ за умови $1 ≤ n ≤ 10$ та впорядкувати їх за $rad(n)$ й $n$, якщо значення радикалів однакові, ми отримаємо:
 
 <div style="text-align: center;">
   <table cellpadding="2" cellspacing="0" border="0" align="center">
     <tbody>
       <tr>
-        <td colspan="2">$Unsorted$</td>
+        <td colspan="2">$Невпорядковано$</td>
         <td></td>
-        <td colspan="3">$Sorted$</td>
+        <td colspan="3">$Впорядковано$</td>
       </tr>
       <tr>
         <td>$n$</td>
@@ -112,7 +112,7 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+Нехай $E(k)$ є $k$-ним елементом у впорядкованому стовпці $n$, наприклад, $E(4) = 8$ та $E(6) = 9$. Знайдіть $E(10000)$, якщо $rad(n)$ впорядковано за умови $1 ≤ n ≤ 100000$.
 
 # --hints--
 

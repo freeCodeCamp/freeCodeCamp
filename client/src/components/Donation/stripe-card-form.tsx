@@ -1,4 +1,4 @@
-import { Button, Form } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import {
   CardNumberElement,
   CardExpiryElement,
@@ -136,7 +136,10 @@ const StripeCardForm = ({
   };
 
   return (
-    <Form className='donation-form' onSubmit={handleSubmit}>
+    <form
+      className='donation-form'
+      onSubmit={event => void handleSubmit(event)}
+    >
       <div
         className={`donation-elements${
           !isSubmissionValid ? ' failed-submition' : ''
@@ -165,7 +168,7 @@ const StripeCardForm = ({
       >
         {t('buttons.donate')}
       </Button>
-    </Form>
+    </form>
   );
 };
 

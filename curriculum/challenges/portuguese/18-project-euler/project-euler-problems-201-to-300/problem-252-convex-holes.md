@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7b
-title: 'Problem 252: Convex Holes'
+title: 'Problema 252: Orifícios convexos'
 challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
@@ -8,24 +8,24 @@ dashedName: problem-252-convex-holes
 
 # --description--
 
-Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon).
+Dado um conjunto de pontos em um plano, definimos um orifício convexo como um polígono convexo que tenha como vértices qualquer um dos pontos dados e não contenha nenhum dos pontos dados em seu interior (além dos vértices, outros pontos dados podem estar no perímetro do polígono).
 
-As an example, the image below shows a set of twenty points and a few such convex holes. The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
+Como exemplo, a imagem abaixo apresenta um conjunto de vinte pontos e alguns desses orifícios convexos. O orifício convexo mostrado como um heptágono vermelho tem uma área igual a 1049694,5 unidades quadradas, que é a maior área possível para um orifício convexo no conjunto de pontos fornecido.
 
-<img class="img-responsive center-block" alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="conjunto de vinte pontos e orifícios convexos no plano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
 
-For our example, we used the first 20 points ($T_{2k − 1}$, $T_{2k}$), for $k = 1, 2, \ldots, 20$, produced with the pseudo-random number generator:
+Para nosso exemplo, usamos os primeiros 20 pontos ($T_{2k − 1}$, $T_{2k}$), para $k = 1, 2, \ldots, 20$, produzidos com o gerador de números pseudoaleatório:
 
-$$\begin{align}   S_0 & = 290\\,797 \\\\
-  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
+$$\begin{align}   S_0 & = 290.797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50.515.093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
-i.e. (527, 144), (−488, 732), (−454, −947), …
+por exemplo: (527, 144), (-488, 732), (-454, − 947), …
 
-What is the maximum area for a convex hole on the set containing the first 500 points in the pseudo-random sequence? Specify your answer including one digit after the decimal point.
+Qual é a área máxima para um orifício convexo no conjunto que contém os primeiros 500 pontos da sequência pseudoaleatória? Dê sua resposta com 1 algarismo após o ponto (1 casa depois da vírgula).
 
 # --hints--
 
-`convexHoles()` should return `104924`.
+`convexHoles()` deve retornar `104924`.
 
 ```js
 assert.strictEqual(convexHoles(), 104924);

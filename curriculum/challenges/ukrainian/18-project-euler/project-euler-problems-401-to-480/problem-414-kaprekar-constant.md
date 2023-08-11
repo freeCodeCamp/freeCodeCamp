@@ -34,7 +34,7 @@ Note that we can define $sb(i)$ for all integers $i &lt; b^5$. If $i$ written in
 
 Define $S(b)$ as the sum of $sb(i)$ for $0 &lt; i &lt; b^5$. E.g. $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
 
-Find the sum of $S(6k + 3)$ for $2 ≤ k ≤ 300$. Give the last 18 digits as your answer.
+Знайдіть суму $S(6k + 3)$ за умови $2 ≤ k ≤ 300$. Give the last 18 digits as your answer.
 
 # --hints--
 

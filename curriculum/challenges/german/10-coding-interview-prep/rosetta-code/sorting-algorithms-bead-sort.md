@@ -18,7 +18,7 @@ Sort an array of positive integers using the Bead Sort Algorithm.
 
 # --hints--
 
-`beadSort` should be a function.
+`beadSort` sollte eine Funktion sein.
 
 ```js
 assert(typeof beadSort == 'function');
@@ -30,25 +30,25 @@ assert(typeof beadSort == 'function');
 assert(Array.isArray(beadSort([25, 32, 12, 7, 20])));
 ```
 
-`beadSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`beadSort([25, 32, 12, 7, 20])` sollte `[7, 12, 20, 25, 32]` zurückgeben.
 
 ```js
 assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`beadSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`beadSort([38, 45, 35, 8, 13])` sollte `[8, 13, 35, 38, 45]` zurückgeben.
 
 ```js
 assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`beadSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`beadSort([43, 36, 20, 34, 24])` sollte `[20, 24, 34, 36, 43]` zurückgeben.
 
 ```js
 assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`beadSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`beadSort([12, 33, 26, 18, 1, 16, 38])` sollte `[1, 12, 16, 18, 26, 33, 38]` zurückgeben.
 
 ```js
 assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -62,7 +62,7 @@ assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`beadSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`beadSort([3, 39, 48, 16, 1, 4, 29])` sollte `[1, 3, 4, 16, 29, 39, 48]` zurückgeben.
 
 ```js
 assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [

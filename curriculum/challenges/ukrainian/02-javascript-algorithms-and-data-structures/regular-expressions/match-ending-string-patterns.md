@@ -34,7 +34,7 @@ storyRegex.test(noEnding);
 assert(lastRegex.source == 'caboose$');
 ```
 
-Ваш регулярний вираз не повинен містити жодних маркерів.
+Ваш регулярний вираз не повинен містити жодних прапорців.
 
 ```js
 assert(lastRegex.flags == '');

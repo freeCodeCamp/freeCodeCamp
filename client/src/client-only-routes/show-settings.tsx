@@ -123,7 +123,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       username,
       about,
       picture,
-      points,
       theme,
       sound,
       keyboardShortcuts,
@@ -161,7 +160,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Grid>
         <main>
           <Spacer size='large' />
-          <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
+          <h1
+            id='content-start'
+            className='text-center'
+            style={{ overflowWrap: 'break-word' }}
+          >
             {t('settings.for', { username: username })}
           </h1>
           <About
@@ -170,7 +173,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             location={location}
             name={name}
             picture={picture}
-            points={points}
             sound={sound}
             keyboardShortcuts={keyboardShortcuts}
             submitNewAbout={submitNewAbout}

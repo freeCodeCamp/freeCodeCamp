@@ -1,6 +1,6 @@
 ---
 id: 5900f3961000cf542c50fea9
-title: 'Problem 42: Coded triangle numbers'
+title: 'Problema 42: Números triangulares codificados'
 challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
@@ -8,41 +8,41 @@ dashedName: problem-42-coded-triangle-numbers
 
 # --description--
 
-The `n`<sup>th</sup> term of the sequence of triangle numbers is given by, `tn` = ½`n`(`n`+1); so the first ten triangle numbers are:
+O `n`-ésimo termo da sequência de números triangulares é dado por, `tn` = ½`n`(`n`+1). Os primeiros dez números triangulares são:
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = `t`<sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
+Ao converter cada letra de uma palavra para o número correspondente à sua posição alfabética e somar esses valores, nós formamos o valor (numérico) da palavra. Por exemplo, o valor da palavra SKY é 19 + 11 + 25 = 55 = `t`<sub>10</sub>. Se o valor da palavra é um número triangular, então vamos chamar a palavra de uma palavra triangular.
 
-Using words array of `n`-length, how many are triangle words?
+Usando o array de palavras de comprimento `n`, quantas são palavras triangulares?
 
 # --hints--
 
-`codedTriangleNumbers(1400)` should return a number.
+`codedTriangleNumbers(1400)` deve retornar um número.
 
 ```js
 assert(typeof codedTriangleNumbers(1400) === 'number');
 ```
 
-`codedTriangleNumbers(1400)` should return 129.
+`codedTriangleNumbers(1400)` deve retornar 129.
 
 ```js
 assert(codedTriangleNumbers(1400) == 129);
 ```
 
-`codedTriangleNumbers(1500)` should return 137.
+`codedTriangleNumbers(1500)` deve retornar 137.
 
 ```js
 assert(codedTriangleNumbers(1500) == 137);
 ```
 
-`codedTriangleNumbers(1600)` should return 141.
+`codedTriangleNumbers(1600)` deve retornar 141.
 
 ```js
 assert(codedTriangleNumbers(1600) == 141);
 ```
 
-`codedTriangleNumbers(1786)` should return 162.
+`codedTriangleNumbers(1786)` deve retornar 162.
 
 ```js
 assert(codedTriangleNumbers(1786) == 162);
