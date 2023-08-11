@@ -1,5 +1,3 @@
-/* eslint-disable */
-// @ts-nocheck
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -92,8 +90,8 @@ const defaultProps = {
 
 const mockedEnvData = {
   curriculumLocale: 'english',
-  showUpcomingChanges: 'false',
-  showNewCurriculum: 'false',
+  showUpcomingChanges: false,
+  showNewCurriculum: false,
   homeLocation: '',
   apiLocation: '',
   forumLocation: '',
@@ -132,7 +130,13 @@ describe('<Block />', () => {
 
   langaugesArr.forEach(language => {
     superBlocksArr.forEach(superBlock => {
-      if (getAuditedSuperBlocks(language).includes(superBlock)) {
+      if (
+        getAuditedSuperBlocks({
+          language,
+          showNewCurriculum: mockedEnvData.showNewCurriculum.toString(),
+          showUpcomingChanges: mockedEnvData.showUpcomingChanges.toString()
+        }).includes(superBlock)
+      ) {
         it(`Help us translate badge does not appear on i18n blocks for language: ${language} and superBlock: ${superBlock} when the superblock is audited`, () => {
           jest
             .spyOn(getEnvData, 'getEnvData')
@@ -152,7 +156,13 @@ describe('<Block />', () => {
 
   langaugesArr.forEach(language => {
     superBlocksArr.forEach(superBlock => {
-      if (!getAuditedSuperBlocks(language).includes(superBlock)) {
+      if (
+        !getAuditedSuperBlocks({
+          language,
+          showNewCurriculum: mockedEnvData.showNewCurriculum.toString(),
+          showUpcomingChanges: mockedEnvData.showUpcomingChanges.toString()
+        }).includes(superBlock)
+      ) {
         it(`Help us translate badge does appear on i18n blocks for language: ${language} and superBlock: ${superBlock} when the superblock is not audited`, () => {
           jest
             .spyOn(getEnvData, 'getEnvData')

@@ -30,9 +30,6 @@ import {
 import Challenges from './challenges';
 import '../intro.css';
 
-const { curriculumLocale, showUpcomingChanges, showNewCurriculum } =
-  getEnvData();
-
 const mapStateToProps = (
   state: unknown,
   ownProps: { blockDashedName: string } & unknown
@@ -130,6 +127,9 @@ class Block extends Component<BlockProps> {
         !isTakeHomeProject
       );
     });
+
+    const { curriculumLocale, showUpcomingChanges, showNewCurriculum } =
+      getEnvData();
 
     const isAudited = isAuditedCert(curriculumLocale, superBlock, {
       showNewCurriculum,
