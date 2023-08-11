@@ -38,12 +38,14 @@ const ExamResultsModal = ({
 }: ExamResultsModalProps): JSX.Element => {
   const { t } = useTranslation();
 
+  if (!examResults) return <></>;
+
   const {
     numberOfCorrectAnswers,
     examTimeInSeconds,
     numberOfQuestionsInExam,
     percentCorrect
-  } = examResults as GeneratedExamResults;
+  } = examResults;
 
   return (
     <Modal
