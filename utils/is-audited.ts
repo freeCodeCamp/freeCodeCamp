@@ -1,6 +1,6 @@
 import { type SuperBlocks, getAuditedSuperBlocks } from '../config/superblocks';
 
-export function isAuditedCert(
+export function isAuditedSuperblock(
   language: string,
   superblock: SuperBlocks,
   {
