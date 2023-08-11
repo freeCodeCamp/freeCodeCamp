@@ -65,7 +65,7 @@ sumSquareDifference(100);
 const sumSquareDifference = (number)=>{
   let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);
   let sumOfSquare = sumOfSquareOfNumbers(number);
- return squareOfSum - sumOfSquare;
+   return squareOfSum - sumOfSquare;
 }
 
 function sumOfArithmeticSeries(a,d,n){
