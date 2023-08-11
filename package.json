@@ -71,6 +71,7 @@
     "lint:prettier": "prettier --list-different .",
     "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:*",
+    "playwright:install-build-tools": "sh ./playwright-install.sh && cd ./e2e && npm i && npx playwright install && npx playwright install-deps",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user",
     "seed:exams": "cd tools/scripts/seed-exams && cross-env node ./create-exams.js",
