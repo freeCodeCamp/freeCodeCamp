@@ -7,6 +7,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../../config/superblocks';
+import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
@@ -22,7 +23,6 @@ import {
   isNewJsCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
-import envData from '../../../../../config/env.json';
 import {
   isCodeAllyPractice,
   isFinalProject
