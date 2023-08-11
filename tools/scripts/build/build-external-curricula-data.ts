@@ -46,7 +46,7 @@ interface AvailableSuperBlock {
   public: boolean;
 }
 
-const availableLanguages = [
+export const availableLanguages = [
   Languages.English,
   Languages.Espanol,
   Languages.Portuguese
@@ -73,20 +73,25 @@ const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
 export function buildExtCurriculumData(
   ver: string,
-  curriculum: Curriculum<CurriculumProps>
+  curriculum: Curriculum<CurriculumProps>,
+  lang = 'english'
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');
   const dataPath = `${staticFolderPath}/curriculum-data/`;
 
   mkdirSync(dataPath, { recursive: true });
 
-  for (const lang of availableLanguages) {
-    parseCurriculumData(lang);
-  }
-
+  parseCurriculumData();
   getSubmitTypes();
 
-  function parseCurriculumData(lang: string) {
+  function getSubmitTypes() {
+    writeFileSync(
+      `${dataPath}/submit-types.json`,
+      JSON.stringify(submitTypes, null, 2)
+    );
+  }
+
+  function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
       dashedNames.includes(x)
     );
@@ -98,10 +103,8 @@ export function buildExtCurriculumData(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <GeneratedCurriculumProps>{};
-      superBlock[superBlockKey]['intro'] = getSuperBlockDescription(
-        superBlockKey,
-        lang
-      );
+      superBlock[superBlockKey]['intro'] =
+        getSuperBlockDescription(superBlockKey);
       superBlock[superBlockKey]['blocks'] = {};
 
       for (let j = 0; j < blockNames.length; j++) {
@@ -110,7 +113,7 @@ export function buildExtCurriculumData(
         >{};
 
         superBlock[superBlockKey]['blocks'][blockNames[j]]['desc'] =
-          getBlockDescription(superBlockKey, blockNames[j], lang);
+          getBlockDescription(superBlockKey, blockNames[j]);
 
         superBlock[superBlockKey]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
@@ -123,108 +126,99 @@ export function buildExtCurriculumData(
           const challengeId = challenge['id'];
           const challengePath = `challenges/${lang}/${superBlockKey}/${blockNames[j]}/${challengeId}`;
 
-          writeToFile(challengePath, challenge, lang);
+          writeToFile(challengePath, challenge);
         }
       }
 
-      writeToFile(superBlockKey, superBlock, lang);
-      getAvailableSuperBlocks();
-    }
-  }
+      writeToFile(superBlockKey, superBlock);
 
-  function writeToFile(
-    fileName: string,
-    data: Record<string, unknown>,
-    lang = 'english'
-  ): void {
-    const filePath = `${dataPath}/${ver}/${lang}/${fileName}.json`;
-    mkdirSync(dirname(filePath), { recursive: true });
-    writeFileSync(filePath, JSON.stringify(data, null, 2));
-  }
-
-  function returnIntroPath(lang: string) {
-    return resolve(
-      __dirname,
-      `../../../client/i18n/locales/${lang}/intro.json`
-    );
-  }
-
-  function getBlockDescription(
-    superBlockKeys: SuperBlocks,
-    blockKey: string,
-    lang: string
-  ): string[] {
-    const intros = JSON.parse(
-      readFileSync(returnIntroPath(lang), 'utf-8')
-    ) as Intro;
-
-    return intros[superBlockKeys]['blocks'][blockKey]['intro'];
-  }
-
-  function getSuperBlockDescription(
-    superBlockKey: SuperBlocks,
-    lang: string
-  ): string[] {
-    const superBlockIntro = JSON.parse(
-      readFileSync(returnIntroPath(lang), 'utf-8')
-    ) as Intro;
-    return superBlockIntro[superBlockKey]['intro'];
-  }
-
-  function getSuperBlockTitle(superBlock: SuperBlocks, lang: string): string {
-    const superBlocks = JSON.parse(
-      readFileSync(returnIntroPath(lang), 'utf-8')
-    ) as Intro;
-
-    return superBlocks[superBlock].title;
-  }
-
-  function getSubmitTypes() {
-    writeFileSync(
-      `${dataPath}/submit-types.json`,
-      JSON.stringify(submitTypes, null, 2)
-    );
-  }
-
-  function getAvailableSuperBlocks() {
-    const availableSuperBlocks = <AvailableSuperBlocks>{};
-
-    for (const language of Object.values(Languages)) {
-      if (!availableLanguages.includes(language)) continue;
-
-      availableSuperBlocks[language] = structuredClone(orderedSuperBlockInfo);
-    }
-
-    for (const language of Object.values(Languages)) {
-      const superBlocks = availableSuperBlocks[language];
-
-      if (!availableLanguages.includes(language)) continue;
-
-      for (let i = 0; i < superBlocks.length; i++) {
-        const isNotAudited = notAuditedSuperBlocks[language].includes(
-          superBlocks[i].dashedName
-        );
-
-        const title = getSuperBlockTitle(superBlocks[i].dashedName, language);
-
-        superBlocks[i].title = title;
-
-        if (isNotAudited) {
-          superBlocks[i].public = false;
-        }
+      if (lang === 'english') {
+        getAvailableSuperBlocks();
       }
     }
 
-    const filePath = `${dataPath}/${ver}/available-superblocks.json`;
-    writeFileSync(
-      filePath,
-      JSON.stringify(
-        {
-          superblocks: availableSuperBlocks
-        },
-        null,
-        2
-      )
-    );
+    function writeToFile(
+      fileName: string,
+      data: Record<string, unknown>
+    ): void {
+      const filePath = `${dataPath}/${ver}/${lang}/${fileName}.json`;
+      mkdirSync(dirname(filePath), { recursive: true });
+      writeFileSync(filePath, JSON.stringify(data, null, 2));
+    }
+
+    function returnIntroPath() {
+      return resolve(
+        __dirname,
+        `../../../client/i18n/locales/${lang}/intro.json`
+      );
+    }
+
+    function getBlockDescription(
+      superBlockKeys: SuperBlocks,
+      blockKey: string
+    ): string[] {
+      const intros = JSON.parse(
+        readFileSync(returnIntroPath(), 'utf-8')
+      ) as Intro;
+
+      return intros[superBlockKeys]['blocks'][blockKey]['intro'];
+    }
+
+    function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
+      const superBlockIntro = JSON.parse(
+        readFileSync(returnIntroPath(), 'utf-8')
+      ) as Intro;
+      return superBlockIntro[superBlockKey]['intro'];
+    }
+
+    function getSuperBlockTitle(superBlock: SuperBlocks): string {
+      const superBlocks = JSON.parse(
+        readFileSync(returnIntroPath(), 'utf-8')
+      ) as Intro;
+
+      return superBlocks[superBlock].title;
+    }
+
+    function getAvailableSuperBlocks() {
+      const availableSuperBlocks = <AvailableSuperBlocks>{};
+
+      for (const language of Object.values(Languages)) {
+        if (!availableLanguages.includes(language)) continue;
+
+        availableSuperBlocks[language] = structuredClone(orderedSuperBlockInfo);
+      }
+
+      for (const language of Object.values(Languages)) {
+        const superBlocks = availableSuperBlocks[language];
+
+        if (!availableLanguages.includes(language)) continue;
+
+        for (let i = 0; i < superBlocks.length; i++) {
+          const isNotAudited = notAuditedSuperBlocks[language].includes(
+            superBlocks[i].dashedName
+          );
+
+          const title = getSuperBlockTitle(superBlocks[i].dashedName);
+
+          superBlocks[i].title = title;
+
+          if (isNotAudited) {
+            superBlocks[i].public = false;
+          }
+        }
+      }
+
+      const filePath = `${dataPath}/${ver}/available-superblocks.json`;
+      writeFileSync(
+        filePath,
+        JSON.stringify(
+          {
+            superblocks: availableSuperBlocks
+          },
+          null,
+          2
+        )
+      );
+    }
   }
 }
