@@ -63,16 +63,23 @@ sumSquareDifference(100);
 
 ```js
 const sumSquareDifference = (number)=>{
-  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);
+  let squareOfSum = Math.pow(sumOfNaturalNumbers(number),2);
   let sumOfSquare = sumOfSquareOfNumbers(number);
  return squareOfSum - sumOfSquare;
 }
 
-function sumOfArithmeticSeries(a,d,n){
-  return (n/2)*(2*a+(n-1)*d);
+function sumOfNaturalNumbers(n) {
+  return (n * (n + 1)) / 2;
 }
 
-function sumOfSquareOfNumbers(n){
- return (n*(n+1)*(2*n+1))/6;
+function sumOfSquareOfNumbers(n) {
+    let num = 1;
+    let sum = 0;
+
+    while (num <= n) {
+        sum += num * num;
+    }
+    
+    return sum;
 }
 ```
