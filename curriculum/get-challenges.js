@@ -322,8 +322,8 @@ ${getFullPath('english', filePath)}
     challenge.translationPending =
       lang !== 'english' &&
       !isAuditedCert(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
   }

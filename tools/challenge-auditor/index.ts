@@ -111,8 +111,8 @@ void (async () => {
     console.log(`\n=== ${lang} ===`);
     const certs = getAuditedSuperBlocks({
       language: lang,
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
     });
     const langCurriculumDirectory = join(
       process.cwd(),
