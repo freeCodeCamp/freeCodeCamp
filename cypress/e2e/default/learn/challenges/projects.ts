@@ -154,9 +154,13 @@ describe('project submission', () => {
 
           cy.setPrivacyTogglesToPublic();
           cy.get(
-            `a[href="/certification/developmentuser/${projectsInOrder[0]?.superBlock}"]`
+            '[data-cy="btn-for-javascript-algorithms-and-data-structures"]'
           ).click();
-          cy.contains('Show Certification').click();
+          cy.get(
+            '[data-cy="btn-for-javascript-algorithms-and-data-structures"]'
+          )
+            .should('contain.text', 'Show Certification')
+            .click();
 
           projectTitles.forEach(title => {
             cy.get(`[data-cy="${title} solution"]`).click();
