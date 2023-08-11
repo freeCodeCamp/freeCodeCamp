@@ -2,10 +2,10 @@ import React from 'react';
 import { Root, List, Trigger, Content } from '@radix-ui/react-tabs';
 
 const buttonClassNames =
-  'flex-1 block relative px-2.5 py-[5px] text-sm text-foreground-secondary aria-selected:border-0 aria-selected:font-black aria-selected:bg-foreground-quaternary aria-selected:text-background-secondary';
+  'flex-1 block relative px-2.5 py-[5px] text-sm text-foreground-secondary aria-selected:border-0 aria-selected:font-bold aria-selected:bg-foreground-quaternary aria-selected:text-background-secondary hover:bg-background-quaternary';
 
 const listClassNames =
-  'flex mb-0 pl-0 mt-0 border-b-[1px] border-solid border-background-quaternary hover:bg-background-quaternary hover:text-foreground-secondary';
+  'flex mb-0 pl-0 mt-0 border-b-[1px] border-solid border-foreground-quaternary';
 
 export const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof Trigger>,
