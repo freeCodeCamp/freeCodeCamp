@@ -63,9 +63,9 @@ sumSquareDifference(100);
 
 ```js
 const sumSquareDifference = (number)=>{
-  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);
+  let squareOfSum = Math.pow(sumOfNaturalNumbers(number),2);
   let sumOfSquare = sumOfSquareOfNumbers(number);
-   return squareOfSum - sumOfSquare;
+ return sumOfSquare - squareOfSum;
 }
 
 function sumOfArithmeticSeries(a,d,n){
