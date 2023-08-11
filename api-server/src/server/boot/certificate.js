@@ -38,7 +38,8 @@ const {
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
-  collegeAlgebraPyV8Id
+  collegeAlgebraPyV8Id,
+  foundationalCSharpId
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -127,6 +128,10 @@ function createCertTypeIds(allChallenges) {
     [certTypes.collegeAlgebraPyV8]: getCertById(
       collegeAlgebraPyV8Id,
       allChallenges
+    ),
+    [certTypes.foundationalCSharp]: getCertById(
+      foundationalCSharpId,
+      allChallenges
     )
   };
 }
@@ -164,7 +169,8 @@ function sendCertifiedEmail(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCert //uncomment when going live
   },
   send$
 ) {
@@ -181,7 +187,8 @@ function sendCertifiedEmail(
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
     !isRelationalDatabaseCertV8 ||
-    !isCollegeAlgebraPyCertV8
+    !isCollegeAlgebraPyCertV8 ||
+    !isFoundationalCSharpCert //uncomment when going live
   ) {
     return Observable.just(false);
   }
@@ -219,7 +226,8 @@ function getUserIsCertMap(user) {
     isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
-    isCollegeAlgebraPyCertV8 = false
+    isCollegeAlgebraPyCertV8 = false,
+    isFoundationalCSharpCert = false
   } = user;
 
   return {
@@ -239,7 +247,8 @@ function getUserIsCertMap(user) {
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCert
   };
 }
 
@@ -385,6 +394,7 @@ function createShowCert(app) {
       isMachineLearningPyCertV7: true,
       isRelationalDatabaseCertV8: true,
       isCollegeAlgebraPyCertV8: true,
+      isFoundationalCSharpCert: true,
       isHonest: true,
       username: true,
       name: true,

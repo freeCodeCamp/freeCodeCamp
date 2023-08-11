@@ -66,7 +66,8 @@ const userProps = {
     isDataAnalysisPyCertV7: true,
     isMachineLearningPyCertV7: true,
     isRelationalDatabaseCertV8: true,
-    isCollegeAlgebraPyCertV8: true
+    isCollegeAlgebraPyCertV8: true,
+    isFoundationalCSharpCert: true
   },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}

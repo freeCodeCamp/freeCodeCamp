@@ -79,6 +79,7 @@ const demoUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCert: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: args.includes('--top-contributor')
@@ -143,6 +144,7 @@ const blankUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCert: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: [],
