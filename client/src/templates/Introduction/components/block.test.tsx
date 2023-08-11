@@ -1,10 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import {
-  SuperBlocks,
-  getAuditedSuperBlocks
-} from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../config/superblocks';
 import { createStore } from '../../../redux/create-store';
 import {
   ChallengeFiles,
@@ -15,9 +12,13 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { Languages } from '../../../../../config/i18n';
-import * as getEnvData from '../../../utils/get-envdata';
+import { isAuditedCert } from '../../../../../utils/is-audited';
 import Block from './block';
+
+jest.mock('../../../../../utils/is-audited', () => ({
+  isAuditedCert: jest.fn().mockReturnValueOnce(true)
+}));
+
 const defaultProps = {
   blockDashedName: 'test-block',
   challenges: [
@@ -85,42 +86,19 @@ const defaultProps = {
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: false,
   t: jest.fn((key: string) => [key]),
+  superBlock: SuperBlocks.RespWebDesign,
   toggleBlock: jest.fn()
-};
-
-const mockedEnvData = {
-  curriculumLocale: 'english',
-  showUpcomingChanges: false,
-  showNewCurriculum: false,
-  homeLocation: '',
-  apiLocation: '',
-  forumLocation: '',
-  newsLocation: '',
-  radioLocation: '',
-  clientLocale: 'english',
-  showLocaleDropdownMenu: false,
-  deploymentEnv: '',
-  environment: '',
-  algoliaAppId: '',
-  algoliaAPIKey: '',
-  stripePublicKey: null,
-  paypalClientId: null,
-  patreonClientId: null,
-  sentryClientDSN: null,
-  growthbookUri: null
 };
 
 describe('<Block />', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  const langaugesArr = Object.values(Languages);
-  const superBlocksArr = Object.values(SuperBlocks);
+
   it('The "Help us translate" badge does not appear on any English blocks', () => {
-    jest.spyOn(getEnvData, 'getEnvData').mockReturnValue({ ...mockedEnvData });
     render(
       <Provider store={createStore()}>
-        <Block {...defaultProps} superBlock={SuperBlocks.RespWebDesign} />
+        <Block {...defaultProps} />
       </Provider>
     );
     expect(
@@ -128,55 +106,25 @@ describe('<Block />', () => {
     ).not.toBeInTheDocument();
   });
 
-  langaugesArr.forEach(language => {
-    superBlocksArr.forEach(superBlock => {
-      if (
-        getAuditedSuperBlocks({
-          language,
-          showNewCurriculum: mockedEnvData.showNewCurriculum.toString(),
-          showUpcomingChanges: mockedEnvData.showUpcomingChanges.toString()
-        }).includes(superBlock)
-      ) {
-        it(`Help us translate badge does not appear on i18n blocks for language: ${language} and superBlock: ${superBlock} when the superblock is audited`, () => {
-          jest
-            .spyOn(getEnvData, 'getEnvData')
-            .mockReturnValue({ ...mockedEnvData, curriculumLocale: language });
-          render(
-            <Provider store={createStore()}>
-              <Block {...defaultProps} superBlock={superBlock} />
-            </Provider>
-          );
-          expect(
-            screen.queryByText(/misc.translation-pending/)
-          ).not.toBeInTheDocument();
-        });
-      }
-    });
+  it(`The "Help us translate" badge does not appear on any i18n blocks when the superblock is audited`, () => {
+    (isAuditedCert as jest.Mock).mockReturnValue(true);
+    render(
+      <Provider store={createStore()}>
+        <Block {...defaultProps} />
+      </Provider>
+    );
+    expect(
+      screen.queryByText(/misc.translation-pending/)
+    ).not.toBeInTheDocument();
   });
 
-  langaugesArr.forEach(language => {
-    superBlocksArr.forEach(superBlock => {
-      if (
-        !getAuditedSuperBlocks({
-          language,
-          showNewCurriculum: mockedEnvData.showNewCurriculum.toString(),
-          showUpcomingChanges: mockedEnvData.showUpcomingChanges.toString()
-        }).includes(superBlock)
-      ) {
-        it(`Help us translate badge does appear on i18n blocks for language: ${language} and superBlock: ${superBlock} when the superblock is not audited`, () => {
-          jest
-            .spyOn(getEnvData, 'getEnvData')
-            .mockReturnValue({ ...mockedEnvData, curriculumLocale: language });
-          render(
-            <Provider store={createStore()}>
-              <Block {...defaultProps} superBlock={superBlock} />
-            </Provider>
-          );
-          expect(
-            screen.getByText(/misc.translation-pending/)
-          ).toBeInTheDocument();
-        });
-      }
-    });
+  it(`The "Help us translate" badge does appear on i18n blocks when the superblock is not audited`, () => {
+    (isAuditedCert as jest.Mock).mockReturnValue(false);
+    render(
+      <Provider store={createStore()}>
+        <Block {...defaultProps} />
+      </Provider>
+    );
+    expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
   });
 });

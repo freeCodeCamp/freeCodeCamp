@@ -22,13 +22,15 @@ import {
   isNewJsCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
-import { getEnvData } from '../../../utils/get-envdata';
+import envData from '../../../../../config/env.json';
 import {
   isCodeAllyPractice,
   isFinalProject
 } from '../../../../../config/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
+
+const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
 
 const mapStateToProps = (
   state: unknown,
@@ -127,9 +129,6 @@ class Block extends Component<BlockProps> {
         !isTakeHomeProject
       );
     });
-
-    const { curriculumLocale, showUpcomingChanges, showNewCurriculum } =
-      getEnvData();
 
     const isAudited = isAuditedCert(curriculumLocale, superBlock, {
       showNewCurriculum,
