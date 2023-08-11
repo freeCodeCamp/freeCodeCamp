@@ -251,7 +251,6 @@ function postResetProgress(req, res, next) {
       isMachineLearningPyCertV7: false,
       isRelationalDatabaseCertV8: false,
       isCollegeAlgebraPyCertV8: false,
-      isFoundationalCSharpCert: false,
       completedChallenges: [],
       completedExams: [],
       savedChallenges: [],
