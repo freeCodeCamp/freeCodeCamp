@@ -7,7 +7,6 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../../config/superblocks';
-import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
@@ -23,6 +22,7 @@ import {
   isNewJsCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
+import { getEnvData } from '../../../utils/get-envdata';
 import {
   isCodeAllyPractice,
   isFinalProject
@@ -30,7 +30,8 @@ import {
 import Challenges from './challenges';
 import '../intro.css';
 
-const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
+const { curriculumLocale, showUpcomingChanges, showNewCurriculum } =
+  getEnvData();
 
 const mapStateToProps = (
   state: unknown,
