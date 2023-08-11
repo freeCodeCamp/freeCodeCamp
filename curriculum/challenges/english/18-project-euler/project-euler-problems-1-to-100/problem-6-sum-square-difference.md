@@ -65,7 +65,7 @@ sumSquareDifference(100);
 const sumSquareDifference = (number)=>{
   let squareOfSum = Math.pow(sumOfNaturalNumbers(number),2);
   let sumOfSquare = sumOfSquareOfNumbers(number);
- return squareOfSum - sumOfSquare;
+   return squareOfSum - sumOfSquare;
 }
 
 function sumOfNaturalNumbers(n) {
