@@ -192,7 +192,7 @@ const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
   (document: Document, id: string) => (frameContext: Context) => {
     const { element }: { element: HTMLIFrameElement } = frameContext;
-    const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+    const oldFrame = document.getElementById(element.id);
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -234,24 +234,24 @@ const updateProxyConsole =
         ...args: string[]
       ) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
-        return oldLog(...(args as []));
+        return oldLog(...args);
       };
 
       frameContext.window.console.info = function proxyInfo(...args: string[]) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
-        return oldInfo(...(args as []));
+        return oldInfo(...args);
       };
 
       frameContext.window.console.warn = function proxyWarn(...args: string[]) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
-        return oldWarn(...(args as []));
+        return oldWarn(...args);
       };
 
       frameContext.window.console.error = function proxyWarn(
         ...args: string[]
       ) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
-        return oldError(...(args as []));
+        return oldError(...args);
       };
     }
 
@@ -271,8 +271,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
     .then(async () => {
       const { sources, loadEnzyme, transformedPython } = frameContext;
       // provide the file name and get the original source
-      const getUserInput = (fileName: string) =>
-        toString(sources[fileName as keyof typeof sources]);
+      const getUserInput = (fileName: keyof Source) =>
+        toString(sources[fileName]);
       await frameContext.document?.__initTestFrame({
         code: sources,
         getUserInput,
@@ -433,4 +433,5 @@ const createFramer = (
     updateWindowI18next(),
     writeContentToFrame,
     init(frameReady, proxyLogger)
+    // ToDo: when we migrate to TypeScript v5, the `as` should be changed to `satisfies`.
   ) as (args: Context) => void;

@@ -16,13 +16,20 @@ export interface PythonDocument extends FrameDocument {
   __runPython: (code: string) => Promise<PyodideInterface>;
 }
 
+export interface Source {
+  index: string;
+  contents?: string;
+  editableContents: string;
+  original: { [key: string]: string };
+}
+
 export interface InitTestFrameArg {
   code: {
     contents?: string;
     editableContents?: string;
     original?: { [id: string]: string };
   };
-  getUserInput?: (fileName: string) => string;
+  getUserInput?: (fileName: keyof Source) => string;
   loadEnzyme?: () => void;
   transformedPython?: string;
 }
