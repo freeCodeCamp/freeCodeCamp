@@ -101,7 +101,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -149,7 +149,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -198,7 +198,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -246,7 +246,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
