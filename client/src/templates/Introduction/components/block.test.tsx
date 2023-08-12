@@ -27,7 +27,7 @@ const defaultProps = {
         block: 'testblock',
         certification: 'mockCertification',
         challengeOrder: 1,
-        challengeType: 2,
+        challengeType: 0,
         dashedName: 'mock-dashed-name',
         description: 'mockDescription',
         challengeFiles: {} as ChallengeFiles,
