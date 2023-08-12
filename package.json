@@ -134,7 +134,7 @@
     "eslint-plugin-no-only-tests": "2.6.0",
     "eslint-plugin-react": "7.33.1",
     "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-testing-library": "5.11.0",
+    "eslint-plugin-testing-library": "5.11.1",
     "execa": "5.1.1",
     "husky": "8.0.3",
     "jest": "29.6.2",
