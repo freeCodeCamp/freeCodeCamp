@@ -31,13 +31,13 @@ const maximus = Math.max(...arr);
 `...arr` returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. For example:
 
 ```js
-const spreaded = [...arr];
+const spread = [...arr];
 ```
 
 However, the following code will not work:
 
 ```js
-const spreaded = ...arr;
+const spread = ...arr;
 ```
 
 # --instructions--

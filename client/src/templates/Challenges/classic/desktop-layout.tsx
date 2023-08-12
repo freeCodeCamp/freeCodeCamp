@@ -98,7 +98,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const [showNotes, setShowNotes] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
-  const [showInstructions, setShowInstuctions] = useState(true);
+  const [showInstructions, setShowInstructions] = useState(true);
 
   const togglePane = (pane: string): void => {
     if (pane === 'showPreviewPane') {
@@ -122,9 +122,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     } else if (pane === 'showNotes') {
       setShowNotes(!showNotes);
     } else if (pane === 'showInstructions') {
-      setShowInstuctions(!showInstructions);
+      setShowInstructions(!showInstructions);
     } else {
-      setShowInstuctions(true);
+      setShowInstructions(true);
       setShowConsole(false);
       setShowPreviewPane(true);
       setShowPreviewPortal(false);

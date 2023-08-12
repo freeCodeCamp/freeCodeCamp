@@ -27,7 +27,7 @@ An implementation need only properly implement the following instructions:
 | <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
 | <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
+Any cell size is allowed, EOF (*E*and-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 

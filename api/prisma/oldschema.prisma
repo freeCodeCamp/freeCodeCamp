@@ -21,7 +21,7 @@ type FileData {
   name     String
   path     String?
 
-  // Nonesense
+  // Nonsense
   dataSource Json?    @map("__dataSource") // Null only | Undefined
   persisted  Boolean? @map("__persisted") // Undefined
   strict     Boolean?  @map("__strict") // Undefined
@@ -34,7 +34,7 @@ type File {
   name     String
   path     String? // Undefined | Null
 
-  // Nonesense
+  // Nonsense
   cachedRelations Json?     @map("__cachedRelations") // Undefined
   data            FileData? @map("__data") // Undefined
   dataSource      Json?     @map("__dataSource") // Null | Undefined
@@ -48,7 +48,7 @@ type CompletedChallengeData {
   id            String
   solution      String? // Null | Undefined
 
-  // Nonesense
+  // Nonsense
   dataSource Json?   @map("__dataSource") // Null
   persisted  Boolean @map("__persisted")
   strict     Boolean @map("__strict")
@@ -91,7 +91,7 @@ type ProfileUIData {
   showPortfolio Boolean
   showTimeLine  Boolean
 
-  // Nonesense
+  // Nonsense
   persisted Boolean? @map("__persisted") // Undefined
   strict    Boolean? @map("__strict") // Undefined
 }
@@ -108,7 +108,7 @@ type ProfileUI {
   showPortfolio Boolean? // Undefined
   showTimeLine  Boolean? // Undefined
 
-  // Nonesense
+  // Nonsense
   cachedRelations Json?          @map("__cachedRelations") // Undefined | {}
   data            ProfileUIData? @map("__data") // Undefined
   persisted       Boolean?       @map("__persisted") // Undefined

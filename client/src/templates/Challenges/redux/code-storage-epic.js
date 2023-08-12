@@ -132,7 +132,7 @@ function loadCodeEpic(action$, state$) {
       const { title: legacyKey } = challenge;
       const codeFound = getCode(id);
 
-      // first check if the store (which is syncronized with the db) has saved
+      // first check if the store (which is synchronized with the db) has saved
       // code
       const savedChallenges = savedChallengesSelector(state);
       const savedChallenge = savedChallenges?.find(saved => {

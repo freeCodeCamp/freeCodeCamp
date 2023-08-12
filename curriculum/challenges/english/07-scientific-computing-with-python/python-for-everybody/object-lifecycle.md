@@ -20,8 +20,8 @@ What will the following program print?:
 class PartyAnimal:
     x = 0
     name = ''
-    def __init__(self, nam):
-        self.name = nam
+    def __init__(self, name):
+        self.name = name
         print(self.name,'constructed')
     def party(self):
         self.x = self.x + 1

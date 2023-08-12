@@ -142,7 +142,7 @@ const StripeCardForm = ({
     >
       <div
         className={`donation-elements${
-          !isSubmissionValid ? ' failed-submition' : ''
+          !isSubmissionValid ? ' failed-submission' : ''
         }`}
       >
         <CardNumberElement

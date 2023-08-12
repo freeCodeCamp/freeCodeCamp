@@ -52,7 +52,7 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const RenderIlustration = ({
+const RenderIllustration = ({
   recentlyClaimedBlock
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
@@ -136,7 +136,7 @@ function DonateModal({
   const donationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
+        <RenderIllustration recentlyClaimedBlock={recentlyClaimedBlock} />
       </div>
       <Row>
         {!closeLabel && (
