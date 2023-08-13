@@ -5,6 +5,16 @@ import { MenuItem } from './menu-item/menu-item';
 import { Dropdown } from './drop-down';
 
 describe('<DropDownButton>', () => {
+  it('should render dropdown button with an id', () => {
+    render(
+      <Dropdown>
+        <Dropdown.Toggle id='dropdown-button'>test</Dropdown.Toggle>
+      </Dropdown>
+    );
+
+    const dropDownTrigger = screen.getByText('test');
+    expect(dropDownTrigger).toHaveAttribute('id', 'dropdown-button');
+  });
   it('should render button with text', () => {
     render(
       <Dropdown>
