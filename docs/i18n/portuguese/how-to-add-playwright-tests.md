@@ -1,100 +1,100 @@
-# How to add Playwright tests
+# Como adicionar testes do Playwright
 
-## Installation:
+## Instalação:
 
-To install and configure Playwright on your machine check out this [documentation](https://playwright.dev/docs/intro#installing-playwright)
+Para instalar e configurar o Playwright na sua máquina, confira a [documentação](https://playwright.dev/docs/intro#installing-playwright)
 
-To learn how to write Playwright tests, or 'specs', please see Playwright's official [documentation](https://playwright.dev/docs/writing-tests).
+Para aprender a escrever testes do Playwright ou 'specs', confira a [documentação](https://playwright.dev/docs/writing-tests) oficial.
 
-## Where to Add a Test
+## Onde adicionar um teste
 
-- Playwright tests are in the `./e2e` directory.
+- Os testes do Playwright estão no diretório `./e2e`.
 
-- Playwright test files are always with a `.spec.ts` extension.
+- Os arquivos de teste do Playwright têm sempre uma extensão `.spec.ts`.
 
-## How to Run Tests
+## Como executar testes
 
 
-### 1. Ensure that MongoDB and Client Applications are Running
+### 1. Veja se as aplicações de client e do MongoDB estão em execução
 
-- [Start MongoDB and seed the database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [Start the freeCodeCamp client application and API server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Inicie também a aplicação de client do freeCodeCamp e o servidor da API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Run the Playwright Tests
+### 2. Execute os testes do Playwright
 
-To run tests with Playwright check the following below
+Para executar testes com o Playwright, verifique o seguinte
 
-- To run tests in UI helper mode:
+- Para executar testes no modo auxiliar de UI:
 
   ```console
   npx playwright test --ui
   ```
 
-- To run a single test:
+- Para executar um único teste:
 
   ```console
-  npx playwright test <filename>
+  npx playwright test <nome_do_arquivo>
   ```
 
-  For example:
+  Por exemplo:
 
   ```console
   npx playwright test landing-page.spec.ts
   ```
 
-- Run a set of test files in respective folders:
+- Para executar um conjunto de arquivos de teste nas respectivas pastas:
 
   ```console
-  npx playwright test <pathToFolder1> <pathToFolder2>
+  npx playwright test <caminho_da_pasta1> <caminho_da_pasta2>
   ```
 
-  For example:
+  Por exemplo:
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
-- Run the test with the title:
+- Para executar o teste com o título:
 
   ```console
-  npx playwright test -g <title>
+  npx playwright test -g <título>
   ```
 
-  For example:
+  Por exemplo:
   ```console
   npx playwright test -g "add a todo item"
   ```
 
-### 3. Debugging Tests
+### 3. Depuração dos testes
 
-Since Playwright runs in Node.js, you can debug it with your debugger of choice e.g. using console.log or inside your IDE
+Como o Playwright é executado no Node.js, você pode depurá-lo com seu depurador preferido – por exemplo, usando console.log ou em seu IDE
 
-- Debugging all tests:
+- Depuração de todos os testes:
 
   ```console
   npx playwright test --debug
   ```
 
-- Debugging one test file:
+- Depuração de um arquivo de teste:
 
   ```console
   npx playwright test example.spec.ts --debug
   ```
 
-### 4. Generate Test Reports
+### 4. Geração de relatórios de teste
 
-The HTML Reporter shows you a full report of your tests allowing you to filter the report by browsers, passed tests, failed tests, skipped tests and flaky tests.
+O HTML Reporter mostra um relatório completo de seus testes, que permite filtrar o relatório por navegadores, testes que passaram, testes que falharam, testes ignorados e testes não confiáveis.
 
 ```console
 npx playwright show-report 
 ```
 
-### 5. Troubleshooting
+### 5. Solução de problemas
 
-Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including majpr distributions of Windows, MacOS and Linux.
+O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O colaborador já configurou os testes para serem executados em máquinas com todos os sistemas operacionais, incluindo as distribuições mais significativas do Windows, MacOS e Linux.
 
 
-- A common error seen in playwright is as follows:
+- Um erro comum visto no Playwright é o seguinte:
 
   ```console
     Error: page.goto: Could not connect: Connection refused
@@ -103,72 +103,72 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
     ============================================================  
   ```
 
-  You can fix the above error with the following steps:
+  Você pode corrigir o erro acima com os seguintes passos:
 
-  1. **Check the URL:** Ensure that the URL you're trying to navigate to is correct and properly formatted. Make sure there are no typos in the URL.
+  1. **Verifique o URL:** confira se o URL que você está tentando navegar está certo e formatado corretamente. Certifique-se de que não há erros de digitação no URL.
 
-  2. **Server Status:** Check whether the server at the URL is running and accessible. You might encounter this error if the server is not running or is not accessible.
+  2. **Status do servidor:** confira se o servidor no URL está em execução e acessível. Você pode encontrar esse erro se o servidor não estiver em execução ou se não estiver acessível.
 
-  3. **Port Availability:** Verify that the port mentioned in the URL (8000 in this case) is the correct port and is available for use. Make sure no other process is already using that port.
+  3. **Disponibilidade da porta:** verifique se a porta mencionada no URL (8000, neste caso) é a porta correta e está disponível para uso. Certifique-se de que nenhum outro processo já esteja usando essa porta.
 
-  4. **Firewall or Security Software:** Sometimes, firewall or security software can block connections to specific ports. Check your firewall settings to ensure that the port is allowed.
+  4. **Firewall ou software de segurança:** às vezes, firewalls ou software de segurança podem bloquear conexões em portas específicas. Verifique as configurações do firewall para garantir que a porta seja permitida.
 
-  5. **Network Connectivity:** Ensure that your system has a working network connection and can access external resources.
+  5. **Conectividade de rede:** certifique-se de que seu sistema tenha uma conexão de rede ativa e possa acessar recursos externos.
 
-- Another common error seen in playwright is as follows:
+- Outro erro comum visto no Playwright é o seguinte:
 
   ```console
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
-  1. The network request was made using a method that does not include a response body, such as HEAD or CONNECT.
-  2. The network request was made over a secure (HTTPS) connection, and the response body is not available for security reasons.
-  3. The network request was made by a third-party resource (such as an advertisement or a tracking pixel) that is not controlled by the script.
-  4. The network request was made by a script that has been paused or stopped before the response was received.
+  1. A solicitação de rede foi feita usando um método que não inclui um corpo de resposta, como HEAD ou CONNECT.
+  2. A solicitação de rede foi feita através de uma conexão segura (HTTPS) e o corpo da resposta não está disponível por razões de segurança.
+  3. A solicitação de rede foi feita por um recurso de terceiros (como um anúncio ou um pixel de rastreamento) que não é controlado pelo script.
+  4. A solicitação de rede foi feita por um script que foi pausado ou interrompido antes de a resposta ser recebida.
 
 
 
-**For more insights on issues visit the official documentation.**
+**Para mais informações sobre essas questões, confira a documentação oficial.**
 
-## Playwright-Gitpod Setup
+## Configuração do Playwright no Gitpod
 
-### 1. Ensure Development Environment is Running
+### 1. Certifique-se que o ambiente de desenvolvimento está em execução
 
-If starting the Gitpod environment did not automatically develop the environment:
+Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automaticamente:
 
-- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Siga o [guia de instalação do MongoDB](https://www.mongodb.com/basics/get-started).
 
-- Create the .env
+- Criar o arquivo .env
   ```console
   cp sample.env .env
   ```
 
-- Create a config file.
+- Crie um arquivo de configuração.
   ```console
   pnpm run create:config
   ```
 
-- Seed the database
+- Crie o banco de dados
   ```console
   pnpm run seed
   ```
 
-- Develop the server and client
+- Desenvolva o servidor e o client
   ```console
   pnpm run develop
   ```
 
-### 2. Install Playwright Build Tools
+### 2. Instale as ferramentas de compilação do Playwright
 
-To install necessary dependencies for running Playwright run the following command:
+Para instalar as dependências necessárias para executar o Playwright, execute o seguinte comando:
 
 ```console
 pnpm run playwright:install-build-tools
 ```
 
 
-### 3. Run the Playwright Tests on Gitpod
+### 3. Execute os testes do Playwright no Gitpod
 
-To run all Playwright tests, run the following command:
+Para executar todos os testes do Playwright, execute o seguinte comando:
 
 ```console
 npx playwright test
