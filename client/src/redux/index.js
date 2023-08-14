@@ -302,7 +302,11 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      const { submittedChallenge, savedChallenges } = payload;
+      const {
+        examResults = null,
+        submittedChallenge,
+        savedChallenges
+      } = payload;
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
@@ -325,7 +329,8 @@ export const reducer = handleActions(
               'id'
             ),
             savedChallenges:
-              savedChallenges ?? savedChallengesSelector(state[MainApp])
+              savedChallenges ?? savedChallengesSelector(state[MainApp]),
+            examResults
           }
         }
       };
@@ -378,6 +383,19 @@ export const reducer = handleActions(
       return {
         ...state,
         examInProgress: false
+      };
+    },
+    [actionTypes.clearExamResults]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            examResults: null
+          }
+        }
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

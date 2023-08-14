@@ -22,7 +22,7 @@ dashedName: use--for-a-more-concise-conditional
 
 # --hints--
 
-`MyComponent` має існувати та відображатись.
+`MyComponent` має існувати та відтворюватись.
 
 ```js
 assert(

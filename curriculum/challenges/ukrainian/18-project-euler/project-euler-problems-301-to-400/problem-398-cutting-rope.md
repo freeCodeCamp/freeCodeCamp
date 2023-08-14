@@ -12,7 +12,7 @@ Inside a rope of length $n$, $n - 1$ points are placed with distance 1 from each
 
 Let $E(n, m)$ be the expected length of the second-shortest segment. Наприклад, $E(3, 2) = 2$ та $E(8, 3) = \frac{16}{7}$. Note that if multiple segments have the same shortest length the length of the second-shortest segment is defined as the same as the shortest length.
 
-Знайдіть $E({10}^7, 100)$. Give your answer rounded to 5 decimal places behind the decimal point.
+Знайдіть $E({10}^7, 100)$. Дайте відповідь, заокруглену до п’яти знаків після коми.
 
 # --hints--
 

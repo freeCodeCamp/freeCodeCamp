@@ -28,7 +28,7 @@ import {
   usernameSelector
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
-import { fullCertMap } from '../resources/cert-and-project-map';
+import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
   reallyWeirdErrorMessage,
@@ -88,10 +88,10 @@ interface ShowCertificationProps {
 const requestedUserSelector = (state: unknown, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state) as User;
 
-const validCertSlugs = fullCertMap.map(cert => cert.certSlug);
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
-  const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
+  const isValidCert = liveCerts.some(
+    ({ certSlug }) => certSlug === props.certSlug
+  );
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,

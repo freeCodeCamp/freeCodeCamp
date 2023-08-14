@@ -92,6 +92,10 @@ function DonateModal({
   const [showSkipButton, setShowSkipButton] = useState(false);
   const loadElementsIndividually = useFeature('load_elements_individually').on;
   const { t } = useTranslation();
+
+  // test wheather the conversions are being distributed properly
+  useFeature('aa-test-in-component');
+
   const handleProcessing = () => {
     setCloseLabel(true);
   };
