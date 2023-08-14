@@ -158,12 +158,13 @@ class CompletionModal extends Component<
       message,
       t,
       dashedName,
-      submitChallenge
+      submitChallenge,
+      completedChallengesIds
     } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-      if (isCertificationProject(id)) {
+      if (isCertificationProject(id) && !completedChallengesIds.includes(id)) {
         fireConfetti();
       }
     }
