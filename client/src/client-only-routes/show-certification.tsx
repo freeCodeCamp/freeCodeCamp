@@ -273,11 +273,17 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const downloadImage = async () => {
     setIsCertDownloading(true);
-    const element = document.querySelector<HTMLElement>('.certificate-wrapper');
-    const sig = element?.querySelector(`img[alt="Quincy Larson's Signature"]`);
-    sig?.remove();
+    const element = document.querySelector<HTMLElement>(
+      '.certification-namespace'
+    );
     if (!element) {
       return;
+    }
+    const sig = element.querySelector<HTMLImageElement>(
+      `img[alt="Quincy Larson's Signature"]`
+    );
+    if (sig) {
+      sig.style.display = 'none';
     }
     const img = await toPng(element);
     const link = document.createElement('a');
@@ -286,6 +292,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     document.body.appendChild(link);
     link.click();
     link.remove();
+    if (sig) {
+      sig.style.display = 'initial';
+    }
     setIsCertDownloading(false);
   };
 
