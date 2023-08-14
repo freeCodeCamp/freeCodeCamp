@@ -8,7 +8,7 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Zur Erinnerung: Dieses Projekt baut auf dem folgenden Starterprojekt auf <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, oder wird von <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> geklont.
 
 Auf der Seite befindet sich ein Eingabeformular. Es sendet Daten an den `PUT /travellers` Endpunkt als AJAX Anfrage.
 
@@ -30,29 +30,29 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
 });
 ```
 
-First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. `fill` returns a promise, so `then` is chained off of it.
+Als Erstes die `fill` Methode von dem `browser` Objekt - diese füllt das `surname` Feld des Formulars mit dem Wert `'Polo'` aus. `fill` gibt ein Versprechen zurück, und somit wird `then` davon entkettet.
 
-Within the `then` callback, the `pressButton` method of the `browser` object is used to invoke the form's `submit` event listener. Die `pressButton`-Methode ist asynchron.
+Innerhalb des `then` Callbacks, wird die `pressButton` Methode des `browser` Objekts dazu verwendet, um den `submit`-Ereignis-Listener des Formulars aufzurufen. Die `pressButton`-Methode ist asynchron.
 
-Then, once a response is received from the AJAX request, a few assertions are made confirming:
+Sobald eine Antwort von der AJAX-Anfrage empfangen wird, werden einige Behauptungen zur Bestätigung aufgestellt:
 
 1.  Der Status der Antwort ist `200`
 2.  Der Text innerhalb des `<span id='name'></span>` Elements entspricht `'Marco'`
 3.  Der Text innerhalb des `<span id='surname'></span>` Elements entspricht `'Polo'`
-4.  There is `1` `<span id='dates'></span>` element.
+4.  Es gibt `1` `<span id='dates'></span>`-Element.
 
 Schließlich wird der `done` Callback aufgerufen, der aufgrund des asynchronen Tests benötigt wird.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'Submit the surname "Colombo" in the HTML form'` test (`// #5`), automate the following:
+Automatisiere Folgendes innerhalb `tests/2_functional-tests.js`, in dem `'Submit the surname "Colombo" in the HTML form'` Test (`// #5`):
 
 1.  Fülle das Formular mit dem Nachnamen `Colombo` aus
 2.  Klicke auf den "Bestätigen" Button
 
 Und innerhalb des `pressButton` Callback:
 
-1.  Assert that status is OK `200`
+1.  Prüfen ob der Status `200` OK ist
 2.  Prüfe, ob der Text innerhalb des Elements `span#name` `'Cristoforo'` ist
 3.  Prüfe, ob der Text innerhalb des Elements `span#surname` `'Colombo'` ist
 4.  Überprüfe, ob das/die Element(e) `span#dates` existieren und deren Zahl `1` ist

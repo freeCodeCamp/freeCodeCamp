@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
-title: 'Problem 373: Circumscribed Circles'
+title: 'Problema 373: cerchi circoscritti'
 challengeType: 1
 forumTopicId: 302035
 dashedName: problem-373-circumscribed-circles
@@ -8,17 +8,17 @@ dashedName: problem-373-circumscribed-circles
 
 # --description--
 
-Every triangle has a circumscribed circle that goes through the three vertices. Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+Ogni triangolo ha un cerchio circoscritto che attraversa i tre vertici. Considera tutti i triangoli a lati interi per i quali è intero anche il raggio del cerchio circoscritto.
 
-Let $S(n)$ be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed $n$.
+Sia $S(n)$ la somma dei raggi dei cerchi circoscritti di tutti questi triangoli per i quali il raggio non supera $n$.
 
 $S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
 
-Find $S({10}^7)$.
+Trova $S({10}^7)$.
 
 # --hints--
 
-`circumscribedCircles()` should return `727227472448913`.
+`circumscribedCircles()` dovrebbe restituire `727227472448913`.
 
 ```js
 assert.strictEqual(circumscribedCircles(), 727227472448913);

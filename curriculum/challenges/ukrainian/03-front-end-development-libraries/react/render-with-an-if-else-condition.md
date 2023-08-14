@@ -18,7 +18,7 @@ MyComponent містить `boolean` у стані, який відстежує,
 
 # --hints--
 
-`MyComponent` має існувати і візуалізуватися.
+`MyComponent` має існувати та відтворюватись.
 
 ```js
 assert(

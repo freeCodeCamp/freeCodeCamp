@@ -16,11 +16,17 @@ L'ultima sfida ha mostrato come trasferire le informazioni da un componente geni
 </ParentComponent>
 ```
 
-Il componente figlio ha quindi accesso alla proprietà array `colors`. I metodi sugli array come `join()` possono essere utilizzati quando si accede alla proprietà. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` Questo unirà tutti gli elementi `colors` dell'array in una stringa separata da virgole e produrrà: `<p>green, blue, red</p>` Più avanti vedremo altri metodi comuni per fare il rendering di array di dati in React.
+Il componente figlio ha quindi accesso alla proprietà array `colors`. I metodi sugli array come `join()` possono essere utilizzati quando si accede alla proprietà.
+
+```jsx
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+```
+
+Questo unirà tutti gli elementi dell'array `colors` in una stringa separata da virgole e produrrà: `<p>green, blue, red</p>`. Più tardi, impareremo altri metodi comuni per renderizzare array di dati in React.
 
 # --instructions--
 
-Nell'editor di codice ci sono i componenti `List` e `ToDo`. Quando si esegue il rendering di ogni `List` dal componente `ToDo`, deve essere passata una proprietà `tasks` assegnata a un array di attività da fare, ad esempio `["walk dog", "workout"]`. Quindi accedi a questo array `tasks` nel componente `List`, mostrandone il valore all'interno dell'elemento `p`. Usa `join(", ")` per visualizzare l'array `props.tasks` nell'elemento `p` come lista separata da virgole. L'elenco di oggi (Today) dovrebbe avere almeno 2 task e quella di domani (Tomorrow) dovrebbe avere almeno 3 task.
+Nell'editor di codice ci sono i componenti `List` e `ToDo`. Quando esegui il rendering di ogni `List` dal componente `ToDo`, devi passare una proprietà `tasks` assegnata a un array di attività da fare, ad esempio `["walk dog", "workout"]`. Quindi accedi a questo array `tasks` nel componente `List`, mostrandone il valore all'interno dell'elemento `p`. Usa `join(", ")` per visualizzare l'array `props.tasks` nell'elemento `p` come un lista di elementi separati da virgole. L'elenco di oggi (Today) dovrebbe avere almeno 2 task e quello di domani (Tomorrow) dovrebbe avere almeno 3 task.
 
 # --hints--
 
@@ -93,7 +99,7 @@ assert(
 );
 ```
 
-Il componente `List` dovrebbe presentare nel tag `p` il valore dalla proprietà `tasks`.
+Il componente `List` dovrebbe presentare il valore dalla proprietà `tasks` nel tag `p`.
 
 ```js
 assert(

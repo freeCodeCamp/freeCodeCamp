@@ -2,6 +2,8 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 ## Choose between Gitpod or your Own Machine (local setup)
 
+> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+
 Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
@@ -15,13 +17,11 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 | Necesita conexión a Internet para funcionar                                 | Requiere una conexión mínima a Internet (una vez configurado)                      |
 | Algunas tareas, como la compilación y las pruebas, pueden llevar más tiempo | Realización más rápida de las tareas (en función de las capacidades de tu máquina) |
 
-> [!ATTENTION] **Nota:** Si utilizas Windows 10 u 11, tendrás que utilizar WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
-
 ### How to Prepare a Gitpod Workspace
 
-Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. Con GitPod obtienes un entorno gratuito listo para codificar en pocos minutos, y es útil si no tienes acceso a ordenador o quieres hacer cambios puntuales.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
-Hay varias formas de lanzar un espacio de trabajo GitPod:
+There are various ways to launch an Gitpod workspace:
 
 1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
@@ -34,21 +34,33 @@ Hay varias formas de lanzar un espacio de trabajo GitPod:
    - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - funciona con navegadores basados en Chromium como Google Chrome, Brave, Edge, etc.
    - [Complemento para Firefox](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
-   Una vez instalado, verás un botón 'GitPod' en cada repositorio, pull-request, etc. como un práctico atajo para lanzar un espacio de trabajo desde allí. Consulta la página de la extensión para más detalles, capturas de pantalla, etc.
+   Once installed you will see a 'Gitpod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. Consulta la página de la extensión para más detalles, capturas de pantalla, etc.
 
-Spanish Eso es todo, ahora puedes saltar a la sección 'sincronizar desde el padre' después de haber lanzado un espacio de trabajo GitPod. La mayor parte de esta guía se aplica a los espacios de trabajo GitPod, pero ten en cuenta [cómo funcionan las URLs & Puertos dentro de un GitPod](https://www.gitpod.io/docs/configure/workspaces/ports).
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a Gitpod workspace. Most parts of this guide applies to Gitpod workspaces, but be mindful of [how the URLs & Ports work within a Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+**Note: Troubleshooting port issues on Gitpod**
+
+Sometimes the service on port `8000` doesn't go live. This is common when you are restarting an inactive workspace.
+
+If the service is not coming up on port `8000`, you can troubleshoot using these steps:
+
+- **Start the server**: Run `pnpm run develop:server` in one terminal window from the root project directory (`/workspace/freeCodeCamp`) to start the server.
+
+- **Start the client**: In another terminal window, run `pnpm run develop -- -H '0.0.0.0'` from the client directory (`/workspace/freeCodeCamp/client`) to start the client.
+
+This should make port `8000` available.
 
 ### How to Prepare your Local Machine
 
-A continuación se indican los requisitos mínimos del sistema para ejecutar freeCodeCamp localmente:
+Here is a minimum system requirement for running freeCodeCamp locally:
 
 - 8 GB RAM
-- CPU relativamente rápida (más de 4 núcleos)
-- Windows 10 u 11 (con WSL), macOS o Linux
+- Relatively fast CPU (4+ cores)
+- Windows 10 or 11 (with WSL), macOS, or Linux
 
-Comienza por instalar el software necesario para tu sistema operativo.
+Start by installing the prerequisite software for your operating system.
 
-Apoyamos principalmente el desarrollo en Linux y sistemas basados en Unix como Ubuntu y macOS. Puedes desarrollar en Windows 10 u 11 sólo con WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+We primarily support development on Linux and Unix-based systems like Ubuntu and macOS. You can develop on Windows 10 or 11 with WSL2 only. You can follow [this guide](how-to-setup-wsl.md) to set up WSL2. You can't use Command Prompt, Git Bash or PowerShell to run freeCodeCamp natively within windows.
 
 
 #### Pre-requisitos:
@@ -57,11 +69,11 @@ Apoyamos principalmente el desarrollo en Linux y sistemas basados en Unix como U
 | --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                             |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                             |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                             |
 
-> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. Consulta [solución de problemas](#troubleshooting) para obtener más detalles.
+> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. See [troubleshooting section](troubleshooting-development-issues.md) for details.
 
-Si Node.js ya está instalado en tu máquina, ejecuta los siguientes comandos para validar las versiones:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
@@ -70,7 +82,7 @@ pnpm -v
 
 > [!TIP] Recomendamos encarecidamente actualizar a las últimas versiones estables del software mencionado anteriormente, también conocidas como versiones de soporte a largo plazo (LTS).
 
-Una vez instalados los requisitos previos, debe preparar su entorno de desarrollo. Esto es habitual en muchos flujos de trabajo de desarrollo, y sólo tendrá que hacerlo una vez.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
 ##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 
@@ -142,7 +154,7 @@ Note: `--depth=1` creates a shallow clone of your fork, with only the most recen
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred to as the `upstream` repository. Your fork is referred to as the `origin` repository.
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
@@ -262,6 +274,14 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+
+```console
+pnpm run seed:certified-user
+```
+
+> [!WARNING] Running `pnpm run seed:certified-user` will log you out. You will have to clear your browser cookies and sign in again.
+
 #### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
@@ -286,9 +306,10 @@ If you have issues while installing it, check out the [troubleshooting section](
 
 A quick reference to the commands that you will need when working locally.
 
-| command            | description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
-| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
-| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                    |
-| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                              |
+| command                        | description                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Installs / re-installs all dependencies and bootstraps the different services.                    |
+| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB.                                      |
+| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB. |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                       |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                 |

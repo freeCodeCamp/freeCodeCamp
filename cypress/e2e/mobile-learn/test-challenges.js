@@ -1,8 +1,14 @@
 import currData from '../../../config/curriculum.json';
 import { orderedSuperBlockInfo } from '../../../tools/scripts/build/build-external-curricula-data';
 
+const nonEditorSB = [
+  'scientific-computing-with-python',
+  'data-analysis-with-python',
+  'machine-learning-with-python'
+];
+
 const publicSB = orderedSuperBlockInfo
-  .filter(sb => sb.public === true)
+  .filter(sb => sb.public === true && !nonEditorSB.includes(sb.dashedName))
   .map(sb => sb.dashedName);
 
 describe('Test challenges in mobile', () => {

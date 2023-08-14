@@ -25,10 +25,6 @@ const userProps = {
       showDonation: false
     },
     calendar: {},
-    streak: {
-      current: 1,
-      longest: 1
-    },
     completedChallenges: [],
     portfolio: [],
     progressTimestamps: [],

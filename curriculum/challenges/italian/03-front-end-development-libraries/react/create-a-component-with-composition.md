@@ -28,7 +28,7 @@ Quando React incontra un tag HTML personalizzato che fa riferimento ad un altro 
 
 Nell'editor di codice, c'è un semplice componente funzionale chiamato `ChildComponent` e un componente di classe chiamato `ParentComponent`. Componi i due insieme facendo il render del `ChildComponent` all'interno del `ParentComponent`. Assicurati di chiudere il tag `ChildComponent` con una barra in avanti (/).
 
-**Nota:** `ChildComponent` è definito con una funzione freccia ES6 perché questa è una pratica molto comune quando si utilizza React. Tuttavia, sappi che questa è solo una funzione. Se non hai familiarità con la sintassi delle funzioni freccia, fai riferimento alla sezione JavaScript.
+**Nota:** `ChildComponent` è definito con una funzione freccia ES6 perché questa è una pratica molto comune quando si utilizza React.
 
 # --hints--
 

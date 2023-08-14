@@ -8,7 +8,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Zur Erinnerung: Dieses Projekt baut auf dem folgenden Startprojekt auf<a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">repliziert</a>oder geklont von<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
 
@@ -16,7 +16,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labelled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 

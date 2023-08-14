@@ -12,9 +12,9 @@ Write a function to sort an array of integers (of any convenient size) into asce
 
 In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
 
-<pre>Before:
+<pre>Vorher:
 <b>6 7 8 9</b> 2 5 3 4 1<br>
-After:
+Nachher:
 <b>9 8 7 6</b> 2 5 3 4 1
 </pre>
 
@@ -22,7 +22,7 @@ Only one end of the list can be flipped; this should be the low end, but the hig
 
 # --hints--
 
-`pancakeSort` should be a function.
+`pancakeSort` sollte eine Funktion sein.
 
 ```js
 assert(typeof pancakeSort == 'function');
@@ -34,25 +34,25 @@ assert(typeof pancakeSort == 'function');
 assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])));
 ```
 
-`pancakeSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`pancakeSort([25, 32, 12, 7, 20])` sollte `[7, 12, 20, 25, 32]` zurückgeben.
 
 ```js
 assert.deepEqual(pancakeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`pancakeSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`pancakeSort([38, 45, 35, 8, 13])` sollte `[8, 13, 35, 38, 45]` zurückgeben.
 
 ```js
 assert.deepEqual(pancakeSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`pancakeSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`pancakeSort([43, 36, 20, 34, 24])` sollte `[20, 24, 34, 36, 43]` zurückgeben.
 
 ```js
 assert.deepEqual(pancakeSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`pancakeSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`pancakeSort([12, 33, 26, 18, 1, 16, 38])` sollte `[1, 12, 16, 18, 26, 33, 38]` zurückgeben.
 
 ```js
 assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`pancakeSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`pancakeSort([3, 39, 48, 16, 1, 4, 29])` sollte `[1, 3, 4, 16, 29, 39, 48]` zurückgeben.
 
 ```js
 assert.deepEqual(pancakeSort([3, 39, 48, 16, 1, 4, 29]), [

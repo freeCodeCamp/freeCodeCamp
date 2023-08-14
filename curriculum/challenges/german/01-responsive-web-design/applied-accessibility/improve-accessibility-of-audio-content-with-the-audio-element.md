@@ -26,7 +26,7 @@ Hier ist ein Beispiel:
 
 # --instructions--
 
-Zeit, eine Pause von Camper Cat zu machen und seinen Kollegen Zersiax (@zersiax) zu treffen, einen Meister der Barrierefreiheit und einen Screenreader-Nutzer. Um einen Clip seines Screenreaders in Aktion zu hören, füge ein `audio`-Element nach dem `p`-Tag ein. Füge das `controls`-Attribut hinzu. Dann platziere einen `source`-Tag innerhalb der `audio`-Tags, wobei das `src`-Attribut auf `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` und das `type`-Attribut auf `"audio/mpeg"` gesetzt ist.
+Zeit, eine Pause von Camper Cat zu machen und seinen Kollegen Zersiax (@zersiax) zu treffen, einen Meister der Barrierefreiheit und einen Screenreader-Nutzer. To hear a clip of his screen reader in action, add an `audio` element after the `p` element. Füge das `controls`-Attribut hinzu. Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **Hinweis:** Der Audioclip klingt vielleicht schnell und ist schwer verständlich, aber das ist eine normale Geschwindigkeit für Benutzer von Screenreadern.
 

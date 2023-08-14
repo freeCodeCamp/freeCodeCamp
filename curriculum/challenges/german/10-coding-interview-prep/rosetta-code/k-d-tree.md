@@ -16,13 +16,13 @@ Write a function to perform a nearest neighbour search using k-d tree. The funct
 
 # --hints--
 
-`kdNN` should be a function.
+`kdNN` sollte eine Funktion sein.
 
 ```js
 assert(typeof kdNN == 'function');
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return an array.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` sollte `[ 8, 1 ]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` sollte `[ 8, 1 ]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` should return `[ 2, 3 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` sollte `[ 2, 3 ]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -99,7 +99,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` should return `[ 1, 2, 5 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` sollte `[ 1, 2, 5 ]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -118,7 +118,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` should return `[ 4, 6, 7 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` sollte `[ 4, 6, 7 ]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -137,7 +137,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` should return `[ 7, 8, 9 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` sollte `[ 7, 8, 9 ]` zurückgeben.
 
 ```js
 assert.deepEqual(

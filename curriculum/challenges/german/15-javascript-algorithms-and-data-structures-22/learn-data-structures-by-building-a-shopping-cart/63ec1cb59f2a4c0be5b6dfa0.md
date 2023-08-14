@@ -1,6 +1,6 @@
 ---
 id: 63ec1cb59f2a4c0be5b6dfa0
-title: Step 5
+title: Schritt 5
 challengeType: 0
 dashedName: step-5
 ---
@@ -17,7 +17,7 @@ You should declare a `products` variable with `const`.
 assert.match(code, /const\s+products/);
 ```
 
-You should set the `products` variable to an empty array.
+Du solltest die `products`-Variable auf ein leeres Array setzen.
 
 ```js
 assert.match(code, /const\s+products\s*=\s*\[\s*\]/);

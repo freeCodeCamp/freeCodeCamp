@@ -18,6 +18,11 @@ pre[class*='language-'] {
   text-shadow: none !important;
 }
 
+/* remove horizontal scrollbars for text-only code */
+code[class='language-markup'] {
+  white-space: normal !important;
+}
+
 /* a11y color adjustments */
 :not(.dark-palette) .token.comment,
 :not(.dark-palette) .token.prolog,

@@ -16,7 +16,7 @@ function* fetchSessionUser() {
   }
   try {
     const {
-      data: { user = {}, result = '', sessionMeta = {} }
+      data: { user = {}, result = '' }
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
 
@@ -26,9 +26,7 @@ function* fetchSessionUser() {
 
     store.set('fcc-sound', sound);
 
-    yield put(
-      fetchUserComplete({ user: appUser, username: result, sessionMeta })
-    );
+    yield put(fetchUserComplete({ user: appUser, username: result }));
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));

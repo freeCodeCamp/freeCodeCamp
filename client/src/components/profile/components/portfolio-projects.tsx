@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
-import { FullWidthRow } from '../../helpers';
 
 import './portfolio-projects.css';
 
@@ -19,7 +18,7 @@ export const PortfolioProjects = ({
     return null;
   }
   return (
-    <FullWidthRow>
+    <>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolioProjects.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
@@ -39,6 +38,6 @@ export const PortfolioProjects = ({
         </div>
       ))}
       <hr />
-    </FullWidthRow>
+    </>
   );
 };

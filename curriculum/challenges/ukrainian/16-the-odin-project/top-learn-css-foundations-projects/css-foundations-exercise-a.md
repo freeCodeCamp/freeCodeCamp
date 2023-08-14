@@ -25,7 +25,7 @@ dashedName: css-foundations-exercise-a
 
 # --hints--
 
-Ви повинні мати один елемент `div`, який містить текст та вирівняний за центром.
+Має бути один елемент `div`. Він повинен містити вирівняний за центром текст.
 
 ```js
 const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');

@@ -12,7 +12,7 @@ For a positive number $n$, define $S(n)$ as the sum of the integers $x$, for whi
 
 When $n = 91$, there are 8 possible values for $x$, namely: 9, 16, 22, 29, 53, 74, 79, 81. Thus, $S(91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363$.
 
-Find $S(13\\,082\\,761\\,331\\,670\\,030)$.
+Знайдіть $S(13\\,082\\,761\\,331\\,670\\,030)$.
 
 # --hints--
 

@@ -9,11 +9,12 @@ import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
 import { getLangCode } from '../../../../../config/i18n';
-import { getCertIds, getPathFromID } from '../../../../../utils';
+import { getCertIds, getPathFromID } from '../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
@@ -79,6 +80,14 @@ function TimelineInner({
     openModal('projectPreview');
   }
 
+  function viewExamResults(completedChallenge: CompletedChallenge): void {
+    setCompletedChallenge(completedChallenge);
+    setProjectTitle(
+      idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
+    );
+    openModal('examResults');
+  }
+
   function closeSolution(): void {
     setSolutionOpen(false);
     setCompletedChallenge(null);
@@ -108,6 +117,7 @@ function TimelineInner({
         projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
+        showExamResults={() => viewExamResults(completedChallenge)}
         displayContext='timeline'
       ></SolutionDisplayWidget>
     );
@@ -223,6 +233,10 @@ function TimelineInner({
         previewTitle={projectTitle}
         showProjectPreview={true}
       />
+      <ExamResultsModal
+        projectTitle={projectTitle}
+        examResults={completedChallenge?.examResults}
+      />
     </FullWidthRow>
   );
 }
@@ -242,6 +256,8 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
                 blockName
               }
               id
+              superBlock
+              hasEditableBoundaries
               title
             }
           }
@@ -265,15 +281,20 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
+          superBlock,
+          // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName }
+          fields: { slug, blockName },
+          // @ts-expect-error Graphql needs typing
+          hasEditableBoundaries
         }
       }
     }) => {
+      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
       idToNameMap.set(id, {
         challengeTitle: `${
-          title.includes('Step') ? `${blockName} - ` : ''
+          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });

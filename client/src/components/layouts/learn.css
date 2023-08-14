@@ -1,3 +1,8 @@
+#content-start {
+  min-height: 0;
+  height: 100%;
+}
+
 #learn-app-wrapper,
 #learn-app-wrapper .desktop-layout,
 #learn-app-wrapper .reflex-container.vertical {

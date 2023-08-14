@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4b
-title: Use the Triple Equals to Assert Strict Equality
+title: Benutze das Dreifache Gleichheitszeichen um die strikte Gleichheit anzugeben
 challengeType: 2
 forumTopicId: 301610
 dashedName: use-the-triple-equals-to-assert-strict-equality
@@ -18,7 +18,7 @@ Within `tests/1_unit-tests.js` under the test labelled `#6` in the `Equality` su
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>

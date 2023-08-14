@@ -1,6 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff66
-title: 'Problem 231: The prime factorisation of binomial coefficients'
+title: 'Problema 231: la fattorizzazione prima dei coefficienti binomiali'
 challengeType: 1
 forumTopicId: 301875
 dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
@@ -8,17 +8,17 @@ dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 
 # --description--
 
-The binomial coefficient $\displaystyle\binom{10}{3} = 120$.
+Il coefficiente binomiale $\displaystyle\binom{10}{3} = 120$.
 
-$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, and $2 + 2 + 2 + 3 + 5 = 14$.
+$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, e $2 + 2 + 2 + 3 + 5 = 14$.
 
-So the sum of the terms in the prime factorisation of $\displaystyle\binom{10}{3}$ is $14$.
+Quindi la somma dei termini nella fattorizzazione prima di $\displaystyle\binom{10}{3}$ è $14$.
 
-Find the sum of the terms in the prime factorisation of $\binom{20\\,000\\,000}{15\\,000\\,000}$.
+Trova la somma dei termini nella fattorizzazione prima di $\binom{20\\,000\\,000}{15\\,000\\,000}$.
 
 # --hints--
 
-`primeFactorisation()` should return `7526965179680`.
+`primeFactorisation()` dovrebbe restituire `7526965179680`.
 
 ```js
 assert.strictEqual(primeFactorisation(), 7526965179680);

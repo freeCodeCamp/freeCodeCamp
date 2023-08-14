@@ -1,5 +1,5 @@
 const challengerSelector = {
-  challengeMap: "[data-test-label='learn-curriculum-map']"
+  curriculumMap: "[data-test-label='curriculum-map']"
 } as const;
 
 const learnUrl = {
@@ -21,7 +21,7 @@ const superBlockNames = [
   'College Algebra with Python Certification',
   'Coding Interview Prep',
   'Project Euler',
-  'Legacy Responsive Web Design Certification'
+  'Legacy Responsive Web Design Challenges'
 ];
 
 describe('Learn Landing page (not logged in)', () => {
@@ -43,7 +43,7 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
-        `${challengerSelector.challengeMap} > li > a`
+        `${challengerSelector.curriculumMap} > ul > li > a`
       );
       expect(superBlocks).to.have.length(15);
 

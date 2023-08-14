@@ -1,6 +1,6 @@
 ---
 id: 5900f38e1000cf542c50fea1
-title: 'Problem 34: Digit factorials'
+title: 'Завдання 34: факторіали чисел'
 challengeType: 1
 forumTopicId: 301998
 dashedName: problem-34-digit-factorials
@@ -8,11 +8,11 @@ dashedName: problem-34-digit-factorials
 
 # --description--
 
-145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+145 є автоморфним числом, оскільки 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.
+Знайдіть числа та суму чисел, які дорівнюють сумі факторіалу їхніх цифр.
 
-**Note:** as 1! = 1 and 2! = 2 are not sums they are not included.
+**Примітка:** оскільки 1! = 1 та 2! = 2 не є сумою, їх не враховуємо.
 
 # --hints--
 

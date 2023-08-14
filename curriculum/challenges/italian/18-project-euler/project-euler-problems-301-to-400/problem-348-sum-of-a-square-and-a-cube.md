@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffdb
-title: 'Problem 348: Sum of a square and a cube'
+title: 'Problema 348: somma di un quadrato e di un cubo'
 challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
@@ -8,21 +8,21 @@ dashedName: problem-348-sum-of-a-square-and-a-cube
 
 # --description--
 
-Many numbers can be expressed as the sum of a square and a cube. Some of them in more than one way.
+Molti numeri possono essere espressi come somma di un quadrato e di un cubo. Alcuni di essi in più di un modo.
 
-Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways.
+Considera i numeri palindromi che possono essere espressi come la somma di un quadrato e di un cubo, entrambi maggiori di 1, in esattamente 4 modi diversi.
 
-For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways:
+Ad esempio, 5229225 è un numero palindromo e può essere espresso esattamente in 4 modi diversi:
 
 $$\begin{align}   & {2285}^2 + {20}^3 \\\\
   & {2223}^2 + {66}^3 \\\\   & {1810}^2 + {125}^3 \\\\
   & {1197}^2 + {156}^3 \end{align}$$
 
-Find the sum of the five smallest such palindromic numbers.
+Trova la somma dei cinque numeri palindromi più piccoli.
 
 # --hints--
 
-`sumOfSquareAndCube()` should return `1004195061`.
+`sumOfSquareAndCube()` dovrebbe restituire `1004195061`.
 
 ```js
 assert.strictEqual(sumOfSquareAndCube(), 1004195061);

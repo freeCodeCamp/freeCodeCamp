@@ -1,6 +1,6 @@
 ---
 id: 63efdbc22a0c56070beabed7
-title: Step 23
+title: Schritt 23
 challengeType: 0
 dashedName: step-23
 ---
@@ -11,7 +11,7 @@ In your `forEach` callback, you need to update the `totalCountPerProduct` object
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Verwende die Punktschreibweise, um auf die `id`-Eigenschaft von `dessert` zuzugreifen.
 
 ```js
 const cart = new ShoppingCart();

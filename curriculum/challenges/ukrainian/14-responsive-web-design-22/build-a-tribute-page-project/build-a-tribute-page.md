@@ -8,7 +8,7 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
+**Мета:** створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **Історія користувача:**
 
@@ -22,9 +22,9 @@ dashedName: build-a-tribute-page
 1. Ваш `#image` повинен використовувати властивості `max-width` та `height`, щоб змінювати розмір відповідно до ширини батьківського елемента, не перевищуючи початковий розмір
 1. Ваш елемент `img` повинен бути зцентрованим відповідно до батьківського елемента
 
-Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого програмування!
 
-**Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив’язки з аркушем стилів та застосували CSS
 
 # --hints--
 

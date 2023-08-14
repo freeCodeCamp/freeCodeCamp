@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Design responsivo para a web legado",
+    "title": "Desafios do design responsivo para a web legado",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
@@ -55,13 +55,6 @@
         "intro": [
           "O CSS Grid é um padrão mais recente, que torna fácil construir layouts responsivos complexos. Ele funciona transformando um elemento HTML em uma grade e permite que você coloque elementos filhos em qualquer lugar dentro dele.",
           "Nesse curso, você aprenderá os fundamentos do CSS Grid construindo diferentes layouts complexos, incluindo um blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Projetos do design responsivo para a web",
-        "intro": [
-          "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
-          "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
       }
     }
@@ -213,6 +206,10 @@
           "Selecionar as cores corretas para sua página da web pode melhorar muito o apelo estético para os seus leitores.",
           "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá maneiras diferentes de definir valores de cores e como combinar cores uma com a outra."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -933,7 +930,7 @@
         "intro": [
           "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Créditos: Rosetta Code</a>"
         ]
       }
     }
@@ -950,6 +947,14 @@
         "title": "Aprenda o básico de HTML",
         "intro": ["Uma descrição deve ser determinada"]
       },
+      "top-working-with-text": {
+        "title": "Trabalhando com textos",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-links-and-images": {
+        "title": "Links e imagens",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
@@ -960,6 +965,14 @@
       },
       "top-learn-css-foundations-projects": {
         "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Aprenda especificidade no CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-the-box-model": {
+        "title": "Aprenda sobre o modelo de caixas",
         "intro": ["Uma descrição deve ser determinada"]
       }
     }
@@ -1000,6 +1013,83 @@
         "intro": [
           "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
         ]
+      }
+    }
+  },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "Fundamentos de C# com a Microsoft",
+    "intro": [
+      "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
+      "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
+      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para construir aplicações robustas e escaláveis."
+    ],
+    "note": "Observação: você deve completar o desafio do troféu em cada seção abaixo para se qualificar para o exame de certificação.",
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Escreva seu primeiro código em C#",
+        "intro": [
+          "Comece sua jornada aprendendo a escrever seu primeiro código em C#. Desenvolva bem seus conhecimentos básicos enquanto explora os fundamentos e a sintaxe da linguagem, preparando o terreno para suas aventuras em programação."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Crie e execute aplicações simples de console em C#",
+        "intro": [
+          "Domine a arte de criar e executar aplicações simples de console em C#. Mergulhe no mundo da programação baseada em consoles, onde você ganhará a experiência prática de executar seu código e vê-lo em ação."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Adicione lógica a aplicações de console em C#",
+        "intro": [
+          "Libere o poder da lógica nas aplicações de console em C#. Aprenda a adicionar lógica e recursos de tomada de decisão ao código, permitindo que suas aplicações façam escolhas dinâmicas e respondam inteligentemente a diferentes cenários."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Trabalhe com dados variáveis em aplicações de console do C#",
+        "intro": [
+          "Descubra a versatilidade de dados variáveis nas aplicações de console em C#. Aproveite a capacidade de armazenar e manipular diferentes tipos de dados, como números e texto, aprofundando em conceitos essenciais de variáveis e manipulação de dados."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Crie métodos em aplicações de console em C#",
+        "intro": [
+          "Torne mais avançadas suas aplicações de console em C# dominando a arte de criar métodos. Aprenda a organizar e modularizar seu código, tornando-o mais controlável, reutilizável e eficiente."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Depure aplicações de console em C#",
+        "intro": [
+          "Aprimore suas habilidades de solução de problemas ao mergulhar no mundo da depuração de aplicações de console em C#. Obtenha a capacidade de identificar e corrigir problemas no código, garantindo que as aplicações sejam executadas sem problemas e apresentem os resultados desejados."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Exame de fundamentos de C# com certificação da Microsoft",
+        "intro": [
+          "Use o que aprendeu para passar no exame e ganhar suas Certificação da Microsoft em Fundamentos de C#"
+        ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Próximo Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Aprenda Python criando um jogo de Blackjack",
+        "intro": ["Aprenda Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Próximo projeto de Python",
+        "intro": ["placeholder"]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Certificação de exemplo",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Exame da certificação de exemplo",
+        "intro": ["placeholder"]
       }
     }
   },

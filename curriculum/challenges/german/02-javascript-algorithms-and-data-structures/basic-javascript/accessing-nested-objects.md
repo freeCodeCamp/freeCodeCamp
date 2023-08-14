@@ -51,6 +51,12 @@ Dein Code sollte die Punkt- und Klammerschreibweise verwenden, um auf `myStorage
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+`gloveBoxContents` sollte mit `const` deklariert werden.
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/)
+```
+
 # --seed--
 
 ## --after-user-code--

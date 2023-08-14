@@ -52,7 +52,7 @@ assert.strictEqual(
 );
 ```
 
-Стан `MagicEightBall` повинен починатися з властивостями `userInput` та `randomIndex`, які обидва відповідають значенню пустого рядка.
+`MagicEightBall` має ініціалізуватися властивостями `userInput` та `randomIndex` зі значеннями порожніх рядків.
 
 ```js
 assert(

@@ -36,7 +36,7 @@ Write a program which outputs all valid combinations as an array.
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` sollte eine Funktion sein.
 
 ```js
 assert(typeof combinations === 'function');

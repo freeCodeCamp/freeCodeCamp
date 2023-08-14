@@ -1,6 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff79
-title: 'Problem 249: Prime Subset Sums'
+title: 'Problema 249: somme di sottoinsiemi di primi'
 challengeType: 1
 forumTopicId: 301896
 dashedName: problem-249-prime-subset-sums
@@ -8,15 +8,15 @@ dashedName: problem-249-prime-subset-sums
 
 # --description--
 
-Let $S = \\{2, 3, 5, \ldots, 4999\\}$ be the set of prime numbers less than 5000.
+Sia $S = \\{2, 3, 5, \ldots, 4999\\}$ l'insieme di numeri primi minori di 5000.
 
-Find the number of subsets of $S$, the sum of whose elements is a prime number.
+Trova il numero di sottoinsiemi di $S$ per cui la somma degli elementi è un numero primo.
 
-Enter the rightmost 16 digits as your answer.
+Inserisci le 16 cifre più a destra come risposta.
 
 # --hints--
 
-`primeSubsetSums()` should return `9275262564250418`.
+`primeSubsetSums()` dovrebbe restituire `9275262564250418`.
 
 ```js
 assert.strictEqual(primeSubsetSums(), 9275262564250418);

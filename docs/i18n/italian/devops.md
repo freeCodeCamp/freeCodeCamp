@@ -203,19 +203,19 @@ Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-
 
 Ci sono alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Gli utenti nella versione beta avranno un account separato dalla produzione.** La versione beta utilizza un database fisicamente separato dalla produzione. Questo ci dà la possibilità di prevenire qualsiasi perdita accidentale di dati o modifiche. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Il deploy dovrebbe essere frequente e in iterazioni rapide, talvolta più volte al giorno. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Non inviare utenti regolari a questo sito come misura per confermare una correzione
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   Il sito beta ha il solo scopo di supportare lo sviluppo locale e il testing, nient'altro. Non è una promessa di ciò che sta arrivando, ma un assaggio di ciò a cui si sta lavorando.
 
-- #### La pagina di iscrizione può essere diversa da quella di produzione
+- **Sign in page may look different than production**
 
   Usiamo un test tenant per freeCodeCamp.dev su Auth0, e quindi non abbiamo l'abilità di impostare un dominio personalizzato. Questo fa sì che tutte le callback di reindirizzamento e la pagina di login appaiano su un dominio predefinito come: `https://freecodecamp-dev.auth0.com/`. Questo non ha effetto sulle funzionalità ed è quanto più vicino possiamo arrivare alla produzione.
 
@@ -435,7 +435,13 @@ Fare il provisioning delle VM con il codice
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, set up env, and keys.
+3. Install pm2 globally.
+
+```console
+npm install -g pm2
+```
+
+4. Clone freeCodeCamp, set up env, and keys.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -443,28 +449,28 @@ cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Create the `.env` from the secure credentials storage.
+5. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+6. Install dependencies
 
 ```console
 pnpm install
 ```
 
-6. Setup pm2 `logrotate` and startup on boot
+7. Setup pm2 `logrotate` and startup on boot
 
 ```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Build the server
+8. Build the server
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Start Instances
+9.  Start Instances
 
 ```console
 pnpm start:server
@@ -473,11 +479,11 @@ pnpm start:server
 ### Aggiornamento Istanze (Manutenzione)
 
 ```console
-pnpm pm2 logs
+pm2 logs
 ```
 
 ```console
-pnpm pm2 monit
+pm2 monit
 ```
 
 ### Aggiornamento Istanze (Manutenzione)
@@ -491,7 +497,7 @@ Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle ist
 1. Stop all instances
 
 ```console
-pnpm pm2 stop all
+pm2 stop all
 ```
 
 2. Install dependencies
@@ -509,13 +515,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 4. Start Instances
 
 ```console
-pnpm start:server && pnpm pm2 logs
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pnpm reload:server && pnpm pm2 logs
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code and logic via pipelines. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
@@ -527,7 +533,7 @@ pnpm reload:server && pnpm pm2 logs
 2. Update pm2 to use the new version
 
 ```console
-pnpm pm2 update
+pm2 update
 ```
 
 ## Work on Client Instances

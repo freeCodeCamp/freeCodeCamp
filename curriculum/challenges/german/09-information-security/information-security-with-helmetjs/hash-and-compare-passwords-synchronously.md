@@ -26,13 +26,13 @@ with the result being a boolean true or false.
 
 # --instructions--
 
-Add the function in and log the result to the console to see it working.
+Füge die Funktion ein und protokolliere das Ergebnis in der Konsole, um zu sehen, ob sie funktioniert.
 
 Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben.
 
 # --hints--
 
-Sync hash should be generated and correctly compared.
+Der Sync-Hash sollte generiert und korrekt verglichen werden.
 
 ```js
 (getUserInput) =>

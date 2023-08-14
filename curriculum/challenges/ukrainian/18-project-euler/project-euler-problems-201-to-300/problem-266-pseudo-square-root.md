@@ -16,7 +16,7 @@ We shall call the largest divisor of an integer $n$ that does not exceed the squ
 
 It can be seen that $PSR(3102) = 47$.
 
-Let $p$ be the product of the primes below 190. Find $PSR(p)\bmod {10}^{16}$.
+Let $p$ be the product of the primes below 190. Знайдіть $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 

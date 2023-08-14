@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Позначення Bootstrap Wells
+title: Позначте стіни Bootstrap
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-Задля ясності, позначте обидва wells їхніми id.
+Позначимо обидві стіни їхніми id задля ясності.
 
-Над елементом left-well, усередині його елементу `col-xs-6` `div`, додайте елемент `h4` з текстом `#left-well`.
+Над left-well, всередині його елемента `div` `col-xs-6`, додайте елемент `h4` з текстом `#left-well`.
 
-Над елементом right-well, усередині його елементу `col-xs-6` `div`, додайте елемент `h4` з текстом `#right-well`.
+Над right-well, всередині його елемента `div` `col-xs-6`, додайте елемент `h4` з текстом `#right-well`.
 
 # --hints--
 
-Необхідно додати елемент `h4` до кожного з елементів `<div class="col-xs-6">`.
+Додайте елемент `h4` до кожного елемента `<div class="col-xs-6">`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(new RegExp('#left-well', 'gi').test($('h4').text()));
 assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
-Усі елементи `h4` повинні містити кінцеві теґи.
+Усі елементи `h4` повинні мати кінцеві теги.
 
 ```js
 assert(

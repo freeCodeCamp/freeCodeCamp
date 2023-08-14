@@ -43,7 +43,7 @@ describe('getMetaData helper', () => {
             'mock-project': {
               'meta.json': `{
       "id": "mock-id",
-      "challengeOrder": [["1","step1"], ["2","step2"], ["1","step3"]]}
+      "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 2"}, {"id": "1", "title": "Step 3"}]}
       `
             }
           }
@@ -56,9 +56,9 @@ describe('getMetaData helper', () => {
     const expected = {
       id: 'mock-id',
       challengeOrder: [
-        ['1', 'step1'],
-        ['2', 'step2'],
-        ['1', 'step3']
+        { id: '1', title: 'Step 1' },
+        { id: '2', title: 'Step 2' },
+        { id: '1', title: 'Step 3' }
       ]
     };
     process.env.CALLING_DIR =
@@ -95,7 +95,7 @@ describe('validateMetaData helper', () => {
     mock({
       '_meta/project/': {
         'meta.json':
-          '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-3", "Step 2"], ["id-2", "Step 3"]]}'
+          '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-2", "title": "Step 2"}, {"id": "id-3", "title": "Step 3"}]}'
       },
       'english/superblock/project/': {
         'id-1.md': `---
@@ -126,7 +126,7 @@ dashedName: step-3
     mock({
       '_meta/project/': {
         'meta.json':
-          '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-2", "Step 3"]]}'
+          '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-2", "title": "Step 2"}]}'
       },
       'english/superblock/project/': {
         'id-1.md': `---

@@ -1,6 +1,6 @@
 ---
 id: 5900f4361000cf542c50ff48
-title: 'Problem 201: Subsets with a unique sum'
+title: 'Завдання 201: підмножини з унікальною сумою'
 challengeType: 1
 forumTopicId: 301841
 dashedName: problem-201-subsets-with-a-unique-sum
@@ -8,9 +8,9 @@ dashedName: problem-201-subsets-with-a-unique-sum
 
 # --description--
 
-For any set $A$ of numbers, let $sum(A)$ be the sum of the elements of $A$.
+Нехай $sum(A)$ буде сумою елементів множини чисел $A$.
 
-Consider the set $B = \\{1,3,6,8,10,11\\}$. There are 20 subsets of $B$ containing three elements, and their sums are:
+Розглянемо множину $B = \\{1,3,6,8,10,11\\}$. Існує 20 підмножин $B$, які містять три елементи, а їхні суми дорівнюють:
 
 $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{1,3,8\\}) = 12 \\\\   & sum(\\{1,3,10\\}) = 14 \\\\
@@ -24,11 +24,11 @@ $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{6,8,11\\}) = 25 \\\\   & sum(\\{6,10,11\\}) = 27 \\\\
   & sum(\\{8,10,11\\}) = 29 \\end{align}$$
 
-Some of these sums occur more than once, others are unique. For a set $A$, let $U(A,k)$ be the set of unique sums of $k$-element subsets of $A$, in our example we find $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ and $sum(U(B,3)) = 156$.
+Деякі з цих сум зустрічаються більше одного разу, інші є унікальними. Нехай $U(A,k)$ буде множиною унікальних сум з $k$-елементних підмножин множини $A$. У прикладі ми знайдемо $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ та $sum(U(B,3)) = 156$.
 
-Now consider the $100$-element set $S = \\{1^2, 2^2, \ldots , {100}^2\\}$. $S$ has $100\\,891\\,344\\,545\\,564\\,193\\,334\\,812\\,497\\,256\\;$ $50$-element subsets.
+Тепер розглянемо $100$-елементну множину $S = \\{1^2, 2^2, \ldots , {100}^2\\}$. $S$ має $100\\,891\\,344\\,545\\,564\\,193\\,334\\,812\\,497\\,256\\;$ $50$-елементних підмножин.
 
-Determine the sum of all integers which are the sum of exactly one of the $50$-element subsets of $S$, i.e. find $sum(U(S,50))$.
+Визначте суму всіх цілих чисел, які є сумою однієї з $50$-елементних підмножин $S$, тобто знайдіть $sum(U(S,50))$.
 
 # --hints--
 

@@ -4,7 +4,8 @@ import path from 'path';
 import { getChallengesForLang } from '../../../curriculum/get-challenges';
 import {
   buildExtCurriculumData,
-  Curriculum
+  Curriculum,
+  CurriculumProps
 } from './build-external-curricula-data';
 
 const { CURRICULUM_LOCALE } = process.env;
@@ -16,7 +17,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 void getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
     if (CURRICULUM_LOCALE === 'english') {
-      buildExtCurriculumData('v1', result as Curriculum);
+      buildExtCurriculumData('v1', result as Curriculum<CurriculumProps>);
     }
     return result;
   })

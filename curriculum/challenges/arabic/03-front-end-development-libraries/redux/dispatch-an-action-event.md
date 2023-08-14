@@ -10,7 +10,7 @@ dashedName: dispatch-an-action-event
 
 طريقة `dispatch` هي ما تستخدمه لإرسال الإجراءات إلى متجر Redux. الاتصال بـ `store.dispatch()` ومرر القيمة الناتجة من منشئ الإجراءات لإرسال إجراء إلى المتجر.
 
-تذكر أن منشئي الإجراءات يرسلون كائنا له نوع من الخصائص يحدد الإجراء الذي وقع. ثم ترسل الطريقة dispatches كائن إجراء (action) إلى متجر Redux. استنادا إلى مثال التحدي السابق، الأسطر التالية متساويا، وكلاهما يرسل إجراء من نوع `LOGIN`:
+Recall that action creators return an object with a type property that specifies the type of action that has occurred. ثم ترسل الطريقة dispatches كائن إجراء (action) إلى متجر Redux. استنادا إلى مثال التحدي السابق، الأسطر التالية متساويا، وكلاهما يرسل إجراء من نوع `LOGIN`:
 
 ```js
 store.dispatch(actionCreator());

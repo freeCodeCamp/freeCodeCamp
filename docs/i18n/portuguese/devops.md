@@ -203,19 +203,19 @@ Você pode identificar a versão exata implantada visitando os registros de comp
 
 Existem algumas limitações e desvantagens conhecidas ao usar a versão beta da plataforma.
 
-- #### Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção
+- **Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção**
 
   **Os usuários na versão beta terão uma conta separada da produção.** A versão beta usa um banco de dados fisicamente separado da produção. Isso nos dá a capacidade de evitar qualquer perda acidental de dados ou modificações. A equipe de desenvolvimento pode limpar o banco de dados nesta versão beta conforme necessário.
 
-- #### Não há garantias na disponibilidade e confiabilidade das plataformas beta
+- **As plataformas beta não oferecem nenhuma garantia com relação a tempo de atividade e confiabilidade**
 
   Espera-se que a implantação seja frequente e em iterações rápidas, às vezes várias vezes ao dia. Como resultado, haverá tempos de inatividade inesperados ou funcionalidades quebradas na versão beta.
 
-- #### Não envie usuários regulares para este site como uma medida de confirmar uma correção
+- **Para garantir a eficácia da correção, é aconselhável não direcionar usuários regulares para este site para fins de verificação.**
 
   O site beta é e sempre foi para melhorar o desenvolvimento e os testes locais, nada mais. Não é uma promessa do que está por vir, mas um vislumbre do que está sendo trabalhado.
 
-- #### O login na página pode parecer diferente da produção
+- **O login na página pode parecer diferente da produção**
 
   Nós utilizamos um locatário de teste para o freeCodeCamp.dev no Auth 0 e, portanto, não temos a capacidade de definir um domínio personalizado. Isso faz com que todas as callbacks de redirecionamento e a página de login apareçam em um domínio padrão como: `https://freecodecamp-dev.auth0.com/`. Isso não afeta a funcionalidade e é o mais próximo da produção que conseguimos.
 
@@ -435,7 +435,13 @@ Provisionando MVs com o código
 npm install -g pnpm
 ```
 
-3. Faça a clonagem do freeCodeCamp, configure env e as chaves.
+3. Instale o pm2 globalmente.
+
+```console
+npm install -g pm2
+```
+
+4. Faça a clonagem do freeCodeCamp, configure env e as chaves.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -443,41 +449,41 @@ cd freeCodeCamp
 git checkout prod-current # ou qualquer outra branch a ser implementada
 ```
 
-4. Crie o `.env` a partir do armazenamento seguro de credenciais.
+5. Crie o `.env` a partir do armazenamento seguro de credenciais.
 
-5. Instale as dependências
+6. Instale as dependências
 
 ```console
 pnpm install
 ```
 
-6. Configure o pm2 `logrotate` e inicialize no boot
+7. Configure o pm2 `logrotate` e inicialize no boot
 
 ```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Compile o servidor
+8. Compile o servidor
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Inicie as instâncias
+9.  Inicie as instâncias
 
 ```console
 pnpm start:server
 ```
 
-### Registro e Monitoramento
+### Registro e monitoramento
 
 ```console
-pnpm pm2 logs
+pm2 logs
 ```
 
 ```console
-pnpm pm2 monit
+pm2 monit
 ```
 
 ### Atualizando instâncias (Manutenção)
@@ -491,7 +497,7 @@ Mudanças no código devem ser implementadas na instância da API de tempos em t
 1. Pare todas as instâncias
 
 ```console
-pnpm pm2 stop all
+pm2 stop all
 ```
 
 2. Instale as dependências
@@ -509,13 +515,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 4. Inicie as instâncias
 
 ```console
-pnpm start:server && pnpm pm2 logs
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Atualizações contínuas - Usadas para mudanças lógicas no código.
 
 ```console
-pnpm reload:server && pnpm pm2 logs
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] Estamos lidando com atualizações contínuas no código e com a lógica por meio de pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.
@@ -527,7 +533,7 @@ pnpm reload:server && pnpm pm2 logs
 2. Atualize o pm2 para que ele use a nova versão
 
 ```console
-pnpm pm2 update
+pm2 update
 ```
 
 ## Trabalhe em instâncias de client
@@ -656,7 +662,7 @@ Provisionando MVs com código
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
 
-   # Remote
+   # Remoto
    rm -rf ./ssl
    mv /tmp/ssl ./
    ```

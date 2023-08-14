@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
-title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+title: 'Problema 197: analizzare il comportamento di una sequenza definita ricorsivamente'
 challengeType: 1
 forumTopicId: 301835
 dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
@@ -8,13 +8,13 @@ dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-seq
 
 # --description--
 
-Given is the function $f(x) = ⌊{2}^{30.403243784 - x^2}⌋ × {10}^{-9}$ ( ⌊ ⌋ is the floor-function), the sequence $u_n$ is defined by $u_0 = -1$ and $u_{n + 1} = f(u_n)$.
+Data la funzione $f(x) = ⌊{2}^{30. 03243784 - x^2}⌋ × {10}^{-9}$ ( ⌊ ⌋ è la funzione floor), la sequenza $u_n$ è definita da $u_0 = -1$ e $u_{n + 1} = f(u_n)$.
 
-Find $u_n + u_{n + 1}$ for $n = {10}^{12}$. Give your answer with 9 digits after the decimal point.
+Trova $u_n + u_{n + 1}$ per $n = {10}^{12}$. Dai la tua risposta con 9 cifre dopo il punto decimale.
 
 # --hints--
 
-`recursivelyDefinedSequence()` should return `1.710637717`.
+`recursivelyDefinedSequence()` dovrebbe restituire `1.710637717`.
 
 ```js
 assert.strictEqual(recursivelyDefinedSequence(), 1.710637717);

@@ -74,7 +74,7 @@ assert(
 );
 ```
 
-Стан `MyToDoList` має бути ініціалізовано з `toDoList` як порожній масив.
+Стан `MyToDoList` має ініціалізуватися `toDoList` як порожній масив.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-Стан `MyToDoList` має бути ініціалізовано з `userInput` як порожній масив.
+Стан `MyToDoList` має ініціалізуватися `userInput` як порожній рядок.
 
 ```js
 assert(

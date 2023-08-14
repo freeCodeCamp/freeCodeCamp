@@ -8,7 +8,7 @@ dashedName: check-for-the-presence-of-an-element-with-indexof
 
 # --description--
 
-Оскільки масиви можуть бути змінені або *mutated* в будь-який час, немає ніяких гарантій щодо того, де конкретний фрагмент даних буде знаходитися в даному масиві, або що цей елемент все ще існує. На щастя, JavaScript надає нам ще один вбудований метод, `indexOf()`, який дозволяє нам швидко і легко перевіряти наявність елемента в масиві. `indexOf()` приймає елемент як параметр і при запиті - повертає позицію або індекс цього елемента або `-1`, якщо елементу в масиві немає.
+Оскільки масиви можуть бути змінені або *мутовані* в будь-який час, немає ніяких гарантій щодо того, де буде знаходитися конкретний фрагмент даних в масиві, або що цей елемент взагалі існуватиме. На щастя, JavaScript надає нам ще один вбудований метод `indexOf()`, який дозволяє швидко і легко перевірити наявність елемента в масиві. `indexOf()` приймає елемент як параметр і при виклику повертає позицію чи індекс цього елемента або `-1`, якщо елемента в масиві немає.
 
 Наприклад:
 
@@ -20,11 +20,11 @@ fruits.indexOf('oranges');
 fruits.indexOf('pears');
 ```
 
-`indexOf('dates')` повертає `-1`, `indexOf('oranges')` повертає `2`, і `indexOf('pears')` повертає `1` (перший індекс, за яким існує кожен елемент).
+`indexOf('dates')` повертає `-1`, `indexOf('oranges')` повертає `2`, а `indexOf('pears')` повертає `1` (перший індекс, за якого існує кожен елемент).
 
 # --instructions--
 
-`indexOf()` може бути неймовірно корисним для швидкої перевірки наявності елемента в масиві. Ми визначили функцію `quickCheck`, яка приймає в якості аргументів масив і елемент. Змініть функцію використовуючи `indexOf()` так, щоб вона повернула `true` якщо переданий елемент існує в масиві, та `false` якщо не існує.
+`indexOf()` може бути неймовірно корисним для швидкої перевірки наявності елемента в масиві. Ми визначили функцію `quickCheck`, яка приймає масив і елемент як аргументи. Змініть функцію, використовуючи `indexOf()` так, щоб вона повернула `true`, якщо переданий елемент існує в масиві, та `false`, якщо не існує.
 
 # --hints--
 
@@ -34,7 +34,7 @@ fruits.indexOf('pears');
 assert.isBoolean(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 ```
 
-`quickCheck(["squash", "onions", "shallots"], "mushrooms")` повинна повернути `false`
+`quickCheck(["squash", "onions", "shallots"], "mushrooms")` має повернути `false`
 
 ```js
 assert.strictEqual(
@@ -43,7 +43,7 @@ assert.strictEqual(
 );
 ```
 
-`quickCheck(["onions", "squash", "shallots"], "onions")` повинна повернути `true`
+`quickCheck(["onions", "squash", "shallots"], "onions")` має повернути `true`
 
 ```js
 assert.strictEqual(
@@ -52,13 +52,13 @@ assert.strictEqual(
 );
 ```
 
-`quickCheck([3, 5, 9, 125, 45, 2], 125)` повинна повернути `true`
+`quickCheck([3, 5, 9, 125, 45, 2], 125)` має повернути `true`
 
 ```js
 assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true);
 ```
 
-`quickCheck([true, false, false], undefined)` повинна повернути `false`
+`quickCheck([true, false, false], undefined)` має повернути `false`
 
 ```js
 assert.strictEqual(quickCheck([true, false, false], undefined), false);

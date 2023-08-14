@@ -1,6 +1,6 @@
 ---
 id: 5900f4071000cf542c50ff19
-title: 'Problem 154: Exploring Pascal''s pyramid'
+title: 'Завдання 154: вивчення піраміди Паскаля'
 challengeType: 1
 forumTopicId: 301785
 dashedName: problem-154-exploring-pascals-pyramid
@@ -8,15 +8,15 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 # --description--
 
-A triangular pyramid is constructed using spherical balls so that each ball rests on exactly three balls of the next lower level.
+Трикутна піраміда побудована з використанням сферичних куль таким чином, що кожна куля розташована на трьох кулях нижнього рівня.
 
-<img class="img-responsive center-block" alt="triangular pyramid constructed using spherical balls with four levels" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="трикутна піраміда побудована зі сферичних куль з чотирма рівнями" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
 
-Then, we calculate the number of paths leading from the apex to each position: A path starts at the apex and progresses downwards to any of the three spheres directly below the current position. Consequently, the number of paths to reach a certain position is the sum of the numbers immediately above it (depending on the position, there are up to three numbers above it).
+Потім ми обчислюємо кількість шляхів, що ведуть від вершини до кожної позиції: шлях починається з вершини і проходить вниз до кожної з трьох сфер одразу під поточним розташуванням. Відповідно, кількість шляхів для досягнення певної позиції — це сума чисел одразу над нею (залежно від положення, над нею може бути до трьох чисел).
 
-The result is Pascal's pyramid and the numbers at each level n are the coefficients of the trinomial expansion ${(x + y + z)}^n$.
+У результаті ми отримаємо піраміду Паскаля, де числа у кожному ряді n є коефіцієнтами розкладання тричлена ${(x + y + z)}^n$.
 
-How many coefficients in the expansion of ${(x + y + z)}^{200000}$ are multiples of ${10}^{12}$?
+Скільки коефіцієнтів розкладання ${(x + y + z)}^{200000}$ діляться на ${10}^{12}$?
 
 # --hints--
 
