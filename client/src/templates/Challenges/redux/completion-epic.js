@@ -211,7 +211,9 @@ export default function completionEpic(action$, state$) {
         block,
         blockHashSlug
       } = challengeMetaSelector(state);
-      let submitter = () => of({ type: 'no-user-signed-in' });
+      // Default to submitChallengeComplete since we do not want the user to
+      // be stuck in the 'isSubmitting' state.
+      let submitter = () => of(submitChallengeComplete());
       if (
         !(challengeType in submitTypes) ||
         !(submitTypes[challengeType] in submitters)
