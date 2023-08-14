@@ -14,6 +14,7 @@ import {
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
@@ -79,6 +80,15 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       openModal('projectPreview');
     };
 
+    const showExamResults = () => {
+      setSolutionState({
+        projectTitle,
+        completedChallenge: completedProject,
+        showCode: false
+      });
+      openModal('examResults');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
@@ -87,6 +97,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         displayContext='certification'
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
+        showExamResults={showExamResults}
       ></SolutionDisplayWidget>
     );
   };
@@ -137,6 +148,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     user: { username }
   } = props;
   const { completedChallenge, showCode, projectTitle } = solutionState;
+  const examResults = completedChallenge?.examResults;
 
   const challengeData: CompletedChallenge | null = completedChallenge
     ? {
@@ -189,6 +201,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         previewTitle={projectTitle}
         showProjectPreview={true}
       />
+      <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
+
       <Trans i18nKey='certification.project.footnote'>
         If you suspect that any of these projects violate the{' '}
         <a

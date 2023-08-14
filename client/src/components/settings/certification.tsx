@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 
 import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   certTitles,
@@ -31,6 +32,7 @@ import './certification.css';
 import {
   ClaimedCertifications,
   CompletedChallenge,
+  GeneratedExamResults,
   User
 } from '../../redux/prop-types';
 import { createFlashMessage } from '../Flash/redux';
@@ -247,11 +249,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
     null
   );
   const [solution, setSolution] = useState<string | null>();
+  const [examResults, setExamResults] = useState<GeneratedExamResults | null>();
   const [isOpen, setIsOpen] = useState(false);
   function initialiseState() {
     setProjectTitle('');
     setChallengeFiles(null);
     setSolution(null);
+    setExamResults(null);
     setIsOpen(false);
   }
 
@@ -268,8 +272,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     if (!completedProject) {
       return null;
     }
-
-    const { solution, challengeFiles } = completedProject;
+    const { solution, challengeFiles, examResults } = completedProject;
     const showUserCode = () => {
       setProjectTitle(projectTitle);
       setChallengeFiles(challengeFiles);
@@ -293,11 +296,18 @@ function CertificationSettings(props: CertificationSettingsProps) {
       openModal('projectPreview');
     };
 
+    const showExamResults = () => {
+      setProjectTitle(projectTitle);
+      setExamResults(examResults as GeneratedExamResults);
+      openModal('examResults');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
         projectTitle={projectTitle}
+        showExamResults={showExamResults}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
         displayContext='settings'
@@ -416,6 +426,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
           previewTitle={projectTitle}
           closeText={t('buttons.close')}
           showProjectPreview={true}
+        />
+        <ExamResultsModal
+          projectTitle={projectTitle}
+          examResults={examResults}
         />
       </section>
     </ScrollableAnchor>
