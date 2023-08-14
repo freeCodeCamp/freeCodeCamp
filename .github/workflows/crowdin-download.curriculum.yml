@@ -331,10 +331,6 @@ jobs:
           pnpm run build:curriculum
           pnpm run build:server
 
-      - name: Lint and Format Files
-        run: |
-          pnpm run format:curriculum
-
       # We do not need to run tests because they are run after the PR is created.
 
       # Create Commit
