@@ -8,7 +8,7 @@ dashedName: balanced-brackets
 
 # --description--
 
-Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which misnest.
+Determine whether a generated string of brackets is balanced; that is, whether all opening brackets are followed by a closing bracket of the same type at the same level of nesting.
 
 **Examples:**
 | Input                     | Output |
