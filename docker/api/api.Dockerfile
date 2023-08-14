@@ -10,12 +10,17 @@ USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
 
-# TODO: use https://pnpm.io/cli/deploy and only install 1) prod deps 2) packages the api needs
-# TODO: make sure Cypress isn't getting installed (it shouldn't because it's a dev dep, but make sure)
-# TODO: ditto: husky
 # TODO: figure out why the cache is getting invalidated. Is it in part because
 # we're not ignoring THIS file? Or do we need corepack?
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+# We have to prevent pnpm from deduping peer dependencies because otherwise it
+# will install all of the packages, not just api-server. Also, pnpm deploy is
+# not useful since we need to install more than one package.
+
+RUN pnpm config set dedupe-peer-dependents false
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm \
+  --filter api-server --filter tools/scripts/build --filter challenge-parser --filter curriculum \
+  install -w --frozen-lockfile --ignore-scripts
 # TODO: create a prebuild script for the api?
 RUN pnpm create:config
 RUN pnpm create:utils
@@ -30,8 +35,21 @@ RUN pnpm build:curriculum
 
 RUN pnpm build:server
 
+FROM node:18-bullseye AS deps
+
+WORKDIR /home/node/build
+COPY --chown=node:node package.json .
+COPY --chown=node:node pnpm*.yaml .
+COPY --chown=node:node api-server/package.json api-server/package.json
+RUN npm i -g pnpm@8
+# Prevent pnpm installing unnecessary packages (see above)
+RUN pnpm config set dedupe-peer-dependents false
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm \
+  --filter api-server \
+  install -w --prod --ignore-scripts
+
 FROM node:18-alpine
-RUN npm i -g pm2@4 pnpm@8
+RUN npm i -g pm2@4
 USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
@@ -39,9 +57,9 @@ COPY --from=builder --chown=node:node /home/node/build/api-server/ecosystem.conf
 COPY --from=builder --chown=node:node /home/node/build/api-server/package.json api-server/package.json
 COPY --from=builder --chown=node:node /home/node/build/utils/ utils/
 COPY --from=builder --chown=node:node /home/node/build/config/ config/
-COPY --from=builder --chown=node:node /home/node/build/api-server/node_modules/ api-server/node_modules/
-COPY --from=builder --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=builder --chown=node:node /home/node/build/package.json package.json
+COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
+COPY --from=deps --chown=node:node /home/node/build/api-server/node_modules/ api-server/node_modules/
 
 CMD ["pm2-runtime", "start", "api-server/ecosystem.config.js"]
 
