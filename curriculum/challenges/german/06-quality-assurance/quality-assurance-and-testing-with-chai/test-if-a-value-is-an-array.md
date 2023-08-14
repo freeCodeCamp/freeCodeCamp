@@ -16,7 +16,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten erfolgreich sein.
 
 ```js
 (getUserInput) =>

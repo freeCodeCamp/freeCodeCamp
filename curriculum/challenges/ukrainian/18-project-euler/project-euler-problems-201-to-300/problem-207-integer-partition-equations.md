@@ -1,6 +1,6 @@
 ---
 id: 5900f43c1000cf542c50ff4e
-title: 'Problem 207: Integer partition equations'
+title: 'Завдання 207: рівняння цілочислових розбиттів'
 challengeType: 1
 forumTopicId: 301848
 dashedName: problem-207-integer-partition-equations
@@ -8,17 +8,17 @@ dashedName: problem-207-integer-partition-equations
 
 # --description--
 
-For some positive integers $k$, there exists an integer partition of the form $4^t = 2^t + k$,
+Для деяких натуральних чисел $k$ існують цілочислові розбиття у вигляді $4^t = 2^t + k$,
 
-where $4^t$, $2^t$, and $k$ are all positive integers and $t$ is a real number.
+де $4^t$, $2^t$ та $k$ є натуральними числами, а $t$ є дійсним числом.
 
-The first two such partitions are $4^1 = 2^1 + 2$ and $4^{1.584\\,962\\,5\ldots} = 2^{1.584\\,962\\,5\ldots} + 6$.
+Першими двома такими розбиттями є $4^1 = 2^1 + 2$ та $4^{1.584\\,962\\,5\ldots} = 2^{1.584\\,962\\,5\ldots} + 6$.
 
-Partitions where $t$ is also an integer are called perfect. For any $m ≥ 1$ let $P(m)$ be the proportion of such partitions that are perfect with $k ≤ m$.
+Розбиття, де $t$ також є цілим числом, називають досконалим розбиттям. Нехай $P(m)$ буде співвідношенням досконалих розбиттів при $k ≤ m$ за будь-якого $m ≥ 1$.
 
-Thus $P(6) = \frac{1}{2}$.
+Таким чином, $P(6) = \frac{1}{2}$.
 
-In the following table are listed some values of $P(m)$
+У таблиці нижче перераховано деякі значення $P(m)$
 
 $$\begin{align}   & P(5) = \frac{1}{1}    \\\\
   & P(10) = \frac{1}{2}   \\\\   & P(15) = \frac{2}{3}   \\\\
@@ -26,7 +26,7 @@ $$\begin{align}   & P(5) = \frac{1}{1}    \\\\
   & P(30) = \frac{2}{5}   \\\\   & \ldots                \\\\
   & P(180) = \frac{1}{4}  \\\\ & P(185) = \frac{3}{13} \end{align}$$
 
-Find the smallest $m$ for which $P(m) &lt; \frac{1}{12\\,345}$
+Знайдіть найменше значення $m$, за якого $P(m) &lt; \frac{1}{12\\,345}$
 
 # --hints--
 

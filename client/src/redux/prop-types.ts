@@ -292,6 +292,7 @@ export type CompletedChallenge = {
   challengeFiles:
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
+  examResults?: GeneratedExamResults;
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';

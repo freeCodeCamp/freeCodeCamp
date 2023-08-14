@@ -34,7 +34,7 @@ firstRegex.test(notFirst);
 assert(calRegex.source == '^Cal');
 ```
 
-Ваш регулярний вираз не повинен містити жодних прапорців.
+Ваш регулярний вираз не повинен використовувати жодних прапорців.
 
 ```js
 assert(calRegex.flags == '');

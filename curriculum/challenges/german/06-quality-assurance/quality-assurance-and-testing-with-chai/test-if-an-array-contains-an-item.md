@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c51
-title: Test if an Array Contains an Item
+title: Teste, ob ein Array ein Element enthält
 challengeType: 2
 forumTopicId: 301603
 dashedName: test-if-an-array-contains-an-item

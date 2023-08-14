@@ -26,7 +26,7 @@ From the construction it is clear that the Bézier curve will be tangent to the 
 
 A cubic Bézier curve with $P_0 = (1, 0)$, $P_1 = (1, v)$, $P_2 = (v, 1)$ and $P_3 = (0, 1)$ is used to approximate a quarter circle. The value $v > 0$ is chosen such that the area enclosed by the lines $OP_0$, $OP_3$ and the curve is equal to $\frac{π}{4}$ (the area of the quarter circle).
 
-By how many percent does the length of the curve differ from the length of the quarter circle? That is, if $L$ is the length of the curve, calculate $100 × \displaystyle\frac{L − \frac{π}{2}}{\frac{π}{2}}$. Give your answer rounded to 10 digits behind the decimal point.
+By how many percent does the length of the curve differ from the length of the quarter circle? That is, if $L$ is the length of the curve, calculate $100 × \displaystyle\frac{L − \frac{π}{2}}{\frac{π}{2}}$. Дайте відповідь, заокруглену до десяти знаків після коми.
 
 # --hints--
 

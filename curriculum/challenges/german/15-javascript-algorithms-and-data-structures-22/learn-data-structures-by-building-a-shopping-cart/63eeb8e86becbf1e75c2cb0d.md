@@ -25,7 +25,7 @@ const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+totalCountPerProduct\s*=/);
 ```
 
-You should assign an empty object to `totalCountPerProduct`.
+Du solltest `totalCountPerProduct` ein leeres Objekt zuweisen.
 
 ```js
 const afterAdd = code.split("addItem")[1];

@@ -61,7 +61,7 @@ assert($('p').length == 0);
 assert($('figure').children('figcaption').length == 1);
 ```
 
-Елемент `figure` повинен містити кінцевий теґ.
+Елемент `figure` повинен мати кінцевий тег.
 
 ```js
 assert(

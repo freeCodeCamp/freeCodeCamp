@@ -37,7 +37,7 @@ assert(/cat photos/gi.test($('a').text()));
 assert(/^https?:\/\/(www\.)?freecatphotoapp\.com\/?$/i.test($('a').attr('href')));
 ```
 
-Ваш елемент `a` повинен мати кінцевий тег.
+Елемент `a` повинен мати кінцевий тег.
 
 ```js
 assert(
