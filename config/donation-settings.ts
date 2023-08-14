@@ -1,5 +1,11 @@
 // Configuration for client side
-import { DonationConfig } from '../client/src/components/Donation/types';
+
+export type DonationAmount = 500 | 1000 | 2000 | 3000 | 4000 | 5000;
+export type DonationDuration = 'one-time' | 'month';
+export interface DonationConfig {
+  donationAmount: DonationAmount;
+  donationDuration: DonationDuration;
+}
 
 export const durationsConfig: {
   month: 'monthly';
@@ -79,8 +85,6 @@ export const paypalConfigTypes = {
     }
   }
 };
-
-type DonationAmount = 500 | 1000 | 2000 | 3000 | 4000 | 5000;
 
 interface OneTimeConfig {
   amount: DonationAmount;
