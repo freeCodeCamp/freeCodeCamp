@@ -1,100 +1,100 @@
-# How to add Playwright tests
+# Як додати тести Playwright
 
-## Installation:
+## Встановлення:
 
-To install and configure Playwright on your machine check out this [documentation](https://playwright.dev/docs/intro#installing-playwright)
+Щоб встановити та налаштувати Playwright на своїй машині, див. [документацію](https://playwright.dev/docs/intro#installing-playwright)
 
-To learn how to write Playwright tests, or 'specs', please see Playwright's official [documentation](https://playwright.dev/docs/writing-tests).
+Щоб дізнатися, як писати тести Playwright, або «специфікації», зверніться до офіційної [документації Playwright](https://playwright.dev/docs/writing-tests).
 
-## Where to Add a Test
+## Куди додати тест
 
-- Playwright tests are in the `./e2e` directory.
+- Тести Playwright знаходяться в каталозі `./e2e`.
 
-- Playwright test files are always with a `.spec.ts` extension.
+- Файли тестів Playwright завжди мають розширення `.spec.ts`.
 
-## How to Run Tests
+## Як проводити тести
 
 
-### 1. Ensure that MongoDB and Client Applications are Running
+### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Start MongoDB and seed the database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [Start the freeCodeCamp client application and API server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Run the Playwright Tests
+### 2. Запустіть тести Playwright
 
-To run tests with Playwright check the following below
+Щоб запустити тести Playwright, зверніть увагу на інформацію нижче
 
-- To run tests in UI helper mode:
+- Щоб запустити тести в режимі помічника UI:
 
   ```console
   npx playwright test --ui
   ```
 
-- To run a single test:
+- Щоб запустити один тест:
 
   ```console
   npx playwright test <filename>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test landing-page.spec.ts
   ```
 
-- Run a set of test files in respective folders:
+- Щоб запустити набір файлів тестів у відповідних папках:
 
   ```console
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
-  For example:
+  Наприклад:
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
-- Run the test with the title:
+- Щоб запустити тест із заголовком:
 
   ```console
   npx playwright test -g <title>
   ```
 
-  For example:
+  Наприклад:
   ```console
   npx playwright test -g "add a todo item"
   ```
 
-### 3. Debugging Tests
+### 3. Налагодження тестів
 
-Since Playwright runs in Node.js, you can debug it with your debugger of choice e.g. using console.log or inside your IDE
+Оскільки Playwright працює в Node.js, його можна налагодити за допомогою власного налагоджувача. Наприклад, використавши console.log або в IDE
 
-- Debugging all tests:
+- Налагодження всіх тестів:
 
   ```console
   npx playwright test --debug
   ```
 
-- Debugging one test file:
+- Налагодження одного файлу тесту:
 
   ```console
   npx playwright test example.spec.ts --debug
   ```
 
-### 4. Generate Test Reports
+### 4. Формування звіту про тести
 
-The HTML Reporter shows you a full report of your tests allowing you to filter the report by browsers, passed tests, failed tests, skipped tests and flaky tests.
+HTML Reporter надає повний звіт про ваші тести, що дає змогу фільтрувати звіт за браузерами, пройденими тестами, проваленими тестами, пропущеними тестами та ненадійними тестами.
 
 ```console
 npx playwright show-report 
 ```
 
-### 5. Troubleshooting
+### 5. Розв’язання проблем розробки
 
-Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including majpr distributions of Windows, MacOS and Linux.
+Playwright, як правило, є інструментом з дуже малим шансом на помилку. Помічник вже налаштував тести для виконання на машинах з усіма операційними системами, включно з найважливішими дистрибутивами Windows, MacOS і Linux.
 
 
-- A common error seen in playwright is as follows:
+- Поширена помилка в Playwright виглядає так:
 
   ```console
     Error: page.goto: Could not connect: Connection refused
@@ -103,72 +103,72 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
     ============================================================  
   ```
 
-  You can fix the above error with the following steps:
+  Цю помилку можна виправити за допомогою таких кроків:
 
-  1. **Check the URL:** Ensure that the URL you're trying to navigate to is correct and properly formatted. Make sure there are no typos in the URL.
+  1. **Перевірте URL:** переконайтесь, що URL, на який ви намагаєтесь перейти, правильний та відформатований. Переконайтесь, що в посиланні немає помилок.
 
-  2. **Server Status:** Check whether the server at the URL is running and accessible. You might encounter this error if the server is not running or is not accessible.
+  2. **Стан сервера:** перевірте, чи сервер працює та доступний. Ви можете зіткнутися з цією помилкою, якщо сервер не працює або недоступний.
 
-  3. **Port Availability:** Verify that the port mentioned in the URL (8000 in this case) is the correct port and is available for use. Make sure no other process is already using that port.
+  3. **Доступність порту:** переконайтесь, що порт, згаданий в URL (у цьому випадку 8000) правильний та доступний для використання. Переконайтеся, що жоден інший процес не використовує цей порт.
 
-  4. **Firewall or Security Software:** Sometimes, firewall or security software can block connections to specific ports. Check your firewall settings to ensure that the port is allowed.
+  4. **Брандмауер та безпечне програмне забезпечення:** брандмауери та безпечне програмне забезпечення іноді можуть блокувати підключення до певних портів. Перевірте налаштування брандмауера, щоб переконатися, що порт дозволений.
 
-  5. **Network Connectivity:** Ensure that your system has a working network connection and can access external resources.
+  5. **Підключення до мережі:** переконайтесь, що ваша система з’єднана з мережею та може отримати доступ до зовнішніх ресурсів.
 
-- Another common error seen in playwright is as follows:
+- Ще одна поширена помилка в Playwright виглядає так:
 
   ```console
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
-  1. The network request was made using a method that does not include a response body, such as HEAD or CONNECT.
-  2. The network request was made over a secure (HTTPS) connection, and the response body is not available for security reasons.
-  3. The network request was made by a third-party resource (such as an advertisement or a tracking pixel) that is not controlled by the script.
-  4. The network request was made by a script that has been paused or stopped before the response was received.
+  1. Мережевий запит було зроблено за допомогою методу, який не містить тіла відповіді (наприклад, HEAD або CONNECT).
+  2. Мережевий запит було зроблено через безпечне з’єднання (HTTPS), а тіло відповіді недоступне з міркувань безпеки.
+  3. Мережевий запит зроблено стороннім ресурсом (наприклад, рекламою чи пікселем відстеження), який не контролюється сценарієм.
+  4. Мережевий запит було зроблено сценарієм, який було призупинено або зупинено до отримання відповіді.
 
 
 
-**For more insights on issues visit the official documentation.**
+**Для отримання додаткової інформації відвідайте офіційну документацію.**
 
-## Playwright-Gitpod Setup
+## Налаштування Playwright-Gitpod
 
-### 1. Ensure Development Environment is Running
+### 1. Переконайтеся, що середовище розробки запущене
 
-If starting the Gitpod environment did not automatically develop the environment:
+Якщо запуск середовища Gitpod не розробив середовище автоматично:
 
-- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
 
-- Create the .env
+- Створіть .env
   ```console
   cp sample.env .env
   ```
 
-- Create a config file.
+- Створіть конфігураційний файл.
   ```console
   pnpm run create:config
   ```
 
-- Seed the database
+- Заповніть базу даних
   ```console
   pnpm run seed
   ```
 
-- Develop the server and client
+- Розробіть сервер та клієнта
   ```console
   pnpm run develop
   ```
 
-### 2. Install Playwright Build Tools
+### 2. Встановіть інструменти збірки Playwright
 
-To install necessary dependencies for running Playwright run the following command:
+Щоб встановити необхідні залежності для запуску Playwright, виконайте цю команду:
 
 ```console
 pnpm run playwright:install-build-tools
 ```
 
 
-### 3. Run the Playwright Tests on Gitpod
+### 3. Запустіть тести Playwright на Gitpod
 
-To run all Playwright tests, run the following command:
+Щоб запустити всі тести Playwright, виконайте цю команду:
 
 ```console
 npx playwright test
