@@ -362,7 +362,7 @@
       "Na certificação de bibliotecas de desenvolvimento em front-end, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar a lógica aos seus estilos CSS e a ampliá-los com Sass.",
       "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
     ],
-    "note": "",
+    "note": "Nota: React 18 pode ser incompatível com alguns desafios front-end.",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
