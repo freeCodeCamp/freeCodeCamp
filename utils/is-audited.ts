@@ -1,6 +1,6 @@
 import { type SuperBlocks, getAuditedSuperBlocks } from '../config/superblocks';
 
-export function isAuditedSuperblock(
+export function isAuditedSuperBlock(
   language: string,
   superblock: SuperBlocks,
   {
