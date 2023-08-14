@@ -1344,6 +1344,9 @@ importers:
 
   tools/scripts/build:
     devDependencies:
+      '@total-typescript/ts-reset':
+        specifier: ^0.4.0
+        version: 0.4.2
       chai:
         specifier: 4.3.7
         version: 4.3.7
@@ -19649,7 +19652,6 @@ packages:
         optional: true
     dependencies:
       debug: 2.2.0
-    dev: false
 
   /follow-redirects@1.15.2(debug@3.2.7):
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -21703,7 +21705,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.2(debug@4.3.4)
+      follow-redirects: 1.15.2(debug@2.2.0)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
