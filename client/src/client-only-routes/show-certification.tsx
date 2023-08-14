@@ -129,6 +129,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
+  const [isCertDownlading, setIsCertDownloading] = useState(false);
 
   useEffect(() => {
     const { username, certSlug, isValidCert, showCert } = props;
@@ -271,6 +272,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const downloadImage = async () => {
+    setIsCertDownloading(true);
     const element = document.querySelector<HTMLElement>('.certificate-wrapper');
     const sig = element?.querySelector(`img[alt="Quincy Larson's Signature"]`);
     sig?.remove();
@@ -278,13 +280,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       return;
     }
     const img = await toPng(element);
-    console.log(img);
     const link = document.createElement('a');
     link.download = `${username}-${certTitle}.png`;
     link.href = img;
     document.body.appendChild(link);
     link.click();
     link.remove();
+    setIsCertDownloading(false);
   };
 
   const shareCertBtns = (
@@ -318,13 +320,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <Button
           block={true}
           bsSize='lg'
+          disabled={isCertDownlading}
           bsStyle='primary'
           onClick={async () => {
             await downloadImage();
             return false;
           }}
         >
-          Download Cert
+          {isCertDownlading ? 'Processing download' : 'Download Cert'}
         </Button>
       </Col>
       <Spacer size='large' />
