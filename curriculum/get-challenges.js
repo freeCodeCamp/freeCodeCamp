@@ -14,7 +14,7 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedCert } = require('../utils/is-audited');
+const { isAuditedSuperBlock } = require('../utils/is-audited');
 const { createPoly } = require('../utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
@@ -321,9 +321,9 @@ ${getFullPath('english', filePath)}
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
       lang !== 'english' &&
-      !isAuditedCert(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      !isAuditedSuperBlock(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
   }
@@ -358,7 +358,7 @@ ${getFullPath('english', filePath)}
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
     const translateComments =
-      isAuditedCert(lang, meta.superBlock, {
+      isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));

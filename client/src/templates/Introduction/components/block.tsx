@@ -8,7 +8,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../../config/superblocks';
 import envData from '../../../../../config/env.json';
-import { isAuditedCert } from '../../../../../utils/is-audited';
+import { isAuditedSuperBlock } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
@@ -130,7 +130,7 @@ class Block extends Component<BlockProps> {
       );
     });
 
-    const isAudited = isAuditedCert(curriculumLocale, superBlock, {
+    const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
       showNewCurriculum,
       showUpcomingChanges
     });
