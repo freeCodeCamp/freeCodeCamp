@@ -39,7 +39,7 @@ Let $M$ be the maximum number of segments encountered during a random tidy-up of
 
 so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
 
-The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Give your answer rounded to six decimal places.
+The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

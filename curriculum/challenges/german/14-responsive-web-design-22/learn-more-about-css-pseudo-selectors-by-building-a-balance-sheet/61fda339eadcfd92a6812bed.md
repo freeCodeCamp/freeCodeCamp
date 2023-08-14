@@ -7,21 +7,21 @@ dashedName: step-30
 
 # --description--
 
-Before you get too far into your styling, you should make use of the `sr-only` class. You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
+Bevor du dich zu sehr in deiner Gestaltung vertiefst, solltest du von der `sr-only`-Klasse Gebrauch machen. Du kannst CSS verwenden, um Elemente mit dieser Klasse vollständig von der visuellen Seite auszublenden, aber dennoch von Screenreadern angezeigt werden zu lassen.
 
 The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.
 
-The `span[class~="sr-only"]` selector will select any `span` element whose `class` *includes* `sr-only`. Create that selector, and give it a `border` property set to `0`.
+Der `span[class~="sr-only"]`-Selektor wird jedes `span`-Element auswählen, dessen `class` * * `sr-only` enthält. Erstelle diesen Selektor und gib ihm eine `border`-Eigenschaft mit dem Wert `0`.
 
 # --hints--
 
-You should have an `span[class~="sr-only"]` selector.
+Du solltest einen `span[class~="sr-only"]`-Selektor haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]'));
 ```
 
-Your `span[class~="sr-only"]` selector should have a `border` property set to `0`.
+Dein `span[class~="sr-only"]`-Selektor sollte eine `border`-Eigenschaft auf `0` gesetzt haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('border-width') === '0px');

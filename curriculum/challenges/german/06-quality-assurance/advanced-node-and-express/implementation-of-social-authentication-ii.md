@@ -14,7 +14,7 @@ To set up the GitHub strategy, you have to tell Passport to use an instantiated 
 
 The current strategy you are implementing authenticates users using a GitHub account and OAuth 2.0 tokens. The client ID and secret obtained when creating an application are supplied as options when creating the strategy. The strategy also requires a `verify` callback, which receives the access token and optional refresh token, as well as `profile` which contains the authenticated user's GitHub profile. The `verify` callback must call `cb` providing a user to complete authentication.
 
-Here's how your new strategy should look at this point:
+So sollte deine neue Strategie zu diesem Zeitpunkt aussehen:
 
 ```js
 passport.use(new GitHubStrategy({
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github should be required.
+passport-github sollte erforderlich sein.
 
 ```js
 async (getUserInput) => {

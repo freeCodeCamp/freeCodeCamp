@@ -29,13 +29,13 @@ Dein (`a`)-Ankerelement sollte ein öffnendes Tag haben. Öffnende Tags haben fo
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You are missing a closing (`a`) tag after the image.
+Dir fehlt ein abschließendes (`a`)-Tag nach dem Bild.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-Dein (`a`)-Ankerelement sollte ein schließendes Tag haben. Closing tags have a `/` just after the `<` character.
+Dein (`a`)-Ankerelement sollte ein schließendes Tag haben. Abschließende Tags haben ein `/` genau nach dem `<`-Zeichen.
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);

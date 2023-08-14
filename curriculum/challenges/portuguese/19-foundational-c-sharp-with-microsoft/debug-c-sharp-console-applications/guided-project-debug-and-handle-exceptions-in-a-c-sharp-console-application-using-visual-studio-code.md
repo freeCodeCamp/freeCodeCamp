@@ -22,7 +22,11 @@ Quando é lançada uma exceção do tipo `ArgumentOutOfRangeException`?
 
 Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de indexar um array fora dos limites do array.
 
+---
+
 Uma exceção `ArgumentOutOfRangeException` é lançada quando o valor de um argumento está fora do intervalo permitido de valores conforme definido pelo método.
+
+---
 
 Uma exceção `ArgumentOutOfRangeException` é lançada quando é feita uma tentativa de armazenar um valor de um tipo em um array de outro tipo.
 

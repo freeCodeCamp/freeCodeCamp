@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`GameOfChance` має повертати єдиний екземлпяр компоненту `Results`, який має пропс `fiftyFifty`.
+`GameOfChance` має повернути єдиний екземпляр компонента `Results`, який має пропс під назвою `fiftyFifty`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Стан `GameOfChance` має бути ініціалізовано властивістю `counter`, що має значення `1`.
+Стан `GameOfChance` має ініціалізуватися властивістю `counter` зі значенням `1`.
 
 ```js
 assert.strictEqual(

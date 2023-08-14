@@ -38,7 +38,7 @@ dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 assert($('audio').length === 1);
 ```
 
-Елемент `audio` повинен містити кінцевий теґ.
+Елемент `audio` повинен мати кінцевий тег.
 
 ```js
 assert(

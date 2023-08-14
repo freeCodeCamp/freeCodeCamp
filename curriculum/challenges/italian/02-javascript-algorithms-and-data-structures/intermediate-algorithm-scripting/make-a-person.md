@@ -23,7 +23,7 @@ Esegui i test per vedere l'output atteso per ogni metodo. Questi metodi devono e
 
 # --hints--
 
-You should not change the function signature.
+Non dovresti cambiare la riga della dichiarazione della funzione.
 
 ```js
 assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s*{/);

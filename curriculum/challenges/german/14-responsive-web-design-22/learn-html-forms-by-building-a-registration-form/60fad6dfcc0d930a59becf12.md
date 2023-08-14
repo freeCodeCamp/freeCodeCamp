@@ -7,25 +7,25 @@ dashedName: step-42
 
 # --description--
 
-The HTML for the registration form is finished. Now, you can spruce it up a bit.
+Der HTML-Code für das Anmeldeformular ist abgeschlossen. Jetzt kannst du es ein bisschen verschönern.
 
-Start by changing the font to `Tahoma`, and the font size to `16px` in the `body`.
+Beginne, indem du im `body` die Schriftart auf `Tahoma` und die Schriftgröße auf `16px` änderst.
 
 # --hints--
 
-You should use the `font-family` property to change the font.
+Du solltest die `font-family`-Eigenschaft verwenden, um die Schriftart zu ändern.
 
 ```js
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily);
 ```
 
-You should set the `font-family` property to `Tahoma`.
+Du solltest die `font-family`-Eigenschaft auf `Tahoma` setzen.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily, 'Tahoma');
 ```
 
-You should set the `font-size` property to `16px`.
+Du solltest die `font-size`-Eigenschaft auf `16px` setzen.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px');

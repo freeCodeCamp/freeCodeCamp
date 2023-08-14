@@ -38,7 +38,7 @@ $$\begin{align}   & C(5, 2, 3) = 5 \\\\
 
 Let $F_k$ be the Fibonacci numbers: $F_k = F_{k - 1} + F_{k - 2}$ with base cases $F_1 = F_2 = 1$.
 
-Find $\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$, and give your answer rounded to 8 decimal places behind the decimal point.
+Знайдіть $\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$ та дайте відповідь, заокруглену до восьми знаків після коми.
 
 # --hints--
 
