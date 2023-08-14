@@ -18,7 +18,7 @@ We also define $S(N)$ as the sum of $R(i)$ for $2 ≤ i ≤ N$.
 
 We can verify that $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$.
 
-Знайдіть $S({10}^7)$. Give your answer rounded to four decimal places.
+Знайдіть $S({10}^7)$. Дайте відповідь, заокруглену до чотирьох знаків після коми.
 
 # --hints--
 
