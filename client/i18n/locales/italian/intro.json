@@ -362,7 +362,7 @@
       "Nella Certificazione Librerie di Sviluppo Front End, imparerai come definire rapidamente lo stile del tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
-    "note": "Nota: React 18 potrebbe essere incompatibile con alcune sfide front-end.",
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",

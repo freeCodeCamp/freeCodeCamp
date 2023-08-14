@@ -362,7 +362,7 @@
       "In der Zertifizierung für Front-End-Entwicklungsbibliotheken lernst du, wie du deine Seite mit Bootstrap schnell gestalten kannst. Du lernst auch, wie du Logik zu deinen CSS-Styles hinzufügen und sie mit Sass erweitern kannst.",
       "Später baust du einen Warenkorb und andere Anwendungen, um zu lernen, wie du mit React und Redux leistungsstarke Single Page Applications (SPAs) erstellen kannst."
     ],
-    "note": "Hinweis: React 18 ist möglicherweise mit einigen Front-End-Herausforderungen nicht kompatibel.",
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",

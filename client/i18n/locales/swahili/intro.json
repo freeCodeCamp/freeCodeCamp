@@ -362,7 +362,7 @@
       "Katika cheti cha Front End Development Libraries, utajifunza jinsi ya kutengeneza tovuti yako haraka na Bootstrap. Pia utajifunza jinsi ya kuongeza mantiki kwenye mitindo yako ya CSS na kuiendeleza kwa Sass.",
       "Baadaye, utaunda shopping cart na programu zingine ili kujifunza jinsi ya kuunda Single Page Applications (SPAs) kwa kutumia React na Redux."
     ],
-    "note": "Kumbuka: React 18 inaweza kuwa haioani na baadhi ya changamoto za mbele.",
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
