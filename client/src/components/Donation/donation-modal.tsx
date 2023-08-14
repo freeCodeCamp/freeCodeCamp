@@ -94,7 +94,7 @@ function DonateModal({
   const { t } = useTranslation();
 
   // test wheather the conversions are being distributed properly
-  useFeature('aa-test-in-component').on;
+  useFeature('aa-test-in-component');
 
   const handleProcessing = () => {
     setCloseLabel(true);
