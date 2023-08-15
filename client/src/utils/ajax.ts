@@ -5,12 +5,13 @@ import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
+  GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
   User
 } from '../redux/prop-types';
 
-const { apiLocation, gitHash } = envData;
+const { apiLocation } = envData;
 
 const base = apiLocation;
 
@@ -177,7 +178,7 @@ export function getUserProfile(
   username: string
 ): Promise<ResponseWithData<UserProfileResponse>> {
   const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}&githash=${gitHash}`
+    `/api/users/get-public-profile?username=${username}`
   );
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser({
@@ -211,6 +212,12 @@ export function getUsernameExists(
   username: string
 ): Promise<ResponseWithData<boolean>> {
   return get(`/api/users/exists?username=${username}`);
+}
+
+export function getGenerateExam(
+  challengeId: string
+): Promise<GenerateExamResponseWithData> {
+  return get(`/exam/${challengeId}`);
 }
 
 /** POST **/

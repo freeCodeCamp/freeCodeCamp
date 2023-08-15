@@ -47,6 +47,7 @@ const superBlockFolderMap = {
   'project-euler': '18-project-euler',
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
+  'upcoming-python': '20-upcoming-python',
   'example-certification': '99-example-certification'
 };
 
@@ -110,8 +111,8 @@ void (async () => {
     console.log(`\n=== ${lang} ===`);
     const certs = getAuditedSuperBlocks({
       language: lang,
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
     });
     const langCurriculumDirectory = join(
       process.cwd(),

@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "（舊版）響應式網頁設計",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
@@ -55,13 +55,6 @@
         "intro": [
           "CSS 網格是一個較新的標準，用於構建複雜的響應佈局。它通過把 HTML 元素轉換爲具有行和列的網格容器，以便將子元素放置在所需要的位置。",
           "在這個課程中，你將通過構建不同的複雜佈局（包括博客）來學習 CSS 網格的基礎知識。"
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "響應式網頁設計項目",
-        "intro": [
-          "是時候使用你新學到的技能了。通過構建這些項目，你將有機會應用之前學到的所有技巧、原則和概念：HTML、CSS、視覺設計、無障礙等等。",
-          "完成下面的五個網頁編程項目，獲得響應式網頁設計認證。"
         ]
       }
     }
@@ -213,6 +206,10 @@
           "爲你的網頁選擇正確的顏色可以大大提高對讀者的審美吸引力。",
           "在本課程中，你將構建一組彩色筆。你將學習設置顏色值的不同方法以及如何將顏色相互配對。"
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -946,6 +943,14 @@
         "title": "學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "通過搭建食譜頁面學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
@@ -960,6 +965,10 @@
       },
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
+        "intro": ["A description is to be determined"]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
       }
     }
@@ -1053,6 +1062,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

@@ -51,7 +51,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'fcc-source-challenges',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-source-challenges'
+      ),
       options: {
         name: 'challenges',
         source: buildChallenges,
@@ -70,7 +72,9 @@ module.exports = {
       resolve: 'gatsby-transformer-remark'
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
@@ -83,7 +87,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'superBlockIntroMarkdown',
         predicate: ({ frontmatter }) => {

@@ -1,10 +1,16 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import badWordsFilter from 'bad-words';
+import { isProfane } from 'no-profanity';
 import { isValidUsername } from '../../../utils/validate';
 // we have to use this file as JavaScript because it is used by the old api.
 import { blocklistedUsernames } from '../../../config/constants.js';
 import { schemas } from '../schemas';
 
+/**
+ * Validate an image url.
+ *
+ * @param picture The url to check.
+ * @returns Whether the url is a picture with a valid protocol.
+ */
 export const isPictureWithProtocol = (picture?: string): boolean => {
   if (!picture) return false;
   try {
@@ -15,6 +21,13 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+/**
+ * Plugin for all endpoints related to user settings.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
+ */
 export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -168,7 +181,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        const isProfane = new badWordsFilter().isProfane(newUsername);
+        const isUserNameProfane = isProfane(newUsername);
         const onBlocklist = blocklistedUsernames.includes(newUsername);
 
         const usernameTaken =
@@ -178,7 +191,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
                 where: { username: newUsername }
               });
 
-        if (usernameTaken || isProfane || onBlocklist) {
+        if (usernameTaken || isUserNameProfane || onBlocklist) {
           void reply.code(400);
           return {
             message: 'flash.username-taken',

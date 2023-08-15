@@ -11,8 +11,15 @@ import {
   mergeMap
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import standardErrorMessage from '../../../utils/standard-error-message';
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  standardErrorMessage,
+  trophyMissingMessage
+} from '../../../utils/error-messages';
+import {
+  challengeTypes,
+  hasNoTests,
+  submitTypes
+} from '../../../../../config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
@@ -29,13 +36,15 @@ import { actionTypes } from './action-types';
 import {
   closeModal,
   updateSolutionFormValues,
-  setIsAdvancing
+  setIsAdvancing,
+  submitChallengeComplete,
+  submitChallengeError
 } from './actions';
 import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  examResultsSelector,
+  userCompletedExamSelector,
   projectFormValuesSelector,
   isBlockNewlyCompletedSelector
 } from './selectors';
@@ -44,7 +53,7 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points } = data;
+      const { savedChallenges, points, isTrophyMissing, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -56,19 +65,26 @@ function postChallenge(update, username) {
           })
         );
       }
-      return of(
+
+      const actions = [
         submitComplete({
           submittedChallenge: {
             username,
             points,
             ...payloadWithClientProperties
           },
-          savedChallenges: mapFilesToChallengeFiles(savedChallenges)
+          savedChallenges: mapFilesToChallengeFiles(savedChallenges),
+          examResults
         }),
-        updateComplete()
-      );
+        updateComplete(),
+        submitChallengeComplete()
+      ];
+      // TODO(Post-MVP): separate endpoint for trophy submission?
+      if (isTrophyMissing)
+        actions.push(createFlashMessage(trophyMissingMessage));
+      return of(...actions);
     }),
-    catchError(() => of(updateFailed(update)))
+    catchError(() => of(updateFailed(update), submitChallengeError()))
   );
   return saveChallenge;
 }
@@ -77,9 +93,7 @@ function submitModern(type, state) {
   const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (
-    challengeType === 11 ||
-    challengeType === 15 ||
-    challengeType === 19 ||
+    hasNoTests(challengeType) ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {
@@ -168,10 +182,11 @@ const submitters = {
 function submitExam(type, state) {
   // TODO: verify shape of examResults?
   if (type === actionTypes.submitChallenge) {
-    const { id } = challengeMetaSelector(state);
-    const examResults = examResultsSelector(state);
+    const { id, challengeType } = challengeMetaSelector(state);
+    const userCompletedExam = userCompletedExamSelector(state);
+
     const { username } = userSelector(state);
-    const challengeInfo = { id, examResults };
+    const challengeInfo = { id, challengeType, userCompletedExam };
 
     const update = {
       endpoint: '/exam-challenge-completed',
@@ -196,8 +211,9 @@ export default function completionEpic(action$, state$) {
         block,
         blockHashSlug
       } = challengeMetaSelector(state);
-
-      let submitter = () => of({ type: 'no-user-signed-in' });
+      // Default to submitChallengeComplete since we do not want the user to
+      // be stuck in the 'isSubmitting' state.
+      let submitter = () => of(submitChallengeComplete());
       if (
         !(challengeType in submitTypes) ||
         !(submitTypes[challengeType] in submitters)
@@ -231,7 +247,9 @@ export default function completionEpic(action$, state$) {
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
-            navigate(pathToNavigateTo);
+            if (challengeType !== challengeTypes.exam) {
+              navigate(pathToNavigateTo);
+            }
           } else {
             createFlashMessage(standardErrorMessage);
           }

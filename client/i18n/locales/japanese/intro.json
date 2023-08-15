@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "(レガシー) レスポンシブウェブデザイン",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -55,13 +55,6 @@
         "intro": [
           "CSS グリッドは、複雑なレスポンシブレイアウトを簡単に構築できる比較的新しい方法です。この方法を使うと、HTML 要素をグリッド (格子) に変換して、その中で子要素をどこにでも配置できます。",
           "このコースでは、ブログを含む、多様で複雑なレイアウトを実装することで、CSS グリッドの基礎を学びます。"
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "レスポンシブウェブデザインプロジェクト",
-        "intro": [
-          "新しく学んだスキルで仕事に取り組む時間です。これらのプロジェクトに取り組むことで、HTML、CSS、ビジュアルデザイン、アクセシビリティなど、これまで学んだ全てのスキル、原則、コンセプトを適用する機会を得られます。",
-          "以下の 5 つの Web プログラミングプロジェクトを完了し、レスポンシブウェブデザイン認定証を取得しましょう。"
         ]
       }
     }
@@ -213,6 +206,10 @@
           "ウェブページに対して的確な色を選択することにより、閲覧者への見え方の美しさを大いに向上させることができます。",
           "このコースでは、カラーマーカーのセットを作成します。色の値を設定するさまざまな方法や、色を組み合わせる方法を学習します。"
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -950,6 +947,14 @@
         "title": "Learn HTML Foundations",
         "intro": ["A description is to be determined"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
@@ -964,6 +969,10 @@
       },
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
+        "intro": ["A description is to be determined"]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
       }
     }
@@ -1057,6 +1066,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

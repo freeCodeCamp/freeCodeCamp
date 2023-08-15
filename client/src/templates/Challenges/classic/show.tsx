@@ -9,7 +9,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -222,10 +222,14 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  // TODO: show preview should NOT be computed like this. That determination is
+  // made during the build (at least twice!). It should be either a prop or
+  // computed from challengeType
   const showPreview =
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject;
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.python;
 
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;

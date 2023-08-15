@@ -15,16 +15,16 @@ Il sito web sarà composto da una pagina index principale che avrà dei link ad 
 1. La pagina di ricette dovrebbe includere un elemento `html` con degli elementi `head` e `body` come figli.
 1. Dovresti avere un elemento `title` all'interno dell'elemento `head` con il testo `The Odin Recipes`.
 1. Dovresti vedere un elemento `h1` con il testo `Creamy Chocolate Fudge`.
-1. Dovresti vedere un'immagine con l'url `*placeholder-fcc-cdn*` con un testo `alt` adatto.
+1. You should see a related image with an `alt` attribute.
 1. Dovrebbe esserci un elemento `h2` con il testo `Description` sotto l'immagine.
 1. Dovresti vedere un paio di paragrafi che descrivono la ricetta sotto `Description`.
-1. Dovrebbe esserci un elemento `h2` con il testo `Ingredients`
+1. There should be an `h2` element with the text `Ingredients`.
 1. Sotto l'intestazione `Ingredients` dovrebbe esserci una lista non ordinata con gli ingredienti necessari per la ricetta.
 1. Sotto l'elenco degli ingredienti aggiungi un'altra intestazione chiamata `Steps`.
 1. Dovresti vedere una lista ordinata con un paio di passaggi necessari per completare la ricetta.
-1. Sotto gli step dovrebbe esserci un elemento `h2` con il testo `More Recipes`
+1. Under the steps there should be an `h2` element with the text `More Recipes`.
 1. Dovresti vedere un paio di link ad altre ricette all'interno di una lista non ordinata che ha un paio di elementi di lista con elementi di ancoraggio al suo interno.
-1. Questi elementi di ancoraggio dovrebbero avere un attributo `href` con il valore `#`
+1. These anchor elements should have `href` attribute with the value set to `#`.
 
 # --hints--
 
@@ -56,12 +56,12 @@ Dovresti avere un elemento `h1` all'interno dell'elemento `body` che contiene il
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-Dovresti avere un'immagine con l'url `*placeholder-fcc-cdn*` con un attributo `alt` con un testo adatto.
+You should have an image with an `alt` attribute.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
 
-assert(img && img.alt !='' && img.src === 'https://i.imgur.com/p0J5baJ.jpg')
+assert(img && img.alt !='' && img.src != '')
 ```
 
 Dovresti avere un elemento `h2` con il testo `Description`.

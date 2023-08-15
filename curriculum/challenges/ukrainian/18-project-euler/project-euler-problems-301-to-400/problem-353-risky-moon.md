@@ -24,7 +24,7 @@ You are given that $M(7) = 0.178\\,494\\,399\\,8$ rounded to 10 digits behind th
 
 Знайдіть $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
 
-Give your answer rounded to 10 digits behind the decimal point in the form a.bcdefghijk.
+Дайте відповідь, заокруглену до десяти знаків після коми у форматі a.bcdefghijk.
 
 # --hints--
 

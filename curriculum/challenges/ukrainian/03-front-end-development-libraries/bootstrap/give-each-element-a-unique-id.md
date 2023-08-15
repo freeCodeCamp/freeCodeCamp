@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908855
-title: Надання кожному елементу унікального id
+title: Надайте кожному елементу унікальний id
 challengeType: 0
 forumTopicId: 18191
 dashedName: give-each-element-a-unique-id
@@ -8,15 +8,15 @@ dashedName: give-each-element-a-unique-id
 
 # --description--
 
-Слід також уміти використовувати jQuery, щоб обирати кожну кнопку за її унікальним id.
+Вам потрібно вміти використовувати jQuery, щоб націлити кожну кнопку за її унікальним id.
 
 Надайте кожній кнопці унікальний id, починаючи з `target1` і закінчуючи `target6`.
 
-Переконайтеся, що `target1` по `target3` знаходяться у `#left-well`, а `target4` по `target6` розміщені у `#right-well`.
+Переконайтесь, що кнопки від `target1` до `target3` знаходяться в `#left-well`, а кнопки від `target4` до `target6` знаходяться в `#right-well`.
 
 # --hints--
 
-Один елемент `button` повинен мати id `target1`.
+Один елемент `button` повинен мати id зі значенням `target1`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Один елемент `button` повинен мати id `target2`.
+Один елемент `button` повинен мати id зі значенням `target2`.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-Один елемент `button` повинен мати id `target3`.
+Один елемент `button` повинен мати id зі значенням `target3`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Один елемент `button` повинен мати id `target4`.
+Один елемент `button` повинен мати id зі значенням `target4`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Один елемент `button` повинен мати id `target5`.
+Один елемент `button` повинен мати id зі значенням `target5`.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-Один елемент `button` повинен мати id `target6`.
+Один елемент `button` повинен мати id зі значенням `target6`.
 
 ```js
 assert(

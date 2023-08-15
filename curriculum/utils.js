@@ -43,8 +43,8 @@ function createSuperOrder(superBlocks) {
 }
 
 const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);
 
@@ -81,6 +81,7 @@ const directoryToSuperblock = {
   '18-project-euler': 'project-euler',
   '19-foundational-c-sharp-with-microsoft':
     'foundational-c-sharp-with-microsoft',
+  '20-upcoming-python': 'upcoming-python',
   '99-example-certification': 'example-certification'
 };
 

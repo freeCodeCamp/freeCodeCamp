@@ -28,6 +28,7 @@ const toneUrls = {
   [FlashMessages.CompleteProjectFirst]: TRY_AGAIN,
   [FlashMessages.DeleteTokenErr]: TRY_AGAIN,
   [FlashMessages.EmailValid]: CHAL_COMP,
+  [FlashMessages.GenerateExamError]: TRY_AGAIN,
   [FlashMessages.HonestFirst]: TRY_AGAIN,
   [FlashMessages.IncompleteSteps]: TRY_AGAIN,
   [FlashMessages.LocalCodeSaved]: CHAL_COMP,
@@ -61,7 +62,8 @@ const toneUrls = {
   [FlashMessages.UserNotCertified]: TRY_AGAIN,
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
-  [FlashMessages.WentWrong]: TRY_AGAIN
+  [FlashMessages.WentWrong]: TRY_AGAIN,
+  [FlashMessages.MSTrophyMissing]: TRY_AGAIN
 } as const;
 
 type ToneStates = keyof typeof toneUrls;

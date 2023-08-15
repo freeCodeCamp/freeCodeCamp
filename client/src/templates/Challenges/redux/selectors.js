@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,
@@ -28,11 +28,15 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
 export const isFinishExamModalOpenSelector = state =>
   state[ns].modal.finishExam;
+export const isExamResultsModalOpenSelector = state =>
+  state[ns].modal.examResults;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
 export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
+export const isSubmittingSelector = state => state[ns].isSubmitting;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
@@ -45,7 +49,7 @@ export const chapterSlugSelector = state => state[ns].chapterSlug;
 export const portalDocumentSelector = state => state[ns].portalWindow?.document;
 export const portalWindowSelector = state => state[ns].portalWindow;
 
-export const examResultsSelector = state => state[ns].examResults;
+export const userCompletedExamSelector = state => state[ns].userCompletedExam;
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };
@@ -82,7 +86,8 @@ export const challengeDataSelector = state => {
   } else if (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.python
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {

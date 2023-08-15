@@ -47,7 +47,7 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
-export interface LowerJawProps {
+interface LowerJawProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   hint?: string;
@@ -70,6 +70,18 @@ const mapStateToProps = createSelector(
     completedPercent
   })
 );
+
+const sentenceArray = [
+  'learn.sorry-try-again',
+  'learn.sorry-keep-trying',
+  'learn.sorry-getting-there',
+  'learn.sorry-hang-in-there',
+  'learn.sorry-dont-giveup'
+];
+
+const sentencePicker = (currentAttempts: number) => {
+  return sentenceArray[currentAttempts % sentenceArray.length];
+};
 
 const LowerButtonsPanel = ({
   resetButtonText,
@@ -264,17 +276,6 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const sentencePicker = () => {
-    const sentenceArray = [
-      'learn.sorry-try-again',
-      'learn.sorry-keep-trying',
-      'learn.sorry-getting-there',
-      'learn.sorry-hang-in-there',
-      'learn.sorry-dont-giveup'
-    ];
-    return sentenceArray[currentAttempts % sentenceArray.length];
-  };
-
   const isAttemptsLargerThanTest =
     currentAttempts &&
     testsLength &&
@@ -342,6 +343,9 @@ const LowerJaw = ({
               )}
             </LowerJawStatus>
             <LowerJawQuote quote={quote} />
+            <span className='sr-only'>
+              {t('learn.percent-complete', { percent: completedPercent })}
+            </span>
           </>
         )}
         {hintRef.current && !challengeIsCompleted && (
@@ -349,7 +353,7 @@ const LowerJaw = ({
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
             htmlDescription={`${hintRef.current}`}
-            learnEncouragementText={t(sentencePicker())}
+            learnEncouragementText={t(sentencePicker(currentAttempts))}
           />
         )}
       </div>

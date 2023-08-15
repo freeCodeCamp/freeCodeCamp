@@ -1,6 +1,7 @@
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
+import { challengeTypes } from '../../../config/challenge-types';
 import { getChallenges } from './get-challenges';
 
 const jsCertProjectIds = [
@@ -12,12 +13,12 @@ const jsCertProjectIds = [
 ];
 
 const multifileCertProjectIds = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
-  .map(challenge => challenge.id);
+  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
+  .map(c => c.id);
 
 const savableChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
-  .map(challenge => challenge.id);
+  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
+  .map(c => c.id);
 
 type SavedChallengeFile = {
   key: string;
@@ -64,6 +65,18 @@ type CompletedChallenge = {
   files?: CompletedChallengeFile[];
 };
 
+/**
+ * Helper function to update a user's challenge data. Used in challenge
+ * submission endpoints.
+ *
+ * @deprecated Create specific functions for each submission endpoint.
+ * @param fastify The Fastify instance.
+ * @param user The existing user record.
+ * @param challengeId The id of the submitted challenge.
+ * @param _completedChallenge The challenge submission.
+ * @param timezone The user's timezone.
+ * @returns Information about the update.
+ */
 export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: user,
@@ -123,15 +136,12 @@ export async function updateUserChallengeData(
     : null;
 
   if (alreadyCompleted && oldChallenge) {
-    const challengeWithOldDate = userCompletedChallenges[oldIndex];
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate
+    };
 
-    if (challengeWithOldDate) {
-      challengeWithOldDate.completedDate = oldChallenge.completedDate;
-      finalChallenge = {
-        ...completedChallenge,
-        ...challengeWithOldDate
-      };
-    }
+    userCompletedChallenges[oldIndex] = finalChallenge;
   } else {
     finalChallenge = {
       ...completedChallenge

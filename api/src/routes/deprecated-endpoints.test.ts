@@ -12,13 +12,13 @@ describe('Deprecated endpoints', () => {
         method.toLowerCase() as 'get' | 'post'
       ](endpoint);
 
-      expect(response.status).toBe(410);
       expect(response.body).toStrictEqual({
         message: {
           type: 'info',
           message: 'Please reload the app, this feature is no longer available.'
         }
       });
+      expect(response.status).toBe(410);
     });
   });
 });

@@ -25,6 +25,7 @@ export const actionTypes = createTypes(
     'showCodeAlly',
     'startExam',
     'stopExam',
+    'clearExamResults',
     'submitComplete',
     'updateComplete',
     'updateFailed',

@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { useTranslation } from 'react-i18next';
 
 // Local Utilities
 import { closeModal } from '../../redux/actions';
@@ -38,6 +39,8 @@ function FinishExamModal({
   isFinishExamModalOpen,
   finishExam
 }: FinishExamModalProps): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <Modal
       animation={false}
@@ -47,13 +50,12 @@ function FinishExamModal({
       show={isFinishExamModalOpen}
     >
       <Modal.Header className='finish-exam-modal-header' closeButton={true}>
-        <Modal.Title className='text-center'>Finish Exam</Modal.Title>
+        <Modal.Title className='text-center'>
+          {t('learn.exam.finish-header')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body className='reset-modal-body'>
-        <div className='text-center'>
-          Are you sure? You will not be able to change any answers. Your results
-          will be final.
-        </div>
+        <div className='text-center'>{t('learn.exam.finish')}</div>
       </Modal.Body>
       <Modal.Footer className='reset-modal-footer'>
         <Button
@@ -63,7 +65,7 @@ function FinishExamModal({
           bsStyle='primary'
           onClick={finishExam}
         >
-          Yes, I am finished
+          {t('learn.exam.finish-yes')}
         </Button>
         <Button
           data-cy='finish-exam-modal-deny'
@@ -72,7 +74,7 @@ function FinishExamModal({
           bsStyle='primary'
           onClick={closeFinishExamModal}
         >
-          No, I would like to continue the exam
+          {t('learn.exam.finish-no')}
         </Button>
       </Modal.Footer>
     </Modal>

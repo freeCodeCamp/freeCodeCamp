@@ -465,7 +465,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 13. Execute os testes do Cypress:
 
     ```console
-    pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Propondo um Pull Request (PR)

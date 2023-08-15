@@ -20,7 +20,7 @@ However, if you cut off from the square four triangles with sides 75 m, 75 m and
 
 <img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
 
-Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Give your answer rounded to 8 places behind the decimal point in the form abc.defghijk.
+Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Дайте відповідь, заокруглену до восьми знаків після коми у форматі abc.defghijk.
 
 # --hints--
 
