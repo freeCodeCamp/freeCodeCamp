@@ -79,6 +79,7 @@ const demoUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: args.includes('--top-contributor')

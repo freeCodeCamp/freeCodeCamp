@@ -206,6 +206,10 @@
           "ウェブページに対して的確な色を選択することにより、閲覧者への見え方の美しさを大いに向上させることができます。",
           "このコースでは、カラーマーカーのセットを作成します。色の値を設定するさまざまな方法や、色を組み合わせる方法を学習します。"
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },

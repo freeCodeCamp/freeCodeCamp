@@ -13,11 +13,11 @@ import ProjectPreviewModal from '../../templates/Challenges/components/project-p
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
-  certTitles,
+  currentCertTitles,
   legacyCertTitles,
-  liveCertsToProjects,
-  type CertsToProjects,
-  type LegacyCertsToProjects
+  upcomingCertTitles,
+  certsToProjects,
+  type CertTitle
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
@@ -27,8 +27,8 @@ import {
   Certification,
   certSlugTypeMap
 } from '../../../../config/certification-settings';
+import env from '../../../../config/env.json';
 
-import './certification.css';
 import {
   ClaimedCertifications,
   CompletedChallenge,
@@ -38,6 +38,10 @@ import {
 import { createFlashMessage } from '../Flash/redux';
 import { verifyCert } from '../../redux/settings/actions';
 import SectionHeader from './section-header';
+
+import './certification.css';
+
+const { showUpcomingChanges } = env;
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
@@ -62,7 +66,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCertV8
 }: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -80,7 +85,8 @@ const isCertSelector = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8
+  isCollegeAlgebraPyCertV8,
+  isFoundationalCSharpCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -101,7 +107,8 @@ const isCertMapSelector = createSelector(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -118,7 +125,12 @@ const isCertMapSelector = createSelector(
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
-    'Legacy Information Security and Quality Assurance': isInfosecQaCert
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert,
+    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
+    // TODO: remove Example Certification? Also, include Upcoming Python
+    // Certification.
+    'Example Certification': false,
+    'Upcoming Python Certification': false
   })
 );
 
@@ -315,15 +327,14 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type CertName = keyof CertsToProjects | keyof LegacyCertsToProjects;
   const Certification = ({
     certName,
     t
   }: {
-    certName: CertName;
+    certName: Exclude<CertTitle, 'Legacy Full Stack'>;
     t: TFunction;
   }) => {
-    const { certSlug } = liveCertsToProjects[certName][0];
+    const { certSlug } = certsToProjects[certName][0];
     return (
       <FullWidthRow>
         <Spacer size='medium' />
@@ -351,11 +362,11 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certName,
     isCert
   }: {
-    certName: CertName;
+    certName: Exclude<CertTitle, 'Legacy Full Stack'>;
     isCert: boolean;
   }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = liveCertsToProjects[certName][0];
+    const { certSlug } = certsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -366,7 +377,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return liveCertsToProjects[certName]
+    return certsToProjects[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
@@ -404,7 +415,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certTitles.map(title => (
+        {currentCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
@@ -412,6 +423,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
         {legacyCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
+        {showUpcomingChanges &&
+          upcomingCertTitles.map(title => (
+            <Certification key={title} certName={title} t={t} />
+          ))}
         <ProjectModal
           {...{
             projectTitle,
