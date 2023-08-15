@@ -87,10 +87,10 @@ interface ShowCertificationProps {
 const requestedUserSelector = (state: unknown, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state) as User;
 
-const validCertSlugs = liveCerts.map(cert => cert.certSlug);
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
-  const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
+  const isValidCert = liveCerts.some(
+    ({ certSlug }) => certSlug === props.certSlug
+  );
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,

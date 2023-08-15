@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/superblocks';
 import { Themes } from '../components/settings/theme';
-import { liveCerts } from '../../config/cert-and-project-map';
+import { type CertTitle } from '../../config/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: (typeof liveCerts)[number]['title'];
+    title: CertTitle;
   };
   headings: [
     {
@@ -47,12 +47,12 @@ export type MarkdownRemark = {
   };
 };
 
-type Question = {
+export type Question = {
   text: string;
   answers: string[];
   solution: number;
 };
-type Fields = {
+export type Fields = {
   slug: string;
   blockHashSlug: string;
   blockName: string;
@@ -264,6 +264,7 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
+  isFoundationalCSharpCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -292,6 +293,7 @@ export type CompletedChallenge = {
   challengeFiles:
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
+  examResults?: GeneratedExamResults;
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
@@ -319,7 +321,7 @@ export type PortfolioProjectData = {
   description: string;
 };
 
-type FileKeyChallenge = {
+export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
   head: string;

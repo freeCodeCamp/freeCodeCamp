@@ -20,7 +20,7 @@ The following example shows the case $N = 8$. At the first turn $A = 5$ and $B =
 
 Let $E(N, M)$ be the expected number of disks that show their white side after $M$ turns. We can verify that $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ and $E(100, 10) ≈ 51.893$.
 
-Знайдіть $E({10}^{10}, 4000)$. Give your answer rounded to 2 decimal places behind the decimal point.
+Знайдіть $E({10}^{10}, 4000)$. Дайте відповідь, заокруглену до двох знаків після коми.
 
 # --hints--
 

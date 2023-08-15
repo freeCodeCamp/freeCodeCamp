@@ -9,7 +9,7 @@
     "codemirror": "5.65.14",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.14.2",
+    "react-router-dom": "6.15.0",
     "react-scripts": "5.0.1",
     "typescript": "4.9.5"
   },
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.8",
-    "@types/react": "16.14.43",
+    "@types/react": "16.14.45",
     "@types/react-dom": "^16.9.17",
     "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",

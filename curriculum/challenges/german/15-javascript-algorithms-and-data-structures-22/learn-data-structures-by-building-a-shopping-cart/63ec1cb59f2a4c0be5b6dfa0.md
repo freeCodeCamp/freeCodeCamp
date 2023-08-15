@@ -17,7 +17,7 @@ You should declare a `products` variable with `const`.
 assert.match(code, /const\s+products/);
 ```
 
-You should set the `products` variable to an empty array.
+Du solltest die `products`-Variable auf ein leeres Array setzen.
 
 ```js
 assert.match(code, /const\s+products\s*=\s*\[\s*\]/);

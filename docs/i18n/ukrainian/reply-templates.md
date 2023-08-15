@@ -129,40 +129,32 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ## Додавання коментарів про помилки новачків
 
 ```markdown
-Hi there, 
+Hello,
 
-Thanks for creating this pull request.
+Firstly, thank you for submitting this pull request!
 
-Please ensure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously. Respect the requirements to earn the respect of your fellow maintainers. You will also save everyone time :)
+As you navigate through the process, we have a PR checklist to ensure consistency and quality in our contributions. We kindly ask that you genuinely follow through with each point. This not only facilitates the review process but also demonstrates a mutual respect for the community's efforts.
 
-Since you are new here, please slow down and read our [contributing guidelines](https://contribute.freecodecamp.org), as we see that you may still need to catch up on a few things.
+If you're unfamiliar with certain aspects, our [contributing guidelines](https://contribute.freecodecamp.org) are a helpful resource to get you up to speed.
 
 <details>
-<summary>Here are some examples (expand)</summary>
+<summary>**Friendly Pointers (click to expand)**</summary>
 
-1. Do not edit files directly on GitHub – while you can, it's not a good idea. 
+1. **Editing on GitHub:** While it's possible to edit files directly on GitHub, it's typically better not to. This helps avoid inadvertent mistakes like typos that can disrupt tests.
 
-   Typos and formatting errors can break the tests.
+2. **Linking Issues:** Please ensure you link issues using the designated method. Simply update the `XXXXXX` in the PR description to include the issue number. This keeps our records organized and clear.
 
-2. Use the correct way to link issues. 
+3. **Engaging with the Team:** We know you're eager, but kindly keep mentions and review requests limited. Our maintainers are always on the lookout and will attend to PRs in the order they come in.
 
-   Add the issue number only in the description of the PR by updating the `XXXXXX`. Не додавайте номери завдань будь-де.
-
-4. Keep mentions and review requests to a minimum. 
-
-   We understand you are excited about contributing, and our maintainers will get back to you when they can.
-
-5. Do not work directly off your `main` branch. 
-
-   You can always create a new branch for the changes you are working on. That way, you can sync change to your PR branch as the main repository moves ahead while your PR is waiting in the merge queue.
+4. **Branch Management:** It's a good practice not to work directly off your `main` branch. Creating separate branches for different changes allows you to smoothly update your PR even as the main repository progresses.
 
 </details>
 
-Don't worry. You don't have to close this PR. Feel free to ask specific queries on improving your PR here; someone will guide you.
+Please note, there's no need to close this PR. If you have questions or need guidance refining your contribution, don't hesitate to ask. Our community is here to assist.
 
-We are happy you are excited to contribute and appreciate you taking the time to help us. Looking forward to more contributions!
+Thank you for your enthusiasm in contributing to our project. We eagerly await more contributions from you!
 
-Happy Contributing.
+**Happy Contributing!** 🌟
 ```
 
 ## Невідсортоване завдання

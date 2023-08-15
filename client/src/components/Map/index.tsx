@@ -30,13 +30,13 @@ const linkSpacingStyle = {
 };
 
 const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum: showNewCurriculum.toString(),
-  showUpcomingChanges: showUpcomingChanges.toString()
+  showNewCurriculum,
+  showUpcomingChanges
 });
 const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
   language: curriculumLocale,
-  showNewCurriculum: showNewCurriculum.toString(),
-  showUpcomingChanges: showUpcomingChanges.toString()
+  showNewCurriculum,
+  showUpcomingChanges
 });
 
 function MapLi({

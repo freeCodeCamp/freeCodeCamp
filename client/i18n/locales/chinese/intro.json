@@ -206,6 +206,10 @@
           "为你的网页选择正确的颜色可以大大提高对读者的审美吸引力。",
           "在本课程中，你将构建一组彩色笔。你将学习设置颜色值的不同方法以及如何将颜色相互配对。"
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },

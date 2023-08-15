@@ -24,6 +24,7 @@ export enum Certification {
   InfoSec = 'information-security-v7',
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
+  // Upcoming certifications
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   UpcomingPython = 'upcoming-python-v8',
   // Legacy certifications
@@ -33,6 +34,39 @@ export enum Certification {
   LegacyInfoSecQa = 'information-security-and-quality-assurance',
   LegacyFullStack = 'full-stack'
 }
+
+// "Current" certifications are the subset of standard certifications that are
+// live and not legacy.
+export const currentCertifications = [
+  Certification.RespWebDesign,
+  Certification.JsAlgoDataStruct,
+  Certification.FrontEndDevLibs,
+  Certification.DataVis,
+  Certification.RelationalDb,
+  Certification.BackEndDevApis,
+  Certification.QualityAssurance,
+  Certification.SciCompPy,
+  Certification.DataAnalysisPy,
+  Certification.InfoSec,
+  Certification.MachineLearningPy,
+  Certification.CollegeAlgebraPy
+] as const;
+
+// "Legacy" certifications are another class of standard certifications. They're
+// still live and claimable, but some parts of the UI handle them differently.
+export const legacyCertifications = [
+  Certification.LegacyFrontEnd,
+  Certification.LegacyBackEnd,
+  Certification.LegacyDataVis,
+  Certification.LegacyInfoSecQa
+] as const;
+
+// "Upcoming" certifications are standard certifications that are not live unless
+// showUpcomingChanges is true.
+export const upcomingCertifications = [
+  Certification.UpcomingPython,
+  Certification.FoundationalCSharp
+] as const;
 
 export const certTypes = {
   frontEnd: 'isFrontEndCert',
@@ -52,7 +86,7 @@ export const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharp: 'isFoundationalCSharp'
+  foundationalCSharp: 'isFoundationalCSharpCertV8'
 } as const;
 
 export const certIds = {

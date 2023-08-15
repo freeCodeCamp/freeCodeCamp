@@ -29,7 +29,7 @@ const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+currentProductCountSpan\s*=/);
 ```
 
-You should use `document.getElementById()` to get the matching element.
+Du solltest `document.getElementById()` verwenden, um das übereinstimmende Element zu erhalten.
 
 ```js
 const cart = new ShoppingCart();
@@ -43,7 +43,7 @@ const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /document\.getElementById\(\s*`product-count-for-id\$\{(product\.)?id\}`\s*\)/);
 ```
 
-You should assign the value of `document.getElementById()` to `currentProductCountSpan`.
+Du solltest den Wert von `document.getElementById()` dem `currentProductCountSpan` zuweisen.
 
 ```js
 const cart = new ShoppingCart();

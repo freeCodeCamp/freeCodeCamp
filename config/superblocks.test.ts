@@ -24,8 +24,8 @@ describe('superBlockOrder', () => {
 describe('createSuperBlockMap', () => {
   it('should return an object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
     const result = createSuperBlockMap({
-      showNewCurriculum: 'true',
-      showUpcomingChanges: 'true'
+      showNewCurriculum: true,
+      showUpcomingChanges: true
     });
     expect(result[SuperBlockStages.New]).toHaveLength(
       superBlockOrder[SuperBlockStages.New].length
@@ -37,8 +37,8 @@ describe('createSuperBlockMap', () => {
 
   it('should return an object without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
     const result = createSuperBlockMap({
-      showNewCurriculum: 'false',
-      showUpcomingChanges: 'false'
+      showNewCurriculum: false,
+      showUpcomingChanges: false
     });
     expect(result[SuperBlockStages.New]).toHaveLength(0);
     expect(result[SuperBlockStages.Upcoming]).toHaveLength(0);
@@ -48,16 +48,16 @@ describe('createSuperBlockMap', () => {
 describe('createFlatSuperBlockMap', () => {
   it('should return an array of SuperBlocks object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
     const result = createFlatSuperBlockMap({
-      showNewCurriculum: 'true',
-      showUpcomingChanges: 'true'
+      showNewCurriculum: true,
+      showUpcomingChanges: true
     });
     expect(result).toHaveLength(Object.values(superBlockOrder).flat().length);
   });
 
   it('should return an array of SuperBlocks without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
     const result = createFlatSuperBlockMap({
-      showNewCurriculum: 'false',
-      showUpcomingChanges: 'false'
+      showNewCurriculum: false,
+      showUpcomingChanges: false
     });
     const tempSuperBlockMap = { ...superBlockOrder };
     tempSuperBlockMap[SuperBlockStages.New] = [];
@@ -70,8 +70,8 @@ describe('firstNotAuditedSuperBlock', () => {
   it("should return 'null' when language is 'english'", () => {
     const result = getFirstNotAuditedSuperBlock({
       language: Languages.English,
-      showNewCurriculum: 'false',
-      showUpcomingChanges: 'false'
+      showNewCurriculum: false,
+      showUpcomingChanges: false
     });
     expect(result).toBeNull();
   });
@@ -79,8 +79,8 @@ describe('firstNotAuditedSuperBlock', () => {
   it("should return a SuperBlock when language is 'chinese'", () => {
     const result = getFirstNotAuditedSuperBlock({
       language: Languages.Chinese,
-      showNewCurriculum: 'false',
-      showUpcomingChanges: 'false'
+      showNewCurriculum: false,
+      showUpcomingChanges: false
     });
     expect(result).toEqual(SuperBlocks.CollegeAlgebraPy);
   });
@@ -110,8 +110,8 @@ describe('getAuditedSuperBlocks', () => {
   Object.keys(notAuditedSuperBlocks).forEach(language => {
     it(`should return only audited SuperBlocks for ${language}`, () => {
       const auditedSuperBlocks = getAuditedSuperBlocks({
-        showNewCurriculum: 'true',
-        showUpcomingChanges: 'true',
+        showNewCurriculum: true,
+        showUpcomingChanges: true,
         language
       });
 

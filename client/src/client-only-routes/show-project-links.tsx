@@ -8,12 +8,13 @@ import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
 import {
-  liveCertsToProjects,
+  certsToProjects,
   type CertTitle
 } from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
@@ -79,6 +80,15 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       openModal('projectPreview');
     };
 
+    const showExamResults = () => {
+      setSolutionState({
+        projectTitle,
+        completedChallenge: completedProject,
+        showCode: false
+      });
+      openModal('examResults');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
@@ -87,6 +97,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         displayContext='certification'
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
+        showExamResults={showExamResults}
       ></SolutionDisplayWidget>
     );
   };
@@ -103,7 +114,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       ] as const;
 
       return certs.map((cert, ind) => {
-        const projects = liveCertsToProjects[cert.title];
+        const projects = certsToProjects[cert.title];
         const { certSlug } = projects[0];
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
@@ -118,7 +129,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       });
     }
 
-    const project = liveCertsToProjects[certName];
+    const project = certsToProjects[certName];
     return project.map(({ link, title, id }) => (
       <tr key={id}>
         <td>
@@ -137,6 +148,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     user: { username }
   } = props;
   const { completedChallenge, showCode, projectTitle } = solutionState;
+  const examResults = completedChallenge?.examResults;
 
   const challengeData: CompletedChallenge | null = completedChallenge
     ? {
@@ -150,7 +162,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   const isCertName = (maybeCertName: string): maybeCertName is CertTitle => {
     if (maybeCertName === 'Legacy Full Stack') return true;
-    return maybeCertName in liveCertsToProjects;
+    return maybeCertName in certsToProjects;
   };
   if (!isCertName(certName)) return <div> Unknown Certification</div>;
 
@@ -189,6 +201,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         previewTitle={projectTitle}
         showProjectPreview={true}
       />
+      <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
+
       <Trans i18nKey='certification.project.footnote'>
         If you suspect that any of these projects violate the{' '}
         <a
