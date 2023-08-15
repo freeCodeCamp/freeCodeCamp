@@ -12,11 +12,11 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedCert } from '../../../../../utils/is-audited';
+import { isAuditedSuperBlock } from '../../../../../utils/is-audited';
 import Block from './block';
 
 jest.mock('../../../../../utils/is-audited', () => ({
-  isAuditedCert: jest.fn().mockReturnValueOnce(true)
+  isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
 }));
 
 const defaultProps = {
@@ -107,7 +107,7 @@ describe('<Block />', () => {
   });
 
   it(`The "Help us translate" badge does not appear on any i18n blocks when the superblock is audited`, () => {
-    (isAuditedCert as jest.Mock).mockReturnValue(true);
+    (isAuditedSuperBlock as jest.Mock).mockReturnValue(true);
     render(
       <Provider store={createStore()}>
         <Block {...defaultProps} />
@@ -119,7 +119,7 @@ describe('<Block />', () => {
   });
 
   it(`The "Help us translate" badge does appear on i18n blocks when the superblock is not audited`, () => {
-    (isAuditedCert as jest.Mock).mockReturnValue(false);
+    (isAuditedSuperBlock as jest.Mock).mockReturnValue(false);
     render(
       <Provider store={createStore()}>
         <Block {...defaultProps} />
