@@ -174,7 +174,7 @@
     "@types/store": "^2.0.2",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/validator": "^13.7.12",
-    "autoprefixer": "10.4.14",
+    "autoprefixer": "10.4.15",
     "babel-plugin-macros": "3.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.3",

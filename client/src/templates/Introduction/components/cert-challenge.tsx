@@ -19,7 +19,10 @@ import {
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings/actions';
-import { liveCerts } from '../../../../config/cert-and-project-map';
+import {
+  type CertTitle,
+  liveCerts
+} from '../../../../config/cert-and-project-map';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -34,7 +37,7 @@ interface CertChallengeProps {
   isSignedIn: boolean;
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
-  title: (typeof liveCerts)[number]['title'];
+  title: CertTitle;
   user: User;
   verifyCert: typeof verifyCert;
 }

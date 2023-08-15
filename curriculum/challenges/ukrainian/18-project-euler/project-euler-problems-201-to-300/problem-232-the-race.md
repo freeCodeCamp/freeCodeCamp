@@ -20,7 +20,7 @@ On each turn Player 2 selects the number, $T$, of coin tosses that maximises the
 
 What is the probability that Player 2 wins?
 
-Give your answer rounded to eight decimal places in the form 0.abcdefgh .
+Дайте відповідь, заокруглену до восьми знаків після коми у форматі 0.abcdefgh.
 
 # --hints--
 

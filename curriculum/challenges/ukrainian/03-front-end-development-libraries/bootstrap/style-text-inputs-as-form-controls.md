@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Стиль введення тексту як форма контролю
+title: Стилізуйте текстове введення як контроль форми
 challengeType: 0
 forumTopicId: 18312
 required:
@@ -13,33 +13,33 @@ dashedName: style-text-inputs-as-form-controls
 
 # --description--
 
-Ви можете додати `fa-paper-plane` Font Awesome значок, додавши `<i class="fa fa-paper-plane"></i>` до пункту підтвердження вашого елементу `button`.
+Ви можете додати іконку `fa-paper-plane` з Font Awesome, додавши `<i class="fa fa-paper-plane"></i>` в межах кнопки надсилання (`button`).
 
-Надайте полю введення тексту форми класу, що знаходиться у `form-control`. Створіть кнопку надсилання своєї форми із класами `btn btn-primary`. Також надайте цій кнопці іконку `fa-paper-plane`.
+Надайте полю введення тексту клас зі значенням `form-control`. Надайте кнопці надсилання форми класи `btn btn-primary`. Також надайте цій кнопці іконку `fa-paper-plane` з Font Awesome.
 
-Всі тексти `<input>`, `<textarea>`, і `<select>` елементи з класом `.form-control` мають в ширину 100%.
+Усі текстові елементи `<input>`, `<textarea>` та `<select>` з класом `.form-control` мають ширину 100%.
 
 # --hints--
 
-Кнопка відправлення у вашій формі повинна мати класи `btn btn-primary`.
+Кнопка надсилання форми повинна мати класи `btn btn-primary`.
 
 ```js
 assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-Ви повинні додати `<i class="fa fa-paper-plane"></i>` у ваш елемент кнопки `button`.
+Додайте `<i class="fa fa-paper-plane"></i>` в межах кнопки надсилання (`button`).
 
 ```js
 assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
-Текст `input` у вашій формі повинен мати клас `form-control`.
+Текстове введення (`input`) повинне мати клас `form-control`.
 
 ```js
 assert($('input[type="text"]').hasClass('form-control'));
 ```
 
-Кожен з ваших `i` елементів повинен мати кінцевий тег.
+Кожен елемент `i` повинен мати кінцевий тег.
 
 ```js
 assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);

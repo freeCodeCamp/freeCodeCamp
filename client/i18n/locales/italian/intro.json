@@ -206,6 +206,10 @@
           "Selezionare il colore corretto per la tua pagina web può renderla molto più gradevole per i tuoi lettori.",
           "In questo corso creerai un set di pennarelli colorati. Imparerai metodi diversi per impostare i valori dei colori e come accoppiare i colori."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },

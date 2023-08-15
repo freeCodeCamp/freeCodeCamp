@@ -18,15 +18,15 @@ assert.isTrue('true', 'This will NOT pass with the string value "true"');
 assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
-`isFalse()` and `isNotFalse()` also exist, and behave similarly to their true counterparts except they look for the boolean value of `false`.
+`isFalse()` und `isNotFalse()` existiert ebenfalls und verhalten sich ähnlich zu ihren wahren Gegenstücken, außer, dass sie nach dem booleschen Wert `false` suchen.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labelled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>

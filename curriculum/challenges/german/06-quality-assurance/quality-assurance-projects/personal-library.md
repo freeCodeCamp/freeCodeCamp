@@ -152,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
+You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. Bei Erfolg, wird die zurückgegebene Antwort der String `delete successful` sein. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {

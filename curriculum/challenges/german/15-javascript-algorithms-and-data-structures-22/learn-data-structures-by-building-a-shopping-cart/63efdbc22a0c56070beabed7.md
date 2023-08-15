@@ -11,7 +11,7 @@ In your `forEach` callback, you need to update the `totalCountPerProduct` object
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Verwende die Punktschreibweise, um auf die `id`-Eigenschaft von `dessert` zuzugreifen.
 
 ```js
 const cart = new ShoppingCart();

@@ -26,7 +26,7 @@ For example, if the first player draws 0.62 and 0.44, the first player turn ends
 
 Louise thinks about it for a second, and objects: "That's not fair".
 
-What is the probability that the second player wins? Give your answer rounded to 10 places behind the decimal point in the form 0.abcdefghij
+What is the probability that the second player wins? Дайте відповідь, заокруглену до десяти знаків після коми у форматі 0.abcdefghij
 
 # --hints--
 

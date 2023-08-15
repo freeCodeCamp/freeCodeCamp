@@ -1,4 +1,9 @@
-import { Certification } from '../../config/certification-settings';
+import {
+  Certification,
+  legacyCertifications,
+  upcomingCertifications,
+  currentCertifications
+} from '../../config/certification-settings';
 import config from '../../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -27,7 +32,8 @@ const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
-const foundationalCSharpBase = '/learn/foundational-c-sharp-with-microsoft';
+const foundationalCSharpBase =
+  '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const upcomingPythonBase = '/learn/upcoming-python';
 const exampleCertBase = '/learn/example-certification';
 const legacyFrontEndBase = feLibsBase;
@@ -43,250 +49,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const legacyCerts = [
-  {
-    id: '561add10cb82ac38a17513be',
-    title: 'Legacy Front End',
-    certSlug: Certification.LegacyFrontEnd,
-    projects: [
-      {
-        id: 'bd7158d8c242eddfaeb5bd13',
-        title: 'Build a Personal Portfolio Webpage',
-        link: `${legacyFrontEndResponsiveBase}/build-a-personal-portfolio-webpage`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd13',
-        title: 'Build a Random Quote Machine',
-        link: `${legacyFrontEndBase}/build-a-random-quote-machine`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a 25 + 5 Clock',
-        link: `${legacyFrontEndBase}/build-a-25--5-clock`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd17',
-        title: 'Build a JavaScript Calculator',
-        link: `${legacyFrontEndBase}/build-a-javascript-calculator`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd10',
-        title: 'Show the Local Weather',
-        link: `${legacyFrontEndTakeHomeBase}/show-the-local-weather`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd1f',
-        title: 'Use the TwitchTV JSON API',
-        link: `${legacyFrontEndTakeHomeBase}/use-the-twitch-json-api`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Build a Tribute Page',
-        link: `${legacyFrontEndResponsiveBase}/build-a-tribute-page`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd19',
-        title: 'Build a Wikipedia Viewer',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-wikipedia-viewer`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eedfaeb5bd1c',
-        title: 'Build a Tic Tac Toe Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-tic-tac-toe-game`,
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        id: 'bd7158d8c442eddfaeb5bd1c',
-        title: 'Build a Simon Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
-        certSlug: Certification.LegacyFrontEnd
-      }
-    ]
-  },
-  {
-    id: '660add10cb82ac38a17513be',
-    title: 'Legacy Back End',
-    certSlug: Certification.LegacyBackEnd,
-    projects: [
-      {
-        id: 'bd7158d8c443edefaeb5bdef',
-        title: 'Timestamp Microservice',
-        link: `${legacyBackEndBase}/timestamp-microservice`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443edefaeb5bdff',
-        title: 'Request Header Parser Microservice',
-        link: `${legacyBackEndBase}/request-header-parser-microservice`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443edefaeb5bd0e',
-        title: 'URL Shortener Microservice',
-        link: `${legacyBackEndBase}/url-shortener-microservice`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443edefaeb5bdee',
-        title: 'Image Search Abstraction Layer',
-        link: `${legacyBackEndTakeHomeBase}/build-an-image-search-abstraction-layer`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443edefaeb5bd0f',
-        title: 'File Metadata Microservice',
-        link: `${legacyBackEndBase}/file-metadata-microservice`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443eddfaeb5bdef',
-        title: 'Build a Voting App',
-        link: `${legacyBackEndTakeHomeBase}/build-a-voting-app`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443eddfaeb5bdff',
-        title: 'Build a Nightlife Coordination App',
-        link: `${legacyBackEndTakeHomeBase}/build-a-nightlife-coordination-app`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443eddfaeb5bd0e',
-        title: 'Chart the Stock Market',
-        link: `${legacyBackEndTakeHomeBase}/chart-the-stock-market`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443eddfaeb5bd0f',
-        title: 'Manage a Book Trading Club',
-        link: `${legacyBackEndTakeHomeBase}/manage-a-book-trading-club`,
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        id: 'bd7158d8c443eddfaeb5bdee',
-        title: 'Build a Pinterest Clone',
-        link: `${legacyBackEndTakeHomeBase}/build-a-pinterest-clone`,
-        certSlug: Certification.LegacyBackEnd
-      }
-    ]
-  },
-
-  {
-    id: '561add10cb82ac39a17513bc',
-    title: 'Legacy Data Visualization',
-    certSlug: Certification.LegacyDataVis,
-    projects: [
-      {
-        id: 'bd7157d8c242eddfaeb5bd13',
-        title: 'Build a Markdown Previewer',
-        link: `${legacyDataVisFrontEndBase}/build-a-markdown-previewer`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7156d8c242eddfaeb5bd13',
-        title: 'Build a freeCodeCamp Forum Homepage',
-        link: `${legacyDataVisTakeHomeBase}/build-a-freecodecamp-forum-homepage`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7155d8c242eddfaeb5bd13',
-        title: 'Build a Recipe Box',
-        link: `${legacyDataVisTakeHomeBase}/build-a-recipe-box`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7154d8c242eddfaeb5bd13',
-        title: 'Build the Game of Life',
-        link: `${legacyDataVisTakeHomeBase}/build-the-game-of-life`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7153d8c242eddfaeb5bd13',
-        title: 'Build a Roguelike Dungeon Crawler Game',
-        link: `${legacyDataVisTakeHomeBase}/build-a-roguelike-dungeon-crawler-game`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7168d8c242eddfaeb5bd13',
-        title: 'Visualize Data with a Bar Chart',
-        link: `${legacyDataVisBase}/visualize-data-with-a-bar-chart`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7178d8c242eddfaeb5bd13',
-        title: 'Visualize Data with a Scatterplot Graph',
-        link: `${legacyDataVisBase}/visualize-data-with-a-scatterplot-graph`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7188d8c242eddfaeb5bd13',
-        title: 'Visualize Data with a Heat Map',
-        link: `${legacyDataVisBase}/visualize-data-with-a-heat-map`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7198d8c242eddfaeb5bd13',
-        title: 'Show National Contiguity with a Force Directed Graph',
-        link: `${legacyDataVisTakeHomeBase}/show-national-contiguity-with-a-force-directed-graph`,
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        id: 'bd7108d8c242eddfaeb5bd13',
-        title: 'Map Data Across the Globe',
-        link: `${legacyDataVisTakeHomeBase}/map-data-across-the-globe`,
-        certSlug: Certification.LegacyDataVis
-      }
-    ]
-  },
-  {
-    id: '561add10cb82ac38a17213bc',
-    title: 'Legacy Information Security and Quality Assurance',
-    // Keep this as information-security-and-quality-assurance
-    certSlug: Certification.LegacyInfoSecQa,
-    projects: [
-      // Keep this as information-security-and-quality-assurance
-      {
-        id: '587d8249367417b2b2512c41',
-        title: 'Metric-Imperial Converter',
-        link: `${legacyInfosecQaQaBase}/metric-imperial-converter`,
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        id: '587d8249367417b2b2512c42',
-        title: 'Issue Tracker',
-        link: `${legacyInfosecQaQaBase}/issue-tracker`,
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        id: '587d824a367417b2b2512c43',
-        title: 'Personal Library',
-        link: `${legacyInfosecQaQaBase}/personal-library`,
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        id: '587d824a367417b2b2512c44',
-        title: 'Stock Price Checker',
-        link: `${legacyInfosecQaInfosecBase}/stock-price-checker`,
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        id: '587d824a367417b2b2512c45',
-        title: 'Anonymous Message Board',
-        link: `${legacyInfosecQaInfosecBase}/anonymous-message-board`,
-        certSlug: Certification.LegacyInfoSecQa
-      }
-    ]
-  }
-] as const;
-const legacyFullStack = {
+const fullstackCert = {
   id: '561add10cb82ac38a17213bd',
   title: 'Legacy Full Stack',
   certSlug: Certification.LegacyFullStack,
@@ -294,7 +57,7 @@ const legacyFullStack = {
   // Requirements are other certs and is
   // handled elsewhere
 } as const;
-const certs = [
+const allStandardCerts = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -741,10 +504,250 @@ const certs = [
         certSlug: Certification.CollegeAlgebraPy
       }
     ]
-  }
-] as const;
+  },
+  // Legacy certifications
+  {
+    id: '561add10cb82ac38a17513be',
+    title: 'Legacy Front End',
+    certSlug: Certification.LegacyFrontEnd,
+    projects: [
+      {
+        id: 'bd7158d8c242eddfaeb5bd13',
+        title: 'Build a Personal Portfolio Webpage',
+        link: `${legacyFrontEndResponsiveBase}/build-a-personal-portfolio-webpage`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd13',
+        title: 'Build a Random Quote Machine',
+        link: `${legacyFrontEndBase}/build-a-random-quote-machine`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd0f',
+        title: 'Build a 25 + 5 Clock',
+        link: `${legacyFrontEndBase}/build-a-25--5-clock`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd17',
+        title: 'Build a JavaScript Calculator',
+        link: `${legacyFrontEndBase}/build-a-javascript-calculator`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd10',
+        title: 'Show the Local Weather',
+        link: `${legacyFrontEndTakeHomeBase}/show-the-local-weather`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd1f',
+        title: 'Use the TwitchTV JSON API',
+        link: `${legacyFrontEndTakeHomeBase}/use-the-twitch-json-api`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd18',
+        title: 'Build a Tribute Page',
+        link: `${legacyFrontEndResponsiveBase}/build-a-tribute-page`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd19',
+        title: 'Build a Wikipedia Viewer',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-wikipedia-viewer`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eedfaeb5bd1c',
+        title: 'Build a Tic Tac Toe Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-tic-tac-toe-game`,
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        id: 'bd7158d8c442eddfaeb5bd1c',
+        title: 'Build a Simon Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
+        certSlug: Certification.LegacyFrontEnd
+      }
+    ]
+  },
+  {
+    id: '660add10cb82ac38a17513be',
+    title: 'Legacy Back End',
+    certSlug: Certification.LegacyBackEnd,
+    projects: [
+      {
+        id: 'bd7158d8c443edefaeb5bdef',
+        title: 'Timestamp Microservice',
+        link: `${legacyBackEndBase}/timestamp-microservice`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443edefaeb5bdff',
+        title: 'Request Header Parser Microservice',
+        link: `${legacyBackEndBase}/request-header-parser-microservice`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443edefaeb5bd0e',
+        title: 'URL Shortener Microservice',
+        link: `${legacyBackEndBase}/url-shortener-microservice`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443edefaeb5bdee',
+        title: 'Image Search Abstraction Layer',
+        link: `${legacyBackEndTakeHomeBase}/build-an-image-search-abstraction-layer`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443edefaeb5bd0f',
+        title: 'File Metadata Microservice',
+        link: `${legacyBackEndBase}/file-metadata-microservice`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443eddfaeb5bdef',
+        title: 'Build a Voting App',
+        link: `${legacyBackEndTakeHomeBase}/build-a-voting-app`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443eddfaeb5bdff',
+        title: 'Build a Nightlife Coordination App',
+        link: `${legacyBackEndTakeHomeBase}/build-a-nightlife-coordination-app`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443eddfaeb5bd0e',
+        title: 'Chart the Stock Market',
+        link: `${legacyBackEndTakeHomeBase}/chart-the-stock-market`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443eddfaeb5bd0f',
+        title: 'Manage a Book Trading Club',
+        link: `${legacyBackEndTakeHomeBase}/manage-a-book-trading-club`,
+        certSlug: Certification.LegacyBackEnd
+      },
+      {
+        id: 'bd7158d8c443eddfaeb5bdee',
+        title: 'Build a Pinterest Clone',
+        link: `${legacyBackEndTakeHomeBase}/build-a-pinterest-clone`,
+        certSlug: Certification.LegacyBackEnd
+      }
+    ]
+  },
 
-const upcomingCerts = [
+  {
+    id: '561add10cb82ac39a17513bc',
+    title: 'Legacy Data Visualization',
+    certSlug: Certification.LegacyDataVis,
+    projects: [
+      {
+        id: 'bd7157d8c242eddfaeb5bd13',
+        title: 'Build a Markdown Previewer',
+        link: `${legacyDataVisFrontEndBase}/build-a-markdown-previewer`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7156d8c242eddfaeb5bd13',
+        title: 'Build a freeCodeCamp Forum Homepage',
+        link: `${legacyDataVisTakeHomeBase}/build-a-freecodecamp-forum-homepage`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7155d8c242eddfaeb5bd13',
+        title: 'Build a Recipe Box',
+        link: `${legacyDataVisTakeHomeBase}/build-a-recipe-box`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7154d8c242eddfaeb5bd13',
+        title: 'Build the Game of Life',
+        link: `${legacyDataVisTakeHomeBase}/build-the-game-of-life`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7153d8c242eddfaeb5bd13',
+        title: 'Build a Roguelike Dungeon Crawler Game',
+        link: `${legacyDataVisTakeHomeBase}/build-a-roguelike-dungeon-crawler-game`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7168d8c242eddfaeb5bd13',
+        title: 'Visualize Data with a Bar Chart',
+        link: `${legacyDataVisBase}/visualize-data-with-a-bar-chart`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7178d8c242eddfaeb5bd13',
+        title: 'Visualize Data with a Scatterplot Graph',
+        link: `${legacyDataVisBase}/visualize-data-with-a-scatterplot-graph`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7188d8c242eddfaeb5bd13',
+        title: 'Visualize Data with a Heat Map',
+        link: `${legacyDataVisBase}/visualize-data-with-a-heat-map`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7198d8c242eddfaeb5bd13',
+        title: 'Show National Contiguity with a Force Directed Graph',
+        link: `${legacyDataVisTakeHomeBase}/show-national-contiguity-with-a-force-directed-graph`,
+        certSlug: Certification.LegacyDataVis
+      },
+      {
+        id: 'bd7108d8c242eddfaeb5bd13',
+        title: 'Map Data Across the Globe',
+        link: `${legacyDataVisTakeHomeBase}/map-data-across-the-globe`,
+        certSlug: Certification.LegacyDataVis
+      }
+    ]
+  },
+  {
+    id: '561add10cb82ac38a17213bc',
+    title: 'Legacy Information Security and Quality Assurance',
+    // Keep this as information-security-and-quality-assurance
+    certSlug: Certification.LegacyInfoSecQa,
+    projects: [
+      // Keep this as information-security-and-quality-assurance
+      {
+        id: '587d8249367417b2b2512c41',
+        title: 'Metric-Imperial Converter',
+        link: `${legacyInfosecQaQaBase}/metric-imperial-converter`,
+        certSlug: Certification.LegacyInfoSecQa
+      },
+      {
+        id: '587d8249367417b2b2512c42',
+        title: 'Issue Tracker',
+        link: `${legacyInfosecQaQaBase}/issue-tracker`,
+        certSlug: Certification.LegacyInfoSecQa
+      },
+      {
+        id: '587d824a367417b2b2512c43',
+        title: 'Personal Library',
+        link: `${legacyInfosecQaQaBase}/personal-library`,
+        certSlug: Certification.LegacyInfoSecQa
+      },
+      {
+        id: '587d824a367417b2b2512c44',
+        title: 'Stock Price Checker',
+        link: `${legacyInfosecQaInfosecBase}/stock-price-checker`,
+        certSlug: Certification.LegacyInfoSecQa
+      },
+      {
+        id: '587d824a367417b2b2512c45',
+        title: 'Anonymous Message Board',
+        link: `${legacyInfosecQaInfosecBase}/anonymous-message-board`,
+        certSlug: Certification.LegacyInfoSecQa
+      }
+    ]
+  },
+  // Upcoming Certifications
   {
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
@@ -800,65 +803,60 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certsWithoutFullStack = [...legacyCerts, ...certs] as const;
+type FilteredCert<T, U> = T extends { certSlug: U } ? T : never;
 
-const liveCerts = [...certsWithoutFullStack, legacyFullStack] as const;
-
-export type CertsToProjects = Record<
-  (typeof certs)[number]['title'],
-  (typeof certs)[number]['projects']
+type CurrentCert = FilteredCert<
+  (typeof allStandardCerts)[number],
+  (typeof currentCertifications)[number]
 >;
 
-export type LegacyCertsToProjects = Record<
-  (typeof legacyCerts)[number]['title'],
-  (typeof legacyCerts)[number]['projects']
+type LegacyCert = FilteredCert<
+  (typeof allStandardCerts)[number],
+  (typeof legacyCertifications)[number]
 >;
 
-export type UpcomingCertsToProjects = Record<
-  (typeof upcomingCerts)[number]['title'],
-  (typeof upcomingCerts)[number]['projects']
+type UpcomingCert = FilteredCert<
+  (typeof allStandardCerts)[number],
+  (typeof upcomingCertifications)[number]
 >;
 
-const certsToProjects = certs.reduce((acc, curr) => {
+const currentCerts = allStandardCerts.filter((cert): cert is CurrentCert =>
+  currentCertifications.includes(cert.certSlug)
+);
+const legacyCerts = allStandardCerts.filter((cert): cert is LegacyCert =>
+  legacyCertifications.includes(cert.certSlug)
+);
+const upcomingCerts = allStandardCerts.filter((cert): cert is UpcomingCert =>
+  upcomingCertifications.includes(cert.certSlug)
+);
+const liveCerts = showUpcomingChanges
+  ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
+  : [...currentCerts, ...legacyCerts, fullstackCert];
+
+type CertsToProjects = Record<
+  (typeof allStandardCerts)[number]['title'],
+  (typeof allStandardCerts)[number]['projects']
+>;
+
+const certsToProjects = allStandardCerts.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
 }, {} as CertsToProjects);
 
-const legacyCertsToProjects = legacyCerts.reduce((acc, curr) => {
-  return {
-    ...acc,
-    [curr.title]: curr.projects
-  };
-}, {} as LegacyCertsToProjects);
-
-// TODO: use this (probably in liveCertsToProjects)
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const upcomingCertsToProjects = upcomingCerts.reduce((acc, curr) => {
-  return {
-    ...acc,
-    [curr.title]: curr.projects
-  };
-}, {} as UpcomingCertsToProjects);
-
-const liveCertsToProjects = {
-  ...legacyCertsToProjects,
-  ...certsToProjects
-};
-
-const certTitles = certs.map(({ title }) => title);
+const currentCertTitles = currentCerts.map(({ title }) => title);
 const legacyCertTitles = legacyCerts.map(({ title }) => title);
+const upcomingCertTitles = upcomingCerts.map(({ title }) => title);
 
 export type CertTitle =
-  | (typeof certTitles)[number]
-  | (typeof legacyCertTitles)[number]
+  | (typeof liveCerts)[number]['title']
   | 'Legacy Full Stack';
 
 export {
-  certTitles,
+  currentCertTitles,
   legacyCertTitles,
-  certsWithoutFullStack,
+  upcomingCertTitles,
   liveCerts,
-  liveCertsToProjects
+  certsToProjects
 };
