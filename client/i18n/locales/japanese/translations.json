@@ -206,6 +206,7 @@
       "project-name": "プロジェクト名",
       "solution": "ソリューション",
       "solution-for": "{{projectTitle}} のソリューション",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "自分のプロフィール",
       "my-name": "自分の名前",
       "my-location": "自分の場所",
