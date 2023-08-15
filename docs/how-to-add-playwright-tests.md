@@ -34,6 +34,11 @@ To learn how to write Playwright tests, or 'specs', please see Playwright's offi
 
 To run tests with Playwright check the following below
 
+- Make sure you navigate to the e2e repo first
+  ```console
+  cd e2e
+  ```
+
 - To run tests in UI helper mode:
 
   ```console
