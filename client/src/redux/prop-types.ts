@@ -47,12 +47,12 @@ export type MarkdownRemark = {
   };
 };
 
-type Question = {
+export type Question = {
   text: string;
   answers: string[];
   solution: number;
 };
-type Fields = {
+export type Fields = {
   slug: string;
   blockHashSlug: string;
   blockName: string;
@@ -321,7 +321,7 @@ export type PortfolioProjectData = {
   description: string;
 };
 
-type FileKeyChallenge = {
+export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
   head: string;

@@ -1,14 +1,10 @@
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Media, { useMediaQuery } from 'react-responsive';
-import { useFeature } from '@growthbook/growthbook-react';
+import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
-import {
-  SEARCH_EXPOSED_WIDTH,
-  DONATE_NAV_EXPOSED_WIDTH
-} from '../../../../../config/misc';
+import { SEARCH_EXPOSED_WIDTH } from '../../../../../config/misc';
 import MenuButton from './menu-button';
 import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
@@ -43,8 +39,6 @@ const UniversalNav = ({
     query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
   });
 
-  const exposeDonateButton = useFeature('expose_donate_button').on;
-
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
       <SearchBarOptimized innerRef={searchBarRef} />
@@ -77,18 +71,6 @@ const UniversalNav = ({
           </div>
         ) : (
           <>
-            {!user?.isDonating && exposeDonateButton && (
-              <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
-                <Link
-                  sameTab={false}
-                  to='/donate'
-                  data-test-label='nav-donate-button'
-                  className='exposed-button-nav'
-                >
-                  {t('buttons.donate')}
-                </Link>
-              </Media>
-            )}
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
