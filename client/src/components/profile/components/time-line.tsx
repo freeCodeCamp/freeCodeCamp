@@ -50,6 +50,7 @@ interface TimelineInnerProps extends TimelineProps {
 interface NameMap {
   challengeTitle: string;
   challengePath: string;
+  certPath: string;
 }
 
 function TimelineInner({
@@ -123,24 +124,25 @@ function TimelineInner({
     );
   }
 
-  function renderCompletion(completed: CompletedChallenge): JSX.Element {
+  function renderCompletion(completed: CompletedChallenge) {
     const { id } = completed;
+    const challenge = idToNameMap.get(id);
+    if (!challenge) return;
+    const { challengeTitle, challengePath, certPath } = challenge;
     const completedDate = new Date(completed.completedDate);
-    // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
         <td>
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              to={`/certification/${username}/${certPath as string}`}
+              to={`/certification/${username}/${certPath}`}
             >
               {challengeTitle}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
         <td>{renderViewButton(completed)}</td>
