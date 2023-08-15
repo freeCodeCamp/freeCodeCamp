@@ -206,6 +206,7 @@
       "project-name": "Назва проєкту",
       "solution": "Рішення",
       "solution-for": "Рішення для {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "Мій профіль",
       "my-name": "Моє ім'я",
       "my-location": "Моє місцеперебування",
