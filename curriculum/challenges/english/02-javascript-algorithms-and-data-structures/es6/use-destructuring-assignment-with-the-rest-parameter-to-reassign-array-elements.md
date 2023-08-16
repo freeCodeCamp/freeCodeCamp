@@ -53,7 +53,7 @@ assert(!code.match(/\.\s*slice\s*\(/));
 You should use the rest syntax.
 
 ```js
-assert.match(code, /\.\s*\.\s*\./);
+assert.match(code, /\.\.\./);
 ```
 
 # --seed--
