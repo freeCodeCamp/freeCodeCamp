@@ -126,7 +126,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     ) {
       /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('pnpm', ['run', 'clean:client']);
+      const child = spawn('pnpm', ['run', '-w', 'clean:client']);
       child.stdout.setEncoding('utf8');
       child.stdout.on('data', function (data) {
         console.log(data);
