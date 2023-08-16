@@ -101,7 +101,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
 
   `);
 
-  if (env['showUpcomingChanges'])
+  if (env['showUpcomingChanges'] && env['deploymentEnv'] !== 'staging')
     throw Error(`
 
   SHOW_UPCOMING_CHANGES should never be 'true' in production
