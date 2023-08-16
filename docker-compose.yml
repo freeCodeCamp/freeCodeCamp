@@ -1,0 +1,9 @@
+version: '3'
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    image: client:lastest
+    ports:
+      - '8000:8000'
