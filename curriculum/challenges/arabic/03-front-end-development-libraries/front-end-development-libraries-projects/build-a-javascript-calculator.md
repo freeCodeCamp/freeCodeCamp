@@ -7,53 +7,54 @@ dashedName: build-a-javascript-calculator
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
 
-أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**قصة المستخدم #1:** آلة حاسبة يجب أن تحتوي على عنصر قابل للنقر يحتوي على `=` (علامة متساوية) مع ما يقابلها `id="equals"`.
+**User Story #1:** My calculator should contain a clickable element containing an `=` (equal sign) with a corresponding `id="equals"`.
 
-**قصة المستخدم #2:** آلة حاسبة الخاصة بي يجب أن تحتوي على 10 عناصر قابلة للنقر تحتوي على أرقام تبدأ من 0 ألى 9 مع المعرف المقابل التالي: `id="zero"`، و`id="one"`, و`id="two"`, و`id="three"`, و`id="four"`, و`id="five"`, و`id="six"`، و`id="seven"`, و`id="eight"`، و`id="nine"`.
+**User Story #2:** My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, and `id="nine"`.
 
-**قصة المستخدم #3:** آلة حاسبة الخاصة بي يجب أن تحتوي على 4 عناصر قابلة للنقر يحتوي كل منها على واحد من أربع عمليات رياضية أساسية لهم المعرفات المطابقة التالية: `id="add"`، و`id="subtract"`، و`id="multiply"`، و`id="divide"`.
+**User Story #3:** My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: `id="add"`, `id="subtract"`, `id="multiply"`, `id="divide"`.
 
-**قصة المستخدم #4:** آلة حاسبة يجب أن تحتوي على عنصر قابل للنقر يحتوي على `.` رمز (النقطة العشرية) مع ما مطابقه `id="decimal"`.
+**User Story #4:** My calculator should contain a clickable element containing a `.` (decimal point) symbol with a corresponding `id="decimal"`.
 
-**قصة المستخدم #5:** آلة حاسبة الخاصة بي يجب أن تحتوي على عنصر قابل للنقر مع `id="clear"`.
+**User Story #5:** My calculator should contain a clickable element with an `id="clear"`.
 
-**قصة المستخدم #6:** آلة حاسبة الخاصة بي يجب أن تحتوي على عنصر لعرض القيم مع مطابقه `id="display"`.
+**User Story #6:** My calculator should contain an element to display values with a corresponding `id="display"`.
 
-**قصة المستخدم #7:** في أي وقت، الضغط على زر `clear` يؤدي إلى مسح قيم الإدخال (input) والإخراج (output)، ويعيد الآلة الحاسبة إلى state المبدئية الخاصة بها؛ 0 يجب أن يظهر في العنصر بمعرف `display`.
+**User Story #7:** At any time, pressing the `clear` button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of `display`.
 
-**قصة المستخدم #8:** مع إدخال الأرقام، يجب أن أكون قادراً على رؤية مدخلاتي في العنصر مع معرف `display`.
+**User Story #8:** As I input numbers, I should be able to see my input in the element with the id of `display`.
 
-**قصة المستخدم #9:** في أي ترتيب، يجب أن أكون قادرا على الإضافة، طرح ضرب وقسم سلسلة من الأعداد من أي كَمَيَّة، وعندما ضغط على `=`، النتيجة الصحيحة يجب أن تظهر في العنصر مع معرف `display`.
+**User Story #9:** In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit `=`, the correct result should be shown in the element with the id of `display`.
 
-**قصة المستخدم #10:** عند إدخال الأرقام، يجب ألا تسمح آلة الحاسبة الخاصة بي لعدد أن يبدأ بعدة أصفار.
+**User Story #10:** When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
 
-**قصة المستخدم #11:** عند النقر على العنصر العشري، `.` يجب إلحاق القيمة المعروضة حالياً؛ اثنان `.` في رَقْم واحد يجب عدم قبوله.
+**User Story #11:** When the decimal element is clicked, a `.` should append to the currently displayed value; two `.` in one number should not be accepted.
 
-**قصة المستخدم #12:** يجب أن أكون قادرا على تنفيذ أي عملية (`+`، و`-`, و`*`, و`/`) على الأرقام التي تحتوي على النُّقَط العشرية.
+**User Story #12:** I should be able to perform any operation (`+`, `-`, `*`, `/`) on numbers containing decimal points.
 
-**قصة المستخدم #13:** إذا تم إدخال عملتين اثنين أو أكثر على التوالي، يجب أن تكون العملية المنفذة هي آخر عملية أُدخلت (باستثناء علامة السالب (`-`). على سبيل المثال، إذا تم إدخال `5 + * 7 =`، يجب أن تكون النتيجة `35` (بمعنى `5 * 7`)؛ إذا تم إدخال `5 * - 5 =`، ينبغي أن تكون النتيجة `-25` (مثل `5 * (-5)`).
+**User Story #13:** If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (`-`) sign). For example, if `5 + * 7 =` is entered, the result should be `35` (i.e. `5 * 7`); if `5 * - 5 =` is entered, the result should be `-25` (i.e. `5 * (-5)`).
 
-**قصة المستخدم #14:** الضغط على المشغل مباشرة بعد `=` يجب أن يبدأ حساب جديد يعمل بناء على نتيجة التقييم السابق.
+**User Story #14:** Pressing an operator immediately following `=` should start a new calculation that operates on the result of the previous evaluation.
 
-**قصة المستخدم #15:** آلة حاسبة الخاصة بي يجب أن تكون دقيقة بالنسبة لعدد أرقام عشرية عندما يتعلق الأمر بالتقريب (لاحظ أنه لا يوجد معيار دقيق، ولكن يجب أن تكون قادراً على التعامل مع حسابات مثل `2 / 7` بدقة معقولة إلى 4 أرقام عشرية في الأقل).
+**User Story #15:** My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like `2 / 7` with reasonable precision to at least 4 decimal places).
 
-**ملاحظة على منطق الحاسبة:** لاحظ إلى أن هناك مدرستين فكريتين رئيستين على منطق إدخال الحاسبة: <dfn>منطق التنفيذ الفوري (immediate execution logic)</dfn> و <dfn>منطق الصيغة (formula logic)</dfn>. ويستخدم مثالنا منطق الصيغة ويراعي ترتيب الأسبقية في العمليات، ولا يطبق التنفيذ الفوري. أحدهما مقبول، ولكن يرجى ملاحظة ذلك اعتمادا على أختيارك، الحاسبة الخاصة بك قد تنتج نتائج مختلفة عن النتائج الخاصة بنا في معادلات معينة (انظر أدناه على سبيل المثال). مادام أنه يمكن التحقق من حساباتك بواسطة آلة حاسبة إنتاج أخرى، يرجى عدم اعتبار هذا خطأ.
+**Note On Calculator Logic:** It should be noted that there are two main schools of thought on calculator input logic: <dfn>immediate execution logic</dfn> and <dfn>formula logic</dfn>. Our example utilizes formula logic and observes order of operation precedence, immediate execution does not. Either is acceptable, but please note that depending on which you choose, your calculator may yield different results than ours for certain equations (see below example). As long as your math can be verified by another production calculator, please do not consider this a bug.
 
-**مثال:** `3 + 5 x 6 - 2 / 4 =`
+**EXAMPLE:** `3 + 5 x 6 - 2 / 4 =`
 
 -   **منطق التنفيذ الفوري:** `11.5`
 -   **الصيغة/منطق التعبير:** `32.5`
 
-يمكنك بناء مشروعك عن طريق <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">استخدام هذا نموذج CodePen</a> والنقر على `Save` لإنشاء طبقيك الخاص بك. أو يمكنك استخدام رابط الـ CDN هذا لتشغيل الاختبارات في أي بيئة تفضلها: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-بمجرد أن تنتهي، ارسل عنوان URL لمشروع العمل الخاص بك مع اجتياز جميع الاختبارات.
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

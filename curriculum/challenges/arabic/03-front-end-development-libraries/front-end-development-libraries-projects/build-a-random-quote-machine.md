@@ -7,40 +7,41 @@ dashedName: build-a-random-quote-machine
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
 
-أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**قصة المستخدم #1:** يمكنني رؤية عنصر تغليف مع `id="quote-box"`.
+**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
 
-**قصة المستخدم #2:** في `#quote-box`، يمكنني أن أرى عنصرا يحتوي `id="text"`.
+**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
 
-**قصة المستخدم #3:** في `#quote-box`، يمكنني أن أرى عنصرا يحتوي `id="author"`.
+**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
 
-**قصة المستخدم #4:** في `#quote-box`، يمكنني رؤية عنصر قابل للنقر مع `id="new-quote"`.
+**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
 
-**قصة المستخدم #5:** في `#quote-box`، يمكنني رؤية عنصر قابل للنقر `a` مع عنصر يحتوي `id="tweet-quote"`.
+**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
 
-**قصة المستخدم #6:** عند التحميل ألأوله، تعرض آلة الاقتباس الخاصة بي اقتباس عشوائي في العنصر مع `id="text"`.
+**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
 
-**قصة المستخدم #7:** عند التحميل الأول، تعرض آلة الاقتباس الخاصة بي مؤلف الاقتباس العشوائي في العنصر مع `id="author"`.
+**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
 
-**قصة المستخدم #8:** عندما يتم النقر على زر `#new-quote`، آلة الاقتباس الخاصة بي يجب أن تجلب اقتباساً جديداً وأن تعرضه في عنصر `#text`.
+**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
 
-**قصة المستخدم #9:** آلة الاقتباس الخاصة بي يجب أن تجلب مؤلف الاقتباس الجديد عندما يتم النقر على زر `#new-quote` وعرضه في عنصر `#author`.
+**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
 
-**قصة المستخدم #10:** يمكنني تغليف الاقتباس الحالي بالنقر على `#tweet-quote` في `a` عنصر. هذا عنصر `a` يجب أن يتضمن `"twitter.com/intent/tweet"` في السمة `href` لتغريد الاقتباس الحالي.
+**User Story #10:** I can tweet the current quote by clicking on the `#tweet-quote` `a` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
 
-**قصة المستخدم #11:** عنصر تغليف `#quote-box` يجب أن يكون مركزيا أفقيا. يرجى إجراء الاختبارات مع تكبير مستوى المتصفح بنسبة 100% وتعظيم الصفحة.
+**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-يمكنك بناء مشروعك عن طريق <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">استخدام هذا نموذج CodePen</a> والنقر على `Save` لإنشاء طبقيك الخاص بك. أو يمكنك استخدام رابط الـ CDN هذا لتشغيل الاختبارات في أي بيئة تفضلها: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-بمجرد أن تنتهي، ارسل عنوان URL لمشروع العمل الخاص بك مع اجتياز جميع الاختبارات.
+Once you're done, submit the URL to your working project with all its tests passing.
 
-**ملاحظة:** twitter لا يسمح بتحميل الروابط في iframe. حاول استخدام `target="_blank"` أو `target="_top"` سمة على عنصر `#tweet-quote` إذا لم يتم تحميل التغريدة الخاصة بك. `target="_top"` سوف يحل محل علامة التبويب الحالية لتتيقن من حفظ عملك.
+**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
 
 # --solutions--
 
