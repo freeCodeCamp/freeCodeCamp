@@ -5,7 +5,6 @@
  *
  */
 
-import badwordFilter from 'bad-words';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 import _ from 'lodash';
@@ -15,6 +14,7 @@ import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
 
+import { isProfane } from 'no-profanity';
 import { blocklistedUsernames } from '../../../../config/constants';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -368,11 +368,10 @@ export default function initializeUser(User) {
     }
     log('check if username is available');
     // check to see if username is on blocklist
-    const usernameFilter = new badwordFilter();
+
     if (
       username &&
-      (blocklistedUsernames.includes(username) ||
-        usernameFilter.isProfane(username))
+      (blocklistedUsernames.includes(username) || isProfane(username))
     ) {
       return Promise.resolve(true);
     }

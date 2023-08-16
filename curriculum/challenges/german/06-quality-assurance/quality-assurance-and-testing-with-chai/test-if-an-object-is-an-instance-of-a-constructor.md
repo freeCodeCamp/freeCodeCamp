@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `instanceOf` vs. `notInstanceOf`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `instanceOf` vs. `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ Du solltest die richtige Methode für die zweite Behauptung wählen - `instanceO
   );
 ```
 
-You should choose the correct method for the third assertion - `instanceOf` vs. `notInstanceOf`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `instanceOf` vs. `notInstanceOf`.
 
 ```js
 (getUserInput) =>

@@ -47,7 +47,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-GitHub strategy setup should be complete.
+Die Einrichtung der GitHub-Strategie sollte abgeschlossen sein.
 
 ```js
 async (getUserInput) => {

@@ -55,14 +55,12 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
-  const loggingKeys = ['sentryClientDSN'];
   const abTestingKeys = ['growthbookUri'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,
     searchKeys,
     donationKeys,
-    loggingKeys,
     abTestingKeys
   );
   const actualVariables = Object.keys(env as Record<string, unknown>);
@@ -86,9 +84,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   }
 
   for (const key of expectedVariables) {
-    // Since we may need to disable the sentry DSN (if we're getting too many
-    // errors), this is the one key we don't check is set.
-    if (key === 'sentryClientDSN') continue;
     const envVal = env[key as keyof typeof env];
     if (typeof envVal === 'undefined' || envVal === null) {
       throw Error(`
@@ -106,7 +101,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
 
   `);
 
-  if (env['showUpcomingChanges'])
+  if (env['showUpcomingChanges'] && env['deploymentEnv'] !== 'staging')
     throw Error(`
 
   SHOW_UPCOMING_CHANGES should never be 'true' in production
@@ -131,7 +126,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     ) {
       /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('pnpm', ['run', 'clean:client']);
+      const child = spawn('pnpm', ['run', '-w', 'clean:client']);
       child.stdout.setEncoding('utf8');
       child.stdout.on('data', function (data) {
         console.log(data);

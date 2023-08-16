@@ -13,6 +13,7 @@ export enum FlashMessages {
   CompleteProjectFirst = 'flash.complete-project-first',
   DeleteTokenErr = 'flash.delete-token-err',
   EmailValid = 'flash.email-valid',
+  GenerateExamError = 'flash.generate-exam-error',
   HonestFirst = 'flash.honest-first',
   IncompleteSteps = 'flash.incomplete-steps',
   LocalCodeSaved = 'flash.local-code-saved',

@@ -2,15 +2,13 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
-  Grid,
   Row,
   Col,
   Button
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState } from 'react';
-import type { FormEvent, ChangeEvent } from 'react';
+import React, { useState, type FormEvent, type ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -20,6 +18,7 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
 
+import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux/selectors';
@@ -71,7 +70,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <Spacer size='medium' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
@@ -117,7 +116,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
             </Row>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </>
   );
 }

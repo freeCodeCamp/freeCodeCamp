@@ -43,8 +43,8 @@ function createSuperOrder(superBlocks) {
 }
 
 const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);
 

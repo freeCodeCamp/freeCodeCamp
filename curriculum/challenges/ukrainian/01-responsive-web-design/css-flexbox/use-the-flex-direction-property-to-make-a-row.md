@@ -21,7 +21,7 @@ dashedName: use-the-flex-direction-property-to-make-a-row
 
 # --hints--
 
-Елемент `#box-container` повинен мати властивість `flex-direction` встановлену для `row-reverse`.
+Елемент `#box-container` повинен мати властивість `flex-direction` зі значенням `row-reverse`.
 
 ```js
 assert($('#box-container').css('flex-direction') == 'row-reverse');

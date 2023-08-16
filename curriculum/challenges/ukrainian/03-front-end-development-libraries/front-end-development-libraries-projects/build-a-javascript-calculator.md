@@ -7,53 +7,54 @@ dashedName: build-a-javascript-calculator
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
 
-Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-Для виконання цього проєкту ви можете поєднувати різноманітні ресурси HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery. Вам слід користуватися готовими шаблонами розробки користувацького інтерфейсу (як-от React), адже цей розділ присвячений застосуванню саме цих шаблонів. Інші технології та ресурси, що не були вказані вище, не є рекомендованими до використання, але ви можете застосовувати і їх на свій страх і ризик. Ми розглядаємо варіант використання інших frontend frameworks для розробки інтерфейсу користувача таких, як Angular та Vue, проте наразі вони не підримуютьcя. Ми розглянемо та спробуємо вирішити всі звіти про невирішені проблеми, пов'язані із запропонованою технологічною базою для виконання цього проєкту. Щасливого програмування!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**User Story #1:** Калькулятор повинен містити активний елемент інтерфейсу, що позначає `=` (equal sign) із відповідним `id="equals"`.
+**User Story #1:** My calculator should contain a clickable element containing an `=` (equal sign) with a corresponding `id="equals"`.
 
-**User Story#2:** Калькулятор має налічувати 10 активних елементів, кожний із яких має відповідати одному числу від 0-9, із наступними відповідними ID: `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, and `id="nine"`.
+**User Story #2:** My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, and `id="nine"`.
 
-**User Story #3:** Калькулятор повинен мати 4 активних елементи, кожен із яких позначає одну із 4 арифметичних дій із відповідними ID: `id="add"`, `id="subtract"`, `id="multiply"`, `id="divide"`.
+**User Story #3:** My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: `id="add"`, `id="subtract"`, `id="multiply"`, `id="divide"`.
 
-**User Story #4:** У калькуляторі має бути активний елемент для позначення символу `.` (десяткової коми) із відповідним `id="decimal"`.
+**User Story #4:** My calculator should contain a clickable element containing a `.` (decimal point) symbol with a corresponding `id="decimal"`.
 
-**User Story #5:** У калькуляторі неодмінно має бути активний елемент інтерфейсу, який позначається `id="clear"`.
+**User Story #5:** My calculator should contain a clickable element with an `id="clear"`.
 
-**User Story #6:** У калькуляторі має бути активний елемент для відображення величин із відповідним `id="display"`.
+**User Story #6:** My calculator should contain an element to display values with a corresponding `id="display"`.
 
-**User Story #7:** Кожного разу, натискаючи `clear` кнопка видаляє вхідні та вихідні дані, та повертає калькулятор до його вихідного стану; 0 має перебувати поруч із ідентифікатором `display`.
+**User Story #7:** At any time, pressing the `clear` button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of `display`.
 
-**User Story #8:** Я повинен бачити вхідні дані поруч із кнопкою `display`. щоразу як я вводжу необхідні числа.
+**User Story #8:** As I input numbers, I should be able to see my input in the element with the id of `display`.
 
-**User Story #9:** Калькулятор повинен бути здатним додавати, віднімати, множити та ділити числа будь-якої величини кожного разу коли натискають кнопку дорівнює, незалежно від того в порядку в кому ці числа вводились`=`, вірний результат має висвічуватись на панелі поруч із ідентифікатором `display`.
+**User Story #9:** In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit `=`, the correct result should be shown in the element with the id of `display`.
 
-**User Story #10:** Під час вводу чисел калькулятор не повинен дозволяти число, яке розпочинається із декількох нулів.
+**User Story #10:** When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
 
-**User Story #11:** Під час натискання десяткової коми `.` має приєднуватися до поточного відображеного значення; використання двох `.` в одному числі не дозволяється.
+**User Story #11:** When the decimal element is clicked, a `.` should append to the currently displayed value; two `.` in one number should not be accepted.
 
-**User Story #12:** Я повинен мати здатність виконувати будь-які дії (`+`, `-`, `*`, `/`) над числами, що містять десяткову кому.
+**User Story #12:** I should be able to perform any operation (`+`, `-`, `*`, `/`) on numbers containing decimal points.
 
-**User Story #13:** У випадку якщо послідовно проводяться 2 або більше дій, повинна виконуватися та дія, яку було введено останньою (окрім від'ємного знаку (`-`)). Наприклад, якщо ввели `5 + * 7 =`, результатом буде `35` (тобто `5 * 7`); якщо ввели `5 * - 5 =`, то в результаті має вийти `-25` (оскільки `5 * (-5)`).
+**User Story #13:** If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (`-`) sign). For example, if `5 + * 7 =` is entered, the result should be `35` (i.e. `5 * 7`); if `5 * - 5 =` is entered, the result should be `-25` (i.e. `5 * (-5)`).
 
-**Історія користувача #14:** Натискаючи на кнопку арифметичної дії відразу після натиснення `=` має розпочинатися нове обчислення, яке здійснюється на основі результату попереднього розрахунку.
+**User Story #14:** Pressing an operator immediately following `=` should start a new calculation that operates on the result of the previous evaluation.
 
-**Вимоги Користувача #15:** Калькулятор повинен мати простір для декількох знаків, що йдуть після коми, коли мова йде про округлення числа (Пам'ятайте, що не існує точного стандарту, але вам слід вміти виконувати обчислення подібні цьому `2 / 7` із необхідною точністю, принаймні до 4 знаків після коми).
+**User Story #15:** My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like `2 / 7` with reasonable precision to at least 4 decimal places).
 
-**Примітка щодо закономірності калькулятора:** Слід зазначити, що існує 2 основних наукових напрямки, які стосуються логіки вводу: <dfn>логіка негайного виконання</dfn> та <dfn>логіка формул</dfn>. Ми використовуємо закономірність формул та дотримуємося порядку пріоритетності дій, а не негайне виконання. Обидва методи є прийнятними, але зважайте, що залежно від того способу, який ви оберете, ваші обчислення можуть давати відмінні від наших результати для деяких рівнянь. (див. приклади нижче). Не розглядайте це як баг, у випадку якщо ваші розрахунки можуть бути підтверджені іншим робочим калькулятором.
+**Note On Calculator Logic:** It should be noted that there are two main schools of thought on calculator input logic: <dfn>immediate execution logic</dfn> and <dfn>formula logic</dfn>. Our example utilizes formula logic and observes order of operation precedence, immediate execution does not. Either is acceptable, but please note that depending on which you choose, your calculator may yield different results than ours for certain equations (see below example). As long as your math can be verified by another production calculator, please do not consider this a bug.
 
-**Приклад:** `3 + 5 x 6 - 2 / 4 =`
+**EXAMPLE:** `3 + 5 x 6 - 2 / 4 =`
 
 -   **Логіка Негайного Виконання:** `11.5`
 -   **Логіка Формул/Виразу:** `32.5`
 
-Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися посиланням Мережі Доправлення Контенту, аби пройти тестування в будь-якому операційному середовищу, яке вам до вподоби: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

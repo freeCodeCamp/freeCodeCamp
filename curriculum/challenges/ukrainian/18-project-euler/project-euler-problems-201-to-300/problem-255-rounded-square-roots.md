@@ -35,7 +35,7 @@ Since $x_2 = x_1$, we stop here. So, after just two iterations, we have found th
 
 The number of iterations required when using this method is surprisingly low. For example, we can find the rounded-square-root of a 5-digit integer ($10\\,000 ≤ n ≤ 99\\,999$) with an average of 3.2102888889 iterations (the average value was rounded to 10 decimal places).
 
-Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (${10}^{13} ≤ n &lt; {10}^{14}$)? Give your answer rounded to 10 decimal places.
+Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (${10}^{13} ≤ n &lt; {10}^{14}$)? Дайте відповідь, заокруглену до десяти знаків після коми.
 
 **Note:** The symbols $⌊x⌋$ and $⌈x⌉$ represent the floor function and ceiling function respectively.
 

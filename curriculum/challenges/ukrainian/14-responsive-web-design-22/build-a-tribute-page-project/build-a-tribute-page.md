@@ -8,7 +8,7 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
+**Мета:** створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **Історія користувача:**
 
@@ -24,7 +24,7 @@ dashedName: build-a-tribute-page
 
 Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого програмування!
 
-**Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив’язки з аркушем стилів та застосували CSS
 
 # --hints--
 

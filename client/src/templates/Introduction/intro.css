@@ -23,9 +23,7 @@
   padding: 25px 15px 10px;
 }
 
-.big-block-title:hover,
-.big-block-title:focus,
-.big-block-title:active {
+.block-header .big-block-title:is(:hover, :focus, :active) {
   background-color: var(--primary-background);
 }
 

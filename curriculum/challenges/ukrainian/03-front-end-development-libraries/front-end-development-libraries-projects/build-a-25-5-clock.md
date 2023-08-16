@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd0f
-title: Побудувати годинник 25 + 5
+title: Створіть годинник 25 + 5
 challengeType: 3
 forumTopicId: 301373
 dashedName: build-a-25--5-clock
@@ -8,71 +8,73 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
+**Objective:** Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
-Ви можете використовувати будь-яке поєднання HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux і jQuery для створення цього проєкту. Слід використовувати frontend framework (наприклад, React), тому що цей розділ присвячений саме їх вивченню. Додаткові технології, що не перераховані вище, не рекомендовані і використовуються на власний ризик. Ми розглядаємо варіант використання інших фреймворк шаблонів для розробки інтерфейсу користувача таких, як Angular та Vue, проте наразі вони не підримуютьcя. Ми візьмемо до уваги і спробуємо виправити всі звіти, що використовують запропонований технологічний стек у цьому проєкті. Щасливого програмування!
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**Історія користувача #1:** Я можу побачити елемент з `id="break-label"`, який містить рядок (наприклад, "Break Length").
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**Історія користувача #2:** Я можу побачити елемент з `id="session-label"`, який містить рядок (наприклад, "Session Length").
+**User Story #1:** I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
 
-**Історія користувача #3:** Я бачу два клікабельні елементи із відповідними ID: `id="break-decrement"` та `id="session-decrement"`.
+**User Story #2:** I can see an element with `id="session-label"` that contains a string (e.g. "Session Length").
 
-**Історія користувач #4:** Я можу побачити два клікабельні елементи із відповідними ID: `id="break-increment"` та `id="session-increment"`.
+**User Story #3:** I can see two clickable elements with corresponding IDs: `id="break-decrement"` and `id="session-decrement"`.
 
-**Історія користувача #5:** Я можу побачити елемент з відповідним `id="break-length"`, який за замовчуванням (при завантаженні) показує значення 5.
+**User Story #4:** I can see two clickable elements with corresponding IDs: `id="break-increment"` and `id="session-increment"`.
 
-**Історія користувача #6:** Я можу побачити елемент із відповідним `id="session-length"`, який за замовчуванням показує значення 25.
+**User Story #5:** I can see an element with a corresponding `id="break-length"`, which by default (on load) displays a value of 5.
 
-**Історія користувача #7:** Я можу побачити елемент з відповідним `id="timer-label"`, який містить рядок, який вказує, що сесія ініціалізована (наприклад, «Session»).
+**User Story #6:** I can see an element with a corresponding `id="session-length"`, which by default displays a value of 25.
 
-**Історія користувача #8:** Я можу побачити елемент із відповідним `id="time-left"`. ПРИМІТКА: при зупинці чи в процесі, значення в цьому полі завжди має зображатися в форматі `mm:ss` (тобто 25:00).
+**User Story #7:** I can see an element with a corresponding `id="timer-label"`, that contains a string indicating a session is initialized (e.g. "Session").
 
-**Історія користувача #9:** Я можу побачити клікабельний елемент із відповідним `id="start_stop"`.
+**User Story #8:** I can see an element with corresponding `id="time-left"`. NOTE: Paused or running, the value in this field should always be displayed in `mm:ss` format (i.e. 25:00).
 
-**Історія користувача #10:** Я можу побачити клікабельний елемент із відповідним `id="reset"`.
+**User Story #9:** I can see a clickable element with a corresponding `id="start_stop"`.
 
-**Історія користувача #11:** Коли я натискаю на елемент з id `reset`, усі таймери повинні зупинитися, значення в `id="break-length"` повинне повернутися до `5`, а значення в `id="session-length"` - до 25, а елемент в `id="time-left"` повинен повернутися до стану за замовчуванням.
+**User Story #10:** I can see a clickable element with a corresponding `id="reset"`.
 
-**Історія користувача #12:** Коли натискати на елемент з id `break-decrement`, значення у `id="break-length"` зменшується на значення 1, і тоді можна побачити оновлене значення.
+**User Story #11:** When I click the element with the id of `reset`, any running timer should be stopped, the value within `id="break-length"` should return to `5`, the value within `id="session-length"` should return to 25, and the element with `id="time-left"` should reset to its default state.
 
-**Історія користувача #13:** Коли натискати на елемент з id `break-increment`, значення у `id="break-length"` збільшується на значення 1, і тоді можна побачити оновлене значення.
+**User Story #12:** When I click the element with the id of `break-decrement`, the value within `id="break-length"` decrements by a value of 1, and I can see the updated value.
 
-**Історія користувача #14:** Коли натискати на елемент з id `session-decrement`, значення у `id="session-length"` зменшується на значення 1, і тоді можна побачити оновлене значення.
+**User Story #13:** When I click the element with the id of `break-increment`, the value within `id="break-length"` increments by a value of 1, and I can see the updated value.
 
-**Історія користувача #15:** Коли я натискаю на елемент з id `session-increment`, значення у `id="session-length"` збільшується на значення 1, і тоді можна побачити оновлене значення.
+**User Story #14:** When I click the element with the id of `session-decrement`, the value within `id="session-length"` decrements by a value of 1, and I can see the updated value.
 
-**Історія користувача #16:** Я не маю можливості встановити тривалість сеансу або перерви &lt;= 0.
+**User Story #15:** When I click the element with the id of `session-increment`, the value within `id="session-length"` increments by a value of 1, and I can see the updated value.
 
-**Історія користувача #17:** Я не зможу встановити тривалість сеансу або перерви > 60.
+**User Story #16:** I should not be able to set a session or break length to &lt;= 0.
 
-**Історія користувача #18:** Коли я клацаю на елемент із `id="start_stop"`, таймер повинен запрацювати з поточного значення, що зображується в `id="session-length"`, навіть якщо значення зменшилось чи збільшилось від початкового значення 25.
+**User Story #17:** I should not be able to set a session or break length to > 60.
 
-**Історія користувача #19:** Якщо таймер запущений, елемент з id `time-left` повинен показувати час, що залишився у форматі `mm:ss` (зменшуючись на значення 1, і оновлюючи зображення кожні 1000 мс).
+**User Story #18:** When I first click the element with `id="start_stop"`, the timer should begin running from the value currently displayed in `id="session-length"`, even if the value has been incremented or decremented from the original value of 25.
 
-**Історія користувача #20** Якщо таймер запущений, і я клацаю на елемент з `id="start_stop"`, зворотний відлік повинен припинитися.
+**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
 
-**Історія користувача #21:** Якщо таймер призупинено, і я клацаю на елемент з `id="start_stop"`, зворотний відлік повинен відновитися з моменту, на якому він був припинений.
+**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
 
-**Історія користувача #22:** Коли зворотний відлік сеансу досягає нуля (ПРИМІТКА: таймер ПОВИНЕН досягти 00:00), і зворотний відлік починається знову, елемент з id `timer-label` повинен показувати рядок, що вказує на початок перерви.
+**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
 
-**Історія користувача #23:** Коли сесія зворотного відліку перерви досягає нуля (ПРИМІТКА: таймер ПОВИНЕН досягти 00:00), повинна розпочатися нова сесія зворотного відліку часу перерви, яка відраховується від поточного зображуваного значення елемента `id="break-length"`.
+**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
 
-**Історія користувача #24:** Коли зворотний відлік перерви досягає нуля (ПРИМІТКА: таймер ПОВИНЕН досягти 00:00), і розпочинається новий зворотний відлік, елемент з id `timer-label` повинен зображати рядок, що вказує на початок сеансу.
+**User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
 
-**Історія користувача #25:** Коли зворотний відлік перерви досягає нуля (ПРИМІТКА: таймер ПОВИНЕН досягти 00:00), повинен розпочатися зворотний відлік нової сесії, який відраховується від поточного зображуваного значення елемента `id="session-length"`.
+**User Story #24:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a session has begun.
 
-**Історія користувача #26:** Коли зворотний відлік досягає нуля (ПРИМІТКА: таймер ПОВИНЕН досягти 00:00), повинен прозвучати сигнал, який вказує, що час вичерпано. Він повинен використовувати HTML5 `audio` тег і мати відповідний `id="beep"`.
+**User Story #25:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the `id="session-length"` element.
 
-**Історія користувача #27:** Аудіо елемент з `id="beep"` повинен тривати 1 секунду чи довше.
+**User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
 
-**Історія користувача #28:** Аудіо елемент з id `beep` повинен припинити відтворення і бути перемотаний до початку, при натисканні на елемент з id `reset`.
+**User Story #27:** The audio element with `id="beep"` must be 1 second or longer.
 
-Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися посиланням CDN, щоб запустити тест в будь-якому середовищі, наприклад: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+**User Story #28:** The audio element with id of `beep` must stop playing and be rewound to the beginning when the element with the id of `reset` is clicked.
 
-Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 
