@@ -7,6 +7,7 @@
   "main": "dist/bundle.js",
   "module": "dist/bundle.es.js",
   "style": "dist/base.css",
+  "types": "types/src/index.d.ts",
   "files": [
     "dist"
   ],
@@ -71,7 +72,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "pnpm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
-    "build": "pnpm run build:css && pnpm run build:js",
+    "build": "pnpm run build:css && pnpm run build:js && tsc",
     "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
     "dev:js": "cross-env NODE_ENV=development rollup -c -w ",
