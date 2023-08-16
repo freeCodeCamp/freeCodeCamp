@@ -58,7 +58,6 @@
     "@loadable/component": "5.15.3",
     "@reach/router": "1.3.4",
     "@redux-saga/core": "^1.2.2",
-    "@sentry/gatsby": "6.19.7",
     "@stripe/react-stripe-js": "1.16.5",
     "@stripe/stripe-js": "1.54.2",
     "@testing-library/jest-dom": "5.17.0",

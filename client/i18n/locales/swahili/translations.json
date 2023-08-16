@@ -206,6 +206,7 @@
       "project-name": "Jina la mradi",
       "solution": "Suluhisho",
       "solution-for": "Suluhisho la {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "Wasifu wangu",
       "my-name": "Jina langu",
       "my-location": "Eneo langu",

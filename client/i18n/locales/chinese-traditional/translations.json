@@ -206,6 +206,7 @@
       "project-name": "項目名稱",
       "solution": "解決方案",
       "solution-for": "{{projectTitle}} 的解決方案",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "我的個人資料",
       "my-name": "我的姓名",
       "my-location": "我的位置",
