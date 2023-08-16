@@ -191,10 +191,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
         });
-        const progressTimestamps = user.progressTimestamps as
+        const RawProgressTimestamp = user.progressTimestamps as
           | ProgressTimestamp[]
           | null;
-        const points = getPoints(progressTimestamps);
+        const points = getPoints(RawProgressTimestamp);
 
         const completedChallenge: CompletedChallenge = {
           id,
