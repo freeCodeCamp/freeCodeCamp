@@ -33,7 +33,7 @@ Use a destructuring assignment with the rest syntax to emulate the behavior of `
 `removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
 
 ```js
-assert.deepEqual(removeFirstTwo([1, 2, 3, 4 5]), [3, 4, 5]);
+assert.deepEqual(removeFirstTwo([1, 2, 3, 4, 5]), [3, 4, 5]);
 ```
 
 `removeFirstTwo()` should not modify `list`
