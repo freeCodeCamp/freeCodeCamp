@@ -1,5 +1,5 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -257,7 +258,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -363,7 +364,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );
