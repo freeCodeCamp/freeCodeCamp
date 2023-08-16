@@ -29,7 +29,7 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <figure style={figureSize} data-test-label='landing-page-figure'>
         <LazyImage
-          alt={t('landing.hero-img-description')}
+          alt={t('landing.hero-img-alt')}
           src={wideImg}
           style={figureSize}
         />
