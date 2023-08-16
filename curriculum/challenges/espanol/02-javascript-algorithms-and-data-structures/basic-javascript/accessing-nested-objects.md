@@ -51,7 +51,7 @@ Tu código debe utilizar notación de puntos y de corchetes para acceder a `mySt
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
-`gloveBoxContents` should still be declared with `const`.
+`gloveBoxContents` debe ser declarado como `const`.
 
 ```js
 assert.match(code, /const\s+gloveBoxContents\s*=/)
