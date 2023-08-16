@@ -20,30 +20,47 @@ const download = async (clientLocale: string) => {
     `../i18n/locales/${clientLocale}/trending.json`
   );
 
+  const loadLocalTrendingJSON = () => {
+    const localTrendingJSON = readFileSync(trendingLocation, 'utf8');
+
+    if (!localTrendingJSON) {
+      throw new Error(
+        `
+        ----------------------------------------------------
+        Error: ${trendingLocation} is missing.
+        ----------------------------------------------------
+        `
+      );
+    }
+
+    return localTrendingJSON;
+  };
+
   const loadTrendingJSON = async () => {
     try {
       const res = await fetch(url);
-      const data = await res.text();
-      const trendingJSON = JSON.stringify(yaml.load(data));
 
-      return trendingJSON;
-    } catch (error) {
-      const localTrendingJSON = readFileSync(trendingLocation, 'utf8');
-
-      if (!localTrendingJSON) {
+      if (!res.ok) {
         throw new Error(
           `
           ----------------------------------------------------
           Error: The CDN is missing the trending YAML file.
           ----------------------------------------------------
-          Unable to fetch the ${clientLocale} error message: ${
-            (error as Error).message
-          }
+          Unable to fetch the ${clientLocale} footer: ${res.statusText}
           `
         );
       }
 
-      return localTrendingJSON;
+      const data = await res.text();
+      const trendingJSON = JSON.stringify(yaml.load(data));
+
+      return trendingJSON;
+    } catch (error) {
+      if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+        throw new Error((error as Error).message);
+      }
+
+      return loadLocalTrendingJSON();
     }
   };
 
