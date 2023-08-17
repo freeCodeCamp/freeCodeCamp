@@ -10,3 +10,4 @@ export { MenuItem } from './drop-down/menu-item';
 export { Container } from './container';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 export { Col } from './col';
+export { Row } from './row';
