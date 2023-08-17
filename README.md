@@ -14,13 +14,45 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
+<table border=2>
+  <thead>
+    <tr>
+      <td style="font-weight: 700;">S/N</td>
+      <td style="font-weight: 700;">Topic</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="font-weight: 700;">1</td>
+      <td><a href="#certifications">Certifications</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">2</td>
+      <td><a href="#the-learning-platform">The Learning Platform</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">3</td>
+      <td><a href="#reporting-bugs-and-issues">Reporting Bugs and Issues</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">4</td>
+      <td><a href="#reporting-security-issues-and-responsible-disclosure">Reporting Security Issues and Responsible Disclosure</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">5</td>
+      <td><a href="#contributing">Contributing</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">6</td>
+      <td><a href="#platform-build-and-deployment-status">Platfrom, Build and Deployment Status</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: 700;">7</td>
+      <td><a href="#license">License</a></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Certifications
 
