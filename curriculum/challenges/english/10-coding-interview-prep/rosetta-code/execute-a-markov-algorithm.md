@@ -117,6 +117,7 @@ assert.deepEqual(markov(rules[4], data[4]), outputs[4]);
 ## --after-user-code--
 
 ```js
+
 let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
             ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
             ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
@@ -132,6 +133,7 @@ let outputs=["I bought a bag of apples from my brother.",
               "I bought a bag of apples with my money from T shop.",
               "11111111111111111111",
               "00011H1111000"]
+
 ```
 
 
