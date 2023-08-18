@@ -1,14 +1,15 @@
 import React from 'react';
-import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
+import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 
 function BlockedPage(): JSX.Element {
   return (
     <>
       <Helmet title={`Access Denied | freeCodeCamp.org`} />
-      <Grid className='text-center'>
+      <Container className='text-center'>
         <Spacer size='large' />
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -33,7 +34,7 @@ function BlockedPage(): JSX.Element {
           </Col>
         </Row>
         <Spacer size='large' />
-      </Grid>
+      </Container>
     </>
   );
 }

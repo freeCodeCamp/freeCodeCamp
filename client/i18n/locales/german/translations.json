@@ -92,6 +92,7 @@
     "big-heading-3": "Zertifizierungen erwerben.",
     "h2-heading": "Seit 2014 haben mehr als 40.000 Absolventen von FreeCodeCamp.org Jobs bei Tech-Unternehmen erhalten, unter anderem:",
     "hero-img-description": "freeCodeCamp Studenten einer lokalen Lerngruppe in Südkorea.",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "Wie gesehen in:",
     "testimonials": {
       "heading": "Das sagen unsere Absolventen zu freeCodeCamp:",
@@ -206,6 +207,7 @@
       "project-name": "Name des Projekts",
       "solution": "Lösung",
       "solution-for": "Lösung für {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "Mein Profil",
       "my-name": "Mein Name",
       "my-location": "Mein Standort",

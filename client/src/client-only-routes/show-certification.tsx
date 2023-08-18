@@ -1,4 +1,4 @@
-import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import envData from '../../../config/env.json';
 import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
@@ -305,7 +306,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     certTitle === certTypeTitleMap[certTypes.foundationalCSharp];
 
   return (
-    <Grid className='certificate-outer-wrapper'>
+    <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <div className='certificate-wrapper'>
         <div className='certification-namespace'>
@@ -433,7 +434,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
         <Spacer size='large' />
       </div>
-    </Grid>
+    </Container>
   );
 };
 

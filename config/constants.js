@@ -1,7 +1,7 @@
 let alphabet = '';
 
 for (let i = 0; i < 26; i++) {
-  alphabet = alphabet.concat(String.fromCharCode(97 + i));
+  alphabet += String.fromCharCode(97 + i);
 }
 
 const i18nConstants = [
@@ -40,7 +40,7 @@ const i18nConstants = [
 ];
 
 let blocklist = [
-  ...alphabet.split(''),
+  ...alphabet,
   ...i18nConstants,
   'about',
   'academic-honesty',
