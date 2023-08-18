@@ -10,7 +10,7 @@ const ExtraSmallClasses = {
 };
 
 const ExtraSmallOffsetClasses = {
-  1: 'ml-[8.3]',
+  1: 'ml-[8.3%]',
   2: 'ml-[16.6%]',
   3: 'ml-[25%]'
 };
