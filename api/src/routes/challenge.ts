@@ -2,7 +2,6 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
 import { jwtSecret } from '../../../config/secrets';
-import { fixPartiallyCompletedChallengeItem } from '../utils';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
 import { formatValidationError } from '../utils/error-formatting';
@@ -142,12 +141,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             where: { id: req.session.user.id },
             data: {
               partiallyCompletedChallenges: uniqBy(
-                [
-                  finalChallenge,
-                  ...partiallyCompletedChallenges.map(
-                    fixPartiallyCompletedChallengeItem
-                  )
-                ],
+                [finalChallenge, ...partiallyCompletedChallenges],
                 'id'
               )
             }
