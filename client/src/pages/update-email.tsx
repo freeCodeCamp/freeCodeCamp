@@ -78,25 +78,17 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
             <Row>
               <form onSubmit={handleSubmit}>
                 <FormGroup
+                  className='update-email-field'
                   controlId='emailInput'
                   validationState={getEmailValidationState()}
                 >
-                  <Col
-                    className='email-label'
-                    // TODO
-                    componentClass={ControlLabel as unknown}
-                    sm={2}
-                  >
-                    {t('misc.email')}
-                  </Col>
-                  <Col sm={10}>
-                    <FormControl
-                      onChange={onChange}
-                      placeholder='camperbot@example.com'
-                      required={true}
-                      type='email'
-                    />
-                  </Col>
+                  <ControlLabel>{t('misc.email')}</ControlLabel>
+                  <FormControl
+                    onChange={onChange}
+                    placeholder='camperbot@example.com'
+                    required={true}
+                    type='email'
+                  />
                 </FormGroup>
                 <Button
                   block={true}
