@@ -22,17 +22,21 @@
 
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
-  height: 26px;
-  width: 26px;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  margin-block-start: 3px;
   background-color: var(--gray-75);
 }
 
 .ais-SearchBox-submit {
   padding-inline: 3px;
+  margin-inline-start: 3px;
 }
 
 .ais-SearchBox-reset {
   padding-block: 0 2px;
+  margin-inline-start: 13px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -143,6 +147,18 @@ and arrow keys */
 
 .ais-SearchBox-reset {
   grid-area: reset;
+}
+
+.ais-SearchBox-form button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+:is(
+    .ais-SearchBox-form button:hover .ais-SearchBox-submitIcon,
+    .ais-SearchBox-form button:hover .ais-SearchBox-resetIcon
+  )
+  path {
+  fill: var(--gray-00);
 }
 
 @media (min-width: 981px) {
