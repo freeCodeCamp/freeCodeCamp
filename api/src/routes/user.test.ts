@@ -5,7 +5,6 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
-import nodemailer from 'nodemailer';
 
 import { defaultUser } from '../utils/default-user';
 import {
@@ -17,13 +16,7 @@ import {
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
 import { generateReportEmail } from '../utils/email-templates';
-
-// Mock sending emails
-jest.mock('nodemailer');
-const sendEmailMock = jest.fn();
-nodemailer.createTransport = jest.fn().mockReturnValue({
-  sendMail: sendEmailMock
-});
+import { MockEmailProvider } from '../plugins/mail-providers/mock-email-provider';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -573,6 +566,10 @@ describe('userRoutes', () => {
     });
 
     describe('/user/report-user', () => {
+      afterEach(() => {
+        jest.clearAllMocks();
+      });
+
       test('POST returns 400 for empty username', async () => {
         const response = await superRequest('/user/report-user', {
           method: 'POST',
@@ -619,8 +616,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(sendEmailMock).toBeCalledTimes(1);
-        expect(sendEmailMock).toBeCalledWith({
+        expect(MockEmailProvider.send).toBeCalledTimes(1);
+        expect(MockEmailProvider.send).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user?.email,
@@ -653,8 +650,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(sendEmailMock).toBeCalledTimes(2);
-        expect(sendEmailMock).toBeCalledWith({
+        expect(MockEmailProvider.send).toBeCalledTimes(1);
+        expect(MockEmailProvider.send).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user?.email,
