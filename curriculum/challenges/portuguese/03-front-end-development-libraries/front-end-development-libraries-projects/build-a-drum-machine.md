@@ -7,29 +7,29 @@ dashedName: build-a-drum-machine
 ---
 
 # --description--
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**Observação:** **o React 18 tem incompatibilidades conhecidas com os testes deste projeto (ver [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e JQuery para completar este projeto. Você deve usar um framework de front-end (como React por exemplo) porque essa seção trata de aprender frameworks de front-end. Tecnologias adicionais não listadas acima não são recomendadas e usá-las é por sua conta e risco. Estamos buscando apoiar outros frameworks de front-end, como Angular e Vue, mas eles não são atualmente suportados. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação para você!
 
-**User Story #1:** I should be able to see an outer container with a corresponding `id="drum-machine"` that contains all other elements.
+**História de usuário nº 1:** eu devo ser capaz de ver um contêiner externo com um `id="drum-machine"` correspondente que contém todos os outros elementos.
 
-**User Story #2:** Within `#drum-machine` I can see an element with a corresponding `id="display"`.
+**História de usuário nº 2:** dentro de `#drum-machine`, eu consigo ver um elemento com um `id="display"` correspondente.
 
-**User Story #3:** Within `#drum-machine` I can see 9 clickable drum pad elements, each with a class name of `drum-pad`, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. The drum pads MUST be in this order.
+**História de usuário nº 3:** dentro de `#drum-machine`, eu consigo ver 9 elementos de tambores clicáveis, cada um com o nome de classe `drum-pad`, um id único que descreve o clipe de áudio que o tambor será definido para executar, e um texto interno que corresponde a uma das teclas do teclado a seguir: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. Os tambores DEVEM estar nesta ordem.
 
-**User Story #4:** Within each `.drum-pad`, there should be an HTML5 `audio` element which has a `src` attribute pointing to an audio clip, a class name of `clip`, and an id corresponding to the inner text of its parent `.drum-pad` (e.g. `id="Q"`, `id="W"`, `id="E"` etc.).
+**História de usuário nº 4:** dentro de cada `.drum-pad`, deve haver um elemento HTML5 `audio`, que tem o atributo `src` apontando para um clipe de áudio, o nome de classe `clip`, e um id correspondendo ao texto interno do seu `.drum-pad` pai (por exemplo, `id="Q"`, `id="W"`, `id="E"` e assim por diante).
 
-**User Story #5:** When I click on a `.drum-pad` element, the audio clip contained in its child `audio` element should be triggered.
+**História de usuário nº 5:** quando eu clico em um elemento `.drum-pad`, o clipe de áudio dentro do seu elemento filho `audio` deve ser ativado.
 
-**User Story #6:** When I press the trigger key associated with each `.drum-pad`, the audio clip contained in its child `audio` element should be triggered (e.g. pressing the `Q` key should trigger the drum pad which contains the string `Q`, pressing the `W` key should trigger the drum pad which contains the string `W`, etc.).
+**História de usuário nº 6:** quando eu pressionar a tecla de disparo associada a cada `.drum-pad`, o clipe de áudio dentro do elemento filho `audio` deve ser ativado (por exemplo, ao pressionar a tecla `Q`, deve ser acionado o tambor que tem a string `Q`, ao pressionar a tecla `W`, deve ser acionado o tambor que contém a string `W` e assim por diante).
 
-**User Story #7:** When a `.drum-pad` is triggered, a string describing the associated audio clip is displayed as the inner text of the `#display` element (each string must be unique).
+**História de usuário nº 7:** quando um `.drum-pad` é acionado, uma string descrevendo o clipe de áudio associado é exibido como o texto interno do elemento `#display` (cada string precisa ser única).
 
-Here are some audio samples you can use for your drum machine:
+Aqui estão algumas amostras de áudio que você pode usar para sua bateria eletrônica:
 
 - [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
 - [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
@@ -41,9 +41,9 @@ Here are some audio samples you can use for your drum machine:
 - [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
 - [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Ou você pode usar esse link CDN para rodar os testes em qualquer ambiente que você goste:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Quando você terminar, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 
 # --solutions--
 
