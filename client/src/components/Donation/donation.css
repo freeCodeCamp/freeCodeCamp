@@ -88,6 +88,15 @@
   margin-bottom: 8px;
 }
 
+.donate-page-wrapper {
+  display: flex;
+  padding-block: 30px;
+}
+
+.donate-page-wrapper figure {
+  padding-inline: 30px;
+}
+
 .donate-page-wrapper .paypal-buttons-container {
   margin-bottom: 0;
 }

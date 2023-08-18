@@ -5,7 +5,7 @@ exports[`should check certification page consistency 1`] = `
   className="row"
 >
   <div
-    className="col-sm-8 col-sm-offset-2 col-xs-12"
+    className=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
   >
     <h2
       className="text-center"
