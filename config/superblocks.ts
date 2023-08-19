@@ -207,8 +207,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 Object.freeze(notAuditedSuperBlocks);
 
 type Config = {
-  showNewCurriculum: string | undefined;
-  showUpcomingChanges: string | undefined;
+  showNewCurriculum: boolean;
+  showUpcomingChanges: boolean;
 };
 
 type LanguagesConfig = Config & {
@@ -222,10 +222,10 @@ export function createSuperBlockMap({
   showUpcomingChanges
 }: Config): SuperBlockOrder {
   const superBlockMap = { ...superBlockOrder };
-  if (showNewCurriculum !== 'true') {
+  if (!showNewCurriculum) {
     superBlockMap[SuperBlockStages.New] = [];
   }
-  if (showUpcomingChanges !== 'true') {
+  if (!showUpcomingChanges) {
     superBlockMap[SuperBlockStages.Upcoming] = [];
   }
   return superBlockMap;
@@ -236,10 +236,10 @@ export function createFlatSuperBlockMap({
   showUpcomingChanges
 }: Config): SuperBlocks[] {
   const superBlockMap = { ...superBlockOrder };
-  if (showNewCurriculum !== 'true') {
+  if (!showNewCurriculum) {
     superBlockMap[SuperBlockStages.New] = [];
   }
-  if (showUpcomingChanges !== 'true') {
+  if (!showUpcomingChanges) {
     superBlockMap[SuperBlockStages.Upcoming] = [];
   }
   return Object.values(superBlockMap).flat();
@@ -265,8 +265,8 @@ export function getFirstNotAuditedSuperBlock({
 
 export function getAuditedSuperBlocks({
   language = 'english',
-  showNewCurriculum = 'false',
-  showUpcomingChanges = 'false'
+  showNewCurriculum,
+  showUpcomingChanges
 }: LanguagesConfig): SuperBlocks[] {
   if (!Object.prototype.hasOwnProperty.call(notAuditedSuperBlocks, language)) {
     throw Error(`'${language}' key not found in 'notAuditedSuperBlocks'`);

@@ -1,4 +1,4 @@
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators, Dispatch } from 'redux';
 
+import { Container } from '@freecodecamp/ui';
 import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
@@ -92,7 +93,7 @@ function LearnPage({
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
-      <Grid>
+      <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Intro
@@ -109,7 +110,7 @@ function LearnPage({
             <Spacer size='large' />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </LearnLayout>
   );
 }

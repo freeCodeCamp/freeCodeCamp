@@ -28,6 +28,7 @@ const toneUrls = {
   [FlashMessages.CompleteProjectFirst]: TRY_AGAIN,
   [FlashMessages.DeleteTokenErr]: TRY_AGAIN,
   [FlashMessages.EmailValid]: CHAL_COMP,
+  [FlashMessages.GenerateExamError]: TRY_AGAIN,
   [FlashMessages.HonestFirst]: TRY_AGAIN,
   [FlashMessages.IncompleteSteps]: TRY_AGAIN,
   [FlashMessages.LocalCodeSaved]: CHAL_COMP,

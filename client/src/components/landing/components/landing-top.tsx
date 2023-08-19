@@ -1,6 +1,7 @@
-import { Col, Row, Grid } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@freecodecamp/ui';
 import { clientLocale } from '../../../../../config/env.json';
 import {
   AmazonLogo,
@@ -21,7 +22,7 @@ function LandingTop(): JSX.Element {
     clientLocale
   );
   return (
-    <Grid className='landing-top'>
+    <Container className='landing-top'>
       <Row>
         <Spacer size='medium' />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -57,7 +58,7 @@ function LandingTop(): JSX.Element {
           <Spacer size='medium' />
         </Col>
       </Row>
-    </Grid>
+    </Container>
   );
 }
 

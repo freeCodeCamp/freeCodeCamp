@@ -7,28 +7,29 @@ dashedName: build-a-drum-machine
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
-Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-Ви можете по-різному поєднувати HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery для завершення цього проєкту. Слід використовувати frontend framework (наприклад, React), тому що цей розділ присвячений саме їх вивченню. Додаткові технології, що не перераховані вище, не рекомендовані і використовуються на власний ризик. Ми розглядаємо підтримку інших frontend framework, таких як Angular та Vue, але вони наразі не підтримуються. Ми візьмемо до уваги та спробуємо виправити всі звіти з зазначеними проблемами, пов'язані із запропонованою технологічною базою для виконання цього проєкту. Щасливого програмування!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**Історія користувача #1:** Я маю бачити зовнішній контейнер з відповідним `id="drum-machine"`, який містить всі інші елементи.
+**User Story #1:** I should be able to see an outer container with a corresponding `id="drum-machine"` that contains all other elements.
 
-**Історія користувача #2:** У межах `#drum-machine` я можу бачити елемент з відповідним `id="display"`.
+**User Story #2:** Within `#drum-machine` I can see an element with a corresponding `id="display"`.
 
-**Історія користувача #3:** У межах `#drum-machine` я бачу 9 клікабельних елементів барабанних педів, кожен з іменем класу `drum-pad`, унікальним ідентифікатором, що описує звукозапис, який барабанні педи приводить в дію, та внутрішнім текстом, що відповідає одній з наступних клавіш на клавіатурі: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. Барабанні педи ПОВИННІ бути саме в цьому порядку.
+**User Story #3:** Within `#drum-machine` I can see 9 clickable drum pad elements, each with a class name of `drum-pad`, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. The drum pads MUST be in this order.
 
-**Історія користувача #4:** У межах кожного `.drum-pad` має бути елемент HTML5 `audio`, який має атрибут `src`, що вказує на звукозапис, ім’я класу `clip` та ідентифікатор, що відповідає внутрішньому тексту головного `.drum-pad` (наприклад, `id="Q"`, `id="W"`, `id="E"` тощо).
+**User Story #4:** Within each `.drum-pad`, there should be an HTML5 `audio` element which has a `src` attribute pointing to an audio clip, a class name of `clip`, and an id corresponding to the inner text of its parent `.drum-pad` (e.g. `id="Q"`, `id="W"`, `id="E"` etc.).
 
-**Історія користувача #5:** Коли я натискаю на елемент `.drum-pad`, звукозапис у його дочірньому елементі `audio` повинен бути запущеним.
+**User Story #5:** When I click on a `.drum-pad` element, the audio clip contained in its child `audio` element should be triggered.
 
-**Історія користувача #6:** Коли я натискаю кнопку запуску, пов'язану з кожним `.drum-pad`, звукозапис у його дочірньому елементі `audio` повинен бути запущеним (наприклад, натискання ключа доступу `Q` має запускати барабанний пед, що містить рядок `Q`, натискання ключа доступу `W` має запускати барабанний пед, що містить рядок `W`, тощо).
+**User Story #6:** When I press the trigger key associated with each `.drum-pad`, the audio clip contained in its child `audio` element should be triggered (e.g. pressing the `Q` key should trigger the drum pad which contains the string `Q`, pressing the `W` key should trigger the drum pad which contains the string `W`, etc.).
 
-**Історія користувача #7:** Коли `.drum-pad` запускається, рядок, що описує відповідний звуковий запис, відображається як внутрішній текст елемента `#display` (кожен рядок має бути унікальним).
+**User Story #7:** When a `.drum-pad` is triggered, a string describing the associated audio clip is displayed as the inner text of the `#display` element (each string must be unique).
 
-Ось декілька зразків аудіо, які можна використовувати для драм-машини:
+Here are some audio samples you can use for your drum machine:
 
 - [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
 - [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
@@ -40,9 +41,9 @@ dashedName: build-a-drum-machine
 - [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
 - [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
 
-Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися цим посиланням на CDN, щоб запустити тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

@@ -15,7 +15,7 @@ dashedName: top-build-a-recipe-project
 1. Ваша сторінка з рецептами повинна містити елемент `html` з дочірніми елементами `head` та `body`.
 1. Ви повинні мати елемент `title` в межах елемента `head` з текстом `The Odin Recipes`.
 1. Ви повинні бачити елемент `h1`, який має текст `Creamy Chocolate Fudge`.
-1. Ви повинні бачити зображення з url `*placeholder-fcc-cdn*` з відповідним текстом `alt`.
+1. Ви повинні бачити пов’язане зображення з атрибутом `alt`.
 1. Під зображенням повинен бути елемент `h2` з текстом `Description`.
 1. Під `Description` повинно бути декілька абзаців, які описують рецепт.
 1. Ви повинні мати елемент `h2` з текстом `Ingredients`.
@@ -56,12 +56,12 @@ assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recip
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-Ви повинні мати зображення з url `*placeholder-fcc-cdn*` з атрибутом `alt`, який має відповідний текст.
+Ви повинні мати зображення з атрибутом `alt`.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
 
-assert(img && img.alt !='' && img.src === 'https://i.imgur.com/p0J5baJ.jpg')
+assert(img && img.alt !='' && img.src != '')
 ```
 
 Ви повинні мати елемент `h2` з текстом `Description`.

@@ -32,7 +32,7 @@ export const actionTypes = createTypes(
     'openModal',
     'setIsAdvancing',
     'setChapterSlug',
-    'setExamResults',
+    'setUserCompletedExam',
     'previewMounted',
     'projectPreviewMounted',
     'storePortalWindow',

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08813
-title: Виклик додаткових дій за допомогою btn-info
+title: Викличте додаткові дії за допомогою btn-info
 challengeType: 0
 forumTopicId: 16770
 dashedName: call-out-optional-actions-with-btn-info
@@ -8,11 +8,11 @@ dashedName: call-out-optional-actions-with-btn-info
 
 # --description--
 
-Bootstrap має набір заздалегідь встановлених кольорів для кнопок. Клас `btn-info` використовують, щоб привернути увагу до додаткових дій, які може виконувати користувач.
+Bootstrap має набір заздалегідь встановлених кольорів для кнопок. Клас `btn-info` використовують, щоб привернути увагу до додаткових дій, які може виконати користувач.
 
-Під своєю кнопкою `Like` створіть нову кнопку Bootstrap на рівні блоку з текстом `Info` та додайте до неї Bootstrap клас `btn-info`.
+Створіть нову кнопку Bootstrap на рівні блоку з текстом `Info` під кнопкою `Like` та додайте до неї клас `btn-info`.
 
-Зверніть увагу, що цим кнопкам все ще необхідні класи `btn` та `btn-block`.
+Зверніть увагу, що цим кнопкам досі необхідні класи `btn` та `btn-block`.
 
 # --hints--
 
@@ -22,7 +22,7 @@ Bootstrap має набір заздалегідь встановлених ко
 assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-Обидві кнопки Bootstrap повинні мати класи `btn` і `btn-block`.
+Обидві кнопки Bootstrap повинні мати класи `btn` та `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 1);
@@ -34,7 +34,7 @@ assert($('button.btn-block.btn').length > 1);
 assert($('button').hasClass('btn-info'));
 ```
 
-Усі елементи `button` повинні містити кінцеві теґи.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

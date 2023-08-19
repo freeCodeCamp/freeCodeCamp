@@ -8,71 +8,73 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
+**Objective:** Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
-يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**قصة المستخدم #1:** يمكنني رؤية عنصر مع `id="break-label"` الذي يحتوي على سلسلة (على سبيل المثال "Break Length").
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**قصة المستخدم #2:** يمكنني رؤية عنصر مع `id="session-label"` الذي يحتوي على سلسلة (على سبيل المثال "Session Length").
+**User Story #1:** I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
 
-**قصة المستخدم #3:** يمكنني أن أرى عنصرين يمكن النقر عليهما معرفين بشكل: `id="break-decrement"` و `id="session-decrement"`.
+**User Story #2:** I can see an element with `id="session-label"` that contains a string (e.g. "Session Length").
 
-**قصة المستخدم #4:** يمكنني أن أرى عنصرين يمكن النقر عليهما معرفين بشكل: `id="break-increment"` و `id="session-increment"`.
+**User Story #3:** I can see two clickable elements with corresponding IDs: `id="break-decrement"` and `id="session-decrement"`.
 
-**قصة المستخدم #5:** يمكنني مشاهدة عنصر مع `id="break-length"`, الذي يعرض (display) بشكل افتراضي (في التحميل) بقيمة 5.
+**User Story #4:** I can see two clickable elements with corresponding IDs: `id="break-increment"` and `id="session-increment"`.
 
-**قصة المستخدم #6:** يمكنني أن أرى عنصرا مع `id="session-length"`، الذي يعرض بشكل افتراضي بقيمة 25.
+**User Story #5:** I can see an element with a corresponding `id="break-length"`, which by default (on load) displays a value of 5.
 
-**قصة المستخدم #7:** يمكنني أن أرى عنصرا مع `id="timer-label"`، يحتوي على سلسلة تشير إلى أن الجَلسة تم تهيئتها ("e.g. "Session).
+**User Story #6:** I can see an element with a corresponding `id="session-length"`, which by default displays a value of 25.
 
-**قصة المستخدم #8:** يمكنني مشاهدة عنصر مع `id="time-left"`. ملاحظة: أيقاف أو تشغيل القيمة في هذا الحقل يجب أن تظهر دائما بصيغة `mm:ss` (مثل 25:00).
+**User Story #7:** I can see an element with a corresponding `id="timer-label"`, that contains a string indicating a session is initialized (e.g. "Session").
 
-**قصة المستخدم #9:** يمكنني رؤية عنصر قابل للنقر مع `id="start_stop"`.
+**User Story #8:** I can see an element with corresponding `id="time-left"`. NOTE: Paused or running, the value in this field should always be displayed in `mm:ss` format (i.e. 25:00).
 
-**قصة المستخدم #10:** يمكنني رؤية عنصر قابل للنقر مع `id="reset"`.
+**User Story #9:** I can see a clickable element with a corresponding `id="start_stop"`.
 
-**قصة المستخدم #11:** عندما أنقر على العنصر مع معرف `reset`، أي مؤقت قيد التشغيل يجب إيقافه، القيمة ضمن `id="break-length"` يجب أن تنتج `5`، القيمة ضمن `id="session-length"` يجب أن تعود إلى 25، والعنصر مع `id="time-left"` يجب أن يعاد تعيينه إلى حالته (state) الافتراضية.
+**User Story #10:** I can see a clickable element with a corresponding `id="reset"`.
 
-**قصة المستخدم #12:** عندما أنقر على العنصر مع معرف `break-decrement`، القيمة ضمن `id="break-length"` مراسيم بقيمة 1، ويمكنني أن أرى القيمة المحدثة.
+**User Story #11:** When I click the element with the id of `reset`, any running timer should be stopped, the value within `id="break-length"` should return to `5`, the value within `id="session-length"` should return to 25, and the element with `id="time-left"` should reset to its default state.
 
-**قصة المستخدم #13:** عندما أنقر على العنصر مع معرف `break-increment`، القيمة ضمن `id="break-length"` زيادة بقيمة 1، ويمكنني أن أرى القيمة المحدثة.
+**User Story #12:** When I click the element with the id of `break-decrement`, the value within `id="break-length"` decrements by a value of 1, and I can see the updated value.
 
-**قصة المستخدم #14:** عندما أنقر على العنصر مع معرف `session-decrement`، القيمة ضمن `id="session-length"` تقل بقيمة 1، ويمكنني أن أرى القيمة المحدثة.
+**User Story #13:** When I click the element with the id of `break-increment`, the value within `id="break-length"` increments by a value of 1, and I can see the updated value.
 
-**قصة المستخدم #15:** عندما أنقر على العنصر مع معرف `session-increment`، القيمة ضمن `id="session-length"` تزداد بقيمة 1، ويمكنني أن أرى القيمة المحدثة.
+**User Story #14:** When I click the element with the id of `session-decrement`, the value within `id="session-length"` decrements by a value of 1, and I can see the updated value.
 
-**قصة المستخدم #16:** يجب ألا أكون قادرا على تعيين جَلسة أو طول الاستراحة إلى &lt;= 0.
+**User Story #15:** When I click the element with the id of `session-increment`, the value within `id="session-length"` increments by a value of 1, and I can see the updated value.
 
-**قصة المستخدم #17:** يجب ألا أكون قادرا على تعيين جَلسة أو طول الاستراحة إلى > 60.
+**User Story #16:** I should not be able to set a session or break length to &lt;= 0.
 
-**قصة المستخدم #18:** عندما أنقر أول مرة على العنصر باستخدام `id="start_stop"`، يجب أن يبدأ المؤقت تشغيل من القيمة المعروضة حاليا في `id="session-length"`، حتى إذا تم زيادة القيمة أو تخفيضها من القيمة الأصلية البالغة 25.
+**User Story #17:** I should not be able to set a session or break length to > 60.
 
-**قصة المستخدم #19:** إذا كان المؤقت قيد التشغيل، يجب أن يعرض العنصر الذي يحتوي على معرف `time-left` الوقت المتبقي في تنسيق `mm:ss` (قلل القيمة مرة 1 وتحديث العرض كل 1000ms).
+**User Story #18:** When I first click the element with `id="start_stop"`, the timer should begin running from the value currently displayed in `id="session-length"`, even if the value has been incremented or decremented from the original value of 25.
 
-**قصة المستخدم #20:** إذا كان المؤقت قيد التشغيل وانقر على العنصر مع `id="start_stop"`، يجب أن يتوقف العد التنازلي.
+**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
 
-**قصة المستخدم #21:** إذا تم إيقاف مؤقت وانقر على العنصر مع `id="start_stop"`، وينبغي أن يستأنف العد التنازلي من النقطة التي توقف عندها العد.
+**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
 
-**قصة المستخدم #22:** عندما يصل العد التنازلي للجلسات إلى صفر (لاحظ: مؤقت يصل إلى 00:00)، ويبدأ العد التنازلي جديد، يجب أن يعرض العنصر الذي يحتوي على معرف `timer-label` سلسلة تشير إلى أن مدّة الاستراحة قد بدأت.
+**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
 
-**قصة المستخدم #23:** عندما يصل العد التنازلي للجلسات إلى صفر (لاحظ: مؤقت يصل إلى 00:00)، ينبغي أن يبدأ العد التنازلي الجديد في الاستراحة، مع العد التنازلي من القيمة المعروضة حاليا في عنصر `id="break-length"`.
+**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
 
-**قصة المستخدم #24:** عندما يصل العد التنازلي للاستراحة إلى صفر (لاحظ: مؤقت يصل إلى 00:00)، ويبدأ العد التنازلي جديد، يجب أن يعرض العنصر الذي يحتوي على معرف `timer-label` سلسلة تشير إلى أن مدّة للجلسات قد بدأت.
+**User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
 
-**قصة المستخدم #25:** عندما يصل العد التنازلي للاستراحة إلى صفر (لاحظ: مؤقت يصل إلى 00:00)، ينبغي أن يبدأ العد التنازلي الجديد في الجلسات، مع العد التنازلي من القيمة المعروضة حاليا في عنصر `id="session-length"`.
+**User Story #24:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a session has begun.
 
-**قصة المستخدم #26:** عندما يصل العد التنازلي إلى صفر (لاحظ: المؤقت يجب أن يصل إلى 00:00)، يجب تشغيل صوت يشير إلى أن الوقت في الأعلى. يجب أن تستخدم هذا وسم `audio` في HTML5 وأن يحتوي على `id="beep"`.
+**User Story #25:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the `id="session-length"` element.
 
-**قصة المستخدم #27:** عنصر الصوت مع `id="beep"` يجب أن يكون ثانية واحدة أو أكثر.
+**User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
 
-**قصة المستخدم #28:** عنصر الصوت مع معرف `beep` يجب أن يتوقف عن التشغيل وأن يعاد جرح إلى البداية عند النقر على العنصر مع معرف `reset`.
+**User Story #27:** The audio element with `id="beep"` must be 1 second or longer.
 
-يمكنك بناء مشروعك عن طريق <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">استخدام هذا نموذج CodePen</a> والنقر على `Save` لإنشاء طبقيك الخاص بك. أو يمكنك استخدام رابط CDN هذا لتشغيل الاختبارات في أي بيئة تفضلها: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+**User Story #28:** The audio element with id of `beep` must stop playing and be rewound to the beginning when the element with the id of `reset` is clicked.
 
-بمجرد أن تنتهي، إرسال عنوان URL لمشروع العمل الخاص بك مع اجتياز جميع الاختبارات.
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

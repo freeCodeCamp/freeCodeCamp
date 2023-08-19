@@ -16,7 +16,7 @@ Within `tests/1_unit-tests.js` under the test labelled `#9` in the `Comparisons`
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>

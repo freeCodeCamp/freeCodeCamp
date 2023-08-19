@@ -312,7 +312,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -330,10 +330,6 @@ jobs:
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server
-
-      - name: Lint and Format Files
-        run: |
-          pnpm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 

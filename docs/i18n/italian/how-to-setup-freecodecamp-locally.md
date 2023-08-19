@@ -274,6 +274,14 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+
+```console
+pnpm run seed:certified-user
+```
+
+> [!WARNING] Running `pnpm run seed:certified-user` will log you out. You will have to clear your browser cookies and sign in again.
+
 #### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
@@ -290,7 +298,7 @@ The API server serves endpoints at `http://localhost:3000`. The Gatsby app serve
 
 While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-> [!WARNING] Se pulisci i cookie o esegui `pnpm run seed:certified-user` perderai l'accesso e dovrai fare di nuovo l'accesso.
+> [!WARNING] Clearing your cookies or running `pnpm run seed:certified-user` will log you out, and you will have to sign in again.
 
 If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
 
@@ -298,9 +306,10 @@ If you have issues while installing it, check out the [troubleshooting section](
 
 A quick reference to the commands that you will need when working locally.
 
-| command            | description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
-| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
-| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                    |
-| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                              |
+| command                        | description                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Installs / re-installs all dependencies and bootstraps the different services.                    |
+| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB.                                      |
+| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB. |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                       |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                 |

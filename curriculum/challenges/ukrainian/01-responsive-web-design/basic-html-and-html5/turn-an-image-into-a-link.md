@@ -39,7 +39,7 @@ assert($('a').children('img').length > 0);
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
 ```
 
-Кожен з ваших `a` елементів повинен мати тег закривання.
+Кожен елемент `a` повинен мати кінцевий тег.
 
 ```js
 assert(

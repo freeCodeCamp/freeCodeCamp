@@ -15,7 +15,6 @@
     "@prisma/client": "5.1.1",
     "ajv": "8.12.0",
     "ajv-formats": "^2.1.1",
-    "bad-words": "3.0.4",
     "connect-mongo": "4.6.0",
     "fast-uri": "2.2.0",
     "fastify": "4.21.0",
@@ -24,6 +23,7 @@
     "jsonwebtoken": "9.0.1",
     "mongodb": "^4.16.0",
     "nanoid": "3",
+    "no-profanity": "^1.4.2",
     "nodemon": "2.0.22",
     "nodemailer": "^6.9.3",
     "query-string": "^7.1.3"
@@ -31,7 +31,6 @@
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
     "@fastify/type-provider-typebox": "3.4.0",
-    "@types/bad-words": "^3.0.1",
     "@types/express-session": "1.17.7",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/nodemailer": "^6.4.8",

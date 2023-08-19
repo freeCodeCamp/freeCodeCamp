@@ -48,8 +48,8 @@ const superBlockMap = createSuperBlockMap({
 });
 const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
   language: curriculumLocale,
-  showNewCurriculum: showNewCurriculum.toString(),
-  showUpcomingChanges: showUpcomingChanges.toString()
+  showNewCurriculum,
+  showUpcomingChanges
 });
 
 const mapStateToProps = createSelector(

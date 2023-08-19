@@ -1,0 +1,151 @@
+name: CI - E2E - Playwright
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+    branches:
+      - 'main'
+      - 'e2e-**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+    branches:
+      - 'main'
+      - 'next-**'
+      - 'e2e-**'
+
+jobs:
+  build-client:
+    name: Build
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+
+      - name: Checkout client-config
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        with:
+          repository: freeCodeCamp/client-config
+          path: client-config
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Move serve.json to Public Folder
+        run: cp client-config/serve.json client/public/serve.json
+
+      # We tar them for performance reasons - uploading a lot of files is slow.
+      - name: Tar Files
+        run: tar -cf client-artifact.tar client/public
+
+      - name: Upload Client Artifact
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        with:
+          name: client-artifact
+          path: client-artifact.tar
+
+      - name: Upload Webpack Stats
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        with:
+          name: webpack-stats
+          path: client/public/stats.json
+
+  playwright-run:
+    name: E2E Test
+    runs-on: ubuntu-20.04
+    needs: build-client
+    strategy:
+      fail-fast: false
+      matrix:
+        browsers: [chromium, firefox, webkit]
+        node-version: [18.x]
+
+    services:
+      mongodb:
+        image: mongo:4.4
+        ports:
+          - 27017:27017
+      # We need mailhog to catch any emails the api tries to send.
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025
+
+    steps:
+      - name: Set Action Environment Variables
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Checkout Source Files
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+
+      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
+        with:
+          name: client-artifact
+
+      - name: Unpack Client Artifact
+        run: |
+          tar -xf client-artifact.tar
+          rm client-artifact.tar
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
+
+      - name: Seed Database
+        run: pnpm run seed
+
+      # start-ci uses pm2, so it needs to be installed globally
+      - name: Install pm2
+        run: npm i -g pm2
+
+      - name: Install playwright dependencies
+        run: |
+          cd ./e2e
+          npm i
+          npx playwright install
+          npx playwright install-deps
+          cd ..
+
+      - name: Run playwright tests
+        run: |
+          pnpm run start-ci &
+          sleep 10
+          cd ./e2e
+          npx playwright test --project=${{ matrix.browsers }}

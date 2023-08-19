@@ -80,7 +80,10 @@
     "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Finish the exam",
+    "finish": "Finish",
     "submit-exam-results": "Submit my results"
   },
   "landing": {
@@ -89,6 +92,7 @@
     "big-heading-3": "Zertifizierungen erwerben.",
     "h2-heading": "Seit 2014 haben mehr als 40.000 Absolventen von FreeCodeCamp.org Jobs bei Tech-Unternehmen erhalten, unter anderem:",
     "hero-img-description": "freeCodeCamp Studenten einer lokalen Lerngruppe in Südkorea.",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "Wie gesehen in:",
     "testimonials": {
       "heading": "Das sagen unsere Absolventen zu freeCodeCamp:",
@@ -203,6 +207,7 @@
       "project-name": "Name des Projekts",
       "solution": "Lösung",
       "solution-for": "Lösung für {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "Mein Profil",
       "my-name": "Mein Name",
       "my-location": "Mein Standort",
@@ -353,6 +358,7 @@
     "console-output": "// Konsolen-Ausgabe",
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
     "download-solution": "Meine Lösung herunterladen",
+    "download-results": "Download my results",
     "percent-complete": "{{percent}}% abgeschlossen",
     "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "Wenn du die <0>Lesen-Suchen-Fragen</0> Methode bereits ausprobiert hast, kannst du im freeCodeCamp-Forum um Hilfe bitten.",
@@ -403,9 +409,31 @@
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
     "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "Support our charity",
@@ -665,7 +693,8 @@
     "code-save-less": "Mach langsam! Dein Code wurde nicht gespeichert. Versuche es in ein paar Sekunden noch einmal.",
     "challenge-save-too-big": "Du kannst deinen Code leider nicht speichern. Dein Code ist {{user-size}} Bytes groß. Wir erlauben ein Maximum von {{max-size}} Bytes. Bitte verkleinere deinen Code und versuche es noch einmal oder bitte um Hilfe auf https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Du kannst deinen Code leider nicht einreichen. Dein Code ist {{user-size}} Bytes groß. Wir erlauben ein Maximum von {{max-size}} Bytes. Bitte verkleinere deinen Code und versuche es noch einmal oder bitte um Hilfe auf https://forum.freecodecamp.org",
-    "invalid-update-flag": "Du versuchst, auf verbotene Ressourcen zuzugreifen. Bitte fordere unter https://forum.freecodecamp.org Unterstützung an, wenn dies eine gültige Anfrage ist."
+    "invalid-update-flag": "Du versuchst, auf verbotene Ressourcen zuzugreifen. Bitte fordere unter https://forum.freecodecamp.org Unterstützung an, wenn dies eine gültige Anfrage ist.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "Es gibt eine maximale Grenze von 288 Zeichen, du hast noch {{charsLeft}} übrig",

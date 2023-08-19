@@ -221,6 +221,11 @@
       "description": "Camper is college algebra with Python certified",
       "default": false
     },
+    "isFoundationalCSharpCertV8": {
+      "type": "boolean",
+      "description": "Camper is foundational C# certified",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {

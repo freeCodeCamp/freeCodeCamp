@@ -2,14 +2,45 @@ import React, { createContext, useContext, useRef } from 'react';
 import { Menu } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { Props } from '@headlessui/react/dist/types';
 
-type MenuItemsProps = React.ComponentPropsWithoutRef<typeof Menu.Items>;
+type MenuTag = React.ExoticComponent<{
+  children?: React.ReactNode;
+}>;
 
-export type DropdownProps = React.ComponentPropsWithoutRef<typeof Menu> & {
+interface MenuRenderPropArg {
+  open: boolean;
+  close: () => void;
+}
+
+type DropdownMenuProps = Props<
+  MenuTag,
+  MenuRenderPropArg,
+  never,
+  {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    __demoMode?: boolean;
+  }
+>;
+
+export type DropdownProps = DropdownMenuProps & {
   dropup?: boolean;
 };
 
-type DropDownButtonProps = React.ComponentPropsWithoutRef<typeof Menu>;
+export interface ButtonRenderPropArg {
+  open: boolean;
+}
+
+type ButtonPropsWeControl = 'aria-controls' | 'aria-expanded' | 'aria-haspopup';
+
+type DropDownButtonProps = Props<
+  'button',
+  ButtonRenderPropArg,
+  ButtonPropsWeControl,
+  {
+    disabled?: boolean;
+  }
+>;
 
 type DropDownContextProps = DropdownProps & {
   menuButtonRef: React.MutableRefObject<HTMLButtonElement | null>;
@@ -24,30 +55,29 @@ const dropUpItems = dropDownItems + ' transform -translate-y-full top-0';
 const toggleClassNames =
   'cursor-pointer border-3 border-solid w-full block text-center touch-manipulation bg-background-quaternary text-foreground-secondary px-3 py-1.5 relative hover:bg-foreground-secondary hover:text-background-secondary btn-block border-foreground-secondary';
 
-export const MenuItems = React.forwardRef<
-  React.ElementRef<typeof Menu.Items>,
-  MenuItemsProps
->(({ children, className }, ref) => {
-  const { dropup, menuButtonRef } = useContext(DropDownContext);
+export const MenuItems = React.forwardRef<HTMLDivElement, DropDownButtonProps>(
+  ({ children, className }, ref): JSX.Element => {
+    const { dropup, menuButtonRef } = useContext(DropDownContext);
 
-  const handleClick = () => {
-    menuButtonRef.current?.focus();
-  };
+    const handleClick = () => {
+      menuButtonRef.current?.focus();
+    };
 
-  const itemsClasses = dropup ? dropUpItems : dropDownItems;
-  const buttonClass: string = [className, itemsClasses].join(' ');
-  return (
-    <Menu.Items className={buttonClass} ref={ref} onClick={handleClick}>
-      {children}
-    </Menu.Items>
-  );
-});
+    const itemsClasses = dropup ? dropUpItems : dropDownItems;
+    const buttonClass: string = [className, itemsClasses].join(' ');
+    return (
+      <Menu.Items className={buttonClass} ref={ref} onClick={handleClick}>
+        {children}
+      </Menu.Items>
+    );
+  }
+);
 
 const DropDownButton = ({
   children,
   className,
   ...rest
-}: DropDownButtonProps) => {
+}: DropDownButtonProps): JSX.Element => {
   const { dropup, menuButtonRef } = useContext(DropDownContext);
 
   const classes = [className, toggleClassNames].join(' ');
@@ -56,7 +86,7 @@ const DropDownButton = ({
       {children}
       <FontAwesomeIcon
         icon={dropup ? faCaretUp : faCaretDown}
-        className='mt-2 mx-2 h-3'
+        className='mx-2 h-3'
         aria-hidden='true'
       />
     </Menu.Button>

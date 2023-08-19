@@ -8,7 +8,7 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you need to iterate through all the keys within an object. You can use a <dfn>for...in</dfn> loop to do this. The for...in loop looks like:
+En ocasiones, necesitas iterar todas las claves de un objeto. Puedes usar un bucle <dfn>for...in</dfn> para hacerlo. Un bucle <dfn>for...in</dfn> se ve así:
 
 ```javascript
 const refrigerator = {
@@ -21,15 +21,15 @@ for (const food in refrigerator) {
 }
 ```
 
-This code logs `milk 1`  and `eggs 12`, with each key-value pair on its own line.
+Este código saca por consola `milk 1` y  `eggs 12`, cada par clave-valor en su propia línea.
 
-We defined the variable `food` in the loop head and this variable was set to each of the object's keys on each iteration, resulting in each food's name being printed to the console.
+Definimos una variable `food` en la declaración del bucle, en cada iteración el valor de esta variable toma el valor una de las claves del objeto. De esta manera cada nombre de comida se escribe en la consola.
 
 **NOTA:** Los objetos no mantienen un orden para las claves almacenadas como lo hacen los arreglos; por lo tanto, la posición de una clave en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa clave.
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument, `allUsers`. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. An example of an object which could be passed to `countOnline` is shown below. Each user will have an `online` property set to either `true` or `false`.
+Hemos definido una función `countOnline` que acepta un argumento, `allUsers`. Usa una sentencia <dfn>for...in</dfn> dentro de esta función para recorrer el objeto `allUsers` y devolver el número de usuarios que tienen la propiedad `online` igual a `true`. Un ejemplo del tipo de objeto que podría ser pasado a `countOnline` se muestra a continuación. Cada usuario tendrá una propiedad `online` con su valor igual a `true` o `false`.
 
 ```js
 {

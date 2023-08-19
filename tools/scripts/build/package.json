@@ -19,6 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
+    "@total-typescript/ts-reset": "^0.4.0",
     "chai": "4.3.7",
     "joi": "17.9.2",
     "readdirp": "3.6.0"

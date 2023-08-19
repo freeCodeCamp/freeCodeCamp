@@ -44,7 +44,7 @@ import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  examResultsSelector,
+  userCompletedExamSelector,
   projectFormValuesSelector,
   isBlockNewlyCompletedSelector
 } from './selectors';
@@ -53,7 +53,7 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points, isTrophyMissing } = data;
+      const { savedChallenges, points, isTrophyMissing, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -73,7 +73,8 @@ function postChallenge(update, username) {
             points,
             ...payloadWithClientProperties
           },
-          savedChallenges: mapFilesToChallengeFiles(savedChallenges)
+          savedChallenges: mapFilesToChallengeFiles(savedChallenges),
+          examResults
         }),
         updateComplete(),
         submitChallengeComplete()
@@ -181,10 +182,11 @@ const submitters = {
 function submitExam(type, state) {
   // TODO: verify shape of examResults?
   if (type === actionTypes.submitChallenge) {
-    const { id } = challengeMetaSelector(state);
-    const examResults = examResultsSelector(state);
+    const { id, challengeType } = challengeMetaSelector(state);
+    const userCompletedExam = userCompletedExamSelector(state);
+
     const { username } = userSelector(state);
-    const challengeInfo = { id, examResults };
+    const challengeInfo = { id, challengeType, userCompletedExam };
 
     const update = {
       endpoint: '/exam-challenge-completed',
@@ -209,8 +211,9 @@ export default function completionEpic(action$, state$) {
         block,
         blockHashSlug
       } = challengeMetaSelector(state);
-
-      let submitter = () => of({ type: 'no-user-signed-in' });
+      // Default to submitChallengeComplete since we do not want the user to
+      // be stuck in the 'isSubmitting' state.
+      let submitter = () => of(submitChallengeComplete());
       if (
         !(challengeType in submitTypes) ||
         !(submitTypes[challengeType] in submitters)
@@ -244,7 +247,9 @@ export default function completionEpic(action$, state$) {
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
-            navigate(pathToNavigateTo);
+            if (challengeType !== challengeTypes.exam) {
+              navigate(pathToNavigateTo);
+            }
           } else {
             createFlashMessage(standardErrorMessage);
           }
