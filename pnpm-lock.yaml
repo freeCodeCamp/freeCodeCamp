@@ -245,8 +245,8 @@ importers:
         version: 7.1.3
     devDependencies:
       '@fastify/type-provider-typebox':
-        specifier: 3.4.0
-        version: 3.4.0(@sinclair/typebox@0.28.9)
+        specifier: 3.5.0
+        version: 3.5.0(@sinclair/typebox@0.28.9)
       '@types/express-session':
         specifier: 1.17.7
         version: 1.17.7
@@ -7805,10 +7805,10 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox@3.4.0(@sinclair/typebox@0.28.9):
-    resolution: {integrity: sha512-wy1ihi8WtH00sW4YlaA0lZ0nIz/mVVh4stQQ68AtNYTgXI9LPKWylNYDTP2lcXO9az9w902CvqRc8BBwOUTo7w==}
+  /@fastify/type-provider-typebox@3.5.0(@sinclair/typebox@0.28.9):
+    resolution: {integrity: sha512-f48uGzvLflE/y4pvXOS8qjAC+mZmlqev9CPHnB8NDsBSL4EbeydO61IgPuzOkeNlAYeRP9Y56UOKj1XWFibgMw==}
     peerDependencies:
-      '@sinclair/typebox': '>=0.26 <=0.30'
+      '@sinclair/typebox': '>=0.26 <=0.31'
     dependencies:
       '@sinclair/typebox': 0.28.9
     dev: true
