@@ -149,21 +149,23 @@ function MapStage({
               index={Number(startingIndex + i + 1)}
               last={i + 1 === superBlockMap.length}
               trackProgress={
-                ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(stage)
+                ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
+                  stage
+                )
               }
               completed={
                 isSignedIn
                   ? Boolean(
-                    currentCerts?.find(
-                      (cert: { certSlug: string }) =>
-                        (certSlugTypeMap as { [key: string]: string })[
-                        cert.certSlug
-                        ] ===
-                        (
-                          superBlockCertTypeMap as { [key: string]: string }
-                        )[superBlock]
+                      currentCerts?.find(
+                        (cert: { certSlug: string }) =>
+                          (certSlugTypeMap as { [key: string]: string })[
+                            cert.certSlug
+                          ] ===
+                          (superBlockCertTypeMap as { [key: string]: string })[
+                            superBlock
+                          ]
+                      )
                     )
-                  )
                   : false
               }
               superBlock={superBlock}
@@ -202,9 +204,13 @@ function Map({
         return (
           <>
             <Spacer size='small' />
-            {vals.length ? <h2>
-              Stage {Number(indx + 1)}: {stage}
-            </h2> : <></>}
+            {vals.length ? (
+              <h2>
+                Stage {Number(indx + 1)}: {stage}
+              </h2>
+            ) : (
+              <></>
+            )}
             {MapStageComponent}
           </>
         );

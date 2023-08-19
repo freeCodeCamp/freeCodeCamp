@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface RibbonProps {
   value: number;
@@ -49,4 +49,4 @@ const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
 
 RibbonIcon.displayName = 'RibbonIcon';
 
-export default RibbonIcon
+export default RibbonIcon;
