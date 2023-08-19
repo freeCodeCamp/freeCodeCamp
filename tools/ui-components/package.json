@@ -27,7 +27,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "@headlessui/react": "1.7.16",
+    "@headlessui/react": "1.7.17",
     "@radix-ui/react-tabs": "^1.0.3",
     "react": "16.14.0",
     "react-dom": "16.14.0",
