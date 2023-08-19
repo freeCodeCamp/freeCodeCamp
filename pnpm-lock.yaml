@@ -260,8 +260,8 @@ importers:
         specifier: 2.0.12
         version: 2.0.12
       dotenv-cli:
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.3.0
+        version: 7.3.0
       jest:
         specifier: 29.6.2
         version: 29.6.2(@types/node@18.17.6)(ts-node@10.9.1)
@@ -17561,8 +17561,8 @@ packages:
     dependencies:
       is-obj: 2.0.0
 
-  /dotenv-cli@7.2.1:
-    resolution: {integrity: sha512-ODHbGTskqRtXAzZapDPvgNuDVQApu4oKX8lZW7Y0+9hKA6le1ZJlyRS687oU9FXjOVEDU/VFV6zI125HzhM1UQ==}
+  /dotenv-cli@7.3.0:
+    resolution: {integrity: sha512-314CA4TyK34YEJ6ntBf80eUY+t1XaFLyem1k9P0sX1gn30qThZ5qZr/ZwE318gEnzyYP9yj9HJk6SqwE0upkfw==}
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
