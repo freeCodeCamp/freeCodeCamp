@@ -11,7 +11,7 @@ Now that you've completed all of the "Create and Run Simple C# Console Applicati
 
 Follow these instructions to find your trophy URL:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
+1. Go to <a href="https://learn.microsoft.com/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
 1. Find the trophy for "Create and Run Simple C# Console Applications" and click the "share" icon next to it
 1. Click the "Copy URL" button
 1. Paste the URL into the input below
