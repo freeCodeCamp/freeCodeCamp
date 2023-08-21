@@ -24,7 +24,6 @@
 .ais-SearchBox-reset {
   height: 20px;
   width: 20px;
-  border-radius: 4px;
   margin-block-start: 3px;
   background-color: var(--gray-75);
 }
