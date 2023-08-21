@@ -30,10 +30,6 @@ What is the difference between `Console.Write` and `Console.WriteLine`?
 
 `Console.WriteLine` appends a new line after the output.
 
----
-
-There is no difference.
-
 ## --video-solution--
 
 3

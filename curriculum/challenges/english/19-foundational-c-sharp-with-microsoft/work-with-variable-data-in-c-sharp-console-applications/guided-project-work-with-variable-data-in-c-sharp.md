@@ -16,7 +16,9 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String. Which best describes the value type for `myConvert` when the `TryParse()` is successful?
+For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String.
+
+Which best describes the value type for `myConvert` when the `TryParse()` is successful?
 
 ## --answers--
 

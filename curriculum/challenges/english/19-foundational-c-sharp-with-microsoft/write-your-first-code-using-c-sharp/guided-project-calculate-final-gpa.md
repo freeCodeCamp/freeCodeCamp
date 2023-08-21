@@ -16,7 +16,9 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-Suppose `decimal gradePointAverage = 3.99872831;`. What is the value of `(int) gradePointAverage`?
+Suppose `decimal gradePointAverage = 3.99872831;`.
+
+What is the value of `(int) gradePointAverage`?
 
 ## --answers--
 

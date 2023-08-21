@@ -16,7 +16,11 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-Given the method signature, `void Print(string name, string number = "", bool member = false)`, which of the following options correctly uses named and optional arguments?
+Given the method signature,
+
+`void Print(string name, string number = "", bool member = false)`,
+
+which of the following options correctly uses named and optional arguments?
 
 ## --answers--
 

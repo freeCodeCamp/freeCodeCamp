@@ -16,7 +16,9 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+What is wrong with the following code?
+
+`int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
 
 ## --answers--
 

@@ -16,6 +16,8 @@ Follow these instructions to find your trophy URL:
 1. Click the "Copy URL" button
 1. Paste the URL into the input below
 
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-4.trophy?username=your-username&sharingId=your-sharing-id`
+The URL should look similar to this:
+
+`https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-4.trophy?username=your-username&sharingId=your-sharing-id`
 
 This trophy is required to qualify to take the certification exam.

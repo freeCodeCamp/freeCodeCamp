@@ -20,7 +20,7 @@ Which of the following lines of code correctly uses string interpolation assumin
 
 ## --answers--
 
-'`Console.WriteLine(@"My value: {value}");'`'
+'`Console.WriteLine(@"My value: {value}");`'
 
 ---
 
