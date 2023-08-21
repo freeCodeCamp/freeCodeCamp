@@ -48,13 +48,15 @@ assert(gloveBoxContents === 'maps');
 Your code should use dot and bracket notation to access `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]|const\s*{\s*'glove box':\s*gloveBoxContents\s*}\s*=\s*myStorage\.car\.inside;/g.test(code));
+
 ```
 
 `gloveBoxContents` should still be declared with `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]|const\s*{\s*'glove box':\s*gloveBoxContents\s*}\s*=\s*myStorage\.car\.inside;/);
+
 ```
 
 # --seed--
