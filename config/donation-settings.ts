@@ -50,6 +50,7 @@ export const onetimeSKUConfig = {
 };
 
 // Configuration for server side
+
 export const durationKeysConfig = ['month', 'one-time'];
 export const donationOneTimeConfig = [100000, 25000, 6000];
 export const donationSubscriptionConfig = {
@@ -59,6 +60,14 @@ export const donationSubscriptionConfig = {
   plans: {
     month: [25000, 3500, 500]
   }
+};
+export const getStripeSubscriptionPlan = (
+  duration: 'month',
+  amount: number
+) => {
+  return `${donationSubscriptionConfig.duration[
+    duration
+  ].toLowerCase()}-donation-${amount}`;
 };
 
 // Shared paypal configuration

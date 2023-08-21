@@ -1,7 +1,18 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Type,
   type FastifyPluginCallbackTypebox
 } from '@fastify/type-provider-typebox';
+import Stripe from 'stripe';
+
+import { STRIPE_SECRET_KEY } from '../utils/env';
+import { getStripeSubscriptionPlan } from '../../../config/donation-settings';
+import { schemas } from '../schemas';
+
+const stripe = new Stripe(STRIPE_SECRET_KEY, {
+  apiVersion: '2020-08-27',
+  typescript: true
+});
 
 /**
  * Plugin for the donation endpoints.
@@ -63,6 +74,138 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         return {
+          isDonating: true
+        } as const;
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message: 'Something went wrong.'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/donate/charge-stripe-card',
+    {
+      schema: schemas.chargeStripeCard
+    },
+    async (req, reply) => {
+      try {
+        const { paymentMethodId, amount, duration } = req.body;
+        const { id } = req.session.user;
+
+        const user = await fastify.prisma.user.findUnique({
+          where: { id }
+        });
+
+        if (!user) {
+          void reply.code(500);
+          return {
+            type: 'danger',
+            message: 'Something went wrong.'
+          } as const;
+        }
+
+        const { email, name } = user;
+
+        if (user.isDonating) {
+          void reply.code(400);
+          return {
+            type: 'info',
+            message: 'User is already donating.'
+          } as const;
+        }
+
+        // Create Stripe Customer
+        let customerId;
+        try {
+          const customer = await stripe.customers.create({
+            email,
+            payment_method: paymentMethodId,
+            invoice_settings: { default_payment_method: paymentMethodId },
+            ...(name && { name })
+          });
+          customerId = customer?.id;
+        } catch {
+          throw {
+            type: 'customerCreationFailed',
+            message: 'Failed to create stripe customer'
+          };
+        }
+
+        // //Create Stripe Subscription
+        let subscriptionId;
+        const plan = getStripeSubscriptionPlan(duration, amount);
+
+        try {
+          const {
+            id: subscription_id,
+            latest_invoice: {
+              // following key is not present in new api definitions. @ts-ignore as recommended by Stripe docs
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore stripe-version-2019-10-17
+              payment_intent: { client_secret, status: intent_status }
+            }
+          } = await stripe.subscriptions.create({
+            customer: customerId,
+            payment_behavior: 'allow_incomplete',
+            items: [{ plan }],
+            expand: ['latest_invoice.payment_intent']
+          });
+          if (intent_status === 'requires_source_action') {
+            void reply.code(402);
+            return {
+              type: 'UserActionRequired',
+              message: 'Payment requires user action',
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              client_secret
+            } as const;
+          } else if (intent_status === 'requires_source') {
+            void reply.code(402);
+            return {
+              type: 'PaymentMethodRequired',
+              message: 'Card has been declined'
+            } as const;
+          }
+          subscriptionId = subscription_id;
+        } catch (err) {
+          throw {
+            type: 'SubscriptionCreationFailed',
+            message: 'Failed to create stripe subscription'
+          };
+        }
+
+        // update record in database
+        const donation = {
+          userId: id,
+          email,
+          amount,
+          duration,
+          provider: 'stripe',
+          subscriptionId,
+          customerId: id,
+          startDate: {
+            date: new Date().toISOString(),
+            when: new Date().toISOString().replace(/.$/, '+00:00')
+          }
+        };
+
+        await fastify.prisma.donation.create({
+          data: donation
+        });
+
+        await fastify.prisma.user.update({
+          where: { id },
+          data: {
+            isDonating: true
+          }
+        });
+
+        return {
+          type: 'success',
           isDonating: true
         } as const;
       } catch (error) {
