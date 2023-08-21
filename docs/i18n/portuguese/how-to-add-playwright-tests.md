@@ -2,9 +2,18 @@
 
 ## Instalação:
 
+To install Playwright run:
+
+```console
+pnpm run playwright:install-build-tools
+```
+
+Alternatively you can follow official documentation referenced below:
+
 Para instalar e configurar o Playwright na sua máquina, confira a [documentação](https://playwright.dev/docs/intro#installing-playwright)
 
 Para aprender a escrever testes do Playwright ou 'specs', confira a [documentação](https://playwright.dev/docs/writing-tests) oficial.
+
 
 ## Onde adicionar um teste
 
@@ -24,6 +33,11 @@ Para aprender a escrever testes do Playwright ou 'specs', confira a [documentaç
 ### 2. Execute os testes do Playwright
 
 Para executar testes com o Playwright, verifique o seguinte
+
+- Make sure you navigate to the e2e repo first
+  ```console
+  cd e2e
+  ```
 
 - Para executar testes no modo auxiliar de UI:
 
@@ -93,6 +107,11 @@ npx playwright show-report
 
 O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O colaborador já configurou os testes para serem executados em máquinas com todos os sistemas operacionais, incluindo as distribuições mais significativas do Windows, MacOS e Linux.
 
+- (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
+
+  ```console
+  pnpm run playwright:install-build-tools-linux
+  ```
 
 - Um erro comum visto no Playwright é o seguinte:
 
