@@ -6,7 +6,7 @@ import {
 import Stripe from 'stripe';
 
 import { STRIPE_SECRET_KEY } from '../utils/env';
-import { getStripeSubscriptionPlan } from '../../../config/donation-settings';
+import { donationSubscriptionConfig } from '../../../config/donation-settings';
 import { schemas } from '../schemas';
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, {
@@ -135,10 +135,14 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
             message: 'Failed to create stripe customer'
           };
         }
+        console.log(customerId);
 
         // //Create Stripe Subscription
         let subscriptionId;
-        const plan = getStripeSubscriptionPlan(duration, amount);
+
+        const plan = `${donationSubscriptionConfig.duration[
+          duration
+        ].toLowerCase()}-donation-${amount}`;
 
         try {
           const {
@@ -147,7 +151,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
               // following key is not present in new api definitions. @ts-ignore as recommended by Stripe docs
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore stripe-version-2019-10-17
-              payment_intent: { client_secret, status: intent_status }
+              payment_intent: { client_secret, status }
             }
           } = await stripe.subscriptions.create({
             customer: customerId,
@@ -155,7 +159,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
             items: [{ plan }],
             expand: ['latest_invoice.payment_intent']
           });
-          if (intent_status === 'requires_source_action') {
+          if (status === 'requires_source_action') {
             void reply.code(402);
             return {
               type: 'UserActionRequired',
@@ -163,7 +167,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
               // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               client_secret
             } as const;
-          } else if (intent_status === 'requires_source') {
+          } else if (status === 'requires_source') {
             void reply.code(402);
             return {
               type: 'PaymentMethodRequired',
@@ -172,6 +176,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           }
           subscriptionId = subscription_id;
         } catch (err) {
+          console.log(err);
           throw {
             type: 'SubscriptionCreationFailed',
             message: 'Failed to create stripe subscription'
@@ -209,6 +214,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         } as const;
       } catch (error) {
+        console.log(error);
         fastify.log.error(error);
         void reply.code(500);
         return {
