@@ -1,10 +1,11 @@
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -15,6 +16,7 @@ import {
   showPreviewPortalSelector,
   showPreviewPaneSelector
 } from '../redux/selectors';
+
 import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
@@ -139,7 +141,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
   render(): JSX.Element {
-    const { currentTab } = this.state;
+    // const { currentTab } = this.state;
     const {
       hasEditableBoundaries,
       instructions,
@@ -161,10 +163,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
-    const editorTabPaneProps = {
-      mountOnEnter: true,
-      unmountOnExit: true
-    };
+    // const editorTabPaneProps = {
+    //   mountOnEnter: true,
+    //   unmountOnExit: true
+    // };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -211,53 +213,53 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     return (
       <>
         <Tabs
-          activeKey={currentTab}
-          animation={false}
-          defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
-          onSelect={this.switchTab}
           onTouchStart={this.handleClick}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.instructions')}
-              tabIndex={0}
-            >
-              {instructions}
-            </TabPane>
-          )}
-          <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
-          >
+          <TabsList>
+            {!hasEditableBoundaries && (
+              <TabsTrigger value={Tab.Instructions}>
+                {i18next.t('learn.editor-tabs.instructions')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={Tab.Editor}>
+              title={i18next.t('learn.editor-tabs.code')}
+            </TabsTrigger>
+            {hasNotes && usesMultifileEditor && (
+              <TabsTrigger value={Tab.Notes}>
+                {i18next.t('learn.editor-tabs.notes')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={Tab.Console}>
+              {i18next.t('learn.editor-tabs.console')}
+            </TabsTrigger>
+            {hasPreview && (
+              <TabsTrigger
+                value={Tab.Preview}
+                onClick={() => togglePane('showPreviewPane')}
+                {...(displayPreviewPane && { 'aria-selected': 'true' })}
+              >
+                {i18next.t('learn.editor-tabs.preview')}
+              </TabsTrigger>
+            )}
+          </TabsList>
+
+          <TabsContent value={Tab.Editor}>
             {usesMultifileEditor && <EditorTabs />}
             {editor}
-          </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.console')}
-            {...editorTabPaneProps}
-          >
-            {testOutput}
-          </TabPane>
+          </TabsContent>
+          {!hasEditableBoundaries && (
+            <TabsContent value={Tab.Instructions}>{instructions}</TabsContent>
+          )}
+          <TabsContent value={Tab.Console}>{testOutput}</TabsContent>
           {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
-            >
-              {notes}
-            </TabPane>
+            <TabsContent value={Tab.Notes}>{notes}</TabsContent>
           )}
           {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
-            >
+            <TabsContent value={Tab.Preview}>
               <button
                 className='portal-button'
                 aria-expanded={!!showPreviewPortal}
@@ -272,7 +274,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                   {i18next.t('learn.preview-external-window')}
                 </p>
               )}
-            </TabPane>
+            </TabsContent>
           )}
           {!hasEditableBoundaries && (
             <ToolPanel
