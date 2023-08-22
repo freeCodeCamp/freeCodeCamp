@@ -1,22 +1,22 @@
 ---
 id: 647e1f4e8acb466c97ccbedf
-title: 'Add Looping Logic to Your Code Using the do-while and while Statements in C#'
+title: 'Додайте логіку циклу до свого коду, використовуючи інструкції do-while та while в C#'
 challengeType: 19
 dashedName: add-looping-logic-to-your-code-using-the-do-while-and-while-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-do-while/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-do-while/</a> and complete all the tasks for the "Add Looping Logic to Your Code Using the do-while and while Statements in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-do-while/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-do-while/</a> та виконайте всі завдання модуля «Додайте логіку циклу до свого коду, використовуючи інструкції do-while та while в C#». Це обов’язково, щоб отримати трофей «Додавання логіки до консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
+Розробнику потрібно перебрати масив, щоб знайти елемент, який відповідає певному критерію. Яка інструкція підходить найкраще?
 
 ## --answers--
 

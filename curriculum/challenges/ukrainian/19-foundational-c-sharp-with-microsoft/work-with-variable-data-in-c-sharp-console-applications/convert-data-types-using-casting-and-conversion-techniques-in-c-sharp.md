@@ -1,34 +1,34 @@
 ---
 id: 647e23248acb466c97ccbefb
-title: 'Convert Data Types Using Casting and Conversion Techniques in C#'
+title: 'Конвертуйте типи даних, використовуючи приведення та перетворення в C#'
 challengeType: 19
 dashedName: convert-data-types-using-casting-and-conversion-techniques-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-convert-cast/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-convert-cast/</a> and complete all the tasks for the "Convert Data Types Using Casting and Conversion Techniques in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-convert-cast/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-convert-cast/</a> та виконайте всі завдання модуля «Конвертуйте типи даних, використовуючи приведення та перетворення в C#». Це обов’язково, щоб отримати трофей «Робота з даними змінних в консольних застосунках C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-What type of action is being performed when changing a `float` into an `int`?
+Яка дія виконується при зміні `float` на `int`?
 
 ## --answers--
 
-A narrowing conversion.
+Звуження.
 
 ---
 
-A widening conversion.
+Розширення.
 
 ---
 
-An illegal conversion.
+Заборонене перетворення.
 
 ## --video-solution--
 

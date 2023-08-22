@@ -1,21 +1,21 @@
 ---
 id: 647f877f07d29547b3bee1be
-title: 'Trophy - Create Methods in C# Console Applications'
+title: 'Трофей «Створення методів в консольних застосунках C#»'
 challengeType: 18
 dashedName: trophy-create-methods-in-c-sharp-console-applications
 ---
 
 # --description--
 
-Now that you've completed all of the "Create Methods in C# Console Applications" modules on Microsoft's learn platform, submit the URL to your trophy below.
+Ви завершили всі завдання модуля «Створення методів в консольних застосунках C#» на навчальній платформі Microsoft, тому введіть посилання на свій трофей нижче.
 
-Follow these instructions to find your trophy URL:
+Дотримуйтесь цих інструкцій, щоб знайти адресу свого трофея:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
-1. Find the trophy for "Create Methods in C# Console Applications" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a>, використовуючи браузер, через який ви увійшли до Microsoft
+1. Знайдіть трофей для «Створення методів в консольних застосунках C#» та натисніть значок «Поділитися»
+1. Натисніть кнопку «Копіювати URL»
+1. Вставте посилання в полі нижче
 
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=your-username&sharingId=your-sharing-id`
+Посилання має виглядати приблизно так: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=your-username&sharingId=your-sharing-id`
 
-This trophy is required to qualify to take the certification exam.
+Цей трофей потрібен для того, щоб скласти екзамен сертифікації.

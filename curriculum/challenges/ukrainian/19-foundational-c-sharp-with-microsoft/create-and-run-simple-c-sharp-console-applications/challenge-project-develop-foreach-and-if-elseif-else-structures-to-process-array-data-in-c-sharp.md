@@ -1,34 +1,34 @@
 ---
 id: 647e21d08acb466c97ccbee8
-title: 'Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
+title: 'Проєкт завдання: розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#'
 challengeType: 19
 dashedName: challenge-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/</a> and complete all the tasks for the "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/</a> та виконайте всі завдання модуля «Проєкт завдання: розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?
+Розробник працює з двома іншими розробниками над оновленням застосунків. Вони використовуватимуть коментарі під час процесу оновлення. У якому випадку доречно використовувати коментарі в коді?
 
 ## --answers--
 
-When updates are made, the developers use line and block comments to identify each individual code update.
+Розробники використовують лінійні та блокові коментарі, щоб ідентифікувати оновлення кожного з них.
 
 ---
 
-When updates are made, the developers leave all existing code comments intact. New comments are added to indicate when old comments no longer apply.
+Розробники не змінюють наявних коментарів коду. Вони додають нові коментарі, щоб вказати, що старі коментарі більше не застосовуються.
 
 ---
 
-When updates are made, the developers summarize changes using block comments.
+Розробники узагальнюють зміни, використовуючи блокові коментарі.
 
 ## --video-solution--
 
