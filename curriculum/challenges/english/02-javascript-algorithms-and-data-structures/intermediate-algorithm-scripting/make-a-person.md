@@ -48,7 +48,7 @@ const _person = new Person('Bob', 'Ross');
 _person.setFirstName('Haskell');
 _person.setLastName('Curry');
 _person.setFullName('John', 'Smith');
-assert.lengthOf(Object.keys(person), 6);
+assert.lengthOf(Object.keys(_person), 6);
 ```
 
 You should be able to instantiate your `Person` object.
