@@ -25,5 +25,6 @@ describe('<Tabs />', () => {
     userEvent.click(tabsTrigger);
     const testContent = screen.getByText('Here is the test for the code.');
     expect(testContent).toBeInTheDocument();
+    expect(codeContent).not.toBeInTheDocument();
   });
 });
