@@ -35,6 +35,7 @@ export enum SuperBlockStages {
   FrontEnd,
   Backend,
   Python,
+  Professional,
   Extra,
   Legacy,
   New,
@@ -66,6 +67,7 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
+  [SuperBlockStages.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStages.Extra]: [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler
@@ -75,7 +77,6 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.ExampleCertification,
     SuperBlocks.UpcomingPython
   ]
@@ -95,55 +96,55 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Chinese]: [
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Italian]: [
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Portuguese]: [
-    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FoundationalCSharp,
+    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Ukrainian]: [
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Japanese]: [
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.German]: [
@@ -157,11 +158,11 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Arabic]: [
@@ -174,11 +175,11 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Swahili]: [
@@ -191,10 +192,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.RespWebDesign,
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,

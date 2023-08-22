@@ -24,8 +24,8 @@ export enum Certification {
   InfoSec = 'information-security-v7',
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
-  // Upcoming certifications
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  // Upcoming certifications
   UpcomingPython = 'upcoming-python-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
@@ -49,7 +49,8 @@ export const currentCertifications = [
   Certification.DataAnalysisPy,
   Certification.InfoSec,
   Certification.MachineLearningPy,
-  Certification.CollegeAlgebraPy
+  Certification.CollegeAlgebraPy,
+  Certification.FoundationalCSharp
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -63,10 +64,7 @@ export const legacyCertifications = [
 
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
-export const upcomingCertifications = [
-  Certification.UpcomingPython,
-  Certification.FoundationalCSharp
-] as const;
+export const upcomingCertifications = [Certification.UpcomingPython] as const;
 
 export const certTypes = {
   frontEnd: 'isFrontEndCert',
@@ -86,7 +84,7 @@ export const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharp: 'isFoundationalCSharpCertV8'
+  foundationalCSharpV8: 'isFoundationalCSharpCertV8'
 } as const;
 
 export const certIds = {
@@ -107,7 +105,7 @@ export const certIds = {
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
-  foundationalCSharpId: '647f7da207d29547b3bee1ba'
+  foundationalCSharpV8Id: '647f7da207d29547b3bee1ba'
 };
 
 export const completionHours = {
@@ -128,7 +126,7 @@ export const completionHours = {
   [certTypes.machineLearningPyV7]: 300,
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
-  [certTypes.foundationalCSharp]: 300
+  [certTypes.foundationalCSharpV8]: 300
 };
 
 export const certSlugTypeMap = {
@@ -152,7 +150,7 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharp
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
 };
 
 export const superBlockCertTypeMap = {
@@ -176,7 +174,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharp,
+  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // post-modern
   // TODO: use enum
@@ -202,7 +200,7 @@ export const certTypeIdMap = {
   [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
-  [certTypes.foundationalCSharp]: certIds.foundationalCSharpId
+  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id
 };
 
 export const certTypeTitleMap = {
@@ -223,7 +221,7 @@ export const certTypeTitleMap = {
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
-  [certTypes.foundationalCSharp]: 'Foundational C# with Microsoft'
+  [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

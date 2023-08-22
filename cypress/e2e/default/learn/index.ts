@@ -19,6 +19,7 @@ const superBlockNames = [
   'Information Security Certification',
   'Machine Learning with Python Certification',
   'College Algebra with Python Certification',
+  'Foundational C# with Microsoft Certification',
   'Coding Interview Prep',
   'Project Euler',
   'Legacy Responsive Web Design Challenges'
@@ -45,7 +46,7 @@ describe('Learn Landing page (not logged in)', () => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
         `${challengerSelector.curriculumMap} > ul > li > a`
       );
-      expect(superBlocks).to.have.length(15);
+      expect(superBlocks).to.have.length(16);
 
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);

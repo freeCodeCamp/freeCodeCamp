@@ -25,6 +25,7 @@ const superBlocks = [
   'Information Security',
   'Machine Learning with Python',
   'College Algebra with Python',
+  'Foundational C# with Microsoft',
   'Coding Interview Prep',
   'Project Euler',
   'Legacy Responsive Web Design'
@@ -72,7 +73,7 @@ describe('Landing page', () => {
   });
 
   it('Has links to all superblocks', function () {
-    cy.get(landingPageElements.curriculumBtns).its('length').should('eq', 15);
+    cy.get(landingPageElements.curriculumBtns).its('length').should('eq', 16);
     cy.wrap(superBlocks).each((cert: LandingPageLogs) => {
       cy.get(landingPageElements.curriculumBtns).contains(cert);
     });

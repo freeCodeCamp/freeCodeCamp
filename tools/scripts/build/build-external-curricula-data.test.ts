@@ -91,7 +91,6 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
         '2022/javascript-algorithms-and-data-structures',
         'college-algebra-with-python',
         'the-odin-project',
-        'foundational-c-sharp-with-microsoft',
         'upcoming-python',
         'example-certification'
       ];
