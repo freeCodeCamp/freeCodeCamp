@@ -214,7 +214,6 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         } as const;
       } catch (error) {
-        console.log(error);
         fastify.log.error(error);
         void reply.code(500);
         return {

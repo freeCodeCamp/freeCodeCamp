@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import Stripe from 'stripe';
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
 interface StripeSubscriptionArgs {
@@ -9,39 +10,46 @@ interface StripeSubscriptionArgs {
 }
 
 jest.mock('stripe', () => {
-  return jest.fn(() => ({
-    customers: {
-      create: jest.fn(() =>
-        Promise.resolve({
-          id: 'cust_123',
-          name: 'Jest_User',
-          currency: 'sgd',
-          description: 'Jest User Account created'
-        })
-      )
-    },
-    subscriptions: {
-      create: jest.fn(
-        ({ payment_behavior, expand }: StripeSubscriptionArgs) => {
-          if (
-            payment_behavior === 'allow_incomplete' &&
-            expand &&
-            expand.includes('latest_invoice.payment_intent')
-          ) {
-            return Promise.resolve({
-              id: 'cust_123',
-              latest_invoice: {
-                payment_intent: {
-                  client_secret: 'superSecret',
-                  status: 'intentStatus'
+  return jest.fn().mockImplementation(() => {
+    return {
+      customers: {
+        create: jest.fn(() =>
+          Promise.resolve({
+            id: 'cust_123',
+            name: 'Jest_User',
+            currency: 'sgd',
+            description: 'Jest User Account created'
+          })
+        )
+      },
+      subscriptions: {
+        create: jest.fn(
+          ({ payment_behavior, expand }: StripeSubscriptionArgs) => {
+            if (
+              payment_behavior === 'allow_incomplete' &&
+              expand &&
+              expand.includes('latest_invoice.payment_intent')
+            ) {
+              return Promise.resolve({
+                id: 'cust_123',
+                latest_invoice: {
+                  payment_intent: {
+                    client_secret: 'superSecret',
+                    status: 'intentStatus'
+                  }
                 }
-              }
-            });
+              });
+            }
           }
-        }
-      )
-    }
-  }));
+        )
+      }
+    };
+  });
+});
+
+const stripeMock = new Stripe('secret', {
+  apiVersion: '2020-08-27',
+  typescript: true
 });
 
 describe('Donate', () => {
@@ -56,6 +64,15 @@ describe('Donate', () => {
 
     describe('POST /donate/charge-stripe-card', () => {
       it('should return 200 and update the user', async () => {
+        // need to customize the mock here to retun errors
+        // this should change the response (logged customer id) but does not
+        (stripeMock.customers.create as jest.Mock).mockResolvedValueOnce({
+          id: 'cust_111', // Customize for this test
+          name: 'Jest_User',
+          currency: 'sgd',
+          description: 'Jest User Account created'
+        });
+
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
