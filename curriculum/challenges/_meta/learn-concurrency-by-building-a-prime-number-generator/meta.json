@@ -1,0 +1,16 @@
+{
+  "name": "Learn concurrency by building a prime number generator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-concurrency-by-building-a-prime-number-generator",
+  "order": 2,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "64e750d9e426ffe0a7c40dfa", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
