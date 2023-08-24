@@ -87,6 +87,14 @@ export const examInProgressSelector = state => {
 
 export const examResultsSelector = state => userSelector(state).examResults;
 
+export const msUsernameSelector = state => {
+  return userSelector(state).msUsername;
+};
+
+export const processingSelector = state => {
+  return state[MainApp].processing;
+};
+
 export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
