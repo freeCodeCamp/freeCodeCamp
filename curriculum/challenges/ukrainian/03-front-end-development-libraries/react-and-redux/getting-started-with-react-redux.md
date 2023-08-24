@@ -20,7 +20,7 @@ dashedName: getting-started-with-react-redux
 
 # --hints--
 
-Компонент `DisplayMessages` повинен відображати порожній `div` елемент.
+Компонент `DisplayMessages` має відтворити порожній елемент `div`.
 
 ```js
 assert(

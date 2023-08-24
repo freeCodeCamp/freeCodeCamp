@@ -1,16 +1,16 @@
 ---
 id: 647e22778acb466c97ccbef2
-title: 'Challenge Project - Debug a C# Console Application Using Visual Studio Code'
+title: 'Проєкт завдання: налагодьте консольний застосунок C#, використовуючи Visual Studio Code'
 challengeType: 19
 dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> та виконайте всі завдання модуля «Проєкт завдання: налагодьте консольний застосунок C#, використовуючи Visual Studio Code». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 

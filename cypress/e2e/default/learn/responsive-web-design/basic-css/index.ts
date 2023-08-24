@@ -73,7 +73,7 @@ describe('Basic Css Introduction page', function () {
 
   it('renders a lesson index', () => {
     lessonNames.forEach(name => {
-      cy.get(selectors.tableOfContents).contains('span', name);
+      cy.get(selectors.tableOfContents).contains('a', name);
     });
   });
 });

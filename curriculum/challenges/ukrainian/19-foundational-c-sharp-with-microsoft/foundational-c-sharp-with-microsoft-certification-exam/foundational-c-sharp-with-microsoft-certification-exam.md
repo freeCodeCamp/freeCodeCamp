@@ -1,6 +1,6 @@
 ---
 id: 647e22d18acb466c97ccbef8
-title: 'Foundational C# with Microsoft Certification Exam'
+title: 'Екзамен з сертифікації «Основи C# з Microsoft»'
 challengeType: 17
 dashedName: foundational-c-sharp-with-microsoft-certification-exam
 prerequisites:
@@ -26,13 +26,13 @@ prerequisites:
 
 # --description--
 
-Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:
+Складіть цей екзамен, щоб отримати сертифікацію «Основи C# з Microsoft». Перед початком екзамену ознайомтеся з настановами:
 
-- You must complete the entire exam in one session.
-- Exiting the exam at any point before you are finished, will result in the loss of your progress.
-- There is no time limit, but your total time taken will be recorded.
-- The exam consists of 80 multiple-choice questions.
-- Complete the exam and correctly answer at least 70% of the questions to earn your certification.
+- Ви повинні завершити екзамен за один сеанс.
+- Ви втратите свій прогрес, якщо вийдете з екзамену до його закінчення.
+- Часового обмеження немає, але загальний час буде записано.
+- Екзамен складається з 80 тестів.
+- Завершіть екзамен та дайте правильну відповідь на 70% запитань, щоб отримати сертифікацію.
 
 # --instructions--
 

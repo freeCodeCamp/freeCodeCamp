@@ -1,21 +1,21 @@
 ---
 id: 647f85d407d29547b3bee1bb
-title: 'Trophy - Write Your First Code Using C#'
+title: 'Трофей «Написання першого коду за допомогою C#»'
 challengeType: 18
 dashedName: trophy-write-your-first-code-using-c-sharp
 ---
 
 # --description--
 
-Now that you've completed all of the "Write Your First Code Using C#" modules on Microsoft's learn platform, submit the URL to your trophy below.
+Ви завершили всі завдання модуля «Написання першого коду за допомогою C#» на навчальній платформі Microsoft, тому введіть посилання на свій трофей нижче.
 
-Follow these instructions to find your trophy URL:
+Дотримуйтесь цих інструкцій, щоб знайти адресу свого трофея:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
-1. Find the trophy for "Write Your First Code Using C#" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a>, використовуючи браузер, через який ви увійшли до Microsoft
+1. Знайдіть трофей для «Написання першого коду за допомогою C#» та натисніть значок «Поділитися»
+1. Натисніть кнопку «Копіювати URL»
+1. Вставте посилання в полі нижче
 
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=your-username&sharingId=your-sharing-id`
+Посилання має виглядати приблизно так: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=your-username&sharingId=your-sharing-id`
 
-This trophy is required to qualify to take the certification exam.
+Цей трофей потрібен для того, щоб скласти екзамен сертифікації.

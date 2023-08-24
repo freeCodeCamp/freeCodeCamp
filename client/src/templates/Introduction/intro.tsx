@@ -8,26 +8,22 @@ import { Container } from '@freecodecamp/ui';
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
-import {
-  MarkdownRemark,
-  AllChallengeNode,
-  ChallengeNode
-} from '../../redux/prop-types';
+import type { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
 
-function renderMenuItems({
-  edges = []
-}: {
-  edges?: Array<{ node: ChallengeNode }>;
-}) {
-  return edges
-    .map(({ node: { challenge } }) => challenge)
-    .map(({ title, fields: { slug } }) => (
-      <Link key={'intro-' + slug} to={slug}>
-        <ListGroupItem>{title}</ListGroupItem>
-      </Link>
-    ));
+function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
+  return (
+    <ListGroup className='intro-toc'>
+      {challengeNodes.edges
+        .map(({ node: { challenge } }) => challenge)
+        .map(({ title, fields: { slug } }) => (
+          <ListGroupItem key={'intro-' + slug}>
+            <Link to={slug}>{title}</Link>
+          </ListGroupItem>
+        ))}
+    </ListGroup>
+  );
 }
 
 function IntroductionPage({
@@ -78,9 +74,9 @@ function IntroductionPage({
         </FullWidthRow>
         <FullWidthRow>
           <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
-          <ListGroup className='intro-toc'>
-            {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
-          </ListGroup>
+          {allChallengeNode ? (
+            <Challenges challengeNodes={allChallengeNode} />
+          ) : null}
         </FullWidthRow>
       </Container>
     </LearnLayout>

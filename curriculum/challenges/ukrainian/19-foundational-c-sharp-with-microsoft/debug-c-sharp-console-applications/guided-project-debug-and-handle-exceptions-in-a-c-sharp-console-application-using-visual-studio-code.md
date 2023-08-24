@@ -1,34 +1,34 @@
 ---
 id: 647e22958acb466c97ccbef4
-title: 'Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code'
+title: 'Керований проєкт: налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code'
 challengeType: 19
 dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-application-using-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> and complete all the tasks for the "Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> та виконайте всі завдання модуля «Керований проєкт: налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-When is an `ArgumentOutOfRangeException` exception thrown?
+Коли викидається виняток `ArgumentOutOfRangeException`?
 
 ## --answers--
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+Виняток `ArgumentOutOfRangeException` викидається при спробі індексувати масив за межами масиву.
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
+Виняток `ArgumentOutOfRangeException` викидається, коли значення аргумента знаходиться поза діапазоном дозволених значень, визначених методом.
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+Виняток `ArgumentOutOfRangeException` викидається при спробі зберегти значення одного типу в масиві іншого типу.
 
 ## --video-solution--
 

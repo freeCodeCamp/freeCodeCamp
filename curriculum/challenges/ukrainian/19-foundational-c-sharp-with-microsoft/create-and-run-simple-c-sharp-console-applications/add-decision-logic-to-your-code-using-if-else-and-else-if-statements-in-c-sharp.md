@@ -1,22 +1,22 @@
 ---
 id: 647e21ba8acb466c97ccbee6
-title: 'Add Decision Logic to Your Code Using if, else, and else if statements in C#'
+title: 'Додайте логіку рішень до коду, використовуючи інструкції if, else та else if в C#'
 challengeType: 19
 dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> and complete all the tasks for the "Add Decision Logic to Your Code Using if, else, and else if statements in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> та виконайте всі завдання модуля «Додайте логіку рішень до коду, використовуючи інструкції if, else та else if в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the choices below is not a valid operator in C#?
+Що з переліченого не є дійсним оператором в C#?
 
 ## --answers--
 
