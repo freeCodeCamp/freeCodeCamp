@@ -1,7 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
 
-// Testing: Remove this comment later
-
 test.describe('Certification intro page', () => {
   let page: Page;
 
