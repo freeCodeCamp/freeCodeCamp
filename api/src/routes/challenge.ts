@@ -60,7 +60,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(400);
         return {
           type: 'error',
-          msg: `'coderoad-user-token' not found in request headers`
+          msg: `'Coderoad-User-Token' not found in request headers`
         } as const;
       }
 
