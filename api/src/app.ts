@@ -7,6 +7,7 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
+import Stripe from 'stripe';
 import Ajv from 'ajv';
 import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
@@ -45,7 +46,8 @@ import {
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN,
-  EMAIL_PROVIDER
+  EMAIL_PROVIDER,
+  STRIPE_SECRET_KEY
 } from './utils/env';
 import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
@@ -210,9 +212,16 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+
+  // Stripe plugin
+  const stripe = new Stripe(STRIPE_SECRET_KEY, {
+    apiVersion: '2020-08-27',
+    typescript: true
+  });
+
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
-  void fastify.register(donateRoutes);
+  void fastify.register(donateRoutes(stripe));
   void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);

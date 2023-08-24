@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import Stripe from 'stripe';
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
+import { devLogin, setupServer, superRequest } from '../../jest.utils';
+const mockCustomerCreate = jest.fn();
 interface StripeSubscriptionArgs {
   customer: string;
   payment_behavior?: 'allow_incomplete';
@@ -13,14 +13,7 @@ jest.mock('stripe', () => {
   return jest.fn().mockImplementation(() => {
     return {
       customers: {
-        create: jest.fn(() =>
-          Promise.resolve({
-            id: 'cust_123',
-            name: 'Jest_User',
-            currency: 'sgd',
-            description: 'Jest User Account created'
-          })
-        )
+        create: mockCustomerCreate
       },
       subscriptions: {
         create: jest.fn(
@@ -47,11 +40,6 @@ jest.mock('stripe', () => {
   });
 });
 
-const stripeMock = new Stripe('secret', {
-  apiVersion: '2020-08-27',
-  typescript: true
-});
-
 describe('Donate', () => {
   setupServer();
 
@@ -64,15 +52,15 @@ describe('Donate', () => {
 
     describe('POST /donate/charge-stripe-card', () => {
       it('should return 200 and update the user', async () => {
-        // need to customize the mock here to retun errors
-        // this should change the response (logged customer id) but does not
-        (stripeMock.customers.create as jest.Mock).mockResolvedValueOnce({
-          id: 'cust_111', // Customize for this test
-          name: 'Jest_User',
-          currency: 'sgd',
-          description: 'Jest User Account created'
+        // Modify the behavior of the `create` method for this specific test
+        mockCustomerCreate.mockImplementationOnce(() => {
+          return Promise.resolve({
+            id: 'cust_111',
+            name: 'Jest_User',
+            currency: 'sgd',
+            description: 'Jest User Account created'
+          });
         });
-
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
@@ -84,6 +72,30 @@ describe('Donate', () => {
 
         expect(response.status).toBe(200);
         expect(response.body).toEqual({ isDonating: true, type: 'success' });
+      });
+    });
+
+    describe('POST /donate/charge-stripe-card', () => {
+      it('should return 500 if Stripe encounted an error', async () => {
+        // Modify the behavior of the `create` method for this specific test
+        mockCustomerCreate.mockImplementationOnce(() => {
+          return Promise.reject(new Error('Stripe encountered an error'));
+        });
+
+        const response = await superRequest('/donate/charge-stripe-card', {
+          method: 'POST',
+          setCookies
+        }).send({
+          paymentMethodId: 'someValidMethodId',
+          amount: 500,
+          duration: 'month'
+        });
+
+        expect(response.status).toBe(500);
+        expect(response.body).toEqual({
+          type: 'danger',
+          message: 'Something went wrong.'
+        });
       });
     });
 

@@ -5,14 +5,8 @@ import {
 } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import { STRIPE_SECRET_KEY } from '../utils/env';
 import { donationSubscriptionConfig } from '../../../config/donation-settings';
 import { schemas } from '../schemas';
-
-const stripe = new Stripe(STRIPE_SECRET_KEY, {
-  apiVersion: '2020-08-27',
-  typescript: true
-});
 
 /**
  * Plugin for the donation endpoints.
@@ -21,208 +15,210 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const donateRoutes: FastifyPluginCallbackTypebox = (
-  fastify,
-  _options,
-  done
-) => {
-  // The order matters here, since we want to reject invalid cross site requests
-  // before checking if the user is authenticated.
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
 
-  fastify.post(
-    '/donate/add-donation',
-    {
-      schema: {
-        body: Type.Object({}),
-        response: {
-          200: Type.Object({
-            isDonating: Type.Boolean()
-          }),
-          400: Type.Object({
-            message: Type.Literal('User is already donating.'),
-            type: Type.Literal('info')
-          }),
-          500: Type.Object({
-            message: Type.Literal('Something went wrong.'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
-    },
-    async (req, reply) => {
-      try {
-        const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
-        });
-
-        if (user?.isDonating) {
-          void reply.code(400);
-          return {
-            type: 'info',
-            message: 'User is already donating.'
-          } as const;
-        }
-
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            isDonating: true
+/**
+ *
+ * @param stripe The Stripe instance.
+ * @returns Fastify plugin callback.
+ */
+export const donateRoutes =
+  (stripe: Stripe): FastifyPluginCallbackTypebox =>
+  (fastify, _options, done) => {
+    // The order matters here, since we want to reject invalid cross site requests
+    // before checking if the user is authenticated.
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+    fastify.addHook('onRequest', fastify.authenticateSession);
+    fastify.post(
+      '/donate/add-donation',
+      {
+        schema: {
+          body: Type.Object({}),
+          response: {
+            200: Type.Object({
+              isDonating: Type.Boolean()
+            }),
+            400: Type.Object({
+              message: Type.Literal('User is already donating.'),
+              type: Type.Literal('info')
+            }),
+            500: Type.Object({
+              message: Type.Literal('Something went wrong.'),
+              type: Type.Literal('danger')
+            })
           }
-        });
+        }
+      },
+      async (req, reply) => {
+        try {
+          const user = await fastify.prisma.user.findUnique({
+            where: { id: req.session.user.id }
+          });
 
-        return {
-          isDonating: true
-        } as const;
-      } catch (error) {
-        fastify.log.error(error);
-        void reply.code(500);
-        return {
-          type: 'danger',
-          message: 'Something went wrong.'
-        } as const;
-      }
-    }
-  );
+          if (user?.isDonating) {
+            void reply.code(400);
+            return {
+              type: 'info',
+              message: 'User is already donating.'
+            } as const;
+          }
 
-  fastify.post(
-    '/donate/charge-stripe-card',
-    {
-      schema: schemas.chargeStripeCard
-    },
-    async (req, reply) => {
-      try {
-        const { paymentMethodId, amount, duration } = req.body;
-        const { id } = req.session.user;
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              isDonating: true
+            }
+          });
 
-        const user = await fastify.prisma.user.findUnique({
-          where: { id }
-        });
-
-        if (!user) {
+          return {
+            isDonating: true
+          } as const;
+        } catch (error) {
+          fastify.log.error(error);
           void reply.code(500);
           return {
             type: 'danger',
             message: 'Something went wrong.'
           } as const;
         }
+      }
+    );
 
-        const { email, name } = user;
+    fastify.post(
+      '/donate/charge-stripe-card',
+      {
+        schema: schemas.chargeStripeCard
+      },
+      async (req, reply) => {
+        try {
+          const { paymentMethodId, amount, duration } = req.body;
+          const { id } = req.session.user;
 
-        if (user.isDonating) {
-          void reply.code(400);
+          const user = await fastify.prisma.user.findUnique({
+            where: { id }
+          });
+
+          if (!user) {
+            void reply.code(500);
+            return {
+              type: 'danger',
+              message: 'Something went wrong.'
+            } as const;
+          }
+
+          const { email, name } = user;
+
+          if (user.isDonating) {
+            void reply.code(400);
+            return {
+              type: 'info',
+              message: 'User is already donating.'
+            } as const;
+          }
+
+          // Create Stripe Customer
+          let customerId;
+          try {
+            const customer = await stripe.customers.create({
+              email,
+              payment_method: paymentMethodId,
+              invoice_settings: { default_payment_method: paymentMethodId },
+              ...(name && { name })
+            });
+            customerId = customer?.id;
+          } catch {
+            throw {
+              type: 'customerCreationFailed',
+              message: 'Failed to create stripe customer'
+            };
+          }
+
+          // //Create Stripe Subscription
+          let subscriptionId;
+
+          const plan = `${donationSubscriptionConfig.duration[
+            duration
+          ].toLowerCase()}-donation-${amount}`;
+
+          try {
+            const {
+              id: subscription_id,
+              latest_invoice: {
+                // following key is not present in new api definitions. @ts-ignore as recommended by Stripe docs
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore stripe-version-2019-10-17
+                payment_intent: { client_secret, status }
+              }
+            } = await stripe.subscriptions.create({
+              customer: customerId,
+              payment_behavior: 'allow_incomplete',
+              items: [{ plan }],
+              expand: ['latest_invoice.payment_intent']
+            });
+            if (status === 'requires_source_action') {
+              void reply.code(402);
+              return {
+                type: 'UserActionRequired',
+                message: 'Payment requires user action',
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                client_secret
+              } as const;
+            } else if (status === 'requires_source') {
+              void reply.code(402);
+              return {
+                type: 'PaymentMethodRequired',
+                message: 'Card has been declined'
+              } as const;
+            }
+            subscriptionId = subscription_id;
+          } catch (err) {
+            console.log(err);
+            throw {
+              type: 'SubscriptionCreationFailed',
+              message: 'Failed to create stripe subscription'
+            };
+          }
+
+          // update record in database
+          const donation = {
+            userId: id,
+            email,
+            amount,
+            duration,
+            provider: 'stripe',
+            subscriptionId,
+            customerId: id,
+            startDate: {
+              date: new Date().toISOString(),
+              when: new Date().toISOString().replace(/.$/, '+00:00')
+            }
+          };
+
+          await fastify.prisma.donation.create({
+            data: donation
+          });
+
+          await fastify.prisma.user.update({
+            where: { id },
+            data: {
+              isDonating: true
+            }
+          });
+
           return {
-            type: 'info',
-            message: 'User is already donating.'
+            type: 'success',
+            isDonating: true
+          } as const;
+        } catch (error) {
+          fastify.log.error(error);
+          void reply.code(500);
+          return {
+            type: 'danger',
+            message: 'Something went wrong.'
           } as const;
         }
-
-        // Create Stripe Customer
-        let customerId;
-        try {
-          const customer = await stripe.customers.create({
-            email,
-            payment_method: paymentMethodId,
-            invoice_settings: { default_payment_method: paymentMethodId },
-            ...(name && { name })
-          });
-          customerId = customer?.id;
-        } catch {
-          throw {
-            type: 'customerCreationFailed',
-            message: 'Failed to create stripe customer'
-          };
-        }
-        console.log(customerId);
-
-        // //Create Stripe Subscription
-        let subscriptionId;
-
-        const plan = `${donationSubscriptionConfig.duration[
-          duration
-        ].toLowerCase()}-donation-${amount}`;
-
-        try {
-          const {
-            id: subscription_id,
-            latest_invoice: {
-              // following key is not present in new api definitions. @ts-ignore as recommended by Stripe docs
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore stripe-version-2019-10-17
-              payment_intent: { client_secret, status }
-            }
-          } = await stripe.subscriptions.create({
-            customer: customerId,
-            payment_behavior: 'allow_incomplete',
-            items: [{ plan }],
-            expand: ['latest_invoice.payment_intent']
-          });
-          if (status === 'requires_source_action') {
-            void reply.code(402);
-            return {
-              type: 'UserActionRequired',
-              message: 'Payment requires user action',
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              client_secret
-            } as const;
-          } else if (status === 'requires_source') {
-            void reply.code(402);
-            return {
-              type: 'PaymentMethodRequired',
-              message: 'Card has been declined'
-            } as const;
-          }
-          subscriptionId = subscription_id;
-        } catch (err) {
-          console.log(err);
-          throw {
-            type: 'SubscriptionCreationFailed',
-            message: 'Failed to create stripe subscription'
-          };
-        }
-
-        // update record in database
-        const donation = {
-          userId: id,
-          email,
-          amount,
-          duration,
-          provider: 'stripe',
-          subscriptionId,
-          customerId: id,
-          startDate: {
-            date: new Date().toISOString(),
-            when: new Date().toISOString().replace(/.$/, '+00:00')
-          }
-        };
-
-        await fastify.prisma.donation.create({
-          data: donation
-        });
-
-        await fastify.prisma.user.update({
-          where: { id },
-          data: {
-            isDonating: true
-          }
-        });
-
-        return {
-          type: 'success',
-          isDonating: true
-        } as const;
-      } catch (error) {
-        fastify.log.error(error);
-        void reply.code(500);
-        return {
-          type: 'danger',
-          message: 'Something went wrong.'
-        } as const;
       }
-    }
-  );
+    );
 
-  done();
-};
+    done();
+  };
