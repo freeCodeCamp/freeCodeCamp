@@ -65,7 +65,7 @@ describe('challengeRoutes', () => {
         });
         expect(response.status).toBe(400);
         expect(response.body).toEqual({
-          msg: `'coderoad-user-token' not found in request headers`,
+          msg: `'Coderoad-User-Token' not found in request headers`,
           type: 'error'
         });
       });
