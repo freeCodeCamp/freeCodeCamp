@@ -144,7 +144,7 @@ export function LinkMsUser({
               />
             </FormGroup>
             <Button
-              disabled={isProcessing}
+              disabled={isProcessing || msTranscriptUrl.length === 0}
               block={true}
               bsStyle='primary'
               className='btn-invert'
