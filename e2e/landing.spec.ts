@@ -73,7 +73,7 @@ test('Has `as seen in` section', async () => {
 
 test('Has links to all superblocks', async () => {
   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
-  await expect(curriculumBtns).toHaveCount(16);
+  await expect(curriculumBtns).toHaveCount(15);
   superBlocks.map(async (cert, i) => {
     const btn = curriculumBtns.nth(i);
     await expect(btn).toContainText(cert);
