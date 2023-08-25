@@ -20,11 +20,7 @@ function* fetchSessionUser() {
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
 
-    const [userId] = Object.keys(user);
-
-    const sound = user[userId].sound;
-
-    store.set('fcc-sound', sound);
+    store.set('fcc-sound', false);
 
     yield put(fetchUserComplete({ user: appUser, username: result }));
   } catch (e) {

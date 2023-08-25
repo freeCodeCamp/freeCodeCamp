@@ -310,12 +310,6 @@ export function putUpdateMySocials(
   return put('/update-my-socials', update);
 }
 
-export function putUpdateMySound(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-my-sound', update);
-}
-
 export function putUpdateMyTheme(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
