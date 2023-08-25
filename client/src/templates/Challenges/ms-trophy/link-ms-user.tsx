@@ -9,26 +9,36 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { Spacer } from '../../../components/helpers';
 
 import {
   linkMsUsername,
   unlinkMsUsername,
-  setProcessing
+  setIsProcessing
 } from '../../../redux/actions';
 import {
+  isSignedInSelector,
   msUsernameSelector,
-  processingSelector
+  isProcessingSelector
 } from '../../../redux/selectors';
+import Login from '../../../components/Header/components/login';
 
 import './link-ms-user.css';
 
 const mapStateToProps = createSelector(
+  isSignedInSelector,
   msUsernameSelector,
-  processingSelector,
-  (msUsername: string | undefined | null, processing: boolean) => ({
+  isProcessingSelector,
+  (
+    isSignedIn: boolean,
+    msUsername: string | undefined | null,
+    isProcessing: boolean
+  ) => ({
+    isSignedIn,
     msUsername,
-    processing
+    isProcessing
   })
 );
 
@@ -37,31 +47,35 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       linkMsUsername,
       unlinkMsUsername,
-      setProcessing
+      setIsProcessing
     },
     dispatch
   );
 
 interface LinkMsUserProps {
+  isSignedIn: boolean;
   msUsername: string | undefined | null;
   linkMsUsername: (arg0: { msTranscriptUrl: string }) => void;
   unlinkMsUsername: () => void;
-  processing: boolean;
-  setProcessing: (arg0: boolean) => void;
+  isProcessing: boolean;
+  setIsProcessing: (arg0: boolean) => void;
+  t: TFunction;
 }
 
 export function LinkMsUser({
+  isSignedIn,
   msUsername,
   linkMsUsername,
   unlinkMsUsername,
-  processing,
-  setProcessing
+  isProcessing,
+  setIsProcessing,
+  t
 }: LinkMsUserProps): JSX.Element {
   const [msTranscriptUrl, setMsTranscriptUrl] = useState<string>('');
 
   function handleLinkUsername(e: React.FormEvent) {
     e.preventDefault();
-    setProcessing(true);
+    setIsProcessing(true);
     linkMsUsername({ msTranscriptUrl });
   }
 
@@ -70,65 +84,58 @@ export function LinkMsUser({
     setMsTranscriptUrl(e.target.value);
   }
 
-  return (
+  return !isSignedIn ? (
+    <>
+      <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
+      <Spacer size='small' />
+
+      <p>{t('learn.ms.link-signin')}</p>
+      <Login />
+    </>
+  ) : (
     <>
       {msUsername ? (
         <>
-          <p>
-            The Microsoft account with username &quot;{msUsername}&quot; is
-            currently linked to your freeCodeCamp account. If this is not your
-            Microsoft username, remove the link.
-          </p>
+          <p>{t('learn.ms.linked', { msUsername })}</p>
           <Button
             block={true}
             bsStyle='primary'
             className='btn-invert'
+            disabled={isProcessing}
             onClick={unlinkMsUsername}
           >
-            Unlink account
+            {t('buttons.unlink-account')}
           </Button>
         </>
       ) : (
         <div>
-          <h2 className='link-ms-user-title'>Link your Microsoft account</h2>
+          <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
           <Spacer size='small' />
 
-          <p>
-            To complete this challenge, you must first link your Microsoft
-            username to your freeCodeCamp account by following these
-            instructions:
-          </p>
+          <p>{t('learn.ms.unlinked')}</p>
           <ol className='link-ms-user-ol'>
             <li>
-              Using a browser where you are logged into your Microsoft account,
-              go to{' '}
-              <a
-                href='https://learn.microsoft.com/users/me/transcript'
-                rel='noreferrer'
-                target='_blank'
-              >
-                https://learn.microsoft.com/users/me/transcript
-              </a>
+              <Trans i18nKey='learn.ms.link-li-1'>
+                <a
+                  href='https://learn.microsoft.com/users/me/transcript'
+                  rel='noreferrer'
+                  target='_blank'
+                >
+                  placeholder
+                </a>
+              </Trans>
             </li>
-            <li>Find and click the &quot;Share link&quot; button.</li>
-            <li>
-              If you do not have a transcript link, click the &quot;Create
-              link&quot; button to create one.
-            </li>
-            <li>
-              Click the &quot;Copy link&quot; button to copy the transcript URL.
-            </li>
-            <li>
-              Paste the URL into the input below and click &quot;Link
-              account&quot;.
-            </li>
+            <li>{t('learn.ms.link-li-2')}</li>
+            <li>{t('learn.ms.link-li-3')}</li>
+            <li>{t('learn.ms.link-li-4')}</li>
+            <li>{t('learn.ms.link-li-5')}</li>
           </ol>
 
           <Spacer size='medium' />
           <form onSubmit={handleLinkUsername}>
             <FormGroup>
               <ControlLabel>
-                <strong>Your Microsoft Transcript Link</strong>
+                <strong>{t('learn.ms.transcript-label')}</strong>
               </ControlLabel>
               <FormControl
                 type='url'
@@ -137,13 +144,13 @@ export function LinkMsUser({
               />
             </FormGroup>
             <Button
-              disabled={processing}
+              disabled={isProcessing}
               block={true}
               bsStyle='primary'
               className='btn-invert'
               onClick={handleLinkUsername}
             >
-              Link account
+              {t('buttons.link-account')}
             </Button>
           </form>
         </div>
@@ -154,4 +161,7 @@ export function LinkMsUser({
 
 LinkMsUser.displayName = 'LinkMsUser';
 
-export default connect(mapStateToProps, mapDispatchToProps)(LinkMsUser);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(LinkMsUser));

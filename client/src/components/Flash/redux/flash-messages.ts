@@ -18,7 +18,12 @@ export enum FlashMessages {
   IncompleteSteps = 'flash.incomplete-steps',
   LocalCodeSaved = 'flash.local-code-saved',
   LocalCodeSaveError = 'flash.local-code-save-error',
-  MSTrophyMissing = 'flash.ms-trophy-missing',
+  MsLinked = 'flash.ms-linked',
+  MsLinkErr = 'flash.ms-link-err',
+  MsTrophyErr = 'flash.ms-trophy-err',
+  MsTrophyVerified = 'flash.ms-trophy-verified',
+  MsUnlinked = 'flash.ms-unlinked',
+  MsUnlinkErr = 'flash.ms-unlink-err',
   NameNeeded = 'flash.name-needed',
   None = '',
   NotEligible = 'flash.not-eligible',
@@ -48,9 +53,5 @@ export enum FlashMessages {
   UserNotCertified = 'flash.user-not-certified',
   WrongName = 'flash.wrong-name',
   WrongUpdating = 'flash.wrong-updating',
-  WentWrong = 'flash.went-wrong',
-  MsLinked = 'flash.ms-linked',
-  MsLinkErr = 'flash.ms-link-err',
-  MsUnlinked = 'flash.ms-unlinked',
-  MsUnlinkErr = 'flash.ms-unlink-err'
+  WentWrong = 'flash.went-wrong'
 }

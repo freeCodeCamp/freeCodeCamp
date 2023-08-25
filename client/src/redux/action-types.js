@@ -29,7 +29,7 @@ export const actionTypes = createTypes(
     'linkMsUsername',
     'unlinkMsUsername',
     'setMsUsername',
-    'setProcessing',
+    'setIsProcessing',
     'submitComplete',
     'updateComplete',
     'updateFailed',

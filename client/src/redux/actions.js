@@ -106,7 +106,7 @@ export const linkMsUsername = createAction(actionTypes.linkMsUsername);
 export const unlinkMsUsername = createAction(actionTypes.unlinkMsUsername);
 export const setMsUsername = createAction(actionTypes.setMsUsername);
 
-export const setProcessing = createAction(actionTypes.setProcessing);
+export const setIsProcessing = createAction(actionTypes.setIsProcessing);
 
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
 export const openSignoutModal = createAction(actionTypes.openSignoutModal);

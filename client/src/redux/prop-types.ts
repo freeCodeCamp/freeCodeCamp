@@ -123,6 +123,7 @@ export type ChallengeNode = {
       owner: string;
       type: string;
     };
+    msTrophyId: string;
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;

@@ -3,7 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { postMsUsername, deleteMsUsername } from '../utils/ajax';
-import { setMsUsername, setProcessing } from './actions';
+import { setMsUsername, setIsProcessing } from './actions';
 
 const message = {
   linked: {
@@ -30,14 +30,14 @@ function* linkMsUsernameSaga({ payload: { msTranscriptUrl } }) {
 
     if (data && Object.prototype.hasOwnProperty.call(data, 'msUsername')) {
       yield put(setMsUsername(data.msUsername));
-      yield put(setProcessing(false));
+      yield put(setIsProcessing(false));
       yield put(createFlashMessage(message.linked));
     } else {
-      yield put(setProcessing(false));
+      yield put(setIsProcessing(false));
       yield put(createFlashMessage(message.linkErr));
     }
   } catch {
-    yield put(setProcessing(false));
+    yield put(setIsProcessing(false));
     yield put(createFlashMessage(message.linkErr));
   }
 }

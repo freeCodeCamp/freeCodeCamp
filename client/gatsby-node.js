@@ -84,6 +84,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   }
                   hasEditableBoundaries
                   id
+                  msTrophyId
                   order
                   prerequisites {
                     id

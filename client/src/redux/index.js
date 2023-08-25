@@ -51,7 +51,7 @@ const initialState = {
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
-  processing: false,
+  isProcessing: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -351,10 +351,10 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.setProcessing]: (state, { payload }) => {
+    [actionTypes.setIsProcessing]: (state, { payload }) => {
       return {
         ...state,
-        processing: payload
+        isProcessing: payload
       };
     },
     [actionTypes.updateUserToken]: (state, { payload }) => {

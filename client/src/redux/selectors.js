@@ -91,8 +91,8 @@ export const msUsernameSelector = state => {
   return userSelector(state).msUsername;
 };
 
-export const processingSelector = state => {
-  return state[MainApp].processing;
+export const isProcessingSelector = state => {
+  return state[MainApp].isProcessing;
 };
 
 export const userByNameSelector = username => state => {
