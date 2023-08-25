@@ -86,7 +86,7 @@ function postChallenge(update, username) {
       ];
 
       if (challengeType === challengeTypes.msTrophy && type === 'error') {
-        actions = [createFlashMessage(msTrophyError)];
+        actions = [createFlashMessage(msTrophyError), submitChallengeError()];
       } else if (challengeType === challengeTypes.msTrophy) {
         actions.push(createFlashMessage(msTrophyVerified));
       }
