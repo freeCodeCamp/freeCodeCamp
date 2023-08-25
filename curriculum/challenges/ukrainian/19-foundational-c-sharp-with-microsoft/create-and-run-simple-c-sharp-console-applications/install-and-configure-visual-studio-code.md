@@ -1,34 +1,34 @@
 ---
 id: 647e21f88acb466c97ccbeeb
-title: Install and Configure Visual Studio Code
+title: Встановіть та налаштуйте Visual Studio Code
 challengeType: 19
 dashedName: install-and-configure-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/</a> and complete all the tasks for the "Install and Configure Visual Studio Code" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/</a> та виконайте всі завдання модуля «Встановіть та налаштуйте Visual Studio Code». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following choices provides the best description of an Integrated Development Environment (IDE)?
+Що з переліченого найкраще описує інтегроване середовище розробки (IDE)?
 
 ## --answers--
 
-Visual Studio Code is an Integrated Development Environment.
+Visual Studio Code — це інтегроване середовище розробки.
 
 ---
 
-An Integrated Development Environment is tool that makes it easier to write code.
+Інтегроване середовище розробки — це інструмент, який полегшує написання коду.
 
 ---
 
-An IDE is a suite of tools that supports the full software development lifecycle.
+IDE — це набір інструментів, що підтримують повний цикл розробки програмного забезпечення.
 
 ## --video-solution--
 

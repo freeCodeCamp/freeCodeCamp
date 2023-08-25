@@ -1,29 +1,29 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Step 24
+title: Крок 24
 challengeType: 0
 dashedName: step-24
 ---
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+Перемістіть ліве вухо, встановивши позиціювання зі значенням `absolute`, `top` зі значенням `-26px` та `left` зі значенням `-31px`.
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Селектор `.cat-left-ear` повинен мати властивість `position` зі значенням `absolute`. Не забудьте про крапку з комою.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+Селектор `.cat-left-ear` повинен мати властивість `top` зі значенням `-26px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+Селектор `.cat-left-ear` повинен мати властивість `left` зі значенням `-31px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')

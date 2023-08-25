@@ -1,34 +1,34 @@
 ---
 id: 647e21df8acb466c97ccbee9
-title: 'Create Readable Code with Conventions, Whitespace, and Comments in C#'
+title: 'Створіть читабельний код з конвенціями, пробілами та коментарями в C#'
 challengeType: 19
 dashedName: create-readable-code-with-conventions-whitespace-and-comments-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/</a> and complete all the tasks for the "Create Readable Code with Conventions, Whitespace, and Comments in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/</a> та виконайте всі завдання модуля «Створіть читабельний код з конвенціями, пробілами та коментарями в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following is a bad reason to use a code comment?
+З якою метою краще не використовувати коментар в коді?
 
 ## --answers--
 
-To describe the high-level intent of the code.
+Щоб описати код на високому рівні.
 
 ---
 
-To temporarily comment out a line of code while evaluating a feature in a different way.
+Щоб тимчасово прокоментувати рядок коду під час обчислення функції по-іншому.
 
 ---
 
-To explain how a new C# keyword works.
+Щоб пояснити, як працює нове ключове слово C#.
 
 ## --video-solution--
 

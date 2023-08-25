@@ -26,7 +26,7 @@ React Redux надає невеличкий API з двома основними
 
 # --hints--
 
-`AppWrapper` повинен візуалізуватися на сторінці.
+`AppWrapper` має відтворюватись.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
   );
 ```
 
-`DisplayMessages` повинні бути показані як дитина `AppWrapper`.
+`DisplayMessages` має відтворюватись як дочірній компонент компонента `AppWrapper`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-`DisplayMessages` компонент повинен показувати`h2`, `input`, `button` і `ul` елементи.
+Компонент `DisplayMessages` має відтворити `h2`, `input`, `button` та елемент `ul`.
 
 ```js
 assert(

@@ -1,22 +1,22 @@
 ---
 id: 647e23188acb466c97ccbefa
-title: 'Choose the Correct Data Type in Your C# Code'
+title: 'Виберіть правильний тип даних в коді C#'
 challengeType: 19
 dashedName: choose-the-correct-data-type-in-your-c-sharp-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-choose-data-type/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-choose-data-type/</a> and complete all the tasks for the "Choose the Correct Data Type in Your C# Code" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-choose-data-type/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-choose-data-type/</a> та виконайте всі завдання модуля «Виберіть правильний тип даних в коді C#». Це обов’язково, щоб отримати трофей «Робота з даними змінних в консольних застосунках C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
+Фрагмент коду має зберігати цілі числові значення від `-1,000,000` до `1,000,000`. Який тип даних оберете?
 
 ## --answers--
 

@@ -1,29 +1,29 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Step 24
+title: Hatua ya 24
 challengeType: 0
 dashedName: step-24
 ---
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+Sogeza sikio la kushoto hadi mahali kwa kuweka position kuwa `absolute`, `top` ya `-26px` na `left` ya `-31px`.
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Kichaguzi chako cha `.cat-left-ear` kinafaa kuwa na sifa ya `position` iliyowekwa kuwa `absolute`. Usisahau kuongeza nusu koloni.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+Kichaguzi chako cha `.cat-left-ear` kinafaa kuwa na sifa ya `top` iliyowekwa kuwa `-26px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+Kichaguzi chako cha `.cat-left-ear` kinafaa kuwa na sifa ya `left` iliyowekwa kuwa `-31px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')

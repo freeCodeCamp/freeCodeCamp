@@ -1,22 +1,22 @@
 ---
 id: 647e226a8acb466c97ccbef1
-title: 'Write Your First C# Method'
+title: 'Напишіть свій перший метод C#'
 challengeType: 19
 dashedName: write-your-first-c-sharp-method
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/" target="_blank">https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/</a> and complete all the tasks for the "Write Your First C# Method" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/" target="_blank">https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/</a> та виконайте всі завдання модуля «Напишіть свій перший метод C#». Це обов’язково, щоб отримати трофей «Створення методів в консольних застосунках C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following correctly declares a method?
+Що з переліченого правильно оголошує метод?
 
 ## --answers--
 

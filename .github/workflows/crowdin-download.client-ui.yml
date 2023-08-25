@@ -2,8 +2,8 @@ name: i18n - Download Client UI
 on:
   workflow_dispatch:
   schedule:
-    # runs every weekday at 12:15 PM UTC
-    - cron: '15 12 * * 1-5'
+    # runs Monday and Wednesday at 12:15 PM UTC
+    - cron: '15 12 * * 1,3'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}

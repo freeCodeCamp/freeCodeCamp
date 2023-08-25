@@ -9,7 +9,7 @@ dashedName: step-30
 
 Bevor du dich zu sehr in deiner Gestaltung vertiefst, solltest du von der `sr-only`-Klasse Gebrauch machen. Du kannst CSS verwenden, um Elemente mit dieser Klasse vollständig von der visuellen Seite auszublenden, aber dennoch von Screenreadern angezeigt werden zu lassen.
 
-The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.
+Das CSS, das du gleich schreiben wirst, ist ein allgemeines Set von Eigenschaften, mit denen sichergestellt wird, dass Elemente visuell vollständig ausgeblendet werden.
 
 Der `span[class~="sr-only"]`-Selektor wird jedes `span`-Element auswählen, dessen `class` * * `sr-only` enthält. Erstelle diesen Selektor und gib ihm eine `border`-Eigenschaft mit dem Wert `0`.
 
