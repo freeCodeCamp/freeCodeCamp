@@ -44,7 +44,7 @@ export const challengeTypes = {
   msTrophyUrl,
   multipleChoice,
   python
-} as const;
+};
 
 export const isFinalProject = (challengeType: number) => {
   // TODO: remove the type check once everything is converted to TS
