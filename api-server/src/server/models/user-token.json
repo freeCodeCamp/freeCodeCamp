@@ -1,7 +1,7 @@
 {
   "name": "UserToken",
   "description": "Tokens for submitting curricula through CodeRoad",
-  "base": "PersistedModel",
+  "base": "AccessToken",
   "idInjection": true,
   "options": {
     "validateUpsert": true

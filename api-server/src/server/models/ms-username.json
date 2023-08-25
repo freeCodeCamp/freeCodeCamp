@@ -1,7 +1,7 @@
 {
   "name": "MsUsername",
   "description": "Microsoft account usernames",
-  "base": "AccessToken",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
