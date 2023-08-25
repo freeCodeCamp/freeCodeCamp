@@ -172,7 +172,6 @@ export const donateRoutes =
             }
             subscriptionId = subscription_id;
           } catch (err) {
-            console.log(err);
             throw {
               type: 'SubscriptionCreationFailed',
               message: 'Failed to create stripe subscription'

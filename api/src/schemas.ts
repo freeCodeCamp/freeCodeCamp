@@ -422,7 +422,9 @@ export const schemas = {
       }),
       402: Type.Object({
         message: Type.String(),
-        type: Type.String()
+        type: Type.String(),
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        client_secret: Type.Optional(Type.String())
       }),
       500: Type.Object({
         message: Type.String(),
