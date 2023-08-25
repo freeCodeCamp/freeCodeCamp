@@ -63,8 +63,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false,
-      isMicrosoftLearnLink: false
+      isLocalLinkAllowed: false
     };
 
     let formFields = solutionField;
