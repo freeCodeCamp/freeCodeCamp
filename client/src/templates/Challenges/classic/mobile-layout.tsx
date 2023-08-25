@@ -141,7 +141,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
   render(): JSX.Element {
-    // const { currentTab } = this.state;
+    const { currentTab } = this.state;
     const {
       hasEditableBoundaries,
       instructions,
@@ -217,6 +217,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
+          defaultValue={currentTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList>
@@ -226,7 +227,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               </TabsTrigger>
             )}
             <TabsTrigger value={Tab.Editor}>
-              title={i18next.t('learn.editor-tabs.code')}
+              {i18next.t('learn.editor-tabs.code')}
             </TabsTrigger>
             {hasNotes && usesMultifileEditor && (
               <TabsTrigger value={Tab.Notes}>
