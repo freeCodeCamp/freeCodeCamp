@@ -17,6 +17,7 @@ import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 
 import { jwtSecret } from '../../../../config/secrets';
+import { challengeTypes } from '../../../../config/challenge-types';
 
 import {
   fixPartiallyCompletedChallengeItem,
@@ -128,7 +129,7 @@ const savableChallenges = getChallenges()
   .map(challenge => challenge.id);
 
 const msTrophyChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 18)
+  .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
   .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
 
 export function buildUserUpdate(
