@@ -290,6 +290,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      msTrophyId: String
     }
     type FileContents {
       fileKey: String
