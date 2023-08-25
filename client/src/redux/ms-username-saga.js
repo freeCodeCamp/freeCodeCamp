@@ -15,7 +15,7 @@ const message = {
     message: FlashMessages.MsLinkErr
   },
   unlinked: {
-    type: 'success',
+    type: 'info',
     message: FlashMessages.MsUnlinked
   },
   unlinkErr: {
