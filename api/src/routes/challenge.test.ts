@@ -43,11 +43,11 @@ const JsProjectId = '56533eb9ac21ba0edf2244e2';
 const multiFileCertProjectId = 'bd7158d8c242eddfaeb5bd13';
 
 const HtmlChallengeBody = {
-  challengeType: 0,
+  challengeType: challengeTypes.html,
   id: HtmlChallengeId
 };
 const JsProjectBody = {
-  challengeType: 5,
+  challengeType: challengeTypes.jsProject,
   id: JsProjectId,
   files: [
     {
@@ -60,7 +60,7 @@ const JsProjectBody = {
   ]
 };
 const multiFileCertProjectBody = {
-  challengeType: 14,
+  challengeType: challengeTypes.multifileCertProject,
   id: multiFileCertProjectId,
   files: [
     {
@@ -80,7 +80,7 @@ const multiFileCertProjectBody = {
   ]
 };
 const updatedMultiFileCertProjectBody = {
-  challengeType: 14,
+  challengeType: challengeTypes.multifileCertProject,
   id: multiFileCertProjectId,
   files: [
     {
