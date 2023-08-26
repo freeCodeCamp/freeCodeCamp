@@ -826,8 +826,8 @@ importers:
         specifier: 6.1.6
         version: 6.1.6
       '@types/react-instantsearch-core':
-        specifier: 6.26.3
-        version: 6.26.3
+        specifier: 6.26.4
+        version: 6.26.4
       '@types/react-instantsearch-dom':
         specifier: 6.12.3
         version: 6.12.3
@@ -11617,19 +11617,19 @@ packages:
       '@types/react': 16.14.45
     dev: true
 
-  /@types/react-instantsearch-core@6.26.3:
-    resolution: {integrity: sha512-dBq/K1NQFBgLmCdiLYaC15KjXdjZk8UTQBhumSg+fAHgpW3ai5fu5BbzAKzSCkqYwbgqvhCQ1EZ9PLvPvOfqwQ==}
+  /@types/react-instantsearch-core@6.26.4:
+    resolution: {integrity: sha512-Iy6I0oOojQiVhPzaN9HsKs0ajODXv7nuUDDLGTSWw8XS7l6Dz2PaMwusEIhfSMz//13J5bUas3K5xoreRdptzA==}
     dependencies:
       '@types/react': 16.14.45
       algoliasearch: 4.19.1
-      algoliasearch-helper: 3.11.3(algoliasearch@4.19.1)
+      algoliasearch-helper: 3.14.0(algoliasearch@4.19.1)
     dev: true
 
   /@types/react-instantsearch-dom@6.12.3:
     resolution: {integrity: sha512-HAQG74v7OzsUhdjNermd0A8c7LWRLsrMCsFCY6+7HEXK1hikeCs/Hmy6xjFhZVfFEWvpvX78vxJELafoAnuv8Q==}
     dependencies:
       '@types/react': 16.14.45
-      '@types/react-instantsearch-core': 6.26.3
+      '@types/react-instantsearch-core': 6.26.4
     dev: true
 
   /@types/react-redux@7.1.26:
@@ -12735,15 +12735,6 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
 
-  /algoliasearch-helper@3.11.3(algoliasearch@4.19.1):
-    resolution: {integrity: sha512-TbaEvLwiuGygHQIB8y+OsJKQQ40+JKUua5B91X66tMUHyyhbNHvqyr0lqd3wCoyKx7WybyQrC0WJvzoIeh24Aw==}
-    peerDependencies:
-      algoliasearch: '>= 3.1 < 6'
-    dependencies:
-      '@algolia/events': 4.0.1
-      algoliasearch: 4.19.1
-    dev: true
-
   /algoliasearch-helper@3.14.0(algoliasearch@4.19.1):
     resolution: {integrity: sha512-gXDXzsSS0YANn5dHr71CUXOo84cN4azhHKUbg71vAWnH+1JBiR4jf7to3t3JHXknXkbV0F7f055vUSBKrltHLQ==}
     peerDependencies:
@@ -12751,7 +12742,6 @@ packages:
     dependencies:
       '@algolia/events': 4.0.1
       algoliasearch: 4.19.1
-    dev: false
 
   /algoliasearch@4.19.1:
     resolution: {integrity: sha512-IJF5b93b2MgAzcE/tuzW0yOPnuUyRgGAtaPv5UUywXM8kzqfdwZTO4sPJBzoGz1eOy6H9uEchsJsBFTELZSu+g==}
