@@ -102,5 +102,11 @@ export const startExam = createAction(actionTypes.startExam);
 export const stopExam = createAction(actionTypes.stopExam);
 export const clearExamResults = createAction(actionTypes.clearExamResults);
 
+export const linkMsUsername = createAction(actionTypes.linkMsUsername);
+export const unlinkMsUsername = createAction(actionTypes.unlinkMsUsername);
+export const setMsUsername = createAction(actionTypes.setMsUsername);
+
+export const setIsProcessing = createAction(actionTypes.setIsProcessing);
+
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
 export const openSignoutModal = createAction(actionTypes.openSignoutModal);

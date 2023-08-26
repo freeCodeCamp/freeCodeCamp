@@ -22,6 +22,7 @@ import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
+import { createMsUsernameSaga } from './ms-username-saga';
 
 const defaultFetchState = {
   pending: true,
@@ -50,6 +51,7 @@ const initialState = {
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
+  isProcessing: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -88,7 +90,8 @@ export const sagas = [
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
   ...createUserTokenSaga(actionTypes),
-  ...createSaveChallengeSaga(actionTypes)
+  ...createSaveChallengeSaga(actionTypes),
+  ...createMsUsernameSaga(actionTypes)
 ];
 
 function spreadThePayloadOnUser(state, payload) {
@@ -333,6 +336,25 @@ export const reducer = handleActions(
             examResults
           }
         }
+      };
+    },
+    [actionTypes.setMsUsername]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            msUsername: payload
+          }
+        }
+      };
+    },
+    [actionTypes.setIsProcessing]: (state, { payload }) => {
+      return {
+        ...state,
+        isProcessing: payload
       };
     },
     [actionTypes.updateUserToken]: (state, { payload }) => {

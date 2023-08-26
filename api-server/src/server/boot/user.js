@@ -2,6 +2,7 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 import { body } from 'express-validator';
 import { pick } from 'lodash';
+import fetch from 'node-fetch';
 
 import {
   fixCompletedChallengeItem,
@@ -22,6 +23,7 @@ import {
   createDeleteUserToken,
   encodeUserToken
 } from '../middlewares/user-token';
+import { createDeleteMsUsername } from '../middlewares/ms-username';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debugFactory('fcc:boot:user');
@@ -35,15 +37,24 @@ function bootUser(app) {
   const postDeleteAccount = createPostDeleteAccount(app);
   const postUserToken = createPostUserToken(app);
   const deleteUserToken = createDeleteUserToken(app);
+  const postMsUsername = createPostMsUsername(app);
+  const deleteMsUsername = createDeleteMsUsername(app);
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-  api.post('/account/delete', ifNoUser401, deleteUserToken, postDeleteAccount);
+  api.post(
+    '/account/delete',
+    ifNoUser401,
+    deleteUserToken,
+    deleteMsUsername,
+    postDeleteAccount
+  );
   api.post(
     '/account/reset-progress',
     ifNoUser401,
     deleteUserToken,
+    deleteMsUsername,
     postResetProgress
   );
   api.post(
@@ -59,6 +70,14 @@ function bootUser(app) {
     ifNoUser401,
     deleteUserToken,
     deleteUserTokenResponse
+  );
+
+  api.post('/user/ms-username', ifNoUser401, postMsUsername);
+  api.delete(
+    '/user/ms-username',
+    ifNoUser401,
+    deleteMsUsername,
+    deleteMsUsernameResponse
   );
 
   app.use(api);
@@ -93,8 +112,89 @@ function deleteUserTokenResponse(req, res) {
   return res.send({ userToken: null });
 }
 
+function createPostMsUsername(app) {
+  const { MsUsername } = app.models;
+
+  return async function postMsUsername(req, res) {
+    // example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo
+    // the last part is the transcript ID
+    // the username is irrelevant, and retrieved from the MS API response
+
+    const { msTranscriptUrl } = req.body;
+
+    if (!msTranscriptUrl) {
+      return res
+        .status(400)
+        .send('Please include a Microsoft transcript URL in request');
+    }
+
+    const msTranscriptId = msTranscriptUrl.split('/').pop();
+    const msTranscriptApiUrl = `https://learn.microsoft.com/api/profiles/transcript/share/${msTranscriptId}`;
+
+    try {
+      const msApiRes = await fetch(msTranscriptApiUrl);
+
+      if (!msApiRes.ok) {
+        res.status(500);
+        throw new Error(
+          'An error occurred trying to get your Microsoft transcript'
+        );
+      }
+
+      const { userName } = await msApiRes.json();
+
+      if (!userName) {
+        res.status(500);
+        throw new Error(
+          'An error occured trying to link your Microsoft account'
+        );
+      }
+
+      // Don't create if username is used by another fCC account
+      const usernameUsed = await MsUsername.findOne({
+        where: { msUsername: userName }
+      });
+
+      if (usernameUsed) {
+        throw new Error('That username is already used');
+      }
+
+      await MsUsername.destroyAll({ userId: req.user.id });
+
+      const ttl = 900 * 24 * 60 * 60 * 1000;
+      const newMsUsername = await MsUsername.create({
+        ttl,
+        userId: req.user.id,
+        msUsername: userName
+      });
+
+      if (!newMsUsername?.id) {
+        res.status(500);
+        throw new Error(
+          'An error occured trying to link your Microsoft account'
+        );
+      }
+
+      return res.json({ msUsername: userName });
+    } catch (e) {
+      log(e);
+      return res.send(e.message);
+    }
+  };
+}
+
+function deleteMsUsernameResponse(req, res) {
+  if (!req.msUsernameDeleted) {
+    return res
+      .status(500)
+      .send('An error occurred trying to unlink your Microsoft username');
+  }
+
+  return res.send({ msUsername: null });
+}
+
 function createReadSessionUser(app) {
-  const { UserToken } = app.models;
+  const { MsUsername, UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
@@ -109,6 +209,20 @@ function createReadSessionUser(app) {
         : null;
 
       encodedUserToken = userToken ? encodeUserToken(userToken.id) : undefined;
+    } catch (e) {
+      return next(e);
+    }
+
+    let msUsername;
+    try {
+      const userId = queryUser?.id;
+      const msUser = userId
+        ? await MsUsername.findOne({
+            where: { userId }
+          })
+        : null;
+
+      msUsername = msUser ? msUser.msUsername : undefined;
     } catch (e) {
       return next(e);
     }
@@ -154,7 +268,8 @@ function createReadSessionUser(app) {
             isEmailVerified: !!user.emailVerified,
             ...normaliseUserFields(user),
             joinDate: user.id.getTimestamp(),
-            userToken: encodedUserToken
+            userToken: encodedUserToken,
+            msUsername
           }
         },
         result: user.username
