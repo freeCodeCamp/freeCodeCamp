@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design Challenges",
+    "title": "Changamoto za Ubunifu wa Wavuti Sikivu",
     "intro": [
       "Katika Uthibitishaji huu wa Muundo Wa Wavuti Sikivu, utajifunza lugha ambazo watengenezaji wa tovuti hutumia kutengeneza kurasa za wavuti: HTML(Hypertext Markup Language) kwa ajili ya maudhui, na CSS (Cascading Style Sheets) kwa ajili ya muundo.",
       "Kwanza, utaunda programu ya picha ya paka ili kujifunza misingi ya HTML na CSS. Baadaye, utajifunza mbinu za kisasa kama vile vihifadhi vya CSS kwa kujenga pengwini, na mbinu bora za ufikivu kwa kuunda fomu ya wavuti.",
@@ -206,6 +206,10 @@
           "Kuchagua rangi zinazofaa kwa ukurasa wako wa tovuti kunaweza kuboresha pakubwa mvuto wa kupendeza kwa wasomaji wako.",
           "Katika kozi hii, utaunda seti ya alama za rangi. Utajifunza njia tofauti za kuweka thamani za rangi na jinsi ya kuunganisha rangi."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -944,12 +948,12 @@
         "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-working-with-text": {
-        "title": "Working with Text",
-        "intro": ["A description is to be determined"]
+        "title": "Kufanya kazi na maandishi",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-links-and-images": {
-        "title": "Links and Images",
-        "intro": ["A description is to be determined"]
+        "title": "Viungo na Picha",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-build-a-recipe-project": {
         "title": "Jifunze Misingi ya HTML kwa Kuunda Ukurasa wa Mapishi",
@@ -968,8 +972,8 @@
         "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-the-box-model": {
-        "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Box Model",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       }
     }
   },
@@ -1019,7 +1023,7 @@
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
       "Kufikia mwisho wa kozi hii, utakuwa umepata ujuzi wa vitendo na ujuzi unaohitajika ili kutumia C# kwa ujasiri kwa ajili ya kujenga matumizi thabiti na yenye hatari"
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Kumbuka: Ni lazima ukamilishe changamoto ya kombe katika kila sehemu iliyo hapa chini ili ufuzu kwa mtihani wa uidhinishaji.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Andika Msimbo wako wa Kwanza kwa kutumia C#",
@@ -1066,16 +1070,16 @@
     }
   },
   "upcoming-python": {
-    "title": "Upcoming Python",
-    "intro": ["placeholder"],
+    "title": "Inayokuja Python",
+    "intro": ["kishika nafasi"],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
+        "title": "Jifunze Python kwa Kuunda Mchezo wa Blackjack",
+        "intro": ["Jifunze Python.", ""]
       },
       "upcoming-python-project": {
-        "title": "Upcoming Python Project",
-        "intro": ["placeholder"]
+        "title": "Mradi ujao wa Python",
+        "intro": ["kishika nafasi"]
       }
     }
   },

@@ -60,7 +60,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Diseño Web Responsivo",
     "intro": [
       "En esta certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS, mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un sitio de cuestionarios.",
@@ -206,6 +206,10 @@
           "Seleccionar los colores correctos para tu página web puede mejorar enormemente el atractivo estético para tus lectores.",
           "En este curso, construirás un conjunto de marcadores de color. Aprenderás diferentes maneras de establecer valores de color y cómo combinar colores entre sí."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -330,7 +334,7 @@
         "intro": ["", ""]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Aprende métodos en JavaScript moderno para crear tarjetas de equipos de fútbol",
         "intro": ["", ""]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -338,19 +342,19 @@
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Learn Data Structures By Building A Shopping Cart",
+        "title": "Aprenda estructuras de datos construyendo un carrito de compras",
         "intro": ["", ""]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Aprender Fetch y Promesas construyendo una página de autores de fCC",
         "intro": ["", ""]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "Aprenda expresiones regulares mediante la creación de un filtro de spam",
         "intro": ["", ""]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Aprende el pensamiento algorítmico básico construyendo un ordenador de números",
         "intro": ["", ""]
       }
     }
@@ -458,7 +462,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "Base de datos Relacionales",
     "intro": [
       "Para estos cursos, usarás herramientas reales de desarrollador y software incluyendo código VS, PostgreSQL, y la línea de comandos Linux / Unix para completar tutoriales interactivos y construir proyectos.",
       "Estos cursos empiezan con comandos básicos de Base. Utilizando la terminal, aprenderá todo, desde navegar y manipular un sistema de archivos, programar en Bash, hasta el uso avanzado.",
@@ -956,20 +960,20 @@
         "intro": ["Una descripción debe ser determinada"]
       },
       "top-learn-css-foundations": {
-        "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Aprenda fundamentos en CSS",
+        "intro": ["Una descripción por determinar"]
       },
       "top-learn-css-foundations-projects": {
-        "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "title": "Aprenda Fundamentos de Proyectos en CSS",
+        "intro": ["Una descripción por determinar"]
       },
       "top-learn-css-specificity": {
-        "title": "Learn CSS Specificity",
-        "intro": ["A description is to be determined"]
+        "title": "Aprende Especificidad en CSS",
+        "intro": ["Una descripción debe ser determinada"]
       },
       "top-the-box-model": {
         "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "intro": ["Una descripción por determinar"]
       }
     }
   },
@@ -1005,36 +1009,36 @@
         ]
       },
       "project-euler-problems-401-to-480": {
-        "title": "Project Euler Problems 401 to 480",
+        "title": "Proyecto Euler Problemas 401 a 480",
         "intro": [
-          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+          "En este último conjunto de desafíos, necesitarás aprovechar todo lo que aprendiste hasta este punto y utilizar conceptos avanzados como divisores unitarios, la rutina de Kaprekar y mucho más para resolver estos problemas complejos."
         ]
       }
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "C# básico con Microsoft",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "Este curso ofrece una introducción completa a la programación en C#, abarcando sus conceptos básicos, sintaxis y aplicación práctica en el desarrollo de software.",
+      "A través de ejercicios prácticos y proyectos, aprenderá los fundamentos de C#, incluyendo variables, tipos de datos, estructuras de control y principios de programación orientados a objetos.",
+      "Al terminar este curso, habras ganado las habilidades prácticas y el conocimiento necesario para aprovechar C#, construyendo aplicaciones robustas y escalables con confianza"
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Nota: Debes completar el desafío de trofeos en cada una de las siguientes secciones para calificar para el examen de certificación.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "Escribe tu primer código usando C#",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "Comienza tu viaje aprendiendo a escribir tu primer codigo usando C#. Desarrolla una base sólida mientras exploras los fundamentos y el sintaxis del lenguaje, establecido el escenario para tus aventuras de programación."
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "Crea y Ejecuta Aplicaciones de Consola Simples en C#",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "Domina el arte de crear y ejecutar aplicaciones simples de consola en C#. Sumérgete en el mundo de programación basada en la consola, donde ganaras experiencia práctica ejecutando tu codigo y viéndolo en acción."
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "Añadir Logica a Aplicaciones de Consola en C#",
         "intro": [
           "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
         ]
@@ -1060,7 +1064,7 @@
       "foundational-c-sharp-with-microsoft-certification-exam": {
         "title": "Foundational C# with Microsoft Certification Exam",
         "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+          "Utiliza lo que has aprendido para aprobar el examen y obtener tu Certificación Fundacional de C# con Microsoft"
         ]
       }
     }
@@ -1080,12 +1084,12 @@
     }
   },
   "example-certification": {
-    "title": "Example Certification",
-    "intro": ["placeholder"],
+    "title": "Ejemplo de certificación",
+    "intro": ["marcador de posición"],
     "blocks": {
       "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+        "title": "Ejemplo de examen de certificación",
+        "intro": ["marcador de posición"]
       }
     }
   },
@@ -1099,8 +1103,8 @@
     "legacy-header": "Cursos Antiguos",
     "legacy-desc": "Estos cursos ya no forman parte de la ruta de certificación, pero todavía están disponibles para tu aprendizaje.",
     "legacy-go-back": "Ve a la versión actual del plan de estudios.",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
+    "course-maintenance": "Estos cursos están en mantenimiento. Si no funcionan, puede aprender a ejecutarlos localmente en <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "Su progreso no se guardará en su cuenta de FreeCodeCamp cuando los ejecute localmente.",
     "go-back-to-learn": "Volver a la versión estable del currículum.",
     "read-database-cert-article": "Por favor, lea este post del foro antes de continuar.",
     "enable-cookies": "Debes habilitar las cookies de terceros antes de comenzar.",

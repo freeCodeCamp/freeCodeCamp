@@ -21,7 +21,7 @@ let ourRegex = /expressions/;
 ourStr.match(ourRegex);
 ```
 
-У цьому випадку перший збіг (`match`) поверне `["Hello"]`, а другий — `["expressions"]`.
+У цьому випадку перший `match` поверне `["Hello"]`, а другий — `["expressions"]`.
 
 Зверніть увагу, що синтаксис `.match` є протилежним до методу `.test`, яким ви користувались дотепер:
 

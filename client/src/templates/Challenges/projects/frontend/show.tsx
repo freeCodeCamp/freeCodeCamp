@@ -1,4 +1,4 @@
-import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
@@ -27,6 +28,7 @@ import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
+import { challengeTypes } from '../../../../../../config/challenge-types';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -169,7 +171,7 @@ class Project extends Component<ProjectProps> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -190,16 +192,18 @@ class Project extends Component<ProjectProps> {
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
+                {challengeType !== challengeTypes.msTrophyUrl && (
+                  <ProjectToolPanel
+                    guideUrl={getGuideUrl({ forumTopicId, title })}
+                  />
+                )}
                 <br />
                 <Spacer size='medium' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

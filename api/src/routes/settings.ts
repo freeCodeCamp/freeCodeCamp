@@ -1,5 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import badWordsFilter from 'bad-words';
+import { isProfane } from 'no-profanity';
 import { isValidUsername } from '../../../utils/validate';
 // we have to use this file as JavaScript because it is used by the old api.
 import { blocklistedUsernames } from '../../../config/constants.js';
@@ -181,7 +181,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        const isProfane = new badWordsFilter().isProfane(newUsername);
+        const isUserNameProfane = isProfane(newUsername);
         const onBlocklist = blocklistedUsernames.includes(newUsername);
 
         const usernameTaken =
@@ -191,7 +191,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
                 where: { username: newUsername }
               });
 
-        if (usernameTaken || isProfane || onBlocklist) {
+        if (usernameTaken || isUserNameProfane || onBlocklist) {
           void reply.code(400);
           return {
             message: 'flash.username-taken',

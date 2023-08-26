@@ -17,7 +17,7 @@ For the sequence $x_i$ the following recursion is given:
 
 It can be seen that eventually there will be an index $N$ such that $x_i = 2^{32} - 1$ (a bit-pattern of all ones) for all $i ≥ N$.
 
-Find the expected value of $N$. Відповідь закругліть до десяти цифр після коми.
+Find the expected value of $N$. Дайте відповідь, заокруглену до десяти знаків після коми.
 
 # --hints--
 

@@ -1,43 +1,43 @@
 ---
 id: 64a5529c02815a7d323aab88
-title: The Box Model Question A
+title: Блокова модель. Запитання A
 challengeType: 15
 dashedName: the-box-model-question-a
 ---
 
 # --description--
 
-Being able to inspect and debug your HTML and CSS is critical to frontend development. This lesson will take us through the Chrome Dev Tools, which allow you to see detailed information about your elements and CSS rules, as well as assist you in finding and fixing problems in your code.
+Для фронтенду важливо вміти оглядати та налагоджувати HTML й CSS. У цьому уроці ми пройдемось по інструментах веброзробника Chrome, які дозволяють отримати детальну інформацію про елементи та правила CSS, а також допомагають зі знаходженням та налагодженням помилок у коді.
 
-To open up the inspector, you can right-click on any element of a webpage and click “Inspect” or press F12. Go ahead and do that right now to see the HTML and CSS used on this page.
+Щоб відкрити інспектора, натисніть правою кнопкою миші на будь-якому елементі вебсторінки та оберіть «Перевірити» або натисніть F12. Зробіть так прямо зараз, щоб дізнатись застосовані до цієї сторінки HTML та CSS.
 
-Don’t get overwhelmed with all the tools you’re now seeing! For this lesson, we want to focus on the Elements and Styles panes.
+Не лякайтесь всіх побачених інструментів! У цьому уроці ми фокусуватимемось на панелях елементів та стилів.
 
 # --question--
 
 ## --assignment--
 
-Play around with Chrome Dev Tools and see if you can answer the following question.
+Розгляньте інструменти веброзробника Chrome та дізнайтесь, чи зможете відповісти на запитання.
 
 ## --text--
 
-Which panes should you focus on in the Chrome Dev Tools for inspecting and debugging HTML and CSS?
+На яких панелях в інструментах веброзробника Chrome варто фокусуватись при огляді та налагодженні HTML й CSS?
 
 ## --answers--
 
-Console and Network
+Консоль та мережа
 
 ---
 
-Elements and Styles
+Елементи та стилі
 
 ---
 
-Sources and Application
+Джерела та додаток
 
 ---
 
-Performance and Memory
+Ефективність та пам’ять
 
 
 ## --video-solution--

@@ -7,40 +7,41 @@ dashedName: build-a-random-quote-machine
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objetivo:** Construye una aplicación que sea funcionalmente similar a esta: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
 
-Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux y jQuery para completar este proyecto. Debes usar un framework frontend (como React por ejemplo), ya que esta sección trata sobre el aprendizaje de frameworks frontend. No se recomienda utilizar tecnologías adicionales que no estén enlistadas, su utilización corre bajo tu propio riesgo. Estamos buscando apoyar otros frameworks de frontend como Angular y Vue, pero actualmente no están soportados. Aceptaremos e intentaremos arreglar todos los informes de problemas que utilicen el stack de tecnologías sugeridas para este proyecto. ¡Feliz día programando!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**Historia de usuario #1:** Puedo ver un elemento contenedor con un archivo `id="quote-box"`.
+**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
 
-**Historia de usuario #2:** Dentro de `#quote-box`, puedo ver un elemento con su correspondiente `id="text"`.
+**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
 
-**Historia de usuario #3:** Dentro de `#quote-box`, puedo ver un elemento con su correspondiente `id="author"`.
+**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
 
-**Historia de usuario #4:** Dentro de `#quote-box`, puedo ver un elemento en el que se puede hacer clic con su correspondiente `id="new-quote"`.
+**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
 
-**Historia de usuario #5:** Dentro de `#quote-box`, puedo ver un elemento clickeable `a` con su correspondiente `id="tweet-quote"`.
+**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
 
-**Historia de usuario #6:** En la primer carga, mi máquina de frases muestra una frase aleatoria en el elemento con `id="text"`.
+**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
 
-**Historia de usuario #7:**En el primer cargado, mi máquina de frases muestra al autor de la frase aleatoria en el elemento con `id="author"`.
+**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
 
-**Historia de usuario #8:** Cuando se hace clic en el botón `#new-quote`, mi máquina de frases debe buscar una nueva frase y mostrarla en el elemento `#text`.
+**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
 
-**Historia de usuario #9:** Mi máquina de frases debe buscar al autor de la nueva frase cuando se hace clic en el botón `#new-quote` y mostrarlo en el elemento `#author`.
+**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
 
-**Historia de usuario #10:** Puedo tuitear la frase actual haciendo clic en `#tweet-quote` del elemento `a`. Este elemento `a` debe incluir la ruta `"twitter.com/intent/tweet"` en su atributo `href` para tuitear la frase actual.
+**User Story #10:** I can tweet the current quote by clicking on the `#tweet-quote` `a` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
 
-**Historia de usuario #11:** El elemento contenedor `#quote-box` debe estar centrado horizontalmente. Ejecuta las pruebas con el nivel de zoom del navegador al 100% y la página maximizada.
+**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-Puedes construir tu proyecto utilizando <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow"> esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio proyecto CodePen. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Una vez que hayas terminado, envía la URL de tu proyecto funcional con todas las pruebas pasadas.
+Once you're done, submit the URL to your working project with all its tests passing.
 
-**Nota:** Twitter no permite que se carguen enlaces en un iframe. Intenta usar el atributo `target="_blank"` o `target="_top"` en el elemento `#tweet-quote` si tu tweet no se carga. `target="_top"` reemplazará la pestaña actual, así que asegúrate de que tu trabajo esté guardado.
+**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
 
 # --solutions--
 

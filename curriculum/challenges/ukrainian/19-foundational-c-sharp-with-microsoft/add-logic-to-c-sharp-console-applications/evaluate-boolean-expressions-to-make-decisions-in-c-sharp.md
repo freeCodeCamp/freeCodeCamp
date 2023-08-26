@@ -1,22 +1,22 @@
 ---
 id: 647e21708acb466c97ccbee3
-title: 'Evaluate Boolean Expressions to Make Decisions in C#'
+title: 'Оцініть булеві вирази, щоб прийняти рішення в C#'
 challengeType: 19
 dashedName: evaluate-boolean-expressions-to-make-decisions-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-evaluate-boolean-expressions/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-evaluate-boolean-expressions/</a> and complete all the tasks for the "Evaluate Boolean Expressions to Make Decisions in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-evaluate-boolean-expressions/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-evaluate-boolean-expressions/</a> та виконайте всі завдання модуля «Оцініть булеві вирази, щоб прийняти рішення в C#». Це обов’язково, щоб отримати трофей «Додавання логіки до консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following lines of code is a valid use of the conditional operator?
+Для чого можна використати умовний оператор?
 
 ## --answers--
 

@@ -80,7 +80,10 @@
     "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Finish the exam",
+    "finish": "Finish",
     "submit-exam-results": "Submit my results"
   },
   "landing": {
@@ -89,6 +92,7 @@
     "big-heading-3": "獲得認證",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "媒體報道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -203,6 +207,7 @@
       "project-name": "項目名稱",
       "solution": "解決方案",
       "solution-for": "{{projectTitle}} 的解決方案",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "我的個人資料",
       "my-name": "我的姓名",
       "my-location": "我的位置",
@@ -353,6 +358,7 @@
     "console-output": "// 打印輸出",
     "sign-in-save": "登錄以保存你的學習進度",
     "download-solution": "下載我的解決方案",
+    "download-results": "Download my results",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 認證項目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
@@ -403,9 +409,31 @@
     "if-getting-value": "如果你從 freeCodeCamp 中獲益良多，可以捐款支持我們的慈善組織的使命。",
     "building-a-university": "我們正在創建一個免費計算機科學大學學位課程",
     "if-help-university": "我們已取得了重大進展。請支持我們的慈善組織完成這項長期事業。",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "支持我們的慈善組織",
@@ -665,7 +693,8 @@
     "code-save-less": "等等！你的代碼未保存，請在幾秒鐘後重試。",
     "challenge-save-too-big": "抱歉，你無法保存代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
     "challenge-submit-too-big": "抱歉，你無法提交代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
-    "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。"
+    "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",

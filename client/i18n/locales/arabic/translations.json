@@ -80,7 +80,10 @@
     "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Finish the exam",
+    "finish": "Finish",
     "submit-exam-results": "Submit my results"
   },
   "landing": {
@@ -89,6 +92,7 @@
     "big-heading-3": "احصل على الشهادات.",
     "h2-heading": "منذ عام 2014، حصل أكثر من 40,000 من خريجي freeCodeCamp.org على وظائف في شركات تكنولوجية منها:",
     "hero-img-description": "طلاب freeCodeCamp في مجموعة دراسية محلية في كوريا الجنوبية.",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "كما رأينا في:",
     "testimonials": {
       "heading": "إليك ما يقوله خريجونا عن freeCodeCamp:",
@@ -203,6 +207,7 @@
       "project-name": "اسم المشروع",
       "solution": "الحل",
       "solution-for": "حل لـ {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "ملفي الشخصي",
       "my-name": "اسمي",
       "my-location": "موقعي",
@@ -353,6 +358,7 @@
     "console-output": "// إخراج وحدة التحكم",
     "sign-in-save": "قم بتسجيل الدخول لحفظ تقدّمك",
     "download-solution": "تنزيل الحل",
+    "download-results": "Download my results",
     "percent-complete": "{{percent}}% مكتمل",
     "project-complete": "أكملت {{completedChallengesInBlock}} من {{totalChallengesInBlock}} مشروعات الشهادات",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
@@ -403,9 +409,31 @@
     "if-getting-value": "إذا أفادك freeCodeCamp بشكل مثمر، يمكنك تتبرع دعما لرسالتنا التطوعية حتي يستمر مهمتنا.",
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
     "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "ادعم مؤسستنا الخيرية",
@@ -665,7 +693,8 @@
     "code-save-less": "أبطئ! لم يتم حفظ كودك, حاول مرة أخرى في بضع ثوان.",
     "challenge-save-too-big": "عذراً، لا يمكنك حفظ كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
     "challenge-submit-too-big": "عذراً، لا يمكنك إرسال كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
-    "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح."
+    "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "هناك حد أقصى 288 حرفاً، لديك {{charsLeft}} متبقية",

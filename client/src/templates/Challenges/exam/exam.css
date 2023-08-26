@@ -1,4 +1,5 @@
-.exam-wrapper {
+.exam-wrapper,
+.exam-results-wrapper {
   margin-top: 60px;
   padding: 25px;
   background-color: var(--primary-background);
@@ -6,12 +7,14 @@
 }
 
 @media (max-width: 600px) {
-  .exam-wrapper {
+  .exam-wrapper,
+  .exam-results-wrapper {
     margin-top: 80px;
   }
 }
 
-.exam-header {
+.exam-header,
+.exam-results-header {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -28,10 +31,28 @@
 
 .exam-answer-label {
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 15px;
   padding: 20px;
   cursor: pointer;
   font-weight: normal;
+}
+
+.exam-answer-label > .line-numbers,
+.exam-questions > .line-numbers {
+  display: inline-block;
+}
+
+.exam-answers pre,
+.exam-questions pre {
+  color: var(--tertiary-color);
+  border: 1px solid var(--secondary-color);
+  background-color: var(--quaternary-background);
+  padding: 10px;
+}
+
+.exam-answer-label p {
+  margin: 0;
 }
 
 .exam-answer-input-hidden {
@@ -74,17 +95,11 @@
   max-width: 40%;
 }
 
-.exam-result {
-  display: flex;
+.exam-results-message {
+  text-align: center;
 }
 
-.exam-result-icon > svg {
-  width: 40px;
-  height: 40px;
-}
-
-.exam-result-questions {
+.exam-results {
   display: flex;
-  flex-direction: column;
-  padding-inline-start: 30px;
+  justify-content: space-evenly;
 }

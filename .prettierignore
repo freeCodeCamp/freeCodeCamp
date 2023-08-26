@@ -18,9 +18,11 @@ utils/get-lines.js
 utils/get-lines.test.js
 utils/validate.js
 utils/validate.test.js
+utils/is-audited.js
 pnpm-lock.yaml
 web/.next
 curriculum-server/data/curriculum.json
 docs/**/*.md
 client/src/components/Donation/types.js
 tools/ui-components/dist
+tools/ui-components/types

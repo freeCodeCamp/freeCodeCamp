@@ -14,7 +14,7 @@ Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
 Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
 
-Give your answer rounded to 12 places behind the decimal point.
+Дайте відповідь, заокруглену до дванадцяти знаків після коми.
 
 # --hints--
 

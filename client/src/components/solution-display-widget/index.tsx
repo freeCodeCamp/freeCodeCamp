@@ -14,6 +14,7 @@ interface Props {
   projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
+  showExamResults?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
@@ -23,6 +24,7 @@ export function SolutionDisplayWidget({
   projectTitle,
   showUserCode,
   showProjectPreview,
+  showExamResults,
   displayContext
 }: Props): JSX.Element | null {
   const { id, solution, githubLink } = completedChallenge;
@@ -178,6 +180,20 @@ export function SolutionDisplayWidget({
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
+  const ShowExamResults = (
+    <Button
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      data-cy={dataCy}
+      onClick={showExamResults}
+    >
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.results-for', { projectTitle })}
+      </span>
+    </Button>
+  );
   const MissingSolutionComponent =
     displayContext === 'settings' ? (
       <>{t('certification.project.no-solution')}</>
@@ -190,6 +206,7 @@ export function SolutionDisplayWidget({
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
+          showExamResults: ShowExamResults,
           none: MissingSolutionComponentForCertification
         }
       : {
@@ -197,6 +214,7 @@ export function SolutionDisplayWidget({
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
+          showExamResults: ShowExamResults,
           none: MissingSolutionComponent
         };
 

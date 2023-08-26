@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom", "ES2017"],
+    "types": ["@playwright/test", "node"]
+  },
+  "extends": "../tsconfig-base.json"
+}
