@@ -1,5 +1,5 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';

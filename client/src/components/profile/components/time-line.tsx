@@ -14,6 +14,7 @@ import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
@@ -49,6 +50,7 @@ interface TimelineInnerProps extends TimelineProps {
 interface NameMap {
   challengeTitle: string;
   challengePath: string;
+  certPath: string;
 }
 
 function TimelineInner({
@@ -77,6 +79,14 @@ function TimelineInner({
       idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
     );
     openModal('projectPreview');
+  }
+
+  function viewExamResults(completedChallenge: CompletedChallenge): void {
+    setCompletedChallenge(completedChallenge);
+    setProjectTitle(
+      idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
+    );
+    openModal('examResults');
   }
 
   function closeSolution(): void {
@@ -108,29 +118,31 @@ function TimelineInner({
         projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
+        showExamResults={() => viewExamResults(completedChallenge)}
         displayContext='timeline'
       ></SolutionDisplayWidget>
     );
   }
 
-  function renderCompletion(completed: CompletedChallenge): JSX.Element {
+  function renderCompletion(completed: CompletedChallenge) {
     const { id } = completed;
+    const challenge = idToNameMap.get(id);
+    if (!challenge) return;
+    const { challengeTitle, challengePath, certPath } = challenge;
     const completedDate = new Date(completed.completedDate);
-    // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
         <td>
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              to={`/certification/${username}/${certPath as string}`}
+              to={`/certification/${username}/${certPath}`}
             >
               {challengeTitle}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
         <td>{renderViewButton(completed)}</td>
@@ -222,6 +234,10 @@ function TimelineInner({
         closeText={t('buttons.close')}
         previewTitle={projectTitle}
         showProjectPreview={true}
+      />
+      <ExamResultsModal
+        projectTitle={projectTitle}
+        examResults={completedChallenge?.examResults}
       />
     </FullWidthRow>
   );

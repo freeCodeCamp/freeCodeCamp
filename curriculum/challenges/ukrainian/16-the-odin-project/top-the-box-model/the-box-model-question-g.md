@@ -1,50 +1,50 @@
 ---
 id: 64a6702e7a7d00f97013ed0e
-title: The Box Model Question G
+title: Блокова модель. Запитання G
 challengeType: 15
 dashedName: the-box-model-question-g
 --- 
 # --description--
 
-![lines](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/odin-lined.png)
+![лінії](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/odin-lined.png)
 
-OK, so there might be some circles in the above image… but when it comes to layout, they fit together like rectangular boxes and not circles. In the end, laying out a webpage and positioning all its elements is deciding how you are going to nest and stack these boxes.
+У зображені вище можуть бути кружечки… Але коли мова йде про макети, все сходиться як прямокутні блоки, а не кружечки. Зрештою, розміщення всіх елементів на вебсторінці вирішує, як ви вкладатимете та складатимете ці блоки.
 
-The only real complication here is that there are many ways to manipulate the size of these boxes, and the space between them, using padding, margin, and border. But to sum it up briefly:
+Єдине ускладнення в тому, що існує багато способів маніпулювати розмірами блоків та простором між ними за допомогою відступів, полів та кордонів. Якщо коротко підсумувати:
 
-- `padding` increases the space between the border of a box and the content of the box.
-- `margin` increases the space between the borders of a box and the borders of adjacent boxes.
-- `border` adds space (even if it’s only a pixel or two) between the margin and the padding.
+- `padding` (відступ) збільшує простір між кордоном та вмістом блоку.
+- `margin` (поле) збільшує простір між кордонами суміжних блоків.
+- `border` (кордон) додає простір між відступом та полем, навіть якщо це лише один піксель.
 
-Be sure to study the diagrams carefully.
+Обов’язково розглядайте картинки.
 
-![the box model](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
+![блокова модель](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
 
 # --question--
 
 ## --assignment--
 
-Add a border to every element on the page and see how the boxes are laid out.
+Додайте кордон до кожного елемента на сторінці та подивіться, як розміщені блоки.
 
 ## --text--
 
-From inside to outside, what is the order of box-model properties?
+Який порядок властивостей блокової моделі від середини до зовні?
 
 ## --answers--
 
-Content, Margin, Padding, Border
+Вміст, поле, відступ, кордон
 
 ---
 
-Margin, Padding, Content, Border
+Поле, відступ, вміст, кордон
 
 ---
 
-Content, Padding, Border, Margin
+Вміст, відступ, кордон, поле
 
 ---
 
-Padding, Content, Border, Margin
+Відступ, вміст, кордон, поле
 
 
 ## --video-solution--

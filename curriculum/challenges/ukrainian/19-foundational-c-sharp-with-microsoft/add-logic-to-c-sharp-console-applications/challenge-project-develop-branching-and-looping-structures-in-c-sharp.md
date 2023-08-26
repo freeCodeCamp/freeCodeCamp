@@ -1,34 +1,34 @@
 ---
 id: 647e21598acb466c97ccbee1
-title: 'Challenge Project - Develop Branching and Looping Structures in C#'
+title: 'Проєкт завдання: розробіть гілкові та циклові структури в C#'
 challengeType: 19
 dashedName: challenge-project-develop-branching-and-looping-structures-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/</a> and complete all the tasks for the "Challenge Project - Develop Branching and Looping Structures in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/</a> та виконайте всі завдання модуля «Проєкт завдання: розробіть гілкові та циклові структури в C#». Це обов’язково, щоб отримати трофей «Додавання логіки до консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?
+Розробнику потрібно створити інструкцію ітерації. У якому випадку краще використати інструкцію `while`, а не `do`?
 
 ## --answers--
 
-When the expression values evaluated by the iteration statement are unknown prior to the iteration code block.
+Коли значення виразу, обчислені інструкцією ітерації, невідомі перед блоком коду ітерації.
 
 ---
 
-When the expression values evaluated by the iteration statement are known prior to the iteration code block.
+Коли значення виразу, обчислені інструкцією ітерації, відомі перед блоком коду ітерації.
 
 ---
 
-When the developer creates nested `do` or `while` loops.
+Коли розробник створює вкладені цикли `do` або `while`.
 
 ## --video-solution--
 

@@ -1,14 +1,14 @@
 ---
 id: 64a66c917a7d00f97013ed0d
-title: The Box Model Question F
+title: Блокова модель. Запитання F
 challengeType: 15
 dashedName: the-box-model-question-f
 --- 
 # --description--
 
-The first important concept that you need to understand to be successful in CSS is the box model. It isn’t complicated, but skipping over it now will cause you much frustration down the line.
+Щоб бути успішним у CSS, для початку потрібно знати про блокову модель. Це не складно, але якщо пропустити це поняття — пізніше буде складніше.
 
-Every single thing on a webpage is a rectangular box. These boxes can have other boxes in them and can sit alongside one another. You can get a rough idea of how this works by sticking a border on every item on the page like this:
+Будь-що на вебсторінці є прямокутним блоком. Ці блоки можуть містити інші блоки, а також можуть знаходитись поруч. Щоб краще розібратись з цим, додайте кордон до кожного елемента вебсторінки:
 
 ```css
 * {
@@ -21,27 +21,27 @@ Every single thing on a webpage is a rectangular box. These boxes can have other
 
 ## --assignment--
 
-Add a border to every element on the page and see how the boxes are laid out.
+Додайте кордон до кожного елемента на сторінці та подивіться, як розміщені блоки.
 
 ## --text--
 
-What is the fundamental concept in CSS that helps you understand the structure of elements as rectangular boxes?
+Яке основне поняття у CSS дозволяє зрозуміти структуру елементів як прямокутних блоків?
 
 ## --answers--
 
-Box-sizing
+Розмір блоку
 
 ---
 
-Box-shadow
+Тінь блоку
 
 ---
 
-Box model
+Блокова модель
 
 ---
 
-Border-box
+Кордон блоку
 
 
 ## --video-solution--

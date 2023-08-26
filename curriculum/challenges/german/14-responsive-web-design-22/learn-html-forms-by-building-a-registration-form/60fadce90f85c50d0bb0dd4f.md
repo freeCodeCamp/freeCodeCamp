@@ -7,11 +7,11 @@ dashedName: step-46
 
 # --description--
 
-To give the `fieldset` elements a bit of separation, select them and give them a `border-bottom` of `3px solid #3b3b4f`.
+Um den `fieldset`-Elementen ein wenig Abstand zu geben, wähle sie aus und gib ihnen einen `border-bottom` von `3px solid #3b3b4f`.
 
 # --hints--
 
-You should give the `fieldset` elements a `border-bottom` of `3px solid #3b3b4f`.
+Du solltest den `fieldset`-Elementen einen `border-bottom` von `3px solid #3b3b4f` geben.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');

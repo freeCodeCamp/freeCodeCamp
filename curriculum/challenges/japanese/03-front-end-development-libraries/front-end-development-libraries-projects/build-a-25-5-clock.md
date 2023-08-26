@@ -8,71 +8,73 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のアレンジを加えましょう。
+**Objective:** Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングの成功を祈ります！
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**ユーザーストーリー 1:** 文字列 ("Break Length" など) が含まれている `id="break-label"` を持つ要素を表示できます。
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**ユーザーストーリー 2:** 文字列 ("Session Length" など) が含まれている `id="session-label"` を持つ要素を表示できます。
+**User Story #1:** I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
 
-**ユーザー ストーリー 3:** 対応する ID (`id="break-decrement"` と `id="session-decrement"`) を持つクリック可能な要素を 2 つ表示できます。
+**User Story #2:** I can see an element with `id="session-label"` that contains a string (e.g. "Session Length").
 
-**ユーザー ストーリー 4:** 対応する ID (`id="break-increment"` と `id="session-increment"`) を持つクリック可能な要素を 2 つ表示できます。
+**User Story #3:** I can see two clickable elements with corresponding IDs: `id="break-decrement"` and `id="session-decrement"`.
 
-**ユーザー ストーリー 5:** 対応する `id="break-length"` を持ち、デフォルトで (読み込み時に) 値 5 を表示する要素を表示できます。
+**User Story #4:** I can see two clickable elements with corresponding IDs: `id="break-increment"` and `id="session-increment"`.
 
-**ユーザー ストーリー 6:** 対応する `id="session-length"` を持ち、デフォルトで値 25 を表示する要素を表示できます。
+**User Story #5:** I can see an element with a corresponding `id="break-length"`, which by default (on load) displays a value of 5.
 
-**ユーザー ストーリー 7:** 対応する `id="timer-label"` を持ち、セッションの初期化を示す文字列 ("Session" など) が含まれている要素を表示できます。
+**User Story #6:** I can see an element with a corresponding `id="session-length"`, which by default displays a value of 25.
 
-**ユーザー ストーリー 8:** 対応する `id="time-left"` を持つ要素を表示できます。 注: 一時停止中または実行中は、このフィールドの値を `mm:ss` 形式で常に表示します (例: 25:00)。
+**User Story #7:** I can see an element with a corresponding `id="timer-label"`, that contains a string indicating a session is initialized (e.g. "Session").
 
-**ユーザーストーリー 9:** 対応する `id="start_stop"` を持つクリック可能な要素を表示できます。
+**User Story #8:** I can see an element with corresponding `id="time-left"`. NOTE: Paused or running, the value in this field should always be displayed in `mm:ss` format (i.e. 25:00).
 
-**ユーザーストーリー 10:** 対応する `id="reset"` を持つクリック可能な要素を表示できます。
+**User Story #9:** I can see a clickable element with a corresponding `id="start_stop"`.
 
-**ユーザーストーリー 11:** ID が `reset` の要素をクリックすると、実行中のタイマーがすべて停止し、`id="break-length"` 内の値が `5` に戻り、`id="session-length"` の値が 25 に戻り、`id="time-left"` を持つ要素がデフォルトの状態にリセットされます。
+**User Story #10:** I can see a clickable element with a corresponding `id="reset"`.
 
-**ユーザーストーリー 12:** ID が `break-decrement` の要素をクリックすると、`id="break-length"` 内の値が 1 減り、値が更新されるのを確認できます。
+**User Story #11:** When I click the element with the id of `reset`, any running timer should be stopped, the value within `id="break-length"` should return to `5`, the value within `id="session-length"` should return to 25, and the element with `id="time-left"` should reset to its default state.
 
-**ユーザーストーリー 13:** ID が `break-increment` の要素をクリックすると、`id="break-length"` 内の値が 1 増え、値が更新されるのを確認できます。
+**User Story #12:** When I click the element with the id of `break-decrement`, the value within `id="break-length"` decrements by a value of 1, and I can see the updated value.
 
-**ユーザーストーリー 14:** ID が `session-decrement` の要素をクリックすると、`id="session-length"` 内の値が 1 減り、値が更新されるのを確認できます。
+**User Story #13:** When I click the element with the id of `break-increment`, the value within `id="break-length"` increments by a value of 1, and I can see the updated value.
 
-**ユーザーストーリー 15:** ID が `session-increment` の要素をクリックすると、`id="session-length"` 内の値が 1 増え、値が更新されるのを確認できます。
+**User Story #14:** When I click the element with the id of `session-decrement`, the value within `id="session-length"` decrements by a value of 1, and I can see the updated value.
 
-**ユーザーストーリー 16:** セッションまたはブレイクの長さを 0 以下に設定できないようにします。
+**User Story #15:** When I click the element with the id of `session-increment`, the value within `id="session-length"` increments by a value of 1, and I can see the updated value.
 
-**ユーザーストーリー 17:** セッションまたはブレイクの長さを 60 を超えて設定できないようにします。
+**User Story #16:** I should not be able to set a session or break length to &lt;= 0.
 
-**ユーザーストーリー 18:** `id="start_stop"` を持つ要素を初めてクリックすると、現在 `id="session-length"` に表示されている値から、たとえその値が元の値である 25 から増加または減少していても、タイマーの実行が開始されます。
+**User Story #17:** I should not be able to set a session or break length to > 60.
 
-**ユーザーストーリー 19:** タイマーが実行中の場合、ID が `time-left` の要素には残り時間が `mm:ss` 形式で表示されます (値が 1 だけ減り、1000ms ごとに表示が更新されます)。
+**User Story #18:** When I first click the element with `id="start_stop"`, the timer should begin running from the value currently displayed in `id="session-length"`, even if the value has been incremented or decremented from the original value of 25.
 
-**ユーザー ストーリー 20:** タイマーの実行中に、`id="start_stop"` を持つ要素をクリックすると、カウントダウンが一時停止します。
+**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
 
-**ユーザー ストーリー 21:** タイマーの一時停止中に、`id="start_stop"` を持つ要素をクリックすると、一時停止した時点からカウントダウンの実行が再開されます。
+**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
 
-**ユーザーストーリー 22:** セッションカウントダウンがゼロに達し (注: タイマーが 00:00 に達する必要があります)、新しいカウントダウンが開始されると、ID が `timer-label` の要素に、ブレイクが開始されたことを示す文字列が表示されます。
+**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
 
-**ユーザーストーリー 23:** セッションカウントダウンがゼロに達すると (注: タイマーが 00:00 に達する必要があります)、新しいブレイクカウントダウンが開始され、現在 `id="break-length"` の要素に表示されている値からカウントダウンします。
+**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
 
-**ユーザーストーリー 24:** ブレイクカウントダウンがゼロに達し (注: タイマーが 00:00 に達する必要があります)、新しいカウントダウンが開始されると、ID が `timer-label` の要素に、セッションが開始されたことを示す文字列が表示されます。
+**User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
 
-**ユーザーストーリー 25:** ブレイクカウントダウンがゼロに達すると (注: タイマーが 00:00 に達する必要があります)、新しいセッションカウントダウンが開始され、現在 `id="session-length"` の要素に表示されている値からカウントダウンします。
+**User Story #24:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a session has begun.
 
-**ユーザーストーリー 26:** カウントダウンがゼロに達すると (注: タイマーが 00:00 に達する必要があります)、時間切れになったことを示すサウンドが再生されます。 これには HTML5 の `audio` タグを使用し、対応する `id="beep"` を付けます。
+**User Story #25:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the `id="session-length"` element.
 
-**ユーザー ストーリー 27:** `id="beep"` を持つ audio 要素は 1 秒以上にする必要があります。
+**User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
 
-**ユーザーストーリー 28:** ID が `reset` の要素がクリックされたとき、ID が `beep` の audio 要素の再生を停止して、最初まで巻き戻す必要があります。
+**User Story #27:** The audio element with `id="beep"` must be 1 second or longer.
 
-<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+**User Story #28:** The audio element with id of `beep` must stop playing and be rewound to the beginning when the element with the id of `reset` is clicked.
 
-完了したら、すべてのテストが成功する状態の作業プロジェクトの URL を送信してください。
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

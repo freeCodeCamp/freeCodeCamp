@@ -7,40 +7,41 @@ dashedName: build-a-random-quote-machine
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**目標：** 構建一個應用，功能和 <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a> 類似。
+**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
 
-完成以下需求，並且通過所有測試。 可以使用你需要的任何庫或 API。 賦予它你自己的個人風格。
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 來完成這個挑戰。 但鑑於這個章節的學習內容與前端框架相關，推薦使用一款前端框架（比如 React）來完成這個挑戰；不推薦使用前面沒有提到的技術，否則風險自負。 不推薦使用前面沒有提到的技術，否則風險自擔。 我們有計劃新增其他前端框架課程，例如 Angular 和 Vue，不過目前還沒有這些內容。 我們會接受並嘗試修復你在使用推薦技術棧創建項目時報告的問題。 編碼愉快！
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：** 應該能看到一個具有 `id="quote-box"` 屬性的包裹元素。
+**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
 
-**需求 2：** 在 `#quote-box` 元素內，應該能看到一個具有 `id="text"` 屬性的元素。
+**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
 
-**需求 3：** 在 `#quote-box` 元素內，應該能看到一個具有 `id="author"` 屬性的元素。
+**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
 
-**需求 4：** 在 `#quote-box` 元素內，應該能看到一個具有 `id="new-quote"` 屬性的可點擊元素。
+**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
 
-**需求 5：** 在 `#quote-box` 元素內，應該能看到一個具有 `id="tweet-quote"` 屬性的可點擊 `a` 元素。
+**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
 
-**需求 6：** 首次加載時，App 應該在具有 `id="text"` 屬性的元素內展示一條隨機引語。
+**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
 
-**需求 7：** 首次加載時，App 應該在具有 `id="author"` 屬性的元素內展示該條隨機引語的作者。
+**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
 
-**需求 8：** 當點擊具有 `#new-quote` 屬性的按鈕時，App 應該得到一條新的引語並在具有 `#text` 屬性的元素內展示出來。
+**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
 
-**需求 9：** 當點擊具有 `#new-quote` 屬性的按鈕時，App 應該得到新引語的作者並在具有 `#author` 屬性的元素內展示出來。
+**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
 
-**需求 10：** 可以通過點擊具有 `#tweet-quote` 屬性的 `a` 標籤將當前引語發送到推特。 該 `a` 標籤的 `href` 屬性應該是 `"twitter.com/intent/tweet"`，以便成功發送。
+**User Story #10:** I can tweet the current quote by clicking on the `#tweet-quote` `a` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
 
-**需求 11：** 具有 `#quote-box` 屬性的包裹元素應該水平居中。 請在瀏覽器縮放尺寸爲 100% 且頁面窗口最大化時運行測試。
+**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">使用 CodePen 模版</a>創建你的新項目，點擊 `Save` 即可創建你的新項目。 或者可以在任何喜歡的環境中使用以下 CDN 鏈接來運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-一旦完成了本項目並且該項目所有測試運行通過，請提交項目的 URL。
+Once you're done, submit the URL to your working project with all its tests passing.
 
-**注意：** Twitter 不允許在 iframe 里加載鏈接。 如果 tweet 不能加載，嘗試在 `#tweet-quote` 元素上使用 `target="_blank"` 或者 `target="_top"` 屬性。 `target="_top"` 會替換當前 tab 頁的內容，所以確保當前內容已經保存了。
+**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
 
 # --solutions--
 

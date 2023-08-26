@@ -11,7 +11,8 @@ import {
   amountsConfig,
   durationsConfig,
   defaultDonation,
-  modalDefaultDonation
+  modalDefaultDonation,
+  type DonationConfig
 } from '../../../../config/donation-settings';
 import { defaultDonationFormState } from '../../redux';
 import { updateDonationFormState, postCharge } from '../../redux/actions';
@@ -35,8 +36,7 @@ import {
   PaymentContext,
   PostPayment,
   HandleAuthentication,
-  DonationApprovalData,
-  DonationConfig
+  DonationApprovalData
 } from './types';
 
 import './donation.css';

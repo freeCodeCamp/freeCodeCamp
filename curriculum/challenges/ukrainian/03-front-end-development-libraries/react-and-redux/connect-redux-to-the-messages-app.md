@@ -18,7 +18,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --hints--
 
-`AppWrapper` повинен відобразитися на сторінці.
+`AppWrapper` має відтворитись на сторінці.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-Компонент `Presentational` повинен відобразитися на сторінці.
+Компонент `Presentational` має відтворитись на сторінці.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Компонент `Presentational` повинен відобразити елементи `h2`, `input`, `button` і `ul`.
+Компонент `Presentational` має відтворити `h2`, `input`, `button` та елементи `ul`.
 
 ```js
 assert(

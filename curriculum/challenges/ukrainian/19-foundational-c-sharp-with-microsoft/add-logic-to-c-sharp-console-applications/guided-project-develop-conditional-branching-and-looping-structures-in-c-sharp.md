@@ -1,34 +1,34 @@
 ---
 id: 647e217e8acb466c97ccbee4
-title: 'Guided Project - Develop Conditional Branching and Looping Structures in C#'
+title: 'Керований проєкт: розробіть умовні гілкові та циклові структури в C#'
 challengeType: 19
 dashedName: guided-project-develop-conditional-branching-and-looping-structures-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-develop-conditional-branching-looping/</a> and complete all the tasks for the "Guided Project - Develop Conditional Branching and Looping Structures in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-develop-conditional-branching-looping/</a> та виконайте всі завдання модуля «Керований проєкт: розробіть умовні гілкові та циклові структури в C#». Це обов’язково, щоб отримати трофей «Додавання логіки до консольних застосунків C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
+У якому випадку краще використати конструкцію `switch-case`, а не `if-elseif-else`?
 
 ## --answers--
 
-A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
+Конструкцію `switch-case` доречно використати, якщо необхідно понад 2-3 блоків коду `else if`.
 
 ---
 
-A `switch-case` construct is appropriate when the number of `case` patterns is small.
+Конструкцію `switch-case` доречно використати, якщо кількість шаблонів `case` невелика.
 
 ---
 
-A `switch-case` construct is appropriate when the selection statement is inside a loop.
+Конструкцію `switch-case` доречно використати, якщо інструкція вибору знаходиться в циклі.
 
 
 ## --video-solution--

@@ -24,7 +24,7 @@ connect(mapStateToProps, mapDispatchToProps)(MyComponent)
 
 # --hints--
 
-Компонент `Presentational` повинен відображатись.
+Компонент `Presentational` має відтворюватись.
 
 ```js
 assert(

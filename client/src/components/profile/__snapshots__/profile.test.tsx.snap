@@ -7,7 +7,7 @@ exports[`<Profile/> renders correctly 1`] = `
     style="padding: 15px 0px;"
   />
   <div
-    class="container"
+    class="mx-auto px-[15px] my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px] "
   >
     <div
       class="spacer"

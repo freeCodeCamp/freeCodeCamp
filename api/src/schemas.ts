@@ -381,6 +381,25 @@ export const schemas = {
       })
     }
   },
+  coderoadChallengeCompleted: {
+    body: Type.Object({
+      tutorialId: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('success'),
+        msg: Type.String()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        msg: Type.String()
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        msg: Type.String()
+      })
+    }
+  },
   backendChallengeCompleted: {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })

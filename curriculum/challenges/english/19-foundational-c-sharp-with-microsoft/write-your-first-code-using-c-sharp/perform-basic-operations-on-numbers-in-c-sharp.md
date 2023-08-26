@@ -9,14 +9,16 @@ dashedName: perform-basic-operations-on-numbers-in-c-sharp
 
 This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-basic-operations/</a> and complete all the tasks for the "Perform Basic Operations on Numbers in C#" module. This is required to earn the "Write Your First Code Using C#" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> and complete all the tasks for the "Perform Basic Operations on Numbers in C#" module. This is required to earn the "Write Your First Code Using C#" trophy.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--
 
 ## --text--
 
-What is the value of the following result? `int result = 3 + 1 * 5 / 2;`
+What is the value of the following result?
+
+`int result = 3 + 1 * 5 / 2;`
 
 ## --answers--
 
@@ -29,10 +31,6 @@ What is the value of the following result? `int result = 3 + 1 * 5 / 2;`
 ---
 
 6
-
----
-
-5.5
 
 ## --video-solution--
 

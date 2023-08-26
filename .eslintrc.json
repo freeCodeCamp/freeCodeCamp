@@ -74,7 +74,8 @@
           "./utils/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
-          "./cypress/tsconfig.json"
+          "./cypress/tsconfig.json",
+          "./e2e/tsconfig.json"
         ]
       },
       "extends": [
@@ -158,6 +159,14 @@
       "globals": {
         "cy": true,
         "Cypress": true
+      }
+    },
+    {
+      "files": ["e2e/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
       }
     },
     {
