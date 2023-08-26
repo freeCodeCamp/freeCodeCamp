@@ -114,7 +114,7 @@
     "@types/store": "2.0.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "babel-jest": "29.6.2",
+    "babel-jest": "29.6.4",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "11.2.0",
