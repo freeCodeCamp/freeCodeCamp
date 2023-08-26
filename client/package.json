@@ -69,7 +69,7 @@
     "bezier-easing": "2.1.0",
     "browser-cookies": "1.2.0",
     "buffer": "6.0.3",
-    "chai": "4.3.7",
+    "chai": "4.3.8",
     "crypto-browserify": "3.12.0",
     "date-fns": "2.30.0",
     "enzyme": "3.11.0",

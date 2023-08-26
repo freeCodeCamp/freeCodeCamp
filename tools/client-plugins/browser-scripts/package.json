@@ -37,7 +37,7 @@
     "@types/lodash-es": "4.17.8",
     "babel-loader": "8.3.0",
     "buffer": "6.0.3",
-    "chai": "4.3.7",
+    "chai": "4.3.8",
     "copy-webpack-plugin": "9.1.0",
     "css-loader": "^6.8.1",
     "enzyme": "3.11.0",
