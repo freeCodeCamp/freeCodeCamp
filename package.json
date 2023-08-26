@@ -135,7 +135,7 @@
     "eslint-plugin-testing-library": "5.11.1",
     "execa": "5.1.1",
     "husky": "8.0.3",
-    "jest": "29.6.2",
+    "jest": "29.6.4",
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
     "lodash": "4.17.21",
