@@ -910,8 +910,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(monaco-editor@0.28.1)(webpack@5.88.2)
       node-fetch:
-        specifier: 2.6.13
-        version: 2.6.13
+        specifier: 2.7.0
+        version: 2.7.0
       react-test-renderer:
         specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
@@ -10163,7 +10163,7 @@ packages:
       globby: 11.1.0
       ip: 2.0.0
       lodash: 4.17.21
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       open: 8.4.2
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
@@ -10310,7 +10310,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 4.5.2(webpack@4.46.0)
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       pnp-webpack-plugin: 1.6.4(typescript@4.9.5)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
@@ -10366,7 +10366,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 5.5.0(webpack@5.88.2)
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       process: 0.11.10
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
@@ -10966,13 +10966,13 @@ packages:
   /@tsconfig/node16@1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
 
-  /@turist/fetch@7.2.0(node-fetch@2.6.13):
+  /@turist/fetch@7.2.0(node-fetch@2.7.0):
     resolution: {integrity: sha512-2x7EGw+6OJ29phunsbGvtxlNmSfcuPcyYudkMbi8gARCP9eJ1CtuMvnVUHL//O9Ixi9SJiug8wNt6lj86pN8XQ==}
     peerDependencies:
       node-fetch: '2'
     dependencies:
       '@types/node-fetch': 2.6.4
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
 
   /@turist/time@0.0.2:
     resolution: {integrity: sha512-qLOvfmlG2vCVw5fo/oz8WAZYlpe5a5OurgTj3diIxJCdjRHpapC+vQCz3er9LV79Vcat+DifBjeAhOAdmndtDQ==}
@@ -17182,7 +17182,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       docsify: 4.13.0
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       resolve-pathname: 3.0.0
     transitivePeerDependencies:
       - encoding
@@ -19863,7 +19863,7 @@ packages:
       joi: 17.9.2
       lodash: 4.17.21
       meant: 1.0.3
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       opentracing: 0.14.7
       pretty-error: 2.1.2
       progress: 2.0.3
@@ -20146,7 +20146,7 @@ packages:
       lodash: 4.17.21
       mitt: 1.2.0
       mkdirp: 0.5.6
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       pkg-dir: 4.2.0
       prettier: 2.8.8
       prop-types: 15.8.1
@@ -20215,7 +20215,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.22.10
       '@babel/runtime': 7.21.5
-      '@turist/fetch': 7.2.0(node-fetch@2.6.13)
+      '@turist/fetch': 7.2.0(node-fetch@2.7.0)
       '@turist/time': 0.0.2
       async-retry-ng: 2.0.1
       boxen: 4.2.0
@@ -20225,7 +20225,7 @@ packages:
       git-up: 4.0.5
       is-docker: 2.2.1
       lodash: 4.17.21
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       uuid: 3.4.0
     transitivePeerDependencies:
       - encoding
@@ -22521,7 +22521,7 @@ packages:
   /isomorphic-unfetch@3.1.0:
     resolution: {integrity: sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==}
     dependencies:
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       unfetch: 4.2.0
     transitivePeerDependencies:
       - encoding
@@ -26545,17 +26545,6 @@ packages:
     resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
     engines: {node: 4.x || >=6.0.0}
 
-  /node-fetch@2.6.13:
-    resolution: {integrity: sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-
   /node-fetch@2.6.9:
     resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
     engines: {node: 4.x || >=6.0.0}
@@ -26567,6 +26556,17 @@ packages:
     dependencies:
       whatwg-url: 5.0.0
     dev: false
+
+  /node-fetch@2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
 
   /node-forge@1.3.1:
     resolution: {integrity: sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==}
@@ -29073,7 +29073,7 @@ packages:
     resolution: {integrity: sha512-t95Nu73ENjwoRhThmxvZIHMD7GXTJ3uOt/E0sJ1TxjBvoU/qPys4SV08FtZBMEnpMRKFzE4uecvx2c0qybSZhw==}
     dependencies:
       base-64: 1.0.0
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
       ws: 8.12.1
     transitivePeerDependencies:
       - bufferutil
@@ -32535,7 +32535,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       buffer: 5.7.1
-      node-fetch: 2.6.13
+      node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
 
