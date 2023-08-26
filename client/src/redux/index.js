@@ -317,26 +317,38 @@ export const reducer = handleActions(
         submittedchallenges = submittedChallenge.challArray;
       }
       const { appUsername } = state;
-      return {
-        ...state,
-        completionCount: state.completionCount + 1,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            completedChallenges: uniqBy(
-              [
-                ...submittedchallenges,
-                ...state.user[appUsername].completedChallenges
-              ],
-              'id'
-            ),
-            savedChallenges:
-              savedChallenges ?? savedChallengesSelector(state[MainApp]),
-            examResults
+
+      return examResults && !examResults.passed
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [appUsername]: {
+                ...state.user[appUsername],
+                examResults
+              }
+            }
           }
-        }
-      };
+        : {
+            ...state,
+            completionCount: state.completionCount + 1,
+            user: {
+              ...state.user,
+              [appUsername]: {
+                ...state.user[appUsername],
+                completedChallenges: uniqBy(
+                  [
+                    ...submittedchallenges,
+                    ...state.user[appUsername].completedChallenges
+                  ],
+                  'id'
+                ),
+                savedChallenges:
+                  savedChallenges ?? savedChallengesSelector(state[MainApp]),
+                examResults
+              }
+            }
+          };
     },
     [actionTypes.setMsUsername]: (state, { payload }) => {
       const { appUsername } = state;
