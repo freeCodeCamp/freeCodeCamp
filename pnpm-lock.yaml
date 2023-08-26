@@ -1083,8 +1083,8 @@ importers:
         version: 4.9.5
     devDependencies:
       '@types/codemirror':
-        specifier: 5.60.8
-        version: 5.60.8
+        specifier: 5.60.9
+        version: 5.60.9
       '@types/react':
         specifier: 16.14.45
         version: 16.14.45
@@ -11180,8 +11180,8 @@ packages:
       '@types/node': 18.17.6
     dev: true
 
-  /@types/codemirror@5.60.8:
-    resolution: {integrity: sha512-VjFgDF/eB+Aklcy15TtOTLQeMjTo07k7KAjql8OK5Dirr7a6sJY4T1uVBDuTVG9VEmn1uUsohOpYnVfgC6/jyw==}
+  /@types/codemirror@5.60.9:
+    resolution: {integrity: sha512-8RhLhlGo9bAkytFYKDzezorY2ojvGk+4xFEso/6Hc2oR1oE2P9lI+AEkbUW7cDlKcQAK5WJkJRBLTdjBE7xQPA==}
     dependencies:
       '@types/tern': 0.23.4
     dev: true
@@ -13372,9 +13372,9 @@ packages:
       eslint: '>= 4.12.1'
     dependencies:
       '@babel/code-frame': 7.22.10
-      '@babel/parser': 7.22.10
-      '@babel/traverse': 7.22.10
-      '@babel/types': 7.22.10
+      '@babel/parser': 7.22.11
+      '@babel/traverse': 7.22.11
+      '@babel/types': 7.22.11
       eslint: 7.32.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.3
