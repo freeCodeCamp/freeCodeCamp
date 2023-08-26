@@ -561,8 +561,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       chai:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       crypto-browserify:
         specifier: 3.12.0
         version: 3.12.0
@@ -970,8 +970,8 @@ importers:
         specifier: 6.24.1
         version: 6.24.1
       chai:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -1286,8 +1286,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       chai:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.88.2)
@@ -1345,8 +1345,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.2
       chai:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       joi:
         specifier: 17.9.2
         version: 17.9.2
@@ -15339,8 +15339,8 @@ packages:
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
-  /chai@4.3.7:
-    resolution: {integrity: sha512-HLnAzZ2iupm25PlN0xFreAlBA5zaBSv3og0DdeGA4Ar6h6rJ3A0rolRUKJhSF2V10GZKDgWF/VmAEsNWjCRB+A==}
+  /chai@4.3.8:
+    resolution: {integrity: sha512-vX4YvVVtxlfSZ2VecZgFUTU5qPCYsobVI2O9FmwEXBhDigYGQA6jRXCycIs1yJnnWbZ6/+a2zNIF5DfVCcJBFQ==}
     engines: {node: '>=4'}
     dependencies:
       assertion-error: 1.1.0
