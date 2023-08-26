@@ -107,8 +107,9 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
         ))}
       </ul>
       <Spacer size='medium' />
-      <h1>{t('landing.interview-prep-heading')}</h1>
-      {forLanding && <Spacer size='small' />}
+      <h1 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.interview-prep-heading')}
+      </h1>
       <ul>
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
