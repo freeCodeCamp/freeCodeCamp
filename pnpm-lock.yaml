@@ -895,8 +895,8 @@ importers:
         specifier: 1.1.31
         version: 1.1.31(gatsby@3.15.0)
       jest-environment-jsdom:
-        specifier: 29.6.2
-        version: 29.6.2
+        specifier: 29.6.4
+        version: 29.6.4
       jest-json-schema-extended:
         specifier: 1.0.1
         version: 1.0.1
@@ -21381,8 +21381,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /jest-environment-jsdom@29.6.2:
-    resolution: {integrity: sha512-7oa/+266AAEgkzae8i1awNEfTfjwawWKLpiw2XesZmaoVVj9u9t8JOYx18cG29rbPNtkUlZ8V4b5Jb36y/VxoQ==}
+  /jest-environment-jsdom@29.6.4:
+    resolution: {integrity: sha512-K6wfgUJ16DoMs02JYFid9lOsqfpoVtyJxpRlnTxUHzvZWBnnh2VNGRB9EC1Cro96TQdq5TtSjb3qUjNaJP9IyA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       canvas: ^2.5.0
@@ -30641,7 +30641,7 @@ packages:
       graphql: 15.8.0
       iterall: 1.3.0
       symbol-observable: 1.2.0
-      ws: 7.4.5
+      ws: 7.5.9
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
