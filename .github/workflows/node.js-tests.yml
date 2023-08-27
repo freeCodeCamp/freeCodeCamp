@@ -1,4 +1,4 @@
-name: CI - Node.js Test Current
+name: CI - Node.js
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
 
