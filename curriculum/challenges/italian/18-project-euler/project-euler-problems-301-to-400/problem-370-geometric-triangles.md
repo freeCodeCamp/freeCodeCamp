@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff1
-title: 'Problem 370: Geometric triangles'
+title: 'Problema 370: triangoli geometrici'
 challengeType: 1
 forumTopicId: 302032
 dashedName: problem-370-geometric-triangles
@@ -8,17 +8,17 @@ dashedName: problem-370-geometric-triangles
 
 # --description--
 
-Let us define a geometric triangle as an integer sided triangle with sides $a ≤ b ≤ c$ so that its sides form a geometric progression, i.e. $b^2 = a \times c$.
+Sia un triangolo geometrico un triangolo con lati interi $a ≤ b ≤ c$ tali da formare una progressione geometrica, cioè $b^2 = a \times c$.
 
-An example of such a geometric triangle is the triangle with sides $a = 144$, $b = 156$ and $c = 169$.
+Un esempio di triangolo geometrico è il triangolo con lati $a = 144$, $b = 156$ e $c = 169$.
 
-There are $861\\,805$ geometric triangles with $\text{perimeter} ≤ {10}^6$.
+Ci sono $861\\,805$ triangoli geometrici con $\text{perimetro} ≤ {10}^6$.
 
-How many geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{13}$?
+Quanti triangoli geometrici esistono con $\text{perimetro} ≤ 2.5 \times {10}^{13}$?
 
 # --hints--
 
-`geometricTriangles()` should return `41791929448408`.
+`geometricTriangles()` dovrebbe restituire `41791929448408`.
 
 ```js
 assert.strictEqual(geometricTriangles(), 41791929448408);

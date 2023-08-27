@@ -1,6 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0c
-title: 'Problem 140: Modified Fibonacci golden nuggets'
+title: 'Завдання 140: модифіковані золоті самородки Фібоначчі'
 challengeType: 1
 forumTopicId: 301769
 dashedName: problem-140-modified-fibonacci-golden-nuggets
@@ -8,11 +8,11 @@ dashedName: problem-140-modified-fibonacci-golden-nuggets
 
 # --description--
 
-Consider the infinite polynomial series $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, where $G_k$ is the $k$th term of the second order recurrence relation $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ and $G_2 = 4$; that is, $1, 4, 5, 9, 14, 23, \ldots$.
+Розглянемо нескінченний поліноміальний ряд $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, де $G_k$ є $k$-ним членом рекурентного співвідношення другого порядку $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ та $G_2 = 4$. Тобто $1, 4, 5, 9, 14, 23, \ldots$.
 
-For this problem we shall be concerned with values of $x$ for which $A_G(x)$ is a positive integer.
+Нас цікавлять значення $x$, за яких $A_G(x)$ є натуральним числом.
 
-The corresponding values of $x$ for the first five natural numbers are shown below.
+Відповідні значення $x$ для перших п’яти натуральних чисел наведено нижче.
 
 | $x$                           | $A_G(x)$ |
 | ----------------------------- | -------- |
@@ -22,7 +22,7 @@ The corresponding values of $x$ for the first five natural numbers are shown bel
 | $\frac{\sqrt{137} − 5}{14}$ | $4$      |
 | $\frac{1}{2}$                | $5$      |
 
-We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become increasingly rarer; for example, the 20th golden nugget is 211345365. Find the sum of the first thirty golden nuggets.
+Назвемо $A_G(x)$ золотим самородком, якщо $x$ є раціональним, оскільки вони трапляються дедалі рідше. Наприклад, двадцятим золотим самородком є 211345365. Знайдіть суму перших тридцяти золотих самородків.
 
 # --hints--
 

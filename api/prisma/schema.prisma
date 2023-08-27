@@ -7,40 +7,144 @@ datasource db {
   url      = env("MONGOHQ_URL")
 }
 
-type DonationStartDate {
-  date DateTime @map("_date") @db.Date
-  when String   @map("_when")
+// USER COLLECTION ---------------------
+
+type File {
+  contents String
+  ext      String
+  key      String
+  name     String
+  path     String? // Undefined | Null
 }
 
-type UserBadges {
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  coreTeam Json?
+type CompletedChallenge {
+  challengeType      Int?     @db.Int // Null | Undefined
+  completedDate      Float // TODO(Post-MVP): Change to DateTime
+  files              File[]
+  githubLink         String? // Undefined
+  id                 String
+  isManuallyApproved Boolean? // Undefined
+  solution           String? // Null | Undefined
 }
 
-type UserCompletedChallenges {
-  completedDate Float
+type PartiallyCompletedChallenge {
   id            String
+  completedDate Float
 }
 
-type UserProfileUi {
-  isLocked      Boolean
-  showAbout     Boolean
-  showCerts     Boolean
-  showDonation  Boolean
-  showHeatMap   Boolean
-  showLocation  Boolean
-  showName      Boolean
-  showPoints    Boolean
-  showPortfolio Boolean
-  showTimeLine  Boolean
+type Portfolio {
+  description String
+  id          String
+  image       String
+  title       String
+  url         String
 }
+
+type ProfileUI {
+  isLocked      Boolean? // Undefined
+  showAbout     Boolean? // Undefined
+  showCerts     Boolean? // Undefined
+  showDonation  Boolean? // Undefined
+  showHeatMap   Boolean? // Undefined
+  showLocation  Boolean? // Undefined
+  showName      Boolean? // Undefined
+  showPoints    Boolean? // Undefined
+  showPortfolio Boolean? // Undefined
+  showTimeLine  Boolean? // Undefined
+}
+
+// Currently unused, so commented out.
+// type ProgressTimestamp {
+//   timestamp Float
+// }
+
+type SavedChallengeFile {
+  contents String
+  ext      String
+  history  String[]
+  key      String
+  name     String
+}
+
+type SavedChallenge {
+  files         SavedChallengeFile[]
+  id            String
+  lastSavedDate Float
+}
+
+model user {
+  id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
+  about                        String
+  acceptedPrivacyTerms         Boolean
+  // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
+  completedChallenges          CompletedChallenge[]
+  currentChallengeId           String?
+  donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
+  email                        String
+  emailAuthLinkTTL             DateTime? // Null | Undefined
+  emailVerified                Boolean
+  emailVerifyTTL               DateTime? // Null | Undefined
+  externalId                   String
+  // github    String? Removed, because value was only ever found to be Null
+  githubProfile                String? // Undefined
+  isApisMicroservicesCert      Boolean? // Undefined
+  isBackEndCert                Boolean? // Undefined
+  isBanned                     Boolean? // Undefined
+  isCheater                    Boolean? // Undefined
+  isDataAnalysisPyCertV7       Boolean? // Undefined
+  isDataVisCert                Boolean? // Undefined
+  isDonating                   Boolean
+  isFrontEndCert               Boolean? // Undefined
+  isFrontEndLibsCert           Boolean? // Undefined
+  isFullStackCert              Boolean? // Undefined
+  isHonest                     Boolean?
+  isInfosecCertV7              Boolean? // Undefined
+  isInfosecQaCert              Boolean? // Undefined
+  isJsAlgoDataStructCert       Boolean? // Undefined
+  isMachineLearningPyCertV7    Boolean? // Undefined
+  isQaCertV7                   Boolean? // Undefined
+  isRelationalDatabaseCertV8   Boolean? // Undefined
+  isRespWebDesignCert          Boolean? // Undefined
+  isSciCompPyCertV7            Boolean? // Undefined
+  is2018DataVisCert            Boolean? // Undefined
+  is2018FullStackCert          Boolean? // Undefined
+  isCollegeAlgebraPyCertV8     Boolean? // Undefined
+  keyboardShortcuts            Boolean? // Undefined
+  linkedin                     String? // Null | Undefined
+  location                     String? // Null
+  name                         String? // Null
+  needsModeration              Boolean? // Undefined
+  newEmail                     String? // Null | Undefined
+  partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
+  password                     String? // Undefined
+  picture                      String
+  portfolio                    Portfolio[]
+  profileUI                    ProfileUI? // Undefined
+  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
+  // rand Float? // Undefined removed, as new API never uses it.
+  savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
+  sendQuincyEmail              Boolean
+  sound                        Boolean? // Undefined
+  theme                        String? // Undefined
+  timezone                     String? // Undefined
+  twitter                      String? // Null | Undefined
+  unsubscribeId                String
+  username                     String // TODO(Post-MVP): make this unique
+  usernameDisplay              String? // Undefined
+  verificationToken            String? // Undefined
+  website                      String? // Undefined
+  yearsTopContributor          String[] // Undefined | String[]
+}
+
+// -----------------------------------
 
 model AccessToken {
   id      String   @id @map("_id")
   created DateTime @db.Date
-  /// Multiple data types found: Float: 70.3%, Int: 29.7% out of 118 sampled entries
-  ttl     Json
+  ttl     Int
   userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
 }
 
 model AuthToken {
@@ -52,14 +156,26 @@ model AuthToken {
 
 model Donation {
   id             String            @id @default(auto()) @map("_id") @db.ObjectId
-  amount         Int
+  amount         Int               @db.Int
   customerId     String
-  duration       String
+  duration       String?
   email          String
+  endDate        DonationEndDate?
   provider       String
   startDate      DonationStartDate
   subscriptionId String
   userId         String            @db.ObjectId
+
+  @@index([email], map: "email_1")
+  @@index([userId], map: "userId_1")
+}
+
+model UserRateLimit {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Field referred in an index, but found no data to define the type.
+  expirationDate Json?
+
+  @@index([expirationDate], map: "expirationDate_1")
 }
 
 model UserToken {
@@ -67,21 +183,8 @@ model UserToken {
   created DateTime @db.Date
   ttl     Float
   userId  String   @db.ObjectId
-}
 
-model WebhookToken {
-  id      String   @id @map("_id")
-  created DateTime @db.Date
-  ttl     Float
-  userId  String   @db.ObjectId
-}
-
-model expressRateRecords {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
-  /// Field referred in an index, but found no data to define the type.
-  expirationDate Json?
-
-  @@index([expirationDate], map: "expirationDate_1")
+  @@index([userId], map: "userId_1")
 }
 
 model sessions {
@@ -92,53 +195,12 @@ model sessions {
   @@index([expires], map: "expires_1")
 }
 
-model user {
-  id                         String                    @id @default(auto()) @map("_id") @db.ObjectId
-  about                      String
-  acceptedPrivacyTerms       Boolean
-  badges                     UserBadges
-  completedChallenges        UserCompletedChallenges[]
-  currentChallengeId         String
-  email                      String
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  emailAuthLinkTTL           Json?
-  emailVerified              Boolean
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  emailVerifyTTL             Json?
-  is2018DataVisCert          Boolean
-  is2018FullStackCert        Boolean
-  isApisMicroservicesCert    Boolean
-  isBackEndCert              Boolean
-  isBanned                   Boolean
-  isCheater                  Boolean
-  isDataAnalysisPyCertV7     Boolean
-  isDataVisCert              Boolean
-  isDonating                 Boolean
-  isFrontEndCert             Boolean
-  isFrontEndLibsCert         Boolean
-  isFullStackCert            Boolean
-  isHonest                   Boolean
-  isInfosecCertV7            Boolean
-  isInfosecQaCert            Boolean
-  isJsAlgoDataStructCert     Boolean
-  isMachineLearningPyCertV7  Boolean
-  isQaCertV7                 Boolean
-  isRelationalDatabaseCertV8 Boolean
-  isRespWebDesignCert        Boolean
-  isSciCompPyCertV7          Boolean
-  keyboardShortcuts          Boolean?
-  location                   String
-  name                       String
-  picture                    String
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  portfolio                  Json?
-  profileUI                  UserProfileUi
-  progressTimestamps         Float[]
-  rand                       Float
-  sendQuincyEmail            Boolean
-  theme                      String
-  username                   String
-  usernameDisplay            String?
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  yearsTopContributor        Json?
+type DonationEndDate {
+  date DateTime @map("_date") @db.Date
+  when String   @map("_when")
+}
+
+type DonationStartDate {
+  date DateTime @map("_date") @db.Date
+  when String   @map("_when")
 }

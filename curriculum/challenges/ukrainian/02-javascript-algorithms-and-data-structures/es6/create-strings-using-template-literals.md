@@ -69,14 +69,13 @@ assert(
 Використайте шаблонні рядки та інтерполяцію виразу.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+assert.match(code, /(`.*\${.*}.*`)/);
 ```
 
 Використайте цикл.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
+assert(code.match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

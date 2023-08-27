@@ -2,10 +2,30 @@ const path = require('path');
 const debug = require('debug');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectId } = require('mongodb');
-const defaultUserImage = require('../../../config/misc').defaultUserImage;
 const fullyCertifiedUser = require('./certified-user-data');
 
-const envVariables = process.argv;
+const args = process.argv.slice(2);
+
+const allowedArgs = [
+  '--donor',
+  '--top-contributor',
+  '--unset-privacy-terms',
+  'certified-user'
+];
+
+// Check for invalid arguments
+args.forEach(arg => {
+  if (!allowedArgs.includes(arg))
+    throw new Error(
+      `Invalid argument ${arg}. Allowed arguments are ${allowedArgs.join(', ')}`
+    );
+});
+
+if (args.includes('certified-user') && args.length > 1) {
+  throw new Error(
+    `Invalid arguments. When using 'certified-user', no other arguments are allowed.`
+  );
+}
 
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
@@ -26,7 +46,7 @@ function handleError(err, client) {
 }
 
 const demoUser = {
-  _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  _id: new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
   email: 'foo@bar.com',
   emailVerified: true,
   progressTimestamps: [],
@@ -36,10 +56,8 @@ const demoUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
-  acceptedPrivacyTerms: envVariables.includes('--unset-privacy-terms')
-    ? null
-    : true,
+  picture: '',
+  acceptedPrivacyTerms: args.includes('--unset-privacy-terms') ? null : true,
   sendQuincyEmail: false,
   currentChallengeId: '',
   isHonest: false,
@@ -61,9 +79,10 @@ const demoUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
-  yearsTopContributor: envVariables.includes('--top-contributor')
+  yearsTopContributor: args.includes('--top-contributor')
     ? ['2017', '2018', '2019']
     : [],
   rand: 0.6126749173148205,
@@ -83,14 +102,16 @@ const demoUser = {
   badges: {
     coreTeam: []
   },
-  isDonating: envVariables.includes('--donor'),
+  isDonating: args.includes('--donor'),
   emailAuthLinkTTL: null,
   emailVerifyTTL: null,
-  keyboardShortcuts: true
+  keyboardShortcuts: true,
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
 const blankUser = {
-  _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
+  _id: new ObjectId('5bd30e0f1caf6ac3ddddddb9'),
   email: 'bar@bar.com',
   emailVerified: true,
   progressTimestamps: [],
@@ -100,7 +121,7 @@ const blankUser = {
   about: '',
   name: 'Development User',
   location: '',
-  picture: defaultUserImage,
+  picture: '',
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
   currentChallengeId: '',
@@ -145,80 +166,53 @@ const blankUser = {
   },
   isDonating: false,
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  externalId: '',
+  unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
-MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
-  handleError(err, client);
+const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-  log('Connected successfully to mongo');
+log('Connected successfully to mongo');
 
-  const db = client.db('freecodecamp');
-  const user = db.collection('user');
+const db = client.db('freecodecamp');
+const user = db.collection('user');
 
-  const dropUserTokens = async function () {
-    await db.collection('UserToken').deleteMany({
-      userId: {
-        $in: [
-          ObjectId('5fa2db00a25c1c1fa49ce067'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-          ObjectId('5bd30e0f1caf6ac3ddddddb9')
-        ]
-      }
-    });
-  };
+const userIds = [
+  new ObjectId('5fa2db00a25c1c1fa49ce067'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  new ObjectId('5bd30e0f1caf6ac3ddddddb9')
+];
 
-  if (process.argv[2] === 'certified-user') {
-    dropUserTokens();
-    user.deleteMany(
-      {
-        _id: {
-          $in: [
-            ObjectId('5fa2db00a25c1c1fa49ce067'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb9')
-          ]
-        }
-      },
-      err => {
-        handleError(err, client);
+const dropUserTokens = async function () {
+  await db.collection('UserToken').deleteMany({
+    userId: {
+      $in: userIds
+    }
+  });
+};
 
-        try {
-          user.insertOne(fullyCertifiedUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
+const dropUsers = async function () {
+  await db.collection('user').deleteMany({
+    _id: {
+      $in: userIds
+    }
+  });
+};
+
+const run = async () => {
+  await dropUserTokens();
+  await dropUsers();
+  if (args.includes('certified-user')) {
+    await user.insertOne(fullyCertifiedUser);
+    await user.insertOne(blankUser);
   } else {
-    dropUserTokens();
-    user.deleteMany(
-      {
-        _id: {
-          $in: [
-            ObjectId('5fa2db00a25c1c1fa49ce067'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-            ObjectId('5bd30e0f1caf6ac3ddddddb9')
-          ]
-        }
-      },
-      err => {
-        handleError(err, client);
-
-        try {
-          user.insertOne(demoUser);
-          user.insertOne(blankUser);
-        } catch (e) {
-          handleError(e, client);
-        } finally {
-          log('local auth user seed complete');
-          client.close();
-        }
-      }
-    );
+    await user.insertOne(demoUser);
+    await user.insertOne(blankUser);
   }
-});
+  log('local auth user seed complete');
+};
+
+run()
+  .then(() => client.close())
+  .catch(err => handleError(err, client));

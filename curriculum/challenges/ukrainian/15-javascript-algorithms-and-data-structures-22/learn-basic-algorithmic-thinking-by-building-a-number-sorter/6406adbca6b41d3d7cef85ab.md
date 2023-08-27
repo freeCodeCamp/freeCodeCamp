@@ -1,6 +1,6 @@
 ---
 id: 6406adbca6b41d3d7cef85ab
-title: Step 5
+title: Крок 5
 challengeType: 0
 dashedName: step-5
 ---
@@ -19,13 +19,13 @@ You should use `document.getElementsByClassName()` to get all the elements with 
 assert.match(sortInputArray.toString(), /document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should assign the result of `document.getElementsByClassName()` to a variable named `inputValues`.
+Призначте результат `document.getElementsByClassName()` до змінної під назвою `inputValues`.
 
 ```js
 assert.match(sortInputArray.toString(), /inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should use `const` to declare `inputValues`.
+Ви повинні використати `const`, щоб оголосити `inputValues`.
 
 ```js
 assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);

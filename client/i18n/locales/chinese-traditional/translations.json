@@ -29,6 +29,7 @@
     "sign-up-email-list": "訂閱 Quincy 每週的電子郵件",
     "sign-out": "退出",
     "curriculum": "課程",
+    "contribute": "Contribute",
     "forum": "論壇",
     "radio": "電臺",
     "profile": "個人資料",
@@ -72,9 +73,18 @@
     "go-to-settings": "轉到設置以領取你的認證",
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
+    "click-start-exam": "Start the exam",
     "change-language": "修改語言",
     "resume-project": "繼續項目",
-    "start-project": "開始項目"
+    "start-project": "開始項目",
+    "tweet": "Tweet",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
+    "finish-exam": "Finish the exam",
+    "finish": "Finish",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -82,6 +92,7 @@
     "big-heading-3": "獲得認證",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "媒體報道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -102,61 +113,61 @@
       }
     },
     "certification-heading": "獲得以下免費認證：",
-    "faq": "Frequently asked questions:",
+    "faq": "常見問題：",
     "faqs": [
       {
-        "question": "What exactly is freeCodeCamp?",
+        "question": "什麼是 freeCodeCamp？",
         "answer": [
-          "freeCodeCamp is a community of people from all around the world who are learning to code together. We're a 501(c)(3) public charity."
+          "freeCodeCamp 是一個由來自世界各地學習編程的人們組成的社區。這是一個 501(c)(3) 公共慈善組織。"
         ]
       },
       {
-        "question": "How will freeCodeCamp help me learn to code?",
+        "question": "freeCodeCamp 如何幫助我學習編程？",
         "answer": [
-          "You will learn to code by building dozens of projects, step-by-step, right in your browser, code editor, or mobile app.",
-          "You will also earn free verified certifications along the way."
+          "你將通過在瀏覽器、代碼編輯器或移動應用中一步步地創建數十個項目來學習編程。",
+          "你還將獲得免費的認證。"
         ]
       },
       {
-        "question": "Is freeCodeCamp really free?",
+        "question": "freeCodeCamp 真的免費嗎？",
         "answer": [
-          "Yes. Every aspect of freeCodeCamp is 100% free. The courses, the projects, and even the certifications."
+          "是的，freeCodeCamp 100% 免費！無論是課程、項目甚至認證，都是免費的。"
         ]
       },
       {
-        "question": "Can freeCodeCamp help me get a job as a software developer?",
+        "question": "freeCodeCamp 能幫助我獲得軟件開發者的工作嗎？",
         "answer": [
-          "Yes. Every year, thousands of people who join the freeCodeCamp community get their first software developer job."
+          "是的。每一年，freeCodeCamp 社區中成千上萬的人們找到了他們的第一份軟件開發工作。"
         ]
       },
       {
-        "question": "What skills will I learn?",
+        "question": "我將學到什麼技能？",
         "answer": [
-          "You will learn the skills most developers use on the job: HTML, CSS, JavaScript, Python, Linux, Git, and SQL, and more. You'll also learn how to use powerful libraries for web development, mobile app development, data science, and artificial intelligence."
+          "你將學習大多數開發者在工作中使用的技能：HTML、CSS、JavaScript、Python、Linux、Git 和 SQL 等等。 你還將學習如何使用 web 開發的強大的庫、移動應用開發、數據科學和人工智能等。"
         ]
       },
       {
-        "question": "How long does it take to learn all this?",
+        "question": "學習所有這些知識需要多長時間？",
         "answer": [
-          "freeCodeCamp is self-paced. Realistically, it may take several years of practicing coding to learn these skills well enough to get a job as a software engineer. Don't quit school or your day job until you feel ready."
+          "你在 freeCodeCamp 學習可以自定義進度。 實際上，要學好這些技能並獲得一份軟件工程師工作，可能需要幾年時間來持續練習編程。在你準備好之前，不要退學或辭職。"
         ]
       },
       {
-        "question": "How do I get started?",
+        "question": "我如何開始？",
         "answer": [
-          "If you're a beginner, you should start at the beginning of the freeCodeCamp core curriculum. If you're more advanced, we still recommend starting at the beginning, but you can skip to whatever area you wish."
+          "如果你是初學者，你應該從 freeCodeCamp 核心課程開始。 如果你有經驗，我們仍然建議從最初的課程開始，但你可以跳到任何你想要學習的領域。"
         ]
       },
       {
-        "question": "How do I earn the free verified certifications?",
+        "question": "我如何獲取免費的認證？",
         "answer": [
-          "For each certification, you need to build its 5 certification projects, and get all of the project tests to pass to be able to claim your certification."
+          "對於每個認證，你需要構建 5 個認證項目，通過所有的項目測試，以獲得認證。"
         ]
       },
       {
-        "question": "I don't see [name of tool] in the freeCodeCamp core curriculum.",
+        "question": "我在 freeCodeCamp 核心課程中看不到[工具名稱]。",
         "answer": [
-          "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
+          "除了 freeCodeCamp 提供的核心課程外，我們還有數千份免費的完整的書、課程和編程教程。我們幾乎教授你想學習的任何編程工具。你只需通過使用搜索欄來搜索它們。"
         ]
       }
     ]
@@ -171,7 +182,7 @@
     "for": "{{username}} 賬號設置",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
-    "scrollbar-width": "Editor Scrollbar Width",
+    "scrollbar-width": "編輯器滾動條寬度",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -196,6 +207,7 @@
       "project-name": "項目名稱",
       "solution": "解決方案",
       "solution-for": "{{projectTitle}} 的解決方案",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "我的個人資料",
       "my-name": "我的姓名",
       "my-location": "我的位置",
@@ -278,7 +290,7 @@
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "點數： {{count}}",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
@@ -336,6 +348,7 @@
     "question": "問題",
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "提交併訪問下一個挑戰",
     "congratulations": "恭喜，你的代碼已通過。請提交你的代碼以繼續。",
     "i-completed": "我已經完成這個挑戰",
@@ -345,6 +358,7 @@
     "console-output": "// 打印輸出",
     "sign-in-save": "登錄以保存你的學習進度",
     "download-solution": "下載我的解決方案",
+    "download-results": "Download my results",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 認證項目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
@@ -367,7 +381,7 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "editor": "Editor"
+      "editor": "編輯器"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -384,7 +398,6 @@
     "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
     "completed": "已完成",
     "not-started": "未開始",
-    "hint": "提示",
     "test": "測試",
     "sorry-try-again": "抱歉，你的代碼未通過，再試一次。",
     "sorry-keep-trying": "抱歉，你的代碼未通過，再試試看。",
@@ -395,7 +408,32 @@
     "season-greetings-fcc": "來自 freeCodeCamp 社區的季節問候 🎉",
     "if-getting-value": "如果你從 freeCodeCamp 中獲益良多，可以捐款支持我們的慈善組織的使命。",
     "building-a-university": "我們正在創建一個免費計算機科學大學學位課程",
-    "if-help-university": "我們已取得了重大進展。請支持我們的慈善組織完成這項長期事業。"
+    "if-help-university": "我們已取得了重大進展。請支持我們的慈善組織完成這項長期事業。",
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "支持我們的慈善組織",
@@ -411,29 +449,26 @@
     "no-halo": "如果你在你的個人圖片周圍看不到金色光環，請聯繫 donors@freecodecamp.org。",
     "gift-frequency": "選擇捐贈的頻率：",
     "gift-amount": "選擇捐贈的額度：",
-    "confirm": "確認你的捐款",
-    "confirm-2": "確認你的一次性捐款 ${{usd}}",
-    "confirm-3": "確認你的捐款 ${{usd}} / 月",
-    "confirm-4": "確認你的捐款 ${{usd}} / 年",
+    "confirm": "Confirm your donation:",
+    "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
+    "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
+    "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
     "wallet-label": "向 freeCodeCamp 捐款 ${{usd}}",
     "wallet-label-1": "向 freeCodeCamp 每月捐款 ${{usd}}",
     "your-donation": "你的 ${{usd}} 捐款將幫助世界各地的人們學習 {{hours}} 小時。",
     "your-donation-2": "你的 ${{usd}} 捐款每月將幫助世界各地的人們學習 {{hours}} 小時。",
     "your-donation-3": "你的 ${{usd}} 捐款每年將幫助世界各地的人們學習 {{hours}} 小時。",
     "become-supporter": "成爲支持者",
-    "duration": "成爲我們的慈善組織的一次性支持者",
-    "duration-2": "成爲我們的慈善組織的每月定期支持者",
-    "duration-4": "成爲我們的慈善組織的支持者",
-    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
-    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
-    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
-    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
-    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
-    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
-    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
-    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
-    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
-    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "progress-modal-cta-1": "現在捐贈以幫助我們的慈善組織爲所有人創建免費的認證計算機科學學位課程。",
+    "progress-modal-cta-2": "現在捐贈以爲我們的慈善組織的網站贊助 53 小時服務器時間。",
+    "progress-modal-cta-3": "現在捐贈以幫助我們的慈善組織爲全世界的學習者將課程翻譯成 32 種語言。",
+    "progress-modal-cta-4": "現在捐贈以支持我們的慈善組織開發新的 Python 課程。",
+    "progress-modal-cta-5": "現在捐贈以幫助我們的慈善組織爲新的編程工具設計課程。",
+    "progress-modal-cta-6": "現在捐贈以支持我們的慈善組織的開源項目。",
+    "progress-modal-cta-7": "現在捐贈以幫助我們的慈善組織僱用更多老師。",
+    "progress-modal-cta-8": "現在捐贈以幫助我們爲不斷涌現的工具和編程概念開發新課程。",
+    "progress-modal-cta-9": "現在捐贈以支持我們的面向開發者的數學課程。",
+    "progress-modal-cta-10": "現在捐贈以幫助我們爲所有人開發免費的專業編程認證。",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -523,8 +558,10 @@
     "unsubscribed": "你已成功取消訂閱",
     "keep-coding": "無論你做什麼，都要繼續編程！",
     "email-signup": "郵件註冊",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson，freeCodeCamp.org 創始人、老師",
-    "email-blast": "每週五我會給大約四百萬人發送一封郵件，其中包含 5 條關於編程和計算機科學的鏈接。你也想收到我的郵件嗎？",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "更新你的郵件地址",
     "update-email-2": "在這裏更新你的郵件地址：",
     "email": "郵箱",
@@ -536,7 +573,8 @@
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常這個表單將被提交！工作正常，這將被提交到：{{externalLink}}",
     "document-notfound": "找不到文件",
-    "slow-load-msg": "看起來這比平常花費更長時間，請嘗試刷新頁面。"
+    "slow-load-msg": "看起來這比平常花費更長時間，請嘗試刷新頁面。",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -648,13 +686,15 @@
     "complete-project-first": "你必須先完成項目。",
     "local-code-save-error": "糟糕，你的代碼沒有保存，你的瀏覽器的本地存儲空間可能已滿。",
     "local-code-saved": "保存！你的代碼已保存到你的瀏覽器本地存儲中。",
+    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "{{username}} 已選擇將他們的個人資料設爲私密。他們需要公開自己的個人資料，以便其他人能夠查看他們的認證。",
     "code-saved": "你的代碼已保存到數據庫。當你返回時它將在這裏。",
     "code-save-error": "嘗試保存你的代碼時發生錯誤。",
     "code-save-less": "等等！你的代碼未保存，請在幾秒鐘後重試。",
     "challenge-save-too-big": "抱歉，你無法保存代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
     "challenge-submit-too-big": "抱歉，你無法提交代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
-    "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。"
+    "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -672,13 +712,15 @@
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "記住要提交你自己的作業",
     "publicly-visible-url": "記得要提交一個公開可見的app URL",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "你可能想要提交根路徑，即 https://example.com，而不是 https://example.com/path。"
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",
-    "verify": "確認此認證 {{certURL}}",
+    "ms-president": "President, Microsoft Developer Division",
+    "verify": "Verify this certification at:",
     "issued": "發佈日期",
-    "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成 freeCodeCamp.org</2> <3>{{title}}</3> <4>開發者認證課程，約 {{time}} 課時。</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
@@ -788,6 +830,8 @@
       "machine-learning-with-python-v7": "Python 和機器學習認證",
       "College Algebra with Python": "Python 和大學代數",
       "college-algebra-with-python-v8": "Python 和大學代數認證",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "舊版前端",
       "legacy-front-end": "前端認證",
       "Legacy Back End": "舊版後端",

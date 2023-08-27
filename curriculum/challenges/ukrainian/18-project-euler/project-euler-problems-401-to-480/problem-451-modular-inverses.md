@@ -8,7 +8,7 @@ dashedName: problem-451-modular-inverses
 
 # --description--
 
-Consider the number 15.
+Розглянемо число 15.
 
 There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
 
@@ -25,7 +25,7 @@ So $I(15) = 11$.
 
 Also $I(100) = 51$ and $I(7) = 1$.
 
-Find $\sum I(n)$ for $3 ≤ n ≤ 2 \times {10}^7$
+Знайдіть $\sum I(n)$ за умови $3 ≤ n ≤ 2 \times {10}^7$
 
 # --hints--
 

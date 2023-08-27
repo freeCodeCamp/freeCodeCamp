@@ -1,6 +1,6 @@
 ---
 id: 5900f4f81000cf542c51000b
-title: 'Problem 396: Weak Goodstein sequence'
+title: 'Problema 396: sequenza debole di Goodstein'
 challengeType: 1
 forumTopicId: 302061
 dashedName: problem-396-weak-goodstein-sequence
@@ -8,35 +8,35 @@ dashedName: problem-396-weak-goodstein-sequence
 
 # --description--
 
-For any positive integer $n$, the $n$th weak Goodstein sequence $\\{g1, g2, g3, \ldots\\}$ is defined as:
+Per qualsiasi numero intero positivo $n$, l'$n$-esima sequenza debole di Goodstein $\\{g1, g2, g3, \ldots\\}$ è definita come:
 
 - $g_1 = n$
-- for $k > 1$, $g_k$ is obtained by writing $g_{k - 1}$ in base $k$, interpreting it as a base $k + 1$ number, and subtracting 1.
+- per $k > 1$, $g_k$ si ottiene scrivendo $g_{k - 1}$ in base $k$, interpretandolo come un numero in base $k + 1$, e sottraendo 1.
 
-The sequence terminates when $g_k$ becomes 0.
+La sequenza termina quando $g_k$ diventa 0.
 
-For example, the $6$th weak Goodstein sequence is $\\{6, 11, 17, 25, \ldots\\}$:
+Ad esempio, la sequenza debole $6$ di Goodstein è $\\{6, 11, 17, 25, \ldots\\}$:
 
 - $g_1 = 6$.
-- $g_2 = 11$ since $6 = 110_2$, $110_3 = 12$, and $12 - 1 = 11$.
-- $g_3 = 17$ since $11 = 102_3$, $102_4 = 18$, and $18 - 1 = 17$.
-- $g_4 = 25$ since $17 = 101_4$, $101_5 = 26$, and $26 - 1 = 25$.
+- $g_2 = 11$ da $6 = 110_2$, $110_3 = 12$ e $12 - 1 = 11$.
+- $g_3 = 17$ da $11 = 102_3$, $102_4 = 18$, e $18 - 1 = 17$.
+- $g_4 = 25$ da $17 = 101_4$, $101_5 = 26$, e $26 - 1 = 25$.
 
-and so on.
+e così via.
 
-It can be shown that every weak Goodstein sequence terminates.
+Si può dimostrare che ogni sequenza debole di Goodstein termina.
 
-Let $G(n)$ be the number of nonzero elements in the $n$th weak Goodstein sequence.
+Sia $G(n)$ il numero di elementi diversi da zero nella sequenza debole $n$ di Goodstein.
 
-It can be verified that $G(2) = 3$, $G(4) = 21$ and $G(6) = 381$.
+Si può verificare che $G(2) = 3$, $G(4) = 21$ e $G(6) = 381$.
 
-It can also be verified that $\sum G(n) = 2517$ for $1 ≤ n &lt; 8$.
+Può anche essere verificato che $\sum G(n) = 2517$ per $1 ≤ n &lt; 8$.
 
-Find the last 9 digits of $\sum G(n)$ for $1 ≤ n &lt; 16$.
+Trova le ultime 9 cifre di $\sum G(n)$ per $1 ≤ n &lt; 16$.
 
 # --hints--
 
-`weakGoodsteinSequence()` should return `173214653`.
+`weakGoodsteinSequence()` dovrebbe restituire `173214653`.
 
 ```js
 assert.strictEqual(weakGoodsteinSequence(), 173214653);

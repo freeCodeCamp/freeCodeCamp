@@ -8,7 +8,7 @@ dashedName: build-a-tic-tac-toe-game
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.
+**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KzXQgy/</a> aufweist.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Gib dem Ganzen deinen persönlichen Stil.
 

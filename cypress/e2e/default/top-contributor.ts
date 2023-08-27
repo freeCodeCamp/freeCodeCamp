@@ -1,11 +1,11 @@
 describe('Top contributor in user profile', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('pnpm run seed -- --top-contributor');
+    cy.task('seed', ['--top-contributor']);
   });
 
   after(() => {
-    cy.exec('pnpm run seed');
+    cy.task('seed');
   });
 
   beforeEach(() => {

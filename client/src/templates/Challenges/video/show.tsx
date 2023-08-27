@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,12 +10,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
@@ -178,6 +180,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         challengeNode: {
           challenge: {
             title,
+            challengeType,
             description,
             superBlock,
             block,
@@ -214,7 +217,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               <Spacer size='medium' />
               <ChallengeTitle
@@ -224,23 +227,26 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 {title}
               </ChallengeTitle>
 
-              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                <div className='video-wrapper'>
-                  {!this.state.videoIsLoaded ? (
-                    <div className='video-placeholder-loader'>
-                      <Loader />
-                    </div>
-                  ) : null}
-                  <VideoPlayer
-                    bilibiliIds={bilibiliIds}
-                    onVideoLoad={this.onVideoLoad}
-                    title={title}
-                    videoId={videoId}
-                    videoIsLoaded={this.state.videoIsLoaded}
-                    videoLocaleIds={videoLocaleIds}
-                  />
-                </div>
-              </Col>
+              {challengeType === challengeTypes.video && (
+                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                  <div className='video-wrapper'>
+                    {!this.state.videoIsLoaded ? (
+                      <div className='video-placeholder-loader'>
+                        <Loader />
+                      </div>
+                    ) : null}
+                    <VideoPlayer
+                      bilibiliIds={bilibiliIds}
+                      onVideoLoad={this.onVideoLoad}
+                      title={title}
+                      videoId={videoId}
+                      videoIsLoaded={this.state.videoIsLoaded}
+                      videoLocaleIds={videoLocaleIds}
+                    />
+                  </div>
+                </Col>
+              )}
+
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
@@ -300,7 +306,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </Col>
               <CompletionModal />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

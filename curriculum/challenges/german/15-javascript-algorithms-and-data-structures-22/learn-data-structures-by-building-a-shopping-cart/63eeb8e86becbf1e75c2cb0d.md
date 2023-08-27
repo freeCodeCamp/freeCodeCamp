@@ -1,13 +1,13 @@
 ---
 id: 63eeb8e86becbf1e75c2cb0d
-title: Step 21
+title: Schritt 21
 challengeType: 0
 dashedName: step-21
 ---
 
 # --description--
 
-You now need a total count of each product that the user has in the cart. Declare a `totalCountPerProduct` variable, and assign it an empty object.
+Du brauchst jetzt die Gesamtzahl aller Produkte, die der Nutzer im Einkaufswagen hat. Deklariere eine `totalCountPerProduct`-Variable und weise ihr ein leeres Objekt zu.
 
 # --hints--
 
@@ -25,7 +25,7 @@ const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+totalCountPerProduct\s*=/);
 ```
 
-You should assign an empty object to `totalCountPerProduct`.
+Du solltest `totalCountPerProduct` ein leeres Objekt zuweisen.
 
 ```js
 const afterAdd = code.split("addItem")[1];

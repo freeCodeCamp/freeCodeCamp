@@ -1,6 +1,6 @@
 ---
 id: 5900f3b91000cf542c50fecc
-title: 'Problem 77: Prime summations'
+title: 'Завдання 77: суми простих чисел'
 challengeType: 1
 forumTopicId: 302190
 dashedName: problem-77-prime-summations
@@ -8,7 +8,7 @@ dashedName: problem-77-prime-summations
 
 # --description--
 
-It is possible to write ten as the sum of primes in exactly five different ways:
+Число 10 можна записати як суму простих чисел п’ятьма різними способами:
 
 <div style='margin-left: 4em;'>
   7 + 3<br>
@@ -18,7 +18,7 @@ It is possible to write ten as the sum of primes in exactly five different ways:
   2 + 2 + 2 + 2 + 2<br><br>
 </div>
 
-What is the first value which can be written as the sum of primes in over `n` ways?
+Яке перше значення можна записати як суму простих чисел більш ніж `n` способами?
 
 # --hints--
 

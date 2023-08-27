@@ -40,7 +40,7 @@ It produces the thinned output:
   '                               ' ];
 ```
 
-## Algorithm
+## Algorithmus
 
 Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
@@ -51,7 +51,7 @@ Obviously the boundary pixels of the image cannot have the full eight neighbours
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
 - Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**Schritt 1:**
 
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
 
@@ -63,7 +63,7 @@ All pixels are tested and pixels satisfying all the following conditions (simult
 
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
-**Step 2:**
+**Schritt 2:**
 
 All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
 
@@ -85,13 +85,13 @@ Write a routine to perform Zhang-Suen thinning on the provided `image`, an array
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` sollte eine Funktion sein.
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));

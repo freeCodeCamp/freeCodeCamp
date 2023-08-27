@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
-Du kannst HTML, Javascript, CSS und die D3-SVG-basierte Visualisierungs-Bibliothek verwenden. Zur Erfüllung der Testfälle müssen die Achsen mit der D3-Achseneigenschaft erzeugt werden, welche automatisch Achsenmarkierungen entlang der Achse erstellt. Diese Achsenmarkierungen sind notwendig, um die D3-Tests zu erfüllen, da diese zur Bestimmung der Ausrichtung von grafischen Elementen verwendet werden. Weiter Informationen über die Achsenerstellung findest du hier: <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required DOM elements are queried on the moment of each test. Falls du ein Frontend-Framework (wie z.B. Vue) verwendest, kann es passieren, dass die Testergebnisse für dynamische Inhalte ungenau sind. Wir hoffen, dass wir diese irgendwann berücksichtigen können, aber derzeit werden diese Frameworks nicht für D3-Projekte unterstützt.
+Du kannst HTML, Javascript, CSS und die D3-SVG-basierte Visualisierungs-Bibliothek verwenden. Zur Erfüllung der Testfälle müssen die Achsen mit der D3-Achseneigenschaft erzeugt werden, welche automatisch Achsenmarkierungen entlang der Achse erstellt. Diese Achsenmarkierungen sind notwendig, um die D3-Tests zu erfüllen, da diese zur Bestimmung der Ausrichtung von grafischen Elementen verwendet werden. Weiter Informationen über die Achsenerstellung findest du hier: <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Erforderliche DOM-Elemente werden zum Zeitpunkt eines jeden Tests abgefragt. Falls du ein Frontend-Framework (wie z.B. Vue) verwendest, kann es passieren, dass die Testergebnisse für dynamische Inhalte ungenau sind. Wir hoffen, dass wir diese irgendwann berücksichtigen können, aber derzeit werden diese Frameworks nicht für D3-Projekte unterstützt.
 
 **User Story #1:** Mein Diagramm sollte einen Titel mit einer passenden `id="title"` haben.
 
@@ -24,17 +24,17 @@ Du kannst HTML, Javascript, CSS und die D3-SVG-basierte Visualisierungs-Biblioth
 
 **User Story #5:** Mein Diagramm sollte ein `rect` Element für jeden Datenpunkt mit einer entsprechenden `class="bar"` haben, welche die Daten anzeigt.
 
-**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
+**User Story #6:** Jede `.bar` sollte die `data-date`- und `data-gdp`-Eigenschaften haben, welche die `date`- und `GDP`-Werte beinhalten.
 
-**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
+**User Story #7:** Die `data-date`-Eigenschaften des `.bar`-Elements sollten mit der Reihenfolge der angegebenen Daten übereinstimmen.
 
-**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
+**User Story #8:** Die `data-gdp`-Eigenschaften des `.bar`-Elements sollten mit der Reihenfolge der angegebenen Daten übereinstimmen.
 
-**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
+**User Story #9:** Die Höhe jedes `.bar`-Elements sollte das entsprechende `GDP` der Daten exakt darstellen.
 
-**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
+**User Story #10:** Das `data-date`-Attribut und sein zugehöriges `.bar`-Element sollten sich mit dem entsprechenden Wert auf der x-Achse ausrichten.
 
-**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
+**User Story #11:** Das `data-gdp`-Attribut und sein zugehöriges `.bar`-Element sollten sich mit dem entsprechenden Wert auf der y-Achse ausrichten.
 
 **User Story #12:** Ich kann mit meiner Maus über einen Bereich fahren und einen Tooltip mit einem entsprechenden `id="tooltip"` sehen, das mir mehr Informationen über den Bereich anzeigt.
 

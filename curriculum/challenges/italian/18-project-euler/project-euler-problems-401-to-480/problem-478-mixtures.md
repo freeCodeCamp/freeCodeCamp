@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005e
-title: 'Problem 478: Mixtures'
+title: 'Problema 478: miscele'
 challengeType: 1
 forumTopicId: 302155
 dashedName: problem-478-mixtures
@@ -8,29 +8,29 @@ dashedName: problem-478-mixtures
 
 # --description--
 
-Let us consider mixtures of three substances: $A$, $B$ and $C$. A mixture can be described by a ratio of the amounts of $A$, $B$, and $C$ in it, i.e., $(a : b : c)$. For example, a mixture described by the ratio (2 : 3 : 5) contains 20% $A$, 30% $B$ and 50% $C$.
+Consideriamo miscele di tre sostanze: $A$, $B$ e $C$. Una miscela può essere descritta da un rapporto tra le quantità di $A$, $B$e $C$ in essa, cioè, $(a : b : c)$. Ad esempio, una miscela descritta dal rapporto (2 : 3 : 5) contiene il 20% di $A$, il 30% di $B$ e il 50% di $C$.
 
-For the purposes of this problem, we cannot separate the individual components from a mixture. However, we can combine different amounts of different mixtures to form mixtures with new ratios.
+Ai fini di questo problema, non possiamo separare i singoli componenti da una miscela. Tuttavia, possiamo combinare diverse quantità di miscele diverse per formare miscele con nuovi rapporti.
 
-For example, say we have three mixtures with ratios (3 : 0 : 2), (3 : 6 : 11) and (3 : 3 : 4). By mixing 10 units of the first, 20 units of the second and 30 units of the third, we get a new mixture with ratio (6 : 5 : 9), since: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
+Per esempio, diciamo che abbiamo tre miscele con rapporti (3 : 0 : 2), (3 : 6 : 11) e (3 : 3 : 4). Mescolando 10 unità della prima, 20 unità della seconda e 30 unità della terza, otteniamo una nuova miscela con rapporto (6 : 5 : 9), poiché: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
 
-However, with the same three mixtures, it is impossible to form the ratio (3 : 2 : 1), since the amount of $B$ is always less than the amount of $C$.
+Tuttavia, con le stesse tre miscele, è impossibile formare il rapporto (3 : 2 : 1), poiché la quantità di $B$ è sempre inferiore alla quantità di $C$.
 
-Let $n$ be a positive integer. Suppose that for every triple of integers $(a, b, c)$ with $0 ≤ a, b, c ≤ n$ and $gcd(a, b, c) = 1$, we have a mixture with ratio $(a : b : c)$. Let $M(n)$ be the set of all such mixtures.
+Sia $n$ un numero intero positivo. Supponiamo che per ogni terna di interi $(a, b, c)$ con $0 ≤ a, b, c ≤ n$ e $gcd(a, b, c) = 1$, abbiamo una miscela con rapporto $(a : b : c)$. Sia $M(n)$ l'insieme di tutte queste miscele.
 
-For example, $M(2)$ contains the 19 mixtures with the following ratios:
+Ad esempio, $M(2)$ contiene le 19 miscele con i seguenti rapporti:
 
 {(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
 
-Let $E(n)$ be the number of subsets of $M(n)$ which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts $A$, $B$ and $C$.
+Sia $E(n)$ il numero di sottoinsiemi di $M(n)$ che possono produrre la miscela con rapporto (1 : 1 : 1), cioè, la miscela con parti uguali $A$, $B$ e $C$.
 
-We can verify that $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ and $E(500)\bmod {11}^8 = 13\\,801\\,403$.
+Possiamo verificare che $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ e $E(500)\bmod {11}^8 = 13\\,801\\,403$.
 
-Find $E(10\\,000\\,000)\bmod {11}^8$.
+Trova $E(10\\,000\\,000)\bmod {11}^8$.
 
 # --hints--
 
-`mixtures()` should return `59510340`.
+`mixtures()` dovrebbe restituire `59510340`.
 
 ```js
 assert.strictEqual(mixtures(), 59510340);

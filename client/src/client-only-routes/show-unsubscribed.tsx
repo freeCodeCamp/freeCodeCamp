@@ -1,26 +1,30 @@
-import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import { Panel, Button } from '@freecodecamp/react-bootstrap';
+import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
+import { Container } from '@freecodecamp/ui';
 import envData from '../../../config/env.json';
 import { Spacer } from '../components/helpers';
 import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 
+type ShowUnsubscribedProps = Pick<RouteComponentProps, 'path'> & {
+  unsubscribeId?: string;
+};
+
 function ShowUnsubscribed({
   unsubscribeId
-}: {
-  unsubscribeId: string;
-}): JSX.Element {
+}: ShowUnsubscribedProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
       <Helmet>
         <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <main>
           <FullWidthRow>
             <Spacer size='large' />
@@ -44,7 +48,7 @@ function ShowUnsubscribed({
           ) : null}
           <Spacer size='large' />
         </main>
-      </Grid>
+      </Container>
     </>
   );
 }

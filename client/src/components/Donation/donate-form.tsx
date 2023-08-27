@@ -5,12 +5,14 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
+import type { TFunction } from 'i18next';
 
 import {
   amountsConfig,
   durationsConfig,
   defaultDonation,
-  modalDefaultDonation
+  modalDefaultDonation,
+  type DonationConfig
 } from '../../../../config/donation-settings';
 import { defaultDonationFormState } from '../../redux';
 import { updateDonationFormState, postCharge } from '../../redux/actions';
@@ -34,9 +36,7 @@ import {
   PaymentContext,
   PostPayment,
   HandleAuthentication,
-  DonationApprovalData,
-  DonationAmount,
-  DonationConfig
+  DonationApprovalData
 } from './types';
 
 import './donation.css';
@@ -88,10 +88,7 @@ type DonateFormProps = {
   isSignedIn: boolean;
   isDonating: boolean;
   showLoading: boolean;
-  t: (
-    label: string,
-    { usd, hours }?: { usd?: string | number; hours?: string }
-  ) => string;
+  t: TFunction;
   theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
@@ -153,8 +150,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.state = { ...initialAmountAndDuration };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
-    this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
-    this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
     this.postPayment = this.postPayment.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
@@ -181,26 +176,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         [provider]: false
       }
     });
-  }
-
-  getDonationButtonLabel() {
-    const { donationAmount, donationDuration } = this.state;
-    const { t } = this.props;
-    const usd = formattedAmountLabel(donationAmount);
-    let donationBtnLabel = t('donate.confirm');
-    if (donationDuration === 'one-time') {
-      donationBtnLabel = t('donate.confirm-2', {
-        usd: usd
-      });
-    } else {
-      donationBtnLabel =
-        donationDuration === 'month'
-          ? t('donate.confirm-3', {
-              usd: usd
-            })
-          : t('donate.confirm-4', { usd: usd });
-    }
-    return donationBtnLabel;
   }
 
   postPayment = ({
@@ -230,23 +205,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     if (this.props.handleProcessing) this.props.handleProcessing();
   };
 
-  handleSelectAmount(donationAmount: DonationAmount) {
-    this.setState({ donationAmount });
-  }
-
   resetDonation() {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
-  }
-
-  renderCompletion(props: {
-    processing: boolean;
-    redirecting: boolean;
-    success: boolean;
-    error: string | null;
-    isSignedIn: boolean;
-    reset: () => unknown;
-  }) {
-    return <DonateCompletion {...props} />;
   }
 
   renderButtonGroup() {
@@ -271,7 +231,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {this.getDonationButtonLabel()}:
+          {t('donate.confirm-monthly', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
         </b>
         <Spacer size='medium' />
         <fieldset className={'donate-btn-group security-legend'}>
@@ -349,28 +311,31 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     } = this.props;
 
     if (success || error) {
-      return this.renderCompletion({
-        processing,
-        redirecting,
-        success,
-        error,
-        isSignedIn,
-        reset: this.resetDonation
-      });
+      return (
+        <DonateCompletion
+          processing={processing}
+          redirecting={redirecting}
+          success={success}
+          error={error}
+          isSignedIn={isSignedIn}
+          reset={this.resetDonation}
+        />
+      );
     }
 
     // keep payment provider elements on DOM during processing and redirect to avoid errors.
     return (
       <>
-        {(processing || redirecting) &&
-          this.renderCompletion({
-            processing,
-            redirecting,
-            success,
-            error,
-            isSignedIn,
-            reset: this.resetDonation
-          })}
+        {(processing || redirecting) && (
+          <DonateCompletion
+            processing={processing}
+            redirecting={redirecting}
+            success={success}
+            error={error}
+            isSignedIn={isSignedIn}
+            reset={this.resetDonation}
+          />
+        )}
         <div className={processing || redirecting ? 'hide' : ''}>
           {isMinimalForm ? this.renderButtonGroup() : this.renderPageForm()}
         </div>

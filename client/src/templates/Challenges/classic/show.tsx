@@ -4,12 +4,12 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
-import Media from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -214,15 +214,22 @@ function ShowClassic({
   const containerRef = useRef<HTMLElement>();
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  // TODO: show preview should NOT be computed like this. That determination is
+  // made during the build (at least twice!). It should be either a prop or
+  // computed from challengeType
   const showPreview =
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject;
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.python;
 
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
@@ -422,7 +429,7 @@ function ShowClassic({
     >
       <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />
-        <Media maxWidth={MAX_MOBILE_WIDTH}>
+        {isMobile && (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -442,6 +449,7 @@ function ShowClassic({
                 previewMounted={previewMounted}
               />
             }
+            windowTitle={windowTitle}
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
@@ -449,8 +457,8 @@ function ShowClassic({
             usesMultifileEditor={usesMultifileEditor}
             videoUrl={videoUrl}
           />
-        </Media>
-        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+        )}
+        {!isMobile && (
           <DesktopLayout
             challengeFiles={reduxChallengeFiles}
             challengeType={challengeType}
@@ -479,7 +487,7 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
           />
-        </Media>
+        )}
         <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />

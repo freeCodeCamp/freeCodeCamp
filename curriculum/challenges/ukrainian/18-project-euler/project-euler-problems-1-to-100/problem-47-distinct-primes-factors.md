@@ -1,6 +1,6 @@
 ---
 id: 5900f39c1000cf542c50feae
-title: 'Problem 47: Distinct primes factors'
+title: 'Завдання 47: різні прості множники'
 challengeType: 1
 forumTopicId: 302145
 dashedName: problem-47-distinct-primes-factors
@@ -8,14 +8,14 @@ dashedName: problem-47-distinct-primes-factors
 
 # --description--
 
-The first two consecutive numbers to have two distinct prime factors are:
+Першими двома послідовними числами, які мають два різні прості множники, є:
 
 <div style='padding-left: 4em;'>
   14 = 2 × 7<br>
   15 = 3 × 5
 </div>
 
-The first three consecutive numbers to have three distinct prime factors are:
+Першими трьома послідовними числами, які мають три різні прості множники, є:
 
 <div style='padding-left: 4em;'>
   644 = 2<sup>2</sup> × 7 × 23<br>
@@ -23,7 +23,7 @@ The first three consecutive numbers to have three distinct prime factors are:
   646 = 2 × 17 × 19
 </div>
 
-Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
+Знайдіть перші чотири послідовні цілі числа, які мають чотири різні прості множники. Яким є перше з цих чисел?
 
 # --hints--
 

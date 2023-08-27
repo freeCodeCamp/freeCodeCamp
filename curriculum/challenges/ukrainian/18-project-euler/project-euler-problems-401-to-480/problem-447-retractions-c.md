@@ -20,7 +20,7 @@ $F(N) = \displaystyle\sum_{n = 2}^N R(n)$.
 
 $F({10}^7) ≡ 638\\,042\\,271\bmod 1\\,000\\,000\\,007$.
 
-Find $F({10}^{14})$. Give your answer modulo $1\\,000\\,000\\,007$.
+Знайдіть $F({10}^{14})$. Give your answer modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 

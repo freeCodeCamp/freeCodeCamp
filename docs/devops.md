@@ -209,19 +209,19 @@ You can identify the exact version deployed by visiting the build and deployment
 
 There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Do not send regular users to this site as a measure of confirming a fix
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign in page may look different than production
+- **Sign in page may look different than production**
 
   We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
@@ -458,7 +458,13 @@ Provisioning VMs with the Code
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, set up env, and keys.
+3. Install pm2 globally.
+
+```console
+npm install -g pm2
+```
+
+4. Clone freeCodeCamp, set up env, and keys.
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -466,28 +472,28 @@ cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Create the `.env` from the secure credentials storage.
+5. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+6. Install dependencies
 
 ```console
 pnpm install
 ```
 
-6. Setup pm2 `logrotate` and startup on boot
+7. Setup pm2 `logrotate` and startup on boot
   
 ```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Build the server
+8. Build the server
 
 ```console
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Start Instances
+9.  Start Instances
 
 ```console
 pnpm start:server
@@ -496,11 +502,11 @@ pnpm start:server
 ### Logging and Monitoring
 
 ```console
-pnpm pm2 logs
+pm2 logs
 ```
 
 ```console
-pnpm pm2 monit
+pm2 monit
 ```
 
 ### Updating Instances (Maintenance)
@@ -517,7 +523,7 @@ dependencies or adding environment variables.
 1. Stop all instances
 
 ```console
-pnpm pm2 stop all
+pm2 stop all
 ```
 
 2. Install dependencies
@@ -535,13 +541,13 @@ pnpm prebuild && pnpm build:curriculum && pnpm build:server
 4. Start Instances
 
 ```console
-pnpm start:server && pnpm pm2 logs
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pnpm reload:server && pnpm pm2 logs
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code and logic via pipelines. You
@@ -554,7 +560,7 @@ pnpm reload:server && pnpm pm2 logs
 2. Update pm2 to use the new version
 
 ```console
-pnpm pm2 update
+pm2 update
 ```
 
 ## Work on Client Instances

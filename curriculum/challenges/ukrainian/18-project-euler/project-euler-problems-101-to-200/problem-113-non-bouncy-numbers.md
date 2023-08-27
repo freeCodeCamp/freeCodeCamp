@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
-title: 'Problem 113: Non-bouncy numbers'
+title: 'Завдання 113: нестрибучі числа'
 challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers
@@ -8,15 +8,15 @@ dashedName: problem-113-non-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Якщо, читаючи число зліва направо, жодна цифра не перевищує цифру справа від неї, таке число називається висхідним. Наприклад, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Таким же чином, якщо жодна цифра не перевищує цифру зліва від неї, число називається низхідним. Наприклад, 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+«Стрибучим» числом називають додатне число, яке не являється ні висхідним, ні низхідним. Наприклад, 155349.
 
-As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
+При збільшенні n збільшується частина стрибучих чисел, менших за n. Тобто існує тільки 12951 нестрибучих чисел до мільйона, і тільки 277 032 нестрибучих чисел менше ${10}^{10}$.
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+Скільки чисел, менших за гугол (${10}^{100}$), є нестрибучими?
 
 # --hints--
 

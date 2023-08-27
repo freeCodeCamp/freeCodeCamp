@@ -9,21 +9,21 @@
   "required": [],
   "superBlock": "machine-learning-with-python",
   "challengeOrder": [
-    [
-      "5e9a0e9ef99a403d019610ca",
-      "How Deep Neural Networks Work"
-    ],
-    [
-      "5e9a0e9ef99a403d019610cb",
-      "Recurrent Neural Networks RNN and Long Short Term Memory LSTM"
-    ],
-    [
-      "5e9a0e9ef99a403d019610cc",
-      "Deep Learning Demystified"
-    ],
-    [
-      "5e9a0e9ef99a403d019610cd",
-      "How Convolutional Neural Networks work"
-    ]
+    {
+      "id": "5e9a0e9ef99a403d019610ca",
+      "title": "How Deep Neural Networks Work"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cb",
+      "title": "Recurrent Neural Networks RNN and Long Short Term Memory LSTM"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cc",
+      "title": "Deep Learning Demystified"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cd",
+      "title": "How Convolutional Neural Networks work"
+    }
   ]
 }

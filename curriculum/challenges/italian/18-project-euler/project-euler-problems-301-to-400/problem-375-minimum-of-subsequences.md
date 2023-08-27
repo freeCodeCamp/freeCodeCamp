@@ -1,6 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
-title: 'Problem 375: Minimum of subsequences'
+title: 'Problema 375: minimo delle sottosequenze'
 challengeType: 1
 forumTopicId: 302037
 dashedName: problem-375-minimum-of-subsequences
@@ -8,20 +8,20 @@ dashedName: problem-375-minimum-of-subsequences
 
 # --description--
 
-Let $S_n$ be an integer sequence produced with the following pseudo-random number generator:
+Sia $S_n$ una sequenza intera prodotta con il seguente generatore di numeri pseudo-casuali:
 
 $$\begin{align}         S_0 & = 290\\,797 \\\\
   S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093 \end{align}$$
 
-Let $A(i, j)$ be the minimum of the numbers $S_i, S_{i + 1}, \ldots, S_j$ for $i ≤ j$. Let $M(N) = \sum A(i, j)$ for $1 ≤ i ≤ j ≤ N$.
+Sia $A(i, j)$ il minimo dei numeri $S_i, S_{i + 1}, \ldots, S_j$ per $i ≤ j$. Sia $M(N) = \sum A(i, j)$ per $1 ≤ i ≤ j ≤ N$.
 
-We can verify that $M(10) = 432\\,256\\,955$ and $M(10\\,000) = 3\\,264\\,567\\,774\\,119$.
+Possiamo verificare che $M(10) = 432\\,256\\,955$ e $M(10\\,000) = 3\\,264\\,567\\,774\\,119$.
 
-Find $M(2\\,000\\,000\\,000)$.
+Trova $M(2\\,000\\,000\\,000)$.
 
 # --hints--
 
-`minimumOfSubsequences()` should return `7435327983715286000`.
+`minimumOfSubsequences()` dovrebbe restituire `7435327983715286000`.
 
 ```js
 assert.strictEqual(minimumOfSubsequences(), 7435327983715286000);

@@ -18,13 +18,13 @@ This should be reversed for decryption with the `unstraddle()` function.
 
 # --hints--
 
-`straddle` should be a function.
+`straddle` sollte eine Funktion sein.
 
 ```js
 assert(typeof straddle == 'function');
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` sollte einen String zurückgeben.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"34045747525284613427502840425027537379697175891898898898584619028294547488"`.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` sollte `"34045747525284613427502840425027537379697175891898898898584619028294547488"` zurückgeben.
 
 ```js
 assert.equal(
@@ -47,7 +47,7 @@ assert.equal(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"`.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` sollte `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"` zurückgeben.
 
 ```js
 assert.equal(
@@ -60,7 +60,7 @@ assert.equal(
 );
 ```
 
-`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"`.
+`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` sollte `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"` zurückgeben.
 
 ```js
 assert.equal(
@@ -73,13 +73,13 @@ assert.equal(
 );
 ```
 
-`unstraddle` should be a function.
+`unstraddle` sollte eine Funktion sein.
 
 ```js
 assert(typeof unstraddle == 'function');
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` sollte einen String zurückgeben.
 
 ```js
 assert(
@@ -90,7 +90,7 @@ assert(
 );
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."`.
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` sollte `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."` zurückgeben.
 
 ```js
 assert.equal(
@@ -102,7 +102,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"`.
+`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` sollte `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"` zurückgeben.
 
 ```js
 assert.equal(
@@ -114,7 +114,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."`.
+`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` sollte `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."` zurückgeben.
 
 ```js
 assert.equal(

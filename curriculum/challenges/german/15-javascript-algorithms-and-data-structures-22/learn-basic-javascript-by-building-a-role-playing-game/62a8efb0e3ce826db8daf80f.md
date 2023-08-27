@@ -1,6 +1,6 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 131
+title: Schritt 131
 challengeType: 0
 dashedName: step-131
 ---
@@ -11,13 +11,13 @@ Finish the `defeatMonster` function by calling the `update` function with `locat
 
 # --hints--
 
-You should call the `update` function.
+Du solltest die Funktion `update` aufrufen.
 
 ```js
 assert.match(defeatMonster.toString(), /update/);
 ```
 
-You should pass `locations[4]` as the argument.
+Du solltest `locations[4]` als Argument übergeben.
 
 ```js
 assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);

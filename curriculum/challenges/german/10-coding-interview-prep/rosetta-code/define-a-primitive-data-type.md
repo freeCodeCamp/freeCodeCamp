@@ -19,13 +19,13 @@ Error handling:
 
 # --hints--
 
-`Num` should be a function.
+`Num` sollte eine Funktion sein.
 
 ```js
 assert(typeof Num === 'function');
 ```
 
-`new Num(4)` should return an object.
+`new Num(4)` sollte ein Objekt zurückgeben.
 
 ```js
 assert(typeof new Num(4) === 'object');
@@ -97,7 +97,7 @@ assert(new Num(3) < new Num(4));
 assert(!(new Num(3) > new Num(4)));
 ```
 
-`(new Num(5)).toString()` should return '5'
+`(new Num(5)).toString()` sollte '5' zurückgeben
 
 ```js
 assert.equal(new Num(5).toString(), '5');

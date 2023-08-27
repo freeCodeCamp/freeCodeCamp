@@ -90,9 +90,13 @@ Hay un botón de "Vista previa de página 404 personalizada", haga clic en él p
 
 Si tienes errores mientras instalas dependencias, por favor asegúrate de que no estes en una red restringida o tu configuración de firewall no te impida acceder a los recursos.
 
-La primera configuración puede tardar un rato dependiendo del ancho de banda de tu red. Ten paciencia, y si todavía estás atascado recomendamos usar GitPod en lugar de una configuración sin conexión.
+La primera configuración puede tardar un rato dependiendo del ancho de banda de tu red. Be patient, and if you are still stuck we recommend using Gitpod instead of an offline setup.
 
 > [!NOTE] Si estás utilizando dispositivos de Apple con el chip M1 para iniciar la aplicación localmente, es sugerido usar Node v14.7 or superior. De lo contrario, podrías tener problemas con dependencias como Sharp.
+
+## Working With Other Languages
+
+To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
 
 ## Getting Help
 

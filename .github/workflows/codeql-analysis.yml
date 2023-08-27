@@ -32,10 +32,10 @@ jobs:
         language: ['javascript']
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       - name: Setup CodeQL
-        uses: github/codeql-action/init@29b1f65c5e92e24fe6b6647da1eaabe529cec70f # v2
+        uses: github/codeql-action/init@a09933a12a80f87b87005513f0abb1494c27a716 # v2
         with:
           languages: ${{ matrix.language }}
       - name: Perform Analysis
-        uses: github/codeql-action/analyze@29b1f65c5e92e24fe6b6647da1eaabe529cec70f # v2
+        uses: github/codeql-action/analyze@a09933a12a80f87b87005513f0abb1494c27a716 # v2

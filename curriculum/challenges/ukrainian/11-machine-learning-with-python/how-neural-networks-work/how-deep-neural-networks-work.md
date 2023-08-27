@@ -18,7 +18,7 @@ dashedName: how-deep-neural-networks-work
 
 ---
 
-Це більш точно.
+Це точніше.
 
 ---
 

@@ -20,7 +20,7 @@ $\\{2, 3, 5\\}$ is an antichain of $S(30)$.
 
 Let $N(n)$ be the maximum length of an antichain of $S(n)$.
 
-Find $\sum N(n)$ for $1 ≤ n ≤ {10}^8$
+Знайдіть $\sum N(n)$ за умови $1 ≤ n ≤ {10}^8$
 
 # --hints--
 

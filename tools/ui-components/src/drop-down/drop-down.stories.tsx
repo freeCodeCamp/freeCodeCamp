@@ -32,14 +32,19 @@ const DropUpChildren = () => (
 );
 
 export const Menus = (): JSX.Element => (
-  <>
+  <div
+    style={{
+      height: '220px',
+      width: '220px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start'
+    }}
+  >
     <Dropdown>
       <DropDownChildren />
     </Dropdown>
-    <Dropdown>
-      <DropDownChildren />
-    </Dropdown>
-  </>
+  </div>
 );
 
 const UpTemplate: Story<DropdownProps> = args => {
@@ -47,14 +52,13 @@ const UpTemplate: Story<DropdownProps> = args => {
     <div
       style={{
         height: '220px',
+        width: '220px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end'
       }}
     >
-      <div style={{ width: '220px' }}>
-        <Dropdown {...args} />
-      </div>
+      <Dropdown {...args} />
     </div>
   );
 };

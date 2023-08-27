@@ -6,8 +6,7 @@ const {
   localeChallengesRootDir
 } = require('./utils/build-challenges');
 
-const { clientLocale, curriculumLocale, homeLocation, sentryClientDSN } =
-  envData;
+const { clientLocale, curriculumLocale, homeLocation } = envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
@@ -23,12 +22,6 @@ module.exports = {
   pathPrefix: pathPrefix,
   plugins: [
     'gatsby-plugin-pnpm',
-    {
-      resolve: '@sentry/gatsby',
-      options: {
-        dsn: sentryClientDSN
-      }
-    },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
@@ -51,7 +44,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'fcc-source-challenges',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-source-challenges'
+      ),
       options: {
         name: 'challenges',
         source: buildChallenges,
@@ -70,7 +65,9 @@ module.exports = {
       resolve: 'gatsby-transformer-remark'
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
@@ -83,7 +80,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'superBlockIntroMarkdown',
         predicate: ({ frontmatter }) => {

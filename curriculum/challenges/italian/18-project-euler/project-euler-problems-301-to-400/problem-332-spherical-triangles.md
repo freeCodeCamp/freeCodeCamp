@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcb
-title: 'Problem 332: Spherical triangles'
+title: 'Problema 332: triangoli sferici'
 challengeType: 1
 forumTopicId: 301990
 dashedName: problem-332-spherical-triangles
@@ -8,25 +8,25 @@ dashedName: problem-332-spherical-triangles
 
 # --description--
 
-A spherical triangle is a figure formed on the surface of a sphere by three great circular arcs intersecting pairwise in three vertices.
+Un triangolo sferico è una figura formata sulla superficie di una sfera da tre grandi archi circolari che si intersecano a coppie in tre vertici.
 
-<img class="img-responsive center-block" alt="spherical triangle formed on the surface of a sphere" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="triangolo sferico formato sulla superficie di una sfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
 
-Let $C(r)$ be the sphere with the centre (0,0,0) and radius $r$.
+Sia $C(r)$ la sfera di centro (0,0,0) e raggio $r$.
 
-Let $Z(r)$ be the set of points on the surface of $C(r)$ with integer coordinates.
+Sia $Z(r)$ il set di punti sulla superficie di $C(r)$ con coordinate intere.
 
-Let $T(r)$ be the set of spherical triangles with vertices in $Z(r)$. Degenerate spherical triangles, formed by three points on the same great arc, are <u>not</u> included in $T(r)$.
+Sia $T(r)$ il set di triangoli sferici con vertici in $Z(r)$. Triangoli sferici degeneri, formati da tre punti sullo stesso grande arco, <u>non</u> sono inclusi in $T(r)$.
 
-Let $A(r)$ be the area of the smallest spherical triangle in $T(r)$.
+Sia $A(r)$ l'area del più piccolo triangolo sferico in $T(r)$.
 
-For example $A(14)$ is 3.294040 rounded to six decimal places.
+Per esempio, $A(14)$ è 3.294040 arrotondato a sei decimali.
 
-Find $\displaystyle \sum_{r = 1}^{50} A(r)$. Give your answer rounded to six decimal places.
+Trova $\displaystyle \sum_{r = 1}^{50} A(r)$. Dai la risposta arrotondata a sei decimali.
 
 # --hints--
 
-`sphericalTriangles()` should return `2717.751525`.
+`sphericalTriangles()` dovrebbe restituire `2717.751525`.
 
 ```js
 assert.strictEqual(sphericalTriangles(), 2717.751525);

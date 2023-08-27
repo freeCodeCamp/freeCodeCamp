@@ -28,13 +28,19 @@ assert(incAction().type === INCREMENT);
 assert(decAction().type === DECREMENT);
 ```
 
-Redux ストアを、`state` を 0 として初期化します。
+Running `store.getState()` should return a number
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
+The Redux store should initialize with a `state` of 0.
 
 ```js
 assert(_store.getState() === 0);
 ```
 
-Redux ストアでの `incAction` のディスパッチで、`state` を 1 だけ増やします。
+Dispatching `incAction` on the Redux store should increment the `state` by 1.
 
 ```js
 assert(
@@ -47,7 +53,7 @@ assert(
 );
 ```
 
-Redux ストアでの `decAction` のディスパッチで、`state` を 1 だけ減らします。
+Dispatching `decAction` on the Redux store should decrement the `state` by 1.
 
 ```js
 assert(
@@ -60,7 +66,7 @@ assert(
 );
 ```
 
-`counterReducer` は関数である必要があります。
+`counterReducer` should be a function
 
 ```js
 assert(typeof counterReducer === 'function');

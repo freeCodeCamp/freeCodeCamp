@@ -1,6 +1,6 @@
 ---
 id: 5900f3a51000cf542c50feb8
-title: 'Problem 57: Square root convergents'
+title: 'Завдання 57: наближення квадратного кореня'
 challengeType: 1
 forumTopicId: 302168
 dashedName: problem-57-square-root-convergents
@@ -8,11 +8,11 @@ dashedName: problem-57-square-root-convergents
 
 # --description--
 
-It is possible to show that the square root of two can be expressed as an infinite continued fraction.
+Можна переконатися в тому, що квадратний корінь з двійки можна виразити у вигляді нескінченного дробу.
 
 <div style='text-align: center;'>$\sqrt 2 =1+ \frac 1 {2+ \frac 1 {2 +\frac 1 {2+ \dots}}}$</div>
 
-By expanding this for the first four iterations, we get:
+Наблизивши цей вираз для перших чотирьох ітерацій, отримаємо:
 
 $1 + \\frac 1 2 = \\frac 32 = 1.5$
 
@@ -22,9 +22,9 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 2}} = \\frac {17}{12} = 1.41666 \\dots$
 
 $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.41379 \\dots$
 
-The next three expansions are $\\frac {99}{70}$, $\\frac {239}{169}$, and $\\frac {577}{408}$, but the eighth expansion, $\\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
+Наступними трьома наближеннями є $\\frac {99}{70}$, $\\frac {239}{169}$ та $\\frac {577}{408}$, але восьме наближення $\\frac {1393}{985}$ є першим прикладом виразу, в якому кількість цифр у чисельнику перевищує кількість цифр у знаменнику.
 
-In the first `n` expansions, how many fractions contain a numerator with more digits than denominator?
+Скільки дробів містять більше цифр у чисельнику, ніж у знаменнику в перших `n` наближеннях?
 
 # --hints--
 

@@ -9,25 +9,25 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-You can generate random decimal numbers with `Math.random()`, but sometimes you need to generate random whole numbers. The following process will give you a random whole number less than `20`:
+Ви можете генерувати випадкові десяткові числа за допомогою `Math.random()`, але іноді потрібно генерувати випадкові цілі числа. Ви отримаєте випадкове ціле число менше за `20`, виконавши ці кроки:
 
-1. Use `Math.random()` to generate a random decimal number.
-2. Multiply that random decimal number by `20`.
-3. Use `Math.floor()` to round this number down to its nearest whole number.
+1. Використайте `Math.random()`, щоб згенерувати випадкове десяткове число.
+2. Помножте це випадкове десяткове число на `20`.
+3. Використайте `Math.floor()`, щоб заокруглити це число до найближчого цілого числа.
 
-Remember that `Math.random()` can never quite return a `1`, so it's impossible to actually get `20` since you are rounding down with `Math.floor()`. This process will give you a random whole number in the range from `0` to `19`.
+Пам’ятайте, що `Math.random()` ніколи не може повернути `1`, тому фактично неможливо отримати `20`, оскільки ви заокруглюєте в меншу сторону за допомогою `Math.floor()`. У результаті ви отримаєте випадкове ціле число від `0` до `19`.
 
-Putting everything together, this is what your code looks like:
+Зіставивши усе разом, ось так виглядає ваш код:
 
 ```js
 Math.floor(Math.random() * 20);
 ```
 
-You are calling `Math.random()`, multiplying the result by 20, then passing the value to `Math.floor()` to round the value down to the nearest whole number.
+Ви викликаєте `Math.random()`, перемноживши результат на 20, а потім передаєте значення до `Math.floor()`, щоб округлити значення до найближчого цілого числа.
 
 # --instructions--
 
-Use this technique to generate and return a random whole number in the range from `0` to `9`.
+Використайте цю техніку, щоб згенерувати та повернути випадкове ціле число в діапазоні від `0` до `9`.
 
 # --hints--
 
@@ -49,7 +49,7 @@ assert(
 assert(code.match(/Math.random/g).length >= 1);
 ```
 
-You should have multiplied the result of `Math.random` by 10 to make it a number in the range from zero to nine.
+Ви повинні помножити результат `Math.random` на 10, щоб зробити його числом в діапазоні від 0 до 9.
 
 ```js
 assert(

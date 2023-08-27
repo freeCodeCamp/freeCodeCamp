@@ -12,9 +12,9 @@ Bei den Balken- und Streu-Diagrammen werden die Daten direkt in das SVG eingezei
 
 In D3 gibt es Skalen, die bei der Darstellung von Daten helfen. `scales` sind Funktionen, die dem Programm mitteilen, wie eine Menge von unbearbeiteten Datenpunkten den SVG-Pixeln zugeordnet werden soll.
 
-For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. Du übergibst D3 einen Skalierungstyp, mit welchem du ihm mitteilst, wie die hohen BIP-Werte in dem 100x500 großen Bereich zu platzieren sind.
+Nehmen wir beispielsweise an, du hast ein SVG der Größe 100x500 und möchtest das Bruttoinlandsprodukt (BIP) für eine Reihe von Ländern darstellen. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. Du übergibst D3 einen Skalierungstyp, mit welchem du ihm mitteilst, wie die hohen BIP-Werte in dem 100x500 großen Bereich zu platzieren sind.
 
-Es ist unwahrscheinlich, dass du die Rohdaten so darstellen würdest, wie sie sind. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
+Es ist unwahrscheinlich, dass du die Rohdaten so darstellen würdest, wie sie sind. Bevor du mit der Einzeichnung beginnst, legst du die Skala für deinen Datensatz fest, so dass die `x`- und `y`-Werte zu deiner SVG-Breite sowie -Höhe passen.
 
 D3 verfügt über verschiedene Skalierungstypen. Möchtest du eine lineare Skalierung (wie sie für quantitative Daten meist verwendet wird), verwendest du die D3-Methode `scaleLinear()`:
 

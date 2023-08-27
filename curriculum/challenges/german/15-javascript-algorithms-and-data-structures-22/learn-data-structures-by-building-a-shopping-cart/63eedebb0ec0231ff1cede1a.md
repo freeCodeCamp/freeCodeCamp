@@ -1,6 +1,6 @@
 ---
 id: 63eedebb0ec0231ff1cede1a
-title: Step 22
+title: Schritt 22
 challengeType: 0
 dashedName: step-22
 ---
@@ -18,7 +18,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /items\.forEach\(/);
 ```
 
-Remember to use the `this` keyword to access the `items` array.
+Denke daran, das `this`-Schlüsselwort zu verwenden, um auf das `items`-Array zuzugreifen.
 
 ```js
 const cart = new ShoppingCart();

@@ -1,7 +1,12 @@
+:root {
+  --header-height: 38px;
+}
+
 html {
   height: 100%;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
+  scroll-padding-top: calc(var(--header-height) + 10px);
 }
 
 body {
@@ -9,7 +14,6 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
-  --header-height: 38px;
 }
 
 #___gatsby {
@@ -63,15 +67,6 @@ body {
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
-}
-
-#content-start {
-  min-height: 0;
-  height: 100%;
-}
-
-#content-start > div {
-  height: 100%;
 }
 
 h1 {
@@ -163,6 +158,13 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  text-underline-position: under;
+}
+
+@supports not (text-underline-position: under) {
+  a {
+    text-underline-offset: 1em;
+  }
 }
 
 a:hover,
@@ -220,8 +222,7 @@ button,
 input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
-  border-width: 3px;
-  border-color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
   color: var(--secondary-color);
   border-radius: 0;
   text-decoration: none;
@@ -375,6 +376,14 @@ fieldset[disabled] .btn-primary.focus {
   fill: var(--primary-color);
 }
 
+.map-icon .inverted-color {
+  fill: var(--quaternary-background);
+}
+
+.link-btn.btn-lg:hover .map-icon .inverted-color {
+  fill: var(--secondary-color);
+}
+
 .map-icon {
   width: 35px;
   max-height: 45px;
@@ -384,6 +393,7 @@ fieldset[disabled] .btn-primary.focus {
 .cert-header-icon {
   display: block;
   width: 80px;
+  height: 80px;
   margin: auto;
 }
 
@@ -397,6 +407,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 100px;
+    height: 100px;
   }
 }
 
@@ -406,6 +417,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .cert-header-icon {
     width: 120px;
+    height: 120px;
   }
 }
 
@@ -447,11 +459,20 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
+  padding: 1px 4px;
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+}
+
+:not(pre) > code {
+  border: 1px solid var(--secondary-color);
+}
+
+.challenge-instructions code {
+  white-space: break-spaces;
 }
 
 .panel {

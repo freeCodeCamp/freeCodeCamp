@@ -65,22 +65,6 @@ describe('<TimeLine />', () => {
     );
   });
 
-  it('Render button when both githubLink and solution is present', () => {
-    // @ts-expect-error
-    render(<TimeLine {...propsForOnlySolution} />, store);
-
-    const menuItems = screen.getAllByRole('menuitem');
-    expect(menuItems).toHaveLength(2);
-    expect(menuItems[0]).toHaveAttribute(
-      'href',
-      'https://github.com/freeCodeCamp/freeCodeCamp1'
-    );
-    expect(menuItems[1]).toHaveAttribute(
-      'href',
-      'https://github.com/freeCodeCamp/freeCodeCamp2'
-    );
-  });
-
   it('rendering the correct button when files is present', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);

@@ -1,3 +1,73 @@
+import { SuperBlocks } from './superblocks';
+
+/**
+ * Certifications are not equivalent to superblocks. Each superblock corresponds
+ * to 0 or 1 certifications, but a certification may not correspond to a
+ * superblock.
+ *
+ * As an example of the former: the CodingInterviewPrep superblock does not
+ * correspond to a certification. As an example of the latter: the legacy
+ * front-end certification no longer has a corresponding superblock.
+ *
+ * The value of each enum member is the slug of the corresponding certification.
+ */
+export enum Certification {
+  RespWebDesign = 'responsive-web-design',
+  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  FrontEndDevLibs = 'front-end-development-libraries',
+  DataVis = 'data-visualization',
+  RelationalDb = 'relational-database-v8',
+  BackEndDevApis = 'back-end-development-and-apis',
+  QualityAssurance = 'quality-assurance-v7',
+  SciCompPy = 'scientific-computing-with-python-v7',
+  DataAnalysisPy = 'data-analysis-with-python-v7',
+  InfoSec = 'information-security-v7',
+  MachineLearningPy = 'machine-learning-with-python-v7',
+  CollegeAlgebraPy = 'college-algebra-with-python-v8',
+  // Upcoming certifications
+  FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  UpcomingPython = 'upcoming-python-v8',
+  // Legacy certifications
+  LegacyFrontEnd = 'legacy-front-end',
+  LegacyBackEnd = 'legacy-back-end',
+  LegacyDataVis = 'legacy-data-visualization',
+  LegacyInfoSecQa = 'information-security-and-quality-assurance',
+  LegacyFullStack = 'full-stack'
+}
+
+// "Current" certifications are the subset of standard certifications that are
+// live and not legacy.
+export const currentCertifications = [
+  Certification.RespWebDesign,
+  Certification.JsAlgoDataStruct,
+  Certification.FrontEndDevLibs,
+  Certification.DataVis,
+  Certification.RelationalDb,
+  Certification.BackEndDevApis,
+  Certification.QualityAssurance,
+  Certification.SciCompPy,
+  Certification.DataAnalysisPy,
+  Certification.InfoSec,
+  Certification.MachineLearningPy,
+  Certification.CollegeAlgebraPy
+] as const;
+
+// "Legacy" certifications are another class of standard certifications. They're
+// still live and claimable, but some parts of the UI handle them differently.
+export const legacyCertifications = [
+  Certification.LegacyFrontEnd,
+  Certification.LegacyBackEnd,
+  Certification.LegacyDataVis,
+  Certification.LegacyInfoSecQa
+] as const;
+
+// "Upcoming" certifications are standard certifications that are not live unless
+// showUpcomingChanges is true.
+export const upcomingCertifications = [
+  Certification.UpcomingPython,
+  Certification.FoundationalCSharp
+] as const;
+
 export const certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
@@ -15,28 +85,9 @@ export const certTypes = {
   machineLearningPyV7: 'isMachineLearningPyCertV7',
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
-  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8'
+  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
+  foundationalCSharp: 'isFoundationalCSharpCertV8'
 } as const;
-
-export enum SuperBlocks {
-  RespWebDesignNew = '2022/responsive-web-design',
-  RespWebDesign = 'responsive-web-design',
-  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
-  JsAlgoDataStructNew = '2022/javascript-algorithms-and-data-structures',
-  FrontEndDevLibs = 'front-end-development-libraries',
-  DataVis = 'data-visualization',
-  RelationalDb = 'relational-database',
-  BackEndDevApis = 'back-end-development-and-apis',
-  QualityAssurance = 'quality-assurance',
-  SciCompPy = 'scientific-computing-with-python',
-  DataAnalysisPy = 'data-analysis-with-python',
-  InfoSec = 'information-security',
-  MachineLearningPy = 'machine-learning-with-python',
-  CodingInterviewPrep = 'coding-interview-prep',
-  TheOdinProject = 'the-odin-project',
-  ProjectEuler = 'project-euler',
-  CollegeAlgebraPy = 'college-algebra-with-python'
-}
 
 export const certIds = {
   legacyFrontEndChallengeId: '561add10cb82ac38a17513be',
@@ -55,7 +106,8 @@ export const certIds = {
   dataAnalysisPyV7Id: '5e46fc95ac417301a38fb934',
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
-  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800'
+  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
+  foundationalCSharpId: '647f7da207d29547b3bee1ba'
 };
 
 export const completionHours = {
@@ -75,34 +127,32 @@ export const completionHours = {
   [certTypes.dataAnalysisPyV7]: 300,
   [certTypes.machineLearningPyV7]: 300,
   [certTypes.relationalDatabaseV8]: 300,
-  [certTypes.collegeAlgebraPyV8]: 300
+  [certTypes.collegeAlgebraPyV8]: 300,
+  [certTypes.foundationalCSharp]: 300
 };
 
 export const certSlugTypeMap = {
   // legacy
-  'legacy-front-end': certTypes.frontEnd,
-  'legacy-back-end': certTypes.backEnd,
-  'legacy-data-visualization': certTypes.dataVis,
-  // Keep these slugs the same so we don't
-  // break existing links
-  'information-security-and-quality-assurance': certTypes.infosecQa,
-  'full-stack': certTypes.fullStack,
+  [Certification.LegacyFrontEnd]: certTypes.frontEnd,
+  [Certification.LegacyBackEnd]: certTypes.backEnd,
+  [Certification.LegacyDataVis]: certTypes.dataVis,
+  [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
+  [Certification.LegacyFullStack]: certTypes.fullStack,
 
   // modern
-  [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
-  [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
-  [SuperBlocks.DataVis]: certTypes.dataVis2018,
-  [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
-  'quality-assurance-v7': certTypes.qaV7,
-  'information-security-v7': certTypes.infosecV7,
-  'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
-  'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
-  'machine-learning-with-python-v7': certTypes.machineLearningPyV7,
-  'relational-database-v8': certTypes.relationalDatabaseV8,
-  'college-algebra-with-python-v8': certTypes.collegeAlgebraPyV8
+  [Certification.RespWebDesign]: certTypes.respWebDesign,
+  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [Certification.FrontEndDevLibs]: certTypes.frontEndDevLibs,
+  [Certification.DataVis]: certTypes.dataVis2018,
+  [Certification.BackEndDevApis]: certTypes.apisMicroservices,
+  [Certification.QualityAssurance]: certTypes.qaV7,
+  [Certification.InfoSec]: certTypes.infosecV7,
+  [Certification.SciCompPy]: certTypes.sciCompPyV7,
+  [Certification.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
+  [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
+  [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
+  [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharp
 };
 
 export const superBlockCertTypeMap = {
@@ -126,6 +176,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
+  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharp,
 
   // post-modern
   // TODO: use enum
@@ -150,7 +201,8 @@ export const certTypeIdMap = {
   [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
   [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
-  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id
+  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
+  [certTypes.foundationalCSharp]: certIds.foundationalCSharpId
 };
 
 export const certTypeTitleMap = {
@@ -170,7 +222,8 @@ export const certTypeTitleMap = {
   [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
   [certTypes.relationalDatabaseV8]: 'Relational Database',
-  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python'
+  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
+  [certTypes.foundationalCSharp]: 'Foundational C# with Microsoft'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

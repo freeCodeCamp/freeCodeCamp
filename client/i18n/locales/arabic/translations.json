@@ -29,6 +29,7 @@
     "sign-up-email-list": "أرسل لي بريد كوينسي الأسبوعي",
     "sign-out": "تسجيل الخروج",
     "curriculum": "المنهج الدراسي",
+    "contribute": "Contribute",
     "forum": "المنتدى",
     "radio": "radio",
     "profile": "الملف الشخصي",
@@ -72,9 +73,18 @@
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
     "click-start-course": "بدأ الدورة التعليمية",
     "click-start-project": "ابدأ المشروع",
+    "click-start-exam": "Start the exam",
     "change-language": "تغيير اللغة",
     "resume-project": "أستكمال المشروع",
-    "start-project": "إبدأ المشروع"
+    "start-project": "إبدأ المشروع",
+    "tweet": "Tweet",
+    "previous-question": "Previous question",
+    "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
+    "finish-exam": "Finish the exam",
+    "finish": "Finish",
+    "submit-exam-results": "Submit my results"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -82,6 +92,7 @@
     "big-heading-3": "احصل على الشهادات.",
     "h2-heading": "منذ عام 2014، حصل أكثر من 40,000 من خريجي freeCodeCamp.org على وظائف في شركات تكنولوجية منها:",
     "hero-img-description": "طلاب freeCodeCamp في مجموعة دراسية محلية في كوريا الجنوبية.",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "كما رأينا في:",
     "testimonials": {
       "heading": "إليك ما يقوله خريجونا عن freeCodeCamp:",
@@ -196,6 +207,7 @@
       "project-name": "اسم المشروع",
       "solution": "الحل",
       "solution-for": "حل لـ {{projectTitle}}",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "ملفي الشخصي",
       "my-name": "اسمي",
       "my-location": "موقعي",
@@ -336,6 +348,7 @@
     "question": "Question",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
     "congratulations": "تهانينا، نجح كودك. قدّم كودك للمتابعة.",
     "i-completed": "لقد أكملت هذا التحدي",
@@ -345,6 +358,7 @@
     "console-output": "// إخراج وحدة التحكم",
     "sign-in-save": "قم بتسجيل الدخول لحفظ تقدّمك",
     "download-solution": "تنزيل الحل",
+    "download-results": "Download my results",
     "percent-complete": "{{percent}}% مكتمل",
     "project-complete": "أكملت {{completedChallengesInBlock}} من {{totalChallengesInBlock}} مشروعات الشهادات",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
@@ -384,7 +398,6 @@
     "runs-in-vm": "المشروع يعمل في آلة افتراضية، يكمل قصص المستخدم الموصوفة هناك ويحصل على جميع الاختبارات لتمريرها لإنهاء الخطوة 1.",
     "completed": "مكتمل",
     "not-started": "لم يبدأ",
-    "hint": "تلميح",
     "test": "الاختبار",
     "sorry-try-again": "عذراً، لم يجتَز كودك. حاول مرة أخرى.",
     "sorry-keep-trying": "عذراً، لم يجتَز كودك. حاول مجدداً.",
@@ -395,7 +408,32 @@
     "season-greetings-fcc": "تحيات الموسم من مجتمع freeCodeCamp 🎉",
     "if-getting-value": "إذا أفادك freeCodeCamp بشكل مثمر، يمكنك تتبرع دعما لرسالتنا التطوعية حتي يستمر مهمتنا.",
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
-    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا."
+    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    }
   },
   "donate": {
     "title": "ادعم مؤسستنا الخيرية",
@@ -411,19 +449,16 @@
     "no-halo": "إذا كنت لا ترى هالة ذهبية حول صورتك الشخصية، فاتصل بـ donors@freecodecamp.org.",
     "gift-frequency": "حدد تكرار الهدايا:",
     "gift-amount": "حدد قيمة الهدايا:",
-    "confirm": "تأكيد التبرع الخاص بك",
-    "confirm-2": "تأكيد تبرعك لمرة واحدة بقيمة ${{usd}}",
-    "confirm-3": "تأكيد تبرعك بمبلغ ${{usd}} / الشهر",
-    "confirm-4": "تأكيد تبرعك بمبلغ ${{usd}} / السنة",
+    "confirm": "Confirm your donation:",
+    "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
+    "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
+    "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
     "wallet-label": "تبرع ${{usd}} لـ freeCodeCamp",
     "wallet-label-1": "تبرع ${{usd}} / شهر لـ freeCodeCamp",
     "your-donation": "سيوفر تبرعك{{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم.",
     "your-donation-2": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل شهر.",
     "your-donation-3": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل عام.",
     "become-supporter": "أصبح داعماً",
-    "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
-    "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
-    "duration-4": "كن داعماً لمنظمتنا الخيرية",
     "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
     "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
     "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
@@ -523,8 +558,10 @@
     "unsubscribed": "تم إلغاء اشتراكك بنجاح",
     "keep-coding": "أياً كان ما تقوم به، استمر في البرمجة!",
     "email-signup": "التسجيل عبر البريد الإلكتروني",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson، المدرّس الذي أسس freeCodeCamp.org",
-    "email-blast": "بالمناسبة، في كل يوم جمعة، أرسل رسالة بريد إلكتروني مع 5 روابط حول البرمجة وعلوم الكمبيوتر. أرسلها إلى حوالي 4 ملايين شخص. هل تريدني أن أرسل هذا إليك أيضاً؟",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "تحديث عنوان بريدك الإلكتروني",
     "update-email-2": "قم بتحديث عنوان بريدك الإلكتروني هنا:",
     "email": "البريد الإلكتروني",
@@ -536,7 +573,8 @@
     "iframe-alert": "عادة هذا الرابط من شأنه أن يجلبك إلى موقع آخر! إنه يعمل. هذا رابط: {{externalLink}}",
     "iframe-form-submit-alert": "عادة سيتم تقديم هذا النموذج! إنه يعمل. سيتم إرسال هذا إلى: {{externalLink}}",
     "document-notfound": "لم يوجد المستند",
-    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة."
+    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "كأس الذهب",
@@ -648,13 +686,15 @@
     "complete-project-first": "يجب عليك إكمال المشروع أولاً.",
     "local-code-save-error": "عفواً، لم يتم حفظ كودك، قد تكون وحدة التخزين المحلية لمتصفحك ممتلئة.",
     "local-code-saved": "تم حفظها! تم حفظ رمزك في وحدة التخزين المحلية للمتصفح.",
+    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "اختار {{username}} جعل خريطة زمنية خاصة. سيحتاج إلى جعل خريطة زمنية عام حتى يتمكن الآخرون من رأيه شهاداته.",
     "code-saved": "تم حفظ كودك في قاعدة البيانات. سيكون هنا عند العودة.",
     "code-save-error": "حدث خطأ خلال محاولة حفظ كودك المميز.",
     "code-save-less": "أبطئ! لم يتم حفظ كودك, حاول مرة أخرى في بضع ثوان.",
     "challenge-save-too-big": "عذراً، لا يمكنك حفظ كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
     "challenge-submit-too-big": "عذراً، لا يمكنك إرسال كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
-    "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح."
+    "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح.",
+    "generate-exam-error": "An error occurred trying to generate your exam."
   },
   "validation": {
     "max-characters": "هناك حد أقصى 288 حرفاً، لديك {{charsLeft}} متبقية",
@@ -672,13 +712,15 @@
     "http-url": "لا يمكن استخدام عنوان URL غير آمن (http).",
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
     "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
-    "verify": "تحقق من هذه الشهادة في {{certURL}}",
+    "ms-president": "President, Microsoft Developer Division",
+    "verify": "Verify this certification at:",
     "issued": "صدر",
-    "fulltext": "<0>ويشهد هذا على أن </0> <1>{{user}}</1> <2>قد أكمل freeCodeCamp.org</2> <3>{{title}}</3> <4>شهادة المطور، مما يمثل حوالي {{time}} ساعة من الدورة التدريبية.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
@@ -788,6 +830,8 @@
       "machine-learning-with-python-v7": "مشاريع تعلم الآله باستخدام Python",
       "College Algebra with Python": "College Algebra with Python",
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",

@@ -29,7 +29,7 @@ assert(
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-你应该只添加一个锚点（`a`）开始标签。 请删除多余的。
+You are missing a closing (`a`) tag after the image.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

@@ -2,11 +2,11 @@ Siga esta guía para establecer la aplicación móvil FreeCodeCamp en su sistema
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+## How to Prepare your Local Machine
 
 Empezar instalando el software requerido previamente para su sistema operativo.
 
-#### Prerequisites
+### Prerequisites
 
 | Requisito                       | Versión | Notas                                    |
 | ------------------------------- | ------- | ---------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Una vez que estén instalados los requisitos previos, hay que preparar el entorno de desarrollo. Es muy común para muchos equipos de trabajo, y solo hace falta hacerlo una vez.
 
-##### Seguir estos pasos para tener listo el entorno de desrrollo:
+#### Follow these steps to get your development environment ready:
 
 1. Instalar [Git](https://git-scm.com/) u otro cliente Git, si todavía no hay ningumo. Acualizar a la versión más reciente. La que viene con el sistema operativo puede estar desactualizada.
 
@@ -361,7 +361,114 @@ Sigue estos pasos:
     git push origin nombre/rama-aqui
     ```
 
-## Proponer una Pull Request (PR)
+## Running mobile curriculum tests
+
+> [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
+
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+
+    ```console
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Change directory to the freeCodeCamp repo:
+
+    ```console
+    cd freeCodeCamp
+    ```
+
+3. Make a copy of the `.env` file:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
+
+4. Install the dependencies for the freeCodeCamp repo:
+
+    ```console
+    pnpm install && pnpm run create:config
+    ```
+
+5. Generate the challenge data JSON file:
+
+    ```console
+    pnpm run build:curriculum
+    ```
+
+6. Copy the generated JSON file to the mobile app:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
+
+7. Change directory to the mobile app:
+
+    ```console
+    cd ../mobile/mobile-app
+    ```
+
+8. Install the dependencies for the mobile app:
+
+    ```console
+    flutter pub get
+    ```
+
+9. Update the test file to use the challenge data JSON file:
+
+    ```console
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    ```
+
+10. Generate the challenge files:
+
+    ```console
+    flutter test test/widget_test.dart
+    ```
+
+11. Start a local server to serve the challenge files with the help of `serve` package:
+
+    ```console
+    npx serve
+    ```
+
+12. In a different terminal go back to the freeCodeCamp repo:
+
+    ```console
+    cd ../../freeCodeCamp
+    ```
+
+13. Run the cypress tests:
+
+    ```console
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    ```
+
+## Proposing a Pull Request (PR)
 
 Después de que hayas hecho commit de tus cambios, consulta aquí [cómo abrir una Pull Request](how-to-open-a-pull-request.md).
 
@@ -374,7 +481,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Solución de problemas
+## Troubleshooting
 
 ### Problemas con la instalación de los prerrequisitos recomendados
 
@@ -398,7 +505,7 @@ Si obtienes errores al instalar las dependencias, por favor asegúrate de que no
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 
-## Obtener ayuda
+## Getting Help
 
 Si estás atascado y necesitas ayuda, siéntete libre de hacer preguntas en la categoría de ['Contribuyentes' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [la sala de chat de contribuyentes](https://discord.gg/PRyKn3Vbay).
 

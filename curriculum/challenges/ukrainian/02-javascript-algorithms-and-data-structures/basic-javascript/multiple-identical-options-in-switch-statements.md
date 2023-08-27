@@ -97,7 +97,7 @@ assert(sequentialSizes(9) === 'High');
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-Ви повинні мати дев'ять інструкцій `case`
+Ви повинні мати дев’ять інструкцій `case`
 
 ```js
 assert(code.match(/case/g).length === 9);

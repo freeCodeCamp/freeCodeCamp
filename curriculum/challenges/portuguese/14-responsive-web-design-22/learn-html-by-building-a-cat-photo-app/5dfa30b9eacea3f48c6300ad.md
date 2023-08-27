@@ -29,7 +29,7 @@ O elemento de âncora (`a`) deve ter uma tag de abertura. As tags de abertura t�
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-Você deve adicionar apenas uma tag de abertura para o elemento de âncora (`a`). Remova as tags adicionais.
+Está faltando uma tag de fechamento (`a`) após a imagem.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
