@@ -183,7 +183,7 @@
     "dotenv": "16.3.1",
     "eslint-plugin-testing-library": "^3.9.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
-    "jest-environment-jsdom": "29.6.2",
+    "jest-environment-jsdom": "29.6.4",
     "jest-json-schema-extended": "1.0.1",
     "joi": "17.9.2",
     "js-yaml": "4.1.0",
