@@ -14,7 +14,7 @@ on:
 
 jobs:
   build-client:
-    name: Build
+    name: Build Client
     runs-on: ubuntu-20.04
     strategy:
       matrix:
