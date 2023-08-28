@@ -70,7 +70,8 @@ jobs:
           pnpm run build:curriculum
           pnpm run lint
 
-  # DONT REMOVE THIS JOB, you dont know what it does
+  # DONT REMOVE THIS JOB.
+  # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
     needs: lint
