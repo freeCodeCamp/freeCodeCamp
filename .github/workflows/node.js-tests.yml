@@ -83,12 +83,6 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
-      - name: Checkout client-config
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-        with:
-          repository: freeCodeCamp/client-config
-          path: client-config
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
