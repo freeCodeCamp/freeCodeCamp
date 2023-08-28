@@ -256,7 +256,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [18.x]
-        locale: [chinese, espanol]
+        locale: [portuguese, italian]
 
     steps:
       - name: Checkout Source Files
