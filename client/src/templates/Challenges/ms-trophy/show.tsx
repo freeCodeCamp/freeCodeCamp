@@ -1,4 +1,4 @@
-import { Col, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,30 +10,41 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import Spacer from '../../../../components/helpers/spacer';
-import LearnLayout from '../../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
-import ChallengeDescription from '../../components/challenge-description';
-import Hotkeys from '../../components/hotkeys';
-import ChallengeTitle from '../../components/challenge-title';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/help-modal';
+import Spacer from '../../../components/helpers/spacer';
+import LearnLayout from '../../../components/layouts/learn';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import ChallengeDescription from '../components/challenge-description';
+import Hotkeys from '../components/hotkeys';
+import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
-} from '../../redux/actions';
-import { isChallengeCompletedSelector } from '../../redux/selectors';
-import { getGuideUrl } from '../../utils';
-import SolutionForm from '../solution-form';
-import ProjectToolPanel from '../tool-panel';
+  updateSolutionFormValues,
+  submitChallenge
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
+import { setIsProcessing } from '../../../redux/actions';
+import {
+  isProcessingSelector,
+  msUsernameSelector
+} from '../../../redux/selectors';
+import LinkMsUser from './link-ms-user';
 
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  (isChallengeCompleted: boolean) => ({
-    isChallengeCompleted
+  isProcessingSelector,
+  msUsernameSelector,
+  (
+    isChallengeCompleted: boolean,
+    isProcessing: boolean,
+    msUsername: string | undefined | null
+  ) => ({
+    isChallengeCompleted,
+    isProcessing,
+    msUsername
   })
 );
 
@@ -43,31 +54,36 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      setIsProcessing,
+      submitChallenge
     },
     dispatch
   );
 
 // Types
-interface ProjectProps {
+interface MsTrophyProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
+  isProcessing: boolean;
+  setIsProcessing: (arg0: boolean) => void;
+  msUsername: string | undefined | null;
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
+  submitChallenge: () => void;
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
-  updateSolutionFormValues: () => void;
 }
 
 // Component
-class Project extends Component<ProjectProps> {
+class MsTrophy extends Component<MsTrophyProps> {
   static displayName: string;
   private _container: HTMLElement | null = null;
 
-  constructor(props: ProjectProps) {
+  constructor(props: MsTrophyProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -76,7 +92,7 @@ class Project extends Component<ProjectProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: { title, challengeType }
         }
       },
       pageContext: { challengeMeta },
@@ -85,14 +101,13 @@ class Project extends Component<ProjectProps> {
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      challengeType,
-      helpCategory
+      challengeType
     });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
   }
 
-  componentDidUpdate(prevProps: ProjectProps): void {
+  componentDidUpdate(prevProps: MsTrophyProps): void {
     const {
       data: {
         challengeNode: {
@@ -104,7 +119,7 @@ class Project extends Component<ProjectProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
+          challenge: { title: currentTitle, challengeType }
         }
       },
       pageContext: { challengeMeta },
@@ -114,31 +129,24 @@ class Project extends Component<ProjectProps> {
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
-        challengeType,
-        helpCategory
+        challengeType
       });
       challengeMounted(challengeMeta.id);
     }
   }
 
-  handleSubmit({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }): void {
-    if (showCompletionModal) {
-      this.props.openCompletionModal();
-    }
-  }
+  handleSubmit = (): void => {
+    const { setIsProcessing, submitChallenge } = this.props;
+
+    setIsProcessing(true);
+    submitChallenge();
+  };
 
   render() {
     const {
       data: {
         challengeNode: {
           challenge: {
-            challengeType,
-            fields: { blockName },
-            forumTopicId,
             title,
             description,
             instructions,
@@ -149,11 +157,12 @@ class Project extends Component<ProjectProps> {
         }
       },
       isChallengeCompleted,
+      isProcessing,
+      msUsername,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t,
-      updateSolutionFormValues
+      t
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -184,21 +193,21 @@ class Project extends Component<ProjectProps> {
                   description={description}
                   instructions={instructions}
                 />
-                <SolutionForm
-                  challengeType={challengeType}
-                  description={description}
-                  // eslint-disable-next-line @typescript-eslint/unbound-method
-                  onSubmit={this.handleSubmit}
-                  updateSolutionForm={updateSolutionFormValues}
-                />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
+                <LinkMsUser />
+                <hr />
+                <Button
+                  block={true}
+                  bsStyle='primary'
+                  className='btn-invert'
+                  disabled={!msUsername || isProcessing}
+                  onClick={this.handleSubmit}
+                >
+                  {t('buttons.verify-trophy')}
+                </Button>
                 <br />
                 <Spacer size='medium' />
               </Col>
               <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
         </LearnLayout>
@@ -207,30 +216,24 @@ class Project extends Component<ProjectProps> {
   }
 }
 
-Project.displayName = 'Project';
+MsTrophy.displayName = 'MsTrophy';
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(Project));
+)(withTranslation()(MsTrophy));
 
 export const query = graphql`
-  query ProjectChallenge($slug: String!) {
+  query MsTrophyChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
-        forumTopicId
         title
         description
         instructions
         challengeType
-        helpCategory
         superBlock
         block
         translationPending
-        fields {
-          blockName
-          slug
-        }
       }
     }
   }

@@ -123,6 +123,7 @@ export type ChallengeNode = {
       owner: string;
       type: string;
     };
+    msTrophyId: string;
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;
@@ -252,6 +253,7 @@ export type ClaimedCertifications = {
   isDataVisCert: boolean;
   isEmailVerified: boolean;
   isCollegeAlgebraPyCertV8: boolean;
+  isFoundationalCSharpCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
@@ -264,7 +266,6 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
-  isFoundationalCSharpCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];

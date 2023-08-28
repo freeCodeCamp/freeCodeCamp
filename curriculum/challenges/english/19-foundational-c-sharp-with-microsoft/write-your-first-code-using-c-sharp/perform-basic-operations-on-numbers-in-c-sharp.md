@@ -18,7 +18,9 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 What is the value of the following result?
 
-`int result = 3 + 1 * 5 / 2;`
+```clike
+int result = 3 + 1 * 5 / 2;
+```
 
 ## --answers--
 

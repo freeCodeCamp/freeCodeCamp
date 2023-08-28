@@ -44,6 +44,11 @@ const exam = path.resolve(
   '../../src/templates/Challenges/exam/show.tsx'
 );
 
+const msTrophy = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/ms-trophy/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -52,7 +57,8 @@ const views = {
   video,
   codeAlly,
   odin,
-  exam
+  exam,
+  msTrophy
   // quiz: Quiz
 };
 
