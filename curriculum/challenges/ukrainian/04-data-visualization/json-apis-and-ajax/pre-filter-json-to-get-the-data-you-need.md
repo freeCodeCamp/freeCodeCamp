@@ -26,7 +26,7 @@ json = json.filter(function(val) {
 
 # --hints--
 
-Використовуйте метод `filter` у коді.
+Код має використати метод `filter`.
 
 ```js
 assert(code.match(/json\.filter/g));
