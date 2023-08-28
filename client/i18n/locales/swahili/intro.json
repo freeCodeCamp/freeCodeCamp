@@ -1017,11 +1017,11 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Msingi C# na Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "Kozi hii inatoa utangulizi wa kina wa utayarishaji wa C#, unaojumuisha dhana zake za msingi, sintaksia, na matumizi ya vitendo katika ukuzaji programu.",
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
-      "Kufikia mwisho wa kozi hii, utakuwa umepata ujuzi wa vitendo na ujuzi unaohitajika ili kutumia C# kwa ujasiri kwa ajili ya kujenga matumizi thabiti na yenye hatari"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
     "note": "Kumbuka: Ni lazima ukamilishe changamoto ya kombe katika kila sehemu iliyo hapa chini ili ufuzu kwa mtihani wa uidhinishaji.",
     "blocks": {

@@ -84,7 +84,10 @@
     "exit": "Exit",
     "finish-exam": "Finish the exam",
     "finish": "Finish",
-    "submit-exam-results": "Submit my results"
+    "submit-exam-results": "Submit my results",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -113,6 +116,9 @@
       }
     },
     "certification-heading": "获得以下免费认证：",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -433,6 +439,18 @@
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
       "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
+      "transcript-label": "Your Microsoft Transcript Link"
     }
   },
   "donate": {
@@ -686,7 +704,6 @@
     "complete-project-first": "你必须先完成项目。",
     "local-code-save-error": "糟糕，你的代码没有保存，你的浏览器的本地存储空间可能已满。",
     "local-code-saved": "保存！你的代码已保存到你的浏览器本地存储中。",
-    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "{{username}} 已选择将他们的个人资料设为私密。他们需要公开自己的个人资料，以便其他人能够查看他们的认证。",
     "code-saved": "你的代码已保存到数据库。当你返回时它将在这里。",
     "code-save-error": "尝试保存你的代码时发生错误。",
@@ -694,7 +711,13 @@
     "challenge-save-too-big": "抱歉，你无法保存代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
-    "generate-exam-error": "An error occurred trying to generate your exam."
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",
