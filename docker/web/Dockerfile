@@ -27,6 +27,7 @@ ARG DEPLOYMENT_ENV
 ARG SHOW_UPCOMING_CHANGES
 ARG SHOW_NEW_CURRICULUM
 ARG GROWTHBOOK_URI
+ARG FREECODECAMP_NODE_ENV
 
 # We're installing specific packages even though it is not strictly necessary -
 # pnpm install would work. The idea is to make the dependencies explicit and
