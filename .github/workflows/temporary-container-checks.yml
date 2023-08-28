@@ -49,26 +49,27 @@ jobs:
         run: cp sample.env .env
 
       - name: Create Image
-        run: docker build \
-          --build-arg HOME_LOCATION=http://localhost:8000 \
-          --build-arg API_LOCATION=http://localhost:3000 \
-          --build-arg FORUM_LOCATION=https://forum.freecodecamp.org \
-          --build-arg NEWS_LOCATION=https://www.freecodecamp.org/news \
-          --build-arg RADIO_LOCATION=https://coderadio.freecodecamp.org \
-          --build-arg CLIENT_LOCALE=english \
-          --build-arg CURRICULUM_LOCALE=english \
-          --build-arg SHOW_LOCALE_DROPDOWN_MENU=false \
-          --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
-          --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
-          --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \
-          --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
-          --build-arg PATREON_CLIENT_ID=id_from_patreon_dashboard \
-          --build-arg DEPLOYMENT_ENV=staging \
-          --build-arg SHOW_UPCOMING_CHANGES=false \
-          --build-arg SHOW_NEW_CURRICULUM=true \
-          --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
-          --build-arg FREECODECAMP_NODE_ENV=development \
-          -f docker/web/Dockerfile .
+        run: |
+          docker build \
+            --build-arg HOME_LOCATION=http://localhost:8000 \
+            --build-arg API_LOCATION=http://localhost:3000 \
+            --build-arg FORUM_LOCATION=https://forum.freecodecamp.org \
+            --build-arg NEWS_LOCATION=https://www.freecodecamp.org/news \
+            --build-arg RADIO_LOCATION=https://coderadio.freecodecamp.org \
+            --build-arg CLIENT_LOCALE=english \
+            --build-arg CURRICULUM_LOCALE=english \
+            --build-arg SHOW_LOCALE_DROPDOWN_MENU=false \
+            --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
+            --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
+            --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \
+            --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
+            --build-arg PATREON_CLIENT_ID=id_from_patreon_dashboard \
+            --build-arg DEPLOYMENT_ENV=staging \
+            --build-arg SHOW_UPCOMING_CHANGES=false \
+            --build-arg SHOW_NEW_CURRICULUM=true \
+            --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
+            --build-arg FREECODECAMP_NODE_ENV=development \
+            -f docker/web/Dockerfile .
 
       - name: Save Image
         run: docker save client -o client-artifact.tar
