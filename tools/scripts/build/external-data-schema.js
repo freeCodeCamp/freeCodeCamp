@@ -13,7 +13,8 @@ const blockSchema = Joi.object({}).keys({
       'JavaScript',
       'HTML-CSS',
       'Python',
-      'Backend Development'
+      'Backend Development',
+      'C-Sharp'
     ),
     order: Joi.number(),
     time: Joi.string().allow(''),

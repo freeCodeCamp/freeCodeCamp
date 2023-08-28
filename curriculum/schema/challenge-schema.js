@@ -49,7 +49,8 @@ const schema = Joi.object()
       'JavaScript',
       'HTML-CSS',
       'Python',
-      'Backend Development'
+      'Backend Development',
+      'C-Sharp'
     ),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
