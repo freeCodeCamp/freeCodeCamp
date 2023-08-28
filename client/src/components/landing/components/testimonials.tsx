@@ -12,9 +12,9 @@ const Testimonials = (): JSX.Element => {
 
   return (
     <div className='testimonials'>
-      <h1 className='big-heading text-center'>
+      <h2 className='big-heading text-center'>
         {t('landing.testimonials.heading')}
-      </h1>
+      </h2>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>

@@ -89,27 +89,27 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.core-certs-heading')}
-      </h1>
+      </h2>
       <ul>
         {coreCurriculum.map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
       <Spacer size='medium' />
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.professional-certs-heading')}
-      </h1>
+      </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Professional].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
       <Spacer size='medium' />
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.interview-prep-heading')}
-      </h1>
+      </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
