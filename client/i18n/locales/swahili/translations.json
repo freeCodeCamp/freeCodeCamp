@@ -84,7 +84,10 @@
     "exit": "Ondoka",
     "finish-exam": "Maliza mtihani",
     "finish": "Maliza",
-    "submit-exam-results": "Wasilisha matokeo yangu"
+    "submit-exam-results": "Wasilisha matokeo yangu",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
@@ -113,6 +116,9 @@
       }
     },
     "certification-heading": "Pata vyeti vilivyoidhinishwa bila malipo katika:",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
       {
@@ -433,6 +439,18 @@
       "exit": "Je, una uhakika unataka kuacha mtihani? Utapoteza maendeleo yoyote ambayo umefanya.",
       "exit-yes": "Ndiyo, nataka kuacha mtihani",
       "exit-no": "Hapana, ningependa kuendelea na mtihani"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
+      "transcript-label": "Your Microsoft Transcript Link"
     }
   },
   "donate": {
@@ -686,7 +704,6 @@
     "complete-project-first": "Lazima umalize mradi kwanza.",
     "local-code-save-error": "Lo, msimbo wako haikuhifadhiwa, hifadhi ya ndani ya kivinjari chako inaweza kuwa imejaa.",
     "local-code-saved": "Imehifadhiwa! Msimbo wako umehifadhiwa kwenye hifadhi ya ndani ya kivinjari chako.",
-    "ms-trophy-missing": "Inaonekana kiungo cha kombe ulichotoa si sahihi. Tafadhali angalia kiungo na ujaribu tena.",
     "timeline-private": "{{username}} amechagua kufanya rekodi yake ya matukio kuwa ya faragha. Watahitaji kuweka rekodi yao ya matukio kwa umma ili wengine waweze kutazama uthibitishaji wao.",
     "code-saved": "Msimbo wako umehifadhiwa kwenye hifadhidata. Utakuwa hapa ukirudi.",
     "code-save-error": "Hitilafu ilitokea wakati wa kujaribu kuhifadhi msimbo wako.",
@@ -694,7 +711,13 @@
     "challenge-save-too-big": "Samahani, huwezi kuhifadhi msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Samahani, huwezi kuwasilisha msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
-    "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako."
+    "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
