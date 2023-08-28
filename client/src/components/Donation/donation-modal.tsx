@@ -8,8 +8,6 @@ import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { PaymentContext } from '../../../../config/donation-settings';
-import Cup from '../../assets/icons/cup';
-import Heart from '../../assets/icons/heart';
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
 
@@ -57,20 +55,11 @@ const RenderIlustration = ({
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
 }) => {
-  const showModalBears = useFeature('show-modal-bears').on;
-  if (showModalBears) {
-    return recentlyClaimedBlock ? (
-      <BearBlockCompletion className='donation-icon' />
-    ) : (
-      <BearProgressModal className='donation-icon' />
-    );
-  } else {
-    return recentlyClaimedBlock ? (
-      <Cup className='donation-icon' />
-    ) : (
-      <Heart className='donation-icon' />
-    );
-  }
+  return recentlyClaimedBlock ? (
+    <BearBlockCompletion className='donation-icon' />
+  ) : (
+    <BearProgressModal className='donation-icon' />
+  );
 };
 
 function getctaNumberBetween1To10() {
