@@ -256,7 +256,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [18.x]
-        locale: [chinese, espanol]
+        locale: [portuguese, italian]
 
     steps:
       - name: Checkout Source Files
@@ -293,7 +293,15 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
-          pnpm run build:curriculum
+
+      # DONT REMOVE THIS STEP.
+      # TODO: Refactor and use re-usable workflow and shared artifacts
+      - name: Build Client in ${{ matrix.locale }}
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          pnpm run build
 
       - name: Run Tests
         env:
