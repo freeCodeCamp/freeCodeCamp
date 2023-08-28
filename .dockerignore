@@ -1,6 +1,6 @@
 client/.cache
 client/public
-# .env TODO: Restore this once we have build-args
+.env
 .gitignore
 .dockerignore
 docker/web/Dockerfile

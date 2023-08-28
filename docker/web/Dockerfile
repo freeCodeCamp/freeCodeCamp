@@ -10,6 +10,24 @@ WORKDIR /home/node/build
 # TODO: provide build args.
 COPY --chown=node:node . .
 
+ARG HOME_LOCATION
+ARG API_LOCATION
+ARG FORUM_LOCATION
+ARG NEWS_LOCATION
+ARG RADIO_LOCATION
+ARG CLIENT_LOCALE
+ARG CURRICULUM_LOCALE
+ARG SHOW_LOCALE_DROPDOWN_MENU
+ARG ALGOLIA_APP_ID
+ARG ALGOLIA_API_KEY
+ARG STRIPE_PUBLIC_KEY
+ARG PAYPAL_CLIENT_ID
+ARG PATREON_CLIENT_ID
+ARG DEPLOYMENT_ENV
+ARG SHOW_UPCOMING_CHANGES
+ARG SHOW_NEW_CURRICULUM
+ARG GROWTHBOOK_URI
+
 # We're installing specific packages even though it is not strictly necessary -
 # pnpm install would work. The idea is to make the dependencies explicit and
 # keep them under our control.
