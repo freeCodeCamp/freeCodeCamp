@@ -9,7 +9,7 @@ dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 
 Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-switch-case/</a> e complete todas as tarefas do módulo "Faça a ramificação do fluxo de código usando a construção de switch-case em C#". Isto é necessário para adquirir o troféu "Adicione lógica a aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank">https://learn.microsoft.com/training/modules/csharp-switch-case/</a> e complete todas as tarefas do módulo "Faça a ramificação do fluxo de código usando a construção de switch-case em C#". Isto é necessário para adquirir o troféu "Adicione lógica a aplicações de console em C#".
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

@@ -9,7 +9,7 @@ dashedName: create-c-sharp-methods-that-return-values
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/</a> та виконайте всі завдання модуля «Створіть методи C#, які повертають значення». Це обов’язково, щоб отримати трофей «Створення методів в консольних застосунках C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/" target="_blank">https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/</a> та виконайте всі завдання модуля «Створіть методи C#, які повертають значення». Це обов’язково, щоб отримати трофей «Створення методів в консольних застосунках C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--

@@ -9,7 +9,7 @@ dashedName: write-your-first-c-sharp-code
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-write-first/</a> та виконайте всі завдання модуля «Напишіть свій перший код C#». Це обов’язково, щоб отримати трофей «Написання першого коду за допомогою C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/training/modules/csharp-write-first/</a> та виконайте всі завдання модуля «Напишіть свій перший код C#». Це обов’язково, щоб отримати трофей «Написання першого коду за допомогою C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
@@ -29,10 +29,6 @@ dashedName: write-your-first-c-sharp-code
 ---
 
 `Console.WriteLine` додає новий рядок після виводу.
-
----
-
-Немає жодної різниці.
 
 ## --video-solution--
 
