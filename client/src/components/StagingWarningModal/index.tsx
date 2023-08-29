@@ -8,7 +8,7 @@ import { Spacer } from '../helpers';
 function StagingWarningModal(): JSX.Element {
   const { t } = useTranslation();
   const [show, setShow] = useState(
-    (store.get('isStagingEnv') as boolean) === true ? false : true
+    !((store.get('isStagingEnv') as boolean) === true)
   );
   const handleModalHide = () => {
     setShow(false);

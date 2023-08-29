@@ -12,6 +12,7 @@ import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
+
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
@@ -164,6 +165,7 @@ function DefaultLayout({
   };
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
