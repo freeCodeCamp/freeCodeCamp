@@ -219,7 +219,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           defaultValue={currentTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
-          <TabsList>
+          <TabsList className='nav-tabs'>
             {!hasEditableBoundaries && (
               <TabsTrigger value={Tab.Instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
@@ -240,11 +240,19 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               <TabsTrigger
                 value={Tab.Preview}
                 onClick={() => togglePane('showPreviewPane')}
-                {...(displayPreviewPane && { 'aria-selected': 'true' })}
               >
                 {i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
+            <button
+              className='portal-button'
+              aria-expanded={!!showPreviewPortal}
+              onClick={() => togglePane('showPreviewPortal')}
+              role='tab'
+            >
+              <span className='sr-only'>{getPortalBtnSrText()}</span>
+              <FontAwesomeIcon icon={faWindowRestore} />
+            </button>
           </TabsList>
 
           <TabsContent value={Tab.Editor}>
@@ -260,14 +268,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           )}
           {hasPreview && (
             <TabsContent value={Tab.Preview}>
-              <button
-                className='portal-button'
-                aria-expanded={!!showPreviewPortal}
-                onClick={() => togglePane('showPreviewPortal')}
-              >
-                <span className='sr-only'>{getPortalBtnSrText()}</span>
-                <FontAwesomeIcon icon={faWindowRestore} />
-              </button>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
@@ -282,16 +282,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               isMobile={true}
               videoUrl={videoUrl}
             />
-          )}
-          {hasPreview && this.state.currentTab !== 'preview' && (
-            <button
-              className='portal-button'
-              aria-expanded={!!showPreviewPortal}
-              onClick={() => togglePane('showPreviewPortal')}
-            >
-              <span className='sr-only'>{getPortalBtnSrText()}</span>
-              <FontAwesomeIcon icon={faWindowRestore} />
-            </button>
           )}
         </Tabs>
         {displayPreviewPortal && (
