@@ -25,6 +25,7 @@ const superBlocks = [
   'Information Security',
   'Machine Learning with Python',
   'College Algebra with Python',
+  'Foundational C# with Microsoft',
   'Coding Interview Prep',
   'Project Euler',
   'Legacy Responsive Web Design'

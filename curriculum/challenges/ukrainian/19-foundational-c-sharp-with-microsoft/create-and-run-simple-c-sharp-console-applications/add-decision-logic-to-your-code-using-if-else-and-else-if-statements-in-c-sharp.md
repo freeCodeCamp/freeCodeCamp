@@ -9,7 +9,7 @@ dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> та виконайте всі завдання модуля «Додайте логіку рішень до коду, використовуючи інструкції if, else та else if в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a> та виконайте всі завдання модуля «Додайте логіку рішень до коду, використовуючи інструкції if, else та else if в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--

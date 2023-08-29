@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { jwtSecret } from '../../../config/secrets';
+import { jwtSecret } from '../../../api-server/config/secrets';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
 import { formatValidationError } from '../utils/error-formatting';
@@ -86,7 +86,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const codeRoadChallenges = challenges.filter(
-        ({ challengeType }) => challengeType === 12 || challengeType === 13
+        ({ challengeType }) =>
+          challengeType === challengeTypes.codeAllyPractice ||
+          challengeType === challengeTypes.codeAllyCert
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
@@ -131,7 +133,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge => challenge.id === challengeId
         );
 
-        if (challengeType === 13 && !isCompleted) {
+        if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
           const finalChallenge = {
             id: challengeId,
             completedDate

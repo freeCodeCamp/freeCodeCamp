@@ -84,7 +84,10 @@
     "exit": "Вийти",
     "finish-exam": "Завершити екзамен",
     "finish": "Завершити",
-    "submit-exam-results": "Здати результати"
+    "submit-exam-results": "Здати результати",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -113,6 +116,9 @@
       }
     },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "Часті питання:",
     "faqs": [
       {
@@ -433,6 +439,18 @@
       "exit": "Ви впевнені, що хочете покинути екзамен? Ваші відповіді не буде збережено.",
       "exit-yes": "Так, я хочу покинути екзамен",
       "exit-no": "Ні, я хочу продовжити"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
+      "transcript-label": "Your Microsoft Transcript Link"
     }
   },
   "donate": {
@@ -686,7 +704,6 @@
     "complete-project-first": "Спочатку ви повинні завершити проєкт.",
     "local-code-save-error": "Упс, ваш код не збережено. Можливо, локальне сховище вашого браузера заповнене.",
     "local-code-saved": "Збережено! Код було збережено в локальному сховищі вашого браузера.",
-    "ms-trophy-missing": "Схоже, вказане вами трофейне посилання недійсне. Перевірте посилання та спробуйте ще раз.",
     "timeline-private": "{{username}} вирішив(-ла) зробити свою хронологію приватною. Спершу потрібно надати публічний доступ до хронології, щоб інші мали змогу переглянути сертифікацію.",
     "code-saved": "Ваш код збережено в базі даних. Він буде тут, коли ви повернетесь.",
     "code-save-error": "Під час спроби зберегти ваш код сталася помилка.",
@@ -694,7 +711,13 @@
     "challenge-save-too-big": "На жаль, ви не можете зберегти свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "challenge-submit-too-big": "На жаль, ви не можете надіслати свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
-    "generate-exam-error": "Під час спроби створити екзамен виникла помилка."
+    "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

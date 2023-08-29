@@ -84,6 +84,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   }
                   hasEditableBoundaries
                   id
+                  msTrophyId
                   order
                   prerequisites {
                     id
@@ -289,6 +290,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      msTrophyId: String
     }
     type FileContents {
       fileKey: String

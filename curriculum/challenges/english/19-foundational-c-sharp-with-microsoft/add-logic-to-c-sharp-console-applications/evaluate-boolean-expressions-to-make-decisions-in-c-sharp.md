@@ -20,15 +20,15 @@ Which of the following lines of code is a valid use of the conditional operator?
 
 ## --answers--
 
-`int value = amount >= 10? 10: 20;`
+`int value = amount >= 10 ? 10 : 20;`
 
 ---
 
-`int value = amount >= 10: 10? 20;`
+`int value = amount >= 10 : 10 ? 20;`
 
 ---
 
-`int value = amount >= 10? 10| 20;`
+`int value = amount >= 10 ? 10 | 20;`
 
 ## --video-solution--
 

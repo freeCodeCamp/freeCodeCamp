@@ -1,17 +1,6 @@
 name: CI - E2E - Mobile (webview) Browser
 on:
   workflow_dispatch:
-  # push:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  # pull_request:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  #     - 'next-**'
 
 jobs:
   mobile-test:
@@ -23,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Checkout mobile
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           repository: freeCodeCamp/mobile
           path: mobile
