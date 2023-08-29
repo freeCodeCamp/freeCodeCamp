@@ -158,10 +158,6 @@ jspm_packages/
 
 ### Generated config files ###
 config/env.json
-config/client/sass-compile.json
-config/client/frame-runner.json
-config/client/test-evaluator.json
-config/client/python-runner.json
 config/curriculum.json
 config/i18n.js
 config/misc.js
@@ -216,18 +212,11 @@ tags
 *.out
 *.gz
 curriculum/curricula.json
-client/static/js/frame-runner.js
-client/static/js/frame-runner.js.map
 
 ### Additional Folders ###
 api-server/lib/*
 curriculum/dist
 curriculum/build
-client/static/_redirects
-client/static/mobile
-client/static/curriculum-data
-client/i18n/locales/**/trending.json
-client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist
