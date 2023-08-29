@@ -12,7 +12,6 @@ import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
-
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
@@ -44,12 +43,14 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader } from '../helpers';
+import envData from '../../../../config/env.json';
 
 // preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
+import StagingWarningModal from '../StagingWarningModal';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -163,12 +164,12 @@ function DefaultLayout({
   };
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
-
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
       <div className='page-wrapper'>
+        {envData.environment === 'staging' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
             class: useSystemTheme

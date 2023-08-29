@@ -925,5 +925,11 @@
     "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
     "certain": "Yes, sign out of my account",
     "nevermind": "Nevermind, I don't want to sign out"
+  },
+  "staging-warning": {
+    "heading": "Staging Environment Warning",
+    "p1": "Warning: This application is currently in a testing/staging environment. This environment is intended for testing purposes only.",
+    "p2": "This action will acknowledge that you understand the risks associated with using the staging environment and that you will exercise caution while testing.",
+    "certain": "Accept and Dismiss"
   }
 }
