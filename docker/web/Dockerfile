@@ -40,7 +40,7 @@ RUN pnpm install -w -F=client -F=ui -F=browser-scripts -F=challenge-parser \
 RUN pnpm build:client
 
 FROM node:18-bullseye AS client-config
-
+USER node
 WORKDIR /home/node
 RUN git clone https://github.com/freeCodeCamp/client-config.git client
 
@@ -48,10 +48,12 @@ FROM node:18-alpine
 
 RUN npm i -g serve@13 pm2@4
 USER node
-WORKDIR /home/node
-COPY --from=builder /home/node/build/client/public/ client/public
-COPY --from=client-config /home/node/client/serve.json client/serve.json
+WORKDIR /home/node/client
+COPY --from=builder /home/node/build/client/public/ public
+COPY --from=builder /home/node/build/docker/web/serve.sh serve.sh
+COPY --from=builder /home/node/build/docker/web/pm2-start.sh pm2-start.sh
 
-EXPOSE 8000
-# TODO: use PM2 to serve two instances of the client.
-CMD ["serve", "-c", "../serve.json" , "-p", "8000", "client/public"]
+COPY --from=client-config /home/node/client/serve.json serve.json
+
+ENTRYPOINT [ "./pm2-start.sh" ]
+CMD [ "8000" ]
