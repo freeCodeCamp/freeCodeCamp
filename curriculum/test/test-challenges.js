@@ -315,8 +315,17 @@ function populateTestsForLang({ lang, challenges, meta }) {
             }
             const { id, title, block, dashedName } = challenge;
             const pathAndTitle = `${block}/${dashedName}`;
-            mongoIds.check(id, title);
-            challengeTitles.check(title, pathAndTitle);
+            const idVerificationMessage = mongoIds.check(id, title);
+            assert.isNull(idVerificationMessage, idVerificationMessage);
+            const dupeTitleCheck = challengeTitles.check(
+              title,
+              block,
+              pathAndTitle
+            );
+            assert.isTrue(
+              dupeTitleCheck,
+              `All challenges within a block must have a unique title. The title ${title} (at ${pathAndTitle}) is already assigned`
+            );
           });
 
           const { challengeType } = challenge;
