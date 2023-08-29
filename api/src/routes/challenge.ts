@@ -86,7 +86,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const codeRoadChallenges = challenges.filter(
-        ({ challengeType }) => challengeType === 12 || challengeType === 13
+        ({ challengeType }) =>
+          challengeType === challengeTypes.codeAllyPractice ||
+          challengeType === challengeTypes.codeAllyCert
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
@@ -131,7 +133,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge => challenge.id === challengeId
         );
 
-        if (challengeType === 13 && !isCompleted) {
+        if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
           const finalChallenge = {
             id: challengeId,
             completedDate

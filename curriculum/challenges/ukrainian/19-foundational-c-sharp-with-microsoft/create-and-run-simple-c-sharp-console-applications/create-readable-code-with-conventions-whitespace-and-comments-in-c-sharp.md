@@ -9,7 +9,7 @@ dashedName: create-readable-code-with-conventions-whitespace-and-comments-in-c-s
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/</a> та виконайте всі завдання модуля «Створіть читабельний код з конвенціями, пробілами та коментарями в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank">https://learn.microsoft.com/training/modules/csharp-readable-code/</a> та виконайте всі завдання модуля «Створіть читабельний код з конвенціями, пробілами та коментарями в C#». Це обов’язково, щоб отримати трофей «Створення та запуск простих консольних застосунків C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--

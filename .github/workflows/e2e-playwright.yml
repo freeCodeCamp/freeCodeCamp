@@ -1,11 +1,11 @@
 name: CI - E2E - Playwright
 on:
-  push:
-    paths-ignore:
-      - 'docs/**'
-    branches:
-      - 'main'
-      - 'e2e-**'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['CI - Node.js']
+    types:
+      - completed
+  # TODO: refactor with a workflow_call
   pull_request:
     paths-ignore:
       - 'docs/**'

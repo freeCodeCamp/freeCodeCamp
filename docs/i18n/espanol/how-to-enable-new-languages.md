@@ -157,6 +157,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,

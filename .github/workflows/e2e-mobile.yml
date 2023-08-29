@@ -1,17 +1,6 @@
 name: CI - E2E - Mobile (webview) Browser
 on:
   workflow_dispatch:
-  # push:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  # pull_request:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  #     - 'next-**'
 
 jobs:
   mobile-test:

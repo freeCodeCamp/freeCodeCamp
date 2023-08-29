@@ -9,7 +9,7 @@ dashedName: store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/csharp-literals-variables/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-literals-variables/</a> та виконайте всі завдання модуля «Збережіть та отримайте дані, використовуючи значення літералів та змінних в C#». Це обов’язково, щоб отримати трофей «Написання першого коду за допомогою C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-literals-variables/" target="_blank">https://learn.microsoft.com/training/modules/csharp-literals-variables/</a> та виконайте всі завдання модуля «Збережіть та отримайте дані, використовуючи значення літералів та змінних в C#». Це обов’язково, щоб отримати трофей «Написання першого коду за допомогою C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
