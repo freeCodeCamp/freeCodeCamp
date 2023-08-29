@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { challengeTypes } from '../../../config/challenge-types';
@@ -46,6 +47,175 @@ describe('challengeRoutes', () => {
       setCookies = await devLogin();
     });
 
+    describe('POST /coderoad-challenge-completed', () => {
+      test('should return 500 if no tutorialId', async () => {
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        });
+        expect(response.status).toBe(500);
+      });
+
+      test('should return 400 if no user token', async () => {
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        }).send({
+          tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+        });
+        expect(response.status).toBe(400);
+        expect(response.body).toEqual({
+          msg: `'Coderoad-User-Token' not found in request headers`,
+          type: 'error'
+        });
+      });
+
+      test('should return 400 if invalid user token', async () => {
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', 'invalid')
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+        expect(response.status).toBe(400);
+        expect(response.body).toEqual({
+          msg: 'invalid user token',
+          type: 'error'
+        });
+      });
+
+      test('should return 400 if invalid tutorialId', async () => {
+        const tokenResponse = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+        expect(tokenResponse.status).toBe(200);
+        expect(tokenResponse.body).toHaveProperty('userToken');
+
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', token)
+          .send({ tutorialId: 'invalid' });
+
+        expect(response.status).toBe(400);
+        expect(response.body).toEqual({
+          msg: 'Tutorial not hosted on freeCodeCamp GitHub account',
+          type: 'error'
+        });
+      });
+
+      test('should return 400 if invalid tutorialId but is hosted on freeCodeCamp', async () => {
+        const tokenResponse = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+        expect(tokenResponse.status).toBe(200);
+        expect(tokenResponse.body).toHaveProperty('userToken');
+
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', token)
+          .send({ tutorialId: 'freeCodeCamp/invalid:V1.0.0' });
+
+        expect(response.status).toBe(400);
+        expect(response.body).toEqual({
+          msg: 'Tutorial name is not valid',
+          type: 'error'
+        });
+      });
+
+      test('Should complete challenge with code 200', async () => {
+        const tokenResponse = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+        expect(tokenResponse.status).toBe(200);
+        expect(tokenResponse.body).toHaveProperty('userToken');
+
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({
+          msg: 'Successfully submitted challenge',
+          type: 'success'
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const challengeCompleted = user?.completedChallenges.some(challenge => {
+          return challenge.id === '5ea8adfab628f68d805bfc5e';
+        });
+
+        expect(challengeCompleted).toBe(true);
+      });
+
+      test('Should complete project with code 200', async () => {
+        const tokenResponse = await superRequest('/user/user-token', {
+          method: 'POST',
+          setCookies
+        });
+        expect(tokenResponse.status).toBe(200);
+        expect(tokenResponse.body).toHaveProperty('userToken');
+
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        })
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
+          });
+
+        expect(response.status).toBe(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const projectCompleted = user?.partiallyCompletedChallenges.some(
+          project => {
+            return project.id === '5f1a4ef5d5d6b5ab580fc6ae';
+          }
+        );
+
+        expect(projectCompleted).toBe(true);
+      });
+
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+    });
     describe('/project-completed', () => {
       describe('validation', () => {
         it('POST rejects requests without ids', async () => {
@@ -444,6 +614,17 @@ describe('challengeRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
+    describe('/coderoad-challenge-completed', () => {
+      test('POST returns 401 status code with error message', async () => {
+        const response = await superRequest('/coderoad-challenge-completed', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(response?.statusCode).toBe(401);
+      });
+    });
+
     describe('/project-completed', () => {
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/project-completed', {
@@ -453,15 +634,15 @@ describe('challengeRoutes', () => {
 
         expect(response.statusCode).toBe(401);
       });
+    });
 
-      test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
-        const response = await superRequest('/backend-challenge-completed', {
-          method: 'POST',
-          setCookies
-        });
-
-        expect(response.statusCode).toBe(401);
+    test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
+      const response = await superRequest('/backend-challenge-completed', {
+        method: 'POST',
+        setCookies
       });
+
+      expect(response.statusCode).toBe(401);
     });
   });
 });

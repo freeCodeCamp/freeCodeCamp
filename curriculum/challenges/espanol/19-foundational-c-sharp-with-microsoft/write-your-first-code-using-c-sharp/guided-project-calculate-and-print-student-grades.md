@@ -9,14 +9,19 @@ dashedName: guided-project-calculate-and-print-student-grades
 
 This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/</a> and complete all the tasks for the "Guided Project - Calculate and Print Student Grades" module. This is required to earn the "Write Your First Code Using C#" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> and complete all the tasks for the "Guided Project - Calculate and Print Student Grades" module. This is required to earn the "Write Your First Code Using C#" trophy.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--
 
 ## --text--
 
-What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+What is wrong with the following code?
+
+```clike
+int sophiaSum;
+Console.WriteLine("Sophia: " + sophiaSum);
+```
 
 ## --answers--
 

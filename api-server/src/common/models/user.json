@@ -423,6 +423,11 @@
       "type": "hasMany",
       "model": "UserToken",
       "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
+      "foreignKey": "userId"
     }
   },
   "acls": [

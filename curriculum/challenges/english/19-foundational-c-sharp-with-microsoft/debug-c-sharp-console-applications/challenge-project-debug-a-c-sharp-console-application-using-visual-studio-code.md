@@ -9,7 +9,7 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--
@@ -21,7 +21,6 @@ Which of the following options can be used set a breakpoint in Visual Studio Cod
 ## --answers--
 
 Left-click in the column to the left of a line number in the code editor.
-Correct. A breakpoint can be set by positioning the mouse pointer in the column to the left of a line number and then left-clicking.
 
 ---
 

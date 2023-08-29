@@ -13,6 +13,7 @@ interface Block {
     id: string;
     tests?: { id?: string }[];
     challengeType: number;
+    url?: string;
   }[];
 }
 

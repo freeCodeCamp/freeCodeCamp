@@ -1,22 +1,27 @@
 ---
 id: 647e235a8acb466c97ccbf00
-title: Guided Project - Calculate and Print Student Grades
+title: 'Керований проєкт: розрахунок та друк оцінок студента'
 challengeType: 19
 dashedName: guided-project-calculate-and-print-student-grades
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/</a> and complete all the tasks for the "Guided Project - Calculate and Print Student Grades" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> та виконайте всі завдання модуля «Керований проєкт: розрахунок та друк оцінок студента». Це обов’язково, щоб отримати трофей «Написання першого коду за допомогою C#».
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+Що не так з наданим кодом?
+
+```clike
+int sophiaSum;
+Console.WriteLine("Sophia: " + sophiaSum);
+```
 
 ## --answers--
 

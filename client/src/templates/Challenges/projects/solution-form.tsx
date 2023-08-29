@@ -53,7 +53,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
       { name: 'solution', label: t('learn.solution-link') },
       { name: 'githubLink', label: t('learn.github-link') }
     ];
-    const msTrophyField = [{ name: 'solution', label: t('learn.ms-link') }];
 
     const buttonCopy = t('learn.i-completed');
 
@@ -64,8 +63,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false,
-      isMicrosoftLearnLink: false
+      isLocalLinkAllowed: false
     };
 
     let formFields = solutionField;
@@ -106,14 +104,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
-        break;
-
-      case challengeTypes.msTrophyUrl:
-        formFields = msTrophyField;
-        options.isMicrosoftLearnLink = true;
-        solutionLink =
-          solutionLink +
-          'https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=you';
         break;
 
       default:

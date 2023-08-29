@@ -2,13 +2,13 @@
 
 ## Встановлення:
 
-To install Playwright run:
+Щоб встановити Playwright:
 
 ```console
 pnpm run playwright:install-build-tools
 ```
 
-Alternatively you can follow official documentation referenced below:
+Або ж ви можете дотримуватись офіційної документації:
 
 Щоб встановити та налаштувати Playwright на своїй машині, див. [документацію](https://playwright.dev/docs/intro#installing-playwright)
 
@@ -34,7 +34,7 @@ Alternatively you can follow official documentation referenced below:
 
 Щоб запустити тести Playwright, зверніть увагу на інформацію нижче
 
-- Make sure you navigate to the e2e repo first
+- Переконайтесь, що перейшли до репозиторію e2e:
   ```console
   cd e2e
   ```
@@ -107,7 +107,7 @@ npx playwright show-report
 
 Playwright, як правило, є інструментом з дуже малим шансом на помилку. Помічник вже налаштував тести для виконання на машинах з усіма операційними системами, включно з найважливішими дистрибутивами Windows, MacOS і Linux.
 
-- (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
+- (MacOs та Linux) Якщо запуск Playwright призводить до помилки через залежності ядра, запустіть цю команду:
 
   ```console
   pnpm run playwright:install-build-tools-linux
