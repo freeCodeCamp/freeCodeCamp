@@ -39,14 +39,18 @@ RUN pnpm install -w -F=client -F=ui -F=browser-scripts -F=challenge-parser \
 --frozen-lockfile
 RUN pnpm build:client
 
+FROM node:18-bullseye AS client-config
+
+WORKDIR /home/node
+RUN git clone https://github.com/freeCodeCamp/client-config.git client
+
 FROM node:18-alpine
 
-RUN npm i -g serve@13
+RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node
 COPY --from=builder /home/node/build/client/public/ client/public
-# TODO: fetch serve.json from its repo.
-COPY --from=builder /home/node/build/docker/web/serve.json client/serve.json
+COPY --from=client-config /home/node/client/serve.json client/serve.json
 
 EXPOSE 8000
 # TODO: use PM2 to serve two instances of the client.
