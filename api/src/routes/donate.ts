@@ -144,7 +144,8 @@ export const donateRoutes =
             const {
               id: subscription_id,
               latest_invoice: {
-                // following key is not present in new api definitions. @ts-ignore as recommended by Stripe docs
+                // For older api versions, @ts-ignore is recommended by Stripe.
+                // More info: https://github.com/stripe/stripe-node/blob/fe81d1f28064c9b468c7b380ab09f7a93054ba63/README.md?plain=1#L91
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore stripe-version-2019-10-17
                 payment_intent: { client_secret, status }
