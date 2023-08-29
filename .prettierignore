@@ -2,6 +2,7 @@
 **/public
 client/static
 client/**/trending.json
+client/config/browser-scripts/*.json
 **/*fixtures*
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
