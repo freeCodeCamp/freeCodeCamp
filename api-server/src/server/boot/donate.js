@@ -2,7 +2,7 @@ import debug from 'debug';
 import Stripe from 'stripe';
 
 import { donationSubscriptionConfig } from '../../../../config/donation-settings';
-import keys from '../../../../config/secrets';
+import keys from '../../../config/secrets';
 import {
   getAsyncPaypalToken,
   verifyWebHook,

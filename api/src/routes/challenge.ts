@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { jwtSecret } from '../../../config/secrets';
+import { jwtSecret } from '../../../api-server/config/secrets';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
 import { formatValidationError } from '../utils/error-formatting';
