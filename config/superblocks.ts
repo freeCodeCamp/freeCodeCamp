@@ -128,12 +128,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.UpcomingPython
   ],
   [Languages.Portuguese]: [
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython
   ],
   [Languages.Ukrainian]: [
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
@@ -149,11 +147,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ],
   [Languages.German]: [
     SuperBlocks.RespWebDesignNew,
-    SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
-    SuperBlocks.BackEndDevApis,
     SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
