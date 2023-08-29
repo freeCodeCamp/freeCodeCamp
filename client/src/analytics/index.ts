@@ -4,7 +4,7 @@ import {
   devAnalyticsId,
   prodAnalyticsId,
   prodAnalyticsESId
-} from '../../../config/analytics-settings';
+} from '../../config/analytics-settings';
 
 import envData from '../../../config/env.json';
 

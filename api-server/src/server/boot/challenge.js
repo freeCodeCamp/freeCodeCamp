@@ -16,7 +16,7 @@ import isURL from 'validator/lib/isURL';
 import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 
-import { jwtSecret } from '../../../../config/secrets';
+import { jwtSecret } from '../../../config/secrets';
 import { challengeTypes } from '../../../../config/challenge-types';
 
 import {
