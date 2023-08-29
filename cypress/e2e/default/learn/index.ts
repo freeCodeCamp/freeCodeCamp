@@ -43,7 +43,7 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
-        `${challengerSelector.curriculumMap} > ul > li > a`
+        `${challengerSelector.curriculumMap} > ol > li > a`
       );
       expect(superBlocks).to.have.length(15);
 
