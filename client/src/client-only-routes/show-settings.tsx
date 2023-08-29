@@ -153,7 +153,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
-  const sound = store.get('fcc-sound') as boolean;
+  const sound = (store.get('fcc-sound') as boolean) ?? false;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
