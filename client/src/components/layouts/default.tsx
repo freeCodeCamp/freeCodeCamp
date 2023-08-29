@@ -40,6 +40,7 @@ import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import SignoutModal from '../signout-modal';
+import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
@@ -51,7 +52,6 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
-import StagingWarningModal from '../StagingWarningModal';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -171,7 +171,8 @@ function DefaultLayout({
   } else {
     return (
       <div className='page-wrapper'>
-        {envData.environment === 'staging' && <StagingWarningModal />}
+        {envData.deploymentEnv === 'staging' &&
+          envData.environment !== 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
             class: useSystemTheme
