@@ -16,7 +16,7 @@ Here are some examples of mixing quotes:
 
 ```js
 const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
-const quoteInString = "Groucho Marx once said 'Quote me as saying I was misquoted.'";
+const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quoted.'";
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
