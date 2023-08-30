@@ -1,5 +1,7 @@
 services:
   client:
+    environment:
+      PORT: 8000
     image: fcc-client
     ports:
-      - '8000:8000'
+      - '${PORT}:8000'
