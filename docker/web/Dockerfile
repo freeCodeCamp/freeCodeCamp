@@ -7,7 +7,6 @@ RUN npm i -g pnpm@8
 USER node
 WORKDIR /home/node/build
 
-# TODO: provide build args.
 COPY --chown=node:node . .
 
 ARG HOME_LOCATION
@@ -42,7 +41,7 @@ RUN pnpm build:client
 FROM node:18-bullseye AS client-config
 USER node
 WORKDIR /home/node
-RUN git clone https://github.com/freeCodeCamp/client-config.git client
+RUN git clone --depth=1 https://github.com/freeCodeCamp/client-config.git client
 
 FROM node:18-alpine
 
