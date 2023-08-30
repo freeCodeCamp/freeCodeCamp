@@ -172,7 +172,7 @@ function DefaultLayout({
     return (
       <div className='page-wrapper'>
         {envData.deploymentEnv === 'staging' &&
-          envData.environment !== 'production' && <StagingWarningModal />}
+          envData.environment === 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
             class: useSystemTheme
