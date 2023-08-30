@@ -93,7 +93,7 @@
   position: relative;
 }
 
-#mobile-layout .nav-tabs {
+#mobile-layout .nav-lists {
   margin: 0 1px;
   padding: 0;
   display: flex;
@@ -101,23 +101,23 @@
 }
 
 /* Need to narrow width to make room for preview toggle button */
-#mobile-layout .nav-tabs[data-haspreview='true'] {
+#mobile-layout .nav-lists[data-haspreview='true'] {
   width: calc(100% - 2rem - 2px);
 }
 
 #mobile-layout
-  .nav-tabs
+  .nav-lists
   > button:is([aria-selected='false'], [aria-expanded='false']) {
   color: inherit;
   background-color: inherit;
 }
 
-#mobile-layout .nav-tabs > button {
+#mobile-layout .nav-lists > button {
   height: 2.5em;
   font-size: 0.8em;
 }
 
-#mobile-layout .nav-tabs > button:hover,
+#mobile-layout .nav-lists > button:hover,
 .portal-button:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
@@ -140,6 +140,7 @@
 }
 
 #mobile-layout .tab-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -155,15 +156,6 @@
 #mobile-layout-pane-editor {
   display: flex;
   flex-direction: column;
-}
-
-[data-has-editable-boundaries='true'] #mobile-layout .tab-content {
-  padding-block-end: 0;
-}
-
-#mobile-layout .tab-pane {
-  height: 100%;
-  overflow: hidden;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -191,6 +183,6 @@
 }
 
 /* Focus indicator for tab panel */
-.nav-tabs [role='tab']:focus {
+.nav-lists [role='tab']:focus {
   outline-offset: -3px;
 }

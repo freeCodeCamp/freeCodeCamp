@@ -219,7 +219,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           defaultValue={currentTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
-          <TabsList className='nav-tabs'>
+          <TabsList className='nav-lists'>
             {!hasEditableBoundaries && (
               <TabsTrigger value={Tab.Instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
@@ -255,19 +255,25 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </button>
           </TabsList>
 
-          <TabsContent value={Tab.Editor}>
+          <TabsContent className='tabs-content' value={Tab.Editor}>
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
           {!hasEditableBoundaries && (
-            <TabsContent value={Tab.Instructions}>{instructions}</TabsContent>
+            <TabsContent className='tabs-content' value={Tab.Instructions}>
+              {instructions}
+            </TabsContent>
           )}
-          <TabsContent value={Tab.Console}>{testOutput}</TabsContent>
+          <TabsContent className='tabs-content' value={Tab.Console}>
+            {testOutput}
+          </TabsContent>
           {hasNotes && usesMultifileEditor && (
-            <TabsContent value={Tab.Notes}>{notes}</TabsContent>
+            <TabsContent className='tabs-content' value={Tab.Notes}>
+              {notes}
+            </TabsContent>
           )}
           {hasPreview && (
-            <TabsContent value={Tab.Preview}>
+            <TabsContent className='tabs-content' value={Tab.Preview}>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
