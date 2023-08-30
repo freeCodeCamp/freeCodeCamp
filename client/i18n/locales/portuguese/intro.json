@@ -1017,11 +1017,11 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Fundamentos de C# com a Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
       "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
-      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para construir aplicações robustas e escaláveis."
+      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para criar aplicações."
     ],
     "note": "Observação: você deve completar o desafio do troféu em cada seção abaixo para se qualificar para o exame de certificação.",
     "blocks": {

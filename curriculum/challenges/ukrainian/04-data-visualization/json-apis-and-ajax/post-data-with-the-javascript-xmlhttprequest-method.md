@@ -52,7 +52,7 @@ Your code should use the `open` method to initialize a `POST` request to the ser
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
 ```
 
-Your code should use the `setRequestHeader` method.
+Код має використати метод `setRequestHeader`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-Your code should use the `send` method.
+Код має використати метод `send`.
 
 ```js
 assert(code.match(/\.send\(\s*?body\s*?\)/g));

@@ -18,9 +18,11 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 Given the method signature,
 
-`void Print(string name, string number = "", bool member = false)`,
+```clike
+void Print(string name, string number = "", bool member = false)
+```
 
-which of the following options correctly uses named and optional arguments?
+Which of the following options correctly uses named and optional arguments?
 
 ## --answers--
 

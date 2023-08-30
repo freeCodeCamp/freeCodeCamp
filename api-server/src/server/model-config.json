@@ -43,6 +43,10 @@
     "dataSource": "db",
     "public": false
   },
+  "MsUsername": {
+    "dataSource": "db",
+    "public": false
+  },
   "RoleMapping": {
     "dataSource": "db",
     "public": false

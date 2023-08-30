@@ -25,9 +25,9 @@ const superBlocks = [
   'Information Security',
   'Machine Learning with Python',
   'College Algebra with Python',
+  '(New) Foundational C# with Microsoft',
   'Coding Interview Prep',
-  'Project Euler',
-  'Legacy Responsive Web Design'
+  'Project Euler'
 ];
 
 describe('Landing page', () => {

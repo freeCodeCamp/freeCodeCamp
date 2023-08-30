@@ -1,10 +1,12 @@
 import i18next from 'i18next';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import {
+  SuperBlockStages,
   SuperBlocks,
-  createFlatSuperBlockMap,
-  getFirstNotAuditedSuperBlock
+  getFirstNotAuditedSuperBlock,
+  superBlockOrder
 } from '../../../../config/superblocks';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
@@ -29,15 +31,17 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-});
 const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
   language: curriculumLocale,
   showNewCurriculum,
   showUpcomingChanges
 });
+
+const coreCurriculum = [
+  ...superBlockOrder[SuperBlockStages.FrontEnd],
+  ...superBlockOrder[SuperBlockStages.Backend],
+  ...superBlockOrder[SuperBlockStages.Python]
+];
 
 function MapLi({
   superBlock,
@@ -81,10 +85,33 @@ function MapLi({
 }
 
 function Map({ forLanding = false }: MapProps): React.ReactElement {
+  const { t } = useTranslation();
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
+      <h1 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.core-certs-heading')}
+      </h1>
       <ul>
-        {flatSuperBlockMap.map((superBlock, i) => (
+        {coreCurriculum.map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      <Spacer size='medium' />
+      <h1 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.professional-certs-heading')}
+      </h1>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Professional].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      <Spacer size='medium' />
+      <h1 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.interview-prep-heading')}
+      </h1>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>

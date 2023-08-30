@@ -2,7 +2,6 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
 import { challengeTypes } from '../../../config/challenge-types';
-import { jwtSecret } from '../../../config/secrets';
 import { schemas } from '../schemas';
 import {
   jsCertProjectIds,
@@ -10,9 +9,10 @@ import {
   updateUserChallengeData,
   type CompletedChallenge
 } from '../utils/common-challenge-functions';
+import { JWT_SECRET } from '../utils/env';
 import { formatValidationError } from '../utils/error-formatting';
 import { getChallenges } from '../utils/get-challenges';
-import { getPoints, ProgressTimestamp } from '../utils/progress';
+import { ProgressTimestamp, getPoints } from '../utils/progress';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -70,8 +70,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       try {
-        if (typeof encodedUserToken === 'string' && jwtSecret) {
-          const payload = jwt.verify(encodedUserToken, jwtSecret) as JwtPayload;
+        if (typeof encodedUserToken === 'string') {
+          const payload = jwt.verify(
+            encodedUserToken,
+            JWT_SECRET
+          ) as JwtPayload;
           userToken = payload.userToken;
         }
       } catch {
@@ -91,7 +94,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const codeRoadChallenges = challenges.filter(
-        ({ challengeType }) => challengeType === 12 || challengeType === 13
+        ({ challengeType }) =>
+          challengeType === challengeTypes.codeAllyPractice ||
+          challengeType === challengeTypes.codeAllyCert
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
@@ -136,7 +141,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge => challenge.id === challengeId
         );
 
-        if (challengeType === 13 && !isCompleted) {
+        if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
           const finalChallenge = {
             id: challengeId,
             completedDate

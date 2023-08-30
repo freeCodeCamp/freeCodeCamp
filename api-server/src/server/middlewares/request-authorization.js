@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash';
 
-import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
+import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 import {

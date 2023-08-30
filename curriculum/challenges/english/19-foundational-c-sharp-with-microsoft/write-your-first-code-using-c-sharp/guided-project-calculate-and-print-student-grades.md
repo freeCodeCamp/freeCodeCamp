@@ -18,7 +18,10 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 What is wrong with the following code?
 
-`int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+```clike
+int sophiaSum;
+Console.WriteLine("Sophia: " + sophiaSum);
+```
 
 ## --answers--
 

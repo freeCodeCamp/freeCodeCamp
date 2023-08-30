@@ -22,12 +22,12 @@ const mockSuperBlocks = [
   SuperBlocks.InfoSec,
   SuperBlocks.MachineLearningPy,
   SuperBlocks.CollegeAlgebraPy,
+  SuperBlocks.FoundationalCSharp,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.ProjectEuler,
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStructNew,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.FoundationalCSharp,
   SuperBlocks.ExampleCertification
 ];
 
@@ -44,12 +44,12 @@ const fullSuperOrder = {
   [SuperBlocks.InfoSec]: 9,
   [SuperBlocks.MachineLearningPy]: 10,
   [SuperBlocks.CollegeAlgebraPy]: 11,
-  [SuperBlocks.CodingInterviewPrep]: 12,
-  [SuperBlocks.ProjectEuler]: 13,
-  [SuperBlocks.RespWebDesign]: 14,
-  [SuperBlocks.JsAlgoDataStructNew]: 15,
-  [SuperBlocks.TheOdinProject]: 16,
-  [SuperBlocks.FoundationalCSharp]: 17,
+  [SuperBlocks.FoundationalCSharp]: 12,
+  [SuperBlocks.CodingInterviewPrep]: 13,
+  [SuperBlocks.ProjectEuler]: 14,
+  [SuperBlocks.RespWebDesign]: 15,
+  [SuperBlocks.JsAlgoDataStructNew]: 16,
+  [SuperBlocks.TheOdinProject]: 17,
   [SuperBlocks.ExampleCertification]: 18
 };
 
@@ -93,11 +93,11 @@ describe('getSuperOrder', () => {
       process.env.SHOW_NEW_CURRICULUM !== 'true' &&
       process.env.SHOW_UPCOMING_CHANGES !== 'true'
     ) {
-      expect.assertions(15);
+      expect.assertions(16);
     } else if (process.env.SHOW_NEW_CURRICULUM !== 'true') {
-      expect.assertions(15);
+      expect.assertions(16);
     } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
-      expect.assertions(15);
+      expect.assertions(16);
     } else {
       expect.assertions(19);
     }
@@ -114,24 +114,23 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.InfoSec)).toBe(9);
     expect(getSuperOrder(SuperBlocks.MachineLearningPy)).toBe(10);
     expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(11);
-    expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(12);
-    expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(13);
-    expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
+    expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(12);
+    expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(13);
+    expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(14);
+    expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
 
     if (
       process.env.SHOW_NEW_CURRICULUM === 'true' &&
       process.env.SHOW_UPCOMING_CHANGES === 'true'
     ) {
-      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
       expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
     } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
       return;
     } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(15);
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(16);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
       expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
     }
   });

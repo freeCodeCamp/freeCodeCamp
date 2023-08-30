@@ -13,7 +13,8 @@ import {
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   standardErrorMessage,
-  trophyMissingMessage
+  msTrophyError,
+  msTrophyVerified
 } from '../../../utils/error-messages';
 import {
   challengeTypes,
@@ -23,6 +24,7 @@ import {
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,
+  setIsProcessing,
   setRenderStartTime,
   submitComplete,
   updateComplete,
@@ -50,10 +52,13 @@ import {
 } from './selectors';
 
 function postChallenge(update, username) {
+  const {
+    payload: { challengeType }
+  } = update;
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points, isTrophyMissing, examResults } = data;
+      const { savedChallenges, points, type, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -66,7 +71,7 @@ function postChallenge(update, username) {
         );
       }
 
-      const actions = [
+      let actions = [
         submitComplete({
           submittedChallenge: {
             username,
@@ -79,9 +84,13 @@ function postChallenge(update, username) {
         updateComplete(),
         submitChallengeComplete()
       ];
-      // TODO(Post-MVP): separate endpoint for trophy submission?
-      if (isTrophyMissing)
-        actions.push(createFlashMessage(trophyMissingMessage));
+
+      if (challengeType === challengeTypes.msTrophy && type === 'error') {
+        actions = [createFlashMessage(msTrophyError), submitChallengeError()];
+      } else if (challengeType === challengeTypes.msTrophy) {
+        actions.push(createFlashMessage(msTrophyVerified));
+      }
+
       return of(...actions);
     }),
     catchError(() => of(updateFailed(update), submitChallengeError()))
@@ -176,7 +185,8 @@ const submitters = {
   backend: submitBackendChallenge,
   'project.frontEnd': submitProject,
   'project.backEnd': submitProject,
-  exam: submitExam
+  exam: submitExam,
+  msTrophy: submitMsTrophy
 };
 
 function submitExam(type, state) {
@@ -190,6 +200,22 @@ function submitExam(type, state) {
 
     const update = {
       endpoint: '/exam-challenge-completed',
+      payload: challengeInfo
+    };
+    return postChallenge(update, username);
+  }
+  return empty();
+}
+
+function submitMsTrophy(type, state) {
+  if (type === actionTypes.submitChallenge) {
+    const { id, challengeType } = challengeMetaSelector(state);
+
+    const { username } = userSelector(state);
+    const challengeInfo = { id, challengeType };
+
+    const update = {
+      endpoint: '/ms-trophy-challenge-completed',
       payload: challengeInfo
     };
     return postChallenge(update, username);
@@ -238,7 +264,9 @@ export default function completionEpic(action$, state$) {
         action.type === submitActionTypes.submitComplete;
 
       return submitter(type, state).pipe(
-        concat(of(setIsAdvancing(!lastChallengeInBlock))),
+        concat(
+          of(setIsAdvancing(!lastChallengeInBlock), setIsProcessing(false))
+        ),
         mergeMap(x =>
           canAllowDonationRequest(state, x)
             ? of(x, allowBlockDonationRequests({ superBlock, block }))

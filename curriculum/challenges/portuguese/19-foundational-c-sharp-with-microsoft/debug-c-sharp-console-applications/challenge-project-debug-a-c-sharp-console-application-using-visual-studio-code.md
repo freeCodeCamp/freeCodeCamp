@@ -9,7 +9,7 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-debug-c-sharp-console-application/</a> e complete todas as tarefas do módulo "Projeto de desafio – depurar uma aplicação de console em C# usando o Visual Studio Code". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> e complete todas as tarefas do módulo "Projeto de desafio – depurar uma aplicação de console em C# usando o Visual Studio Code". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
