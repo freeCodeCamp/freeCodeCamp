@@ -8,6 +8,6 @@ msTrophyId: learn.wwl.get-started-c-sharp-part-1.trophy
 
 # --description--
 
-Now that you've completed all of the "Write Your First Code Using C#" challenges, you should have earned a trophy for it on Microsoft's learning platform.
+Ви виконали всі завдання з «Написання першого коду за допомогою C#», а отже мали отримати трофей на навчальній платформі Microsoft.
 
-Link your Microsoft username to your freeCodeCamp account and click the "Verify Trophy" button below to complete the challenge. Цей трофей потрібен для того, щоб скласти екзамен сертифікації.
+Прив’яжіть ім’я користувача Microsoft до облікового запису freeCodeCamp та натисніть кнопку «Підтвердити трофей» знизу, щоб завершити завдання. Цей трофей потрібен для того, щоб скласти екзамен сертифікації.

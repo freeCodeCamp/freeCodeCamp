@@ -16,7 +16,7 @@ This challenge will be partially completed on Microsoft's learn platform. Follow
 
 ## --text--
 
-To sort a string array, why is it be important to use the `String.Trim()` method on each array element before sorting?
+To sort a string array, why is it important to use the `String.Trim()` method on each array element before sorting?
 
 ## --answers--
 

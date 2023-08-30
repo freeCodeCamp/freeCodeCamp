@@ -20,7 +20,7 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 ## --answers--
 
-Натисніть лівою кнопкою миші в стовпці зліва в редакторі коду. Все вірно. Точку зупинки можна встановити, розмістивши курсор в стовпці зліва на числі рядка, а потім натиснути лівою кнопкою миші.
+Left-click in the column to the left of a line number in the code editor.
 
 ---
 

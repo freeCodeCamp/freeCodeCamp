@@ -25,15 +25,15 @@ Console.WriteLine("Sophia: " + sophiaSum);
 
 ## --answers--
 
-`sophiaSum` is not initialized before use
+`sophiaSum` не ініціалізовано перед використанням
 
 ---
 
-`sophiaSum` is not implicitly typed to a string
+`sophiaSum` не введено до рядка неявно
 
 ---
 
-`sophiaSum` should use the var keyword
+`sophiaSum` має використовувати ключове слово var
 
 ## --video-solution--
 
