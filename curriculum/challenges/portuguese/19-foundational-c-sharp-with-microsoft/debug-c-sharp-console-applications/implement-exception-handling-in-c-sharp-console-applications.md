@@ -9,7 +9,7 @@ dashedName: implement-exception-handling-in-c-sharp-console-applications
 
 Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/implement-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/implement-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Implemente o tratamento de exceções em aplicações de console em C#". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Implemente o tratamento de exceções em aplicações de console em C#". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

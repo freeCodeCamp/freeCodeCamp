@@ -125,14 +125,15 @@
 
 .certification-namespace .dual-logo svg {
   max-width: 70%;
+  height: auto;
 }
 
 .certification-namespace .fcc-logo svg {
-  max-width: 350px;
+  width: 350px;
 }
 
 .certification-namespace .ms-logo svg {
-  max-width: 300px;
+  width: 300px;
 }
 
 .certification-namespace .information {

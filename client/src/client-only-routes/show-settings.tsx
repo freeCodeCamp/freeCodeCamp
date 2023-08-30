@@ -213,6 +213,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -225,7 +226,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCertV7={isSciCompPyCertV7}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             username={username}
             verifyCert={verifyCert}
           />

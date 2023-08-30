@@ -9,26 +9,26 @@ dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank">https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/</a> та виконайте всі завдання модуля «Імплементуйте інструменти налагодження Visual Studio Code до C#». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank">https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/</a> та виконайте всі завдання модуля «Імплементуйте інструменти налагодження Visual Studio Code до C#». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
+Який з розділів RUN AND DEBUG використовують, щоб відслідкувати поточну точку виконання в запущеному застосунку?
 
 ## --answers--
 
-The VARIABLES section.
+Розділ VARIABLES.
 
 ---
 
-The CALL STACK section.
+Розділ CALL STACK.
 
 ---
 
-The WATCH section.
+Розділ WATCH.
 
 ## --video-solution--
 

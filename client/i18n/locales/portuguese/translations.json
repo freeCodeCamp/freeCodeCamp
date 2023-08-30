@@ -84,7 +84,10 @@
     "exit": "Sair",
     "finish-exam": "Finalizar o exame",
     "finish": "Finalizar",
-    "submit-exam-results": "Enviar meus resultados"
+    "submit-exam-results": "Enviar meus resultados",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -113,6 +116,9 @@
       }
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "Perguntas frequentes:",
     "faqs": [
       {
@@ -433,6 +439,18 @@
       "exit": "Tem certeza de que deseja sair do exame? Você perderá todo o progresso que já fez.",
       "exit-yes": "Sim, quero sair do exame",
       "exit-no": "Não, quero continuar no exame"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
+      "transcript-label": "Your Microsoft Transcript Link"
     }
   },
   "donate": {
@@ -686,7 +704,6 @@
     "complete-project-first": "Você precisa completar o projeto primeiro.",
     "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador.",
-    "ms-trophy-missing": "Parece que o link do troféu que você forneceu não é válido. Verifique o link e tente novamente.",
     "timeline-private": "{{username}} escolheu deixar sua linha do tempo privada e precisa torná-la pública para que outros possam ver a sua certificação.",
     "code-saved": "Seu código foi salvo no banco de dados. Ele estará aqui quando você voltar.",
     "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
@@ -694,7 +711,13 @@
     "challenge-save-too-big": "Não foi possível salvar seu código. Seu código tem {{user-size}} bytes. A capacidade é de, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
-    "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame."
+    "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc6
-title: Додавання вбудованих стилів (Inline Styling) до елементів
+title: Додайте вбудовані стилі до елементів
 challengeType: 6
 forumTopicId: 301475
 dashedName: add-inline-styling-to-elements
@@ -8,7 +8,7 @@ dashedName: add-inline-styling-to-elements
 
 # --description--
 
-D3 дозволяє додати вбудовані стилі CSS для динамічних елементів методом `style()`.
+D3 дозволяє додати вбудовані стилі CSS до динамічних елементів за допомогою методу `style()`.
 
 Метод `style()` приймає пару ключ-значення, розділену комами, як аргумент. Ось приклад, як змінити колір тексту вибірки на блакитний:
 
@@ -18,17 +18,17 @@ selection.style("color","blue");
 
 # --instructions--
 
-Додайте метод `style()` до коду в редакторі, щоб з сімейства шрифтів `font-family` всі відображені тексти були у стилі `verdana`.
+Додайте метод `style()` до коду в редакторі, щоб весь зображений текст мав `font-family` зі значенням `verdana`.
 
 # --hints--
 
-З набору шрифтів `font-family` оберіть `verdana` для елементів `h2`.
+Елементи `h2` повинні мати `font-family` зі значенням `verdana`.
 
 ```js
 assert($('h2').css('font-family') == 'verdana');
 ```
 
-Ваш код повинен використовувати метод `style()`.
+Код має використати метод `style()`.
 
 ```js
 assert(code.match(/\.style/g));

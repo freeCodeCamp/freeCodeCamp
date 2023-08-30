@@ -9,7 +9,7 @@ dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-appl
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> та виконайте всі завдання модуля «Керований проєкт: налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> та виконайте всі завдання модуля «Керований проєкт: налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--

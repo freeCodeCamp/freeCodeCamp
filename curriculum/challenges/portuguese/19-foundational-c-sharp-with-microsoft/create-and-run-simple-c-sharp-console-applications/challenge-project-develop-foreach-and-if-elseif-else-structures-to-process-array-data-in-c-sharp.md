@@ -9,7 +9,7 @@ dashedName: challenge-project-develop-foreach-and-if-elseif-else-structures-to-p
 
 Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/en-us/training/modules/challenge-project-arrays-iteration-selection/</a> e complete todas as tarefas do módulo "Projeto de desafio – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank">https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/</a> e complete todas as tarefas do módulo "Projeto de desafio – desenvolva estruturas foreach e if-elseif-else para processar dados de arrays em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

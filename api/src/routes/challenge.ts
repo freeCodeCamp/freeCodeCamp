@@ -1,12 +1,12 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { jwtSecret } from '../../../config/secrets';
 import { getChallenges } from '../utils/get-challenges';
 import { updateUserChallengeData } from '../utils/common-challenge-functions';
 import { formatValidationError } from '../utils/error-formatting';
 import { schemas } from '../schemas';
 import { getPoints, ProgressTimestamp } from '../utils/progress';
+import { JWT_SECRET } from '../utils/env';
 import { challengeTypes } from '../../../config/challenge-types';
 import {
   canSubmitCodeRoadCertProject,
@@ -65,8 +65,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       try {
-        if (typeof encodedUserToken === 'string' && jwtSecret) {
-          const payload = jwt.verify(encodedUserToken, jwtSecret) as JwtPayload;
+        if (typeof encodedUserToken === 'string') {
+          const payload = jwt.verify(
+            encodedUserToken,
+            JWT_SECRET
+          ) as JwtPayload;
           userToken = payload.userToken;
         }
       } catch {
@@ -86,7 +89,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const codeRoadChallenges = challenges.filter(
-        ({ challengeType }) => challengeType === 12 || challengeType === 13
+        ({ challengeType }) =>
+          challengeType === challengeTypes.codeAllyPractice ||
+          challengeType === challengeTypes.codeAllyCert
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
@@ -131,7 +136,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge => challenge.id === challengeId
         );
 
-        if (challengeType === 13 && !isCompleted) {
+        if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
           const finalChallenge = {
             id: challengeId,
             completedDate

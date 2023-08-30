@@ -41,7 +41,7 @@ const {
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
-  foundationalCSharpId
+  foundationalCSharpV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -134,8 +134,8 @@ function createCertTypeIds(allChallenges) {
       collegeAlgebraPyV8Id,
       allChallenges
     ),
-    [certTypes.foundationalCSharp]: getCertById(
-      foundationalCSharpId,
+    [certTypes.foundationalCSharpV8]: getCertById(
+      foundationalCSharpV8Id,
       allChallenges
     )
   };
@@ -174,7 +174,8 @@ function sendCertifiedEmail(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   },
   send$
 ) {
@@ -191,7 +192,8 @@ function sendCertifiedEmail(
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
     !isRelationalDatabaseCertV8 ||
-    !isCollegeAlgebraPyCertV8
+    !isCollegeAlgebraPyCertV8 ||
+    !isFoundationalCSharpCertV8
   ) {
     return Observable.just(false);
   }

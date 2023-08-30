@@ -1,4 +1,4 @@
-import { allowedOrigins } from '../../../../config/cors-settings';
+import { allowedOrigins } from '../../../config/cors-settings';
 
 export default function constantHeaders() {
   return function (req, res, next) {

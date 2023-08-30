@@ -9,7 +9,7 @@ dashedName: create-and-throw-exceptions-in-c-sharp-console-applications
 
 Це завдання буде частково виконано на навчальній платформі Microsoft. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/training/modules/create-throw-exceptions-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-throw-exceptions-c-sharp/</a> та виконайте всі завдання модуля «Створіть та викиньте винятки в консольних застосунках C#». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a> та виконайте всі завдання модуля «Створіть та викиньте винятки в консольних застосунках C#». Це обов’язково, щоб отримати трофей «Налагодження консольних застосунків C#».
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
 # --question--
