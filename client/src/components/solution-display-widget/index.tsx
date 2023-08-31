@@ -1,7 +1,6 @@
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
@@ -166,7 +165,7 @@ export function SolutionDisplayWidget({
   const ShowProjectLink = (
     <Button
       block={true}
-      bsStyle='primary'
+      variant='primary'
       className='btn-invert'
       href={solution}
       rel='noopener noreferrer'
@@ -183,7 +182,7 @@ export function SolutionDisplayWidget({
   const ShowExamResults = (
     <Button
       block={true}
-      bsStyle='primary'
+      variant='primary'
       className='btn-invert'
       data-cy={dataCy}
       onClick={showExamResults}

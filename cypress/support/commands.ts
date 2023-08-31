@@ -15,7 +15,7 @@ const setPrivacyTogglesToPublic = () => {
     });
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();
-  cy.contains('You have agreed to our Academic Honesty Policy');
+  cy.contains('You have agreed to our Academic Honesty Policy.');
 };
 
 const goToSettings = () => {

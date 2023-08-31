@@ -1,3 +1,8 @@
+.tool-panel-group > button,
+#get-help-dropdown {
+  margin-top: 5px;
+}
+
 .tool-panel-group button,
 .tool-panel-group a {
   font-size: 1.1rem;
@@ -17,7 +22,7 @@
   position: absolute;
   bottom: 0;
 }
-
+/* delete them again */
 .tool-panel-group-mobile > .btn-block {
   margin: 0 2px 0 0;
   padding: 5px 0;
@@ -35,7 +40,8 @@
   margin: 0 2px;
 }
 
-.tool-panel-group-mobile .btn {
+.tool-panel-group-mobile > button,
+.tool-panel-group-mobile #get-help-dropdown {
   margin: 0 !important;
 }
 

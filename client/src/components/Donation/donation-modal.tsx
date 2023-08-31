@@ -1,9 +1,10 @@
-import { Modal, Button } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
   TabsTrigger,
   TabsList,
+  Button,
   Col,
   Row
 } from '@freecodecamp/ui';
@@ -185,7 +186,7 @@ function SelectionTabs({
         </Tabs>
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
           onClick={() => setShowDonateForm(true)}
@@ -220,11 +221,11 @@ function CloseButtonRow({
         className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
       >
         <Button
-          bsSize='sm'
-          bsStyle='primary'
+          size='small'
+          variant='primary'
           className='btn-link close-button'
           onClick={closeDonationModal}
-          tabIndex='0'
+          tabIndex={0}
           disabled={isDisabled}
         >
           {closeLabel ? t('buttons.close') : t('buttons.ask-later')}

@@ -16,7 +16,7 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
 
   if (!isUserSignedIn) {
     return (
-      <Login data-test-label='landing-small-cta'>{t('buttons.sign-in')}</Login>
+      <Login dataTestLabel='landing-small-cta'>{t('buttons.sign-in')}</Login>
     );
   } else {
     return (

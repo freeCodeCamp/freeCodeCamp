@@ -1,9 +1,9 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { Button } from '@freecodecamp/ui';
 
 import { openModal } from '../redux/actions';
 
@@ -33,7 +33,7 @@ function ToolPanel({
       {guideUrl && (
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           className='btn-invert'
           href={guideUrl}
           target='_blank'
@@ -43,9 +43,10 @@ function ToolPanel({
       )}
       <Button
         block={true}
-        bsStyle='primary'
+        variant='primary'
         className='btn-invert'
         onClick={openHelpModal}
+        style={{ marginTop: '5px' }}
       >
         {t('buttons.ask-for-help')}
       </Button>

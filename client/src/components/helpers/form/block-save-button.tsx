@@ -1,15 +1,15 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button, type ButtonProps } from '@freecodecamp/ui';
 
 function BlockSaveButton({
   children,
-  bgSize,
+  size,
   ...restProps
 }: {
   children?: React.ReactNode;
   disabled?: boolean;
-  bgSize?: string;
+  size?: ButtonProps['size'];
 }): JSX.Element {
   const { t } = useTranslation();
 
@@ -17,9 +17,9 @@ function BlockSaveButton({
     <Button
       block={true}
       // the button is used to submit solutions in projects that require external URL
-      // these buttons don't use bgSize, that's why the bgSize is optional.
-      bsSize={bgSize}
-      bsStyle='primary'
+      // these buttons don't use size, that's why the size is optional.
+      size={size}
+      variant='primary'
       type='submit'
       {...restProps}
     >

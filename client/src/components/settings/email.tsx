@@ -1,11 +1,11 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   HelpBlock,
   Alert,
   FormGroup,
   FormGroupProps,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Button
 } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
@@ -151,7 +151,7 @@ function EmailSettings({
         </FullWidthRow>
         <FullWidthRow>
           <Link style={{ textDecoration: 'none' }} to='/update-email'>
-            <Button block={true} bsSize='lg' bsStyle='primary'>
+            <Button block={true} size='large' variant='primary'>
               {t('buttons.edit')}
             </Button>
           </Link>
@@ -238,8 +238,8 @@ function EmailSettings({
           </div>
           <BlockSaveButton
             data-playwright-test-label='save-email-button'
-            aria-disabled={isDisabled}
-            bgSize='lg'
+            disabled={isDisabled}
+            size='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}

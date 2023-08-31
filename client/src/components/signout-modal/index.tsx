@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
@@ -71,7 +72,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         <hr />
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           data-test-label='cancel-signout'
           className='btn-invert'
           onClick={handleModalHide}
@@ -82,7 +83,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         <Spacer size='small' />
         <Button
           block={true}
-          bsStyle='danger'
+          variant='danger'
           data-test-label='signout'
           className='btn-signout'
           onClick={handleSignout}

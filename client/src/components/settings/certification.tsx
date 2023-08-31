@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
@@ -7,7 +6,7 @@ import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
-import { Table } from '@freecodecamp/ui';
+import { Button, Table } from '@freecodecamp/ui';
 
 import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
@@ -223,12 +222,12 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
       <div className={'col-xs-12'}>
         {fullStackClaimable ? (
           <Button
-            bsSize='sm'
-            bsStyle='primary'
-            className={'col-xs-12'}
+            size='small'
+            variant='primary'
+            className='col-xs-12'
             href={certLocation}
             id={'button-' + certSlug}
-            onClick={createClickHandler(certSlug)}
+            onClick={() => void createClickHandler(certSlug)}
             style={buttonStyle}
             target='_blank'
           >
@@ -236,9 +235,9 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
           </Button>
         ) : (
           <Button
-            bsSize='sm'
-            bsStyle='primary'
-            className={'col-xs-12'}
+            size='small'
+            variant='primary'
+            className='col-xs-12'
             disabled={true}
             id={'button-' + certSlug}
             style={buttonStyle}
@@ -397,11 +396,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <td colSpan={2}>
             <Button
               block={true}
-              bsStyle='primary'
+              variant='primary'
               className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
-              onClick={clickHandler}
+              onClick={event => {
+                void clickHandler(event);
+              }}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
               <span className='sr-only'>{certName}</span>

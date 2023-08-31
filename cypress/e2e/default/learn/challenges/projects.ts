@@ -247,7 +247,7 @@ describe('project submission', () => {
     cy.contains("I've completed this challenge").click();
     cy.get('[data-cy=submit-challenge]').as('submitChallenge');
     cy.get('@submitChallenge').click();
-    cy.get('@submitChallenge').should('be.disabled');
+    cy.get('@submitChallenge').should('have.attr', 'aria-disabled', 'true');
     // After the api responds, the button is enabled, but since the modal leaves
     // the DOM we just check for that.
     cy.get('[data-cy=completion-modal]').should('not.exist');

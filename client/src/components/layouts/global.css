@@ -34,7 +34,7 @@ body {
   border: 0;
 }
 
-.btn-cta-big {
+.default-layout .btn-cta-big {
   max-height: 100%;
   font-size: 1.5rem;
   white-space: normal;
@@ -133,14 +133,14 @@ p {
   h3 {
     font-size: 1.1rem;
   }
-  .btn-cta,
-  .btn-cta-big {
+  .default-layout .btn-cta,
+  .default-layout .btn-cta-big {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 1199px) {
-  .btn-cta-big {
+  .default-layout .btn-cta-big {
     font-size: 1.3rem;
   }
 }
@@ -227,11 +227,9 @@ input[type='submit'],
   white-space: pre-line;
 }
 
-button:hover,
+button:hover:not([aria-disabled='true']),
 input[type='submit']:hover,
 .btn:hover,
-.btn-default.active:hover,
-.btn-default.active,
 .btn-primary:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
@@ -282,7 +280,7 @@ fieldset[disabled] .btn-primary.focus {
   color: var(--quaternary-color);
 }
 
-.btn-cta {
+.default-layout .btn-cta {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
   border-width: 3px;
@@ -416,9 +414,6 @@ fieldset[disabled] .btn-primary.focus {
   }
 }
 
-.button-group .btn:not(:last-child) {
-  margin-bottom: 10px;
-}
 strong {
   color: var(--secondary-color);
 }

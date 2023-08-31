@@ -1,10 +1,11 @@
 // Package Utilities
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import { closeModal } from '../../redux/actions';
@@ -61,7 +62,7 @@ function ExitExamModal({
         <Button
           data-cy='exit-exam-modal-confirm'
           block={true}
-          bsStyle='danger'
+          variant='danger'
           onClick={exitExam}
         >
           {t('learn.exam.exit-yes')}
@@ -69,7 +70,7 @@ function ExitExamModal({
         <Button
           data-cy='exit-exam-modal-deny'
           block={true}
-          bsStyle='primary'
+          variant='primary'
           onClick={closeExitExamModal}
         >
           {t('learn.exam.exit-no')}

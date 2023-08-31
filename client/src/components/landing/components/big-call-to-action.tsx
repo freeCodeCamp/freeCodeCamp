@@ -8,7 +8,7 @@ const BigCallToAction = (): JSX.Element => {
   return (
     <Login
       block={true}
-      data-test-label='landing-big-cta'
+      dataTestLabel='landing-big-cta'
       data-playwright-test-label='landing-big-cta'
     >
       {t('buttons.logged-in-cta-btn')}

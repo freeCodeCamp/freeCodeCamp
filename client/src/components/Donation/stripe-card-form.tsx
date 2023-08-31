@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   CardNumberElement,
   CardExpiryElement,
@@ -12,6 +11,7 @@ import type {
   StripeCardExpiryElementChangeEvent
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
+import { Button } from '@freecodecamp/ui';
 
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import envData from '../../../config/env.json';
@@ -160,7 +160,7 @@ const StripeCardForm = ({
       </div>
       <Button
         block={true}
-        bsStyle='primary'
+        variant='primary'
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
         type='submit'

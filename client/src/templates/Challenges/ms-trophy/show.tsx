@@ -1,4 +1,4 @@
-import { Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Button } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
@@ -204,7 +204,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 <hr />
                 <Button
                   block={true}
-                  bsStyle='primary'
+                  variant='primary'
                   data-playwright-test-label='verify-trophy-button'
                   className='btn-invert'
                   disabled={!msUsername || isProcessing}
@@ -214,7 +214,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 </Button>
                 <Button
                   block={true}
-                  bsStyle='primary'
+                  variant='primary'
                   data-playwright-test-label='ask-for-help-button'
                   className='btn-invert'
                   onClick={openHelpModal}

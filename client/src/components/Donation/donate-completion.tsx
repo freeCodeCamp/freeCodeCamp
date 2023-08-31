@@ -1,8 +1,8 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
-import { Alert } from '@freecodecamp/ui';
+import { Alert, Button } from '@freecodecamp/ui';
+
 import { Spacer } from '../helpers';
 
 type DonateCompletionProps = {
@@ -58,7 +58,7 @@ function DonateCompletion({
       <div className='donation-completion-buttons'>
         {error && (
           <div>
-            <Button bsStyle='primary' onClick={reset}>
+            <Button variant='primary' onClick={reset}>
               {t('buttons.try-again')}
             </Button>
           </div>

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 import { closeModal } from '../redux/actions';
 import { isShortcutsModalOpenSelector } from '../redux/selectors';
@@ -103,8 +104,8 @@ function ShortcutsModal({
         />
         <Button
           block={true}
-          bsSize='sm'
-          bsStyle='primary'
+          size='small'
+          variant='primary'
           onClick={closeShortcutsModal}
         >
           {t('buttons.close')}

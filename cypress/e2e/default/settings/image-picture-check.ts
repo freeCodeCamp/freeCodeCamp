@@ -32,6 +32,6 @@ describe('Picture input field', () => {
         }
       );
     cy.wait(500);
-    cy.get('#camper-identity > .btn').should('not.be.disabled');
+    cy.get('[data-cy="save-camper-identity"]').should('not.be.disabled');
   });
 });

@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import React from 'react';
 
-import { Button, ButtonProps } from '.';
+import { Button, type ButtonProps } from '.';
 
 const story = {
   title: 'Example/Button',

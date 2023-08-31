@@ -1,28 +1,8 @@
-import React, { useMemo } from 'react';
-import { ButtonProps, ButtonSize, ButtonVariant } from './types';
+import React from 'react';
+import type { ButtonProps } from './types';
 
-const defaultClassNames = [
-  'relative',
-  'cursor-pointer',
-  'inline-block',
-  'border-3',
-  'text-center',
-  'no-underline',
-  'active:before:w-full',
-  'active:before:h-full',
-  'active:before:absolute',
-  'active:before:inset-0',
-  'active:before:border-3',
-  'active:before:border-transparent',
-  'active:before:bg-gray-900',
-  'active:before:opacity-20',
-  'aria-disabled:cursor-not-allowed',
-  'aria-disabled:opacity-50',
-  'focus:outline-none', // Hide the default browser outline
-  'focus:ring',
-  'focus:ring-focus-outline-color',
-  'mt-[0.5px]'
-];
+const defaultClassNames =
+  'relative cursor-pointer border-3 border-solid text-center no-underline active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus:ring focus:ring-focus-outline-color';
 
 const computeClassNames = ({
   size,
@@ -30,12 +10,12 @@ const computeClassNames = ({
   disabled,
   block
 }: {
-  size?: ButtonSize;
-  variant?: ButtonVariant;
+  size?: ButtonProps['size'];
+  variant?: ButtonProps['variant'];
   disabled?: boolean;
   block?: boolean;
 }) => {
-  const classNames = [...defaultClassNames];
+  const classNames = [];
 
   if (block) {
     classNames.push('block', 'w-full');
@@ -91,7 +71,7 @@ const computeClassNames = ({
 
   switch (size) {
     case 'large':
-      classNames.push('px-4 py-2.5 text-lg');
+      classNames.push('px-4 py-[10px] text-lg');
       break;
     case 'small':
       classNames.push('px-2.5 py-1 text-sm');
@@ -100,6 +80,8 @@ const computeClassNames = ({
     default:
       classNames.push('px-3 py-1.5 text-md');
   }
+
+  classNames.push(defaultClassNames);
 
   return classNames.join(' ');
 };
@@ -110,17 +92,10 @@ const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
     // as `aria-disabled` marks the element disabled but still registers the click event.
     // Ref: https://css-tricks.com/making-disabled-buttons-more-inclusive/#aa-the-difference-between-disabled-and-aria-disabled
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
-      if (!ariaDisabled && onClick) {
-        onClick(event);
-      }
-    };
-
     return (
       <button
         className={className}
-        onClick={handleClick}
+        {...(disabled ? { onClick: () => void {} } : { onClick: onClick })}
         aria-disabled={disabled}
         ref={ref}
         type={type ?? 'button'}
@@ -132,26 +107,27 @@ const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
   }
 );
 
-const Link = React.forwardRef<React.ElementRef<'a'>, ButtonProps>(
-  ({ className, href, download, target, children, ...rest }, ref) => {
-    return (
-      <a
-        className={className}
-        download={download}
-        target={target}
-        ref={ref}
-        href={href ?? undefined}
-        {...rest}
-      >
-        {children}
-      </a>
-    );
-  }
-);
+const Link = React.forwardRef<
+  React.ElementRef<'a'>,
+  ButtonProps<HTMLAnchorElement>
+>(({ className, href, download, target, children, ...rest }, ref) => {
+  return (
+    <a
+      className={className}
+      download={download}
+      target={target}
+      ref={ref}
+      href={href ?? undefined}
+      {...rest}
+    >
+      {children}
+    </a>
+  );
+});
 
 export const HeadlessButton = React.forwardRef<
   React.ElementRef<'button' | 'a'>,
-  ButtonProps
+  ButtonProps<HTMLAnchorElement | HTMLButtonElement>
 >(
   (
     { onClick, className, children, disabled, href, download, target, ...rest },
@@ -165,6 +141,7 @@ export const HeadlessButton = React.forwardRef<
           download={download}
           target={target}
           ref={ref as React.Ref<HTMLAnchorElement>}
+          onClick={onClick}
           {...rest}
         >
           {children}
@@ -190,10 +167,7 @@ export const Button = React.forwardRef<
   React.ElementRef<'button' | 'a'>,
   ButtonProps
 >(({ className, size, disabled, variant, block, ...rest }, ref) => {
-  const classes = useMemo(
-    () => computeClassNames({ size, variant, disabled, block }),
-    [size, variant, disabled, block]
-  );
+  const classes = computeClassNames({ size, variant, disabled, block });
 
   const buttonStyle = [className, classes].join(' ');
 

@@ -1,6 +1,7 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -44,8 +45,8 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <hr />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           className='btn-invert'
           onClick={props.onHide}
           type='button'
@@ -55,8 +56,8 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='danger'
+          size='large'
+          variant='danger'
           className='btn-danger'
           onClick={props.delete}
           type='button'

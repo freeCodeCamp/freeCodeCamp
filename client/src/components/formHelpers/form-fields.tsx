@@ -28,10 +28,15 @@ export type FormOptions = {
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];
+  isDisabled: boolean;
   options: FormOptions;
 };
 
-function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
+function FormFields({
+  formFields,
+  options,
+  isDisabled
+}: FormFieldsProps): JSX.Element {
   const {
     ignored = [],
     placeholders = {},
@@ -100,6 +105,10 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
                     placeholder={placeholder}
                     required={required.includes(name)}
                     rows={4}
+                    {...(isDisabled && {
+                      onInvalid: (e: React.FormEvent<HTMLInputElement>) =>
+                        e.preventDefault()
+                    })}
                     type='url'
                     value={value as string}
                   />

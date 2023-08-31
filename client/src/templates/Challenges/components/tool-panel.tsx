@@ -1,5 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -70,14 +69,14 @@ function ToolPanel({
   const { t } = useTranslation();
   return (
     <div
-      className={`tool-panel-group button-group ${
+      className={`tool-panel-group ${
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
       <Button
         aria-label='Run the tests use shortcut Ctrl+enter'
         block={true}
-        bsStyle='primary'
+        variant='primary'
         onClick={handleRunTests}
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
@@ -85,7 +84,7 @@ function ToolPanel({
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           data-cy='save-code-to-database-btn'
           className='btn-invert'
           onClick={saveChallenge}
@@ -96,7 +95,7 @@ function ToolPanel({
       {challengeType !== challengeTypes.multifileCertProject && (
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           className='btn-invert'
           onClick={openResetModal}
         >
@@ -105,7 +104,7 @@ function ToolPanel({
       )}
       <Dropdown dropup>
         <Dropdown.Toggle
-          id={'get-help-dropdown'}
+          id='get-help-dropdown'
           data-playwright-test-label='get-help-dropdown'
         >
           {isMobile ? t('buttons.help') : t('buttons.get-help')}

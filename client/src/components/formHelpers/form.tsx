@@ -102,20 +102,23 @@ export const StrictSolutionForm = ({
         submit(validateFormValues(values, options));
       }}
     >
-      {({ handleSubmit, pristine, error }) => (
-        <form
-          id={`dynamic-${id}`}
-          onSubmit={handleSubmit as (e: FormEvent) => void}
-          style={{ width: '100%' }}
-        >
-          <FormFields formFields={formFields} options={options} />
-          <BlockSaveButton
-            disabled={(pristine && !enableSubmit) || (error as boolean)}
+      {({ handleSubmit, pristine, error }) => {
+        const isDisabled = (pristine && !enableSubmit) || (error as boolean);
+        return (
+          <form
+            id={`dynamic-${id}`}
+            {...(!isDisabled
+              ? { onSubmit: handleSubmit as (e: FormEvent) => void }
+              : { onSubmit: e => e.preventDefault() })}
+            style={{ width: '100%' }}
           >
-            {buttonText}
-          </BlockSaveButton>
-        </form>
-      )}
+            <FormFields formFields={formFields} options={options} isDisabled />
+            <BlockSaveButton disabled={isDisabled}>
+              {buttonText}
+            </BlockSaveButton>
+          </form>
+        );
+      }}
     </Form>
   );
 };

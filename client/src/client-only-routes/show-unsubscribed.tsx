@@ -1,9 +1,8 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Container, Panel } from '@freecodecamp/ui';
+import { Container, Panel, Button } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
 import { Spacer } from '../components/helpers';
@@ -42,8 +41,8 @@ function ShowUnsubscribed({
             <FullWidthRow>
               <Button
                 block={true}
-                bsSize='lg'
-                bsStyle='primary'
+                size='large'
+                variant='primary'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
                 {t('buttons.resubscribe')}

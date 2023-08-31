@@ -1,15 +1,15 @@
 import { MouseEventHandler } from 'react';
 
-export type ButtonVariant = 'primary' | 'danger' | 'info';
+type ButtonVariant = 'primary' | 'danger' | 'info';
 
-export type ButtonSize = 'small' | 'medium' | 'large';
+type ButtonSize = 'small' | 'medium' | 'large';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+export interface ButtonProps<TElement = HTMLButtonElement>
+  extends React.ButtonHTMLAttributes<TElement> {
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  onClick?: MouseEventHandler<TElement>;
   type?: 'submit' | 'button';
   disabled?: boolean;
   block?: boolean;

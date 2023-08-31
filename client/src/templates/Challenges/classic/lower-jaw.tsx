@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
-
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { Button } from '@freecodecamp/ui';
+
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
 export type ToggleSettingProps = {

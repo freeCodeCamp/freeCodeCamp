@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
@@ -65,8 +64,8 @@ function EmailListOptIn({
         <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             className='big-cta-btn'
             onClick={() => acceptTerms(true)}
           >
@@ -77,8 +76,8 @@ function EmailListOptIn({
         <Col md={4} sm={5} xs={12}>
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             className='big-cta-btn'
             onClick={() => acceptTerms(false)}
           >
@@ -94,8 +93,8 @@ function EmailListOptIn({
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           className='big-cta-btn'
           href={`${apiLocation}/signin`}
         >

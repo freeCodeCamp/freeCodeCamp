@@ -1,10 +1,10 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
@@ -18,14 +18,14 @@ const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
 interface LoginProps {
   block?: boolean;
   children?: ReactNode;
-  'data-test-label'?: string;
+  dataTestLabel?: string;
   isSignedIn?: boolean;
 }
 
 const Login = ({
   block,
   children,
-  'data-test-label': dataTestLabel,
+  dataTestLabel,
   isSignedIn
 }: LoginProps): JSX.Element => {
   const { t } = useTranslation();
@@ -33,8 +33,8 @@ const Login = ({
   const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
     <Button
-      bsStyle='default'
-      className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
+      className={(block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      block={block}
       data-test-label={dataTestLabel}
       href={href}
     >

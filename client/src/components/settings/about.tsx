@@ -259,8 +259,9 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              aria-disabled={this.isFormPristine()}
-              bgSize='lg'
+              disabled={this.isFormPristine()}
+              data-cy='save-camper-identity'
+              size='large'
               {...(this.isFormPristine() && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}

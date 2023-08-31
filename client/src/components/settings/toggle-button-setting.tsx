@@ -1,7 +1,6 @@
 import React from 'react';
 import ToggleCheck from '../../assets/icons/toggle-check';
 import type { ToggleSettingProps } from './toggle-radio-setting';
-import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
 export default function ToggleButtonSetting({

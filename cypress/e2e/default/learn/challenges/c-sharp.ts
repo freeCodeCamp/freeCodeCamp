@@ -15,9 +15,8 @@ describe('C Sharp', () => {
     });
 
     it('renders the correct buttons', () => {
-      cy.get('.btn-primary').should('have.length', 2);
-      cy.contains('.btn-primary', 'Check your answer').should('be.visible');
-      cy.contains('.btn-primary', 'Ask for Help').should('be.visible');
+      cy.contains('Check your answer').should('be.visible');
+      cy.contains('Ask for Help').should('be.visible');
     });
   });
 
@@ -28,10 +27,9 @@ describe('C Sharp', () => {
     });
 
     it('renders the correct buttons', () => {
-      cy.get('.btn-primary').should('have.length', 3);
-      cy.contains('.btn-primary', 'Link Account').should('be.visible');
-      cy.contains('.btn-primary', 'Verify Trophy').should('be.visible');
-      cy.contains('.btn-primary', 'Ask for Help').should('be.visible');
+      cy.contains('Link Account').should('be.visible');
+      cy.contains('Verify Trophy').should('be.visible');
+      cy.contains('Ask for Help').should('be.visible');
     });
   });
 });
