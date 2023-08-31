@@ -107,7 +107,7 @@ const minimalUserData: Prisma.userCreateInput = {
 };
 
 // These are not part of the schema, but are added to the user object by
-// get-session-user's handler
+// session-user's handler
 const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
@@ -447,7 +447,7 @@ describe('userRoutes', () => {
           data: { username: '' }
         });
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -457,7 +457,7 @@ describe('userRoutes', () => {
       });
 
       test('GET returns username as the result property', async () => {
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -480,7 +480,7 @@ describe('userRoutes', () => {
           joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
         };
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -510,7 +510,7 @@ describe('userRoutes', () => {
         const tokens = await fastifyTestInstance.prisma.userToken.count();
         expect(tokens).toBe(1);
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -546,7 +546,7 @@ describe('userRoutes', () => {
           joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
         };
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -594,7 +594,7 @@ describe('userRoutes', () => {
 
     describe('/user/get-user-session', () => {
       test('GET returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });

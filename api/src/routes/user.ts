@@ -123,7 +123,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
   fastify.get(
-    '/user/get-session-user',
+    '/user/session-user',
     {
       schema: schemas.getSessionUser
     },
