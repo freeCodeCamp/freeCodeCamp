@@ -10,7 +10,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { randomCompliment } from '../../../../src/utils/get-words';
 import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 import { ChallengeMeta } from '../../../redux/prop-types';
 import { Share } from '../../../components/share';

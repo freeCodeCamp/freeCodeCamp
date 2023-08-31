@@ -85,9 +85,9 @@
     "finish-exam": "Завершити екзамен",
     "finish": "Завершити",
     "submit-exam-results": "Здати результати",
-    "verify-trophy": "Verify Trophy",
-    "link-account": "Link Account",
-    "unlink-account": "Unlink Account"
+    "verify-trophy": "Підтвердити трофей",
+    "link-account": "Прив’язати обліковий запис",
+    "unlink-account": "Від’єднати обліковий запис"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -116,9 +116,9 @@
       }
     },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
-    "professional-certs-heading": "Earn free professional certifications:",
-    "interview-prep-heading": "Prepare for the developer interview job search:",
+    "core-certs-heading": "Отримайте безоплатні підтверджені сертифікації з основної навчальної програми freeCodeCamp:",
+    "professional-certs-heading": "Отримайте безоплатні професійні сертифікації:",
+    "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "faq": "Часті питання:",
     "faqs": [
       {
@@ -441,16 +441,16 @@
       "exit-no": "Ні, я хочу продовжити"
     },
     "ms": {
-      "link-header": "Link your Microsoft account",
-      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
-      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
-      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
-      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
-      "link-li-2": "Find and click the \"Share link\" button.",
-      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
-      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "link-header": "Прив’яжіть свій обліковий запис Microsoft",
+      "link-signin": "Щоб виконати це завдання, спочатку потрібно прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp. Увійдіть, щоб прив’язати ім’я користувача Microsoft.",
+      "linked": "Обліковий запис Microsoft з іменем користувача «{{ msUsername }}» вже прив’язаний до вашого облікового запису freeCodeCamp. Якщо це не ваше ім’я користувача Microsoft, видаліть посилання.",
+      "unlinked": "Щоб виконати це завдання, спочатку потрібно прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp. Дотримуйтесь цих інструкцій:",
+      "link-li-1": "Перейдіть до <0>https://learn.microsoft.com/users/me/transcript</0> через браузер, з якого увійшли до облікового запису Microsoft",
+      "link-li-2": "Знайдіть та натисніть кнопку «Поділитись посиланням».",
+      "link-li-3": "Якщо у вас немає посилання на стенограму, натисніть «Створити посилання», щоб створити його.",
+      "link-li-4": "Натисніть кнопку «Копіювати посилання», щоб скопіювати посилання на стенограму.",
+      "link-li-5": "Введіть посилання в полі внизу та натисніть «Прив’язати обліковий запис».",
+      "transcript-label": "Посилання на стенограму Microsoft"
     }
   },
   "donate": {
@@ -712,12 +712,12 @@
     "challenge-submit-too-big": "На жаль, ви не можете надіслати свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
-    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
-    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
-    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
-    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-    "ms-unlinked": "The link to your Microsoft username has been removed.",
-    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
+    "ms-trophy-err": "Ми не змогли перевірити ваш трофей на навчальній платформі Microsoft.",
+    "ms-trophy-verified": "Ваш трофей на навчальній платформі Microsoft підтверджено.",
+    "ms-linked": "Ім’я користувача Microsoft успішно прив’язано до облікового запису freeCodeCamp.",
+    "ms-link-err": "При спробі прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp виникла помилка.",
+    "ms-unlinked": "Посилання на ім’я користувача Microsoft видалено.",
+    "ms-unlink-err": "При спробі видалити посилання на ім’я користувача Microsoft виникла помилка."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
