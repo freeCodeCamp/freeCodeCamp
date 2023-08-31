@@ -16,7 +16,7 @@ dashedName: challenge-project-work-with-variable-data-in-c-sharp
 
 ## --text--
 
-Чому перед сортуванням масиву рядків важливо використовувати метод `String.Trim()` до кожного елемента масиву?
+To sort a string array, why is it important to use the `String.Trim()` method on each array element before sorting?
 
 ## --answers--
 

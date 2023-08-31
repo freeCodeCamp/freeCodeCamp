@@ -20,7 +20,7 @@ Qual das seguintes opções pode ser usada para definir um ponto de interrupçã
 
 ## --answers--
 
-Clicar com o botão esquerdo na coluna à esquerda de um número de linha no editor de código. Correto. Um ponto de interrupção pode ser definido posicionando o ponteiro do mouse na coluna à esquerda de um número de linha e, em seguida, clicando com o botão esquerdo.
+Clicar com o botão esquerdo na coluna à esquerda de um número de linha no editor de código.
 
 ---
 

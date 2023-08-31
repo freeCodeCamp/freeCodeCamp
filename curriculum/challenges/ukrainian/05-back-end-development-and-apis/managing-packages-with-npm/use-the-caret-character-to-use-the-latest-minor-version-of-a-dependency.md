@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c03
-title: Використайте символ «Карет» для останньої мінорної версії залежностей
+title: Використайте карету, щоб використати останню мінорну версію залежності
 challengeType: 2
 forumTopicId: 301531
 dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
@@ -8,7 +8,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --description--
 
-Подібно до символу тильда, про який ми дізналися в останньому завданні та який дозволяє npm встановити найновіший PATCH для залежності, символ карет (`^`) також дозволяє npm встановлювати майбутні оновлення. Відмінність полягає в тому, що символ карет дозволяє оновлення і MINOR, і PATCH.
+Подібно до символу тильда, про який ми дізналися в попередньому завданні та який дозволяє npm встановити найновіший PATCH для залежності, символ карет (`^`) також дозволяє npm встановлювати майбутні оновлення. Відмінність полягає в тому, що символ карет дозволяє оновлення і MINOR, і PATCH.
 
 Поточною версією `@freecodecamp/example` повинна бути `~1.2.13`, що дозволяє npm встановлювати останню версію `1.2.x`. Якби ви використали символ (^) як префікс версії, npm було б дозволено оновлюватись до будь-якої версії `1.x.x`.
 
@@ -26,7 +26,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --hints--
 
-`"dependencies"` повинні містити `"@freecodecamp/example"`.
+`"dependencies"` має містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
   );
 ```
 
-Версія `"@freecodecamp/example"` повинна відповідати `"^1.x.x"`.
+Версія `"@freecodecamp/example"` має відповідати `"^1.x.x"`.
 
 ```js
 (getUserInput) =>

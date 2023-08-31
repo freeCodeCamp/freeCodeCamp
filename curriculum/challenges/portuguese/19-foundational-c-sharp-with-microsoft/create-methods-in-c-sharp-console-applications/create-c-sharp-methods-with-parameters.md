@@ -22,7 +22,7 @@ Dada a assinatura do método,
 void Print(string name, string number = "", bool member = false)
 ```
 
-Which of the following options correctly uses named and optional arguments?
+Quais das seguintes opções utilizam corretamente argumentos nomeados e opcionais?
 
 ## --answers--
 
