@@ -35,24 +35,17 @@ RUN pnpm config set dedupe-peer-dependents false
 # Scripts need to be run at this stage (--ignore-scripts cannot be used) because
 # without them, Gatsby will not install sharp.
 RUN pnpm install -w -F=client -F=ui -F=browser-scripts -F=challenge-parser \
---frozen-lockfile
+  --frozen-lockfile
 RUN pnpm build:client
 
-FROM node:18-bullseye AS client-config
-USER node
-WORKDIR /home/node
-RUN git clone --depth=1 https://github.com/freeCodeCamp/client-config.git client
-
 FROM node:18-alpine
-
 RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node/client
 COPY --from=builder /home/node/build/client/public/ public
 COPY --from=builder /home/node/build/docker/web/serve.sh serve.sh
 COPY --from=builder /home/node/build/docker/web/pm2-start.sh pm2-start.sh
-
-COPY --from=client-config /home/node/client/serve.json serve.json
+COPY --from=builder /home/node/build/docker/web/serve.json serve.json
 
 ENTRYPOINT [ "./pm2-start.sh" ]
 CMD [ "8000" ]
