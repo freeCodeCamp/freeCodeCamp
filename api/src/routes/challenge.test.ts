@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { omit } from 'lodash';
 import { challengeTypes } from '../../../config/challenge-types';
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
@@ -35,6 +36,69 @@ const backendChallengeBody1 = {
 };
 const backendChallengeBody2 = {
   id: backendChallengeId2
+};
+
+// /modern-challenge-completed
+const HtmlChallengeId = '5dc174fcf86c76b9248c6eb2';
+const JsProjectId = '56533eb9ac21ba0edf2244e2';
+const multiFileCertProjectId = 'bd7158d8c242eddfaeb5bd13';
+
+const HtmlChallengeBody = {
+  challengeType: challengeTypes.html,
+  id: HtmlChallengeId
+};
+const JsProjectBody = {
+  challengeType: challengeTypes.jsProject,
+  id: JsProjectId,
+  files: [
+    {
+      contents: 'console.log("Hello There!")',
+      key: 'scriptjs',
+      ext: 'js',
+      name: 'script',
+      history: ['script.js']
+    }
+  ]
+};
+const multiFileCertProjectBody = {
+  challengeType: challengeTypes.multifileCertProject,
+  id: multiFileCertProjectId,
+  files: [
+    {
+      contents: '<h1>Multi File Project v1</h1>',
+      key: 'indexhtml',
+      ext: 'html',
+      name: 'index',
+      history: ['index.html']
+    },
+    {
+      contents: '.hello-there { general: kenobi; }',
+      key: 'stylescss',
+      ext: 'css',
+      name: 'styles',
+      history: ['styles.css']
+    }
+  ]
+};
+const updatedMultiFileCertProjectBody = {
+  challengeType: challengeTypes.multifileCertProject,
+  id: multiFileCertProjectId,
+  files: [
+    {
+      contents: '<h1>Multi File Project v2</h1>',
+      key: 'indexhtml',
+      ext: 'html',
+      name: 'index',
+      history: ['index.html']
+    },
+    {
+      contents: '.wibbly-wobbly { timey: wimey; }',
+      key: 'stylescss',
+      ext: 'css',
+      name: 'styles',
+      history: ['styles.css']
+    }
+  ]
 };
 
 describe('challengeRoutes', () => {
@@ -603,6 +667,254 @@ describe('challengeRoutes', () => {
         });
       });
     });
+
+    describe('/modern-challenge-completed', () => {
+      describe('validation', () => {
+        test('POST rejects requests without ids', async () => {
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+
+        test('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({ id: 'not-a-valid-id' });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
+
+        // HTML(0), JS(1), Modern(6), Video(11), The Odin Project(15)
+        test('POST accepts challenges without files present', async () => {
+          const now = Date.now();
+
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(HtmlChallengeBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                id: HtmlChallengeId,
+                completedDate: expect.any(Number)
+              }
+            ]
+          });
+
+          const completedDate = user.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: []
+          });
+        });
+
+        // JS Project(5), Multi-file Cert Project(14)
+        test('POST accepts challenges with files present', async () => {
+          const now = Date.now();
+
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(JsProjectBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const file = omit(JsProjectBody.files[0], 'history');
+
+          expect(user).toMatchObject({
+            completedChallenges: [
+              {
+                id: JsProjectId,
+                challengeType: JsProjectBody.challengeType,
+                files: [file],
+                completedDate: expect.any(Number)
+              }
+            ]
+          });
+
+          const completedDate = user.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: []
+          });
+        });
+
+        test('POST accepts challenges with saved solutions', async () => {
+          const now = Date.now();
+
+          const response = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(multiFileCertProjectBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const testFiles = multiFileCertProjectBody.files.map(
+            ({ history: _history, ...rest }) => rest
+          );
+
+          expect(user).toMatchObject({
+            needsModeration: true,
+            completedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                challengeType: multiFileCertProjectBody.challengeType,
+                files: testFiles,
+                completedDate: expect.any(Number),
+                isManuallyApproved: true
+              }
+            ],
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: multiFileCertProjectBody.files
+              }
+            ]
+          });
+
+          const completedDate = user.completedChallenges[0]?.completedDate;
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: completedDate,
+                files: multiFileCertProjectBody.files
+              }
+            ]
+          });
+        });
+
+        test('POST correctly handles multiple requests', async () => {
+          const resOriginal = await superRequest(
+            '/modern-challenge-completed',
+            {
+              method: 'POST',
+              setCookies
+            }
+          ).send(multiFileCertProjectBody);
+
+          await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(HtmlChallengeBody);
+
+          const resUpdate = await superRequest('/modern-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send(updatedMultiFileCertProjectBody);
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const expectedProgressTimestamps = user.completedChallenges.map(
+            challenge => challenge.completedDate
+          );
+
+          const testFiles = updatedMultiFileCertProjectBody.files.map(file =>
+            omit(file, 'history')
+          );
+
+          expect(user).toMatchObject({
+            needsModeration: true,
+            completedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                challengeType: updatedMultiFileCertProjectBody.challengeType,
+                files: testFiles,
+                completedDate: expect.any(Number),
+                isManuallyApproved: true
+              },
+              {
+                id: HtmlChallengeId,
+                completedDate: expect.any(Number)
+              }
+            ],
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ],
+            progressTimestamps: expectedProgressTimestamps
+          });
+
+          expect(
+            resUpdate.body.savedChallenges[0].lastSavedDate
+          ).toBeGreaterThan(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            resOriginal.body.savedChallenges[0].lastSavedDate
+          );
+
+          expect(resUpdate.statusCode).toBe(200);
+          expect(resUpdate.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 2,
+            completedDate: expect.any(Number),
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -643,6 +955,15 @@ describe('challengeRoutes', () => {
       });
 
       expect(response.statusCode).toBe(401);
+    });
+
+    test('POST /modern-challenge-completed returns 401 status code with error message', async () => {
+      const response = await superRequest('/modern-challenge-completed', {
+        method: 'POST',
+        setCookies
+      });
+
+      expect(response?.statusCode).toBe(401);
     });
   });
 });
