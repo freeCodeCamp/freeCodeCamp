@@ -11,6 +11,15 @@
   "superBlock": "upcoming-python",
   "superOrder": 20,
   "isBeta": true,
-  "challengeOrder": [{ "id": "64e750d9e426ffe0a7c40dfa", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "64e750d9e426ffe0a7c40dfa",
+      "title": "Step 1"
+    },
+    {
+      "id": "64f078a0ae487906f447a3a4",
+      "title": "Step 2"
+    }
+  ],
   "helpCategory": "Python"
 }
