@@ -450,7 +450,8 @@
       "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
       "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
       "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {

@@ -3,16 +3,17 @@ import {
   Button,
   FormGroup,
   ControlLabel,
-  FormControl
+  FormControl,
+  HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { connect } from 'react-redux';
+import { ConnectedProps, connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import type { TFunction } from 'i18next';
-import { Trans, withTranslation } from 'react-i18next';
-import { Spacer } from '../../../components/helpers';
+import { Trans, useTranslation } from 'react-i18next';
 
+import { Spacer } from '../../../components/helpers';
+import { isMicrosoftTranscriptLink } from '../../../../../utils/validate';
 import {
   linkMsUsername,
   unlinkMsUsername,
@@ -27,7 +28,7 @@ import Login from '../../../components/Header/components/login';
 
 import './link-ms-user.css';
 
-const mapStateToProps = createSelector(
+const mapState = createSelector(
   isSignedInSelector,
   msUsernameSelector,
   isProcessingSelector,
@@ -42,7 +43,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
+const mapDispatch = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       linkMsUsername,
@@ -52,26 +53,20 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-interface LinkMsUserProps {
-  isSignedIn: boolean;
-  msUsername: string | undefined | null;
-  linkMsUsername: (arg0: { msTranscriptUrl: string }) => void;
-  unlinkMsUsername: () => void;
-  isProcessing: boolean;
-  setIsProcessing: (arg0: boolean) => void;
-  t: TFunction;
-}
+const connector = connect(mapState, mapDispatch);
 
-export function LinkMsUser({
+type Props = ConnectedProps<typeof connector>;
+
+function LinkMsUser({
   isSignedIn,
   msUsername,
   linkMsUsername,
   unlinkMsUsername,
   isProcessing,
-  setIsProcessing,
-  t
-}: LinkMsUserProps): JSX.Element {
-  const [msTranscriptUrl, setMsTranscriptUrl] = useState<string>('');
+  setIsProcessing
+}: Props): JSX.Element {
+  const { t } = useTranslation();
+  const [msTranscriptUrl, setMsTranscriptUrl] = useState('');
 
   function handleLinkUsername(e: React.FormEvent) {
     e.preventDefault();
@@ -83,6 +78,11 @@ export function LinkMsUser({
     e.preventDefault();
     setMsTranscriptUrl(e.target.value);
   }
+
+  const isValid = isMicrosoftTranscriptLink(msTranscriptUrl);
+  const isPristine = msTranscriptUrl === '';
+  const isDisabled = isProcessing || !isValid;
+  const showWarning = !isPristine && !isValid;
 
   return !isSignedIn ? (
     <>
@@ -133,7 +133,7 @@ export function LinkMsUser({
 
           <Spacer size='medium' />
           <form onSubmit={handleLinkUsername}>
-            <FormGroup>
+            <FormGroup validationState={isValid ? 'success' : 'error'}>
               <ControlLabel>
                 <strong>{t('learn.ms.transcript-label')}</strong>
               </ControlLabel>
@@ -144,7 +144,7 @@ export function LinkMsUser({
               />
             </FormGroup>
             <Button
-              disabled={isProcessing || msTranscriptUrl.length === 0}
+              disabled={isDisabled}
               block={true}
               bsStyle='primary'
               className='btn-invert'
@@ -152,6 +152,13 @@ export function LinkMsUser({
             >
               {t('buttons.link-account')}
             </Button>
+            {showWarning && (
+              <HelpBlock>
+                <Trans i18nKey='learn.ms.invalid-transcript'>
+                  placeholder <code>placeholder</code> placeholder
+                </Trans>
+              </HelpBlock>
+            )}
           </form>
         </div>
       )}
@@ -161,7 +168,4 @@ export function LinkMsUser({
 
 LinkMsUser.displayName = 'LinkMsUser';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(LinkMsUser));
+export default connector(LinkMsUser);

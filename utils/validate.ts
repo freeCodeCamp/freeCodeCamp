@@ -36,3 +36,23 @@ export const isValidUsername = (str: string): Validated => {
   if (isHttpStatusCode(str)) return usernameIsHttpStatusCode;
   return validationSuccess;
 };
+
+// link template:
+// https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID
+export const isMicrosoftTranscriptLink = (value: string): boolean => {
+  let url;
+  try {
+    url = new URL(value);
+  } catch {
+    return false;
+  }
+
+  const correctDomain = url.hostname === 'learn.microsoft.com';
+  const correctPath = !!url.pathname.match(
+    /^\/[^/]+\/users\/[^/]+\/transcript\/[^/]+$/
+  );
+  const notPlaceholder = !url.pathname.match(
+    '/LOCALE/users/USERNAME/transcript/ID'
+  );
+  return correctDomain && correctPath && notPlaceholder;
+};
