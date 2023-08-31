@@ -38,7 +38,7 @@ export const isValidUsername = (str: string): Validated => {
 };
 
 // link template:
-// https://learn.microsoft.com/<LOCALE>/users/<USERNAME>/transcript/<UNIQUE_ID>
+// https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID
 export const isMicrosoftTranscriptLink = (value: string): boolean => {
   let url;
   try {
@@ -51,5 +51,8 @@ export const isMicrosoftTranscriptLink = (value: string): boolean => {
   const correctPath = !!url.pathname.match(
     /^\/[^/]+\/users\/[^/]+\/transcript\/[^/]+$/
   );
-  return correctDomain && correctPath;
+  const notPlaceholder = !url.pathname.match(
+    '/LOCALE/users/USERNAME/transcript/ID'
+  );
+  return correctDomain && correctPath && notPlaceholder;
 };

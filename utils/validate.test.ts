@@ -90,6 +90,19 @@ describe('isMicrosoftTranscriptLink', () => {
     ).toBe(false);
   });
 
+  it('should reject the placeholder link', () => {
+    expect(
+      isMicrosoftTranscriptLink(
+        'https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID'
+      )
+    ).toBe(false);
+    expect(
+      isMicrosoftTranscriptLink(
+        'https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID/'
+      )
+    ).toBe(false);
+  });
+
   it.each(['en-us', 'fr-fr', 'lang-country'])(
     'should accept links with the %s locale',
     locale => {
