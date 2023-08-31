@@ -25,6 +25,7 @@ function StagingWarningModal(): JSX.Element {
       onHide={handleModalHide}
       onClose={handleModalHide}
       show={show}
+      data-testid={'staging-warning-modal'}
     >
       <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title' bsSize='lg'>
@@ -43,7 +44,7 @@ function StagingWarningModal(): JSX.Element {
               target='_blank'
               rel='noopener noreferrer nofollow'
             >
-              here
+              link
             </a>
           </Trans>
         </p>
@@ -51,7 +52,7 @@ function StagingWarningModal(): JSX.Element {
         <Button
           block={true}
           bsStyle='danger'
-          data-test-label='cancel-signout'
+          data-testid='accepts-warning'
           className='btn-invert'
           onClick={handleClick}
           type='button'
