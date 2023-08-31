@@ -122,11 +122,11 @@ const isCertMapSelector = createSelector(
     'Machine Learning with Python': isMachineLearningPyCertV7,
     'Relational Database': isRelationalDatabaseCertV8,
     'College Algebra with Python': isCollegeAlgebraPyCertV8,
+    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
-    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,

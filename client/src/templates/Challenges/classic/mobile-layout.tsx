@@ -15,7 +15,7 @@ import {
   showPreviewPortalSelector,
   showPreviewPaneSelector
 } from '../redux/selectors';
-import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
+import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
 import EditorTabs from './editor-tabs';

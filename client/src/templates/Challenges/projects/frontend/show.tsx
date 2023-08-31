@@ -28,7 +28,6 @@ import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
-import { challengeTypes } from '../../../../../../config/challenge-types';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -192,11 +191,9 @@ class Project extends Component<ProjectProps> {
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
-                {challengeType !== challengeTypes.msTrophyUrl && (
-                  <ProjectToolPanel
-                    guideUrl={getGuideUrl({ forumTopicId, title })}
-                  />
-                )}
+                <ProjectToolPanel
+                  guideUrl={getGuideUrl({ forumTopicId, title })}
+                />
                 <br />
                 <Spacer size='medium' />
               </Col>

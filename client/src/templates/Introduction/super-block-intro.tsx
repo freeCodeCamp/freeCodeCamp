@@ -242,7 +242,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map currentSuperBlock={superBlock} />
+              <Map />
               <Spacer size='large' />
             </Col>
           </Row>

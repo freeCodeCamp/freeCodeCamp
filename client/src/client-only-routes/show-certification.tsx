@@ -303,7 +303,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharp];
+    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
 
   return (
     <Container className='certificate-outer-wrapper'>

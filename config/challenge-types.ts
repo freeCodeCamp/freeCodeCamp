@@ -17,7 +17,7 @@ const multifileCertProject = 14;
 const theOdinProject = 15;
 const colab = 16;
 const exam = 17;
-const msTrophyUrl = 18;
+const msTrophy = 18;
 const multipleChoice = 19;
 const python = 20;
 
@@ -41,7 +41,7 @@ export const challengeTypes = {
   theOdinProject,
   colab,
   exam,
-  msTrophyUrl,
+  msTrophy,
   multipleChoice,
   python
 };
@@ -92,7 +92,7 @@ export const viewTypes = {
   [theOdinProject]: 'odin',
   [colab]: 'frontend',
   [exam]: 'exam',
-  [msTrophyUrl]: 'frontend',
+  [msTrophy]: 'msTrophy',
   [multipleChoice]: 'video',
   [python]: 'modern'
 };
@@ -120,7 +120,7 @@ export const submitTypes = {
   [theOdinProject]: 'tests',
   [colab]: 'project.backEnd',
   [exam]: 'exam',
-  [msTrophyUrl]: 'project.frontEnd',
+  [msTrophy]: 'msTrophy',
   [multipleChoice]: 'tests',
   [python]: 'tests'
 };

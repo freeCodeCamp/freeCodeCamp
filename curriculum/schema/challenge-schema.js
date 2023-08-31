@@ -58,6 +58,10 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
+    msTrophyId: Joi.when('challengeType', {
+      is: [challengeTypes.msTrophy],
+      then: Joi.string().required()
+    }),
     notes: Joi.string().allow(''),
     order: Joi.number(),
     prerequisites: Joi.when('challengeType', {

@@ -9,7 +9,7 @@ dashedName: write-your-first-c-sharp-code
 
 Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-write-first/</a> e complete todas as tarefas do módulo "Escreva seu primeiro código C#". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/training/modules/csharp-write-first/</a> e complete todas as tarefas do módulo "Escreva seu primeiro código C#". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
@@ -29,10 +29,6 @@ Qual é a diferença entre `Console.Write` e `Console.WriteLine`?
 ---
 
 `Console.WriteLine` anexa uma nova linha após a saída.
-
----
-
-Não há diferença.
 
 ## --video-solution--
 

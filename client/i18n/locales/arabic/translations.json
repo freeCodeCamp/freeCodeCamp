@@ -84,7 +84,10 @@
     "exit": "Exit",
     "finish-exam": "Finish the exam",
     "finish": "Finish",
-    "submit-exam-results": "Submit my results"
+    "submit-exam-results": "Submit my results",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -113,6 +116,9 @@
       }
     },
     "certification-heading": "احصل على شهادات معتمدة مجانية في:",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -433,6 +439,18 @@
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
       "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
+      "transcript-label": "Your Microsoft Transcript Link"
     }
   },
   "donate": {
@@ -686,7 +704,6 @@
     "complete-project-first": "يجب عليك إكمال المشروع أولاً.",
     "local-code-save-error": "عفواً، لم يتم حفظ كودك، قد تكون وحدة التخزين المحلية لمتصفحك ممتلئة.",
     "local-code-saved": "تم حفظها! تم حفظ رمزك في وحدة التخزين المحلية للمتصفح.",
-    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "اختار {{username}} جعل خريطة زمنية خاصة. سيحتاج إلى جعل خريطة زمنية عام حتى يتمكن الآخرون من رأيه شهاداته.",
     "code-saved": "تم حفظ كودك في قاعدة البيانات. سيكون هنا عند العودة.",
     "code-save-error": "حدث خطأ خلال محاولة حفظ كودك المميز.",
@@ -694,7 +711,13 @@
     "challenge-save-too-big": "عذراً، لا يمكنك حفظ كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
     "challenge-submit-too-big": "عذراً، لا يمكنك إرسال كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
     "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح.",
-    "generate-exam-error": "An error occurred trying to generate your exam."
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "هناك حد أقصى 288 حرفاً، لديك {{charsLeft}} متبقية",
