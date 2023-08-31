@@ -153,7 +153,11 @@ function LinkMsUser({
               {t('buttons.link-account')}
             </Button>
             {showWarning && (
-              <HelpBlock>{t('learn.ms.invalid-transcript')}</HelpBlock>
+              <HelpBlock>
+                <Trans i18nKey='learn.ms.invalid-transcript'>
+                  placeholder <code>placeholder</code> placeholder
+                </Trans>
+              </HelpBlock>
             )}
           </form>
         </div>
