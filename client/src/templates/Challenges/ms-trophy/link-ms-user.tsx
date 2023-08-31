@@ -128,7 +128,12 @@ function LinkMsUser({
             <li>{t('learn.ms.link-li-2')}</li>
             <li>{t('learn.ms.link-li-3')}</li>
             <li>{t('learn.ms.link-li-4')}</li>
-            <li>{t('learn.ms.link-li-5')}</li>
+            <li>
+              <Trans i18nKey='learn.ms.link-li-5'>
+                <pre className='language-html'>placeholder</pre>
+              </Trans>
+            </li>
+            <li>{t('learn.ms.link-li-6')}</li>
           </ol>
 
           <Spacer size='medium' />
