@@ -8,12 +8,11 @@ curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
 config/*.js
-utils/index.js
-utils/get-lines.js
-utils/get-lines.test.js
-utils/validate.js
-utils/validate.test.js
-utils/is-audited.js
+shared/utils/get-lines.js
+shared/utils/get-lines.test.js
+shared/utils/validate.js
+shared/utils/validate.test.js
+shared/utils/is-audited.js
 pnpm-lock.yaml
 web/.next
 curriculum-server/data/curriculum.json

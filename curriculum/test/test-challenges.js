@@ -36,7 +36,7 @@ const { challengeTypes } = require('../../config/challenge-types');
 const testEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
 
-const { getLines } = require('../../utils/get-lines');
+const { getLines } = require('../../shared/utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');

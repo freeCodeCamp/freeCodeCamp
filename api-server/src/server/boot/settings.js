@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 import _ from 'lodash';
 import isURL from 'validator/lib/isURL';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
 import {
   deprecatedEndpoint,

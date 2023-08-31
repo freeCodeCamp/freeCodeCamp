@@ -12,7 +12,7 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../utils/is-audited';
+import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Block from './block';
 
 jest.mock('../../../../../utils/is-audited', () => ({

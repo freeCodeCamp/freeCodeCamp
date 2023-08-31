@@ -14,8 +14,8 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedSuperBlock } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);

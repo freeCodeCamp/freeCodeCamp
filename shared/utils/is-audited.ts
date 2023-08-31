@@ -1,4 +1,7 @@
-import { type SuperBlocks, getAuditedSuperBlocks } from '../config/superblocks';
+import {
+  type SuperBlocks,
+  getAuditedSuperBlocks
+} from '../../config/superblocks';
 
 export function isAuditedSuperBlock(
   language: string,

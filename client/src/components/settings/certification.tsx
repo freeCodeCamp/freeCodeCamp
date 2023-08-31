@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 
-import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';

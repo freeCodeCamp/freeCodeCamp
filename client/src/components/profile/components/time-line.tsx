@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
 import { getLangCode } from '../../../../../config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
