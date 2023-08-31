@@ -1,5 +1,43 @@
 {
   "directoryListing": false,
+  "headers": [
+    {
+      "source": "{**/*.html,**/app-data.json,**/page-data.json}",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "**/*-@(????????????????????????????????|????????????????????).@(js|woff|ttf|svg|png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=172800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "{misc/*.js,sw.js}",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "{js/sass.sync.js,css/bootstrap.min.css}",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=14400, stale-while-revalidate=172800, must-revalidate"
+        }
+      ]
+    }
+  ],
   "trailingSlash": false,
   "rewrites": [
     {

@@ -8,6 +8,6 @@ msTrophyId: learn.wwl.get-started-c-sharp-part-4.trophy
 
 # --description--
 
-Now that you've completed all of the "Work with Variable Data in C# Console Applications" challenges, you should have earned a trophy for it on Microsoft's learning platform.
+Ви виконали всі завдання з «Робота з даними змінних в консольних застосунках C#», а отже мали отримати трофей на навчальній платформі Microsoft.
 
-Link your Microsoft username to your freeCodeCamp account and click the "Verify Trophy" button below to complete the challenge. Цей трофей потрібен для того, щоб скласти екзамен сертифікації.
+Прив’яжіть ім’я користувача Microsoft до облікового запису freeCodeCamp та натисніть кнопку «Підтвердити трофей» знизу, щоб завершити завдання. Цей трофей потрібен для того, щоб скласти екзамен сертифікації.

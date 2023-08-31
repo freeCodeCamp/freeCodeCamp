@@ -747,6 +747,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
