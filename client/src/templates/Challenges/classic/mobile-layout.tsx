@@ -162,10 +162,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
-    // const editorTabPaneProps = {
-    //   mountOnEnter: true,
-    //   unmountOnExit: true
-    // };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
