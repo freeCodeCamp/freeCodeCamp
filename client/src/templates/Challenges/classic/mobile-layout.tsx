@@ -162,7 +162,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
-
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
 
