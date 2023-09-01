@@ -34,7 +34,7 @@
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
     "clean:api": "cd api && pnpm clean",
     "clean:client": "cd ./client && pnpm run clean",
-    "clean:curriculum": "rm -rf ./config/curriculum.json",
+    "clean:curriculum": "rm -rf ./shared/config/curriculum.json",
     "clean:packages": "rm -rf ./node_modules ./**/node_modules",
     "clean:server": "rm -rf ./api-server/lib",
     "create:config": "tsc -p config",

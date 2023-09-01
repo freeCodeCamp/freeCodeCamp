@@ -157,14 +157,10 @@ jspm_packages/
 .netlify
 
 ### Generated config files ###
-config/env.json
-config/curriculum.json
+shared/config/curriculum.json
 shared/config/i18n.js
-config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
-shared/config/superblocks.js
-shared/config/superblocks.test.js
 shared/config/challenge-types.js
 
 ### Generated utils files ###

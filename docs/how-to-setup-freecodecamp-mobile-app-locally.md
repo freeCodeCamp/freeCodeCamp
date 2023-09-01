@@ -422,7 +422,7 @@ copy sample.env .env
 #### **macOS/Linux**
 
 ```console
-cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
 ```
 
 #### **Windows**
