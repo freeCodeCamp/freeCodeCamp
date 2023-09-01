@@ -15,7 +15,7 @@ import {
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Block from './block';
 
-jest.mock('../../../../../utils/is-audited', () => ({
+jest.mock('../../../../../shared/utils/is-audited', () => ({
   isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
 }));
 
