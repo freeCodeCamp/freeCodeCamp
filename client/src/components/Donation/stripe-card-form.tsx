@@ -14,7 +14,7 @@ import type {
 import React, { useState } from 'react';
 
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
 

@@ -16,7 +16,7 @@ import {
   curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
-} from '../../../../config/env.json';
+} from '../../../config/env.json';
 
 import './map.css';
 

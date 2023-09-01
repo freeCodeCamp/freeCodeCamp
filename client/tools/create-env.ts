@@ -5,7 +5,7 @@ import * as path from 'path';
 import { availableLangs, Languages } from '../../shared/config/i18n';
 import env from './read-env';
 
-const globalConfigPath = path.resolve(__dirname, '../../config');
+const configPath = path.resolve(__dirname, '../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
 
@@ -113,12 +113,12 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
 } else {
   checkClientLocale();
   checkCurriculumLocale();
-  if (fs.existsSync(`${globalConfigPath}/env.json`)) {
+  if (fs.existsSync(`${configPath}/env.json`)) {
     /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
     const {
       showNewCurriculum,
       showUpcomingChanges
-    } = require(`${globalConfigPath}/env.json`);
+    } = require(`${configPath}/env.json`);
     /* eslint-enable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
     if (
       env['showUpcomingChanges'] !== showUpcomingChanges ||
@@ -138,4 +138,4 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   }
 }
 
-fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));
+fs.writeFileSync(`${configPath}/env.json`, JSON.stringify(env));

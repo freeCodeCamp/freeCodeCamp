@@ -10,7 +10,7 @@ import {
   type DonationDuration,
   type DonationAmount
 } from '../../../../shared/config/donation-settings';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';

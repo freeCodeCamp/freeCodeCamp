@@ -6,7 +6,7 @@ import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 
 const { clientLocale } = envData;
 

@@ -10,7 +10,7 @@ import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import type { User } from '../../../redux/prop-types';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';

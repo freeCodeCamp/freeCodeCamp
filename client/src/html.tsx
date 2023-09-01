@@ -1,5 +1,5 @@
 import React from 'react';
-import { clientLocale } from '../../config/env.json';
+import { clientLocale } from '../config/env.json';
 import { rtlLangs } from '../../shared/config/i18n';
 
 interface HTMLProps {

@@ -8,7 +8,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';

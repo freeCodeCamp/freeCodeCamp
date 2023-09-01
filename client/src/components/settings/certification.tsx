@@ -27,7 +27,7 @@ import {
   Certification,
   certSlugTypeMap
 } from '../../../../shared/config/certification-settings';
-import env from '../../../../config/env.json';
+import env from '../../../config/env.json';
 
 import {
   ClaimedCertifications,

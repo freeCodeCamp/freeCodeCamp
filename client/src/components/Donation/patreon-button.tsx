@@ -4,7 +4,7 @@ import {
   patreonDefaultPledgeAmount,
   PaymentProvider
 } from '../../../../shared/config/donation-settings';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 import PatreonLogo from '../../assets/images/components/patreon-logo';
 import { PostPayment } from './types';
 

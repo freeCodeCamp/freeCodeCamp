@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
-import { clientLocale } from '../../../../../config/env.json';
+import { clientLocale } from '../../../../config/env.json';
 import {
   availableLangs,
   LangNames,

@@ -4,7 +4,7 @@ import {
   upcomingCertifications,
   currentCertifications
 } from '../../shared/config/certification-settings';
-import config from '../../config/env.json';
+import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
 

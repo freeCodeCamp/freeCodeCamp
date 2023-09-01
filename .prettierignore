@@ -7,7 +7,7 @@ client/config/browser-scripts/*.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
-config/*.js
+client/config/*.json
 shared/config/i18n.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js

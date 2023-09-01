@@ -7,7 +7,7 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';

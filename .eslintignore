@@ -4,7 +4,6 @@ client/public/**
 api-server/src/public/**
 api-server/lib/**
 shared/config/i18n.js
-config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
 shared/config/superblocks.js
