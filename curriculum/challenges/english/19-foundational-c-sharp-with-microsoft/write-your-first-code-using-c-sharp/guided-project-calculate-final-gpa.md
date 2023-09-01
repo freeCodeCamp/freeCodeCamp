@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --text--
 
-Suppose `decimal gradePointAverage = 3.99872831;`.
+Suppose `decimal gradePointAverage = 3.99872831m;`.
 
 What is the value of `(int) gradePointAverage`?
 
