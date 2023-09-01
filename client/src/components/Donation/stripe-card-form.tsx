@@ -13,7 +13,7 @@ import type {
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
-import { PaymentProvider } from '../../../../config/donation-settings';
+import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import envData from '../../../../config/env.json';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
