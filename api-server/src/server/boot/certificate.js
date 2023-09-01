@@ -15,7 +15,7 @@ import {
   oldDataVizId,
   currentCertifications,
   upcomingCertifications
-} from '../../../../config/certification-settings';
+} from '../../../../shared/config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';

@@ -3,7 +3,7 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../config/certification-settings';
+} from '../../shared/config/certification-settings';
 import config from '../../config/env.json';
 
 const { showUpcomingChanges } = config;

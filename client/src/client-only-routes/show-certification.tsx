@@ -40,7 +40,7 @@ import ribbon from '../assets/images/ribbon.svg';
 import {
   certTypes,
   certTypeTitleMap
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;

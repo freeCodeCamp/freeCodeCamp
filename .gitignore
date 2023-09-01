@@ -161,7 +161,7 @@ config/env.json
 config/curriculum.json
 config/i18n.js
 config/misc.js
-config/certification-settings.js
+shared/config/certification-settings.js
 shared/config/donation-settings.js
 config/superblocks.js
 config/superblocks.test.js

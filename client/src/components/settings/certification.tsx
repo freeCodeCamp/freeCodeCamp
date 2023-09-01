@@ -26,7 +26,7 @@ import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
   certSlugTypeMap
-} from '../../../../config/certification-settings';
+} from '../../../../shared/config/certification-settings';
 import env from '../../../../config/env.json';
 
 import {

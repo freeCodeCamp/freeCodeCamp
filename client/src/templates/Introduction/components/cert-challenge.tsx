@@ -7,7 +7,7 @@ import { createSelector } from 'reselect';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
-} from '../../../../../config/certification-settings';
+} from '../../../../../shared/config/certification-settings';
 import { SuperBlocks } from '../../../../../config/superblocks';
 
 import { createFlashMessage } from '../../../components/Flash/redux';
