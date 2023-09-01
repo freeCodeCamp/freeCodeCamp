@@ -141,12 +141,17 @@
 
 #mobile-layout .tab-content {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
   overflow-y: hidden;
-  padding-block-end: 37px;
 }
+
+#mobile-layout .tab-content[data-state='inactive'] {
+  height: 1px;
+}
+
+#mobile-layout .tab-content[data-state='active'] {
+  pointer-events: none;
+}
+
 
 #mobile-layout-pane-preview .preview-external-window {
   text-align: center;

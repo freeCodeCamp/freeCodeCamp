@@ -237,10 +237,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {i18next.t('learn.editor-tabs.console')}
             </TabsTrigger>
             {hasPreview && (
-              <TabsTrigger
-                value={Tab.Preview}
-                onClick={() => togglePane('showPreviewPane')}
-              >
+              <TabsTrigger value={Tab.Preview}>
                 {i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
@@ -273,7 +270,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabsContent>
           )}
           {hasPreview && (
-            <TabsContent className='tabs-content' value={Tab.Preview}>
+            <TabsContent className='tab-content' value={Tab.Preview}>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
