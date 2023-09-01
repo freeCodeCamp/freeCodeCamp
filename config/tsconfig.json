@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "../shared/shared/config/donation-settings.ts"],
+  "include": ["**/*.ts", "../shared/config/*.ts" ],
   "extends": "../tsconfig-base.json",
   "compilerOptions": {
     "noEmit": false,
