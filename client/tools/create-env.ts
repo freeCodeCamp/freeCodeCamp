@@ -2,7 +2,7 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs, Languages } from '../../config/i18n';
+import { availableLangs, Languages } from '../../shared/config/i18n';
 import env from './read-env';
 
 const globalConfigPath = path.resolve(__dirname, '../../config');
@@ -14,7 +14,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n.ts
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in shared/config/i18n.ts
 
       `);
   }
@@ -30,7 +30,7 @@ function checkCurriculumLocale() {
   ) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n.ts
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in shared/config/i18n.ts
 
       `);
   }

@@ -3,7 +3,7 @@ client/.cache/**
 client/public/**
 api-server/src/public/**
 api-server/lib/**
-config/i18n.js
+shared/config/i18n.js
 config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js

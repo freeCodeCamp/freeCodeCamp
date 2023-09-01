@@ -159,7 +159,7 @@ jspm_packages/
 ### Generated config files ###
 config/env.json
 config/curriculum.json
-config/i18n.js
+shared/config/i18n.js
 config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js

@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';

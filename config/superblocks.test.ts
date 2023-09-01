@@ -1,4 +1,4 @@
-import { Languages } from './i18n';
+import { Languages } from '../shared/config/i18n';
 import {
   SuperBlocks,
   SuperBlockStages,

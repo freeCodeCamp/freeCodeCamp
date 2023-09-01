@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import type { User } from '../../../redux/prop-types';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SocialIcons from './social-icons';

@@ -7,7 +7,7 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs } from '../../config/i18n';
+import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
 import { SuperBlocks, getAuditedSuperBlocks } from '../../config/superblocks';
 

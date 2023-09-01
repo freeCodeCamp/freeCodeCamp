@@ -6,7 +6,7 @@ const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {

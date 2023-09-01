@@ -9,7 +9,7 @@ import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
 import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';

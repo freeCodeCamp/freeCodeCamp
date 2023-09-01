@@ -74,7 +74,7 @@ Also, you will likely want to rename the certificate and the `{superBlock}-proje
 1. Update the `superBlockCertTypeMap` key in `shared/config/certification-settings.js` to the new superBlock name.
 1. Update the path value in `client/src/assets/icons/index.tsx`.
 1. For each language in `client/i18n/locales`, update the `intro.json` file to use the new superBlock `dashedName`. In the English file, also update the `title`.
-1. Check the `config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Update all the values where it is used.
+1. Check the `shared/config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Update all the values where it is used.
 1. Update the main `README.md` file to the new name.
 
 ### Renaming a Block

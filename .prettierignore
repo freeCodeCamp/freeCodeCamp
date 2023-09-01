@@ -8,6 +8,7 @@ curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
 config/*.js
+shared/config/i18n.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
 shared/utils/get-lines.js
