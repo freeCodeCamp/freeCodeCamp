@@ -105,16 +105,20 @@
   width: calc(100% - 2rem - 2px);
 }
 
+#mobile-layout .nav-lists > button {
+  height: 2.5em;
+  font-size: 0.8em;
+}
+
+#mobile-layout .nav-lists button[data-state='active'] {
+  pointer-events: none;
+}
+
 #mobile-layout
   .nav-lists
   > button:is([aria-selected='false'], [aria-expanded='false']) {
   color: inherit;
   background-color: inherit;
-}
-
-#mobile-layout .nav-lists > button {
-  height: 2.5em;
-  font-size: 0.8em;
 }
 
 #mobile-layout .nav-lists > button:hover,
@@ -147,11 +151,6 @@
 #mobile-layout .tab-content[data-state='inactive'] {
   height: 1px;
 }
-
-#mobile-layout .tab-content[data-state='active'] {
-  pointer-events: none;
-}
-
 
 #mobile-layout-pane-preview .preview-external-window {
   text-align: center;

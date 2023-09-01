@@ -252,25 +252,25 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </button>
           </TabsList>
 
-          <TabsContent className='tabs-content' value={Tab.Editor}>
+          <TabsContent className='tab-content' value={Tab.Editor}>
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
           {!hasEditableBoundaries && (
-            <TabsContent className='tabs-content' value={Tab.Instructions}>
+            <TabsContent className='tab-content' value={Tab.Instructions}>
               {instructions}
             </TabsContent>
           )}
-          <TabsContent className='tabs-content' value={Tab.Console}>
+          <TabsContent className='tab-content' value={Tab.Console}>
             {testOutput}
           </TabsContent>
           {hasNotes && usesMultifileEditor && (
-            <TabsContent className='tabs-content' value={Tab.Notes}>
+            <TabsContent className='tab-content' value={Tab.Notes}>
               {notes}
             </TabsContent>
           )}
           {hasPreview && (
-            <TabsContent className='tab-content' value={Tab.Preview}>
+            <TabsContent className='tab-content' value={Tab.Preview} forceMount>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
