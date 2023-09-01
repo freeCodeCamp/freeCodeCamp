@@ -3,6 +3,7 @@ packages:
   - 'api-server'
   - 'client'
   - 'curriculum'
+  - 'shared'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
   - 'tools/challenge-helper-scripts'

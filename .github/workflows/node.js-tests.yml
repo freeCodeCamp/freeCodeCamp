@@ -64,7 +64,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           npm i --prefix=curriculum-server
           npm i --prefix=web
           pnpm run build:curriculum
@@ -144,7 +144,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Run Tests
@@ -192,7 +192,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Run Tests
@@ -241,7 +241,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Run Tests
@@ -292,7 +292,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
 
       # DONT REMOVE THIS STEP.
       # TODO: Refactor and use re-usable workflow and shared artifacts

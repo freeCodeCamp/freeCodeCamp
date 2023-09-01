@@ -1,7 +1,6 @@
 {
   "include": ["**/*.ts", "**/*.test.ts"],
-  "exclude": ["./__fixtures__"],
-  "extends": "../../tsconfig-base.json",
+  "extends": "../tsconfig-base.json",
   "compilerOptions": {
     "noEmit": false,
     "module": "CommonJS"

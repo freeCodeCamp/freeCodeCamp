@@ -124,7 +124,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
           pnpm run build:server
 
