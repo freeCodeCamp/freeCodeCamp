@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
 import testEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';

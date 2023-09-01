@@ -165,8 +165,7 @@ shared/config/certification-settings.js
 shared/config/donation-settings.js
 config/superblocks.js
 config/superblocks.test.js
-config/challenge-types.js
-config/constants.js
+shared/config/challenge-types.js
 
 ### Generated utils files ###
 shared/utils/get-lines.js

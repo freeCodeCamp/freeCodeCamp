@@ -11,6 +11,7 @@ config/*.js
 shared/config/i18n.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
+shared/config/challenge-types.js
 shared/utils/get-lines.js
 shared/utils/get-lines.test.js
 shared/utils/validate.js

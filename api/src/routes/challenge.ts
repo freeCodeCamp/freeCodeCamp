@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { challengeTypes } from '../../../config/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
 import {
   jsCertProjectIds,

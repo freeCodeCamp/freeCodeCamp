@@ -26,7 +26,7 @@ import {
 import {
   isCodeAllyPractice,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
