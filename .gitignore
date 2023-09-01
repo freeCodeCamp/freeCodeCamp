@@ -163,8 +163,8 @@ shared/config/i18n.js
 config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
-config/superblocks.js
-config/superblocks.test.js
+shared/config/superblocks.js
+shared/config/superblocks.test.js
 shared/config/challenge-types.js
 
 ### Generated utils files ###

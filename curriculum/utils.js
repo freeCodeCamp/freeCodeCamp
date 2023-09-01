@@ -2,7 +2,7 @@ const path = require('path');
 const {
   createFlatSuperBlockMap,
   SuperBlocks
-} = require('../config/superblocks');
+} = require('../shared/config/superblocks');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 

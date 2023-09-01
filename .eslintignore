@@ -7,7 +7,7 @@ shared/config/i18n.js
 config/misc.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
-config/superblocks.js
+shared/config/superblocks.js
 web/**
 docs/**/*.md
 tools/ui-components/dist/**

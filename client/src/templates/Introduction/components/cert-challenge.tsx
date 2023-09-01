@@ -8,7 +8,7 @@ import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../shared/config/certification-settings';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';

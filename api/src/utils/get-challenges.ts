@@ -4,7 +4,7 @@
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
 import curriculum from '../../../config/curriculum.json';
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
 

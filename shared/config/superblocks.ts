@@ -1,4 +1,4 @@
-import { Languages } from '../shared/config/i18n';
+import { Languages } from '../config/i18n';
 
 // all superblocks
 export enum SuperBlocks {

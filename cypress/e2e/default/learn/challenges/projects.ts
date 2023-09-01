@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
