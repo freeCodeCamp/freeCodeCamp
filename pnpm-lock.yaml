@@ -1277,8 +1277,8 @@ importers:
         specifier: 3.5.17
         version: 3.5.17
       '@types/lodash-es':
-        specifier: 4.17.8
-        version: 4.17.8
+        specifier: 4.17.9
+        version: 4.17.9
       babel-loader:
         specifier: 8.3.0
         version: 8.3.0(@babel/core@7.22.11)(webpack@5.88.2)
@@ -10945,8 +10945,8 @@ packages:
       '@types/lodash': 4.14.197
     dev: true
 
-  /@types/lodash-es@4.17.8:
-    resolution: {integrity: sha512-euY3XQcZmIzSy7YH5+Unb3b2X12Wtk54YWINBvvGQ5SmMvwb11JQskGsfkH/5HXK77Kr8GF0wkVDIxzAisWtog==}
+  /@types/lodash-es@4.17.9:
+    resolution: {integrity: sha512-ZTcmhiI3NNU7dEvWLZJkzG6ao49zOIjEgIE0RgV7wbPxU0f2xT3VSAHw2gmst8swH6V0YkLRGp4qPlX/6I90MQ==}
     dependencies:
       '@types/lodash': 4.14.197
     dev: true
