@@ -618,8 +618,8 @@ importers:
         specifier: 22.5.1
         version: 22.5.1
       jquery:
-        specifier: 3.7.0
-        version: 3.7.0
+        specifier: 3.7.1
+        version: 3.7.1
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -1274,8 +1274,8 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/jquery':
-        specifier: 3.5.17
-        version: 3.5.17
+        specifier: 3.5.18
+        version: 3.5.18
       '@types/lodash-es':
         specifier: 4.17.9
         version: 4.17.9
@@ -1301,8 +1301,8 @@ importers:
         specifier: 1.15.7
         version: 1.15.7(enzyme@3.11.0)(react-dom@16.14.0)(react@16.14.0)
       jquery:
-        specifier: 3.7.0
-        version: 3.7.0
+        specifier: 3.7.1
+        version: 3.7.1
       lodash-es:
         specifier: 4.17.21
         version: 4.17.21
@@ -10895,8 +10895,8 @@ packages:
       '@types/sizzle': 2.3.3
     dev: true
 
-  /@types/jquery@3.5.17:
-    resolution: {integrity: sha512-U40tNEAGSTZ7R1OC6kGkD7f4TKW5DoVx6jd9kTB9mo5truFMi1m9Yohnw9kl1WpTPvDdj7zAw38LfCHSqnk5kA==}
+  /@types/jquery@3.5.18:
+    resolution: {integrity: sha512-sNm7O6LECFhHmF+3KYo6QIl2fIbjlPYa0PDgDQwfOaEJzwpK20Eub9Ke7VKkGsSJ2K0HUR50S266qYzRX4GlSw==}
     dependencies:
       '@types/sizzle': 2.3.3
     dev: true
@@ -23115,8 +23115,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /jquery@3.7.0:
-    resolution: {integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==}
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
 
   /js-string-escape@1.0.1:
     resolution: {integrity: sha512-Smw4xcfIQ5LVjAOuJCvN/zIodzA/BBSsluuoSykP+lUvScIi4U6RJLfwHet5cxFnCswUjISV8oAXaqaJDY3chg==}
