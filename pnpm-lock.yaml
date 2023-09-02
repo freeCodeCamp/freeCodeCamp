@@ -223,8 +223,8 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0
       jsonwebtoken:
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 9.0.2
+        version: 9.0.2
       mongodb:
         specifier: ^4.16.0
         version: 4.16.0
@@ -23356,12 +23356,18 @@ packages:
       semver: 5.7.2
     dev: false
 
-  /jsonwebtoken@9.0.1:
-    resolution: {integrity: sha512-K8wx7eJ5TPvEjuiVSkv167EVboBDv9PZdDoF7BgeQnBLVvZWW9clr2PsQHVJDTKaEIH5JBIwHujGcHp7GgI2eg==}
+  /jsonwebtoken@9.0.2:
+    resolution: {integrity: sha512-PRp66vJ865SSqOlgqS8hujT5U4AOgMfhrwYIuIhfKaoSCZcirrmASQr8CX7cUg+RMih+hgznrjp99o+W4pJLHQ==}
     engines: {node: '>=12', npm: '>=6'}
     dependencies:
       jws: 3.2.2
-      lodash: 4.17.21
+      lodash.includes: 4.3.0
+      lodash.isboolean: 3.0.3
+      lodash.isinteger: 4.0.4
+      lodash.isnumber: 3.0.3
+      lodash.isplainobject: 4.0.6
+      lodash.isstring: 4.0.1
+      lodash.once: 4.1.1
       ms: 2.1.3
       semver: 7.5.4
     dev: false
