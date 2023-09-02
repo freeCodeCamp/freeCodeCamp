@@ -185,7 +185,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.31",
     "jest-environment-jsdom": "29.6.4",
     "jest-json-schema-extended": "1.0.1",
-    "joi": "17.10.0",
+    "joi": "17.10.1",
     "js-yaml": "4.1.0",
     "monaco-editor-webpack-plugin": "4.2.0",
     "node-fetch": "2.7.0",
