@@ -901,8 +901,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       joi:
-        specifier: 17.10.0
-        version: 17.10.0
+        specifier: 17.10.1
+        version: 17.10.1
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -985,8 +985,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       joi:
-        specifier: 17.10.0
-        version: 17.10.0
+        specifier: 17.10.1
+        version: 17.10.1
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1348,8 +1348,8 @@ importers:
         specifier: 4.3.8
         version: 4.3.8
       joi:
-        specifier: 17.10.0
-        version: 17.10.0
+        specifier: 17.10.1
+        version: 17.10.1
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
@@ -1375,8 +1375,8 @@ importers:
         specifier: 16.3.1
         version: 16.3.1
       joi:
-        specifier: 17.10.0
-        version: 17.10.0
+        specifier: 17.10.1
+        version: 17.10.1
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -19247,7 +19247,7 @@ packages:
       gatsby-telemetry: 2.15.0
       hosted-git-info: 3.0.8
       is-valid-path: 0.1.1
-      joi: 17.10.0
+      joi: 17.10.1
       lodash: 4.17.21
       meant: 1.0.3
       node-fetch: 2.7.0
@@ -19462,7 +19462,7 @@ packages:
       fastq: 1.15.0
       gatsby: 3.15.0(@types/node@18.17.13)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@4.9.5)(webpack-cli@4.10.0)
       graphql: 15.8.0
-      joi: 17.10.0
+      joi: 17.10.1
 
   /gatsby-plugin-webpack-bundle-analyser-v2@1.1.31(gatsby@3.15.0):
     resolution: {integrity: sha512-EtfbY0r6KonivfiU3u4I/PP1THCfOcyEiVISTKtJHgAQjM9xc9cwjfGXGotaYIWDtwUkYPkJVIwsmGpen0rh4Q==}
@@ -19756,7 +19756,7 @@ packages:
       invariant: 2.2.4
       is-relative: 1.0.0
       is-relative-url: 3.0.0
-      joi: 17.10.0
+      joi: 17.10.1
       json-loader: 0.5.7
       latest-version: 5.1.0
       lodash: 4.17.21
@@ -23091,8 +23091,8 @@ packages:
     resolution: {integrity: sha512-V/3hbTlGpvJ03Me6DJbdBI08hBTasFOmipsauOsxOSnsF1blxV537WTl1zPwbfcKle4AK0Ma4OPnzMH4LlvTpQ==}
     dev: true
 
-  /joi@17.10.0:
-    resolution: {integrity: sha512-hrazgRSlhzacZ69LdcKfhi3Vu13z2yFfoAzmEov3yFIJlatTdVGUW6vle1zjH8qkzdCn/qGw8rapjqsObbYXAg==}
+  /joi@17.10.1:
+    resolution: {integrity: sha512-vIiDxQKmRidUVp8KngT8MZSOcmRVm2zV7jbMjNYWuHcJWI0bUck3nRTGQjhpPlQenIQIBC5Vp9AhcnHbWQqafw==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -33269,7 +33269,7 @@ packages:
     hasBin: true
     dependencies:
       axios: 0.27.2(debug@4.3.4)
-      joi: 17.10.0
+      joi: 17.10.1
       lodash: 4.17.21
       minimist: 1.2.8
       rxjs: 7.8.1
