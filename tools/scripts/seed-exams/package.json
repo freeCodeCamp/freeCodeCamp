@@ -24,7 +24,7 @@
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
-    "mongodb": "5.8.0",
+    "mongodb": "5.8.1",
     "nanoid": "4.0.2"
   },
   "type": "module"
