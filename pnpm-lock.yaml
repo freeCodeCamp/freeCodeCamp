@@ -799,8 +799,8 @@ importers:
         specifier: 4.0.5
         version: 4.0.5
       '@types/loadable__component':
-        specifier: 5.13.4
-        version: 5.13.4
+        specifier: 5.13.5
+        version: 5.13.5
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.6
@@ -10933,8 +10933,8 @@ packages:
     dependencies:
       '@types/node': 18.17.11
 
-  /@types/loadable__component@5.13.4:
-    resolution: {integrity: sha512-YhoCCxyuvP2XeZNbHbi8Wb9EMaUJuA2VGHxJffcQYrJKIKSkymJrhbzsf9y4zpTmr5pExAAEh5hbF628PAZ8Dg==}
+  /@types/loadable__component@5.13.5:
+    resolution: {integrity: sha512-YMpOC3hkzuLKi0ZBRn1LFglw4cDP70cGeQ9ZXBh5mYCLo+dJtw+DflNTx55VGl7BQ3MATiS+VNd8apEtaQcl5w==}
     dependencies:
       '@types/react': 16.14.46
     dev: true
