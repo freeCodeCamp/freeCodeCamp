@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Ця вправа схожа на попередню.
 
@@ -18,7 +18,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 У межах `tests/2_functional-tests.js` змініть `'Send {surname: "da Verrazzano"}'` тесту (`// #4`) і використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
 
-Надішліть наступний об'єкт JSON зі своїм запитом PUT:
+Надішліть наступний об’єкт JSON зі своїм запитом PUT:
 
 ```json
 {
@@ -28,10 +28,10 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 Перевірте наступне у межах зворотнього виклику `request.end`:
 
-1.  `status` повинен бути `200`
-2.  `type` повинен бути `application/json`
-3.  `body.name` повинен бути `Giovanni`
-4.  `body.surname` повинен бути `da Verrazzano`
+1.  `status` має бути `200`
+2.  `type` має бути `application/json`
+3.  `body.name` має бути `Giovanni`
+4.  `body.surname` має бути `da Verrazzano`
 
 Дотримуйтесь порядку тверджень вище, оскільки ми залежимо від нього. Не забудьте видалити `assert.fail()` після завершення.
 

@@ -8,7 +8,7 @@ dashedName: exercise-tracker
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -94,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-Відповіддю від `POST /api/users` із даними форми `username` буде об'єкт з властивостями `username` та `_id`.
+Відповіддю від `POST /api/users` із даними форми `username` буде об’єкт з властивостями `username` та `_id`.
 
 ```js
 async (getUserInput) => {
@@ -142,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-Кожен елемент у масиві, який повернувся з `GET /api/users`, є літералом об'єкта з `username` та `_id` користувача.
+Кожен елемент у масиві, який повернувся з `GET /api/users`, є літералом об’єкта з `username` та `_id` користувача.
 
 ```js
 async(getUserInput) => {
@@ -196,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-Відповіддю від `POST /api/users/:_id/exercises` буде об'єкт-користувач з доданими полями вправ.
+Відповіддю від `POST /api/users/:_id/exercises` буде об’єкт-користувач з доданими полями вправ.
 
 ```js
 async (getUserInput) => {
@@ -274,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит до вправ користувача `GET /api/users/:_id/logs` повертає об'єкта-користувача разом з властивістю `count`, яка представляє кількість вправ цього користувача.
+Запит до вправ користувача `GET /api/users/:_id/logs` повертає об’єкта-користувача разом з властивістю `count`, яка представляє кількість вправ цього користувача.
 
 ```js
 async (getUserInput) => {
@@ -315,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит `GET` до `/api/users/:_id/logs` повертає об'єкта-користувача з масивом `log`, де наявні всі вправи.
+Запит `GET` до `/api/users/:_id/logs` повертає об’єкта-користувача з масивом `log`, де наявні всі вправи.
 
 ```js
 async(getUserInput) => {
@@ -359,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-Кожен елемент у масиві `log`, який повернувся з `GET /api/users/:_id/logs`, є об'єктом, який повинен мати властивості `description` `duration` та `date`.
+Кожен елемент у масиві `log`, який повернувся з `GET /api/users/:_id/logs`, є об’єктом, який повинен мати властивості `description` `duration` та `date`.
 
 ```js
 async(getUserInput) => {
@@ -406,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `description` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути рядком.
+Властивість `description` будь-якого об’єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, має бути рядком.
 
 ```js
 async(getUserInput) => {
@@ -453,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `duration` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути числом.
+Властивість `duration` будь-якого об’єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, має бути числом.
 
 ```js
 async(getUserInput) => {
@@ -500,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `date` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути рядком. Використайте формат `dateString` від `Date` API.
+Властивість `date` будь-якого об’єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, має бути рядком. Використайте формат `dateString` від `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -550,7 +550,7 @@ async(getUserInput) => {
 };
 ```
 
-Ви можете додати параметри `from`, `to` та `limit` до запиту `GET /api/users/:_id/logs`, щоб отримати дані будь-якого користувача. `from` та `to` є датами у форматі `yyyy-mm-dd`. `limit` – ціле число інформації, яку потрібно надіслати назад.
+Ви можете додати параметри `from`, `to` та `limit` до запиту `GET /api/users/:_id/logs`, щоб отримати дані будь-якого користувача. `from` та `to` є датами у форматі `yyyy-mm-dd`. `limit` — ціле число інформації, яку потрібно надіслати назад.
 
 ```js
 async (getUserInput) => {

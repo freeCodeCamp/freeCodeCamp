@@ -7,9 +7,9 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is required to earn the "Debug C# Console Applications" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--

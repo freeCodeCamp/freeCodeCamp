@@ -7,9 +7,9 @@ dashedName: guided-project-develop-conditional-branching-and-looping-structures-
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a> e complete todas as tarefas do módulo "Projeto guiado – desenvolver estruturas de ramificação condicional e de repetição em C#". Isto é necessário para adquirir o troféu "Adicione lógica a aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a> e complete todas as tarefas do módulo "Projeto guiado – desenvolver estruturas de ramificação condicional e de repetição em C#". Isso é **necessário** para conquistar o troféu "Adicione lógica a aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

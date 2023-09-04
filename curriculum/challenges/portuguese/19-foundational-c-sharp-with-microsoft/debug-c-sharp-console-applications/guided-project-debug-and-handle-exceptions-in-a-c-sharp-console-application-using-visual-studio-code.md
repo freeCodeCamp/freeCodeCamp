@@ -7,9 +7,9 @@ dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-appl
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> e complete todas as tarefas para o "Projeto guiado – depurar e tratar de exceções em uma aplicação de console em C# usando o Visual Studio Code". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> e complete todas as tarefas para o "Projeto guiado – depurar e tratar de exceções em uma aplicação de console em C# usando o Visual Studio Code". Isso é **necessário** para conquistar o troféu "Depure aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
