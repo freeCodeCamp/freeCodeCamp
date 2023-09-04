@@ -745,7 +745,7 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Issued",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
