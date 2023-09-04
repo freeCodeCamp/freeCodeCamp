@@ -32,12 +32,12 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 **Type:**
 
-| Type  | When to select                                                                   |
-| :---- | :------------------------------------------------------------------------------- |
+| Type  | When to select                                                                  |
+|:------|:--------------------------------------------------------------------------------|
 | fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                            |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
+| feat  | Only if you are adding new functionality, tests, etc.                           |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.           |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.               |
 
 **Scope:**
 
@@ -110,7 +110,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+Since we tend to squash all commits, you may not have to do a rebase. However, if one is requested, here is what you should do.
 
 ### For Usual Bug Fixes and Features
 
@@ -202,7 +202,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    ```
 
-5. If everything looks good push back to the PR
+5. If everything looks good, push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>
