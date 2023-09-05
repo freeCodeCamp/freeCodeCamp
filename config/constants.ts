@@ -1,8 +1,31 @@
-let alphabet = '';
-
-for (let i = 0; i < 26; i++) {
-  alphabet += String.fromCharCode(97 + i);
-}
+const alphabet = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z'
+] as const;
 
 export const i18nConstants = [
   // reserved paths for localizations
@@ -37,9 +60,9 @@ export const i18nConstants = [
   'turkish',
   'ukrainian',
   'vietnamese'
-];
+] as const;
 
-const blocklist = [
+export const blocklistedUsernames = [
   ...alphabet,
   ...i18nConstants,
   'about',
@@ -657,6 +680,4 @@ const blocklist = [
   'yourname',
   'yourusername',
   'zlib'
-];
-
-export const blocklistedUsernames = [...new Set(blocklist)];
+] as const;
