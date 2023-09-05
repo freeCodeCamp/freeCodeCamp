@@ -28,12 +28,6 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
-      - name: Checkout client-config
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-        with:
-          repository: freeCodeCamp/client-config
-          path: client-config
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -119,7 +113,7 @@ jobs:
       - name: Save Image
         run: docker save fcc-api > api-artifact.tar
 
-      - name: Upload Client Artifact
+      - name: Upload Api Artifact
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: api-artifact
