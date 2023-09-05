@@ -52,6 +52,7 @@ FROM node:18-alpine
 RUN npm i -g pm2@4
 USER node
 WORKDIR /home/node/fcc
+COPY --from=builder --chown=node:node /home/node/build/api-server/config/ api-server/config/
 COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
 COPY --from=builder --chown=node:node /home/node/build/api-server/ecosystem.config.js api-server/ecosystem.config.js
 COPY --from=builder --chown=node:node /home/node/build/api-server/package.json api-server/package.json
