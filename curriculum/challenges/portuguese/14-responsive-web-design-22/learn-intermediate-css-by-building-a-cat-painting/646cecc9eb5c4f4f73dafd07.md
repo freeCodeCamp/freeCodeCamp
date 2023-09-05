@@ -7,23 +7,23 @@ dashedName: step-24
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+Mova a orelha esquerda interna para o lugar com uma position `absolute`, um `top` de `-26px` e um `left` de `-31px`.
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+O seletor `.cat-left-ear` deve ter a propriedade `position` definida como `absolute`. Não se esqueça de adicionar um ponto e vírgula.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+O seletor `.cat-left-ear` deve ter a propriedade `top` definida como `-26px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+O seletor `.cat-left-ear` deve ter a propriedade `left` definida como `-31px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')
