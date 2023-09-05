@@ -4,7 +4,7 @@ for (let i = 0; i < 26; i++) {
   alphabet += String.fromCharCode(97 + i);
 }
 
-const i18nConstants = [
+export const i18nConstants = [
   // reserved paths for localizations
   'afrikaans',
   'arabic',
@@ -39,7 +39,7 @@ const i18nConstants = [
   'vietnamese'
 ];
 
-let blocklist = [
+const blocklist = [
   ...alphabet,
   ...i18nConstants,
   'about',
@@ -659,5 +659,4 @@ let blocklist = [
   'zlib'
 ];
 
-exports.blocklistedUsernames = [...new Set(blocklist)];
-exports.i18nConstants = i18nConstants;
+export const blocklistedUsernames = [...new Set(blocklist)];
