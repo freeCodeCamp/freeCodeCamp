@@ -114,7 +114,7 @@ jobs:
         run: |
           docker build \
             -t fcc-api \
-            -f docker/api/api.Dockerfile .
+            -f docker/api/Dockerfile .
 
       - name: Save Image
         run: docker save fcc-api > api-artifact.tar
