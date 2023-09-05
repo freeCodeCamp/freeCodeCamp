@@ -8,10 +8,11 @@ services:
     env_file:
       - .env
     ports:
-      - '3000:3000'
+      # PORT is used by the new api, so we use the less generic API_PORT to
+      # avoid conflicts.
+      - '${API_PORT:-3000}:3000'
   client:
     image: fcc-client
     ports:
-      # PORT is used by the new api, so we use the less generic HOST_PORT to avoid
-      # conflicts.
-      - '${HOST_PORT:-8000}:8000'
+      # Same principle as above (avoiding conflicts)
+      - '${CLIENT_PORT:-8000}:8000'
