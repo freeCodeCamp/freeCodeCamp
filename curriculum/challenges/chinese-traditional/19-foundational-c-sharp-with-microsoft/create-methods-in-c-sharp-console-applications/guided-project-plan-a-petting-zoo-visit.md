@@ -7,9 +7,9 @@ dashedName: guided-project-plan-a-petting-zoo-visit
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> and complete all the tasks for the "Guided Project - Plan a Petting Zoo Visit" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> and complete all the tasks for the "Guided Project - Plan a Petting Zoo Visit" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--

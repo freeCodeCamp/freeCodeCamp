@@ -8,9 +8,9 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`equal()` порівнює об'єкти за допомогою `==`.
+`equal()` порівнює об’єкти за допомогою `==`.
 
 # --instructions--
 

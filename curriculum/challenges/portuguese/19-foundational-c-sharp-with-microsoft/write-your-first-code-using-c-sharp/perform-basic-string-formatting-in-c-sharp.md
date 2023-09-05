@@ -7,9 +7,9 @@ dashedName: perform-basic-string-formatting-in-c-sharp
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank">https://learn.microsoft.com/training/modules/csharp-basic-formatting/</a> e complete todas as tarefas do módulo "Realize a formatação básica de strings em C#". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-formatting/</a> e complete todas as tarefas do módulo "Realize a formatação básica de strings em C#". Isso é **necessário** para conquistar o troféu "Escreva seu primeiro código usando o C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

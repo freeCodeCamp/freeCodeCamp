@@ -8,7 +8,7 @@ dashedName: issue-tracker
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -57,7 +57,7 @@ dashedName: issue-tracker
 };
 ```
 
-Ви можете надіслати запит `POST` до `/api/issues/{projectname}` з даними форми, включно з обов'язковими полями `issue_title`, `issue_text`, `created_by` і додатковими `assigned_to` та `status_text`.
+Ви можете надіслати запит `POST` до `/api/issues/{projectname}` з даними форми, включно з обов’язковими полями `issue_title`, `issue_text`, `created_by` і додатковими `assigned_to` та `status_text`.
 
 ```js
 async (getUserInput) => {
@@ -79,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит `POST` до `/api/issues/{projectname}` поверне створений об'єкт, та повинен містити всі введені поля. Вилучені необов'язкові поля будуть повернені як порожні рядки. Додатково включіть `created_on` (дата/час), `updated_on` (дата/час), `open` (булеве, значення за замовчуванням `true` для відкритого і `false` для закритого) та `_id`.
+Запит `POST` до `/api/issues/{projectname}` поверне створений об’єкт, та повинен містити всі введені поля. Вилучені необов’язкові поля будуть повернені як порожні рядки. Додатково включіть `created_on` (дата/час), `updated_on` (дата/час), `open` (булеве, значення за замовчуванням `true` для відкритого і `false` для закритого) та `_id`.
 
 ```js
 async (getUserInput) => {
