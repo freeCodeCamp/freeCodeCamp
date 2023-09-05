@@ -1023,7 +1023,7 @@
       "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
       "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para criar aplicações."
     ],
-    "note": "Observação: você deve completar o desafio do troféu em cada seção abaixo para se qualificar para o exame de certificação.",
+    "note": "Cada seção abaixo tem um troféu associado a ela. Você deve obtê-lo na plataforma Microsoft Learn. Depois de ganhar cada troféu, você precisa verificá-lo no freeCodeCamp. Só então você poderá se qualificar para o exame de certificação.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Escreva seu primeiro código em C#",

@@ -449,8 +449,10 @@
       "link-li-2": "Encontre e clique no botão \"Compartilhar link\".",
       "link-li-3": "Se você não tiver um link de transcrição, clique no botão \"Criar link\" para criar um.",
       "link-li-4": "Clique no botão \"Copiar link\" para copiar o URL da transcrição.",
-      "link-li-5": "Cole o URL no valor de entrada abaixo e clique em \"Vincular conta\".",
-      "transcript-label": "Seu link de transcrição da Microsoft"
+      "link-li-5": "Cole o URL no espaço abaixo. O URL deve ter esta aparência: <0>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</0>",
+      "link-li-6": "Clique em \"Link Account\" (Vincular conta) para vincular o seu nome de usuário da Microsoft.",
+      "transcript-label": "Seu link de transcrição da Microsoft",
+      "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     }
   },
   "donate": {
