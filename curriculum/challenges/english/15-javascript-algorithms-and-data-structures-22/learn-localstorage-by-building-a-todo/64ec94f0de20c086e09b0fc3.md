@@ -24,105 +24,65 @@ Test 1
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learn debugging by building a TODO app</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1 class="title">TODO App</h1>
-    <main class="app">
-      <button id="open-modal-btn" class="btn open-modal-btn">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn localStorage By Building a Todo App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Todo App</h1>
+    <div class="todo-app">
+      <button id="open-task-form-btn" class="btn large-btn">
         Add New Task
       </button>
-      <form
-        class="modal"
-        id="modal"
-        tabindex="-1"
-        aria-labelledby="todo-modal-label"
-      >
-        <div class="modal-header">
-          <h2 class="modal-title" id="todo-modal-label">Add New Task</h2>
-          <button
-            id="close-modal-btn"
-            aria-label="close"
-            class="close-modal-btn"
-            type="button"
-          > <svg
-              class="close-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 48 48"
-              width="48px"
-              height="48px"
-            ><path
-                fill="#F44336"
-                d="M21.5 4.5H26.501V43.5H21.5z"
-                transform="rotate(45.001 24 24)"
-              /><path
-                fill="#F44336"
-                d="M21.5 4.5H26.5V43.501H21.5z"
-                transform="rotate(135.008 24 24)"
-              /></svg>
+      <form class="task-form hidden" id="task-form">
+        <div class="task-form-header">
+          <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close">
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
           </button>
         </div>
-        <div class="modal-body">
-          <h3 class="modal-heading-text">Task Title</h3>
-          <input
-            required
-            type="text"
-            class="form-control"
-            name=""
-            id="text-input"
-            value=""
-          />
-          <h3 class="modal-heading-text">Due Date</h3>
-          <input
-            type="date"
-            class="form-control"
-            name=""
-            id="date-input"
-            value=""
-          />
-          <h3 class="modal-heading-text">Description</h3>
-          <textarea
-            name=""
-            class="form-control"
-            id="textarea"
-            cols="30"
-            rows="5"
-          ></textarea>
+        <div class="task-form-body">
+          <label class="task-form-label" for="title-input">Title</label>
+          <input required type="text" class="form-control" id="title-input" value="" />
+          <label class="task-form-label" for="date-input">Date</label>
+          <input type="date" class="form-control" id="date-input" value="" />
+          <label class="task-form-label" for="description-input">Description</label>
+          <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
         </div>
-        <div class="modal-footer">
-          <button type="submit" id="add-task-btn" class="btn">Add</button>
+        <div class="task-form-footer">
+          <button id="add-or-update-task-btn" class="btn large-btn" type="submit" aria-label="add task">
+            Add Task
+          </button>
         </div>
       </form>
-      <dialog id="confirm-modal">
+      <dialog id="confirm-close-dialog">
         <form method="dialog">
-          <h2>Discard unsaved changes?</h2>
-          <div class="modal-btn-container">
-            <button class="btn">Cancel</button>
-            <button class="btn" id="confirm-btn">Discard</button>
+          <p class="discard-message-text">Discard unsaved changes?</p>
+          <div class="confirm-close-dialog-btn-container">
+            <button id="cancel-btn" class="btn" aria-label="cancel">
+              Cancel
+            </button>
+            <button id="discard-btn" class="btn" aria-label="discard">
+              Discard
+            </button>
           </div>
         </form>
       </dialog>
       <div id="tasks-container"></div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
 ```
 
 ```css
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --white: #fff;
   --light-grey: #f5f6f7;
@@ -131,30 +91,41 @@ Test 1
   --golden-yellow: #feac32;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--dark-grey);
-  overflow: hidden;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.title {
+h1 {
   color: var(--light-grey);
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 0 40px 0;
 }
 
-.app {
+.todo-app {
   background-color: var(--white);
-  width: 100%;
-  height: auto;
+  width: 300px;
+  height: 350px;
   border: 5px solid var(--yellow);
   border-radius: 8px;
   padding: 15px;
-  overflow-y: scroll;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .btn {
@@ -172,14 +143,14 @@ body {
   background-image: linear-gradient(#ffcc4c, #f89808);
 }
 
-.open-modal-btn {
-  display: block;
-  margin: 10px auto;
+.large-btn {
   width: 80%;
   font-size: 1.2rem;
+  align-self: center;
+  justify-self: center;
 }
 
-.close-modal-btn {
+.close-task-form-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -190,61 +161,110 @@ body {
   height: 20px;
 }
 
-.modal {
-  display: none;
+.task-form {
+  display: flex;
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);
   background-color: var(--white);
   border-radius: 5px;
   padding: 15px;
-  width: 100%;
-}
-
-.modal-header {
-  display: flex;
-  align-items: center;
+  width: 300px;
+  height: 350px;
+  flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid var(--dark-grey);
+  overflow: auto;
 }
 
-.modal-heading-text {
-  margin: 10px 0 5px;
+.task-form-header {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.modal-title {
-  padding-bottom: 5px;
+.task-form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-#confirm-modal {
+.task-form-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.task-form-label,
+#title-input,
+#date-input,
+#description-input {
+  display: block;
+}
+
+.task-form-label {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#title-input,
+#date-input,
+#description-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+#confirm-close-dialog {
   padding: 10px;
   margin: 10px auto;
   border-radius: 15px;
 }
 
-.modal-btn-container {
+.confirm-close-dialog-btn-container {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
+.discard-message-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 #tasks-container {
-  height: 200px;
-  overflow-y: scroll;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .task {
   margin: 5px 0;
 }
 
-#text-input {
-  width: 100%;
+.hidden {
+  display: none;
 }
 
 @media (min-width: 576px) {
-  .app,
-  .modal {
-    width: 300px;
+  .todo-app,
+  .task-form {
+    width: 400px;
+    height: 450px;
+  }
+
+  .task-form-label {
+    font-size: 1.5rem;
+  }
+
+  #title-input,
+  #date-input {
+    height: 2rem;
+  }
+
+  #title-input,
+  #date-input,
+  #description-input {
+    padding: 5px;
+    margin-bottom: 20px;
   }
 }
 ```
