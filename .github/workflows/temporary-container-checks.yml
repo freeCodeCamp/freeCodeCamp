@@ -190,7 +190,7 @@ jobs:
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: docker compose up -d
-          wait-on: http://localhost:8000
+          wait-on: http://localhost:8000, http://localhost:3000
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
