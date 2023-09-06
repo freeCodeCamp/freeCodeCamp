@@ -45,16 +45,16 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-التعليمات البرمجية الخاص بك يجب أن يستخدم dot notation و bracket notation للوصول إلى `myStorage`.
+Your code should use dot notation, where possible, to access `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 `gloveBoxContents` should still be declared with `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]|const\s*{\s*('|")glove box\2:\s*gloveBoxContents\s*}\s*=\s*myStorage\.car\.inside;/);
 ```
 
 # --seed--
