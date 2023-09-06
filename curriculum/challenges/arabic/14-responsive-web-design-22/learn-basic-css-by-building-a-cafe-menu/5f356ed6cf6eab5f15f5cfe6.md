@@ -9,32 +9,36 @@ dashedName: step-20
 
 يُستخدم عنصر `div` بشكل أساسي لأغراض تخطيط التصميم بخلاف عناصر المحتوى الأخرى التي استخدمتها حتى الآن. أضف عنصر `div` داخل عنصر `body` ثم حرك جميع العناصر الأخرى داخل `div` الجديد.
 
+Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
+
 # --hints--
 
-يجب أن يكون لديك العلامة المفتوحة (opening tag) الآتية `<div>`.
+Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
-يجب أن يكون لديك العلامة المغلقة (closing tag) الآتي `</div>`.
+You should have a closing `</div>` tag.
 
 ```js
 assert(code.match(/<\/div>/i));
 ```
 
-لا يجب عليك تغيير عنصر `body` الحالي. تأكد من أنك لم تقم بحذف علامة الإغلاق (closing tag).
+You should not change your existing `body` element. Make sure you did not delete the closing tag.
 
 ```js
 assert($('body').length === 1);
 ```
 
-يجب أن تكون علامة `div` الخاصة بك متداخلة في `body`.
+Your `div` tag should be nested in the `body`.
 
 ```js
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 
