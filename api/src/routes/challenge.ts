@@ -380,41 +380,28 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       }
     },
-
     async (req, reply) => {
       try {
-        await fastify.prisma.user.findFirstOrThrow({
-          where: { id: req.session.user.id }
-        });
-        try {
-          const saveChallenge = await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
-            select: {
-              savedChallenges: true
-            },
-            data: {
-              savedChallenges: {
-                id: req.body.id,
-                lastSavedDate: req.body.lastSavedDate,
-                files: req.body.files
-              }
+        const saveChallenge = await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          select: {
+            savedChallenges: true
+          },
+          data: {
+            savedChallenges: {
+              id: req.body.id,
+              lastSavedDate: req.body.lastSavedDate,
+              files: req.body.files
             }
-          });
-          return { ...saveChallenge, type: 'danger' } as const;
-        } catch (err) {
-          fastify.log.error(err);
-          void reply.code(500);
-
-          return {
-            type: 'danger'
-          } as const;
-        }
+          }
+        });
+        return { ...saveChallenge };
       } catch (err) {
         fastify.log.error(err);
-        void reply.code(403);
+        void reply.code(500);
+
         return {
-          message: 'That challenge type is not savable.',
-          type: 'error'
+          type: 'danger'
         } as const;
       }
     }
