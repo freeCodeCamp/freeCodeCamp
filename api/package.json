@@ -24,13 +24,14 @@
     "mongodb": "^4.16.0",
     "nanoid": "3",
     "no-profanity": "^1.4.2",
-    "nodemon": "2.0.22",
     "nodemailer": "^6.9.3",
+    "nodemon": "2.0.22",
     "query-string": "^7.1.3"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
     "@fastify/type-provider-typebox": "3.5.0",
+    "@total-typescript/ts-reset": "^0.4.0",
     "@types/express-session": "1.17.7",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/nodemailer": "^6.4.8",

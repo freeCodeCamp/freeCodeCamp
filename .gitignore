@@ -166,6 +166,7 @@ config/donation-settings.js
 config/superblocks.js
 config/superblocks.test.js
 config/challenge-types.js
+config/constants.js
 
 ### Generated utils files ###
 utils/index.js
