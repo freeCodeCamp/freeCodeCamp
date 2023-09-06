@@ -240,32 +240,48 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               className='portal-button'
               aria-expanded={!!showPreviewPortal}
               onClick={() => togglePane('showPreviewPortal')}
-              role='tab'
             >
               <span className='sr-only'>{getPortalBtnSrText()}</span>
               <FontAwesomeIcon icon={faWindowRestore} />
             </button>
           </TabsList>
 
-          <TabsContent className='tab-content' value={Tab.Editor}>
+          <TabsContent tabIndex={-1} className='tab-content' value={Tab.Editor}>
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
           {!hasEditableBoundaries && (
-            <TabsContent className='tab-content' value={Tab.Instructions}>
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Instructions}
+            >
               {instructions}
             </TabsContent>
           )}
-          <TabsContent className='tab-content' value={Tab.Console}>
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={Tab.Console}
+          >
             {testOutput}
           </TabsContent>
           {hasNotes && usesMultifileEditor && (
-            <TabsContent className='tab-content' value={Tab.Notes}>
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Notes}
+            >
               {notes}
             </TabsContent>
           )}
           {hasPreview && (
-            <TabsContent className='tab-content' value={Tab.Preview} forceMount>
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Preview}
+              forceMount
+            >
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
