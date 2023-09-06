@@ -745,7 +745,7 @@
     "ms-president": "Presidente, Divisão de desenvolvedores da Microsoft",
     "verify": "Verificar esta certificação em:",
     "issued": "Emitido",
-    "fulltext": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
+    "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp. org em {{time}},</4> <5>representando aproximadamente {{completionTime}} horas de curso.</5>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
@@ -927,5 +927,12 @@
     "p2": "Esta ação encerrará a sua conta somente neste dispositivo e na sessão do navegador. Confirme se deseja prosseguir.",
     "certain": "Sim, sair da minha conta",
     "nevermind": "Deixa para lá, eu não quero sair da minha conta"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }
