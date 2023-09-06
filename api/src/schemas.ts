@@ -527,7 +527,7 @@ export const schemas = {
   saveChallenge: {
     body: saveChallengeBody,
     response: {
-      200: { ...saveChallengeBody, type: 'success' },
+      200: Type.Object({ savedChallenges: Type.Array(saveChallengeBody) }),
       403: Type.Object({
         type: Type.Literal('error'),
         message: Type.Literal('That challenge type is not savable.')

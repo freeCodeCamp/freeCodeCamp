@@ -27,10 +27,12 @@ const getError = (errors: ErrorObject[]): ErrorObject => {
  * Format validation errors for /project-completed.
  *
  * @param errors An array of validation errors.
+ * @param message Unqiue message for the function.
  * @returns Formatted errors that can be used in the response.
  */
 export const formatProjectCompletedValidation = (
-  errors: ErrorObject[]
+  errors: ErrorObject[],
+  message?: FormattedError['message']
 ): FormattedError => {
   const error = getError(errors);
 
@@ -43,7 +45,8 @@ export const formatProjectCompletedValidation = (
       }
     : {
         type: 'error',
-        message: 'That does not appear to be a valid challenge submission.'
+        message:
+          message ?? 'That does not appear to be a valid challenge submission.'
       };
 };
 
