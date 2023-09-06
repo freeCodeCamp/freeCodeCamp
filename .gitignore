@@ -158,10 +158,7 @@ jspm_packages/
 
 ### Generated config files ###
 shared/config/curriculum.json
-shared/config/i18n.js
-shared/config/certification-settings.js
-shared/config/donation-settings.js
-shared/config/challenge-types.js
+shared/config/*.js
 
 ### Generated utils files ###
 shared/utils/get-lines.js

@@ -6,14 +6,8 @@ client/config/browser-scripts/*.json
 **/*fixtures*
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
-config/**/*.json
 client/config/*.json
-shared/config/i18n.js
-shared/config/certification-settings.js
-shared/config/donation-settings.js
-shared/config/superblocks.js
-shared/config/superblocks.test.js
-shared/config/challenge-types.js
+shared/config/*.js
 shared/config/curriculum.json
 shared/utils/get-lines.js
 shared/utils/get-lines.test.js
