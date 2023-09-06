@@ -40,6 +40,22 @@ test.afterAll(async () => {
   await page.close();
 });
 
+test('The component Landing-top renders correctly', async () => {
+  const landingHeading1 = page.getByTestId('landing-big-heading-1');
+  await expect(landingHeading1).toHaveText('Learn to code — for free.');
+
+  const landingHeading2 = page.getByTestId('landing-big-heading-2');
+  await expect(landingHeading2).toHaveText('Build projects.');
+
+  const landingHeading3 = page.getByTestId('landing-big-heading-3');
+  await expect(landingHeading3).toHaveText('Earn certifications.');
+
+  const landingH2Heading = page.getByTestId('landing-h2-heading');
+  await expect(landingH2Heading).toHaveText(
+    'Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:'
+  );
+});
+
 test('Should render', async () => {
   await expect(page).toHaveTitle(
     'Learn to Code — For Free — Coding Courses for Busy People'
