@@ -34,7 +34,7 @@ const {
 const { challengeTypes } = require('../../config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
-  require('../../config/client/test-evaluator.json').filename;
+  require('../../client/config/browser-scripts/test-evaluator.json').filename;
 
 const { getLines } = require('../../utils/get-lines');
 
