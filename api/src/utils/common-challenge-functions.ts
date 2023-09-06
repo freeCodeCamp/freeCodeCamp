@@ -34,6 +34,20 @@ type SavedChallenge = {
   files: SavedChallengeFile[];
 };
 
+type ChallengeFile = {
+  key: string;
+  ext: string; // NOTE: This is Ext type in client
+  name: string;
+  history?: string[];
+  contents: string;
+};
+
+type Challenge = {
+  id: string;
+  lastSavedDate: number;
+  files?: ChallengeFile[];
+};
+
 // TODO: Confirm this type - read comments below
 type CompletedChallengeFile = {
   key: string;
@@ -64,6 +78,43 @@ export type CompletedChallenge = {
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
 };
+
+/**
+ * Helper function to save a user's challenge data. Used in challenge
+ * submission endpoints.
+ *
+ * @param challengeId The id of the submitted challenge.
+ * @param user The existing user record.
+ * @param challenge The saveble challenge.
+ * @returns Saved challenges.
+ */
+export function saveUserChallengeData(
+  challengeId: string,
+  user: user,
+  challenge: Challenge
+) {
+  if (savableChallenges.includes(challengeId)) {
+    const challengeToSave: SavedChallenge = {
+      id: challengeId,
+      lastSavedDate: Date.now(),
+      files: challenge.files?.map(file =>
+        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+      ) as SavedChallengeFile[]
+    };
+
+    const savedIndex = user.savedChallenges.findIndex(
+      ({ id }) => challengeId === id
+    );
+
+    if (savedIndex >= 0) {
+      user.savedChallenges[savedIndex] = challengeToSave;
+    } else {
+      user.savedChallenges.push(challengeToSave);
+    }
+
+    return [user.savedChallenges];
+  }
+}
 
 /**
  * Helper function to update a user's challenge data. Used in challenge

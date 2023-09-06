@@ -7,7 +7,8 @@ import {
   jsCertProjectIds,
   multifileCertProjectIds,
   updateUserChallengeData,
-  type CompletedChallenge
+  type CompletedChallenge,
+  saveUserChallengeData
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -385,20 +386,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const saveChallenge = await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          select: {
-            savedChallenges: true
-          },
-          data: {
-            savedChallenges: {
-              id: req.body.id,
-              lastSavedDate: req.body.lastSavedDate,
-              files: req.body.files
-            }
-          }
+        const { files, id, lastSavedDate } = req.body;
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
         });
-        return { ...saveChallenge };
+        const challenge = {
+          id,
+          lastSavedDate,
+          files
+        };
+        saveUserChallengeData(id, user, challenge);
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
