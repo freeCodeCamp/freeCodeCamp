@@ -1,8 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { isProfane } from 'no-profanity';
 import { isValidUsername } from '../../../utils/validate';
-// we have to use this file as JavaScript because it is used by the old api.
-import { blocklistedUsernames } from '../../../config/constants.js';
+import { blocklistedUsernames } from '../../../config/constants';
 import { schemas } from '../schemas';
 
 /**

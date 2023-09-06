@@ -8,7 +8,7 @@ dashedName: request-header-parser-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-headerparser/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -36,7 +36,7 @@ dashedName: request-header-parser-microservice
 };
 ```
 
-Запит до `/api/whoami` повинен повернути об'єкт JSON з вашою IP-адресою у ключі `ipaddress`.
+Запит до `/api/whoami` повинен повернути об’єкт JSON з вашою IP-адресою у ключі `ipaddress`.
 
 ```js
 (getUserInput) =>
@@ -60,7 +60,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-Запит до `/api/whoami` повинен повернути об'єкт JSON з вашим програмним забезпеченням у ключі `software`.
+Запит до `/api/whoami` повинен повернути об’єкт JSON з вашим програмним забезпеченням у ключі `software`.
 
 ```js
 (getUserInput) =>

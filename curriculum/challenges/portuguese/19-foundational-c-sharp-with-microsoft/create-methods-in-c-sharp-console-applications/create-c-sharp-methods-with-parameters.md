@@ -7,9 +7,9 @@ dashedName: create-c-sharp-methods-with-parameters
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> e complete todas as tarefas do módulo "Crie métodos com parâmetros em C#". Isto é necessário para adquirir o troféu "Crie métodos em aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> e complete todas as tarefas do módulo "Crie métodos com parâmetros em C#". Isso é **necessário** para conquistar o troféu "Crie métodos em aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

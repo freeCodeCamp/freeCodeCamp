@@ -1,6 +1,6 @@
 ---
 id: 5e601bf95ac9d0ecd8b94afd
-title: Розв'язувач судоку
+title: Розв’язувач судоку
 challengeType: 4
 forumTopicId: 462357
 dashedName: sudoku-solver
@@ -8,7 +8,7 @@ dashedName: sudoku-solver
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -46,7 +46,7 @@ dashedName: sudoku-solver
 -   Логіка обробляє недійсне розміщення області (сітка 3x3)
 -   Дійсні рядки головоломки проходять розв’язувач
 -   Недійсні рядки головоломки не проходять розв’язувач
--   Розв'язувач повертає вирішення для невирішеної головоломки
+-   Розв’язувач повертає вирішення для невирішеної головоломки
 
 Напишіть наступні тести в `tests/2_functional-tests.js`
 
@@ -76,7 +76,7 @@ dashedName: sudoku-solver
 };
 ```
 
-Ви можете надіслати запит `POST` до `/api/solve` з даними форми, що містять `puzzle`, яка буде рядком з комбінації чисел (1-9) та крапок `.` для представлення порожніх місць. Повернений об'єкт міститиме властивість `solution` з вирішеною головоломкою.
+Ви можете надіслати запит `POST` до `/api/solve` з даними форми, що містять `puzzle`, яка буде рядком з комбінації чисел (1-9) та крапок `.` для представлення порожніх місць. Повернений об’єкт міститиме властивість `solution` з вирішеною головоломкою.
 
 ```js
 async (getUserInput) => {
@@ -95,7 +95,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо об'єкт, надісланий до `/api/solve` не має `puzzle`, поверненим значенням буде `{ error: 'Required field missing' }`
+Якщо об’єкт, надісланий до `/api/solve` не має `puzzle`, поверненим значенням буде `{ error: 'Required field missing' }`
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `POST` до `/api/check` з об'єктом, який містить `puzzle`, `coordinate` та `value`, де `coordinate` є буквою від А до I (представляє рядочок) і супроводжується числом від 1 до 9 (представляє стовпчик), а `value` є числом від 1 до 9.
+Ви можете надіслати запит `POST` до `/api/check` з об’єктом, який містить `puzzle`, `coordinate` та `value`, де `coordinate` є буквою від А до I (представляє рядочок) і супроводжується числом від 1 до 9 (представляє стовпчик), а `value` є числом від 1 до 9.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-Поверненим значенням запиту `POST` до `/api/check` буде об'єкт, який містить властивість `valid`, де `true` означає, що число можна розмістити на заданій координаті, та `false`, якщо ні. Якщо false, повернений об'єкт також міститиме властивість `conflict`, яка є масивом із рядками `"row"`, `"column"` та/або `"region"`, залежно від того, чому розміщення недійсне.
+Поверненим значенням запиту `POST` до `/api/check` буде об’єкт, який містить властивість `valid`, де `true` означає, що число можна розмістити на заданій координаті, та `false`, якщо ні. Якщо false, повернений об’єкт також міститиме властивість `conflict`, яка є масивом із рядками `"row"`, `"column"` та/або `"region"`, залежно від того, чому розміщення недійсне.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +213,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо `value`, надіслане до `/api/check`, вже розміщене в `puzzle` на цій `coordinate`, поверненим значенням буде об'єкт, який містить властивість `valid` із `true`, якщо `value` не конфліктує.
+Якщо `value`, надіслане до `/api/check`, вже розміщене в `puzzle` на цій `coordinate`, поверненим значенням буде об’єкт, який містить властивість `valid` із `true`, якщо `value` не конфліктує.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо об'єкт, надісланий до `/api/check`, не має `puzzle`, `coordinate` або `value`, поверненим значенням буде `{ error: 'Required field(s) missing' }`
+Якщо об’єкт, надісланий до `/api/check`, не має `puzzle`, `coordinate` або `value`, поверненим значенням буде `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
