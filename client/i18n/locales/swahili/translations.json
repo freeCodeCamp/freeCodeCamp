@@ -745,7 +745,7 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Thibitisha uthibitishaji huu kwenye:",
     "issued": "Iliyotolewa",
-    "fulltext": "<0>Hii inathibitisha kwamba</0> <1>{{user}}</1> <2>amekamilisha</2> <3>{{title}}</3> <4>Uidhinishaji wa Msanidi kwa ufanisi {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "Kama sehemu ya uthibitishaji huu wa Legacy Full Stack, {{user}} alikamilisha uthibitishaji ufuatao:",
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
@@ -927,5 +927,12 @@
     "p2": "Kitendo hiki kitakuondoa kwenye akaunti yako kwenye kifaa hiki na kipindi cha kivinjari pekee. Tafadhali thibitisha ikiwa ungependa kuendelea.",
     "certain": "Ndiyo, ondoka kwenye akaunti yangu",
     "nevermind": "Usijali, sitaki kuondoka"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }
