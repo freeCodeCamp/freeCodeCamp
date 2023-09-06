@@ -7,6 +7,10 @@ services:
     image: fcc-api
     env_file:
       - .env
+    environment:
+      # The api cannot connect to mongodb via localhost from inside the
+      # container, so we provide the hostname instead.
+      - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
     ports:
       # PORT is used by the new api, so we use the less generic API_PORT to
       # avoid conflicts.
