@@ -45,4 +45,4 @@ pnpm-lock.yaml
 /*.md @freeCodeCamp/staff
 
 # i18n Quotes
-/client/i18n/locales/*/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
+**/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
