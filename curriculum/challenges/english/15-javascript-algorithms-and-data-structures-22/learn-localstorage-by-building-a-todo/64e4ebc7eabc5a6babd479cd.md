@@ -7,9 +7,9 @@ dashedName: step-9
 
 # --description--
 
-Since you're saving the tasks in an array, you can use the `Array.prototype.unshift()` method to collect them and add them to the front of the `taskData` array.
+If the user clicks the `Discard` button, you want to close the modal showing the `Cancel` and `Discard` buttons, then hide the form modal.
 
-Use `unshift()` on your `taskData` array.
+Add a click event listener `discardBtn` variable, then use the `close()` method on the `confirmCloseDialog` variable. Also, use `classList` to toggle the class `hidden` so the form modal will close too.
 
 # --hints--
 
@@ -272,30 +272,32 @@ h1 {
 ```
 
 ```js
-const form = document.getElementById("modal");
-const confirmModal = document.getElementById("confirm-modal");
-const confirmBtn = document.getElementById("confirm-btn");
-const openModalBtn = document.getElementById("open-modal-btn");
-const closeModalBtn = document.getElementById("close-modal-btn");
+const taskForm = document.getElementById("task-form");
+const confirmCloseDialog = document.getElementById("confirm-close-dialog");
+const openTaskFormBtn = document.getElementById("open-task-form-btn");
+const closeTaskFormBtn = document.getElementById("close-task-form-btn");
+const addOrUpdateTaskBtn = document.getElementById("add-or-update-task-btn");
+const cancelBtn = document.getElementById("cancel-btn");
+const discardBtn = document.getElementById("discard-btn");
 const tasksContainer = document.getElementById("tasks-container");
-const textInput = document.getElementById("text-input");
+const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
-const descriptionInput = document.getElementById("textarea");
+const descriptionInput = document.getElementById("description-input");
 
 const taskData = [];
+let currentTask = {};
 
-openModalBtn.addEventListener("click", () => (form.style.display = "block"));
+openTaskFormBtn.addEventListener("click", () =>
+  taskForm.classList.toggle("hidden")
+);
 
-closeModalBtn.addEventListener("click", () => confirmModal?.showModal());
-
-confirmBtn.addEventListener("click", () => {
-  form.style.display = "none";
+closeTaskFormBtn.addEventListener("click", () => {
+  confirmCloseDialog.showModal();
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+
 --fcc-editable-region--
 
 --fcc-editable-region--
-});
 ```

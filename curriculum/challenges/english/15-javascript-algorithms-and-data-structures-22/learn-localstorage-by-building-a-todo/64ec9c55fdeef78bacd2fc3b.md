@@ -7,7 +7,9 @@ dashedName: step-22
 
 # --description--
 
-Now call the `resetForm()` function.
+If you attempt to add another task now, you'll see the values you entered for the previous task. So, you need to clear the input fields after adding a task.
+
+Use arrow syntax to create a `reset` function and set it to an empty explicit return.
 
 # --hints--
 
@@ -270,58 +272,68 @@ h1 {
 ```
 
 ```js
-const form = document.getElementById("modal");
-const confirmModal = document.getElementById("confirm-modal");
-const confirmBtn = document.getElementById("confirm-btn");
-const openModalBtn = document.getElementById("open-modal-btn");
-const closeModalBtn = document.getElementById("close-modal-btn");
+const taskForm = document.getElementById("task-form");
+const confirmCloseDialog = document.getElementById("confirm-close-dialog");
+const openTaskFormBtn = document.getElementById("open-task-form-btn");
+const closeTaskFormBtn = document.getElementById("close-task-form-btn");
+const addOrUpdateTaskBtn = document.getElementById("add-or-update-task-btn");
+const cancelBtn = document.getElementById("cancel-btn");
+const discardBtn = document.getElementById("discard-btn");
 const tasksContainer = document.getElementById("tasks-container");
-const textInput = document.getElementById("text-input");
+const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
-const descriptionInput = document.getElementById("textarea");
+const descriptionInput = document.getElementById("description-input");
 
 const taskData = [];
+let currentTask = {};
 
-openModalBtn.addEventListener("click", () => (form.style.display = "block"));
+openTaskFormBtn.addEventListener("click", () =>
+  taskForm.classList.toggle("hidden")
+);
 
-closeModalBtn.addEventListener("click", () => confirmModal?.showModal());
-
-confirmBtn.addEventListener("click", () => {
-  form.style.display = "none";
+closeTaskFormBtn.addEventListener("click", () => {
+  confirmCloseDialog.showModal();
 });
 
-form.addEventListener("submit", (e) => {
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+
+discardBtn.addEventListener("click", () => {
+  confirmCloseDialog.close();
+  taskForm.classList.toggle("hidden");
+});
+
+
+taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  taskData.unshift({
-    id: textInput.value.split(" ").join("-"),
-    task: textInput.value,
+  const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
+  const taskObj = {
+    id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
+    title: titleInput.value,
     date: dateInput.value,
     description: descriptionInput.value,
-  });
+  };
 
-  form.style.display = "none";
+   if (dataArrIndex === -1) {
+    taskData.unshift(taskObj);
+  }
 
-  taskData.forEach(({id, task, date, description}) => {
+  taskData.forEach(({id, title, date, description}) => (
     (tasksContainer.innerHTML += `
       <div class="task" id="${id}">
-        <p><strong>Task:</strong> ${task}</p>
+        <p><strong>Title:</strong> ${title}</p>
         <p><strong>Date:</strong> ${date}</p>
         <p><strong>Description:</strong> ${description}</p>
-        <button type="button" class="btn">Edit</button>
-        <button type="button" class="btn">Delete</button>
+        <button onclick="editTask(this)" type="button" class="btn">Edit</button>
+        <button onclick="deleteTask(this)" type="button" class="btn">Delete</button>
       </div>
     `)
-  })
+  ));
 
---fcc-editable-region--
-  
---fcc-editable-region--
+  taskForm.classList.toggle("hidden");
 });
 
-const resetForm = () => {
-  textInput.value = "";
-  dateInput.value = "";
-  descriptionInput.value = "";
-};
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```
