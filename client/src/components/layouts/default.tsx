@@ -45,7 +45,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader } from '../helpers';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 
 // preload common fonts
 import './fonts.css';
