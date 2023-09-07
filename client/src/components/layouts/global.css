@@ -639,16 +639,6 @@ pre {
   border-color: var(--primary-color);
 }
 
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: var(--secondary-background);
-}
-
-.nav-tabs > li > a {
-  border-radius: 0;
-}
-
 blockquote footer,
 blockquote small,
 blockquote .small {
