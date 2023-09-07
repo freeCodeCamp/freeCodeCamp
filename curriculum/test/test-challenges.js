@@ -314,9 +314,18 @@ function populateTestsForLang({ lang, challenges, meta }) {
               throw new AssertionError(result.error);
             }
             const { id, title, block, dashedName } = challenge;
+            assert.exists(
+              dashedName,
+              `Missing dashedName for challenge ${id} in ${block}.`
+            );
             const pathAndTitle = `${block}/${dashedName}`;
-            mongoIds.check(id, title);
-            challengeTitles.check(title, pathAndTitle);
+            const idVerificationMessage = mongoIds.check(id, title);
+            assert.isNull(idVerificationMessage, idVerificationMessage);
+            const dupeTitleCheck = challengeTitles.check(dashedName, block);
+            assert.isTrue(
+              dupeTitleCheck,
+              `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
+            );
           });
 
           const { challengeType } = challenge;
