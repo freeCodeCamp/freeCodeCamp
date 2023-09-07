@@ -18,12 +18,10 @@ COPY --chown=node:node . .
 # not useful since we need to install more than one package.
 
 RUN pnpm config set dedupe-peer-dependents false
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm \
-  --filter api-server --filter tools/scripts/build --filter challenge-parser --filter curriculum \
+RUN pnpm --filter api-server --filter tools/scripts/build --filter challenge-parser --filter curriculum \
   install -w --frozen-lockfile --ignore-scripts
 # TODO: create a prebuild script for the api?
-RUN pnpm create:config
-RUN pnpm create:utils
+RUN pnpm -F api-server common:setup
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.
@@ -44,9 +42,7 @@ COPY --chown=node:node api-server/package.json api-server/package.json
 RUN npm i -g pnpm@8
 # Prevent pnpm installing unnecessary packages (see above)
 RUN pnpm config set dedupe-peer-dependents false
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm \
-  --filter api-server \
-  install -w --prod --ignore-scripts
+RUN pnpm --filter api-server install -w --prod --ignore-scripts
 
 FROM node:18-alpine
 RUN npm i -g pm2@4
