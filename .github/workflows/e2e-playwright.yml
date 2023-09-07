@@ -128,9 +128,6 @@ jobs:
           pnpm run build:curriculum
           pnpm run build:server
 
-      - name: Seed Database
-        run: pnpm run seed
-
       - name: Seed Database with Certified User
         run: pnpm run seed:certified-user
 
