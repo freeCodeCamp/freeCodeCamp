@@ -1,0 +1,7 @@
+# Yes, it's weird to ignore the lockfile, but this is not a workspace and is
+# installed via npm i.
+package-lock.json
+/test-results
+/playwright-report
+/playwright/.cache/
+/playwright/.auth

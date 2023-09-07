@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-test.use({ storageState: 'LoginAuth.json' });
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.describe('Show certification own', () => {
   let page: Page;
