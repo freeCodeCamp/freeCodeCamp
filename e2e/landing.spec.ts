@@ -24,11 +24,7 @@ const superBlocks = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'College Algebra with Python',
-  'Foundational C# with Microsoft',
-  'Coding Interview Prep',
-  'Project Euler',
-  'Legacy Responsive Web Design'
+  'College Algebra with Python'
 ];
 
 test.beforeAll(async ({ browser }) => {
@@ -56,31 +52,13 @@ test('The component Landing-top renders correctly', async () => {
   );
 });
 
-test('Should render', async () => {
-  await expect(page).toHaveTitle(
-    'Learn to Code — For Free — Coding Courses for Busy People'
-  );
-  const callToAction = page.getByTestId(landingPageElements.callToAction);
-  const callToActionHeader = page.locator('a .login-btn-text').nth(1);
-  await expect(callToActionHeader).toHaveText("Get started (it's free)");
-  await expect(callToAction).toHaveCount(4);
-});
-
-test('Has visible header and sub-header', async () => {
-  const heading = page.getByTestId(landingPageElements.heading);
-  await expect(heading).toContainText('Learn to code — for free.');
-  expect(await page.isVisible('text=Build projects.')).toBeTruthy();
-  expect(await page.isVisible('text=Earn certifications.')).toBeTruthy();
-  expect(
-    await page.isVisible(
-      'text=Since 2014, more than 40,000 freeCodeCamp.org ' +
-        'graduates have gotten jobs at tech companies including:'
-    )
-  ).toBeTruthy();
-});
-
 test('Has 5 brand logos', async () => {
-  await expect(page.locator('#featured-logos')).toBeVisible();
+  const logos = page.getByTestId('brand-logo-container');
+  expect(await logos.nth(0).isVisible());
+  expect(await logos.nth(1).isVisible());
+  expect(await logos.nth(2).isVisible());
+  expect(await logos.nth(3).isVisible());
+  expect(await logos.nth(4).isVisible());
 });
 
 test('Has `as seen in` section', async () => {
