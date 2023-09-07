@@ -20,8 +20,6 @@ COPY --chown=node:node . .
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm --filter api-server --filter tools/scripts/build --filter challenge-parser --filter curriculum \
   install -w --frozen-lockfile --ignore-scripts
-# TODO: create a prebuild script for the api?
-RUN pnpm -F api-server common:setup
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.

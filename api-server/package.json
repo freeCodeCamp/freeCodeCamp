@@ -20,8 +20,10 @@
   "main": "none",
   "scripts": {
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
+    "prebuild": "pnpm common-setup",
     "build": "babel src --out-dir lib --ignore '/**/*.test.js' --copy-files --no-copy-ignored",
     "common-setup": "pnpm -w run create:config && pnpm -w run create:utils",
+    "predevelop": "pnpm common-setup",
     "develop": "node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
