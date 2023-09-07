@@ -321,11 +321,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             const pathAndTitle = `${block}/${dashedName}`;
             const idVerificationMessage = mongoIds.check(id, title);
             assert.isNull(idVerificationMessage, idVerificationMessage);
-            const dupeTitleCheck = challengeTitles.check(
-              dashedName,
-              block,
-              pathAndTitle
-            );
+            const dupeTitleCheck = challengeTitles.check(dashedName, block);
             assert.isTrue(
               dupeTitleCheck,
               `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
