@@ -54,7 +54,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
-  verifyCert: () => void;
+  verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
 };
@@ -228,6 +228,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
+            isEmailVerified={isEmailVerified}
           />
           {userToken && (
             <>

@@ -11,7 +11,7 @@ import {
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../../config/client/sass-compile.json';
+import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,

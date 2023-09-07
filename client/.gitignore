@@ -9,3 +9,12 @@ yarn-error.log
 
 /static/js
 ./static/_redirects
+static/curriculum-data
+
+# Generated config
+config/browser-scripts/*.json
+i18n/locales/**/trending.json
+
+# TODO: Remove once you've figured out why it's generated.
+# JS that probably should not be generated
+src/components/Donation/types.js

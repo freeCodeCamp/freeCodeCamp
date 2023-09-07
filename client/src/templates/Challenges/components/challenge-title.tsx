@@ -29,7 +29,7 @@ function ChallengeTitle({
         </>
       )}
       <div className='challenge-title'>
-        <h1>{children}</h1>
+        <h1 id='content-start'>{children}</h1>
         {isCompleted && <GreenPass />}
       </div>
     </div>

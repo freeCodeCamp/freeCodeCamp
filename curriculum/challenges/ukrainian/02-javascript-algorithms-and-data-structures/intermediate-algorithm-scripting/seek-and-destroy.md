@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-Вам буде надано початковий масив (перший аргумент у функції `destroyer`), який супроводжується одним або більше аргументами. Видаліть всі елементи з початкового масиву, які мають таке ж значення, як ці аргументи.
+You will be provided with an initial array as the first argument to the `destroyer` function, followed by one or more arguments. Видаліть всі елементи з початкового масиву, які мають таке ж значення, як ці аргументи.
 
-**Примітка:** потрібно використати об’єкт `arguments`.
+The function must accept an indeterminate number of arguments, also known as a variadic function. You can access the additional arguments by adding a rest parameter to the function definition or using the `arguments` object.
 
 # --hints--
 

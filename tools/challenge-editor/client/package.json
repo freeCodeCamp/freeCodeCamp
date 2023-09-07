@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
-    "codemirror": "5.65.14",
+    "codemirror": "5.65.15",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "6.15.0",

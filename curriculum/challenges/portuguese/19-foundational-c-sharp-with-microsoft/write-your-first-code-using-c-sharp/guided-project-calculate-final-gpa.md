@@ -7,16 +7,16 @@ dashedName: guided-project-calculate-final-gpa
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/</a> e complete todas as tarefas do módulo "Projeto guiado - calcular o GPA final". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/</a> e complete todas as tarefas do módulo "Projeto guiado - calcular o GPA final". Isso é **necessário** para conquistar o troféu "Escreva seu primeiro código usando o C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
 
 ## --text--
 
-Suponha que `decimal gradePointAverage = 3.99872831;`.
+Suponha que `decimal gradePointAverage = 3.99872831m;`.
 
 Qual é o valor de `(int) gradePointAverage`?
 

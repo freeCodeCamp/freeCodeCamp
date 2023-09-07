@@ -99,18 +99,18 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.10",
+    "@babel/eslint-parser": "7.22.11",
     "@babel/plugin-proposal-function-bind": "7.22.5",
-    "@babel/preset-env": "7.22.10",
+    "@babel/preset-env": "7.22.14",
     "@babel/preset-react": "7.22.5",
-    "@babel/preset-typescript": "7.22.5",
+    "@babel/preset-typescript": "7.22.11",
     "@testing-library/cypress": "8.0.7",
     "@testing-library/dom": "8.20.1",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.4",
     "@types/lodash": "4.14.197",
-    "@types/node": "18.17.11",
+    "@types/node": "18.17.14",
     "@types/store": "2.0.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
@@ -149,7 +149,7 @@
     "store": "2.0.12",
     "ts-node": "10.9.1",
     "typescript": "4.9.5",
-    "webpack-bundle-analyzer": "4.9.0",
+    "webpack-bundle-analyzer": "4.9.1",
     "yargs": "17.7.2"
   }
 }

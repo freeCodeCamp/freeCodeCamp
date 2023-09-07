@@ -93,62 +93,43 @@
   position: relative;
 }
 
-#mobile-layout .nav-tabs {
+#mobile-layout .nav-lists {
   margin: 0 1px;
   padding: 0;
   display: flex;
   border-bottom: 1px solid var(--quaternary-color);
-  height: 2rem;
 }
 
 /* Need to narrow width to make room for preview toggle button */
-#mobile-layout .nav-tabs[data-haspreview='true'] {
+#mobile-layout .nav-lists[data-haspreview='true'] {
   width: calc(100% - 2rem - 2px);
 }
 
-#mobile-layout .nav-tabs > li {
-  flex: 1;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-#mobile-layout .nav-tabs > li > a {
-  margin-inline-end: 0;
-  text-decoration: none;
+#mobile-layout .nav-lists > button {
+  height: 2.5em;
   font-size: 0.8em;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(2rem - 1px);
-  padding: 0;
 }
 
-#mobile-layout .nav-tabs > li.active > a {
-  color: var(--secondary-background);
-  background-color: var(--quaternary-color);
-  border: 0;
-  font-weight: 900;
-  height: 100%;
+#mobile-layout .nav-lists button[data-state='active'] {
+  pointer-events: none;
 }
 
-#mobile-layout .nav-tabs > li:not(.active) > a:hover,
+#mobile-layout
+  .nav-lists
+  > button:is([aria-selected='false'], [aria-expanded='false']) {
+  color: inherit;
+  background-color: inherit;
+}
+
+#mobile-layout .nav-lists > button:hover,
 .portal-button:hover {
   background: var(--quaternary-background);
   color: var(--secondary-color);
 }
 
 .portal-button {
-  position: absolute;
-  right: 1px;
-  top: 0;
-  height: 2rem;
   width: 2rem;
   border: 0;
-  /* This is the default for the a elements in the nav-tabs, inherited from bootstrap */
-  /* We need to set this here to override our default button styles. */
-  background: transparent;
-  border-bottom: 1px solid var(--quaternary-color);
   padding: 0;
 }
 
@@ -163,14 +144,15 @@
 }
 
 #mobile-layout .tab-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  height: 100%;
   overflow-y: hidden;
-  padding-block-end: 37px;
 }
 
-#mobile-layout-pane-preview .preview-external-window {
+#mobile-layout .tab-content[data-state='inactive'] {
+  height: 1px;
+}
+
+#mobile-layout .preview-external-window {
   text-align: center;
   margin-top: 60px;
 }
@@ -178,15 +160,6 @@
 #mobile-layout-pane-editor {
   display: flex;
   flex-direction: column;
-}
-
-[data-has-editable-boundaries='true'] #mobile-layout .tab-content {
-  padding-block-end: 0;
-}
-
-#mobile-layout .tab-pane {
-  height: 100%;
-  overflow: hidden;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -214,6 +187,6 @@
 }
 
 /* Focus indicator for tab panel */
-.nav-tabs [role='tab']:focus {
+.nav-lists [role='tab']:focus {
   outline-offset: -3px;
 }

@@ -1,7 +1,7 @@
 import { challengeTypes } from '../../../../../config/challenge-types';
-import frameRunnerData from '../../../../../config/client/frame-runner.json';
-import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import pythonRunnerData from '../../../../../config/client/python-runner.json';
+import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
+import testEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
+import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';
 
 import {
   ChallengeFile as PropTypesChallengeFile,

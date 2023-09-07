@@ -45,16 +45,16 @@ Accedi all'oggetto `myStorage` e assegna il contenuto della proprietà `glove bo
 assert(gloveBoxContents === 'maps');
 ```
 
-Il tuo codice dovrebbe utilizzare la notazione a punti e parentesi per accedere a `myStorage`.
+Your code should use dot notation, where possible, to access `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 `gloveBoxContents` dovrebbe ancora essere dichiarata con `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]|const\s*{\s*('|")glove box\2:\s*gloveBoxContents\s*}\s*=\s*myStorage\.car\.inside;/);
 ```
 
 # --seed--

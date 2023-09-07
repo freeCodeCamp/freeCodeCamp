@@ -115,6 +115,19 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
+      {showUpcomingChanges && (
+        <>
+          <Spacer size='medium' />
+          <h1 className={forLanding ? 'big-heading' : ''}>
+            {t('landing.upcoming-heading')}
+          </h1>
+          <ul>
+            {superBlockOrder[SuperBlockStages.Upcoming].map((superBlock, i) => (
+              <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }
