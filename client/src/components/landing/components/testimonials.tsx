@@ -12,12 +12,18 @@ const Testimonials = (): JSX.Element => {
 
   return (
     <div className='testimonials'>
-      <h1 className='big-heading text-center'>
+      <h1
+        className='big-heading text-center'
+        data-playwright-test-label='testimonials-section-header'
+      >
         {t('landing.testimonials.heading')}
       </h1>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         <div className='testimonial-card'>
-          <div className='testimonial-card-header'>
+          <div
+            className='testimonial-card-header'
+            data-playwright-test-label='testimonials-endorser-image-container-1'
+          >
             <LazyImage
               alt='Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.'
               className='testimonial-image'
@@ -27,16 +33,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-location-1'>
                 {' '}
                 <Trans>landing.testimonials.shawn.location</Trans>
               </p>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-occupation-1'>
                 <Trans>landing.testimonials.shawn.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-testimony-1'>
                 <Trans>landing.testimonials.shawn.testimony</Trans>
               </p>
             </div>
@@ -44,7 +50,10 @@ const Testimonials = (): JSX.Element => {
         </div>
 
         <div className='testimonial-card'>
-          <div className='testimonial-card-header'>
+          <div
+            className='testimonial-card-header'
+            data-playwright-test-label='testimonials-endorser-image-container-2'
+          >
             <LazyImage
               alt='Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.'
               className='testimonial-image'
@@ -54,16 +63,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-location-2'>
                 {' '}
                 <Trans>landing.testimonials.sarah.location</Trans>
               </p>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-occupation-2'>
                 <Trans>landing.testimonials.sarah.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-testimony-2'>
                 <Trans>landing.testimonials.sarah.testimony</Trans>
               </p>
             </div>
@@ -71,7 +80,10 @@ const Testimonials = (): JSX.Element => {
         </div>
 
         <div className='testimonial-card'>
-          <div className='testimonial-card-header'>
+          <div
+            className='testimonial-card-header'
+            data-playwright-test-label='testimonials-endorser-image-container-3'
+          >
             <LazyImage
               alt='Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.'
               className='testimonial-image'
@@ -81,16 +93,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-location-3'>
                 {' '}
                 <Trans>landing.testimonials.emma.location</Trans>
               </p>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-occupation-3'>
                 <Trans>landing.testimonials.emma.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p>
+              <p data-playwright-test-label='testimonials-endorser-testimony-3'>
                 <Trans>landing.testimonials.emma.testimony</Trans>
               </p>
             </div>

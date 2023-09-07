@@ -61,8 +61,53 @@ test('Has 5 brand logos', async () => {
   expect(await logos.nth(4).isVisible());
 });
 
-test('Has `as seen in` section', async () => {
-  await expect(page.locator('.as-seen-in')).toBeVisible();
+test('The campers landing page figure is visbile on desktop and hidden on mobile view', async ({
+  isMobile
+}) => {
+  const landingPageImage = page.getByTestId('landing-page-figure');
+
+  if (!isMobile) {
+    await expect(landingPageImage).toBeVisible();
+  } else {
+    await expect(landingPageImage).toBeHidden();
+  }
+});
+
+test('The as seen in container is vissible with featured logos', async () => {
+  const asSeenInContainer = page.getByTestId('landing-as-seen-in-text');
+  await expect(asSeenInContainer).toHaveText('As seen in:');
+
+  const featuredLogos = page.getByTestId('landing-as-seen-in-container-logos');
+  await expect(featuredLogos).toBeVisible();
+});
+
+test('Testimonial section has a header', async () => {
+  const testimonialsHeader = page.getByTestId('testimonials-section-header');
+  await expect(testimonialsHeader).toHaveText(
+    'Here is what our alumni say about freeCodeCamp:'
+  );
+});
+
+test('Testimonial endorser people have images, occupation, location and testimony visible', async () => {
+  for (let index = 1; index <= 3; index++) {
+    const testimonialEndorserImage = page.getByTestId(
+      `testimonials-endorser-image-container-${index}`
+    );
+    const testimonialEndorserLocation = page.getByTestId(
+      `testimonials-endorser-location-${index}`
+    );
+    const testimonialEndorserOccupation = page.getByTestId(
+      `testimonials-endorser-occupation-${index}`
+    );
+    const testimonialEndorserTestimony = page.getByTestId(
+      `testimonials-endorser-testimony-${index}`
+    );
+
+    await expect(testimonialEndorserImage).toBeVisible();
+    await expect(testimonialEndorserLocation).toBeVisible();
+    await expect(testimonialEndorserOccupation).toBeVisible();
+    await expect(testimonialEndorserTestimony).toBeVisible();
+  }
 });
 
 test('Has links to all superblocks', async () => {
@@ -72,11 +117,6 @@ test('Has links to all superblocks', async () => {
     const btn = curriculumBtns.nth(i);
     await expect(btn).toContainText(cert);
   });
-});
-
-test('Has 3 testimonial cards', async () => {
-  const testimonials = page.locator(`.${landingPageElements.testimonials}`);
-  await expect(testimonials).toHaveCount(3);
 });
 
 test('Has FAQ section', async () => {
