@@ -11,9 +11,6 @@ importers:
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
-      invariant:
-        specifier: 2.2.4
-        version: 2.2.4
     devDependencies:
       '@babel/eslint-parser':
         specifier: 7.22.11
@@ -1023,6 +1020,12 @@ importers:
       unist-util-visit:
         specifier: 2.0.3
         version: 2.0.3
+
+  shared:
+    dependencies:
+      invariant:
+        specifier: 2.2.4
+        version: 2.2.4
 
   tools/challenge-editor/api:
     dependencies:

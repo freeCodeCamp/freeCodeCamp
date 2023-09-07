@@ -16,7 +16,7 @@ import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
@@ -45,7 +45,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';

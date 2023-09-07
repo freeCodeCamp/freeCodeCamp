@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues

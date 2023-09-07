@@ -18,7 +18,7 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regeneratePathAndHistory } from '../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
 interface ShowProjectLinksProps {
   certName: string;

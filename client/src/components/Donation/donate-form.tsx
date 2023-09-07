@@ -13,7 +13,7 @@ import {
   defaultDonation,
   modalDefaultDonation,
   type DonationConfig
-} from '../../../../config/donation-settings';
+} from '../../../../shared/config/donation-settings';
 import { defaultDonationFormState } from '../../redux';
 import { updateDonationFormState, postCharge } from '../../redux/actions';
 import {

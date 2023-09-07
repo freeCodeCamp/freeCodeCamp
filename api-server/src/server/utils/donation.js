@@ -2,7 +2,7 @@
 import axios from 'axios';
 import debug from 'debug';
 import isEmail from 'validator/lib/isEmail';
-import { donationSubscriptionConfig } from '../../../../config/donation-settings';
+import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');

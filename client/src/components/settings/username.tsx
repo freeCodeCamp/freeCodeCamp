@@ -13,7 +13,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
 import { usernameValidationSelector } from '../../redux/settings/selectors';
 import {
   validateUsername,
