@@ -104,7 +104,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.UpcomingPython
   ],
   [Languages.Chinese]: [
-    SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
@@ -113,7 +112,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.UpcomingPython
   ],
   [Languages.ChineseTraditional]: [
-    SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
