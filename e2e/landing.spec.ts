@@ -53,12 +53,11 @@ test('The component Landing-top renders correctly', async () => {
 });
 
 test('Has 5 brand logos', async () => {
-  const logos = page.getByTestId('brand-logo-container');
-  expect(await logos.nth(0).isVisible());
-  expect(await logos.nth(1).isVisible());
-  expect(await logos.nth(2).isVisible());
-  expect(await logos.nth(3).isVisible());
-  expect(await logos.nth(4).isVisible());
+  const logos = page.getByTestId('brand-logo-container').locator('svg');
+  await expect(logos).toHaveCount(5);
+  for (const logo of await logos.all()) {
+    await expect(logo).toBeVisible();
+  }
 });
 
 test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
