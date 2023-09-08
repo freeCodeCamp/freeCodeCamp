@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../config/superblocks';
+import { SuperBlocks } from '../shared/config/superblocks';
 import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });

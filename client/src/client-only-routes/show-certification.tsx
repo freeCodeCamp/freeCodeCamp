@@ -8,8 +8,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import envData from '../../config/env.json';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
@@ -35,12 +35,12 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   certTypes,
   certTypeTitleMap
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;

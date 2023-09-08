@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { generateIconComponent } from '../../../assets/icons';
 import { Spacer } from '../../../components/helpers';
 

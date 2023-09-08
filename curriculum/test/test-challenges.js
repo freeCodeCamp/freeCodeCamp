@@ -31,12 +31,12 @@ const {
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../config/challenge-types');
+const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
 
-const { getLines } = require('../../utils/get-lines');
+const { getLines } = require('../../shared/utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');

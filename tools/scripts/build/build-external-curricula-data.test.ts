@@ -4,7 +4,7 @@ import fs from 'fs';
 import readdirp from 'readdirp';
 // TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator

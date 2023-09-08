@@ -1,4 +1,4 @@
-import { SuperBlocks } from './superblocks';
+import { SuperBlocks } from '../../shared/config/superblocks';
 
 /**
  * Certifications are not equivalent to superblocks. Each superblock corresponds

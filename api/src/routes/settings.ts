@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { isProfane } from 'no-profanity';
-import { isValidUsername } from '../../../utils/validate';
-import { blocklistedUsernames } from '../../../config/constants';
+import { isValidUsername } from '../../../shared/utils/validate';
+import { blocklistedUsernames } from '../../../shared/config/constants';
 import { schemas } from '../schemas';
 
 /**

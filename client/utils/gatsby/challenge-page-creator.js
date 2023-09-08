@@ -3,7 +3,7 @@ const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes
-} = require('../../../config/challenge-types');
+} = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
