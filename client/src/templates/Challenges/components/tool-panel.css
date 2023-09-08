@@ -17,8 +17,7 @@
   bottom: 0;
 }
 
-.tool-panel-group-mobile > .btn-block,
-.tool-panel-group-mobile > .dropdown > .btn-block {
+.tool-panel-group-mobile > .btn-block {
   margin: 0 2px 0 0;
   padding: 5px 0;
 }
@@ -41,17 +40,4 @@
 
 .tool-panel-group-mobile *:focus-visible {
   outline-offset: -3px;
-}
-
-.tool-panel-group .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  width: calc(100% + 2px);
-  text-align: center;
-  min-width: 240px;
-  left: -1px;
-}
-
-.tool-panel-group .dropdown-menu a {
-  padding: 0.5rem;
 }
