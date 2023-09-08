@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bde
-title: Використовуйте попередньо визначену шкалу, щоб розмістити елементи
+title: Використайте попередньо визначену шкалу, щоб розмістити елементи
 challengeType: 6
 forumTopicId: 301494
 dashedName: use-a-pre-defined-scale-to-place-elements

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { allowedOrigins } = require('../../../../config/cors-settings');
+const { allowedOrigins } = require('../../../config/cors-settings');
 // process.env.HOME_LOCATION is being used as a fallback here. If the one
 // provided by the client is invalid we default to this.
 const { availableLangs } = require('../../../../config/i18n');

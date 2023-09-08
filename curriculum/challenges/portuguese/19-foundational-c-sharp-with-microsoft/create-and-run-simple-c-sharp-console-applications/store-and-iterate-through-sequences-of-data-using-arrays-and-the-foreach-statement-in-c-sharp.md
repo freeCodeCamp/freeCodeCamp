@@ -7,9 +7,9 @@ dashedName: store-and-iterate-through-sequences-of-data-using-arrays-and-the-for
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank">https://learn.microsoft.com/training/modules/csharp-arrays/</a> e complete todas as tarefas do módulo "Armazene e percorra sequências de dados usando arrays e a instrução foreach em C#". Isto é necessário para adquirir o troféu "Crie e execute aplicações simples de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-arrays/</a> e complete todas as tarefas do módulo "Armazene e percorra sequências de dados usando arrays e a instrução foreach em C#". Isso é **necessário** para conquistar o troféu "Crie e execute aplicações de console simples em C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--

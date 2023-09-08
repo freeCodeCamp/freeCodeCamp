@@ -85,9 +85,9 @@
     "finish-exam": "Завершити екзамен",
     "finish": "Завершити",
     "submit-exam-results": "Здати результати",
-    "verify-trophy": "Verify Trophy",
-    "link-account": "Link Account",
-    "unlink-account": "Unlink Account"
+    "verify-trophy": "Підтвердити трофей",
+    "link-account": "Прив’язати обліковий запис",
+    "unlink-account": "Від’єднати обліковий запис"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -116,9 +116,9 @@
       }
     },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
-    "professional-certs-heading": "Earn free professional certifications:",
-    "interview-prep-heading": "Prepare for the developer interview job search:",
+    "core-certs-heading": "Отримайте безоплатні підтверджені сертифікації з основної навчальної програми freeCodeCamp:",
+    "professional-certs-heading": "Отримайте безоплатні професійні сертифікації:",
+    "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "faq": "Часті питання:",
     "faqs": [
       {
@@ -243,13 +243,13 @@
       "reset": "Скинути весь мій прогрес",
       "delete": "Видалити мій обліковий запис",
       "delete-title": "Видалити мій обліковий запис",
-      "delete-p1": "Це дійсно видалить усі ваші дані (весь ваш прогрес та дані облікового запису також).",
+      "delete-p1": "Це дійсно видалить усі ваші дані (включно з прогресом та даними облікового запису).",
       "delete-p2": "Ми не зможемо відновити ці дані для вас пізніше, навіть якщо ви передумаєте.",
       "delete-p3": "Якщо у вас є пропозиція щодо покращення проєкту, надішліть нам електронний лист, і ми зробимо все можливе: <0>{{email}}</0>",
       "nevermind": "Я не хочу видаляти свій обліковий запис.",
       "certain": "Я впевнений(-а) на 100%. Видаліть все, що пов’язане з цим обліковим записом.",
       "reset-heading": "Скинути мій прогрес",
-      "reset-p1": "Це дійсно видалить весь ваш прогрес (бали, завершені завдання, наші записи ваших проєктів, будь-які отримані сертифікації) та всі дані.",
+      "reset-p1": "Це дійсно видалить весь прогрес (бали, завершені завдання, записи проєктів, будь-які отримані сертифікації) та дані.",
       "reset-p2": "Ми не зможемо відновити ці дані для вас пізніше, навіть якщо ви передумаєте.",
       "nevermind-2": "Я не хочу видаляти весь мій прогрес.",
       "reset-confirm": "Скинути все. Я хочу почати з початку."
@@ -339,7 +339,7 @@
       "p6": "Якщо ви відчуваєте перевантаження, це нормально. Програмувати — важко.",
       "p7": "Практика — це найголовніше. Практика, практика, практика.",
       "p8": "Ця навчальна програма дасть вам тисячі годин практики в програмуванні.",
-      "p9": "А якщо ви бажаєте дізнатися більше про математику та теорію комп’ютерних наук, то у нас також є тисячі годин відеокурсів на <0>YouTube-каналі freeCodeCamp</0>.",
+      "p9": "А якщо ви бажаєте дізнатися більше про математику та теорію комп’ютерних наук, то у нас також є тисячі годин відеокурсів на <0>ютубі freeCodeCamp</0>.",
       "p10": "Якщо ви хочете отримати роботу розробника або знайти клієнтів онлайн, навички програмування будуть лише частиною завдання. Вам також потрібно створити свою мережу контактів і сформувати репутацію розробника.",
       "p11": "Це можна зробити на LinkedIn та GitHub, а також на <0>форумі freeCodeCamp</0>.",
       "p12": "Щасливого програмування!"
@@ -441,16 +441,18 @@
       "exit-no": "Ні, я хочу продовжити"
     },
     "ms": {
-      "link-header": "Link your Microsoft account",
-      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
-      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
-      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
-      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
-      "link-li-2": "Find and click the \"Share link\" button.",
-      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
-      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "link-header": "Прив’яжіть свій обліковий запис Microsoft",
+      "link-signin": "Щоб виконати це завдання, спочатку потрібно прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp. Увійдіть, щоб прив’язати ім’я користувача Microsoft.",
+      "linked": "Обліковий запис Microsoft з іменем користувача «{{ msUsername }}» вже прив’язаний до вашого облікового запису freeCodeCamp. Якщо це не ваше ім’я користувача Microsoft, видаліть посилання.",
+      "unlinked": "Щоб виконати це завдання, спочатку потрібно прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp. Дотримуйтесь цих інструкцій:",
+      "link-li-1": "Перейдіть до <0>https://learn.microsoft.com/users/me/transcript</0> через браузер, з якого увійшли до облікового запису Microsoft",
+      "link-li-2": "Знайдіть та натисніть кнопку «Поділитись посиланням».",
+      "link-li-3": "Якщо у вас немає посилання на стенограму, натисніть «Створити посилання», щоб створити його.",
+      "link-li-4": "Натисніть кнопку «Копіювати посилання», щоб скопіювати посилання на стенограму.",
+      "link-li-5": "Введіть посилання в полі нижче. Воно має виглядати схоже до <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Натисніть «Прив’язати обліковий запис», щоб прив’язати ім’я користувача Microsoft.",
+      "transcript-label": "Посилання на стенограму Microsoft",
+      "invalid-transcript": "Ваше посилання на стенограму невірне. Воно повинне мати такий формат: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> — перевірте, чи текст ВЕЛИКИМИ ЛІТЕРАМИ правильний."
     }
   },
   "donate": {
@@ -712,12 +714,12 @@
     "challenge-submit-too-big": "На жаль, ви не можете надіслати свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
-    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
-    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
-    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
-    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-    "ms-unlinked": "The link to your Microsoft username has been removed.",
-    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
+    "ms-trophy-err": "Ми не змогли перевірити ваш трофей на навчальній платформі Microsoft.",
+    "ms-trophy-verified": "Ваш трофей на навчальній платформі Microsoft підтверджено.",
+    "ms-linked": "Ім’я користувача Microsoft успішно прив’язано до облікового запису freeCodeCamp.",
+    "ms-link-err": "При спробі прив’язати ім’я користувача Microsoft до облікового запису freeCodeCamp виникла помилка.",
+    "ms-unlinked": "Посилання на ім’я користувача Microsoft видалено.",
+    "ms-unlink-err": "При спробі видалити посилання на ім’я користувача Microsoft виникла помилка."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

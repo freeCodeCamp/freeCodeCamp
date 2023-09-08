@@ -7,7 +7,9 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   <div
     className="challenge-title"
   >
-    <h1>
+    <h1
+      id="content-start"
+    >
       title text
     </h1>
     <svg

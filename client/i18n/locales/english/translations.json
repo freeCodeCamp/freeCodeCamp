@@ -449,8 +449,10 @@
       "link-li-2": "Find and click the \"Share link\" button.",
       "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
       "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {
@@ -743,7 +745,7 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Issued",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
@@ -925,5 +927,12 @@
     "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
     "certain": "Yes, sign out of my account",
     "nevermind": "Nevermind, I don't want to sign out"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }

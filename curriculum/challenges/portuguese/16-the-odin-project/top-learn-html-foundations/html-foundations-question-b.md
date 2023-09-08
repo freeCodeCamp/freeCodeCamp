@@ -1,47 +1,47 @@
 ---
 id: 637f4e1672c65bc8e73dfe1f
-title: HTML Foundations Question B
+title: Questão B sobre Fundamentos de HTML
 challengeType: 15
 dashedName: html-foundations-question-b
 ---
 
 # --description--
 
-Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.
+Quase todos os elementos de uma página HTML são apenas trechos de conteúdo envolvidos por tags de abertura e de fechamento do HTML.
 
-Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets <>. For example, an opening paragraph tag looks like this: `<p>`.
+As tags de abertura dizem ao navegador que este é o início de um elemento HTML. Elas são compostas por uma palavra-chave contida em sinais de menor e maior que <>. Por exemplo, uma tag de abertura de um parágrafo terá esta aparência: `<p>`.
 
-Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: `</p>`.
+As tags de fechamento dizem ao navegador onde um elemento termina. Quase sempre, elas são iguais às tags de abertura. A única diferença está no fato de terem uma barra antes da palavra-chave. Por exemplo, uma tag de fechamento de um parágrafo terá esta aparência: `</p>`.
 
-A full paragraph element looks like this:
+Um elemento de parágrafo completo terá esta aparência:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="diagrama de elemento" />
 
-You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
+Você pode pensar em elementos como contêineres de conteúdo. As tags de abertura e fechamento informam ao navegador o conteúdo que o elemento contém. O navegador pode, então, usar essas informações para determinar como deve interpretar e formatar o conteúdo.
 
-There are some HTML elements that do not have a closing tag. These elements often look like this: `<br />` or `<img/>`, but some can also be used without the closing forward slash such as `<br>` or `<img>`. These are known as self-closing tags or empty elements because they don’t wrap any content. You will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.
+Existem alguns elementos do HTML que não possuem uma tag de fechamento. Esses elementos geralmente têm esta aparência: `<br />` ou `<img/>`. Alguns, porém, também podem ser vistos sem a barra de fechamento, como `<br>` ou `<img>`. Essas tags são conhecidas como tags de fechamento próprio ou como elementos vazios, pois não envolvem nenhum conteúdo. Você encontrará algumas delas em lições posteriores, mas a maior parte dos elementos terá tags de abertura e de fechamento.
 
-HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
+O HTML tem uma vasta lista de tags predefinidas que você pode usar para criar tipos diferentes de elementos. É importante usar as tags corretas para o conteúdo. Usar as tags corretas pode ter um grande impacto em dois aspectos dos seus sites: como eles são classificados em mecanismos de busca e se eles serão acessíveis aos usuários que dependem de tecnologias assistivas para usar a internet, como, por exemplo, os leitores de telas.
 
-Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
+O uso de elementos corretos para o conteúdo é chamado HTML semântico. Você explorará isso com mais profundidade mais a frente no currículo.
 
 # --question--
 
 ## --text--
 
-What are the three parts of most HTML elements?
+Quais são as três partes da maioria dos elementos do HTML?
 
 ## --answers--
 
-An opening tag, self closing tag, and content.
+Uma tag de abertura, uma tag de fechamento próprio e o conteúdo.
 
 ---
 
-An opening tag, closing tag, and content.
+Uma tag de abertura, uma tag de fechamento e o conteúdo.
 
 ---
 
-An opening tag, closing tag, and attribute.
+Uma tag de abertura, uma tag de fechamento e um atributo.
 
 
 ## --video-solution--

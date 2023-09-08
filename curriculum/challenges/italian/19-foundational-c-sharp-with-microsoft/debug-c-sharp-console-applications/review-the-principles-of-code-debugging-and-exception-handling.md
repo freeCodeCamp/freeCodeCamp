@@ -7,9 +7,9 @@ dashedName: review-the-principles-of-code-debugging-and-exception-handling
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> and complete all the tasks for the "Review the Principles of Code Debugging and Exception Handling" module. This is required to earn the "Debug C# Console Applications" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> and complete all the tasks for the "Review the Principles of Code Debugging and Exception Handling" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--

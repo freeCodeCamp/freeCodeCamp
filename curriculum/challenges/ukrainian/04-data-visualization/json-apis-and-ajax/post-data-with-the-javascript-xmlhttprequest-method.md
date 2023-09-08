@@ -1,6 +1,6 @@
 ---
 id: 587d7faf367417b2b2512be9
-title: Надсилання даних методом JavaScript XMLHttpRequest
+title: Опублікуйте дані за допомогою методу XMLHttpRequest від JavaScript
 challengeType: 6
 forumTopicId: 301504
 dashedName: post-data-with-the-javascript-xmlhttprequest-method
@@ -8,9 +8,9 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-У попередніх прикладах, ви отримували дані із зовнішнього ресурсу. Проте ви також можете надсилати дані на зовнішній ресурс, допоки він підтримує запити AJAX та вам відома URL-адреса.
+У попередніх прикладах ви отримували дані від зовнішнього джерела. Проте дані можна і надсилати до зовнішнього джерела, якщо воно підтримує запити AJAX та ви знаєте URL-адресу.
 
-Метод JavaScript's `XMLHttpRequest` використовують для надсилання даних на сервер. Наприклад:
+Метод `XMLHttpRequest` від JavaScript використовують, щоб надіслати дані на сервер. Наприклад:
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -26,27 +26,27 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Вам вже зустрічались ці методи. Here the `open` method initializes the request as a `POST` to the given URL of the external resource, and passes `true` as the third parameter - indicating to perform the operation asynchronously.
+Вам вже зустрічались ці методи. У прикладі метод `open` ініціалізує запит як `POST` до заданої URL-адреси зовнішнього джерела та передає `true` як третій параметр (вказуючи, що операцію потрібно виконати асинхронно).
 
-The `setRequestHeader` method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the `open` method, but before the `send` method. The two parameters are the name of the header and the value to set as the body of that header.
+Метод `setRequestHeader` встановлює значення заголовка запиту HTTP, в якому присутня інформація про відправника та сам запит. Його потрібно викликати після методу `open`, але перед методом `send`. Два параметри — це назва заголовка і значення, встановлене як тіло цього заголовка.
 
-Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of `4` means the operation is complete, and a `status` of `201` means it was a successful request. Therefore, the document's HTML can be updated.
+Потім слухач події `onreadystatechange` обробляє зміну в стані запиту. `readyState` зі значенням `4` означає, що операцію завершено, а `status` зі значенням `201` означає, що запит виконано успішно. Тому HTML документа можна оновити.
 
-Finally, the `send` method sends the request with the `body` value. The `body` consists of a `userName` and a `suffix` key.
+Вкінці метод `send` надсилає запит зі значенням `body`. `body` складається з `userName` та ключа `suffix`.
 
 # --instructions--
 
-Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text `loves cats`.
+Оновіть код, щоб він здійснив запит `POST` до кінцевої точки API. Потім напишіть своє ім’я у полі введення та натисніть `Send Message`. Функція AJAX має замінити `Reply from Server will be here.` на дані з сервера. Відформатуйте відповідь так, щоб показувалося ваше ім’я з текстом `loves cats`.
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+Код має створити новий `XMLHttpRequest`.
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a `POST` request to the server.
+Код має використати метод `open`, щоб ініціалізувати запит `POST` до сервера.
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
@@ -62,13 +62,13 @@ assert(
 );
 ```
 
-Your code should have an `onreadystatechange` event handler set to a function.
+Код повинен мати обробник події `onreadystatechange` зі значенням функції.
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
 ```
 
-Your code should get the element with class `message` and change its `textContent` to `userName loves cats`
+Код має отримати елемент з класом `message` та змінити його `textContent` на `userName loves cats`
 
 ```js
 assert(

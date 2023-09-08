@@ -20,7 +20,7 @@
     "fastify": "4.21.0",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
-    "jsonwebtoken": "9.0.1",
+    "jsonwebtoken": "9.0.2",
     "mongodb": "^4.16.0",
     "nanoid": "3",
     "no-profanity": "^1.4.2",

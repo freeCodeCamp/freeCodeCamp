@@ -8,6 +8,6 @@ msTrophyId: learn.wwl.get-started-c-sharp-part-6.trophy
 
 # --description--
 
-Now that you've completed all of the "Debug C# Console Applications" challenges, you should have earned a trophy for it on Microsoft's learning platform.
+Agora que você completou todos os desafios de "Depure aplicações de console em C#", você deveria ter conquistado o troféu na plataforma Microsoft Learn. Se você não vê esse troféu ao visualizar <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">sua página de conquistas</a>, provavelmente não completou todas as tarefas e seu troféu não pode ser verificado.
 
-Link your Microsoft username to your freeCodeCamp account and click the "Verify Trophy" button below to complete the challenge. Este troféu é necessário para se qualificar ao fazer o exame de certificação.
+Vincule seu nome de usuário da Microsoft à sua conta freeCodeCamp e clique no botão "Verificar troféu" abaixo para completar o desafio. O troféu é **necessário** para se qualificar para o exame de certificação.
