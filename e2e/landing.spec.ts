@@ -73,12 +73,10 @@ test('Has `as seen in` section', async () => {
 test('Has links to all superblocks', async () => {
   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
   await expect(curriculumBtns).toHaveCount(15);
-  await Promise.all(
-    superBlocks.map(async (cert, i) => {
-      const btn = curriculumBtns.nth(i);
-      return await expect(btn).toContainText(cert);
-    })
-  );
+  for (let i = 0; i < superBlocks.length; i++) {
+    const btn = curriculumBtns.nth(i);
+    await expect(btn).toContainText(superBlocks[i]);
+  }
 });
 
 test('Has 3 testimonial cards', async () => {
