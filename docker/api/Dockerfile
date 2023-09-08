@@ -34,9 +34,10 @@ RUN pnpm build:server
 FROM node:18-bullseye AS deps
 
 WORKDIR /home/node/build
-COPY --chown=node:node package.json .
 COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api-server/package.json api-server/package.json
+COPY --chown=node:node shared/package.json shared/package.json
+
 RUN npm i -g pnpm@8
 # Prevent pnpm installing unnecessary packages (see above)
 RUN pnpm config set dedupe-peer-dependents false
@@ -50,11 +51,11 @@ COPY --from=builder --chown=node:node /home/node/build/api-server/config/ api-se
 COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
 COPY --from=builder --chown=node:node /home/node/build/api-server/ecosystem.config.js api-server/ecosystem.config.js
 COPY --from=builder --chown=node:node /home/node/build/api-server/package.json api-server/package.json
-COPY --from=builder --chown=node:node /home/node/build/utils/ utils/
-COPY --from=builder --chown=node:node /home/node/build/config/ config/
+COPY --from=builder --chown=node:node /home/node/build/shared/ shared/
 COPY --from=builder --chown=node:node /home/node/build/package.json package.json
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api-server/node_modules/ api-server/node_modules/
+COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/
 
 CMD ["pm2-runtime", "start", "api-server/ecosystem.config.js"]
 
