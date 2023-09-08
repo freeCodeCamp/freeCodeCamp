@@ -66,10 +66,10 @@ test('The campers landing page figure is visbile on desktop and hidden on mobile
 }) => {
   const landingPageImage = page.getByTestId('landing-page-figure');
 
-  if (!isMobile) {
-    await expect(landingPageImage).toBeVisible();
-  } else {
+  if (isMobile) {
     await expect(landingPageImage).toBeHidden();
+  } else {
+    await expect(landingPageImage).toBeVisible();
   }
 });
 
