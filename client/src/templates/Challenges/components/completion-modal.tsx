@@ -29,7 +29,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
 import { fireConfetti } from '../../../utils/fire-confetti';
-import { certMapWithoutFullStack } from '../../../resources/cert-and-project-map';
+import { certsToProjects } from '../../../../config/cert-and-project-map';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -82,9 +82,9 @@ interface CompletionModalState {
 }
 
 const isCertificationProject = (id: string) =>
-  certMapWithoutFullStack.some(cert => {
-    return cert.projects.some((project: { id: string }) => project.id === id);
-  });
+  Object.values(certsToProjects).some(cert =>
+    cert.some(project => project.id === id)
+  );
 
 class CompletionModal extends Component<
   CompletionModalsProps,
