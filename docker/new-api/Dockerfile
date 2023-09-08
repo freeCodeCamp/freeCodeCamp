@@ -27,12 +27,16 @@ FROM node:18-bullseye AS deps
 
 WORKDIR /home/node/build
 COPY --chown=node:node pnpm*.yaml .
-COPY --chown=node:node api/package.json api/
-COPY --chown=node:node shared/package.json shared/
+COPY --chown=node:node api/ api/
+COPY --chown=node:node shared/ shared/
 RUN npm i -g pnpm@8
 # Prevent pnpm installing unnecessary packages (see above)
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api
+# While we want to ignore scripts generally, we do need to generate the prisma
+# client. Note: npx is the simplest way to generate the client without us having
+# to have prisma as a prod dependency.
+RUN cd api && npx prisma generate
 
 FROM node:18-alpine
 RUN npm i -g pm2@4
