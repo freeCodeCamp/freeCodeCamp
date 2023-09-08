@@ -94,6 +94,7 @@ model user {
   isDataAnalysisPyCertV7       Boolean? // Undefined
   isDataVisCert                Boolean? // Undefined
   isDonating                   Boolean
+  isFoundationalCSharpCertV8   Boolean? // Undefined
   isFrontEndCert               Boolean? // Undefined
   isFrontEndLibsCert           Boolean? // Undefined
   isFullStackCert              Boolean? // Undefined
