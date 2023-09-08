@@ -128,9 +128,6 @@ jobs:
           pnpm run build:curriculum
           pnpm run build:server
 
-      - name: Seed Database
-        run: pnpm run seed
-
       - name: Seed Database with Certified User
         run: pnpm run seed:certified-user
 
@@ -141,10 +138,8 @@ jobs:
       - name: Install playwright dependencies
         run: |
           cd ./e2e
-          npm i
           npx playwright install
           npx playwright install-deps
-          cd ..
 
       - name: Run playwright tests
         run: |

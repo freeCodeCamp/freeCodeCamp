@@ -4,6 +4,7 @@ packages:
   - 'client'
   - 'curriculum'
   - 'shared'
+  - 'e2e'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
   - 'tools/challenge-helper-scripts'

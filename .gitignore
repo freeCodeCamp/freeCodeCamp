@@ -212,9 +212,4 @@ curriculum/build
 
 ### UI Components ###
 tools/ui-components/dist
-/test-results/
-/playwright-report/
-/playwright/.cache/
-test-results/
-playwright-report/
-/playwright/.cache/
+

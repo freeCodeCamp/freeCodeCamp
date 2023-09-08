@@ -27,8 +27,7 @@ const superBlocks = [
   'College Algebra with Python',
   'Foundational C# with Microsoft',
   'Coding Interview Prep',
-  'Project Euler',
-  'Legacy Responsive Web Design'
+  'Project Euler'
 ];
 
 test.beforeAll(async ({ browser }) => {
@@ -74,10 +73,10 @@ test('Has `as seen in` section', async () => {
 test('Has links to all superblocks', async () => {
   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
   await expect(curriculumBtns).toHaveCount(15);
-  superBlocks.map(async (cert, i) => {
+  for (let i = 0; i < superBlocks.length; i++) {
     const btn = curriculumBtns.nth(i);
-    await expect(btn).toContainText(cert);
-  });
+    await expect(btn).toContainText(superBlocks[i]);
+  }
 });
 
 test('Has 3 testimonial cards', async () => {
