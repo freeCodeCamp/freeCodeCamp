@@ -14,7 +14,7 @@ Explanation
 Instructions
 ```
 
-As an example:
+Here is an example:
 
 ```md
 The <dfn>`alt`</dfn> attribute provides alternative text to display if the image fails to load, or to be read to assistive technology.
@@ -30,13 +30,21 @@ Breaking the text up like this prevents a wall of text, and increases the chance
 
 The tests for each step should be as granular as possible.
 
-Rather than a test that says `You should create a new div element with an id set to main and a class set to container`, you should have three separate tests:
+Rather than a test that says `You should create a new div element with an id set to main and a class set to container`, you should have smaller separate tests. For this example, you might use three tests like so:
 
 - You should create a new div element.
 - Your new div element should have an `id` attribute set to `main`.
 - Your new div element should have a `class` attribute set to `container`.
 
 This provides clarity for where a camper should look at their code to correct the issue.
+
+Or, for a more complicated example, consider the following tests for a JavaScript `for` loop:
+
+- You should have a `for` loop.
+- Your `for` loop should initialize `i` to `0`.
+- Your `for` loop should iterate through every element in `groceryList`.
+- Your `for` loop should increment `i` by `1` on each iteration.
+- Your `for` loop block should be empty.
 
 ### How to Test Code
 
@@ -70,7 +78,7 @@ A few caveats when running regular expressions against code:
 
 - Use capture groups to match quote pairs. `/const\s+myName\s*=\s*('|"|`)Naomi\1`
 - Calling `.toString()` on a function returns the Babel-ified code, which may not match the original code the camper wrote.
-- Be lenient on allowing valid syntax, such as spacing requirements.
+- Be lenient on allowing valid syntax, such as spacing requirements. This is **especially** true for end-of-line semicolons in JavaScript code.
 
 ## General Practises
 
