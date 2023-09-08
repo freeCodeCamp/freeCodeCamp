@@ -11,6 +11,7 @@
     "@fastify/session": "^10.1.1",
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
+    "@fastify/type-provider-typebox": "3.5.0",
     "@immobiliarelabs/fastify-sentry": "^6.0.0",
     "@prisma/client": "5.2.0",
     "ajv": "8.12.0",
@@ -30,7 +31,6 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
-    "@fastify/type-provider-typebox": "3.5.0",
     "@total-typescript/ts-reset": "^0.4.0",
     "@types/express-session": "1.17.7",
     "@types/jsonwebtoken": "^9.0.2",
