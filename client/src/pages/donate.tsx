@@ -20,7 +20,7 @@ import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
 import { executeGA } from '../redux/actions';
 import { signInLoadingSelector, userSelector } from '../redux/selectors';
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 
 export interface ExecuteGaArg {
   event: string;

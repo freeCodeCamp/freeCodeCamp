@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/certification';

@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { isSignedInSelector, userSelector } from '../../redux/selectors';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 import { User } from '../../redux/prop-types';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
 

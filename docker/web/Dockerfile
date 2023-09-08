@@ -34,7 +34,7 @@ ARG FREECODECAMP_NODE_ENV
 RUN pnpm config set dedupe-peer-dependents false
 # Scripts need to be run at this stage (--ignore-scripts cannot be used) because
 # without them, Gatsby will not install sharp.
-RUN pnpm install -w -F=client -F=ui -F=browser-scripts -F=challenge-parser \
+RUN pnpm install -F=shared -F=client -F=ui -F=browser-scripts -F=challenge-parser \
   --frozen-lockfile
 RUN pnpm build:client
 

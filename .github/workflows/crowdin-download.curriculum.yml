@@ -327,7 +327,7 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
           pnpm run build:server
 

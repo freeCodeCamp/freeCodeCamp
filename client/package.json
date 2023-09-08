@@ -23,7 +23,7 @@
     "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby build --prefix-paths",
     "build:scripts": "pnpm run -F=browser-scripts build",
     "clean": "gatsby clean",
-    "common-setup": "pnpm -w run create:config && pnpm -w run create:utils && pnpm run create:env && pnpm run create:trending && pnpm run build:components-library",
+    "common-setup": "pnpm -w run create:shared && pnpm run create:env && pnpm run create:trending && pnpm run build:components-library",
     "create:env": "cross-env DEBUG=fcc:* ts-node ./tools/create-env.ts",
     "create:trending": "ts-node ./tools/download-trending.ts",
     "predevelop": "pnpm run common-setup && pnpm run build:scripts --env development",

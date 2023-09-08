@@ -7,7 +7,7 @@ import {
   SuperBlocks,
   getFirstNotAuditedSuperBlock,
   superBlockOrder
-} from '../../../../config/superblocks';
+} from '../../../../shared/config/superblocks';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
@@ -16,7 +16,7 @@ import {
   curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
-} from '../../../../config/env.json';
+} from '../../../config/env.json';
 
 import './map.css';
 

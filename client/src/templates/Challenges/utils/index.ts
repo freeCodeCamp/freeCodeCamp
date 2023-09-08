@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 
 const { forumLocation } = envData;
 

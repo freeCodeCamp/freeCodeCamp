@@ -24,7 +24,11 @@ const superBlocks = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'College Algebra with Python'
+  'College Algebra with Python',
+  'Foundational C# with Microsoft',
+  'Coding Interview Prep',
+  'Project Euler'
+
 ];
 
 test.beforeAll(async ({ browser }) => {
@@ -112,10 +116,10 @@ test('Testimonial endorser people have images, occupation, location and testimon
 test('Has links to all superblocks', async () => {
   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
   await expect(curriculumBtns).toHaveCount(15);
-  superBlocks.map(async (cert, i) => {
+  for (let i = 0; i < superBlocks.length; i++) {
     const btn = curriculumBtns.nth(i);
-    await expect(btn).toContainText(cert);
-  });
+    await expect(btn).toContainText(superBlocks[i]);
+  }
 });
 
 test('Has FAQ section', async () => {

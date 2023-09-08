@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { SuperBlocks } from '../../../../../config/superblocks';
-import envData from '../../../../../config/env.json';
-import { isAuditedSuperBlock } from '../../../../../utils/is-audited';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import envData from '../../../../config/env.json';
+import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
@@ -26,7 +26,7 @@ import {
 import {
   isCodeAllyPractice,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
