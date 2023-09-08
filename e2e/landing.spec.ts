@@ -73,7 +73,7 @@ test('The campers landing page figure is visible on desktop and hidden on mobile
   }
 });
 
-test('The as seen in container is vissible with featured logos', async () => {
+test('The as seen in container is visible with featured logos', async () => {
   const asSeenInContainer = page.getByTestId('landing-as-seen-in-text');
   await expect(asSeenInContainer).toHaveText('As seen in:');
 
