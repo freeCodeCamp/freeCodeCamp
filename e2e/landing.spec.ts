@@ -61,7 +61,7 @@ test('Has 5 brand logos', async () => {
   expect(await logos.nth(4).isVisible());
 });
 
-test('The campers landing page figure is visbile on desktop and hidden on mobile view', async ({
+test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
   isMobile
 }) => {
   const landingPageImage = page.getByTestId('landing-page-figure');
