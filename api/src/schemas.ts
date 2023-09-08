@@ -478,5 +478,37 @@ export const schemas = {
         )
       })
     }
+  },
+  // /certificate/
+  certificateVerify: {
+    body: Type.Object({
+      certSlug: Type.String()
+    }),
+    repsonse: {
+      400: Type.Object({
+        type: Type.Literal('info'),
+        message: Type.Union([
+          // Happens when client does not send certSlug (empty)
+          // TODO(POST-MVP): send a specific error
+          Type.Literal('flash.went-wrong'),
+          Type.Literal('flash.wrong-name'),
+          Type.Literal('flash.already-claimed')
+        ]),
+        variables: Type.Object({
+          name: Type.String()
+        })
+      }),
+      403: Type.Object({
+        type: Type.Literal('info'),
+        message: Type.Union([Type.Literal('flash.incomplete-steps')]),
+        variables: Type.Object({
+          name: Type.String()
+        })
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.name-needed')
+      })
+    }
   }
 };
