@@ -7,7 +7,7 @@ dashedName: step-2
 
 # --description--
 
-Next, add opening and closing `html`, `head` and `body` tags below the doctype. Be sure to nest them properly.
+Наступний крок, додайте відкриті та закриті html, head та body теги у свій документ. Переконайтеся, що вставите їх належним чином.
 
 # --hints--
 
