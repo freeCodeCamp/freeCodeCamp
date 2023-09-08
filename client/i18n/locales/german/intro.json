@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Altes Responsives Webdesign",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In dieser Zertifizierung für \"Responsives Webdesign\" lernst Du die Sprachen, die Entwickler verwenden, um Webseiten zu erstellen: HTML (Hypertext Markup Language) für Inhalte, und CSS (Cascading Style Sheets) für Design.",
       "Zuerst erstellst Du eine Katzenfoto-App, um die Grundlagen von HTML und CSS zu erlernen. Später lernst Du moderne Techniken wie CSS-Variablen, indem Du einen Pinguin erstellst und bewährte Abläufe für die Barrierefreiheit beim Erstellen eines Web-Formulars nutzt.",
@@ -55,13 +55,6 @@
         "intro": [
           "Das CSS Grid ist ein neuerer Standard, der es einfach macht, komplexe responsive Layouts zu erstellen. Es funktioniert, indem es ein HTML-Element in ein Raster verwandelt und du darin überall Kindelemente platzieren kannst.",
           "In diesem Kurs lernst du die Grundlagen des CSS Grid, indem du verschiedene komplexe Layouts erstellst, darunter auch einen Blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Responsives Web Design Projekte",
-        "intro": [
-          "Zeit, deine neu erlernten Fähigkeiten in die Tat umzusetzen. Indem du an diesen Projekten arbeitest, bekommst du die Chance, all die Fähigkeiten, Prinzipien und Konzepte anzuwenden, die du bisher gelernt hast: HTML, CSS, Visuelles Design, Barrierefreiheit und mehr.",
-          "Schließe die folgenden fünf Web-Programmierungsprojekte ab, um Deine Responsive Web Design Zertifizierung zu erhalten."
         ]
       }
     }
@@ -213,6 +206,10 @@
           "Die Wahl der richtigen Farben für deine Webseite kann die Ästhetik für deine LeserInnen erheblich verbessern.",
           "In diesem Kurs erstellst du ein Set aus farbigen Markern. Du lernst verschiedene Möglichkeiten kennen, Farbwerte einzustellen und Farben miteinander zu kombinieren."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -950,6 +947,14 @@
         "title": "Learn HTML Foundations",
         "intro": ["A description is to be determined"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
@@ -1012,13 +1017,13 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Write Your First Code Using C#",
@@ -1061,6 +1066,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

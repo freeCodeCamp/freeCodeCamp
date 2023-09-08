@@ -33,13 +33,13 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 - 単一のテストを実行します。
 
   ```console
-  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
+  pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。

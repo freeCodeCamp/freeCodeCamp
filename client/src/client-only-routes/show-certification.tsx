@@ -1,4 +1,4 @@
-import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -7,9 +7,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import { Container } from '@freecodecamp/ui';
+import envData from '../../config/env.json';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
+import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
@@ -26,13 +28,19 @@ import {
   usernameSelector
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
-import { fullCertMap } from '../resources/cert-and-project-map';
-import certificateMissingMessage from '../utils/certificate-missing-message';
-import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
-import standardErrorMessage from '../utils/standard-error-message';
+import { liveCerts } from '../../config/cert-and-project-map';
+import {
+  certificateMissingErrorMessage,
+  reallyWeirdErrorMessage,
+  standardErrorMessage
+} from '../utils/error-messages';
 
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
+import {
+  certTypes,
+  certTypeTitleMap
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -80,10 +88,10 @@ interface ShowCertificationProps {
 const requestedUserSelector = (state: unknown, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state) as User;
 
-const validCertSlugs = fullCertMap.map(cert => cert.certSlug);
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
-  const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
+  const isValidCert = liveCerts.some(
+    ({ certSlug }) => certSlug === props.certSlug
+  );
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -189,7 +197,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   } = props;
 
   if (!isValidCert) {
-    createFlashMessage(certificateMissingMessage);
+    createFlashMessage(certificateMissingErrorMessage);
     return <RedirectHome />;
   }
 
@@ -209,7 +217,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username, certTitle } = cert;
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    completionTime
+  } = cert;
 
   const { user } = props;
 
@@ -294,77 +308,132 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </Row>
   );
 
+  const isMicrosoftCert =
+    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
+
   return (
-    <Grid className='certificate-outer-wrapper'>
+    <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <Row className='certificate-inner-wrapper'>
-        <Row className='certificate-second-inner-wrapper'>
-          <Row className='certificate-wrapper certification-namespace'>
-            <header>
-              <Col sm={12}>
+      <div className='certificate-wrapper'>
+        <div className='certification-namespace'>
+          <header>
+            <Col sm={12}>
+              {isMicrosoftCert ? (
+                <>
+                  <div className='dual-logo fcc-logo'>
+                    <FreeCodeCampLogo aria-hidden='true' />
+                  </div>
+                  <div className='dual-logo ms-logo'>
+                    <MicrosoftLogo aria-hidden='true' />
+                  </div>
+                </>
+              ) : (
                 <div className='logo'>
                   <FreeCodeCampLogo aria-hidden='true' />
                 </div>
-              </Col>
-            </header>
-            <main className='information'>
-              <div className='information-container'>
-                <Trans i18nKey='certification.fulltext' title={certTitle}>
-                  <h3>placeholder</h3>
-                  <h1>
-                    <strong>{{ user: displayName }}</strong>
-                  </h1>
-                  <h3>placeholder</h3>
-                  <h1>
-                    <strong>
-                      {{
-                        title: t(`certification.title.${certTitle}`, certTitle)
-                      }}
-                    </strong>
-                  </h1>
-                  <h4 data-cy={'issue-date'}>
+              )}
+            </Col>
+          </header>
+          <main className='information'>
+            <div className='information-container'>
+              <Trans i18nKey='certification.fulltext' title={certTitle}>
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ user: displayName }}</strong>
+                </h1>
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>
                     {{
-                      time: certDate.toLocaleString([localeCode, 'en-US'], {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })
+                      title: t(`certification.title.${certTitle}`, certTitle)
                     }}
-                  </h4>
-                </Trans>
-              </div>
-            </main>
-            <footer>
-              <div className='row signatures'>
-                <Image
-                  alt="Quincy Larson's Signature"
-                  src={
-                    'https://cdn.freecodecamp.org' +
-                    '/platform/english/images/quincy-larson-signature.svg'
-                  }
-                />
-                <p className='quincy-name'>
-                  <strong>Quincy Larson</strong>
-                </p>
-                <p className='quincy-role'>{t('certification.executive')}</p>
-              </div>
-              <span className='ribbon-wrap'>
-                <Image className='ribbon' src={ribbon} />
-              </span>
-              <span className='qr-wrap'>
-                <QRCodeSVG className='qr-code' value={certURL} />
-              </span>
-              <Row>
-                <p className='verify'>
-                  {t('certification.verify')}
-                  <br />
-                  {certURL}
-                </p>
-              </Row>
-            </footer>
-          </Row>
-        </Row>
-      </Row>
+                  </strong>
+                </h1>
+                <h4 data-cy={'issue-date'}>
+                  {{
+                    time: certDate.toLocaleString([localeCode, 'en-US'], {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })
+                  }}
+                </h4>
+                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
+              </Trans>
+            </div>
+          </main>
+          <footer>
+            <div className='signatures'>
+              {isMicrosoftCert ? (
+                <>
+                  <div>
+                    <Image
+                      alt="Quincy Larson's Signature"
+                      src={
+                        'https://cdn.freecodecamp.org' +
+                        '/platform/english/images/quincy-larson-signature.svg'
+                      }
+                    />
+                    <p className='signee-name'>
+                      <strong>Quincy Larson</strong>
+                    </p>
+                    <p className='signee-role'>
+                      {t('certification.executive')}
+                    </p>
+                  </div>
+                  <div className='microsoft-signature'>
+                    <Image
+                      alt="Julia Liusons's Signature"
+                      src={
+                        'https://cdn.freecodecamp.org' +
+                        '/platform/english/images/microsoft-signature.png'
+                      }
+                    />
+                    <div className='signature-underline'></div>
+                    <p className='signee-name'>
+                      <strong>Julia Liuson</strong>
+                    </p>
+                    <p className='signee-role'>
+                      {t('certification.ms-president')}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <div>
+                  <Image
+                    alt="Quincy Larson's Signature"
+                    src={
+                      'https://cdn.freecodecamp.org' +
+                      '/platform/english/images/quincy-larson-signature.svg'
+                    }
+                  />
+                  <p className='signee-name'>
+                    <strong>Quincy Larson</strong>
+                  </p>
+                  <p className='signee-role'>{t('certification.executive')}</p>
+                </div>
+              )}
+            </div>
+            {!isMicrosoftCert && (
+              <>
+                <span className='ribbon-wrap'>
+                  <Image className='ribbon' src={ribbon} />
+                </span>
+                <span className='qr-wrap'>
+                  <QRCodeSVG className='qr-code' value={certURL} />
+                </span>
+              </>
+            )}
+            <Row>
+              <p className='verify'>
+                {t('certification.verify')}
+                <br />
+                {certURL}
+              </p>
+            </Row>
+          </footer>
+        </div>
+      </div>
       <div className='row certificate-links'>
         <Spacer size='large' />
         {signedInUserName === username ? shareCertBtns : ''}
@@ -372,7 +441,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
         <Spacer size='large' />
       </div>
-    </Grid>
+    </Container>
   );
 };
 

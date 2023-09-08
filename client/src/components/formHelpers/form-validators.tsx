@@ -36,11 +36,10 @@ export const httpValidator: Validator = value =>
 export const pathValidator: Validator = value =>
   isPathRoot(value) ? <Trans>validation.path-url</Trans> : null;
 
-export function composeValidators(...validators: (Validator | null)[]) {
+export function composeValidators(...validators: Validator[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(
-      (error: ReturnType<Validator>, validator) =>
-        error ?? (validator ? validator(value) : null),
+      (error: ReturnType<Validator>, validator) => error ?? validator(value),
       null
     );
 }

@@ -44,117 +44,117 @@ assert.notMatch(code, /last\s*=\s*/);
 Не треба додавати жодних властивостей. `Object.keys(Person).length` завжди має повертати 6.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFirstName('Haskell');
-person.setLastName('Curry');
-person.setFullName('John', 'Smith');
-assert.lengthOf(Object.keys(person), 6);
+const _person = new Person('Bob', 'Ross');
+_person.setFirstName('Haskell');
+_person.setLastName('Curry');
+_person.setFullName('John', 'Smith');
+assert.lengthOf(Object.keys(_person), 6);
 ```
 
 Ви повинні мати можливість створити об’єкт `Person`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.instanceOf(person, Person);
+const _person = new Person('Bob', 'Ross');
+assert.instanceOf(_person, Person);
 ```
 
 Об’єкт `Person` не повинен мати властивість `firstName`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.notProperty(person, 'firstName');
+const _person = new Person('Bob', 'Ross');
+assert.notProperty(_person, 'firstName');
 ```
 
 Об’єкт `Person` не повинен мати властивість `lastName`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.notProperty(person, 'lastName');
+const _person = new Person('Bob', 'Ross');
+assert.notProperty(_person, 'lastName');
 ```
 
 Метод `.getFirstName()` має повертати рядок `Bob`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.strictEqual(person.getFirstName(), 'Bob');
+const _person = new Person('Bob', 'Ross');
+assert.strictEqual(_person.getFirstName(), 'Bob');
 ```
 
 `.getLastName()` має повертати рядок `Ross`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.strictEqual(person.getLastName(), 'Ross');
+const _person = new Person('Bob', 'Ross');
+assert.strictEqual(_person.getLastName(), 'Ross');
 ```
 
 Метод `.getFullName()` має повертати рядок `Bob Ross`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-assert.strictEqual(person.getFullName(), 'Bob Ross');
+const _person = new Person('Bob', 'Ross');
+assert.strictEqual(_person.getFullName(), 'Bob Ross');
 ```
 
 Метод `.getFullName()` має повертати рядок `Haskell Ross` після виклику `.setFirstName('Haskell')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFirstName('Haskell');
-assert.strictEqual(person.getFullName(), 'Haskell Ross');
+const _person = new Person('Bob', 'Ross');
+_person.setFirstName('Haskell');
+assert.strictEqual(_person.getFullName(), 'Haskell Ross');
 ```
 
 Метод `.getFullName()` має повертати рядок `Bob Curry` після виклику `.setLastName('Curry')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setLastName('Curry');
-assert.strictEqual(person.getFullName(), 'Bob Curry');
+const _person = new Person('Bob', 'Ross');
+_person.setLastName('Curry');
+assert.strictEqual(_person.getFullName(), 'Bob Curry');
 ```
 
 Метод `.getFullName()` має повертати рядок `Haskell Curry` після виклику `.setFullName('Haskell', 'Curry')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Haskell', 'Curry');
-assert.strictEqual(person.getFullName(), 'Haskell Curry');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Haskell', 'Curry');
+assert.strictEqual(_person.getFullName(), 'Haskell Curry');
 ```
 
 Метод `.getFirstName()` має повертати рядок `Haskell` після виклику `.setFullName('Haskell', 'Curry')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Haskell', 'Curry');
-assert.strictEqual(person.getFirstName(), 'Haskell');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Haskell', 'Curry');
+assert.strictEqual(_person.getFirstName(), 'Haskell');
 ```
 
 Метод `.getLastName()` має повертати рядок `Curry` після виклику `.setFullName('Haskell', 'Curry')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Haskell', 'Curry');
-assert.strictEqual(person.getLastName(), 'Curry');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Haskell', 'Curry');
+assert.strictEqual(_person.getLastName(), 'Curry');
 ```
 
 Метод `.getFullName()` має повертати рядок `Emily Martinez de la Rosa` після виклику `.setFullName('Emily Martinez', 'de la Rosa')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Emily Martinez', 'de la Rosa');
-assert.strictEqual(person.getFullName(), 'Emily Martinez de la Rosa');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(_person.getFullName(), 'Emily Martinez de la Rosa');
 ```
 
 Властивість `.getFirstName()` має повертати рядок `Emily Martinez` після виклику `.setFullName('Emily Martinez', 'de la Rosa')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Emily Martinez', 'de la Rosa');
-assert.strictEqual(person.getFirstName(), 'Emily Martinez');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(_person.getFirstName(), 'Emily Martinez');
 ```
 
 Властивість `.getLastName()` має повертати рядок `de la Rosa` після виклику `.setFullName('Emily Martinez', 'de la Rosa')`.
 
 ```js
-const person = new Person('Bob', 'Ross');
-person.setFullName('Emily Martinez', 'de la Rosa');
-assert.strictEqual(person.getLastName(), 'de la Rosa');
+const _person = new Person('Bob', 'Ross');
+_person.setFullName('Emily Martinez', 'de la Rosa');
+assert.strictEqual(_person.getLastName(), 'de la Rosa');
 ```
 
 # --seed--

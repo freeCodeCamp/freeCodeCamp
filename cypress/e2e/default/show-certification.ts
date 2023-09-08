@@ -34,6 +34,12 @@ describe('A certification,', function () {
       const issued = `Developer Certification on August 3, 2018`;
       cy.get('[data-cy=issue-date]').should('include.text', issued);
     });
+
+    it('should be issued with the number of hours undertaken', () => {
+      cy.visit(certifiedUser);
+      const hours = '300 hours';
+      cy.get('.information-container').should('include.text', hours);
+    });
   });
 
   describe("while viewing someone else's,", function () {

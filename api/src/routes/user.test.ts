@@ -7,14 +7,19 @@ import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
 import { defaultUser } from '../utils/default-user';
-import { setupServer, superRequest } from '../../jest.utils';
+import {
+  defaultUserId,
+  defaultUserEmail,
+  devLogin,
+  setupServer,
+  superRequest
+} from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
-import { encodeUserToken } from '../utils/user-token';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
   ...defaultUser,
-  email: 'foo@bar.com',
+  email: defaultUserEmail,
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],
@@ -251,6 +256,8 @@ const modifiedProgressData = {
   needsModeration: true
 };
 
+const userTokenId = 'dummy-id';
+
 describe('userRoutes', () => {
   setupServer();
 
@@ -258,9 +265,7 @@ describe('userRoutes', () => {
     let setCookies: string[];
 
     beforeEach(async () => {
-      const res = await superRequest('/auth/dev-callback', { method: 'GET' });
-      expect(res.status).toBe(200);
-      setCookies = res.get('Set-Cookie');
+      setCookies = await devLogin();
     });
 
     describe('/account/delete', () => {
@@ -271,7 +276,7 @@ describe('userRoutes', () => {
         });
 
         const userCount = await fastifyTestInstance.prisma.user.count({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
@@ -281,14 +286,9 @@ describe('userRoutes', () => {
     });
 
     describe('/account/reset-progress', () => {
-      afterAll(async () => {
-        await fastifyTestInstance.prisma.user.deleteMany({
-          where: { email: 'foo@bar.com' }
-        });
-      });
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: 'foo@bar.com' },
+          where: { email: testUserData.email },
           data: modifiedProgressData
         });
 
@@ -298,7 +298,7 @@ describe('userRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
@@ -309,18 +309,21 @@ describe('userRoutes', () => {
       });
     });
     describe('/user/user-token', () => {
-      let userId: string | undefined;
       beforeEach(async () => {
-        const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+        await fastifyTestInstance.prisma.userToken.create({
+          data: {
+            created: new Date(),
+            id: '123',
+            ttl: 1000,
+            userId: defaultUserId
+          }
         });
-        userId = user?.id;
       });
 
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: {
-            userId
+            userId: defaultUserId
           }
         });
       });
@@ -393,7 +396,37 @@ describe('userRoutes', () => {
         ).toBeNull();
         expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
       });
+
+      test('DELETE returns 200 status with null userToken', async () => {
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response.body).toStrictEqual({ userToken: null });
+        expect(response.status).toBe(200);
+        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(0);
+      });
+
+      test('DELETEing a missing userToken returns 404 status with an error message', async () => {
+        await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response.body).toStrictEqual({
+          type: 'info',
+          message: 'userToken not found'
+        });
+        expect(response.status).toBe(404);
+      });
     });
+
     describe('user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
@@ -404,12 +437,12 @@ describe('userRoutes', () => {
 
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
-          where: { id: 'dummy-id' }
+          where: { id: userTokenId }
         });
       });
 
       test('GET rejects with 500 status code if the username is missing', async () => {
-        await fastifyTestInstance?.prisma.user.updateMany({
+        await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
           data: { username: '' }
         });
@@ -463,37 +496,30 @@ describe('userRoutes', () => {
       });
 
       test('GET returns the userToken if it exists', async () => {
-        const testUser = await fastifyTestInstance.prisma.user.findFirstOrThrow(
-          {
-            where: { email: testUserData.email }
-          }
-        );
-
         const tokenData = {
-          userId: testUser.id,
+          userId: defaultUserId,
           ttl: 123,
-          id: 'dummy-id',
+          id: userTokenId,
           created: new Date()
         };
-
-        const encodedToken = encodeUserToken(tokenData.id);
 
         await fastifyTestInstance.prisma.userToken.create({
           data: tokenData
         });
+
+        const tokens = await fastifyTestInstance.prisma.userToken.count();
+        expect(tokens).toBe(1);
 
         const response = await superRequest('/user/get-session-user', {
           method: 'GET',
           setCookies
         });
 
-        const {
-          user: { foobar }
-        } = response.body as unknown as {
-          user: { foobar: unknown };
-        };
+        const { userToken } = jwt.decode(
+          response.body.user.foobar.userToken
+        ) as { userToken: string };
 
-        expect(foobar).toMatchObject({ userToken: encodedToken });
+        expect(tokenData.id).toBe(userToken);
       });
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
@@ -509,6 +535,7 @@ describe('userRoutes', () => {
           data: minimalUserData
         });
 
+        // devLogin must not be used here since it overrides the user
         const res = await superRequest('/auth/dev-callback', { method: 'GET' });
         setCookies = res.get('Set-Cookie');
 
@@ -577,6 +604,15 @@ describe('userRoutes', () => {
     });
 
     describe('/user/user-token', () => {
+      test('DELETE returns 401 status code with error message', async () => {
+        const response = await superRequest('/user/user-token', {
+          method: 'DELETE',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(401);
+      });
+
       test('POST returns 401 status code with error message', async () => {
         const response = await superRequest('/user/user-token', {
           method: 'POST',

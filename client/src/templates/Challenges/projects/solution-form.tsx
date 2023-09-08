@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues
@@ -53,7 +53,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
       { name: 'solution', label: t('learn.solution-link') },
       { name: 'githubLink', label: t('learn.github-link') }
     ];
-    const msTrophyField = [{ name: 'solution', label: t('learn.ms-link') }];
 
     const buttonCopy = t('learn.i-completed');
 
@@ -105,13 +104,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
-        break;
-
-      case challengeTypes.msTrophyUrl:
-        formFields = msTrophyField;
-        solutionLink =
-          solutionLink +
-          'https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=you';
         break;
 
       default:

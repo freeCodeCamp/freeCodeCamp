@@ -21,7 +21,8 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  isSubmittingSelector
 } from '../redux/selectors';
 import ProgressBar from '../../../components/ProgressBar';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -38,6 +39,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   allChallengesInfoSelector,
   successMessageSelector,
+  isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
     { dashedName, id }: { dashedName: string; id: string },
@@ -45,7 +47,8 @@ const mapStateToProps = createSelector(
     isOpen: boolean,
     isSignedIn: boolean,
     allChallengesInfo: AllChallengesInfo,
-    message: string
+    message: string,
+    isSubmitting: boolean
   ) => ({
     challengeFiles,
     id,
@@ -54,7 +57,8 @@ const mapStateToProps = createSelector(
     isOpen,
     isSignedIn,
     allChallengesInfo,
-    message
+    message,
+    isSubmitting
   })
 );
 
@@ -155,6 +159,7 @@ class CompletionModal extends Component<
       isOpen,
       id,
       isSignedIn,
+      isSubmitting,
       message,
       t,
       dashedName,
@@ -170,6 +175,7 @@ class CompletionModal extends Component<
     }
     return (
       <Modal
+        data-cy='completion-modal'
         animation={false}
         bsSize='lg'
         dialogClassName='challenge-success-modal'
@@ -204,6 +210,8 @@ class CompletionModal extends Component<
             block={true}
             bsSize='large'
             bsStyle='primary'
+            disabled={isSubmitting}
+            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}

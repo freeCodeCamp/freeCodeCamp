@@ -10,116 +10,44 @@
   "superBlock": "the-odin-project",
   "challengeOrder": [
     {
-      "id": "6374f208de18c50e48ba767b",
-      "title": "Introduction To HTML and CSS Question A"
-    },
-    {
-      "id": "6376327e2724a688c04636e3",
-      "title": "Introduction To HTML and CSS Question B"
-    },
-    {
-      "id": "637633162724a688c04636e4",
-      "title": "Introduction To HTML and CSS Question C"
-    },
-    {
-      "id": "637633672724a688c04636e5",
-      "title": "Introduction To HTML and CSS Question D"
-    },
-    {
       "id": "637f4e0e72c65bc8e73dfe1e",
-      "title": "Elements and Tags Question A"
+      "title": "HTML Foundations Question A"
     },
     {
       "id": "637f4e1672c65bc8e73dfe1f",
-      "title": "Elements and Tags Question B"
+      "title": "HTML Foundations Question B"
     },
     {
       "id": "637f4e1c72c65bc8e73dfe20",
-      "title": "HTML Boilerplate Question A"
-    },
+      "title": "HTML Foundations Question C"
+    }, 
     {
       "id": "637f4e2872c65bc8e73dfe21",
-      "title": "HTML Boilerplate Question B"
+      "title": "HTML Foundations Question D"
+    },
+    {
+      "id": "6374f208de18c50e48ba767b",
+      "title": "HTML Foundations Question E"
     },
     {
       "id": "637f4e2f72c65bc8e73dfe22",
-      "title": "HTML Boilerplate Question C"
+      "title": "HTML Foundations Question F"
     },
     {
       "id": "637f4e3672c65bc8e73dfe23",
-      "title": "HTML Boilerplate Question D"
+      "title": "HTML Foundations Question G"
     },
     {
-      "id": "637f4e5872c65bc8e73dfe27",
-      "title": "Working With Text Question A"
+      "id": "6376327e2724a688c04636e3",
+      "title": "HTML Foundations Question H"
     },
     {
-      "id": "637f4e5f72c65bc8e73dfe28",
-      "title": "Working With Text Question B"
+      "id": "637633162724a688c04636e4",
+      "title": "HTML Foundations Question I"
     },
     {
-      "id": "637f4e6672c65bc8e73dfe29",
-      "title": "Working With Text Question C"
-    },
-    {
-      "id": "637f4e6e72c65bc8e73dfe2a",
-      "title": "Working With Text Question D"
-    },
-    {
-      "id": "637f4e7972c65bc8e73dfe2b",
-      "title": "Working With Text Question E"
-    },
-    {
-      "id": "637f4e8072c65bc8e73dfe2c",
-      "title": "Working With Text Question F"
-    },
-    {
-      "id": "637f4e8772c65bc8e73dfe2d",
-      "title": "Working With Text Question G"
-    },
-    {
-      "id": "637f4e3e72c65bc8e73dfe24",
-      "title": "Understand Ordered and Unordered List Question A"
-    },
-    {
-      "id": "637f4e4672c65bc8e73dfe25",
-      "title": "Understand Ordered and Unordered List Question B"
-    },
-    {
-      "id": "637f4e5172c65bc8e73dfe26",
-      "title": "Understand ordered and Unordered List Question C"
-    },
-    {
-      "id": "637f704072c65bc8e73dfe36",
-      "title": "Links and Images Question A"
-    },
-    {
-      "id": "637f703572c65bc8e73dfe35",
-      "title": "Links and Images Question B"
-    },
-    {
-      "id": "637f703072c65bc8e73dfe34",
-      "title": "Links and Images Question C"
-    },
-    {
-      "id": "637f702872c65bc8e73dfe33",
-      "title": "Links and Images Question D"
-    },
-    {
-      "id": "637f702372c65bc8e73dfe32",
-      "title": "Links and Images Question E"
-    },
-    {
-      "id": "637f701c72c65bc8e73dfe31",
-      "title": "Links and Images Question F"
-    },
-    {
-      "id": "637f701572c65bc8e73dfe30",
-      "title": "Links and Images Question G"
-    },
-    {
-      "id": "637f700b72c65bc8e73dfe2f",
-      "title": "Links and Images Question D"
+      "id": "637633672724a688c04636e5",
+      "title": "HTML Foundations Question J"
     }
   ]
 }

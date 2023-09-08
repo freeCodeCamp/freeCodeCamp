@@ -316,8 +316,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
-  + .fcc_searchBar
-  .ais-SearchBox-form {
+  + .fcc_searchBar {
   display: none;
 }
 

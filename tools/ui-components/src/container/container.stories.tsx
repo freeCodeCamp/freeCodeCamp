@@ -4,7 +4,14 @@ import { Container, ContainerProps } from '.';
 
 const story = {
   title: 'Example/Container',
-  component: Container
+  component: Container,
+  argTypes: {
+    fluid: {
+      control: {
+        type: 'boolean'
+      }
+    }
+  }
 };
 
 const Template: Story<ContainerProps> = args => {
@@ -28,10 +35,5 @@ const Template: Story<ContainerProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {};
-
-export const Fluid = Template.bind({});
-Fluid.args = {
-  fluid: true
-};
 
 export default story;

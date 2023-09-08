@@ -1,35 +1,35 @@
 ---
 id: 64a674a47a7d00f97013ed11
 videoId: rIO5326FgPE
-title: The Box Model Question J
+title: Блокова модель. Запитання J
 challengeType: 15
 dashedName: the-box-model-question-j
 --- 
 # --description--
 
-Because the box model concept is so incredibly fundamental, let’s dig a bit deeper with [this lesson from MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model). It covers the same material as the video above and will introduce you to inline boxes that we will explore in the next lesson. Pay close attention to the examples and take the time to experiment with their in-browser editor!
+Оскільки блокова модель є основним поняттям, зануримось у нього глибше завдяки [уроку з MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model). Він охоплює той самий матеріал, що й відео вище та ознайомить вас з вбудованими блоками, які ми розглянемо в наступному уроці. Зверніть увагу на приклади та приділіть деякий час, щоб поекспериментувати з редактором у браузері!
 
 # --question--
 
 ## --text--
 
-Would you use margin or padding to create more space between 2 elements?
+Що б ви використали, щоб створити більше простору між двома елементами: поле чи відступ?
 
 ## --answers--
 
-Padding
+Відступ
 
 ---
 
-Both margin and padding can be used interchangeably
+Поле та відступ можна використати почергово
 
 ---
 
-Neither margin nor padding can be used to create more space between elements
+Ні поле, ні відступ не використовують для створення простору між елементами
 
 ---
 
-Margin
+Поле
 
 
 ## --video-solution--

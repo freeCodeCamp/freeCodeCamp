@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   challengeTypes,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -149,7 +149,7 @@ const mapStateToProps = createSelector(
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
-    { theme = Themes.Default }: { theme: Themes },
+    { theme }: { theme: Themes },
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
@@ -187,7 +187,9 @@ const modeMap = {
   css: 'css',
   html: 'html',
   js: 'javascript',
-  jsx: 'javascript'
+  jsx: 'javascript',
+  py: 'python',
+  python: 'python'
 };
 
 let monacoThemesDefined = false;
@@ -745,6 +747,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
@@ -1232,13 +1235,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { isSignedIn, theme } = props;
+  const { theme } = props;
+
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
-  const isDarkTheme =
-    theme === Themes.Night || (preferDarkScheme && !isSignedIn);
-  const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme =
+    theme === Themes.Night
+      ? 'vs-dark-custom'
+      : theme === Themes.Default
+      ? 'vs-custom'
+      : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>

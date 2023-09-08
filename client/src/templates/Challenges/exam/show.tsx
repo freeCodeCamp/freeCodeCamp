@@ -1,6 +1,7 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
-import { graphql } from 'gatsby';
+import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { graphql, navigate } from 'gatsby';
+
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
@@ -9,6 +10,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
+import { micromark } from 'micromark';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -18,11 +21,12 @@ import PrismFormatted from '../components/prism-formatted';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
-import { startExam, stopExam } from '../../../redux/actions';
+import { clearExamResults, startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
   isSignedInSelector,
-  examInProgressSelector
+  examInProgressSelector,
+  examResultsSelector
 } from '../../../redux/selectors';
 import {
   challengeMounted,
@@ -30,19 +34,26 @@ import {
   openModal,
   closeModal,
   submitChallenge,
-  setExamResults,
+  setUserCompletedExam,
   updateSolutionFormValues
 } from '../redux/actions';
+import { getGenerateExam } from '../../../utils/ajax';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   ChallengeNode,
   ChallengeMeta,
-  CompletedChallenge
+  CompletedChallenge,
+  UserExamQuestion,
+  UserExam,
+  GeneratedExamResults,
+  GeneratedExamQuestion
 } from '../../../redux/prop-types';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { formatSecondsToTime } from '../../../utils/format-seconds';
+import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
-
 import './exam.css';
 
 // Redux
@@ -51,16 +62,19 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   examInProgressSelector,
+  examResultsSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
-    examInProgress: boolean
+    examInProgress: boolean,
+    examResults: GeneratedExamResults | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
-    examInProgress
+    examInProgress,
+    examResults
   })
 );
 
@@ -69,11 +83,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       challengeMounted,
       createFlashMessage,
+      openExitExamModal: () => openModal('exitExam'),
+      closeExitExamModal: () => closeModal('exitExam'),
       openFinishExamModal: () => openModal('finishExam'),
       closeFinishExamModal: () => closeModal('finishExam'),
       startExam,
       stopExam,
-      setExamResults,
+      setUserCompletedExam,
+      clearExamResults,
       submitChallenge,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -85,11 +102,15 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowExamProps {
   challengeMounted: (arg0: string) => void;
   completedChallenges: CompletedChallenge[];
+  clearExamResults: () => void;
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
   examInProgress: boolean;
+  examResults: GeneratedExamResults | null;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  openExitExamModal: () => void;
+  closeExitExamModal: () => void;
   openFinishExamModal: () => void;
   closeFinishExamModal: () => void;
   pageContext: {
@@ -99,198 +120,21 @@ interface ShowExamProps {
   startExam: () => void;
   stopExam: () => void;
   submitChallenge: () => void;
-  setExamResults: (arg0: ExamResults) => void;
+  setUserCompletedExam: (arg0: UserExam) => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
 
 interface ShowExamState {
   currentQuestionIndex: number;
   examTimeInSeconds: number;
-  generatedExam: GeneratedExamQuestion[];
-  userExam: UserExamQuestion[];
+  generatedExamQuestions: GeneratedExamQuestion[];
+  userExamQuestions: UserExamQuestion[];
   showResults: boolean;
 }
 
-interface GeneratedExamQuestion {
-  question: string;
-  answers: string[];
+function convertMd(md: string): string {
+  return micromark(md);
 }
-
-interface UserExamQuestion {
-  question: string;
-  answer: string | null;
-}
-
-interface ExamResultQuestion {
-  question: string;
-  answer: string;
-  correct: boolean;
-}
-
-interface ExamResults {
-  timeInSeconds: number;
-  results: ExamResultQuestion[];
-}
-
-const examInDatabase = [
-  {
-    question: 'Which of the following is a programming language?',
-    wrongAnswers: ['Apple', 'Orange', 'Banana', 'Mango'],
-    correctAnswer: 'Python'
-  },
-  {
-    question: 'What does CSS stand for?',
-    wrongAnswers: [
-      'Computer Style Sheets',
-      'Complete Style Sheets',
-      'Cool Style Sheets',
-      'Creative Style Sheets'
-    ],
-    correctAnswer: 'Cascading Style Sheets'
-  },
-  {
-    question: 'What is the extension for a JavaScript file?',
-    wrongAnswers: ['.txt', '.doc', '.html', '.css'],
-    correctAnswer: '.js'
-  },
-  {
-    question: 'What is the purpose of the "if" statement in programming?',
-    wrongAnswers: [
-      'To repeat a set of instructions',
-      'To define a function',
-      'To assign a value to a variable',
-      'To declare a loop'
-    ],
-    correctAnswer: 'To check a condition'
-  },
-  {
-    question:
-      'What is the symbol used to represent addition in most programming languages?',
-    wrongAnswers: ['-', '*', '=', '%'],
-    correctAnswer: '+'
-  },
-  {
-    question: 'Which of the following is NOT a programming language?',
-    wrongAnswers: ['Java', 'Ruby', 'Swift', 'PHP'],
-    correctAnswer: 'Spanish'
-  }
-];
-
-Object.freeze(examInDatabase);
-
-// TODO: move helper functions to utility file
-// helper functions
-function shuffleArray(
-  array: string[] | GeneratedExamQuestion[]
-): string[] | GeneratedExamQuestion[] {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex]
-    ];
-  }
-
-  return array;
-}
-
-function formatSecondsToTime(s: number) {
-  const hourInSeconds = 60 * 60;
-  const minuteInSeconds = 60;
-  const h = Math.floor(s / hourInSeconds);
-  s -= h * hourInSeconds;
-
-  const minutes = Math.floor(s / minuteInSeconds);
-  s -= minutes * minuteInSeconds;
-
-  const mm = minutes < 10 && h >= 1 ? `0${minutes}` : minutes;
-  const seconds = s % 60;
-  const ss = seconds < 10 ? `0${seconds}` : seconds;
-
-  return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
-}
-
-// TODO: generate exam on server
-function generateExam(): GeneratedExamQuestion[] {
-  const NUMBER_OF_ANSWERS_PER_QUESTION = 4;
-  const NUMBER_OF_QUESTIONS_IN_EXAM = 5;
-  const generatedExam: GeneratedExamQuestion[] = [];
-  const examFromDatabase = Array.from(examInDatabase);
-
-  while (generatedExam.length < NUMBER_OF_QUESTIONS_IN_EXAM) {
-    const randomIndex = Math.floor(
-      Math.random() * (examFromDatabase.length - 1)
-    );
-    const randomQuestion = examFromDatabase.splice(randomIndex, 1)[0];
-    const wrongAnswers = randomQuestion.wrongAnswers;
-    const answers = [randomQuestion.correctAnswer];
-
-    while (answers.length < NUMBER_OF_ANSWERS_PER_QUESTION) {
-      const index = Math.floor(Math.random() * (wrongAnswers.length - 1));
-      const randomAnswer = wrongAnswers.splice(index, 1)[0];
-      answers.push(randomAnswer);
-    }
-
-    const newExamQuestion: GeneratedExamQuestion = {
-      question: randomQuestion.question,
-      answers: shuffleArray(answers) as string[]
-    };
-
-    generatedExam.push(newExamQuestion);
-  }
-
-  return shuffleArray(generatedExam) as GeneratedExamQuestion[];
-}
-
-/* const exampleGeneratedExam = [
-  {
-    "question": "What is the extension for a JavaScript file?",
-    "answers": ['.txt', '.js', '.html', '.css']
-  },
-  ...rest_of_questions
-]*/
-
-/* const exampleUserExam = [
-  {
-    "question": "What is the extension for a JavaScript file?",
-    "answer": ".doc"
-  },
-  ...rest_of_questions
-]*/
-
-/* const exampleExamResults = [
-    {
-      "question": "What is the extension for a JavaScript file?",
-      "answer": ".doc",
-      "correct": false
-    }
-    ...rest_of_questions
-  ]
- */
-
-/* example item added to completedChalleges array
-  {
-    "id": "645147516c245de4d11eb7ba",
-    "completedDate": 1644532946064,
-    "exam": {
-      "completionTimeInSeconds": number,
-      "results": [
-        {
-          "question": "What is the extension for a JavaScript file?",
-          "answer": ".doc",
-          "correct": false
-        },
-        ...rest_of_questions
-      ]
-    }
-  }*/
-
-const generatedExam = generateExam();
-Object.freeze(generatedExam);
 
 class ShowExam extends Component<ShowExamProps, ShowExamState> {
   static displayName: string;
@@ -301,9 +145,9 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     super(props);
     this.state = {
       currentQuestionIndex: 0,
-      generatedExam: generatedExam,
+      generatedExamQuestions: [],
       examTimeInSeconds: 0,
-      userExam: [],
+      userExamQuestions: [],
       showResults: false
     };
 
@@ -312,8 +156,8 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     this.goToNextQuestion = this.goToNextQuestion.bind(this);
     this.selectAnswer = this.selectAnswer.bind(this);
     this.finishExam = this.finishExam.bind(this);
-    this.createExamResults = this.createExamResults.bind(this);
-    this.submitExamResults = this.submitExamResults.bind(this);
+    this.exitExam = this.exitExam.bind(this);
+    this.cleanUp = this.cleanUp.bind(this);
   }
 
   componentDidMount(): void {
@@ -339,11 +183,8 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
   }
 
   componentWillUnmount() {
+    this.cleanUp();
     this.props.stopExam();
-    clearInterval(this.timerInterval);
-    window.removeEventListener('beforeunload', this.stopWindowClose);
-    window.removeEventListener('unload', this.stopWindowClose);
-    window.removeEventListener('popstate', this.stopBrowserBack);
   }
 
   stopWindowClose = (event: Event) => {
@@ -357,36 +198,63 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     alert(this.props.t('misc.navigation-warning'));
   };
 
-  runExam = () => {
+  runExam = async () => {
     // TODO: show loader
-    // TODO: fetch exam from server/database
-    const newExam = this.state.generatedExam.map(q => {
-      return { question: q.question, answer: null };
-    });
+    const {
+      createFlashMessage,
+      data: {
+        challengeNode: {
+          challenge: { id: challengeId }
+        }
+      }
+    } = this.props;
 
-    this.timerInterval = setInterval(() => {
-      this.setState(state => ({
-        examTimeInSeconds: state.examTimeInSeconds + 1
-      }));
-    }, 1000);
+    const generateExamResponse = await getGenerateExam(challengeId);
+    const { response, data } = generateExamResponse;
 
-    this.setState(
-      {
-        userExam: newExam
-      },
-      this.props.startExam
-    );
+    if (response.status === 200) {
+      const { generatedExam = [] } = data;
+      const emptyUserExamQuestions = generatedExam.map(q => {
+        return {
+          id: q.id,
+          question: q.question,
+          answer: { id: null, answer: null }
+        };
+      }) as UserExamQuestion[];
 
-    window.addEventListener('beforeunload', this.stopWindowClose);
-    window.addEventListener('unload', this.stopWindowClose);
-    window.addEventListener('popstate', this.stopBrowserBack);
+      this.setState(
+        {
+          generatedExamQuestions: generatedExam,
+          userExamQuestions: emptyUserExamQuestions
+        },
+        () => {
+          this.timerInterval = setInterval(() => {
+            this.setState({
+              examTimeInSeconds: this.state.examTimeInSeconds + 1
+            });
+          }, 1000);
+
+          this.props.startExam();
+
+          window.addEventListener('beforeunload', this.stopWindowClose);
+          window.addEventListener('unload', this.stopWindowClose);
+          window.addEventListener('popstate', this.stopBrowserBack);
+        }
+      );
+    } else {
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.GenerateExamError
+      });
+    }
   };
 
-  selectAnswer = (index: number, option: string): void => {
-    const newExam = Array.from(this.state.userExam);
-    newExam[index].answer = option;
+  selectAnswer = (index: number, id: string, answer: string): void => {
+    const newUserExamQuestions = Array.from(this.state.userExamQuestions);
+    newUserExamQuestions[index].answer.id = id;
+    newUserExamQuestions[index].answer.answer = answer;
     this.setState({
-      userExam: newExam
+      userExamQuestions: newUserExamQuestions
     });
   };
 
@@ -402,51 +270,48 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
   };
 
-  // TODO: have server check the exam
-  createExamResults = () => {
-    // TODO: show loader
-    const { setExamResults } = this.props;
-    const { userExam, examTimeInSeconds } = this.state;
-
-    const results: ExamResultQuestion[] = [];
-
-    userExam.forEach(userQuestion => {
-      const questionInDb = examInDatabase.find(
-        dbQuestion => userQuestion.question === dbQuestion.question
-      );
-
-      const questionResult = {
-        question: userQuestion.question,
-        answer: userQuestion.answer,
-        correct: questionInDb?.correctAnswer === userQuestion.answer
-      };
-
-      results.push(questionResult as ExamResultQuestion);
-    });
-
-    const examResults = {
-      timeInSeconds: examTimeInSeconds,
-      results
-    };
-
-    setExamResults(examResults);
-  };
-
-  finishExam = () => {
+  cleanUp = () => {
     clearInterval(this.timerInterval);
-    this.props.closeFinishExamModal();
-    this.createExamResults();
     this.setState({
-      showResults: true
+      examTimeInSeconds: 0,
+      currentQuestionIndex: 0
     });
-  };
 
-  submitExamResults = () => {
     window.removeEventListener('beforeunload', this.stopWindowClose);
     window.removeEventListener('unload', this.stopWindowClose);
     window.removeEventListener('popstate', this.stopBrowserBack);
-    this.props.submitChallenge();
-    this.props.stopExam();
+
+    this.props.clearExamResults();
+    this.props.closeExitExamModal();
+    this.props.closeFinishExamModal();
+  };
+
+  finishExam = () => {
+    // TODO: show loader
+    this.cleanUp();
+
+    const { setUserCompletedExam, submitChallenge } = this.props;
+    const { userExamQuestions, examTimeInSeconds } = this.state;
+
+    setUserCompletedExam({ userExamQuestions, examTimeInSeconds });
+    submitChallenge();
+  };
+
+  exitExam = () => {
+    this.cleanUp();
+
+    const {
+      data: {
+        challengeNode: {
+          challenge: {
+            fields: { blockHashSlug }
+          }
+        }
+      },
+      stopExam
+    } = this.props;
+    stopExam();
+    void navigate(blockHashSlug);
   };
 
   render() {
@@ -455,6 +320,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
         challengeNode: {
           challenge: {
             block,
+            dashedName,
             description,
             fields: { blockName },
             instructions,
@@ -466,8 +332,10 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
         }
       },
       examInProgress,
+      examResults,
       completedChallenges,
       isChallengeCompleted,
+      openExitExamModal,
       openFinishExamModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
@@ -478,15 +346,22 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     const {
       examTimeInSeconds,
       currentQuestionIndex,
-      generatedExam,
-      userExam,
-      showResults
+      generatedExamQuestions,
+      userExamQuestions
     } = this.state;
 
-    const missingPrequisites = prerequisites.filter(
-      prerequisite =>
-        !completedChallenges.find(({ id }) => prerequisite.id === id)
-    );
+    type Prerequisite = {
+      id: string;
+      title: string;
+    };
+
+    let missingPrequisites: Prerequisite[] = [];
+    if (prerequisites) {
+      missingPrequisites = prerequisites?.filter(
+        prerequisite =>
+          !completedChallenges.find(({ id }) => prerequisite.id === id)
+      );
+    }
 
     const qualifiedForExam = missingPrequisites.length === 0;
 
@@ -496,61 +371,78 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
     const ariaLabel = t('aria.answer');
 
+    // TODO: If already taken exam, show different messages
+
     return examInProgress ? (
-      <Grid>
+      <Container>
         <Row>
           <Spacer size='medium' />
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
-            {showResults ? (
+            {examResults ? (
               <ExamResults
+                dashedName={dashedName}
                 title={title}
-                submitExamResults={this.submitExamResults}
+                examResults={examResults}
+                exitExam={this.exitExam}
               />
             ) : (
               <div className='exam-wrapper'>
                 <div className='exam-header'>
                   <div>{title}</div>
                   <span>|</span>
-                  <div> Time: {formatSecondsToTime(examTimeInSeconds)}</div>
+                  <div>
+                    {t('learn.exam.time', {
+                      t: formatSecondsToTime(examTimeInSeconds)
+                    })}
+                  </div>
                   <span>|</span>
                   <div>
-                    Question {currentQuestionIndex + 1} of{' '}
-                    {generatedExam.length}
+                    {t('learn.exam.questions', {
+                      n: currentQuestionIndex + 1,
+                      t: generatedExamQuestions.length
+                    })}
                   </div>
                 </div>
                 <hr />
                 <Spacer size='medium' />
 
                 <div className='exam-questions'>
-                  <div>{generatedExam[currentQuestionIndex].question}</div>
+                  <PrismFormatted
+                    text={convertMd(
+                      generatedExamQuestions[currentQuestionIndex].question
+                    )}
+                  />
+
                   <Spacer size='large' />
                   <div className='exam-answers'>
-                    {generatedExam[currentQuestionIndex].answers.map(
-                      (option, answerIndex) => (
-                        <label className='exam-answer-label' key={answerIndex}>
+                    {generatedExamQuestions[currentQuestionIndex].answers.map(
+                      ({ answer, id }) => (
+                        <label className='exam-answer-label' key={id}>
                           <input
                             aria-label={ariaLabel}
                             checked={
-                              userExam[currentQuestionIndex].answer === option
+                              userExamQuestions[currentQuestionIndex].answer
+                                .id === id
                             }
                             className='exam-answer-input-hidden'
-                            name='exam'
+                            name={id}
                             onChange={() =>
-                              this.selectAnswer(currentQuestionIndex, option)
+                              this.selectAnswer(
+                                currentQuestionIndex,
+                                id,
+                                answer
+                              )
                             }
                             type='radio'
-                            value={option}
+                            value={id}
                           />{' '}
                           <span className='exam-answer-input-visible'>
-                            {userExam[currentQuestionIndex].answer ===
-                            option ? (
+                            {userExamQuestions[currentQuestionIndex].answer
+                              .id === id ? (
                               <span className='exam-answer-input-selected' />
                             ) : null}
                           </span>
-                          <PrismFormatted
-                            className={'exam-answer'}
-                            text={option}
-                          />
+                          <PrismFormatted text={convertMd(answer)} />
                         </label>
                       )
                     )}
@@ -570,10 +462,13 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     {t('buttons.previous-question')}
                   </Button>
 
-                  {currentQuestionIndex === generatedExam.length - 1 ? (
+                  {currentQuestionIndex ===
+                  generatedExamQuestions.length - 1 ? (
                     <Button
                       block={true}
-                      disabled={!userExam[currentQuestionIndex].answer}
+                      disabled={
+                        !userExamQuestions[currentQuestionIndex].answer.id
+                      }
                       className='exam-button'
                       bsStyle='primary'
                       data-cy='finish-exam'
@@ -584,7 +479,9 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   ) : (
                     <Button
                       block={true}
-                      disabled={!userExam[currentQuestionIndex].answer}
+                      disabled={
+                        !userExamQuestions[currentQuestionIndex].answer.id
+                      }
                       className='exam-button'
                       bsStyle='primary'
                       data-cy='next-exam-question'
@@ -594,12 +491,27 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     </Button>
                   )}
                 </div>
+
+                <Spacer size='medium' />
+
+                <div className='exam-buttons'>
+                  <Button
+                    block={true}
+                    className='exam-button'
+                    bsStyle='primary'
+                    data-cy='exit-exam'
+                    onClick={openExitExamModal}
+                  >
+                    {t('buttons.exit-exam')}
+                  </Button>
+                </div>
               </div>
             )}
           </Col>
+          <ExitExamModal exitExam={this.exitExam} />
           <FinishExamModal finishExam={this.finishExam} />
         </Row>
-      </Grid>
+      </Container>
     ) : (
       <Hotkeys
         innerRef={this._container}
@@ -608,7 +520,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeTitle
@@ -621,11 +533,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
 
                 {qualifiedForExam ? (
                   <Alert id='qualified-for-exam' bsStyle='info'>
-                    <p>{t('learn.qualified-for-exam')}</p>
+                    <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
                   <Alert id='not-qualified-for-exam' bsStyle='danger'>
-                    <p>{t('learn.not-qualified-for-exam')}</p>
+                    <p>{t('learn.exam.not-qualified')}</p>
                     <Spacer size='small' />
                     <ul>
                       {missingPrequisites.map(({ title, id }) => (
@@ -652,7 +564,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );
@@ -673,8 +585,10 @@ export const query = graphql`
       challenge {
         block
         challengeType
+        dashedName
         description
         fields {
+          blockHashSlug
           blockName
         }
         helpCategory

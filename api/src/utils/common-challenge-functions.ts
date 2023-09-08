@@ -1,10 +1,10 @@
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
-import { challengeTypes } from '../../../config/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { getChallenges } from './get-challenges';
 
-const jsCertProjectIds = [
+export const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
   'a7f4d8f2483413a6ce226cac',
   '56533eb9ac21ba0edf2244e2',
@@ -12,7 +12,7 @@ const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-const multifileCertProjectIds = getChallenges()
+export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
@@ -24,14 +24,14 @@ type SavedChallengeFile = {
   key: string;
   ext: string; // NOTE: This is Ext type in client
   name: string;
-  history?: string[];
+  history: string[];
   contents: string;
 };
 
 type SavedChallenge = {
   id: string;
   lastSavedDate: number;
-  files?: SavedChallengeFile[];
+  files: SavedChallengeFile[];
 };
 
 // TODO: Confirm this type - read comments below
@@ -55,7 +55,7 @@ type CompletedChallengeFile = {
   path?: string | null;
 };
 
-type CompletedChallenge = {
+export type CompletedChallenge = {
   id: string;
   solution?: string | null;
   githubLink?: string | null;
@@ -65,6 +65,18 @@ type CompletedChallenge = {
   files?: CompletedChallengeFile[];
 };
 
+/**
+ * Helper function to update a user's challenge data. Used in challenge
+ * submission endpoints.
+ *
+ * @deprecated Create specific functions for each submission endpoint.
+ * @param fastify The Fastify instance.
+ * @param user The existing user record.
+ * @param challengeId The id of the submitted challenge.
+ * @param _completedChallenge The challenge submission.
+ * @param timezone The user's timezone.
+ * @returns Information about the update.
+ */
 export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: user,
@@ -124,15 +136,12 @@ export async function updateUserChallengeData(
     : null;
 
   if (alreadyCompleted && oldChallenge) {
-    const challengeWithOldDate = userCompletedChallenges[oldIndex];
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate
+    };
 
-    if (challengeWithOldDate) {
-      challengeWithOldDate.completedDate = oldChallenge.completedDate;
-      finalChallenge = {
-        ...completedChallenge,
-        ...challengeWithOldDate
-      };
-    }
+    userCompletedChallenges[oldIndex] = finalChallenge;
   } else {
     finalChallenge = {
       ...completedChallenge

@@ -1,9 +1,9 @@
 const path = require('path');
-const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
+const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes
-} = require('../../../config/challenge-types');
+} = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -44,6 +44,11 @@ const exam = path.resolve(
   '../../src/templates/Challenges/exam/show.tsx'
 );
 
+const msTrophy = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/ms-trophy/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -52,7 +57,8 @@ const views = {
   video,
   codeAlly,
   odin,
-  exam
+  exam,
+  msTrophy
   // quiz: Quiz
 };
 
@@ -147,7 +153,9 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     showProjectPreview:
       challengeOrder === 0 &&
       usesMultifileEditor &&
-      challengeType !== challengeTypes.multifileCertProject,
+      challengeType !== challengeTypes.multifileCertProject &&
+      // TODO: revert this to enable project previews for python challenges
+      challengeType !== challengeTypes.python,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles

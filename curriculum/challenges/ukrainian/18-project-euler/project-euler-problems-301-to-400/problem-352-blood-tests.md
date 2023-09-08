@@ -40,7 +40,7 @@ For the current example, it turns out that the most cost-efficient testing schem
 
 Using the optimal strategy, let $T(s, p)$ represent the average number of tests needed to screen a flock of $s$ sheep for a virus having probability $p$ to be present in any individual. Thus, rounded to six decimal places, $T(25, 0.02) = 4.155452$ and $T(25, 0.10) = 12.702124$.
 
-Знайдіть $\sum T(10\\,000, p)$ за умови $p = 0.01, 0.02, 0.03, \ldots 0.50$. Give your answer rounded to six decimal places.
+Знайдіть $\sum T(10\\,000, p)$ за умови $p = 0.01, 0.02, 0.03, \ldots 0.50$. Дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

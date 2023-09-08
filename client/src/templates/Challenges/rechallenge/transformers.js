@@ -11,14 +11,15 @@ import {
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../../config/client/sass-compile.json';
+import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
   compileHeadTail
-} from '../../../../../utils/polyvinyl';
+} from '../../../../../shared/utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
+import { makeCancellable, makeInputAwaitable } from './transform-python';
 
 const { filename: sassCompile } = sassData;
 
@@ -98,6 +99,7 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
 const testHTML = matchesProperty('ext', 'html');
+const testPython = matchesProperty('ext', 'py');
 const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
 
 const replaceNBSP = cond([
@@ -297,9 +299,26 @@ const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
+const transformPython = async function (file) {
+  const awaitableCode = makeInputAwaitable(file.contents);
+  const cancellableCode = makeCancellable(awaitableCode);
+  return transformContents(() => cancellableCode, file);
+};
+
+const pythonTransformer = cond([
+  [testPython, transformPython],
+  [stubTrue, identity]
+]);
+
 export const getTransformers = loopProtectOptions => [
   replaceNBSP,
   babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
   htmlTransformer
+];
+
+export const getPythonTransformers = () => [
+  replaceNBSP,
+  partial(compileHeadTail, ''),
+  pythonTransformer
 ];

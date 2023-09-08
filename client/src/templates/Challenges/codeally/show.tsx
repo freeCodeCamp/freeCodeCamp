@@ -1,5 +1,5 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -9,13 +9,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
@@ -44,7 +45,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
@@ -257,7 +258,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -363,7 +364,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

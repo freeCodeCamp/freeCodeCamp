@@ -80,8 +80,14 @@
     "tweet": "Tweet",
     "previous-question": "Previous question",
     "next-question": "Next question",
+    "exit-exam": "Exit the exam",
+    "exit": "Exit",
     "finish-exam": "Finish the exam",
-    "submit-exam-results": "Submit my results"
+    "finish": "Finish",
+    "submit-exam-results": "Submit my results",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "Link Account",
+    "unlink-account": "Unlink Account"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -89,6 +95,7 @@
     "big-heading-3": "获得认证",
     "h2-heading": "自 2014 年以来，已有超过 40,000 名 freeCodeCamp.org 学员入职科技公司，例如：",
     "hero-img-description": "韩国的 freeCodeCamp 学员在当地一个学习小组的交流活动上",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "媒体报道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -109,6 +116,9 @@
       }
     },
     "certification-heading": "获得以下免费认证：",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -203,6 +213,7 @@
       "project-name": "项目名称",
       "solution": "解决方案",
       "solution-for": "{{projectTitle}} 的解决方案",
+      "results-for": "Results for {{projectTitle}}",
       "my-profile": "我的个人资料",
       "my-name": "我的姓名",
       "my-location": "我的位置",
@@ -353,6 +364,7 @@
     "console-output": "// 打印输出",
     "sign-in-save": "登录以保存你的学习进度",
     "download-solution": "下载我的解决方案",
+    "download-results": "Download my results",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 认证项目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
@@ -403,9 +415,45 @@
     "if-getting-value": "如果你从 freeCodeCamp 中获益良多，可以捐款支持我们的慈善组织的使命。",
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
     "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
-    "qualified-for-exam": "Congratulations, you have completed all the requirements to qualify for the exam.",
-    "not-qualified-for-exam": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-    "preview-external-window": "Preview currently showing in external window."
+    "preview-external-window": "Preview currently showing in external window.",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    }
   },
   "donate": {
     "title": "支持我们的慈善组织",
@@ -421,10 +469,10 @@
     "no-halo": "如果你在你的个人图片周围看不到金色光环，请联系 donors@freecodecamp.org。",
     "gift-frequency": "选择捐赠的频率：",
     "gift-amount": "选择捐赠的额度：",
-    "confirm": "确认你的捐款",
-    "confirm-2": "确认你的一次性捐款 ${{usd}}",
-    "confirm-3": "确认你的捐款 ${{usd}} / 月",
-    "confirm-4": "确认你的捐款 ${{usd}} / 年",
+    "confirm": "Confirm your donation:",
+    "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
+    "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
+    "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
     "wallet-label": "向 freeCodeCamp 捐款 ${{usd}}",
     "wallet-label-1": "向 freeCodeCamp 每月捐款 ${{usd}}",
     "your-donation": "你的 ${{usd}} 捐款将帮助世界各地的人们学习 {{hours}} 小时。",
@@ -664,7 +712,14 @@
     "code-save-less": "等等！你的代码未保存，请在几秒钟后重试。",
     "challenge-save-too-big": "抱歉，你无法保存代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
-    "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。"
+    "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
+    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
+    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
+    "ms-unlinked": "The link to your Microsoft username has been removed.",
+    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",
@@ -682,13 +737,15 @@
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "记住要提交你自己的作业",
     "publicly-visible-url": "记得要提交一个公开可见的app URL",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。"
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
+    "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "发布日期",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
@@ -798,7 +855,7 @@
       "machine-learning-with-python-v7": "Python 和机器学习认证",
       "College Algebra with Python": "Python 和大学代数",
       "college-algebra-with-python-v8": "Python 和大学代数认证",
-      "Foundational C# with Microsoft": "Foundational C# with Microsft",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",
@@ -870,5 +927,12 @@
     "p2": "此操作只会将你在此设备和浏览器会话上的账号注销。请确认你是否要继续。",
     "certain": "是的，请注销我的账户",
     "nevermind": "算了，我不想注销账户"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }

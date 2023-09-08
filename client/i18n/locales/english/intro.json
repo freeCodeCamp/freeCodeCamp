@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
@@ -55,13 +55,6 @@
         "intro": [
           "The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.",
           "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Responsive Web Design Projects",
-        "intro": [
-          "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
-          "Complete the five web programming projects below to earn your Responsive Web Design certification."
         ]
       }
     }
@@ -213,6 +206,10 @@
           "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
           "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -458,7 +455,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
@@ -947,6 +947,14 @@
         "title": "Learn HTML Foundations",
         "intro": ["A description is to be determined"]
       },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": ["A description is to be determined"]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": ["A description is to be determined"]
+      },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
@@ -1009,13 +1017,13 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Write Your First Code Using C#",
@@ -1058,6 +1066,20 @@
         "intro": [
           "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
       }
     }
   },

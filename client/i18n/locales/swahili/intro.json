@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Ubunifu wa Wavuti Sikivu (Legacy Responsive Web Design)",
+    "title": "Changamoto za Ubunifu wa Wavuti Sikivu",
     "intro": [
       "Katika Uthibitishaji huu wa Muundo Wa Wavuti Sikivu, utajifunza lugha ambazo watengenezaji wa tovuti hutumia kutengeneza kurasa za wavuti: HTML(Hypertext Markup Language) kwa ajili ya maudhui, na CSS (Cascading Style Sheets) kwa ajili ya muundo.",
       "Kwanza, utaunda programu ya picha ya paka ili kujifunza misingi ya HTML na CSS. Baadaye, utajifunza mbinu za kisasa kama vile vihifadhi vya CSS kwa kujenga pengwini, na mbinu bora za ufikivu kwa kuunda fomu ya wavuti.",
@@ -55,13 +55,6 @@
         "intro": [
           "Gridi ya CSS ni kiwango kipya zaidi kinachorahisisha kuunda miundo changamano inayoitikia. Inafanya kazi kwa kugeuza kipengee cha HTML kuwa gridi, na hukuruhusu kuweka vipengele vya watoto popote ndani.",
           "Katika kozi hii, utajifunza misingi ya gridi ya CSS kwa kuunda miundo changamano tofauti, ikiwa ni pamoja na blogu."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Miradi ya Responsive Web Design",
-        "intro": [
-          "Ni wakati wa kuweka ujuzi wako mpya kufanya kazi. Kwa kufanyia kazi miradi hii, utapata fursa ya kutumia ujuzi, kanuni, na dhana zote ambazo umejifunza kufikia sasa: HTML, CSS, Muundo Unaoonekana, Ufikivu, na zaidi.",
-          "Kamilisha miradi mitano ya programu ya wavuti iliyo hapa chini ili upate cheti chako cha Muundo wa Wavuti."
         ]
       }
     }
@@ -213,6 +206,10 @@
           "Kuchagua rangi zinazofaa kwa ukurasa wako wa tovuti kunaweza kuboresha pakubwa mvuto wa kupendeza kwa wasomaji wako.",
           "Katika kozi hii, utaunda seti ya alama za rangi. Utajifunza njia tofauti za kuweka thamani za rangi na jinsi ya kuunganisha rangi."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -950,6 +947,14 @@
         "title": "Jifunze Misingi ya HTML",
         "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
+      "top-working-with-text": {
+        "title": "Kufanya kazi na maandishi",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
+      },
+      "top-links-and-images": {
+        "title": "Viungo na Picha",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
+      },
       "top-build-a-recipe-project": {
         "title": "Jifunze Misingi ya HTML kwa Kuunda Ukurasa wa Mapishi",
         "intro": ["Maelezo yanapaswa kuamuliwa"]
@@ -967,8 +972,8 @@
         "intro": ["Maelezo yanapaswa kuamuliwa"]
       },
       "top-the-box-model": {
-        "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "title": "Jifunze Box Model",
+        "intro": ["Maelezo yanapaswa kuamuliwa"]
       }
     }
   },
@@ -1012,13 +1017,13 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Msingi C# na Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "Kozi hii inatoa utangulizi wa kina wa utayarishaji wa C#, unaojumuisha dhana zake za msingi, sintaksia, na matumizi ya vitendo katika ukuzaji programu.",
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
-      "Kufikia mwisho wa kozi hii, utakuwa umepata ujuzi wa vitendo na ujuzi unaohitajika ili kutumia C# kwa ujasiri kwa ajili ya kujenga matumizi thabiti na yenye hatari"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Andika Msimbo wako wa Kwanza kwa kutumia C#",
@@ -1061,6 +1066,20 @@
         "intro": [
           "Tumia ulichojifunza ili kufaulu mtihani ili kupata cheti cha Msingi cha Microsoft cha C#"
         ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Inayokuja Python",
+    "intro": ["kishika nafasi"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Jifunze Python kwa Kuunda Mchezo wa Blackjack",
+        "intro": ["Jifunze Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Mradi ujao wa Python",
+        "intro": ["kishika nafasi"]
       }
     }
   },

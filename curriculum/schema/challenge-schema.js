@@ -1,7 +1,7 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../config/challenge-types');
+const { challengeTypes } = require('../../shared/config/challenge-types');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -33,7 +33,7 @@ const schema = Joi.object()
     challengeOrder: Joi.number(),
     removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(19).required(),
+    challengeType: Joi.number().min(0).max(20).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -58,6 +58,10 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
+    msTrophyId: Joi.when('challengeType', {
+      is: [challengeTypes.msTrophy],
+      then: Joi.string().required()
+    }),
     notes: Joi.string().allow(''),
     order: Joi.number(),
     prerequisites: Joi.when('challengeType', {

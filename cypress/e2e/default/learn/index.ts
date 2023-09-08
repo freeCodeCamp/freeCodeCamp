@@ -19,9 +19,9 @@ const superBlockNames = [
   'Information Security Certification',
   'Machine Learning with Python Certification',
   'College Algebra with Python Certification',
+  '(New) Foundational C# with Microsoft Certification',
   'Coding Interview Prep',
-  'Project Euler',
-  'Legacy Responsive Web Design Certification'
+  'Project Euler'
 ];
 
 describe('Learn Landing page (not logged in)', () => {

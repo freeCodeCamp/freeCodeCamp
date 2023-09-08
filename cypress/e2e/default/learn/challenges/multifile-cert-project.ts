@@ -45,7 +45,7 @@ describe('multifileCertProjects', function () {
   beforeEach(() => {
     cy.preserveSession();
     cy.visit(
-      'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
+      'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
   });
 
@@ -76,9 +76,7 @@ describe('multifileCertProjects', function () {
     cy.contains('Your code was saved to the database.');
     cy.get(editorElements.closeFlash).click();
     // load saved code when navigating site (no hard refresh)'
-    cy.contains('Responsive Web Design Projects').click();
-    cy.contains('In this Responsive Web Design Certification');
-    cy.contains('Build a Tribute Page').click();
+    cy.contains('Tribute Page').click();
     cy.get(editorElements.container)
       .find(editorElements.editor)
       .contains(save2text);
