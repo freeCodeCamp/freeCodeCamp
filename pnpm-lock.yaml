@@ -210,6 +210,9 @@ importers:
       connect-mongo:
         specifier: 4.6.0
         version: 4.6.0(express-session@1.17.3)(mongodb@4.16.0)
+      dotenv:
+        specifier: 16.3.1
+        version: 16.3.1
       fast-uri:
         specifier: 2.2.0
         version: 2.2.0
