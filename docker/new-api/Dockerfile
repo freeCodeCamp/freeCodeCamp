@@ -26,13 +26,13 @@ RUN pnpm -F=api build
 FROM node:18-bullseye AS deps
 
 WORKDIR /home/node/build
-COPY --chown=node:node package.json .
 COPY --chown=node:node pnpm*.yaml .
-COPY --chown=node:node api/package.json api/package.json
+COPY --chown=node:node api/package.json api/
+COPY --chown=node:node shared/package.json shared/
 RUN npm i -g pnpm@8
 # Prevent pnpm installing unnecessary packages (see above)
 RUN pnpm config set dedupe-peer-dependents false
-RUN pnpm install --prod --ignore-scripts -w -F=api
+RUN pnpm install --prod --ignore-scripts -F=shared -F=api
 
 FROM node:18-alpine
 RUN npm i -g pm2@4
@@ -42,8 +42,8 @@ COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 # COPY --from=builder --chown=node:node /home/node/build/api/ecosystem.config.js api/ecosystem.config.js
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/package.json
 COPY --from=builder --chown=node:node /home/node/build/package.json package.json
-# TODO: replace with shared workspace when available
-COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
+
+COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
 
 CMD ["node", "api/src/server.js"]
