@@ -287,6 +287,10 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = [];
 let currentTask = {};
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 openTaskFormBtn.addEventListener("click", () =>
   taskForm.classList.toggle("hidden")
 );
@@ -324,16 +328,12 @@ taskForm.addEventListener("submit", (e) => {
         <p><strong>Title:</strong> ${title}</p>
         <p><strong>Date:</strong> ${date}</p>
         <p><strong>Description:</strong> ${description}</p>
-        <button onclick="editTask(this)" type="button" class="btn">Edit</button>
-        <button onclick="deleteTask(this)" type="button" class="btn">Delete</button>
+        <button type="button" class="btn">Edit</button>
+        <button type="button" class="btn">Delete</button>
       </div>
     `)
   ));
 
   taskForm.classList.toggle("hidden");
 });
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
