@@ -1,12 +1,12 @@
-import { Table } from '@freecodecamp/react-bootstrap';
 import { find } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Table } from '@freecodecamp/ui';
 
 import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
-import { CompletedChallenge, User } from '../redux/prop-types';
+import type { CompletedChallenge, User } from '../redux/prop-types';
 import {
   certsToProjects,
   type CertTitle
