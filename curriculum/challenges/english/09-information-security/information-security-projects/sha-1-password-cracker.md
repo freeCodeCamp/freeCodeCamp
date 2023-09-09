@@ -71,6 +71,7 @@ What is the purpose of a salt?
 
 If multiple users have the same password, they will also have the same hash. This makes the pool of hashes smaller and more susceptible to an outsider who can now more easily figure out a common password. In order to increase security, we can add a salt. A salt is randomized data (in this case, a string of characters) that is added to the beginning and end of a password at the time of hashing. The action of salting then creates an even more unqiue input than the basic password, which will then result in a more secure hash.
 
+
 # --hints--
 
 It should pass all Python tests.
