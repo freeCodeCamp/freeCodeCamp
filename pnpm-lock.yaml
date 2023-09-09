@@ -43,8 +43,8 @@ importers:
         specifier: 29.5.4
         version: 29.5.4
       '@types/lodash':
-        specifier: 4.14.197
-        version: 4.14.197
+        specifier: 4.14.198
+        version: 4.14.198
       '@types/node':
         specifier: 18.17.14
         version: 18.17.14
@@ -10063,7 +10063,7 @@ packages:
       '@babel/preset-env': 7.22.14(@babel/core@7.22.11)
       '@babel/types': 7.22.11
       '@mdx-js/mdx': 1.6.22
-      '@types/lodash': 4.14.197
+      '@types/lodash': 4.14.198
       js-string-escape: 1.0.1
       loader-utils: 2.0.4
       lodash: 4.17.21
@@ -10983,6 +10983,10 @@ packages:
 
   /@types/lodash@4.14.197:
     resolution: {integrity: sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==}
+    dev: true
+
+  /@types/lodash@4.14.198:
+    resolution: {integrity: sha512-trNJ/vtMZYMLhfN45uLq4ShQSw0/S7xCTLLVM+WM1rmFpba/VS42jVUgaO3w/NOLiWR/09lnYk0yMaA/atdIsg==}
 
   /@types/mdast@3.0.12:
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
@@ -16554,7 +16558,7 @@ packages:
       '@types/debug': 0.0.30
       '@types/get-port': 3.2.0
       '@types/glob': 5.0.38
-      '@types/lodash': 4.14.197
+      '@types/lodash': 4.14.198
       '@types/mkdirp': 0.5.2
       '@types/node': 8.10.66
       '@types/rimraf': 2.0.5
