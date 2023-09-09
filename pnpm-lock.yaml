@@ -1098,8 +1098,8 @@ importers:
         version: 4.9.5
     devDependencies:
       '@types/codemirror':
-        specifier: 5.60.9
-        version: 5.60.9
+        specifier: 5.60.10
+        version: 5.60.10
       '@types/react':
         specifier: 16.14.46
         version: 16.14.46
@@ -10695,8 +10695,8 @@ packages:
       '@types/node': 20.5.9
     dev: true
 
-  /@types/codemirror@5.60.9:
-    resolution: {integrity: sha512-8RhLhlGo9bAkytFYKDzezorY2ojvGk+4xFEso/6Hc2oR1oE2P9lI+AEkbUW7cDlKcQAK5WJkJRBLTdjBE7xQPA==}
+  /@types/codemirror@5.60.10:
+    resolution: {integrity: sha512-ZTA3teiCWKT8HUUofqlGPlShu5ojdIajizsS0HpH6GL0/iEdjRt7fXbCLHHqKYP5k7dC/HnnWIjZAiELUwBdjQ==}
     dependencies:
       '@types/tern': 0.23.4
     dev: true
