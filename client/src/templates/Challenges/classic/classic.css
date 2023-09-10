@@ -176,6 +176,11 @@
   top: calc(var(--header-height) + var(--breadcrumbs-height));
 }
 
+#mobile-layout .portal-button svg {
+  height: 18px;
+  padding-block-start: 3px;
+}
+
 #mobile-layout #mobile-layout-pane-instructions {
   overflow-y: auto;
 }
