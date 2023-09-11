@@ -102,8 +102,8 @@ jobs:
       - name: Create Image
         run: |
           docker build \
-            -t fcc-api \
-            -f docker/api/Dockerfile .
+            -t fcc-new-api \
+            -f docker/new-api/Dockerfile .
 
   cypress-run:
     name: Test
