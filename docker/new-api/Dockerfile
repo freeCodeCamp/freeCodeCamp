@@ -7,7 +7,16 @@ RUN npm i -g pnpm@8
 USER node
 WORKDIR /home/node/build
 
-COPY --chown=node:node . .
+COPY --chown=node:node package.json .
+COPY --chown=node:node pnpm*.yaml .
+COPY --chown=node:node tsconfig*.json .
+COPY --chown=node:node api/ api/
+COPY --chown=node:node shared/ shared/
+COPY --chown=node:node tools/ tools/
+COPY --chown=node:node curriculum/ curriculum/
+# TODO: AFAIK it's just the intro translations. Those should be folded into the
+# curriculum and then we can remove this.
+COPY --chown=node:node client/ client/
 
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
