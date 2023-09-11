@@ -22,4 +22,4 @@
   - docs/i18n/**/*
   - client/i18n/**/*
   - config/crowdin/**/*
-  - config/i18n/**/*
+  - shared/config/i18n/**/*

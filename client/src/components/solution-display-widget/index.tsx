@@ -45,7 +45,7 @@ export function SolutionDisplayWidget({
   );
   const ShowProjectAndGithubLinkForCertification = (
     <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-      <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+      <Dropdown.Toggle className='btn-invert'>
         {viewText}{' '}
         <span className='sr-only'>
           {t('settings.labels.solution-for', { projectTitle })}
@@ -53,7 +53,7 @@ export function SolutionDisplayWidget({
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <MenuItem
-          bsStyle='primary'
+          variant='primary'
           href={solution ?? ''}
           rel='noopener noreferrer'
           target='_blank'
@@ -63,7 +63,7 @@ export function SolutionDisplayWidget({
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
         <MenuItem
-          bsStyle='primary'
+          variant='primary'
           href={githubLink}
           rel='noopener noreferrer'
           target='_blank'
@@ -97,7 +97,7 @@ export function SolutionDisplayWidget({
   const ShowUserCode = (
     <Button
       block={true}
-      bsStyle='primary'
+      variant='primary'
       className='btn-invert'
       data-cy={dataCy}
       onClick={showUserCode}
@@ -111,17 +111,17 @@ export function SolutionDisplayWidget({
   const ShowMultifileProjectSolution = (
     <div className='solutions-dropdown'>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+        <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <MenuItem bsStyle='primary' onClick={showUserCode}>
+          <MenuItem variant='primary' onClick={showUserCode}>
             {viewCode}
           </MenuItem>
-          <MenuItem bsStyle='primary' onClick={showProjectPreview}>
+          <MenuItem variant='primary' onClick={showProjectPreview}>
             {viewProject}
           </MenuItem>
         </Dropdown.Menu>
@@ -132,7 +132,7 @@ export function SolutionDisplayWidget({
   const ShowProjectAndGithubLinks = (
     <div className='solutions-dropdown'>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+        <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -140,7 +140,7 @@ export function SolutionDisplayWidget({
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <MenuItem
-            bsStyle='primary'
+            variant='primary'
             href={solution}
             rel='noopener noreferrer'
             target='_blank'
@@ -150,7 +150,7 @@ export function SolutionDisplayWidget({
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
           <MenuItem
-            bsStyle='primary'
+            variant='primary'
             href={githubLink}
             rel='noopener noreferrer'
             target='_blank'

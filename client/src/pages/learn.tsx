@@ -12,7 +12,7 @@ import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
-import { defaultDonation } from '../../../config/donation-settings';
+import { defaultDonation } from '../../../shared/config/donation-settings';
 import {
   isSignedInSelector,
   userSelector,

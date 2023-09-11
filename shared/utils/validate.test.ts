@@ -3,7 +3,8 @@ import {
   usernameTooShort,
   validationSuccess,
   usernameIsHttpStatusCode,
-  invalidCharError
+  invalidCharError,
+  isMicrosoftTranscriptLink
 } from './validate';
 
 function inRange(num: number, range: number[]) {
@@ -55,4 +56,61 @@ describe('isValidUsername', () => {
       expect(isValidUsername(base + char)).toStrictEqual(expected);
     }
   });
+});
+
+const baseUrl = 'https://learn.microsoft.com/';
+
+describe('isMicrosoftTranscriptLink', () => {
+  it('should reject links to domains other than learn.microsoft.com', () => {
+    {
+      expect(isMicrosoftTranscriptLink('https://lean.microsoft.com')).toBe(
+        false
+      );
+      expect(isMicrosoftTranscriptLink('https://learn.microsft.com')).toBe(
+        false
+      );
+    }
+  });
+
+  it('should reject links without a username', () => {
+    expect(isMicrosoftTranscriptLink(`${baseUrl}/en-us/users/`)).toBe(false);
+  });
+
+  it('should reject links without a unique id', () => {
+    expect(
+      isMicrosoftTranscriptLink(`${baseUrl}/en-us/users/moT01/transcript`)
+    ).toBe(false);
+  });
+
+  it('should reject links with anything after the unique id', () => {
+    expect(
+      isMicrosoftTranscriptLink(
+        `${baseUrl}/en-us/users/moT01/transcript/any-id/more-stuff`
+      )
+    ).toBe(false);
+  });
+
+  it('should reject the placeholder link', () => {
+    expect(
+      isMicrosoftTranscriptLink(
+        'https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID'
+      )
+    ).toBe(false);
+    expect(
+      isMicrosoftTranscriptLink(
+        'https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID/'
+      )
+    ).toBe(false);
+  });
+
+  it.each(['en-us', 'fr-fr', 'lang-country'])(
+    'should accept links with the %s locale',
+    locale => {
+      expect(
+        isMicrosoftTranscriptLink(
+          `https://learn.microsoft.com/${locale}/users/moT01/transcript/any-id`
+        )
+      ).toBe(true);
+    }
+  );
 });

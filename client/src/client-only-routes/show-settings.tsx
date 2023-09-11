@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
+
 import store from 'store';
 import envData from '../../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -54,7 +55,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
-  verifyCert: () => void;
+  verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
 };
@@ -227,6 +228,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
+            isEmailVerified={isEmailVerified}
           />
           {userToken && (
             <>

@@ -163,7 +163,7 @@ If starting the Gitpod environment did not automatically develop the environment
 
 - Create a config file.
   ```console
-  pnpm run create:config
+  pnpm run create:shared
   ```
 
 - Seed the database

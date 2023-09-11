@@ -8,7 +8,7 @@ import type { Dispatch } from 'redux';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { executeGA } from '../../../redux/actions';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 

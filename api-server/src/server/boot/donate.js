@@ -1,7 +1,7 @@
 import debug from 'debug';
 import Stripe from 'stripe';
 
-import { donationSubscriptionConfig } from '../../../../config/donation-settings';
+import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
 import {
   getAsyncPaypalToken,

@@ -1,10 +1,11 @@
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -161,11 +162,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
-    const editorTabPaneProps = {
-      mountOnEnter: true,
-      unmountOnExit: true
-    };
-
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
 
@@ -211,77 +207,35 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     return (
       <>
         <Tabs
-          activeKey={currentTab}
-          animation={false}
-          defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
-          onSelect={this.switchTab}
           onTouchStart={this.handleClick}
+          defaultValue={currentTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.instructions')}
-              tabIndex={0}
-            >
-              {instructions}
-            </TabPane>
-          )}
-          <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.console')}
-            {...editorTabPaneProps}
-          >
-            {testOutput}
-          </TabPane>
-          {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
-            >
-              {notes}
-            </TabPane>
-          )}
-          {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
-            >
-              <button
-                className='portal-button'
-                aria-expanded={!!showPreviewPortal}
-                onClick={() => togglePane('showPreviewPortal')}
-              >
-                <span className='sr-only'>{getPortalBtnSrText()}</span>
-                <FontAwesomeIcon icon={faWindowRestore} />
-              </button>
-              {displayPreviewPane && preview}
-              {showPreviewPortal && (
-                <p className='preview-external-window'>
-                  {i18next.t('learn.preview-external-window')}
-                </p>
-              )}
-            </TabPane>
-          )}
-          {!hasEditableBoundaries && (
-            <ToolPanel
-              guideUrl={guideUrl}
-              isMobile={true}
-              videoUrl={videoUrl}
-            />
-          )}
-          {hasPreview && this.state.currentTab !== 'preview' && (
+          <TabsList className='nav-lists'>
+            {!hasEditableBoundaries && (
+              <TabsTrigger value={Tab.Instructions}>
+                {i18next.t('learn.editor-tabs.instructions')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={Tab.Editor}>
+              {i18next.t('learn.editor-tabs.code')}
+            </TabsTrigger>
+            {hasNotes && usesMultifileEditor && (
+              <TabsTrigger value={Tab.Notes}>
+                {i18next.t('learn.editor-tabs.notes')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={Tab.Console}>
+              {i18next.t('learn.editor-tabs.console')}
+            </TabsTrigger>
+            {hasPreview && (
+              <TabsTrigger value={Tab.Preview}>
+                {i18next.t('learn.editor-tabs.preview')}
+              </TabsTrigger>
+            )}
             <button
               className='portal-button'
               aria-expanded={!!showPreviewPortal}
@@ -290,6 +244,58 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               <span className='sr-only'>{getPortalBtnSrText()}</span>
               <FontAwesomeIcon icon={faWindowRestore} />
             </button>
+          </TabsList>
+
+          <TabsContent tabIndex={-1} className='tab-content' value={Tab.Editor}>
+            {usesMultifileEditor && <EditorTabs />}
+            {editor}
+          </TabsContent>
+          {!hasEditableBoundaries && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Instructions}
+            >
+              {instructions}
+            </TabsContent>
+          )}
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={Tab.Console}
+          >
+            {testOutput}
+          </TabsContent>
+          {hasNotes && usesMultifileEditor && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Notes}
+            >
+              {notes}
+            </TabsContent>
+          )}
+          {hasPreview && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={Tab.Preview}
+              forceMount
+            >
+              {displayPreviewPane && preview}
+              {showPreviewPortal && (
+                <p className='preview-external-window'>
+                  {i18next.t('learn.preview-external-window')}
+                </p>
+              )}
+            </TabsContent>
+          )}
+          {!hasEditableBoundaries && (
+            <ToolPanel
+              guideUrl={guideUrl}
+              isMobile={true}
+              videoUrl={videoUrl}
+            />
           )}
         </Tabs>
         {displayPreviewPortal && (

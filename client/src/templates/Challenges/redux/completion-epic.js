@@ -20,7 +20,7 @@ import {
   challengeTypes,
   hasNoTests,
   submitTypes
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowBlockDonationRequests,

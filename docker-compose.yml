@@ -1,0 +1,7 @@
+services:
+  client:
+    image: fcc-client
+    ports:
+      # PORT is used by the new api, so we use the less generic HOST_PORT to avoid
+      # conflicts.
+      - '${HOST_PORT:-8000}:8000'

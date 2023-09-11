@@ -1,5 +1,5 @@
 import cookies from 'browser-cookies';
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 
 import type {
   ChallengeFile,

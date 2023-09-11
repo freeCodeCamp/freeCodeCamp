@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,

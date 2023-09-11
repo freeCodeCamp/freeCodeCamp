@@ -83,13 +83,6 @@
   font-weight: normal;
 }
 
-.donation-form .btn-cta,
-.btn-cta.paypal-button {
-  white-space: normal;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 .paypal-buttons-container {
   min-height: auto;
   margin-bottom: 8px;

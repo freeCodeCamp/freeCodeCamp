@@ -1,34 +1,34 @@
 ---
 id: 647e239e8acb466c97ccbf05
-title: 'Write Your First C# Code'
+title: '编写你的第一段 C# 代码'
 challengeType: 19
 dashedName: write-your-first-c-sharp-code
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/training/modules/csharp-write-first/</a> and complete all the tasks for the "Write Your First C# Code" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a>，然后完成“编写第一个 C# 代码”模块的所有任务。 这是在 Microsoft Learn 上获得“使用 C# 编写第一个代码”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
 # --question--
 
 ## --text--
 
-What is the difference between `Console.Write` and `Console.WriteLine`?
+`Console.Write` 和 `Console.WriteLine`有什么区别？
 
 ## --answers--
 
-`Console.Write` prints the output on a new line.
+`Console.Write` 在新一行上打印输出。
 
 ---
 
-`Console.WriteLine` prints the output on a new line.
+`Console.WriteLine` 在新一行上打印输出。
 
 ---
 
-`Console.WriteLine` appends a new line after the output.
+`Console.WriteLine` 在输出后插入一个新行。
 
 ## --video-solution--
 

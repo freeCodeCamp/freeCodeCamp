@@ -7,9 +7,9 @@ dashedName: guided-project-calculate-and-print-student-grades
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> e complete todas as tarefas do módulo "Projeto guiado – calcular e imprimir notas de alunos". Isso é necessário para ganhar o troféu "Escreva seu primeiro código em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> e complete todas as tarefas do módulo "Projeto guiado – calcular e imprimir notas de alunos". Isso é **necessário** para conquistar o troféu "Escreva seu primeiro código usando o C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
 # --question--
@@ -25,15 +25,15 @@ Console.WriteLine("Sophia: " + sophiaSum);
 
 ## --answers--
 
-`sophiaSum` is not initialized before use
+`sophiaSum` não foi inicializado antes do uso
 
 ---
 
-`sophiaSum` is not implicitly typed to a string
+`sophiaSum` não é implicitamente tipificado como uma string
 
 ---
 
-`sophiaSum` should use the var keyword
+`sophiaSum` deve usar a palavra-chave var
 
 ## --video-solution--
 

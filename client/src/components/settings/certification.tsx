@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 
-import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -26,8 +26,8 @@ import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
   certSlugTypeMap
-} from '../../../../config/certification-settings';
-import env from '../../../../config/env.json';
+} from '../../../../shared/config/certification-settings';
+import env from '../../../config/env.json';
 
 import {
   ClaimedCertifications,

@@ -6,7 +6,7 @@ import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';

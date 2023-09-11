@@ -24,16 +24,15 @@ class MongoIds {
     try {
       schema.validate(id);
     } catch {
-      throw Error(`Expected a valid ObjectId for ${title}, but got ${id}`);
+      return `Expected a valid ObjectId for ${title}, but got ${id}`;
     }
 
     const idIndex = findIndex(this.knownIds, existing => id === existing);
     if (idIndex !== -1 && !duplicatedProjectIds.includes(id)) {
-      throw Error(`The id for challenge ${title} appears more than once.
-      With the exception of duplicatedProjectIds this should not happen.
-    `);
+      return `The id for challenge ${title} appears more than once. With the exception of duplicatedProjectIds this should not happen.`;
     }
     this.knownIds = [...this.knownIds, id];
+    return null;
   }
 }
 

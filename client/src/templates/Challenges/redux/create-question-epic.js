@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { mapTo, tap } from 'rxjs/operators';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';

@@ -17,7 +17,7 @@ import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
@@ -203,7 +203,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -258,7 +257,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'

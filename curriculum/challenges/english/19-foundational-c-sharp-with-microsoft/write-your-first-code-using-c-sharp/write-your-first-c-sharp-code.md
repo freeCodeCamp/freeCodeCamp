@@ -7,9 +7,9 @@ dashedName: write-your-first-c-sharp-code
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank">https://learn.microsoft.com/training/modules/csharp-write-first/</a> and complete all the tasks for the "Write Your First C# Code" module. This is required to earn the "Write Your First Code Using C#" trophy.
+1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a> and complete all the tasks in the "Write Your First C# Code" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
 # --question--

@@ -6,9 +6,9 @@ import {
 import { Stripe, loadStripe } from '@stripe/stripe-js';
 import type { Token, PaymentRequest } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
-import envData from '../../../../config/env.json';
+import envData from '../../../config/env.json';
 import { Themes } from '../settings/theme';
-import { PaymentProvider } from '../../../../config/donation-settings';
+import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import { DonationApprovalData, PostPayment } from './types';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
