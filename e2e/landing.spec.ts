@@ -91,24 +91,24 @@ test('Testimonial section has a header', async () => {
 });
 
 test('Testimonial endorser people have images, occupation, location and testimony visible', async () => {
-  for (let index = 1; index <= 3; index++) {
-    const testimonialEndorserImage = page.getByTestId(
-      `testimonials-endorser-image-container-${index}`
-    );
-    const testimonialEndorserLocation = page.getByTestId(
-      `testimonials-endorser-location-${index}`
-    );
-    const testimonialEndorserOccupation = page.getByTestId(
-      `testimonials-endorser-occupation-${index}`
-    );
-    const testimonialEndorserTestimony = page.getByTestId(
-      `testimonials-endorser-testimony-${index}`
-    );
+  const cards = page.getByTestId('testimonial-card');
 
-    await expect(testimonialEndorserImage).toBeVisible();
-    await expect(testimonialEndorserLocation).toBeVisible();
-    await expect(testimonialEndorserOccupation).toBeVisible();
-    await expect(testimonialEndorserTestimony).toBeVisible();
+  await expect(cards).toHaveCount(3);
+
+  for (const card of await cards.all()) {
+    await expect(card).toBeVisible();
+    await expect(
+      card.getByTestId('testimonials-endorser-image-container')
+    ).toBeVisible();
+    await expect(
+      card.getByTestId('testimonials-endorser-location')
+    ).toBeVisible();
+    await expect(
+      card.getByTestId('testimonials-endorser-occupation')
+    ).toBeVisible();
+    await expect(
+      card.getByTestId('testimonials-endorser-testimony')
+    ).toBeVisible();
   }
 });
 

@@ -19,10 +19,13 @@ const Testimonials = (): JSX.Element => {
         {t('landing.testimonials.heading')}
       </h1>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
-        <div className='testimonial-card'>
+        <div
+          className='testimonial-card'
+          data-playwright-test-label='testimonial-card'
+        >
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container-1'
+            data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
               alt='Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.'
@@ -33,26 +36,29 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location-1'>
+              <p data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.shawn.location</Trans>
               </p>
-              <p data-playwright-test-label='testimonials-endorser-occupation-1'>
+              <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.shawn.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony-1'>
+              <p data-playwright-test-label='testimonials-endorser-testimony'>
                 <Trans>landing.testimonials.shawn.testimony</Trans>
               </p>
             </div>
           </div>
         </div>
 
-        <div className='testimonial-card'>
+        <div
+          className='testimonial-card'
+          data-playwright-test-label='testimonial-card'
+        >
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container-2'
+            data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
               alt='Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.'
@@ -63,26 +69,29 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location-2'>
+              <p data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.sarah.location</Trans>
               </p>
-              <p data-playwright-test-label='testimonials-endorser-occupation-2'>
+              <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.sarah.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony-2'>
+              <p data-playwright-test-label='testimonials-endorser-testimony'>
                 <Trans>landing.testimonials.sarah.testimony</Trans>
               </p>
             </div>
           </div>
         </div>
 
-        <div className='testimonial-card'>
+        <div
+          className='testimonial-card'
+          data-playwright-test-label='testimonial-card'
+        >
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container-3'
+            data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
               alt='Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.'
@@ -93,16 +102,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location-3'>
+              <p data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.emma.location</Trans>
               </p>
-              <p data-playwright-test-label='testimonials-endorser-occupation-3'>
+              <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.emma.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony-3'>
+              <p data-playwright-test-label='testimonials-endorser-testimony'>
                 <Trans>landing.testimonials.emma.testimony</Trans>
               </p>
             </div>
