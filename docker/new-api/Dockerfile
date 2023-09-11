@@ -47,4 +47,4 @@ COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
 
-CMD ["node", "api/src/server.js"]
+CMD ["pm2-runtime", "start", "api/src/server.js"]
