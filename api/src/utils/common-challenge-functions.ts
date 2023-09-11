@@ -16,7 +16,7 @@ export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
-const savableChallenges = getChallenges()
+export const savableChallenges = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
@@ -44,7 +44,6 @@ type ChallengeFile = {
 
 type Challenge = {
   id: string;
-  lastSavedDate: number;
   files?: ChallengeFile[];
 };
 
@@ -93,27 +92,25 @@ export function saveUserChallengeData(
   user: user,
   challenge: Challenge
 ) {
-  if (savableChallenges.includes(challengeId)) {
-    const challengeToSave: SavedChallenge = {
-      id: challengeId,
-      lastSavedDate: Date.now(),
-      files: challenge.files?.map(file =>
-        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-      ) as SavedChallengeFile[]
-    };
+  const challengeToSave: SavedChallenge = {
+    id: challengeId,
+    lastSavedDate: Date.now(),
+    files: challenge.files?.map(file =>
+      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+    ) as SavedChallengeFile[]
+  };
 
-    const savedIndex = user.savedChallenges.findIndex(
-      ({ id }) => challengeId === id
-    );
+  const savedIndex = user.savedChallenges.findIndex(
+    ({ id }) => challengeId === id
+  );
 
-    if (savedIndex >= 0) {
-      user.savedChallenges[savedIndex] = challengeToSave;
-    } else {
-      user.savedChallenges.push(challengeToSave);
-    }
-
-    return [user.savedChallenges];
+  if (savedIndex >= 0) {
+    user.savedChallenges[savedIndex] = challengeToSave;
+  } else {
+    user.savedChallenges.push(challengeToSave);
   }
+
+  return [user.savedChallenges];
 }
 
 /**

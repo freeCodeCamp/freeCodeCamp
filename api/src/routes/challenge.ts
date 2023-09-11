@@ -8,7 +8,8 @@ import {
   multifileCertProjectIds,
   updateUserChallengeData,
   type CompletedChallenge,
-  saveUserChallengeData
+  saveUserChallengeData,
+  savableChallenges
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -386,16 +387,29 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const { files, id, lastSavedDate } = req.body;
+        const { files, id: challengeId } = req.body;
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
         });
         const challenge = {
-          id,
-          lastSavedDate,
+          id: challengeId,
           files
         };
-        saveUserChallengeData(id, user, challenge);
+        if (!savableChallenges.includes(challengeId)) {
+          void reply.code(403);
+          return {
+            type: 'error',
+            message: 'That challenge type is not savable'
+          };
+        }
+
+        const savedChallenges = saveUserChallengeData(
+          challengeId,
+          user,
+          challenge
+        );
+
+        return savedChallenges;
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
