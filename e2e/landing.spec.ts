@@ -28,7 +28,6 @@ const superBlocks = [
   'Foundational C# with Microsoft',
   'Coding Interview Prep',
   'Project Euler'
-
 ];
 
 test.beforeAll(async ({ browser }) => {
