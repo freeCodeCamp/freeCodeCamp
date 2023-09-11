@@ -30,8 +30,6 @@ COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
 RUN npm i -g pnpm@8
-# Prevent pnpm installing unnecessary packages (see above)
-RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api
 # While we want to ignore scripts generally, we do need to generate the prisma
 # client. Note: npx is the simplest way to generate the client without us having
