@@ -9,5 +9,6 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "noUncheckedIndexedAccess": true
-  }
+  },
+  "ts-node": { "files": true }
 }
