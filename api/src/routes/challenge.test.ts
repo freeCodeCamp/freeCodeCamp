@@ -542,39 +542,55 @@ describe('challengeRoutes', () => {
     });
 
     describe('/save-challenge', () => {
-      test('POST returns 200 status code with "success" message', async () => {
-        const user = await fastifyTestInstance?.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+      describe('validation', () => {
+        test('POST returns 403 status for unsavable challenges', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({ savedChallenges: null });
+
+          expect(response.body).toEqual({
+            message: 'That challenge type is not savable.',
+            statusCode: 403,
+            type: 'error'
+          });
         });
-        const savedChallengesLength = user?.savedChallenges.length as number;
-        const response = await superRequest('/save-challenge', {
-          method: 'POST',
-          setCookies
-        }).send({
-          savedChallenges: {
-            id: JsProjectBody.id,
-            lastSavedDate: Date.now(),
-            files: JsProjectBody.files
-          }
-        });
-        expect(user?.savedChallenges).toHaveLength(savedChallengesLength + 1);
-        expect(response.body).toEqual([
-          {
-            JsProjectBody
-          }
-        ]);
       });
 
-      test('POST returns 403 status for unsavable challenges', async () => {
-        const response = await superRequest('/save-challenge', {
-          method: 'POST',
-          setCookies
-        }).send({ savedChallenges: null });
+      describe('handling', () => {
+        test('POST returns 200 status code with "success" message', async () => {
+          const user = await fastifyTestInstance?.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+          const savedChallengesLength = user?.savedChallenges.length as number;
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            savedChallenges: {
+              id: JsProjectBody.id,
+              lastSavedDate: Date.now(),
+              files: JsProjectBody.files
+            }
+          });
+          expect(user?.savedChallenges).toHaveLength(savedChallengesLength + 1);
+          expect(response.body).toEqual([
+            {
+              JsProjectBody
+            }
+          ]);
+        });
 
-        expect(response.body).toEqual({
-          message: 'That challenge type is not savable.',
-          statusCode: 403,
-          type: 'error'
+        test('POST returns 500 status for bad requests', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send(undefined);
+
+          expect(response.body).toEqual({
+            statusCode: 500,
+            type: 'danger'
+          });
         });
       });
     });
