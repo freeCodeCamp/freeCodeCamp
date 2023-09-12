@@ -88,6 +88,23 @@ jobs:
       #     name: webpack-stats
       #     path: client/public/stats.json
 
+  build-new-api:
+    name: Build New Api (Container)
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-new-api \
+            -f docker/new-api/Dockerfile .
+
   cypress-run:
     name: Test
     runs-on: ubuntu-20.04
