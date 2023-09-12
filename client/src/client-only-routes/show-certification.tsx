@@ -267,6 +267,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
+      <Spacer size='medium' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}

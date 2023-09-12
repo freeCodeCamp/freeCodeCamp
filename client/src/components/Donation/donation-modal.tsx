@@ -11,7 +11,9 @@ import { createSelector } from 'reselect';
 import {
   PaymentContext,
   subscriptionAmounts,
-  DonationAmount
+  DonationAmount,
+  defaultDonation,
+  defaultTierAmount
 } from '../../../../shared/config/donation-settings';
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
@@ -85,7 +87,9 @@ function DonateModal({
   const [isDisabled, setIsDisabled] = useState(true);
   const [showSkipButton, setShowSkipButton] = useState(false);
   const [showDonateForm, setShowDonateForm] = useState(true);
-  const [donationAmount, setDonationAmount] = useState<DonationAmount>(2000);
+  const [donationAmount, setDonationAmount] = useState<DonationAmount>(
+    defaultDonation.donationAmount
+  );
   const loadElementsIndividually = useFeature('load_elements_individually').on;
   const showMultiTier = useFeature('multi-tier').on;
   const { t } = useTranslation();
@@ -128,7 +132,10 @@ function DonateModal({
   }, [show]);
 
   useEffect(() => {
-    if (showMultiTier) setShowDonateForm(false);
+    if (showMultiTier) {
+      setShowDonateForm(false);
+      setDonationAmount(defaultTierAmount);
+    }
   }, [showMultiTier]);
 
   const handleModalHide = () => {
@@ -166,7 +173,6 @@ function DonateModal({
 
   const closeButtonRow = (
     <>
-      <Spacer size='medium' />
       <Row>
         <Col
           sm={4}
@@ -176,10 +182,9 @@ function DonateModal({
           className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
         >
           <Button
-            block={true}
             bsSize='sm'
             bsStyle='primary'
-            className='btn-link'
+            className='btn-link close-button'
             onClick={closeDonationModal}
             tabIndex='0'
             disabled={isDisabled}
@@ -247,6 +252,7 @@ function DonateModal({
         >
           {t('buttons.donate')}
         </Button>
+        <Spacer size='medium' />
       </Col>
     </Row>
   );

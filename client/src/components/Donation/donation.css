@@ -303,6 +303,7 @@ li.disabled > a {
 }
 .donation-label-modal {
   font-weight: normal;
+  text-align: center;
 }
 
 .edit-amount-confirmation {
@@ -311,6 +312,13 @@ li.disabled > a {
   display: flex !important;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.close-button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0 10px;
 }
 
 .donation-modal h1 {

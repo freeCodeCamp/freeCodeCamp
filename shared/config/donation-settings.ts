@@ -14,6 +14,8 @@ export const defaultDonation: DonationConfig = {
   donationDuration: 'month'
 };
 
+export const defaultTierAmount = 2000;
+
 export const onetimeSKUConfig = {
   live: [
     { amount: '15000', id: 'sku_IElisJHup0nojP' },
