@@ -43,6 +43,7 @@ const schema = Joi.object()
       otherwise: Joi.string().required()
     }),
     disableLoopProtectTests: Joi.boolean().required(),
+    disableLoopProtectPreview: Joi.boolean().required(),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
