@@ -312,7 +312,7 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
-  disableLoopProtect: boolean;
+  disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
 };
 

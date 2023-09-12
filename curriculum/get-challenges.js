@@ -326,7 +326,7 @@ ${getFullPath('english', filePath)}
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
-    challenge.disableLoopProtect = !!meta.disableLoopProtect;
+    challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
   }
 

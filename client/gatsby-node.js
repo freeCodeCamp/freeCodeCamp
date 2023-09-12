@@ -78,7 +78,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   certification
                   challengeType
                   dashedName
-                  disableLoopProtect
+                  disableLoopProtectTests
                   disableLoopProtectPreview
                   fields {
                     slug

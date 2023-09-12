@@ -8,7 +8,7 @@
   "template": "",
   "required": [],
   "superBlock": "project-euler",
-  "disableLoopProtect": true,
+  "disableLoopProtectTests": true,
   "challengeOrder": [
     {
       "id": "5900f4991000cf542c50ffab",

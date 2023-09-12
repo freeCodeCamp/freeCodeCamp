@@ -43,7 +43,7 @@ interface BuildChallengeData extends Context {
 
 interface BuildOptions {
   preview: boolean;
-  disableLoopProtect: boolean;
+  disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   usesTestRunner?: boolean;
 }

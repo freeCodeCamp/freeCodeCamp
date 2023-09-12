@@ -159,9 +159,9 @@ const babelTransformer = loopProtectOptions => {
 
 function getBabelOptions(
   presets,
-  { preview, disableLoopProtect, disableLoopProtectPreview } = {
+  { preview, disableLoopProtectTests, disableLoopProtectPreview } = {
     preview: false,
-    disableLoopProtect: false,
+    disableLoopProtectTests: false,
     disableLoopProtectPreview: false
   }
 ) {
@@ -169,7 +169,7 @@ function getBabelOptions(
   // they may briefly have infinite looping code accidentally
   if (preview && !disableLoopProtectPreview)
     return { ...presets, plugins: ['loopProtection'] };
-  if (!disableLoopProtect)
+  if (!disableLoopProtectTests)
     return { ...presets, plugins: ['testLoopProtection'] };
   return presets;
 }

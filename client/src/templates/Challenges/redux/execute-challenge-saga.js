@@ -108,7 +108,7 @@ function* executeChallengeSaga({ payload }) {
     const challengeMeta = yield select(challengeMetaSelector);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      disableLoopProtect: challengeMeta.disableLoopProtect,
+      disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
@@ -231,7 +231,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       const challengeMeta = yield select(challengeMetaSelector);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        disableLoopProtect: challengeMeta.disableLoopProtect,
+        disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
         disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
       // evaluate the user code in the preview frame or in the worker

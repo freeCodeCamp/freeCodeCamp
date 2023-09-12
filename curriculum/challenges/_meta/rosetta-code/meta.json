@@ -8,7 +8,7 @@
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "disableLoopProtect": true,
+  "disableLoopProtectTests": true,
   "challengeOrder": [
     {
       "id": "594810f028c0303b75339acb",
