@@ -43,7 +43,7 @@ interface BuildChallengeData extends Context {
 
 interface BuildOptions {
   preview: boolean;
-  protect: boolean;
+  disableLoopProtect: boolean;
   usesTestRunner: boolean;
 }
 
@@ -384,8 +384,4 @@ export function isJavaScriptChallenge({
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.jsProject
   );
-}
-
-export function isLoopProtected(challengeMeta: ChallengeMeta): boolean {
-  return challengeMeta.superBlock !== 'coding-interview-prep';
 }

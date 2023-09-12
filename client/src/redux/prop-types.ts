@@ -312,6 +312,7 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  disableLoopProtect: boolean;
 };
 
 export type PortfolioProjectData = {
