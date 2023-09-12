@@ -94,6 +94,7 @@ exports.createChallengePages = function (createPage) {
     const {
       dashedName,
       disableLoopProtect,
+      disableLoopProtectPreview,
       certification,
       superBlock,
       block,
@@ -115,6 +116,7 @@ exports.createChallengePages = function (createPage) {
           dashedName,
           certification,
           disableLoopProtect,
+          disableLoopProtectPreview,
           superBlock,
           block,
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),

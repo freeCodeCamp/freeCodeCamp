@@ -79,6 +79,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   challengeType
                   dashedName
                   disableLoopProtect
+                  disableLoopProtectPreview
                   fields {
                     slug
                     blockHashSlug

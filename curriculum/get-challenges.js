@@ -327,6 +327,7 @@ ${getFullPath('english', filePath)}
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtect = !!meta.disableLoopProtect;
+    challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
   }
 
   function fixChallengeProperties(challenge) {

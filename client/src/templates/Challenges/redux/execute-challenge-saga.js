@@ -109,6 +109,7 @@ function* executeChallengeSaga({ payload }) {
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
       disableLoopProtect: challengeMeta.disableLoopProtect,
+      disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
     const document = yield getContext('document');
@@ -230,7 +231,8 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       const challengeMeta = yield select(challengeMetaSelector);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        disableLoopProtect: challengeMeta.disableLoopProtect
+        disableLoopProtect: challengeMeta.disableLoopProtect,
+        disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {

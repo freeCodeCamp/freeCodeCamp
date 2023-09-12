@@ -44,7 +44,8 @@ interface BuildChallengeData extends Context {
 interface BuildOptions {
   preview: boolean;
   disableLoopProtect: boolean;
-  usesTestRunner: boolean;
+  disableLoopProtectPreview: boolean;
+  usesTestRunner?: boolean;
 }
 
 const { filename: testEvaluator } = testEvaluatorData;
@@ -211,14 +212,15 @@ type BuildResult = {
 // out of it.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
-  { usesTestRunner } = { usesTestRunner: false }
+  options: BuildOptions
 ): Promise<BuildResult> | undefined {
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
 
-  const pipeLine = composeFunctions(...getTransformers());
+  const pipeLine = composeFunctions(...getTransformers(options));
   const finalFiles = challengeFiles?.map(pipeLine);
+  const usesTestRunner = options.usesTestRunner ?? false;
 
   if (finalFiles) {
     return Promise.all(finalFiles)
