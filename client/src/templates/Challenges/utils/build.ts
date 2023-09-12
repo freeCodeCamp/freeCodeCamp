@@ -212,7 +212,7 @@ type BuildResult = {
 // out of it.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
-  options: BuildOptions
+  options?: BuildOptions
 ): Promise<BuildResult> | undefined {
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
@@ -220,7 +220,7 @@ export function buildDOMChallenge(
 
   const pipeLine = composeFunctions(...getTransformers(options));
   const finalFiles = challengeFiles?.map(pipeLine);
-  const usesTestRunner = options.usesTestRunner ?? false;
+  const usesTestRunner = options?.usesTestRunner ?? false;
 
   if (finalFiles) {
     return Promise.all(finalFiles)
