@@ -12,6 +12,7 @@ const AsSeenInText = (
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
       fill={fill}
+      data-playwright-test-label='landing-as-seen-in-container-logos'
     >
       <defs>
         <path

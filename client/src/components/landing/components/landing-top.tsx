@@ -30,13 +30,29 @@ function LandingTop(): JSX.Element {
             id='content-start'
             className='big-heading'
             data-test-label='landing-header'
+            data-playwright-test-label='landing-big-heading-1'
           >
             {t('landing.big-heading-1')}
           </h1>
-          <p className='big-heading'>{t('landing.big-heading-2')}</p>
-          <p className='big-heading'>{t('landing.big-heading-3')}</p>
-          <p>{t('landing.h2-heading')}</p>
-          <div className='logo-row'>
+          <p
+            className='big-heading'
+            data-playwright-test-label='landing-big-heading-2'
+          >
+            {t('landing.big-heading-2')}
+          </p>
+          <p
+            className='big-heading'
+            data-playwright-test-label='landing-big-heading-3'
+          >
+            {t('landing.big-heading-3')}
+          </p>
+          <p data-playwright-test-label='landing-h2-heading'>
+            {t('landing.h2-heading')}
+          </p>
+          <div
+            className='logo-row'
+            data-playwright-test-label='brand-logo-container'
+          >
             <AppleLogo />
             <GoogleLogo />
             <MicrosoftLogo />
