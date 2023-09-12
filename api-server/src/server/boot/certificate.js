@@ -79,7 +79,7 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-function ifNoCertification404(req, res, next) {
+export function ifNoCertification404(req, res, next) {
   const { certSlug } = req.body;
   if (!certSlug) return res.status(404).end();
   if (
