@@ -67,7 +67,7 @@ Du solltest [den übersetzten Client lokal einrichten](how-to-enable-new-languag
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Run `pnpm run create:shared`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
 3. Start the server by running `pnpm run develop:server` in one terminal window.
 
