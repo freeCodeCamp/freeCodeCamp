@@ -328,8 +328,6 @@ li.disabled > a {
 .donation-modal [role='tablist'] button {
   background-color: transparent;
 }
-
-
 .donation-modal [role='tablist'] button:hover:not([data-state='active']) {
   background-color: var(--quaternary-background);
   color: var(--quaternary-color);
