@@ -16,28 +16,14 @@ test.describe('help-button tests for a page with three links', () => {
 
   test('should render the button, menu and the three links when video is available', async () => {
     //The button is visible
-    const helpButton = await page
-      .getByRole('button', { name: 'Help' })
-      .isVisible();
-    expect(helpButton).toBeTruthy();
+    const helpButton = page.getByTestId('get-help-dropdown');
+    await expect(helpButton).toBeVisible();
     //The button is clickable
-    await page.getByRole('button', { name: 'Help' }).click();
-    //The menu is visible
-    const dropdown = await page.getByRole('menu').isVisible();
-    expect(dropdown).toBeTruthy();
-    //The menu has three links
-    const getHint = await page
-      .getByRole('menuitem', { name: 'Get a Hint , Opens in new window' })
-      .isVisible();
-    const watchVideo = await page
-      .getByRole('menuitem', { name: 'Watch a Video' })
-      .isVisible();
-    const askHelp = await page
-      .getByRole('menuitem', { name: 'Ask for Help' })
-      .isVisible();
-    expect(getHint).toBeTruthy();
-    expect(watchVideo).toBeTruthy();
-    expect(askHelp).toBeTruthy();
+    await helpButton.click();
+    //The menu items are visible
+    await expect(page.getByTestId('get-hint')).toBeVisible();
+    await expect(page.getByTestId('ask-for-help')).toBeVisible();
+    await expect(page.getByTestId('watch-a-video')).toBeVisible();
   });
 });
 
@@ -57,23 +43,14 @@ test.describe('help-button tests for a page with two links when video is not ava
 
   test('should render the button, menu and the two links when video is not available', async () => {
     //The button is visible
-    const helpButton = await page
-      .getByRole('button', { name: 'Help' })
-      .isVisible();
-    expect(helpButton).toBeTruthy();
+    const helpButton = page.getByTestId('get-help-dropdown');
+    await expect(helpButton).toBeVisible();
     //The button is clickable
-    await page.getByRole('button', { name: 'Help' }).click();
-    //The menu is visible
-    const dropdown = await page.getByRole('menu').isVisible();
-    expect(dropdown).toBeTruthy();
-    //The menu has two links
-    const getHint = await page
-      .getByRole('menuitem', { name: 'Get a Hint , Opens in new window' })
-      .isVisible();
-    const askHelp = await page
-      .getByRole('menuitem', { name: 'Ask for Help' })
-      .isVisible();
-    expect(getHint).toBeTruthy();
-    expect(askHelp).toBeTruthy();
+    await helpButton.click();
+    //The menu items are visible
+    await expect(page.getByTestId('get-hint')).toBeVisible();
+    await expect(page.getByTestId('ask-for-help')).toBeVisible();
+    //The video link is hidden
+    await expect(page.getByTestId('watch-a-video')).toBeHidden();
   });
 });
