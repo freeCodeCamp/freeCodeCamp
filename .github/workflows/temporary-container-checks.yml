@@ -28,23 +28,6 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
-      - name: Checkout client-config
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-        with:
-          repository: freeCodeCamp/client-config
-          path: client-config
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-
       - name: Create Image
         run: |
           docker build \
@@ -88,6 +71,32 @@ jobs:
       #     name: webpack-stats
       #     path: client/public/stats.json
 
+  build-api:
+    name: Build Api (Container)
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload Api Artifact
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+
   build-new-api:
     name: Build New Api (Container)
     runs-on: ubuntu-20.04
@@ -108,24 +117,13 @@ jobs:
   cypress-run:
     name: Test
     runs-on: ubuntu-20.04
-    needs: build-client
+    needs: [build-client, build-api]
     strategy:
       fail-fast: false
       matrix:
         # To avoid wasting resources we're only using chrome for now.
         browsers: [chrome]
         node-version: [18.x]
-
-    services:
-      mongodb:
-        image: mongo:4.4
-        ports:
-          - 27017:27017
-      # We need mailhog to catch any emails the api tries to send.
-      mailhog:
-        image: mailhog/mailhog
-        ports:
-          - 1025:1025
 
     steps:
       - name: Set Action Environment Variables
@@ -137,13 +135,8 @@ jobs:
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-        with:
-          name: client-artifact
 
-      - name: Load Client Image
-        run: |
-          docker load < client-artifact.tar
-
+      # Cypress calls some pnpm scripts, so we need to install pnpm.
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -153,34 +146,24 @@ jobs:
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
         with:
           node-version: ${{ matrix.node-version }}
-          # cypress-io/github-action caches the store, so we should not cache it
-          # here.
 
-      - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+      - name: Install Dependencies
+        run: pnpm install
 
-      - name: Install and Build
+      - name: Load Images
         run: |
-          pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
-          pnpm run build:server
+          docker load < client-artifact/client-artifact.tar
+          docker load < api-artifact/api-artifact.tar
 
-      - name: Seed Database
-        run: pnpm run seed
-
-      # start-ci uses pm2, so it needs to be installed globally
-      - name: Install pm2
-        run: npm i -g pm2
+      - name: Set freeCodeCamp Environment Variables (needed by api)
+        run: cp sample.env .env
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          start: |
-            pnpm start:server
-            docker compose up -d
-          wait-on: http://localhost:8000
+          start: docker compose up -d
+          wait-on: http://localhost:8000, http://localhost:3000
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
