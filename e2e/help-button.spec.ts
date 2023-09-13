@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 test.describe('help-button tests for a page with three links', () => {
   let page: Page;
-
+  // visit the page with the video link
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto(
@@ -29,7 +29,7 @@ test.describe('help-button tests for a page with three links', () => {
 
 test.describe('help-button tests for a page with two links when video is not available', () => {
   let page: Page;
-
+  // visit the page without the video link
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto(
