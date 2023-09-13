@@ -541,66 +541,6 @@ describe('challengeRoutes', () => {
       });
     });
 
-    describe('/save-challenge', () => {
-      describe('validation', () => {
-        test('POST returns 403 status for unsavable challenges', async () => {
-          const response = await superRequest('/save-challenge', {
-            method: 'POST',
-            setCookies
-          }).send({
-            savedChallenges: {
-              id: 'not a valid id',
-              lastSavedDate: Date.now(),
-              files: multiFileCertProjectBody.files
-            }
-          });
-
-          expect(response.body).toEqual({
-            message: 'That challenge type is not savable.',
-            type: 'error'
-          });
-          expect(response.statusCode).toBe(403);
-        });
-      });
-
-      describe('handling', () => {
-        test('POST update the save challenges and return them', async () => {
-          const user = await fastifyTestInstance?.prisma.user.findFirst({
-            where: { email: 'foo@bar.com' }
-          });
-          const savedChallengesLength = user?.savedChallenges.length as number;
-          const response = await superRequest('/save-challenge', {
-            method: 'POST',
-            setCookies
-          }).send({
-            savedChallenges: {
-              id: multiFileCertProjectBody.id,
-              lastSavedDate: Date.now(),
-              files: multiFileCertProjectBody.files
-            }
-          });
-          expect(user?.savedChallenges).toHaveLength(savedChallengesLength + 1);
-          expect(response.body).toEqual([
-            {
-              multiFileCertProjectBody
-            }
-          ]);
-        });
-
-        test('POST returns 500 status for bad requests', async () => {
-          const response = await superRequest('/save-challenge', {
-            method: 'POST',
-            setCookies
-          }).send(undefined);
-
-          expect(response.body).toEqual({
-            type: 'danger'
-          });
-          expect(response.statusCode).toBe(500);
-        });
-      });
-    });
-
     describe('/backend-challenge-completed', () => {
       describe('validation', () => {
         test('POST rejects requests without ids', async () => {
@@ -975,6 +915,68 @@ describe('challengeRoutes', () => {
             ]
           });
           expect(resUpdate.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/save-challenge', () => {
+      describe('validation', () => {
+        test('POST returns 403 status for unsavable challenges', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            savedChallenges: {
+              id: 'not a valid id',
+              lastSavedDate: Date.now(),
+              files: multiFileCertProjectBody.files
+            }
+          });
+
+          expect(response.body).toEqual({
+            message: 'That challenge type is not savable.',
+            type: 'error'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              savedChallenges: []
+            }
+          });
+        });
+
+        test('POST update the user savedchallenges and return them', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send(multiFileCertProjectBody);
+
+          const user = await fastifyTestInstance?.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(response.statusCode).toBe(200);
+          expect(user?.savedChallenges).toHaveLength(1);
+          expect(user).toMatchObject({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: expect.any(Number),
+                files: multiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.body).toEqual([
+            {
+              multiFileCertProjectBody
+            }
+          ]);
         });
       });
     });

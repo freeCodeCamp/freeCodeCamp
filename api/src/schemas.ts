@@ -533,7 +533,10 @@ export const schemas = {
         message: Type.Literal('That challenge type is not savable.')
       }),
       500: Type.Object({
-        type: Type.Literal('danger')
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
       })
     }
   }

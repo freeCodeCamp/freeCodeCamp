@@ -386,12 +386,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        if (!req.body) {
-          void reply.code(500);
-          return {
-            type: 'danger'
-          } as const;
-        }
         const { files, id: challengeId } = req.body;
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
@@ -424,10 +418,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         return { savedChallenges: userSavedChallenges };
       } catch (error) {
-        // This trigger when findind user has failed, not when the challenge is empty.
         fastify.log.error(error);
         void reply.code(500);
         return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
         } as const;
       }
