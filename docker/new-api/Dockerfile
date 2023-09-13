@@ -7,7 +7,7 @@ RUN npm i -g pnpm@8
 USER node
 WORKDIR /home/node/build
 
-COPY --chown=node:node * .
+COPY --chown=node:node *.* .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
 COPY --chown=node:node tools/ tools/
