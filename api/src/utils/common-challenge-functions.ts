@@ -82,12 +82,14 @@ export type CompletedChallenge = {
  * Helper function to save a user's challenge data. Used in challenge
  * submission endpoints.
  *
+ * @param fastify The Fastify instance.
  * @param challengeId The id of the submitted challenge.
  * @param user The existing user record.
  * @param challenge The saveble challenge.
  * @returns Saved challenges.
  */
-export function saveUserChallengeData(
+export async function saveUserChallengeData(
+  fastify: FastifyInstance,
   challengeId: string,
   user: user,
   challenge: Challenge
@@ -109,6 +111,13 @@ export function saveUserChallengeData(
   } else {
     user.savedChallenges.push(challengeToSave);
   }
+
+  await fastify.prisma.user.update({
+    where: { id: user.id },
+    data: {
+      savedChallenges: user.savedChallenges
+    }
+  });
 
   return user.savedChallenges;
 }

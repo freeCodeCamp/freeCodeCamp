@@ -403,7 +403,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
-        const savedChallenges = saveUserChallengeData(
+        const savedChallenges = await saveUserChallengeData(
+          fastify,
           challengeId,
           user,
           challenge
