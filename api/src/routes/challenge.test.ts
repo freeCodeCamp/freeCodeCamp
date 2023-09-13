@@ -551,9 +551,9 @@ describe('challengeRoutes', () => {
 
           expect(response.body).toEqual({
             message: 'That challenge type is not savable.',
-            statusCode: 403,
             type: 'error'
           });
+          expect(response.statusCode).toBe(403);
         });
       });
 

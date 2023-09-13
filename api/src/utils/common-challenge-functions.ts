@@ -16,10 +16,6 @@ export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
-export const savableChallenges = getChallenges()
-  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
-  .map(c => c.id);
-
 type SavedChallengeFile = {
   key: string;
   ext: string; // NOTE: This is Ext type in client
@@ -82,14 +78,12 @@ export type CompletedChallenge = {
  * Helper function to save a user's challenge data. Used in challenge
  * submission endpoints.
  *
- * @param fastify The Fastify instance.
  * @param challengeId The id of the submitted challenge.
  * @param user The existing user record.
  * @param challenge The saveble challenge.
  * @returns Saved challenges.
  */
-export async function saveUserChallengeData(
-  fastify: FastifyInstance,
+export function saveUserChallengeData(
   challengeId: string,
   user: user,
   challenge: Challenge
@@ -111,13 +105,6 @@ export async function saveUserChallengeData(
   } else {
     user.savedChallenges.push(challengeToSave);
   }
-
-  await fastify.prisma.user.update({
-    where: { id: user.id },
-    data: {
-      savedChallenges: user.savedChallenges
-    }
-  });
 
   return user.savedChallenges;
 }
@@ -209,7 +196,7 @@ export async function updateUserChallengeData(
     userCompletedChallenges.push(finalChallenge);
   }
 
-  if (savableChallenges.includes(challengeId)) {
+  if (multifileCertProjectIds.includes(challengeId)) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,
