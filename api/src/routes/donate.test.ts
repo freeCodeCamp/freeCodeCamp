@@ -144,7 +144,10 @@ describe('Donate', () => {
         const response = await superRequest('/donate/add-donation', {
           method: 'POST',
           setCookies
-        }).send(chargeStripeCardReqBody);
+        }).send({
+          anything: true,
+          itIs: 'ignored'
+        });
 
         expect(response.body).toEqual({
           isDonating: true
