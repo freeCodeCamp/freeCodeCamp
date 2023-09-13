@@ -396,13 +396,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
         });
-        const savableChallenges = user.savedChallenges;
         const challenge = {
           id: challengeId,
           files
         };
 
-        if (!savableChallenges.filter(c => c.id === challengeId)) {
+        if (!multifileCertProjectIds.includes(challengeId)) {
           void reply.code(403);
           return {
             type: 'error',
@@ -425,7 +424,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         return { savedChallenges: userSavedChallenges };
       } catch (error) {
-        // This trigger with the find user is failed, not when the challenge is empty,
+        // This trigger when findind user has failed, not when the challenge is empty.
         fastify.log.error(error);
         void reply.code(500);
         return {

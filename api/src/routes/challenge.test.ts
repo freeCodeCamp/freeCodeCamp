@@ -551,7 +551,7 @@ describe('challengeRoutes', () => {
             savedChallenges: {
               id: 'not a valid id',
               lastSavedDate: Date.now(),
-              files: JsProjectBody.files
+              files: multiFileCertProjectBody.files
             }
           });
 
@@ -574,15 +574,15 @@ describe('challengeRoutes', () => {
             setCookies
           }).send({
             savedChallenges: {
-              id: JsProjectBody.id,
+              id: multiFileCertProjectBody.id,
               lastSavedDate: Date.now(),
-              files: JsProjectBody.files
+              files: multiFileCertProjectBody.files
             }
           });
           expect(user?.savedChallenges).toHaveLength(savedChallengesLength + 1);
           expect(response.body).toEqual([
             {
-              JsProjectBody
+              multiFileCertProjectBody
             }
           ]);
         });
@@ -594,9 +594,9 @@ describe('challengeRoutes', () => {
           }).send(undefined);
 
           expect(response.body).toEqual({
-            statusCode: 500,
             type: 'danger'
           });
+          expect(response.statusCode).toBe(500);
         });
       });
     });
