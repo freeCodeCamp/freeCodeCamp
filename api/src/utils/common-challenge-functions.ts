@@ -110,7 +110,7 @@ export function saveUserChallengeData(
     user.savedChallenges.push(challengeToSave);
   }
 
-  return [user.savedChallenges];
+  return user.savedChallenges;
 }
 
 /**

@@ -399,8 +399,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           void reply.code(403);
           return {
             type: 'error',
-            message: 'That challenge type is not savable'
-          };
+            message: 'That challenge type is not savable.'
+          } as const;
         }
 
         const savedChallenges = saveUserChallengeData(
@@ -409,11 +409,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge
         );
 
-        return savedChallenges;
-      } catch (err) {
-        fastify.log.error(err);
+        return { savedChallenges };
+      } catch (error) {
+        fastify.log.error(error);
         void reply.code(500);
-
         return {
           type: 'danger'
         } as const;
