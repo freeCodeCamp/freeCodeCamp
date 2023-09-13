@@ -3,8 +3,8 @@ import {
   donationUrls,
   patreonDefaultPledgeAmount,
   PaymentProvider
-} from '../../../../config/donation-settings';
-import envData from '../../../../config/env.json';
+} from '../../../../shared/config/donation-settings';
+import envData from '../../../config/env.json';
 import PatreonLogo from '../../assets/images/components/patreon-logo';
 import { PostPayment } from './types';
 

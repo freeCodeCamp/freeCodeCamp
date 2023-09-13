@@ -17,7 +17,7 @@ import {
   transformHeadTailAndContents,
   setExt,
   compileHeadTail
-} from '../../../../../utils/polyvinyl';
+} from '../../../../../shared/utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
 import { makeCancellable, makeInputAwaitable } from './transform-python';
 

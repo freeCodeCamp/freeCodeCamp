@@ -233,7 +233,7 @@ copy sample.env .env
 У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
 ```console
-pnpm install && pnpm run create:config
+pnpm install && pnpm run create:shared
 ```
 
 #### Крок 3: запустіть MongoDB та додайте базу даних

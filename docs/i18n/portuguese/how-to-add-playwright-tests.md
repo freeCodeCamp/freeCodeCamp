@@ -163,7 +163,7 @@ Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automatica
 
 - Crie um arquivo de configuração.
   ```console
-  pnpm run create:config
+  pnpm run create:shared
   ```
 
 - Crie o banco de dados

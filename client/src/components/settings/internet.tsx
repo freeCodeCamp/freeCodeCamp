@@ -180,13 +180,12 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     const { state: websiteValidation, message: websiteValidationMessage } =
       this.getValidationStateFor(website);
     const isDisabled = this.isFormPristine() || !this.isFormValid();
-    const ariaLabel = t('settings.headings.internet');
     return (
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
           <form id='internet-presence' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={ariaLabel}>
+            <div role='group' aria-label={t('settings.headings.internet')}>
               <FormGroup
                 controlId='internet-github'
                 validationState={githubProfileValidation}

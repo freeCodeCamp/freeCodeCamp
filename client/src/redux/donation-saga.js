@@ -15,7 +15,7 @@ import {
   postChargeStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
-import { PaymentProvider } from '../../../config/donation-settings';
+import { PaymentProvider } from '../../../shared/config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,

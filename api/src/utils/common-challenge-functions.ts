@@ -1,7 +1,7 @@
 import { user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
-import { challengeTypes } from '../../../config/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { getChallenges } from './get-challenges';
 
 export const jsCertProjectIds = [

@@ -2,13 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
-import { clientLocale } from '../../../../../config/env.json';
+import { clientLocale } from '../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
   LangCodes,
   hiddenLangs
-} from '../../../../../config/i18n';
+} from '../../../../../shared/config/i18n';
 import { hardGoTo as navigate } from '../../../redux/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import LanguageGlobe from '../../../assets/icons/language-globe';

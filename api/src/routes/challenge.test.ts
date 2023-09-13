@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
-import { challengeTypes } from '../../../config/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
 const isValidChallengeCompletionErrorMsg = {

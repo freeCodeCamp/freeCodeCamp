@@ -29,7 +29,7 @@
     "@babel/preset-env": "7.22.14",
     "@babel/preset-typescript": "7.22.11",
     "@freecodecamp/curriculum-helpers": "1.1.0",
-    "@types/chai": "4.3.5",
+    "@types/chai": "4.3.6",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/enzyme": "3.10.13",
     "@types/enzyme-adapter-react-16": "1.0.6",

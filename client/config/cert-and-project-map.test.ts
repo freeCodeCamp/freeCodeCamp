@@ -3,7 +3,7 @@ import {
   currentCertifications,
   upcomingCertifications,
   legacyCertifications
-} from '../../config/certification-settings';
+} from '../../shared/config/certification-settings';
 import {
   currentCertTitles,
   upcomingCertTitles,

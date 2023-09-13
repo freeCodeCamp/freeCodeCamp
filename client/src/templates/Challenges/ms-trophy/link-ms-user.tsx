@@ -13,7 +13,7 @@ import { createSelector } from 'reselect';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { Spacer } from '../../../components/helpers';
-import { isMicrosoftTranscriptLink } from '../../../../../utils/validate';
+import { isMicrosoftTranscriptLink } from '../../../../../shared/utils/validate';
 import {
   linkMsUsername,
   unlinkMsUsername,
