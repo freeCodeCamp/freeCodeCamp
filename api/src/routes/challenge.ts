@@ -386,6 +386,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        if (!req.body) {
+          void reply.code(500);
+          return {
+            type: 'danger'
+          } as const;
+        }
         const { files, id: challengeId } = req.body;
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
@@ -396,7 +402,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           files
         };
 
-        console.log(savableChallenges.filter(c => c.id === challengeId));
         if (!savableChallenges.filter(c => c.id === challengeId)) {
           void reply.code(403);
           return {
@@ -420,6 +425,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         return { savedChallenges: userSavedChallenges };
       } catch (error) {
+        // This trigger with the find user is failed, not when the challenge is empty,
         fastify.log.error(error);
         void reply.code(500);
         return {

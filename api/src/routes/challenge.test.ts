@@ -547,7 +547,13 @@ describe('challengeRoutes', () => {
           const response = await superRequest('/save-challenge', {
             method: 'POST',
             setCookies
-          }).send({ savedChallenges: null });
+          }).send({
+            savedChallenges: {
+              id: 'not a valid id',
+              lastSavedDate: Date.now(),
+              files: JsProjectBody.files
+            }
+          });
 
           expect(response.body).toEqual({
             message: 'That challenge type is not savable.',
@@ -558,7 +564,7 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
-        test('POST returns 200 status code with "success" message', async () => {
+        test('POST update the save challenges and return them', async () => {
           const user = await fastifyTestInstance?.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
           });
