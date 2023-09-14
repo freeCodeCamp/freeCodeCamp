@@ -25,21 +25,6 @@
   gap: 3px;
 }
 
-.toggle-button-group button {
-  padding: 5px 1.5rem;
-  border: 3px solid var(--secondary-color);
-  white-space: nowrap;
-  display: grid;
-  align-items: baseline;
-  justify-content: center;
-  min-width: 6rem;
-}
-
-.toggle-button-group button[aria-pressed='true'] {
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
 .toggle-button-group button > span {
   position: relative;
 }
