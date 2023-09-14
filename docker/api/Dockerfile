@@ -1,17 +1,20 @@
 # bookworm was only released on 10-6-2023, so is a little too new.
 FROM node:18-bullseye AS builder
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@8
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
-COPY --chown=node:node . .
 
-# TODO: figure out why the cache is getting invalidated. Is it in part because
-# we're not ignoring THIS file? Or do we need corepack?
+COPY --chown=node:node *.* .
+COPY --chown=node:node api-server/ api-server/
+COPY --chown=node:node shared/ shared/
+COPY --chown=node:node tools/ tools/
+COPY --chown=node:node curriculum/ curriculum/
+# TODO: AFAIK it's just the intro translations. Those should be folded into the
+# curriculum and then we can remove this.
+COPY --chown=node:node client/ client/
 
 # We have to prevent pnpm from deduping peer dependencies because otherwise it
 # will install all of the packages, not just api-server. Also, pnpm deploy is

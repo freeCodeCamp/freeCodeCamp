@@ -7,9 +7,7 @@ RUN npm i -g pnpm@8
 USER node
 WORKDIR /home/node/build
 
-COPY --chown=node:node package.json .
-COPY --chown=node:node pnpm*.yaml .
-COPY --chown=node:node tsconfig*.json .
+COPY --chown=node:node *.* .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
 COPY --chown=node:node tools/ tools/
@@ -39,7 +37,12 @@ COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
 RUN npm i -g pnpm@8
-RUN pnpm install --prod --ignore-scripts -F=shared -F=api
+
+# Weirdly this config does not seem necessary for the new api (the same number
+# of deps are installed in both cases), but I'm including it just for
+# consistency.
+RUN pnpm config set dedupe-peer-dependents false
+RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
 # While we want to ignore scripts generally, we do need to generate the prisma
 # client. Note: npx is the simplest way to generate the client without us having
 # to have prisma as a prod dependency.
