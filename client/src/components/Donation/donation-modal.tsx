@@ -11,7 +11,6 @@ import { createSelector } from 'reselect';
 import {
   PaymentContext,
   subscriptionAmounts,
-  DonationAmount,
   defaultDonation,
   defaultTierAmount
 } from '../../../../shared/config/donation-settings';
@@ -87,7 +86,7 @@ function DonateModal({
   const [isDisabled, setIsDisabled] = useState(true);
   const [showSkipButton, setShowSkipButton] = useState(false);
   const [showDonateForm, setShowDonateForm] = useState(true);
-  const [donationAmount, setDonationAmount] = useState<DonationAmount>(
+  const [donationAmount, setDonationAmount] = useState(
     defaultDonation.donationAmount
   );
   const loadElementsIndividually = useFeature('load_elements_individually').on;
