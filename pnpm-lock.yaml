@@ -1264,8 +1264,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1
       xterm-addon-fit:
-        specifier: ^0.7.0
-        version: 0.7.0(xterm@5.2.1)
+        specifier: ^0.8.0
+        version: 0.8.0(xterm@5.2.1)
     devDependencies:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
@@ -34551,8 +34551,8 @@ packages:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
 
-  /xterm-addon-fit@0.7.0(xterm@5.2.1):
-    resolution: {integrity: sha512-tQgHGoHqRTgeROPnvmtEJywLKoC/V9eNs4bLLz7iyJr1aW/QFzRwfd3MGiJ6odJd9xEfxcW36/xRU47JkD5NKQ==}
+  /xterm-addon-fit@0.8.0(xterm@5.2.1):
+    resolution: {integrity: sha512-yj3Np7XlvxxhYF/EJ7p3KHaMt6OdwQ+HDu573Vx1lRXsVxOcnVJs51RgjZOouIZOczTsskaS+CpXspK81/DLqw==}
     peerDependencies:
       xterm: ^5.0.0
     dependencies:

@@ -55,6 +55,6 @@
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "xterm": "^5.2.1",
-    "xterm-addon-fit": "^0.7.0"
+    "xterm-addon-fit": "^0.8.0"
   }
 }
