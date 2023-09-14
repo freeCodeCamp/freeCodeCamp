@@ -97,11 +97,11 @@
     "dotenv": "16.3.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.11",
+    "@babel/eslint-parser": "7.22.15",
     "@babel/plugin-proposal-function-bind": "7.22.5",
-    "@babel/preset-env": "7.22.14",
-    "@babel/preset-react": "7.22.5",
-    "@babel/preset-typescript": "7.22.11",
+    "@babel/preset-env": "7.22.15",
+    "@babel/preset-react": "7.22.15",
+    "@babel/preset-typescript": "7.22.15",
     "@testing-library/cypress": "8.0.7",
     "@testing-library/dom": "8.20.1",
     "@testing-library/jest-dom": "5.17.0",
