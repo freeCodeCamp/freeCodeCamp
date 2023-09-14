@@ -30,19 +30,6 @@ type SavedChallenge = {
   files: SavedChallengeFile[];
 };
 
-type ChallengeFile = {
-  key: string;
-  ext: string; // NOTE: This is Ext type in client
-  name: string;
-  history?: string[];
-  contents: string;
-};
-
-type Challenge = {
-  id: string;
-  files?: ChallengeFile[];
-};
-
 // TODO: Confirm this type - read comments below
 type CompletedChallengeFile = {
   key: string;
@@ -86,7 +73,7 @@ export type CompletedChallenge = {
 export function saveUserChallengeData(
   challengeId: string,
   user: user,
-  challenge: Challenge
+  challenge: Omit<SavedChallenge, 'lastSavedDate'>
 ) {
   const challengeToSave: SavedChallenge = {
     id: challengeId,

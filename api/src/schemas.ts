@@ -8,15 +8,19 @@ const generic500 = Type.Object({
 });
 
 const file = Type.Object({
+  contents: Type.String(),
   key: Type.String(),
   ext: Type.String(),
   name: Type.String(),
-  history: Type.Optional(Type.Array(Type.String())),
-  contents: Type.String()
+  history: Type.Array(Type.String())
 });
 
 const saveChallengeBody = Type.Object({
-  id: Type.String(),
+  id: Type.String({
+    format: 'objectid',
+    maxLength: 24,
+    minLength: 24
+  }),
   lastSavedDate: Type.Number(),
   files: Type.Array(file)
 });
@@ -490,25 +494,7 @@ export const schemas = {
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
-        savedChallenges: Type.Array(
-          Type.Object({
-            id: Type.String({
-              format: 'objectid',
-              maxLength: 24,
-              minLength: 24
-            }),
-            lastSavedDate: Type.Number(),
-            files: Type.Array(
-              Type.Object({
-                contents: Type.String(),
-                key: Type.String(),
-                ext: Type.String(),
-                name: Type.String(),
-                history: Type.Array(Type.String())
-              })
-            )
-          })
-        )
+        savedChallenges: Type.Array(saveChallengeBody)
       }),
       400: Type.Object({
         type: Type.Literal('error'),
