@@ -26,7 +26,7 @@ import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import { DonateFormState } from '../../redux/types';
 import {
-  convertAmountToUSD,
+  CENTS_IN_DOLLAR,
   convertToTimeContributed,
   formattedAmountLabel
 } from './utils';
@@ -205,8 +205,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       selectedDonationAmount || defaultAmount;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const walletlabel = `${t('donate.wallet-label-1', {
-      usd: donationAmount / convertAmountToUSD
+      usd: donationAmount / CENTS_IN_DOLLAR
     })}:`;
+    console.log(formattedAmountLabel(donationAmount));
     const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
     const confirmationMessage = t('donate.confirm-monthly', {
       usd: formattedAmountLabel(donationAmount)
