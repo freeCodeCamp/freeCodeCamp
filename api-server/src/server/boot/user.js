@@ -123,9 +123,10 @@ function createPostMsUsername(app) {
     const { msTranscriptUrl } = req.body;
 
     if (!msTranscriptUrl) {
-      return res
-        .status(400)
-        .send('Please include a Microsoft transcript URL in request');
+      return res.status(400).json({
+        type: 'danger',
+        message: 'flash.ms.transcript.link-err-1'
+      });
     }
 
     const msTranscriptId = msTranscriptUrl.split('/').pop();
@@ -136,18 +137,14 @@ function createPostMsUsername(app) {
 
       if (!msApiRes.ok) {
         res.status(500);
-        throw new Error(
-          'An error occurred trying to get your Microsoft transcript'
-        );
+        throw new Error('flash.ms.transcript.link-err-2');
       }
 
       const { userName } = await msApiRes.json();
 
       if (!userName) {
         res.status(500);
-        throw new Error(
-          'An error occured trying to link your Microsoft account'
-        );
+        throw new Error('flash.ms.transcript.link-err-3');
       }
 
       // Don't create if username is used by another fCC account
@@ -156,7 +153,8 @@ function createPostMsUsername(app) {
       });
 
       if (usernameUsed) {
-        throw new Error('That username is already used');
+        res.status(500);
+        throw new Error('flash.ms.transcript.link-err-4');
       }
 
       await MsUsername.destroyAll({ userId: req.user.id });
@@ -170,24 +168,23 @@ function createPostMsUsername(app) {
 
       if (!newMsUsername?.id) {
         res.status(500);
-        throw new Error(
-          'An error occured trying to link your Microsoft account'
-        );
+        throw new Error('flash.ms.transcript.link-err-5');
       }
 
       return res.json({ msUsername: userName });
     } catch (e) {
       log(e);
-      return res.send(e.message);
+      return res.json({ type: 'danger', message: e.message });
     }
   };
 }
 
 function deleteMsUsernameResponse(req, res) {
   if (!req.msUsernameDeleted) {
-    return res
-      .status(500)
-      .send('An error occurred trying to unlink your Microsoft username');
+    return res.status(500).json({
+      type: 'danger',
+      message: 'flash.ms.transcript.unlink-err'
+    });
   }
 
   return res.send({ msUsername: null });

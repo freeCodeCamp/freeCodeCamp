@@ -701,7 +701,7 @@ function createMsTrophyChallengeCompleted(app) {
       });
 
       if (!msUser || !msUser.msUsername) {
-        throw new Error('Microsoft username not found.');
+        throw new Error('flash.ms.trophy.err-1');
       }
 
       const { msUsername } = msUser;
@@ -711,7 +711,7 @@ function createMsTrophyChallengeCompleted(app) {
       );
 
       if (!challenge) {
-        throw new Error('Challenge not found');
+        throw new Error('flash.ms.trophy.err-2');
       }
 
       const { msTrophyId = '' } = challenge;
@@ -719,7 +719,13 @@ function createMsTrophyChallengeCompleted(app) {
       const msApiRes = await fetch(msTrophyApiUrl);
 
       if (!msApiRes.ok) {
-        throw new Error('Unable to validate trophy');
+        return res.status(500).json({
+          type: 'danger',
+          message: 'flash.ms.trophy.err-3',
+          variables: {
+            msUsername
+          }
+        });
       }
 
       const completedChallenge = pick(body, ['id']);
@@ -752,7 +758,7 @@ function createMsTrophyChallengeCompleted(app) {
       });
     } catch (e) {
       return res.status(500).json({
-        type: 'error',
+        type: 'danger',
         message: e.message
       });
     }
