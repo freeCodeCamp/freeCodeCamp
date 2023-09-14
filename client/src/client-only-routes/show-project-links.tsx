@@ -133,14 +133,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       );
     }
 
-    const project = certsToProjects[certName];
+    const projects = certsToProjects[certName];
     return (
       <>
-        {project.map(({ link, title, id }) => (
+        {projects.map(({ link, title, id }) => (
           <tr key={id}>
             <td>
               <Link to={link}>
-                {t(`certification.project.title.${title}`, title)}
+                {t(`certification.projects.title.${title}`, title)}
               </Link>
             </td>
             <td colSpan={2}>{getProjectSolution(id, title)}</td>
