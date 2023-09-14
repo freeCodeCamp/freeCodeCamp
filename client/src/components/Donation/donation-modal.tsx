@@ -1,5 +1,11 @@
 import { Modal, Button, Row } from '@freecodecamp/react-bootstrap';
-import { Tabs, TabsContent, TabsTrigger, TabsList, Col } from '@freecodecamp/ui';
+import {
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+  Col
+} from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
