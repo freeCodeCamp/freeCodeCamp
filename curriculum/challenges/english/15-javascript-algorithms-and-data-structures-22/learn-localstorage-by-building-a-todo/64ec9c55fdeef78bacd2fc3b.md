@@ -11,7 +11,7 @@ If you attempt to add another task now, you'll see the values you entered for th
 
 Instead of clearing the input fields one by one, you can create a function where you clear them, then call that function whenever you want to clear them again.
 
-Use arrow syntax to create a `reset` function and set it to an curly braces.
+Use arrow syntax to create a `reset` function and set it to a pair of curly braces.
 
 # --hints--
 

@@ -357,8 +357,8 @@
         "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
       },
-      "learn-localstorage-by-building-a-todo": {
-        "title": "Learn Localstorage by Building a Todo",
+      "learn-localstorage-by-building-a-todo-app": {
+        "title": "Learn localStorage by Building a Todo App",
         "intro": ["", ""]
       }
     }

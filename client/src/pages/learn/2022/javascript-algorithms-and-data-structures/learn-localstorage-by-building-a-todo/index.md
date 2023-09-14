@@ -1,6 +1,6 @@
 ---
-title: Introduction to the Learn Localstorage by Building a Todo
-block: learn-localstorage-by-building-a-todo
+title: Introduction to the Learn localStorage by Building a Todo App
+block: learn-localstorage-by-building-a-todo-app
 superBlock: 2022/javascript-algorithms-and-data-structures
 isBeta: true
 ---

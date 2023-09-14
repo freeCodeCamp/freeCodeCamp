@@ -7,7 +7,7 @@ dashedName: step-29
 
 # --description--
 
-Use arrow syntax to create a `addTaskToTaskContainer` function, then move the `taskData.forEach()` and its content into it.
+Use arrow syntax to create an `addTaskToTaskContainer` function. Then move the `taskData.forEach()` and its content into it.
 
 # --hints--
 
