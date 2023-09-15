@@ -357,7 +357,7 @@ const LowerJaw = ({
           />
         )}
       </div>
-      {challengeIsCompleted && (
+      {challengeIsCompleted && !showSignInButton && (
         <>
           <hr></hr>
           <div className='progress-bar-container'>
