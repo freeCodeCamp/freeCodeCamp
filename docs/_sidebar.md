@@ -1,7 +1,8 @@
 - **Getting Started**
   - [Introduction](index.md 'Contribute to the freeCodeCamp.org Community')
   - [Frequently Asked Questions](FAQ.md)
-  - [Reporting a Vulnerability](security.md)
+  - [Reporting a Vulnerability](security.md)  
+  - [Technologies used](list-of-technologies.md 'List of technologies used at freeCodeCamp.org website rpoject')
 - **Translation Contribution**
   - [Work on translating resources](how-to-translate-files.md)
   - [Work on proofreading translations](how-to-proofread-files.md)
