@@ -723,7 +723,7 @@
         "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
         "link-err-5": "An error occurred trying to save your Microsoft account.",
         "link-err-6": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-        "linked": "Your Microsoft username been linked to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "An error occurred trying to remove the link to your Microsoft username."
       },
