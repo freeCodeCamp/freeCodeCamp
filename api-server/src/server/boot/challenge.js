@@ -701,7 +701,9 @@ function createMsTrophyChallengeCompleted(app) {
       });
 
       if (!msUser || !msUser.msUsername) {
-        throw new Error('flash.ms.trophy.err-1');
+        return res
+          .status(403)
+          .json({ type: 'danger', message: 'flash.ms.trophy.err-1' });
       }
 
       const { msUsername } = msUser;
@@ -711,15 +713,18 @@ function createMsTrophyChallengeCompleted(app) {
       );
 
       if (!challenge) {
-        throw new Error('flash.ms.trophy.err-2');
+        return res
+          .status(400)
+          .json({ type: 'danger', message: 'flash.ms.trophy.err-2' });
       }
 
       const { msTrophyId = '' } = challenge;
       const msTrophyApiUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
       const msApiRes = await fetch(msTrophyApiUrl);
+      const msTrophyJson = await msApiRes.json();
 
-      if (!msApiRes.ok) {
-        return res.status(404).json({
+      if (!msApiRes.ok || msTrophyJson.awardType !== 'Trophy') {
+        return res.status(403).json({
           type: 'danger',
           message: 'flash.ms.trophy.err-3',
           variables: {
@@ -757,9 +762,10 @@ function createMsTrophyChallengeCompleted(app) {
         });
       });
     } catch (e) {
+      log(e);
       return res.status(500).json({
         type: 'danger',
-        message: e.message
+        message: 'flash.ms.trophy.err-4'
       });
     }
   };

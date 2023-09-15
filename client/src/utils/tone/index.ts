@@ -45,6 +45,7 @@ const toneUrls = {
   [FlashMessages.MsTrophyErr1]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr2]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr3]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr4]: TRY_AGAIN,
   [FlashMessages.MsTrophyVerified]: CHAL_COMP,
   [FlashMessages.NameNeeded]: TRY_AGAIN,
   // [FlashMessages.None]: '',

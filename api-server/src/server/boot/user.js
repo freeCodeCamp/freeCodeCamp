@@ -136,15 +136,17 @@ function createPostMsUsername(app) {
       const msApiRes = await fetch(msTranscriptApiUrl);
 
       if (!msApiRes.ok) {
-        res.status(500);
-        throw new Error('flash.ms.transcript.link-err-2');
+        return res
+          .status(404)
+          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-2' });
       }
 
       const { userName } = await msApiRes.json();
 
       if (!userName) {
-        res.status(500);
-        throw new Error('flash.ms.transcript.link-err-3');
+        return res
+          .status(500)
+          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-3' });
       }
 
       // Don't create if username is used by another fCC account
@@ -153,8 +155,9 @@ function createPostMsUsername(app) {
       });
 
       if (usernameUsed) {
-        res.status(500);
-        throw new Error('flash.ms.transcript.link-err-4');
+        return res
+          .status(403)
+          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-4' });
       }
 
       await MsUsername.destroyAll({ userId: req.user.id });
@@ -167,14 +170,17 @@ function createPostMsUsername(app) {
       });
 
       if (!newMsUsername?.id) {
-        res.status(500);
-        throw new Error('flash.ms.transcript.link-err-5');
+        return res
+          .status(500)
+          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-5' });
       }
 
       return res.json({ msUsername: userName });
     } catch (e) {
       log(e);
-      return res.json({ type: 'danger', message: e.message });
+      return res
+        .status(500)
+        .json({ type: 'danger', message: 'flash.ms.transcript.link-err-6' });
     }
   };
 }
