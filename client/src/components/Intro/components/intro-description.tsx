@@ -22,30 +22,11 @@ function IntroDescription(): JSX.Element {
         <strong>{t('learn.read-this.heading')}</strong>
       </p>
       <Spacer size='medium' />
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p1')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p2')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p3')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p4')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p5')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p6')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p7')}
-      </p>
-      <p data-playwright-test-label='learn-read-this-p'>
-        {t('learn.read-this.p8')}
-      </p>
+      {[...Array(8).keys()].map(i => (
+        <p key={i} data-playwright-test-label='learn-read-this-p'>
+          {t(`learn.read-this.p${i + 1}`)}
+        </p>
+      ))}
       <p>
         <Trans
           i18nKey='learn.read-this.p9'
