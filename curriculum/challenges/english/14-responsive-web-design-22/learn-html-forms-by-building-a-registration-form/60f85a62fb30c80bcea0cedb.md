@@ -58,7 +58,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       <fieldset>
         <label></label>
         <label></label>
-        <label></label>
       </fieldset>
 --fcc-editable-region--
       <fieldset></fieldset>
