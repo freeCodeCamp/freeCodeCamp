@@ -719,7 +719,7 @@ function createMsTrophyChallengeCompleted(app) {
       const msApiRes = await fetch(msTrophyApiUrl);
 
       if (!msApiRes.ok) {
-        return res.status(500).json({
+        return res.status(404).json({
           type: 'danger',
           message: 'flash.ms.trophy.err-3',
           variables: {
