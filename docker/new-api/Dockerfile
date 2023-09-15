@@ -24,7 +24,7 @@ RUN pnpm config set dedupe-peer-dependents false
 # the right version of prisma.
 RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
   --frozen-lockfile --ignore-scripts
-RUN cd api && npx prisma@$(cat package.json | jq -r '.devDependencies.prisma') generate
+RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.
@@ -50,7 +50,7 @@ RUN npm i -g pnpm@8
 # consistency.
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
-RUN cd api && npx prisma@$(cat package.json | jq -r '.devDependencies.prisma') generate
+RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:18-alpine
 RUN npm i -g pm2@4
