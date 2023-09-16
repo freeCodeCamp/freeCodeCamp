@@ -31,7 +31,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       config.env = config.env || {};
       on('before:run', () => {
-        if (!existsSync('./config/curriculum.json')) {
+        if (!existsSync('./shared/config/curriculum.json')) {
           execSync('pnpm run build:curriculum');
         }
       });

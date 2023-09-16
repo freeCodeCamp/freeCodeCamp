@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 
-import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -26,8 +26,8 @@ import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
   certSlugTypeMap
-} from '../../../../config/certification-settings';
-import env from '../../../../config/env.json';
+} from '../../../../shared/config/certification-settings';
+import env from '../../../config/env.json';
 
 import {
   ClaimedCertifications,
@@ -122,11 +122,11 @@ const isCertMapSelector = createSelector(
     'Machine Learning with Python': isMachineLearningPyCertV7,
     'Relational Database': isRelationalDatabaseCertV8,
     'College Algebra with Python': isCollegeAlgebraPyCertV8,
+    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
-    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,

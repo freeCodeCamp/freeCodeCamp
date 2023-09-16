@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 
-import { getLines } from '../../../../../utils/get-lines';
+import { getLines } from '../../../../../shared/utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';

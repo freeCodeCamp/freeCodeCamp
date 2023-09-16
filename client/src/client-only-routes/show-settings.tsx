@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/certification';
@@ -54,7 +54,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
-  verifyCert: () => void;
+  verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
 };
@@ -213,6 +213,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -225,9 +226,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCertV7={isSciCompPyCertV7}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             username={username}
             verifyCert={verifyCert}
+            isEmailVerified={isEmailVerified}
           />
           {userToken && (
             <>

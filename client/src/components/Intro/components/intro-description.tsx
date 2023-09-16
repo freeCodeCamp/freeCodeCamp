@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { Link, Spacer } from '../../helpers';
 
 import '../intro.css';

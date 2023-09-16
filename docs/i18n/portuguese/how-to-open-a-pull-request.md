@@ -91,7 +91,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Isso é muito importante quando se está fazendo mudanças que não são apenas edições no conteúdo do texto como a documentação ou descrição de um desafio. Exemplos de mudanças que precisam ser testadas localmente incluem JavaScript, CSS ou HTML que podem mudar a funcionalidade ou aparência de uma página.
 
-   - Se seu PR afeta o comportamento de uma página ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
+   - Se seu PR afeta o comportamento de uma página, ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
 
 ## Comentários nos pull requests
 
@@ -107,7 +107,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e mesclagem.
 
-Na maioria das vezes, você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
+Como fazemos o squash de todos os commits, você pode não precisar fazer o rebase.  Porém, se um rebase for solicitado, verifique nossos guias [Para os consertos de bugs e recursos comuns](#for-usual-bug-fixes-and-features) ou [Para o currículo futuro e recursos](#for-upcoming-curriculum-and-features) para saber como fazer esse processo para seu PR correspondente.
 
 ### Para funcionalidades e correções de erros comuns
 

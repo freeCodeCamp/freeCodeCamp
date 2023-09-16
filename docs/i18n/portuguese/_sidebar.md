@@ -10,6 +10,7 @@
   - [Seguir as melhores práticas](codebase-best-practices.md)
   - [Trabalhar na base de código](how-to-contribute-to-the-codebase.md)
   - [Trabalhar em desafios de programação](how-to-work-on-coding-challenges.md)
+  - [Usar os auxiliares do currículo](curriculum-help.md)
   - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
   - [Trabalhar em projetos práticos](how-to-work-on-practice-projects.md)
   - [Trabalhar na aplicação para dispositivos móveis](how-to-setup-freecodecamp-mobile-app-locally.md)

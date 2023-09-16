@@ -226,7 +226,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -306,7 +305,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     {answers.map((option, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'

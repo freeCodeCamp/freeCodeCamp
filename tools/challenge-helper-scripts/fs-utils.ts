@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../config/superblocks';
+import { SuperBlocks } from '../../shared/config/superblocks';
 
 export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
   const pathMap = {

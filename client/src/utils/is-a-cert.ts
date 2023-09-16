@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 export function isNewRespCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RespWebDesignNew;
