@@ -92,7 +92,7 @@ jobs:
         run: docker save fcc-api > api-artifact.tar
 
       - name: Upload Api Artifact
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: api-artifact
           path: api-artifact.tar
