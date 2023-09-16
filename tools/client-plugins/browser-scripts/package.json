@@ -26,7 +26,7 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/plugin-transform-runtime": "7.22.15",
-    "@babel/preset-env": "7.22.15",
+    "@babel/preset-env": "7.22.20",
     "@babel/preset-typescript": "7.22.15",
     "@freecodecamp/curriculum-helpers": "1.1.0",
     "@types/chai": "4.3.6",
