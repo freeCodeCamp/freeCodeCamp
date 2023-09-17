@@ -15,15 +15,13 @@ import {
   composeValidators,
   fCCValidator,
   httpValidator,
-  pathValidator,
-  microsoftValidator
+  pathValidator
 } from './form-validators';
 
 export type FormOptions = {
   ignored?: string[];
   isEditorLinkAllowed?: boolean;
   isLocalLinkAllowed?: boolean;
-  isMicrosoftLearnLink?: boolean;
   required?: string[];
   types?: { [key: string]: string };
   placeholders?: { [key: string]: string };
@@ -42,8 +40,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
     required = [],
     types = {},
     isEditorLinkAllowed = false,
-    isLocalLinkAllowed = false,
-    isMicrosoftLearnLink = false
+    isLocalLinkAllowed = false
   } = options;
 
   const nullOrWarning = (
@@ -72,7 +69,6 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
     if (!isLocalLinkAllowed) {
       validators.push(localhostValidator);
     }
-    if (isMicrosoftLearnLink) validators.push(microsoftValidator);
     const validationWarning = composeValidators(...validators)(value);
     const message: string = (error ||
       validationError ||

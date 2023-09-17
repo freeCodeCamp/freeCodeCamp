@@ -205,7 +205,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
-    const ariaLabel = t('settings.headings.personal-info');
     return (
       <>
         <UsernameSettings username={username} />
@@ -213,7 +212,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={ariaLabel}>
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
                   <strong>{t('settings.labels.name')}</strong>

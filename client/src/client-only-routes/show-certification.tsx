@@ -8,8 +8,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import envData from '../../config/env.json';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
@@ -35,12 +35,12 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   certTypes,
   certTypeTitleMap
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -217,7 +217,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username, certTitle } = cert;
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    completionTime
+  } = cert;
 
   const { user } = props;
 
@@ -261,6 +267,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
+      <Spacer size='medium' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
@@ -303,7 +310,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharp];
+    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
 
   return (
     <Container className='certificate-outer-wrapper'>
@@ -352,6 +359,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     })
                   }}
                 </h4>
+                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
               </Trans>
             </div>
           </main>

@@ -20,11 +20,11 @@
   "main": "none",
   "devDependencies": {
     "dotenv": "16.3.1",
-    "joi": "17.9.2",
+    "joi": "17.10.1",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
-    "mongodb": "5.6.0",
+    "mongodb": "5.8.1",
     "nanoid": "4.0.2"
   },
   "type": "module"

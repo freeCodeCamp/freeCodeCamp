@@ -6,7 +6,7 @@ const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -14,8 +14,8 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedSuperBlock } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);

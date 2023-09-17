@@ -11,13 +11,13 @@ import {
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../../config/client/sass-compile.json';
+import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
   compileHeadTail
-} from '../../../../../utils/polyvinyl';
+} from '../../../../../shared/utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
 import { makeCancellable, makeInputAwaitable } from './transform-python';
 

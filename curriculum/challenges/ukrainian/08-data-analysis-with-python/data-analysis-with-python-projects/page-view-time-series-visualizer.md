@@ -17,7 +17,7 @@ dashedName: page-view-time-series-visualizer
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 годин)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
@@ -31,7 +31,7 @@ dashedName: page-view-time-series-visualizer
 - Очистить дані, відфільтрувавши дні, коли перегляди сторінок належали до верхніх 2,5% набору даних або нижніх 2,5% набору даних.
 - Створіть функцію `draw_line_plot`, яка використовує Matplotlib для створення лінійної діаграми, подібної до «examples/Figure_1.png». Заголовком повинен бути `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. Міткою на осі X повинна бути `Date`, а міткою на осі Y повинна бути `Page Views`.
 - Створіть функцію `draw_bar_plot`, яка малює стовпчикову діаграму, подібну до «examples/Figure_2.png». Вона повинна відображати середню кількість щоденних переглядів для кожного місяця, згрупованих за роками. Легенда повинна відображати мітки місяців та мати назву `Months`. На діаграмі міткою на осі X повинна бути `Years`, а міткою на осі Y повинна бути `Average Page Views`.
-- Створіть функцію `draw_box_plot`, яка використовує Seaborn, щоб намалювати два суміжні коробкові графіки, подібні до «examples/Figure_3.png». Ці коробкові графіки повинні показувати, як значення розподіляються протягом певного року чи місяця та як вони порівнюються з часом. Заголовком першої діаграми повинен бути `Year-wise Box Plot (Trend)`, а заголовком другої діаграми повинен бути `Month-wise Box Plot (Seasonality)`. Переконайтеся, що мітки місяця внизу починаються з `Jan`, а вісь x та y позначені правильно. Шаблонний код містить команди для підготовки даних.
+- Створіть функцію `draw_box_plot`, яка використовує Seaborn, щоб намалювати два суміжні коробкові графіки, подібні до «examples/Figure_3.png». Ці коробкові графіки повинні показувати, як значення розподіляються протягом певного року чи місяця та як вони порівнюються з часом. Заголовком першої діаграми повинен бути `Year-wise Box Plot (Trend)`, а заголовком другої діаграми повинен бути `Month-wise Box Plot (Seasonality)`. Переконайтеся, що мітки місяця внизу починаються з `Jan`, а осі X та Y позначені правильно. Шаблонний код містить команди для підготовки даних.
 
 Для кожної діаграми обов’язково використайте копію кадру даних. Для вас складені модульні тести у `test_module.py`.
 
