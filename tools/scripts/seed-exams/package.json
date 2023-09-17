@@ -20,7 +20,7 @@
   "main": "none",
   "devDependencies": {
     "dotenv": "16.3.1",
-    "joi": "17.10.1",
+    "joi": "17.10.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
