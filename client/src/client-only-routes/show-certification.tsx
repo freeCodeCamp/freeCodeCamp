@@ -277,6 +277,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </div>
   );
 
+  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
+
   const shareCertBtns = (
     <Row className='text-center'>
       <Col xs={12}>
@@ -284,7 +286,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           block={true}
           bsSize='lg'
           bsStyle='primary'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
           }&certUrl=${certURL}`}
           target='_blank'
@@ -298,7 +300,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           bsSize='lg'
           bsStyle='primary'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
-            certTitle: certTitle,
+            certTitle: urlFriendlyCertTitle,
             certURL: certURL
           })}`}
           target='_blank'
