@@ -952,31 +952,42 @@ describe('challengeRoutes', () => {
         });
 
         test('POST update the user savedchallenges and return them', async () => {
+          const now = Date.now();
           const response = await superRequest('/save-challenge', {
             method: 'POST',
             setCookies
-          }).send(multiFileCertProjectBody);
+          }).send({
+            id: multiFileCertProjectId,
+            lastSavedDate: now,
+            files: updatedMultiFileCertProjectBody.files
+          });
 
           const user = await fastifyTestInstance?.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
           });
 
-          expect(response.statusCode).toBe(200);
-          expect(user?.savedChallenges).toHaveLength(1);
+          const savedDate = user?.savedChallenges[0]?.lastSavedDate;
+
           expect(user).toMatchObject({
             savedChallenges: [
               {
                 id: multiFileCertProjectId,
-                lastSavedDate: expect.any(Number),
-                files: multiFileCertProjectBody.files
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
               }
             ]
           });
-          expect(response.body).toEqual([
-            {
-              multiFileCertProjectBody
-            }
-          ]);
+          expect(response.body).toEqual({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(user?.savedChallenges).toHaveLength(1);
+          expect(response.statusCode).toBe(200);
         });
       });
     });
