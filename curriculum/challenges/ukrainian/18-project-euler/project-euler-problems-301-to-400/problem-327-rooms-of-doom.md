@@ -26,7 +26,7 @@ Let $R$ be the number of rooms to travel through.
 
 Let $M(C, R)$ be the minimum number of cards required from the dispensing machine to travel through $R$ rooms carrying up to a maximum of $C$ cards at any time.
 
-For example, $M(3, 6) = 123$ and $M(4, 6) = 23$.
+Наприклад, $M(3, 6) = 123$ та $M(4, 6) = 23$.
 
 And, $\sum M(C, 6) = 146$ for $3 ≤ C ≤ 4$.
 

@@ -8,7 +8,7 @@ dashedName: problem-423-consecutive-die-throws
 
 # --description--
 
-Let $n$ be a positive integer.
+Нехай $n$ буде натуральним числом.
 
 A 6-sided die is thrown $n$ times. Let $c$ be the number of pairs of consecutive throws that give the same value.
 
