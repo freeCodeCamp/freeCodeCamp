@@ -206,6 +206,10 @@
           "为你的网页选择正确的颜色可以大大提高对读者的审美吸引力。",
           "在本课程中，你将构建一组彩色笔。你将学习设置颜色值的不同方法以及如何将颜色相互配对。"
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -1009,13 +1013,13 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Foundational C# with Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building robust and scalable applications"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Note: You must complete the trophy challenge in each section below to qualify for the certification exam.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Write Your First Code Using C#",

@@ -8,6 +8,15 @@ export const unsubscribeEndpoints: Endpoint[] = [
   ['/unsubscribe/:email', 'GET']
 ];
 
+/**
+ * Plugin for the deprecated unsubscribe endpoints. Each route returns a 302
+ * redirect to the referer with a message explaining how to unsubscribe.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin,
+ * options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
 export const unsubscribeDeprecated: FastifyPluginCallbackTypebox = (
   fastify,
   _options,

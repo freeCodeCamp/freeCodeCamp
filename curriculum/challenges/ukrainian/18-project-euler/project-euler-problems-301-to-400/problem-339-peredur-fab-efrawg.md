@@ -14,7 +14,7 @@ Initially, each flock consists of $n$ sheep. Each sheep (regardless of color) is
 
 You are given that $E(5) = 6.871346$ rounded to 6 places behind the decimal point.
 
-Find $E(10\\,000)$ and give your answer rounded to 6 places behind the decimal point.
+Знайдіть $E(10\\,000)$ та дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

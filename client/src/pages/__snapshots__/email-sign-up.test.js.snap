@@ -4,7 +4,7 @@ exports[`<EmailSignUp /> Authenticated user "accepted terms and condition" it sh
 
 exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and condition" it should render correctly 1`] = `
 <div
-  className="container"
+  className="mx-auto px-[15px] my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px] "
 >
   
   <div

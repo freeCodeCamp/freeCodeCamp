@@ -222,8 +222,7 @@ button,
 input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
-  border-width: 3px;
-  border-color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
   color: var(--secondary-color);
   border-radius: 0;
   text-decoration: none;
@@ -638,16 +637,6 @@ pre {
 
 .panel-primary {
   border-color: var(--primary-color);
-}
-
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: var(--secondary-background);
-}
-
-.nav-tabs > li > a {
-  border-radius: 0;
 }
 
 blockquote footer,

@@ -27,7 +27,7 @@ The right image is another path. The total required time is calculated as $0.980
 
 Let $F(d)$ be the total required time if the ant chooses the quickest path. Наприклад, $F(4) ≈ 2.960\\,516\\,287$. We can verify that $F(10) ≈ 4.668\\,187\\,834$ and $F(100) ≈ 9.217\\,221\\,972$.
 
-Знайдіть $F(10\\,000)$. Give your answer rounded to nine decimal places.
+Знайдіть $F(10\\,000)$. Дайте відповідь, заокруглену до дев’яти знаків після коми.
 
 # --hints--
 

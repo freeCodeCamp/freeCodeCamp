@@ -22,6 +22,7 @@ import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
+import { createMsUsernameSaga } from './ms-username-saga';
 
 const defaultFetchState = {
   pending: true,
@@ -50,6 +51,7 @@ const initialState = {
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
+  isProcessing: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -88,7 +90,8 @@ export const sagas = [
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
   ...createUserTokenSaga(actionTypes),
-  ...createSaveChallengeSaga(actionTypes)
+  ...createSaveChallengeSaga(actionTypes),
+  ...createMsUsernameSaga(actionTypes)
 ];
 
 function spreadThePayloadOnUser(state, payload) {
@@ -302,7 +305,11 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      const { submittedChallenge, savedChallenges } = payload;
+      const {
+        examResults = null,
+        submittedChallenge,
+        savedChallenges
+      } = payload;
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
@@ -310,24 +317,56 @@ export const reducer = handleActions(
         submittedchallenges = submittedChallenge.challArray;
       }
       const { appUsername } = state;
+
+      return examResults && !examResults.passed
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [appUsername]: {
+                ...state.user[appUsername],
+                examResults
+              }
+            }
+          }
+        : {
+            ...state,
+            completionCount: state.completionCount + 1,
+            user: {
+              ...state.user,
+              [appUsername]: {
+                ...state.user[appUsername],
+                completedChallenges: uniqBy(
+                  [
+                    ...submittedchallenges,
+                    ...state.user[appUsername].completedChallenges
+                  ],
+                  'id'
+                ),
+                savedChallenges:
+                  savedChallenges ?? savedChallengesSelector(state[MainApp]),
+                examResults
+              }
+            }
+          };
+    },
+    [actionTypes.setMsUsername]: (state, { payload }) => {
+      const { appUsername } = state;
       return {
         ...state,
-        completionCount: state.completionCount + 1,
         user: {
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            completedChallenges: uniqBy(
-              [
-                ...submittedchallenges,
-                ...state.user[appUsername].completedChallenges
-              ],
-              'id'
-            ),
-            savedChallenges:
-              savedChallenges ?? savedChallengesSelector(state[MainApp])
+            msUsername: payload
           }
         }
+      };
+    },
+    [actionTypes.setIsProcessing]: (state, { payload }) => {
+      return {
+        ...state,
+        isProcessing: payload
       };
     },
     [actionTypes.updateUserToken]: (state, { payload }) => {
@@ -378,6 +417,19 @@ export const reducer = handleActions(
       return {
         ...state,
         examInProgress: false
+      };
+    },
+    [actionTypes.clearExamResults]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            examResults: null
+          }
+        }
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -225,7 +226,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -239,7 +239,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -305,7 +305,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     {answers.map((option, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -362,7 +362,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               </Col>
               <CompletionModal />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

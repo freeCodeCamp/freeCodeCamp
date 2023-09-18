@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9bedc08826
-title: Цільові HTML елементи з селекторами jQuery
+title: Націльте елементи HTML селекторами за допомогою jQuiery
 challengeType: 6
 forumTopicId: 18319
 required:
@@ -13,33 +13,33 @@ dashedName: target-html-elements-with-selectors-using-jquery
 
 Тепер у нас є функція `document ready`.
 
-Тепер напишемо нашу першу команду у jQuery. Усі функції jQuery починаються з `$`, який називають символом долара, або блінг.
+Напишемо першу інструкцію в jQuery. Усі функції jQuery починаються з `$`, який зазвичай називають доларом.
 
-jQuery часто обирає HTML елемент з <dfn>селектором</dfn>, потім робить щось з цим елементом.
+jQuery часто обирає елемент HTML за допомогою <dfn>селектора</dfn>, а потім робить щось з цим елементом.
 
-Наприклад, надамо усім елементам `button` ефект bounce. Просто додайте цей код у ваш документ:
+Наприклад, змусимо всі елементи `button` стрибати. Просто додайте цей код до функції document ready:
 
 ```js
 $("button").addClass("animated bounce");
 ```
 
-Зверніть увагу, ми вже додали обидві бібліотеки jQuery і бібліотеку Animate.css, щоб ви могли скористатися ними в редакторі. Таким чином, ви використовуєте jQuery, щоб застосувати клас `bounce` з бібліотеки Animate.css до елементів `button`.
+Зверніть увагу, що ми вже додали бібліотеки jQuery та Animate.css, щоб ви могли скористатися ними в редакторі. Ви використовуєте jQuery, щоб додати клас Animate.css `bounce` до елементів `button`.
 
 # --hints--
 
-Використовуйте jQuery функцію `addClass()`, щоб застосувати класи `animated` й `bounce` до елементів `button`.
+Використайте функцію `addClass()`, щоб надати класи `animated` та `bounce` до елементів `button`.
 
 ```js
 assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-Використовуйте jQuery тільки щоб додати класи до елементів.
+Для додавання цих класів використовуйте лише jQuery.
 
 ```js
 assert(!code.match(/class.*animated/g));
 ```
 
-Ваш код jQuery має бути в функції `$(document).ready();`.
+Код jQuery має бути в межах функції `$(document).ready();`.
 
 ```js
 assert(

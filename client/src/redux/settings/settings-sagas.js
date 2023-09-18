@@ -12,9 +12,9 @@ import store from 'store';
 import {
   certTypeIdMap,
   certTypes
-} from '../../../../config/certification-settings';
+} from '../../../../shared/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
-import { fullCertMap } from '../../resources/cert-and-project-map';
+import { liveCerts } from '../../../config/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
@@ -171,7 +171,7 @@ function* validateUsernameSaga({ payload }) {
 
 function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
-  const currentCert = fullCertMap.find(cert => cert.certSlug === payload);
+  const currentCert = liveCerts.find(cert => cert.certSlug === payload);
   const completedChallenges = yield select(completedChallengesSelector);
   const certTitle = currentCert?.title || payload;
 

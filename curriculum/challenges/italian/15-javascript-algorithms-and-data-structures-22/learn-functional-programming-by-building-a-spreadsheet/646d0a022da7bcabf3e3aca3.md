@@ -7,46 +7,46 @@ dashedName: step-44
 
 # --description--
 
-The concept of returning a function within a function is called <dfn>currying</dfn>. This approach allows you to create a variable that holds a function to be called later, but with a reference to the parameters of the outer function call.
+Il concetto di restituire una funzione all'interno di una funzione è chiamato <dfn>currying</dfn>. Questo approccio consente di creare una variabile che contiene una funzione da chiamare in seguito, ma con riferimento ai parametri della chiamata della funzione esterna.
 
-For example:
+Ad esempio:
 
 ```js
 const innerOne = elemValue(1);
 const final = innerOne("A");
 ```
 
-`innerOne` would be your `inner` function, with `num` set to `1`, and `final` would have the value of the cell with the `id` of `A1`. This is possible because functions have access to all variables declared at their creation. This is called <dfn>closure</dfn>.
+`innerOne` sarebbe la tua funzione `inner`, con `num` impostato a `1`, e `final` avrebbe il valore della cella con l'`id` di `A1`. Questo è possibile perché le funzioni hanno accesso a tutte le variabili dichiarate alla loro creazione. Ciò è detto <dfn>closure</dfn> (chiusura).
 
-You'll get some more practice with this. Declare a function called `addCharacters` which takes a `character1` parameter.
+Farai un po' di pratica su questo aspetto. Dichiara una funzione chiamata `addCharacters` che richiede un parametro `character1`.
 
 # --hints--
 
-You should declare an `addCharacters` variable.
+Dovresti dichiarare una variabile `addCharacters`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*(?:var|let|const)\s+addCharacters/);
 ```
 
-You should use `const` to declare your `addCharacters` variable.
+Dovresti usare `const` per dichiarare la variabile `addCharacters`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters/);
 ```
 
-Your `addCharacters` variable should be an arrow function.
+La variabile `addCharacters` dovrebbe essere una funzione freccia.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?.*\)?\s*=>/);
 ```
 
-Your `addCharacters` function should not use an implicit return.
+La funzione `addCharacters` non dovrebbe usare un return implicito.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?.*\)?\s*=>\s*\{/);
 ```
 
-Your `addCharacters` function should have a `character1` parameter.
+La funzione `addCharacters` dovrebbe avere un parametro `character1`.
 
 ```js
 assert.match(code, /const\s*evalFormula\s*=\s*\(\s*x\s*,\s*cells\s*\)\s*=>\s*{\s*const\s+idToText\s*=\s*\(?\s*id\s*\)?\s*=>\s*cells\.find\(\s*\(?\s*cell\s*\)?\s*=>\s*(?:cell\.id\s*===\s*id|id\s*===\s*cell\.id)\s*\)\.value;?\s*const\s+rangeRegex\s*=\s*\/\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\):\(\[A-J\]\)\(\[1-9\]\[0-9\]\?\)\/(gi|ig);?\s*const\s+rangeFromString\s*=\s*\(\s*num1\s*,\s*num2\s*\)\s*=>\s*range\(\s*parseInt\(\s*num1\s*\)\s*,\s*parseInt\(\s*num2\s*\)\s*\);?\s*const\s+elemValue\s*=\s*\(?\s*num\s*\)?\s*=>\s*\{\s*const\s+inner\s*=\s*\(?\s*character\s*\)?\s*=>\s*\{\s*return\s+idToText\(\s*character\s*\+\s*num\s*\);?\s*};?\s*return\s+inner;?\s*\}\s*const\s+addCharacters\s*=\s*\(?\s*character1\s*\)?\s*=>/);

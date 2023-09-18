@@ -6,7 +6,7 @@ const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -14,8 +14,8 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedCert } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
@@ -258,7 +258,7 @@ function generateChallengeCreator(basePath, lang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
 
-  async function validate(filePath, superBlock) {
+  async function validate(filePath) {
     const invalidLang = !curriculumLangs.includes(lang);
     if (invalidLang)
       throw Error(`${lang} is not a accepted language.
@@ -272,20 +272,6 @@ ${filePath}
 It should be in
 ${getFullPath('english', filePath)}
 `);
-
-    const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && !fs.existsSync(getFullPath(lang, filePath));
-    if (missingAuditedChallenge)
-      throw Error(`Missing ${lang} audited challenge for
-${filePath}
-
-Explanation:
-
-Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
-    `);
   }
 
   function addMetaToChallenge(challenge, meta) {
@@ -335,9 +321,9 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
       lang !== 'english' &&
-      !isAuditedCert(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      !isAuditedSuperBlock(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
   }
@@ -372,7 +358,7 @@ Challenges that have been already audited cannot fall back to their English vers
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
     const translateComments =
-      isAuditedCert(lang, meta.superBlock, {
+      isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));

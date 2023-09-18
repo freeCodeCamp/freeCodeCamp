@@ -1,5 +1,7 @@
 .toggle-setting-container {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .toggle-description {
@@ -14,11 +16,6 @@
 .toggle-description > p:not(:first-child) {
   font-style: italic;
   font-size: 0.8rem;
-}
-
-.toggle-setting-container fieldset {
-  display: flex;
-  justify-content: space-between;
 }
 
 .toggle-button-group {
@@ -122,7 +119,7 @@
 }
 
 @media (max-width: 35rem) {
-  .toggle-setting-container fieldset {
+  .toggle-setting-container {
     flex-direction: column;
     margin-bottom: 1rem;
   }

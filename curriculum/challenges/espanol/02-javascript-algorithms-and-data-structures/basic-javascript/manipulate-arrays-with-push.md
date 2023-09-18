@@ -9,21 +9,21 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-Una forma fácil de añadir datos al final de un arreglo es a través de la función `push()`.
+Una forma sencilla de añadir datos al final de un arreglo es mediante el método `push()`.
 
-`.push()` toma uno o más <dfn>parámetros</dfn> y los "empuja" al final del arreglo.
+El método `push()` toma uno o más <dfn>arguments</dfn> y los añade al final del arreglo, en el orden en que aparecen. Devuelve la nueva longitud del arreglo.
 
 Ejemplos:
 
 ```js
 const arr1 = [1, 2, 3];
-arr1.push(4);
+arr1.push(4, 5);
 
 const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` ahora tiene el valor `[1, 2, 3, 4]` y `arr2` tiene el valor `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+`arr1` ahora tiene el valor `[1, 2, 3, 4, 5]` y `arr2` tiene el valor `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 

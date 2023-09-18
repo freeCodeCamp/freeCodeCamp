@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c52
-title: Test if a Value is a String
+title: Teste, ob ein Wert ein String ist
 challengeType: 2
 forumTopicId: 301599
 dashedName: test-if-a-value-is-a-string
@@ -10,7 +10,7 @@ dashedName: test-if-a-value-is-a-string
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`isString` or `isNotString` asserts that the actual value is a string.
+`isString` oder `isNotString` gibt an, ob der eigentliche Wert ein String ist.
 
 # --instructions--
 
@@ -18,7 +18,7 @@ Within `tests/1_unit-tests.js` under the test labelled `#13` in the `Strings` su
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>

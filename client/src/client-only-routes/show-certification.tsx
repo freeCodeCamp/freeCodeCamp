@@ -1,4 +1,4 @@
-import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import { Container } from '@freecodecamp/ui';
+import envData from '../../config/env.json';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
@@ -27,17 +28,19 @@ import {
   usernameSelector
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
-import { fullCertMap } from '../resources/cert-and-project-map';
-import certificateMissingMessage from '../utils/certificate-missing-message';
-import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
-import standardErrorMessage from '../utils/standard-error-message';
+import { liveCerts } from '../../config/cert-and-project-map';
+import {
+  certificateMissingErrorMessage,
+  reallyWeirdErrorMessage,
+  standardErrorMessage
+} from '../utils/error-messages';
 
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   certTypes,
   certTypeTitleMap
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -85,10 +88,10 @@ interface ShowCertificationProps {
 const requestedUserSelector = (state: unknown, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state) as User;
 
-const validCertSlugs = fullCertMap.map(cert => cert.certSlug);
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
-  const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
+  const isValidCert = liveCerts.some(
+    ({ certSlug }) => certSlug === props.certSlug
+  );
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -194,7 +197,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   } = props;
 
   if (!isValidCert) {
-    createFlashMessage(certificateMissingMessage);
+    createFlashMessage(certificateMissingErrorMessage);
     return <RedirectHome />;
   }
 
@@ -214,7 +217,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username, certTitle } = cert;
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    completionTime
+  } = cert;
 
   const { user } = props;
 
@@ -258,6 +267,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
+      <Spacer size='medium' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
@@ -278,6 +288,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             certMonth + 1
           }&certUrl=${certURL}`}
           target='_blank'
+          data-playwright-test-label='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -291,6 +302,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             certURL: certURL
           })}`}
           target='_blank'
+          data-playwright-test-label='twitter-share-btn'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -300,10 +312,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharp];
+    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
 
   return (
-    <Grid className='certificate-outer-wrapper'>
+    <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <div className='certificate-wrapper'>
         <div className='certification-namespace'>
@@ -332,15 +344,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1>
                   <strong>{{ user: displayName }}</strong>
                 </h1>
-                <h3>placeholder</h3>
-                <h1>
+                <h3 data-playwright-test-label='successful-completion'>
+                  placeholder
+                </h3>
+                <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
                       title: t(`certification.title.${certTitle}`, certTitle)
                     }}
                   </strong>
                 </h1>
-                <h4 data-cy={'issue-date'}>
+                <h4
+                  data-cy={'issue-date'}
+                  data-playwright-test-label='issue-date'
+                >
                   {{
                     time: certDate.toLocaleString([localeCode, 'en-US'], {
                       year: 'numeric',
@@ -349,6 +366,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     })
                   }}
                 </h4>
+                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
               </Trans>
             </div>
           </main>
@@ -431,7 +449,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
         <Spacer size='large' />
       </div>
-    </Grid>
+    </Container>
   );
 };
 

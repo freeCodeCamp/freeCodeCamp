@@ -41,7 +41,7 @@ assert($('div').children('ul').length > 0);
 assert($('div').children('ol').length > 0);
 ```
 
-Елемент `div` повинен містити кінцевий тег.
+Елемент `div` повинен мати кінцевий тег.
 
 ```js
 assert(

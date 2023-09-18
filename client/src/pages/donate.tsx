@@ -1,4 +1,4 @@
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import { Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
+import { Container } from '@freecodecamp/ui';
 import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
@@ -19,7 +20,7 @@ import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
 import { executeGA } from '../redux/actions';
 import { signInLoadingSelector, userSelector } from '../redux/selectors';
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 
 export interface ExecuteGaArg {
   event: string;
@@ -66,7 +67,7 @@ function DonatePage({
   ) : (
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-      <Grid className='donate-page-wrapper'>
+      <Container className='donate-page-wrapper'>
         <Spacer size='large'>
           <Row>
             <>
@@ -112,7 +113,7 @@ function DonatePage({
             </>
           </Row>
         </Spacer>
-      </Grid>
+      </Container>
     </>
   );
 }

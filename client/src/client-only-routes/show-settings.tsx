@@ -1,11 +1,11 @@
-import { Grid } from '@freecodecamp/react-bootstrap';
 import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../config/env.json';
+import { Container } from '@freecodecamp/ui';
+import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/certification';
@@ -54,7 +54,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
-  verifyCert: () => void;
+  verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
 };
@@ -117,6 +117,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isMachineLearningPyCertV7,
       isRelationalDatabaseCertV8,
       isCollegeAlgebraPyCertV8,
+      isFoundationalCSharpCertV8,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -157,7 +158,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Grid>
+      <Container>
         <main>
           <Spacer size='large' />
           <h1
@@ -212,6 +213,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -226,6 +228,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
+            isEmailVerified={isEmailVerified}
           />
           {userToken && (
             <>
@@ -236,7 +239,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <DangerZone />
         </main>
-      </Grid>
+      </Container>
     </>
   );
 }

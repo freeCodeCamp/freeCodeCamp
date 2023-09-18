@@ -68,13 +68,13 @@
           "./client/tsconfig.json",
           "./tsconfig.json",
           "./api/tsconfig.json",
-          "./config/tsconfig.json",
+          "./shared/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
-          "./utils/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
-          "./cypress/tsconfig.json"
+          "./cypress/tsconfig.json",
+          "./e2e/tsconfig.json"
         ]
       },
       "extends": [
@@ -161,6 +161,14 @@
       }
     },
     {
+      "files": ["e2e/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    },
+    {
       "files": ["web/**/*.tsx"],
       "extends": ["plugin:react/jsx-runtime"]
     },
@@ -168,6 +176,29 @@
       "files": ["**/api-server/**/*", "**/404.*"],
       "rules": {
         "filenames-simple/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/api/src/**/*.ts"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
+      "rules": {
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "require": {
+              "ArrowFunctionExpression": true,
+              "ClassDeclaration": true,
+              "ClassExpression": true,
+              "FunctionDeclaration": true,
+              "FunctionExpression": true,
+              "MethodDefinition": true
+            },
+            "publicOnly": true
+          }
+        ],
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
       }
     }
   ]
