@@ -1,8 +1,8 @@
 ---
 id: 60fad6dfcc0d930a59becf12
-title: Hatua ya 42
+title: Step 43
 challengeType: 0
-dashedName: step-42
+dashedName: step-43
 ---
 
 # --description--
