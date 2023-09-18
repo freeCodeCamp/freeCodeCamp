@@ -10,7 +10,7 @@ import {
   type CompletedChallenge
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
-import { formatValidationError } from '../utils/error-formatting';
+import { formatProjectCompletedValidation } from '../utils/error-formatting';
 import { getChallenges } from '../utils/get-challenges';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
 import {
@@ -183,7 +183,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -270,7 +270,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -322,7 +322,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
