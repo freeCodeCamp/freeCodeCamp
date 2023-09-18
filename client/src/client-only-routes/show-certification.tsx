@@ -267,6 +267,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
+      <Spacer size='medium' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
@@ -287,6 +288,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             certMonth + 1
           }&certUrl=${certURL}`}
           target='_blank'
+          data-playwright-test-label='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -300,6 +302,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             certURL: certURL
           })}`}
           target='_blank'
+          data-playwright-test-label='twitter-share-btn'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -341,15 +344,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1>
                   <strong>{{ user: displayName }}</strong>
                 </h1>
-                <h3>placeholder</h3>
-                <h1>
+                <h3 data-playwright-test-label='successful-completion'>
+                  placeholder
+                </h3>
+                <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
                       title: t(`certification.title.${certTitle}`, certTitle)
                     }}
                   </strong>
                 </h1>
-                <h4 data-cy={'issue-date'}>
+                <h4
+                  data-cy={'issue-date'}
+                  data-playwright-test-label='issue-date'
+                >
                   {{
                     time: certDate.toLocaleString([localeCode, 'en-US'], {
                       year: 'numeric',

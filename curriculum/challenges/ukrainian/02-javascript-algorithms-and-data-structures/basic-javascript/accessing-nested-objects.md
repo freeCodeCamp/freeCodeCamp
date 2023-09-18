@@ -45,7 +45,7 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot notation, where possible, to access `myStorage`.
+Код має використати точкову нотацію (там де можливо), щоб отримати доступ до `myStorage`.
 
 ```js
 assert.match(code, /myStorage\.car\.inside/);

@@ -1,4 +1,5 @@
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,10 +8,14 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import { PaymentContext } from '../../../../shared/config/donation-settings';
+import {
+  PaymentContext,
+  subscriptionAmounts,
+  defaultDonation,
+  defaultTierAmount
+} from '../../../../shared/config/donation-settings';
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
-
 import { closeDonationModal, executeGA } from '../../redux/actions';
 import {
   isDonationModalOpenSelector,
@@ -20,6 +25,7 @@ import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';
 import DonateForm from './donate-form';
+import { formattedAmountLabel, convertToTimeContributed } from './utils';
 
 type RecentlyClaimedBlock = null | { block: string; superBlock: string };
 
@@ -79,7 +85,12 @@ function DonateModal({
   const [ctaNumber, setCtaNumber] = useState(0);
   const [isDisabled, setIsDisabled] = useState(true);
   const [showSkipButton, setShowSkipButton] = useState(false);
+  const [showDonateForm, setShowDonateForm] = useState(true);
+  const [donationAmount, setDonationAmount] = useState(
+    defaultDonation.donationAmount
+  );
   const loadElementsIndividually = useFeature('load_elements_individually').on;
+  const showMultiTier = useFeature('multi-tier').on;
   const { t } = useTranslation();
 
   // test wheather the conversions are being distributed properly
@@ -119,6 +130,13 @@ function DonateModal({
     if (show) setCtaNumber(getctaNumberBetween1To10());
   }, [show]);
 
+  useEffect(() => {
+    if (showMultiTier) {
+      setShowDonateForm(false);
+      setDonationAmount(defaultTierAmount);
+    }
+  }, [showMultiTier]);
+
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
@@ -126,11 +144,8 @@ function DonateModal({
     }
   };
 
-  const donationText = (
+  const modalHeader = (
     <div className=' text-center block-modal-text'>
-      <div className='donation-icon-container'>
-        <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
-      </div>
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
@@ -143,11 +158,144 @@ function DonateModal({
                 })}
               </b>
             )}
-            <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
+            {showMultiTier ? (
+              <h1>{t('donate.help-us-develop')}</h1>
+            ) : (
+              <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
+            )}
           </Col>
         )}
       </Row>
+      <Spacer size='small' />
     </div>
+  );
+
+  const closeButtonRow = (
+    <>
+      <Row>
+        <Col
+          sm={4}
+          smOffset={4}
+          xs={8}
+          xsOffset={2}
+          className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
+        >
+          <Button
+            bsSize='sm'
+            bsStyle='primary'
+            className='btn-link close-button'
+            onClick={closeDonationModal}
+            tabIndex='0'
+            disabled={isDisabled}
+          >
+            {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
+          </Button>
+        </Col>
+      </Row>
+    </>
+  );
+
+  const selectionTabs = (
+    <Row className={'donate-btn-group'}>
+      <Col
+        xs={12}
+        className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
+      >
+        <b>
+          {t('donate.confirm-monthly', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
+        </b>
+        <Spacer size='small' />
+        <Tabs
+          className={'donate-btn-group'}
+          defaultValue={donationAmount.toString()}
+        >
+          <TabsList className='nav-lists'>
+            {subscriptionAmounts.map(value => (
+              <TabsTrigger
+                key={value}
+                value={value.toString()}
+                onClick={() => setDonationAmount(value)}
+              >
+                ${formattedAmountLabel(value)}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <Spacer size='small' />
+          {subscriptionAmounts.map(value => {
+            const usd = formattedAmountLabel(donationAmount);
+            const hours = convertToTimeContributed(donationAmount);
+            const donationDescription = t('donate.your-donation-2', {
+              usd,
+              hours
+            });
+
+            return (
+              <TabsContent
+                key={value}
+                className='tab-content'
+                value={value.toString()}
+              >
+                <p>{donationDescription}</p>
+              </TabsContent>
+            );
+          })}
+        </Tabs>
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='text-center confirm-donation-btn donate-btn-group'
+          type='submit'
+          onClick={() => setShowDonateForm(true)}
+        >
+          {t('buttons.donate')}
+        </Button>
+        <Spacer size='medium' />
+      </Col>
+    </Row>
+  );
+
+  const donationFormRow = (
+    <Row>
+      <Col
+        xs={12}
+        className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
+      >
+        <DonateForm
+          handleProcessing={handleProcessing}
+          isMinimalForm={true}
+          paymentContext={PaymentContext.Modal}
+          editAmount={
+            showMultiTier ? () => setShowDonateForm(false) : undefined
+          }
+          selectedDonationAmount={donationAmount}
+        />
+        <Spacer size='medium' />
+      </Col>
+    </Row>
+  );
+
+  const multiTierModalBody = (
+    <>
+      <div className={showDonateForm ? 'hide' : ''}>
+        {modalHeader}
+        {selectionTabs}
+        {closeButtonRow}
+      </div>
+      <div className={!showDonateForm ? 'hide' : ''}>
+        {donationFormRow}
+        {closeLabel && closeButtonRow}
+      </div>
+    </>
+  );
+
+  const defaultModalBody = (
+    <>
+      {modalHeader}
+      {donationFormRow}
+      {closeButtonRow}
+    </>
   );
 
   return (
@@ -158,42 +306,10 @@ function DonateModal({
       show={show}
     >
       <Modal.Body className={'no-delay-fade-in'}>
-        {donationText}
-        <Spacer size='medium' />
-        <Row>
-          <Col
-            xs={12}
-            className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
-          >
-            <DonateForm
-              handleProcessing={handleProcessing}
-              isMinimalForm={true}
-              paymentContext={PaymentContext.Modal}
-            />
-          </Col>
-        </Row>
-        <Spacer size='medium' />
-        <Row>
-          <Col
-            sm={4}
-            smOffset={4}
-            xs={8}
-            xsOffset={2}
-            className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
-          >
-            <Button
-              block={true}
-              bsSize='sm'
-              bsStyle='primary'
-              className='btn-link'
-              onClick={closeDonationModal}
-              tabIndex='0'
-              disabled={isDisabled}
-            >
-              {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
-            </Button>
-          </Col>
-        </Row>
+        <div className='donation-icon-container'>
+          <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
+        </div>
+        {showMultiTier ? multiTierModalBody : defaultModalBody}
       </Modal.Body>
     </Modal>
   );

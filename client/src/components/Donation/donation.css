@@ -286,15 +286,48 @@ li.disabled > a {
   font-size: 1.2rem;
 }
 
-.donation-modal p,
 .donation-modal b {
-  text-align: center;
-  font-size: 1rem;
   width: 100%;
   display: inline-block;
 }
+
+.donation-modal p {
+  font-size: 0.9rem;
+}
 .donation-label-modal {
   font-weight: normal;
+  text-align: center;
+}
+
+.edit-amount-confirmation {
+  width: 350px !important;
+  margin: 0 auto;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.close-button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0 10px;
+}
+
+.donation-modal h1 {
+  font-family: var(--font-family-sans-serif);
+}
+
+.donation-modal [role='tablist'] button {
+  background-color: transparent;
+}
+.donation-modal [role='tablist'] button:hover:not([data-state='active']) {
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+.donation-modal [role='tablist'] button[data-state='active'] {
+  background-color: var(--quaternary-color);
 }
 
 .donation-icon-container {
@@ -348,10 +381,6 @@ li.disabled > a {
   }
   .donation-icon-container {
     margin: 40px;
-  }
-
-  .donation-modal p {
-    font-size: 1.1rem;
   }
 
   .donation-modal .modal-title {

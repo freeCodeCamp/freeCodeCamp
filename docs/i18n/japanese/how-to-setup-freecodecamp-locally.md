@@ -233,7 +233,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 This step will install the dependencies required for the application to run:
 
 ```console
-pnpm install && pnpm run create:config
+pnpm install && pnpm run create:shared
 ```
 
 #### Step 3: Start MongoDB and Seed the Database

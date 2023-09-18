@@ -23,6 +23,7 @@ import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -48,7 +49,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help')
     },
     dispatch
   );
@@ -60,6 +62,7 @@ interface ShowVideoProps {
   description: string;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -188,11 +191,13 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
+            fields: { blockName },
             question: { text, answers, solution }
           }
         }
       },
       openCompletionModal,
+      openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -293,7 +298,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
                   bsStyle='primary'
                   onClick={() =>
                     this.handleSubmit(solution, openCompletionModal)
@@ -301,9 +305,18 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Button
+                  block={true}
+                  bsStyle='primary'
+                  className='btn-invert'
+                  onClick={openHelpModal}
+                >
+                  {t('buttons.ask-for-help')}
+                </Button>
                 <Spacer size='large' />
               </Col>
               <CompletionModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
         </LearnLayout>
@@ -341,6 +354,7 @@ export const query = graphql`
         superBlock
         block
         fields {
+          blockName
           slug
         }
         question {

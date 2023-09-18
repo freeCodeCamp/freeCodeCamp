@@ -71,7 +71,7 @@ Beachte, dass der Schlüssel `download_language` auf den Sprachcode festgelegt w
 
 Es gibt ein paar Schritte, die du unternehmen musst, damit die Codebasis in deiner gewünschten Sprache erstellt werden kann.
 
-First, visit the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file to add the language to the list of available languages and configure the values. Hier gibt es mehrere Objekte.
+First, visit the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file to add the language to the list of available languages and configure the values. Hier gibt es mehrere Objekte.
 
 - `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
 - `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
@@ -142,7 +142,7 @@ export const rtlLangs = [''];
 
 ### Set Translated SuperBlocks
 
-In the [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it. For example:
+In the [shared/config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it. For example:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -319,7 +319,7 @@ Once these are in place, you should be able to run `pnpm run develop` to view yo
 
 When your prior PR is merged and the VM for your language is ready, make another PR to show your language in the navigation menu.
 
-In [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
+In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
 
 ```js
 export const hiddenLangs = []; // Remove your language from the array
@@ -437,7 +437,7 @@ const algoliaIndices = {
 
 ### Add the i18next JSON Files for the New Language
 
-Als nächstes gehst du in das Verzeichnis `config/i18n/locales`, erstellst einen neuen Ordner und gibst ihm den Namen der neuen Sprache, die du hinzufügst. Wenn du zum Beispiel Dothraki News startest, erstelle einen neuen Ordner namens `dothraki`.
+Next, go to the `shared/config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. Wenn du zum Beispiel Dothraki News startest, erstelle einen neuen Ordner namens `dothraki`.
 
 Kopiere dann die JSON-Dateien aus dem Verzeichnis `english` in deinen neuen Ordner.
 
