@@ -168,6 +168,36 @@ export const schemas = {
       })
     }
   },
+  updateMyPortfolio: {
+    body: Type.Object({
+      portfolio: Type.Array(
+        Type.Object({
+          description: Type.String(),
+          id: Type.String(),
+          image: Type.String(),
+          title: Type.String(),
+          url: Type.String()
+        })
+      )
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.portfolio-item-updated'),
+        type: Type.Literal('success')
+      }),
+      // TODO(Post-MVP): give more detailed response (i.e. which item is
+      // missing)
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
+      // TODO(Post-MVP): differentiate with more than just the status
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // User:
   deleteMyAccount: {
     response: {
