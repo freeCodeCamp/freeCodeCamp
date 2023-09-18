@@ -25,7 +25,7 @@ $$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 
 
 We can also verify that $A_{100} = 3251$ and $A_{1000} = 80\\,852\\,364\\,498$.
 
-Find the last 9 digits of $\displaystyle\sum_{k = 1}^{18} A_{{10}^k}$.
+Знайдіть останні 9 цифр в $\displaystyle\sum_{k = 1}^{18} A_{{10}^k}$.
 
 # --hints--
 
