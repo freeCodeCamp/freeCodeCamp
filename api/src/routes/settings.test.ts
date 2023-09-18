@@ -618,50 +618,17 @@ describe('settingRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-profileui', {
+    test.each([
+      '/update-my-profileui',
+      '/update-my-theme',
+      '/update-privacy-terms',
+      '/update-my-username',
+      '/update-my-portfolio'
+    ])('PUT %s should return 401 status code', async endpoint => {
+      const response = await superRequest(endpoint, {
         method: 'PUT',
         setCookies
       });
-
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-theme', {
-        method: 'PUT',
-        setCookies
-      });
-
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-privacy-terms', {
-        method: 'PUT',
-        setCookies
-      });
-
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-my-username returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-username', {
-        method: 'PUT',
-        setCookies
-      }).send({
-        username: 'twaha2'
-      });
-
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-my-portfolio returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-portfolio', {
-        method: 'PUT',
-        setCookies
-      });
-
       expect(response.statusCode).toEqual(401);
     });
   });
