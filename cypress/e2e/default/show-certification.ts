@@ -26,7 +26,6 @@ describe('A certification,', function () {
         'have.attr',
         'href',
         'https://twitter.com/intent/tweet?text=I just earned the Responsive%20Web%20Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design'
-        // 'https://twitter.com/intent/tweet?text=I just earned the Responsive Web Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design'
       );
     });
 
