@@ -26,7 +26,7 @@ import {
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import { DonateFormState } from '../../redux/types';
-import { CompletedChallenge } from '../../redux/prop-types';
+import type { CompletedChallenge } from '../../redux/prop-types';
 import {
   CENTS_IN_DOLLAR,
   convertToTimeContributed,

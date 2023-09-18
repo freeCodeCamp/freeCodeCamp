@@ -233,7 +233,7 @@ export async function createStripeCardDonation(req, res, stripe) {
   if (!threeChallengesCompleted) {
     throw {
       message: `Donate using another method`,
-      type: 'MethodRistrictionError'
+      type: 'MethodRestrictionError'
     };
   }
 
