@@ -131,11 +131,11 @@ describe('challengeRoutes', () => {
         }).send({
           tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
         });
-        expect(response.status).toBe(400);
         expect(response.body).toEqual({
           msg: `'Coderoad-User-Token' not found in request headers`,
           type: 'error'
         });
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if invalid user token', async () => {
