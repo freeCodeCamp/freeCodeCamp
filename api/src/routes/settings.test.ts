@@ -24,6 +24,11 @@ const profileUI = {
   showPortfolio: true
 };
 
+const updateErrorResponse = {
+  type: 'danger',
+  message: 'flash.wrong-updating'
+};
+
 describe('settingRoutes', () => {
   setupServer();
 
@@ -146,12 +151,7 @@ describe('settingRoutes', () => {
           }
         });
 
-        expect(response.body).toEqual({
-          code: 'FST_ERR_VALIDATION',
-          error: 'Bad Request',
-          message: `body/profileUI must have required property 'showAbout'`,
-          statusCode: 400
-        });
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -180,6 +180,7 @@ describe('settingRoutes', () => {
           theme: 'invalid'
         });
 
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -392,6 +393,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ keyboardShortcuts: 'invalid' });
 
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -426,6 +428,7 @@ describe('settingRoutes', () => {
           githubProfile: 'invalid'
         });
 
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -450,6 +453,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ sendQuincyEmail: 'invalid' });
 
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -525,6 +529,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ isHonest: false });
 
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -549,12 +554,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({ quincyEmails: '123' });
 
-        expect(response.body).toEqual({
-          code: 'FST_ERR_VALIDATION',
-          error: 'Bad Request',
-          message: 'body/quincyEmails must be boolean',
-          statusCode: 400
-        });
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
@@ -581,10 +581,7 @@ describe('settingRoutes', () => {
           setCookies
         }).send({});
 
-        expect(response.body).toEqual({
-          type: 'danger',
-          message: 'flash.wrong-updating'
-        });
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
 
@@ -599,10 +596,7 @@ describe('settingRoutes', () => {
           ]
         });
 
-        expect(response.body).toEqual({
-          type: 'danger',
-          message: 'flash.wrong-updating'
-        });
+        expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
     });
