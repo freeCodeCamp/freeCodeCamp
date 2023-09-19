@@ -198,7 +198,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-// TODO: Current api is a bit LB specific. Look into the template.
+// TODO: Current api is a bit LB specific. Look into templating.
 function renderCertifiedEmail({
   username,
   name
@@ -206,7 +206,23 @@ function renderCertifiedEmail({
   username: string;
   name: string;
 }) {
-  return `TODO: ${username} ${name}`;
+  const certifiedEmailTemplate = `Hi ${name || username},
+
+Congratulations on completing all of the freeCodeCamp certifications!
+
+All of your certifications are now live at at: https://www.freecodecamp.org/${username}
+
+Please tell me a bit more about you and your near-term goals.
+
+Are you interested in contributing to our open source projects used by nonprofits?
+
+Also, check out https://contribute.freecodecamp.org/ for some fun and convenient ways you can contribute to the community.
+
+Happy coding,
+
+- Quincy Larson, teacher at freeCodeCamp
+`;
+  return certifiedEmailTemplate;
 }
 
 function hasCompletedTests(
