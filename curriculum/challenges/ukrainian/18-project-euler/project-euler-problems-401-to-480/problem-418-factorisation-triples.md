@@ -8,7 +8,7 @@ dashedName: problem-418-factorisation-triples
 
 # --description--
 
-Let $n$ be a positive integer. An integer triple ($a$, $b$, $c$) is called a factorisation triple of $n$ if:
+Нехай $n$ буде натуральним числом. An integer triple ($a$, $b$, $c$) is called a factorisation triple of $n$ if:
 
 - $1 ≤ a ≤ b ≤ c$
 - $a \times b \times c = n$.

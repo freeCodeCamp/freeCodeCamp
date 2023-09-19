@@ -67,7 +67,7 @@ Você vai querer [fazer a build do client traduzido localmente](how-to-enable-ne
 
 1. Atualize o arquivo `.env` para usar seu idioma em `CLIENT_LOCALE` e `CURRICULUM_LOCALE`.
 
-2. Execute `pnpm run create:config`. Isso gerará automaticamente o arquivo `trending.json` para o seu idioma no diretório `/client/i18n/locales/`.
+2. Execute `pnpm run create:shared`. Isso gerará automaticamente o arquivo `trending.json` para o seu idioma no diretório `/client/i18n/locales/`.
 
 3. Inicie o servidor executando `pnpm run develop:server` em uma janela do terminal.
 

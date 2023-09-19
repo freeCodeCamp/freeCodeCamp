@@ -71,7 +71,7 @@
 
 Щоб дозволити кодовій базі функціонувати на обраній вами мові, потрібно зробити декілька кроків.
 
-Спочатку відвідайте файл [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts), щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
+Спочатку відвідайте файл [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts), щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
 
 - `Languages`: додайте нову мову до запису `Languages`, схоже до інших. Значення рядка пізніше буде використане у файлі `.env`, щоб налаштувати збірку мови.
 - `availableLangs`: додайте нову властивість із запису `Languages` до масивів `client` та `curriculum`.
@@ -142,7 +142,7 @@ export const rtlLangs = [''];
 
 ### Налаштуйте перекладені суперблоки
 
-У файлі [config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblocks.ts) додайте нову мову до об’єкту `notAuditedSuperBlocks`. Це виведе список усіх суперблоків, які не повністю перекладені. Додайте сюди масив суперблоків, які не повністю перекладені. Наприклад:
+Додайте нову мову до об’єкта `notAuditedSuperBlocks` у файлі [shared/config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/superblocks.ts). Це виведе список усіх суперблоків, які не повністю перекладені. Додайте сюди масив суперблоків, які не повністю перекладені. Наприклад:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -319,7 +319,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 Як тільки попередній PR буде об’єднаний, а VM для вашої мови буде готовою, створіть ще один PR, щоб додати нову мову до навігаційного меню.
 
-У файлі [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) ви додали мову до масиву `hiddenLangs` у попередньому PR. Тепер видаліть її з масиву.
+У файлі [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) ви додали мову до масиву `hiddenLangs` у попередньому PR. Тепер видаліть її з масиву.
 
 ```js
 export const hiddenLangs = []; // видаліть свою мову з масиву
@@ -437,7 +437,7 @@ const algoliaIndices = {
 
 ### Додайте файли JSON i18next для нової мови
 
-Перейдіть до каталогу `config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
+Перейдіть до каталогу `shared/config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
 
 Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 

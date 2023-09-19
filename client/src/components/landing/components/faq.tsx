@@ -18,7 +18,11 @@ const Faq = (): JSX.Element => {
       <h1 className='big-heading'>{t('landing.faq')}</h1>
       <Spacer size='small' />
       {faqItems.map((faq, i) => (
-        <div data-test-label='landing-page-faq' key={i}>
+        <div
+          data-test-label='landing-page-faq'
+          data-playwright-test-label='landing-page-faq'
+          key={i}
+        >
           <p className='faq-question'>{faq.question}</p>
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>

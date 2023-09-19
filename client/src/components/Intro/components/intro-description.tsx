@@ -10,32 +10,45 @@ function IntroDescription(): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <div className='intro-description'>
+    <div
+      className='intro-description'
+      data-playwright-test-label='learn-read-this-section'
+    >
       <Spacer size='medium' />
-      <p className='text-center'>
+      <p
+        className='text-center'
+        data-playwright-test-label='learn-read-this-heading'
+      >
         <strong>{t('learn.read-this.heading')}</strong>
       </p>
       <Spacer size='medium' />
-      <p>{t('learn.read-this.p1')}</p>
-      <p>{t('learn.read-this.p2')}</p>
-      <p>{t('learn.read-this.p3')}</p>
-      <p>{t('learn.read-this.p4')}</p>
-      <p>{t('learn.read-this.p5')}</p>
-      <p>{t('learn.read-this.p6')}</p>
-      <p>{t('learn.read-this.p7')}</p>
-      <p>{t('learn.read-this.p8')}</p>
+      {[...Array(8).keys()].map(i => (
+        <p key={i} data-playwright-test-label='learn-read-this-p'>
+          {t(`learn.read-this.p${i + 1}`)}
+        </p>
+      ))}
       <p>
-        <Trans i18nKey='learn.read-this.p9'>
+        <Trans
+          i18nKey='learn.read-this.p9'
+          data-playwright-test-label='learn-read-this-p'
+        >
           <Link className='inline' to='https://youtube.com/freecodecamp' />
         </Trans>
       </p>
-      <p>{t('learn.read-this.p10')}</p>
+      <p data-playwright-test-label='learn-read-this-p'>
+        {t('learn.read-this.p10')}
+      </p>
       <p>
-        <Trans i18nKey='learn.read-this.p11'>
+        <Trans
+          i18nKey='learn.read-this.p11'
+          data-playwright-test-label='learn-read-this-p'
+        >
           <Link className='inline' to={forumLocation} />
         </Trans>
       </p>
-      <p>{t('learn.read-this.p12')}</p>
+      <p data-playwright-test-label='learn-read-this-p'>
+        {t('learn.read-this.p12')}
+      </p>
       <strong>{t('misc.quincy')}</strong>
     </div>
   );

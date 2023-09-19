@@ -91,7 +91,7 @@ Einige Beispiele für gute PR-Titel wären:
 
    - Das ist sehr wichtig, wenn du Änderungen vornimmst, die nicht nur Textinhalte wie die Dokumentation oder eine Aufgabenbeschreibung betreffen. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - Wenn dein PR das Verhalten einer Seite beeinflusst, sollte er von entsprechenden [Cypress Integrationstests](how-to-add-cypress-tests.md) begleitet werden.
+   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on Pull Requests
 
@@ -107,7 +107,7 @@ Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem
 
 Es kann zu Konflikten kommen, weil viele Mitwirkende an dem Repository arbeiten und Änderungen deinen PR zerstören können, der noch auf eine Überprüfung und Zusammenführung wartet.
 
-In den meisten Fällen brauchst du keinen Rebase, da wir alle Commits vernichten. Wenn jedoch ein Rebase verlangt wird, solltest du wie folgt vorgehen.
+Since we squash all commits, you may not need to do a rebase.  However, if a rebase is requested, check our [For Usual Bug Fixes and Features](#for-usual-bug-fixes-and-features) or [For Upcoming Curriculum and Features](#for-upcoming-curriculum-and-features) guides to learn how to do this process for your corresponding PR.
 
 ### For Usual Bug Fixes and Features
 
@@ -185,7 +185,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git cherry-pick <commit-hash>
    ```
 
-4. Behebe alle Konflikte, bereinige, installiere Abhängigkeiten und führe Tests durch
+4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
    ```console
    pnpm run clean
@@ -199,7 +199,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 
    ```
 
-5. Wenn alles gut aussieht, schickst du es zurück an den PR
+5. If everything looks good, push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>

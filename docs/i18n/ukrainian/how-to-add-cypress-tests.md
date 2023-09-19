@@ -58,7 +58,7 @@
 - Створіть конфігураційний файл.
 
 ```console
-pnpm run create:config
+pnpm run create:shared
 ```
 
 - Заповніть базу даних

@@ -12,17 +12,16 @@ test.describe('Show certification else', () => {
     await page.close();
   });
 
-  test('while viewing someone else, should display certificate', async () => {
-    expect(await page.isVisible('text=successfully completed')).toBeTruthy();
-    expect(await page.isVisible('text=Responsive Web Design')).toBeTruthy();
+  test('while viewing someone else, should display the certificate information', async () => {
+    await expect(page.getByTestId('successful-completion')).toBeVisible();
+    await expect(page.getByTestId('certification-title')).toBeVisible();
+    await expect(page.getByTestId('issue-date')).toContainText(
+      'Developer Certification on August 3, 2018'
+    );
   });
 
   test('while viewing someone else, should not render a LinkedIn button and Twitter button', async () => {
-    await expect(
-      page.locator('text=Add this certification to my LinkedIn profile')
-    ).toBeHidden();
-    await expect(
-      page.locator('text=Share this certification on Twitter')
-    ).toBeHidden();
+    await expect(page.getByTestId('linkedin-share-btn')).toBeHidden();
+    await expect(page.getByTestId('twitter-share-btn')).toBeHidden();
   });
 });
