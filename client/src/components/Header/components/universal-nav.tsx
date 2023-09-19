@@ -49,19 +49,13 @@ const UniversalNav = ({
   return (
     <nav
       aria-label={t('aria.primary-nav')}
-      className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
+      className='universal-nav'
       id='universal-nav'
     >
       {isSearchExposedWidth && (
-        <div
-          className={`universal-nav-left${
-            displayMenu ? ' display-search' : ''
-          }`}
-        >
-          {search}
-        </div>
+        <div className='universal-nav-left'>{search}</div>
       )}
-      <Link id='universal-nav-logo' to='/learn'>
+      <Link className='universal-nav-logo' id='universal-nav-logo' to='/learn'>
         <NavLogo />
       </Link>
       <div className='universal-nav-right main-nav'>
@@ -87,9 +81,7 @@ const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <div className='navatar'>
-              <AuthOrProfile user={user} />
-            </div>
+            <AuthOrProfile user={user} />
           </>
         )}
       </div>
