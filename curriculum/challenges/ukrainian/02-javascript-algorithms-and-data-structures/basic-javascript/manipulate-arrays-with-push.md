@@ -9,9 +9,9 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-An easy way to append data to the end of an array is via the `push()` method.
+Найпростіший спосіб додати дані до кінця масиву — використати метод `push()`.
 
-The `push()` method takes one or more <dfn>arguments</dfn> and appends them to the end of the array, in the order in which they appear. It returns the new length of the array.
+Метод `push()` приймає один або декілька <dfn>аргументів</dfn> та приєднує їх до кінця масиву за тим порядком, в якому вони представлені. Він повертає нову довжину масиву.
 
 Приклади:
 
@@ -23,7 +23,7 @@ const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` now has the value `[1, 2, 3, 4, 5]` and `arr2` has the value `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+Тепер `arr1` має значення `[1, 2, 3, 4, 5]`, а `arr2` має значення `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 

@@ -12,7 +12,7 @@ An integer $s$ is called a superinteger of another integer $n$ if the digits of 
 
 For example, 2718281828 is a superinteger of 18828, while 314159 is not a superinteger of 151.
 
-Let $p(n)$ be the $n$th prime number, and let $c(n)$ be the $n$th composite number. For example, $p(1) = 2$, $p(10) = 29$, $c(1) = 4$ and $c(10) = 18$.
+Let $p(n)$ be the $n$th prime number, and let $c(n)$ be the $n$th composite number. Наприклад, $p(1) = 2$, $p(10) = 29$, $c(1) = 4$ та $c(10) = 18$.
 
 $$\begin{align}   & \\{p(i) : i ≥ 1\\} = \\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, \ldots \\} \\\\
   & \\{c(i) : i ≥ 1\\} = \\{4, 6, 8, 9, 10, 12, 14, 15, 16, 18, \ldots \\} \end{align}$$
@@ -27,7 +27,7 @@ Let $P_n$ be the integer formed by concatenating the first $n$ elements of $P^D$
 $$\begin{align}   & P_{10} = 2\\,357\\,248\\,152 \\\\
   & C_{10} = 4\\,689\\,135\\,679 \end{align}$$
 
-Let $f(n)$ be the smallest positive integer that is a common superinteger of $P_n$ and $C_n$. For example, $f(10) = 2\\,357\\,246\\,891\\,352\\,679$, and $f(100)\bmod 1\\,000\\,000\\,007 = 771\\,661\\,825$.
+Let $f(n)$ be the smallest positive integer that is a common superinteger of $P_n$ and $C_n$. Наприклад, $f(10) = 2\\,357\\,246\\,891\\,352\\,679$ та $f(100)\bmod 1\\,000\\,000\\,007 = 771\\,661\\,825$.
 
 Знайдіть $f(10\\,000)\bmod 1\\,000\\,000\\,007$.
 
