@@ -415,6 +415,7 @@ export const schemas = {
     body: Type.Object({
       tutorialId: Type.String()
     }),
+    headers: Type.Object({ 'coderoad-user-token': Type.String() }),
     response: {
       200: Type.Object({
         type: Type.Literal('success'),

@@ -10,7 +10,10 @@ import {
   type CompletedChallenge
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
-import { formatValidationError } from '../utils/error-formatting';
+import {
+  formatCoderoadChallengeCompletedValidation,
+  formatProjectCompletedValidation
+} from '../utils/error-formatting';
 import { getChallenges } from '../utils/get-challenges';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
 import {
@@ -45,44 +48,29 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/coderoad-challenge-completed',
     {
       schema: schemas.coderoadChallengeCompleted,
-      attachValidation: true
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatCoderoadChallengeCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
-      let userToken;
-
       const { 'coderoad-user-token': encodedUserToken } = req.headers;
       const { tutorialId } = req.body;
 
-      if (!tutorialId) {
-        void reply.code(400);
-        return {
-          type: 'error',
-          msg: `'tutorialId' not found in request body`
-        } as const;
-      }
-
-      if (!encodedUserToken) {
-        void reply.code(400);
-        return {
-          type: 'error',
-          msg: `'Coderoad-User-Token' not found in request headers`
-        } as const;
-      }
-
+      let userToken;
       try {
-        if (typeof encodedUserToken === 'string') {
-          const payload = jwt.verify(
-            encodedUserToken,
-            JWT_SECRET
-          ) as JwtPayload;
-          userToken = payload.userToken;
-        }
+        const payload = jwt.verify(encodedUserToken, JWT_SECRET) as JwtPayload;
+        userToken = payload.userToken;
       } catch {
         void reply.code(400);
         return { type: 'error', msg: `invalid user token` } as const;
       }
 
-      const tutorialRepo = tutorialId?.split(':')[0];
+      const tutorialRepo = tutorialId.split(':')[0];
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
       if (tutorialOrg !== 'freeCodeCamp') {
@@ -183,7 +171,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -270,7 +258,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -322,7 +310,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }

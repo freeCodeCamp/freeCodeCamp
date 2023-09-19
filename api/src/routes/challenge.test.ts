@@ -112,12 +112,16 @@ describe('challengeRoutes', () => {
     });
 
     describe('POST /coderoad-challenge-completed', () => {
-      test('should return 500 if no tutorialId', async () => {
+      test('should return 400 if no tutorialId', async () => {
         const response = await superRequest('/coderoad-challenge-completed', {
           method: 'POST',
           setCookies
         });
-        expect(response.status).toBe(500);
+        expect(response.body).toEqual({
+          msg: `'tutorialId' not found in request body`,
+          type: 'error'
+        });
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if no user token', async () => {
@@ -127,11 +131,11 @@ describe('challengeRoutes', () => {
         }).send({
           tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
         });
-        expect(response.status).toBe(400);
         expect(response.body).toEqual({
           msg: `'Coderoad-User-Token' not found in request headers`,
           type: 'error'
         });
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if invalid user token', async () => {
