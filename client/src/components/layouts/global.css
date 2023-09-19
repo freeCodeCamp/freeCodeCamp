@@ -254,13 +254,10 @@ input[type='submit']:hover,
 .btn-primary:hover,
 .btn-primary:active:hover,
 .btn-primary.active:hover,
-.open > .dropdown-toggle.btn-primary:hover,
 .btn-primary:active:focus,
 .btn-primary.active:focus,
-.open > .dropdown-toggle.btn-primary:focus,
 .btn-primary:active.focus,
-.btn-primary.active.focus,
-.open > .dropdown-toggle.btn-primary.focus {
+.btn-primary.active.focus {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
@@ -485,34 +482,9 @@ hr {
 }
 
 .btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary,
-.open > .dropdown-toggle.btn-primary:hover {
+.btn-primary.active {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
-}
-
-.open > .dropdown-menu {
-  border-radius: 0;
-}
-
-.dropdown-menu {
-  background-color: var(--secondary-color);
-}
-
-.dropdown,
-.dropdown > .dropdown-menu {
-  width: 100%;
-}
-
-.dropdown-menu > li > a {
-  color: var(--secondary-background);
-}
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  color: var(--secondary-color);
-  background-color: var(--secondary-background);
 }
 
 .table-striped > tbody > tr:nth-child(2n + 1) > td,
