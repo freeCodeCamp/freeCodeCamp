@@ -1,5 +1,6 @@
 # bookworm was only released on 10-6-2023, so is a little too new.
 FROM node:18-bullseye AS builder
+RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@8
@@ -17,8 +18,13 @@ COPY --chown=node:node curriculum/ curriculum/
 COPY --chown=node:node client/ client/
 
 RUN pnpm config set dedupe-peer-dependents false
+# While we want to ignore scripts generally, we do need to generate the prisma
+# client. Note: npx is the simplest way to generate the client without us having
+# to have prisma as a prod dependency. The jq tricks are to ensure we're using
+# the right version of prisma.
 RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
-  --frozen-lockfile
+  --frozen-lockfile --ignore-scripts
+RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.
@@ -31,6 +37,7 @@ RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
 FROM node:18-bullseye AS deps
+RUN apt-get update && apt-get install -y jq
 
 WORKDIR /home/node/build
 COPY --chown=node:node pnpm*.yaml .
@@ -43,10 +50,7 @@ RUN npm i -g pnpm@8
 # consistency.
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
-# While we want to ignore scripts generally, we do need to generate the prisma
-# client. Note: npx is the simplest way to generate the client without us having
-# to have prisma as a prod dependency.
-RUN cd api && npx prisma generate
+RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:18-alpine
 RUN npm i -g pm2@4
