@@ -354,5 +354,50 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.put(
+    '/update-my-portfolio',
+    {
+      schema: schemas.updateMyPortfolio,
+      errorHandler: (error, request, reply) => {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        // TODO(Post-MVP): make all properties required in the schema and use
+        // req.body.portfolio directly.
+        const portfolio = req.body.portfolio.map(
+          ({ id, title, url, description, image }) => ({
+            id: id ? id : '',
+            title: title ? title : '',
+            url: url ? url : '',
+            description: description ? description : '',
+            image: image ? image : ''
+          })
+        );
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            portfolio
+          }
+        });
+
+        return {
+          message: 'flash.portfolio-item-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };
