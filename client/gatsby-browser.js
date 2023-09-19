@@ -17,7 +17,7 @@ export const wrapRootElement = ({ element }) => {
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
         <GrowthBookProvider>
-          <AppMountNotifier render={() => element} />
+          <AppMountNotifier>{element}</AppMountNotifier>
         </GrowthBookProvider>
       </I18nextProvider>
     </Provider>
