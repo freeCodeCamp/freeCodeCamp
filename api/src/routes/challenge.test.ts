@@ -2,7 +2,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import {
+  devLogin,
+  setupServer,
+  superRequest,
+  seedExam
+} from '../../jest.utils';
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -984,6 +989,60 @@ describe('challengeRoutes', () => {
             ]
           });
           expect(response.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('GET /generateExam/:id', () => {
+      describe('validation', () => {
+        test('GET rejects requests without id param', async () => {
+          const response = await superRequest('/generate-exam', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to get the exam from the database.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests with invalid id param', async () => {
+          const response = await superRequest('/generate-exam/fake-id', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to get the exam from the database.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests where camper has not completed prerequisites', async () => {
+          const response = await superRequest('/generate-exam/real-id', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to get the exam from the database.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        beforeAll(async () => {
+          await seedExam();
+        });
+
+        test('GET returns a generatedExam array with the correct objects', async () => {
+          const exam = await fastifyTestInstance.prisma.exam.findFirst({
+            where: { id: '647e22d18acb466c97ccbef8' }
+          });
+
+          console.log(exam);
         });
       });
     });

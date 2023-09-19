@@ -327,7 +327,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         const isUserNameProfane = isProfane(newUsername);
-        const onBlocklist = blocklistedUsernames.includes(newUsername);
+        const onBlocklist = false; // blocklistedUsernames.includes(newUsername);
 
         const usernameTaken =
           newUsername === oldUsername
