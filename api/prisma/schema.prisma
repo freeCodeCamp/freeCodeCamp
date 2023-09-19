@@ -125,7 +125,6 @@ model user {
   // rand Float? // Undefined removed, as new API never uses it.
   savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
   sendQuincyEmail              Boolean
-  sound                        Boolean? // Undefined
   theme                        String? // Undefined
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined

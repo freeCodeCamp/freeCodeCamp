@@ -307,7 +307,6 @@ export const schemas = {
             twitter: Type.Optional(Type.String()),
             website: Type.Optional(Type.String()),
             yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
-            sound: Type.Optional(Type.Boolean()),
             isEmailVerified: Type.Boolean(),
             joinDate: Type.String(),
             savedChallenges: Type.Optional(
