@@ -217,10 +217,23 @@ export async function createStripeCardDonation(req, res, stripe) {
    * if user is already donating and the donation isn't one time only,
    * throw error
    */
+
   if (user.isDonating && duration !== 'one-time') {
     throw {
       message: `User already has active recurring donation(s).`,
       type: 'AlreadyDonatingError'
+    };
+  }
+
+  /*
+   * card donations is blocked for new users
+   */
+
+  const threeChallengesCompleted = user.completedChallenges.length >= 3;
+  if (!threeChallengesCompleted) {
+    throw {
+      message: `Donate using another method`,
+      type: 'MethodRestrictionError'
     };
   }
 

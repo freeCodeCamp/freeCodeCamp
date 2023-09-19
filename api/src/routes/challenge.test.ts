@@ -144,11 +144,11 @@ describe('challengeRoutes', () => {
             tutorialId:
               'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
           });
-        expect(response.status).toBe(400);
         expect(response.body).toEqual({
           msg: 'invalid user token',
           type: 'error'
         });
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if invalid tutorialId', async () => {
@@ -156,8 +156,8 @@ describe('challengeRoutes', () => {
           method: 'POST',
           setCookies
         });
-        expect(tokenResponse.status).toBe(200);
         expect(tokenResponse.body).toHaveProperty('userToken');
+        expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
@@ -168,11 +168,11 @@ describe('challengeRoutes', () => {
           .set('coderoad-user-token', token)
           .send({ tutorialId: 'invalid' });
 
-        expect(response.status).toBe(400);
         expect(response.body).toEqual({
           msg: 'Tutorial not hosted on freeCodeCamp GitHub account',
           type: 'error'
         });
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if invalid tutorialId but is hosted on freeCodeCamp', async () => {
@@ -180,8 +180,8 @@ describe('challengeRoutes', () => {
           method: 'POST',
           setCookies
         });
-        expect(tokenResponse.status).toBe(200);
         expect(tokenResponse.body).toHaveProperty('userToken');
+        expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
@@ -192,11 +192,11 @@ describe('challengeRoutes', () => {
           .set('coderoad-user-token', token)
           .send({ tutorialId: 'freeCodeCamp/invalid:V1.0.0' });
 
-        expect(response.status).toBe(400);
         expect(response.body).toEqual({
           msg: 'Tutorial name is not valid',
           type: 'error'
         });
+        expect(response.status).toBe(400);
       });
 
       test('Should complete challenge with code 200', async () => {
@@ -204,8 +204,8 @@ describe('challengeRoutes', () => {
           method: 'POST',
           setCookies
         });
-        expect(tokenResponse.status).toBe(200);
         expect(tokenResponse.body).toHaveProperty('userToken');
+        expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
@@ -219,7 +219,6 @@ describe('challengeRoutes', () => {
               'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
           });
 
-        expect(response.status).toBe(200);
         expect(response.body).toEqual({
           msg: 'Successfully submitted challenge',
           type: 'success'
@@ -234,6 +233,7 @@ describe('challengeRoutes', () => {
         });
 
         expect(challengeCompleted).toBe(true);
+        expect(response.status).toBe(200);
       });
 
       test('Should complete project with code 200', async () => {
@@ -241,8 +241,8 @@ describe('challengeRoutes', () => {
           method: 'POST',
           setCookies
         });
-        expect(tokenResponse.status).toBe(200);
         expect(tokenResponse.body).toHaveProperty('userToken');
+        expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
@@ -255,8 +255,6 @@ describe('challengeRoutes', () => {
             tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
           });
 
-        expect(response.status).toBe(200);
-
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
@@ -268,6 +266,7 @@ describe('challengeRoutes', () => {
         );
 
         expect(projectCompleted).toBe(true);
+        expect(response.status).toBe(200);
       });
 
       afterAll(async () => {
@@ -546,10 +545,10 @@ describe('challengeRoutes', () => {
             setCookies
           });
 
-          expect(response.statusCode).toBe(400);
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
+          expect(response.statusCode).toBe(400);
         });
 
         test('POST rejects requests without valid ObjectIDs', async () => {
@@ -558,10 +557,10 @@ describe('challengeRoutes', () => {
             setCookies
           }).send({ id: 'not-a-valid-id', solution: '' });
 
-          expect(response.statusCode).toBe(400);
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
+          expect(response.statusCode).toBe(400);
         });
       });
 
@@ -655,7 +654,6 @@ describe('challengeRoutes', () => {
             progressTimestamps: expectedProgressTimestamps
           });
 
-          expect(resUpdated.statusCode).toBe(200);
           expect(resUpdated.body.completedDate).not.toBe(
             resOriginal.body.completedDate
           );
@@ -664,6 +662,7 @@ describe('challengeRoutes', () => {
             points: 2,
             completedDate: expect.any(Number)
           });
+          expect(resUpdated.statusCode).toBe(200);
         });
       });
     });
@@ -676,10 +675,10 @@ describe('challengeRoutes', () => {
             setCookies
           });
 
-          expect(response.statusCode).toBe(400);
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
+          expect(response.statusCode).toBe(400);
         });
 
         test('POST rejects requests without valid ObjectIDs', async () => {
@@ -688,10 +687,10 @@ describe('challengeRoutes', () => {
             setCookies
           }).send({ id: 'not-a-valid-id' });
 
-          expect(response.statusCode).toBe(400);
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
+          expect(response.statusCode).toBe(400);
         });
       });
 
@@ -772,13 +771,13 @@ describe('challengeRoutes', () => {
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-          expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({
             alreadyCompleted: false,
             points: 1,
             completedDate,
             savedChallenges: []
           });
+          expect(response.statusCode).toBe(200);
         });
 
         test('POST accepts challenges with saved solutions', async () => {
@@ -821,7 +820,6 @@ describe('challengeRoutes', () => {
           expect(completedDate).toBeGreaterThanOrEqual(now);
           expect(completedDate).toBeLessThanOrEqual(now + 1000);
 
-          expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({
             alreadyCompleted: false,
             points: 1,
@@ -834,6 +832,7 @@ describe('challengeRoutes', () => {
               }
             ]
           });
+          expect(response.statusCode).toBe(200);
         });
 
         test('POST correctly handles multiple requests', async () => {
@@ -899,7 +898,6 @@ describe('challengeRoutes', () => {
             resOriginal.body.savedChallenges[0].lastSavedDate
           );
 
-          expect(resUpdate.statusCode).toBe(200);
           expect(resUpdate.body).toStrictEqual({
             alreadyCompleted: true,
             points: 2,
@@ -912,6 +910,7 @@ describe('challengeRoutes', () => {
               }
             ]
           });
+          expect(resUpdate.statusCode).toBe(200);
         });
       });
     });

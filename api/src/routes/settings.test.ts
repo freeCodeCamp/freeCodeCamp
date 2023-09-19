@@ -1,4 +1,5 @@
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import { isPictureWithProtocol } from './settings';
 
 const baseProfileUI = {
   isLocked: false,
@@ -557,6 +558,54 @@ describe('settingRoutes', () => {
         expect(response.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-portfolio', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/update-my-portfolio', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          portfolio: [{}]
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.portfolio-item-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT returns 400 status code when the portfolio property is missing', async () => {
+        const response = await superRequest('/update-my-portfolio', {
+          method: 'PUT',
+          setCookies
+        }).send({});
+
+        expect(response.body).toEqual({
+          type: 'danger',
+          message: 'flash.wrong-updating'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 status code when any data is the wrong type', async () => {
+        const response = await superRequest('/update-my-portfolio', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          portfolio: [
+            { id: '', title: '', description: '', url: '', image: '' },
+            { id: '', title: {}, description: '', url: '', image: '' }
+          ]
+        });
+
+        expect(response.body).toEqual({
+          type: 'danger',
+          message: 'flash.wrong-updating'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
@@ -568,42 +617,31 @@ describe('settingRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    test('PUT /update-my-profileui returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-profileui', {
+    test.each([
+      '/update-my-profileui',
+      '/update-my-theme',
+      '/update-privacy-terms',
+      '/update-my-username',
+      '/update-my-portfolio'
+    ])('PUT %s should return 401 status code', async endpoint => {
+      const response = await superRequest(endpoint, {
         method: 'PUT',
         setCookies
       });
-
       expect(response.statusCode).toEqual(401);
     });
+  });
+});
 
-    test('PUT /update-my-theme returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-theme', {
-        method: 'PUT',
-        setCookies
-      });
+describe('isPictureWithProtocol', () => {
+  test('Valid protocol', () => {
+    expect(isPictureWithProtocol('https://www.example.com/')).toEqual(true);
+    expect(isPictureWithProtocol('http://www.example.com/')).toEqual(true);
+  });
 
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-privacy-terms returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-privacy-terms', {
-        method: 'PUT',
-        setCookies
-      });
-
-      expect(response.statusCode).toEqual(401);
-    });
-
-    test('PUT /update-my-username returns 401 status code for un-authenticated users', async () => {
-      const response = await superRequest('/update-my-username', {
-        method: 'PUT',
-        setCookies
-      }).send({
-        username: 'twaha2'
-      });
-
-      expect(response.statusCode).toEqual(401);
-    });
+  test('Invalid protocol', () => {
+    expect(isPictureWithProtocol('htps://www.example.com/')).toEqual(false);
+    expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
+    expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
   });
 });
