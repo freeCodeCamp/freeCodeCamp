@@ -369,10 +369,21 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        // TODO(Post-MVP): make all properties required in the schema and use
+        // req.body.portfolio directly.
+        const portfolio = req.body.portfolio.map(
+          ({ id, title, url, description, image }) => ({
+            id: id ? id : '',
+            title: title ? title : '',
+            url: url ? url : '',
+            description: description ? description : '',
+            image: image ? image : ''
+          })
+        );
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
-            portfolio: req.body.portfolio
+            portfolio
           }
         });
 

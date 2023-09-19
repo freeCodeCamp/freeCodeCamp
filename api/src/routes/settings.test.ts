@@ -564,9 +564,7 @@ describe('settingRoutes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          portfolio: [
-            { id: '', title: '', description: '', url: '', image: '' }
-          ]
+          portfolio: [{}]
         });
 
         expect(response.body).toEqual({
@@ -589,14 +587,14 @@ describe('settingRoutes', () => {
         expect(response.statusCode).toEqual(400);
       });
 
-      test('PUT returns 400 status code when any data is missing', async () => {
+      test('PUT returns 400 status code when any data is the wrong type', async () => {
         const response = await superRequest('/update-my-portfolio', {
           method: 'PUT',
           setCookies
         }).send({
           portfolio: [
             { id: '', title: '', description: '', url: '', image: '' },
-            { id: '', description: '', url: '', image: '' }
+            { id: '', title: {}, description: '', url: '', image: '' }
           ]
         });
 

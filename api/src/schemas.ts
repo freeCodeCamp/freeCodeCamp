@@ -172,11 +172,11 @@ export const schemas = {
     body: Type.Object({
       portfolio: Type.Array(
         Type.Object({
-          description: Type.String(),
-          id: Type.String(),
-          image: Type.String(),
-          title: Type.String(),
-          url: Type.String()
+          description: Type.Optional(Type.String()),
+          id: Type.Optional(Type.String()),
+          image: Type.Optional(Type.String()),
+          title: Type.Optional(Type.String()),
+          url: Type.Optional(Type.String())
         })
       )
     }),
