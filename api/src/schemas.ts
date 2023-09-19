@@ -137,6 +137,7 @@ export const schemas = {
   },
   updateMyAbout: {
     body: Type.Object({
+      // TODO(Post-MVP): make these required
       about: Type.Optional(Type.String()),
       name: Type.Optional(Type.String()),
       picture: Type.Optional(Type.String()),

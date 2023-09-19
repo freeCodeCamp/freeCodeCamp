@@ -1,3 +1,4 @@
+import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { isProfane } from 'no-profanity';
 import { isValidUsername } from '../../../shared/utils/validate';
@@ -38,10 +39,24 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
+  function updateErrorHandler(
+    error: FastifyError,
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    if (error.validation) {
+      void reply.code(400);
+      void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+    } else {
+      fastify.errorHandler(error, request, reply);
+    }
+  }
+
   fastify.put(
     '/update-my-profileui',
     {
-      schema: schemas.updateMyProfileUI
+      schema: schemas.updateMyProfileUI,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -79,7 +94,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-theme',
     {
-      schema: schemas.updateMyTheme
+      schema: schemas.updateMyTheme,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -105,7 +121,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-socials',
     {
-      schema: schemas.updateMySocials
+      schema: schemas.updateMySocials,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -252,7 +269,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: schemas.updateMyKeyboardShortcuts
+      schema: schemas.updateMyKeyboardShortcuts,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -278,7 +296,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: schemas.updateMyQuincyEmail
+      schema: schemas.updateMyQuincyEmail,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -304,7 +323,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-honesty',
     {
-      schema: schemas.updateMyHonesty
+      schema: schemas.updateMyHonesty,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -330,7 +350,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-privacy-terms',
     {
-      schema: schemas.updateMyPrivacyTerms
+      schema: schemas.updateMyPrivacyTerms,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -358,14 +379,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     '/update-my-portfolio',
     {
       schema: schemas.updateMyPortfolio,
-      errorHandler: (error, request, reply) => {
-        if (error.validation) {
-          void reply.code(400);
-          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
