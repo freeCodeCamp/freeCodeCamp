@@ -33,7 +33,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     /* Use custom test attribute */
-    testIdAttribute: 'data-test-label'
+    testIdAttribute: 'data-playwright-test-label'
   },
 
   /* Configure projects for major browsers */
