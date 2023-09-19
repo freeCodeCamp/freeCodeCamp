@@ -71,7 +71,10 @@ function MapLi({
         </>
       )}
 
-      <li data-test-label='curriculum-map-button'>
+      <li
+        data-test-label='curriculum-map-button'
+        data-playwright-test-label='curriculum-map-button'
+      >
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
             {generateIconComponent(superBlock, 'map-icon')}
