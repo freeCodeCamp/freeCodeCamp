@@ -102,7 +102,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const renderProjectsFor = (certName: CertTitle) => {
+  const ProjectsFor = ({ certName }: { certName: CertTitle }) => {
     if (certName === 'Legacy Full Stack') {
       const certs = [
         { title: 'Responsive Web Design' },
@@ -113,33 +113,41 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { title: 'Legacy Information Security and Quality Assurance' }
       ] as const;
 
-      return certs.map((cert, ind) => {
-        const projects = certsToProjects[cert.title];
-        const { certSlug } = projects[0];
-        const certLocation = `/certification/${username}/${certSlug}`;
-        return (
-          <tr key={ind}>
-            <td>
-              <Link className='project-link' to={certLocation} external>
-                {t(`certification.title.${cert.title}`, cert.title)}
-              </Link>
-            </td>
-          </tr>
-        );
-      });
+      return (
+        <>
+          {certs.map((cert, ind) => {
+            const projects = certsToProjects[cert.title];
+            const { certSlug } = projects[0];
+            const certLocation = `/certification/${username}/${certSlug}`;
+            return (
+              <tr key={ind}>
+                <td>
+                  <Link className='project-link' to={certLocation} external>
+                    {t(`certification.title.${cert.title}`, cert.title)}
+                  </Link>
+                </td>
+              </tr>
+            );
+          })}
+        </>
+      );
     }
 
-    const project = certsToProjects[certName];
-    return project.map(({ link, title, id }) => (
-      <tr key={id}>
-        <td>
-          <Link to={link}>
-            {t(`certification.project.title.${title}`, title)}
-          </Link>
-        </td>
-        <td colSpan={2}>{getProjectSolution(id, title)}</td>
-      </tr>
-    ));
+    const projects = certsToProjects[certName];
+    return (
+      <>
+        {projects.map(({ link, title, id }) => (
+          <tr key={id}>
+            <td>
+              <Link to={link}>
+                {t(`certification.projects.title.${title}`, title)}
+              </Link>
+            </td>
+            <td colSpan={2}>{getProjectSolution(id, title)}</td>
+          </tr>
+        ))}
+      </>
+    );
   };
 
   const {
@@ -183,7 +191,9 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
             </th>
           </tr>
         </thead>
-        <tbody>{renderProjectsFor(certName)}</tbody>
+        <tbody>
+          <ProjectsFor certName={certName} />
+        </tbody>
       </Table>
       <Spacer size='medium' />
       <ProjectModal
