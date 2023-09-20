@@ -159,7 +159,7 @@ function DonateModal({
               </b>
             )}
             {showMultiTier ? (
-              <h1>{t('donate.help-us-develop')}</h1>
+              <h2>{t('donate.help-us-develop')}</h2>
             ) : (
               <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
             )}
