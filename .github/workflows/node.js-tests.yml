@@ -179,54 +179,6 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat .env
-
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
-        with:
-          mongodb-version: 6.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
-
-      - name: Install Dependencies
-        run: |
-          echo pnpm version $(pnpm -v)
-          pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
-
-      - name: Run Tests
-        run: pnpm test
-
-  test-new:
-    name: Test - New Curriculum
-    needs: build
-    runs-on: ubuntu-20.04
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [18.x]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-
-      - name: Set Environment variables
-        run: |
-          cp sample.env .env
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 

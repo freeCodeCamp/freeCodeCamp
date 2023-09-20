@@ -137,6 +137,7 @@ export const schemas = {
   },
   updateMyAbout: {
     body: Type.Object({
+      // TODO(Post-MVP): make these required
       about: Type.Optional(Type.String()),
       name: Type.Optional(Type.String()),
       picture: Type.Optional(Type.String()),
@@ -162,6 +163,36 @@ export const schemas = {
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
       }),
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
+  updateMyPortfolio: {
+    body: Type.Object({
+      portfolio: Type.Array(
+        Type.Object({
+          description: Type.Optional(Type.String()),
+          id: Type.Optional(Type.String()),
+          image: Type.Optional(Type.String()),
+          title: Type.Optional(Type.String()),
+          url: Type.Optional(Type.String())
+        })
+      )
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.portfolio-item-updated'),
+        type: Type.Literal('success')
+      }),
+      // TODO(Post-MVP): give more detailed response (i.e. which item is
+      // missing)
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
+      // TODO(Post-MVP): differentiate with more than just the status
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -277,7 +308,6 @@ export const schemas = {
             twitter: Type.Optional(Type.String()),
             website: Type.Optional(Type.String()),
             yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
-            sound: Type.Optional(Type.Boolean()),
             isEmailVerified: Type.Boolean(),
             joinDate: Type.String(),
             savedChallenges: Type.Optional(
@@ -385,6 +415,7 @@ export const schemas = {
     body: Type.Object({
       tutorialId: Type.String()
     }),
+    headers: Type.Object({ 'coderoad-user-token': Type.String() }),
     response: {
       200: Type.Object({
         type: Type.Literal('success'),

@@ -1,36 +1,20 @@
 // Configuration for client side
 
-export type DonationAmount = 500 | 1000 | 2000 | 3000 | 4000 | 5000;
+export type DonationAmount = 500 | 1000 | 2000 | 4000;
 export type DonationDuration = 'one-time' | 'month';
 export interface DonationConfig {
   donationAmount: DonationAmount;
   donationDuration: DonationDuration;
 }
 
-export const durationsConfig: {
-  month: 'monthly';
-  onetime: 'one-time';
-} = {
-  month: 'monthly',
-  onetime: 'one-time'
-};
+export const subscriptionAmounts: DonationAmount[] = [500, 1000, 2000, 4000];
 
-export const amountsConfig = {
-  month: [1000, 2000, 3000, 4000, 5000],
-  onetime: [2500, 5000, 7500, 10000, 15000]
-};
-export const defaultAmount: { month: 500; onetime: 7500 } = {
-  month: 500,
-  onetime: 7500
-};
 export const defaultDonation: DonationConfig = {
-  donationAmount: defaultAmount.month,
-  donationDuration: 'month'
-};
-export const modalDefaultDonation: DonationConfig = {
   donationAmount: 500,
   donationDuration: 'month'
 };
+
+export const defaultTierAmount = 2000;
 
 export const onetimeSKUConfig = {
   live: [
@@ -125,13 +109,6 @@ export const paypalConfigurator = (
 export const donationUrls = {
   successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
   cancelUrl: 'https://freecodecamp.org/donate'
-};
-
-export const patreonDefaultPledgeAmount = 500;
-
-export const aBTestConfig = {
-  isTesting: true,
-  type: 'secureIconButtonOnly'
 };
 
 export enum PaymentContext {

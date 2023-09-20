@@ -84,8 +84,8 @@ describe('Navbar Logged in', () => {
     cy.get(navBarselectors.defaultAvatar).should('exist');
   });
 
-  it('Should have a profile image with dimensions that are <= 31px', () => {
-    cy.get(navBarselectors.avatarImage).invoke('width').should('lte', 31);
-    cy.get(navBarselectors.avatarImage).invoke('height').should('lte', 31);
+  it('Should have a profile image with dimensions that are <= 26px', () => {
+    cy.get(navBarselectors.avatarImage).invoke('width').should('lte', 26);
+    cy.get(navBarselectors.avatarImage).invoke('height').should('lte', 26);
   });
 });

@@ -3,8 +3,8 @@
     "title": "Legacy Responsive Web Design Challenges",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
-      "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
-      "最後，你將學習使用 flexbox（彈性盒子）構建一個 Twitter 卡片，以及使用 CSS 網格構建複雜的博客佈局，以此學習製作適應不同屏幕大小的網頁。"
+      "首先，你將通過創建一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過創建企鵝學習像 CSS 變量這樣的現代技術，以及通過創建網頁表單學習無障礙的最佳實踐。",
+      "最後，你將學習使用 flexbox（彈性盒子）創建一個 Twitter 卡片，以及使用 CSS 網格創建複雜的博客佈局，以學習製作適應不同屏幕大小的網頁。"
     ],
     "note": "注意：某些瀏覽器擴展，例如廣告攔截器和深色模式擴展可能干擾測試。如果你遇到問題，我們建議你在參加學習時禁用修改頁面內容或佈局的擴展。",
     "blocks": {
@@ -47,14 +47,14 @@
         "title": "CSS 彈性盒子",
         "intro": [
           "Flexbox（彈性盒子）是最新版本的 CSS（即 CSS3）中引入的一種強大且兼容性好的佈局方法。使用 flexbox，我們可以很容易地處理好頁面上的元素佈局，並創建可以自動縮小和放大的動態用戶界面。",
-          "在這個課程中，你將通過構建一個 Twitter 卡片來學習 flexbox 和動態佈局的基礎知識。"
+          "在這個課程中，你將通過創建一個 Twitter 卡片學習 flexbox 和動態佈局的基礎知識。"
         ]
       },
       "css-grid": {
         "title": "CSS 網格",
         "intro": [
           "CSS 網格是一個較新的標準，用於構建複雜的響應佈局。它通過把 HTML 元素轉換爲具有行和列的網格容器，以便將子元素放置在所需要的位置。",
-          "在這個課程中，你將通過構建不同的複雜佈局（包括博客）來學習 CSS 網格的基礎知識。"
+          "在這個課程中，你將通過創建不同的複雜佈局（包括博客）學習 CSS 網格的基礎知識。"
         ]
       }
     }
@@ -63,8 +63,8 @@
     "title": "響應式網頁設計",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
-      "首先，你將通過編寫一個展示貓咪圖片的應用來學習 HTML 和 CSS 的基本知識。 然後，通過構建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過搭建網頁表單來學習無障礙的最佳實踐。",
-      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現適應不同屏幕大小的網頁 ，以及如何用 CSS Grid 實現一個複雜的博客佈局。"
+      "首先，你將通過創建一個展示貓咪圖片的應用學習 HTML 和 CSS 的基本知識。 然後，通過創建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過創建網頁表單學習無障礙的最佳實踐。",
+      "最後，你將通過編寫 Twitter 卡片，學習如何使用 Flexbox 實現適應不同屏幕大小的網頁 ，以及如何用 CSS Grid 實現一個複雜的博客佈局。"
     ],
     "note": "注意：某些瀏覽器擴展程序（例如廣告攔截器和深色模式）可能干擾測試。如果遇到問題，我們建議你在學習課程時禁用那些修改網頁內容或佈局的擴展程序。",
     "blocks": {
@@ -104,14 +104,14 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "通過編寫貓咪相冊應用學習 HTML",
+        "title": "通過創建貓咪相冊應用學習 HTML",
         "intro": [
           "HTML 標籤賦予了網頁結構。你可以使用 HTML 標籤添加照片、按鈕和其它元素到你的網頁。",
-          "在這門課程中，你將通過編寫一個貓咪相冊應用，學習最常見的 HTML 標籤。"
+          "在這門課程中，你將通過創建一個貓咪相冊應用，學習最常見的 HTML 標籤。"
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "通過編寫咖啡店菜單學習基礎 CSS",
+        "title": "通過創建咖啡店菜單學習基礎 CSS",
         "intro": [
           "CSS 負責告訴瀏覽器如何展示你的網頁。你可以使用 CSS 設置 HTML 元素的顏色、字體、大小等屬性。",
           "在這門課程中，你將通過爲一個咖啡店網站設計菜單頁來學習 CSS。"
@@ -125,41 +125,41 @@
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "通過建立城市輪廓學習 CSS 變量",
+        "title": "通過創建城市輪廓學習 CSS 變量",
         "intro": [
           "CSS 變量負責幫助組織你的樣式和重複使用它們。",
-          "在這門課程中，你將建立一座城市的輪廓。你將學習如何配置 CSS 變量，以便你可以隨時重複使用它們。"
+          "在這門課程中，你將創建一座城市的輪廓。你將學習如何配置 CSS 變量，以便你可以隨時重複使用它們。"
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "通過編寫註冊表單學習 HTML 表單",
+        "title": "通過創建註冊表單學習 HTML 表單",
         "intro": [
           "你可以使用 HTML 表單收集訪問網頁的用戶的信息。",
-          "在這門課程中，你將通過編寫一個註冊頁學習 HTML 表單。你將學習如何控制人們在表單中可以輸入的數據類型，以及使用一些新的 CSS 工具裝飾你的頁面。"
+          "在這門課程中，你將通過創建一個註冊頁學習 HTML 表單。你將學習如何控制人們在表單中可以輸入的數據類型，以及使用一些新的 CSS 工具裝飾你的頁面。"
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "通過編寫小測驗學習無障礙",
+        "title": "通過創建小測驗學習無障礙",
         "intro": [
           "無障礙環境正在使你的網頁便於所有人使用——甚至是殘疾人。",
           "在這個課程中，你將建立一個測驗網頁。你將學習諸如鍵盤快捷鍵、ARIA 屬性和設計最佳實踐等無障礙工具。"
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "創建一副畢加索繪畫來學習中級 CSS",
+        "title": "通過創作畢加索繪畫學習中級 CSS",
         "intro": [
           "在本課程中，你將通過代碼創建一幅自己的畢加索繪畫網頁來掌握中級 CSS 技術。課程涉及 SVG 圖標、CSS 定位和對已學 CSS 知識的回顧。"
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "通過創建一架鋼琴來學習響應式網頁設計",
+        "title": "通過創建鋼琴學習響應式網頁設計",
         "intro": [
           "響應式設計使得你的網頁適應不同屏幕尺寸的顯示。",
           "在本課程中，你將圍繞一架鋼琴編寫代碼學習 CSS 響應式設計。你將同時學會媒體條件和僞選擇器的知識。"
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "通過創建照片集來學習 CSS 彈性盒子",
+        "title": "通過創建照片集學習 CSS 彈性盒子",
         "intro": [
           "通過彈性盒子你可以設計適應不同屏幕大小的網頁。",
           "在本課程中，你將使用彈性盒子創建一個響應式的照片集網頁。"
@@ -173,38 +173,38 @@
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "通過建立營養標籤來學習排版",
+        "title": "通過創建營養標籤學習排版",
         "intro": [
           "排版是將文本樣式設置爲易於閱讀並適合其目的的藝術。",
-          "在本課程中，你將使用排版來構建營養標籤網頁。你將學習如何使用 CSS 設置文本樣式、調整行高和定位文本。"
+          "在本課程中，你將使用排版來創建營養標籤網頁。你將學習如何使用 CSS 設置文本樣式、調整行高和定位文本。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "通過構建企鵝來學習 CSS 變換",
+        "title": "通過創建企鵝學習 CSS 變換",
         "intro": [
           "你可以轉換 HTML 元素以創建吸引讀者眼球的吸引人的設計。你可以使用變換來旋轉元素、縮放它們等等。",
-          "在本課程中，你將構建一隻企鵝。你將使用 CSS 變換來定位企鵝的各個部分並調整其大小、創建背景併爲你的作品設置動畫。"
+          "在本課程中，你將創建一隻企鵝。你將使用 CSS 變換來定位企鵝的各個部分並調整其大小、創建背景併爲你的作品設置動畫。"
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "通過構建摩天輪學習 CSS 動畫",
+        "title": "通過創建摩天輪學習 CSS 動畫",
         "intro": [
           "你可以使用 CSS 動畫將注意力吸引到網頁的特定部分並使其更具吸引力。",
-          "在本課程中，你將建造一個摩天輪。你將學習如何使用 CSS 爲元素設置動畫、轉換它們並調整它們的速度。"
+          "在本課程中，你將創建一個摩天輪。你將學習如何使用 CSS 爲元素設置動畫、轉換它們並調整它們的速度。"
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "通過構建資產負債表瞭解有關 CSS 僞選擇器的更多信息",
+        "title": "通過創建資產負債表學習有關 CSS 僞選擇器的更多信息",
         "intro": [
           "你可以使用 CSS 僞選擇器來更改特定的 HTML 元素。",
-          "在本課程中，你將使用僞選擇器構建資產負債表。你將學習如何在將鼠標懸停在元素上時更改其樣式，並觸發網頁上的其他事件。"
+          "在本課程中，你將使用僞選擇器創建資產負債表。你將學習如何在將鼠標懸停在元素上時更改其樣式，並觸發網頁上的其他事件。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "通過構建一組彩色筆來學習 CSS 顏色",
+        "title": "通過創建一組彩色筆學習 CSS 顏色",
         "intro": [
           "爲你的網頁選擇正確的顏色可以大大提高對讀者的審美吸引力。",
-          "在本課程中，你將構建一組彩色筆。你將學習設置顏色值的不同方法以及如何將顏色相互配對。"
+          "在本課程中，你將創建一組彩色筆。你將學習設置顏色值的不同方法以及如何將顏色相互配對。"
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
@@ -322,15 +322,15 @@
         "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "通過構建角色扮演遊戲來學習 JavaScript",
+        "title": "通過創建角色扮演遊戲學習 JavaScript",
         "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "通過構建卡路里計數器來學習表單驗證",
+        "title": "通過創建卡路里計數器學習表單驗證",
         "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "通過構建電子表格學習函數式編程",
+        "title": "通過創建電子表格學習函數式編程",
         "intro": ["", ""]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -338,7 +338,7 @@
         "intro": ["", ""]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "通過構建統計計算器學習高級數組方法",
+        "title": "通過創建統計計算器學習高級數組方法",
         "intro": ["", ""]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
@@ -506,62 +506,62 @@
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "通過構建一個 Kitty Ipsum 翻譯器來學習高級 Bash",
+        "title": "通過創建 Kitty Ipsum 翻譯器學習高級 Bash",
         "intro": [
           "Bash 命令比你想象的更多。",
           "在第 140 課中，你會學習一些更復雜的命令以及命令如何工作的細節。"
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "建造一家自行車出租店來學習 Bash 和 SQL",
+        "title": "通過創建自行車出租店學習 Bash 和 SQL",
         "intro": [
           "在這套 210 小節的課程中，你將建立一個交互式 Bash 程序，使用 PostgreSQL 存儲自行車租賃商店的租賃信息。"
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "通過構建模版學習 Bash",
+        "title": "通過創建模版學習 Bash",
         "intro": [
-          "終端允許您將文本命令發送到您的計算機，可以操作文件系統、運行程序、自動化任務以及更多。",
+          "終端允許你將文本命令發送到你的計算機，可以操作文件系統、運行程序、自動化任務以及更多。",
           "在這套 170 小節的課程中，你將通過只使用命令行創建網站模板來學習終端命令。"
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "通過構建五個程序學習 Bash 腳本",
+        "title": "通過創建五個程序學習 Bash 腳本",
         "intro": [
           "Bash 腳本將終端命令和邏輯合併到程序的可以執行任務或自動化任務等中。",
           "在第 220 課程中，你將通過創建五個小程序來學習更多終端命令以及如何在 Bash 腳本中使用它們。"
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "通過構建 SQL 引用對象來學習 Git",
+        "title": "通過創建 SQL 引用對象學習 Git",
         "intro": [
-          "Git 是一個版本控制系統，用於跟蹤您對代碼片段所作的所有更改。",
+          "Git 是一個版本控制系統，用於跟蹤你對代碼片段所作的所有更改。",
           "在第 240 課中，你將通過創建一個包含常用的 SQL 命令的對象來學習 Git 如何跟蹤你的代碼。"
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "通過建造城堡學習 Nano",
+        "title": "通過創建城堡學習 Nano",
         "intro": [
           "Nano 是一個允許你在終端編輯文件的程序。",
           "在第 40 課中，你將學習如何在構建城堡時編輯終端中的文件。"
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "通過構建 Mario 數據庫來學習關係型數據庫",
+        "title": "通過創建 Mario 數據庫學習關係型數據庫",
         "intro": [
           "一個關係數據庫將數據保存到通過關係連接起來的表格中。",
           "在第 165 課中，你將通過創建一個充滿視頻遊戲字符的 PostgreSQL 數據庫來學習關係數據庫的基礎知識。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "通過構建學生數據庫來學習 SQL：第 1 部分",
+        "title": "通過創建學生數據庫學習 SQL：第 1 部分",
         "intro": [
           "SQL 又稱結構化查詢語言是與關聯數據庫通信的語言。",
           "在第 140 課中，你將創建一個 Bash 腳本，使用 SQL 將你的計算機科學學生信息存儲到 PostgreSQL 中。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "通過構建學生數據庫來學習 SQL：第 2 部分",
+        "title": "通過創建學生數據庫學習 SQL：第 2 部分",
         "intro": [
           "SQL 加入命令用於將關係數據庫中多個表格中的信息合併在一起",
           "在第 140 課課程中，你將會在更深入的 SQL 命令中完成學生數據庫。"
@@ -952,7 +952,7 @@
         "intro": ["A description is to be determined"]
       },
       "top-build-a-recipe-project": {
-        "title": "通過搭建食譜頁面學習 HTML 基礎",
+        "title": "通過創建食譜頁面學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
       },
       "top-learn-css-foundations": {

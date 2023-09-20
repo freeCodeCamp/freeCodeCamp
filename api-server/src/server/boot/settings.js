@@ -44,7 +44,6 @@ export default function settingsController(app) {
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
   api.put('/update-my-socials', ifNoUser401, updateMySocials);
-  api.put('/update-my-sound', ifNoUser401, updateMySound);
   api.put(
     '/update-my-keyboard-shortcuts',
     ifNoUser401,
@@ -285,16 +284,6 @@ function updateMyTheme(...args) {
     buildUpdate,
     validate,
     'flash.updated-themes'
-  )(...args);
-}
-
-function updateMySound(...args) {
-  const buildUpdate = body => _.pick(body, 'sound');
-  const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties(
-    buildUpdate,
-    validate,
-    'flash.updated-sound'
   )(...args);
 }
 

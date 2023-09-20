@@ -21,7 +21,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.0",
     "chai": "4.3.8",
-    "joi": "17.10.1",
+    "joi": "17.10.2",
     "readdirp": "3.6.0"
   }
 }
