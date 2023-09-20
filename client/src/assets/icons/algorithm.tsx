@@ -6,6 +6,7 @@ function Algorithm(
   return (
     <>
       <svg
+        data-playwright-test-label='algorithm-icon'
         aria-hidden='true'
         viewBox='0 0 640 512'
         xmlns='http://www.w3.org/2000/svg'

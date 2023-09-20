@@ -25,17 +25,27 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
 
   return (
     <>
-      <h1 id='content-start' className='text-center big-heading'>
+      <h1
+        id='content-start'
+        className='text-center big-heading'
+        data-playwright-test-label='superblock-heading'
+      >
         {i18nSuperBlock}
       </h1>
       <Spacer size='medium' />
       {generateIconComponent(superBlock, 'cert-header-icon')}
       <Spacer size='medium' />
-      {superBlockIntroText.map((str, i) => (
-        <p key={i}>{str}</p>
-      ))}
+      <div data-playwright-test-label='superblock-description-box'>
+        {superBlockIntroText.map((str, i) => (
+          <p key={i}>{str}</p>
+        ))}
+      </div>
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+        <div
+          className='alert alert-info'
+          style={{ marginTop: '2rem' }}
+          data-playwright-test-label='superblock-note'
+        >
           {superBlockNoteText}
         </div>
       )}
