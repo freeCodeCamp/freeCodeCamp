@@ -4,9 +4,6 @@
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
 import curriculum from '../../../shared/config/curriculum.json';
-import { SuperBlocks } from '../../../shared/config/superblocks';
-
-type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
 
 interface Block {
   challenges: {
@@ -17,25 +14,25 @@ interface Block {
   }[];
 }
 
-interface CurriculumProps {
-  blocks: Record<string, Block>;
-}
-
+// It seems `curriculum.json` is too big for TS to type. So, without duplicating the types to define them, this should work.
+// Safety: Seeing as this runs during build (startup), an error will be thrown if anything is amiss.
+/* eslint-disable @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
 /**
- * Get all the challenges from the curriculum.
- * @returns An array of challenges.
+ * Get all challenges including all certifications as "challenges" (ids and tests).
+ * @returns The whole curricula reduced to an array.
  */
-export function getChallenges() {
-  const superBlockKeys = Object.values(SuperBlocks);
-  const typedCurriculum: Curriculum = curriculum as Curriculum;
+export function getChallenges(): Block['challenges'] {
+  const curricula = Object.values(curriculum);
 
-  return superBlockKeys
-    .map(key => typedCurriculum[key]?.blocks)
-    .reduce((accumulator: Block['challenges'], superBlock) => {
-      const blockKeys = Object.keys(superBlock ?? {});
-      const challengesForBlock = blockKeys.map(
-        key => superBlock?.[key]?.challenges ?? []
-      );
-      return [...accumulator, ...challengesForBlock.flat()];
+  return curricula
+    .map(v => v.blocks)
+    .reduce((acc: Block['challenges'], superBlock) => {
+      const blockKeys = Object.keys(superBlock);
+      const challengesForBlock = blockKeys.map(k => {
+        const key: keyof typeof superBlock = k;
+        return superBlock[key].challenges;
+      });
+      return [...acc, ...challengesForBlock.flat()];
     }, []);
 }
+/* eslint-enable @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
