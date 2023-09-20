@@ -148,16 +148,6 @@ and arrow keys */
   grid-area: reset;
 }
 
-.ais-SearchBox-form button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-:is(.ais-SearchBox-form button:hover)
-  :is(.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon)
-  path {
-  fill: var(--gray-00);
-}
-
 @media (min-width: 980px) {
   .ais-SearchBox-input {
     width: 100%;
