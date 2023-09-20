@@ -53,6 +53,7 @@ import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { isObjectID } from './utils/validation';
+import { certificateRoutes } from './routes/certificate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -210,6 +211,7 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(certificateRoutes);
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);

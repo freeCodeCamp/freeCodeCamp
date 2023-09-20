@@ -481,6 +481,7 @@ export const schemas = {
   },
   // /certificate/
   certificateVerify: {
+    // TODO(POST_MVP): Remove partial validation from route for schema validation
     body: Type.Object({
       certSlug: Type.String()
     }),
