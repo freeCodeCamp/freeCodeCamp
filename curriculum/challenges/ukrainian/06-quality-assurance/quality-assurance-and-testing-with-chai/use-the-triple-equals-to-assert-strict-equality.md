@@ -8,9 +8,9 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`strictEqual()` порівнює об'єкти за допомогою `===`.
+`strictEqual()` порівнює об’єкти за допомогою `===`.
 
 # --instructions--
 

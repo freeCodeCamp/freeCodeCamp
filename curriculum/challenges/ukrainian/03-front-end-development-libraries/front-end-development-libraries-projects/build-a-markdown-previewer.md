@@ -1,37 +1,37 @@
 ---
 id: bd7157d8c242eddfaeb5bd13
-title: Створити програму попереднього перегляду Markdown
+title: Створіть попередній перегляд розмітки
 challengeType: 3
 forumTopicId: 301372
 dashedName: build-a-markdown-previewer
 ---
 
 # --description--
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**Примітка:** **React 18 містить відомі несумісності з тестами цього проєкту (див. [проблему](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
+**Мета:** створити застосунок, функціонально схожий до <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+Для виконання цього проєкту можна використати різне поєднання HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery. Потрібно використати фронтенд фреймворк (наприклад, React), оскільки цей розділ стосується їх вивчення. Ми не рекомендуємо використовувати інші технології та ресурси, що не були вказані вище, але ви можете застосовувати їх на власний розсуд. Ми розглядаємо використання інших фронтенд фреймворків, серед яких Angular та Vue, але наразі вони не підтримуються. Ми візьмемо до уваги і спробуємо виправити всі звіти, що використовують запропонований технологічний стек у цьому проєкті. Щасливого програмування!
 
-**User Story #1:** I can see a `textarea` element with a corresponding `id="editor"`.
+**Історія користувача №1:** я бачу елемент `textarea` з відповідним `id="editor"`.
 
-**User Story #2:** I can see an element with a corresponding `id="preview"`.
+**Історія користувача №2:** я бачу елемент з відповідним `id="preview"`.
 
-**User Story #3:** When I enter text into the `#editor` element, the `#preview` element is updated as I type to display the content of the textarea.
+**Історія користувача №3:** коли я ввожу текст в елементі `#editor`, то елемент `#preview` оновлюється та відтворює вміст текстового поля.
 
-**User Story #4:** When I enter GitHub flavored markdown into the `#editor` element, the text is rendered as HTML in the `#preview` element as I type (HINT: You don't need to parse Markdown yourself - you can import the Marked library for this: <https://cdnjs.com/libraries/marked>).
+**Історія користувача №4:** коли я ввожу розмітку GitHub в елементі `#editor`, то текст відтворюється як HTML в елементі `#preview` (ПІДКАЗКА: вам непотрібно парсити розмітку самостійно — ви можете імпортувати бібліотеку Marked: <https://cdnjs.com/libraries/marked>).
 
-**User Story #5:** When my markdown previewer first loads, the default text in the `#editor` field should contain valid markdown that represents at least one of each of the following elements: a heading element (H1 size), a sub heading element (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
+**Історія користувача №5:** коли попередній перегляд розмітки завантажується вперше, то текст в полі `#editor` за замовчуванням міститиме дійсну розмітку, яка представляє принаймні один з цих елементів: заголовок (H1), підзаголовок (H2), посилання, вбудований код, блок коду, елемент списку, цитату, зображення чи жирний текст.
 
-**User Story #6:** When my markdown previewer first loads, the default markdown in the `#editor` field should be rendered as HTML in the `#preview` element.
+**Історія користувача №6:** коли попередній перегляд розмітки завантажується вперше, то розмітка в полі `#editor` за замовчуванням має відтворитись як HTML в елементі `#preview`.
 
-**Optional Bonus (you do not need to make this test pass):** My markdown previewer interprets carriage returns and renders them as `br` (line break) elements.
+**Додатково (вам непотрібно робити цього, щоб пройти тест):** попередній перегляд розмітки інтерпретує повернення каретки та відтворює їх як елементи `br` (розрив рядка).
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використавши цей шаблон CodePen</a> та натиснувши `Save`. Або ж ви можете скористатися цим посиланням CDN, щоб виконати тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
 # --solutions--
 

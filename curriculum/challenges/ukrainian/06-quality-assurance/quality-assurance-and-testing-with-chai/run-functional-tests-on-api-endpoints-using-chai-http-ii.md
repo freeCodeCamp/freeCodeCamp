@@ -8,13 +8,13 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
 У межах `tests/2_functional-tests.js` змініть `'Test GET /hello with your name'` тесту (`// #2`) для підтвердження `status` та `text`, щоб пройти тест.
 
-Надішліть своє ім'я як запит URL, додавши `?name=<your_name>` до маршруту. Кінцева точка відповідає `'hello <your_name>'`.
+Надішліть своє ім’я як запит URL, додавши `?name=<your_name>` до маршруту. Кінцева точка відповідає `'hello <your_name>'`.
 
 # --hints--
 

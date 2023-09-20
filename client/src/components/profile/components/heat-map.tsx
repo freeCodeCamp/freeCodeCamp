@@ -16,8 +16,8 @@ import './heatmap.css';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';

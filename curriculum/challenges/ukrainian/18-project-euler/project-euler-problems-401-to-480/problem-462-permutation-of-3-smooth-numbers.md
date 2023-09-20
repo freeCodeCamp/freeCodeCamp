@@ -8,7 +8,7 @@ dashedName: problem-462-permutation-of-3-smooth-numbers
 
 # --description--
 
-A 3-smooth number is an integer which has no prime factor larger than 3. For an integer $N$, we define $S(N)$ as the set of 3-smooth numbers less than or equal to $N$. For example, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
+A 3-smooth number is an integer which has no prime factor larger than 3. For an integer $N$, we define $S(N)$ as the set of 3-smooth numbers less than or equal to $N$. Наприклад, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
 
 We define $F(N)$ as the number of permutations of $S(N)$ in which each element comes after all of its proper divisors.
 

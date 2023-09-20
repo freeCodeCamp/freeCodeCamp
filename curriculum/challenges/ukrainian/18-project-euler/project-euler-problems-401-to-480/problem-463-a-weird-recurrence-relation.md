@@ -18,7 +18,7 @@ The function $S(n)$ is defined as $\sum_{i=1}^{n} f(i)$.
 
 $S(8) = 22$ and $S(100) = 3604$.
 
-Знайдіть $S(3^{37})$. Give the last 9 digits of your answer.
+Знайдіть $S(3^{37})$. У відповіді запишіть 9 останніх цифр.
 
 # --hints--
 

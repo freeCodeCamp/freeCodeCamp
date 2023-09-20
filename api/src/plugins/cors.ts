@@ -15,6 +15,10 @@ const allowedOrigins = [
 ];
 
 const cors: FastifyPluginCallback = (fastify, _options, done) => {
+  fastify.options('*', (_req, reply) => {
+    void reply.send();
+  });
+
   fastify.addHook('onRequest', async (req, reply) => {
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {

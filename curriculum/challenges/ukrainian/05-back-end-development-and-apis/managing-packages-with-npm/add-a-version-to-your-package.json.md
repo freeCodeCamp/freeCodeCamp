@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bff
-title: Додайте версію до свого package.json
+title: Додайте версію до package.json
 challengeType: 2
 forumTopicId: 301525
 dashedName: add-a-version-to-your-package-json

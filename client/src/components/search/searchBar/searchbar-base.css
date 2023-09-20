@@ -589,6 +589,8 @@ a[class^='ais-'] {
 .ais-SearchBox-form {
   display: block;
   position: relative;
+  width: 100%;
+  height: var(--header-element-size);
 }
 .ais-SearchBox-input {
   -webkit-appearance: none;
@@ -645,7 +647,8 @@ a[class^='ais-'] {
 }
 .ais-Hits {
   position: absolute;
-  width: 90%;
+  left: 0;
+  right: 0;
   background-color: #fff;
 }
 .ais-Hits-item {

@@ -36,7 +36,7 @@ assert(logoutUser().type === 'LOGOUT');
 assert(store.getState().authenticated === false);
 ```
 
-Відправлення `loginUser` має оновити значення властивості `login` у стані сховища `true`.
+Відправлення `loginUser` має оновити значення властивості `login` у стані сховища на `true`.
 
 ```js
 assert(

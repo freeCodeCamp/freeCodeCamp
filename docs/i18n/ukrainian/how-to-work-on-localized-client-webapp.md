@@ -75,7 +75,7 @@
 
 ## Тестування клієнтського застосунку світовою мовою
 
-Ви можете протестувати клієнтський застосунок будь-якою мовою [ зі списку `availableLangs`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Ви можете протестувати клієнтський застосунок будь-якою мовою [зі списку `availableLangs`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -97,7 +97,7 @@ export const availableLangs = {
 
 Якщо ви тестуєте нову мову, створіть папку під назвою мови поряд з іншими мовами та скопіюйте файли JSON з іншої мови до нової папки.
 
-Додайте нову мову до запису `Languages` та масиву `client` зверху файлу [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Додайте нову мову до запису `Languages` та масиву `client` зверху файлу [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 Потім дотримуйтесь інструкцій з коментарів того ж файлу, щоб при потребі додати/оновити решту змінних.
 

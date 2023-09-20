@@ -12,7 +12,7 @@ Let $d(k)$ be the sum of all divisors of $k$.
 
 We define the function $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
 
-For example, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$.
+Наприклад, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$.
 
 Дано, що $S({10}^3) = 563\\,576\\,517\\,282$ та $S({10}^5)\bmod {10}^9 = 215\\,766\\,508$.
 

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux/actions';
@@ -104,10 +104,10 @@ function ToolPanel({
         </Button>
       )}
       <Dropdown dropup>
-        <Dropdown.Toggle dropup id={'get-help-dropdown'}>
+        <Dropdown.Toggle id={'get-help-dropdown'}>
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
-        <Dropdown.Menu dropup>
+        <Dropdown.Menu>
           {guideUrl ? (
             <MenuItem href={guideUrl} target='_blank'>
               {t('buttons.get-hint')}{' '}

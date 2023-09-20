@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c04
-title: Видаліть пакет зі своїх залежностей
+title: Видаліть пакет з залежностей
 challengeType: 2
 forumTopicId: 301530
 dashedName: remove-a-package-from-your-dependencies
@@ -22,7 +22,7 @@ dashedName: remove-a-package-from-your-dependencies
 
 # --hints--
 
-`"dependencies"` не повинні містити `"@freecodecamp/example"`.
+`"dependencies"` не має містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>

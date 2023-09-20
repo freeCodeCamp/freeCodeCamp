@@ -25,6 +25,7 @@ type DropdownMenuProps = Props<
 
 export type DropdownProps = DropdownMenuProps & {
   dropup?: boolean;
+  id?: string;
 };
 
 export interface ButtonRenderPropArg {

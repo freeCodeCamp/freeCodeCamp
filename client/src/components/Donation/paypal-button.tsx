@@ -9,8 +9,8 @@ import {
   PaymentProvider,
   type DonationDuration,
   type DonationAmount
-} from '../../../../config/donation-settings';
-import envData from '../../../../config/env.json';
+} from '../../../../shared/config/donation-settings';
+import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
