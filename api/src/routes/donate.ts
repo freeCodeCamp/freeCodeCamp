@@ -5,7 +5,7 @@ import {
 } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import { donationSubscriptionConfig } from '../../../config/donation-settings';
+import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
 import { schemas } from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
 
