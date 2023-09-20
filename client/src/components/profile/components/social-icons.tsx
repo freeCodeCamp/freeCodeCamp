@@ -1,7 +1,7 @@
 import {
   faLinkedin,
   faGithub,
-  faTwitter
+  faXTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -71,7 +71,7 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faTwitter} size='2x' />
+      <FontAwesomeIcon icon={faXTwitter} size='2x' />
     </a>
   );
 }

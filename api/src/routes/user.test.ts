@@ -87,7 +87,6 @@ const testUserData: Prisma.userCreateInput = {
       ]
     }
   ],
-  sound: true,
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
   linkedin: 'linkedin.com/foobar'
@@ -214,7 +213,6 @@ const publicUserData = {
   sendQuincyEmail: testUserData.sendQuincyEmail,
   theme: testUserData.theme,
   twitter: 'https://twitter.com/foobar',
-  sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: 3,
   acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,

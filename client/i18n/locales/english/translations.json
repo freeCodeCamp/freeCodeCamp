@@ -119,6 +119,7 @@
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
+    "upcoming-heading": "Upcoming curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -473,6 +474,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "${{usd}} donation to freeCodeCamp",
     "wallet-label-1": "${{usd}} / month donation to freeCodeCamp",
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
@@ -489,6 +492,7 @@
     "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
     "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
     "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
@@ -927,5 +931,12 @@
     "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
     "certain": "Yes, sign out of my account",
     "nevermind": "Nevermind, I don't want to sign out"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }

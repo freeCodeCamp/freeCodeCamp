@@ -8,7 +8,7 @@ dashedName: personal-library
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://personal-library.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://personal-library.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://personal-library.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://personal-library.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -24,7 +24,7 @@ dashedName: personal-library
 
 # --instructions--
 
-1.  Додайте свій рядок з'єднання MongoDB до `.env` без лапок як `DB` Приклад: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
+1.  Додайте свій рядок з’єднання MongoDB до `.env` без лапок як `DB` Приклад: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
 2.  Встановіть `NODE_ENV` на `test` у своєму файлі `.env`, без лапок
 3.  Ви повинні створити усі маршрути в межах `routes/api.js`
 4.  Ви створюватимете усі функціональні тести в `tests/2_functional-tests.js`
@@ -41,7 +41,7 @@ dashedName: personal-library
 };
 ```
 
-Ви можете надіслати запит <b>POST</b> до `/api/books` із `title` як частиною даних форми, щоб додати книжку.  Поверненою відповіддю буде об'єкт із `title` та унікальним `_id` як ключі.  Якщо `title` немає у запиті, поверненою відповіддю повинен бути рядок `missing required field title`.
+Ви можете надіслати запит <b>POST</b> до `/api/books` із `title` як частиною даних форми, щоб додати книжку.  Поверненою відповіддю буде об’єкт із `title` та унікальним `_id` як ключі.  Якщо `title` немає у запиті, поверненою відповіддю повинен бути рядок `missing required field title`.
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>GET</b> до `/api/books` та отримати відповідь JSON із представленням усіх книжок. Відповіддю JSON буде масив об'єктів, де кожен об'єкт (книжка) містить властивості `title`, `_id` та `commentcount`.
+Ви можете надіслати запит <b>GET</b> до `/api/books` та отримати відповідь JSON із представленням усіх книжок. Відповіддю JSON буде масив об’єктів, де кожен об’єкт (книжка) містить властивості `title`, `_id` та `commentcount`.
 
 ```js
 async (getUserInput) => {

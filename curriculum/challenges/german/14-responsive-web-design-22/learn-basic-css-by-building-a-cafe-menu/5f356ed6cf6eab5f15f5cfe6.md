@@ -9,12 +9,15 @@ dashedName: step-20
 
 Das `div`-Element wird im Gegensatz zu anderen Inhaltselementen, die du bisher verwendet hast, hauptsächlich für Layoutzwecke verwendet. Füge ein `div`-Element im `body`-Element hinzu und verschiebe dann alle anderen Elemente innerhalb des neuen `div`.
 
+Füge innerhalb des öffnenden `div`-Tags das `id`-Attribut mit dem Wert `menu` hinzu.
+
 # --hints--
 
-Du solltest einen einleitenden `<div>`-Tag haben.
+Dein öffnendes `<div>`-Tag sollte ein `id`-Attribut auf `menu` gesetzt haben.
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
 Du solltest ein abschließendes `</div>`-Tag haben.
@@ -35,6 +38,7 @@ Dein `div`-Tag sollte innerhalb deines `body`-Elements verschachtelt sein.
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 

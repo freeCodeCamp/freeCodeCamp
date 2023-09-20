@@ -1,4 +1,4 @@
-import { Certification } from '../../../config/certification-settings';
+import { Certification } from '../../../shared/config/certification-settings';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>

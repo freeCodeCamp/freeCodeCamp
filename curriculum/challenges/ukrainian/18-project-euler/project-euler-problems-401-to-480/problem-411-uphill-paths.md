@@ -1,6 +1,6 @@
 ---
 id: 5900f5081000cf542c510019
-title: 'Problem 411: Uphill paths'
+title: 'Завдання 411: шлях вгору'
 challengeType: 1
 forumTopicId: 302080
 dashedName: problem-411-uphill-paths
@@ -8,15 +8,15 @@ dashedName: problem-411-uphill-paths
 
 # --description--
 
-Let $n$ be a positive integer. Suppose there are stations at the coordinates $(x, y) = (2^i\bmod n, 3^i\bmod n)$ for $0 ≤ i ≤ 2n$. We will consider stations with the same coordinates as the same station.
+Нехай $n$ буде натуральним числом. Припустимо, що на координатах $(x, y) = (2^i\bmod n, 3^i\bmod n)$ за умови $0 ≤ i ≤ 2n$ розташовані станції. Станції з однаковими координатами вважатимемо однією станцією.
 
-We wish to form a path from (0, 0) to ($n$, $n$) such that the $x$ and $y$ coordinates never decrease.
+Потрібно створити шлях від (0, 0) до ($n$, $n$) таким чином, щоб координати $x$ та $y$ не зменшувалися.
 
-Let $S(n)$ be the maximum number of stations such a path can pass through.
+Нехай $S(n)$ буде максимальною кількістю станцій, через які може пройти шлях.
 
-For example, if $n = 22$, there are 11 distinct stations, and a valid path can pass through at most 5 stations. Therefore, $S(22) = 5$. The case is illustrated below, with an example of an optimal path:
+Наприклад, якщо $n = 22$, то існує 11 окремих станцій, а дійсний шлях може пройти максимум через 5 станцій. Таким чином, $S(22) = 5$. Так виглядає приклад оптимального шляху даного випадку:
 
-<img class="img-responsive center-block" alt="valid path passing through 5 stations, for n = 22, with 11 distinct stations" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="дійсний шлях, який проходить через 5 точок з 11 окремими точками за умови n = 22" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
 
 Також можна довести, що $S(123) = 14$ та $S(10\\,000) = 48$.
 

@@ -10,7 +10,7 @@ dashedName: problem-381-prime-k-factorial
 
 For a prime $p$ let $S(p) = (\sum (p - k)!)\bmod (p)$ for $1 ≤ k ≤ 5$.
 
-For example, if $p = 7$,
+Наприклад, якщо $p = 7$,
 
 $$(7 - 1)! + (7 - 2)! + (7 - 3)! + (7 - 4)! + (7 - 5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872$$
 

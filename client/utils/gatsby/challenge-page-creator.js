@@ -3,7 +3,7 @@ const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes
-} = require('../../../config/challenge-types');
+} = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -93,6 +93,8 @@ exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
       dashedName,
+      disableLoopProtectTests,
+      disableLoopProtectPreview,
       certification,
       superBlock,
       block,
@@ -113,6 +115,8 @@ exports.createChallengePages = function (createPage) {
           blockHashSlug,
           dashedName,
           certification,
+          disableLoopProtectTests,
+          disableLoopProtectPreview,
           superBlock,
           block,
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),

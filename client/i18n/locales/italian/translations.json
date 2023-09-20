@@ -119,6 +119,7 @@
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
+    "upcoming-heading": "Upcoming curriculum:",
     "faq": "Domande frequenti:",
     "faqs": [
       {
@@ -449,8 +450,10 @@
       "link-li-2": "Find and click the \"Share link\" button.",
       "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
       "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {
@@ -471,6 +474,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "Donazione di ${{usd}} a freeCodeCamp",
     "wallet-label-1": "Donazione di ${{usd}} / mese a freeCodeCamp",
     "your-donation": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo.",
@@ -487,6 +492,7 @@
     "progress-modal-cta-8": "Dona ora per aiutarci a sviluppare nuovi corsi su strumenti e concetti di programmazione emergenti.",
     "progress-modal-cta-9": "Dona ora per supportare il nostro curriculum di matematica per sviluppatori.",
     "progress-modal-cta-10": "Dona ora per aiutarci a sviluppare certificazioni di programmazione professionale gratuite per tutti.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
     "credit-card-2": "O dona con una carta di credito:",
@@ -743,7 +749,7 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "Emesso",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",
@@ -925,5 +931,12 @@
     "p2": "Questa azione ti farà solo uscire dal tuo account su questo dispositivo e dalla sessione del browser. Per favore, conferma se vuoi procedere.",
     "certain": "Sì, esci dal mio account",
     "nevermind": "Non importa, non voglio uscire"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }

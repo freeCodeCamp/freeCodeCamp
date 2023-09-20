@@ -17,6 +17,7 @@ import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -55,6 +56,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       challengeMounted,
       updateSolutionFormValues,
       openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help'),
       setIsProcessing,
       submitChallenge
     },
@@ -70,6 +72,7 @@ interface MsTrophyProps {
   setIsProcessing: (arg0: boolean) => void;
   msUsername: string | undefined | null;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -92,7 +95,7 @@ class MsTrophy extends Component<MsTrophyProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType }
+          challenge: { title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -101,7 +104,8 @@ class MsTrophy extends Component<MsTrophyProps> {
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      challengeType
+      challengeType,
+      helpCategory
     });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
@@ -119,7 +123,7 @@ class MsTrophy extends Component<MsTrophyProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title: currentTitle, challengeType }
+          challenge: { title: currentTitle, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -129,7 +133,8 @@ class MsTrophy extends Component<MsTrophyProps> {
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
-        challengeType
+        challengeType,
+        helpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -152,13 +157,15 @@ class MsTrophy extends Component<MsTrophyProps> {
             instructions,
             superBlock,
             block,
-            translationPending
+            translationPending,
+            fields: { blockName }
           }
         }
       },
       isChallengeCompleted,
       isProcessing,
       msUsername,
+      openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -204,10 +211,19 @@ class MsTrophy extends Component<MsTrophyProps> {
                 >
                   {t('buttons.verify-trophy')}
                 </Button>
+                <Button
+                  block={true}
+                  bsStyle='primary'
+                  className='btn-invert'
+                  onClick={openHelpModal}
+                >
+                  {t('buttons.ask-for-help')}
+                </Button>
                 <br />
                 <Spacer size='medium' />
               </Col>
               <CompletionModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
         </LearnLayout>
@@ -231,9 +247,13 @@ export const query = graphql`
         description
         instructions
         challengeType
+        helpCategory
         superBlock
         block
         translationPending
+        fields {
+          blockName
+        }
       }
     }
   }

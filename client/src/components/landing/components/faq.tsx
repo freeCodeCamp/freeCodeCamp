@@ -15,10 +15,14 @@ const Faq = (): JSX.Element => {
 
   return (
     <Col sm={8} smOffset={2} xs={10} xsOffset={1}>
-      <h1 className='big-heading'>{t('landing.faq')}</h1>
+      <h2 className='big-heading'>{t('landing.faq')}</h2>
       <Spacer size='small' />
       {faqItems.map((faq, i) => (
-        <div data-test-label='landing-page-faq' key={i}>
+        <div
+          data-test-label='landing-page-faq'
+          data-playwright-test-label='landing-page-faq'
+          key={i}
+        >
           <p className='faq-question'>{faq.question}</p>
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>

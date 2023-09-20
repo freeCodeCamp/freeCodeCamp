@@ -119,6 +119,7 @@
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
+    "upcoming-heading": "Upcoming curriculum:",
     "faq": "常見問題：",
     "faqs": [
       {
@@ -449,8 +450,10 @@
       "link-li-2": "Find and click the \"Share link\" button.",
       "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
       "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below and click \"Link Account\".",
-      "transcript-label": "Your Microsoft Transcript Link"
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {
@@ -471,6 +474,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "向 freeCodeCamp 捐款 ${{usd}}",
     "wallet-label-1": "向 freeCodeCamp 每月捐款 ${{usd}}",
     "your-donation": "你的 ${{usd}} 捐款將幫助世界各地的人們學習 {{hours}} 小時。",
@@ -487,6 +492,7 @@
     "progress-modal-cta-8": "現在捐贈以幫助我們爲不斷涌現的工具和編程概念開發新課程。",
     "progress-modal-cta-9": "現在捐贈以支持我們的面向開發者的數學課程。",
     "progress-modal-cta-10": "現在捐贈以幫助我們爲所有人開發免費的專業編程認證。",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -743,7 +749,7 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "發佈日期",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "project": {
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
@@ -925,5 +931,12 @@
     "p2": "此操作只會將你在此設備和瀏覽器會話上的賬號註銷。請確認你是否要繼續。",
     "certain": "是的，請註銷我的賬戶",
     "nevermind": "算了，我不想註銷賬戶"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an Early Access - Test Deployment",
+    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
   }
 }

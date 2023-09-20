@@ -7,7 +7,11 @@ RUN npm i -g pnpm@8
 USER node
 WORKDIR /home/node/build
 
-COPY --chown=node:node . .
+COPY --chown=node:node *.* .
+COPY --chown=node:node client/ client/
+COPY --chown=node:node shared/ shared/
+COPY --chown=node:node tools/ tools/
+COPY --chown=node:node curriculum/ curriculum/
 
 ARG HOME_LOCATION
 ARG API_LOCATION
@@ -34,7 +38,7 @@ ARG FREECODECAMP_NODE_ENV
 RUN pnpm config set dedupe-peer-dependents false
 # Scripts need to be run at this stage (--ignore-scripts cannot be used) because
 # without them, Gatsby will not install sharp.
-RUN pnpm install -w -F=client -F=ui -F=browser-scripts -F=challenge-parser \
+RUN pnpm install -F=shared -F=client -F=ui -F=browser-scripts -F=challenge-parser \
   --frozen-lockfile
 RUN pnpm build:client
 
@@ -43,9 +47,7 @@ RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node/client
 COPY --from=builder /home/node/build/client/public/ public
-COPY --from=builder /home/node/build/docker/web/serve.sh serve.sh
-COPY --from=builder /home/node/build/docker/web/pm2-start.sh pm2-start.sh
-COPY --from=builder /home/node/build/docker/web/serve.json serve.json
+COPY --from=builder /home/node/build/client/serve/ ./
 
 ENTRYPOINT [ "./pm2-start.sh" ]
 CMD [ "8000" ]

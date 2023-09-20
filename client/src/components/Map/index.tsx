@@ -7,7 +7,7 @@ import {
   SuperBlocks,
   getFirstNotAuditedSuperBlock,
   superBlockOrder
-} from '../../../../config/superblocks';
+} from '../../../../shared/config/superblocks';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
@@ -16,7 +16,7 @@ import {
   curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
-} from '../../../../config/env.json';
+} from '../../../config/env.json';
 
 import './map.css';
 
@@ -71,7 +71,10 @@ function MapLi({
         </>
       )}
 
-      <li data-test-label='curriculum-map-button'>
+      <li
+        data-test-label='curriculum-map-button'
+        data-playwright-test-label='curriculum-map-button'
+      >
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
             {generateIconComponent(superBlock, 'map-icon')}
@@ -89,32 +92,45 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.core-certs-heading')}
-      </h1>
+      </h2>
       <ul>
         {coreCurriculum.map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
       <Spacer size='medium' />
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.professional-certs-heading')}
-      </h1>
+      </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Professional].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
       <Spacer size='medium' />
-      <h1 className={forLanding ? 'big-heading' : ''}>
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.interview-prep-heading')}
-      </h1>
+      </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
+      {showUpcomingChanges && (
+        <>
+          <Spacer size='medium' />
+          <h2 className={forLanding ? 'big-heading' : ''}>
+            {t('landing.upcoming-heading')}
+          </h2>
+          <ul>
+            {superBlockOrder[SuperBlockStages.Upcoming].map((superBlock, i) => (
+              <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }

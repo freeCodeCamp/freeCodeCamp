@@ -14,8 +14,10 @@ import {
   certIds,
   oldDataVizId,
   currentCertifications,
-  upcomingCertifications
-} from '../../../../config/certification-settings';
+  upcomingCertifications,
+  legacyCertifications,
+  legacyFullStackCertification
+} from '../../../../shared/config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
@@ -77,10 +79,15 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-function ifNoCertification404(req, res, next) {
+export function ifNoCertification404(req, res, next) {
   const { certSlug } = req.body;
   if (!certSlug) return res.status(404).end();
-  if (currentCertifications.includes(certSlug)) return next();
+  if (
+    currentCertifications.includes(certSlug) ||
+    legacyCertifications.includes(certSlug) ||
+    legacyFullStackCertification.includes(certSlug)
+  )
+    return next();
   if (
     process.env.SHOW_UPCOMING_CHANGES === 'true' &&
     upcomingCertifications.includes(certSlug)

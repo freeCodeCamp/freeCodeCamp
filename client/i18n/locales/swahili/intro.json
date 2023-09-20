@@ -1023,7 +1023,7 @@
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
       "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Kumbuka: Ni lazima ukamilishe changamoto ya kombe katika kila sehemu iliyo hapa chini ili ufuzu kwa mtihani wa uidhinishaji.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Andika Msimbo wako wa Kwanza kwa kutumia C#",
