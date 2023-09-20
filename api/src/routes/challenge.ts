@@ -1,13 +1,21 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
-import { jwtSecret } from '../../../config/secrets';
-import { getChallenges } from '../utils/get-challenges';
-import { updateUserChallengeData } from '../utils/common-challenge-functions';
-import { formatValidationError } from '../utils/error-formatting';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
-import { getPoints, ProgressTimestamp } from '../utils/progress';
-import { challengeTypes } from '../../../config/challenge-types';
+import {
+  jsCertProjectIds,
+  multifileCertProjectIds,
+  updateUserChallengeData,
+  type CompletedChallenge
+} from '../utils/common-challenge-functions';
+import { JWT_SECRET } from '../utils/env';
+import {
+  formatCoderoadChallengeCompletedValidation,
+  formatProjectCompletedValidation
+} from '../utils/error-formatting';
+import { getChallenges } from '../utils/get-challenges';
+import { ProgressTimestamp, getPoints } from '../utils/progress';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -40,41 +48,29 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/coderoad-challenge-completed',
     {
       schema: schemas.coderoadChallengeCompleted,
-      attachValidation: true
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatCoderoadChallengeCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
-      let userToken;
-
       const { 'coderoad-user-token': encodedUserToken } = req.headers;
       const { tutorialId } = req.body;
 
-      if (!tutorialId) {
-        void reply.code(400);
-        return {
-          type: 'error',
-          msg: `'tutorialId' not found in request body`
-        } as const;
-      }
-
-      if (!encodedUserToken) {
-        void reply.code(400);
-        return {
-          type: 'error',
-          msg: `'Coderoad-User-Token' not found in request headers`
-        } as const;
-      }
-
+      let userToken;
       try {
-        if (typeof encodedUserToken === 'string' && jwtSecret) {
-          const payload = jwt.verify(encodedUserToken, jwtSecret) as JwtPayload;
-          userToken = payload.userToken;
-        }
+        const payload = jwt.verify(encodedUserToken, JWT_SECRET) as JwtPayload;
+        userToken = payload.userToken;
       } catch {
         void reply.code(400);
         return { type: 'error', msg: `invalid user token` } as const;
       }
 
-      const tutorialRepo = tutorialId?.split(':')[0];
+      const tutorialRepo = tutorialId.split(':')[0];
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
       if (tutorialOrg !== 'freeCodeCamp') {
@@ -86,7 +82,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const codeRoadChallenges = challenges.filter(
-        ({ challengeType }) => challengeType === 12 || challengeType === 13
+        ({ challengeType }) =>
+          challengeType === challengeTypes.codeAllyPractice ||
+          challengeType === challengeTypes.codeAllyCert
       );
 
       const challenge = codeRoadChallenges.find(challenge => {
@@ -131,7 +129,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challenge => challenge.id === challengeId
         );
 
-        if (challengeType === 13 && !isCompleted) {
+        if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
           const finalChallenge = {
             id: challengeId,
             completedDate
@@ -173,7 +171,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -260,7 +258,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return formatValidationError(error.validation);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -292,6 +290,70 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           alreadyCompleted,
           points: alreadyCompleted ? points : points + 1,
           completedDate: completedChallenge.completedDate
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/modern-challenge-completed',
+    {
+      schema: schemas.modernChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { id, files, challengeType } = req.body;
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const RawProgressTimestamp = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const points = getPoints(RawProgressTimestamp);
+
+        const completedChallenge: CompletedChallenge = {
+          id,
+          files,
+          completedDate: Date.now()
+        };
+
+        if (challengeType === challengeTypes.multifileCertProject) {
+          completedChallenge.isManuallyApproved = true;
+          user.needsModeration = true;
+        }
+
+        if (
+          jsCertProjectIds.includes(id) ||
+          multifileCertProjectIds.includes(id)
+        ) {
+          completedChallenge.challengeType = challengeType;
+        }
+
+        const { alreadyCompleted, userSavedChallenges: savedChallenges } =
+          await updateUserChallengeData(fastify, user, id, completedChallenge);
+
+        return {
+          alreadyCompleted,
+          points: alreadyCompleted ? points : points + 1,
+          completedDate: completedChallenge.completedDate,
+          savedChallenges
         };
       } catch (error) {
         fastify.log.error(error);

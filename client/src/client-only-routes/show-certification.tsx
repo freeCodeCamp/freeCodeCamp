@@ -8,8 +8,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n';
+import envData from '../../config/env.json';
+import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import DonateForm from '../components/Donation/donate-form';
@@ -35,12 +35,12 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   certTypes,
   certTypeTitleMap
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -217,7 +217,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  const { date, name: userFullName = null, username, certTitle } = cert;
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    completionTime
+  } = cert;
 
   const { user } = props;
 
@@ -261,6 +267,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
+      <Spacer size='medium' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
@@ -270,6 +277,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </div>
   );
 
+  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
+
   const shareCertBtns = (
     <Row className='text-center'>
       <Col xs={12}>
@@ -277,10 +286,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           block={true}
           bsSize='lg'
           bsStyle='primary'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
           }&certUrl=${certURL}`}
           target='_blank'
+          data-playwright-test-label='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -290,10 +300,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           bsSize='lg'
           bsStyle='primary'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
-            certTitle: certTitle,
+            certTitle: urlFriendlyCertTitle,
             certURL: certURL
           })}`}
           target='_blank'
+          data-playwright-test-label='twitter-share-btn'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -335,15 +346,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1>
                   <strong>{{ user: displayName }}</strong>
                 </h1>
-                <h3>placeholder</h3>
-                <h1>
+                <h3 data-playwright-test-label='successful-completion'>
+                  placeholder
+                </h3>
+                <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
                       title: t(`certification.title.${certTitle}`, certTitle)
                     }}
                   </strong>
                 </h1>
-                <h4 data-cy={'issue-date'}>
+                <h4
+                  data-cy={'issue-date'}
+                  data-playwright-test-label='issue-date'
+                >
                   {{
                     time: certDate.toLocaleString([localeCode, 'en-US'], {
                       year: 'numeric',
@@ -352,6 +368,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     })
                   }}
                 </h4>
+                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
               </Trans>
             </div>
           </main>

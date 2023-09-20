@@ -7,7 +7,7 @@ import {
   SuperBlocks,
   getFirstNotAuditedSuperBlock,
   superBlockOrder
-} from '../../../../config/superblocks';
+} from '../../../../shared/config/superblocks';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
@@ -16,7 +16,7 @@ import {
   curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
-} from '../../../../config/env.json';
+} from '../../../config/env.json';
 
 import './map.css';
 
@@ -71,7 +71,10 @@ function MapLi({
         </>
       )}
 
-      <li data-test-label='curriculum-map-button'>
+      <li
+        data-test-label='curriculum-map-button'
+        data-playwright-test-label='curriculum-map-button'
+      >
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
             {generateIconComponent(superBlock, 'map-icon')}
@@ -115,6 +118,19 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
+      {showUpcomingChanges && (
+        <>
+          <Spacer size='medium' />
+          <h1 className={forLanding ? 'big-heading' : ''}>
+            {t('landing.upcoming-heading')}
+          </h1>
+          <ul>
+            {superBlockOrder[SuperBlockStages.Upcoming].map((superBlock, i) => (
+              <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }

@@ -369,7 +369,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       `intro:${superBlock}.blocks.${block}.title`
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-    const ariaLabel = t('aria.answer');
 
     // TODO: If already taken exam, show different messages
 
@@ -419,7 +418,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       ({ answer, id }) => (
                         <label className='exam-answer-label' key={id}>
                           <input
-                            aria-label={ariaLabel}
+                            aria-label={t('aria.answer')}
                             checked={
                               userExamQuestions[currentQuestionIndex].answer
                                 .id === id

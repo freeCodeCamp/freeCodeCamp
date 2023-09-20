@@ -3,9 +3,23 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 let page: Page;
 
-type StaticDataTransalations = {
-  [key: string]: string;
-};
+const superBlocks = [
+  'Responsive Web Design',
+  'JavaScript Algorithms and Data Structures',
+  'Front End Development Libraries',
+  'Data Visualization',
+  'Relational Database',
+  'Back End Development and APIs',
+  'Quality Assurance',
+  'Scientific Computing with Python',
+  'Data Analysis with Python',
+  'Information Security',
+  'Machine Learning with Python',
+  'College Algebra with Python',
+  'Foundational C# with Microsoft',
+  'Coding Interview Prep',
+  'Project Euler'
+];
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
@@ -23,22 +37,33 @@ test('the page should render with correct title', async () => {
 });
 
 test('the page should have the correct header', async () => {
-  await expect(
-    page.getByRole('heading', { name: `${translations.learn.heading}` })
-  ).toBeVisible();
+  const header = page.getByTestId('learn-heading');
+  await expect(header).toBeVisible();
+  await expect(header).toContainText(translations.learn.heading);
 });
 
 test('the page should have all static data correctly placed', async () => {
-  const staticDataIterable: StaticDataTransalations =
-    translations.learn['read-this'];
-  let staticDataKey: keyof StaticDataTransalations;
-  for (staticDataKey in staticDataIterable) {
-    const urlSafeTranslations = staticDataIterable[staticDataKey].split('<0>');
-    await expect(page.getByText(`${urlSafeTranslations[0]}`)).toBeVisible();
+  const learnReadThisSection = page.getByTestId('learn-read-this-section');
+  await expect(learnReadThisSection).toBeVisible();
+
+  const learnReadThisSectionHeading = page.getByTestId(
+    'learn-read-this-heading'
+  );
+  await expect(learnReadThisSectionHeading).toBeVisible();
+
+  const learnReadThisSectionParagraphs = page.getByTestId('learn-read-this-p');
+  await expect(learnReadThisSectionParagraphs).toHaveCount(10);
+
+  for (const paragraph of await learnReadThisSectionParagraphs.all()) {
+    await expect(paragraph).toBeVisible();
   }
 });
 
 test('the page renders all curriculum certifications', async () => {
   const curriculumBtns = page.getByTestId('curriculum-map-button');
   await expect(curriculumBtns).toHaveCount(15);
+  for (let i = 0; i < superBlocks.length; i++) {
+    const btn = curriculumBtns.nth(i);
+    await expect(btn).toContainText(superBlocks[i]);
+  }
 });

@@ -3,19 +3,11 @@ id: 647f87dc07d29547b3bee1bf
 title: 'Трофей «Створення та запуск простих консольних застосунків C#»'
 challengeType: 18
 dashedName: trophy-create-and-run-simple-c-sharp-console-applications
+msTrophyId: learn.wwl.get-started-c-sharp-part-2.trophy
 ---
 
 # --description--
 
-Ви завершили всі завдання модуля «Створення та запуск простих консольних застосунків C#» на навчальній платформі Microsoft, тому введіть посилання на свій трофей нижче.
+Ви виконали всі завдання зі «Створення та запуск простих консольних застосунків C#», а отже мали отримати трофей на платформі Microsoft Learn. Якщо ви не бачите трофей на <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">сторінці своїх досягнень</a>, значить ви не виконали всі завдання і трофей не можна підтвердити.
 
-Дотримуйтесь цих інструкцій, щоб знайти адресу свого трофея:
-
-1. Перейдіть до <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a>, використовуючи браузер, через який ви увійшли до Microsoft
-1. Знайдіть трофей для «Створення та запуск простих консольних застосунків C#» та натисніть значок «Поділитися»
-1. Натисніть кнопку «Копіювати URL»
-1. Вставте посилання в полі нижче
-
-Посилання має виглядати приблизно так: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-2.trophy?username=your-username&sharingId=your-sharing-id`
-
-Цей трофей потрібен для того, щоб скласти екзамен сертифікації.
+Прив’яжіть ім’я користувача Microsoft до облікового запису freeCodeCamp та натисніть кнопку «Підтвердити трофей» знизу, щоб завершити завдання. Цей трофей **обов’язковий**, щоб мати змогу скласти сертифікаційний екзамен.

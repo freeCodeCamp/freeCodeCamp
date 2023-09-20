@@ -22,7 +22,7 @@ GET - Lê um recurso existente sem modificá-lo,
 
 PUT ou PATCH (às vezes, POST) – Atualiza um recurso usando os dados enviados,
 
-DELETE=> Exclui um recurso.
+DELETE - Delete a resource.
 
 Existem também alguns outros métodos que são usados para estabelecer uma conexão com o servidor. Com a exceção de GET, todos os outros métodos listados acima podem ter uma payload(carga) (exemplo: os dados enviados no corpo da requisição). O middleware body-parser também funciona com esses métodos.
 

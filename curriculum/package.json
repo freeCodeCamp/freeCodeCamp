@@ -34,10 +34,10 @@
     "test:full-output": "cross-env FULL_OUTPUT=true ts-node ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.22.10",
-    "@babel/preset-env": "7.22.10",
-    "@babel/preset-typescript": "7.22.5",
-    "@babel/register": "7.22.5",
+    "@babel/core": "7.22.20",
+    "@babel/preset-env": "7.22.20",
+    "@babel/preset-typescript": "7.22.15",
+    "@babel/register": "7.22.15",
     "@compodoc/live-server": "^1.2.3",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",
@@ -50,7 +50,7 @@
     "css": "3.0.0",
     "glob": "8.1.0",
     "invariant": "2.2.4",
-    "joi": "17.10.0",
+    "joi": "17.10.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
     "jsdom": "16.7.0",

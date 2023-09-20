@@ -317,11 +317,10 @@ html {
 body {
   font-size: 18px;
   line-height: 1.42857143;
+  background-color: var(--secondary-background);
   height: 100%;
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
-  background: var(--secondary-background);
-  --header-height: 38px;
 }
 
 header {

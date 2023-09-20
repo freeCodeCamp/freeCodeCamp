@@ -1,6 +1,6 @@
 describe('Donate page', () => {
   it('Donation ', () => {
-    cy.task('seed');
+    cy.task('seed', ['certified-user']);
     cy.login();
     cy.visit('/donate');
     cy.get('.donation-elements', { timeout: 10000 }).within(() => {

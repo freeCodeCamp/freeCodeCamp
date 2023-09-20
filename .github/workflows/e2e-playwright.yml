@@ -1,11 +1,11 @@
 name: CI - E2E - Playwright
 on:
-  push:
-    paths-ignore:
-      - 'docs/**'
-    branches:
-      - 'main'
-      - 'e2e-**'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['CI - Node.js']
+    types:
+      - completed
+  # TODO: refactor with a workflow_call
   pull_request:
     paths-ignore:
       - 'docs/**'
@@ -59,13 +59,13 @@ jobs:
         run: tar -cf client-artifact.tar client/public
 
       - name: Upload Client Artifact
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: client-artifact
           path: client-artifact.tar
 
       - name: Upload Webpack Stats
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: webpack-stats
           path: client/public/stats.json
@@ -124,12 +124,12 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
           pnpm run build:server
 
-      - name: Seed Database
-        run: pnpm run seed
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
 
       # start-ci uses pm2, so it needs to be installed globally
       - name: Install pm2
@@ -138,10 +138,8 @@ jobs:
       - name: Install playwright dependencies
         run: |
           cd ./e2e
-          npm i
           npx playwright install
           npx playwright install-deps
-          cd ..
 
       - name: Run playwright tests
         run: |

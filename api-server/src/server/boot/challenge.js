@@ -16,8 +16,8 @@ import isURL from 'validator/lib/isURL';
 import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 
-import { jwtSecret } from '../../../../config/secrets';
-import { challengeTypes } from '../../../../config/challenge-types';
+import { jwtSecret } from '../../../config/secrets';
+import { challengeTypes } from '../../../../shared/config/challenge-types';
 
 import {
   fixPartiallyCompletedChallengeItem,

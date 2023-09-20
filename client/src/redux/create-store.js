@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProductio
 import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
 
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
 import rootEpic from './root-epic';
 import rootReducer from './root-reducer';

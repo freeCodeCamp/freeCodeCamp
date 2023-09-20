@@ -1,4 +1,4 @@
-import { availableLangs, hiddenLangs } from '../../../../../config/i18n';
+import { availableLangs, hiddenLangs } from '../../../../../shared/config/i18n';
 
 const buttonSelector = '#toggle-lang-button';
 const toLangSelector = (lang: string) => `[data-value="${lang}"]`;
