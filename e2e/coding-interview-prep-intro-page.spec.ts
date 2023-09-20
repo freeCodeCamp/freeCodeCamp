@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import superblockTexts from '../client/i18n/locales/english/intro.json';
 
 test.describe('Certification intro page', () => {
   let page: Page;
@@ -38,15 +39,11 @@ test.describe('Certification intro page', () => {
     // container should have 2 paragraphs
     await expect(childParagraphs).toHaveCount(2);
 
-    // expected content
-    const expectedTexts = [
-      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
-      'This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio.'
-    ];
-
     // checks if received content is equal to the expected content
     const receivedTexts = await childParagraphs.allInnerTexts();
-    expect(receivedTexts).toEqual(expectedTexts);
+    expect(receivedTexts).toEqual(
+      superblockTexts['coding-interview-prep'].intro
+    );
   });
 
   test('Should display the note if it exists', async () => {
@@ -54,7 +51,7 @@ test.describe('Certification intro page', () => {
 
     await expect(noteText).toBeVisible();
     await expect(noteText).toContainText(
-      "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer."
+      superblockTexts['coding-interview-prep'].note
     );
   });
 });
