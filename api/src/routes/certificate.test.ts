@@ -15,7 +15,8 @@ describe('certificate routes', () => {
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
-        });
+        }).send({ certSlug: undefined });
+        // Add check for response
         expect(response.status).toBe(400);
       });
       test('should return 400 if certSlug is invalid', async () => {

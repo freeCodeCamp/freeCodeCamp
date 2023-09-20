@@ -516,30 +516,69 @@ export const schemas = {
     body: Type.Object({
       certSlug: Type.String()
     }),
-    repsonse: {
-      400: Type.Object({
-        type: Type.Literal('info'),
-        message: Type.Union([
-          // Happens when client does not send certSlug (empty)
-          // TODO(POST-MVP): send a specific error
-          Type.Literal('flash.went-wrong'),
-          Type.Literal('flash.wrong-name'),
-          Type.Literal('flash.already-claimed')
-        ]),
-        variables: Type.Object({
-          name: Type.String()
+    response: {
+      200: Type.Union([
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Union([Type.Literal('flash.already-claimed')]),
+          variables: Type.Object({
+            name: Type.String()
+          })
+        }),
+        Type.Object({
+          response: Type.Object({
+            type: Type.Literal('success'),
+            message: Type.Literal('flash.cert-claim-success'),
+            variables: Type.Object({
+              username: Type.String(),
+              name: Type.String()
+            }),
+            isCertMap: Type.Record(Type.String(), Type.Boolean()),
+            completedChallenges: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                solution: Type.Optional(Type.String()),
+                githubLink: Type.Optional(Type.String()),
+                challengeType: Type.Optional(Type.Number()),
+                // Technically, files is optional, but the db default was [] and
+                // the client treats null, undefined and [] equivalently.
+                // TODO(Post-MVP): make this optional.
+                files: Type.Array(
+                  Type.Object({
+                    contents: Type.String(),
+                    key: Type.String(),
+                    ext: Type.String(),
+                    name: Type.String(),
+                    path: Type.Optional(Type.String())
+                  })
+                ),
+                isManuallyApproved: Type.Optional(Type.Boolean())
+              })
+            )
+          })
         })
-      }),
-      403: Type.Object({
-        type: Type.Literal('info'),
-        message: Type.Union([Type.Literal('flash.incomplete-steps')]),
-        variables: Type.Object({
-          name: Type.String()
+      ]),
+      400: Type.Union([
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Union([Type.Literal('flash.incomplete-steps')]),
+          variables: Type.Object({
+            name: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('danger'),
+          message: Type.Union([Type.Literal('flash.wrong-name')])
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Union([Type.Literal('flash.name-needed')])
         })
-      }),
+      ]),
       500: Type.Object({
         type: Type.Literal('danger'),
-        message: Type.Literal('flash.name-needed')
+        message: Type.Literal('flash.went-wrong')
       })
     }
   }

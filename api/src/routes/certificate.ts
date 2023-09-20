@@ -8,7 +8,7 @@ import {
   certTypeTitleMap,
   certTypes,
   currentCertifications
-} from '../../../config/certification-settings';
+} from '../../../shared/config/certification-settings';
 import { removeNulls } from '../utils/normalize';
 import { CompletedChallenge } from '../utils/common-challenge-functions';
 
@@ -107,6 +107,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         }
 
         if (user[certType]) {
+          void reply.code(200);
           return {
             type: 'info',
             message: 'flash.already-claimed',
@@ -123,6 +124,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         );
 
         if (!hasCompletedTestRequirements) {
+          void reply.code(400);
           return {
             type: 'info',
             message: 'flash.incomplete-steps',
@@ -172,6 +174,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           await fastify.sendEmail(notifyUser);
         }
 
+        void reply.code(200);
         return {
           response: {
             type: 'success',
@@ -186,7 +189,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         };
       } catch (e) {
         void reply.code(500);
-        return {
+        throw {
           type: 'danger',
           // message: 'Oops! Something went wrong. Please try again in a moment or contact
           message: 'flash.went-wrong'
@@ -298,8 +301,7 @@ function assertTestsExist(tests: unknown): asserts tests is { id: string }[] {
   if (!tests.every(test => typeof test === 'object' && test !== null)) {
     throw new Error('Tests contains non-object values');
   }
-  // Safety: Checked all tests are objects and non-null, and cannot be undefined.
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  // @ts-expect-error Safety: Checked all tests are objects and non-null, and cannot be undefined
   if (!tests.every(test => typeof test.id === 'string')) {
     throw new Error('Tests contain non-string ids');
   }

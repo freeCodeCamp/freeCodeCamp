@@ -29,8 +29,7 @@ export function getChallenges(): Block['challenges'] {
     .reduce((acc: Block['challenges'], superBlock) => {
       const blockKeys = Object.keys(superBlock);
       const challengesForBlock = blockKeys.map(k => {
-        const key: keyof typeof superBlock = k;
-        return superBlock[key].challenges;
+        return superBlock[k].challenges;
       });
       return [...acc, ...challengesForBlock.flat()];
     }, []);
