@@ -21,8 +21,11 @@ test.describe('Certification intro page', () => {
     await expect(heading).toBeVisible();
     await expect(heading).toContainText('Coding Interview Prep');
 
-    const icon = page.getByTestId('algorithm-icon');
-    expect(icon).toBeDefined();
+    const superblockIcon = page.getByTestId('superblock-icon');
+    await expect(superblockIcon).toBeVisible();
+
+    const algorithmIcon = superblockIcon.getByTestId('algorithm-icon');
+    await expect(algorithmIcon).toBeVisible();
   });
 
   test('Should have relevant course description in the superblock', async () => {

@@ -33,7 +33,9 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
         {i18nSuperBlock}
       </h1>
       <Spacer size='medium' />
-      {generateIconComponent(superBlock, 'cert-header-icon')}
+      <div data-playwright-test-label='superblock-icon'>
+        {generateIconComponent(superBlock, 'cert-header-icon')}
+      </div>
       <Spacer size='medium' />
       <div data-playwright-test-label='superblock-description-box'>
         {superBlockIntroText.map((str, i) => (
