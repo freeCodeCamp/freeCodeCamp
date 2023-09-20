@@ -620,6 +620,8 @@ a[class^='ais-'] {
   -moz-appearance: none;
   appearance: none;
   z-index: 100;
+  width: 20px;
+  height: 20px;
 }
 .ais-SearchBox-reset {
   margin-inline-start: 10px;
@@ -631,12 +633,10 @@ a[class^='ais-'] {
 .ais-SearchBox-submitIcon {
   width: 14px;
   height: 14px;
-  margin-block-end: 1px;
 }
 .ais-SearchBox-resetIcon {
   width: 12px;
   height: 12px;
-  margin-block-end: 2px;
 }
 .ais-SearchBox-loadingIcon {
   width: 16px;
