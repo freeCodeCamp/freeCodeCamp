@@ -1,6 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
-title: 'Problem 418: Factorisation triples'
+title: 'Завдання 418: факторизаційні трійки'
 challengeType: 1
 forumTopicId: 302087
 dashedName: problem-418-factorisation-triples
@@ -8,12 +8,12 @@ dashedName: problem-418-factorisation-triples
 
 # --description--
 
-Нехай $n$ буде натуральним числом. An integer triple ($a$, $b$, $c$) is called a factorisation triple of $n$ if:
+Нехай $n$ буде натуральним числом. Трійка цілих чисел ($a$, $b$, $c$) називається факторизаційною трійкою числа $n$, якщо:
 
 - $1 ≤ a ≤ b ≤ c$
 - $a \times b \times c = n$.
 
-Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of $n$ which minimises $\frac{c}{a}$. One can show that this triple is unique.
+Визначте $f(n)$ як $a + b + c$ для факторизаційної трійки ($a$, $b$, $c$) числа $n$, що мінімізує $\frac{c}{a}$. Можна довести, що ця трійка унікальна.
 
 Наприклад, $f(165) = 19$, $f(100\\,100) = 142$ та $f(20!) = 4\\,034\\,872$.
 
