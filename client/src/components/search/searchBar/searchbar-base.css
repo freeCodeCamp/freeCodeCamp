@@ -620,8 +620,6 @@ a[class^='ais-'] {
   -moz-appearance: none;
   appearance: none;
   z-index: 100;
-  width: 20px;
-  height: 20px;
 }
 .ais-SearchBox-reset {
   margin-inline-start: 10px;
