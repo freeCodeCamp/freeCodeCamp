@@ -16,7 +16,6 @@ import {
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
 import { generateReportEmail } from '../utils/email-templates';
-import { MockEmailProvider } from '../plugins/mail-providers/mock-email-provider';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -566,6 +565,13 @@ describe('userRoutes', () => {
     });
 
     describe('/user/report-user', () => {
+      let sendEmailSpy: jest.SpyInstance;
+      beforeEach(() => {
+        sendEmailSpy = jest
+          .spyOn(fastifyTestInstance, 'sendEmail')
+          .mockImplementation(jest.fn());
+      });
+
       afterEach(() => {
         jest.clearAllMocks();
       });
@@ -616,8 +622,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(MockEmailProvider.send).toBeCalledTimes(1);
-        expect(MockEmailProvider.send).toBeCalledWith({
+        expect(sendEmailSpy).toBeCalledTimes(1);
+        expect(sendEmailSpy).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user?.email,
@@ -650,8 +656,8 @@ describe('userRoutes', () => {
           where: { email: 'foo@bar.com' }
         });
 
-        expect(MockEmailProvider.send).toBeCalledTimes(1);
-        expect(MockEmailProvider.send).toBeCalledWith({
+        expect(sendEmailSpy).toBeCalledTimes(1);
+        expect(sendEmailSpy).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user?.email,

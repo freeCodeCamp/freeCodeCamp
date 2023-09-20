@@ -152,16 +152,9 @@ export const build = async (
     })
   });
 
-  if (process.env.JEST_WORKER_ID) {
-    const { MockEmailProvider } = await import(
-      './plugins/mail-providers/mock-email-provider'
-    );
-    void fastify.register(mailer, { provider: MockEmailProvider });
-  } else {
-    const provider =
-      EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
-    void fastify.register(mailer, { provider });
-  }
+  const provider =
+    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
+  void fastify.register(mailer, { provider });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI) {
