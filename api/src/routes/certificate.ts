@@ -114,7 +114,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: {
               name: certName
             }
-          };
+          } as const;
         }
 
         const { id, tests, challengeType } = certTypeIds[certType];
@@ -131,7 +131,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: {
               name: certName
             }
-          };
+          } as const;
         }
 
         const updatedUser = await fastify.prisma.user.update({
@@ -182,11 +182,11 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: {
               username: updatedUser.username,
               name: certName
-            }
-          },
+            } as const
+          } as const,
           isCertMap,
           completedChallenges: updatedUser.completedChallenges
-        };
+        } as const;
       } catch (e) {
         void reply.code(500);
         throw {
