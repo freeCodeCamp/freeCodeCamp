@@ -56,6 +56,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
  * @param _options Fastify options I guess?
  * @param done Callback to signal that the logic has completed.
  */
+// TODO: 1) use POST 2) make sure we prevent login CSRF
 export const devLoginCallback: FastifyPluginCallback = (
   fastify,
   _options,
@@ -80,6 +81,7 @@ export const devLoginCallback: FastifyPluginCallback = (
  * @param _options Fastify options I guess?
  * @param done Callback to signal that the logic has completed.
  */
+// TODO: 1) use POST 2) make sure we prevent login CSRF
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 

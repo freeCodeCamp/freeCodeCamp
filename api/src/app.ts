@@ -48,7 +48,7 @@ import {
   EMAIL_PROVIDER
 } from './utils/env';
 import { challengeRoutes } from './routes/challenge';
-import { userRoutes } from './routes/user';
+import { userRoutes, userGetRoutes } from './routes/user';
 import { donateRoutes } from './routes/donate';
 import { statusRoute } from './routes/status';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
@@ -214,6 +214,7 @@ export const build = async (
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
+  void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
