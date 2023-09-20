@@ -58,7 +58,7 @@ Se o ambiente Gitpod não foi criado automaticamente:
 - Crie um arquivo de configuração.
 
 ```console
-pnpm run create:config
+pnpm run create:shared
 ```
 
 - Crie a base de dados

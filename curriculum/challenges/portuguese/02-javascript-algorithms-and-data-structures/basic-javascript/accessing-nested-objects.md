@@ -45,7 +45,7 @@ Acesse o objeto `myStorage` e atribua o conteúdo da propriedade `glove box` par
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot notation, where possible, to access `myStorage`.
+O código deve usar notação de ponto, onde for possível, para acessar `myStorage`.
 
 ```js
 assert.match(code, /myStorage\.car\.inside/);

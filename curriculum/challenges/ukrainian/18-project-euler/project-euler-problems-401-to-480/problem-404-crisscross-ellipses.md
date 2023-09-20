@@ -1,6 +1,6 @@
 ---
 id: 5900f5001000cf542c510012
-title: 'Problem 404: Crisscross Ellipses'
+title: 'Завдання 404: еліпси, що перетинаються'
 challengeType: 1
 forumTopicId: 302072
 dashedName: problem-404-crisscross-ellipses
@@ -8,19 +8,19 @@ dashedName: problem-404-crisscross-ellipses
 
 # --description--
 
-$E_a$ is an ellipse with an equation of the form $x^2 + 4y^2 = 4a^2$.
+$E_a$ є еліпсом, заданим рівнянням $x^2 + 4y^2 = 4a^2$.
 
-$E_a'$ is the rotated image of $E_a$ by $θ$ degrees counterclockwise around the origin $O(0, 0)$ for $0° &lt; θ &lt; 90°$.
+$E_a'$ є зображенням еліпса $E_a$, перевернутим на $θ$ градусів проти годинникової стрілки навколо початку координат $O(0, 0)$ для $0° &lt; θ &lt; 90°$.
 
-<img class="img-responsive center-block" alt="ellipse E_a and ellipse rotated by θ degrees E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="еліпс E_a та еліпс E_a' повернутий на θ градусів" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
 
-$b$ is the distance to the origin of the two intersection points closest to the origin and $c$ is the distance of the two other intersection points.
+$b$ є відстанню від початку координат до двох найближчих точок, які перетинаються, а $c$ є відстанню двох інших точок.
 
-We call an ordered triplet ($a$, $b$, $c$) a canonical ellipsoidal triplet if $a$, $b$ and $c$ are positive integers.
+Впорядкований триплет ($a$, $b$, $c$) називають канонічним еліпсоїдним триплетом, якщо $a$, $b$ та $c$ є натуральними числами.
 
-For example, (209, 247, 286) is a canonical ellipsoidal triplet.
+Наприклад, (209, 247, 286) є канонічним еліпсоїдним триплетом.
 
-Let $C(N)$ be the number of distinct canonical ellipsoidal triplets ($a$, $b$, $c$) for $a ≤ N$.
+Нехай $C(N)$ буде кількістю різних канонічних еліпсоїдних триплетів ($a$, $b$, $c$) за умови $a ≤ N$.
 
 Можна довести, що $C({10}^3) = 7$, $C({10}^4) = 106$ та $C({10}^6) = 11\\,845$.
 

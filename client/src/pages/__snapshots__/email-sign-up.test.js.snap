@@ -23,6 +23,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
       <div
         className="intro-description"
+        data-playwright-test-label="learn-read-this-section"
       >
         <div
           className="spacer"
@@ -34,6 +35,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         />
         <p
           className="text-center"
+          data-playwright-test-label="learn-read-this-heading"
         >
           <strong>
             learn.read-this.heading
@@ -47,28 +49,44 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             }
           }
         />
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p1
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p2
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p3
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p4
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p5
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p6
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p7
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p8
         </p>
         <p>
@@ -79,7 +97,9 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             target="_blank"
           />
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p10
         </p>
         <p>
@@ -90,7 +110,9 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             target="_blank"
           />
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p12
         </p>
         <strong>

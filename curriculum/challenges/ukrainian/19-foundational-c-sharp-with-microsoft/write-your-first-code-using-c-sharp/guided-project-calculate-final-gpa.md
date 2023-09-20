@@ -16,7 +16,7 @@ dashedName: guided-project-calculate-final-gpa
 
 ## --text--
 
-Suppose `decimal gradePointAverage = 3.99872831m;`.
+Припустимо, що `decimal gradePointAverage = 3.99872831m;`.
 
 Яким буде значення `(int) gradePointAverage`?
 

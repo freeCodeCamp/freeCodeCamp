@@ -1,6 +1,6 @@
 ---
 id: 5900f5041000cf542c510016
-title: 'Problem 407: Idempotents'
+title: 'Завдання 407: ідемпотентні елементи'
 challengeType: 1
 forumTopicId: 302075
 dashedName: problem-407-idempotents
@@ -8,11 +8,11 @@ dashedName: problem-407-idempotents
 
 # --description--
 
-If we calculate $a^2\bmod 6$ for $0 ≤ a ≤ 5$ we get: 0, 1, 4, 3, 4, 1.
+Якщо обчислити $a^2\bmod 6$ за умови $0 ≤ a ≤ 5$, то отримаємо 0, 1, 4, 3, 4, 1.
 
-The largest value of a such that $a^2 ≡ a\bmod 6$ is $4$.
+Найбільше значення $a^2 ≡ a\bmod 6$ становить $4$.
 
-Let's call $M(n)$ the largest value of $a &lt; n$ such that $a^2 ≡ a (\text{mod } n)$. So $M(6) = 4$.
+Назвемо $M(n)$ найбільшим значенням $a &lt; n$, за якого $a^2 ≡ a (\text{mod } n)$. Отже, $M(6) = 4$.
 
 Знайдіть $\sum M(n)$ за умови $1 ≤ n ≤ {10}^7$.
 

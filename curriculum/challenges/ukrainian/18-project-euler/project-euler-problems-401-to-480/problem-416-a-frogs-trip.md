@@ -12,9 +12,9 @@ A row of $n$ squares contains a frog in the leftmost square. By successive jumps
 
 Let $F(m, n)$ be the number of the ways the frog can travel so that at most one square remains unvisited.
 
-For example, $F(1, 3) = 4$, $F(1, 4) = 15$, $F(1, 5) = 46$, $F(2, 3) = 16$ and $F(2, 100)\bmod {10}^9 = 429\\,619\\,151$.
+Наприклад, $F(1, 3) = 4$, $F(1, 4) = 15$, $F(1, 5) = 46$, $F(2, 3) = 16$ та $F(2, 100)\bmod {10}^9 = 429\\,619\\,151$.
 
-Find the last 9 digits of $F(10, {10}^{12})$.
+Знайдіть останні 9 цифр в $F(10, {10}^{12})$.
 
 # --hints--
 

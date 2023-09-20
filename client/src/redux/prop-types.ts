@@ -312,6 +312,8 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
 };
 
 export type PortfolioProjectData = {

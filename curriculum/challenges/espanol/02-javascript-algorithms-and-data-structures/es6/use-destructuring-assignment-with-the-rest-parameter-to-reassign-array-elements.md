@@ -50,7 +50,7 @@ assert.deepEqual(_testArr, [1, 2, 3, 4, 5])
 assert(!code.match(/\.\s*slice\s*\(/));
 ```
 
-You should use the rest syntax.
+Debes utilizar el rest sintaxis.
 
 ```js
 assert.match(code, /\.\.\./);

@@ -119,6 +119,7 @@
     "core-certs-heading": "Obtenha certificações verificadas gratuitamente com o currículo principal do freeCodeCamp:",
     "professional-certs-heading": "Obtenha certificações profissionais gratuitas:",
     "interview-prep-heading": "Prepare-se para desenvolvedor em sua procura por emprego:",
+    "upcoming-heading": "Próximo currículo:",
     "faq": "Perguntas frequentes:",
     "faqs": [
       {
@@ -473,6 +474,8 @@
     "confirm-one-time": "Confirme a sua doação única de US${{usd}}:",
     "confirm-monthly": "Confirme a sua doação de US${{usd}}/mês:",
     "confirm-yearly": "Confirme a sua doação de US${{usd}}/ano:",
+    "confirm-multitier": "Doando ${{usd}}/mês:",
+    "edit-amount": "editar valor",
     "wallet-label": "Doação de ${{usd}} para o freeCodeCamp",
     "wallet-label-1": "Doação de ${{usd}}/mês para o freeCodeCamp",
     "your-donation": "Sua doação de US${{usd}} proporcionará {{hours}} horas de aprendizado para pessoas ao redor do mundo.",
@@ -489,6 +492,7 @@
     "progress-modal-cta-8": "Doe agora para nos ajudar a desenvolver novos cursos sobre ferramentas emergentes e conceitos de programação.",
     "progress-modal-cta-9": "Doe agora para apoiar o nosso currículo de matemática para desenvolvedores.",
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
+    "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
     "credit-card-2": "Ou doe com um cartão de crédito:",
@@ -929,10 +933,10 @@
     "nevermind": "Deixa para lá, eu não quero sair da minha conta"
   },
   "staging-warning": {
-    "heading": "Warning: This is an Early Access - Test Deployment",
-    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
-    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
-    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
-    "certain": "Accept and Dismiss"
+    "heading": "Aviso: este é um acesso antecipado - uma implantação de teste",
+    "p1": "Boas-vindas a você para testar este lançamento em um modo apenas para teste e para ter acesso rápido aos recursos da próxima plataforma. Por vezes, essas mudanças são referidas como a próxima, a beta, a de staging – nomes, em geral, intercambiáveis.",
+    "p2": "Agradecemos por relatar erros que encontra e ajuda para melhorar o freeCodeCamp.org.",
+    "p3": "Seu progresso PODE NÃO estar salvo na sua próxima visita. Qualquer certificação solicitada nessa implantação não é válida. Saiba mais <0>seguindo este link</0>.",
+    "certain": "Aceitar e dispensar"
   }
 }
