@@ -1,6 +1,6 @@
 ---
 id: 5900f51e1000cf542c510030
-title: 'Problem 432: Totient sum'
+title: 'Завдання 432: сума функції Ейлера'
 challengeType: 1
 forumTopicId: 302103
 dashedName: problem-432-totient-sum
@@ -8,7 +8,7 @@ dashedName: problem-432-totient-sum
 
 # --description--
 
-Let $S(n, m) = \sum φ(n × i)$ for $1 ≤ i ≤ m$. ($φ$ is Euler's totient function)
+Нехай $S(n, m) = \sum φ(n × i)$ за умови $1 ≤ i ≤ m$. ($φ$ є функцією Ейлера)
 
 Дано, що $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
 
