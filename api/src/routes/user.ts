@@ -1,20 +1,20 @@
-import _, { isEmpty } from 'lodash';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { isEmpty } from 'lodash';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
 import {
-  type ProgressTimestamp,
-  getCalendar,
-  getPoints
-} from '../utils/progress';
-import {
-  normalizeTwitter,
-  removeNulls,
+  normalizeChallenges,
   normalizeProfileUI,
-  normalizeChallenges
+  normalizeTwitter,
+  removeNulls
 } from '../utils/normalize';
+import {
+  getCalendar,
+  getPoints,
+  type ProgressTimestamp
+} from '../utils/progress';
 import { encodeUserToken } from '../utils/user-token';
 
 // Loopback creates a 64 character string for the user id, this customizes

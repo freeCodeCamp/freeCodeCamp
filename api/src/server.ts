@@ -1,5 +1,4 @@
 import { build } from './app';
-
 import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';
 
 const envToLogger = {

@@ -4,8 +4,8 @@ import {
   FastifyRequest
 } from 'fastify';
 
-import { AUTH0_DOMAIN } from '../utils/env';
 import { defaultUser } from '../utils/default-user';
+import { AUTH0_DOMAIN } from '../utils/env';
 
 declare module 'fastify' {
   interface Session {
