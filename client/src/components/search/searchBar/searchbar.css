@@ -63,6 +63,16 @@
   padding-block: 0 2px;
 }
 
+.ais-SearchBox-form button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+:is(.ais-SearchBox-form button:hover)
+  :is(.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon)
+  path {
+  fill: var(--gray-00);
+}
+
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
   z-index: 100;
