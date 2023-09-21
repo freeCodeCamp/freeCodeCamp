@@ -25,12 +25,10 @@ describe('failed update flushing', function () {
     cy.login();
   });
 
-  beforeEach(() => {
-    cy.preserveSession();
-  });
-
   it('should resubmit failed updates, check they are stored, then flush', () => {
     store.set(failedUpdatesKey, failedUpdates);
+    // First visit '/' to trigger the failed updates epic
+    cy.visit('/');
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
       .then((completedChallenges: ChallengeData[]) => {
