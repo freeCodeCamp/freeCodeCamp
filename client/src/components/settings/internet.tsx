@@ -148,9 +148,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderHelpBlock = (validationMessage: string) =>
-    validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
-
   renderCheck = (url: string, validation: string | null) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
@@ -198,7 +195,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={githubProfile}
                 />
                 {this.renderCheck(githubProfile, githubProfileValidation)}
-                {this.renderHelpBlock(githubProfileValidationMessage)}
+                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
               </FormGroup>
               <FormGroup
                 controlId='internet-linkedin'
@@ -212,7 +209,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={linkedin}
                 />
                 {this.renderCheck(linkedin, linkedinValidation)}
-                {this.renderHelpBlock(linkedinValidationMessage)}
+                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
               </FormGroup>
               <FormGroup
                 controlId='internet-picture'
@@ -226,7 +223,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={twitter}
                 />
                 {this.renderCheck(twitter, twitterValidation)}
-                {this.renderHelpBlock(twitterValidationMessage)}
+                <HelpBlock>{twitterValidationMessage}</HelpBlock>
               </FormGroup>
               <FormGroup
                 controlId='internet-website'
@@ -240,7 +237,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={website}
                 />
                 {this.renderCheck(website, websiteValidation)}
-                {this.renderHelpBlock(websiteValidationMessage)}
+                <HelpBlock>{websiteValidationMessage}</HelpBlock>
               </FormGroup>
             </div>
             <BlockSaveButton
