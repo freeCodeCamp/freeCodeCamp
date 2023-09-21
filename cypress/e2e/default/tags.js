@@ -20,11 +20,7 @@ const scripts = {
 
 describe('The Document Metadata', () => {
   describe('landing page', () => {
-    /**
-     * The `.get()` should be stateless and start from the root element,
-     * but for some reason it needs a page refresh to see each of the meta elements?
-     */
-    beforeEach(() => {
+    before(() => {
       cy.visit('/');
     });
 

@@ -31,10 +31,8 @@ const superBlocks = [
 ];
 
 describe('Landing page', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
   it('Should render', () => {
+    cy.visit('/');
     cy.title().should(
       'eq',
       'Learn to Code — For Free — Coding Courses for Busy People'
