@@ -56,8 +56,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/certificate/verify',
     {
-      schema: schemas.certificateVerify,
-      attachValidation: true
+      schema: schemas.certificateVerify
     },
     async (req, reply) => {
       const { certSlug } = req.body;
@@ -73,7 +72,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
         void reply.code(400);
-        throw {
+        return {
           type: 'danger',
           // message: 'Certificate type not found'
           message: 'flash.wrong-name'
@@ -90,7 +89,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
         if (!user) {
           void reply.code(500);
-          throw {
+          return {
             type: 'danger',
             // message: 'User not found'
             message: 'flash.went-wrong'
