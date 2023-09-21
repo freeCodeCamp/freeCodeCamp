@@ -31,7 +31,7 @@ describe('A certification,', function () {
 
     it('should be issued with the submission date', () => {
       cy.visit(certifiedUser);
-      const issued = `Developer Certification on August 3, 2018`;
+      const issued = `Developer Certification on August 2, 2018`;
       cy.get('[data-cy=issue-date]').should('include.text', issued);
     });
 
@@ -44,6 +44,8 @@ describe('A certification,', function () {
 
   describe("while viewing someone else's,", function () {
     before(() => {
+      cy.clearAllCookies();
+      cy.clearLocalStorage();
       cy.visit(certifiedUser);
     });
 

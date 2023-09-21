@@ -6,7 +6,8 @@ describe('Privacy terms', () => {
     cy.intercept('PUT', '/update-privacy-terms', () => {
       privacyTermsUpdated = true;
     }).as('updatePrivacyTerms');
-
+    cy.clearLocalStorage();
+    cy.clearCookies();
     // Seed dev user with `acceptedPrivacyTerms` unset
     cy.task('seed', ['--unset-privacy-terms']);
     // Go to the homepage and log in manually so we can assert the following:
@@ -36,6 +37,8 @@ describe('Privacy terms', () => {
       privacyTermsUpdated = true;
     }).as('updatePrivacyTerms');
 
+    cy.clearLocalStorage();
+    cy.clearCookies();
     // Seed dev user with `acceptedPrivacyTerms` unset
     cy.task('seed', ['--unset-privacy-terms']);
     // Go to the homepage and log in manually so we can assert the following:

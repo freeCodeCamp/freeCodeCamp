@@ -22,6 +22,8 @@ const navigationLinks: { [key: string]: string } = {
 
 describe('Default Navigation Menu', () => {
   it('should render the expected nav items.', () => {
+    cy.clearAllCookies();
+    cy.clearLocalStorage();
     cy.visit('/learn');
     testLink('Sign in', 'sign-in-button', true);
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
@@ -46,8 +48,10 @@ describe('Default Navigation Menu', () => {
 describe('Authenticated Navigation Menu', () => {
   before(() => {
     cy.clearCookies();
+    cy.clearLocalStorage();
     cy.task('seed');
     cy.login();
+    cy.visit('/');
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
   });
   it('should show default avatar.', () => {
@@ -72,6 +76,7 @@ describe('Authenticated User Sign Out', () => {
   });
   beforeEach(() => {
     cy.login();
+    cy.visit('/');
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
   });
   it('should sign out user', () => {
