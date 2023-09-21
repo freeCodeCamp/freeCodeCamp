@@ -12,14 +12,19 @@ const social = {
 
 const scripts = {
   mathjax: {
-    selector: 'body script[id="mathjax"]',
+    // this gets moved to the head?
+    selector: 'head script[id="mathjax"]',
     src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
   }
 };
 
 describe('The Document Metadata', () => {
   describe('landing page', () => {
-    before(() => {
+    /**
+     * The `.get()` should be stateless and start from the root element,
+     * but for some reason it needs a page refresh to see each of the meta elements?
+     */
+    beforeEach(() => {
       cy.visit('/');
     });
 
@@ -51,7 +56,7 @@ describe('The Document Metadata', () => {
         'freeCodeCamp.org'
       );
     });
-    it('has correct <meta>for twitter description', () => {
+    it('has correct <meta> for twitter description', () => {
       cy.get('head meta[name="twitter:description"]').should(
         'have.attr',
         'content',
