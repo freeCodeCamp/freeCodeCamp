@@ -3,7 +3,14 @@
 // redirectToCurrentChallenge and, instead, only report the current challenge id
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
-import curriculum from '../../../shared/config/curriculum.json';
+import { readFileSync } from 'fs';
+
+const CURRICULUM_PATH = '../../../shared/config/curriculum.json';
+
+// Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes anoying behaviour.
+const curriculum = JSON.parse(
+  readFileSync(CURRICULUM_PATH, 'utf-8')
+) as Curriculum;
 
 interface Block {
   challenges: {
@@ -14,9 +21,12 @@ interface Block {
   }[];
 }
 
-// It seems `curriculum.json` is too big for TS to type. So, without duplicating the types to define them, this should work.
-// Safety: Seeing as this runs during build (startup), an error will be thrown if anything is amiss.
-/* eslint-disable @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+type SuperBlock = {
+  blocks: Record<string, Block>;
+};
+
+type Curriculum = Record<string, SuperBlock>;
+
 /**
  * Get all challenges including all certifications as "challenges" (ids and tests).
  * @returns The whole curricula reduced to an array.
@@ -29,9 +39,12 @@ export function getChallenges(): Block['challenges'] {
     .reduce((acc: Block['challenges'], superBlock) => {
       const blockKeys = Object.keys(superBlock);
       const challengesForBlock = blockKeys.map(k => {
-        return superBlock[k].challenges;
+        const block = superBlock[k];
+        if (!block) {
+          return [];
+        }
+        return block.challenges;
       });
       return [...acc, ...challengesForBlock.flat()];
     }, []);
 }
-/* eslint-enable @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
