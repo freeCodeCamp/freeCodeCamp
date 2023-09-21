@@ -49,7 +49,7 @@
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
   height: var(--header-element-size);
-  width: 26px;
+  width: var(--header-element-size);
   background-color: var(--gray-75);
 }
 
