@@ -640,9 +640,6 @@ a[class^='ais-'] {
   width: 16px;
   height: 16px;
 }
-.ais-SearchBox-submitIcon > path {
-  fill: var(--gray-15);
-}
 .ais-Hits {
   position: absolute;
   left: 0;
