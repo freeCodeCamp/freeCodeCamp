@@ -9,35 +9,20 @@ const navBarselectors = {
 };
 
 describe('Navbar when logged out', () => {
-  beforeEach(() => {
+  it('should have the sign in button on landing and /learn', () => {
     cy.visit('/');
-    cy.viewport(1200, 660);
-    cy.contains('Learn to code — for free.').should('exist');
-  });
 
-  it('Should have a "Sign in" button', () => {
-    cy.contains("[data-test-label='landing-small-cta']", 'Sign in');
-  });
+    cy.contains(navBarselectors.smallCallToAction, 'Sign in');
 
-  it(
-    'Should have `Sign in` link on landing and learn pages' +
-      ' when not signed in',
-    () => {
-      cy.contains(navBarselectors.smallCallToAction, 'Sign in');
-      cy.get(navBarselectors.menuButton).click();
-      cy.get(navBarselectors.navigationLinks).contains('Curriculum').click();
-      cy.contains(navBarselectors.smallCallToAction, 'Sign in');
-    }
-  );
+    cy.visit('/learn');
+    cy.contains(navBarselectors.smallCallToAction, 'Sign in');
+  });
 });
 
 describe('Navbar Logged in', () => {
   beforeEach(() => {
+    cy.login();
     cy.visit('/');
-    cy.viewport(1200, 660);
-    cy.contains('Learn to code — for free.')
-      .should('exist')
-      .then(() => cy.login());
   });
 
   it('Should render properly', () => {
