@@ -89,12 +89,13 @@ describe('server', () => {
       });
     });
 
-    test('should have Access-Control-Allow-(Headers+Credentials) headers', async () => {
+    test('should have CORS headers', async () => {
       const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
-          'Origin, X-Requested-With, Content-Type, Accept',
-        'access-control-allow-credentials': 'true'
+          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token',
+        'access-control-allow-credentials': 'true',
+        'access-control-allow-methods': 'GET, PUT, POST, DELETE'
       });
     });
   });
