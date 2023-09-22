@@ -29,12 +29,10 @@ describe('failed update flushing', function () {
     store.set(failedUpdatesKey, failedUpdates);
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
-      .then((completedChallenges: ChallengeData[]) => {
-        const completedIds: string[] = getCompletedIds(completedChallenges);
-        failedUpdates.forEach(failedUpdate => {
-          expect(completedIds).not.to.include(failedUpdate.payload.id);
-        });
-      });
+      .then(
+        (completedChallenges: ChallengeData[]) =>
+          expect(completedChallenges).to.be.empty
+      );
 
     cy.intercept('http://localhost:3000/modern-challenge-completed').as(
       'completed'
