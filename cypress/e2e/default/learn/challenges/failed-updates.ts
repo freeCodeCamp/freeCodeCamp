@@ -22,15 +22,11 @@ function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
 describe('failed update flushing', function () {
   before(() => {
     cy.task('seed');
-    cy.clearLocalStorage();
-    cy.clearCookies();
     cy.login();
   });
 
   it('should resubmit failed updates, check they are stored, then flush', () => {
     store.set(failedUpdatesKey, failedUpdates);
-    // First visit '/' to trigger the failed updates epic
-    cy.visit('/');
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
       .then((completedChallenges: ChallengeData[]) => {
@@ -44,7 +40,7 @@ describe('failed update flushing', function () {
       'completed'
     );
     cy.wrap(store.get(failedUpdatesKey)).should('deep.equal', failedUpdates);
-    cy.reload();
+    cy.visit('/');
     cy.wait('@completed');
     // if we don't wait for both requests to complete, we have a race condition
     cy.wait('@completed');
