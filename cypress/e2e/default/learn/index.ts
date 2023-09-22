@@ -24,6 +24,8 @@ const superBlockNames = [
   'Project Euler'
 ];
 
+// TODO: None of the tests in this spec test behaviour and would be better as a
+// unit tests.
 describe('Learn Landing page (not logged in)', () => {
   it('Should render', () => {
     cy.visit(learnUrl.index);
@@ -32,15 +34,9 @@ describe('Learn Landing page (not logged in)', () => {
       'eq',
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
-  });
-
-  it('Has the correct heading for an unauthenticated User', () => {
-    cy.visit(learnUrl.index);
 
     cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
-  });
 
-  it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
         `${challengerSelector.curriculumMap} > ul > li > a`
@@ -51,35 +47,39 @@ describe('Learn Landing page (not logged in)', () => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
       });
     });
-  });
-});
 
-describe('Quotes', () => {
-  beforeEach(() => {
-    cy.login();
-  });
-
-  it('Should show a quote', () => {
+    // quotes
     cy.get('blockquote').within(() => {
       cy.get('q').should('be.visible');
     });
-  });
 
-  it('Should show quote author', () => {
+    // quote author
     cy.get('blockquote').within(() => {
       cy.get('cite').should('be.visible');
     });
   });
 });
 
-describe('Superblocks and Blocks', () => {
-  beforeEach(() => {
+describe('Learn Landing page (logged in)', () => {
+  it('Should render', () => {
     cy.login();
-  });
+    cy.visit(learnUrl.index);
 
-  it('Has all superblocks visible', () => {
-    cy.wrap(superBlockNames.slice(1)).each((name: string) => {
-      cy.contains(name).should('be.visible');
+    cy.title().should(
+      'eq',
+      'Learn to Code — For Free — Coding Courses for Busy People'
+    );
+
+    cy.contains('h1', 'Welcome back, Development User.');
+
+    // quote
+    cy.get('blockquote').within(() => {
+      cy.get('q').should('be.visible');
+    });
+
+    // quote author
+    cy.get('blockquote').within(() => {
+      cy.get('cite').should('be.visible');
     });
   });
 });
