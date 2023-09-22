@@ -31,7 +31,9 @@ describe('A certification,', function () {
 
     it('should be issued with the submission date', () => {
       cy.visit(certifiedUser);
-      const issued = `Developer Certification on August 2, 2018`;
+      // This is intended to work in UTC. If running locally, this may fail due
+      // to timezone differences.
+      const issued = `Developer Certification on August 3, 2018`;
       cy.get('[data-cy=issue-date]').should('include.text', issued);
     });
 
