@@ -9,7 +9,7 @@ dashedName: step-24
 
 If you attempt to add another task now, you'll see the values you entered for the previous task. So, you need to clear the input fields after adding a task.
 
-Instead of clearing the input fields one by one, you can create a function where you clear them, then call that function whenever you want to clear them again.
+Instead of clearing the input fields one by one, you can create a function where you clear those fields, and then call that function whenever you want to clear the fields again.
 
 Use arrow syntax to create a `reset` function and set it to a pair of curly braces.
 
