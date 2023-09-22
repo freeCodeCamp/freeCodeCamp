@@ -2,8 +2,6 @@ describe('CodeAlly cert challenge', function () {
   describe('before completing the project', function () {
     before(() => {
       cy.task('seed');
-      cy.clearAllCookies();
-      cy.clearLocalStorage();
       cy.login();
       cy.visit(
         '/learn/relational-database/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database'
@@ -22,9 +20,7 @@ describe('CodeAlly cert challenge', function () {
   describe('after completing the project', function () {
     before(() => {
       cy.task('seed', ['certified-user']);
-      cy.clearLocalStorage();
-      cy.clearAllCookies();
-      cy.login();
+      cy.login('certified-user');
       cy.visit(
         '/learn/relational-database/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database'
       );

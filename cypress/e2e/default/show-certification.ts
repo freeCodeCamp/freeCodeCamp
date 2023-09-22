@@ -7,7 +7,7 @@ describe('A certification,', function () {
 
   describe('while viewing your own,', function () {
     beforeEach(() => {
-      cy.login();
+      cy.login('certified-user');
     });
     it('should render a LinkedIn button', function () {
       cy.visit(certifiedUser);

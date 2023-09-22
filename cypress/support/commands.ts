@@ -1,5 +1,5 @@
-const login = () => {
-  cy.session('generic-user', () => {
+const login = (user?: string) => {
+  cy.session(user ?? 'new-user', () => {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
     cy.contains('Welcome back');
