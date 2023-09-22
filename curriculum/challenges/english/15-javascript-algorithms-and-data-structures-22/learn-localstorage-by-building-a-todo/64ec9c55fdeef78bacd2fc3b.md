@@ -1,8 +1,8 @@
 ---
 id: 64ec9c55fdeef78bacd2fc3b
-title: Step 23
+title: Step 24
 challengeType: 0
-dashedName: step-23
+dashedName: step-24
 ---
 
 # --description--
@@ -15,10 +15,16 @@ Use arrow syntax to create a `reset` function and set it to a pair of curly brac
 
 # --hints--
 
-Test 1
+You should use `const` and arrow syntax to create a `reset` function.
 
 ```js
+assert.match(code, /const\s+reset\s*=\s*\(\)\s*=>\s*\{\s*/)
+```
 
+Your `reset` function should be empty.
+
+```js
+assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
 ```
 
 # --seed--

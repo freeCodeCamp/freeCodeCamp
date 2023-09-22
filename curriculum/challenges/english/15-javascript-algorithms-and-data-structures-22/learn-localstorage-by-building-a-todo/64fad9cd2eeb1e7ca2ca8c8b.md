@@ -1,8 +1,8 @@
 ---
 id: 64fad9cd2eeb1e7ca2ca8c8b
-title: Step 30
+title: Step 31
 challengeType: 0
-dashedName: step-30
+dashedName: step-31
 ---
 
 # --description--
@@ -11,10 +11,16 @@ Use arrow syntax to create an `addTaskToTaskContainer` function. Then move the `
 
 # --hints--
 
-Test 1
+You should use `const` and arrow syntax to create a `addTaskToTaskContainer` function.
 
 ```js
+assert.match(code, /const\s*addTaskToTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
+```
 
+You should move `taskData.forEach()` and its content into the `addTaskToTaskContainer()` function.
+
+```js
+assert.match(code, /const\s+addTaskToTaskContainer\s*=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\(\{id,\s*title,\s*date,\s*description\}\)\s*=>\s*\(\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s*class="task"\s*id="\$\{id\}">\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s*type="button"\s*class="btn">Edit<\/button>\s*<button\s*type="button"\s*class="btn">Delete<\/button>\s*<\/div>\s*`\)\s*\)\);/)
 ```
 
 # --seed--
@@ -288,7 +294,7 @@ let currentTask = {};
 const addOrUpdateTask = () => {
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
   const taskObj = {
-    id: `${titleInput.value.toLowerCase().split(' ').join('-')}-${Date.now()}`,
+    id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
     title: titleInput.value,
     date: dateInput.value,
     description: descriptionInput.value,
@@ -333,18 +339,6 @@ discardBtn.addEventListener("click", () => {
 
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
-  const taskObj = {
-    id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
-    title: titleInput.value,
-    date: dateInput.value,
-    description: descriptionInput.value,
-  };
-
-   if (dataArrIndex === -1) {
-    taskData.unshift(taskObj);
-  }
 
   taskData.forEach(({id, title, date, description}) => (
     (tasksContainer.innerHTML += `
