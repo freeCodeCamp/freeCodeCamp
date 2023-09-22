@@ -22,8 +22,6 @@ const navigationLinks: { [key: string]: string } = {
 
 describe('Default Navigation Menu', () => {
   it('should render the expected nav items.', () => {
-    cy.clearAllCookies();
-    cy.clearLocalStorage();
     cy.visit('/learn');
     testLink('Sign in', 'sign-in-button', true);
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
@@ -38,6 +36,8 @@ describe('Default Navigation Menu', () => {
   });
 
   it('should close the menu and focus on the Menu button when the Esc key is pressed while the navigation menu is expanded and an item in the menu is focused', () => {
+    cy.visit('/learn');
+    cy.get(navigationItems['toggle-button']).should('be.visible').click();
     cy.get(navigationItems['navigation-list']).contains('Curriculum').focus();
     cy.focused().type('{esc}');
     cy.get(navigationItems['navigation-list']).should('not.be.visible');
@@ -47,8 +47,6 @@ describe('Default Navigation Menu', () => {
 
 describe('Authenticated Navigation Menu', () => {
   before(() => {
-    cy.clearCookies();
-    cy.clearLocalStorage();
     cy.task('seed');
     cy.login();
     cy.visit('/');
@@ -71,7 +69,6 @@ describe('Authenticated Navigation Menu', () => {
 
 describe('Authenticated User Sign Out', () => {
   before(() => {
-    cy.clearCookies();
     cy.task('seed');
   });
   beforeEach(() => {
@@ -98,18 +95,15 @@ describe('Authenticated User Sign Out', () => {
 
 describe('Donor Navigation Menu', () => {
   before(() => {
-    cy.clearCookies();
     cy.task('seed', ['--donor']);
+  });
+  it('should show donor avatar border and thank you message.', () => {
     cy.login();
     cy.visit('/donate');
-  });
-  it('should show donor avatar border.', () => {
     cy.get(navigationItems['avatar-container']).should(
       'have.class',
       'gold-border'
     );
-  });
-  it('should show thank you message.', () => {
     cy.get(navigationItems['navigation-list']).contains('Thanks for donating');
   });
 });

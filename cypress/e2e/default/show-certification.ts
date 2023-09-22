@@ -46,23 +46,15 @@ describe('A certification,', function () {
 
   describe("while viewing someone else's,", function () {
     before(() => {
-      cy.clearAllCookies();
-      cy.clearLocalStorage();
       cy.visit(certifiedUser);
     });
 
-    it('should display certificate', function () {
+    it('should display the certificate without share buttons', function () {
       cy.contains('successfully completed').should('exist');
       cy.contains('Responsive Web Design').should('exist');
-    });
-
-    it('should not render a LinkedIn button', function () {
       cy.contains('Add this certification to my LinkedIn profile').should(
         'not.exist'
       );
-    });
-
-    it('should not render a Twitter button', function () {
       cy.contains('Share this certification on Twitter').should('not.exist');
     });
   });
