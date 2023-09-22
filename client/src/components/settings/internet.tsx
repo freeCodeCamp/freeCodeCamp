@@ -34,6 +34,10 @@ type InternetState = {
   originalValues: Socials;
 };
 
+function Info({ message }: { message: string }) {
+  return <>{message ? <HelpBlock>{message}</HelpBlock> : null}</>;
+}
+
 class InternetSettings extends Component<InternetProps, InternetState> {
   static displayName: string;
   constructor(props: InternetProps) {
@@ -195,7 +199,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={githubProfile}
                 />
                 {this.renderCheck(githubProfile, githubProfileValidation)}
-                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
+                <Info message={githubProfileValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-linkedin'
@@ -209,7 +213,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={linkedin}
                 />
                 {this.renderCheck(linkedin, linkedinValidation)}
-                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
+                <Info message={linkedinValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-picture'
@@ -223,7 +227,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={twitter}
                 />
                 {this.renderCheck(twitter, twitterValidation)}
-                <HelpBlock>{twitterValidationMessage}</HelpBlock>
+                <Info message={twitterValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-website'
@@ -237,7 +241,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={website}
                 />
                 {this.renderCheck(website, websiteValidation)}
-                <HelpBlock>{websiteValidationMessage}</HelpBlock>
+                <Info message={websiteValidationMessage} />
               </FormGroup>
             </div>
             <BlockSaveButton
