@@ -54,20 +54,16 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).should('not.exist');
   });
 
-  it(
-    'focuses on the submit button after tests passed',
-    { browser: '!firefox' },
-    () => {
-      cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
-      cy.get(selectors.checkLowerJawButton).should('not.be.focused');
-      cy.get(selectors.checkLowerJawButton).click();
-      cy.get(selectors.submitLowerJawButton).should('be.focused');
-    }
-  );
+  it('focuses on the submit button after tests passed', () => {
+    cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
+    cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+    cy.get(selectors.checkLowerJawButton).click();
+    cy.get(selectors.submitLowerJawButton).should('be.focused');
+  });
 
   it(
     'brings back the check button after reset',
-    { browser: '!firefox' },
+    { browser: '!chrome' }, // TODO: seems to be a bug in Chrome, try again when a new version is released
     () => {
       cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
       cy.get(selectors.checkLowerJawButton).should('not.be.focused');
@@ -86,15 +82,11 @@ describe('Challenge with multifile editor', () => {
     }
   );
 
-  it(
-    'checks hotkeys when instruction is focused',
-    { browser: '!firefox' },
-    () => {
-      cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
-      cy.get(selectors.instructionContainer)
-        .click('topRight')
-        .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
-      cy.get(selectors.submitLowerJawButton).should('not.be.focused');
-    }
-  );
+  it('checks hotkeys when instruction is focused', () => {
+    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+    cy.get(selectors.instructionContainer)
+      .click('topRight')
+      .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
+    cy.get(selectors.submitLowerJawButton).should('not.be.focused');
+  });
 });
