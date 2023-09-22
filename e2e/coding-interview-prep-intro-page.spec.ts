@@ -31,7 +31,9 @@ test.describe('Certification intro page', () => {
 
   test('Should have relevant course description in the superblock', async () => {
     const description = page.getByTestId('superblock-description-box');
-    const childParagraphs = description.locator('p');
+    const childParagraphs = description.getByTestId(
+      'superblock-description-para'
+    );
 
     // container should be visible
     await expect(description).toBeVisible();

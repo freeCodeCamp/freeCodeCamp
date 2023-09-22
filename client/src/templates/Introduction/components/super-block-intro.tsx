@@ -39,7 +39,7 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
       <Spacer size='medium' />
       <div data-playwright-test-label='superblock-description-box'>
         {superBlockIntroText.map((str, i) => (
-          <p key={i}>{str}</p>
+          <p data-playwright-test-label='superblock-description-para' key={i}>{str}</p>
         ))}
       </div>
       {superBlockNoteText && (
