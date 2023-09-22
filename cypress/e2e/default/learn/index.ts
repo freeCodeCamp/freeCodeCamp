@@ -26,60 +26,58 @@ const superBlockNames = [
 
 // TODO: None of the tests in this spec test behaviour and would be better as a
 // unit tests.
-describe('Learn Landing page (not logged in)', () => {
-  it('Should render', () => {
-    cy.visit(learnUrl.index);
+describe('Learn Landing page', () => {
+  before(() => {
+    cy.task('seed');
+  });
+  describe('for signed out user', () => {
+    it('should render', () => {
+      cy.visit(learnUrl.index);
 
-    cy.title().should(
-      'eq',
-      'Learn to Code — For Free — Coding Courses for Busy People'
-    );
-
-    cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
-
-    cy.document().then(document => {
-      const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
-        `${challengerSelector.curriculumMap} > ul > li > a`
+      cy.title().should(
+        'eq',
+        'Learn to Code — For Free — Coding Courses for Busy People'
       );
-      expect(superBlocks).to.have.length(15);
 
-      superBlocks.forEach((superBlock, idx) => {
-        expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
+      cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
+
+      cy.document().then(document => {
+        const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
+          `${challengerSelector.curriculumMap} > ul > li > a`
+        );
+        expect(superBlocks).to.have.length(15);
+
+        superBlocks.forEach((superBlock, idx) => {
+          expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
+        });
       });
-    });
 
-    // quotes
-    cy.get('blockquote').within(() => {
-      cy.get('q').should('be.visible');
-    });
-
-    // quote author
-    cy.get('blockquote').within(() => {
-      cy.get('cite').should('be.visible');
+      // quotes are only shown to logged in users
+      cy.get('blockquote').should('not.exist');
     });
   });
-});
 
-describe('Learn Landing page (logged in)', () => {
-  it('Should render', () => {
-    cy.login();
-    cy.visit(learnUrl.index);
+  describe('for signed in user', () => {
+    it('should render', () => {
+      cy.login();
+      cy.visit(learnUrl.index);
 
-    cy.title().should(
-      'eq',
-      'Learn to Code — For Free — Coding Courses for Busy People'
-    );
+      cy.title().should(
+        'eq',
+        'Learn to Code — For Free — Coding Courses for Busy People'
+      );
 
-    cy.contains('h1', 'Welcome back, Development User.');
+      cy.contains('h1', 'Welcome back, Development User.');
 
-    // quote
-    cy.get('blockquote').within(() => {
-      cy.get('q').should('be.visible');
-    });
+      // quote
+      cy.get('blockquote').within(() => {
+        cy.get('q').should('be.visible');
+      });
 
-    // quote author
-    cy.get('blockquote').within(() => {
-      cy.get('cite').should('be.visible');
+      // quote author
+      cy.get('blockquote').within(() => {
+        cy.get('cite').should('be.visible');
+      });
     });
   });
 });
