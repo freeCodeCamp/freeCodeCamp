@@ -27,7 +27,7 @@ const runningOutput = '// running tests';
 const finishedOutput = '// tests completed';
 
 describe('Classic challenge', function () {
-  before(() => {
+  beforeEach(() => {
     cy.visit(outputLocations.index);
   });
 
@@ -42,13 +42,11 @@ describe('Classic challenge', function () {
   it('shows test output when the tests are run', () => {
     // first wait for the editor to load
     cy.get(outputSelectors.editor, { timeout: 15000 });
-    cy.get(outputSelectors.runTestsButton)
-      .click()
-      .then(() => {
-        cy.get(selectors.dataCy.outputText)
-          .contains(runningOutput)
-          .contains(finishedOutput);
-      });
+    cy.get(outputSelectors.runTestsButton).click();
+
+    cy.get(selectors.dataCy.outputText)
+      .contains(runningOutput)
+      .contains(finishedOutput);
   });
 
   it('shows test output when the tests are triggered by the keyboard', () => {
@@ -63,19 +61,14 @@ describe('Classic challenge', function () {
 });
 
 describe('jQuery challenge', function () {
-  before(() => {
-    cy.visit(outputLocations.jQuery);
-  });
-
   it('renders the default output text', () => {
+    cy.visit(outputLocations.jQuery);
     cy.title().should(
       'eq',
       'jQuery: Target HTML Elements with Selectors Using jQuery | freeCodeCamp.org'
     );
     cy.get(selectors.dataCy.outputText).contains(defaultOutput);
-  });
 
-  it('should not show a reference error', () => {
     cy.wait(5000);
     cy.get(selectors.dataCy.outputText).should(
       'not.contain',
@@ -85,12 +78,10 @@ describe('jQuery challenge', function () {
 });
 
 describe('Custom output for JavaScript objects', function () {
-  beforeEach(() => {
+  it('Set and map objects', () => {
     cy.visit(outputLocations.js);
-    focusEditor().type('{ctrl}a').clear();
-  });
 
-  it('Set object', () => {
+    focusEditor().type('{ctrl}a').clear();
     focusEditor().type(
       'const set = new Set();{enter}set.add(1);{enter}set.add("set");{enter}set.add(10);{enter}console.log(set);'
     );
@@ -98,9 +89,8 @@ describe('Custom output for JavaScript objects', function () {
       'contain',
       'Set(3) {1, set, 10}'
     );
-  });
 
-  it('Map object', () => {
+    focusEditor().type('{ctrl}a').clear();
     focusEditor().type(
       'const map = new Map();{enter}map.set("first", 1);{enter}map.set("second", 2);{enter}map.set("other", "map");{enter}console.log(map);'
     );

@@ -159,7 +159,7 @@ jobs:
         run: cp sample.env .env
 
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: docker compose up -d
