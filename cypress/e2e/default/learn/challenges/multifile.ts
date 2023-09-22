@@ -11,16 +11,15 @@ const selectors = {
 };
 
 describe('Challenge with multifile editor', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit(location);
   });
-
-  it('renders the file tab buttons', () => {
+  it('renders correctly', () => {
+    // it renders the file tab buttons
     cy.get(selectors.monacoTabs).contains('index.html');
     cy.get(selectors.monacoTabs).contains('styles.css');
-  });
 
-  it('checks for correct text at different widths', () => {
+    // it checks for correct text at different widths
     cy.viewport(768, 660);
     cy.get(selectors.checkLowerJawButton).contains(
       'Check Your Code (Ctrl + Enter)'
@@ -43,10 +42,7 @@ describe('Challenge with multifile editor', () => {
     cy.get('[data-cy=failing-test-feedback]').should('not.exist');
   });
 
-  // Page will change after this test. If your test requires page used in previous
-  // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
-    cy.visit(location);
     cy.focused()
       .click()
       .type('{end}{enter}<meta charset="UTF-8" />')
@@ -62,7 +58,6 @@ describe('Challenge with multifile editor', () => {
     'focuses on the submit button after tests passed',
     { browser: '!firefox' },
     () => {
-      cy.visit(location);
       cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
       cy.get(selectors.checkLowerJawButton).should('not.be.focused');
       cy.get(selectors.checkLowerJawButton).click();
@@ -74,7 +69,6 @@ describe('Challenge with multifile editor', () => {
     'brings back the check button after reset',
     { browser: '!firefox' },
     () => {
-      cy.visit(location);
       cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
       cy.get(selectors.checkLowerJawButton).should('not.be.focused');
       cy.get(selectors.checkLowerJawButton).click();
@@ -96,7 +90,6 @@ describe('Challenge with multifile editor', () => {
     'checks hotkeys when instruction is focused',
     { browser: '!firefox' },
     () => {
-      cy.reload();
       cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
       cy.get(selectors.instructionContainer)
         .click('topRight')
