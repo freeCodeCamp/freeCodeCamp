@@ -9,7 +9,8 @@ describe('Top contributor in user profile', () => {
   });
 
   it('Should show `Top Contributor` information', () => {
-    cy.visit('/developmentuser');
+    // It it does 404, but still shows the profile.
+    cy.visit('/developmentuser', { failOnStatusCode: false });
     // The following line is only required if you want to test it in development
     // cy.contains('Preview custom 404 page').click();
     cy.contains('Top Contributor')
