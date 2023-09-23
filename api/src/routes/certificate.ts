@@ -52,7 +52,8 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
-  // TODO: Do not throw flashes. Return response unless 500
+  // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
+  // OR: Always respond with current user - full user object - not random pieces.
   fastify.put(
     '/certificate/verify',
     {
@@ -95,24 +96,34 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             message: 'flash.went-wrong'
           } as const;
         }
+        const { completedChallenges } = user;
+        const isCertMap = getUserIsCertMap(removeNulls(user));
 
         // TODO: Discuss if this is a requirement still
         if (!user.name) {
           void reply.code(400);
           return {
-            type: 'info',
-            message: 'flash.name-needed'
+            response: {
+              type: 'info',
+              message: 'flash.name-needed'
+            } as const,
+            isCertMap,
+            completedChallenges
           } as const;
         }
 
         if (user[certType]) {
           void reply.code(200);
           return {
-            type: 'info',
-            message: 'flash.already-claimed',
-            variables: {
-              name: certName
-            }
+            response: {
+              type: 'info',
+              message: 'flash.already-claimed',
+              variables: {
+                name: certName
+              }
+            } as const,
+            isCertMap,
+            completedChallenges
           } as const;
         }
 
@@ -147,9 +158,9 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        const isCertMap = getUserIsCertMap(removeNulls(updatedUser));
+        const updatedIsCertMap = getUserIsCertMap(removeNulls(updatedUser));
 
-        const certMap = Object.entries(isCertMap);
+        const certMap = Object.entries(updatedIsCertMap);
         // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
         const shouldSendCertifiedEmailToCamper =
           isEmail(updatedUser.email) &&
@@ -193,7 +204,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               name: certName
             } as const
           } as const,
-          isCertMap,
+          updatedIsCertMap,
           completedChallenges: updatedUser.completedChallenges
         } as const;
       } catch (e) {
