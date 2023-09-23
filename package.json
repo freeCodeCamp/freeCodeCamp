@@ -107,7 +107,7 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.5",
-    "@types/lodash": "4.14.198",
+    "@types/lodash": "4.14.199",
     "@types/node": "18.17.17",
     "@types/store": "2.0.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
