@@ -44,19 +44,15 @@ describe('Classic challenge', function () {
     cy.get(outputSelectors.editor, { timeout: 15000 });
     cy.get(outputSelectors.runTestsButton).click();
 
-    cy.get(selectors.dataCy.outputText)
-      .contains(runningOutput)
-      .contains(finishedOutput);
+    cy.get(selectors.dataCy.outputText).contains(runningOutput);
+    cy.get(selectors.dataCy.outputText).contains(finishedOutput);
   });
 
   it('shows test output when the tests are triggered by the keyboard', () => {
-    focusEditor()
-      .type('{ctrl}{enter}')
-      .then(() => {
-        cy.get(selectors.dataCy.outputText)
-          .contains(runningOutput)
-          .contains(finishedOutput);
-      });
+    focusEditor().type('{ctrl}{enter}');
+
+    cy.get(selectors.dataCy.outputText).contains(runningOutput);
+    cy.get(selectors.dataCy.outputText).contains(finishedOutput);
   });
 });
 
