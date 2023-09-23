@@ -150,12 +150,15 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         const isCertMap = getUserIsCertMap(removeNulls(updatedUser));
 
         const certMap = Object.entries(isCertMap);
-        // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified`
+        // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
         const shouldSendCertifiedEmailToCamper =
           isEmail(updatedUser.email) &&
-          currentCertifications.every(cert =>
-            certMap.some(([name, isClaimed]) => name === cert && isClaimed)
-          );
+          currentCertifications.every(cert => {
+            const certIsClaimed = certMap.some(
+              ([name, isClaimed]) => name === certSlugTypeMap[cert] && isClaimed
+            );
+            return certIsClaimed;
+          });
 
         if (shouldSendCertifiedEmailToCamper) {
           const notifyUser = {
@@ -169,8 +172,15 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               name: updatedUser.name as string
             })
           };
-          // TODO(POST-MVP): Consider not blocking the updated response if email fails. Ensure Camper knows they **have** claimed the cert, but the email failed to send.
-          await fastify.sendEmail(notifyUser);
+
+          // Failed email should not prevent successful response.
+          try {
+            // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
+            await fastify.sendEmail(notifyUser);
+          } catch (e) {
+            fastify.log.error(e);
+            // TODO: Log to Sentry
+          }
         }
 
         void reply.code(200);
@@ -187,6 +197,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           completedChallenges: updatedUser.completedChallenges
         } as const;
       } catch (e) {
+        fastify.log.error(e);
         void reply.code(500);
         throw {
           type: 'danger',
