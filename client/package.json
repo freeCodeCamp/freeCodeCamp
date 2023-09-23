@@ -147,7 +147,7 @@
     "@total-typescript/ts-reset": "^0.4.0",
     "@types/chai": "^4.3.4",
     "@types/enzyme": "^3.10.12",
-    "@types/enzyme-adapter-react-16": "1.0.6",
+    "@types/enzyme-adapter-react-16": "1.0.7",
     "@types/jest": "29.5.5",
     "@types/jquery": "^3.5.16",
     "@types/js-yaml": "4.0.5",
