@@ -257,8 +257,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       '@types/express-session':
-        specifier: 1.17.7
-        version: 1.17.7
+        specifier: 1.17.8
+        version: 1.17.8
       '@types/jsonwebtoken':
         specifier: ^9.0.2
         version: 9.0.2
@@ -11127,8 +11127,8 @@ packages:
       '@types/range-parser': 1.2.4
       '@types/send': 0.17.1
 
-  /@types/express-session@1.17.7:
-    resolution: {integrity: sha512-L25080PBYoRLu472HY/HNCxaXY8AaGgqGC8/p/8+BYMhG0RDOLQ1wpXOpAzr4Gi5TGozTKyJv5BVODM5UNyVMw==}
+  /@types/express-session@1.17.8:
+    resolution: {integrity: sha512-bFF7/3wOldMn+56XyFRGY9ZzCr3JWhNSP2ajMPgTlbZR6BQOCHdAbNA9W5dMBPgMywpIP4zkmhxP6Opm/NRYMQ==}
     dependencies:
       '@types/express': 4.17.17
     dev: true
