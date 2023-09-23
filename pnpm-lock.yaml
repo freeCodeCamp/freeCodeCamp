@@ -1061,8 +1061,8 @@ importers:
         specifier: ^2.8.13
         version: 2.8.13
       '@types/express':
-        specifier: 4.17.17
-        version: 4.17.17
+        specifier: 4.17.18
+        version: 4.17.18
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -11141,6 +11141,14 @@ packages:
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.2
 
+  /@types/express@4.17.18:
+    resolution: {integrity: sha512-Sxv8BSLLgsBYmcnGdGjjEjqET2U+AKAdCRODmMiq02FgjwuV75Ut85DRpvFjyw/Mk0vgUOliGRU0UUmuuZHByQ==}
+    dependencies:
+      '@types/body-parser': 1.19.2
+      '@types/express-serve-static-core': 4.17.36
+      '@types/qs': 6.9.7
+      '@types/serve-static': 1.15.2
+
   /@types/get-port@3.2.0:
     resolution: {integrity: sha512-TiNg8R1kjDde5Pub9F9vCwZA/BNW9HeXP5b9j7Qucqncy/McfPZ6xze/EyBdXS5FhMIGN6Fx3vg75l5KHy3V1Q==}
 
@@ -11393,7 +11401,7 @@ packages:
   /@types/passport@1.0.12:
     resolution: {integrity: sha512-QFdJ2TiAEoXfEQSNDISJR1Tm51I78CymqcBa8imbjo6dNNu+l2huDxxbDEIoFIwOSKMkOfHEikyDuZ38WwWsmw==}
     dependencies:
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
     dev: false
 
   /@types/prettier@2.7.3:
@@ -11545,7 +11553,7 @@ packages:
   /@types/serve-index@1.9.1:
     resolution: {integrity: sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg==}
     dependencies:
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
 
   /@types/serve-static@1.15.2:
     resolution: {integrity: sha512-J2LqtvFYCzaj8pVYKw8klQXrLLk7TBZmQ4ShlcdkELFKGwGMfevMLneMMRkMgZxotOD9wg497LpC7O8PcvAmfw==}
@@ -21295,7 +21303,7 @@ packages:
       - supports-color
     dev: true
 
-  /http-proxy-middleware@2.0.6(@types/express@4.17.17):
+  /http-proxy-middleware@2.0.6(@types/express@4.17.18):
     resolution: {integrity: sha512-ya/UeJ6HVBYxrgYotAZo1KvPWlgB48kUJLDePFeneHsVujFaW5WNj2NgWCAE//B1Dl02BIfYlpNgBy8Kf8Rjmw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -21304,7 +21312,7 @@ packages:
       '@types/express':
         optional: true
     dependencies:
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
       '@types/http-proxy': 1.17.11
       http-proxy: 1.18.1
       is-glob: 4.0.3
@@ -34054,7 +34062,7 @@ packages:
     dependencies:
       '@types/bonjour': 3.5.10
       '@types/connect-history-api-fallback': 1.5.0
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
       '@types/serve-index': 1.9.1
       '@types/serve-static': 1.15.2
       '@types/sockjs': 0.3.33
@@ -34069,7 +34077,7 @@ packages:
       express: 4.18.2
       graceful-fs: 4.2.11
       html-entities: 2.4.0
-      http-proxy-middleware: 2.0.6(@types/express@4.17.17)
+      http-proxy-middleware: 2.0.6(@types/express@4.17.18)
       ipaddr.js: 2.1.0
       launch-editor: 2.6.0
       open: 8.4.2
