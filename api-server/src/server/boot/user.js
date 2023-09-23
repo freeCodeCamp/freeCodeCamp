@@ -124,7 +124,7 @@ function createPostMsUsername(app) {
 
     if (!msTranscriptUrl) {
       return res.status(400).json({
-        type: 'danger',
+        type: 'error',
         message: 'flash.ms.transcript.link-err-1'
       });
     }
@@ -138,7 +138,7 @@ function createPostMsUsername(app) {
       if (!msApiRes.ok) {
         return res
           .status(404)
-          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-2' });
+          .json({ type: 'error', message: 'flash.ms.transcript.link-err-2' });
       }
 
       const { userName } = await msApiRes.json();
@@ -146,7 +146,7 @@ function createPostMsUsername(app) {
       if (!userName) {
         return res
           .status(500)
-          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-3' });
+          .json({ type: 'error', message: 'flash.ms.transcript.link-err-3' });
       }
 
       // Don't create if username is used by another fCC account
@@ -157,7 +157,7 @@ function createPostMsUsername(app) {
       if (usernameUsed) {
         return res
           .status(403)
-          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-4' });
+          .json({ type: 'error', message: 'flash.ms.transcript.link-err-4' });
       }
 
       await MsUsername.destroyAll({ userId: req.user.id });
@@ -172,7 +172,7 @@ function createPostMsUsername(app) {
       if (!newMsUsername?.id) {
         return res
           .status(500)
-          .json({ type: 'danger', message: 'flash.ms.transcript.link-err-5' });
+          .json({ type: 'error', message: 'flash.ms.transcript.link-err-5' });
       }
 
       return res.json({ msUsername: userName });
@@ -180,7 +180,7 @@ function createPostMsUsername(app) {
       log(e);
       return res
         .status(500)
-        .json({ type: 'danger', message: 'flash.ms.transcript.link-err-6' });
+        .json({ type: 'error', message: 'flash.ms.transcript.link-err-6' });
     }
   };
 }
@@ -188,7 +188,7 @@ function createPostMsUsername(app) {
 function deleteMsUsernameResponse(req, res) {
   if (!req.msUsernameDeleted) {
     return res.status(500).json({
-      type: 'danger',
+      type: 'error',
       message: 'flash.ms.transcript.unlink-err'
     });
   }

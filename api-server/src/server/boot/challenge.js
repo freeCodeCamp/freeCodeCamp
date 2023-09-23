@@ -703,7 +703,7 @@ function createMsTrophyChallengeCompleted(app) {
       if (!msUser || !msUser.msUsername) {
         return res
           .status(403)
-          .json({ type: 'danger', message: 'flash.ms.trophy.err-1' });
+          .json({ type: 'error', message: 'flash.ms.trophy.err-1' });
       }
 
       const { msUsername } = msUser;
@@ -715,7 +715,7 @@ function createMsTrophyChallengeCompleted(app) {
       if (!challenge) {
         return res
           .status(400)
-          .json({ type: 'danger', message: 'flash.ms.trophy.err-2' });
+          .json({ type: 'error', message: 'flash.ms.trophy.err-2' });
       }
 
       const { msTrophyId = '' } = challenge;
@@ -725,7 +725,7 @@ function createMsTrophyChallengeCompleted(app) {
 
       if (!msApiRes.ok || msTrophyJson.awardType !== 'Trophy') {
         return res.status(403).json({
-          type: 'danger',
+          type: 'error',
           message: 'flash.ms.trophy.err-3',
           variables: {
             msUsername
@@ -764,7 +764,7 @@ function createMsTrophyChallengeCompleted(app) {
     } catch (e) {
       log(e);
       return res.status(500).json({
-        type: 'danger',
+        type: 'error',
         message: 'flash.ms.trophy.err-4'
       });
     }
