@@ -5,6 +5,11 @@ export const standardErrorMessage = {
   message: FlashMessages.WentWrong
 };
 
+export const msTrophyError = {
+  type: 'danger',
+  message: FlashMessages.MsTrophyErr
+};
+
 export const reallyWeirdErrorMessage = {
   type: 'danger',
   message: FlashMessages.ReallyWeird

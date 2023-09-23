@@ -13,6 +13,7 @@ import {
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   standardErrorMessage,
+  msTrophyError,
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
@@ -57,7 +58,7 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points, message, examResults } = data;
+      const { savedChallenges, points, type, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -84,8 +85,8 @@ function postChallenge(update, username) {
         submitChallengeComplete()
       ];
 
-      if (message && challengeType === challengeTypes.msTrophy) {
-        actions = [createFlashMessage(data), submitChallengeError()];
+      if (challengeType === challengeTypes.msTrophy && type === 'error') {
+        actions = [createFlashMessage(msTrophyError), submitChallengeError()];
       } else if (challengeType === challengeTypes.msTrophy) {
         actions.push(createFlashMessage(msTrophyVerified));
       }

@@ -8,19 +8,19 @@ import { setMsUsername, setIsProcessing } from './actions';
 const message = {
   linked: {
     type: 'success',
-    message: FlashMessages.MsTranscriptLinked
+    message: FlashMessages.MsLinked
   },
   linkErr: {
     type: 'danger',
-    message: FlashMessages.MsTranscriptErr6
+    message: FlashMessages.MsLinkErr
   },
   unlinked: {
     type: 'info',
-    message: FlashMessages.MsTranscriptUnlinked
+    message: FlashMessages.MsUnlinked
   },
   unlinkErr: {
     type: 'danger',
-    message: FlashMessages.MsTranscriptUnlinkErr
+    message: FlashMessages.MsUnlinkErr
   }
 };
 
@@ -28,14 +28,12 @@ function* linkMsUsernameSaga({ payload: { msTranscriptUrl } }) {
   try {
     const { data } = yield call(postMsUsername, { msTranscriptUrl });
 
-    yield put(setIsProcessing(false));
-
-    if (data?.message) {
-      yield put(createFlashMessage(data));
-    } else if (data?.msUsername) {
+    if (data && Object.prototype.hasOwnProperty.call(data, 'msUsername')) {
       yield put(setMsUsername(data.msUsername));
+      yield put(setIsProcessing(false));
       yield put(createFlashMessage(message.linked));
     } else {
+      yield put(setIsProcessing(false));
       yield put(createFlashMessage(message.linkErr));
     }
   } catch {
@@ -48,12 +46,7 @@ function* unlinkMsUsernameSaga() {
   try {
     const { data } = yield call(deleteMsUsername);
 
-    if (data?.message) {
-      yield put(createFlashMessage(data));
-    } else if (
-      data &&
-      Object.prototype.hasOwnProperty.call(data, 'msUsername')
-    ) {
+    if (data && Object.prototype.hasOwnProperty.call(data, 'msUsername')) {
       yield put(setMsUsername(data.msUsername));
       yield put(createFlashMessage(message.unlinked));
     } else {

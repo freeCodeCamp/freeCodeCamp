@@ -20,13 +20,11 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
     removeFlashMessage();
   }
 
-  const flashStyle = type === 'error' ? 'danger' : type;
-
   return (
     <TransitionGroup>
       <CSSTransition classNames='flash-message' key={id} timeout={500}>
         <Alert
-          bsStyle={flashStyle}
+          bsStyle={type}
           className='flash-message'
           closeLabel={t('buttons.close')}
           onDismiss={handleClose}
