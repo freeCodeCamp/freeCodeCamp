@@ -71,7 +71,7 @@ Observe que a chave `download_language` precisa ser definida como código do idi
 
 Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-First, visit the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file to add the language to the list of available languages and configure the values. Existem vários objetos aqui.
+Primeiro, visite o arquivo [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
 
 - `Languages`: adiciona o novo idioma no enum `Languages`, do mesmo modo que com os outros. O valor da string aqui será usado no arquivo `.env` para definir o idioma da build posteriormente.
 - `availableLangs`: adiciona a nova propriedade do enum `Languages` aos dois arrays, `client` e `curriculum`.
@@ -319,7 +319,7 @@ Quando estes arquivos estiverem no local certo, você deve poder usar `pnpm run 
 
 Quando seu PR anterior for mesclado e sua VM para seu idioma estiver pronta, faça outro PR para mostrar seu idioma no menu de navegação.
 
-In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Retire-o do array agora.
+No arquivo [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts), você incluiu seu idioma no array `hiddenLangs` no PR anterior. Retire-o do array agora.
 
 ```js
 export const hiddenLangs = []; // Remove seu idioma do array

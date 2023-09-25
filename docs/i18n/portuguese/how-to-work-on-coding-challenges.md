@@ -570,18 +570,18 @@ pnpm run update-challenge-order
 
 Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.
 
-## Troubleshooting
+## Solução de problemas
 
-### Infinite Loop Detected
+### Loop infinito detectado
 
-If you see the following error in the console while previewing a challenge:
+Se você ver o seguinte erro no console ao pré-visualizar um desafio:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+Isso significa que o plug-in de proteção de loops encontrou um loop de longa duração ou uma função recursiva. Se o desafio precisar fazer isso (por exemplo, contém um loop de eventos que deve ser executado indefinidamente), então você pode impedir que o plug-in seja usado na visualização. Para fazer isso, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
 
-If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+Se os testes demandam muitos cálculos, você poderá ver esse erro quando eles forem executados. Se isso acontecer, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
 
-It's not typically necessary to have both set to true, so only set them as needed.
+Normalmente, não é necessário ter os dois definidos como true, Defina-os, apenas, conforme necessário.

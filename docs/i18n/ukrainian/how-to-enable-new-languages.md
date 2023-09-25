@@ -71,7 +71,7 @@
 
 Щоб дозволити кодовій базі функціонувати на обраній вами мові, потрібно зробити декілька кроків.
 
-First, visit the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file to add the language to the list of available languages and configure the values. У ньому розміщено декілька об’єктів.
+Спочатку відвідайте файл [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts), щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
 
 - `Languages`: додайте нову мову до запису `Languages`, схоже до інших. Значення рядка пізніше буде використане у файлі `.env`, щоб налаштувати збірку мови.
 - `availableLangs`: додайте нову властивість із запису `Languages` до масивів `client` та `curriculum`.
@@ -319,7 +319,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 Як тільки попередній PR буде об’єднаний, а VM для вашої мови буде готовою, створіть ще один PR, щоб додати нову мову до навігаційного меню.
 
-In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Тепер видаліть її з масиву.
+У файлі [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) ви додали мову до масиву `hiddenLangs` у попередньому PR. Тепер видаліть її з масиву.
 
 ```js
 export const hiddenLangs = []; // видаліть свою мову з масиву
