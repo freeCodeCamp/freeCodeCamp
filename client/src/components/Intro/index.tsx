@@ -82,7 +82,11 @@ const Intro = ({
     return (
       <>
         <Spacer size='medium' />
-        <h1 id='content-start' className='text-center'>
+        <h1
+          id='content-start'
+          className='text-center'
+          data-playwright-test-label='learn-heading'
+        >
           {t('learn.heading')}
         </h1>
         <Spacer size='medium' />

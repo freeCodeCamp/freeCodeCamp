@@ -474,6 +474,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "تبرع ${{usd}} لـ freeCodeCamp",
     "wallet-label-1": "تبرع ${{usd}} / شهر لـ freeCodeCamp",
     "your-donation": "سيوفر تبرعك{{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم.",
@@ -490,6 +492,7 @@
     "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
     "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
     "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "ممتاز، لقد انتهيت لتوك من {{block}}.",
     "credit-card": "بطاقة ائتمان",
     "credit-card-2": "أو التبرع ببطاقة ائتمانية:",
@@ -747,6 +750,7 @@
     "verify": "Verify this certification at:",
     "issued": "صدر",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
@@ -930,8 +934,8 @@
     "nevermind": "لا أريد تسجيل الخروج"
   },
   "staging-warning": {
-    "heading": "Warning: This is an Early Access - Test Deployment",
-    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"

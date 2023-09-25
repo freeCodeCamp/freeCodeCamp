@@ -14,7 +14,7 @@ For instance, for $k = 5$, we see that $\\{a_5, b_5, c_5\\}$ is approximately $\
 
 Let $S(n) = \displaystyle\sum_{p = 1}^n \sum_{k = 1}^n {(a_k + b_k)}^p {(b_k + c_k)}^p {(c_k + a_k)}^p$ for all integers $p$, $k$ such that $1 ≤ p, k ≤ n$.
 
-Interestingly, $S(n)$ is always an integer. For example, $S(4) = 51\\,160$.
+Interestingly, $S(n)$ is always an integer. Наприклад, $S(4) = 51\\,160$.
 
 Find $S({10}^6) \text{ modulo } 1\\,000\\,000\\,007$.
 

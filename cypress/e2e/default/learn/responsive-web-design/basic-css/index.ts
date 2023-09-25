@@ -60,18 +60,13 @@ const warningMessage =
   'experience.';
 
 describe('Basic Css Introduction page', function () {
-  it('renders', () => {
+  it('renders a warning about browser extensions links to the lessons ', () => {
     cy.visit(locations.index);
 
     cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
-  });
 
-  it('renders a warning user about extensions', () => {
-    cy.visit(locations.index);
     cy.get(selectors.warningMessage).contains(warningMessage);
-  });
 
-  it('renders a lesson index', () => {
     lessonNames.forEach(name => {
       cy.get(selectors.tableOfContents).contains('a', name);
     });

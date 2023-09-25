@@ -1,4 +1,4 @@
-import { Table, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
@@ -7,6 +7,7 @@ import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
+import { Table } from '@freecodecamp/ui';
 
 import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
@@ -349,16 +350,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </tr>
           </thead>
           <tbody>
-            {renderProjectsFor({
-              certName,
-              isCert: getUserIsCertMap()[certName]
-            })}
+            <ProjectsFor
+              certName={certName}
+              isCert={getUserIsCertMap()[certName]}
+            />
           </tbody>
         </Table>
       </FullWidthRow>
     );
   };
-  function renderProjectsFor({
+
+  function ProjectsFor({
     certName,
     isCert
   }: {
@@ -377,20 +379,20 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return certsToProjects[certName]
-      .map(({ link, title, id }) => (
-        <tr className='project-row' key={id}>
-          <td className='project-title col-sm-8 col-xs-8'>
-            <Link to={link}>
-              {t(`certification.project.title.${title}`, title)}
-            </Link>
-          </td>
-          <td className='project-solution col-sm-4 col-xs-4'>
-            {getProjectSolution(id, title)}
-          </td>
-        </tr>
-      ))
-      .concat([
+    return (
+      <>
+        {certsToProjects[certName].map(({ link, title, id }) => (
+          <tr className='project-row' key={id}>
+            <td className='project-title col-sm-8 col-xs-8'>
+              <Link to={link}>
+                {t(`certification.project.title.${title}`, title)}
+              </Link>
+            </td>
+            <td className='project-solution col-sm-4 col-xs-4'>
+              {getProjectSolution(id, title)}
+            </td>
+          </tr>
+        ))}
         <tr key={`cert-${certSlug}-button`}>
           <td colSpan={2}>
             <Button
@@ -406,7 +408,8 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </Button>
           </td>
         </tr>
-      ]);
+      </>
+    );
   }
 
   const { t } = props;

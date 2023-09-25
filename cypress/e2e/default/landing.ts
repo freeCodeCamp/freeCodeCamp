@@ -39,29 +39,40 @@ describe('Landing page', () => {
     );
     cy.contains(landingPageElements.callToAction, "Get started (it's free)");
     cy.get(landingPageElements.callToAction).should('have.length', 4);
-  });
 
-  it('Has visible header and sub-header', () => {
+    // it has header and sub-header'
     cy.contains(landingPageElements.heading, 'Learn to code — for free.');
     cy.contains('Build projects.').should('be.visible');
     cy.contains('Earn certifications.').should('be.visible');
-
     cy.contains(
       'Since 2014, more than 40,000 freeCodeCamp.org ' +
         'graduates have gotten jobs at tech companies including:'
     ).should('be.visible');
-  });
 
-  it('Has 5 brand logos', () => {
+    // it has 5 brand logos
     cy.get('.logo-row').children().its('length').should('eq', 5);
-  });
 
-  it('Has `as seens as` section', () => {
-    cy.contains('Build projects.').should('be.visible');
-    cy.get('.big-heading').siblings().get('svg');
+    // it has logos of news publications
+    cy.get('.big-heading').contains('As seen in').siblings().get('svg');
+
+    // it has only current certifications
+    cy.get(landingPageElements.curriculumBtns).its('length').should('eq', 15);
+    cy.wrap(superBlocks).each((cert: LandingPageLogs) => {
+      cy.get(landingPageElements.curriculumBtns).contains(cert);
+    });
+
+    // it has testimonials
+    cy.get(landingPageElements.testimonials)
+      .children()
+      .its('length')
+      .should('eq', 3);
+
+    // it has FAQ section
+    cy.get(landingPageElements.faq).its('length').should('eq', 9);
   });
 
   it('Has a visible large image on large viewports', function () {
+    cy.visit('/');
     cy.viewport(1200, 660)
       .get(landingPageElements.landingPageImage)
       .should('be.visible');
@@ -69,23 +80,5 @@ describe('Landing page', () => {
     cy.viewport(1199, 660)
       .get(landingPageElements.landingPageImage)
       .should('not.exist');
-  });
-
-  it('Has links to all superblocks', function () {
-    cy.get(landingPageElements.curriculumBtns).its('length').should('eq', 15);
-    cy.wrap(superBlocks).each((cert: LandingPageLogs) => {
-      cy.get(landingPageElements.curriculumBtns).contains(cert);
-    });
-  });
-
-  it('Has 3 testimonial cards', function () {
-    cy.get(landingPageElements.testimonials)
-      .children()
-      .its('length')
-      .should('eq', 3);
-  });
-
-  it('Has FAQ section', function () {
-    cy.get(landingPageElements.faq).its('length').should('eq', 9);
   });
 });

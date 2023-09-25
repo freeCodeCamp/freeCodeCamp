@@ -20,11 +20,13 @@ import {
   userSelector,
   isDonatingSelector,
   signInLoadingSelector,
-  donationFormStateSelector
+  donationFormStateSelector,
+  completedChallengesSelector
 } from '../../redux/selectors';
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import { DonateFormState } from '../../redux/types';
+import type { CompletedChallenge } from '../../redux/prop-types';
 import {
   CENTS_IN_DOLLAR,
   convertToTimeContributed,
@@ -77,6 +79,7 @@ type DonateFormProps = {
   theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
+  completedChallenges: CompletedChallenge[];
 };
 
 const mapStateToProps = createSelector(
@@ -85,19 +88,22 @@ const mapStateToProps = createSelector(
   isDonatingSelector,
   donationFormStateSelector,
   userSelector,
+  completedChallengesSelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes }
+    { email, theme }: { email: string; theme: Themes },
+    completedChallenges: CompletedChallenge[]
   ) => ({
     isSignedIn,
     isDonating,
     showLoading,
     donationFormState,
     email,
-    theme
+    theme,
+    completedChallenges
   })
 );
 
@@ -199,7 +205,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isSignedIn,
       isDonating,
       editAmount,
-      selectedDonationAmount
+      selectedDonationAmount,
+      completedChallenges
     } = this.props;
     const donationAmount: DonationAmount =
       selectedDonationAmount || defaultAmount;
@@ -207,8 +214,12 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const walletlabel = `${t('donate.wallet-label-1', {
       usd: donationAmount / CENTS_IN_DOLLAR
     })}:`;
-    console.log(formattedAmountLabel(donationAmount));
-    const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
+
+    const threeChallengesCompleted = completedChallenges.length >= 3;
+
+    const showMinimalPayments =
+      isSignedIn && (isMinimalForm || !isDonating) && threeChallengesCompleted;
+
     const confirmationMessage = t('donate.confirm-monthly', {
       usd: formattedAmountLabel(donationAmount)
     });

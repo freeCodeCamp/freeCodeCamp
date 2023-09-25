@@ -25,26 +25,20 @@ describe('failed update flushing', function () {
     cy.login();
   });
 
-  beforeEach(() => {
-    cy.preserveSession();
-  });
-
   it('should resubmit failed updates, check they are stored, then flush', () => {
     store.set(failedUpdatesKey, failedUpdates);
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
-      .then((completedChallenges: ChallengeData[]) => {
-        const completedIds: string[] = getCompletedIds(completedChallenges);
-        failedUpdates.forEach(failedUpdate => {
-          expect(completedIds).not.to.include(failedUpdate.payload.id);
-        });
-      });
+      .then(
+        (completedChallenges: ChallengeData[]) =>
+          expect(completedChallenges).to.be.empty
+      );
 
     cy.intercept('http://localhost:3000/modern-challenge-completed').as(
       'completed'
     );
     cy.wrap(store.get(failedUpdatesKey)).should('deep.equal', failedUpdates);
-    cy.reload();
+    cy.visit('/');
     cy.wait('@completed');
     // if we don't wait for both requests to complete, we have a race condition
     cy.wait('@completed');

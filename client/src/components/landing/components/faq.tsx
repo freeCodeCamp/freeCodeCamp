@@ -15,7 +15,7 @@ const Faq = (): JSX.Element => {
 
   return (
     <Col sm={8} smOffset={2} xs={10} xsOffset={1}>
-      <h1 className='big-heading'>{t('landing.faq')}</h1>
+      <h2 className='big-heading'>{t('landing.faq')}</h2>
       <Spacer size='small' />
       {faqItems.map((faq, i) => (
         <div

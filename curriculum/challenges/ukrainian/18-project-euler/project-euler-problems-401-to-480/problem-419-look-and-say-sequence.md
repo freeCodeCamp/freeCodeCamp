@@ -1,6 +1,6 @@
 ---
 id: 5900f5101000cf542c510022
-title: 'Problem 419: Look and say sequence'
+title: 'Завдання 419: послідовність «глянь і скажи»'
 challengeType: 1
 forumTopicId: 302088
 dashedName: problem-419-look-and-say-sequence
@@ -8,27 +8,27 @@ dashedName: problem-419-look-and-say-sequence
 
 # --description--
 
-The look and say sequence goes 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
+Послідовність «глянь і скажи» виглядає так: 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
 
-The sequence starts with 1 and all other members are obtained by describing the previous member in terms of consecutive digits.
+Послідовність починається з 1, а кожен наступний елемент отримуємо шляхом опису повторюваних цифр попереднього члена.
 
-It helps to do this out loud:
+Краще рахувати вголос:
 
-1 is 'one one' $→ 11$
+1 — «одна одиниця» $→ 11$
 
-11 is 'two ones' $→ 21$
+11 — «дві одиниці» $→ 21$
 
-21 is 'one two and one one' $→ 1211$
+21 — «одна двійка та одна одиниця» $→ 1211$
 
-1211 is 'one one, one two and two ones' $→ 111221$
+1211 — «одна одиниця, одна двійка та дві одиниці» $→ 111221$
 
-111221 is 'three ones, two twos and one one' $→ 312211$
+111221 — «три одиниці, дві двійки та одна одиниця» $→ 312211$
 
 ...
 
-Define $A(n)$, $B(n)$ and $C(n)$ as the number of ones, twos and threes in the $n$'th element of the sequence respectively. One can verify that $A(40) = 31\\,254$, $B(40) = 20\\,259$ and $C(40) = 11\\,625$.
+Визначте $A(n)$, $B(n)$ та $C(n)$ як кількість одиниць, двійок та трійок в $n$-ому елементі послідовності. Можна довести, що $A(40) = 31\\,254$, $B(40) = 20\\,259$ та $C(40) = 11\\,625$.
 
-Знайдіть $A(n)$, $B(n)$ та $C(n)$ за умови $n = {10}^{12}$. Give your answer modulo $2^{30}$ as a string and separate your values for $A$, $B$ and $C$ by a comma. E.g. for $n = 40$ the answer would be `31254,20259,11625`.
+Знайдіть $A(n)$, $B(n)$ та $C(n)$ за умови $n = {10}^{12}$. Надайте відповідь за модулем $2^{30}$ у вигляді рядка і розділіть значення $A$, $B$ та $C$ комою. Наприклад, для $n = 40$ відповідь така: `31254,20259,11625`.
 
 # --hints--
 

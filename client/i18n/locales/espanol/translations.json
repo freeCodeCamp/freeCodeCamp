@@ -474,6 +474,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "${{usd}} donación a freeCodeCamp",
     "wallet-label-1": "${{usd}} / donación mensual a freeCodeCamp",
     "your-donation": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
@@ -490,6 +492,7 @@
     "progress-modal-cta-8": "Dona ahora para ayudarnos a desarrollar nuevos cursos sobre herramientas emergentes y conceptos de programación.",
     "progress-modal-cta-9": "Donar ahora para apoyar nuestro plan de estudios de matemáticas para los desarrolladores.",
     "progress-modal-cta-10": "Dona ahora para ayudarnos a desarrollar certificaciones profesionales gratuitas para todos.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
     "credit-card-2": "O dona con una tarjeta de crédito:",
@@ -747,6 +750,7 @@
     "verify": "Verify this certification at:",
     "issued": "Emitido",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte de esta certificación Legacy Full Stack, {{user}} completó las siguientes certificaciones:",
       "heading": "Como parte de esta certificación, {{user}} construyó los siguientes proyectos y consiguió que se aprobaran todas las suites automatizadas de pruebas:",
@@ -930,8 +934,8 @@
     "nevermind": "No importa, no quiero cerrar la sesión"
   },
   "staging-warning": {
-    "heading": "Warning: This is an Early Access - Test Deployment",
-    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"

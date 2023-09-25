@@ -1,6 +1,6 @@
 ---
 id: 5900f50b1000cf542c51001d
-title: 'Problem 414: Kaprekar constant'
+title: 'Завдання 414: стала Капрекара'
 challengeType: 1
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
@@ -8,33 +8,33 @@ dashedName: problem-414-kaprekar-constant
 
 # --description--
 
-6174 is a remarkable number; if we sort its digits in increasing order and subtract that number from the number you get when you sort the digits in decreasing order, we get $7641 - 1467 = 6174$.
+6174 — доволі цікаве число. Якщо розмістити його цифри у порядку зростання, отримаємо 1467; якщо розмістити його цифри у порядку спадання, вийде 7641. Результатом віднімання двох отриманих чисел буде $7641 - 1467 = 6174$.
 
-Even more remarkable is that if we start from any 4 digit number and repeat this process of sorting and subtracting, we'll eventually end up with 6174 or immediately with 0 if all digits are equal.
+Цікавішим є те, що якщо взяти будь-яке чотиризначне число та повторити попередні дії сортування цифр та віднімання, ми отримаємо 6174 або одразу 0, якщо всі цифри однакові.
 
-This also works with numbers that have less than 4 digits if we pad the number with leading zeroes until we have 4 digits.
+Те саме відбувається з числами, які складаються з меншої кількості цифр. Але для цього до них потрібно додати початкові нулі, щоб утворити чотиризначні числа.
 
-E.g. let's start with the number 0837:
+Наприклад, почнемо з числа 0837:
 
 $$\begin{align}   & 8730 - 0378 = 8352 \\\\
   & 8532 - 2358 = 6174 \end{align}$$
 
-6174 is called the Kaprekar constant. The process of sorting and subtracting and repeating this until either 0 or the Kaprekar constant is reached is called the Kaprekar routine.
+6174 називається сталою Капрекара. Процес сортування цифр, віднімання та повторення, поки не отримаємо 0 або сталу Капрекара, називається перетворенням Капрекара.
 
-We can consider the Kaprekar routine for other bases and number of digits. Unfortunately, it is not guaranteed a Kaprekar constant exists in all cases; either the routine can end up in a cycle for some input numbers or the constant the routine arrives at can be different for different input numbers. However, it can be shown that for 5 digits and a base $b = 6t + 3 ≠ 9$, a Kaprekar constant exists.
+Перетворення Капрекара можна розглянути для інших систем числення та кількості цифр. На жаль, стала Капрекара існує не у всіх випадках. Перетворення може закінчитись циклом або стала, отримана в результаті перетворення, може відрізнятись для різних вхідних чисел. Однак можна довести, що стала Капрекара існує для 5 цифр з основою $b = 6t + 3 ≠ 9$.
 
-E.g. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)\_{21}$
+Наприклад, основа 15: ${(10, 4, 14, 9, 5)}\_{15}$ основа 21: $(14, 6, 20, 13, 7)\_{21}$
 
-Define $C_b$ to be the Kaprekar constant in base $b$ for 5 digits. Define the function $sb(i)$ to be:
+Визначимо $C_b$ як сталу Капрекара з основою $b$ для 5 цифр. Визначте функцію $sb(i)$ рівною:
 
-- 0 if $i = C_b$ or if $i$ written in base $b$ consists of 5 identical digits
-- the number of iterations it takes the Kaprekar routine in base $b$ to arrive at $C_b$, otherwise
+- 0, якщо $i = C_b$ або $i$ записано в основі $b$ з 5 однакових цифр
+- кількості повторень, необхідних для перетворення Капрекара в основі $b$, щоб отримати $C_b$ в інших випадках
 
-Note that we can define $sb(i)$ for all integers $i &lt; b^5$. If $i$ written in base $b$ takes less than 5 digits, the number is padded with leading zero digits until we have 5 digits before applying the Kaprekar routine.
+Зверніть увагу, що ми можемо визначити $sb(i)$ для всіх цілих чисел $i &lt; b^5$. Якщо $i$, записане в основі $b$, складається з меншої кількості цифр, до нього додаються початкові нулі, доки воно не стане п’ятизначним. Лише тоді можна застосувати перетворення Капрекара.
 
-Define $S(b)$ as the sum of $sb(i)$ for $0 &lt; i &lt; b^5$. E.g. $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
+Визначте $S(b)$ як суму $sb(i)$ за умови $0 &lt; i &lt; b^5$. Наприклад, $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
 
-Знайдіть суму $S(6k + 3)$ за умови $2 ≤ k ≤ 300$. Give the last 18 digits as your answer.
+Знайдіть суму $S(6k + 3)$ за умови $2 ≤ k ≤ 300$. У відповіді запишіть 18 останніх цифр.
 
 # --hints--
 

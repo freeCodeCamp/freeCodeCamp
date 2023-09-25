@@ -314,8 +314,15 @@ li.disabled > a {
   padding: 0 10px;
 }
 
-.donation-modal h1 {
+.donation-modal h2 {
   font-family: var(--font-family-sans-serif);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.3rem;
+  }
 }
 
 .donation-modal [role='tablist'] button {

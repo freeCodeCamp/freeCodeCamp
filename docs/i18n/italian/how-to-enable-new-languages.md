@@ -71,7 +71,7 @@ Nota che la chiave `download_language` deve essere impostata sul codice della li
 
 Ci sono alcuni step da svolgere per consentire il build del codebase nella lingua scelta.
 
-First, visit the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file to add the language to the list of available languages and configure the values. Qui ci sono diversi oggetti.
+First, visit the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file to add the language to the list of available languages and configure the values. Qui ci sono diversi oggetti.
 
 - `Languages`: Aggiunge la nuova lingua all'enum `Languages` simile agli altri. Il valore della stringa qui sarà usato nel file `.env` per impostare un build della lingua in seguito.
 - `availableLangs`: Aggiunge la nuova proprietà dall'enum `Languages` a entrambi gli array `client` e `curriculum`.
@@ -319,7 +319,7 @@ Una volta che questi saranno in posizione, dovresti essere in grado di eseguire 
 
 When your prior PR is merged and the VM for your language is ready, make another PR to show your language in the navigation menu.
 
-In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
+In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file, you have included your language in `hiddenLangs` array in the prior PR. Remove it from the array now.
 
 ```js
 export const hiddenLangs = []; // Remove your language from the array
