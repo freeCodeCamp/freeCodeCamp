@@ -10,6 +10,8 @@
   "template": "",
   "required": [],
   "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
   "superOrder": 4,
   "isBeta": true,
   "challengeOrder": [
