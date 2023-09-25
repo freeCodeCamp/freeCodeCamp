@@ -718,12 +718,26 @@
     "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
     "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
-    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
-    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
-    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
-    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-    "ms-unlinked": "The link to your Microsoft username has been removed.",
-    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    }
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
