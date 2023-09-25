@@ -11,11 +11,10 @@ const editorElements = {
 describe('multifileCertProjects', function () {
   before(() => {
     cy.task('seed');
-    cy.login();
   });
 
   beforeEach(() => {
-    cy.preserveSession();
+    cy.login();
     cy.visit(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
