@@ -35,7 +35,7 @@ type InternetState = {
 };
 
 function Info({ message }: { message: string }) {
-  return <>{message ? <HelpBlock>{message}</HelpBlock> : null}</>;
+  return message ? <HelpBlock>{message}</HelpBlock> : null;
 }
 
 class InternetSettings extends Component<InternetProps, InternetState> {
