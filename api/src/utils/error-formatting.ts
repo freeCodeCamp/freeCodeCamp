@@ -62,7 +62,7 @@ export const formatCertificationValidation = (
   const error = getError(errors);
 
   return error.instancePath === '' &&
-    Object.hasOwn(certTypes, error.params.missingProperty as CertLogs)
+    Object.values(certTypes).includes(error.params.missingProperty as CertLogs)
     ? {
         type: 'error',
         message:
