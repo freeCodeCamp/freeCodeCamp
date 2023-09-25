@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What type of action is being performed when changing a `float` into an `int`?

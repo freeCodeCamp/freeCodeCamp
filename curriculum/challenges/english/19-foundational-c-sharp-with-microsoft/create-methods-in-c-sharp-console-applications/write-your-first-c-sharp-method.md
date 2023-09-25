@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following correctly declares a method?

@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Write Your First C# Code](https://learn.microsoft.com/training/modules/csharp-write-first/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What is the difference between `Console.Write` and `Console.WriteLine`?

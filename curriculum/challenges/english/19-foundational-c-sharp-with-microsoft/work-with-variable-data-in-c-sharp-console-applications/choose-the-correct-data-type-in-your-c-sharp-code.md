@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?

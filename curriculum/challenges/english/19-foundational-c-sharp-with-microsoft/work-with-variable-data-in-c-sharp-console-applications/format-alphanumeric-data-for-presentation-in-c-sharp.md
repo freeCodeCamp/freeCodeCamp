@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expected output?

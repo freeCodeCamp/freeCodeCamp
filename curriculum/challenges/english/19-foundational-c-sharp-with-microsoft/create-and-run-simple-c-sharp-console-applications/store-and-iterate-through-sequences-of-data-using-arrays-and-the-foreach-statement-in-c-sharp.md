@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C#](https://learn.microsoft.com/training/modules/csharp-arrays/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following foreach statements is syntactically correct?

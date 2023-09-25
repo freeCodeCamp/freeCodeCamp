@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Plan a Petting Zoo Visit](https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/) guided project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What is the purpose of defining an optional parameter in a method?

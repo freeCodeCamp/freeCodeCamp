@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Create C# Methods that Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following options correctly returns a `string` value?

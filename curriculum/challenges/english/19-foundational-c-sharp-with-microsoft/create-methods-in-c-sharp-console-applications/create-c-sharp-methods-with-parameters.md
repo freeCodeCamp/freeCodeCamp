@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Given the method signature,

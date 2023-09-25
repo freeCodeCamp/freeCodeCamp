@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Iterate Through a Code Block Using the `for` Statement in C#](https://learn.microsoft.com/training/modules/csharp-for/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following `for` statements is correct?

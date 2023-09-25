@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Perform Basic Operations on Numbers in C#](https://learn.microsoft.com/training/modules/csharp-basic-operations/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What is the value of the following result?

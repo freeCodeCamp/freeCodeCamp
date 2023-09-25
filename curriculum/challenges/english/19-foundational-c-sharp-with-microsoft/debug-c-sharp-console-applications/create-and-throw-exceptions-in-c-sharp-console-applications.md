@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Create and Throw Exceptions in C# Console Applications](https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 When should a method throw an exception?

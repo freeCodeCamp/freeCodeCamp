@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Create a Mini-Game](https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/) challenge project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?

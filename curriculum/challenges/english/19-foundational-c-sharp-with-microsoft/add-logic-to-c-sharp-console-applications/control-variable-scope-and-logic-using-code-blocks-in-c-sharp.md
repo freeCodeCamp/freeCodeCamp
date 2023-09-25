@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Control Variable Scope and Logic Using Code Blocks in C#](https://learn.microsoft.com/training/modules/csharp-code-blocks/) module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following describes the affect of a `using` statement?

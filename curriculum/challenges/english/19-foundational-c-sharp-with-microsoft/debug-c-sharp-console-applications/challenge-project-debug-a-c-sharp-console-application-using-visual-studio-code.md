@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Debug a C# Console Application using Visual Studio Code](https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/) challenge project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following options can be used set a breakpoint in Visual Studio Code?

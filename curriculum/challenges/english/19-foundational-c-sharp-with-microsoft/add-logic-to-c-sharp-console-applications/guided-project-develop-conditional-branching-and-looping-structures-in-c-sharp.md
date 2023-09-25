@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Develop Conditional Branching and Looping Structures in C#](https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/) guided project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?

@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the [Calculate Final GPA](https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/) guided project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Suppose `decimal gradePointAverage = 3.99872831m;`.
