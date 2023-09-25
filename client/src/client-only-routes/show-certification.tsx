@@ -341,7 +341,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           </header>
           <main className='information'>
             <div className='information-container'>
-              <Trans i18nKey='certification.fulltext' title={certTitle}>
+              <Trans
+                i18nKey={
+                  isMicrosoftCert
+                    ? 'certification.fulltextNoHours'
+                    : 'certification.fulltext'
+                }
+                title={certTitle}
+              >
                 <h3>placeholder</h3>
                 <h1>
                   <strong>{{ user: displayName }}</strong>
@@ -378,6 +385,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <>
                   <div>
                     <Image
+                      data-cy='quincy-signature'
                       alt="Quincy Larson's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
@@ -393,6 +401,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   </div>
                   <div className='microsoft-signature'>
                     <Image
+                      data-cy='microsoft-signature'
                       alt="Julia Liusons's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
@@ -411,6 +420,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               ) : (
                 <div>
                   <Image
+                    data-cy='quincy-signature'
                     alt="Quincy Larson's Signature"
                     src={
                       'https://cdn.freecodecamp.org' +

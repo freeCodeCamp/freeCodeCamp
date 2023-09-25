@@ -3,7 +3,6 @@ import React from 'react';
 import { TableProps } from './types';
 
 const defaultClassNames = [
-  'table',
   'table-auto',
   'w-full',
   'max-w-full',

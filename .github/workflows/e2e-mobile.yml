@@ -70,7 +70,7 @@ jobs:
           sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
 
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: npx serve

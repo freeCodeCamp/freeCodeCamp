@@ -1,19 +1,14 @@
 describe('Help Button', () => {
-  it('should be visible', () => {
+  it('should show three menus on challenges without videos', () => {
     cy.visit(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
-    cy.get('#get-help-dropdown').scrollIntoView().should('be.visible');
-  });
 
-  it('should toggle the dropdown menu', () => {
-    cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('.tool-panel-group [role="menu"]')
-      .scrollIntoView()
-      .should('be.visible');
-  });
+    // it should toggle the dropdown menu
+    cy.get('#get-help-dropdown').click();
+    cy.get('.tool-panel-group [role="menu"]').should('be.visible');
 
-  it('should render three links when video is available', () => {
+    // it should render three links when video is available
     cy.get('.tool-panel-group [role="menu"]')
       .children()
       .should('have.length', 3);
@@ -28,7 +23,8 @@ describe('Help Button', () => {
     cy.visit(
       '/learn/front-end-development-libraries/bootstrap/apply-the-default-bootstrap-button-style'
     );
-    cy.get('#get-help-dropdown').scrollIntoView().click();
+
+    cy.get('#get-help-dropdown').click();
     cy.get('.tool-panel-group [role="menu"]')
       .children()
       .should('have.length', 2);

@@ -142,7 +142,7 @@ jobs:
         run: npm i -g pm2
 
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: pnpm run start-ci
