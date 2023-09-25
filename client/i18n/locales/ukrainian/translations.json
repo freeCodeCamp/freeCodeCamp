@@ -750,6 +750,7 @@
     "verify": "Перевірити сертифікацію:",
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат засвідчує, що</0> <1>{{user}}</1> <2>успішно закінчив(-ла) сертифікацію</2> <3>«{{title}}»</3> <4>{{time}},</4> <5>виконавши приблизно {{completionTime}} год навчання</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "В рамках сертифікації програмного забезпечення повного циклу {{user}} отримав(-ла) такі сертифікації:",
       "heading": "У рамках цієї сертифікації {{user}} створив(-ла) такі проєкти і успішно пройшов(-ла) усі автоматизовані тестування:",
@@ -933,8 +934,8 @@
     "nevermind": "Залишитись в обліковому записі"
   },
   "staging-warning": {
-    "heading": "Увага: це ранній доступ (тестове розгортання)",
-    "p1": "Ви можете протестувати цей випуск у тестовому режимі та отримати ранній доступ до майбутніх функціональностей платформи. Іноді ці зміни також називають наступними, бета, проміжними тощо.",
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org.",
     "p3": "Ваш прогрес МОЖЛИВО не буде збережним при наступному відвідуванні, а будь-які здобуті сертифікації не будуть дійсними. Дізнайтесь більше <0>тут</0>.",
     "certain": "Прийняти і відхилити"
