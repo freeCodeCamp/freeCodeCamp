@@ -89,8 +89,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* for positioning preview display button */
-  position: relative;
 }
 
 #mobile-layout .nav-lists {
@@ -152,6 +150,18 @@
   height: 1px;
 }
 
+#mobile-layout .tab-content[data-state='active'] {
+  padding-block-end: 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+#learn-app-wrapper[data-has-editable-boundaries='true']
+  #mobile-layout
+  .tab-content[data-state='active'] {
+  padding-block-end: 0px;
+}
+
 #mobile-layout .preview-external-window {
   text-align: center;
   margin-top: 60px;
@@ -160,6 +170,15 @@
 #mobile-layout-pane-editor {
   display: flex;
   flex-direction: column;
+}
+
+#mobile-layout .portal-button {
+  top: calc(var(--header-height) + var(--breadcrumbs-height));
+}
+
+#mobile-layout .portal-button svg {
+  height: 18px;
+  padding-block-start: 3px;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
