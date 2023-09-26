@@ -89,22 +89,26 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* for placing the preview toggle button */
+  position: relative;
 }
 
 #mobile-layout .nav-lists {
-  margin: 0 1px;
+  margin: 0;
   padding: 0;
   display: flex;
   border-bottom: 1px solid var(--quaternary-color);
+  height: 2rem;
+  flex-shrink: 0;
 }
 
-/* Need to narrow width to make room for preview toggle button */
-#mobile-layout .nav-lists[data-haspreview='true'] {
-  width: calc(100% - 2rem - 2px);
+/* Need to narrow width of tabs to make room for preview toggle button */
+#mobile-layout [role='tablist'] {
+  width: calc(100% - 2rem);
 }
 
 #mobile-layout .nav-lists > button {
-  height: 2.5em;
+  height: 100%;
   font-size: 0.8em;
 }
 
@@ -172,8 +176,17 @@
   flex-direction: column;
 }
 
+#mobile-layout .portal-button-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  border-bottom: 1px solid var(--quaternary-color);
+}
+
 #mobile-layout .portal-button {
-  top: calc(var(--header-height) + var(--breadcrumbs-height));
+  font-size: 0.8rem;
+  height: 100%;
 }
 
 #mobile-layout .portal-button svg {

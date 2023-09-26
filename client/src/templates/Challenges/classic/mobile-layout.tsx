@@ -278,14 +278,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               value={Tab.Preview}
               forceMount
             >
-              <button
-                className='portal-button'
-                aria-expanded={!!showPreviewPortal}
-                onClick={() => togglePane('showPreviewPortal')}
-              >
-                <span className='sr-only'>{getPortalBtnSrText()}</span>
-                <FontAwesomeIcon icon={faWindowRestore} />
-              </button>
+              <div className='portal-button-wrap'>
+                <button
+                  className='portal-button'
+                  aria-expanded={!!showPreviewPortal}
+                  onClick={() => togglePane('showPreviewPortal')}
+                >
+                  <span className='sr-only'>{getPortalBtnSrText()}</span>
+                  <FontAwesomeIcon icon={faWindowRestore} />
+                </button>
+              </div>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
@@ -302,14 +304,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             />
           )}
           {hasPreview && this.state.currentTab !== 'preview' && (
-            <button
-              className='portal-button'
-              aria-expanded={!!showPreviewPortal}
-              onClick={() => togglePane('showPreviewPortal')}
-            >
-              <span className='sr-only'>{getPortalBtnSrText()}</span>
-              <FontAwesomeIcon icon={faWindowRestore} />
-            </button>
+            <div className='portal-button-wrap'>
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </div>
           )}
         </Tabs>
         {displayPreviewPortal && (
