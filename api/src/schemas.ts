@@ -551,6 +551,12 @@ export const schemas = {
       400: Type.Object({
         message: Type.String(),
         type: Type.Literal('info')
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
       })
     }
   }

@@ -69,9 +69,11 @@ export const certRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        let { username } = req.params;
-        const { certSlug } = req.params;
+        let username = req.params.username;
+        const certSlug = req.params.certSlug;
+
         username = username.toLowerCase();
+        fastify.log.info(`certSlug: ${certSlug}`);
 
         const certType = certSlugTypeMap[certSlug];
         const certId = certTypeIdMap[certType];
@@ -111,7 +113,7 @@ export const certRoutes: FastifyPluginCallbackTypebox = (
           return {
             type: 'info',
             message: 'flash.username-not-found',
-            variables: { username: username }
+            variables: { username }
           } as const;
         }
         if (!user.name) {
@@ -131,7 +133,7 @@ export const certRoutes: FastifyPluginCallbackTypebox = (
           return {
             type: 'info',
             message: 'flash.not-honest',
-            variables: { username: username }
+            variables: { username }
           } as const;
         }
 
@@ -139,21 +141,21 @@ export const certRoutes: FastifyPluginCallbackTypebox = (
           return {
             type: 'info',
             message: 'flash.profile-private',
-            variables: { username: username }
+            variables: { username }
           } as const;
         }
         if (!user.profileUI?.showCerts) {
           return {
             type: 'info',
             message: 'flash.certs-private',
-            variables: { username: username }
+            variables: { username }
           } as const;
         }
         if (!user.profileUI?.showTimeLine) {
           return {
             type: 'info',
             message: 'flash.timeline-private',
-            variables: { username: username }
+            variables: { username }
           } as const;
         }
 
@@ -218,8 +220,12 @@ export const certRoutes: FastifyPluginCallbackTypebox = (
         }
       } catch (err) {
         fastify.log.error(err);
-        void reply.code(400);
-        return { message: 'flash.user-not-certified', type: 'info' } as const;
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
       }
     }
   );
