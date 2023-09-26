@@ -106,7 +106,7 @@ function ToolPanel({
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}
-          data-playwright-test-label={'get-help-dropdown'}
+          data-playwright-test-label='get-help-dropdown'
         >
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
@@ -115,7 +115,7 @@ function ToolPanel({
             <MenuItem
               href={guideUrl}
               target='_blank'
-              data-playwright-test-label={'get-hint'}
+              data-playwright-test-label='get-hint'
             >
               {t('buttons.get-hint')}{' '}
               <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -125,14 +125,14 @@ function ToolPanel({
           {videoUrl ? (
             <MenuItem
               onClick={openVideoModal}
-              data-playwright-test-label={'watch-a-video'}
+              data-playwright-test-label='watch-a-video'
             >
               {t('buttons.watch-video')}
             </MenuItem>
           ) : null}
           <MenuItem
             onClick={openHelpModal}
-            data-playwright-test-label={'ask-for-help'}
+            data-playwright-test-label='ask-for-help'
           >
             {t('buttons.ask-for-help')}
           </MenuItem>
