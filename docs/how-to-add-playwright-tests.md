@@ -242,7 +242,7 @@ npx playwright show-report
 
 ### 5. Troubleshooting
 
-Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including majpr distributions of Windows, MacOS and Linux.
+Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
 
 - (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
 
