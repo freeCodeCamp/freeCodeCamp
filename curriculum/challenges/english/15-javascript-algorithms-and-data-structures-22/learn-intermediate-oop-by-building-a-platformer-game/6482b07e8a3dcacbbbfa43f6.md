@@ -9,15 +9,16 @@ dashedName: step-9
 
 In the game, the player will have the opportunity to cross different checkpoints. You will need to keep track of the status for the checkpoint collision detection.
 
-Create a new `let` variable called `isCheckpointCollisionDetectionActive` and assign it the value of `true`. 
+Use `let` to create a new variable called `isCheckpointCollisionDetectionActive` and assign it the value of `true`. 
 
 # --hints--
 
-You should create a `let` variable called `isCheckpointCollisionDetectionActive`
+You should use the `let` keyword to declare your `isCheckpointCollisionDetectionActive` variable.
 
 ```js
-assert.match(code, /let\s+isCheckpointCollisionDetectionActive/);
+assert.match(code, /let isCheckpointCollisionDetectionActive/);
 ```
+
 
 You should assign the value of `true` to `isCheckpointCollisionDetectionActive` 
 
