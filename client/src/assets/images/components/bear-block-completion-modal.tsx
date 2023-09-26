@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function BearBlockCompletion(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
+  const { t } = useTranslation();
   return (
     <>
       <svg
@@ -16,7 +18,7 @@ function BearBlockCompletion(
         {...props}
       >
         <title id='bear-completion-illustration-label'>
-          Illustration of a bear holding a trophy with stars in the background
+          {t('donate.bear-completion-alt')}
         </title>
         <path
           d='M187 95c0 32.268-8.375 58.697-34 75.376h-22.5c-12.5.624-10-1-31.5 0-20.5-1-25.5 0-36.5 0h-27C9.875 153.697 0 124.268 0 92 0 40.638 40.257 0 93 0s94 43.638 94 95z'
