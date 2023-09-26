@@ -13,7 +13,14 @@ Start by creating an empty arrow function called `startGame`.
 
 # --hints--
 
-You should create an arrow function called `startGame`.
+
+`startGame` should be a function
+
+```js
+assert.isFunction(startGame);
+```
+
+`startGame` should be an arrow function
 
 
 ```js
