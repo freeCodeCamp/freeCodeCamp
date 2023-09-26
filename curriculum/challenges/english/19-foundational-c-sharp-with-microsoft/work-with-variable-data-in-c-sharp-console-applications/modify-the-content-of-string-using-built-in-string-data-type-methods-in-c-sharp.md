@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">Modify the Content of Strings Using Built-In String Data Type Methods in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">Convert Data Types Using Casting and Conversion Techniques in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

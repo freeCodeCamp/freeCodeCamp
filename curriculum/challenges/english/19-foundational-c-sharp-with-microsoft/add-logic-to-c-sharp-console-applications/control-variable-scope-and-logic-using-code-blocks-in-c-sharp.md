@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Control Variable Scope and Logic Using Code Blocks in C#](https://learn.microsoft.com/training/modules/csharp-code-blocks/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">Control Variable Scope and Logic Using Code Blocks in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

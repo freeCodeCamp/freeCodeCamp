@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Evaluate Boolean Expressions to Make Decisions in C#](https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">Evaluate Boolean Expressions to Make Decisions in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

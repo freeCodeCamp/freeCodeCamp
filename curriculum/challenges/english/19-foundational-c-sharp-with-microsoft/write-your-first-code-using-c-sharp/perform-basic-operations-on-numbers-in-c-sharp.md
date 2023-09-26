@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Perform Basic Operations on Numbers in C#](https://learn.microsoft.com/training/modules/csharp-basic-operations/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">Perform Basic Operations on Numbers in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

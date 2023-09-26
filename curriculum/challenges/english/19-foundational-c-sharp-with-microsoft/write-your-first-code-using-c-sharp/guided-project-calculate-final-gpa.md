@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Calculate Final GPA](https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/) guided project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">Calculate Final GPA</a> guided project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

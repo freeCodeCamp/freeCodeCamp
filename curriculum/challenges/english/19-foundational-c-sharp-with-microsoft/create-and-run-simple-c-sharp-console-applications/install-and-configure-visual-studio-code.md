@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Install and Configure Visual Studio Code](https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">Install and Configure Visual Studio Code</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

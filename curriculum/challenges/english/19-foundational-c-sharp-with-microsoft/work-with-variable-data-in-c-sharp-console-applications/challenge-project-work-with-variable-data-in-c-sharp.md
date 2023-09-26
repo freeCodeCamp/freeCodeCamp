@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Work With Variable Data in C#](https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/) challenge project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work With Variable Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

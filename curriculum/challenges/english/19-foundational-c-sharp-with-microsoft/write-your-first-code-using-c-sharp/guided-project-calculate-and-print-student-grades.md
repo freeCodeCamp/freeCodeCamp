@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Calculate and Print Student Grades](https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/) guided project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">Calculate and Print Student Grades</a> guided project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

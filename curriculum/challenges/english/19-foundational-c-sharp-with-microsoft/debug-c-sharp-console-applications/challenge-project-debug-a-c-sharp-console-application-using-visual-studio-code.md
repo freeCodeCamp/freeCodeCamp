@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Debug a C# Console Application using Visual Studio Code](https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/) challenge project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug a C# Console Application using Visual Studio Code</a> challenge project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

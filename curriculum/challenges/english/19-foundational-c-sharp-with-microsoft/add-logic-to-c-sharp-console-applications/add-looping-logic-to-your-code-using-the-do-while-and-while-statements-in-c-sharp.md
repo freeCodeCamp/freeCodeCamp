@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Add Looping Logic to Your Code Using the `do`-`while` and `while` Statements in C#](https://learn.microsoft.com/training/modules/csharp-do-while/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">Add Looping Logic to Your Code Using the `do`-`while` and `while` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

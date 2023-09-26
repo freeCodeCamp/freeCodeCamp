@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Plan a Petting Zoo Visit](https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/) guided project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">Plan a Petting Zoo Visit</a> guided project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Create Readable Code with Conventions, Whitespace, and Comments in C#](https://learn.microsoft.com/training/modules/csharp-readable-code/) module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">Create Readable Code with Conventions, Whitespace, and Comments in C#</a> module on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 

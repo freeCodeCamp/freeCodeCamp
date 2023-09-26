@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 ## --assignment--
 
-Complete the [Create a Mini-Game](https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/) challenge project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">Create a Mini-Game</a> challenge project on Microsoft Learn. Then, answer the question below.
 
 ## --text--
 
