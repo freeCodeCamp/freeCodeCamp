@@ -10,9 +10,9 @@ dashedName: problem-356-largest-roots-of-cubic-polynomials
 
 Let $a_n$ be the largest real root of a polynomial $g(x) = x^3 - 2^n \times x^2 + n$.
 
-For example, $a_2 = 3.86619826\ldots$
+Наприклад, $a_2 = 3.86619826\ldots$
 
-Find the last eight digits of $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
+Знайдіть останні 8 цифр в $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
 
 **Note:** $\lfloor a\rfloor$ represents the floor function.
 

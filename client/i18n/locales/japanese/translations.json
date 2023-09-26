@@ -474,6 +474,8 @@
     "confirm-one-time": "{{usd}} ドルの一回の寄付の申込み:",
     "confirm-monthly": "毎月 {{usd}} ドルの寄付の申込み:",
     "confirm-yearly": "毎年 {{usd}} ドルの寄付の申込み:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "freeCodeCamp への ${{usd}} の寄付",
     "wallet-label-1": "freeCodeCamp への ${{usd}} / 月の寄付",
     "your-donation": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを提供します。",
@@ -490,6 +492,7 @@
     "progress-modal-cta-8": "寄付を通して、新しいツールやコンセプトに対応する新講座の開発をご支援ください。",
     "progress-modal-cta-9": "寄付を通して、開発者のための数学講座の作成をご支援ください。",
     "progress-modal-cta-10": "寄付を通して、無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
     "credit-card-2": "またはクレジットカードで寄付する:",
@@ -747,6 +750,7 @@
     "verify": "Verify this certification at:",
     "issued": "発行日",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
@@ -930,8 +934,8 @@
     "nevermind": "いいえ、サインアウトしません"
   },
   "staging-warning": {
-    "heading": "Warning: This is an Early Access - Test Deployment",
-    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"

@@ -30,7 +30,6 @@ import {
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
-  isLoopProtected,
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
@@ -108,10 +107,10 @@ function* executeChallengeSaga({ payload }) {
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
-    const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect,
+      disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+      disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
     const document = yield getContext('document');
@@ -241,10 +240,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
 
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);
-      const protect = isLoopProtected(challengeMeta);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        protect
+        disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+        disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {

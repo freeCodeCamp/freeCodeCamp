@@ -343,10 +343,6 @@
       "type": "string",
       "default": "default"
     },
-    "sound": {
-      "type": "boolean",
-      "default": false
-    },
     "keyboardShortcuts": {
       "type": "boolean",
       "default": false

@@ -5,7 +5,7 @@ describe('Public profile certifications', () => {
     });
 
     beforeEach(() => {
-      cy.login();
+      cy.login('certified-user');
     });
 
     it('Should show claimed certifications if the username has all lowercase characters', () => {

@@ -30,10 +30,10 @@ var sumTwoAnd = addTogether(2);
 assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-`addTogether(23, 30)` має повертати 53.
+`addTogether(23.4, 30)` should return 53.4.
 
 ```js
-assert.deepEqual(addTogether(23, 30), 53);
+assert.deepEqual(addTogether(23.4, 30), 53.4);
 ```
 
 `addTogether("2", 3)` має повертати `undefined`.
@@ -94,16 +94,22 @@ addTogether(2,3);
 
 ```js
 function addTogether() {
-  var a = arguments[0];
-  if (toString.call(a) !== '[object Number]') return;
+  const first = arguments[0];
+  if (typeof(first) !== 'number') {
+    return undefined;
+  }
   if (arguments.length === 1) {
-    return function(b) {
-      if (toString.call(b) !== '[object Number]') return;
-      return a + b;
+    return function(second) {
+      if (typeof(second) !== 'number') {
+        return undefined;
+      }
+      return first + second;
     };
   }
-  var b = arguments[1];
-  if (toString.call(b) !== '[object Number]') return;
-  return a + arguments[1];
+  const second = arguments[1];
+  if (typeof(second) !== 'number') {
+    return undefined;
+  }
+  return first + second;
 }
 ```

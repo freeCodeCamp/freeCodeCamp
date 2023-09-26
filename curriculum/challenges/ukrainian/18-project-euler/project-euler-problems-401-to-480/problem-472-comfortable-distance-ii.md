@@ -26,7 +26,7 @@ Let $f(N)$ be the number of choices the first person has to maximize the number 
 
 Also, $\sum f(N) = 83$ for $1 ≤ N ≤ 20$ and $\sum f(N) = 13\\,343$ for $1 ≤ N ≤ 500$.
 
-Знайдіть $\sum f(N)$ за умови $1 ≤ N ≤ {10}^{12}$. Give the last 8 digits of your answer.
+Знайдіть $\sum f(N)$ за умови $1 ≤ N ≤ {10}^{12}$. У відповіді запишіть 8 останніх цифр.
 
 # --hints--
 

@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
+
+import store from 'store';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
@@ -37,7 +39,6 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
-
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -125,7 +126,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       about,
       picture,
       theme,
-      sound,
       keyboardShortcuts,
       location,
       name,
@@ -154,7 +154,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
-
+  const sound = (store.get('fcc-sound') as boolean) ?? false;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />

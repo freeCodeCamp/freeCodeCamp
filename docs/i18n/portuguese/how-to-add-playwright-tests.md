@@ -1,6 +1,6 @@
 # Como adicionar testes do Playwright
 
-## Instalação:
+## Instalação
 
 Para instalar o Playwright, execute:
 
@@ -14,19 +14,153 @@ Para instalar e configurar o Playwright na sua máquina, confira a [documentaç�
 
 Para aprender a escrever testes do Playwright ou 'specs', confira a [documentação](https://playwright.dev/docs/writing-tests) oficial.
 
-
 ## Onde adicionar um teste
 
 - Os testes do Playwright estão no diretório `./e2e`.
 
 - Os arquivos de teste do Playwright têm sempre uma extensão `.spec.ts`.
 
-## Como executar testes
+## Melhores práticas para a escrita de testes e2e
 
+ Esta seção explicará em detalhes as melhores práticas para escrever e documentar testes E2E com base na documentação do playwright e no nosso estilo de código comunitário.
+
+### - Identificando um elemento do DOM
+
+  Sempre use o atributo `data-playwright-test-label` para identificar elementos do DOM. Esse atributo é usado para identificar elementos no DOM para testes somente com o playwright. Ele não é usado para estilização ou para qualquer outra finalidade.
+
+  Por exemplo:
+
+  ```html
+  <div data-playwright-test-label="landing-page-figure">
+    <img src="..." alt="..." />
+  </div>
+  ```
+
+  Certifique-se de usar o método getByTestId para identificar o elemento no arquivo de teste.
+
+  Por exemplo:
+
+  ```ts
+  const landingPageFigure = page.getByTestId('landing-page-figure');
+  ```
+
+### - Importações
+
+  Sempre comece com as importações necessárias no início do arquivo.
+
+  Por exemplo:
+
+  ```ts
+  import { test, expect, type Page } from '@playwright/test';
+  ```
+
+### - Constantes
+
+  Defina quaisquer elementos constantes, conjuntos de dados ou configurações usadas durante seus testes para fácil referência.
+
+  Por exemplo:
+
+  ```ts
+  const landingPageElements = { ... };
+  const superBlocks = [ ... ];
+  ```
+
+### - Contexto compartilhado
+
+ Se os testes dependem de um contexto compartilhado (como uma página da web carregada), use os hooks beforeAll e afterAll para configurar e encerrar esse contexto.
+
+  Por exemplo:
+
+  ```ts
+  let page: Page;
+
+  beforeAll(async ({ browser }) => {
+    page = await browser.newPage();
+  });
+
+  afterAll(async () => {
+    await page.close();
+  });
+  ```
+
+### - Nomes de testes descritivos
+
+ Cada bloco de teste deve ter um nome claro e conciso descrevendo exatamente o que ele está testando.
+
+  Por exemplo:
+
+  ```ts
+  test('The component landing-top renders correctly', async ({ page }) => {
+    ...
+  });
+  ```
+
+### - Declarações legíveis
+
+  Cada declaração deve ser o mais legível possível. Isso torna mais fácil entender o que o teste está fazendo e o que está esperando.
+
+  Por exemplo:
+
+  ```ts
+  await expect(landingHeading1).toHaveText('Learn to code — for free.');
+  ```
+
+### - Evite repetições
+
+  Certifique-se de que os testes não estão repetindo o mesmo código várias vezes. Se você estiver repetindo o mesmo código, considere refatorá-lo como um laço ou uma função.
+
+  Por exemplo:
+
+  ```ts
+  for (const logo of await logos.all()) {
+    await expect(logo).toBeVisible();
+  }
+  ```
+
+### - Testes para telas de dispositivos móveis
+
+  Use o argumento 'isMobile' para executar testes que influenciam a lógica que varia para telas de dispositivos móveis.
+
+  Por exemplo:
+
+  ```ts
+  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
+  {
+    const landingPageImage = page.getByTestId('landing-page-figure');
+
+    if (isMobile) {
+      await expect(landingPageImage).toBeHidden();
+    } else {
+      await expect(landingPageImage).toBeVisible();
+    }
+  });
+```
+
+### - Agrupamento de testes relacionados
+
+  Agrupe testes relacionados em conjunto usando blocos "descrite". Isso torna mais fácil entender o que os testes estão fazendo e o que estão testando.
+
+  Por exemplo:
+
+  ```ts
+  describe('The campers landing page', () => {
+    test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
+    {
+      ...
+    });
+
+    test('The campers landing page figure has the correct image', async () => {
+      ...
+    });
+  });
+  ```
+
+
+## Como executar testes
 
 ### 1. Veja se as aplicações de client e do MongoDB estão em execução
 
-- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Inicie também a aplicação de client do freeCodeCamp e o servidor da API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -35,6 +169,7 @@ Para aprender a escrever testes do Playwright ou 'specs', confira a [documentaç
 Para executar testes com o Playwright, verifique o seguinte
 
 - Não se esqueça de navegar primeiro para o repositório e2e
+
   ```console
   cd e2e
   ```
@@ -64,6 +199,7 @@ Para executar testes com o Playwright, verifique o seguinte
   ```
 
   Por exemplo:
+
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
@@ -75,6 +211,7 @@ Para executar testes com o Playwright, verifique o seguinte
   ```
 
   Por exemplo:
+
   ```console
   npx playwright test -g "add a todo item"
   ```
@@ -139,12 +276,11 @@ O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O
   ```console
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
+
   1. A solicitação de rede foi feita usando um método que não inclui um corpo de resposta, como HEAD ou CONNECT.
   2. A solicitação de rede foi feita através de uma conexão segura (HTTPS) e o corpo da resposta não está disponível por razões de segurança.
   3. A solicitação de rede foi feita por um recurso de terceiros (como um anúncio ou um pixel de rastreamento) que não é controlado pelo script.
   4. A solicitação de rede foi feita por um script que foi pausado ou interrompido antes de a resposta ser recebida.
-
-
 
 **Para mais informações sobre essas questões, confira a documentação oficial.**
 
@@ -157,21 +293,25 @@ Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automatica
 - Siga o [guia de instalação do MongoDB](https://www.mongodb.com/basics/get-started).
 
 - Criar o arquivo .env
+
   ```console
   cp sample.env .env
   ```
 
 - Crie um arquivo de configuração.
+
   ```console
   pnpm run create:shared
   ```
 
 - Crie o banco de dados
+
   ```console
   pnpm run seed
   ```
 
 - Desenvolva o servidor e o client
+
   ```console
   pnpm run develop
   ```
@@ -183,7 +323,6 @@ Para instalar as dependências necessárias para executar o Playwright, execute 
 ```console
 pnpm run playwright:install-build-tools
 ```
-
 
 ### 3. Execute os testes do Playwright no Gitpod
 
