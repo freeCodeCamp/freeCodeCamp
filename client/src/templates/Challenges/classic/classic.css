@@ -89,8 +89,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* for placing the preview toggle button */
-  position: relative;
 }
 
 #mobile-layout .nav-lists {
@@ -181,7 +179,7 @@
 
 #mobile-layout .portal-button-wrap {
   position: absolute;
-  top: 0;
+  top: calc(var(--header-height) + var(--breadcrumbs-height));
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
