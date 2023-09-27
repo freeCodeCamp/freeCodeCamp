@@ -42,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copia tutti i contenuti di `arr1` in un altro array `arr2` usando l'operatore spread.
+Copy all contents of `arr1` into another array `arr2` using the spread operator.
 
 # --hints--
 
-`arr2` dovrebbe essere la copia esatta di `arr1`.
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-L'operatore spread `...` dovrebbe essere usato per duplicare `arr1`.
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` dovrebbe rimanere invariato quando `arr1` viene modificato.
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {

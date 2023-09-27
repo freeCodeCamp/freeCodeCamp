@@ -46,19 +46,19 @@ const spreaded = ...arr;
 
 # --hints--
 
-`arr2` 應該是從 `arr1` 複製而來。
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-應使用展開操作符 `...` 來複制 `arr1`。
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-當 `arr1` 改變的時候，`arr2` 應保持不變。
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {
