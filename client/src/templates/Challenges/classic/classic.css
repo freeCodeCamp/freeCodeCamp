@@ -103,7 +103,7 @@
 }
 
 /* Need to narrow width of tabs to make room for preview toggle button */
-#mobile-layout [data-haspreview='true'] [role='tablist'] {
+#mobile-layout[data-haspreview='true'] [role='tablist'] {
   width: calc(100% - 2rem);
 }
 
