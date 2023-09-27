@@ -93,7 +93,7 @@ export const viewTypes = {
   [colab]: 'frontend',
   [exam]: 'exam',
   [msTrophy]: 'msTrophy',
-  [multipleChoice]: 'video',
+  [multipleChoice]: 'odin',
   [python]: 'modern'
 };
 
