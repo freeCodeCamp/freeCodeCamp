@@ -106,7 +106,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             response: {
               type: 'info',
               message: 'flash.name-needed'
-            } as const,
+            },
             isCertMap,
             completedChallenges
           } as const;
@@ -121,7 +121,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               variables: {
                 name: certName
               }
-            } as const,
+            },
             isCertMap,
             completedChallenges
           } as const;
@@ -136,11 +136,15 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         if (!hasCompletedTestRequirements) {
           void reply.code(400);
           return {
-            type: 'info',
-            message: 'flash.incomplete-steps',
-            variables: {
-              name: certName
-            }
+            response: {
+              type: 'info',
+              message: 'flash.incomplete-steps',
+              variables: {
+                name: certName
+              }
+            },
+            isCertMap,
+            completedChallenges
           } as const;
         }
 
@@ -202,9 +206,9 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: {
               username: updatedUser.username,
               name: certName
-            } as const
-          } as const,
-          updatedIsCertMap,
+            }
+          },
+          isCertMap: updatedIsCertMap,
           completedChallenges: updatedUser.completedChallenges
         } as const;
       } catch (e) {
