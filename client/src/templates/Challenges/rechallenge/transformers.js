@@ -25,7 +25,7 @@ const { filename: sassCompile } = sassData;
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
-const loopsPerTimeoutCheck = 20;
+const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
 
 function loopProtectCB(line) {
