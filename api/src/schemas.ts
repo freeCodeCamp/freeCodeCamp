@@ -557,31 +557,31 @@ export const schemas = {
             variables: Type.Object({
               username: Type.String(),
               name: Type.String()
-            }),
-            isCertMap: Type.Record(Type.String(), Type.Boolean()),
-            completedChallenges: Type.Array(
-              Type.Object({
-                id: Type.String(),
-                completedDate: Type.Number(),
-                solution: Type.Union([Type.String(), Type.Null()]),
-                githubLink: Type.Union([Type.String(), Type.Null()]),
-                challengeType: Type.Union([Type.Number(), Type.Null()]),
-                // Technically, files is optional, but the db default was [] and
-                // the client treats null, undefined and [] equivalently.
-                // TODO(Post-MVP): make this optional.
-                files: Type.Array(
-                  Type.Object({
-                    contents: Type.String(),
-                    key: Type.String(),
-                    ext: Type.String(),
-                    name: Type.String(),
-                    path: Type.Union([Type.String(), Type.Null()])
-                  })
-                ),
-                isManuallyApproved: Type.Union([Type.Boolean(), Type.Null()])
-              })
-            )
-          })
+            })
+          }),
+          isCertMap: Type.Record(Type.String(), Type.Boolean()),
+          completedChallenges: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number(),
+              solution: Type.Union([Type.String(), Type.Null()]),
+              githubLink: Type.Union([Type.String(), Type.Null()]),
+              challengeType: Type.Union([Type.Number(), Type.Null()]),
+              // Technically, files is optional, but the db default was [] and
+              // the client treats null, undefined and [] equivalently.
+              // TODO(Post-MVP): make this optional.
+              files: Type.Array(
+                Type.Object({
+                  contents: Type.String(),
+                  key: Type.String(),
+                  ext: Type.String(),
+                  name: Type.String(),
+                  path: Type.Union([Type.String(), Type.Null()])
+                })
+              ),
+              isManuallyApproved: Type.Union([Type.Boolean(), Type.Null()])
+            })
+          )
         })
       ]),
       400: Type.Union([
