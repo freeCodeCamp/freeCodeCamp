@@ -1,47 +1,47 @@
 ---
 id: 62a8ad8e01d7cb0deae5ec66
-title: Step 56
+title: Schritt 56
 challengeType: 0
 dashedName: step-56
 ---
 
 # --description--
 
-Create another property in your object called `button functions`. Give this property an array containing the three functions assigned to the `onclick` properties in the `goTown` function. Remember that these functions are variables, not strings, and should not be wrapped in quotes.
+Erstelle in deinem Objekt eine weitere Eigenschaft namens `button functions`. Gib dieser Eigenschaft ein Array, das die drei Funktionen enthält, die den `onclick`-Eigenschaften in der `goTown`-Funktion zugewiesen wurden. Denke daran, dass diese Funktionen Variablen und keine Zeichenketten sind und, dass sie nicht zwischen Anführungzeichen stehen sollten.
 
 # --hints--
 
-Your first `locations` object should have a `button functions` property.
+Dein erstes `locations`-Objekt sollte eine `button functions`-Eigenschaft haben.
 
 ```js
 assert.isDefined(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should be an array.
+Deine `button functions`-Eigenschaft sollte ein Array sein.
 
 ```js
 assert.isArray(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should have three values in it.
+Deine `button functions`-Eigenschaft sollte drei Werte enthalten.
 
 ```js
 assert.lengthOf(locations[0]["button functions"], 3);
 ```
 
-Your first `button functions` array value should be the function `goStore`.
+Dein erster `button functions`-Arraywert sollte die Funktion `goStore` sein.
 
 ```js
 assert.equal(locations[0]["button functions"][0], goStore);
 ```
 
-Your second `button functions` array value should be the function `goCave`.
+Dein zweiter `button functions`-Arraywert sollte die Funktion `goCave` sein.
 
 ```js
 assert.equal(locations[0]["button functions"][1], goCave);
 ```
 
-Your third `button functions` array value should be the function `fightDragon`.
+Dein dritter `button functions`-Arraywert sollte die Funktion `fightDragon` sein.
 
 ```js
 assert.equal(locations[0]["button functions"][2], fightDragon);

@@ -33,13 +33,13 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
 - Para ejecutar una sola prueba:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
+  pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Para crear una compilación de desarrollo, inicia el servidor de desarrollo y ejecuta todas las pruebas de cypress existentes de extremo a extremo:
@@ -58,7 +58,7 @@ If starting the Gitpod environment did not automatically develop the environment
 - Create a config file.
 
 ```console
-pnpm run create:config
+pnpm run create:shared
 ```
 
 - Propaga la base de datos

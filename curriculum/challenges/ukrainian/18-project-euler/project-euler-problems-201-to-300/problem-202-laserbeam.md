@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: 'Завдання 202: лазерний промінь'
 challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
@@ -8,15 +8,15 @@ dashedName: problem-202-laserbeam
 
 # --description--
 
-Three mirrors are arranged in the shape of an equilateral triangle, with their reflective surfaces pointing inwards. There is an infinitesimal gap at each vertex of the triangle through which a laser beam may pass.
+Три дзеркала розташовані у формі рівностороннього трикутника таким чином, що їхні поверхні, які відбивають світло, повернуті всередину. На кожній вершині цього трикутника є дуже маленька прогалина, через яку може пройти лазерний промінь.
 
-Label the vertices $A$, $B$ and $C$. There are 2 ways in which a laser beam may enter vertex $C$, bounce off 11 surfaces, then exit through the same vertex: one way is shown below; the other is the reverse of that.
+Позначимо вершини $A$, $B$ і $C$. Лазерний промінь може ввійти через вершину $C$, відбитись від 11 поверхонь і вийти через ту саму вершину двома способами: перший спосіб наведено нижче, а другий є протилежним до нього.
 
-<img class="img-responsive center-block" alt="one way in which laser beam may enter vertex C, bounce off 11 surfaces and exit through the same vertex" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="спосіб, в якому лазерний промінь може увійти через вершину С, відскочити від 11 поверхонь та вийти через ту ж вершину" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
 
-There are 80840 ways in which a laser beam may enter vertex $C$, bounce off 1000001 surfaces, then exit through the same vertex.
+Лазерний промінь може ввійти через вершину $C$, відбитись від 1000001 поверхні та вийти через ту саму вершину 80840 способами.
 
-In how many ways can a laser beam enter at vertex $C$, bounce off 12017639147 surfaces, then exit through the same vertex?
+Скількома способами лазерний промінь може ввійти через вершину $C$, відбитись від 12017639147 поверхонь і вийти через ту саму вершину?
 
 # --hints--
 

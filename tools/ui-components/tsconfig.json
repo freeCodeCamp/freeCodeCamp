@@ -8,8 +8,11 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
-    "noEmit": true
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "types"
   },
+  "exclude": ["node_modules", "dist", "types"],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"

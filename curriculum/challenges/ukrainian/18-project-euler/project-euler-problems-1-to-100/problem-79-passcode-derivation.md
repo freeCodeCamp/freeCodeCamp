@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: 'Завдання 79: виведення пароля'
 challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -8,11 +8,11 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+Поширений метод безпеки, який використовує онлайн-банкінг — попросити користувача назвати три випадкові символи з пароля. Наприклад, якщо паролем є `531278`, то можуть запитати другий, третій та п’ятий символи. Тоді очікуваною відповіддю буде `317`.
 
-The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
+Масиви `keylog1`, `keylog2` та `keylog3` містять п’ятдесят успішних спроб входу.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+Враховуючи, що три символи завжди запитуються послідовно, проаналізуйте масив так, щоб визначити найкоротший секретний пароль невідомої довжини.
 
 # --hints--
 

@@ -5,7 +5,7 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
-import { SuperBlocks } from '../../config/certification-settings';
+import { SuperBlocks } from '../../shared/config/superblocks';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -98,7 +98,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
-  newMeta.challengeOrder = [[challengeId.toString(), 'Step 1']];
+  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await withTrace(fs.mkdir, newMetaDir);

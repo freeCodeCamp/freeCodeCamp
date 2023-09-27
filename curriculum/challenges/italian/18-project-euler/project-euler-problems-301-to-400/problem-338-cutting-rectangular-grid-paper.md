@@ -22,7 +22,7 @@ Per una coppia $w$ e $h$, sia $F(w, h)$ il numero di rettangoli distinti che pos
 
 Per un intero $N$, sia $G(N)$ la somma di $F(w, h)$ per tutte le coppie $w$ e $h$ che soddisfano $0 &lt; h ≤ w ≤ N$. Possiamo verificare che $G(10) = 55$, $G({10}^3) = 971\\,745$ e $G({10}^5) = 9\\,992\\,617\\,687$.
 
-Trova $G({10}^{12})$. Give your answer modulo ${10}^8$.
+Trova $G({10}^{12})$. Dai la tua risposta come modulo ${10}^8$.
 
 # --hints--
 

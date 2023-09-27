@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
+你可以在從零到給定數字的範圍內生成隨機整數。 你也可以爲此範圍選擇一個不同的較小數字。
 
-You'll call your minimum number `min` and your maximum number `max`.
+你將把最小的數字定義爲 `min`，把最大的數字定義爲 `max`。
 
-This formula gives a random whole number in the range from `min` to `max`. 仔細看看並嘗試理解這行代碼到底在幹嘛：
+這個公式將生成一個從 `min` 到 `max` 的隨機整數。 仔細看看並嘗試理解這行代碼到底在幹嘛：
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
+創建一個函數 `randomRange`，參數爲 `myMin` 和 `myMax`，返回一個在 `myMin`（包括 myMin）和 `myMax`（包括 myMax）之間的隨機整數。
 
 # --hints--
 

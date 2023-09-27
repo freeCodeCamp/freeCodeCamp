@@ -1,7 +1,7 @@
 import debugFactory from 'debug';
 const log = debugFactory('fcc:boot:user');
 import jwt from 'jsonwebtoken';
-import { jwtSecret } from '../../../../config/secrets';
+import { jwtSecret } from '../../../config/secrets';
 
 /*
  * User tokens for submitting external curriculum are deleted when they sign

@@ -40,6 +40,7 @@ figcaption.caption {
 .as-seen-in {
   background-color: var(--gray-75);
   color: var(--gray-15);
+  padding-inline: 15px;
 }
 
 .as-seen-in .big-heading {

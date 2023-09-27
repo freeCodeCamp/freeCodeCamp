@@ -7,25 +7,25 @@ dashedName: step-92
 
 # --description--
 
-You also need to clear the `output` element's text. You can do this by setting the `innerText` property to an empty string.
+Você também precisa limpar o texto do elemento `output`. Você deve fazer isso definindo a propriedade `innerText` como uma string vazia.
 
-The difference between `innerText` and `innerHTML` is that `innerText` will not render HTML elements, but will display the tags and content as raw text.
+A diferença entre `innerText` e `innerHTML` é que `innerText` não renderizará elementos do HTML, mas exibirá as tags e o conteúdo como texto bruto.
 
 # --hints--
 
-Your `clearForm` function should access the `innerText` property of the `output` element.
+A função `clearForm` deve acessar a propriedade `innerText` do elemento `output`.
 
 ```js
 assert.match(clearForm.toString(), /output\.innerText/);
 ```
 
-Your `clearForm` function should set the `innerText` property of the `output` element to an empty string.
+A função `clearForm` deve definir a propriedade `innerText` do elemento `output` como uma string vazia.
 
 ```js
 assert.match(clearForm.toString(), /output\.innerText\s*=\s*('|"|`)\1/);
 ```
 
-You should modify `output` after modifying `budgetNumberInput`.
+Você deve modificar `output` após modificar `budgetNumberInput`.
 
 ```js
 assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().indexOf('budgetNumberInput'));
@@ -106,8 +106,22 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
 ```
 
 ```css
+:root {
+  --light-grey: #f5f6f7;
+  --dark-blue: #0a0a23;
+  --fcc-blue: #1b1b32;
+  --light-yellow: #fecc4c;
+  --dark-yellow: #feac32;
+  --light-pink: #ffadad;
+  --dark-red: #850000;
+  --light-green: #acd157;
+}
+
 body {
-  font-family: "Lato", Arial;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--fcc-blue);
+  color: var(--light-grey);
 }
 
 h1 {
@@ -135,8 +149,25 @@ legend {
   flex-direction: column;
 }
 
-button:hover {
+button {
+  outline: none;
   cursor: pointer;
+  text-decoration: none;
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
+}
+
+.clear {
+  background-color: var(--light-pink);
+  color: var(--dark-red);
+  border-color: var(--dark-red);
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-blue);
 }
 
 fieldset,
@@ -148,7 +179,7 @@ select {
 }
 
 .output {
-  border: 2px solid black;
+  border: 2px solid var(--light-grey);
   padding: 10px;
   text-align: center;
 }
@@ -163,11 +194,11 @@ select {
 }
 
 .surplus {
-  color: #006627;
+  color: var(--light-green);
 }
 
 .deficit {
-  color: #B30000;
+  color: var(--light-pink);
 }
 ```
 

@@ -1,14 +1,36 @@
 # Додавання нових мов для `/learn`
 
-Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin.
+Виконайте такі кроки, щоб додати нову мову на `/learn` (навчальна програма):
+
+- Перекладіть та відредагуйте перші три сертифікації на Crowdin. (Новий адаптивний вебдизайн, Алгоритми JavaScript та структури даних, Бібліотеки Front End)
+- Перекладіть та відредагуйте всі рядки проєкту «Learn UI» на Crowdin.
+- Оновіть налаштування Crowdin, додавши власний код нової мови.
+- Відкрийте перший PR, щоб налаштувати GitHub Actions. Потрібно оновити 2 файли:
+  - `crowdin-download.client-ui.yml`
+  - `crowdin-download.curriculum.yml`
+- Відрийте другий PR, щоб додати інші налаштування. Потрібно оновити/додати такі файли:
+  - Оновіть `i18n.ts`
+  - Оновіть `superblocks.ts`
+  - Оновіть `algolia-locale-setup.ts`
+  - Додайте `links.json`
+  - Додайте `meta-tags.json`
+  - Додайте `motivation.json`
+- Попросіть команду інфраструктури налаштувати та запустити віртуальну машину для нової мови.
+- Як тільки віртуальна машина готова, відрийте третій PR, щоб додати нову мову до навігаційного меню.
+
+Ми пояснимо кожен крок у наступних розділах.
 
 ## Оновлення налаштувань Crowdin
 
-На бічній панелі проєктів `Curriculum` та `Learn UI` вам потрібно обрати `Project Settings`. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. Якщо ви не впевнені, що вводити, ми допоможемо у нашому чаті помічників.
+Перш ніж випустити нову мову, потрібно дозволити завантаження мов з Crowdin. Для цього потрібно додати власний код нової мови.
 
-## Оновлення потоку робіт
+Оберіть `Settings` > `Languages` на бічній панелі проєктів `Curriculum` та `Learn UI` на Crowdin. Прокрутіть вниз до `Language Mapping`, де ви побачите опцію додавання нового коду мови. Додайте нову мову, обравши значення `language` для `Placeholder` та ввівши назву мови у нижньому регістрі для `Custom code`. Якщо ви не впевнені, що використовувати або у вас немає ролі адміністратора і ви не бачите налаштувань, напишіть у чаті та ми вам допоможемо.
 
-Вам потрібно буде додати крок до `crowdin-download.client-ui.yml` та `crowdin-download.curriculum.yml`. Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
+## Оновлення робочих процесів для GitHub Actions
+
+Потім потрібно налаштувати синхронізацію між Crowdin та GitHub.
+
+Вам потрібно додати крок до [`crowdin-download.client-ui.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.client-ui.yml) та [`crowdin-download.curriculum.yml`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.github/workflows/crowdin-download.curriculum.yml). Він буде однаковим. Наприклад, якщо ви хочете завантажувати дотракійську мову:
 
 ```yml
 ##### Download Dothraki #####
@@ -49,14 +71,14 @@
 
 Щоб дозволити кодовій базі функціонувати на обраній вами мові, потрібно зробити декілька кроків.
 
-Спочатку відвідайте файл `config/i18n.ts`, щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
+Спочатку відвідайте файл [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts), щоб додати мову до списку доступних мов та налаштувати значення. У ньому розміщено декілька об’єктів.
 
 - `Languages`: додайте нову мову до запису `Languages`, схоже до інших. Значення рядка пізніше буде використане у файлі `.env`, щоб налаштувати збірку мови.
 - `availableLangs`: додайте нову властивість із запису `Languages` до масивів `client` та `curriculum`.
 - `i18nextCodes`: мовні коди ISO для кожної мови. Вам потрібно додати відповідний код ISO для мови, з якою працюєте. Вони повинні бути унікальними для кожної мови.
 - `LangNames`: назви мов для перемикача мови у навігаційному меню.
 - `LangCodes`: мовні коди, які використовуються для форматування дат і чисел. Ними повинні бути коди Unicode CLDR замість кодів ISO.
-- `hiddenLangs`: мови, які не показано у навігаційному меню. Використовують для мов, які не готові до випуску.
+- `hiddenLangs`: мови, які не показано у навігаційному меню. Використовують для мов, які не готові до випуску. Додайте мову до цього масиву в першому PR та попросіть персонал підготувати екземпляр VM для вашої мови. Коли VM буде готова, створіть інший PR, щоб видалити її з масиву.
 - `rtlLangs`: мови, які читаються справа наліво.
 
 Наприклад, якщо ви хочете використовувати дотракійську мову, об’єкти `i18n.ts` повинні виглядати так:
@@ -116,74 +138,41 @@ export const hiddenLangs = ['dothraki'];
 export const rtlLangs = [''];
 ```
 
-> [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/news`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
+> [!NOTE] Коли мова буде налаштована у послідовності розгортання ТА матиме публічний активний екземпляр `/learn`, її можна видалити з масиву `hiddenLangs` та зробити доступною.
 
-### Налаштуйте порядок суперблоків мови
+### Налаштуйте перекладені суперблоки
 
-У файлі [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) потрібно встановити порядок та стан усіх суперблоків нової мови з об’єкту `superBlockOrder`. Скопіюйте один з мовних ключів і всі його значення, вставте їх знизу об’єкта та змініть ключ на нову мову з переліку `Languages`.
+Додайте нову мову до об’єкта `notAuditedSuperBlocks` у файлі [shared/config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/superblocks.ts). Це виведе список усіх суперблоків, які не повністю перекладені. Додайте сюди масив суперблоків, які не повністю перекладені. Наприклад:
 
 ```js
-export const superBlockOrder: SuperBlockOrder = {
+export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ...
-  [Languages.Dothraki]: {
-    [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesignNew,
-      SuperBlocks.JsAlgoDataStruct,
-      SuperBlocks.FrontEndDevLibs,
-      SuperBlocks.DataVis,
-      SuperBlocks.RelationalDb,
-      SuperBlocks.BackEndDevApis,
-      SuperBlocks.QualityAssurance,
-      SuperBlocks.SciCompPy,
-      SuperBlocks.DataAnalysisPy,
-      SuperBlocks.InfoSec,
-      SuperBlocks.MachineLearningPy
-    ],
-    [CurriculumMaps.Learn]: {
-      [TranslationStates.Audited]: {
-        [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
-          SuperBlocks.JsAlgoDataStruct,
-          SuperBlocks.FrontEndDevLibs,
-          SuperBlocks.DataVis,
-          SuperBlocks.RelationalDb,
-          SuperBlocks.BackEndDevApis,
-          SuperBlocks.QualityAssurance,
-          SuperBlocks.SciCompPy,
-          SuperBlocks.DataAnalysisPy,
-          SuperBlocks.InfoSec,
-          SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
-        ],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
-        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
-      },
-      [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
-        [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
-      }
-    }
-  }
+  [Languages.Dothraki]: [
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.TheOdinProject
+  ]
 }
 ```
 
-У такому порядку суперблоки з’являються на цільовій сторінці та навчальних картах. Дотримуйтесь коментарів у цьому файлі, щоб розмістити суперблоки у правильному порядку, а потім перемістіть їх до потрібних місць нової мови.
+Переконайтесь, що додали лише ті суперблоки, які **не** повністю перекладені та затверджені. Перекладені суперблоки будуть вирахувані з цього об’єкта. Коли новий суперблок буде повністю перекладений, вилучіть його з масиву цієї мови.
 
-> [!ATTENTION] Не змінюйте порядок ключів у об‘єкті, а просто перемістіть суперблоки в інші масиви
-
-Масив `CurriculumMaps.Landing` повинен містити один суперблок для всіх актуальних сертифікацій, а об’єкт `CurriculumMaps.Learn` повинен містити всі наявні суперблоки. Перекладені суперблоки розміщуються у `TranslationStates.Audited`, а неперекладені — у `TranslationStates.NotAudited`. Суперблоки цих двох об’єктів можуть перебувати у чотирьох станах.
-
-- `SuperBlockStates.Current`: означає, що суперблок є актуальним (наприклад, `Responsive Web Design`).
-- `SuperBlockStates.New`: з’являється лише тоді, коли `SHOW_NEW_CURRICULUM` налаштовано на `true` у файлі `.env`. Використовується для показу нових суперблоків певної збірки. Наприклад, коли ми опублікували новий адаптивний вебдизайн, він був доступний лише на англійській версії.
-- `SuperBlockStates.Upcoming`: з’являється лише тоді, коли `SHOW_UPCOMING_CHANGES` налаштовано на `true` у файлі `.env`. Використовується для локального показу суперблоків у розробці. Або у випадку, якщо потрібно приховати суперблок з карти.
-- `SuperBlockStates.Legacy`: суперблок переміщено сюди, коли його новіша версія була повністю перекладена та замінила стару.
+Див. запис `SuperBlocks` на початку того ж файлу для повного списку суперблоків.
 
 ### Налаштування пошуку
 
-Потім відкрийте файл `client/src/utils/algolia-locale-setup.ts`. Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
+Потім відкрийте файл [`client/src/utils/algolia-locale-setup.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/utils/algolia-locale-setup.ts). Ці дані використовуються для рядка пошуку, який завантажує статті `/news`. Хоча й малоймовірно, що ви будете тестувати цю функціональність, відсутність даних мови може призвести до помилок при спробі створити кодову базу локально.
 
 Додайте об’єкт своєї мови до об’єкта `algoliaIndices`. Використовуйте значення об’єкта `english` для локального тестування, замінивши ключ `english` на значення своєї мови `availableLangs`.
 
@@ -213,12 +202,52 @@ const algoliaIndices = {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
   }
+
+  // If we already have /news in the target language up and running, you can update the values like this:
+  // dothraki: {
+  //   name: 'news-mis',
+  //   searchPage: 'https://www.freecodecamp.org/dothraki/news/search/'
+  // }
 };
 ```
 
-## Додавання локалізованих відео
+### Інтерфейс клієнта
 
-Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі `client/src/templates/Challenges/video/Show.tsx`. Ось так додається дотракійська мова:
+Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
+
+Робочі процеси на Crowdin автоматично завантажують _деякі_ переклади інтерфейсу, однак певні файли потрібно перемістити вручну.
+
+Вам потрібно скопіювати такі файли з [`/client/i18n/locales/english`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n/locales/english) до `/client/i18n/locales/<your-language>` та застосувати переклади там, де потрібно:
+
+- `links.json`
+- `meta-tags.json`
+- `motivation.json`
+
+Спершу необов’язково мати всі значення цих трьох файлів. Ви можете перекласти лише потрібні частини та відредагувати все інше пізніше.
+
+#### `links.json`
+
+Ви можете замінити URL, які мають відповідні сторінки вашою мовою.
+
+Наприклад, якщо публікації доступні вашою мовою, можна замінити посилання на `"news"`. Якщо ви хочете перекласти статті з нижнього колонтитула, див. [як перекладати статті в нижньому колонтитулі](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
+
+#### `meta-tags.json`
+
+Цей файл містить метадані для вебсторінки `/learn` вашою мовою. Ви можете перекласти значення `"title"`, `"description"` та `"social-description"`. Значення `"youre-unsubscribed"` використовується, якщо хтось відписався від щотижневого повідомлення Квінсі.
+
+Ви також можете перекласти та додати відповідні ключові слова до масиву `"keywords"`.
+
+#### `motivation.json`
+
+Цей файл містить похвали, які з’являються після виконаного завдання та мотиваційні цитати, які з’являються зверху сторінки `/learn`.
+
+Ви можете перекласти їх або замінити відповідними фразами вашою мовою.
+
+### Додавання локалізованих відео
+
+Цей розділ корисний, якщо у вас є локалізовані відео до завдань. В іншому випадку ви можете пропустити його.
+
+Вам потрібно дещо змінити стосовно відеозавдань. Спочатку додайте нову локаль до запиту GraphQL у файлі [`client/src/templates/Challenges/video/Show.tsx`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/templates/Challenges/video/show.tsx). Ось так додається дотракійська мова:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -270,19 +299,6 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Інтерфейс клієнта
-
-Вам потрібно здійснити додатковий крок для роботи з перекладами інтерфейсу клієнта.
-
-Робочі процеси на Crowdin автоматично завантажують _деякі_ переклади інтерфейсу, однак певні файли потрібно перемістити вручну.
-
-Вам потрібно скопіювати наступні файли з `/client/i18n/locales/english` до `/client/i18n/locales/<your-language>` та застосувати переклади там, де потрібно:
-
-- `links.json`
-- `meta-tags.json`
-- `motivation.json`
-- `trending.json`
-
 ## Тестування перекладів локально
 
 Якщо ви хочете перевірити переклади локально, перш ніж додати їх до нашого основного репозиторію, то пропустіть зміни робочого процесу на Crowdin. Виконайте кроки для додавання мови, а потім завантажте переклади з Crowdin і додайте їх до свого локального коду.
@@ -298,6 +314,18 @@ videoLocaleIds: Joi.when('challengeType', {
 > [!TIP] Якщо ви побудували клієнта однією мовою та потім хочете побудувати його іншою мовою, вам потрібно використати команду `pnpm run clean-and-develop` після зміни файлу `.env`, оскільки Gatsby кешуватиме першу мову.
 
 > [!ATTENTION] Ви можете працювати з перекладами локально, щоб провести тестування. Ми нагадуємо, що переклади _не_ потрібно надсилати через GitHub, а лише через Crowdin. Не забудьте скинути локальну кодову базу після закінчення тестування.
+
+## Додавання нової мови до навігаційного меню
+
+Як тільки попередній PR буде об’єднаний, а VM для вашої мови буде готовою, створіть ще один PR, щоб додати нову мову до навігаційного меню.
+
+У файлі [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) ви додали мову до масиву `hiddenLangs` у попередньому PR. Тепер видаліть її з масиву.
+
+```js
+export const hiddenLangs = []; // видаліть свою мову з масиву
+```
+
+Коли PR буде об’єднаний та розроблений, навчальна програма стане доступною вашою мовою.
 
 # Додавання нових мов для `/news`
 
@@ -409,16 +437,14 @@ const algoliaIndices = {
 
 ### Додайте файли JSON i18next для нової мови
 
-Перейдіть до каталогу `config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
+Перейдіть до каталогу `shared/config/i18n/locales`, створіть нову папку та надайте їй назву мови, яку додаєте. Наприклад, якщо ви додаєте новини дотракійською мовою, створіть папку під назвою `dothraki`.
 
 Потім скопіюйте файли JSON з каталогу `english` до нової папки.
 
-Відкрийте файл `serve.json` у новій папці та замініть його вміст на наступне:
+Відкрийте файл `redirects.json` у новій папці та замініть його вміст на порожній масив:
 
 ```json
-{
-  "redirects": []
-}
+[]
 ```
 
 Потім зафіксуйте та відправте гілку до репозиторію News.

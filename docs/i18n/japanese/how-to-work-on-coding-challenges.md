@@ -481,18 +481,104 @@ FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 2. 変更したチャレンジファイルごとに以下を実行します ( `challenge-title-goes-here` を正式なチャレンジのタイトルに置き換えてください)。
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here
+   ```
 
-各チャレンジがテストに合格したことを確認したら、[プルリクエストを作成](how-to-open-a-pull-request.md) してください。
+> [!TIP]
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+>
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-> [!TIP] `.env` にある環境変数 `LOCALE` で、テストするチャレンジの言語を設定できます。
-> 
-> 現在受け入れられている値は、`english` と `chinese`で、デフォルトは `english` です。
+## Proposing a Pull Request (PR)
 
-### 役立つリンク
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-チャレンジの作成および編集
+## Useful Links
 
-1. [チャレンジタイプ](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - チャレンジタイプの値の、どの数値が何を意味するか (enum)
+Creating and Editing Challenges:
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) の動画
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+
+## Helper Scripts
+
+> [!NOTE]
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
+
+```bash
+cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
+```
+
+### Add New Challenge
+
+To add a new challenge at the end of a block, call the script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+
+### Delete a Challenge
+
+To delete a challenge, call the script:
+
+```bash
+pnpm run delete-challenge
+```
+
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+
+### Insert a Challenge
+
+To insert a challenge before an existing challenge, call the script:
+
+```bash
+pnpm run insert-challenge
+```
+
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+
+```bash
+a
+b
+c
+```
+
+And you choose `b`, your new order will be:
+
+```bash
+a
+new challenge
+b
+c
+```
+
+### Update Challenge Order
+
+If you need to manually re-order the challenges, call the script:
+
+```bash
+pnpm run update-challenge-order
+```
+
+This will take you through an interactive process to select the order of the challenges.
+
+## Troubleshooting
+
+### Infinite Loop Detected
+
+If you see the following error in the console while previewing a challenge:
+
+```text
+Potential infinite loop detected on line <number>...
+```
+
+This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+
+If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+
+It's not typically necessary to have both set to true, so only set them as needed.

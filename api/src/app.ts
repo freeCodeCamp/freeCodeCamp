@@ -7,6 +7,7 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
+import Ajv from 'ajv';
 import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
@@ -15,12 +16,18 @@ import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
+import fastifySentry from '@immobiliarelabs/fastify-sentry';
+import uriResolver from 'fast-uri';
+import addFormats from 'ajv-formats';
 
-import fastifySentry from './plugins/fastify-sentry';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
+import { SESProvider } from './plugins/mail-providers/ses';
+import mailer from './plugins/mailer';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
+import redirectWithMessage from './plugins/redirect-with-message';
 import { settingRoutes } from './routes/settings';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
@@ -37,9 +44,15 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
-  SENTRY_DSN
+  SENTRY_DSN,
+  EMAIL_PROVIDER
 } from './utils/env';
+import { challengeRoutes } from './routes/challenge';
 import { userRoutes } from './routes/user';
+import { donateRoutes } from './routes/donate';
+import { statusRoute } from './routes/status';
+import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
+import { isObjectID } from './utils/validation';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -49,12 +62,40 @@ export type FastifyInstanceWithTypeProvider = FastifyInstance<
   TypeBoxTypeProvider
 >;
 
+// Options that fastify uses
+const ajv = new Ajv({
+  coerceTypes: 'array', // change data type of data to match type keyword
+  useDefaults: true, // replace missing properties and items with the values from corresponding default keyword
+  removeAdditional: true, // remove additional properties
+  uriResolver,
+  addUsedSchema: false,
+  // Explicitly set allErrors to `false`.
+  // When set to `true`, a DoS attack is possible.
+  allErrors: false
+});
+
+// add the default formatters from avj-formats
+addFormats(ajv);
+ajv.addFormat('objectid', {
+  type: 'string',
+  validate: (str: string) => isObjectID(str)
+});
+
+/**
+ * Top-level wrapper to instantiate the API server. This is where all middleware and
+ * routes should be mounted.
+ *
+ * @param options The options to pass to the Fastify constructor.
+ * @returns The instantiated Fastify server, with TypeBox.
+ */
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
+
+  fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
   void fastify.register(security);
 
@@ -111,6 +152,10 @@ export const build = async (
     })
   });
 
+  const provider =
+    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
+  void fastify.register(mailer, { provider });
+
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI) {
     void fastify.register(fastifySwagger, {
@@ -165,9 +210,14 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
   }
+  void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
-  void fastify.register(userRoutes, { prefix: '/user' });
+  void fastify.register(donateRoutes);
+  void fastify.register(userRoutes);
   void fastify.register(deprecatedEndpoints);
+  void fastify.register(statusRoute);
+  void fastify.register(unsubscribeDeprecated);
+  void fastify.register(redirectWithMessage);
 
   return fastify;
 };

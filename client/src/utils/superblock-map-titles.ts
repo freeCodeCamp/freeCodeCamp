@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 // these are keys from i18n translations.json files
 enum SuperBlockI18nKeys {
@@ -10,6 +10,7 @@ enum SuperBlockI18nKeys {
 // the map and window. e.g. 'Certification' in Responsive Web Design
 // Certification
 const superBlocksWithoutLastWord = [
+  SuperBlocks.RespWebDesign,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject,
   SuperBlocks.ProjectEuler

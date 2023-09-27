@@ -7,11 +7,11 @@
 
 ## はじめに
 
-Some email workflows, like updating a user's email, require the back-end api-server to send outgoing emails. MailHog は、実際のメールメッセージを送信する電子メールサービスプロバイダの代わりになります。 これは、freeCodeCamp インスタンスから送信されたメールメッセージをキャッチするメールテスト用の開発ツールです。
+Some email workflows, like updating a user's email, require the back-end API server to send outgoing emails. MailHog は、実際のメールメッセージを送信する電子メールサービスプロバイダの代わりになります。 これは、freeCodeCamp インスタンスから送信されたメールメッセージをキャッチするメールテスト用の開発ツールです。
 
 ## MailHog のインストール
 
-MailHog can be installed on macOS, Windows, and Linux or used via Docker
+MailHog can be installed on macOS, Windows, and Linux or used via Docker.
 
 <details><summary>Dockerで MailHog をインストールする</summary>
 
@@ -42,7 +42,7 @@ brew install mailhog
 brew services start mailhog
 ```
 
-上記コマンドにより、バックグラウンドで mailhog サービスを起動します。
+The above commands will start a MailHog service in the background.
 
 インストールが完了すると、[MailHog の使用](#mailhog-の使用) を開始できます。
 

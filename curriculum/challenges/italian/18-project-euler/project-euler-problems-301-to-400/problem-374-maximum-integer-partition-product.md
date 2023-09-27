@@ -24,7 +24,7 @@ Per $n = 10$ la partizione con il prodotto più grande è $10 = 2 + 3 + 5$, che 
 
 Si può verificare che $\sum f(n) \times m(n)$ for $1 ≤ n ≤ 100 = 1\\,683\\,550\\,844\\,462$.
 
-Trova $\sum f(n) \times m(n)$ for $1 ≤ n ≤ {10}^{14}$. Give your answer modulo $982\\,451\\,653$, the 50 millionth prime.
+Trova $\sum f(n) \times m(n)$ for $1 ≤ n ≤ {10}^{14}$. Dai la tua risposta come modulo $982\\,451\\,653$, il 50 millionesimo primo.
 
 # --hints--
 

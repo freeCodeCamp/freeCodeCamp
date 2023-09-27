@@ -30,7 +30,7 @@ What is true about Recurrent Neural Networks?
 
 ---
 
-4: Both 2 and 3.
+4: Sowohl 2 und 3.
 
 ## --video-solution--
 

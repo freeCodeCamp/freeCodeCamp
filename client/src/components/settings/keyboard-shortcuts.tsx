@@ -1,4 +1,3 @@
-import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
@@ -17,11 +16,7 @@ export default function KeyboardShortcutsSettings({
   const { t } = useTranslation();
 
   return (
-    <Form
-      inline={true}
-      onSubmit={(e: React.FormEvent) => e.preventDefault()}
-      data-testid='fcc-enable-shortcuts-setting'
-    >
+    <>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
         flag={keyboardShortcuts}
@@ -33,7 +28,7 @@ export default function KeyboardShortcutsSettings({
         }}
       />
       <Spacer size='medium'></Spacer>
-    </Form>
+    </>
   );
 }
 

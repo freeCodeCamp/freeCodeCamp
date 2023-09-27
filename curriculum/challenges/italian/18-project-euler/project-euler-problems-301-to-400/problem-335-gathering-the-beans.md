@@ -16,7 +16,7 @@ Quindi con 5 ciotole a Peter servono 15 mosse per tornare alla situazione inizia
 
 Lascia che $M(x)$ rappresenti il numero di mosse necessarie per tornare alla situazione iniziale, a partire da $x$ ciotole. Così, $M(5) = 15$. Può anche essere verificato che $M(100) = 10920$.
 
-Trova $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Give your answer modulo $7^9$.
+Trova $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Dai la tua risposta modulo $7^9$.
 
 # --hints--
 

@@ -34,25 +34,21 @@ Nesse desafio, você usará o método `Object.freeze` para prevenir a mudança d
 Você não deve substituir a palavra-chave `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const/g));
+assert(code.match(/const/g));
 ```
 
 `MATH_CONSTANTS` deve ser uma variável constante (use `const`).
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
+assert(code.match(/const\s+MATH_CONSTANTS/g));
 ```
 
 Você não deve alterar a declaração original de `MATH_CONSTANTS`.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(
-      /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
-    )
-  );
+assert(code.match(
+   /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
+));
 ```
 
 A variável `PI` deve ser igual a `3.14`.

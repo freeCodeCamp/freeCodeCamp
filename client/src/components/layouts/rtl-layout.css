@@ -88,25 +88,11 @@ and menu secion
 }
 
 /* 
-dropdown links 
-*/
-
-[dir='rtl'] .dropdown-menu {
-  text-decoration-skip-ink: all;
-}
-
-/* 
 New RWD project challenge
 */
 
 [dir='rtl'] .tabs-row {
   gap: 10px;
-}
-
-/* Align the the Arabic head with the corresponding English word */
-
-[dir='rtl'] .table thead:first-child tr:first-child th {
-  text-align: right;
 }
 
 /* 

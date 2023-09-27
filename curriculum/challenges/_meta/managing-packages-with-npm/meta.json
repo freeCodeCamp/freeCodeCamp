@@ -7,45 +7,45 @@
   "time": "5 hours",
   "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
-    [
-      "587d7fb3367417b2b2512bfb",
-      "How to Use package.json, the Core of Any Node.js Project or npm Package"
-    ],
-    [
-      "587d7fb3367417b2b2512bfc",
-      "Add a Description to Your package.json"
-    ],
-    [
-      "587d7fb4367417b2b2512bfd",
-      "Add Keywords to Your package.json"
-    ],
-    [
-      "587d7fb4367417b2b2512bfe",
-      "Add a License to Your package.json"
-    ],
-    [
-      "587d7fb4367417b2b2512bff",
-      "Add a Version to Your package.json"
-    ],
-    [
-      "587d7fb4367417b2b2512c00",
-      "Expand Your Project with External Packages from npm"
-    ],
-    [
-      "587d7fb5367417b2b2512c01",
-      "Manage npm Dependencies By Understanding Semantic Versioning"
-    ],
-    [
-      "587d7fb5367417b2b2512c02",
-      "Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency"
-    ],
-    [
-      "587d7fb5367417b2b2512c03",
-      "Use the Caret-Character to Use the Latest Minor Version of a Dependency"
-    ],
-    [
-      "587d7fb5367417b2b2512c04",
-      "Remove a Package from Your Dependencies"
-    ]
+    {
+      "id": "587d7fb3367417b2b2512bfb",
+      "title": "How to Use package.json, the Core of Any Node.js Project or npm Package"
+    },
+    {
+      "id": "587d7fb3367417b2b2512bfc",
+      "title": "Add a Description to Your package.json"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfd",
+      "title": "Add Keywords to Your package.json"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfe",
+      "title": "Add a License to Your package.json"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bff",
+      "title": "Add a Version to Your package.json"
+    },
+    {
+      "id": "587d7fb4367417b2b2512c00",
+      "title": "Expand Your Project with External Packages from npm"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c01",
+      "title": "Manage npm Dependencies By Understanding Semantic Versioning"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c02",
+      "title": "Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c03",
+      "title": "Use the Caret-Character to Use the Latest Minor Version of a Dependency"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c04",
+      "title": "Remove a Package from Your Dependencies"
+    }
   ]
 }

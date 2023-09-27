@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+
 import BezierEasing from 'bezier-easing';
 
 interface ProgressBarInnerProps {
@@ -10,17 +11,37 @@ interface ProgressBarInnerProps {
 const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 const intervalLength = 10;
 let percent = 0;
-let applyAnimation = true;
 
+function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  const observer = useMemo(
+    () =>
+      new IntersectionObserver(([entry]) =>
+        setIsIntersecting(entry.isIntersecting)
+      ),
+    []
+  );
+
+  useEffect(() => {
+    ref.current && observer.observe(ref.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref, observer]);
+
+  return isIntersecting;
+}
 function ProgressBarInner({
   completedPercent,
   title,
   meta
 }: ProgressBarInnerProps): JSX.Element {
   const [shownPercent, setShownPercent] = useState(0);
-  const [progressInterval, setProgressInterval] = useState(0);
   const [progressBarInnerWidth, setProgressBarInnerWidth] = useState(0);
+  const [lastShopwnPercent, setLastShownPercent] = useState(0);
   const progressBarInnerWrap = useRef<HTMLDivElement>(null);
+  const isProgressBarInViewport = useIsInViewport(progressBarInnerWrap);
 
   const animateProgressBarInner = (completedPercent: number) => {
     if (completedPercent > 100) completedPercent = 100;
@@ -38,21 +59,19 @@ function ProgressBarInner({
       setShownPercent(
         Math.round(completedPercent * easing(percent / completedPercent))
       );
-      if (percent >= completedPercent) clearInterval(myInterval);
+      if (percent >= completedPercent) {
+        percent = 0;
+        clearInterval(myInterval);
+      }
     }, intervalLength);
-
-    setProgressInterval(myInterval);
   };
   useEffect(() => {
-    if (applyAnimation) animateProgressBarInner(completedPercent);
-    return () => {
-      if (progressInterval !== null) {
-        clearInterval(progressInterval);
-        applyAnimation = false;
-      }
-    };
+    if (lastShopwnPercent !== completedPercent && isProgressBarInViewport) {
+      setLastShownPercent(completedPercent);
+      animateProgressBarInner(completedPercent);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [completedPercent]);
+  }, [isProgressBarInViewport]);
 
   useEffect(() => {
     if (progressBarInnerWrap.current)

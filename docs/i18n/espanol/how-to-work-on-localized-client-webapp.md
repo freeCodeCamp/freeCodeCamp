@@ -75,7 +75,7 @@ Some of these files are translated on our translation platform (Crowdin) and som
 
 ## Testing the Client App in a World Language
 
-You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -97,7 +97,7 @@ export const availableLangs = {
 
 Si estas probando un nuevo idioma, crea una carpeta con el nombre del idioma como titulo junto al otro idioma y copia los archivos JSON desde el otro idioma dentro de la nueva carpeta.
 
-Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file.
 
 A continuación, sigue las instrucciones en los comentarios en el mismo archivo para agregar/actualizar el resto de las variables tanto como se necesite.
 
@@ -266,7 +266,11 @@ Sería bueno mantener la clave en el mismo orden en todos los archivos también.
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vea  [the documentation](https://www.i18next.com/translation-function/plurals) de como debe ser usado.
 
-## Documentación útil
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [Documentación de react-i18next ](https://react.i18next.com/latest/usetranslation-hook)
 - [Documentación de i18next](https://www.i18next.com/translation-function/essentials)

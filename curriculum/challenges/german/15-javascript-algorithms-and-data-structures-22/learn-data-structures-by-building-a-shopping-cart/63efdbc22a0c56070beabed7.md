@@ -1,24 +1,24 @@
 ---
 id: 63efdbc22a0c56070beabed7
-title: Step 23
+title: Schritt 23
 challengeType: 0
 dashedName: step-23
 ---
 
 # --description--
 
-In your `forEach` callback, you need to update the `totalCountPerProduct` object. Using the `id` of the current `dessert` as your property, update the value of the property to be the current value plus one. Do not use the addition assignment operator for this.
+In deinem `forEach`-Callback musst du das `totalCountPerProduct`-Objekt aktualisieren. Verwende die `id` des aktuellen `dessert` als deine Eigenschaft und aktualisiere den Wert der Eigenschaft auf den aktuellen Wert plus eins. Do not use the addition assignment operator for this.
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Verwende die Punktschreibweise, um auf die `id`-Eigenschaft von `dessert` zuzugreifen.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /dessert\.id/);
 ```
 
-You should use bracket notation to access the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+Du solltest die Klammerschreibweise verwenden, um auf die Eigenschaft von `totalCountPerProduct` zuzugreifen, die der `dessert.id` entspricht.
 
 ```js
 const cart = new ShoppingCart();
@@ -32,7 +32,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
 ```
 
-You should update the value of `totalCountPerProduct` to be the current value plus one.
+Du solltest den Wert von `totalCountPerProduct` auf den aktuellen Wert plus eins aktualisieren.
 
 ```js
 const cart = new ShoppingCart();

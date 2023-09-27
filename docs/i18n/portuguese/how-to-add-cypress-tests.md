@@ -33,13 +33,13 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
 - Para executar um único teste:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress run --spec=cypress/<caminho_para_o_arquivo_de_teste>
   ```
 
   Por exemplo:
 
   ```console
-  pnpm run cypress -- run --spec=cypress/e2e/default/landing.ts
+  pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Para criar uma versão de compilação, inicie o servidor de desenvolvimento e execute todos os testes cypress contínuos e funcionais existentes:
@@ -58,7 +58,7 @@ Se o ambiente Gitpod não foi criado automaticamente:
 - Crie um arquivo de configuração.
 
 ```console
-pnpm run create:config
+pnpm run create:shared
 ```
 
 - Crie a base de dados

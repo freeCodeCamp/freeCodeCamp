@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that you are not handling missing pages (404). Der übliche Weg, dies in Node zu handhaben, ist mithilfe folgender Middleware. Füge dies nach all deinen anderen Routen ein:
+Du hast vielleicht bemerkt, dass du fehlende Seiten (404) nicht behandelst. Der übliche Weg, dies in Node zu handhaben, ist mithilfe folgender Middleware. Füge dies nach all deinen anderen Routen ein:
 
 ```js
 app.use((req, res, next) => {

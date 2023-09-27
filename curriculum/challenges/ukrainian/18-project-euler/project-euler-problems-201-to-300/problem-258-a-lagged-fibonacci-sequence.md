@@ -13,7 +13,7 @@ A sequence is defined as:
 - $g_k = 1$, for $0 ≤ k ≤ 1999$
 - $g_k = g_{k - 2000} + g_{k - 1999}$, for $k ≥ 2000$.
 
-Find $g_k$ mod 20092010 for $k = {10}^{18}$.
+Знайдіть $g_k$ mod 20092010 за умови $k = {10}^{18}$.
 
 # --hints--
 

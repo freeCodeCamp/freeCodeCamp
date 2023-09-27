@@ -38,7 +38,7 @@ Sia $M(n)$ il numero massimo di pietre che il primo giocatore può prendere da u
 
 $\sum M(n)$ per $n ≤ 100$ è 728.
 
-Trova $\sum M(n)$ per $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+Trova $\sum M(n)$ per $n ≤ {10}^{18}$. Dai la tua risposta modulo ${10}^8$.
 
 # --hints--
 

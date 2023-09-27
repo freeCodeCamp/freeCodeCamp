@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff3
-title: 'Problem 372: Pencils of rays'
+title: 'Problema 372: raggi di matite'
 challengeType: 1
 forumTopicId: 302034
 dashedName: problem-372-pencils-of-rays

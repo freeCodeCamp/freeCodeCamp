@@ -7,23 +7,23 @@ dashedName: step-36
 
 # --description--
 
-Your next step is to allow users to add entries to the calorie counter. Declare an empty function `addEntry`. This function should not take any parameters.
+O próximo passo é permitir que os usuários adicionem entradas ao contador de calorias. Declare uma função vazia `addEntry`. A função não deve receber parâmetros.
 
 # --hints--
 
-You should declare an `addEntry` variable.
+Você deve declarar uma variável `addEntry`.
 
 ```js
 assert.isDefined(addEntry);
 ```
 
-Your `addEntry` variable should be a function.
+A variável `addEntry` deve ser uma função.
 
 ```js
 assert.isFunction(addEntry);
 ```
 
-Your `addEntry` function should not take any parameters.
+A função `addEntry` não deve receber nenhum parâmetro.
 
 ```js
 assert.match(addEntry?.toString(), /\(\s*\)/);
@@ -104,8 +104,22 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
 ```
 
 ```css
+:root {
+  --light-grey: #f5f6f7;
+  --dark-blue: #0a0a23;
+  --fcc-blue: #1b1b32;
+  --light-yellow: #fecc4c;
+  --dark-yellow: #feac32;
+  --light-pink: #ffadad;
+  --dark-red: #850000;
+  --light-green: #acd157;
+}
+
 body {
-  font-family: "Lato", Arial;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--fcc-blue);
+  color: var(--light-grey);
 }
 
 h1 {
@@ -133,8 +147,25 @@ legend {
   flex-direction: column;
 }
 
-button:hover {
+button {
+  outline: none;
   cursor: pointer;
+  text-decoration: none;
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
+}
+
+.clear {
+  background-color: var(--light-pink);
+  color: var(--dark-red);
+  border-color: var(--dark-red);
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-blue);
 }
 
 fieldset,
@@ -146,7 +177,7 @@ select {
 }
 
 .output {
-  border: 2px solid black;
+  border: 2px solid var(--light-grey);
   padding: 10px;
   text-align: center;
 }
@@ -161,11 +192,11 @@ select {
 }
 
 .surplus {
-  color: #006627;
+  color: var(--light-green);
 }
 
 .deficit {
-  color: #B30000;
+  color: var(--light-pink);
 }
 ```
 

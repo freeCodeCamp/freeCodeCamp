@@ -11,5 +11,10 @@
   "superBlock": "",
   "superOrder": 1,
   "isBeta": true,
-  "challengeOrder": [["", ""]]
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": ""
+    }
+  ]
 }

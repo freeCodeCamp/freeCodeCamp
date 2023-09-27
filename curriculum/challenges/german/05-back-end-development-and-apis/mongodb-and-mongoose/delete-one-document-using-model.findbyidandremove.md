@@ -8,7 +8,7 @@ dashedName: delete-one-document-using-model-findbyidandremove
 
 # --description--
 
-`findByIdAndRemove` and `findOneAndRemove` are like the previous update methods. Sie übergeben das gelöschte Dokument an die Datenbank. Verwende wie üblich das Funktionsargument `personId` als Suchbegriff.
+`findByIdAndRemove` und `findOneAndRemove` sind wie die vorherigen Update-Methoden. Sie übergeben das gelöschte Dokument an die Datenbank. Verwende wie üblich das Funktionsargument `personId` als Suchbegriff.
 
 # --instructions--
 

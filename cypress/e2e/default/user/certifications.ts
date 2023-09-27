@@ -1,11 +1,11 @@
 describe('Public profile certifications', () => {
   context('Signed in user viewing their own public profile', () => {
     before(() => {
-      cy.exec('pnpm run seed:certified-user');
+      cy.task('seed', ['certified-user']);
     });
 
     beforeEach(() => {
-      cy.login();
+      cy.login('certified-user');
     });
 
     it('Should show claimed certifications if the username has all lowercase characters', () => {
@@ -14,7 +14,7 @@ describe('Public profile certifications', () => {
       // The following line is only required if you want to test it in development
       //cy.contains('Preview custom 404 page').click();
 
-      cy.get('[data-cy=claimed-certification]').should('have.length', 17);
+      cy.get('[data-cy=claimed-certification]').should('have.length', 18);
     });
 
     it('Should show claimed certifications if the username includes uppercase characters', () => {
@@ -32,7 +32,7 @@ describe('Public profile certifications', () => {
       // The following line is only required if you want to test it in development
       //cy.contains('Preview custom 404 page').click();
 
-      cy.get('[data-cy=claimed-certification]').should('have.length', 17);
+      cy.get('[data-cy=claimed-certification]').should('have.length', 18);
     });
   });
 

@@ -82,7 +82,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // work upfront as possible. At least until that upfront work takes too long.
   const rwdPaths = rwdBlocknames
     .map(name =>
-      rwdBlocks[name].meta.challengeOrder.map(([id]) =>
+      rwdBlocks[name].meta.challengeOrder.map(({ id }) =>
         toParams(
           'responsive-web-design',
           name,

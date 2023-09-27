@@ -14,7 +14,7 @@ How should you assign weights to input neurons before training your network for 
 
 ## --answers--
 
-From smallest to largest.
+Vom Kleinsten zum Größten.
 
 ---
 

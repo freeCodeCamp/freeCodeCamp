@@ -12,7 +12,7 @@ A root or zero of a polynomial $P(x)$ is a solution to the equation $P(x) = 0$.
 
 Define $P_n$ as the polynomial whose coefficients are the digits of $n$.
 
-For example, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
+Наприклад, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
 
 We can see that:
 
@@ -22,9 +22,9 @@ We can see that:
 
 Define $Z(k)$ as the number of positive integers, $n$, not exceeding $k$ for which the polynomial $P_n$ has at least one integer root.
 
-It can be verified that $Z(100\\,000)$ is 14696.
+Можна довести, що $Z(100\\,000)$ дорівнює 14696.
 
-What is $Z({10}^{16})$?
+Чому дорівнює $Z({10}^{16})$?
 
 # --hints--
 

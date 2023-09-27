@@ -16,7 +16,7 @@ Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
 
 Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
 
-Find $T(47)\\,mod\\,3^{15}$
+Знайдіть $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 

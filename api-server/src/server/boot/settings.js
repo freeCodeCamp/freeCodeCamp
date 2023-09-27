@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 import _ from 'lodash';
 import isURL from 'validator/lib/isURL';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
 import {
   deprecatedEndpoint,
@@ -44,7 +44,6 @@ export default function settingsController(app) {
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
   api.put('/update-my-socials', ifNoUser401, updateMySocials);
-  api.put('/update-my-sound', ifNoUser401, updateMySound);
   api.put(
     '/update-my-keyboard-shortcuts',
     ifNoUser401,
@@ -234,11 +233,43 @@ const updatePrivacyTerms = (req, res, next) => {
   );
 };
 
-function updateMySocials(...args) {
-  const buildUpdate = body =>
-    _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
-  const validate = update =>
-    Object.values(update).every(x => typeof x === 'string');
+const allowedSocialsAndDomains = {
+  githubProfile: 'github.com',
+  linkedin: 'linkedin.com',
+  twitter: 'twitter.com',
+  website: ''
+};
+
+const socialVals = Object.keys(allowedSocialsAndDomains);
+
+export function updateMySocials(...args) {
+  const buildUpdate = body => _.pick(body, socialVals);
+  const validate = update => {
+    // Socials should point to their respective domains
+    // or be empty strings
+    return Object.keys(update).every(key => {
+      const val = update[key];
+      if (val === '') {
+        return true;
+      }
+      if (key === 'website') {
+        return isURL(val, { require_protocol: true });
+      }
+
+      const domain = allowedSocialsAndDomains[key];
+
+      try {
+        const url = new URL(val);
+        const topDomain = url.hostname.split('.').slice(-2);
+        if (topDomain.length === 2) {
+          return topDomain.join('.') === domain;
+        }
+        return false;
+      } catch (e) {
+        return false;
+      }
+    });
+  };
   createUpdateUserProperties(
     buildUpdate,
     validate,
@@ -253,16 +284,6 @@ function updateMyTheme(...args) {
     buildUpdate,
     validate,
     'flash.updated-themes'
-  )(...args);
-}
-
-function updateMySound(...args) {
-  const buildUpdate = body => _.pick(body, 'sound');
-  const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties(
-    buildUpdate,
-    validate,
-    'flash.updated-sound'
   )(...args);
 }
 

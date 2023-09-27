@@ -1,7 +1,7 @@
 describe('Donate page', () => {
   it('Donation ', () => {
-    cy.exec('pnpm run seed');
-    cy.login();
+    cy.task('seed', ['certified-user']);
+    cy.login('certified-user');
     cy.visit('/donate');
     cy.get('.donation-elements', { timeout: 10000 }).within(() => {
       cy.fillElementsInput('cardNumber', '4242424242424242');

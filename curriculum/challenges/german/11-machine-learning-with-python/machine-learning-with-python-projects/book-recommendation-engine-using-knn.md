@@ -47,7 +47,7 @@ sollte zurückgeben:
 
 Notice that the data returned from `get_recommends()` is a list. The first element in the list is the book title passed into the function. The second element in the list is a list of five more lists. Each of the five lists contains a recommended book and the distance from the recommended book to the book passed into the function.
 
-If you graph the dataset (optional), you will notice that most books are not rated frequently. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
+Wenn du den Datensatz grafisch darstellst (optional), wirst du feststellen, dass die meisten Bücher nicht häufig bewertet werden. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
 
 The first three cells import libraries you may need and the data to use. The final cell is for testing. Write all your code in between those cells.
 

@@ -11,16 +11,15 @@ const selectors = {
 };
 
 describe('Challenge with multifile editor', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit(location);
   });
-
-  it('renders the file tab buttons', () => {
+  it('renders correctly', () => {
+    // it renders the file tab buttons
     cy.get(selectors.monacoTabs).contains('index.html');
     cy.get(selectors.monacoTabs).contains('styles.css');
-  });
 
-  it('checks for correct text at different widths', () => {
+    // it checks for correct text at different widths
     cy.viewport(768, 660);
     cy.get(selectors.checkLowerJawButton).contains(
       'Check Your Code (Ctrl + Enter)'
@@ -43,11 +42,11 @@ describe('Challenge with multifile editor', () => {
     cy.get('[data-cy=failing-test-feedback]').should('not.exist');
   });
 
-  // Page will change after this test. If your test requires page used in previous
-  // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
-    cy.visit(location);
-    cy.focused().type('{end}{enter}<meta charset="UTF-8" />{ctrl+enter}');
+    cy.focused()
+      .click()
+      .type('{end}{enter}<meta charset="UTF-8" />')
+      .type('{ctrl}{enter}', { release: false, delay: 100 });
     cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
     cy.contains(translations.learn['congratulations']);
     cy.get(selectors.signInButton).click();
@@ -55,16 +54,35 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).should('not.exist');
   });
 
-  it('focuses the submit button after testing a valid solution', () => {
-    cy.visit(location);
-    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+  it('focuses on the submit button after tests passed', () => {
+    cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
     cy.get(selectors.checkLowerJawButton).should('not.be.focused');
     cy.get(selectors.checkLowerJawButton).click();
     cy.get(selectors.submitLowerJawButton).should('be.focused');
   });
 
+  it(
+    'brings back the check button after reset',
+    { browser: '!chrome' }, // TODO: seems to be a bug in Chrome, try again when a new version is released
+    () => {
+      cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
+      cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+      cy.get(selectors.checkLowerJawButton).click();
+      // Ready to submit (submit button replaces check button)
+      cy.get(selectors.submitLowerJawButton).should('be.visible');
+      cy.get(selectors.checkLowerJawButton).should('not.be.visible');
+      // Reset
+      cy.get(selectors.resetCodeButton).click();
+      cy.get('[data-cy=reset-modal-confirm').click();
+      // First we need to click on the description or Cypress will not be able
+      // to scroll to the button
+      cy.get('.editor-upper-jaw').click();
+      cy.get(selectors.checkLowerJawButton).should('be.visible');
+      cy.get(selectors.submitLowerJawButton).should('not.be.visible');
+    }
+  );
+
   it('checks hotkeys when instruction is focused', () => {
-    cy.reload();
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
     cy.get(selectors.instructionContainer)
       .click('topRight')

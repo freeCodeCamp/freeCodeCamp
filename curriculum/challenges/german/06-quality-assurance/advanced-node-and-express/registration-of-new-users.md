@@ -8,7 +8,7 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Jetzt musst du einem neuen Nutzer deiner Webseite erlauben, ein Konto zu erstellen. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
+Jetzt musst du einem neuen Nutzer deiner Webseite erlauben, ein Konto zu erstellen. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. Wenn du deine Seite aktualisierst, solltest du das Registrierungsformular sehen, das bereits in deiner `index.pug`-Datei erstellt wurde. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
 
 The logic of the registration route should be as follows:
 
@@ -18,7 +18,7 @@ The logic of the registration route should be as follows:
 
 Die Logik von Schritt 1 sollte wie folgt lauten:
 
-1. Query database with `findOne`
+1. Frage die Datenbank mit `findOne` ab
 2. Wenn ein Fehler auftritt, rufe `next` mit dem Fehler auf
 3. If a user is returned, redirect back to home
 4. Wird der Nutzer nicht gefunden und tritt kein Fehler auf, so füge den Nutzernamen sowie das Passwort der Datenbank mithilfe von `insertOne` hinzu. Tritt auch hier kein Fehler auf, so rufe `next` auf, um zu Schritt 2 überzugehen – der Authentifizierung des neuen Nutzers. Die Logik hierfür hast du bereits in deiner `POST /login`-Route geschrieben.
@@ -56,7 +56,7 @@ app.route('/register')
   );
 ```
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">das bis zu diesem Punkt abgeschlossene Projekt überprüfen</a>.
 
 **HINWEIS:** Ab jetzt können Probleme im Zusammenhang mit der Verwendung des *picture-in-picture*-Browsers auftreten. Wenn du eine Online-IDE verwendest, die eine Vorschau der Anwendung innerhalb des Editors bietet, wird empfohlen, diese Vorschau in einem neuen Tab zu öffnen.
 
@@ -177,7 +177,7 @@ Logout sollte funktionieren.
   );
 ```
 
-Profile should no longer work after logout.
+Das Profil sollte nach dem Logout nicht mehr funktionieren.
 
 ```js
 (getUserInput) =>

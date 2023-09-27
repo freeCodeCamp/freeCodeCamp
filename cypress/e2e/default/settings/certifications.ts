@@ -3,14 +3,14 @@ import '@testing-library/cypress/add-commands';
 describe('Settings certifications area', () => {
   describe('initially', () => {
     before(() => {
-      cy.exec('pnpm run seed');
+      cy.task('seed');
       cy.login();
     });
 
     it('Should render the default settings page', () => {
       cy.visit('/settings/');
       cy.findAllByText('Claim Certification').should($btns => {
-        expect($btns).to.have.length(17);
+        expect($btns).to.have.length(18);
       });
       cy.findByText('Show Certification').should('not.exist');
       cy.contains(`I agree to freeCodeCamp's Academic Honesty Policy.`);
@@ -23,7 +23,7 @@ describe('Settings certifications area', () => {
 
   describe('after isHonest', () => {
     before(() => {
-      cy.exec('pnpm run seed');
+      cy.task('seed');
       cy.login();
     });
 

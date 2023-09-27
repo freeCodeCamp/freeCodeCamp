@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 
 import './signout-modal.css';
 

@@ -6,12 +6,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
-import Media from 'react-responsive';
 import { useTranslation, withTranslation } from 'react-i18next';
-import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
-import { radioLocation } from '../../../../../config/env.json';
-import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
+import { radioLocation } from '../../../../config/env.json';
 import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import { Link } from '../../helpers';
@@ -67,24 +64,13 @@ const DonateButton = ({
   handleMenuKeyDown
 }: DonateButtonProps) => {
   const { t } = useTranslation();
-  const exposeUniversalDonateButton = useFeature('expose_donate_button').on;
   if (isUserDonating) return <ThankYouMessage message={t('donate.thanks')} />;
-  else if (exposeUniversalDonateButton)
-    return (
-      <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
-        <DonateItem
-          handleMenuKeyDown={handleMenuKeyDown}
-          donateText={t('buttons.donate')}
-        />
-      </Media>
-    );
-  else
-    return (
-      <DonateItem
-        handleMenuKeyDown={handleMenuKeyDown}
-        donateText={t('buttons.donate')}
-      />
-    );
+  return (
+    <DonateItem
+      handleMenuKeyDown={handleMenuKeyDown}
+      donateText={t('buttons.donate')}
+    />
+  );
 };
 
 const toggleTheme = (
@@ -235,6 +221,18 @@ function NavLinks({
           to={radioLocation}
         >
           <span>{t('buttons.radio')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
+      <li key='contribute'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.contribute')}
+        >
+          <span>{t('buttons.contribute')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>

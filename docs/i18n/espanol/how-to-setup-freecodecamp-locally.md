@@ -2,6 +2,8 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 ## Choose between Gitpod or your Own Machine (local setup)
 
+> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+
 Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
@@ -14,8 +16,6 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 | Más lento y puede tardar unos minutos en iniciarse                          | Más rápido y puede ponerse en marcha en segundos                                   |
 | Necesita conexión a Internet para funcionar                                 | Requiere una conexión mínima a Internet (una vez configurado)                      |
 | Algunas tareas, como la compilación y las pruebas, pueden llevar más tiempo | Realización más rápida de las tareas (en función de las capacidades de tu máquina) |
-
-> [!ATTENTION] **Nota:** Si utilizas Windows 10 u 11, tendrás que utilizar WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
 
 ### How to Prepare a Gitpod Workspace
 
@@ -69,9 +69,9 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 | --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                             |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                             |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                             |
 
-> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. Consulta [solución de problemas](#troubleshooting) para obtener más detalles.
+> [!ATTENTION] Si tienes una versión diferente, instala la versión recomendada. Sólo podemos resolver problemas de instalación de las versiones recomendadas. See [troubleshooting section](troubleshooting-development-issues.md) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
@@ -233,7 +233,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 This step will install the dependencies required for the application to run:
 
 ```console
-pnpm install && pnpm run create:config
+pnpm install && pnpm run create:shared
 ```
 
 #### Step 3: Start MongoDB and Seed the Database
@@ -274,6 +274,14 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+
+```console
+pnpm run seed:certified-user
+```
+
+> [!WARNING] Running `pnpm run seed:certified-user` will log you out. You will have to clear your browser cookies and sign in again.
+
 #### Step 4: Start the freeCodeCamp Client Application and API Server
 
 You can now start up the API server and the client applications.
@@ -298,9 +306,10 @@ If you have issues while installing it, check out the [troubleshooting section](
 
 A quick reference to the commands that you will need when working locally.
 
-| command            | description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `pnpm install`     | Installs / re-installs all dependencies and bootstraps the different services. |
-| `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.                   |
-| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                    |
-| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                              |
+| command                        | description                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Installs / re-installs all dependencies and bootstraps the different services.                    |
+| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB.                                      |
+| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB. |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                       |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                 |

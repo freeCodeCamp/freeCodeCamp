@@ -25,17 +25,18 @@ require('@babel/register')({
 });
 const {
   buildDOMChallenge,
-  buildJSChallenge
+  buildJSChallenge,
+  buildPythonChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../client/utils/challenge-types');
+const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
-  require('../../config/client/test-evaluator.json').filename;
+  require('../../client/config/browser-scripts/test-evaluator.json').filename;
 
-const { getLines } = require('../../utils/get-lines');
+const { getLines } = require('../../shared/utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
@@ -296,7 +297,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
             const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
-              arr => arr[0] === challenge.id
+              ({ id }) => id === challenge.id
             );
 
             if (index < 0) {
@@ -313,18 +314,29 @@ function populateTestsForLang({ lang, challenges, meta }) {
               throw new AssertionError(result.error);
             }
             const { id, title, block, dashedName } = challenge;
+            assert.exists(
+              dashedName,
+              `Missing dashedName for challenge ${id} in ${block}.`
+            );
             const pathAndTitle = `${block}/${dashedName}`;
-            mongoIds.check(id, title);
-            challengeTitles.check(title, pathAndTitle);
+            const idVerificationMessage = mongoIds.check(id, title);
+            assert.isNull(idVerificationMessage, idVerificationMessage);
+            const dupeTitleCheck = challengeTitles.check(dashedName, block);
+            assert.isTrue(
+              dupeTitleCheck,
+              `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
+            );
           });
 
           const { challengeType } = challenge;
+          // TODO: shouldn't this be a function in challenge-types.js?
           if (
             challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
             challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend
+            challengeType !== challengeTypes.backend &&
+            challengeType !== challengeTypes.python
           ) {
             return;
           }
@@ -349,14 +361,21 @@ function populateTestsForLang({ lang, challenges, meta }) {
             return;
           }
 
+          // TODO(after python PR): simplify pipeline and sync with client.
+          // buildChallengeData should be called and any errors handled.
+          // canBuildChallenge does not need to exist independently.
           const buildChallenge =
-            challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.jsProject
-              ? buildJSChallenge
-              : buildDOMChallenge;
+            {
+              [challengeTypes.js]: buildJSChallenge,
+              [challengeTypes.jsProject]: buildJSChallenge,
+              [challengeTypes.python]: buildPythonChallenge
+            }[challengeType] ?? buildDOMChallenge;
 
+          // The python tests are (currently) slow, so we give them more time.
+          const timePerTest =
+            challengeType === challengeTypes.python ? 10000 : 5000;
           it('Test suite must fail on the initial contents', async function () {
-            this.timeout(5000 * tests.length + 1000);
+            this.timeout(timePerTest * tests.length + 1000);
             // suppress errors in the console.
             const oldConsoleError = console.error;
             console.error = () => {};
@@ -445,7 +464,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               it(`Solution ${
                 index + 1
               } must pass the tests`, async function () {
-                this.timeout(5000 * tests.length + 2000);
+                this.timeout(timePerTest * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
@@ -477,22 +496,27 @@ async function createTestRunner(
     solutionFiles
   );
 
-  const { build, sources, loadEnzyme } = await buildChallenge(
-    {
-      challengeFiles,
-      required,
-      template
-    },
-    { usesTestRunner: true }
-  );
+  const { build, sources, loadEnzyme, transformedPython } =
+    await buildChallenge(
+      {
+        challengeFiles,
+        required,
+        template
+      },
+      { usesTestRunner: true }
+    );
 
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
   };
 
-  const evaluator = await (buildChallenge === buildDOMChallenge
-    ? getContextEvaluator(build, sources, code, loadEnzyme)
+  const runsInBrowser =
+    buildChallenge === buildDOMChallenge ||
+    buildChallenge === buildPythonChallenge;
+
+  const evaluator = await (runsInBrowser
+    ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
     : getWorkerEvaluator(build, sources, code, removeComments));
 
   return async ({ text, testString }) => {
@@ -537,8 +561,20 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(build, sources, code, loadEnzyme) {
-  await initializeTestRunner(build, sources, code, loadEnzyme);
+async function getContextEvaluator(
+  build,
+  sources,
+  code,
+  loadEnzyme,
+  transformedPython
+) {
+  await initializeTestRunner(
+    build,
+    sources,
+    code,
+    loadEnzyme,
+    transformedPython
+  );
 
   return {
     evaluate: async (testString, timeout) =>
@@ -564,20 +600,30 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
   };
 }
 
-async function initializeTestRunner(build, sources, code, loadEnzyme) {
+async function initializeTestRunner(
+  build,
+  sources,
+  code,
+  loadEnzyme,
+  transformedPython
+) {
   await page.reload();
   await page.setContent(build);
   await page.evaluate(
-    async (code, sources, loadEnzyme) => {
+    async (code, sources, loadEnzyme, transformedPython) => {
       const getUserInput = fileName => sources[fileName];
+      // TODO: use frame's functions directly, so it behaves more like the
+      // client. Also, keep an eye on performance - loading pyodide is slow.
       await document.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme
+        loadEnzyme,
+        transformedPython
       });
     },
     code,
     sources,
-    loadEnzyme
+    loadEnzyme,
+    transformedPython
   );
 }

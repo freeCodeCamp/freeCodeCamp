@@ -2,11 +2,11 @@
 
 Деякі з робочих процесів (наприклад, виправлення помилок у кодовій базі) вимагають локального запуску freeCodeCamp.
 
-### Як підготувати локальну машину
+## Як підготувати локальну машину
 
 Для початку встановіть передумовне програмне забезпечення для своєї операційної системи.
 
-#### Передумови
+### Передумови
 
 | Передумова                      | Версія | Примітки                                      |
 | ------------------------------- | ------ | --------------------------------------------- |
@@ -26,7 +26,7 @@ dart --version
 
 Як тільки ви встановили передумови, потрібно підготувати середовище розробки. Це характерно для багатьох робочих процесів розробки, і це потрібно зробити лише один раз.
 
-##### Виконайте наступні дії, щоб підготувати середовище розробки:
+#### Виконайте наступні дії, щоб підготувати середовище розробки:
 
 1. Встановіть [Git](https://git-scm.com/) або інший клієнт Git, якщо ви досі цього не зробили. Оновіть його до останньої версії; версія, яка пов’язана з вашою ОС, може бути застарілою.
 
@@ -359,6 +359,113 @@ flutter run
 
     ```console
     git push origin branch/name-here
+    ```
+
+## Запуск тестів навчальної програми мобільного застосунку
+
+> [!NOTE] Дотримуйтесь цього розділу, якщо змінюєте тестер завдань у мобільному застосунку. В іншому випадку перейдіть до наступного розділу [як відкрити запит на злиття](#proposing-a-pull-request-pr).
+
+1. Клонуйте копію [репозиторію freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) локально зі своєї локальної копії репозиторію мобільного застосунку freeCodeCamp. Структура файлів має виглядати так:
+
+    ```console
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Змініть каталог на репозиторій freeCodeCamp:
+
+    ```console
+    cd freeCodeCamp
+    ```
+
+3. Зробіть копію файлу `.env`:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
+
+4. Встановіть залежності для репозиторію freeCodeCamp:
+
+    ```console
+    pnpm install && pnpm run create:shared
+    ```
+
+5. Створіть файл JSON з даними завдань:
+
+    ```console
+    pnpm run build:curriculum
+    ```
+
+6. Скопіюйте створений файл JSON до мобільного застосунку:
+
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
+
+7. Змініть каталог на мобільний застосунок:
+
+    ```console
+    cd ../mobile/mobile-app
+    ```
+
+8. Встановіть залежності для мобільного застосунку:
+
+    ```console
+    flutter pub get
+    ```
+
+9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
+
+    ```console
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    ```
+
+10. Створіть файли завдань:
+
+    ```console
+    flutter test test/widget_test.dart
+    ```
+
+11. Запустіть локальний сервер для обслуговування файлів завдань за допомогою пакету `serve`:
+
+    ```console
+    npx serve
+    ```
+
+12. В іншому терміналі поверніться до репозиторію freeCodeCamp:
+
+    ```console
+    cd ../../freeCodeCamp
+    ```
+
+13. Запустіть тести cypress:
+
+    ```console
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Запропонуйте запит на злиття (PR)

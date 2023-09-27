@@ -69,14 +69,13 @@ assert(
 テンプレート文字列と式の補間機能を使用する必要があります。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+assert.match(code, /(`.*\${.*}.*`)/);
 ```
 
 イテレーターを使用する必要があります。
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
+assert(code.match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

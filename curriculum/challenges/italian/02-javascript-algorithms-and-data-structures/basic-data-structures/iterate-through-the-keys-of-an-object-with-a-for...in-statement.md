@@ -29,7 +29,7 @@ Abbiamo definito la variabile `food` nella testa del loop e questa variabile è 
 
 # --instructions--
 
-Abbiamo definito una funzione `countOnline` che accetta un argomento, `allUsers`. Usa un'istruzione <dfn>for...in</dfn> all'interno di questa funzione per iterare sull'oggetto `allUsers` e restituire il numero di utenti la cui proprietà online è impostata su `true`. Un esempio di oggetto che potrebbe essere passato a `countOnline` è mostrato di sotto. Ogni utente avrà una proprietà `online` con un valore impostato su `true` o `false`.
+Abbiamo definito una funzione `countOnline` che accetta un argomento, `allUsers`. Usa un'istruzione <dfn>for...in</dfn> all'interno di questa funzione per iterare sull'oggetto `allUsers` e restituire il numero di utenti la cui proprietà `online` è impostata su `true`. Un esempio di oggetto che potrebbe essere passato a `countOnline` è mostrato di sotto. Ogni utente avrà una proprietà `online` con un valore impostato su `true` o `false`.
 
 ```js
 {
