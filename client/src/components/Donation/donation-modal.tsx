@@ -144,34 +144,36 @@ function DonateModal({
     }
   };
 
-  const modalHeader = (
-    <div className=' text-center block-modal-text'>
-      <Row>
-        {!closeLabel && (
-          <Col sm={10} smOffset={1} xs={12}>
-            {recentlyClaimedBlock !== null && (
-              <b>
-                {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
-                })}
-              </b>
-            )}
-            {showMultiTier ? (
-              <h2>{t('donate.help-us-develop')}</h2>
-            ) : (
-              <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
-            )}
-          </Col>
-        )}
-      </Row>
-      <Spacer size='small' />
-    </div>
-  );
+  function ModalHeader() {
+    return (
+      <div className=' text-center block-modal-text'>
+        <Row>
+          {!closeLabel && (
+            <Col sm={10} smOffset={1} xs={12}>
+              {recentlyClaimedBlock !== null && (
+                <b>
+                  {t('donate.nicely-done', {
+                    block: t(
+                      `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                    )
+                  })}
+                </b>
+              )}
+              {showMultiTier ? (
+                <h2>{t('donate.help-us-develop')}</h2>
+              ) : (
+                <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
+              )}
+            </Col>
+          )}
+        </Row>
+        <Spacer size='small' />
+      </div>
+    );
+  }
 
-  const closeButtonRow = (
-    <>
+  function CloseButtonRow() {
+    return (
       <Row>
         <Col
           sm={4}
@@ -192,111 +194,119 @@ function DonateModal({
           </Button>
         </Col>
       </Row>
-    </>
-  );
+    );
+  }
 
-  const selectionTabs = (
-    <Row className={'donate-btn-group'}>
-      <Col
-        xs={12}
-        className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
-      >
-        <b>
-          {t('donate.confirm-monthly', {
-            usd: formattedAmountLabel(donationAmount)
-          })}
-        </b>
-        <Spacer size='small' />
-        <Tabs
-          className={'donate-btn-group'}
-          defaultValue={donationAmount.toString()}
+  function SelectionTabs() {
+    return (
+      <Row className={'donate-btn-group'}>
+        <Col
+          xs={12}
+          className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
         >
-          <TabsList className='nav-lists'>
-            {subscriptionAmounts.map(value => (
-              <TabsTrigger
-                key={value}
-                value={value.toString()}
-                onClick={() => setDonationAmount(value)}
-              >
-                ${formattedAmountLabel(value)}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <b>
+            {t('donate.confirm-monthly', {
+              usd: formattedAmountLabel(donationAmount)
+            })}
+          </b>
           <Spacer size='small' />
-          {subscriptionAmounts.map(value => {
-            const usd = formattedAmountLabel(donationAmount);
-            const hours = convertToTimeContributed(donationAmount);
-            const donationDescription = t('donate.your-donation-2', {
-              usd,
-              hours
-            });
+          <Tabs
+            className={'donate-btn-group'}
+            defaultValue={donationAmount.toString()}
+          >
+            <TabsList className='nav-lists'>
+              {subscriptionAmounts.map(value => (
+                <TabsTrigger
+                  key={value}
+                  value={value.toString()}
+                  onClick={() => setDonationAmount(value)}
+                >
+                  ${formattedAmountLabel(value)}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <Spacer size='small' />
+            {subscriptionAmounts.map(value => {
+              const usd = formattedAmountLabel(donationAmount);
+              const hours = convertToTimeContributed(donationAmount);
+              const donationDescription = t('donate.your-donation-2', {
+                usd,
+                hours
+              });
 
-            return (
-              <TabsContent
-                key={value}
-                className='tab-content'
-                value={value.toString()}
-              >
-                <p>{donationDescription}</p>
-              </TabsContent>
-            );
-          })}
-        </Tabs>
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='text-center confirm-donation-btn donate-btn-group'
-          type='submit'
-          onClick={() => setShowDonateForm(true)}
+              return (
+                <TabsContent
+                  key={value}
+                  className='tab-content'
+                  value={value.toString()}
+                >
+                  <p>{donationDescription}</p>
+                </TabsContent>
+              );
+            })}
+          </Tabs>
+          <Button
+            block={true}
+            bsStyle='primary'
+            className='text-center confirm-donation-btn donate-btn-group'
+            type='submit'
+            onClick={() => setShowDonateForm(true)}
+          >
+            {t('buttons.donate')}
+          </Button>
+          <Spacer size='medium' />
+        </Col>
+      </Row>
+    );
+  }
+
+  function DonationFormRow() {
+    return (
+      <Row>
+        <Col
+          xs={12}
+          className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
         >
-          {t('buttons.donate')}
-        </Button>
-        <Spacer size='medium' />
-      </Col>
-    </Row>
-  );
+          <DonateForm
+            handleProcessing={handleProcessing}
+            isMinimalForm={true}
+            paymentContext={PaymentContext.Modal}
+            editAmount={
+              showMultiTier ? () => setShowDonateForm(false) : undefined
+            }
+            selectedDonationAmount={donationAmount}
+          />
+          <Spacer size='medium' />
+        </Col>
+      </Row>
+    );
+  }
 
-  const donationFormRow = (
-    <Row>
-      <Col
-        xs={12}
-        className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
-      >
-        <DonateForm
-          handleProcessing={handleProcessing}
-          isMinimalForm={true}
-          paymentContext={PaymentContext.Modal}
-          editAmount={
-            showMultiTier ? () => setShowDonateForm(false) : undefined
-          }
-          selectedDonationAmount={donationAmount}
-        />
-        <Spacer size='medium' />
-      </Col>
-    </Row>
-  );
+  function MultiTierModalBody() {
+    return (
+      <>
+        <div className={showDonateForm ? 'hide' : ''}>
+          <ModalHeader />
+          <SelectionTabs />
+          <CloseButtonRow />
+        </div>
+        <div className={!showDonateForm ? 'hide' : ''}>
+          <DonationFormRow />
+          {closeLabel && <CloseButtonRow />}
+        </div>
+      </>
+    );
+  }
 
-  const multiTierModalBody = (
-    <>
-      <div className={showDonateForm ? 'hide' : ''}>
-        {modalHeader}
-        {selectionTabs}
-        {closeButtonRow}
-      </div>
-      <div className={!showDonateForm ? 'hide' : ''}>
-        {donationFormRow}
-        {closeLabel && closeButtonRow}
-      </div>
-    </>
-  );
-
-  const defaultModalBody = (
-    <>
-      {modalHeader}
-      {donationFormRow}
-      {closeButtonRow}
-    </>
-  );
+  function DefaultModalBody() {
+    return (
+      <>
+        <ModalHeader />
+        <SelectionTabs />
+        <CloseButtonRow />
+      </>
+    );
+  }
 
   return (
     <Modal
@@ -309,7 +319,7 @@ function DonateModal({
         <div className='donation-icon-container'>
           <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
-        {showMultiTier ? multiTierModalBody : defaultModalBody}
+        {showMultiTier ? <MultiTierModalBody /> : <DefaultModalBody />}
       </Modal.Body>
     </Modal>
   );
