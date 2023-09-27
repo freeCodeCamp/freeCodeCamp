@@ -108,6 +108,10 @@
 #mobile-layout .nav-lists > button {
   height: 100%;
   font-size: 0.8em;
+  /* Need to override radix-ui defaults on side padding to allow room for
+     four tabs and a preview toggle button at narrow view ports */
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 #mobile-layout .nav-lists button[data-state='active'] {
