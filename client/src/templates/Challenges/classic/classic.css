@@ -134,6 +134,8 @@
   border: 0;
   padding: 0;
   background-color: inherit;
+  font-size: 0.8rem;
+  height: 100%;
 }
 
 .portal-button[aria-expanded='true'] {
@@ -183,16 +185,6 @@
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
-}
-
-#mobile-layout .portal-button {
-  font-size: 0.8rem;
-  height: 100%;
-}
-
-#mobile-layout .portal-button svg {
-  height: 18px;
-  padding-block-start: 3px;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
