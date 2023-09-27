@@ -8,13 +8,13 @@ dashedName: problem-428-necklace-of-circles
 
 # --description--
 
-Let $a$, $b$ and $c$ be positive numbers.
+Нехай $a$, $b$ та $c$ будуть додатними числами.
 
-Let $W$, $X$, $Y$, $Z$ be four collinear points where $|WX| = a$, $|XY| = b$, $|YZ| = c$ and $|WZ| = a + b + c$.
+Нехай $W$, $X$, $Y$, $Z$ будуть чотирма колінеарними точками, де $|WX| = a$, $|XY| = b$, $|YZ| = c$ та $|WZ| = a + b + c$.
 
-Let $C_{\text{in}}$ be the circle having the diameter $XY$.
+Нехай $C_{\text{in}}$ буде колом з діаметром $XY$.
 
-Let $C_{\text{out}}$ be the circle having the diameter $WZ$.
+Нехай $C_{\text{out}}$ буде колом з діаметром $WZ$.
 
 The triplet ($a$, $b$, $c$) is called a *necklace triplet* if you can place $k ≥ 3$ distinct circles $C_1, C_2, \ldots, C_k$ such that:
 
