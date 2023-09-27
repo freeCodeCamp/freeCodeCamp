@@ -12,7 +12,8 @@ import {
   PaymentContext,
   subscriptionAmounts,
   defaultDonation,
-  defaultTierAmount
+  defaultTierAmount,
+  type DonationAmount
 } from '../../../../shared/config/donation-settings';
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
@@ -56,7 +57,7 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const RenderIlustration = ({
+const Ilustration = ({
   recentlyClaimedBlock
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
@@ -72,6 +73,308 @@ function getctaNumberBetween1To10() {
   const min = 1;
   const max = 10;
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function ModalHeader({
+  closeLabel,
+  ctaNumber,
+  showMultiTier,
+  recentlyClaimedBlock
+}: {
+  closeLabel: boolean;
+  ctaNumber: number;
+  showMultiTier: boolean;
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className=' text-center block-modal-text'>
+      <Row>
+        {!closeLabel && (
+          <Col sm={10} smOffset={1} xs={12}>
+            {recentlyClaimedBlock !== null && (
+              <b>
+                {t('donate.nicely-done', {
+                  block: t(
+                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                  )
+                })}
+              </b>
+            )}
+            {showMultiTier ? (
+              <h2>{t('donate.help-us-develop')}</h2>
+            ) : (
+              <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
+            )}
+          </Col>
+        )}
+      </Row>
+      <Spacer size='small' />
+    </div>
+  );
+}
+
+function SelectionTabs({
+  loadElementsIndividually,
+  donationAmount,
+  setDonationAmount,
+  setShowDonateForm
+}: {
+  loadElementsIndividually: boolean;
+  donationAmount: DonationAmount;
+  setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
+  setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const { t } = useTranslation();
+  return (
+    <Row className={'donate-btn-group'}>
+      <Col
+        xs={12}
+        {...(loadElementsIndividually && {
+          className: 'two-seconds-delay-fade-in'
+        })}
+      >
+        <b>
+          {t('donate.confirm-monthly', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
+        </b>
+        <Spacer size='small' />
+        <Tabs
+          className={'donate-btn-group'}
+          defaultValue={donationAmount.toString()}
+        >
+          <TabsList className='nav-lists'>
+            {subscriptionAmounts.map(value => (
+              <TabsTrigger
+                key={value}
+                value={value.toString()}
+                onClick={() => setDonationAmount(value)}
+              >
+                ${formattedAmountLabel(value)}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <Spacer size='small' />
+          {subscriptionAmounts.map(value => {
+            const usd = formattedAmountLabel(donationAmount);
+            const hours = convertToTimeContributed(donationAmount);
+            const donationDescription = t('donate.your-donation-2', {
+              usd,
+              hours
+            });
+
+            return (
+              <TabsContent
+                key={value}
+                className='tab-content'
+                value={value.toString()}
+              >
+                <p>{donationDescription}</p>
+              </TabsContent>
+            );
+          })}
+        </Tabs>
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='text-center confirm-donation-btn donate-btn-group'
+          type='submit'
+          onClick={() => setShowDonateForm(true)}
+        >
+          {t('buttons.donate')}
+        </Button>
+        <Spacer size='medium' />
+      </Col>
+    </Row>
+  );
+}
+
+function CloseButtonRow({
+  showSkipButton,
+  isDisabled,
+  closeLabel,
+  closeDonationModal
+}: {
+  showSkipButton: boolean;
+  isDisabled: boolean;
+  closeLabel: boolean;
+  closeDonationModal: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <Row>
+      <Col
+        sm={4}
+        smOffset={4}
+        xs={8}
+        xsOffset={2}
+        className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
+      >
+        <Button
+          bsSize='sm'
+          bsStyle='primary'
+          className='btn-link close-button'
+          onClick={closeDonationModal}
+          tabIndex='0'
+          disabled={isDisabled}
+        >
+          {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
+        </Button>
+      </Col>
+    </Row>
+  );
+}
+
+function ModalBody({
+  closeLabel,
+  ctaNumber,
+  showMultiTier,
+  recentlyClaimedBlock,
+  donationAmount,
+  loadElementsIndividually,
+  setDonationAmount,
+  setShowDonateForm,
+  closeDonationModal,
+  isDisabled,
+  showSkipButton
+}: {
+  closeLabel: boolean;
+  ctaNumber: number;
+  showMultiTier: boolean;
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donationAmount: DonationAmount;
+  loadElementsIndividually: boolean;
+  setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
+  setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+  closeDonationModal: () => void;
+  isDisabled: boolean;
+  showSkipButton: boolean;
+}) {
+  return (
+    <>
+      <ModalHeader
+        closeLabel={closeLabel}
+        ctaNumber={ctaNumber}
+        recentlyClaimedBlock={recentlyClaimedBlock}
+        showMultiTier={showMultiTier}
+      />
+      <SelectionTabs
+        donationAmount={donationAmount}
+        loadElementsIndividually={loadElementsIndividually}
+        setDonationAmount={setDonationAmount}
+        setShowDonateForm={setShowDonateForm}
+      />
+      <CloseButtonRow
+        closeDonationModal={closeDonationModal}
+        closeLabel={closeLabel}
+        isDisabled={isDisabled}
+        showSkipButton={showSkipButton}
+      />
+    </>
+  );
+}
+
+function DonationFormRow({
+  handleProcessing,
+  loadElementsIndividually,
+  showMultiTier,
+  setShowDonateForm,
+  donationAmount
+}: {
+  handleProcessing: () => void;
+  loadElementsIndividually: boolean;
+  showMultiTier: boolean;
+  setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+  donationAmount: DonationAmount;
+}) {
+  return (
+    <Row>
+      <Col
+        xs={12}
+        {...(loadElementsIndividually && {
+          className: 'two-seconds-delay-fade-in'
+        })}
+      >
+        <DonateForm
+          handleProcessing={handleProcessing}
+          isMinimalForm={true}
+          paymentContext={PaymentContext.Modal}
+          editAmount={
+            showMultiTier ? () => setShowDonateForm(false) : undefined
+          }
+          selectedDonationAmount={donationAmount}
+        />
+        <Spacer size='medium' />
+      </Col>
+    </Row>
+  );
+}
+function MultiTierModalBody({
+  closeLabel,
+  ctaNumber,
+  showMultiTier,
+  recentlyClaimedBlock,
+  donationAmount,
+  loadElementsIndividually,
+  setDonationAmount,
+  setShowDonateForm,
+  closeDonationModal,
+  isDisabled,
+  showSkipButton,
+  showDonateForm,
+  handleProcessing
+}: {
+  closeLabel: boolean;
+  ctaNumber: number;
+  showMultiTier: boolean;
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donationAmount: DonationAmount;
+  loadElementsIndividually: boolean;
+  setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
+  setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+  closeDonationModal: () => void;
+  isDisabled: boolean;
+  showSkipButton: boolean;
+  showDonateForm: boolean;
+  handleProcessing: () => void;
+}) {
+  return (
+    <>
+      <div {...(showDonateForm && { className: 'hide' })}>
+        <ModalBody
+          closeDonationModal={closeDonationModal}
+          closeLabel={closeLabel}
+          ctaNumber={ctaNumber}
+          donationAmount={donationAmount}
+          isDisabled={isDisabled}
+          loadElementsIndividually={loadElementsIndividually}
+          recentlyClaimedBlock={recentlyClaimedBlock}
+          setDonationAmount={setDonationAmount}
+          setShowDonateForm={setShowDonateForm}
+          showMultiTier={showMultiTier}
+          showSkipButton={showSkipButton}
+        />
+      </div>
+      <div {...(!showDonateForm && { className: 'hide' })}>
+        <DonationFormRow
+          donationAmount={donationAmount}
+          handleProcessing={handleProcessing}
+          showMultiTier={showMultiTier}
+          loadElementsIndividually={loadElementsIndividually}
+          setShowDonateForm={setShowDonateForm}
+        />
+        {closeLabel && (
+          <CloseButtonRow
+            closeDonationModal={closeDonationModal}
+            closeLabel={closeLabel}
+            isDisabled={isDisabled}
+            showSkipButton={showSkipButton}
+          />
+        )}
+      </div>
+    </>
+  );
 }
 
 function DonateModal({
@@ -91,7 +394,6 @@ function DonateModal({
   );
   const loadElementsIndividually = useFeature('load_elements_individually').on;
   const showMultiTier = useFeature('multi-tier').on;
-  const { t } = useTranslation();
 
   // test wheather the conversions are being distributed properly
   useFeature('aa-test-in-component');
@@ -144,170 +446,6 @@ function DonateModal({
     }
   };
 
-  function ModalHeader() {
-    return (
-      <div className=' text-center block-modal-text'>
-        <Row>
-          {!closeLabel && (
-            <Col sm={10} smOffset={1} xs={12}>
-              {recentlyClaimedBlock !== null && (
-                <b>
-                  {t('donate.nicely-done', {
-                    block: t(
-                      `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                    )
-                  })}
-                </b>
-              )}
-              {showMultiTier ? (
-                <h2>{t('donate.help-us-develop')}</h2>
-              ) : (
-                <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>
-              )}
-            </Col>
-          )}
-        </Row>
-        <Spacer size='small' />
-      </div>
-    );
-  }
-
-  function CloseButtonRow() {
-    return (
-      <Row>
-        <Col
-          sm={4}
-          smOffset={4}
-          xs={8}
-          xsOffset={2}
-          className={showSkipButton ? 'no-delay-fade-in' : 'no-opacity'}
-        >
-          <Button
-            bsSize='sm'
-            bsStyle='primary'
-            className='btn-link close-button'
-            onClick={closeDonationModal}
-            tabIndex='0'
-            disabled={isDisabled}
-          >
-            {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
-          </Button>
-        </Col>
-      </Row>
-    );
-  }
-
-  function SelectionTabs() {
-    return (
-      <Row className={'donate-btn-group'}>
-        <Col
-          xs={12}
-          className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
-        >
-          <b>
-            {t('donate.confirm-monthly', {
-              usd: formattedAmountLabel(donationAmount)
-            })}
-          </b>
-          <Spacer size='small' />
-          <Tabs
-            className={'donate-btn-group'}
-            defaultValue={donationAmount.toString()}
-          >
-            <TabsList className='nav-lists'>
-              {subscriptionAmounts.map(value => (
-                <TabsTrigger
-                  key={value}
-                  value={value.toString()}
-                  onClick={() => setDonationAmount(value)}
-                >
-                  ${formattedAmountLabel(value)}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            <Spacer size='small' />
-            {subscriptionAmounts.map(value => {
-              const usd = formattedAmountLabel(donationAmount);
-              const hours = convertToTimeContributed(donationAmount);
-              const donationDescription = t('donate.your-donation-2', {
-                usd,
-                hours
-              });
-
-              return (
-                <TabsContent
-                  key={value}
-                  className='tab-content'
-                  value={value.toString()}
-                >
-                  <p>{donationDescription}</p>
-                </TabsContent>
-              );
-            })}
-          </Tabs>
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='text-center confirm-donation-btn donate-btn-group'
-            type='submit'
-            onClick={() => setShowDonateForm(true)}
-          >
-            {t('buttons.donate')}
-          </Button>
-          <Spacer size='medium' />
-        </Col>
-      </Row>
-    );
-  }
-
-  function DonationFormRow() {
-    return (
-      <Row>
-        <Col
-          xs={12}
-          className={loadElementsIndividually && 'two-seconds-delay-fade-in'}
-        >
-          <DonateForm
-            handleProcessing={handleProcessing}
-            isMinimalForm={true}
-            paymentContext={PaymentContext.Modal}
-            editAmount={
-              showMultiTier ? () => setShowDonateForm(false) : undefined
-            }
-            selectedDonationAmount={donationAmount}
-          />
-          <Spacer size='medium' />
-        </Col>
-      </Row>
-    );
-  }
-
-  function MultiTierModalBody() {
-    return (
-      <>
-        <div className={showDonateForm ? 'hide' : ''}>
-          <ModalHeader />
-          <SelectionTabs />
-          <CloseButtonRow />
-        </div>
-        <div className={!showDonateForm ? 'hide' : ''}>
-          <DonationFormRow />
-          {closeLabel && <CloseButtonRow />}
-        </div>
-      </>
-    );
-  }
-
-  function DefaultModalBody() {
-    return (
-      <>
-        <ModalHeader />
-        <SelectionTabs />
-        <CloseButtonRow />
-      </>
-    );
-  }
-
   return (
     <Modal
       bsSize='lg'
@@ -317,9 +455,39 @@ function DonateModal({
     >
       <Modal.Body className={'no-delay-fade-in'}>
         <div className='donation-icon-container'>
-          <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
+          <Ilustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
-        {showMultiTier ? <MultiTierModalBody /> : <DefaultModalBody />}
+        {showMultiTier ? (
+          <MultiTierModalBody
+            recentlyClaimedBlock={recentlyClaimedBlock}
+            setDonationAmount={setDonationAmount}
+            setShowDonateForm={setShowDonateForm}
+            showDonateForm={showDonateForm}
+            showMultiTier={showMultiTier}
+            showSkipButton={showSkipButton}
+            closeDonationModal={closeDonationModal}
+            closeLabel={closeLabel}
+            ctaNumber={ctaNumber}
+            donationAmount={donationAmount}
+            handleProcessing={handleProcessing}
+            isDisabled={isDisabled}
+            loadElementsIndividually={loadElementsIndividually}
+          />
+        ) : (
+          <ModalBody
+            closeDonationModal={closeDonationModal}
+            closeLabel={closeLabel}
+            ctaNumber={ctaNumber}
+            donationAmount={donationAmount}
+            isDisabled={isDisabled}
+            loadElementsIndividually={loadElementsIndividually}
+            recentlyClaimedBlock={recentlyClaimedBlock}
+            setDonationAmount={setDonationAmount}
+            setShowDonateForm={setShowDonateForm}
+            showMultiTier={showMultiTier}
+            showSkipButton={showSkipButton}
+          />
+        )}
       </Modal.Body>
     </Modal>
   );
