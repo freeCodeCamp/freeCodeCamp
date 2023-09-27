@@ -718,12 +718,26 @@
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
-    "ms-trophy-err": "Não conseguimos verificar seu troféu na plataforma de aprendizagem da Microsoft.",
-    "ms-trophy-verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado.",
-    "ms-linked": "Seu nome de usuário da Microsoft foi vinculado à sua conta do freeCodeCamp.",
-    "ms-link-err": "Ocorreu um erro ao tentar vincular seu nome de usuário da Microsoft à sua conta do freeCodeCamp.",
-    "ms-unlinked": "O link para seu nome de usuário da Microsoft foi removido.",
-    "ms-unlink-err": "Ocorreu um erro ao tentar remover o link para o seu nome de usuário da Microsoft."
+    "ms": {
+      "transcript": {
+        "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
+        "link-err-2": "Algo deu errado ao tentar obter sua transcrição da Microsoft.",
+        "link-err-3": "Um nome de usuário não foi encontrado na sua transcrição da Microsoft.",
+        "link-err-4": "O nome de usuário da Microsoft está sendo utilizado por outra conta do freeCodeCamp.",
+        "link-err-5": "Algo deu errado ao tentar salvar sua conta da Microsoft.",
+        "link-err-6": "Algo deu errado ao tentar vincular seu nome de usuário da Microsoft à sua conta do freeCodeCamp.",
+        "linked": "Seu nome de usuário da Microsoft foi vinculado à sua conta do freeCodeCamp.",
+        "unlinked": "O link para seu nome de usuário da Microsoft foi removido.",
+        "unlink-err": "Algo deu errado ao tentar remover o link para o seu nome de usuário da Microsoft."
+      },
+      "trophy": {
+        "err-1": "Não foi possível encontrar um nome de usuário da Microsoft associado à sua conta do freeCodeCamp.",
+        "err-2": "Você está tentando enviar um desafio que não parece ser um desafio de troféu.",
+        "err-3": "Parece que o usuário da Microsoft \"{{msUsername}}\" não tem esse troféu.",
+        "err-4": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
+        "verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado."
+      }
+    }
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -750,7 +764,7 @@
     "verify": "Verificar esta certificação em:",
     "issued": "Emitido",
     "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp. org em {{time}},</4> <5>representando aproximadamente {{completionTime}} horas de curso.</5>",
-    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
@@ -934,8 +948,8 @@
     "nevermind": "Deixa para lá, eu não quero sair da minha conta"
   },
   "staging-warning": {
-    "heading": "Warning: This is an early access test deployment",
-    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Aviso: esta é uma implantação de teste de acesso antecipado",
+    "p1": "Boas-vindas a você para experimentar esta plataforma em um modo apenas para teste e para ter acesso rápido aos recursos da próxima plataforma. Por vezes, essas mudanças são referidas como a próxima, a beta, a de staging – nomes, em geral, intercambiáveis.",
     "p2": "Agradecemos por relatar erros que encontra e ajuda para melhorar o freeCodeCamp.org.",
     "p3": "Seu progresso PODE NÃO estar salvo na sua próxima visita. Qualquer certificação solicitada nessa implantação não é válida. Saiba mais <0>seguindo este link</0>.",
     "certain": "Aceitar e dispensar"
