@@ -10,9 +10,8 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
     projectId: 'ke77ns',
-    retries: 4,
+    retries: { openMode: 1, runMode: 4 },
     chromeWebSecurity: false,
-
     // This is the default spec pattern, that we use on /learn proper
     //
     // For special ones like the third- party or the mobile app specs,

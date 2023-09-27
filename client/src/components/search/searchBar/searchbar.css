@@ -1,6 +1,17 @@
 .fcc_searchBar {
-  flex-grow: 1;
-  max-height: 33px;
+  border-bottom: 0.0625rem solid var(--gray-45);
+  height: var(--header-sub-element-height);
+  padding: 6px 15px;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .fcc_searchBar {
+    border: 0;
+    height: auto;
+    max-width: 500px;
+    padding: 0;
+  }
 }
 
 .fcc_searchBar strong,
@@ -40,10 +51,6 @@
   z-index: 100;
   background-color: var(--gray-75);
   color: var(--gray-00);
-}
-
-.fcc_searchBar .ais-Hits {
-  left: 15px;
 }
 
 /* hits */
@@ -124,13 +131,17 @@ and arrow keys */
 }
 
 .fcc_searchBar .ais-SearchBox-form {
-  display: grid;
-  grid-template-columns: 26px auto 36px;
-  grid-template-areas: 'submit input reset';
-  margin-bottom: 0;
-  gap: 0.25em;
-  margin-top: 6px;
+  align-content: center;
   background-color: var(--gray-75);
+  display: grid;
+  gap: 0.25em;
+  grid-template-areas: 'submit input reset';
+  grid-template-columns: 26px auto 36px;
+  margin-bottom: 0;
+}
+
+.fcc_search_wrapper {
+  position: relative;
 }
 
 .ais-SearchBox-input {
@@ -145,22 +156,16 @@ and arrow keys */
   grid-area: reset;
 }
 
-@media (min-width: 981px) {
+@media (min-width: 980px) {
   .ais-SearchBox-input {
     width: 100%;
     max-width: 100%;
   }
-  .fcc_searchBar {
-    position: relative;
-    max-width: 500px;
-  }
+
   .fcc_searchBar .ais-Hits {
     top: auto;
     width: 100%;
     max-width: 100%;
     left: 0px;
-  }
-  .fcc_searchBar .ais-SearchBox-form {
-    top: auto;
   }
 }

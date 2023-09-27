@@ -8,10 +8,6 @@ describe('Certification intro page', () => {
     cy.login();
   });
 
-  beforeEach(() => {
-    cy.preserveSession();
-  });
-
   it('Should render and toggle correctly', () => {
     cy.visit('/learn/2022/responsive-web-design');
     cy.title().should(

@@ -62,6 +62,12 @@ export const legacyCertifications = [
   Certification.LegacyInfoSecQa
 ] as const;
 
+// The Legacy Full Stack certification can only be claimed when specific
+// "current" and "legacy" certifications have been claimed.
+export const legacyFullStackCertification = [
+  Certification.LegacyFullStack
+] as const;
+
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [Certification.UpcomingPython] as const;

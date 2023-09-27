@@ -24,7 +24,6 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
-  putUpdateMySound,
   putUpdateMyTheme,
   putUpdateMyUsername,
   putVerifyCert
@@ -100,7 +99,10 @@ function* updateMySocialsSaga({ payload: update }) {
 function* updateMySoundSaga({ payload: update }) {
   try {
     store.set('fcc-sound', !!update.sound);
-    const { data } = yield call(putUpdateMySound, update);
+    const data = {
+      message: 'flash.updated-sound',
+      type: 'success'
+    };
     yield put(updateMySoundComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
   } catch (e) {

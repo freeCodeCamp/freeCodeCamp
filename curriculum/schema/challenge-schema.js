@@ -42,6 +42,8 @@ const schema = Joi.object()
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
+    disableLoopProtectTests: Joi.boolean().required(),
+    disableLoopProtectPreview: Joi.boolean().required(),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
@@ -49,7 +51,8 @@ const schema = Joi.object()
       'JavaScript',
       'HTML-CSS',
       'Python',
-      'Backend Development'
+      'Backend Development',
+      'C-Sharp'
     ),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),

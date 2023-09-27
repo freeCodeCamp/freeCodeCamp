@@ -14,20 +14,16 @@ test.describe('Show certification own', () => {
     await page.close();
   });
 
-  test('should display certificate details', async () => {
-    await expect(page.getByText('successfully completed')).toBeVisible();
-    await expect(page.getByText('Responsive Web Design')).toBeVisible();
-    await expect(page.locator('[data-cy=issue-date]')).toContainText(
+  test('should display the certificate details', async () => {
+    await expect(page.getByTestId('successful-completion')).toBeVisible();
+    await expect(page.getByTestId('certification-title')).toBeVisible();
+    await expect(page.getByTestId('issue-date')).toContainText(
       'Developer Certification on August 3, 2018'
     );
   });
 
-  test('should render LinkedIn and Twitter buttons', async () => {
-    await expect(
-      page.getByText('Add this certification to my LinkedIn profile')
-    ).toBeVisible();
-    await expect(
-      page.getByText('Share this certification on Twitter')
-    ).toBeVisible();
+  test('should render and display LinkedIn and Twitter buttons', async () => {
+    await expect(page.getByTestId('linkedin-share-btn')).toBeVisible();
+    await expect(page.getByTestId('twitter-share-btn')).toBeVisible();
   });
 });

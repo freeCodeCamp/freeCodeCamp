@@ -30,11 +30,11 @@ import {
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
-  isLoopProtected,
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import { executeGA } from '../../../redux/actions';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -107,10 +107,10 @@ function* executeChallengeSaga({ payload }) {
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
-    const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect,
+      disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+      disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
     const document = yield getContext('document');
@@ -128,6 +128,16 @@ function* executeChallengeSaga({ payload }) {
       playTone('tests-completed');
     } else {
       playTone('tests-failed');
+      if (challengeMeta.certification === 'responsive-web-design') {
+        yield put(
+          executeGA({
+            event: 'challenge_failed',
+            challenge_id: challengeMeta.id,
+            challenge_path: window?.location?.pathname,
+            challenge_files: challengeData.challengeFiles
+          })
+        );
+      }
     }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
@@ -230,10 +240,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
 
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);
-      const protect = isLoopProtected(challengeMeta);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        protect
+        disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+        disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
