@@ -12,198 +12,90 @@
   "superOrder": 4,
   "isBeta": true,
   "challengeOrder": [
-    [
-      "646a422b36a6c506d4220c2b",
-      "Step 1"
-    ],
-    [
-      "646ad836ae56d30140a7b4eb",
-      "Step 2"
-    ],
-    [
-      "646adc0e1c347a017b89942c",
-      "Step 3"
-    ],
-    [
-      "646add141ce9f901b37f6d2b",
-      "Step 4"
-    ],
-    [
-      "646ae02fc520da01e52e0d1e",
-      "Step 5"
-    ],
-    [
-      "646ae0eb559a40021a07bae7",
-      "Step 6"
-    ],
-    [
-      "646ae2205fe2e9024cc414ed",
-      "Step 7"
-    ],
-    [
-      "646ae2c40c98e8028dc7072f",
-      "Step 8"
-    ],
-    [
-      "646ae477486c4d02bf4e78f3",
-      "Step 9"
-    ],
-    [
-      "646afc523275b302f16f948e",
-      "Step 10"
-    ],
-    [
-      "646afe22e06a520335f6fffa",
-      "Step 11"
-    ],
-    [
-      "646b050091d91e036d4135a4",
-      "Step 12"
-    ],
-    [
-      "646b0582494fbe03ab07971c",
-      "Step 13"
-    ],
-    [
-      "646b07faa74eb103dd52d206",
-      "Step 14"
-    ],
-    [
-      "646b0bac4577060412809a6c",
-      "Step 15"
-    ],
-    [
-      "646b4a1adb5a4304654d0347",
-      "Step 16"
-    ],
-    [
-      "646b4ae6f9d0dc04a3705dcd",
-      "Step 17"
-    ],
-    [
-      "646b4d5446c81404d2d092cf",
-      "Step 18"
-    ],
-    [
-      "646b566131faa8050a13275b",
-      "Step 19"
-    ],
-    [
-      "646b56e96902be0551c38b7a",
-      "Step 20"
-    ],
-    [
-      "646b599621f856059e2e7501",
-      "Step 21"
-    ],
-    [
-      "646b5a85776edb05d02d23c4",
-      "Step 22"
-    ],
-    [
-      "646b5c9f34975b060e8e5ae5",
-      "Step 23"
-    ],
-    [
-      "646b601805ebd90649999f96",
-      "Step 24"
-    ],
-    [
-      "646b6217f2fa8a06818fd8aa",
-      "Step 25"
-    ],
-    [
-      "646baf7968b91006bc1856c9",
-      "Step 26"
-    ],
-    [
-      "646bb08a93cf75070ca0e505",
-      "Step 27"
-    ],
-    [
-      "646bb182a47c3f0759416db7",
-      "Step 28"
-    ],
-    [
-      "646bb7046cf638079123bbb1",
-      "Step 29"
-    ],
-    [
-      "646bb7d51c86dd07c64ccfca",
-      "Step 30"
-    ],
-    [
-      "646bb8b9f1c1500801a8d666",
-      "Step 31"
-    ],
-    [
-      "646bb94dfe38a40830ab2308",
-      "Step 32"
-    ],
-    [
-      "646bba13fd4735087a866ce4",
-      "Step 33"
-    ],
-    [
-      "646bba83caf6f008a6d1475c",
-      "Step 34"
-    ],
-    [
-      "646bbaeacde31708d80473f0",
-      "Step 35"
-    ],
-    [
-      "646bbb9ea4ea22091016120d",
-      "Step 36"
-    ],
-    [
-      "646de576a2a36701282b14eb",
-      "Step 37"
-    ],
-    [
-      "646de5e3f4462101516a721c",
-      "Step 38"
-    ],
-    [
-      "646de7b7a5613a017d1a83c4",
-      "Step 39"
-    ],
-    [
-      "646de8e877e25f01b2c334d9",
-      "Step 40"
-    ],
-    [
-      "646ded192438ef01fcb3cc68",
-      "Step 41"
-    ],
-    [
-      "646e3a26cb12dc01343c3687",
-      "Step 42"
-    ],
-    [
-      "646e3c18303340016c078d01",
-      "Step 43"
-    ],
-    [
-      "646e3d8a42296d01b0304b18",
-      "Step 44"
-    ],
-    [
-      "646e44246c224501ee59542f",
-      "Step 45"
-    ],
-    [
-      "646e44ec9bd212021dc7de44",
-      "Step 46"
-    ],
-    [
-      "646e45d87c10cc024c6f08cb",
-      "Step 47"
-    ],
-    [
-      "646e482c620eae02878e9d4c",
-      "Step 48"
-    ]
+    {
+      "id": "646bb182a47c3f0759416db7",
+      "title": "Step 1"
+    },
+    {
+      "id": "646bb7046cf638079123bbb1",
+      "title": "Step 2"
+    },
+    {
+      "id": "646bb7d51c86dd07c64ccfca",
+      "title": "Step 3"
+    },
+    {
+      "id": "646bb8b9f1c1500801a8d666",
+      "title": "Step 4"
+    },
+    {
+      "id": "646bb94dfe38a40830ab2308",
+      "title": "Step 5"
+    },
+    {
+      "id": "646bba13fd4735087a866ce4",
+      "title": "Step 6"
+    },
+    {
+      "id": "646bba83caf6f008a6d1475c",
+      "title": "Step 7"
+    },
+    {
+      "id": "646bbaeacde31708d80473f0",
+      "title": "Step 8"
+    },
+    {
+      "id": "646bbb9ea4ea22091016120d",
+      "title": "Step 9"
+    },
+    {
+      "id": "646de576a2a36701282b14eb",
+      "title": "Step 10"
+    },
+    {
+      "id": "646de5e3f4462101516a721c",
+      "title": "Step 11"
+    },
+    {
+      "id": "646de7b7a5613a017d1a83c4",
+      "title": "Step 12"
+    },
+    {
+      "id": "646de8e877e25f01b2c334d9",
+      "title": "Step 13"
+    },
+    {
+      "id": "646ded192438ef01fcb3cc68",
+      "title": "Step 14"
+    },
+    {
+      "id": "646e3a26cb12dc01343c3687",
+      "title": "Step 15"
+    },
+    {
+      "id": "646e3c18303340016c078d01",
+      "title": "Step 16"
+    },
+    {
+      "id": "646e3d8a42296d01b0304b18",
+      "title": "Step 17"
+    },
+    {
+      "id": "646e44246c224501ee59542f",
+      "title": "Step 18"
+    },
+    {
+      "id": "646e44ec9bd212021dc7de44",
+      "title": "Step 19"
+    },
+    {
+      "id": "646e45d87c10cc024c6f08cb",
+      "title": "Step 20"
+    },
+    {
+      "id": "646e482c620eae02878e9d4c",
+      "title": "Step 21"
+    }
   ],
   "helpCategory": "JavaScript"
 }
