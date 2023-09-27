@@ -1,6 +1,6 @@
 # Як додати тести Playwright
 
-## Installation
+## Встановлення
 
 Щоб встановити Playwright:
 
@@ -20,13 +20,13 @@ pnpm run playwright:install-build-tools
 
 - Файли тестів Playwright завжди мають розширення `.spec.ts`.
 
-## Best Practices for writing e2e tests
+## Найкращі практики для написання тестів e2e
 
- This section will explain in detail about best practices for writing and documenting E2E tests based on playwright documentation and our community code-style.
+ Цей розділ детально пояснить найкращі практики написання та документування тестів E2E на основі документації Playwright та кодового стилю нашої спільноти.
 
-### - Identifying a DOM element
+### - Визначення елемента DOM
 
-  Always use the `data-playwright-test-label` attribute to identify DOM elements. This attribute is used to identify elements in the DOM for testing with playwright only. It is not used for styling or any other purpose.
+  Завжди використовуйте атрибут `data-playwright-test-label`, щоб ідентифікувати елементи DOM. Цей атрибут використовують, щоб ідентифікувати елементи в DOM лише для тестування Playwright. Його не використовують для стилізації або будь-чого іншого.
 
   Наприклад:
 
@@ -36,7 +36,7 @@ pnpm run playwright:install-build-tools
   </div>
   ```
 
-  Make sure you use the getByTestId method to identify the element in the test file.
+  Переконайтесь, що використовуєте метод getByTestId, щоб ідентифікувати елементи в тестовому файлі.
 
   Наприклад:
 
@@ -44,9 +44,9 @@ pnpm run playwright:install-build-tools
   const landingPageFigure = page.getByTestId('landing-page-figure');
   ```
 
-### - Imports
+### - Імпорт
 
-  Always start with necessary imports at the beginning of the file.
+  Завжди починайте необхідні імпорти на початку файлу.
 
   Наприклад:
 
@@ -54,22 +54,22 @@ pnpm run playwright:install-build-tools
   import { test, expect, type Page } from '@playwright/test';
   ```
 
-### - Constants
+### - Константи
 
-  Define any constant elements, data sets, or configurations used throughout your tests for easy reference.
+  Визначте будь-які константні елементи, набори даних чи конфігурації, використані в тестах, для спрощеного посилання.
 
-  For example:
+  Наприклад:
 
   ```ts
   const landingPageElements = { ... };
   const superBlocks = [ ... ];
   ```
 
-### - Shared Context
+### - Спільний контекст
 
- If tests depend on a shared context (like a loaded web page), use beforeAll and afterAll hooks to set up and tear down that context.
+ Якщо тести залежать від спільного контексту (наприклад, завантаженої сторінки), використайте хуки beforeAll та afterAll, щоб налаштувати та розбити контекст.
 
-  For example:
+  Наприклад:
 
   ```ts
   let page: Page;
@@ -83,11 +83,11 @@ pnpm run playwright:install-build-tools
   });
   ```
 
-### - Descriptive test names
+### - Описові назви тестів
 
- Each test block should have a clear and concise name describing exactly what it's testing.
+ Кожен тестовий блок повинен мати чітку і лаконічну назву, описуючи саме те, що перевіряє.
 
-  For example:
+  Наприклад:
 
   ```ts
   test('The component landing-top renders correctly', async ({ page }) => {
@@ -95,21 +95,21 @@ pnpm run playwright:install-build-tools
   });
   ```
 
-### - Human readable assertions
+### - Людиносприйнятні твердження
 
-  Each assertion should be as human readable as possible. This makes it easier to understand what the test is doing and what it's expecting.
+  Кожне твердження має бути максимально розбірливим для людини. Таким чином простіше зрозуміти, що робить тест та чого очікувати.
 
-  For example:
+  Наприклад:
 
   ```ts
   await expect(landingHeading1).toHaveText('Learn to code — for free.');
   ```
 
-### - Keep it DRY
+### - Дотримуйтесь принципу DRY
 
-  Make sure that the tests are not repeating the same code over and over again. If you find yourself repeating the same code, consider refactoring it as a loop or a function.
+  Переконайтеся, що тести не повторюють однаковий код знову і знову. Якщо однаковий код повторюється, реорганізуйте його як цикл або функцію.
 
-  For example:
+  Наприклад:
 
   ```ts
   for (const logo of await logos.all()) {
@@ -117,11 +117,11 @@ pnpm run playwright:install-build-tools
   }
   ```
 
-### - Tests for mobile screens
+### - Тести для мобільних екранів
 
-  Use the 'isMobile' argument to run tests that incude logic that varies for mobile screens.
+  Використайте аргумент isMobile, щоб запустити тести, які містять логіку, що змінюється для мобільних екранів.
 
-  For example:
+  Наприклад:
 
   ```ts
   test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
@@ -136,11 +136,11 @@ pnpm run playwright:install-build-tools
   });
 ```
 
-### - Group related tests
+### - Групові тести
 
-  Group related tests together using describe blocks. This makes it easier to understand what the tests are doing and what they're testing.
+  Згрупуйте пов’язані тести, використовуючи описові блоки. Таким чином простіше зрозуміти, що роблять тести та чого очікувати.
 
-  For example:
+  Наприклад:
 
   ```ts
   describe('The campers landing page', () => {
@@ -186,7 +186,7 @@ pnpm run playwright:install-build-tools
   npx playwright test <filename>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test landing-page.spec.ts
@@ -198,7 +198,7 @@ pnpm run playwright:install-build-tools
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
@@ -210,7 +210,7 @@ pnpm run playwright:install-build-tools
   npx playwright test -g <title>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test -g "add a todo item"
@@ -242,7 +242,7 @@ npx playwright show-report
 
 ### 5. Розв’язання проблем розробки
 
-Playwright, як правило, є інструментом з дуже малим шансом на помилку. Помічник вже налаштував тести для виконання на машинах з усіма операційними системами, включно з найважливішими дистрибутивами Windows, MacOS і Linux.
+Playwright, як правило, є інструментом з дуже малим шансом на помилку. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
 
 - (MacOs та Linux) Якщо запуск Playwright призводить до помилки через залежності ядра, запустіть цю команду:
 
