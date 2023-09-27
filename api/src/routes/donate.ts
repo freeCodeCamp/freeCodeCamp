@@ -97,21 +97,13 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         const { paymentMethodId, amount, duration } = req.body;
         const { id } = req.session.user;
 
-        const user = await fastify.prisma.user.findUnique({
+        const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id }
         });
 
-        if (!user) {
-          void reply.code(500);
-          return {
-            type: 'danger',
-            message: 'Something went wrong.'
-          } as const;
-        }
-
         const { email, name } = user;
 
-        if (user.isDonating) {
+        if (user.isDonating && duration !== 'one-time') {
           void reply.code(400);
           return {
             type: 'info',
@@ -191,6 +183,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           provider: 'stripe',
           subscriptionId,
           customerId: id,
+          // TODO(Post-MVP) migrate to startDate: new Date()
           startDate: {
             date: new Date().toISOString(),
             when: new Date().toISOString().replace(/.$/, '+00:00')

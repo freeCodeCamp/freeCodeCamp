@@ -37,7 +37,7 @@ const requiresSourceReply = () =>
       }
     }
   });
-const defultError = () =>
+const defaultError = () =>
   Promise.reject(new Error('Stripe encountered an error'));
 
 jest.mock('stripe', () => {
@@ -126,7 +126,7 @@ describe('Donate', () => {
       });
 
       it('should return 500 if Stripe encountes an error', async () => {
-        mockSubCreate.mockImplementationOnce(defultError);
+        mockSubCreate.mockImplementationOnce(defaultError);
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
