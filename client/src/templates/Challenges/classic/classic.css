@@ -133,6 +133,7 @@
   width: 2rem;
   border: 0;
   padding: 0;
+  background-color: inherit;
 }
 
 .portal-button[aria-expanded='true'] {
