@@ -242,7 +242,7 @@ npx playwright show-report
 
 ### 5. Solução de problemas
 
-O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O colaborador já configurou os testes para serem executados em máquinas com todos os sistemas operacionais, incluindo as distribuições mais significativas do Windows, MacOS e Linux.
+O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
 
 - (MacOs e Linux) Se executar o Playwright resultar em um erro devido a dependências do kernel, execute o seguinte comando:
 
