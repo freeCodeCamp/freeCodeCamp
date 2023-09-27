@@ -277,6 +277,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               className='tab-content'
               value={Tab.Preview}
               forceMount
+              // forceMount causes the preview tabpanel to never be hidden,
+              // so we need to manually add it when preview is not active.
+              {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
             >
               <div className='portal-button-wrap'>
                 <button
