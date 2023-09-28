@@ -1,0 +1,81 @@
+const path = require('path');
+const debug = require('debug');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
+const { MongoClient, ObjectId } = require('mongodb');
+
+const args = process.argv.slice(2);
+
+if (args.length > 1) {
+  throw new Error(
+    `Invalid arguments. No arguments are allowed when seeding survey data.`
+  );
+}
+
+const log = debug('fcc:tools:seedSurveyInfo');
+const { MONGOHQ_URL } = process.env;
+
+function handleError(err, client) {
+  if (err) {
+    console.error('Oh noes!! Error seeding survey info.');
+    console.error(err);
+    try {
+      client.close();
+    } catch (e) {
+      // no-op
+    } finally {
+      /* eslint-disable-next-line no-process-exit */
+      process.exit(1);
+    }
+  }
+}
+
+const defaultUserSurvey = {
+  _id: new ObjectId('651c5a2a5f9b639b584028bc'),
+  title: 'Foundational C# with Microsoft Survey',
+  responses: [
+    {
+      question: 'Please describe your role:',
+      response: 'Beginner developer (less than 2 years experience)'
+    },
+    {
+      question:
+        'Prior to this course, how experienced were you with .NET and C#?',
+      response: 'Advanced'
+    }
+  ],
+  userId: new ObjectId('5bd30e0f1caf6ac3ddddddb5')
+};
+
+const certifiedUserSurvey = {
+  _id: new ObjectId('651c5a4c5f9b639b584028bd'),
+  title: 'Foundational C# with Microsoft Survey',
+  responses: [
+    {
+      question: 'Please describe your role:',
+      response: 'Experienced developer (more than 2 years experience)'
+    },
+    {
+      question:
+        'Prior to this course, how experienced were you with .NET and C#?',
+      response: 'Expert'
+    }
+  ],
+  userId: new ObjectId('5fa2db00a25c1c1fa49ce067')
+};
+
+const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+
+log('Connected successfully to mongo');
+
+const db = client.db('freecodecamp');
+const survey = db.collection('Survey');
+
+const run = async () => {
+  await survey.insertOne(defaultUserSurvey);
+  await survey.insertOne(certifiedUserSurvey);
+  log('survey info seeded');
+};
+
+run()
+  .then(() => client.close())
+  .catch(err => handleError(err, client));

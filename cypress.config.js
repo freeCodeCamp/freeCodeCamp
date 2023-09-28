@@ -6,6 +6,14 @@ function seed(args = []) {
   return execSync('node tools/scripts/seed/seed-demo-user ' + args.join(' '));
 }
 
+function seedExams() {
+  return execSync('node tools/scripts/seed-exams/create-exams.js');
+}
+
+function seedSurveys() {
+  return execSync('node tools/scripts/seed/seed-surveys.js');
+}
+
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
@@ -35,7 +43,9 @@ module.exports = defineConfig({
         }
       });
       on('task', {
-        seed
+        seed,
+        seedExams,
+        seedSurveys
       });
 
       config.env.API_LOCATION = 'http://localhost:3000';
