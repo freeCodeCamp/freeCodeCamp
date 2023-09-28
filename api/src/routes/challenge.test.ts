@@ -927,16 +927,13 @@ describe('challengeRoutes', () => {
             setCookies
           }).send({
             savedChallenges: {
-              id: 'not a valid id',
-              lastSavedDate: Date.now(),
+              // valid mongo id, but not a savable one
+              id: 'aaaaaaaaaaaaaaaaaaaaaaa',
               files: multiFileCertProjectBody.files
             }
           });
 
-          expect(response.body).toEqual({
-            message: 'That challenge type is not savable.',
-            type: 'error'
-          });
+          expect(response.body).toEqual('That challenge type is not savable');
           expect(response.statusCode).toBe(403);
         });
       });
@@ -952,21 +949,19 @@ describe('challengeRoutes', () => {
         });
 
         test('POST update the user savedchallenges and return them', async () => {
-          const now = Date.now();
           const response = await superRequest('/save-challenge', {
             method: 'POST',
             setCookies
           }).send({
             id: multiFileCertProjectId,
-            lastSavedDate: now,
             files: updatedMultiFileCertProjectBody.files
           });
 
-          const user = await fastifyTestInstance?.prisma.user.findFirst({
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const savedDate = user?.savedChallenges[0]?.lastSavedDate;
+          const savedDate = user.savedChallenges[0]?.lastSavedDate;
 
           expect(user).toMatchObject({
             savedChallenges: [
@@ -986,7 +981,6 @@ describe('challengeRoutes', () => {
               }
             ]
           });
-          expect(user?.savedChallenges).toHaveLength(1);
           expect(response.statusCode).toBe(200);
         });
       });
