@@ -7,6 +7,27 @@ const generic500 = Type.Object({
   type: Type.Literal('danger')
 });
 
+const isCertMap = Type.Object({
+  isRespWebDesignCert: Type.Boolean(),
+  isJsAlgoDataStructCert: Type.Boolean(),
+  isFrontEndLibsCert: Type.Boolean(),
+  is2018DataVisCert: Type.Boolean(),
+  isApisMicroservicesCert: Type.Boolean(),
+  isInfosecQaCert: Type.Boolean(),
+  isQaCertV7: Type.Boolean(),
+  isInfosecCertV7: Type.Boolean(),
+  isFrontEndCert: Type.Boolean(),
+  isBackEndCert: Type.Boolean(),
+  isDataVisCert: Type.Boolean(),
+  isFullStackCert: Type.Boolean(),
+  isSciCompPyCertV7: Type.Boolean(),
+  isDataAnalysisPyCertV7: Type.Boolean(),
+  isMachineLearningPyCertV7: Type.Boolean(),
+  isRelationalDatabaseCertV8: Type.Boolean(),
+  isCollegeAlgebraPyCertV8: Type.Boolean(),
+  isFoundationalCSharpCertV8: Type.Boolean()
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -535,7 +556,7 @@ export const schemas = {
             })
           })
         ]),
-        isCertMap: Type.Record(Type.String(), Type.Boolean()),
+        isCertMap,
         completedChallenges: Type.Array(
           Type.Object({
             id: Type.String(),
@@ -568,7 +589,7 @@ export const schemas = {
               name: Type.String()
             })
           }),
-          isCertMap: Type.Record(Type.String(), Type.Boolean()),
+          isCertMap,
           completedChallenges: Type.Array(
             Type.Object({
               id: Type.String(),
@@ -601,7 +622,7 @@ export const schemas = {
             type: Type.Literal('info'),
             message: Type.Union([Type.Literal('flash.name-needed')])
           }),
-          isCertMap: Type.Record(Type.String(), Type.Boolean()),
+          isCertMap,
           completedChallenges: Type.Array(
             Type.Object({
               id: Type.String(),
