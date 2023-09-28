@@ -86,9 +86,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab): void => {
+  switchTab = (tab: string): void => {
     this.setState({
-      currentTab: tab
+      currentTab: tab as Tab
     });
   };
 
@@ -215,6 +215,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
           defaultValue={currentTab}
+          onValueChange={this.switchTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
@@ -239,14 +240,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
-            <button
-              className='portal-button'
-              aria-expanded={!!showPreviewPortal}
-              onClick={() => togglePane('showPreviewPortal')}
-            >
-              <span className='sr-only'>{getPortalBtnSrText()}</span>
-              <FontAwesomeIcon icon={faWindowRestore} />
-            </button>
           </TabsList>
 
           <TabsContent tabIndex={-1} className='tab-content' value={Tab.Editor}>
@@ -284,7 +277,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               className='tab-content'
               value={Tab.Preview}
               forceMount
+              // forceMount causes the preview tabpanel to never be hidden,
+              // so we need to manually add it when preview is not active.
+              {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
             >
+              <div className='portal-button-wrap'>
+                <button
+                  className='portal-button'
+                  aria-expanded={!!showPreviewPortal}
+                  onClick={() => togglePane('showPreviewPortal')}
+                >
+                  <span className='sr-only'>{getPortalBtnSrText()}</span>
+                  <FontAwesomeIcon icon={faWindowRestore} />
+                </button>
+              </div>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
@@ -299,6 +305,18 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               isMobile={true}
               videoUrl={videoUrl}
             />
+          )}
+          {hasPreview && this.state.currentTab !== 'preview' && (
+            <div className='portal-button-wrap'>
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </div>
           )}
         </Tabs>
         {displayPreviewPortal && (
