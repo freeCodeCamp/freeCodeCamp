@@ -62,15 +62,6 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      if (!certSlug) {
-        void reply.code(400);
-        return {
-          type: 'danger',
-          // message: '`certSlug` not found in request body'
-          message: 'flash.wrong-name'
-        } as const;
-      }
-
       if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
         void reply.code(400);
         return {

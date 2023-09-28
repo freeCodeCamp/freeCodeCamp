@@ -41,14 +41,15 @@ describe('certificate routes', () => {
         });
       });
 
-      test('should return 400 if no certSlug', async () => {
+      test('should return 500 if no certSlug', async () => {
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
+        }).send({ certSlug: undefined });
+        expect(JSON.parse(response.text)).toMatchObject({
+          code: 'FST_ERR_FAILED_ERROR_SERIALIZATION'
         });
-        // .send({ certSlug: undefined });
-        // Add check for response
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(500);
       });
 
       test('should return 400 if certSlug is invalid', async () => {
@@ -102,7 +103,8 @@ describe('certificate routes', () => {
         // @ts-expect-error `null` is assignable to `null`, but don't tell TS that 🤫
         fastifyTestInstance.prisma.user.findUnique = () => ({
           name: 'fcc',
-          isRespWebDesignCert: true
+          isRespWebDesignCert: true,
+          completedChallenges: []
         });
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
@@ -112,6 +114,16 @@ describe('certificate routes', () => {
         });
 
         fastifyTestInstance.prisma.user.findUnique = temp;
+
+        expect(JSON.parse(response.text)).toMatchObject({
+          response: {
+            type: 'info',
+            message: 'flash.already-claimed',
+            variables: {
+              name: 'Responsive Web Design'
+            }
+          }
+        });
 
         expect(response.status).toBe(200);
       });
@@ -167,6 +179,7 @@ describe('certificate routes', () => {
 
         fastifyTestInstance.prisma.user.update = temp;
 
+        expect(response.text).toContain('flash.went-wrong');
         expect(response.status).toBe(500);
       });
 
@@ -238,6 +251,7 @@ describe('certificate routes', () => {
         });
 
         expect(user).toMatchObject({ isRespWebDesignCert: true });
+        expect(response.text).toContain('flash.cert-claim-success');
         expect(response.status).toBe(200);
       });
     });

@@ -514,76 +514,51 @@ export const schemas = {
   certificateVerify: {
     // TODO(POST_MVP): Remove partial validation from route for schema validation
     body: Type.Object({
-      certSlug: Type.String()
+      certSlug: Type.String({ maxLength: 1024 })
     }),
     response: {
-      200: Type.Union([
-        Type.Object({
-          response: Type.Object({
+      200: Type.Object({
+        response: Type.Union([
+          Type.Object({
             type: Type.Literal('info'),
             message: Type.Union([Type.Literal('flash.already-claimed')]),
             variables: Type.Object({
               name: Type.String()
             })
           }),
-          isCertMap: Type.Record(Type.String(), Type.Boolean()),
-          completedChallenges: Type.Array(
-            Type.Object({
-              id: Type.String(),
-              completedDate: Type.Number(),
-              solution: Type.Union([Type.String(), Type.Null()]),
-              githubLink: Type.Union([Type.String(), Type.Null()]),
-              challengeType: Type.Union([Type.Number(), Type.Null()]),
-              // Technically, files is optional, but the db default was [] and
-              // the client treats null, undefined and [] equivalently.
-              // TODO(Post-MVP): make this optional.
-              files: Type.Array(
-                Type.Object({
-                  contents: Type.String(),
-                  key: Type.String(),
-                  ext: Type.String(),
-                  name: Type.String(),
-                  path: Type.Union([Type.String(), Type.Null()])
-                })
-              ),
-              isManuallyApproved: Type.Union([Type.Boolean(), Type.Null()])
-            })
-          )
-        }),
-        Type.Object({
-          response: Type.Object({
+          Type.Object({
             type: Type.Literal('success'),
             message: Type.Literal('flash.cert-claim-success'),
             variables: Type.Object({
               username: Type.String(),
               name: Type.String()
             })
-          }),
-          isCertMap: Type.Record(Type.String(), Type.Boolean()),
-          completedChallenges: Type.Array(
-            Type.Object({
-              id: Type.String(),
-              completedDate: Type.Number(),
-              solution: Type.Union([Type.String(), Type.Null()]),
-              githubLink: Type.Union([Type.String(), Type.Null()]),
-              challengeType: Type.Union([Type.Number(), Type.Null()]),
-              // Technically, files is optional, but the db default was [] and
-              // the client treats null, undefined and [] equivalently.
-              // TODO(Post-MVP): make this optional.
-              files: Type.Array(
-                Type.Object({
-                  contents: Type.String(),
-                  key: Type.String(),
-                  ext: Type.String(),
-                  name: Type.String(),
-                  path: Type.Union([Type.String(), Type.Null()])
-                })
-              ),
-              isManuallyApproved: Type.Union([Type.Boolean(), Type.Null()])
-            })
-          )
-        })
-      ]),
+          })
+        ]),
+        isCertMap: Type.Record(Type.String(), Type.Boolean()),
+        completedChallenges: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            completedDate: Type.Number(),
+            solution: Type.Union([Type.String(), Type.Null()]),
+            githubLink: Type.Union([Type.String(), Type.Null()]),
+            challengeType: Type.Union([Type.Number(), Type.Null()]),
+            // Technically, files is optional, but the db default was [] and
+            // the client treats null, undefined and [] equivalently.
+            // TODO(Post-MVP): make this optional.
+            files: Type.Array(
+              Type.Object({
+                contents: Type.String(),
+                key: Type.String(),
+                ext: Type.String(),
+                name: Type.String(),
+                path: Type.Union([Type.String(), Type.Null()])
+              })
+            ),
+            isManuallyApproved: Type.Union([Type.Boolean(), Type.Null()])
+          })
+        )
+      }),
       400: Type.Union([
         Type.Object({
           response: Type.Object({
