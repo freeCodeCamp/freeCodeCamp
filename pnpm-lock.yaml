@@ -567,8 +567,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       chai:
-        specifier: 4.3.8
-        version: 4.3.8
+        specifier: 4.3.9
+        version: 4.3.9
       crypto-browserify:
         specifier: 3.12.0
         version: 3.12.0
@@ -976,8 +976,8 @@ importers:
         specifier: 6.24.1
         version: 6.24.1
       chai:
-        specifier: 4.3.8
-        version: 4.3.8
+        specifier: 4.3.9
+        version: 4.3.9
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -1307,8 +1307,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       chai:
-        specifier: 4.3.8
-        version: 4.3.8
+        specifier: 4.3.9
+        version: 4.3.9
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.88.2)
@@ -1366,8 +1366,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       chai:
-        specifier: 4.3.8
-        version: 4.3.8
+        specifier: 4.3.9
+        version: 4.3.9
       joi:
         specifier: 17.10.2
         version: 17.10.2
@@ -15096,12 +15096,12 @@ packages:
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
-  /chai@4.3.8:
-    resolution: {integrity: sha512-vX4YvVVtxlfSZ2VecZgFUTU5qPCYsobVI2O9FmwEXBhDigYGQA6jRXCycIs1yJnnWbZ6/+a2zNIF5DfVCcJBFQ==}
+  /chai@4.3.9:
+    resolution: {integrity: sha512-tH8vhfA1CfuYMkALXj+wmZcqiwqOfshU9Gry+NYiiLqIddrobkBhALv6XD4yDz68qapphYI4vSaqhqAdThCAAA==}
     engines: {node: '>=4'}
     dependencies:
       assertion-error: 1.1.0
-      check-error: 1.0.2
+      check-error: 1.0.3
       deep-eql: 4.1.3
       get-func-name: 2.0.0
       loupe: 2.3.6
@@ -15189,8 +15189,10 @@ packages:
   /charenc@0.0.2:
     resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
 
-  /check-error@1.0.2:
-    resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
+  /check-error@1.0.3:
+    resolution: {integrity: sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==}
+    dependencies:
+      get-func-name: 2.0.2
 
   /check-more-types@2.24.0:
     resolution: {integrity: sha512-Pj779qHxV2tuapviy1bSZNEL1maXr13bPYpsvSDB68HlYcYuhlDrmGd63i0JHMCLKzc7rUSNIrpdJlhVlNwrxA==}
@@ -20284,6 +20286,9 @@ packages:
 
   /get-func-name@2.0.0:
     resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}
+
+  /get-func-name@2.0.2:
+    resolution: {integrity: sha512-8vXOvuE167CtIc3OyItco7N/dpRtBbYOsPsXCz7X/PMnlGjYjSGuZJgM1Y7mmew7BKf9BqvLX2tnOVy1BBUsxQ==}
 
   /get-intrinsic@1.2.1:
     resolution: {integrity: sha512-2DcsyfABl+gVHEfCOaTrWgyt+tb6MSEGmKq+kI5HwLbIYgjgmMcV8KQ41uaKz1xxUcn9tJtgFbQUEVcEbd0FYw==}
