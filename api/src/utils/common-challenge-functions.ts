@@ -66,13 +66,13 @@ export type CompletedChallenge = {
  * submission endpoints.
  *
  * @param challengeId The id of the submitted challenge.
- * @param user The existing user record.
+ * @param savedChallenges The user's saved challenges array.
  * @param challenge The saveble challenge.
- * @returns Saved challenges.
+ * @returns Update or push the saved challenges.
  */
 export function saveUserChallengeData(
   challengeId: string,
-  user: user,
+  savedChallenges: SavedChallenge[],
   challenge: Omit<SavedChallenge, 'lastSavedDate'>
 ) {
   const challengeToSave: SavedChallenge = {
@@ -80,20 +80,18 @@ export function saveUserChallengeData(
     lastSavedDate: Date.now(),
     files: challenge.files?.map(file =>
       pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-    ) as SavedChallengeFile[]
+    )
   };
 
-  const savedIndex = user.savedChallenges.findIndex(
-    ({ id }) => challengeId === id
-  );
+  const savedIndex = savedChallenges.findIndex(({ id }) => challengeId === id);
 
   if (savedIndex >= 0) {
-    user.savedChallenges[savedIndex] = challengeToSave;
+    savedChallenges[savedIndex] = challengeToSave;
   } else {
-    user.savedChallenges.push(challengeToSave);
+    savedChallenges.push(challengeToSave);
   }
 
-  return user.savedChallenges;
+  return savedChallenges;
 }
 
 /**

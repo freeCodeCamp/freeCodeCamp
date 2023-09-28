@@ -21,7 +21,6 @@ const saveChallengeBody = Type.Object({
     maxLength: 24,
     minLength: 24
   }),
-  lastSavedDate: Type.Number(),
   files: Type.Array(file)
 });
 
@@ -330,19 +329,10 @@ export const schemas = {
             joinDate: Type.String(),
             savedChallenges: Type.Optional(
               Type.Array(
-                Type.Object({
-                  id: Type.String(),
-                  lastSavedDate: Type.Number(),
-                  files: Type.Array(
-                    Type.Object({
-                      contents: Type.String(),
-                      key: Type.String(),
-                      ext: Type.String(),
-                      name: Type.String(),
-                      history: Type.Array(Type.String())
-                    })
-                  )
-                })
+                Type.Intersect([
+                  saveChallengeBody,
+                  Type.Object({ lastSavedDate: Type.Number() })
+                ])
               )
             ),
             username: Type.String(),
@@ -494,7 +484,12 @@ export const schemas = {
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
-        savedChallenges: Type.Array(saveChallengeBody)
+        savedChallenges: Type.Array(
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
+        )
       }),
       400: Type.Object({
         type: Type.Literal('error'),
@@ -513,7 +508,14 @@ export const schemas = {
   saveChallenge: {
     body: saveChallengeBody,
     response: {
-      200: Type.Object({ savedChallenges: Type.Array(saveChallengeBody) }),
+      200: Type.Object({
+        savedChallenges: Type.Array(
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
+        )
+      }),
       403: Type.Object({
         type: Type.Literal('error'),
         message: Type.Literal('That challenge type is not savable.')

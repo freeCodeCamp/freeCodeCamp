@@ -933,8 +933,11 @@ describe('challengeRoutes', () => {
             }
           });
 
-          expect(response.body).toEqual('That challenge type is not savable');
-          expect(response.statusCode).toBe(403);
+          expect(response.body).toEqual({
+            message: 'That does not appear to be a valid challenge submission.',
+            type: 'error'
+          });
+          expect(response.statusCode).toBe(400);
         });
       });
 

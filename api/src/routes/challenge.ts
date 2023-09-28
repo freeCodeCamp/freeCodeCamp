@@ -374,11 +374,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.saveChallenge,
       errorHandler(error, request, reply) {
         if (error.validation) {
-          void reply.code(403);
-          return formatProjectCompletedValidation(
-            error.validation,
-            'That challenge type is not savable.'
-          );
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -405,7 +402,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const userSavedChallenges = saveUserChallengeData(
           challengeId,
-          user,
+          user.savedChallenges,
           challenge
         );
 
