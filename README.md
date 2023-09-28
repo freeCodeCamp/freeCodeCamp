@@ -102,7 +102,6 @@ Here are our ten core certifications:
 - [Learn Advanced Bash by Building a Kitty Ipsum Translator](https://www.freecodecamp.org/learn/relational-database/#learn-advanced-bash-by-building-a-kitty-ipsum-translator)
 - [Learn Bash and SQL by Building a Bike Rental Shop](https://www.freecodecamp.org/learn/relational-database/#learn-bash-and-sql-by-building-a-bike-rental-shop)
 - [Learn Nano by Building a Castle](https://www.freecodecamp.org/learn/relational-database/#learn-nano-by-building-a-castle)
-- [Learn by Building a Salon Appointment Scheduler](https://www.freecodecamp.org/learn/relational-database/#build-a-salon-appointment-scheduler-project)
 - [Learn Git by Building an SQL Reference Object](https://www.freecodecamp.org/learn/relational-database/#learn-git-by-building-an-sql-reference-object)
   <br />
   <br />
@@ -167,7 +166,7 @@ Here are our ten core certifications:
   - [Learn How to Graph Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-graph-systems-of-equations)
   - [Learn How to Solve Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-systems-of-equations)
   - [Learn Applications of Linear Systems](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-applications-of-linear-systems)
-  - [Learn Quadratic Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project)
+  - [Learn Quadratic Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-quadratic-equations)
   - [Learn Parent Graphs and Polynomials](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-parent-graphs-and-polynomials)
   - [Learn Business Applications of College Algebra](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-business-applications-of-college-algebra)
   - [Learn Simple and Compound Interest](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-simple-and-compound-interest)
