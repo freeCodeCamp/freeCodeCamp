@@ -172,11 +172,11 @@ importers:
   api:
     dependencies:
       '@aws-sdk/client-ses':
-        specifier: ^3.347.1
+        specifier: 3.347.1
         version: 3.347.1
       '@fastify/cookie':
-        specifier: ^8.3.0
-        version: 8.3.0
+        specifier: 9.0.4
+        version: 9.0.4
       '@fastify/csrf-protection':
         specifier: 6.3.0
         version: 6.3.0
@@ -184,20 +184,20 @@ importers:
         specifier: '8.3'
         version: 8.3.0
       '@fastify/session':
-        specifier: ^10.1.1
-        version: 10.1.1
+        specifier: 10.5.0
+        version: 10.5.0
       '@fastify/swagger':
-        specifier: ^8.3.1
-        version: 8.3.1
+        specifier: 8.10.0
+        version: 8.10.0
       '@fastify/swagger-ui':
-        specifier: ^1.5.0
-        version: 1.5.0
+        specifier: 1.9.3
+        version: 1.9.3
       '@fastify/type-provider-typebox':
         specifier: 3.5.0
         version: 3.5.0(@sinclair/typebox@0.31.5)
       '@immobiliarelabs/fastify-sentry':
-        specifier: ^6.0.0
-        version: 6.0.1
+        specifier: 7.1.0
+        version: 7.1.0
       '@prisma/client':
         specifier: 5.3.1
         version: 5.3.1(prisma@5.3.1)
@@ -205,7 +205,7 @@ importers:
         specifier: 8.12.0
         version: 8.12.0
       ajv-formats:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1(ajv@8.12.0)
       connect-mongo:
         specifier: 4.6.0
@@ -220,11 +220,11 @@ importers:
         specifier: 4.21.0
         version: 4.21.0
       fastify-auth0-verify:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: 1.2.0
+        version: 1.2.0
       fastify-plugin:
-        specifier: ^4.3.0
-        version: 4.3.0
+        specifier: 4.5.1
+        version: 4.5.1
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
@@ -232,16 +232,16 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       mongodb:
-        specifier: ^4.16.0
+        specifier: 4.16.0
         version: 4.16.0
       nanoid:
         specifier: '3'
         version: 3.3.4
       no-profanity:
-        specifier: ^1.4.2
+        specifier: 1.4.2
         version: 1.4.2
       nodemailer:
-        specifier: ^6.9.3
+        specifier: 6.9.3
         version: 6.9.3
       nodemon:
         specifier: 2.0.22
@@ -250,20 +250,20 @@ importers:
         specifier: 10.2.0
         version: 10.2.0
       query-string:
-        specifier: ^7.1.3
+        specifier: 7.1.3
         version: 7.1.3
     devDependencies:
       '@total-typescript/ts-reset':
-        specifier: ^0.4.0
+        specifier: 0.4.0
         version: 0.4.0
       '@types/express-session':
         specifier: 1.17.8
         version: 1.17.8
       '@types/jsonwebtoken':
-        specifier: ^9.0.2
+        specifier: 9.0.2
         version: 9.0.2
       '@types/nodemailer':
-        specifier: ^6.4.8
+        specifier: 6.4.8
         version: 6.4.8
       '@types/supertest':
         specifier: 2.0.12
@@ -1662,7 +1662,7 @@ packages:
     resolution: {integrity: sha512-IzSgsrxUcsrejQbPVilIKy16kAT52EwB6zSaI+M3xxIhKh5+aldEyvI+z6erM7TCLB2BJsFrtHjp6/4/sr+3dA==}
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.347.0
+      '@aws-sdk/types': 3.398.0
       tslib: 1.14.1
     dev: false
 
@@ -1679,7 +1679,7 @@ packages:
       '@aws-crypto/sha256-js': 3.0.0
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.347.0
+      '@aws-sdk/types': 3.398.0
       '@aws-sdk/util-locate-window': 3.310.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
@@ -1689,7 +1689,7 @@ packages:
     resolution: {integrity: sha512-PnNN7os0+yd1XvXAy23CFOmTbMaDxgxXtTKHybrJ39Y8kGzBATgBFibWJKH6BhytLI/Zyszs87xCOBNyBig6vQ==}
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.347.0
+      '@aws-sdk/types': 3.398.0
       tslib: 1.14.1
     dev: false
 
@@ -1702,7 +1702,7 @@ packages:
   /@aws-crypto/util@3.0.0:
     resolution: {integrity: sha512-2OJlpeJpCR48CC8r+uKVChzs9Iungj9wkZrl8Z041DWEWvyIHILYKCPNzJghKsivj+S3mLo6BVc7mBNzdxA46w==}
     dependencies:
-      '@aws-sdk/types': 3.347.0
+      '@aws-sdk/types': 3.398.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
     dev: false
@@ -2643,7 +2643,6 @@ packages:
       '@smithy/types': 2.2.2
       tslib: 2.6.2
     dev: false
-    optional: true
 
   /@aws-sdk/url-parser@3.347.0:
     resolution: {integrity: sha512-lhrnVjxdV7hl+yCnJfDZOaVLSqKjxN20MIOiijRiqaWGLGEAiSqBreMhL89X1WKCifxAs4zZf9YB9SbdziRpAA==}
@@ -7052,7 +7051,14 @@ packages:
     resolution: {integrity: sha512-P9hY9GO11L20TnZ33XN3i0bt+3x0zaT7S0ohAzWO950E9PB2xnNhLYzPFJIGFi5AVN0yr5+/iZhWxeYvR6KCzg==}
     dependencies:
       cookie: 0.5.0
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
+    dev: false
+
+  /@fastify/cookie@9.0.4:
+    resolution: {integrity: sha512-behLOTH2u7fSZ6+TWeW8XUCmpEstwl8ysxzyb4QRxnKyt80O2S4yVfNbBZQcG9rktjeZXfR7LLl9xXKL4vdjlQ==}
+    dependencies:
+      cookie: 0.5.0
+      fastify-plugin: 4.5.1
     dev: false
 
   /@fastify/csrf-protection@6.3.0:
@@ -7060,7 +7066,7 @@ packages:
     dependencies:
       '@fastify/csrf': 6.2.0
       '@fastify/error': 3.3.0
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
     dev: false
 
   /@fastify/csrf@6.2.0:
@@ -7087,7 +7093,17 @@ packages:
       '@fastify/error': 3.3.0
       '@lukeed/ms': 2.0.1
       fast-jwt: 2.2.3
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
+      steed: 1.1.3
+    dev: false
+
+  /@fastify/jwt@7.2.1:
+    resolution: {integrity: sha512-CAEL8UxIIn1Baxm6GIjH7j5VNUqAijeBWF3dvxLQd+RNDYCBnVt0RtK3JV4WbfOaMsKQ0IhrxrekroWwhXYOpw==}
+    dependencies:
+      '@fastify/error': 3.3.0
+      '@lukeed/ms': 2.0.1
+      fast-jwt: 3.2.0
+      fastify-plugin: 4.5.1
       steed: 1.1.3
     dev: false
 
@@ -7095,7 +7111,7 @@ packages:
     resolution: {integrity: sha512-h+zBxCzMlkEkh4fM7pZaSGzqS7P9M0Z6rXnWPdUEPfe7x1BCj++wEk/pQ5jpyYY4pF8AknFqb77n7uwh8HdxEA==}
     dependencies:
       '@fastify/error': 3.3.0
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       path-to-regexp: 6.2.1
       reusify: 1.0.4
     dev: false
@@ -7110,10 +7126,10 @@ packages:
       mime: 3.0.0
     dev: false
 
-  /@fastify/session@10.1.1:
-    resolution: {integrity: sha512-8pKDTL9MuqU1FCTca6XNd1E4quZ/ipik69AHXqkANia9Z4xPFS5OSKIwmCClIdaMYD32/tPu4G/6wGgK5Buj5g==}
+  /@fastify/session@10.5.0:
+    resolution: {integrity: sha512-2oXXSQ4Yy6pzLgbBoooblgHJ55DYqyxSLoKMq2CGmDZI2WPMrOIvN1bJbllWuUuCe7luPdQju3RJTRvNMW+j/g==}
     dependencies:
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       safe-stable-stringify: 2.4.3
     dev: false
 
@@ -7123,26 +7139,26 @@ packages:
       '@fastify/accept-negotiator': 1.1.0
       '@fastify/send': 2.1.0
       content-disposition: 0.5.4
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       glob: 8.1.0
       p-limit: 3.1.0
       readable-stream: 4.4.2
     dev: false
 
-  /@fastify/swagger-ui@1.5.0:
-    resolution: {integrity: sha512-wumG3RcYhhRpn0wjPMqOC96WNRVAj2lA4V4yDLqwC/hzwIinXzfuwSma+uAe2DhqoHHirk/dAannupsycrp1PA==}
+  /@fastify/swagger-ui@1.9.3:
+    resolution: {integrity: sha512-YYqce4CydjDIEry6Zo4JLjVPe5rjS8iGnk3fHiIQnth9sFSLeyG0U1DCH+IyYmLddNDg1uWJOuErlVqnu/jI3w==}
     dependencies:
       '@fastify/static': 6.10.2
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       openapi-types: 12.1.3
       rfdc: 1.3.0
       yaml: 2.3.1
     dev: false
 
-  /@fastify/swagger@8.3.1:
-    resolution: {integrity: sha512-S9suS5WlRyADwobkrlcNeICkVyHFxKKdsimRsoO7h27KS86c+pE/s/8WvU793p5Ftk9QnApoilT9izJ0j3I8GA==}
+  /@fastify/swagger@8.10.0:
+    resolution: {integrity: sha512-0o6nd0qWpJbVSv/vbK4bzHSYe7l+PTGPqrQVwWIXVGd7CvXr585SBx+h8EgrMOY80bcOnGreqnjYFOV0osGP5A==}
     dependencies:
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       json-schema-resolver: 2.0.0
       openapi-types: 12.1.3
       rfdc: 1.3.0
@@ -7535,15 +7551,15 @@ packages:
   /@iarna/toml@2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
-  /@immobiliarelabs/fastify-sentry@6.0.1:
-    resolution: {integrity: sha512-3RVByHvVQCl4JIg1RSXzJvP/8GAVJZMZgwukvotsMT4k35vGuclQnVP2UaCLXpNjkVPlhMrMSaEDM3q1gQzeew==}
+  /@immobiliarelabs/fastify-sentry@7.1.0:
+    resolution: {integrity: sha512-j2aQ7rVx4jU1vhpcGAmPLFkY8lZSbdeQKR9pKweEmPFZcAUMjjA+8wtuPoqEE5QxbYtK8Qruy+Rb/2lfrEl6JQ==}
     engines: {node: '>=16', npm: '>=8'}
     dependencies:
-      '@sentry/node': 7.49.0
-      '@sentry/tracing': 7.49.0
-      '@sentry/utils': 7.49.0
+      '@sentry/node': 7.69.0
+      '@sentry/tracing': 7.69.0
+      '@sentry/utils': 7.69.0
       cookie: 0.5.0
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -8671,14 +8687,14 @@ packages:
     resolution: {integrity: sha512-0xd7qez0AQ+MbHatZTlI1gu5vkG8r7MYRUJAHPAHJBmGLs16zpkrpAVLvjQKQOqaXPDUBwOiJzNc00znHSCVBw==}
     dev: false
 
-  /@sentry-internal/tracing@7.49.0:
-    resolution: {integrity: sha512-ESh3+ZneQk/3HESTUmIPNrW5GVPu/HrRJU+eAJJto74vm+6vP7zDn2YV2gJ1w18O/37nc7W/bVCgZJlhZ3cwew==}
+  /@sentry-internal/tracing@7.69.0:
+    resolution: {integrity: sha512-4BgeWZUj9MO6IgfO93C9ocP3+AdngqujF/+zB2rFdUe+y9S6koDyUC7jr9Knds/0Ta72N/0D6PwhgSCpHK8s0Q==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.49.0
-      '@sentry/types': 7.49.0
-      '@sentry/utils': 7.49.0
-      tslib: 1.14.1
+      '@sentry/core': 7.69.0
+      '@sentry/types': 7.69.0
+      '@sentry/utils': 7.69.0
+      tslib: 2.6.2
     dev: false
 
   /@sentry/core@7.37.1:
@@ -8690,13 +8706,13 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@sentry/core@7.49.0:
-    resolution: {integrity: sha512-AlSnCYgfEbvK8pkNluUkmdW/cD9UpvOVCa+ERQswXNRkAv5aDGCL6Ihv6fnIajE++BYuwZh0+HwZUBVKTFzoZg==}
+  /@sentry/core@7.69.0:
+    resolution: {integrity: sha512-V6jvK2lS8bhqZDMFUtvwe2XvNstFQf5A+2LMKCNBOV/NN6eSAAd6THwEpginabjet9dHsNRmMk7WNKvrUfQhZw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.49.0
-      '@sentry/utils': 7.49.0
-      tslib: 1.14.1
+      '@sentry/types': 7.69.0
+      '@sentry/utils': 7.69.0
+      tslib: 2.6.2
     dev: false
 
   /@sentry/node@7.37.1:
@@ -8714,18 +8730,18 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/node@7.49.0:
-    resolution: {integrity: sha512-KLIrqcbKk4yR3g8fjl87Eyv4M9j4YI6b7sqVAZYj3FrX3mC6JQyGdlDfUpSKy604n1iAdr6OuUp5f9x7jPJaeQ==}
+  /@sentry/node@7.69.0:
+    resolution: {integrity: sha512-T0NgPcmDQvEuz5hy6aEhXghTHHTWsiP3IWoeEAakDBHAXmtpT6lYFQZgb5AiEOt9F5KO/G/1yH3YYdpDAnKhPw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.49.0
-      '@sentry/core': 7.49.0
-      '@sentry/types': 7.49.0
-      '@sentry/utils': 7.49.0
+      '@sentry-internal/tracing': 7.69.0
+      '@sentry/core': 7.69.0
+      '@sentry/types': 7.69.0
+      '@sentry/utils': 7.69.0
       cookie: 0.4.2
       https-proxy-agent: 5.0.1
       lru_map: 0.3.3
-      tslib: 1.14.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -8740,11 +8756,11 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@sentry/tracing@7.49.0:
-    resolution: {integrity: sha512-RtyTt1DvX7s1M2ca9qnevOkuwn8HjbKXrSVHtMbQYoT3uGvjT8Pm71D5WtWMWH2QLpFgcqQq/1ifZBUAG4Y7qA==}
+  /@sentry/tracing@7.69.0:
+    resolution: {integrity: sha512-nhwJXyLU2KT6ci3YRUCkpFQH7RL9lpEuVDHqaJ9xLql766FJ7A7jKtRGSaefgRzJvvdKHUVboIjZnSvqIu8gWw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.49.0
+      '@sentry-internal/tracing': 7.69.0
     dev: false
 
   /@sentry/types@7.37.1:
@@ -8752,8 +8768,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/types@7.49.0:
-    resolution: {integrity: sha512-9yXXh7iv76+O6h2ONUVx0wsL1auqJFWez62mTjWk4350SgMmWp/zUkBxnVXhmcYqscz/CepC+Loz9vITLXtgxg==}
+  /@sentry/types@7.69.0:
+    resolution: {integrity: sha512-zPyCox0mzitzU6SIa1KIbNoJAInYDdUpdiA+PoUmMn2hFMH1llGU/cS7f4w/mAsssTlbtlBi72RMnWUCy578bw==}
     engines: {node: '>=8'}
     dev: false
 
@@ -8765,12 +8781,12 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@sentry/utils@7.49.0:
-    resolution: {integrity: sha512-JdC9yGnOgev4ISJVwmIoFsk8Zx0psDZJAj2DV7x4wMZsO6QK+YjC7G3mUED/S5D5lsrkBZ/3uvQQhr8DQI4UcQ==}
+  /@sentry/utils@7.69.0:
+    resolution: {integrity: sha512-4eBixe5Y+0EGVU95R4NxH3jkkjtkE4/CmSZD4In8SCkWGSauogePtq6hyiLsZuP1QHdpPb9Kt0+zYiBb2LouBA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.49.0
-      tslib: 1.14.1
+      '@sentry/types': 7.69.0
+      tslib: 2.6.2
     dev: false
 
   /@sideway/address@4.1.4:
@@ -9120,7 +9136,6 @@ packages:
     dependencies:
       tslib: 2.6.2
     dev: false
-    optional: true
 
   /@smithy/url-parser@2.0.5:
     resolution: {integrity: sha512-OdMBvZhpckQSkugCXNJQCvqJ71wE7Ftxce92UOQLQ9pwF6hoS5PLL7wEfpnuEXtStzBqJYkzu1C1ZfjuFGOXAA==}
@@ -11282,7 +11297,7 @@ packages:
   /@types/jsonwebtoken@9.0.2:
     resolution: {integrity: sha512-drE6uz7QBKq1fYqqoFKTDRdFCPHd5TCub75BM+D+cMx7NU9hUz7SESLfC2fSCXVFMO5Yj8sOWHuGqPgjc+fz0Q==}
     dependencies:
-      '@types/node': 18.17.11
+      '@types/node': 20.5.9
     dev: true
 
   /@types/keyv@3.1.4:
@@ -11381,7 +11396,7 @@ packages:
   /@types/nodemailer@6.4.8:
     resolution: {integrity: sha512-oVsJSCkqViCn8/pEu2hfjwVO+Gb3e+eTWjg3PcjeFKRItfKpKwHphQqbYmPQrlMk+op7pNNWPbsJIEthpFN/OQ==}
     dependencies:
-      '@types/node': 18.17.11
+      '@types/node': 20.5.9
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -14834,7 +14849,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
 
   /buffer@5.2.1:
@@ -18911,6 +18926,16 @@ packages:
       mnemonist: 0.39.5
     dev: false
 
+  /fast-jwt@3.2.0:
+    resolution: {integrity: sha512-RELkgZpWwu5BsUgylCjuu9RBwg3mofXd1bVzqD3V3aH4uew2bF2A+nYp1sZbmvPGf/k7sLBnKuzpQA00CM+gnA==}
+    engines: {node: '>=14 <22'}
+    dependencies:
+      '@lukeed/ms': 2.0.1
+      asn1.js: 5.4.1
+      ecdsa-sig-formatter: 1.0.11
+      mnemonist: 0.39.5
+    dev: false
+
   /fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
@@ -18965,13 +18990,25 @@ packages:
       reusify: 1.0.4
     dev: false
 
-  /fastify-auth0-verify@1.0.0:
-    resolution: {integrity: sha512-/nrfkq6qGgRoe72wwa7wE85aWajIbB/z2CYRXUDzQCd5OgvgsO/RRBGK33ZovuQ52DmjOJvNtqHQAPbcsPMK/Q==}
+  /fastify-auth0-verify@1.2.0:
+    resolution: {integrity: sha512-Xlc0hnaY9129zaP2bqTozRKVr//6YtHoqcfssXmT0IHxz5GdnCrt7cBak+WJrrBO2H9Rutbdz/q4mW6MbM7lKg==}
+    engines: {node: '>= 14.0.0'}
+    dependencies:
+      '@fastify/cookie': 8.3.0
+      '@fastify/jwt': 7.2.1
+      fastify-jwt-jwks: 1.1.3
+      fastify-plugin: 4.5.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /fastify-jwt-jwks@1.1.3:
+    resolution: {integrity: sha512-0aHfOAhWS1wD754HKb3y7WUfE5TJgDaXzqqAwBRSFsSxYJ5EaAfrsUhDjQOGj6nSYFSRSdCAaZZLeePSiCfR+w==}
     engines: {node: '>= 14.0.0'}
     dependencies:
       '@fastify/cookie': 8.3.0
       '@fastify/jwt': 6.7.1
-      fastify-plugin: 4.3.0
+      fastify-plugin: 4.5.1
       http-errors: 2.0.0
       node-cache: 5.1.2
       node-fetch: 2.7.0
@@ -18979,8 +19016,8 @@ packages:
       - encoding
     dev: false
 
-  /fastify-plugin@4.3.0:
-    resolution: {integrity: sha512-M3+i368lV0OYTJ5TfClIoPKEKSOF7112iiPdwgfSR0gN98BjA1Nk+c6oBHtfcVt9KiMxl+EQKHC1QNWo3ZOpYQ==}
+  /fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
     dev: false
 
   /fastify@4.21.0:
@@ -21488,6 +21525,7 @@ packages:
 
   /ieee754@1.1.13:
     resolution: {integrity: sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==}
+    dev: false
 
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -24527,7 +24565,7 @@ packages:
       loopback-datasource-juggler: 3.36.1
       loopback-filters: 1.1.1
       loopback-phase: 3.4.0
-      nodemailer: 6.9.4
+      nodemailer: 6.9.3
       nodemailer-direct-transport: 3.3.2
       nodemailer-stub-transport: 1.1.0
       serve-favicon: 2.5.0
@@ -26438,11 +26476,6 @@ packages:
 
   /nodemailer@6.9.3:
     resolution: {integrity: sha512-fy9v3NgTzBngrMFkDsKEj0r02U7jm6XfC3b52eoNV+GCrGj+s8pt5OqhiJdWKuw51zCTdiNR/IUD1z33LIIGpg==}
-    engines: {node: '>=6.0.0'}
-    dev: false
-
-  /nodemailer@6.9.4:
-    resolution: {integrity: sha512-CXjQvrQZV4+6X5wP6ZIgdehJamI63MFoYFGGPtHudWym9qaEHDNdPzaj5bfMCvxG1vhAileSWW90q7nL0N36mA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
