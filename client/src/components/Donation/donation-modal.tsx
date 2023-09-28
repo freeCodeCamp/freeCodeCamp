@@ -88,7 +88,7 @@ function ModalHeader({
 }) {
   const { t } = useTranslation();
   return (
-    <div className=' text-center block-modal-text'>
+    <div className='text-center block-modal-text'>
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
@@ -226,14 +226,14 @@ function CloseButtonRow({
   );
 }
 
-function ModalBody({
+function DonationBody({
   closeLabel,
   ctaNumber,
   showMultiTier,
   recentlyClaimedBlock,
   donationAmount,
   loadElementsIndividually,
-  setDonationAmount,
+  handleProcessing,
   setShowDonateForm,
   closeDonationModal,
   isDisabled,
@@ -245,7 +245,7 @@ function ModalBody({
   recentlyClaimedBlock: RecentlyClaimedBlock;
   donationAmount: DonationAmount;
   loadElementsIndividually: boolean;
-  setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
+  handleProcessing: () => void;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
   closeDonationModal: () => void;
   isDisabled: boolean;
@@ -259,10 +259,11 @@ function ModalBody({
         recentlyClaimedBlock={recentlyClaimedBlock}
         showMultiTier={showMultiTier}
       />
-      <SelectionTabs
+      <DonationFormRow
         donationAmount={donationAmount}
+        handleProcessing={handleProcessing}
+        showMultiTier={showMultiTier}
         loadElementsIndividually={loadElementsIndividually}
-        setDonationAmount={setDonationAmount}
         setShowDonateForm={setShowDonateForm}
       />
       <CloseButtonRow
@@ -310,7 +311,8 @@ function DonationFormRow({
     </Row>
   );
 }
-function MultiTierModalBody({
+
+function MultiTierDonationBody({
   closeLabel,
   ctaNumber,
   showMultiTier,
@@ -342,17 +344,22 @@ function MultiTierModalBody({
   return (
     <>
       <div {...(showDonateForm && { className: 'hide' })}>
-        <ModalBody
-          closeDonationModal={closeDonationModal}
+        <ModalHeader
           closeLabel={closeLabel}
           ctaNumber={ctaNumber}
-          donationAmount={donationAmount}
-          isDisabled={isDisabled}
-          loadElementsIndividually={loadElementsIndividually}
           recentlyClaimedBlock={recentlyClaimedBlock}
+          showMultiTier={showMultiTier}
+        />
+        <SelectionTabs
+          donationAmount={donationAmount}
+          loadElementsIndividually={loadElementsIndividually}
           setDonationAmount={setDonationAmount}
           setShowDonateForm={setShowDonateForm}
-          showMultiTier={showMultiTier}
+        />
+        <CloseButtonRow
+          closeDonationModal={closeDonationModal}
+          closeLabel={closeLabel}
+          isDisabled={isDisabled}
           showSkipButton={showSkipButton}
         />
       </div>
@@ -453,12 +460,12 @@ function DonateModal({
       onExited={handleModalHide}
       show={show}
     >
-      <Modal.Body className={'no-delay-fade-in'}>
+      <Modal.Body className='no-delay-fade-in'>
         <div className='donation-icon-container'>
           <Ilustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
         {showMultiTier ? (
-          <MultiTierModalBody
+          <MultiTierDonationBody
             recentlyClaimedBlock={recentlyClaimedBlock}
             setDonationAmount={setDonationAmount}
             setShowDonateForm={setShowDonateForm}
@@ -474,15 +481,15 @@ function DonateModal({
             loadElementsIndividually={loadElementsIndividually}
           />
         ) : (
-          <ModalBody
+          <DonationBody
             closeDonationModal={closeDonationModal}
             closeLabel={closeLabel}
             ctaNumber={ctaNumber}
             donationAmount={donationAmount}
             isDisabled={isDisabled}
+            handleProcessing={handleProcessing}
             loadElementsIndividually={loadElementsIndividually}
             recentlyClaimedBlock={recentlyClaimedBlock}
-            setDonationAmount={setDonationAmount}
             setShowDonateForm={setShowDonateForm}
             showMultiTier={showMultiTier}
             showSkipButton={showSkipButton}
