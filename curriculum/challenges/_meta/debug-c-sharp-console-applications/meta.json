@@ -1,8 +1,8 @@
 {
   "name": "Debug C# Console Applications",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "debug-c-sharp-console-applications",
-  "helpCategory": "HTML-CSS",
+  "helpCategory": "C-Sharp",
   "order": 5,
   "time": "",
   "template": "",

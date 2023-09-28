@@ -70,7 +70,7 @@ assert(JSX.props.children[1].type === 'p');
 assert(JSX.props.children[2].type === 'ul');
 ```
 
-`ul` має містити три елемент `li`.
+`ul` має містити три елементи `li`.
 
 ```js
 assert(

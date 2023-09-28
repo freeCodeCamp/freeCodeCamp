@@ -1,6 +1,7 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql, navigate } from 'gatsby';
+
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
@@ -9,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -367,12 +369,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       `intro:${superBlock}.blocks.${block}.title`
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-    const ariaLabel = t('aria.answer');
 
     // TODO: If already taken exam, show different messages
 
     return examInProgress ? (
-      <Grid>
+      <Container>
         <Row>
           <Spacer size='medium' />
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
@@ -417,7 +418,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       ({ answer, id }) => (
                         <label className='exam-answer-label' key={id}>
                           <input
-                            aria-label={ariaLabel}
+                            aria-label={t('aria.answer')}
                             checked={
                               userExamQuestions[currentQuestionIndex].answer
                                 .id === id
@@ -509,7 +510,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
           <ExitExamModal exitExam={this.exitExam} />
           <FinishExamModal finishExam={this.finishExam} />
         </Row>
-      </Grid>
+      </Container>
     ) : (
       <Hotkeys
         innerRef={this._container}
@@ -518,7 +519,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeTitle
@@ -562,7 +563,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

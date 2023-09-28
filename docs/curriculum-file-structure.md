@@ -52,7 +52,7 @@ When renaming a certification, you will likely want to rename the associated sup
 1. Optionally, update the `certSlug` for the superblock in the same file. **Note** that renaming a `certSlug` will change the URL for certifications and should only be done with careful consideration.
 1. Update the `title` in `client/src/resources/cert-and-project-map.ts` to the new value. **Note** that changing the `title` here **will break** the superBlock page for the associated certification. It relies on the superBlock title to match the certification title. You will likely want to rename the superBlock at the same time.
 1. If you renamed the `certSlug` in step 7, change it here for the cert and all the nested `projects` values.
-1. In `config/certification-settings.js`, update the value of `certTypeTitleMap` to the new name.
+1. In `shared/config/certification-settings.js`, update the value of `certTypeTitleMap` to the new name.
 1. If you renamed the `certSlug` in step 7, update the key of `certSlugTypeMap` in the same file.
 1. Update the certificate name in the `legacyCerts` array of the `client/src/client-only-routes/show-project-links.tsx` if needed.
 1. Update the main `README.md` file to the new name.
@@ -71,10 +71,10 @@ Also, you will likely want to rename the certificate and the `{superBlock}-proje
 1. Update the `index.md` file in the above folder, changing the `title` and `superBlock` values to the new name.
 1. For each block folder within the above, update the `index.md` to use the correct `superBlock` value.
 1. In the `client/src/resources/cert-and-project-map.ts` file, update the path for the cert at the top of the file, and the `title` value for that superBlock. **Note** that changing the `title` here **will break** the ability to view the actual certification for this superBlock. It relies on the superBlock title to match the certification title. You will likely want to rename the certification at the same time.
-1. Update the `superBlockCertTypeMap` key in `config/certification-settings.js` to the new superBlock name.
+1. Update the `superBlockCertTypeMap` key in `shared/config/certification-settings.js` to the new superBlock name.
 1. Update the path value in `client/src/assets/icons/index.tsx`.
 1. For each language in `client/i18n/locales`, update the `intro.json` file to use the new superBlock `dashedName`. In the English file, also update the `title`.
-1. Check the `config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Update all the values where it is used.
+1. Check the `shared/config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Update all the values where it is used.
 1. Update the main `README.md` file to the new name.
 
 ### Renaming a Block

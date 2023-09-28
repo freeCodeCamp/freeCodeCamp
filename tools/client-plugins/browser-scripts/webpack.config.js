@@ -6,7 +6,10 @@ const webpack = require('webpack');
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
   const staticPath = path.join(__dirname, '../../../client/static/js');
-  const configPath = path.join(__dirname, '../../../config/client');
+  const configPath = path.join(
+    __dirname,
+    '../../../client/config/browser-scripts/'
+  );
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',

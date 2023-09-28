@@ -1,3 +1,6 @@
+// We import these declaration files here, in the entry point of our application, so
+// that they're available throughout.
+import '@total-typescript/ts-reset';
 import { build } from './app';
 
 import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';

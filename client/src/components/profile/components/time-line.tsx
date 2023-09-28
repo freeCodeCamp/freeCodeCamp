@@ -1,4 +1,4 @@
-import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { graphql, useStaticQuery } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
@@ -6,11 +6,12 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Table } from '@freecodecamp/ui';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
@@ -50,6 +51,7 @@ interface TimelineInnerProps extends TimelineProps {
 interface NameMap {
   challengeTitle: string;
   challengePath: string;
+  certPath: string;
 }
 
 function TimelineInner({
@@ -123,24 +125,25 @@ function TimelineInner({
     );
   }
 
-  function renderCompletion(completed: CompletedChallenge): JSX.Element {
+  function renderCompletion(completed: CompletedChallenge) {
     const { id } = completed;
+    const challenge = idToNameMap.get(id);
+    if (!challenge) return;
+    const { challengeTitle, challengePath, certPath } = challenge;
     const completedDate = new Date(completed.completedDate);
-    // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
         <td>
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              to={`/certification/${username}/${certPath as string}`}
+              to={`/certification/${username}/${certPath}`}
             >
               {challengeTitle}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
         <td>{renderViewButton(completed)}</td>

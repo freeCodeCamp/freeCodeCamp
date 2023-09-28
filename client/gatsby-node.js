@@ -4,7 +4,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
-const env = require('../config/env.json');
+const env = require('./config/env.json');
 
 const {
   createChallengePages,
@@ -78,12 +78,15 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   certification
                   challengeType
                   dashedName
+                  disableLoopProtectTests
+                  disableLoopProtectPreview
                   fields {
                     slug
                     blockHashSlug
                   }
                   hasEditableBoundaries
                   id
+                  msTrophyId
                   order
                   prerequisites {
                     id
@@ -289,6 +292,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      msTrophyId: String
     }
     type FileContents {
       fileKey: String

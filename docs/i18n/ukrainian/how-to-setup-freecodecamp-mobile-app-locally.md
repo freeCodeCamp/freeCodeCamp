@@ -399,7 +399,7 @@ copy sample.env .env
 4. Встановіть залежності для репозиторію freeCodeCamp:
 
     ```console
-    pnpm install && pnpm run create:config
+    pnpm install && pnpm run create:shared
     ```
 
 5. Створіть файл JSON з даними завдань:
@@ -415,7 +415,7 @@ copy sample.env .env
 #### **macOS/Linux**
 
 ```console
-cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
 ```
 
 #### **Windows**

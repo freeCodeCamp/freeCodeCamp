@@ -1,6 +1,14 @@
 # How to add Playwright tests
 
-## Installation:
+## Installation
+
+To install Playwright run:
+
+```console
+pnpm run playwright:install-build-tools
+```
+
+Alternatively you can follow official documentation referenced below:
 
 To install and configure Playwright on your machine check out this [documentation](https://playwright.dev/docs/intro#installing-playwright)
 
@@ -12,18 +20,159 @@ To learn how to write Playwright tests, or 'specs', please see Playwright's offi
 
 - Playwright test files are always with a `.spec.ts` extension.
 
-## How to Run Tests
+## Best Practices for writing e2e tests
 
+ This section will explain in detail about best practices for writing and documenting E2E tests based on playwright documentation and our community code-style.
+
+### - Identifying a DOM element
+
+  Always use the `data-playwright-test-label` attribute to identify DOM elements. This attribute is used to identify elements in the DOM for testing with playwright only. It is not used for styling or any other purpose.
+
+  For example:
+
+  ```html
+  <div data-playwright-test-label="landing-page-figure">
+    <img src="..." alt="..." />
+  </div>
+  ```
+
+  Make sure you use the getByTestId method to identify the element in the test file.
+
+  For example:
+
+  ```ts
+  const landingPageFigure = page.getByTestId('landing-page-figure');
+  ```
+
+### - Imports
+
+  Always start with necessary imports at the beginning of the file.
+
+  For example:
+
+  ```ts
+  import { test, expect, type Page } from '@playwright/test';
+  ```
+
+### - Constants
+
+  Define any constant elements, data sets, or configurations used throughout your tests for easy reference.
+
+  For example:
+
+  ```ts
+  const landingPageElements = { ... };
+  const superBlocks = [ ... ];
+  ```
+
+### - Shared Context
+
+ If tests depend on a shared context (like a loaded web page), use beforeAll and afterAll hooks to set up and tear down that context.
+
+  For example:
+
+  ```ts
+  let page: Page;
+
+  beforeAll(async ({ browser }) => {
+    page = await browser.newPage();
+  });
+
+  afterAll(async () => {
+    await page.close();
+  });
+  ```
+
+### - Descriptive test names
+
+ Each test block should have a clear and concise name describing exactly what it's testing.
+
+  For example:
+
+  ```ts
+  test('The component landing-top renders correctly', async ({ page }) => {
+    ...
+  });
+  ```
+
+### - Human readable assertions
+
+  Each assertion should be as human readable as possible. This makes it easier to understand what the test is doing and what it's expecting.
+
+  For example:
+
+  ```ts
+  await expect(landingHeading1).toHaveText('Learn to code — for free.');
+  ```
+
+### - Keep it DRY
+
+  Make sure that the tests are not repeating the same code over and over again. If you find yourself repeating the same code, consider refactoring it as a loop or a function.
+
+  For example:
+
+  ```ts
+  for (const logo of await logos.all()) {
+    await expect(logo).toBeVisible();
+  }
+  ```
+
+### - Tests for mobile screens
+
+  Use the 'isMobile' argument to run tests that incude logic that varies for mobile screens.
+
+  For example:
+
+  ```ts
+  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
+  {
+    const landingPageImage = page.getByTestId('landing-page-figure');
+
+    if (isMobile) {
+      await expect(landingPageImage).toBeHidden();
+    } else {
+      await expect(landingPageImage).toBeVisible();
+    }
+  });
+```
+
+### - Group related tests
+
+  Group related tests together using describe blocks. This makes it easier to understand what the tests are doing and what they're testing.
+
+  For example:
+
+  ```ts
+  describe('The campers landing page', () => {
+    test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
+    {
+      ...
+    });
+
+    test('The campers landing page figure has the correct image', async () => {
+      ...
+    });
+  });
+  ```
+
+
+## How to Run Tests
 
 ### 1. Ensure that MongoDB and Client Applications are Running
 
-- [Start MongoDB and seed the database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Start MongoDB and seed the database](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Start the freeCodeCamp client application and API server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
 ### 2. Run the Playwright Tests
 
 To run tests with Playwright check the following below
+
+- Make sure you navigate to the e2e repo first
+
+  ```console
+  cd e2e
+  ```
 
 - To run tests in UI helper mode:
 
@@ -50,6 +199,7 @@ To run tests with Playwright check the following below
   ```
 
   For example:
+
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
@@ -61,6 +211,7 @@ To run tests with Playwright check the following below
   ```
 
   For example:
+
   ```console
   npx playwright test -g "add a todo item"
   ```
@@ -91,8 +242,13 @@ npx playwright show-report
 
 ### 5. Troubleshooting
 
-Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including majpr distributions of Windows, MacOS and Linux.
+Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
 
+- (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
+
+  ```console
+  pnpm run playwright:install-build-tools-linux
+  ```
 
 - A common error seen in playwright is as follows:
 
@@ -120,12 +276,11 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
   ```console
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
+
   1. The network request was made using a method that does not include a response body, such as HEAD or CONNECT.
   2. The network request was made over a secure (HTTPS) connection, and the response body is not available for security reasons.
   3. The network request was made by a third-party resource (such as an advertisement or a tracking pixel) that is not controlled by the script.
   4. The network request was made by a script that has been paused or stopped before the response was received.
-
-
 
 **For more insights on issues visit the official documentation.**
 
@@ -138,21 +293,25 @@ If starting the Gitpod environment did not automatically develop the environment
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 
 - Create the .env
+
   ```console
   cp sample.env .env
   ```
 
 - Create a config file.
+
   ```console
-  pnpm run create:config
+  pnpm run create:shared
   ```
 
 - Seed the database
+
   ```console
   pnpm run seed
   ```
 
 - Develop the server and client
+
   ```console
   pnpm run develop
   ```
@@ -164,7 +323,6 @@ To install necessary dependencies for running Playwright run the following comma
 ```console
 pnpm run playwright:install-build-tools
 ```
-
 
 ### 3. Run the Playwright Tests on Gitpod
 

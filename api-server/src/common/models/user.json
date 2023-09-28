@@ -343,10 +343,6 @@
       "type": "string",
       "default": "default"
     },
-    "sound": {
-      "type": "boolean",
-      "default": false
-    },
     "keyboardShortcuts": {
       "type": "boolean",
       "default": false
@@ -422,6 +418,11 @@
     "userTokens": {
       "type": "hasMany",
       "model": "UserToken",
+      "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
       "foreignKey": "userId"
     }
   },

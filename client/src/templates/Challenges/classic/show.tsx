@@ -9,9 +9,9 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -332,11 +332,6 @@ function ShowClassic({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    initializeComponent(title);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tests, title]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');

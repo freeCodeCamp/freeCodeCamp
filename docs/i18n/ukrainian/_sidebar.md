@@ -10,6 +10,7 @@
   - [Передові практики написання коду](codebase-best-practices.md)
   - [Робота над кодовою базою](how-to-contribute-to-the-codebase.md)
   - [Робота над завданнями з кодом](how-to-work-on-coding-challenges.md)
+  - [Допомога з навчальної програми](curriculum-help.md)
   - [Робота над компонентною бібліотекою](how-to-work-on-the-component-library.md)
   - [Робота над практичними проєктами](how-to-work-on-practice-projects.md)
   - [Робота над мобільним застосунком](how-to-setup-freecodecamp-mobile-app-locally.md)
