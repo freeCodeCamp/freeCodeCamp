@@ -20,19 +20,19 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-b
 
 ## --text--
 
-Which of the following describes the affect of a `using` statement?
+Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement? 
 
 ## --answers--
 
-Affects only the first code block in the code file.
+The curly braces can't be removed from the code block for `else if` and `else` statements.
 
 ---
 
-Affects only the current code block in the code file.
+If the curly braces are removed from the code blocks of an `if-elseif-else`, the white space must also be removed.
 
 ---
 
-Affects all of the code in the code file.
+Always choose a style that improves readability.
 
 ## --video-solution--
 
