@@ -394,10 +394,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         if (!multifileCertProjectIds.includes(challengeId)) {
           void reply.code(403);
-          return {
-            type: 'error',
-            message: 'That challenge type is not savable.'
-          } as const;
+          return 'That challenge type is not savable.';
         }
 
         const userSavedChallenges = saveUserChallengeData(
