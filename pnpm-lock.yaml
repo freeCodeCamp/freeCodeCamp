@@ -209,7 +209,7 @@ importers:
         version: 2.1.1(ajv@8.12.0)
       connect-mongo:
         specifier: 4.6.0
-        version: 4.6.0(express-session@1.17.3)(mongodb@4.16.0)
+        version: 4.6.0(express-session@1.17.3)(mongodb@4.17.0)
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -232,8 +232,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       mongodb:
-        specifier: 4.16.0
-        version: 4.16.0
+        specifier: 4.17.0
+        version: 4.17.0
       nanoid:
         specifier: '3'
         version: 3.3.4
@@ -8176,7 +8176,6 @@ packages:
     requiresBuild: true
     dependencies:
       sparse-bitfield: 3.0.3
-    dev: true
     optional: true
 
   /@mrmlnc/readdir-enhanced@2.2.1:
@@ -15684,7 +15683,7 @@ packages:
       - snappy
     dev: false
 
-  /connect-mongo@4.6.0(express-session@1.17.3)(mongodb@4.16.0):
+  /connect-mongo@4.6.0(express-session@1.17.3)(mongodb@4.17.0):
     resolution: {integrity: sha512-8new4Z7NLP3CGP65Aw6ls3xDBeKVvHRSh39CXuDZTQsvpeeU9oNMzfFgvqmHqZ6gWpxIl663RyoVEmCAGf1yOg==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -15694,7 +15693,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       express-session: 1.17.3
       kruptein: 3.0.6
-      mongodb: 4.16.0
+      mongodb: 4.17.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -26071,8 +26070,8 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongodb@4.16.0:
-    resolution: {integrity: sha512-0EB113Fsucaq1wsY0dOhi1fmZOwFtLOtteQkiqOXGklvWMnSH3g2QS53f0KTP+/6qOkuoXE2JksubSZNmxeI+g==}
+  /mongodb@4.17.0:
+    resolution: {integrity: sha512-LZGMIPjPfWEfhPJATk1s9IvVTD18tyfKdT/0blCMih5vGagk2SwA9wFAUPMdtJpTrhXmyfGgwAaMkvneX2bn2A==}
     engines: {node: '>=12.9.0'}
     dependencies:
       bson: 4.7.2
@@ -26080,7 +26079,7 @@ packages:
       socks: 2.7.1
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.398.0
-      saslprep: 1.0.3
+      '@mongodb-js/saslprep': 1.1.0
     transitivePeerDependencies:
       - aws-crt
     dev: false
