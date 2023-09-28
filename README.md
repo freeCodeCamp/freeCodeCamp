@@ -200,7 +200,6 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - [Work with Variable Data in C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#work-with-variable-data-in-c-sharp-console-applications)
 - [Create Methods in C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#create-methods-in-c-sharp-console-applications)
 - [Debug C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#debug-c-sharp-console-applications)
-
   <br />
   <br />
   **Exam**: [Foundational C# with Microsoft Certification Exam](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam)
