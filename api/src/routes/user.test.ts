@@ -913,6 +913,62 @@ Thanks and regards,
 
           expect(response.statusCode).toBe(403);
         });
+
+        it('returns the username on success', async () => {
+          const msUsername = 'ms-user';
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: msUsername
+                })
+            })
+          );
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            msUsername
+          });
+          expect(response.statusCode).toBe(200);
+        });
+
+        it('creates a record of the linked account', async () => {
+          const msUsername = 'super-user';
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: msUsername
+                })
+            })
+          );
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          const linkedAccount =
+            await fastifyTestInstance.prisma.msUsername.findFirstOrThrow({
+              where: { msUsername }
+            });
+
+          expect(linkedAccount).toStrictEqual({
+            id: expect.stringMatching(/^[a-f\d]{24}$/),
+            userId: defaultUserId,
+            ttl: 77760000000,
+            msUsername
+          });
+        });
       });
     });
   });
@@ -931,7 +987,9 @@ Thanks and regards,
       { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
-      { path: '/user/ms-username', method: 'DELETE' }
+      { path: '/user/ms-username', method: 'DELETE' },
+      { path: '/user/report-user', method: 'POST' },
+      { path: '/user/ms-username', method: 'POST' }
     ];
 
     endpoints.forEach(({ path, method }) => {
@@ -940,17 +998,6 @@ Thanks and regards,
           method,
           setCookies
         });
-        expect(response.statusCode).toBe(401);
-      });
-    });
-
-    describe('/user/report-user', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/report-user', {
-          method: 'POST',
-          setCookies
-        });
-
         expect(response.statusCode).toBe(401);
       });
     });

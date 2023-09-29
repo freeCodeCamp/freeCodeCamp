@@ -299,14 +299,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
+        // TODO(Post-MVP): make msUsername unique, then we can simply try to
+        // create the record and catch the error.
         const usernameUsed = !!(await fastify.prisma.msUsername.findFirst({
           where: {
             msUsername: userName
           }
         }));
 
-        // TODO: do we need a specific check? Can we just try to create it and
-        // handle the error?
         if (usernameUsed) {
           void reply.status(403);
           return {
@@ -315,15 +315,17 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           } as const;
         }
 
+        // TODO(Post-MVP): do we need to store tll in the database? We aren't
+        // storing the creation date, so we can't expire it.
+
         // 900 days in ms
         const ttl = 900 * 24 * 60 * 60 * 1000;
 
         await fastify.prisma.msUsername.create({
           data: { msUsername: userName, userId: user.id, ttl }
         });
-        return { msUsername: 'foobar' };
+        return { msUsername: userName };
       } catch (err) {
-        console.log(err);
         fastify.log.error(err);
         void reply.code(500);
         return {
