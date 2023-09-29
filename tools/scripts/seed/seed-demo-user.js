@@ -183,6 +183,7 @@ const check_connection = async client => {
   }
 };
 
+//before further execution first check connection
 check_connection(client)
   .then(() => {
     //if connection is sucess
