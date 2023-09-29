@@ -7,12 +7,12 @@ const story = {
   component: Panel,
   parameters: {
     controls: {
-      include: ['className', 'bsStyle']
+      include: ['className', 'varient']
     }
   },
   argType: {
     className: { control: { type: 'text' } },
-    bsStyle: { option: ['primary', 'danger', 'info', undefined] }
+    varient: { option: ['primary', 'danger', 'info', undefined] }
   }
 };
 
@@ -37,19 +37,19 @@ Default.args = {
 export const Primary = Template.bind({});
 Primary.args = {
   children: <Child />,
-  bsStyle: 'primary'
+  varient: 'primary'
 };
 
 export const Info = Template.bind({});
 Info.args = {
   children: <Child />,
-  bsStyle: 'info'
+  varient: 'info'
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   children: <Child />,
-  bsStyle: 'danger'
+  varient: 'danger'
 };
 
 export default story;
