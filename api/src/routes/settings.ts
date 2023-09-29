@@ -179,6 +179,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       }
 
+      // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
