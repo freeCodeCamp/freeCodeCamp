@@ -10,6 +10,7 @@ import {
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
 import { liveCerts } from '../../../config/cert-and-project-map';
+import { fireConfetti } from '../../utils/fire-confetti';
 import ProgressBarInner from './progress-bar-inner';
 
 const mapStateToProps = createSelector(
@@ -70,6 +71,9 @@ function ProgressBar({
       : t('learn.percent-complete', {
           percent: completedPercent
         });
+  if (completedPercent == 100) {
+    fireConfetti();
+  }
   return (
     <div className='progress-bar-container'>
       <ProgressBarInner
