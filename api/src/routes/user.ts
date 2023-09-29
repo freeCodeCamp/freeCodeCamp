@@ -321,9 +321,20 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         // 900 days in ms
         const ttl = 900 * 24 * 60 * 60 * 1000;
 
-        await fastify.prisma.msUsername.create({
-          data: { msUsername: userName, userId: user.id, ttl }
+        // TODO(Post-MVP): make userId unique and then we can upsert.
+
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: user.id }
         });
+
+        await fastify.prisma.msUsername.create({
+          data: {
+            msUsername: userName,
+            ttl,
+            userId: user.id
+          }
+        });
+
         return { msUsername: userName };
       } catch (err) {
         fastify.log.error(err);

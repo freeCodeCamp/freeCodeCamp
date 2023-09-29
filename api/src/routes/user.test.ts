@@ -820,7 +820,12 @@ Thanks and regards,
       describe('POST', () => {
         afterEach(async () => {
           await fastifyTestInstance.prisma.msUsername.deleteMany({
-            where: { userId: defaultUserId }
+            where: {
+              OR: [
+                { userId: defaultUserId },
+                { userId: 'aaaaaaaaaaaaaaaaaaaaaaaa' }
+              ]
+            }
           });
         });
 
@@ -968,6 +973,57 @@ Thanks and regards,
             ttl: 77760000000,
             msUsername
           });
+        });
+
+        it('removes any other accounts linked to the same user', async () => {
+          const msUsernameOne = 'super-user';
+          const msUsernameTwo = 'super-user-2';
+          mockedFetch
+            .mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () =>
+                  Promise.resolve({
+                    userName: msUsernameOne
+                  })
+              })
+            )
+            .mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () =>
+                  Promise.resolve({
+                    userName: msUsernameTwo
+                  })
+              })
+            );
+
+          await fastifyTestInstance.prisma.msUsername.create({
+            data: {
+              msUsername: 'dummy',
+              userId: 'aaaaaaaaaaaaaaaaaaaaaaaa',
+              ttl: 77760000000
+            }
+          });
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          const linkedAccounts =
+            await fastifyTestInstance.prisma.msUsername.findMany({});
+
+          expect(linkedAccounts).toHaveLength(2);
+          expect(linkedAccounts[1]?.msUsername).toBe(msUsernameTwo);
         });
       });
     });
