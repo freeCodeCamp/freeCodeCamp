@@ -5,7 +5,6 @@ jest.mock('./utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('./utils/env'),
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     COOKIE_DOMAIN: '.freecodecamp.org'
   };
 });

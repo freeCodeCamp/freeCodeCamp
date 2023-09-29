@@ -128,7 +128,6 @@ const StripeCardForm = ({
   ) => {
     if (stripe) {
       return stripe.confirmCardPayment(clientSecret, {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         payment_method: paymentMethod
       });
     }
