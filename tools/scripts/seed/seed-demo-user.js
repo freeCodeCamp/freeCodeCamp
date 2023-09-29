@@ -173,7 +173,25 @@ const blankUser = {
 
 const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-log('Connected successfully to mongo');
+const check_connection = async client => {
+  try {
+    //test connection
+    await client.connect();
+  } catch (e) {
+    log('Failed to connect to mongo');
+    throw e;
+  }
+};
+
+check_connection(client)
+  .then(() => {
+    //if connection is sucess
+    log('Connected successfully to mongo');
+  })
+  .catch(e => {
+    //Throwing Exception
+    throw e;
+  });
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');
