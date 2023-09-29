@@ -66,7 +66,8 @@ export function setupServer(): void {
     await fastify.ready();
 
     global.fastifyTestInstance = fastify;
-  });
+    // allow a little time to setup the db
+  }, 10000);
 
   afterAll(async () => {
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
