@@ -16,6 +16,7 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+import { getMsTranscriptApiUrl } from './user';
 
 jest.mock('node-fetch');
 const mockedFetch = fetch as unknown as jest.Mock;
@@ -818,6 +819,9 @@ Thanks and regards,
       });
 
       describe('POST', () => {
+        beforeEach(() => {
+          mockedFetch.mockClear();
+        });
         afterEach(async () => {
           await fastifyTestInstance.prisma.msUsername.deleteMany({
             where: {
@@ -1025,6 +1029,24 @@ Thanks and regards,
           expect(linkedAccounts).toHaveLength(2);
           expect(linkedAccounts[1]?.msUsername).toBe(msUsernameTwo);
         });
+
+        // `https://learn.microsoft.com/api/profiles/transcript/share/${msTranscriptId}`;
+        it('calls the Microsoft API with the correct url', async () => {
+          const msTranscriptUrl =
+            'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
+
+          const msTranscriptApiUrl =
+            'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl
+          });
+
+          expect(mockedFetch).toHaveBeenCalledWith(msTranscriptApiUrl);
+        });
       });
     });
   });
@@ -1056,6 +1078,34 @@ Thanks and regards,
         });
         expect(response.statusCode).toBe(401);
       });
+    });
+  });
+});
+
+describe('Microsoft helpers', () => {
+  describe('getMsTranscriptApiUrl', () => {
+    const expectedUrl =
+      'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
+    const urlWithoutSlash =
+      'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
+    const urlWithSlash = `${urlWithoutSlash}/`;
+
+    const urlWithQueryParams = `${urlWithoutSlash}?foo=bar`;
+    const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
+
+    it('should extract the transcript id from the url', () => {
+      expect(getMsTranscriptApiUrl(urlWithoutSlash)).toBe(expectedUrl);
+    });
+
+    it('should handle trailing slashes', () => {
+      expect(getMsTranscriptApiUrl(urlWithSlash)).toBe(expectedUrl);
+    });
+
+    it('should ignore query params', () => {
+      expect(getMsTranscriptApiUrl(urlWithQueryParams)).toBe(expectedUrl);
+      expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toBe(
+        expectedUrl
+      );
     });
   });
 });

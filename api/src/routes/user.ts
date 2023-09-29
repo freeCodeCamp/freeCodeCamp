@@ -27,6 +27,24 @@ const nanoid = customAlphabet(
 );
 
 /**
+ * Helper function to get the api url from the shared transcript link.
+ *
+ * @param msTranscript Shared transcript link.
+ * @returns Microsoft transcript api url.
+ */
+export const getMsTranscriptApiUrl = (msTranscript: string) => {
+  // example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo
+  const url = new URL(msTranscript);
+
+  // TODO(Post-MVP): throw if it doesn't match?
+  const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
+  const id = transcriptUrlRegex.exec(url.pathname)?.[1];
+  return `https://learn.microsoft.com/api/profiles/transcript/share/${
+    id ?? ''
+  }`;
+};
+
+/**
  * Wrapper for endpoints related to user account management,
  * such as account deletion.
  *
@@ -278,7 +296,10 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.session.user.id }
         });
-        const msApiRes = await fetch(req.body.msTranscriptUrl);
+
+        const msApiRes = await fetch(
+          getMsTranscriptApiUrl(req.body.msTranscriptUrl)
+        );
 
         if (!msApiRes.ok) {
           void reply.status(404);
