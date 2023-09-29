@@ -1,6 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
+import fetch from 'node-fetch';
 
 import { schemas } from '../schemas';
 import {
@@ -252,6 +253,83 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           message: 'flash.ms.transcript.unlink-err',
           type: 'error'
         });
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/ms-username',
+    {
+      schema: schemas.postMsUsername,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({
+            message: 'flash.ms.transcript.link-err-1',
+            type: 'error'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const msApiRes = await fetch(req.body.msTranscriptUrl);
+
+        if (!msApiRes.ok) {
+          void reply.status(404);
+
+          return {
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-2'
+          } as const;
+        }
+
+        const { userName } = (await msApiRes.json()) as { userName: string };
+
+        if (!userName) {
+          void reply.status(500);
+          return {
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-3'
+          } as const;
+        }
+
+        const usernameUsed = !!(await fastify.prisma.msUsername.findFirst({
+          where: {
+            msUsername: userName
+          }
+        }));
+
+        // TODO: do we need a specific check? Can we just try to create it and
+        // handle the error?
+        if (usernameUsed) {
+          void reply.status(403);
+          return {
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-4'
+          } as const;
+        }
+
+        // 900 days in ms
+        const ttl = 900 * 24 * 60 * 60 * 1000;
+
+        await fastify.prisma.msUsername.create({
+          data: { msUsername: userName, userId: user.id, ttl }
+        });
+        return { msUsername: 'foobar' };
+      } catch (err) {
+        console.log(err);
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.ms.transcript.link-err-6'
+        } as const;
       }
     }
   );

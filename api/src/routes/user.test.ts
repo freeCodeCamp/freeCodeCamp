@@ -5,6 +5,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import fetch from 'node-fetch';
 
 import { createUserInput } from '../utils/create-user';
 import {
@@ -15,6 +16,9 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+
+jest.mock('node-fetch');
+const mockedFetch = fetch as unknown as jest.Mock;
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -748,7 +752,7 @@ Luke, I am your father
 
 Reported by:
 Username: ${testUser?.username ?? ''}
-Name: 
+Name:
 Email: foo@bar.com
 
 Thanks and regards,
@@ -810,6 +814,104 @@ Thanks and regards,
             await fastifyTestInstance.prisma.msUsername.count();
 
           expect(msUsernames).toBe(1);
+        });
+      });
+
+      describe('POST', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.msUsername.deleteMany({
+            where: { userId: defaultUserId }
+          });
+        });
+
+        it('handles missing transcript urls', async () => {
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-1'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('handles invalid transcript urls', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: false
+            })
+          );
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-2'
+          });
+          expect(response.statusCode).toBe(404);
+        });
+
+        it('handles the case that MS does not return a username', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () => Promise.resolve({})
+            })
+          );
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-3'
+          });
+          expect(response.statusCode).toBe(500);
+        });
+
+        it('handles duplicate Microsoft usernames', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: 'foobar'
+                })
+            })
+          );
+
+          await fastifyTestInstance.prisma.msUsername.create({
+            data: {
+              msUsername: 'foobar',
+              userId: defaultUserId,
+              ttl: 77760000000
+            }
+          });
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-4'
+          });
+
+          expect(response.statusCode).toBe(403);
         });
       });
     });
