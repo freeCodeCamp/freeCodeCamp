@@ -71,7 +71,10 @@ function ProgressBar({
       : t('learn.percent-complete', {
           percent: completedPercent
         });
-  if (completedPercent == 100) {
+  if (
+    completedPercent == 100 &&
+    completedChallengesInBlock == totalChallengesInBlock
+  ) {
     fireConfetti();
   }
   return (
