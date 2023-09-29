@@ -92,7 +92,22 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
-#### 5. [Back End Development and APIs Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
+#### 5. [Relational Database](https://www.freecodecamp.org/learn/relational-database/)
+
+- [Learn Bash by Building a Boilerplate](https://www.freecodecamp.org/learn/relational-database/#learn-bash-by-building-a-boilerplate)
+- [Learn Relational Databases by Building a Mario Database](https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-mario-database)
+- [Learn Bash Scripting by Building Five Programs](https://www.freecodecamp.org/learn/relational-database/#learn-bash-scripting-by-building-five-programs)
+- [Learn SQL by Building a Student Database: Part 1](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-1)
+- [Learn SQL by Building a Student Database: Part 2](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-2)
+- [Learn Advanced Bash by Building a Kitty Ipsum Translator](https://www.freecodecamp.org/learn/relational-database/#learn-advanced-bash-by-building-a-kitty-ipsum-translator)
+- [Learn Bash and SQL by Building a Bike Rental Shop](https://www.freecodecamp.org/learn/relational-database/#learn-bash-and-sql-by-building-a-bike-rental-shop)
+- [Learn Nano by Building a Castle](https://www.freecodecamp.org/learn/relational-database/#learn-nano-by-building-a-castle)
+- [Learn Git by Building an SQL Reference Object](https://www.freecodecamp.org/learn/relational-database/#learn-git-by-building-an-sql-reference-object)
+  <br />
+  <br />
+  **Projects**: [Salon Appointment Scheduler](https://www.freecodecamp.org/learn/relational-database/#build-a-salon-appointment-scheduler-project), [Celestial Bodies Database](https://www.freecodecamp.org/learn/relational-database/#build-a-celestial-bodies-database-project), [Periodic Table Database](https://www.freecodecamp.org/learn/relational-database/#build-a-periodic-table-database-project), [Number Guessing Game](https://www.freecodecamp.org/learn/relational-database/#build-a-number-guessing-game-project), [World Cup Database](https://www.freecodecamp.org/learn/relational-database/#build-a-world-cup-database-project)
+
+#### 6. [Back End Development and APIs Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
 
 - [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
 - [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express)
@@ -101,7 +116,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice)
 
-#### 6. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
+#### 7. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
 
 - [Quality Assurance and Testing with Chai](https://www.freecodecamp.org/learn/quality-assurance/#quality-assurance-and-testing-with-chai)
 - [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/#advanced-node-and-express)
@@ -109,14 +124,14 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 
-#### 7. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
+#### 8. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
 
 - [Introduction to Python for Everybody](https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody)
   <br />
   <br />
   **Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator), [Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator)
 
-#### 8. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
+#### 9. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
 
 - [Data Analysis with Python Course](https://www.freecodecamp.org/learn/data-analysis-with-python/#data-analysis-with-python-course)
 - [NumPy](https://www.freecodecamp.org/learn/data-analysis-with-python/#numpy)
@@ -124,7 +139,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Mean-Variance-Standard Deviation Calculator](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator), [Demographic Data Analyzer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer), [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer), [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer), [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
-#### 9. [Information Security Certification](https://www.freecodecamp.org/learn/information-security/)
+#### 10. [Information Security Certification](https://www.freecodecamp.org/learn/information-security/)
 
 - [Information Security with HelmetJS](https://www.freecodecamp.org/learn/information-security/#information-security-with-helmetjs)
 - [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing)
@@ -132,13 +147,34 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
-#### 10. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
+#### 11. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
 - [TensorFlow](https://www.freecodecamp.org/learn/machine-learning-with-python/#tensorflow)
 - [How Neural Networks Work](https://www.freecodecamp.org/learn/machine-learning-with-python/#how-neural-networks-work)
   <br />
   <br />
   **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
+
+  #### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
+
+  - [Learn Ratios and Proportions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions)
+  - [Learn How to Solve for X](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x)
+  - [Learn Fractions and Decimals](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-fractions-and-decimals)
+  - [Learn Functions and Graphing](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-functions-and-graphing)
+  - [Learn Linear Functions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-linear-functions)
+  - [Learn Common Factors and Square Roots](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-common-factors-and-square-roots)
+  - [Learn How to Graph Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-graph-systems-of-equations)
+  - [Learn How to Solve Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-systems-of-equations)
+  - [Learn Applications of Linear Systems](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-applications-of-linear-systems)
+  - [Learn Quadratic Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-quadratic-equations)
+  - [Learn Parent Graphs and Polynomials](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-parent-graphs-and-polynomials)
+  - [Learn Business Applications of College Algebra](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-business-applications-of-college-algebra)
+  - [Learn Simple and Compound Interest](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-simple-and-compound-interest)
+  - [Learn Exponents and Logarithms](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-exponents-and-logarithms)
+  - [College Algebra with Python: Conclusion](https://www.freecodecamp.org/learn/college-algebra-with-python/#college-algebra-with-python-conclusion)
+    <br />
+    <br />
+    **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
 
 #### Legacy Full Stack Development Certification
 
@@ -152,6 +188,20 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 - Legacy Information Security and Quality Assurance Certification
+
+### Free professional certifications
+
+#### [(New) Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
+
+- [Write Your First Code Using C#](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#write-your-first-code-using-c-sharp)
+- [Create and Run Simple C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#create-and-run-simple-c-sharp-console-applications)
+- [Add Logic to C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#add-logic-to-c-sharp-console-applications)
+- [Work with Variable Data in C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#work-with-variable-data-in-c-sharp-console-applications)
+- [Create Methods in C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#create-methods-in-c-sharp-console-applications)
+- [Debug C# Console Applications](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#debug-c-sharp-console-applications)
+  <br />
+  <br />
+  **Exam**: [Foundational C# with Microsoft Certification Exam](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam)
 
 ### The Learning Platform
 
