@@ -164,7 +164,7 @@
     "@types/react-instantsearch-dom": "6.12.4",
     "@types/react-redux": "7.1.27",
     "@types/react-responsive": "8.0.6",
-    "@types/react-scrollable-anchor": "0.6.1",
+    "@types/react-scrollable-anchor": "0.6.2",
     "@types/react-spinkit": "3.0.8",
     "@types/react-test-renderer": "16.9.8",
     "@types/react-transition-group": "4.4.6",
