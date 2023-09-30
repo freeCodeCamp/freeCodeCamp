@@ -168,7 +168,7 @@
     "@types/react-spinkit": "3.0.8",
     "@types/react-test-renderer": "16.9.8",
     "@types/react-transition-group": "4.4.6",
-    "@types/redux-actions": "2.6.2",
+    "@types/redux-actions": "2.6.3",
     "@types/sanitize-html": "^2.8.0",
     "@types/store": "^2.0.2",
     "@types/testing-library__jest-dom": "^5.14.5",
