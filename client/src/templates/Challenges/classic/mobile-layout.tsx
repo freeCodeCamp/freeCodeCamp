@@ -86,33 +86,35 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab): void => {
+  switchTab = (tab: string): void => {
     this.setState({
-      currentTab: tab
+      currentTab: tab as Tab
     });
   };
 
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
   setToolPanelPosition = (): void => {
-    if (!this.#toolPanelGroup) return;
     // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
       setTimeout(() => {
-        if (visualViewport?.height !== undefined) {
+        if (visualViewport?.height !== undefined && this.#toolPanelGroup) {
           this.#toolPanelGroup.style.top =
             String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
         }
       }, 200);
     } else {
       if (visualViewport?.height !== undefined) {
-        this.#toolPanelGroup.style.top =
-          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+        // restore the height of html element on Firefox.
+        document.documentElement.style.height = '100%';
+        if (this.#toolPanelGroup)
+          this.#toolPanelGroup.style.top =
+            String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
       }
     }
   };
 
-  isMobileDeviceWithToolPanel = (): RegExpExecArray | null =>
-    this.#toolPanelGroup && /iPhone|Android.+Mobile/.exec(navigator.userAgent);
+  isMobileDevice = (): RegExpExecArray | null =>
+    /iPhone|Android.+Mobile/.exec(navigator.userAgent);
 
   componentDidMount(): void {
     this.#toolPanelGroup = (
@@ -121,15 +123,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       ) as HTMLCollectionOf<HTMLElement>
     )[0];
 
-    if (this.isMobileDeviceWithToolPanel()) {
+    if (this.isMobileDevice()) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-      this.#toolPanelGroup.style.top =
-        String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+      if (this.#toolPanelGroup)
+        this.#toolPanelGroup.style.top =
+          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
     }
   }
 
   componentWillUnmount(): void {
-    if (this.isMobileDeviceWithToolPanel()) {
+    if (this.isMobileDevice()) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
       document.documentElement.style.height = '100%';
     }
@@ -212,6 +215,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
           defaultValue={currentTab}
+          onValueChange={this.switchTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
@@ -236,14 +240,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
-            <button
-              className='portal-button'
-              aria-expanded={!!showPreviewPortal}
-              onClick={() => togglePane('showPreviewPortal')}
-            >
-              <span className='sr-only'>{getPortalBtnSrText()}</span>
-              <FontAwesomeIcon icon={faWindowRestore} />
-            </button>
           </TabsList>
 
           <TabsContent tabIndex={-1} className='tab-content' value={Tab.Editor}>
@@ -281,7 +277,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               className='tab-content'
               value={Tab.Preview}
               forceMount
+              // forceMount causes the preview tabpanel to never be hidden,
+              // so we need to manually add it when preview is not active.
+              {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
             >
+              <div className='portal-button-wrap'>
+                <button
+                  className='portal-button'
+                  aria-expanded={!!showPreviewPortal}
+                  onClick={() => togglePane('showPreviewPortal')}
+                >
+                  <span className='sr-only'>{getPortalBtnSrText()}</span>
+                  <FontAwesomeIcon icon={faWindowRestore} />
+                </button>
+              </div>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
@@ -296,6 +305,18 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               isMobile={true}
               videoUrl={videoUrl}
             />
+          )}
+          {hasPreview && this.state.currentTab !== 'preview' && (
+            <div className='portal-button-wrap'>
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </div>
           )}
         </Tabs>
         {displayPreviewPortal && (

@@ -14,7 +14,6 @@ type Options = {
   sendCSRFToken: boolean;
 };
 
-/* eslint-disable @typescript-eslint/naming-convention */
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
   POST: (resource: string) =>
@@ -23,7 +22,6 @@ const requests = {
   DELETE: (resource: string) =>
     request(fastifyTestInstance?.server).delete(resource)
 };
-/* eslint-enable @typescript-eslint/naming-convention */
 
 export const getCsrfToken = (setCookies: string[]): string | undefined => {
   const csrfSetCookie = setCookies.find(str => str.includes('csrf_token'));

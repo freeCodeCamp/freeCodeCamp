@@ -22,7 +22,7 @@ Se você usa o Replit, siga estas etapas para configurar o projeto:
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
-**Note:** This project's tests do not work when using `glitch.com`.
+**Observação:** os testes deste projeto não funcionam ao usar `glitch.com`.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 - Para executar os testes, remova `NODE_ENV=test` dos comentários no seu arquivo `.env`
 - Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Escreva os testes a seguir em `tests/1_unit-tests.js`:
 
 - `convertHandler` deverá ler corretamente a entrada de números inteiros.
 - `convertHandler` deverá ler corretamente a entrada de números decimais.
@@ -51,7 +51,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` deve converter corretamente `lbs` para `kg`.
 - `convertHandler` deve converter corretamente `kg` para `lbs`.
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escreva os testes a seguir em `tests/2_functional-tests.js`:
 
 - Converta uma entrada válida, como `10L`: solicitação de `GET` para `/api/convert`.
 - Converta uma entrada inválida, como `32g`: solicitação de `GET` para `/api/convert`.
@@ -61,7 +61,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Você pode fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 getUserInput => {
@@ -73,13 +73,13 @@ getUserInput => {
 };
 ```
 
-You can `GET` `/api/convert` with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
+Você pode fazer a solicitação de `GET` `/api/convert` com um único parâmetro que contém um número e unidade aceitos e fazer com que sejam convertidos. (Dica: divida a entrada procurando o índice do primeiro caractere que vai marcar o início da unidade)
 
 ```js
 
 ```
 
-You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
+Você pode converter `'gal'` para `'L'` e vice-versa. (1 gal para 3.78541 L)
 
 ```js
 async getUserInput => {
@@ -102,7 +102,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
+Você pode converter `'lbs'` para `'kg'` e vice-versa. (1 lbs para 0.453592 kg)
 
 ```js
 async getUserInput => {
@@ -125,7 +125,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
+Você pode converter `'mi'` para `'km'` e vice-versa. (1 mi para 1.60934 km)
 
 ```js
 async getUserInput => {
@@ -148,7 +148,7 @@ async getUserInput => {
 };
 ```
 
-All incoming units should be accepted in both upper and lower case, but should be returned in both the `initUnit` and `returnUnit` in lower case, except for liter, which should be represented as an uppercase `'L'`.
+Todas as unidades de entrada devem ser aceitas em letras maiúsculas e minúsculas, mas devem ser retornadas em `initUnit` e `returnUnit` em minúsculas, exceto para litro, que deve ser representado como uma maiúscula `'L'`.
 
 ```js
 async getUserInput => {
@@ -171,7 +171,7 @@ async getUserInput => {
 };
 ```
 
-If the unit of measurement is invalid, returned will be `'invalid unit'`.
+Se a unidade de medida for inválida, será retornado `'invalid unit'`.
 
 ```js
 async getUserInput => {
@@ -184,7 +184,7 @@ async getUserInput => {
 };
 ```
 
-If the number is invalid, returned will be `'invalid number'`.
+Se o número for inválido, será retornado `'invalid number'`.
 
 ```js
 async getUserInput => {
@@ -199,7 +199,7 @@ async getUserInput => {
 };
 ```
 
-If both the unit and number are invalid, returned will be `'invalid number and unit'`.
+Se o número e a unidade forem inválidos, será retornado `'invalid number and unit'`.
 
 ```js
 async getUserInput => {
@@ -217,7 +217,7 @@ async getUserInput => {
 };
 ```
 
-You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+Você pode usar frações, números decimais ou ambos no parâmetro (por exemplo, 5, 1/2, 2.5/6), mas se nada for fornecido, o padrão será 1.
 
 ```js
 async getUserInput => {
@@ -248,7 +248,7 @@ async getUserInput => {
 };
 ```
 
-Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
+O retorno consistirá em `initNum`, `initUnit`, `returnNum`, `returnUnit` e `string` escrevendo as unidades no formato `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` com o resultado arredondado para 5 casas decimais.
 
 ```js
 async getUserInput => {
@@ -265,7 +265,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+Todos os 16 testes de unidade foram concluídos e deram aprovação.
 
 ```js
 async getUserInput => {
@@ -290,7 +290,7 @@ async getUserInput => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+Todos os 5 testes funcionais estão completos e passando.
 
 ```js
 async getUserInput => {

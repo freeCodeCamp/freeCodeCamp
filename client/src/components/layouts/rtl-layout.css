@@ -95,12 +95,6 @@ New RWD project challenge
   gap: 10px;
 }
 
-/* Align the the Arabic head with the corresponding English word */
-
-[dir='rtl'] .table thead:first-child tr:first-child th {
-  text-align: right;
-}
-
 /* 
 sections that need to stay left to right
 */

@@ -34,6 +34,10 @@ type InternetState = {
   originalValues: Socials;
 };
 
+function Info({ message }: { message: string }) {
+  return message ? <HelpBlock>{message}</HelpBlock> : null;
+}
+
 class InternetSettings extends Component<InternetProps, InternetState> {
   static displayName: string;
   constructor(props: InternetProps) {
@@ -148,9 +152,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderHelpBlock = (validationMessage: string) =>
-    validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
-
   renderCheck = (url: string, validation: string | null) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
@@ -198,7 +199,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={githubProfile}
                 />
                 {this.renderCheck(githubProfile, githubProfileValidation)}
-                {this.renderHelpBlock(githubProfileValidationMessage)}
+                <Info message={githubProfileValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-linkedin'
@@ -212,7 +213,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={linkedin}
                 />
                 {this.renderCheck(linkedin, linkedinValidation)}
-                {this.renderHelpBlock(linkedinValidationMessage)}
+                <Info message={linkedinValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-picture'
@@ -226,7 +227,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={twitter}
                 />
                 {this.renderCheck(twitter, twitterValidation)}
-                {this.renderHelpBlock(twitterValidationMessage)}
+                <Info message={twitterValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-website'
@@ -240,7 +241,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={website}
                 />
                 {this.renderCheck(website, websiteValidation)}
-                {this.renderHelpBlock(websiteValidationMessage)}
+                <Info message={websiteValidationMessage} />
               </FormGroup>
             </div>
             <BlockSaveButton

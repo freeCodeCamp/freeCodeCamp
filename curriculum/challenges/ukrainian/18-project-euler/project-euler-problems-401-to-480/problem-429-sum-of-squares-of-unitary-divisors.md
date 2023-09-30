@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002c
-title: 'Problem 429: Sum of squares of unitary divisors'
+title: 'Завдання 429: сума квадратів унітарних дільників'
 challengeType: 1
 forumTopicId: 302099
 dashedName: problem-429-sum-of-squares-of-unitary-divisors
@@ -8,15 +8,15 @@ dashedName: problem-429-sum-of-squares-of-unitary-divisors
 
 # --description--
 
-A unitary divisor $d$ of a number $n$ is a divisor of $n$ that has the property $gcd(d, \frac{n}{d}) = 1$.
+Унітарний дільник $d$ числа $n$ — це дільник $n$, що має властивість $нсд(d, \frac{n}{d}) = 1$.
 
-The unitary divisors of $4! = 24$ are 1, 3, 8 and 24.
+Унітарними дільниками $4! = 24$ є 1, 3, 8 та 24.
 
-The sum of their squares is $12 + 32 + 82 + 242 = 650$.
+Сума їхніх квадратів дорівнює $12 + 32 + 82 + 242 = 650$.
 
-Let $S(n)$ represent the sum of the squares of the unitary divisors of $n$. Thus $S(4!) = 650$.
+Нехай $S(n)$ представляє суму квадратів унітарних дільників $n$. Таким чином, $S(4!) = 650$.
 
-Find $S(100\\,000\\,000!)$ modulo $1\\,000\\,000\\,009$.
+Знайдіть $S(100\\,000\\,000!)$ за модулем $1\\,000\\,000\\,009$.
 
 # --hints--
 

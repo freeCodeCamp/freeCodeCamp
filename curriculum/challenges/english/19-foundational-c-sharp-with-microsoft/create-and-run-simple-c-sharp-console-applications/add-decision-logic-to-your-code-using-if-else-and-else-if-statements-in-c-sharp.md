@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the choices below is not a valid operator in C#?

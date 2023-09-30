@@ -15,7 +15,7 @@ dashedName: build-a-technical-documentation-page
 1. Deve haver um elemento `main` com um `id="main-doc"` correspondente, que contenha o conteúdo principal da página (documentação técnica)
 1. Dentro do elemento `#main-doc`, deve haver vários elementos `section`, cada um com a classe `main-section`. Deve haver, pelo menos, cinco
 1. O primeiro elemento de cada `.main-section` deve ser um elemento `header` que contenha o texto que descreve o tópico daquela seção.
-1. Cada elemento `section` com a classe `main-section` também deve ter um `id` que corresponda ao texto de cada `header` contido dentro dela. Os espaços existentes devem ser substituídos por sublinhados (por exemplo, a seção que contém o cabeçalho "JavaScript e Java" deve ter um `id="JavaScript_and_Java"`)
+1. Cada elemento `section` com a classe `main-section` também deve ter um `id` que corresponda ao texto de cada `header` contido dentro dela. Os espaços existentes devem ser substituídos por sublinhados (por exemplo, a seção que contém o cabeçalho "JavaScript and Java" deve ter um `id="JavaScript_and_Java"`)
 1. Os elementos `.main-section` devem conter, juntos, pelo menos dez elementos `p` no total (não 10 para cada elemento)
 1. Os elementos `.main-section` devem conter, juntos, pelo menos cinco elementos `code` no total (não 5 para cada elemento)
 1. Os elementos `.main-section` devem conter, juntos, pelo menos cinco elementos `li` no total (não 5 para cada elemento)

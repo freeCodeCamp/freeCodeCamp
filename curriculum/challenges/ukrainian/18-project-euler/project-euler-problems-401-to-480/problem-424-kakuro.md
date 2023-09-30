@@ -1,6 +1,6 @@
 ---
 id: 5900f5141000cf542c510026
-title: 'Problem 424: Kakuro'
+title: 'Завдання 424: какуро'
 challengeType: 1
 forumTopicId: 302094
 dashedName: problem-424-kakuro
@@ -8,33 +8,33 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="kakuro example" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="приклад какуро" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
 
-The above is an example of a cryptic kakuro (also known as cross sums, or even sums cross) puzzle, with its final solution on the right. (The common rules of kakuro puzzles can be found easily on numerous internet sites. Other related information can also be currently found at krazydad.com whose author has provided the puzzle data for this challenge.)
+Вище наведено приклад зашифрованого какуро (також відомого як перехресне додавання) з розв’язком праворуч. (Загальні правила какуро легко можна знайти на численних сайтах. Іншу інформацію можна знайти на krazydad.com, автор якого надав дані для цього завдання.)
 
-The `testPuzzles` array contains the description of 200 such puzzles, a mix of 5x5 and 6x6 types. The first puzzle in the file is the above example which is coded as string as follows:
+Масив `testPuzzles` містить опис 200 головоломок з полями 5x5 та 6x6. Першим завданням у файлі є наведений вище приклад, що записаний як рядок:
 
 `6,X,X,(vCC),(vI),X,X,X,(hH),B,O,(vCA),(vJE),X,(hFE,vD),O,O,O,O,(hA),O,I,(hJC,vB),O,O,(hJC),H,O,O,O,X,X,X,(hJE),O,O,X`
 
-The first character is a numerical digit indicating the size of the information grid. It would be either a 6 (for a 5x5 kakuro puzzle) or a 7 (for a 6x6 puzzle) followed by a comma (,). The extra top line and left column are needed to insert information.
+Першим символом є цифра, яка вказує розмір поля. Це може бути 6 (для головоломки 5x5) або 7 (для головоломки 6x6), після чого ставлять кому (,). Додаткові верхній рядок та правий стовпець необхідні для збереження інформації.
 
-The content of each cell is then described and followed by a comma, going left to right and starting with the top line.
+Потім заповнюється вміст кожної клітинки (розділених комами) зліва направо та починаючи з верхнього рядка.
 
-`X` = Gray cell, not required to be filled by a digit.
+`X` = сіра клітинка, не заповнена цифрою.
 
-`O` (upper case letter)= White empty cell to be filled by a digit.
+`O` (літера у верхньому регістрі) = біла клітинка, заповнена цифрою.
 
-`A` = Or any one of the upper case letters from A to J to be replaced by its equivalent digit in the solved puzzle.
+`A` = або будь-які літери у верхньому регістрі від А до J, що потрібно замінити відповідною цифрою в розв’язаній головоломці.
 
-`( )` = Location of the encrypted sums. Horizontal sums are preceded by a lower case "h" and vertical sums are preceded by a lower case "v". Those are followed by one or two upper case letters depending if the sum is a single digit or double digit one. For double digit sums, the first letter would be for the "tens" and the second one for the "units". When the cell must contain information for both a horizontal and a vertical sum, the first one is always for the horizontal sum and the two are separated by a comma within the same set of brackets, ex.: (hFE,vD). Each set of brackets is also immediately followed by a comma.
+`( )` = розташування зашифрованих сум. Перед горизонтальною сумою пишуть «h», а перед вертикальною — «v» (в нижньому регістрі). Після цього записують одну або дві літери у верхньому регістрі, залежно від того, чи сума однозначна чи двозначна. Перша цифра двозначної суми позначає десятки, а друга — одиниці. Якщо клітинка має містити і горизонтальну, і вертикальну суми, то першою завжди пишеться горизонтальна сума, і ці суми розділені комою всередині дужок, наприклад: (hFE,vD). Після кожної пари дужок також ставиться кома.
 
-The description of the last cell is followed by a Carriage Return/Line Feed (CRLF) instead of a comma.
+Після опису останньої клітинки пишуть повернення каретки/символ нового рядка (CRLF), а не кому.
 
-The required answer to each puzzle is based on the value of each letter necessary to arrive at the solution and according to the alphabetical order. As indicated under the example puzzle, its answer would be 8426039571. At least 9 out of the 10 encrypting letters are always part of the problem description. When only 9 are given, the missing one must be assigned the remaining digit.
+Відповідь до кожної головоломки базується на цифрі кожної літери, необхідної для розв’язку, відповідно до алфавітного порядку. Як показано знизу прикладу, відповідь дорівнює 8426039571. Принаймні 9 з 10 зашифрованих літер завжди є частиною опису головоломки. Якщо дано лише 9 літер, то значенням десятої буде цифра, яка залишилась.
 
-You are given that the sum of the answers for the first 10 puzzles in `testPuzzles` is 64414157580.
+Відомо, що сума відповідей перших 10 головоломок в `testPuzzles` дорівнює 64414157580.
 
-Find the sum of the answers for `puzzles` array.
+Знайдіть суму відповідей всіх головоломок в масиві `puzzles`.
 
 # --hints--
 

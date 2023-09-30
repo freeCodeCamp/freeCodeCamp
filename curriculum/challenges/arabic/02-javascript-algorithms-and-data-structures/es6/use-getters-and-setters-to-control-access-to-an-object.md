@@ -46,7 +46,7 @@ console.log(novel.writer);
 
 استخدم كلمة `class` لإنشاء فئة `Thermostat`. يقبل `constructor` درجة حرارة فهرنهايت (Fahrenheit).
 
-في الفئة، أنشئ `getter` للحصول على درجة الحرارة بالدرجة المئوية و `setter` لضبط درجة الحرارة بالدرجة المئوية.
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
 
 تذكر أن `C = 5/9 * (F - 32)` و `F = C * 9.0 / 5 + 32`، حيث `F` هي قيمة درجة الحرارة بالفهرنهايت، و `C` هي قيمة درجة الحرارة نفسها بالدرجة المئوية.
 

@@ -34,6 +34,7 @@ import {
   updateProjectPreview
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import { executeGA } from '../../../redux/actions';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -127,6 +128,16 @@ function* executeChallengeSaga({ payload }) {
       playTone('tests-completed');
     } else {
       playTone('tests-failed');
+      if (challengeMeta.certification === 'responsive-web-design') {
+        yield put(
+          executeGA({
+            event: 'challenge_failed',
+            challenge_id: challengeMeta.id,
+            challenge_path: window?.location?.pathname,
+            challenge_files: challengeData.challengeFiles
+          })
+        );
+      }
     }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));

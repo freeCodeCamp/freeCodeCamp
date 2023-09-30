@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 // We have to specify pyodide.js because we need to import that file (not .mjs)
 // and 'import' defaults to .mjs
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
