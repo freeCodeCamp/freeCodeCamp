@@ -162,7 +162,7 @@
     "@types/react-helmet": "6.1.6",
     "@types/react-instantsearch-core": "6.26.5",
     "@types/react-instantsearch-dom": "6.12.3",
-    "@types/react-redux": "7.1.26",
+    "@types/react-redux": "7.1.27",
     "@types/react-responsive": "8.0.5",
     "@types/react-scrollable-anchor": "0.6.1",
     "@types/react-spinkit": "3.0.7",
