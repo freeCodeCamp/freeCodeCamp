@@ -59,12 +59,20 @@ interface SuperBlockToChallengeMap {
 }
 
 export async function getCurriculum() {
-  const rwd = await fetch('http://localhost:3000/responsive-web-design');
-  const js = await fetch(
-    'http://localhost:3000/javascript-algorithms-and-data-structures'
-  );
-  const rwdBlocks = ((await rwd.json()) as { blocks: SuperBlock }).blocks;
-  const jsBlocks = ((await js.json()) as { blocks: SuperBlock }).blocks;
+  const [rwd, js] = await Promise.all([
+    fetch('http://localhost:3000/responsive-web-design'),
+    fetch(
+      'http://localhost:3000/javascript-algorithms-and-data-structures'
+    ),
+  ]);
+
+  const [rwdBlocksRef, jsBlocksRef] = await Promise.all([
+    rwd.json(),
+    js.json()
+  ]) as [{ blocks: SuperBlock }, { blocks: SuperBlock }];
+  
+  const rwdBlocks = rwdBlocksRef.blocks;
+  const jsBlocks = jsBlocksRef.blocks
 
   return { rwdBlocks, jsBlocks };
 }
