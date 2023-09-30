@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
-    "@types/mock-fs": "4.13.1",
+    "@types/mock-fs": "4.13.2",
     "bson-objectid": "2.0.4",
     "cross-env": "7.0.3",
     "glob": "^8.1.0",

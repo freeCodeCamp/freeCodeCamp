@@ -1134,8 +1134,8 @@ importers:
         specifier: ^8.2.5
         version: 8.2.5
       '@types/mock-fs':
-        specifier: 4.13.1
-        version: 4.13.1
+        specifier: 4.13.2
+        version: 4.13.2
       bson-objectid:
         specifier: 2.0.4
         version: 2.0.4
@@ -11348,8 +11348,8 @@ packages:
     dependencies:
       '@types/node': 20.5.9
 
-  /@types/mock-fs@4.13.1:
-    resolution: {integrity: sha512-m6nFAJ3lBSnqbvDZioawRvpLXSaPyn52Srf7OfzjubYbYX8MTUdIgDxQl0wEapm4m/pNYSd9TXocpQ0TvZFlYA==}
+  /@types/mock-fs@4.13.2:
+    resolution: {integrity: sha512-mSIMAOjrNTVUFmZgJEigSIm+GlS4hbrk8U5+M8EB45uMrykKdN9TidjjSaOY1yFph2+TD7bsIfB4r+IrMYVyPQ==}
     dependencies:
       '@types/node': 20.5.9
     dev: true
