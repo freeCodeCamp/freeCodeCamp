@@ -24,7 +24,6 @@ const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
     execSync('pnpm prisma db push', {
       env: {
         ...process.env,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         MONGOHQ_URL: createTestConnectionURL(
           MONGOHQ_URL,
           process.env.JEST_WORKER_ID
