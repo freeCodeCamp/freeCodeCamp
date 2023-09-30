@@ -159,7 +159,7 @@
     "@types/react": "16.14.46",
     "@types/react-dom": "16.9.19",
     "@types/react-gtm-module": "2.0.1",
-    "@types/react-helmet": "6.1.6",
+    "@types/react-helmet": "6.1.7",
     "@types/react-instantsearch-core": "6.26.5",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-redux": "7.1.27",
