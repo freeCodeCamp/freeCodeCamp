@@ -266,8 +266,8 @@ importers:
         specifier: 6.4.8
         version: 6.4.8
       '@types/supertest':
-        specifier: 2.0.12
-        version: 2.0.12
+        specifier: 2.0.13
+        version: 2.0.13
       dotenv-cli:
         specifier: 7.3.0
         version: 7.3.0
@@ -11607,8 +11607,8 @@ packages:
       '@types/node': 20.5.9
     dev: true
 
-  /@types/supertest@2.0.12:
-    resolution: {integrity: sha512-X3HPWTwXRerBZS7Mo1k6vMVR1Z6zmJcDVn5O/31whe0tnjE4te6ZJSJGq1RiqHPjzPdMTfjCFogDJmwng9xHaQ==}
+  /@types/supertest@2.0.13:
+    resolution: {integrity: sha512-Vc/5/pRwSC055fU7Wu8erTj4gLpID9SdG2zRMuqaHLni3GTsrJ8gyB6MbFZZGLW6vQaGPhiUWRB6uWglv87MEg==}
     dependencies:
       '@types/superagent': 4.1.18
     dev: true

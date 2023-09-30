@@ -38,7 +38,7 @@
     "@types/express-session": "1.17.8",
     "@types/jsonwebtoken": "9.0.3",
     "@types/nodemailer": "6.4.8",
-    "@types/supertest": "2.0.12",
+    "@types/supertest": "2.0.13",
     "dotenv-cli": "7.3.0",
     "jest": "29.7.0",
     "prisma": "5.3.1",
