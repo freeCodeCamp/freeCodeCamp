@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">Perform Basic String Formatting in C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following lines of code correctly uses string interpolation assuming that the variable `value` is a string?

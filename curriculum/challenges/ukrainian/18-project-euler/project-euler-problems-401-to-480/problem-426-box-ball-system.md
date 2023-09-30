@@ -1,6 +1,6 @@
 ---
 id: 5900f5171000cf542c510029
-title: 'Problem 426: Box-ball system'
+title: 'Завдання 426: система коробок та м’ячів'
 challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system
@@ -8,7 +8,7 @@ dashedName: problem-426-box-ball-system
 
 # --description--
 
-Consider an infinite row of boxes. Some of the boxes contain a ball. For example, an initial configuration of 2 consecutive occupied boxes followed by 2 empty boxes, 2 occupied boxes, 1 empty box, and 2 occupied boxes can be denoted by the sequence (2, 2, 2, 1, 2), in which the number of consecutive occupied and empty boxes appear alternately.
+Розглянемо нескінченний ряд коробок. У деяких коробках є м’яч. For example, an initial configuration of 2 consecutive occupied boxes followed by 2 empty boxes, 2 occupied boxes, 1 empty box, and 2 occupied boxes can be denoted by the sequence (2, 2, 2, 1, 2), in which the number of consecutive occupied and empty boxes appear alternately.
 
 A turn consists of moving each ball exactly once according to the following rule: Transfer the leftmost ball which has not been moved to the nearest empty box to its right.
 
