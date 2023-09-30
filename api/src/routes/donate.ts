@@ -103,7 +103,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 
         const { email, name } = user;
 
-        if (user.isDonating && duration !== 'one-time') {
+        if (user.isDonating) {
           void reply.code(400);
           return {
             type: 'info',
