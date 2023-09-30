@@ -167,7 +167,7 @@
     "@types/react-scrollable-anchor": "0.6.2",
     "@types/react-spinkit": "3.0.8",
     "@types/react-test-renderer": "16.9.8",
-    "@types/react-transition-group": "4.4.6",
+    "@types/react-transition-group": "4.4.7",
     "@types/redux-actions": "2.6.3",
     "@types/sanitize-html": "^2.8.0",
     "@types/store": "^2.0.2",
