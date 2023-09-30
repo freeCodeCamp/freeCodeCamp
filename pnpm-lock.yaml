@@ -856,8 +856,8 @@ importers:
         specifier: 4.4.6
         version: 4.4.6
       '@types/redux-actions':
-        specifier: 2.6.2
-        version: 2.6.2
+        specifier: 2.6.3
+        version: 2.6.3
       '@types/sanitize-html':
         specifier: ^2.8.0
         version: 2.8.0
@@ -11523,8 +11523,8 @@ packages:
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
 
-  /@types/redux-actions@2.6.2:
-    resolution: {integrity: sha512-TvcINy8rWFANcpc3EiEQX9Yv3owM3d3KIrqr2ryUIOhYIYzXA/bhDZeGSSSuai62iVR2qMZUgz9tQ5kr0Kl+Tg==}
+  /@types/redux-actions@2.6.3:
+    resolution: {integrity: sha512-dmBoPJcJjiRXgc3Bw1dfUy2IiJI95DuN7dJ4V/G/FsbZ+LY5aKyS8qBAldMLq23JOLc/DxxwvLOF82Hr7HtY/g==}
     dev: true
 
   /@types/resolve@1.17.1:
