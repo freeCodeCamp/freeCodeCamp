@@ -36,7 +36,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "0.4.0",
     "@types/express-session": "1.17.8",
-    "@types/jsonwebtoken": "9.0.2",
+    "@types/jsonwebtoken": "9.0.3",
     "@types/nodemailer": "6.4.8",
     "@types/supertest": "2.0.12",
     "dotenv-cli": "7.3.0",
