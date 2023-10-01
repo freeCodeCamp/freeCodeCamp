@@ -2,9 +2,7 @@ import React from 'react';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
-export type AlertProps = {
-  children: React.ReactNode;
-  className?: string;
+export type AlertProps = React.ComponentProps<'div'> & {
   variant: AlertVariant;
 };
 
@@ -23,7 +21,8 @@ const variantClasses = {
 export const Alert = ({
   children,
   className,
-  variant
+  variant,
+  ...props
 }: AlertProps): JSX.Element => {
   const variantClass = variantClasses[variant];
 
@@ -34,7 +33,7 @@ export const Alert = ({
   ].join(' ');
 
   return (
-    <div className={classes} role='alert'>
+    <div className={classes} role='alert' {...props}>
       {children}
     </div>
   );
