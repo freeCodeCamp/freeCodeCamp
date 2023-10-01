@@ -112,66 +112,46 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }
 
         // Create Stripe Customer
-        let customerId;
-        try {
-          const customer = await stripe.customers.create({
-            email,
-            payment_method: paymentMethodId,
-            invoice_settings: { default_payment_method: paymentMethodId },
-            ...(name && { name })
-          });
-          customerId = customer?.id;
-        } catch {
-          throw {
-            type: 'customerCreationFailed',
-            message: 'Failed to create stripe customer'
-          };
-        }
+        const { id: customerId } = await stripe.customers.create({
+          email,
+          payment_method: paymentMethodId,
+          invoice_settings: { default_payment_method: paymentMethodId },
+          ...(name && { name })
+        });
 
         // //Create Stripe Subscription
-        let subscriptionId;
-
         const plan = `${donationSubscriptionConfig.duration[
           duration
         ].toLowerCase()}-donation-${amount}`;
 
-        try {
-          const {
-            id: subscription_id,
-            latest_invoice: {
-              // For older api versions, @ts-ignore is recommended by Stripe.
-              // More info: https://github.com/stripe/stripe-node/blob/fe81d1f28064c9b468c7b380ab09f7a93054ba63/README.md?plain=1#L91
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore stripe-version-2019-10-17
-              payment_intent: { client_secret, status }
-            }
-          } = await stripe.subscriptions.create({
-            customer: customerId,
-            payment_behavior: 'allow_incomplete',
-            items: [{ plan }],
-            expand: ['latest_invoice.payment_intent']
-          });
-          if (status === 'requires_source_action') {
-            void reply.code(402);
-            return {
-              type: 'UserActionRequired',
-              message: 'Payment requires user action',
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              client_secret
-            } as const;
-          } else if (status === 'requires_source') {
-            void reply.code(402);
-            return {
-              type: 'PaymentMethodRequired',
-              message: 'Card has been declined'
-            } as const;
+        const {
+          id: subscriptionId,
+          latest_invoice: {
+            // For older api versions, @ts-ignore is recommended by Stripe. More info: https://github.com/stripe/stripe-node/blob/fe81d1f28064c9b468c7b380ab09f7a93054ba63/README.md?plain=1#L91
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore stripe-version-2019-10-17
+            payment_intent: { client_secret, status }
           }
-          subscriptionId = subscription_id;
-        } catch (err) {
-          throw {
-            type: 'SubscriptionCreationFailed',
-            message: 'Failed to create stripe subscription'
-          };
+        } = await stripe.subscriptions.create({
+          customer: customerId,
+          payment_behavior: 'allow_incomplete',
+          items: [{ plan }],
+          expand: ['latest_invoice.payment_intent']
+        });
+        if (status === 'requires_source_action') {
+          void reply.code(402);
+          return {
+            type: 'UserActionRequired',
+            message: 'Payment requires user action',
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            client_secret
+          } as const;
+        } else if (status === 'requires_source') {
+          void reply.code(402);
+          return {
+            type: 'PaymentMethodRequired',
+            message: 'Card has been declined'
+          } as const;
         }
 
         // update record in database
@@ -210,7 +190,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(500);
         return {
           type: 'danger',
-          message: 'Something went wrong.'
+          message: 'Donation failed due to a server error.'
         } as const;
       }
     }
