@@ -43,7 +43,7 @@ test.describe('The update-email page', () => {
     );
   });
 
-  test('The page has sing out button', async () => {
+  test('The page has sign out button', async () => {
     const signOutButton = page.getByTestId('update-email-sign-out-button');
 
     await expect(signOutButton).toBeVisible();
