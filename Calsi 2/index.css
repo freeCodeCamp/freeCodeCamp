@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1c1c1c;
+  }
+  
+  #container {
+    width: 400px;
+    margin: auto;
+    height: 100vh;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    flex-grow: 1;
+    background-color: #1c1c1c;
+    border: 0;
+    outline: none;
+    font-size: 64px;
+    color: white;
+    text-align: right;
+    padding: 0px 32px;
+  }
+  
+  .button-grid {
+    flex-grow: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+  }
+  
+  button {
+    width: 80%;
+    height: 80%;
+    place-self: center;
+    border-radius: 50%;
+    border: 0;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+  
+    background-color: #505050;
+    color: white;
+  
+    transition-property: transform;
+    transition-duration: 200ms;
+  }
+  
+  button:active {
+    transform: scale(0.85);
+  }
+  
+  .gray-button {
+    background-color: #d4d4d2;
+    color: #1c1c1c;
+  }
+  
+  .yellow-btn {
+    background-color: #ff9500;
+    color: white;
+  }
+  
+  .zero {
+    grid-column: span 2; 
+    border-radius: 35%;
+  }
