@@ -175,8 +175,8 @@ importers:
         specifier: 3.347.1
         version: 3.347.1
       '@fastify/cookie':
-        specifier: 9.0.4
-        version: 9.0.4
+        specifier: 9.1.0
+        version: 9.1.0
       '@fastify/csrf-protection':
         specifier: 6.3.0
         version: 6.3.0
@@ -7091,8 +7091,8 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /@fastify/cookie@9.0.4:
-    resolution: {integrity: sha512-behLOTH2u7fSZ6+TWeW8XUCmpEstwl8ysxzyb4QRxnKyt80O2S4yVfNbBZQcG9rktjeZXfR7LLl9xXKL4vdjlQ==}
+  /@fastify/cookie@9.1.0:
+    resolution: {integrity: sha512-w/LlQjj7cmYlQNhEKNm4jQoLkFXCL73kFu1Jy3aL7IFbYEojEKur0f7ieCKUxBBaU65tpaWC83UM8xW7AzY6uw==}
     dependencies:
       cookie: 0.5.0
       fastify-plugin: 4.5.1
