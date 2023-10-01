@@ -1,7 +1,21 @@
 import { test, expect, type Page } from '@playwright/test';
 
+let page: Page;
+const frequentlyAskedQuestions = [
+  'How can I get help with my donations?',
+  'How transparent is freeCodeCamp.org?',
+  'How efficient is freeCodeCamp?',
+  'How can I make a one-time donation?',
+  'Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?',
+  'Can I mail a physical check?',
+  'How can I set up matching gifts from my employer, or payroll deductions?',
+  'How can I set up an Endowment Gift to freeCodeCamp.org?',
+  'How can I set up a Legacy gift to freeCodeCamp.org?',
+  'How can I donate stock to freeCodeCamp.org?',
+  'I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?',
+  'Is there anything else I can learn about donating to freeCodeCamp.org?'
+];
 test.describe('Donate page', () => {
-  let page: Page;
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto('/donate');
@@ -19,55 +33,21 @@ test.describe('Donate page', () => {
     await expect(
       page.locator('text=Confirm your donation of $5 / month:')
     ).toBeVisible();
+  });
 
-    expect(page.locator('text=Frequently asked questions'));
+  test('Frequently asked question heading', async () => {
+    await page
+      .getByRole('heading', { name: 'Frequently asked questions' })
+      .click();
+    await page
+      .locator('div')
+      .filter({ hasText: /^Frequently asked questions$/ })
+      .click();
+  });
 
-    expect(page.locator('text=How can I get help with my donations?'));
-
-    expect(page.locator('text=How transparent is freeCodeCamp.org?'));
-
-    expect(page.locator('text=How efficient is freeCodeCamp?'));
-
-    expect(page.locator('text=How can I make a one-time donation?'));
-
-    expect(
-      page.locator(
-        'text=Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?'
-      )
-    );
-
-    expect(page.locator('text=Can I mail a physical check?'));
-
-    expect(
-      page.locator(
-        'text=How can I set up matching gifts from my employer, or payroll deductions?'
-      )
-    );
-
-    expect(
-      page.locator(
-        'text=How can I set up an Endowment Gift to freeCodeCamp.org?'
-      )
-    );
-
-    await expect(
-      page.locator('text=How can I set up a Legacy gift to freeCodeCamp.org?')
-    ).toBeVisible();
-
-    await expect(
-      page.locator('text=How can I donate stock to freeCodeCamp.org?')
-    ).toBeVisible();
-
-    expect(
-      page.locator(
-        'text=I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?'
-      )
-    );
-
-    expect(
-      page.locator(
-        'text=Is there anything else I can learn about donating to freeCodeCamp.org?'
-      )
-    );
+  test('Frequently asked question list buttons', async () => {
+    for(const i of frequentlyAskedQuestions){
+    await page.getByRole('button', { name: `${i}` }).click();
+    }
   });
 });
