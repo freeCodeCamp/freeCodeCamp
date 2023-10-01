@@ -43,7 +43,7 @@
     "@babel/preset-env": "7.22.20",
     "@babel/preset-react": "7.22.15",
     "@babel/runtime": "^7.20.13",
-    "@babel/standalone": "7.22.20",
+    "@babel/standalone": "7.23.1",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/free-brands-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",
