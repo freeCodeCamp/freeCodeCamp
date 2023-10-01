@@ -1,4 +1,4 @@
-import { test, expect, chromium, Page } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
 test.describe('404 Page', () => {
   let page: Page;
