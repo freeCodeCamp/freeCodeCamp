@@ -196,8 +196,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0(@sinclair/typebox@0.31.5)
       '@immobiliarelabs/fastify-sentry':
-        specifier: 7.1.0
-        version: 7.1.0
+        specifier: 7.1.1
+        version: 7.1.1
       '@prisma/client':
         specifier: 5.3.1
         version: 5.3.1(prisma@5.3.1)
@@ -7551,8 +7551,8 @@ packages:
   /@iarna/toml@2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
-  /@immobiliarelabs/fastify-sentry@7.1.0:
-    resolution: {integrity: sha512-j2aQ7rVx4jU1vhpcGAmPLFkY8lZSbdeQKR9pKweEmPFZcAUMjjA+8wtuPoqEE5QxbYtK8Qruy+Rb/2lfrEl6JQ==}
+  /@immobiliarelabs/fastify-sentry@7.1.1:
+    resolution: {integrity: sha512-V6cIMLhufo81td6nPP7Y/ISgh+MaxH/FXQ7VfGnsPBq6l/B6L2d00mcOe7ER0oHfm0bIwGQa/KdvaGyz5nEVbw==}
     engines: {node: '>=16', npm: '>=8'}
     dependencies:
       '@sentry/node': 7.69.0
