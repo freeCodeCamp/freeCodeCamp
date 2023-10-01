@@ -1,7 +1,8 @@
-import { Alert, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
+import { Alert } from '@freecodecamp/ui';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -33,11 +34,7 @@ function DonateCompletion({
     : `${t('donate.error')}`;
 
   return (
-    <Alert
-      bsStyle={style}
-      className='donation-completion'
-      closeLabel={t('buttons.close')}
-    >
+    <Alert variant={style} className='donation-completion'>
       <h4>
         <b>{heading}</b>
       </h4>
