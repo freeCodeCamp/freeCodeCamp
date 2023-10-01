@@ -160,7 +160,7 @@ pnpm run playwright:install-build-tools
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
