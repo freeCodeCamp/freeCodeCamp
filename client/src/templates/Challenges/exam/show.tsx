@@ -531,17 +531,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert
-                    // id='qualified-for-exam'
-                    variant='info'
-                  >
+                  <Alert id='qualified-for-exam' variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
-                  <Alert
-                    // id='not-qualified-for-exam'
-                    variant='danger'
-                  >
+                  <Alert id='not-qualified-for-exam' variant='danger'>
                     <p>{t('learn.exam.not-qualified')}</p>
                     <Spacer size='small' />
                     <ul>

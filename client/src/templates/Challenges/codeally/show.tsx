@@ -313,10 +313,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                     </>
                   )}
-                <Alert
-                  // id='codeally-cookie-warning'
-                  variant='info'
-                >
+                <Alert id='codeally-cookie-warning' variant='info'>
                   <p>{t(`intro:misc-text.enable-cookies`)}</p>
                 </Alert>
                 <Button

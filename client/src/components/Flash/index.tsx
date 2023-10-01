@@ -1,5 +1,6 @@
 import { Alert } from '@freecodecamp/ui';
 import { AlertProps } from '@freecodecamp/ui/types/src/alert';
+import { CloseButton } from '@freecodecamp/ui/src/close-button';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -13,22 +14,22 @@ type FlashProps = {
   removeFlashMessage: typeof removeFlashMessage;
 };
 
-function Flash({ flashMessage }: FlashProps): JSX.Element {
+function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables } = flashMessage;
   const { t } = useTranslation();
 
   const flashStyle = type as AlertProps['variant'];
 
+  function handleClose() {
+    removeFlashMessage();
+  }
+
   return (
     <TransitionGroup>
       <CSSTransition classNames='flash-message' key={id} timeout={500}>
-        <Alert
-          variant={flashStyle}
-          className='flash-message'
-          // closeLabel={t('buttons.close')}
-          // onDismiss={handleClose}
-        >
-          {t(message, { variables })}
+        <Alert variant={flashStyle} className='flash-message'>
+          {t(message, variables)}
+          <CloseButton onClick={handleClose} className='close' />
         </Alert>
       </CSSTransition>
     </TransitionGroup>
