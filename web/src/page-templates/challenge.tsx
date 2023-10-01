@@ -14,7 +14,7 @@ export default function ChallengeComponent({
   const { isFallback } = useRouter();
   if (isFallback) return <div>Loading...</div>;
 
-  return (
+  return 0 (
     <>
       <Main challengeData={challengeData} />
       <Link
