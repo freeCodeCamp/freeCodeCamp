@@ -267,7 +267,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       >
                         <input
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'

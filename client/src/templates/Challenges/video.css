@@ -91,7 +91,7 @@
   border: 2px solid var(--primary-color);
 }
 
-input.video-quiz-input-hidden:focus-visible + .video-quiz-input-visible {
+input:focus-visible + .video-quiz-input-visible {
   outline: 3px solid var(--focus-outline-color);
   outline-offset: 2px;
 }
