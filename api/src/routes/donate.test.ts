@@ -134,7 +134,7 @@ describe('Donate', () => {
         expect(response.status).toBe(500);
         expect(response.body).toEqual({
           type: 'danger',
-          message: 'Something went wrong.'
+          message: 'Donation failed due to a server error.'
         });
       });
     });
