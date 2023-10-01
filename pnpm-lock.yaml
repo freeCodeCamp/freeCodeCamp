@@ -238,8 +238,8 @@ importers:
         specifier: '3'
         version: 3.3.4
       no-profanity:
-        specifier: 1.4.2
-        version: 1.4.2
+        specifier: 1.5.1
+        version: 1.5.1
       nodemailer:
         specifier: 6.9.5
         version: 6.9.5
@@ -26371,6 +26371,11 @@ packages:
 
   /no-profanity@1.4.2:
     resolution: {integrity: sha512-mg9E7w0LitTCz6J3T65nZnSzPKN9qc1VHWW0Yn6HUkU/VDWdgLBWoB/fWd3tJcfAk9fuzxAFysYbqACLE0lRjg==}
+    engines: {node: '>=14.0.0'}
+    dev: false
+
+  /no-profanity@1.5.1:
+    resolution: {integrity: sha512-WHUWSXRSobqcYD++EGgxXU7asFcECICUSiDfrpzK5c+V2luNVZp2vAas0yje45CC3XPkZb6J0CRIMyEZLQK2sg==}
     engines: {node: '>=14.0.0'}
     dev: false
 
