@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Desenvolva estruturas `foreach` e `if`-`elseif`-`else` para processar dados de arrays em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Um desenvolvedor está trabalhando com dois outros desenvolvedores para atualizar uma coleção de aplicações. Os desenvolvedores usarão comentários de código durante o processo de atualização. Qual das seguintes opções descreve um uso apropriado de comentários de código?

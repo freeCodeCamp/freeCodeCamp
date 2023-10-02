@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Develop `foreach` and `if`-`elseif`-`else` Structures to Process Array Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?

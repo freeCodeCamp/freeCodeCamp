@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">Instale e configure o Visual Studio Code</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Qual das seguintes opções oferece a melhor descrição de um Ambiente Integrado de Desenvolvimento (IDE)?

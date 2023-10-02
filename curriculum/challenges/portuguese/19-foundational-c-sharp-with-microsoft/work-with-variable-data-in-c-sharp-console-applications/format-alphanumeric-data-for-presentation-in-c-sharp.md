@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-format-strings/" target="_blank" rel="noreferrer">Formate dados alfanuméricos para apresentação em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Para o código em C#, `Console.WriteLine("C110".PadLeft(6, '0'));`, qual é a saída esperada?

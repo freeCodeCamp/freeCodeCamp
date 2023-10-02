@@ -14,6 +14,10 @@ dashedName: choose-the-correct-data-type-in-your-c-sharp-code
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">«Виберіть правильний тип даних в коді C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Фрагмент коду має зберігати цілі числові значення від `-1,000,000` до `1,000,000`. Який тип даних оберете?

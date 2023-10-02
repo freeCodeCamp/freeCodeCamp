@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">Develop Branching and Looping Structures in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?

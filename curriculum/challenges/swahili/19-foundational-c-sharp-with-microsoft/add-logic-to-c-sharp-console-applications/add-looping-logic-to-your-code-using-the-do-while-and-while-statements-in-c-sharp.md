@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">Add Looping Logic to Your Code Using the `do`-`while` and `while` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?

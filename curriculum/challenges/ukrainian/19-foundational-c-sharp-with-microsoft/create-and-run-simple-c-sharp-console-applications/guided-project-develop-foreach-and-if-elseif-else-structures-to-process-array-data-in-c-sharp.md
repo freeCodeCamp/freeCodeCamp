@@ -14,6 +14,10 @@ dashedName: guided-project-develop-foreach-and-if-elseif-else-structures-to-proc
 
 # --question--
 
+## --assignment--
+
+Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">«Розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Розробник пише застосунок, який використовує цикл `foreach`, щоб перебрати масив з 20 елементами. Як тільки застосунок готовий, розробник дізнається, що масив повинен містити 40 елементів. Застосунок має розглядати 40 елементів масиву. Яке оновлення коду потрібно виконати?
