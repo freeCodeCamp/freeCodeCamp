@@ -75,9 +75,13 @@ function DonatePage({
                 <Row>
                   <Col className={'text-center'} xs={12}>
                     {isDonating ? (
-                      <h2>{t('donate.thank-you')}</h2>
+                      <h2 data-playwright-test-label='donate-thank-you'>
+                        {t('donate.thank-you')}
+                      </h2>
                     ) : (
-                      <h2>{t('donate.help-more')}</h2>
+                      <h2 data-playwright-test-label='donate-help-more'>
+                        {t('donate.help-more')}
+                      </h2>
                     )}
                     <Spacer size='medium' />
                   </Col>
@@ -99,7 +103,9 @@ function DonatePage({
                 <Row className='donate-support' id='FAQ'>
                   <Col className={'text-center'} xs={12}>
                     <hr />
-                    <h2>{t('donate.faq')}</h2>
+                    <h2 data-playwright-test-label='donate-faq-heading'>
+                      {t('donate.faq')}
+                    </h2>
                     <Spacer size='medium' />
                   </Col>
                   <Col xs={12}>

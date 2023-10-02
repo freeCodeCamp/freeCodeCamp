@@ -18,9 +18,15 @@ export const DonationText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <p>{t('donate.efficiency')}</p>
-      <p>{t('donate.why-donate-1')}</p>
-      <p>{t('donate.why-donate-2')}</p>
+      <p data-playwright-test-label='donate-efficiency'>
+        {t('donate.efficiency')}
+      </p>
+      <p data-playwright-test-label='donate-why-1'>
+        {t('donate.why-donate-1')}
+      </p>
+      <p data-playwright-test-label='donate-why-2'>
+        {t('donate.why-donate-2')}
+      </p>
     </>
   );
 };
