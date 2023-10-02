@@ -15,7 +15,8 @@ describe('Username input field', () => {
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-info');
+      .should('have.css', 'color')
+      .and('match', '/var(--blue70)/');
   });
 
   it('Should show username is available if it is', () => {
@@ -26,7 +27,8 @@ describe('Username input field', () => {
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-success');
+      .should('have.css', 'color')
+      .and('match', '/var(--green70)/');
   });
 
   it('Should info message if username is available', () => {
@@ -40,7 +42,8 @@ describe('Username input field', () => {
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-info');
+      .should('have.css', 'color')
+      .and('match', '/var(--blue70)/');
   });
 
   it('Should be able to click the `Save` button if username is available', () => {
@@ -59,7 +62,8 @@ describe('Username input field', () => {
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-warning');
+      .should('have.css', 'color')
+      .and('match', '/var(--yellow70)/');
   });
 
   it('Should not be possible to click the `Save` button if username is unavailable', () => {
@@ -101,7 +105,8 @@ describe('Username input field', () => {
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-danger');
+      .should('have.css', 'color')
+      .and('match', '/var(--red70)/');
   });
 
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
@@ -144,10 +149,9 @@ describe('Username input field', () => {
       .should('be.visible')
       // We are checking for classes here to check for proper styling
       // This will be replaced with Percy in the future
-      .should(
-        'have.class',
-        'flash-message alert alert-success alert-dismissable'
-      );
+      .should('have.class', 'flash-message')
+      .should('have.css', 'color')
+      .and('match', '/var(--green70)/');
 
     cy.resetUsername();
   });
