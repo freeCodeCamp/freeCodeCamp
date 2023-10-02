@@ -1,6 +1,4 @@
-import { Alert } from '@freecodecamp/ui';
-import { AlertProps } from '@freecodecamp/ui/types/src/alert';
-import { CloseButton } from '@freecodecamp/ui/src/close-button';
+import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
