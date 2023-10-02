@@ -1,7 +1,7 @@
 ARG VARIANT=20.04
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-${VARIANT}
 
-ARG NODE_VERSION=18
+ARG NODE_VERSION=18.00
 ARG MONGODB_VERSION=6.0.4
 
 ARG DEBIAN_FRONTEND=noninteractive
