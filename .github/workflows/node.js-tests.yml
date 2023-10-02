@@ -62,7 +62,8 @@ jobs:
         run: pnpm install
 
       - name: Check formatting
-        run: pnpm prettier --check . || printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
+        run: |
+          pnpm prettier --check . || printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
 
       # The two prefixed installs are for the client update which are not,
       # currently, built as workspaces.
