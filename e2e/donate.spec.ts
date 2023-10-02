@@ -14,13 +14,15 @@ test.describe('Donate Page E2E Test', () => {
   });
 
   test('Should have a relevant page title', async () => {
-    const expectedTitle = `${translations.donate.title} | freeCodeCamp.org`;
-    await expect(page).toHaveTitle(expectedTitle);
+    await expect(page).toHaveTitle(
+      `${translations.donate.title} | freeCodeCamp.org`
+    );
   });
 
   test('Should have the correct heading', async () => {
-    const expectedHeading = translations.donate['help-more'];
-    const header = page.getByRole('heading', { name: expectedHeading });
+    const header = page.getByRole('heading', {
+      name: translations.donate['help-more']
+    });
     await expect(header).toBeVisible();
   });
 
@@ -35,20 +37,19 @@ test.describe('Donate Page E2E Test', () => {
   });
 
   test('Should have an FAQ section', async () => {
-    const expectedHeading = translations.donate.faq;
-    const header = page.getByRole('heading', { name: expectedHeading });
+    const header = page.getByRole('heading', { name: translations.donate.faq });
     await expect(header).toBeVisible();
     const faqs = page.getByTestId('donate-faq-question');
     await expect(faqs).toHaveCount(12);
   });
 
   test('Clicking on FAQ question should reveal the answer', async () => {
-    const questionButton = page.getByRole('button', {
-      name: translations.donate['how-transparent']
-    });
-    await questionButton.click();
-    const expectedAnswer = translations.donate['very-transparent'];
-    const answer = page.getByText(expectedAnswer);
+    await page
+      .getByRole('button', {
+        name: translations.donate['how-transparent']
+      })
+      .click();
+    const answer = page.getByText(translations.donate['very-transparent']);
     await expect(answer).toBeVisible();
   });
 
