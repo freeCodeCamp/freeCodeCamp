@@ -30,30 +30,28 @@ class UserToken extends Component<UserTokenProps> {
     const { t } = this.props;
 
     return (
-      <div data-cy='user-token' className='user-token text-center'>
-        <FullWidthRow>
-          <Panel className='user-panel'>
-            <Panel.Heading>{t('user-token.title')}</Panel.Heading>
+      <FullWidthRow data-cy='user-token' className='user-token text-center'>
+        <Panel className='user-panel'>
+          <Panel.Heading>{t('user-token.title')}</Panel.Heading>
+          <Spacer size='medium' />
+          <p>{t('user-token.delete-p1')}</p>
+          <FullWidthRow>
+            <Spacer size='small' />
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='danger'
+              className='btn-info'
+              data-cy='delete-user-token'
+              onClick={this.deleteToken}
+              type='button'
+            >
+              {t('user-token.delete')}
+            </Button>
             <Spacer size='medium' />
-            <p>{t('user-token.delete-p1')}</p>
-            <FullWidthRow>
-              <Spacer size='small' />
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='danger'
-                className='btn-info'
-                data-cy='delete-user-token'
-                onClick={this.deleteToken}
-                type='button'
-              >
-                {t('user-token.delete')}
-              </Button>
-              <Spacer size='medium' />
-            </FullWidthRow>
-          </Panel>
-        </FullWidthRow>
-      </div>
+          </FullWidthRow>
+        </Panel>
+      </FullWidthRow>
     );
   }
 }

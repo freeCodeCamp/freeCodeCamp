@@ -139,103 +139,90 @@ function EmailSettings({
     isPristine;
   if (!currentEmail) {
     return (
-      <div>
-        <FullWidthRow>
-          <p className='large-p text-center'>{t('settings.email.missing')}</p>
-        </FullWidthRow>
-        <FullWidthRow>
-          <Link style={{ textDecoration: 'none' }} to='/update-email'>
-            <Button block={true} bsSize='lg' bsStyle='primary'>
-              {t('buttons.edit')}
-            </Button>
-          </Link>
-        </FullWidthRow>
-      </div>
+      <>
+        <p className='large-p text-center'>{t('settings.email.missing')}</p>
+        <Link style={{ textDecoration: 'none' }} to='/update-email'>
+          <Button block={true} bsSize='lg' bsStyle='primary'>
+            {t('buttons.edit')}
+          </Button>
+        </Link>
+      </>
     );
   }
   return (
-    <div className='email-settings'>
+    <FullWidthRow className='email-settings'>
       <SectionHeader>{t('settings.email.heading')}</SectionHeader>
       {isEmailVerified ? null : (
-        <FullWidthRow>
-          <HelpBlock>
-            <Alert
-              bsStyle='info'
-              className='text-center'
-              closeLabel={t('buttons.close')}
-            >
-              {t('settings.email.not-verified')}
-              <br />
-              <Trans i18nKey='settings.email.check'>
-                <Link to='/update-email' />
-              </Trans>
-            </Alert>
-          </HelpBlock>
-        </FullWidthRow>
-      )}
-      <FullWidthRow>
-        <form
-          id='form-update-email'
-          {...(!isDisabled
-            ? { onSubmit: handleSubmit }
-            : { onSubmit: e => e.preventDefault() })}
-        >
-          <FormGroup controlId='current-email'>
-            <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static>{currentEmail}</FormControl.Static>
-          </FormGroup>
-          <div role='group' aria-label={t('settings.email.heading')}>
-            <FormGroup
-              controlId='new-email'
-              validationState={newEmailValidation}
-            >
-              <ControlLabel>{t('settings.email.new')}</ControlLabel>
-              <FormControl
-                onChange={createHandleEmailFormChange('newEmail')}
-                type='email'
-                value={newEmail}
-              />
-              {newEmailValidationMessage ? (
-                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
-              ) : null}
-            </FormGroup>
-            <FormGroup
-              controlId='confirm-email'
-              validationState={confirmEmailValidation}
-            >
-              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
-              <FormControl
-                onChange={createHandleEmailFormChange('confirmNewEmail')}
-                type='email'
-                value={confirmNewEmail}
-              />
-              {confirmEmailValidationMessage ? (
-                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
-              ) : null}
-            </FormGroup>
-          </div>
-          <BlockSaveButton
-            aria-disabled={isDisabled}
-            bgSize='lg'
-            {...(isDisabled && { tabIndex: -1 })}
+        <HelpBlock>
+          <Alert
+            bsStyle='info'
+            className='text-center'
+            closeLabel={t('buttons.close')}
           >
-            {t('buttons.save')}{' '}
-            <span className='sr-only'>{t('settings.email.heading')}</span>
-          </BlockSaveButton>
-        </form>
-      </FullWidthRow>
+            {t('settings.email.not-verified')}
+            <br />
+            <Trans i18nKey='settings.email.check'>
+              <Link to='/update-email' />
+            </Trans>
+          </Alert>
+        </HelpBlock>
+      )}
+      <form
+        id='form-update-email'
+        {...(!isDisabled
+          ? { onSubmit: handleSubmit }
+          : { onSubmit: e => e.preventDefault() })}
+      >
+        <FormGroup controlId='current-email'>
+          <ControlLabel>{t('settings.email.current')}</ControlLabel>
+          <FormControl.Static>{currentEmail}</FormControl.Static>
+        </FormGroup>
+        <div role='group' aria-label={t('settings.email.heading')}>
+          <FormGroup controlId='new-email' validationState={newEmailValidation}>
+            <ControlLabel>{t('settings.email.new')}</ControlLabel>
+            <FormControl
+              onChange={createHandleEmailFormChange('newEmail')}
+              type='email'
+              value={newEmail}
+            />
+            {newEmailValidationMessage ? (
+              <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+            ) : null}
+          </FormGroup>
+          <FormGroup
+            controlId='confirm-email'
+            validationState={confirmEmailValidation}
+          >
+            <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+            <FormControl
+              onChange={createHandleEmailFormChange('confirmNewEmail')}
+              type='email'
+              value={confirmNewEmail}
+            />
+            {confirmEmailValidationMessage ? (
+              <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+            ) : null}
+          </FormGroup>
+        </div>
+        <BlockSaveButton
+          aria-disabled={isDisabled}
+          bgSize='lg'
+          {...(isDisabled && { tabIndex: -1 })}
+        >
+          {t('buttons.save')}{' '}
+          <span className='sr-only'>{t('settings.email.heading')}</span>
+        </BlockSaveButton>
+      </form>
       <Spacer size='medium' />
-      <FullWidthRow>
-        <ToggleButtonSetting
-          action={t('settings.email.weekly')}
-          flag={sendQuincyEmail}
-          flagName='sendQuincyEmail'
-          offLabel={t('buttons.no-thanks')}
-          onLabel={t('buttons.yes-please')}
-          toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
-        />
-      </FullWidthRow>
-    </div>
+      <ToggleButtonSetting
+        action={t('settings.email.weekly')}
+        flag={sendQuincyEmail}
+        flagName='sendQuincyEmail'
+        offLabel={t('buttons.no-thanks')}
+        onLabel={t('buttons.yes-please')}
+        toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
+      />
+    </FullWidthRow>
   );
 }
 

@@ -152,51 +152,43 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
 
     if (!validating && error) {
       return (
-        <FullWidthRow>
-          <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
-            {t(`settings.username.${error}`, {
-              username: this.state.formValue
-            })}
-          </Alert>
-        </FullWidthRow>
+        <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
+          {t(`settings.username.${error}`, {
+            username: this.state.formValue
+          })}
+        </Alert>
       );
     }
     if (!validating && !isValidUsername) {
       return (
-        <FullWidthRow>
-          <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
-            {t('settings.username.unavailable')}
-          </Alert>
-        </FullWidthRow>
+        <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
+          {t('settings.username.unavailable')}
+        </Alert>
       );
     }
     if (validating) {
       return (
-        <FullWidthRow>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('settings.username.validating')}
-          </Alert>
-        </FullWidthRow>
+        <Alert bsStyle='info' closeLabel={t('buttons.close')}>
+          {t('settings.username.validating')}
+        </Alert>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
-        <FullWidthRow>
-          <Alert bsStyle='success' closeLabel={t('buttons.close')}>
-            {t('settings.username.available')}
-          </Alert>
-        </FullWidthRow>
+        <Alert bsStyle='success' closeLabel={t('buttons.close')}>
+          {t('settings.username.available')}
+        </Alert>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
-        <FullWidthRow>
+        <>
           <Alert bsStyle='success' closeLabel={t('buttons.close')}>
             {t('settings.username.available')}
           </Alert>
           <Alert bsStyle='info' closeLabel={t('buttons.close')}>
             {t('settings.username.change')}
           </Alert>
-        </FullWidthRow>
+        </>
       );
     }
     return null;
@@ -231,10 +223,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               id='username-settings'
             />
           </FormGroup>
-        </FullWidthRow>
-        {!isFormPristine &&
-          this.renderAlerts(validating, error, isValidUsername)}
-        <FullWidthRow>
+          {!isFormPristine &&
+            this.renderAlerts(validating, error, isValidUsername)}
           <BlockSaveButton
             aria-disabled={isDisabled}
             bgSize='lg'

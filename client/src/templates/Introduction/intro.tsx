@@ -57,8 +57,6 @@ function IntroductionPage({
             className='intro-layout'
             dangerouslySetInnerHTML={{ __html: html }}
           />
-        </FullWidthRow>
-        <FullWidthRow>
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={firstLessonPath}
@@ -71,8 +69,6 @@ function IntroductionPage({
           </Link>
           <Spacer size='small' />
           <hr />
-        </FullWidthRow>
-        <FullWidthRow>
           <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
           {allChallengeNode ? (
             <Challenges challengeNodes={allChallengeNode} />
