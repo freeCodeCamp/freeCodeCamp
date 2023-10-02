@@ -22,7 +22,7 @@ Let $A(r)$ be the area of the smallest spherical triangle in $T(r)$.
 
 For example $A(14)$ is 3.294040 rounded to six decimal places.
 
-Знайдіть $\displaystyle \sum_{r = 1}^{50} A(r)$. Give your answer rounded to six decimal places.
+Знайдіть $\displaystyle \sum_{r = 1}^{50} A(r)$. Дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: problem-254-sums-of-digit-factorials
 
 # --description--
 
-Define $f(n)$ as the sum of the factorials of the digits of $n$. For example, $f(342) = 3! + 4! + 2! = 32$.
+Define $f(n)$ as the sum of the factorials of the digits of $n$. Наприклад, $f(342) = 3! + 4! + 2! = 32$.
 
 Define $sf(n)$ as the sum of the digits of $f(n)$. So $sf(342) = 3 + 2 = 5$.
 

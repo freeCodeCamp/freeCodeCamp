@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import fetch from 'node-fetch';
 import { isEmail } from 'validator';
-import { jwtSecret } from '../../../../config/secrets';
+import { jwtSecret } from '../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
 import {
   createPassportCallbackAuthenticator,

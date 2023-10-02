@@ -3,7 +3,7 @@ const { sortChallengeFiles } = require('../sort-challengefiles');
 const {
   challengeTypes,
   viewTypes
-} = require('../../../config/challenge-types');
+} = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -44,6 +44,11 @@ const exam = path.resolve(
   '../../src/templates/Challenges/exam/show.tsx'
 );
 
+const msTrophy = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/ms-trophy/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -52,7 +57,8 @@ const views = {
   video,
   codeAlly,
   odin,
-  exam
+  exam,
+  msTrophy
   // quiz: Quiz
 };
 
@@ -87,6 +93,8 @@ exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
       dashedName,
+      disableLoopProtectTests,
+      disableLoopProtectPreview,
       certification,
       superBlock,
       block,
@@ -107,6 +115,8 @@ exports.createChallengePages = function (createPage) {
           blockHashSlug,
           dashedName,
           certification,
+          disableLoopProtectTests,
+          disableLoopProtectPreview,
           superBlock,
           block,
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),

@@ -206,6 +206,10 @@
           "Seleccionar los colores correctos para tu página web puede mejorar enormemente el atractivo estético para tus lectores.",
           "En este curso, construirás un conjunto de marcadores de color. Aprenderás diferentes maneras de establecer valores de color y cómo combinar colores entre sí."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": ["", ""]
       }
     }
   },
@@ -1013,13 +1017,13 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "C# básico con Microsoft",
+    "title": "(New) Foundational C# with Microsoft",
     "intro": [
       "Este curso ofrece una introducción completa a la programación en C#, abarcando sus conceptos básicos, sintaxis y aplicación práctica en el desarrollo de software.",
       "A través de ejercicios prácticos y proyectos, aprenderá los fundamentos de C#, incluyendo variables, tipos de datos, estructuras de control y principios de programación orientados a objetos.",
-      "Al terminar este curso, habras ganado las habilidades prácticas y el conocimiento necesario para aprovechar C#, construyendo aplicaciones robustas y escalables con confianza"
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
     ],
-    "note": "Nota: Debes completar el desafío de trofeos en cada una de las siguientes secciones para calificar para el examen de certificación.",
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
         "title": "Escribe tu primer código usando C#",

@@ -19,13 +19,13 @@ dashedName: use-the-flex-grow-property-to-expand-items
 
 # --hints--
 
-Елемент `#box-1` повинен мати властивість `flex-grow` налаштованою до значення `1`.
+Елемент `#box-1` повинен мати властивість `flex-grow` зі значенням `1`.
 
 ```js
 assert($('#box-1').css('flex-grow') == '1');
 ```
 
-Елемент `#box-2` повинен мати властивість `flex-grow` налаштованою до значення `2`.
+Елемент `#box-2` повинен мати властивість `flex-grow` зі значенням `2`.
 
 ```js
 assert($('#box-2').css('flex-grow') == '2');

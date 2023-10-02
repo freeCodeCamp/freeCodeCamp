@@ -12,7 +12,6 @@ module.exports = {
     './src/**/*.tsx',
     '!./src/**/*.test.tsx'
   ],
-  blocklist: ['container'],
   darkMode: 'class',
   theme: {
     colors: {

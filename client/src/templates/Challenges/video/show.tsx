@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,18 +10,20 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -47,7 +49,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help')
     },
     dispatch
   );
@@ -59,6 +62,7 @@ interface ShowVideoProps {
   description: string;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -187,11 +191,13 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
+            fields: { blockName },
             question: { text, answers, solution }
           }
         }
       },
       openCompletionModal,
+      openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -202,7 +208,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -216,7 +221,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               <Spacer size='medium' />
               <ChallengeTitle
@@ -257,7 +262,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -293,7 +298,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
                   bsStyle='primary'
                   onClick={() =>
                     this.handleSubmit(solution, openCompletionModal)
@@ -301,11 +305,20 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Button
+                  block={true}
+                  bsStyle='primary'
+                  className='btn-invert'
+                  onClick={openHelpModal}
+                >
+                  {t('buttons.ask-for-help')}
+                </Button>
                 <Spacer size='large' />
               </Col>
               <CompletionModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );
@@ -341,6 +354,7 @@ export const query = graphql`
         superBlock
         block
         fields {
+          blockName
           slug
         }
         question {

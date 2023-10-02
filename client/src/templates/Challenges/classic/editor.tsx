@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   challengeTypes,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -747,6 +747,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');

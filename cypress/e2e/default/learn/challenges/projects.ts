@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -93,7 +93,7 @@ describe('project submission', () => {
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
     () => {
-      cy.fixture('../../config/curriculum.json').then(
+      cy.fixture('../../shared/config/curriculum.json').then(
         (curriculum: Curriculum) => {
           const targetBlock =
             'javascript-algorithms-and-data-structures-projects';
@@ -154,9 +154,13 @@ describe('project submission', () => {
 
           cy.setPrivacyTogglesToPublic();
           cy.get(
-            `a[href="/certification/developmentuser/${projectsInOrder[0]?.superBlock}"]`
+            '[data-cy="btn-for-javascript-algorithms-and-data-structures"]'
           ).click();
-          cy.contains('Show Certification').click();
+          cy.get(
+            '[data-cy="btn-for-javascript-algorithms-and-data-structures"]'
+          )
+            .should('contain.text', 'Show Certification')
+            .click();
 
           projectTitles.forEach(title => {
             cy.get(`[data-cy="${title} solution"]`).click();
@@ -174,7 +178,7 @@ describe('project submission', () => {
     'Ctrl + enter triggers the completion modal on multifile projects',
     { browser: 'electron' },
     () => {
-      cy.fixture('../../config/curriculum.json').then(
+      cy.fixture('../../shared/config/curriculum.json').then(
         (curriculum: Curriculum) => {
           const targetBlock = 'build-a-personal-portfolio-webpage-project';
           const portfolioBlock = Object.values(curriculum).filter(

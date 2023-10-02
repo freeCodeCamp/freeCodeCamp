@@ -6,10 +6,10 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
-    "codemirror": "5.65.14",
+    "codemirror": "5.65.15",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.14.2",
+    "react-router-dom": "6.16.0",
     "react-scripts": "5.0.1",
     "typescript": "4.9.5"
   },
@@ -40,8 +40,8 @@
     ]
   },
   "devDependencies": {
-    "@types/codemirror": "5.60.8",
-    "@types/react": "16.14.45",
+    "@types/codemirror": "5.60.10",
+    "@types/react": "16.14.48",
     "@types/react-dom": "^16.9.17",
     "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",

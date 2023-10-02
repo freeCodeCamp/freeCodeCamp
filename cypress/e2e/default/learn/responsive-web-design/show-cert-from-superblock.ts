@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 const projects = {
   superBlock: SuperBlocks.FrontEndDevLibs,

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 
 const { clientLocale } = envData;
 

@@ -79,6 +79,7 @@ const demoUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: args.includes('--top-contributor')
@@ -172,8 +173,6 @@ const blankUser = {
 
 const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-log('Connected successfully to mongo');
-
 const db = client.db('freecodecamp');
 const user = db.collection('user');
 
@@ -200,6 +199,9 @@ const dropUsers = async function () {
 };
 
 const run = async () => {
+  await client.connect();
+  log('Connected successfully to mongo');
+
   await dropUserTokens();
   await dropUsers();
   if (args.includes('certified-user')) {

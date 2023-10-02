@@ -27,8 +27,7 @@ function getComponentNameAndProps(
   pathname: string,
   pageContext?: { challengeMeta?: { block?: string; superBlock?: string } }
 ): NameAndProps {
-  // eslint-disable-next-line testing-library/render-result-naming-convention
-  const shallow = ShallowRenderer.createRenderer();
+  const utils = ShallowRenderer.createRenderer();
   const LayoutReactComponent = layoutSelector({
     element: { type: elementType, props: {}, key: '' },
     props: {
@@ -38,8 +37,8 @@ function getComponentNameAndProps(
       pageContext
     }
   });
-  shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
-  const view = shallow.getRenderOutput();
+  utils.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
+  const view = utils.getRenderOutput();
   return {
     props: view.props.children.props as Record<string, unknown>,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

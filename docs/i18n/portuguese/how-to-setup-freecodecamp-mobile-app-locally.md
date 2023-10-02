@@ -399,7 +399,7 @@ copy sample.env .env
 4. Instale as dependências para o repositório do freeCodeCamp:
 
     ```console
-    pnpm install && pnpm run create:config
+    pnpm install && pnpm run create:shared
     ```
 
 5. Gere o arquivo JSON dos dados de desafio:
@@ -415,7 +415,7 @@ copy sample.env .env
 #### **macOS/Linux**
 
 ```console
-cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
 ```
 
 #### **Windows**
@@ -465,7 +465,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 13. Execute os testes do Cypress:
 
     ```console
-    pn cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Propondo um Pull Request (PR)

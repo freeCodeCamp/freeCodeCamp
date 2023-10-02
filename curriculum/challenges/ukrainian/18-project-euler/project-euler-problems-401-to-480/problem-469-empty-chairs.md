@@ -18,7 +18,7 @@ When there aren't any suitable chairs left, the fraction $C$ of empty chairs is 
 
 We can verify that $E(4) = \frac{1}{2}$ and $E(6) = \frac{5}{9}$.
 
-Знайдіть $E({10}^{18})$. Give your answer rounded to fourteen decimal places in the form 0.abcdefghijklmn.
+Знайдіть $E({10}^{18})$. Дайте відповідь, заокруглену до чотирнадцяти знаків після коми у форматі 0.abcdefghijklmn.
 
 # --hints--
 

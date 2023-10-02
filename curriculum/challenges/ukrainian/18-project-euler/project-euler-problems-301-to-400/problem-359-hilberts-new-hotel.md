@@ -32,7 +32,7 @@ $$\begin{align}   & P(1, 1) = 1 \\\\
   & P(10, 20) = 440 \\\\   & P(25, 75) = 4863 \\\\
   & P(99, 100) = 19454 \end{align}$$
 
-Find the sum of all $P(f, r)$ for all positive $f$ and $r$ such that $f × r = 71\\,328\\,803\\,586\\,048$ and give the last 8 digits as your answer.
+Знайдіть суму всіх $P(f, r)$ з додатними $f$ та $r$, за яких $f × r = 71\\,328\\,803\\,586\\,048$. У відповіді запишіть 8 останніх цифр.
 
 # --hints--
 

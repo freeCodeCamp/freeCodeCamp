@@ -175,7 +175,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             progressTimestamps: true,
             savedChallenges: true,
             sendQuincyEmail: true,
-            sound: true,
             theme: true,
             twitter: true,
             username: true,

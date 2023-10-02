@@ -381,11 +381,10 @@ html {
 }
 
 body {
+  background-color: var(--secondary-background);
   height: 100%;
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
-  background: var(--secondary-background);
-  --header-height: 38px;
 }
 
 header {

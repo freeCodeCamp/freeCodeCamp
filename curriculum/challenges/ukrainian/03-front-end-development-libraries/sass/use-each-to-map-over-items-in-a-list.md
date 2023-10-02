@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bba
-title: Використовуйте @each для зіставлення елементів в списку
+title: Використайте @each, щоб переглянути елементи списку
 challengeType: 0
 forumTopicId: 301461
 dashedName: use-each-to-map-over-items-in-a-list
@@ -8,7 +8,7 @@ dashedName: use-each-to-map-over-items-in-a-list
 
 # --description--
 
-Останнє завдання продемонструвало, як директива `@for` використовує початкове і кінцеве значення для повторення циклу певну кількість разів. Sass також пропонує директиву `@each`, яка перебирає кожен елемент в списку або на карті. На кожній ітерації змінній присвоюється поточне значення зі списку або карти.
+У попередньому завданні ми побачили, як директива `@for` використовує початкове та кінцеве значення, щоб виконати цикл певну кількість разів. Sass також пропонує директиву `@each`, яка перебирає кожен елемент в списку або на карті. На кожній ітерації змінній присвоюється поточне значення зі списку або карти.
 
 ```scss
 @each $color in blue, red, green {
@@ -26,7 +26,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-Зверніть увагу, що змінна `$key` необхідна для посилання на ключі карти. В іншому випадку скомпільований CSS містив би `color1`,`color2`. Обидва наведені вище приклади коду перетворені в наступний CSS:
+Зверніть увагу, що змінна `$key` необхідна для посилання на ключі карти. В іншому випадку скомпільований CSS містив би `color1`, `color2`… Обидва наведені вище приклади коду перетворені в наступний CSS:
 
 ```scss
 .blue-text {
@@ -44,11 +44,11 @@ $colors: (color1: blue, color2: red, color3: green);
 
 # --instructions--
 
-Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the `color` part changes for each item to the respective color. Each class should set the `background-color` to the respective color as well.
+Напишіть директиву `@each`, яка проходить список `blue, black, red` та присвоює кожну змінну до класу `.color-bg`, де `color` змінюється на відповідний колір кожного елемента. До того ж кожен клас має встановити `background-color` на відповідний колір.
 
 # --hints--
 
-Ваш код повинен містити директиву `@each`.
+Ваш код має використати директиву `@each`.
 
 ```js
 assert(code.match(/@each /g));

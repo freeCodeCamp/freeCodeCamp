@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { isPoly, setContent } from '../../../../../utils/polyvinyl';
+import { isPoly, setContent } from '../../../../../shared/utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { savedChallengesSelector } from '../../../redux/selectors';
