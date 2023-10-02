@@ -1,6 +1,13 @@
 import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
+const donationTestIds = {
+  efficiencyDonation: 'efficiency-donation',
+  reasonDonation_1: 'reason-donation-1',
+  reasonDonation_2: 'reason-donation-2',
+  donationFaq: 'donate-faq-question'
+};
+
 test.describe('Donate Page E2E Test', () => {
   let page: Page;
 
@@ -26,20 +33,23 @@ test.describe('Donate Page E2E Test', () => {
     await expect(header).toBeVisible();
   });
 
-  test('Should render the description of the donate page', async () => {
-    await page.waitForSelector('p');
-    const paragraph1Text = await page.textContent('p:nth-child(2)');
-    const paragraph2Text = await page.textContent('p:nth-child(3)');
-    const paragraph3Text = await page.textContent('p:nth-child(4)');
-    expect(paragraph1Text).toBe(translations.donate.efficiency);
-    expect(paragraph2Text).toBe(translations.donate['why-donate-1']);
-    expect(paragraph3Text).toBe(translations.donate['why-donate-2']);
+  test('Should render the content of the donate page', async () => {
+    const paragraph1Text = page.getByTestId(donationTestIds.efficiencyDonation);
+    const paragraph2Text = page.getByTestId(donationTestIds.reasonDonation_1);
+    const paragraph3Text = page.getByTestId(donationTestIds.reasonDonation_2);
+    await expect(paragraph1Text).toHaveText(translations.donate.efficiency);
+    await expect(paragraph2Text).toHaveText(
+      translations.donate['why-donate-1']
+    );
+    await expect(paragraph3Text).toHaveText(
+      translations.donate['why-donate-2']
+    );
   });
 
   test('Should have an FAQ section', async () => {
     const header = page.getByRole('heading', { name: translations.donate.faq });
     await expect(header).toBeVisible();
-    const faqs = page.getByTestId('donate-faq-question');
+    const faqs = page.getByTestId(donationTestIds.donationFaq);
     await expect(faqs).toHaveCount(12);
   });
 
