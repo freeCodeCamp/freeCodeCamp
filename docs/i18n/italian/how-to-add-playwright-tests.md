@@ -160,7 +160,7 @@ To learn how to write Playwright tests, or 'specs', please see Playwright's offi
 
 ### 1. Ensure that MongoDB and Client Applications are Running
 
-- [Start MongoDB and seed the database](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Start MongoDB and seed the database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Start the freeCodeCamp client application and API server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
