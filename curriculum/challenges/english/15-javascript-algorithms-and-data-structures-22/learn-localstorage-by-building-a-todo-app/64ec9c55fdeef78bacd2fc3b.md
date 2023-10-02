@@ -330,7 +330,7 @@ taskForm.addEventListener("submit", (e) => {
     taskData.unshift(taskObj);
   }
 
-  taskData.forEach(({id, title, date, description}) => (
+  taskData.forEach(({id, title, date, description}) => 
     (tasksContainer.innerHTML += `
       <div class="task" id="${id}">
         <p><strong>Title:</strong> ${title}</p>
@@ -340,7 +340,7 @@ taskForm.addEventListener("submit", (e) => {
         <button type="button" class="btn">Delete</button>
       </div>
     `)
-  ));
+  );
 
   taskForm.classList.toggle("hidden");
 });
