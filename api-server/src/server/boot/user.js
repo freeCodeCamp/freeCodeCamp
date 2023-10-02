@@ -42,8 +42,7 @@ function bootUser(app) {
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
-  api.get('/user/get-session-user',
-  getSessionUser);
+  api.get('/user/get-session-user', getSessionUser);
   api.post(
     '/account/delete',
     ifNoUser401,
