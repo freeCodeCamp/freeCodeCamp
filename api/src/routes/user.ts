@@ -281,8 +281,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.postMsUsername,
       errorHandler(error, request, reply) {
         if (error.validation) {
-          void reply.code(400);
-          void reply.send({
+          void reply.code(400).send({
             message: 'flash.ms.transcript.link-err-1',
             type: 'error'
           });
@@ -302,22 +301,18 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         );
 
         if (!msApiRes.ok) {
-          void reply.status(404);
-
-          return {
-            type: 'error',
-            message: 'flash.ms.transcript.link-err-2'
-          } as const;
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'flash.ms.transcript.link-err-2' });
         }
 
         const { userName } = (await msApiRes.json()) as { userName: string };
 
         if (!userName) {
-          void reply.status(500);
-          return {
+          return reply.status(500).send({
             type: 'error',
             message: 'flash.ms.transcript.link-err-3'
-          } as const;
+          });
         }
 
         // TODO(Post-MVP): make msUsername unique, then we can simply try to
@@ -329,11 +324,10 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         }));
 
         if (usernameUsed) {
-          void reply.status(403);
-          return {
+          return reply.status(403).send({
             type: 'error',
             message: 'flash.ms.transcript.link-err-4'
-          } as const;
+          });
         }
 
         // TODO(Post-MVP): do we need to store tll in the database? We aren't
@@ -359,11 +353,10 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         return { msUsername: userName };
       } catch (err) {
         fastify.log.error(err);
-        void reply.code(500);
-        return {
+        return reply.code(500).send({
           type: 'error',
           message: 'flash.ms.transcript.link-err-6'
-        } as const;
+        });
       }
     }
   );

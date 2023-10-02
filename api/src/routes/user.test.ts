@@ -1030,7 +1030,6 @@ Thanks and regards,
           expect(linkedAccounts[1]?.msUsername).toBe(msUsernameTwo);
         });
 
-        // `https://learn.microsoft.com/api/profiles/transcript/share/${msTranscriptId}`;
         it('calls the Microsoft API with the correct url', async () => {
           const msTranscriptUrl =
             'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
@@ -1086,10 +1085,10 @@ describe('Microsoft helpers', () => {
   describe('getMsTranscriptApiUrl', () => {
     const expectedUrl =
       'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
+
     const urlWithoutSlash =
       'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
     const urlWithSlash = `${urlWithoutSlash}/`;
-
     const urlWithQueryParams = `${urlWithoutSlash}?foo=bar`;
     const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
 
