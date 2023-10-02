@@ -51,6 +51,7 @@ const FaqItem = (
         className='map-title'
         onClick={() => setExpanded(!isExpanded)}
         aria-expanded={isExpanded}
+        data-playwright-test-label='donate-faq-question'
       >
         <Caret />
         <h3>{title}</h3>
