@@ -7,6 +7,23 @@ const generic500 = Type.Object({
   type: Type.Literal('danger')
 });
 
+const file = Type.Object({
+  contents: Type.String(),
+  key: Type.String(),
+  ext: Type.String(),
+  name: Type.String(),
+  history: Type.Array(Type.String())
+});
+
+const saveChallengeBody = Type.Object({
+  id: Type.String({
+    format: 'objectid',
+    maxLength: 24,
+    minLength: 24
+  }),
+  files: Type.Array(file)
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -312,19 +329,10 @@ export const schemas = {
             joinDate: Type.String(),
             savedChallenges: Type.Optional(
               Type.Array(
-                Type.Object({
-                  id: Type.String(),
-                  lastSavedDate: Type.Number(),
-                  files: Type.Array(
-                    Type.Object({
-                      contents: Type.String(),
-                      key: Type.String(),
-                      ext: Type.String(),
-                      name: Type.String(),
-                      history: Type.Array(Type.String())
-                    })
-                  )
-                })
+                Type.Intersect([
+                  saveChallengeBody,
+                  Type.Object({ lastSavedDate: Type.Number() })
+                ])
               )
             ),
             username: Type.String(),
@@ -477,23 +485,10 @@ export const schemas = {
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
         savedChallenges: Type.Array(
-          Type.Object({
-            id: Type.String({
-              format: 'objectid',
-              maxLength: 24,
-              minLength: 24
-            }),
-            lastSavedDate: Type.Number(),
-            files: Type.Array(
-              Type.Object({
-                contents: Type.String(),
-                key: Type.String(),
-                ext: Type.String(),
-                name: Type.String(),
-                history: Type.Array(Type.String())
-              })
-            )
-          })
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
         )
       }),
       400: Type.Object({
@@ -502,6 +497,26 @@ export const schemas = {
           'That does not appear to be a valid challenge submission.'
         )
       }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
+      })
+    }
+  },
+  saveChallenge: {
+    body: saveChallengeBody,
+    response: {
+      200: Type.Object({
+        savedChallenges: Type.Array(
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
+        )
+      }),
+      403: Type.Literal('That challenge type is not savable.'),
       500: Type.Object({
         type: Type.Literal('danger'),
         message: Type.Literal(

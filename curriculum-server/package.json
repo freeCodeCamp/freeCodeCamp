@@ -24,7 +24,7 @@
     "source-curriculum": "ts-node source-curriculum.ts"
   },
   "dependencies": {
-    "json-server": "0.17.3"
+    "json-server": "0.17.4"
   },
   "devDependencies": {
     "ts-node": "10.9.1",

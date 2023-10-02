@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
@@ -915,6 +914,76 @@ describe('challengeRoutes', () => {
             ]
           });
           expect(resUpdate.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/save-challenge', () => {
+      describe('validation', () => {
+        test('POST returns 403 status for unsavable challenges', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            savedChallenges: {
+              // valid mongo id, but not a savable one
+              id: 'aaaaaaaaaaaaaaaaaaaaaaa',
+              files: multiFileCertProjectBody.files
+            }
+          });
+
+          expect(response.body).toEqual({
+            message: 'That does not appear to be a valid challenge submission.',
+            type: 'error'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              savedChallenges: []
+            }
+          });
+        });
+
+        test('POST update the user savedchallenges and return them', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: multiFileCertProjectId,
+            files: updatedMultiFileCertProjectBody.files
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const savedDate = user.savedChallenges[0]?.lastSavedDate;
+
+          expect(user).toMatchObject({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.body).toEqual({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.statusCode).toBe(200);
         });
       });
     });
