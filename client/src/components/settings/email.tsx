@@ -165,7 +165,10 @@ function EmailSettings({
               {t('settings.email.not-verified')}
               <br />
               <Trans i18nKey='settings.email.check'>
-                <Link to='/update-email' />
+                <Link
+                  data-playwright-test-label='email-verification-link'
+                  to='/update-email'
+                />
               </Trans>
             </Alert>
           </HelpBlock>
