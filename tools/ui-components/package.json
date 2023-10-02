@@ -54,7 +54,7 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "12.1.5",
     "@types/jest": "29.5.5",
-    "@types/react": "16.14.47",
+    "@types/react": "16.14.48",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
     "autoprefixer": "10.4.16",
