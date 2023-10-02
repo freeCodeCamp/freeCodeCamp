@@ -29,7 +29,11 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
       <CSSTransition classNames='flash-message' key={id} timeout={500}>
         <Alert variant={flashStyle} className='flash-message'>
           {t(message, variables)}
-          <CloseButton onClick={handleClose} className='close' />
+          <CloseButton
+            onClick={handleClose}
+            label={t('buttons.close')}
+            className='close'
+          />
         </Alert>
       </CSSTransition>
     </TransitionGroup>

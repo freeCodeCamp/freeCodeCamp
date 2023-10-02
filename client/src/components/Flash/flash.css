@@ -1,4 +1,4 @@
-.flash-message {
+div.flash-message {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
